@@ -10,6 +10,7 @@
 # Review documentation to determine if you should use `theme` or `remote_theme`
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
+locale: zh-CN
 theme: minimal-mistakes-jekyll
 title: Hands-on Dad
 description: Becoming a hands-on dad!
