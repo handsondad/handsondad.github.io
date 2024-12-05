@@ -100,13 +100,13 @@ analytics:
 # Site Author
 author:
   name             : *name # *name is a YAML reference pointing to the &anchor earlier
-  avatar           : "/assets/images/michael-rose.jpg"
-  bio              : "Just another *boring*, *tattooed*, *time traveling*, *designer*."
+  avatar           : "/assets/images/logo.png"
+  bio              : "Just a novice father."
   location         : "Beijing"
   links:
-    - label: "Made Mistakes"
+    - label: "Website"
       icon: "fas fa-fw fa-link"
-      url: "https://handsondad.github.io"
+      url: "https://handsondad.github.io/hands-on-dad/"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       url: "https://twitter.com/handsondad"
