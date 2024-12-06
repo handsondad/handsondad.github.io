@@ -15,7 +15,7 @@ locale                   : "zh-CN"
 title                    : "Hands-on Dad"
 title_separator          : "-"
 subtitle                 : ""
-name                     : &name "Novice Father" # &name is a YAML anchor which can be *referenced later
+name                     : &name "HoD" # &name is a YAML anchor which can be *referenced later
 description              : &description "Welcome to the treasure trove of a hands-on dad."
 url                      : https://handsondad.github.io  # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -74,9 +74,9 @@ baidu_site_verification  :
 
 # Social Sharing
 twitter:
-  username               : &twitter "p_xiuqin"
+  username               : &twitter "handsondad"
 facebook:
-  username               : &facebook "p_xiuqin"
+  username               : &facebook "handsondad"
   app_id                 :
   publisher              :
 og_image                 : "/assets/images/site-logo.png" # Open Graph/Twitter default site image
@@ -189,15 +189,6 @@ kramdown:
 
 # Collections
 collections:
-  docs:
-    output: true
-    permalink: /:collection/:path/
-  recipes:
-    output: true
-    permalink: /:collection/:path/
-  pets:
-    output: true
-    permalink: /:collection/:path/
   portfolio:
     output: true
     permalink: /:collection/:path/
@@ -236,24 +227,6 @@ defaults:
       toc_sticky: true
       sidebar:
         nav: "docs"
-  # _recipes
-  - scope:
-      path: ""
-      type: recipes
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comments: true
-  # _pets
-  - scope:
-      path: ""
-      type: pets
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comment: true
   # _portfolio
   - scope:
       path: ""
