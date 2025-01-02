@@ -15,7 +15,7 @@ locale                   : "zh-CN"
 title                    : "Hands-on Dad"
 title_separator          : "-"
 subtitle                 : ""
-name                     : &name "Pattern Liang" # &name is a YAML anchor which can be *referenced later
+name                     : &name "Pattern LXQ" # &name is a YAML anchor which can be *referenced later
 description              : &description "Welcome to the treasure trove of a hands-on dad."
 url                      : https://handsondad.github.io  # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -232,11 +232,11 @@ defaults:
       comments: false
       toc_sticky: true
       sidebar:
-        nav: "books"
+        nav: "docs"
    # _books
   - scope:
-      path: "_books"
-      type: docs
+      path: ""
+      type: books
     values:
       layout: single
       read_time: false
@@ -245,7 +245,7 @@ defaults:
       comments: false
       toc_sticky: true
       sidebar:
-        nav: "docs"
+        nav: "books"
   # _portfolio
   - scope:
       path: "_portfolio"
