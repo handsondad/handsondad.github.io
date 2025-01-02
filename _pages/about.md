@@ -2,16 +2,6 @@
 permalink: /about/
 title: "关于我们"
 excerpt: "这里是一个新手爸爸的育儿宝库！"
-layouts_gallery:
-  - url: /assets/images/mm-layout-splash.png
-    image_path: /assets/images/mm-layout-splash.png
-    alt: "splash layout example"
-  - url: /assets/images/mm-layout-single-meta.png
-    image_path: /assets/images/mm-layout-single-meta.png
-    alt: "single layout with comments and related posts"
-  - url: /assets/images/mm-layout-archive.png
-    image_path: /assets/images/mm-layout-archive.png
-    alt: "archive layout example"
 last_modified_at: 2024-07-30T16:30:26-04:00
 toc: true
 ---
