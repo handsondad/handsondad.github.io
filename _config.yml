@@ -232,11 +232,11 @@ defaults:
       comments: false
       toc_sticky: true
       sidebar:
-        nav: "docs"
+        nav: "books"
    # _books
   - scope:
       path: "_books"
-      type: docs
+      type: books
     values:
       layout: single
       read_time: false
