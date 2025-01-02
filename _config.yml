@@ -235,14 +235,12 @@ defaults:
         nav: "docs"
    # _books
   - scope:
-      path: ""
+      path: "_books"
       type: books
     values:
       layout: single
-      read_time: false
       author_profile: false
       share: false
-      comments: false
       toc_sticky: true
       sidebar:
         nav: "books"
