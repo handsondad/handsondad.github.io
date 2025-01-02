@@ -1,0 +1,118 @@
+# main links
+main:
+  - title: "遇见孩子"
+    url: /docs/quick-start-guide/
+  - title: "共读共享"
+    url: /books/enter-the-kids-perspective/
+  - title: "往期回顾"
+    url: /year-archive/
+  - title: "作品展示"
+    url: /portfolio/
+  - title: "关于我们"
+    url: /about/
+
+# 遇见孩子
+docs:
+  - title: 🤰🏼 出生前的故事（2023-2024）
+    children:
+      - title: "👉 1.慕然回首"
+        url: /docs/quick-start-guide/
+  - title: 🚼 0-1岁的故事（2024-2025）
+    children:
+      - title: "👉 1.进入孩子的视角"
+        url: /docs/enter-the-kids-perspective/
+      - title: "👉 2.感受和认识自己的情绪"
+        url: /docs/feel-and-recognize-your-emotions/
+      - title: "👉 3.孩子的笑能融化你的心"
+        url: /docs/kids-smile-melt-your-heart/
+      - title: "👉 4.没事，时间将治愈一切"
+        url: /docs/time-will-heal-everything/
+
+# 共读共享
+books:
+  - title: 🖼️ 绘本如何好
+    children:
+      - title: "👉 1.进入孩子的视角"
+        url: /books/enter-the-kids-perspective/
+      - title: "👉 2.感受和认识自己的情绪"
+        url: /books/feel-and-recognize-your-emotions/
+      - title: "👉 3.孩子的笑能融化你的心"
+        url: /books/kids-smile-melt-your-heart/
+      - title: "👉 4.没事，时间将治愈一切"
+        url: /books/time-will-heal-everything/
+
+
+# documentation links
+# docs:
+#   - title: 遇见孩子，遇见更好的自己
+#     children:
+#       - title: "进入孩子的视角"
+#         url: /docs/quick-start-guide/
+#       - title: "感受和认识自己的情绪"
+#         url: /docs/structure/
+#       - title: "孩子的笑能融化你的心"
+#         url: /docs/installation/
+#       - title: "没事，时间将治愈一切"
+#         url: /docs/upgrading/
+#   - title: 个人成长，尊重儿童自身发展
+#     children:
+#       - title: "新生儿发展阶段"
+#         url: /docs/configuration/
+#       - title: "1-2岁发展阶段"
+#         url: /docs/overriding-theme-defaults/
+#       - title: "3-5岁发展阶段"
+#         url: /docs/navigation/
+#       - title: "6-11岁发展阶段"
+#         url: /docs/ui-text/
+#       - title: "12-14岁发展阶段"
+#         url: /docs/authors/
+#       - title: "15-17岁发展阶段"
+#         url: /docs/layouts/
+#   - title: 与子共学，发现知识之妙
+#     children:
+#       - title: "语言"
+#         url: /docs/posts/
+#       - title: "数学"
+#         url: /docs/pages/
+#       - title: "物理"
+#         url: /docs/collections/
+#       - title: "化学"
+#         url: /docs/helpers/
+#       - title: "生物"
+#         url: /docs/helpers/
+#       - title: "地理"
+#         url: /docs/helpers/
+#       - title: "历史"
+#         url: /docs/helpers/
+#       - title: "体育"
+#         url: /docs/helpers/
+#       - title: "艺术"
+#         url: /docs/helpers/
+#       - title: "计算机"
+#         url: /docs/utility-classes/
+#   - title: 与子同行，感受生活之美
+#     children:
+#       - title: "亲子时间"
+#         url: /docs/stylesheets/
+#       - title: "动手制作"
+#         url: /docs/javascript/
+#       - title: "观察周遭"
+#         url: /docs/javascript/
+#       - title: "旅行游历"
+#         url: /docs/javascript/
+#       - title: "公益活动"
+#         url: /docs/javascript/
+#   - title: 共读共享，探寻内心和世界的真相
+#     children:
+#       - title: "真·善·美"
+#         url: /docs/faq/
+#       - title: "绘本如何好"
+#         url: /docs/history/
+#       - title: "奇幻之旅"
+#         url: /docs/contributing/
+#       - title: "生命奇迹"
+#         url: /docs/docs-2-2/
+#       - title: "自然传奇"
+#         url: /docs/license/
+#       - title: "宇宙奥秘"
+#         url: /docs/license/
