@@ -236,7 +236,7 @@ defaults:
    # _books
   - scope:
       path: "_books"
-      type: books
+      type: docs
     values:
       layout: single
       read_time: false
@@ -245,7 +245,7 @@ defaults:
       comments: false
       toc_sticky: true
       sidebar:
-        nav: "books"
+        nav: "docs"
   # _portfolio
   - scope:
       path: "_portfolio"
