@@ -3,11 +3,11 @@ main:
   - title: "遇见孩子"
     url: /docs/quick-start-guide/
   - title: "共读共享"
-    url: /books/
+    url: /books/enter-the-kids-perspective/
   - title: "往期回顾"
     url: /year-archive/
   - title: "作品展示"
-    url: /portfolio-archive/
+    url: /portfolio/
   - title: "关于我们"
     url: /about/
 
@@ -18,6 +18,19 @@ docs:
       - title: "慕然回首"
         url: /docs/quick-start-guide/
   - title: 0-1岁的故事（2024-2025）
+    children:
+      - title: "进入孩子的视角"
+        url: /docs/enter-the-kids-perspective/
+      - title: "感受和认识自己的情绪"
+        url: /docs/feel-and-recognize-your-emotions/
+      - title: "孩子的笑能融化你的心"
+        url: /docs/kids-smile-melt-your-heart/
+      - title: "没事，时间将治愈一切"
+        url: /docs/time-will-heal-everything/
+
+# 共读共享
+books:
+  - title: 绘本如何好
     children:
       - title: "进入孩子的视角"
         url: /books/enter-the-kids-perspective/

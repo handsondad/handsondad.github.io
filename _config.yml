@@ -198,7 +198,7 @@ collections:
 defaults:
   # _posts
   - scope:
-      path: ""
+      path: "_posts"
       type: posts
     values:
       layout: single
@@ -214,9 +214,9 @@ defaults:
     values:
       layout: single
       author_profile: true
-  # docs
+  # _docs
   - scope:
-      path: "docs"
+      path: "_docs"
       type: docs
     values:
       layout: single
@@ -227,9 +227,9 @@ defaults:
       toc_sticky: true
       sidebar:
         nav: "docs"
-   # books
+   # _books
   - scope:
-      path: "books"
+      path: "_books"
       type: docs
     values:
       layout: single
@@ -242,7 +242,7 @@ defaults:
         nav: "books"
   # _portfolio
   - scope:
-      path: ""
+      path: "_portfolio"
       type: portfolio
     values:
       layout: single
