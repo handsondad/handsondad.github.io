@@ -1,6 +1,6 @@
 ---
 title: "进入孩子的视角"
-permalink: /books/enter-the-kids-perspective/
+permalink: /docs/enter-the-kids-perspective/
 excerpt: "How to quickly install and setup Minimal Mistakes for use with GitHub Pages."
 last_modified_at: 2025-01-02T08:48:05-04:00
 redirect_from:

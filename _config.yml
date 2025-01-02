@@ -189,6 +189,12 @@ kramdown:
 
 # Collections
 collections:
+  docs:
+    output: true
+    permalink: /:collection/:path/
+  books:
+    output: true
+    permalink: /:collection/:path/
   portfolio:
     output: true
     permalink: /:collection/:path/

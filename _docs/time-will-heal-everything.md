@@ -1,6 +1,6 @@
 ---
 title: "没事，时间将治愈一切"
-permalink: /books/time-will-heal-everything/
+permalink: /docs/time-will-heal-everything/
 excerpt: "How to quickly install and setup Minimal Mistakes for use with GitHub Pages."
 last_modified_at: 2025-01-02T08:48:05-04:00
 redirect_from:

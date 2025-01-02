@@ -1,6 +1,6 @@
 ---
 title: "孩子的笑能融化你的心"
-permalink: /books/kids-smile-melt-your-heart/
+permalink: /docs/kids-smile-melt-your-heart/
 excerpt: "How to quickly install and setup Minimal Mistakes for use with GitHub Pages."
 last_modified_at: 2025-01-02T08:48:05-04:00
 redirect_from:

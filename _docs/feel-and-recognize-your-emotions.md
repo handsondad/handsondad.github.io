@@ -1,6 +1,6 @@
 ---
 title: "感受和认识自己的情绪"
-permalink: /books/feel-and-recognize-your-emotions//
+permalink: /docs/feel-and-recognize-your-emotions//
 excerpt: "How to quickly install and setup Minimal Mistakes for use with GitHub Pages."
 last_modified_at: 2025-01-02T08:48:05-04:00
 redirect_from:
