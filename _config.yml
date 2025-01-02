@@ -15,7 +15,7 @@ locale                   : "zh-CN"
 title                    : "Hands-on Dad"
 title_separator          : "-"
 subtitle                 : ""
-name                     : &name "HoD" # &name is a YAML anchor which can be *referenced later
+name                     : &name "Pattern Liang" # &name is a YAML anchor which can be *referenced later
 description              : &description "Welcome to the treasure trove of a hands-on dad."
 url                      : https://handsondad.github.io  # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -188,10 +188,10 @@ kramdown:
 
 
 # Collections
-collections:
-  portfolio:
-    output: true
-    permalink: /:collection/:path/
+# collections:
+#   portfolio:
+#     output: true
+#     permalink: /:collection/:path/
 
 
 # Defaults
@@ -214,9 +214,9 @@ defaults:
     values:
       layout: single
       author_profile: true
-  # _docs
+  # docs
   - scope:
-      path: ""
+      path: "docs"
       type: docs
     values:
       layout: single
@@ -227,6 +227,19 @@ defaults:
       toc_sticky: true
       sidebar:
         nav: "docs"
+   # books
+  - scope:
+      path: "books"
+      type: docs
+    values:
+      layout: single
+      read_time: false
+      author_profile: false
+      share: false
+      comments: false
+      toc_sticky: true
+      sidebar:
+        nav: "books"
   # _portfolio
   - scope:
       path: ""
