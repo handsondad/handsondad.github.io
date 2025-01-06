@@ -31,6 +31,4 @@ Thank you for reading my blog. I will share more about becoming a hands-on dad a
 ## 使用说明
 * 在 `_posts` 目录下添加 Markdown 文件，参考👉[Jekyll Posts 使用](https://jekyllrb.com/docs/posts/)
 * 使用`构建本地测试环境`中的内容进行本地测试
-* 图片内容一般添加到 `images` 目录中
-* 样式修改的话可以处理 `styles` 目录下的 css 文件
 * [`mathjax` 加速地址](https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML)

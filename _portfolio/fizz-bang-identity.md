@@ -2,8 +2,8 @@
 title: "Fizz Bang Identity"
 excerpt: "Fizz Bang design system including logo mark, website design, and branding applications."
 header:
-  image: /assets/images/unsplash-gallery-image-2.jpg
-  teaser: assets/images/unsplash-gallery-image-2-th.jpg
+  image: /assets/images/photosynthesis/电子和氢离子相互吸引.png
+  teaser: assets/images/photosynthesis/电子和氢离子相互吸引.png
 sidebar:
   - title: "Role"
     image: http://placehold.it/350x250
@@ -12,14 +12,14 @@ sidebar:
   - title: "Responsibilities"
     text: "Reuters try PR stupid commenters should isn't a business model"
 gallery:
-  - url: /assets/images/unsplash-gallery-image-1.jpg
-    image_path: assets/images/unsplash-gallery-image-1-th.jpg
+  - url: /assets/images/photosynthesis/电子和氢离子相互吸引.png
+    image_path: assets/images/photosynthesis/电子和氢离子相互吸引.png
     alt: "placeholder image 1"
-  - url: /assets/images/unsplash-gallery-image-2.jpg
-    image_path: assets/images/unsplash-gallery-image-2-th.jpg
+  - url: /assets/images/photosynthesis/电子和氢离子相互吸引.png
+    image_path: assets/images/photosynthesis/电子和氢离子相互吸引.png
     alt: "placeholder image 2"
-  - url: /assets/images/unsplash-gallery-image-3.jpg
-    image_path: assets/images/unsplash-gallery-image-3-th.jpg
+  - url: /assets/images/photosynthesis/电子和氢离子相互吸引.png
+    image_path: assets/images/photosynthesis/电子和氢离子相互吸引.png
     alt: "placeholder image 3"
 ---
 
