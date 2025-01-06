@@ -11,11 +11,11 @@ toc: true
 
 光合作用（Photosynthesis）是地球上生命的一项基本且至关重要的过程，它主要由植物、某些细菌和藻类执行。这个复杂的过程利用太阳能将无机物质转化为有机物质，同时产生氧气，对维持地球的生态平衡和大气成分具有关键作用。简单理解，光合作用即采集阳光制造糖类！♻
 
-### 图解光合作用
+## 图解光合作用
 
-#### 简略介绍绿色植物生产糖的过程
+### 简略介绍绿色植物生产糖的过程
 
-![叶绿体内部探秘](../assets/images/photosynthesis/叶绿体内部探秘.png)
+![叶绿体内部探秘](https://handsondad.github.io/assets/images/photosynthesis/叶绿体内部探秘.png)
 
 * 1、富含能量的光子打在叶片里的叶绿素上，叶绿素分子里的电子即被激发跳到能量更高的轨道上
 * 2、这些精力充沛的电子，连续跳过一串叶绿素分子（跳着摇摆舞的女人）​，最后落在一些更小的载体分子上（其他的女舞者）
@@ -27,75 +27,81 @@ toc: true
 * 8、在一种叫作烟碱胺腺嘌呤二核苷酸(NADP)的特殊分子上与氢离子结合，形成活性极高的“热氢”
 * 9、一组酶利用ATP的能量，将周围环境中二氧化碳与“热氢”结合在一起，终于生产成糖
 
-> \[!TIP]
+> 💡 注意
 >
 > 据估计，一棵成年的健康枫树的树叶总面积将近50平方米，总重量约227千克。这意味着这棵枫树的叶绿体总面积为360平方千米，在晴朗的一天中，它可以制造2吨糖！😲
 
+### 类囊体内的过程
+
 #### 1、看看叶绿体分子
 
-![叶绿体分子排布](../assets/images/photosynthesis/叶绿体分子排布.png)
+![叶绿体分子排布](https://handsondad.github.io/assets/images/photosynthesis/叶绿体分子排布.png)
 
 叶绿素分子成簇地排列着，充当阳光感受器的角色。
 
-![叶绿体分子中的电子被光照激发](../assets/images/photosynthesis/叶绿体分子中的电子被光照激发.png)
+![叶绿体分子中的电子被光照激发](https://handsondad.github.io/assets/images/photosynthesis/叶绿体分子中的电子被光照激发.png)
 
 当阳光照射在叶绿素分子上时，它们的电子被激发到能量更高的轨道上，四处跳跃着，直到被一种酶捕获！
 
 #### 2、转移激发的电子
 
-![脱离叶绿体分子的电子被转移](../assets/images/photosynthesis/脱离叶绿体分子的电子被转移.png)
+![脱离叶绿体分子的电子被转移](https://handsondad.github.io/assets/images/photosynthesis/脱离叶绿体分子的电子被转移.png)
 
 一种特殊的叶绿素——酶复合体把电子转移到类囊体膜上的载体分子中。
 
 #### 3、水分子被裂解
 
-![水分子被一种酶裂解](../assets/images/photosynthesis/水分子被一种酶裂解.png)
+![水分子被一种酶裂解](https://handsondad.github.io/assets/images/photosynthesis/水分子被一种酶裂解.png)
 
 叶绿体丢失的电子将由来自水分子的电子补充。
 
-![用水来补充叶绿体丢失的电子](../assets/images/photosynthesis/用水来补充叶绿体丢失的电子.png)
+![用水来补充叶绿体丢失的电子](https://handsondad.github.io/assets/images/photosynthesis/用水来补充叶绿体丢失的电子.png)
 
 一种裂解水分子的酶把一个水分子分解成两个电子，两个氢离子和一个氧离子。
 
 #### 4、氢离子和电子相互吸附
 
-![电子和氢离子相互吸引](../assets/images/photosynthesis/电子和氢离子相互吸引.png)
+![电子和氢离子相互吸引](https://handsondad.github.io/assets/images/photosynthesis/电子和氢离子相互吸引.png)
 
 因为异性相吸的原理，载体上的电子能够吸引类囊体外的氢离子。回忆一下，我们讲过一个电子加上一个氢离子就能形成一个氢原子。
 
 #### 5、门卫酶开始作业
 
-![门卫酶抓走氢离子](../assets/images/photosynthesis/门卫酶抓走氢离子.png)
+![门卫酶抓走氢离子](https://handsondad.github.io/assets/images/photosynthesis/门卫酶抓走氢离子.png)
 
 当载体到达类囊体的内膜时，​“门卫”酶抓走了氢离子。
 
-![门卫酶扔掉多余的电子](../assets/images/photosynthesis/门卫酶扔掉多余的电子.png)
+![门卫酶扔掉多余的电子](https://handsondad.github.io/assets/images/photosynthesis/门卫酶扔掉多余的电子.png)
 
 氢离子被扔进囊内，剩下的电子另有用途。
 
 #### 6、开始合成ATP
 
-![氢离子离开类囊体的唯一通道](../assets/images/photosynthesis/氢离子离开类囊体的唯一通道.png)
+![氢离子离开类囊体的唯一通道](https://handsondad.github.io/assets/images/photosynthesis/氢离子离开类囊体的唯一通道.png)
 
 氢离子离开类囊体的唯一通道是膜上的一种能够生产ATP的酶。
 
-![给ATP残体重新加上磷](../assets/images/photosynthesis/给ATP残体重新加上磷.png)
+![给ATP残体重新加上磷](https://handsondad.github.io/assets/images/photosynthesis/给ATP残体重新加上磷.png)
 
 这种酶能够提供能量，给已经消耗的ATP残体重新加上磷。
 
 #### 7、叶绿素复原
 
-![重新获取电子的叶绿素又满血复活了](../assets/images/photosynthesis/重新获取电子的叶绿素又满血复活了.png)
+![重新获取电子的叶绿素又满血复活了](https://handsondad.github.io/assets/images/photosynthesis/重新获取电子的叶绿素又满血复活了.png)
 
 原先被剥夺了氢离子的电子被用来补充第二种叶绿素分子受光照激活而损失的电子。重获电子的叶绿素又要投入下一轮战斗了。
 
+### 类囊体外的过程
+
 #### 8、继续转移到NADP上
 
-![转移到最后的一个载体NADP上](../assets/images/photosynthesis/转移到最后的一个载体NADP上.png)
+![转移到最后的一个载体NADP上](https://handsondad.github.io/assets/images/photosynthesis/转移到最后的一个载体NADP上.png)
 
 最后，一种“热”氢酶把被激活的电子和一个氢离子一起转移到最后一个载体——NADP上。
 
-![战场转移到了基质](../assets/images/photosynthesis/战场转移到了基质.png)
+#### 9、碳循环开始了
+
+![战场转移到了基质](https://handsondad.github.io/assets/images/photosynthesis/战场转移到了基质.png)
 
 现在战场转移到了基质——在叶绿体以内，类囊体以外的地方。碳循环开始了，这个过程中有5种酶协作，利用ATP和叶绿体刚刚制作好的“热”氢生成糖的前体分子。
 
