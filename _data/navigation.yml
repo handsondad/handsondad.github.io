@@ -32,15 +32,20 @@ docs:
 books:
   - title: 🖼️ 绘本如何好
     children:
-      - title: "👉 1.进入孩子的视角"
+      - title: "📚️ 《地图》"
         url: /books/enter-the-kids-perspective/
-      - title: "👉 2.感受和认识自己的情绪"
-        url: /books/feel-and-recognize-your-emotions/
-      - title: "👉 3.孩子的笑能融化你的心"
-        url: /books/kids-smile-melt-your-heart/
-      - title: "👉 4.没事，时间将治愈一切"
+  - title: 😴 睡前故事
+    children:
+      - title: "📚️ 《一千零一夜》"
+        url: /books/enter-the-kids-perspective/
+  - title: 🌱 儿童成长
+    children:
+      - title: "📚️ 《孩子的大脑：智商与情商的真相》"
+        url: /books/kids-smile-melt-your-heart/"
+  - title: 🏬 走进生活
+    children:
+      - title: "📚️ 《食物信息图》"
         url: /books/time-will-heal-everything/
-
 
 # documentation links
 # docs:

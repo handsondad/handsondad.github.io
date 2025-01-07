@@ -2249,14 +2249,14 @@ blockquote.notice--danger {
 }
 
 .nav__list .nav__items a {
-    padding-left: 1rem;
+    padding-left: 0.8rem;
     color: inherit
 }
 
 .nav__list .nav__items .active {
     margin-left: -0.5em;
     /* padding-left: 0.5em; */
-    padding-left: 1rem;
+    padding-left: 0.8rem;
     padding-right: 0.5em;
     font-weight: bold
 }
