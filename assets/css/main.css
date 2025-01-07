@@ -2249,12 +2249,14 @@ blockquote.notice--danger {
 }
 
 .nav__list .nav__items a {
+    padding-left: 1rem;
     color: inherit
 }
 
 .nav__list .nav__items .active {
     margin-left: -0.5em;
-    padding-left: 0.5em;
+    /* padding-left: 0.5em; */
+    padding-left: 1rem;
     padding-right: 0.5em;
     font-weight: bold
 }
@@ -2305,15 +2307,6 @@ blockquote.notice--danger {
     font-weight: bold;
     text-transform: uppercase;
     border-bottom: 2px solid #f2f3f3
-}
-
-.nav__sub-title a {
-    border-bottom: 1px solid #f2f3f3
-}
-
-.nav__sub-title li ul>li a {
-    padding-left: 1.25rem;
-    font-weight: normal
 }
 
 .toc {
