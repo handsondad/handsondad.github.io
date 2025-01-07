@@ -4062,6 +4062,7 @@ body {
 }
 
 .archive__item-title {
+    font-size: 0.85em;
     margin-bottom: 0.25em;
     font-family: -apple-system,BlinkMacSystemFont,"Roboto","Segoe UI","Helvetica Neue","Lucida Grande",Arial,sans-serif;
     line-height: initial;
