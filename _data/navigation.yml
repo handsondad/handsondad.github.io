@@ -30,21 +30,21 @@ docs:
 
 # 共读共享
 books:
-  - title: 🖼️ 绘本如何好
+  - title: 绘本如何好
     children:
-      - title: "📚️ 《地图》"
+      - title: "《地图》"
         url: /books/enter-the-kids-perspective/
-  - title: 😴 睡前故事
+  - title: 睡前故事
     children:
-      - title: "📚️ 《一千零一夜》"
+      - title: "《一千零一夜》"
         url: /books/enter-the-kids-perspective/
-  - title: 🌱 儿童成长
+  - title: 儿童成长
     children:
-      - title: "📚️ 《孩子的大脑：智商与情商的真相》"
-        url: /books/kids-smile-melt-your-heart/"
-  - title: 🏬 走进生活
+      - title: "《孩子的大脑》"
+        url: /books/kids-smile-melt-your-heart/
+  - title: 走进生活
     children:
-      - title: "📚️ 《食物信息图》"
+      - title: "《食物信息图》"
         url: /books/time-will-heal-everything/
 
 # documentation links
