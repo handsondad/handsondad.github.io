@@ -14,7 +14,6 @@
 
     {% if document.read_time %}
       {% assign words_per_minute = document.words_per_minute | default: site.words_per_minute | default: 200 %}
-      <!-- {% assign words = document.content | strip_html | number_of_words:"cjk" %} -->
       {% assign content0 = document.content | strip_html %}
       {% assign content_size = content0 | size | minus: 1 %}
       {% assign pre_is_letter = false %}
