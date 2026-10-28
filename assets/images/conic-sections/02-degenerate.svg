@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="340" viewBox="0 0 1000 340" role="img" aria-labelledby="title desc">
+<title id="title">通过顶点时的三种退化截线</title>
+<desc id="desc">截平面经过顶点时，可仅有顶点、与圆锥相切而得到一条母线、或穿过圆锥得到两条相交母线。</desc>
+<style>text{font-family:system-ui,"Noto Sans CJK SC","Microsoft YaHei",sans-serif;fill:#20334d;font-size:19px} .small{font-size:16px}.heading{font-size:24px;font-weight:700} .note{fill:#52647a}</style>
+<rect width="1000" height="340" rx="16" fill="#f8fafc"/>
+<text x="30.00" y="40.00" class="heading" text-anchor="start">平面经过顶点：不再是普通的椭圆、抛物线或双曲线</text>
+<path d="M71.00,105.00 L166.00,185.00 L261.00,265.00" fill="none" stroke="#becbd8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+<path d="M261.00,105.00 L166.00,185.00 L71.00,265.00" fill="none" stroke="#becbd8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+<circle cx="166.00" cy="185.00" r="4.00" stroke="#20334d" fill="#20334d" stroke-width="2"/>
+<text x="176.00" y="180.00" class="" text-anchor="start">O</text>
+<text x="166.00" y="295.00" class="" text-anchor="middle">一个点</text>
+<text x="166.00" y="322.00" class="small" text-anchor="middle">0° ≤ θ &lt; γ</text>
+<path d="M405.00,105.00 L500.00,185.00 L595.00,265.00" fill="none" stroke="#becbd8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+<path d="M595.00,105.00 L500.00,185.00 L405.00,265.00" fill="none" stroke="#becbd8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+<path d="M405.00,105.00 L595.00,265.00" fill="none" stroke="#2563eb" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+<circle cx="500.00" cy="185.00" r="4.00" stroke="#20334d" fill="#20334d" stroke-width="2"/>
+<text x="510.00" y="180.00" class="" text-anchor="start">O</text>
+<text x="500.00" y="295.00" class="" text-anchor="middle">一条直线</text>
+<text x="500.00" y="322.00" class="small" text-anchor="middle">θ = γ</text>
+<path d="M739.00,105.00 L834.00,185.00 L929.00,265.00" fill="none" stroke="#becbd8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+<path d="M929.00,105.00 L834.00,185.00 L739.00,265.00" fill="none" stroke="#becbd8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+<path d="M739.00,105.00 L929.00,265.00" fill="none" stroke="#2563eb" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+<path d="M929.00,105.00 L739.00,265.00" fill="none" stroke="#2563eb" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+<circle cx="834.00" cy="185.00" r="4.00" stroke="#20334d" fill="#20334d" stroke-width="2"/>
+<text x="844.00" y="180.00" class="" text-anchor="start">O</text>
+<text x="834.00" y="295.00" class="" text-anchor="middle">两条相交直线</text>
+<text x="834.00" y="322.00" class="small" text-anchor="middle">γ &lt; θ ≤ 90°</text>
+</svg>
