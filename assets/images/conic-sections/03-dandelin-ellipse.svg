@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="630" viewBox="0 0 1000 630" role="img" aria-labelledby="title desc">
+<title id="title">椭圆：母线上 P 在 A、B 之间</title>
+<desc id="desc">这是包含圆锥轴线且垂直于截平面水平交线的轴截面。球显示为圆，截平面显示为斜直线。P 画在这一轴截面内以便看清点的顺序；正文证明适用于截线上的任意 P。</desc>
+<style>text{font-family:system-ui,"Noto Sans CJK SC","Microsoft YaHei",sans-serif;fill:#20334d;font-size:19px} .small{font-size:16px}.heading{font-size:24px;font-weight:700} .note{fill:#52647a}</style>
+<rect width="1000" height="630" rx="16" fill="#f8fafc"/>
+<text x="26.00" y="40.00" class="heading" text-anchor="start">椭圆：母线上 P 在 A、B 之间</text>
+<text x="26.00" y="70.00" class="small note" text-anchor="start">轴截面示意：球看成圆，截平面侧看成直线。完整曲线不在这张侧视图中。</text>
+<path d="M292.00,557.00 L33.75,109.70" fill="none" stroke="#8599ad" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+<path d="M292.00,557.00 L550.25,109.70" fill="none" stroke="#8599ad" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+<path d="M292.00,557.00 L292.00,109.70" fill="none" stroke="#becbd8" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity="1" stroke-dasharray="6 6"/>
+<path d="M184.90,484.55 L436.90,358.55" fill="none" stroke="#b45309" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+<circle cx="292.00" cy="476.18" r="40.41" stroke="#047857" fill="#d5eee4" stroke-width="2"/>
+<path d="M257.00,496.38 L327.00,496.38" fill="none" stroke="#047857" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="1" stroke-dasharray="6 6"/>
+<circle cx="292.00" cy="271.27" r="142.86" stroke="#047857" fill="#d5eee4" stroke-width="2"/>
+<path d="M168.28,342.71 L415.72,342.71" fill="none" stroke="#047857" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="1" stroke-dasharray="6 6"/>
+<path d="M184.90,484.55 L436.90,358.55" fill="none" stroke="#b45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+<path d="M394.27,379.87 L273.93,440.04" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+<path d="M394.27,379.87 L327.00,496.38" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="1" stroke-dasharray="6 6"/>
+<circle cx="327.00" cy="496.38" r="4.00" stroke="#2563eb" fill="#2563eb" stroke-width="2"/>
+<text x="337.00" y="491.38" class="" text-anchor="start">A</text>
+<circle cx="273.93" cy="440.04" r="4.00" stroke="#2563eb" fill="#2563eb" stroke-width="2"/>
+<text x="241.93" y="458.04" class="" text-anchor="start">F₁</text>
+<path d="M394.27,379.87 L355.89,399.05" fill="none" stroke="#be185d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+<path d="M394.27,379.87 L415.72,342.71" fill="none" stroke="#be185d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="1" stroke-dasharray="6 6"/>
+<circle cx="415.72" cy="342.71" r="4.00" stroke="#be185d" fill="#be185d" stroke-width="2"/>
+<text x="425.72" y="337.71" class="" text-anchor="start">B</text>
+<circle cx="355.89" cy="399.05" r="4.00" stroke="#be185d" fill="#be185d" stroke-width="2"/>
+<text x="323.89" y="417.05" class="" text-anchor="start">F₂</text>
+<circle cx="394.27" cy="379.87" r="4.00" stroke="#20334d" fill="#20334d" stroke-width="2"/>
+<text x="406.27" y="379.87" class="" text-anchor="start">P</text>
+<circle cx="292.00" cy="557.00" r="4.00" stroke="#20334d" fill="#20334d" stroke-width="2"/>
+<text x="270.00" y="575.00" class="" text-anchor="start">O</text>
+<text x="562.00" y="177.00" class="small" text-anchor="start">蓝色：到第一个球的两条切线</text>
+<text x="562.00" y="211.00" class="small" text-anchor="start">红色：到第二个球的两条切线</text>
+<text x="562.00" y="250.00" class="small" text-anchor="start">绿色虚线：球与圆锥的接触圆</text>
+<text x="562.00" y="320.00" class="heading" text-anchor="start">关键点的顺序</text>
+<text x="562.00" y="360.00" class="" text-anchor="start">O — A — P — B</text>
+<text x="562.00" y="410.00" class="small" text-anchor="start">PF₁ + PF₂ = PA + PB = AB</text>
+<text x="562.00" y="458.00" class="small note" text-anchor="start">同一外点到同一球的切线段等长。</text>
+<text x="26.00" y="605.00" class="small note" text-anchor="start">P 为清楚展示顺序而选在轴截面内；换到其他母线，切线等长与固定高度关系仍成立。</text>
+</svg>

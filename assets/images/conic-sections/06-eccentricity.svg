@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420" role="img" aria-labelledby="title desc">
+<title id="title">用同一个竖直高度统一焦点准线性质</title>
+<desc id="desc">左图是母线段 PA 的竖直投影，h 等于 PA 乘以 cos alpha；右图是截平面内垂线段 PD 的竖直投影，h 等于 PD 乘以 sin theta。两图是不同平面内的直角三角形，不表示 PA 与 PD 共面。</desc>
+<style>text{font-family:system-ui,"Noto Sans CJK SC","Microsoft YaHei",sans-serif;fill:#20334d;font-size:19px} .small{font-size:16px}.heading{font-size:24px;font-weight:700} .note{fill:#52647a}</style>
+<rect width="1000" height="420" rx="16" fill="#f8fafc"/>
+<text x="26.00" y="40.00" class="heading" text-anchor="start">同一个竖直高度 h，两种斜线长度</text>
+<text x="26.00" y="70.00" class="small note" text-anchor="start">两幅图分别表示不同平面内的直角三角形，不是把所有线段硬画在同一平面。</text>
+<path d="M83.00,310.00 L333.00,310.00" fill="none" stroke="#047857" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+<path d="M108.00,130.00 L108.00,310.00" fill="none" stroke="#71849b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="1" stroke-dasharray="6 6"/>
+<path d="M108.00,130.00 L298.00,310.00" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+<path d="M108.00,298.00 L120.00,298.00 L120.00,310.00" fill="none" stroke="#71849b" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+<circle cx="108.00" cy="130.00" r="4.00" stroke="#20334d" fill="#20334d" stroke-width="2"/>
+<text x="117.00" y="121.00" class="" text-anchor="start">P</text>
+<circle cx="298.00" cy="310.00" r="4.00" stroke="#20334d" fill="#20334d" stroke-width="2"/>
+<text x="307.00" y="301.00" class="" text-anchor="start">A</text>
+<text x="79.00" y="225.00" class="" text-anchor="start">h</text>
+<path d="M565.00,310.00 L927.00,310.00" fill="none" stroke="#047857" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+<path d="M590.00,130.00 L590.00,310.00" fill="none" stroke="#71849b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="1" stroke-dasharray="6 6"/>
+<path d="M590.00,130.00 L892.00,310.00" fill="none" stroke="#be185d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+<path d="M590.00,298.00 L602.00,298.00 L602.00,310.00" fill="none" stroke="#71849b" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity="1"/>
+<circle cx="590.00" cy="130.00" r="4.00" stroke="#20334d" fill="#20334d" stroke-width="2"/>
+<text x="599.00" y="121.00" class="" text-anchor="start">P</text>
+<circle cx="892.00" cy="310.00" r="4.00" stroke="#20334d" fill="#20334d" stroke-width="2"/>
+<text x="901.00" y="301.00" class="" text-anchor="start">D</text>
+<text x="561.00" y="225.00" class="" text-anchor="start">h</text>
+<text x="152.00" y="165.00" class="small" text-anchor="start">α：母线与轴线的夹角</text>
+<text x="690.00" y="287.00" class="small" text-anchor="start">θ：截平面与水平面的夹角</text>
+<text x="108.00" y="362.00" class="" text-anchor="start">h = PA · cos α</text>
+<text x="590.00" y="362.00" class="" text-anchor="start">h = PD · sin θ</text>
+<text x="500.00" y="402.00" class="heading" text-anchor="middle">PF / PD = PA / PD = sin θ / cos α</text>
+</svg>
