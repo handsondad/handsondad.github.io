@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="720" viewBox="0 0 1120 720" role="img" aria-labelledby="title desc">
+  <title id="title">从 DNA 到亚核尺度的十倍旅行</title>
+  <desc id="desc">一条从十的负九次方米到十的负十八次方米的对数尺。DNA 直径约二纳米，原子约十分之一纳米，原子核与质子在飞米量级。十的负十八次方米只作参照，不代表夸克实测直径。每一格长度缩小十倍，原子到核尺度跨越多格。</desc>
+  <defs>
+    <linearGradient id="background" x2="1" y2="1">
+      <stop stop-color="#10253c"/>
+      <stop offset="1" stop-color="#162e46"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M1 1L8 5L1 9" fill="none" stroke="#c3d7e8" stroke-width="1.5"/>
+    </marker>
+    <style>
+      text { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; fill: #f0f6fc; }
+      .small { font-size: 21px; fill: #c3d7e8; }
+      .label { font-size: 25px; font-weight: 700; }
+      .tick { stroke: #7492ad; stroke-width: 2; }
+      .guide { stroke: #7492ad; stroke-width: 2; stroke-dasharray: 5 7; }
+    </style>
+  </defs>
+  <rect width="1120" height="720" rx="24" fill="url(#background)"/>
+  <text x="54" y="70" font-size="35" font-weight="700">DNA 里面，还有多深的世界？</text>
+  <text x="54" y="111" class="small">一把对数尺：每向右走一格，长度缩小 10 倍。</text>
+
+  <rect x="54" y="145" width="1012" height="89" rx="12" fill="#213e57"/>
+  <text x="78" y="182" font-size="25">想象把 DNA 放大 100 亿倍：它宽 20 米，原子约 1 米，</text>
+  <text x="78" y="216" font-size="25">而 1 飞米的长度，放大后仍然只有 0.01 毫米。</text>
+
+  <text x="78" y="301" class="label" fill="#76e0d0" style="fill:#76e0d0">DNA</text>
+  <text x="78" y="334" class="small">直径约 2 纳米</text>
+  <path d="M168 347L184 400" class="guide"/>
+  <text x="286" y="301" class="label" fill="#ffdb8a" style="fill:#ffdb8a">原子</text>
+  <text x="286" y="334" class="small">约 0.1 纳米</text>
+  <path d="M311 347V400" class="guide"/>
+  <rect x="659" y="275" width="101" height="85" rx="12" fill="#503d58"/>
+  <text x="635" y="301" class="label" style="fill:#ffb5ce">原子核／质子</text>
+  <text x="635" y="334" class="small">飞米量级</text>
+  <path d="M709 361V400" class="guide"/>
+  <text x="938" y="301" class="label">参照长度</text>
+  <text x="923" y="334" class="small">不是夸克直径</text>
+  <path d="M1020 347V400" class="guide"/>
+
+  <path d="M100 410H1064" fill="none" stroke="#c3d7e8" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M210 398V425M300 398V425M390 398V425M480 398V425M570 398V425M660 398V425M750 398V425M840 398V425M930 398V425M1020 398V425" class="tick"/>
+  <circle cx="183" cy="410" r="9" fill="#76e0d0"/>
+  <circle cx="300" cy="410" r="9" fill="#ffdb8a"/>
+  <path d="M660 410H750" stroke="#ffb5ce" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="1020" cy="410" r="9" fill="#162e46" stroke="#c3d7e8" stroke-width="3"/>
+
+  <g text-anchor="middle" class="small">
+    <text x="210" y="458">10⁻⁹</text>
+    <text x="300" y="458">10⁻¹⁰</text>
+    <text x="390" y="458">10⁻¹¹</text>
+    <text x="480" y="458">10⁻¹²</text>
+    <text x="570" y="458">10⁻¹³</text>
+    <text x="660" y="458">10⁻¹⁴</text>
+    <text x="750" y="458">10⁻¹⁵</text>
+    <text x="840" y="458">10⁻¹⁶</text>
+    <text x="930" y="458">10⁻¹⁷</text>
+    <text x="1020" y="458">10⁻¹⁸</text>
+  </g>
+  <text x="1050" y="492" class="small" text-anchor="end">单位：米</text>
+  <path d="M300 489V511H750V489" fill="none" stroke="#ffdb8a" stroke-width="2"/>
+  <text x="525" y="548" text-anchor="middle" font-size="24" style="fill:#ffdb8a">从原子到 1 飞米：长度缩小约 10 万倍</text>
+  <path d="M54 581H1066" stroke="#3b5870"/>
+  <text x="54" y="621" class="small">读图提醒：这是长度尺度图，不是逐层剥开的实心套娃。</text>
+  <text x="54" y="657" class="small">夸克与电子尚无已确证的内部结构；“点状描述”不等于测得体积为零。</text>
+  <text x="54" y="693" font-size="18" style="fill:#9eb8ce">Hands-on Dad · 原创示意 · 各对象的“大小”定义不同，图中仅比较数量级。</text>
+</svg>
