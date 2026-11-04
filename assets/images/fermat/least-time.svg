@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="680" viewBox="0 0 1000 680" role="img" aria-labelledby="title desc">
+  <title id="title">费马原理与救生员：最短距离不等于最短时间</title>
+  <desc id="desc">A的坐标为负3、3，B的坐标为3、负3，海岸为y等于0。岸上速度为2，水中速度为1。红色虚线是直接走直线，耗时约6.364；绿色折线在x约1.615处入水，耗时约6.056。该例的速度比为教学设定，不是真实空气与水的光速比。</desc>
+  <defs>
+    <style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif;fill:#172b44}.title{font-size:27px;font-weight:700}.body{font-size:21px}.small{font-size:18px;fill:#42566e}</style>
+  </defs>
+  <rect width="1000" height="680" rx="20" fill="#f7f5ef"/>
+  <text class="title" x="500" y="48" text-anchor="middle">多跑一段、少游一段，反而更快</text>
+  <rect x="60" y="80" width="880" height="250" fill="#fff2d6"/>
+  <rect x="60" y="330" width="880" height="250" fill="#deeff7"/>
+  <path d="M60 330 H940" stroke="#718aa2" stroke-width="2.5" stroke-dasharray="9 6"/>
+  <path d="M543.035 200 V445" stroke="#718aa2" stroke-width="2" stroke-dasharray="6 5"/>
+  <text class="small" x="558" y="225">法线</text>
+  <path d="M220 120 L640 540" fill="none" stroke="#d14a49" stroke-width="3.5" stroke-dasharray="12 8"/>
+  <path d="M220 120 L543.035 330 L640 540" fill="none" stroke="#23835e" stroke-width="5"/>
+  <circle cx="220" cy="120" r="8" fill="#172b44"/>
+  <circle cx="640" cy="540" r="8" fill="#172b44"/>
+  <circle cx="543.035" cy="330" r="7" fill="#c87916"/>
+  <text class="body" x="142" y="106">救生员 A</text>
+  <text class="body" x="655" y="551">目标 B</text>
+  <text class="small" x="550" y="363">最佳入水点 P</text>
+  <text class="body" x="95" y="277">沙滩：速度 2</text>
+  <text class="body" x="95" y="500">水中：速度 1</text>
+  <rect x="685" y="115" width="225" height="135" rx="12" fill="#fff" fill-opacity="0.9"/>
+  <text class="small" x="705" y="150">红虚线：距离最短</text>
+  <text class="small" x="705" y="179">耗时约 6.364</text>
+  <text class="small" x="705" y="211">绿折线：时间最短</text>
+  <text class="small" x="705" y="240">耗时约 6.056</text>
+  <text class="body" x="500" y="615" text-anchor="middle">两段距离分别除以速度，再相加：T = AP / v₁ + PB / v₂</text>
+  <text class="small" x="500" y="651" text-anchor="middle">教学模型：速度比取 2:1，不代表真实空气—水的光速比；时间使用一致的任意单位。</text>
+</svg>

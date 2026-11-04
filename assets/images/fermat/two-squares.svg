@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480" role="img" aria-labelledby="title desc">
+  <title id="title">质数41可以写成4的平方加5的平方</title>
+  <desc id="desc">左侧蓝色4乘4方格面积16，绿色5乘5方格面积25，合计41。右侧解释平方数除以4只可能余0或1，两个平方数之和不可能除以4余3。</desc>
+  <defs>
+    <style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif;fill:#172b44}.title{font-size:27px;font-weight:700}.body{font-size:23px}.small{font-size:19px;fill:#42566e}.large{font-size:34px;font-weight:700}</style>
+    <pattern id="blue-grid" width="32" height="32" patternUnits="userSpaceOnUse"><rect width="32" height="32" fill="#dbeafa"/><rect width="32" height="32" fill="none" stroke="#6794bf" stroke-width="2"/></pattern>
+    <pattern id="green-grid" width="32" height="32" patternUnits="userSpaceOnUse"><rect width="32" height="32" fill="#dff1e5"/><rect width="32" height="32" fill="none" stroke="#68a07b" stroke-width="2"/></pattern>
+  </defs>
+  <rect width="1000" height="480" rx="20" fill="#f7f5ef"/>
+  <text class="title" x="500" y="53" text-anchor="middle">为什么有些质数，能拼成两个正方形的面积？</text>
+  <rect x="64" y="160" width="128" height="128" fill="url(#blue-grid)" stroke="#6794bf" stroke-width="2"/>
+  <rect x="288" y="128" width="160" height="160" fill="url(#green-grid)" stroke="#68a07b" stroke-width="2"/>
+  <text class="large" x="240" y="235" text-anchor="middle">+</text>
+  <text class="body" x="128" y="330" text-anchor="middle">4² = 16</text>
+  <text class="body" x="368" y="330" text-anchor="middle">5² = 25</text>
+  <text class="large" x="256" y="402" text-anchor="middle">16 + 25 = 41</text>
+  <path d="M500 112 V420" stroke="#c7d0d7" stroke-width="2"/>
+  <text class="body" x="550" y="151">平方数除以 4 的余数：</text>
+  <text class="body" x="550" y="199">偶数的平方 → 0</text>
+  <text class="body" x="550" y="242">奇数的平方 → 1</text>
+  <text class="body" x="550" y="307">两者相加只可能余 0、1、2</text>
+  <text class="body" x="550" y="351" font-weight="700">不可能余 3！</text>
+  <text class="small" x="500" y="452" text-anchor="middle">对奇质数而言，“余 3 不可能”容易证明；“余 1 一定能”才是定理的深处。</text>
+</svg>

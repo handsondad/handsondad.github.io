@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="490" viewBox="0 0 1000 490" role="img" aria-labelledby="title desc">
+  <title id="title">费马小定理：乘法把非零余数重新洗牌</title>
+  <desc id="desc">以质数7为模，1到6分别乘以3，所得余数为3、6、2、5、1、4。六个非零余数一个不少，只是换了顺序。因此全部相乘并约去6的阶乘，可得3的6次方模7余1。</desc>
+  <defs>
+    <style>
+      text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif;fill:#172b44}
+      .title{font-size:27px;font-weight:700}.body{font-size:22px}.small{font-size:19px;fill:#42566e}.num{font-size:32px;font-weight:700}
+      .card{fill:#fff;stroke:#9db6cc;stroke-width:2}.result{fill:#e2f1e9;stroke:#39845f;stroke-width:2}
+    </style>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="#627f9b"/></marker>
+  </defs>
+  <rect width="1000" height="490" rx="20" fill="#f7f5ef"/>
+  <text class="title" x="500" y="52" text-anchor="middle">乘以 3，再除以 7 取余：像洗牌，没有丢牌</text>
+  <text class="small" x="500" y="88" text-anchor="middle">上排是原来的余数；下排是相乘后得到的余数</text>
+  <g text-anchor="middle">
+    <rect class="card" x="100" y="116" width="110" height="68" rx="12"/><text class="num" x="155" y="161">1</text>
+    <rect class="card" x="238" y="116" width="110" height="68" rx="12"/><text class="num" x="293" y="161">2</text>
+    <rect class="card" x="376" y="116" width="110" height="68" rx="12"/><text class="num" x="431" y="161">3</text>
+    <rect class="card" x="514" y="116" width="110" height="68" rx="12"/><text class="num" x="569" y="161">4</text>
+    <rect class="card" x="652" y="116" width="110" height="68" rx="12"/><text class="num" x="707" y="161">5</text>
+    <rect class="card" x="790" y="116" width="110" height="68" rx="12"/><text class="num" x="845" y="161">6</text>
+    <g stroke="#627f9b" stroke-width="2.5" marker-end="url(#arrow)">
+      <path d="M155 195 V236"/><path d="M293 195 V236"/><path d="M431 195 V236"/>
+      <path d="M569 195 V236"/><path d="M707 195 V236"/><path d="M845 195 V236"/>
+    </g>
+    <rect class="result" x="100" y="252" width="110" height="68" rx="12"/><text class="num" x="155" y="297">3</text>
+    <rect class="result" x="238" y="252" width="110" height="68" rx="12"/><text class="num" x="293" y="297">6</text>
+    <rect class="result" x="376" y="252" width="110" height="68" rx="12"/><text class="num" x="431" y="297">2</text>
+    <rect class="result" x="514" y="252" width="110" height="68" rx="12"/><text class="num" x="569" y="297">5</text>
+    <rect class="result" x="652" y="252" width="110" height="68" rx="12"/><text class="num" x="707" y="297">1</text>
+    <rect class="result" x="790" y="252" width="110" height="68" rx="12"/><text class="num" x="845" y="297">4</text>
+    <text class="body" x="500" y="378">3⁶ × (1 × 2 × 3 × 4 × 5 × 6) ≡ 1 × 2 × 3 × 4 × 5 × 6　(mod 7)</text>
+    <text class="body" x="500" y="423">约去两边非零余数的乘积，得到 3⁶ ≡ 1　(mod 7)</text>
+    <text class="small" x="500" y="461">质数这个条件，保证“洗牌”不重复，也保证这里可以约去。</text>
+  </g>
+</svg>

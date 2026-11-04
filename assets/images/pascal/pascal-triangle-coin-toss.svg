@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="490" viewBox="0 0 1000 490" role="img" aria-labelledby="title desc">
+  <title id="title">帕斯卡三角与四次抛硬币</title>
+  <desc id="desc">第4行系数1、4、6、4、1分别代表四次抛硬币出现0到4次正面的组合数。总数16，出现两次正面的概率为6除以16。</desc>
+  <defs>
+    <style>
+      .bg{fill:#f7f5ef}.cell{fill:#fff;stroke:#9aa7b8;stroke-width:2}.focus{fill:#dcecff;stroke:#3478b9;stroke-width:3}.t{font:22px "Microsoft YaHei",sans-serif;fill:#172033}.small{font:17px "Microsoft YaHei",sans-serif;fill:#475569}.strong{font-weight:700}.arrow{stroke:#3478b9;stroke-width:2.5;fill:none}
+    </style>
+  </defs>
+  <rect class="bg" width="1000" height="490" rx="22"/>
+  <text class="t strong" x="500" y="46" text-anchor="middle">第 4 行：四次抛硬币，正面出现的组合数</text>
+  <g>
+    <circle class="cell" cx="500" cy="92" r="23"/>
+    <circle class="cell" cx="465" cy="142" r="23"/><circle class="cell" cx="535" cy="142" r="23"/>
+    <circle class="cell" cx="430" cy="192" r="23"/><circle class="cell" cx="500" cy="192" r="23"/><circle class="cell" cx="570" cy="192" r="23"/>
+    <circle class="cell" cx="395" cy="242" r="23"/><circle class="cell" cx="465" cy="242" r="23"/><circle class="cell" cx="535" cy="242" r="23"/><circle class="cell" cx="605" cy="242" r="23"/>
+    <circle class="cell" cx="360" cy="292" r="23"/><circle class="cell" cx="430" cy="292" r="23"/><circle class="focus" cx="500" cy="292" r="23"/><circle class="cell" cx="570" cy="292" r="23"/><circle class="cell" cx="640" cy="292" r="23"/>
+  </g>
+  <g class="t" text-anchor="middle">
+    <text x="500" y="100">1</text>
+    <text x="465" y="150">1</text><text x="535" y="150">1</text>
+    <text x="430" y="200">1</text><text x="500" y="200">2</text><text x="570" y="200">1</text>
+    <text x="395" y="250">1</text><text x="465" y="250">3</text><text x="535" y="250">3</text><text x="605" y="250">1</text>
+    <text x="360" y="300">1</text><text x="430" y="300">4</text><text x="500" y="300" class="strong">6</text><text x="570" y="300">4</text><text x="640" y="300">1</text>
+  </g>
+  <path class="arrow" d="M500 322 L500 360"/>
+  <text class="t strong" x="500" y="392" text-anchor="middle">恰好 2 次正面：有 6 种排法</text>
+  <text class="small" x="500" y="425" text-anchor="middle">全部结果：2⁴ = 16 种　　概率：6/16 = 3/8</text>
+  <text class="small" x="500" y="462" text-anchor="middle">每个格子等于它左上与右上两格之和；边界外视为 0</text>
+</svg>

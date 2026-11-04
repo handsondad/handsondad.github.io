@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="605" viewBox="0 0 1000 605" role="img" aria-labelledby="title desc">
+<title id="title">DNA、原子与原子核的统一放大换算</title><desc id="desc">三步显示统一放大100亿倍的结果：2纳米变20米，0.1纳米变1米，选取的1飞米变0.01毫米。卡片大小不代表物体比例。</desc>
+<style>
+text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif}
+.s1{animation:r1 4.5s steps(1,end) 1 both}
+.s2{animation:r2 4.5s steps(1,end) 1 both}
+.s3{animation:r3 4.5s steps(1,end) 1 both}
+@keyframes r1{0%,9%{opacity:0}10%,100%{opacity:1}}
+@keyframes r2{0%,34%{opacity:0}35%,100%{opacity:1}}
+@keyframes r3{0%,64%{opacity:0}65%,100%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.s1,.s2,.s3,.spinner{animation:none}}
+</style>
+<rect width="1000" height="605" rx="20" fill="#faf8f3"/>
+<text x="500" y="48" text-anchor="middle" font-size="28" fill="#20334d" font-weight="700">同一把放大尺：每个长度都乘 100 亿</text><text x="500" y="88" text-anchor="middle" font-size="21" fill="#20334d">不是物质真的变大，而是用同一比例重新理解尺度</text><g class="s1"><rect x="35" y="132" width="285" height="297" rx="14" fill="#e6eff9"/><text x="177" y="175" text-anchor="middle" font-size="23" fill="#20334d" font-weight="700">1  DNA 宽</text><text x="177" y="226" text-anchor="middle" font-size="25" fill="#20334d">2 纳米</text><text x="177" y="272" text-anchor="middle" font-size="22" fill="#20334d">× 100 亿 ↓</text><text x="177" y="326" text-anchor="middle" font-size="32" fill="#1e6e9a" font-weight="700">20 米</text><text x="177" y="386" text-anchor="middle" font-size="18" fill="#20334d">一座楼的宽度</text></g><g class="s2"><rect x="360" y="132" width="285" height="297" rx="14" fill="#f0e7f7"/><text x="502" y="175" text-anchor="middle" font-size="23" fill="#20334d" font-weight="700">2  典型原子尺度</text><text x="502" y="226" text-anchor="middle" font-size="25" fill="#20334d">0.1 纳米</text><text x="502" y="272" text-anchor="middle" font-size="22" fill="#20334d">× 100 亿 ↓</text><text x="502" y="326" text-anchor="middle" font-size="32" fill="#8750a7" font-weight="700">1 米</text><text x="502" y="386" text-anchor="middle" font-size="18" fill="#20334d">日常家具尺度</text></g><g class="s3"><rect x="685" y="132" width="285" height="297" rx="14" fill="#e4f2eb"/><text x="827" y="175" text-anchor="middle" font-size="23" fill="#20334d" font-weight="700">3  选取的核尺度</text><text x="827" y="226" text-anchor="middle" font-size="25" fill="#20334d">1 飞米</text><text x="827" y="272" text-anchor="middle" font-size="22" fill="#20334d">× 100 亿 ↓</text><text x="827" y="326" text-anchor="middle" font-size="32" fill="#197858" font-weight="700">0.01 毫米</text><text x="827" y="386" text-anchor="middle" font-size="18" fill="#20334d">仍是细小尘粒量级</text></g><text x="500" y="480" text-anchor="middle" font-size="26" fill="#20334d" font-weight="700">DNA 已像楼那么宽，原子核却依然很小</text><text x="500" y="526" text-anchor="middle" font-size="19" fill="#20334d">各卡片不是按面积或直径等比例画出的物体；精确的是上面的长度换算。</text><text x="500" y="566" text-anchor="middle" font-size="19" fill="#20334d">原子没有硬球边界；核尺度随核种变化；这里没有给夸克指定实测直径。</text>
+</svg>
