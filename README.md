@@ -35,6 +35,7 @@ Thank you for reading my blog. I will share more about becoming a hands-on dad a
 * 重点科普的十二幅机制图可用 `python tools/generate_deep_science_visuals.py` 重新生成；脚本校验碳与电子收支、ATP近似账、太阳辐射比例、时间换算、逻辑门和玩具CPU执行。图中描线仅引导阅读，不模拟真实生物速率或处理器周期。
 * 周期表文章的五幅原创图可用 `python tools/generate_periodic_table_visuals.py` 重新生成；脚本核对第四周期的18个元素、氧化物电荷收支与轨道容量，短表局部按俄罗斯2026年官方化学示例卷的位置重绘。
 * 美元文字文章的五幅原创静态图可用 `python tools/generate_dollar_visuals.py` 重新生成；脚本核对十三条盾纹、格言字母数与罗马数字1776，图为位置和历史关系示意，不是纸币或国玺的精确复制件。
+* 开普勒与牛顿文章的七幅原创图可用 `python tools/generate_kepler_newton_visuals.py` 重新生成；脚本核对等时面积、周期比例、速度Verlet轨道收敛与理想地火转移时间，唯一的轨道动画按开普勒方程计时，播放一次并支持减少动态效果。
 * 在 `_posts` 目录下添加 Markdown 文件，参考👉[Jekyll Posts 使用](https://jekyllrb.com/docs/posts/)
 * 使用`构建本地测试环境`中的内容进行本地测试
 * [`mathjax` 加速地址](https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML)

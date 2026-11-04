@@ -28,12 +28,13 @@ def path(d, color=BLUE, width=3, fill="none"):
 
 def save(name, title, description, body, height):
     svg = ('<svg xmlns="http://www.w3.org/2000/svg" '
-           f'viewBox="0 0 720 {height}" role="img" aria-labelledby="title desc" lang="zh-CN">'
+           f'width="720" height="{height}" viewBox="0 0 720 {height}" role="img" aria-labelledby="title desc" lang="zh-CN">'
            f'<title id="title">{escape(title)}</title><desc id="desc">{escape(description)}</desc>'
            '<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif}</style>'
            f'<rect width="720" height="{height}" rx="16" fill="#fafcfe"/>'
            + text(28, 48, title, 30) + body + '</svg>\n')
     root = ET.fromstring(svg)
+    assert root.get("width") == "720" and root.get("height") == str(height)
     assert root.find("{http://www.w3.org/2000/svg}title").text
     assert root.find("{http://www.w3.org/2000/svg}desc").text
     OUT.mkdir(parents=True, exist_ok=True)

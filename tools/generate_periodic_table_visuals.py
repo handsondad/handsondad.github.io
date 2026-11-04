@@ -30,7 +30,7 @@ def line(d, step=None):
 
 
 def save(name, title, description, body, height):
-    svg = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 {height}" '
+    svg = (f'<svg xmlns="http://www.w3.org/2000/svg" width="720" height="{height}" viewBox="0 0 720 {height}" '
            'role="img" aria-labelledby="title desc" lang="zh-CN">'
            f'<title id="title">{escape(title)}</title><desc id="desc">{escape(description)}</desc>'
            '<defs><marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" '
@@ -45,6 +45,7 @@ def save(name, title, description, body, height):
            f'<rect width="720" height="{height}" rx="16" fill="#fafcfe"/>'
            + text(28, 46, title, 30) + body + '</svg>\n')
     root = ET.fromstring(svg)
+    assert root.get("width") == "720" and root.get("height") == str(height)
     assert root.find("{http://www.w3.org/2000/svg}title") is not None
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / f"{name}.svg").write_text(svg, encoding="utf-8")
