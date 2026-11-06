@@ -36,6 +36,10 @@ Thank you for reading my blog. I will share more about becoming a hands-on dad a
 * 周期表文章的五幅原创图可用 `python tools/generate_periodic_table_visuals.py` 重新生成；脚本核对第四周期的18个元素、氧化物电荷收支与轨道容量，短表局部按俄罗斯2026年官方化学示例卷的位置重绘。
 * 美元文字文章的五幅原创静态图可用 `python tools/generate_dollar_visuals.py` 重新生成；脚本核对十三条盾纹、格言字母数与罗马数字1776，图为位置和历史关系示意，不是纸币或国玺的精确复制件。
 * 开普勒与牛顿文章的七幅原创图可用 `python tools/generate_kepler_newton_visuals.py` 重新生成；脚本核对等时面积、周期比例、速度Verlet轨道收敛与理想地火转移时间，唯一的轨道动画按开普勒方程计时，播放一次并支持减少动态效果。
+* 微积分与引力文章的六幅原创图可用 `python tools/generate_calculus_gravity_visuals.py` 重新生成；脚本核对地月尺度、轨道高度引力、向量方向、分段逃逸功与不同初速度的圆锥曲线，圆周运动动画播放一次并支持减少动态效果。
+* 微积分入门文章的八幅原创图可用 `python tools/generate_calculus_foundations_visuals.py` 重新生成；脚本核对差商、自由落体、矩形上下界、二项式近似、气体偏导与热方程的初始和边界条件，割线演示播放一次并保留静态路线。
+* 墨卡托与地图文章的八幅原创静态图可用 `python tools/generate_mercator_visuals.py` 重新生成；脚本核对球面投影倍率、大圆与恒向线长度、三角测量、山丘等高线、比例尺换算与瓦片层级。肖像的作者、馆藏来源与许可另列在文章末尾。
+* 尺规作图文章的八幅分步图可用 `python tools/generate_compass_visuals.py` 重新生成；脚本核对等长与角平分、正多边形闭合、几何平均数、平行分线，以及外接圆共圆和内切圆相切。虚线表示辅助线，构造步骤不依赖动画。
 * 在 `_posts` 目录下添加 Markdown 文件，参考👉[Jekyll Posts 使用](https://jekyllrb.com/docs/posts/)
 * 使用`构建本地测试环境`中的内容进行本地测试
 * [`mathjax` 加速地址](https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML)

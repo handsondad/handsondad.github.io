@@ -50,7 +50,7 @@ def panel(y, height):
     )
 
 
-def save(name, height, title, description, body, css=""):
+def save(name, height, title, description, body, css="", output_directory=None):
     svg = (
         f'<svg xmlns="http://www.w3.org/2000/svg" width="720" height="{height}" '
         f'viewBox="0 0 720 {height}" role="img" aria-labelledby="title desc" lang="zh-CN">'
@@ -68,7 +68,8 @@ def save(name, height, title, description, body, css=""):
     )
     root = ET.fromstring(svg)
     assert root.attrib["viewBox"] == f'0 0 {root.attrib["width"]} {root.attrib["height"]}'
-    (OUT / name).write_text(svg, encoding="utf-8")
+    directory = OUT if output_directory is None else output_directory
+    (directory / name).write_text(svg, encoding="utf-8")
 
 
 def eccentric_anomaly(mean):
