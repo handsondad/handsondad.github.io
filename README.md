@@ -41,6 +41,11 @@ Thank you for reading my blog. I will share more about becoming a hands-on dad a
 * 墨卡托与地图文章的八幅原创静态图可用 `python tools/generate_mercator_visuals.py` 重新生成；脚本核对球面投影倍率、大圆与恒向线长度、三角测量、山丘等高线、比例尺换算与瓦片层级。肖像的作者、馆藏来源与许可另列在文章末尾。
 * 尺规作图文章的八幅分步图可用 `python tools/generate_compass_visuals.py` 重新生成；脚本核对等长与角平分、正多边形闭合、几何平均数、平行分线，以及外接圆共圆和内切圆相切。虚线表示辅助线，构造步骤不依赖动画。
 * 计算器历史文章的八幅原创静态图可用 `python tools/generate_calculator_visuals.py` 重新生成；脚本核对十进制与二进制进位、阶梯鼓选齿、滑架乘法、对数刻度、函数采样和数值表示。另有一张依 CC BY-SA 4.0 转载的开源复刻界面，作者、原文件与许可见正文。
+* 织布机文章的八幅原创图可用 `python tools/generate_loom_visuals.py` 重新生成；脚本核对平纹、斜纹、缎纹组织，卡片选择与64个交织点的对应，以及教学组织的循环浮长。逐纬动画播放一次并保留完整结果，支持减少动态效果；机构图为概念示意，不是制造图。
+* 摆线文章的八幅原创图可用 `python tools/generate_cycloid_visuals.py` 重新生成；脚本核对同端点竞速积分、等时解析运动与能量、弧长关系、完整单摆周期，以及摆线挡板的切向和绳长约束。三幅短动画播放一次并支持减少动态效果，下滑演示按统一物理时间放慢四倍。
+* 悬链线文章的九幅原创图可用 `python tools/generate_catenary_visuals.py` 重新生成；脚本校验链条静力平衡、等弧长取点与斜率、双曲余弦、抛物线近似、索力和教学温升模型。三幅教学动画展示受力、链段累积与温升弧垂，全跨和局部放大同步，播放一次并响应减少动态效果，不可作为工程设计或安全距离依据。
+* 分析力学文章的八幅原创图可用 `python tools/generate_analytical_mechanics_visuals.py` 重新生成；脚本核对非线性单摆周期与能量、关键帧插值、约束几何、驻定作用量的非极小反例、谐振相图和轨道有效势能。三幅短动画分别同步单摆与能量、强调候选曲线、同步直线运动与相空间，播放一次并支持减少动态效果。
+* 变分法文章的八幅原创图可用 `python tools/generate_variations_visuals.py` 重新生成；脚本核对泛函评分与弧长、第一变分、局部扰动积分、边界几何、折射时间和角度、链长与自由落体作用量。一次短演示只改变候选函数家族，不模拟真实运动，保留全部静态比较并支持减少动态效果。
 * 在 `_posts` 目录下添加 Markdown 文件，参考👉[Jekyll Posts 使用](https://jekyllrb.com/docs/posts/)
 * 使用`构建本地测试环境`中的内容进行本地测试
 * [`mathjax` 加速地址](https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML)
