@@ -1,0 +1,140 @@
+---
+---
+
+@use 'abstracts/variables' with (
+  $theme: '{{ site.theme_mode }}',
+  $font-family-heading: ('Comic Neue', 'Ma Shan Zheng', 'KaiTi', 'STKaiti', 'Microsoft YaHei', cursive),
+  $radius-lg: 16px
+);
+
+/* prettier-ignore */
+@use 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
+
+/* append your custom style below */
+
+/* 首页同款字体只用于标题与导航；字体切片由 _includes/metadata-hook.html 引入 */
+$hand-font: 'Comic Neue', 'Ma Shan Zheng', 'KaiTi', 'STKaiti', 'Microsoft YaHei', cursive;
+
+#sidebar {
+  .site-title {
+    font-family: $hand-font;
+    font-weight: 700;
+    letter-spacing: 0;
+  }
+
+  .site-subtitle {
+    font-family: $hand-font;
+    font-style: normal !important;
+    font-size: 1rem;
+  }
+
+  ul li.nav-item a.nav-link span {
+    font-family: $hand-font;
+    font-size: 1.05rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+  }
+}
+
+#post-list .card .card-body .card-title {
+  font-size: 1.4rem;
+}
+
+#post-list .card-wrapper {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover,
+  &:focus-within {
+    transform: translateY(-3px);
+    box-shadow: var(--card-hover-shadow, var(--card-shadow));
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+
+    &:hover,
+    &:focus-within {
+      transform: none;
+    }
+  }
+}
+
+#panel-wrapper .panel-heading {
+  font-family: $hand-font;
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+
+header .post-desc {
+  font-family: variables.$font-family-base;
+}
+
+#topbar-title {
+  font-family: $hand-font;
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+/* 浅色模式沿用首页的奶油底、棕色字和橙色点缀；深色模式保持主题默认 */
+@mixin warm-light {
+  --main-bg: #fffbf6;
+  --main-border-color: #ffe9da;
+  --text-color: #463a29;
+  --text-muted-color: #7a6a50;
+  --heading-color: #5d4e37;
+  --label-color: #6b5a42;
+  --blockquote-border-color: #ffd4b8;
+  --blockquote-text-color: #7a6a50;
+  --link-color: #a64b18;
+  --link-underline-color: #ffd4b8;
+  --btn-border-color: #ffe9da;
+  --btn-backtotop-color: #8b7a5c;
+  --btn-backtotop-border-color: #ffe0cc;
+  --checkbox-checked-color: #ff9f43;
+  --menu-highlight-bg: rgb(255 224 204 / 45%);
+  --site-title-color: #5d4e37;
+  --site-subtitle-color: #8b7a5c;
+  --sidebar-bg: #fff3e8;
+  --sidebar-border-color: #ffe0cc;
+  --sidebar-muted-color: #6b5a42;
+  --sidebar-active-color: #5d3b20;
+  --sidebar-hover-bg: rgb(255 212 184 / 45%);
+  --sidebar-btn-color: #a08c6c;
+  --avatar-border-color: #ffd4b8;
+  --topbar-bg: rgb(255 251 246 / 80%);
+  --topbar-text-color: #5d4e37;
+  --search-border-color: #ffe0cc;
+  --search-icon-color: #c9a98a;
+  --input-focus-border-color: #ffb787;
+  --post-list-text-color: #6b5a42;
+  --btn-patinator-text-color: #6b5a42;
+  --toc-highlight: #c0561f;
+  --btn-share-hover-color: #c0561f;
+  --card-hover-bg: #fff0e6;
+  --card-shadow: rgb(255 111 107 / 8%) 0 4px 12px 0, #ffe9da 0 0 0 1px;
+  --card-hover-shadow: rgb(255 111 107 / 14%) 0 10px 22px 0, #ffd4b8 0 0 0 1px;
+  --footnote-target-bg: #fff0d6;
+  --tb-odd-bg: #fffaf5;
+  --tb-border-color: #ffe9da;
+  --tag-border: #ffd4b8;
+  --tag-hover: #ffe9da;
+  --search-tag-bg: #fff5ec;
+  --categories-border: #ffe0cc;
+  --timeline-color: rgb(255 159 67 / 25%);
+  --timeline-node-bg: #ffbc76;
+  --inline-code-bg: rgb(166 75 24 / 7%);
+}
+
+:root[data-bs-theme='light'] {
+  @include warm-light;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-bs-theme]) {
+    @include warm-light;
+  }
+}

@@ -41,6 +41,27 @@ experiences:
     tone: rose
     description: 同一句话，天南地北怎么说？听见不同的乡音，发现语言的趣味。
     prompt: 听听远方的声音
+  - title: 汉字奇遇记
+    url: https://handsondad.github.io/hanverse/
+    icon: 📜
+    kind: 汉字启蒙
+    tone: blue
+    description: 看一个字从甲骨文长成今天的样子，弄懂汉字是怎么造出来的。
+    prompt: 看一个字长大
+  - title: 拼波大冒险
+    url: https://handsondad.github.io/fourier-puzzle-game/
+    icon: 🌊
+    kind: 数学游戏
+    tone: peach
+    description: 用正弦波和转圈的圆盘拼出方波、爱心和雪花，玩着认识傅里叶。
+    prompt: 拼一段波
+  - title: 认亲戚大冒险
+    url: https://handsondad.github.io/family-tree-player/
+    icon: 🌳
+    kind: 家庭称呼
+    tone: butter
+    description: 一大家子该怎么叫？玩着家族树和拜年小游戏，认清每位亲戚。
+    prompt: 认一认亲戚
 
 collections:
   - title: 实践奶爸育儿宝库
