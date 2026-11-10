@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>傅里叶的热与频谱实验室</title>
+<style>
+:root{color-scheme:light dark;--bg:#f3f7fa;--card:#fff;--ink:#172b45;--line:#c5d3df;--blue:#176786;--red:#b34039;--gray:#748899;--gold:#996500}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 system-ui,"Microsoft YaHei",sans-serif}main{max-width:920px;margin:auto;padding:20px}h1{font-size:clamp(23px,4vw,32px);line-height:1.35;margin:0 0 12px}h2{font-size:23px;margin-top:0}p{margin:10px 0}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin-top:18px}.controls{display:flex;flex-wrap:wrap;gap:12px;align-items:center}button{font:inherit;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:8px;min-height:44px;padding:7px 14px;cursor:pointer}button[aria-pressed=true]{background:var(--blue);color:white}button:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-offset:3px}input[type=range]{width:100%;margin:10px 0;min-height:28px;accent-color:var(--blue)}label{display:block;font-weight:600}.note{font-size:15px}svg{display:block;width:100%;height:auto;background:var(--card)}svg text{font-family:system-ui,"Microsoft YaHei",sans-serif;fill:var(--ink)}.axis{fill:none;stroke:var(--gray);stroke-width:1.5}.zero{stroke-dasharray:6 6}.current{fill:none;stroke:var(--blue);stroke-width:3}.original{fill:none;stroke:var(--gray);stroke-width:2;stroke-dasharray:7 5}.readout{font-variant-numeric:tabular-nums;padding:12px;border-left:4px solid var(--blue);background:var(--bg);overflow-wrap:anywhere}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}#error{background:#fff1e9;color:#8f251e;padding:16px;border:2px solid #b34039}[hidden]{display:none!important}ol{padding-left:24px}li{margin:8px 0}@media(max-width:600px){main{padding:12px}.card{padding:14px}.grid{grid-template-columns:1fr}body{font-size:16px}}@media(prefers-color-scheme:dark){:root{--bg:#121c29;--card:#1c293b;--ink:#e0eaf4;--line:#63778a;--blue:#74c9e6;--red:#ffa298;--gray:#a4b8c9;--gold:#f2ca78}button[aria-pressed=true]{color:#122030}}
+</style>
+</head>
+<body>
+<main>
+<h1>从一圈温度，到一串频率</h1>
+<p>第一实验看空间起伏怎样被热扩散抹平；第二实验对真实生成的 128 个样本做 DFT、保留或删除频率，再反变换。没有录音、联网数据或外部库。</p>
+<noscript><p class="readout">互动需要 JavaScript。静态结论：热扩散使三阶起伏比一阶更快衰减，绝热环平均温度不变；默认信号含 8 Hz 与 20 Hz 两项，12 Hz 低通保留前者。完整图解见文章。</p></noscript>
+<p id="error" role="alert" hidden></p>
+<div class="controls" aria-label="选择实验">
+<button id="heat-tab" type="button" aria-pressed="true" aria-controls="heat">实验一：热怎样变平</button>
+<button id="spectrum-tab" type="button" aria-pressed="false" aria-controls="spectrum">实验二：找出并筛选频率</button>
+</div>
+<section class="card" id="heat" aria-labelledby="heat-title">
+<h2 id="heat-title">热没消失，细碎的温差先消失</h2>
+<p class="note">周长 1 m 的均匀细环，侧面绝热、无内热源，两端是同一点。初始温度为 50 + 20 cos(2πx) + A₃ cos(6πx) ℃。扩散率是教学参数，不冒充金属实测。</p>
+<label for="heat-time">模型时间：<output id="heat-time-value">0.00</output> s</label>
+<input id="heat-time" type="range" min="0" max="10" step="0.01" value="0">
+<div class="grid">
+<div><label for="alpha">扩散率 α：<output id="alpha-value">0.010</output> m²/s</label><input id="alpha" type="range" min="0.002" max="0.020" step="0.002" value="0.010"></div>
+<div><label for="a3">三阶初始振幅：<output id="a3-value">10</output> ℃</label><input id="a3" type="range" min="0" max="20" step="1" value="10"></div>
+</div>
+<div class="controls"><button id="heat-play" type="button">播放扩散</button><button id="heat-reset" type="button">全部复位</button></div>
+<p class="note">一次演示用 8 秒呈现 10 秒模型时间，可暂停、拖动、重播。实线是当前温度，虚线是同参数的初始温度；温度不是随空间曲线弯曲的实物形状。</p>
+<svg viewBox="0 0 720 680" role="img" aria-labelledby="heat-svg-title heat-svg-desc">
+<title id="heat-svg-title">绝热环温度、温度条与模态振幅</title><desc id="heat-svg-desc">横轴是展开的环位置，0和1米连接；纵轴温度10至90摄氏度。初始虚线与当前实线同一比例。下方分别显示一阶、三阶实际振幅，平均温度保持50摄氏度。</desc>
+<text x="85" y="39" font-size="24">温度随位置变化；环展开，不是开口棒。</text>
+<path class="axis" d="M85 95V355H640"/><path class="axis zero" d="M85 225H635"/>
+<text x="32" y="112" font-size="22">90</text><text x="32" y="232" font-size="22">50</text><text x="32" y="352" font-size="22">10</text><text x="30" y="76" font-size="22">℃</text>
+<text x="80" y="386" font-size="22">0</text><text x="590" y="386" font-size="22">1 m</text>
+<path id="heat-initial" class="original"/><path id="heat-current" class="current"/>
+<g id="heat-strip"></g><text x="85" y="488" font-size="21">温度条：蓝端 10 ℃ → 红端 90 ℃</text>
+<text x="85" y="538" font-size="24">起伏振幅（℃；不包含平均温度 50）</text>
+<path class="axis" d="M85 552V628H635"/><text x="42" y="635" font-size="22">0</text>
+<rect id="a1-bar" x="170" width="100" fill="var(--blue)"/><rect id="a3-bar" x="440" width="100" fill="var(--red)"/>
+<text x="160" y="664" font-size="22">一阶：一圈 1 次</text><text x="427" y="664" font-size="22">三阶：一圈 3 次</text>
+</svg>
+<p id="heat-readout" class="readout" aria-live="off"></p>
+<ol><li>先拖到 0.5 s：三阶的细波先明显减弱，一阶的宽起伏还在。</li><li>再拖到 10 s：均温仍是 50 ℃。环没有与环境交换热，不是所有温度一起降到 0。</li><li>时间保持不变，增大 α：变化更快。把三阶振幅设为 0，单独看一阶的指数衰减。</li></ol>
+</section>
+<section class="card" id="spectrum" aria-labelledby="spectrum-title" hidden>
+<h2 id="spectrum-title">波形、频率、相位，分别保存什么？</h2>
+<p class="note">g(t) = cos(2π·8t) + ½ cos(2πf₂t + φ)。信号值无量纲；采样率 128 Hz，取 t = j/128 s，j = 0…127。记录时长按 N/fₛ = 1 s 计算，不重复采最后端点。</p>
+<div class="grid">
+<div><label for="frequency">第二项频率：<output id="frequency-value">20.0</output> Hz</label><input id="frequency" type="range" min="10" max="30" step="0.5" value="20"></div>
+<div><label for="phase">第二项相位：<output id="phase-value">0</output>°</label><input id="phase" type="range" min="0" max="180" step="5" value="0"></div>
+</div>
+<label for="cutoff">理想低通截止频率：<output id="cutoff-value">12</output> Hz</label>
+<input id="cutoff" type="range" min="2" max="64" step="1" value="12">
+<div class="controls"><button id="phase-demo" type="button">相位改成90°</button><button id="leakage-demo" type="button">试试20.5 Hz</button><button id="spectrum-reset" type="button">恢复默认</button></div>
+<svg viewBox="0 0 720 790" role="img" aria-labelledby="spectrum-svg-title spectrum-svg-desc">
+<title id="spectrum-svg-title">样本低通前后与单边DFT振幅</title><desc id="spectrum-svg-desc">上方虚线是原始128个样本的连线，实线是滤波后样本连线。下方显示0至64赫兹的单边振幅，截止线左侧保留，右侧删除；实部和虚部成对过滤以还原实信号。</desc>
+<text x="85" y="40" font-size="24">虚线：原始；实线：低通后（样本连线）。</text>
+<path class="axis" d="M85 65V385H640"/><path class="axis zero" d="M85 225H635"/>
+<text x="31" y="73" font-size="22">2</text><text x="31" y="232" font-size="22">0</text><text x="20" y="392" font-size="22">−2</text>
+<text x="80" y="421" font-size="22">0</text><text x="590" y="421" font-size="22">1 s</text>
+<path id="signal-original" class="original"/><path id="signal-filtered" class="current"/>
+<text x="85" y="480" font-size="24">单边振幅；截止线左侧保留、右侧删除。</text>
+<path class="axis" d="M85 510V710H640"/>
+<text x="27" y="710" font-size="20">0</text><text x="20" y="560" font-size="20">1</text>
+<g id="spectrum-bars"></g><path id="cutoff-line" fill="none" stroke="var(--ink)" stroke-width="2" stroke-dasharray="8 5"/>
+<text x="80" y="744" font-size="22">0</text><text x="211" y="744" font-size="22">16</text><text x="349" y="744" font-size="22">32</text><text x="486" y="744" font-size="22">48</text><text x="606" y="744" font-size="22">64 Hz</text>
+<text x="85" y="780" font-size="21">格点间距 1 Hz；0 与 64 Hz 不加倍。</text>
+</svg>
+<p id="spectrum-readout" class="readout" aria-live="off"></p>
+<ol><li>默认截止 12 Hz：保留 8 Hz，删除 20 Hz。把截止调到 64 Hz，完整反变换应回到原样本。</li><li>恢复默认后改相位：波形变了，两个峰的振幅不变。这条结论针对默认整周期频率。</li><li>试 20.5 Hz：它不落在 1 Hz 的格点上，有限记录窗引起频谱泄漏，不是突然多出了许多真实信号源。</li></ol>
+<p class="note">实际计算是直接 DFT 求和与逆 DFT，不是预画两根柱子，也不是借机声称实现 FFT。单边振幅 = 2|Xₖ|/N；直流与偶数 N 的奈奎斯特项除外。滤波保留复系数及其共轭对；这里是对有限记录作周期解释的理想硬截止，不是实际设备的完整滤波器。</p>
+</section>
+<p class="note">减少动态效果模式禁用连续播放，按钮改为每次前进 1 秒；静态曲线、数值与手动控制仍然可读。页面默认不自动播放，隐藏页面或切换实验会暂停。</p>
+</main>
+<script src="fourier-model.js"></script>
+<script>
+"use strict";
+(() => {
+  const $=id=>document.getElementById(id),ns="http://www.w3.org/2000/svg";
+  const reduced=matchMedia("(prefers-reduced-motion: reduce)");
+  let running=false,raf=0,last=null,modelTime=0;
+  const linePath=points=>points.map((p,i)=>(i?"L":"M")+p.join(",")).join(" ");
+  function node(tag,attrs){
+    const e=document.createElementNS(ns,tag);
+    for(const [k,v] of Object.entries(attrs))e.setAttribute(k,v);
+    return e;
+  }
+  function stop(){running=false;cancelAnimationFrame(raf);last=null;$("heat-play").textContent=reduced.matches?"前进1秒（减少动态）":"播放扩散";}
+  function fail(error){
+    stop();$("error").hidden=false;$("error").textContent="实验无法继续："+error.message;console.error(error);
+    document.querySelectorAll("button,input").forEach(e=>{e.disabled=true;});
+  }
+  function drawHeat(){
+    const t=+$("heat-time").value,alpha=+$("alpha").value,a3=+$("a3").value,m=FourierModel;
+    $("heat-time-value").textContent=t.toFixed(2);$("alpha-value").textContent=alpha.toFixed(3);$("a3-value").textContent=a3;
+    const curve=time=>linePath(Array.from({length:513},(_,j)=>[85+550*j/512,225-3*(m.heat(j/512,time,alpha,a3)-50)]));
+    $("heat-initial").setAttribute("d",curve(0));$("heat-current").setAttribute("d",curve(t));
+    $("heat-strip").replaceChildren(...Array.from({length:64},(_,j)=>{
+      const temp=m.heat((j+.5)/64,t,alpha,a3),hue=220*(90-temp)/80;
+      return node("rect",{x:85+550*j/64,y:428,width:550/64+.1,height:28,fill:`hsl(${hue} 66% 52%)`});
+    }));
+    const amplitudes=m.heatAmplitudes(t,alpha,a3);
+    for(const [id,a] of [["a1",amplitudes[0]],["a3",amplitudes[1]]]){
+      $(id+"-bar").setAttribute("y",628-3*a);$(id+"-bar").setAttribute("height",3*a);
+    }
+    const mean=Array.from({length:256},(_,j)=>m.heat(j/256,t,alpha,a3)).reduce((s,v)=>s+v,0)/256;
+    $("heat-readout").textContent=`模型时间 ${t.toFixed(2)} s；均温 ${mean.toFixed(3)} ℃。一阶振幅 ${amplitudes[0].toFixed(4)} ℃；三阶振幅 ${amplitudes[1].toFixed(4)} ℃。温差均方值 ${((amplitudes[0]**2+amplitudes[1]**2)/2).toFixed(4)} ℃²（不是总热量）。`;
+  }
+  function drawSpectrum(){
+    const f=+$("frequency").value,phase=+$("phase").value,cutoff=+$("cutoff").value,m=FourierModel;
+    const a=m.analyze(f,phase,cutoff);
+    $("frequency-value").textContent=f.toFixed(1);$("phase-value").textContent=phase;$("cutoff-value").textContent=cutoff;
+    for(const [id,values] of [["original",a.input],["filtered",a.filtered]])
+      $("signal-"+id).setAttribute("d",linePath(values.map((v,j)=>[85+550*j/m.FS,225-80*v])));
+    $("spectrum-bars").replaceChildren(...a.amplitudes.map((value,k)=>{
+      const rect=node("rect",{x:85+550*k/64-2,y:710-150*value,width:4,height:150*value,
+        fill:k<=cutoff?"var(--blue)":"none",stroke:k<=cutoff?"var(--blue)":"var(--gray)","stroke-width":1,
+        ...(k>cutoff?{"stroke-dasharray":"3 2"}:{})});
+      const title=node("title",{});title.textContent=`${k} Hz：${value.toFixed(6)}`;rect.append(title);return rect;
+    }));
+    const x=85+550*cutoff/64;$("cutoff-line").setAttribute("d",`M${x} 510V710`);
+    const peaks=a.amplitudes.map((v,k)=>({v,k})).sort((a,b)=>b.v-a.v).slice(0,2);
+    $("spectrum-readout").textContent=`两个最高格点：${peaks.map(p=>`${p.k} Hz 振幅 ${p.v.toFixed(4)}`).join("；")}。完整反变换最大样本误差 ${a.maxError.toExponential(2)}；低通相对原样本的均方根差 ${a.rms.toFixed(6)}。${Number.isInteger(f)?"第二项在 DFT 格点上。":"第二项不在 DFT 格点上，存在记录窗引起的泄漏。"}`;
+  }
+  function animate(now){
+    if(!running)return;
+    if(last===null)last=now;
+    modelTime=Math.min(10,modelTime+(now-last)/800);
+    last=now;$("heat-time").value=modelTime.toFixed(2);drawHeat();
+    if(modelTime>=10)stop();else raf=requestAnimationFrame(animate);
+  }
+  function resetHeat(){stop();$("heat-time").value=0;$("alpha").value=.01;$("a3").value=10;drawHeat();}
+  function resetSpectrum(){$("frequency").value=20;$("phase").value=0;$("cutoff").value=12;drawSpectrum();}
+  try{
+    if(!globalThis.FourierModel)throw new Error("本地模型未载入，请保留同目录的 fourier-model.js。");
+    drawHeat();drawSpectrum();stop();
+    for(const id of ["heat-time","alpha","a3"])$(id).addEventListener("input",()=>{stop();drawHeat();});
+    for(const id of ["frequency","phase","cutoff"])$(id).addEventListener("input",drawSpectrum);
+    $("heat-play").addEventListener("click",()=>{
+      if(reduced.matches){$("heat-time").value=+$("heat-time").value>=10?0:Math.min(10,+$("heat-time").value+1);drawHeat();return;}
+      if(running){stop();return;}
+      if(+$("heat-time").value>=10){$("heat-time").value=0;drawHeat();}
+      running=true;last=null;modelTime=+$("heat-time").value;$("heat-play").textContent="暂停";raf=requestAnimationFrame(animate);
+    });
+    $("heat-reset").addEventListener("click",resetHeat);
+    $("spectrum-reset").addEventListener("click",resetSpectrum);
+    $("phase-demo").addEventListener("click",()=>{$("phase").value=90;drawSpectrum();});
+    $("leakage-demo").addEventListener("click",()=>{$("frequency").value=20.5;drawSpectrum();});
+    for(const which of ["heat","spectrum"])$(which+"-tab").addEventListener("click",()=>{
+      stop();for(const target of ["heat","spectrum"]){$(target).hidden=target!==which;$(target+"-tab").setAttribute("aria-pressed",String(target===which));}
+    });
+    reduced.addEventListener("change",stop);
+    document.addEventListener("visibilitychange",()=>{if(document.hidden)stop();});
+    window.addEventListener("error",event=>fail(event.error||new Error(event.message)));
+  }catch(error){fail(error);}
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>蒙日的空间与图纸实验室</title>
+<style>
+:root{color-scheme:light dark;--bg:#f3f7fa;--card:#fff;--ink:#172b45;--line:#c5d3df;--blue:#176786;--red:#b34039;--gold:#996500;--face0:#d8e6ef;--face1:#b7cfdf;--face2:#e4eff5;--face3:#c9dde9}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 system-ui,"Microsoft YaHei",sans-serif}main{max-width:920px;margin:auto;padding:20px}h1{font-size:clamp(23px,4vw,32px);line-height:1.35;margin:0 0 12px}h2{font-size:23px;margin-top:0}p{margin:10px 0}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin-top:18px}.controls{display:flex;flex-wrap:wrap;gap:12px;align-items:center}button,select{font:inherit;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:8px;min-height:44px;padding:7px 14px;cursor:pointer}button[aria-pressed=true]{background:var(--blue);color:white}button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-offset:3px}input[type=range]{width:100%;margin:10px 0;min-height:28px;accent-color:var(--blue)}label{display:block;font-weight:600}.note{font-size:15px}svg{display:block;width:100%;height:auto;background:var(--card)}svg text{font-family:system-ui,"Microsoft YaHei",sans-serif;fill:var(--ink)}.edge{fill:none;stroke:var(--ink);stroke-width:3;stroke-linejoin:round}.guide{fill:none;stroke:var(--line);stroke-width:1.5;stroke-dasharray:6 6}.axis{stroke:var(--blue);stroke-width:1.5;stroke-dasharray:15 5 2 5}.readout{font-variant-numeric:tabular-nums;padding:12px;border-left:4px solid var(--blue);background:var(--bg);overflow-wrap:anywhere}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}#error{background:#fff1e9;color:#8f251e;padding:16px;border:2px solid #b34039}[hidden]{display:none!important}.point{fill:var(--red);stroke:var(--card);stroke-width:2}.point-label{font-size:22px;fill:var(--red)}ol{padding-left:24px}li{margin:8px 0}@media(max-width:600px){main{padding:12px}.card{padding:14px}.grid{grid-template-columns:1fr}body{font-size:16px}}@media(prefers-color-scheme:dark){:root{--bg:#121c29;--card:#1c293b;--ink:#e0eaf4;--line:#63778a;--blue:#74c9e6;--red:#ffa298;--gold:#f2ca78;--face0:#415d73;--face1:#2a475f;--face2:#56738a;--face3:#3d5b72}button[aria-pressed=true]{color:#122030}}
+</style>
+</head>
+<body>
+<main>
+<h1>同一个零件，怎样变成纸上的几条线？</h1>
+<p>改变台阶深度、选择一个角点，或移动剖切位置。所有投影都由同一组坐标计算；这是教学模型，<strong>不是可直接投产的机械图纸</strong>。</p>
+<noscript><p class="readout">互动需要 JavaScript。静态结论：台阶深度变化时，主视图可以不变，俯视和左视会变。轴套在不同位置被切开，断面也不同。返回文章可阅读完整静态图解。</p></noscript>
+<p id="error" role="alert" hidden></p>
+<div class="controls" aria-label="选择实验">
+<button id="projection-tab" type="button" aria-pressed="true" aria-controls="projection">实验一：空间与三视图</button>
+<button id="section-tab" type="button" aria-pressed="false" aria-controls="section">实验二：切到孔了吗？</button>
+</div>
+<section class="card" id="projection" aria-labelledby="projection-title">
+<h2 id="projection-title">转动的是观察方向，不是三张图的规则</h2>
+<p class="note">零件总长 60、总深 40、总高 36，底厚 12 mm；高台位于后部。x 向右、y 向后、z 向上。下方固定用第一角画法：俯视在下，左视在右。</p>
+<label for="depth">高台深度：<output id="depth-value">20</output> mm</label>
+<input id="depth" type="range" min="10" max="30" step="1" value="20">
+<div class="grid">
+<div><label for="yaw">方位角：<output id="yaw-value">−55</output>°</label><input id="yaw" type="range" min="-180" max="180" step="1" value="-55"></div>
+<div><label for="elevation">仰角：<output id="elevation-value">30</output>°</label><input id="elevation" type="range" min="0" max="90" step="1" value="30"></div>
+</div>
+<div class="controls">
+<button id="spatial-view" type="button">斜看空间</button><button id="front-view" type="button">正面看</button><button id="top-view" type="button">从上看</button><button id="left-view" type="button">从左看</button><button id="rotate" type="button">转一圈</button><button id="reset" type="button">全部复位</button>
+</div>
+<label for="vertex">选择角点 P</label><select id="vertex"></select>
+<svg viewBox="0 0 720 490" role="img" aria-labelledby="scene-title scene-desc">
+<title id="scene-title">正交相机中的三维台阶块</title>
+<desc id="scene-desc">真实坐标经过正交相机投影，背向相机的面不绘制。P是透显辅助定位标记，可能在背面；不表示可见轮廓。没有透视近大远小。</desc>
+<g id="faces"></g><circle id="space-p" class="point" r="7"/><text id="space-label" class="point-label">P</text>
+<text x="30" y="469" font-size="21">P 是透显定位标记；朝向变化不改变零件。</text>
+</svg>
+<svg viewBox="0 0 720 550" role="img" aria-labelledby="views-title views-desc">
+<title id="views-title">固定第一角画法的主俯左三视图</title>
+<desc id="views-desc">主视在左上，俯视在其下，左视在右上。同一个红色P在三张视图中对应；灰色虚线只作投影辅助，不是隐藏棱。</desc>
+<text x="70" y="45" font-size="25">主视：x、z</text><text x="450" y="45" font-size="25">左视：y、z</text><text x="70" y="300" font-size="25">俯视：x、y</text>
+<path class="guide" d="M70 225V265M70 310V323M310 225V265M310 310V323M317 76H443M317 172H443M317 220H443"/>
+<path id="front-path" class="edge"/><path id="left-path" class="edge"/><path id="top-path" class="edge"/>
+<circle id="front-p" class="point" r="7"/><text id="front-label" class="point-label">P</text>
+<circle id="left-p" class="point" r="7"/><text id="left-label" class="point-label">P</text>
+<circle id="top-p" class="point" r="7"/><text id="top-label" class="point-label">P</text>
+<text x="411" y="371" font-size="23">长对正 · 高平齐</text><text x="411" y="413" font-size="23">俯、左的深度相等</text><text x="411" y="455" font-size="21">虚线是投影辅助线。</text>
+<text x="30" y="532" font-size="20">各图同一比例；不是每条纸上线段都代表真实棱。</text>
+</svg>
+<p id="point-readout" class="readout" aria-live="off"></p>
+<ol><li>把高台深度从 20 改为 10：主视图不变，另外两张图变了。</li><li>选“正面看”，把空间图与主视图对照；再试“从上看”和“从左看”。空间图和工程视图的显示比例不同，不直接比较屏幕像素长度。</li><li>选择不同 P：有的角点在一张投影中重合，在另一张中才能分开。</li></ol>
+<p class="note">所有空间画面均为正交投影，没有透视缩小。俯视图中后部在上；左视图中后部在左。三视图随零件变化，但不会跟随相机任意旋转。</p>
+</section>
+<section class="card" id="section" aria-labelledby="section-title" hidden>
+<h2 id="section-title">同一根轴套，不是每一刀都经过孔</h2>
+<p>轴套长 40、外径 30、贯通孔径 16 mm，轴线沿 x。剖切平面 y = d 与轴线平行。左图看端面，右图只画切平面与材料相交的<strong>断面</strong>，不补画后方轮廓。</p>
+<label for="cut">平面距轴线：<output id="cut-value">0.0</output> mm</label>
+<input id="cut" type="range" min="-14" max="14" step="0.5" value="0">
+<div class="controls"><button id="center-cut" type="button">通过轴线</button><button id="miss-hole" type="button">偏到孔外（10 mm）</button></div>
+<svg viewBox="0 0 720 430" role="img" aria-labelledby="cut-title cut-desc">
+<title id="cut-title">圆环端面上的剖切位置与轴套材料断面</title><desc id="cut-desc">端面红色竖线是切平面位置。右图斜线为切到的材料，孔未切到时不留出中间空白。图中断面按实际弦长计算，不是让整个零件变形。</desc>
+<defs><pattern id="material" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M-3 3L3 -3M0 12L12 0M9 15L15 9" fill="none" stroke="var(--blue)" stroke-width="1"/></pattern></defs>
+<text x="55" y="43" font-size="25">端面：看 y、z</text><text x="365" y="43" font-size="25">断面：看 x、z</text>
+<circle cx="170" cy="210" r="120" class="edge"/><circle cx="170" cy="210" r="64" class="edge"/>
+<path class="axis" d="M32 210H310M170 68V350"/>
+<path id="cut-plane" fill="none" stroke="var(--red)" stroke-width="3" stroke-dasharray="17 5 3 5"/>
+<text id="cut-a" class="point-label">A</text><text id="cut-b" class="point-label">A</text>
+<g id="cut-material"></g><path class="axis" d="M348 210H705"/>
+<text x="385" y="380" font-size="21">斜线＝材料；空白＝未切到材料</text>
+</svg>
+<p id="section-readout" class="readout" aria-live="off"></p>
+<p class="note">几何计算：外半弦高 √(15² − d²)；|d| &lt; 8 时，内半弦高为 √(8² − d²)，否则没有孔的截线。切面经过轴线时断面材料面积为 40 × (30 − 16) = 560 mm²。平面移到 10 mm 时，虽然原零件仍有孔，这一刀却切不到它。</p>
+</section>
+<p class="note">默认不自动播放；“转一圈”用 6 秒转动观察方向一次并停下，可暂停、重播。调参数、切换视角或实验会暂停。减少动态效果模式下禁用连续转动，按钮改为每次转动 90°，也可用滑块和视角按钮逐步观察。无外部库或追踪，不请求外部数据。</p>
+</main>
+<script src="monge-model.js"></script>
+<script>
+"use strict";
+(() => {
+  const $=id=>document.getElementById(id),ns="http://www.w3.org/2000/svg";
+  const reducedMotion=matchMedia("(prefers-reduced-motion: reduce)");
+  let running=false,raf=0,last=null,elapsed=0,startYaw=0;
+  const wrap=value=>((value+180)%360+360)%360-180;
+  const poly=points=>points.map((p,i)=>(i?"L":"M")+p.join(",")).join(" ")+"Z";
+  function stop(){running=false;cancelAnimationFrame(raf);last=null;$("rotate").textContent=reducedMotion.matches?"转动90°（减少动态）":"转一圈";}
+  function fail(error){
+    stop();$("error").hidden=false;$("error").textContent="实验无法继续："+error.message;console.error(error);
+    document.querySelectorAll("button,input,select").forEach(e=>{e.disabled=true;});
+  }
+  function svgElement(tag,attributes){
+    const node=document.createElementNS(ns,tag);
+    for(const [key,value] of Object.entries(attributes))node.setAttribute(key,value);
+    return node;
+  }
+  function mark(id,xy){
+    $(id+"-p").setAttribute("cx",xy[0]);$(id+"-p").setAttribute("cy",xy[1]);
+    $(id+"-label").setAttribute("x",xy[0]+11);$(id+"-label").setAttribute("y",xy[1]-10);
+  }
+  function rebuildOptions(){
+    const selected=$("vertex").value||"9",g=MongeModel.geometry(Number($("depth").value));
+    $("vertex").replaceChildren(...g.vertices.map((p,i)=>{
+      const option=document.createElement("option");option.value=i;option.textContent=`P${i} = (${p.join(", ")})`;return option;
+    }));
+    $("vertex").value=selected;
+  }
+  function draw(){
+    const depth=Number($("depth").value),yaw=Number($("yaw").value),el=Number($("elevation").value);
+    const g=MongeModel.geometry(depth),c=MongeModel.camera(yaw,el),selected=Number($("vertex").value),p=g.vertices[selected];
+    $("depth-value").textContent=depth;$("yaw-value").textContent=yaw;$("elevation-value").textContent=el;
+    const visible=g.faces.filter(f=>MongeModel.dot(f.normal,c.normal)>1e-8);
+    const distance=f=>f.ids.reduce((s,i)=>s+MongeModel.dot(g.vertices[i],c.normal),0)/f.ids.length;
+    visible.sort((a,b)=>distance(a)-distance(b));
+    $("faces").replaceChildren(...visible.map(f=>svgElement("path",{
+      d:poly(f.ids.map(i=>{const [x,y]=MongeModel.project(g.vertices[i],yaw,el);return [360+x*5,230+y*5];})),
+      fill:`var(--face${f.tone})`,stroke:"var(--ink)","stroke-width":2.5,"stroke-linejoin":"round"
+    })));
+    const [sx,sy]=MongeModel.project(p,yaw,el);mark("space",[360+sx*5,230+sy*5]);
+    $("front-path").setAttribute("d","M70 220H310V76H70ZM70 172H310");
+    $("left-path").setAttribute("d",poly(MongeModel.profile(depth).map(([y,z])=>[450+4*(40-y),220-4*z])));
+    $("top-path").setAttribute("d",`M70 330H310V490H70ZM70 ${330+4*depth}H310`);
+    mark("front",[70+4*p[0],220-4*p[2]]);mark("top",[70+4*p[0],330+4*(40-p[1])]);mark("left",[450+4*(40-p[1]),220-4*p[2]]);
+    const v=MongeModel.views(p);
+    $("point-readout").textContent=`P${selected} = (${p.join(", ")}) mm。主视 (x,z) = (${v.front.join(", ")})；俯视 (x,y) = (${v.top.join(", ")})；左视 (y,z) = (${v.left.join(", ")})。体积 ${g.volume} mm³。`;
+  }
+  function drawSection(){
+    const d=Number($("cut").value),s=MongeModel.section(d);
+    $("cut-value").textContent=d.toFixed(1);
+    const x=170+8*d;
+    $("cut-plane").setAttribute("d",`M${x} 66V354`);
+    for(const [id,y] of [["cut-a",61],["cut-b",380]]){
+      $(id).setAttribute("x",x-18);$(id).setAttribute("y",y);
+    }
+    const bands=s.hasHole?[[s.inner,s.outer],[-s.outer,-s.inner]]:[[-s.outer,s.outer]];
+    const nodes=bands.map(([lo,hi])=>svgElement("rect",{
+      x:365,y:210-8*hi,width:320,height:8*(hi-lo),fill:"url(#material)",stroke:"var(--ink)","stroke-width":3
+    }));
+    $("cut-material").replaceChildren(...nodes);
+    $("section-readout").textContent=`d = ${d.toFixed(1)} mm；${s.hasHole?"这一刀经过孔，断面分成两条材料带。":"这一刀没有切入孔，断面是一整块材料。"} 外弦总高 ${(2*s.outer).toFixed(3)} mm；孔截线总高 ${(2*s.inner).toFixed(3)} mm；材料断面面积 ${s.area.toFixed(3)} mm²。`;
+  }
+  function preset(yaw,el){stop();$("yaw").value=yaw;$("elevation").value=el;draw();}
+  function animate(now){
+    if(!running)return;
+    if(last===null)last=now;
+    elapsed+=Math.min(now-last,100);last=now;
+    const fraction=Math.min(elapsed/6000,1);
+    $("yaw").value=Math.round(wrap(startYaw+360*fraction));draw();
+    if(fraction===1)stop();else raf=requestAnimationFrame(animate);
+  }
+  try{
+    if(!globalThis.MongeModel)throw new Error("本地模型未载入，请保留同目录的 monge-model.js。");
+    rebuildOptions();draw();drawSection();stop();
+    for(const id of ["depth","yaw","elevation","vertex"])$(id).addEventListener("input",()=>{
+      stop();if(id==="depth")rebuildOptions();draw();
+    });
+    for(const [id,yaw,el] of [["spatial-view",-55,30],["front-view",-90,0],["top-view",-90,90],["left-view",180,0]])
+      $(id).addEventListener("click",()=>preset(yaw,el));
+    $("rotate").addEventListener("click",()=>{
+      if(reducedMotion.matches){preset(wrap(Number($("yaw").value)+90),Number($("elevation").value));return;}
+      if(running){stop();return;}
+      running=true;elapsed=0;last=null;startYaw=Number($("yaw").value);$("rotate").textContent="暂停";raf=requestAnimationFrame(animate);
+    });
+    $("reset").addEventListener("click",()=>{stop();$("depth").value=20;$("vertex").value="9";rebuildOptions();preset(-55,30);});
+    for(const which of ["projection","section"])$(which+"-tab").addEventListener("click",()=>{
+      stop();for(const target of ["projection","section"]){$(target).hidden=target!==which;$(target+"-tab").setAttribute("aria-pressed",String(target===which));}
+    });
+    $("cut").addEventListener("input",drawSection);
+    $("center-cut").addEventListener("click",()=>{$("cut").value=0;drawSection();});
+    $("miss-hole").addEventListener("click",()=>{$("cut").value=10;drawSection();});
+    document.addEventListener("visibilitychange",()=>{if(document.hidden)stop();});
+    reducedMotion.addEventListener("change",stop);
+  }catch(error){fail(error);}
+})();
+</script>
+</body>
+</html>

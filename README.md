@@ -46,6 +46,9 @@ Thank you for reading my blog. I will share more about becoming a hands-on dad a
 * 悬链线文章的九幅原创图可用 `python tools/generate_catenary_visuals.py` 重新生成；脚本校验链条静力平衡、等弧长取点与斜率、双曲余弦、抛物线近似、索力和教学温升模型。三幅教学动画展示受力、链段累积与温升弧垂，全跨和局部放大同步，播放一次并响应减少动态效果，不可作为工程设计或安全距离依据。
 * 分析力学文章的八幅原创图可用 `python tools/generate_analytical_mechanics_visuals.py` 重新生成；脚本核对非线性单摆周期与能量、关键帧插值、约束几何、驻定作用量的非极小反例、谐振相图和轨道有效势能。三幅短动画分别同步单摆与能量、强调候选曲线、同步直线运动与相空间，播放一次并支持减少动态效果。
 * 变分法文章的八幅原创图可用 `python tools/generate_variations_visuals.py` 重新生成；脚本核对泛函评分与弧长、第一变分、局部扰动积分、边界几何、折射时间和角度、链长与自由落体作用量。一次短演示只改变候选函数家族，不模拟真实运动，保留全部静态比较并支持减少动态效果。
+* 拉普拉斯与天体力学文章的六幅原创图可用 `python tools/generate_laplace_visuals.py` 重新生成；脚本核对三体模型、步长收敛、质心、慢相位与真空引力势。`assets/interactive/laplace-lab.html` 提供可暂停、重播、调参数的三体与慢拍两个实验，默认不自动播放，无第三方依赖；`node tools/check_laplace_model.cjs` 检查实际使用的 JavaScript 模型。模型采用人造初值，不是精密星历或长期稳定性证明。
+* 蒙日与机械制图文章的八幅原创图可用 `python tools/generate_monge_visuals.py` 重新生成；脚本核对正投影、台阶尺寸、真长、轴套断面与间隙区间。`assets/interactive/monge-lab.html` 可旋转相机、对照同一角点的三视图、改变台阶与剖切位置；`node tools/check_monge_model.cjs` 检查模型拓扑与几何。默认不自动播放，静态图独立可读；教学图不是完整制造文件。
+* 傅里叶文章的八幅原创图可用 `python tools/generate_fourier_visuals.py` 生成；`assets/interactive/fourier-lab.html` 提供绝热环热扩散动画和实际 DFT／低通／逆变换实验。`node tools/check_fourier_model.cjs` 核对热方程、周期性、均温守恒、Parseval 关系、幅相、单边归一化、泄漏与混叠。默认不自动播放，减少动态效果时改为分步；热参数为教学设定，不是材料实测，直接 DFT 不冒称 FFT。
 * 在 `_posts` 目录下添加 Markdown 文件，参考👉[Jekyll Posts 使用](https://jekyllrb.com/docs/posts/)
 * 使用`构建本地测试环境`中的内容进行本地测试
 * [`mathjax` 加速地址](https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML)

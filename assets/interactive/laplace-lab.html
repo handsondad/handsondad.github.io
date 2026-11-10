@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>拉普拉斯的天体力学小实验</title>
+<style>
+:root{color-scheme:light dark;--bg:#f3f7fa;--card:#fff;--ink:#172b45;--line:#c5d3df;--blue:#176786;--red:#b34039;--gold:#996500}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 system-ui,"Microsoft YaHei",sans-serif}main{max-width:920px;margin:auto;padding:20px}h1{font-size:clamp(23px,4vw,32px);line-height:1.35;margin:0 0 12px}h2{font-size:23px;margin-top:0}p{margin:10px 0}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin-top:18px}.tabs,.controls{display:flex;flex-wrap:wrap;gap:12px;align-items:center}button,select{font:inherit;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:8px;min-height:44px;padding:7px 14px;cursor:pointer}button[aria-pressed=true]{background:var(--blue);color:white}button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-offset:3px}input[type=range]{width:100%;margin:12px 0;min-height:28px;accent-color:var(--blue)}label{display:block;font-weight:600}.note{font-size:15px}.blue{color:var(--blue)}.red{color:var(--red)}.gold{color:var(--gold)}svg{display:block;width:100%;height:auto;background:var(--card)}svg text{font-family:system-ui,"Microsoft YaHei",sans-serif;fill:var(--ink)}.axis{stroke:var(--line);stroke-width:1.5}.orbit{fill:none;stroke-width:2}.dash{stroke-dasharray:6 6}.readout{font-variant-numeric:tabular-nums;padding:12px;border-left:4px solid var(--blue);background:var(--bg);overflow-wrap:anywhere}#error{background:#fff1e9;color:#8f251e;padding:16px;border:2px solid #b34039}#error[hidden],[hidden]{display:none!important}.split{display:grid;grid-template-columns:1fr 1fr;gap:18px}.explain{margin:16px 0 0;padding-left:23px}.explain li{margin:8px 0}@media(max-width:600px){main{padding:12px}.card{padding:14px}.split{grid-template-columns:1fr}body{font-size:16px}}@media(prefers-color-scheme:dark){:root{--bg:#121c29;--card:#1c293b;--ink:#e0eaf4;--line:#52677b;--blue:#74c9e6;--red:#ffa298;--gold:#f2ca78}button[aria-pressed=true]{color:#122030}}
+</style>
+</head>
+<body>
+<main>
+<h1>把太阳系的“小偏差”拨大一点</h1>
+<p>两个原创教学实验：一个真的积分引力方程，一个只研究节拍。<strong>它们都不是当前行星位置，也不能预测太阳系的最终命运。</strong></p>
+<noscript><p class="readout">互动需要 JavaScript。静态结论：行星相互引力会使独立二体轨道发生偏差；近整数比的频率会产生慢相位。请返回文章阅读完整静态图解。</p></noscript>
+<p id="error" role="alert" hidden></p>
+<div class="tabs" aria-label="选择实验">
+<button id="gravity-tab" type="button" aria-pressed="true" aria-controls="gravity">实验一：互相拉扯</button>
+<button id="beat-tab" type="button" aria-pressed="false" aria-controls="beat">实验二：慢节拍</button>
+</div>
+<section class="card" id="gravity" aria-labelledby="gravity-title">
+<h2 id="gravity-title">不是把两条圆圈画动就算“模拟”</h2>
+<p class="note">太阳、木星、土星的三体牛顿模型；共面、人工近圆初值，太阳也参与运动。无其他行星、相对论、碰撞或潮汐。画面以太阳为移动原点，计算在质心惯性系。</p>
+<div class="controls"><label for="mass">两颗行星的质量</label><select id="mass"><option value="1">原数量级 ×1</option><option value="5">教学放大 ×5</option><option value="10">教学放大 ×10</option></select><button id="gravity-play" type="button">播放 120 年</button><button id="gravity-reset" type="button">回到起点</button></div>
+<label for="gravity-time">时间：<output id="gravity-year">0.0</output> 年</label>
+<input id="gravity-time" type="range" min="0" max="240" step="1" value="0">
+<div class="split">
+<div>
+<svg viewBox="0 0 420 450" role="img" aria-labelledby="orbit-title orbit-desc">
+<title id="orbit-title">三体模型与独立二体基线的日心投影</title>
+<desc id="orbit-desc">实心圆是三体积分位置，空心圆是忽略另一个行星的独立二体位置；虚圆是基线轨道。距离按相同尺度，天体大小夸大。</desc>
+<circle class="orbit dash" cx="210" cy="210" r="93.65" stroke="var(--blue)"/>
+<circle class="orbit dash" cx="210" cy="210" r="171.66" stroke="var(--red)"/>
+<path class="axis" d="M25 210H395M210 25V395"/>
+<path id="j-trail" class="orbit" stroke="var(--blue)"/><path id="s-trail" class="orbit" stroke="var(--red)"/>
+<circle cx="210" cy="210" r="9" fill="var(--gold)"/>
+<circle id="j-ref" r="8" fill="none" stroke="var(--blue)" stroke-width="2"/><circle id="s-ref" r="8" fill="none" stroke="var(--red)" stroke-width="2"/>
+<circle id="j-dot" r="5" fill="var(--blue)"/><circle id="s-dot" r="5" fill="var(--red)"/>
+<text id="j-label" font-size="17">J</text><text id="s-label" font-size="17">S</text>
+<text x="20" y="431" font-size="17">太阳在中心；天体大小不按比例</text>
+</svg>
+</div>
+<div>
+<svg viewBox="0 0 420 450" role="img" aria-labelledby="res-title res-desc">
+<title id="res-title">木星方向相对独立二体基线的偏差</title>
+<desc id="res-desc">横轴零至一百二十年。纵轴角度，随质量档位重新定标；请读取刻度而不只看线高。</desc>
+<text x="55" y="30" font-size="18">木星方向偏差 / 度</text>
+<path class="axis" d="M58 60V355H393"/>
+<path id="zero-axis" class="axis"/>
+<path id="res-path" fill="none" stroke="var(--blue)" stroke-width="2.5"/>
+<circle id="res-dot" r="6" fill="var(--gold)"/>
+<text id="res-top" x="48" y="66" text-anchor="end" font-size="16"/>
+<text id="res-bottom" x="48" y="355" text-anchor="end" font-size="16"/>
+<text x="58" y="387" text-anchor="middle" font-size="16">0</text><text x="218" y="387" text-anchor="middle" font-size="16">60</text><text x="378" y="387" text-anchor="middle" font-size="16">120</text>
+<text x="277" y="424" font-size="17">时间 / 年</text>
+</svg>
+</div>
+</div>
+<p class="note"><span class="blue">蓝：木星 J</span>；<span class="red">红：土星 S</span>。实心＝三体；空心＝同初始相对位置与速度的独立二体。偏差图<strong>随档位自动定标</strong>，不是实测残差。</p>
+<p class="readout" id="gravity-readout" aria-live="off"></p>
+<ol class="explain"><li>先拖到 120 年：轨道看着几乎没变，角度读数却不为零。</li><li>把质量改成 ×10，再拖到同一时刻；注意纵轴刻度也变了。</li><li>这说明小作用可以累积，不说明偏差会永远按这个趋势增长。</li></ol>
+<details><summary>模型、单位与数值方法</summary><p class="note">长度 au、时间儒略年、质量太阳质量。GM☉ 和行星质量比取自 JPL DE440 参数页；初始日心半径 5.202887 au、9.53667594 au，夹角 60°，分别赋予相应二体圆轨道的切向速度，再转换到质心系。放大质量时重新生成相应圆轨道初速，因此不同档位不是只改一个力项的受控实验。速度 Verlet 步长 0.0025 年，每 0.5 年存一帧；画面用存储帧，不伪造中间积分值。显示的能量相对误差是在这些采样时刻的最大值，不是严格误差界；程序也经过减半步长的收敛对照。能量守恒良好不等于轨道误差为零。有限时段教学模型不复现九百年的真实大不等式。</p></details>
+</section>
+<section class="card" id="beat" aria-labelledby="beat-title" hidden>
+<h2 id="beat-title">接近 5∶2，为什么会出现几百年的慢拍？</h2>
+<p>这里只画 <strong>cos(2λJ − 5λS)</strong>：两颗“匀速角度钟”组合后的单位幅度信号。<strong>不积分引力，不计算真实偏差振幅。</strong></p>
+<label for="period">土星钟的周期：<output id="saturn-period"></output> 年</label>
+<input id="period" type="range" min="29.30" max="29.80" step="0.001" value="29.457">
+<div class="controls"><button id="exact" type="button">设为恰好 5∶2</button><button id="beat-default" type="button">恢复近似木土值</button><button id="beat-play" type="button">播放 1800 年</button><button id="beat-reset" type="button">回到起点</button></div>
+<label for="beat-time">模型时间：<output id="beat-year">0</output> 年</label>
+<input id="beat-time" type="range" min="0" max="1800" step="1" value="0">
+<svg viewBox="0 0 720 330" role="img" aria-labelledby="beat-title-svg beat-desc">
+<title id="beat-title-svg">单位振幅慢相位的余弦曲线</title><desc id="beat-desc">时间范围零至一千八百年，纵轴负一至正一；恰好五比二时相位不变，图为水平线，不是无限振幅。</desc>
+<path class="axis" d="M65 45V265M65 155H685"/>
+<text x="50" y="62" text-anchor="end" font-size="22">+1</text><text x="50" y="162" text-anchor="end" font-size="22">0</text><text x="50" y="262" text-anchor="end" font-size="22">−1</text>
+<path id="beat-path" fill="none" stroke="var(--blue)" stroke-width="3"/><circle id="beat-point" r="8" fill="var(--red)"/>
+<text x="65" y="305" text-anchor="middle" font-size="22">0</text><text x="365" y="305" text-anchor="middle" font-size="22">900</text><text x="665" y="305" text-anchor="middle" font-size="22">1800 年</text>
+</svg>
+<p class="readout" id="beat-readout" aria-live="off"></p>
+<p class="note">默认冻结的平均角速度取自 JPL 近似元素长时段表在参考历元处的速率；作为节拍素材，不把表外推成真实星历。木星周期约 11.862 年。拖动土星周期，越靠近 2.5 倍木星周期，慢拍越长。恰好相等时，这个角度组合冻结；真实共振系统仍需引力与非线性分析，不能说行星因此停止运动。</p>
+</section>
+<p class="note">默认不自动播放；按钮播放一遍后停止，切换实验、调参数或手动拖时间均暂停。系统开启“减少动态效果”时同样不自动播放，仍可逐帧拖动；显式按播放才启动。不请求外部数据，无第三方脚本或追踪。</p>
+</main>
+<script src="laplace-model.js"></script>
+<script>
+"use strict";
+(() => {
+  const $ = id => document.getElementById(id);
+  let running = null, raf = 0, last = null, model, bounds, exactPeriod = null;
+  function fail(error) {
+    stop();
+    $("error").hidden = false;
+    $("error").textContent = "实验未能完成：" + error.message;
+    console.error(error);
+    document.querySelectorAll("button,input,select").forEach(e => { e.disabled = true; });
+  }
+  function stop() {
+    cancelAnimationFrame(raf); running = null; last = null;
+    $("gravity-play").textContent = "播放 120 年"; $("beat-play").textContent = "播放 1800 年";
+  }
+  function point(id, p) {
+    $(id).setAttribute("cx", (210 + p[0] * 18).toFixed(5));
+    $(id).setAttribute("cy", (210 - p[1] * 18).toFixed(5));
+  }
+  function d(points) { return points.map((p, i) => (i ? "L" : "M") + p.map(v => v.toFixed(5)).join(",")).join(" "); }
+  function redrawGravity() {
+    const index = Number($("gravity-time").value), f = model.frames[index];
+    $("gravity-year").textContent = f.time.toFixed(1);
+    point("j-dot", f.points[0]); point("s-dot", f.points[1]);
+    for (const [label, p] of [["j-label", f.points[0]], ["s-label", f.points[1]]]) {
+      $(label).setAttribute("x", 221 + p[0] * 18);
+      $(label).setAttribute("y", 204 - p[1] * 18);
+    }
+    point("j-ref", f.reference[0]); point("s-ref", f.reference[1]);
+    for (let p = 0; p < 2; p++)
+      $(p ? "s-trail" : "j-trail").setAttribute("d", d(model.frames.slice(Math.max(0, index - 60), index + 1).map(x => [210 + x.points[p][0] * 18, 210 - x.points[p][1] * 18])));
+    $("res-dot").setAttribute("cx", 58 + f.time / 120 * 320);
+    $("res-dot").setAttribute("cy", 355 - (f.residual - bounds.min) / bounds.range * 290);
+    $("gravity-readout").textContent = `t = ${f.time.toFixed(1)} 年；木星方向偏差 ${f.residual.toFixed(4)}°；采样点最大相对能量误差 ${model.maxError.toExponential(2)}。`;
+  }
+  function rebuild() {
+    stop(); model = LaplaceModel.simulate(Number($("mass").value));
+    const values = model.frames.map(f => f.residual), min = Math.min(0, ...values), max = Math.max(.001, ...values);
+    bounds = {min: min - (max - min) * .06, range: (max - min) * 1.12};
+    $("res-path").setAttribute("d", d(model.frames.map(f => [58 + f.time / 120 * 320, 355 - (f.residual - bounds.min) / bounds.range * 290])));
+    $("res-top").textContent = (bounds.min + bounds.range).toFixed(2);
+    $("res-bottom").textContent = bounds.min.toFixed(2);
+    const zero = 355 + bounds.min / bounds.range * 290;
+    $("zero-axis").setAttribute("d", `M58 ${zero}H390`);
+    redrawGravity();
+  }
+  function period() { return exactPeriod === null ? Number($("period").value) : exactPeriod; }
+  function redrawBeat() {
+    const t = Number($("beat-time").value), ts = period(), f = LaplaceModel.slowPhase(t, ts);
+    $("saturn-period").textContent = ts.toFixed(6);
+    $("beat-year").textContent = t;
+    $("beat-path").setAttribute("d", d(Array.from({length: 601}, (_, i) => [65 + i, 155 - 100 * LaplaceModel.slowPhase(i * 3, ts).value])));
+    $("beat-point").setAttribute("cx", 65 + t / 3);
+    $("beat-point").setAttribute("cy", 155 - 100 * f.value);
+    $("beat-readout").textContent = (Math.abs(f.frequency) < 1e-14 ?
+      "恰好 5∶2：这个角度组合不变，没有有限的慢拍周期；不是行星停转，也不是振幅无限大。" :
+      `慢相位一圈约 ${f.period.toFixed(1)} 年；组合频率 ${f.frequency.toExponential(4)} 圈/年。`) + ` 当前信号 ${f.value.toFixed(4)}。`;
+  }
+  function animate(now) {
+    if (!running) return;
+    if (last === null) last = now;
+    const elapsed = Math.min(now - last, 100);
+    last = now;
+    const slider = $(running + "-time"), speed = running === "gravity" ? 20 : 150;
+    slider.dataset.progress = String(Number(slider.dataset.progress) + elapsed * speed / 1000);
+    slider.value = Math.min(Number(slider.max), Math.floor(Number(slider.dataset.progress)));
+    running === "gravity" ? redrawGravity() : redrawBeat();
+    if (Number(slider.value) >= Number(slider.max)) stop();
+    else raf = requestAnimationFrame(animate);
+  }
+  function play(which) {
+    if (running === which) { stop(); return; }
+    stop(); const slider = $(which + "-time");
+    if (Number(slider.value) >= Number(slider.max)) slider.value = 0;
+    slider.dataset.progress = slider.value;
+    running = which; $(which + "-play").textContent = "暂停";
+    raf = requestAnimationFrame(animate);
+  }
+  try {
+    if (!globalThis.LaplaceModel) throw new Error("本地模型脚本没有载入，请保留同目录的 laplace-model.js。");
+    for (const which of ["gravity", "beat"]) {
+      $(which + "-play").addEventListener("click", () => play(which));
+      $(which + "-reset").addEventListener("click", () => { stop(); $(which + "-time").value = 0; which === "gravity" ? redrawGravity() : redrawBeat(); });
+      $(which + "-time").addEventListener("input", () => { stop(); which === "gravity" ? redrawGravity() : redrawBeat(); });
+      $(which + "-tab").addEventListener("click", () => {
+        stop();
+        for (const target of ["gravity", "beat"]) {
+          $(target).hidden = target !== which;
+          $(target + "-tab").setAttribute("aria-pressed", String(target === which));
+        }
+      });
+    }
+    $("mass").addEventListener("change", () => { try { rebuild(); } catch (error) { fail(error); } });
+    $("period").addEventListener("input", () => { stop(); exactPeriod = null; redrawBeat(); });
+    $("exact").addEventListener("click", () => { stop(); exactPeriod = 2.5 / LaplaceModel.nJ; $("period").value = exactPeriod; redrawBeat(); });
+    $("beat-default").addEventListener("click", () => { stop(); exactPeriod = 1 / LaplaceModel.nS; $("period").value = exactPeriod; redrawBeat(); });
+    document.addEventListener("visibilitychange", () => { if (document.hidden) stop(); });
+    exactPeriod = 1 / LaplaceModel.nS;
+    rebuild(); redrawBeat();
+  } catch (error) { fail(error); }
+})();
+</script>
+</body>
+</html>
