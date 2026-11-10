@@ -1,0 +1,30 @@
+<nav aria-label="文章分页">
+  <ul class="pagination align-items-center mt-4 mb-0">
+    <li class="page-item{% unless paginator.previous_page %} disabled{% endunless %}">
+      <a class="page-link" href="{% if paginator.previous_page %}{{ paginator.previous_page_path | relative_url }}{% else %}#{% endif %}" aria-label="上一页"{% unless paginator.previous_page %} aria-disabled="true" tabindex="-1"{% endunless %}>
+        <i class="fas fa-angle-left"></i>
+      </a>
+    </li>
+    {% assign previous_number = 0 %}
+    {% assign near_start = paginator.page | minus: 2 %}
+    {% assign near_end = paginator.page | plus: 2 %}
+    {% for number in (1..paginator.total_pages) %}
+      {% if number == 1 or number == paginator.total_pages or number >= near_start and number <= near_end %}
+        {% assign gap = number | minus: previous_number %}
+        {% if gap > 1 %}
+          <li class="page-item disabled"><span class="page-link">…</span></li>
+        {% endif %}
+        <li class="page-item{% if number == paginator.page %} active{% endif %}">
+          <a class="page-link" href="{% if number == 1 %}{{ '/blog/' | relative_url }}{% else %}{{ site.paginate_path | replace: ':num', number | relative_url }}{% endif %}"{% if number == paginator.page %} aria-current="page"{% endif %}>{{ number }}</a>
+        </li>
+        {% assign previous_number = number %}
+      {% endif %}
+    {% endfor %}
+    <li class="page-index align-middle"><span>{{ paginator.page }}</span><span class="text-muted">/ {{ paginator.total_pages }}</span></li>
+    <li class="page-item{% unless paginator.next_page %} disabled{% endunless %}">
+      <a class="page-link" href="{% if paginator.next_page %}{{ paginator.next_page_path | relative_url }}{% else %}#{% endif %}" aria-label="下一页"{% unless paginator.next_page %} aria-disabled="true" tabindex="-1"{% endunless %}>
+        <i class="fas fa-angle-right"></i>
+      </a>
+    </li>
+  </ul>
+</nav>

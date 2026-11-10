@@ -1,0 +1,76 @@
+<aside aria-label="侧边导航" id="sidebar" class="d-flex flex-column align-items-end">
+  <header class="profile-wrapper">
+    <a href="{{ '/' | relative_url }}" id="avatar" class="rounded-circle">
+      {% if site.avatar != empty and site.avatar %}
+        {% capture avatar_url %}{% include media-url.html src=site.avatar %}{% endcapture %}
+        <img src="{{ avatar_url | strip }}" width="112" height="112" alt="Hands-on Dad">
+      {% endif %}
+    </a>
+    <a class="site-title d-block" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <p class="site-subtitle fst-italic mb-0">{{ site.tagline }}</p>
+  </header>
+  <nav class="flex-column flex-grow-1 w-100 ps-0">
+    <ul class="nav">
+      <li class="nav-item{% if page.url == '/' %} active{% endif %}">
+        <a href="{{ '/' | relative_url }}" class="nav-link">
+          <i class="fa-fw fas fa-home"></i>
+          <span>{{ site.data.locales[include.lang].tabs.home | upcase }}</span>
+        </a>
+      </li>
+      <li class="nav-item{% if page.layout == 'home' %} active{% endif %}">
+        <a href="{{ '/blog/' | relative_url }}" class="nav-link"{% if page.layout == 'home' %} aria-current="page"{% endif %}>
+          <i class="fa-fw fas fa-book-open"></i><span>文章</span>
+        </a>
+      </li>
+      {% for tab in site.tabs %}
+        <li class="nav-item{% if tab.url == page.url %} active{% endif %}">
+          <a href="{{ tab.url | relative_url }}" class="nav-link">
+            <i class="fa-fw {{ tab.icon }}"></i>
+            {% capture tab_name %}{{ tab.url | split: '/' }}{% endcapture %}
+            <span>{{ site.data.locales[include.lang].tabs[tab_name] | default: tab.title | upcase }}</span>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+  <div class="sidebar-bottom d-flex flex-wrap align-items-center w-100">
+    {% unless site.theme_mode == 'light' or site.theme_mode == 'dark' %}
+      <div class="btn-group dropup">
+        <button type="button" class="btn btn-link nav-link" aria-label="切换显示模式" id="mode-toggle" data-bs-toggle="dropdown">
+          <i class="fa-regular fa-sun" data-theme-mode="light"></i>
+          <i class="fa-regular fa-moon" data-theme-mode="dark"></i>
+          <i class="fa-solid fa-display" data-theme-mode="system"></i>
+        </button>
+        <ul class="dropdown-menu rounded-3 mb-1 p-1">
+          <li><button class="dropdown-item d-flex align-items-center" type="button" data-theme-mode="light"><i class="fa-regular fa-sun"></i>{{ site.data.locales[include.lang].theme.light }}</button></li>
+          <li><button class="dropdown-item d-flex align-items-center" type="button" data-theme-mode="dark"><i class="fa-regular fa-moon"></i>{{ site.data.locales[include.lang].theme.dark }}</button></li>
+          <li><button class="dropdown-item d-flex align-items-center" type="button" data-theme-mode="system"><i class="fa-solid fa-display"></i>{{ site.data.locales[include.lang].theme.system }}</button></li>
+        </ul>
+      </div>
+      {% if site.data.contact.size > 0 %}<span class="icon-border"></span>{% endif %}
+    {% endunless %}
+    {% for entry in site.data.contact %}
+      {% assign url = null %}
+      {% case entry.type %}
+        {% when 'github', 'twitter' %}
+          {% if site[entry.type].username %}
+            {% capture url %}https://{{ entry.type }}.com/{{ site[entry.type].username }}{% endcapture %}
+          {% endif %}
+        {% when 'email' %}
+          {% if site.social.email %}
+            {% assign email = site.social.email | split: '@' %}
+            {% capture url %}javascript:void(location.href = 'mailto:' + ['{{ email[0] }}','{{ email[1] }}'].join('@')){% endcapture %}
+          {% endif %}
+        {% when 'rss' %}
+          {% assign url = '/feed.xml' | relative_url %}
+        {% else %}
+          {% assign url = entry.url %}
+      {% endcase %}
+      {% if url %}
+        <a href="{{ url | strip }}" aria-label="{{ entry.type }}"{% unless entry.noblank %} target="_blank" rel="noopener noreferrer{% if entry.type == 'mastodon' %} me{% endif %}"{% else %}{% if entry.type == 'mastodon' %} rel="me"{% endif %}{% endunless %}>
+          <i class="{{ entry.icon }}"></i>
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</aside>

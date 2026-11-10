@@ -29,6 +29,10 @@ Thank you for reading my blog. I will share more about becoming a hands-on dad a
 * 如果项目中缺少 Gemfile，使用 `bundle init` 命令生成 
 
 ## 使用说明
+* 网站根目录的 `index.html` 是独立的项目导航主页；原有 Chirpy 文章列表位于 `/blog/`，分页路径为 `/blog/page2/` 等，文章永久链接不变。
+* 主页项目卡片统一在 `_data/projects.yml` 维护，`experiences` 是亲子探索项目，`collections` 是资源收藏。`notice` 可提示站点暂不可用，恢复后移除；主页样式位于 `assets/css/landing.css`。
+* 主页沿用 Bodyverse 的 Comic Neue／马善政手写字体、暖奶油底色、棕色文字与橙色点缀。原版字体取自 Google Fonts，存放于 `assets/fonts/`，采用 SIL Open Font License 1.1（同目录保留作者与完整授权）；无需连接外部字体服务。加载期间回退到本机楷体或微软雅黑。
+* `_includes/sidebar.html` 在 Chirpy 侧栏增加“文章”入口；`_includes/post-paginator.html` 覆盖主题分页，确保第 1 页返回 `/blog/`，而不是导航主页。升级 Chirpy 时需核对这两个覆盖文件。本地构建使用 `_config.yml`；不要使用切换为其他主题的 `_config.dev.yml` 验收 Chirpy。
 * 新增或完善文章前，请先阅读 [`AGENTS.md`](AGENTS.md)：包含来源核查、中文分步图解、短动画、图片授权与验收规范。
 * 最近文章的六幅补充图可用 `python tools/generate_recent_post_visuals.py` 重新生成；脚本仅使用 Python 标准库，并核对比例换算、平方不等式、切线长度与注意力权重。
 * 历史文章的原创图可用 `python tools/generate_archive_visuals.py` 重新生成；脚本仅使用标准库，核对历法周期差、碳收支和字符编码，生成的短动画支持减少动态效果。目录导读图与随笔提醒卡保持静态，不表示医学评估或因果模型。

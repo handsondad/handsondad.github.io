@@ -67,6 +67,7 @@ pwa:
   enabled: true
 
 paginate: 10
+paginate_path: /blog/page:num/
 
 kramdown:
   syntax_highlighter: rouge

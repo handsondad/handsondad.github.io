@@ -1,0 +1,56 @@
+experiences:
+  - title: 亲子小游戏
+    url: https://handsondad.github.io/playverse/
+    icon: 🎮
+    kind: 玩中学
+    tone: peach
+    description: 从低龄陪玩到益智闯关，把日常的陪伴变成一场小小的冒险。
+    prompt: 一起玩一会儿
+  - title: 认识身体的奥秘
+    url: https://handsondad.github.io/bodyverse/
+    icon: 🫀
+    kind: 生命探索
+    tone: sage
+    description: 从认识自己的身体开始，带着好奇心走近这个熟悉又神奇的小宇宙。
+    prompt: 发现身体的秘密
+  - title: 小念家的漫画书
+    url: https://handsondad.github.io/storyverse/
+    icon: 📚
+    kind: 故事时光
+    tone: lavender
+    description: 翻开漫画书，和小念一起走进故事，让想象力多跑一会儿。
+    prompt: 翻开一个故事
+  - title: 元素的奇妙世界
+    url: https://handsondad.github.io/chemverse/
+    icon: 🧪
+    kind: 科学启蒙
+    tone: butter
+    description: 走近元素周期表，认识组成身边万物的那些小小成员。
+    prompt: 遇见一个元素
+  - title: 度量衡奇遇记
+    url: https://handsondad.github.io/measure-quest/
+    icon: 📏
+    kind: 生活里的科学
+    tone: blue
+    description: 一米有多长，一秒是谁定的？和小念、爸爸一起寻找测量的答案。
+    prompt: 量一量这个世界
+  - title: 方言奇遇记
+    url: https://handsondad.github.io/cn-dialect-scope/
+    icon: 💬
+    kind: 语言与文化
+    tone: rose
+    description: 同一句话，天南地北怎么说？听见不同的乡音，发现语言的趣味。
+    prompt: 听听远方的声音
+
+collections:
+  - title: 实践奶爸育儿宝库
+    url: https://handsondad.github.io/hands-on-dad/
+    icon: 🌱
+    label: HANDS-ON DAD · 育儿收藏
+    description: 从儿童发展、家庭教育到 STEAM，收藏育儿路上值得细读、值得动手的好内容。
+  - title: 未来学习者
+    url: https://handsondad.github.io/future-learner/
+    icon: 🔭
+    label: FUTURE LEARNER · 学习收藏
+    description: 面向未来的学习资源收藏，和孩子一起思考 AI 时代怎样学习、怎样成长。
+    notice: 站点暂未就绪 · 目前访问返回 404
