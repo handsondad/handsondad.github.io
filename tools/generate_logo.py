@@ -27,6 +27,7 @@ FONT_DIR = ROOT / "assets" / "fonts" / "landing"
 SVG_OUT = ROOT / "assets" / "images" / "logo.svg"
 PNG_OUT = ROOT / "assets" / "images" / "logo.png"
 AVATAR_OUT = ROOT / "assets" / "images" / "logo-avatar.png"
+SOCIAL_OUT = ROOT / "assets" / "images" / "social-preview.png"
 ICO_OUT = ROOT / "favicon.ico"
 FAVICON_DIR = ROOT / "assets" / "img" / "favicons"
 
@@ -160,6 +161,130 @@ def save_png(image: Image.Image, path: Path, size: int, opaque: bool = False) ->
     (resized.convert("RGB") if opaque else resized).save(path, optimize=True)
 
 
+def render_social_preview() -> None:
+    """Render a 1200x630 OpenGraph / social share banner matching the homepage aesthetic."""
+    browser = next((b for b in BROWSERS if Path(b).exists()), None) or shutil.which("msedge") or shutil.which("chrome")
+    assert browser, "需要 Microsoft Edge 或 Chrome 来生成社交分享预览图"
+    w, h = 1200, 630
+    fonts_css = (ROOT / "assets" / "css" / "landing-fonts.css").as_uri()
+    logo_uri = SVG_OUT.as_uri()
+    html = f"""<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="{fonts_css}">
+<style>
+  * {{ box-sizing: border-box; margin: 0; padding: 0; }}
+  body {{
+    width: {w}px; height: {h}px; overflow: hidden;
+    font-family: "Comic Neue", "Ma Shan Zheng", "KaiTi", "Microsoft YaHei", cursive;
+    background:
+      radial-gradient(circle at 14% 20%, #ff8a6b24 0%, transparent 45%),
+      radial-gradient(circle at 86% 22%, #6cc4ff29 0%, transparent 46%),
+      radial-gradient(circle at 82% 84%, #b48cff24 0%, transparent 45%),
+      linear-gradient(135deg, #fff8f0 0%, #f4f9ff 52%, #fff0e6 100%);
+    color: #5d4e37;
+    display: grid;
+    place-items: center;
+  }}
+  .card {{
+    width: 1104px; height: 534px;
+    border-radius: 40px;
+    border: 4px solid #ffd4b8;
+    background: linear-gradient(145deg, rgba(255,255,255,0.92) 45%, rgba(255,243,232,0.92) 100%);
+    box-shadow: 0 18px 44px rgba(255, 111, 107, 0.14);
+    padding: 48px 56px;
+    display: grid;
+    grid-template-columns: 224px 1fr;
+    align-items: center;
+    gap: 44px;
+  }}
+  .logo-wrap {{
+    display: grid;
+    place-items: center;
+  }}
+  .logo-wrap img {{
+    width: 220px; height: 220px;
+    filter: drop-shadow(0 10px 0 #ffd4b8);
+  }}
+  .eyebrow {{
+    display: inline-block;
+    padding: 6px 18px;
+    border-radius: 999px;
+    border: 2px solid #ffe0cc;
+    background: #fff8f0;
+    color: #b8622a;
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+  }}
+  h1 {{
+    font-size: 54px;
+    line-height: 1.25;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    margin-bottom: 14px;
+    background: linear-gradient(90deg, #ff7a5c, #ff9f43 36%, #4da8f0 72%, #9b6cf0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }}
+  .sub {{
+    font-size: 25px;
+    color: #7a684d;
+    white-space: nowrap;
+    margin-bottom: 28px;
+  }}
+  .pills {{
+    display: flex;
+    gap: 12px;
+    flex-wrap: nowrap;
+  }}
+  .pill {{
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 19px;
+    font-weight: 700;
+    white-space: nowrap;
+  }}
+  .pill.p1 {{ background: #fff0e6; border: 2px solid #ffd4b8; color: #c8662c; }}
+  .pill.p2 {{ background: #edf5ff; border: 2px solid #b8d7ff; color: #3a6fc0; }}
+  .pill.p3 {{ background: #edf9ee; border: 2px solid #bce7c1; color: #3f8a4b; }}
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo-wrap"><img src="{logo_uri}" alt="遇见孩子"></div>
+    <div>
+      <span class="eyebrow">Hands-on Dad · 专为奶爸打造的育儿宝库</span>
+      <h1>大手牵小手，世界有意思</h1>
+      <p class="sub">把孩子的每一个「为什么」，变成我们一起探索的起点</p>
+      <div class="pills">
+        <span class="pill p1">🎮 亲子探索互动小站</span>
+        <span class="pill p2">🔬 原创分步图解科普</span>
+        <span class="pill p3">🌱 育儿与学习好内容收藏</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>"""
+    with tempfile.TemporaryDirectory() as tmp:
+        page = Path(tmp) / "social.html"
+        shot = Path(tmp) / "social.png"
+        page.write_text(html, encoding="utf-8")
+        subprocess.run([
+            browser, "--headless=new", "--disable-gpu", "--hide-scrollbars", "--force-device-scale-factor=1",
+            "--virtual-time-budget=2500", f"--window-size={w},{h}",
+            f"--user-data-dir={Path(tmp) / 'profile'}", f"--screenshot={shot}", page.as_uri(),
+        ], check=True, capture_output=True, timeout=60)
+        img = Image.open(shot).convert("RGB").crop((0, 0, w, h))
+    assert img.size == (w, h), f"社交分享图尺寸不对：{img.size}"
+    colours = img.getcolors(maxcolors=2048)
+    assert colours is None or len(colours) > 500, "社交分享图颜色异常单一"
+    img.save(SOCIAL_OUT, optimize=True)
+
+
 def main() -> None:
     SVG_OUT.write_text(build_svg("tile"), encoding="utf-8")
     tile, badge, full = render("tile"), render("round"), render("full")
@@ -176,8 +301,9 @@ def main() -> None:
     save_png(full, FAVICON_DIR / "apple-touch-icon.png", 180, opaque=True)
     save_png(full, FAVICON_DIR / "web-app-manifest-192x192.png", 192, opaque=True)
     save_png(full, FAVICON_DIR / "web-app-manifest-512x512.png", 512, opaque=True)
+    render_social_preview()
 
-    for path in [SVG_OUT, PNG_OUT, AVATAR_OUT, ICO_OUT, *sorted(FAVICON_DIR.iterdir())]:
+    for path in [SVG_OUT, PNG_OUT, AVATAR_OUT, SOCIAL_OUT, ICO_OUT, *sorted(FAVICON_DIR.iterdir())]:
         print(f"{path.relative_to(ROOT)}  {path.stat().st_size / 1024:.0f} KB")
 
 

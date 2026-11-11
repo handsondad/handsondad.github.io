@@ -62,6 +62,20 @@ experiences:
     tone: butter
     description: 一大家子该怎么叫？玩着家族树和拜年小游戏，认清每位亲戚。
     prompt: 认一认亲戚
+  - title: 小念的自然图鉴
+    url: https://handsondad.github.io/nature-dex/
+    icon: 🌿
+    kind: 自然观察
+    tone: sage
+    description: 把身边遇见的植物和动物做成互动图鉴，按遇见的日子夹在晾衣绳上。
+    prompt: 翻看自然图鉴
+  - title: 小念的成长时光轴
+    url: https://handsondad.github.io/kid-growth-timeline/
+    icon: 📸
+    kind: 成长记忆
+    tone: lavender
+    description: 按年份夹在晾衣绳上的成长图集，加密珍藏回忆（需密码打开）。
+    prompt: 走进时光轴
 
 collections:
   - title: 实践奶爸育儿宝库
