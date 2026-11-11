@@ -1,18 +1,5 @@
 experiences:
-  - title: 亲子小游戏
-    url: https://handsondad.github.io/playverse/
-    icon: 🎮
-    kind: 玩中学
-    tone: peach
-    description: 从低龄陪玩到益智闯关，把日常的陪伴变成一场小小的冒险。
-    prompt: 一起玩一会儿
-  - title: 认识身体的奥秘
-    url: https://handsondad.github.io/bodyverse/
-    icon: 🫀
-    kind: 生命探索
-    tone: sage
-    description: 从认识自己的身体开始，带着好奇心走近这个熟悉又神奇的小宇宙。
-    prompt: 发现身体的秘密
+  # 第一组：小念的成长与日常（晾衣绳三姊妹：故事 · 自然 · 回忆）
   - title: 小念家的漫画书
     url: https://handsondad.github.io/storyverse/
     icon: 📚
@@ -20,6 +7,29 @@ experiences:
     tone: lavender
     description: 翻开漫画书，和小念一起走进故事，让想象力多跑一会儿。
     prompt: 翻开一个故事
+  - title: 小念的自然图鉴
+    url: https://handsondad.github.io/nature-dex/
+    icon: 🌿
+    kind: 自然观察
+    tone: sage
+    description: 把身边遇见的植物和动物做成互动图鉴，按遇见的日子夹在晾衣绳上。
+    prompt: 翻看自然图鉴
+  - title: 小念的成长时光轴
+    url: https://handsondad.github.io/kid-growth-timeline/
+    icon: 📸
+    kind: 成长记忆
+    tone: peach
+    description: 按年份夹在晾衣绳上的成长图集，加密珍藏回忆（需密码打开）。
+    prompt: 走进时光轴
+
+  # 第二组：科学小宇宙（身体 · 元素 · 度量衡）
+  - title: 认识身体的奥秘
+    url: https://handsondad.github.io/bodyverse/
+    icon: 🫀
+    kind: 生命探索
+    tone: rose
+    description: 从认识自己的身体开始，带着好奇心走近这个熟悉又神奇的小宇宙。
+    prompt: 发现身体的秘密
   - title: 元素的奇妙世界
     url: https://handsondad.github.io/chemverse/
     icon: 🧪
@@ -34,48 +44,45 @@ experiences:
     tone: blue
     description: 一米有多长，一秒是谁定的？和小念、爸爸一起寻找测量的答案。
     prompt: 量一量这个世界
-  - title: 方言奇遇记
-    url: https://handsondad.github.io/cn-dialect-scope/
-    icon: 💬
-    kind: 语言与文化
-    tone: rose
-    description: 同一句话，天南地北怎么说？听见不同的乡音，发现语言的趣味。
-    prompt: 听听远方的声音
-  - title: 汉字奇遇记
-    url: https://handsondad.github.io/hanverse/
-    icon: 📜
-    kind: 汉字启蒙
-    tone: blue
-    description: 看一个字从甲骨文长成今天的样子，弄懂汉字是怎么造出来的。
-    prompt: 看一个字长大
+
+  # 第三组：趣味闯关与数学冒险（小游戏 · 拼波 · 认亲戚）
+  - title: 亲子小游戏
+    url: https://handsondad.github.io/playverse/
+    icon: 🎮
+    kind: 玩中学
+    tone: peach
+    description: 从低龄陪玩到益智闯关，把日常的陪伴变成一场小小的冒险。
+    prompt: 一起玩一会儿
   - title: 拼波大冒险
     url: https://handsondad.github.io/fourier-puzzle-game/
     icon: 🌊
     kind: 数学游戏
-    tone: peach
+    tone: blue
     description: 用正弦波和转圈的圆盘拼出方波、爱心和雪花，玩着认识傅里叶。
     prompt: 拼一段波
   - title: 认亲戚大冒险
     url: https://handsondad.github.io/family-tree-player/
     icon: 🌳
     kind: 家庭称呼
-    tone: butter
+    tone: sage
     description: 一大家子该怎么叫？玩着家族树和拜年小游戏，认清每位亲戚。
     prompt: 认一认亲戚
-  - title: 小念的自然图鉴
-    url: https://handsondad.github.io/nature-dex/
-    icon: 🌿
-    kind: 自然观察
-    tone: sage
-    description: 把身边遇见的植物和动物做成互动图鉴，按遇见的日子夹在晾衣绳上。
-    prompt: 翻看自然图鉴
-  - title: 小念的成长时光轴
-    url: https://handsondad.github.io/kid-growth-timeline/
-    icon: 📸
-    kind: 成长记忆
+
+  # 第四组：语言与文字（汉字 · 方言）
+  - title: 汉字奇遇记
+    url: https://handsondad.github.io/hanverse/
+    icon: 📜
+    kind: 汉字启蒙
+    tone: butter
+    description: 看一个字从甲骨文长成今天的样子，弄懂汉字是怎么造出来的。
+    prompt: 看一个字长大
+  - title: 方言奇遇记
+    url: https://handsondad.github.io/cn-dialect-scope/
+    icon: 💬
+    kind: 语言与文化
     tone: lavender
-    description: 按年份夹在晾衣绳上的成长图集，加密珍藏回忆（需密码打开）。
-    prompt: 走进时光轴
+    description: 同一句话，天南地北怎么说？听见不同的乡音，发现语言的趣味。
+    prompt: 听听远方的声音
 
 collections:
   - title: 实践奶爸育儿宝库
