@@ -48,7 +48,7 @@ $hand-font: 'Comic Neue', 'Ma Shan Zheng', 'KaiTi', 'STKaiti', 'Microsoft YaHei'
   .card-wrapper {
     --cat-accent: #d9792f;
     --cat-pill-bg: rgb(255 159 67 / 14%);
-    border-left: 4px solid var(--cat-accent);
+    box-shadow: inset 4px 0 0 0 var(--cat-accent), var(--card-shadow);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 
     &.tone-cat-science {
@@ -69,7 +69,7 @@ $hand-font: 'Comic Neue', 'Ma Shan Zheng', 'KaiTi', 'STKaiti', 'Microsoft YaHei'
     &:hover,
     &:focus-within {
       transform: translateY(-3px);
-      box-shadow: var(--card-hover-shadow, var(--card-shadow));
+      box-shadow: inset 4px 0 0 0 var(--cat-accent), var(--card-hover-shadow, var(--card-shadow));
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -82,18 +82,35 @@ $hand-font: 'Comic Neue', 'Ma Shan Zheng', 'KaiTi', 'STKaiti', 'Microsoft YaHei'
     }
   }
 
-  .post-meta .cat-pill {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.12rem 0.6rem;
-    border-radius: 999px;
-    background-color: var(--cat-pill-bg);
-    color: var(--cat-accent);
-    font-size: 0.8rem;
-    font-weight: 600;
+  .post-meta {
+    > div:first-child {
+      display: flex !important;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
 
-    i {
-      margin-left: 0 !important;
+    .post-date {
+      display: inline-flex;
+      align-items: center;
+      line-height: 1.2;
+    }
+
+    .cat-pill {
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 0;
+      padding: 0.18rem 0.65rem;
+      border-radius: 999px;
+      background-color: var(--cat-pill-bg);
+      color: var(--cat-accent);
+      font-size: 0.8rem;
+      font-weight: 600;
+      line-height: 1.2;
+
+      i {
+        margin-left: 0 !important;
+      }
     }
   }
 
