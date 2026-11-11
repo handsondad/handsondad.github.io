@@ -67,11 +67,12 @@ collections:
   - title: 实践奶爸育儿宝库
     url: https://handsondad.github.io/hands-on-dad/
     icon: 🌱
+    tone: sage
     label: HANDS-ON DAD · 育儿收藏
     description: 从儿童发展、家庭教育到 STEAM，收藏育儿路上值得细读、值得动手的好内容。
   - title: 未来学习者
     url: https://handsondad.github.io/future-learner/
     icon: 🔭
+    tone: lavender
     label: FUTURE LEARNER · 学习收藏
     description: 面向未来的学习资源收藏，和孩子一起思考 AI 时代怎样学习、怎样成长。
-    notice: 站点暂未就绪 · 目前访问返回 404

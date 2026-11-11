@@ -73,7 +73,7 @@ description: 和孩子一起玩游戏、读故事、探索身体与科学，也�
           <a class="post-card tone-{{ post_tones[forloop.index0] }}" href="{{ post.url | relative_url }}">
             <time datetime="{{ post.date | date_to_xmlschema }}">📝 {{ post.date | date: '%Y.%m.%d' }}</time>
             <h3>{{ post.title | escape }}</h3>
-            <p>{{ post.description | default: post.excerpt | strip_html | strip | truncate: 52 }}</p>
+            <p>{{ post.description | default: post.excerpt | strip_html | strip }}</p>
             <span class="card-bottom">读一读 →</span>
           </a>
           {% endfor %}
@@ -85,7 +85,7 @@ description: 和孩子一起玩游戏、读故事、探索身体与科学，也�
         <div class="collection-grid">
           {% assign collections = site.data.projects.collections | where_exp: 'project', 'project.hidden != true' %}
           {% for project in collections %}
-          <a class="collection-card" href="{{ project.url }}">
+          <a class="collection-card{% if project.tone %} tone-{{ project.tone }}{% endif %}" href="{{ project.url }}">
             <span class="project-icon" aria-hidden="true">{{ project.icon }}</span>
             <span class="collection-label">{{ project.label }}</span>
             <h3>{{ project.title }}</h3>

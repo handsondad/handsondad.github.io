@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1035" viewBox="0 0 720 1035" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">P与NP关系的假设图及另一种可能</title>
+<desc id="desc">上图明确假设P不等于NP：P严格包含于NP，NP完全问题是NP与NP难的交集，P与此交集分离，NP难还延伸到NP之外。下方说明若P等于NP，NP中所有问题可快速判定，非平凡问题也为NP完全，但不可判定问题不会因此变可判定。面积和距离不表达数量与难度。</desc>
+<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif}</style>
+<rect width="720" height="1035" fill="#f3f7fa"/>
+<text x="36" y="48" font-size="32" fill="#172b45" text-anchor="start">先读假设，再看 P、NP 与 NPC</text>
+<text x="36" y="88" font-size="24" fill="#ad4f16" text-anchor="start">下面的分离图假设 P ≠ NP；这不是已证明结论。</text>
+<rect x="36" y="130" width="428" height="430" rx="18" fill="#e1f0f5" stroke="#176786" stroke-width="3"/>
+<rect x="304" y="180" width="380" height="430" rx="18" fill="#fff1df" fill-opacity="0.62" stroke="#ad4f16" stroke-width="3" stroke-dasharray="9 6"/>
+<text x="74" y="180" font-size="33" fill="#176786" text-anchor="start">NP</text>
+<text x="505" y="225" font-size="29" fill="#ad4f16" text-anchor="start">NP-Hard</text>
+<rect x="76" y="248" width="184" height="136" rx="16" fill="#fff" stroke="#176786" stroke-width="2"/>
+<text x="168" y="300" font-size="32" fill="#176786" text-anchor="middle">P</text>
+<text x="168" y="348" font-size="24" fill="#176786" text-anchor="middle">可快速判定</text>
+<text x="384" y="325" font-size="31" fill="#ad4f16" text-anchor="middle">NPC</text>
+<text x="384" y="370" font-size="26" fill="#ad4f16" text-anchor="middle">交集</text>
+<text x="560" y="455" font-size="23" fill="#ad4f16" text-anchor="middle">例如停机问题</text>
+<text x="560" y="499" font-size="25" fill="#ad4f16" text-anchor="middle">不属于 NP</text>
+<text x="74" y="442" font-size="23" fill="#41576a" text-anchor="start">留白不全是 NPC</text>
+<text x="74" y="486" font-size="23" fill="#41576a" text-anchor="start">面积不表示数量</text>
+<rect x="24" y="652" width="672" height="257" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
+<text x="44" y="697" font-size="29" fill="#172b45" text-anchor="start">另一种尚未排除的可能：P = NP</text>
+<text x="44" y="750" font-size="26" fill="#176786" text-anchor="start">那时 NP 中的所有问题，都可快速判定。</text>
+<text x="44" y="798" font-size="25" fill="#172b45" text-anchor="start">非平凡的 NP 判定问题，也都会是 NPC。</text>
+<text x="44" y="845" font-size="25" fill="#172b45" text-anchor="start">但 NP-Hard 仍可包含 NP 外的不可判定问题。</text>
+<text x="44" y="887" font-size="23" fill="#41576a" text-anchor="start">“非平凡”：既有“是”实例，也有“否”实例。</text>
+<text x="36" y="954" font-size="27" fill="#172b45" text-anchor="start">始终成立：P ⊆ NP；NPC = NP ∩ NP-Hard。</text>
+<text x="36" y="999" font-size="24" fill="#41576a" text-anchor="start">不是所有问题都属于这四类；图只画相关关系。</text>
+</svg>

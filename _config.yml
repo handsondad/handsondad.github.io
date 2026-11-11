@@ -21,8 +21,8 @@ social:
   name: 奶爸-Liang
   email: liang@handsondad.com
   links:
-    - https://twitter.com/handsondad
     - https://github.com/handsondad
+    - https://twitter.com/handsondad
     - https://instagram.com/handsondad
 
 google_site_verification:
@@ -39,12 +39,12 @@ img_cdn:
 
 avatar: '/assets/images/logo-avatar.png'
 
-social_preview_image:
+social_preview_image: '/assets/images/social-preview.png'
 
 toc: true
 
 comments:
-  active: 'utterances'
+  provider: 'utterances'
   utterances:
     repo: 'handsondad/handsondad.github.io'
     issue_term: 'pathname'

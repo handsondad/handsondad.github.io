@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="935" viewBox="0 0 720 935" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">多项式时间多对一归约的方向</title>
+<desc id="desc">从问题A的输入出发，多项式时间转换成B的输入，交给假设存在的快速判定器，把其是或否答案作为A的答案。转换保留两个方向。三个步骤一直可读，描边依次提示流程，播放一次后保持完整静态信息；减少动态效果时不播放。</desc>
+<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif}</style>
+<rect width="720" height="935" fill="#f3f7fa"/>
+<text x="36" y="48" font-size="32" fill="#172b45" text-anchor="start">A ≤ₚ B：把 A 的输入交给 B</text>
+<text x="36" y="88" font-size="24" fill="#41576a" text-anchor="start">输入沿箭头流动；描边提示次序，不表示耗时。</text>
+<style>.stage{animation:focus 2s linear 1 forwards}.s2{animation-delay:2s}.s3{animation-delay:4s}@keyframes focus{0%,90%{stroke:#ad4f16;stroke-width:6}100%{stroke:#176786;stroke-width:2}}@media(prefers-reduced-motion:reduce){.stage{animation:none}}</style>
+<rect class="stage s1" x="24" y="120" width="672" height="160" rx="16" fill="#fff" stroke="#176786" stroke-width="2"/>
+<text x="44" y="171" font-size="28" fill="#172b45" text-anchor="start">① A 的输入 x → 多项式时间翻译</text>
+<text x="44" y="228" font-size="24" fill="#41576a" text-anchor="start">得到 B 的输入 f(x)，不能偷偷先解出 A。</text>
+<path d="M360 294V338" stroke="#176786" stroke-width="4"/>
+<path d="M360 345L349 329H371Z" fill="#176786"/>
+<rect class="stage s2" x="24" y="355" width="672" height="160" rx="16" fill="#fff" stroke="#176786" stroke-width="2"/>
+<text x="44" y="406" font-size="28" fill="#172b45" text-anchor="start">② 假设有一台 B 的快速判定器</text>
+<text x="44" y="463" font-size="24" fill="#41576a" text-anchor="start">把 f(x) 交进去；此处是假设，不是已实现。</text>
+<path d="M360 529V573" stroke="#176786" stroke-width="4"/>
+<path d="M360 580L349 564H371Z" fill="#176786"/>
+<rect class="stage s3" x="24" y="590" width="672" height="160" rx="16" fill="#fff" stroke="#176786" stroke-width="2"/>
+<text x="44" y="641" font-size="28" fill="#172b45" text-anchor="start">③ 返回同一个“是／否”答案</text>
+<text x="44" y="698" font-size="24" fill="#41576a" text-anchor="start">A 的原输入为“是” ⇔ B 的新输入为“是”。</text>
+<text x="36" y="807" font-size="27" fill="#176786" text-anchor="start">如果 B 能快速判定，A 就也能快速判定。</text>
+<text x="36" y="854" font-size="27" fill="#172b45" text-anchor="start">要证明 B 很难：从已知难的 A，归约到 B。</text>
+<text x="36" y="899" font-size="24" fill="#41576a" text-anchor="start">一次转换、一个新实例：本文只用多对一归约。</text>
+</svg>

@@ -32,7 +32,7 @@ def arrow(x1, y1, x2, y2, index=0, color="#177e89", animated=True):
 
 def save(name, title, description, body, height=540):
     svg = (
-        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 {height}" '
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="720" height="{height}" viewBox="0 0 720 {height}" '
         'role="img" aria-labelledby="title desc" lang="zh-CN">'
         f'<title id="title">{escape(title)}</title>'
         f'<desc id="desc">{escape(description)}</desc>'
@@ -50,7 +50,8 @@ def save(name, title, description, body, height=540):
         + body
         + '</svg>\n'
     )
-    ET.fromstring(svg)
+    root = ET.fromstring(svg)
+    assert root.get("width") == "720" and root.get("height") == str(height)
     (OUT / f"{name}.svg").write_text(svg, encoding="utf-8")
 
 

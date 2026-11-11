@@ -1,0 +1,30 @@
+---
+layout: page
+# The Archives of posts (Chinese month-day order).
+---
+
+{% include lang.html %}
+
+<div id="archives" class="pl-xl-3">
+  {% for post in site.posts %}
+    {% assign cur_year = post.date | date: '%Y' %}
+
+    {% if cur_year != last_year %}
+      {% unless forloop.first %}</ul>{% endunless %}
+
+      <time class="year lead d-block">{{ cur_year }}</time>
+      {{ '<ul class="list-unstyled">' }}
+
+      {% assign last_year = cur_year %}
+    {% endif %}
+
+    <li>
+      {% assign ts = post.date | date: '%s' %}
+      <span class="date month" data-ts="{{ ts }}" data-df="MM[月]">{{ post.date | date: '%m月' }}</span>
+      <span class="date day small text-muted" data-ts="{{ ts }}" data-df="DD[日]">{{ post.date | date: '%d日' }}</span>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </li>
+
+    {% if forloop.last %}</ul>{% endif %}
+  {% endfor %}
+</div>

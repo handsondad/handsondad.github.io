@@ -1,0 +1,10 @@
+# Sharing options at the bottom of posts
+
+platforms:
+  - type: 微博
+    icon: "fab fa-weibo"
+    link: "https://service.weibo.com/share/share.php?title=TITLE&url=URL"
+
+  - type: X
+    icon: "fa-brands fa-square-x-twitter"
+    link: "https://twitter.com/intent/tweet?text=TITLE&url=URL"

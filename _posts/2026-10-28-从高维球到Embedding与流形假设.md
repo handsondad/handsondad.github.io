@@ -3,7 +3,7 @@ title: "从高维球到 Embedding：维数灾难、流形假设与 AI 的几何�
 author: 奶爸-Liang
 date: 2026-10-08 14:07:00 +0800
 description: "从 3Blue1Brown 的高维球视频出发，推导球体积与测度集中，理解 Embedding、内在维度和流形假设，并辨析所谓的黄金维度与 AI 幻觉。"
-categories: [科技前沿, 人工智能]
+categories: [科学, 人工智能]
 tags: [数学, 高维几何, 维数灾难, Embedding, 流形假设, 大语言模型, RAG]
 toc: true
 math: true

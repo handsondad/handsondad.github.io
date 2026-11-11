@@ -62,6 +62,7 @@ nav a:hover { background: #fff0e6; transform: translateY(-2px); }
 .card-kind, .collection-label, .post-card time { font-size: 13px; letter-spacing: 1px; color: var(--muted); }
 .project-card h3, .post-card h3, .collection-card h3 { margin: 0; font-size: 21px; font-weight: 700; line-height: 1.4; }
 .project-card p, .post-card p, .collection-card p { margin: 2px 0 6px; color: var(--muted); font-size: 15px; line-height: 1.6; }
+.post-card p { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
 .project-notice { display: block; width: fit-content; margin-top: 8px; padding: 2px 10px; border-radius: 999px; background: #fff0e6; color: #a64b18; font-size: 13px; }
 .card-bottom { align-self: end; font-size: 14px; font-weight: 700; color: var(--card-accent, #d9792f); }
 .tone-peach { --card-border: #ffd4b8; --card-tint: #fff0e6; --card-accent: #c8662c; }
@@ -91,9 +92,9 @@ nav a:hover { background: #fff0e6; transform: translateY(-2px); }
   .hero { padding-top: 6px; }
   .hero-title p { font-size: 16px; }
   .duo-stage { height: 320px; border-radius: 24px; }
-  .duo-bubble { max-width: 60%; padding: 8px 12px; font-size: 14px; }
-  .duo-bubble.is-dad { top: 12px; left: 12px; }
-  .duo-bubble.is-nian { top: 84px; right: 12px; max-width: 48%; }
+  .duo-bubble { max-width: calc(50% - 16px); padding: 7px 11px; font-size: 13.5px; line-height: 1.4; }
+  .duo-bubble.is-dad { top: 10px; left: 10px; }
+  .duo-bubble.is-nian { top: 24px; right: 10px; }
   .section-title { margin-top: 34px; font-size: 22px; }
   .project-grid, .post-grid, .collection-grid { grid-template-columns: 1fr; gap: 12px; }
   .project-icon { font-size: 40px; }

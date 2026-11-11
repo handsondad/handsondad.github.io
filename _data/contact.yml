@@ -1,0 +1,12 @@
+# Sidebar bottom contact links (rendered by _includes/sidebar.html)
+
+- type: github
+  icon: "fab fa-github"
+
+- type: email
+  icon: "fas fa-envelope"
+  noblank: true
+
+- type: rss
+  icon: "fas fa-rss"
+  noblank: true
