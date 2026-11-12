@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="720" viewBox="0 0 720 720" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">高德纳箭头与三层幂塔</title>
+<desc id="desc">三个 3 从底部结合得到 19683；从顶部结合得到 3 的 27 次方，等于 7625597484987。3^^3 表示两支箭头，等于后者。3^^^3 表示三支箭头，是一座 3 的幂塔，层数恰为 7625597484987。</desc>
+<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif}</style>
+<rect width="720" height="720" fill="#f3f7fa"/>
+<text x="36" y="46" font-size="32" fill="#172b45" text-anchor="start">幂塔从顶上往下算</text>
+<text x="36" y="84" font-size="24" fill="#41576a" text-anchor="start">同样三个 3，结合顺序会把结果差出很多个数量级。</text>
+<rect x="24" y="108" width="672" height="150" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
+<text x="44" y="152" font-size="28" fill="#172b45" text-anchor="start">① (3³)³ ＝ 27³ ＝ 19,683</text>
+<text x="44" y="198" font-size="24" fill="#41576a" text-anchor="start">先算下面，再把结果拿去乘方。</text>
+<rect x="24" y="274" width="672" height="168" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
+<text x="44" y="318" font-size="26" fill="#176786" text-anchor="start">② 3^(3³) ＝ 3²⁷ ＝ 7,625,597,484,987</text>
+<text x="44" y="366" font-size="24" fill="#41576a" text-anchor="start">高德纳箭头采用这一侧：从最上的指数算起。</text>
+<text x="44" y="408" font-size="22" fill="#172b45" text-anchor="start">3^^3 就是这座塔。^^ 表示两支上箭头。</text>
+<rect x="24" y="458" width="672" height="220" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
+<text x="44" y="502" font-size="28" fill="#172b45" text-anchor="start">③ 3^^^3 ＝ 3^^(3^^3)</text>
+<text x="44" y="550" font-size="24" fill="#ad4f16" text-anchor="start">它是 3 的幂塔，层数等于 7,625,597,484,987。</text>
+<text x="44" y="596" font-size="24" fill="#172b45" text-anchor="start">大约 7.63 万亿层。图里画不出这些层，层数是算出来的。</text>
+<text x="44" y="642" font-size="24" fill="#41576a" text-anchor="start">多一支箭头，是把前一种运算再迭代这么多次。</text>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="600" viewBox="0 0 720 600" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">停机问题的自指矛盾</title>
+<desc id="desc">假定存在一台机器，能判定任何图灵机是否停机。用它构造对角机器：判定器说会停，它就循环；判定器说不停，它就停机。把这台对角机器用于它自己的描述，两种结果都与构造矛盾。</desc>
+<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif}</style>
+<rect width="720" height="600" fill="#f3f7fa"/>
+<text x="36" y="48" font-size="30" fill="#172b45" text-anchor="start">假定能预先判定停机，就会自相矛盾</text>
+<text x="36" y="88" font-size="24" fill="#41576a" text-anchor="start">沿编号往下读。四格一直都在，没有需要追着看的动画。</text>
+<rect x="24" y="112" width="672" height="104" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
+<text x="44" y="154" font-size="26" fill="#176786" text-anchor="start">① 假定有判定器 H</text>
+<text x="44" y="192" font-size="22" fill="#172b45" text-anchor="start">输入任意机器，回答会停或永不停。</text>
+<rect x="24" y="230" width="672" height="104" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
+<text x="44" y="272" font-size="26" fill="#176786" text-anchor="start">② 用 H 做一个对角机器 D</text>
+<text x="44" y="310" font-size="22" fill="#172b45" text-anchor="start">若 H 说“会停”，D 就死循环；若 H 说“永不停”，D 立刻停。</text>
+<rect x="24" y="348" width="672" height="104" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
+<text x="44" y="390" font-size="26" fill="#176786" text-anchor="start">③ 把 D 自己的说明书交给 D</text>
+<text x="44" y="428" font-size="22" fill="#172b45" text-anchor="start">问的是：D 在读到自己的说明书时会不会停。</text>
+<rect x="24" y="466" width="672" height="104" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
+<text x="44" y="508" font-size="26" fill="#176786" text-anchor="start">④ 两种回答都矛盾</text>
+<text x="44" y="546" font-size="22" fill="#172b45" text-anchor="start">若 D 停下，它本该死循环；若 D 不停，它本该停下。</text>
+</svg>

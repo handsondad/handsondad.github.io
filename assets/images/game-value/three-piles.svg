@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="830" viewBox="0 0 720 830" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">三堆糖的二进制不进位加法</title>
+<desc id="desc">九、五、十二写成二进制后，每一竖列的一的个数都是偶数，是必败组合。三、四、五有一列是奇数。把三改成一后，一、四、五的每一列重新变成偶数。在所有合法拿法中，这一步是唯一走到偶数组合的走法。</desc>
+<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif}</style>
+<rect width="720" height="830" fill="#f3f7fa"/>
+<text x="36" y="48" font-size="32" fill="#172b45" text-anchor="start">三堆不再能靠左右模仿</text>
+<text x="36" y="88" font-size="24" fill="#41576a" text-anchor="start">把颗数写成二进制，竖着加，不进位。</text>
+<rect x="24" y="112" width="672" height="300" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
+<text x="44" y="156" font-size="28" fill="#172b45" text-anchor="start">① 9、5、12：每一竖列都是偶数</text>
+<text x="156" y="186" font-size="20" fill="#41576a" text-anchor="middle">8</text>
+<text x="198" y="186" font-size="20" fill="#41576a" text-anchor="middle">4</text>
+<text x="240" y="186" font-size="20" fill="#41576a" text-anchor="middle">2</text>
+<text x="282" y="186" font-size="20" fill="#41576a" text-anchor="middle">1</text>
+<text x="70" y="230" font-size="24" fill="#172b45" text-anchor="start">9</text>
+<text x="156" y="230" font-size="24" fill="#172b45" text-anchor="middle">1</text>
+<text x="198" y="230" font-size="24" fill="#172b45" text-anchor="middle">0</text>
+<text x="240" y="230" font-size="24" fill="#172b45" text-anchor="middle">0</text>
+<text x="282" y="230" font-size="24" fill="#172b45" text-anchor="middle">1</text>
+<text x="70" y="270" font-size="24" fill="#172b45" text-anchor="start">5</text>
+<text x="156" y="270" font-size="24" fill="#172b45" text-anchor="middle">0</text>
+<text x="198" y="270" font-size="24" fill="#172b45" text-anchor="middle">1</text>
+<text x="240" y="270" font-size="24" fill="#172b45" text-anchor="middle">0</text>
+<text x="282" y="270" font-size="24" fill="#172b45" text-anchor="middle">1</text>
+<text x="70" y="310" font-size="24" fill="#172b45" text-anchor="start">12</text>
+<text x="156" y="310" font-size="24" fill="#172b45" text-anchor="middle">1</text>
+<text x="198" y="310" font-size="24" fill="#172b45" text-anchor="middle">1</text>
+<text x="240" y="310" font-size="24" fill="#172b45" text-anchor="middle">0</text>
+<text x="282" y="310" font-size="24" fill="#172b45" text-anchor="middle">0</text>
+<text x="70" y="366" font-size="22" fill="#ad4f16" text-anchor="start">每一列都是偶数：必败</text>
+<rect x="24" y="432" width="672" height="360" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
+<text x="44" y="476" font-size="28" fill="#172b45" text-anchor="start">② 3、4、5：有一列是奇数，必胜</text>
+<text x="44" y="514" font-size="24" fill="#176786" text-anchor="start">唯一能改回全偶的走法：把 3 拿成 1。</text>
+<text x="156" y="540" font-size="20" fill="#41576a" text-anchor="middle">4</text>
+<text x="198" y="540" font-size="20" fill="#41576a" text-anchor="middle">2</text>
+<text x="240" y="540" font-size="20" fill="#41576a" text-anchor="middle">1</text>
+<text x="70" y="584" font-size="24" fill="#172b45" text-anchor="start">3</text>
+<text x="156" y="584" font-size="24" fill="#172b45" text-anchor="middle">0</text>
+<text x="198" y="584" font-size="24" fill="#172b45" text-anchor="middle">1</text>
+<text x="240" y="584" font-size="24" fill="#172b45" text-anchor="middle">1</text>
+<text x="70" y="624" font-size="24" fill="#172b45" text-anchor="start">4</text>
+<text x="156" y="624" font-size="24" fill="#172b45" text-anchor="middle">1</text>
+<text x="198" y="624" font-size="24" fill="#172b45" text-anchor="middle">0</text>
+<text x="240" y="624" font-size="24" fill="#172b45" text-anchor="middle">0</text>
+<text x="70" y="664" font-size="24" fill="#172b45" text-anchor="start">5</text>
+<text x="156" y="664" font-size="24" fill="#172b45" text-anchor="middle">1</text>
+<text x="198" y="664" font-size="24" fill="#172b45" text-anchor="middle">0</text>
+<text x="240" y="664" font-size="24" fill="#172b45" text-anchor="middle">1</text>
+<text x="70" y="720" font-size="22" fill="#176786" text-anchor="start">2 那一列是奇数：必胜</text>
+<text x="476" y="540" font-size="20" fill="#41576a" text-anchor="middle">4</text>
+<text x="518" y="540" font-size="20" fill="#41576a" text-anchor="middle">2</text>
+<text x="560" y="540" font-size="20" fill="#41576a" text-anchor="middle">1</text>
+<text x="390" y="584" font-size="24" fill="#172b45" text-anchor="start">1</text>
+<text x="476" y="584" font-size="24" fill="#172b45" text-anchor="middle">0</text>
+<text x="518" y="584" font-size="24" fill="#172b45" text-anchor="middle">0</text>
+<text x="560" y="584" font-size="24" fill="#172b45" text-anchor="middle">1</text>
+<text x="390" y="624" font-size="24" fill="#172b45" text-anchor="start">4</text>
+<text x="476" y="624" font-size="24" fill="#172b45" text-anchor="middle">1</text>
+<text x="518" y="624" font-size="24" fill="#172b45" text-anchor="middle">0</text>
+<text x="560" y="624" font-size="24" fill="#172b45" text-anchor="middle">0</text>
+<text x="390" y="664" font-size="24" fill="#172b45" text-anchor="start">5</text>
+<text x="476" y="664" font-size="24" fill="#172b45" text-anchor="middle">1</text>
+<text x="518" y="664" font-size="24" fill="#172b45" text-anchor="middle">0</text>
+<text x="560" y="664" font-size="24" fill="#172b45" text-anchor="middle">1</text>
+<text x="390" y="720" font-size="22" fill="#ad4f16" text-anchor="start">每一列都是偶数：必败</text>
+<text x="70" y="760" font-size="22" fill="#ad4f16" text-anchor="start">改之前</text>
+<text x="390" y="760" font-size="22" fill="#176786" text-anchor="start">改成 1、4、5</text>
+</svg>

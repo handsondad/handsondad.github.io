@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="750" viewBox="0 0 720 750" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">三乘三有毒巧克力的试探与镜像</title>
+<desc id="desc">毒块在左下角。只吃掉右上角后，对方可以吃掉中心及其右上方，留下 L，使先手落入必败。先手应自己先吃成这个 L。对方再吃底边右端时，先手吃掉左边上端，两臂恢复等长。虚线格表示已经吃掉。二乘三的唯一必胜第一口是只吃右上角；在三乘三上，这一口会输。</desc>
+<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif}</style>
+<rect width="720" height="750" fill="#f3f7fa"/>
+<text x="36" y="48" font-size="32" fill="#172b45" text-anchor="start">3×3：试探的一口，不是该下的一口</text>
+<text x="36" y="88" font-size="24" fill="#41576a" text-anchor="start">毒在左下。咬掉一格及其右上。虚线＝已吃掉。</text>
+<rect x="24" y="112" width="672" height="250" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
+<text x="44" y="150" font-size="26" fill="#172b45" text-anchor="start">① 只吃右上角</text>
+<text x="44" y="188" font-size="26" fill="#172b45" text-anchor="start">对方再吃中心</text>
+<text x="44" y="226" font-size="26" fill="#ad4f16" text-anchor="start">剩下的 L 轮到你</text>
+<text x="44" y="270" font-size="26" fill="#ad4f16" text-anchor="start">这一口会输。</text>
+<text x="44" y="312" font-size="22" fill="#41576a" text-anchor="start">开局时你就能直接吃成右边这样。</text>
+<rect x="24" y="382" width="672" height="250" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
+<text x="44" y="420" font-size="26" fill="#176786" text-anchor="start">② 第一口就留下 L</text>
+<text x="44" y="458" font-size="26" fill="#172b45" text-anchor="start">对方吃底边右端</text>
+<text x="44" y="496" font-size="26" fill="#176786" text-anchor="start">你吃左边上端</text>
+<text x="44" y="540" font-size="26" fill="#176786" text-anchor="start">两臂恢复一样长。</text>
+<text x="44" y="584" font-size="22" fill="#41576a" text-anchor="start">吃哪一臂，就咬另一臂。</text>
+<rect x="400" y="140" width="42" height="42" rx="6" fill="#e1b07a" stroke="#8a5a2b" stroke-width="2"/>
+<rect x="446" y="140" width="42" height="42" rx="6" fill="#e1b07a" stroke="#8a5a2b" stroke-width="2"/>
+<rect x="492" y="140" width="42" height="42" rx="6" fill="#eef3f6" stroke="#9aabb8" stroke-width="2" stroke-dasharray="4 4"/>
+<rect x="400" y="186" width="42" height="42" rx="6" fill="#e1b07a" stroke="#8a5a2b" stroke-width="2"/>
+<rect x="446" y="186" width="42" height="42" rx="6" fill="#e1b07a" stroke="#8a5a2b" stroke-width="2"/>
+<rect x="492" y="186" width="42" height="42" rx="6" fill="#e1b07a" stroke="#8a5a2b" stroke-width="2"/>
+<rect x="400" y="232" width="42" height="42" rx="6" fill="#6e4a3a" stroke="#8a5a2b" stroke-width="2"/>
+<text x="421" y="261" font-size="20" fill="#fff" text-anchor="middle">毒</text>
+<rect x="446" y="232" width="42" height="42" rx="6" fill="#e1b07a" stroke="#8a5a2b" stroke-width="2"/>
+<rect x="492" y="232" width="42" height="42" rx="6" fill="#e1b07a" stroke="#8a5a2b" stroke-width="2"/>
+<rect x="560" y="140" width="42" height="42" rx="6" fill="#e1b07a" stroke="#8a5a2b" stroke-width="2"/>
+<rect x="606" y="140" width="42" height="42" rx="6" fill="#eef3f6" stroke="#9aabb8" stroke-width="2" stroke-dasharray="4 4"/>
+<rect x="652" y="140" width="42" height="42" rx="6" fill="#eef3f6" stroke="#9aabb8" stroke-width="2" stroke-dasharray="4 4"/>
+<rect x="560" y="186" width="42" height="42" rx="6" fill="#e1b07a" stroke="#8a5a2b" stroke-width="2"/>
+<rect x="606" y="186" width="42" height="42" rx="6" fill="#eef3f6" stroke="#9aabb8" stroke-width="2" stroke-dasharray="4 4"/>
+<rect x="652" y="186" width="42" height="42" rx="6" fill="#eef3f6" stroke="#9aabb8" stroke-width="2" stroke-dasharray="4 4"/>
+<rect x="560" y="232" width="42" height="42" rx="6" fill="#6e4a3a" stroke="#8a5a2b" stroke-width="2"/>
+<text x="581" y="261" font-size="20" fill="#fff" text-anchor="middle">毒</text>
+<rect x="606" y="232" width="42" height="42" rx="6" fill="#e1b07a" stroke="#8a5a2b" stroke-width="2"/>
+<rect x="652" y="232" width="42" height="42" rx="6" fill="#e1b07a" stroke="#8a5a2b" stroke-width="2"/>
+<rect x="400" y="410" width="42" height="42" rx="6" fill="#e1b07a" stroke="#8a5a2b" stroke-width="2"/>
+<rect x="446" y="410" width="42" height="42" rx="6" fill="#eef3f6" stroke="#9aabb8" stroke-width="2" stroke-dasharray="4 4"/>
+<rect x="492" y="410" width="42" height="42" rx="6" fill="#eef3f6" stroke="#9aabb8" stroke-width="2" stroke-dasharray="4 4"/>
+<rect x="400" y="456" width="42" height="42" rx="6" fill="#e1b07a" stroke="#8a5a2b" stroke-width="2"/>
+<rect x="446" y="456" width="42" height="42" rx="6" fill="#eef3f6" stroke="#9aabb8" stroke-width="2" stroke-dasharray="4 4"/>
+<rect x="492" y="456" width="42" height="42" rx="6" fill="#eef3f6" stroke="#9aabb8" stroke-width="2" stroke-dasharray="4 4"/>
+<rect x="400" y="502" width="42" height="42" rx="6" fill="#6e4a3a" stroke="#8a5a2b" stroke-width="2"/>
+<text x="421" y="531" font-size="20" fill="#fff" text-anchor="middle">毒</text>
+<rect x="446" y="502" width="42" height="42" rx="6" fill="#e1b07a" stroke="#8a5a2b" stroke-width="2"/>
+<rect x="492" y="502" width="42" height="42" rx="6" fill="#e1b07a" stroke="#8a5a2b" stroke-width="2"/>
+<rect x="560" y="410" width="42" height="42" rx="6" fill="#eef3f6" stroke="#9aabb8" stroke-width="2" stroke-dasharray="4 4"/>
+<rect x="606" y="410" width="42" height="42" rx="6" fill="#eef3f6" stroke="#9aabb8" stroke-width="2" stroke-dasharray="4 4"/>
+<rect x="652" y="410" width="42" height="42" rx="6" fill="#eef3f6" stroke="#9aabb8" stroke-width="2" stroke-dasharray="4 4"/>
+<rect x="560" y="456" width="42" height="42" rx="6" fill="#e1b07a" stroke="#8a5a2b" stroke-width="2"/>
+<rect x="606" y="456" width="42" height="42" rx="6" fill="#eef3f6" stroke="#9aabb8" stroke-width="2" stroke-dasharray="4 4"/>
+<rect x="652" y="456" width="42" height="42" rx="6" fill="#eef3f6" stroke="#9aabb8" stroke-width="2" stroke-dasharray="4 4"/>
+<rect x="560" y="502" width="42" height="42" rx="6" fill="#6e4a3a" stroke="#8a5a2b" stroke-width="2"/>
+<text x="581" y="531" font-size="20" fill="#fff" text-anchor="middle">毒</text>
+<rect x="606" y="502" width="42" height="42" rx="6" fill="#e1b07a" stroke="#8a5a2b" stroke-width="2"/>
+<rect x="652" y="502" width="42" height="42" rx="6" fill="#eef3f6" stroke="#9aabb8" stroke-width="2" stroke-dasharray="4 4"/>
+<text x="467" y="318" font-size="20" fill="#41576a" text-anchor="middle">吃完右上角</text>
+<text x="627" y="318" font-size="20" fill="#ad4f16" text-anchor="middle">变成 L</text>
+<text x="467" y="588" font-size="20" fill="#176786" text-anchor="middle">你留下的 L</text>
+<text x="627" y="588" font-size="20" fill="#176786" text-anchor="middle">补回对称</text>
+<text x="36" y="670" font-size="24" fill="#172b45" text-anchor="start">存在性证明只说第一口存在，不指出是哪一口。</text>
+<text x="36" y="708" font-size="24" fill="#41576a" text-anchor="start">3×3 的第一口是吃掉中心及其右上。2×3 却是只吃右上角。</text>
+</svg>

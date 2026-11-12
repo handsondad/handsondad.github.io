@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="790" viewBox="0 0 720 790" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">平方、指数与阶乘的精确值</title>
+<desc id="desc">n 从 1 到 8。三列分别是 n 的平方、2 的 n 次方和 n 的阶乘，全部按定义算出。n 的 100 次方最后一次不小于 2 的 n 次方是在 n 等于 996；从 997 起指数一直更大。</desc>
+<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif}</style>
+<rect width="720" height="790" fill="#f3f7fa"/>
+<text x="36" y="48" font-size="32" fill="#172b45" text-anchor="start">先看三列算得完的数</text>
+<text x="36" y="88" font-size="24" fill="#41576a" text-anchor="start">同一行的 n 相同。三列都是按定义算出的精确值。</text>
+<rect x="24" y="112" width="672" height="520" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
+<text x="70" y="158" font-size="24" fill="#41576a" text-anchor="start">n</text>
+<text x="180" y="158" font-size="24" fill="#41576a" text-anchor="start">n²</text>
+<text x="340" y="158" font-size="24" fill="#41576a" text-anchor="start">2^n</text>
+<text x="520" y="158" font-size="24" fill="#41576a" text-anchor="start">n!</text>
+<text x="70" y="206" font-size="24" fill="#172b45" text-anchor="start">1</text>
+<text x="180" y="206" font-size="24" fill="#172b45" text-anchor="start">1</text>
+<text x="340" y="206" font-size="24" fill="#176786" text-anchor="start">2</text>
+<text x="520" y="206" font-size="24" fill="#172b45" text-anchor="start">1</text>
+<text x="70" y="254" font-size="24" fill="#172b45" text-anchor="start">2</text>
+<text x="180" y="254" font-size="24" fill="#172b45" text-anchor="start">4</text>
+<text x="340" y="254" font-size="24" fill="#172b45" text-anchor="start">4</text>
+<text x="520" y="254" font-size="24" fill="#172b45" text-anchor="start">2</text>
+<text x="70" y="302" font-size="24" fill="#172b45" text-anchor="start">3</text>
+<text x="180" y="302" font-size="24" fill="#172b45" text-anchor="start">9</text>
+<text x="340" y="302" font-size="24" fill="#172b45" text-anchor="start">8</text>
+<text x="520" y="302" font-size="24" fill="#172b45" text-anchor="start">6</text>
+<text x="70" y="350" font-size="24" fill="#172b45" text-anchor="start">4</text>
+<text x="180" y="350" font-size="24" fill="#172b45" text-anchor="start">16</text>
+<text x="340" y="350" font-size="24" fill="#172b45" text-anchor="start">16</text>
+<text x="520" y="350" font-size="24" fill="#176786" text-anchor="start">24</text>
+<text x="70" y="398" font-size="24" fill="#172b45" text-anchor="start">5</text>
+<text x="180" y="398" font-size="24" fill="#172b45" text-anchor="start">25</text>
+<text x="340" y="398" font-size="24" fill="#176786" text-anchor="start">32</text>
+<text x="520" y="398" font-size="24" fill="#176786" text-anchor="start">120</text>
+<text x="70" y="446" font-size="24" fill="#172b45" text-anchor="start">6</text>
+<text x="180" y="446" font-size="24" fill="#172b45" text-anchor="start">36</text>
+<text x="340" y="446" font-size="24" fill="#176786" text-anchor="start">64</text>
+<text x="520" y="446" font-size="24" fill="#176786" text-anchor="start">720</text>
+<text x="70" y="494" font-size="24" fill="#172b45" text-anchor="start">7</text>
+<text x="180" y="494" font-size="24" fill="#172b45" text-anchor="start">49</text>
+<text x="340" y="494" font-size="24" fill="#176786" text-anchor="start">128</text>
+<text x="520" y="494" font-size="24" fill="#176786" text-anchor="start">5,040</text>
+<text x="70" y="542" font-size="24" fill="#172b45" text-anchor="start">8</text>
+<text x="180" y="542" font-size="24" fill="#172b45" text-anchor="start">64</text>
+<text x="340" y="542" font-size="24" fill="#176786" text-anchor="start">256</text>
+<text x="520" y="542" font-size="24" fill="#176786" text-anchor="start">40,320</text>
+<text x="36" y="676" font-size="24" fill="#172b45" text-anchor="start">从 n＝4 起，阶乘超过 2^n；2^n 在 n＝5 超过平方。</text>
+<text x="36" y="716" font-size="24" fill="#172b45" text-anchor="start">n^100 最后一次不小于 2^n，是在 n＝996。</text>
+<text x="36" y="750" font-size="24" fill="#176786" text-anchor="start">从 n＝997 起，2^n 一直更大。</text>
+</svg>

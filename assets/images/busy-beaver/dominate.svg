@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="660" viewBox="0 0 720 660" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">忙碌海狸为什么最终超过可计算函数</title>
+<desc id="desc">设 f 可由一台 c 个状态的图灵机计算。再花大约 log n 个状态把 n 写到空白纸带上，然后空转超过 f(n) 步。合成机器会停，因此忙碌海狸在 c 加 O(log n) 个状态处已经大于 f(n)。把 f 换成不超过 n 的最大值之后，对所有足够大的状态数，忙碌海狸都更大。</desc>
+<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif}</style>
+<rect width="720" height="660" fill="#f3f7fa"/>
+<text x="36" y="48" font-size="30" fill="#172b45" text-anchor="start">可计算的 f，会被稍多几个状态超过</text>
+<text x="36" y="88" font-size="22" fill="#41576a" text-anchor="start">c 由 f 的程序决定。写 n 的开销不跟着 f(n) 的大小膨胀。</text>
+<rect x="24" y="120" width="672" height="114" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
+<text x="44" y="164" font-size="26" fill="#176786" text-anchor="start">① 计算 f 的程序</text>
+<text x="44" y="206" font-size="22" fill="#172b45" text-anchor="start">状态数是一个常数 c，不随输入的数值变大。</text>
+<rect x="24" y="250" width="672" height="114" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
+<text x="44" y="294" font-size="26" fill="#176786" text-anchor="start">② 先把 n 写上空白纸带</text>
+<text x="44" y="336" font-size="22" fill="#172b45" text-anchor="start">用二进制写下 n，额外状态数只随位数增长，大约是 log₂n。</text>
+<rect x="24" y="380" width="672" height="114" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
+<text x="44" y="424" font-size="26" fill="#176786" text-anchor="start">③ 再空转，步数超过 f(n)</text>
+<text x="44" y="466" font-size="22" fill="#172b45" text-anchor="start">这台合成机器会停。它的步数已经大于 f(n)。</text>
+<text x="36" y="530" font-size="22" fill="#ad4f16" text-anchor="start">所以 S(k) ＞ F(n)。k 是 c 加上写下 n 的状态，F 取到 n 为止的最大。</text>
+<text x="36" y="572" font-size="22" fill="#172b45" text-anchor="start">k 最终不超过 n。状态变多时，最长步数只增不减。</text>
+<text x="36" y="610" font-size="22" fill="#41576a" text-anchor="start">因此对所有足够大的 n，S(n) 都大于 F(n)，也就大于 f(n)。</text>
+</svg>
