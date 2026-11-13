@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="374" viewBox="0 0 760 374" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">最小二乘法的误差正方形面积对比</title>
+<desc id="desc">左右两图使用同一组6个观测点与1比1等比例坐标轴。左图偏斜直线的6个误差正方形总面积为2.56；右图最小二乘直线的误差正方形总面积缩小到0.54。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="373" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">最小二乘法的几何直觉：把竖直误差变成“小正方形”，让总面积最小</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">横纵轴采用 1:1 等比例刻度，每个方块的真实面积严格等于该点误差的平方 eᵢ²（正负不再抵消）。</text>
+<rect x="20" y="64" width="352" height="294" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="86" font-size="13" fill="#0f172a" text-anchor="start" font-weight="600">① 随手画一条偏斜直线：方块面积很大</text>
+<line x1="94" y1="275.5" x2="274.2" y2="275.5" stroke="#f1f5f9" stroke-width="1"/>
+<line x1="94" y1="249.0" x2="274.2" y2="249.0" stroke="#f1f5f9" stroke-width="1"/>
+<line x1="94" y1="222.5" x2="274.2" y2="222.5" stroke="#f1f5f9" stroke-width="1"/>
+<line x1="94" y1="196.0" x2="274.2" y2="196.0" stroke="#f1f5f9" stroke-width="1"/>
+<line x1="94" y1="169.5" x2="274.2" y2="169.5" stroke="#f1f5f9" stroke-width="1"/>
+<line x1="94" y1="143.0" x2="274.2" y2="143.0" stroke="#f1f5f9" stroke-width="1"/>
+<line x1="94" y1="116.5" x2="274.2" y2="116.5" stroke="#f1f5f9" stroke-width="1"/>
+<path d="M94,108.6 V302 H274.2" fill="none" stroke="#94a3b8" stroke-width="1.3"/>
+<text x="120.5" y="317" font-size="10.5" fill="#64748b" text-anchor="middle">1</text>
+<text x="147.0" y="317" font-size="10.5" fill="#64748b" text-anchor="middle">2</text>
+<text x="173.5" y="317" font-size="10.5" fill="#64748b" text-anchor="middle">3</text>
+<text x="200.0" y="317" font-size="10.5" fill="#64748b" text-anchor="middle">4</text>
+<text x="226.5" y="317" font-size="10.5" fill="#64748b" text-anchor="middle">5</text>
+<text x="253.0" y="317" font-size="10.5" fill="#64748b" text-anchor="middle">6</text>
+<text x="86" y="253.0" font-size="10.5" fill="#64748b" text-anchor="end">2</text>
+<text x="86" y="200.0" font-size="10.5" fill="#64748b" text-anchor="end">4</text>
+<text x="86" y="147.0" font-size="10.5" fill="#64748b" text-anchor="end">6</text>
+<rect x="120.5" y="228.6" width="20.4" height="20.4" fill="#fef1e8" fill-opacity="0.85" stroke="#c25014" stroke-width="1"/>
+<rect x="147.0" y="212.2" width="13.0" height="13.0" fill="#fef1e8" fill-opacity="0.85" stroke="#c25014" stroke-width="1"/>
+<rect x="173.5" y="185.4" width="10.3" height="10.3" fill="#fef1e8" fill-opacity="0.85" stroke="#c25014" stroke-width="1"/>
+<rect x="200.0" y="179.3" width="0.8" height="0.8" fill="#fef1e8" fill-opacity="0.85" stroke="#c25014" stroke-width="1"/>
+<rect x="226.5" y="135.1" width="27.8" height="27.8" fill="#fef1e8" fill-opacity="0.85" stroke="#c25014" stroke-width="1"/>
+<rect x="233.7" y="127.1" width="19.3" height="19.3" fill="#fef1e8" fill-opacity="0.85" stroke="#c25014" stroke-width="1"/>
+<line x1="104.6" y1="238.5" x2="263.6" y2="139.9" stroke="#c25014" stroke-width="2.0"/>
+<line x1="120.5" y1="249.0" x2="120.5" y2="228.6" stroke="#c25014" stroke-width="1.8"/>
+<circle cx="120.5" cy="249.0" r="3.8" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
+<line x1="147.0" y1="225.2" x2="147.0" y2="212.2" stroke="#c25014" stroke-width="1.8"/>
+<circle cx="147.0" cy="225.2" r="3.8" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
+<line x1="173.5" y1="185.4" x2="173.5" y2="195.7" stroke="#c25014" stroke-width="1.8"/>
+<circle cx="173.5" cy="185.4" r="3.8" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
+<line x1="200.0" y1="180.1" x2="200.0" y2="179.3" stroke="#c25014" stroke-width="1.8"/>
+<circle cx="200.0" cy="180.1" r="3.8" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
+<line x1="226.5" y1="135.1" x2="226.5" y2="162.9" stroke="#c25014" stroke-width="1.8"/>
+<circle cx="226.5" cy="135.1" r="3.8" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
+<line x1="253.0" y1="127.1" x2="253.0" y2="146.4" stroke="#c25014" stroke-width="1.8"/>
+<circle cx="253.0" cy="127.1" r="3.8" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
+<rect x="36.0" y="328.0" width="224" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="148.0" y="343.0" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="600">偏斜线：正方形总面积 = 2.62</text>
+<text x="356" y="343" font-size="11" fill="#64748b" text-anchor="end" class="mono">y=0.62x+2.15</text>
+<rect x="388" y="64" width="352" height="294" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="404" y="86" font-size="13" fill="#0f172a" text-anchor="start" font-weight="600">② 最小二乘最优直线：方块总面积压到最小</text>
+<line x1="462" y1="275.5" x2="642.2" y2="275.5" stroke="#f1f5f9" stroke-width="1"/>
+<line x1="462" y1="249.0" x2="642.2" y2="249.0" stroke="#f1f5f9" stroke-width="1"/>
+<line x1="462" y1="222.5" x2="642.2" y2="222.5" stroke="#f1f5f9" stroke-width="1"/>
+<line x1="462" y1="196.0" x2="642.2" y2="196.0" stroke="#f1f5f9" stroke-width="1"/>
+<line x1="462" y1="169.5" x2="642.2" y2="169.5" stroke="#f1f5f9" stroke-width="1"/>
+<line x1="462" y1="143.0" x2="642.2" y2="143.0" stroke="#f1f5f9" stroke-width="1"/>
+<line x1="462" y1="116.5" x2="642.2" y2="116.5" stroke="#f1f5f9" stroke-width="1"/>
+<path d="M462,108.6 V302 H642.2" fill="none" stroke="#94a3b8" stroke-width="1.3"/>
+<text x="488.5" y="317" font-size="10.5" fill="#64748b" text-anchor="middle">1</text>
+<text x="515.0" y="317" font-size="10.5" fill="#64748b" text-anchor="middle">2</text>
+<text x="541.5" y="317" font-size="10.5" fill="#64748b" text-anchor="middle">3</text>
+<text x="568.0" y="317" font-size="10.5" fill="#64748b" text-anchor="middle">4</text>
+<text x="594.5" y="317" font-size="10.5" fill="#64748b" text-anchor="middle">5</text>
+<text x="621.0" y="317" font-size="10.5" fill="#64748b" text-anchor="middle">6</text>
+<text x="454" y="253.0" font-size="10.5" fill="#64748b" text-anchor="end">2</text>
+<text x="454" y="200.0" font-size="10.5" fill="#64748b" text-anchor="end">4</text>
+<text x="454" y="147.0" font-size="10.5" fill="#64748b" text-anchor="end">6</text>
+<rect x="488.5" y="246.9" width="2.1" height="2.1" fill="#eaf4fb" fill-opacity="0.85" stroke="#1d6fa5" stroke-width="1"/>
+<rect x="515.0" y="221.6" width="3.6" height="3.6" fill="#eaf4fb" fill-opacity="0.85" stroke="#1d6fa5" stroke-width="1"/>
+<rect x="541.5" y="185.4" width="10.9" height="10.9" fill="#eaf4fb" fill-opacity="0.85" stroke="#1d6fa5" stroke-width="1"/>
+<rect x="568.0" y="171.0" width="9.1" height="9.1" fill="#eaf4fb" fill-opacity="0.85" stroke="#1d6fa5" stroke-width="1"/>
+<rect x="594.5" y="135.1" width="10.7" height="10.7" fill="#eaf4fb" fill-opacity="0.85" stroke="#1d6fa5" stroke-width="1"/>
+<rect x="614.3" y="120.4" width="6.7" height="6.7" fill="#eaf4fb" fill-opacity="0.85" stroke="#1d6fa5" stroke-width="1"/>
+<line x1="472.6" y1="262.0" x2="631.6" y2="110.3" stroke="#1d6fa5" stroke-width="2.0"/>
+<line x1="488.5" y1="249.0" x2="488.5" y2="246.9" stroke="#1d6fa5" stroke-width="1.8"/>
+<circle cx="488.5" cy="249.0" r="3.8" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
+<line x1="515.0" y1="225.2" x2="515.0" y2="221.6" stroke="#1d6fa5" stroke-width="1.8"/>
+<circle cx="515.0" cy="225.2" r="3.8" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
+<line x1="541.5" y1="185.4" x2="541.5" y2="196.3" stroke="#1d6fa5" stroke-width="1.8"/>
+<circle cx="541.5" cy="185.4" r="3.8" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
+<line x1="568.0" y1="180.1" x2="568.0" y2="171.0" stroke="#1d6fa5" stroke-width="1.8"/>
+<circle cx="568.0" cy="180.1" r="3.8" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
+<line x1="594.5" y1="135.1" x2="594.5" y2="145.7" stroke="#1d6fa5" stroke-width="1.8"/>
+<circle cx="594.5" cy="135.1" r="3.8" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
+<line x1="621.0" y1="127.1" x2="621.0" y2="120.4" stroke="#1d6fa5" stroke-width="1.8"/>
+<circle cx="621.0" cy="127.1" r="3.8" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
+<rect x="404.0" y="328.0" width="224" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="516.0" y="343.0" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">最优线：正方形总面积 = 0.54</text>
+<text x="724" y="343" font-size="11" fill="#64748b" text-anchor="end" class="mono">y=0.95x+1.13</text>
+</svg>

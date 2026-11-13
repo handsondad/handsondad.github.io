@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="354" viewBox="0 0 760 354" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">交比投影不变性与三角形面积约分原理</title>
+<desc id="desc">左侧展示四点A、B、C、D经点O投影到斜线后相邻间距比改变但交比同为25/18；右侧分四步展示利用同高三角形面积与正弦面积公式约去OA、OB、OC、OD的过程。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="353" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">长度和单比都变了，为什么四个点的“交比”却稳如泰山？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">秘密不在尺子上，而在光源 O 发出的四束光线夹角里——三角形面积一除，所有到 O 的距离全约掉了。</text>
+<rect x="20" y="62" width="356" height="276" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="84" font-size="12.8" fill="#0f172a" text-anchor="start" font-weight="600">① 上下两截线的间距全变了，交比却分毫不差</text>
+<polygon points="196.0,96.0 138.0,172.0 213.0,172.0" fill="#eaf4fb" fill-opacity="0.55"/>
+<line x1="56" y1="172.0" x2="336" y2="172.0" stroke="#1d6fa5" stroke-width="1.8"/>
+<line x1="52.0" y1="268.0" x2="350.0" y2="234.0" stroke="#0f172a" stroke-width="1.8"/>
+<line x1="196.0" y1="96.0" x2="66.0" y2="266.4" stroke="#c25014" stroke-width="1.3" stroke-dasharray="4 3"/>
+<circle cx="138.0" cy="172.0" r="3.8" fill="#1d6fa5"/>
+<circle cx="66.0" cy="266.4" r="3.8" fill="#0f172a"/>
+<text x="136.0" y="163.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">A</text>
+<text x="68.0" y="283.4" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">A&#x27;</text>
+<line x1="196.0" y1="96.0" x2="147.2" y2="257.1" stroke="#c25014" stroke-width="1.3" stroke-dasharray="4 3"/>
+<circle cx="173.0" cy="172.0" r="3.8" fill="#1d6fa5"/>
+<circle cx="147.2" cy="257.1" r="3.8" fill="#0f172a"/>
+<text x="171.0" y="163.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">B</text>
+<text x="149.2" y="274.1" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">B&#x27;</text>
+<line x1="196.0" y1="96.0" x2="229.9" y2="247.7" stroke="#c25014" stroke-width="1.3" stroke-dasharray="4 3"/>
+<circle cx="213.0" cy="172.0" r="3.8" fill="#1d6fa5"/>
+<circle cx="229.9" cy="247.7" r="3.8" fill="#0f172a"/>
+<text x="211.0" y="163.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">C</text>
+<text x="231.9" y="264.7" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">C&#x27;</text>
+<line x1="196.0" y1="96.0" x2="337.3" y2="235.5" stroke="#c25014" stroke-width="1.3" stroke-dasharray="4 3"/>
+<circle cx="273.0" cy="172.0" r="3.8" fill="#1d6fa5"/>
+<circle cx="337.3" cy="235.5" r="3.8" fill="#0f172a"/>
+<text x="271.0" y="163.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">D</text>
+<text x="339.3" y="252.5" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">D&#x27;</text>
+<circle cx="196.0" cy="96.0" r="4.8" fill="#c25014"/>
+<text x="205.0" y="100.0" font-size="12.5" fill="#c25014" text-anchor="start" font-weight="700">O</text>
+<text x="36" y="306" font-size="11.3" fill="#64748b" text-anchor="start">上间距 35:40:60  →  下间距 82:83:108</text>
+<text x="36" y="324" font-size="11.8" fill="#18794e" text-anchor="start" font-weight="700">交比均为 25/18 ≈ 1.3889</text>
+<rect x="390" y="62" width="350" height="276" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="406" y="84" font-size="12.8" fill="#0f172a" text-anchor="start" font-weight="600">② 五行初等几何看懂：为什么它必然不变？</text>
+<rect x="406" y="98" width="318" height="43" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="418" y="114" font-size="11.3" fill="#0f172a" text-anchor="start" font-weight="600">第 1 步：同高三角形面积比 = 底边比</text>
+<text x="418" y="132" font-size="11.3" fill="#1d6fa5" text-anchor="start">AC / BC  =  S(△OAC) / S(△OBC)</text>
+<rect x="406" y="149" width="318" height="43" rx="7" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="418" y="165" font-size="11.3" fill="#0f172a" text-anchor="start" font-weight="600">第 2 步：换用两边夹角面积公式 ½·a·b·sinθ</text>
+<text x="418" y="183" font-size="11.3" fill="#1e293b" text-anchor="start">S(△OAC) = ½ · OA · OC · sin∠AOC</text>
+<rect x="406" y="200" width="318" height="43" rx="7" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="418" y="216" font-size="11.3" fill="#0f172a" text-anchor="start" font-weight="600">第 3 步：把 (AC·BD)/(BC·AD) 四个面积相除</text>
+<text x="418" y="234" font-size="11.3" fill="#c25014" text-anchor="start" font-weight="600">分子分母里的 ½ 与 OA, OB, OC, OD 全部上下约光！</text>
+<rect x="406" y="251" width="318" height="43" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="418" y="267" font-size="11.3" fill="#0f172a" text-anchor="start" font-weight="600">第 4 步：化简结果只剩四束光线的夹角正弦</text>
+<text x="418" y="285" font-size="11.3" fill="#18794e" text-anchor="start" font-weight="600">(sin∠AOC · sin∠BOD) / (sin∠BOC · sin∠AOD)</text>
+<text x="406" y="322" font-size="11.3" fill="#18794e" text-anchor="start" font-weight="600">⇒ 既然只取决于光线夹角，底下斜线怎么摆都改不了交比！</text>
+</svg>

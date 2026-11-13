@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="348" viewBox="0 0 760 348" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">同余时钟与幂次循环：心算 2 的 100 次方模 7</title>
+<desc id="desc">左图展示星期0到6的模7圆盘；右图展示2的幂模7在余数1、2、4之间每3步循环一次，2的100次方转33圈余1步，落在余数2即周二。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="347" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">同余的真正威力：把 31 位大数压缩成 3 步小循环</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">问：今天周日，2¹⁰⁰ 天后是星期几？不用算 31 位大数，只跟踪“除以 7 的余数”。</text>
+<rect x="20" y="64" width="326" height="266" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="38" y="88" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="600">① 模 7 时钟：逢 7 归 0</text>
+<circle cx="183" cy="198" r="86" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+<circle cx="183.0" cy="112.0" r="22" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="183.0" y="110.0" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="700">0</text>
+<text x="183.0" y="124.0" font-size="10.5" fill="#64748b" text-anchor="middle">周日</text>
+<circle cx="250.2" cy="144.4" r="22" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="250.2" y="142.4" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="700">1</text>
+<text x="250.2" y="156.4" font-size="10.5" fill="#64748b" text-anchor="middle">周一</text>
+<circle cx="266.8" cy="217.1" r="22" fill="#fef1e8" stroke="#c25014" stroke-width="2.0"/>
+<text x="266.8" y="215.1" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="700">2</text>
+<text x="266.8" y="229.1" font-size="10.5" fill="#c25014" text-anchor="middle">周二</text>
+<circle cx="220.3" cy="275.5" r="22" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="220.3" y="273.5" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="700">3</text>
+<text x="220.3" y="287.5" font-size="10.5" fill="#64748b" text-anchor="middle">周三</text>
+<circle cx="145.7" cy="275.5" r="22" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="145.7" y="273.5" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="700">4</text>
+<text x="145.7" y="287.5" font-size="10.5" fill="#64748b" text-anchor="middle">周四</text>
+<circle cx="99.2" cy="217.1" r="22" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="99.2" y="215.1" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="700">5</text>
+<text x="99.2" y="229.1" font-size="10.5" fill="#64748b" text-anchor="middle">周五</text>
+<circle cx="115.8" cy="144.4" r="22" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="115.8" y="142.4" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="700">6</text>
+<text x="115.8" y="156.4" font-size="10.5" fill="#64748b" text-anchor="middle">周六</text>
+<text x="183" y="194" font-size="13" fill="#1d6fa5" text-anchor="middle" font-weight="600">mod 7</text>
+<text x="183" y="211" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="600">余 2 → 周二</text>
+<text x="183" y="314" font-size="11.5" fill="#64748b" text-anchor="middle">所有相差 7 的倍数的天数，都落在同一格</text>
+<rect x="362" y="64" width="378" height="266" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="380" y="88" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="600">② 每次乘 2 只留余数：3 步就回到 1</text>
+<circle cx="432" cy="168" r="26" fill="#e7f6ee" stroke="#18794e" stroke-width="1.4"/>
+<text x="432" y="173" font-size="13.5" fill="#0f172a" text-anchor="middle" font-weight="700">余 1</text>
+<text x="432" y="210" font-size="11" fill="#64748b" text-anchor="middle">2⁰, 2³, 2⁶…</text>
+<circle cx="552" cy="126" r="26" fill="#fef1e8" stroke="#c25014" stroke-width="2.0"/>
+<text x="552" y="131" font-size="13.5" fill="#0f172a" text-anchor="middle" font-weight="700">余 2</text>
+<text x="552" y="168" font-size="11" fill="#c25014" text-anchor="middle">2¹, 2⁴…(终点)</text>
+<circle cx="656" cy="196" r="26" fill="#e7f6ee" stroke="#18794e" stroke-width="1.4"/>
+<text x="656" y="201" font-size="13.5" fill="#0f172a" text-anchor="middle" font-weight="700">余 4</text>
+<text x="656" y="238" font-size="11" fill="#64748b" text-anchor="middle">2², 2⁵…</text>
+<path d="M456,156 Q496,126 524,129" fill="none" stroke="#18794e" stroke-width="1.7" marker-end="url(#arr-green)"/>
+<text x="490" y="128" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="600" class="halo">×2</text>
+<path d="M576,138 Q622,152 640,173" fill="none" stroke="#18794e" stroke-width="1.7" marker-end="url(#arr-green)"/>
+<text x="618" y="150" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="600" class="halo">×2</text>
+<path d="M632,208 Q536,248 452,188" fill="none" stroke="#18794e" stroke-width="1.7" stroke-dasharray="4 3" marker-end="url(#arr-green)"/>
+<text x="522" y="239" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="600" class="halo">4×2=8≡1，归零循环</text>
+<rect x="380" y="256" width="342" height="58" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="394" y="278" font-size="12" fill="#1e293b" text-anchor="start">拆解指数：100 = 3 × 33 + 1（转满 33 圈，再多走 1 步）</text>
+<text x="394" y="299" font-size="12.5" fill="#c25014" text-anchor="start" font-weight="700">2¹⁰⁰ = (2³)³³ × 2¹ ≡ 1³³ × 2 ≡ 2 (mod 7)  →  周二</text>
+</svg>

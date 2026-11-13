@@ -1,66 +1,92 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="750" viewBox="0 0 720 750" role="img" aria-labelledby="title desc" lang="zh-CN">
-<title id="title">三乘三有毒巧克力的试探与镜像</title>
-<desc id="desc">毒块在左下角。只吃掉右上角后，对方可以吃掉中心及其右上方，留下 L，使先手落入必败。先手应自己先吃成这个 L。对方再吃底边右端时，先手吃掉左边上端，两臂恢复等长。虚线格表示已经吃掉。二乘三的唯一必胜第一口是只吃右上角；在三乘三上，这一口会输。</desc>
-<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif}</style>
-<rect width="720" height="750" fill="#f3f7fa"/>
-<text x="36" y="48" font-size="32" fill="#172b45" text-anchor="start">3×3：试探的一口，不是该下的一口</text>
-<text x="36" y="88" font-size="24" fill="#41576a" text-anchor="start">毒在左下。咬掉一格及其右上。虚线＝已吃掉。</text>
-<rect x="24" y="112" width="672" height="250" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
-<text x="44" y="150" font-size="26" fill="#172b45" text-anchor="start">① 只吃右上角</text>
-<text x="44" y="188" font-size="26" fill="#172b45" text-anchor="start">对方再吃中心</text>
-<text x="44" y="226" font-size="26" fill="#ad4f16" text-anchor="start">剩下的 L 轮到你</text>
-<text x="44" y="270" font-size="26" fill="#ad4f16" text-anchor="start">这一口会输。</text>
-<text x="44" y="312" font-size="22" fill="#41576a" text-anchor="start">开局时你就能直接吃成右边这样。</text>
-<rect x="24" y="382" width="672" height="250" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
-<text x="44" y="420" font-size="26" fill="#176786" text-anchor="start">② 第一口就留下 L</text>
-<text x="44" y="458" font-size="26" fill="#172b45" text-anchor="start">对方吃底边右端</text>
-<text x="44" y="496" font-size="26" fill="#176786" text-anchor="start">你吃左边上端</text>
-<text x="44" y="540" font-size="26" fill="#176786" text-anchor="start">两臂恢复一样长。</text>
-<text x="44" y="584" font-size="22" fill="#41576a" text-anchor="start">吃哪一臂，就咬另一臂。</text>
-<rect x="400" y="140" width="42" height="42" rx="6" fill="#e1b07a" stroke="#8a5a2b" stroke-width="2"/>
-<rect x="446" y="140" width="42" height="42" rx="6" fill="#e1b07a" stroke="#8a5a2b" stroke-width="2"/>
-<rect x="492" y="140" width="42" height="42" rx="6" fill="#eef3f6" stroke="#9aabb8" stroke-width="2" stroke-dasharray="4 4"/>
-<rect x="400" y="186" width="42" height="42" rx="6" fill="#e1b07a" stroke="#8a5a2b" stroke-width="2"/>
-<rect x="446" y="186" width="42" height="42" rx="6" fill="#e1b07a" stroke="#8a5a2b" stroke-width="2"/>
-<rect x="492" y="186" width="42" height="42" rx="6" fill="#e1b07a" stroke="#8a5a2b" stroke-width="2"/>
-<rect x="400" y="232" width="42" height="42" rx="6" fill="#6e4a3a" stroke="#8a5a2b" stroke-width="2"/>
-<text x="421" y="261" font-size="20" fill="#fff" text-anchor="middle">毒</text>
-<rect x="446" y="232" width="42" height="42" rx="6" fill="#e1b07a" stroke="#8a5a2b" stroke-width="2"/>
-<rect x="492" y="232" width="42" height="42" rx="6" fill="#e1b07a" stroke="#8a5a2b" stroke-width="2"/>
-<rect x="560" y="140" width="42" height="42" rx="6" fill="#e1b07a" stroke="#8a5a2b" stroke-width="2"/>
-<rect x="606" y="140" width="42" height="42" rx="6" fill="#eef3f6" stroke="#9aabb8" stroke-width="2" stroke-dasharray="4 4"/>
-<rect x="652" y="140" width="42" height="42" rx="6" fill="#eef3f6" stroke="#9aabb8" stroke-width="2" stroke-dasharray="4 4"/>
-<rect x="560" y="186" width="42" height="42" rx="6" fill="#e1b07a" stroke="#8a5a2b" stroke-width="2"/>
-<rect x="606" y="186" width="42" height="42" rx="6" fill="#eef3f6" stroke="#9aabb8" stroke-width="2" stroke-dasharray="4 4"/>
-<rect x="652" y="186" width="42" height="42" rx="6" fill="#eef3f6" stroke="#9aabb8" stroke-width="2" stroke-dasharray="4 4"/>
-<rect x="560" y="232" width="42" height="42" rx="6" fill="#6e4a3a" stroke="#8a5a2b" stroke-width="2"/>
-<text x="581" y="261" font-size="20" fill="#fff" text-anchor="middle">毒</text>
-<rect x="606" y="232" width="42" height="42" rx="6" fill="#e1b07a" stroke="#8a5a2b" stroke-width="2"/>
-<rect x="652" y="232" width="42" height="42" rx="6" fill="#e1b07a" stroke="#8a5a2b" stroke-width="2"/>
-<rect x="400" y="410" width="42" height="42" rx="6" fill="#e1b07a" stroke="#8a5a2b" stroke-width="2"/>
-<rect x="446" y="410" width="42" height="42" rx="6" fill="#eef3f6" stroke="#9aabb8" stroke-width="2" stroke-dasharray="4 4"/>
-<rect x="492" y="410" width="42" height="42" rx="6" fill="#eef3f6" stroke="#9aabb8" stroke-width="2" stroke-dasharray="4 4"/>
-<rect x="400" y="456" width="42" height="42" rx="6" fill="#e1b07a" stroke="#8a5a2b" stroke-width="2"/>
-<rect x="446" y="456" width="42" height="42" rx="6" fill="#eef3f6" stroke="#9aabb8" stroke-width="2" stroke-dasharray="4 4"/>
-<rect x="492" y="456" width="42" height="42" rx="6" fill="#eef3f6" stroke="#9aabb8" stroke-width="2" stroke-dasharray="4 4"/>
-<rect x="400" y="502" width="42" height="42" rx="6" fill="#6e4a3a" stroke="#8a5a2b" stroke-width="2"/>
-<text x="421" y="531" font-size="20" fill="#fff" text-anchor="middle">毒</text>
-<rect x="446" y="502" width="42" height="42" rx="6" fill="#e1b07a" stroke="#8a5a2b" stroke-width="2"/>
-<rect x="492" y="502" width="42" height="42" rx="6" fill="#e1b07a" stroke="#8a5a2b" stroke-width="2"/>
-<rect x="560" y="410" width="42" height="42" rx="6" fill="#eef3f6" stroke="#9aabb8" stroke-width="2" stroke-dasharray="4 4"/>
-<rect x="606" y="410" width="42" height="42" rx="6" fill="#eef3f6" stroke="#9aabb8" stroke-width="2" stroke-dasharray="4 4"/>
-<rect x="652" y="410" width="42" height="42" rx="6" fill="#eef3f6" stroke="#9aabb8" stroke-width="2" stroke-dasharray="4 4"/>
-<rect x="560" y="456" width="42" height="42" rx="6" fill="#e1b07a" stroke="#8a5a2b" stroke-width="2"/>
-<rect x="606" y="456" width="42" height="42" rx="6" fill="#eef3f6" stroke="#9aabb8" stroke-width="2" stroke-dasharray="4 4"/>
-<rect x="652" y="456" width="42" height="42" rx="6" fill="#eef3f6" stroke="#9aabb8" stroke-width="2" stroke-dasharray="4 4"/>
-<rect x="560" y="502" width="42" height="42" rx="6" fill="#6e4a3a" stroke="#8a5a2b" stroke-width="2"/>
-<text x="581" y="531" font-size="20" fill="#fff" text-anchor="middle">毒</text>
-<rect x="606" y="502" width="42" height="42" rx="6" fill="#e1b07a" stroke="#8a5a2b" stroke-width="2"/>
-<rect x="652" y="502" width="42" height="42" rx="6" fill="#eef3f6" stroke="#9aabb8" stroke-width="2" stroke-dasharray="4 4"/>
-<text x="467" y="318" font-size="20" fill="#41576a" text-anchor="middle">吃完右上角</text>
-<text x="627" y="318" font-size="20" fill="#ad4f16" text-anchor="middle">变成 L</text>
-<text x="467" y="588" font-size="20" fill="#176786" text-anchor="middle">你留下的 L</text>
-<text x="627" y="588" font-size="20" fill="#176786" text-anchor="middle">补回对称</text>
-<text x="36" y="670" font-size="24" fill="#172b45" text-anchor="start">存在性证明只说第一口存在，不指出是哪一口。</text>
-<text x="36" y="708" font-size="24" fill="#41576a" text-anchor="start">3×3 的第一口是吃掉中心及其右上。2×3 却是只吃右上角。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="310" viewBox="0 0 760 310" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">三乘三有毒巧克力的试探反证与对称必胜法</title>
+<desc id="desc">左图先手只吃右上角会被后手吃掉中心留下对称L形而落败；右图先手开局直接吃成对称L形并镜像回应获胜。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="309" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">有毒巧克力（Chomp）与“策略窃取”：试探的那一口，不等于真正该下的第一口</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左下角有毒，每次咬掉一格及其右上方所有格。虚线格表示已被吃掉。</text>
+<rect x="20" y="62" width="352" height="232" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="84" font-size="12.4" fill="#0f172a" text-anchor="start" font-weight="600">① 假想试探：先手只咬右上角，反而送对手赢</text>
+<rect x="54" y="108" width="27" height="27" rx="4" fill="#eab676" stroke="#9a5b25" stroke-width="1.2"/>
+<rect x="84" y="108" width="27" height="27" rx="4" fill="#eab676" stroke="#9a5b25" stroke-width="1.2"/>
+<rect x="114" y="108" width="27" height="27" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.1" stroke-dasharray="3 2"/>
+<rect x="54" y="138" width="27" height="27" rx="4" fill="#eab676" stroke="#9a5b25" stroke-width="1.2"/>
+<rect x="84" y="138" width="27" height="27" rx="4" fill="#eab676" stroke="#9a5b25" stroke-width="1.2"/>
+<rect x="114" y="138" width="27" height="27" rx="4" fill="#eab676" stroke="#9a5b25" stroke-width="1.2"/>
+<rect x="54" y="168" width="27" height="27" rx="4" fill="#7c2d12" stroke="#9a5b25" stroke-width="1.2"/>
+<text x="67.5" y="186" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">毒</text>
+<rect x="84" y="168" width="27" height="27" rx="4" fill="#eab676" stroke="#9a5b25" stroke-width="1.2"/>
+<rect x="114" y="168" width="27" height="27" rx="4" fill="#eab676" stroke="#9a5b25" stroke-width="1.2"/>
+<text x="99" y="214" font-size="11" fill="#64748b" text-anchor="middle">先手只咬右上角</text>
+<line x1="156" y1="152" x2="206" y2="152" stroke="#c25014" stroke-width="1.6" marker-end="url(#arr-orange)"/>
+<text x="181" y="144" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="600">后手惩罚</text>
+<rect x="222" y="108" width="27" height="27" rx="4" fill="#eab676" stroke="#9a5b25" stroke-width="1.2"/>
+<rect x="252" y="108" width="27" height="27" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.1" stroke-dasharray="3 2"/>
+<rect x="282" y="108" width="27" height="27" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.1" stroke-dasharray="3 2"/>
+<rect x="222" y="138" width="27" height="27" rx="4" fill="#eab676" stroke="#9a5b25" stroke-width="1.2"/>
+<rect x="252" y="138" width="27" height="27" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.1" stroke-dasharray="3 2"/>
+<rect x="282" y="138" width="27" height="27" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.1" stroke-dasharray="3 2"/>
+<rect x="222" y="168" width="27" height="27" rx="4" fill="#7c2d12" stroke="#9a5b25" stroke-width="1.2"/>
+<text x="235.5" y="186" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">毒</text>
+<rect x="252" y="168" width="27" height="27" rx="4" fill="#eab676" stroke="#9a5b25" stroke-width="1.2"/>
+<rect x="282" y="168" width="27" height="27" rx="4" fill="#eab676" stroke="#9a5b25" stroke-width="1.2"/>
+<text x="267" y="214" font-size="11" fill="#c25014" text-anchor="middle" font-weight="600">后手咬中心留 L 形</text>
+<rect x="36.0" y="254.0" width="320" height="24" rx="12.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="196.0" y="270.3" font-size="11" fill="#c25014" text-anchor="middle" font-weight="600">精髓：后手这招“留 L 形”，先手开局就能直接偷来用！</text>
+<rect x="388" y="62" width="352" height="232" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="404" y="84" font-size="12.4" fill="#0f172a" text-anchor="start" font-weight="600">② 真正必胜着：第一口直接咬出等臂 L 形！</text>
+<rect x="422" y="108" width="27" height="27" rx="4" fill="#eab676" stroke="#9a5b25" stroke-width="1.2"/>
+<rect x="452" y="108" width="27" height="27" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.1" stroke-dasharray="3 2"/>
+<rect x="482" y="108" width="27" height="27" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.1" stroke-dasharray="3 2"/>
+<rect x="422" y="138" width="27" height="27" rx="4" fill="#eab676" stroke="#9a5b25" stroke-width="1.2"/>
+<rect x="452" y="138" width="27" height="27" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.1" stroke-dasharray="3 2"/>
+<rect x="482" y="138" width="27" height="27" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.1" stroke-dasharray="3 2"/>
+<rect x="422" y="168" width="27" height="27" rx="4" fill="#7c2d12" stroke="#9a5b25" stroke-width="1.2"/>
+<text x="435.5" y="186" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">毒</text>
+<rect x="452" y="168" width="27" height="27" rx="4" fill="#eab676" stroke="#9a5b25" stroke-width="1.2"/>
+<rect x="482" y="168" width="27" height="27" rx="4" fill="#eab676" stroke="#9a5b25" stroke-width="1.2"/>
+<text x="467" y="214" font-size="11" fill="#1d6fa5" text-anchor="middle" font-weight="600">先手开局直接留 L</text>
+<line x1="524" y1="152" x2="574" y2="152" stroke="#18794e" stroke-width="1.6" marker-end="url(#arr-green)"/>
+<text x="549" y="144" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="600">对称回应</text>
+<rect x="590" y="108" width="27" height="27" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.1" stroke-dasharray="3 2"/>
+<rect x="620" y="108" width="27" height="27" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.1" stroke-dasharray="3 2"/>
+<rect x="650" y="108" width="27" height="27" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.1" stroke-dasharray="3 2"/>
+<rect x="590" y="138" width="27" height="27" rx="4" fill="#eab676" stroke="#9a5b25" stroke-width="1.2"/>
+<rect x="620" y="138" width="27" height="27" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.1" stroke-dasharray="3 2"/>
+<rect x="650" y="138" width="27" height="27" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.1" stroke-dasharray="3 2"/>
+<rect x="590" y="168" width="27" height="27" rx="4" fill="#7c2d12" stroke="#9a5b25" stroke-width="1.2"/>
+<text x="603.5" y="186" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">毒</text>
+<rect x="620" y="168" width="27" height="27" rx="4" fill="#eab676" stroke="#9a5b25" stroke-width="1.2"/>
+<rect x="650" y="168" width="27" height="27" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.1" stroke-dasharray="3 2"/>
+<text x="635" y="214" font-size="11" fill="#18794e" text-anchor="middle" font-weight="600">对手咬右端→你咬上端</text>
+<rect x="404.0" y="254.0" width="320" height="24" rx="12.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="564.0" y="270.3" font-size="11" fill="#1d6fa5" text-anchor="middle" font-weight="600">注意：2×3 矩形的必胜第一口却变回“只咬右上角”</text>
 </svg>

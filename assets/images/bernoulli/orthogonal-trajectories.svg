@@ -1,15 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="865" viewBox="0 0 720 865" role="img" aria-labelledby="title desc" lang="zh-CN">
+<svg xmlns="http://www.w3.org/2000/svg" width="540" height="648.75" viewBox="0 0 540 648.75" role="img" aria-labelledby="title desc" lang="zh-CN">
 <title id="title">同心圆与过圆心直线的正交轨线示例</title>
 <desc id="desc">蓝色实线为同心圆，棕色虚线为过圆心直线。点一逗号一处的半径方向与圆切线方向点积为零；直角用折线标记。此图解释轨线问题，不复刻尼古拉斯二世的双曲线论文。</desc>
-<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif}</style>
-<rect width="720" height="865" fill="#f3f7fa"/>
-<text x="36" y="48" font-size="32" fill="#172b45" text-anchor="start">正交轨线：每次相交，都成直角</text>
-<text x="36" y="86" font-size="24" fill="#41576a" text-anchor="start">教学例子：同心圆，与过圆心的直线。</text>
+<style>text{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",sans-serif}</style>
+<rect x="0.75" y="0.75" width="538.5" height="647.25" rx="12" fill="#fbfcfd" stroke="#dde6ee" stroke-width="1.2"/>
+<g transform="scale(0.75)">
+<text x="36" y="44.98" font-size="21.2" fill="#172b45" text-anchor="start" font-weight="700">正交轨线：每次相交，都成直角</text>
+<text x="36" y="84.39" font-size="18.2" fill="#41576a" text-anchor="start">教学例子：同心圆，与过圆心的直线。</text>
 <rect x="24" y="115" width="672" height="520" rx="18" fill="#fff" stroke="#c9d6df"/>
 <path d="M120 405H550M330 600V195" stroke="#c5d0d9" stroke-width="2"/>
-<text x="564" y="413" font-size="24" fill="#41576a" text-anchor="start">x</text>
-<text x="330" y="177" font-size="24" fill="#41576a" text-anchor="middle">y</text>
-<text x="310" y="438" font-size="23" fill="#41576a" text-anchor="middle">O</text>
+<text x="564" y="411.39" font-size="18.2" fill="#41576a" text-anchor="start">x</text>
+<text x="330" y="175.39" font-size="18.2" fill="#41576a" text-anchor="middle">y</text>
+<text x="310" y="436.45" font-size="17.5" fill="#41576a" text-anchor="middle">O</text>
 <path d="M140.0000 405.0000L520.0000 405.0000" stroke="#ad4f16" stroke-width="2" stroke-dasharray="7 6"/>
 <path d="M195.6497 539.3503L464.3503 270.6497" stroke="#ad4f16" stroke-width="2" stroke-dasharray="7 6"/>
 <path d="M330.0000 595.0000L330.0000 215.0000" stroke="#ad4f16" stroke-width="2" stroke-dasharray="7 6"/>
@@ -21,10 +22,11 @@
 <path d="M390 265L470 345" stroke="#172b45" stroke-width="3"/>
 <path d="M418 317L430 329L442 317" fill="none" stroke="#172b45" stroke-width="2.5"/>
 <circle cx="430" cy="305" r="6" fill="#172b45"/>
-<text x="500" y="298" font-size="25" fill="#172b45" text-anchor="start">P(1,1)</text>
-<text x="500" y="336" font-size="23" fill="#172b45" text-anchor="start">切线 ⟂ 半径</text>
-<text x="44" y="680" font-size="26" fill="#172b45" text-anchor="start">① 先选一条圆：x² + y² = C。</text>
-<text x="44" y="724" font-size="26" fill="#172b45" text-anchor="start">② 再选过圆心的直线；在交点看切线方向。</text>
-<text x="44" y="768" font-size="26" fill="#172b45" text-anchor="start">③ P 点：圆的斜率 −1，直线斜率 +1。</text>
-<text x="36" y="830" font-size="24" fill="#41576a" text-anchor="start">横纵轴同尺度、坐标无量纲；不是历史论文复刻。</text>
+<text x="500" y="296.32" font-size="19.0" fill="#172b45" text-anchor="start">P(1,1)</text>
+<text x="500" y="334.45" font-size="17.5" fill="#172b45" text-anchor="start">切线 ⟂ 半径</text>
+<text x="44" y="678.11" font-size="19.2" fill="#172b45" text-anchor="start" font-weight="600">① 先选一条圆：x² + y² = C。</text>
+<text x="44" y="722.11" font-size="19.2" fill="#172b45" text-anchor="start" font-weight="600">② 再选过圆心的直线；在交点看切线方向。</text>
+<text x="44" y="766.11" font-size="19.2" fill="#172b45" text-anchor="start" font-weight="600">③ P 点：圆的斜率 −1，直线斜率 +1。</text>
+<text x="36" y="828.39" font-size="18.2" fill="#41576a" text-anchor="start">横纵轴同尺度、坐标无量纲；不是历史论文复刻。</text>
+</g>
 </svg>

@@ -2,15 +2,15 @@
 <title id="title">丹德林球：两次切线等长，再拼成定长</title>
 <desc id="desc">沿用原轴截面图；先显出蓝色同球切线，再显出红色同球切线，最后合并为PF1加PF2等于AB。不是球或截平面移动的动画。</desc>
 <style>text{font-family:system-ui,"Noto Sans CJK SC","Microsoft YaHei",sans-serif;fill:#20334d;font-size:19px} .small{font-size:16px}.heading{font-size:24px;font-weight:700} .note{fill:#52647a}
-text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif}
-.s1{animation:r1 4.5s steps(1,end) 1 both}
-.s2{animation:r2 4.5s steps(1,end) 1 both}
-.s3{animation:r3 4.5s steps(1,end) 1 both}
-@keyframes r1{0%,9%{opacity:0}10%,100%{opacity:1}}
-@keyframes r2{0%,34%{opacity:0}35%,100%{opacity:1}}
-@keyframes r3{0%,64%{opacity:0}65%,100%{opacity:1}}
-@media(prefers-reduced-motion:reduce){.s1,.s2,.s3,.spinner{animation:none}}
-</style>
+    text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif}
+    .s1{animation:r1 4.5s steps(1,end) 1 both}
+    .s2{animation:r2 4.5s steps(1,end) 1 both}
+    .s3{animation:r3 4.5s steps(1,end) 1 both}
+    @keyframes r1{0%,9%{opacity:0}10%,100%{opacity:1}}
+    @keyframes r2{0%,34%{opacity:0}35%,100%{opacity:1}}
+    @keyframes r3{0%,64%{opacity:0}65%,100%{opacity:1}}
+    @media(prefers-reduced-motion:reduce){.s1,.s2,.s3,.spinner{animation:none}}
+    </style>
 <rect width="1000" height="630" rx="16" fill="#f8fafc" />
 <text x="26.00" y="40.00" class="heading" text-anchor="start">椭圆：母线上 P 在 A、B 之间</text>
 <text x="26.00" y="70.00" class="small note" text-anchor="start">轴截面示意：球看成圆，截平面侧看成直线。完整曲线不在这张侧视图中。</text>

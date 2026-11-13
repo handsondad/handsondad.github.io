@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="374" viewBox="0 0 760 374" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">三角形对称群凯莱表与伽罗瓦方程根对称</title>
+<desc id="desc">左侧6乘6复合表标出先a后r得c、先r后a得b的查表位置，并展示每行每列无重复；右侧用x²−2=0的两根互换对比五次方程120种置换，解释伽罗瓦如何用群判别根式可解性。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="373" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">六个动作的“乘法表”（凯莱表），以及伽罗瓦看到的方程根对称</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">查表口诀：先找上方的【第一步动作（列）】，再找左侧的【第二步动作（行）】，交叉格就是总结果。</text>
+<rect x="20" y="62" width="366" height="294" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="84" font-size="13" fill="#0f172a" text-anchor="start" font-weight="600">① 三角形对称群 S₃ 复合表（共 36 格）</text>
+<text x="174" y="98" font-size="11" fill="#64748b" text-anchor="middle">第一步先做（列） →</text>
+<text x="40" y="113" font-size="11" fill="#64748b" text-anchor="start">后做↓</text>
+<text x="94.0" y="113" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="700">e</text>
+<text x="126.0" y="113" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="700">r</text>
+<text x="158.0" y="113" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="700">r²</text>
+<text x="190.0" y="113" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="700">a</text>
+<text x="222.0" y="113" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="700">b</text>
+<text x="254.0" y="113" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="700">c</text>
+<text x="68" y="139" font-size="12" fill="#1d6fa5" text-anchor="end" font-weight="700">e</text>
+<rect x="78" y="118" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="94.0" y="139" font-size="12" fill="#0f172a" text-anchor="middle">e</text>
+<rect x="110" y="118" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="126.0" y="139" font-size="12" fill="#0f172a" text-anchor="middle">r</text>
+<rect x="142" y="118" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="158.0" y="139" font-size="12" fill="#0f172a" text-anchor="middle">r²</text>
+<rect x="174" y="118" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="190.0" y="139" font-size="12" fill="#0f172a" text-anchor="middle">a</text>
+<rect x="206" y="118" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="222.0" y="139" font-size="12" fill="#0f172a" text-anchor="middle">b</text>
+<rect x="238" y="118" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="254.0" y="139" font-size="12" fill="#0f172a" text-anchor="middle">c</text>
+<text x="68" y="171" font-size="12" fill="#1d6fa5" text-anchor="end" font-weight="700">r</text>
+<rect x="78" y="150" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="94.0" y="171" font-size="12" fill="#0f172a" text-anchor="middle">r</text>
+<rect x="110" y="150" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="126.0" y="171" font-size="12" fill="#0f172a" text-anchor="middle">r²</text>
+<rect x="142" y="150" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="158.0" y="171" font-size="12" fill="#0f172a" text-anchor="middle">e</text>
+<rect x="174" y="150" width="32" height="32" fill="#e7f6ee" stroke="#18794e" stroke-width="2.0"/>
+<text x="190.0" y="171" font-size="12" fill="#18794e" text-anchor="middle" font-weight="700">c</text>
+<rect x="206" y="150" width="32" height="32" fill="#fff7ed" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="222.0" y="171" font-size="12" fill="#0f172a" text-anchor="middle">a</text>
+<rect x="238" y="150" width="32" height="32" fill="#fff7ed" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="254.0" y="171" font-size="12" fill="#0f172a" text-anchor="middle">b</text>
+<text x="68" y="203" font-size="12" fill="#1d6fa5" text-anchor="end" font-weight="700">r²</text>
+<rect x="78" y="182" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="94.0" y="203" font-size="12" fill="#0f172a" text-anchor="middle">r²</text>
+<rect x="110" y="182" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="126.0" y="203" font-size="12" fill="#0f172a" text-anchor="middle">e</text>
+<rect x="142" y="182" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="158.0" y="203" font-size="12" fill="#0f172a" text-anchor="middle">r</text>
+<rect x="174" y="182" width="32" height="32" fill="#fff7ed" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="190.0" y="203" font-size="12" fill="#0f172a" text-anchor="middle">b</text>
+<rect x="206" y="182" width="32" height="32" fill="#fff7ed" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="222.0" y="203" font-size="12" fill="#0f172a" text-anchor="middle">c</text>
+<rect x="238" y="182" width="32" height="32" fill="#fff7ed" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="254.0" y="203" font-size="12" fill="#0f172a" text-anchor="middle">a</text>
+<text x="68" y="235" font-size="12" fill="#1d6fa5" text-anchor="end" font-weight="700">a</text>
+<rect x="78" y="214" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="94.0" y="235" font-size="12" fill="#0f172a" text-anchor="middle">a</text>
+<rect x="110" y="214" width="32" height="32" fill="#fef1e8" stroke="#c25014" stroke-width="2.0"/>
+<text x="126.0" y="235" font-size="12" fill="#c25014" text-anchor="middle" font-weight="700">b</text>
+<rect x="142" y="214" width="32" height="32" fill="#fff7ed" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="158.0" y="235" font-size="12" fill="#0f172a" text-anchor="middle">c</text>
+<rect x="174" y="214" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="190.0" y="235" font-size="12" fill="#0f172a" text-anchor="middle">e</text>
+<rect x="206" y="214" width="32" height="32" fill="#fff7ed" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="222.0" y="235" font-size="12" fill="#0f172a" text-anchor="middle">r</text>
+<rect x="238" y="214" width="32" height="32" fill="#fff7ed" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="254.0" y="235" font-size="12" fill="#0f172a" text-anchor="middle">r²</text>
+<text x="68" y="267" font-size="12" fill="#1d6fa5" text-anchor="end" font-weight="700">b</text>
+<rect x="78" y="246" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="94.0" y="267" font-size="12" fill="#0f172a" text-anchor="middle">b</text>
+<rect x="110" y="246" width="32" height="32" fill="#fff7ed" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="126.0" y="267" font-size="12" fill="#0f172a" text-anchor="middle">c</text>
+<rect x="142" y="246" width="32" height="32" fill="#fff7ed" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="158.0" y="267" font-size="12" fill="#0f172a" text-anchor="middle">a</text>
+<rect x="174" y="246" width="32" height="32" fill="#fff7ed" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="190.0" y="267" font-size="12" fill="#0f172a" text-anchor="middle">r²</text>
+<rect x="206" y="246" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="222.0" y="267" font-size="12" fill="#0f172a" text-anchor="middle">e</text>
+<rect x="238" y="246" width="32" height="32" fill="#fff7ed" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="254.0" y="267" font-size="12" fill="#0f172a" text-anchor="middle">r</text>
+<text x="68" y="299" font-size="12" fill="#1d6fa5" text-anchor="end" font-weight="700">c</text>
+<rect x="78" y="278" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="94.0" y="299" font-size="12" fill="#0f172a" text-anchor="middle">c</text>
+<rect x="110" y="278" width="32" height="32" fill="#fff7ed" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="126.0" y="299" font-size="12" fill="#0f172a" text-anchor="middle">a</text>
+<rect x="142" y="278" width="32" height="32" fill="#fff7ed" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="158.0" y="299" font-size="12" fill="#0f172a" text-anchor="middle">b</text>
+<rect x="174" y="278" width="32" height="32" fill="#fff7ed" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="190.0" y="299" font-size="12" fill="#0f172a" text-anchor="middle">r</text>
+<rect x="206" y="278" width="32" height="32" fill="#fff7ed" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="222.0" y="299" font-size="12" fill="#0f172a" text-anchor="middle">r²</text>
+<rect x="238" y="278" width="32" height="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="254.0" y="299" font-size="12" fill="#0f172a" text-anchor="middle">e</text>
+<text x="278" y="171" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="600">← 先a后r = c</text>
+<text x="278" y="235" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="600">← 先r后a = b</text>
+<rect x="36" y="319" width="11" height="11" rx="2" fill="#fff7ed" stroke="#cbd5e1" stroke-width="1"/>
+<text x="52" y="329" font-size="11" fill="#64748b" text-anchor="start">浅橙底 18 格：颠倒顺序结果不同</text>
+<text x="36" y="346" font-size="11" fill="#64748b" text-anchor="start">每行每列 6 个符号各出现 1 次（必有唯一撤销键）</text>
+<rect x="400" y="62" width="340" height="294" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="416" y="84" font-size="13" fill="#0f172a" text-anchor="start" font-weight="600">② 伽罗瓦的绝招：方程的“根”也有对称群！</text>
+<rect x="416" y="98" width="308" height="114" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="428" y="118" font-size="12" fill="#0f172a" text-anchor="start" font-weight="600">小样品：方程 x² − 2 = 0 的两个根  +√2  与  −√2</text>
+<text x="428" y="140" font-size="11.5" fill="#1e293b" text-anchor="start">• 原样不动 e：(+√2) + (−√2) = 0，乘积 = −2</text>
+<text x="428" y="160" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="600">• 互换两根 s：(−√2) + (+√2) = 0，乘积 = −2</text>
+<text x="428" y="182" font-size="11.5" fill="#1e293b" text-anchor="start">只靠有理数加减乘除，根本分不清 +√2 和 −√2！</text>
+<text x="428" y="200" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="600">⇒ 对称群只有 {e, s} 两个动作，一步开平方就能解开。</text>
+<rect x="416" y="222" width="308" height="112" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="428" y="242" font-size="12" fill="#0f172a" text-anchor="start" font-weight="600">一般五次方程：5 个根最多有 5! = 120 种置换（S₅）</text>
+<text x="428" y="264" font-size="11.5" fill="#1e293b" text-anchor="start">• 每开一次 n 次方根，只能削掉一层“可交换”的对称</text>
+<text x="428" y="284" font-size="11.5" fill="#1e293b" text-anchor="start">• 伽罗瓦发现：S₅ 里藏着 60 个动作的“硬核” A₅，</text>
+<text x="428" y="302" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="600">  它的动作高度不可交换，永远拆不成可交换的碎片！</text>
+<text x="428" y="322" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">⇒ 所以一般五次方程绝不存在只靠根号的求根公式。</text>
+</svg>

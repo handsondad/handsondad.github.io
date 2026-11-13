@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="326" viewBox="0 0 760 326" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">六贯棋盘结构、无和棋通水直觉与纳什先手必胜证明</title>
+<desc id="desc">左图展示5乘5菱形六边形六贯棋盘，蓝色实线连接上下北南两岸获胜并阻断橙色东西连线；右图总结无和棋定理加策略窃取如何推出先手必胜。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="325" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">六贯棋（Hex）：棋盘长什么样？为什么下满时绝不可能出现“和棋”？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">蓝方要把上下两条蓝边连成通路，橙方要把左右两条橙边连成通路（六边形相邻格共边即相连）。</text>
+<rect x="20" y="62" width="396" height="248" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="84" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="600">① 5×5 六贯棋盘：通水 vs 筑坝，必有一方贯通！</text>
+<text x="218" y="104" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">蓝方北岸目标边</text>
+<text x="254" y="294" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">蓝方南岸目标边</text>
+<text x="64" y="206" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="700">橙西岸</text>
+<text x="368" y="186" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="700">橙东岸</text>
+<polygon points="125.4,135.8 112.0,143.5 98.6,135.8 98.6,120.2 112.0,112.5 125.4,120.2" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<circle cx="112.0" cy="128.0" r="4.0" fill="#c25014" fill-opacity="0.55"/>
+<polygon points="154.0,135.8 140.6,143.5 127.2,135.8 127.2,120.2 140.6,112.5 154.0,120.2" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<circle cx="140.6" cy="128.0" r="4.0" fill="#c25014" fill-opacity="0.55"/>
+<polygon points="182.6,135.8 169.2,143.5 155.7,135.8 155.7,120.2 169.2,112.5 182.6,120.2" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="2.1"/>
+<circle cx="169.2" cy="128.0" r="5.2" fill="#1d6fa5" fill-opacity="1.0"/>
+<polygon points="211.2,135.8 197.7,143.5 184.3,135.8 184.3,120.2 197.7,112.5 211.2,120.2" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<circle cx="197.7" cy="128.0" r="4.0" fill="#c25014" fill-opacity="0.55"/>
+<polygon points="239.7,135.8 226.3,143.5 212.9,135.8 212.9,120.2 226.3,112.5 239.7,120.2" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<circle cx="226.3" cy="128.0" r="4.0" fill="#1d6fa5" fill-opacity="0.55"/>
+<polygon points="139.7,160.5 126.3,168.2 112.9,160.5 112.9,145.0 126.3,137.2 139.7,145.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<circle cx="126.3" cy="152.8" r="4.0" fill="#1d6fa5" fill-opacity="0.55"/>
+<polygon points="168.3,160.5 154.9,168.2 141.4,160.5 141.4,145.0 154.9,137.2 168.3,145.0" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<circle cx="154.9" cy="152.8" r="4.0" fill="#c25014" fill-opacity="0.55"/>
+<polygon points="196.9,160.5 183.4,168.2 170.0,160.5 170.0,145.0 183.4,137.2 196.9,145.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="2.1"/>
+<circle cx="183.4" cy="152.8" r="5.2" fill="#1d6fa5" fill-opacity="1.0"/>
+<polygon points="225.4,160.5 212.0,168.2 198.6,160.5 198.6,145.0 212.0,137.2 225.4,145.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<circle cx="212.0" cy="152.8" r="4.0" fill="#1d6fa5" fill-opacity="0.55"/>
+<polygon points="254.0,160.5 240.6,168.2 227.2,160.5 227.2,145.0 240.6,137.2 254.0,145.0" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<circle cx="240.6" cy="152.8" r="4.0" fill="#c25014" fill-opacity="0.55"/>
+<polygon points="154.0,185.2 140.6,193.0 127.2,185.2 127.2,169.8 140.6,162.0 154.0,169.8" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<circle cx="140.6" cy="177.5" r="4.0" fill="#c25014" fill-opacity="0.55"/>
+<polygon points="182.6,185.2 169.2,193.0 155.7,185.2 155.7,169.8 169.2,162.0 182.6,169.8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="2.1"/>
+<circle cx="169.2" cy="177.5" r="5.2" fill="#1d6fa5" fill-opacity="1.0"/>
+<polygon points="211.2,185.2 197.7,193.0 184.3,185.2 184.3,169.8 197.7,162.0 211.2,169.8" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<circle cx="197.7" cy="177.5" r="4.0" fill="#c25014" fill-opacity="0.55"/>
+<polygon points="239.7,185.2 226.3,193.0 212.9,185.2 212.9,169.8 226.3,162.0 239.7,169.8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<circle cx="226.3" cy="177.5" r="4.0" fill="#1d6fa5" fill-opacity="0.55"/>
+<polygon points="268.3,185.2 254.9,193.0 241.5,185.2 241.5,169.8 254.9,162.0 268.3,169.8" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<circle cx="254.9" cy="177.5" r="4.0" fill="#c25014" fill-opacity="0.55"/>
+<polygon points="168.3,210.0 154.9,217.8 141.4,210.0 141.4,194.5 154.9,186.8 168.3,194.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<circle cx="154.9" cy="202.2" r="4.0" fill="#c25014" fill-opacity="0.55"/>
+<polygon points="196.9,210.0 183.4,217.8 170.0,210.0 170.0,194.5 183.4,186.8 196.9,194.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="2.1"/>
+<circle cx="183.4" cy="202.2" r="5.2" fill="#1d6fa5" fill-opacity="1.0"/>
+<polygon points="225.4,210.0 212.0,217.8 198.6,210.0 198.6,194.5 212.0,186.8 225.4,194.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<circle cx="212.0" cy="202.2" r="4.0" fill="#1d6fa5" fill-opacity="0.55"/>
+<polygon points="254.0,210.0 240.6,217.8 227.2,210.0 227.2,194.5 240.6,186.8 254.0,194.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<circle cx="240.6" cy="202.2" r="4.0" fill="#c25014" fill-opacity="0.55"/>
+<polygon points="282.6,210.0 269.2,217.8 255.8,210.0 255.8,194.5 269.2,186.8 282.6,194.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<circle cx="269.2" cy="202.2" r="4.0" fill="#1d6fa5" fill-opacity="0.55"/>
+<polygon points="182.6,234.8 169.2,242.5 155.7,234.8 155.7,219.2 169.2,211.5 182.6,219.2" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="2.1"/>
+<circle cx="169.2" cy="227.0" r="5.2" fill="#1d6fa5" fill-opacity="1.0"/>
+<polygon points="211.2,234.8 197.7,242.5 184.3,234.8 184.3,219.2 197.7,211.5 211.2,219.2" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<circle cx="197.7" cy="227.0" r="4.0" fill="#c25014" fill-opacity="0.55"/>
+<polygon points="239.7,234.8 226.3,242.5 212.9,234.8 212.9,219.2 226.3,211.5 239.7,219.2" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<circle cx="226.3" cy="227.0" r="4.0" fill="#c25014" fill-opacity="0.55"/>
+<polygon points="268.3,234.8 254.9,242.5 241.5,234.8 241.5,219.2 254.9,211.5 268.3,219.2" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<circle cx="254.9" cy="227.0" r="4.0" fill="#1d6fa5" fill-opacity="0.55"/>
+<polygon points="296.9,234.8 283.5,242.5 270.0,234.8 270.0,219.2 283.5,211.5 296.9,219.2" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<circle cx="283.5" cy="227.0" r="4.0" fill="#c25014" fill-opacity="0.55"/>
+<polyline points="169.2,128.0 183.4,152.8 169.2,177.5 183.4,202.2 169.2,227.0" fill="none" stroke="#1d6fa5" stroke-width="2.4"/>
+<rect x="430" y="62" width="310" height="248" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="446" y="84" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="600">② 纳什的“两步绝杀”存在性证明</text>
+<rect x="446" y="100" width="278" height="86" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="458" y="120" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700">第一步：为什么不可能和棋？（通水定理）</text>
+<text x="458" y="140" font-size="11.2" fill="#1e293b" text-anchor="start">把蓝格当河道、橙格当堤坝。从北岸放水，</text>
+<text x="458" y="158" font-size="11.2" fill="#1e293b" text-anchor="start">水若流不到南岸，唯一可能是西到东被橙坝</text>
+<text x="458" y="176" font-size="11.2" fill="#1d6fa5" text-anchor="start" font-weight="600">彻底堵死——堵死恰恰说明橙方连赢了！</text>
+<rect x="446" y="198" width="278" height="96" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="458" y="218" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700">第二步：策略窃取 ⇒ 先手必胜！</text>
+<text x="458" y="238" font-size="11.2" fill="#1e293b" text-anchor="start">• 棋盘上多一枚己方棋子永远不会帮倒忙；</text>
+<text x="458" y="256" font-size="11.2" fill="#1e293b" text-anchor="start">• 假如后手有必胜秘籍，先手随便下一子再</text>
+<text x="458" y="274" font-size="11.2" fill="#1e293b" text-anchor="start">  假装自己是后手就能偷走秘籍；又无和棋，</text>
+<text x="458" y="289" font-size="10.8" fill="#18794e" text-anchor="start" font-weight="700">⇒ 11×11 标准六贯棋必是先手胜（但没人算得出谱）</text>
+</svg>

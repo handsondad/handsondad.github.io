@@ -1,59 +1,61 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1375" viewBox="0 0 720 1375" role="img" aria-labelledby="title desc" lang="zh-CN">
+<svg xmlns="http://www.w3.org/2000/svg" width="540" height="1031.25" viewBox="0 0 540 1031.25" role="img" aria-labelledby="title desc" lang="zh-CN">
 <title id="title">度量旅行商的最小生成树二近似示例</title>
 <desc id="desc">三乘四矩形上四个点，欧氏距离。最小生成树成本十，沿树往返二十，跳过重复点后的路线A、B、D、C、A成本十六，矩形外圈最优十四。图形保持坐标比例，交叉点不是城市；脚本核对所有生成树与闭合路线。一般二近似保证依赖非负对称度量与三角不等式。</desc>
-<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif}</style>
-<rect width="720" height="1375" fill="#f3f7fa"/>
-<text x="36" y="48" font-size="32" fill="#172b45" text-anchor="start">近似，不是凭感觉说“差不多”</text>
-<text x="36" y="88" font-size="24" fill="#41576a" text-anchor="start">四点为 3 × 4 矩形；成本取欧氏距离，无单位。</text>
+<style>text{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",sans-serif}</style>
+<rect x="0.75" y="0.75" width="538.5" height="1029.75" rx="12" fill="#fbfcfd" stroke="#dde6ee" stroke-width="1.2"/>
+<g transform="scale(0.75)">
+<text x="36" y="44.98" font-size="21.2" fill="#172b45" text-anchor="start" font-weight="700">近似，不是凭感觉说“差不多”</text>
+<text x="36" y="86.39" font-size="18.2" fill="#41576a" text-anchor="start">四点为 3 × 4 矩形；成本取欧氏距离，无单位。</text>
 <rect x="24" y="120" width="672" height="350" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
-<text x="44" y="162" font-size="27" fill="#172b45" text-anchor="start">① 最小生成树：三条边，成本 10</text>
+<text x="44" y="160.03" font-size="20.0" fill="#172b45" text-anchor="start" font-weight="600">① 最小生成树：三条边，成本 10</text>
 <path d="M270 234L390 234" stroke="#176786" stroke-width="3"/>
 <path d="M270 234L270 394" stroke="#176786" stroke-width="3"/>
 <path d="M390 394L270 394" stroke="#176786" stroke-width="3"/>
 <circle cx="270" cy="234" r="22" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="270" y="243" font-size="26" fill="#172b45" text-anchor="middle">A</text>
+<text x="270" y="241.11" font-size="19.2" fill="#172b45" text-anchor="middle" font-weight="600">A</text>
 <circle cx="390" cy="234" r="22" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="390" y="243" font-size="26" fill="#172b45" text-anchor="middle">B</text>
+<text x="390" y="241.11" font-size="19.2" fill="#172b45" text-anchor="middle" font-weight="600">B</text>
 <circle cx="390" cy="394" r="22" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="390" y="403" font-size="26" fill="#172b45" text-anchor="middle">C</text>
+<text x="390" y="401.11" font-size="19.2" fill="#172b45" text-anchor="middle" font-weight="600">C</text>
 <circle cx="270" cy="394" r="22" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="270" y="403" font-size="26" fill="#172b45" text-anchor="middle">D</text>
-<text x="490" y="275" font-size="26" fill="#41576a" text-anchor="start">对角线：5</text>
-<text x="490" y="322" font-size="24" fill="#41576a" text-anchor="start">外圈最优：14</text>
-<text x="44" y="444" font-size="25" fill="#176786" text-anchor="start">树边：AB = 3，AD = 4，DC = 3。</text>
+<text x="270" y="401.11" font-size="19.2" fill="#172b45" text-anchor="middle" font-weight="600">D</text>
+<text x="490" y="273.11" font-size="19.2" fill="#41576a" text-anchor="start" font-weight="600">对角线：5</text>
+<text x="490" y="320.39" font-size="18.2" fill="#41576a" text-anchor="start">外圈最优：14</text>
+<text x="44" y="442.32" font-size="19.0" fill="#176786" text-anchor="start">树边：AB = 3，AD = 4，DC = 3。</text>
 <rect x="24" y="495" width="672" height="350" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
-<text x="44" y="537" font-size="27" fill="#172b45" text-anchor="start">② 沿树往返：每条边走两次，成本 20</text>
+<text x="44" y="535.03" font-size="20.0" fill="#172b45" text-anchor="start" font-weight="600">② 沿树往返：每条边走两次，成本 20</text>
 <path d="M270 609L390 609" stroke="#176786" stroke-width="3"/>
 <path d="M270 609L270 769" stroke="#176786" stroke-width="3"/>
 <path d="M390 769L270 769" stroke="#176786" stroke-width="3"/>
 <circle cx="270" cy="609" r="22" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="270" y="618" font-size="26" fill="#172b45" text-anchor="middle">A</text>
+<text x="270" y="616.11" font-size="19.2" fill="#172b45" text-anchor="middle" font-weight="600">A</text>
 <circle cx="390" cy="609" r="22" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="390" y="618" font-size="26" fill="#172b45" text-anchor="middle">B</text>
+<text x="390" y="616.11" font-size="19.2" fill="#172b45" text-anchor="middle" font-weight="600">B</text>
 <circle cx="390" cy="769" r="22" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="390" y="778" font-size="26" fill="#172b45" text-anchor="middle">C</text>
+<text x="390" y="776.11" font-size="19.2" fill="#172b45" text-anchor="middle" font-weight="600">C</text>
 <circle cx="270" cy="769" r="22" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="270" y="778" font-size="26" fill="#172b45" text-anchor="middle">D</text>
-<text x="490" y="650" font-size="27" fill="#ad4f16" text-anchor="start">每边 × 2</text>
-<text x="490" y="697" font-size="24" fill="#ad4f16" text-anchor="start">10 × 2 = 20</text>
-<text x="44" y="819" font-size="25" fill="#176786" text-anchor="start">次序：A → B → A → D → C → D → A</text>
+<text x="270" y="776.11" font-size="19.2" fill="#172b45" text-anchor="middle" font-weight="600">D</text>
+<text x="490" y="648.03" font-size="20.0" fill="#ad4f16" text-anchor="start" font-weight="600">每边 × 2</text>
+<text x="490" y="695.39" font-size="18.2" fill="#ad4f16" text-anchor="start">10 × 2 = 20</text>
+<text x="44" y="817.32" font-size="19.0" fill="#176786" text-anchor="start">次序：A → B → A → D → C → D → A</text>
 <rect x="24" y="870" width="672" height="350" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
-<text x="44" y="912" font-size="27" fill="#172b45" text-anchor="start">③ 跳过重复城市：得到成本 16 的路线</text>
+<text x="44" y="910.03" font-size="20.0" fill="#172b45" text-anchor="start" font-weight="600">③ 跳过重复城市：得到成本 16 的路线</text>
 <path d="M270 984L390 984" stroke="#176786" stroke-width="3"/>
 <path d="M390 984L270 1144" stroke="#176786" stroke-width="3"/>
 <path d="M270 1144L390 1144" stroke="#176786" stroke-width="3"/>
 <path d="M390 1144L270 984" stroke="#176786" stroke-width="3"/>
 <circle cx="270" cy="984" r="22" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="270" y="993" font-size="26" fill="#172b45" text-anchor="middle">A</text>
+<text x="270" y="991.11" font-size="19.2" fill="#172b45" text-anchor="middle" font-weight="600">A</text>
 <circle cx="390" cy="984" r="22" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="390" y="993" font-size="26" fill="#172b45" text-anchor="middle">B</text>
+<text x="390" y="991.11" font-size="19.2" fill="#172b45" text-anchor="middle" font-weight="600">B</text>
 <circle cx="390" cy="1144" r="22" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="390" y="1153" font-size="26" fill="#172b45" text-anchor="middle">C</text>
+<text x="390" y="1151.11" font-size="19.2" fill="#172b45" text-anchor="middle" font-weight="600">C</text>
 <circle cx="270" cy="1144" r="22" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="270" y="1153" font-size="26" fill="#172b45" text-anchor="middle">D</text>
-<text x="490" y="1025" font-size="26" fill="#41576a" text-anchor="start">对角线：5</text>
-<text x="490" y="1072" font-size="24" fill="#41576a" text-anchor="start">外圈最优：14</text>
-<text x="44" y="1194" font-size="25" fill="#176786" text-anchor="start">次序：A → B → D → C → A</text>
-<text x="36" y="1293" font-size="24" fill="#172b45" text-anchor="start">一般保证：返回成本 ≤ 2 × 树成本 ≤ 2 × 最优成本。</text>
-<text x="36" y="1338" font-size="24" fill="#41576a" text-anchor="start">关键前提：距离对称、非负，满足三角不等式。</text>
+<text x="270" y="1151.11" font-size="19.2" fill="#172b45" text-anchor="middle" font-weight="600">D</text>
+<text x="490" y="1023.11" font-size="19.2" fill="#41576a" text-anchor="start" font-weight="600">对角线：5</text>
+<text x="490" y="1070.39" font-size="18.2" fill="#41576a" text-anchor="start">外圈最优：14</text>
+<text x="44" y="1192.32" font-size="19.0" fill="#176786" text-anchor="start">次序：A → B → D → C → A</text>
+<text x="36" y="1291.39" font-size="18.2" fill="#172b45" text-anchor="start">一般保证：返回成本 ≤ 2 × 树成本 ≤ 2 × 最优成本。</text>
+<text x="36" y="1336.39" font-size="18.2" fill="#41576a" text-anchor="start">关键前提：距离对称、非负，满足三角不等式。</text>
+</g>
 </svg>

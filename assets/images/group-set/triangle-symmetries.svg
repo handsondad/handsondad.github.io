@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="522" viewBox="0 0 760 522" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">正三角形的六种对称动作与不可交换实验</title>
+<desc id="desc">上方展示正三角形的3种旋转和沿桌面固定轴的3种翻折；下方分步对比先翻折a再转r得到c，而先转r再沿桌面竖直轴a翻折得到b。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="521" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">正三角形的 6 种对称动作，以及为什么“先后顺序”不能乱换</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">关键约定：三条虚线翻折轴画死在桌面上（不跟着字母跑）！橙色字母 A 用来追踪纸片怎么动。</text>
+<rect x="20" y="62" width="232" height="124" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<polygon points="136.0,86.0 106.6,137.0 165.4,137.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.6"/>
+<text x="136" y="80" font-size="12.5" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">A</text>
+<text x="95.6" y="151.0" font-size="12.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">B</text>
+<text x="176.4" y="151.0" font-size="12.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">C</text>
+<text x="136" y="175" font-size="12" fill="#1e293b" text-anchor="middle" font-weight="600">e：原样不动</text>
+<rect x="264" y="62" width="232" height="124" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<polygon points="380.0,86.0 350.6,137.0 409.4,137.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.6"/>
+<path d="M394.3,120.0 A14.3,14.3 0 0,0 372.9,107.6" fill="none" stroke="#18794e" stroke-width="1.4" marker-end="url(#arr-green)"/>
+<text x="380" y="80" font-size="12.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">C</text>
+<text x="339.6" y="151.0" font-size="12.5" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">A</text>
+<text x="420.4" y="151.0" font-size="12.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">B</text>
+<text x="380" y="175" font-size="12" fill="#1e293b" text-anchor="middle" font-weight="600">r：逆时针转 120°</text>
+<rect x="508" y="62" width="232" height="124" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<polygon points="624.0,86.0 594.6,137.0 653.4,137.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.6"/>
+<path d="M638.3,120.0 A14.3,14.3 0 0,0 616.9,107.6" fill="none" stroke="#18794e" stroke-width="1.4" marker-end="url(#arr-green)"/>
+<text x="624" y="80" font-size="12.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">B</text>
+<text x="583.6" y="151.0" font-size="12.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">C</text>
+<text x="664.4" y="151.0" font-size="12.5" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">A</text>
+<text x="624" y="175" font-size="12" fill="#1e293b" text-anchor="middle" font-weight="600">r²：逆时针转 240°</text>
+<rect x="20" y="198" width="232" height="124" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<polygon points="136.0,222.0 106.6,273.0 165.4,273.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.6"/>
+<line x1="136.0" y1="295.1" x2="136.0" y2="216.9" stroke="#c25014" stroke-width="1.4" stroke-dasharray="4 3"/>
+<text x="136" y="216" font-size="12.5" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">A</text>
+<text x="95.6" y="287.0" font-size="12.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">C</text>
+<text x="176.4" y="287.0" font-size="12.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">B</text>
+<text x="136" y="311" font-size="12" fill="#1e293b" text-anchor="middle" font-weight="600">a：沿桌面竖直轴翻折</text>
+<rect x="264" y="198" width="232" height="124" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<polygon points="380.0,222.0 350.6,273.0 409.4,273.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.6"/>
+<line x1="413.9" y1="236.5" x2="346.1" y2="275.6" stroke="#c25014" stroke-width="1.4" stroke-dasharray="4 3"/>
+<text x="380" y="216" font-size="12.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">C</text>
+<text x="339.6" y="287.0" font-size="12.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">B</text>
+<text x="420.4" y="287.0" font-size="12.5" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">A</text>
+<text x="380" y="311" font-size="12" fill="#1e293b" text-anchor="middle" font-weight="600">b：沿桌面左下轴翻折</text>
+<rect x="508" y="198" width="232" height="124" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<polygon points="624.0,222.0 594.6,273.0 653.4,273.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.6"/>
+<line x1="590.1" y1="236.5" x2="657.9" y2="275.6" stroke="#c25014" stroke-width="1.4" stroke-dasharray="4 3"/>
+<text x="624" y="216" font-size="12.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">B</text>
+<text x="583.6" y="287.0" font-size="12.5" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">A</text>
+<text x="664.4" y="287.0" font-size="12.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">C</text>
+<text x="624" y="311" font-size="12" fill="#1e293b" text-anchor="middle" font-weight="600">c：沿桌面右下轴翻折</text>
+<rect x="20" y="340" width="720" height="166" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="362" font-size="13" fill="#0f172a" text-anchor="start" font-weight="600">亲手验证“不可交换”：同样是动作 a 和动作 r，颠倒先后顺序，终点完全不同</text>
+<rect x="36.0" y="393.0" width="62" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="67.0" y="408.0" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">路线 ①</text>
+<polygon points="142.0,391.0 127.3,416.5 156.7,416.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.6"/>
+<text x="142" y="385" font-size="12.5" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">A</text>
+<text x="116.3" y="430.5" font-size="12.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">B</text>
+<text x="167.7" y="430.5" font-size="12.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">C</text>
+<line x1="176" y1="404" x2="254" y2="404" stroke="#c25014" stroke-width="1.5" marker-end="url(#arr-orange)"/>
+<text x="215" y="398" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="600">先翻折 a</text>
+<polygon points="296.0,391.0 281.3,416.5 310.7,416.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.6"/>
+<line x1="296.0" y1="427.6" x2="296.0" y2="388.4" stroke="#c25014" stroke-width="1.4" stroke-dasharray="4 3"/>
+<text x="296" y="385" font-size="12.5" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">A</text>
+<text x="270.3" y="430.5" font-size="12.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">C</text>
+<text x="321.7" y="430.5" font-size="12.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">B</text>
+<line x1="330" y1="404" x2="414" y2="404" stroke="#18794e" stroke-width="1.5" marker-end="url(#arr-green)"/>
+<text x="372" y="398" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="600">再逆时针转 r</text>
+<polygon points="456.0,391.0 441.3,416.5 470.7,416.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.6"/>
+<text x="456" y="385" font-size="12.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">B</text>
+<text x="430.3" y="430.5" font-size="12.5" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">A</text>
+<text x="481.7" y="430.5" font-size="12.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">C</text>
+<rect x="504.0" y="393.0" width="190" height="22" rx="11.0" fill="#f1f5f9" stroke="#0f172a" stroke-width="1" stroke-opacity="0.35"/>
+<text x="599.0" y="408.0" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">结果 = c（顶B 左A 右C）</text>
+<rect x="36.0" y="461.0" width="62" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="67.0" y="476.0" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="600">路线 ②</text>
+<polygon points="142.0,459.0 127.3,484.5 156.7,484.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.6"/>
+<text x="142" y="453" font-size="12.5" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">A</text>
+<text x="116.3" y="498.5" font-size="12.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">B</text>
+<text x="167.7" y="498.5" font-size="12.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">C</text>
+<line x1="176" y1="472" x2="254" y2="472" stroke="#18794e" stroke-width="1.5" marker-end="url(#arr-green)"/>
+<text x="215" y="466" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="600">先逆时针转 r</text>
+<polygon points="296.0,459.0 281.3,484.5 310.7,484.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.6"/>
+<text x="296" y="453" font-size="12.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">C</text>
+<text x="270.3" y="498.5" font-size="12.5" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">A</text>
+<text x="321.7" y="498.5" font-size="12.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">B</text>
+<line x1="330" y1="472" x2="414" y2="472" stroke="#c25014" stroke-width="1.5" marker-end="url(#arr-orange)"/>
+<text x="372" y="466" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="600">再沿桌面竖直轴 a 翻</text>
+<polygon points="456.0,459.0 441.3,484.5 470.7,484.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.6"/>
+<line x1="456.0" y1="495.6" x2="456.0" y2="456.4" stroke="#c25014" stroke-width="1.4" stroke-dasharray="4 3"/>
+<text x="456" y="453" font-size="12.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">C</text>
+<text x="430.3" y="498.5" font-size="12.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">B</text>
+<text x="481.7" y="498.5" font-size="12.5" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">A</text>
+<rect x="504.0" y="461.0" width="190" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="599.0" y="476.0" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="600">结果 = b（顶C 左B 右A）</text>
+</svg>

@@ -1,52 +1,77 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="800" viewBox="0 0 720 800" role="img" aria-labelledby="title desc" lang="zh-CN">
-<title id="title">一个六片叶子的极小化极大剪枝</title>
-<desc id="desc">先手选择三支后手局面。按左、中、右的次序，搜索读到五、六、三、四，在看到三和四之后分别停住，不读七和九。根的分数是五。把中支改成先看七，会多读一片叶子，根仍是五。叶子是估分，不是终局胜负。</desc>
-<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif}</style>
-<rect width="720" height="800" fill="#f3f7fa"/>
-<text x="36" y="48" font-size="32" fill="#172b45" text-anchor="start">分数已经够用，旁边的树枝可以不看</text>
-<text x="36" y="88" font-size="23" fill="#41576a" text-anchor="start">先手要高分，后手要低分。灰虚线是这一次序下没读的叶子。</text>
-<path d="M360 200L140 286" fill="none" stroke="#176786" stroke-width="2"/>
-<path d="M140 350L100 472" fill="none" stroke="#176786" stroke-width="2"/>
-<path d="M140 350L180 472" fill="none" stroke="#176786" stroke-width="2"/>
-<path d="M360 200L360 286" fill="none" stroke="#176786" stroke-width="2"/>
-<path d="M360 350L320 472" fill="none" stroke="#176786" stroke-width="2"/>
-<path d="M360 350L420 472" fill="none" stroke="#9aabb8" stroke-width="2" stroke-dasharray="6 4"/>
-<path d="M360 200L580 286" fill="none" stroke="#176786" stroke-width="2"/>
-<path d="M580 350L540 472" fill="none" stroke="#176786" stroke-width="2"/>
-<path d="M580 350L660 472" fill="none" stroke="#9aabb8" stroke-width="2" stroke-dasharray="6 4"/>
-<rect x="285.0" y="136.0" width="150" height="64" rx="10" fill="#d9eef5" stroke="#176786" stroke-width="2"/>
-<text x="360" y="160" font-size="20" fill="#172b45" text-anchor="middle">先手</text>
-<text x="360" y="188" font-size="18" fill="#172b45" text-anchor="middle">结果：5</text>
-<rect x="80.0" y="286.0" width="120" height="64" rx="10" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="140" y="310" font-size="20" fill="#172b45" text-anchor="middle">后手</text>
-<text x="140" y="338" font-size="18" fill="#172b45" text-anchor="middle">会选 5</text>
-<rect x="300.0" y="286.0" width="120" height="64" rx="10" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="360" y="310" font-size="20" fill="#172b45" text-anchor="middle">后手</text>
-<text x="360" y="338" font-size="18" fill="#172b45" text-anchor="middle">最多 3</text>
-<rect x="520.0" y="286.0" width="120" height="64" rx="10" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="580" y="310" font-size="20" fill="#172b45" text-anchor="middle">后手</text>
-<text x="580" y="338" font-size="18" fill="#172b45" text-anchor="middle">最多 4</text>
-<rect x="64.0" y="472.0" width="72" height="56" rx="10" fill="#d9eef5" stroke="#176786" stroke-width="2"/>
-<text x="100" y="492" font-size="20" fill="#172b45" text-anchor="middle">5</text>
-<text x="100" y="520" font-size="18" fill="#172b45" text-anchor="middle">①</text>
-<rect x="144.0" y="472.0" width="72" height="56" rx="10" fill="#d9eef5" stroke="#176786" stroke-width="2"/>
-<text x="180" y="492" font-size="20" fill="#172b45" text-anchor="middle">6</text>
-<text x="180" y="520" font-size="18" fill="#172b45" text-anchor="middle">②</text>
-<rect x="284.0" y="472.0" width="72" height="56" rx="10" fill="#d9eef5" stroke="#176786" stroke-width="2"/>
-<text x="320" y="492" font-size="20" fill="#172b45" text-anchor="middle">3</text>
-<text x="320" y="520" font-size="18" fill="#172b45" text-anchor="middle">③</text>
-<rect x="384.0" y="472.0" width="72" height="56" rx="10" fill="#eef3f6" stroke="#9aabb8" stroke-width="2" stroke-dasharray="6 4"/>
-<text x="420" y="492" font-size="20" fill="#172b45" text-anchor="middle">7</text>
-<text x="420" y="520" font-size="18" fill="#172b45" text-anchor="middle">不看</text>
-<rect x="504.0" y="472.0" width="72" height="56" rx="10" fill="#d9eef5" stroke="#176786" stroke-width="2"/>
-<text x="540" y="492" font-size="20" fill="#172b45" text-anchor="middle">4</text>
-<text x="540" y="520" font-size="18" fill="#172b45" text-anchor="middle">④</text>
-<rect x="624.0" y="472.0" width="72" height="56" rx="10" fill="#eef3f6" stroke="#9aabb8" stroke-width="2" stroke-dasharray="6 4"/>
-<text x="660" y="492" font-size="20" fill="#172b45" text-anchor="middle">9</text>
-<text x="660" y="520" font-size="18" fill="#172b45" text-anchor="middle">不看</text>
-<text x="36" y="580" font-size="24" fill="#172b45" text-anchor="start">① 左支看完，先手已经能保证 5。</text>
-<text x="36" y="618" font-size="24" fill="#172b45" text-anchor="start">② 中支一看到 3，就比 5 差，7 不必再读。</text>
-<text x="36" y="656" font-size="24" fill="#172b45" text-anchor="start">③ 右支一看到 4，同样不超过 5，9 不必再读。</text>
-<text x="36" y="704" font-size="24" fill="#176786" text-anchor="start">若中支改成先看 7，7 会被读到；根上的结果仍是 5。</text>
-<text x="36" y="748" font-size="22" fill="#41576a" text-anchor="start">灰格上的 7 和 9 是为了核对才写上的，搜索本身没有读取。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="344" viewBox="0 0 760 344" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">极小化极大博弈树与 α-β 剪枝步骤图</title>
+<desc id="desc">根节点先手MAX取最大，第二层后手MIN取最小。左支得出保底5分后，中支读到3、右支读到4均不超过5，直接剪去叶子7与9。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="343" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">极小化极大（Minimax）与 α-β 剪枝：我挑最高分、对手挑最低分，废枝直接剪掉</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">先手（MAX）想要大数字，后手（MIN）专挑小数字坑你。一旦某分支上限还不如手头保底分，后面叶子全免检！</text>
+<rect x="20" y="62" width="720" height="266" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<line x1="380" y1="128" x2="156" y2="164" stroke="#1d6fa5" stroke-width="1.6"/>
+<line x1="156" y1="208" x2="106" y2="252" stroke="#1d6fa5" stroke-width="1.5"/>
+<line x1="156" y1="208" x2="206" y2="252" stroke="#1d6fa5" stroke-width="1.5"/>
+<line x1="380" y1="128" x2="380" y2="164" stroke="#1d6fa5" stroke-width="1.6"/>
+<line x1="380" y1="208" x2="330" y2="252" stroke="#1d6fa5" stroke-width="1.5"/>
+<line x1="380" y1="208" x2="430" y2="252" stroke="#c25014" stroke-width="1.5" stroke-dasharray="4 3"/>
+<line x1="380" y1="128" x2="604" y2="164" stroke="#1d6fa5" stroke-width="1.6"/>
+<line x1="604" y1="208" x2="554" y2="252" stroke="#1d6fa5" stroke-width="1.5"/>
+<line x1="604" y1="208" x2="654" y2="252" stroke="#c25014" stroke-width="1.5" stroke-dasharray="4 3"/>
+<rect x="288" y="84" width="184" height="44" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.7"/>
+<text x="380" y="103" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="700">先手 MAX（挑最大）</text>
+<text x="380" y="120" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">最终敲定得分 = 5</text>
+<rect x="78" y="164" width="156" height="44" rx="8" fill="#ffffff" stroke="#0f172a" stroke-width="1.3"/>
+<text x="156" y="183" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">后手 MIN（压最小）</text>
+<text x="156" y="200" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="600">后手选 min(5,6)=5</text>
+<rect x="302" y="164" width="156" height="44" rx="8" fill="#ffffff" stroke="#0f172a" stroke-width="1.3"/>
+<text x="380" y="183" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">后手 MIN（压最小）</text>
+<text x="380" y="200" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="600">看到 3 ≤ 5，立刻停！</text>
+<rect x="526" y="164" width="156" height="44" rx="8" fill="#ffffff" stroke="#0f172a" stroke-width="1.3"/>
+<text x="604" y="183" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">后手 MIN（压最小）</text>
+<text x="604" y="200" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="600">看到 4 ≤ 5，立刻停！</text>
+<rect x="70" y="252" width="72" height="40" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1.3"/>
+<text x="106" y="270" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700">估分 5</text>
+<text x="106" y="286" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="600">①读</text>
+<rect x="170" y="252" width="72" height="40" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1.3"/>
+<text x="206" y="270" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700">估分 6</text>
+<text x="206" y="286" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="600">②读</text>
+<rect x="294" y="252" width="72" height="40" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1.3"/>
+<text x="330" y="270" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700">估分 3</text>
+<text x="330" y="286" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="600">③读</text>
+<rect x="394" y="252" width="72" height="40" rx="7" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.3" stroke-dasharray="4 3"/>
+<text x="430" y="270" font-size="12" fill="#64748b" text-anchor="middle" font-weight="700">估分 7</text>
+<text x="430" y="286" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="600">✂剪掉</text>
+<rect x="518" y="252" width="72" height="40" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1.3"/>
+<text x="554" y="270" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700">估分 4</text>
+<text x="554" y="286" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="600">④读</text>
+<rect x="618" y="252" width="72" height="40" rx="7" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.3" stroke-dasharray="4 3"/>
+<text x="654" y="270" font-size="12" fill="#64748b" text-anchor="middle" font-weight="700">估分 9</text>
+<text x="654" y="286" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="600">✂剪掉</text>
+<text x="36" y="316" font-size="11.2" fill="#1e293b" text-anchor="start">读左支拿到保底 5 分后，中支刚翻开 3 就知道后手绝不会给超过 3 分，旁边的 7 哪怕是 100 分也轮不到你，直接剪掉！</text>
 </svg>

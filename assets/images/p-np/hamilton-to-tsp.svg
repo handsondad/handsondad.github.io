@@ -1,93 +1,95 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1195" viewBox="0 0 720 1195" role="img" aria-labelledby="title desc" lang="zh-CN">
+<svg xmlns="http://www.w3.org/2000/svg" width="540" height="896.25" viewBox="0 0 540 896.25" role="img" aria-labelledby="title desc" lang="zh-CN">
 <title id="title">哈密顿回路到旅行商预算的两向归约</title>
 <desc id="desc">上图为四顶点环，有边成本一，无边成本二，预算四，最短路线四，回答是。下图为四顶点星形图，没有哈密顿回路，转换后最短路线六，回答否。位置只是示意，不以图上长度冒充构造距离；生成脚本枚举核对所有三至五顶点简单无向图。</desc>
-<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif}</style>
-<rect width="720" height="1195" fill="#f3f7fa"/>
-<text x="36" y="48" font-size="31" fill="#172b45" text-anchor="start">有边设为 1，无边设为 2，预算设为 n</text>
-<text x="36" y="88" font-size="24" fill="#41576a" text-anchor="start">四点演示；新问题使用完整距离矩阵。</text>
+<style>text{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",sans-serif}</style>
+<rect x="0.75" y="0.75" width="538.5" height="894.75" rx="12" fill="#fbfcfd" stroke="#dde6ee" stroke-width="1.2"/>
+<g transform="scale(0.75)">
+<text x="36" y="45.26" font-size="21.2" fill="#172b45" text-anchor="start" font-weight="700">有边设为 1，无边设为 2，预算设为 n</text>
+<text x="36" y="86.39" font-size="18.2" fill="#41576a" text-anchor="start">四点演示；新问题使用完整距离矩阵。</text>
 <rect x="24" y="120" width="672" height="450" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
-<text x="44" y="162" font-size="28" fill="#172b45" text-anchor="start">① 原图有环 → 新问题也回答“是”</text>
-<text x="185" y="208" font-size="25" fill="#41576a" text-anchor="middle">原图</text>
-<text x="510" y="208" font-size="25" fill="#41576a" text-anchor="middle">新距离</text>
+<text x="44" y="159.80" font-size="20.2" fill="#172b45" text-anchor="start" font-weight="700">① 原图有环 → 新问题也回答“是”</text>
+<text x="185" y="206.32" font-size="19.0" fill="#41576a" text-anchor="middle">原图</text>
+<text x="510" y="206.32" font-size="19.0" fill="#41576a" text-anchor="middle">新距离</text>
 <path d="M105 263L245 263" stroke="#176786" stroke-width="3"/>
 <path d="M245 263L245 403" stroke="#176786" stroke-width="3"/>
-<path d="M245 403L105 403" stroke="#176786" stroke-width="3"/>
 <path d="M105 263L105 403" stroke="#176786" stroke-width="3"/>
+<path d="M245 403L105 403" stroke="#176786" stroke-width="3"/>
 <circle cx="105" cy="263" r="22" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="105" y="272" font-size="26" fill="#172b45" text-anchor="middle">A</text>
+<text x="105" y="270.11" font-size="19.2" fill="#172b45" text-anchor="middle" font-weight="600">A</text>
 <circle cx="245" cy="263" r="22" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="245" y="272" font-size="26" fill="#172b45" text-anchor="middle">B</text>
+<text x="245" y="270.11" font-size="19.2" fill="#172b45" text-anchor="middle" font-weight="600">B</text>
 <circle cx="245" cy="403" r="22" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="245" y="412" font-size="26" fill="#172b45" text-anchor="middle">C</text>
+<text x="245" y="410.11" font-size="19.2" fill="#172b45" text-anchor="middle" font-weight="600">C</text>
 <circle cx="105" cy="403" r="22" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="105" y="412" font-size="26" fill="#172b45" text-anchor="middle">D</text>
-<text x="450" y="253" font-size="24" fill="#41576a" text-anchor="middle">A</text>
-<text x="400" y="299" font-size="24" fill="#41576a" text-anchor="middle">A</text>
-<text x="450" y="299" font-size="25" fill="#172b45" text-anchor="middle">0</text>
-<text x="505" y="299" font-size="25" fill="#172b45" text-anchor="middle">1</text>
-<text x="560" y="299" font-size="25" fill="#172b45" text-anchor="middle">2</text>
-<text x="615" y="299" font-size="25" fill="#172b45" text-anchor="middle">1</text>
-<text x="505" y="253" font-size="24" fill="#41576a" text-anchor="middle">B</text>
-<text x="400" y="342" font-size="24" fill="#41576a" text-anchor="middle">B</text>
-<text x="450" y="342" font-size="25" fill="#172b45" text-anchor="middle">1</text>
-<text x="505" y="342" font-size="25" fill="#172b45" text-anchor="middle">0</text>
-<text x="560" y="342" font-size="25" fill="#172b45" text-anchor="middle">1</text>
-<text x="615" y="342" font-size="25" fill="#172b45" text-anchor="middle">2</text>
-<text x="560" y="253" font-size="24" fill="#41576a" text-anchor="middle">C</text>
-<text x="400" y="385" font-size="24" fill="#41576a" text-anchor="middle">C</text>
-<text x="450" y="385" font-size="25" fill="#172b45" text-anchor="middle">2</text>
-<text x="505" y="385" font-size="25" fill="#172b45" text-anchor="middle">1</text>
-<text x="560" y="385" font-size="25" fill="#172b45" text-anchor="middle">0</text>
-<text x="615" y="385" font-size="25" fill="#172b45" text-anchor="middle">1</text>
-<text x="615" y="253" font-size="24" fill="#41576a" text-anchor="middle">D</text>
-<text x="400" y="428" font-size="24" fill="#41576a" text-anchor="middle">D</text>
-<text x="450" y="428" font-size="25" fill="#172b45" text-anchor="middle">1</text>
-<text x="505" y="428" font-size="25" fill="#172b45" text-anchor="middle">2</text>
-<text x="560" y="428" font-size="25" fill="#172b45" text-anchor="middle">1</text>
-<text x="615" y="428" font-size="25" fill="#172b45" text-anchor="middle">0</text>
-<text x="44" y="473" font-size="25" fill="#172b45" text-anchor="start">最短路线之一：A → B → C → D → A</text>
-<text x="44" y="525" font-size="26" fill="#176786" text-anchor="start">1 + 1 + 1 + 1 = 4，满足预算 4。</text>
+<text x="105" y="410.11" font-size="19.2" fill="#172b45" text-anchor="middle" font-weight="600">D</text>
+<text x="450" y="251.39" font-size="18.2" fill="#41576a" text-anchor="middle">A</text>
+<text x="400" y="297.39" font-size="18.2" fill="#41576a" text-anchor="middle">A</text>
+<text x="450" y="297.32" font-size="19.0" fill="#172b45" text-anchor="middle">0</text>
+<text x="505" y="297.32" font-size="19.0" fill="#172b45" text-anchor="middle">1</text>
+<text x="560" y="297.32" font-size="19.0" fill="#172b45" text-anchor="middle">2</text>
+<text x="615" y="297.32" font-size="19.0" fill="#172b45" text-anchor="middle">1</text>
+<text x="505" y="251.39" font-size="18.2" fill="#41576a" text-anchor="middle">B</text>
+<text x="400" y="340.39" font-size="18.2" fill="#41576a" text-anchor="middle">B</text>
+<text x="450" y="340.32" font-size="19.0" fill="#172b45" text-anchor="middle">1</text>
+<text x="505" y="340.32" font-size="19.0" fill="#172b45" text-anchor="middle">0</text>
+<text x="560" y="340.32" font-size="19.0" fill="#172b45" text-anchor="middle">1</text>
+<text x="615" y="340.32" font-size="19.0" fill="#172b45" text-anchor="middle">2</text>
+<text x="560" y="251.39" font-size="18.2" fill="#41576a" text-anchor="middle">C</text>
+<text x="400" y="383.39" font-size="18.2" fill="#41576a" text-anchor="middle">C</text>
+<text x="450" y="383.32" font-size="19.0" fill="#172b45" text-anchor="middle">2</text>
+<text x="505" y="383.32" font-size="19.0" fill="#172b45" text-anchor="middle">1</text>
+<text x="560" y="383.32" font-size="19.0" fill="#172b45" text-anchor="middle">0</text>
+<text x="615" y="383.32" font-size="19.0" fill="#172b45" text-anchor="middle">1</text>
+<text x="615" y="251.39" font-size="18.2" fill="#41576a" text-anchor="middle">D</text>
+<text x="400" y="426.39" font-size="18.2" fill="#41576a" text-anchor="middle">D</text>
+<text x="450" y="426.32" font-size="19.0" fill="#172b45" text-anchor="middle">1</text>
+<text x="505" y="426.32" font-size="19.0" fill="#172b45" text-anchor="middle">2</text>
+<text x="560" y="426.32" font-size="19.0" fill="#172b45" text-anchor="middle">1</text>
+<text x="615" y="426.32" font-size="19.0" fill="#172b45" text-anchor="middle">0</text>
+<text x="44" y="471.32" font-size="19.0" fill="#172b45" text-anchor="start">最短路线之一：A → B → C → D → A</text>
+<text x="44" y="523.11" font-size="19.2" fill="#176786" text-anchor="start" font-weight="600">1 + 1 + 1 + 1 = 4，满足预算 4。</text>
 <rect x="24" y="595" width="672" height="450" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
-<text x="44" y="637" font-size="28" fill="#172b45" text-anchor="start">② 原图无环 → 新问题也回答“否”</text>
-<text x="185" y="683" font-size="25" fill="#41576a" text-anchor="middle">原图</text>
-<text x="510" y="683" font-size="25" fill="#41576a" text-anchor="middle">新距离</text>
+<text x="44" y="634.80" font-size="20.2" fill="#172b45" text-anchor="start" font-weight="700">② 原图无环 → 新问题也回答“否”</text>
+<text x="185" y="681.32" font-size="19.0" fill="#41576a" text-anchor="middle">原图</text>
+<text x="510" y="681.32" font-size="19.0" fill="#41576a" text-anchor="middle">新距离</text>
 <path d="M105 738L245 738" stroke="#176786" stroke-width="3"/>
 <path d="M105 738L245 878" stroke="#176786" stroke-width="3"/>
 <path d="M105 738L105 878" stroke="#176786" stroke-width="3"/>
 <circle cx="105" cy="738" r="22" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="105" y="747" font-size="26" fill="#172b45" text-anchor="middle">A</text>
+<text x="105" y="745.11" font-size="19.2" fill="#172b45" text-anchor="middle" font-weight="600">A</text>
 <circle cx="245" cy="738" r="22" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="245" y="747" font-size="26" fill="#172b45" text-anchor="middle">B</text>
+<text x="245" y="745.11" font-size="19.2" fill="#172b45" text-anchor="middle" font-weight="600">B</text>
 <circle cx="245" cy="878" r="22" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="245" y="887" font-size="26" fill="#172b45" text-anchor="middle">C</text>
+<text x="245" y="885.11" font-size="19.2" fill="#172b45" text-anchor="middle" font-weight="600">C</text>
 <circle cx="105" cy="878" r="22" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="105" y="887" font-size="26" fill="#172b45" text-anchor="middle">D</text>
-<text x="450" y="728" font-size="24" fill="#41576a" text-anchor="middle">A</text>
-<text x="400" y="774" font-size="24" fill="#41576a" text-anchor="middle">A</text>
-<text x="450" y="774" font-size="25" fill="#172b45" text-anchor="middle">0</text>
-<text x="505" y="774" font-size="25" fill="#172b45" text-anchor="middle">1</text>
-<text x="560" y="774" font-size="25" fill="#172b45" text-anchor="middle">1</text>
-<text x="615" y="774" font-size="25" fill="#172b45" text-anchor="middle">1</text>
-<text x="505" y="728" font-size="24" fill="#41576a" text-anchor="middle">B</text>
-<text x="400" y="817" font-size="24" fill="#41576a" text-anchor="middle">B</text>
-<text x="450" y="817" font-size="25" fill="#172b45" text-anchor="middle">1</text>
-<text x="505" y="817" font-size="25" fill="#172b45" text-anchor="middle">0</text>
-<text x="560" y="817" font-size="25" fill="#172b45" text-anchor="middle">2</text>
-<text x="615" y="817" font-size="25" fill="#172b45" text-anchor="middle">2</text>
-<text x="560" y="728" font-size="24" fill="#41576a" text-anchor="middle">C</text>
-<text x="400" y="860" font-size="24" fill="#41576a" text-anchor="middle">C</text>
-<text x="450" y="860" font-size="25" fill="#172b45" text-anchor="middle">1</text>
-<text x="505" y="860" font-size="25" fill="#172b45" text-anchor="middle">2</text>
-<text x="560" y="860" font-size="25" fill="#172b45" text-anchor="middle">0</text>
-<text x="615" y="860" font-size="25" fill="#172b45" text-anchor="middle">2</text>
-<text x="615" y="728" font-size="24" fill="#41576a" text-anchor="middle">D</text>
-<text x="400" y="903" font-size="24" fill="#41576a" text-anchor="middle">D</text>
-<text x="450" y="903" font-size="25" fill="#172b45" text-anchor="middle">1</text>
-<text x="505" y="903" font-size="25" fill="#172b45" text-anchor="middle">2</text>
-<text x="560" y="903" font-size="25" fill="#172b45" text-anchor="middle">2</text>
-<text x="615" y="903" font-size="25" fill="#172b45" text-anchor="middle">0</text>
-<text x="44" y="948" font-size="25" fill="#172b45" text-anchor="start">最短路线之一：A → B → C → D → A</text>
-<text x="44" y="1000" font-size="26" fill="#ad4f16" text-anchor="start">1 + 2 + 2 + 1 = 6，最短也超预算 4。</text>
-<text x="36" y="1112" font-size="24" fill="#172b45" text-anchor="start">一般理由：n 段各至少为 1，预算 n 迫使每段都是 1。</text>
-<text x="36" y="1158" font-size="24" fill="#41576a" text-anchor="start">图上位置不代表成本；矩阵的 1／2 才是构造的距离。</text>
+<text x="105" y="885.11" font-size="19.2" fill="#172b45" text-anchor="middle" font-weight="600">D</text>
+<text x="450" y="726.39" font-size="18.2" fill="#41576a" text-anchor="middle">A</text>
+<text x="400" y="772.39" font-size="18.2" fill="#41576a" text-anchor="middle">A</text>
+<text x="450" y="772.32" font-size="19.0" fill="#172b45" text-anchor="middle">0</text>
+<text x="505" y="772.32" font-size="19.0" fill="#172b45" text-anchor="middle">1</text>
+<text x="560" y="772.32" font-size="19.0" fill="#172b45" text-anchor="middle">1</text>
+<text x="615" y="772.32" font-size="19.0" fill="#172b45" text-anchor="middle">1</text>
+<text x="505" y="726.39" font-size="18.2" fill="#41576a" text-anchor="middle">B</text>
+<text x="400" y="815.39" font-size="18.2" fill="#41576a" text-anchor="middle">B</text>
+<text x="450" y="815.32" font-size="19.0" fill="#172b45" text-anchor="middle">1</text>
+<text x="505" y="815.32" font-size="19.0" fill="#172b45" text-anchor="middle">0</text>
+<text x="560" y="815.32" font-size="19.0" fill="#172b45" text-anchor="middle">2</text>
+<text x="615" y="815.32" font-size="19.0" fill="#172b45" text-anchor="middle">2</text>
+<text x="560" y="726.39" font-size="18.2" fill="#41576a" text-anchor="middle">C</text>
+<text x="400" y="858.39" font-size="18.2" fill="#41576a" text-anchor="middle">C</text>
+<text x="450" y="858.32" font-size="19.0" fill="#172b45" text-anchor="middle">1</text>
+<text x="505" y="858.32" font-size="19.0" fill="#172b45" text-anchor="middle">2</text>
+<text x="560" y="858.32" font-size="19.0" fill="#172b45" text-anchor="middle">0</text>
+<text x="615" y="858.32" font-size="19.0" fill="#172b45" text-anchor="middle">2</text>
+<text x="615" y="726.39" font-size="18.2" fill="#41576a" text-anchor="middle">D</text>
+<text x="400" y="901.39" font-size="18.2" fill="#41576a" text-anchor="middle">D</text>
+<text x="450" y="901.32" font-size="19.0" fill="#172b45" text-anchor="middle">1</text>
+<text x="505" y="901.32" font-size="19.0" fill="#172b45" text-anchor="middle">2</text>
+<text x="560" y="901.32" font-size="19.0" fill="#172b45" text-anchor="middle">2</text>
+<text x="615" y="901.32" font-size="19.0" fill="#172b45" text-anchor="middle">0</text>
+<text x="44" y="946.32" font-size="19.0" fill="#172b45" text-anchor="start">最短路线之一：A → B → C → D → A</text>
+<text x="44" y="998.11" font-size="19.2" fill="#ad4f16" text-anchor="start" font-weight="600">1 + 2 + 2 + 1 = 6，最短也超预算 4。</text>
+<text x="36" y="1110.39" font-size="18.2" fill="#172b45" text-anchor="start">一般理由：n 段各至少为 1，预算 n 迫使每段都是 1。</text>
+<text x="36" y="1156.39" font-size="18.2" fill="#41576a" text-anchor="start">图上位置不代表成本；矩阵的 1／2 才是构造的距离。</text>
+</g>
 </svg>

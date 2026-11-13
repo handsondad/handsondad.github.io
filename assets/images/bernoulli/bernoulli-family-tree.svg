@@ -1,44 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1400" viewBox="0 0 720 1400" role="img" aria-labelledby="title desc" lang="zh-CN">
+<svg xmlns="http://www.w3.org/2000/svg" width="540" height="1050" viewBox="0 0 540 1050" role="img" aria-labelledby="title desc" lang="zh-CN">
 <title id="title">伯努利家族八位数学家的亲缘图</title>
 <desc id="desc">灰框父亲有雅各布、尼古拉斯、约翰三个儿子。中间一支有尼古拉斯一世；约翰一世的三个数学家儿子是尼古拉斯二世、丹尼尔、约翰二世。约翰二世的两个儿子是约翰三世与雅各布二世。</desc>
-<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif}</style>
-<rect width="720" height="1400" fill="#f3f7fa"/>
-<text x="36" y="48" font-size="32" fill="#172b45" text-anchor="start">八位数学家，三代亲缘</text>
-<text x="36" y="84" font-size="24" fill="#41576a" text-anchor="start">沿线往下读；向右缩进一级，是下一代。</text>
+<style>text{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",sans-serif}</style>
+<rect x="0.75" y="0.75" width="538.5" height="1048.5" rx="12" fill="#fbfcfd" stroke="#dde6ee" stroke-width="1.2"/>
+<g transform="scale(0.75)">
+<text x="36" y="44.98" font-size="21.2" fill="#172b45" text-anchor="start" font-weight="700">八位数学家，三代亲缘</text>
+<text x="36" y="82.39" font-size="18.2" fill="#41576a" text-anchor="start">沿线往下读；向右缩进一级，是下一代。</text>
 <path d="M54 202V691M54 311H88M54 421H88M54 691H88" fill="none" stroke="#738a9c" stroke-width="3"/>
 <path d="M122 462V531H156" fill="none" stroke="#738a9c" stroke-width="3"/>
 <path d="M122 732V1021M122 801H156M122 911H156M122 1021H156" fill="none" stroke="#738a9c" stroke-width="3"/>
 <path d="M190 1062V1241M190 1131H224M190 1241H224" fill="none" stroke="#738a9c" stroke-width="3"/>
 <rect x="36" y="120" width="648" height="82" rx="14" fill="#e8eef2" stroke="#8798a6" stroke-width="2"/>
-<text x="54" y="151" font-size="28" fill="#41576a" text-anchor="start">尼古拉斯：经营香料生意的父亲</text>
-<text x="54" y="188" font-size="23" fill="#41576a" text-anchor="start">1623—1708；灰框不计入八位数学家</text>
+<text x="54" y="148.80" font-size="20.2" fill="#41576a" text-anchor="start" font-weight="700">尼古拉斯：经营香料生意的父亲</text>
+<text x="54" y="186.45" font-size="17.5" fill="#41576a" text-anchor="start">1623—1708；灰框不计入八位数学家</text>
 <rect x="88" y="270" width="596" height="82" rx="14" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="106" y="301" font-size="28" fill="#176786" text-anchor="start">① 雅各布一世</text>
-<text x="106" y="338" font-size="23" fill="#41576a" text-anchor="start">1655—1705；约翰的哥哥</text>
+<text x="106" y="298.80" font-size="20.2" fill="#176786" text-anchor="start" font-weight="700">① 雅各布一世</text>
+<text x="106" y="336.45" font-size="17.5" fill="#41576a" text-anchor="start">1655—1705；约翰的哥哥</text>
 <rect x="88" y="380" width="596" height="82" rx="14" fill="#e8eef2" stroke="#8798a6" stroke-width="2"/>
-<text x="106" y="411" font-size="28" fill="#41576a" text-anchor="start">尼古拉斯：两位数学家之间的兄弟</text>
-<text x="106" y="448" font-size="23" fill="#41576a" text-anchor="start">1662—1716；尼古拉斯一世之父</text>
+<text x="106" y="408.80" font-size="20.2" fill="#41576a" text-anchor="start" font-weight="700">尼古拉斯：两位数学家之间的兄弟</text>
+<text x="106" y="446.45" font-size="17.5" fill="#41576a" text-anchor="start">1662—1716；尼古拉斯一世之父</text>
 <rect x="156" y="490" width="528" height="82" rx="14" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="174" y="521" font-size="28" fill="#176786" text-anchor="start">③ 尼古拉斯一世</text>
-<text x="174" y="558" font-size="23" fill="#41576a" text-anchor="start">1687—1759；丹尼尔的堂兄</text>
+<text x="174" y="518.80" font-size="20.2" fill="#176786" text-anchor="start" font-weight="700">③ 尼古拉斯一世</text>
+<text x="174" y="556.45" font-size="17.5" fill="#41576a" text-anchor="start">1687—1759；丹尼尔的堂兄</text>
 <rect x="88" y="650" width="596" height="82" rx="14" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="106" y="681" font-size="28" fill="#176786" text-anchor="start">② 约翰一世</text>
-<text x="106" y="718" font-size="23" fill="#41576a" text-anchor="start">1667—1748；以下三人为他的儿子</text>
+<text x="106" y="678.80" font-size="20.2" fill="#176786" text-anchor="start" font-weight="700">② 约翰一世</text>
+<text x="106" y="716.45" font-size="17.5" fill="#41576a" text-anchor="start">1667—1748；以下三人为他的儿子</text>
 <rect x="156" y="760" width="528" height="82" rx="14" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="174" y="791" font-size="28" fill="#176786" text-anchor="start">④ 尼古拉斯二世</text>
-<text x="174" y="828" font-size="23" fill="#41576a" text-anchor="start">1695—1726；丹尼尔的哥哥</text>
+<text x="174" y="788.80" font-size="20.2" fill="#176786" text-anchor="start" font-weight="700">④ 尼古拉斯二世</text>
+<text x="174" y="826.45" font-size="17.5" fill="#41576a" text-anchor="start">1695—1726；丹尼尔的哥哥</text>
 <rect x="156" y="870" width="528" height="82" rx="14" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="174" y="901" font-size="28" fill="#176786" text-anchor="start">⑤ 丹尼尔</text>
-<text x="174" y="938" font-size="23" fill="#41576a" text-anchor="start">1700—1782；研究流体与风险</text>
+<text x="174" y="898.80" font-size="20.2" fill="#176786" text-anchor="start" font-weight="700">⑤ 丹尼尔</text>
+<text x="174" y="936.45" font-size="17.5" fill="#41576a" text-anchor="start">1700—1782；研究流体与风险</text>
 <rect x="156" y="980" width="528" height="82" rx="14" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="174" y="1011" font-size="28" fill="#176786" text-anchor="start">⑥ 约翰二世</text>
-<text x="174" y="1048" font-size="23" fill="#41576a" text-anchor="start">1710—1790；以下两人为他的儿子</text>
+<text x="174" y="1008.80" font-size="20.2" fill="#176786" text-anchor="start" font-weight="700">⑥ 约翰二世</text>
+<text x="174" y="1046.45" font-size="17.5" fill="#41576a" text-anchor="start">1710—1790；以下两人为他的儿子</text>
 <rect x="224" y="1090" width="460" height="82" rx="14" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="242" y="1121" font-size="28" fill="#176786" text-anchor="start">⑦ 约翰三世</text>
-<text x="242" y="1158" font-size="23" fill="#41576a" text-anchor="start">1744—1807；丹尼尔的侄子</text>
+<text x="242" y="1118.80" font-size="20.2" fill="#176786" text-anchor="start" font-weight="700">⑦ 约翰三世</text>
+<text x="242" y="1156.45" font-size="17.5" fill="#41576a" text-anchor="start">1744—1807；丹尼尔的侄子</text>
 <rect x="224" y="1200" width="460" height="82" rx="14" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="242" y="1231" font-size="28" fill="#176786" text-anchor="start">⑧ 雅各布二世</text>
-<text x="242" y="1268" font-size="23" fill="#41576a" text-anchor="start">1759—1789；约翰三世的弟弟</text>
-<text x="36" y="1330" font-size="24" fill="#41576a" text-anchor="start">只列连接这八位所需的关系，并非全部子女名单。</text>
-<text x="36" y="1365" font-size="24" fill="#41576a" text-anchor="start">同名人物用“一世、二世、三世”区分。</text>
+<text x="242" y="1228.80" font-size="20.2" fill="#176786" text-anchor="start" font-weight="700">⑧ 雅各布二世</text>
+<text x="242" y="1266.45" font-size="17.5" fill="#41576a" text-anchor="start">1759—1789；约翰三世的弟弟</text>
+<text x="36" y="1328.39" font-size="18.2" fill="#41576a" text-anchor="start">只列连接这八位所需的关系，并非全部子女名单。</text>
+<text x="36" y="1363.39" font-size="18.2" fill="#41576a" text-anchor="start">同名人物用“一世、二世、三世”区分。</text>
+</g>
 </svg>

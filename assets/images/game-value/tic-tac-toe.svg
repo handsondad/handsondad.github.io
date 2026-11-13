@@ -1,70 +1,97 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="620" viewBox="0 0 720 620" role="img" aria-labelledby="title desc" lang="zh-CN">
-<title id="title">井字棋里一步陷阱和一步守和</title>
-<desc id="desc">三盘井字棋。左盘轮到画叉，完整搜索的值是和棋。中盘里叉先占左上，圈立刻占右上，沿对角线连成三子。右盘改占右上，是三个空位里唯一仍为和棋的选择；上边中间那格也会输，图中没有展开。</desc>
-<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif}</style>
-<rect width="720" height="620" fill="#f3f7fa"/>
-<text x="36" y="48" font-size="32" fill="#172b45" text-anchor="start">同一盘棋：一步送掉，一步守和</text>
-<text x="36" y="88" font-size="24" fill="#41576a" text-anchor="start">× 先手，○ 后手。中盘两枚橙格有先后。</text>
-<rect x="24" y="120" width="210" height="360" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
-<rect x="254" y="120" width="210" height="360" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
-<rect x="484" y="120" width="212" height="360" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
-<text x="129" y="158" font-size="26" fill="#172b45" text-anchor="middle">现在</text>
-<text x="359" y="158" font-size="26" fill="#ad4f16" text-anchor="middle">陷阱</text>
-<text x="590" y="158" font-size="26" fill="#176786" text-anchor="middle">守和</text>
-<rect x="48" y="184" width="56" height="56" rx="8" fill="#fff" stroke="#176786" stroke-width="2"/>
-<rect x="110" y="184" width="56" height="56" rx="8" fill="#fff" stroke="#176786" stroke-width="2"/>
-<rect x="172" y="184" width="56" height="56" rx="8" fill="#fff" stroke="#176786" stroke-width="2"/>
-<rect x="48" y="246" width="56" height="56" rx="8" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="76" y="286" font-size="32" fill="#172b45" text-anchor="middle">×</text>
-<rect x="110" y="246" width="56" height="56" rx="8" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="138" y="286" font-size="32" fill="#172b45" text-anchor="middle">○</text>
-<rect x="172" y="246" width="56" height="56" rx="8" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="200" y="286" font-size="32" fill="#172b45" text-anchor="middle">○</text>
-<rect x="48" y="308" width="56" height="56" rx="8" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="76" y="348" font-size="32" fill="#172b45" text-anchor="middle">○</text>
-<rect x="110" y="308" width="56" height="56" rx="8" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="138" y="348" font-size="32" fill="#172b45" text-anchor="middle">×</text>
-<rect x="172" y="308" width="56" height="56" rx="8" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="200" y="348" font-size="32" fill="#172b45" text-anchor="middle">×</text>
-<rect x="278" y="184" width="56" height="56" rx="8" fill="#fff7ea" stroke="#ad4f16" stroke-width="2"/>
-<text x="306" y="224" font-size="32" fill="#172b45" text-anchor="middle">×</text>
-<rect x="340" y="184" width="56" height="56" rx="8" fill="#fff" stroke="#176786" stroke-width="2"/>
-<rect x="402" y="184" width="56" height="56" rx="8" fill="#fff7ea" stroke="#ad4f16" stroke-width="2"/>
-<text x="430" y="224" font-size="32" fill="#172b45" text-anchor="middle">○</text>
-<rect x="278" y="246" width="56" height="56" rx="8" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="306" y="286" font-size="32" fill="#172b45" text-anchor="middle">×</text>
-<rect x="340" y="246" width="56" height="56" rx="8" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="368" y="286" font-size="32" fill="#172b45" text-anchor="middle">○</text>
-<rect x="402" y="246" width="56" height="56" rx="8" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="430" y="286" font-size="32" fill="#172b45" text-anchor="middle">○</text>
-<rect x="278" y="308" width="56" height="56" rx="8" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="306" y="348" font-size="32" fill="#172b45" text-anchor="middle">○</text>
-<rect x="340" y="308" width="56" height="56" rx="8" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="368" y="348" font-size="32" fill="#172b45" text-anchor="middle">×</text>
-<rect x="402" y="308" width="56" height="56" rx="8" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="430" y="348" font-size="32" fill="#172b45" text-anchor="middle">×</text>
-<rect x="508" y="184" width="56" height="56" rx="8" fill="#fff" stroke="#176786" stroke-width="2"/>
-<rect x="570" y="184" width="56" height="56" rx="8" fill="#fff" stroke="#176786" stroke-width="2"/>
-<rect x="632" y="184" width="56" height="56" rx="8" fill="#fff7ea" stroke="#ad4f16" stroke-width="2"/>
-<text x="660" y="224" font-size="32" fill="#172b45" text-anchor="middle">×</text>
-<rect x="508" y="246" width="56" height="56" rx="8" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="536" y="286" font-size="32" fill="#172b45" text-anchor="middle">×</text>
-<rect x="570" y="246" width="56" height="56" rx="8" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="598" y="286" font-size="32" fill="#172b45" text-anchor="middle">○</text>
-<rect x="632" y="246" width="56" height="56" rx="8" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="660" y="286" font-size="32" fill="#172b45" text-anchor="middle">○</text>
-<rect x="508" y="308" width="56" height="56" rx="8" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="536" y="348" font-size="32" fill="#172b45" text-anchor="middle">○</text>
-<rect x="570" y="308" width="56" height="56" rx="8" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="598" y="348" font-size="32" fill="#172b45" text-anchor="middle">×</text>
-<rect x="632" y="308" width="56" height="56" rx="8" fill="#fff" stroke="#176786" stroke-width="2"/>
-<text x="660" y="348" font-size="32" fill="#172b45" text-anchor="middle">×</text>
-<text x="129" y="400" font-size="22" fill="#41576a" text-anchor="middle">轮到 ×</text>
-<text x="129" y="434" font-size="22" fill="#176786" text-anchor="middle">整盘值：和</text>
-<text x="359" y="400" font-size="20" fill="#ad4f16" text-anchor="middle">叉先下左上</text>
-<text x="359" y="434" font-size="20" fill="#ad4f16" text-anchor="middle">圈再下右上即胜</text>
-<text x="590" y="400" font-size="20" fill="#176786" text-anchor="middle">三个空位里</text>
-<text x="590" y="434" font-size="20" fill="#176786" text-anchor="middle">只有右上能守和</text>
-<text x="36" y="528" font-size="24" fill="#172b45" text-anchor="start">正中空位也会输，只是圈不能马上连成，图里没有展开。</text>
-<text x="36" y="570" font-size="24" fill="#41576a" text-anchor="start">右盘之后仍是和棋。空棋盘用同一套搜索，结果也是和棋。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="302" viewBox="0 0 760 302" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">井字棋一步陷阱与唯一守和着法对比</title>
+<desc id="desc">左盘轮到×落子，理论值为和棋；中盘×误下左上角被○占右上角连成斜线获胜；右盘×占右上角成为三个空位中唯一守和选择。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="301" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">井字棋残局样品：理论值是“和棋”，但三个空位里只有唯一一格能守住！</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">当前轮到 × 落子。下错左上角会被 ○ 斜线绝杀；只有抢占右上角才能守和（正中空位同样必败）。</text>
+<rect x="20" y="62" width="224" height="224" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="132" y="84" font-size="12.4" fill="#0f172a" text-anchor="middle" font-weight="600">① 当前局面（轮到 ×）</text>
+<rect x="68" y="100" width="40" height="40" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<rect x="112" y="100" width="40" height="40" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<rect x="156" y="100" width="40" height="40" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<rect x="68" y="144" width="40" height="40" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="88" y="170" font-size="18" fill="#1d6fa5" text-anchor="middle" font-weight="700">×</text>
+<rect x="112" y="144" width="40" height="40" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="132" y="170" font-size="18" fill="#c25014" text-anchor="middle" font-weight="700">○</text>
+<rect x="156" y="144" width="40" height="40" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="176" y="170" font-size="18" fill="#c25014" text-anchor="middle" font-weight="700">○</text>
+<rect x="68" y="188" width="40" height="40" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="88" y="214" font-size="18" fill="#c25014" text-anchor="middle" font-weight="700">○</text>
+<rect x="112" y="188" width="40" height="40" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="132" y="214" font-size="18" fill="#1d6fa5" text-anchor="middle" font-weight="700">×</text>
+<rect x="156" y="188" width="40" height="40" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="176" y="214" font-size="18" fill="#1d6fa5" text-anchor="middle" font-weight="700">×</text>
+<rect x="34.0" y="248.0" width="196" height="24" rx="12.0" fill="#f1f5f9" stroke="#1e293b" stroke-width="1" stroke-opacity="0.35"/>
+<text x="132.0" y="264.3" font-size="11" fill="#1e293b" text-anchor="middle" font-weight="600">完整搜索值 = 和棋</text>
+<rect x="268" y="62" width="224" height="224" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="380" y="84" font-size="12.4" fill="#0f172a" text-anchor="middle" font-weight="600">② 误占左上 → 被斜连绝杀</text>
+<rect x="316" y="100" width="40" height="40" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="1.7"/>
+<text x="336" y="126" font-size="18" fill="#1d6fa5" text-anchor="middle" font-weight="700">×</text>
+<rect x="360" y="100" width="40" height="40" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<rect x="404" y="100" width="40" height="40" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="1.7"/>
+<text x="424" y="126" font-size="18" fill="#c25014" text-anchor="middle" font-weight="700">○</text>
+<rect x="316" y="144" width="40" height="40" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="336" y="170" font-size="18" fill="#1d6fa5" text-anchor="middle" font-weight="700">×</text>
+<rect x="360" y="144" width="40" height="40" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="380" y="170" font-size="18" fill="#c25014" text-anchor="middle" font-weight="700">○</text>
+<rect x="404" y="144" width="40" height="40" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="424" y="170" font-size="18" fill="#c25014" text-anchor="middle" font-weight="700">○</text>
+<rect x="316" y="188" width="40" height="40" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="336" y="214" font-size="18" fill="#c25014" text-anchor="middle" font-weight="700">○</text>
+<rect x="360" y="188" width="40" height="40" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="380" y="214" font-size="18" fill="#1d6fa5" text-anchor="middle" font-weight="700">×</text>
+<rect x="404" y="188" width="40" height="40" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="424" y="214" font-size="18" fill="#1d6fa5" text-anchor="middle" font-weight="700">×</text>
+<line x1="424" y1="120" x2="336" y2="208" stroke="#c25014" stroke-width="2.4" stroke-dasharray="4 2"/>
+<rect x="282.0" y="248.0" width="196" height="24" rx="12.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="380.0" y="264.3" font-size="11" fill="#c25014" text-anchor="middle" font-weight="600">× 下左上，○ 占右上即赢</text>
+<rect x="516" y="62" width="224" height="224" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="628" y="84" font-size="12.4" fill="#0f172a" text-anchor="middle" font-weight="600">③ 唯一正解：抢占右上</text>
+<rect x="564" y="100" width="40" height="40" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<rect x="608" y="100" width="40" height="40" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<rect x="652" y="100" width="40" height="40" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="1.7"/>
+<text x="672" y="126" font-size="18" fill="#1d6fa5" text-anchor="middle" font-weight="700">×</text>
+<rect x="564" y="144" width="40" height="40" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="584" y="170" font-size="18" fill="#1d6fa5" text-anchor="middle" font-weight="700">×</text>
+<rect x="608" y="144" width="40" height="40" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="628" y="170" font-size="18" fill="#c25014" text-anchor="middle" font-weight="700">○</text>
+<rect x="652" y="144" width="40" height="40" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="672" y="170" font-size="18" fill="#c25014" text-anchor="middle" font-weight="700">○</text>
+<rect x="564" y="188" width="40" height="40" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="584" y="214" font-size="18" fill="#c25014" text-anchor="middle" font-weight="700">○</text>
+<rect x="608" y="188" width="40" height="40" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="628" y="214" font-size="18" fill="#1d6fa5" text-anchor="middle" font-weight="700">×</text>
+<rect x="652" y="188" width="40" height="40" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="672" y="214" font-size="18" fill="#1d6fa5" text-anchor="middle" font-weight="700">×</text>
+<rect x="530.0" y="248.0" width="196" height="24" rx="12.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="628.0" y="264.3" font-size="11" fill="#18794e" text-anchor="middle" font-weight="600">堵住斜线，稳稳守住和棋</text>
 </svg>

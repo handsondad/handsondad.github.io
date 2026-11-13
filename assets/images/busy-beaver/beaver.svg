@@ -1,83 +1,138 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="700" viewBox="0 0 720 700" role="img" aria-labelledby="title desc" lang="zh-CN">
-<title id="title">两状态忙碌海狸的六步</title>
-<desc id="desc">一台两状态、符号为 0 和 1 的图灵机，从全 0 纸带出发。六步之后停机，纸带上留下四个 1。每行给出该步结束时的纸带和下一个状态。橙框依次移过六行并停在最后一行；减少动态效果时直接停在最后一行。这台机器的步数等于已知的两状态最大值，最大值本身的证明不在这张图里。</desc>
-<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif}</style>
-<rect width="720" height="700" fill="#f3f7fa"/>
-<text x="36" y="46" font-size="32" fill="#172b45" text-anchor="start">两状态的海狸：六步后停下</text>
-<text x="36" y="84" font-size="22" fill="#41576a" text-anchor="start">纸带开始全是 0。橙框只沿六行各停一次，最后留在停机行。</text>
-<style>.scan{animation:scan 6s linear 1 forwards}@keyframes scan{0%{transform:translateY(0)}16%{transform:translateY(0)}20%{transform:translateY(62px)}32%{transform:translateY(62px)}36%{transform:translateY(124px)}48%{transform:translateY(124px)}52%{transform:translateY(186px)}64%{transform:translateY(186px)}68%{transform:translateY(248px)}80%{transform:translateY(248px)}84%{transform:translateY(310px)}100%{transform:translateY(310px)}}@media(prefers-reduced-motion:reduce){.scan{animation:none;transform:translateY(310px)}}</style>
-<text x="48" y="128" font-size="20" fill="#41576a" text-anchor="start">步</text>
-<text x="110" y="128" font-size="20" fill="#41576a" text-anchor="start">纸带</text>
-<text x="430" y="128" font-size="20" fill="#41576a" text-anchor="start">结束后</text>
-<rect x="24" y="146" width="672" height="54" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
-<text x="48" y="182" font-size="24" fill="#176786" text-anchor="start">1</text>
-<rect x="110" y="154" width="58" height="38" rx="8" fill="#fff" stroke="#176786" stroke-width="3"/>
-<text x="139" y="181" font-size="22" fill="#172b45" text-anchor="middle">0</text>
-<rect x="180" y="154" width="58" height="38" rx="8" fill="#fff" stroke="#176786" stroke-width="3"/>
-<text x="209" y="181" font-size="22" fill="#172b45" text-anchor="middle">0</text>
-<rect x="250" y="154" width="58" height="38" rx="8" fill="#d9eef5" stroke="#176786" stroke-width="3"/>
-<text x="279" y="181" font-size="22" fill="#172b45" text-anchor="middle">1</text>
-<rect x="320" y="154" width="58" height="38" rx="8" fill="#fff7ea" stroke="#ad4f16" stroke-width="3"/>
-<text x="349" y="181" font-size="22" fill="#172b45" text-anchor="middle">0</text>
-<text x="470" y="182" font-size="24" fill="#172b45" text-anchor="start">B</text>
-<rect x="24" y="208" width="672" height="54" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
-<text x="48" y="244" font-size="24" fill="#176786" text-anchor="start">2</text>
-<rect x="110" y="216" width="58" height="38" rx="8" fill="#fff" stroke="#176786" stroke-width="3"/>
-<text x="139" y="243" font-size="22" fill="#172b45" text-anchor="middle">0</text>
-<rect x="180" y="216" width="58" height="38" rx="8" fill="#fff" stroke="#176786" stroke-width="3"/>
-<text x="209" y="243" font-size="22" fill="#172b45" text-anchor="middle">0</text>
-<rect x="250" y="216" width="58" height="38" rx="8" fill="#fff7ea" stroke="#ad4f16" stroke-width="3"/>
-<text x="279" y="243" font-size="22" fill="#172b45" text-anchor="middle">1</text>
-<rect x="320" y="216" width="58" height="38" rx="8" fill="#d9eef5" stroke="#176786" stroke-width="3"/>
-<text x="349" y="243" font-size="22" fill="#172b45" text-anchor="middle">1</text>
-<text x="470" y="244" font-size="24" fill="#172b45" text-anchor="start">A</text>
-<rect x="24" y="270" width="672" height="54" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
-<text x="48" y="306" font-size="24" fill="#176786" text-anchor="start">3</text>
-<rect x="110" y="278" width="58" height="38" rx="8" fill="#fff" stroke="#176786" stroke-width="3"/>
-<text x="139" y="305" font-size="22" fill="#172b45" text-anchor="middle">0</text>
-<rect x="180" y="278" width="58" height="38" rx="8" fill="#fff7ea" stroke="#ad4f16" stroke-width="3"/>
-<text x="209" y="305" font-size="22" fill="#172b45" text-anchor="middle">0</text>
-<rect x="250" y="278" width="58" height="38" rx="8" fill="#d9eef5" stroke="#176786" stroke-width="3"/>
-<text x="279" y="305" font-size="22" fill="#172b45" text-anchor="middle">1</text>
-<rect x="320" y="278" width="58" height="38" rx="8" fill="#d9eef5" stroke="#176786" stroke-width="3"/>
-<text x="349" y="305" font-size="22" fill="#172b45" text-anchor="middle">1</text>
-<text x="470" y="306" font-size="24" fill="#172b45" text-anchor="start">B</text>
-<rect x="24" y="332" width="672" height="54" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
-<text x="48" y="368" font-size="24" fill="#176786" text-anchor="start">4</text>
-<rect x="110" y="340" width="58" height="38" rx="8" fill="#fff7ea" stroke="#ad4f16" stroke-width="3"/>
-<text x="139" y="367" font-size="22" fill="#172b45" text-anchor="middle">0</text>
-<rect x="180" y="340" width="58" height="38" rx="8" fill="#d9eef5" stroke="#176786" stroke-width="3"/>
-<text x="209" y="367" font-size="22" fill="#172b45" text-anchor="middle">1</text>
-<rect x="250" y="340" width="58" height="38" rx="8" fill="#d9eef5" stroke="#176786" stroke-width="3"/>
-<text x="279" y="367" font-size="22" fill="#172b45" text-anchor="middle">1</text>
-<rect x="320" y="340" width="58" height="38" rx="8" fill="#d9eef5" stroke="#176786" stroke-width="3"/>
-<text x="349" y="367" font-size="22" fill="#172b45" text-anchor="middle">1</text>
-<text x="470" y="368" font-size="24" fill="#172b45" text-anchor="start">A</text>
-<rect x="24" y="394" width="672" height="54" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
-<text x="48" y="430" font-size="24" fill="#176786" text-anchor="start">5</text>
-<rect x="110" y="402" width="58" height="38" rx="8" fill="#d9eef5" stroke="#176786" stroke-width="3"/>
-<text x="139" y="429" font-size="22" fill="#172b45" text-anchor="middle">1</text>
-<rect x="180" y="402" width="58" height="38" rx="8" fill="#fff7ea" stroke="#ad4f16" stroke-width="3"/>
-<text x="209" y="429" font-size="22" fill="#172b45" text-anchor="middle">1</text>
-<rect x="250" y="402" width="58" height="38" rx="8" fill="#d9eef5" stroke="#176786" stroke-width="3"/>
-<text x="279" y="429" font-size="22" fill="#172b45" text-anchor="middle">1</text>
-<rect x="320" y="402" width="58" height="38" rx="8" fill="#d9eef5" stroke="#176786" stroke-width="3"/>
-<text x="349" y="429" font-size="22" fill="#172b45" text-anchor="middle">1</text>
-<text x="470" y="430" font-size="24" fill="#172b45" text-anchor="start">B</text>
-<rect x="24" y="456" width="672" height="54" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
-<text x="48" y="492" font-size="24" fill="#176786" text-anchor="start">6</text>
-<rect x="110" y="464" width="58" height="38" rx="8" fill="#d9eef5" stroke="#176786" stroke-width="3"/>
-<text x="139" y="491" font-size="22" fill="#172b45" text-anchor="middle">1</text>
-<rect x="180" y="464" width="58" height="38" rx="8" fill="#d9eef5" stroke="#176786" stroke-width="3"/>
-<text x="209" y="491" font-size="22" fill="#172b45" text-anchor="middle">1</text>
-<rect x="250" y="464" width="58" height="38" rx="8" fill="#fff7ea" stroke="#ad4f16" stroke-width="3"/>
-<text x="279" y="491" font-size="22" fill="#172b45" text-anchor="middle">1</text>
-<rect x="320" y="464" width="58" height="38" rx="8" fill="#d9eef5" stroke="#176786" stroke-width="3"/>
-<text x="349" y="491" font-size="22" fill="#172b45" text-anchor="middle">1</text>
-<text x="470" y="492" font-size="24" fill="#ad4f16" text-anchor="start">停机</text>
-<rect class="scan" x="28" y="148" width="664" height="50" rx="12" fill="none" stroke="#ad4f16" stroke-width="4"/>
-<text x="36" y="548" font-size="22" fill="#172b45" text-anchor="start">橙格是这一步结束时读写头所在的格子。</text>
-<text x="36" y="582" font-size="22" fill="#172b45" text-anchor="start">A 读 0：写 1，向右，到 B。A 读 1：写 1，向左，到 B。</text>
-<text x="36" y="616" font-size="22" fill="#172b45" text-anchor="start">B 读 0：写 1，向左，到 A。B 读 1：写 1，向右，停机。</text>
-<text x="36" y="650" font-size="22" fill="#176786" text-anchor="start">停机时有 4 个 1，共六步。文献里的最大值也是这两项。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="350" viewBox="0 0 760 350" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">两状态忙碌海狸状态机与六步纸带运行图</title>
+<desc id="desc">左侧画出状态A、B与停机的4条转移箭头；右侧列出第1至第6步结束时的纸带内容与读写头橙色位置，最终走6步留下4个1后停机。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  .scan { animation: scan 5.4s linear 1 forwards; }
+      @keyframes scan {
+        0%, 14% { transform: translateY(0); }
+        18%, 31% { transform: translateY(34px); }
+        35%, 48% { transform: translateY(68px); }
+        52%, 65% { transform: translateY(102px); }
+        69%, 82% { transform: translateY(136px); }
+        86%, 100% { transform: translateY(170px); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .scan { animation: none; transform: translateY(170px); }
+      }
+</style>
+<rect x="0.5" y="0.5" width="759" height="349" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">两状态“忙碌海狸”冠军机：左边看状态说明书，右边一步步跟完 6 步停机</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">纸带起初全为 0，从状态 A 出发。橙框依次扫过 6 步并停在最后一行（最终留下 4 个 1，恰为两状态理论上限）。</text>
+<rect x="20" y="62" width="312" height="272" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="84" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="600">① 状态转移图（共 4 条指令）</text>
+<circle cx="88" cy="158" r="24" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.8"/>
+<text x="88" y="163" font-size="14" fill="#1d6fa5" text-anchor="middle" font-weight="700">A</text>
+<text x="88" y="124" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">起点↓</text>
+<circle cx="246" cy="158" r="24" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.8"/>
+<text x="246" y="163" font-size="14" fill="#1d6fa5" text-anchor="middle" font-weight="700">B</text>
+<circle cx="167" cy="268" r="24" fill="#fef1e8" stroke="#c25014" stroke-width="2.0"/>
+<circle cx="167" cy="268" r="20" fill="none" stroke="#c25014" stroke-width="1.0"/>
+<text x="167" y="273" font-size="12.5" fill="#c25014" text-anchor="middle" font-weight="700">停机</text>
+<path d="M110,145 Q167,108 222,145" fill="none" stroke="#1d6fa5" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+<text x="167" y="118" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="600" class="halo">A读0→写1,右移</text>
+<text x="167" y="132" font-size="10.5" fill="#1d6fa5" text-anchor="middle" class="halo">A读1→写1,左移</text>
+<path d="M224,172 Q167,208 112,172" fill="none" stroke="#18794e" stroke-width="1.5" marker-end="url(#arr-green)"/>
+<text x="167" y="204" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="600" class="halo">B读0 → 写1,左移回A</text>
+<path d="M236,181 Q222,232 192,256" fill="none" stroke="#c25014" stroke-width="1.6" marker-end="url(#arr-orange)"/>
+<text x="248" y="232" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">B读1 → 写1,右移停机!</text>
+<text x="176" y="318" font-size="11" fill="#64748b" text-anchor="middle">手指顺着圆圈跳，就能算出右边每一步</text>
+<rect x="346" y="62" width="394" height="272" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="362" y="84" font-size="12.4" fill="#0f172a" text-anchor="start" font-weight="600">② 纸带逐步记录（橙格 = 本步结束时读写头位置）</text>
+<text x="374" y="106" font-size="11" fill="#64748b" text-anchor="middle">步</text>
+<text x="488" y="106" font-size="11" fill="#64748b" text-anchor="middle">纸带四格（格号 −2, −1, 0, +1）</text>
+<text x="668" y="106" font-size="11" fill="#64748b" text-anchor="middle">转入状态</text>
+<rect x="358" y="114" width="368" height="28" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="374" y="132.5" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono">1</text>
+<rect x="408" y="117" width="38" height="22" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.1"/>
+<text x="427" y="132.5" font-size="12" fill="#0f172a" text-anchor="middle" class="mono">0</text>
+<rect x="454" y="117" width="38" height="22" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.1"/>
+<text x="473" y="132.5" font-size="12" fill="#0f172a" text-anchor="middle" class="mono">0</text>
+<rect x="500" y="117" width="38" height="22" rx="4" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="519" y="132.5" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">1</text>
+<rect x="546" y="117" width="38" height="22" rx="4" fill="#fef1e8" stroke="#c25014" stroke-width="1.7"/>
+<text x="565" y="132.5" font-size="12" fill="#0f172a" text-anchor="middle" class="mono">0</text>
+<text x="668" y="132.5" font-size="11.5" fill="#1e293b" text-anchor="middle">状态 B</text>
+<rect x="358" y="148" width="368" height="28" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="374" y="166.5" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono">2</text>
+<rect x="408" y="151" width="38" height="22" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.1"/>
+<text x="427" y="166.5" font-size="12" fill="#0f172a" text-anchor="middle" class="mono">0</text>
+<rect x="454" y="151" width="38" height="22" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.1"/>
+<text x="473" y="166.5" font-size="12" fill="#0f172a" text-anchor="middle" class="mono">0</text>
+<rect x="500" y="151" width="38" height="22" rx="4" fill="#fef1e8" stroke="#c25014" stroke-width="1.7"/>
+<text x="519" y="166.5" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">1</text>
+<rect x="546" y="151" width="38" height="22" rx="4" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="565" y="166.5" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">1</text>
+<text x="668" y="166.5" font-size="11.5" fill="#1e293b" text-anchor="middle">状态 A</text>
+<rect x="358" y="182" width="368" height="28" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="374" y="200.5" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono">3</text>
+<rect x="408" y="185" width="38" height="22" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.1"/>
+<text x="427" y="200.5" font-size="12" fill="#0f172a" text-anchor="middle" class="mono">0</text>
+<rect x="454" y="185" width="38" height="22" rx="4" fill="#fef1e8" stroke="#c25014" stroke-width="1.7"/>
+<text x="473" y="200.5" font-size="12" fill="#0f172a" text-anchor="middle" class="mono">0</text>
+<rect x="500" y="185" width="38" height="22" rx="4" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="519" y="200.5" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">1</text>
+<rect x="546" y="185" width="38" height="22" rx="4" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="565" y="200.5" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">1</text>
+<text x="668" y="200.5" font-size="11.5" fill="#1e293b" text-anchor="middle">状态 B</text>
+<rect x="358" y="216" width="368" height="28" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="374" y="234.5" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono">4</text>
+<rect x="408" y="219" width="38" height="22" rx="4" fill="#fef1e8" stroke="#c25014" stroke-width="1.7"/>
+<text x="427" y="234.5" font-size="12" fill="#0f172a" text-anchor="middle" class="mono">0</text>
+<rect x="454" y="219" width="38" height="22" rx="4" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="473" y="234.5" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">1</text>
+<rect x="500" y="219" width="38" height="22" rx="4" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="519" y="234.5" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">1</text>
+<rect x="546" y="219" width="38" height="22" rx="4" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="565" y="234.5" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">1</text>
+<text x="668" y="234.5" font-size="11.5" fill="#1e293b" text-anchor="middle">状态 A</text>
+<rect x="358" y="250" width="368" height="28" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="374" y="268.5" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono">5</text>
+<rect x="408" y="253" width="38" height="22" rx="4" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="427" y="268.5" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">1</text>
+<rect x="454" y="253" width="38" height="22" rx="4" fill="#fef1e8" stroke="#c25014" stroke-width="1.7"/>
+<text x="473" y="268.5" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">1</text>
+<rect x="500" y="253" width="38" height="22" rx="4" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="519" y="268.5" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">1</text>
+<rect x="546" y="253" width="38" height="22" rx="4" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="565" y="268.5" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">1</text>
+<text x="668" y="268.5" font-size="11.5" fill="#1e293b" text-anchor="middle">状态 B</text>
+<rect x="358" y="284" width="368" height="28" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="374" y="302.5" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono">6</text>
+<rect x="408" y="287" width="38" height="22" rx="4" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="427" y="302.5" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">1</text>
+<rect x="454" y="287" width="38" height="22" rx="4" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="473" y="302.5" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">1</text>
+<rect x="500" y="287" width="38" height="22" rx="4" fill="#fef1e8" stroke="#c25014" stroke-width="1.7"/>
+<text x="519" y="302.5" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">1</text>
+<rect x="546" y="287" width="38" height="22" rx="4" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="565" y="302.5" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">1</text>
+<text x="668" y="302.5" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">H（停机）</text>
+<rect class="scan" x="356" y="113" width="372" height="30" rx="7" fill="none" stroke="#c25014" stroke-width="2.0"/>
 </svg>

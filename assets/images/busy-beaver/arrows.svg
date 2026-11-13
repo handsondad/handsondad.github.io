@@ -1,20 +1,70 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="720" viewBox="0 0 720 720" role="img" aria-labelledby="title desc" lang="zh-CN">
-<title id="title">高德纳箭头与三层幂塔</title>
-<desc id="desc">三个 3 从底部结合得到 19683；从顶部结合得到 3 的 27 次方，等于 7625597484987。3^^3 表示两支箭头，等于后者。3^^^3 表示三支箭头，是一座 3 的幂塔，层数恰为 7625597484987。</desc>
-<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif}</style>
-<rect width="720" height="720" fill="#f3f7fa"/>
-<text x="36" y="46" font-size="32" fill="#172b45" text-anchor="start">幂塔从顶上往下算</text>
-<text x="36" y="84" font-size="24" fill="#41576a" text-anchor="start">同样三个 3，结合顺序会把结果差出很多个数量级。</text>
-<rect x="24" y="108" width="672" height="150" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
-<text x="44" y="152" font-size="28" fill="#172b45" text-anchor="start">① (3³)³ ＝ 27³ ＝ 19,683</text>
-<text x="44" y="198" font-size="24" fill="#41576a" text-anchor="start">先算下面，再把结果拿去乘方。</text>
-<rect x="24" y="274" width="672" height="168" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
-<text x="44" y="318" font-size="26" fill="#176786" text-anchor="start">② 3^(3³) ＝ 3²⁷ ＝ 7,625,597,484,987</text>
-<text x="44" y="366" font-size="24" fill="#41576a" text-anchor="start">高德纳箭头采用这一侧：从最上的指数算起。</text>
-<text x="44" y="408" font-size="22" fill="#172b45" text-anchor="start">3^^3 就是这座塔。^^ 表示两支上箭头。</text>
-<rect x="24" y="458" width="672" height="220" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
-<text x="44" y="502" font-size="28" fill="#172b45" text-anchor="start">③ 3^^^3 ＝ 3^^(3^^3)</text>
-<text x="44" y="550" font-size="24" fill="#ad4f16" text-anchor="start">它是 3 的幂塔，层数等于 7,625,597,484,987。</text>
-<text x="44" y="596" font-size="24" fill="#172b45" text-anchor="start">大约 7.63 万亿层。图里画不出这些层，层数是算出来的。</text>
-<text x="44" y="642" font-size="24" fill="#41576a" text-anchor="start">多一支箭头，是把前一种运算再迭代这么多次。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="344" viewBox="0 0 760 344" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">高德纳上箭头与幂塔层数爆炸图解</title>
+<desc id="desc">左侧对比自底向上(3³)³=19683与自顶向下3↑↑3=3²⁷≈7.63万亿；右侧画出3↑↑↑3对应的7.63万亿层幂塔示意及葛立恒数箭头数递推规则。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="343" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">高德纳上箭头（↑）：每多一支箭头，就把“前一种运算”再叠成一座塔</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">注意幂塔必须【从最顶层往下算】！多一支箭头不是多乘一次，而是让幂塔的“层数”本身爆炸。</text>
+<rect x="20" y="62" width="344" height="266" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="84" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="600">① 同样三个 3，从哪边先算差出 3.8 亿倍</text>
+<rect x="36" y="100" width="312" height="86" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="48" y="122" font-size="12.2" fill="#1e293b" text-anchor="start" font-weight="600">从底下先算：(3³)³ = 27³ = 19,683</text>
+<text x="48" y="144" font-size="11.3" fill="#64748b" text-anchor="start">本质只是指数相乘 3^(3×3) = 3⁹，威力很温和，</text>
+<text x="48" y="164" font-size="11.3" fill="#64748b" text-anchor="start">所以高德纳箭头不采用这种顺序。</text>
+<rect x="36" y="198" width="312" height="114" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="48" y="220" font-size="12.2" fill="#1d6fa5" text-anchor="start" font-weight="700">从塔顶往下算（双箭头 3 ↑↑ 3）：</text>
+<rect x="52" y="264" width="28" height="28" rx="5" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.4"/>
+<text x="66" y="283" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">3</text>
+<rect x="82" y="247" width="26" height="26" rx="5" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.4"/>
+<text x="95" y="265" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="700">3</text>
+<rect x="110" y="232" width="24" height="24" rx="5" fill="#fef1e8" stroke="#c25014" stroke-width="1.5"/>
+<text x="122" y="249" font-size="12" fill="#c25014" text-anchor="middle" font-weight="700">3</text>
+<text x="148" y="254" font-size="11.3" fill="#c25014" text-anchor="start" font-weight="600">先算顶上两层 3³ = 27</text>
+<text x="148" y="276" font-size="11.3" fill="#0f172a" text-anchor="start" font-weight="700">再算底数 3²⁷ = 7,625,597,484,987</text>
+<text x="52" y="304" font-size="11.2" fill="#1e293b" text-anchor="start">约 7.63 万亿！这就是 3 ↑↑ 3（3 层高的 3 幂塔）。</text>
+<rect x="378" y="62" width="362" height="266" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="394" y="84" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="600">② 三支箭头 3 ↑↑↑ 3：层数本身等于 7.63 万亿！</text>
+<rect x="420" y="266" width="24" height="24" rx="5" fill="#fef1e8" stroke="#c25014" stroke-width="1.3"/>
+<text x="432" y="283" font-size="12.5" fill="#0f172a" text-anchor="middle" font-weight="700">3</text>
+<rect x="434" y="234" width="24" height="24" rx="5" fill="#fef1e8" stroke="#c25014" stroke-width="1.3"/>
+<text x="446" y="251" font-size="12.5" fill="#0f172a" text-anchor="middle" font-weight="700">3</text>
+<text x="460" y="218" font-size="16" fill="#c25014" text-anchor="middle" font-weight="700">⋰</text>
+<rect x="462" y="170" width="24" height="24" rx="5" fill="#fef1e8" stroke="#c25014" stroke-width="1.3"/>
+<text x="474" y="187" font-size="12.5" fill="#0f172a" text-anchor="middle" font-weight="700">3</text>
+<rect x="476" y="138" width="24" height="24" rx="5" fill="#fef1e8" stroke="#c25014" stroke-width="1.3"/>
+<text x="488" y="155" font-size="12.5" fill="#0f172a" text-anchor="middle" font-weight="700">3</text>
+<path d="M512,136 H520 V290 H512" fill="none" stroke="#c25014" stroke-width="1.6"/>
+<text x="530" y="198" font-size="12" fill="#c25014" text-anchor="start" font-weight="700">幂塔总层数 = 3 ↑↑ 3</text>
+<text x="530" y="217" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">= 7,625,597,484,987 层！</text>
+<text x="530" y="236" font-size="11" fill="#64748b" text-anchor="start">（光把塔画出来就装不下宇宙）</text>
+<rect x="394" y="290" width="330" height="30" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="559" y="309" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="600">葛立恒数 G：g₁=3↑↑↑↑3，前项值作后项箭头数，套64轮</text>
 </svg>

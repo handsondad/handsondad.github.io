@@ -1,15 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1120" viewBox="0 0 720 1120" role="img" aria-labelledby="title desc" lang="zh-CN">
+<svg xmlns="http://www.w3.org/2000/svg" width="540" height="840" viewBox="0 0 540 840" role="img" aria-labelledby="title desc" lang="zh-CN">
 <title id="title">公平硬币正面比例的精确二项分布</title>
 <desc id="desc">分别计算十、一百、一千次独立公平抛掷的全部二项概率。正面比例不高于百分之四十或不低于百分之六十的合计概率随次数增加大幅下降。三图横轴同尺度，柱高分别归一化到各自峰值，不能跨图比较高度。</desc>
-<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif}</style>
-<rect width="720" height="1120" fill="#f3f7fa"/>
-<text x="36" y="48" font-size="32" fill="#172b45" text-anchor="start">次数增多，比例怎样变得可靠？</text>
-<text x="36" y="86" font-size="24" fill="#41576a" text-anchor="start">独立、公平硬币：统计所有可能结果，不抽样模拟。</text>
+<style>text{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",sans-serif}</style>
+<rect x="0.75" y="0.75" width="538.5" height="838.5" rx="12" fill="#fbfcfd" stroke="#dde6ee" stroke-width="1.2"/>
+<g transform="scale(0.75)">
+<text x="36" y="44.98" font-size="21.2" fill="#172b45" text-anchor="start" font-weight="700">次数增多，比例怎样变得可靠？</text>
+<text x="36" y="84.39" font-size="18.2" fill="#41576a" text-anchor="start">独立、公平硬币：统计所有可能结果，不抽样模拟。</text>
 <rect x="24" y="120" width="672" height="282" rx="16" fill="#fff" stroke="#c9d6df"/>
-<text x="44" y="156" font-size="28" fill="#172b45" text-anchor="start">抛 10 次</text>
-<text x="44" y="196" font-size="24" fill="#ad4f16" text-anchor="start">至少偏离 10 个百分点：75.390625%</text>
-<text x="150" y="241" font-size="21" fill="#41576a" text-anchor="middle">计入左端</text>
-<text x="570" y="241" font-size="21" fill="#41576a" text-anchor="middle">计入右端</text>
+<text x="44" y="153.80" font-size="20.2" fill="#172b45" text-anchor="start" font-weight="700">抛 10 次</text>
+<text x="44" y="194.39" font-size="18.2" fill="#ad4f16" text-anchor="start">至少偏离 10 个百分点：75.390625%</text>
+<text x="150" y="239.59" font-size="16.0" fill="#41576a" text-anchor="middle">计入左端</text>
+<text x="570" y="239.59" font-size="16.0" fill="#41576a" text-anchor="middle">计入右端</text>
 <rect x="77.0000" y="349.6032" width="26.0000" height="0.396825" fill="#ad4f16"/>
 <rect x="131.0000" y="346.0317" width="26.0000" height="3.96825" fill="#ad4f16"/>
 <rect x="185.0000" y="332.1429" width="26.0000" height="17.8571" fill="#ad4f16"/>
@@ -21,19 +22,19 @@
 <rect x="509.0000" y="332.1429" width="26.0000" height="17.8571" fill="#ad4f16"/>
 <rect x="563.0000" y="346.0317" width="26.0000" height="3.96825" fill="#ad4f16"/>
 <rect x="617.0000" y="349.6032" width="26.0000" height="0.396825" fill="#ad4f16"/>
-<text x="90" y="384" font-size="22" fill="#41576a" text-anchor="middle">0%</text>
-<text x="306.0" y="384" font-size="22" fill="#41576a" text-anchor="middle">40%</text>
-<text x="360.0" y="384" font-size="22" fill="#41576a" text-anchor="middle">50%</text>
-<text x="414.0" y="384" font-size="22" fill="#41576a" text-anchor="middle">60%</text>
-<text x="630" y="384" font-size="22" fill="#41576a" text-anchor="middle">100%</text>
+<text x="90" y="382.52" font-size="16.7" fill="#41576a" text-anchor="middle">0%</text>
+<text x="306.0" y="382.52" font-size="16.7" fill="#41576a" text-anchor="middle">40%</text>
+<text x="360.0" y="382.52" font-size="16.7" fill="#41576a" text-anchor="middle">50%</text>
+<text x="414.0" y="382.52" font-size="16.7" fill="#41576a" text-anchor="middle">60%</text>
+<text x="630" y="382.52" font-size="16.7" fill="#41576a" text-anchor="middle">100%</text>
 <path d="M306.0 250V355" stroke="#ad4f16" stroke-width="1.5" stroke-dasharray="4 4"/>
 <path d="M414.0 250V355" stroke="#ad4f16" stroke-width="1.5" stroke-dasharray="4 4"/>
 <path d="M75 350H645" stroke="#41576a"/>
 <rect x="24" y="420" width="672" height="282" rx="16" fill="#fff" stroke="#c9d6df"/>
-<text x="44" y="456" font-size="28" fill="#172b45" text-anchor="start">抛 100 次</text>
-<text x="44" y="496" font-size="24" fill="#ad4f16" text-anchor="start">至少偏离 10 个百分点：约 5.689%</text>
-<text x="150" y="541" font-size="21" fill="#41576a" text-anchor="middle">计入左端</text>
-<text x="570" y="541" font-size="21" fill="#41576a" text-anchor="middle">计入右端</text>
+<text x="44" y="453.80" font-size="20.2" fill="#172b45" text-anchor="start" font-weight="700">抛 100 次</text>
+<text x="44" y="494.39" font-size="18.2" fill="#ad4f16" text-anchor="start">至少偏离 10 个百分点：约 5.689%</text>
+<text x="150" y="539.59" font-size="16.0" fill="#41576a" text-anchor="middle">计入左端</text>
+<text x="570" y="539.59" font-size="16.0" fill="#41576a" text-anchor="middle">计入右端</text>
 <rect x="87.7050" y="650.0000" width="4.5900" height="9.91165e-28" fill="#ad4f16"/>
 <rect x="93.1050" y="650.0000" width="4.5900" height="9.91165e-26" fill="#ad4f16"/>
 <rect x="98.5050" y="650.0000" width="4.5900" height="4.90627e-24" fill="#ad4f16"/>
@@ -135,19 +136,19 @@
 <rect x="616.9050" y="650.0000" width="4.5900" height="4.90627e-24" fill="#ad4f16"/>
 <rect x="622.3050" y="650.0000" width="4.5900" height="9.91165e-26" fill="#ad4f16"/>
 <rect x="627.7050" y="650.0000" width="4.5900" height="9.91165e-28" fill="#ad4f16"/>
-<text x="90" y="684" font-size="22" fill="#41576a" text-anchor="middle">0%</text>
-<text x="306.0" y="684" font-size="22" fill="#41576a" text-anchor="middle">40%</text>
-<text x="360.0" y="684" font-size="22" fill="#41576a" text-anchor="middle">50%</text>
-<text x="414.0" y="684" font-size="22" fill="#41576a" text-anchor="middle">60%</text>
-<text x="630" y="684" font-size="22" fill="#41576a" text-anchor="middle">100%</text>
+<text x="90" y="682.52" font-size="16.7" fill="#41576a" text-anchor="middle">0%</text>
+<text x="306.0" y="682.52" font-size="16.7" fill="#41576a" text-anchor="middle">40%</text>
+<text x="360.0" y="682.52" font-size="16.7" fill="#41576a" text-anchor="middle">50%</text>
+<text x="414.0" y="682.52" font-size="16.7" fill="#41576a" text-anchor="middle">60%</text>
+<text x="630" y="682.52" font-size="16.7" fill="#41576a" text-anchor="middle">100%</text>
 <path d="M306.0 550V655" stroke="#ad4f16" stroke-width="1.5" stroke-dasharray="4 4"/>
 <path d="M414.0 550V655" stroke="#ad4f16" stroke-width="1.5" stroke-dasharray="4 4"/>
 <path d="M75 650H645" stroke="#41576a"/>
 <rect x="24" y="720" width="672" height="282" rx="16" fill="#fff" stroke="#c9d6df"/>
-<text x="44" y="756" font-size="28" fill="#172b45" text-anchor="start">抛 1000 次</text>
-<text x="44" y="796" font-size="24" fill="#ad4f16" text-anchor="start">至少偏离 10 个百分点：约 2.73 × 10⁻¹⁰（概率值）</text>
-<text x="150" y="841" font-size="21" fill="#41576a" text-anchor="middle">计入左端</text>
-<text x="570" y="841" font-size="21" fill="#41576a" text-anchor="middle">计入右端</text>
+<text x="44" y="753.80" font-size="20.2" fill="#172b45" text-anchor="start" font-weight="700">抛 1000 次</text>
+<text x="44" y="794.39" font-size="18.2" fill="#ad4f16" text-anchor="start">至少偏离 10 个百分点：约 2.73 × 10⁻¹⁰（概率值）</text>
+<text x="150" y="839.59" font-size="16.0" fill="#41576a" text-anchor="middle">计入左端</text>
+<text x="570" y="839.59" font-size="16.0" fill="#41576a" text-anchor="middle">计入右端</text>
 <rect x="89.7705" y="950.0000" width="0.4590" height="3.69975e-298" fill="#ad4f16"/>
 <rect x="90.3105" y="950.0000" width="0.4590" height="3.69975e-295" fill="#ad4f16"/>
 <rect x="90.8505" y="950.0000" width="0.4590" height="1.84803e-292" fill="#ad4f16"/>
@@ -1149,14 +1150,15 @@
 <rect x="628.6905" y="950.0000" width="0.4590" height="1.84803e-292" fill="#ad4f16"/>
 <rect x="629.2305" y="950.0000" width="0.4590" height="3.69975e-295" fill="#ad4f16"/>
 <rect x="629.7705" y="950.0000" width="0.4590" height="3.69975e-298" fill="#ad4f16"/>
-<text x="90" y="984" font-size="22" fill="#41576a" text-anchor="middle">0%</text>
-<text x="306.0" y="984" font-size="22" fill="#41576a" text-anchor="middle">40%</text>
-<text x="360.0" y="984" font-size="22" fill="#41576a" text-anchor="middle">50%</text>
-<text x="414.0" y="984" font-size="22" fill="#41576a" text-anchor="middle">60%</text>
-<text x="630" y="984" font-size="22" fill="#41576a" text-anchor="middle">100%</text>
+<text x="90" y="982.52" font-size="16.7" fill="#41576a" text-anchor="middle">0%</text>
+<text x="306.0" y="982.52" font-size="16.7" fill="#41576a" text-anchor="middle">40%</text>
+<text x="360.0" y="982.52" font-size="16.7" fill="#41576a" text-anchor="middle">50%</text>
+<text x="414.0" y="982.52" font-size="16.7" fill="#41576a" text-anchor="middle">60%</text>
+<text x="630" y="982.52" font-size="16.7" fill="#41576a" text-anchor="middle">100%</text>
 <path d="M306.0 850V955" stroke="#ad4f16" stroke-width="1.5" stroke-dasharray="4 4"/>
 <path d="M414.0 850V955" stroke="#ad4f16" stroke-width="1.5" stroke-dasharray="4 4"/>
 <path d="M75 950H645" stroke="#41576a"/>
-<text x="36" y="1054" font-size="24" fill="#41576a" text-anchor="start">横轴：正面比例；每根柱：该比例的概率。</text>
-<text x="36" y="1092" font-size="24" fill="#41576a" text-anchor="start">三图纵轴分别缩放；虚线边界及外侧均计入。</text>
+<text x="36" y="1052.39" font-size="18.2" fill="#41576a" text-anchor="start">横轴：正面比例；每根柱：该比例的概率。</text>
+<text x="36" y="1090.39" font-size="18.2" fill="#41576a" text-anchor="start">三图纵轴分别缩放；虚线边界及外侧均计入。</text>
+</g>
 </svg>

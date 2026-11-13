@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="352" viewBox="0 0 760 352" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">极点极线构造与射影几何点线对偶词典</title>
+<desc id="desc">左图过圆外点P作切线得切点弦p（极线），并在p上取点Q展示Q的极线q必穿过P；右图列出点与线、连线与交点、帕斯卡内接六边形与布里昂雄外切六边形的对偶翻译表。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="351" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">极点与极线：把“点”翻译成“线”，一条定理瞬间买一送一（对偶原理）</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">给定一个基准圆，平面上每个圆外点 P 都唯一对应一条切点弦 p（极线）；反过来每条线也唯一对应一个极点。</text>
+<rect x="20" y="62" width="376" height="274" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="84" font-size="12.8" fill="#0f172a" text-anchor="start" font-weight="600">① 怎么找极线？过 P 作两条切线，连起两个切点</text>
+<circle cx="154.0" cy="210.0" r="62.0" fill="#eaf4fb" fill-opacity="0.5" stroke="#1d6fa5" stroke-width="1.8"/>
+<line x1="276.0" y1="210.0" x2="185.5" y2="156.6" stroke="#c25014" stroke-width="1.4" stroke-dasharray="4 3"/>
+<line x1="276.0" y1="210.0" x2="185.5" y2="263.4" stroke="#c25014" stroke-width="1.4" stroke-dasharray="4 3"/>
+<line x1="185.5" y1="112" x2="185.5" y2="298" stroke="#c25014" stroke-width="2.2"/>
+<line x1="86.0" y1="137.0" x2="298.0" y2="218.5" stroke="#18794e" stroke-width="1.8" stroke-dasharray="5 3"/>
+<circle cx="276.0" cy="210.0" r="4" fill="#c25014"/>
+<text x="282.0" y="227.0" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700" class="halo">极点 P</text>
+<circle cx="185.5" cy="156.6" r="4" fill="#1d6fa5"/>
+<text x="167.5" y="152.6" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700" class="halo">T₁</text>
+<circle cx="185.5" cy="263.4" r="4" fill="#1d6fa5"/>
+<text x="167.5" y="276.4" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700" class="halo">T₂</text>
+<circle cx="185.5" cy="128.0" r="4" fill="#18794e"/>
+<text x="193.5" y="126.0" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700" class="halo">Q（在p上）</text>
+<text x="193.5" y="294" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700" class="halo">P 的极线 p</text>
+<text x="42" y="131.0" font-size="11" fill="#18794e" text-anchor="start" font-weight="600" class="halo">Q 的极线 q（必过 P）</text>
+<text x="36" y="320" font-size="11.2" fill="#64748b" text-anchor="start">奇妙互换：只要点 Q 落在 p 上，Q 的极线 q 就一定反过来穿过 P</text>
+<rect x="410" y="62" width="330" height="274" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="426" y="84" font-size="12.8" fill="#0f172a" text-anchor="start" font-weight="600">② 射影几何“翻译词典”：点 ↔ 线互换</text>
+<rect x="426" y="100" width="298" height="30" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="436" y="119" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="600">左半本词典（原命题）</text>
+<text x="578" y="119" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="600">⇄  右半本词典（对偶命题）</text>
+<rect x="426" y="136" width="298" height="30" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="436" y="155" font-size="11.2" fill="#1e293b" text-anchor="start">一个点 P</text>
+<text x="578" y="155" font-size="11.2" fill="#1e293b" text-anchor="start">⇄  一条直线 p</text>
+<rect x="426" y="172" width="298" height="30" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="436" y="191" font-size="11.2" fill="#1e293b" text-anchor="start">两点连成一条线</text>
+<text x="578" y="191" font-size="11.2" fill="#1e293b" text-anchor="start">⇄  两线交于一个点</text>
+<rect x="426" y="208" width="298" height="30" rx="6" fill="#eaf4fb" stroke="#e2e8f0" stroke-width="1"/>
+<text x="436" y="227" font-size="11.2" fill="#1d6fa5" text-anchor="start" font-weight="600">三点共线</text>
+<text x="578" y="227" font-size="11.2" fill="#1d6fa5" text-anchor="start" font-weight="600">⇄  三线共点</text>
+<rect x="426" y="244" width="298" height="30" rx="6" fill="#e7f6ee" stroke="#e2e8f0" stroke-width="1"/>
+<text x="436" y="263" font-size="11.2" fill="#18794e" text-anchor="start" font-weight="600">圆内接六边形（帕斯卡）</text>
+<text x="578" y="263" font-size="11.2" fill="#18794e" text-anchor="start" font-weight="600">⇄  圆外切六边形（布里昂雄）</text>
+<text x="426" y="298" font-size="11.3" fill="#1e293b" text-anchor="start">证出左边一条定理，按词典逐词替换，右边定理自动成立——</text>
+<text x="426" y="317" font-size="11.3" fill="#c25014" text-anchor="start" font-weight="600">这就是彭赛列与热尔岗争论并共同奠定的“对偶原理”。</text>
+</svg>

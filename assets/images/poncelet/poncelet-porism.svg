@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="376" viewBox="0 0 760 376" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">彭赛列闭合定理：不闭合反例与任意起点闭合对比</title>
+<desc id="desc">左图圆心距d=20不满足欧拉条件，从A0出发作三次切线后A3与A0明显错开；右图满足d²=R²−2Rr，实线A1A2A3与虚线B1B2B3从不同起点出发均精确三步闭合。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  .trace-a {
+        stroke-dasharray: 560;
+        stroke-dashoffset: 560;
+        animation: drawTri 2.2s ease-out 0.1s 1 forwards;
+      }
+      @keyframes drawTri {
+        to { stroke-dashoffset: 0; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .trace-a { animation: none; stroke-dashoffset: 0; }
+      }
+</style>
+<rect x="0.5" y="0.5" width="759" height="375" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">彭赛列闭合定理：随便画两圆合不上；一旦合上一次，换任何起点都能合上！</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">规则：从外圆起点出发作内圆切线，撞到外圆再折返作下一条切线。连走 3 步，能不能回到起点？</text>
+<rect x="20" y="62" width="352" height="298" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="84" font-size="12.8" fill="#0f172a" text-anchor="start" font-weight="600">① 随便摆两圆（d = 20）：走三步留出大缺口</text>
+<circle cx="196.0" cy="204.0" r="92" fill="none" stroke="#cbd5e1" stroke-width="1.6"/>
+<circle cx="214.8" cy="204.0" r="36.8" fill="#fef1e8" stroke="#c25014" stroke-width="1.5"/>
+<polyline points="167.6,116.5 188.4,295.7 283.9,176.7 119.3,153.2" fill="none" stroke="#c25014" stroke-width="1.9"/>
+<circle cx="167.6" cy="116.5" r="3.8" fill="#c25014"/>
+<text x="163.2" y="108.1" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">A0</text>
+<circle cx="188.4" cy="295.7" r="3.8" fill="#1e293b"/>
+<text x="187.2" y="312.6" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">A1</text>
+<circle cx="283.9" cy="176.7" r="3.8" fill="#1e293b"/>
+<text x="297.2" y="176.9" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">A2</text>
+<circle cx="119.3" cy="153.2" r="3.8" fill="#c25014"/>
+<text x="107.7" y="150.0" font-size="11" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">A₃≠A₀</text>
+<rect x="36.0" y="324.0" width="320" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="196.0" y="339.0" font-size="11.3" fill="#c25014" text-anchor="middle" font-weight="600">d² ≠ R² − 2Rr：终点 A₃ 错开起点，无法闭合</text>
+<rect x="388" y="62" width="352" height="298" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="404" y="84" font-size="12.8" fill="#0f172a" text-anchor="start" font-weight="600">② 满足 d² = R² − 2Rr：换任何起点都精准咬合！</text>
+<circle cx="564.0" cy="204.0" r="92" fill="none" stroke="#cbd5e1" stroke-width="1.6"/>
+<circle cx="605.1" cy="204.0" r="36.8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.6"/>
+<polygon points="486.0,252.8 650.1,236.5 628.2,138.1" fill="none" stroke="#18794e" stroke-width="1.6" stroke-dasharray="5 3"/>
+<circle cx="486.0" cy="252.8" r="3.4" fill="#18794e"/>
+<text x="474.1" y="263.6" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="600" class="halo">B1</text>
+<circle cx="650.1" cy="236.5" r="3.4" fill="#18794e"/>
+<text x="663.1" y="245.1" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="600" class="halo">B2</text>
+<circle cx="628.2" cy="138.1" r="3.4" fill="#18794e"/>
+<text x="638.0" y="132.8" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="600" class="halo">B3</text>
+<polyline points="538.6,115.6 594.0,291.0 655.4,193.2 538.6,115.6" fill="none" stroke="#1d6fa5" stroke-opacity="0.55" stroke-width="1.8"/>
+<polyline class="trace-a" points="538.6,115.6 594.0,291.0 655.4,193.2 538.6,115.6" fill="none" stroke="#1d6fa5" stroke-width="2.2"/>
+<circle cx="538.6" cy="115.6" r="4.0" fill="#1d6fa5"/>
+<text x="534.5" y="107.1" font-size="11" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">A₁(闭合)</text>
+<circle cx="594.0" cy="291.0" r="4.0" fill="#1d6fa5"/>
+<text x="598.9" y="307.3" font-size="11" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">A2</text>
+<circle cx="655.4" cy="193.2" r="4.0" fill="#1d6fa5"/>
+<text x="670.3" y="195.7" font-size="11" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">A3</text>
+<rect x="404.0" y="324.0" width="320" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="564.0" y="339.0" font-size="11.3" fill="#1d6fa5" text-anchor="middle" font-weight="600">蓝实线 A₁A₂A₃ 与绿虚线 B₁B₂B₃ 全部三步合拢</text>
+</svg>

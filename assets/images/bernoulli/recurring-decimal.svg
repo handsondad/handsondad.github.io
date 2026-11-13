@@ -1,42 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="850" viewBox="0 0 720 850" role="img" aria-labelledby="title desc" lang="zh-CN">
+<svg xmlns="http://www.w3.org/2000/svg" width="540" height="637.5" viewBox="0 0 540 637.5" role="img" aria-labelledby="title desc" lang="zh-CN">
 <title id="title">一除以七的六步余数循环</title>
 <desc id="desc">每步从旧余数乘十后除以七，依次得到数字一四二八五七；新余数依次为三、二、六、四、五、一，回到起点，所以循环重现。</desc>
-<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif}</style>
-<rect width="720" height="850" fill="#f3f7fa"/>
-<text x="36" y="48" font-size="32" fill="#172b45" text-anchor="start">循环小数：为什么会回到起点？</text>
-<text x="36" y="86" font-size="24" fill="#41576a" text-anchor="start">每一步：原余数乘 10，再除以 7。</text>
-<text x="36" y="130" font-size="26" fill="#172b45" text-anchor="start">从 1 ÷ 7 的余数 1 开始往下读。</text>
+<style>text{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",sans-serif}</style>
+<rect x="0.75" y="0.75" width="538.5" height="636" rx="12" fill="#fbfcfd" stroke="#dde6ee" stroke-width="1.2"/>
+<g transform="scale(0.75)">
+<text x="36" y="44.98" font-size="21.2" fill="#172b45" text-anchor="start" font-weight="700">循环小数：为什么会回到起点？</text>
+<text x="36" y="84.39" font-size="18.2" fill="#41576a" text-anchor="start">每一步：原余数乘 10，再除以 7。</text>
+<text x="36" y="128.11" font-size="19.2" fill="#172b45" text-anchor="start" font-weight="600">从 1 ÷ 7 的余数 1 开始往下读。</text>
 <rect x="24" y="155" width="672" height="520" rx="16" fill="#fff" stroke="#c9d6df"/>
-<text x="80" y="191" font-size="23" fill="#41576a" text-anchor="middle">步骤</text>
-<text x="235" y="191" font-size="23" fill="#41576a" text-anchor="middle">原余数 × 10</text>
-<text x="435" y="191" font-size="23" fill="#41576a" text-anchor="middle">商的这一位</text>
-<text x="605" y="191" font-size="23" fill="#41576a" text-anchor="middle">新余数</text>
-<text x="80" y="240" font-size="28" fill="#172b45" text-anchor="middle">1</text>
-<text x="235" y="240" font-size="28" fill="#172b45" text-anchor="middle">1 × 10</text>
-<text x="435" y="240" font-size="28" fill="#176786" text-anchor="middle">1</text>
-<text x="605" y="240" font-size="28" fill="#172b45" text-anchor="middle">3</text>
-<text x="80" y="318" font-size="28" fill="#172b45" text-anchor="middle">2</text>
-<text x="235" y="318" font-size="28" fill="#172b45" text-anchor="middle">3 × 10</text>
-<text x="435" y="318" font-size="28" fill="#176786" text-anchor="middle">4</text>
-<text x="605" y="318" font-size="28" fill="#172b45" text-anchor="middle">2</text>
-<text x="80" y="396" font-size="28" fill="#172b45" text-anchor="middle">3</text>
-<text x="235" y="396" font-size="28" fill="#172b45" text-anchor="middle">2 × 10</text>
-<text x="435" y="396" font-size="28" fill="#176786" text-anchor="middle">2</text>
-<text x="605" y="396" font-size="28" fill="#172b45" text-anchor="middle">6</text>
-<text x="80" y="474" font-size="28" fill="#172b45" text-anchor="middle">4</text>
-<text x="235" y="474" font-size="28" fill="#172b45" text-anchor="middle">6 × 10</text>
-<text x="435" y="474" font-size="28" fill="#176786" text-anchor="middle">8</text>
-<text x="605" y="474" font-size="28" fill="#172b45" text-anchor="middle">4</text>
-<text x="80" y="552" font-size="28" fill="#172b45" text-anchor="middle">5</text>
-<text x="235" y="552" font-size="28" fill="#172b45" text-anchor="middle">4 × 10</text>
-<text x="435" y="552" font-size="28" fill="#176786" text-anchor="middle">5</text>
-<text x="605" y="552" font-size="28" fill="#172b45" text-anchor="middle">5</text>
+<text x="80" y="189.45" font-size="17.5" fill="#41576a" text-anchor="middle">步骤</text>
+<text x="235" y="189.45" font-size="17.5" fill="#41576a" text-anchor="middle">原余数 × 10</text>
+<text x="435" y="189.45" font-size="17.5" fill="#41576a" text-anchor="middle">商的这一位</text>
+<text x="605" y="189.45" font-size="17.5" fill="#41576a" text-anchor="middle">新余数</text>
+<text x="80" y="237.80" font-size="20.2" fill="#172b45" text-anchor="middle" font-weight="700">1</text>
+<text x="235" y="237.80" font-size="20.2" fill="#172b45" text-anchor="middle" font-weight="700">1 × 10</text>
+<text x="435" y="237.80" font-size="20.2" fill="#176786" text-anchor="middle" font-weight="700">1</text>
+<text x="605" y="237.80" font-size="20.2" fill="#172b45" text-anchor="middle" font-weight="700">3</text>
+<text x="80" y="315.80" font-size="20.2" fill="#172b45" text-anchor="middle" font-weight="700">2</text>
+<text x="235" y="315.80" font-size="20.2" fill="#172b45" text-anchor="middle" font-weight="700">3 × 10</text>
+<text x="435" y="315.80" font-size="20.2" fill="#176786" text-anchor="middle" font-weight="700">4</text>
+<text x="605" y="315.80" font-size="20.2" fill="#172b45" text-anchor="middle" font-weight="700">2</text>
+<text x="80" y="393.80" font-size="20.2" fill="#172b45" text-anchor="middle" font-weight="700">3</text>
+<text x="235" y="393.80" font-size="20.2" fill="#172b45" text-anchor="middle" font-weight="700">2 × 10</text>
+<text x="435" y="393.80" font-size="20.2" fill="#176786" text-anchor="middle" font-weight="700">2</text>
+<text x="605" y="393.80" font-size="20.2" fill="#172b45" text-anchor="middle" font-weight="700">6</text>
+<text x="80" y="471.80" font-size="20.2" fill="#172b45" text-anchor="middle" font-weight="700">4</text>
+<text x="235" y="471.80" font-size="20.2" fill="#172b45" text-anchor="middle" font-weight="700">6 × 10</text>
+<text x="435" y="471.80" font-size="20.2" fill="#176786" text-anchor="middle" font-weight="700">8</text>
+<text x="605" y="471.80" font-size="20.2" fill="#172b45" text-anchor="middle" font-weight="700">4</text>
+<text x="80" y="549.80" font-size="20.2" fill="#172b45" text-anchor="middle" font-weight="700">5</text>
+<text x="235" y="549.80" font-size="20.2" fill="#172b45" text-anchor="middle" font-weight="700">4 × 10</text>
+<text x="435" y="549.80" font-size="20.2" fill="#176786" text-anchor="middle" font-weight="700">5</text>
+<text x="605" y="549.80" font-size="20.2" fill="#172b45" text-anchor="middle" font-weight="700">5</text>
 <rect x="38" y="594" width="644" height="60" rx="10" fill="#e1f0f5"/>
-<text x="80" y="630" font-size="28" fill="#172b45" text-anchor="middle">6</text>
-<text x="235" y="630" font-size="28" fill="#172b45" text-anchor="middle">5 × 10</text>
-<text x="435" y="630" font-size="28" fill="#176786" text-anchor="middle">7</text>
-<text x="605" y="630" font-size="28" fill="#172b45" text-anchor="middle">1</text>
-<text x="36" y="719" font-size="26" fill="#172b45" text-anchor="start">余数回到 1 → 后面的步骤与数字原样重复。</text>
-<text x="36" y="765" font-size="28" fill="#176786" text-anchor="start">得到：0.142857142857…，周期为 6。</text>
-<text x="36" y="816" font-size="24" fill="#41576a" text-anchor="start">教学例子，不声称该小数由约翰三世发现。</text>
+<text x="80" y="627.80" font-size="20.2" fill="#172b45" text-anchor="middle" font-weight="700">6</text>
+<text x="235" y="627.80" font-size="20.2" fill="#172b45" text-anchor="middle" font-weight="700">5 × 10</text>
+<text x="435" y="627.80" font-size="20.2" fill="#176786" text-anchor="middle" font-weight="700">7</text>
+<text x="605" y="627.80" font-size="20.2" fill="#172b45" text-anchor="middle" font-weight="700">1</text>
+<text x="36" y="717.11" font-size="19.2" fill="#172b45" text-anchor="start" font-weight="600">余数回到 1 → 后面的步骤与数字原样重复。</text>
+<text x="36" y="762.80" font-size="20.2" fill="#176786" text-anchor="start" font-weight="700">得到：0.142857142857…，周期为 6。</text>
+<text x="36" y="814.39" font-size="18.2" fill="#41576a" text-anchor="start">教学例子，不声称该小数由约翰三世发现。</text>
+</g>
 </svg>

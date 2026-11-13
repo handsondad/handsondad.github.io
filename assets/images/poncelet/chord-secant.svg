@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="344" viewBox="0 0 760 344" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">相交弦定理与割线定理的连续过渡</title>
+<desc id="desc">左图点P在半径5的圆内距圆心2，两条弦满足PA·PB=PC·PD=21；右图点P移至圆外距圆心7，两条割线仍满足PA·PB=PC·PD=24。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="343" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">彭赛列的“连续性原理”：当点 P 从圆内一路走出圆外，定律并没有断掉</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">圆半径 R = 5。无论过 P 画哪条线，两交点到 P 的距离乘积始终等于 |R² − OP²|（相交弦定理 ↔ 割线定理）。</text>
+<rect x="20" y="62" width="352" height="266" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="84" font-size="13" fill="#0f172a" text-anchor="start" font-weight="600">① P 在圆内（OP = 2）：相交弦定理</text>
+<circle cx="194" cy="198" r="82.5" fill="#eaf4fb" fill-opacity="0.55" stroke="#1d6fa5" stroke-width="1.8"/>
+<circle cx="194" cy="198" r="2.5" fill="#64748b"/>
+<text x="188" y="212" font-size="11" fill="#64748b" text-anchor="end">O</text>
+<line x1="166.3" y1="275.7" x2="262.7" y2="152.3" stroke="#c25014" stroke-width="1.8"/>
+<circle cx="166.3" cy="275.7" r="3.6" fill="#c25014"/>
+<text x="161.6" y="292.9" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">A</text>
+<circle cx="262.7" cy="152.3" r="3.6" fill="#c25014"/>
+<text x="274.4" y="148.6" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">B</text>
+<line x1="264.9" y1="240.1" x2="159.5" y2="123.1" stroke="#18794e" stroke-width="1.8" stroke-dasharray="5 3"/>
+<circle cx="264.9" cy="240.1" r="3.6" fill="#18794e"/>
+<text x="277.0" y="251.3" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700" class="halo">C</text>
+<circle cx="159.5" cy="123.1" r="3.6" fill="#18794e"/>
+<text x="153.7" y="114.3" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700" class="halo">D</text>
+<circle cx="227.0" cy="198.0" r="4.8" fill="#0f172a"/>
+<text x="235.0" y="214.0" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700" class="halo">P</text>
+<rect x="36.0" y="294.0" width="320" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="196.0" y="309.0" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">PA × PB = PC × PD = 5² − 2² = 21</text>
+<rect x="388" y="62" width="352" height="266" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="404" y="84" font-size="13" fill="#0f172a" text-anchor="start" font-weight="600">② P 移到圆外（OP = 7）：自动变成割线定理</text>
+<circle cx="562" cy="198" r="82.5" fill="#eaf4fb" fill-opacity="0.55" stroke="#1d6fa5" stroke-width="1.8"/>
+<circle cx="562" cy="198" r="2.5" fill="#64748b"/>
+<text x="556" y="212" font-size="11" fill="#64748b" text-anchor="end">O</text>
+<line x1="677.5" y1="198.0" x2="491.5" y2="155.1" stroke="#c25014" stroke-width="1.8"/>
+<circle cx="644.1" cy="190.3" r="3.6" fill="#c25014"/>
+<text x="658.1" y="193.0" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">A</text>
+<circle cx="491.5" cy="155.1" r="3.6" fill="#c25014"/>
+<text x="479.6" y="151.8" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">B</text>
+<line x1="677.5" y1="198.0" x2="513.1" y2="264.4" stroke="#18794e" stroke-width="1.8" stroke-dasharray="5 3"/>
+<circle cx="643.3" cy="211.8" r="3.6" fill="#18794e"/>
+<text x="657.1" y="218.1" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700" class="halo">C</text>
+<circle cx="513.1" cy="264.4" r="3.6" fill="#18794e"/>
+<text x="504.8" y="279.7" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700" class="halo">D</text>
+<circle cx="677.5" cy="198.0" r="4.8" fill="#0f172a"/>
+<text x="685.5" y="214.0" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700" class="halo">P</text>
+<rect x="404.0" y="294.0" width="320" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="564.0" y="309.0" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="600">PA × PB = PC × PD = 7² − 5² = 24</text>
+</svg>

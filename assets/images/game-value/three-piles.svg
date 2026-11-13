@@ -1,67 +1,110 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="830" viewBox="0 0 720 830" role="img" aria-labelledby="title desc" lang="zh-CN">
-<title id="title">三堆糖的二进制不进位加法</title>
-<desc id="desc">九、五、十二写成二进制后，每一竖列的一的个数都是偶数，是必败组合。三、四、五有一列是奇数。把三改成一后，一、四、五的每一列重新变成偶数。在所有合法拿法中，这一步是唯一走到偶数组合的走法。</desc>
-<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif}</style>
-<rect width="720" height="830" fill="#f3f7fa"/>
-<text x="36" y="48" font-size="32" fill="#172b45" text-anchor="start">三堆不再能靠左右模仿</text>
-<text x="36" y="88" font-size="24" fill="#41576a" text-anchor="start">把颗数写成二进制，竖着加，不进位。</text>
-<rect x="24" y="112" width="672" height="300" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
-<text x="44" y="156" font-size="28" fill="#172b45" text-anchor="start">① 9、5、12：每一竖列都是偶数</text>
-<text x="156" y="186" font-size="20" fill="#41576a" text-anchor="middle">8</text>
-<text x="198" y="186" font-size="20" fill="#41576a" text-anchor="middle">4</text>
-<text x="240" y="186" font-size="20" fill="#41576a" text-anchor="middle">2</text>
-<text x="282" y="186" font-size="20" fill="#41576a" text-anchor="middle">1</text>
-<text x="70" y="230" font-size="24" fill="#172b45" text-anchor="start">9</text>
-<text x="156" y="230" font-size="24" fill="#172b45" text-anchor="middle">1</text>
-<text x="198" y="230" font-size="24" fill="#172b45" text-anchor="middle">0</text>
-<text x="240" y="230" font-size="24" fill="#172b45" text-anchor="middle">0</text>
-<text x="282" y="230" font-size="24" fill="#172b45" text-anchor="middle">1</text>
-<text x="70" y="270" font-size="24" fill="#172b45" text-anchor="start">5</text>
-<text x="156" y="270" font-size="24" fill="#172b45" text-anchor="middle">0</text>
-<text x="198" y="270" font-size="24" fill="#172b45" text-anchor="middle">1</text>
-<text x="240" y="270" font-size="24" fill="#172b45" text-anchor="middle">0</text>
-<text x="282" y="270" font-size="24" fill="#172b45" text-anchor="middle">1</text>
-<text x="70" y="310" font-size="24" fill="#172b45" text-anchor="start">12</text>
-<text x="156" y="310" font-size="24" fill="#172b45" text-anchor="middle">1</text>
-<text x="198" y="310" font-size="24" fill="#172b45" text-anchor="middle">1</text>
-<text x="240" y="310" font-size="24" fill="#172b45" text-anchor="middle">0</text>
-<text x="282" y="310" font-size="24" fill="#172b45" text-anchor="middle">0</text>
-<text x="70" y="366" font-size="22" fill="#ad4f16" text-anchor="start">每一列都是偶数：必败</text>
-<rect x="24" y="432" width="672" height="360" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
-<text x="44" y="476" font-size="28" fill="#172b45" text-anchor="start">② 3、4、5：有一列是奇数，必胜</text>
-<text x="44" y="514" font-size="24" fill="#176786" text-anchor="start">唯一能改回全偶的走法：把 3 拿成 1。</text>
-<text x="156" y="540" font-size="20" fill="#41576a" text-anchor="middle">4</text>
-<text x="198" y="540" font-size="20" fill="#41576a" text-anchor="middle">2</text>
-<text x="240" y="540" font-size="20" fill="#41576a" text-anchor="middle">1</text>
-<text x="70" y="584" font-size="24" fill="#172b45" text-anchor="start">3</text>
-<text x="156" y="584" font-size="24" fill="#172b45" text-anchor="middle">0</text>
-<text x="198" y="584" font-size="24" fill="#172b45" text-anchor="middle">1</text>
-<text x="240" y="584" font-size="24" fill="#172b45" text-anchor="middle">1</text>
-<text x="70" y="624" font-size="24" fill="#172b45" text-anchor="start">4</text>
-<text x="156" y="624" font-size="24" fill="#172b45" text-anchor="middle">1</text>
-<text x="198" y="624" font-size="24" fill="#172b45" text-anchor="middle">0</text>
-<text x="240" y="624" font-size="24" fill="#172b45" text-anchor="middle">0</text>
-<text x="70" y="664" font-size="24" fill="#172b45" text-anchor="start">5</text>
-<text x="156" y="664" font-size="24" fill="#172b45" text-anchor="middle">1</text>
-<text x="198" y="664" font-size="24" fill="#172b45" text-anchor="middle">0</text>
-<text x="240" y="664" font-size="24" fill="#172b45" text-anchor="middle">1</text>
-<text x="70" y="720" font-size="22" fill="#176786" text-anchor="start">2 那一列是奇数：必胜</text>
-<text x="476" y="540" font-size="20" fill="#41576a" text-anchor="middle">4</text>
-<text x="518" y="540" font-size="20" fill="#41576a" text-anchor="middle">2</text>
-<text x="560" y="540" font-size="20" fill="#41576a" text-anchor="middle">1</text>
-<text x="390" y="584" font-size="24" fill="#172b45" text-anchor="start">1</text>
-<text x="476" y="584" font-size="24" fill="#172b45" text-anchor="middle">0</text>
-<text x="518" y="584" font-size="24" fill="#172b45" text-anchor="middle">0</text>
-<text x="560" y="584" font-size="24" fill="#172b45" text-anchor="middle">1</text>
-<text x="390" y="624" font-size="24" fill="#172b45" text-anchor="start">4</text>
-<text x="476" y="624" font-size="24" fill="#172b45" text-anchor="middle">1</text>
-<text x="518" y="624" font-size="24" fill="#172b45" text-anchor="middle">0</text>
-<text x="560" y="624" font-size="24" fill="#172b45" text-anchor="middle">0</text>
-<text x="390" y="664" font-size="24" fill="#172b45" text-anchor="start">5</text>
-<text x="476" y="664" font-size="24" fill="#172b45" text-anchor="middle">1</text>
-<text x="518" y="664" font-size="24" fill="#172b45" text-anchor="middle">0</text>
-<text x="560" y="664" font-size="24" fill="#172b45" text-anchor="middle">1</text>
-<text x="390" y="720" font-size="22" fill="#ad4f16" text-anchor="start">每一列都是偶数：必败</text>
-<text x="70" y="760" font-size="22" fill="#ad4f16" text-anchor="start">改之前</text>
-<text x="390" y="760" font-size="22" fill="#176786" text-anchor="start">改成 1、4、5</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="350" viewBox="0 0 760 350" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">三堆尼姆游戏的二进制糖袋配对图解</title>
+<desc id="desc">左图将9、5、12拆为8、4、2、1袋，每列均为偶数个；右图展示3、4、5中2颗袋落单，从3中拿走2变为1、4、5即可恢复全列成对。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="349" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">三堆尼姆游戏（Nim）为什么突然冒出二进制？把它想成“按 8、4、2、1 分袋配对”！</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">把每堆糖拆成 8、4、2、1 颗的小袋子：每种规格的袋子如果是偶数个，就能两两配对玩刚才的“照镜子”！</text>
+<rect x="20" y="62" width="352" height="272" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="84" font-size="12.4" fill="#0f172a" text-anchor="start" font-weight="600">① 安全必败局 (9, 5, 12)：所有规格袋子全都成双！</text>
+<text x="132" y="110" font-size="11" fill="#64748b" text-anchor="middle" font-weight="600">8颗袋</text>
+<text x="184" y="110" font-size="11" fill="#64748b" text-anchor="middle" font-weight="600">4颗袋</text>
+<text x="236" y="110" font-size="11" fill="#64748b" text-anchor="middle" font-weight="600">2颗袋</text>
+<text x="288" y="110" font-size="11" fill="#64748b" text-anchor="middle" font-weight="600">1颗袋</text>
+<text x="44" y="141" font-size="12" fill="#0f172a" text-anchor="start" font-weight="600">甲=9</text>
+<rect x="114" y="122" width="36" height="28" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="132" y="141" font-size="12.5" fill="#18794e" text-anchor="middle" font-weight="700" class="mono">1</text>
+<rect x="166" y="122" width="36" height="28" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="184" y="141" font-size="12.5" fill="#64748b" text-anchor="middle" class="mono">0</text>
+<rect x="218" y="122" width="36" height="28" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="236" y="141" font-size="12.5" fill="#64748b" text-anchor="middle" class="mono">0</text>
+<rect x="270" y="122" width="36" height="28" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="288" y="141" font-size="12.5" fill="#18794e" text-anchor="middle" font-weight="700" class="mono">1</text>
+<text x="44" y="179" font-size="12" fill="#0f172a" text-anchor="start" font-weight="600">乙=5</text>
+<rect x="114" y="160" width="36" height="28" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="132" y="179" font-size="12.5" fill="#64748b" text-anchor="middle" class="mono">0</text>
+<rect x="166" y="160" width="36" height="28" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="184" y="179" font-size="12.5" fill="#18794e" text-anchor="middle" font-weight="700" class="mono">1</text>
+<rect x="218" y="160" width="36" height="28" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="236" y="179" font-size="12.5" fill="#64748b" text-anchor="middle" class="mono">0</text>
+<rect x="270" y="160" width="36" height="28" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="288" y="179" font-size="12.5" fill="#18794e" text-anchor="middle" font-weight="700" class="mono">1</text>
+<text x="44" y="217" font-size="12" fill="#0f172a" text-anchor="start" font-weight="600">丙=12</text>
+<rect x="114" y="198" width="36" height="28" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="132" y="217" font-size="12.5" fill="#18794e" text-anchor="middle" font-weight="700" class="mono">1</text>
+<rect x="166" y="198" width="36" height="28" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="184" y="217" font-size="12.5" fill="#18794e" text-anchor="middle" font-weight="700" class="mono">1</text>
+<rect x="218" y="198" width="36" height="28" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="236" y="217" font-size="12.5" fill="#64748b" text-anchor="middle" class="mono">0</text>
+<rect x="270" y="198" width="36" height="28" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="288" y="217" font-size="12.5" fill="#64748b" text-anchor="middle" class="mono">0</text>
+<line x1="40" y1="242" x2="344" y2="242" stroke="#cbd5e1" stroke-width="1"/>
+<text x="44" y="262" font-size="11.2" fill="#64748b" text-anchor="start">竖列袋数</text>
+<text x="132" y="262" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="700">2个(偶)</text>
+<text x="184" y="262" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="700">2个(偶)</text>
+<text x="236" y="262" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="700">0个(偶)</text>
+<text x="288" y="262" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="700">2个(偶)</text>
+<rect x="36.0" y="284.0" width="320" height="24" rx="12.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="196.0" y="300.3" font-size="11.2" fill="#c25014" text-anchor="middle" font-weight="600">异或和 9⊕5⊕12 = 0：谁先拿都会拆散一对，必败</text>
+<rect x="388" y="62" width="352" height="272" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="404" y="84" font-size="12.4" fill="#0f172a" text-anchor="start" font-weight="600">② 必胜局 (3, 4, 5)：揪出落单的“2颗袋”拿走！</text>
+<text x="496" y="110" font-size="11" fill="#64748b" text-anchor="middle" font-weight="600">4颗袋</text>
+<text x="560" y="110" font-size="11" fill="#64748b" text-anchor="middle" font-weight="600">2颗袋</text>
+<text x="624" y="110" font-size="11" fill="#64748b" text-anchor="middle" font-weight="600">1颗袋</text>
+<text x="406" y="141" font-size="11.8" fill="#c25014" text-anchor="start" font-weight="600">甲=3 → 改1</text>
+<rect x="476" y="122" width="40" height="28" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="496" y="141" font-size="12.5" fill="#64748b" text-anchor="middle" font-weight="700" class="mono">0</text>
+<rect x="540" y="122" width="40" height="28" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="1.9"/>
+<text x="560" y="141" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700" class="mono">1→0</text>
+<rect x="604" y="122" width="40" height="28" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="624" y="141" font-size="12.5" fill="#18794e" text-anchor="middle" font-weight="700" class="mono">1</text>
+<text x="406" y="179" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="600">乙=4</text>
+<rect x="476" y="160" width="40" height="28" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="496" y="179" font-size="12.5" fill="#18794e" text-anchor="middle" font-weight="700" class="mono">1</text>
+<rect x="540" y="160" width="40" height="28" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="560" y="179" font-size="12.5" fill="#64748b" text-anchor="middle" font-weight="700" class="mono">0</text>
+<rect x="604" y="160" width="40" height="28" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="624" y="179" font-size="12.5" fill="#64748b" text-anchor="middle" font-weight="700" class="mono">0</text>
+<text x="406" y="217" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="600">丙=5</text>
+<rect x="476" y="198" width="40" height="28" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="496" y="217" font-size="12.5" fill="#18794e" text-anchor="middle" font-weight="700" class="mono">1</text>
+<rect x="540" y="198" width="40" height="28" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="560" y="217" font-size="12.5" fill="#64748b" text-anchor="middle" font-weight="700" class="mono">0</text>
+<rect x="604" y="198" width="40" height="28" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="624" y="217" font-size="12.5" fill="#18794e" text-anchor="middle" font-weight="700" class="mono">1</text>
+<line x1="404" y1="242" x2="716" y2="242" stroke="#cbd5e1" stroke-width="1"/>
+<text x="406" y="262" font-size="11.2" fill="#64748b" text-anchor="start">原本袋数</text>
+<text x="496" y="262" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="600">2个(成对)</text>
+<text x="560" y="262" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="700">1个(落单!)</text>
+<text x="624" y="262" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="600">2个(成对)</text>
+<rect x="404.0" y="284.0" width="320" height="24" rx="12.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="564.0" y="300.3" font-size="11.2" fill="#1d6fa5" text-anchor="middle" font-weight="600">唯一胜着：从甲堆拿走 2 颗变成 (1, 4, 5)，恢复全偶！</text>
 </svg>

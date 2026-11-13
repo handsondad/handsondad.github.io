@@ -3,10 +3,10 @@
   <desc id="desc">第4行系数1、4、6、4、1分别代表四次抛硬币出现0到4次正面的组合数。总数16，出现两次正面的概率为6除以16。</desc>
   <defs>
     <style>
-      .bg{fill:#f7f5ef}.cell{fill:#fff;stroke:#9aa7b8;stroke-width:2}.focus{fill:#dcecff;stroke:#3478b9;stroke-width:3}.t{font:22px "Microsoft YaHei",sans-serif;fill:#172033}.small{font:17px "Microsoft YaHei",sans-serif;fill:#475569}.strong{font-weight:700}.arrow{stroke:#3478b9;stroke-width:2.5;fill:none}
+      .bg{fill:#fbfcfd;stroke:#dde6ee;stroke-width:1.5}.cell{fill:#fff;stroke:#9aa7b8;stroke-width:1.6}.focus{fill:#dcecff;stroke:#3478b9;stroke-width:2.4}.t{font:18px "Microsoft YaHei",sans-serif;fill:#172033}.small{font:15.5px "Microsoft YaHei",sans-serif;fill:#475569}.strong{font-weight:700}.arrow{stroke:#3478b9;stroke-width:2.2;fill:none}
     </style>
   </defs>
-  <rect class="bg" width="1000" height="490" rx="22"/>
+  <rect class="bg" x="1" y="1" width="998" height="488" rx="16"/>
   <text class="t strong" x="500" y="46" text-anchor="middle">第 4 行：四次抛硬币，正面出现的组合数</text>
   <g>
     <circle class="cell" cx="500" cy="92" r="23"/>

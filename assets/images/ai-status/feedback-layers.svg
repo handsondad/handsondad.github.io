@@ -1,15 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="605" viewBox="0 0 1000 605" role="img" aria-labelledby="title desc">
 <title id="title">等待文案和操作反馈的差别</title><desc id="desc">左侧转圈配Spelunking文案，不提供可核查进度；右侧逐步列出示意操作，最后提醒仍需检查结果。不是任何产品的真实截图。</desc>
-<style>.spinner{animation:spin 4s linear 1}@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(720deg)}}
-text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif}
-.s1{animation:r1 4.5s steps(1,end) 1 both}
-.s2{animation:r2 4.5s steps(1,end) 1 both}
-.s3{animation:r3 4.5s steps(1,end) 1 both}
-@keyframes r1{0%,9%{opacity:0}10%,100%{opacity:1}}
-@keyframes r2{0%,34%{opacity:0}35%,100%{opacity:1}}
-@keyframes r3{0%,64%{opacity:0}65%,100%{opacity:1}}
-@media(prefers-reduced-motion:reduce){.s1,.s2,.s3,.spinner{animation:none}}
-</style>
-<rect width="1000" height="605" rx="20" fill="#faf8f3"/>
-<text x="500" y="48" text-anchor="middle" font-size="28" fill="#20334d" font-weight="700">同一个等待界面，两种不同的信息</text><text x="500" y="88" text-anchor="middle" font-size="20" fill="#20334d">以下是概念示意，不是 Claude Code、Copilot 或 Cursor 的真实截图</text><rect x="40" y="120" width="430" height="350" rx="14" fill="#eae8f7"/><rect x="530" y="120" width="430" height="350" rx="14" fill="#e5f1ed"/><text x="255" y="164" text-anchor="middle" font-size="25" fill="#20334d" font-weight="700">陪伴性文案</text><g class="spinner" style="transform-origin:255px 235px"><path d="M255 207 A28 28 0 1 1 227 235" fill="none" stroke="#8750a7" stroke-width="7" stroke-linecap="round"/></g><text x="255" y="303" text-anchor="middle" font-size="29" fill="#20334d" font-weight="700">Spelunking…</text><text x="255" y="355" text-anchor="middle" font-size="21" fill="#20334d">像在探险：传达气氛与个性</text><text x="255" y="413" text-anchor="middle" font-size="20" fill="#20334d">不能据此推断读了哪些文件</text><text x="745" y="164" text-anchor="middle" font-size="25" fill="#20334d" font-weight="700">可核查的任务反馈</text><g class="s1"><text x="565" y="235" text-anchor="start" font-size="23" fill="#20334d">① 读取：3 个相关文件</text></g><g class="s2"><text x="565" y="304" text-anchor="start" font-size="23" fill="#20334d">② 修改：1 个目标文件</text></g><g class="s3"><text x="565" y="373" text-anchor="start" font-size="23" fill="#20334d">③ 检查：结果另行展示</text></g><text x="745" y="437" text-anchor="middle" font-size="18" fill="#20334d">示意次序不代表真实任务耗时</text><text x="500" y="520" text-anchor="middle" font-size="27" fill="#20334d" font-weight="700">会动 ≠ 有进展；完成操作 ≠ 已证明结果正确</text><text x="500" y="567" text-anchor="middle" font-size="20" fill="#20334d">动画只演示两层反馈的区别，不是模拟真实后台状态或百分比。</text>
+<style>.spinner{animation:spin 4s linear 1}@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(720deg)}}text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif}
+    .s1{animation:r1 4.5s steps(1,end) 1 both}
+    .s2{animation:r2 4.5s steps(1,end) 1 both}
+    .s3{animation:r3 4.5s steps(1,end) 1 both}
+    @keyframes r1{0%,9%{opacity:0}10%,100%{opacity:1}}
+    @keyframes r2{0%,34%{opacity:0}35%,100%{opacity:1}}
+    @keyframes r3{0%,64%{opacity:0}65%,100%{opacity:1}}
+    @media(prefers-reduced-motion:reduce){.s1,.s2,.s3,.spinner{animation:none}}</style>
+<rect x="1" y="1" width="998" height="603" rx="16" fill="#fbfcfd" stroke="#dde6ee" stroke-width="1.5"/>
+<text x="500" y="46.12" text-anchor="middle" font-size="21.3" fill="#20334d" font-weight="700">同一个等待界面，两种不同的信息</text><text x="500" y="86.77" text-anchor="middle" font-size="15.6" fill="#20334d">以下是概念示意，不是 Claude Code、Copilot 或 Cursor 的真实截图</text><rect x="40" y="120" width="430" height="350" rx="14" fill="#eae8f7" stroke="#dde6ee" stroke-width="1"/><rect x="530" y="120" width="430" height="350" rx="14" fill="#e5f1ed" stroke="#dde6ee" stroke-width="1"/><text x="255" y="162.46" text-anchor="middle" font-size="19.5" fill="#20334d" font-weight="700">陪伴性文案</text><g class="spinner" style="transform-origin:255px 235px"><path d="M255 207 A28 28 0 1 1 227 235" fill="none" stroke="#8750a7" stroke-width="7" stroke-linecap="round"/></g><text x="255" y="300.90" text-anchor="middle" font-size="21.5" fill="#20334d" font-weight="700">Spelunking…</text><text x="255" y="353.71" text-anchor="middle" font-size="16.4" fill="#20334d">像在探险：传达气氛与个性</text><text x="255" y="411.77" text-anchor="middle" font-size="15.6" fill="#20334d">不能据此推断读了哪些文件</text><text x="745" y="162.46" text-anchor="middle" font-size="19.5" fill="#20334d" font-weight="700">可核查的任务反馈</text><g class="s1"><text x="565" y="233.58" text-anchor="start" font-size="17.9" fill="#20334d">① 读取：3 个相关文件</text></g><g class="s2"><text x="565" y="302.58" text-anchor="start" font-size="17.9" fill="#20334d">② 修改：1 个目标文件</text></g><g class="s3"><text x="565" y="371.58" text-anchor="start" font-size="17.9" fill="#20334d">③ 检查：结果另行展示</text></g><text x="745" y="436.16" text-anchor="middle" font-size="15.0" fill="#20334d">示意次序不代表真实任务耗时</text><text x="500" y="518.19" text-anchor="middle" font-size="20.5" fill="#20334d" font-weight="700">会动 ≠ 有进展；完成操作 ≠ 已证明结果正确</text><text x="500" y="565.77" text-anchor="middle" font-size="15.6" fill="#20334d">动画只演示两层反馈的区别，不是模拟真实后台状态或百分比。</text>
 </svg>

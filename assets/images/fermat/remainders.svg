@@ -4,12 +4,12 @@
   <defs>
     <style>
       text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif;fill:#172b44}
-      .title{font-size:27px;font-weight:700}.body{font-size:22px}.small{font-size:19px;fill:#42566e}.num{font-size:32px;font-weight:700}
-      .card{fill:#fff;stroke:#9db6cc;stroke-width:2}.result{fill:#e2f1e9;stroke:#39845f;stroke-width:2}
+      .title{font-size:21.5px;font-weight:700}.body{font-size:17.5px}.small{font-size:15.5px;fill:#42566e}.num{font-size:23px;font-weight:700}
+      .card{fill:#fff;stroke:#9db6cc;stroke-width:1.6}.result{fill:#e2f1e9;stroke:#39845f;stroke-width:1.6}
     </style>
     <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="#627f9b"/></marker>
   </defs>
-  <rect width="1000" height="490" rx="20" fill="#f7f5ef"/>
+  <rect x="1" y="1" width="998" height="488" rx="16" fill="#fbfcfd" stroke="#dde6ee" stroke-width="1.5"/>
   <text class="title" x="500" y="52" text-anchor="middle">乘以 3，再除以 7 取余：像洗牌，没有丢牌</text>
   <text class="small" x="500" y="88" text-anchor="middle">上排是原来的余数；下排是相乘后得到的余数</text>
   <g text-anchor="middle">

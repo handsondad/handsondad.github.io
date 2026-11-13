@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="364" viewBox="0 0 760 364" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">柯西围线积分与留数的视线转角直觉</title>
+<desc id="desc">左图奇点a在圆内，观察视线随逆时针路径转满一圈净增2π弧度，积分为2πi；右图奇点a在圆外，视线上下摆动约40度后回到原方向，净转角为0，积分为0。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="363" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">围线积分 ∮ dz/(z − a) 为什么只看“圈里还是圈外”？用视线转角一眼看懂！</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">把奇点 a 当作观察者，z 是沿蓝圈逆时针跑的人。dz/(z−a) 累加的虚部，恰好是“观察者转头盯住人”扫过的净角度！</text>
+<rect x="20" y="62" width="352" height="286" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="84" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="600">① 奇点 a 在圈内：脖子跟着转满整整一圈（+360°）</text>
+<circle cx="196.0" cy="198.0" r="78.0" fill="#eaf4fb" fill-opacity="0.48" stroke="#1d6fa5" stroke-width="1.9"/>
+<path d="M204.0,120.0 L194.0,120.0" fill="none" stroke="#1d6fa5" stroke-width="2" marker-end="url(#arr-blue)"/>
+<line x1="215.5" y1="186.3" x2="271.3" y2="177.8" stroke="#c25014" stroke-width="1.2" stroke-dasharray="3 3"/>
+<circle cx="271.3" cy="177.8" r="3.2" fill="#1d6fa5"/>
+<line x1="215.5" y1="186.3" x2="175.8" y2="122.7" stroke="#c25014" stroke-width="1.2" stroke-dasharray="3 3"/>
+<circle cx="175.8" cy="122.7" r="3.2" fill="#1d6fa5"/>
+<line x1="215.5" y1="186.3" x2="120.7" y2="218.2" stroke="#c25014" stroke-width="1.2" stroke-dasharray="3 3"/>
+<circle cx="120.7" cy="218.2" r="3.2" fill="#1d6fa5"/>
+<line x1="215.5" y1="186.3" x2="216.2" y2="273.3" stroke="#c25014" stroke-width="1.2" stroke-dasharray="3 3"/>
+<circle cx="216.2" cy="273.3" r="3.2" fill="#1d6fa5"/>
+<path d="M235.5,186.3 A20,20 0 1,0 234.7,191.8" fill="none" stroke="#c25014" stroke-width="1.6" marker-end="url(#arr-orange)"/>
+<circle cx="215.5" cy="186.3" r="4.8" fill="#c25014"/>
+<text x="209.5" y="202.3" font-size="12.5" fill="#c25014" text-anchor="end" font-weight="700" class="halo">a</text>
+<text x="240.5" y="178.3" font-size="11" fill="#c25014" text-anchor="start" font-weight="700" class="halo">净转 +2π</text>
+<text x="36" y="300" font-size="11.2" fill="#1e293b" text-anchor="start">跑完一圈回到起点：距离 ln r 抵消为 0，角度净增 2π 弧度</text>
+<rect x="36.0" y="314.0" width="320" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="196.0" y="329.0" font-size="11.2" fill="#c25014" text-anchor="middle" font-weight="600">∮ dz/(z − a) = 0 + i · (2π) = 2πi（与圈的形状无关！）</text>
+<rect x="388" y="62" width="352" height="286" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="404" y="84" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="600">② 奇点 a 在圈外：歪头过去又摆回来，净转角 = 0°</text>
+<circle cx="508.0" cy="198.0" r="70.0" fill="#eaf4fb" fill-opacity="0.48" stroke="#1d6fa5" stroke-width="1.9"/>
+<path d="M516.0,128.0 L506.0,128.0" fill="none" stroke="#1d6fa5" stroke-width="2" marker-end="url(#arr-blue)"/>
+<line x1="616.5" y1="198.0" x2="553.2" y2="144.5" stroke="#18794e" stroke-width="1.4" stroke-dasharray="4 3"/>
+<line x1="616.5" y1="198.0" x2="553.2" y2="251.5" stroke="#18794e" stroke-width="1.4" stroke-dasharray="4 3"/>
+<line x1="616.5" y1="198.0" x2="438.0" y2="198.0" stroke="#cbd5e1" stroke-width="1.1"/>
+<path d="M587.5,173.5 A38.0,38.0 0 0,0 587.5,222.5" fill="none" stroke="#18794e" stroke-width="1.6"/>
+<text x="570.5" y="180.0" font-size="10.8" fill="#18794e" text-anchor="end" font-weight="600" class="halo">+40°</text>
+<text x="570.5" y="224.0" font-size="10.8" fill="#18794e" text-anchor="end" font-weight="600" class="halo">−40°</text>
+<circle cx="616.5" cy="198.0" r="4.8" fill="#c25014"/>
+<text x="625.5" y="203.0" font-size="12" fill="#c25014" text-anchor="start" font-weight="700" class="halo">a（圈外）</text>
+<text x="404" y="300" font-size="11.2" fill="#1e293b" text-anchor="start">视线最多偏转 ±40° 就折返，走满一圈净转角严格为 0</text>
+<rect x="404.0" y="314.0" width="320" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="564.0" y="329.0" font-size="11.2" fill="#18794e" text-anchor="middle" font-weight="600">∮ dz/(z − a) = 0（圈外奇点对围线积分零贡献！）</text>
+</svg>

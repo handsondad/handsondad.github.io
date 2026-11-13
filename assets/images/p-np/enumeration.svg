@@ -1,22 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="870" viewBox="0 0 720 870" role="img" aria-labelledby="title desc" lang="zh-CN">
+<svg xmlns="http://www.w3.org/2000/svg" width="540" height="652.5" viewBox="0 0 540 652.5" role="img" aria-labelledby="title desc" lang="zh-CN">
 <title id="title">子集候选数的指数增长</title>
 <desc id="desc">三十、六十和一百个物品，分别有二的对应次方个候选子集。假设每秒检查十亿个，完整枚举约需一点零七秒、三十六点五年、四点零二乘十的十三次方年。这是枚举估算，不是复杂性下界。</desc>
-<style>text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif}</style>
-<rect width="720" height="870" fill="#f3f7fa"/>
-<text x="36" y="48" font-size="32" fill="#172b45" text-anchor="start">每多一个选／不选，候选数就翻倍</text>
-<text x="36" y="88" font-size="24" fill="#41576a" text-anchor="start">乐观假设：每秒检查 10 亿个候选，忽略其他成本。</text>
+<style>text{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",sans-serif}</style>
+<rect x="0.75" y="0.75" width="538.5" height="651" rx="12" fill="#fbfcfd" stroke="#dde6ee" stroke-width="1.2"/>
+<g transform="scale(0.75)">
+<text x="36" y="44.98" font-size="21.2" fill="#172b45" text-anchor="start" font-weight="700">每多一个选／不选，候选数就翻倍</text>
+<text x="36" y="86.39" font-size="18.2" fill="#41576a" text-anchor="start">乐观假设：每秒检查 10 亿个候选，忽略其他成本。</text>
 <rect x="24" y="120" width="672" height="180" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
-<text x="44" y="162" font-size="28" fill="#172b45" text-anchor="start">30 个物品 → 2 的 30 次方个候选</text>
-<text x="44" y="211" font-size="29" fill="#176786" text-anchor="start">约 10.7 亿个</text>
-<text x="44" y="263" font-size="29" fill="#ad4f16" text-anchor="start">全部检查：约 1.07 秒</text>
+<text x="44" y="159.80" font-size="20.2" fill="#172b45" text-anchor="start" font-weight="700">30 个物品 → 2 的 30 次方个候选</text>
+<text x="44" y="208.73" font-size="20.9" fill="#176786" text-anchor="start" font-weight="700">约 10.7 亿个</text>
+<text x="44" y="260.73" font-size="20.9" fill="#ad4f16" text-anchor="start" font-weight="700">全部检查：约 1.07 秒</text>
 <rect x="24" y="325" width="672" height="180" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
-<text x="44" y="367" font-size="28" fill="#172b45" text-anchor="start">60 个物品 → 2 的 60 次方个候选</text>
-<text x="44" y="416" font-size="29" fill="#176786" text-anchor="start">约 1.15 × 10¹⁸ 个</text>
-<text x="44" y="468" font-size="29" fill="#ad4f16" text-anchor="start">全部检查：约 36.5 年</text>
+<text x="44" y="364.80" font-size="20.2" fill="#172b45" text-anchor="start" font-weight="700">60 个物品 → 2 的 60 次方个候选</text>
+<text x="44" y="413.73" font-size="20.9" fill="#176786" text-anchor="start" font-weight="700">约 1.15 × 10¹⁸ 个</text>
+<text x="44" y="465.73" font-size="20.9" fill="#ad4f16" text-anchor="start" font-weight="700">全部检查：约 36.5 年</text>
 <rect x="24" y="530" width="672" height="180" rx="16" fill="#fff" stroke="#c9d6df" stroke-width="2"/>
-<text x="44" y="572" font-size="28" fill="#172b45" text-anchor="start">100 个物品 → 2 的 100 次方个候选</text>
-<text x="44" y="621" font-size="29" fill="#176786" text-anchor="start">约 1.27 × 10³⁰ 个</text>
-<text x="44" y="673" font-size="29" fill="#ad4f16" text-anchor="start">全部检查：约 4.02 × 10¹³ 年</text>
-<text x="36" y="787" font-size="25" fill="#172b45" text-anchor="start">这是完整穷举的算账，不是任意算法的时间下界。</text>
-<text x="36" y="831" font-size="24" fill="#41576a" text-anchor="start">实际可能提前找到解；聪明算法也可能避开完整枚举。</text>
+<text x="44" y="569.80" font-size="20.2" fill="#172b45" text-anchor="start" font-weight="700">100 个物品 → 2 的 100 次方个候选</text>
+<text x="44" y="618.73" font-size="20.9" fill="#176786" text-anchor="start" font-weight="700">约 1.27 × 10³⁰ 个</text>
+<text x="44" y="670.73" font-size="20.9" fill="#ad4f16" text-anchor="start" font-weight="700">全部检查：约 4.02 × 10¹³ 年</text>
+<text x="36" y="785.32" font-size="19.0" fill="#172b45" text-anchor="start">这是完整穷举的算账，不是任意算法的时间下界。</text>
+<text x="36" y="829.39" font-size="18.2" fill="#41576a" text-anchor="start">实际可能提前找到解；聪明算法也可能避开完整枚举。</text>
+</g>
 </svg>
