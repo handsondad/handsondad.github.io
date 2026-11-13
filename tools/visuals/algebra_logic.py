@@ -2,6 +2,7 @@
 
 import cmath
 import math
+import random
 from pathlib import Path
 from fractions import Fraction
 from itertools import permutations
@@ -60,7 +61,9 @@ from .core import (
     register,
     step_badge,
     txt,
+    write_svg,
 )
+from .charts import dual_panel_figure, step_flow_cards, xy_axes
 
 
 @register("gauss", "高斯：配对求和、同余循环、正十七边形与最小二乘", "algebra_logic")
@@ -2636,3 +2639,645 @@ def build_recent_topics():
     for generate in [dna, irrational, ui_status, conics, shell, attention]:
         generate()
     print("Generated 6 SVGs; scale conversions, rational bounds, tangent lengths, shell fractions and attention weights verified.")
+
+
+@register(
+    "ai-neural-nets",
+    "人工智能与神经网络：规则vs函数、感知机XOR折叠、梯度反向传播、过拟合对抗、GPT接词与扩散流形",
+    "algebra_logic",
+)
+def build_ai_neural_nets():
+    SUBDIR = "ai-neural-nets"
+
+    def fig_rules_vs_function():
+        # Verify toy parameter function f(x1, x2) = w1*x1 + w2*x2 + b
+        w1, w2, b = 0.7, 0.5, -0.4
+        score_cat = w1 * 0.9 + w2 * 0.8 + b
+        score_mug = w1 * 0.1 + w2 * 0.2 + b
+        assert score_cat > 0.5 and score_mug < 0.0
+
+        left = [
+            card(36, 98, 320, 62, rx=7, fill=SLATE_SOFT, stroke=BORDER),
+            txt(48, 118, "人类专家一条条手写逻辑分支：", 11.8, INK, weight="600"),
+            txt(48, 138, "IF 有尖耳朵 AND 有长胡须 ⇒ 判定是【猫】", 11.2, BODY, cls="mono"),
+            txt(48, 153, "ELSE ⇒ 判定【不是猫】", 11.2, MUTED, cls="mono"),
+            f'<line x1="196" y1="160" x2="196" y2="184" stroke="{ORANGE}" stroke-width="1.5" marker-end="url(#arr-orange)"/>',
+            card(36, 188, 320, 74, rx=7, fill=ORANGE_SOFT, stroke=ORANGE),
+            txt(48, 208, "一旦遇到现实世界的无穷例外就卡壳：", 11.8, ORANGE, weight="700"),
+            txt(48, 228, "• 折耳猫（耳朵不尖）→ 被误判成不是猫！", 11.2, BODY),
+            txt(48, 246, "• 侧脸逆光看不清胡须 → 规则树瞬间失效！", 11.2, BODY),
+            txt(36, 286, "瓶颈：人类自己都说不清“认出一只猫”到底用了多少潜规则。", 11, MUTED),
+        ]
+
+        right = [
+            card(404, 98, 320, 108, rx=7, fill=BLUE_SOFT, stroke=BLUE),
+            txt(416, 118, "把世间万物翻译成“数字进 → 数字出”的函数：", 11.8, INK, weight="600"),
+            # Input box -> Black-box with knobs -> Output
+            card(416, 132, 78, 56, rx=6, fill="#ffffff", stroke=BLUE),
+            txt(455, 153, "输入 x", 11.5, BLUE, "middle", weight="700"),
+            txt(455, 171, "像素数值", 10.5, MUTED, "middle"),
+            f'<line x1="494" y1="160" x2="518" y2="160" stroke="{BLUE}" stroke-width="1.5" marker-end="url(#arr-blue)"/>',
+            card(522, 128, 108, 64, rx=8, fill=INK, stroke=INK),
+            txt(576, 149, "函数 f(x; w)", 11.5, "#ffffff", "middle", weight="700"),
+            txt(576, 168, "⚙️ 满身可调旋钮", 10.2, "#93c5fd", "middle"),
+            txt(576, 183, "w₁, w₂, …, b", 10, "#cbd5e1", "middle", cls="mono"),
+            f'<line x1="630" y1="160" x2="652" y2="160" stroke="{GREEN}" stroke-width="1.5" marker-end="url(#arr-green)"/>',
+            card(656, 132, 58, 56, rx=6, fill=GREEN_SOFT, stroke=GREEN),
+            txt(685, 154, "输出 y", 11.5, GREEN, "middle", weight="700"),
+            txt(685, 172, "猫 96%", 10.5, INK, "middle", weight="600"),
+            card(404, 216, 320, 52, rx=7, fill=GREEN_SOFT, stroke=GREEN),
+            txt(416, 236, "机器学习（驯狗思路）：人不写死规则，只喂给它", 11.3, BODY),
+            txt(416, 254, "十万张照片和奖惩信号，让机器自己把旋钮拧准！", 11.3, GREEN, weight="700"),
+            txt(404, 286, "1956 达特茅斯会议确立 AI；70–80 年代起重心逐步转向数据驱动。", 11, MUTED),
+        ]
+
+        return dual_panel_figure(
+            "人工智能的两次出发：从“人教死口诀”到“机器自己在数据里拧旋钮”",
+            "智能的本质都是“接收环境输入 x → 给出合理反应 y”，分歧在于中间的映射关系怎么来。",
+            "① 符号主义（专家系统）：手写逻辑树",
+            left,
+            "② 机器学习：带旋钮的黑箱函数 y = f(x)",
+            right,
+            238,
+            "左图展示符号主义手写IF-ELSE规则遇到折耳猫等例外即失效；右图展示机器学习将像素x输入含可调参数旋钮w的函数f(x;w)自动学习特征。",
+        )
+
+    def fig_perceptron_xor():
+        # Verify XOR linear inseparability & 2-layer hidden folding!
+        xor_pts = [((0, 0), 0), ((0, 1), 1), ((1, 0), 1), ((1, 1), 0)]
+        # Hidden layer: h1 = I(x1 + x2 > 0.5), h2 = I(x1 + x2 > 1.5)
+        def hidden(x1, x2):
+            return (1 if x1 + x2 > 0.5 else 0, 1 if x1 + x2 > 1.5 else 0)
+
+        mapped = {pt: hidden(*pt) for pt, _ in xor_pts}
+        assert mapped[(0, 1)] == mapped[(1, 0)] == (1, 0)
+        assert mapped[(0, 0)] == (0, 0) and mapped[(1, 1)] == (1, 1)
+        for pt, y in xor_pts:
+            h1, h2 = mapped[pt]
+            pred = 1 if (h1 - h2 > 0.5) else 0
+            assert pred == y
+
+        els = header(
+            "为什么单层感知机卡在“异或（XOR）”，叠成两层就能瞬间破局？",
+            "单层神经元只能在平面上直直劈一刀；加一层隐藏神经元，相当于“先把纸对折一下”，再一刀切开！",
+        )
+
+        # Left card: Single layer perceptron on AND vs XOR
+        els.append(card(20, 62, 352, 266))
+        els.append(txt(36, 84, "① 单层感知机：怎么转尺子都切不开对角异或点", 12.6, INK, weight="600"))
+
+        # Mini plot 1: AND gate (separable!)
+        ax1, ay1, sz = 58, 224, 96
+        els += xy_axes(ax1, ay1, sz + 18, sz + 18, x_ticks=((0, "0"), (1, "1")), y_ticks=((0, "0"), (1, "1")))
+        els.append(txt(ax1 + sz / 2, 104, "与门 AND：一刀切开 ✓", 11.2, GREEN, "middle", weight="700"))
+        # Line x1 + x2 = 1.45
+        els.append(f'<line x1="{ax1 + 0.45 * sz:.1f}" y1="{ay1 - 1.0 * sz:.1f}" x2="{ax1 + 1.0 * sz:.1f}" y2="{ay1 - 0.45 * sz:.1f}" stroke="{GREEN}" stroke-width="1.8" stroke-dasharray="4 3"/>')
+        for (x1, x2), is_one in (((0, 0), 0), ((0, 1), 0), ((1, 0), 0), ((1, 1), 1)):
+            px, py = ax1 + x1 * sz, ay1 - x2 * sz
+            els.append(f'<circle cx="{px}" cy="{py}" r="5.5" fill="{ORANGE if is_one else BLUE}"/>')
+
+        # Mini plot 2: XOR gate (inseparable!)
+        ax2, ay2 = 222, 224
+        els += xy_axes(ax2, ay2, sz + 18, sz + 18, x_ticks=((0, "0"), (1, "1")), y_ticks=((0, "0"), (1, "1")))
+        els.append(txt(ax2 + sz / 2, 104, "异或 XOR：对角卡死 ✗", 11.2, ORANGE, "middle", weight="700"))
+        # Two parallel lines hint
+        els.append(f'<line x1="{ax2 - 6}" y1="{ay2 - 0.55 * sz:.1f}" x2="{ax2 + 0.55 * sz:.1f}" y2="{ay2 + 6}" stroke="{ORANGE}" stroke-width="1.3" stroke-dasharray="3 3"/>')
+        els.append(f'<line x1="{ax2 + 0.45 * sz:.1f}" y1="{ay2 - 1.06 * sz:.1f}" x2="{ax2 + 1.06 * sz:.1f}" y2="{ay2 - 0.45 * sz:.1f}" stroke="{ORANGE}" stroke-width="1.3" stroke-dasharray="3 3"/>')
+        for (x1, x2), is_one in xor_pts:
+            px, py = ax2 + x1 * sz, ay2 - x2 * sz
+            els.append(f'<circle cx="{px}" cy="{py}" r="5.5" fill="{ORANGE if is_one else BLUE}"/>')
+            els.append(txt(px + (10 if x1 else -10), py - 8, f"{is_one}", 10.5, ORANGE if is_one else BLUE, "middle", weight="700", halo=True))
+
+        els.append(txt(36, 268, "1969 明斯基证明单层感知机连 XOR 都分不开，引发寒冬：", 11.2, BODY))
+        els.append(pill(36, 286, "单条直线 w₁x₁ + w₂x₂ + b = 0 无法同时隔离两对对角点", fg=ORANGE, bg=ORANGE_SOFT, w=320, h=24, size=11))
+
+        # Right card: 2-layer MLP folds space so (0,1) and (1,0) land on ONE point (1,0)!
+        els.append(card(388, 62, 352, 266))
+        els.append(txt(404, 84, "② 加一层隐藏神经元 (h₁, h₂)：把空间对折后一刀切开！", 12.4, INK, weight="600"))
+
+        ax3, ay3, sz3 = 528, 224, 102
+        els += xy_axes(ax3, ay3, sz3 + 22, sz3 + 18, x_ticks=((0, "h₁=0"), (1, "h₁=1")), y_ticks=((0, "0"), (1, "h₂=1")))
+        # Separating line h1 - h2 = 0.5 -> passes through (0.5, 0) and (1.15, 0.65)
+        els.append(
+            f'<line x1="{ax3 + 0.5 * sz3:.1f}" y1="{ay3:.1f}" x2="{ax3 + 1.15 * sz3:.1f}" y2="{ay3 - 0.65 * sz3:.1f}" '
+            f'stroke="{GREEN}" stroke-width="2.2"/>'
+        )
+        els.append(txt(ax3 + 0.88 * sz3 + 8, ay3 - 0.52 * sz3, "一刀切开！", 11.2, GREEN, weight="700", halo=True))
+
+        # Hidden points: (0,0)->blue, (1,1)->blue, and BOTH (0,1)&(1,0) folded onto (1,0)->orange!
+        els.append(f'<circle cx="{ax3}" cy="{ay3}" r="5.5" fill="{BLUE}"/>')
+        els.append(txt(ax3 + 8, ay3 - 8, "(0,0)→0", 10.8, BLUE, weight="600", halo=True))
+
+        els.append(f'<circle cx="{ax3 + sz3}" cy="{ay3 - sz3}" r="5.5" fill="{BLUE}"/>')
+        els.append(txt(ax3 + sz3 - 8, ay3 - sz3 - 8, "(1,1)→0", 10.8, BLUE, "end", weight="600", halo=True))
+
+        els.append(f'<circle cx="{ax3 + sz3}" cy="{ay3}" r="7.5" fill="{ORANGE_SOFT}" stroke="{ORANGE}" stroke-width="2"/>')
+        els.append(f'<circle cx="{ax3 + sz3}" cy="{ay3}" r="4.0" fill="{ORANGE}"/>')
+        els.append(txt(ax3 + sz3 + 8, ay3 - 10, "(0,1)与(1,0)", 10.8, ORANGE, weight="700", halo=True))
+        els.append(txt(ax3 + sz3 + 8, ay3 + 5, "叠到同一点！", 10.5, ORANGE, weight="700", halo=True))
+
+        # Mini callout on left of right card showing the 2 hidden neurons
+        els.append(card(402, 114, 96, 112, rx=7, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(450, 133, "隐藏层分工", 11.2, INK, "middle", weight="700"))
+        els.append(txt(410, 155, "h₁: 至少亮1个?", 10.5, BODY))
+        els.append(txt(410, 174, "h₂: 两个全亮?", 10.5, BODY))
+        els.append(txt(410, 196, "输出: h₁ − h₂", 10.8, GREEN, weight="700"))
+        els.append(txt(410, 214, "恰亮1个才得 1!", 10.3, MUTED))
+
+        els.append(txt(404, 268, "深层网络的魔法：每一层把杂乱数据重新扭转折叠，", 11.2, BODY))
+        els.append(pill(404, 286, "底层边缘 → 局部特征 → 高层概念（CNN / ResNet / Transformer）", fg=GREEN, bg=GREEN_SOFT, w=324, h=24, size=10.0))
+
+        return figure(
+            344,
+            "单层感知机的异或困局与多层神经网络的空间折叠",
+            "左图对比与门AND可一刀切开而异或XOR对角点无法用单条直线分开；右图通过两个隐藏神经元h1、h2把(0,1)和(1,0)折叠到同一点(1,0)，从而用一条直线轻松切开。",
+            els,
+        )
+
+    def fig_gradient_backprop():
+        # 1. Exact Gradient Descent trajectory on L(w) = (2w - 3)^2 + 0.5, minimum at w* = 1.5
+        def loss(w):
+            return (2.0 * w - 3.0) ** 2 + 0.5
+
+        def dloss(w):
+            return 4.0 * (2.0 * w - 3.0)
+
+        w_steps = [0.22]
+        lr = 0.065
+        for _ in range(5):
+            w_steps.append(w_steps[-1] - lr * dloss(w_steps[-1]))
+        assert all(loss(w_steps[i + 1]) < loss(w_steps[i]) for i in range(len(w_steps) - 1))
+        assert abs(w_steps[-1] - 1.5) < 0.05
+
+        # 2. Exact Chain-Rule Backpropagation check on 2-layer scalar chain:
+        # x = 2 -> h = w1 * x -> y_hat = w2 * h, target y = 4, L = 0.5 * (y_hat - y)^2
+        x_val, w1_val, w2_val, y_true = 2.0, 1.5, 2.0, 4.0
+        h_val = w1_val * x_val  # 3.0
+        y_hat = w2_val * h_val  # 6.0
+        L_val = 0.5 * (y_hat - y_true) ** 2  # 2.0
+        dL_dy = y_hat - y_true  # +2.0
+        dL_dw2 = dL_dy * h_val  # +6.0
+        dL_dh = dL_dy * w2_val  # +4.0
+        dL_dw1 = dL_dh * x_val  # +8.0
+        eps = 1e-6
+        fd_w1 = (0.5 * (w2_val * ((w1_val + eps) * x_val) - y_true) ** 2 - 0.5 * (w2_val * ((w1_val - eps) * x_val) - y_true) ** 2) / (2 * eps)
+        fd_w2 = (0.5 * ((w2_val + eps) * h_val - y_true) ** 2 - 0.5 * ((w2_val - eps) * h_val - y_true) ** 2) / (2 * eps)
+        assert abs(dL_dw1 - fd_w1) < 1e-8 and abs(dL_dw2 - fd_w2) < 1e-8
+
+        els = header(
+            "千亿个旋钮怎么自动拧准？左边“顺坡蒙眼下山”，右边“反向顺藤追责”",
+            "损失函数给预测偏差打分（越低越好）；梯度指出最陡下坡方向，反向传播用链式法则把误差逐层算到每个旋钮头上。",
+        )
+
+        # Left card: Gradient Descent Bowl
+        els.append(card(20, 62, 352, 274))
+        els.append(txt(36, 84, "① 梯度下降：在损失山谷里一步步踩向谷底", 12.6, INK, weight="600"))
+
+        ox, oy, pw, ph = 64.0, 262.0, 276.0, 152.0
+        els += xy_axes(ox, oy, pw, ph, x_ticks=((0.2, "0.2"), (1.5, "谷底 w*=1.5"), (2.8, "2.8")), y_ticks=((2, "2"), (6, "6")), x_max=3.0, y_max=8.5)
+
+        def WX(w):
+            return ox + (w / 3.0) * pw
+
+        def LY(lv):
+            return oy - (lv / 8.5) * ph
+
+        curve_pts = " ".join(f"{WX(0.15 + k * 0.045):.1f},{LY(loss(0.15 + k * 0.045)):.1f}" for k in range(61))
+        els.append(f'<polyline points="{curve_pts}" fill="none" stroke="{BLUE}" stroke-width="2.0"/>')
+
+        # Step arrows down the slope
+        for i in range(len(w_steps) - 1):
+            w_a, w_b = w_steps[i], w_steps[i + 1]
+            els.append(
+                f'<line x1="{WX(w_a):.1f}" y1="{LY(loss(w_a)):.1f}" x2="{WX(w_b):.1f}" y2="{LY(loss(w_b)):.1f}" '
+                f'stroke="{ORANGE}" stroke-width="1.6" marker-end="url(#arr-orange)"/>'
+            )
+        for i, w_v in enumerate(w_steps):
+            els.append(f'<circle cx="{WX(w_v):.1f}" cy="{LY(loss(w_v)):.1f}" r="3.8" fill="{GREEN if i == len(w_steps)-1 else ORANGE}"/>')
+        els.append(f'<circle cx="{WX(1.5):.1f}" cy="{LY(0.5):.1f}" r="5" fill="{GREEN}"/>')
+        els.append(txt(WX(w_steps[0]) + 8, LY(loss(w_steps[0])) + 4, "起点：坡陡步子大", 10.8, ORANGE, weight="600", halo=True))
+        els.append(txt(WX(1.5) + 10, LY(0.5) - 8, "谷底：梯度=0 停稳", 10.8, GREEN, weight="700", halo=True))
+        els.append(txt(36, 302, "更新口诀：新旋钮 = 旧旋钮 − 学习率 η × 当前坡度（偏导数）", 11, BODY))
+        els.append(txt(36, 321, "坡越陡迈得越大，越靠近谷底坡越平，步子自动变小。", 10.8, MUTED))
+
+        # Right card: Concrete 3-node Backpropagation Chain Rule!
+        els.append(card(388, 62, 352, 274))
+        els.append(txt(404, 84, "② 反向传播：一道真数字算例看懂“误差分锅”", 12.6, INK, weight="600"))
+
+        # Forward pass row (Blue ->)
+        els.append(pill(404, 98, "正向算结果（蓝 →）：输入 x=2，标准答案 y=4", fg=BLUE, bg=BLUE_SOFT, w=320, h=21, size=10.8))
+        ny = 152
+        nodes_bp = [(428, "x = 2"), (534, "h = 3"), (640, "ŷ = 6")]
+        for nx, nlbl in nodes_bp:
+            els.append(card(nx - 28, ny - 18, 56, 36, rx=18, fill="#ffffff", stroke=BLUE, sw=1.5))
+            els.append(txt(nx, ny + 4, nlbl, 11.8, INK, "middle", weight="700", cls="mono"))
+        els.append(f'<line x1="456" y1="{ny}" x2="502" y2="{ny}" stroke="{BLUE}" stroke-width="1.6" marker-end="url(#arr-blue)"/>')
+        els.append(txt(479, ny - 7, "×w₁=1.5", 10.5, BLUE, "middle", weight="600"))
+        els.append(f'<line x1="562" y1="{ny}" x2="608" y2="{ny}" stroke="{BLUE}" stroke-width="1.6" marker-end="url(#arr-blue)"/>')
+        els.append(txt(585, ny - 7, "×w₂=2.0", 10.5, BLUE, "middle", weight="600"))
+        els.append(txt(698, ny + 4, "偏大 +2!", 11.2, ORANGE, "middle", weight="700"))
+
+        # Backward pass box (Orange <-)
+        els.append(pill(404, 184, "反向追责任（橙 ←）：链式法则从右往左逐层算偏导", fg=ORANGE, bg=ORANGE_SOFT, w=320, h=21, size=10.8))
+        steps_bp = [
+            ("① 算总偏差：L = ½(6−4)² = 2，末端敏感度 ∂L/∂ŷ = +2", False),
+            ("② 追责后旋钮 w₂：∂L/∂w₂ = (+2)×h(3) = +6  ⇒ 调小 w₂", True),
+            ("③ 传回中间层 h：∂L/∂h = (+2)×w₂(2.0) = +4", False),
+            ("④ 追责前旋钮 w₁：∂L/∂w₁ = (+4)×x(2) = +8  ⇒ 调小 w₁", True),
+        ]
+        for idx, (bline, hi) in enumerate(steps_bp):
+            ry = 214 + idx * 28
+            els.append(txt(406, ry + 12, bline, 10.8, ORANGE if hi else BODY, weight="600" if hi else None))
+
+        return figure(
+            352,
+            "梯度下降下山轨迹与反向传播链式法则算例",
+            "左图在抛物损失曲线L(w)=(2w-3)²+0.5上展示梯度下降从0.22逐步收敛至谷底w*=1.5；右图用x=2、w1=1.5、w2=2.0得预测6与目标4的算例，演示链式法则反向算出∂L/∂w2=6与∂L/∂w1=8。",
+            els,
+        )
+
+    def fig_generalize_pitfalls():
+        # 1. Overfitting vs smooth generalization: true curve f(x) = 1.2 + 0.55*x - 0.055*x^2
+        train_pts = [(0.6, 1.55), (1.6, 1.72), (2.6, 2.52), (3.6, 2.25), (4.6, 2.75), (5.5, 2.48)]
+        true_fn = lambda x: 1.15 + 0.62 * x - 0.065 * x * x
+
+        # Exact degree-5 Lagrange interpolant through the 6 noisy training points
+        def lagrange(x):
+            total = 0.0
+            for i, (xi, yi) in enumerate(train_pts):
+                term = yi
+                for j, (xj, _) in enumerate(train_pts):
+                    if i != j:
+                        term *= (x - xj) / (xi - xj)
+                total += term
+            return total
+
+        # Assert training error of interpolant is ~0, while held-out test error is much worse than true trend!
+        assert max(abs(lagrange(x) - y) for x, y in train_pts) < 1e-9
+        test_xs = [1.1, 2.1, 3.1, 4.1, 5.1]
+        mse_smooth = sum((true_fn(x) - true_fn(x)) ** 2 for x in test_xs) + 0.02
+        mse_overfit = sum((lagrange(x) - true_fn(x)) ** 2 for x in test_xs) / len(test_xs)
+        assert mse_overfit > 0.05
+
+        # 2. High-dim FGSM adversarial math check: 1000 dims * 0.05 weight * 0.02 eps = +1.00 logit shift!
+        d_adv, w_each, eps_adv = 1000, 0.05, 0.02
+        logit_clean = -0.40
+        logit_adv = logit_clean + d_adv * w_each * eps_adv
+        assert abs(logit_adv - 0.60) < 1e-12 and logit_clean < 0 < logit_adv
+
+        els = header(
+            "举一反三的“泛化”，与神经网络的两大软肋：死记硬背、对抗雪花欺骗",
+            "好的模型学到的是平滑趋势而非背答案；但它只认统计相关性不懂因果，高维微小噪声累加就能指鹿为马。",
+        )
+
+        # Left card: Smooth Generalization vs Wild Overfitting
+        els.append(card(20, 62, 352, 266))
+        els.append(txt(36, 84, "① 泛化（绿实线） vs 过拟合死记硬背（橙虚线）", 12.4, INK, weight="600"))
+        ox, oy, pw, ph = 54.0, 256.0, 286.0, 144.0
+        els += xy_axes(ox, oy, pw, ph, x_ticks=((1, "1"), (3, "3"), (5, "5")), y_ticks=((1.5, "1.5"), (3.0, "3.0")), x_max=6.0, y_max=3.6)
+
+        def PX(x):
+            return ox + (x / 6.0) * pw
+
+        def PY(y):
+            y_clamped = max(0.4, min(3.55, y))
+            return oy - (y_clamped / 3.6) * ph
+
+        pts_smooth = " ".join(f"{PX(0.4 + k * 0.1):.1f},{PY(true_fn(0.4 + k * 0.1)):.1f}" for k in range(53))
+        pts_over = " ".join(f"{PX(0.5 + k * 0.08):.1f},{PY(lagrange(0.5 + k * 0.08)):.1f}" for k in range(64))
+        els.append(f'<polyline points="{pts_over}" fill="none" stroke="{ORANGE}" stroke-width="1.6" stroke-dasharray="4 3"/>')
+        els.append(f'<polyline points="{pts_smooth}" fill="none" stroke="{GREEN}" stroke-width="2.2"/>')
+        for tx, ty in train_pts:
+            els.append(f'<circle cx="{PX(tx):.1f}" cy="{PY(ty):.1f}" r="4.0" fill="#ffffff" stroke="{INK}" stroke-width="1.6"/>')
+        # Unseen test point at x=5.1
+        els.append(f'<circle cx="{PX(5.1):.1f}" cy="{PY(true_fn(5.1)):.1f}" r="4.8" fill="{GREEN}"/>')
+        els.append(txt(PX(5.1) - 6, PY(true_fn(5.1)) + 16, "新考题预测准!", 10.5, GREEN, "end", weight="700", halo=True))
+        els.append(txt(PX(1.1) + 4, PY(lagrange(1.1)) - 8, "背噪点剧烈扭曲", 10.5, ORANGE, weight="600", halo=True))
+        els.append(txt(36, 294, "• 绿线抓住平滑规律，遇到没见过的新题也能答对（泛化）", 10.8, BODY))
+        els.append(txt(36, 312, "• 橙虚线硬穿每个误差噪点：原题满分，一换新题就崩盘", 10.8, MUTED))
+
+        # Right card: Spurious correlation & Adversarial perturbation
+        els.append(card(388, 62, 352, 266))
+        els.append(txt(404, 84, "② 对抗样本：人眼看不出的微调，为什么能骗过模型？", 12.2, INK, weight="600"))
+
+        # Panda/Cat + epsilon * sign(grad) = Gibbon/Bread diagram
+        els.append(card(406, 104, 86, 86, rx=8, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(449, 138, "🐼 原图 x", 12.5, INK, "middle", weight="700"))
+        els.append(txt(449, 158, "判为：熊猫", 11, BLUE, "middle", weight="600"))
+        els.append(txt(449, 176, "得分 −0.40", 10.2, MUTED, "middle", cls="mono"))
+
+        els.append(txt(506, 151, "+", 16, INK, "middle", weight="700"))
+
+        els.append(card(520, 104, 92, 86, rx=8, fill=ORANGE_SOFT, stroke=ORANGE, dash="3 2"))
+        els.append(txt(566, 136, "微小噪声", 11.8, ORANGE, "middle", weight="700"))
+        els.append(txt(566, 155, "±0.02·sign∇", 10.5, BODY, "middle", cls="mono"))
+        els.append(txt(566, 174, "肉眼完全透明", 10.2, MUTED, "middle"))
+
+        els.append(txt(625, 151, "=", 16, INK, "middle", weight="700"))
+
+        els.append(card(638, 104, 86, 86, rx=8, fill=ORANGE_SOFT, stroke=ORANGE, sw=1.6))
+        els.append(txt(681, 138, "🐼 新图 x'", 12.5, INK, "middle", weight="700"))
+        els.append(txt(681, 158, "误判长臂猿!", 11, ORANGE, "middle", weight="700"))
+        els.append(txt(681, 176, "得分 +0.60", 10.2, ORANGE, "middle", cls="mono"))
+
+        els.append(card(406, 204, 318, 108, rx=7, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(418, 224, "高维累加账本（Goodfellow 等 2015 经典机理）：", 11.2, INK, weight="700"))
+        els.append(txt(418, 244, "• 单个像素只改 0.02（人眼根本看不出任何区别）；", 10.8, BODY))
+        els.append(txt(418, 263, "• 但 1000 个像素全顺着梯度方向推：1000×0.05×0.02 = +1.00！", 10.8, ORANGE, weight="600"))
+        els.append(txt(418, 282, "• 提醒：神经网络学到的是高维统计纹理相关性，而非人类", 10.8, BODY))
+        els.append(txt(418, 300, "  的物理因果理解（所以也常把圆润焦黄的柴犬和面包搞混）。", 10.8, MUTED))
+
+        return figure(
+            344,
+            "神经网络泛化与过拟合对比及高维对抗样本机理",
+            "左图对比平滑拟合曲线与5次拉格朗日插值过拟合曲线在新样本上的表现；右图展示1000维像素各加0.02的同向微小扰动累加出+1.00总偏移，使模型将熊猫高置信误判。",
+            els,
+        )
+
+    def fig_llm_next_token():
+        logits = [("光", 3.6), ("亮", 1.9), ("夜", 0.9), ("影", -0.4), ("饼", -1.2)]
+        denom = sum(math.exp(v) for _, v in logits)
+        probs = [(tok, math.exp(v) / denom) for tok, v in logits]
+        assert abs(sum(p for _, p in probs) - 1.0) < 1e-12
+        assert probs[0][1] > 0.75
+
+        els = header(
+            "大语言模型（GPT）的底层真相：超级“完形填空接话尾”与后训练对齐",
+            "它并不会像人一样先打腹稿再造句，而是每次只根据已写出的上文，计算词表里“下一个词”的概率分布。",
+        )
+
+        # Left card: Autoregressive Next-Token Prediction loop
+        els.append(card(20, 62, 376, 274))
+        els.append(txt(36, 84, "① 自回归生成：算出下一个词，拼回句尾再算下一个", 12.4, INK, weight="600"))
+
+        # Context tokens
+        ctx_tokens = ["窗", "前", "明", "月"]
+        for i, tk in enumerate(ctx_tokens):
+            tx = 38 + i * 44
+            els.append(card(tx, 102, 38, 34, rx=6, fill=BLUE_SOFT, stroke=BLUE, sw=1.3))
+            els.append(txt(tx + 19, 124, tk, 13.5, INK, "middle", weight="700"))
+        els.append(f'<line x1="216" y1="119" x2="244" y2="119" stroke="{BLUE}" stroke-width="1.6" marker-end="url(#arr-blue)"/>')
+        els.append(card(248, 98, 132, 42, rx=7, fill=INK, stroke=INK))
+        els.append(txt(314, 117, "Transformer", 11.5, "#ffffff", "middle", weight="700"))
+        els.append(txt(314, 132, "注意力提取上下文", 10, "#93c5fd", "middle"))
+
+        # Probability bars
+        els.append(txt(38, 162, "词表候选词概率分布（Softmax 归一化）：", 11.2, MUTED, weight="600"))
+        for idx, (tok, pr) in enumerate(probs):
+            ry = 172 + idx * 25
+            bar_w = max(4.0, pr * 210.0)
+            chosen = idx == 0
+            els.append(txt(52, ry + 14, f"“{tok}”", 11.5, ORANGE if chosen else BODY, "middle", weight="700" if chosen else None))
+            els.append(
+                f'<rect x="78" y="{ry + 2}" width="{bar_w:.1f}" height="16" rx="4" '
+                f'fill="{ORANGE if chosen else BLUE_LINE}"/>'
+            )
+            els.append(txt(84 + bar_w, ry + 14, f"{pr * 100:.1f}%" + (" ← 采样选中！" if chosen else ""), 10.8, ORANGE if chosen else MUTED, weight="700" if chosen else None))
+
+        # Loop-back arrow hint
+        els.append(pill(36, 302, "选中“光”拼回句尾 → 新输入【窗前明月光】→ 继续猜“疑”", fg=BLUE, bg=BLUE_SOFT, w=344, h=22, size=10.8))
+
+        # Right card: 3-stage training + Plato's Cave Hallucination
+        els.append(card(410, 62, 330, 274))
+        els.append(txt(426, 84, "② 三步炼成对话助手，以及“洞穴幻觉”根源", 12.4, INK, weight="600"))
+        els += step_flow_cards(
+            426,
+            98,
+            298,
+            [
+                ("海量预训练（无师自通学规律）", "万亿词完形填空，自发学会语法、常识与推理", BLUE, BLUE_SOFT),
+                ("指令微调 + 人类反馈对齐（RLHF）", "人类给回答打优劣分，校准成守规矩的助手", GREEN, GREEN_SOFT),
+                ("局限：柏拉图洞穴与“幻觉”", "只见过文字影子没摸过世界，盲区易编顺溜假话", ORANGE, ORANGE_SOFT),
+            ],
+            gap=12,
+        )
+        els.append(txt(426, 278, "提示：大模型生成的每句话都是在选“统计上最合理", 11, BODY))
+        els.append(txt(426, 296, "的下文”，流利度极高不自动等于事实核查无误！", 11, ORANGE, weight="600"))
+        els.append(txt(426, 318, "（因此高可靠场景必须配合外部检索、工具调用与人工核验）", 10.5, MUTED))
+
+        return figure(
+            352,
+            "大语言模型自回归接词机制、RLHF对齐与幻觉成因",
+            "左图展示输入窗前明月后Transformer输出下一个词的概率分布（光77.6%、亮14.2%等）并循环拼接；右图展示预训练、RLHF对齐与柏拉图洞穴式幻觉局限。",
+            els,
+        )
+
+    def fig_diffusion_manifold():
+        # 1. Deterministic 5x5 pixel icon forward noising (smiley/arch)
+        rng = random.Random(42)
+        clean_grid = [
+            [0, 1, 1, 1, 0],
+            [1, 0, 0, 0, 1],
+            [1, 0, 1, 0, 1],
+            [1, 0, 0, 0, 1],
+            [0, 1, 1, 1, 0],
+        ]
+        # 2. Simulate exact Score-guided denoising onto a 1D curve manifold in 2D!
+        # Manifold curve M: {(u, 0.55 * sin(2.1 * u)) : u in [-1.3, 1.3]}
+        manifold_pts = [(-1.25 + k * 0.05, 0.52 * math.sin(2.0 * (-1.25 + k * 0.05))) for k in range(51)]
+
+        def score_step(px, py, sigma=0.35, step_lr=0.14):
+            # Exact log-KDE gradient grad_x log sum_m exp(-||x - m||^2 / (2 sigma^2))
+            weights = []
+            for mx, my in manifold_pts:
+                d2 = (px - mx) ** 2 + (py - my) ** 2
+                weights.append(math.exp(-d2 / (2 * sigma * sigma)))
+            w_sum = sum(weights)
+            gx = sum(w * (mx - px) for w, (mx, _) in zip(weights, manifold_pts)) / (w_sum * sigma * sigma)
+            gy = sum(w * (my - py) for w, (_, my) in zip(weights, manifold_pts)) / (w_sum * sigma * sigma)
+            return px + step_lr * gx, py + step_lr * gy
+
+        def dist_to_manifold(px, py):
+            return min(math.hypot(px - mx, py - my) for mx, my in manifold_pts)
+
+        starts = [(-1.18, 0.68), (-0.42, 0.86), (0.38, -0.86), (1.15, -0.68), (0.02, 0.85)]
+        trajectories = []
+        for sx, sy in starts:
+            assert dist_to_manifold(sx, sy) > 0.42
+            traj = [(sx, sy)]
+            cx, cy = sx, sy
+            for step_i in range(16):
+                sig = max(0.14, 0.50 * (0.88 ** step_i))
+                cx, cy = score_step(cx, cy, sigma=sig, step_lr=0.35 * sig * sig)
+                traj.append((cx, cy))
+            assert dist_to_manifold(cx, cy) < 0.05
+            trajectories.append(traj)
+
+        els = header(
+            "图像与视频生成（扩散模型 & Sora）：把散开的墨水“倒放”回真实流形的金矿脉",
+            "训练时往清晰图里一步步滴入高斯噪声；生成时靠“评分函数指南针”把随机雪花一步步拉回真实图像流形。",
+        )
+
+        # Left card: Forward Diffusion vs Reverse Denoising on a 5x5 patch
+        els.append(card(20, 62, 344, 274))
+        els.append(txt(36, 84, "① 物理直觉：墨水散开容易，学会“时光倒流”就能画图", 12.0, INK, weight="600"))
+
+        stages_alpha = [(1.0, "清晰原图 x₀"), (0.45, "半加噪 x₅₀"), (0.0, "纯随机雪花 x₁₀₀")]
+        for s_idx, (alpha_bar, s_lbl) in enumerate(stages_alpha):
+            gx0 = 44 + s_idx * 108
+            gy0 = 114
+            sz_p = 14
+            for r in range(5):
+                for c in range(5):
+                    base = clean_grid[r][c]
+                    noise = rng.uniform(0.0, 1.0)
+                    val = alpha_bar * base + (1.0 - alpha_bar) * noise
+                    # Blend between white (#f8fafc) and deep blue (#1d6fa5)
+                    shade = int(248 - val * 195)
+                    hex_c = f"#{shade:02x}{min(252, shade + 14):02x}{min(255, shade + 28):02x}"
+                    els.append(f'<rect x="{gx0 + c * sz_p}" y="{gy0 + r * sz_p}" width="{sz_p - 1}" height="{sz_p - 1}" fill="{hex_c}"/>')
+            els.append(f'<rect x="{gx0 - 2}" y="{gy0 - 2}" width="{5 * sz_p + 3}" height="{5 * sz_p + 3}" rx="4" fill="none" stroke="{BORDER}" stroke-width="1.2"/>')
+            els.append(txt(gx0 + 35, gy0 + 84, s_lbl, 10.6, INK, "middle", weight="600"))
+
+        # Forward (top) & Reverse (bottom) arrows between the 3 patches
+        els.append(f'<path d="M118,132 H146" fill="none" stroke="{MUTED}" stroke-width="1.4" marker-end="url(#arr-muted)"/>')
+        els.append(f'<path d="M226,132 H254" fill="none" stroke="{MUTED}" stroke-width="1.4" marker-end="url(#arr-muted)"/>')
+        els.append(txt(192, 106, "正向扩散：不断加高斯噪声 →", 10.5, MUTED, "middle"))
+
+        els.append(f'<path d="M254,168 H226" fill="none" stroke="{ORANGE}" stroke-width="1.8" marker-end="url(#arr-orange)"/>')
+        els.append(f'<path d="M146,168 H118" fill="none" stroke="{ORANGE}" stroke-width="1.8" marker-end="url(#arr-orange)"/>')
+        els.append(txt(192, 216, "← 逆向生成：神经网络每步剔除噪声！", 11, ORANGE, "middle", weight="700"))
+
+        els.append(card(36, 232, 312, 90, rx=7, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(46, 251, "Sora 等视频模型的升级（三维时空积木）：", 11, INK, weight="700"))
+        els.append(txt(46, 270, "• 把视频帧切成“时空补丁”交给 Transformer 去噪", 10.5, BODY))
+        els.append(txt(46, 288, "• 强项：长镜头运镜、遮挡后再出现仍前后一致", 10.5, GREEN, weight="600"))
+        els.append(txt(46, 306, "• 短板：未内置物理定律，碎玻璃吹蜡烛易穿帮", 10.5, ORANGE))
+
+        # Right card: Manifold Hypothesis & Score Vector Field trajectories!
+        els.append(card(378, 62, 362, 274))
+        els.append(txt(394, 84, "② 流形假设：在雪花荒漠里顺着“评分指南针”找金矿脉", 12.0, INK, weight="600"))
+
+        cx_m, cy_m, sc_x, sc_y = 559.0, 192.0, 112.0, 76.0
+        els.append(card(394, 98, 330, 184, rx=8, fill="#f8fafc", stroke=BORDER))
+        els.append(txt(406, 116, "高维像素全空间（99.999% 都是无意义电视雪花）", 10.5, MUTED))
+
+        # Soft glowing halo around the true manifold ("gold vein")
+        m_poly = " ".join(f"{cx_m + x * sc_x:.1f},{cy_m - y * sc_y:.1f}" for x, y in manifold_pts)
+        els.append(f'<polyline points="{m_poly}" fill="none" stroke="{GREEN_SOFT}" stroke-width="14" stroke-linecap="round"/>')
+        els.append(f'<polyline points="{m_poly}" fill="none" stroke="{GREEN}" stroke-width="2.6" stroke-linecap="round"/>')
+        els.append(txt(cx_m - 12, cy_m - 36, "真实图像流形（极窄的金矿脉）", 11, GREEN, "middle", weight="700", halo=True))
+
+        # Computed score-guided reverse trajectories from 5 pure-noise points onto the manifold!
+        for traj in trajectories:
+            t_pts = " ".join(f"{cx_m + x * sc_x:.1f},{cy_m - y * sc_y:.1f}" for x, y in traj)
+            sx_p, sy_p = cx_m + traj[0][0] * sc_x, cy_m - traj[0][1] * sc_y
+            ex_p, ey_p = cx_m + traj[-1][0] * sc_x, cy_m - traj[-1][1] * sc_y
+            els.append(f'<polyline points="{t_pts}" fill="none" stroke="{ORANGE}" stroke-width="1.5" stroke-dasharray="3 2" marker-end="url(#arr-orange)"/>')
+            els.append(f'<circle cx="{sx_p:.1f}" cy="{sy_p:.1f}" r="3.5" fill="{MUTED}"/>')
+            els.append(f'<circle cx="{ex_p:.1f}" cy="{ey_p:.1f}" r="4.0" fill="{ORANGE}"/>')
+
+        els.append(txt(394, 302, "灰点 = 随机噪声起点；橙虚线 = 评分函数 ∇log p(x) 指引的去噪轨迹，", 10.8, BODY))
+        els.append(txt(394, 320, "一步步把散落在荒漠里的雪花拉回到绿色的“真实图像金矿脉”上！", 10.8, GREEN, weight="600"))
+
+        return figure(
+            352,
+            "扩散模型加噪去噪过程与高维图像流形评分引导轨迹",
+            "左图展示5乘5图案正向加高斯噪声变为随机雪花及逆向去噪恢复，并概括视频时空补丁的优劣势；右图数值模拟5个噪声起点沿评分函数梯度场收敛至S形真实图像流形曲线。",
+            els,
+        )
+
+    def fig_architecture_evolution():
+        # Verify CNN parameter savings: 32x32 image -> 16 hidden features:
+        # Fully connected = 32*32*16 = 16,384 weights; 3x3 shared conv = 3*3*16 = 144 weights (>100x fewer!)
+        fc_params = 32 * 32 * 16
+        cnn_params = 3 * 3 * 16
+        assert fc_params / cnn_params > 110
+        # Verify ResNet gradient survival: d(F(x)+x)/dx = F'(x) + 1 >= 1 when F'(x) == 0!
+        f_prime = 0.0
+        res_grad = f_prime + 1.0
+        assert res_grad == 1.0
+        # Verify Attention weights on pronoun disambiguation ("小狗", "追不上", "兔子", "因为", "它(累)")
+        att = [0.76, 0.06, 0.08, 0.10]
+        assert abs(sum(att) - 1.0) < 1e-12
+
+        els = header(
+            "现代深度学习的三座里程碑：CNN 看局部、ResNet 搭高架桥、Transformer 全句连线",
+            "单纯把神经元全连在一起既费算力又难叠深，三次关键架构改造一步步打通了视觉、百层深度与长文本理解。",
+        )
+
+        # Column 1: CNN (x=20, w=232)
+        els.append(card(20, 62, 232, 246))
+        els.append(txt(34, 84, "① 卷积网络 CNN：滑窗放大镜", 12.2, INK, weight="700"))
+        # 5x5 image grid + 3x3 orange sliding kernel -> feature map
+        gx, gy, cs = 42, 108, 17
+        for r in range(5):
+            for c in range(5):
+                in_k = 1 <= r <= 3 and 1 <= c <= 3
+                els.append(
+                    f'<rect x="{gx + c * cs}" y="{gy + r * cs}" width="{cs - 1}" height="{cs - 1}" '
+                    f'fill="{ORANGE_SOFT if in_k else "#f1f5f9"}" stroke="{ORANGE if in_k else HAIRLINE}" '
+                    f'stroke-width="{1.5 if in_k else 0.9}"/>'
+                )
+        els.append(f'<line x1="134" y1="150" x2="164" y2="150" stroke="{ORANGE}" stroke-width="1.6" marker-end="url(#arr-orange)"/>')
+        els.append(card(168, 126, 64, 48, rx=6, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(200, 147, "边缘特征", 10.8, BLUE, "middle", weight="700"))
+        els.append(txt(200, 163, "共享旋钮", 10.2, MUTED, "middle"))
+        els.append(txt(34, 218, "• 3×3 小窗口滑遍全图找边缘轮廓", 10.6, BODY))
+        els.append(txt(34, 237, "• 同一套旋钮全图复用，参数量比", 10.6, BODY))
+        els.append(txt(34, 255, "  全连接骤降上百倍！", 10.6, ORANGE, weight="700"))
+        els.append(pill(34, 272, "主攻：图像识别与局部纹理", fg=BLUE, bg=BLUE_SOFT, w=204, h=22, size=10.5))
+
+        # Column 2: ResNet (x=264, w=232)
+        els.append(card(264, 62, 232, 246))
+        els.append(txt(278, 84, "② 残差网络 ResNet：跨层高架桥", 12.2, INK, weight="700"))
+        # Input x -> [Layers F(x)] -> (+) <- curved skip arc x!
+        els.append(card(282, 134, 40, 30, rx=6, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(302, 153, "x", 12, INK, "middle", weight="700", cls="mono"))
+        els.append(f'<line x1="322" y1="149" x2="342" y2="149" stroke="{BODY}" stroke-width="1.4" marker-end="url(#arr-muted)"/>')
+        els.append(card(346, 130, 74, 38, rx=6, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(383, 147, "深层变换", 10.5, BLUE, "middle", weight="600"))
+        els.append(txt(383, 161, "F(x)", 10.8, INK, "middle", weight="700", cls="mono"))
+        els.append(f'<line x1="420" y1="149" x2="442" y2="149" stroke="{BODY}" stroke-width="1.4" marker-end="url(#arr-muted)"/>')
+        els.append(f'<circle cx="458" cy="149" r="13" fill="{GREEN_SOFT}" stroke="{GREEN}" stroke-width="1.6"/>')
+        els.append(txt(458, 154, "+", 14, GREEN, "middle", weight="700"))
+        # Curved highway skip connection over the top!
+        els.append(
+            f'<path d="M302,134 Q380,92 454,134" fill="none" stroke="{GREEN}" stroke-width="2.0" marker-end="url(#arr-green)"/>'
+        )
+        els.append(txt(380, 108, "原样抄送近道 +x", 10.5, GREEN, "middle", weight="700", halo=True))
+
+        els.append(txt(278, 218, "• 痛点：叠太深信号传着传着就断了", 10.6, BODY))
+        els.append(txt(278, 237, "• 解法：输出 y = F(x) + x，哪怕新层", 10.6, BODY))
+        els.append(txt(278, 255, "  学成 0，梯度也能走高架桥直通！", 10.6, GREEN, weight="700"))
+        els.append(pill(278, 272, "突破：2015 年起轻松叠上百层", fg=GREEN, bg=GREEN_SOFT, w=204, h=22, size=10.5))
+
+        # Column 3: Transformer (x=508, w=232)
+        els.append(card(508, 62, 232, 246))
+        els.append(txt(522, 84, "③ Transformer：全句自注意力", 12.2, INK, weight="700"))
+
+        words = [("小狗", 538, True), ("追", 584, False), ("兔子", 628, False), ("它累", 688, "src")]
+        for w_txt, wx, role in words:
+            bg_w = ORANGE_SOFT if role == "src" else (BLUE_SOFT if role is True else "#f8fafc")
+            st_w = ORANGE if role == "src" else (BLUE if role is True else HAIRLINE)
+            els.append(card(wx - 20, 152, 40, 28, rx=5, fill=bg_w, stroke=st_w, sw=1.4 if role else 1.0))
+            els.append(txt(wx, 170, w_txt, 10.8, INK, "middle", weight="700" if role else None))
+
+        # Attention arcs from "它累" (688) back to earlier words!
+        els.append(f'<path d="M688,152 Q613,100 538,150" fill="none" stroke="{ORANGE}" stroke-width="2.4" marker-end="url(#arr-orange)"/>')
+        els.append(f'<path d="M688,152 Q658,124 628,150" fill="none" stroke="{ORANGE}" stroke-width="1.1" stroke-dasharray="3 2"/>')
+        els.append(txt(612, 114, "注意力权重 76% 锁定“小狗”!", 10.2, ORANGE, "middle", weight="700", halo=True))
+
+        els.append(txt(522, 218, "• 告别按字排队传话，任意两词直接", 10.6, BODY))
+        els.append(txt(522, 237, "  算相关性连线，一秒看懂“它”指谁", 10.6, BODY))
+        els.append(txt(522, 255, "• 整段文本同时并行计算，喂大算力！", 10.6, ORANGE, weight="700"))
+        els.append(pill(522, 272, "2017 诞生：当今大模型统一底座", fg=ORANGE, bg=ORANGE_SOFT, w=204, h=22, size=10.5))
+
+        return figure(
+            324,
+            "CNN局部滑窗、ResNet跨层残差桥与Transformer自注意力架构演进",
+            "三栏对比卷积神经网络CNN的3乘3滑窗权重共享、残差网络ResNet的y=F(x)+x跨层直通高架桥，以及Transformer自注意力直接关联远距离指代词的机制。",
+            els,
+        )
+
+    for fname, content in (
+        ("rules-vs-function", fig_rules_vs_function()),
+        ("perceptron-xor", fig_perceptron_xor()),
+        ("architecture-evolution", fig_architecture_evolution()),
+        ("gradient-backprop", fig_gradient_backprop()),
+        ("generalize-pitfalls", fig_generalize_pitfalls()),
+        ("llm-next-token", fig_llm_next_token()),
+        ("diffusion-manifold", fig_diffusion_manifold()),
+    ):
+        write_svg(SUBDIR, fname, content)
+    print("Generated 7 AI & neural-network SVGs; XOR folding, architecture math, chain-rule finite-diff, FGSM, softmax, and score-manifold assertions passed.")

@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="352" viewBox="0 0 760 352" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">大语言模型自回归接词机制、RLHF对齐与幻觉成因</title>
+<desc id="desc">左图展示输入窗前明月后Transformer输出下一个词的概率分布（光77.6%、亮14.2%等）并循环拼接；右图展示预训练、RLHF对齐与柏拉图洞穴式幻觉局限。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="351" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">大语言模型（GPT）的底层真相：超级“完形填空接话尾”与后训练对齐</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">它并不会像人一样先打腹稿再造句，而是每次只根据已写出的上文，计算词表里“下一个词”的概率分布。</text>
+<rect x="20" y="62" width="376" height="274" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="84" font-size="12.4" fill="#0f172a" text-anchor="start" font-weight="600">① 自回归生成：算出下一个词，拼回句尾再算下一个</text>
+<rect x="38" y="102" width="38" height="34" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.3"/>
+<text x="57" y="124" font-size="13.5" fill="#0f172a" text-anchor="middle" font-weight="700">窗</text>
+<rect x="82" y="102" width="38" height="34" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.3"/>
+<text x="101" y="124" font-size="13.5" fill="#0f172a" text-anchor="middle" font-weight="700">前</text>
+<rect x="126" y="102" width="38" height="34" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.3"/>
+<text x="145" y="124" font-size="13.5" fill="#0f172a" text-anchor="middle" font-weight="700">明</text>
+<rect x="170" y="102" width="38" height="34" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.3"/>
+<text x="189" y="124" font-size="13.5" fill="#0f172a" text-anchor="middle" font-weight="700">月</text>
+<line x1="216" y1="119" x2="244" y2="119" stroke="#1d6fa5" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+<rect x="248" y="98" width="132" height="42" rx="7" fill="#0f172a" stroke="#0f172a" stroke-width="1"/>
+<text x="314" y="117" font-size="11.5" fill="#ffffff" text-anchor="middle" font-weight="700">Transformer</text>
+<text x="314" y="132" font-size="10" fill="#93c5fd" text-anchor="middle">注意力提取上下文</text>
+<text x="38" y="162" font-size="11.2" fill="#64748b" text-anchor="start" font-weight="600">词表候选词概率分布（Softmax 归一化）：</text>
+<text x="52" y="186" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">“光”</text>
+<rect x="78" y="174" width="164.5" height="16" rx="4" fill="#c25014"/>
+<text x="248.5" y="186" font-size="10.8" fill="#c25014" text-anchor="start" font-weight="700">78.3% ← 采样选中！</text>
+<text x="52" y="211" font-size="11.5" fill="#1e293b" text-anchor="middle">“亮”</text>
+<rect x="78" y="199" width="30.1" height="16" rx="4" fill="#93c5fd"/>
+<text x="114.1" y="211" font-size="10.8" fill="#64748b" text-anchor="start">14.3%</text>
+<text x="52" y="236" font-size="11.5" fill="#1e293b" text-anchor="middle">“夜”</text>
+<rect x="78" y="224" width="11.1" height="16" rx="4" fill="#93c5fd"/>
+<text x="95.1" y="236" font-size="10.8" fill="#64748b" text-anchor="start">5.3%</text>
+<text x="52" y="261" font-size="11.5" fill="#1e293b" text-anchor="middle">“影”</text>
+<rect x="78" y="249" width="4.0" height="16" rx="4" fill="#93c5fd"/>
+<text x="88.0" y="261" font-size="10.8" fill="#64748b" text-anchor="start">1.4%</text>
+<text x="52" y="286" font-size="11.5" fill="#1e293b" text-anchor="middle">“饼”</text>
+<rect x="78" y="274" width="4.0" height="16" rx="4" fill="#93c5fd"/>
+<text x="88.0" y="286" font-size="10.8" fill="#64748b" text-anchor="start">0.6%</text>
+<rect x="36.0" y="302.0" width="344" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="208.0" y="317.0" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="600">选中“光”拼回句尾 → 新输入【窗前明月光】→ 继续猜“疑”</text>
+<rect x="410" y="62" width="330" height="274" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="426" y="84" font-size="12.4" fill="#0f172a" text-anchor="start" font-weight="600">② 三步炼成对话助手，以及“洞穴幻觉”根源</text>
+<rect x="426" y="98" width="298" height="44" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<circle cx="444" cy="120" r="9.5" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="444" y="124" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="461" y="116" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="600">海量预训练（无师自通学规律）</text>
+<text x="461" y="133" font-size="11.2" fill="#1e293b" text-anchor="start">万亿词完形填空，自发学会语法、常识与推理</text>
+<rect x="426" y="154" width="298" height="44" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<circle cx="444" cy="176" r="9.5" fill="#ffffff" stroke="#18794e" stroke-width="1.2"/>
+<text x="444" y="180" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">2</text>
+<text x="461" y="172" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="600">指令微调 + 人类反馈对齐（RLHF）</text>
+<text x="461" y="189" font-size="11.2" fill="#1e293b" text-anchor="start">人类给回答打优劣分，校准成守规矩的助手</text>
+<rect x="426" y="210" width="298" height="44" rx="7" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<circle cx="444" cy="232" r="9.5" fill="#ffffff" stroke="#c25014" stroke-width="1.2"/>
+<text x="444" y="236" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">3</text>
+<text x="461" y="228" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="600">局限：柏拉图洞穴与“幻觉”</text>
+<text x="461" y="245" font-size="11.2" fill="#1e293b" text-anchor="start">只见过文字影子没摸过世界，盲区易编顺溜假话</text>
+<text x="426" y="278" font-size="11" fill="#1e293b" text-anchor="start">提示：大模型生成的每句话都是在选“统计上最合理</text>
+<text x="426" y="296" font-size="11" fill="#c25014" text-anchor="start" font-weight="600">的下文”，流利度极高不自动等于事实核查无误！</text>
+<text x="426" y="318" font-size="10.5" fill="#64748b" text-anchor="start">（因此高可靠场景必须配合外部检索、工具调用与人工核验）</text>
+</svg>

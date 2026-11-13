@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="344" viewBox="0 0 760 344" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">单层感知机的异或困局与多层神经网络的空间折叠</title>
+<desc id="desc">左图对比与门AND可一刀切开而异或XOR对角点无法用单条直线分开；右图通过两个隐藏神经元h1、h2把(0,1)和(1,0)折叠到同一点(1,0)，从而用一条直线轻松切开。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="343" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">为什么单层感知机卡在“异或（XOR）”，叠成两层就能瞬间破局？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">单层神经元只能在平面上直直劈一刀；加一层隐藏神经元，相当于“先把纸对折一下”，再一刀切开！</text>
+<rect x="20" y="62" width="352" height="266" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="84" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="600">① 单层感知机：怎么转尺子都切不开对角异或点</text>
+<line x1="58" y1="224.0" x2="172.0" y2="224.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="51" y="228.0" font-size="10.5" fill="#64748b" text-anchor="end">0</text>
+<line x1="58" y1="110.0" x2="172.0" y2="110.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="51" y="114.0" font-size="10.5" fill="#64748b" text-anchor="end">1</text>
+<path d="M58,110.0 V224 H172.0" fill="none" stroke="#94a3b8" stroke-width="1.3"/>
+<text x="58.0" y="239" font-size="10.5" fill="#64748b" text-anchor="middle">0</text>
+<text x="172.0" y="239" font-size="10.5" fill="#64748b" text-anchor="middle">1</text>
+<text x="106.0" y="104" font-size="11.2" fill="#18794e" text-anchor="middle" font-weight="700">与门 AND：一刀切开 ✓</text>
+<line x1="101.2" y1="128.0" x2="154.0" y2="180.8" stroke="#18794e" stroke-width="1.8" stroke-dasharray="4 3"/>
+<circle cx="58" cy="224" r="5.5" fill="#1d6fa5"/>
+<circle cx="58" cy="128" r="5.5" fill="#1d6fa5"/>
+<circle cx="154" cy="224" r="5.5" fill="#1d6fa5"/>
+<circle cx="154" cy="128" r="5.5" fill="#c25014"/>
+<line x1="222" y1="224.0" x2="336.0" y2="224.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="215" y="228.0" font-size="10.5" fill="#64748b" text-anchor="end">0</text>
+<line x1="222" y1="110.0" x2="336.0" y2="110.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="215" y="114.0" font-size="10.5" fill="#64748b" text-anchor="end">1</text>
+<path d="M222,110.0 V224 H336.0" fill="none" stroke="#94a3b8" stroke-width="1.3"/>
+<text x="222.0" y="239" font-size="10.5" fill="#64748b" text-anchor="middle">0</text>
+<text x="336.0" y="239" font-size="10.5" fill="#64748b" text-anchor="middle">1</text>
+<text x="270.0" y="104" font-size="11.2" fill="#c25014" text-anchor="middle" font-weight="700">异或 XOR：对角卡死 ✗</text>
+<line x1="216" y1="171.2" x2="274.8" y2="230" stroke="#c25014" stroke-width="1.3" stroke-dasharray="3 3"/>
+<line x1="265.2" y1="122.2" x2="323.8" y2="180.8" stroke="#c25014" stroke-width="1.3" stroke-dasharray="3 3"/>
+<circle cx="222" cy="224" r="5.5" fill="#1d6fa5"/>
+<text x="212" y="216" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">0</text>
+<circle cx="222" cy="128" r="5.5" fill="#c25014"/>
+<text x="212" y="120" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">1</text>
+<circle cx="318" cy="224" r="5.5" fill="#c25014"/>
+<text x="328" y="216" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">1</text>
+<circle cx="318" cy="128" r="5.5" fill="#1d6fa5"/>
+<text x="328" y="120" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">0</text>
+<text x="36" y="268" font-size="11.2" fill="#1e293b" text-anchor="start">1969 明斯基证明单层感知机连 XOR 都分不开，引发寒冬：</text>
+<rect x="36.0" y="286.0" width="320" height="24" rx="12.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="196.0" y="302.3" font-size="11" fill="#c25014" text-anchor="middle" font-weight="600">单条直线 w₁x₁ + w₂x₂ + b = 0 无法同时隔离两对对角点</text>
+<rect x="388" y="62" width="352" height="266" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="404" y="84" font-size="12.4" fill="#0f172a" text-anchor="start" font-weight="600">② 加一层隐藏神经元 (h₁, h₂)：把空间对折后一刀切开！</text>
+<line x1="528" y1="224.0" x2="652.0" y2="224.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="521" y="228.0" font-size="10.5" fill="#64748b" text-anchor="end">0</text>
+<line x1="528" y1="104.0" x2="652.0" y2="104.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="521" y="108.0" font-size="10.5" fill="#64748b" text-anchor="end">h₂=1</text>
+<path d="M528,104.0 V224 H652.0" fill="none" stroke="#94a3b8" stroke-width="1.3"/>
+<text x="528.0" y="239" font-size="10.5" fill="#64748b" text-anchor="middle">h₁=0</text>
+<text x="652.0" y="239" font-size="10.5" fill="#64748b" text-anchor="middle">h₁=1</text>
+<line x1="579.0" y1="224.0" x2="645.3" y2="157.7" stroke="#18794e" stroke-width="2.2"/>
+<text x="625.8" y="171.0" font-size="11.2" fill="#18794e" text-anchor="start" font-weight="700" class="halo">一刀切开！</text>
+<circle cx="528" cy="224" r="5.5" fill="#1d6fa5"/>
+<text x="536" y="216" font-size="10.8" fill="#1d6fa5" text-anchor="start" font-weight="600" class="halo">(0,0)→0</text>
+<circle cx="630" cy="122" r="5.5" fill="#1d6fa5"/>
+<text x="622" y="114" font-size="10.8" fill="#1d6fa5" text-anchor="end" font-weight="600" class="halo">(1,1)→0</text>
+<circle cx="630" cy="224" r="7.5" fill="#fef1e8" stroke="#c25014" stroke-width="2"/>
+<circle cx="630" cy="224" r="4.0" fill="#c25014"/>
+<text x="638" y="214" font-size="10.8" fill="#c25014" text-anchor="start" font-weight="700" class="halo">(0,1)与(1,0)</text>
+<text x="638" y="229" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="700" class="halo">叠到同一点！</text>
+<rect x="402" y="114" width="96" height="112" rx="7" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="450" y="133" font-size="11.2" fill="#0f172a" text-anchor="middle" font-weight="700">隐藏层分工</text>
+<text x="410" y="155" font-size="10.5" fill="#1e293b" text-anchor="start">h₁: 至少亮1个?</text>
+<text x="410" y="174" font-size="10.5" fill="#1e293b" text-anchor="start">h₂: 两个全亮?</text>
+<text x="410" y="196" font-size="10.8" fill="#18794e" text-anchor="start" font-weight="700">输出: h₁ − h₂</text>
+<text x="410" y="214" font-size="10.3" fill="#64748b" text-anchor="start">恰亮1个才得 1!</text>
+<text x="404" y="268" font-size="11.2" fill="#1e293b" text-anchor="start">深层网络的魔法：每一层把杂乱数据重新扭转折叠，</text>
+<rect x="404.0" y="286.0" width="324" height="24" rx="12.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="566.0" y="302.3" font-size="10.0" fill="#18794e" text-anchor="middle" font-weight="600">底层边缘 → 局部特征 → 高层概念（CNN / ResNet / Transformer）</text>
+</svg>

@@ -68,7 +68,7 @@ experiences:
     description: 一大家子该怎么叫？玩着家族树和拜年小游戏，认清每位亲戚。
     prompt: 认一认亲戚
 
-  # 第四组：语言与文字（汉字 · 方言）
+  # 第四组：语言文化与身边世界（汉字 · 方言 · 家门口）
   - title: 汉字奇遇记
     url: https://handsondad.github.io/hanverse/
     icon: 📜
@@ -83,6 +83,13 @@ experiences:
     tone: lavender
     description: 同一句话，天南地北怎么说？听见不同的乡音，发现语言的趣味。
     prompt: 听听远方的声音
+  - title: 家住回龙观
+    url: https://handsondad.github.io/huilongguan-living-map/
+    icon: 🎈
+    kind: 身边地图
+    tone: rose
+    description: 点开卡通地图上的泡泡，跟着小念把家门口的路、地铁和老地名聊明白。
+    prompt: 逛逛家门口
 
 collections:
   - title: 实践奶爸育儿宝库

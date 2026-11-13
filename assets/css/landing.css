@@ -37,10 +37,11 @@ nav a:hover { background: #fff0e6; transform: translateY(-2px); }
 .hero-title h1 span { color: initial; -webkit-text-fill-color: initial; }
 .hero-title p { margin: 8px 0 0; color: var(--muted); font-size: 18px; word-break: keep-all; text-wrap: balance; }
 
-.duo-stage { position: relative; height: 400px; border-radius: 32px; overflow: hidden; background: radial-gradient(circle at 50% 35%, #fff8f0, #ffe3d3 65%, #ffd2c2); box-shadow: var(--shadow-md); }
-.duo-canvas { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
-.duo-flat { display: grid; place-items: end center; height: 100%; padding-bottom: 48px; font-size: 96px; line-height: 1; transition: opacity .4s; }
-.duo-stage.is-3d .duo-flat { opacity: 0; pointer-events: none; }
+.duo-stage { position: relative; height: 400px; border-radius: 32px; overflow: hidden; background: radial-gradient(circle at 50% 35%, #fff8f0, #ffe3d3 65%, #ffd2c2); box-shadow: var(--shadow-md); cursor: pointer; }
+.duo-canvas { position: absolute; inset: 0; display: block; width: 100%; height: 100%; opacity: 0; transition: opacity .38s ease; }
+.duo-poster { position: absolute; top: 0; left: 50%; height: 100%; width: auto; max-width: none; transform: translateX(-50%); pointer-events: none; user-select: none; transition: opacity .38s ease; }
+.duo-stage.is-3d .duo-canvas { opacity: 1; }
+.duo-stage.is-3d .duo-poster { opacity: 0; }
 .duo-bubble { position: absolute; z-index: 1; max-width: 46%; padding: 10px 16px; border: 2px solid var(--line); background: #fff; box-shadow: var(--shadow-sm); color: inherit; font: inherit; font-size: 16px; line-height: 1.45; text-align: left; cursor: pointer; animation: bubble-float 3s ease-in-out infinite; }
 .duo-bubble b { display: block; font-size: 13px; color: var(--muted); }
 .duo-bubble.is-dad { top: 16px; left: 16px; border-radius: 20px 20px 20px 4px; }

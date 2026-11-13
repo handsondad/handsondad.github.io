@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="324" viewBox="0 0 760 324" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">CNN局部滑窗、ResNet跨层残差桥与Transformer自注意力架构演进</title>
+<desc id="desc">三栏对比卷积神经网络CNN的3乘3滑窗权重共享、残差网络ResNet的y=F(x)+x跨层直通高架桥，以及Transformer自注意力直接关联远距离指代词的机制。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="323" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">现代深度学习的三座里程碑：CNN 看局部、ResNet 搭高架桥、Transformer 全句连线</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">单纯把神经元全连在一起既费算力又难叠深，三次关键架构改造一步步打通了视觉、百层深度与长文本理解。</text>
+<rect x="20" y="62" width="232" height="246" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="34" y="84" font-size="12.2" fill="#0f172a" text-anchor="start" font-weight="700">① 卷积网络 CNN：滑窗放大镜</text>
+<rect x="42" y="108" width="16" height="16" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.9"/>
+<rect x="59" y="108" width="16" height="16" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.9"/>
+<rect x="76" y="108" width="16" height="16" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.9"/>
+<rect x="93" y="108" width="16" height="16" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.9"/>
+<rect x="110" y="108" width="16" height="16" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.9"/>
+<rect x="42" y="125" width="16" height="16" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.9"/>
+<rect x="59" y="125" width="16" height="16" fill="#fef1e8" stroke="#c25014" stroke-width="1.5"/>
+<rect x="76" y="125" width="16" height="16" fill="#fef1e8" stroke="#c25014" stroke-width="1.5"/>
+<rect x="93" y="125" width="16" height="16" fill="#fef1e8" stroke="#c25014" stroke-width="1.5"/>
+<rect x="110" y="125" width="16" height="16" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.9"/>
+<rect x="42" y="142" width="16" height="16" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.9"/>
+<rect x="59" y="142" width="16" height="16" fill="#fef1e8" stroke="#c25014" stroke-width="1.5"/>
+<rect x="76" y="142" width="16" height="16" fill="#fef1e8" stroke="#c25014" stroke-width="1.5"/>
+<rect x="93" y="142" width="16" height="16" fill="#fef1e8" stroke="#c25014" stroke-width="1.5"/>
+<rect x="110" y="142" width="16" height="16" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.9"/>
+<rect x="42" y="159" width="16" height="16" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.9"/>
+<rect x="59" y="159" width="16" height="16" fill="#fef1e8" stroke="#c25014" stroke-width="1.5"/>
+<rect x="76" y="159" width="16" height="16" fill="#fef1e8" stroke="#c25014" stroke-width="1.5"/>
+<rect x="93" y="159" width="16" height="16" fill="#fef1e8" stroke="#c25014" stroke-width="1.5"/>
+<rect x="110" y="159" width="16" height="16" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.9"/>
+<rect x="42" y="176" width="16" height="16" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.9"/>
+<rect x="59" y="176" width="16" height="16" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.9"/>
+<rect x="76" y="176" width="16" height="16" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.9"/>
+<rect x="93" y="176" width="16" height="16" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.9"/>
+<rect x="110" y="176" width="16" height="16" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.9"/>
+<line x1="134" y1="150" x2="164" y2="150" stroke="#c25014" stroke-width="1.6" marker-end="url(#arr-orange)"/>
+<rect x="168" y="126" width="64" height="48" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="200" y="147" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">边缘特征</text>
+<text x="200" y="163" font-size="10.2" fill="#64748b" text-anchor="middle">共享旋钮</text>
+<text x="34" y="218" font-size="10.6" fill="#1e293b" text-anchor="start">• 3×3 小窗口滑遍全图找边缘轮廓</text>
+<text x="34" y="237" font-size="10.6" fill="#1e293b" text-anchor="start">• 同一套旋钮全图复用，参数量比</text>
+<text x="34" y="255" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="700">  全连接骤降上百倍！</text>
+<rect x="34.0" y="272.0" width="204" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="136.0" y="287.0" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">主攻：图像识别与局部纹理</text>
+<rect x="264" y="62" width="232" height="246" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="278" y="84" font-size="12.2" fill="#0f172a" text-anchor="start" font-weight="700">② 残差网络 ResNet：跨层高架桥</text>
+<rect x="282" y="134" width="40" height="30" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="302" y="153" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">x</text>
+<line x1="322" y1="149" x2="342" y2="149" stroke="#1e293b" stroke-width="1.4" marker-end="url(#arr-muted)"/>
+<rect x="346" y="130" width="74" height="38" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="383" y="147" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">深层变换</text>
+<text x="383" y="161" font-size="10.8" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">F(x)</text>
+<line x1="420" y1="149" x2="442" y2="149" stroke="#1e293b" stroke-width="1.4" marker-end="url(#arr-muted)"/>
+<circle cx="458" cy="149" r="13" fill="#e7f6ee" stroke="#18794e" stroke-width="1.6"/>
+<text x="458" y="154" font-size="14" fill="#18794e" text-anchor="middle" font-weight="700">+</text>
+<path d="M302,134 Q380,92 454,134" fill="none" stroke="#18794e" stroke-width="2.0" marker-end="url(#arr-green)"/>
+<text x="380" y="108" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="700" class="halo">原样抄送近道 +x</text>
+<text x="278" y="218" font-size="10.6" fill="#1e293b" text-anchor="start">• 痛点：叠太深信号传着传着就断了</text>
+<text x="278" y="237" font-size="10.6" fill="#1e293b" text-anchor="start">• 解法：输出 y = F(x) + x，哪怕新层</text>
+<text x="278" y="255" font-size="10.6" fill="#18794e" text-anchor="start" font-weight="700">  学成 0，梯度也能走高架桥直通！</text>
+<rect x="278.0" y="272.0" width="204" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="380.0" y="287.0" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="600">突破：2015 年起轻松叠上百层</text>
+<rect x="508" y="62" width="232" height="246" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="522" y="84" font-size="12.2" fill="#0f172a" text-anchor="start" font-weight="700">③ Transformer：全句自注意力</text>
+<rect x="518" y="152" width="40" height="28" rx="5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.4"/>
+<text x="538" y="170" font-size="10.8" fill="#0f172a" text-anchor="middle" font-weight="700">小狗</text>
+<rect x="564" y="152" width="40" height="28" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="584" y="170" font-size="10.8" fill="#0f172a" text-anchor="middle">追</text>
+<rect x="608" y="152" width="40" height="28" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="628" y="170" font-size="10.8" fill="#0f172a" text-anchor="middle">兔子</text>
+<rect x="668" y="152" width="40" height="28" rx="5" fill="#fef1e8" stroke="#c25014" stroke-width="1.4"/>
+<text x="688" y="170" font-size="10.8" fill="#0f172a" text-anchor="middle" font-weight="700">它累</text>
+<path d="M688,152 Q613,100 538,150" fill="none" stroke="#c25014" stroke-width="2.4" marker-end="url(#arr-orange)"/>
+<path d="M688,152 Q658,124 628,150" fill="none" stroke="#c25014" stroke-width="1.1" stroke-dasharray="3 2"/>
+<text x="612" y="114" font-size="10.2" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">注意力权重 76% 锁定“小狗”!</text>
+<text x="522" y="218" font-size="10.6" fill="#1e293b" text-anchor="start">• 告别按字排队传话，任意两词直接</text>
+<text x="522" y="237" font-size="10.6" fill="#1e293b" text-anchor="start">  算相关性连线，一秒看懂“它”指谁</text>
+<text x="522" y="255" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="700">• 整段文本同时并行计算，喂大算力！</text>
+<rect x="522.0" y="272.0" width="204" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="624.0" y="287.0" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="600">2017 诞生：当今大模型统一底座</text>
+</svg>

@@ -15,6 +15,7 @@ description: 和孩子一起玩游戏、读故事、探索身体与科学，也�
     <link rel="shortcut icon" href="{{ '/favicon.ico' | relative_url }}">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/img/favicons/apple-touch-icon.png' | relative_url }}">
     {% assign build = site.time | date: '%s' %}
+    <link rel="preload" as="image" href="{{ '/assets/images/home-duo-poster.webp' | relative_url }}?v={{ build }}" type="image/webp">
     <link rel="stylesheet" href="{{ '/assets/css/landing-fonts.css' | relative_url }}?v={{ build }}">
     <link rel="stylesheet" href="{{ '/assets/css/landing.css' | relative_url }}?v={{ build }}">
   </head>
@@ -39,8 +40,8 @@ description: 和孩子一起玩游戏、读故事、探索身体与科学，也�
           <h1 id="hero-title"><span aria-hidden="true">🚀</span> 大手牵小手，世界有意思</h1>
           <p>把孩子的每一个「为什么」，变成我们一起探索的起点</p>
         </header>
-        <div class="duo-stage" data-duo-stage data-model="{{ '/assets/models/character.glb' | relative_url }}" role="group" aria-label="小念和爸爸站在小星球上聊天，点气泡或点他们会接着聊">
-          <div class="duo-flat" aria-hidden="true">👨🧒</div>
+        <div class="duo-stage" data-duo-stage data-model="{{ '/assets/models/character.glb' | relative_url }}?v={{ build }}" role="group" aria-label="小念和爸爸站在小星球上聊天，点气泡或点他们会接着聊">
+          <img class="duo-poster" src="{{ '/assets/images/home-duo-poster.webp' | relative_url }}?v={{ build }}" width="1200" height="400" fetchpriority="high" decoding="async" alt="" aria-hidden="true">
           <button type="button" class="duo-bubble is-dad" aria-live="polite"><b>爸爸</b><span data-line="dad">你问一个，我们就一起找一个答案。</span></button>
           <button type="button" class="duo-bubble is-nian" aria-live="polite"><b>小念</b><span data-line="nian">爸爸，世界上怎么有那么多为什么？</span></button>
         </div>
@@ -119,15 +120,25 @@ description: 和孩子一起玩游戏、读故事、探索身体与科学，也�
           stage.dispatchEvent(new CustomEvent("duo:talk"));
         };
         stage.querySelectorAll(".duo-bubble").forEach((bubble) => bubble.addEventListener("click", talk));
+        stage.addEventListener("click", (event) => {
+          if (event.target === stage) talk();
+        });
         stage.addEventListener("duo:tap", talk);
 
         const probe = document.createElement("canvas");
         const webgl = Boolean(probe.getContext("webgl2") || probe.getContext("webgl"));
         if (!webgl || navigator.connection?.saveData) return;
         const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
-        import("{{ '/assets/js/home-duo.js' | relative_url }}?v={{ build }}")
-          .then(({ mountDuo }) => mountDuo(stage, { modelUrl: stage.dataset.model, reducedMotion }))
-          .catch((error) => console.warn("小星球 3D 场景没有加载成功，保留平面版。", error));
+        const boot3D = () => {
+          const schedule = window.requestIdleCallback || ((fn) => setTimeout(fn, 120));
+          schedule(() => {
+            import("{{ '/assets/js/home-duo.js' | relative_url }}?v={{ build }}")
+              .then(({ mountDuo }) => mountDuo(stage, { modelUrl: stage.dataset.model, reducedMotion }))
+              .catch((error) => console.warn("小星球 3D 场景没有加载成功，保留静态首帧图。", error));
+          }, { timeout: 1200 });
+        };
+        if (document.readyState === "complete") boot3D();
+        else window.addEventListener("load", boot3D, { once: true });
       })();
     </script>
   </body>
