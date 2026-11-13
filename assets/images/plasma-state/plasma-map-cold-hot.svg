@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="396" viewBox="0 0 760 396" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">宇宙与实验室等离子体密度温度对数相图及冷热等离子体双温对比</title>
+<desc id="desc">左图在对数坐标下标出太阳风、电离层极光、霓虹灯与芯片冷等离子体、闪电、太阳核心及托卡马克聚变的位置；右图用电子与氖原子质量悬殊导致单次碰撞传能仅0.011%解释为何冷等离子体电子上万度而气体接近室温。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="395" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">等离子体全景图：为什么霓虹灯里上万度，摸着灯管却不烫手？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">对数坐标横跨 26 个密度量级；稀薄“冷等离子体”里只有轻电子极热，重原子仍接近室温</text>
+<rect x="20" y="62" width="444" height="318" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="600">① 宇宙与实验室等离子体分布（对数坐标）</text>
+<line x1="82.0" y1="303.8" x2="444.0" y2="303.8" stroke="#f1f5f9" stroke-width="1"/>
+<text x="75.0" y="307.8" font-size="10.5" fill="#64748b" text-anchor="end">10³</text>
+<line x1="82.0" y1="271.4" x2="444.0" y2="271.4" stroke="#f1f5f9" stroke-width="1"/>
+<text x="75.0" y="275.4" font-size="10.5" fill="#64748b" text-anchor="end">10⁴</text>
+<line x1="82.0" y1="239.0" x2="444.0" y2="239.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="75.0" y="243.0" font-size="10.5" fill="#64748b" text-anchor="end">10⁵</text>
+<line x1="82.0" y1="206.7" x2="444.0" y2="206.7" stroke="#f1f5f9" stroke-width="1"/>
+<text x="75.0" y="210.7" font-size="10.5" fill="#64748b" text-anchor="end">10⁶</text>
+<line x1="82.0" y1="174.3" x2="444.0" y2="174.3" stroke="#f1f5f9" stroke-width="1"/>
+<text x="75.0" y="178.3" font-size="10.5" fill="#64748b" text-anchor="end">10⁷</text>
+<line x1="82.0" y1="141.9" x2="444.0" y2="141.9" stroke="#f1f5f9" stroke-width="1"/>
+<text x="75.0" y="145.9" font-size="10.5" fill="#64748b" text-anchor="end">10⁸</text>
+<line x1="82.0" y1="116.0" x2="82.0" y2="320.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="82.0" y="336.0" font-size="10.5" fill="#64748b" text-anchor="middle">10⁶</text>
+<line x1="159.6" y1="116.0" x2="159.6" y2="320.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="159.6" y="336.0" font-size="10.5" fill="#64748b" text-anchor="middle">10¹²</text>
+<line x1="237.1" y1="116.0" x2="237.1" y2="320.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="237.1" y="336.0" font-size="10.5" fill="#64748b" text-anchor="middle">10¹⁸</text>
+<line x1="314.7" y1="116.0" x2="314.7" y2="320.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="314.7" y="336.0" font-size="10.5" fill="#64748b" text-anchor="middle">10²⁴</text>
+<line x1="392.3" y1="116.0" x2="392.3" y2="320.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="392.3" y="336.0" font-size="10.5" fill="#64748b" text-anchor="middle">10³⁰</text>
+<line x1="82.0" y1="269.3" x2="444.0" y2="269.3" stroke="#93c5fd" stroke-width="1.1" stroke-dasharray="4 3"/>
+<text x="442.0" y="265.3" font-size="10.0" fill="#1d6fa5" text-anchor="end" class="halo">1 eV ≈ 1.16×10⁴ K</text>
+<path d="M82.0,116.0 V320.0 H444.0" fill="none" stroke="#94a3b8" stroke-width="1.3"/>
+<text x="76.0" y="108.0" font-size="10.8" fill="#64748b" text-anchor="start">电子温度 Tₑ (K)</text>
+<text x="263.0" y="354.0" font-size="10.8" fill="#64748b" text-anchor="middle">电子数密度 nₑ (个/m³，对数尺度)</text>
+<circle cx="94.9" cy="236.5" r="5.2" fill="#e7f6ee" stroke="#18794e" stroke-width="1.8"/>
+<text x="103.9" y="240.5" font-size="10.8" fill="#18794e" text-anchor="start" font-weight="700" class="halo">太阳风</text>
+<circle cx="146.6" cy="283.7" r="5.2" fill="#e7f6ee" stroke="#18794e" stroke-width="1.8"/>
+<text x="155.6" y="281.7" font-size="10.8" fill="#18794e" text-anchor="start" font-weight="700" class="halo">地球电离层 / 极光</text>
+<circle cx="198.4" cy="197.0" r="5.2" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.8"/>
+<text x="189.4" y="201.0" font-size="10.8" fill="#6d28d9" text-anchor="end" font-weight="700" class="halo">太阳日冕</text>
+<circle cx="211.3" cy="259.8" r="6.2" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.8"/>
+<text x="211.3" y="234.8" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">霓虹灯 / 芯片刻蚀</text>
+<text x="211.3" y="247.8" font-size="9.8" fill="#1e293b" text-anchor="middle" class="halo">冷等离子体 Tₑ≫T_gas</text>
+<circle cx="263.0" cy="136.1" r="6.2" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.8"/>
+<text x="272.0" y="140.1" font-size="10.8" fill="#6d28d9" text-anchor="start" font-weight="700" class="halo">托卡马克聚变 (ITER)</text>
+<text x="272.0" y="153.1" font-size="9.8" fill="#1e293b" text-anchor="start" class="halo">1.5×10⁸ K</text>
+<circle cx="314.7" cy="255.9" r="5.2" fill="#fef1e8" stroke="#c25014" stroke-width="1.8"/>
+<text x="314.7" y="230.9" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">闪电 / 电弧焊</text>
+<text x="314.7" y="243.9" font-size="9.8" fill="#1e293b" text-anchor="middle" class="halo">热等离子体 Tₑ≈T_gas</text>
+<circle cx="418.1" cy="168.5" r="5.2" fill="#fef1e8" stroke="#c25014" stroke-width="1.8"/>
+<text x="409.1" y="172.5" font-size="10.8" fill="#c25014" text-anchor="end" font-weight="700" class="halo">太阳核心</text>
+<text x="409.1" y="185.5" font-size="9.8" fill="#1e293b" text-anchor="end" class="halo">1.5×10⁷ K</text>
+<circle cx="179.0" cy="303.2" r="4.6" fill="#ffffff" stroke="#475569" stroke-width="1.4" stroke-dasharray="2 2"/>
+<text x="188.0" y="307.2" font-size="9.8" fill="#475569" text-anchor="start" class="halo">蜡烛火焰（极弱电离热气体）</text>
+<text x="36" y="368" font-size="10.5" fill="#64748b" text-anchor="start">注：两轴均为十进制对数坐标；右上高温或高密区多为热平衡等离子体</text>
+<rect x="478" y="62" width="262" height="318" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="494" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="600">② 乒乓球撞保龄球：双温之谜</text>
+<rect x="494" y="96" width="230" height="114" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<line x1="510" y1="138" x2="578" y2="144" stroke="#1d6fa5" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+<circle cx="516.0" cy="138.0" r="5.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.3"/>
+<line x1="513.4" y1="138.0" x2="518.6" y2="138.0" stroke="#1d6fa5" stroke-width="1.5" stroke-linecap="round"/>
+<text x="512" y="122" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="600">轻电子 e⁻ (23,000 K)</text>
+<path d="M584,150 Q552,174 522,170" fill="none" stroke="#1d6fa5" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#arr-blue)"/>
+<text x="506" y="188" font-size="10.2" fill="#1d6fa5" text-anchor="start">弹回仍保 99.99% 动能！</text>
+<circle cx="614" cy="148" r="24" fill="#fef1e8" stroke="#c25014" stroke-width="1.6"/>
+<text x="614" y="145" font-size="10.6" fill="#c25014" text-anchor="middle" font-weight="700">Ne 原子</text>
+<text x="614" y="159" font-size="9.8" fill="#1e293b" text-anchor="middle">≈320 K</text>
+<text x="648" y="141" font-size="10.2" fill="#64748b" text-anchor="start">质量差</text>
+<text x="648" y="156" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">3.7万倍</text>
+<text x="504" y="203" font-size="10.2" fill="#475569" text-anchor="start" font-weight="600">单次传能上限：氢 0.22% · 氖 0.011%</text>
+<rect x="494" y="220" width="230" height="70" rx="7" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<text x="504" y="238" font-size="11.0" fill="#1d6fa5" text-anchor="start" font-weight="700">低压冷等离子体（霓虹灯 / 刻蚀）</text>
+<text x="504" y="257" font-size="10.3" fill="#1e293b" text-anchor="start">电子 Tₑ</text>
+<rect x="552" y="248" width="112" height="9" rx="4" fill="#1d6fa5"/>
+<text x="670" y="257" font-size="10.0" fill="#1d6fa5" text-anchor="start" font-weight="600">2×10⁴K</text>
+<text x="504" y="276" font-size="10.3" fill="#1e293b" text-anchor="start">气体 T_g</text>
+<rect x="552" y="267" width="12" height="9" rx="4" fill="#18794e"/>
+<text x="570" y="276" font-size="10.2" fill="#18794e" text-anchor="start" font-weight="700">≈320 K（不烫手！）</text>
+<rect x="494" y="298" width="230" height="70" rx="7" fill="#fef1e8" stroke="#fdba74" stroke-width="1"/>
+<text x="504" y="316" font-size="11.0" fill="#c25014" text-anchor="start" font-weight="700">高压热等离子体（闪电 / 电焊弧）</text>
+<text x="504" y="335" font-size="10.3" fill="#1e293b" text-anchor="start">电子 Tₑ</text>
+<rect x="552" y="326" width="122" height="9" rx="4" fill="#c25014"/>
+<text x="678" y="335" font-size="10.0" fill="#c25014" text-anchor="start" font-weight="600">3×10⁴K</text>
+<text x="504" y="354" font-size="10.3" fill="#1e293b" text-anchor="start">气体 T_g</text>
+<rect x="552" y="345" width="122" height="9" rx="4" fill="#ea580c"/>
+<text x="678" y="354" font-size="10.0" fill="#c25014" text-anchor="start" font-weight="600">3×10⁴K</text>
+</svg>

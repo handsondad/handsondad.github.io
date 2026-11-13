@@ -54,6 +54,7 @@ from .core import (
     register,
     step_badge,
     txt,
+    write_svg,
 )
 
 
@@ -2145,3 +2146,1620 @@ def build_analytical_mechanics():
         print("Generated 8 diagrams, including 3 one-shot animations; mechanics assertions passed.")
 
     main()
+
+@register("space-weightless", "空间站失重与微重力：400公里引力比例、电梯视重、曲率追平下落、火焰对流与弹簧测质量", "mechanics_sky")
+def build_space_weightless():
+    SUBDIR = "space-weightless"
+
+    def _poly(pts, stroke, sw=2.0, fill="none", dash=None, marker_end=None, opacity=None, cls=None):
+        d = "M" + " L".join(f"{x:.2f},{y:.2f}" for x, y in pts)
+        extra = []
+        if dash:
+            extra.append(f'stroke-dasharray="{dash}"')
+        if marker_end:
+            extra.append(f'marker-end="url(#{marker_end})"')
+        if opacity is not None:
+            extra.append(f'opacity="{opacity}"')
+        if cls:
+            extra.append(f'class="{cls}"')
+        ext = (" " + " ".join(extra)) if extra else ""
+        return f'<path d="{d}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}" stroke-linejoin="round" stroke-linecap="round"{ext}/>'
+
+    def _line(x1, y1, x2, y2, stroke=HAIRLINE, sw=1.2, dash=None, marker_end=None):
+        extra = []
+        if dash:
+            extra.append(f'stroke-dasharray="{dash}"')
+        if marker_end:
+            extra.append(f'marker-end="url(#{marker_end})"')
+        ext = (" " + " ".join(extra)) if extra else ""
+        return f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{stroke}" stroke-width="{sw}"{ext}/>'
+
+    def _verify_physics():
+        """Assert all physical constants and derived orbital / mechanical quantities."""
+        gm_earth = 3.986004355e14  # m^3 / s^2 (JPL DE440)
+        r_earth = 6.371e6          # m (NASA Earth Fact Sheet volumetric mean radius)
+        g0_std = 9.80665           # m / s^2 (CODATA standard gravity)
+        h_iss = 4.00e5             # m (400 km typical China Space Station / ISS altitude)
+        r_orb = r_earth + h_iss    # 6.771e6 m
+
+        # 1. Gravity at 400 km (~88.5% - 88.6% of surface gravity, ~8.69 m/s^2)
+        g_surf_sph = gm_earth / (r_earth ** 2)
+        g_400 = gm_earth / (r_orb ** 2)
+        ratio_inv_sq = (r_earth / r_orb) ** 2
+        ratio_vs_g0 = g_400 / g0_std
+        assert 9.81 < g_surf_sph < 9.83
+        assert 8.68 < g_400 < 8.70
+        assert 0.885 < ratio_inv_sq < 0.886
+        assert 0.886 < ratio_vs_g0 < 0.887
+
+        # Basketball scale shock: 24 cm diameter (120 mm radius) -> 7.53 mm above surface
+        h_basketball_mm = 120.0 * (h_iss / r_earth)
+        moon_basketball_m = 0.120 * (3.844e8 / r_earth)
+        assert 7.50 < h_basketball_mm < 7.56
+        assert 7.20 < moon_basketball_m < 7.28
+
+        # 2. Circular orbital speed, period, and 1-second drop == Earth curvature sagitta
+        v_orb = math.sqrt(gm_earth / r_orb)
+        t_orb_min = (2.0 * math.pi * r_orb / v_orb) / 60.0
+        drop_1s = 0.5 * g_400 * (1.0 ** 2)
+        curv_quad_1s = (v_orb ** 2) / (2.0 * r_orb)
+        curv_exact_1s = math.hypot(r_orb, v_orb * 1.0) - r_orb
+        assert 7.66e3 < v_orb < 7.68e3
+        assert 92.3 < t_orb_min < 92.6
+        assert math.isclose(drop_1s, curv_quad_1s, rel_tol=1e-14)
+        assert abs(curv_exact_1s - drop_1s) < 5e-6
+        assert 4.34 < drop_1s < 4.35
+
+        # Standard-g textbook convention g(400) = g0 * (R_E / r)^2 gives 4.341 m
+        drop_1s_std = 0.5 * (g0_std * ratio_inv_sq)
+        assert 4.340 < drop_1s_std < 4.343
+
+        # 3. Elevator apparent weight N = m(g - a)
+        m_person = 60.0
+        g_elev = 9.8
+        assert math.isclose(m_person * (g_elev - 0.0), 588.0)
+        assert math.isclose(m_person * (g_elev - 0.5 * g_elev), 294.0)
+        assert math.isclose(m_person * (g_elev - g_elev), 0.0)
+
+        # 4. Tidal gravity-gradient acceleration 2 * GM * d / r^3
+        tidal_per_m = 2.0 * gm_earth / (r_orb ** 3)
+        tidal_10m_ug = (tidal_per_m * 10.0) / g0_std * 1e6
+        assert 2.55e-6 < tidal_per_m < 2.59e-6
+        assert 2.60 < tidal_10m_ug < 2.65
+
+        # 5. Spring-mass chair T = 2 * pi * sqrt(m / k)
+        k_spring = 800.0
+        t_50 = 2.0 * math.pi * math.sqrt(50.0 / k_spring)
+        t_80 = 2.0 * math.pi * math.sqrt(80.0 / k_spring)
+        assert math.isclose(t_50, math.pi / 2.0, rel_tol=1e-12)
+        assert 1.570 < t_50 < 1.572
+        assert 1.986 < t_80 < 1.988
+        assert math.isclose(k_spring * (t_50 ** 2) / (4.0 * math.pi ** 2), 50.0, rel_tol=1e-12)
+        assert math.isclose(k_spring * (t_80 ** 2) / (4.0 * math.pi ** 2), 80.0, rel_tol=1e-12)
+
+        return {
+            "gm": gm_earth,
+            "r_e_km": 6371.0,
+            "r_orb_km": 6771.0,
+            "g_400": g_400,
+            "ratio_pct": ratio_inv_sq * 100.0,
+            "ratio_g0_pct": ratio_vs_g0 * 100.0,
+            "v_orb_kms": v_orb / 1e3,
+            "t_orb_min": t_orb_min,
+            "drop_1s": drop_1s,
+            "h_ball_mm": h_basketball_mm,
+            "tidal_10m_ug": tidal_10m_ug,
+            "k_spring": k_spring,
+            "t_50": t_50,
+            "t_80": t_80,
+        }
+
+    def _svg_gravity_still_89pct(p):
+        els = header(
+            "离地面 400 公里有多近？空间站处的地球引力还剩将近九成！",
+            "左图按严格几何比例画出地球弧面与 400 km 轨道；右图按牛顿平方反比律计算引力随高度的真实衰减。",
+        )
+
+        # Left panel: True-to-scale Earth limb vs 400 km orbit
+        els.append(card(20, 64, 352, 300))
+        els.append(step_badge(38, 84, 1, BLUE, BLUE_SOFT))
+        els.append(txt(56, 88, "真实比例：400 km 只是贴着球皮飞", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(36, 108, "同一把尺：1 像素 = 16.8 km（绝无视觉放大）", 11.2, MUTED))
+
+        extra_defs = (
+            '<clipPath id="earth-limb-clip">'
+            '<rect x="34" y="118" width="324" height="156" rx="8"/>'
+            "</clipPath>"
+        )
+
+        # Viewport frame
+        els.append('<rect x="34" y="118" width="324" height="156" rx="8" fill="#0f172a"/>')
+        # Subtle stars in space background
+        for sx, sy, sr in [(54, 134, 1.1), (92, 148, 0.9), (138, 129, 1.2), (288, 132, 1.0), (334, 146, 1.2), (312, 168, 0.9), (66, 174, 1.0)]:
+            els.append(f'<circle cx="{sx}" cy="{sy}" r="{sr}" fill="#e2e8f0" opacity="0.65"/>')
+
+        # True scale geometry: R_E = 6371 km -> 380 px, h = 400 km -> 23.86 px
+        cx, cy = 196.0, 562.0
+        r_e_px = 380.0
+        h_100_px = r_e_px * (100.0 / 6371.0)
+        h_400_px = r_e_px * (400.0 / 6371.0)
+        r_orb_px = r_e_px + h_400_px
+        y_surf_top = cy - r_e_px      # 182.0
+        y_orb_top = cy - r_orb_px     # 158.14
+
+        els.append('<g clip-path="url(#earth-limb-clip)">')
+        # Atmosphere 100 km Karman glow
+        els.append(f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="{r_e_px + h_100_px:.2f}" fill="#38bdf8" fill-opacity="0.22" stroke="#7dd3fc" stroke-width="0.9" stroke-dasharray="3 3"/>')
+        # 400 km orbit arc
+        els.append(f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="{r_orb_px:.2f}" fill="none" stroke="{ORANGE}" stroke-width="1.8" stroke-dasharray="5 4"/>')
+        # Earth body
+        els.append(f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="{r_e_px:.2f}" fill="#1d6fa5" stroke="#93c5fd" stroke-width="1.5"/>')
+        els.append(f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="{r_e_px - 10:.2f}" fill="#165a8a" opacity="0.45"/>')
+        els.append("</g>")
+
+        # Space station icon at (cx, y_orb_top)
+        els.append(_line(cx - 13, y_orb_top, cx + 13, y_orb_top, "#fbbf24", 2.6))
+        els.append(f'<rect x="{cx - 4.5:.1f}" y="{y_orb_top - 3.2:.1f}" width="9" height="6.4" rx="1.5" fill="#ffffff" stroke="{ORANGE}" stroke-width="1.2"/>')
+
+        # Dimension tick between orbit and surface at x = cx
+        els.append(_line(cx, y_orb_top + 4, cx, y_surf_top, "#fbbf24", 1.4))
+        els.append(txt(cx - 18, 143, "中国空间站 / ISS", 11.2, "#fde68a", "end", weight="600"))
+        els.append(_line(cx + 16, (y_orb_top + y_surf_top) / 2, 232, 142, "#fbbf24", 1.1))
+        els.append(txt(236, 145, "h = 400 km", 11.5, "#fbbf24", weight="700"))
+        els.append(txt(236, 161, "仅地球半径的 6.3%", 10.6, "#cbd5e1"))
+
+        # Labels inside Earth arc
+        els.append(txt(196, 224, "地球平均半径 R_E = 6371 km", 12.0, "#ffffff", "middle", weight="700"))
+        els.append(txt(196, 245, "轨道距地心 r = 6371 + 400 = 6771 km", 11.2, "#e0f2fe", "middle"))
+        els.append(txt(196, 264, "（浅蓝虚线：100 km 卡门线大气层顶）", 10.5, "#bae6fd", "middle"))
+
+        # Bottom basketball scale callout
+        els.append(card(34, 284, 324, 66, rx=8, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(46, 304, "把地球缩成直径 24 cm 的标准篮球：", 11.8, INK, weight="700"))
+        els.append(txt(46, 324, f"空间站只贴在球皮外 {p['h_ball_mm']:.1f} 毫米处飞驰！", 11.8, BLUE, weight="700"))
+        els.append(txt(46, 342, "（对比：月球在 7.24 米外，远出将近 1000 倍）", 10.8, MUTED))
+
+        # Right panel: Computed inverse-square gravity curve g(h)/g(0)
+        els.append(card(388, 64, 352, 300))
+        els.append(step_badge(406, 84, 2, ORANGE, ORANGE_SOFT))
+        els.append(txt(424, 88, "平方反比律：400 km 处仍有 88.5% 引力", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(404, 108, "g(h) / g(0) = [R_E / (R_E + h)]²，按地心距离 r 计算", 11.2, MUTED))
+
+        px0, px1 = 438.0, 718.0
+        py0, py1 = 126.0, 262.0
+        pw, ph = px1 - px0, py1 - py0
+        h_max = 12000.0
+
+        def map_pt(h_km):
+            frac = (6371.0 / (6371.0 + h_km)) ** 2
+            return px0 + pw * (h_km / h_max), py1 - ph * frac
+
+        # Grid lines
+        for pct in (0.25, 0.50, 0.75, 1.00):
+            gy = py1 - ph * pct
+            els.append(_line(px0, gy, px1, gy, "#e2e8f0", 1.0, dash="3 3" if pct < 1.0 else None))
+            els.append(txt(px0 - 6, gy + 4, f"{int(pct * 100)}%", 10.5, MUTED, "end", cls="mono"))
+        els.append(txt(px0 - 6, py1 + 4, "0%", 10.5, MUTED, "end", cls="mono"))
+
+        for h_tick, lbl in [(0, "0"), (3000, "3000"), (6371, "6371"), (12000, "12000")]:
+            gx = px0 + pw * (h_tick / h_max)
+            els.append(_line(gx, py0, gx, py1, "#e2e8f0", 1.0, dash="3 3" if h_tick else None))
+            els.append(txt(gx, py1 + 15, lbl, 10.5, MUTED, "middle", cls="mono"))
+        els.append(txt((px0 + px1) / 2, py1 + 30, "离地高度 h（km）", 10.8, MUTED, "middle"))
+
+        # Axes
+        els.append(_line(px0, py0 - 4, px0, py1, SLATE, 1.3))
+        els.append(_line(px0, py1, px1 + 4, py1, SLATE, 1.3))
+
+        # Shaded area + curve
+        curve_pts = [map_pt(h_max * i / 120.0) for i in range(121)]
+        area_d = (
+            f"M{px0:.2f},{py1:.2f} L"
+            + " L".join(f"{x:.2f},{y:.2f}" for x, y in curve_pts)
+            + f" L{px1:.2f},{py1:.2f} Z"
+        )
+        els.append(f'<path d="{area_d}" fill="{BLUE}" fill-opacity="0.09"/>')
+        els.append(_poly(curve_pts, BLUE, sw=2.4))
+
+        # Key points: h=0, h=400 km, h=6371 km
+        x0, y0 = map_pt(0.0)
+        x400, y400 = map_pt(400.0)
+        x_re, y_re = map_pt(6371.0)
+
+        els.append(_line(x400, y400, x400, py1, ORANGE, 1.3, dash="3 2"))
+        els.append(_line(x_re, y_re, x_re, py1, PURPLE, 1.2, dash="3 2"))
+
+        els.append(f'<circle cx="{x0:.2f}" cy="{y0:.2f}" r="4" fill="{BLUE}"/>')
+        els.append(f'<circle cx="{x400:.2f}" cy="{y400:.2f}" r="5" fill="{ORANGE}" stroke="#ffffff" stroke-width="1.5"/>')
+        els.append(f'<circle cx="{x_re:.2f}" cy="{y_re:.2f}" r="4.2" fill="{PURPLE}" stroke="#ffffff" stroke-width="1.2"/>')
+
+        # Callout for 400 km
+        els.append(_line(x400 + 5, y400, 488, 145, ORANGE, 1.3))
+        els.append(card(490, 128, 224, 38, rx=6, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(500, 144, f"空间站 h=400 km：{p['ratio_pct']:.1f}%", 11.4, ORANGE, weight="700"))
+        els.append(txt(500, 160, f"g ≈ {p['g_400']:.2f} m/s²（约地表九成）", 10.8, BODY))
+
+        # Callout for h = R_E (6371 km -> 25%)
+        els.append(txt(646, y_re - 12, "h = R_E：距地心翻倍 → 25%", 10.6, PURPLE, "middle", weight="600", halo=True))
+
+        # Bottom takeaway inside right card
+        els.append(card(404, 298, 320, 52, rx=8, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(416, 318, "若搭一座 400 km 高梯子站上去称重：", 11.6, INK, weight="700"))
+        els.append(txt(416, 338, "60 kg 的人仍重约 53.1 kg——失重绝非因为没引力！", 11.3, ORANGE, weight="700"))
+
+        svg = figure(
+            380,
+            "400公里空间站真实高度比例与地球引力平方反比衰减曲线",
+            "左图按统一比例绘制6371千米地球弧面与400千米空间站轨道，对应24厘米篮球外仅7.5毫米；右图绘制引力随高度衰减曲线，标出400千米处仍保留地表引力的88.5%，约8.69米每二次方秒。",
+            els,
+            extra_defs=extra_defs,
+        )
+        write_svg(SUBDIR, "gravity-still-89pct.svg", svg)
+
+    def _svg_elevator_apparent_weight():
+        els = header(
+            "“引力”不等于“体重秤读数”：为什么一松手就瞬间失重？",
+            "你感受到的“沉重”，其实是地板向上托你的支持力 N = m(g − a)。当舱体和你一起自由下落，支持力归零。",
+        )
+
+        panels = [
+            (
+                20,
+                1,
+                "静止或匀速 (a = 0)",
+                BLUE,
+                BLUE_SOFT,
+                0.0,
+                588,
+                "60.0 kg（正常）",
+                "N = mg = 588 N",
+                "地板稳稳托住脚底",
+            ),
+            (
+                264,
+                2,
+                "向下加速 (a = 0.5g)",
+                GREEN,
+                GREEN_SOFT,
+                0.5,
+                294,
+                "30.0 kg（半失重）",
+                "N = m(g−0.5g) = 294 N",
+                "地板一边退让一边轻托",
+            ),
+            (
+                508,
+                3,
+                "自由下落 (a = g)",
+                ORANGE,
+                ORANGE_SOFT,
+                1.0,
+                0,
+                "0.0 kg（完全失重！）",
+                "N = m(g − g) = 0 N",
+                "人与地板同速下落，零挤压",
+            ),
+        ]
+
+        for px, num, title_s, col, soft_col, a_ratio, n_val, scale_txt, eq_txt, sub_txt in panels:
+            els.append(card(px, 64, 232, 226))
+            els.append(step_badge(px + 18, 84, num, col, soft_col))
+            els.append(txt(px + 35, 88, title_s, 12.8, INK, weight="700"))
+
+            # Elevator cabin
+            cab_x, cab_y, cab_w, cab_h = px + 44, 102, 132, 114
+            els.append(card(cab_x, cab_y, cab_w, cab_h, rx=8, fill="#f8fafc", stroke=col, sw=1.5, dash="5 3" if num == 3 else None))
+            # Cable at top
+            mid_x = cab_x + cab_w / 2
+            if num < 3:
+                els.append(_line(mid_x, 94, mid_x, cab_y, SLATE, 2.0))
+            else:
+                els.append(_line(mid_x - 6, 95, mid_x - 1, cab_y - 2, ORANGE, 1.8))
+                els.append(_line(mid_x + 6, 95, mid_x + 1, cab_y - 2, ORANGE, 1.8))
+
+            # Scale at floor
+            scale_y = cab_y + cab_h - 12
+            els.append(f'<rect x="{mid_x - 32:.1f}" y="{scale_y:.1f}" width="64" height="9" rx="3" fill="{soft_col}" stroke="{col}" stroke-width="1.2"/>')
+
+            # Stick person (m = 60 kg); floats slightly in panel 3
+            lift = 8 if num == 3 else 0
+            foot_y = scale_y - lift
+            cm_y = foot_y - 30
+            head_y = foot_y - 54
+            els.append(f'<circle cx="{mid_x:.1f}" cy="{head_y:.1f}" r="8" fill="#ffffff" stroke="{INK}" stroke-width="1.6"/>')
+            els.append(_line(mid_x, head_y + 8, mid_x, foot_y - 16, INK, 1.8))
+            els.append(_line(mid_x - 13, head_y + 18, mid_x + 13, head_y + 18, INK, 1.6))
+            els.append(_line(mid_x, foot_y - 16, mid_x - 9, foot_y, INK, 1.7))
+            els.append(_line(mid_x, foot_y - 16, mid_x + 9, foot_y, INK, 1.7))
+
+            # Center-of-mass dot
+            els.append(f'<circle cx="{mid_x:.1f}" cy="{cm_y:.1f}" r="3.2" fill="{INK}"/>')
+
+            # Gravity vector mg = 588 N (ALWAYS 34 px downward!)
+            els.append(_line(mid_x - 20, cm_y - 10, mid_x - 20, cm_y + 24, ORANGE, 2.2, marker_end="arr-orange"))
+            els.append(txt(mid_x - 25, cm_y + 6, "mg", 11.0, ORANGE, "end", weight="700"))
+            els.append(txt(mid_x - 25, cm_y + 19, "588N", 10.0, ORANGE, "end", cls="mono"))
+
+            # Normal force vector N
+            if n_val == 588:
+                els.append(_line(mid_x + 20, cm_y + 10, mid_x + 20, cm_y - 24, BLUE, 2.2, marker_end="arr-blue"))
+                els.append(txt(mid_x + 25, cm_y - 10, "N", 11.0, BLUE, weight="700"))
+                els.append(txt(mid_x + 25, cm_y + 3, "588N", 10.0, BLUE, cls="mono"))
+            elif n_val == 294:
+                els.append(_line(mid_x + 20, cm_y + 10, mid_x + 20, cm_y - 7, GREEN, 2.2, marker_end="arr-green"))
+                els.append(txt(mid_x + 25, cm_y - 4, "N", 11.0, GREEN, weight="700"))
+                els.append(txt(mid_x + 25, cm_y + 9, "294N", 10.0, GREEN, cls="mono"))
+            else:
+                els.append(txt(mid_x + 19, cm_y + 2, "N = 0", 11.0, ORANGE, weight="700"))
+                # Floating apple next to person
+                els.append(f'<circle cx="{mid_x + 34:.1f}" cy="{head_y + 4:.1f}" r="5" fill="#ef4444"/>')
+
+            # Downward acceleration arrow outside right cabin wall for panels 2 & 3
+            if a_ratio > 0:
+                arr_len = 22 if a_ratio == 0.5 else 38
+                m_id = "arr-green" if a_ratio == 0.5 else "arr-orange"
+                els.append(_line(cab_x + cab_w + 14, 134, cab_x + cab_w + 14, 134 + arr_len, col, 1.8, marker_end=m_id))
+                els.append(txt(cab_x + cab_w + 14, 127, "a↓", 10.8, col, "middle", weight="700"))
+
+            # Scale readout pill & formula
+            els.append(card(px + 14, 224, 204, 24, rx=6, fill=soft_col, stroke=col))
+            els.append(txt(px + 116, 240, f"秤读数：{scale_txt}", 11.3, col, "middle", weight="700"))
+            els.append(txt(px + 116, 263, eq_txt, 11.2, INK, "middle", weight="600", cls="mono"))
+            els.append(txt(px + 116, 280, sub_txt, 10.8, MUTED, "middle"))
+
+        # Bottom wide card: Leaky cup home experiment
+        els.append(card(20, 302, 720, 98))
+        els.append(pill(34, 314, "动手实验", fg=BLUE, bg=BLUE_SOFT, w=74, h=22, size=11.5))
+        els.append(txt(118, 329, "侧壁扎孔的纸杯：为什么一松手，漏水立刻停住？", 12.8, INK, weight="700"))
+
+        # Cup A: Held still (leaking parabolic jet)
+        els.append(f'<path d="M46,344 L52,388 L86,388 L92,344" fill="none" stroke="{SLATE}" stroke-width="1.8"/>')
+        els.append(f'<path d="M48,354 L52,387 L86,387 L90,354 Z" fill="#93c5fd" fill-opacity="0.65"/>')
+        els.append(f'<circle cx="87" cy="380" r="2.2" fill="{BG}"/>')
+        jet_pts = [(88 + 34 * (i / 20.0), 380 + 13 * ((i / 20.0) ** 2)) for i in range(21)]
+        els.append(_poly(jet_pts, BLUE, sw=2.4))
+        els.append(txt(134, 360, "① 手捏住不动 (a = 0)：", 11.5, INK, weight="700"))
+        els.append(txt(134, 380, "杯底托水产生水压 ρgh > 0，水柱喷出", 11.0, BODY))
+
+        els.append(_line(376, 342, 376, 390, HAIRLINE, 1.0, dash="3 3"))
+
+        # Cup B: Free-falling (zero leak!)
+        els.append(f'<path d="M416,346 L422,390 L456,390 L462,346" fill="none" stroke="{ORANGE}" stroke-width="1.8"/>')
+        els.append(f'<path d="M418,356 L422,389 L456,389 L460,356 Z" fill="#93c5fd" fill-opacity="0.65"/>')
+        els.append(f'<circle cx="457" cy="382" r="2.2" fill="#3b82f6"/>')
+        els.append(_line(400, 350, 400, 384, ORANGE, 1.8, marker_end="arr-orange"))
+        els.append(txt(476, 360, "② 松手自由下落 (a = g)：", 11.5, ORANGE, weight="700"))
+        els.append(txt(476, 380, "杯与水同速下落，水压差归零、滴水不漏！", 11.0, BODY))
+
+        svg = figure(
+            412,
+            "电梯三态视重对比与自由下落扎孔水杯实验",
+            "上方三栏对比60千克乘客在静止、以0.5g向下加速、以1g自由下落时重力mg始终为588牛而支持力N从588牛减至294牛再到0牛；下方展示侧壁扎孔水杯松手自由下落时水压差归零停止漏水。",
+            els,
+        )
+        write_svg(SUBDIR, "elevator-apparent-weight.svg", svg)
+
+    def _kepler_path(cx, cy, r_launch, v_ratio, r_stop, n_steps=160):
+        """Exact polar conic r(theta) = p / (1 + e*cos(theta - theta0)) from top mountain launch."""
+        # At launch (top, theta_screen = 0 -> up): r = r_launch, vr = 0.
+        # Let mu_norm = 1, r_launch = 1 -> v_circ = 1. Angular momentum h = v_ratio.
+        # p = h^2 = v_ratio^2. Since r(0) = 1 = p / (1 + e*cos(phi)),
+        # if v_ratio < 1: launch is apogee -> e = 1 - v_ratio^2, r(th) = p / (1 - e*cos(th))
+        # if v_ratio >= 1: launch is perigee -> e = v_ratio^2 - 1, r(th) = p / (1 + e*cos(th))
+        p_orb = v_ratio ** 2
+        pts = []
+        for i in range(n_steps + 1):
+            th = (2.0 * math.pi) * i / n_steps
+            denom = 1.0 + (v_ratio ** 2 - 1.0) * math.cos(th)
+            r = r_launch * (p_orb / denom)
+            x = cx + r * math.sin(th)
+            y = cy - r * math.cos(th)
+            pts.append((x, y))
+            if i > 0 and r <= r_stop:
+                break
+        return pts
+
+    def _svg_falling_around_earth(p):
+        # Play-once CSS rotation of the orbiting station dot around (188, 240), resting at 360 deg
+        anim_css = """
+      .orb-runner {
+        transform-origin: 188px 240px;
+        animation: orbitOnce 6.5s cubic-bezier(0.25, 0.1, 0.25, 1) 1 forwards;
+      }
+      @keyframes orbitOnce {
+        0%   { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .orb-runner { animation: none; }
+      }"""
+
+        els = header(
+            "每秒都在往下掉 4.35 米，为什么空间站永远砸不到地面？",
+            "左图：牛顿高山大炮的精确圆锥曲线轨迹；右图：把 1 秒钟放大看——横飞 7.67 km 时，弯曲的地表刚好也退让了 4.35 m！",
+        )
+
+        # Left card: Newton's cannonball & circular orbit
+        els.append(card(20, 64, 336, 344))
+        els.append(step_badge(38, 84, 1, BLUE, BLUE_SOFT))
+        els.append(txt(56, 88, "牛顿高山思想实验：绕地 = 追平曲率的下落", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(36, 107, "高度与炮弹轨迹按开普勒方程绘制（高度示意放大）", 10.9, MUTED))
+
+        cx, cy = 188.0, 240.0
+        r_earth_d = 76.0
+        r_launch_d = 100.0
+
+        # Sub-orbital & elliptical trajectories
+        pts_slow = _kepler_path(cx, cy, r_launch_d, 0.72, r_earth_d)
+        pts_mid = _kepler_path(cx, cy, r_launch_d, 0.89, r_earth_d)
+        pts_ell = _kepler_path(cx, cy, r_launch_d, 1.10, r_earth_d)
+
+        els.append(_poly(pts_ell, PURPLE, sw=1.5, dash="4 3"))
+        els.append(f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="{r_launch_d:.1f}" fill="none" stroke="{BLUE}" stroke-width="2.4"/>')
+
+        # Earth disk + mountain peak
+        els.append(f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="{r_earth_d:.1f}" fill="#dbeafe" stroke="{BLUE}" stroke-width="1.6"/>')
+        els.append(f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="3.0" fill="{INK}"/>')
+        els.append(txt(cx, cy + 16, "地心", 10.8, INK, "middle", weight="600"))
+        els.append(f'<polygon points="{cx - 10:.1f},{cy - r_earth_d + 2:.1f} {cx:.1f},{cy - r_launch_d:.1f} {cx + 10:.1f},{cy - r_earth_d + 2:.1f}" fill="{SLATE}"/>')
+
+        els.append(_poly(pts_slow, SLATE, sw=1.7, dash="3 3"))
+        els.append(_poly(pts_mid, GREEN, sw=1.8, dash="5 3"))
+
+        # Static launch marker + animated orbiting station group
+        els.append(f'<circle cx="{cx:.1f}" cy="{cy - r_launch_d:.1f}" r="3.6" fill="#ffffff" stroke="{ORANGE}" stroke-width="1.5"/>')
+        els.append('<g class="orb-runner">')
+        els.append(f'<circle cx="{cx:.1f}" cy="{cy - r_launch_d:.1f}" r="5.4" fill="{ORANGE}" stroke="#ffffff" stroke-width="1.5"/>')
+        els.append("</g>")
+        els.append(_line(cx + 6, cy - r_launch_d, cx + 46, cy - r_launch_d, ORANGE, 2.0, marker_end="arr-orange"))
+
+        # Trajectory labels
+        els.append(txt(cx + 50, cy - r_launch_d + 4, "v = 7.67 km/s", 11.2, ORANGE, weight="700", halo=True))
+        els.append(txt(264, 212, "慢 → 落回地面", 10.6, SLATE, halo=True))
+        els.append(txt(248, 314, "更快 → 椭圆轨道", 10.6, PURPLE, halo=True))
+        els.append(txt(64, 166, "圆轨道", 11.2, BLUE, weight="700", halo=True))
+
+        # Bottom summary box in left card
+        els.append(card(34, 344, 308, 52, rx=8, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(46, 364, f"第一宇宙速度（400 km）：v ≈ {p['v_orb_kms']:.2f} km/s", 11.5, BLUE, weight="700"))
+        els.append(txt(46, 383, f"约 2.76 万 km/h，每 {p['t_orb_min']:.1f} 分钟绕地球一圈！", 11.0, BODY))
+
+        # Right card: 1-second geometric zoom
+        els.append(card(372, 64, 368, 344))
+        els.append(step_badge(390, 84, 2, ORANGE, ORANGE_SOFT))
+        els.append(txt(408, 88, "放大看 1 秒钟：掉下去的，刚好被地球弯走！", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(388, 107, "横向 7.67 km 与竖直 4.35 m 相差 1760 倍（竖直示意放大）", 10.8, MUTED))
+
+        # Geometric construction inside right card:
+        # Start column x0 = 414, end column x1 = 664 (dx = 250 px -> 7.67 km)
+        # Orbit tangent y_orb0 = 142; after 1 s falls dy_vis = 48 px -> y_orb1 = 190
+        # Earth surface tangent y_surf0 = 228; after 7.67 km curves down SAME dy_vis = 48 px -> y_surf1 = 276
+        x0, x1 = 414.0, 664.0
+        y_orb0, y_orb1 = 142.0, 190.0
+        y_surf0, y_surf1 = 228.0, 276.0
+        dy_vis = y_orb1 - y_orb0
+
+        # Parabolic / circular arcs matching dy_vis = 48 px
+        orb_arc = [(x0 + (x1 - x0) * t, y_orb0 + dy_vis * (t ** 2)) for t in [i / 40.0 for i in range(41)]]
+        surf_arc = [(x0 + (x1 - x0) * t, y_surf0 + dy_vis * (t ** 2)) for t in [i / 40.0 for i in range(41)]]
+
+        # Shaded Earth crust under surf_arc
+        earth_poly = (
+            f"M{x0:.1f},302 L{x0:.1f},{y_surf0:.1f} L"
+            + " L".join(f"{x:.1f},{y:.1f}" for x, y in surf_arc)
+            + f" L{x1:.1f},302 Z"
+        )
+        els.append(f'<path d="{earth_poly}" fill="#dbeafe" opacity="0.75"/>')
+
+        # Inertial straight tangent (top) & horizontal ground tangent (bottom)
+        els.append(_line(x0, y_orb0, x1, y_orb0, SLATE, 1.4, dash="5 4", marker_end="arr-muted"))
+        els.append(_line(x0, y_surf0, x1, y_surf0, SLATE, 1.2, dash="4 4"))
+
+        # Actual orbit curve & Earth surface curve
+        els.append(_poly(orb_arc, BLUE, sw=2.5))
+        els.append(_poly(surf_arc, GREEN, sw=2.4))
+
+        # Altitude bars at t = 0 and t = 1 s (both exact same 86 px = 400 km!)
+        els.append(_line(x0, y_orb0 + 5, x0, y_surf0 - 3, BLUE, 1.3, dash="3 2"))
+        els.append(txt(x0 + 6, (y_orb0 + y_surf0) / 2 + 4, "离地 400 km", 10.8, BLUE, weight="600", halo=True))
+
+        els.append(_line(x1 - 54, orb_arc[31][1] + 2, x1 - 54, surf_arc[31][1] - 2, BLUE, 1.3, dash="3 2"))
+        els.append(txt(x1 - 60, (orb_arc[31][1] + surf_arc[31][1]) / 2 + 4, "仍离地 400 km！", 10.8, BLUE, "end", weight="700", halo=True))
+
+        # Drop arrows at x1 = 664 (4.35 m == 4.35 m)
+        els.append(_line(x1, y_orb0 + 2, x1, y_orb1 - 3, ORANGE, 2.2, marker_end="arr-orange"))
+        els.append(_line(x1, y_surf0 + 2, x1, y_surf1 - 3, GREEN, 2.2, marker_end="arr-green"))
+
+        els.append(f'<circle cx="{x0:.1f}" cy="{y_orb0:.1f}" r="4.5" fill="{ORANGE}"/>')
+        els.append(f'<circle cx="{x1:.1f}" cy="{y_orb1:.1f}" r="4.8" fill="{ORANGE}" stroke="#ffffff" stroke-width="1.3"/>')
+
+        # Labels on right zoom
+        els.append(txt((x0 + x1) / 2, y_orb0 - 8, "若无引力惯性直飞：1 秒前进 7.67 km", 11.0, SLATE, "middle", weight="600"))
+        els.append(txt(x1 + 7, (y_orb0 + y_orb1) / 2 - 2, "自由下落", 10.6, ORANGE, weight="700"))
+        els.append(txt(x1 + 7, (y_orb0 + y_orb1) / 2 + 12, f"{p['drop_1s']:.2f} m", 11.0, ORANGE, weight="700", cls="mono"))
+        els.append(txt(x1 + 7, (y_surf0 + y_surf1) / 2 - 2, "地表下弯", 10.6, GREEN, weight="700"))
+        els.append(txt(x1 + 7, (y_surf0 + y_surf1) / 2 + 12, f"{p['drop_1s']:.2f} m", 11.0, GREEN, weight="700", cls="mono"))
+        els.append(txt(424, 294, "弯曲的地球表面", 10.8, GREEN, weight="600"))
+
+        # Algebraic identity box at bottom of right card
+        els.append(card(388, 312, 336, 84, rx=8, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(400, 332, "为什么两个 4.35 m 严丝合缝？因为 v = √(GM/r)：", 11.4, INK, weight="700"))
+        els.append(txt(400, 353, "地表弯曲量 x²/(2r) = v²t²/(2r) = ½(GM/r²)t² = ½gt²", 11.1, ORANGE, weight="700"))
+        els.append(txt(400, 374, "空间站、航天员、水珠沿同一条圆弧下落 → 相对漂浮！", 11.0, BODY))
+
+        svg = figure(
+            424,
+            "牛顿高山大炮轨道速度分岔与空间站1秒下落追平地球曲率图解",
+            "左图展示不同水平初速度对应的落回地面、圆轨道（7.67千米每秒，周期92.4分钟）与椭圆轨道，含播放一次的绕地动画；右图放大1秒内的运动，水平前进7.67千米的同时自由下落4.35米，恰好等于地球曲率下降的4.35米。",
+            els,
+            extra_css=anim_css,
+        )
+        write_svg(SUBDIR, "falling-around-earth.svg", svg)
+
+    def _svg_microgravity_residuals(p):
+        els = header(
+            "为什么严谨的说法叫“微重力（10⁻⁶ g）”，而不是绝对零重力？",
+            "左图：潮汐引力梯度与稀薄大气留下百万分之一 g 残余加速度；右图：失去浮力对流后，火焰与沸水大变样。",
+        )
+
+        # Left card: Three sources of ~10^-6 g residual acceleration
+        els.append(card(20, 64, 352, 332))
+        els.append(step_badge(38, 84, 1, PURPLE, PURPLE_SOFT))
+        els.append(txt(56, 88, "百万分之一 g 从哪来？三大微弱扰动", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(36, 107, "只有质心 1 个点完全抵消，舱体其余位置仍有微小差值", 10.8, MUTED))
+
+        # Vertical 20 m module diagram (x = 96..156, y = 126..290)
+        mod_x, mod_y, mod_w, mod_h = 90, 130, 66, 160
+        cm_y = mod_y + mod_h / 2  # 210
+        els.append(card(mod_x, mod_y, mod_w, mod_h, rx=14, fill="#f8fafc", stroke=SLATE, sw=1.6))
+        # Solar wings
+        els.append(_line(mod_x - 36, cm_y, mod_x, cm_y, BLUE, 3.0))
+        els.append(_line(mod_x + mod_w, cm_y, mod_x + mod_w + 26, cm_y, BLUE, 3.0))
+
+        # Top point (+10 m, farther from Earth -> drifts up/away)
+        els.append(f'<circle cx="{mod_x + 33}" cy="{mod_y + 24}" r="4" fill="{PURPLE}"/>')
+        els.append(_line(mod_x + 33, mod_y + 20, mod_x + 33, mod_y + 4, PURPLE, 2.0, marker_end="arr-muted"))
+        # CM point (0 m -> exact balance)
+        els.append(_line(mod_x + 8, cm_y, mod_x + mod_w - 8, cm_y, HAIRLINE, 1.1, dash="3 2"))
+        els.append(f'<circle cx="{mod_x + 33}" cy="{cm_y}" r="4.2" fill="{GREEN}"/>')
+        # Bottom point (-10 m, closer to Earth -> drifts down/toward Earth)
+        els.append(f'<circle cx="{mod_x + 33}" cy="{mod_y + mod_h - 24}" r="4" fill="{ORANGE}"/>')
+        els.append(_line(mod_x + 33, mod_y + mod_h - 20, mod_x + 33, mod_y + mod_h - 4, ORANGE, 2.0, marker_end="arr-orange"))
+
+        # Rarefied air molecules hitting from left
+        for ay in (156, 184, 236, 264):
+            els.append(f'<circle cx="42" cy="{ay}" r="2.2" fill="{BLUE}"/>')
+            els.append(_line(47, ay, 82, ay, BLUE, 1.3, dash="2 2", marker_end="arr-blue"))
+        els.append(txt(40, 142, "稀薄分子", 10.2, BLUE, weight="600"))
+
+        # Earth direction indicator at bottom
+        els.append(txt(mod_x + 33, 308, "↓ 指向地心（r₀ = 6771 km）", 10.5, MUTED, "middle"))
+
+        # Explanatory callouts on right side of Left Card (x = 188..358)
+        els.append(card(190, 126, 168, 56, rx=7, fill=PURPLE_SOFT, stroke=PURPLE))
+        els.append(txt(200, 144, "① 潮汐引力梯度", 11.4, PURPLE, weight="700"))
+        els.append(txt(200, 160, "顶舱离地心远、引力略弱", 10.6, BODY))
+        els.append(txt(200, 174, f"±10 m 处约 {p['tidal_10m_ug']:.1f}×10⁻⁶ g", 10.6, PURPLE, weight="600"))
+
+        els.append(card(190, 190, 168, 48, rx=7, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(200, 208, "② 400 km 稀薄大气阻力", 11.4, BLUE, weight="700"))
+        els.append(txt(200, 226, "微弱迎风减速 ~0.1–1 μg", 10.6, BODY))
+
+        els.append(card(190, 246, 168, 52, rx=7, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(200, 264, "③ 推力器与人员活动", 11.4, ORANGE, weight="700"))
+        els.append(txt(200, 281, "轨控点火、蹬壁、风扇振动", 10.6, BODY))
+        els.append(txt(200, 294, "（跑步机须配专门隔振台）", 10.2, MUTED))
+
+        els.append(card(34, 322, 324, 60, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(46, 342, "潮汐加速度公式：Δa ≈ (2GM / r³) · Δr", 11.4, INK, weight="700"))
+        els.append(txt(46, 362, "偏离质心仅约 4 米，就有 1×10⁻⁶ g（百万分之一 g）！", 11.0, BODY))
+
+        # Right card: Buoyancy disappears -> Spherical blue flame & giant boiling bubble
+        els.append(card(388, 64, 352, 332))
+        els.append(step_badge(406, 84, 2, ORANGE, ORANGE_SOFT))
+        els.append(txt(424, 88, "没有“热空气上浮”：火焰与沸水大变样", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(404, 107, "浮力来自重力造成的上下压强差；微重力下自然对流消失", 10.8, MUTED))
+
+        # Flame comparison sub-cards
+        # Sub-card A: Earth 1 g teardrop flame
+        els.append(card(404, 122, 154, 152, rx=8, fill="#fffbeb", stroke=ORANGE))
+        els.append(txt(481, 141, "地面蜡烛（1 g）", 11.8, ORANGE, "middle", weight="700"))
+        # Candle stick + wick
+        els.append(f'<rect x="473" y="218" width="16" height="28" rx="2" fill="#e2e8f0" stroke="{SLATE}" stroke-width="1.2"/>')
+        els.append(_line(481, 210, 481, 218, INK, 1.8))
+        # Teardrop yellow/orange flame
+        els.append('<path d="M481,154 C495,176 496,202 481,210 C466,202 467,176 481,154 Z" fill="#f97316" fill-opacity="0.85"/>')
+        els.append('<path d="M481,168 C489,182 489,200 481,208 C473,200 473,182 481,168 Z" fill="#fde047"/>')
+        # Upward buoyancy convection arrows
+        els.append(_line(452, 214, 452, 166, BLUE, 1.5, marker_end="arr-blue"))
+        els.append(_line(510, 214, 510, 166, BLUE, 1.5, marker_end="arr-blue"))
+        els.append(txt(481, 261, "热气上浮拉成瘦长黄火苗", 10.6, BODY, "middle", weight="600"))
+
+        # Sub-card B: Space microgravity spherical blue flame
+        els.append(card(570, 122, 154, 152, rx=8, fill="#eff6ff", stroke=BLUE))
+        els.append(txt(647, 141, "空间站火焰（~10⁻⁶ g）", 11.8, BLUE, "middle", weight="700"))
+        els.append(f'<rect x="639" y="218" width="16" height="28" rx="2" fill="#e2e8f0" stroke="{SLATE}" stroke-width="1.2"/>')
+        els.append(_line(647, 198, 647, 218, INK, 1.8))
+        # Calm blue spherical diffusion flame centered at (647, 194)
+        els.append('<circle cx="647" cy="194" r="24" fill="#3b82f6" fill-opacity="0.28" stroke="#2563eb" stroke-width="1.8"/>')
+        els.append('<circle cx="647" cy="194" r="14" fill="#60a5fa" fill-opacity="0.45"/>')
+        # Symmetric radial diffusion arrows (8 directions -> 4 diagonals)
+        for dx, dy in [(-28, -22), (28, -22), (-28, 16), (28, 16)]:
+            els.append(_line(647 + dx, 194 + dy, 647 + dx * 0.62, 194 + dy * 0.62, BLUE, 1.2, dash="2 2"))
+        els.append(txt(647, 261, "全向分子扩散成安静蓝球", 10.6, BLUE, "middle", weight="700"))
+
+        # Boiling water comparison card at bottom of right panel
+        els.append(card(404, 286, 320, 96, rx=8, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(416, 306, "烧开水也一样（NASA 池沸腾实验）：", 11.6, GREEN, weight="700"))
+        # Mini visual on right side of green card
+        els.append(f'<rect x="634" y="296" width="80" height="62" rx="6" fill="#ffffff" stroke="{GREEN}" stroke-width="1.2"/>')
+        els.append(_line(643, 350, 705, 350, ORANGE, 2.6))
+        els.append(f'<circle cx="674" cy="329" r="17" fill="#dbeafe" stroke="{BLUE}" stroke-width="1.5"/>')
+        els.append(txt(674, 333, "大汽泡", 9.8, BLUE, "middle", weight="700"))
+        els.append(txt(416, 326, "• 地面：蒸汽泡受浮力迅速上浮破裂；", 10.9, BODY))
+        els.append(txt(416, 346, "• 太空：气泡不往上跑，聚成一颗大汽泡", 10.9, BODY))
+        els.append(txt(416, 365, "  包住加热面（飞船须靠泵强制散热）", 10.7, MUTED))
+
+        svg = figure(
+            412,
+            "空间站百万分之一g微重力来源与球形蓝色火焰及池沸腾对比",
+            "左图展示空间站20米舱段内的潮汐引力梯度（偏离质心10米约2.6微g）、400千米稀薄大气阻力与推力器振动；右图对比地面受浮力对流拉长的黄色蜡烛火焰与微重力下靠分子扩散形成的球形蓝色火焰，以及微重力沸水聚合成单颗大汽泡的现象。",
+            els,
+        )
+        write_svg(SUBDIR, "microgravity-residuals.svg", svg)
+
+    def _svg_space_mass_spring(p):
+        els = header(
+            "体重秤读数永远是 0，空间站里怎样给航天员“称体重”？",
+            "失重没有夺走“惯性质量”！坐上校准弹簧椅（k = 800 N/m），测一次往返周期 T = 2π√(m/k) 就能算出质量。",
+        )
+
+        # Left card: Spring-mass chair schematic
+        els.append(card(20, 64, 292, 310))
+        els.append(step_badge(38, 84, 1, GREEN, GREEN_SOFT))
+        els.append(txt(56, 88, "太空质量测量仪（BMMD）", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(36, 107, "不用重力 mg，改用牛顿第二定律 F = ma", 10.8, MUTED))
+
+        # Bulkhead + spring + sled schematic (y = 122..224)
+        els.append(card(34, 120, 264, 106, rx=8, fill="#f8fafc", stroke=BORDER))
+        # Left wall hatch
+        els.append(_line(48, 130, 48, 214, SLATE, 2.4))
+        for wy in range(134, 214, 12):
+            els.append(_line(40, wy + 6, 48, wy, SLATE, 1.1))
+
+        # Spring zigzag from x=48 to x=142 at y=174
+        spring_pts = [(48, 174), (60, 174)]
+        for i in range(7):
+            sx = 64 + i * 10
+            sy = 164 if i % 2 == 0 else 184
+            spring_pts.append((sx, sy))
+        spring_pts += [(134, 174), (146, 174)]
+        els.append(_poly(spring_pts, GREEN, sw=2.0))
+        els.append(txt(96, 155, "k = 800 N/m", 10.5, GREEN, "middle", weight="700", cls="mono"))
+
+        # Sled + strapped astronaut
+        els.append(card(146, 146, 68, 52, rx=7, fill=BLUE_SOFT, stroke=BLUE, sw=1.5))
+        els.append(f'<circle cx="180" cy="161" r="7.5" fill="#ffffff" stroke="{INK}" stroke-width="1.5"/>')
+        els.append(_line(180, 169, 180, 188, INK, 1.8))
+        els.append(_line(166, 177, 194, 177, ORANGE, 2.0))  # rigid strap
+        els.append(txt(180, 212, "绑紧身体 + 屏息", 10.4, BLUE, "middle", weight="600"))
+
+        # Oscillation double arrow & optical sensor
+        els.append(_line(224, 172, 278, 172, ORANGE, 1.6, marker_end="arr-orange"))
+        els.append(_line(278, 172, 224, 172, ORANGE, 1.6))
+        els.append(txt(252, 162, "往返 ±A", 10.5, ORANGE, "middle", weight="700"))
+        els.append(txt(252, 190, "光电测 T", 10.4, MUTED, "middle"))
+
+        # Formula & comparison box
+        els.append(card(34, 238, 264, 122, rx=8, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(46, 258, "• 地面体重秤：测支持力 N = mg（太空归零）", 10.9, BODY))
+        els.append(txt(46, 279, "• 太空弹簧椅：测惯性回复 ma = −kx", 10.9, BODY))
+        els.append(txt(46, 303, "周期 T = 2π√(m / k)  （式里根本没有 g！）", 11.2, GREEN, weight="700"))
+        els.append(txt(46, 326, "反推质量：m = k · T² / (4π²)", 11.4, INK, weight="700"))
+        els.append(txt(46, 346, "质量越大惯性越大 → 来回弹一次越慢", 10.7, MUTED))
+
+        # Right card: Exact computed x(t) = A cos(2*pi*t / T) curves for 50 kg vs 80 kg
+        els.append(card(328, 64, 412, 310))
+        els.append(step_badge(346, 84, 2, BLUE, BLUE_SOFT))
+        els.append(txt(364, 88, "精确位移曲线：50 kg vs 80 kg（k = 800 N/m）", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(344, 107, "振幅 A = 10 cm  ｜  蓝实线：50 kg  ｜  橙虚线：80 kg", 10.8, MUTED))
+
+        gx0, gx1 = 382.0, 718.0
+        gy_top, gy_mid, gy_bot = 138.0, 198.0, 258.0
+        gw = gx1 - gx0
+        amp_px = gy_mid - gy_top  # 60 px -> 10 cm
+        t_max = 4.0
+
+        # Grid
+        for gy, glbl in [(gy_top, "+10 cm"), (gy_mid, "0"), (gy_bot, "−10 cm")]:
+            els.append(_line(gx0, gy, gx1, gy, "#e2e8f0" if gy != gy_mid else SLATE, 1.0 if gy != gy_mid else 1.2, dash="3 3" if gy != gy_mid else None))
+            els.append(txt(gx0 - 6, gy + 4, glbl, 10.3, MUTED, "end", cls="mono"))
+
+        for t_sec in (0.0, 1.0, 2.0, 3.0, 4.0):
+            tx = gx0 + gw * (t_sec / t_max)
+            els.append(_line(tx, gy_top - 6, tx, gy_bot + 6, "#e2e8f0", 1.0, dash="3 3" if t_sec > 0 else None))
+            els.append(txt(tx, gy_bot + 20, f"{t_sec:.0f} s", 10.5, MUTED, "middle", cls="mono"))
+        els.append(_line(gx0, gy_top - 8, gx0, gy_bot + 6, SLATE, 1.3))
+        els.append(txt((gx0 + gx1) / 2, gy_bot + 35, "时间 t（秒）", 10.8, MUTED, "middle"))
+
+        t_50, t_80 = p["t_50"], p["t_80"]
+        pts_50 = [
+            (gx0 + gw * (t_max * i / 200.0) / t_max, gy_mid - amp_px * math.cos(2.0 * math.pi * (t_max * i / 200.0) / t_50))
+            for i in range(201)
+        ]
+        pts_80 = [
+            (gx0 + gw * (t_max * i / 200.0) / t_max, gy_mid - amp_px * math.cos(2.0 * math.pi * (t_max * i / 200.0) / t_80))
+            for i in range(201)
+        ]
+
+        els.append(_poly(pts_50, BLUE, sw=2.3))
+        els.append(_poly(pts_80, ORANGE, sw=2.2, dash="6 4"))
+
+        # Period bracket for T1 = 1.57 s (50 kg, peak at t=0 to peak at t=1.571 s)
+        x_t50 = gx0 + gw * (t_50 / t_max)
+        els.append(_line(gx0, 125, x_t50, 125, BLUE, 1.5))
+        els.append(_line(gx0, 121, gx0, 134, BLUE, 1.3))
+        els.append(_line(x_t50, 121, x_t50, 138, BLUE, 1.3, dash="2 2"))
+        els.append(f'<circle cx="{x_t50:.1f}" cy="{gy_top:.1f}" r="4" fill="{BLUE}"/>')
+        els.append(txt((gx0 + x_t50) / 2, 119, f"T₁ = {t_50:.2f} s → 50 kg", 10.8, BLUE, "middle", weight="700"))
+
+        # Period marker for T2 = 1.99 s (80 kg, peak at t=1.987 s)
+        x_t80 = gx0 + gw * (t_80 / t_max)
+        els.append(f'<circle cx="{x_t80:.1f}" cy="{gy_top:.1f}" r="4.2" fill="{ORANGE}"/>')
+        els.append(_line(x_t80 + 4, gy_top - 2, x_t80 + 26, 123, ORANGE, 1.3))
+        els.append(txt(x_t80 + 30, 126, f"T₂ = {t_80:.2f} s → 80 kg", 10.8, ORANGE, weight="700"))
+
+        # Bottom clinical & exercise note
+        els.append(card(344, 302, 380, 58, rx=8, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(356, 322, "NASA“天空实验室”实测精度达 0.1%（误差仅几十克）：", 11.3, INK, weight="700"))
+        els.append(txt(356, 343, "配合每天约 2 小时抗阻/跑步机训练，实时监测骨密度与肌肉流失。", 10.9, BODY))
+
+        svg = figure(
+            388,
+            "太空弹簧质量测量仪原理与50千克对80千克简谐振动周期对比",
+            "左图展示校准劲度系数k=800牛每米的太空弹簧椅测质量原理T=2π√(m/k)；右图精确绘制50千克（实线蓝，周期1.57秒）与80千克（虚线橙，周期1.99秒）的余弦位移曲线，说明无需重力即可由振动快慢反推质量。",
+            els,
+        )
+        write_svg(SUBDIR, "space-mass-spring.svg", svg)
+    params = _verify_physics()
+    _svg_gravity_still_89pct(params)
+    _svg_elevator_apparent_weight()
+    _svg_falling_around_earth(params)
+    _svg_microgravity_residuals(params)
+    _svg_space_mass_spring(params)
+
+
+@register("cosmic-velocities", "卫星发射与三大宇宙速度：轨道族、高低轨速度能量悖论、霍曼变轨、第三宇宙速度合成与多级火箭", "mechanics_sky")
+def build_cosmic_velocities():
+    SUBDIR = "cosmic-velocities"
+
+    GM_E = 398600.435507          # km^3 / s^2
+
+    R_EQ = 6378.137               # km
+
+    GM_SUN = 132712440041.27942   # km^3 / s^2
+
+    AU_KM = 149597870.700         # km
+
+    T_SID = 86164.09054           # s (mean sidereal day: 23h 56m 04.09s)
+
+    R_MOON = 384400.0             # km (mean Earth-Moon distance)
+
+    def _integrate_ballistic(r0, v0_km_s, dt=2.0, max_steps=6000):
+        """RK4 integration of two-body trajectory in km & s from (0, r0) moving +x."""
+        def accel(px, py):
+            r2 = px * px + py * py
+            r3 = r2 * math.sqrt(r2)
+            return (-GM_E * px / r3, -GM_E * py / r3)
+
+        x, y = 0.0, r0
+        vx, vy = v0_km_s, 0.0
+        pts = [(x, y)]
+        for _ in range(max_steps):
+            ax1, ay1 = accel(x, y)
+            x2, y2 = x + 0.5 * dt * vx, y + 0.5 * dt * vy
+            vx2, vy2 = vx + 0.5 * dt * ax1, vy + 0.5 * dt * ay1
+            ax2, ay2 = accel(x2, y2)
+
+            x3, y3 = x + 0.5 * dt * vx2, y + 0.5 * dt * vy2
+            vx3, vy3 = vx + 0.5 * dt * ax2, vy + 0.5 * dt * ay2
+            ax3, ay3 = accel(x3, y3)
+
+            x4, y4 = x + dt * vx3, y + dt * vy3
+            vx4, vy4 = vx + dt * ax3, vy + dt * ay3
+            ax4, ay4 = accel(x4, y4)
+
+            x += (dt / 6.0) * (vx + 2 * vx2 + 2 * vx3 + vx4)
+            y += (dt / 6.0) * (vy + 2 * vy2 + 2 * vy3 + vy4)
+            vx += (dt / 6.0) * (ax1 + 2 * ax2 + 2 * ax3 + ax4)
+            vy += (dt / 6.0) * (ay1 + 2 * ay2 + 2 * ay3 + ay4)
+            pts.append((x, y))
+            r_now = math.hypot(x, y)
+            if r_now <= R_EQ:
+                break
+        return pts
+    v1 = math.sqrt(GM_E / R_EQ)
+    v2 = math.sqrt(2.0 * GM_E / R_EQ)
+    v_earth = math.sqrt(GM_SUN / AU_KM)
+    v_sun_esc = math.sqrt(2.0 * GM_SUN / AU_KM)
+    v_inf = v_sun_esc - v_earth
+    v3 = math.sqrt(v2 * v2 + v_inf * v_inf)
+
+    assert abs(v1 - 7.905) < 0.001, f"Unexpected v1={v1}"
+    assert abs(v2 - 11.180) < 0.001, f"Unexpected v2={v2}"
+    assert abs(v2 / v1 - math.sqrt(2.0)) < 1e-12
+    assert abs(v_earth - 29.785) < 0.001, f"Unexpected v_earth={v_earth}"
+    assert abs(v_sun_esc - 42.122) < 0.001, f"Unexpected v_sun_esc={v_sun_esc}"
+    assert abs(v3 - 16.65) < 0.01, f"Unexpected v3={v3}"
+
+    # Curvature drop in t = 1 s at v1 matches 1/2 g t^2
+    g_eq = GM_E / (R_EQ * R_EQ) * 1000.0  # m/s^2
+    drop_curv_m = (math.hypot(R_EQ, v1 * 1.0) - R_EQ) * 1000.0
+    drop_fall_m = 0.5 * g_eq * (1.0 ** 2)
+    assert abs(drop_curv_m - drop_fall_m) < 0.002 and abs(drop_fall_m - 4.90) < 0.02
+
+    # Geostationary & Hohmann transfer from 200 km LEO to GEO
+    r_geo = (GM_E * (T_SID / (2.0 * math.pi)) ** 2) ** (1.0 / 3.0)
+    h_geo = r_geo - R_EQ
+    v_geo = math.sqrt(GM_E / r_geo)
+    assert abs(h_geo - 35786.0) < 1.0
+    assert abs(v_geo - 3.075) < 0.002
+
+    r_leo200 = R_EQ + 200.0
+    v_leo200 = math.sqrt(GM_E / r_leo200)
+    a_tr = 0.5 * (r_leo200 + r_geo)
+    vp_tr = math.sqrt(GM_E * (2.0 / r_leo200 - 1.0 / a_tr))
+    va_tr = math.sqrt(GM_E * (2.0 / r_geo - 1.0 / a_tr))
+    dv1 = vp_tr - v_leo200
+    dv2 = v_geo - va_tr
+    t_tr_hr = math.pi * math.sqrt(a_tr ** 3 / GM_E) / 3600.0
+    assert abs(dv1 - 2.46) < 0.01, f"Unexpected dv1={dv1}"
+    assert abs(dv2 - 1.48) < 0.01, f"Unexpected dv2={dv2}"
+    assert abs(t_tr_hr - 5.26) < 0.02
+
+    # Tsiolkovsky staging assertions (100 t launch mass, 2 t payload, ve = 3.1 km/s, eps = 0.10)
+    ve_kero = 3.1
+    ve_hydro = 4.4
+    dv_1stage = ve_kero * math.log(100.0 / (2.0 + 0.10 * 98.0))
+    dv_2stage = (
+        ve_kero * math.log(100.0 / (18.0 + 0.10 * 82.0))
+        + ve_kero * math.log(18.0 / (2.0 + 0.10 * 16.0))
+    )
+    dv_3stage = (
+        ve_kero * math.log(100.0 / (25.0 + 0.10 * 75.0))
+        + ve_kero * math.log(25.0 / (7.0 + 0.10 * 18.0))
+        + ve_kero * math.log(7.0 / (2.0 + 0.10 * 5.0))
+    )
+    assert 6.60 < dv_1stage < 6.65
+    assert 9.13 < dv_2stage < 9.16
+    assert 9.89 < dv_3stage < 9.93
+
+    # ==================================================================
+    # SVG 1: Newton's Mountain Cannonball & 4.90m Curvature Proof
+    # ==================================================================
+    def build_newton_cannon():
+        els = header(
+            "牛顿高山大炮实验：入轨不是“失重悬浮”，而是下落弧度刚好追上地球弯曲",
+            "忽略空气阻力从山顶水平开炮：慢了砸回地面；达到第一宇宙速度时，地面每秒同步往下让开 4.90 米",
+        )
+
+        # Left Panel: RK4 two-body trajectories around Earth
+        els.append(card(20, 62, 352, 294))
+        els.append(txt(36, 84, "① 四种初速度的真实二体引力轨迹", 12.8, INK, weight="600"))
+
+        cx, cy = 186.0, 194.0
+        r_px = 56.0
+        r_mtn = R_EQ * 1.10  # Schematic mountain top at 1.10 R_E for visual separation
+        scale = r_px / R_EQ
+
+        # Earth shaded disk + grid
+        els.append(f'<circle cx="{cx}" cy="{cy}" r="{r_px}" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.6"/>')
+        els.append(f'<line x1="{cx - r_px}" y1="{cy}" x2="{cx + r_px}" y2="{cy}" stroke="{BLUE_LINE}" stroke-width="1" stroke-dasharray="3 3"/>')
+        els.append(f'<line x1="{cx}" y1="{cy - r_px}" x2="{cx}" y2="{cy + r_px}" stroke="{BLUE_LINE}" stroke-width="1" stroke-dasharray="3 3"/>')
+        els.append(txt(cx, cy + 4, "地球", 11.2, BLUE, "middle", weight="700"))
+
+        # Mountain triangle at top
+        peak_y = cy - r_mtn * scale
+        els.append(f'<polygon points="{cx - 8},{cy - r_px + 1:.1f} {cx + 8},{cy - r_px + 1:.1f} {cx},{peak_y:.1f}" fill="{SLATE}" opacity="0.85"/>')
+
+        # Sub-orbital A & B via RK4
+        for v_sub, col, lbl, lx, ly in (
+            (5.2, SLATE, "5.2 km/s 落回近处", cx + 68, cy - 42),
+            (6.8, ORANGE, "6.8 km/s 绕半圈落地", cx + 76, cy + 36),
+        ):
+            pts = _integrate_ballistic(r_mtn, v_sub, dt=4.0, max_steps=2500)
+            assert math.hypot(*pts[-1]) <= R_EQ + 1.0
+            poly = " ".join(f"{cx + px * scale:.1f},{cy - py * scale:.1f}" for px, py in pts[::6] + [pts[-1]])
+            els.append(f'<polyline points="{poly}" fill="none" stroke="{col}" stroke-width="1.8" stroke-dasharray="4 3"/>')
+            hx, hy = cx + pts[-1][0] * scale, cy - pts[-1][1] * scale
+            els.append(f'<circle cx="{hx:.1f}" cy="{hy:.1f}" r="3.3" fill="{col}"/>')
+            els.append(txt(lx, ly, lbl, 10.6, col, weight="600", halo=True))
+
+        # Circular orbit at v_circ
+        r_c_px = r_mtn * scale
+        els.append(f'<circle cx="{cx}" cy="{cy}" r="{r_c_px:.1f}" fill="none" stroke="{BLUE}" stroke-width="2.2"/>')
+        els.append(txt(cx - 76, cy - 58, "v₁ ≈ 7.91 km/s", 11.0, BLUE, "middle", weight="700", halo=True))
+        els.append(txt(cx - 76, cy - 43, "贴地闭合圆轨", 10.6, BLUE, "middle", halo=True))
+
+        # Elliptical orbit (e = 0.21 -> r_a = r_p*(1+e)/(1-e))
+        e_el = 0.21
+        ra_px = r_c_px * (1.0 + e_el) / (1.0 - e_el)
+        a_el = 0.5 * (r_c_px + ra_px)
+        b_el = math.sqrt(a_el * a_el - (a_el - r_c_px) ** 2)
+        cy_el = cy + (a_el - r_c_px)
+        els.append(
+            f'<ellipse cx="{cx:.1f}" cy="{cy_el:.1f}" rx="{b_el:.1f}" ry="{a_el:.1f}" '
+            f'fill="none" stroke="{GREEN}" stroke-width="1.9" stroke-dasharray="6 3"/>'
+        )
+        els.append(txt(cx, cy_el + a_el + 16, "8.8 km/s → 椭圆轨道（远地点在下方）", 10.8, GREEN, "middle", weight="600", halo=True))
+        els.append(txt(36, 344, "注：山高为示意放大；真实近地圆轨须在百公里以上避开大气。", 10.5, MUTED))
+
+        # Right Panel: 1-second Earth curvature triangle proof
+        els.append(card(388, 62, 352, 294))
+        els.append(txt(404, 84, "② 1 秒钟几何账：平飞 7.91 km ↔ 地表弯落 4.90 m", 12.6, INK, weight="600"))
+
+        # Schematic zoomed Earth arc
+        ox, oy, r_arc = 452.0, 352.0, 214.0
+        th_end = 0.86
+        arc_pts = " ".join(
+            f"{ox + r_arc * math.sin(th_end * i / 40):.1f},{oy - r_arc * math.cos(th_end * i / 40):.1f}"
+            for i in range(41)
+        )
+        els.append(f'<path d="M {ox},{oy} L {arc_pts.split()[0]} {' '.join('L ' + p for p in arc_pts.split()[1:])} Z" fill="{BLUE_SOFT}" opacity="0.65"/>')
+        els.append(f'<polyline points="{arc_pts}" fill="none" stroke="{BLUE}" stroke-width="2.2"/>')
+
+        ax, ay = ox, oy - r_arc  # Top point A (452, 138)
+        bx, by = ox + 172.0, ay  # Horizontal tangent point B (624, 138)
+        ang_b = math.atan2(bx - ox, oy - by)
+        cx_arc = ox + r_arc * math.sin(ang_b)
+        cy_arc = oy - r_arc * math.cos(ang_b)
+
+        # Radii OA and OB
+        els.append(f'<line x1="{ox}" y1="{oy - 58}" x2="{ax}" y2="{ay}" stroke="{SLATE}" stroke-width="1.3" stroke-dasharray="4 3"/>')
+        els.append(f'<line x1="{ox + 34:.1f}" y1="{oy - 58 * math.cos(ang_b):.1f}" x2="{bx:.1f}" y2="{by:.1f}" stroke="{SLATE}" stroke-width="1.3" stroke-dasharray="4 3"/>')
+
+        # Horizontal inertial flight line A -> B
+        els.append(f'<line x1="{ax}" y1="{ay}" x2="{bx}" y2="{by}" stroke="{INK}" stroke-width="1.8" stroke-dasharray="5 3" marker-end="url(#arr-muted)"/>')
+        # Gravity fall B -> C_arc along radial line
+        els.append(f'<line x1="{bx:.1f}" y1="{by + 2:.1f}" x2="{cx_arc + 2:.1f}" y2="{cy_arc - 3:.1f}" stroke="{ORANGE}" stroke-width="2.3" marker-end="url(#arr-orange)"/>')
+        # Actual circular orbit arc A -> C_arc
+        sub_arc = " ".join(
+            f"{ox + r_arc * math.sin(ang_b * i / 24):.1f},{oy - r_arc * math.cos(ang_b * i / 24):.1f}"
+            for i in range(25)
+        )
+        els.append(f'<polyline points="{sub_arc}" fill="none" stroke="{GREEN}" stroke-width="2.6"/>')
+
+        els.append(f'<circle cx="{ax}" cy="{ay}" r="4" fill="{BLUE}"/>')
+        els.append(f'<circle cx="{cx_arc:.1f}" cy="{cy_arc:.1f}" r="4" fill="{GREEN}"/>')
+
+        els.append(txt(538, 127, "若无引力：1 秒平飞 7.91 km", 11.2, INK, "middle", weight="600", halo=True))
+        els.append(txt(630, 165, "引力拉拽下落", 11.0, ORANGE, weight="700", halo=True))
+        els.append(txt(630, 181, "½gt² ≈ 4.90 m", 11.0, ORANGE, weight="700", halo=True))
+        els.append(txt(462, 206, "地球半径 R_E", 10.8, SLATE, halo=True))
+        els.append(txt(596, 228, "地表同步弯落 Δh ≈ v₁²/(2R_E) = 4.90 m", 10.6, BLUE, "middle", weight="600", halo=True))
+
+        # Formula summary box
+        els.append(card(404, 254, 320, 56, rx=7, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(564, 274, "勾股展开：(R_E + Δh)² = R_E² + (v₁t)²", 11.3, INK, "middle", weight="600"))
+        els.append(txt(564, 295, "⇒ Δh ≈ v₁²t²/(2R_E) = ½gt² ⇒ v₁ = √(gR_E) ≈ 7.91 km/s", 11.0, GREEN, "middle", weight="700"))
+        els.append(txt(404, 344, "注：为看清 4.90 m 落差，右图竖直弯曲比例已放大示意。", 10.5, MUTED))
+
+        svg = figure(
+            372,
+            "牛顿高山大炮思想实验与第一宇宙速度地球曲率推导",
+            "左图用二体引力积分对比5.2、6.8、7.91与8.8 km/s四种水平初速度轨迹；右图用直角三角形证明平飞7.91 km时地表曲率弯落4.90 m恰等于1秒自由落体距离。",
+            els,
+        )
+        write_svg(SUBDIR, "newton-cannon-freefall.svg", svg)
+
+    # ==================================================================
+    # SVG 2: Conic Velocity Ladder & Gravity Well Energy Ledger
+    # ==================================================================
+    def build_conic_ladder():
+        els = header(
+            "第一与第二宇宙速度：圆锥曲线轨道族与“√2 倍逃逸门槛”",
+            "近地点同在地球附近时，速度每添一截，远地点就被甩得更远；动能翻倍（速度 ×√2）恰好爬平引力井",
+        )
+
+        clip_def = '<clipPath id="conic-box"><rect x="28" y="94" width="348" height="252" rx="6"/></clipPath>'
+
+        # Left Panel: Exact two-body conic family r(theta) = rp*(1+e)/(1 + e*cos(theta))
+        els.append(card(20, 62, 364, 322))
+        els.append(txt(36, 84, "① 近地点点火速度决定轨道形状（焦点在球心）", 12.6, INK, weight="600"))
+        els.append(card(28, 94, 348, 252, rx=6, fill="#f8fafc", stroke=BORDER))
+
+        fx, fy = 110.0, 220.0
+        rp_px = 25.0  # Perigee at (85, 220), apogees stretch right (+x)
+
+        conic_group = ['<g clip-path="url(#conic-box)">']
+        # Subtle axis line
+        conic_group.append(f'<line x1="34" y1="{fy}" x2="370" y2="{fy}" stroke="{HAIRLINE}" stroke-width="1" stroke-dasharray="3 3"/>')
+
+        # 1) Circle e = 0 (v1 = 7.91 km/s)
+        conic_group.append(f'<circle cx="{fx}" cy="{fy}" r="{rp_px}" fill="none" stroke="{BLUE}" stroke-width="2.1"/>')
+        # Earth inside focus
+        conic_group.append(f'<circle cx="{fx}" cy="{fy}" r="18" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.4"/>')
+        conic_group.append(txt(fx, fy + 4, "地", 10.8, BLUE, "middle", weight="700"))
+
+        # Helper to sample polar conic around focus (fx, fy) with perigee at (-rp_px, 0), so angle 0 points left (-x)
+        def conic_poly(ecc, th_max, n=140):
+            pts = []
+            for i in range(-n, n + 1):
+                th = th_max * i / n
+                denom = 1.0 + ecc * math.cos(th)
+                if denom <= 0.06:
+                    continue
+                r = rp_px * (1.0 + ecc) / denom
+                # Perigee at (-rp_px, 0) => x = fx - r*cos(th), y = fy - r*sin(th)
+                pts.append(f"{fx - r * math.cos(th):.1f},{fy - r * math.sin(th):.1f}")
+            return " ".join(pts)
+
+        # 2) Ellipse v = 9.50 km/s -> e = (9.50/v1)^2 - 1 = 0.444
+        e_mid = (9.50 / v1) ** 2 - 1.0
+        assert 0.44 < e_mid < 0.45
+        conic_group.append(f'<polyline points="{conic_poly(e_mid, math.pi)}" fill="none" stroke="{GREEN}" stroke-width="1.9"/>')
+
+        # 3) Stretched lunar transfer ellipse (schematic e = 0.815 so apogee lands inside box at x ≈ 355)
+        e_lunar_vis = 0.815
+        conic_group.append(
+            f'<polyline points="{conic_poly(e_lunar_vis, math.pi)}" fill="none" stroke="{PURPLE}" stroke-width="2.0" stroke-dasharray="6 3"/>'
+        )
+        ap_lunar_x = fx + rp_px * (1.0 + e_lunar_vis) / (1.0 - e_lunar_vis)
+        conic_group.append(f'<circle cx="{ap_lunar_x:.1f}" cy="{fy}" r="5.5" fill="{PURPLE_SOFT}" stroke="{PURPLE}" stroke-width="1.4"/>')
+        conic_group.append(txt(ap_lunar_x - 2, fy - 10, "月", 10.5, PURPLE, "middle", weight="700", halo=True))
+
+        # 4) Parabola e = 1.0 (v2 = 11.18 km/s)
+        conic_group.append(f'<polyline points="{conic_poly(1.0, 2.38)}" fill="none" stroke="{ORANGE}" stroke-width="2.4"/>')
+
+        # 5) Hyperbola e = (12.50/v1)^2 - 1 ≈ 1.50
+        e_hyp = (12.50 / v1) ** 2 - 1.0
+        max_th_hyp = math.acos(-1.0 / e_hyp) - 0.16
+        conic_group.append(
+            f'<polyline points="{conic_poly(e_hyp, max_th_hyp)}" fill="none" stroke="{SLATE}" stroke-width="1.9" stroke-dasharray="4 3"/>'
+        )
+
+        # Perigee burn marker
+        conic_group.append(f'<circle cx="{fx - rp_px:.1f}" cy="{fy}" r="3.8" fill="{ORANGE}"/>')
+        conic_group.append("</g>")
+        els.extend(conic_group)
+
+        # Crisp non-overlapping trajectory labels inside left box
+        els.append(txt(54, 192, "近地点", 10.5, ORANGE, "middle", weight="700", halo=True))
+        els.append(txt(92, 266, "7.91 圆轨(e=0)", 10.6, BLUE, "middle", weight="600", halo=True))
+        els.append(txt(166, 178, "9.50 椭圆", 10.8, GREEN, "start", weight="600", halo=True))
+        els.append(txt(222, 206, "≈10.9 奔月大椭圆(e<1)", 10.8, PURPLE, "start", weight="600", halo=True))
+        els.append(txt(214, 136, "11.18 抛物线逃逸(e=1)", 10.8, ORANGE, "start", weight="700", halo=True))
+        els.append(txt(168, 111, "12.50 双曲线逃逸(e>1)", 10.8, SLATE, "start", weight="600", halo=True))
+        els.append(txt(32, 366, "注：真实月地距约 60 R_E，紫色奔月椭圆横向已压缩示意闭合端。", 10.5, MUTED))
+
+        # Right Panel: Gravitational Potential Well U(r)/m = -GM_E / r & Energy Ladder
+        els.append(card(396, 62, 344, 322))
+        els.append(txt(412, 84, "② 引力势能井与比机械能分水岭（MJ/kg）", 12.6, INK, weight="600"))
+
+        # Axes mapping: r/R_E in [1.0, 9.0] -> x in [456, 718]; E in [-66, +20] -> y in [326, 106]
+        x0, x1 = 456.0, 718.0
+        y_bot, y_top = 326.0, 106.0
+        e_min, e_max = -66.0, 20.0
+
+        def map_r(r_ratio):
+            return x0 + (r_ratio - 1.0) / 8.0 * (x1 - x0)
+
+        def map_e(e_val):
+            return y_bot - (e_val - e_min) / (e_max - e_min) * (y_bot - y_top)
+
+        y_zero = map_e(0.0)
+        # Shaded bound well region below E = 0
+        well_pts = []
+        for i in range(81):
+            rr = 1.0 + 8.0 * i / 80.0
+            u_mj = -GM_E / (R_EQ * rr)  # km^2/s^2 == MJ/kg
+            well_pts.append((map_r(rr), map_e(u_mj)))
+        fill_d = (
+            f"M {x0:.1f},{y_zero:.1f} "
+            + " ".join(f"L {px:.1f},{py:.1f}" for px, py in well_pts)
+            + f" L {x1:.1f},{y_zero:.1f} Z"
+        )
+        els.append(f'<path d="{fill_d}" fill="{BLUE_SOFT}" opacity="0.55"/>')
+        els.append(
+            f'<polyline points="{" ".join(f"{px:.1f},{py:.1f}" for px, py in well_pts)}" '
+            f'fill="none" stroke="{BLUE}" stroke-width="2.2"/>'
+        )
+
+        # Left vertical wall r = 1 R_E & ticks
+        els.append(f'<line x1="{x0}" y1="{y_top}" x2="{x0}" y2="{y_bot}" stroke="#94a3b8" stroke-width="1.3"/>')
+        for ev, lbl in ((15.6, "+16"), (0.0, "0"), (-31.25, "-31.2"), (-62.49, "-62.5")):
+            yy = map_e(ev)
+            els.append(f'<line x1="{x0 - 4}" y1="{yy:.1f}" x2="{x0}" y2="{yy:.1f}" stroke="#94a3b8" stroke-width="1.2"/>')
+            els.append(txt(x0 - 7, yy + 3.5, lbl, 10.5, MUTED, "end"))
+
+        # Energy rungs
+        rungs = [
+            (+15.6, x1, SLATE, "4 3", "12.5 km/s：E > 0（双曲逃逸）", -5, x0 + 8),
+            (0.0, x1, ORANGE, None, "v₂ = 11.18：E = 0（抛物线逃逸门槛）", -5, x0 + 8),
+            (-2.1, x1 - 14, PURPLE, "5 3", "≈10.9 奔月：E ≈ −1 MJ/kg（仍束缚！）", 12, x0 + 8),
+            (-17.4, map_r(62.49 / 17.4), GREEN, None, "9.50 椭圆：E = −17.4", -4, x0 + 8),
+            (-31.25, map_r(2.0), BLUE, None, "v₁ = 7.91 圆轨：E = −31.2（半井深）", 4, map_r(2.0) + 6),
+        ]
+        for ev, x_end, col, dash, lbl, dy_txt, tx in rungs:
+            yy = map_e(ev)
+            d_attr = f' stroke-dasharray="{dash}"' if dash else ""
+            els.append(f'<line x1="{x0}" y1="{yy:.1f}" x2="{x_end:.1f}" y2="{yy:.1f}" stroke="{col}" stroke-width="1.7"{d_attr}/>')
+            els.append(txt(tx, yy + dy_txt, lbl, 10.5, col, weight="600", halo=True))
+
+        els.append(txt(536, 314, "地表井底 U(R_E) = −62.5 MJ/kg", 10.6, BLUE, weight="600", halo=True))
+        els.append(card(412, 336, 312, 36, rx=6, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(568, 358, "圆轨动能 31.2 抵消半口井；逃逸需 62.5 ⇒ v₂ = √2 v₁", 11.0, ORANGE, "middle", weight="700"))
+
+        svg = figure(
+            404,
+            "第一与第二宇宙速度的圆锥曲线轨道族及引力势能井",
+            "左图精确绘制7.91圆轨、9.50椭圆、10.9奔月椭圆、11.18抛物线与12.50双曲线；右图在U(r)=-GM/r引力井中标出对应比机械能台阶，展示动能翻倍对应速度乘根号2。",
+            els,
+            extra_defs=clip_def,
+        )
+        write_svg(SUBDIR, "conic-velocity-ladder.svg", svg)
+
+    # ==================================================================
+    # SVG 3: High vs Low Orbit Speed-Energy Paradox
+    # ==================================================================
+    def build_speed_energy_paradox():
+        els = header(
+            "高低轨悖论：为什么飞得越高的卫星走得越慢，发上去却反而越费燃料？",
+            "关键是拆开两本账：① 在轨巡航速度 v_orb = √(GM/r) 随高度下降；② 入轨总能量增量 ΔE 随高度飙升",
+        )
+
+        u_surf = -GM_E / R_EQ  # -62.495 MJ/kg
+        cases = [
+            ("近地空间站 LEO", "400 km", 400.0, BLUE, BLUE_SOFT),
+            ("北斗中圆轨 MEO", "21,528 km", 21528.0, GREEN, GREEN_SOFT),
+            ("静止卫星 GEO", "35,786 km", h_geo, ORANGE, ORANGE_SOFT),
+        ]
+
+        # Left Panel: v_orb(h) curve + 3 orbit callouts
+        els.append(card(20, 62, 352, 314))
+        els.append(txt(36, 84, "① 在轨运行速度 v_orb（越高引力越弱，越慢）", 12.6, INK, weight="600"))
+
+        ox, oy, pw, ph = 66.0, 294.0, 282.0, 178.0
+        h_max = 40000.0
+        v_max = 8.5
+
+        for yv in (2, 4, 6, 8):
+            py = oy - (yv / v_max) * ph
+            els.append(f'<line x1="{ox}" y1="{py:.1f}" x2="{ox + pw}" y2="{py:.1f}" stroke="{SLATE_SOFT}" stroke-width="1"/>')
+            els.append(txt(ox - 6, py + 3.5, f"{yv}", 10.5, MUTED, "end"))
+        els.append(f'<path d="M{ox},{oy - ph} V{oy} H{ox + pw}" fill="none" stroke="#94a3b8" stroke-width="1.3"/>')
+        els.append(txt(ox - 8, oy - ph - 6, "km/s", 10.5, MUTED, "end"))
+
+        for hv, hlbl in ((0, "0"), (10000, "1万"), (20000, "2万"), (30000, "3万"), (40000, "4万 km")):
+            px = ox + (hv / h_max) * pw
+            els.append(txt(px, oy + 15, hlbl, 10.5, MUTED, "middle"))
+
+        # Exact curve v_orb(h)
+        curve_pts = []
+        for i in range(101):
+            hh = h_max * i / 100.0
+            vv = math.sqrt(GM_E / (R_EQ + hh))
+            curve_pts.append(f"{ox + (hh / h_max) * pw:.1f},{oy - (vv / v_max) * ph:.1f}")
+        els.append(f'<polyline points="{" ".join(curve_pts)}" fill="none" stroke="{BLUE}" stroke-width="2.3"/>')
+
+        # Mark the 3 orbits (+ GPS note) with clean separation
+        label_specs = [
+            (10, -4, "start", "空间站"),
+            (-4, -13, "end", "北斗"),
+            (22, -11, "end", "静止轨"),
+        ]
+        for (name, h_str, hh, col, _), (dx, dy, anc, short_n) in zip(cases, label_specs):
+            vv = math.sqrt(GM_E / (R_EQ + hh))
+            px = ox + (hh / h_max) * pw
+            py = oy - (vv / v_max) * ph
+            els.append(f'<line x1="{px:.1f}" y1="{py:.1f}" x2="{px:.1f}" y2="{oy}" stroke="{col}" stroke-width="1.2" stroke-dasharray="3 3"/>')
+            els.append(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="4.5" fill="{col}"/>')
+            els.append(txt(px + dx, py + dy, f"{short_n} {vv:.2f} km/s", 10.8, col, anc, weight="700", halo=True))
+
+        # Also subtle dot for GPS 20,200 km (3.87 km/s)
+        v_gps = math.sqrt(GM_E / (R_EQ + 20200.0))
+        gx = ox + (20200.0 / h_max) * pw
+        gy = oy - (v_gps / v_max) * ph
+        els.append(f'<circle cx="{gx:.1f}" cy="{gy:.1f}" r="3.2" fill="{PURPLE}"/>')
+        els.append(txt(gx - 8, gy + 19, f"GPS(20,200km): {v_gps:.2f}", 10.5, PURPLE, "end", halo=True))
+
+        els.append(pill(36, 322, "GMm/r² = mv²/r ⇒ v_orb = √(GM/r)：轨道越高走得越慢", fg=BLUE, bg=BLUE_SOFT, w=320, h=22, size=10.8))
+        els.append(txt(36, 362, "周期对比：空间站 1.54h · 北斗 12.9h · 静止轨 23h56m04s", 10.5, MUTED))
+
+        # Right Panel: Stacked Energy Ledger (Potential climb dU + Orbital Kinetic K)
+        els.append(card(388, 62, 352, 314))
+        els.append(txt(404, 84, "② 地面送每千克卫星入轨的能量账（MJ/kg）", 12.6, INK, weight="600"))
+
+        # Legend
+        els.append(f'<rect x="404" y="96" width="11" height="11" rx="2" fill="{ORANGE}"/>')
+        els.append(txt(420, 106, "爬高势能增量 ΔU", 10.8, BODY))
+        els.append(f'<rect x="536" y="96" width="11" height="11" rx="2" fill="{BLUE}"/>')
+        els.append(txt(552, 106, "在轨动能 K = ½v²", 10.8, BODY))
+
+        bar_x = 404.0
+        bar_max_w = 312.0
+        e_scale_max = 64.0  # MJ/kg
+
+        for idx, (name, h_str, hh, col, bg_s) in enumerate(cases):
+            rr = R_EQ + hh
+            u_orb = -GM_E / rr
+            du = u_orb - u_surf            # Potential energy gained lifting from R_EQ to r
+            k_orb = 0.5 * GM_E / rr        # Kinetic energy in circular orbit
+            de_tot = du + k_orb            # Total energy added from rest on non-rotating Earth
+            assert abs((u_orb + k_orb) - (-GM_E / (2.0 * rr))) < 1e-9
+
+            ry = 122 + idx * 66
+            els.append(txt(bar_x, ry + 12, f"{name}（{h_str}）", 11.4, INK, weight="600"))
+            els.append(txt(bar_x + bar_max_w + 4, ry + 12, f"总计 +{de_tot:.1f} MJ/kg", 11.2, col, "end", weight="700"))
+
+            w_du = (du / e_scale_max) * bar_max_w
+            w_k = (k_orb / e_scale_max) * bar_max_w
+            # Background track
+            els.append(f'<rect x="{bar_x}" y="{ry + 19}" width="{bar_max_w}" height="22" rx="5" fill="{SLATE_SOFT}"/>')
+            # Potential ΔU bar (left)
+            els.append(f'<rect x="{bar_x}" y="{ry + 19}" width="{w_du:.1f}" height="22" rx="4" fill="{ORANGE}" opacity="0.88"/>')
+            # Kinetic K bar (right)
+            els.append(f'<rect x="{bar_x + w_du:.1f}" y="{ry + 19}" width="{w_k:.1f}" height="22" rx="4" fill="{BLUE}" opacity="0.88"/>')
+
+            pct_u = round(100.0 * du / de_tot)
+            pct_k = 100 - pct_u
+            els.append(
+                txt(
+                    bar_x,
+                    ry + 55,
+                    f"爬高 {du:.1f} ({pct_u}%) + 动能 {k_orb:.1f} ({pct_k}%) → 在轨机械能 {u_orb + k_orb:.1f}",
+                    10.5,
+                    MUTED,
+                )
+            )
+
+        els.append(pill(404, 322, "总机械能 E = −GMm/(2r)：越高动能越少，但爬井总账越贵！", fg=ORANGE, bg=ORANGE_SOFT, w=320, h=22, size=10.6))
+        els.append(txt(404, 362, "注：以无自转地表静止（−62.5 MJ/kg）为基准，未计大气与重力损耗。", 10.5, MUTED))
+
+        svg = figure(
+            396,
+            "卫星高低轨巡航速度与发射总能量悖论对比图",
+            "左图展示400km空间站(7.67 km/s)、21528km北斗(3.78 km/s)与35786km静止卫星(3.07 km/s)随高度变慢；右图分解爬高势能与在轨动能，展示总注入能量从33.1升至57.8 MJ/kg。",
+            els,
+        )
+        write_svg(SUBDIR, "speed-energy-paradox.svg", svg)
+
+    # ==================================================================
+    # SVG 4: Gravity Turn + 2-Burn Hohmann GEO Transfer (with CSS trace)
+    # ==================================================================
+    def build_hohmann_transfer():
+        anim_css = """
+      .trace-hohmann {
+        stroke-dasharray: 290;
+        stroke-dashoffset: 290;
+        animation: hohmannDraw 2.4s ease-out 0.15s 1 forwards;
+      }
+      @keyframes hohmannDraw {
+        to { stroke-dashoffset: 0; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .trace-hohmann { animation: none; stroke-dashoffset: 0; }
+      }"""
+
+        els = header(
+            "火箭怎么把卫星送上 35,786 km 静止轨道？程序转弯借自转 + 霍曼两次变轨",
+            "先垂直穿大气再向东拐入 200 km 停泊圆轨，随后在近地点、远地点各点一把火完成“搭桥圆化”",
+        )
+
+        # Left Panel: 2-burn Hohmann Transfer Ellipse
+        els.append(card(20, 62, 384, 330))
+        els.append(txt(36, 84, "① 霍曼转移椭圆：两次点火接力（200 km → GEO）", 12.6, INK, weight="600"))
+
+        fx, fy = 204.0, 224.0
+        r_geo_px = 88.0
+        r_leo_px = 24.0  # Inner ring enlarged slightly so 200 km parking orbit is distinct from Earth
+
+        # Outer GEO circle
+        els.append(
+            f'<circle cx="{fx}" cy="{fy}" r="{r_geo_px}" fill="none" stroke="{GREEN}" '
+            f'stroke-width="1.8" stroke-dasharray="5 3"/>'
+        )
+        # Inner LEO parking circle + Earth
+        els.append(f'<circle cx="{fx}" cy="{fy}" r="{r_leo_px}" fill="none" stroke="{BLUE}" stroke-width="1.8"/>')
+        els.append(f'<circle cx="{fx}" cy="{fy}" r="16" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.4"/>')
+        els.append(txt(fx, fy + 4, "地球", 10.5, BLUE, "middle", weight="700"))
+
+        # Transfer ellipse: perigee at (fx - r_leo_px, fy), apogee at (fx + r_geo_px, fy)
+        a_px = 0.5 * (r_leo_px + r_geo_px)
+        c_px = a_px - r_leo_px
+        b_px = math.sqrt(a_px * a_px - c_px * c_px)
+        ecx = fx + c_px
+
+        # Lower return half (if 2nd burn fails -> falls back to LEO!)
+        lower_pts = " ".join(
+            f"{ecx + a_px * math.cos(math.pi * i / 60):.1f},{fy + b_px * math.sin(math.pi * i / 60):.1f}"
+            for i in range(61)
+        )
+        els.append(f'<polyline points="{lower_pts}" fill="none" stroke="{HAIRLINE}" stroke-width="1.5" stroke-dasharray="4 4"/>')
+
+        # Upper active transfer half (perigee pi -> apogee 0)
+        upper_pts = " ".join(
+            f"{ecx + a_px * math.cos(math.pi * (1.0 - i / 70.0)):.1f},{fy - b_px * math.sin(math.pi * (1.0 - i / 70.0)):.1f}"
+            for i in range(71)
+        )
+        els.append(f'<polyline points="{upper_pts}" fill="none" stroke="{ORANGE}" stroke-opacity="0.45" stroke-width="2.0"/>')
+        els.append(
+            f'<polyline class="trace-hohmann" points="{upper_pts}" fill="none" stroke="{ORANGE}" '
+            f'stroke-width="2.6" marker-end="url(#arr-orange)"/>'
+        )
+
+        # Burn 1 (Perigee) & Burn 2 (Apogee) markers + tangent velocity vectors
+        px1, py1 = fx - r_leo_px, fy
+        px2, py2 = fx + r_geo_px, fy
+        els.append(f'<line x1="{px1}" y1="{py1}" x2="{px1}" y2="{py1 - 28}" stroke="{ORANGE}" stroke-width="2.1" marker-end="url(#arr-orange)"/>')
+        els.append(f'<line x1="{px2}" y1="{py2}" x2="{px2}" y2="{py2 + 28}" stroke="{GREEN}" stroke-width="2.1" marker-end="url(#arr-green)"/>')
+        els.append(step_badge(px1 - 13, py1 + 2, 1, fg=ORANGE, bg=ORANGE_SOFT, r=8.8))
+        els.append(step_badge(px2 + 13, py2 - 2, 2, fg=GREEN, bg=GREEN_SOFT, r=8.8))
+
+        # Labels cleanly outside the 88px GEO circle (x=116..292)
+        els.append(txt(30, 198, "近地点点火①", 10.8, ORANGE, weight="700", halo=True))
+        els.append(txt(30, 214, "Δv₁ = +2.46", 10.8, ORANGE, weight="700", halo=True))
+        els.append(txt(30, 230, "7.78→10.24", 10.5, BODY, halo=True))
+
+        els.append(txt(236, 166, "爬升 5小时16分", 10.6, ORANGE, "middle", weight="600", halo=True))
+        els.append(txt(204, 122, "GEO 静止圆轨：35,786 km（v = 3.07 km/s）", 10.8, GREEN, "middle", weight="600", halo=True))
+
+        els.append(txt(396, 190, "到顶剩 1.60", 10.5, BODY, "end", halo=True))
+        els.append(txt(396, 206, "远地点点火②", 10.8, GREEN, "end", weight="700", halo=True))
+        els.append(txt(396, 222, "Δv₂ = +1.48", 10.8, GREEN, "end", weight="700", halo=True))
+        els.append(txt(396, 238, "圆化至 3.07", 10.5, GREEN, "end", halo=True))
+
+        els.append(txt(204, 329, "若不点第②把火：卫星会沿灰虚线掉回 200 km 近地点", 10.5, MUTED, "middle", halo=True))
+        els.append(pill(34, 354, "共面变轨总增量：Δv₁ + Δv₂ = 2.46 + 1.48 = 3.93 km/s", fg=BLUE, bg=BLUE_SOFT, w=356, h=22, size=10.8))
+
+        # Right Panel: Gravity Turn + Eastward Rotation Boost by Latitude
+        els.append(card(416, 62, 324, 330))
+        els.append(txt(432, 84, "② 升空姿态与向东借自转“顺风车”", 12.6, INK, weight="600"))
+
+        # Mini Gravity Turn box
+        els.append(card(432, 96, 292, 108, rx=7, fill="#f8fafc", stroke=BORDER))
+        els.append(f'<rect x="433" y="168" width="290" height="24" fill="{BLUE_SOFT}" opacity="0.6"/>')
+        els.append(f'<line x1="433" y1="192" x2="723" y2="192" stroke="{SLATE}" stroke-width="1.4"/>')
+        els.append(txt(714, 184, "底部稠密大气层", 10.5, BLUE, "end"))
+        # Gravity turn curve
+        els.append(
+            f'<path d="M 462,192 C 462,154 482,126 688,122" fill="none" stroke="{ORANGE}" '
+            f'stroke-width="2.4" marker-end="url(#arr-orange)"/>'
+        )
+        els.append(f'<circle cx="462" cy="192" r="3.5" fill="{ORANGE}"/>')
+        els.append(f'<circle cx="490" cy="146" r="3.5" fill="{ORANGE}"/>')
+        els.append(txt(478, 160, "① 先竖飞快穿大气", 10.6, INK, weight="600", halo=True))
+        els.append(txt(552, 114, "② 向东程序转弯水平入轨", 10.6, ORANGE, weight="700", halo=True))
+        els.append(txt(552, 140, "把推力全攒成水平环绕速度", 10.5, MUTED))
+
+        # Latitude rotation speed bars: v_rot = 465.1 * cos(lat) m/s
+        els.append(txt(432, 224, "地球自转线速度 v = 465 cos φ（越近赤道越快）", 11.2, INK, weight="600"))
+        v_eq_ms = 2.0 * math.pi * R_EQ / T_SID * 1000.0
+        sites = [
+            ("赤道理想点 (0°)", 0.0, BLUE),
+            ("海南文昌 (19.6°N)", 19.614, ORANGE),
+            ("四川西昌 (28.2°N)", 28.246, GREEN),
+            ("甘肃酒泉 (41.0°N)", 40.960, SLATE),
+        ]
+        for idx, (sname, lat_deg, col) in enumerate(sites):
+            v_ms = v_eq_ms * math.cos(math.radians(lat_deg))
+            ry = 236 + idx * 30
+            bw = (v_ms / 500.0) * 112.0
+            els.append(txt(432, ry + 14, sname, 10.7, BODY, weight="600" if idx == 1 else None))
+            els.append(f'<rect x="550" y="{ry + 3}" width="114" height="14" rx="4" fill="{SLATE_SOFT}"/>')
+            els.append(f'<rect x="550" y="{ry + 3}" width="{bw:.1f}" height="14" rx="4" fill="{col}" opacity="0.88"/>')
+            els.append(txt(722, ry + 14, f"{v_ms:.0f} m/s", 10.6, col, "end", weight="700"))
+
+        els.append(txt(432, 372, "文昌不仅多借自转，且离赤道面近、去静止轨省倾角燃料！", 10.5, ORANGE, weight="600"))
+
+        svg = figure(
+            412,
+            "火箭程序转弯借地球自转与霍曼转移两次变轨飞向地球静止轨道",
+            "左图按精确二体速度绘出200km停泊轨经Δv1=2.46 km/s进入转移椭圆、5小时16分后在35786km远地点经Δv2=1.48 km/s圆化；右图展示程序转弯与文昌等发射场纬度自转助推。",
+            els,
+            extra_css=anim_css,
+        )
+        write_svg(SUBDIR, "hohmann-geo-transfer.svg", svg)
+
+    # ==================================================================
+    # SVG 5: Third Cosmic Velocity (Heliocentric Tailwind + Pythagorean Energy)
+    # ==================================================================
+    def build_third_cosmic():
+        els = header(
+            "第三宇宙速度为什么只要 16.7 km/s，而不是逃离太阳所需的 42.1 km/s？",
+            "先借地球公转 29.78 km/s 的顺风车，再用机械能守恒把“出井门槛 11.18”和“出井余速 12.34”勾股合成",
+        )
+
+        # Left Panel: Sun escape 42.12 vs Earth orbital tailwind 29.78
+        els.append(card(20, 62, 352, 308))
+        els.append(txt(36, 84, "① 太阳系账本：地球自带 29.78 km/s 顺风车", 12.6, INK, weight="600"))
+
+        # Schematic Sun & 1 AU Earth orbit arc
+        els.append(f'<circle cx="62" cy="186" r="19" fill="#fef3c7" stroke="#d97706" stroke-width="1.6"/>')
+        els.append(txt(62, 190, "太阳", 10.8, "#b45309", "middle", weight="700"))
+        els.append(f'<line x1="81" y1="186" x2="146" y2="186" stroke="{HAIRLINE}" stroke-width="1.2" stroke-dasharray="3 3"/>')
+        els.append(txt(113, 179, "1 AU", 10.5, MUTED, "middle"))
+
+        # Earth orbit arc passing through (156, 186) + velocity arrows
+        els.append(f'<path d="M 136,220 A 118,118 0 0 0 136,104" fill="none" stroke="{BLUE_LINE}" stroke-width="1.5" stroke-dasharray="4 3"/>')
+        els.append(f'<line x1="156" y1="177" x2="156" y2="128" stroke="{BLUE}" stroke-width="2.3" marker-end="url(#arr-blue)"/>')
+        els.append(f'<line x1="156" y1="126" x2="156" y2="102" stroke="{GREEN}" stroke-width="2.3" marker-end="url(#arr-green)"/>')
+        els.append(f'<circle cx="156" cy="186" r="9" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.6"/>')
+        els.append(txt(156, 210, "地球", 10.8, BLUE, "middle", weight="600"))
+        els.append(txt(170, 156, "公转 29.78 km/s", 10.6, BLUE, weight="600"))
+        els.append(txt(170, 118, "只需补 v_∞ = 12.34 km/s", 10.6, GREEN, weight="700"))
+        els.append(txt(170, 134, "合速度即达 42.12 逃离太阳！", 10.5, BODY))
+
+        # Horizontal velocity comparison bars to scale (max 42.12 km/s -> 296 px)
+        bx0 = 40.0
+        sc_v = 296.0 / v_sun_esc
+        w_sun = v_sun_esc * sc_v
+        w_e = v_earth * sc_v
+        w_inf = v_inf * sc_v
+
+        # Bar 1: Target 42.12 km/s
+        els.append(txt(bx0, 240, "1 AU 处挣脱太阳引力门槛：√2 v_地 = 42.12 km/s", 10.8, INK, weight="600"))
+        els.append(f'<rect x="{bx0}" y="246" width="{w_sun:.1f}" height="16" rx="4" fill="{ORANGE_SOFT}" stroke="{ORANGE}" stroke-width="1.2"/>')
+        els.append(txt(bx0 + w_sun * 0.5, 258, "42.12 km/s（从静止硬逃太阳所需）", 10.5, ORANGE, "middle", weight="600"))
+
+        # Bar 2: Earth's 29.78 + needed excess 12.34
+        els.append(txt(bx0, 280, "顺着地球公转方向发射：白借 29.78 + 自备余速 12.34", 10.8, INK, weight="600"))
+        els.append(f'<rect x="{bx0}" y="286" width="{w_e:.1f}" height="16" rx="4" fill="{BLUE}"/>')
+        els.append(f'<rect x="{bx0 + w_e:.1f}" y="286" width="{w_inf:.1f}" height="16" rx="4" fill="{GREEN}"/>')
+        els.append(txt(bx0 + w_e * 0.5, 298, "地球公转 29.78", 10.5, "#ffffff", "middle", weight="600"))
+        els.append(txt(bx0 + w_e + w_inf * 0.5, 298, "+12.34", 10.5, "#ffffff", "middle", weight="700"))
+
+        # Slingshot note card
+        els.append(card(36, 314, 320, 42, rx=6, fill=PURPLE_SOFT, stroke=PURPLE))
+        els.append(txt(196, 331, "旅行者 1/2 号省油秘籍：借木星“引力弹弓”再蹭公转速度，", 10.5, PURPLE, "middle", weight="600"))
+        els.append(txt(196, 347, "无需地面硬烧满 16.65 km/s 就踏上了飞出太阳系的单程票！", 10.5, PURPLE, "middle"))
+
+        # Right Panel: Exact Energy Pythagorean Triangle v3 = sqrt(v2^2 + v_inf^2)
+        els.append(card(388, 62, 352, 308))
+        els.append(txt(404, 84, "② 出地心引力井：动能相加 ⇒ 速度走“勾股斜边”！", 12.6, INK, weight="600"))
+
+        # Right triangle with legs proportional to v2 = 11.18 and v_inf = 12.34
+        # Scale: 12.5 px per km/s -> leg_x = 139.8 px, leg_y = 154.2 px
+        tx0, ty0 = 446.0, 268.0
+        lx = v2 * 12.2       # ~136.4 px
+        ly = v_inf * 11.2    # ~138.2 px
+        tx1, ty1 = tx0 + lx, ty0
+        tx2, ty2 = tx1, ty0 - ly
+
+        # Shaded triangle + right-angle square
+        els.append(f'<polygon points="{tx0:.1f},{ty0:.1f} {tx1:.1f},{ty1:.1f} {tx2:.1f},{ty2:.1f}" fill="{BLUE_SOFT}" opacity="0.55"/>')
+        els.append(f'<polyline points="{tx1 - 11:.1f},{ty1:.1f} {tx1 - 11:.1f},{ty1 - 11:.1f} {tx1:.1f},{ty1 - 11:.1f}" fill="none" stroke="{SLATE}" stroke-width="1.2"/>')
+
+        # Leg 1 (bottom): v2 = 11.18
+        els.append(f'<line x1="{tx0:.1f}" y1="{ty0:.1f}" x2="{tx1:.1f}" y2="{ty1:.1f}" stroke="{ORANGE}" stroke-width="2.4"/>')
+        # Leg 2 (right vertical): v_inf = 12.34
+        els.append(f'<line x1="{tx1:.1f}" y1="{ty1:.1f}" x2="{tx2:.1f}" y2="{ty2:.1f}" stroke="{GREEN}" stroke-width="2.4"/>')
+        # Hypotenuse: v3 = 16.65
+        els.append(f'<line x1="{tx0:.1f}" y1="{ty0:.1f}" x2="{tx2:.1f}" y2="{ty2:.1f}" stroke="{BLUE}" stroke-width="3.0"/>')
+
+        els.append(txt((tx0 + tx1) / 2, ty0 + 18, "v₂ = 11.18 km/s（填平地球井）", 10.8, ORANGE, "middle", weight="700"))
+        els.append(txt(tx1 + 8, (ty1 + ty2) / 2 - 4, "出井对地余速", 10.8, GREEN, weight="600"))
+        els.append(txt(tx1 + 8, (ty1 + ty2) / 2 + 13, "v_∞ = 12.34 km/s", 10.8, GREEN, weight="700"))
+
+        els.append(txt(tx0 + 34, ty0 - 92, "v₃ = 16.65 km/s", 11.8, BLUE, "middle", weight="700", halo=True))
+        els.append(txt(tx0 + 34, ty0 - 76, "(教科书约 16.7)", 10.5, BLUE, "middle", halo=True))
+
+        # Equation & misconception comparison box
+        els.append(card(404, 296, 320, 60, rx=6, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(564, 315, "守恒律：½v₃² − ½v₂² = ½v_∞² ⇒ v₃ = √(v₂² + v_∞²)", 10.6, INK, "middle", weight="600"))
+        els.append(txt(564, 334, "误区对比：不是 11.18 + 12.34 = 23.52！井底省下近 7 km/s", 10.5, GREEN, "middle", weight="700"))
+        els.append(txt(564, 350, "（高速井底点火动能收益倍增——即“奥伯特效应”）", 10.5, MUTED, "middle"))
+
+        svg = figure(
+            388,
+            "第三宇宙速度的公转顺风车与能量勾股合成原理",
+            "左图对比1AU太阳逃逸速度42.12 km/s与地球公转29.78 km/s，得出对地双曲余速v_inf=12.34 km/s；右图用直角三角形展示v3=sqrt(11.18^2+12.34^2)=16.65 km/s。",
+            els,
+        )
+        write_svg(SUBDIR, "third-cosmic-vector.svg", svg)
+
+    # ==================================================================
+    # SVG 6: Tsiolkovsky Rocket Equation & Multi-Stage Comparison
+    # ==================================================================
+    def build_rocket_staging():
+        els = header(
+            "齐奥尔科夫斯基公式与多级火箭：为什么火箭 90% 是燃料，还非得边飞边扔壳？",
+            "Δv = v_e ln(m₀/m_f) 意味着质量比随目标速度呈指数爆炸；半途扔掉空油箱，才能打破单级死胡同",
+        )
+
+        # Left Panel: Exponential Mass Ratio Wall
+        els.append(card(20, 62, 360, 314))
+        els.append(txt(36, 84, "① 理想火箭方程曲线：Δv = v_e ln(m₀ / m_f)", 12.6, INK, weight="600"))
+
+        ox, oy, pw, ph = 66.0, 294.0, 290.0, 178.0
+        mr_max = 22.0
+        dv_max = 13.0
+
+        for yv in (3, 6, 9, 12):
+            py = oy - (yv / dv_max) * ph
+            els.append(f'<line x1="{ox}" y1="{py:.1f}" x2="{ox + pw}" y2="{py:.1f}" stroke="{SLATE_SOFT}" stroke-width="1"/>')
+            els.append(txt(ox - 6, py + 3.5, f"{yv}", 10.5, MUTED, "end"))
+        els.append(f'<path d="M{ox},{oy - ph} V{oy} H{ox + pw}" fill="none" stroke="#94a3b8" stroke-width="1.3"/>')
+        els.append(txt(ox - 6, oy - ph - 6, "Δv(km/s)", 10.5, MUTED, "end"))
+
+        for xv, xlbl in ((1, "1"), (5, "5(80%)"), (10, "10(90%)"), (15, "15"), (20, "20(95%燃料)")):
+            px = ox + ((xv - 1.0) / (mr_max - 1.0)) * pw
+            els.append(txt(px, oy + 15, xlbl, 10.5, MUTED, "middle"))
+
+        # LEO practical budget line (~9.3 km/s including ~1.5 km/s gravity & drag loss)
+        y_leo_budget = oy - (9.3 / dv_max) * ph
+        els.append(
+            f'<line x1="{ox}" y1="{y_leo_budget:.1f}" x2="{ox + pw}" y2="{y_leo_budget:.1f}" '
+            f'stroke="{GREEN}" stroke-width="1.5" stroke-dasharray="5 3"/>'
+        )
+        els.append(txt(ox + pw - 4, y_leo_budget - 5, "近地入轨实战预算 ≈ 9.3 km/s", 10.5, GREEN, "end", weight="700", halo=True))
+
+        # Plot hydrolox (ve=4.4) and kerolox (ve=3.1)
+        for ve_val, col, lbl, lx, ly in (
+            (ve_hydro, BLUE, "液氧液氢 (v_e≈4.4)", ox + 62, 128),
+            (ve_kero, ORANGE, "液氧煤油 (v_e≈3.1)", ox + 150, 226),
+        ):
+            pts = []
+            for i in range(101):
+                mr = 1.0 + (mr_max - 1.0) * i / 100.0
+                dv = ve_val * math.log(mr)
+                if dv <= dv_max:
+                    pts.append(f"{ox + ((mr - 1.0) / (mr_max - 1.0)) * pw:.1f},{oy - (dv / dv_max) * ph:.1f}")
+            els.append(f'<polyline points="{" ".join(pts)}" fill="none" stroke="{col}" stroke-width="2.2"/>')
+            els.append(txt(lx, ly, lbl, 10.8, col, weight="700", halo=True))
+
+        # Highlight kerolox crossing 9.3 km/s at MR = e^(9.3/3.1) = e^3 = 20.09!
+        mr_cross = math.exp(9.3 / ve_kero)
+        cx_cross = ox + ((mr_cross - 1.0) / (mr_max - 1.0)) * pw
+        els.append(f'<circle cx="{cx_cross:.1f}" cy="{y_leo_budget:.1f}" r="4.2" fill="{ORANGE}"/>')
+        els.append(txt(cx_cross - 6, y_leo_budget + 16, "m₀/m_f ≈ 20.1", 10.6, ORANGE, "end", weight="700", halo=True))
+
+        els.append(pill(36, 322, "横轴 m₀/m_f = 起飞总重÷燃尽干重：对数增长慢 ⇔ 燃料指数暴涨", fg=ORANGE, bg=ORANGE_SOFT, w=328, h=22, size=10.5))
+        els.append(txt(36, 362, "实战 Δv ≈ 7.8 轨道速度 + 1.5 重力与空气阻力损耗 ≈ 9.3 km/s", 10.5, MUTED))
+
+        # Right Panel: Same 100t rocket, 2t satellite, ve=3.1, 10% tank structure -> 1 vs 2 vs 3 stages
+        els.append(card(392, 62, 348, 314))
+        els.append(txt(408, 84, "② 同样 100 吨起飞送 2 吨卫星：为什么要分级？", 12.6, INK, weight="600"))
+        els.append(txt(408, 101, "统一条件：v_e = 3.1 km/s，壳重占各子级 10%", 10.5, MUTED))
+
+        stage_cases = [
+            ("单级硬飞（不扔空壳）", dv_1stage, "末段死背 9.8t 大空箱 → 差一大截坠海", SLATE, SLATE_SOFT),
+            ("两级接力（扔 8.2t 一级壳）", dv_2stage, "4.15 + 4.99 km/s → 轻装二级跨过入轨线", BLUE, BLUE_SOFT),
+            ("三级接力（连扔两级空壳）", dv_3stage, "3.48 + 3.24 + 3.19 km/s → 轻松入轨有富余", GREEN, GREEN_SOFT),
+        ]
+
+        bx = 408.0
+        bmax = 314.0
+        dv_bar_max = 11.0
+        x_thresh = bx + (9.1 / dv_bar_max) * bmax
+        els.append(txt(x_thresh, 116, "入轨线 ~9.1", 10.5, ORANGE, "middle", weight="700", halo=True))
+
+        for idx, (st_name, dv_val, note_s, col, bg_c) in enumerate(stage_cases):
+            ry = 126 + idx * 64
+            els.append(txt(bx, ry + 12, st_name, 11.3, INK, weight="600"))
+            els.append(txt(bx + bmax, ry + 12, f"Δv = {dv_val:.2f} km/s", 11.3, col, "end", weight="700"))
+            els.append(f'<rect x="{bx}" y="{ry + 18}" width="{bmax}" height="19" rx="5" fill="{SLATE_SOFT}"/>')
+            bw = (dv_val / dv_bar_max) * bmax
+            els.append(f'<rect x="{bx}" y="{ry + 18}" width="{bw:.1f}" height="19" rx="5" fill="{col}" opacity="0.88"/>')
+            els.append(txt(bx, ry + 51, note_s, 10.5, MUTED))
+
+        # Threshold dashed vertical line across bars
+        els.append(f'<line x1="{x_thresh:.1f}" y1="121" x2="{x_thresh:.1f}" y2="296" stroke="{ORANGE}" stroke-width="1.6" stroke-dasharray="4 3"/>')
+
+        els.append(pill(408, 322, "分级本质：烧完一段油就扔一段空罐，不再花燃料加速废铁！", fg=GREEN, bg=GREEN_SOFT, w=316, h=22, size=10.6))
+        els.append(txt(408, 362, "齐奥尔科夫斯基 1903 推导方程，1929 提出“多级火箭列车”构想。", 10.5, MUTED))
+
+        svg = figure(
+            396,
+            "齐奥尔科夫斯基理想火箭方程指数曲线与单级两级三级火箭速度增量对比",
+            "左图绘制液氧煤油(ve=3.1)与液氧液氢(ve=4.4)的Δv对质量比曲线；右图对比同为100吨起飞、2吨载荷、10%结构系数下单级(6.62 km/s)、两级(9.10 km/s)与三级(9.91 km/s)的表现。",
+            els,
+        )
+        write_svg(SUBDIR, "rocket-staging-curve.svg", svg)
+
+    build_newton_cannon()
+    build_conic_ladder()
+    build_speed_energy_paradox()
+    build_hohmann_transfer()
+    build_third_cosmic()
+    build_rocket_staging()

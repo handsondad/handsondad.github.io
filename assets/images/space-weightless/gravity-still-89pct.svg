@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="380" viewBox="0 0 760 380" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">400公里空间站真实高度比例与地球引力平方反比衰减曲线</title>
+<desc id="desc">左图按统一比例绘制6371千米地球弧面与400千米空间站轨道，对应24厘米篮球外仅7.5毫米；右图绘制引力随高度衰减曲线，标出400千米处仍保留地表引力的88.5%，约8.69米每二次方秒。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <clipPath id="earth-limb-clip"><rect x="34" y="118" width="324" height="156" rx="8"/></clipPath>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="379" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">离地面 400 公里有多近？空间站处的地球引力还剩将近九成！</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左图按严格几何比例画出地球弧面与 400 km 轨道；右图按牛顿平方反比律计算引力随高度的真实衰减。</text>
+<rect x="20" y="64" width="352" height="300" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="84" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="38" y="88" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="88" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">真实比例：400 km 只是贴着球皮飞</text>
+<text x="36" y="108" font-size="11.2" fill="#64748b" text-anchor="start">同一把尺：1 像素 = 16.8 km（绝无视觉放大）</text>
+<rect x="34" y="118" width="324" height="156" rx="8" fill="#0f172a"/>
+<circle cx="54" cy="134" r="1.1" fill="#e2e8f0" opacity="0.65"/>
+<circle cx="92" cy="148" r="0.9" fill="#e2e8f0" opacity="0.65"/>
+<circle cx="138" cy="129" r="1.2" fill="#e2e8f0" opacity="0.65"/>
+<circle cx="288" cy="132" r="1.0" fill="#e2e8f0" opacity="0.65"/>
+<circle cx="334" cy="146" r="1.2" fill="#e2e8f0" opacity="0.65"/>
+<circle cx="312" cy="168" r="0.9" fill="#e2e8f0" opacity="0.65"/>
+<circle cx="66" cy="174" r="1.0" fill="#e2e8f0" opacity="0.65"/>
+<g clip-path="url(#earth-limb-clip)">
+<circle cx="196.0" cy="562.0" r="385.96" fill="#38bdf8" fill-opacity="0.22" stroke="#7dd3fc" stroke-width="0.9" stroke-dasharray="3 3"/>
+<circle cx="196.0" cy="562.0" r="403.86" fill="none" stroke="#c25014" stroke-width="1.8" stroke-dasharray="5 4"/>
+<circle cx="196.0" cy="562.0" r="380.00" fill="#1d6fa5" stroke="#93c5fd" stroke-width="1.5"/>
+<circle cx="196.0" cy="562.0" r="370.00" fill="#165a8a" opacity="0.45"/>
+</g>
+<line x1="183.0" y1="158.1" x2="209.0" y2="158.1" stroke="#fbbf24" stroke-width="2.6"/>
+<rect x="191.5" y="154.9" width="9" height="6.4" rx="1.5" fill="#ffffff" stroke="#c25014" stroke-width="1.2"/>
+<line x1="196.0" y1="162.1" x2="196.0" y2="182.0" stroke="#fbbf24" stroke-width="1.4"/>
+<text x="178.0" y="143" font-size="11.2" fill="#fde68a" text-anchor="end" font-weight="600">中国空间站 / ISS</text>
+<line x1="212.0" y1="170.1" x2="232.0" y2="142.0" stroke="#fbbf24" stroke-width="1.1"/>
+<text x="236" y="145" font-size="11.5" fill="#fbbf24" text-anchor="start" font-weight="700">h = 400 km</text>
+<text x="236" y="161" font-size="10.6" fill="#cbd5e1" text-anchor="start">仅地球半径的 6.3%</text>
+<text x="196" y="224" font-size="12.0" fill="#ffffff" text-anchor="middle" font-weight="700">地球平均半径 R_E = 6371 km</text>
+<text x="196" y="245" font-size="11.2" fill="#e0f2fe" text-anchor="middle">轨道距地心 r = 6371 + 400 = 6771 km</text>
+<text x="196" y="264" font-size="10.5" fill="#bae6fd" text-anchor="middle">（浅蓝虚线：100 km 卡门线大气层顶）</text>
+<rect x="34" y="284" width="324" height="66" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="46" y="304" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">把地球缩成直径 24 cm 的标准篮球：</text>
+<text x="46" y="324" font-size="11.8" fill="#1d6fa5" text-anchor="start" font-weight="700">空间站只贴在球皮外 7.5 毫米处飞驰！</text>
+<text x="46" y="342" font-size="10.8" fill="#64748b" text-anchor="start">（对比：月球在 7.24 米外，远出将近 1000 倍）</text>
+<rect x="388" y="64" width="352" height="300" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="84" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="406" y="88" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="424" y="88" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">平方反比律：400 km 处仍有 88.5% 引力</text>
+<text x="404" y="108" font-size="11.2" fill="#64748b" text-anchor="start">g(h) / g(0) = [R_E / (R_E + h)]²，按地心距离 r 计算</text>
+<line x1="438.0" y1="228.0" x2="718.0" y2="228.0" stroke="#e2e8f0" stroke-width="1.0" stroke-dasharray="3 3"/>
+<text x="432.0" y="232.0" font-size="10.5" fill="#64748b" text-anchor="end" class="mono">25%</text>
+<line x1="438.0" y1="194.0" x2="718.0" y2="194.0" stroke="#e2e8f0" stroke-width="1.0" stroke-dasharray="3 3"/>
+<text x="432.0" y="198.0" font-size="10.5" fill="#64748b" text-anchor="end" class="mono">50%</text>
+<line x1="438.0" y1="160.0" x2="718.0" y2="160.0" stroke="#e2e8f0" stroke-width="1.0" stroke-dasharray="3 3"/>
+<text x="432.0" y="164.0" font-size="10.5" fill="#64748b" text-anchor="end" class="mono">75%</text>
+<line x1="438.0" y1="126.0" x2="718.0" y2="126.0" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="432.0" y="130.0" font-size="10.5" fill="#64748b" text-anchor="end" class="mono">100%</text>
+<text x="432.0" y="266.0" font-size="10.5" fill="#64748b" text-anchor="end" class="mono">0%</text>
+<line x1="438.0" y1="126.0" x2="438.0" y2="262.0" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="438.0" y="277.0" font-size="10.5" fill="#64748b" text-anchor="middle" class="mono">0</text>
+<line x1="508.0" y1="126.0" x2="508.0" y2="262.0" stroke="#e2e8f0" stroke-width="1.0" stroke-dasharray="3 3"/>
+<text x="508.0" y="277.0" font-size="10.5" fill="#64748b" text-anchor="middle" class="mono">3000</text>
+<line x1="586.7" y1="126.0" x2="586.7" y2="262.0" stroke="#e2e8f0" stroke-width="1.0" stroke-dasharray="3 3"/>
+<text x="586.7" y="277.0" font-size="10.5" fill="#64748b" text-anchor="middle" class="mono">6371</text>
+<line x1="718.0" y1="126.0" x2="718.0" y2="262.0" stroke="#e2e8f0" stroke-width="1.0" stroke-dasharray="3 3"/>
+<text x="718.0" y="277.0" font-size="10.5" fill="#64748b" text-anchor="middle" class="mono">12000</text>
+<text x="578.0" y="292.0" font-size="10.8" fill="#64748b" text-anchor="middle">离地高度 h（km）</text>
+<line x1="438.0" y1="122.0" x2="438.0" y2="262.0" stroke="#475569" stroke-width="1.3"/>
+<line x1="438.0" y1="262.0" x2="722.0" y2="262.0" stroke="#475569" stroke-width="1.3"/>
+<path d="M438.00,262.00 L438.00,126.00 L440.33,130.17 L442.67,134.15 L445.00,137.96 L447.33,141.59 L449.67,145.07 L452.00,148.40 L454.33,151.59 L456.67,154.65 L459.00,157.58 L461.33,160.40 L463.67,163.10 L466.00,165.70 L468.33,168.19 L470.67,170.59 L473.00,172.90 L475.33,175.12 L477.67,177.26 L480.00,179.32 L482.33,181.31 L484.67,183.22 L487.00,185.07 L489.33,186.86 L491.67,188.58 L494.00,190.24 L496.33,191.85 L498.67,193.41 L501.00,194.91 L503.33,196.37 L505.67,197.78 L508.00,199.14 L510.33,200.46 L512.67,201.74 L515.00,202.98 L517.33,204.18 L519.67,205.35 L522.00,206.48 L524.33,207.57 L526.67,208.64 L529.00,209.67 L531.33,210.68 L533.67,211.65 L536.00,212.60 L538.33,213.52 L540.67,214.42 L543.00,215.29 L545.33,216.14 L547.67,216.96 L550.00,217.76 L552.33,218.55 L554.67,219.31 L557.00,220.05 L559.33,220.77 L561.67,221.47 L564.00,222.16 L566.33,222.83 L568.67,223.48 L571.00,224.11 L573.33,224.73 L575.67,225.34 L578.00,225.93 L580.33,226.51 L582.67,227.07 L585.00,227.62 L587.33,228.15 L589.67,228.68 L592.00,229.19 L594.33,229.69 L596.67,230.18 L599.00,230.66 L601.33,231.12 L603.67,231.58 L606.00,232.03 L608.33,232.46 L610.67,232.89 L613.00,233.31 L615.33,233.72 L617.67,234.12 L620.00,234.51 L622.33,234.90 L624.67,235.27 L627.00,235.64 L629.33,236.00 L631.67,236.35 L634.00,236.70 L636.33,237.04 L638.67,237.37 L641.00,237.70 L643.33,238.02 L645.67,238.33 L648.00,238.64 L650.33,238.94 L652.67,239.23 L655.00,239.52 L657.33,239.81 L659.67,240.08 L662.00,240.36 L664.33,240.63 L666.67,240.89 L669.00,241.15 L671.33,241.40 L673.67,241.65 L676.00,241.90 L678.33,242.14 L680.67,242.37 L683.00,242.61 L685.33,242.83 L687.67,243.06 L690.00,243.28 L692.33,243.49 L694.67,243.71 L697.00,243.91 L699.33,244.12 L701.67,244.32 L704.00,244.52 L706.33,244.72 L708.67,244.91 L711.00,245.10 L713.33,245.28 L715.67,245.46 L718.00,245.64 L718.00,262.00 Z" fill="#1d6fa5" fill-opacity="0.09"/>
+<path d="M438.00,126.00 L440.33,130.17 L442.67,134.15 L445.00,137.96 L447.33,141.59 L449.67,145.07 L452.00,148.40 L454.33,151.59 L456.67,154.65 L459.00,157.58 L461.33,160.40 L463.67,163.10 L466.00,165.70 L468.33,168.19 L470.67,170.59 L473.00,172.90 L475.33,175.12 L477.67,177.26 L480.00,179.32 L482.33,181.31 L484.67,183.22 L487.00,185.07 L489.33,186.86 L491.67,188.58 L494.00,190.24 L496.33,191.85 L498.67,193.41 L501.00,194.91 L503.33,196.37 L505.67,197.78 L508.00,199.14 L510.33,200.46 L512.67,201.74 L515.00,202.98 L517.33,204.18 L519.67,205.35 L522.00,206.48 L524.33,207.57 L526.67,208.64 L529.00,209.67 L531.33,210.68 L533.67,211.65 L536.00,212.60 L538.33,213.52 L540.67,214.42 L543.00,215.29 L545.33,216.14 L547.67,216.96 L550.00,217.76 L552.33,218.55 L554.67,219.31 L557.00,220.05 L559.33,220.77 L561.67,221.47 L564.00,222.16 L566.33,222.83 L568.67,223.48 L571.00,224.11 L573.33,224.73 L575.67,225.34 L578.00,225.93 L580.33,226.51 L582.67,227.07 L585.00,227.62 L587.33,228.15 L589.67,228.68 L592.00,229.19 L594.33,229.69 L596.67,230.18 L599.00,230.66 L601.33,231.12 L603.67,231.58 L606.00,232.03 L608.33,232.46 L610.67,232.89 L613.00,233.31 L615.33,233.72 L617.67,234.12 L620.00,234.51 L622.33,234.90 L624.67,235.27 L627.00,235.64 L629.33,236.00 L631.67,236.35 L634.00,236.70 L636.33,237.04 L638.67,237.37 L641.00,237.70 L643.33,238.02 L645.67,238.33 L648.00,238.64 L650.33,238.94 L652.67,239.23 L655.00,239.52 L657.33,239.81 L659.67,240.08 L662.00,240.36 L664.33,240.63 L666.67,240.89 L669.00,241.15 L671.33,241.40 L673.67,241.65 L676.00,241.90 L678.33,242.14 L680.67,242.37 L683.00,242.61 L685.33,242.83 L687.67,243.06 L690.00,243.28 L692.33,243.49 L694.67,243.71 L697.00,243.91 L699.33,244.12 L701.67,244.32 L704.00,244.52 L706.33,244.72 L708.67,244.91 L711.00,245.10 L713.33,245.28 L715.67,245.46 L718.00,245.64" fill="none" stroke="#1d6fa5" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="447.3" y1="141.6" x2="447.3" y2="262.0" stroke="#c25014" stroke-width="1.3" stroke-dasharray="3 2"/>
+<line x1="586.7" y1="228.0" x2="586.7" y2="262.0" stroke="#6d28d9" stroke-width="1.2" stroke-dasharray="3 2"/>
+<circle cx="438.00" cy="126.00" r="4" fill="#1d6fa5"/>
+<circle cx="447.33" cy="141.59" r="5" fill="#c25014" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="586.66" cy="228.00" r="4.2" fill="#6d28d9" stroke="#ffffff" stroke-width="1.2"/>
+<line x1="452.3" y1="141.6" x2="488.0" y2="145.0" stroke="#c25014" stroke-width="1.3"/>
+<rect x="490" y="128" width="224" height="38" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="500" y="144" font-size="11.4" fill="#c25014" text-anchor="start" font-weight="700">空间站 h=400 km：88.5%</text>
+<text x="500" y="160" font-size="10.8" fill="#1e293b" text-anchor="start">g ≈ 8.69 m/s²（约地表九成）</text>
+<text x="646" y="216.0" font-size="10.6" fill="#6d28d9" text-anchor="middle" font-weight="600" class="halo">h = R_E：距地心翻倍 → 25%</text>
+<rect x="404" y="298" width="320" height="52" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="416" y="318" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700">若搭一座 400 km 高梯子站上去称重：</text>
+<text x="416" y="338" font-size="11.3" fill="#c25014" text-anchor="start" font-weight="700">60 kg 的人仍重约 53.1 kg——失重绝非因为没引力！</text>
+</svg>

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="324" viewBox="0 0 760 324" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">照护者缺觉压力下的大脑快慢双通道与亲子关系修复闭环</title>
+<desc id="desc">左图对比边缘系统快速警报、缺觉时受抑制的前额叶刹车及情绪命名降温开关；右图展示同频连接、短暂失调与事后修复的三步循环。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="323" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">为什么深夜哭声让人一秒“上头”？大脑快慢双通道与关系修复闭环</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左图说明缺觉压力下的生理报警与“情绪命名”降温机制；右图展示安全的亲子关系靠修复而非满分。</text>
+<rect x="20" y="62" width="352" height="246" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="85" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 缺觉 + 哭声：刹车片暂时过热</text>
+<rect x="36" y="100" width="320" height="56" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="48" y="120" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">快通道：边缘系统警报（如杏仁核）</text>
+<text x="48" y="140" font-size="10.6" fill="#1e293b" text-anchor="start">毫秒级拉响战斗/逃跑警报 → 心跳加快、肌肉紧绷</text>
+<rect x="36" y="168" width="320" height="56" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="48" y="188" font-size="11.5" fill="#475569" text-anchor="start" font-weight="700">慢通道：前额叶皮层（理性权衡与刹车）</text>
+<text x="48" y="208" font-size="10.6" fill="#1e293b" text-anchor="start">对睡眠剥夺极敏感！连轴转时抑制力明显下降</text>
+<rect x="36" y="236" width="320" height="58" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="48" y="256" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">降温开关：给情绪起名字（Affect Labeling）</text>
+<text x="48" y="276" font-size="10.5" fill="#1e293b" text-anchor="start">说清“我是缺觉无助，不是宝宝故意整我”→ 重启前额叶</text>
+<rect x="388" y="62" width="352" height="246" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="404" y="85" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 关系靠“修复闭环”，不靠“永不发火”</text>
+<rect x="498" y="100" width="132" height="48" rx="10" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.4"/>
+<text x="564" y="120" font-size="11.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">同频连接</text>
+<text x="564" y="138" font-size="10.3" fill="#1e293b" text-anchor="middle">眼神回应·平静安抚</text>
+<rect x="602" y="182" width="132" height="48" rx="10" fill="#fef1e8" stroke="#c25014" stroke-width="1.4"/>
+<text x="668" y="202" font-size="11.8" fill="#c25014" text-anchor="middle" font-weight="700">短暂失调</text>
+<text x="668" y="220" font-size="10.3" fill="#1e293b" text-anchor="middle">没听懂·疲惫急躁</text>
+<rect x="394" y="182" width="132" height="48" rx="10" fill="#e7f6ee" stroke="#18794e" stroke-width="1.4"/>
+<text x="460" y="202" font-size="11.8" fill="#18794e" text-anchor="middle" font-weight="700">事后修复</text>
+<text x="460" y="220" font-size="10.3" fill="#1e293b" text-anchor="middle">安顿暂停·拥抱重连</text>
+<path d="M624,136 Q664,154 668,178" fill="none" stroke="#c25014" stroke-width="1.8" marker-end="url(#arr-orange)"/>
+<path d="M600,214 L530,214" fill="none" stroke="#18794e" stroke-width="1.8" marker-end="url(#arr-green)"/>
+<path d="M460,180 Q468,148 496,134" fill="none" stroke="#1d6fa5" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+<text x="404" y="266" font-size="10.5" fill="#1e293b" text-anchor="start">• Tronick 母婴互动研究：日常互动本就常有没对上拍的时刻</text>
+<text x="404" y="286" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="700">• 真正建立安全感的，是一次次“失调后还能回到温暖连接”</text>
+</svg>

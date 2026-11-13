@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="372" viewBox="0 0 760 372" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">牛顿高山大炮思想实验与第一宇宙速度地球曲率推导</title>
+<desc id="desc">左图用二体引力积分对比5.2、6.8、7.91与8.8 km/s四种水平初速度轨迹；右图用直角三角形证明平飞7.91 km时地表曲率弯落4.90 m恰等于1秒自由落体距离。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="371" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">牛顿高山大炮实验：入轨不是“失重悬浮”，而是下落弧度刚好追上地球弯曲</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">忽略空气阻力从山顶水平开炮：慢了砸回地面；达到第一宇宙速度时，地面每秒同步往下让开 4.90 米</text>
+<rect x="20" y="62" width="352" height="294" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="84" font-size="12.8" fill="#0f172a" text-anchor="start" font-weight="600">① 四种初速度的真实二体引力轨迹</text>
+<circle cx="186.0" cy="194.0" r="56.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.6"/>
+<line x1="130.0" y1="194.0" x2="242.0" y2="194.0" stroke="#93c5fd" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="186.0" y1="138.0" x2="186.0" y2="250.0" stroke="#93c5fd" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="186.0" y="198.0" font-size="11.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">地球</text>
+<polygon points="178.0,139.0 194.0,139.0 186.0,132.4" fill="#475569" opacity="0.85"/>
+<polyline points="186.0,132.4 187.1,132.4 188.2,132.5 189.3,132.6 190.4,132.7 191.5,132.9 192.5,133.1 193.6,133.4 194.7,133.7 195.8,134.1 196.8,134.5 197.9,134.9 198.9,135.4 200.0,135.9 201.0,136.4 202.0,137.0 203.0,137.7 204.0,138.4 205.0,139.1 205.9,139.9 206.9,140.7 207.8,141.6 208.7,142.5 209.3,143.1" fill="none" stroke="#475569" stroke-width="1.8" stroke-dasharray="4 3"/>
+<circle cx="209.3" cy="143.1" r="3.3" fill="#475569"/>
+<text x="254.0" y="152.0" font-size="10.6" fill="#475569" text-anchor="start" font-weight="600" class="halo">5.2 km/s 落回近处</text>
+<polyline points="186.0,132.4 187.4,132.4 188.9,132.5 190.3,132.6 191.7,132.7 193.1,132.9 194.6,133.1 196.0,133.4 197.4,133.7 198.8,134.1 200.2,134.4 201.5,134.9 202.9,135.3 204.3,135.8 205.6,136.4 207.0,137.0 208.3,137.6 209.6,138.3 210.9,139.0 212.1,139.7 213.4,140.5 214.6,141.3 215.8,142.2 217.0,143.1 218.2,144.0 219.3,145.0 220.4,146.0 221.5,147.0 222.6,148.1 223.6,149.2 224.6,150.4 225.6,151.6 226.5,152.8 227.4,154.0 228.3,155.3 229.2,156.6 230.0,158.0 230.7,159.4 231.5,160.8 232.2,162.2 232.4,162.7" fill="none" stroke="#c25014" stroke-width="1.8" stroke-dasharray="4 3"/>
+<circle cx="232.4" cy="162.7" r="3.3" fill="#c25014"/>
+<text x="262.0" y="230.0" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="600" class="halo">6.8 km/s 绕半圈落地</text>
+<circle cx="186.0" cy="194.0" r="61.6" fill="none" stroke="#1d6fa5" stroke-width="2.2"/>
+<text x="110.0" y="136.0" font-size="11.0" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">v₁ ≈ 7.91 km/s</text>
+<text x="110.0" y="151.0" font-size="10.6" fill="#1d6fa5" text-anchor="middle" class="halo">贴地闭合圆轨</text>
+<ellipse cx="186.0" cy="210.4" rx="76.2" ry="78.0" fill="none" stroke="#18794e" stroke-width="1.9" stroke-dasharray="6 3"/>
+<text x="186.0" y="304.3" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="600" class="halo">8.8 km/s → 椭圆轨道（远地点在下方）</text>
+<text x="36" y="344" font-size="10.5" fill="#64748b" text-anchor="start">注：山高为示意放大；真实近地圆轨须在百公里以上避开大气。</text>
+<rect x="388" y="62" width="352" height="294" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="404" y="84" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="600">② 1 秒钟几何账：平飞 7.91 km ↔ 地表弯落 4.90 m</text>
+<path d="M 452.0,352.0 L 452.0,138.0 L 456.6,138.0 L 461.2,138.2 L 465.8,138.4 L 470.4,138.8 L 475.0,139.2 L 479.5,139.8 L 484.1,140.4 L 488.6,141.2 L 493.2,142.0 L 497.7,142.9 L 502.1,144.0 L 506.6,145.1 L 511.0,146.3 L 515.4,147.6 L 519.8,149.0 L 524.2,150.5 L 528.5,152.1 L 532.8,153.8 L 537.0,155.6 L 541.2,157.5 L 545.4,159.4 L 549.5,161.5 L 553.6,163.6 L 557.6,165.9 L 561.6,168.2 L 565.5,170.6 L 569.4,173.1 L 573.2,175.6 L 577.0,178.3 L 580.7,181.0 L 584.3,183.8 L 587.9,186.7 L 591.4,189.6 L 594.9,192.7 L 598.3,195.8 L 601.6,199.0 L 604.8,202.2 L 608.0,205.5 L 611.1,208.9 L 614.2,212.4 Z" fill="#eaf4fb" opacity="0.65"/>
+<polyline points="452.0,138.0 456.6,138.0 461.2,138.2 465.8,138.4 470.4,138.8 475.0,139.2 479.5,139.8 484.1,140.4 488.6,141.2 493.2,142.0 497.7,142.9 502.1,144.0 506.6,145.1 511.0,146.3 515.4,147.6 519.8,149.0 524.2,150.5 528.5,152.1 532.8,153.8 537.0,155.6 541.2,157.5 545.4,159.4 549.5,161.5 553.6,163.6 557.6,165.9 561.6,168.2 565.5,170.6 569.4,173.1 573.2,175.6 577.0,178.3 580.7,181.0 584.3,183.8 587.9,186.7 591.4,189.6 594.9,192.7 598.3,195.8 601.6,199.0 604.8,202.2 608.0,205.5 611.1,208.9 614.2,212.4" fill="none" stroke="#1d6fa5" stroke-width="2.2"/>
+<line x1="452.0" y1="294.0" x2="452.0" y2="138.0" stroke="#475569" stroke-width="1.3" stroke-dasharray="4 3"/>
+<line x1="486.0" y1="306.8" x2="624.0" y2="138.0" stroke="#475569" stroke-width="1.3" stroke-dasharray="4 3"/>
+<line x1="452.0" y1="138.0" x2="624.0" y2="138.0" stroke="#0f172a" stroke-width="1.8" stroke-dasharray="5 3" marker-end="url(#arr-muted)"/>
+<line x1="624.0" y1="140.0" x2="588.1" y2="182.2" stroke="#c25014" stroke-width="2.3" marker-end="url(#arr-orange)"/>
+<polyline points="452.0,138.0 458.0,138.1 464.1,138.3 470.1,138.8 476.1,139.4 482.1,140.1 488.0,141.1 494.0,142.2 499.9,143.4 505.7,144.9 511.6,146.5 517.3,148.2 523.1,150.1 528.7,152.2 534.3,154.5 539.9,156.9 545.3,159.4 550.7,162.1 556.1,165.0 561.3,168.0 566.4,171.2 571.5,174.5 576.4,177.9 581.3,181.5 586.1,185.2" fill="none" stroke="#18794e" stroke-width="2.6"/>
+<circle cx="452.0" cy="138.0" r="4" fill="#1d6fa5"/>
+<circle cx="586.1" cy="185.2" r="4" fill="#18794e"/>
+<text x="538" y="127" font-size="11.2" fill="#0f172a" text-anchor="middle" font-weight="600" class="halo">若无引力：1 秒平飞 7.91 km</text>
+<text x="630" y="165" font-size="11.0" fill="#c25014" text-anchor="start" font-weight="700" class="halo">引力拉拽下落</text>
+<text x="630" y="181" font-size="11.0" fill="#c25014" text-anchor="start" font-weight="700" class="halo">½gt² ≈ 4.90 m</text>
+<text x="462" y="206" font-size="10.8" fill="#475569" text-anchor="start" class="halo">地球半径 R_E</text>
+<text x="596" y="228" font-size="10.6" fill="#1d6fa5" text-anchor="middle" font-weight="600" class="halo">地表同步弯落 Δh ≈ v₁²/(2R_E) = 4.90 m</text>
+<rect x="404" y="254" width="320" height="56" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="564" y="274" font-size="11.3" fill="#0f172a" text-anchor="middle" font-weight="600">勾股展开：(R_E + Δh)² = R_E² + (v₁t)²</text>
+<text x="564" y="295" font-size="11.0" fill="#18794e" text-anchor="middle" font-weight="700">⇒ Δh ≈ v₁²t²/(2R_E) = ½gt² ⇒ v₁ = √(gR_E) ≈ 7.91 km/s</text>
+<text x="404" y="344" font-size="10.5" fill="#64748b" text-anchor="start">注：为看清 4.90 m 落差，右图竖直弯曲比例已放大示意。</text>
+</svg>

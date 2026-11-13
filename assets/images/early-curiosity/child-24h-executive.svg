@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="330" viewBox="0 0 760 330" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">WHO五岁以下儿童24小时活动睡眠屏幕指南与执行功能三支柱</title>
+<desc id="desc">左图按WHO 2019指南绘出0至1岁、1至2岁、3至4岁在24小时内睡眠、身体活动、真人互动与静态屏幕的分配；右图列出哈佛儿童发展中心执行功能三支柱及AI时代代劳与共学对比。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="329" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">AI 时代孩子更稀缺什么？WHO 24 小时时间账本与大脑“空中交通管制”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左图依据 WHO（2019）5岁以下指南展示一天 24 小时的挤占关系；右图拆解执行功能与共学脚手架。</text>
+<rect x="20" y="62" width="388" height="252" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="85" font-size="12.4" fill="#0f172a" text-anchor="start" font-weight="700">① 一天只有 24 小时：屏幕抢走的是哪三块刚需？</text>
+<text x="100" y="124" font-size="11.0" fill="#0f172a" text-anchor="end" font-weight="700">0–1岁婴儿</text>
+<rect x="108.0" y="108" width="170.4" height="24" fill="#1d6fa5" opacity="0.85" stroke="#fff" stroke-width="1"/>
+<text x="193.2" y="124" font-size="9.8" fill="#ffffff" text-anchor="middle" font-weight="700">睡眠 12–17h</text>
+<rect x="278.4" y="108" width="29.4" height="24" fill="#18794e" opacity="0.85" stroke="#fff" stroke-width="1"/>
+<rect x="307.8" y="108" width="82.2" height="24" fill="#475569" opacity="0.85" stroke="#fff" stroke-width="1"/>
+<text x="348.9" y="124" font-size="9.8" fill="#ffffff" text-anchor="middle" font-weight="700">喂养/绘本/陪伴</text>
+<text x="108" y="147" font-size="10.0" fill="#64748b" text-anchor="start">睡眠 + 运动 + 真人互动优先  |  静态屏幕建议：屏幕 0h（越少越好）</text>
+<text x="100" y="180" font-size="11.0" fill="#0f172a" text-anchor="end" font-weight="700">1–2岁幼儿</text>
+<rect x="108.0" y="164" width="146.9" height="24" fill="#1d6fa5" opacity="0.85" stroke="#fff" stroke-width="1"/>
+<text x="181.4" y="180" font-size="9.8" fill="#ffffff" text-anchor="middle" font-weight="700">睡眠 11–14h</text>
+<rect x="254.9" y="164" width="41.1" height="24" fill="#18794e" opacity="0.85" stroke="#fff" stroke-width="1"/>
+<rect x="296.0" y="164" width="88.1" height="24" fill="#475569" opacity="0.85" stroke="#fff" stroke-width="1"/>
+<text x="340.1" y="180" font-size="9.8" fill="#ffffff" text-anchor="middle" font-weight="700">游戏/共读/日常</text>
+<rect x="384.1" y="164" width="5.9" height="24" fill="#c25014" opacity="0.85" stroke="#fff" stroke-width="1"/>
+<text x="108" y="203" font-size="10.0" fill="#64748b" text-anchor="start">睡眠 + 运动 + 真人互动优先  |  静态屏幕建议：1岁0h/2岁≤1h（越少越好）</text>
+<text x="100" y="236" font-size="11.0" fill="#0f172a" text-anchor="end" font-weight="700">3–4岁学前</text>
+<rect x="108.0" y="220" width="135.1" height="24" fill="#1d6fa5" opacity="0.85" stroke="#fff" stroke-width="1"/>
+<text x="175.6" y="236" font-size="9.8" fill="#ffffff" text-anchor="middle" font-weight="700">睡眠 10–13h</text>
+<rect x="243.1" y="220" width="41.1" height="24" fill="#18794e" opacity="0.85" stroke="#fff" stroke-width="1"/>
+<rect x="284.2" y="220" width="97.5" height="24" fill="#475569" opacity="0.85" stroke="#fff" stroke-width="1"/>
+<text x="333.0" y="236" font-size="9.8" fill="#ffffff" text-anchor="middle" font-weight="700">探索/共读/社交</text>
+<rect x="381.8" y="220" width="8.2" height="24" fill="#c25014" opacity="0.85" stroke="#fff" stroke-width="1"/>
+<text x="108" y="259" font-size="10.0" fill="#64748b" text-anchor="start">睡眠 + 运动 + 真人互动优先  |  静态屏幕建议：屏幕 ≤1h（越少越好）</text>
+<text x="36" y="286" font-size="10.3" fill="#c25014" text-anchor="start" font-weight="700">核心逻辑：限制屏幕不是因为“电子辐射”，而是防止挤占睡眠、奔跑与眼神交谈！</text>
+<rect x="420" y="62" width="320" height="252" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="436" y="85" font-size="12.4" fill="#0f172a" text-anchor="start" font-weight="700">② 大脑“执行功能”三支柱（哈佛中心）</text>
+<rect x="436" y="100" width="92" height="58" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="482" y="121" font-size="11.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">工作记忆</text>
+<text x="482" y="142" font-size="9.6" fill="#1e293b" text-anchor="middle">脑中同时托住线索</text>
+<rect x="534" y="100" width="92" height="58" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="580" y="121" font-size="11.2" fill="#18794e" text-anchor="middle" font-weight="700">抑制控制</text>
+<text x="580" y="142" font-size="9.6" fill="#1e293b" text-anchor="middle">忍住冲动不秒看答案</text>
+<rect x="632" y="100" width="92" height="58" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="678" y="121" font-size="11.2" fill="#6d28d9" text-anchor="middle" font-weight="700">认知灵活</text>
+<text x="678" y="142" font-size="9.6" fill="#1e293b" text-anchor="middle">错了换个角度再试</text>
+<rect x="436" y="172" width="288" height="56" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="448" y="192" font-size="11.0" fill="#c25014" text-anchor="start" font-weight="700">× 代劳陷阱：直接让 AI 替孩子写完、想完</text>
+<text x="448" y="212" font-size="10.4" fill="#1e293b" text-anchor="start">   省掉了卡壳与试错，三根支柱得不到锻炼</text>
+<rect x="436" y="238" width="288" height="60" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="448" y="258" font-size="11.0" fill="#18794e" text-anchor="start" font-weight="700">✓ 脚手架共学：先猜 → 再问 AI → 动手核验</text>
+<text x="448" y="278" font-size="10.4" fill="#1e293b" text-anchor="start">   把工具当陪练，人保留提问、查证与修改权</text>
+</svg>

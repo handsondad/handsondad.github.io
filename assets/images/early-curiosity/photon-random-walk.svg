@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="330" viewBox="0 0 760 330" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">太阳内部随机游走能量输运与中微子直穿时间尺度对比</title>
+<desc id="desc">左图对比辐射区内折返散射吸收的能量传递路线与约2.3秒直穿太阳的中微子；右图用随机游走R等于根号N乘步长计算为何毫米级步长走出辐射区需万年量级。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="329" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">为什么太阳内部走 70 万公里要几万年，出了表面走 1.5 亿公里只要 8 分 19 秒？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左图对比辐射区折返碰撞的“醉汉漫步”与直穿而出的中微子；右图算清 √N 随机游走的步数账。</text>
+<rect x="20" y="62" width="346" height="252" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="85" font-size="12.4" fill="#0f172a" text-anchor="start" font-weight="700">① 折返传球的光子 vs 穿墙而过的中微子</text>
+<circle cx="186" cy="194" r="92" fill="#fff7ed" stroke="#c25014" stroke-width="1.6"/>
+<circle cx="186" cy="194" r="66" fill="#ffedd5" stroke="#c25014" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="186" cy="194" r="22" fill="#fed7aa" stroke="#c25014" stroke-width="1.2"/>
+<text x="186" y="198" font-size="10.2" fill="#c25014" text-anchor="middle" font-weight="700">核心</text>
+<polyline points="186.0,194.0 178.1,199.9 190.8,197.3 197.7,186.4 188.5,190.0 185.9,200.0 185.6,210.6 178.1,202.3 189.4,207.3 179.4,208.6 185.7,218.2 178.0,210.2 188.5,216.3 178.4,216.1 189.9,210.0 194.1,220.3 206.5,216.3 197.1,211.5 194.1,200.0 206.6,196.2 198.2,189.3 194.5,178.1 200.4,166.7 213.0,163.1 210.6,151.4 207.6,161.2 218.7,154.2 211.9,145.2 204.6,136.7 194.5,135.9 205.0,141.9 195.0,142.3 196.1,130.8 206.3,137.3 213.9,146.1 203.8,146.2 216.3,148.3 217.1,158.9 212.8,148.0 204.7,140.7 195.4,144.1 185.4,141.2 198.1,142.6 270.0,156.0" fill="none" stroke="#c25014" stroke-width="1.5"/>
+<line x1="186" y1="194" x2="314" y2="238" stroke="#1d6fa5" stroke-width="2.0" stroke-dasharray="5 3" marker-end="url(#arr-blue)"/>
+<text x="262" y="250" font-size="10.3" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">中微子：约 2.3 秒直穿太阳！</text>
+<text x="178" y="120" font-size="10.3" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">能量乱撞接力：万年量级</text>
+<rect x="378" y="62" width="362" height="252" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="394" y="85" font-size="12.2" fill="#0f172a" text-anchor="start" font-weight="700">② 随机游走公式：方向乱撞，距离只按 √N 长</text>
+<rect x="394" y="100" width="330" height="84" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="406" y="121" font-size="10.8" fill="#1e293b" text-anchor="start">• 直线跑 N 步（每步长 ℓ）：净前进 N × ℓ</text>
+<text x="406" y="142" font-size="10.8" fill="#1d6fa5" text-anchor="start" font-weight="700">• 每次随机换向撞 N 次：净推进仅约 √N × ℓ ！</text>
+<text x="406" y="164" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="600">→ 想向外挪远 10 倍，碰撞次数得翻 100 倍（N = R²/ℓ²）</text>
+<rect x="394" y="194" width="330" height="106" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="406" y="215" font-size="11.0" fill="#0f172a" text-anchor="start" font-weight="700">数量级对比（教学示意账）：</text>
+<text x="406" y="236" font-size="10.3" fill="#1e293b" text-anchor="start">• 太阳内部（假设平均每步 1 毫米出 50万公里辐射区）：</text>
+<text x="406" y="254" font-size="10.3" fill="#c25014" text-anchor="start" font-weight="700">  需撞 (5×10¹¹)² ≈ 2.5×10²³ 次 → 折合耗时约 2.6 万年！</text>
+<text x="406" y="276" font-size="10.3" fill="#1e293b" text-anchor="start">• 离开光球进太空（1.496 亿公里真空无遮挡）：</text>
+<text x="406" y="293" font-size="10.3" fill="#18794e" text-anchor="start" font-weight="700">  直线狂奔 → 499 秒（8 分 19 秒）直达你脸庞！</text>
+</svg>

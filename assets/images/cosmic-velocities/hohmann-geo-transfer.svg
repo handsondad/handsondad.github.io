@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="412" viewBox="0 0 760 412" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">火箭程序转弯借地球自转与霍曼转移两次变轨飞向地球静止轨道</title>
+<desc id="desc">左图按精确二体速度绘出200km停泊轨经Δv1=2.46 km/s进入转移椭圆、5小时16分后在35786km远地点经Δv2=1.48 km/s圆化；右图展示程序转弯与文昌等发射场纬度自转助推。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  .trace-hohmann {
+        stroke-dasharray: 290;
+        stroke-dashoffset: 290;
+        animation: hohmannDraw 2.4s ease-out 0.15s 1 forwards;
+      }
+      @keyframes hohmannDraw {
+        to { stroke-dashoffset: 0; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .trace-hohmann { animation: none; stroke-dashoffset: 0; }
+      }
+</style>
+<rect x="0.5" y="0.5" width="759" height="411" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">火箭怎么把卫星送上 35,786 km 静止轨道？程序转弯借自转 + 霍曼两次变轨</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">先垂直穿大气再向东拐入 200 km 停泊圆轨，随后在近地点、远地点各点一把火完成“搭桥圆化”</text>
+<rect x="20" y="62" width="384" height="330" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="84" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="600">① 霍曼转移椭圆：两次点火接力（200 km → GEO）</text>
+<circle cx="204.0" cy="224.0" r="88.0" fill="none" stroke="#18794e" stroke-width="1.8" stroke-dasharray="5 3"/>
+<circle cx="204.0" cy="224.0" r="24.0" fill="none" stroke="#1d6fa5" stroke-width="1.8"/>
+<circle cx="204.0" cy="224.0" r="16" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.4"/>
+<text x="204.0" y="228.0" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">地球</text>
+<polyline points="292.0,224.0 291.9,226.4 291.7,228.8 291.3,231.2 290.8,233.6 290.1,235.9 289.3,238.2 288.3,240.5 287.2,242.7 285.9,244.9 284.5,247.0 283.0,249.0 281.3,251.0 279.5,252.9 277.6,254.8 275.6,256.5 273.5,258.2 271.2,259.7 268.9,261.2 266.5,262.5 264.0,263.8 261.4,264.9 258.8,266.0 256.1,266.9 253.3,267.7 250.5,268.4 247.6,269.0 244.8,269.4 241.9,269.7 238.9,269.9 236.0,270.0 233.1,269.9 230.1,269.7 227.2,269.4 224.4,269.0 221.5,268.4 218.7,267.7 215.9,266.9 213.2,266.0 210.6,264.9 208.0,263.8 205.5,262.5 203.1,261.2 200.8,259.7 198.5,258.2 196.4,256.5 194.4,254.8 192.5,252.9 190.7,251.0 189.0,249.0 187.5,247.0 186.1,244.9 184.8,242.7 183.7,240.5 182.7,238.2 181.9,235.9 181.2,233.6 180.7,231.2 180.3,228.8 180.1,226.4 180.0,224.0" fill="none" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4 4"/>
+<polyline points="180.0,224.0 180.1,221.9 180.2,219.9 180.5,217.8 180.9,215.8 181.4,213.8 182.0,211.8 182.7,209.8 183.6,207.9 184.5,205.9 185.5,204.1 186.7,202.2 187.9,200.4 189.3,198.7 190.7,197.0 192.2,195.3 193.8,193.8 195.5,192.2 197.3,190.8 199.2,189.4 201.1,188.1 203.1,186.8 205.1,185.6 207.3,184.5 209.5,183.5 211.7,182.6 214.0,181.7 216.3,181.0 218.7,180.3 221.1,179.7 223.5,179.2 226.0,178.8 228.5,178.5 231.0,178.2 233.5,178.1 236.0,178.0 238.5,178.1 241.0,178.2 243.5,178.5 246.0,178.8 248.5,179.2 250.9,179.7 253.3,180.3 255.7,181.0 258.0,181.7 260.3,182.6 262.5,183.5 264.7,184.5 266.9,185.6 268.9,186.8 270.9,188.1 272.8,189.4 274.7,190.8 276.5,192.2 278.2,193.8 279.8,195.3 281.3,197.0 282.7,198.7 284.1,200.4 285.3,202.2 286.5,204.1 287.5,205.9 288.4,207.9 289.3,209.8 290.0,211.8 290.6,213.8 291.1,215.8 291.5,217.8 291.8,219.9 291.9,221.9 292.0,224.0" fill="none" stroke="#c25014" stroke-opacity="0.45" stroke-width="2.0"/>
+<polyline class="trace-hohmann" points="180.0,224.0 180.1,221.9 180.2,219.9 180.5,217.8 180.9,215.8 181.4,213.8 182.0,211.8 182.7,209.8 183.6,207.9 184.5,205.9 185.5,204.1 186.7,202.2 187.9,200.4 189.3,198.7 190.7,197.0 192.2,195.3 193.8,193.8 195.5,192.2 197.3,190.8 199.2,189.4 201.1,188.1 203.1,186.8 205.1,185.6 207.3,184.5 209.5,183.5 211.7,182.6 214.0,181.7 216.3,181.0 218.7,180.3 221.1,179.7 223.5,179.2 226.0,178.8 228.5,178.5 231.0,178.2 233.5,178.1 236.0,178.0 238.5,178.1 241.0,178.2 243.5,178.5 246.0,178.8 248.5,179.2 250.9,179.7 253.3,180.3 255.7,181.0 258.0,181.7 260.3,182.6 262.5,183.5 264.7,184.5 266.9,185.6 268.9,186.8 270.9,188.1 272.8,189.4 274.7,190.8 276.5,192.2 278.2,193.8 279.8,195.3 281.3,197.0 282.7,198.7 284.1,200.4 285.3,202.2 286.5,204.1 287.5,205.9 288.4,207.9 289.3,209.8 290.0,211.8 290.6,213.8 291.1,215.8 291.5,217.8 291.8,219.9 291.9,221.9 292.0,224.0" fill="none" stroke="#c25014" stroke-width="2.6" marker-end="url(#arr-orange)"/>
+<line x1="180.0" y1="224.0" x2="180.0" y2="196.0" stroke="#c25014" stroke-width="2.1" marker-end="url(#arr-orange)"/>
+<line x1="292.0" y1="224.0" x2="292.0" y2="252.0" stroke="#18794e" stroke-width="2.1" marker-end="url(#arr-green)"/>
+<circle cx="167.0" cy="226.0" r="8.8" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="167.0" y="230.0" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">1</text>
+<circle cx="305.0" cy="222.0" r="8.8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="305.0" y="226.0" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">2</text>
+<text x="30" y="198" font-size="10.8" fill="#c25014" text-anchor="start" font-weight="700" class="halo">近地点点火①</text>
+<text x="30" y="214" font-size="10.8" fill="#c25014" text-anchor="start" font-weight="700" class="halo">Δv₁ = +2.46</text>
+<text x="30" y="230" font-size="10.5" fill="#1e293b" text-anchor="start" class="halo">7.78→10.24</text>
+<text x="236" y="166" font-size="10.6" fill="#c25014" text-anchor="middle" font-weight="600" class="halo">爬升 5小时16分</text>
+<text x="204" y="122" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="600" class="halo">GEO 静止圆轨：35,786 km（v = 3.07 km/s）</text>
+<text x="396" y="190" font-size="10.5" fill="#1e293b" text-anchor="end" class="halo">到顶剩 1.60</text>
+<text x="396" y="206" font-size="10.8" fill="#18794e" text-anchor="end" font-weight="700" class="halo">远地点点火②</text>
+<text x="396" y="222" font-size="10.8" fill="#18794e" text-anchor="end" font-weight="700" class="halo">Δv₂ = +1.48</text>
+<text x="396" y="238" font-size="10.5" fill="#18794e" text-anchor="end" class="halo">圆化至 3.07</text>
+<text x="204" y="329" font-size="10.5" fill="#64748b" text-anchor="middle" class="halo">若不点第②把火：卫星会沿灰虚线掉回 200 km 近地点</text>
+<rect x="34.0" y="354.0" width="356" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="212.0" y="369.0" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="600">共面变轨总增量：Δv₁ + Δv₂ = 2.46 + 1.48 = 3.93 km/s</text>
+<rect x="416" y="62" width="324" height="330" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="432" y="84" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="600">② 升空姿态与向东借自转“顺风车”</text>
+<rect x="432" y="96" width="292" height="108" rx="7" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="433" y="168" width="290" height="24" fill="#eaf4fb" opacity="0.6"/>
+<line x1="433" y1="192" x2="723" y2="192" stroke="#475569" stroke-width="1.4"/>
+<text x="714" y="184" font-size="10.5" fill="#1d6fa5" text-anchor="end">底部稠密大气层</text>
+<path d="M 462,192 C 462,154 482,126 688,122" fill="none" stroke="#c25014" stroke-width="2.4" marker-end="url(#arr-orange)"/>
+<circle cx="462" cy="192" r="3.5" fill="#c25014"/>
+<circle cx="490" cy="146" r="3.5" fill="#c25014"/>
+<text x="478" y="160" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="600" class="halo">① 先竖飞快穿大气</text>
+<text x="552" y="114" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="700" class="halo">② 向东程序转弯水平入轨</text>
+<text x="552" y="140" font-size="10.5" fill="#64748b" text-anchor="start">把推力全攒成水平环绕速度</text>
+<text x="432" y="224" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="600">地球自转线速度 v = 465 cos φ（越近赤道越快）</text>
+<text x="432" y="250" font-size="10.7" fill="#1e293b" text-anchor="start">赤道理想点 (0°)</text>
+<rect x="550" y="239" width="114" height="14" rx="4" fill="#f1f5f9"/>
+<rect x="550" y="239" width="104.2" height="14" rx="4" fill="#1d6fa5" opacity="0.88"/>
+<text x="722" y="250" font-size="10.6" fill="#1d6fa5" text-anchor="end" font-weight="700">465 m/s</text>
+<text x="432" y="280" font-size="10.7" fill="#1e293b" text-anchor="start" font-weight="600">海南文昌 (19.6°N)</text>
+<rect x="550" y="269" width="114" height="14" rx="4" fill="#f1f5f9"/>
+<rect x="550" y="269" width="98.1" height="14" rx="4" fill="#c25014" opacity="0.88"/>
+<text x="722" y="280" font-size="10.6" fill="#c25014" text-anchor="end" font-weight="700">438 m/s</text>
+<text x="432" y="310" font-size="10.7" fill="#1e293b" text-anchor="start">四川西昌 (28.2°N)</text>
+<rect x="550" y="299" width="114" height="14" rx="4" fill="#f1f5f9"/>
+<rect x="550" y="299" width="91.8" height="14" rx="4" fill="#18794e" opacity="0.88"/>
+<text x="722" y="310" font-size="10.6" fill="#18794e" text-anchor="end" font-weight="700">410 m/s</text>
+<text x="432" y="340" font-size="10.7" fill="#1e293b" text-anchor="start">甘肃酒泉 (41.0°N)</text>
+<rect x="550" y="329" width="114" height="14" rx="4" fill="#f1f5f9"/>
+<rect x="550" y="329" width="78.7" height="14" rx="4" fill="#475569" opacity="0.88"/>
+<text x="722" y="340" font-size="10.6" fill="#475569" text-anchor="end" font-weight="700">351 m/s</text>
+<text x="432" y="372" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="600">文昌不仅多借自转，且离赤道面近、去静止轨省倾角燃料！</text>
+</svg>

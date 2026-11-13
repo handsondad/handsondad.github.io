@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="378" viewBox="0 0 760 378" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">芯片制造湿法化学腐蚀横向钻蚀与反应离子等离子体垂直刻蚀对比</title>
+<desc id="desc">左图展示湿法化学酸液因分子无方向热运动造成掩模下方严重横向钻蚀；右图展示13.56MHz射频冷等离子体通过鞘层垂直电场加速正离子轰击晶圆沟底，实现90度垂直侧壁的纳米级各向异性刻蚀。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="377" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">从宇宙走入手机芯片：等离子体怎样在硅片上刻出垂直纳米沟槽？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">药水分子乱撞会把掩模下方掏空；等离子体鞘层电场将正离子变成笔直轰击的“纳米刻刀”</text>
+<rect x="20" y="62" width="352" height="298" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="600">① 传统湿法药水腐蚀：各向同性乱啃</text>
+<rect x="36" y="96" width="320" height="204" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="37" y="97" width="318" height="87" rx="7" fill="#fff7ed"/>
+<text x="48" y="116" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="600">酸性腐蚀液：中性分子向四面八方随机热运动</text>
+<circle cx="92" cy="136" r="3.6" fill="#fef1e8" stroke="#c25014" stroke-width="1.1"/>
+<line x1="92" y1="136" x2="110" y2="150" stroke="#c25014" stroke-width="1.2" marker-end="url(#arr-orange)"/>
+<circle cx="148" cy="132" r="3.6" fill="#fef1e8" stroke="#c25014" stroke-width="1.1"/>
+<line x1="148" y1="132" x2="132" y2="148" stroke="#c25014" stroke-width="1.2" marker-end="url(#arr-orange)"/>
+<circle cx="196" cy="128" r="3.6" fill="#fef1e8" stroke="#c25014" stroke-width="1.1"/>
+<line x1="196" y1="128" x2="196" y2="150" stroke="#c25014" stroke-width="1.2" marker-end="url(#arr-orange)"/>
+<circle cx="244" cy="134" r="3.6" fill="#fef1e8" stroke="#c25014" stroke-width="1.1"/>
+<line x1="244" y1="134" x2="260" y2="149" stroke="#c25014" stroke-width="1.2" marker-end="url(#arr-orange)"/>
+<circle cx="298" cy="138" r="3.6" fill="#fef1e8" stroke="#c25014" stroke-width="1.1"/>
+<line x1="298" y1="138" x2="280" y2="150" stroke="#c25014" stroke-width="1.2" marker-end="url(#arr-orange)"/>
+<path d="M 37,184.0 L 108.00,184.0 L 108.00,184.00 L 108.11,187.40 L 108.44,190.79 L 109.00,194.14 L 109.77,197.46 L 110.76,200.71 L 111.96,203.90 L 113.36,207.00 L 114.97,210.00 L 116.76,212.89 L 118.75,215.66 L 120.90,218.29 L 123.23,220.77 L 125.71,223.10 L 128.34,225.25 L 131.11,227.24 L 134.00,229.03 L 137.00,230.64 L 140.10,232.04 L 143.29,233.24 L 146.54,234.23 L 149.86,235.00 L 153.21,235.56 L 156.60,235.89 L 160.00,236.00 L 232.00,236.00 L 235.40,235.89 L 238.79,235.56 L 242.14,235.00 L 245.46,234.23 L 248.71,233.24 L 251.90,232.04 L 255.00,230.64 L 258.00,229.03 L 260.89,227.24 L 263.66,225.25 L 266.29,223.10 L 268.77,220.77 L 271.10,218.29 L 273.25,215.66 L 275.24,212.89 L 277.03,210.00 L 278.64,207.00 L 280.04,203.90 L 281.24,200.71 L 282.23,197.46 L 283.00,194.14 L 283.56,190.79 L 283.89,187.40 L 284.00,184.00 L 355,184.0 L 355,288.0 L 37,288.0 Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.3"/>
+<rect x="48" y="162" width="112" height="22" rx="3" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.3"/>
+<rect x="232" y="162" width="112" height="22" rx="3" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.3"/>
+<text x="92" y="177" font-size="10.5" fill="#6d28d9" text-anchor="middle" font-weight="600">光刻胶掩模</text>
+<text x="288" y="177" font-size="10.5" fill="#6d28d9" text-anchor="middle" font-weight="600">光刻胶掩模</text>
+<line x1="160.0" y1="184.0" x2="160.0" y2="244.0" stroke="#475569" stroke-width="1.1" stroke-dasharray="3 3"/>
+<line x1="232.0" y1="184.0" x2="232.0" y2="244.0" stroke="#475569" stroke-width="1.1" stroke-dasharray="3 3"/>
+<line x1="156.0" y1="202.0" x2="116.0" y2="202.0" stroke="#c25014" stroke-width="1.6" marker-end="url(#arr-orange)"/>
+<line x1="236.0" y1="202.0" x2="276.0" y2="202.0" stroke="#c25014" stroke-width="1.6" marker-end="url(#arr-orange)"/>
+<text x="196" y="222.0" font-size="11.2" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">横向钻蚀掏空！</text>
+<text x="196" y="272" font-size="11.0" fill="#475569" text-anchor="middle" font-weight="600">硅晶圆衬底 (Si)</text>
+<text x="36" y="322" font-size="11.3" fill="#0f172a" text-anchor="start" font-weight="600">向下腐蚀 50 nm，两侧也会同步掏空约 50 nm</text>
+<text x="36" y="344" font-size="11.3" fill="#64748b" text-anchor="start">掩模悬空坍塌，根本刻不出几纳米宽的深沟槽</text>
+<rect x="388" y="62" width="352" height="298" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="404" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="600">② 等离子体反应离子刻蚀（RIE 垂直精雕）</text>
+<rect x="404" y="96" width="320" height="204" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="405" y="97" width="318" height="37" rx="6" fill="#f3e8ff"/>
+<text x="416" y="114" font-size="10.3" fill="#6d28d9" text-anchor="start" font-weight="600">13.56 MHz 射频等离子体区（正离子 ⊕ + 活性自由基 F*）</text>
+<circle cx="442.0" cy="125.0" r="4.8" fill="#fef1e8" stroke="#c25014" stroke-width="1.3"/>
+<line x1="439.7" y1="125.0" x2="444.3" y2="125.0" stroke="#c25014" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="442.0" y1="122.7" x2="442.0" y2="127.3" stroke="#c25014" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="470.0" cy="125.0" r="3.8" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.3"/>
+<line x1="468.2" y1="125.0" x2="471.8" y2="125.0" stroke="#1d6fa5" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="514.0" cy="125.0" r="4.8" fill="#fef1e8" stroke="#c25014" stroke-width="1.3"/>
+<line x1="511.7" y1="125.0" x2="516.3" y2="125.0" stroke="#c25014" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="514.0" y1="122.7" x2="514.0" y2="127.3" stroke="#c25014" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="542.0" cy="125.0" r="3.8" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.3"/>
+<line x1="540.2" y1="125.0" x2="543.8" y2="125.0" stroke="#1d6fa5" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="588.0" cy="125.0" r="4.8" fill="#fef1e8" stroke="#c25014" stroke-width="1.3"/>
+<line x1="585.7" y1="125.0" x2="590.3" y2="125.0" stroke="#c25014" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="588.0" y1="122.7" x2="588.0" y2="127.3" stroke="#c25014" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="616.0" cy="125.0" r="3.8" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.3"/>
+<line x1="614.2" y1="125.0" x2="617.8" y2="125.0" stroke="#1d6fa5" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="666.0" cy="125.0" r="4.8" fill="#fef1e8" stroke="#c25014" stroke-width="1.3"/>
+<line x1="663.7" y1="125.0" x2="668.3" y2="125.0" stroke="#c25014" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="666.0" y1="122.7" x2="666.0" y2="127.3" stroke="#c25014" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="694.0" cy="125.0" r="3.8" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.3"/>
+<line x1="692.2" y1="125.0" x2="695.8" y2="125.0" stroke="#1d6fa5" stroke-width="1.5" stroke-linecap="round"/>
+<rect x="405" y="134" width="318" height="50" fill="#eff6ff"/>
+<text x="414" y="150" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="700">鞘层垂直强电场 E ↓</text>
+<text x="714" y="150" font-size="10.3" fill="#1d6fa5" text-anchor="end" font-weight="600">晶圆台带负偏压</text>
+<line x1="542.0" y1="138" x2="542.0" y2="242.0" stroke="#1d6fa5" stroke-width="1.7" marker-end="url(#arr-blue)"/>
+<circle cx="542.0" cy="148.0" r="5.2" fill="#fef1e8" stroke="#c25014" stroke-width="1.3"/>
+<line x1="539.5" y1="148.0" x2="544.5" y2="148.0" stroke="#c25014" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="542.0" y1="145.5" x2="542.0" y2="150.5" stroke="#c25014" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="564.0" y1="138" x2="564.0" y2="242.0" stroke="#1d6fa5" stroke-width="1.7" marker-end="url(#arr-blue)"/>
+<circle cx="564.0" cy="148.0" r="5.2" fill="#fef1e8" stroke="#c25014" stroke-width="1.3"/>
+<line x1="561.5" y1="148.0" x2="566.5" y2="148.0" stroke="#c25014" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="564.0" y1="145.5" x2="564.0" y2="150.5" stroke="#c25014" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="586.0" y1="138" x2="586.0" y2="242.0" stroke="#1d6fa5" stroke-width="1.7" marker-end="url(#arr-blue)"/>
+<circle cx="586.0" cy="148.0" r="5.2" fill="#fef1e8" stroke="#c25014" stroke-width="1.3"/>
+<line x1="583.5" y1="148.0" x2="588.5" y2="148.0" stroke="#c25014" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="586.0" y1="145.5" x2="586.0" y2="150.5" stroke="#c25014" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M 405,184.0 L 528.0,184.0 L 528.0,250.0 L 600.0,250.0 L 600.0,184.0 L 723,184.0 L 723,288.0 L 405,288.0 Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.3"/>
+<line x1="528.0" y1="184.0" x2="528.0" y2="250.0" stroke="#18794e" stroke-width="2.2"/>
+<line x1="600.0" y1="184.0" x2="600.0" y2="250.0" stroke="#18794e" stroke-width="2.2"/>
+<rect x="416" y="162" width="112" height="22" rx="3" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.3"/>
+<rect x="600" y="162" width="112" height="22" rx="3" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.3"/>
+<text x="472" y="177" font-size="10.5" fill="#6d28d9" text-anchor="middle" font-weight="600">光刻胶掩模</text>
+<text x="656" y="177" font-size="10.5" fill="#6d28d9" text-anchor="middle" font-weight="600">光刻胶掩模</text>
+<path d="M528.0,241.0 H537.0 V250.0" fill="none" stroke="#18794e" stroke-width="1.4"/>
+<rect x="612.0" y="206.0" width="98" height="20" rx="10.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="661.0" y="219.6" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="600">90° 垂直侧壁</text>
+<text x="661" y="242" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="600">3–5 nm 先进制程</text>
+<text x="564" y="274" font-size="11.0" fill="#475569" text-anchor="middle" font-weight="600">硅晶圆衬底 (Si)</text>
+<text x="404" y="322" font-size="11.3" fill="#0f172a" text-anchor="start" font-weight="600">鞘层电场给正离子精准定向，只打沟底不啃侧壁</text>
+<text x="404" y="344" font-size="11.3" fill="#64748b" text-anchor="start">配合挥发性化学反应，雕出手机里的百亿晶体管</text>
+</svg>

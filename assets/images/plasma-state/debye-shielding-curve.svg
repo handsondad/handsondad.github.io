@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="372" viewBox="0 0 760 372" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">德拜屏蔽球与汤川指数衰减电势曲线</title>
+<desc id="desc">左图展示自由电子在半径为德拜长度的球内聚拢屏蔽正测试电荷；右图精确绘制真空库仑势1/r与等离子体德拜屏蔽势(1/r)exp(-r/λ_D)的对比，在一倍德拜长度处衰减至1/e。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  .yukawa-anim {
+        stroke-dasharray: 420;
+        stroke-dashoffset: 420;
+        animation: drawYukawa 1.8s ease-out 0.15s 1 forwards;
+      }
+      @keyframes drawYukawa {
+        to { stroke-dashoffset: 0; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .yukawa-anim {
+          stroke-dasharray: none;
+          stroke-dashoffset: 0;
+          animation: none;
+        }
+      }
+</style>
+<rect x="0.5" y="0.5" width="759" height="371" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">德拜屏蔽：为什么等离子体对外显电中性，内部却一呼百应？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">自由电子围拢在德拜长度 λ_D 内抵消外加电场，使库仑势比真空多乘一项指数衰减因子</text>
+<rect x="20" y="62" width="352" height="294" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="600">① 空间机制：德拜球内的电子云屏蔽</text>
+<rect x="36" y="96" width="320" height="198" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<text x="46" y="114" font-size="10.8" fill="#64748b" text-anchor="start">外部准电中性区 (r &gt; λ_D)</text>
+<circle cx="66.0" cy="146.0" r="6.2" fill="#fef1e8" stroke="#c25014" stroke-width="1.3"/>
+<line x1="63.0" y1="146.0" x2="69.0" y2="146.0" stroke="#c25014" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="66.0" y1="143.0" x2="66.0" y2="149.0" stroke="#c25014" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="104.0" cy="258.0" r="6.2" fill="#fef1e8" stroke="#c25014" stroke-width="1.3"/>
+<line x1="101.0" y1="258.0" x2="107.0" y2="258.0" stroke="#c25014" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="104.0" y1="255.0" x2="104.0" y2="261.0" stroke="#c25014" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="288.0" cy="138.0" r="6.2" fill="#fef1e8" stroke="#c25014" stroke-width="1.3"/>
+<line x1="285.0" y1="138.0" x2="291.0" y2="138.0" stroke="#c25014" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="288.0" y1="135.0" x2="288.0" y2="141.0" stroke="#c25014" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="324.0" cy="206.0" r="6.2" fill="#fef1e8" stroke="#c25014" stroke-width="1.3"/>
+<line x1="321.0" y1="206.0" x2="327.0" y2="206.0" stroke="#c25014" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="324.0" y1="203.0" x2="324.0" y2="209.0" stroke="#c25014" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="292.0" cy="266.0" r="6.2" fill="#fef1e8" stroke="#c25014" stroke-width="1.3"/>
+<line x1="289.0" y1="266.0" x2="295.0" y2="266.0" stroke="#c25014" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="292.0" y1="263.0" x2="292.0" y2="269.0" stroke="#c25014" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="78.0" cy="208.0" r="6.2" fill="#fef1e8" stroke="#c25014" stroke-width="1.3"/>
+<line x1="75.0" y1="208.0" x2="81.0" y2="208.0" stroke="#c25014" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="78.0" y1="205.0" x2="78.0" y2="211.0" stroke="#c25014" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="86.0" cy="162.0" r="4.8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.3"/>
+<line x1="83.7" y1="162.0" x2="88.3" y2="162.0" stroke="#1d6fa5" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="126.0" cy="270.0" r="4.8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.3"/>
+<line x1="123.7" y1="270.0" x2="128.3" y2="270.0" stroke="#1d6fa5" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="268.0" cy="126.0" r="4.8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.3"/>
+<line x1="265.7" y1="126.0" x2="270.3" y2="126.0" stroke="#1d6fa5" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="334.0" cy="182.0" r="4.8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.3"/>
+<line x1="331.7" y1="182.0" x2="336.3" y2="182.0" stroke="#1d6fa5" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="314.0" cy="252.0" r="4.8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.3"/>
+<line x1="311.7" y1="252.0" x2="316.3" y2="252.0" stroke="#1d6fa5" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="60.0" cy="232.0" r="4.8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.3"/>
+<line x1="57.7" y1="232.0" x2="62.3" y2="232.0" stroke="#1d6fa5" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="196.0" cy="195.0" r="68.0" fill="#eaf4fb" fill-opacity="0.72" stroke="#1d6fa5" stroke-width="1.6" stroke-dasharray="5 3.5"/>
+<circle cx="219.5" cy="203.6" r="4.8" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.3"/>
+<line x1="217.2" y1="203.6" x2="221.8" y2="203.6" stroke="#1d6fa5" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="199.5" cy="219.8" r="4.8" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.3"/>
+<line x1="197.2" y1="219.8" x2="201.8" y2="219.8" stroke="#1d6fa5" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="175.8" cy="209.7" r="4.8" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.3"/>
+<line x1="173.5" y1="209.7" x2="178.1" y2="209.7" stroke="#1d6fa5" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="173.3" cy="184.4" r="4.8" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.3"/>
+<line x1="171.0" y1="184.4" x2="175.6" y2="184.4" stroke="#1d6fa5" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="195.1" cy="170.0" r="4.8" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.3"/>
+<line x1="192.8" y1="170.0" x2="197.4" y2="170.0" stroke="#1d6fa5" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="240.6" cy="201.3" r="4.8" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.3"/>
+<line x1="238.3" y1="201.3" x2="242.9" y2="201.3" stroke="#1d6fa5" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="221.2" cy="232.3" r="4.8" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.3"/>
+<line x1="218.9" y1="232.3" x2="223.5" y2="232.3" stroke="#1d6fa5" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="183.6" cy="238.3" r="4.8" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.3"/>
+<line x1="181.3" y1="238.3" x2="185.9" y2="238.3" stroke="#1d6fa5" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="154.3" cy="211.9" r="4.8" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.3"/>
+<line x1="152.0" y1="211.9" x2="156.6" y2="211.9" stroke="#1d6fa5" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="157.0" cy="172.5" r="4.8" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.3"/>
+<line x1="154.7" y1="172.5" x2="159.3" y2="172.5" stroke="#1d6fa5" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="189.7" cy="150.4" r="4.8" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.3"/>
+<line x1="187.4" y1="150.4" x2="192.0" y2="150.4" stroke="#1d6fa5" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="160.9" cy="239.9" r="6.0" fill="#fef1e8" stroke="#c25014" stroke-width="1.3"/>
+<line x1="158.0" y1="239.9" x2="163.8" y2="239.9" stroke="#c25014" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="160.9" y1="237.0" x2="160.9" y2="242.8" stroke="#c25014" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="220.1" cy="143.3" r="6.0" fill="#fef1e8" stroke="#c25014" stroke-width="1.3"/>
+<line x1="217.2" y1="143.3" x2="223.0" y2="143.3" stroke="#c25014" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="220.1" y1="140.5" x2="220.1" y2="146.2" stroke="#c25014" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="207.6" y1="187.2" x2="250.7" y2="158.1" stroke="#18794e" stroke-width="1.8" marker-end="url(#arr-green)"/>
+<text x="230.0" y="165.0" font-size="12" fill="#18794e" text-anchor="middle" font-weight="700" class="halo">λ_D</text>
+<circle cx="196.0" cy="195.0" r="13.5" fill="#c25014" stroke="#ffffff" stroke-width="1.8"/>
+<text x="196.0" y="199.5" font-size="11.8" fill="#ffffff" text-anchor="middle" font-weight="700">+Q</text>
+<text x="36" y="316" font-size="11.3" fill="#0f172a" text-anchor="start">r &lt; λ_D：轻快电子聚拢，净负电荷抵消 +Q</text>
+<text x="36" y="338" font-size="11.3" fill="#64748b" text-anchor="start">r &gt; λ_D：电场被截断，远处粒子几乎无感</text>
+<rect x="388" y="62" width="352" height="294" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="404" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="600">② 精确曲线：裸库仑势 vs 德拜屏蔽势</text>
+<line x1="444.0" y1="215.3" x2="716.0" y2="215.3" stroke="#f1f5f9" stroke-width="1"/>
+<text x="437.0" y="219.3" font-size="10.5" fill="#64748b" text-anchor="end" class="mono">1.0</text>
+<line x1="444.0" y1="162.7" x2="716.0" y2="162.7" stroke="#f1f5f9" stroke-width="1"/>
+<text x="437.0" y="166.7" font-size="10.5" fill="#64748b" text-anchor="end" class="mono">2.0</text>
+<line x1="444.0" y1="110.0" x2="716.0" y2="110.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="437.0" y="114.0" font-size="10.5" fill="#64748b" text-anchor="end" class="mono">3.0</text>
+<text x="437.0" y="272.0" font-size="10.5" fill="#64748b" text-anchor="end" class="mono">0</text>
+<line x1="524.0" y1="110.0" x2="524.0" y2="268.0" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="524.0" y="284.0" font-size="10.5" fill="#64748b" text-anchor="middle">1λ_D</text>
+<line x1="604.0" y1="110.0" x2="604.0" y2="268.0" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="604.0" y="284.0" font-size="10.5" fill="#64748b" text-anchor="middle">2λ_D</text>
+<line x1="684.0" y1="110.0" x2="684.0" y2="268.0" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="684.0" y="284.0" font-size="10.5" fill="#64748b" text-anchor="middle">3λ_D</text>
+<text x="444.0" y="284.0" font-size="10.5" fill="#64748b" text-anchor="middle" class="mono">0</text>
+<text x="716.0" y="299.0" font-size="10.8" fill="#64748b" text-anchor="end">归一化距离 r / λ_D</text>
+<text x="438.0" y="102.0" font-size="10.8" fill="#64748b" text-anchor="start">电势 Φ/Φ₀</text>
+<path d="M444.0,110.0 V268.0 H716.0" fill="none" stroke="#94a3b8" stroke-width="1.3"/>
+<path d="M471.60,115.34 L474.32,129.02 L477.03,140.44 L479.75,150.13 L482.46,158.46 L485.18,165.68 L487.89,172.01 L490.61,177.60 L493.32,182.58 L496.04,187.04 L498.76,191.05 L501.47,194.69 L504.19,198.00 L506.90,201.02 L509.62,203.79 L512.33,206.34 L515.05,208.70 L517.76,210.88 L520.48,212.91 L523.20,214.80 L525.91,216.56 L528.63,218.21 L531.34,219.76 L534.06,221.22 L536.77,222.58 L539.49,223.88 L542.20,225.10 L544.92,226.25 L547.64,227.34 L550.35,228.38 L553.07,229.37 L555.78,230.31 L558.50,231.20 L561.21,232.05 L563.93,232.87 L566.64,233.65 L569.36,234.39 L572.08,235.10 L574.79,235.79 L577.51,236.44 L580.22,237.07 L582.94,237.67 L585.65,238.26 L588.37,238.82 L591.08,239.35 L593.80,239.87 L596.52,240.37 L599.23,240.86 L601.95,241.32 L604.66,241.78 L607.38,242.21 L610.09,242.63 L612.81,243.04 L615.52,243.44 L618.24,243.82 L620.96,244.19 L623.67,244.55 L626.39,244.90 L629.10,245.24 L631.82,245.57 L634.53,245.89 L637.25,246.20 L639.96,246.50 L642.68,246.79 L645.40,247.08 L648.11,247.36 L650.83,247.63 L653.54,247.89 L656.26,248.15 L658.97,248.40 L661.69,248.65 L664.40,248.88 L667.12,249.12 L669.84,249.34 L672.55,249.57 L675.27,249.78 L677.98,249.99 L680.70,250.20 L683.41,250.40 L686.13,250.60 L688.84,250.79 L691.56,250.98 L694.28,251.17 L696.99,251.35 L699.71,251.52 L702.42,251.70 L705.14,251.87 L707.85,252.03 L710.57,252.19 L713.28,252.35 L716.00,252.51" fill="none" stroke="#c25014" stroke-width="2.1" stroke-dasharray="6 4"/>
+<path d="M464.40,107.95 L467.20,132.07 L469.99,150.86 L472.79,165.87 L475.58,178.11 L478.38,188.25 L481.17,196.78 L483.97,204.04 L486.76,210.27 L489.56,215.67 L492.36,220.39 L495.15,224.54 L497.95,228.21 L500.74,231.47 L503.54,234.38 L506.33,236.99 L509.13,239.34 L511.92,241.46 L514.72,243.39 L517.52,245.14 L520.31,246.73 L523.11,248.19 L525.90,249.52 L528.70,250.74 L531.49,251.87 L534.29,252.90 L537.08,253.86 L539.88,254.74 L542.68,255.56 L545.47,256.32 L548.27,257.02 L551.06,257.68 L553.86,258.29 L556.65,258.85 L559.45,259.38 L562.24,259.87 L565.04,260.33 L567.84,260.76 L570.63,261.17 L573.43,261.54 L576.22,261.90 L579.02,262.23 L581.81,262.54 L584.61,262.83 L587.40,263.11 L590.20,263.37 L593.00,263.61 L595.79,263.84 L598.59,264.05 L601.38,264.26 L604.18,264.45 L606.97,264.63 L609.77,264.80 L612.56,264.96 L615.36,265.11 L618.16,265.26 L620.95,265.39 L623.75,265.52 L626.54,265.64 L629.34,265.76 L632.13,265.87 L634.93,265.97 L637.72,266.07 L640.52,266.16 L643.32,266.25 L646.11,266.33 L648.91,266.41 L651.70,266.49 L654.50,266.56 L657.29,266.63 L660.09,266.69 L662.88,266.75 L665.68,266.81 L668.48,266.87 L671.27,266.92 L674.07,266.97 L676.86,267.02 L679.66,267.06 L682.45,267.10 L685.25,267.14 L688.04,267.18 L690.84,267.22 L693.64,267.26 L696.43,267.29 L699.23,267.32 L702.02,267.35 L704.82,267.38 L707.61,267.41 L710.41,267.43 L713.20,267.46 L716.00,267.48" fill="none" stroke="#1d6fa5" stroke-width="2.4"/>
+<path d="M464.40,107.95 L467.20,132.07 L469.99,150.86 L472.79,165.87 L475.58,178.11 L478.38,188.25 L481.17,196.78 L483.97,204.04 L486.76,210.27 L489.56,215.67 L492.36,220.39 L495.15,224.54 L497.95,228.21 L500.74,231.47 L503.54,234.38 L506.33,236.99 L509.13,239.34 L511.92,241.46 L514.72,243.39 L517.52,245.14 L520.31,246.73 L523.11,248.19 L525.90,249.52 L528.70,250.74 L531.49,251.87 L534.29,252.90 L537.08,253.86 L539.88,254.74 L542.68,255.56 L545.47,256.32 L548.27,257.02 L551.06,257.68 L553.86,258.29 L556.65,258.85 L559.45,259.38 L562.24,259.87 L565.04,260.33 L567.84,260.76 L570.63,261.17 L573.43,261.54 L576.22,261.90 L579.02,262.23 L581.81,262.54 L584.61,262.83 L587.40,263.11 L590.20,263.37 L593.00,263.61 L595.79,263.84 L598.59,264.05 L601.38,264.26 L604.18,264.45 L606.97,264.63 L609.77,264.80 L612.56,264.96 L615.36,265.11 L618.16,265.26 L620.95,265.39 L623.75,265.52 L626.54,265.64 L629.34,265.76 L632.13,265.87 L634.93,265.97 L637.72,266.07 L640.52,266.16 L643.32,266.25 L646.11,266.33 L648.91,266.41 L651.70,266.49 L654.50,266.56 L657.29,266.63 L660.09,266.69 L662.88,266.75 L665.68,266.81 L668.48,266.87 L671.27,266.92 L674.07,266.97 L676.86,267.02 L679.66,267.06 L682.45,267.10 L685.25,267.14 L688.04,267.18 L690.84,267.22 L693.64,267.26 L696.43,267.29 L699.23,267.32 L702.02,267.35 L704.82,267.38 L707.61,267.41 L710.41,267.43 L713.20,267.46 L716.00,267.48" fill="none" stroke="#38bdf8" stroke-width="2.6" stroke-opacity="0.55" class="yukawa-anim"/>
+<line x1="524.0" y1="219.3" x2="524.0" y2="243.6" stroke="#18794e" stroke-width="1.5" marker-end="url(#arr-green)"/>
+<circle cx="524.0" cy="215.3" r="3.6" fill="#c25014"/>
+<circle cx="524.0" cy="248.6" r="4.0" fill="#1d6fa5"/>
+<text x="531.0" y="245.6" font-size="10.6" fill="#18794e" text-anchor="start" font-weight="700" class="halo">降至 1/e (36.8%)</text>
+<rect x="528" y="108" width="192" height="50" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<line x1="538" y1="124" x2="564" y2="124" stroke="#c25014" stroke-width="2.1" stroke-dasharray="5 3"/>
+<text x="571" y="128" font-size="10.8" fill="#c25014" text-anchor="start" font-weight="600">真空裸库仑势 1/r</text>
+<line x1="538" y1="144" x2="564" y2="144" stroke="#1d6fa5" stroke-width="2.4"/>
+<text x="571" y="148" font-size="10.8" fill="#1d6fa5" text-anchor="start" font-weight="700">屏蔽势 (1/r)exp(−r/λ_D)</text>
+<text x="404" y="316" font-size="11.3" fill="#0f172a" text-anchor="start">r = 3λ_D 时，屏蔽势仅剩真空值的 5%</text>
+<text x="404" y="338" font-size="11.3" fill="#64748b" text-anchor="start">判据：体系尺寸 L ≫ λ_D 才显集体电中性</text>
+</svg>

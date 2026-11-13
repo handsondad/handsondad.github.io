@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="334" viewBox="0 0 760 334" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">儿童身高视角几何对比与早期感官认知三项解码</title>
+<desc id="desc">左图计算0.75米幼儿与1.75米站立成人相距0.8米时需仰视约51度，蹲下则变为0度平视；右图解释凝视细节、口部探索与躲猫猫客体永久性的发展科学机制。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="333" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">蹲下来到底改变了什么？51° 仰视压迫感 vs 0° 平视连接，以及三个探索密码</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左图按真实身高比例计算视线仰角；右图解释婴儿“盯落叶、啃玩具、迷恋躲猫猫”背后的感官与认知机制。</text>
+<rect x="20" y="62" width="352" height="256" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="85" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 一米以下的世界：站着讲 vs 蹲下来听</text>
+<line x1="38" y1="276" x2="354" y2="276" stroke="#475569" stroke-width="1.6"/>
+<rect x="276" y="204.0" width="64" height="6" rx="2" fill="#cbd5e1" stroke="#475569"/>
+<line x1="286" y1="210.0" x2="286" y2="276" stroke="#475569" stroke-width="2"/>
+<line x1="330" y1="210.0" x2="330" y2="276" stroke="#475569" stroke-width="2"/>
+<text x="308" y="197.0" font-size="10.2" fill="#64748b" text-anchor="middle">0.75m 桌面=天花板</text>
+<line x1="82" y1="276" x2="82" y2="134" stroke="#64748b" stroke-width="5" stroke-linecap="round" opacity="0.45"/>
+<circle cx="82" cy="120" r="12" fill="#f1f5f9" stroke="#64748b" stroke-width="1.5"/>
+<text x="82" y="292" font-size="10.5" fill="#64748b" text-anchor="middle">站立 1.75m</text>
+<path d="M144,276 L134,248 L148,226" fill="none" stroke="#1d6fa5" stroke-width="5" stroke-linecap="round"/>
+<circle cx="144" cy="213.6" r="12" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.8"/>
+<text x="144" y="292" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">蹲下平视</text>
+<line x1="222" y1="276" x2="222" y2="228" stroke="#c25014" stroke-width="5" stroke-linecap="round"/>
+<circle cx="222" cy="213.6" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.8"/>
+<text x="222" y="292" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700">宝宝 0.75m</text>
+<line x1="214" y1="209.6" x2="92" y2="121.6" stroke="#c25014" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arr-orange)"/>
+<text x="150" y="152" font-size="11" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">仰角 ≈ 51°</text>
+<line x1="158" y1="213.6" x2="209" y2="213.6" stroke="#18794e" stroke-width="2.2" marker-end="url(#arr-green)"/>
+<text x="183" y="204.6" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="700" class="halo">0° 平视连接</text>
+<rect x="388" y="62" width="352" height="256" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="404" y="85" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 读懂宝宝三个“怪动作”背后的科学</text>
+<rect x="404" y="98" width="320" height="64" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="416" y="117" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">盯着一片落叶看十分钟</text>
+<text x="416" y="136" font-size="10.6" fill="#1e293b" text-anchor="start">视觉与注意正在校准：从高对比轮廓逐步学</text>
+<text x="416" y="152" font-size="10.6" fill="#1e293b" text-anchor="start">会平滑追视与深度知觉，每道光影都是新数据。</text>
+<rect x="404" y="172" width="320" height="64" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="416" y="191" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">抓到什么都往嘴巴里送</text>
+<text x="416" y="210" font-size="10.6" fill="#1e293b" text-anchor="start">唇舌触觉感受器极密！在手指精细动作成熟前，</text>
+<text x="416" y="226" font-size="10.6" fill="#1e293b" text-anchor="start">安全啃咬是分辨率最高的“3D 触觉扫描仪”。</text>
+<rect x="404" y="246" width="320" height="64" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="416" y="265" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">玩“躲猫猫”笑到打嗝</text>
+<text x="416" y="284" font-size="10.6" fill="#1e293b" text-anchor="start">客体永久性（皮亚杰）：从“挡住=消失”升级为</text>
+<text x="416" y="300" font-size="10.6" fill="#1e293b" text-anchor="start">“猜你还在后面”，揭晓瞬间触发安全惊喜奖赏！</text>
+</svg>

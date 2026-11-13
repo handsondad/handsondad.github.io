@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="388" viewBox="0 0 760 388" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">第三宇宙速度的公转顺风车与能量勾股合成原理</title>
+<desc id="desc">左图对比1AU太阳逃逸速度42.12 km/s与地球公转29.78 km/s，得出对地双曲余速v_inf=12.34 km/s；右图用直角三角形展示v3=sqrt(11.18^2+12.34^2)=16.65 km/s。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="387" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">第三宇宙速度为什么只要 16.7 km/s，而不是逃离太阳所需的 42.1 km/s？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">先借地球公转 29.78 km/s 的顺风车，再用机械能守恒把“出井门槛 11.18”和“出井余速 12.34”勾股合成</text>
+<rect x="20" y="62" width="352" height="308" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="84" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="600">① 太阳系账本：地球自带 29.78 km/s 顺风车</text>
+<circle cx="62" cy="186" r="19" fill="#fef3c7" stroke="#d97706" stroke-width="1.6"/>
+<text x="62" y="190" font-size="10.8" fill="#b45309" text-anchor="middle" font-weight="700">太阳</text>
+<line x1="81" y1="186" x2="146" y2="186" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<text x="113" y="179" font-size="10.5" fill="#64748b" text-anchor="middle">1 AU</text>
+<path d="M 136,220 A 118,118 0 0 0 136,104" fill="none" stroke="#93c5fd" stroke-width="1.5" stroke-dasharray="4 3"/>
+<line x1="156" y1="177" x2="156" y2="128" stroke="#1d6fa5" stroke-width="2.3" marker-end="url(#arr-blue)"/>
+<line x1="156" y1="126" x2="156" y2="102" stroke="#18794e" stroke-width="2.3" marker-end="url(#arr-green)"/>
+<circle cx="156" cy="186" r="9" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.6"/>
+<text x="156" y="210" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="600">地球</text>
+<text x="170" y="156" font-size="10.6" fill="#1d6fa5" text-anchor="start" font-weight="600">公转 29.78 km/s</text>
+<text x="170" y="118" font-size="10.6" fill="#18794e" text-anchor="start" font-weight="700">只需补 v_∞ = 12.34 km/s</text>
+<text x="170" y="134" font-size="10.5" fill="#1e293b" text-anchor="start">合速度即达 42.12 逃离太阳！</text>
+<text x="40.0" y="240" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="600">1 AU 处挣脱太阳引力门槛：√2 v_地 = 42.12 km/s</text>
+<rect x="40.0" y="246" width="296.0" height="16" rx="4" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="188.0" y="258" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="600">42.12 km/s（从静止硬逃太阳所需）</text>
+<text x="40.0" y="280" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="600">顺着地球公转方向发射：白借 29.78 + 自备余速 12.34</text>
+<rect x="40.0" y="286" width="209.3" height="16" rx="4" fill="#1d6fa5"/>
+<rect x="249.3" y="286" width="86.7" height="16" rx="4" fill="#18794e"/>
+<text x="144.7" y="298" font-size="10.5" fill="#ffffff" text-anchor="middle" font-weight="600">地球公转 29.78</text>
+<text x="292.7" y="298" font-size="10.5" fill="#ffffff" text-anchor="middle" font-weight="700">+12.34</text>
+<rect x="36" y="314" width="320" height="42" rx="6" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="196" y="331" font-size="10.5" fill="#6d28d9" text-anchor="middle" font-weight="600">旅行者 1/2 号省油秘籍：借木星“引力弹弓”再蹭公转速度，</text>
+<text x="196" y="347" font-size="10.5" fill="#6d28d9" text-anchor="middle">无需地面硬烧满 16.65 km/s 就踏上了飞出太阳系的单程票！</text>
+<rect x="388" y="62" width="352" height="308" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="404" y="84" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="600">② 出地心引力井：动能相加 ⇒ 速度走“勾股斜边”！</text>
+<polygon points="446.0,268.0 582.4,268.0 582.4,129.8" fill="#eaf4fb" opacity="0.55"/>
+<polyline points="571.4,268.0 571.4,257.0 582.4,257.0" fill="none" stroke="#475569" stroke-width="1.2"/>
+<line x1="446.0" y1="268.0" x2="582.4" y2="268.0" stroke="#c25014" stroke-width="2.4"/>
+<line x1="582.4" y1="268.0" x2="582.4" y2="129.8" stroke="#18794e" stroke-width="2.4"/>
+<line x1="446.0" y1="268.0" x2="582.4" y2="129.8" stroke="#1d6fa5" stroke-width="3.0"/>
+<text x="514.2" y="286.0" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="700">v₂ = 11.18 km/s（填平地球井）</text>
+<text x="590.4" y="194.9" font-size="10.8" fill="#18794e" text-anchor="start" font-weight="600">出井对地余速</text>
+<text x="590.4" y="211.9" font-size="10.8" fill="#18794e" text-anchor="start" font-weight="700">v_∞ = 12.34 km/s</text>
+<text x="480.0" y="176.0" font-size="11.8" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">v₃ = 16.65 km/s</text>
+<text x="480.0" y="192.0" font-size="10.5" fill="#1d6fa5" text-anchor="middle" class="halo">(教科书约 16.7)</text>
+<rect x="404" y="296" width="320" height="60" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="564" y="315" font-size="10.6" fill="#0f172a" text-anchor="middle" font-weight="600">守恒律：½v₃² − ½v₂² = ½v_∞² ⇒ v₃ = √(v₂² + v_∞²)</text>
+<text x="564" y="334" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="700">误区对比：不是 11.18 + 12.34 = 23.52！井底省下近 7 km/s</text>
+<text x="564" y="350" font-size="10.5" fill="#64748b" text-anchor="middle">（高速井底点火动能收益倍增——即“奥伯特效应”）</text>
+</svg>

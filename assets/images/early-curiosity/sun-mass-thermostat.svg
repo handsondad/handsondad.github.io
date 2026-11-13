@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="330" viewBox="0 0 760 330" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">太阳质子质子链质量亏损账本与流体静力平衡恒温器</title>
+<desc id="desc">左图精确比较4个氢原子4.0313u与氦4原子4.0026u的质量差0.0287u（约0.71%，对应26.73MeV及太阳每秒亏损约426万吨）；右图展示引力与热压负反馈调节机制。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="329" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">太阳的能量账本与安全阀：少掉 0.71% 的质量去哪了？为什么它不会像氢弹炸掉？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左图按精确原子质量算出四个氢变成一个氦的亏损能量；右图拆解引力与热压的负反馈恒温器。</text>
+<rect x="20" y="62" width="360" height="252" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="85" font-size="12.4" fill="#0f172a" text-anchor="start" font-weight="700">① 核聚变天平：1000 克氢变成 992.9 克氦</text>
+<rect x="36" y="102" width="146" height="74" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="109" y="124" font-size="11.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">反应前：4 个氢原子</text>
+<text x="109" y="145" font-size="10.8" fill="#1e293b" text-anchor="middle" class="mono">4 × 1.0078 u</text>
+<text x="109" y="164" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">= 4.0313 u</text>
+<line x1="186" y1="139" x2="212" y2="139" stroke="#c25014" stroke-width="1.8" marker-end="url(#arr-orange)"/>
+<rect x="218" y="102" width="146" height="74" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="291" y="124" font-size="11.0" fill="#18794e" text-anchor="middle" font-weight="700">反应后：1 个氦-4</text>
+<text x="291" y="145" font-size="10.6" fill="#1e293b" text-anchor="middle">实测质量仅</text>
+<text x="291" y="164" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">= 4.0026 u</text>
+<rect x="36" y="190" width="328" height="108" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="48" y="212" font-size="11.2" fill="#c25014" text-anchor="start" font-weight="700">亏损质量 Δm = 0.0287 u（占原质量 0.71%）</text>
+<text x="48" y="234" font-size="10.6" fill="#1e293b" text-anchor="start">• 按 E = Δmc² 换算：单次净释放约 26.73 MeV</text>
+<text x="48" y="254" font-size="10.6" fill="#1e293b" text-anchor="start">• 整颗太阳每秒“烧掉”约 426 万吨质量化作辐射！</text>
+<text x="48" y="274" font-size="10.4" fill="#64748b" text-anchor="start">• 但太阳总重 2×10²⁷ 吨，烧百亿年也只耗万分之七体重</text>
+<rect x="392" y="62" width="348" height="252" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="408" y="85" font-size="12.4" fill="#0f172a" text-anchor="start" font-weight="700">② 恒星“自动恒温器”：为什么温和烧 100 亿年？</text>
+<rect x="408" y="102" width="316" height="62" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="566" y="123" font-size="11.2" fill="#0f172a" text-anchor="middle" font-weight="700">流体静力平衡：两股巨力时刻顶牛</text>
+<text x="566" y="145" font-size="10.6" fill="#1d6fa5" text-anchor="middle" font-weight="600">向内万有引力挤压  ⇄  向外高温等离子体热压力托举</text>
+<rect x="408" y="178" width="316" height="28" rx="6" fill="#ffffff" stroke="#c25014" stroke-width="1"/>
+<text x="420" y="196" font-size="10.4" fill="#c25014" text-anchor="start" font-weight="600">假如聚变稍微变快一点 → 核心多产热、向外膨胀</text>
+<rect x="408" y="214" width="316" height="28" rx="6" fill="#ffffff" stroke="#18794e" stroke-width="1"/>
+<text x="420" y="232" font-size="10.4" fill="#18794e" text-anchor="start" font-weight="600">核心一膨胀 → 密度与温度自动下降，聚变立刻减速！</text>
+<rect x="408" y="250" width="316" height="28" rx="6" fill="#ffffff" stroke="#1d6fa5" stroke-width="1"/>
+<text x="420" y="268" font-size="10.4" fill="#1d6fa5" text-anchor="start" font-weight="600">反之若聚变变慢 → 引力略微压紧核心 → 升温恢复输出</text>
+<text x="408" y="298" font-size="10.4" fill="#64748b" text-anchor="start">加上第一步弱相互作用极慢，太阳成了最稳的核聚变炉。</text>
+</svg>

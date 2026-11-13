@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="328" viewBox="0 0 760 328" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">机翼迎角升力失速曲线与纸飞机纵向静稳定配重原理</title>
+<desc id="desc">左图绘制升力随迎角线性增长并在约15度后进入气流分离失速区；右图对比重心靠后抬头失速与重心位于压力中心稍前方的自动恢复稳定滑翔。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="327" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">机翼迎角不是越大越好：临界失速曲线与纸飞机“机头配重”的秘密</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左图展示升力随迎角上升后在约 15° 附近气流分离骤降（失速）；右图解释重心略靠前为何更稳。</text>
+<rect x="20" y="62" width="366" height="250" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="85" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">① 迎角 α 与升力：抬头过猛反而掉高度</text>
+<line x1="74" y1="118.0" x2="74" y2="266" stroke="#475569" stroke-width="1.3"/>
+<line x1="74" y1="266" x2="360.0" y2="266" stroke="#475569" stroke-width="1.3"/>
+<rect x="273.2" y="118.0" width="86.8" height="148.0" fill="#fef1e8" opacity="0.7"/>
+<line x1="273.2" y1="118.0" x2="273.2" y2="266" stroke="#c25014" stroke-width="1.3" stroke-dasharray="4 3"/>
+<text x="316.6" y="136.0" font-size="10.3" fill="#c25014" text-anchor="middle" font-weight="700">失速区（气流分离）</text>
+<polyline points="74.0,286.9 78.1,283.2 82.2,279.6 86.3,275.9 90.3,272.3 94.4,268.6 98.5,265.0 102.6,261.3 106.7,257.6 110.8,254.0 114.9,250.3 118.9,246.7 123.0,243.0 127.1,239.4 131.2,235.7 135.3,232.0 139.4,228.4 143.5,224.7 147.5,221.1 151.6,217.4 155.7,213.8 159.8,210.1 163.9,206.5 168.0,202.8 172.1,199.1 176.1,195.5 180.2,191.8 184.3,188.2 188.4,184.5 192.5,180.9 196.6,177.2 200.7,173.5 204.7,169.9 208.8,166.2 212.9,162.6 217.0,158.9 221.1,155.3 225.2,151.6 229.3,147.9 233.3,144.3 237.4,140.6 241.5,139.4 245.6,138.4 249.7,137.5 253.8,136.8 257.9,136.3 261.9,136.1 266.0,136.2 270.1,136.6 274.2,137.3 278.3,138.8 282.4,140.9 286.5,143.4 290.5,146.2 294.6,149.3 298.7,152.7 302.8,156.3 306.9,160.1 311.0,164.1 315.1,168.2 319.1,172.5 323.2,177.0 327.3,181.6 331.4,186.4 335.5,191.3 339.6,196.4 343.7,196.4 347.7,196.4 351.8,196.4 355.9,196.4 360.0,196.4" fill="none" stroke="#1d6fa5" stroke-width="2.4"/>
+<circle cx="270.1" cy="136.6" r="4.5" fill="#c25014" stroke="#fff" stroke-width="1.2"/>
+<text x="262.1" y="127.6" font-size="10.5" fill="#c25014" text-anchor="end" font-weight="700" class="halo">临界迎角 ≈ 15°</text>
+<text x="114.9" y="282" font-size="10.2" fill="#64748b" text-anchor="middle">0°</text>
+<text x="165.9" y="282" font-size="10.2" fill="#64748b" text-anchor="middle">5°</text>
+<text x="217.0" y="282" font-size="10.2" fill="#64748b" text-anchor="middle">10°</text>
+<text x="268.1" y="282" font-size="10.2" fill="#64748b" text-anchor="middle">15°</text>
+<text x="319.1" y="282" font-size="10.2" fill="#64748b" text-anchor="middle">20°</text>
+<text x="217.0" y="300" font-size="10.4" fill="#1e293b" text-anchor="middle">机翼迎角 α（机翼弦线相对迎面来流的仰角）</text>
+<text x="64" y="192.0" font-size="10.5" fill="#1e293b" text-anchor="end" font-weight="600">升力</text>
+<rect x="398" y="62" width="342" height="250" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="414" y="85" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">② 纸飞机为什么总先冲高再拍地？</text>
+<rect x="414" y="100" width="310" height="92" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="426" y="120" font-size="11.2" fill="#c25014" text-anchor="start" font-weight="700">× 重心太靠后：一抬头就翻跟头失速</text>
+<text x="426" y="141" font-size="10.3" fill="#1e293b" text-anchor="start">• 机头太轻 → 升力作用点在重心前方，把机头越掀越高</text>
+<text x="426" y="159" font-size="10.3" fill="#1e293b" text-anchor="start">• 迎角冲破临界值发生失速 → 瞬间掉头砸地（波浪起伏）</text>
+<text x="426" y="177" font-size="10.3" fill="#0f172a" text-anchor="start" font-weight="700">解法：机头多折一层或夹半枚回形针，把重心往前移！</text>
+<rect x="414" y="202" width="310" height="96" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="426" y="222" font-size="11.0" fill="#18794e" text-anchor="start" font-weight="700">✓ 稳定滑翔黄金法则：重心 CG 在压力中心 CP 稍前方</text>
+<polygon points="440,264 556,256 544,270" fill="#ffffff" stroke="#475569" stroke-width="1.4"/>
+<circle cx="516" cy="261" r="4" fill="#c25014"/>
+<line x1="516" y1="265" x2="516" y2="287" stroke="#c25014" stroke-width="1.6" marker-end="url(#arr-orange)"/>
+<text x="524" y="285" font-size="9.8" fill="#c25014" text-anchor="start" font-weight="700">重心CG</text>
+<circle cx="484" cy="262" r="4" fill="#1d6fa5"/>
+<line x1="484" y1="258" x2="484" y2="236" stroke="#1d6fa5" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+<text x="476" y="244" font-size="9.8" fill="#1d6fa5" text-anchor="end" font-weight="700">升力CP</text>
+<text x="572" y="255" font-size="10.0" fill="#1e293b" text-anchor="start">机头一旦微抬，后方升力</text>
+<text x="572" y="271" font-size="10.0" fill="#18794e" text-anchor="start" font-weight="700">自动把机尾托起、压回平飞！</text>
+</svg>

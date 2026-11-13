@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="324" viewBox="0 0 760 324" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">胎儿感官发育孕周时间轴与子宫声学滤波及新生儿对焦距离</title>
+<desc id="desc">左图按0至40孕周标出心脏跳动、握拳、19至21周听觉开启、26周声音反应及足月出生；右图说明羊水低通滤波特性与新生儿20至25厘米最佳对焦距离。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="323" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">十月怀胎的感官时间轴：宝宝什么时候能听见声音、睁开眼睛？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">按末次月经孕周（MedlinePlus / ACOG 临床口径）标出关键里程碑；个体发育存在自然前后浮动。</text>
+<rect x="20" y="62" width="474" height="246" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="85" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 孕周感官发育里程碑（0 → 40 周）</text>
+<line x1="56" y1="126" x2="466" y2="126" stroke="#1d6fa5" stroke-width="2.2"/>
+<line x1="56.0" y1="120" x2="56.0" y2="132" stroke="#1d6fa5" stroke-width="1.4"/>
+<text x="56.0" y="146" font-size="10.5" fill="#64748b" text-anchor="middle">0周</text>
+<line x1="158.5" y1="120" x2="158.5" y2="132" stroke="#1d6fa5" stroke-width="1.4"/>
+<text x="158.5" y="146" font-size="10.5" fill="#64748b" text-anchor="middle">10周</text>
+<line x1="261.0" y1="120" x2="261.0" y2="132" stroke="#1d6fa5" stroke-width="1.4"/>
+<text x="261.0" y="146" font-size="10.5" fill="#64748b" text-anchor="middle">20周</text>
+<line x1="363.5" y1="120" x2="363.5" y2="132" stroke="#1d6fa5" stroke-width="1.4"/>
+<text x="363.5" y="146" font-size="10.5" fill="#64748b" text-anchor="middle">30周</text>
+<line x1="466.0" y1="120" x2="466.0" y2="132" stroke="#1d6fa5" stroke-width="1.4"/>
+<text x="466.0" y="146" font-size="10.5" fill="#64748b" text-anchor="middle">40周</text>
+<circle cx="122.6" cy="126" r="4.5" fill="#1d6fa5" stroke="#fff" stroke-width="1.2"/>
+<line x1="122.6" y1="131" x2="122.6" y2="164" stroke="#1d6fa5" stroke-width="1" stroke-dasharray="2 2"/>
+<rect x="42.0" y="154.0" width="78" height="19" rx="9.5" fill="#f1f5f9" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="81.0" y="166.9" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">6–7 周</text>
+<text x="128" y="168" font-size="11.2" fill="#1e293b" text-anchor="start">心脏规律跳动，眼耳原基初现</text>
+<circle cx="184.1" cy="126" r="4.5" fill="#18794e" stroke="#fff" stroke-width="1.2"/>
+<line x1="184.1" y1="131" x2="184.1" y2="190" stroke="#18794e" stroke-width="1" stroke-dasharray="2 2"/>
+<rect x="42.0" y="180.0" width="78" height="19" rx="9.5" fill="#f1f5f9" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="81.0" y="192.9" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="600">11–14 周</text>
+<text x="128" y="194" font-size="11.2" fill="#1e293b" text-anchor="start">小手能握拳，眼睑闭合保护眼球</text>
+<circle cx="261.0" cy="126" r="4.5" fill="#c25014" stroke="#fff" stroke-width="1.2"/>
+<line x1="261.0" y1="131" x2="261.0" y2="216" stroke="#c25014" stroke-width="1" stroke-dasharray="2 2"/>
+<rect x="42.0" y="206.0" width="78" height="19" rx="9.5" fill="#f1f5f9" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="81.0" y="218.9" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="600">19–21 周</text>
+<text x="128" y="220" font-size="11.2" fill="#1e293b" text-anchor="start">听觉开启！先听清妈妈心跳与血流声</text>
+<circle cx="322.5" cy="126" r="4.5" fill="#6d28d9" stroke="#fff" stroke-width="1.2"/>
+<line x1="322.5" y1="131" x2="322.5" y2="242" stroke="#6d28d9" stroke-width="1" stroke-dasharray="2 2"/>
+<rect x="42.0" y="232.0" width="78" height="19" rx="9.5" fill="#f1f5f9" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="81.0" y="244.9" font-size="10.5" fill="#6d28d9" text-anchor="middle" font-weight="600">26 周左右</text>
+<text x="128" y="246" font-size="11.2" fill="#1e293b" text-anchor="start">对突响会有惊跳反应；27–30周可睁闭眼</text>
+<circle cx="450.6" cy="126" r="4.5" fill="#18794e" stroke="#fff" stroke-width="1.2"/>
+<line x1="450.6" y1="131" x2="450.6" y2="268" stroke="#18794e" stroke-width="1" stroke-dasharray="2 2"/>
+<rect x="42.0" y="258.0" width="78" height="19" rx="9.5" fill="#f1f5f9" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="81.0" y="270.9" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="600">足月出生</text>
+<text x="128" y="272" font-size="11.2" fill="#1e293b" text-anchor="start">最佳对焦仅 20–25 cm（刚好怀抱看爸妈脸）</text>
+<rect x="508" y="62" width="232" height="246" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="524" y="85" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 隔着肚皮听见什么？</text>
+<rect x="524" y="98" width="200" height="88" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="624" y="118" font-size="11.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">腹壁 + 羊水 ≈ 天然低通滤波</text>
+<text x="536" y="139" font-size="10.8" fill="#1e293b" text-anchor="start">• 高频尖音被大幅衰减模糊</text>
+<text x="536" y="157" font-size="10.8" fill="#1e293b" text-anchor="start">• 低沉平稳的说话声穿透更好</text>
+<text x="536" y="175" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="700">→ 爸妈自然聊天胜过贴肚放喇叭</text>
+<rect x="524" y="198" width="200" height="94" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="624" y="218" font-size="11.2" fill="#c25014" text-anchor="middle" font-weight="700">新生儿的“20–25 cm 专属焦距”</text>
+<text x="536" y="239" font-size="10.8" fill="#1e293b" text-anchor="start">• 远处房间背景一团柔和模糊</text>
+<text x="536" y="257" font-size="10.8" fill="#1e293b" text-anchor="start">• 唯独喂奶拥抱时爸妈的眼睛</text>
+<text x="536" y="275" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">  正好落在最清晰的焦点上！</text>
+</svg>

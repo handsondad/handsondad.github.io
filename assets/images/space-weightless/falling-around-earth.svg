@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="424" viewBox="0 0 760 424" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">牛顿高山大炮轨道速度分岔与空间站1秒下落追平地球曲率图解</title>
+<desc id="desc">左图展示不同水平初速度对应的落回地面、圆轨道（7.67千米每秒，周期92.4分钟）与椭圆轨道，含播放一次的绕地动画；右图放大1秒内的运动，水平前进7.67千米的同时自由下落4.35米，恰好等于地球曲率下降的4.35米。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  .orb-runner {
+        transform-origin: 188px 240px;
+        animation: orbitOnce 6.5s cubic-bezier(0.25, 0.1, 0.25, 1) 1 forwards;
+      }
+      @keyframes orbitOnce {
+        0%   { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .orb-runner { animation: none; }
+      }
+</style>
+<rect x="0.5" y="0.5" width="759" height="423" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">每秒都在往下掉 4.35 米，为什么空间站永远砸不到地面？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左图：牛顿高山大炮的精确圆锥曲线轨迹；右图：把 1 秒钟放大看——横飞 7.67 km 时，弯曲的地表刚好也退让了 4.35 m！</text>
+<rect x="20" y="64" width="336" height="344" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="84" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="38" y="88" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="88" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">牛顿高山思想实验：绕地 = 追平曲率的下落</text>
+<text x="36" y="107" font-size="10.9" fill="#64748b" text-anchor="start">高度与炮弹轨迹按开普勒方程绘制（高度示意放大）</text>
+<path d="M188.00,140.00 L191.93,140.06 L195.85,140.25 L199.77,140.57 L203.68,141.02 L207.57,141.59 L211.46,142.29 L215.32,143.12 L219.17,144.08 L222.99,145.16 L226.78,146.38 L230.54,147.71 L234.27,149.18 L237.97,150.78 L241.62,152.50 L245.23,154.35 L248.79,156.32 L252.31,158.43 L255.76,160.66 L259.16,163.02 L262.50,165.50 L265.77,168.11 L268.97,170.85 L272.09,173.71 L275.14,176.69 L278.10,179.80 L280.97,183.03 L283.75,186.38 L286.43,189.85 L289.01,193.44 L291.47,197.14 L293.83,200.96 L296.07,204.89 L298.18,208.93 L300.16,213.07 L302.00,217.32 L303.71,221.67 L305.27,226.12 L306.67,230.66 L307.92,235.29 L309.00,240.00 L309.91,244.79 L310.65,249.65 L311.20,254.58 L311.57,259.57 L311.74,264.61 L311.72,269.70 L311.50,274.83 L311.06,279.99 L310.42,285.16 L309.56,290.35 L308.48,295.54 L307.17,300.72 L305.64,305.88 L303.88,311.01 L301.90,316.10 L299.68,321.14 L297.22,326.10 L294.54,330.99 L291.62,335.79 L288.48,340.48 L285.11,345.05 L281.52,349.49 L277.70,353.79 L273.68,357.93 L269.44,361.89 L265.01,365.67 L260.39,369.25 L255.58,372.63 L250.60,375.78 L245.45,378.70 L240.16,381.37 L234.72,383.80 L229.16,385.96 L223.49,387.85 L217.73,389.46 L211.88,390.79 L205.97,391.82 L200.01,392.57 L194.01,393.02 L188.00,393.16 L181.99,393.02 L175.99,392.57 L170.03,391.82 L164.12,390.79 L158.27,389.46 L152.51,387.85 L146.84,385.96 L141.28,383.80 L135.84,381.37 L130.55,378.70 L125.40,375.78 L120.42,372.63 L115.61,369.25 L110.99,365.67 L106.56,361.89 L102.32,357.93 L98.30,353.79 L94.48,349.49 L90.89,345.05 L87.52,340.48 L84.38,335.79 L81.46,330.99 L78.78,326.10 L76.32,321.14 L74.10,316.10 L72.12,311.01 L70.36,305.88 L68.83,300.72 L67.52,295.54 L66.44,290.35 L65.58,285.16 L64.94,279.99 L64.50,274.83 L64.28,269.70 L64.26,264.61 L64.43,259.57 L64.80,254.58 L65.35,249.65 L66.09,244.79 L67.00,240.00 L68.08,235.29 L69.33,230.66 L70.73,226.12 L72.29,221.67 L74.00,217.32 L75.84,213.07 L77.82,208.93 L79.93,204.89 L82.17,200.96 L84.53,197.14 L86.99,193.44 L89.57,189.85 L92.25,186.38 L95.03,183.03 L97.90,179.80 L100.86,176.69 L103.91,173.71 L107.03,170.85 L110.23,168.11 L113.50,165.50 L116.84,163.02 L120.24,160.66 L123.69,158.43 L127.21,156.32 L130.77,154.35 L134.38,152.50 L138.03,150.78 L141.73,149.18 L145.46,147.71 L149.22,146.38 L153.01,145.16 L156.83,144.08 L160.68,143.12 L164.54,142.29 L168.43,141.59 L172.32,141.02 L176.23,140.57 L180.15,140.25 L184.07,140.06 L188.00,140.00" fill="none" stroke="#6d28d9" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="4 3"/>
+<circle cx="188.0" cy="240.0" r="100.0" fill="none" stroke="#1d6fa5" stroke-width="2.4"/>
+<circle cx="188.0" cy="240.0" r="76.0" fill="#dbeafe" stroke="#1d6fa5" stroke-width="1.6"/>
+<circle cx="188.0" cy="240.0" r="3.0" fill="#0f172a"/>
+<text x="188.0" y="256.0" font-size="10.8" fill="#0f172a" text-anchor="middle" font-weight="600">地心</text>
+<polygon points="178.0,166.0 188.0,140.0 198.0,166.0" fill="#475569"/>
+<path d="M188.00,140.00 L191.92,140.15 L195.82,140.59 L199.68,141.33 L203.47,142.35 L207.17,143.64 L210.76,145.20 L214.23,147.00 L217.56,149.03 L220.73,151.28 L223.74,153.71 L226.57,156.33 L229.22,159.09 L231.69,161.99 L233.96,165.00 L236.04,168.11 L237.92,171.29 L239.62,174.53 L241.12,177.80 L242.44,181.10 L243.59,184.41 L244.56,187.72 L245.36,191.01" fill="none" stroke="#475569" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="3 3"/>
+<path d="M188.00,140.00 L191.93,140.10 L195.84,140.39 L199.73,140.87 L203.59,141.55 L207.41,142.41 L211.18,143.46 L214.88,144.69 L218.51,146.10 L222.06,147.68 L225.52,149.42 L228.88,151.32 L232.14,153.38 L235.28,155.58 L238.30,157.91 L241.20,160.38 L243.97,162.96 L246.61,165.66 L249.10,168.46 L251.46,171.35 L253.66,174.34 L255.72,177.40 L257.63,180.53 L259.39,183.72 L261.00,186.96 L262.46,190.25 L263.77,193.57 L264.92,196.92 L265.93,200.29 L266.79,203.68 L267.51,207.07 L268.08,210.46 L268.51,213.84 L268.80,217.21 L268.95,220.57 L268.97,223.89 L268.86,227.19 L268.63,230.46 L268.28,233.68 L267.80,236.86 L267.21,240.00 L266.51,243.08 L265.70,246.11 L264.78,249.09 L263.77,252.00 L262.66,254.85 L261.46,257.64" fill="none" stroke="#18794e" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="5 3"/>
+<circle cx="188.0" cy="140.0" r="3.6" fill="#ffffff" stroke="#c25014" stroke-width="1.5"/>
+<g class="orb-runner">
+<circle cx="188.0" cy="140.0" r="5.4" fill="#c25014" stroke="#ffffff" stroke-width="1.5"/>
+</g>
+<line x1="194.0" y1="140.0" x2="234.0" y2="140.0" stroke="#c25014" stroke-width="2.0" marker-end="url(#arr-orange)"/>
+<text x="238.0" y="144.0" font-size="11.2" fill="#c25014" text-anchor="start" font-weight="700" class="halo">v = 7.67 km/s</text>
+<text x="264" y="212" font-size="10.6" fill="#475569" text-anchor="start" class="halo">慢 → 落回地面</text>
+<text x="248" y="314" font-size="10.6" fill="#6d28d9" text-anchor="start" class="halo">更快 → 椭圆轨道</text>
+<text x="64" y="166" font-size="11.2" fill="#1d6fa5" text-anchor="start" font-weight="700" class="halo">圆轨道</text>
+<rect x="34" y="344" width="308" height="52" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="46" y="364" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">第一宇宙速度（400 km）：v ≈ 7.67 km/s</text>
+<text x="46" y="383" font-size="11.0" fill="#1e293b" text-anchor="start">约 2.76 万 km/h，每 92.4 分钟绕地球一圈！</text>
+<rect x="372" y="64" width="368" height="344" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="390" cy="84" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="390" y="88" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="408" y="88" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">放大看 1 秒钟：掉下去的，刚好被地球弯走！</text>
+<text x="388" y="107" font-size="10.8" fill="#64748b" text-anchor="start">横向 7.67 km 与竖直 4.35 m 相差 1760 倍（竖直示意放大）</text>
+<path d="M414.0,302 L414.0,228.0 L414.0,228.0 L420.2,228.0 L426.5,228.1 L432.8,228.3 L439.0,228.5 L445.2,228.8 L451.5,229.1 L457.8,229.5 L464.0,229.9 L470.2,230.4 L476.5,231.0 L482.8,231.6 L489.0,232.3 L495.2,233.1 L501.5,233.9 L507.8,234.8 L514.0,235.7 L520.2,236.7 L526.5,237.7 L532.8,238.8 L539.0,240.0 L545.2,241.2 L551.5,242.5 L557.8,243.9 L564.0,245.3 L570.2,246.8 L576.5,248.3 L582.8,249.9 L589.0,251.5 L595.2,253.2 L601.5,255.0 L607.8,256.8 L614.0,258.7 L620.2,260.7 L626.5,262.7 L632.8,264.8 L639.0,266.9 L645.2,269.1 L651.5,271.3 L657.8,273.6 L664.0,276.0 L664.0,302 Z" fill="#dbeafe" opacity="0.75"/>
+<line x1="414.0" y1="142.0" x2="664.0" y2="142.0" stroke="#475569" stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#arr-muted)"/>
+<line x1="414.0" y1="228.0" x2="664.0" y2="228.0" stroke="#475569" stroke-width="1.2" stroke-dasharray="4 4"/>
+<path d="M414.00,142.00 L420.25,142.03 L426.50,142.12 L432.75,142.27 L439.00,142.48 L445.25,142.75 L451.50,143.08 L457.75,143.47 L464.00,143.92 L470.25,144.43 L476.50,145.00 L482.75,145.63 L489.00,146.32 L495.25,147.07 L501.50,147.88 L507.75,148.75 L514.00,149.68 L520.25,150.67 L526.50,151.72 L532.75,152.83 L539.00,154.00 L545.25,155.23 L551.50,156.52 L557.75,157.87 L564.00,159.28 L570.25,160.75 L576.50,162.28 L582.75,163.87 L589.00,165.52 L595.25,167.23 L601.50,169.00 L607.75,170.83 L614.00,172.72 L620.25,174.67 L626.50,176.68 L632.75,178.75 L639.00,180.88 L645.25,183.07 L651.50,185.32 L657.75,187.63 L664.00,190.00" fill="none" stroke="#1d6fa5" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M414.00,228.00 L420.25,228.03 L426.50,228.12 L432.75,228.27 L439.00,228.48 L445.25,228.75 L451.50,229.08 L457.75,229.47 L464.00,229.92 L470.25,230.43 L476.50,231.00 L482.75,231.63 L489.00,232.32 L495.25,233.07 L501.50,233.88 L507.75,234.75 L514.00,235.68 L520.25,236.67 L526.50,237.72 L532.75,238.83 L539.00,240.00 L545.25,241.23 L551.50,242.52 L557.75,243.87 L564.00,245.28 L570.25,246.75 L576.50,248.28 L582.75,249.87 L589.00,251.52 L595.25,253.23 L601.50,255.00 L607.75,256.83 L614.00,258.72 L620.25,260.67 L626.50,262.68 L632.75,264.75 L639.00,266.88 L645.25,269.07 L651.50,271.32 L657.75,273.63 L664.00,276.00" fill="none" stroke="#18794e" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="414.0" y1="147.0" x2="414.0" y2="225.0" stroke="#1d6fa5" stroke-width="1.3" stroke-dasharray="3 2"/>
+<text x="420.0" y="189.0" font-size="10.8" fill="#1d6fa5" text-anchor="start" font-weight="600" class="halo">离地 400 km</text>
+<line x1="610.0" y1="172.8" x2="610.0" y2="254.8" stroke="#1d6fa5" stroke-width="1.3" stroke-dasharray="3 2"/>
+<text x="604.0" y="217.8" font-size="10.8" fill="#1d6fa5" text-anchor="end" font-weight="700" class="halo">仍离地 400 km！</text>
+<line x1="664.0" y1="144.0" x2="664.0" y2="187.0" stroke="#c25014" stroke-width="2.2" marker-end="url(#arr-orange)"/>
+<line x1="664.0" y1="230.0" x2="664.0" y2="273.0" stroke="#18794e" stroke-width="2.2" marker-end="url(#arr-green)"/>
+<circle cx="414.0" cy="142.0" r="4.5" fill="#c25014"/>
+<circle cx="664.0" cy="190.0" r="4.8" fill="#c25014" stroke="#ffffff" stroke-width="1.3"/>
+<text x="539.0" y="134.0" font-size="11.0" fill="#475569" text-anchor="middle" font-weight="600">若无引力惯性直飞：1 秒前进 7.67 km</text>
+<text x="671.0" y="164.0" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="700">自由下落</text>
+<text x="671.0" y="178.0" font-size="11.0" fill="#c25014" text-anchor="start" font-weight="700" class="mono">4.35 m</text>
+<text x="671.0" y="250.0" font-size="10.6" fill="#18794e" text-anchor="start" font-weight="700">地表下弯</text>
+<text x="671.0" y="264.0" font-size="11.0" fill="#18794e" text-anchor="start" font-weight="700" class="mono">4.35 m</text>
+<text x="424" y="294" font-size="10.8" fill="#18794e" text-anchor="start" font-weight="600">弯曲的地球表面</text>
+<rect x="388" y="312" width="336" height="84" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="400" y="332" font-size="11.4" fill="#0f172a" text-anchor="start" font-weight="700">为什么两个 4.35 m 严丝合缝？因为 v = √(GM/r)：</text>
+<text x="400" y="353" font-size="11.1" fill="#c25014" text-anchor="start" font-weight="700">地表弯曲量 x²/(2r) = v²t²/(2r) = ½(GM/r²)t² = ½gt²</text>
+<text x="400" y="374" font-size="11.0" fill="#1e293b" text-anchor="start">空间站、航天员、水珠沿同一条圆弧下落 → 相对漂浮！</text>
+</svg>

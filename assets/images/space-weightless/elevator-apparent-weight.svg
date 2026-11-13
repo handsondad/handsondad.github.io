@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="412" viewBox="0 0 760 412" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">电梯三态视重对比与自由下落扎孔水杯实验</title>
+<desc id="desc">上方三栏对比60千克乘客在静止、以0.5g向下加速、以1g自由下落时重力mg始终为588牛而支持力N从588牛减至294牛再到0牛；下方展示侧壁扎孔水杯松手自由下落时水压差归零停止漏水。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="411" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">“引力”不等于“体重秤读数”：为什么一松手就瞬间失重？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">你感受到的“沉重”，其实是地板向上托你的支持力 N = m(g − a)。当舱体和你一起自由下落，支持力归零。</text>
+<rect x="20" y="64" width="232" height="226" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="84" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="38" y="88" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="55" y="88" font-size="12.8" fill="#0f172a" text-anchor="start" font-weight="700">静止或匀速 (a = 0)</text>
+<rect x="64" y="102" width="132" height="114" rx="8" fill="#f8fafc" stroke="#1d6fa5" stroke-width="1.5"/>
+<line x1="130.0" y1="94.0" x2="130.0" y2="102.0" stroke="#475569" stroke-width="2.0"/>
+<rect x="98.0" y="204.0" width="64" height="9" rx="3" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<circle cx="130.0" cy="150.0" r="8" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
+<line x1="130.0" y1="158.0" x2="130.0" y2="188.0" stroke="#0f172a" stroke-width="1.8"/>
+<line x1="117.0" y1="168.0" x2="143.0" y2="168.0" stroke="#0f172a" stroke-width="1.6"/>
+<line x1="130.0" y1="188.0" x2="121.0" y2="204.0" stroke="#0f172a" stroke-width="1.7"/>
+<line x1="130.0" y1="188.0" x2="139.0" y2="204.0" stroke="#0f172a" stroke-width="1.7"/>
+<circle cx="130.0" cy="174.0" r="3.2" fill="#0f172a"/>
+<line x1="110.0" y1="164.0" x2="110.0" y2="198.0" stroke="#c25014" stroke-width="2.2" marker-end="url(#arr-orange)"/>
+<text x="105.0" y="180" font-size="11.0" fill="#c25014" text-anchor="end" font-weight="700">mg</text>
+<text x="105.0" y="193" font-size="10.0" fill="#c25014" text-anchor="end" class="mono">588N</text>
+<line x1="150.0" y1="184.0" x2="150.0" y2="150.0" stroke="#1d6fa5" stroke-width="2.2" marker-end="url(#arr-blue)"/>
+<text x="155.0" y="164" font-size="11.0" fill="#1d6fa5" text-anchor="start" font-weight="700">N</text>
+<text x="155.0" y="177" font-size="10.0" fill="#1d6fa5" text-anchor="start" class="mono">588N</text>
+<rect x="34" y="224" width="204" height="24" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="136" y="240" font-size="11.3" fill="#1d6fa5" text-anchor="middle" font-weight="700">秤读数：60.0 kg（正常）</text>
+<text x="136" y="263" font-size="11.2" fill="#0f172a" text-anchor="middle" font-weight="600" class="mono">N = mg = 588 N</text>
+<text x="136" y="280" font-size="10.8" fill="#64748b" text-anchor="middle">地板稳稳托住脚底</text>
+<rect x="264" y="64" width="232" height="226" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="282" cy="84" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="282" y="88" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">2</text>
+<text x="299" y="88" font-size="12.8" fill="#0f172a" text-anchor="start" font-weight="700">向下加速 (a = 0.5g)</text>
+<rect x="308" y="102" width="132" height="114" rx="8" fill="#f8fafc" stroke="#18794e" stroke-width="1.5"/>
+<line x1="374.0" y1="94.0" x2="374.0" y2="102.0" stroke="#475569" stroke-width="2.0"/>
+<rect x="342.0" y="204.0" width="64" height="9" rx="3" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<circle cx="374.0" cy="150.0" r="8" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
+<line x1="374.0" y1="158.0" x2="374.0" y2="188.0" stroke="#0f172a" stroke-width="1.8"/>
+<line x1="361.0" y1="168.0" x2="387.0" y2="168.0" stroke="#0f172a" stroke-width="1.6"/>
+<line x1="374.0" y1="188.0" x2="365.0" y2="204.0" stroke="#0f172a" stroke-width="1.7"/>
+<line x1="374.0" y1="188.0" x2="383.0" y2="204.0" stroke="#0f172a" stroke-width="1.7"/>
+<circle cx="374.0" cy="174.0" r="3.2" fill="#0f172a"/>
+<line x1="354.0" y1="164.0" x2="354.0" y2="198.0" stroke="#c25014" stroke-width="2.2" marker-end="url(#arr-orange)"/>
+<text x="349.0" y="180" font-size="11.0" fill="#c25014" text-anchor="end" font-weight="700">mg</text>
+<text x="349.0" y="193" font-size="10.0" fill="#c25014" text-anchor="end" class="mono">588N</text>
+<line x1="394.0" y1="184.0" x2="394.0" y2="167.0" stroke="#18794e" stroke-width="2.2" marker-end="url(#arr-green)"/>
+<text x="399.0" y="170" font-size="11.0" fill="#18794e" text-anchor="start" font-weight="700">N</text>
+<text x="399.0" y="183" font-size="10.0" fill="#18794e" text-anchor="start" class="mono">294N</text>
+<line x1="454.0" y1="134.0" x2="454.0" y2="156.0" stroke="#18794e" stroke-width="1.8" marker-end="url(#arr-green)"/>
+<text x="454" y="127" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="700">a↓</text>
+<rect x="278" y="224" width="204" height="24" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="380" y="240" font-size="11.3" fill="#18794e" text-anchor="middle" font-weight="700">秤读数：30.0 kg（半失重）</text>
+<text x="380" y="263" font-size="11.2" fill="#0f172a" text-anchor="middle" font-weight="600" class="mono">N = m(g−0.5g) = 294 N</text>
+<text x="380" y="280" font-size="10.8" fill="#64748b" text-anchor="middle">地板一边退让一边轻托</text>
+<rect x="508" y="64" width="232" height="226" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="526" cy="84" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="526" y="88" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">3</text>
+<text x="543" y="88" font-size="12.8" fill="#0f172a" text-anchor="start" font-weight="700">自由下落 (a = g)</text>
+<rect x="552" y="102" width="132" height="114" rx="8" fill="#f8fafc" stroke="#c25014" stroke-width="1.5" stroke-dasharray="5 3"/>
+<line x1="612.0" y1="95.0" x2="617.0" y2="100.0" stroke="#c25014" stroke-width="1.8"/>
+<line x1="624.0" y1="95.0" x2="619.0" y2="100.0" stroke="#c25014" stroke-width="1.8"/>
+<rect x="586.0" y="204.0" width="64" height="9" rx="3" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<circle cx="618.0" cy="142.0" r="8" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
+<line x1="618.0" y1="150.0" x2="618.0" y2="180.0" stroke="#0f172a" stroke-width="1.8"/>
+<line x1="605.0" y1="160.0" x2="631.0" y2="160.0" stroke="#0f172a" stroke-width="1.6"/>
+<line x1="618.0" y1="180.0" x2="609.0" y2="196.0" stroke="#0f172a" stroke-width="1.7"/>
+<line x1="618.0" y1="180.0" x2="627.0" y2="196.0" stroke="#0f172a" stroke-width="1.7"/>
+<circle cx="618.0" cy="166.0" r="3.2" fill="#0f172a"/>
+<line x1="598.0" y1="156.0" x2="598.0" y2="190.0" stroke="#c25014" stroke-width="2.2" marker-end="url(#arr-orange)"/>
+<text x="593.0" y="172" font-size="11.0" fill="#c25014" text-anchor="end" font-weight="700">mg</text>
+<text x="593.0" y="185" font-size="10.0" fill="#c25014" text-anchor="end" class="mono">588N</text>
+<text x="637.0" y="168" font-size="11.0" fill="#c25014" text-anchor="start" font-weight="700">N = 0</text>
+<circle cx="652.0" cy="146.0" r="5" fill="#ef4444"/>
+<line x1="698.0" y1="134.0" x2="698.0" y2="172.0" stroke="#c25014" stroke-width="1.8" marker-end="url(#arr-orange)"/>
+<text x="698" y="127" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="700">a↓</text>
+<rect x="522" y="224" width="204" height="24" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="624" y="240" font-size="11.3" fill="#c25014" text-anchor="middle" font-weight="700">秤读数：0.0 kg（完全失重！）</text>
+<text x="624" y="263" font-size="11.2" fill="#0f172a" text-anchor="middle" font-weight="600" class="mono">N = m(g − g) = 0 N</text>
+<text x="624" y="280" font-size="10.8" fill="#64748b" text-anchor="middle">人与地板同速下落，零挤压</text>
+<rect x="20" y="302" width="720" height="98" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="314.0" width="74" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="71.0" y="329.0" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">动手实验</text>
+<text x="118" y="329" font-size="12.8" fill="#0f172a" text-anchor="start" font-weight="700">侧壁扎孔的纸杯：为什么一松手，漏水立刻停住？</text>
+<path d="M46,344 L52,388 L86,388 L92,344" fill="none" stroke="#475569" stroke-width="1.8"/>
+<path d="M48,354 L52,387 L86,387 L90,354 Z" fill="#93c5fd" fill-opacity="0.65"/>
+<circle cx="87" cy="380" r="2.2" fill="#fbfcfd"/>
+<path d="M88.00,380.00 L89.70,380.03 L91.40,380.13 L93.10,380.29 L94.80,380.52 L96.50,380.81 L98.20,381.17 L99.90,381.59 L101.60,382.08 L103.30,382.63 L105.00,383.25 L106.70,383.93 L108.40,384.68 L110.10,385.49 L111.80,386.37 L113.50,387.31 L115.20,388.32 L116.90,389.39 L118.60,390.53 L120.30,391.73 L122.00,393.00" fill="none" stroke="#1d6fa5" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="134" y="360" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">① 手捏住不动 (a = 0)：</text>
+<text x="134" y="380" font-size="11.0" fill="#1e293b" text-anchor="start">杯底托水产生水压 ρgh &gt; 0，水柱喷出</text>
+<line x1="376.0" y1="342.0" x2="376.0" y2="390.0" stroke="#cbd5e1" stroke-width="1.0" stroke-dasharray="3 3"/>
+<path d="M416,346 L422,390 L456,390 L462,346" fill="none" stroke="#c25014" stroke-width="1.8"/>
+<path d="M418,356 L422,389 L456,389 L460,356 Z" fill="#93c5fd" fill-opacity="0.65"/>
+<circle cx="457" cy="382" r="2.2" fill="#3b82f6"/>
+<line x1="400.0" y1="350.0" x2="400.0" y2="384.0" stroke="#c25014" stroke-width="1.8" marker-end="url(#arr-orange)"/>
+<text x="476" y="360" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">② 松手自由下落 (a = g)：</text>
+<text x="476" y="380" font-size="11.0" fill="#1e293b" text-anchor="start">杯与水同速下落，水压差归零、滴水不漏！</text>
+</svg>

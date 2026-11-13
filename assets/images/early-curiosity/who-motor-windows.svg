@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="336" viewBox="0 0 760 336" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">WHO六项儿童大运动正常达标月龄窗口与生长百分位读图指南</title>
+<desc id="desc">左图按世界卫生组织2006年多中心研究精确绘出独坐3.8至9.2月、扶站4.8至11.4月、手膝爬5.2至13.5月、扶走5.9至13.7月、独站6.9至16.9月、独走8.2至17.6月的1%至99%窗口；右图解释百分位含义与就医预警边界。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="335" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">健康宝宝的“正常时间表”到底有多宽？WHO 六项大运动达标窗口（1%–99%）</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左图严格按世界卫生组织（WHO, 2006）跨国健康婴幼儿实测月龄绘制；右图解释体检单百分位怎么读。</text>
+<rect x="20" y="62" width="492" height="258" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="84" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="700">① WHO 健康儿童大运动达标月龄窗（横条两端为 P1 与 P99）</text>
+<line x1="169.0" y1="98" x2="169.0" y2="266" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="169.0" y="282" font-size="10.5" fill="#64748b" text-anchor="middle">3月</text>
+<line x1="226.0" y1="98" x2="226.0" y2="266" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="226.0" y="282" font-size="10.5" fill="#64748b" text-anchor="middle">6月</text>
+<line x1="283.0" y1="98" x2="283.0" y2="266" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="283.0" y="282" font-size="10.5" fill="#64748b" text-anchor="middle">9月</text>
+<line x1="340.0" y1="98" x2="340.0" y2="266" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="340.0" y="282" font-size="10.5" fill="#64748b" text-anchor="middle">12月</text>
+<line x1="397.0" y1="98" x2="397.0" y2="266" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="397.0" y="282" font-size="10.5" fill="#64748b" text-anchor="middle">15月</text>
+<line x1="454.0" y1="98" x2="454.0" y2="266" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="454.0" y="282" font-size="10.5" fill="#64748b" text-anchor="middle">18月</text>
+<text x="140" y="123" font-size="11.2" fill="#1e293b" text-anchor="end" font-weight="600">独坐（不扶）</text>
+<rect x="184.2" y="110" width="102.6" height="17" rx="8.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.4"/>
+<text x="180.2" y="122.5" font-size="9.8" fill="#1d6fa5" text-anchor="end" class="mono">3.8</text>
+<text x="290.8" y="122.5" font-size="9.8" fill="#1d6fa5" text-anchor="start" font-weight="700">9.2月</text>
+<text x="140" y="149" font-size="11.2" fill="#1e293b" text-anchor="end" font-weight="600">扶站</text>
+<rect x="203.2" y="136" width="125.4" height="17" rx="8.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.4"/>
+<text x="199.2" y="148.5" font-size="9.8" fill="#18794e" text-anchor="end" class="mono">4.8</text>
+<text x="332.6" y="148.5" font-size="9.8" fill="#18794e" text-anchor="start" font-weight="700">11.4月</text>
+<text x="140" y="175" font-size="11.2" fill="#1e293b" text-anchor="end" font-weight="600">手膝爬行*</text>
+<rect x="210.8" y="162" width="157.7" height="17" rx="8.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.4"/>
+<text x="206.8" y="174.5" font-size="9.8" fill="#c25014" text-anchor="end" class="mono">5.2</text>
+<text x="372.5" y="174.5" font-size="9.8" fill="#c25014" text-anchor="start" font-weight="700">13.5月</text>
+<text x="140" y="201" font-size="11.2" fill="#1e293b" text-anchor="end" font-weight="600">扶走</text>
+<rect x="224.1" y="188" width="148.2" height="17" rx="8.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.4"/>
+<text x="220.1" y="200.5" font-size="9.8" fill="#6d28d9" text-anchor="end" class="mono">5.9</text>
+<text x="376.3" y="200.5" font-size="9.8" fill="#6d28d9" text-anchor="start" font-weight="700">13.7月</text>
+<text x="140" y="227" font-size="11.2" fill="#1e293b" text-anchor="end" font-weight="600">独站</text>
+<rect x="243.1" y="214" width="190.0" height="17" rx="8.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.4"/>
+<text x="239.1" y="226.5" font-size="9.8" fill="#1d6fa5" text-anchor="end" class="mono">6.9</text>
+<text x="437.1" y="226.5" font-size="9.8" fill="#1d6fa5" text-anchor="start" font-weight="700">16.9月</text>
+<text x="140" y="253" font-size="11.2" fill="#1e293b" text-anchor="end" font-weight="600">独立行走</text>
+<rect x="267.8" y="240" width="178.6" height="17" rx="8.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.4"/>
+<text x="263.8" y="252.5" font-size="9.8" fill="#18794e" text-anchor="end" class="mono">8.2</text>
+<text x="450.4" y="252.5" font-size="9.8" fill="#18794e" text-anchor="start" font-weight="700">17.6月</text>
+<text x="36" y="305" font-size="10.2" fill="#64748b" text-anchor="start">*注：WHO 样本中约 4.3% 健康婴儿不经历手膝爬行而直接扶站学走；独走正常跨度达 9.4 个月！</text>
+<rect x="524" y="62" width="216" height="258" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="538" y="84" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="700">② 百分位 ≠ 考试分数</text>
+<rect x="538" y="98" width="188" height="96" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="548" y="118" font-size="10.5" fill="#1e293b" text-anchor="start">• P20 意思是：100 个健康同龄</text>
+<text x="548" y="135" font-size="10.5" fill="#1e293b" text-anchor="start">  孩子高矮排队，排在第 20 位</text>
+<text x="548" y="154" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="700">• 关键看是否沿着自己的轨道</text>
+<text x="548" y="171" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="700">  平稳长，而非人人都得挤 P90</text>
+<rect x="538" y="204" width="188" height="102" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="548" y="223" font-size="11.0" fill="#c25014" text-anchor="start" font-weight="700">何时不必干等、及时就医？</text>
+<text x="548" y="242" font-size="10.3" fill="#1e293b" text-anchor="start">• 超出窗口上限（如18月未独走）</text>
+<text x="548" y="260" font-size="10.3" fill="#1e293b" text-anchor="start">• 左右肢体用力明显不对称</text>
+<text x="548" y="278" font-size="10.3" fill="#c25014" text-anchor="start" font-weight="700">• 原本已经会的技能突然倒退！</text>
+<text x="548" y="295" font-size="10.2" fill="#1e293b" text-anchor="start">→ 带具体记录找儿保/儿科评估</text>
+</svg>
