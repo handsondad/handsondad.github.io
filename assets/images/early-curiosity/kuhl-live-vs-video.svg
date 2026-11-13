@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="334" viewBox="0 0 760 334" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">Kuhl婴儿外语语音学习真人互动对比高清视频实验结果与社交门控机制</title>
+<desc id="desc">左图绘制2003年PNAS实验数据：9月龄美国婴儿经12次真人普通话互动后辨音准确率达65.7%显著高于英语对照56.7%，而高清DVD视频组与纯音频组均无学习效果；右图解释共同注意与社交门控机制。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="333" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">顶级期刊实验：为什么再高清的早教视频，也替代不了真人在身边讲 15 分钟绘本？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">华盛顿大学 Patricia Kuhl 团队（2003，PNAS）对 9 月龄婴儿的普通话语音辨别对照实验。</text>
+<rect x="20" y="62" width="390" height="256" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="85" font-size="12.2" fill="#0f172a" text-anchor="start" font-weight="700">① 同样听 12 次普通话故事，谁真正学会了辨音？</text>
+<line x1="66" y1="116.0" x2="66" y2="256" stroke="#475569" stroke-width="1.3"/>
+<line x1="66" y1="256" x2="388.0" y2="256" stroke="#475569" stroke-width="1.3"/>
+<line x1="66" y1="256.0" x2="388.0" y2="256.0" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="60" y="260.0" font-size="9.8" fill="#64748b" text-anchor="end">50%</text>
+<line x1="66" y1="221.0" x2="388.0" y2="221.0" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="60" y="225.0" font-size="9.8" fill="#64748b" text-anchor="end">55%</text>
+<line x1="66" y1="186.0" x2="388.0" y2="186.0" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="60" y="190.0" font-size="9.8" fill="#64748b" text-anchor="end">60%</text>
+<line x1="66" y1="151.0" x2="388.0" y2="151.0" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="60" y="155.0" font-size="9.8" fill="#64748b" text-anchor="end">65%</text>
+<line x1="66" y1="116.0" x2="388.0" y2="116.0" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="60" y="120.0" font-size="9.8" fill="#64748b" text-anchor="end">70%</text>
+<rect x="82" y="146.1" width="46" height="109.9" rx="5" fill="#18794e" opacity="0.85"/>
+<text x="105" y="139.1" font-size="10.2" fill="#18794e" text-anchor="middle" font-weight="700">65.7%</text>
+<text x="105" y="272" font-size="9.8" fill="#0f172a" text-anchor="middle" font-weight="600">真人面对</text>
+<text x="105" y="286" font-size="9.5" fill="#64748b" text-anchor="middle">面共读</text>
+<rect x="158" y="200.0" width="46" height="56.0" rx="5" fill="#c25014" opacity="0.85"/>
+<text x="181" y="193.0" font-size="10.2" fill="#c25014" text-anchor="middle" font-weight="700">无提升</text>
+<text x="181" y="272" font-size="9.8" fill="#0f172a" text-anchor="middle" font-weight="600">高清电视</text>
+<text x="181" y="286" font-size="9.5" fill="#64748b" text-anchor="middle">录像 DVD</text>
+<rect x="234" y="222.4" width="46" height="33.6" rx="5" fill="#475569" opacity="0.85"/>
+<text x="257" y="215.4" font-size="10.2" fill="#475569" text-anchor="middle" font-weight="700">无提升</text>
+<text x="257" y="272" font-size="9.8" fill="#0f172a" text-anchor="middle" font-weight="600">纯音频播</text>
+<text x="257" y="286" font-size="9.5" fill="#64748b" text-anchor="middle">放</text>
+<rect x="310" y="209.1" width="46" height="46.9" rx="5" fill="#1d6fa5" opacity="0.85"/>
+<text x="333" y="202.1" font-size="10.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">56.7%</text>
+<text x="333" y="272" font-size="9.8" fill="#0f172a" text-anchor="middle" font-weight="600">纯英语对</text>
+<text x="333" y="286" font-size="9.5" fill="#64748b" text-anchor="middle">照组</text>
+<text x="36" y="304" font-size="9.8" fill="#64748b" text-anchor="start">注：50% 为随机转头基线；电视组听到的音节数（4.99万）甚至比真人组（3.31万）还多！</text>
+<rect x="422" y="62" width="318" height="256" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="438" y="85" font-size="12.2" fill="#0f172a" text-anchor="start" font-weight="700">② 为什么录播失灵？“社交门控”假说</text>
+<rect x="438" y="102" width="286" height="94" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="450" y="122" font-size="11.0" fill="#18794e" text-anchor="start" font-weight="700">真人互动：共同注意（Joint Attention）开锁</text>
+<text x="450" y="143" font-size="10.3" fill="#1e293b" text-anchor="start">• 大人说“小火车”时低头看玩具，宝宝顺着大人的</text>
+<text x="450" y="161" font-size="10.3" fill="#1e293b" text-anchor="start">  视线锁定目标 → 声音与实物瞬间精准绑定！</text>
+<text x="450" y="180" font-size="10.3" fill="#0f172a" text-anchor="start" font-weight="700">• 眼神回应点亮社交唤醒度（专注分高达 3.53/5）</text>
+<rect x="438" y="206" width="286" height="98" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="450" y="226" font-size="11.0" fill="#c25014" text-anchor="start" font-weight="700">屏幕播放：没有回应的“单向像素墙”</text>
+<text x="450" y="247" font-size="10.3" fill="#1e293b" text-anchor="start">• 屏幕里的人不会等宝宝看过来再开口，也不会顺着</text>
+<text x="450" y="265" font-size="10.3" fill="#1e293b" text-anchor="start">  宝宝的手指回应（音频组专注分跌至 1.48/5）</text>
+<text x="450" y="284" font-size="10.2" fill="#c25014" text-anchor="start" font-weight="700">→ 早期语言与认知的大门，钥匙握在活生生的人手里！</text>
+</svg>

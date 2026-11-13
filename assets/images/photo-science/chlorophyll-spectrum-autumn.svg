@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="436" viewBox="0 0 760 436" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">叶绿素a、叶绿素b与类胡萝卜素可见光吸收光谱、绿光透射窗口及秋叶氮回收机制图</title>
+<desc id="desc">左图精确绘制400至700nm波长范围内叶绿素a（430nm、662nm双峰）、叶绿素b（453nm、642nm双峰）与类胡萝卜素（450-480nm蓝紫吸收）的吸收曲线及500-560nm绿光窗口；右图解释全黑叶片的光抑制风险、绿光深层透射优势，以及秋季拆解叶绿素回收氮素露出类胡萝卜素黄底与新合成花青素变红的原理。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  .trace-line {
+        stroke-dasharray: 1;
+        stroke-dashoffset: 0;
+        animation: drawLine 1.3s ease-out 1 both;
+      }
+      @keyframes drawLine {
+        from { stroke-dashoffset: 1; }
+        to { stroke-dashoffset: 0; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .trace-line { animation: none; }
+      }
+</style>
+<rect x="0.5" y="0.5" width="759" height="435" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">叶子为什么偏偏是绿色而不是全黑？光合色素光谱与秋叶变色之谜</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左图绘制叶绿素 a、叶绿素 b 与类胡萝卜素可见光吸收曲线（乙醚提取参考峰）；右图解析绿光透射与秋叶氮回收。</text>
+<rect x="20" y="64" width="436" height="358" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="88" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 三类叶片色素吸收光谱（400–700 nm）</text>
+<rect x="190.7" y="120.0" width="73.6" height="202.0" fill="#e7f6ee" opacity="0.80"/>
+<text x="227.5" y="172" font-size="10.0" fill="#18794e" text-anchor="middle" font-weight="700" class="mono">500–560 nm</text>
+<text x="227.5" y="188" font-size="10.2" fill="#18794e" text-anchor="middle" font-weight="700">绿光低吸收窗</text>
+<text x="227.5" y="204" font-size="9.8" fill="#1e293b" text-anchor="middle">反射呈绿 +</text>
+<text x="227.5" y="218" font-size="9.8" fill="#1e293b" text-anchor="middle">透入下层叶肉</text>
+<line x1="68.0" y1="322.0" x2="436.0" y2="322.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="62" y="326.0" font-size="10.0" fill="#64748b" text-anchor="end" class="mono">0</text>
+<line x1="68.0" y1="228.5" x2="436.0" y2="228.5" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="62" y="232.5" font-size="10.0" fill="#64748b" text-anchor="end" class="mono">0.5</text>
+<line x1="68.0" y1="135.0" x2="436.0" y2="135.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="62" y="139.0" font-size="10.0" fill="#64748b" text-anchor="end" class="mono">1.0</text>
+<line x1="68.0" y1="120.0" x2="68.0" y2="322.0" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="2 3"/>
+<text x="68.0" y="346" font-size="10.0" fill="#64748b" text-anchor="middle" class="mono">400</text>
+<line x1="129.3" y1="120.0" x2="129.3" y2="322.0" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="2 3"/>
+<text x="129.3" y="346" font-size="10.0" fill="#64748b" text-anchor="middle" class="mono">450</text>
+<line x1="190.7" y1="120.0" x2="190.7" y2="322.0" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="2 3"/>
+<text x="190.7" y="346" font-size="10.0" fill="#64748b" text-anchor="middle" class="mono">500</text>
+<line x1="252.0" y1="120.0" x2="252.0" y2="322.0" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="2 3"/>
+<text x="252.0" y="346" font-size="10.0" fill="#64748b" text-anchor="middle" class="mono">550</text>
+<line x1="313.3" y1="120.0" x2="313.3" y2="322.0" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="2 3"/>
+<text x="313.3" y="346" font-size="10.0" fill="#64748b" text-anchor="middle" class="mono">600</text>
+<line x1="374.7" y1="120.0" x2="374.7" y2="322.0" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="2 3"/>
+<text x="374.7" y="346" font-size="10.0" fill="#64748b" text-anchor="middle" class="mono">650</text>
+<line x1="436.0" y1="120.0" x2="436.0" y2="322.0" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="2 3"/>
+<text x="436.0" y="346" font-size="10.0" fill="#64748b" text-anchor="middle" class="mono">700</text>
+<line x1="68.0" y1="120.0" x2="68.0" y2="322.0" stroke="#475569" stroke-width="1.2"/>
+<line x1="68.0" y1="322.0" x2="436.0" y2="322.0" stroke="#475569" stroke-width="1.2"/>
+<rect x="68.0" y="325.0" width="49.1" height="7" fill="#7c3aed" opacity="0.88"/>
+<rect x="117.1" y="325.0" width="61.3" height="7" fill="#2563eb" opacity="0.88"/>
+<rect x="178.4" y="325.0" width="92.0" height="7" fill="#16a34a" opacity="0.88"/>
+<rect x="270.4" y="325.0" width="30.7" height="7" fill="#eab308" opacity="0.88"/>
+<rect x="301.1" y="325.0" width="42.9" height="7" fill="#f97316" opacity="0.88"/>
+<rect x="344.0" y="325.0" width="92.0" height="7" fill="#dc2626" opacity="0.88"/>
+<path d="M 68.00,317.08 L 71.07,313.85 L 74.13,309.21 L 77.20,303.03 L 80.27,295.35 L 83.33,286.58 L 86.40,277.41 L 89.47,268.76 L 92.53,261.60 L 95.60,256.59 L 98.67,253.91 L 101.73,253.02 L 104.80,252.74 L 107.87,251.57 L 110.93,248.06 L 114.00,241.45 L 117.07,231.98 L 120.13,221.01 L 123.20,210.80 L 126.27,203.79 L 129.33,201.87 L 132.40,205.72 L 135.47,214.46 L 138.53,225.82 L 141.60,236.78 L 144.67,244.38 L 147.73,246.64 L 150.80,243.13 L 153.87,235.21 L 156.93,225.66 L 160.00,217.91 L 163.07,214.97 L 166.13,218.53 L 169.20,228.56 L 172.27,243.40 L 175.33,260.51 L 178.40,277.29 L 181.47,291.80 L 184.53,303.05 L 187.60,310.96 L 190.67,316.02 L 193.73,319.00 L 196.80,320.60 L 199.87,321.39 L 202.93,321.76 L 206.00,321.91 L 209.07,321.97 L 212.13,321.99 L 215.20,322.00 L 218.27,322.00 L 221.33,322.00 L 224.40,322.00 L 227.47,322.00 L 230.53,322.00 L 233.60,322.00 L 236.67,318.42 L 239.73,318.86 L 242.80,319.47 L 245.87,320.13 L 248.93,320.74 L 252.00,321.22 L 255.07,321.55 L 258.13,321.77 L 261.20,321.89 L 264.27,321.95 L 267.33,321.98 L 270.40,321.99 L 273.47,322.00 L 276.53,322.00 L 279.60,322.00 L 282.67,322.00 L 285.73,322.00 L 288.80,322.00 L 291.87,322.00 L 294.93,322.00 L 298.00,322.00 L 301.07,322.00 L 304.13,322.00 L 307.20,322.00 L 310.27,322.00 L 313.33,322.00 L 316.40,322.00 L 319.47,322.00 L 322.53,322.00 L 325.60,322.00 L 328.67,322.00 L 331.73,322.00 L 334.80,322.00 L 337.87,322.00 L 340.93,322.00 L 344.00,322.00 L 347.07,322.00 L 350.13,322.00 L 353.20,322.00 L 356.27,322.00 L 359.33,322.00 L 362.40,322.00 L 365.47,322.00 L 368.53,322.00 L 371.60,322.00 L 374.67,322.00 L 377.73,322.00 L 380.80,322.00 L 383.87,322.00 L 386.93,322.00 L 390.00,322.00 L 393.07,322.00 L 396.13,322.00 L 399.20,322.00 L 402.27,322.00 L 405.33,322.00 L 408.40,322.00 L 411.47,322.00 L 414.53,322.00 L 417.60,322.00 L 420.67,322.00 L 423.73,322.00 L 426.80,322.00 L 429.87,322.00 L 432.93,322.00 L 436.00,322.00" fill="none" stroke="#c25014" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<path d="M 68.00,311.61 L 71.07,309.99 L 74.13,307.72 L 77.20,304.70 L 80.27,300.87 L 83.33,296.24 L 86.40,290.90 L 89.47,285.04 L 92.53,278.88 L 95.60,272.58 L 98.67,266.18 L 101.73,259.51 L 104.80,252.08 L 107.87,243.23 L 110.93,232.23 L 114.00,218.63 L 117.07,202.51 L 120.13,184.82 L 123.20,167.32 L 126.27,152.46 L 129.33,142.77 L 132.40,140.31 L 135.47,146.03 L 138.53,159.56 L 141.60,179.23 L 144.67,202.52 L 147.73,226.66 L 150.80,249.26 L 153.87,268.62 L 156.93,283.97 L 160.00,295.28 L 163.07,303.05 L 166.13,308.05 L 169.20,311.07 L 172.27,312.78 L 175.33,313.69 L 178.40,314.14 L 181.47,314.36 L 184.53,314.45 L 187.60,314.49 L 190.67,314.51 L 193.73,314.52 L 196.80,314.52 L 199.87,314.52 L 202.93,314.52 L 206.00,314.52 L 209.07,314.52 L 212.13,314.52 L 215.20,314.52 L 218.27,314.52 L 221.33,314.52 L 224.40,314.52 L 227.47,314.52 L 230.53,314.52 L 233.60,314.52 L 236.67,314.52 L 239.73,314.52 L 242.80,314.52 L 245.87,314.52 L 248.93,314.52 L 252.00,314.51 L 255.07,314.50 L 258.13,314.48 L 261.20,314.43 L 264.27,314.35 L 267.33,314.19 L 270.40,313.91 L 273.47,313.45 L 276.53,312.73 L 279.60,311.67 L 282.67,310.21 L 285.73,308.30 L 288.80,305.98 L 291.87,303.34 L 294.93,300.60 L 298.00,298.00 L 301.07,295.86 L 304.13,294.44 L 307.20,293.94 L 310.27,294.44 L 313.33,295.86 L 316.40,297.99 L 319.47,300.57 L 322.53,303.27 L 325.60,305.77 L 328.67,307.78 L 331.73,309.00 L 334.80,309.10 L 337.87,307.61 L 340.93,303.98 L 344.00,297.67 L 347.07,288.31 L 350.13,276.05 L 353.20,261.80 L 356.27,247.30 L 359.33,234.86 L 362.40,226.83 L 365.47,224.87 L 368.53,229.40 L 371.60,239.45 L 374.67,253.04 L 377.73,267.76 L 380.80,281.49 L 383.87,292.85 L 386.93,301.32 L 390.00,307.05 L 393.07,310.59 L 396.13,312.60 L 399.20,313.65 L 402.27,314.15 L 405.33,314.38 L 408.40,314.47 L 411.47,314.50 L 414.53,314.51 L 417.60,314.52 L 420.67,314.52 L 423.73,314.52 L 426.80,314.52 L 429.87,314.52 L 432.93,314.52 L 436.00,314.52" fill="none" stroke="#1d6fa5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 4"/>
+<path d="M 68.00,253.17 L 71.07,242.90 L 74.13,232.68 L 77.20,222.31 L 80.27,211.25 L 83.33,198.74 L 86.40,184.14 L 89.47,167.39 L 92.53,149.40 L 95.60,132.20 L 98.67,120.00 L 101.73,120.00 L 104.80,120.00 L 107.87,125.89 L 110.93,146.47 L 114.00,173.08 L 117.07,202.21 L 120.13,230.41 L 123.20,255.07 L 126.27,274.77 L 129.33,289.24 L 132.40,299.07 L 135.47,305.25 L 138.53,308.86 L 141.60,310.83 L 144.67,311.83 L 147.73,312.30 L 150.80,312.51 L 153.87,312.60 L 156.93,312.63 L 160.00,312.64 L 163.07,312.65 L 166.13,312.65 L 169.20,312.65 L 172.27,312.65 L 175.33,312.65 L 178.40,312.65 L 181.47,312.65 L 184.53,312.65 L 187.60,312.65 L 190.67,312.65 L 193.73,312.65 L 196.80,312.65 L 199.87,312.65 L 202.93,312.65 L 206.00,312.65 L 209.07,312.65 L 212.13,312.65 L 215.20,312.65 L 218.27,312.65 L 221.33,312.65 L 224.40,312.65 L 227.47,312.65 L 230.53,312.65 L 233.60,312.65 L 236.67,312.65 L 239.73,312.65 L 242.80,312.65 L 245.87,312.65 L 248.93,312.65 L 252.00,312.65 L 255.07,312.65 L 258.13,312.65 L 261.20,312.65 L 264.27,312.65 L 267.33,312.65 L 270.40,312.65 L 273.47,312.65 L 276.53,312.64 L 279.60,312.63 L 282.67,312.61 L 285.73,312.57 L 288.80,312.48 L 291.87,312.32 L 294.93,312.03 L 298.00,311.55 L 301.07,310.78 L 304.13,309.62 L 307.20,307.97 L 310.27,305.77 L 313.33,303.02 L 316.40,299.80 L 319.47,296.33 L 322.53,292.90 L 325.60,289.90 L 328.67,287.69 L 331.73,286.56 L 334.80,286.69 L 337.87,288.05 L 340.93,290.44 L 344.00,293.54 L 347.07,296.96 L 350.13,300.26 L 353.20,303.05 L 356.27,304.88 L 359.33,305.21 L 362.40,303.30 L 365.47,298.17 L 368.53,288.72 L 371.60,274.12 L 374.67,254.32 L 377.73,230.63 L 380.80,205.96 L 383.87,184.46 L 386.93,170.43 L 390.00,166.99 L 393.07,174.92 L 396.13,192.44 L 399.20,215.79 L 402.27,240.61 L 405.33,263.18 L 408.40,281.30 L 411.47,294.31 L 414.53,302.74 L 417.60,307.71 L 420.67,310.37 L 423.73,311.68 L 426.80,312.27 L 429.87,312.51 L 432.93,312.60 L 436.00,312.63" fill="none" stroke="#18794e" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" pathLength="1" class="trace-line"/>
+<text x="100.8" y="113.0" font-size="10.0" fill="#18794e" text-anchor="middle" font-weight="700" class="halo">Chl a 430nm</text>
+<text x="143.0" y="136.8" font-size="10.0" fill="#1d6fa5" text-anchor="start" font-weight="700" class="halo">Chl b 453nm</text>
+<text x="176.6" y="231.1" font-size="9.8" fill="#c25014" text-anchor="start" font-weight="700" class="halo">类胡萝卜素</text>
+<text x="356.9" y="216.7" font-size="9.8" fill="#1d6fa5" text-anchor="end" font-weight="700" class="halo">642nm</text>
+<text x="389.4" y="158.8" font-size="10.0" fill="#18794e" text-anchor="middle" font-weight="700" class="halo">662nm</text>
+<line x1="38.0" y1="360.0" x2="62.0" y2="360.0" stroke="#18794e" stroke-width="2.6"/>
+<text x="67" y="364" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="600">叶绿素 a（主反应中心+天线）</text>
+<line x1="246.0" y1="360.0" x2="270.0" y2="360.0" stroke="#1d6fa5" stroke-width="2.2" stroke-dasharray="6 3"/>
+<text x="275" y="364" font-size="10.2" fill="#0f172a" text-anchor="start">叶绿素 b（拓宽蓝/橙红吸光带）</text>
+<line x1="38.0" y1="380.0" x2="62.0" y2="380.0" stroke="#c25014" stroke-width="2.1" stroke-dasharray="3 3"/>
+<text x="67" y="384" font-size="10.2" fill="#0f172a" text-anchor="start">类胡萝卜素（吸蓝紫光 + 耗散过剩强光防灼伤）</text>
+<text x="38" y="404" font-size="9.8" fill="#64748b" text-anchor="start">注：活体蛋白结合态峰值较有机溶剂略红移约 10–20 nm（如反应中心 P680、P700）。</text>
+<rect x="472" y="64" width="268" height="358" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="486" y="88" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 叶片光学与秋叶回收账</text>
+<rect x="484" y="102" width="244" height="148" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="494" y="122" font-size="11.2" fill="#18794e" text-anchor="start" font-weight="700">全黑吸光 100% 岂不更划算？</text>
+<text x="494" y="142" font-size="10.0" fill="#1e293b" text-anchor="start">1. 深层接力：上表层叶绿素吃掉红</text>
+<text x="494" y="158" font-size="10.0" fill="#1e293b" text-anchor="start">   蓝光，绿光穿透更深喂饱下层细</text>
+<text x="494" y="174" font-size="10.0" fill="#1e293b" text-anchor="start">   胞（整片厚叶绿光吸收其实不低）</text>
+<text x="494" y="192" font-size="10.0" fill="#1e293b" text-anchor="start">2. 正午防烧伤：强光远超固碳酶速</text>
+<text x="494" y="208" font-size="10.0" fill="#1e293b" text-anchor="start">   率上限，全黑会导致高热蒸腾与</text>
+<text x="494" y="224" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="600">   活性氧光氧化损伤！</text>
+<rect x="484" y="262" width="244" height="146" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="494" y="282" font-size="11.2" fill="#c25014" text-anchor="start" font-weight="700">秋天树叶为什么变黄、变红？</text>
+<text x="494" y="302" font-size="10.0" fill="#1e293b" text-anchor="start">• 变黄（揭底色）：叶绿素含宝贵的</text>
+<text x="494" y="318" font-size="10.0" fill="#1e293b" text-anchor="start">  氮(N)和镁，落叶前树主动拆解叶</text>
+<text x="494" y="334" font-size="10.0" fill="#1e293b" text-anchor="start">  绿素运回枝干过冬，露出原本就在</text>
+<text x="494" y="350" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="600">  的类胡萝卜素金黄色！</text>
+<text x="494" y="370" font-size="10.0" fill="#1e293b" text-anchor="start">• 变红（打遮阳伞）：枫树等新合成</text>
+<text x="494" y="386" font-size="10.0" fill="#c25014" text-anchor="start" font-weight="700">  花青素挡住秋日寒光，掩护氮撤退</text>
+</svg>

@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="412" viewBox="0 0 760 412" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">子宫声学低通滤波曲线与产前听觉风味学习经典实验图解</title>
+<desc id="desc">左图展示100至4000赫兹声音穿过腹壁与羊水的分贝衰减曲线，100至300赫兹语调基频仅衰减3至5分贝而高频大幅衰减；右图拆解DeCasper压力奶嘴童谣实验与Mennella胡萝卜汁羊水风味实验。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  .trace-line {
+        stroke-dasharray: 1;
+        stroke-dashoffset: 0;
+        animation: drawLine 1.4s ease-out 1 both;
+      }
+      @keyframes drawLine {
+        from { stroke-dashoffset: 1; }
+        to { stroke-dashoffset: 0; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .trace-line { animation: none; }
+      }
+</style>
+<rect x="0.5" y="0.5" width="759" height="411" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">子宫里的声学与风味实验室：宝宝隔着肚皮到底记住了什么？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左图据 Querleu (1988) 与 Gerhardt &amp; Abrams (2000) 绘制声衰减趋势；右图拆解两项产前记忆经典实验。</text>
+<rect x="20" y="64" width="352" height="332" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="88" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 腹壁与羊水的低通滤波（100–4000 Hz）</text>
+<rect x="85.5" y="120.0" width="76.3" height="160.0" fill="#e7f6ee" opacity="0.75"/>
+<rect x="245.5" y="120.0" width="96.3" height="160.0" fill="#fef1e8" opacity="0.65"/>
+<line x1="70.0" y1="120.0" x2="350.0" y2="120.0" stroke="#475569" stroke-width="1.0"/>
+<text x="64" y="124.0" font-size="10.5" fill="#64748b" text-anchor="end" class="mono">0 dB</text>
+<line x1="70.0" y1="170.0" x2="350.0" y2="170.0" stroke="#e2e8f0" stroke-width="1.0" stroke-dasharray="3 3"/>
+<text x="64" y="174.0" font-size="10.5" fill="#64748b" text-anchor="end" class="mono">-10</text>
+<line x1="70.0" y1="220.0" x2="350.0" y2="220.0" stroke="#e2e8f0" stroke-width="1.0" stroke-dasharray="3 3"/>
+<text x="64" y="224.0" font-size="10.5" fill="#64748b" text-anchor="end" class="mono">-20</text>
+<line x1="70.0" y1="270.0" x2="350.0" y2="270.0" stroke="#e2e8f0" stroke-width="1.0" stroke-dasharray="3 3"/>
+<text x="64" y="274.0" font-size="10.5" fill="#64748b" text-anchor="end" class="mono">-30</text>
+<line x1="85.5" y1="120.0" x2="85.5" y2="280.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="2 3"/>
+<text x="85.5" y="296" font-size="10.5" fill="#64748b" text-anchor="middle" class="mono">100Hz</text>
+<line x1="161.8" y1="120.0" x2="161.8" y2="280.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="2 3"/>
+<text x="161.8" y="296" font-size="10.5" fill="#64748b" text-anchor="middle" class="mono">300Hz</text>
+<line x1="245.5" y1="120.0" x2="245.5" y2="280.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="2 3"/>
+<text x="245.5" y="296" font-size="10.5" fill="#64748b" text-anchor="middle" class="mono">1kHz</text>
+<line x1="341.8" y1="120.0" x2="341.8" y2="280.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="2 3"/>
+<text x="341.8" y="296" font-size="10.5" fill="#64748b" text-anchor="middle" class="mono">4kHz</text>
+<line x1="70.0" y1="120.0" x2="70.0" y2="280.0" stroke="#475569" stroke-width="1.2"/>
+<line x1="70.0" y1="280.0" x2="350.0" y2="280.0" stroke="#475569" stroke-width="1.2"/>
+<path d="M 70.00,136.28 L 73.50,136.51 L 77.00,136.75 L 80.50,137.01 L 84.00,137.29 L 87.50,137.59 L 91.00,137.90 L 94.50,138.24 L 98.00,138.60 L 101.50,138.98 L 105.00,139.39 L 108.50,139.82 L 112.00,140.28 L 115.50,140.77 L 119.00,141.29 L 122.50,141.84 L 126.00,142.43 L 129.50,143.05 L 133.00,143.72 L 136.50,144.42 L 140.00,145.16 L 143.50,145.94 L 147.00,146.77 L 150.50,147.65 L 154.00,148.58 L 157.50,149.56 L 161.00,150.58 L 164.50,151.67 L 168.00,152.81 L 171.50,154.00 L 175.00,155.26 L 178.50,156.57 L 182.00,157.95 L 185.50,159.39 L 189.00,160.89 L 192.50,162.45 L 196.00,164.07 L 199.50,165.76 L 203.00,167.51 L 206.50,169.32 L 210.00,171.18 L 213.50,173.11 L 217.00,175.09 L 220.50,177.13 L 224.00,179.22 L 227.50,181.35 L 231.00,183.53 L 234.50,185.74 L 238.00,188.00 L 241.50,190.28 L 245.00,192.59 L 248.50,194.92 L 252.00,197.26 L 255.50,199.62 L 259.00,201.98 L 262.50,204.34 L 266.00,206.69 L 269.50,209.03 L 273.00,211.35 L 276.50,213.65 L 280.00,215.92 L 283.50,218.16 L 287.00,220.36 L 290.50,222.52 L 294.00,224.63 L 297.50,226.70 L 301.00,228.71 L 304.50,230.67 L 308.00,232.58 L 311.50,234.42 L 315.00,236.21 L 318.50,237.93 L 322.00,239.59 L 325.50,241.19 L 329.00,242.73 L 332.50,244.20 L 336.00,245.61 L 339.50,246.97 L 343.00,248.26 L 346.50,249.49 L 350.00,250.66" fill="none" stroke="#1d6fa5" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" class="trace-line"/>
+<circle cx="98.2" cy="138.6" r="4" fill="#18794e" stroke="#ffffff" stroke-width="1.3"/>
+<circle cx="149.2" cy="147.3" r="4" fill="#18794e" stroke="#ffffff" stroke-width="1.3"/>
+<circle cx="197.3" cy="164.7" r="4" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.3"/>
+<circle cx="245.5" cy="192.9" r="4" fill="#c25014" stroke="#ffffff" stroke-width="1.3"/>
+<circle cx="341.8" cy="247.8" r="4" fill="#c25014" stroke="#ffffff" stroke-width="1.3"/>
+<text x="123.7" y="216" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="700" class="halo">低频穿透窗</text>
+<text x="123.7" y="232" font-size="10.2" fill="#18794e" text-anchor="middle" class="halo">嗓音基频/语调</text>
+<text x="123.7" y="247" font-size="10.0" fill="#1e293b" text-anchor="middle" class="halo">仅衰减 3–5 dB</text>
+<text x="293.7" y="142" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">高频大幅闷住</text>
+<text x="293.7" y="157" font-size="10.2" fill="#c25014" text-anchor="middle" class="halo">清辅音 s / t / f</text>
+<text x="293.7" y="172" font-size="10.0" fill="#1e293b" text-anchor="middle" class="halo">衰减 15–30 dB</text>
+<text x="210.0" y="313" font-size="10.8" fill="#475569" text-anchor="middle">声音频率（对数刻度）</text>
+<rect x="34" y="320" width="324" height="62" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="46" y="340" font-size="11.2" fill="#1d6fa5" text-anchor="start" font-weight="700">妈妈胸腔骨传导 + 低频透射 = 听清“旋律节拍”</text>
+<text x="46" y="358" font-size="10.5" fill="#1e293b" text-anchor="start">• 胎儿记住的是语调起伏，不是背单词或变音乐神童</text>
+<text x="46" y="374" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="600">• 切勿把耳机/喇叭紧贴肚皮开大音量，自然聊天最安全</text>
+<rect x="388" y="64" width="352" height="332" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="404" y="88" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 刚出生不会说话，科学家怎么测“产前记忆”？</text>
+<rect x="402" y="102" width="324" height="136" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="412.0" y="112.0" width="116" height="20" rx="10.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="470.0" y="125.6" font-size="11" fill="#1d6fa5" text-anchor="middle" font-weight="600">实验 A · 听觉韵律</text>
+<text x="536" y="126" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">DeCasper 压力传感奶嘴实验</text>
+<text x="412" y="148" font-size="10.5" fill="#1e293b" text-anchor="start">装置：无营养安抚奶嘴连气压传感器，出生 &lt;72 小时新生儿</text>
+<text x="412" y="164" font-size="10.5" fill="#1e293b" text-anchor="start">可通过改变“吸吮停顿节律”自主切换耳机里的两段录音：</text>
+<rect x="412" y="174" width="304" height="54" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<text x="420" y="192" font-size="10.4" fill="#1d6fa5" text-anchor="start" font-weight="700">1980 Science：</text>
+<text x="502" y="192" font-size="10.2" fill="#1e293b" text-anchor="start">妈妈声音 vs 陌生女性 → 主动吸吮选妈妈</text>
+<text x="420" y="212" font-size="10.4" fill="#6d28d9" text-anchor="start" font-weight="700">1986 童谣实验：</text>
+<text x="502" y="212" font-size="10.2" fill="#1e293b" text-anchor="start">孕末6周读童谣，换陌生人朗读仍偏爱！</text>
+<rect x="402" y="250" width="324" height="132" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<rect x="412.0" y="260.0" width="110" height="20" rx="10.0" fill="#ffffff" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="467.0" y="273.6" font-size="10.6" fill="#c25014" text-anchor="middle" font-weight="600">实验 B · 羊水风味</text>
+<text x="530" y="274" font-size="11.3" fill="#0f172a" text-anchor="start" font-weight="700">Mennella 胡萝卜汁实验 (2001)</text>
+<text x="412" y="295" font-size="10.3" fill="#1e293b" text-anchor="start">孕晚期连喝 3 周胡萝卜汁 → 风味进入羊水被胎儿吞咽，</text>
+<text x="412" y="311" font-size="10.3" fill="#1e293b" text-anchor="start">提前尝到“妈妈餐桌的味道”（对照白水组未接触）。</text>
+<rect x="412" y="321" width="304" height="52" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<text x="422" y="339" font-size="10.4" fill="#475569" text-anchor="start" font-weight="600">初添胡萝卜米糊皱眉抗拒：</text>
+<text x="422" y="359" font-size="10.2" fill="#64748b" text-anchor="start">孕期白水组</text>
+<rect x="484" y="349" width="78" height="11" rx="3" fill="#475569" opacity="0.55"/>
+<text x="574" y="359" font-size="10.2" fill="#18794e" text-anchor="start" font-weight="700">孕期胡萝卜组</text>
+<rect x="644" y="349" width="46" height="11" rx="3" fill="#18794e"/>
+<text x="694" y="359" font-size="10.2" fill="#18794e" text-anchor="start" font-weight="700">更少!</text>
+</svg>

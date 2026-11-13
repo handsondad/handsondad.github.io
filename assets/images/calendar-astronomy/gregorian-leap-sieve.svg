@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="402" viewBox="0 0 760 402" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">格里高利历三层闰年筛法与1582年十天校准图</title>
+<desc id="desc">左图展示儒略历每年多算11分15秒导致1582年累计约9.8天滑移并跳过10月5日至14日共10天而星期不断裂；右图展示公历400年97闰三道筛子将年误差压缩至26.8秒。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="401" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">格里高利历的“三道筛子”：把每年 11 分 15 秒的滑移压到 27 秒</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">儒略历每 128 年多攒 1 天，至 1582 年被迫连删 10 天；公历靠“四闰、百不闰、四百再闰”锁定春分</text>
+<rect x="20" y="62" width="356" height="326" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="85" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 儒略历滑移与 1582 年“消失的十天”</text>
+<text x="36" y="104" font-size="11.0" fill="#64748b" text-anchor="start">平均 365.25 天比回归年多 11 分 15 秒，约 128 年偏后 1 天</text>
+<line x1="68.0" y1="246.0" x2="350.0" y2="246.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="61.0" y="250.0" font-size="10.6" fill="#64748b" text-anchor="end">0天</text>
+<line x1="68.0" y1="191.7" x2="350.0" y2="191.7" stroke="#f1f5f9" stroke-width="1"/>
+<text x="61.0" y="195.7" font-size="10.6" fill="#64748b" text-anchor="end">5天</text>
+<line x1="68.0" y1="137.4" x2="350.0" y2="137.4" stroke="#f1f5f9" stroke-width="1"/>
+<text x="61.0" y="141.4" font-size="10.6" fill="#64748b" text-anchor="end">10天</text>
+<path d="M68.0,132.0 V246.0 H350.0" fill="none" stroke="#94a3b8" stroke-width="1.3"/>
+<line x1="68.0" y1="246.0" x2="68.0" y2="250.0" stroke="#94a3b8" stroke-width="1.2"/>
+<text x="68.0" y="263.0" font-size="10.5" fill="#64748b" text-anchor="start">325年(尼西亚)</text>
+<line x1="208.2" y1="246.0" x2="208.2" y2="250.0" stroke="#94a3b8" stroke-width="1.2"/>
+<text x="208.2" y="263.0" font-size="10.5" fill="#64748b" text-anchor="middle">950年</text>
+<line x1="350.0" y1="246.0" x2="350.0" y2="250.0" stroke="#94a3b8" stroke-width="1.2"/>
+<text x="350.0" y="263.0" font-size="10.5" fill="#64748b" text-anchor="end">1582年</text>
+<polygon points="68.0,246.0 350.0,139.4 350.0,246.0" fill="#fef1e8" opacity="0.85"/>
+<line x1="68.0" y1="246.0" x2="350.0" y2="139.4" stroke="#c25014" stroke-width="2.5"/>
+<circle cx="68.0" cy="246.0" r="4" fill="#1d6fa5"/>
+<circle cx="350.0" cy="139.4" r="4.5" fill="#c25014"/>
+<text x="342.0" y="131.4" font-size="10.8" fill="#c25014" text-anchor="end" font-weight="700" class="halo">1257 年累计 +9.8 天 → 删 10 天校准</text>
+<line x1="68.0" y1="246.0" x2="350.0" y2="241.8" stroke="#18794e" stroke-width="2" stroke-dasharray="5 3"/>
+<text x="78.0" y="236.0" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="600" class="halo">虚线：若用公历同期仅漂移 0.39 天</text>
+<rect x="34" y="274" width="328" height="100" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<text x="46" y="293" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">1582 年 10 月改历手术：日期跳十格，星期不断裂！</text>
+<rect x="44" y="304" width="62" height="46" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="75" y="323" font-size="10.8" fill="#1e293b" text-anchor="middle" font-weight="600">10月3日</text>
+<text x="75" y="341" font-size="10.5" fill="#64748b" text-anchor="middle">星期三</text>
+<rect x="112" y="304" width="66" height="46" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.3"/>
+<text x="145" y="323" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">10月4日</text>
+<text x="145" y="341" font-size="10.6" fill="#1d6fa5" text-anchor="middle" font-weight="600">星期四</text>
+<rect x="184" y="304" width="92" height="46" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="230" y="323" font-size="10.6" fill="#c25014" text-anchor="middle" font-weight="700">删 10/5–10/14</text>
+<text x="230" y="341" font-size="10.5" fill="#c25014" text-anchor="middle">10 天不存在</text>
+<rect x="282" y="304" width="70" height="46" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="1.3"/>
+<text x="317" y="323" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="700">10月15日</text>
+<text x="317" y="341" font-size="10.6" fill="#18794e" text-anchor="middle" font-weight="600">星期五</text>
+<text x="198" y="366" font-size="10.5" fill="#64748b" text-anchor="middle">注：周四睡一觉醒来仍是周五，七日星期循环从未中断</text>
+<rect x="388" y="62" width="352" height="326" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="404" y="85" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 400 年 97 闰的“三道筛子”</text>
+<text x="404" y="104" font-size="11.0" fill="#64748b" text-anchor="start">拿任意连续 400 年（如 1601—2000 年）过筛计闰：</text>
+<rect x="404" y="116" width="320" height="50" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<circle cx="423" cy="141" r="10" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="423" y="145" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="441" y="136" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700">第一筛：4 年一闰（能被 4 整除）</text>
+<text x="441" y="155" font-size="10.8" fill="#1e293b" text-anchor="start">400 ÷ 4 = 初选 100 个闰年 → 均长 365.2500 天</text>
+<rect x="404" y="176" width="320" height="50" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<circle cx="423" cy="201" r="10" fill="#ffffff" stroke="#c25014" stroke-width="1.2"/>
+<text x="423" y="205" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="441" y="196" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700">第二筛：百年不闰（剔除整百年）</text>
+<text x="441" y="215" font-size="10.8" fill="#1e293b" text-anchor="start">筛掉 1700、1800、1900 共 3 年（全剔4年反慢3分09秒）</text>
+<rect x="404" y="236" width="320" height="50" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<circle cx="423" cy="261" r="10" fill="#ffffff" stroke="#18794e" stroke-width="1.2"/>
+<text x="423" y="265" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">3</text>
+<text x="441" y="256" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700">第三筛：400 年再闰（保送 2000 年）</text>
+<text x="441" y="275" font-size="10.8" fill="#1e293b" text-anchor="start">100 − 3 = 97 闰！均长 365.2425 天（仅快 26.8 秒）</text>
+<rect x="404" y="298" width="320" height="76" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<text x="416" y="317" font-size="11.0" fill="#0f172a" text-anchor="start" font-weight="700">每年相对真回归年（365.24219 天）误差压缩 25 倍：</text>
+<text x="416" y="339" font-size="10.8" fill="#1e293b" text-anchor="start" font-weight="600">儒略历</text>
+<rect x="496.0" y="328" width="138.0" height="13" rx="3" fill="#c25014"/>
+<text x="640.0" y="339" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="700">+675 秒/年</text>
+<text x="416" y="361" font-size="10.8" fill="#1e293b" text-anchor="start" font-weight="600">现行公历</text>
+<rect x="496.0" y="350" width="5.5" height="13" rx="3" fill="#18794e"/>
+<text x="507.5" y="361" font-size="10.6" fill="#18794e" text-anchor="start" font-weight="700">+26.8 秒/年（约 3226 年才差 1 天）</text>
+</svg>

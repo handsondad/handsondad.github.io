@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="440" viewBox="0 0 760 440" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">琳·马古利斯内共生学说两步细胞融合路径与四大分子生物学证据图</title>
+<desc id="desc">展示生命从原核生物跨向复杂真核生物的两次关键内共生：古菌宿主先与好氧α-变形菌共生演化出线粒体（解锁多细胞复杂基因组能量预算），随后一支真核谱系再纳入光合蓝细菌演化出叶绿体；下方列出环状DNA、70S核糖体、双层膜质子梯度和二分裂增殖四大证据。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="439" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">内共生大跃迁：生命为何当了十多亿年微生物，才跨向复杂动植物？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">琳·马古利斯（1967）内共生学说与现代基因组学证据：两次改变地球生命能量预算的“细胞合体”。</text>
+<rect x="20" y="64" width="720" height="224" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="88" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 从原核独霸到复杂真核生物的两次关键内共生事件</text>
+<rect x="36" y="104" width="212" height="168" rx="9" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="56" cy="124" r="10" fill="#ffffff" stroke="#475569" stroke-width="1.2"/>
+<text x="56" y="128" font-size="11.5" fill="#475569" text-anchor="middle" font-weight="700">1</text>
+<text x="72" y="128" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">漫长的原核时代</text>
+<text x="52" y="147" font-size="10.2" fill="#64748b" text-anchor="start" class="mono">约 35+ 亿年至 20 亿年前</text>
+<ellipse cx="100" cy="190" rx="38" ry="24" fill="#ffffff" stroke="#6d28d9" stroke-width="1.8"/>
+<text x="100" y="194" font-size="10.5" fill="#6d28d9" text-anchor="middle" font-weight="700">古菌宿主</text>
+<ellipse cx="190" cy="176" rx="28" ry="14" fill="#fef1e8" stroke="#c25014" stroke-width="1.5"/>
+<text x="190" y="180" font-size="9.8" fill="#c25014" text-anchor="middle" font-weight="600">α-变形菌</text>
+<ellipse cx="190" cy="208" rx="28" ry="14" fill="#e7f6ee" stroke="#18794e" stroke-width="1.5"/>
+<text x="190" y="212" font-size="9.8" fill="#18794e" text-anchor="middle" font-weight="600">蓝细菌</text>
+<text x="50" y="242" font-size="10.1" fill="#1e293b" text-anchor="start">瓶颈：原核仅靠外膜产能，细</text>
+<text x="50" y="259" font-size="10.1" fill="#1e293b" text-anchor="start" font-weight="600">胞一旦变大，表面积/体积骤降！</text>
+<line x1="252.0" y1="188.0" x2="268.0" y2="188.0" stroke="#c25014" stroke-width="2.0" marker-end="url(#arr-orange)"/>
+<rect x="274" y="104" width="212" height="168" rx="9" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<circle cx="294" cy="124" r="10" fill="#ffffff" stroke="#c25014" stroke-width="1.2"/>
+<text x="294" y="128" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="310" y="128" font-size="12.0" fill="#c25014" text-anchor="start" font-weight="700">第一次合体：线粒体</text>
+<text x="290" y="147" font-size="10.2" fill="#64748b" text-anchor="start" class="mono">约 20~18 亿年前真核共祖</text>
+<ellipse cx="380" cy="190" rx="68" ry="30" fill="#ffffff" stroke="#6d28d9" stroke-width="1.8"/>
+<circle cx="346" cy="190" r="16" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="346" y="194" font-size="9.6" fill="#6d28d9" text-anchor="middle" font-weight="700">核DNA</text>
+<ellipse cx="406" cy="181" rx="22" ry="9" fill="#fef1e8" stroke="#c25014" stroke-width="1.5"/>
+<ellipse cx="406" cy="201" rx="22" ry="9" fill="#fef1e8" stroke="#c25014" stroke-width="1.5"/>
+<text x="406" y="184" font-size="9.2" fill="#c25014" text-anchor="middle" font-weight="700">线粒体</text>
+<text x="288" y="242" font-size="10.1" fill="#1e293b" text-anchor="start">突破：成百上千个内膜发电站，</text>
+<text x="288" y="259" font-size="10.1" fill="#c25014" text-anchor="start" font-weight="700">解锁庞大基因组 → 动物与真菌等</text>
+<line x1="490.0" y1="188.0" x2="506.0" y2="188.0" stroke="#18794e" stroke-width="2.0" marker-end="url(#arr-green)"/>
+<rect x="512" y="104" width="212" height="168" rx="9" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<circle cx="532" cy="124" r="10" fill="#ffffff" stroke="#18794e" stroke-width="1.2"/>
+<text x="532" y="128" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">3</text>
+<text x="548" y="128" font-size="12.0" fill="#18794e" text-anchor="start" font-weight="700">第二次合体：叶绿体</text>
+<text x="528" y="147" font-size="10.2" fill="#64748b" text-anchor="start">有线粒体的真核再纳蓝细菌</text>
+<ellipse cx="618" cy="190" rx="72" ry="30" fill="#ffffff" stroke="#18794e" stroke-width="1.8"/>
+<circle cx="576" cy="190" r="14" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="576" y="194" font-size="9.6" fill="#6d28d9" text-anchor="middle" font-weight="700">核</text>
+<ellipse cx="618" cy="180" rx="18" ry="8" fill="#fef1e8" stroke="#c25014" stroke-width="1.4"/>
+<text x="618" y="183" font-size="9.0" fill="#c25014" text-anchor="middle" font-weight="700">线</text>
+<ellipse cx="652" cy="196" rx="25" ry="12" fill="#e7f6ee" stroke="#18794e" stroke-width="1.6"/>
+<text x="652" y="200" font-size="9.5" fill="#18794e" text-anchor="middle" font-weight="700">叶绿体</text>
+<text x="526" y="242" font-size="10.1" fill="#1e293b" text-anchor="start">双引擎：自备太阳能叶绿体 +</text>
+<text x="526" y="259" font-size="10.1" fill="#18794e" text-anchor="start" font-weight="700">呼吸线粒体 → 藻类与陆生植物！</text>
+<rect x="20" y="300" width="720" height="126" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="324" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 为什么科学界从质疑转向公认？留在每个真核细胞里的四大“细菌指纹”</text>
+<rect x="36" y="338" width="164" height="74" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="46" y="358" font-size="11.0" fill="#1d6fa5" text-anchor="start" font-weight="700">环状独立基因组</text>
+<text x="46" y="379" font-size="10.0" fill="#1e293b" text-anchor="start">自带环状 DNA，序列分别</text>
+<text x="46" y="396" font-size="10.0" fill="#1e293b" text-anchor="start">归属 α-变形菌与蓝细菌</text>
+<rect x="210" y="338" width="164" height="74" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1.1"/>
+<text x="220" y="358" font-size="11.0" fill="#18794e" text-anchor="start" font-weight="700">细菌型 70S 核糖体</text>
+<text x="220" y="379" font-size="10.0" fill="#1e293b" text-anchor="start">内部翻译机器与细菌一致，</text>
+<text x="220" y="396" font-size="10.0" fill="#1e293b" text-anchor="start">异于真核细胞质的 80S</text>
+<rect x="384" y="338" width="164" height="74" rx="7" fill="#fef1e8" stroke="#c25014" stroke-width="1.1"/>
+<text x="394" y="358" font-size="11.0" fill="#c25014" text-anchor="start" font-weight="700">双层膜与跨膜质子泵</text>
+<text x="394" y="379" font-size="10.0" fill="#1e293b" text-anchor="start">保留内外双膜拓扑，靠膜</text>
+<text x="394" y="396" font-size="10.0" fill="#1e293b" text-anchor="start">电子传递与 ATP 合酶供能</text>
+<rect x="558" y="338" width="164" height="74" rx="7" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.1"/>
+<text x="568" y="358" font-size="11.0" fill="#6d28d9" text-anchor="start" font-weight="700">只能二分裂增殖</text>
+<text x="568" y="379" font-size="10.0" fill="#1e293b" text-anchor="start">细胞无法从零组装它们，</text>
+<text x="568" y="396" font-size="10.0" fill="#1e293b" text-anchor="start">只能由原有细胞器分裂传承</text>
+</svg>

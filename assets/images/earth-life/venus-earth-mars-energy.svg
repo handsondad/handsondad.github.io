@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="442" viewBox="0 0 760 442" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">金星、地球与火星的辐射平衡温度与真实地表平均温度定量对比图</title>
+<desc id="desc">在同一摄氏温标（-100°C至+500°C）上对比三颗岩石行星的无温室等效辐射平衡温度与实测地表均温：金星从约-41°C飙升至+464°C，地球从-18°C升至+15°C落入液态水窗口，火星从-63°C仅升至约-60°C。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="441" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">三颗岩石邻居的温度账本：无温室辐射平衡温度 T_eq 对比真实地表均温</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">按 σT_eq⁴ = (1−A)S/4 计算等效黑体辐射温度，对比 NASA 行星档案实测全球平均表面温度。</text>
+<rect x="20" y="64" width="720" height="260" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="88" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 辐射平衡起点（蓝圆点）→ 温室效应加成 → 真实地表均温（实心终点）</text>
+<rect x="265.3" y="116.0" width="89.3" height="174.0" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1" stroke-dasharray="3 3" opacity="0.85"/>
+<text x="310.0" y="110" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1 bar 液态水窗口 (0~100°C)</text>
+<line x1="176.0" y1="116.0" x2="176.0" y2="290.0" stroke="#cbd5e1" stroke-width="1.0" stroke-dasharray="3 3"/>
+<text x="176.0" y="308" font-size="10.5" fill="#64748b" text-anchor="middle" class="mono">-100°C</text>
+<line x1="265.3" y1="116.0" x2="265.3" y2="290.0" stroke="#1d6fa5" stroke-width="1.0" stroke-dasharray="3 3"/>
+<text x="265.3" y="308" font-size="10.5" fill="#64748b" text-anchor="middle" class="mono">0°C</text>
+<line x1="354.7" y1="116.0" x2="354.7" y2="290.0" stroke="#cbd5e1" stroke-width="1.0" stroke-dasharray="3 3"/>
+<text x="354.7" y="308" font-size="10.5" fill="#64748b" text-anchor="middle" class="mono">+100°C</text>
+<line x1="444.0" y1="116.0" x2="444.0" y2="290.0" stroke="#cbd5e1" stroke-width="1.0" stroke-dasharray="3 3"/>
+<text x="444.0" y="308" font-size="10.5" fill="#64748b" text-anchor="middle" class="mono">+200°C</text>
+<line x1="533.3" y1="116.0" x2="533.3" y2="290.0" stroke="#cbd5e1" stroke-width="1.0" stroke-dasharray="3 3"/>
+<text x="533.3" y="308" font-size="10.5" fill="#64748b" text-anchor="middle" class="mono">+300°C</text>
+<line x1="622.7" y1="116.0" x2="622.7" y2="290.0" stroke="#cbd5e1" stroke-width="1.0" stroke-dasharray="3 3"/>
+<text x="622.7" y="308" font-size="10.5" fill="#64748b" text-anchor="middle" class="mono">+400°C</text>
+<line x1="712.0" y1="116.0" x2="712.0" y2="290.0" stroke="#cbd5e1" stroke-width="1.0" stroke-dasharray="3 3"/>
+<text x="712.0" y="308" font-size="10.5" fill="#64748b" text-anchor="middle" class="mono">+500°C</text>
+<line x1="176.0" y1="290.0" x2="712.0" y2="290.0" stroke="#475569" stroke-width="1.2"/>
+<line x1="176.0" y1="152.0" x2="712.0" y2="152.0" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="36" y="149" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">金星 Venus</text>
+<text x="36" y="166" font-size="10.3" fill="#64748b" text-anchor="start" class="mono">0.72 AU｜92 bar</text>
+<rect x="228.7" y="146.0" width="451.1" height="12" rx="6" fill="#c25014" opacity="0.24"/>
+<line x1="234.7" y1="152.0" x2="671.8" y2="152.0" stroke="#c25014" stroke-width="2.2" marker-end="url(#arr-orange)"/>
+<circle cx="228.7" cy="152.0" r="5.5" fill="#ffffff" stroke="#1d6fa5" stroke-width="2.2"/>
+<circle cx="679.8" cy="152.0" r="6.0" fill="#c25014" stroke="#ffffff" stroke-width="1.4"/>
+<text x="220.7" y="156" font-size="10.8" fill="#1d6fa5" text-anchor="end" font-weight="700" class="halo mono">-41°C</text>
+<text x="679.8" y="141" font-size="11.0" fill="#c25014" text-anchor="middle" font-weight="700" class="halo mono">+464°C</text>
+<text x="466.3" y="140" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="600" class="halo">ΔT ≈ +505°C 失控温室效应（浓云反射 ~75% 阳光，厚重 CO₂ 锁死红外热）</text>
+<line x1="176.0" y1="212.0" x2="712.0" y2="212.0" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="36" y="209" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">地球 Earth</text>
+<text x="36" y="226" font-size="10.3" fill="#64748b" text-anchor="start" class="mono">1.00 AU｜1.01 bar</text>
+<rect x="249.3" y="206.0" width="29.5" height="12" rx="6" fill="#18794e" opacity="0.24"/>
+<line x1="255.3" y1="212.0" x2="270.7" y2="212.0" stroke="#18794e" stroke-width="2.2" marker-end="url(#arr-green)"/>
+<circle cx="249.3" cy="212.0" r="5.5" fill="#ffffff" stroke="#1d6fa5" stroke-width="2.2"/>
+<circle cx="278.7" cy="212.0" r="6.0" fill="#18794e" stroke="#ffffff" stroke-width="1.4"/>
+<text x="241.3" y="216" font-size="10.8" fill="#1d6fa5" text-anchor="end" font-weight="700" class="halo mono">-18°C</text>
+<text x="287.7" y="204" font-size="11.0" fill="#18794e" text-anchor="start" font-weight="700" class="halo mono">+15°C</text>
+<text x="334.7" y="204" font-size="10.8" fill="#18794e" text-anchor="start" font-weight="600" class="halo">ΔT ≈ +33°C 天然温室暖被（把冰封地球托进液态水带！）</text>
+<line x1="176.0" y1="268.0" x2="712.0" y2="268.0" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="36" y="265" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">火星 Mars</text>
+<text x="36" y="282" font-size="10.3" fill="#64748b" text-anchor="start" class="mono">1.52 AU｜0.006 bar</text>
+<rect x="209.1" y="262.0" width="4.0" height="12" rx="6" fill="#6d28d9" opacity="0.24"/>
+<circle cx="209.1" cy="268.0" r="5.5" fill="#ffffff" stroke="#1d6fa5" stroke-width="2.2"/>
+<circle cx="211.7" cy="268.0" r="6.0" fill="#6d28d9" stroke="#ffffff" stroke-width="1.4"/>
+<text x="201.1" y="272" font-size="10.8" fill="#1d6fa5" text-anchor="end" font-weight="700" class="halo mono">-63°C</text>
+<text x="220.7" y="272" font-size="11.0" fill="#6d28d9" text-anchor="start" font-weight="700" class="halo mono">-60°C</text>
+<text x="267.7" y="272" font-size="10.6" fill="#1e293b" text-anchor="start" class="halo">ΔT ≈ +3°C 大气太薄（气压 ~610 Pa 卡在水的三相点）</text>
+<rect x="20" y="336" width="352" height="92" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="358" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">② 反直觉真相：金星的辐射起点比地球还冷！</text>
+<text x="36" y="379" font-size="10.6" fill="#1e293b" text-anchor="start">• 金星太阳辐射虽是地球 1.91 倍，但浓云反照率高达 0.75~0.77</text>
+<text x="36" y="397" font-size="10.6" fill="#1e293b" text-anchor="start">  （NASA 新表取 0.77 时 T_eq 约 -46°C），绝大部分阳光被直接弹回；</text>
+<text x="36" y="415" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="700">• 真正把它烤到 464°C（比水星均温 167°C 更烫）的是 92 bar CO₂！</text>
+<rect x="388" y="336" width="352" height="92" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="404" y="358" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">③ 科学边界：这笔账究竟隔离了什么变量？</text>
+<text x="404" y="379" font-size="10.6" fill="#1e293b" text-anchor="start">• 公式沿用各行星当前邦德反照率 A（已包含现有云层与冰盖贡献）；</text>
+<text x="404" y="397" font-size="10.6" fill="#1e293b" text-anchor="start">• 若真抽干地球空气，云和冰也会改变反照率；但对比 T_eq 与 T_surf</text>
+<text x="404" y="415" font-size="10.6" fill="#1d6fa5" text-anchor="start" font-weight="700">  恰好定量拎出大气红外“保温被”的净贡献：地球约 +33°C。</text>
+</svg>

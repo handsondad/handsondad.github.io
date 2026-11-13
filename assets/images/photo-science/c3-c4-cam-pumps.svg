@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="446" viewBox="0 0 760 446" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">Rubisco酶动力学瓶颈与C3、C4空间双室增压、CAM昼夜错峰储碳机制对比图</title>
+<desc id="desc">顶部概述Rubisco低周转率（每秒约3-10个分子）与O2竞争导致光呼吸的演化背景；下方三栏对比C3植物（水稻小麦叶肉细胞直通）、C4植物（玉米甘蔗叶肉PEP羧化酶与维管束鞘细胞空间接力浓缩CO2）及CAM植物（仙人掌菠萝夜间开气孔存苹果酸入液泡、白天闭气孔释放CO2固碳）。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="445" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">地球上最慢、最多的酶 Rubisco，与 C3、C4、CAM 三套供碳方案</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">卡尔文循环是共同终点；区别在于要不要花额外能量，在空间或时间上给 Rubisco 建立“CO₂ 增压舱”。</text>
+<rect x="20" y="64" width="720" height="74" rx="9" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="36" y="86" font-size="12.0" fill="#c25014" text-anchor="start" font-weight="700">① 共同瓶颈：Rubisco 酶的“远古胎记”（占 C3 叶片可溶性蛋白 30%–50%，地球丰度第一酶）</text>
+<text x="36" y="106" font-size="10.1" fill="#1e293b" text-anchor="start">• 奇慢无比：每个活性位点每秒仅固定约 3–10 个 CO₂（普通酶常达上千至十万次），植物只好靠“酶海战术”堆数量！</text>
+<text x="36" y="124" font-size="10.1" fill="#0f172a" text-anchor="start" font-weight="600">• 会认错人：诞生于远古高 CO₂ 缺氧海；如今大气 O₂ 占 21% 而 CO₂ 仅 ~0.042%，酷热关小气孔时 O₂ 抢位引发光呼吸。</text>
+<rect x="20" y="150" width="232" height="282" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="174" font-size="13.0" fill="#1d6fa5" text-anchor="start" font-weight="700">② C3 植物｜单室直通</text>
+<rect x="36.0" y="184.0" width="176" height="20" rx="10.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="124.0" y="197.6" font-size="10.2" fill="#1d6fa5" text-anchor="middle" font-weight="600">水稻 · 小麦 · 大豆 · 树木</text>
+<rect x="36" y="214" width="200" height="118" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="136.0" y="234" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">叶肉细胞（白天开气孔）</text>
+<text x="136.0" y="256" font-size="10.0" fill="#1e293b" text-anchor="middle">CO₂（与 21% O₂ 同室竞争）</text>
+<line x1="136.0" y1="262.0" x2="136.0" y2="278.0" stroke="#1d6fa5" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+<text x="136.0" y="294" font-size="10.6" fill="#0f172a" text-anchor="middle" font-weight="700">Rubisco → 三碳 3-PGA</text>
+<text x="136.0" y="314" font-size="9.8" fill="#c25014" text-anchor="middle" font-weight="600">（酷热干旱时易发光呼吸失碳）</text>
+<text x="36" y="354" font-size="10.2" fill="#1e293b" text-anchor="start">• 优点：温凉湿润时免交额外泵碳</text>
+<text x="36" y="371" font-size="10.2" fill="#18794e" text-anchor="start" font-weight="600">  能量税，量子效率反而更高！</text>
+<text x="36" y="391" font-size="10.2" fill="#1e293b" text-anchor="start">• 弱点：高温强光关小气孔保水时，</text>
+<text x="36" y="408" font-size="10.2" fill="#1e293b" text-anchor="start">  叶内缺 CO₂，光呼吸损耗大增。</text>
+<rect x="264" y="150" width="232" height="282" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="280" y="174" font-size="13.0" fill="#18794e" text-anchor="start" font-weight="700">③ C4 植物｜空间双室增压</text>
+<rect x="280.0" y="184.0" width="176" height="20" rx="10.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="368.0" y="197.6" font-size="10.2" fill="#18794e" text-anchor="middle" font-weight="600">玉米 · 甘蔗 · 高粱 · 小米</text>
+<rect x="280" y="214" width="200" height="52" rx="7" fill="#f0fdf4" stroke="#18794e" stroke-width="1"/>
+<text x="380.0" y="232" font-size="10.3" fill="#18794e" text-anchor="middle" font-weight="700">外室·叶肉细胞：PEP 羧化酶</text>
+<text x="380.0" y="249" font-size="9.8" fill="#1e293b" text-anchor="middle">不理 O₂，专抓 CO₂ 制成四碳酸</text>
+<line x1="380.0" y1="266.0" x2="380.0" y2="278.0" stroke="#18794e" stroke-width="2.0" marker-end="url(#arr-green)"/>
+<rect x="280" y="280" width="200" height="52" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1.6"/>
+<text x="380.0" y="298" font-size="10.3" fill="#0f172a" text-anchor="middle" font-weight="700">内室·维管束鞘（厚壁少氧）</text>
+<text x="380.0" y="315" font-size="9.8" fill="#18794e" text-anchor="middle" font-weight="700">脱羧释放高浓 CO₂ 喂饱 Rubisco！</text>
+<text x="280" y="354" font-size="10.2" fill="#1e293b" text-anchor="start">• 空间换效率：“花环结构”两套细</text>
+<text x="280" y="371" font-size="10.2" fill="#18794e" text-anchor="start" font-weight="600">  胞接力，把光呼吸压到极低水平。</text>
+<text x="280" y="391" font-size="10.2" fill="#1e293b" text-anchor="start">• 代价：每泵 1 个 CO₂ 需多花约</text>
+<text x="280" y="408" font-size="10.2" fill="#1e293b" text-anchor="start">  2 ATP，在烈日高温草原最划算！</text>
+<rect x="508" y="150" width="232" height="282" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="524" y="174" font-size="13.0" fill="#6d28d9" text-anchor="start" font-weight="700">④ CAM 植物｜昼夜错峰储碳</text>
+<rect x="524.0" y="184.0" width="188" height="20" rx="10.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="618.0" y="197.6" font-size="10.2" fill="#6d28d9" text-anchor="middle" font-weight="600">仙人掌 · 菠萝 · 龙舌兰 · 多肉</text>
+<rect x="524" y="214" width="200" height="52" rx="7" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="624.0" y="232" font-size="10.3" fill="#6d28d9" text-anchor="middle" font-weight="700">夜晚凉爽｜打开气孔吸气</text>
+<text x="624.0" y="249" font-size="9.8" fill="#1e293b" text-anchor="middle">CO₂ → 制成苹果酸锁进大液泡</text>
+<line x1="624.0" y1="266.0" x2="624.0" y2="278.0" stroke="#475569" stroke-width="1.8" marker-end="url(#arr-muted)"/>
+<rect x="524" y="280" width="200" height="52" rx="7" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="624.0" y="298" font-size="10.3" fill="#c25014" text-anchor="middle" font-weight="700">白天暴晒｜紧闭气孔防失水</text>
+<text x="624.0" y="315" font-size="9.8" fill="#0f172a" text-anchor="middle" font-weight="600">液泡放 CO₂ + 光反应跑卡尔文循环</text>
+<text x="524" y="354" font-size="10.2" fill="#1e293b" text-anchor="start">• 时间换生存：同一细胞分夜班囤货</text>
+<text x="524" y="371" font-size="10.2" fill="#6d28d9" text-anchor="start" font-weight="600">  与白班造糖，水分利用效率冠绝陆地</text>
+<text x="524" y="391" font-size="10.2" fill="#1e293b" text-anchor="start">• 代价：受液泡储酸容量上限约束，</text>
+<text x="524" y="408" font-size="10.2" fill="#1e293b" text-anchor="start">  总体生长较慢，专精荒漠与附生。</text>
+</svg>

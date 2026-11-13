@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="434" viewBox="0 0 760 434" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">液态水4摄氏度最大密度反常膨胀曲线与碳硅元素成键及氧化物对比图</title>
+<desc id="desc">左图按Kell(1975)公式精确绘制0至24°C液态水密度曲线（在约4°C达1.0000 g/cm³峰值），对比0°C六方冰0.917 g/cm³浮于水面的护生机制；右图对比第14族碳（C-C键稳定、CO2为可溶气体）与硅（Si-O锁死、SiO2为石英固体）的分子差异。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  .trace-line {
+        stroke-dasharray: 1;
+        stroke-dashoffset: 0;
+        animation: drawLine 1.3s ease-out 1 both;
+      }
+      @keyframes drawLine {
+        from { stroke-dashoffset: 1; }
+        to { stroke-dashoffset: 0; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .trace-line { animation: none; }
+      }
+</style>
+<rect x="0.5" y="0.5" width="759" height="433" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">水与碳的分子偏爱：为什么冰浮在水面护住生命，而硅很难顶替碳？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左图据 Kell (1975) 与 NIST 物性表绘制液态水 4°C 密度峰值与浮冰效应；右图对比碳与硅的化学键和氧化物。</text>
+<rect x="20" y="64" width="352" height="356" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="88" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 水的反常膨胀：4°C 最重，结冰反轻 8.3%</text>
+<line x1="82.0" y1="217.2" x2="352.0" y2="217.2" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="76" y="221.2" font-size="9.8" fill="#64748b" text-anchor="end" class="mono">0.9975</text>
+<line x1="82.0" y1="179.6" x2="352.0" y2="179.6" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="76" y="183.6" font-size="9.8" fill="#64748b" text-anchor="end" class="mono">0.9985</text>
+<line x1="82.0" y1="142.1" x2="352.0" y2="142.1" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="76" y="146.1" font-size="9.8" fill="#64748b" text-anchor="end" class="mono">0.9995</text>
+<line x1="82.0" y1="123.3" x2="352.0" y2="123.3" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="76" y="127.3" font-size="9.8" fill="#64748b" text-anchor="end" class="mono">1.0000</text>
+<line x1="82.0" y1="112.0" x2="82.0" y2="236.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="2 3"/>
+<text x="82.0" y="251" font-size="10.0" fill="#64748b" text-anchor="middle" class="mono">0°C</text>
+<line x1="127.0" y1="112.0" x2="127.0" y2="236.0" stroke="#93c5fd" stroke-width="0.9" stroke-dasharray="2 3"/>
+<text x="127.0" y="251" font-size="10.0" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono">4°C</text>
+<line x1="194.5" y1="112.0" x2="194.5" y2="236.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="2 3"/>
+<text x="194.5" y="251" font-size="10.0" fill="#64748b" text-anchor="middle" class="mono">10°C</text>
+<line x1="262.0" y1="112.0" x2="262.0" y2="236.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="2 3"/>
+<text x="262.0" y="251" font-size="10.0" fill="#64748b" text-anchor="middle" class="mono">16°C</text>
+<line x1="352.0" y1="112.0" x2="352.0" y2="236.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="2 3"/>
+<text x="352.0" y="251" font-size="10.0" fill="#64748b" text-anchor="middle" class="mono">24°C</text>
+<line x1="82.0" y1="112.0" x2="82.0" y2="236.0" stroke="#475569" stroke-width="1.2"/>
+<line x1="82.0" y1="236.0" x2="352.0" y2="236.0" stroke="#475569" stroke-width="1.2"/>
+<path d="M 82.00,236.00 L 82.00,129.30 L 85.38,128.57 L 88.75,127.89 L 92.12,127.28 L 95.50,126.72 L 98.88,126.23 L 102.25,125.79 L 105.62,125.41 L 109.00,125.09 L 112.38,124.83 L 115.75,124.62 L 119.12,124.47 L 122.50,124.37 L 125.88,124.33 L 129.25,124.34 L 132.62,124.40 L 136.00,124.52 L 139.38,124.70 L 142.75,124.92 L 146.12,125.19 L 149.50,125.52 L 152.88,125.90 L 156.25,126.33 L 159.62,126.80 L 163.00,127.33 L 166.38,127.91 L 169.75,128.53 L 173.12,129.21 L 176.50,129.93 L 179.88,130.69 L 183.25,131.51 L 186.62,132.37 L 190.00,133.28 L 193.38,134.23 L 196.75,135.23 L 200.12,136.27 L 203.50,137.36 L 206.88,138.50 L 210.25,139.67 L 213.62,140.89 L 217.00,142.16 L 220.38,143.46 L 223.75,144.81 L 227.12,146.21 L 230.50,147.64 L 233.88,149.11 L 237.25,150.63 L 240.62,152.19 L 244.00,153.79 L 247.37,155.43 L 250.75,157.11 L 254.13,158.82 L 257.50,160.58 L 260.88,162.38 L 264.25,164.22 L 267.62,166.09 L 271.00,168.01 L 274.38,169.96 L 277.75,171.95 L 281.12,173.98 L 284.50,176.04 L 287.88,178.15 L 291.25,180.29 L 294.62,182.46 L 298.00,184.68 L 301.38,186.93 L 304.75,189.21 L 308.12,191.53 L 311.50,193.89 L 314.88,196.28 L 318.25,198.71 L 321.62,201.17 L 325.00,203.66 L 328.38,206.19 L 331.75,208.76 L 335.12,211.36 L 338.50,213.99 L 341.88,216.66 L 345.25,219.36 L 348.62,222.09 L 352.00,224.86 L 352.00,236.00 Z" fill="#1d6fa5" opacity="0.12"/>
+<path d="M 82.00,129.30 L 85.38,128.57 L 88.75,127.89 L 92.12,127.28 L 95.50,126.72 L 98.88,126.23 L 102.25,125.79 L 105.62,125.41 L 109.00,125.09 L 112.38,124.83 L 115.75,124.62 L 119.12,124.47 L 122.50,124.37 L 125.88,124.33 L 129.25,124.34 L 132.62,124.40 L 136.00,124.52 L 139.38,124.70 L 142.75,124.92 L 146.12,125.19 L 149.50,125.52 L 152.88,125.90 L 156.25,126.33 L 159.62,126.80 L 163.00,127.33 L 166.38,127.91 L 169.75,128.53 L 173.12,129.21 L 176.50,129.93 L 179.88,130.69 L 183.25,131.51 L 186.62,132.37 L 190.00,133.28 L 193.38,134.23 L 196.75,135.23 L 200.12,136.27 L 203.50,137.36 L 206.88,138.50 L 210.25,139.67 L 213.62,140.89 L 217.00,142.16 L 220.38,143.46 L 223.75,144.81 L 227.12,146.21 L 230.50,147.64 L 233.88,149.11 L 237.25,150.63 L 240.62,152.19 L 244.00,153.79 L 247.37,155.43 L 250.75,157.11 L 254.13,158.82 L 257.50,160.58 L 260.88,162.38 L 264.25,164.22 L 267.62,166.09 L 271.00,168.01 L 274.38,169.96 L 277.75,171.95 L 281.12,173.98 L 284.50,176.04 L 287.88,178.15 L 291.25,180.29 L 294.62,182.46 L 298.00,184.68 L 301.38,186.93 L 304.75,189.21 L 308.12,191.53 L 311.50,193.89 L 314.88,196.28 L 318.25,198.71 L 321.62,201.17 L 325.00,203.66 L 328.38,206.19 L 331.75,208.76 L 335.12,211.36 L 338.50,213.99 L 341.88,216.66 L 345.25,219.36 L 348.62,222.09 L 352.00,224.86" fill="none" stroke="#1d6fa5" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" pathLength="1" class="trace-line"/>
+<circle cx="126.8" cy="124.3" r="4.8" fill="#c25014" stroke="#ffffff" stroke-width="1.3"/>
+<text x="136.8" y="127.3" font-size="10.3" fill="#c25014" text-anchor="start" font-weight="700" class="halo">峰值 4°C: 1.0000 g/cm³</text>
+<text x="284.5" y="167.0" font-size="9.8" fill="#1d6fa5" text-anchor="middle" class="halo">液态水密度曲线(放大纵轴)</text>
+<rect x="36" y="264" width="320" height="140" rx="8" fill="#f8fbff" stroke="#93c5fd" stroke-width="1"/>
+<rect x="46" y="276" width="300" height="34" rx="5" fill="#e0f2fe" stroke="#1d6fa5" stroke-width="1.4"/>
+<text x="196.0" y="297" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="700">0°C 六方冰层：0.917 g/cm³（氢键撑开空笼，浮于水面隔寒）</text>
+<rect x="46" y="316" width="300" height="76" rx="5" fill="#eaf4fb" stroke="none"/>
+<text x="56" y="338" font-size="10.2" fill="#1e293b" text-anchor="start">• 0~4°C 水体：越接近 4°C 越重，自动下沉到湖底与深海</text>
+<text x="56" y="358" font-size="10.2" fill="#c25014" text-anchor="start" font-weight="600">• 若冰和多数固体一样比液态重：冰会沉底、水体自下而上冻实！</text>
+<text x="56" y="378" font-size="10.2" fill="#18794e" text-anchor="start" font-weight="700">• 4°C 液态深水层（1.000 g/cm³）：严冬与冰期水生生命的避难所</text>
+<rect x="388" y="64" width="352" height="356" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="404" y="88" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 周期表同族对决：为什么是碳（₆C）不是硅（₁₄Si）？</text>
+<rect x="404" y="106" width="320" height="134" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.3"/>
+<rect x="416.0" y="116.0" width="182" height="22" rx="11.0" fill="#ffffff" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="507.0" y="131.0" font-size="11.0" fill="#18794e" text-anchor="middle" font-weight="600">₆C 碳｜第2周期·4个共价键</text>
+<text x="416" y="156" font-size="10.3" fill="#0f172a" text-anchor="start" font-weight="600">• C–C 键能 ≈ 346 kJ/mol（与 C–O、C–H 相近）：</text>
+<text x="416" y="174" font-size="10.0" fill="#1e293b" text-anchor="start">  既牢靠搭出长链、环与双键，又可在酶促下温和拆装。</text>
+<text x="416" y="195" font-size="10.3" fill="#18794e" text-anchor="start" font-weight="700">• 氧化产物 CO₂（独立小分子）：常温是可溶气体！</text>
+<text x="416" y="213" font-size="10.0" fill="#1e293b" text-anchor="start">  碳能在大气、海洋、叶片与细胞间全行星自由流转。</text>
+<rect x="404" y="252" width="320" height="134" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1.3"/>
+<rect x="416.0" y="262.0" width="182" height="22" rx="11.0" fill="#ffffff" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="507.0" y="277.0" font-size="11.0" fill="#c25014" text-anchor="middle" font-weight="600">₁₄Si 硅｜地壳质量远多于碳</text>
+<text x="416" y="302" font-size="10.3" fill="#0f172a" text-anchor="start" font-weight="600">• Si–Si 键仅 ≈ 222 kJ/mol，Si–O 高达 ≈ 452：</text>
+<text x="416" y="320" font-size="10.0" fill="#1e293b" text-anchor="start">  难成稳定双键；硅氢链遇水和氧易断裂并锁死成硅氧键。</text>
+<text x="416" y="341" font-size="10.3" fill="#c25014" text-anchor="start" font-weight="700">• 氧化产物 SiO₂（三维网状晶体）：是石英砂岩石！</text>
+<text x="416" y="359" font-size="10.0" fill="#1e293b" text-anchor="start">  不溶于水也没法随呼吸排出——总不能呼气吐一把沙子。</text>
+<text x="404" y="405" font-size="9.9" fill="#64748b" text-anchor="start">注：解释有水有氧环境碳的优势，不排除极端环境异质化学。</text>
+</svg>

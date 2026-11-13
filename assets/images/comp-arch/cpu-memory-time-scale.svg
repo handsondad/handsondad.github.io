@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="442" viewBox="0 0 760 442" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">4GHz处理器存储金字塔延迟对数标尺与人类时间尺度换算图</title>
+<desc id="desc">将CPU一个时钟周期0.25纳秒放大40亿倍映射为人类1秒：寄存器1秒、L1缓存4秒、L2缓存14秒、L3缓存48秒、DDR5主内存5分20秒、NVMe固态硬盘1.2天、机械硬盘寻道约1年，直观解释为何现代计算机必须采用多级缓存与局部性预取。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="441" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">为什么 4 GHz 的 CPU 离不开缓存？—— 把 1 个时钟周期放大成“人类 1 秒”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">若 CPU 算一次（0.25 ns）等于你眨眼 1 秒，等一次内存就像下楼买水花 5 分钟，读一次固态盘要等一天多！</text>
+<rect x="20" y="62" width="720" height="274" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="85" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 存储层次延迟对数尺（横轴 log₁₀ 真实纳秒；右侧为同步放大 4×10⁹ 倍后的人类体感时间）</text>
+<line x1="128.0" y1="98" x2="128.0" y2="302" stroke="#f1f5f9" stroke-width="1"/>
+<text x="128.0" y="318" font-size="9.6" fill="#64748b" text-anchor="middle" class="mono">0.1ns</text>
+<line x1="160.0" y1="98" x2="160.0" y2="302" stroke="#f1f5f9" stroke-width="1"/>
+<text x="160.0" y="318" font-size="9.6" fill="#64748b" text-anchor="middle" class="mono">1ns</text>
+<line x1="192.0" y1="98" x2="192.0" y2="302" stroke="#f1f5f9" stroke-width="1"/>
+<text x="192.0" y="318" font-size="9.6" fill="#64748b" text-anchor="middle" class="mono">10ns</text>
+<line x1="224.0" y1="98" x2="224.0" y2="302" stroke="#f1f5f9" stroke-width="1"/>
+<text x="224.0" y="318" font-size="9.6" fill="#64748b" text-anchor="middle" class="mono">100ns</text>
+<line x1="288.0" y1="98" x2="288.0" y2="302" stroke="#f1f5f9" stroke-width="1"/>
+<text x="288.0" y="318" font-size="9.6" fill="#64748b" text-anchor="middle" class="mono">10μs</text>
+<line x1="352.0" y1="98" x2="352.0" y2="302" stroke="#f1f5f9" stroke-width="1"/>
+<text x="352.0" y="318" font-size="9.6" fill="#64748b" text-anchor="middle" class="mono">1ms</text>
+<line x1="384.0" y1="98" x2="384.0" y2="302" stroke="#f1f5f9" stroke-width="1"/>
+<text x="384.0" y="318" font-size="9.6" fill="#64748b" text-anchor="middle" class="mono">10ms</text>
+<text x="400" y="104" font-size="10.3" fill="#64748b" text-anchor="start" font-weight="700">真实延迟</text>
+<text x="468" y="104" font-size="10.3" fill="#0f172a" text-anchor="start" font-weight="700">放大后人类体感</text>
+<text x="724" y="104" font-size="10.3" fill="#64748b" text-anchor="end" font-weight="700">典型容量</text>
+<text x="36" y="128" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">CPU 寄存器</text>
+<rect x="128.0" y="116" width="12.7" height="14" rx="3" fill="#1d6fa5"/>
+<text x="400" y="128" font-size="10.1" fill="#1e293b" text-anchor="start" class="mono">0.25 ns</text>
+<text x="468" y="128" font-size="10.2" fill="#1e293b" text-anchor="start">1 秒 · 低头看一眼手里的笔</text>
+<text x="724" y="128" font-size="10.0" fill="#64748b" text-anchor="end" class="mono">&lt; 1 KB</text>
+<text x="36" y="155" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">L1 高速缓存</text>
+<rect x="128.0" y="143" width="32.0" height="14" rx="3" fill="#1d6fa5"/>
+<text x="400" y="155" font-size="10.1" fill="#1e293b" text-anchor="start" class="mono">1 ns</text>
+<text x="468" y="155" font-size="10.2" fill="#1e293b" text-anchor="start">4 秒 · 伸手拿桌角草稿纸</text>
+<text x="724" y="155" font-size="10.0" fill="#64748b" text-anchor="end" class="mono">32–64 KB</text>
+<text x="36" y="182" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">L2 高速缓存</text>
+<rect x="128.0" y="170" width="49.4" height="14" rx="3" fill="#18794e"/>
+<text x="400" y="182" font-size="10.1" fill="#1e293b" text-anchor="start" class="mono">3.5 ns</text>
+<text x="468" y="182" font-size="10.2" fill="#1e293b" text-anchor="start">14 秒 · 起身去书架抽一本书</text>
+<text x="724" y="182" font-size="10.0" fill="#64748b" text-anchor="end" class="mono">0.5–2 MB</text>
+<text x="36" y="209" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">L3 共享缓存</text>
+<rect x="128.0" y="197" width="66.5" height="14" rx="3" fill="#18794e"/>
+<text x="400" y="209" font-size="10.1" fill="#1e293b" text-anchor="start" class="mono">12 ns</text>
+<text x="468" y="209" font-size="10.2" fill="#1e293b" text-anchor="start">48 秒 · 去隔壁房间翻资料</text>
+<text x="724" y="209" font-size="10.0" fill="#64748b" text-anchor="end" class="mono">16–64 MB</text>
+<rect x="30" y="220" width="698" height="23" rx="4" fill="#fef1e8" opacity="0.55"/>
+<text x="36" y="236" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="700">DDR5 主内存</text>
+<rect x="128.0" y="224" width="92.9" height="14" rx="3" fill="#c25014"/>
+<text x="400" y="236" font-size="10.1" fill="#1e293b" text-anchor="start" class="mono">80 ns</text>
+<text x="468" y="236" font-size="10.2" fill="#c25014" text-anchor="start" font-weight="700">5 分 20 秒 · 下楼去便利店买水</text>
+<text x="724" y="236" font-size="10.0" fill="#64748b" text-anchor="end" class="mono">16–64 GB</text>
+<rect x="30" y="247" width="698" height="23" rx="4" fill="#f3e8ff" opacity="0.55"/>
+<text x="36" y="263" font-size="10.6" fill="#6d28d9" text-anchor="start" font-weight="700">NVMe 固态盘</text>
+<rect x="128.0" y="251" width="172.7" height="14" rx="3" fill="#6d28d9"/>
+<text x="400" y="263" font-size="10.1" fill="#1e293b" text-anchor="start" class="mono">25 μs</text>
+<text x="468" y="263" font-size="10.2" fill="#6d28d9" text-anchor="start" font-weight="700">≈ 1.2 天 · 坐高铁去外地次日回</text>
+<text x="724" y="263" font-size="10.0" fill="#64748b" text-anchor="end" class="mono">1–4 TB</text>
+<text x="36" y="290" font-size="10.6" fill="#b91c1c" text-anchor="start" font-weight="700">HDD 机械硬盘</text>
+<rect x="128.0" y="278" width="252.9" height="14" rx="3" fill="#b91c1c"/>
+<text x="400" y="290" font-size="10.1" fill="#1e293b" text-anchor="start" class="mono">8 ms</text>
+<text x="468" y="290" font-size="10.2" fill="#b91c1c" text-anchor="start" font-weight="700">≈ 1 年 · 徒步环球一年才回来</text>
+<text x="724" y="290" font-size="10.0" fill="#64748b" text-anchor="end" class="mono">4–20 TB</text>
+<rect x="20" y="348" width="354" height="82" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="34" y="368" font-size="11.0" fill="#1d6fa5" text-anchor="start" font-weight="700">② 为什么不把整块硬盘都做成 L1 缓存那么快？</text>
+<text x="34" y="388" font-size="10.3" fill="#1e293b" text-anchor="start">物理与面积铁律：高速缓存 SRAM 约需 6 颗晶体管存 1 bit，</text>
+<text x="34" y="406" font-size="10.3" fill="#1e293b" text-anchor="start">且信号走线多几毫米都会增加延迟；越快就注定越小、越贵。</text>
+<rect x="386" y="348" width="354" height="82" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="400" y="368" font-size="11.0" fill="#18794e" text-anchor="start" font-weight="700">③ 缓存为什么能猜中 90%+ 的下一步？（局部性原理）</text>
+<text x="400" y="388" font-size="10.3" fill="#1e293b" text-anchor="start">• 时间局部性：循环里刚用过的变量，下一秒往往还要用；</text>
+<text x="400" y="406" font-size="10.3" fill="#1e293b" text-anchor="start">• 空间局部性：读地址 [20] 时，顺手把隔壁一整行 64B 搬上桌！</text>
+</svg>

@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="364" viewBox="0 0 760 364" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">直升机反扭矩机理与尾桨力矩平衡俯视图</title>
+<desc id="desc">左图展示无尾桨时主旋翼逆时针旋转引发机身顺时针失控自旋；右图按P=900kW、Ω=30rad/s计算30kN·m反扭矩由6米尾梁末端5kN尾桨侧推力精确平衡，并对比双旋翼与四轴无人机对消方案。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="363" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">直升机为什么非要拖一根“小尾巴”？角动量守恒与反扭矩平衡（俯视图）</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">主旋翼被发动机拧着逆时针转时，机身必然受到等大反向的顺时针反作用力矩！</text>
+<rect x="20" y="62" width="336" height="286" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="74.0" width="222" height="22" rx="11.0" fill="#fef2f2" stroke="#b91c1c" stroke-width="1" stroke-opacity="0.35"/>
+<text x="145.0" y="89.0" font-size="11.5" fill="#b91c1c" text-anchor="middle" font-weight="600">① 假如拆掉尾桨：机身原地打转！</text>
+<circle cx="188" cy="194" r="66" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1.2" stroke-dasharray="4 3"/>
+<ellipse cx="188" cy="194" rx="18" ry="34" fill="#cbd5e1" stroke="#475569" stroke-width="1.6"/>
+<rect x="184" y="224" width="8" height="44" rx="3" fill="#cbd5e1" stroke="#475569" stroke-width="1.4"/>
+<text x="202" y="266" font-size="10.3" fill="#b91c1c" text-anchor="start" font-weight="700">× 无尾桨侧推</text>
+<line x1="188" y1="194" x2="244.2" y2="167.8" stroke="#1d6fa5" stroke-width="3.2" stroke-linecap="round"/>
+<line x1="188" y1="194" x2="161.8" y2="137.8" stroke="#1d6fa5" stroke-width="3.2" stroke-linecap="round"/>
+<line x1="188" y1="194" x2="131.8" y2="220.2" stroke="#1d6fa5" stroke-width="3.2" stroke-linecap="round"/>
+<line x1="188" y1="194" x2="214.2" y2="250.2" stroke="#1d6fa5" stroke-width="3.2" stroke-linecap="round"/>
+<circle cx="188" cy="194" r="5.5" fill="#0f172a"/>
+<path d="M 240.0,142.0 A 73,73 0 0,0 136.0,142.0" fill="none" stroke="#1d6fa5" stroke-width="2.2" marker-end="url(#arr-blue)"/>
+<text x="188" y="116" font-size="10.6" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">主旋翼逆时针转 (+L_旋翼)</text>
+<path d="M 160.0,182.0 A 30,30 0 0,1 216.0,182.0" fill="none" stroke="#b91c1c" stroke-width="2.4" marker-end="url(#arr-orange)"/>
+<text x="224" y="198" font-size="10.5" fill="#b91c1c" text-anchor="start" font-weight="700" class="halo">机身顺时针狂转！</text>
+<rect x="34" y="280" width="308" height="56" rx="8" fill="#fef2f2" stroke="#fecaca" stroke-width="1"/>
+<text x="46" y="301" font-size="10.4" fill="#1e293b" text-anchor="start">• 孤立系统总角动量守恒：发动机拧旋翼向左转，</text>
+<text x="46" y="321" font-size="10.4" fill="#b91c1c" text-anchor="start" font-weight="600">  旋翼轴就拧机身向右转（牛顿第三定律旋转版）！</text>
+<rect x="368" y="62" width="372" height="286" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="382.0" y="74.0" width="244" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="504.0" y="89.0" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="600">② 尾桨长力臂抵消 vs 共轴反桨对消</text>
+<circle cx="482" cy="180" r="56" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1.2" stroke-dasharray="4 3"/>
+<ellipse cx="482" cy="180" rx="16" ry="30" fill="#cbd5e1" stroke="#475569" stroke-width="1.6"/>
+<rect x="478" y="206" width="8" height="64" rx="3" fill="#94a3b8" stroke="#475569" stroke-width="1.5"/>
+<line x1="482" y1="180" x2="529.1" y2="158.0" stroke="#1d6fa5" stroke-width="3.0" stroke-linecap="round"/>
+<line x1="482" y1="180" x2="460.0" y2="132.9" stroke="#1d6fa5" stroke-width="3.0" stroke-linecap="round"/>
+<line x1="482" y1="180" x2="434.9" y2="202.0" stroke="#1d6fa5" stroke-width="3.0" stroke-linecap="round"/>
+<line x1="482" y1="180" x2="504.0" y2="227.1" stroke="#1d6fa5" stroke-width="3.0" stroke-linecap="round"/>
+<circle cx="482" cy="180" r="5" fill="#0f172a"/>
+<path d="M 459.0,170.0 A 25,25 0 0,1 505.0,170.0" fill="none" stroke="#c25014" stroke-width="2.1" marker-end="url(#arr-orange)"/>
+<text x="482" y="116" font-size="10.3" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">反扭矩 τ_反 = 30 kN·m</text>
+<line x1="472" y1="255" x2="472" y2="277" stroke="#18794e" stroke-width="3.4" stroke-linecap="round"/>
+<line x1="486" y1="266" x2="544" y2="266" stroke="#18794e" stroke-width="2.6" marker-end="url(#arr-green)"/>
+<text x="516" y="258" font-size="10.0" fill="#18794e" text-anchor="middle" font-weight="700" class="halo">尾桨推力 T=5kN</text>
+<line x1="456" y1="180" x2="456" y2="266" stroke="#475569" stroke-width="1.2"/>
+<line x1="451" y1="180" x2="461" y2="180" stroke="#475569" stroke-width="1.2"/>
+<line x1="451" y1="266" x2="461" y2="266" stroke="#475569" stroke-width="1.2"/>
+<text x="448" y="227.0" font-size="10.0" fill="#475569" text-anchor="end" font-weight="600">力臂 d=6m</text>
+<rect x="574" y="110" width="152" height="108" rx="8" fill="#e7f6ee" stroke="#bbf7d0" stroke-width="1"/>
+<text x="584" y="130" font-size="10.8" fill="#18794e" text-anchor="start" font-weight="700">杠杆以小博大：</text>
+<text x="584" y="150" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="600" class="mono">T × d = 5 kN × 6 m</text>
+<text x="584" y="168" font-size="10.2" fill="#18794e" text-anchor="start" font-weight="700" class="mono">= 30 kN·m = τ_反</text>
+<text x="584" y="188" font-size="10.0" fill="#1e293b" text-anchor="start">净力矩 Στ = 0，机头稳稳</text>
+<text x="584" y="205" font-size="10.0" fill="#64748b" text-anchor="start">锁住航向（脚蹬调尾桨距）</text>
+<rect x="574" y="228" width="152" height="108" rx="8" fill="#f3e8ff" stroke="#ddd6fe" stroke-width="1"/>
+<text x="584" y="248" font-size="10.6" fill="#6d28d9" text-anchor="start" font-weight="700">不用尾桨？双旋翼对消！</text>
+<text x="584" y="268" font-size="10.1" fill="#1e293b" text-anchor="start">• 共轴双桨 / 纵列支奴干</text>
+<text x="584" y="287" font-size="10.1" fill="#1e293b" text-anchor="start">• 四轴无人机：2正转+2反转</text>
+<text x="584" y="307" font-size="10.1" fill="#6d28d9" text-anchor="start" font-weight="600">• (+L) + (-L) = 0，反扭矩</text>
+<text x="584" y="324" font-size="10.0" fill="#1e293b" text-anchor="start">  在机身上内部互相抵消！</text>
+<text x="386" y="304" font-size="10.0" fill="#475569" text-anchor="start">俯视：主桨逆转 → 机尾本想左甩，</text>
+<text x="386" y="322" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="600">尾桨向右推尾梁，逆时针扳平！</text>
+</svg>

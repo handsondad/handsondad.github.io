@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="456" viewBox="0 0 760 456" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">4位二进制补码时钟圆盘加减统一原理与24位RGB子像素1677万色合成图</title>
+<desc id="desc">左图用16格4位二进制时钟轮演示负数补码与5减3等价于0101加1101自然溢出得0010，使同一套加法器兼做减法；右图拆解单颗像素内红255、绿136、蓝26三根子像素合成暖橙色#FF881A，并实算24位16777216色及1080p 60帧每秒373.2MB吞吐量。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="455" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">比特的两种身份：左用“补码圆盘”把减法变加法，右用“三原色字节”调出 1677 万色</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">同一串 0 和 1 没有天生含义：按二进制补码解释可省掉减法器；按 24 位 RGB 解释可点亮屏幕像素</text>
+<rect x="20" y="62" width="366" height="380" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="34" y="85" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 4 位补码时钟轮：为什么 1111 是 −1？</text>
+<text x="34" y="103" font-size="10.4" fill="#64748b" text-anchor="start">像里程表满 16 归零：倒退 3 格 ≡ 顺时针往前走 13 格！</text>
+<rect x="34.0" y="112.0" width="128" height="20" rx="10.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="98.0" y="125.6" font-size="9.6" fill="#c25014" text-anchor="middle" font-weight="600">左半 MSB=1 (−8..−1)</text>
+<rect x="242.0" y="112.0" width="128" height="20" rx="10.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="306.0" y="125.6" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="600">右半 MSB=0 (0..+7)</text>
+<circle cx="202.0" cy="238.0" r="76.0" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+<line x1="202.0" y1="156.0" x2="202.0" y2="320.0" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="202.0" cy="162.0" r="4.6" fill="#1d6fa5"/>
+<text x="202.0" y="146.0" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono">0000</text>
+<text x="202.0" y="183.5" font-size="9.7" fill="#0f172a" text-anchor="middle" font-weight="700">0</text>
+<circle cx="231.1" cy="167.8" r="3.0" fill="#1d6fa5"/>
+<text x="240.3" y="153.3" font-size="9.6" fill="#1d6fa5" text-anchor="middle" class="mono">0001</text>
+<text x="224.2" y="187.9" font-size="9.7" fill="#64748b" text-anchor="middle">+1</text>
+<circle cx="255.7" cy="184.3" r="4.6" fill="#1d6fa5"/>
+<text x="272.7" y="174.0" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono">0010</text>
+<text x="243.0" y="200.5" font-size="9.7" fill="#0f172a" text-anchor="middle" font-weight="700">+2</text>
+<circle cx="272.2" cy="208.9" r="3.0" fill="#1d6fa5"/>
+<text x="294.4" y="205.0" font-size="9.6" fill="#1d6fa5" text-anchor="middle" class="mono">0011</text>
+<text x="255.6" y="219.3" font-size="9.7" fill="#64748b" text-anchor="middle">+3</text>
+<circle cx="278.0" cy="238.0" r="3.0" fill="#1d6fa5"/>
+<text x="302.0" y="241.5" font-size="9.6" fill="#1d6fa5" text-anchor="middle" class="mono">0100</text>
+<text x="260.0" y="241.5" font-size="9.7" fill="#64748b" text-anchor="middle">+4</text>
+<circle cx="272.2" cy="267.1" r="4.6" fill="#1d6fa5"/>
+<text x="294.4" y="278.0" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono">0101</text>
+<text x="255.6" y="263.7" font-size="9.7" fill="#0f172a" text-anchor="middle" font-weight="700">+5</text>
+<circle cx="255.7" cy="291.7" r="3.0" fill="#1d6fa5"/>
+<text x="272.7" y="309.0" font-size="9.6" fill="#1d6fa5" text-anchor="middle" class="mono">0110</text>
+<text x="243.0" y="282.5" font-size="9.7" fill="#64748b" text-anchor="middle">+6</text>
+<circle cx="231.1" cy="308.2" r="3.0" fill="#1d6fa5"/>
+<text x="240.3" y="329.7" font-size="9.6" fill="#1d6fa5" text-anchor="middle" class="mono">0111</text>
+<text x="224.2" y="295.1" font-size="9.7" fill="#64748b" text-anchor="middle">+7</text>
+<circle cx="202.0" cy="314.0" r="3.0" fill="#c25014"/>
+<text x="202.0" y="337.0" font-size="9.6" fill="#c25014" text-anchor="middle" class="mono">1000</text>
+<text x="202.0" y="299.5" font-size="9.7" fill="#64748b" text-anchor="middle">-8</text>
+<circle cx="172.9" cy="308.2" r="3.0" fill="#c25014"/>
+<text x="163.7" y="329.7" font-size="9.6" fill="#c25014" text-anchor="middle" class="mono">1001</text>
+<text x="179.8" y="295.1" font-size="9.7" fill="#64748b" text-anchor="middle">-7</text>
+<circle cx="148.3" cy="291.7" r="3.0" fill="#c25014"/>
+<text x="131.3" y="309.0" font-size="9.6" fill="#c25014" text-anchor="middle" class="mono">1010</text>
+<text x="161.0" y="282.5" font-size="9.7" fill="#64748b" text-anchor="middle">-6</text>
+<circle cx="131.8" cy="267.1" r="3.0" fill="#c25014"/>
+<text x="109.6" y="278.0" font-size="9.6" fill="#c25014" text-anchor="middle" class="mono">1011</text>
+<text x="148.4" y="263.7" font-size="9.7" fill="#64748b" text-anchor="middle">-5</text>
+<circle cx="126.0" cy="238.0" r="3.0" fill="#c25014"/>
+<text x="102.0" y="241.5" font-size="9.6" fill="#c25014" text-anchor="middle" class="mono">1100</text>
+<text x="144.0" y="241.5" font-size="9.7" fill="#64748b" text-anchor="middle">-4</text>
+<circle cx="131.8" cy="208.9" r="4.6" fill="#c25014"/>
+<text x="109.6" y="205.0" font-size="9.6" fill="#c25014" text-anchor="middle" font-weight="700" class="mono">1101</text>
+<text x="148.4" y="219.3" font-size="9.7" fill="#0f172a" text-anchor="middle" font-weight="700">-3</text>
+<circle cx="148.3" cy="184.3" r="3.0" fill="#c25014"/>
+<text x="131.3" y="174.0" font-size="9.6" fill="#c25014" text-anchor="middle" class="mono">1110</text>
+<text x="161.0" y="200.5" font-size="9.7" fill="#64748b" text-anchor="middle">-2</text>
+<circle cx="172.9" cy="167.8" r="4.6" fill="#c25014"/>
+<text x="163.7" y="153.3" font-size="9.6" fill="#c25014" text-anchor="middle" font-weight="700" class="mono">1111</text>
+<text x="179.8" y="187.9" font-size="9.7" fill="#0f172a" text-anchor="middle" font-weight="700">-1</text>
+<text x="202.0" y="242.0" font-size="10.2" fill="#18794e" text-anchor="middle" font-weight="700">5 − 3 = +2</text>
+<path d="M241.7,254.5 A43,43 0 0,0 232.4,207.6" fill="none" stroke="#18794e" stroke-width="2.0" marker-end="url(#arr-green)"/>
+<rect x="34" y="352" width="338" height="78" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="44" y="371" font-size="10.0" fill="#1d6fa5" text-anchor="start" font-weight="700">减法变加法：5 − 3 = 5 + (−3)  [反码+1：0011→1101]</text>
+<text x="44" y="390" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="600" class="mono">0101(+5) + 1101(−3) = [1]0010 → 丢进位得 0010(+2)！</text>
+<text x="44" y="409" font-size="9.8" fill="#64748b" text-anchor="start">注：0.1+0.2≠0.3 是 IEEE 754 浮点二进制循环小数截断所致。</text>
+<rect x="398" y="62" width="342" height="380" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="412" y="85" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 24 位真彩色：3 个字节点亮 1 颗像素</text>
+<text x="412" y="103" font-size="10.4" fill="#64748b" text-anchor="start">每颗像素内藏 R、G、B 三根发光子像素条（0–255 级亮度）</text>
+<rect x="412" y="116" width="314" height="128" rx="8" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+<text x="424" y="135" font-size="10.3" fill="#e2e8f0" text-anchor="start" font-weight="700">单颗像素放大镜（三根并排子像素）：</text>
+<rect x="428" y="144" width="34" height="62" rx="4" fill="#1e293b" stroke="#475569"/>
+<rect x="430" y="146.0" width="30" height="58.0" rx="3" fill="#ef4444"/>
+<text x="445" y="220" font-size="9.6" fill="#cbd5e1" text-anchor="middle" font-weight="600">R红</text>
+<text x="445" y="234" font-size="9.8" fill="#ffffff" text-anchor="middle" font-weight="700" class="mono">255</text>
+<rect x="482" y="144" width="34" height="62" rx="4" fill="#1e293b" stroke="#475569"/>
+<rect x="484" y="173.1" width="30" height="30.9" rx="3" fill="#22c55e"/>
+<text x="499" y="220" font-size="9.6" fill="#cbd5e1" text-anchor="middle" font-weight="600">G绿</text>
+<text x="499" y="234" font-size="9.8" fill="#ffffff" text-anchor="middle" font-weight="700" class="mono">136</text>
+<rect x="536" y="144" width="34" height="62" rx="4" fill="#1e293b" stroke="#475569"/>
+<rect x="538" y="196.0" width="30" height="8.0" rx="3" fill="#3b82f6"/>
+<text x="553" y="220" font-size="9.6" fill="#cbd5e1" text-anchor="middle" font-weight="600">B蓝</text>
+<text x="553" y="234" font-size="9.8" fill="#ffffff" text-anchor="middle" font-weight="700" class="mono">26</text>
+<text x="588" y="180" font-size="15" fill="#e2e8f0" text-anchor="middle" font-weight="700">→</text>
+<rect x="604" y="144" width="110" height="62" rx="8" fill="#ff881a" stroke="#ffffff" stroke-width="1.8"/>
+<text x="659" y="173" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700">人眼融合感知</text>
+<text x="659" y="191" font-size="10.1" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">#FF881A 暖橙</text>
+<text x="659" y="227" font-size="9.7" fill="#cbd5e1" text-anchor="middle">远看融成一点色光</text>
+<rect x="412" y="254" width="314" height="84" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="424" y="274" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">24-bit 编码账：256 × 256 × 256 = 16,777,216 种颜色</text>
+<rect x="424.0" y="284.0" width="98" height="22" rx="11.0" fill="#fef2f2" stroke="#b91c1c" stroke-width="1" stroke-opacity="0.35"/>
+<text x="473.0" y="299.0" font-size="9.8" fill="#b91c1c" text-anchor="middle" font-weight="600">R: 11111111 (255)</text>
+<rect x="526.0" y="284.0" width="98" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="575.0" y="299.0" font-size="9.8" fill="#18794e" text-anchor="middle" font-weight="600">G: 10001000 (136)</text>
+<rect x="628.0" y="284.0" width="90" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="673.0" y="299.0" font-size="9.8" fill="#1d6fa5" text-anchor="middle" font-weight="600">B: 00011010 (26)</text>
+<text x="424" y="326" font-size="9.8" fill="#64748b" text-anchor="start">若再加 8 位透明度 Alpha (RGBA)，每像素恰占 4 字节 (32 bit)。</text>
+<rect x="412" y="352" width="314" height="78" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="424" y="371" font-size="10.6" fill="#6d28d9" text-anchor="start" font-weight="700">算一算显卡有多忙（1920×1080 屏幕 @ 60 Hz）：</text>
+<text x="424" y="390" font-size="10.2" fill="#1e293b" text-anchor="start">• 单帧画面 = 207.36 万像素 × 3 B ≈ 6.22 MB 数据；</text>
+<text x="424" y="408" font-size="10.2" fill="#6d28d9" text-anchor="start" font-weight="700">• 每秒刷新 60 帧（每帧仅 16.7 ms）→ 需吞吐 373.2 MB/s！</text>
+</svg>

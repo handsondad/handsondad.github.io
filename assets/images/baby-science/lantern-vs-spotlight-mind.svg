@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="412" viewBox="0 0 760 412" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">婴儿灯笼意识与成人探照灯注意对比及Baillargeon直觉物理实验数据图</title>
+<desc id="desc">左图对比成人前额叶抑制下的窄束探照灯注意与婴儿360度全景接收规律的灯笼意识；右图展示Baillargeon等1985年吊桥遮挡实验，5月龄婴儿对不可能穿模事件平均注视33.07秒，显著高于可能事件的25.11秒。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="411" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">婴儿不是“低配版大人”：灯笼意识广角采数 vs 直觉物理学家实验</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左图对比 Gopnik（2009）注意模型；右图绘制 Baillargeon 等（1985）5 月龄遮挡物理实验实测时长。</text>
+<rect x="20" y="64" width="352" height="332" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="88" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 探照灯意识 vs 灯笼意识（Gopnik 2009）</text>
+<rect x="34" y="102" width="324" height="134" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="46" y="122" font-size="11.6" fill="#475569" text-anchor="start" font-weight="700">成人：探照灯注意（Spotlight）</text>
+<polygon points="76,178 234,146 234,196" fill="#fde68a" opacity="0.55"/>
+<circle cx="76" cy="178" r="14" fill="#ffffff" stroke="#475569" stroke-width="1.8"/>
+<text x="76" y="182" font-size="10.2" fill="#475569" text-anchor="middle" font-weight="700">成人</text>
+<rect x="226" y="155" width="114" height="32" rx="6" fill="#ffffff" stroke="#c25014" stroke-width="1.4"/>
+<text x="283" y="175" font-size="10.6" fill="#c25014" text-anchor="middle" font-weight="700">唯一目标：赶时间</text>
+<text x="132" y="142" font-size="10.0" fill="#94a3b8" text-anchor="start">× 树叶光斑（屏蔽）</text>
+<text x="132" y="218" font-size="10.0" fill="#94a3b8" text-anchor="start">× 桌角反光（屏蔽）</text>
+<text x="248" y="218" font-size="10.2" fill="#475569" text-anchor="start" font-weight="600">前额叶强抑制过滤</text>
+<rect x="34" y="246" width="324" height="140" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="46" y="266" font-size="11.6" fill="#1d6fa5" text-anchor="start" font-weight="700">婴儿：灯笼意识（Lantern Consciousness）</text>
+<circle cx="196" cy="322" r="52" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1" stroke-dasharray="3 3" opacity="0.52"/>
+<circle cx="196" cy="322" r="36" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1" stroke-dasharray="3 3" opacity="0.6499999999999999"/>
+<circle cx="196" cy="322" r="21" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1" stroke-dasharray="3 3" opacity="0.8500000000000001"/>
+<circle cx="196" cy="322" r="14" fill="#fef08a" stroke="#c25014" stroke-width="1.8"/>
+<text x="196" y="326" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="700">宝宝</text>
+<text x="88" y="296" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="600" class="halo">光影与边缘统计</text>
+<text x="304" y="296" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="600" class="halo">唇舌高分辨触觉</text>
+<text x="88" y="352" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="600" class="halo">语音节拍与重音</text>
+<text x="304" y="352" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="600" class="halo">因果与遮挡规律</text>
+<text x="196" y="376" font-size="10.3" fill="#1d6fa5" text-anchor="middle" font-weight="600">前额叶过滤尚未锁死 → 360° 全景吸收环境规律</text>
+<rect x="388" y="64" width="352" height="332" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="404" y="88" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 违反预期实验：5 月龄直觉物理学家</text>
+<rect x="402" y="102" width="324" height="126" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="414" y="121" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">Baillargeon 等（1985, Cognition）吊桥挡板实验：</text>
+<line x1="428.0" y1="196.0" x2="536.0" y2="196.0" stroke="#475569" stroke-width="1.8"/>
+<rect x="496" y="168" width="22" height="28" rx="3" fill="#fef1e8" stroke="#c25014" stroke-width="1.5"/>
+<text x="507" y="185" font-size="9.5" fill="#c25014" text-anchor="middle" font-weight="700">木块</text>
+<line x1="484.0" y1="196.0" x2="499.7" y2="157.1" stroke="#1d6fa5" stroke-width="3.2"/>
+<circle cx="484" cy="196" r="3.5" fill="#0f172a"/>
+<text x="480" y="144" font-size="10.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">A 可能：112° 被挡停</text>
+<text x="480" y="214" font-size="9.8" fill="#64748b" text-anchor="middle">符合“固体不可穿透”</text>
+<line x1="590.0" y1="196.0" x2="698.0" y2="196.0" stroke="#475569" stroke-width="1.8"/>
+<rect x="654" y="168" width="22" height="28" rx="3" fill="none" stroke="#c25014" stroke-width="1.4" stroke-dasharray="3 2"/>
+<line x1="642.0" y1="194.0" x2="688.0" y2="194.0" stroke="#6d28d9" stroke-width="3.4"/>
+<path d="M610,190 A34,34 0 0,1 676,190" fill="none" stroke="#6d28d9" stroke-width="1.3" stroke-dasharray="3 2" marker-end="url(#arr-muted)"/>
+<circle cx="642" cy="196" r="3.5" fill="#0f172a"/>
+<text x="644" y="144" font-size="10.2" fill="#6d28d9" text-anchor="middle" font-weight="700">B 不可能：180° 穿模!</text>
+<text x="644" y="214" font-size="9.8" fill="#64748b" text-anchor="middle">木块暗中移走，似被穿过</text>
+<rect x="402" y="240" width="324" height="144" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="414" y="261" font-size="11.4" fill="#0f172a" text-anchor="start" font-weight="700">5 月龄婴儿平均注视时长（单位：秒）</text>
+<text x="414" y="289" font-size="10.8" fill="#1e293b" text-anchor="start" font-weight="600">可能事件</text>
+<rect x="492" y="276" width="94.2" height="18" rx="4" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="592.2" y="289" font-size="10.8" fill="#1d6fa5" text-anchor="start" font-weight="700" class="mono">25.11 s</text>
+<text x="414" y="319" font-size="10.8" fill="#6d28d9" text-anchor="start" font-weight="700">不可能事件</text>
+<rect x="492" y="306" width="124.0" height="18" rx="4" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.5"/>
+<text x="622.0" y="319" font-size="10.6" fill="#6d28d9" text-anchor="start" font-weight="700" class="mono">33.07 s (+31.7%)</text>
+<text x="414" y="347" font-size="10.3" fill="#1e293b" text-anchor="start">• 遇到“穿模 Bug”多盯约 8 秒：证明无需等会伸手掀布，</text>
+<text x="414" y="364" font-size="10.3" fill="#18794e" text-anchor="start" font-weight="700">  5 月龄宝宝脑中已记住隐藏物体并具备固体物理预期！</text>
+</svg>

@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="322" viewBox="0 0 760 322" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">Thelen婴儿踏步反射消失与温水浮力恢复三步实验图解</title>
+<desc id="desc">三栏重现1984年Esther Thelen经典实验：2月龄踏步消失与体重增长相关、瘦婴儿脚踝加配重踏步减少、胖婴儿入温水借浮力立即恢复踏步，说明动作发育是神经、肌肉、体重与环境的动力系统协同。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="321" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">为什么出生会“踏步”的宝宝两个月大突然不迈腿了？Thelen 经典水缸浮力实验</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">1984 年发展心理学家 Esther Thelen 用三个巧妙对照证明：不是大脑指令退化了，是小胖腿长太快了！</text>
+<rect x="20" y="62" width="232" height="244" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32" y="74" width="208" height="30" rx="7" fill="#f1f5f9" stroke="#475569" stroke-width="1"/>
+<text x="136" y="94" font-size="11.4" fill="#475569" text-anchor="middle" font-weight="700">① 谜题：2 个月踏步“消失”</text>
+<text x="34" y="128" font-size="10.4" fill="#1e293b" text-anchor="start">• 刚出生扶着腋下脚沾地，宝宝会</text>
+<text x="34" y="152" font-size="10.4" fill="#1e293b" text-anchor="start">  像模像样交替迈步（踏步反射）</text>
+<text x="34" y="176" font-size="10.4" fill="#1e293b" text-anchor="start">• 到约 2 个月大，突然迈不动了！</text>
+<text x="34" y="200" font-size="10.4" fill="#1e293b" text-anchor="start">• 旧教科书误以为：大脑皮层抑制</text>
+<text x="34" y="224" font-size="10.4" fill="#1e293b" text-anchor="start">  了低级反射，得等近一岁重学。</text>
+<text x="34" y="248" font-size="10.4" fill="#1e293b" text-anchor="start">• Thelen 发现：长胖最快的宝宝，</text>
+<text x="34" y="272" font-size="10.4" fill="#1e293b" text-anchor="start">  踏步消失得最早！难道是腿太沉？</text>
+<rect x="264" y="62" width="232" height="244" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="276" y="74" width="208" height="30" rx="7" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="380" y="94" font-size="11.4" fill="#c25014" text-anchor="middle" font-weight="700">② 验证一：脚踝绑小沙袋</text>
+<text x="278" y="128" font-size="10.4" fill="#1e293b" text-anchor="start">• 给原本还能欢快踏步的 1 月龄</text>
+<text x="278" y="152" font-size="10.4" fill="#1e293b" text-anchor="start">  瘦宝宝，脚踝贴上几克安全配重</text>
+<text x="278" y="176" font-size="10.4" fill="#1e293b" text-anchor="start">  （模拟 2 月龄长出的大腿脂肪）</text>
+<text x="278" y="200" font-size="10.4" fill="#1e293b" text-anchor="start">• 结果：原本能迈步的宝宝，当场</text>
+<text x="278" y="224" font-size="10.4" fill="#1e293b" text-anchor="start">  也抬不起腿、步数骤减！</text>
+<text x="278" y="248" font-size="10.4" fill="#c25014" text-anchor="start" font-weight="700">→ 证明腿部重量与肌力的比例，</text>
+<text x="278" y="272" font-size="10.4" fill="#1e293b" text-anchor="start">  直接卡住了动作表现！</text>
+<rect x="508" y="62" width="232" height="244" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="520" y="74" width="208" height="30" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="624" y="94" font-size="11.4" fill="#18794e" text-anchor="middle" font-weight="700">③ 验证二：放进温水缸借浮力!</text>
+<text x="522" y="128" font-size="10.4" fill="#1e293b" text-anchor="start">• 把已经“不会踏步”的胖乎乎</text>
+<text x="522" y="152" font-size="10.4" fill="#1e293b" text-anchor="start">  宝宝抱进齐腰深的温暖水缸里</text>
+<text x="522" y="176" font-size="10.4" fill="#1e293b" text-anchor="start">• 水的浮力刚一托起沉甸甸的小胖</text>
+<text x="522" y="200" font-size="10.4" fill="#1e293b" text-anchor="start">  腿，奇迹出现了——</text>
+<text x="522" y="224" font-size="10.4" fill="#18794e" text-anchor="start" font-weight="700">• 消失的交替踏步当场满血复活！</text>
+<text x="522" y="248" font-size="10.4" fill="#18794e" text-anchor="start" font-weight="700">→ 大脑根本没忘！只是等肌肉力量</text>
+<text x="522" y="272" font-size="10.4" fill="#1e293b" text-anchor="start">  慢慢追上体重，动作自然水到渠成。</text>
+</svg>

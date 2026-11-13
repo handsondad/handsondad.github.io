@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="438" viewBox="0 0 760 438" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">光合作用三百年三大经典实验图解：海尔蒙特柳树、恩格尔曼棱镜好氧细菌与鲁宾卡门重氧同位素</title>
+<desc id="desc">三栏并列展示：1648年海尔蒙特五年柳树增重74.5千克而土壤仅减57克；1882年恩格尔曼用棱镜分光照射丝状绿藻，好氧细菌聚集在430-460nm蓝紫光与650-670nm红光区；1941年鲁宾与卡门用H2-18O和C-18O2对比证明光合释放的氧气来自水裂解。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  .trace-line {
+        stroke-dasharray: 1;
+        stroke-dashoffset: 0;
+        animation: drawLine 1.3s ease-out 1 both;
+      }
+      @keyframes drawLine {
+        from { stroke-dashoffset: 1; }
+        to { stroke-dashoffset: 0; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .trace-line { animation: none; }
+      }
+</style>
+<rect x="0.5" y="0.5" width="759" height="437" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">三百年光合侦探史：大树靠吃什么长高？氧气又是从谁身上拆下来的？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">三座里程碑实验：1648 柳树称重排土 → 1882 棱镜细菌寻光 → 1941 重氧同位素锁定水裂解。</text>
+<rect x="20" y="64" width="232" height="310" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="86" r="10" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="42" y="90" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">1</text>
+<text x="58" y="90" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">1648 海尔蒙特柳树实验</text>
+<text x="36" y="110" font-size="10.3" fill="#64748b" text-anchor="start">只浇雨水五年，烘干泥土前后称重</text>
+<text x="38" y="136" font-size="10.4" fill="#18794e" text-anchor="start" font-weight="700">柳树质量（+74.5 kg，暴涨 33 倍）</text>
+<rect x="38" y="144" width="4.0" height="12" rx="3" fill="#e7f6ee" stroke="#18794e"/>
+<text x="47.3" y="154" font-size="9.8" fill="#64748b" text-anchor="start" class="mono">初：2.27 kg (5磅)</text>
+<rect x="38" y="162" width="111.7" height="14" rx="3" fill="#18794e"/>
+<text x="155.7" y="173" font-size="10.0" fill="#18794e" text-anchor="start" font-weight="700" class="mono">5年后：76.8 kg</text>
+<text x="38" y="200" font-size="10.4" fill="#c25014" text-anchor="start" font-weight="700">干土质量（仅少 57 g ≈ 2 盎司！）</text>
+<rect x="38" y="208" width="132.0" height="12" rx="3" fill="#fef1e8" stroke="#c25014"/>
+<text x="176.0" y="218" font-size="9.8" fill="#64748b" text-anchor="start" class="mono">90.72 kg</text>
+<rect x="38" y="226" width="131.9" height="12" rx="3" fill="#c25014" opacity="0.78"/>
+<text x="175.9" y="236" font-size="9.8" fill="#c25014" text-anchor="start" font-weight="700" class="mono">90.66 kg</text>
+<rect x="34" y="254" width="204" height="106" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="44" y="274" font-size="10.1" fill="#1e293b" text-anchor="start">• 突破：首次用定量天平证伪“植物</text>
+<text x="44" y="291" font-size="10.1" fill="#0f172a" text-anchor="start" font-weight="600">  吃泥土长肉”的古希腊直觉！</text>
+<text x="44" y="310" font-size="10.1" fill="#1e293b" text-anchor="start">• 美丽的误判：他以为 74.5 kg 全是</text>
+<text x="44" y="327" font-size="10.1" fill="#1e293b" text-anchor="start">  水变的，当时人类还不认识空气里</text>
+<text x="44" y="344" font-size="10.1" fill="#18794e" text-anchor="start" font-weight="700">  看不见的碳源 CO₂。</text>
+<rect x="264" y="64" width="232" height="310" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="286" cy="86" r="10" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="286" y="90" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">2</text>
+<text x="302" y="90" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">1882 恩格尔曼棱镜寻氧</text>
+<text x="280" y="110" font-size="10.3" fill="#64748b" text-anchor="start">三棱镜分光投射丝状绿藻+好氧细菌</text>
+<path d="M 284.00,210.00 L 284.00,202.04 L 287.20,198.97 L 290.40,194.08 L 293.60,186.99 L 296.80,177.67 L 300.00,166.66 L 303.20,155.16 L 306.40,144.93 L 309.60,137.81 L 312.80,135.26 L 316.00,137.81 L 319.20,144.93 L 322.40,155.16 L 325.60,166.66 L 328.80,177.67 L 332.00,186.99 L 335.20,194.08 L 338.40,198.97 L 341.60,202.04 L 344.80,203.82 L 348.00,204.76 L 351.20,205.22 L 354.40,205.42 L 357.60,205.51 L 360.80,205.54 L 364.00,205.55 L 367.20,205.56 L 370.40,205.56 L 373.60,205.56 L 376.80,205.56 L 380.00,205.56 L 383.20,205.56 L 386.40,205.56 L 389.60,205.56 L 392.80,205.56 L 396.00,205.56 L 399.20,205.56 L 402.40,205.56 L 405.60,205.56 L 408.80,205.55 L 412.00,205.52 L 415.20,205.43 L 418.40,205.18 L 421.60,204.55 L 424.80,203.12 L 428.00,200.26 L 431.20,195.19 L 434.40,187.25 L 437.60,176.42 L 440.80,163.72 L 444.00,151.39 L 447.20,142.31 L 450.40,138.96 L 453.60,142.31 L 456.80,151.39 L 460.00,163.72 L 463.20,176.42 L 466.40,187.25 L 469.60,195.19 L 472.80,200.26 L 476.00,203.12 L 476.00,210.00 Z" fill="#1d6fa5" opacity="0.18"/>
+<path d="M 284.00,202.04 L 287.20,198.97 L 290.40,194.08 L 293.60,186.99 L 296.80,177.67 L 300.00,166.66 L 303.20,155.16 L 306.40,144.93 L 309.60,137.81 L 312.80,135.26 L 316.00,137.81 L 319.20,144.93 L 322.40,155.16 L 325.60,166.66 L 328.80,177.67 L 332.00,186.99 L 335.20,194.08 L 338.40,198.97 L 341.60,202.04 L 344.80,203.82 L 348.00,204.76 L 351.20,205.22 L 354.40,205.42 L 357.60,205.51 L 360.80,205.54 L 364.00,205.55 L 367.20,205.56 L 370.40,205.56 L 373.60,205.56 L 376.80,205.56 L 380.00,205.56 L 383.20,205.56 L 386.40,205.56 L 389.60,205.56 L 392.80,205.56 L 396.00,205.56 L 399.20,205.56 L 402.40,205.56 L 405.60,205.56 L 408.80,205.55 L 412.00,205.52 L 415.20,205.43 L 418.40,205.18 L 421.60,204.55 L 424.80,203.12 L 428.00,200.26 L 431.20,195.19 L 434.40,187.25 L 437.60,176.42 L 440.80,163.72 L 444.00,151.39 L 447.20,142.31 L 450.40,138.96 L 453.60,142.31 L 456.80,151.39 L 460.00,163.72 L 463.20,176.42 L 466.40,187.25 L 469.60,195.19 L 472.80,200.26 L 476.00,203.12" fill="none" stroke="#1d6fa5" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" pathLength="1" class="trace-line"/>
+<rect x="284" y="210" width="192" height="11" rx="4" fill="#86efac" stroke="#18794e" stroke-width="1.2"/>
+<text x="380.0" y="219" font-size="8.8" fill="#0f172a" text-anchor="middle" font-weight="600">丝状绿藻（水绵 / 刚毛藻）</text>
+<rect x="284.0" y="224" width="32.0" height="6" fill="#6d28d9"/>
+<rect x="316.0" y="224" width="28.8" height="6" fill="#2563eb"/>
+<rect x="344.8" y="224" width="44.8" height="6" fill="#16a34a"/>
+<rect x="389.6" y="224" width="19.2" height="6" fill="#eab308"/>
+<rect x="408.8" y="224" width="22.4" height="6" fill="#f97316"/>
+<rect x="431.2" y="224" width="44.8" height="6" fill="#dc2626"/>
+<text x="312" y="140" font-size="9.8" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">蓝紫光簇拥</text>
+<text x="380.0" y="198" font-size="9.6" fill="#64748b" text-anchor="middle" class="halo">绿光冷清</text>
+<text x="448" y="142" font-size="9.8" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">红光簇拥</text>
+<text x="284" y="242" font-size="9.5" fill="#64748b" text-anchor="start" class="mono">400nm</text>
+<text x="380.0" y="242" font-size="9.5" fill="#64748b" text-anchor="middle" class="mono">550nm</text>
+<text x="476" y="242" font-size="9.5" fill="#64748b" text-anchor="end" class="mono">700nm</text>
+<rect x="278" y="254" width="204" height="106" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="288" y="274" font-size="10.1" fill="#1e293b" text-anchor="start">• 巧思：没有现代电极，就让好氧细</text>
+<text x="288" y="291" font-size="10.1" fill="#0f172a" text-anchor="start" font-weight="600">  菌充当“活体氧气传感器”！</text>
+<text x="288" y="310" font-size="10.1" fill="#1e293b" text-anchor="start">• 结论：细菌密集围在蓝紫光与红光</text>
+<text x="288" y="327" font-size="10.1" fill="#1e293b" text-anchor="start">  区，证明叶绿素主要吃这两段光产</text>
+<text x="288" y="344" font-size="10.1" fill="#1d6fa5" text-anchor="start" font-weight="700">  氧，而对绿光吸收最少。</text>
+<rect x="508" y="64" width="232" height="310" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="530" cy="86" r="10" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="530" y="90" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">3</text>
+<text x="546" y="90" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">1941 鲁宾与卡门重氧追踪</text>
+<text x="524" y="110" font-size="10.3" fill="#64748b" text-anchor="start">用同位素 ¹⁸O 给水或 CO₂ 挂“车牌”</text>
+<rect x="522" y="126" width="204" height="54" rx="7" fill="#fff7ed" stroke="#c25014" stroke-width="1.3"/>
+<text x="532" y="145" font-size="10.3" fill="#c25014" text-anchor="start" font-weight="700">实验甲组（标记水中的重氧）：</text>
+<text x="532" y="167" font-size="11.0" fill="#0f172a" font-weight="700">H<tspan dy="3" font-size="8.5">2</tspan><tspan dy="-7" font-size="8.5" fill="#c25014">18</tspan><tspan dy="4">O + CO</tspan><tspan dy="3" font-size="8.5">2</tspan><tspan dy="-3">  →  释放 </tspan><tspan dy="-4" font-size="8.5" fill="#c25014">18</tspan><tspan dy="4" fill="#c25014">O</tspan><tspan dy="3" font-size="8.5" fill="#c25014">2</tspan><tspan dy="-3" fill="#c25014"> !</tspan></text>
+<rect x="522" y="188" width="204" height="54" rx="7" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="532" y="207" font-size="10.3" fill="#475569" text-anchor="start" font-weight="700">实验乙组（标记二氧化碳重氧）：</text>
+<text x="532" y="229" font-size="11.0" fill="#1e293b" font-weight="600">H<tspan dy="3" font-size="8.5">2</tspan><tspan dy="-3">O + C</tspan><tspan dy="-4" font-size="8.5" fill="#1d6fa5">18</tspan><tspan dy="4">O</tspan><tspan dy="3" font-size="8.5">2</tspan><tspan dy="-3">  →  释放普通 </tspan><tspan dy="-4" font-size="8.5">16</tspan><tspan dy="4">O</tspan><tspan dy="3" font-size="8.5">2</tspan></text>
+<rect x="522" y="254" width="204" height="106" rx="7" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="532" y="274" font-size="10.1" fill="#1e293b" text-anchor="start">• 一锤定音：你我呼吸的 O₂ 全部来</text>
+<text x="532" y="291" font-size="10.1" fill="#c25014" text-anchor="start" font-weight="700">  自光系统裂解水，而非拆开 CO₂！</text>
+<text x="532" y="310" font-size="10.1" fill="#1e293b" text-anchor="start">• 接续拼图：1950s 卡尔文团队再用</text>
+<text x="532" y="327" font-size="10.1" fill="#1e293b" text-anchor="start">  放射性 ¹⁴CO₂ 与“棒棒糖”藻瓶，</text>
+<text x="532" y="344" font-size="10.1" fill="#0f172a" text-anchor="start" font-weight="600">  追清碳变糖路径（1961 诺奖）。</text>
+<rect x="20" y="386" width="720" height="38" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="380" y="410" font-size="10.3" fill="#0f172a" text-anchor="middle" font-weight="600">接力链：1648 排土 → 1771/1779 阳光+绿叶净气 → 1882 红蓝光谱 → 1941 重氧证水裂解 → 1950s 卡尔文追碳循环</text>
+</svg>

@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="368" viewBox="0 0 760 368" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">升力公式速度平方曲线与客机襟翼及万米巡航减阻原理</title>
+<desc id="desc">左图计算280吨客机在放襟翼(257 km/h)、海平面光洁翼(392 km/h)与11千米高空(866 km/h)的二次方升力曲线；右图对比海平面与11千米巡航寄生阻力(265 kN vs 79 kN)。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="367" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">升力公式 L = ½ρv²SC_L 实战账本：为什么起飞要放襟翼，巡航要爬上万米高空？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">以 260 吨宽体客机（翼面积 440 m²，重力 W ≈ 255 万牛）精确计算二次方升力曲线与万米减阻收益。</text>
+<rect x="20" y="62" width="412" height="292" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="85" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="700">① 速度平方律：三种构型跨过“离地生死线 (L = W)”</text>
+<line x1="76.0" y1="132.0" x2="76.0" y2="306.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="76.0" y="322" font-size="10.2" fill="#64748b" text-anchor="middle" class="mono">0</text>
+<line x1="163.0" y1="132.0" x2="163.0" y2="306.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="163.0" y="322" font-size="10.2" fill="#64748b" text-anchor="middle" class="mono">250</text>
+<line x1="250.0" y1="132.0" x2="250.0" y2="306.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="250.0" y="322" font-size="10.2" fill="#64748b" text-anchor="middle" class="mono">500</text>
+<line x1="336.9" y1="132.0" x2="336.9" y2="306.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="336.9" y="322" font-size="10.2" fill="#64748b" text-anchor="middle" class="mono">750</text>
+<line x1="406.5" y1="132.0" x2="406.5" y2="306.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="406.5" y="322" font-size="10.2" fill="#64748b" text-anchor="middle" class="mono">950</text>
+<line x1="76.0" y1="306.0" x2="410.0" y2="306.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="68" y="310.0" font-size="10.2" fill="#64748b" text-anchor="end" class="mono">0</text>
+<line x1="76.0" y1="257.7" x2="410.0" y2="257.7" stroke="#f1f5f9" stroke-width="1"/>
+<text x="68" y="261.7" font-size="10.2" fill="#64748b" text-anchor="end" class="mono">1</text>
+<line x1="76.0" y1="209.3" x2="410.0" y2="209.3" stroke="#f1f5f9" stroke-width="1"/>
+<text x="68" y="213.3" font-size="10.2" fill="#64748b" text-anchor="end" class="mono">2</text>
+<line x1="76.0" y1="161.0" x2="410.0" y2="161.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="68" y="165.0" font-size="10.2" fill="#64748b" text-anchor="end" class="mono">3</text>
+<line x1="76.0" y1="132.0" x2="76.0" y2="306.0" stroke="#475569" stroke-width="1.3"/>
+<line x1="76.0" y1="306.0" x2="410.0" y2="306.0" stroke="#475569" stroke-width="1.3"/>
+<text x="243.0" y="340" font-size="10.8" fill="#1e293b" text-anchor="middle" font-weight="600">真空速 v (km/h)</text>
+<text x="34" y="215.0" font-size="10.5" fill="#1e293b" text-anchor="start" font-weight="600">升力</text>
+<text x="34" y="230.0" font-size="9.8" fill="#64748b" text-anchor="start" class="mono">(MN)</text>
+<line x1="76.0" y1="182.7" x2="410.0" y2="182.7" stroke="#b91c1c" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="406.0" y="173.7" font-size="10.1" fill="#b91c1c" text-anchor="end" font-weight="700" class="halo">平飞门槛 L = W = 2.55 MN</text>
+<polyline points="76.0,306.0 77.7,306.0 79.5,305.8 81.2,305.6 83.0,305.3 84.7,304.8 86.4,304.3 88.2,303.7 89.9,303.0 91.7,302.2 93.4,301.3 95.1,300.4 96.9,299.3 98.6,298.1 100.4,296.9 102.1,295.5 103.8,294.1 105.6,292.5 107.3,290.9 109.1,289.2 110.8,287.4 112.5,285.4 114.3,283.4 116.0,281.3 117.8,279.2 119.5,276.9 121.2,274.5 123.0,272.0 124.7,269.5 126.4,266.8 128.2,264.1 129.9,261.2 131.7,258.3 133.4,255.3 135.1,252.1 136.9,248.9 138.6,245.6 140.4,242.2 142.1,238.7 143.8,235.1 145.6,231.4 147.3,227.7 149.1,223.8 150.8,219.8 152.5,215.8 154.3,211.6 156.0,207.4 157.8,203.1 159.5,198.6 161.2,194.1 163.0,189.5 164.7,184.8 166.5,180.0 168.2,175.1 169.9,170.1 171.7,165.0 173.4,159.9 175.2,154.6 176.9,149.2 178.6,143.8 180.4,138.2 182.1,132.6 182.3,132.0" fill="none" stroke="#18794e" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="76.0,306.0 77.7,306.0 79.5,305.9 81.2,305.8 83.0,305.7 84.7,305.5 86.4,305.3 88.2,305.0 89.9,304.7 91.7,304.4 93.4,304.0 95.1,303.6 96.9,303.1 98.6,302.6 100.4,302.1 102.1,301.5 103.8,300.9 105.6,300.2 107.3,299.5 109.1,298.7 110.8,298.0 112.5,297.1 114.3,296.3 116.0,295.4 117.8,294.4 119.5,293.4 121.2,292.4 123.0,291.3 124.7,290.2 126.4,289.1 128.2,287.9 129.9,286.7 131.7,285.4 133.4,284.1 135.1,282.8 136.9,281.4 138.6,279.9 140.4,278.5 142.1,277.0 143.8,275.4 145.6,273.8 147.3,272.2 149.1,270.5 150.8,268.8 152.5,267.1 154.3,265.3 156.0,263.5 157.8,261.6 159.5,259.7 161.2,257.7 163.0,255.7 164.7,253.7 166.5,251.6 168.2,249.5 169.9,247.4 171.7,245.2 173.4,243.0 175.2,240.7 176.9,238.4 178.6,236.0 180.4,233.6 182.1,231.2 183.9,228.7 185.6,226.2 187.3,223.7 189.1,221.1 190.8,218.4 192.6,215.8 194.3,213.1 196.0,210.3 197.8,207.5 199.5,204.7 201.2,201.8 203.0,198.9 204.7,195.9 206.5,192.9 208.2,189.9 209.9,186.8 211.7,183.7 213.4,180.5 215.2,177.3 216.9,174.1 218.6,170.8 220.4,167.5 222.1,164.2 223.9,160.8 225.6,157.3 227.3,153.9 229.1,150.3 230.8,146.8 232.6,143.2 234.3,139.5 236.0,135.9 237.8,132.1 237.8,132.0" fill="none" stroke="#c25014" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 3"/>
+<polyline points="76.0,306.0 77.7,306.0 79.5,306.0 81.2,306.0 83.0,305.9 84.7,305.9 86.4,305.9 88.2,305.8 89.9,305.7 91.7,305.7 93.4,305.6 95.1,305.5 96.9,305.4 98.6,305.3 100.4,305.2 102.1,305.1 103.8,304.9 105.6,304.8 107.3,304.7 109.1,304.5 110.8,304.4 112.5,304.2 114.3,304.0 116.0,303.8 117.8,303.6 119.5,303.4 121.2,303.2 123.0,303.0 124.7,302.8 126.4,302.5 128.2,302.3 129.9,302.1 131.7,301.8 133.4,301.5 135.1,301.3 136.9,301.0 138.6,300.7 140.4,300.4 142.1,300.1 143.8,299.8 145.6,299.4 147.3,299.1 149.1,298.8 150.8,298.4 152.5,298.0 154.3,297.7 156.0,297.3 157.8,296.9 159.5,296.5 161.2,296.1 163.0,295.7 164.7,295.3 166.5,294.9 168.2,294.5 169.9,294.0 171.7,293.6 173.4,293.1 175.2,292.7 176.9,292.2 178.6,291.7 180.4,291.2 182.1,290.7 183.9,290.2 185.6,289.7 187.3,289.2 189.1,288.7 190.8,288.1 192.6,287.6 194.3,287.0 196.0,286.4 197.8,285.9 199.5,285.3 201.2,284.7 203.0,284.1 204.7,283.5 206.5,282.9 208.2,282.3 209.9,281.7 211.7,281.0 213.4,280.4 215.2,279.7 216.9,279.1 218.6,278.4 220.4,277.7 222.1,277.0 223.9,276.3 225.6,275.6 227.3,274.9 229.1,274.2 230.8,273.5 232.6,272.7 234.3,272.0 236.0,271.2 237.8,270.5 239.5,269.7 241.3,268.9 243.0,268.2 244.7,267.4 246.5,266.6 248.2,265.8 250.0,264.9 251.7,264.1 253.4,263.3 255.2,262.4 256.9,261.6 258.7,260.7 260.4,259.9 262.1,259.0 263.9,258.1 265.6,257.2 267.4,256.3 269.1,255.4 270.8,254.5 272.6,253.6 274.3,252.6 276.1,251.7 277.8,250.7 279.5,249.8 281.3,248.8 283.0,247.8 284.8,246.9 286.5,245.9 288.2,244.9 290.0,243.9 291.7,242.9 293.4,241.8 295.2,240.8 296.9,239.8 298.7,238.7 300.4,237.7 302.1,236.6 303.9,235.5 305.6,234.4 307.4,233.4 309.1,232.3 310.8,231.2 312.6,230.0 314.3,228.9 316.1,227.8 317.8,226.7 319.5,225.5 321.3,224.4 323.0,223.2 324.8,222.0 326.5,220.8 328.2,219.7 330.0,218.5 331.7,217.3 333.5,216.1 335.2,214.8 336.9,213.6 338.7,212.4 340.4,211.1 342.2,209.9 343.9,208.6 345.6,207.3 347.4,206.1 349.1,204.8 350.9,203.5 352.6,202.2 354.3,200.9 356.1,199.6 357.8,198.2 359.6,196.9 361.3,195.6 363.0,194.2 364.8,192.8 366.5,191.5 368.2,190.1 370.0,188.7 371.7,187.3 373.5,185.9 375.2,184.5 376.9,183.1 378.7,181.7 380.4,180.2 382.2,178.8 383.9,177.3 385.6,175.9 387.4,174.4 389.1,173.0 390.9,171.5 392.6,170.0 394.3,168.5 396.1,167.0 397.8,165.5 399.6,163.9 401.3,162.4 403.0,160.9 404.8,159.3 406.5,157.8 408.3,156.2 410.0,154.6" fill="none" stroke="#1d6fa5" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="165.5" cy="182.7" r="4.6" fill="#18794e" stroke="#fff" stroke-width="1.3"/>
+<circle cx="212.2" cy="182.7" r="4.6" fill="#c25014" stroke="#fff" stroke-width="1.3"/>
+<circle cx="377.4" cy="182.7" r="4.6" fill="#1d6fa5" stroke="#fff" stroke-width="1.3"/>
+<text x="159.5" y="173.7" font-size="10.2" fill="#18794e" text-anchor="end" font-weight="700" class="halo">放襟翼 257</text>
+<text x="219.2" y="199.7" font-size="10.1" fill="#c25014" text-anchor="start" font-weight="700" class="halo">光洁翼 392</text>
+<text x="371.4" y="199.7" font-size="10.2" fill="#1d6fa5" text-anchor="end" font-weight="700" class="halo">巡航 866 km/h</text>
+<text x="118" y="224" font-size="10.0" fill="#18794e" text-anchor="start" font-weight="600" class="halo">海平面+放襟翼</text>
+<text x="292" y="254" font-size="10.0" fill="#1d6fa5" text-anchor="start" font-weight="600" class="halo">11 km 平流层底 (ρ≈0.30ρ₀)</text>
+<rect x="444" y="62" width="296" height="292" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="458" y="85" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="700">② 襟翼变形记 &amp; 万米高空省油账</text>
+<rect x="458" y="100" width="268" height="108" rx="8" fill="#e7f6ee" stroke="#bbf7d0" stroke-width="1"/>
+<text x="468" y="120" font-size="11.0" fill="#18794e" text-anchor="start" font-weight="700">起降慢飞：伸出前缘缝翼 + 后缘襟翼</text>
+<text x="468" y="140" font-size="10.4" fill="#1e293b" text-anchor="start">• 机翼面积 S 扩大 (440 → 510 m²)，弯度暴增</text>
+<text x="468" y="159" font-size="10.4" fill="#1e293b" text-anchor="start">• 升力系数 C_L 翻倍 (0.80 → 1.60)</text>
+<text x="468" y="178" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="600">• 离地速度从 392 降到 257 km/h，跑道够用！</text>
+<text x="468" y="197" font-size="10.0" fill="#64748b" text-anchor="start">（代价：阻力也大，起飞爬升后必须收回）</text>
+<rect x="458" y="218" width="268" height="124" rx="8" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<text x="468" y="238" font-size="10.8" fill="#1d6fa5" text-anchor="start" font-weight="700">巡航快飞：同以 866 km/h 飞，阻力差多少？</text>
+<text x="468" y="262" font-size="10.2" fill="#475569" text-anchor="start">海平面硬飞</text>
+<rect x="532" y="251" width="130.0" height="13" rx="4" fill="#c25014"/>
+<text x="668.0" y="262" font-size="10.2" fill="#c25014" text-anchor="start" font-weight="700" class="mono">265 kN</text>
+<text x="468" y="285" font-size="10.2" fill="#1d6fa5" text-anchor="start" font-weight="600">11 km 高空</text>
+<rect x="532" y="274" width="38.6" height="13" rx="4" fill="#1d6fa5"/>
+<text x="576.6" y="285" font-size="10.2" fill="#1d6fa5" text-anchor="start" font-weight="700" class="mono">79 kN (-70%!)</text>
+<text x="468" y="310" font-size="10.3" fill="#1e293b" text-anchor="start">• 万米空气密度 ρ 仅海平面的 30%，废阻砍掉七成</text>
+<text x="468" y="329" font-size="10.3" fill="#0f172a" text-anchor="start" font-weight="600">• 用高速度 v² 补回稀薄 ρ，既快又省燃油！</text>
+</svg>

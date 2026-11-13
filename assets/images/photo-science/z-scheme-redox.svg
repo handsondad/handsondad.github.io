@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="460" viewBox="0 0 760 460" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">光合作用Z字形标准氧化还原电位阶梯图（PSII P680裂解水、细胞色素b6f质子泵与PSI P700生成NADPH）</title>
+<desc id="desc">以pH 7标准氧化还原电位E0&#x27;为纵轴（-1.4V至+1.4V），定量展示水的电子（+0.82V）被地球最强生物氧化剂P680+（+1.20V）夺取后，经680nm光子激发至P680*（-0.80V），顺传递链经Cyt b6f泵质子产ATP到达P700（+0.43V），再经700nm光子二次激发至P700*（-1.25V），最终经铁氧还蛋白生成NADPH（-0.32V），同时标出循环电子流。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  .trace-line {
+        stroke-dasharray: 1;
+        stroke-dashoffset: 0;
+        animation: drawLine 1.3s ease-out 1 both;
+      }
+      @keyframes drawLine {
+        from { stroke-dashoffset: 1; }
+        to { stroke-dashoffset: 0; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .trace-line { animation: none; }
+      }
+</style>
+<rect x="0.5" y="0.5" width="759" height="459" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">光合作用“Z 字形”能量阶梯：两颗光子怎样把水的电子送上高能山顶？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">纵轴为 pH 7 标准氧化还原电位 E₀&#x27;（越往上电位越负、电子自由能越高）；实线为线性电子流。</text>
+<rect x="20" y="64" width="720" height="382" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="88" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 为什么单靠一颗可见光子不够既裂解水（+0.82 V）又还原 NADP⁺（-0.32 V）？</text>
+<line x1="96.0" y1="146.0" x2="712.0" y2="146.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="88.0" y="150.0" font-size="10.2" fill="#64748b" text-anchor="end" class="mono">-1.2 V</text>
+<line x1="96.0" y1="186.0" x2="712.0" y2="186.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="88.0" y="190.0" font-size="10.2" fill="#64748b" text-anchor="end" class="mono">-0.8 V</text>
+<line x1="96.0" y1="226.0" x2="712.0" y2="226.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="88.0" y="230.0" font-size="10.2" fill="#64748b" text-anchor="end" class="mono">-0.4 V</text>
+<line x1="96.0" y1="266.0" x2="712.0" y2="266.0" stroke="#475569" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="88.0" y="270.0" font-size="10.2" fill="#64748b" text-anchor="end" class="mono"> 0.0 V</text>
+<line x1="96.0" y1="306.0" x2="712.0" y2="306.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="88.0" y="310.0" font-size="10.2" fill="#64748b" text-anchor="end" class="mono">+0.4 V</text>
+<line x1="96.0" y1="346.0" x2="712.0" y2="346.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="88.0" y="350.0" font-size="10.2" fill="#64748b" text-anchor="end" class="mono">+0.8 V</text>
+<line x1="96.0" y1="386.0" x2="712.0" y2="386.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="88.0" y="390.0" font-size="10.2" fill="#64748b" text-anchor="end" class="mono">+1.2 V</text>
+<line x1="96.0" y1="126.0" x2="96.0" y2="406.0" stroke="#475569" stroke-width="1.3"/>
+<text x="88.0" y="118.0" font-size="10.0" fill="#1d6fa5" text-anchor="end" font-weight="700">高能还原 ↑</text>
+<text x="88.0" y="422.0" font-size="10.0" fill="#c25014" text-anchor="end" font-weight="700">低能强氧化 ↓</text>
+<line x1="140.0" y1="348.0" x2="226.0" y2="386.0" stroke="#1d6fa5" stroke-width="2.3" marker-end="url(#arr-blue)"/>
+<line x1="226.0" y1="380.0" x2="226.0" y2="194.0" stroke="#c25014" stroke-width="3.0" marker-end="url(#arr-orange)"/>
+<path d="M 226.00,186.00 L 308.00,266.00 L 374.00,278.00 L 434.00,303.00 L 488.00,309.00" fill="none" stroke="#1d6fa5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" pathLength="1" class="trace-line"/>
+<line x1="488.0" y1="303.0" x2="488.0" y2="149.0" stroke="#18794e" stroke-width="3.0" marker-end="url(#arr-green)"/>
+<path d="M 488.00,141.00 L 576.00,223.00 L 666.00,234.00" fill="none" stroke="#1d6fa5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" pathLength="1" class="trace-line"/>
+<path d="M 570.0,217.0 Q 455.0,165.0 374.0,268.0" fill="none" stroke="#6d28d9" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arr-muted)"/>
+<text x="453.0" y="181.0" font-size="9.8" fill="#6d28d9" text-anchor="middle" font-weight="600" class="halo">循环电子流（补产 ATP）</text>
+<circle cx="140.0" cy="348.0" r="5.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.4"/>
+<text x="116.0" y="324.0" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="700" class="halo">2H₂O → O₂+4H⁺</text>
+<text x="116.0" y="338.0" font-size="9.6" fill="#1d6fa5" text-anchor="start" class="halo">+0.82 V（放氧复合体）</text>
+<circle cx="226.0" cy="386.0" r="5.5" fill="#c25014" stroke="#ffffff" stroke-width="1.4"/>
+<text x="226.0" y="404.0" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">PSII: P680⁺</text>
+<text x="226.0" y="418.0" font-size="9.6" fill="#1e293b" text-anchor="middle" class="halo">+1.20 V（生物界最强氧化剂！）</text>
+<circle cx="226.0" cy="186.0" r="5.5" fill="#c25014" stroke="#ffffff" stroke-width="1.4"/>
+<text x="226.0" y="176.0" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">P680* 激发态</text>
+<text x="226.0" y="162.0" font-size="9.6" fill="#64748b" text-anchor="middle" class="halo mono">约 -0.80 V</text>
+<circle cx="308.0" cy="266.0" r="5.5" fill="#475569" stroke="#ffffff" stroke-width="1.4"/>
+<text x="308.0" y="256.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="700" class="halo">PQ</text>
+<circle cx="374.0" cy="278.0" r="5.5" fill="#18794e" stroke="#ffffff" stroke-width="1.4"/>
+<text x="368.0" y="296.0" font-size="10.4" fill="#18794e" text-anchor="end" font-weight="700" class="halo">Cyt b₆f</text>
+<text x="368.0" y="310.0" font-size="9.6" fill="#18794e" text-anchor="end" font-weight="600" class="halo">泵 H⁺ 入腔产 ATP</text>
+<circle cx="434.0" cy="303.0" r="5.5" fill="#475569" stroke="#ffffff" stroke-width="1.4"/>
+<text x="434.0" y="293.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="700" class="halo">PC</text>
+<circle cx="488.0" cy="309.0" r="5.5" fill="#18794e" stroke="#ffffff" stroke-width="1.4"/>
+<text x="482.0" y="327.0" font-size="10.4" fill="#18794e" text-anchor="end" font-weight="700" class="halo">PSI: P700⁺</text>
+<text x="482.0" y="341.0" font-size="9.6" fill="#18794e" text-anchor="end" font-weight="600" class="halo">+0.43 V</text>
+<circle cx="488.0" cy="141.0" r="5.5" fill="#18794e" stroke="#ffffff" stroke-width="1.4"/>
+<text x="488.0" y="131.0" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="700" class="halo">P700* (-1.25 V)</text>
+<circle cx="576.0" cy="223.0" r="5.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.4"/>
+<text x="576.0" y="213.0" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">Fd</text>
+<text x="576.0" y="199.0" font-size="9.6" fill="#64748b" text-anchor="middle" class="halo mono">-0.43 V</text>
+<circle cx="666.0" cy="234.0" r="5.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.4"/>
+<text x="666.0" y="252.0" font-size="11.0" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">NADPH</text>
+<text x="658.0" y="267.0" font-size="9.6" fill="#1e293b" text-anchor="end" class="halo">-0.32 V（送往卡尔文循环）</text>
+<rect x="144.0" y="288.0" width="74" height="20" rx="10.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="181.0" y="301.6" font-size="10.0" fill="#c25014" text-anchor="middle" font-weight="600">光子① 680nm</text>
+<rect x="406.0" y="221.0" width="74" height="20" rx="10.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="443.0" y="234.6" font-size="10.0" fill="#18794e" text-anchor="middle" font-weight="600">光子② 700nm</text>
+<rect x="520" y="314" width="198" height="118" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="532" y="334" font-size="11.0" fill="#1d6fa5" text-anchor="start" font-weight="700">热力学收支硬核点：</text>
+<text x="532" y="353" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="600" class="mono">• 净逆坡：+0.82 V → -0.32 V</text>
+<text x="532" y="370" font-size="9.8" fill="#1e293b" text-anchor="start">  （ΔE₀&#x27; = -1.14 V，绝不会自发发生）</text>
+<text x="532" y="388" font-size="9.9" fill="#1e293b" text-anchor="start">• 两次光激发接力 + 中段顺坡产 ATP</text>
+<text x="532" y="406" font-size="9.9" fill="#1e293b" text-anchor="start">• 裂解 2H₂O 传 4e⁻ 放 1O₂，至少</text>
+<text x="532" y="422" font-size="10.0" fill="#18794e" text-anchor="start" font-weight="700">  需吸收 8 颗光子（4 + 4）！</text>
+</svg>

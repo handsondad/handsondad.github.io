@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="406" viewBox="0 0 760 406" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">Tronick母婴互动30%同频与70%失调修复比例时间序列及依恋意义图</title>
+<desc id="desc">上图用60秒时间轴展示健康亲子互动中18秒同频（30%）与42秒错拍及修复（70%）的交替过程；左下图对比30/70比例与慢性未修复失调；右下图总结微修复带来的掌控感、情绪复原力与安全依恋。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="405" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">特罗尼克“30 / 70 定律”：健康亲子互动，70% 时间都在错拍与修复</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">基于 Tronick &amp; Gianino（1986）及 Provenzi 等（2018）健康母婴面对面微观编码统计。</text>
+<rect x="20" y="64" width="720" height="152" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="88" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 典型健康亲子互动的 60 秒微观切片（同步总计 18s = 30%，错拍与修复 42s = 70%）</text>
+<rect x="44.0" y="118" width="89.6" height="42" rx="5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.4"/>
+<text x="88.8" y="135" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">同频</text>
+<text x="88.8" y="151" font-size="9.8" fill="#475569" text-anchor="middle" class="mono">0–8s</text>
+<text x="88.8" y="110" font-size="10.0" fill="#1e293b" text-anchor="middle">对视微笑 (8s)</text>
+<rect x="133.6" y="118" width="123.2" height="42" rx="5" fill="#fef1e8" stroke="#c25014" stroke-width="1.4"/>
+<text x="195.2" y="135" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="700">错拍</text>
+<text x="195.2" y="151" font-size="9.8" fill="#475569" text-anchor="middle" class="mono">8–19s</text>
+<text x="195.2" y="178" font-size="10.0" fill="#1e293b" text-anchor="middle">宝宝扭头歇气·大人仍逗 (11s)</text>
+<rect x="256.8" y="118" width="67.2" height="42" rx="5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.4"/>
+<text x="290.4" y="135" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="700">修复</text>
+<text x="290.4" y="151" font-size="9.8" fill="#475569" text-anchor="middle" class="mono">19–25s</text>
+<text x="290.4" y="110" font-size="10.0" fill="#1e293b" text-anchor="middle">停手等待 (6s)</text>
+<rect x="324.0" y="118" width="112.0" height="42" rx="5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.4"/>
+<text x="380.0" y="135" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">同频</text>
+<text x="380.0" y="151" font-size="9.8" fill="#475569" text-anchor="middle" class="mono">25–35s</text>
+<text x="380.0" y="178" font-size="10.0" fill="#1e293b" text-anchor="middle">转回咯咯笑 (10s)</text>
+<rect x="436.0" y="118" width="168.0" height="42" rx="5" fill="#fef1e8" stroke="#c25014" stroke-width="1.4"/>
+<text x="520.0" y="135" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="700">错拍</text>
+<text x="520.0" y="151" font-size="9.8" fill="#475569" text-anchor="middle" class="mono">35–50s</text>
+<text x="520.0" y="110" font-size="10.0" fill="#1e293b" text-anchor="middle">大人疲惫慢半拍·语气急 (15s)</text>
+<rect x="604.0" y="118" width="112.0" height="42" rx="5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.4"/>
+<text x="660.0" y="135" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="700">修复</text>
+<text x="660.0" y="151" font-size="9.8" fill="#475569" text-anchor="middle" class="mono">50–60s</text>
+<text x="660.0" y="178" font-size="10.0" fill="#1e293b" text-anchor="middle">温和抱起安抚重连 (10s)</text>
+<text x="44" y="202" font-size="10.5" fill="#64748b" text-anchor="start">图例：蓝框 = 协调同频（30%） | 橙框 = 短暂错拍失调 + 绿框 = 主动修复（合计 70%，健康常态！）</text>
+<rect x="20" y="228" width="352" height="162" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="252" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 实验室量化真相：完美同频只是幻觉</text>
+<rect x="36" y="268" width="96.0" height="28" rx="5" fill="#1d6fa5" />
+<rect x="135.0" y="268" width="221.0" height="28" rx="5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.4"/>
+<text x="84.0" y="286" font-size="11.0" fill="#ffffff" text-anchor="middle" font-weight="700">同频 ~30%</text>
+<text x="244.0" y="286" font-size="11.0" fill="#18794e" text-anchor="middle" font-weight="700">短暂失调 + 及时修复 ~70%</text>
+<text x="36" y="318" font-size="10.5" fill="#1e293b" text-anchor="start">• 哪怕最温柔敏感的妈妈，也有约 70% 时间没对上节拍</text>
+<text x="36" y="337" font-size="10.5" fill="#1e293b" text-anchor="start">• 真正伤人的不是“偶尔急躁/没听懂”，而是像“静止脸实验”</text>
+<text x="36" y="355" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="600">  那样长期冷漠、持续无回应且从不修复（慢性毒性压力）</text>
+<text x="36" y="374" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="700">• “60分够好父母 + 可靠修复”远胜紧绷的“100分表演”</text>
+<rect x="388" y="228" width="352" height="162" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="404" y="252" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">③ 上千次“小修复”教给宝宝哪三样底层能力？</text>
+<circle cx="416" cy="274" r="10" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="416" y="278" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="434" y="278" font-size="10.7" fill="#1e293b" text-anchor="start">习得掌控感：我的哭声和眼神有用，能把爸妈唤回来</text>
+<circle cx="416" cy="312" r="10" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="416" y="316" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">2</text>
+<text x="434" y="316" font-size="10.7" fill="#1e293b" text-anchor="start">情绪复原力：短暂的不舒服不会天塌，难过可以熬过去</text>
+<circle cx="416" cy="350" r="10" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="416" y="354" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">3</text>
+<text x="434" y="354" font-size="10.7" fill="#1e293b" text-anchor="start" font-weight="600">安全依恋底色：关系不怕小磕碰，我们总能重新连接</text>
+</svg>

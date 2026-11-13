@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="444" viewBox="0 0 760 444" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">黄道二十四节气定气法15度划分与近日点远日点时间间隔实算图</title>
+<desc id="desc">左图展示地球绕太阳椭圆轨道上每隔黄经15度划分二十四节气（12中气与12节气交错）；右图实算2025年各节气间隔从近日点14.72天到远日点15.73天的变化曲线及平气改定气的历法影响。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="443" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">黄道二十四节气：藏在农历里的“纯太阳角度坐标”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">现代“定气法”按太阳视黄经每 15° 切一格；地球过近日点快、远日点慢，使相邻节气在 14.72–15.73 天间伸缩</text>
+<rect x="20" y="62" width="430" height="368" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="85" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 地球公转黄道圈：12 中气（●）与 12 节气（○）交错</text>
+<line x1="206.2" y1="129.0" x2="263.8" y2="359.0" stroke="#c25014" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.65"/>
+<line x1="107.0" y1="244.0" x2="363.0" y2="244.0" stroke="#f1f5f9" stroke-width="1"/>
+<line x1="235.0" y1="126.0" x2="235.0" y2="362.0" stroke="#f1f5f9" stroke-width="1"/>
+<ellipse cx="235.0" cy="244.0" rx="128.0" ry="118.0" fill="none" stroke="#93c5fd" stroke-width="2"/>
+<circle cx="240.8" cy="269.3" r="14" fill="#fde047" stroke="#c25014" stroke-width="1.6"/>
+<text x="240.8" y="273.3" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700">太阳</text>
+<text x="211.0" y="176.0" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="700" class="halo">7月初远日点(最慢)</text>
+<text x="211.0" y="191.0" font-size="10.4" fill="#18794e" text-anchor="middle" class="halo">每15°需 15.73 天</text>
+<text x="247.0" y="322.0" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">1月初近日点(最快)</text>
+<text x="247.0" y="337.0" font-size="10.4" fill="#c25014" text-anchor="middle" class="halo">每15°仅 14.72 天</text>
+<line x1="354.0" y1="244.0" x2="363.0" y2="244.0" stroke="#94a3b8" stroke-width="1"/>
+<circle cx="363.0" cy="244.0" r="5.0" fill="#c25014"/>
+<text x="389.0" y="248.0" font-size="10.6" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">春分(0°)</text>
+<line x1="349.9" y1="215.8" x2="358.6" y2="213.5" stroke="#94a3b8" stroke-width="1"/>
+<circle cx="358.6" cy="213.5" r="3.6" fill="#ffffff" stroke="#475569" stroke-width="1.4"/>
+<text x="383.8" y="211.8" font-size="10.6" fill="#1e293b" text-anchor="middle" class="halo">清明</text>
+<line x1="338.1" y1="189.5" x2="345.9" y2="185.0" stroke="#94a3b8" stroke-width="1"/>
+<circle cx="345.9" cy="185.0" r="4.0" fill="#1d6fa5"/>
+<text x="368.4" y="178.0" font-size="10.6" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">谷雨</text>
+<line x1="319.1" y1="166.9" x2="325.5" y2="160.6" stroke="#94a3b8" stroke-width="1"/>
+<circle cx="325.5" cy="160.6" r="3.6" fill="#ffffff" stroke="#475569" stroke-width="1.4"/>
+<text x="343.9" y="149.0" font-size="10.6" fill="#1e293b" text-anchor="middle" class="halo">立夏</text>
+<line x1="294.5" y1="149.6" x2="299.0" y2="141.8" stroke="#94a3b8" stroke-width="1"/>
+<circle cx="299.0" cy="141.8" r="4.0" fill="#1d6fa5"/>
+<text x="312.0" y="126.8" font-size="10.6" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">小满</text>
+<line x1="265.8" y1="138.7" x2="268.1" y2="130.0" stroke="#94a3b8" stroke-width="1"/>
+<circle cx="268.1" cy="130.0" r="3.6" fill="#ffffff" stroke="#475569" stroke-width="1.4"/>
+<text x="274.9" y="112.8" font-size="10.6" fill="#1e293b" text-anchor="middle" class="halo">芒种</text>
+<line x1="235.0" y1="135.0" x2="235.0" y2="126.0" stroke="#94a3b8" stroke-width="1"/>
+<circle cx="235.0" cy="126.0" r="5.0" fill="#c25014"/>
+<text x="235.0" y="108.0" font-size="10.6" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">夏至(90°)</text>
+<line x1="204.2" y1="138.7" x2="201.9" y2="130.0" stroke="#94a3b8" stroke-width="1"/>
+<circle cx="201.9" cy="130.0" r="3.6" fill="#ffffff" stroke="#475569" stroke-width="1.4"/>
+<text x="195.1" y="112.8" font-size="10.6" fill="#1e293b" text-anchor="middle" class="halo">小暑</text>
+<line x1="175.5" y1="149.6" x2="171.0" y2="141.8" stroke="#94a3b8" stroke-width="1"/>
+<circle cx="171.0" cy="141.8" r="4.0" fill="#1d6fa5"/>
+<text x="158.0" y="126.8" font-size="10.6" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">大暑</text>
+<line x1="150.9" y1="166.9" x2="144.5" y2="160.6" stroke="#94a3b8" stroke-width="1"/>
+<circle cx="144.5" cy="160.6" r="3.6" fill="#ffffff" stroke="#475569" stroke-width="1.4"/>
+<text x="126.1" y="149.0" font-size="10.6" fill="#1e293b" text-anchor="middle" class="halo">立秋</text>
+<line x1="131.9" y1="189.5" x2="124.1" y2="185.0" stroke="#94a3b8" stroke-width="1"/>
+<circle cx="124.1" cy="185.0" r="4.0" fill="#1d6fa5"/>
+<text x="101.6" y="178.0" font-size="10.6" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">处暑</text>
+<line x1="120.1" y1="215.8" x2="111.4" y2="213.5" stroke="#94a3b8" stroke-width="1"/>
+<circle cx="111.4" cy="213.5" r="3.6" fill="#ffffff" stroke="#475569" stroke-width="1.4"/>
+<text x="86.2" y="211.8" font-size="10.6" fill="#1e293b" text-anchor="middle" class="halo">白露</text>
+<line x1="116.0" y1="244.0" x2="107.0" y2="244.0" stroke="#94a3b8" stroke-width="1"/>
+<circle cx="107.0" cy="244.0" r="5.0" fill="#c25014"/>
+<text x="81.0" y="248.0" font-size="10.6" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">秋分(180°)</text>
+<line x1="120.1" y1="272.2" x2="111.4" y2="274.5" stroke="#94a3b8" stroke-width="1"/>
+<circle cx="111.4" cy="274.5" r="3.6" fill="#ffffff" stroke="#475569" stroke-width="1.4"/>
+<text x="86.2" y="284.2" font-size="10.6" fill="#1e293b" text-anchor="middle" class="halo">寒露</text>
+<line x1="131.9" y1="298.5" x2="124.1" y2="303.0" stroke="#94a3b8" stroke-width="1"/>
+<circle cx="124.1" cy="303.0" r="4.0" fill="#1d6fa5"/>
+<text x="101.6" y="318.0" font-size="10.6" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">霜降</text>
+<line x1="150.9" y1="321.1" x2="144.5" y2="327.4" stroke="#94a3b8" stroke-width="1"/>
+<circle cx="144.5" cy="327.4" r="3.6" fill="#ffffff" stroke="#475569" stroke-width="1.4"/>
+<text x="126.1" y="347.0" font-size="10.6" fill="#1e293b" text-anchor="middle" class="halo">立冬</text>
+<line x1="175.5" y1="338.4" x2="171.0" y2="346.2" stroke="#94a3b8" stroke-width="1"/>
+<circle cx="171.0" cy="346.2" r="4.0" fill="#1d6fa5"/>
+<text x="158.0" y="369.2" font-size="10.6" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">小雪</text>
+<line x1="204.2" y1="349.3" x2="201.9" y2="358.0" stroke="#94a3b8" stroke-width="1"/>
+<circle cx="201.9" cy="358.0" r="3.6" fill="#ffffff" stroke="#475569" stroke-width="1.4"/>
+<text x="195.1" y="383.2" font-size="10.6" fill="#1e293b" text-anchor="middle" class="halo">大雪</text>
+<line x1="235.0" y1="353.0" x2="235.0" y2="362.0" stroke="#94a3b8" stroke-width="1"/>
+<circle cx="235.0" cy="362.0" r="5.0" fill="#c25014"/>
+<text x="235.0" y="388.0" font-size="10.6" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">冬至(270°)</text>
+<line x1="265.8" y1="349.3" x2="268.1" y2="358.0" stroke="#94a3b8" stroke-width="1"/>
+<circle cx="268.1" cy="358.0" r="3.6" fill="#ffffff" stroke="#475569" stroke-width="1.4"/>
+<text x="274.9" y="383.2" font-size="10.6" fill="#1e293b" text-anchor="middle" class="halo">小寒</text>
+<line x1="294.5" y1="338.4" x2="299.0" y2="346.2" stroke="#94a3b8" stroke-width="1"/>
+<circle cx="299.0" cy="346.2" r="4.0" fill="#1d6fa5"/>
+<text x="312.0" y="369.2" font-size="10.6" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">大寒</text>
+<line x1="319.1" y1="321.1" x2="325.5" y2="327.4" stroke="#94a3b8" stroke-width="1"/>
+<circle cx="325.5" cy="327.4" r="3.6" fill="#ffffff" stroke="#475569" stroke-width="1.4"/>
+<text x="343.9" y="347.0" font-size="10.6" fill="#1e293b" text-anchor="middle" class="halo">立春</text>
+<line x1="338.1" y1="298.5" x2="345.9" y2="303.0" stroke="#94a3b8" stroke-width="1"/>
+<circle cx="345.9" cy="303.0" r="4.0" fill="#1d6fa5"/>
+<text x="368.4" y="318.0" font-size="10.6" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">雨水</text>
+<line x1="349.9" y1="272.2" x2="358.6" y2="274.5" stroke="#94a3b8" stroke-width="1"/>
+<circle cx="358.6" cy="274.5" r="3.6" fill="#ffffff" stroke="#475569" stroke-width="1.4"/>
+<text x="383.8" y="284.2" font-size="10.6" fill="#1e293b" text-anchor="middle" class="halo">惊蛰</text>
+<text x="235" y="416" font-size="10.5" fill="#64748b" text-anchor="middle">注：轨道扁率与太阳偏心放大示意（真实 e = 0.0167）；● 12 中气，○ 12 节气</text>
+<rect x="462" y="62" width="278" height="368" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="478" y="85" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 相邻节气真实天数（2025 实算）</text>
+<text x="478" y="104" font-size="10.8" fill="#64748b" text-anchor="start">平气均分 15.22 天 vs 定气按黄经 15° 实测：</text>
+<line x1="512.0" y1="219.1" x2="722.0" y2="219.1" stroke="#f1f5f9" stroke-width="1.1"/>
+<text x="506.0" y="223.1" font-size="10.4" fill="#64748b" text-anchor="end">14.7d</text>
+<line x1="512.0" y1="182.0" x2="722.0" y2="182.0" stroke="#c25014" stroke-width="1.1" stroke-dasharray="4 3"/>
+<text x="506.0" y="186.0" font-size="10.4" fill="#c25014" text-anchor="end">15.2d</text>
+<line x1="512.0" y1="144.9" x2="722.0" y2="144.9" stroke="#f1f5f9" stroke-width="1.1"/>
+<text x="506.0" y="148.9" font-size="10.4" fill="#64748b" text-anchor="end">15.7d</text>
+<path d="M512.0,130.0 V234.0 H722.0" fill="none" stroke="#94a3b8" stroke-width="1.2"/>
+<text x="512.0" y="250.0" font-size="10.4" fill="#64748b" text-anchor="start">春分</text>
+<text x="566.8" y="250.0" font-size="10.4" fill="#64748b" text-anchor="middle">夏至</text>
+<text x="621.6" y="250.0" font-size="10.4" fill="#64748b" text-anchor="middle">秋分</text>
+<text x="676.3" y="250.0" font-size="10.4" fill="#64748b" text-anchor="middle">冬至</text>
+<text x="722.0" y="250.0" font-size="10.4" fill="#64748b" text-anchor="end">惊蛰</text>
+<path d="M512.0,184.9 L521.1,175.1 L530.3,165.6 L539.4,157.0 L548.5,150.0 L557.7,145.1 L566.8,142.7 L575.9,143.0 L585.0,146.0 L594.2,151.3 L603.3,158.7 L612.4,167.6 L621.6,177.2 L630.7,187.0 L639.8,196.3 L649.0,204.5 L658.1,211.0 L667.2,215.5 L676.3,217.6 L685.5,217.4 L694.6,214.7 L703.7,209.7 L712.9,202.8 L722.0,194.4" fill="none" stroke="#1d6fa5" stroke-width="2.3"/>
+<circle cx="566.8" cy="142.7" r="4.2" fill="#18794e"/>
+<text x="572.8" y="137.7" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="700" class="halo">最长 15.73 天</text>
+<circle cx="676.3" cy="217.6" r="4.2" fill="#c25014"/>
+<text x="670.3" y="232.6" font-size="10.5" fill="#c25014" text-anchor="end" font-weight="700" class="halo">最短 14.72 天</text>
+<rect x="476" y="264" width="250" height="72" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="488" y="283" font-size="11.2" fill="#1d6fa5" text-anchor="start" font-weight="700">为什么清明总在公历 4 月 4–5 日？</text>
+<text x="488" y="302" font-size="10.6" fill="#1e293b" text-anchor="start">节气本质是纯阳历角度（清明 = 15°），跟</text>
+<text x="488" y="320" font-size="10.6" fill="#1e293b" text-anchor="start">公历回归年锁死；在农历里却会乱跳廿多天。</text>
+<rect x="476" y="346" width="250" height="72" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="488" y="365" font-size="11.2" fill="#c25014" text-anchor="start" font-weight="700">1645《时宪历》：平气法 → 定气法</text>
+<text x="488" y="384" font-size="10.6" fill="#1e293b" text-anchor="start">古用平气（等时间 15.22 天）；改定气（等黄经</text>
+<text x="488" y="402" font-size="10.6" fill="#1e293b" text-anchor="start">15°）后，直接造就了夏多闰月、冬罕闰月。</text>
+</svg>

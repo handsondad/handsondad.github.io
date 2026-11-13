@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="376" viewBox="0 0 760 376" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">太阳中微子失踪案与三味量子振荡破案全图</title>
+<desc id="desc">上图展示太阳核心100%电子中微子在1.496亿千米飞行中振荡为约1/3电子中微子与2/3缪子/陶子中微子（地球通量约6.4×10¹⁰ cm⁻²s⁻¹）；下图对比1970年戴维斯四氯乙烯实验仅测出34%与2001年SNO重水实验测齐100%三味总量。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  .nu-wave {
+        stroke-dasharray: 900;
+        stroke-dashoffset: 0;
+        animation: nuDraw 1.8s ease-out 1 both;
+      }
+      @keyframes nuDraw {
+        from { stroke-dashoffset: 900; }
+        to { stroke-dashoffset: 0; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .nu-wave { animation: none; }
+      }
+</style>
+<rect x="0.5" y="0.5" width="759" height="375" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">困扰物理学界 30 年的“太阳中微子失踪案”：不是太阳熄火，是半路变脸！</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">1970 年戴维斯在地下金矿只抓到预测值 1/3 的电子中微子；2001 年 SNO 重水实验揪出另外 2/3 的“马甲”。</text>
+<rect x="20" y="62" width="720" height="146" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="85" font-size="12.2" fill="#0f172a" text-anchor="start" font-weight="700">① 跨越 1.496 亿千米的量子“变脸”之旅（中微子振荡证明中微子具有微小非零质量！）</text>
+<circle cx="82.0" cy="144.0" r="34" fill="#fef1e8" stroke="#c25014" stroke-width="1.6"/>
+<circle cx="82.0" cy="144.0" r="16" fill="#fdba74"/>
+<text x="82.0" y="148.0" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="700">太阳核心</text>
+<text x="82.0" y="194.0" font-size="10.2" fill="#c25014" text-anchor="middle" font-weight="700">100% 纯 ν_e 出发</text>
+<line x1="132.0" y1="142.0" x2="584.0" y2="142.0" stroke="#f1f5f9" stroke-width="1.2" stroke-dasharray="4 3"/>
+<polyline points="132.0,159.0 135.3,158.6 138.5,157.9 141.8,157.0 145.0,155.9 148.3,154.6 151.5,153.1 154.8,151.5 158.0,149.9 161.3,148.2 164.5,146.4 167.8,144.8 171.0,143.2 174.3,141.7 177.5,140.4 180.8,139.2 184.0,138.2 187.3,137.5 190.5,137.0 193.8,136.6 197.0,136.6 200.3,136.7 203.5,137.1 206.8,137.6 210.0,138.3 213.3,139.2 216.5,140.2 219.8,141.3 223.1,142.4 226.3,143.6 229.6,144.8 232.8,145.9 236.1,147.0 239.3,148.0 242.6,148.8 245.8,149.6 249.1,150.1 252.3,150.6 255.6,150.8 258.8,150.8 262.1,150.7 265.3,150.4 268.6,150.0 271.8,149.3 275.1,148.6 278.3,147.7 281.6,146.8 284.8,145.7 288.1,144.7 291.3,143.6 294.6,142.5 297.8,141.5 301.1,140.5 304.3,139.6 307.6,138.8 310.8,138.1 314.1,137.5 317.4,137.0 320.6,136.7 323.9,136.6 327.1,136.6 330.4,136.7 333.6,137.0 336.9,137.3 340.1,137.8 343.4,138.4 346.6,139.0 349.9,139.7 353.1,140.5 356.4,141.2 359.6,142.0 362.9,142.7 366.1,143.3 369.4,143.9 372.6,144.5 375.9,144.9 379.1,145.2 382.4,145.5 385.6,145.6 388.9,145.6 392.1,145.5 395.4,145.3 398.6,144.9 401.9,144.5 405.2,144.0 408.4,143.5 411.7,142.8 414.9,142.2 418.2,141.5 421.4,140.8 424.7,140.1 427.9,139.5 431.2,138.9 434.4,138.3 437.7,137.8 440.9,137.4 444.2,137.1 447.4,136.8 450.7,136.6 453.9,136.6 457.2,136.6 460.4,136.7 463.7,136.9 466.9,137.1 470.2,137.5 473.4,137.8 476.7,138.3 479.9,138.7 483.2,139.2 486.4,139.7 489.7,140.1 492.9,140.6 496.2,141.0 499.5,141.3 502.7,141.7 506.0,141.9 509.2,142.1 512.5,142.2 515.7,142.3 519.0,142.3 522.2,142.2 525.5,142.0 528.7,141.8 532.0,141.5 535.2,141.2 538.5,140.8 541.7,140.4 545.0,140.0 548.2,139.6 551.5,139.1 554.7,138.7 558.0,138.3 561.2,137.9 564.5,137.6 567.7,137.3 571.0,137.0 574.2,136.8 577.5,136.7 580.7,136.6 584.0,136.6" fill="none" stroke="#6d28d9" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 3"/>
+<polyline points="132.0,125.0 135.3,125.4 138.5,126.1 141.8,127.0 145.0,128.1 148.3,129.4 151.5,130.9 154.8,132.5 158.0,134.1 161.3,135.8 164.5,137.6 167.8,139.2 171.0,140.8 174.3,142.3 177.5,143.6 180.8,144.8 184.0,145.8 187.3,146.5 190.5,147.0 193.8,147.4 197.0,147.4 200.3,147.3 203.5,146.9 206.8,146.4 210.0,145.7 213.3,144.8 216.5,143.8 219.8,142.7 223.1,141.6 226.3,140.4 229.6,139.2 232.8,138.1 236.1,137.0 239.3,136.0 242.6,135.2 245.8,134.4 249.1,133.9 252.3,133.4 255.6,133.2 258.8,133.2 262.1,133.3 265.3,133.6 268.6,134.0 271.8,134.7 275.1,135.4 278.3,136.3 281.6,137.2 284.8,138.3 288.1,139.3 291.3,140.4 294.6,141.5 297.8,142.5 301.1,143.5 304.3,144.4 307.6,145.2 310.8,145.9 314.1,146.5 317.4,147.0 320.6,147.3 323.9,147.4 327.1,147.4 330.4,147.3 333.6,147.0 336.9,146.7 340.1,146.2 343.4,145.6 346.6,145.0 349.9,144.3 353.1,143.5 356.4,142.8 359.6,142.0 362.9,141.3 366.1,140.7 369.4,140.1 372.6,139.5 375.9,139.1 379.1,138.8 382.4,138.5 385.6,138.4 388.9,138.4 392.1,138.5 395.4,138.7 398.6,139.1 401.9,139.5 405.2,140.0 408.4,140.5 411.7,141.2 414.9,141.8 418.2,142.5 421.4,143.2 424.7,143.9 427.9,144.5 431.2,145.1 434.4,145.7 437.7,146.2 440.9,146.6 444.2,146.9 447.4,147.2 450.7,147.4 453.9,147.4 457.2,147.4 460.4,147.3 463.7,147.1 466.9,146.9 470.2,146.5 473.4,146.2 476.7,145.7 479.9,145.3 483.2,144.8 486.4,144.3 489.7,143.9 492.9,143.4 496.2,143.0 499.5,142.7 502.7,142.3 506.0,142.1 509.2,141.9 512.5,141.8 515.7,141.7 519.0,141.7 522.2,141.8 525.5,142.0 528.7,142.2 532.0,142.5 535.2,142.8 538.5,143.2 541.7,143.6 545.0,144.0 548.2,144.4 551.5,144.9 554.7,145.3 558.0,145.7 561.2,146.1 564.5,146.4 567.7,146.7 571.0,147.0 574.2,147.2 577.5,147.3 580.7,147.4 584.0,147.4" fill="none" stroke="#1d6fa5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="nu-wave"/>
+<text x="245" y="108" font-size="10.2" fill="#1d6fa5" text-anchor="start" font-weight="700" class="halo">电子中微子 ν_e 比例跌落</text>
+<text x="425" y="108" font-size="10.2" fill="#6d28d9" text-anchor="start" font-weight="700" class="halo">变身缪子 ν_μ + 陶子 ν_τ (~2/3)</text>
+<text x="358.0" y="194" font-size="10.2" fill="#475569" text-anchor="middle">2.3 秒直穿太阳 → 约 8 分 19 秒抵地（每秒约 6.4×10¹⁰ 颗穿过每平方厘米指甲盖！）</text>
+<circle cx="656.0" cy="142.0" r="34" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.6"/>
+<text x="656.0" y="139.0" font-size="10.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">地球深矿井</text>
+<text x="656.0" y="155.0" font-size="9.6" fill="#475569" text-anchor="middle">(1.5–2 km 深)</text>
+<text x="656.0" y="192.0" font-size="10.0" fill="#64748b" text-anchor="middle">挡住宇宙线干扰</text>
+<rect x="20" y="220" width="352" height="140" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="232.0" width="248" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="158.0" y="247.0" font-size="11.2" fill="#c25014" text-anchor="middle" font-weight="600">② 1970 戴维斯金矿实验（2002 诺奖）</text>
+<text x="34" y="272" font-size="10.3" fill="#1e293b" text-anchor="start">• 615 吨四氯乙烯干洗剂：ν_e + ³⁷Cl → ³⁷Ar + e⁻</text>
+<text x="34" y="292" font-size="10.3" fill="#b91c1c" text-anchor="start" font-weight="600">• 盲区：阈值只认【电子中微子 ν_e】，对 ν_μ/ν_τ 全盲！</text>
+<rect x="34.0" y="308.0" width="316.0" height="20" rx="5" fill="#f1f5f9" stroke="#e2e8f0"/>
+<rect x="34.0" y="308.0" width="107.4" height="20" rx="5" fill="#1d6fa5"/>
+<text x="44.0" y="322.0" font-size="10.0" fill="#ffffff" text-anchor="start" font-weight="700">实测 ~34% ν_e</text>
+<text x="155.4" y="322.0" font-size="10.0" fill="#b91c1c" text-anchor="start" font-weight="700">？另外 66% 神秘失踪！</text>
+<text x="34" y="347" font-size="9.8" fill="#64748b" text-anchor="start">整整一个月才从几百吨液体里数出十几颗氩原子！</text>
+<rect x="384" y="220" width="356" height="140" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="398.0" y="232.0" width="272" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="534.0" y="247.0" font-size="11.2" fill="#18794e" text-anchor="middle" font-weight="600">③ 2001 加拿大 SNO 重水破案（2015 诺奖）</text>
+<text x="398" y="272" font-size="10.3" fill="#1e293b" text-anchor="start">• 1,000 吨重水 (D₂O) 丙烯酸球 + 9,600 只光电倍增管</text>
+<text x="398" y="292" font-size="10.3" fill="#18794e" text-anchor="start" font-weight="600">• 氘核中性流反应对【全部三味 ν_e+ν_μ+ν_τ】一视同仁！</text>
+<rect x="398.0" y="308.0" width="109.5" height="20" rx="4" fill="#1d6fa5"/>
+<rect x="507.5" y="308.0" width="212.5" height="20" rx="4" fill="#6d28d9"/>
+<text x="406.0" y="322.0" font-size="10.0" fill="#ffffff" text-anchor="start" font-weight="700">34% ν_e</text>
+<text x="519.5" y="322.0" font-size="10.0" fill="#ffffff" text-anchor="start" font-weight="700">+ 66% (ν_μ + ν_τ) = 100% 吻合！</text>
+<text x="398" y="347" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="600">真相大白：太阳聚变分秒未停，贝特标准太阳模型大获全胜！</text>
+</svg>

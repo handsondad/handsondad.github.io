@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="448" viewBox="0 0 760 448" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">香农1937继电器开关逻辑映射图：串联与门、并联或门、CMOS互补非门与万用与非门</title>
+<desc id="desc">三列电路分别展示两开关串联构成与门AND、两开关并联构成或门OR、上下拉互补开关构成CMOS非门NOT及其完整真值表；底部展示功能完备的与非门NAND如何单独组合出NOT、AND、OR及4门异或XOR。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="447" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">香农 1937 硕士论文的破壁一跃：笨电流如何靠开关连接“学会逻辑”？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">把布尔代数 (1854) 变成电路拓扑：串联=与(AND)，并联=或(OR)，互补拉高拉低=非(NOT)，万用积木=与非门(NAND)</text>
+<rect x="20" y="62" width="232" height="266" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="34" y="85" font-size="13.5" fill="#1d6fa5" text-anchor="start" font-weight="700">① 串联开关 = 与门 (AND)</text>
+<text x="34" y="103" font-size="10.4" fill="#64748b" text-anchor="start">两道桥都放下，电流才能过河</text>
+<rect x="32" y="112" width="208" height="86" rx="7" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="40" y="142.0" font-size="9.8" fill="#1d6fa5" text-anchor="start" font-weight="700" class="mono">+V(1)</text>
+<line x1="42" y1="156.0" x2="78" y2="156.0" stroke="#1d6fa5" stroke-width="2.2"/>
+<circle cx="78" cy="156.0" r="3" fill="#1d6fa5"/>
+<line x1="78" y1="156.0" x2="106" y2="142.0" stroke="#c25014" stroke-width="2.2"/>
+<circle cx="110" cy="156.0" r="3" fill="#1d6fa5"/>
+<text x="94" y="136.0" font-size="10.2" fill="#c25014" text-anchor="middle" font-weight="700">开关 A</text>
+<line x1="110" y1="156.0" x2="136" y2="156.0" stroke="#1d6fa5" stroke-width="2.2"/>
+<circle cx="136" cy="156.0" r="3" fill="#1d6fa5"/>
+<line x1="136" y1="156.0" x2="164" y2="142.0" stroke="#c25014" stroke-width="2.2"/>
+<circle cx="168" cy="156.0" r="3" fill="#1d6fa5"/>
+<text x="152" y="136.0" font-size="10.2" fill="#c25014" text-anchor="middle" font-weight="700">开关 B</text>
+<line x1="168" y1="156.0" x2="206" y2="156.0" stroke="#1d6fa5" stroke-width="2.2"/>
+<circle cx="214" cy="156.0" r="9" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.6"/>
+<text x="214" y="160.0" font-size="10.4" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono">Y</text>
+<text x="136" y="190" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="600">Y = A · B（全 1 才为 1）</text>
+<text x="56" y="216" font-size="10.4" fill="#64748b" text-anchor="middle" font-weight="700" class="mono">A</text>
+<text x="116" y="216" font-size="10.4" fill="#64748b" text-anchor="middle" font-weight="700" class="mono">B</text>
+<text x="190" y="216" font-size="10.4" fill="#1d6fa5" text-anchor="middle" font-weight="700">输出 Y</text>
+<text x="56" y="238" font-size="10.6" fill="#1e293b" text-anchor="middle" class="mono">0</text>
+<text x="116" y="238" font-size="10.6" fill="#1e293b" text-anchor="middle" class="mono">0</text>
+<text x="190" y="238" font-size="10.8" fill="#64748b" text-anchor="middle" font-weight="700" class="mono">0</text>
+<text x="56" y="261" font-size="10.6" fill="#1e293b" text-anchor="middle" class="mono">0</text>
+<text x="116" y="261" font-size="10.6" fill="#1e293b" text-anchor="middle" class="mono">1</text>
+<text x="190" y="261" font-size="10.8" fill="#64748b" text-anchor="middle" font-weight="700" class="mono">0</text>
+<text x="56" y="284" font-size="10.6" fill="#1e293b" text-anchor="middle" class="mono">1</text>
+<text x="116" y="284" font-size="10.6" fill="#1e293b" text-anchor="middle" class="mono">0</text>
+<text x="190" y="284" font-size="10.8" fill="#64748b" text-anchor="middle" font-weight="700" class="mono">0</text>
+<rect x="34" y="293" width="204" height="20" rx="4" fill="#eaf4fb"/>
+<text x="56" y="307" font-size="10.6" fill="#1e293b" text-anchor="middle" class="mono">1</text>
+<text x="116" y="307" font-size="10.6" fill="#1e293b" text-anchor="middle" class="mono">1</text>
+<text x="190" y="307" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono">1</text>
+<rect x="264" y="62" width="232" height="266" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="278" y="85" font-size="13.5" fill="#18794e" text-anchor="start" font-weight="700">② 并联开关 = 或门 (OR)</text>
+<text x="278" y="103" font-size="10.4" fill="#64748b" text-anchor="start">上下任通一路，信号即可抵达</text>
+<rect x="276" y="112" width="208" height="86" rx="7" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="284" y="152" font-size="9.8" fill="#18794e" text-anchor="start" font-weight="700" class="mono">+V</text>
+<line x1="298" y1="154" x2="318" y2="154" stroke="#18794e" stroke-width="2.2"/>
+<line x1="318" y1="134" x2="318" y2="174" stroke="#18794e" stroke-width="2.0"/>
+<line x1="318" y1="134" x2="346" y2="134" stroke="#18794e" stroke-width="2.0"/>
+<circle cx="346" cy="134" r="2.8" fill="#18794e"/>
+<line x1="346" y1="134" x2="374" y2="123" stroke="#c25014" stroke-width="2.0"/>
+<circle cx="378" cy="134" r="2.8" fill="#18794e"/>
+<text x="362" y="121" font-size="10.0" fill="#c25014" text-anchor="middle" font-weight="700" class="mono">A</text>
+<line x1="378" y1="134" x2="404" y2="134" stroke="#18794e" stroke-width="2.0"/>
+<line x1="318" y1="174" x2="346" y2="174" stroke="#18794e" stroke-width="2.0"/>
+<circle cx="346" cy="174" r="2.8" fill="#18794e"/>
+<line x1="346" y1="174" x2="374" y2="163" stroke="#c25014" stroke-width="2.0"/>
+<circle cx="378" cy="174" r="2.8" fill="#18794e"/>
+<text x="362" y="162" font-size="10.0" fill="#c25014" text-anchor="middle" font-weight="700" class="mono">B</text>
+<line x1="378" y1="174" x2="404" y2="174" stroke="#18794e" stroke-width="2.0"/>
+<line x1="404" y1="134" x2="404" y2="174" stroke="#18794e" stroke-width="2.0"/>
+<line x1="404" y1="154" x2="446" y2="154" stroke="#18794e" stroke-width="2.2"/>
+<circle cx="456" cy="154" r="9" fill="#e7f6ee" stroke="#18794e" stroke-width="1.6"/>
+<text x="456" y="158" font-size="10.4" fill="#18794e" text-anchor="middle" font-weight="700" class="mono">Y</text>
+<text x="380" y="192" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="600">Y = A + B（有 1 即为 1）</text>
+<text x="300" y="216" font-size="10.4" fill="#64748b" text-anchor="middle" font-weight="700" class="mono">A</text>
+<text x="360" y="216" font-size="10.4" fill="#64748b" text-anchor="middle" font-weight="700" class="mono">B</text>
+<text x="434" y="216" font-size="10.4" fill="#18794e" text-anchor="middle" font-weight="700">输出 Y</text>
+<text x="300" y="238" font-size="10.6" fill="#1e293b" text-anchor="middle" class="mono">0</text>
+<text x="360" y="238" font-size="10.6" fill="#1e293b" text-anchor="middle" class="mono">0</text>
+<text x="434" y="238" font-size="10.8" fill="#64748b" text-anchor="middle" font-weight="700" class="mono">0</text>
+<rect x="278" y="247" width="204" height="20" rx="4" fill="#e7f6ee"/>
+<text x="300" y="261" font-size="10.6" fill="#1e293b" text-anchor="middle" class="mono">0</text>
+<text x="360" y="261" font-size="10.6" fill="#1e293b" text-anchor="middle" class="mono">1</text>
+<text x="434" y="261" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="700" class="mono">1</text>
+<rect x="278" y="270" width="204" height="20" rx="4" fill="#e7f6ee"/>
+<text x="300" y="284" font-size="10.6" fill="#1e293b" text-anchor="middle" class="mono">1</text>
+<text x="360" y="284" font-size="10.6" fill="#1e293b" text-anchor="middle" class="mono">0</text>
+<text x="434" y="284" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="700" class="mono">1</text>
+<rect x="278" y="293" width="204" height="20" rx="4" fill="#e7f6ee"/>
+<text x="300" y="307" font-size="10.6" fill="#1e293b" text-anchor="middle" class="mono">1</text>
+<text x="360" y="307" font-size="10.6" fill="#1e293b" text-anchor="middle" class="mono">1</text>
+<text x="434" y="307" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="700" class="mono">1</text>
+<rect x="508" y="62" width="232" height="266" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="522" y="85" font-size="13.5" fill="#c25014" text-anchor="start" font-weight="700">③ 互补上下拉 = 非门 (NOT)</text>
+<text x="522" y="103" font-size="10.4" fill="#64748b" text-anchor="start">CMOS 反相器：上通下断或上断下通</text>
+<rect x="520" y="112" width="208" height="112" rx="7" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="618" y="126" font-size="9.8" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono">VDD (高电平 1)</text>
+<line x1="618" y1="130" x2="618" y2="144" stroke="#1d6fa5" stroke-width="2.0"/>
+<rect x="586" y="144" width="64" height="20" rx="4" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="618" y="158" font-size="9.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">A=0 导通</text>
+<line x1="618" y1="164" x2="618" y2="180" stroke="#0f172a" stroke-width="2.0"/>
+<line x1="618" y1="172" x2="684" y2="172" stroke="#c25014" stroke-width="2.2"/>
+<circle cx="696" cy="172" r="9" fill="#fef1e8" stroke="#c25014" stroke-width="1.6"/>
+<text x="696" y="176" font-size="10.4" fill="#c25014" text-anchor="middle" font-weight="700" class="mono">Y</text>
+<text x="544" y="176" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">输入 A</text>
+<rect x="586" y="180" width="64" height="20" rx="4" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="618" y="194" font-size="9.8" fill="#c25014" text-anchor="middle" font-weight="700">A=1 导通</text>
+<line x1="618" y1="200" x2="618" y2="210" stroke="#475569" stroke-width="2.0"/>
+<text x="618" y="220" font-size="9.8" fill="#475569" text-anchor="middle" font-weight="700" class="mono">GND (低电平 0)</text>
+<text x="556" y="244" font-size="10.4" fill="#64748b" text-anchor="middle" font-weight="700">输入 A</text>
+<text x="668" y="244" font-size="10.4" fill="#c25014" text-anchor="middle" font-weight="700">输出 Y = ¬A</text>
+<rect x="522" y="252" width="204" height="20" rx="4" fill="#fef1e8"/>
+<text x="556" y="266" font-size="10.8" fill="#1e293b" text-anchor="middle" font-weight="700" class="mono">0</text>
+<text x="668" y="266" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="700" class="mono">1</text>
+<rect x="522" y="276" width="204" height="20" rx="4" fill="#f1f5f9"/>
+<text x="556" y="290" font-size="10.8" fill="#1e293b" text-anchor="middle" font-weight="700" class="mono">1</text>
+<text x="668" y="290" font-size="10.8" fill="#475569" text-anchor="middle" font-weight="700" class="mono">0</text>
+<text x="624" y="316" font-size="10.0" fill="#64748b" text-anchor="middle">静态无直通电流，百亿晶体管不烧毁！</text>
+<rect x="20" y="340" width="720" height="96" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="363" font-size="13.5" fill="#6d28d9" text-anchor="start" font-weight="700">④ 万用积木“与非门（NAND）”：只靠一种门，就能拼出世上一切数字电路！</text>
+<rect x="36" y="374" width="346" height="50" rx="7" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="46" y="393" font-size="10.0" fill="#0f172a" text-anchor="start" class="mono">• NOT(A)=NAND(A,A)   • AND(A,B)=NOT(NAND(A,B))</text>
+<text x="46" y="413" font-size="10.1" fill="#6d28d9" text-anchor="start" font-weight="700">• OR(A,B)=NAND(NOT(A), NOT(B))（德摩根定律）</text>
+<rect x="396" y="374" width="330" height="50" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="408" y="393" font-size="10.3" fill="#1d6fa5" text-anchor="start" font-weight="700">半加器核心“异或门 XOR”也只需 4 个 NAND 门：</text>
+<text x="408" y="413" font-size="9.9" fill="#1e293b" text-anchor="start" class="mono">t = NAND(A,B) → XOR = NAND(NAND(A,t), NAND(B,t))</text>
+</svg>

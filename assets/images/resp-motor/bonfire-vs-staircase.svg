@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="448" viewBox="0 0 760 448" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">葡萄糖多步酶促自由能阶梯与10千克脂肪氧化去向质量守恒图</title>
+<desc id="desc">左图对比葡萄糖体外一步燃烧释放2870千焦每摩尔全部化作热光与体内20余步酶促反应捕获30至32颗ATP并说明每日50至70千克ATP周转；右图按Meerman与Brown 2014年化学计量算清10千克脂肪加29千克氧气生成28千克二氧化碳和11千克水，其中脂肪自身质量84%经肺呼出、16%成水排出。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="447" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">为什么细胞不直接“烧糖”？—— 多步能量阶梯与“减掉 10 kg 脂肪去哪了”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：ΔG°′ ≈ −2870 kJ/mol 经多步酶促截留为 30–32 ATP；右：Meerman &amp; Brown (2014) 减脂原子去向实算</text>
+<rect x="20" y="62" width="362" height="372" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="34" y="85" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 一步篝火暴燃 vs 20+ 步酶促能量阶梯</text>
+<text x="34" y="104" font-size="10.6" fill="#64748b" text-anchor="start">起终点相同（C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O），路径决定生死</text>
+<line x1="36" y1="136.0" x2="366" y2="136.0" stroke="#1d6fa5" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="38" y="129.0" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="700">高自由能起点：1 葡萄糖 + 6 O₂ (0 kJ)</text>
+<line x1="36" y1="326.0" x2="366" y2="326.0" stroke="#475569" stroke-width="1.5"/>
+<text x="38" y="342.0" font-size="10.4" fill="#475569" text-anchor="start" font-weight="700">低自由能终点：6 CO₂ + 6 H₂O (ΔG°′ ≈ −2870 kJ/mol)</text>
+<line x1="88.0" y1="140.0" x2="88.0" y2="318.0" stroke="#b91c1c" stroke-width="3.2" marker-end="url(#arr-orange)"/>
+<rect x="38" y="194" width="104" height="68" rx="7" fill="#fef2f2" stroke="#b91c1c" stroke-width="1"/>
+<text x="90" y="213" font-size="10.8" fill="#b91c1c" text-anchor="middle" font-weight="700">体外一步燃烧</text>
+<text x="90" y="231" font-size="10.3" fill="#1e293b" text-anchor="middle">100% 化作热与光</text>
+<text x="90" y="248" font-size="10.3" fill="#b91c1c" text-anchor="middle" font-weight="700">0 ATP（烫熟细胞）</text>
+<line x1="154" y1="142" x2="154" y2="320" stroke="#e2e8f0" stroke-width="1"/>
+<path d="M166.0,136.0 V147.4 H185.0 V158.8 H204.0 V172.1 H223.0 V187.3 H242.0 V204.4 H261.0 V227.2 H280.0 V251.9 H299.0 V276.6 H318.0 V301.3 H337.0 V326.0 H356.0" fill="none" stroke="#18794e" stroke-width="2.4"/>
+<circle cx="194.5" cy="158.8" r="3.4" fill="#18794e"/>
+<circle cx="251.5" cy="204.4" r="3.4" fill="#18794e"/>
+<circle cx="289.5" cy="251.9" r="3.4" fill="#18794e"/>
+<circle cx="327.5" cy="301.3" r="3.4" fill="#18794e"/>
+<rect x="206" y="148" width="158" height="56" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="285" y="167" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="700">体内 20+ 步酶促温和阶梯</text>
+<text x="285" y="184" font-size="10.3" fill="#1e293b" text-anchor="middle" font-weight="600">截留 ~34%–40% → 30–32 ATP</text>
+<text x="285" y="198" font-size="10.2" fill="#64748b" text-anchor="middle">余 ~60% 温和散热维持 37°C</text>
+<text x="166" y="286" font-size="10.2" fill="#18794e" text-anchor="start" font-weight="600">糖酵解 → 柠檬酸循环</text>
+<text x="166" y="302" font-size="10.2" fill="#18794e" text-anchor="start" font-weight="600">→ 呼吸链多级传递</text>
+<rect x="34" y="354" width="334" height="66" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="46" y="373" font-size="10.7" fill="#1d6fa5" text-anchor="start" font-weight="700">惊人的周转账：全身仅存 ~50–100 g ATP，日产却等同体重！</text>
+<text x="46" y="391" font-size="10.3" fill="#1e293b" text-anchor="start">成人每日消耗约 2000 kcal，需拆装合成约 50–70 kg ATP；</text>
+<text x="46" y="408" font-size="10.3" fill="#1e293b" text-anchor="start">相当于每一颗 ATP 分子每天被“花掉再充满” 500–1000 次。</text>
+<rect x="394" y="62" width="346" height="372" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="408" y="85" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 减掉 10 kg 脂肪去了哪？（质量守恒账）</text>
+<text x="408" y="104" font-size="10.5" fill="#64748b" text-anchor="start">平均人体甘油三酯：C₅₅H₁₀₄O₆ + 78 O₂ → 55 CO₂ + 52 H₂O</text>
+<rect x="408" y="118" width="318" height="96" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="420" y="137" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">总反应质量账（输入 39 kg = 输出 39 kg）：</text>
+<rect x="420.0" y="146" width="75.4" height="20" rx="3" fill="#c25014"/>
+<rect x="495.4" y="146" width="218.6" height="20" rx="3" fill="#1d6fa5"/>
+<text x="457.7" y="160" font-size="10.1" fill="#ffffff" text-anchor="middle" font-weight="700">脂肪 10kg</text>
+<text x="604.7" y="160" font-size="10.2" fill="#ffffff" text-anchor="middle" font-weight="700">吸入 O₂ 29kg</text>
+<rect x="420.0" y="180" width="212.0" height="20" rx="3" fill="#6d28d9"/>
+<rect x="632.0" y="180" width="82.0" height="20" rx="3" fill="#18794e"/>
+<text x="526.0" y="194" font-size="10.2" fill="#ffffff" text-anchor="middle" font-weight="700">呼出 CO₂ 28kg</text>
+<text x="673.0" y="194" font-size="10.1" fill="#ffffff" text-anchor="middle" font-weight="700">水 11kg</text>
+<text x="567" y="176" font-size="9.8" fill="#64748b" text-anchor="middle">↓ 经线粒体氧化重组 ↓</text>
+<rect x="408" y="226" width="318" height="114" rx="8" fill="#ffffff" stroke="#1d6fa5" stroke-width="1"/>
+<text x="420" y="246" font-size="10.9" fill="#1d6fa5" text-anchor="start" font-weight="700">单追那 10.0 kg 脂肪自身原子的最终去向：</text>
+<rect x="420.0" y="258" width="247.3" height="26" rx="4" fill="#1d6fa5"/>
+<rect x="667.3" y="258" width="46.7" height="26" rx="4" fill="#18794e"/>
+<text x="543.7" y="275" font-size="10.8" fill="#ffffff" text-anchor="middle" font-weight="700">84%（8.4 kg）变成 CO₂</text>
+<text x="690.7" y="275" font-size="10.4" fill="#ffffff" text-anchor="middle" font-weight="700">16%</text>
+<text x="420" y="305" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="700">• 8.4 kg（84%）：由肺部随每一次呼气排入空气！</text>
+<text x="420" y="324" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="600">• 1.6 kg（16%）：变成 H₂O，随尿液、汗液、呼吸等排出。</text>
+<rect x="408" y="354" width="318" height="66" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="420" y="373" font-size="10.7" fill="#c25014" text-anchor="start" font-weight="700">两个必破误区（超半数受访专业人士曾答错）：</text>
+<text x="420" y="391" font-size="10.2" fill="#1e293b" text-anchor="start">1. 肉不会“直接变成热量消失”（化学反应原子质量守恒）；</text>
+<text x="420" y="408" font-size="10.2" fill="#1e293b" text-anchor="start">2. 原地猛喘气不减肥——必须靠运动/基础代谢先拆开脂肪！</text>
+</svg>

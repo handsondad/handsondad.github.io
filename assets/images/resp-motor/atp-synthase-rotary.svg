@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="456" viewBox="0 0 760 456" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">F0F1-ATP合酶纳米分子水轮机纵切结构与120度步进催化及UCP1产热旁路图</title>
+<desc id="desc">左图展示线粒体膜间隙质子顺电化学梯度经a亚基半通道驱动F0转子c环与中央不对称γ轴旋转，在外周静子柄b2固定下顶开F1头α3β3亚基每圈合成3颗ATP；右上俯视图展示Boyer三态循环与1997年荧光肌动蛋白丝120度步进实拍；右下展示棕色脂肪UCP1质子分流非战栗产热机制。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="455" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">自然界最小的旋转水轮机：F₀F₁-ATP 合酶的 120° 步进催化与棕色脂肪产热旁路</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：跨膜 H⁺ 驱动 c 环与 γ 轴旋转；右上：Boyer 结合变化机制与 1997 荧光实拍；右下：UCP1 御寒分流</text>
+<rect x="20" y="62" width="412" height="380" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="34" y="85" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① F₀F₁-ATP 合酶纵切示意（高约 20 nm，转速可达 ~100+ 圈/秒）</text>
+<rect x="34" y="98" width="384" height="52" rx="7" fill="#fef1e8" stroke="#fdba74" stroke-width="1"/>
+<text x="46" y="118" font-size="10.8" fill="#c25014" text-anchor="start" font-weight="700">线粒体膜间隙（高 H⁺ 浓度 · 正电势侧）</text>
+<text x="46" y="136" font-size="10.2" fill="#64748b" text-anchor="start">呼吸链复合体 I、III、IV 持续泵入质子，蓄起质子动力势</text>
+<circle cx="312" cy="118" r="8.5" fill="#ffffff" stroke="#c25014" stroke-width="1.2"/>
+<text x="312" y="122" font-size="9.6" fill="#c25014" text-anchor="middle" font-weight="700">H⁺</text>
+<circle cx="344" cy="118" r="8.5" fill="#ffffff" stroke="#c25014" stroke-width="1.2"/>
+<text x="344" y="122" font-size="9.6" fill="#c25014" text-anchor="middle" font-weight="700">H⁺</text>
+<circle cx="376" cy="118" r="8.5" fill="#ffffff" stroke="#c25014" stroke-width="1.2"/>
+<text x="376" y="122" font-size="9.6" fill="#c25014" text-anchor="middle" font-weight="700">H⁺</text>
+<circle cx="400" cy="118" r="8.5" fill="#ffffff" stroke="#c25014" stroke-width="1.2"/>
+<text x="400" y="122" font-size="9.6" fill="#c25014" text-anchor="middle" font-weight="700">H⁺</text>
+<rect x="34" y="156.0" width="384" height="60" rx="4" fill="#f8fafc" stroke="#cbd5e1"/>
+<circle cx="44" cy="162.0" r="4.2" fill="#94a3b8"/>
+<circle cx="44" cy="210.0" r="4.2" fill="#94a3b8"/>
+<line x1="44" y1="166.0" x2="44" y2="206.0" stroke="#cbd5e1" stroke-width="1.2"/>
+<circle cx="58" cy="162.0" r="4.2" fill="#94a3b8"/>
+<circle cx="58" cy="210.0" r="4.2" fill="#94a3b8"/>
+<line x1="58" y1="166.0" x2="58" y2="206.0" stroke="#cbd5e1" stroke-width="1.2"/>
+<circle cx="72" cy="162.0" r="4.2" fill="#94a3b8"/>
+<circle cx="72" cy="210.0" r="4.2" fill="#94a3b8"/>
+<line x1="72" y1="166.0" x2="72" y2="206.0" stroke="#cbd5e1" stroke-width="1.2"/>
+<circle cx="86" cy="162.0" r="4.2" fill="#94a3b8"/>
+<circle cx="86" cy="210.0" r="4.2" fill="#94a3b8"/>
+<line x1="86" y1="166.0" x2="86" y2="206.0" stroke="#cbd5e1" stroke-width="1.2"/>
+<circle cx="100" cy="162.0" r="4.2" fill="#94a3b8"/>
+<circle cx="100" cy="210.0" r="4.2" fill="#94a3b8"/>
+<line x1="100" y1="166.0" x2="100" y2="206.0" stroke="#cbd5e1" stroke-width="1.2"/>
+<circle cx="324" cy="162.0" r="4.2" fill="#94a3b8"/>
+<circle cx="324" cy="210.0" r="4.2" fill="#94a3b8"/>
+<line x1="324" y1="166.0" x2="324" y2="206.0" stroke="#cbd5e1" stroke-width="1.2"/>
+<circle cx="338" cy="162.0" r="4.2" fill="#94a3b8"/>
+<circle cx="338" cy="210.0" r="4.2" fill="#94a3b8"/>
+<line x1="338" y1="166.0" x2="338" y2="206.0" stroke="#cbd5e1" stroke-width="1.2"/>
+<circle cx="352" cy="162.0" r="4.2" fill="#94a3b8"/>
+<circle cx="352" cy="210.0" r="4.2" fill="#94a3b8"/>
+<line x1="352" y1="166.0" x2="352" y2="206.0" stroke="#cbd5e1" stroke-width="1.2"/>
+<circle cx="366" cy="162.0" r="4.2" fill="#94a3b8"/>
+<circle cx="366" cy="210.0" r="4.2" fill="#94a3b8"/>
+<line x1="366" y1="166.0" x2="366" y2="206.0" stroke="#cbd5e1" stroke-width="1.2"/>
+<circle cx="380" cy="162.0" r="4.2" fill="#94a3b8"/>
+<circle cx="380" cy="210.0" r="4.2" fill="#94a3b8"/>
+<line x1="380" y1="166.0" x2="380" y2="206.0" stroke="#cbd5e1" stroke-width="1.2"/>
+<circle cx="394" cy="162.0" r="4.2" fill="#94a3b8"/>
+<circle cx="394" cy="210.0" r="4.2" fill="#94a3b8"/>
+<line x1="394" y1="166.0" x2="394" y2="206.0" stroke="#cbd5e1" stroke-width="1.2"/>
+<circle cx="408" cy="162.0" r="4.2" fill="#94a3b8"/>
+<circle cx="408" cy="210.0" r="4.2" fill="#94a3b8"/>
+<line x1="408" y1="166.0" x2="408" y2="206.0" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="42" y="190" font-size="10.1" fill="#475569" text-anchor="start" font-weight="600" class="halo">线粒体</text>
+<text x="42" y="204" font-size="10.1" fill="#475569" text-anchor="start" font-weight="600" class="halo">内膜</text>
+<rect x="118" y="152" width="50" height="68" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="1.4"/>
+<text x="143" y="183" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="700">a 亚基</text>
+<text x="143" y="198" font-size="9.8" fill="#64748b" text-anchor="middle">半通道</text>
+<rect x="172" y="150" width="96" height="72" rx="12" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.8"/>
+<rect x="179" y="156" width="14" height="60" rx="5" fill="#bfdbfe" stroke="#1d6fa5" stroke-width="1"/>
+<rect x="199" y="156" width="14" height="60" rx="5" fill="#bfdbfe" stroke="#1d6fa5" stroke-width="1"/>
+<rect x="219" y="156" width="14" height="60" rx="5" fill="#bfdbfe" stroke="#1d6fa5" stroke-width="1"/>
+<rect x="239" y="156" width="14" height="60" rx="5" fill="#bfdbfe" stroke="#1d6fa5" stroke-width="1"/>
+<text x="220" y="184" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">F₀ 转子 c 环</text>
+<text x="220" y="200" font-size="9.8" fill="#1d6fa5" text-anchor="middle" font-weight="600" class="halo">(c₈–c₁₅ 旋转鼓)</text>
+<path d="M142,138 V174 H182" fill="none" stroke="#c25014" stroke-width="2.0" marker-end="url(#arr-orange)"/>
+<path d="M164,200 V242" fill="none" stroke="#c25014" stroke-width="2.0" marker-end="url(#arr-orange)"/>
+<text x="126" y="254" font-size="10.2" fill="#c25014" text-anchor="middle" font-weight="700">H⁺ 顺梯度入基质</text>
+<path d="M168,164 H295 V322 H280" fill="none" stroke="#475569" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity="0.28"/>
+<path d="M168,164 H295 V322 H280" fill="none" stroke="#475569" stroke-width="2.0" stroke-linejoin="round"/>
+<text x="354" y="256" font-size="10.4" fill="#475569" text-anchor="middle" font-weight="700">外周静子柄 (b₂)</text>
+<text x="354" y="272" font-size="10.0" fill="#64748b" text-anchor="middle">锁住 α₃β₃ 防跟转</text>
+<polygon points="210,222 230,222 235,318 214,328" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.8"/>
+<text x="221" y="260" font-size="10.5" fill="#6d28d9" text-anchor="middle" font-weight="700">γ轴</text>
+<path d="M196,242 Q220,252 244,242" fill="none" stroke="#6d28d9" stroke-width="2.0" marker-end="url(#arr-blue)"/>
+<rect x="146" y="284" width="58" height="78" rx="16" fill="#e7f6ee" stroke="#18794e" stroke-width="1.6"/>
+<rect x="236" y="284" width="58" height="78" rx="16" fill="#e7f6ee" stroke="#18794e" stroke-width="1.6"/>
+<rect x="192" y="296" width="56" height="72" rx="14" fill="#dcfce7" stroke="#18794e" stroke-width="1.8"/>
+<text x="175" y="322" font-size="10.4" fill="#18794e" text-anchor="middle" font-weight="700">β 催化</text>
+<text x="175" y="338" font-size="10.2" fill="#18794e" text-anchor="middle">亚基</text>
+<text x="220" y="336" font-size="10.8" fill="#0f172a" text-anchor="middle" font-weight="700">F₁ 头</text>
+<text x="220" y="352" font-size="10.0" fill="#18794e" text-anchor="middle" font-weight="700">(α₃β₃)</text>
+<text x="265" y="322" font-size="10.4" fill="#475569" text-anchor="middle" font-weight="700">α 结构</text>
+<text x="265" y="338" font-size="10.2" fill="#475569" text-anchor="middle">亚基</text>
+<text x="80" y="316" font-size="10.6" fill="#1e293b" text-anchor="middle" font-weight="700">ADP + Pi</text>
+<path d="M112,314 H142" fill="none" stroke="#18794e" stroke-width="1.8" marker-end="url(#arr-green)"/>
+<path d="M298,342 H334" fill="none" stroke="#18794e" stroke-width="2.0" marker-end="url(#arr-green)"/>
+<rect x="338.0" y="330.0" width="58" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="367.0" y="345.0" font-size="11.0" fill="#18794e" text-anchor="middle" font-weight="600">ATP!</text>
+<text x="44" y="392" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="600">线粒体基质（低 H⁺ 浓度侧）：γ 凸轮每转 360° 顶开 3 个 β 亚基 → 产 3 颗 ATP</text>
+<text x="44" y="412" font-size="10.2" fill="#64748b" text-anchor="start">1974 年 Racker 与 Stoeckenius 将细菌紫膜质子泵与牛 ATP 合酶装入人造脂泡，</text>
+<text x="44" y="428" font-size="10.2" fill="#64748b" text-anchor="start">在无呼吸链条件下靠光照造出 ATP，一锤定音证实 Mitchell 化学渗透学说！</text>
+<rect x="444" y="62" width="296" height="198" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="458" y="85" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 俯视 α₃β₃：120° 步进与单分子实拍</text>
+<circle cx="508.0" cy="134.0" r="15.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.5"/>
+<text x="508.0" y="137.8" font-size="9.8" fill="#18794e" text-anchor="middle" font-weight="700">β-O</text>
+<circle cx="535.7" cy="150.0" r="12.5" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+<text x="535.7" y="153.8" font-size="9.8" fill="#475569" text-anchor="middle" font-weight="700">α</text>
+<circle cx="535.7" cy="182.0" r="15.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.5"/>
+<text x="535.7" y="185.8" font-size="9.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">β-L</text>
+<circle cx="508.0" cy="198.0" r="12.5" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+<text x="508.0" y="201.8" font-size="9.8" fill="#475569" text-anchor="middle" font-weight="700">α</text>
+<circle cx="480.3" cy="182.0" r="15.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.5"/>
+<text x="480.3" y="185.8" font-size="9.8" fill="#c25014" text-anchor="middle" font-weight="700">β-T</text>
+<circle cx="480.3" cy="150.0" r="12.5" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+<text x="480.3" y="153.8" font-size="9.8" fill="#475569" text-anchor="middle" font-weight="700">α</text>
+<polygon points="508.0,153.0 517.0,174.0 499.0,174.0" fill="#6d28d9" opacity="0.9"/>
+<text x="508.0" y="170.5" font-size="9.6" fill="#ffffff" text-anchor="middle" font-weight="700">γ</text>
+<line x1="508.0" y1="157.0" x2="464.0" y2="118.0" stroke="#e11d48" stroke-width="3.0" stroke-linecap="round"/>
+<path d="M470.0,122.0 A52,52 0 0,1 542.0,122.0" fill="none" stroke="#e11d48" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#arr-orange)"/>
+<text x="508.0" y="111.0" font-size="9.8" fill="#be123c" text-anchor="middle" font-weight="700">120° 步进旋转</text>
+<text x="578" y="114" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="700">Boyer 三态交替：</text>
+<text x="578" y="131" font-size="9.9" fill="#1e293b" text-anchor="start">• 耗能关键在顶开 β 释放</text>
+<text x="578" y="147" font-size="9.9" fill="#18794e" text-anchor="start" font-weight="700">  紧绑的 ATP，而非成键！</text>
+<text x="578" y="172" font-size="10.2" fill="#be123c" text-anchor="start" font-weight="700">1997 吉田贤右 / 野地博行：</text>
+<text x="578" y="189" font-size="9.9" fill="#1e293b" text-anchor="start">在 γ 轴粘上 ~1 μm 荧光</text>
+<text x="578" y="205" font-size="9.9" fill="#1e293b" text-anchor="start">肌动蛋白棒，显微镜下亲眼</text>
+<text x="578" y="221" font-size="9.9" fill="#be123c" text-anchor="start" font-weight="700">拍到 120° 分步旋转！</text>
+<text x="458" y="247" font-size="9.8" fill="#64748b" text-anchor="start">注：分离的 F₁ 水解 ATP 可反转；完整合酶顺质子流造 ATP</text>
+<rect x="444" y="272" width="296" height="170" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="458" y="295" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">③ 棕色脂肪“可控漏电”：UCP1 御寒暖气阀</text>
+<rect x="458" y="310" width="268" height="62" rx="7" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="470" y="329" font-size="10.4" fill="#1d6fa5" text-anchor="start" font-weight="600">常规路线：H⁺ → ATP 合酶 → 势能存进 ATP</text>
+<text x="470" y="350" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="700">御寒旁路：H⁺ → 解偶联蛋白 UCP1（产热素）</text>
+<text x="470" y="366" font-size="10.4" fill="#b91c1c" text-anchor="start" font-weight="700">          绕开合酶直返基质 → 100% 化作体温！</text>
+<text x="458" y="392" font-size="10.2" fill="#1e293b" text-anchor="start">• 新生婴儿不会打寒颤，颈背部富含棕色脂肪保命；</text>
+<text x="458" y="410" font-size="10.2" fill="#1e293b" text-anchor="start">• 冬眠熊/旱獭靠 UCP1 非战栗产热苏醒；因富含含铁</text>
+<text x="458" y="427" font-size="10.2" fill="#64748b" text-anchor="start">  细胞色素的密集线粒体，组织肉眼呈棕褐色。</text>
+</svg>

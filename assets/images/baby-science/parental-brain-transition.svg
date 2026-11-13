@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="404" viewBox="0 0 760 404" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">准父母大脑神经可塑性时间轴与围产期情绪筛查边界图</title>
+<desc id="desc">左图展示妈妈在妊娠激素驱动下的社会认知灰质修剪与爸爸在直接育儿经验驱动下的共情网络增强；右图对比常见孕产期情绪波动与持续两周以上的围产期抑郁焦虑筛查信号。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="403" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">准父母的大脑也在“备产”：神经可塑性重塑与围产期情绪支持边界</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左图综合纵向脑成像证据（Hoekzema 2017; Martínez-García 2023）；右图区分常见情绪波动与 ≥2 周求助信号。</text>
+<rect x="20" y="64" width="352" height="324" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="88" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① “父母脑”不是天生满级，而是生物+实战重塑</text>
+<line x1="56.0" y1="120.0" x2="342.0" y2="120.0" stroke="#1d6fa5" stroke-width="2.0" marker-end="url(#arr-blue)"/>
+<circle cx="56.0" cy="120.0" r="3.8" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.8"/>
+<text x="56.0" y="111" font-size="10.2" fill="#475569" text-anchor="middle" font-weight="600">孕期</text>
+<circle cx="159.0" cy="120.0" r="3.8" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.8"/>
+<text x="159.0" y="111" font-size="10.2" fill="#475569" text-anchor="middle" font-weight="600">分娩/初生</text>
+<circle cx="250.5" cy="120.0" r="3.8" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.8"/>
+<text x="250.5" y="111" font-size="10.2" fill="#475569" text-anchor="middle" font-weight="600">产后6月</text>
+<circle cx="330.6" cy="120.0" r="3.8" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.8"/>
+<text x="330.6" y="111" font-size="10.2" fill="#475569" text-anchor="middle" font-weight="600">产后2年+</text>
+<rect x="34" y="136" width="324" height="114" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<rect x="44.0" y="146.0" width="164" height="20" rx="10.0" fill="#ffffff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="126.0" y="159.6" font-size="10.8" fill="#6d28d9" text-anchor="middle" font-weight="600">妈妈大脑 · 激素与妊娠驱动</text>
+<text x="44" y="182" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">• Hoekzema 等（2017, Nature Neuroscience）纵向 MRI：</text>
+<text x="44" y="200" font-size="10.4" fill="#1e293b" text-anchor="start">  社会认知网络（内侧前额叶/颞顶区）灰质体积发生高度一致</text>
+<text x="44" y="216" font-size="10.4" fill="#1e293b" text-anchor="start">  的“突触修剪精简”——不是变笨，而是提高读懂宝宝表情</text>
+<text x="44" y="232" font-size="10.4" fill="#6d28d9" text-anchor="start" font-weight="600">  与哭声信号的效率，预测产后依恋质量并持续至少 2 年。</text>
+<rect x="34" y="262" width="324" height="114" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<rect x="44.0" y="272.0" width="156" height="20" rx="10.0" fill="#ffffff" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="122.0" y="285.6" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="600">爸爸大脑 · 实战带娃点亮</text>
+<text x="44" y="308" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">• Martínez-García（2023）与 Abraham 等（2014, PNAS）：</text>
+<text x="44" y="326" font-size="10.4" fill="#1e293b" text-anchor="start">  新手爸爸默认网络与视觉皮层同样出现结构可塑性精简；</text>
+<text x="44" y="342" font-size="10.4" fill="#1e293b" text-anchor="start">  直接换尿布、哄睡、陪玩时间越长，杏仁核与颞上沟（STS）</text>
+<text x="44" y="358" font-size="10.4" fill="#1d6fa5" text-anchor="start" font-weight="600">  共情回路连接越强——“默契奶爸”是亲手带出来的！</text>
+<rect x="388" y="64" width="352" height="324" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="404" y="88" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 心理过渡光谱：接纳矛盾感受 vs 识别预警线</text>
+<rect x="402" y="104" width="324" height="118" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<circle cx="420" cy="122" r="9.5" fill="#ffffff" stroke="#18794e" stroke-width="1.2"/>
+<text x="420" y="126" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">✓</text>
+<text x="436" y="126" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">常见适应波动（可与伴侣坦诚倾诉分担）</text>
+<text x="414" y="148" font-size="10.4" fill="#1e293b" text-anchor="start">• 孕期矛盾感：既满怀期待挑小衣服，又半夜担心“生活失控”</text>
+<text x="414" y="166" font-size="10.4" fill="#1e293b" text-anchor="start">• 产后短暂低落（Baby Blues）：产后 3–5 天激素骤降+缺觉，</text>
+<text x="414" y="184" font-size="10.4" fill="#1e293b" text-anchor="start">  易流泪、脆弱敏感，通常在 1–2 周内随休息与支持自然缓和</text>
+<text x="414" y="204" font-size="10.4" fill="#18794e" text-anchor="start" font-weight="600">• 应对：用“三行沟通表”把模糊焦虑变成具体可分担的小事</text>
+<rect x="402" y="234" width="324" height="142" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<circle cx="420" cy="252" r="9.5" fill="#ffffff" stroke="#c25014" stroke-width="1.2"/>
+<text x="420" y="256" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">!</text>
+<text x="436" y="256" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">专业求助分水岭：症状持续 ≥ 2 周或影响功能</text>
+<text x="414" y="278" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="600">• 并非罕见：约 10%–13% 孕产妇（WHO）与约 10.4% 新手爸</text>
+<text x="414" y="295" font-size="10.2" fill="#1e293b" text-anchor="start">  （Paulson 2010 JAMA 荟萃分析）经历围产期抑郁或焦虑</text>
+<text x="414" y="313" font-size="10.2" fill="#1e293b" text-anchor="start">• 信号：持续两周以上情绪麻木低落、对一切丧失兴趣、即使</text>
+<text x="414" y="330" font-size="10.2" fill="#1e293b" text-anchor="start">  有人替班仍彻夜难眠、强烈自责，或闪过伤己/伤婴念头</text>
+<text x="414" y="350" font-size="10.2" fill="#c25014" text-anchor="start" font-weight="700">• 行动：产检/产后门诊主动做 EPDS 量表筛查，科学干预可治</text>
+</svg>

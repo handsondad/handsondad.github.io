@@ -3763,3 +3763,852 @@ def build_cosmic_velocities():
     build_hohmann_transfer()
     build_third_cosmic()
     build_rocket_staging()
+
+def _register_calendar_astronomy():
+    import datetime
+
+    import math
+
+    from .core import (
+        BLUE,
+        BLUE_LINE,
+        BLUE_SOFT,
+        BODY,
+        BORDER,
+        GREEN,
+        GREEN_SOFT,
+        HAIRLINE,
+        INK,
+        MUTED,
+        ORANGE,
+        ORANGE_SOFT,
+        PANEL_TITLE,
+        PURPLE,
+        PURPLE_SOFT,
+        SLATE,
+        SLATE_SOFT,
+        WIDTH,
+        audit_all_svgs,
+        card,
+        figure,
+        header,
+        pill,
+        register,
+        step_badge,
+        txt,
+        write_svg,
+    )
+
+    SUBDIR = "calendar-astronomy"
+
+    def _meeus_new_moon_utc8(k):
+        """Compute true New Moon instant (JD UTC and UTC+8 datetime) via Meeus Ch. 49."""
+        T = k / 1236.85
+        jde = (
+            2451550.09766
+            + 29.530588861 * k
+            + 0.00015437 * T**2
+            - 0.000000150 * T**3
+            + 0.00000000073 * T**4
+        )
+        e_fac = 1.0 - 0.002516 * T - 0.0000074 * T**2
+        m_sun = math.radians((2.5534 + 29.10535670 * k - 0.0000014 * T**2 - 0.00000011 * T**3) % 360.0)
+        m_moon = math.radians(
+            (201.5643 + 385.81693528 * k + 0.0107582 * T**2 + 0.00001238 * T**3 - 0.000000058 * T**4) % 360.0
+        )
+        f_arg = math.radians(
+            (160.7108 + 390.67050284 * k - 0.0016118 * T**2 - 0.00000227 * T**3 + 0.000000011 * T**4) % 360.0
+        )
+        omega = math.radians((124.7746 - 1.56375588 * k + 0.0020672 * T**2 + 0.00000215 * T**3) % 360.0)
+        corr = (
+            -0.40720 * math.sin(m_moon)
+            + 0.17241 * e_fac * math.sin(m_sun)
+            + 0.01608 * math.sin(2 * m_moon)
+            + 0.01039 * math.sin(2 * f_arg)
+            + 0.00739 * e_fac * math.sin(m_moon - m_sun)
+            - 0.00514 * e_fac * math.sin(m_moon + m_sun)
+            + 0.00208 * e_fac * e_fac * math.sin(2 * m_sun)
+            - 0.00111 * math.sin(m_moon - 2 * f_arg)
+            - 0.00057 * math.sin(m_moon + 2 * f_arg)
+            + 0.00056 * math.sin(2 * m_moon + m_sun)
+            - 0.00042 * math.sin(3 * m_moon)
+            + 0.00042 * math.sin(m_sun + 2 * f_arg)
+            + 0.00038 * math.sin(m_sun - 2 * f_arg)
+            - 0.00024 * math.sin(2 * m_moon - m_sun)
+            - 0.00017 * math.sin(omega)
+        )
+        jd_utc = jde + corr - 69.5 / 86400.0
+        dt_utc8 = datetime.datetime(2000, 1, 1, 12, 0, 0) + datetime.timedelta(
+            days=jd_utc - 2451545.0, hours=8
+        )
+        return jd_utc, dt_utc8
+
+    def _sun_apparent_lon_deg(jd):
+        """Apparent geocentric solar ecliptic longitude (degrees) via Meeus Ch. 25."""
+        T = (jd - 2451545.0) / 36525.0
+        l0 = (280.46646 + 36000.76983 * T + 0.0003032 * T * T) % 360.0
+        m = math.radians((357.52911 + 35999.05029 * T - 0.0001537 * T * T) % 360.0)
+        c = (
+            (1.914602 - 0.004817 * T - 0.000014 * T * T) * math.sin(m)
+            + (0.019993 - 0.000101 * T) * math.sin(2 * m)
+            + 0.000289 * math.sin(3 * m)
+        )
+        omega = math.radians(125.04 - 1934.136 * T)
+        return (l0 + c - 0.00569 - 0.00478 * math.sin(omega)) % 360.0
+
+    def _find_solar_term_jd(target_deg, jd_guess):
+        jd = jd_guess
+        for _ in range(18):
+            diff = (_sun_apparent_lon_deg(jd) - target_deg + 180.0) % 360.0 - 180.0
+            jd -= diff / 0.9856
+        assert abs((_sun_apparent_lon_deg(jd) - target_deg + 180.0) % 360.0 - 180.0) < 1e-6
+        return jd
+
+    def _build_gregorian_leap_sieve():
+        """SVG 1: Julian +0.00781 d/yr drift (1582 jump) vs Gregorian 97/400 sieve."""
+        t_trop = 365.24219
+        t_jul = 365.25
+        t_greg = 365.0 + 97.0 / 400.0
+
+        jul_err_d = t_jul - t_trop
+        jul_err_s = jul_err_d * 86400.0
+        greg_err_d = t_greg - t_trop
+        greg_err_s = greg_err_d * 86400.0
+
+        assert math.isclose(jul_err_d, 0.00781, abs_tol=1e-5)
+        assert 674.0 < jul_err_s < 676.0  # 11 min 14.8 s
+        assert math.isclose(t_greg, 365.2425, abs_tol=1e-9)
+        assert 26.5 < greg_err_s < 27.1
+        drift_1582 = (1582 - 325) * jul_err_d
+        assert 9.80 < drift_1582 < 9.85
+
+        els = header(
+            "格里高利历的“三道筛子”：把每年 11 分 15 秒的滑移压到 27 秒",
+            "儒略历每 128 年多攒 1 天，至 1582 年被迫连删 10 天；公历靠“四闰、百不闰、四百再闰”锁定春分",
+        )
+
+        # Left panel: Julian drift + 1582 calendar strip
+        els.append(card(20, 62, 356, 326))
+        els.append(txt(36, 85, "① 儒略历滑移与 1582 年“消失的十天”", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(36, 104, "平均 365.25 天比回归年多 11 分 15 秒，约 128 年偏后 1 天", 11.0, MUTED))
+
+        ox, oy, cw, ch = 68.0, 246.0, 282.0, 114.0
+        # Gridlines for 0, 5, 10 days
+        for yd in (0, 5, 10):
+            py = oy - (yd / 10.5) * ch
+            els.append(f'<line x1="{ox}" y1="{py:.1f}" x2="{ox + cw}" y2="{py:.1f}" stroke="{SLATE_SOFT}" stroke-width="1"/>')
+            els.append(txt(ox - 7, py + 4, f"{yd}天", 10.6, MUTED, "end"))
+        els.append(f'<path d="M{ox},{oy - ch:.1f} V{oy} H{ox + cw:.1f}" fill="none" stroke="#94a3b8" stroke-width="1.3"/>')
+
+        # X ticks: 325, 950, 1582
+        for yr, lbl, anc in ((325, "325年(尼西亚)", "start"), (950, "950年", "middle"), (1582, "1582年", "end")):
+            px = ox + ((yr - 325.0) / (1582.0 - 325.0)) * cw
+            els.append(f'<line x1="{px:.1f}" y1="{oy}" x2="{px:.1f}" y2="{oy + 4}" stroke="#94a3b8" stroke-width="1.2"/>')
+            els.append(txt(px, oy + 17, lbl, 10.5, MUTED, anc))
+
+        # Shaded Julian error triangle & line
+        y_end = oy - (drift_1582 / 10.5) * ch
+        els.append(
+            f'<polygon points="{ox},{oy} {ox + cw},{y_end:.1f} {ox + cw},{oy}" fill="{ORANGE_SOFT}" opacity="0.85"/>'
+        )
+        els.append(
+            f'<line x1="{ox}" y1="{oy}" x2="{ox + cw}" y2="{y_end:.1f}" stroke="{ORANGE}" stroke-width="2.5"/>'
+        )
+        els.append(f'<circle cx="{ox}" cy="{oy}" r="4" fill="{BLUE}"/>')
+        els.append(f'<circle cx="{ox + cw}" cy="{y_end:.1f}" r="4.5" fill="{ORANGE}"/>')
+        els.append(
+            txt(
+                ox + cw - 8,
+                y_end - 8,
+                f"1257 年累计 +{drift_1582:.1f} 天 → 删 10 天校准",
+                10.8,
+                ORANGE,
+                "end",
+                weight="700",
+                halo=True,
+            )
+        )
+        # Gregorian near-flat reference slope over same span (1257 * 0.00031 = 0.39 d)
+        y_greg = oy - ((1257 * greg_err_d) / 10.5) * ch
+        els.append(
+            f'<line x1="{ox}" y1="{oy}" x2="{ox + cw}" y2="{y_greg:.1f}" stroke="{GREEN}" stroke-width="2" stroke-dasharray="5 3"/>'
+        )
+        els.append(txt(ox + 10, oy - 10, "虚线：若用公历同期仅漂移 0.39 天", 10.5, GREEN, weight="600", halo=True))
+
+        # 1582 October strip
+        els.append(card(34, 274, 328, 100, rx=8, fill="#f8fafc", stroke=HAIRLINE))
+        els.append(txt(46, 293, "1582 年 10 月改历手术：日期跳十格，星期不断裂！", 11.2, INK, weight="700"))
+
+        # Day tiles: 10/3 Wed, 10/4 Thu, [Skipped 10d], 10/15 Fri
+        els.append(card(44, 304, 62, 46, rx=6, fill="#ffffff", stroke=BORDER))
+        els.append(txt(75, 323, "10月3日", 10.8, BODY, "middle", weight="600"))
+        els.append(txt(75, 341, "星期三", 10.5, MUTED, "middle"))
+
+        els.append(card(112, 304, 66, 46, rx=6, fill=BLUE_SOFT, stroke=BLUE, sw=1.3))
+        els.append(txt(145, 323, "10月4日", 10.8, BLUE, "middle", weight="700"))
+        els.append(txt(145, 341, "星期四", 10.6, BLUE, "middle", weight="600"))
+
+        els.append(card(184, 304, 92, 46, rx=6, fill=ORANGE_SOFT, stroke=ORANGE, sw=1.2, dash="4 3"))
+        els.append(txt(230, 323, "删 10/5–10/14", 10.6, ORANGE, "middle", weight="700"))
+        els.append(txt(230, 341, "10 天不存在", 10.5, ORANGE, "middle"))
+
+        els.append(card(282, 304, 70, 46, rx=6, fill=GREEN_SOFT, stroke=GREEN, sw=1.3))
+        els.append(txt(317, 323, "10月15日", 10.8, GREEN, "middle", weight="700"))
+        els.append(txt(317, 341, "星期五", 10.6, GREEN, "middle", weight="600"))
+
+        els.append(txt(198, 366, "注：周四睡一觉醒来仍是周五，七日星期循环从未中断", 10.5, MUTED, "middle"))
+
+        # Right panel: 400-year 97-leap sieve
+        els.append(card(388, 62, 352, 326))
+        els.append(txt(404, 85, "② 400 年 97 闰的“三道筛子”", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(404, 104, "拿任意连续 400 年（如 1601—2000 年）过筛计闰：", 11.0, MUTED))
+
+        steps = [
+            (
+                "第一筛：4 年一闰（能被 4 整除）",
+                "400 ÷ 4 = 初选 100 个闰年 → 均长 365.2500 天",
+                BLUE,
+                BLUE_SOFT,
+            ),
+            (
+                "第二筛：百年不闰（剔除整百年）",
+                "筛掉 1700、1800、1900 共 3 年（全剔4年反慢3分09秒）",
+                ORANGE,
+                ORANGE_SOFT,
+            ),
+            (
+                "第三筛：400 年再闰（保送 2000 年）",
+                "100 − 3 = 97 闰！均长 365.2425 天（仅快 26.8 秒）",
+                GREEN,
+                GREEN_SOFT,
+            ),
+        ]
+        for idx, (st_head, st_sub, fg, bg) in enumerate(steps):
+            ry = 116 + idx * 60
+            els.append(card(404, ry, 320, 50, rx=8, fill=bg, stroke=fg, sw=1.2))
+            els.append(step_badge(423, ry + 25, idx + 1, fg=fg, bg="#ffffff", r=10))
+            els.append(txt(441, ry + 20, st_head, 11.6, INK, weight="700"))
+            els.append(txt(441, ry + 39, st_sub, 10.8, BODY))
+
+        # Residual bar comparison box
+        els.append(card(404, 298, 320, 76, rx=8, fill="#f8fafc", stroke=HAIRLINE))
+        els.append(txt(416, 317, "每年相对真回归年（365.24219 天）误差压缩 25 倍：", 11.0, INK, weight="700"))
+
+        bar_x = 496.0
+        max_bar_w = 138.0
+        w_jul = max_bar_w
+        w_greg = max_bar_w * (greg_err_s / jul_err_s)
+        els.append(txt(416, 339, "儒略历", 10.8, BODY, weight="600"))
+        els.append(f'<rect x="{bar_x}" y="328" width="{w_jul:.1f}" height="13" rx="3" fill="{ORANGE}"/>')
+        els.append(txt(bar_x + w_jul + 6, 339, "+675 秒/年", 10.6, ORANGE, weight="700"))
+
+        els.append(txt(416, 361, "现行公历", 10.8, BODY, weight="600"))
+        els.append(f'<rect x="{bar_x}" y="350" width="{w_greg:.1f}" height="13" rx="3" fill="{GREEN}"/>')
+        els.append(txt(bar_x + w_greg + 6, 361, "+26.8 秒/年（约 3226 年才差 1 天）", 10.6, GREEN, weight="700"))
+
+        return figure(
+            402,
+            "格里高利历三层闰年筛法与1582年十天校准图",
+            "左图展示儒略历每年多算11分15秒导致1582年累计约9.8天滑移并跳过10月5日至14日共10天而星期不断裂；右图展示公历400年97闰三道筛子将年误差压缩至26.8秒。",
+            els,
+        )
+
+    def _build_continuous_no_30_chuxi():
+        """SVG 2: Why 2025-2029 have 5 consecutive years without 大年三十, and 2030 brings it back."""
+        # k indices for 腊月初一 before 2025, 2026, 2027, 2028, 2029, 2030 Spring Festivals
+        cases = [
+            (309, "2025 乙巳蛇年春节前"),
+            (322, "2026 丙午马年春节前"),
+            (334, "2027 丁未羊年春节前"),
+            (346, "2028 戊申猴年春节前"),
+            (359, "2029 己酉鸡年春节前"),
+            (371, "2030 庚戌狗年春节前"),
+        ]
+
+        computed = []
+        for k, label in cases:
+            jd1, dt1 = _meeus_new_moon_utc8(k)
+            jd2, dt2 = _meeus_new_moon_utc8(k + 1)
+            cal_days = (dt2.date() - dt1.date()).days
+            t0_h = dt1.hour + dt1.minute / 60.0 + dt1.second / 3600.0
+            dur_d = jd2 - jd1
+            delta_h = (dur_d - 29.0) * 24.0
+            total_h = t0_h + delta_h
+            computed.append((label, dt1, dt2, cal_days, t0_h, delta_h, total_h))
+
+        # Critical astronomical assertions
+        assert [c[3] for c in computed] == [29, 29, 29, 29, 29, 30]
+        # 2027 misses midnight by ~4 minutes; 2030 crosses midnight by ~8 minutes even though t0 < 11.26h!
+        assert 23.90 < computed[2][6] < 23.98
+        assert computed[5][4] < 11.0 and 24.08 < computed[5][6] < 24.20
+
+        els = header(
+            "定朔与午夜红线：为什么 2025—2029 连续五年没有“大年三十”？",
+            "按国家标准 GB/T 33661-2017，合朔落入哪天哪天就是初一；腊月能否保住第 30 天，全看下一次合朔跨不跨午夜",
+        )
+
+        # Top panel: Visual explanation of t0 + Δh vs 24:00 midnight boundary
+        els.append(card(20, 62, 720, 118))
+        els.append(txt(36, 84, "① 判定公式：从腊月初一 00:00 起算，下一次合朔能否撑过第 30 天末的午夜 24:00？", PANEL_TITLE, INK, weight="700"))
+
+        # Schematic timeline bar
+        els.append(card(36, 96, 134, 28, rx=5, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(103, 114, "t₀：初一合朔时刻", 11.0, BLUE, "middle", weight="700"))
+        els.append(txt(180, 115, "+", 14, INK, "middle", weight="700"))
+        els.append(card(192, 96, 248, 28, rx=5, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(316, 114, "真实朔望月 = 29 整天 + Δh 小时 (6.4–20.2h)", 10.9, ORANGE, "middle", weight="700"))
+        els.append(txt(454, 115, "vs", 12, MUTED, "middle", weight="700"))
+        els.append(card(470, 96, 254, 28, rx=5, fill="#fef2f2", stroke="#dc2626", sw=1.3))
+        els.append(txt(597, 114, "第 30 天午夜红线：t₀ + Δh = 24.0 小时", 11.0, "#b91c1c", "middle", weight="700"))
+
+        els.append(
+            txt(
+                36,
+                146,
+                "• 若 t₀ + Δh < 24h：新月落回第 30 天内 → 第 30 天直接变成“正月初一”，腊月只剩 29 天（除夕为腊月廿九）！",
+                11.0,
+                BODY,
+            )
+        )
+        els.append(
+            txt(
+                36,
+                166,
+                "• 若 t₀ + Δh ≥ 24h：新月跨过午夜进入第 31 天 → 第 30 天顺利留给腊月，迎来“大年三十”（如 2030 年）！",
+                11.0,
+                GREEN,
+                weight="600",
+            )
+        )
+
+        # Bottom panel: 6-year exact stacked bars
+        els.append(card(20, 192, 720, 248))
+        els.append(
+            txt(
+                36,
+                215,
+                "② 2025—2030 连续六年腊月实算对表（东八区北京时间，注意 2027 差 4 分钟与 2030 跨 8 分钟！）",
+                PANEL_TITLE,
+                INK,
+                weight="700",
+            )
+        )
+
+        ox = 182.0
+        scale = 12.2  # px per hour (24h -> 292.8px, x_mid = 474.8)
+        x_mid = ox + 24.0 * scale
+
+        # Hour axis gridlines (0, 6, 12, 18, 24h)
+        for hr in (0, 6, 12, 18):
+            hx = ox + hr * scale
+            els.append(f'<line x1="{hx:.1f}" y1="230" x2="{hx:.1f}" y2="394" stroke="{SLATE_SOFT}" stroke-width="1"/>')
+            els.append(txt(hx, 409, f"{hr}h", 10.5, MUTED, "middle"))
+
+        for idx, (label, dt1, dt2, cal_days, t0_h, delta_h, total_h) in enumerate(computed):
+            ry = 236 + idx * 26
+            is_30 = cal_days == 30
+            els.append(txt(34, ry + 15, label, 10.8, INK if not is_30 else GREEN, weight="700" if is_30 else "600"))
+
+            w1 = t0_h * scale
+            w2 = delta_h * scale
+            els.append(f'<rect x="{ox:.1f}" y="{ry + 3}" width="{w1:.1f}" height="16" rx="2" fill="{BLUE}"/>')
+            els.append(
+                f'<rect x="{ox + w1:.1f}" y="{ry + 3}" width="{w2:.1f}" height="16" rx="2" '
+                f'fill="{GREEN if is_30 else ORANGE}" opacity="0.88"/>'
+            )
+            if w1 > 42:
+                els.append(txt(ox + w1 / 2, ry + 15, f"{t0_h:.1f}h", 10.2, "#ffffff", "middle", weight="700"))
+            els.append(txt(ox + w1 + w2 / 2, ry + 15, f"+{delta_h:.1f}h", 10.2, "#ffffff", "middle", weight="700"))
+
+            # Verdict text on right (safely inside x <= 732)
+            if idx == 2:
+                verdict = f"初一 {dt2:%m/%d %H:%M}（差4分·廿九除夕）"
+                vcol = "#b91c1c"
+            elif is_30:
+                verdict = f"初一 {dt2:%m/%d %H:%M}（跨8分·有年三十）"
+                vcol = GREEN
+            else:
+                verdict = f"初一 {dt2:%m/%d %H:%M}（腊月29天·无三十）"
+                vcol = BODY
+            els.append(txt(500, ry + 15, verdict, 10.6, vcol, weight="700" if idx in (2, 5) else "600"))
+
+        # Red midnight threshold line drawn on top of bars
+        els.append(
+            f'<line x1="{x_mid:.1f}" y1="226" x2="{x_mid:.1f}" y2="395" stroke="#dc2626" stroke-width="2" stroke-dasharray="5 3"/>'
+        )
+        els.append(txt(x_mid, 409, "24h 午夜线", 10.6, "#dc2626", "middle", weight="700"))
+
+        # Legend on dedicated bottom row (zero collision with 0h..24h axis labels)
+        els.append(f'<rect x="34" y="420" width="10" height="10" rx="2" fill="{BLUE}"/>')
+        els.append(txt(48, 429, "t₀：腊月初一合朔时刻", 10.5, MUTED))
+        els.append(f'<rect x="184" y="420" width="10" height="10" rx="2" fill="{ORANGE}"/>')
+        els.append(txt(198, 429, "Δh：当月真实朔望月超出 29 天的小时数", 10.5, MUTED))
+        els.append(f'<rect x="430" y="420" width="10" height="10" rx="2" fill="{GREEN}"/>')
+        els.append(txt(444, 429, "绿色：t₀ + Δh ≥ 24h（保住大年三十）", 10.5, MUTED))
+
+        return figure(
+            452,
+            "2025至2029连续五年无大年三十与2030年回归的定朔时刻计算图",
+            "上图展示腊月初一合朔时刻t0加当月真实朔望月余时Δh与24小时午夜分界线的关系；下图实算2025至2029年总和均小于24小时（2027年23:56仅差4分钟），故连续五年除夕为腊月廿九，直至2030年00:08跨过午夜迎来大年三十。",
+            els,
+        )
+
+    def _build_ecliptic_24_solarterms():
+        """SVG 3: Computed 24 solar terms along elliptical orbit + step-duration wave."""
+        terms_meta = [
+            (0, "春分", True),
+            (15, "清明", False),
+            (30, "谷雨", True),
+            (45, "立夏", False),
+            (60, "小满", True),
+            (75, "芒种", False),
+            (90, "夏至", True),
+            (105, "小暑", False),
+            (120, "大暑", True),
+            (135, "立秋", False),
+            (150, "处暑", True),
+            (165, "白露", False),
+            (180, "秋分", True),
+            (195, "寒露", False),
+            (210, "霜降", True),
+            (225, "立冬", False),
+            (240, "小雪", True),
+            (255, "大雪", False),
+            (270, "冬至", True),
+            (285, "小寒", False),
+            (300, "大寒", True),
+            (315, "立春", False),
+            (330, "雨水", True),
+            (345, "惊蛰", False),
+        ]
+
+        jd_base = 2460755.0  # 2025 Vernal Equinox
+        jds = [_find_solar_term_jd(deg, jd_base + idx * 15.22) for idx, (deg, _, _) in enumerate(terms_meta)]
+        jds.append(_find_solar_term_jd(0, jd_base + 365.2422))
+        durations = [jds[i + 1] - jds[i] for i in range(24)]
+
+        assert 14.70 < min(durations) < 14.75  # near perihelion (冬至-小寒-大寒)
+        assert 15.70 < max(durations) < 15.76  # near aphelion (夏至-小暑-大暑)
+        assert math.isclose(sum(durations), 365.242, abs_tol=0.02)
+
+        els = header(
+            "黄道二十四节气：藏在农历里的“纯太阳角度坐标”",
+            "现代“定气法”按太阳视黄经每 15° 切一格；地球过近日点快、远日点慢，使相邻节气在 14.72–15.73 天间伸缩",
+        )
+
+        # Left panel: Elliptical ecliptic wheel with all 24 terms
+        els.append(card(20, 62, 430, 368))
+        els.append(txt(36, 85, "① 地球公转黄道圈：12 中气（●）与 12 节气（○）交错", PANEL_TITLE, INK, weight="700"))
+
+        cx, cy = 235.0, 244.0
+        rx, ry = 128.0, 118.0
+        # Exaggerated visual focus shift toward perihelion (~283 deg, between 冬至 270° and 大寒 300°)
+        peri_rad = math.radians(283.0)
+        sun_x = cx + 26.0 * math.cos(peri_rad)
+        sun_y = cy - 26.0 * math.sin(peri_rad)
+
+        # Major/minor axes & apsides line
+        ap_x1, ap_y1 = cx + rx * math.cos(peri_rad), cy - ry * math.sin(peri_rad)
+        ap_x2, ap_y2 = cx - rx * math.cos(peri_rad), cy + ry * math.sin(peri_rad)
+        els.append(
+            f'<line x1="{ap_x2:.1f}" y1="{ap_y2:.1f}" x2="{ap_x1:.1f}" y2="{ap_y1:.1f}" '
+            f'stroke="{ORANGE}" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.65"/>'
+        )
+        els.append(f'<line x1="{cx - rx}" y1="{cy}" x2="{cx + rx}" y2="{cy}" stroke="{SLATE_SOFT}" stroke-width="1"/>')
+        els.append(f'<line x1="{cx}" y1="{cy - ry}" x2="{cx}" y2="{cy + ry}" stroke="{SLATE_SOFT}" stroke-width="1"/>')
+
+        # Orbit ellipse
+        els.append(
+            f'<ellipse cx="{cx}" cy="{cy}" rx="{rx}" ry="{ry}" fill="none" stroke="{BLUE_LINE}" stroke-width="2"/>'
+        )
+
+        # Off-center Sun
+        els.append(f'<circle cx="{sun_x:.1f}" cy="{sun_y:.1f}" r="14" fill="#fde047" stroke="{ORANGE}" stroke-width="1.6"/>')
+        els.append(txt(sun_x, sun_y + 4, "太阳", 10.5, INK, "middle", weight="700"))
+
+        # Perihelion & Aphelion callouts inside orbit
+        els.append(txt(cx - 24, cy - 68, "7月初远日点(最慢)", 10.5, GREEN, "middle", weight="700", halo=True))
+        els.append(txt(cx - 24, cy - 53, "每15°需 15.73 天", 10.4, GREEN, "middle", halo=True))
+        els.append(txt(cx + 12, cy + 78, "1月初近日点(最快)", 10.5, ORANGE, "middle", weight="700", halo=True))
+        els.append(txt(cx + 12, cy + 93, "每15°仅 14.72 天", 10.4, ORANGE, "middle", halo=True))
+
+        # 24 solar term points and labels
+        for deg, name, is_zhongqi in terms_meta:
+            rad = math.radians(deg)
+            px = cx + rx * math.cos(rad)
+            py = cy - ry * math.sin(rad)
+            # Subtle ray from orbit inward
+            ix = cx + (rx - 9) * math.cos(rad)
+            iy = cy - (ry - 9) * math.sin(rad)
+            els.append(f'<line x1="{ix:.1f}" y1="{iy:.1f}" x2="{px:.1f}" y2="{py:.1f}" stroke="#94a3b8" stroke-width="1"/>')
+
+            is_cardinal = deg in (0, 90, 180, 270)
+            if is_zhongqi:
+                dot_col = ORANGE if is_cardinal else BLUE
+                r_dot = 5.0 if is_cardinal else 4.0
+                els.append(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="{r_dot}" fill="{dot_col}"/>')
+            else:
+                els.append(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="3.6" fill="#ffffff" stroke="{SLATE}" stroke-width="1.4"/>')
+
+            # Place label cleanly outside ellipse
+            lx = cx + (rx + 26) * math.cos(rad)
+            ly = cy - (ry + 22) * math.sin(rad) + 4.0
+            lbl = f"{name}({deg}°)" if is_cardinal else name
+            col = ORANGE if is_cardinal else (BLUE if is_zhongqi else BODY)
+            wt = "700" if is_zhongqi else None
+            els.append(txt(lx, ly, lbl, 10.6, col, "middle", weight=wt, halo=True))
+
+        els.append(
+            txt(
+                235,
+                416,
+                "注：轨道扁率与太阳偏心放大示意（真实 e = 0.0167）；● 12 中气，○ 12 节气",
+                10.5,
+                MUTED,
+                "middle",
+            )
+        )
+
+        # Right panel: Computed interval curve + Pingqi vs Dingqi explanation
+        els.append(card(462, 62, 278, 368))
+        els.append(txt(478, 85, "② 相邻节气真实天数（2025 实算）", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(478, 104, "平气均分 15.22 天 vs 定气按黄经 15° 实测：", 10.8, MUTED))
+
+        gx, gy, gw, gh = 512.0, 234.0, 210.0, 104.0
+        y_min, y_max = 14.5, 15.9
+        for yv in (14.7, 15.2, 15.7):
+            py = gy - ((yv - y_min) / (y_max - y_min)) * gh
+            dash = ' stroke-dasharray="4 3"' if abs(yv - 15.2) < 0.05 else ""
+            scol = ORANGE if abs(yv - 15.2) < 0.05 else SLATE_SOFT
+            els.append(f'<line x1="{gx}" y1="{py:.1f}" x2="{gx + gw}" y2="{py:.1f}" stroke="{scol}" stroke-width="1.1"{dash}/>')
+            els.append(txt(gx - 6, py + 4, f"{yv:.1f}d", 10.4, ORANGE if dash else MUTED, "end"))
+
+        els.append(f'<path d="M{gx},{gy - gh:.1f} V{gy} H{gx + gw}" fill="none" stroke="#94a3b8" stroke-width="1.2"/>')
+        for idx_t, t_lbl, anc in ((0, "春分", "start"), (6, "夏至", "middle"), (12, "秋分", "middle"), (18, "冬至", "middle"), (23, "惊蛰", "end")):
+            tx = gx + (idx_t / 23.0) * gw
+            els.append(txt(tx, gy + 16, t_lbl, 10.4, MUTED, anc))
+
+        pts = []
+        for i, d_val in enumerate(durations):
+            px = gx + (i / 23.0) * gw
+            py = gy - ((d_val - y_min) / (y_max - y_min)) * gh
+            pts.append((px, py))
+        d_str = "M" + " L".join(f"{x:.1f},{y:.1f}" for x, y in pts)
+        els.append(f'<path d="{d_str}" fill="none" stroke="{BLUE}" stroke-width="2.3"/>')
+        # Highlight peak (idx 6: 夏至->小暑) and trough (idx 18: 冬至->小寒)
+        els.append(f'<circle cx="{pts[6][0]:.1f}" cy="{pts[6][1]:.1f}" r="4.2" fill="{GREEN}"/>')
+        els.append(txt(pts[6][0] + 6, pts[6][1] - 5, "最长 15.73 天", 10.5, GREEN, "start", weight="700", halo=True))
+        els.append(f'<circle cx="{pts[18][0]:.1f}" cy="{pts[18][1]:.1f}" r="4.2" fill="{ORANGE}"/>')
+        els.append(txt(pts[18][0] - 6, pts[18][1] + 15, "最短 14.72 天", 10.5, ORANGE, "end", weight="700", halo=True))
+
+        # Two concise insight cards below graph
+        els.append(card(476, 264, 250, 72, rx=8, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(488, 283, "为什么清明总在公历 4 月 4–5 日？", 11.2, BLUE, weight="700"))
+        els.append(txt(488, 302, "节气本质是纯阳历角度（清明 = 15°），跟", 10.6, BODY))
+        els.append(txt(488, 320, "公历回归年锁死；在农历里却会乱跳廿多天。", 10.6, BODY))
+
+        els.append(card(476, 346, 250, 72, rx=8, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(488, 365, "1645《时宪历》：平气法 → 定气法", 11.2, ORANGE, weight="700"))
+        els.append(txt(488, 384, "古用平气（等时间 15.22 天）；改定气（等黄经", 10.6, BODY))
+        els.append(txt(488, 402, "15°）后，直接造就了夏多闰月、冬罕闰月。", 10.6, BODY))
+
+        return figure(
+            444,
+            "黄道二十四节气定气法15度划分与近日点远日点时间间隔实算图",
+            "左图展示地球绕太阳椭圆轨道上每隔黄经15度划分二十四节气（12中气与12节气交错）；右图实算2025年各节气间隔从近日点14.72天到远日点15.73天的变化曲线及平气改定气的历法影响。",
+            els,
+        )
+
+    def _build_eclipse_5deg_nodes():
+        """SVG 4: 5.145° orbital tilt + eclipse nodes + total/annular + red lunar eclipse."""
+        inc_deg = 5.145
+        r_moon_mean_km = 384400.0
+        max_z_km = r_moon_mean_km * math.sin(math.radians(inc_deg))
+        earth_diam_km = 12742.0
+        assert 34000.0 < max_z_km < 35000.0 and max_z_km > 2.5 * earth_diam_km
+
+        # Apparent angular diameters (arcminutes): d_arcmin = 2 * asin(R / dist) * 60 * 180/pi
+        r_moon_km = 1737.4
+        ang_perigee = math.degrees(2 * math.asin(r_moon_km / 356400.0)) * 60.0
+        ang_apogee = math.degrees(2 * math.asin(r_moon_km / 406700.0)) * 60.0
+        assert 33.4 < ang_perigee < 33.6 and 29.3 < ang_apogee < 29.5
+
+        els = header(
+            "日月食的几何关卡：5.14° 黄白交角、伪本影金环与红月亮",
+            "白道与黄道斜交使多数朔望错开影锥；月球椭圆距离变化决定日全食与日环食（尺度与倾角为教学示意）",
+        )
+
+        # Top panel: 5.14° inclination & 2 eclipse seasons
+        els.append(card(20, 62, 720, 178))
+        els.append(txt(36, 85, "① 为什么不是每月初一日食、每月十五月食？—— 5.14° 黄白交角与“食季”", PANEL_TITLE, INK, weight="700"))
+
+        scx, scy = 380.0, 158.0
+        erx, ery = 148.0, 42.0
+        # Ecliptic orbit ellipse
+        els.append(
+            f'<ellipse cx="{scx}" cy="{scy}" rx="{erx}" ry="{ery}" fill="#f8fafc" stroke="{BLUE_LINE}" stroke-width="1.6"/>'
+        )
+        # Line of nodes across left-right stations (through Sun)
+        els.append(
+            f'<line x1="{scx - 190}" y1="{scy}" x2="{scx + 190}" y2="{scy}" stroke="{GREEN}" stroke-width="1.4" stroke-dasharray="6 4"/>'
+        )
+        els.append(f'<circle cx="{scx}" cy="{scy}" r="15" fill="#fde047" stroke="{ORANGE}" stroke-width="1.6"/>')
+        els.append(txt(scx, scy + 4, "太阳", 10.5, INK, "middle", weight="700"))
+        els.append(txt(scx, scy + 29, "黄道面（地球公转平面）", 10.3, BLUE, "middle", weight="600", halo=True))
+
+        # Helper to draw tilted lunar orbit with constant orientation in space!
+        def _lunar_ring(ex, ey, hit_node=False):
+            col = GREEN if hit_node else ORANGE
+            els.append(
+                f'<g transform="translate({ex:.1f},{ey:.1f}) rotate(-18)">'
+                f'<ellipse cx="0" cy="0" rx="30" ry="10" fill="none" stroke="{col}" stroke-width="1.6"/>'
+                f"</g>"
+            )
+            els.append(f'<circle cx="{ex:.1f}" cy="{ey:.1f}" r="6" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.5"/>')
+
+        # Left & Right stations: Eclipse seasons (Sun aligned with node line!)
+        _lunar_ring(scx - erx, scy, hit_node=True)
+        els.append(f'<circle cx="{scx - erx + 28.5:.1f}" cy="{scy:.1f}" r="3.6" fill="{GREEN}"/>')
+        els.append(f'<circle cx="{scx - erx - 28.5:.1f}" cy="{scy:.1f}" r="3.6" fill="{GREEN}"/>')
+        els.append(txt(36, 132, "食季①（过交点）", 11.0, GREEN, "start", weight="700"))
+        els.append(txt(36, 150, "朔望恰落黄白交点", 10.5, BODY, "start"))
+        els.append(txt(36, 168, "→ 初一日食 / 十五月食", 10.5, GREEN, "start", weight="700"))
+
+        _lunar_ring(scx + erx, scy, hit_node=True)
+        els.append(f'<circle cx="{scx + erx - 28.5:.1f}" cy="{scy:.1f}" r="3.6" fill="{GREEN}"/>')
+        els.append(f'<circle cx="{scx + erx + 28.5:.1f}" cy="{scy:.1f}" r="3.6" fill="{GREEN}"/>')
+        els.append(txt(724, 132, "食季②（约半年后）", 11.0, GREEN, "end", weight="700"))
+        els.append(txt(724, 150, "交点线再次对准太阳", 10.5, BODY, "end"))
+        els.append(txt(724, 168, "→ 每年约 2 个食季", 10.5, GREEN, "end", weight="700"))
+
+        # Top & Bottom stations: Non-eclipse months (Moon passes ~34,500 km above/below shadow)
+        _lunar_ring(scx, scy - ery, hit_node=False)
+        els.append(f'<circle cx="{scx:.1f}" cy="{scy - ery + 9.5:.1f}" r="3.5" fill="{ORANGE}"/>')
+        els.append(txt(scx + 38, scy - ery - 3, "非食季：偏离黄道 ±5.14°（约3.4万km），影锥擦过", 10.5, ORANGE, "start", weight="600", halo=True))
+
+        _lunar_ring(scx, scy + ery, hit_node=False)
+        els.append(f'<circle cx="{scx:.1f}" cy="{scy + ery - 9.5:.1f}" r="3.5" fill="{ORANGE}"/>')
+        els.append(txt(36, 226, "注：交点线受太阳摄动每年西退约 19.3°，故两食季间隔约 173.3 天（比半年略短）", 10.5, MUTED))
+
+        # Bottom-Left panel: Total vs Annular Solar Eclipse
+        els.append(card(20, 252, 354, 192))
+        els.append(txt(36, 275, "② 日全食 vs 日环食：月球远近改写影锥", PANEL_TITLE, INK, weight="700"))
+
+        # Subcase A: Perigee Total Eclipse (y=318)
+        y_tot = 318.0
+        els.append(f'<circle cx="52" cy="{y_tot}" r="14" fill="#fde047" stroke="{ORANGE}" stroke-width="1.3"/>')
+        # Penumbra & Umbra reaching Earth (x=206)
+        els.append(f'<polygon points="132,{y_tot - 7} 206,{y_tot - 17} 206,{y_tot + 17} 132,{y_tot + 7}" fill="#e2e8f0" opacity="0.7"/>')
+        els.append(f'<polygon points="132,{y_tot - 6} 206,{y_tot - 1.5} 206,{y_tot + 1.5} 132,{y_tot + 6}" fill="#1e293b"/>')
+        els.append(f'<circle cx="132" cy="{y_tot}" r="6.2" fill="#475569"/>')
+        els.append(f'<circle cx="212" cy="{y_tot}" r="11" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.5"/>')
+        els.append(txt(234, y_tot - 6, "近地点（≈35.6万km，33.5′）", 10.6, BLUE, weight="700"))
+        els.append(txt(234, y_tot + 11, "本影锥触地 → 日全食(见日冕)", 10.5, BODY))
+
+        # Subcase B: Apogee Annular Eclipse (y=386)
+        y_ann = 386.0
+        els.append(f'<circle cx="52" cy="{y_ann}" r="14" fill="#fde047" stroke="{ORANGE}" stroke-width="1.3"/>')
+        # Umbra ends early at x=178; Antumbra expands to Earth at x=212
+        els.append(f'<polygon points="118,{y_ann - 6} 212,{y_ann - 18} 212,{y_ann + 18} 118,{y_ann + 6}" fill="#e2e8f0" opacity="0.7"/>')
+        els.append(f'<polygon points="118,{y_ann - 5.5} 178,{y_ann} 118,{y_ann + 5.5}" fill="#1e293b"/>')
+        els.append(f'<polygon points="178,{y_ann} 212,{y_ann - 4.5} 212,{y_ann + 4.5}" fill="{ORANGE_SOFT}" stroke="{ORANGE}" stroke-width="0.9"/>')
+        els.append(f'<circle cx="118" cy="{y_ann}" r="5.6" fill="#475569"/>')
+        els.append(f'<circle cx="218" cy="{y_ann}" r="11" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.5"/>')
+        els.append(txt(234, y_ann - 6, "远地点（≈40.7万km，29.4′）", 10.6, ORANGE, weight="700"))
+        els.append(txt(234, y_ann + 11, "伪本影触地 → 日环食(金环)", 10.5, BODY))
+        els.append(txt(36, 430, "太阳视直径约 31.6′–32.7′，恰卡在月球最大与最小视直径之间！", 10.4, MUTED))
+
+        # Bottom-Right panel: Total Lunar Eclipse & Red Moon refraction
+        els.append(card(386, 252, 354, 192))
+        els.append(txt(402, 275, "③ 月全食“红月亮”：地球大气层的散射折射", PANEL_TITLE, INK, weight="700"))
+
+        ly = 348.0
+        # Sun on left
+        els.append(f'<circle cx="420" cy="{ly}" r="16" fill="#fde047" stroke="{ORANGE}" stroke-width="1.4"/>')
+        els.append(txt(420, ly + 4, "太阳", 10.4, INK, "middle", weight="700"))
+
+        # Earth's penumbra & umbra cones
+        els.append(f'<polygon points="520,{ly - 17} 716,{ly - 34} 716,{ly + 34} 520,{ly + 17}" fill="#f1f5f9"/>')
+        els.append(f'<polygon points="520,{ly - 16} 716,{ly - 9} 716,{ly + 9} 520,{ly + 16}" fill="#fce7e2" opacity="0.85"/>')
+
+        # Refracted red rays bending through Earth's atmosphere to the Moon at x=668
+        els.append(
+            f'<path d="M436,{ly - 12} L520,{ly - 19} L668,{ly - 3}" fill="none" stroke="#dc2626" stroke-width="1.6"/>'
+        )
+        els.append(
+            f'<path d="M436,{ly + 12} L520,{ly + 19} L668,{ly + 3}" fill="none" stroke="#dc2626" stroke-width="1.6"/>'
+        )
+        # Scattered short blue rays at Earth's limb
+        els.append(
+            f'<path d="M520,{ly - 19} L542,{ly - 36}" fill="none" stroke="{BLUE}" stroke-width="1.3" stroke-dasharray="3 2"/>'
+        )
+        els.append(
+            f'<path d="M520,{ly + 19} L542,{ly + 36}" fill="none" stroke="{BLUE}" stroke-width="1.3" stroke-dasharray="3 2"/>'
+        )
+
+        # Earth + atmosphere ring
+        els.append(f'<circle cx="520" cy="{ly}" r="20" fill="none" stroke="#93c5fd" stroke-width="3.5"/>')
+        els.append(f'<circle cx="520" cy="{ly}" r="16" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.5"/>')
+        els.append(txt(520, ly + 4, "地球", 10.4, BLUE, "middle", weight="700"))
+
+        # Copper-red Moon inside Earth's umbra
+        els.append(f'<circle cx="668" cy="{ly}" r="9.5" fill="#b93829" stroke="#7f1d1d" stroke-width="1.4"/>')
+        els.append(txt(668, ly - 15, "本影内红月亮", 10.6, "#991b1b", "middle", weight="700", halo=True))
+
+        els.append(txt(552, ly - 32, "蓝紫短波被大气散射滤除", 10.4, BLUE, "start", weight="600", halo=True))
+        els.append(txt(402, 408, "• 地球本影比月球宽得多，背日夜半球整片可见月食（持续数小时）", 10.4, BODY))
+        els.append(txt(402, 428, "• 红橙长波经地球大气折射入本影，故全食月亮呈暗铜红色而非全黑", 10.4, "#991b1b", weight="600"))
+
+        return figure(
+            458,
+            "黄白交角5.14度食季原理与日全食日环食及月全食红月亮几何成因图",
+            "上图展示白道面相对黄道面倾斜5.14度，仅在半年一次的黄白交点食季才发生交食；左下对比月球近地点日全食与远地点伪本影日环食；右下展示地球大气散射蓝光并折射红光形成暗红月全食。",
+            els,
+        )
+
+    def _build_saros_resonance_lock():
+        """SVG 5: Saros 223 synodic ≈ 242 draconic ≈ 239 anomalistic + 120° shift."""
+        t_syn = 29.530589
+        t_dra = 27.212221
+        t_ano = 27.554550
+
+        d_syn = 223 * t_syn
+        d_dra = 242 * t_dra
+        d_ano = 239 * t_ano
+
+        diff_dra_min = (d_dra - d_syn) * 1440.0
+        diff_ano_hr = (d_ano - d_syn) * 24.0
+        west_shift_deg = (d_syn - int(d_syn)) * 360.0
+
+        assert math.isclose(d_syn, 6585.3213, abs_tol=0.002)
+        assert 50.0 < diff_dra_min < 54.0
+        assert 5.1 < diff_ano_hr < 5.3
+        assert 115.0 < west_shift_deg < 117.0  # ~116° (~120° westward shift)
+
+        els = header(
+            "沙罗周期（Saros）：三种“月”在 6585.32 天上的三重共振奇迹",
+            "223 朔望月 ≈ 242 交点月 ≈ 239 近点月 ≈ 18 年 11 天 8 小时；多出的约 8 小时使日食带每次西移约 120°",
+        )
+
+        # Top panel: Three rulers locking onto 6585.32 days
+        els.append(card(20, 62, 720, 178))
+        els.append(txt(36, 85, "① 决定交食的三把天文周期尺，在 18 年 11 天 8 小时处几乎严丝合缝！", PANEL_TITLE, INK, weight="700"))
+
+        tracks = [
+            (
+                "223 个朔望月",
+                "29.53059d × 223",
+                f"{d_syn:.3f} 天",
+                "基准 0 分（锁死朔/望）",
+                0.0,
+                BLUE,
+                BLUE_SOFT,
+                22,
+            ),
+            (
+                "242 个交点月",
+                "27.21222d × 242",
+                f"{d_dra:.3f} 天",
+                f"+{diff_dra_min:.0f} 分钟（锁死食季交点）",
+                d_dra - d_syn,
+                GREEN,
+                GREEN_SOFT,
+                24,
+            ),
+            (
+                "239 个近点月",
+                "27.55455d × 239",
+                f"{d_ano:.3f} 天",
+                f"+{diff_ano_hr:.1f} 小时（锁死地月远近）",
+                d_ano - d_syn,
+                ORANGE,
+                ORANGE_SOFT,
+                24,
+            ),
+        ]
+
+        rx0 = 246.0
+        lock_x = 446.0
+        for idx, (t_name, t_mul, t_tot, t_note, rem_d, fg, bg, n_ticks) in enumerate(tracks):
+            ry = 100 + idx * 44
+            els.append(pill(36, ry + 4, t_name, fg=fg, bg=bg, w=102, h=22, size=10.8))
+            els.append(txt(144, ry + 19, t_mul, 10.4, MUTED))
+
+            # Ruler bar from rx0 to lock_x + magnified residual (1 day = 65px for residual zoom)
+            end_x = lock_x + rem_d * 65.0
+            els.append(
+                f'<rect x="{rx0}" y="{ry + 7}" width="{end_x - rx0:.1f}" height="16" rx="3" fill="{bg}" stroke="{fg}" stroke-width="1.3"/>'
+            )
+            for ti in range(1, n_ticks):
+                tx = rx0 + (ti / n_ticks) * (lock_x - rx0)
+                els.append(f'<line x1="{tx:.1f}" y1="{ry + 7}" x2="{tx:.1f}" y2="{ry + 14}" stroke="{fg}" stroke-width="0.9" opacity="0.55"/>')
+
+            els.append(txt(end_x + 8, ry + 19, f"= {t_tot}｜{t_note}", 10.6, fg if idx > 0 else INK, weight="700"))
+
+        # Vertical resonance lock line
+        els.append(
+            f'<line x1="{lock_x}" y1="94" x2="{lock_x}" y2="222" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="5 3"/>'
+        )
+        els.append(txt(lock_x, 234, f"共振锁死线 {d_syn:.3f} 天（右侧残差放大显示）", 10.4, "#dc2626", "middle", weight="700"))
+
+        # Bottom-Left panel: +0.322 day (~8h) -> 120° westward shift & 3-Saros Exeligmos
+        els.append(card(20, 252, 368, 174))
+        els.append(txt(36, 275, "② 尾数 0.322 天（≈8 小时）：日食带西移 120°", PANEL_TITLE, INK, weight="700"))
+
+        ecx, ecy, er = 96.0, 354.0, 42.0
+        els.append(f'<circle cx="{ecx}" cy="{ecy}" r="{er}" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.6"/>')
+        els.append(f'<circle cx="{ecx}" cy="{ecy}" r="3" fill="{INK}"/>')
+        els.append(txt(ecx, ecy + 15, "北极俯视", 10.2, MUTED, "middle"))
+
+        pts_3 = [
+            (90, "第0轮", BLUE),
+            (210, "第1轮(-120°)", ORANGE),
+            (330, "第2轮(-240°)", PURPLE),
+        ]
+        for ang, lbl, col in pts_3:
+            rad = math.radians(ang)
+            px = ecx + er * math.cos(rad)
+            py = ecy - er * math.sin(rad)
+            els.append(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="5" fill="{col}"/>')
+
+        els.append(txt(ecx, ecy - er - 9, "第0轮 / 第3轮回归", 10.3, BLUE, "middle", weight="700"))
+        els.append(txt(ecx - 38, ecy + er + 14, "+1沙罗", 10.3, ORANGE, "middle", weight="700"))
+        els.append(txt(ecx + 38, ecy + er + 14, "+2沙罗", 10.3, PURPLE, "middle", weight="700"))
+
+        els.append(txt(168, 306, "• 地球多自转约 7 小时 43 分（≈116°–120°）", 10.6, BODY))
+        els.append(txt(168, 327, "• 下一次同族日食落向西边约 1/3 个地球", 10.6, BODY))
+        els.append(txt(168, 348, "• 满 3 轮沙罗（54 年 33–34 天，“转轮周期”）", 10.6, GREEN, weight="700"))
+        els.append(txt(168, 368, "  累计多转满一整圈，日食才回到同一经度区！", 10.6, GREEN, weight="600"))
+        els.append(txt(168, 394, "• 月食因夜半球皆可见，单轮沙罗更易异地同观", 10.4, MUTED))
+
+        # Bottom-Right panel: Finite Saros lifetime & Chinese Santong Calendar 135-month cycle
+        els.append(card(400, 252, 340, 174))
+        els.append(txt(416, 275, "③ 沙罗家族的寿命与中西古历“食周”", PANEL_TITLE, INK, weight="700"))
+
+        els.append(card(414, 292, 312, 56, rx=7, fill=PURPLE_SOFT, stroke=PURPLE))
+        els.append(txt(426, 311, "为什么一族沙罗不会永远循环下去？", 11.0, PURPLE, weight="700"))
+        els.append(txt(426, 330, "52 分钟残差使交点每次微移约 0.5°（影轴南北移 ~300km），", 10.4, BODY))
+        els.append(txt(426, 344, "每族历经 1226–1550 年（约 70–85 次食）后从两极谢幕。", 10.4, BODY))
+
+        els.append(card(414, 358, 312, 56, rx=7, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(426, 377, "中国古历独立推算的共振：135 月“食周”与交点月", 11.0, GREEN, weight="700"))
+        els.append(txt(426, 396, "西汉《三统历》定 135 朔望月 = 23 食季（146.5 交点月）；", 10.4, BODY))
+        els.append(txt(426, 410, "462 年祖冲之《大明历》测交点月 27.21223 天，仅差 0.9 秒！", 10.4, BODY))
+
+        return figure(
+            440,
+            "沙罗周期223朔望月242交点月239近点月三重共振与120度西移机制图",
+            "上图对比223个朔望月6585.322天、242个交点月6585.357天与239个近点月6585.538天的精密咬合；左下解释0.322天尾数导致日食带每次西移约120度、3轮54年回归原地；右下说明沙罗序列有限寿命与中国古历食周及大明历交点月精度。",
+            els,
+        )
+
+    @register("calendar-astronomy", "农历公历置闰筛法、连续无大年三十、黄道二十四节气、黄白交角交食与沙罗共振", "mechanics_sky")
+    def build_calendar_astronomy():
+        write_svg(SUBDIR, "gregorian-leap-sieve.svg", _build_gregorian_leap_sieve())
+        write_svg(SUBDIR, "continuous-no-30-chuxi.svg", _build_continuous_no_30_chuxi())
+        write_svg(SUBDIR, "ecliptic-24-solarterms.svg", _build_ecliptic_24_solarterms())
+        write_svg(SUBDIR, "eclipse-5deg-nodes.svg", _build_eclipse_5deg_nodes())
+        write_svg(SUBDIR, "saros-resonance-lock.svg", _build_saros_resonance_lock())
+
+
+_register_calendar_astronomy()

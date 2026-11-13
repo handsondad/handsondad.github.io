@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="412" viewBox="0 0 760 412" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">睡眠剥夺导致杏仁核反应飙升60%及亲子神经共同调节机制图</title>
+<desc id="desc">左图根据Yoo等2007年Current Biology研究展示睡眠剥夺使内侧前额叶刹车断联、杏仁核对负性刺激反应增强60%；右图通过唤醒曲线对比失控正反馈与大人先降温再带动宝宝平复的共同调节过程。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  .trace-line {
+        stroke-dasharray: 1;
+        stroke-dashoffset: 0;
+        animation: drawLine 1.4s ease-out 1 both;
+      }
+      @keyframes drawLine {
+        from { stroke-dashoffset: 1; }
+        to { stroke-dashoffset: 0; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .trace-line { animation: none; }
+      }
+</style>
+<rect x="0.5" y="0.5" width="759" height="411" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">缺觉不是脾气差：睡眠剥夺下的“杏仁核飙升 + 刹车断联”与共同调节</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左图据 Yoo, Walker 等（2007, Current Biology）fMRI 数据绘制；右图展示神经共同调节机制。</text>
+<rect x="20" y="64" width="352" height="332" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="88" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 缺觉大脑发生了什么？（Yoo 等 2007）</text>
+<rect x="34" y="102" width="156" height="118" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="112" y="120" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="700">睡眠充足组（n=12）</text>
+<rect x="48" y="130" width="128" height="28" rx="6" fill="#ffffff" stroke="#18794e" stroke-width="1.3"/>
+<text x="112" y="148" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="600">mPFC 内侧前额叶</text>
+<line x1="112.0" y1="158.0" x2="112.0" y2="178.0" stroke="#18794e" stroke-width="2.6" marker-end="url(#arr-green)"/>
+<text x="120" y="172" font-size="9.6" fill="#18794e" text-anchor="start" font-weight="700">强抑制连接</text>
+<rect x="54" y="182" width="116" height="28" rx="14" fill="#ffffff" stroke="#475569" stroke-width="1"/>
+<text x="112" y="200" font-size="10.0" fill="#1e293b" text-anchor="middle" font-weight="600">杏仁核：受控 1.0×</text>
+<rect x="202" y="102" width="156" height="118" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="280" y="120" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="700">睡眠剥夺组（n=14）</text>
+<rect x="216" y="130" width="128" height="28" rx="6" fill="#ffffff" stroke="#64748b" stroke-width="1" stroke-dasharray="4 2"/>
+<text x="280" y="148" font-size="10.2" fill="#64748b" text-anchor="middle" font-weight="600">mPFC 刹车断联</text>
+<line x1="280.0" y1="158.0" x2="280.0" y2="178.0" stroke="#c25014" stroke-width="1.6" stroke-dasharray="3 3"/>
+<text x="280" y="173" font-size="12" fill="#c25014" text-anchor="middle" font-weight="700">✕</text>
+<rect x="214" y="182" width="132" height="28" rx="14" fill="#fee2e2" stroke="#c25014" stroke-width="1.6"/>
+<text x="280" y="200" font-size="10.2" fill="#c25014" text-anchor="middle" font-weight="700">杏仁核飙升 +60%！</text>
+<rect x="34" y="232" width="324" height="152" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="46" y="252" font-size="11.0" fill="#0f172a" text-anchor="start" font-weight="700">面对负性刺激时杏仁核 fMRI 反应对比：</text>
+<text x="46" y="278" font-size="10.4" fill="#475569" text-anchor="start" font-weight="600">充足睡眠基准</text>
+<rect x="134" y="266" width="105.0" height="16" rx="4" fill="#e7f6ee" stroke="#18794e"/>
+<text x="245.0" y="278" font-size="10.4" fill="#18794e" text-anchor="start" font-weight="700" class="mono">100% (1.0×)</text>
+<text x="46" y="304" font-size="10.4" fill="#c25014" text-anchor="start" font-weight="700">缺觉过载状态</text>
+<rect x="134" y="292" width="168.0" height="16" rx="4" fill="#fef1e8" stroke="#c25014" stroke-width="1.5"/>
+<text x="308.0" y="304" font-size="10.8" fill="#c25014" text-anchor="start" font-weight="700" class="mono">+60%</text>
+<text x="46" y="330" font-size="10.2" fill="#1e293b" text-anchor="start">• 激活体积同步扩大 +35%；叠加婴儿啼哭（300–3000 Hz</text>
+<text x="46" y="347" font-size="10.2" fill="#1e293b" text-anchor="start">  粗糙声学调制，100–200 ms 唤醒脑岛与杏仁核），</text>
+<text x="46" y="364" font-size="10.3" fill="#c25014" text-anchor="start" font-weight="700">  深夜“一秒冒火”是神经电路过载，不是你不爱孩子！</text>
+<rect x="388" y="64" width="352" height="332" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="404" y="88" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 共同调节：大人是宝宝的“外接前额叶”</text>
+<rect x="430" y="112" width="290" height="140" rx="6" fill="#f1f5f9" stroke="#cbd5e1"/>
+<text x="404" y="186.0" font-size="10.2" fill="#64748b" text-anchor="start">唤醒</text>
+<line x1="430.0" y1="226.0" x2="720.0" y2="226.0" stroke="#18794e" stroke-width="1.0" stroke-dasharray="3 3"/>
+<path d="M 430.00,182.00 L 434.83,179.54 L 439.67,177.19 L 444.50,175.04 L 449.33,173.18 L 454.17,171.66 L 459.00,170.52 L 463.83,169.78 L 468.67,169.42 L 473.50,169.40 L 478.33,169.64 L 483.17,170.06 L 488.00,170.57 L 492.83,171.05 L 497.67,171.40 L 502.50,171.54 L 507.33,171.37 L 512.17,170.85 L 517.00,169.94 L 521.83,168.63 L 526.67,166.95 L 531.50,164.96 L 536.33,162.71 L 541.17,160.30 L 546.00,157.83 L 550.83,155.40 L 555.67,153.13 L 560.50,151.10 L 565.33,149.37 L 570.17,148.02 L 575.00,147.06 L 579.83,146.49 L 584.67,146.28 L 589.50,146.38 L 594.33,146.72 L 599.17,147.19 L 604.00,147.70 L 608.83,148.13 L 613.67,148.40 L 618.50,148.42 L 623.33,148.10 L 628.17,147.41 L 633.00,146.32 L 637.83,144.85 L 642.67,143.02 L 647.50,140.90 L 652.33,138.57 L 657.17,136.12 L 662.00,133.66 L 666.83,131.29 L 671.67,129.11 L 676.50,127.21 L 681.33,125.64 L 686.17,124.46 L 691.00,123.67 L 695.83,123.27 L 700.67,123.20 L 705.50,123.42 L 710.33,123.82 L 715.17,124.32 L 720.00,124.81" fill="none" stroke="#c25014" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 4" opacity="0.85"/>
+<path d="M 430.00,142.80 L 434.83,141.69 L 439.67,140.62 L 444.50,139.64 L 449.33,138.78 L 454.17,138.09 L 459.00,137.58 L 463.83,137.28 L 468.67,137.20 L 473.50,137.35 L 478.33,137.71 L 483.17,138.27 L 488.00,139.02 L 492.83,139.91 L 497.67,140.92 L 502.50,142.01 L 507.33,144.68 L 512.17,149.46 L 517.00,153.95 L 521.83,158.16 L 526.67,162.12 L 531.50,165.83 L 536.33,169.31 L 541.17,172.58 L 546.00,175.65 L 550.83,178.53 L 555.67,181.24 L 560.50,183.78 L 565.33,186.16 L 570.17,188.40 L 575.00,190.49 L 579.83,192.46 L 584.67,194.31 L 589.50,196.05 L 594.33,197.68 L 599.17,199.21 L 604.00,200.64 L 608.83,201.99 L 613.67,203.26 L 618.50,204.44 L 623.33,205.56 L 628.17,206.60 L 633.00,207.59 L 637.83,208.51 L 642.67,209.37 L 647.50,210.18 L 652.33,210.95 L 657.17,211.66 L 662.00,212.33 L 666.83,212.96 L 671.67,213.55 L 676.50,214.11 L 681.33,214.63 L 686.17,215.12 L 691.00,215.58 L 695.83,216.01 L 700.67,216.41 L 705.50,216.79 L 710.33,217.15 L 715.17,217.48 L 720.00,217.80" fill="none" stroke="#1d6fa5" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" pathLength="1" class="trace-line"/>
+<path d="M 430.00,173.60 L 434.83,172.43 L 439.67,171.27 L 444.50,170.10 L 449.33,168.93 L 454.17,167.77 L 459.00,166.60 L 463.83,165.43 L 468.67,164.27 L 473.50,163.10 L 478.33,161.93 L 483.17,162.09 L 488.00,167.26 L 492.83,172.02 L 497.67,176.40 L 502.50,180.43 L 507.33,184.14 L 512.17,187.55 L 517.00,190.69 L 521.83,193.58 L 526.67,196.23 L 531.50,198.68 L 536.33,200.92 L 541.17,202.99 L 546.00,204.90 L 550.83,206.65 L 555.67,208.26 L 560.50,209.74 L 565.33,211.11 L 570.17,212.36 L 575.00,213.52 L 579.83,214.58 L 584.67,215.55 L 589.50,216.45 L 594.33,217.28 L 599.17,218.04 L 604.00,218.74 L 608.83,219.39 L 613.67,219.98 L 618.50,220.52 L 623.33,221.03 L 628.17,221.49 L 633.00,221.91 L 637.83,222.30 L 642.67,222.66 L 647.50,222.99 L 652.33,223.30 L 657.17,223.58 L 662.00,223.84 L 666.83,224.07 L 671.67,224.29 L 676.50,224.49 L 681.33,224.68 L 686.17,224.85 L 691.00,225.00 L 695.83,225.15 L 700.67,225.28 L 705.50,225.40 L 710.33,225.51 L 715.17,225.61 L 720.00,225.71" fill="none" stroke="#18794e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" pathLength="1" class="trace-line"/>
+<line x1="482.2" y1="116.0" x2="482.2" y2="248.0" stroke="#0f172a" stroke-width="1.1" stroke-dasharray="2 2"/>
+<text x="487.2" y="127" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700" class="halo">暂停+情绪命名</text>
+<text x="714" y="145" font-size="9.8" fill="#c25014" text-anchor="end" font-weight="600" class="halo">失控互激（正反馈）</text>
+<text x="586" y="186" font-size="9.8" fill="#1d6fa5" text-anchor="start" font-weight="700" class="halo">宝宝随大人平复</text>
+<text x="492" y="216" font-size="9.8" fill="#18794e" text-anchor="start" font-weight="700" class="halo">大人呼吸先稳</text>
+<text x="714" y="244" font-size="9.6" fill="#18794e" text-anchor="end" class="halo">平稳安全基线</text>
+<rect x="402" y="264" width="324" height="120" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="414" y="284" font-size="11.0" fill="#1d6fa5" text-anchor="start" font-weight="700">为什么不能指望婴儿“自己冷静反省”？</text>
+<text x="414" y="304" font-size="10.3" fill="#1e293b" text-anchor="start">1. 婴幼儿前额叶—边缘髓鞘化远未成熟，没有独立刹车片；</text>
+<text x="414" y="322" font-size="10.3" fill="#1e293b" text-anchor="start">2. 必须借用照护者平稳的心跳、怀抱与慢语速完成“共同调节”；</text>
+<text x="414" y="340" font-size="10.3" fill="#1e293b" text-anchor="start">3. 氧气面罩原则：快失控时先把宝宝放安全婴儿床，大人先降</text>
+<text x="414" y="358" font-size="10.3" fill="#18794e" text-anchor="start" font-weight="700">   温（Lieberman 2007 情绪命名法），绝不带怒气摇晃婴儿！</text>
+</svg>
