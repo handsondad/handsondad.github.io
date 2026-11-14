@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="392" viewBox="0 0 760 392" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">AI编程工具表层状态词第二人设与底层ReAct工具调用循环解剖图</title>
+<desc id="desc">上下分层对比图：上层展示终端前端定时器从词表随机轮播Spelunking与Honking等陪伴文案；下层展示上下文组装、模型JSON工具指令采样、本地grep/edit/pytest执行与退出码观测回传的真实闭环。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="391" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">掀开终端引擎盖：“第二人设”小剧场 vs 底层真实的 ReAct 工具循环</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">上方是前端定时器随机抽取的俏皮动词；下方才是提示词、词元采样、本地工具与测试组成的工程闭环</text>
+<rect x="20" y="64" width="720" height="96" rx="10" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<rect x="36.0" y="76.0" width="146" height="22" rx="11.0" fill="#ffffff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="109.0" y="91.0" font-size="11.2" fill="#6d28d9" text-anchor="middle" font-weight="600">表层 UI（第二人设）</text>
+<text x="194" y="92" font-size="12.2" fill="#0f172a" text-anchor="start" font-weight="600">本地终端 UI 渲染器：按固定间隔从内置词表抽词轮播（不读取模型隐状态！）</text>
+<rect x="36" y="108" width="688" height="38" rx="7" fill="#ffffff" stroke="#6d28d9" stroke-width="1"/>
+<text x="54" y="132" font-size="12" fill="#6d28d9" text-anchor="start" font-weight="700" class="mono">✻ Spelunking…   ⟳   ✻ Marinating…   ⟳   ✻ Honking…   ⟳   ✻ Clauding…</text>
+<text x="708" y="131" font-size="10.8" fill="#64748b" text-anchor="end">仅表“仍在等待响应”</text>
+<line x1="28" y1="173" x2="732" y2="173" stroke="#cbd5e1" stroke-width="1.3" stroke-dasharray="5 4"/>
+<text x="380" y="177" font-size="11" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">隔离线：上方文案 ≠ 模型思维链（CoT），也 ≠ 当前正在执行的真实技术动作</text>
+<rect x="20" y="188" width="720" height="190" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="36.0" y="200.0" width="156" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="114.0" y="215.0" font-size="11.2" fill="#1d6fa5" text-anchor="middle" font-weight="600">底层引擎（ReAct 闭环）</text>
+<text x="204" y="216" font-size="12.2" fill="#0f172a" text-anchor="start" font-weight="600">等待的那十几秒里，云端模型与本地开发环境真正跑完的四步工程数据流</text>
+<rect x="36" y="232" width="158" height="92" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="46" y="252" font-size="11.4" fill="#1d6fa5" text-anchor="start" font-weight="700">① 组装上下文请求</text>
+<text x="46" y="274" font-size="10.6" fill="#1e293b" text-anchor="start">System Prompt 规范</text>
+<text x="46" y="292" font-size="10.6" fill="#1e293b" text-anchor="start">+ 仓库结构与文件片段</text>
+<text x="46" y="310" font-size="10.6" fill="#1e293b" text-anchor="start">+ 历史对话打包发 API</text>
+<line x1="196" y1="278.0" x2="209" y2="278.0" stroke="#1d6fa5" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+<rect x="212" y="232" width="158" height="92" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="222" y="252" font-size="11.4" fill="#6d28d9" text-anchor="start" font-weight="700">② 概率采样与规划</text>
+<text x="222" y="274" font-size="10.6" fill="#1e293b" text-anchor="start">隐藏推理草稿 / 词元采样</text>
+<text x="222" y="292" font-size="10.6" fill="#1e293b" text-anchor="start">按语法约束吐出结构化</text>
+<text x="222" y="310" font-size="10.6" fill="#1e293b" text-anchor="start">JSON 工具调用指令</text>
+<line x1="372" y1="278.0" x2="385" y2="278.0" stroke="#1d6fa5" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+<rect x="388" y="232" width="158" height="92" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="398" y="252" font-size="11.4" fill="#c25014" text-anchor="start" font-weight="700">③ 本地工具真实执行</text>
+<text x="398" y="274" font-size="10.6" fill="#1e293b" text-anchor="start">grep 搜符号 / view 读行</text>
+<text x="398" y="292" font-size="10.6" fill="#1e293b" text-anchor="start">edit 打补丁改代码</text>
+<text x="398" y="310" font-size="10.6" fill="#1e293b" text-anchor="start">跑 pytest / 编译命令</text>
+<line x1="548" y1="278.0" x2="561" y2="278.0" stroke="#1d6fa5" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+<rect x="564" y="232" width="158" height="92" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="574" y="252" font-size="11.4" fill="#18794e" text-anchor="start" font-weight="700">④ 观测退出码与迭代</text>
+<text x="574" y="274" font-size="10.6" fill="#1e293b" text-anchor="start">收集 stdout/报错日志</text>
+<text x="574" y="292" font-size="10.6" fill="#1e293b" text-anchor="start">未通过 ⇒ 回传②继续改</text>
+<text x="574" y="310" font-size="10.6" fill="#1e293b" text-anchor="start">全通过 ⇒ 输出改动摘要</text>
+<path d="M643.0,324 V346 H291.0 V327" fill="none" stroke="#c25014" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arr-orange)"/>
+<text x="467.0" y="341" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="600" class="halo">多轮自动迭代（测试失败或需查更多文件时循环 ②→③→④）</text>
+<text x="36" y="366" font-size="10.8" fill="#64748b" text-anchor="start">验货铁律：别因为看到 Spelunking 就信它读懂了全局——只认最终 git diff 与测试通过证据</text>
+</svg>

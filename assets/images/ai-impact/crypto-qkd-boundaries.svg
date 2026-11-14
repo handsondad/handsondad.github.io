@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="376" viewBox="0 0 760 376" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">计算复杂性密码学与BB84量子密钥分发的安全机理及工程边界图</title>
+<desc id="desc">左栏对比128位密钥穷举难度、Shor算法对公钥密码的威胁与Grover算法的平方根加速及实现侧信道；右栏推导BB84协议窃听导致25%误码率的物理机制并标出经典认证与探测器工程边界。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="375" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">计算复杂性密码学 vs 量子密钥分发（QKD）：各自守住哪条安全边界？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：有限空间的计算困难假设与量子算法冲击；右：BB84 偏振基抽检（25% 误码）与工程现实约束</text>
+<rect x="20" y="64" width="352" height="296" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="86" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="38" y="90" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="90" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="600">计算安全性：原则可穷举 ≠ 现实算得动</text>
+<rect x="36" y="104" width="320" height="50" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="48" y="123" font-size="11.3" fill="#1d6fa5" text-anchor="start" font-weight="700">① 128 位对称密钥空间：2¹²⁸ ≈ 3.40 × 10³⁸</text>
+<text x="48" y="142" font-size="10.5" fill="#1e293b" text-anchor="start">哪怕每秒试 10¹⁸ 把，穷举仍需约 1.08×10¹³ 年（宇宙年龄 ~780 倍）</text>
+<rect x="36" y="164" width="320" height="50" rx="7" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="48" y="183" font-size="11.3" fill="#c25014" text-anchor="start" font-weight="700">② 公钥密码（RSA / 椭圆曲线）遇 Shor 量子算法</text>
+<text x="48" y="202" font-size="10.5" fill="#1e293b" text-anchor="start">大整数分解与离散对数被指数级加速 → 须迁移抗量子密码（PQC）</text>
+<rect x="36" y="224" width="320" height="50" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="48" y="243" font-size="11.3" fill="#18794e" text-anchor="start" font-weight="700">③ 对称密码（AES）遇 Grover 量子搜索</text>
+<text x="48" y="262" font-size="10.5" fill="#1e293b" text-anchor="start">仅平方根加速 √N（2²⁵⁶ 变 2¹²⁸ 步）→ 密钥长度加倍即可稳守</text>
+<rect x="36" y="286" width="320" height="42" rx="6" fill="#f1f5f9" stroke="#475569" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="48" y="303" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">⚠ 数学安全证明 ≠ 产品绝不出错：</text>
+<text x="48" y="320" font-size="10.5" fill="#1e293b" text-anchor="start">弱随机数、计时/功耗侧信道、代码漏洞仍会绕过数学锁</text>
+<text x="36" y="346" font-size="10.6" fill="#64748b" text-anchor="start">结论：密码学结论永远绑定“攻击模型 + 算力假设 + 正确实现”</text>
+<rect x="388" y="64" width="352" height="296" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="86" r="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="406" y="90" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">2</text>
+<text x="424" y="90" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="600">量子密钥分发（BB84）：物理测不准与工程边界</text>
+<rect x="404" y="104" width="320" height="116" rx="7" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="414" y="122" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="600">假设 Alice 发 + 基竖直光子 ↑（代表比特 0），Bob 也用 + 基收：</text>
+<line x1="412" y1="129" x2="716" y2="129" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="414.0" y="137.0" width="116" height="20" rx="10.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="472.0" y="150.6" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="600">Eve 猜 + 基 (50%)</text>
+<text x="538" y="151" font-size="10.6" fill="#1e293b" text-anchor="start">态未乱 → Bob 必测得 0（此次未暴露）</text>
+<rect x="414.0" y="166.0" width="116" height="20" rx="10.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="472.0" y="179.6" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="600">Eve 猜 × 基 (50%)</text>
+<text x="538" y="180" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="600">坍缩成 ↗/↖ → Bob 测出 50% 错变成 1！</text>
+<line x1="412" y1="194" x2="716" y2="194" stroke="#cbd5e1" stroke-width="1"/>
+<text x="564" y="212" font-size="11" fill="#6d28d9" text-anchor="middle" font-weight="700">拦截重发窃听下同基误码率 QBER = 50% × 50% = 25%</text>
+<rect x="404" y="228" width="320" height="48" rx="7" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="416" y="246" font-size="11.1" fill="#6d28d9" text-anchor="start" font-weight="700">物理优势：未知量子态不可克隆，偷测必留统计痕迹</text>
+<text x="416" y="265" font-size="10.5" fill="#1e293b" text-anchor="start">公开比对一部分同基比特，误码异常飙升即丢弃该轮密钥</text>
+<rect x="404" y="284" width="320" height="44" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="416" y="301" font-size="11" fill="#c25014" text-anchor="start" font-weight="700">⚠ 工程边界（据英国 NCSC 技术评估）：</text>
+<text x="416" y="319" font-size="10.4" fill="#1e293b" text-anchor="start">仍须首发经典身份认证防中间人；单光子源与探测器仍有侧信道</text>
+<text x="404" y="346" font-size="10.6" fill="#64748b" text-anchor="start">结论：量子通信 ≠ 量子计算，物理定律也不能替代整机安全工程</text>
+</svg>

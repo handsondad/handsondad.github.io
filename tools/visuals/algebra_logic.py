@@ -3281,3 +3281,1310 @@ def build_ai_neural_nets():
     ):
         write_svg(SUBDIR, fname, content)
     print("Generated 7 AI & neural-network SVGs; XOR folding, architecture math, chain-rule finite-diff, FGSM, softmax, and score-manifold assertions passed.")
+
+
+# ---------------------------------------------------------------------------
+# High-Dimensional Geometry, Embedding Manifolds & AI First-Principles Suite
+# ---------------------------------------------------------------------------
+def _high_dim_and_ai_impact_suite():
+    def unit_ball_volume(n: float) -> float:
+        return math.exp((n / 2.0) * math.log(math.pi) - math.lgamma(n / 2.0 + 1.0))
+
+
+    def unit_sphere_area(n: float) -> float:
+        # S_{n-1}(1) = 2 * pi^(n/2) / Gamma(n/2) = n * V_n(1)
+        return n * unit_ball_volume(n)
+
+
+    # ---------------------------------------------------------------------------
+    # 1. unit-ball-volume-peak.svg
+    # ---------------------------------------------------------------------------
+    def build_unit_ball_volume_peak() -> str:
+        vols = {n: unit_ball_volume(n) for n in range(1, 21)}
+        areas = {n: unit_sphere_area(n) for n in range(1, 21)}
+
+        assert max(vols, key=vols.get) == 5
+        assert abs(vols[5] - (8 * math.pi ** 2 / 15)) < 1e-12
+        assert max(areas, key=areas.get) == 7
+        assert abs(areas[7] - (16 * math.pi ** 3 / 15)) < 1e-12
+        assert vols[20] < 0.03 and areas[20] < 0.55
+
+        els = header(
+            "单位球体积 Vₙ(1) 与边界面积 Sₙ₋₁(1)：先冲顶，再超指数坍缩趋零",
+            "固定半径 r = 1，维度 n = 1…20；体积在 5 维达峰 ≈ 5.264，边界面积在 7 维达峰 ≈ 33.073",
+        )
+
+        # Left panel: Volume V_n(1)
+        els.append(card(20, 64, 352, 276))
+        els.append(step_badge(38, 86, 1, fg=BLUE, bg=BLUE_SOFT))
+        els.append(txt(56, 90, "单位球体积 Vₙ(1) = π^(n/2) / Γ(n/2 + 1)", 12.8, INK, weight="600"))
+
+        ox1, oy1, pw1, ph1 = 58, 282, 290, 162
+        y_max1 = 6.0
+        els.extend(
+            xy_axes(
+                ox1,
+                oy1,
+                pw1,
+                ph1,
+                x_ticks=[(1, "1"), (5, "5"), (10, "10"), (15, "15"), (20, "20")],
+                y_ticks=[(0, "0"), (2, "2"), (4, "4"), (6, "6")],
+                x_max=20.0,
+                y_max=y_max1,
+            )
+        )
+        els.append(txt(ox1 + pw1 / 2, oy1 + 30, "维度 n", 11, MUTED, "middle"))
+
+        # Continuous gamma interpolation curve
+        curve_pts1 = []
+        for k in range(20, 401):
+            t = k / 20.0
+            vt = unit_ball_volume(t)
+            px = ox1 + (t / 20.0) * pw1
+            py = oy1 - (vt / y_max1) * ph1
+            curve_pts1.append(f"{px:.2f},{py:.2f}")
+        els.append(
+            f'<path d="M{" L".join(curve_pts1)}" fill="none" stroke="{BLUE_LINE}" stroke-width="2"/>'
+        )
+
+        # Peak guide at n=5
+        px5 = ox1 + (5 / 20.0) * pw1
+        py5 = oy1 - (vols[5] / y_max1) * ph1
+        els.append(
+            f'<line x1="{px5:.1f}" y1="{py5:.1f}" x2="{px5:.1f}" y2="{oy1}" '
+            f'stroke="{ORANGE}" stroke-width="1.2" stroke-dasharray="4 3"/>'
+        )
+
+        for n in range(1, 21):
+            px = ox1 + (n / 20.0) * pw1
+            py = oy1 - (vols[n] / y_max1) * ph1
+            is_peak = n == 5
+            r_dot = 5.2 if is_peak else 3.2
+            col = ORANGE if is_peak else BLUE
+            els.append(f'<circle cx="{px:.2f}" cy="{py:.2f}" r="{r_dot}" fill="{col}"/>')
+
+        els.append(txt(px5 + 8, py5 - 5, "n=5 峰值: 8π²/15 ≈ 5.264", 11.2, ORANGE, weight="700", halo=True))
+        px2 = ox1 + (2 / 20.0) * pw1
+        py2 = oy1 - (vols[2] / y_max1) * ph1
+        els.append(txt(px2 - 4, py2 - 9, "n=2 (π)", 10.5, BLUE, "middle", halo=True))
+        px10 = ox1 + (10 / 20.0) * pw1
+        py10 = oy1 - (vols[10] / y_max1) * ph1
+        els.append(txt(px10 + 7, py10 - 3, "n=10 (2.55)", 10.5, BLUE, halo=True))
+        px20 = ox1 + pw1
+        py20 = oy1 - (vols[20] / y_max1) * ph1
+        els.append(txt(px20 - 4, py20 - 9, "n=20 (0.026)", 10.5, MUTED, "end", halo=True))
+        els.append(txt(36, 327, "注：n > 2πe ≈ 17.08 后每升两维必缩小，分母阶乘最终主导", 11, MUTED))
+
+        # Right panel: Surface area S_{n-1}(1)
+        els.append(card(388, 64, 352, 276))
+        els.append(step_badge(406, 86, 2, fg=GREEN, bg=GREEN_SOFT))
+        els.append(txt(424, 90, "单位球边界面积 Sₙ₋₁(1) = 2π^(n/2) / Γ(n/2)", 12.8, INK, weight="600"))
+
+        ox2, oy2, pw2, ph2 = 432, 282, 286, 162
+        y_max2 = 36.0
+        els.extend(
+            xy_axes(
+                ox2,
+                oy2,
+                pw2,
+                ph2,
+                x_ticks=[(1, "1"), (7, "7"), (10, "10"), (15, "15"), (20, "20")],
+                y_ticks=[(0, "0"), (12, "12"), (24, "24"), (36, "36")],
+                x_max=20.0,
+                y_max=y_max2,
+            )
+        )
+        els.append(txt(ox2 + pw2 / 2, oy2 + 30, "维度 n", 11, MUTED, "middle"))
+
+        curve_pts2 = []
+        for k in range(20, 401):
+            t = k / 20.0
+            st = unit_sphere_area(t)
+            px = ox2 + (t / 20.0) * pw2
+            py = oy2 - (st / y_max2) * ph2
+            curve_pts2.append(f"{px:.2f},{py:.2f}")
+        els.append(
+            f'<path d="M{" L".join(curve_pts2)}" fill="none" stroke="#86efac" stroke-width="2"/>'
+        )
+
+        px7 = ox2 + (7 / 20.0) * pw2
+        py7 = oy2 - (areas[7] / y_max2) * ph2
+        els.append(
+            f'<line x1="{px7:.1f}" y1="{py7:.1f}" x2="{px7:.1f}" y2="{oy2}" '
+            f'stroke="{ORANGE}" stroke-width="1.2" stroke-dasharray="4 3"/>'
+        )
+
+        for n in range(1, 21):
+            px = ox2 + (n / 20.0) * pw2
+            py = oy2 - (areas[n] / y_max2) * ph2
+            is_peak = n == 7
+            r_dot = 5.2 if is_peak else 3.2
+            col = ORANGE if is_peak else GREEN
+            els.append(f'<circle cx="{px:.2f}" cy="{py:.2f}" r="{r_dot}" fill="{col}"/>')
+
+        els.append(txt(px7 + 8, py7 - 3, "n=7 峰值: 16π³/15 ≈ 33.07", 11.2, ORANGE, weight="700", halo=True))
+        px3 = ox2 + (3 / 20.0) * pw2
+        py3 = oy2 - (areas[3] / y_max2) * ph2
+        els.append(txt(px3 - 2, py3 - 9, "n=3 (4π)", 10.5, GREEN, "middle", halo=True))
+        px12 = ox2 + (12 / 20.0) * pw2
+        py12 = oy2 - (areas[12] / y_max2) * ph2
+        els.append(txt(px12 + 8, py12 - 2, "n=12 (16.0)", 10.5, GREEN, halo=True))
+        px20_r = ox2 + pw2
+        py20_r = oy2 - (areas[20] / y_max2) * ph2
+        els.append(txt(px20_r - 4, py20_r - 9, "n=20 (0.52)", 10.5, MUTED, "end", halo=True))
+        els.append(txt(404, 327, "注：Sₙ₋₁(1) = n·Vₙ(1) 晚两维见顶，之后同样向 0 坍缩", 11, MUTED))
+
+        return figure(
+            356,
+            "n维单位球体积与边界面积随维度的峰值与衰减曲线",
+            "双栏精确函数图：左栏展示n=1至20的单位球体积在n=5达峰约5.264后衰减趋零；右栏展示单位球表面积在n=7达峰约33.073后衰减趋零。",
+            els,
+        )
+
+
+    # ---------------------------------------------------------------------------
+    # 2. thin-shell-spiky-cube.svg
+    # ---------------------------------------------------------------------------
+    def build_thin_shell_spiky_cube() -> str:
+        shell = lambda n: -math.expm1(n * math.log(0.99))
+        s100 = shell(100)
+        s300 = shell(300)
+        s500 = shell(500)
+        assert abs(s100 - 0.6339676587) < 1e-6
+        assert abs(s500 - 0.993429517) < 1e-6
+
+        fracs = {n: unit_ball_volume(n) / (2.0 ** n) for n in (2, 3, 5, 10)}
+        assert abs(fracs[2] - math.pi / 4) < 1e-9
+        assert abs(fracs[3] - math.pi / 6) < 1e-9
+        assert abs(fracs[10] - 0.00249039457) < 1e-7
+
+        els = header(
+            "高维球的“薄壳集中”与超立方体的“顶角伸长”",
+            "左：最外 1% 半径薄壳占球体积比例 1−0.99ⁿ；右：[-1,1]ⁿ 方盒顶角距原点 √n，内切球占比急剧塌缩",
+        )
+
+        # Left panel: 1 - 0.99^n curve
+        els.append(card(20, 64, 352, 286))
+        els.append(step_badge(38, 86, 1, fg=BLUE, bg=BLUE_SOFT))
+        els.append(txt(56, 90, "最外 1% 薄皮（0.99 < ‖x‖ ≤ 1）体积占比", 12.8, INK, weight="600"))
+
+        ox, oy, pw, ph = 66, 286, 280, 166
+        els.extend(
+            xy_axes(
+                ox,
+                oy,
+                pw,
+                ph,
+                x_ticks=[(0, "0"), (100, "100"), (250, "250"), (500, "500")],
+                y_ticks=[(0.0, "0%"), (0.25, "25%"), (0.50, "50%"), (0.75, "75%"), (1.0, "100%")],
+                x_max=500.0,
+                y_max=1.0,
+            )
+        )
+        els.append(txt(ox + pw / 2, oy + 30, "维度 n", 11, MUTED, "middle"))
+
+        pts = []
+        for n in range(0, 501, 5):
+            sv = shell(n)
+            px = ox + (n / 500.0) * pw
+            py = oy - sv * ph
+            pts.append((px, py))
+
+        poly_d = (
+            f"M{ox:.1f},{oy:.1f} L"
+            + " L".join(f"{x:.2f},{y:.2f}" for x, y in pts)
+            + f" L{ox + pw:.1f},{oy:.1f} Z"
+        )
+        els.append(f'<path d="{poly_d}" fill="{BLUE_SOFT}" opacity="0.75"/>')
+        els.append(
+            f'<path d="M{" L".join(f"{x:.2f},{y:.2f}" for x, y in pts)}" '
+            f'fill="none" stroke="{BLUE}" stroke-width="2.3"/>'
+        )
+
+        for n_mark, col, lbl, dx, dy, anc in [
+            (100, ORANGE, f"n=100: {s100 * 100:.1f}%", 8, 4, "start"),
+            (300, BLUE, f"n=300: {s300 * 100:.1f}%", 6, 15, "start"),
+            (500, GREEN, f"n=500: {s500 * 100:.1f}%", -6, -9, "end"),
+        ]:
+            sv = shell(n_mark)
+            px = ox + (n_mark / 500.0) * pw
+            py = oy - sv * ph
+            els.append(
+                f'<line x1="{px:.1f}" y1="{py:.1f}" x2="{px:.1f}" y2="{oy}" '
+                f'stroke="{col}" stroke-width="1.1" stroke-dasharray="3 3"/>'
+            )
+            els.append(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="4.6" fill="{col}"/>')
+            els.append(txt(px + dx, py + dy, lbl, 11.2, col, anc, weight="700", halo=True))
+
+        els.append(txt(36, 336, "均匀采样下：100 维逾六成在皮上，500 维达 99.3%", 11, MUTED))
+
+        # Right panel: Inscribed sphere vs hypercube [-1, 1]^n
+        els.append(card(388, 64, 352, 286))
+        els.append(step_badge(406, 86, 2, fg=ORANGE, bg=ORANGE_SOFT))
+        els.append(txt(424, 90, "[-1,1]ⁿ 方盒顶角距离 √n vs 内切球占比", 12.8, INK, weight="600"))
+
+        # Upper sub-diagram: 2D cross-section + corner distance ruler
+        cx, cy, sq_half = 456, 156, 42
+        els.append(
+            f'<rect x="{cx - sq_half}" y="{cy - sq_half}" width="{2 * sq_half}" height="{2 * sq_half}" '
+            f'fill="{ORANGE_SOFT}" stroke="{ORANGE}" stroke-width="1.4"/>'
+        )
+        els.append(
+            f'<circle cx="{cx}" cy="{cy}" r="{sq_half}" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.6"/>'
+        )
+        els.append(f'<circle cx="{cx}" cy="{cy}" r="2.8" fill="{INK}"/>')
+        els.append(
+            f'<line x1="{cx}" y1="{cy}" x2="{cx + sq_half}" y2="{cy}" stroke="{BLUE}" stroke-width="1.5"/>'
+        )
+        els.append(
+            f'<line x1="{cx}" y1="{cy}" x2="{cx + sq_half}" y2="{cy - sq_half}" '
+            f'stroke="{ORANGE}" stroke-width="1.6" stroke-dasharray="3 2"/>'
+        )
+        els.append(txt(cx + 18, cy + 13, "r=1", 10.5, BLUE, "middle", weight="600", halo=True))
+        els.append(txt(cx - 2, cy - sq_half - 6, "二维截面：角距 √2≈1.41", 10.5, MUTED, "middle"))
+
+        # Right mini ruler comparing r=1 vs sqrt(n)
+        rx0 = 530
+        scale_r = 34.0  # 1 unit = 34px, max 5 units = 170px -> 700
+        els.append(txt(rx0, 114, "原点到方盒顶角距离 √n（对比球半径 1）：", 11, INK, weight="600"))
+        for idx, (nd, lbl_d, col_d) in enumerate(
+            [
+                (1, "球半径 r = 1.00", BLUE),
+                (4, "4维顶角 √4 = 2.00", ORANGE),
+                (9, "9维顶角 √9 = 3.00", ORANGE),
+                (25, "25维顶角 √25 = 5.00", PURPLE),
+            ]
+        ):
+            ry = 126 + idx * 21
+            bar_w = math.sqrt(nd) * scale_r
+            els.append(
+                f'<rect x="{rx0}" y="{ry}" width="{bar_w:.1f}" height="12" rx="3" '
+                f'fill="{col_d}" fill-opacity="0.22" stroke="{col_d}" stroke-width="1"/>'
+            )
+            els.append(txt(rx0 + 6, ry + 9.8, lbl_d, 10.5, INK, halo=True))
+
+        # Divider line
+        els.append(f'<line x1="404" y1="216" x2="724" y2="216" stroke="{HAIRLINE}" stroke-width="1"/>')
+        els.append(txt(404, 234, "内切单位球占 [-1,1]ⁿ 方盒总体积比例 Vₙ(1) / 2ⁿ：", 11.3, INK, weight="600"))
+
+        bar_x = 462
+        bar_max_w = 192.0
+        for idx, nd in enumerate((2, 3, 5, 10)):
+            ry = 246 + idx * 20
+            fv = fracs[nd]
+            bw = max(2.2, fv * bar_max_w)
+            col_b = BLUE if nd <= 3 else (PURPLE if nd == 5 else ORANGE)
+            els.append(txt(406, ry + 11, f"n = {nd:>2d}", 11, BODY, cls="mono"))
+            els.append(
+                f'<rect x="{bar_x}" y="{ry + 1}" width="{bar_max_w}" height="12" rx="4" '
+                f'fill="{SLATE_SOFT}"/>'
+            )
+            els.append(
+                f'<rect x="{bar_x}" y="{ry + 1}" width="{bw:.1f}" height="12" rx="4" fill="{col_b}"/>'
+            )
+            els.append(txt(bar_x + bar_max_w + 8, ry + 11, f"{fv * 100:.2f}%", 11, col_b, weight="600"))
+
+        els.append(txt(404, 336, "10 维时内切球仅占方盒 0.25%，其余全在伸出的角落区", 11, MUTED))
+
+        return figure(
+            366,
+            "高维球薄壳集中效应与超立方体内切球体积占比坍缩图解",
+            "左栏精确绘制1减0.99的n次方曲线，展示100维63.4%与500维99.3%体积集中在1%薄壳；右栏对比超立方体顶角距离根号n增长与内切球体积占比从二维78.54%跌至十维0.25%。",
+            els,
+        )
+
+
+    # ---------------------------------------------------------------------------
+    # 3. manifold-embedding-geometry.svg
+    # ---------------------------------------------------------------------------
+    def build_manifold_embedding_geometry() -> str:
+        # Exact parallelogram check: queen - woman == king - man
+        man = (0.65, 0.35)
+        king = (0.95, 1.32)
+        woman = (1.92, 0.48)
+        queen = (woman[0] + (king[0] - man[0]), woman[1] + (king[1] - man[1]))
+        assert abs((queen[0] - woman[0]) - (king[0] - man[0])) < 1e-12
+        assert abs((queen[1] - woman[1]) - (king[1] - man[1])) < 1e-12
+
+        els = header(
+            "流形假设与 Embedding 几何：从像素雪花荒漠到语义向量关系",
+            "左：高维像素空间的二维概念截面（欧氏捷径 vs 流形测地线）；右：Embedding 平行四边形与余弦夹角",
+        )
+
+        # Left panel: Low-dimensional manifold ribbon in ambient noise space
+        els.append(card(20, 64, 352, 286))
+        els.append(step_badge(38, 86, 1, fg=GREEN, bg=GREEN_SOFT))
+        els.append(txt(56, 90, "像素空间截面示意：雪花噪声 vs 自然图像流形", 12.6, INK, weight="600"))
+
+        bx, by, bw, bh = 36, 104, 320, 198
+        els.append(
+            f'<rect x="{bx}" y="{by}" width="{bw}" height="{bh}" rx="8" '
+            f'fill="{SLATE_SOFT}" stroke="{BORDER}" stroke-width="1"/>'
+        )
+
+        # Deterministic background noise dots
+        for i in range(46):
+            nx = bx + 14 + ((i * 67 + 19) % (bw - 28))
+            ny = by + 14 + ((i * 43 + 31) % (bh - 28))
+            els.append(f'<circle cx="{nx}" cy="{ny}" r="1.8" fill="#cbd5e1"/>')
+        els.append(txt(bx + 12, by + 20, "随机像素组合 ≈ 99.999% 电视雪花噪声", 10.8, MUTED, halo=True))
+
+        # Smooth C-shaped manifold curve x(t), y(t) for t in [0, 1]
+        def m_pt(t: float):
+            ang = -0.76 * math.pi + t * 1.52 * math.pi
+            mx = bx + 138 + 86 * math.cos(ang)
+            my = by + 114 + 58 * math.sin(ang)
+            return mx, my
+
+        ribbon_pts = [m_pt(k / 80.0) for k in range(81)]
+        d_rib = "M" + " L".join(f"{x:.2f},{y:.2f}" for x, y in ribbon_pts)
+        els.append(
+            f'<path d="{d_rib}" fill="none" stroke="{GREEN_SOFT}" stroke-width="18" stroke-linecap="round"/>'
+        )
+        els.append(
+            f'<path d="{d_rib}" fill="none" stroke="{GREEN}" stroke-width="2.4" stroke-linecap="round"/>'
+        )
+
+        # Geodesic highlight from tA=0.14 to tB=0.86 vs Euclidean chord
+        tA, tB = 0.14, 0.86
+        ax_p, ay_p = m_pt(tA)
+        bx_p, by_p = m_pt(tB)
+        geo_pts = [m_pt(tA + (tB - tA) * k / 50.0) for k in range(51)]
+        els.append(
+            f'<path d="M{" L".join(f"{x:.2f},{y:.2f}" for x, y in geo_pts)}" '
+            f'fill="none" stroke="{GREEN}" stroke-width="3.5"/>'
+        )
+        els.append(
+            f'<line x1="{ax_p:.1f}" y1="{ay_p:.1f}" x2="{bx_p:.1f}" y2="{by_p:.1f}" '
+            f'stroke="{ORANGE}" stroke-width="2.2" stroke-dasharray="6 4"/>'
+        )
+        els.append(f'<circle cx="{ax_p:.1f}" cy="{ay_p:.1f}" r="5.0" fill="{BLUE}"/>')
+        els.append(f'<circle cx="{bx_p:.1f}" cy="{by_p:.1f}" r="5.0" fill="{BLUE}"/>')
+        els.append(txt(ax_p + 8, ay_p - 8, "图像 A（侧脸）", 10.8, BLUE, "start", weight="600", halo=True))
+        els.append(txt(bx_p + 8, by_p + 15, "图像 B（正脸）", 10.8, BLUE, "start", weight="600", halo=True))
+        els.append(
+            txt(
+                (ax_p + bx_p) / 2 - 8,
+                (ay_p + by_p) / 2 - 5,
+                "欧氏捷径",
+                10.8,
+                ORANGE,
+                "end",
+                weight="700",
+                halo=True,
+            )
+        )
+        els.append(
+            txt(
+                (ax_p + bx_p) / 2 - 8,
+                (ay_p + by_p) / 2 + 11,
+                "（穿雪花区）",
+                10.2,
+                ORANGE,
+                "end",
+                halo=True,
+            )
+        )
+        mid_gx, mid_gy = m_pt(0.50)
+        els.append(
+            txt(mid_gx + 12, mid_gy - 4, "流形测地路径", 10.8, GREEN, "start", weight="700", halo=True)
+        )
+        els.append(
+            txt(mid_gx + 12, mid_gy + 12, "（沿姿态渐变）", 10.2, GREEN, "start", halo=True)
+        )
+        els.append(txt(36, 322, "截面示意：真实数据像素高度耦合，局部内在维度 k ≪ D", 10.8, MUTED))
+        els.append(txt(36, 338, "直接对原始像素算直线均值，只会得到模糊重影而非新侧脸", 10.8, MUTED))
+
+        # Right panel: Embedding vector parallelogram & cosine angle
+        els.append(card(388, 64, 352, 286))
+        els.append(step_badge(406, 86, 2, fg=PURPLE, bg=PURPLE_SOFT))
+        els.append(txt(424, 90, "Embedding 空间：向量偏移与余弦相似度 cos θ", 12.6, INK, weight="600"))
+
+        ox, oy = 428, 266
+        sx, sy = 104.0, 96.0
+        els.append(f'<path d="M{ox},{oy - 158} V{oy} H{ox + 286}" fill="none" stroke="#94a3b8" stroke-width="1.3"/>')
+        els.append(txt(ox - 8, oy + 12, "O", 10.8, MUTED))
+
+        def to_px(pt):
+            return ox + pt[0] * sx, oy - pt[1] * sy
+
+        p_man = to_px(man)
+        p_king = to_px(king)
+        p_woman = to_px(woman)
+        p_queen = to_px(queen)
+
+        # Vectors from origin to man & woman (subtle) to illustrate cosine angle theta
+        els.append(
+            f'<line x1="{ox}" y1="{oy}" x2="{p_king[0]:.1f}" y2="{p_king[1]:.1f}" '
+            f'stroke="{BLUE_LINE}" stroke-width="1.4"/>'
+        )
+        els.append(
+            f'<line x1="{ox}" y1="{oy}" x2="{p_queen[0]:.1f}" y2="{p_queen[1]:.1f}" '
+            f'stroke="{BLUE_LINE}" stroke-width="1.4"/>'
+        )
+        # Angle arc near origin between king and queen rays
+        ang1 = math.atan2(oy - p_queen[1], p_queen[0] - ox)
+        ang2 = math.atan2(oy - p_king[1], p_king[0] - ox)
+        r_arc = 44.0
+        ax1, ay1 = ox + r_arc * math.cos(ang1), oy - r_arc * math.sin(ang1)
+        ax2, ay2 = ox + r_arc * math.cos(ang2), oy - r_arc * math.sin(ang2)
+        els.append(
+            f'<path d="M{ax1:.1f},{ay1:.1f} A{r_arc},{r_arc} 0 0 0 {ax2:.1f},{ay2:.1f}" '
+            f'fill="none" stroke="{BLUE}" stroke-width="1.5"/>'
+        )
+        els.append(txt(ox + 48, oy - 34, "夹角 θ", 10.8, BLUE, weight="600", halo=True))
+
+        # Parallelogram edges: gender shift (horizontal-ish) & royal shift (upward)
+        els.append(
+            f'<line x1="{p_man[0]:.1f}" y1="{p_man[1]:.1f}" x2="{p_woman[0]:.1f}" y2="{p_woman[1]:.1f}" '
+            f'stroke="{SLATE}" stroke-width="1.3" stroke-dasharray="4 3"/>'
+        )
+        els.append(
+            f'<line x1="{p_king[0]:.1f}" y1="{p_king[1]:.1f}" x2="{p_queen[0]:.1f}" y2="{p_queen[1]:.1f}" '
+            f'stroke="{SLATE}" stroke-width="1.3" stroke-dasharray="4 3"/>'
+        )
+        els.append(
+            f'<line x1="{p_man[0]:.1f}" y1="{p_man[1]:.1f}" x2="{p_king[0] - 2:.1f}" y2="{p_king[1] + 5:.1f}" '
+            f'stroke="{PURPLE}" stroke-width="2.2" marker-end="url(#arr-blue)"/>'
+        )
+        els.append(
+            f'<line x1="{p_woman[0]:.1f}" y1="{p_woman[1]:.1f}" x2="{p_queen[0] - 2:.1f}" y2="{p_queen[1] + 5:.1f}" '
+            f'stroke="{ORANGE}" stroke-width="2.2" marker-end="url(#arr-orange)"/>'
+        )
+
+        for (px, py), label, col, dx, dy, anc in [
+            (p_man, "男人", BLUE, 0, 18, "middle"),
+            (p_king, "国王", PURPLE, -8, -8, "middle"),
+            (p_woman, "女人", BLUE, 8, 18, "middle"),
+            (p_queen, "王后", ORANGE, 8, -8, "middle"),
+        ]:
+            els.append(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="4.8" fill="{col}"/>')
+            els.append(txt(px + dx, py + dy, label, 11.8, col, anc, weight="700", halo=True))
+
+        els.append(
+            txt(
+                (p_man[0] + p_king[0]) / 2 - 8,
+                (p_man[1] + p_king[1]) / 2,
+                "+王室偏移",
+                10.6,
+                PURPLE,
+                "end",
+                weight="600",
+                halo=True,
+            )
+        )
+        els.append(
+            txt(
+                (p_woman[0] + p_queen[0]) / 2 + 10,
+                (p_woman[1] + p_queen[1]) / 2,
+                "+同一偏移",
+                10.6,
+                ORANGE,
+                "start",
+                weight="600",
+                halo=True,
+            )
+        )
+
+        # Formula strip inside right panel
+        els.append(card(404, 278, 320, 32, rx=6, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(
+            txt(
+                564,
+                299,
+                "国王 − 男人 + 女人 ≈ 王后  ｜  cos θ = (x·y)/(‖x‖‖y‖)",
+                11.2,
+                INK,
+                "middle",
+                weight="600",
+            )
+        )
+        els.append(txt(404, 334, "注：线性类比是训练涌现的近似趋势，非严格普适恒等式", 10.8, MUTED))
+
+        return figure(
+            366,
+            "高维流形假设与Embedding向量空间几何关系对比图",
+            "左栏以二维截面展示高维像素空间中自然图像集中在低维流形上，对比穿过噪声的欧氏直线与沿流形的测地线；右栏展示Embedding空间中国王减男人加女人近似王后的平行四边形关系与余弦夹角。",
+            els,
+        )
+
+
+    # ---------------------------------------------------------------------------
+    # 4. cognitive-offloading-loop.svg
+    # ---------------------------------------------------------------------------
+    def build_cognitive_offloading_loop() -> str:
+        els = header(
+            "认知卸载的两种回路：外包思考萎缩，还是脚手架放大能力？",
+            "上：对照认知卸载（Risko & Gilbert）与必要难度（Bjork）；下：工程任务的四道人类责任关",
+        )
+
+        # Top-left: Passive shortcut loop
+        els.append(card(20, 64, 352, 192))
+        els.append(step_badge(38, 86, 1, fg=ORANGE, bg=ORANGE_SOFT))
+        els.append(txt(56, 90, "外包短路：省掉过程 → 流畅性错觉 → 判断退化", 12.6, INK, weight="600"))
+
+        left_steps = [
+            ("① 遇事直接“一键代写”", "跳过读题拆解，直接索取现成答案或完整代码"),
+            ("② 绕开“必要难度”摩擦", "省去试错检索，大脑未建立深层神经编码线索"),
+            ("③ 流畅性错觉与判断萎缩", "把“AI 写得通顺”误当“我已掌握”，遇边界即懵"),
+        ]
+        for i, (t1, t2) in enumerate(left_steps):
+            ry = 104 + i * 48
+            els.append(card(36, ry, 320, 39, rx=7, fill=ORANGE_SOFT, stroke=ORANGE))
+            els.append(txt(48, ry + 16, t1, 11.6, ORANGE, weight="700"))
+            els.append(txt(48, ry + 32, t2, 10.8, BODY))
+            if i < 2:
+                els.append(
+                    f'<line x1="196" y1="{ry + 39}" x2="196" y2="{ry + 47}" '
+                    f'stroke="{ORANGE}" stroke-width="1.4" marker-end="url(#arr-orange)"/>'
+                )
+
+        # Top-right: Active scaffolding loop
+        els.append(card(388, 64, 352, 192))
+        els.append(step_badge(406, 86, 2, fg=GREEN, bg=GREEN_SOFT))
+        els.append(txt(424, 90, "认知脚手架：先猜想 → 工具发散 → 核验放大", 12.6, INK, weight="600"))
+
+        right_steps = [
+            ("① 先独立提出猜想与约束", "哪怕粗糙，先写下“我原来以为”与目标边界"),
+            ("② 借 AI 扩展候选与找盲区", "让工具列备选方案、唱反调挑刺、补齐陌生线索"),
+            ("③ 动手实验与一手资料核验", "跑测试/折纸飞机/查原典，把增量内化为真本事"),
+        ]
+        for i, (t1, t2) in enumerate(right_steps):
+            ry = 104 + i * 48
+            els.append(card(404, ry, 320, 39, rx=7, fill=GREEN_SOFT, stroke=GREEN))
+            els.append(txt(416, ry + 16, t1, 11.6, GREEN, weight="700"))
+            els.append(txt(416, ry + 32, t2, 10.8, BODY))
+            if i < 2:
+                els.append(
+                    f'<line x1="564" y1="{ry + 39}" x2="564" y2="{ry + 47}" '
+                    f'stroke="{GREEN}" stroke-width="1.4" marker-end="url(#arr-green)"/>'
+                )
+
+        # Bottom wide card: 4-stage software engineering accountability loop
+        els.append(card(20, 268, 720, 112))
+        els.append(step_badge(38, 290, 3, fg=BLUE, bg=BLUE_SOFT))
+        els.append(
+            txt(
+                56,
+                294,
+                "拆解一项真实工程任务：AI 最擅长第②棒起草，人类必须守住头尾契约与担责",
+                12.6,
+                INK,
+                weight="600",
+            )
+        )
+
+        stages = [
+            ("1. 定义真问题", "厘清真实需求与红线", "人类主导", BLUE, BLUE_SOFT),
+            ("2. 生成候选稿", "代码/文档/测试初稿", "AI 高速辅助", PURPLE, PURPLE_SOFT),
+            ("3. 验证与找反例", "跑单测·查不变量·审边界", "人机协同核验", GREEN, GREEN_SOFT),
+            ("4. 部署与担责", "上线演进·承担现实后果", "人类签字负责", ORANGE, ORANGE_SOFT),
+        ]
+        sx0, sw, sgap = 36, 158, 18
+        for idx, (st_h, st_b, role_lbl, fg, bg) in enumerate(stages):
+            sx = sx0 + idx * (sw + sgap)
+            sy = 308
+            els.append(card(sx, sy, sw, 58, rx=8, fill=bg, stroke=fg))
+            els.append(txt(sx + 10, sy + 18, st_h, 11.6, INK, weight="700"))
+            els.append(txt(sx + 10, sy + 35, st_b, 10.6, BODY))
+            els.append(txt(sx + 10, sy + 50, f"[{role_lbl}]", 10.4, fg, weight="600"))
+            if idx < 3:
+                ax1 = sx + sw + 2
+                ax2 = sx + sw + sgap - 3
+                els.append(
+                    f'<line x1="{ax1}" y1="{sy + 29}" x2="{ax2}" y2="{sy + 29}" '
+                    f'stroke="{MUTED}" stroke-width="1.5" marker-end="url(#arr-muted)"/>'
+                )
+
+        return figure(
+            394,
+            "认知卸载的两种学习回路与软件工程四阶段人类责任边界图",
+            "上方左右对比一键代写导致流畅性错觉的短路回路与先猜想再核验的认知脚手架回路；下方拆解定义问题、生成初稿、验证边界、部署担责四个工程阶段。",
+            els,
+        )
+
+
+    # ---------------------------------------------------------------------------
+    # 5. jevons-energy-ledger.svg
+    # ---------------------------------------------------------------------------
+    def build_jevons_energy_ledger() -> str:
+        # Toy ledger math verification
+        e_train = 1.0
+        e_unit_infer = 0.28  # per billion queries in normalized units
+        n_cross = e_train / e_unit_infer  # ~3.5714 billion queries -> total = 2.0
+        assert abs((e_train + n_cross * e_unit_infer) - 2.0) < 1e-12
+
+        # Jevons rebound math: 0.1x unit cost * 50x demand = 5.0x total energy
+        e0 = 1.0 * 1.0
+        e_naive = 0.1 * 1.0
+        e_rebound = 0.1 * 50.0
+        assert abs(e_naive - 0.1) < 1e-12 and abs(e_rebound - 5.0) < 1e-12
+
+        els = header(
+            "AI 算力与能耗的两本账：训练固定投入、推理规模乘数与杰文斯悖论",
+            "左：高频部署后累计推理能耗终将反超单次训练；右：单次效率提升 10 倍，总耗电为何仍可涨 5 倍",
+        )
+
+        # Left panel: Training fixed cost vs cumulative inference cost
+        els.append(card(20, 64, 352, 286))
+        els.append(step_badge(38, 86, 1, fg=BLUE, bg=BLUE_SOFT))
+        els.append(txt(56, 90, "生命周期账本：E(N) = E_训练 + N × e_单次推理", 12.5, INK, weight="600"))
+
+        ox, oy, pw, ph = 64, 282, 280, 162
+        els.extend(
+            xy_axes(
+                ox,
+                oy,
+                pw,
+                ph,
+                x_ticks=[(0, "0"), (3.57, "追平点"), (7, "70亿次"), (10, "100亿次")],
+                y_ticks=[(0, "0"), (1, "1×"), (2, "2×"), (3, "3×"), (4, "4×")],
+                x_max=10.0,
+                y_max=4.0,
+            )
+        )
+        els.append(txt(ox + pw / 2, oy + 30, "累计推理调用规模 N（示意刻度）", 10.8, MUTED, "middle"))
+
+        py_train = oy - (1.0 / 4.0) * ph
+        py_end_tot = oy - ((1.0 + 10.0 * e_unit_infer) / 4.0) * ph
+        # Shade inference wedge between y=1.0 and total line
+        els.append(
+            f'<polygon points="{ox},{py_train:.1f} {ox + pw},{py_end_tot:.1f} {ox + pw},{py_train:.1f}" '
+            f'fill="{ORANGE_SOFT}" opacity="0.85"/>'
+        )
+        # Shade fixed training base below y=1.0
+        els.append(
+            f'<rect x="{ox}" y="{py_train:.1f}" width="{pw}" height="{oy - py_train:.1f}" '
+            f'fill="{BLUE_SOFT}" opacity="0.65"/>'
+        )
+        els.append(
+            f'<line x1="{ox}" y1="{py_train:.1f}" x2="{ox + pw}" y2="{py_train:.1f}" '
+            f'stroke="{BLUE}" stroke-width="1.8" stroke-dasharray="5 3"/>'
+        )
+        els.append(
+            f'<line x1="{ox}" y1="{py_train:.1f}" x2="{ox + pw}" y2="{py_end_tot:.1f}" '
+            f'stroke="{ORANGE}" stroke-width="2.4"/>'
+        )
+
+        px_c = ox + (n_cross / 10.0) * pw
+        py_c = oy - (2.0 / 4.0) * ph
+        els.append(
+            f'<line x1="{px_c:.1f}" y1="{py_c:.1f}" x2="{px_c:.1f}" y2="{oy}" '
+            f'stroke="{ORANGE}" stroke-width="1.1" stroke-dasharray="3 3"/>'
+        )
+        els.append(f'<circle cx="{px_c:.1f}" cy="{py_c:.1f}" r="4.8" fill="{ORANGE}"/>')
+        els.append(txt(px_c + 6, py_c + 15, "推理累计 = 训练投入", 10.8, ORANGE, weight="700", halo=True))
+        els.append(txt(ox + 12, oy - 14, "固定训练底座 E_训练 = 1×", 10.8, BLUE, weight="600", halo=True))
+        els.append(txt(ox + pw - 8, py_end_tot - 8, "总能耗 E_总", 11, ORANGE, "end", weight="700", halo=True))
+        els.append(txt(36, 334, "示意模型：单次提问耗电极小，乘上十亿级日常调用即成主项", 10.8, MUTED))
+
+        # Right panel: Jevons Paradox bar ledger
+        els.append(card(388, 64, 352, 286))
+        els.append(step_badge(406, 86, 2, fg=ORANGE, bg=ORANGE_SOFT))
+        els.append(txt(424, 90, "杰文斯悖论（1865）：单次省 90% vs 总量反弹", 12.5, INK, weight="600"))
+
+        cases = [
+            (
+                "① 优化前基准",
+                "单次能耗 1.0 × 调用量 1×",
+                e0,
+                "1.0×",
+                BLUE,
+                BLUE_SOFT,
+            ),
+            (
+                "② 静态外推（假设用量不变）",
+                "硬件/算法提效10倍：0.1 × 用量 1×",
+                e_naive,
+                "0.1× (-90%)",
+                GREEN,
+                GREEN_SOFT,
+            ),
+            (
+                "③ 杰文斯反弹（便宜后嵌入万物）",
+                "单次 0.1 × 调用暴涨 50×（自动代理/全员高频）",
+                e_rebound,
+                "5.0× (反增5倍!)",
+                ORANGE,
+                ORANGE_SOFT,
+            ),
+        ]
+        bx0 = 406
+        max_bar = 220.0  # 5.0 -> 220px
+        for idx, (c_title, c_sub, val, val_lbl, fg, bg) in enumerate(cases):
+            ry = 108 + idx * 58
+            els.append(txt(bx0, ry + 12, c_title, 11.5, INK, weight="700"))
+            els.append(txt(bx0 + 126 if idx == 0 else bx0, ry + 12 if idx == 0 else ry + 27, "" if idx > 0 else "", 10.5, MUTED))
+            els.append(txt(bx0, ry + 27, c_sub, 10.5, MUTED))
+            bw = max(5.0, (val / 5.0) * max_bar)
+            els.append(
+                f'<rect x="{bx0}" y="{ry + 33}" width="{max_bar}" height="14" rx="4" fill="{SLATE_SOFT}"/>'
+            )
+            els.append(
+                f'<rect x="{bx0}" y="{ry + 33}" width="{bw:.1f}" height="14" rx="4" fill="{fg}"/>'
+            )
+            els.append(txt(bx0 + max_bar + 8, ry + 44, val_lbl, 11, fg, weight="700"))
+
+        els.append(card(406, 286, 316, 30, rx=6, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(
+            txt(564, 305, "总能耗 E = 单次能耗 e (÷10) × 使用规模 Q (×50) = 5×", 11, INK, "middle", weight="600")
+        )
+        els.append(txt(406, 334, "注：比例为机制演示模型；评估真实碳排还须核查电网清洁度", 10.8, MUTED))
+
+        return figure(
+            366,
+            "AI训练与推理生命周期能耗账本及杰文斯悖论反弹效应图解",
+            "左栏展示总能耗等于一次性训练投入加累计推理次数乘单次能耗，随调用规模扩大推理反超训练；右栏对比效率提升10倍时静态外推降至0.1倍与需求扩张50倍后总能耗反升至5倍的杰文斯悖论。",
+            els,
+        )
+
+
+    # ---------------------------------------------------------------------------
+    # 6. halting-diagonal-proof.svg
+    # ---------------------------------------------------------------------------
+    def build_halting_diagonal_proof() -> str:
+        els = header(
+            "图灵停机问题的对角线反证法：为什么不存在万能判定器 Halt(P, x)？",
+            "左：用假想 Halt 组装专唱反调的 Paradox(P)；右：把 Paradox 喂给自身，对角格正反皆矛盾",
+        )
+
+        # Left panel: Paradox(P) construction
+        els.append(card(20, 64, 344, 298))
+        els.append(step_badge(38, 86, 1, fg=BLUE, bg=BLUE_SOFT))
+        els.append(txt(56, 90, "第一步：构造唱反调程序 Paradox(P)", 12.6, INK, weight="600"))
+
+        els.append(pill(104, 106, "输入任意程序文本 P", fg=INK, bg=SLATE_SOFT, w=176, h=24, size=11.5))
+        els.append(
+            f'<line x1="192" y1="130" x2="192" y2="148" stroke="{BLUE}" stroke-width="1.5" marker-end="url(#arr-blue)"/>'
+        )
+
+        els.append(card(46, 150, 292, 54, rx=8, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(192, 171, "调用假想万能判定器 Halt(P, P)", 11.8, BLUE, "middle", weight="700"))
+        els.append(txt(192, 191, "询问：“程序 P 读入自身代码 P 会停机吗？”", 10.8, BODY, "middle"))
+
+        # Branch lines
+        els.append(
+            f'<path d="M132,204 L104,234" fill="none" stroke="{ORANGE}" stroke-width="1.5" marker-end="url(#arr-orange)"/>'
+        )
+        els.append(
+            f'<path d="M252,204 L280,234" fill="none" stroke="{GREEN}" stroke-width="1.5" marker-end="url(#arr-green)"/>'
+        )
+        els.append(txt(106, 222, "预测=会停", 10.6, ORANGE, "end", weight="600"))
+        els.append(txt(278, 222, "预测=不停", 10.6, GREEN, "start", weight="600"))
+
+        els.append(card(34, 238, 148, 68, rx=8, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(108, 259, "故意跳进死循环", 11.5, ORANGE, "middle", weight="700"))
+        els.append(txt(108, 277, "while True: pass", 10.6, BODY, "middle", cls="mono"))
+        els.append(txt(108, 295, "⇒ 实际永远不停！", 10.8, ORANGE, "middle", weight="600"))
+
+        els.append(card(202, 238, 148, 68, rx=8, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(276, 259, "立即刹车停机", 11.5, GREEN, "middle", weight="700"))
+        els.append(txt(276, 277, "return 0", 10.6, BODY, "middle", cls="mono"))
+        els.append(txt(276, 295, "⇒ 实际当场停下！", 10.8, GREEN, "middle", weight="600"))
+
+        els.append(txt(36, 332, "关键：只要 Halt 是合法算法，Paradox 也必定合法", 10.8, MUTED))
+        els.append(txt(36, 348, "加多少块 GPU 或训练数据都无法绕开这条自指逻辑", 10.8, MUTED))
+
+        # Right panel: Diagonal table contradiction
+        els.append(card(380, 64, 360, 298))
+        els.append(step_badge(398, 86, 2, fg=ORANGE, bg=ORANGE_SOFT))
+        els.append(txt(416, 90, "第二步：把 Paradox 喂给自己（对角格崩塌）", 12.6, INK, weight="600"))
+
+        # 3x3 compact table: rows P1, P2, Paradox; cols Input P1, Input P2, Input Paradox
+        tx, ty = 398, 108
+        cw0, cw = 82, 80
+        rh = 32
+        cols = ["输入 P₁", "输入 P₂", "输入 Paradox"]
+        for j, cl in enumerate(cols):
+            cx_h = tx + cw0 + j * cw
+            els.append(card(cx_h, ty, cw, 26, rx=4, fill=SLATE_SOFT, stroke=BORDER))
+            els.append(txt(cx_h + cw / 2, ty + 17, cl, 10.5, INK, "middle", weight="600"))
+
+        rows_data = [
+            ("程序 P₁", [("会停", GREEN), ("永不停", MUTED), ("会停", GREEN)]),
+            ("程序 P₂", [("永不停", MUTED), ("会停", GREEN), ("永不停", MUTED)]),
+            ("Paradox", [("永不停", MUTED), ("会停", GREEN), ("⚡ 自相矛盾", ORANGE)]),
+        ]
+        for i, (rname, cells) in enumerate(rows_data):
+            ry = ty + 28 + i * (rh + 3)
+            is_par = i == 2
+            els.append(
+                card(
+                    tx,
+                    ry,
+                    cw0 - 3,
+                    rh,
+                    rx=4,
+                    fill=ORANGE_SOFT if is_par else SLATE_SOFT,
+                    stroke=ORANGE if is_par else BORDER,
+                )
+            )
+            els.append(
+                txt(
+                    tx + (cw0 - 3) / 2,
+                    ry + 20,
+                    rname,
+                    10.8,
+                    ORANGE if is_par else INK,
+                    "middle",
+                    weight="700" if is_par else "600",
+                )
+            )
+            for j, (cv, ccol) in enumerate(cells):
+                cx_c = tx + cw0 + j * cw
+                diag = i == j
+                conflict = i == 2 and j == 2
+                fill_c = ORANGE_SOFT if conflict else (BLUE_SOFT if diag else "#ffffff")
+                strk_c = ORANGE if conflict else (BLUE if diag else BORDER)
+                sw_c = 1.8 if conflict else 1.0
+                els.append(card(cx_c, ry, cw - 3, rh, rx=4, fill=fill_c, stroke=strk_c, sw=sw_c))
+                els.append(
+                    txt(
+                        cx_c + (cw - 3) / 2,
+                        ry + 20,
+                        cv,
+                        10.6,
+                        ccol,
+                        "middle",
+                        weight="700" if diag else None,
+                    )
+                )
+
+        # Contradiction proof box
+        els.append(card(398, 246, 324, 78, rx=8, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(410, 266, "死结核查：Paradox(Paradox) 到底停不停？", 11.4, ORANGE, weight="700"))
+        els.append(txt(410, 286, "• 若 Halt 判“会停” ⇒ 按左图走左支死循环 ⇒ 永不停 ✗", 10.7, BODY))
+        els.append(txt(410, 306, "• 若 Halt 判“不停” ⇒ 按左图走右支立即返回 ⇒ 已停机 ✗", 10.7, BODY))
+
+        els.append(txt(398, 344, "结论：假设破裂！不存在对一切输入都正确的通用 Halt 算法", 10.8, INK, weight="600"))
+
+        return figure(
+            378,
+            "图灵停机问题对角线自指反证法分步图解",
+            "左栏展示利用假想停机判定器Halt构造唱反调程序Paradox的两条分支；右栏展示程序与输入的二维表格中右下对角格Paradox作用于自身时无论预测会停还是不停均导出矛盾。",
+            els,
+        )
+
+
+    # ---------------------------------------------------------------------------
+    # 7. crypto-qkd-boundaries.svg
+    # ---------------------------------------------------------------------------
+    def build_crypto_qkd_boundaries() -> str:
+        key_space = 2 ** 128
+        ops_per_year = 1e18 * 365.25 * 86400
+        years_128 = key_space / ops_per_year
+        assert 1.0e13 < years_128 < 1.15e13
+        qber = 0.5 * 0.5
+        assert abs(qber - 0.25) < 1e-12
+
+        els = header(
+            "计算复杂性密码学 vs 量子密钥分发（QKD）：各自守住哪条安全边界？",
+            "左：有限空间的计算困难假设与量子算法冲击；右：BB84 偏振基抽检（25% 误码）与工程现实约束",
+        )
+
+        # Left panel: Computational security & quantum impact
+        els.append(card(20, 64, 352, 296))
+        els.append(step_badge(38, 86, 1, fg=BLUE, bg=BLUE_SOFT))
+        els.append(txt(56, 90, "计算安全性：原则可穷举 ≠ 现实算得动", 12.6, INK, weight="600"))
+
+        l_cards = [
+            (
+                "① 128 位对称密钥空间：2¹²⁸ ≈ 3.40 × 10³⁸",
+                "哪怕每秒试 10¹⁸ 把，穷举仍需约 1.08×10¹³ 年（宇宙年龄 ~780 倍）",
+                BLUE,
+                BLUE_SOFT,
+            ),
+            (
+                "② 公钥密码（RSA / 椭圆曲线）遇 Shor 量子算法",
+                "大整数分解与离散对数被指数级加速 → 须迁移抗量子密码（PQC）",
+                ORANGE,
+                ORANGE_SOFT,
+            ),
+            (
+                "③ 对称密码（AES）遇 Grover 量子搜索",
+                "仅平方根加速 √N（2²⁵⁶ 变 2¹²⁸ 步）→ 密钥长度加倍即可稳守",
+                GREEN,
+                GREEN_SOFT,
+            ),
+        ]
+        for idx, (ct, cb, fg, bg) in enumerate(l_cards):
+            ry = 104 + idx * 60
+            els.append(card(36, ry, 320, 50, rx=7, fill=bg, stroke=fg))
+            els.append(txt(48, ry + 19, ct, 11.3, fg, weight="700"))
+            els.append(txt(48, ry + 38, cb, 10.5, BODY))
+
+        els.append(card(36, 286, 320, 42, rx=6, fill=SLATE_SOFT, stroke=SLATE, dash="4 3"))
+        els.append(txt(48, 303, "⚠ 数学安全证明 ≠ 产品绝不出错：", 11, INK, weight="700"))
+        els.append(txt(48, 320, "弱随机数、计时/功耗侧信道、代码漏洞仍会绕过数学锁", 10.5, BODY))
+        els.append(txt(36, 346, "结论：密码学结论永远绑定“攻击模型 + 算力假设 + 正确实现”", 10.6, MUTED))
+
+        # Right panel: BB84 QKD & engineering caveats
+        els.append(card(388, 64, 352, 296))
+        els.append(step_badge(406, 86, 2, fg=PURPLE, bg=PURPLE_SOFT))
+        els.append(txt(424, 90, "量子密钥分发（BB84）：物理测不准与工程边界", 12.6, INK, weight="600"))
+
+        # Mini BB84 basis table
+        bx, by = 404, 104
+        els.append(card(bx, by, 320, 116, rx=7, fill="#ffffff", stroke=BORDER))
+        els.append(
+            txt(bx + 10, by + 18, "假设 Alice 发 + 基竖直光子 ↑（代表比特 0），Bob 也用 + 基收：", 10.6, INK, weight="600")
+        )
+        els.append(f'<line x1="{bx + 8}" y1="{by + 25}" x2="{bx + 312}" y2="{by + 25}" stroke="{HAIRLINE}" stroke-width="1"/>')
+
+        # Case 1: Eve guesses + basis (50%)
+        els.append(pill(bx + 10, by + 33, "Eve 猜 + 基 (50%)", fg=GREEN, bg=GREEN_SOFT, w=116, h=20, size=10.5))
+        els.append(txt(bx + 134, by + 47, "态未乱 → Bob 必测得 0（此次未暴露）", 10.6, BODY))
+
+        # Case 2: Eve guesses x basis (50%)
+        els.append(pill(bx + 10, by + 62, "Eve 猜 × 基 (50%)", fg=ORANGE, bg=ORANGE_SOFT, w=116, h=20, size=10.5))
+        els.append(txt(bx + 134, by + 76, "坍缩成 ↗/↖ → Bob 测出 50% 错变成 1！", 10.6, ORANGE, weight="600"))
+
+        els.append(f'<line x1="{bx + 8}" y1="{by + 90}" x2="{bx + 312}" y2="{by + 90}" stroke="{HAIRLINE}" stroke-width="1"/>')
+        els.append(
+            txt(
+                bx + 160,
+                by + 108,
+                "拦截重发窃听下同基误码率 QBER = 50% × 50% = 25%",
+                11,
+                PURPLE,
+                "middle",
+                weight="700",
+            )
+        )
+
+        els.append(card(404, 228, 320, 48, rx=7, fill=PURPLE_SOFT, stroke=PURPLE))
+        els.append(txt(416, 246, "物理优势：未知量子态不可克隆，偷测必留统计痕迹", 11.1, PURPLE, weight="700"))
+        els.append(txt(416, 265, "公开比对一部分同基比特，误码异常飙升即丢弃该轮密钥", 10.5, BODY))
+
+        els.append(card(404, 284, 320, 44, rx=6, fill=ORANGE_SOFT, stroke=ORANGE, dash="4 3"))
+        els.append(txt(416, 301, "⚠ 工程边界（据英国 NCSC 技术评估）：", 11, ORANGE, weight="700"))
+        els.append(txt(416, 319, "仍须首发经典身份认证防中间人；单光子源与探测器仍有侧信道", 10.4, BODY))
+        els.append(txt(404, 346, "结论：量子通信 ≠ 量子计算，物理定律也不能替代整机安全工程", 10.6, MUTED))
+
+        return figure(
+            376,
+            "计算复杂性密码学与BB84量子密钥分发的安全机理及工程边界图",
+            "左栏对比128位密钥穷举难度、Shor算法对公钥密码的威胁与Grover算法的平方根加速及实现侧信道；右栏推导BB84协议窃听导致25%误码率的物理机制并标出经典认证与探测器工程边界。",
+            els,
+        )
+
+
+    # ---------------------------------------------------------------------------
+    # 8. hci-latency-thresholds.svg
+    # ---------------------------------------------------------------------------
+    def build_hci_latency_thresholds() -> str:
+        # Log10 mapping from [0.05, 100] seconds onto [56, 704]
+        t_min, t_max = 0.05, 100.0
+        x_min, x_max = 52.0, 708.0
+
+        def tx(t: float) -> float:
+            frac = (math.log10(t) - math.log10(t_min)) / (math.log10(t_max) - math.log10(t_min))
+            return x_min + frac * (x_max - x_min)
+
+        assert abs(tx(0.05) - x_min) < 1e-9 and abs(tx(100.0) - x_max) < 1e-9
+        assert tx(0.1) < tx(1.0) < tx(10.0) < tx(60.0)
+
+        els = header(
+            "等待的交互心理学：Nielsen 三道响应阈值 vs AI 编程工具的长等待",
+            "横轴采用对数时间刻度（0.05s → 100s）：跨过 10 秒注意力上限后，界面反馈决定心流还是焦虑",
+        )
+
+        els.append(card(20, 64, 720, 174))
+        els.append(step_badge(38, 86, 1, fg=BLUE, bg=BLUE_SOFT))
+        els.append(
+            txt(
+                56,
+                90,
+                "Jakob Nielsen (1993) 人类感知响应三道门槛，与 CLI 编程智能体的典型耗时区间",
+                12.6,
+                INK,
+                weight="600",
+            )
+        )
+
+        bands = [
+            (0.05, 0.1, "≤0.1s 瞬时感", "按键直出", GREEN, GREEN_SOFT),
+            (0.1, 1.0, "0.1–1s 心流区", "思维不中断", BLUE, BLUE_SOFT),
+            (1.0, 10.0, "1–10s 耐心临界", "需加载反馈", PURPLE, PURPLE_SOFT),
+            (10.0, 100.0, "10s+ 注意力漂移与怀疑卡死区", "极易切走分心，亟需陪伴与步骤透明", ORANGE, ORANGE_SOFT),
+        ]
+        by_band, bh_band = 106, 54
+        for t0, t1, b_head, b_sub, fg, bg in bands:
+            bx0 = tx(t0)
+            bw = tx(t1) - bx0
+            els.append(card(f"{bx0:.1f}", by_band, f"{bw:.1f}", bh_band, rx=6, fill=bg, stroke=fg))
+            els.append(txt((bx0 + tx(t1)) / 2, by_band + 22, b_head, 11.2, fg, "middle", weight="700"))
+            els.append(txt((bx0 + tx(t1)) / 2, by_band + 41, b_sub, 10.4, BODY, "middle"))
+
+        # Log axis baseline & ticks
+        ay = 176
+        els.append(f'<line x1="{x_min}" y1="{ay}" x2="{x_max}" y2="{ay}" stroke="#94a3b8" stroke-width="1.4"/>')
+        for tv, tlbl in [(0.05, "0.05s"), (0.1, "0.1s"), (1.0, "1.0s"), (5.0, "5s"), (10.0, "10s"), (60.0, "60s"), (100.0, "100s")]:
+            px = tx(tv)
+            els.append(f'<line x1="{px:.1f}" y1="{ay - 4}" x2="{px:.1f}" y2="{ay + 4}" stroke="#64748b" stroke-width="1.3"/>')
+            els.append(txt(px, ay + 17, tlbl, 10.6, INK if tv in (0.1, 1.0, 10.0) else MUTED, "middle", weight="700" if tv in (0.1, 1.0, 10.0) else None))
+
+        # Bracket for AI Coding Agent wait (5s - 90s)
+        ax_s, ax_e = tx(5.0), tx(90.0)
+        els.append(
+            f'<rect x="{ax_s:.1f}" y="202" width="{ax_e - ax_s:.1f}" height="24" rx="12" '
+            f'fill="{INK}" fill-opacity="0.08" stroke="{INK}" stroke-width="1.2"/>'
+        )
+        els.append(
+            txt(
+                (ax_s + ax_e) / 2,
+                218,
+                "AI 智能体单轮耗时（5–90s：读文件·采样·跑测试）",
+                10.5,
+                INK,
+                "middle",
+                weight="600",
+            )
+        )
+
+        # Bottom two cards: Unoccupied wait vs Dual-layer feedback
+        els.append(card(20, 250, 352, 104))
+        els.append(step_badge(38, 272, 2, fg=ORANGE, bg=ORANGE_SOFT))
+        els.append(txt(56, 276, "无反馈空等（Unoccupied Wait）：主观度日如年", 12.4, INK, weight="600"))
+        els.append(txt(38, 300, "• 光标干闪 20 秒：用户立刻怀疑断网、死循环或假死", 11, BODY))
+        els.append(txt(38, 320, "• 休斯顿机场经典案例：空等行李 7 分钟投诉不断，", 11, BODY))
+        els.append(txt(48, 338, "把登机口调远改成“边走边等”后，投诉率骤降近零", 10.8, MUTED))
+
+        els.append(card(388, 250, 352, 104))
+        els.append(step_badge(406, 272, 3, fg=GREEN, bg=GREEN_SOFT))
+        els.append(txt(424, 276, "好工具的双层解法：俏皮陪伴 + 真实步骤日志", 12.4, INK, weight="600"))
+        els.append(txt(406, 300, "• 情绪层（Spelunking...）：轻量动效证明存活、缓和紧绷", 11, BODY))
+        els.append(txt(406, 320, "• 事实层（Reading app.ts）：交代真实工具调用进展", 11, BODY))
+        els.append(txt(406, 338, "• 诚实底线（NN/g）：算不准进度时绝不编造“已完成 83%”", 10.8, GREEN, weight="600"))
+
+        return figure(
+            368,
+            "Nielsen人机交互响应时间三阈值与AI编程工具长等待反馈设计图",
+            "上方在对数时间轴上标出0.1秒瞬时、1秒心流与10秒注意力漂移三道阈值及AI智能体5至90秒典型耗时区间；下方对比空白死等焦虑与情绪加事实双层状态反馈。",
+            els,
+        )
+
+
+    # ---------------------------------------------------------------------------
+    # 9. agent-tool-loop-vs-spinner.svg
+    # ---------------------------------------------------------------------------
+    def build_agent_tool_loop_vs_spinner() -> str:
+        els = header(
+            "掀开终端引擎盖：“第二人设”小剧场 vs 底层真实的 ReAct 工具循环",
+            "上方是前端定时器随机抽取的俏皮动词；下方才是提示词、词元采样、本地工具与测试组成的工程闭环",
+        )
+
+        # Top card: UI Surface Persona
+        els.append(card(20, 64, 720, 96, rx=10, fill=PURPLE_SOFT, stroke=PURPLE))
+        els.append(pill(36, 76, "表层 UI（第二人设）", fg=PURPLE, bg="#ffffff", w=146, h=22, size=11.2))
+        els.append(
+            txt(
+                194,
+                92,
+                "本地终端 UI 渲染器：按固定间隔从内置词表抽词轮播（不读取模型隐状态！）",
+                12.2,
+                INK,
+                weight="600",
+            )
+        )
+
+        els.append(card(36, 108, 688, 38, rx=7, fill="#ffffff", stroke=PURPLE))
+        els.append(
+            txt(
+                54,
+                132,
+                "✻ Spelunking…   ⟳   ✻ Marinating…   ⟳   ✻ Honking…   ⟳   ✻ Clauding…",
+                12,
+                PURPLE,
+                weight="700",
+                cls="mono",
+            )
+        )
+        els.append(txt(708, 131, "仅表“仍在等待响应”", 10.8, MUTED, "end"))
+
+        # Separator banner
+        els.append(f'<line x1="28" y1="173" x2="732" y2="173" stroke="{HAIRLINE}" stroke-width="1.3" stroke-dasharray="5 4"/>')
+        els.append(
+            txt(
+                380,
+                177,
+                "隔离线：上方文案 ≠ 模型思维链（CoT），也 ≠ 当前正在执行的真实技术动作",
+                11,
+                ORANGE,
+                "middle",
+                weight="700",
+                halo=True,
+            )
+        )
+
+        # Bottom card: Actual ReAct engineering loop
+        els.append(card(20, 188, 720, 190))
+        els.append(pill(36, 200, "底层引擎（ReAct 闭环）", fg=BLUE, bg=BLUE_SOFT, w=156, h=22, size=11.2))
+        els.append(
+            txt(
+                204,
+                216,
+                "等待的那十几秒里，云端模型与本地开发环境真正跑完的四步工程数据流",
+                12.2,
+                INK,
+                weight="600",
+            )
+        )
+
+        boxes = [
+            (
+                "① 组装上下文请求",
+                "System Prompt 规范",
+                "+ 仓库结构与文件片段",
+                "+ 历史对话打包发 API",
+                BLUE,
+                BLUE_SOFT,
+            ),
+            (
+                "② 概率采样与规划",
+                "隐藏推理草稿 / 词元采样",
+                "按语法约束吐出结构化",
+                "JSON 工具调用指令",
+                PURPLE,
+                PURPLE_SOFT,
+            ),
+            (
+                "③ 本地工具真实执行",
+                "grep 搜符号 / view 读行",
+                "edit 打补丁改代码",
+                "跑 pytest / 编译命令",
+                ORANGE,
+                ORANGE_SOFT,
+            ),
+            (
+                "④ 观测退出码与迭代",
+                "收集 stdout/报错日志",
+                "未通过 ⇒ 回传②继续改",
+                "全通过 ⇒ 输出改动摘要",
+                GREEN,
+                GREEN_SOFT,
+            ),
+        ]
+        bx0, bw, bgap = 36, 158, 18
+        by = 232
+        bh = 92
+        for idx, (b_head, l1, l2, l3, fg, bg) in enumerate(boxes):
+            bx = bx0 + idx * (bw + bgap)
+            els.append(card(bx, by, bw, bh, rx=8, fill=bg, stroke=fg))
+            els.append(txt(bx + 10, by + 20, b_head, 11.4, fg, weight="700"))
+            els.append(txt(bx + 10, by + 42, l1, 10.6, BODY))
+            els.append(txt(bx + 10, by + 60, l2, 10.6, BODY))
+            els.append(txt(bx + 10, by + 78, l3, 10.6, BODY))
+            if idx < 3:
+                ax1 = bx + bw + 2
+                ax2 = bx + bw + bgap - 3
+                els.append(
+                    f'<line x1="{ax1}" y1="{by + bh / 2:.1f}" x2="{ax2}" y2="{by + bh / 2:.1f}" '
+                    f'stroke="{BLUE}" stroke-width="1.5" marker-end="url(#arr-blue)"/>'
+                )
+
+        # Loopback arrow from Box 4 bottom to Box 2 bottom
+        x_from = bx0 + 3 * (bw + bgap) + bw / 2
+        x_to = bx0 + 1 * (bw + bgap) + bw / 2
+        y_bot = by + bh
+        els.append(
+            f'<path d="M{x_from:.1f},{y_bot} V{y_bot + 22} H{x_to:.1f} V{y_bot + 3}" '
+            f'fill="none" stroke="{ORANGE}" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arr-orange)"/>'
+        )
+        els.append(
+            txt(
+                (x_from + x_to) / 2,
+                y_bot + 17,
+                "多轮自动迭代（测试失败或需查更多文件时循环 ②→③→④）",
+                10.5,
+                ORANGE,
+                "middle",
+                weight="600",
+                halo=True,
+            )
+        )
+        els.append(
+            txt(
+                36,
+                366,
+                "验货铁律：别因为看到 Spelunking 就信它读懂了全局——只认最终 git diff 与测试通过证据",
+                10.8,
+                MUTED,
+            )
+        )
+
+        return figure(
+            392,
+            "AI编程工具表层状态词第二人设与底层ReAct工具调用循环解剖图",
+            "上下分层对比图：上层展示终端前端定时器从词表随机轮播Spelunking与Honking等陪伴文案；下层展示上下文组装、模型JSON工具指令采样、本地grep/edit/pytest执行与退出码观测回传的真实闭环。",
+            els,
+        )
+
+
+    def check_svg_text_overlaps(svg_text: str, name: str) -> None:
+        """Approximate bounding-box overlap check across all <text> nodes in an SVG."""
+        root = ET.fromstring(svg_text)
+        ns = "{http://www.w3.org/2000/svg}"
+        boxes = []
+        for elem in root.iter(f"{ns}text"):
+            content = "".join(elem.itertext()).strip()
+            if not content:
+                continue
+            x = float(elem.attrib["x"])
+            y = float(elem.attrib["y"])
+            fs = float(elem.attrib.get("font-size", "12"))
+            anc = elem.attrib.get("text-anchor", "start")
+            # Estimate visual width: CJK/wide chars ~0.95*fs, ASCII ~0.56*fs
+            est_w = sum(0.95 * fs if ord(ch) > 127 else 0.56 * fs for ch in content)
+            if anc == "middle":
+                x0, x1 = x - est_w / 2, x + est_w / 2
+            elif anc == "end":
+                x0, x1 = x - est_w, x
+            else:
+                x0, x1 = x, x + est_w
+            y0, y1 = y - 0.80 * fs, y + 0.18 * fs
+            if x0 < 2 or x1 > WIDTH - 2:
+                raise AssertionError(f"[{name}] Text out of horizontal bounds ({x0:.1f}..{x1:.1f}): {content!r}")
+            for ox0, oy0, ox1, oy1, ocontent in boxes:
+                ix = min(x1, ox1) - max(x0, ox0)
+                iy = min(y1, oy1) - max(y0, oy0)
+                if ix > 3.0 and iy > 2.5:
+                    raise AssertionError(
+                        f"[{name}] Text overlap ({ix:.1f}x{iy:.1f}px) between {content!r} and {ocontent!r}"
+                    )
+            boxes.append((x0, y0, x1, y1, content))
+
+    return {
+        "high-dim": (
+            ("high-dim", "unit-ball-volume-peak.svg", build_unit_ball_volume_peak),
+            ("high-dim", "thin-shell-spiky-cube.svg", build_thin_shell_spiky_cube),
+            ("high-dim", "manifold-embedding-geometry.svg", build_manifold_embedding_geometry),
+        ),
+        "ai-impact": (
+            ("ai-impact", "cognitive-offloading-loop.svg", build_cognitive_offloading_loop),
+            ("ai-impact", "jevons-energy-ledger.svg", build_jevons_energy_ledger),
+            ("ai-impact", "halting-diagonal-proof.svg", build_halting_diagonal_proof),
+            ("ai-impact", "crypto-qkd-boundaries.svg", build_crypto_qkd_boundaries),
+            ("ai-impact", "hci-latency-thresholds.svg", build_hci_latency_thresholds),
+            ("ai-impact", "agent-tool-loop-vs-spinner.svg", build_agent_tool_loop_vs_spinner),
+        ),
+        "check_overlaps": check_svg_text_overlaps,
+    }
+
+
+@register("high-dim", "高维几何与流形假设：单位球体积坍缩、薄壳集中与 Embedding 平行四边形", "algebra_logic")
+def build_high_dim_geometry():
+    suite = _high_dim_and_ai_impact_suite()
+    for subdir, fname, fn in suite["high-dim"]:
+        svg = fn()
+        suite["check_overlaps"](svg, f"{subdir}/{fname}")
+        write_svg(subdir, fname, svg)
+
+
+@register("ai-impact", "AI 第一性原理与认知交互：认知卸载、杰文斯悖论、停机对角线、BB84 与 ReAct 循环", "algebra_logic")
+def build_ai_impact_and_principles():
+    suite = _high_dim_and_ai_impact_suite()
+    for subdir, fname, fn in suite["ai-impact"]:
+        svg = fn()
+        suite["check_overlaps"](svg, f"{subdir}/{fname}")
+        write_svg(subdir, fname, svg)

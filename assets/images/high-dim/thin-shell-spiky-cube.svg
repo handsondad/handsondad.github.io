@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="366" viewBox="0 0 760 366" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">高维球薄壳集中效应与超立方体内切球体积占比坍缩图解</title>
+<desc id="desc">左栏精确绘制1减0.99的n次方曲线，展示100维63.4%与500维99.3%体积集中在1%薄壳；右栏对比超立方体顶角距离根号n增长与内切球体积占比从二维78.54%跌至十维0.25%。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="365" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">高维球的“薄壳集中”与超立方体的“顶角伸长”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：最外 1% 半径薄壳占球体积比例 1−0.99ⁿ；右：[-1,1]ⁿ 方盒顶角距原点 √n，内切球占比急剧塌缩</text>
+<rect x="20" y="64" width="352" height="286" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="86" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="38" y="90" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="90" font-size="12.8" fill="#0f172a" text-anchor="start" font-weight="600">最外 1% 薄皮（0.99 &lt; ‖x‖ ≤ 1）体积占比</text>
+<line x1="66" y1="286.0" x2="346.0" y2="286.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="59" y="290.0" font-size="10.5" fill="#64748b" text-anchor="end">0%</text>
+<line x1="66" y1="244.5" x2="346.0" y2="244.5" stroke="#f1f5f9" stroke-width="1"/>
+<text x="59" y="248.5" font-size="10.5" fill="#64748b" text-anchor="end">25%</text>
+<line x1="66" y1="203.0" x2="346.0" y2="203.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="59" y="207.0" font-size="10.5" fill="#64748b" text-anchor="end">50%</text>
+<line x1="66" y1="161.5" x2="346.0" y2="161.5" stroke="#f1f5f9" stroke-width="1"/>
+<text x="59" y="165.5" font-size="10.5" fill="#64748b" text-anchor="end">75%</text>
+<line x1="66" y1="120.0" x2="346.0" y2="120.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="59" y="124.0" font-size="10.5" fill="#64748b" text-anchor="end">100%</text>
+<path d="M66,120.0 V286 H346.0" fill="none" stroke="#94a3b8" stroke-width="1.3"/>
+<text x="66.0" y="301" font-size="10.5" fill="#64748b" text-anchor="middle">0</text>
+<text x="122.0" y="301" font-size="10.5" fill="#64748b" text-anchor="middle">100</text>
+<text x="206.0" y="301" font-size="10.5" fill="#64748b" text-anchor="middle">250</text>
+<text x="346.0" y="301" font-size="10.5" fill="#64748b" text-anchor="middle">500</text>
+<text x="206.0" y="316" font-size="11" fill="#64748b" text-anchor="middle">维度 n</text>
+<path d="M66.0,286.0 L66.00,286.00 L68.80,277.86 L71.60,270.13 L74.40,262.77 L77.20,255.77 L80.00,249.12 L82.80,242.79 L85.60,236.77 L88.40,231.05 L91.20,225.61 L94.00,220.43 L96.80,215.51 L99.60,210.83 L102.40,206.38 L105.20,202.14 L108.00,198.12 L110.80,194.29 L113.60,190.65 L116.40,187.19 L119.20,183.89 L122.00,180.76 L124.80,177.78 L127.60,174.95 L130.40,172.26 L133.20,169.70 L136.00,167.26 L138.80,164.95 L141.60,162.74 L144.40,160.65 L147.20,158.66 L150.00,156.76 L152.80,154.96 L155.60,153.25 L158.40,151.62 L161.20,150.07 L164.00,148.59 L166.80,147.19 L169.60,145.86 L172.40,144.59 L175.20,143.39 L178.00,142.24 L180.80,141.15 L183.60,140.11 L186.40,139.13 L189.20,138.19 L192.00,137.30 L194.80,136.45 L197.60,135.65 L200.40,134.88 L203.20,134.15 L206.00,133.46 L208.80,132.80 L211.60,132.17 L214.40,131.57 L217.20,131.01 L220.00,130.47 L222.80,129.95 L225.60,129.47 L228.40,129.00 L231.20,128.56 L234.00,128.14 L236.80,127.74 L239.60,127.36 L242.40,127.00 L245.20,126.66 L248.00,126.33 L250.80,126.02 L253.60,125.73 L256.40,125.45 L259.20,125.18 L262.00,124.93 L264.80,124.68 L267.60,124.45 L270.40,124.24 L273.20,124.03 L276.00,123.83 L278.80,123.64 L281.60,123.46 L284.40,123.29 L287.20,123.13 L290.00,122.98 L292.80,122.83 L295.60,122.69 L298.40,122.56 L301.20,122.44 L304.00,122.32 L306.80,122.20 L309.60,122.10 L312.40,121.99 L315.20,121.90 L318.00,121.80 L320.80,121.71 L323.60,121.63 L326.40,121.55 L329.20,121.47 L332.00,121.40 L334.80,121.33 L337.60,121.27 L340.40,121.21 L343.20,121.15 L346.00,121.09 L346.0,286.0 Z" fill="#eaf4fb" opacity="0.75"/>
+<path d="M66.00,286.00 L68.80,277.86 L71.60,270.13 L74.40,262.77 L77.20,255.77 L80.00,249.12 L82.80,242.79 L85.60,236.77 L88.40,231.05 L91.20,225.61 L94.00,220.43 L96.80,215.51 L99.60,210.83 L102.40,206.38 L105.20,202.14 L108.00,198.12 L110.80,194.29 L113.60,190.65 L116.40,187.19 L119.20,183.89 L122.00,180.76 L124.80,177.78 L127.60,174.95 L130.40,172.26 L133.20,169.70 L136.00,167.26 L138.80,164.95 L141.60,162.74 L144.40,160.65 L147.20,158.66 L150.00,156.76 L152.80,154.96 L155.60,153.25 L158.40,151.62 L161.20,150.07 L164.00,148.59 L166.80,147.19 L169.60,145.86 L172.40,144.59 L175.20,143.39 L178.00,142.24 L180.80,141.15 L183.60,140.11 L186.40,139.13 L189.20,138.19 L192.00,137.30 L194.80,136.45 L197.60,135.65 L200.40,134.88 L203.20,134.15 L206.00,133.46 L208.80,132.80 L211.60,132.17 L214.40,131.57 L217.20,131.01 L220.00,130.47 L222.80,129.95 L225.60,129.47 L228.40,129.00 L231.20,128.56 L234.00,128.14 L236.80,127.74 L239.60,127.36 L242.40,127.00 L245.20,126.66 L248.00,126.33 L250.80,126.02 L253.60,125.73 L256.40,125.45 L259.20,125.18 L262.00,124.93 L264.80,124.68 L267.60,124.45 L270.40,124.24 L273.20,124.03 L276.00,123.83 L278.80,123.64 L281.60,123.46 L284.40,123.29 L287.20,123.13 L290.00,122.98 L292.80,122.83 L295.60,122.69 L298.40,122.56 L301.20,122.44 L304.00,122.32 L306.80,122.20 L309.60,122.10 L312.40,121.99 L315.20,121.90 L318.00,121.80 L320.80,121.71 L323.60,121.63 L326.40,121.55 L329.20,121.47 L332.00,121.40 L334.80,121.33 L337.60,121.27 L340.40,121.21 L343.20,121.15 L346.00,121.09" fill="none" stroke="#1d6fa5" stroke-width="2.3"/>
+<line x1="122.0" y1="180.8" x2="122.0" y2="286" stroke="#c25014" stroke-width="1.1" stroke-dasharray="3 3"/>
+<circle cx="122.0" cy="180.8" r="4.6" fill="#c25014"/>
+<text x="130.0" y="184.8" font-size="11.2" fill="#c25014" text-anchor="start" font-weight="700" class="halo">n=100: 63.4%</text>
+<line x1="234.0" y1="128.1" x2="234.0" y2="286" stroke="#1d6fa5" stroke-width="1.1" stroke-dasharray="3 3"/>
+<circle cx="234.0" cy="128.1" r="4.6" fill="#1d6fa5"/>
+<text x="240.0" y="143.1" font-size="11.2" fill="#1d6fa5" text-anchor="start" font-weight="700" class="halo">n=300: 95.1%</text>
+<line x1="346.0" y1="121.1" x2="346.0" y2="286" stroke="#18794e" stroke-width="1.1" stroke-dasharray="3 3"/>
+<circle cx="346.0" cy="121.1" r="4.6" fill="#18794e"/>
+<text x="340.0" y="112.1" font-size="11.2" fill="#18794e" text-anchor="end" font-weight="700" class="halo">n=500: 99.3%</text>
+<text x="36" y="336" font-size="11" fill="#64748b" text-anchor="start">均匀采样下：100 维逾六成在皮上，500 维达 99.3%</text>
+<rect x="388" y="64" width="352" height="286" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="86" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="406" y="90" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="424" y="90" font-size="12.8" fill="#0f172a" text-anchor="start" font-weight="600">[-1,1]ⁿ 方盒顶角距离 √n vs 内切球占比</text>
+<rect x="414" y="114" width="84" height="84" fill="#fef1e8" stroke="#c25014" stroke-width="1.4"/>
+<circle cx="456" cy="156" r="42" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.6"/>
+<circle cx="456" cy="156" r="2.8" fill="#0f172a"/>
+<line x1="456" y1="156" x2="498" y2="156" stroke="#1d6fa5" stroke-width="1.5"/>
+<line x1="456" y1="156" x2="498" y2="114" stroke="#c25014" stroke-width="1.6" stroke-dasharray="3 2"/>
+<text x="474" y="169" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="600" class="halo">r=1</text>
+<text x="454" y="108" font-size="10.5" fill="#64748b" text-anchor="middle">二维截面：角距 √2≈1.41</text>
+<text x="530" y="114" font-size="11" fill="#0f172a" text-anchor="start" font-weight="600">原点到方盒顶角距离 √n（对比球半径 1）：</text>
+<rect x="530" y="126" width="34.0" height="12" rx="3" fill="#1d6fa5" fill-opacity="0.22" stroke="#1d6fa5" stroke-width="1"/>
+<text x="536" y="135.8" font-size="10.5" fill="#0f172a" text-anchor="start" class="halo">球半径 r = 1.00</text>
+<rect x="530" y="147" width="68.0" height="12" rx="3" fill="#c25014" fill-opacity="0.22" stroke="#c25014" stroke-width="1"/>
+<text x="536" y="156.8" font-size="10.5" fill="#0f172a" text-anchor="start" class="halo">4维顶角 √4 = 2.00</text>
+<rect x="530" y="168" width="102.0" height="12" rx="3" fill="#c25014" fill-opacity="0.22" stroke="#c25014" stroke-width="1"/>
+<text x="536" y="177.8" font-size="10.5" fill="#0f172a" text-anchor="start" class="halo">9维顶角 √9 = 3.00</text>
+<rect x="530" y="189" width="170.0" height="12" rx="3" fill="#6d28d9" fill-opacity="0.22" stroke="#6d28d9" stroke-width="1"/>
+<text x="536" y="198.8" font-size="10.5" fill="#0f172a" text-anchor="start" class="halo">25维顶角 √25 = 5.00</text>
+<line x1="404" y1="216" x2="724" y2="216" stroke="#cbd5e1" stroke-width="1"/>
+<text x="404" y="234" font-size="11.3" fill="#0f172a" text-anchor="start" font-weight="600">内切单位球占 [-1,1]ⁿ 方盒总体积比例 Vₙ(1) / 2ⁿ：</text>
+<text x="406" y="257" font-size="11" fill="#1e293b" text-anchor="start" class="mono">n =  2</text>
+<rect x="462" y="247" width="192.0" height="12" rx="4" fill="#f1f5f9"/>
+<rect x="462" y="247" width="150.8" height="12" rx="4" fill="#1d6fa5"/>
+<text x="662.0" y="257" font-size="11" fill="#1d6fa5" text-anchor="start" font-weight="600">78.54%</text>
+<text x="406" y="277" font-size="11" fill="#1e293b" text-anchor="start" class="mono">n =  3</text>
+<rect x="462" y="267" width="192.0" height="12" rx="4" fill="#f1f5f9"/>
+<rect x="462" y="267" width="100.5" height="12" rx="4" fill="#1d6fa5"/>
+<text x="662.0" y="277" font-size="11" fill="#1d6fa5" text-anchor="start" font-weight="600">52.36%</text>
+<text x="406" y="297" font-size="11" fill="#1e293b" text-anchor="start" class="mono">n =  5</text>
+<rect x="462" y="287" width="192.0" height="12" rx="4" fill="#f1f5f9"/>
+<rect x="462" y="287" width="31.6" height="12" rx="4" fill="#6d28d9"/>
+<text x="662.0" y="297" font-size="11" fill="#6d28d9" text-anchor="start" font-weight="600">16.45%</text>
+<text x="406" y="317" font-size="11" fill="#1e293b" text-anchor="start" class="mono">n = 10</text>
+<rect x="462" y="307" width="192.0" height="12" rx="4" fill="#f1f5f9"/>
+<rect x="462" y="307" width="2.2" height="12" rx="4" fill="#c25014"/>
+<text x="662.0" y="317" font-size="11" fill="#c25014" text-anchor="start" font-weight="600">0.25%</text>
+<text x="404" y="336" font-size="11" fill="#64748b" text-anchor="start">10 维时内切球仅占方盒 0.25%，其余全在伸出的角落区</text>
+</svg>

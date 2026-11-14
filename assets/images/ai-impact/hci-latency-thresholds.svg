@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="368" viewBox="0 0 760 368" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">Nielsen人机交互响应时间三阈值与AI编程工具长等待反馈设计图</title>
+<desc id="desc">上方在对数时间轴上标出0.1秒瞬时、1秒心流与10秒注意力漂移三道阈值及AI智能体5至90秒典型耗时区间；下方对比空白死等焦虑与情绪加事实双层状态反馈。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="367" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">等待的交互心理学：Nielsen 三道响应阈值 vs AI 编程工具的长等待</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">横轴采用对数时间刻度（0.05s → 100s）：跨过 10 秒注意力上限后，界面反馈决定心流还是焦虑</text>
+<rect x="20" y="64" width="720" height="174" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="86" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="38" y="90" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="90" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="600">Jakob Nielsen (1993) 人类感知响应三道门槛，与 CLI 编程智能体的典型耗时区间</text>
+<rect x="52.0" y="106" width="59.8" height="54" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="81.9" y="128" font-size="11.2" fill="#18794e" text-anchor="middle" font-weight="700">≤0.1s 瞬时感</text>
+<text x="81.9" y="147" font-size="10.4" fill="#1e293b" text-anchor="middle">按键直出</text>
+<rect x="111.8" y="106" width="198.7" height="54" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="211.2" y="128" font-size="11.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">0.1–1s 心流区</text>
+<text x="211.2" y="147" font-size="10.4" fill="#1e293b" text-anchor="middle">思维不中断</text>
+<rect x="310.5" y="106" width="198.7" height="54" rx="6" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="409.9" y="128" font-size="11.2" fill="#6d28d9" text-anchor="middle" font-weight="700">1–10s 耐心临界</text>
+<text x="409.9" y="147" font-size="10.4" fill="#1e293b" text-anchor="middle">需加载反馈</text>
+<rect x="509.3" y="106" width="198.7" height="54" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="608.6" y="128" font-size="11.2" fill="#c25014" text-anchor="middle" font-weight="700">10s+ 注意力漂移与怀疑卡死区</text>
+<text x="608.6" y="147" font-size="10.4" fill="#1e293b" text-anchor="middle">极易切走分心，亟需陪伴与步骤透明</text>
+<line x1="52.0" y1="176" x2="708.0" y2="176" stroke="#94a3b8" stroke-width="1.4"/>
+<line x1="52.0" y1="172" x2="52.0" y2="180" stroke="#64748b" stroke-width="1.3"/>
+<text x="52.0" y="193" font-size="10.6" fill="#64748b" text-anchor="middle">0.05s</text>
+<line x1="111.8" y1="172" x2="111.8" y2="180" stroke="#64748b" stroke-width="1.3"/>
+<text x="111.8" y="193" font-size="10.6" fill="#0f172a" text-anchor="middle" font-weight="700">0.1s</text>
+<line x1="310.5" y1="172" x2="310.5" y2="180" stroke="#64748b" stroke-width="1.3"/>
+<text x="310.5" y="193" font-size="10.6" fill="#0f172a" text-anchor="middle" font-weight="700">1.0s</text>
+<line x1="449.5" y1="172" x2="449.5" y2="180" stroke="#64748b" stroke-width="1.3"/>
+<text x="449.5" y="193" font-size="10.6" fill="#64748b" text-anchor="middle">5s</text>
+<line x1="509.3" y1="172" x2="509.3" y2="180" stroke="#64748b" stroke-width="1.3"/>
+<text x="509.3" y="193" font-size="10.6" fill="#0f172a" text-anchor="middle" font-weight="700">10s</text>
+<line x1="663.9" y1="172" x2="663.9" y2="180" stroke="#64748b" stroke-width="1.3"/>
+<text x="663.9" y="193" font-size="10.6" fill="#64748b" text-anchor="middle">60s</text>
+<line x1="708.0" y1="172" x2="708.0" y2="180" stroke="#64748b" stroke-width="1.3"/>
+<text x="708.0" y="193" font-size="10.6" fill="#64748b" text-anchor="middle">100s</text>
+<rect x="449.5" y="202" width="249.5" height="24" rx="12" fill="#0f172a" fill-opacity="0.08" stroke="#0f172a" stroke-width="1.2"/>
+<text x="574.2" y="218" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600">AI 智能体单轮耗时（5–90s：读文件·采样·跑测试）</text>
+<rect x="20" y="250" width="352" height="104" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="272" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="38" y="276" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="56" y="276" font-size="12.4" fill="#0f172a" text-anchor="start" font-weight="600">无反馈空等（Unoccupied Wait）：主观度日如年</text>
+<text x="38" y="300" font-size="11" fill="#1e293b" text-anchor="start">• 光标干闪 20 秒：用户立刻怀疑断网、死循环或假死</text>
+<text x="38" y="320" font-size="11" fill="#1e293b" text-anchor="start">• 休斯顿机场经典案例：空等行李 7 分钟投诉不断，</text>
+<text x="48" y="338" font-size="10.8" fill="#64748b" text-anchor="start">把登机口调远改成“边走边等”后，投诉率骤降近零</text>
+<rect x="388" y="250" width="352" height="104" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="272" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="406" y="276" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">3</text>
+<text x="424" y="276" font-size="12.4" fill="#0f172a" text-anchor="start" font-weight="600">好工具的双层解法：俏皮陪伴 + 真实步骤日志</text>
+<text x="406" y="300" font-size="11" fill="#1e293b" text-anchor="start">• 情绪层（Spelunking...）：轻量动效证明存活、缓和紧绷</text>
+<text x="406" y="320" font-size="11" fill="#1e293b" text-anchor="start">• 事实层（Reading app.ts）：交代真实工具调用进展</text>
+<text x="406" y="338" font-size="10.8" fill="#18794e" text-anchor="start" font-weight="600">• 诚实底线（NN/g）：算不准进度时绝不编造“已完成 83%”</text>
+</svg>

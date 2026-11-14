@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="394" viewBox="0 0 760 394" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">认知卸载的两种学习回路与软件工程四阶段人类责任边界图</title>
+<desc id="desc">上方左右对比一键代写导致流畅性错觉的短路回路与先猜想再核验的认知脚手架回路；下方拆解定义问题、生成初稿、验证边界、部署担责四个工程阶段。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="393" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">认知卸载的两种回路：外包思考萎缩，还是脚手架放大能力？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">上：对照认知卸载（Risko &amp; Gilbert）与必要难度（Bjork）；下：工程任务的四道人类责任关</text>
+<rect x="20" y="64" width="352" height="192" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="86" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="38" y="90" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="90" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="600">外包短路：省掉过程 → 流畅性错觉 → 判断退化</text>
+<rect x="36" y="104" width="320" height="39" rx="7" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="48" y="120" font-size="11.6" fill="#c25014" text-anchor="start" font-weight="700">① 遇事直接“一键代写”</text>
+<text x="48" y="136" font-size="10.8" fill="#1e293b" text-anchor="start">跳过读题拆解，直接索取现成答案或完整代码</text>
+<line x1="196" y1="143" x2="196" y2="151" stroke="#c25014" stroke-width="1.4" marker-end="url(#arr-orange)"/>
+<rect x="36" y="152" width="320" height="39" rx="7" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="48" y="168" font-size="11.6" fill="#c25014" text-anchor="start" font-weight="700">② 绕开“必要难度”摩擦</text>
+<text x="48" y="184" font-size="10.8" fill="#1e293b" text-anchor="start">省去试错检索，大脑未建立深层神经编码线索</text>
+<line x1="196" y1="191" x2="196" y2="199" stroke="#c25014" stroke-width="1.4" marker-end="url(#arr-orange)"/>
+<rect x="36" y="200" width="320" height="39" rx="7" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="48" y="216" font-size="11.6" fill="#c25014" text-anchor="start" font-weight="700">③ 流畅性错觉与判断萎缩</text>
+<text x="48" y="232" font-size="10.8" fill="#1e293b" text-anchor="start">把“AI 写得通顺”误当“我已掌握”，遇边界即懵</text>
+<rect x="388" y="64" width="352" height="192" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="86" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="406" y="90" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">2</text>
+<text x="424" y="90" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="600">认知脚手架：先猜想 → 工具发散 → 核验放大</text>
+<rect x="404" y="104" width="320" height="39" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="416" y="120" font-size="11.6" fill="#18794e" text-anchor="start" font-weight="700">① 先独立提出猜想与约束</text>
+<text x="416" y="136" font-size="10.8" fill="#1e293b" text-anchor="start">哪怕粗糙，先写下“我原来以为”与目标边界</text>
+<line x1="564" y1="143" x2="564" y2="151" stroke="#18794e" stroke-width="1.4" marker-end="url(#arr-green)"/>
+<rect x="404" y="152" width="320" height="39" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="416" y="168" font-size="11.6" fill="#18794e" text-anchor="start" font-weight="700">② 借 AI 扩展候选与找盲区</text>
+<text x="416" y="184" font-size="10.8" fill="#1e293b" text-anchor="start">让工具列备选方案、唱反调挑刺、补齐陌生线索</text>
+<line x1="564" y1="191" x2="564" y2="199" stroke="#18794e" stroke-width="1.4" marker-end="url(#arr-green)"/>
+<rect x="404" y="200" width="320" height="39" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="416" y="216" font-size="11.6" fill="#18794e" text-anchor="start" font-weight="700">③ 动手实验与一手资料核验</text>
+<text x="416" y="232" font-size="10.8" fill="#1e293b" text-anchor="start">跑测试/折纸飞机/查原典，把增量内化为真本事</text>
+<rect x="20" y="268" width="720" height="112" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="290" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="38" y="294" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">3</text>
+<text x="56" y="294" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="600">拆解一项真实工程任务：AI 最擅长第②棒起草，人类必须守住头尾契约与担责</text>
+<rect x="36" y="308" width="158" height="58" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="46" y="326" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700">1. 定义真问题</text>
+<text x="46" y="343" font-size="10.6" fill="#1e293b" text-anchor="start">厘清真实需求与红线</text>
+<text x="46" y="358" font-size="10.4" fill="#1d6fa5" text-anchor="start" font-weight="600">[人类主导]</text>
+<line x1="196" y1="337" x2="209" y2="337" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-muted)"/>
+<rect x="212" y="308" width="158" height="58" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="222" y="326" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700">2. 生成候选稿</text>
+<text x="222" y="343" font-size="10.6" fill="#1e293b" text-anchor="start">代码/文档/测试初稿</text>
+<text x="222" y="358" font-size="10.4" fill="#6d28d9" text-anchor="start" font-weight="600">[AI 高速辅助]</text>
+<line x1="372" y1="337" x2="385" y2="337" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-muted)"/>
+<rect x="388" y="308" width="158" height="58" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="398" y="326" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700">3. 验证与找反例</text>
+<text x="398" y="343" font-size="10.6" fill="#1e293b" text-anchor="start">跑单测·查不变量·审边界</text>
+<text x="398" y="358" font-size="10.4" fill="#18794e" text-anchor="start" font-weight="600">[人机协同核验]</text>
+<line x1="548" y1="337" x2="561" y2="337" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-muted)"/>
+<rect x="564" y="308" width="158" height="58" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="574" y="326" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700">4. 部署与担责</text>
+<text x="574" y="343" font-size="10.6" fill="#1e293b" text-anchor="start">上线演进·承担现实后果</text>
+<text x="574" y="358" font-size="10.4" fill="#c25014" text-anchor="start" font-weight="600">[人类签字负责]</text>
+</svg>

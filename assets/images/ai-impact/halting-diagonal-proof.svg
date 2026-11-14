@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="378" viewBox="0 0 760 378" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">图灵停机问题对角线自指反证法分步图解</title>
+<desc id="desc">左栏展示利用假想停机判定器Halt构造唱反调程序Paradox的两条分支；右栏展示程序与输入的二维表格中右下对角格Paradox作用于自身时无论预测会停还是不停均导出矛盾。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="377" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">图灵停机问题的对角线反证法：为什么不存在万能判定器 Halt(P, x)？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：用假想 Halt 组装专唱反调的 Paradox(P)；右：把 Paradox 喂给自身，对角格正反皆矛盾</text>
+<rect x="20" y="64" width="344" height="298" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="86" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="38" y="90" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="90" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="600">第一步：构造唱反调程序 Paradox(P)</text>
+<rect x="104.0" y="106.0" width="176" height="24" rx="12.0" fill="#f1f5f9" stroke="#0f172a" stroke-width="1" stroke-opacity="0.35"/>
+<text x="192.0" y="122.3" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">输入任意程序文本 P</text>
+<line x1="192" y1="130" x2="192" y2="148" stroke="#1d6fa5" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+<rect x="46" y="150" width="292" height="54" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="192" y="171" font-size="11.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">调用假想万能判定器 Halt(P, P)</text>
+<text x="192" y="191" font-size="10.8" fill="#1e293b" text-anchor="middle">询问：“程序 P 读入自身代码 P 会停机吗？”</text>
+<path d="M132,204 L104,234" fill="none" stroke="#c25014" stroke-width="1.5" marker-end="url(#arr-orange)"/>
+<path d="M252,204 L280,234" fill="none" stroke="#18794e" stroke-width="1.5" marker-end="url(#arr-green)"/>
+<text x="106" y="222" font-size="10.6" fill="#c25014" text-anchor="end" font-weight="600">预测=会停</text>
+<text x="278" y="222" font-size="10.6" fill="#18794e" text-anchor="start" font-weight="600">预测=不停</text>
+<rect x="34" y="238" width="148" height="68" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="108" y="259" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">故意跳进死循环</text>
+<text x="108" y="277" font-size="10.6" fill="#1e293b" text-anchor="middle" class="mono">while True: pass</text>
+<text x="108" y="295" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="600">⇒ 实际永远不停！</text>
+<rect x="202" y="238" width="148" height="68" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="276" y="259" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">立即刹车停机</text>
+<text x="276" y="277" font-size="10.6" fill="#1e293b" text-anchor="middle" class="mono">return 0</text>
+<text x="276" y="295" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="600">⇒ 实际当场停下！</text>
+<text x="36" y="332" font-size="10.8" fill="#64748b" text-anchor="start">关键：只要 Halt 是合法算法，Paradox 也必定合法</text>
+<text x="36" y="348" font-size="10.8" fill="#64748b" text-anchor="start">加多少块 GPU 或训练数据都无法绕开这条自指逻辑</text>
+<rect x="380" y="64" width="360" height="298" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="398" cy="86" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="398" y="90" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="416" y="90" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="600">第二步：把 Paradox 喂给自己（对角格崩塌）</text>
+<rect x="480" y="108" width="80" height="26" rx="4" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="520.0" y="125" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600">输入 P₁</text>
+<rect x="560" y="108" width="80" height="26" rx="4" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="600.0" y="125" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600">输入 P₂</text>
+<rect x="640" y="108" width="80" height="26" rx="4" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="680.0" y="125" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600">输入 Paradox</text>
+<rect x="398" y="136" width="79" height="32" rx="4" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="437.5" y="156" font-size="10.8" fill="#0f172a" text-anchor="middle" font-weight="600">程序 P₁</text>
+<rect x="480" y="136" width="77" height="32" rx="4" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.0"/>
+<text x="518.5" y="156" font-size="10.6" fill="#18794e" text-anchor="middle" font-weight="700">会停</text>
+<rect x="560" y="136" width="77" height="32" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="598.5" y="156" font-size="10.6" fill="#64748b" text-anchor="middle">永不停</text>
+<rect x="640" y="136" width="77" height="32" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="678.5" y="156" font-size="10.6" fill="#18794e" text-anchor="middle">会停</text>
+<rect x="398" y="171" width="79" height="32" rx="4" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="437.5" y="191" font-size="10.8" fill="#0f172a" text-anchor="middle" font-weight="600">程序 P₂</text>
+<rect x="480" y="171" width="77" height="32" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="518.5" y="191" font-size="10.6" fill="#64748b" text-anchor="middle">永不停</text>
+<rect x="560" y="171" width="77" height="32" rx="4" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.0"/>
+<text x="598.5" y="191" font-size="10.6" fill="#18794e" text-anchor="middle" font-weight="700">会停</text>
+<rect x="640" y="171" width="77" height="32" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="678.5" y="191" font-size="10.6" fill="#64748b" text-anchor="middle">永不停</text>
+<rect x="398" y="206" width="79" height="32" rx="4" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="437.5" y="226" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="700">Paradox</text>
+<rect x="480" y="206" width="77" height="32" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="518.5" y="226" font-size="10.6" fill="#64748b" text-anchor="middle">永不停</text>
+<rect x="560" y="206" width="77" height="32" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="598.5" y="226" font-size="10.6" fill="#18794e" text-anchor="middle">会停</text>
+<rect x="640" y="206" width="77" height="32" rx="4" fill="#fef1e8" stroke="#c25014" stroke-width="1.8"/>
+<text x="678.5" y="226" font-size="10.6" fill="#c25014" text-anchor="middle" font-weight="700">⚡ 自相矛盾</text>
+<rect x="398" y="246" width="324" height="78" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="410" y="266" font-size="11.4" fill="#c25014" text-anchor="start" font-weight="700">死结核查：Paradox(Paradox) 到底停不停？</text>
+<text x="410" y="286" font-size="10.7" fill="#1e293b" text-anchor="start">• 若 Halt 判“会停” ⇒ 按左图走左支死循环 ⇒ 永不停 ✗</text>
+<text x="410" y="306" font-size="10.7" fill="#1e293b" text-anchor="start">• 若 Halt 判“不停” ⇒ 按左图走右支立即返回 ⇒ 已停机 ✗</text>
+<text x="398" y="344" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="600">结论：假设破裂！不存在对一切输入都正确的通用 Halt 算法</text>
+</svg>

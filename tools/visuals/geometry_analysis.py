@@ -55,6 +55,7 @@ from .core import (
     register,
     step_badge,
     txt,
+    write_svg,
 )
 
 
@@ -1790,6 +1791,7 @@ def build_cauchy():
         ):
             (OUT / f"{name}.svg").write_text(content, encoding="utf-8")
             print(f"Wrote {name}.svg")
+        _build_cauchy_extensions()
 
     main()
 
@@ -2671,3 +2673,1551 @@ def build_bernoulli():
             print(f"Wrote {name}")
 
     main()
+
+
+# ---------------------------------------------------------------------------
+# Cauchy Residue Integral & Uniform Convergence Extensions + Pascal & Eudoxus
+# ---------------------------------------------------------------------------
+def _build_cauchy_extensions():
+    def build_semicircle_residue_eval():
+        # Numerical verification of contour integral for f(z) = 1 / (1 + z^2)
+        R = 6.0
+        n_steps = 4000
+        # Real segment [-R, R]
+        dx = (2.0 * R) / n_steps
+        real_integral = sum(1.0 / (1.0 + (-R + (i + 0.5) * dx) ** 2) for i in range(n_steps)) * dx
+        # Upper semicircle z = R * exp(i * theta), theta in [0, pi]
+        dtheta = math.pi / n_steps
+        arc_integral = 0j
+        for i in range(n_steps):
+            th = (i + 0.5) * dtheta
+            z = R * complex(math.cos(th), math.sin(th))
+            dz = 1j * z * dtheta
+            arc_integral += dz / (1.0 + z * z)
+        total_contour = real_integral + arc_integral
+        assert abs(total_contour - math.pi) < 1e-6, f"Contour mismatch: {total_contour}"
+        arc_bound = math.pi * R / (R * R - 1.0)
+        assert abs(arc_integral) <= arc_bound + 1e-9
+
+        el = []
+        el += header(
+            "用柯西留数定理秒杀实数反常积分：∫₋∞^∞ dx/(1+x²) = π",
+            "不求反正切原函数，借上半复平面 D 形闭合围线包住唯一奇点 z = i，三步直接读出答案",
+        )
+
+        # Left panel: Complex plane D-contour
+        el.append(card(20, 66, 356, 314))
+        el.append(txt(36, 90, "上半复平面闭合围线 C_R", size=PANEL_TITLE, color=INK, weight="700"))
+        el.append(pill(236, 74, "只包住 z = +i", fg=ORANGE, bg=ORANGE_SOFT, w=126, h=22, size=11.5))
+
+        cx, cy = 192.0, 248.0
+        rad = 108.0
+
+        # Shaded D-contour interior
+        el.append(
+            f'<path d="M {cx - rad:.1f},{cy:.1f} L {cx + rad:.1f},{cy:.1f} '
+            f'A {rad:.1f},{rad:.1f} 0 0 0 {cx - rad:.1f},{cy:.1f} Z" '
+            f'fill="{BLUE_SOFT}" fill-opacity="0.58" stroke="none"/>'
+        )
+
+        # Axes: Re z and Im z
+        el.append(
+            f'<line x1="40" y1="{cy:.1f}" x2="356" y2="{cy:.1f}" '
+            f'stroke="{SLATE}" stroke-width="1.3" marker-end="url(#arr-muted)"/>'
+        )
+        el.append(
+            f'<line x1="{cx:.1f}" y1="336" x2="{cx:.1f}" y2="112" '
+            f'stroke="{SLATE}" stroke-width="1.3" marker-end="url(#arr-muted)"/>'
+        )
+        el.append(txt(354, cy - 8, "实轴 Re", size=11.5, color=MUTED, anchor="end"))
+        el.append(txt(cx + 8, 120, "虚轴 Im", size=11.5, color=MUTED))
+
+        # Real segment [-R, R] highlighted in BLUE with forward arrows
+        el.append(
+            f'<line x1="{cx - rad:.1f}" y1="{cy:.1f}" x2="{cx - 18:.1f}" y2="{cy:.1f}" '
+            f'stroke="{BLUE}" stroke-width="3.0" marker-end="url(#arr-blue)"/>'
+        )
+        el.append(
+            f'<line x1="{cx - 22:.1f}" y1="{cy:.1f}" x2="{cx + rad:.1f}" y2="{cy:.1f}" '
+            f'stroke="{BLUE}" stroke-width="3.0"/>'
+        )
+        el.append(
+            f'<line x1="{cx + 20:.1f}" y1="{cy:.1f}" x2="{cx + 56:.1f}" y2="{cy:.1f}" '
+            f'stroke="{BLUE}" stroke-width="3.0" marker-end="url(#arr-blue)"/>'
+        )
+
+        # Semicircle arc Gamma_R in PURPLE (counterclockwise from +R to -R)
+        th_mid = math.radians(60)
+        mx = cx + rad * math.cos(th_mid)
+        my = cy - rad * math.sin(th_mid)
+        el.append(
+            f'<path d="M {cx + rad:.1f},{cy:.1f} A {rad:.1f},{rad:.1f} 0 0 0 {mx:.1f},{my:.1f}" '
+            f'fill="none" stroke="{PURPLE}" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#arr-purple)"/>'
+        )
+        el.append(
+            f'<path d="M {mx:.1f},{my:.1f} A {rad:.1f},{rad:.1f} 0 0 0 {cx - rad:.1f},{cy:.1f}" '
+            f'fill="none" stroke="{PURPLE}" stroke-width="2.5" stroke-dasharray="6 4"/>'
+        )
+
+        # Radial arrow showing R -> inf
+        th_r = math.radians(132)
+        rx_end = cx + rad * math.cos(th_r)
+        ry_end = cy - rad * math.sin(th_r)
+        el.append(
+            f'<line x1="{cx:.1f}" y1="{cy:.1f}" x2="{rx_end:.1f}" y2="{ry_end:.1f}" '
+            f'stroke="{PURPLE}" stroke-width="1.4" stroke-dasharray="3 3"/>'
+        )
+        el.append(txt(cx - 54, cy - 40, "半径 R → ∞", size=11.5, color=PURPLE, anchor="middle", weight="600", halo=True))
+        el.append(txt(cx + 84, cy - 88, "上半圆弧 Γ_R", size=12, color=PURPLE, anchor="middle", weight="600", halo=True))
+
+        # Ticks -R, 0, +R
+        for tx, lbl in [(cx - rad, "-R"), (cx, "0"), (cx + rad, "+R")]:
+            el.append(f'<circle cx="{tx:.1f}" cy="{cy:.1f}" r="3.2" fill="{INK}"/>')
+            offset_x = -8 if lbl == "0" else 0
+            el.append(txt(tx + offset_x, cy + 19, lbl, size=12, color=INK, anchor="middle", weight="600"))
+
+        # Enclosed pole z = +i
+        py_pos = cy - 50.0
+        el.append(
+            f'<path d="M {cx + 16:.1f},{py_pos:.1f} A 16,16 0 1 0 {cx + 11.3:.1f},{py_pos + 11.3:.1f}" '
+            f'fill="none" stroke="{ORANGE}" stroke-width="1.6" marker-end="url(#arr-orange)"/>'
+        )
+        el.append(f'<circle cx="{cx:.1f}" cy="{py_pos:.1f}" r="5.5" fill="{ORANGE}" stroke="#ffffff" stroke-width="1.5"/>')
+        el.append(txt(cx + 22, py_pos - 3, "圈内奇点 z = +i", size=12, color=ORANGE, weight="700", halo=True))
+        el.append(txt(cx + 22, py_pos + 14, "留数 Res = 1/(2i)", size=11.5, color=BODY, halo=True))
+
+        # Excluded pole z = -i below real axis
+        py_neg = cy + 50.0
+        el.append(
+            f'<circle cx="{cx:.1f}" cy="{py_neg:.1f}" r="5.2" fill="#ffffff" '
+            f'stroke="{MUTED}" stroke-width="1.8" stroke-dasharray="2.5 2"/>'
+        )
+        el.append(txt(cx + 13, py_neg + 4, "圈外奇点 z = -i（不计入）", size=11.5, color=MUTED))
+
+        el.append(
+            txt(
+                198,
+                364,
+                "实轴段 [-R, R]（蓝）与半圆弧 Γ_R（紫）围成 D 形圈",
+                size=11.5,
+                color=MUTED,
+                anchor="middle",
+            )
+        )
+
+        # Right panel: 3-step residue ledger
+        el.append(card(390, 66, 350, 314))
+        el.append(txt(408, 90, "三步算清整圈账本（无需原函数）", size=PANEL_TITLE, color=INK, weight="700"))
+
+        # Step 1 card
+        el.append(card(404, 104, 322, 70, rx=8, fill=BLUE_SOFT, stroke=BLUE_LINE, sw=1))
+        el.append(step_badge(422, 122, 1, fg=BLUE, bg="#ffffff"))
+        el.append(txt(440, 126, "把实轴积分嵌入闭合围线", size=12.5, color=BLUE, weight="700"))
+        el.append(txt(418, 147, "∮_C f(z)dz = ∫₋R^R dx/(1+x²) + ∫_Γ f(z)dz", size=11.5, color=INK, cls="mono"))
+        el.append(txt(418, 165, "1+z² = (z-i)(z+i)，上半平面仅包住 z = i", size=11.5, color=BODY))
+
+        # Step 2 card
+        el.append(card(404, 184, 322, 76, rx=8, fill=PURPLE_SOFT, stroke=PURPLE, sw=1))
+        el.append(step_badge(422, 202, 2, fg=PURPLE, bg="#ffffff"))
+        el.append(txt(440, 206, "估界证明：半圆弧贡献随 R → ∞ 归零", size=12.5, color=PURPLE, weight="700"))
+        el.append(txt(418, 227, "|z| = R 时 |1+z²| ≥ R²-1，半圆弧长 = πR", size=11.5, color=BODY))
+        el.append(txt(418, 247, "|∫_Γ| ≤ πR/(R²-1) → 0（分母 R² 压倒分子 R）", size=11.5, color=INK, weight="600"))
+
+        # Step 3 card
+        el.append(card(404, 270, 322, 96, rx=8, fill=GREEN_SOFT, stroke=GREEN, sw=1.2))
+        el.append(step_badge(422, 288, 3, fg=GREEN, bg="#ffffff"))
+        el.append(txt(440, 292, "留数定理一锤定音", size=12.5, color=GREEN, weight="700"))
+        el.append(txt(418, 313, "Res(i) = 1/(z+i)|_{z=i} = 1/(2i)", size=11.5, color=INK, cls="mono"))
+        el.append(txt(418, 333, "整圈积分 = 2πi × 1/(2i) = π（与 R 无关）", size=11.5, color=BODY))
+        el.append(txt(418, 354, "令 R → ∞：∫₋∞^∞ dx/(1+x²) = π - 0 = π", size=12, color=GREEN, weight="700"))
+
+        extra_defs = f"""
+        <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+          <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="{PURPLE}"/>
+        </marker>
+        """
+
+        svg = figure(
+            396,
+            "用柯西留数定理计算实数反常积分 dx/(1+x²) 等于 π",
+            "左图展示上半复平面半径为 R 的 D 形闭合围线包住奇点 z=i 并排除 z=-i；右图分三步展示围线拆分、半圆弧积分按 πR/(R²-1) 趋于零，以及留数 2πi 乘 1/(2i) 得到 π。",
+            el,
+            extra_defs=extra_defs,
+        )
+        write_svg("cauchy", "semicircle-residue-eval.svg", svg)
+
+
+    def partial_sawtooth(x, n_terms):
+        return sum(((-1) ** (k + 1)) * math.sin(k * x) / k for k in range(1, n_terms + 1))
+
+
+    def build_pointwise_vs_uniform_sum():
+        # Numerical checks on S_N(x) = sum_{k=1}^N (-1)^{k+1} sin(k x) / k
+        for n_chk in (1, 3, 15, 80):
+            assert abs(partial_sawtooth(math.pi, n_chk)) < 1e-12
+        assert abs(partial_sawtooth(1.2, 400) - 0.6) < 5e-3
+        assert abs(partial_sawtooth(4.5, 400) - (4.5 - 2 * math.pi) / 2) < 5e-3
+
+        el = []
+        el += header(
+            "柯西 1821 年的疏忽与阿贝尔反例：光滑正弦波怎样叠出垂直断崖？",
+            "S_N(x) = Σ (-1)^(k+1) sin(kx)/k 的每一项都处处连续，但无穷和在 x = π 处从 +π/2 骤降到 -π/2",
+        )
+
+        # Left panel: Fourier sawtooth partial sums plot on [0, 2*pi]
+        el.append(card(20, 66, 430, 322))
+        el.append(txt(38, 90, "部分和 S₁, S₃, S₁₅ 逼近锯齿断崖（x ∈ [0, 2π]）", size=PANEL_TITLE, color=INK, weight="700"))
+
+        px0, px1 = 66.0, 426.0
+        py_mid = 232.0
+        y_scale = 58.0  # 1 unit in y = 58px; pi/2 (~1.571) = 91.1px
+
+        def sx(xv):
+            return px0 + (xv / (2.0 * math.pi)) * (px1 - px0)
+
+        def sy(yv):
+            return py_mid - yv * y_scale
+
+        # Horizontal gridlines at +pi/2, 0, -pi/2
+        y_top = sy(math.pi / 2)
+        y_bot = sy(-math.pi / 2)
+        x_pi = sx(math.pi)
+
+        el.append(f'<line x1="{px0:.1f}" y1="{y_top:.1f}" x2="{px1:.1f}" y2="{y_top:.1f}" stroke="{BORDER}" stroke-width="1" stroke-dasharray="4 4"/>')
+        el.append(f'<line x1="{px0:.1f}" y1="{y_bot:.1f}" x2="{px1:.1f}" y2="{y_bot:.1f}" stroke="{BORDER}" stroke-width="1" stroke-dasharray="4 4"/>')
+        el.append(f'<line x1="{px0:.1f}" y1="{py_mid:.1f}" x2="{px1 + 8:.1f}" y2="{py_mid:.1f}" stroke="{SLATE}" stroke-width="1.2" marker-end="url(#arr-muted)"/>')
+        el.append(f'<line x1="{px0:.1f}" y1="344" x2="{px0:.1f}" y2="118" stroke="{SLATE}" stroke-width="1.2" marker-end="url(#arr-muted)"/>')
+
+        # Y ticks
+        el.append(txt(px0 - 7, y_top + 4, "+π/2", size=11.5, color=GREEN, anchor="end", weight="600"))
+        el.append(txt(px0 - 7, py_mid + 4, "0", size=11.5, color=MUTED, anchor="end"))
+        el.append(txt(px0 - 7, y_bot + 4, "-π/2", size=11.5, color=GREEN, anchor="end", weight="600"))
+
+        # X ticks
+        for xv, xlbl in [(0.0, "0"), (math.pi / 2, "π/2"), (math.pi, "π"), (1.5 * math.pi, "3π/2"), (2.0 * math.pi, "2π")]:
+            tx = sx(xv)
+            el.append(f'<line x1="{tx:.1f}" y1="{py_mid - 3:.1f}" x2="{tx:.1f}" y2="{py_mid + 3:.1f}" stroke="{SLATE}" stroke-width="1.2"/>')
+            ly = py_mid + 18 if xv != math.pi else py_mid + 21
+            col = ORANGE if xv == math.pi else MUTED
+            wt = "700" if xv == math.pi else None
+            if xv == math.pi:
+                el.append(txt(tx - 12, ly, "π", size=12, color=col, anchor="middle", weight=wt, halo=True))
+            else:
+                el.append(txt(tx, ly, xlbl, size=11.5, color=col, anchor="middle", weight=wt))
+
+        # Vertical cliff highlight band around x = pi
+        el.append(
+            f'<rect x="{x_pi - 10:.1f}" y="{y_top - 8:.1f}" width="20" height="{y_bot - y_top + 16:.1f}" '
+            f'rx="6" fill="{ORANGE_SOFT}" fill-opacity="0.65" stroke="none"/>'
+        )
+        el.append(
+            f'<line x1="{x_pi:.1f}" y1="{y_top:.1f}" x2="{x_pi:.1f}" y2="{y_bot:.1f}" '
+            f'stroke="{ORANGE}" stroke-width="1.5" stroke-dasharray="4 3"/>'
+        )
+
+        # Exact limiting sawtooth segments: y = x/2 on [0, pi), and y = (x - 2*pi)/2 on (pi, 2*pi]
+        el.append(
+            f'<line x1="{sx(0):.1f}" y1="{sy(0):.1f}" x2="{sx(math.pi - 0.02):.1f}" y2="{sy((math.pi - 0.02)/2):.1f}" '
+            f'stroke="{GREEN}" stroke-width="2.0" stroke-dasharray="6 4"/>'
+        )
+        el.append(
+            f'<line x1="{sx(math.pi + 0.02):.1f}" y1="{sy((math.pi + 0.02 - 2*math.pi)/2):.1f}" x2="{sx(2*math.pi):.1f}" y2="{sy(0):.1f}" '
+            f'stroke="{GREEN}" stroke-width="2.0" stroke-dasharray="6 4"/>'
+        )
+
+        # Partial sum polylines: S_1, S_3, S_15
+        n_pts = 360
+        for n_terms, stroke_col, sw, op in [
+            (1, "#94a3b8", "1.6", "0.95"),
+            (3, BLUE, "2.0", "0.95"),
+            (15, ORANGE, "2.5", "1.0"),
+        ]:
+            pts = []
+            for i in range(n_pts + 1):
+                xv = (2.0 * math.pi * i) / n_pts
+                yv = partial_sawtooth(xv, n_terms)
+                pts.append(f"{sx(xv):.2f},{sy(yv):.2f}")
+            el.append(
+                f'<polyline points="{" ".join(pts)}" fill="none" stroke="{stroke_col}" '
+                f'stroke-width="{sw}" stroke-opacity="{op}" stroke-linejoin="round"/>'
+            )
+
+        # Open circles at jump endpoints (pi, +pi/2) and (pi, -pi/2), solid dot at (pi, 0)
+        el.append(f'<circle cx="{x_pi:.1f}" cy="{y_top:.1f}" r="4.5" fill="#ffffff" stroke="{GREEN}" stroke-width="2"/>')
+        el.append(f'<circle cx="{x_pi:.1f}" cy="{y_bot:.1f}" r="4.5" fill="#ffffff" stroke="{GREEN}" stroke-width="2"/>')
+        el.append(f'<circle cx="{x_pi:.1f}" cy="{py_mid:.1f}" r="4.8" fill="{INK}" stroke="#ffffff" stroke-width="1.5"/>')
+
+        # Clean non-overlapping curve & jump callouts
+        el.append(txt(sx(1.15), sy(0.58) - 12, "极限斜线 x/2", size=11.5, color=GREEN, anchor="middle", weight="600", halo=True))
+        el.append(txt(x_pi + 14, y_top + 4, "左极限 +π/2", size=11.5, color=GREEN, weight="600", halo=True))
+        el.append(txt(x_pi - 14, y_bot + 4, "右极限 -π/2", size=11.5, color=GREEN, anchor="end", weight="600", halo=True))
+        el.append(txt(x_pi + 13, py_mid - 7, "S_N(π) = 0 恒成立", size=11.5, color=INK, weight="700", halo=True))
+
+        # Legend row at bottom of left panel
+        ly_leg = 368
+        el.append(f'<line x1="42" y1="{ly_leg - 4}" x2="64" y2="{ly_leg - 4}" stroke="#94a3b8" stroke-width="2"/>')
+        el.append(txt(69, ly_leg, "S₁ (1项)", size=11.5, color=MUTED))
+        el.append(f'<line x1="132" y1="{ly_leg - 4}" x2="154" y2="{ly_leg - 4}" stroke="{BLUE}" stroke-width="2.2"/>')
+        el.append(txt(159, ly_leg, "S₃ (3项)", size=11.5, color=BLUE, weight="600"))
+        el.append(f'<line x1="222" y1="{ly_leg - 4}" x2="244" y2="{ly_leg - 4}" stroke="{ORANGE}" stroke-width="2.6"/>')
+        el.append(txt(249, ly_leg, "S₁₅ (15项陡崖)", size=11.5, color=ORANGE, weight="700"))
+        el.append(f'<line x1="350" y1="{ly_leg - 4}" x2="372" y2="{ly_leg - 4}" stroke="{GREEN}" stroke-width="2" stroke-dasharray="5 3"/>')
+        el.append(txt(377, ly_leg, "无穷极限", size=11.5, color=GREEN, weight="600"))
+
+        # Right panel: 3 historical & mathematical stages
+        el.append(card(464, 66, 276, 322))
+        el.append(txt(482, 90, "为什么光滑波会叠出断崖？", size=PANEL_TITLE, color=INK, weight="700"))
+
+        # Box 1
+        el.append(card(478, 104, 248, 82, rx=8, fill=ORANGE_SOFT, stroke=ORANGE, sw=1))
+        el.append(step_badge(496, 124, 1, fg=ORANGE, bg="#ffffff"))
+        el.append(txt(514, 128, "1821 柯西的隐蔽滑步", size=12.5, color=ORANGE, weight="700"))
+        el.append(txt(490, 149, "柯西证明“连续函数之和仍连续”时，", size=11.5, color=BODY))
+        el.append(txt(490, 168, "默认同一个项数 N 能同时按住所有 x。", size=11.5, color=INK, weight="600"))
+
+        # Box 2
+        el.append(card(478, 196, 248, 86, rx=8, fill=BLUE_SOFT, stroke=BLUE_LINE, sw=1))
+        el.append(step_badge(496, 216, 2, fg=BLUE, bg="#ffffff"))
+        el.append(txt(514, 220, "1826 阿贝尔的锯齿波反例", size=12.5, color=BLUE, weight="700"))
+        el.append(txt(490, 241, "x 越靠近 π，每项 sin(kx) 越微弱；", size=11.5, color=BODY))
+        el.append(txt(490, 260, "想追近 +π/2，所需项数 N(x) → ∞，", size=11.5, color=BODY))
+        el.append(txt(490, 276, "断崖旁总有“还没收敛到位”的滞后点！", size=11.5, color=INK, weight="600"))
+
+        # Box 3
+        el.append(card(478, 292, 248, 84, rx=8, fill=GREEN_SOFT, stroke=GREEN, sw=1.2))
+        el.append(step_badge(496, 312, 3, fg=GREEN, bg="#ffffff"))
+        el.append(txt(514, 316, "魏尔斯特拉斯补齐：一致收敛", size=12.5, color=GREEN, weight="700"))
+        el.append(txt(490, 337, "• 逐点收敛：先定 x，再找 N(ε, x)", size=11.5, color=BODY))
+        el.append(txt(490, 356, "• 一致收敛：同一个 N(ε) 通吃全体 x", size=11.5, color=GREEN, weight="700"))
+        el.append(txt(490, 371, "唯有“齐步进窄带”才保住极限连续！", size=11, color=INK))
+
+        svg = figure(
+            404,
+            "柯西 1821 年连续性定理疏忽与阿贝尔 1826 年傅里叶锯齿波反例（逐点收敛与一致收敛对比）",
+            "左图精确绘制交错正弦级数前 1、3、15 项部分和在 [0, 2π] 上逼近锯齿线并在 x=π 处形成 ±π/2 跳跃间断；右图分三步解释柯西 1821 年漏掉项数 N 对 x 的依赖、阿贝尔反例机制及魏尔斯特拉斯一致收敛判据。",
+            el,
+        )
+        write_svg("cauchy", "pointwise-vs-uniform-sum.svg", svg)
+
+    build_semicircle_residue_eval()
+    build_pointwise_vs_uniform_sum()
+
+
+def _projective_and_eudoxus_suite():
+    RED = "#c81e3a"
+    RED_SOFT = "#fde8ec"
+    TEAL = "#0f766e"
+    TEAL_SOFT = "#e6f7f5"
+    AMBER = "#b45309"
+    AMBER_SOFT = "#fef3c7"
+
+
+    # ---------------------------------------------------------------------------
+    # Exact 2D & 3D Projective Geometry Helpers
+    # ---------------------------------------------------------------------------
+    def line_inter(p1, p2, p3, p4):
+        """Exact intersection of line p1-p2 and line p3-p4."""
+        x1, y1 = p1
+        x2, y2 = p2
+        x3, y3 = p3
+        x4, y4 = p4
+        den = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4)
+        assert abs(den) > 1e-11, f"Near-parallel lines: {p1}-{p2} and {p3}-{p4}"
+        c1 = x1 * y2 - y1 * x2
+        c2 = x3 * y4 - y3 * x4
+        px = (c1 * (x3 - x4) - (x1 - x2) * c2) / den
+        py = (c1 * (y3 - y4) - (y1 - y2) * c2) / den
+        return (px, py)
+
+
+    def collinear_det(p1, p2, p3):
+        """Signed 2x area determinant of (p1, p2, p3)."""
+        return (p2[0] - p1[0]) * (p3[1] - p1[1]) - (p2[1] - p1[1]) * (p3[0] - p1[0])
+
+
+    def signed_ratio(a, b, c):
+        """Signed directed ratio (a -> b) / (b -> c) for collinear points a, b, c."""
+        assert abs(collinear_det(a, b, c)) < 1e-8
+        dx, dy = c[0] - b[0], c[1] - b[1]
+        if abs(dx) >= abs(dy):
+            return (b[0] - a[0]) / dx
+        return (b[1] - a[1]) / dy
+
+
+    def span_line(pts, pad=14.0, box=None):
+        """Return endpoints covering all given collinear points plus padding, optionally clipped to box."""
+        p0 = pts[0]
+        p1 = max(pts[1:], key=lambda q: math.dist(p0, q))
+        ux = (p1[0] - p0[0]) / math.dist(p0, p1)
+        uy = (p1[1] - p0[1]) / math.dist(p0, p1)
+        ts = [(q[0] - p0[0]) * ux + (q[1] - p0[1]) * uy for q in pts]
+        tmin, tmax = min(ts) - pad, max(ts) + pad
+        if box is not None:
+            bx0, by0, bx1, by1 = box
+            lo, hi = -1e9, 1e9
+            for coord, u, bmin, bmax in ((p0[0], ux, bx0, bx1), (p0[1], uy, by0, by1)):
+                if abs(u) > 1e-9:
+                    t1, t2 = (bmin - coord) / u, (bmax - coord) / u
+                    lo = max(lo, min(t1, t2))
+                    hi = min(hi, max(t1, t2))
+            tmin = max(tmin, lo)
+            tmax = min(tmax, hi)
+        return (p0[0] + tmin * ux, p0[1] + tmin * uy), (p0[0] + tmax * ux, p0[1] + tmax * uy)
+
+
+    def seg_svg(p1, p2, color=SLATE, sw=1.8, dash=None, opacity=None, marker_end=None):
+        attrs = [
+            f'x1="{p1[0]:.2f}"',
+            f'y1="{p1[1]:.2f}"',
+            f'x2="{p2[0]:.2f}"',
+            f'y2="{p2[1]:.2f}"',
+            f'stroke="{color}"',
+            f'stroke-width="{sw}"',
+            'stroke-linecap="round"',
+        ]
+        if dash:
+            attrs.append(f'stroke-dasharray="{dash}"')
+        if opacity is not None:
+            attrs.append(f'stroke-opacity="{opacity}"')
+        if marker_end:
+            attrs.append(f'marker-end="url(#{marker_end})"')
+        return f'<line {" ".join(attrs)}/>'
+
+
+    def dot_svg(p, r=4.2, fill=CARD_BG, stroke=INK, sw=1.8):
+        return (
+            f'<circle cx="{p[0]:.2f}" cy="{p[1]:.2f}" r="{r}" '
+            f'fill="{fill}" stroke="{stroke}" stroke-width="{sw}"/>'
+        )
+
+
+    def poly_svg(pts, fill="none", stroke=SLATE, sw=1.5, fill_opacity=None, dash=None, closed=True):
+        coords = " ".join(f"{p[0]:.2f},{p[1]:.2f}" for p in pts)
+        cmd = f"M {coords} Z" if closed else "M " + " L ".join(f"{p[0]:.2f},{p[1]:.2f}" for p in pts)
+        attrs = [f'd="{cmd}"', f'fill="{fill}"', f'stroke="{stroke}"', f'stroke-width="{sw}"', 'stroke-linejoin="round"']
+        if fill_opacity is not None:
+            attrs.append(f'fill-opacity="{fill_opacity}"')
+        if dash:
+            attrs.append(f'stroke-dasharray="{dash}"')
+        return f'<path {" ".join(attrs)}/>'
+
+
+    # ---------------------------------------------------------------------------
+    # 1. Pascal Menelaus + Power-of-a-Point + 3D Conic Projection SVG
+    # ---------------------------------------------------------------------------
+    def build_pascal_menelaus_proof():
+        # Exact unit-circle star hexagon configuration with wide separation among all 12 points
+        degs = [101.3, 279.7, 232.1, 350.2, 137.1, 189.7]
+        rads = [math.radians(d) for d in degs]
+        pts_u = [(math.cos(a), math.sin(a)) for a in rads]
+        A, B, C, D, E, F = pts_u
+        for p in pts_u:
+            assert abs(math.hypot(p[0], p[1]) - 1.0) < 1e-12
+
+        # Reference triangle UVW formed by alternating edges AB (1), CD (3), EF (5)
+        U = line_inter(A, B, C, D)  # AB cap CD
+        V = line_inter(C, D, E, F)  # CD cap EF
+        W = line_inter(E, F, A, B)  # EF cap AB
+
+        # Pascal intersections of opposite edges
+        P = line_inter(A, B, D, E)  # AB cap DE (on side WU)
+        Q = line_inter(B, C, E, F)  # BC cap EF (on side VW)
+        R = line_inter(C, D, F, A)  # CD cap FA (on side UV)
+
+        # Verify Menelaus on Delta UVW for the 3 remaining edges DE, BC, FA
+        m_pde = signed_ratio(W, P, U) * signed_ratio(U, D, V) * signed_ratio(V, E, W)
+        m_bcq = signed_ratio(W, B, U) * signed_ratio(U, C, V) * signed_ratio(V, Q, W)
+        m_arf = signed_ratio(W, A, U) * signed_ratio(U, R, V) * signed_ratio(V, F, W)
+        assert abs(m_pde + 1.0) < 1e-9, f"Menelaus PDE failed: {m_pde}"
+        assert abs(m_bcq + 1.0) < 1e-9, f"Menelaus BCQ failed: {m_bcq}"
+        assert abs(m_arf + 1.0) < 1e-9, f"Menelaus ARF failed: {m_arf}"
+
+        # Verify Power of a Point at U, V, W (signed directed products)
+        def dprod(o, p1, p2):
+            # signed scalar product along line through o
+            dx1, dy1 = p1[0] - o[0], p1[1] - o[1]
+            dx2, dy2 = p2[0] - o[0], p2[1] - o[1]
+            return dx1 * dx2 + dy1 * dy2
+
+        pow_U1, pow_U2 = dprod(U, A, B), dprod(U, C, D)
+        pow_V1, pow_V2 = dprod(V, C, D), dprod(V, E, F)
+        pow_W1, pow_W2 = dprod(W, E, F), dprod(W, A, B)
+        assert abs(pow_U1 / pow_U2 - 1.0) < 1e-9
+        assert abs(pow_V1 / pow_V2 - 1.0) < 1e-9
+        assert abs(pow_W1 / pow_W2 - 1.0) < 1e-9
+
+        # Verify Converse of Menelaus & collinearity of P, Q, R
+        m_pqr = signed_ratio(W, P, U) * signed_ratio(U, R, V) * signed_ratio(V, Q, W)
+        assert abs(m_pqr + 1.0) < 1e-9
+        assert abs(collinear_det(P, Q, R)) < 1e-9
+
+        # Map Left Panel coordinates cleanly into card (20, 66, 392, 356)
+        # World span: x in [-1.72, +1.00], y in [-1.22, +1.91] -> flip y for SVG!
+        scale_l = 86.0
+        cx_l, cy_l = 248.0, 266.0
+
+        def map_l(pt):
+            return (cx_l + pt[0] * scale_l, cy_l - pt[1] * scale_l)
+
+        Al, Bl, Cl, Dl, El_p, Fl = [map_l(p) for p in (A, B, C, D, E, F)]
+        Ul, Vl, Wl = [map_l(p) for p in (U, V, W)]
+        Pl, Ql, Rl = [map_l(p) for p in (P, Q, R)]
+        assert abs(collinear_det(Pl, Ql, Rl)) < 1e-6
+
+        el = []
+        el += header(
+            "初等几何四步证完帕斯卡定理：基准三角形 + 圆幂约分 + 中心投影",
+            "先在圆上借 ΔUVW 连用三次梅涅劳斯定理并用圆幂成对消去 12 段弦长，再用一束中心投影推广到任意圆锥曲线",
+        )
+
+        # ---- Left Card: Circle Proof ----
+        el.append(card(20, 66, 392, 358))
+        el.append(txt(34, 89, "①–③ 圆上证明：ΔUVW 与圆幂相消", size=PANEL_TITLE, color=INK, weight="700"))
+        el.append(pill(284, 73, "12 段弦长全约掉", fg=BLUE, bg=BLUE_SOFT, w=116, h=22, size=11.5))
+
+        # Shaded reference triangle UVW
+        el.append(poly_svg([Ul, Vl, Wl], fill=BLUE_SOFT, stroke=BLUE, sw=2.1, fill_opacity=0.42))
+
+        # Circle O
+        el.append(
+            f'<circle cx="{cx_l:.2f}" cy="{cy_l:.2f}" r="{scale_l:.2f}" '
+            f'fill="none" stroke="{SLATE}" stroke-width="1.8"/>'
+        )
+
+        lbox = (30.0, 102.0, 402.0, 412.0)
+        # Alternating carrier lines (sides of UVW): AB -> WU, CD -> UV, EF -> VW
+        for pts_col in ([Wl, Al, Pl, Ul, Bl], [Vl, Rl, Cl, Ul, Dl], [Wl, El_p, Fl, Ql, Vl]):
+            s0, s1 = span_line(pts_col, pad=8.0, box=lbox)
+            el.append(seg_svg(s0, s1, color=BLUE, sw=1.7, opacity=0.85))
+
+        # Three transversal edges: DE (orange -> P), BC (green -> Q), FA (purple -> R)
+        for pts_tr, col in (
+            ([Dl, Pl, El_p], ORANGE),
+            ([Bl, Cl, Ql], GREEN),
+            ([Fl, Al, Rl], PURPLE),
+        ):
+            s0, s1 = span_line(pts_tr, pad=9.0, box=lbox)
+            el.append(seg_svg(s0, s1, color=col, sw=1.9, dash="5 3"))
+
+        # Red Pascal line through P, Q, R
+        p0, p1 = span_line([Pl, Ql, Rl], pad=18.0, box=lbox)
+        el.append(seg_svg(p0, p1, color=RED, sw=2.7))
+
+        # Draw vertices A..F (circle points)
+        for pt in (Al, Bl, Cl, Dl, El_p, Fl):
+            el.append(dot_svg(pt, r=4.0, fill=CARD_BG, stroke=INK, sw=1.8))
+
+        # Draw vertices U, V, W (reference triangle)
+        for pt in (Ul, Vl, Wl):
+            el.append(dot_svg(pt, r=4.6, fill=BLUE, stroke=CARD_BG, sw=1.6))
+
+        # Draw Pascal points P, Q, R
+        for pt, col in ((Pl, ORANGE), (Ql, GREEN), (Rl, PURPLE)):
+            el.append(dot_svg(pt, r=5.0, fill=col, stroke=CARD_BG, sw=1.8))
+
+        # Carefully placed non-overlapping labels in Left Panel
+        lbl_l = [
+            (Al[0] + 10, Al[1] - 4, "A", INK, "start", "700"),
+            (Bl[0] + 9, Bl[1] + 12, "B", INK, "start", "700"),
+            (Cl[0] - 4, Cl[1] + 17, "C", INK, "middle", "700"),
+            (Dl[0] + 9, Dl[1] + 5, "D", INK, "start", "700"),
+            (El_p[0] - 11, El_p[1] - 5, "E", INK, "end", "700"),
+            (Fl[0] - 11, Fl[1] - 4, "F", INK, "end", "700"),
+            (Ul[0] + 10, Ul[1] + 3, "U", BLUE, "start", "700"),
+            (Vl[0] + 4, Vl[1] + 18, "V", BLUE, "start", "700"),
+            (Wl[0] + 10, Wl[1] + 5, "W", BLUE, "start", "700"),
+            (Pl[0] + 10, Pl[1] + 4, "P", ORANGE, "start", "700"),
+            (Ql[0] - 10, Ql[1] - 7, "Q", GREEN, "end", "700"),
+            (Rl[0] - 9, Rl[1] - 7, "R", PURPLE, "end", "700"),
+        ]
+        for lx, ly, s, col, anc, wt in lbl_l:
+            el.append(txt(lx, ly, s, size=12, color=col, anchor=anc, weight=wt, halo=True))
+
+        el.append(txt(56, 398, "红线：帕斯卡线 P–Q–R", size=11.5, color=RED, weight="700", halo=True))
+        el.append(txt(244, 413, "蓝框：基准三角形 ΔUVW", size=11.5, color=BLUE, weight="600"))
+
+        # ---- Right Card: 3D Central Projection (Step 4) ----
+        el.append(card(424, 66, 316, 358))
+        el.append(txt(438, 89, "④ 中心投影：圆一键变圆锥曲线", size=PANEL_TITLE, color=INK, weight="700"))
+        el.append(pill(634, 73, "射影保共线", fg=PURPLE, bg=PURPLE_SOFT, w=94, h=22, size=11.5))
+
+        # Exact 3D central projection from apex S = (0, 0, 3.4)
+        # Upper horizontal plane z = 1.85 carries a circle of radius r0 = 0.56
+        # Lower tilted plane z = 0.22 * x + 0.14 * y + 0.35 cuts the cone in a genuine non-circular ellipse!
+        S3 = (0.0, 0.0, 3.40)
+        z_top = 1.85
+        r_top = 0.58
+
+        def proj_to_tilted(x, y, z):
+            # Ray S + t * (P - S) meets z_plane = 0.22*X + 0.14*Y + 0.35
+            dx, dy, dz = x - S3[0], y - S3[1], z - S3[2]
+            # S_z + t*dz = 0.22*(S_x + t*dx) + 0.14*(S_y + t*dy) + 0.35
+            num = 0.22 * S3[0] + 0.14 * S3[1] + 0.35 - S3[2]
+            den = dz - 0.22 * dx - 0.14 * dy
+            t = num / den
+            return (S3[0] + t * dx, S3[1] + t * dy, S3[2] + t * dz)
+
+        def cam2d(pt3):
+            # Clean axonometric projection to Right Panel SVG coordinates
+            x, y, z = pt3
+            sx = 582.0 + (x * 100.0 - y * 42.0)
+            sy = 338.0 - (z * 66.0 + y * 22.0 + x * 6.0)
+            return (sx, sy)
+
+        S2 = cam2d(S3)
+
+        # Plane polygons: pi_1 (upper plane z = z_top) and pi_2 (lower tilted plane)
+        pi1_corners_3d = [(-0.92, -0.82, z_top), (0.92, -0.82, z_top), (0.92, 0.82, z_top), (-0.92, 0.82, z_top)]
+        pi2_corners_3d = [
+            (x, y, 0.22 * x + 0.14 * y + 0.35)
+            for (x, y) in [(-1.18, -1.02), (1.18, -1.02), (1.18, 1.02), (-1.18, 1.02)]
+        ]
+        el.append(poly_svg([cam2d(q) for q in pi2_corners_3d], fill=PURPLE_SOFT, stroke=PURPLE, sw=1.2, fill_opacity=0.36))
+        el.append(poly_svg([cam2d(q) for q in pi1_corners_3d], fill=BLUE_SOFT, stroke=BLUE, sw=1.2, fill_opacity=0.45))
+
+        # Sample circle on pi_1 and exact projected conic on pi_2
+        circ_3d = [
+            (r_top * math.cos(2 * math.pi * i / 72), r_top * math.sin(2 * math.pi * i / 72), z_top)
+            for i in range(73)
+        ]
+        conic_3d = [proj_to_tilted(*q) for q in circ_3d]
+        el.append(poly_svg([cam2d(q) for q in conic_3d], fill="none", stroke=PURPLE, sw=2.1, closed=False))
+        el.append(poly_svg([cam2d(q) for q in circ_3d], fill="none", stroke=BLUE, sw=1.9, closed=False))
+
+        # Cone silhouette generators from S to left/right tangents
+        for idx in (0, 36):
+            el.append(seg_svg(S2, cam2d(conic_3d[idx]), color=HAIRLINE, sw=1.2, dash="4 3"))
+
+        # Pick 3 collinear points P0, Q0, R0 on pi_1 and project them to P', Q', R' on pi_2
+        P0_3 = (-0.52, -0.22, z_top)
+        R0_3 = (0.56, 0.18, z_top)
+        Q0_3 = (0.5 * (P0_3[0] + R0_3[0]), 0.5 * (P0_3[1] + R0_3[1]), z_top)
+        Pp_3 = proj_to_tilted(*P0_3)
+        Qp_3 = proj_to_tilted(*Q0_3)
+        Rp_3 = proj_to_tilted(*R0_3)
+
+        P0_2, Q0_2, R0_2 = cam2d(P0_3), cam2d(Q0_3), cam2d(R0_3)
+        Pp_2, Qp_2, Rp_2 = cam2d(Pp_3), cam2d(Qp_3), cam2d(Rp_3)
+        assert abs(collinear_det(P0_2, Q0_2, R0_2)) < 1e-9
+        assert abs(collinear_det(Pp_2, Qp_2, Rp_2)) < 1e-9
+
+        # Shaded light-fan plane S - P' - R' showing straight line maps to straight line!
+        el.append(poly_svg([S2, Pp_2, Rp_2], fill=RED_SOFT, stroke="none", sw=0, fill_opacity=0.35))
+        for src, dst in ((P0_2, Pp_2), (Q0_2, Qp_2), (R0_2, Rp_2)):
+            el.append(seg_svg(S2, dst, color=ORANGE, sw=1.25, dash="3 3"))
+        el.append(seg_svg(P0_2, R0_2, color=RED, sw=2.1))
+        el.append(seg_svg(Pp_2, Rp_2, color=RED, sw=2.5))
+
+        for pt in (P0_2, Q0_2, R0_2):
+            el.append(dot_svg(pt, r=3.3, fill=RED, stroke=CARD_BG, sw=1.2))
+        for pt in (Pp_2, Qp_2, Rp_2):
+            el.append(dot_svg(pt, r=3.8, fill=RED, stroke=CARD_BG, sw=1.4))
+        el.append(dot_svg(S2, r=5.0, fill=ORANGE, stroke=CARD_BG, sw=1.8))
+
+        el.append(txt(S2[0] + 10, S2[1] + 4, "投影中心 S（光源）", size=11.5, color=ORANGE, weight="700", halo=True))
+        el.append(txt(442, 184, "平面 π₁：圆与 P,Q,R", size=11.5, color=BLUE, weight="700", halo=True))
+        el.append(txt(442, 304, "截面 π₂：一般圆锥曲线", size=11.5, color=PURPLE, weight="700", halo=True))
+        el.append(txt(Pp_2[0] - 8, Pp_2[1] + 15, "P'", size=11.5, color=RED, anchor="end", weight="700", halo=True))
+        el.append(txt(Qp_2[0], Qp_2[1] + 16, "Q'", size=11.5, color=RED, anchor="middle", weight="700", halo=True))
+        el.append(txt(Rp_2[0] + 8, Rp_2[1] + 14, "R'", size=11.5, color=RED, anchor="start", weight="700", halo=True))
+        el.append(txt(438, 396, "三束视线张成同一平面 SPQR", size=11.5, color=BODY, weight="600"))
+        el.append(txt(438, 413, "与斜面 π₂ 的交线必是直线 P'Q'R'！", size=11.5, color=RED, weight="700"))
+
+        # ---- Bottom Card: 4-Step Proof Ledger ----
+        el.append(card(20, 436, 720, 108, fill=CARD_BG))
+        steps = [
+            (36, "1", BLUE, BLUE_SOFT, "搭基准 ΔUVW", "隔开取边 AB、CD、EF", "两两相交围出 ΔUVW"),
+            (212, "2", ORANGE, ORANGE_SOFT, "三次梅涅劳斯", "拿截线 DE、BC、FA", "各切 ΔUVW 三边写连乘"),
+            (388, "3", GREEN, GREEN_SOFT, "圆幂成对约分", "UA·UB=UC·UD 等三组", "12 段弦全消，剩乘积=-1"),
+            (564, "4", PURPLE, PURPLE_SOFT, "投影保结合性", "点在线上、线线相交不变", "圆的结论通杀一切圆锥曲线"),
+        ]
+        for sx, num, fg, bg, stitle, l1, l2 in steps:
+            if sx > 36:
+                el.append(seg_svg((sx - 10, 452), (sx - 10, 530), color=BORDER, sw=1.0))
+            el.append(step_badge(sx + 11, 461, num, fg=fg, bg=bg, r=10))
+            el.append(txt(sx + 27, 465, stitle, size=12.5, color=INK, weight="700"))
+            el.append(txt(sx + 4, 492, l1, size=11.2, color=BODY))
+            el.append(txt(sx + 4, 512, l2, size=11.2, color=MUTED))
+
+        svg = figure(
+            558,
+            "帕斯卡定理的初等证明与中心投影推广",
+            "左图在圆上取隔开的三条边AB、CD、EF构造基准三角形UVW，对截线DE、BC、FA使用三次梅涅劳斯定理并由圆幂定理消去十二段割线长，证得P、Q、R共线；右图由光源S作三维中心投影，把圆与帕斯卡线映射到任意倾斜平面上的圆锥曲线与直线P'Q'R'。",
+            el,
+        )
+        write_svg("pascal", "pascal-menelaus-proof.svg", svg)
+        return svg
+
+
+    # ---------------------------------------------------------------------------
+    # 2. Pappus's Hexagon Theorem (Degenerate Two-Line Conic) SVG
+    # ---------------------------------------------------------------------------
+    def build_pappus_two_lines():
+        # Line l1: top gently tilted line; Line l2: bottom gently tilted line
+        O_meet = (-40.0, 224.0)
+        ang1 = math.radians(-10.5)
+        ang2 = math.radians(11.5)
+
+        def pt_on(ang, t):
+            return (O_meet[0] + t * math.cos(ang), O_meet[1] + t * math.sin(ang))
+
+        A = pt_on(ang1, 125.0)
+        B = pt_on(ang1, 255.0)
+        C = pt_on(ang1, 405.0)
+
+        a = pt_on(ang2, 115.0)
+        b = pt_on(ang2, 268.0)
+        c = pt_on(ang2, 422.0)
+
+        assert abs(collinear_det(A, B, C)) < 1e-9
+        assert abs(collinear_det(a, b, c)) < 1e-9
+
+        # Hexagon A -> b -> C -> a -> B -> c -> A
+        P = line_inter(A, b, a, B)
+        Q = line_inter(B, c, b, C)
+        R = line_inter(C, a, c, A)
+        assert abs(collinear_det(P, Q, R)) < 1e-8, f"Pappus collinearity failed: {collinear_det(P, Q, R)}"
+
+        el = []
+        el += header(
+            "帕普斯六边形定理（公元 4 世纪）：当圆锥曲线退化成两条直线",
+            "上直线取 A, B, C，下直线取 a, b, c；三组十字交叉连线的交点 P, Q, R 照样排成一条直线！",
+        )
+
+        # Left Card: Main Pappus configuration
+        el.append(card(20, 66, 444, 372))
+        el.append(txt(36, 90, "两条直线 ℓ₁ ∪ ℓ₂ 上的交替六边形 A–b–C–a–B–c", size=PANEL_TITLE, color=INK, weight="700"))
+
+        l1_s, l1_e = pt_on(ang1, 78.0), pt_on(ang1, 458.0)
+        l2_s, l2_e = pt_on(ang2, 74.0), pt_on(ang2, 462.0)
+        el.append(seg_svg(l1_s, l1_e, color=SLATE, sw=2.4))
+        el.append(seg_svg(l2_s, l2_e, color=SLATE, sw=2.4))
+        el.append(txt(l1_e[0] + 6, l1_e[1] + 4, "ℓ₁", size=12.5, color=SLATE, weight="700"))
+        el.append(txt(l2_e[0] + 6, l2_e[1] + 5, "ℓ₂", size=12.5, color=SLATE, weight="700"))
+
+        # Cross-join pairs
+        # Pair 1 (ORANGE): Ab and aB -> P
+        el.append(seg_svg(A, b, color=ORANGE, sw=2.1))
+        el.append(seg_svg(a, B, color=ORANGE, sw=2.1))
+        # Pair 2 (BLUE): Bc and bC -> Q
+        el.append(seg_svg(B, c, color=BLUE, sw=2.1))
+        el.append(seg_svg(b, C, color=BLUE, sw=2.1))
+        # Pair 3 (PURPLE): Ca and cA -> R
+        el.append(seg_svg(C, a, color=PURPLE, sw=1.9, dash="6 3"))
+        el.append(seg_svg(c, A, color=PURPLE, sw=1.9, dash="6 3"))
+
+        # Red Pappus line through P, Q, R
+        p_s, p_e = span_line([P, Q, R], pad=44.0, box=(34.0, 110.0, 448.0, 390.0))
+        el.append(seg_svg(p_s, p_e, color=RED, sw=2.8))
+        el.append(txt(p_e[0] - 2, p_e[1] + 22, "帕普斯线", size=12, color=RED, anchor="end", weight="700", halo=True))
+
+        # Points on l1 and l2
+        for pt, nm in ((A, "A"), (B, "B"), (C, "C")):
+            el.append(dot_svg(pt, r=4.6, fill=CARD_BG, stroke=INK, sw=2.0))
+            el.append(txt(pt[0], pt[1] - 11, nm, size=12.5, color=INK, anchor="middle", weight="700", halo=True))
+        for pt, nm in ((a, "a"), (b, "b"), (c, "c")):
+            el.append(dot_svg(pt, r=4.6, fill=CARD_BG, stroke=INK, sw=2.0))
+            el.append(txt(pt[0], pt[1] + 20, nm, size=12.5, color=INK, anchor="middle", weight="700", halo=True))
+
+        # Intersection points P, Q, R
+        el.append(dot_svg(P, r=5.2, fill=ORANGE, stroke=CARD_BG, sw=1.8))
+        el.append(dot_svg(Q, r=5.2, fill=BLUE, stroke=CARD_BG, sw=1.8))
+        el.append(dot_svg(R, r=5.2, fill=PURPLE, stroke=CARD_BG, sw=1.8))
+        el.append(txt(P[0] - 11, P[1] - 8, "P", size=12.5, color=ORANGE, anchor="end", weight="700", halo=True))
+        el.append(txt(Q[0] + 12, Q[1] - 8, "Q", size=12.5, color=BLUE, anchor="start", weight="700", halo=True))
+        el.append(txt(R[0] + 2, R[1] - 12, "R", size=12.5, color=PURPLE, anchor="middle", weight="700", halo=True))
+
+        # Bottom caption strip inside Left Card
+        el.append(card(34, 392, 416, 34, rx=7, fill=SLATE_SOFT, stroke=BORDER))
+        el.append(
+            txt(
+                242,
+                413,
+                "注意禁令：连线必须在 ℓ₁ 与 ℓ₂ 之间来回跳，不能沿同一直线连 AB 或 ab",
+                size=11.3,
+                color=BODY,
+                anchor="middle",
+                weight="600",
+            )
+        )
+
+        # Right Top Card: Why two lines = degenerate conic?
+        el.append(card(478, 66, 262, 178))
+        el.append(txt(494, 89, "为什么两条直线算圆锥曲线？", size=PANEL_TITLE, color=INK, weight="700"))
+
+        # Mini double-cone cut right through apex
+        cx_c, cy_c = 542.0, 156.0
+        el.append(poly_svg([(cx_c - 34, cy_c - 44), (cx_c + 34, cy_c - 44), (cx_c, cy_c)], fill=BLUE_SOFT, stroke=SLATE, sw=1.2, fill_opacity=0.55))
+        el.append(poly_svg([(cx_c - 34, cy_c + 44), (cx_c + 34, cy_c + 44), (cx_c, cy_c)], fill=BLUE_SOFT, stroke=SLATE, sw=1.2, fill_opacity=0.55))
+        el.append(f'<ellipse cx="{cx_c:.1f}" cy="{cy_c - 44:.1f}" rx="34" ry="7.5" fill="{CARD_BG}" stroke="{SLATE}" stroke-width="1.2"/>')
+        el.append(f'<ellipse cx="{cx_c:.1f}" cy="{cy_c + 44:.1f}" rx="34" ry="7.5" fill="none" stroke="{SLATE}" stroke-width="1.2"/>')
+        # Cutting plane passing through apex -> two red/purple generator lines!
+        el.append(seg_svg((cx_c - 26, cy_c - 44), (cx_c + 26, cy_c + 44), color=RED, sw=2.3))
+        el.append(seg_svg((cx_c + 26, cy_c - 44), (cx_c - 26, cy_c + 44), color=RED, sw=2.3))
+        el.append(dot_svg((cx_c, cy_c), r=3.6, fill=RED, stroke=CARD_BG, sw=1.2))
+
+        el.append(txt(592, 118, "截面恰好穿过锥顶：", size=11.5, color=INK, weight="700"))
+        el.append(txt(592, 138, "双曲线 xy = ε 在 ε → 0", size=11.3, color=BODY))
+        el.append(txt(592, 157, "时退化为 xy = 0，即两", size=11.3, color=BODY))
+        el.append(txt(592, 176, "条相交直线 L₁·L₂ = 0！", size=11.3, color=RED, weight="600"))
+        el.append(txt(494, 226, "二次方程总家族天然包含“直线对”", size=11.2, color=MUTED))
+
+        # Right Bottom Card: Cross-join recipe & Hilbert's insight
+        el.append(card(478, 256, 262, 182))
+        el.append(txt(494, 279, "三组十字交叉对边账单", size=PANEL_TITLE, color=INK, weight="700"))
+
+        rows = [
+            (304, ORANGE, ORANGE_SOFT, "① 橙组", "Ab ∩ aB = P"),
+            (334, BLUE, BLUE_SOFT, "② 蓝组", "Bc ∩ bC = Q"),
+            (364, PURPLE, PURPLE_SOFT, "③ 紫组", "Ca ∩ cA = R"),
+        ]
+        for ry, fg, bg, tag, expr in rows:
+            el.append(pill(494, ry - 15, tag, fg=fg, bg=bg, w=68, h=21, size=11.3))
+            el.append(txt(574, ry, expr, size=12, color=INK, weight="700", cls="mono"))
+
+        el.append(seg_svg((494, 384), (724, 384), color=BORDER, sw=1.0))
+        el.append(txt(494, 404, "希尔伯特《几何基础》揭示：", size=11.3, color=INK, weight="700"))
+        el.append(txt(494, 423, "帕普斯定理 ⇔ 坐标域乘法交换律 ab=ba", size=11.1, color=PURPLE, weight="600"))
+
+        svg = figure(
+            452,
+            "帕普斯六边形定理：退化圆锥曲线（两条直线）上的共线定理",
+            "左图在直线l1上取A、B、C，在直线l2上取a、b、c，按A-b-C-a-B-c-A连接后，三组十字交叉对边Ab与aB、Bc与bC、Ca与cA分别交于P、Q、R，三点严格共线于红色帕普斯线；右图展示平面切过双圆锥顶点得到两条相交直线的退化二次曲线机制。",
+            el,
+        )
+        write_svg("pascal", "pappus-two-lines.svg", svg)
+        return svg
+
+
+    # ---------------------------------------------------------------------------
+    # 3. Brianchon's Dual Theorem & Straightedge-Only Conic Construction SVG
+    # ---------------------------------------------------------------------------
+    def build_brianchon_dual():
+        el = []
+        el += header(
+            "射影对偶与无圆规作图：布利安桑外切六边形 + 单靠直尺画圆锥曲线",
+            "左：点线互换后“三点共线”对偶成“三线共点”；右：已知 5 个点，不用圆规也不用方程，纯靠直尺描出整条椭圆！",
+        )
+
+        # ---- Left Panel: Brianchon's Circumscribed Hexagon ----
+        el.append(card(20, 66, 354, 388))
+        el.append(txt(36, 89, "布利安桑定理（1806）：外切六边形", size=PANEL_TITLE, color=INK, weight="700"))
+        el.append(pill(264, 73, "三对角线共点", fg=ORANGE, bg=ORANGE_SOFT, w=96, h=22, size=11.3))
+
+        # Ellipse centered at (196, 240) with rx=104, ry=74
+        cx_b, cy_b = 196.0, 242.0
+        rx_b, ry_b = 102.0, 72.0
+
+        # Deliberately asymmetric tangent parameters so Brianchon point B != ellipse center O!
+        t_degs = [14.0, 66.0, 148.0, 212.0, 256.0, 326.0]
+        ts = [math.radians(d) for d in t_degs]
+
+        def tan_pt(t):
+            return (cx_b + rx_b * math.cos(t), cy_b - ry_b * math.sin(t))
+
+        def tan_inter(t1, t2):
+            # In local coords (x/rx) cos t + (y/ry) sin t = 1, with y_svg = cy - y
+            a1, b1 = math.cos(t1) / rx_b, math.sin(t1) / ry_b
+            a2, b2 = math.cos(t2) / rx_b, math.sin(t2) / ry_b
+            det = a1 * b2 - a2 * b1
+            lx = (b2 - b1) / det
+            ly = (a1 - a2) / det
+            return (cx_b + lx, cy_b - ly)
+
+        T_pts = [tan_pt(t) for t in ts]
+        V_pts = [tan_inter(ts[i], ts[(i + 1) % 6]) for i in range(6)]
+        # Verify tangency: each T_pts[i] lies on segment V_{i-1} -- V_i!
+        for i in range(6):
+            assert abs(collinear_det(V_pts[(i - 1) % 6], T_pts[i], V_pts[i])) < 1e-6
+
+        # Three opposite-vertex diagonals: V1-V4, V2-V5, V3-V6
+        B12 = line_inter(V_pts[0], V_pts[3], V_pts[1], V_pts[4])
+        B23 = line_inter(V_pts[1], V_pts[4], V_pts[2], V_pts[5])
+        B31 = line_inter(V_pts[2], V_pts[5], V_pts[0], V_pts[3])
+        assert math.dist(B12, B23) < 1e-8 and math.dist(B23, B31) < 1e-8
+        B_pt = B12
+        assert math.dist(B_pt, (cx_b, cy_b)) > 8.0  # Distinct from center O!
+
+        # Draw ellipse
+        el.append(
+            f'<ellipse cx="{cx_b:.1f}" cy="{cy_b:.1f}" rx="{rx_b:.1f}" ry="{ry_b:.1f}" '
+            f'fill="{BLUE_SOFT}" fill-opacity="0.38" stroke="{BLUE}" stroke-width="2.1"/>'
+        )
+
+        # Circumscribed hexagon edges (tangent segments extended slightly)
+        el.append(poly_svg(V_pts, fill="none", stroke=SLATE, sw=2.1))
+        for tp in T_pts:
+            el.append(dot_svg(tp, r=3.1, fill=BLUE, stroke=CARD_BG, sw=1.2))
+
+        # Three main diagonals meeting at Brianchon point B
+        diag_cols = [(0, 3, ORANGE), (1, 4, GREEN), (2, 5, PURPLE)]
+        for i, j, col in diag_cols:
+            el.append(seg_svg(V_pts[i], V_pts[j], color=col, sw=2.2))
+
+        # Mark ellipse center O faintly vs Brianchon point B prominently
+        el.append(dot_svg((cx_b, cy_b), r=2.8, fill=MUTED, stroke=CARD_BG, sw=1.0))
+        el.append(txt(cx_b - 7, cy_b + 15, "中心O", size=11, color=MUTED, anchor="end", halo=True))
+
+        el.append(dot_svg(B_pt, r=5.6, fill=RED, stroke=CARD_BG, sw=1.8))
+        el.append(txt(B_pt[0] + 10, B_pt[1] + 5, "B（布利安桑点）", size=12, color=RED, weight="700", halo=True))
+
+        v_offsets = [
+            (8, -6, "start"),
+            (-6, -8, "end"),
+            (-8, 4, "end"),
+            (-6, 15, "end"),
+            (6, 16, "start"),
+            (8, 5, "start"),
+        ]
+        for idx, (vp, (dx, dy, anc)) in enumerate(zip(V_pts, v_offsets), 1):
+            el.append(dot_svg(vp, r=4.2, fill=CARD_BG, stroke=INK, sw=1.8))
+            el.append(txt(vp[0] + dx, vp[1] + dy, f"V{idx}", size=11.8, color=INK, anchor=anc, weight="700", halo=True))
+
+        # Duality footer inside Left Panel
+        el.append(card(34, 376, 326, 64, rx=7, fill=SLATE_SOFT, stroke=BORDER))
+        el.append(txt(46, 396, "射影对偶字典：曲线上的点 ↔ 曲线的切线", size=11.4, color=INK, weight="700"))
+        el.append(txt(46, 415, "内接六边形对边交点共线 ↔ 外切六边形对顶点连线共点", size=11.1, color=BODY))
+        el.append(txt(46, 432, "注意：共点 B 一般不与椭圆中心 O 重合！", size=11.0, color=RED, weight="600"))
+
+        # ---- Right Panel: Pure Straightedge 5-Points -> 6th-Point Construction ----
+        el.append(card(386, 66, 354, 388))
+        el.append(txt(402, 89, "五点定圆锥曲线：只用直尺找第 6 点", size=PANEL_TITLE, color=INK, weight="700"))
+        el.append(pill(640, 73, "零圆规作图", fg=GREEN, bg=GREEN_SOFT, w=86, h=22, size=11.3))
+
+        cx_r, cy_r = 564.0, 228.0
+        rx_r, ry_r = 110.0, 76.0
+        base_degs = [28.5, 90.9, 136.1, 170.1, 201.9, 321.0]
+        perm = (0, 2, 5, 1, 4, 3)
+
+        def ell_r(deg):
+            th = math.radians(deg)
+            return (cx_r + rx_r * math.cos(th), cy_r - ry_r * math.sin(th))
+
+        # Known 5 points A1..A5; A6 will be constructed purely via line intersections!
+        A1, A2, A3, A4, A5, A6_true = [ell_r(base_degs[i]) for i in perm]
+
+        # Straightedge construction along chosen ray r passing through A1 (in direction of A6_true):
+        # Step 1: P = A1A2 cap A4A5 (both lines connect known points!)
+        P_c = line_inter(A1, A2, A4, A5)
+        # Step 2: R = A3A4 cap r (since ray r IS the future side A6A1!)
+        R_c = line_inter(A3, A4, A1, A6_true)
+        # Step 3: Draw Pascal line p = PR, intersect with known line A2A3 to get Q!
+        Q_c = line_inter(P_c, R_c, A2, A3)
+        # Step 4: Draw QA5 to meet ray r at the exact 6th conic point A6!
+        A6_constructed = line_inter(Q_c, A5, A1, A6_true)
+
+        assert math.dist(A6_constructed, A6_true) < 1e-8
+        norm_eq = ((A6_constructed[0] - cx_r) / rx_r) ** 2 + ((A6_constructed[1] - cy_r) / ry_r) ** 2
+        assert abs(norm_eq - 1.0) < 1e-9
+
+        # Also verify degenerate limit A6 -> A1 constructs exact tangent at A1!
+        t1_rad = math.radians(base_degs[perm[0]])
+        # Tangent vector at A1 in SVG coords: (-rx sin t, -ry cos t)
+        A1_tan_dir = (A1[0] - rx_r * math.sin(t1_rad), A1[1] - ry_r * math.cos(t1_rad))
+        Q_tan = line_inter(A2, A3, A5, A1)
+        R_tan = line_inter(P_c, Q_tan, A3, A4)
+        assert abs(collinear_det(A1, A1_tan_dir, R_tan)) < 1e-6
+
+        rbox = (396.0, 104.0, 730.0, 344.0)
+        # Faint target ellipse (dashed) showing the curve traced out as ray r sweeps!
+        el.append(
+            f'<ellipse cx="{cx_r:.1f}" cy="{cy_r:.1f}" rx="{rx_r:.1f}" ry="{ry_r:.1f}" '
+            f'fill="none" stroke="{HAIRLINE}" stroke-width="1.6" stroke-dasharray="5 4"/>'
+        )
+
+        # Known segments: A1A2, A2A3, A3A4, A4A5
+        for u, v in ((A1, A2), (A2, A3), (A3, A4), (A4, A5)):
+            el.append(seg_svg(u, v, color=SLATE, sw=1.7))
+        # Extensions to P, Q, R
+        el.append(seg_svg(A4, P_c, color=ORANGE, sw=1.4, dash="4 3"))
+        el.append(seg_svg(A1, P_c, color=ORANGE, sw=1.4, dash="4 3"))
+        el.append(seg_svg(A3, R_c, color=PURPLE, sw=1.4, dash="4 3"))
+        el.append(seg_svg(A2, Q_c, color=BLUE, sw=1.4, dash="4 3"))
+
+        # Chosen ray r through A1 (green)
+        r_s, r_e = span_line([A1, R_c, A6_constructed], pad=16.0, box=rbox)
+        el.append(seg_svg(r_s, r_e, color=GREEN, sw=2.1))
+
+        # Pascal line PRQ (red)
+        p_s, p_e = span_line([P_c, Q_c, R_c], pad=16.0, box=rbox)
+        el.append(seg_svg(p_s, p_e, color=RED, sw=2.3))
+
+        # Final closing line QA5 -> A6 (blue-green highlight)
+        q_s, q_e = span_line([Q_c, A5, A6_constructed], pad=10.0, box=rbox)
+        el.append(seg_svg(q_s, q_e, color=BLUE, sw=2.0, dash="5 3"))
+
+        # Draw 5 given points A1..A5 (blue solid) and newly found A6 (green star/bullseye)
+        a_lbls = [
+            (A1, "A₁", 9, -6, "start"),
+            (A2, "A₂", -9, -5, "end"),
+            (A3, "A₃", 9, 12, "start"),
+            (A4, "A₄", 0, -10, "middle"),
+            (A5, "A₅", -9, 12, "end"),
+        ]
+        for pt, nm, dx, dy, anc in a_lbls:
+            el.append(dot_svg(pt, r=4.3, fill=BLUE, stroke=CARD_BG, sw=1.6))
+            el.append(txt(pt[0] + dx, pt[1] + dy, nm, size=11.8, color=BLUE, anchor=anc, weight="700", halo=True))
+
+        # Constructed intersections P, R, Q
+        el.append(dot_svg(P_c, r=4.2, fill=ORANGE, stroke=CARD_BG, sw=1.5))
+        el.append(txt(P_c[0] + 8, P_c[1] - 5, "P", size=11.8, color=ORANGE, weight="700", halo=True))
+        el.append(dot_svg(R_c, r=4.2, fill=PURPLE, stroke=CARD_BG, sw=1.5))
+        el.append(txt(R_c[0] + 8, R_c[1] + 4, "R", size=11.8, color=PURPLE, weight="700", halo=True))
+        el.append(dot_svg(Q_c, r=4.2, fill=RED, stroke=CARD_BG, sw=1.5))
+        el.append(txt(Q_c[0] - 8, Q_c[1] - 6, "Q", size=11.8, color=RED, anchor="end", weight="700", halo=True))
+
+        # Target 6th point A6!
+        el.append(f'<circle cx="{A6_constructed[0]:.2f}" cy="{A6_constructed[1]:.2f}" r="7.5" fill="{GREEN_SOFT}" stroke="{GREEN}" stroke-width="1.6"/>')
+        el.append(dot_svg(A6_constructed, r=4.4, fill=GREEN, stroke=CARD_BG, sw=1.5))
+        el.append(txt(A6_constructed[0] - 10, A6_constructed[1] - 8, "新点 A₆！", size=12, color=GREEN, anchor="end", weight="700", halo=True))
+
+        # Step-by-step straightedge recipe box
+        el.append(card(400, 344, 326, 96, rx=7, fill=GREEN_SOFT, stroke=GREEN, sw=1))
+        el.append(txt(412, 363, "纯直尺四步口诀（已知 A₁…A₅，过 A₁ 任画绿线 r）：", size=11.4, color=INK, weight="700"))
+        el.append(txt(412, 382, "1. 求 P = A₁A₂ ∩ A₄A₅，求 R = A₃A₄ ∩ r", size=11.2, color=BODY))
+        el.append(txt(412, 400, "2. 连红线 PR（帕斯卡线），交 A₂A₃ 得 Q", size=11.2, color=BODY))
+        el.append(txt(412, 418, "3. 连 QA₅ 交绿线 r ⇒ 精准命中曲线上第 6 点 A₆！", size=11.2, color=GREEN, weight="700"))
+        el.append(txt(412, 434, "（若令 A₆→A₁ 合并，同法直接画出 A₁ 处的精确切线！）", size=11.0, color=MUTED))
+
+        svg = figure(
+            468,
+            "布利安桑对偶定理与五点纯直尺作圆锥曲线",
+            "左图展示椭圆外切六边形V1V2V3V4V5V6的三条主对角线V1V4、V2V5、V3V6精确共点于布利安桑点B（不同于椭圆中心O）；右图展示已知圆锥曲线上五点A1至A5，过A1任作直线r，仅用直尺依次求P、R、帕斯卡线PR、交点Q及QA5与r的交点，即可精确作出曲线上第六点A6。",
+            el,
+        )
+        write_svg("pascal", "brianchon-dual.svg", svg)
+        return svg
+
+
+    # ---------------------------------------------------------------------------
+    # 4. Square Incommensurability: Geometric Folding vs Parity Contradiction SVG
+    # ---------------------------------------------------------------------------
+    def build_square_incommensurable():
+        # Exact geometric folding coordinates on isosceles right triangle ABC
+        # Right angle at B = (0, 0), A = (0, 1), C = (1, 0) in math coords
+        # Hypotenuse AC has length sqrt(2). Fold AB onto AC along angle bisector AD:
+        # E on AC at distance 1 from A => E = (1/sqrt(2), 1 - 1/sqrt(2))
+        # D on BC => BD = tan(22.5 deg) = sqrt(2) - 1, so D = (sqrt(2) - 1, 0)
+        s0 = 1.0
+        d0 = math.sqrt(2.0)
+        s1 = d0 - s0  # sqrt(2) - 1
+        d1 = 2 * s0 - d0  # 2 - sqrt(2)
+        s2 = d1 - s1  # 3 - 2*sqrt(2)
+        d2 = 2 * s1 - d1  # 3*sqrt(2) - 4
+        assert abs(d1 / s1 - d0 / s0) < 1e-12
+        assert abs(d2 / s2 - d0 / s0) < 1e-12
+
+        # Euclidean anthyphairesis quotients of (d0, s0) -> [1; 2, 2, 2, 2]
+        x_val, y_val = d0, s0
+        quotients = []
+        for _ in range(5):
+            q_int = int(math.floor(x_val / y_val + 1e-12))
+            quotients.append(q_int)
+            x_val, y_val = y_val, x_val - q_int * y_val
+        assert quotients == [1, 2, 2, 2, 2]
+
+        # Map math (0..1, 0..1) to Left Panel SVG
+        ox, oy = 56.0, 326.0
+        L = 216.0
+
+        def m_tri(mx, my):
+            return (ox + mx * L, oy - my * L)
+
+        A_pt = m_tri(0.0, 1.0)
+        B_pt = m_tri(0.0, 0.0)
+        C_pt = m_tri(1.0, 0.0)
+        D_pt = m_tri(s1, 0.0)
+        E_pt = m_tri(1.0 / d0, 1.0 - 1.0 / d0)
+        # Check perpendicularity DE perp AC and lengths!
+        assert abs(math.dist(A_pt, E_pt) - L) < 1e-9
+        assert abs(math.dist(B_pt, D_pt) - math.dist(D_pt, E_pt)) < 1e-9
+        assert abs(math.dist(D_pt, E_pt) - math.dist(E_pt, C_pt)) < 1e-9
+
+        # Second fold inside Delta DEC (right angle at E, legs ED and EC of length s1, hyp DC of length d1):
+        # Fold ED onto DC from vertex D: E2 on DC at distance s1 from D => C - E2 has length d1 - s1 = s2!
+        # Wait: E2 on BC: D is at x = s1, so E2 is at x = s1 + s1 = 2*s1 = 2*sqrt(2) - 2!
+        # And D2 on EC at distance s2 from E2: since angle C = 45 deg, D2 E2 perp BC!
+        E2_pt = m_tri(s1 + s1, 0.0)
+        D2_math_x = 1.0 - s2
+        D2_math_y = s2
+        D2_pt = m_tri(D2_math_x, D2_math_y)
+        assert abs(math.dist(E2_pt, C_pt) / L - s2) < 1e-9
+        assert abs(math.dist(D2_pt, E2_pt) / L - s2) < 1e-9
+        assert abs(math.dist(D2_pt, C_pt) / L - d2) < 1e-9
+
+        el = []
+        el += header(
+            "为什么正方形的对角线与边长“不可公度”？几何无限折叠 vs 奇偶反证法",
+            "不是尺子刻度不够细，而是根本不存在能把边长 s 与对角线 d 同时量成整数份的共同长度单位 u",
+        )
+
+        # ---- Left Card: Geometric Folding (Anthyphairesis) ----
+        el.append(card(20, 66, 376, 396))
+        el.append(txt(36, 89, "方法一：把边折向对角线（几何辗转相减）", size=PANEL_TITLE, color=INK, weight="700"))
+        el.append(pill(296, 73, "永远折不完", fg=BLUE, bg=BLUE_SOFT, w=86, h=22, size=11.3))
+
+        # Ghost upper-right half of the square so reader sees ABC is half of the unit square!
+        TopR_pt = m_tri(1.0, 1.0)
+        el.append(poly_svg([A_pt, TopR_pt, C_pt], fill="none", stroke=HAIRLINE, sw=1.2, dash="5 4", closed=False))
+        el.append(txt(TopR_pt[0] - 6, TopR_pt[1] + 16, "正方形另一半", size=11, color=MUTED, anchor="end"))
+
+        # Main triangle ABC
+        el.append(poly_svg([A_pt, B_pt, C_pt], fill=BLUE_SOFT, stroke=BLUE, sw=2.1, fill_opacity=0.35))
+        # First smaller isosceles right triangle DEC (orange highlight)
+        el.append(poly_svg([D_pt, E_pt, C_pt], fill=ORANGE_SOFT, stroke=ORANGE, sw=2.1, fill_opacity=0.72))
+        # Second even smaller isosceles right triangle D2 E2 C (purple highlight)
+        el.append(poly_svg([D_pt, D2_pt, C_pt], fill="none", stroke="none", sw=0))
+        el.append(poly_svg([D2_pt, E2_pt, C_pt], fill=PURPLE_SOFT, stroke=PURPLE, sw=1.8, fill_opacity=0.85))
+
+        # Right-angle markers at B and E
+        el.append(poly_svg([(ox, oy - 12), (ox + 12, oy - 12), (ox + 12, oy)], fill="none", stroke=BLUE, sw=1.3, closed=False))
+        # Right angle at E (between EA and ED)
+        ux_ea = (A_pt[0] - E_pt[0]) / math.dist(A_pt, E_pt)
+        uy_ea = (A_pt[1] - E_pt[1]) / math.dist(A_pt, E_pt)
+        ux_ed = (D_pt[0] - E_pt[0]) / math.dist(D_pt, E_pt)
+        uy_ed = (D_pt[1] - E_pt[1]) / math.dist(D_pt, E_pt)
+        ra = 9.5
+        el.append(
+            poly_svg(
+                [
+                    (E_pt[0] + ra * ux_ea, E_pt[1] + ra * uy_ea),
+                    (E_pt[0] + ra * (ux_ea + ux_ed), E_pt[1] + ra * (uy_ea + uy_ed)),
+                    (E_pt[0] + ra * ux_ed, E_pt[1] + ra * uy_ed),
+                ],
+                fill="none",
+                stroke=ORANGE,
+                sw=1.3,
+                closed=False,
+            )
+        )
+
+        # Fold line AD and circular swing arc from B to E centered at A (radius = L)!
+        el.append(seg_svg(A_pt, D_pt, color=BLUE, sw=1.6, dash="5 3"))
+        el.append(
+            f'<path d="M {B_pt[0]:.2f},{B_pt[1]:.2f} A {L:.2f},{L:.2f} 0 0 0 {E_pt[0]:.2f},{E_pt[1]:.2f}" '
+            f'fill="none" stroke="{GREEN}" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#arr-green)"/>'
+        )
+
+        # Vertices & clear labels
+        for pt in (A_pt, B_pt, C_pt):
+            el.append(dot_svg(pt, r=4.0, fill=CARD_BG, stroke=BLUE, sw=1.8))
+        el.append(dot_svg(D_pt, r=4.0, fill=ORANGE, stroke=CARD_BG, sw=1.5))
+        el.append(dot_svg(E_pt, r=4.0, fill=ORANGE, stroke=CARD_BG, sw=1.5))
+        el.append(dot_svg(D2_pt, r=3.2, fill=PURPLE, stroke=CARD_BG, sw=1.2))
+        el.append(dot_svg(E2_pt, r=3.2, fill=PURPLE, stroke=CARD_BG, sw=1.2))
+
+        el.append(txt(A_pt[0] - 10, A_pt[1] + 5, "A", size=12.5, color=INK, anchor="end", weight="700"))
+        el.append(txt(B_pt[0] - 10, B_pt[1] + 5, "B", size=12.5, color=INK, anchor="end", weight="700"))
+        el.append(txt(C_pt[0] + 9, C_pt[1] + 5, "C", size=12.5, color=INK, weight="700"))
+        el.append(txt(D_pt[0] - 4, D_pt[1] + 18, "D", size=12, color=ORANGE, anchor="middle", weight="700"))
+        el.append(txt(E_pt[0] + 10, E_pt[1] - 5, "E", size=12, color=ORANGE, weight="700", halo=True))
+        el.append(txt(E2_pt[0] + 4, E2_pt[1] + 18, "E₂", size=11.5, color=PURPLE, anchor="middle", weight="700"))
+
+        # Segment length annotations
+        el.append(txt(ox - 12, (A_pt[1] + B_pt[1]) / 2 + 4, "s", size=12.5, color=BLUE, anchor="end", weight="700"))
+        el.append(txt(ox + 72, oy - 134, "AE = s", size=11.8, color=GREEN, weight="700", halo=True))
+        el.append(txt(E_pt[0] + 44, E_pt[1] + 34, "余边 EC = d − s", size=11.5, color=ORANGE, weight="700", halo=True))
+        el.append(txt((D_pt[0] + C_pt[0]) / 2 - 12, oy + 34, "新斜边 DC = 2s − d", size=11.5, color=ORANGE, anchor="middle", weight="700"))
+
+        # Bottom recurrence summary inside Left Card
+        el.append(card(34, 370, 348, 80, rx=7, fill=SLATE_SOFT, stroke=BORDER))
+        el.append(txt(46, 389, "折叠递推：小等腰直角 ΔDEC 满足 s₁ = d−s，d₁ = 2s−d", size=11.3, color=INK, weight="700"))
+        el.append(txt(46, 408, "若有共同单位 u 使 s,d 为整数份，余量将产出无穷递降正整数！", size=11.1, color=BODY))
+        el.append(txt(46, 427, "辗转相减商序列：[1; 2, 2, 2, …] ⇒ √2 = 1 + 1/(2 + 1/(2 + …))", size=11.1, color=PURPLE, weight="600"))
+
+        # ---- Right Card: Parity Contradiction p^2 = 2q^2 ----
+        el.append(card(408, 66, 332, 396))
+        el.append(txt(424, 89, "方法二：奇偶性反证法（p² = 2q²）", size=PANEL_TITLE, color=INK, weight="700"))
+        el.append(pill(642, 73, "互质却全偶", fg=ORANGE, bg=ORANGE_SOFT, w=86, h=22, size=11.3))
+
+        # Visual area equation: p x p square (divided into 4 k x k quadrants) = two q x q squares
+        # Left square: p = 2k, size 76x76 at (432, 114)
+        el.append(card(432, 114, 76, 76, rx=3, fill=BLUE_SOFT, stroke=BLUE, sw=2.0))
+        el.append(seg_svg((470, 114), (470, 190), color=BLUE, sw=1.3, dash="4 3"))
+        el.append(seg_svg((432, 152), (508, 152), color=BLUE, sw=1.3, dash="4 3"))
+        el.append(txt(451, 137, "k²", size=11.5, color=BLUE, anchor="middle", weight="700"))
+        el.append(txt(489, 137, "k²", size=11.5, color=BLUE, anchor="middle", weight="700"))
+        el.append(txt(451, 175, "k²", size=11.5, color=BLUE, anchor="middle", weight="700"))
+        el.append(txt(489, 175, "k²", size=11.5, color=BLUE, anchor="middle", weight="700"))
+        el.append(txt(470, 207, "p² = (2k)² = 4k²", size=11.5, color=BLUE, anchor="middle", weight="700"))
+
+        el.append(txt(530, 158, "=", size=15, color=INK, anchor="middle", weight="700"))
+
+        # Two q x q squares of side 54 (~76/sqrt(2)) at (554, 125) and (622, 125)
+        el.append(card(554, 125, 54, 54, rx=3, fill=ORANGE_SOFT, stroke=ORANGE, sw=2.0))
+        el.append(txt(581, 156, "q²", size=12, color=ORANGE, anchor="middle", weight="700"))
+        el.append(txt(619, 157, "+", size=13, color=INK, anchor="middle", weight="700"))
+        el.append(card(630, 125, 54, 54, rx=3, fill=ORANGE_SOFT, stroke=ORANGE, sw=2.0))
+        el.append(txt(657, 156, "q²", size=12, color=ORANGE, anchor="middle", weight="700"))
+        el.append(txt(619, 207, "2q²（两块 q×q）", size=11.5, color=ORANGE, anchor="middle", weight="700"))
+
+        # Four logical domino cards stacked cleanly without overlap
+        chain = [
+            (224, "1", BLUE, BLUE_SOFT, "先约到最简分数：设 d/s = p/q，gcd(p, q) = 1"),
+            (272, "2", ORANGE, ORANGE_SOFT, "平方得 p² = 2q² ⇒ p² 是偶数 ⇒ p = 2k 必为偶数"),
+            (320, "3", GREEN, GREEN_SOFT, "代入 4k² = 2q² ⇒ q² = 2k² ⇒ q = 2m 也必为偶数！"),
+            (368, "4", PURPLE, PURPLE_SOFT, "矛盾爆破：p, q 都能被 2 整除，与“互质无公因子”冲突！"),
+        ]
+        for cy_box, bnum, fg, bg, line_txt in chain:
+            el.append(card(424, cy_box, 300, 38, rx=7, fill=CARD_BG, stroke=BORDER))
+            el.append(step_badge(442, cy_box + 19, bnum, fg=fg, bg=bg, r=9.5))
+            el.append(txt(458, cy_box + 23, line_txt, size=11.2, color=INK, weight="600"))
+
+        el.append(card(424, 416, 300, 34, rx=7, fill=RED_SOFT, stroke=RED, sw=1))
+        el.append(txt(574, 437, "结论：不存在任何有理数 p/q 满足 (p/q)² = 2", size=11.5, color=RED, anchor="middle", weight="700"))
+
+        svg = figure(
+            476,
+            "正方形对角线与边长不可公度的两种严格证明",
+            "左图把边长AB=s折到对角线AC=d上得到AE=s与余段EC=d-s，构造出更小的等腰直角三角形DEC（直角边d-s、斜边2s-d），无限自相似折叠对应连分数[1;2,2,2,...]；右图用面积4k²=2q²展示p²=2q²导致p与q同为偶数，与最简分数互质假设矛盾。",
+            el,
+        )
+        write_svg("eudoxus", "square-incommensurable.svg", svg)
+        return svg
+
+
+    # ---------------------------------------------------------------------------
+    # 5. Eudoxus Rational Sieve (Definition V.5 & Nested Pell Intervals) SVG
+    # ---------------------------------------------------------------------------
+    def build_eudoxus_rational_sieve():
+        # Probe fractions r = p/q from continued fraction convergents of sqrt(2):
+        # (p, q) in [(1, 1), (3, 2), (7, 5), (17, 12), (41, 29)]
+        # In Eudoxus's test m*A ? n*B: to compare A/B against p/q, take m = q, n = p!
+        # Because q*A ? p*B <=> A/B ? p/q <=> 2*q^2 ? p^2!
+        probes = [
+            (1, 1, "[1/1, +∞)"),
+            (3, 2, "[1/1, 3/2]"),
+            (7, 5, "[7/5, 3/2]"),
+            (17, 12, "[7/5, 17/12]"),
+            (41, 29, "[41/29, 17/12]"),
+        ]
+        rt2 = math.sqrt(2.0)
+        for p, q, _ in probes:
+            m, n = q, p
+            lhs_sq = 2 * m * m
+            rhs_sq = n * n
+            assert abs(lhs_sq - rhs_sq) == 1  # Exact Pell convergent!
+            assert (lhs_sq > rhs_sq) == (rt2 > Fraction(p, q))
+
+        el = []
+        el += header(
+            "欧多克斯“有理数筛子”（《几何原本》定义 V.5）：整数倍同步拷问",
+            "不用写出 √2，只拿正整数倍 mA 与 nB、mC 与 nD 逐轮比大小；所有有理数筛孔回答一致 ⇔ A:B = C:D",
+        )
+
+        # ---- Top Card: Step-by-step Comparison Table ----
+        el.append(card(20, 66, 720, 232))
+        el.append(txt(36, 90, "两组正方形同步过筛：小正方形 (A=d₁, B=s₁) vs 大正方形 (C=d₂, D=s₂)", size=PANEL_TITLE, color=INK, weight="700"))
+        el.append(pill(572, 73, "mA ≷ nB ⇔ mC ≷ nD", fg=BLUE, bg=BLUE_SOFT, w=154, h=22, size=11.3))
+
+        # Table header row
+        el.append(card(34, 102, 692, 28, rx=5, fill=SLATE_SOFT, stroke=BORDER))
+        cols_x = [46, 152, 282, 424, 574]
+        headers_t = ["有理探针 n/m", "取倍数 (m, n)", "整数平方核验 2m² vs n²", "两组比赛同步判决", "夹出的有理区间"]
+        for cx_h, ht in zip(cols_x, headers_t):
+            el.append(txt(cx_h, 120, ht, size=11.5, color=INK, weight="700"))
+
+        for idx, (p, q, bracket_s) in enumerate(probes):
+            m, n = q, p
+            ry = 148 + idx * 29
+            if idx % 2 == 1:
+                el.append(f'<rect x="34" y="{ry - 17}" width="692" height="27" fill="{BG}"/>')
+            lhs = 2 * m * m
+            rhs = n * n
+            gt = lhs > rhs
+            sym = ">" if gt else "<"
+            col = BLUE if gt else ORANGE
+            tag = f"{p}/{q} ≈ {p / q:.4f}" if q > 1 else "1/1 = 1.0000"
+            el.append(txt(cols_x[0], ry, tag, size=11.5, color=INK, weight="600", cls="mono"))
+            el.append(txt(cols_x[1], ry, f"m={m}, n={n}", size=11.5, color=BODY, cls="mono"))
+            el.append(txt(cols_x[2], ry, f"{lhs} {sym} {rhs}（差 {lhs - rhs:+d}）", size=11.5, color=col, weight="700", cls="mono"))
+            el.append(txt(cols_x[3], ry, f"{m}A {sym} {n}B  且  {m}C {sym} {n}D", size=11.5, color=col, weight="700", cls="mono"))
+            el.append(txt(cols_x[4], ry, bracket_s, size=11.5, color=GREEN if idx >= 2 else SLATE, weight="700", cls="mono"))
+
+        # ---- Bottom Card: Nested Interval Funnel on Number Line ----
+        el.append(card(20, 310, 720, 214))
+        el.append(txt(36, 334, "有理区间层层收口：[1, 3/2] ⊃ [7/5, 3/2] ⊃ [7/5, 17/12] ⊃ [41/29, 17/12]", size=PANEL_TITLE, color=INK, weight="700"))
+        el.append(pill(592, 317, "永无平局却唯一锁定", fg=GREEN, bg=GREEN_SOFT, w=134, h=22, size=11.3))
+
+        # Left sub-axis: [0.96, 1.54] mapped to x in [52, 412]
+        ax0, ax1 = 52.0, 412.0
+        vmin, vmax = 0.96, 1.54
+
+        def map_main(v):
+            return ax0 + (v - vmin) / (vmax - vmin) * (ax1 - ax0)
+
+        y_axis = 468.0
+        el.append(seg_svg((ax0, y_axis), (ax1, y_axis), color=SLATE, sw=1.8))
+
+        # Exact target vertical line at sqrt(2)
+        x_rt2 = map_main(rt2)
+        el.append(seg_svg((x_rt2, 354), (x_rt2, y_axis + 8), color=RED, sw=2.0, dash="4 3"))
+        el.append(txt(x_rt2, 351, "A:B = √2", size=11.5, color=RED, anchor="middle", weight="700"))
+
+        # Nested horizontal bars above the main axis
+        bars = [
+            (366, 1.0, 1.5, "第 1–2 筛：[1, 3/2]，宽 0.500", BLUE_SOFT, BLUE),
+            (396, 1.4, 1.5, "第 3 筛：[7/5, 3/2]，宽 0.100", GREEN_SOFT, GREEN),
+            (426, 1.4, 17.0 / 12.0, "第 4 筛：[7/5, 17/12]，宽 0.0167", PURPLE_SOFT, PURPLE),
+        ]
+        for by, lo, hi, blabel, bfill, bstroke in bars:
+            xlo, xhi = map_main(lo), map_main(hi)
+            assert xlo < x_rt2 < xhi
+            el.append(card(round(xlo, 2), by, round(xhi - xlo, 2), 18, rx=4, fill=bfill, stroke=bstroke, sw=1.5))
+            if hi - lo < 0.15:
+                el.append(txt(xlo - 8, by + 13, blabel, size=11.2, color=bstroke, anchor="end", weight="600"))
+            else:
+                el.append(txt((xlo + xhi) / 2, by + 13, blabel, size=11.2, color=INK, anchor="middle", weight="600"))
+
+        # Ticks on main axis: 1/1, 7/5, 3/2
+        for val, lbl, col, dy in ((1.0, "1/1", BLUE, 20), (1.4, "7/5 (1.4)", BLUE, 20), (1.5, "3/2 (1.5)", ORANGE, 20)):
+            xv = map_main(val)
+            el.append(seg_svg((xv, y_axis - 5), (xv, y_axis + 5), color=col, sw=1.8))
+            el.append(txt(xv, y_axis + dy, lbl, size=11.3, color=col, anchor="middle", weight="700"))
+
+        el.append(txt(232, 510, "宏观数轴窗口 [0.96, 1.54]", size=11.2, color=MUTED, anchor="middle"))
+
+        # Right subcard: Magnified zoom [1.4125, 1.4175] showing [41/29, 17/12]!
+        el.append(card(436, 352, 290, 158, rx=8, fill=BG, stroke=BORDER, dash="4 3"))
+        el.append(txt(581, 372, "局部放大镜 [1.4125, 1.4175]", size=12, color=INK, anchor="middle", weight="700"))
+
+        zx0, zx1 = 456.0, 706.0
+        zmin, zmax = 1.4125, 1.4175
+
+        def map_zoom(v):
+            return zx0 + (v - zmin) / (zmax - zmin) * (zx1 - zx0)
+
+        zy = 446.0
+        x_41_29 = map_zoom(41.0 / 29.0)
+        x_17_12 = map_zoom(17.0 / 12.0)
+        z_rt2 = map_zoom(rt2)
+        assert zx0 < x_41_29 < z_rt2 < x_17_12 < zx1
+
+        el.append(card(round(x_41_29, 2), 404, round(x_17_12 - x_41_29, 2), 22, rx=4, fill=GREEN_SOFT, stroke=GREEN, sw=1.6))
+        el.append(txt((x_41_29 + x_17_12) / 2, 419, "宽仅 1/348 ≈ 0.0029", size=11.1, color=GREEN, anchor="middle", weight="700"))
+
+        el.append(seg_svg((zx0, zy), (zx1, zy), color=SLATE, sw=1.8))
+        el.append(seg_svg((z_rt2, 384), (z_rt2, zy + 8), color=RED, sw=2.1, dash="4 3"))
+        el.append(dot_svg((z_rt2, zy), r=4.2, fill=CARD_BG, stroke=RED, sw=2.0))
+        el.append(txt(z_rt2, 396, "√2 ≈ 1.41421", size=11.2, color=RED, anchor="middle", weight="700", halo=True))
+
+        el.append(dot_svg((x_41_29, zy), r=4.2, fill=BLUE, stroke=CARD_BG, sw=1.5))
+        el.append(txt(x_41_29, zy + 20, "41/29", size=11.3, color=BLUE, anchor="middle", weight="700"))
+        el.append(txt(x_41_29, zy + 35, "1.4138", size=11, color=MUTED, anchor="middle", cls="mono"))
+
+        el.append(dot_svg((x_17_12, zy), r=4.2, fill=ORANGE, stroke=CARD_BG, sw=1.5))
+        el.append(txt(x_17_12, zy + 20, "17/12", size=11.3, color=ORANGE, anchor="middle", weight="700"))
+        el.append(txt(x_17_12, zy + 35, "1.4167", size=11, color=MUTED, anchor="middle", cls="mono"))
+
+        svg = figure(
+            538,
+            "欧多克斯比例定义V.5的有理数筛子与渐进分数区间套",
+            "上图按佩尔渐进分数1/1、3/2、7/5、17/12、41/29依次检验整数倍mA与nB、mC与nD的大小关系，2m²与n²仅相差±1且两组正方形判决完全同步；下图在数轴与局部放大镜上展示有理区间[1,3/2]⊃[7/5,3/2]⊃[7/5,17/12]⊃[41/29,17/12]层层收口锁定√2。",
+            el,
+        )
+        write_svg("eudoxus", "eudoxus-rational-sieve.svg", svg)
+        return svg
+
+
+    # ---------------------------------------------------------------------------
+    # 6. Dedekind Cut Line, Archimedean Axiom & Cauchy Sequence Bridge SVG
+    # ---------------------------------------------------------------------------
+    def build_dedekind_cut_line():
+        rt2 = math.sqrt(2.0)
+        # Verify Dedekind cut class memberships and Cauchy width shrinkage
+        left_rats = [Fraction(1, 1), Fraction(7, 5), Fraction(41, 29), Fraction(239, 169)]
+        right_rats = [Fraction(2, 1), Fraction(3, 2), Fraction(17, 12), Fraction(99, 70)]
+        for q in left_rats:
+            assert q * q < 2
+        for q in right_rats:
+            assert q * q > 2
+        widths = [float(b - a) for a, b in zip(left_rats, right_rats)]
+        assert widths[-1] < 0.0003 and all(widths[i + 1] < widths[i] for i in range(len(widths) - 1))
+
+        el = []
+        el += header(
+            "戴德金分割（1872）：从“比较有理数”到“把切口本身定义为实数”",
+            "对比有理切口 3/2 与无理针眼缺口 √2，并看清阿基米德公理与柯西基本列如何共同织出完备实数轴 ℝ",
+        )
+
+        x_left, x_right = 56.0, 704.0
+
+        def map_cut(v, vmin=0.60, vmax=2.15):
+            return x_left + (v - vmin) / (vmax - vmin) * (x_right - x_left)
+
+        # ---- Panel 1: Rational Cut at 3/2 ----
+        el.append(card(20, 66, 720, 128))
+        el.append(txt(36, 89, "对照一：有理数切口（以 3/2 为例）——右集合自带最小有理数端点", size=PANEL_TITLE, color=INK, weight="700"))
+        el.append(pill(562, 73, "已有现成有理数 3/2", fg=SLATE, bg=SLATE_SOFT, w=162, h=22, size=11.3))
+
+        y1 = 142.0
+        xc_rat = map_cut(1.5)
+        # Left ray L_{3/2} in BLUE, Right ray U_{3/2} in ORANGE
+        el.append(seg_svg((x_left, y1), (xc_rat - 5, y1), color=BLUE, sw=3.2))
+        el.append(seg_svg((xc_rat, y1), (x_right, y1), color=ORANGE, sw=3.2))
+        el.append(seg_svg((xc_rat, 106), (xc_rat, 178), color=SLATE, sw=1.5, dash="4 3"))
+
+        # Open circle on Left (no max in L), Solid dot on Right (min U = 3/2!)
+        el.append(dot_svg((xc_rat - 8, y1), r=4.5, fill=CARD_BG, stroke=BLUE, sw=2.0))
+        el.append(dot_svg((xc_rat, y1), r=5.2, fill=ORANGE, stroke=CARD_BG, sw=1.6))
+
+        el.append(txt(206, 124, "左集 L = { q ∈ ℚ : q < 3/2 }（无最大数）", size=11.5, color=BLUE, anchor="middle", weight="700"))
+        el.append(txt(548, 124, "右集 U = { q ∈ ℚ : q ≥ 3/2 }（有最小数 min U = 3/2！）", size=11.5, color=ORANGE, anchor="middle", weight="700"))
+
+        for v, s in ((1.0, "1"), (1.25, "5/4"), (1.5, "3/2（实心归 U）"), (1.75, "7/4"), (2.0, "2")):
+            xv = map_cut(v)
+            el.append(seg_svg((xv, y1 - 4), (xv, y1 + 4), color=SLATE, sw=1.4))
+            el.append(txt(xv, y1 + 22, s, size=11.2, color=ORANGE if v == 1.5 else MUTED, anchor="middle", weight="700" if v == 1.5 else None))
+
+        # ---- Panel 2: Irrational Cut at sqrt(2) Pinhole Gap ----
+        el.append(card(20, 206, 720, 166))
+        el.append(txt(36, 229, "对照二：无理数切口（q² < 2 与 q² > 2）——有理数轴 ℚ 在此露出“针眼缺口”！", size=PANEL_TITLE, color=INK, weight="700"))
+        el.append(pill(550, 213, "令切口 (L, U) ≡ √2 ∈ ℝ", fg=RED, bg=RED_SOFT, w=174, h=22, size=11.3))
+
+        y2 = 294.0
+        xc_irr = map_cut(rt2)
+        el.append(seg_svg((x_left, y2), (xc_irr - 7, y2), color=BLUE, sw=3.4))
+        el.append(seg_svg((xc_irr + 7, y2), (x_right, y2), color=ORANGE, sw=3.4))
+
+        # Scissors / cut line through the pinhole gap
+        el.append(seg_svg((xc_irr, 246), (xc_irr, 344), color=RED, sw=2.0, dash="4 3"))
+        # Pinhole gap ring in Q
+        el.append(dot_svg((xc_irr, y2), r=5.6, fill=CARD_BG, stroke=RED, sw=2.2))
+
+        el.append(txt(196, 266, "L = { q<0 或 q²<2 }：无最大有理数！", size=11.5, color=BLUE, anchor="middle", weight="700"))
+        el.append(txt(556, 266, "U = { q>0 且 q²>2 }：也无最小有理数！", size=11.5, color=ORANGE, anchor="middle", weight="700"))
+        el.append(txt(xc_irr, 252, "ℚ 中空缺针眼，ℝ 补上 sup L = √2", size=11.3, color=RED, anchor="middle", weight="700", halo=True))
+
+        # Sample rational points crowding toward the pinhole from left and right
+        crowd_pts = [
+            (0.8, "4/5", BLUE, 20),
+            (1.0, "1", BLUE, 20),
+            (1.25, "5/4", BLUE, 20),
+            (1.4, "7/5", BLUE, -12),
+            (17.0 / 12.0, "17/12", ORANGE, 36),
+            (1.5, "3/2", ORANGE, -12),
+            (1.75, "7/4", ORANGE, 20),
+            (2.0, "2", ORANGE, 20),
+        ]
+        for v, s, col, dy in crowd_pts:
+            xv = map_cut(v)
+            el.append(dot_svg((xv, y2), r=3.2, fill=col, stroke=CARD_BG, sw=1.1))
+            el.append(txt(xv, y2 + dy, s, size=11.1, color=col, anchor="middle", weight="600"))
+
+        el.append(
+            txt(
+                380,
+                356,
+                "完备性本质：有理数虽然稠密却遍布“无端点切口”；实数轴 ℝ 让每一个戴德金分割都拥有最小上界 sup L",
+                size=11.3,
+                color=BODY,
+                anchor="middle",
+                weight="600",
+            )
+        )
+
+        # ---- Panel 3: Two Bridges — Archimedean Axiom + Cauchy Sequences ----
+        el.append(card(20, 384, 352, 138))
+        el.append(txt(36, 407, "地基防线：阿基米德公理排除非零无穷小", size=PANEL_TITLE, color=INK, weight="700"))
+        el.append(txt(36, 431, "若存在正无穷小 ε > 0（满足对一切正整数 m 都有", size=11.3, color=BODY))
+        el.append(txt(36, 450, "m·ε < 1），则 1 与 1+ε 之间插不进任何有理数 n/m，", size=11.3, color=BODY))
+        el.append(txt(36, 469, "两数会共用同一个有理数分割！", size=11.3, color=ORANGE, weight="700"))
+        el.append(card(36, 480, 320, 30, rx=6, fill=BLUE_SOFT, stroke=BLUE, sw=1))
+        el.append(txt(196, 499, "阿基米德性质：∃m 使 m(y−x) > 1 ⇒ 必有 n/m 隔开 x, y", size=11.1, color=BLUE, anchor="middle", weight="700"))
+
+        el.append(card(388, 384, 352, 138))
+        el.append(txt(404, 407, "殊途同归：从两侧夹逼走向柯西基本列", size=PANEL_TITLE, color=INK, weight="700"))
+        el.append(txt(404, 431, "从左集 L 挑递增有理数 aₖ = 1, 7/5, 41/29, 239/169, …", size=11.3, color=BODY))
+        el.append(txt(404, 450, "项间距离 |aⱼ − aₖ| → 0，构成有理“柯西序列”，", size=11.3, color=BODY))
+        el.append(txt(404, 469, "在 ℚ 内无家可归，在 ℝ 内收敛向同一极限 √2！", size=11.3, color=GREEN, weight="700"))
+        el.append(card(404, 480, 320, 30, rx=6, fill=GREEN_SOFT, stroke=GREEN, sw=1))
+        el.append(txt(564, 499, "戴德金分割完备化 ⇔ 康托尔—柯西序列完备化（同构）", size=11.1, color=GREEN, anchor="middle", weight="700"))
+
+        svg = figure(
+            536,
+            "戴德金分割、阿基米德公理与柯西基本列的实数完备化图解",
+            "上图展示有理切口3/2的右集U自带最小数3/2；中图展示无理切口q²<2与q²>2在有理数轴Q上留出针眼缺口，戴德金将切口本身定义为√2从而实现最小上界完备性；下图左栏说明阿基米德公理排除非零无穷小以保证有理数能隔开不同实数，右栏连接康托尔-柯西序列构造。",
+            el,
+        )
+        write_svg("eudoxus", "dedekind-cut-line.svg", svg)
+        return svg
+
+
+    # ---------------------------------------------------------------------------
+    # Strict Automated Text-Overlap & UX Auditor
+    # ---------------------------------------------------------------------------
+    def estimate_text_width(s, font_size):
+        w = 0.0
+        for ch in s:
+            if ord(ch) > 127:
+                w += 0.96 * font_size
+            elif ch in "il.,:;!|' ":
+                w += 0.34 * font_size
+            else:
+                w += 0.58 * font_size
+        return w
+
+
+    def assert_no_text_overlaps(svg_str, name):
+        root = ET.fromstring(svg_str)
+        ns = "{http://www.w3.org/2000/svg}"
+        boxes = []
+        for t in root.iter(f"{ns}text"):
+            content = "".join(t.itertext()).strip()
+            if not content:
+                continue
+            x = float(t.attrib["x"])
+            y = float(t.attrib["y"])
+            sz = float(t.attrib.get("font-size", "12"))
+            anc = t.attrib.get("text-anchor", "start")
+            tw = estimate_text_width(content, sz)
+            if anc == "middle":
+                x0, x1 = x - tw / 2.0, x + tw / 2.0
+            elif anc == "end":
+                x0, x1 = x - tw, x
+            else:
+                x0, x1 = x, x + tw
+            y0, y1 = y - 0.80 * sz, y + 0.18 * sz
+            assert 2.0 <= x0 and x1 <= WIDTH - 2.0, f"[{name}] Text out of horizontal bounds: '{content}' ({x0:.1f}..{x1:.1f})"
+            boxes.append((x0, y0, x1, y1, content))
+
+        for i in range(len(boxes)):
+            ax0, ay0, ax1, ay1, sa = boxes[i]
+            for j in range(i + 1, len(boxes)):
+                bx0, by0, bx1, by1, sb = boxes[j]
+                ix = min(ax1, bx1) - max(ax0, bx0)
+                iy = min(ay1, by1) - max(ay0, by0)
+                if ix > 2.5 and iy > 2.0:
+                    raise AssertionError(
+                        f"[{name}] Text overlap ({ix:.1f}x{iy:.1f}px) between '{sa}' and '{sb}'"
+                    )
+
+    return {
+        "pascal": (
+            ("pascal-menelaus-proof.svg", build_pascal_menelaus_proof),
+            ("pappus-two-lines.svg", build_pappus_two_lines),
+            ("brianchon-dual.svg", build_brianchon_dual),
+        ),
+        "eudoxus": (
+            ("square-incommensurable.svg", build_square_incommensurable),
+            ("eudoxus-rational-sieve.svg", build_eudoxus_rational_sieve),
+            ("dedekind-cut-line.svg", build_dedekind_cut_line),
+        ),
+        "audit_overlap": assert_no_text_overlaps,
+    }
+
+
+@register("pascal-hexagon", "帕斯卡神秘六边形：梅涅劳斯与圆幂证明、帕普斯退化与布利安桑对偶", "geometry_analysis")
+def build_pascal_hexagon():
+    suite = _projective_and_eudoxus_suite()
+    for fname, fn in suite["pascal"]:
+        svg = fn()
+        suite["audit_overlap"](svg, fname)
+
+
+@register("eudoxus-cuts", "欧多克斯比例论与戴德金分割：正方形不可公度、有理筛子与实数完备化", "geometry_analysis")
+def build_eudoxus_cuts():
+    suite = _projective_and_eudoxus_suite()
+    for fname, fn in suite["eudoxus"]:
+        svg = fn()
+        suite["audit_overlap"](svg, fname)

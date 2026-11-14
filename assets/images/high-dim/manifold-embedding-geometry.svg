@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="366" viewBox="0 0 760 366" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">高维流形假设与Embedding向量空间几何关系对比图</title>
+<desc id="desc">左栏以二维截面展示高维像素空间中自然图像集中在低维流形上，对比穿过噪声的欧氏直线与沿流形的测地线；右栏展示Embedding空间中国王减男人加女人近似王后的平行四边形关系与余弦夹角。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="365" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">流形假设与 Embedding 几何：从像素雪花荒漠到语义向量关系</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：高维像素空间的二维概念截面（欧氏捷径 vs 流形测地线）；右：Embedding 平行四边形与余弦夹角</text>
+<rect x="20" y="64" width="352" height="286" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="86" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="38" y="90" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="90" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="600">像素空间截面示意：雪花噪声 vs 自然图像流形</text>
+<rect x="36" y="104" width="320" height="198" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="69" cy="149" r="1.8" fill="#cbd5e1"/>
+<circle cx="136" cy="192" r="1.8" fill="#cbd5e1"/>
+<circle cx="203" cy="235" r="1.8" fill="#cbd5e1"/>
+<circle cx="270" cy="278" r="1.8" fill="#cbd5e1"/>
+<circle cx="337" cy="151" r="1.8" fill="#cbd5e1"/>
+<circle cx="112" cy="194" r="1.8" fill="#cbd5e1"/>
+<circle cx="179" cy="237" r="1.8" fill="#cbd5e1"/>
+<circle cx="246" cy="280" r="1.8" fill="#cbd5e1"/>
+<circle cx="313" cy="153" r="1.8" fill="#cbd5e1"/>
+<circle cx="88" cy="196" r="1.8" fill="#cbd5e1"/>
+<circle cx="155" cy="239" r="1.8" fill="#cbd5e1"/>
+<circle cx="222" cy="282" r="1.8" fill="#cbd5e1"/>
+<circle cx="289" cy="155" r="1.8" fill="#cbd5e1"/>
+<circle cx="64" cy="198" r="1.8" fill="#cbd5e1"/>
+<circle cx="131" cy="241" r="1.8" fill="#cbd5e1"/>
+<circle cx="198" cy="284" r="1.8" fill="#cbd5e1"/>
+<circle cx="265" cy="157" r="1.8" fill="#cbd5e1"/>
+<circle cx="332" cy="200" r="1.8" fill="#cbd5e1"/>
+<circle cx="107" cy="243" r="1.8" fill="#cbd5e1"/>
+<circle cx="174" cy="286" r="1.8" fill="#cbd5e1"/>
+<circle cx="241" cy="159" r="1.8" fill="#cbd5e1"/>
+<circle cx="308" cy="202" r="1.8" fill="#cbd5e1"/>
+<circle cx="83" cy="245" r="1.8" fill="#cbd5e1"/>
+<circle cx="150" cy="118" r="1.8" fill="#cbd5e1"/>
+<circle cx="217" cy="161" r="1.8" fill="#cbd5e1"/>
+<circle cx="284" cy="204" r="1.8" fill="#cbd5e1"/>
+<circle cx="59" cy="247" r="1.8" fill="#cbd5e1"/>
+<circle cx="126" cy="120" r="1.8" fill="#cbd5e1"/>
+<circle cx="193" cy="163" r="1.8" fill="#cbd5e1"/>
+<circle cx="260" cy="206" r="1.8" fill="#cbd5e1"/>
+<circle cx="327" cy="249" r="1.8" fill="#cbd5e1"/>
+<circle cx="102" cy="122" r="1.8" fill="#cbd5e1"/>
+<circle cx="169" cy="165" r="1.8" fill="#cbd5e1"/>
+<circle cx="236" cy="208" r="1.8" fill="#cbd5e1"/>
+<circle cx="303" cy="251" r="1.8" fill="#cbd5e1"/>
+<circle cx="78" cy="124" r="1.8" fill="#cbd5e1"/>
+<circle cx="145" cy="167" r="1.8" fill="#cbd5e1"/>
+<circle cx="212" cy="210" r="1.8" fill="#cbd5e1"/>
+<circle cx="279" cy="253" r="1.8" fill="#cbd5e1"/>
+<circle cx="54" cy="126" r="1.8" fill="#cbd5e1"/>
+<circle cx="121" cy="169" r="1.8" fill="#cbd5e1"/>
+<circle cx="188" cy="212" r="1.8" fill="#cbd5e1"/>
+<circle cx="255" cy="255" r="1.8" fill="#cbd5e1"/>
+<circle cx="322" cy="128" r="1.8" fill="#cbd5e1"/>
+<circle cx="97" cy="171" r="1.8" fill="#cbd5e1"/>
+<circle cx="164" cy="214" r="1.8" fill="#cbd5e1"/>
+<text x="48" y="124" font-size="10.8" fill="#64748b" text-anchor="start" class="halo">随机像素组合 ≈ 99.999% 电视雪花噪声</text>
+<path d="M111.31,178.30 L114.93,175.84 L118.77,173.54 L122.80,171.40 L127.01,169.42 L131.39,167.62 L135.92,165.99 L140.59,164.56 L145.38,163.31 L150.27,162.25 L155.24,161.40 L160.28,160.74 L165.37,160.29 L170.49,160.05 L175.62,160.01 L180.75,160.18 L185.85,160.55 L190.91,161.13 L195.91,161.91 L200.83,162.90 L205.66,164.07 L210.37,165.44 L214.96,167.00 L219.39,168.74 L223.67,170.65 L227.77,172.74 L231.68,174.98 L235.38,177.38 L238.87,179.92 L242.12,182.60 L245.13,185.40 L247.89,188.32 L250.38,191.34 L252.60,194.46 L254.54,197.67 L256.20,200.95 L257.56,204.28 L258.62,207.67 L259.39,211.09 L259.85,214.54 L260.00,218.00 L259.85,221.46 L259.39,224.91 L258.62,228.33 L257.56,231.72 L256.20,235.05 L254.54,238.33 L252.60,241.54 L250.38,244.66 L247.89,247.68 L245.13,250.60 L242.12,253.40 L238.87,256.08 L235.38,258.62 L231.68,261.02 L227.77,263.26 L223.67,265.35 L219.39,267.26 L214.96,269.00 L210.37,270.56 L205.66,271.93 L200.83,273.10 L195.91,274.09 L190.91,274.87 L185.85,275.45 L180.75,275.82 L175.62,275.99 L170.49,275.95 L165.37,275.71 L160.28,275.26 L155.24,274.60 L150.27,273.75 L145.38,272.69 L140.59,271.44 L135.92,270.01 L131.39,268.38 L127.01,266.58 L122.80,264.60 L118.77,262.46 L114.93,260.16 L111.31,257.70" fill="none" stroke="#e7f6ee" stroke-width="18" stroke-linecap="round"/>
+<path d="M111.31,178.30 L114.93,175.84 L118.77,173.54 L122.80,171.40 L127.01,169.42 L131.39,167.62 L135.92,165.99 L140.59,164.56 L145.38,163.31 L150.27,162.25 L155.24,161.40 L160.28,160.74 L165.37,160.29 L170.49,160.05 L175.62,160.01 L180.75,160.18 L185.85,160.55 L190.91,161.13 L195.91,161.91 L200.83,162.90 L205.66,164.07 L210.37,165.44 L214.96,167.00 L219.39,168.74 L223.67,170.65 L227.77,172.74 L231.68,174.98 L235.38,177.38 L238.87,179.92 L242.12,182.60 L245.13,185.40 L247.89,188.32 L250.38,191.34 L252.60,194.46 L254.54,197.67 L256.20,200.95 L257.56,204.28 L258.62,207.67 L259.39,211.09 L259.85,214.54 L260.00,218.00 L259.85,221.46 L259.39,224.91 L258.62,228.33 L257.56,231.72 L256.20,235.05 L254.54,238.33 L252.60,241.54 L250.38,244.66 L247.89,247.68 L245.13,250.60 L242.12,253.40 L238.87,256.08 L235.38,258.62 L231.68,261.02 L227.77,263.26 L223.67,265.35 L219.39,267.26 L214.96,269.00 L210.37,270.56 L205.66,271.93 L200.83,273.10 L195.91,274.09 L190.91,274.87 L185.85,275.45 L180.75,275.82 L175.62,275.99 L170.49,275.95 L165.37,275.71 L160.28,275.26 L155.24,274.60 L150.27,273.75 L145.38,272.69 L140.59,271.44 L135.92,270.01 L131.39,268.38 L127.01,266.58 L122.80,264.60 L118.77,262.46 L114.93,260.16 L111.31,257.70" fill="none" stroke="#18794e" stroke-width="2.4" stroke-linecap="round"/>
+<path d="M161.29,160.64 L167.17,160.18 L173.07,160.00 L178.99,160.10 L184.87,160.47 L190.71,161.11 L196.47,162.01 L202.12,163.19 L207.63,164.62 L212.99,166.30 L218.17,168.23 L223.13,170.40 L227.87,172.79 L232.35,175.39 L236.55,178.19 L240.46,181.19 L244.05,184.35 L247.31,187.68 L250.23,191.15 L252.78,194.74 L254.97,198.45 L256.77,202.25 L258.18,206.12 L259.19,210.05 L259.80,214.01 L260.00,218.00 L259.80,221.99 L259.19,225.95 L258.18,229.88 L256.77,233.75 L254.97,237.55 L252.78,241.26 L250.23,244.85 L247.31,248.32 L244.05,251.65 L240.46,254.81 L236.55,257.81 L232.35,260.61 L227.87,263.21 L223.13,265.60 L218.17,267.77 L212.99,269.70 L207.63,271.38 L202.12,272.81 L196.47,273.99 L190.71,274.89 L184.87,275.53 L178.99,275.90 L173.07,276.00 L167.17,275.82 L161.29,275.36" fill="none" stroke="#18794e" stroke-width="3.5"/>
+<line x1="161.3" y1="160.6" x2="161.3" y2="275.4" stroke="#c25014" stroke-width="2.2" stroke-dasharray="6 4"/>
+<circle cx="161.3" cy="160.6" r="5.0" fill="#1d6fa5"/>
+<circle cx="161.3" cy="275.4" r="5.0" fill="#1d6fa5"/>
+<text x="169.3" y="152.6" font-size="10.8" fill="#1d6fa5" text-anchor="start" font-weight="600" class="halo">图像 A（侧脸）</text>
+<text x="169.3" y="290.4" font-size="10.8" fill="#1d6fa5" text-anchor="start" font-weight="600" class="halo">图像 B（正脸）</text>
+<text x="153.3" y="213.0" font-size="10.8" fill="#c25014" text-anchor="end" font-weight="700" class="halo">欧氏捷径</text>
+<text x="153.3" y="229.0" font-size="10.2" fill="#c25014" text-anchor="end" class="halo">（穿雪花区）</text>
+<text x="272.0" y="214.0" font-size="10.8" fill="#18794e" text-anchor="start" font-weight="700" class="halo">流形测地路径</text>
+<text x="272.0" y="230.0" font-size="10.2" fill="#18794e" text-anchor="start" class="halo">（沿姿态渐变）</text>
+<text x="36" y="322" font-size="10.8" fill="#64748b" text-anchor="start">截面示意：真实数据像素高度耦合，局部内在维度 k ≪ D</text>
+<text x="36" y="338" font-size="10.8" fill="#64748b" text-anchor="start">直接对原始像素算直线均值，只会得到模糊重影而非新侧脸</text>
+<rect x="388" y="64" width="352" height="286" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="86" r="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="406" y="90" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">2</text>
+<text x="424" y="90" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="600">Embedding 空间：向量偏移与余弦相似度 cos θ</text>
+<path d="M428,108 V266 H714" fill="none" stroke="#94a3b8" stroke-width="1.3"/>
+<text x="420" y="278" font-size="10.8" fill="#64748b" text-anchor="start">O</text>
+<line x1="428" y1="266" x2="526.8" y2="139.3" stroke="#93c5fd" stroke-width="1.4"/>
+<line x1="428" y1="266" x2="658.9" y2="126.8" stroke="#93c5fd" stroke-width="1.4"/>
+<path d="M465.7,243.3 A44.0,44.0 0 0 0 455.1,231.3" fill="none" stroke="#1d6fa5" stroke-width="1.5"/>
+<text x="476" y="232" font-size="10.8" fill="#1d6fa5" text-anchor="start" font-weight="600" class="halo">夹角 θ</text>
+<line x1="495.6" y1="232.4" x2="627.7" y2="219.9" stroke="#475569" stroke-width="1.3" stroke-dasharray="4 3"/>
+<line x1="526.8" y1="139.3" x2="658.9" y2="126.8" stroke="#475569" stroke-width="1.3" stroke-dasharray="4 3"/>
+<line x1="495.6" y1="232.4" x2="524.8" y2="144.3" stroke="#6d28d9" stroke-width="2.2" marker-end="url(#arr-blue)"/>
+<line x1="627.7" y1="219.9" x2="656.9" y2="131.8" stroke="#c25014" stroke-width="2.2" marker-end="url(#arr-orange)"/>
+<circle cx="495.6" cy="232.4" r="4.8" fill="#1d6fa5"/>
+<text x="495.6" y="250.4" font-size="11.8" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">男人</text>
+<circle cx="526.8" cy="139.3" r="4.8" fill="#6d28d9"/>
+<text x="518.8" y="131.3" font-size="11.8" fill="#6d28d9" text-anchor="middle" font-weight="700" class="halo">国王</text>
+<circle cx="627.7" cy="219.9" r="4.8" fill="#1d6fa5"/>
+<text x="635.7" y="237.9" font-size="11.8" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">女人</text>
+<circle cx="658.9" cy="126.8" r="4.8" fill="#c25014"/>
+<text x="666.9" y="118.8" font-size="11.8" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">王后</text>
+<text x="503.2" y="185.8" font-size="10.6" fill="#6d28d9" text-anchor="end" font-weight="600" class="halo">+王室偏移</text>
+<text x="653.3" y="173.4" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="600" class="halo">+同一偏移</text>
+<rect x="404" y="278" width="320" height="32" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="564" y="299" font-size="11.2" fill="#0f172a" text-anchor="middle" font-weight="600">国王 − 男人 + 女人 ≈ 王后  ｜  cos θ = (x·y)/(‖x‖‖y‖)</text>
+<text x="404" y="334" font-size="10.8" fill="#64748b" text-anchor="start">注：线性类比是训练涌现的近似趋势，非严格普适恒等式</text>
+</svg>

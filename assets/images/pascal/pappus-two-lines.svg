@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="452" viewBox="0 0 760 452" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">帕普斯六边形定理：退化圆锥曲线（两条直线）上的共线定理</title>
+<desc id="desc">左图在直线l1上取A、B、C，在直线l2上取a、b、c，按A-b-C-a-B-c-A连接后，三组十字交叉对边Ab与aB、Bc与bC、Ca与cA分别交于P、Q、R，三点严格共线于红色帕普斯线；右图展示平面切过双圆锥顶点得到两条相交直线的退化二次曲线机制。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="451" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">帕普斯六边形定理（公元 4 世纪）：当圆锥曲线退化成两条直线</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">上直线取 A, B, C，下直线取 a, b, c；三组十字交叉连线的交点 P, Q, R 照样排成一条直线！</text>
+<rect x="20" y="66" width="444" height="372" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="90" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">两条直线 ℓ₁ ∪ ℓ₂ 上的交替六边形 A–b–C–a–B–c</text>
+<line x1="36.69" y1="209.79" x2="410.33" y2="140.54" stroke="#475569" stroke-width="2.4" stroke-linecap="round"/>
+<line x1="32.51" y1="238.75" x2="412.73" y2="316.11" stroke="#475569" stroke-width="2.4" stroke-linecap="round"/>
+<text x="416.3" y="144.5" font-size="12.5" fill="#475569" text-anchor="start" font-weight="700">ℓ₁</text>
+<text x="418.7" y="321.1" font-size="12.5" fill="#475569" text-anchor="start" font-weight="700">ℓ₂</text>
+<line x1="82.91" y1="201.22" x2="222.62" y2="277.43" stroke="#c25014" stroke-width="2.1" stroke-linecap="round"/>
+<line x1="72.69" y1="246.93" x2="210.73" y2="177.53" stroke="#c25014" stroke-width="2.1" stroke-linecap="round"/>
+<line x1="210.73" y1="177.53" x2="373.53" y2="308.13" stroke="#1d6fa5" stroke-width="2.1" stroke-linecap="round"/>
+<line x1="222.62" y1="277.43" x2="358.22" y2="150.19" stroke="#1d6fa5" stroke-width="2.1" stroke-linecap="round"/>
+<line x1="358.22" y1="150.19" x2="72.69" y2="246.93" stroke="#6d28d9" stroke-width="1.9" stroke-linecap="round" stroke-dasharray="6 3"/>
+<line x1="373.53" y1="308.13" x2="82.91" y2="201.22" stroke="#6d28d9" stroke-width="1.9" stroke-linecap="round" stroke-dasharray="6 3"/>
+<line x1="77.65" y1="220.50" x2="318.50" y2="230.55" stroke="#c81e3a" stroke-width="2.8" stroke-linecap="round"/>
+<text x="316.5" y="252.6" font-size="12" fill="#c81e3a" text-anchor="end" font-weight="700" class="halo">帕普斯线</text>
+<circle cx="82.91" cy="201.22" r="4.6" fill="#ffffff" stroke="#0f172a" stroke-width="2.0"/>
+<text x="82.9" y="190.2" font-size="12.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">A</text>
+<circle cx="210.73" cy="177.53" r="4.6" fill="#ffffff" stroke="#0f172a" stroke-width="2.0"/>
+<text x="210.7" y="166.5" font-size="12.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">B</text>
+<circle cx="358.22" cy="150.19" r="4.6" fill="#ffffff" stroke="#0f172a" stroke-width="2.0"/>
+<text x="358.2" y="139.2" font-size="12.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">C</text>
+<circle cx="72.69" cy="246.93" r="4.6" fill="#ffffff" stroke="#0f172a" stroke-width="2.0"/>
+<text x="72.7" y="266.9" font-size="12.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">a</text>
+<circle cx="222.62" cy="277.43" r="4.6" fill="#ffffff" stroke="#0f172a" stroke-width="2.0"/>
+<text x="222.6" y="297.4" font-size="12.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">b</text>
+<circle cx="373.53" cy="308.13" r="4.6" fill="#ffffff" stroke="#0f172a" stroke-width="2.0"/>
+<text x="373.5" y="328.1" font-size="12.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">c</text>
+<circle cx="121.61" cy="222.33" r="5.2" fill="#c25014" stroke="#ffffff" stroke-width="1.8"/>
+<circle cx="274.54" cy="228.72" r="5.2" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.8"/>
+<circle cx="142.69" cy="223.21" r="5.2" fill="#6d28d9" stroke="#ffffff" stroke-width="1.8"/>
+<text x="110.6" y="214.3" font-size="12.5" fill="#c25014" text-anchor="end" font-weight="700" class="halo">P</text>
+<text x="286.5" y="220.7" font-size="12.5" fill="#1d6fa5" text-anchor="start" font-weight="700" class="halo">Q</text>
+<text x="144.7" y="211.2" font-size="12.5" fill="#6d28d9" text-anchor="middle" font-weight="700" class="halo">R</text>
+<rect x="34" y="392" width="416" height="34" rx="7" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="242" y="413" font-size="11.3" fill="#1e293b" text-anchor="middle" font-weight="600">注意禁令：连线必须在 ℓ₁ 与 ℓ₂ 之间来回跳，不能沿同一直线连 AB 或 ab</text>
+<rect x="478" y="66" width="262" height="178" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="494" y="89" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">为什么两条直线算圆锥曲线？</text>
+<path d="M 508.00,112.00 576.00,112.00 542.00,156.00 Z" fill="#eaf4fb" stroke="#475569" stroke-width="1.2" stroke-linejoin="round" fill-opacity="0.55"/>
+<path d="M 508.00,200.00 576.00,200.00 542.00,156.00 Z" fill="#eaf4fb" stroke="#475569" stroke-width="1.2" stroke-linejoin="round" fill-opacity="0.55"/>
+<ellipse cx="542.0" cy="112.0" rx="34" ry="7.5" fill="#ffffff" stroke="#475569" stroke-width="1.2"/>
+<ellipse cx="542.0" cy="200.0" rx="34" ry="7.5" fill="none" stroke="#475569" stroke-width="1.2"/>
+<line x1="516.00" y1="112.00" x2="568.00" y2="200.00" stroke="#c81e3a" stroke-width="2.3" stroke-linecap="round"/>
+<line x1="568.00" y1="112.00" x2="516.00" y2="200.00" stroke="#c81e3a" stroke-width="2.3" stroke-linecap="round"/>
+<circle cx="542.00" cy="156.00" r="3.6" fill="#c81e3a" stroke="#ffffff" stroke-width="1.2"/>
+<text x="592" y="118" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">截面恰好穿过锥顶：</text>
+<text x="592" y="138" font-size="11.3" fill="#1e293b" text-anchor="start">双曲线 xy = ε 在 ε → 0</text>
+<text x="592" y="157" font-size="11.3" fill="#1e293b" text-anchor="start">时退化为 xy = 0，即两</text>
+<text x="592" y="176" font-size="11.3" fill="#c81e3a" text-anchor="start" font-weight="600">条相交直线 L₁·L₂ = 0！</text>
+<text x="494" y="226" font-size="11.2" fill="#64748b" text-anchor="start">二次方程总家族天然包含“直线对”</text>
+<rect x="478" y="256" width="262" height="182" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="494" y="279" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">三组十字交叉对边账单</text>
+<rect x="494.0" y="289.0" width="68" height="21" rx="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="528.0" y="303.3" font-size="11.3" fill="#c25014" text-anchor="middle" font-weight="600">① 橙组</text>
+<text x="574" y="304" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700" class="mono">Ab ∩ aB = P</text>
+<rect x="494.0" y="319.0" width="68" height="21" rx="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="528.0" y="333.3" font-size="11.3" fill="#1d6fa5" text-anchor="middle" font-weight="600">② 蓝组</text>
+<text x="574" y="334" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700" class="mono">Bc ∩ bC = Q</text>
+<rect x="494.0" y="349.0" width="68" height="21" rx="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="528.0" y="363.3" font-size="11.3" fill="#6d28d9" text-anchor="middle" font-weight="600">③ 紫组</text>
+<text x="574" y="364" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700" class="mono">Ca ∩ cA = R</text>
+<line x1="494.00" y1="384.00" x2="724.00" y2="384.00" stroke="#e2e8f0" stroke-width="1.0" stroke-linecap="round"/>
+<text x="494" y="404" font-size="11.3" fill="#0f172a" text-anchor="start" font-weight="700">希尔伯特《几何基础》揭示：</text>
+<text x="494" y="423" font-size="11.1" fill="#6d28d9" text-anchor="start" font-weight="600">帕普斯定理 ⇔ 坐标域乘法交换律 ab=ba</text>
+</svg>
