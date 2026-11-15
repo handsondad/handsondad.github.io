@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="528" viewBox="0 0 760 528" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">新生儿50%快速眼动睡眠发育机制与耶鲁大学2025婴儿期遗忘症海马体研究图</title>
+<desc id="desc">左栏对比新生儿16至18小时睡眠中50%快速眼动睡眠与成人20%比例及其运动地图校准功能，右栏图解2025年Science研究揭示1岁婴儿后部海马体已能编码情景记忆而成人失忆源于提取路径重塑。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-b" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#1d6fa5"/>
+    </marker>
+    <marker id="arr-o" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#c25014"/>
+    </marker>
+    <marker id="arr-g" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#18794e"/>
+    </marker>
+    <marker id="arr-p" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#6d28d9"/>
+    </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="527" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">睡梦施工队与“三岁前失忆之谜”：既然宝宝学得那么快，长大后怎么全忘了？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左看新生儿 50% 快速眼动睡眠如何边抽动边搭电路 → 右看 2025 耶鲁《Science》清醒婴儿脑成像大反转</text>
+<rect x="22" y="68" width="344" height="442" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="92" r="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="42" y="96" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">1</text>
+<text x="62" y="97" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">睡眠结构差异：宝宝睡觉不是休息，是在施工！</text>
+<text x="42" y="117" font-size="10.5" fill="#64748b" text-anchor="start">足月新生儿每天睡 16–18 小时，一半是活跃 REM 睡眠</text>
+<text x="42" y="148" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">足月新生儿 24 小时分配（REM 每天超 8 小时！）</text>
+<rect x="42.0" y="156" width="104.5" height="28" rx="4" fill="#6d28d9"/>
+<rect x="146.5" y="156" width="104.5" height="28" fill="#1d6fa5"/>
+<rect x="251.0" y="156" width="95.0" height="28" rx="4" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="94.2" y="175" font-size="10.5" fill="#ffffff" text-anchor="middle" font-weight="700">REM 50%</text>
+<text x="198.8" y="175" font-size="10.5" fill="#ffffff" text-anchor="middle">安静睡眠</text>
+<text x="298.5" y="175" font-size="10.5" fill="#1e293b" text-anchor="middle">清醒</text>
+<text x="42" y="214" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">成年人 24 小时分配（REM 每天仅约 1.5 小时）</text>
+<rect x="42.0" y="222" width="19.0" height="28" rx="3" fill="#6d28d9"/>
+<rect x="61.0" y="222" width="76.0" height="28" fill="#1d6fa5"/>
+<rect x="137.0" y="222" width="209.0" height="28" rx="4" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="99.0" y="241" font-size="10.5" fill="#ffffff" text-anchor="middle">非REM 80%</text>
+<text x="241.5" y="241" font-size="10.5" fill="#1e293b" text-anchor="middle">白天清醒 ~16.5 小时</text>
+<text x="44.0" y="266" font-size="10.5" fill="#6d28d9" text-anchor="start" font-weight="700">↑ REM 仅占睡眠 20%（却是新生儿绝对时长的 1/5.5）</text>
+<rect x="38" y="286" width="312" height="208" rx="8" fill="#f3e8ff" stroke="#d8b4fe" stroke-width="1"/>
+<text x="194" y="310" font-size="11.0" fill="#6d28d9" text-anchor="middle" font-weight="700">为什么小宝宝睡着了总咧嘴笑、手脚一惊一乍？</text>
+<text x="52" y="334" font-size="10.5" fill="#1e293b" text-anchor="start">● 成人做梦时脑干会锁死肌肉（防把梦演出来）；</text>
+<text x="52" y="355" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">● 婴儿脑干抑制未成熟，REM 期手脚胡乱抽动——</text>
+<text x="52" y="376" font-size="10.5" fill="#1e293b" text-anchor="start">每一次指尖抽动都会向体感运动皮层发射一串校准脉冲，</text>
+<text x="52" y="396" font-size="10.5" fill="#6d28d9" text-anchor="start" font-weight="700">帮大脑画好“这只手归哪根神经管”的身体地图！</text>
+<text x="52" y="422" font-size="10.5" fill="#1e293b" text-anchor="start">● 同时早产儿 REM 占比甚至高达 80%，千万别在宝宝</text>
+<text x="52" y="442" font-size="10.5" fill="#1e293b" text-anchor="start">眼皮乱动哼唧时急着拍醒或抱起——他只是在活跃睡眠</text>
+<text x="52" y="462" font-size="10.5" fill="#64748b" text-anchor="start">里热火朝天地焊接突触！（Grigg-Damberger 2017）</text>
+<rect x="380" y="68" width="358" height="442" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="400" cy="92" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="400" y="96" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="420" y="97" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">婴儿期遗忘症：不是“没存盘”，而是“找不着索引”！</text>
+<text x="400" y="117" font-size="10.5" fill="#64748b" text-anchor="start">Yates &amp; Turk-Browne 等 (2025, Science) 清醒婴儿核磁新发现</text>
+<rect x="396" y="134" width="326" height="62" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="410" y="156" font-size="10.5" fill="#475569" text-anchor="start" font-weight="700">× 旧教科书假说：“婴儿海马体太稚嫩，根本没法写入情景记忆”</text>
+<text x="410" y="178" font-size="10.5" fill="#64748b" text-anchor="start">难以解释：如果完全不能记事，宝宝怎么认出昨天去过的公园和绘本？</text>
+<rect x="396" y="208" width="326" height="146" rx="8" fill="#fef1e8" stroke="#fdba74" stroke-width="1"/>
+<text x="559" y="230" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="700">耶鲁团队给清醒看图的 4–24 月龄宝宝做 fMRI 实测：</text>
+<ellipse cx="492" cy="278" rx="56" ry="22" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="2"/>
+<text x="492" y="275" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">前部海马体</text>
+<text x="492" y="291" font-size="10.5" fill="#0f172a" text-anchor="middle">3 个月已开启统计学习</text>
+<ellipse cx="626" cy="278" rx="62" ry="22" fill="#dcfce7" stroke="#18794e" stroke-width="2"/>
+<text x="626" y="275" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="700">后部海马体</text>
+<text x="626" y="291" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700">1 岁起已能编码单次事件！</text>
+<text x="559" y="324" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700">宝宝第一次看新图片时后部海马体越活跃 → 稍后再见越能认出！</text>
+<text x="559" y="343" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700">证明 1 岁婴儿大脑已经在往硬盘里“写入”具体情景记忆了！</text>
+<rect x="396" y="366" width="326" height="128" rx="8" fill="#e7f6ee" stroke="#86efac" stroke-width="1"/>
+<text x="559" y="388" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="700">那为什么成年后提取不出 3 岁前的具体回忆？两大原因：</text>
+<text x="410" y="411" font-size="10.5" fill="#0f172a" text-anchor="start">① 海马齿状回神经元疯长洗牌：海量新生神经元挤入回路，</text>
+<text x="422" y="430" font-size="10.5" fill="#1e293b" text-anchor="start">改写了旧记忆的物理寻址路径（但统计规律已沉淀进皮层）；</text>
+<text x="410" y="452" font-size="10.5" fill="#0f172a" text-anchor="start">② 文件格式不兼容：婴儿期尚无“语言标签”与“自我时间轴”，</text>
+<text x="422" y="471" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="700">成人大脑升级成语言操作系统后，搜不到当年的无字老档案！</text>
+</svg>

@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="530" viewBox="0 0 760 530" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">淡水鱼与咸水鱼跨鳃渗透压调节及鲨鱼尿素外挂对比图</title>
+<desc id="desc">左图展示淡水硬骨鱼体液高渗（约300 mOsm/kg）被动进水、不喝水、鳃主动吸盐及肾脏大量排稀尿；右图展示海洋硬骨鱼体液低渗（约370 mOsm/kg）被动失水、大口喝海水、鳃氯细胞排盐及极少排尿；底部说明软骨鱼鲨鱼2:1尿素与TMAO高渗策略。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arr-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#6d28d9"/>
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#475569"/>
+    </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes waterFloodIn {
+      0% { transform: translateX(-22px); opacity: 0.2; }
+      40% { opacity: 1.0; }
+      100% { transform: translateX(14px); opacity: 1.0; }
+    }
+    @keyframes waterLeakOut {
+      0% { transform: translateX(12px); opacity: 0.2; }
+      40% { opacity: 1.0; }
+      100% { transform: translateX(-20px); opacity: 1.0; }
+    }
+    .anim-water-in { animation: waterFloodIn 2.6s ease-out 1 forwards; }
+    .anim-water-out { animation: waterLeakOut 2.6s ease-out 1 forwards; }
+    @media (prefers-reduced-motion: reduce) {
+      .anim-water-in, .anim-water-out { animation: none !important; transform: none !important; opacity: 1 !important; }
+    }
+</style>
+<rect x="0.5" y="0.5" width="759" height="529" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">生存第一关：为什么淡水鱼从不喝水狂排尿，海鱼却要拼命喝海水？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">跨鳃渗透压实算：淡水压差 ≈ 7.2 bar（往肚里猛灌水）｜海水压差 ≈ 16.6 bar（把体液往外抽干）</text>
+<rect x="16" y="68" width="354" height="368" rx="10" fill="#f0f9ff" stroke="#7dd3fc" stroke-width="1"/>
+<circle cx="36" cy="92" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="36" y="96" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="97" font-size="11.8" fill="#1d6fa5" text-anchor="start" font-weight="700">淡水硬骨鱼（鲤/鲫/草鱼）：泡在水里防“撑爆”</text>
+<rect x="30.0" y="110.0" width="326" height="22" rx="11.0" fill="#ffffff" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="193.0" y="125.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">外界江河：≈ 1–10 mOsm/kg（盐度 &lt; 0.5‰）</text>
+<polygon points="286.0,224.0 314.0,202.0 308.0,224.0 314.0,246.0" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.8" stroke-linejoin="round"/><ellipse cx="198.0" cy="224.0" rx="92.0" ry="38.0" fill="#bae6fd" stroke="#1d6fa5" stroke-width="2.0"/><path d="M 140.0,206.0 Q 150.0,224.0 140.0,242.0" fill="none" stroke="#1d6fa5" stroke-width="2.0"/><circle cx="126.0" cy="217.0" r="3.8" fill="#0f172a"/>
+<text x="208" y="220" font-size="10.4" fill="#0c4a6e" text-anchor="middle" font-weight="700">血液 ≈ 300 mOsm</text>
+<text x="208" y="237" font-size="9.8" fill="#1d6fa5" text-anchor="middle" font-weight="600">（盐度 ≈ 9‰，高渗！）</text>
+<text x="64" y="184" font-size="10.2" fill="#dc2626" text-anchor="middle" font-weight="700">✗ 嘴：几乎不喝水</text>
+<line x1="84.0" y1="194.0" x2="102.0" y2="214.0" stroke="#dc2626" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="62.0" y1="244.0" x2="134.0" y2="234.0" stroke="#1d6fa5" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="4,3" marker-end="url(#arr-blue)"/>
+<circle class="anim-water-in" cx="104" cy="238" r="5" fill="#1d6fa5"/>
+<text x="30" y="266" font-size="9.9" fill="#1d6fa5" text-anchor="start" font-weight="700">① 鳃膜被动进水：7.2 bar 压差猛灌淡水</text>
+<line x1="88.0" y1="286.0" x2="144.0" y2="246.0" stroke="#18794e" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arr-green)"/>
+<text x="30" y="304" font-size="9.9" fill="#18794e" text-anchor="start" font-weight="700">② 鳃离子细胞逆流“吸盐”（NHE3 / NCC）</text>
+<text x="42" y="322" font-size="9.8" fill="#475569" text-anchor="start">耗能从稀水里硬抠 Na⁺、Cl⁻ 补回血液</text>
+<line x1="248.0" y1="252.0" x2="294.0" y2="336.0" stroke="#1d6fa5" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<rect x="30" y="340" width="326" height="82" rx="9" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+<text x="42" y="360" font-size="10.3" fill="#1d6fa5" text-anchor="start" font-weight="700">③ 肾脏（大肾小球 60–106 μm）：狂排极稀尿！</text>
+<text x="42" y="380" font-size="9.8" fill="#0f172a" text-anchor="start">• 每天排尿量高达体重的 12%–30%（边排边回收盐）</text>
+<text x="42" y="399" font-size="9.8" fill="#dc2626" text-anchor="start" font-weight="700">• 误放生大海结局：体液被海水倒抽 → 急性脱水休克亡</text>
+<rect x="390" y="68" width="354" height="368" rx="10" fill="#fff7ed" stroke="#fdba74" stroke-width="1"/>
+<circle cx="410" cy="92" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="410" y="96" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="430" y="97" font-size="11.8" fill="#c25014" text-anchor="start" font-weight="700">咸水硬骨鱼（石斑/真鲷/鳕鱼）：泡海里防“渴死”</text>
+<rect x="404.0" y="110.0" width="326" height="22" rx="11.0" fill="#ffffff" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="567.0" y="125.0" font-size="12" fill="#c25014" text-anchor="middle" font-weight="600">外界海水：≈ 1,050 mOsm/kg（盐度 ≈ 35‰）</text>
+<polygon points="660.0,224.0 688.0,202.0 682.0,224.0 688.0,246.0" fill="#fed7aa" stroke="#c25014" stroke-width="1.8" stroke-linejoin="round"/><ellipse cx="572.0" cy="224.0" rx="92.0" ry="38.0" fill="#fed7aa" stroke="#c25014" stroke-width="2.0"/><path d="M 514.0,206.0 Q 524.0,224.0 514.0,242.0" fill="none" stroke="#c25014" stroke-width="2.0"/><circle cx="500.0" cy="217.0" r="3.8" fill="#0f172a"/>
+<text x="582" y="220" font-size="10.4" fill="#7c2d12" text-anchor="middle" font-weight="700">血液 ≈ 370 mOsm</text>
+<text x="582" y="237" font-size="9.8" fill="#c25014" text-anchor="middle" font-weight="600">（仅海水 1/3，低渗！）</text>
+<text x="448" y="180" font-size="10.2" fill="#18794e" text-anchor="middle" font-weight="700">✓ 嘴：全天狂喝海水！</text>
+<line x1="446.0" y1="190.0" x2="478.0" y2="218.0" stroke="#18794e" stroke-width="2.3" stroke-linecap="round" marker-end="url(#arr-green)"/>
+<line x1="508.0" y1="234.0" x2="434.0" y2="246.0" stroke="#dc2626" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="4,3" marker-end="url(#arr-red)"/>
+<circle class="anim-water-out" cx="468" cy="240" r="5" fill="#dc2626"/>
+<text x="404" y="266" font-size="9.9" fill="#dc2626" text-anchor="start" font-weight="700">① 鳃膜被动失水：16.6 bar 把淡水抽向大海</text>
+<line x1="516.0" y1="246.0" x2="462.0" y2="286.0" stroke="#c25014" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<text x="404" y="304" font-size="9.9" fill="#c25014" text-anchor="start" font-weight="700">② 鳃氯细胞强力“排盐”（NKCC1 + CFTR）</text>
+<text x="416" y="322" font-size="9.8" fill="#475569" text-anchor="start">肠道吸水并沉淀钙盐，单价 Na⁺/Cl⁻ 由鳃泵出</text>
+<line x1="622.0" y1="252.0" x2="668.0" y2="336.0" stroke="#c25014" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<rect x="404" y="340" width="326" height="82" rx="9" fill="#ffffff" stroke="#fdba74" stroke-width="1.2"/>
+<text x="416" y="360" font-size="10.3" fill="#c25014" text-anchor="start" font-weight="700">③ 肾脏（萎缩甚至无肾小球如海马）：惜尿如金！</text>
+<text x="416" y="380" font-size="9.8" fill="#0f172a" text-anchor="start">• 只排极少浓稠尿液（专排二价 Mg²⁺、SO₄²⁻ 苦盐）</text>
+<text x="416" y="399" font-size="9.8" fill="#dc2626" text-anchor="start" font-weight="700">• 误放生江河结局：淡水狂灌入体 → 细胞水肿胀破亡</text>
+<rect x="16" y="448" width="728" height="68" rx="11" fill="#0f172a"/>
+<text x="380" y="470" font-size="11.0" fill="#fbbf24" text-anchor="middle" font-weight="700">番外彩蛋：鲨鱼、鳐鱼（海洋软骨鱼）为什么不用喝海水？——“尿素 + TMAO 化学外挂”</text>
+<text x="380" y="490" font-size="9.9" fill="#f8fafc" text-anchor="middle">鲨鱼在血液里故意囤积 ≈ 360 mM 尿素 + ≈ 180 mM 氧化三甲胺（2:1 黄金配比抵消尿素对蛋白质的破坏），</text>
+<text x="380" y="507" font-size="9.8" fill="#93c5fd" text-anchor="middle">硬把体液总渗透压垫高到 ≈ 1,050 mOsm/kg（微高于海水）！水分反而自动渗入体内，多余食盐由专门“直肠腺”排出。</text>
+</svg>

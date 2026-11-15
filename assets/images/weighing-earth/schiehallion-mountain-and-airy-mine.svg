@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">1774 谢哈利恩山铅垂线实验与 1854 哈顿煤矿深井摆钟实验对比图</title>
+<desc id="desc">左图展示马斯基林测得山体两侧铅垂线 11.6 角秒内偏角及赫顿等高线切分法；右图展示艾里在 383 米深煤矿井底测得摆钟每日快走 2.24 秒的壳层与地核竞争机制。偏角与井深比例为示意放大。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arr-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#6d28d9"/>
+    </marker>
+    <marker id="arr-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#0f766e"/>
+    </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">走出书房去称地球：1774 年借一座苏格兰孤峰，1854 年钻进 383 米深煤矿</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">上山看铅垂线被山体拽歪 11.6 角秒（顺带发明等高线）；下井看摆钟因逼近铁核每天快走 2.24 秒</text>
+<rect x="20" y="76" width="352" height="424" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="96" r="10.5" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.2"/>
+<text x="38" y="100" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">1</text>
+<text x="60" y="101" font-size="13" fill="#0f766e" text-anchor="start" font-weight="700">1774 谢哈利恩山实验（马斯基林 &amp; 赫顿）</text>
+<rect x="40.0" y="114.0" width="254" height="22" rx="11.0" fill="#f0fdfa" stroke="#0f766e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="167.0" y="129.0" font-size="12" fill="#0f766e" text-anchor="middle" font-weight="600">天顶恒星测角 − 三角测量 = 11.6″ 偏角</text>
+<line x1="40.0" y1="292.0" x2="352.0" y2="292.0" stroke="#475569" stroke-width="1.8" stroke-linecap="round"/>
+<path d="M 68,292 Q 132,286 164,218 Q 196,162 228,218 Q 260,286 324,292 Z" fill="#d1fae5" stroke="#0f766e" stroke-width="2"/>
+<path d="M 142,258 Q 196,244 250,258" fill="none" stroke="#0f766e" stroke-width="1.1" stroke-dasharray="4 3"/>
+<path d="M 164,224 Q 196,212 228,224" fill="none" stroke="#0f766e" stroke-width="1.1" stroke-dasharray="4 3"/>
+<text x="196" y="278" font-size="10.5" fill="#0f766e" text-anchor="middle" font-weight="700">孤峰岩石 ρ山 ≈ 2.5 g/cm³</text>
+<rect x="78" y="278" width="20" height="14" rx="2" fill="#0284c7"/>
+<text x="88" y="309" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">南观测站</text>
+<line x1="88.0" y1="162.0" x2="88.0" y2="278.0" stroke="#475569" stroke-width="1.3" stroke-linecap="round" stroke-dasharray="4 3"/>
+<line x1="88.0" y1="224.0" x2="104.0" y2="276.0" stroke="#dc2626" stroke-width="2.0" stroke-linecap="round"/>
+<circle cx="104" cy="276" r="3.5" fill="#dc2626"/>
+<line x1="104.0" y1="266.0" x2="132.0" y2="266.0" stroke="#dc2626" stroke-width="1.6" stroke-linecap="round" marker-end="url(#arr-red)"/>
+<rect x="294" y="278" width="20" height="14" rx="2" fill="#0284c7"/>
+<text x="304" y="309" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">北观测站</text>
+<line x1="304.0" y1="162.0" x2="304.0" y2="278.0" stroke="#475569" stroke-width="1.3" stroke-linecap="round" stroke-dasharray="4 3"/>
+<line x1="304.0" y1="224.0" x2="288.0" y2="276.0" stroke="#dc2626" stroke-width="2.0" stroke-linecap="round"/>
+<circle cx="288" cy="276" r="3.5" fill="#dc2626"/>
+<line x1="288.0" y1="266.0" x2="260.0" y2="266.0" stroke="#dc2626" stroke-width="1.6" stroke-linecap="round" marker-end="url(#arr-red)"/>
+<text x="196" y="166" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700">★ 天顶恒星视差 54.60″（角度为示意放大）</text>
+<rect x="36" y="322" width="320" height="164" rx="10" fill="#f0fdfa" stroke="#99f6e4" stroke-width="1"/>
+<text x="50" y="344" font-size="11.2" fill="#0f172a" text-anchor="start">• 地面三角测量真纬度差：42.94″</text>
+<text x="50" y="365" font-size="11.2" fill="#dc2626" text-anchor="start" font-weight="700">• 铅垂线被山拽向内侧总偏角：54.60″ − 42.94″ = 11.6″</text>
+<text x="50" y="386" font-size="11.2" fill="#0f172a" text-anchor="start">• 地球引力 / 山体引力 ≈ 9933 : 1</text>
+<text x="50" y="409" font-size="10.8" fill="#64748b" text-anchor="start">• 意外副产品：数学家赫顿（1778）为切分山体体积，</text>
+<text x="50" y="427" font-size="10.8" fill="#0f766e" text-anchor="start" font-weight="700">  把相同海拔点连成细线——人类陆地“等高线”诞生！</text>
+<text x="50" y="451" font-size="11.3" fill="#0f766e" text-anchor="start" font-weight="700">⇒ 测得地球平均密度 ρ⊕ ≈ 4.5 g/cm³（约现代值 82%）</text>
+<text x="50" y="471" font-size="10.8" fill="#0f172a" text-anchor="start">  一举击碎“地球空心说”，预言地心藏着重金属核！</text>
+<rect x="388" y="76" width="352" height="424" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="96" r="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="406" y="100" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">2</text>
+<text x="428" y="101" font-size="13" fill="#6d28d9" text-anchor="start" font-weight="700">1854 哈顿煤矿深井摆钟（艾里 Airy）</text>
+<rect x="408.0" y="114.0" width="244" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="530.0" y="129.0" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="600">下井 383 米：电报同步顶底双摆钟</text>
+<rect x="408" y="168" width="312" height="132" rx="10" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="422" y="188" font-size="10.5" fill="#475569" text-anchor="start" font-weight="700">头顶 383 m 表层岩壳（ρ壳 ≈ 2.5 g/cm³）</text>
+<text x="422" y="205" font-size="10.2" fill="#64748b" text-anchor="start">球壳定理：壳内各向引力相消 → 不再向下拉你</text>
+<rect x="592" y="168" width="44" height="132" fill="#ffffff" stroke="#475569" stroke-width="1.8"/>
+<rect x="646" y="152" width="68" height="28" rx="5" fill="#eff6ff" stroke="#0284c7" stroke-width="1.5"/>
+<text x="680" y="170" font-size="10.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">井口摆钟 g₀</text>
+<line x1="614.0" y1="168.0" x2="614.0" y2="286.0" stroke="#c25014" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="4 3"/>
+<text x="584" y="238" font-size="10" fill="#c25014" text-anchor="end" font-weight="700">电报线同步</text>
+<rect x="646" y="268" width="68" height="28" rx="5" fill="#faf5ff" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="680" y="286" font-size="10.2" fill="#6d28d9" text-anchor="middle" font-weight="700">井底摆钟 g井</text>
+<path d="M 418,300 Q 564,274 710,300" fill="none" stroke="#dc2626" stroke-width="2.5"/>
+<text x="515" y="314" font-size="10.5" fill="#dc2626" text-anchor="middle" font-weight="700">脚下更靠近高密度铁镍地核（ρ⊕ &gt; 1.5 ρ壳）！</text>
+<rect x="404" y="322" width="320" height="164" rx="10" fill="#f3e8ff" stroke="#d8b4fe" stroke-width="1"/>
+<text x="418" y="344" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">• 直觉陷阱：下井后头顶少了一层石头，重力会变小吗？</text>
+<text x="418" y="365" font-size="11" fill="#0f172a" text-anchor="start">• 真相反转：离高密度地心近了 383 米，距离平方反比</text>
+<text x="418" y="384" font-size="11" fill="#0f172a" text-anchor="start">  带来的引力增益，压倒了头顶轻岩壳归零的损失！</text>
+<text x="418" y="407" font-size="11.2" fill="#6d28d9" text-anchor="start" font-weight="700">• 实测结果：井底重力比地面大 1 / 19286，</text>
+<text x="418" y="426" font-size="11.2" fill="#dc2626" text-anchor="start" font-weight="700">  井底摆钟每天比地面快走 2.24 秒！</text>
+<text x="418" y="451" font-size="11.3" fill="#6d28d9" text-anchor="start" font-weight="700">⇒ 推算地球平均密度 ρ⊕ ≈ 6.566 g/cm³</text>
+<text x="418" y="471" font-size="10.5" fill="#64748b" text-anchor="start">  （受矿区局部高密度岩层干扰略偏高，但方法极妙）</text>
+</svg>

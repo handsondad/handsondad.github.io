@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">大观楼长联下联汉习楼船唐标铁柱宋挥玉斧元跨革囊四大典故与清代隐笔考据图</title>
+<desc id="desc">分四格考证下联核心历史典故：前120至前109年汉武帝凿昆明池练楼船及晋宁出土滇王之印、707年唐九征毁铁索桥立铁柱、965年宋太祖划大渡河与大理国共存三百年、1253年忽必烈乘牛羊皮革囊渡金沙江并于1274年建云南行省迁省会至昆明；底部揭示珠帘画栋暗涉沐氏与吴三桂五华山王府兴亡的弦外之音。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">十六字浓缩一千四百年：下联“汉·唐·宋·元”四大典故与弦外之音</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">从长安昆明池楼船、滇王金印到忽必烈革囊渡江，再看懂“珠帘画栋”背后不敢明写的清初王府兴亡。</text>
+<rect x="20" y="64" width="352" height="146" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="86" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="42" y="90" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="60" y="91" font-size="13.5" fill="#1d6fa5" text-anchor="start" font-weight="700">汉习楼船</text>
+<rect x="188.0" y="75.0" width="170" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="273.0" y="90.0" font-size="10.6" fill="#1d6fa5" text-anchor="middle" font-weight="600">前 120 — 前 109 年</text>
+<text x="36" y="118" font-size="10.8" fill="#1e293b" text-anchor="start">史实：汉武帝在长安凿“昆明池”，造十余丈</text>
+<text x="36" y="137" font-size="10.8" fill="#1e293b" text-anchor="start">高楼船操练水军（《史记·平准书》）；元封</text>
+<text x="36" y="156" font-size="10.8" fill="#1e293b" text-anchor="start">二年发兵临滇，滇王举国降汉，置益州郡。</text>
+<rect x="32" y="170" width="328" height="30" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="0.9"/>
+<text x="42" y="189" font-size="10.1" fill="#0f172a" text-anchor="start" font-weight="600">铁证：1956 晋宁石寨山出土蛇钮金印“滇王之印”（国博藏）</text>
+<rect x="388" y="64" width="352" height="146" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="410" cy="86" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="410" y="90" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="428" y="91" font-size="13.5" fill="#c25014" text-anchor="start" font-weight="700">唐标铁柱</text>
+<rect x="556.0" y="75.0" width="170" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="641.0" y="90.0" font-size="10.6" fill="#c25014" text-anchor="middle" font-weight="600">707 年（唐景龙元年）</text>
+<text x="404" y="118" font-size="10.8" fill="#1e293b" text-anchor="start">史实：吐蕃在漾濞江架铁索桥联结西洱河诸</text>
+<text x="404" y="137" font-size="10.8" fill="#1e293b" text-anchor="start">蛮；唐御史唐九征率兵毁铁索城破敌，铸立</text>
+<text x="404" y="156" font-size="10.8" fill="#1e293b" text-anchor="start">铁柱纪功（后世南诏蒙世隆亦曾重铸铁柱）。</text>
+<rect x="400" y="170" width="328" height="30" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="0.9"/>
+<text x="410" y="189" font-size="10.1" fill="#0f172a" text-anchor="start" font-weight="600">考据：《新唐书》写作立于“滇池”，实考在今大理弥渡/洱海带</text>
+<rect x="20" y="222" width="352" height="146" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="244" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="42" y="248" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">3</text>
+<text x="60" y="249" font-size="13.5" fill="#18794e" text-anchor="start" font-weight="700">宋挥玉斧</text>
+<rect x="188.0" y="233.0" width="170" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="273.0" y="248.0" font-size="10.6" fill="#18794e" text-anchor="middle" font-weight="600">965 年（宋乾德三年）</text>
+<text x="36" y="276" font-size="10.8" fill="#1e293b" text-anchor="start">史实：北宋灭后蜀，宋太祖鉴晚唐桂林戍卒</text>
+<text x="36" y="295" font-size="10.8" fill="#1e293b" text-anchor="start">之祸，划大渡河与段氏大理国（937–1253，</text>
+<text x="36" y="314" font-size="10.8" fill="#1e293b" text-anchor="start">历 22 王 317 年）为界，换西南近三百年无战事。</text>
+<rect x="32" y="328" width="328" height="30" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="0.9"/>
+<text x="42" y="347" font-size="10.1" fill="#0f172a" text-anchor="start" font-weight="600">辨析：北宋仅载“画大渡为境”，“挥玉斧”系南宋文人敷演美谈</text>
+<rect x="388" y="222" width="352" height="146" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="410" cy="244" r="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="410" y="248" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">4</text>
+<text x="428" y="249" font-size="13.5" fill="#6d28d9" text-anchor="start" font-weight="700">元跨革囊</text>
+<rect x="556.0" y="233.0" width="170" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="641.0" y="248.0" font-size="10.6" fill="#6d28d9" text-anchor="middle" font-weight="600">1253 — 1274 年</text>
+<text x="404" y="276" font-size="10.8" fill="#1e293b" text-anchor="start">史实：1253 年忽必烈分兵三路穿横断山谷两</text>
+<text x="404" y="295" font-size="10.8" fill="#1e293b" text-anchor="start">千余里，乘牛羊皮充气“革囊”及竹筏奇袭渡</text>
+<text x="404" y="314" font-size="10.8" fill="#1e293b" text-anchor="start">过金沙江灭大理（《元史·世祖本纪》）。</text>
+<rect x="400" y="328" width="328" height="30" rx="6" fill="#f3e8ff" stroke="#6d28d9" stroke-width="0.9"/>
+<text x="410" y="347" font-size="10.1" fill="#0f172a" text-anchor="start" font-weight="600">巨变：1274 年建云南行省，全省中心正式从大理迁至昆明！</text>
+<rect x="20" y="382" width="720" height="126" rx="10" fill="#ffe4e6" stroke="#9f1239" stroke-width="1.4"/>
+<text x="38" y="407" font-size="12.6" fill="#9f1239" text-anchor="start" font-weight="700">⑤ 为什么写完元朝突然停笔？—— 藏在“珠帘画栋”里的明清弦外之音</text>
+<text x="38" y="431" font-size="10.8" fill="#0f172a" text-anchor="start">• 表面借古：化用唐代王勃《滕王阁序》“画栋朝飞南浦云，珠帘暮卷西山雨”——妙在昆明滇池西岸真有一座西山！</text>
+<text x="38" y="452" font-size="10.8" fill="#1e293b" text-anchor="start">• 暗写近事：明代沐英家族镇滇近三百年，清初吴三桂更掏空民力在昆明五华山兴建恢弘王府（僭号周王/洪化），</text>
+<text x="38" y="473" font-size="10.8" fill="#1e293b" text-anchor="start">  旋即灰飞烟灭！乾隆朝文网森严，布衣孙髯翁不着一字提明清，却把帝王霸业一并扫入“苍烟落照、一枕清霜”——</text>
+<text x="38" y="493" font-size="10.8" fill="#9f1239" text-anchor="start" font-weight="700">  正因看穿了这层“把正统皇权也归于一空”的锋芒，半个世纪后的云贵总督阮元才会坐立不安、动刀改联！</text>
+</svg>

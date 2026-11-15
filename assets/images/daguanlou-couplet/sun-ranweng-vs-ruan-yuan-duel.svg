@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="512" viewBox="0 0 760 512" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">孙髯翁大观楼原联与云贵总督阮元改本五处核心篡改对比及梁章钜楹联续话档案图</title>
+<desc id="desc">依据清代梁章钜《楹联丛话》卷七与《楹联续话》实录，逐条对比孙髯翁原作与云贵总督阮元改本在登楼胸襟、四方山势、湖洲神韵、伟烈丰功改爨长蒙酋、一枕清霜改一片沧桑五处的优劣，并附上阮元自承害怕波及本朝皇权的原信引文及滇人抗议撤牌结局。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="511" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">布衣狂士 vs 两朝帝师：孙髯翁原联与总督阮元“篡改本”交锋实录</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">据清·梁章钜《楹联丛话·卷七》及《楹联续话》原函校录：一场写进中国文学史的“官印败给民心”。</text>
+<rect x="20" y="64" width="352" height="68" rx="9" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.4"/>
+<text x="34" y="86" font-size="12.2" fill="#1d6fa5" text-anchor="start" font-weight="700">原作｜孙髯翁（自号“万树梅花一布衣”）</text>
+<text x="34" y="106" font-size="10.4" fill="#1e293b" text-anchor="start">拒考场搜身终生不仕 · 晚年圆通寺咒蛟台卖卜</text>
+<text x="34" y="122" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="600">视野：站在天地苍生高度，俯视千古帝王霸业</text>
+<rect x="388" y="64" width="352" height="68" rx="9" fill="#fef1e8" stroke="#c25014" stroke-width="1.4"/>
+<text x="402" y="86" font-size="12.2" fill="#c25014" text-anchor="start" font-weight="700">改本｜阮元（体仁阁大学士·道光云贵总督）</text>
+<text x="402" y="106" font-size="10.4" fill="#1e293b" text-anchor="start">乾嘉汉学泰斗、封疆大吏 · 另制联板强行悬挂</text>
+<text x="402" y="122" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="600">心态：忌惮“把正统王朝归空”，急于“扶正消逆”</text>
+<rect x="20" y="142" width="720" height="50" rx="7" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.0"/>
+<rect x="28.0" y="148.0" width="78" height="19" rx="9.5" fill="#f1f5f9" stroke="#475569" stroke-width="1" stroke-opacity="0.35"/>
+<text x="67.0" y="160.9" font-size="10.2" fill="#475569" text-anchor="middle" font-weight="600">登楼胸襟</text>
+<text x="116" y="162" font-size="10.6" fill="#1d6fa5" text-anchor="start" font-weight="700">孙：</text>
+<text x="140" y="162" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">披襟岸帻，喜茫茫空阔无边</text>
+<text x="434" y="162" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="700">阮：</text>
+<text x="458" y="162" font-size="10.6" fill="#1e293b" text-anchor="start">凭栏向远，喜茫茫波浪无边</text>
+<text x="116" y="182" font-size="10.1" fill="#64748b" text-anchor="start">评点：敞怀推巾的名士狂放 → 规规矩矩扶栏杆看水波</text>
+<rect x="20" y="198" width="720" height="50" rx="7" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.0"/>
+<rect x="28.0" y="204.0" width="78" height="19" rx="9.5" fill="#f1f5f9" stroke="#475569" stroke-width="1" stroke-opacity="0.35"/>
+<text x="67.0" y="216.9" font-size="10.2" fill="#475569" text-anchor="middle" font-weight="600">四方山势</text>
+<text x="116" y="218" font-size="10.6" fill="#1d6fa5" text-anchor="start" font-weight="700">孙：</text>
+<text x="140" y="218" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">东骧神骏，西翥灵仪，北走蜿蜒，南翔缟素</text>
+<text x="434" y="218" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="700">阮：</text>
+<text x="458" y="218" font-size="10.6" fill="#1e293b" text-anchor="start">东骧金马，西翥碧鸡，北倚盘龙，南驯宝象</text>
+<text x="116" y="238" font-size="10.1" fill="#64748b" text-anchor="start">评点：飞动比拟 → 死板点名；且盘龙江、宝象河把山换成了河！</text>
+<rect x="20" y="254" width="720" height="50" rx="7" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.0"/>
+<rect x="28.0" y="260.0" width="78" height="19" rx="9.5" fill="#f1f5f9" stroke="#475569" stroke-width="1" stroke-opacity="0.35"/>
+<text x="67.0" y="272.9" font-size="10.2" fill="#475569" text-anchor="middle" font-weight="600">湖洲神韵</text>
+<text x="116" y="274" font-size="10.6" fill="#1d6fa5" text-anchor="start" font-weight="700">孙：</text>
+<text x="140" y="274" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">梳裹就风鬟雾鬓 / 点缀些翠羽丹霞</text>
+<text x="434" y="274" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="700">阮：</text>
+<text x="458" y="274" font-size="10.6" fill="#1e293b" text-anchor="start">衬将起苍崖翠壁 / 早收回薄雾残霞</text>
+<text x="116" y="294" font-size="10.1" fill="#64748b" text-anchor="start">评点：美人梳妆与水鸟丹霞的灵气 → 干瘪生硬的公文布景</text>
+<rect x="20" y="310" width="720" height="50" rx="7" fill="#fffdf9" stroke="#c25014" stroke-width="1.4"/>
+<rect x="28.0" y="316.0" width="78" height="19" rx="9.5" fill="#ffe4e6" stroke="#9f1239" stroke-width="1" stroke-opacity="0.35"/>
+<text x="67.0" y="328.9" font-size="10.2" fill="#9f1239" text-anchor="middle" font-weight="600">历史定性★</text>
+<text x="116" y="330" font-size="10.6" fill="#1d6fa5" text-anchor="start" font-weight="700">孙：</text>
+<text x="140" y="330" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">伟烈丰功，费尽移山心力</text>
+<text x="434" y="330" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="700">阮：</text>
+<text x="458" y="330" font-size="10.6" fill="#1e293b" text-anchor="start">爨长蒙酋，费尽移山气力</text>
+<text x="116" y="350" font-size="10.1" fill="#9f1239" text-anchor="start" font-weight="600">评点：最致命一刀！把汉唐宋元全甩锅给地方土司，保朝廷颜面</text>
+<rect x="20" y="366" width="720" height="50" rx="7" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.0"/>
+<rect x="28.0" y="372.0" width="78" height="19" rx="9.5" fill="#f1f5f9" stroke="#475569" stroke-width="1" stroke-opacity="0.35"/>
+<text x="67.0" y="384.9" font-size="10.2" fill="#475569" text-anchor="middle" font-weight="600">收尾意境</text>
+<text x="116" y="386" font-size="10.6" fill="#1d6fa5" text-anchor="start" font-weight="700">孙：</text>
+<text x="140" y="386" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">两行秋雁，一枕清霜</text>
+<text x="434" y="386" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="700">阮：</text>
+<text x="458" y="386" font-size="10.6" fill="#1e293b" text-anchor="start">两行鸿雁，一片沧桑</text>
+<text x="116" y="406" font-size="10.1" fill="#64748b" text-anchor="start">评点：刺骨清冷的“清霜”具象 → 空泛套话“一片沧桑”</text>
+<rect x="20" y="426" width="720" height="74" rx="9" fill="#f1f5f9" stroke="#475569" stroke-width="1.2"/>
+<text x="34" y="448" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">铁证档案｜阮元致门生梁章钜亲笔信自白（载《楹联续话·胜迹》）：</text>
+<text x="34" y="469" font-size="10.4" fill="#c25014" text-anchor="start" font-weight="600">“孙髯原联，以正统之汉、唐、宋、元伟烈丰功总归一空为主，岂不骎骎乎说到我朝？故改为爨长蒙酋，递到吴三桂等人身上。”</text>
+<text x="34" y="488" font-size="10.6" fill="#18794e" text-anchor="start" font-weight="700">结局：昆明士民群起嘲讽（“彼都人士，啧有烦言，旋复撤去”），总督改牌灰溜溜撤下，布衣原联流传至今！</text>
+</svg>

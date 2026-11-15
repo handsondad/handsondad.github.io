@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="468" viewBox="0 0 760 468" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">比耶克内斯海气正反馈闭环与厄尔尼诺负反馈终止机制图</title>
+<desc id="desc">左侧展示1969年比耶克内斯提出的四步正反馈循环：东太平洋暖水异常缩小东西温差、削弱东风信风、促使暖池东涌压深温跃层并进一步增暖；右侧展示西传罗斯贝波边界反射（约200天）与赤道海洋热量向高纬放电排空，使事件在9至12个月后终止并进入2至7年振荡。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="467" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">1969 年比耶克内斯揭开的秘密：为什么一小片暖水能滚成全球级事件？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左侧为“海—气互相拱火”的正反馈闭环；右侧为 9–12 个月后让厄尔尼诺自动熄火的海洋负反馈刹车</text>
+<rect x="24" y="68" width="476" height="376" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="40.0" y="82.0" width="326" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="203.0" y="97.0" font-size="12" fill="#c25014" text-anchor="middle" font-weight="600">放大引擎：比耶克内斯正反馈（Bjerknes, 1969）</text>
+<rect x="142" y="118" width="240" height="62" rx="10" fill="#fef2f2" stroke="#dc2626" stroke-width="1.3"/>
+<circle cx="162" cy="138" r="10.5" fill="#ffffff" stroke="#dc2626" stroke-width="1.2"/>
+<text x="162" y="142" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">1</text>
+<text x="180" y="142" font-size="12.5" fill="#dc2626" text-anchor="start" font-weight="700">东/中太平洋初现暖水异常</text>
+<text x="162" y="164" font-size="11.5" fill="#1e293b" text-anchor="start">表层海温 ΔT &gt; 0，冷舌开始退缩</text>
+<rect x="284" y="224" width="200" height="74" rx="10" fill="#fef1e8" stroke="#c25014" stroke-width="1.3"/>
+<circle cx="304" cy="245" r="10.5" fill="#ffffff" stroke="#c25014" stroke-width="1.2"/>
+<text x="304" y="249" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="322" y="249" font-size="12.5" fill="#c25014" text-anchor="start" font-weight="700">东西海温差缩小</text>
+<text x="298" y="270" font-size="11.5" fill="#1e293b" text-anchor="start">西暖东冷温差 (T西 − T东) 变小</text>
+<text x="298" y="287" font-size="11.5" fill="#64748b" text-anchor="start">东太平洋低空海平面气压下降</text>
+<rect x="142" y="344" width="240" height="68" rx="10" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.3"/>
+<circle cx="162" cy="365" r="10.5" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="162" y="369" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">3</text>
+<text x="180" y="369" font-size="12.5" fill="#1d6fa5" text-anchor="start" font-weight="700">赤道东风信风显著减弱</text>
+<text x="158" y="390" font-size="11.5" fill="#1e293b" text-anchor="start">达尔文—塔希提气压跷跷板翻转</text>
+<text x="158" y="405" font-size="11" fill="#64748b" text-anchor="start">（即沃克发现的“南方涛动”负位相）</text>
+<rect x="40" y="224" width="200" height="74" rx="10" fill="#fffbeb" stroke="#b45309" stroke-width="1.3"/>
+<circle cx="60" cy="245" r="10.5" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+<text x="60" y="249" font-size="11.5" fill="#b45309" text-anchor="middle" font-weight="700">4</text>
+<text x="78" y="249" font-size="12.5" fill="#b45309" text-anchor="start" font-weight="700">暖池东涌·温跃层压深</text>
+<text x="54" y="270" font-size="11.5" fill="#1e293b" text-anchor="start">开尔文波东传，抑制深层冷水上翻</text>
+<text x="54" y="287" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="600">东太平洋表层进一步增暖！</text>
+<path d="M384,154 Q422,172 422,218" fill="none" stroke="#c25014" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-orange)"/>
+<path d="M422,302 Q420,352 388,370" fill="none" stroke="#1d6fa5" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-blue)"/>
+<path d="M138,370 Q104,352 104,304" fill="none" stroke="#c25014" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-orange)"/>
+<path d="M104,218 Q106,172 136,154" fill="none" stroke="#c25014" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-orange)"/>
+<rect x="216" y="242" width="60" height="38" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+<text x="246" y="259" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">正反馈</text>
+<text x="246" y="274" font-size="11" fill="#c25014" text-anchor="middle" font-weight="600">滚雪球</text>
+<rect x="514" y="68" width="222" height="376" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="528.0" y="82.0" width="194" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="625.0" y="97.0" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="600">自动刹车：为什么只烧 9–12 个月？</text>
+<rect x="528" y="120" width="194" height="92" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="540" y="141" font-size="12" fill="#18794e" text-anchor="start" font-weight="700">刹车 A：西传罗斯贝波反射</text>
+<text x="540" y="161" font-size="11" fill="#1e293b" text-anchor="start">西传罗斯贝波慢约 3 倍（~200 天）</text>
+<text x="540" y="179" font-size="11" fill="#1e293b" text-anchor="start">撞上印尼西边界后反射为“冷性</text>
+<text x="540" y="197" font-size="11" fill="#64748b" text-anchor="start">开尔文波”东传，从水下抽走暖水</text>
+<rect x="528" y="224" width="194" height="92" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="540" y="245" font-size="12" fill="#1d6fa5" text-anchor="start" font-weight="700">刹车 B：赤道热库“放电耗尽”</text>
+<text x="540" y="265" font-size="11" fill="#1e293b" text-anchor="start">暖水摊平到巨大海面后剧烈蒸发，</text>
+<text x="540" y="283" font-size="11" fill="#1e293b" text-anchor="start">且地转流把赤道热量向南北高纬</text>
+<text x="540" y="301" font-size="11" fill="#64748b" text-anchor="start">排空（Jin 充放电振荡器模型）</text>
+<rect x="528" y="328" width="194" height="100" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.1"/>
+<text x="540" y="350" font-size="12" fill="#18794e" text-anchor="start" font-weight="700">结果：2–7 年不规则钟摆</text>
+<text x="540" y="370" font-size="11" fill="#1e293b" text-anchor="start">春季海温梯度最小、耦合最脆弱</text>
+<text x="540" y="388" font-size="11" fill="#1e293b" text-anchor="start">（春季预报障碍），峰值在圣诞前</text>
+<text x="540" y="406" font-size="11" fill="#18794e" text-anchor="start" font-weight="600">后，次年春夏季熄火常转拉尼娜</text>
+</svg>

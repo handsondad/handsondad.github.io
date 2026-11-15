@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="528" viewBox="0 0 760 528" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">碳十四高空生成、活体循环充值与死后衰变计时闭环图</title>
+<desc id="desc">分三步展示碳十四循环：①高空12至15公里宇宙射线慢中子轰击氮-14踢出1个质子生成碳-14并氧化为二氧化碳；②活体植物与动物通过光合作用和食物链维持与大气相同的10⁻¹²平衡丰度；③生物死亡后停止补碳，碳-12保持不变而碳-14以5730年半衰期发生β衰变变回氮-14。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-red" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#dc2626"/>
+    </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes c14-flow {
+      0%   { stroke-dashoffset: 360; opacity: 0.35; }
+      100% { stroke-dashoffset: 0;   opacity: 1; }
+    }
+    @keyframes meter-drop {
+      0%, 40% { transform: scaleX(1); }
+      100%    { transform: scaleX(0.5); }
+    }
+    .flow-anim {
+      stroke-dasharray: 360;
+      animation: c14-flow 6.5s ease-out 1 forwards;
+    }
+    .decay-bar-anim {
+      transform-box: fill-box;
+      transform-origin: left center;
+      animation: meter-drop 7.5s ease-in-out 1 forwards;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .flow-anim, .decay-bar-anim {
+        animation: none !important;
+      }
+    }
+</style>
+<rect x="0.5" y="0.5" width="759" height="527" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">地球 45 亿岁了，半衰期才 5730 年的碳十四为什么没死光？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">高空宇宙射线每时每刻都在“新造”碳十四：活着不断充值同步，死亡瞬间拔掉电源启动倒计时</text>
+<rect x="24" y="68" width="712" height="138" rx="10" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2"/>
+<circle cx="44" cy="90" r="10.5" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="44" y="94" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="62" y="94" font-size="13" fill="#0f172a" text-anchor="start" font-weight="700">高空造碳工厂（距地 12–15 km 平流层低层）：宇宙射线把氮变成碳十四</text>
+<rect x="42" y="114" width="142" height="74" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="113" y="138" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">外太空宇宙射线</text>
+<text x="113" y="158" font-size="10.5" fill="#1e293b" text-anchor="middle">轰击大气碎裂出</text>
+<text x="113" y="175" font-size="11" fill="#1d6fa5" text-anchor="middle" font-weight="700">慢速热中子 (n)</text>
+<line x1="188.0" y1="151.0" x2="218.0" y2="151.0" stroke="#1d6fa5" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<rect x="224" y="114" width="290" height="74" rx="8" fill="#ffffff" stroke="#c25014" stroke-width="1.4"/>
+<text x="369" y="137" font-size="12" fill="#dc2626" text-anchor="middle" font-weight="700">核反应：n + ¹⁴₇N  →  ¹⁴₆C + ¹₁p（踢走 1 个质子！）</text>
+<text x="369" y="158" font-size="10.5" fill="#1e293b" text-anchor="middle">大气 78% 是氮-14(7质子7中子)；吞下 1 个中子、踢出 1 个质子</text>
+<text x="369" y="176" font-size="10.5" fill="#64748b" text-anchor="middle">刚好变成 6 质子 8 中子的碳-14！（全球每年新产约 7.5 kg）</text>
+<line x1="518.0" y1="151.0" x2="548.0" y2="151.0" stroke="#c25014" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<rect x="554" y="114" width="164" height="74" rx="8" fill="#ffffff" stroke="#18794e" stroke-width="1.3"/>
+<text x="636" y="138" font-size="12" fill="#18794e" text-anchor="middle" font-weight="700">迅速氧化为 ¹⁴CO₂</text>
+<text x="636" y="158" font-size="10.5" fill="#1e293b" text-anchor="middle">混入普通 ¹²CO₂ 大气池</text>
+<text x="636" y="175" font-size="11" fill="#18794e" text-anchor="middle" font-weight="700" class="mono">平衡比 ≈ 1 : 10¹²</text>
+<path d="M636,190 L636,222 L200,222 L200,242" fill="none" stroke="#18794e" stroke-width="2.4" class="flow-anim" marker-end="url(#arr-green)"/>
+<text x="425" y="217" font-size="11" fill="#18794e" text-anchor="middle" font-weight="600" class="halo">光合作用与食物链传递（全球生物共享同一浓度）</text>
+<rect x="24" y="244" width="344" height="262" rx="10" fill="#ffffff" stroke="#18794e" stroke-width="1.4"/>
+<circle cx="44" cy="268" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="44" y="272" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">2</text>
+<text x="62" y="272" font-size="13" fill="#18794e" text-anchor="start" font-weight="700">活着的时候：边衰变边“实时充值”</text>
+<rect x="42" y="290" width="308" height="108" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.0"/>
+<text x="56" y="314" font-size="11" fill="#1e293b" text-anchor="start">• 树木光合作用吸碳 → 食草动物吃植物 → 人类吃饭</text>
+<text x="56" y="336" font-size="11" fill="#1e293b" text-anchor="start">• 体内虽不断有 ¹⁴C 衰变，但每天呼吸进食持续补新货</text>
+<text x="56" y="358" font-size="11" fill="#0f172a" text-anchor="start" font-weight="600">• 活体组织（新长树轮、竹子、骨骼）里的比值恒定：</text>
+<text x="196" y="383" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="700">¹⁴C / ¹²C  =  100% 现代大气标准（约每克碳每分钟衰变 13.6 次）</text>
+<text x="42" y="422" font-size="11" fill="#475569" text-anchor="start">活体 ¹²C 存量（稳定不变）</text>
+<rect x="206" y="411" width="140" height="13" rx="4" fill="#1d6fa5"/>
+<text x="42" y="448" font-size="11" fill="#18794e" text-anchor="start" font-weight="700">活体 ¹⁴C 比例（满格 100%）</text>
+<rect x="206" y="437" width="140" height="13" rx="4" fill="#18794e"/>
+<text x="42" y="484" font-size="10.5" fill="#64748b" text-anchor="start">关键提醒：树木只有最外圈当年新树轮在“充值”，树心老木早已停表！</text>
+<line x1="370.0" y1="372.0" x2="394.0" y2="372.0" stroke="#dc2626" stroke-width="2.4" stroke-linecap="round" marker-end="url(#arr-red)"/>
+<rect x="396" y="244" width="340" height="262" rx="10" fill="#ffffff" stroke="#dc2626" stroke-width="1.4"/>
+<circle cx="416" cy="268" r="10.5" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2"/>
+<text x="416" y="272" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">3</text>
+<text x="434" y="272" font-size="13" fill="#dc2626" text-anchor="start" font-weight="700">死亡那一刻：拔掉充电线，秒表启动！</text>
+<rect x="414" y="290" width="304" height="108" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1.0"/>
+<text x="426" y="314" font-size="11" fill="#1e293b" text-anchor="start">• 砍伐或死亡后，停止呼吸与进食，不再补充新 ¹⁴C</text>
+<text x="426" y="336" font-size="11" fill="#1e293b" text-anchor="start">• 遗骸里的 ¹²C 纹丝不动，而 ¹⁴C 发生 β⁻ 衰变变回氮：</text>
+<text x="566" y="360" font-size="12" fill="#dc2626" text-anchor="middle" font-weight="700">¹⁴₆C  →  ¹⁴₇N + e⁻ + ν̄ₑ</text>
+<text x="566" y="383" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700">每过 5,730 年，剩下的 ¹⁴C/¹²C 比例就精确折半！</text>
+<text x="414" y="422" font-size="11" fill="#475569" text-anchor="start">遗骸 ¹²C 存量（依然 100%）</text>
+<rect x="580" y="411" width="136" height="13" rx="4" fill="#1d6fa5"/>
+<text x="414" y="448" font-size="11" fill="#dc2626" text-anchor="start" font-weight="700">5730年后 ¹⁴C（剩 50%！）</text>
+<rect x="580" y="437" width="136" height="13" rx="4" fill="#fee2e2" stroke="#fca5a5"/>
+<rect x="580" y="437" width="68" height="13" rx="4" fill="#dc2626"/>
+<text x="414" y="484" font-size="10.5" fill="#dc2626" text-anchor="start" font-weight="600">测出样品里“还剩百分之几的 ¹⁴C/¹²C”，就能反推出死亡距今年代！</text>
+</svg>

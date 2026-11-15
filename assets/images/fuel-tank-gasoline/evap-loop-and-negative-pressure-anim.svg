@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="530" viewBox="0 0 760 530" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">汽车油箱EVAP活性炭罐呼吸回路与负压形成原理动画</title>
+<desc id="desc">分步展示汽车熄火与加油时活性炭罐吸附汽油蒸气、行驶时进气歧管抽洗碳罐形成健康微负压，以及OBD-II闭环真空检漏和油箱盖双向安全限压阀的工作原理。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes evFade {
+    0% { opacity: 0.16; transform: translateY(4px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes flowDash {
+    from { stroke-dashoffset: 36; }
+    to { stroke-dashoffset: 0; }
+  }
+  .ev-1 { opacity: 0.16; animation: evFade 0.85s ease-out 0.15s forwards; }
+  .ev-2 { opacity: 0.16; animation: evFade 0.85s ease-out 1.75s forwards; }
+  .ev-3 { opacity: 0.16; animation: evFade 0.90s ease-out 3.45s forwards; }
+  .purge-line { stroke-dasharray: 7 5; animation: flowDash 1.6s linear 1.8s 2 forwards; }
+  @media (prefers-reduced-motion: reduce) {
+    .ev-1, .ev-2, .ev-3 {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+    .purge-line {
+      animation: none !important;
+    }
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="529" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">汽车油箱为什么会“自己吸气”？读懂 EVAP 活性炭罐回路与健康微负压</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">先看熄火/加油怎样锁住汽油蒸气 → 再看开车时进气歧管怎样抽洗碳罐形成微负压 → 下排看双向安全阀兜底</text>
+<g class="ev-1">
+  <rect x="24" y="66" width="712" height="130" rx="10" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+  <circle cx="42" cy="86" r="10" fill="#ffffff" stroke="#c25014" stroke-width="1.2"/>
+<text x="42" y="90" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">1</text>
+  <text x="58" y="90" font-size="12.2" fill="#0f172a" text-anchor="start" font-weight="700">工况 ① 熄火暴晒与加油瞬间（ORVR）：密闭油箱不准直接排空，全靠活性炭罐“吃掉”油气</text>
+
+  <rect x="40" y="104" width="186" height="60" rx="8" fill="#ffffff" stroke="#c25014" stroke-width="1"/>
+  <text x="133" y="127" font-size="11.4" fill="#c25014" text-anchor="middle" font-weight="700">密闭燃油箱（汽油易挥发）</text>
+  <text x="133" y="148" font-size="10.6" fill="#64748b" text-anchor="middle">RVP 蒸气压 45~88 kPa</text>
+
+  <line x1="230" y1="134" x2="282" y2="134" stroke="#c25014" stroke-width="2.2" marker-end="url(#arr-orange)"/>
+  <text x="256" y="124" font-size="10.2" fill="#c25014" text-anchor="middle" font-weight="700">油气上浮</text>
+
+  <rect x="286" y="104" width="206" height="60" rx="8" fill="#ffffff" stroke="#0f766e" stroke-width="1"/>
+  <text x="389" y="127" font-size="11.4" fill="#0f766e" text-anchor="middle" font-weight="700">活性炭罐（多孔炭床吸附）</text>
+  <text x="389" y="148" font-size="10.6" fill="#1e293b" text-anchor="middle">扣留 HC 油气 · 电磁阀 CPS 关闭</text>
+
+  <line x1="496" y1="134" x2="544" y2="134" stroke="#18794e" stroke-width="2" marker-end="url(#arr-green)"/>
+  <text x="520" y="124" font-size="10.2" fill="#18794e" text-anchor="middle" font-weight="700">CVS常开</text>
+
+  <rect x="548" y="104" width="172" height="60" rx="8" fill="#ffffff" stroke="#18794e" stroke-width="1"/>
+  <text x="634" y="127" font-size="11.2" fill="#18794e" text-anchor="middle" font-weight="700">脱油干净空气排入大气</text>
+  <text x="634" y="148" font-size="10.4" fill="#64748b" text-anchor="middle">拦截 98% 以上加油挥发烃</text>
+
+  <text x="40" y="182" font-size="10.8" fill="#1e293b" text-anchor="start">• 为什么现代油箱必须全密封？早期敞口油箱挥发的碳氢化合物占整车污染约 20%，还会引发臭氧光化学烟雾。</text>
+</g>
+<g class="ev-2">
+  <rect x="24" y="208" width="712" height="146" rx="10" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.3"/>
+  <circle cx="42" cy="228" r="10" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="42" y="232" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">2</text>
+  <text x="58" y="232" font-size="12.1" fill="#0f172a" text-anchor="start" font-weight="700">工况 ② 热车巡航“脱附抽吸”：油泵抽油 + 进气歧管真空洗炭床 = 健康微负压（-0.5 ~ -1.0 kPa）</text>
+
+  <rect x="40" y="248" width="168" height="62" rx="8" fill="#ffffff" stroke="#18794e" stroke-width="1"/>
+  <text x="124" y="271" font-size="11.4" fill="#18794e" text-anchor="middle" font-weight="700">大气新鲜空气吸入</text>
+  <text x="124" y="292" font-size="10.5" fill="#64748b" text-anchor="middle">经 CVS 通风阀滤网补气</text>
+
+  <line x1="212" y1="279" x2="254" y2="279" stroke="#1d6fa5" stroke-width="2.2" marker-end="url(#arr-blue)"/>
+
+  <rect x="258" y="248" width="214" height="62" rx="8" fill="#ffffff" stroke="#1d6fa5" stroke-width="1"/>
+  <text x="365" y="271" font-size="11.3" fill="#1d6fa5" text-anchor="middle" font-weight="700">反吹洗脱炭罐 + 平衡油箱体积</text>
+  <text x="365" y="292" font-size="10.6" fill="#0f172a" text-anchor="middle" font-weight="600">油箱保持 -2~-4 in.-H₂O 微负压</text>
+
+  <line class="purge-line" x1="476" y1="279" x2="532" y2="279" stroke="#1d6fa5" stroke-width="2.6" marker-end="url(#arr-blue)"/>
+  <text x="504" y="268" font-size="10.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">CPS打开</text>
+
+  <rect x="536" y="248" width="184" height="62" rx="8" fill="#ffffff" stroke="#6d28d9" stroke-width="1"/>
+  <text x="628" y="271" font-size="11.3" fill="#6d28d9" text-anchor="middle" font-weight="700">发动机进气歧管强真空</text>
+  <text x="628" y="292" font-size="10.4" fill="#1e293b" text-anchor="middle">负压高达 -40~-70 kPa 抽吸烧掉</text>
+
+  <text x="40" y="326" font-size="10.8" fill="#1e293b" text-anchor="start">• 两大微负压来源：① 油泵不断抽走液态汽油腾出空间；② 新鲜空气穿过碳罐滤网与炭粒存在轻微流阻。</text>
+  <text x="40" y="344" font-size="10.8" fill="#1d6fa5" text-anchor="start" font-weight="600">• 好处：只要油箱维持一丁点微负压，哪怕管路有微米级缝隙也是空气往里吸，绝不会让易燃汽油蒸气往外漏！</text>
+</g>
+<g class="ev-3">
+  <rect x="24" y="366" width="712" height="150" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1.2"/>
+  <circle cx="42" cy="386" r="10" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="42" y="390" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">3</text>
+  <text x="58" y="390" font-size="12.2" fill="#0f172a" text-anchor="start" font-weight="700">工况 ③ 电脑主动抽真空检漏与油箱盖“双向保命弹簧阀”：三重防线护住油箱</text>
+
+  <rect x="40" y="404" width="218" height="98" rx="8" fill="#ffffff" stroke="#6d28d9" stroke-width="1"/>
+  <rect x="52.0" y="412.0" width="194" height="20" rx="10.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="149.0" y="425.6" font-size="10.8" fill="#6d28d9" text-anchor="middle" font-weight="600">OBD-II 主动真空检漏</text>
+  <text x="52" y="450" font-size="10.8" fill="#1e293b" text-anchor="start">• 电脑短暂关死 CVS + 打开 CPS</text>
+  <text x="52" y="470" font-size="10.8" fill="#6d28d9" text-anchor="start" font-weight="600">• 抽至约 -1.7~-2.0 kPa 保压30秒</text>
+  <text x="52" y="490" font-size="10.5" fill="#64748b" text-anchor="start">• 连 0.5 mm 针孔没拧紧盖都能报警</text>
+
+  <rect x="271" y="404" width="218" height="98" rx="8" fill="#ffffff" stroke="#0f766e" stroke-width="1"/>
+  <rect x="283.0" y="412.0" width="194" height="20" rx="10.0" fill="#ccfbf1" stroke="#0f766e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="380.0" y="425.6" font-size="10.8" fill="#0f766e" text-anchor="middle" font-weight="600">熄火降温自然微负压 NVLD</text>
+  <text x="283" y="450" font-size="10.8" fill="#1e293b" text-anchor="start">• 热车停放过夜，油气冷却收缩</text>
+  <text x="283" y="470" font-size="10.8" fill="#0f766e" text-anchor="start" font-weight="600">• 按理想气体 P∝T 自然生出微真空</text>
+  <text x="283" y="490" font-size="10.5" fill="#64748b" text-anchor="start">• 清晨拧盖听到轻响 1 秒属完全正常</text>
+
+  <rect x="502" y="404" width="218" height="98" rx="8" fill="#ffffff" stroke="#dc2626" stroke-width="1"/>
+  <rect x="514.0" y="412.0" width="194" height="20" rx="10.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="611.0" y="425.6" font-size="10.8" fill="#dc2626" text-anchor="middle" font-weight="600">油箱盖机械双向限压阀</text>
+  <text x="514" y="450" font-size="10.8" fill="#1e293b" text-anchor="start">• 超正压 &gt; +10.3 kPa：向外泄压防鼓</text>
+  <text x="514" y="470" font-size="10.8" fill="#dc2626" text-anchor="start" font-weight="700">• 超负压 &lt; -5.1 kPa：向内吸气防瘪</text>
+  <text x="514" y="490" font-size="10.5" fill="#64748b" text-anchor="start">• 万一碳罐堵死时的最后一道救命门</text>
+</g>
+</svg>

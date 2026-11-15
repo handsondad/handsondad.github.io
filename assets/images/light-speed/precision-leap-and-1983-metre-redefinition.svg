@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="528" viewBox="0 0 760 528" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">三百年光速测量相对误差对数演进与1983年国际计量大会重新定义米原理图</title>
+<desc id="desc">上图用对数坐标展示从1676年罗默与惠更斯到1972年埃文森激光将相对不确定度从10^-1压至3.7×10^-9撞上氪86米定义极限的过程；下图对比1983年前后从拿米尺测光速反转为将c精确固定为299792458米每秒来定义1米的计量学革命。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="527" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">三百年精度狂飙一百万倍，为什么 1983 年人类宣布“永远不再测光速”？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">当激光比“一米”本身还要准时，国际计量大会干脆把光速焊死为精确常数，反过来重新定义“米”！</text>
+<rect x="24" y="66" width="712" height="248" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="42" y="91" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="700">一、三百年光速测量相对误差演进图（纵轴对数坐标 log₁₀(Δc/c)，越往下越精准）</text>
+<line x1="108" y1="112" x2="692" y2="112" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="98" y="116" font-size="10.2" fill="#64748b" text-anchor="end">10⁰</text>
+<line x1="108" y1="144" x2="692" y2="144" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="98" y="148" font-size="10.2" fill="#64748b" text-anchor="end">10^-2</text>
+<line x1="108" y1="176" x2="692" y2="176" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="98" y="180" font-size="10.2" fill="#64748b" text-anchor="end">10^-4</text>
+<line x1="108" y1="208" x2="692" y2="208" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="98" y="212" font-size="10.2" fill="#64748b" text-anchor="end">10^-6</text>
+<line x1="108" y1="240" x2="692" y2="240" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="98" y="244" font-size="10.2" fill="#64748b" text-anchor="end">10^-8</text>
+<line x1="108" y1="272" x2="692" y2="272" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="98" y="276" font-size="10.2" fill="#64748b" text-anchor="end">10^-10</text>
+<line x1="108" y1="246.4" x2="692" y2="246.4" stroke="#c25014" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="262" y="262.4" font-size="10.2" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">1960 年氪-86“米”定义自身模糊极限（±4×10⁻⁹）</text>
+<polyline points="128,120.6 234,150.4 336,156.5 432,189.9 522,199.7 608,246.9 680,294" fill="none" stroke="#1d6fa5" stroke-width="2.4"/>
+<circle cx="128" cy="120.6" r="5.5" fill="#ffffff" stroke="#1d6fa5" stroke-width="2.2"/>
+<text x="190" y="126.6" font-size="10.3" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">1676/90 罗默+惠更斯</text>
+<text x="190" y="140.6" font-size="9.8" fill="#1e293b" text-anchor="middle" class="halo">21.4万 km/s</text>
+<circle cx="234" cy="150.4" r="5.5" fill="#ffffff" stroke="#1d6fa5" stroke-width="2.2"/>
+<text x="240" y="172.4" font-size="10.3" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">1728 布拉德雷</text>
+<text x="240" y="186.4" font-size="9.8" fill="#1e293b" text-anchor="middle" class="halo">30.1万 km/s</text>
+<circle cx="336" cy="156.5" r="5.5" fill="#ffffff" stroke="#1d6fa5" stroke-width="2.2"/>
+<text x="348" y="140.5" font-size="10.3" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">1862 傅科转镜</text>
+<text x="348" y="127.5" font-size="9.8" fill="#1e293b" text-anchor="middle" class="halo">298,000 km/s</text>
+<circle cx="432" cy="189.9" r="5.5" fill="#ffffff" stroke="#18794e" stroke-width="2.2"/>
+<text x="420" y="211.9" font-size="10.3" fill="#18794e" text-anchor="middle" font-weight="700" class="halo">1926 迈克耳孙</text>
+<text x="420" y="225.9" font-size="9.8" fill="#1e293b" text-anchor="middle" class="halo">299,796 km/s</text>
+<circle cx="522" cy="199.7" r="5.5" fill="#ffffff" stroke="#18794e" stroke-width="2.2"/>
+<text x="538" y="183.7" font-size="10.3" fill="#18794e" text-anchor="middle" font-weight="700" class="halo">1950 埃森谐振腔</text>
+<text x="538" y="170.7" font-size="9.8" fill="#1e293b" text-anchor="middle" class="halo">299,792.5 km/s</text>
+<circle cx="608" cy="246.9" r="5.5" fill="#ffffff" stroke="#6d28d9" stroke-width="2.2"/>
+<text x="624" y="230.9" font-size="10.3" fill="#6d28d9" text-anchor="middle" font-weight="700" class="halo">1972 埃文森激光</text>
+<text x="624" y="217.9" font-size="9.8" fill="#1e293b" text-anchor="middle" class="halo">±1.1 m/s</text>
+<circle cx="680" cy="294" r="7" fill="#fef1e8" stroke="#c25014" stroke-width="2.2"/>
+<text x="666" y="298" font-size="10.5" fill="#c25014" text-anchor="end" font-weight="700" class="halo">1983 精确锁定（零误差！）</text>
+<rect x="24" y="328" width="712" height="184" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="42" y="353" font-size="13" fill="#0f172a" text-anchor="start" font-weight="700">二、1983 年第 17 届国际计量大会（CGPM）的历史性大反转</text>
+<rect x="40" y="368" width="312" height="128" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="1"/>
+<text x="56" y="391" font-size="11.5" fill="#475569" text-anchor="start" font-weight="700">旧逻辑（1983 年以前）：拿“尺子”去量光速</text>
+<text x="56" y="414" font-size="10.6" fill="#1e293b" text-anchor="start">• 先用铂铱米原器（1889）或氪-86 橙红光波长（1960）</text>
+<text x="56" y="434" font-size="10.6" fill="#1e293b" text-anchor="start">  规定“1 米有多长”，再测光每秒走多少米；</text>
+<text x="56" y="456" font-size="10.6" fill="#1e293b" text-anchor="start">• 尴尬困局：氪-86 谱线自身发虚（±1.2 m/s），不同实</text>
+<text x="56" y="476" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="600">  验室激光明明更稳，却被模糊的“米”卡死了上限！</text>
+<line x1="356" y1="432" x2="396" y2="432" stroke="#18794e" stroke-width="2.4" marker-end="url(#arr-green)"/>
+<text x="376" y="420" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="700">反转</text>
+<rect x="404" y="368" width="316" height="128" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.4"/>
+<text x="420" y="391" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">新逻辑（1983 至今）：拿“光速＋秒”定义尺子！</text>
+<rect x="420.0" y="402.0" width="284" height="24" rx="12.0" fill="#ffffff" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="562.0" y="418.3" font-size="11" fill="#18794e" text-anchor="middle" font-weight="600">精确常数 c ≡ 299,792,458 m/s（误差 = 0）</text>
+<text x="420" y="446" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">• 新定义：1 米 ＝ 光在真空中于 1/299,792,458 秒</text>
+<text x="420" y="466" font-size="10.6" fill="#1e293b" text-anchor="start">  内行进的路程（“秒”由铯-133 原子钟超精密定义）；</text>
+<text x="420" y="486" font-size="10.6" fill="#18794e" text-anchor="start" font-weight="700">• 从此技术越进步，改变的不是 c，而是“1 米”更准！</text>
+</svg>

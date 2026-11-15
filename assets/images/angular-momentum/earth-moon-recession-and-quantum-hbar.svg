@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="512" viewBox="0 0 760 512" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">地月潮汐角动量转移推远月球、诺特空间旋转对称性与量子普朗克常数角动量本质图</title>
+<desc id="desc">左栏展示地球潮汐减速将自转角动量转移给月球公转（L∝√r）使月球每年远离地球3.8厘米；右栏阐述1918年诺特定理揭示空间旋转对称性决定角动量守恒，并指出约化普朗克常数ℏ本身就是微观角动量的最小量子单位及MRI进动成像基础。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="511" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">横跨 60 个数量级的宇宙铁律：从月球每年逃离 3.8 厘米，到最小量子硬币 ℏ</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">埃米·诺特证明：只要宇宙空间“转个方向物理规律不变”，角动量就注定从星系到夸克永恒守恒！</text>
+<rect x="24" y="66" width="356" height="428" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="42" y="92" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="700">一、地月大账本：地球刹车，月球为什么往外跑？</text>
+<rect x="40" y="108" width="324" height="178" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<ellipse cx="110" cy="198" rx="34" ry="26" transform="rotate(-18 110 198)" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.6"/>
+<circle cx="110" cy="198" r="22" fill="#dbeafe" stroke="#1d6fa5" stroke-width="1.8"/>
+<text x="110" y="202" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">地球</text>
+<text x="110" y="246" font-size="10.2" fill="#c25014" text-anchor="middle" font-weight="700">潮汐摩擦给自转刹车</text>
+<text x="110" y="264" font-size="10" fill="#64748b" text-anchor="middle">每百年一天变长 ~1.7 ms</text>
+<path d="M150,184 Q216,148 266,172" fill="none" stroke="#18794e" stroke-width="2.2" marker-end="url(#arr-green)"/>
+<text x="212" y="148" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="700">角动量转移 ΔL</text>
+<circle cx="288" cy="182" r="13" fill="#f1f5f9" stroke="#475569" stroke-width="1.8"/>
+<text x="288" y="186" font-size="10" fill="#475569" text-anchor="middle" font-weight="700">月</text>
+<line x1="304" y1="182" x2="346" y2="182" stroke="#18794e" stroke-width="2" marker-end="url(#arr-green)"/>
+<text x="292" y="220" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="700">外推 +3.8 cm/年！</text>
+<rect x="40" y="298" width="324" height="180" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="54" y="322" font-size="11.4" fill="#18794e" text-anchor="start" font-weight="700">为什么月球拿到角动量反而“越飞越远”？</text>
+<text x="54" y="346" font-size="10.6" fill="#1e293b" text-anchor="start">• 地月系统总和守恒：L_地球自转 + L_月球公转 = 常数；</text>
+<text x="54" y="368" font-size="10.6" fill="#1e293b" text-anchor="start">• 由万有引力提供向心力（v = √(GM/r)），月球轨道</text>
+<text x="54" y="388" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">  角动量为：L_月 = m_月 r v = m_月 √(G M_地 r) ∝ √r ！</text>
+<text x="54" y="412" font-size="10.6" fill="#1e293b" text-anchor="start">• 轨道半径 r 越大，公转角动量反而越大！因此地球丢</text>
+<text x="54" y="432" font-size="10.6" fill="#1e293b" text-anchor="start">  掉的自转角动量，全变成了把月球往高轨道推的动力</text>
+<text x="54" y="452" font-size="10.6" fill="#18794e" text-anchor="start" font-weight="700">  （已被阿波罗登月激光测距毫米级实测证实）！</text>
+<rect x="394" y="66" width="342" height="428" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="412" y="92" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="700">二、终极揭秘：诺特定理与普朗克常数 ℏ</text>
+<rect x="410" y="108" width="310" height="144" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="426" y="132" font-size="11.3" fill="#1d6fa5" text-anchor="start" font-weight="700">① 为什么角动量绝对守恒？（诺特定理，1918）</text>
+<text x="426" y="156" font-size="10.6" fill="#1e293b" text-anchor="start">• 数学家埃米·诺特证明：每一条物理守恒律背后，</text>
+<text x="426" y="176" font-size="10.6" fill="#1e293b" text-anchor="start">  都对应着宇宙的一种对称性：</text>
+<text x="426" y="198" font-size="10.4" fill="#475569" text-anchor="start" font-weight="600">  时间平移不变 → 能量守恒；空间平移 → 动量守恒；</text>
+<text x="426" y="220" font-size="10.8" fill="#1d6fa5" text-anchor="start" font-weight="700">  空间各向同性（旋转对称） → 角动量守恒！</text>
+<text x="426" y="240" font-size="10.2" fill="#64748b" text-anchor="start">  因为宇宙空间没有“偏心的方向”，L 才永不凭空生灭。</text>
+<rect x="410" y="266" width="310" height="212" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="426" y="290" font-size="11.1" fill="#6d28d9" text-anchor="start" font-weight="700">② 微观彩蛋：普朗克常数 ℏ 就是“角动量最小硬币”！</text>
+<text x="426" y="314" font-size="10.6" fill="#1e293b" text-anchor="start">• 拆开约化普朗克常数 ℏ = h/(2π) 的国际单位看看：</text>
+<rect x="426.0" y="326.0" width="278" height="24" rx="12.0" fill="#ffffff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="565.0" y="342.3" font-size="10.4" fill="#6d28d9" text-anchor="middle" font-weight="600">1 J·s = 1 (N·m)·s = 1 kg·m²/s ≡ 角动量单位！</text>
+<text x="426" y="370" font-size="10.6" fill="#1e293b" text-anchor="start">• 在原子尺度，角动量不能连续变化，只能按</text>
+<text x="426" y="390" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">  ℏ ≈ 1.055 × 10⁻³⁴ J·s 一份份整数／半整数跳变！</text>
+<text x="426" y="414" font-size="10.6" fill="#6d28d9" text-anchor="start" font-weight="700">• 医院核磁共振（MRI）怎么拍清大脑与内脏？</text>
+<text x="426" y="434" font-size="10.5" fill="#1e293b" text-anchor="start">  正是用强磁场让体内水分子氢原子核的自旋角动量</text>
+<text x="426" y="454" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600">  （½ℏ）像小陀螺一样发生“拉莫尔进动”来成像的！</text>
+</svg>

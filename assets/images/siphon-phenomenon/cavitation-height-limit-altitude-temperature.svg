@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="480" viewBox="0 0 760 480" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">水虹吸极限爬升高度与水温、海拔及微米气核关系图</title>
+<desc id="desc">左图基于安托万方程绘制0至100摄氏度海平面水虹吸极限高度曲线；右图展示不同海拔极限高度条形对比及杨-拉普拉斯微米气核失稳与巨杉纳米抗负压机理。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="479" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">普通水虹吸的“生死红线”：水温、海拔与微米气核如何锁死爬升高度？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">一旦管顶压强跌至饱和蒸气压 Pᵥ，水在室温下剧烈沸腾（气蚀断流）；开水根本无法向上虹吸</text>
+<rect x="20" y="62" width="362" height="404" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="40" cy="84" r="10.5" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2"/>
+<text x="40" y="88" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">1</text>
+<text x="58" y="88" font-size="13" fill="#0f172a" text-anchor="start" font-weight="700">海平面极限高度 h_max 随水温骤降曲线</text>
+<line x1="64.0" y1="322.0" x2="358.0" y2="322.0" stroke="#e2e8f0" stroke-width="1.0" stroke-linecap="round"/>
+<text x="58.0" y="326.0" font-size="10.5" fill="#64748b" text-anchor="end" class="mono">0m</text>
+<line x1="64.0" y1="285.6" x2="358.0" y2="285.6" stroke="#e2e8f0" stroke-width="1.0" stroke-linecap="round"/>
+<text x="58.0" y="289.6" font-size="10.5" fill="#64748b" text-anchor="end" class="mono">2m</text>
+<line x1="64.0" y1="249.3" x2="358.0" y2="249.3" stroke="#e2e8f0" stroke-width="1.0" stroke-linecap="round"/>
+<text x="58.0" y="253.3" font-size="10.5" fill="#64748b" text-anchor="end" class="mono">4m</text>
+<line x1="64.0" y1="212.9" x2="358.0" y2="212.9" stroke="#e2e8f0" stroke-width="1.0" stroke-linecap="round"/>
+<text x="58.0" y="216.9" font-size="10.5" fill="#64748b" text-anchor="end" class="mono">6m</text>
+<line x1="64.0" y1="176.5" x2="358.0" y2="176.5" stroke="#e2e8f0" stroke-width="1.0" stroke-linecap="round"/>
+<text x="58.0" y="180.5" font-size="10.5" fill="#64748b" text-anchor="end" class="mono">8m</text>
+<line x1="64.0" y1="140.2" x2="358.0" y2="140.2" stroke="#e2e8f0" stroke-width="1.0" stroke-linecap="round"/>
+<text x="58.0" y="144.2" font-size="10.5" fill="#64748b" text-anchor="end" class="mono">10m</text>
+<line x1="64.0" y1="134.2" x2="358.0" y2="134.2" stroke="#475569" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="4 3"/>
+<text x="356.0" y="130.2" font-size="10.5" fill="#475569" text-anchor="end">忽略蒸气压理论值 10.33 m</text>
+<line x1="64.0" y1="122.0" x2="64.0" y2="322.0" stroke="#475569" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="64.0" y1="322.0" x2="358.0" y2="322.0" stroke="#475569" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="64.0" y1="322.0" x2="64.0" y2="326.0" stroke="#475569" stroke-width="1.2" stroke-linecap="round"/>
+<text x="64.0" y="339.0" font-size="10.5" fill="#64748b" text-anchor="middle" class="mono">0°C</text>
+<line x1="122.8" y1="322.0" x2="122.8" y2="326.0" stroke="#475569" stroke-width="1.2" stroke-linecap="round"/>
+<text x="122.8" y="339.0" font-size="10.5" fill="#64748b" text-anchor="middle" class="mono">20°C</text>
+<line x1="181.6" y1="322.0" x2="181.6" y2="326.0" stroke="#475569" stroke-width="1.2" stroke-linecap="round"/>
+<text x="181.6" y="339.0" font-size="10.5" fill="#64748b" text-anchor="middle" class="mono">40°C</text>
+<line x1="240.4" y1="322.0" x2="240.4" y2="326.0" stroke="#475569" stroke-width="1.2" stroke-linecap="round"/>
+<text x="240.4" y="339.0" font-size="10.5" fill="#64748b" text-anchor="middle" class="mono">60°C</text>
+<line x1="299.2" y1="322.0" x2="299.2" y2="326.0" stroke="#475569" stroke-width="1.2" stroke-linecap="round"/>
+<text x="299.2" y="339.0" font-size="10.5" fill="#64748b" text-anchor="middle" class="mono">80°C</text>
+<line x1="358.0" y1="322.0" x2="358.0" y2="326.0" stroke="#475569" stroke-width="1.2" stroke-linecap="round"/>
+<text x="358.0" y="339.0" font-size="10.5" fill="#64748b" text-anchor="middle" class="mono">100°C</text>
+<polygon points="64.0,322.0 64.0,135.2 69.9,135.4 75.8,135.6 81.6,135.9 87.5,136.1 93.4,136.4 99.3,136.6 105.2,136.9 111.0,137.3 116.9,137.7 122.8,138.1 128.7,138.6 134.6,139.1 140.4,139.7 146.3,140.4 152.2,141.1 158.1,142.0 164.0,142.9 169.8,143.9 175.7,145.1 181.6,146.3 187.5,147.7 193.4,149.2 199.2,150.9 205.1,152.8 211.0,154.8 216.9,157.1 222.8,159.5 228.6,162.2 234.5,165.1 240.4,168.3 246.3,171.7 252.2,175.5 258.0,179.6 263.9,184.0 269.8,188.8 275.7,193.9 281.6,199.5 287.4,205.5 293.3,212.0 299.2,218.9 305.1,226.4 311.0,234.4 316.8,243.0 322.7,252.2 328.6,262.0 334.5,272.6 340.4,283.8 346.2,295.7 352.1,308.5 358.0,322.0 358.0,322.0" fill="#fee2e2" fill-opacity="0.45"/>
+<polyline points="64.0,135.2 69.9,135.4 75.8,135.6 81.6,135.9 87.5,136.1 93.4,136.4 99.3,136.6 105.2,136.9 111.0,137.3 116.9,137.7 122.8,138.1 128.7,138.6 134.6,139.1 140.4,139.7 146.3,140.4 152.2,141.1 158.1,142.0 164.0,142.9 169.8,143.9 175.7,145.1 181.6,146.3 187.5,147.7 193.4,149.2 199.2,150.9 205.1,152.8 211.0,154.8 216.9,157.1 222.8,159.5 228.6,162.2 234.5,165.1 240.4,168.3 246.3,171.7 252.2,175.5 258.0,179.6 263.9,184.0 269.8,188.8 275.7,193.9 281.6,199.5 287.4,205.5 293.3,212.0 299.2,218.9 305.1,226.4 311.0,234.4 316.8,243.0 322.7,252.2 328.6,262.0 334.5,272.6 340.4,283.8 346.2,295.7 352.1,308.5 358.0,322.0" fill="none" stroke="#dc2626" stroke-width="2.6"/>
+<circle cx="122.8" cy="138.1" r="4.2" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.4"/>
+<text x="112.8" y="157.1" font-size="10.8" fill="#1d6fa5" text-anchor="start" font-weight="700">20°C: 10.1 m</text>
+<circle cx="240.4" cy="168.3" r="4.2" fill="#c25014" stroke="#ffffff" stroke-width="1.4"/>
+<text x="248.4" y="161.3" font-size="10.8" fill="#c25014" text-anchor="start" font-weight="700">60°C: 8.5 m</text>
+<circle cx="313.9" cy="238.6" r="4.2" fill="#dc2626" stroke="#ffffff" stroke-width="1.4"/>
+<text x="303.9" y="230.6" font-size="10.8" fill="#dc2626" text-anchor="end" font-weight="700">85°C: 4.6 m</text>
+<circle cx="358.0" cy="322.0" r="4.2" fill="#0f172a" stroke="#ffffff" stroke-width="1.4"/>
+<text x="352.0" y="312.0" font-size="10.8" fill="#0f172a" text-anchor="end" font-weight="700">100°C: 0 m (沸水断流)</text>
+<rect x="34" y="354" width="334" height="98" rx="8" fill="#fef2f2" stroke="#fecaca" stroke-width="1.0"/>
+<text x="46" y="374" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">生活反直觉实验：为什么刚烧开的热水很难用软管虹吸？</text>
+<text x="46" y="393" font-size="11" fill="#1e293b" text-anchor="start">• 20 °C 冷水饱和蒸气压仅 2.33 kPa，大气压还能撑起 10.1 m；</text>
+<text x="46" y="411" font-size="11" fill="#1e293b" text-anchor="start">• 85 °C 热水蒸气压暴涨至 57.8 kPa，极限高度腰斩至 4.6 m；</text>
+<text x="46" y="429" font-size="11" fill="#0f172a" text-anchor="start" font-weight="600">• 100 °C 沸水 Pᵥ = P₀，只要软管略高于液面立刻沸腾断流！</text>
+<rect x="396" y="62" width="344" height="404" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="416" cy="84" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="416" y="88" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">2</text>
+<text x="434" y="88" font-size="13" fill="#0f172a" text-anchor="start" font-weight="700">海拔气压衰减（20 °C 水）与微米气核准则</text>
+<text x="540" y="127.0" font-size="11" fill="#1e293b" text-anchor="end">海平面 (0 m)</text>
+<rect x="548.0" y="114.0" width="152.0" height="18" rx="4" fill="#f1f5f9"/>
+<rect x="548.0" y="114.0" width="139.8" height="18" rx="4" fill="#1d6fa5"/>
+<text x="693.8" y="127.0" font-size="11" fill="#1d6fa5" text-anchor="start" font-weight="700" class="mono">10.1 m</text>
+<text x="540" y="159.0" font-size="11" fill="#1e293b" text-anchor="end">昆明 (1890 m)</text>
+<rect x="548.0" y="146.0" width="152.0" height="18" rx="4" fill="#f1f5f9"/>
+<rect x="548.0" y="146.0" width="110.5" height="18" rx="4" fill="#0f766e"/>
+<text x="664.5" y="159.0" font-size="11" fill="#0f766e" text-anchor="start" font-weight="700" class="mono">8.0 m</text>
+<text x="540" y="191.0" font-size="11" fill="#1e293b" text-anchor="end">拉萨 (3650 m)</text>
+<rect x="548.0" y="178.0" width="152.0" height="18" rx="4" fill="#f1f5f9"/>
+<rect x="548.0" y="178.0" width="87.8" height="18" rx="4" fill="#18794e"/>
+<text x="641.8" y="191.0" font-size="11" fill="#18794e" text-anchor="start" font-weight="700" class="mono">6.4 m</text>
+<text x="540" y="223.0" font-size="11" fill="#1e293b" text-anchor="end">珠峰大本营 (5200 m)</text>
+<rect x="548.0" y="210.0" width="152.0" height="18" rx="4" fill="#f1f5f9"/>
+<rect x="548.0" y="210.0" width="71.0" height="18" rx="4" fill="#c25014"/>
+<text x="625.0" y="223.0" font-size="11" fill="#c25014" text-anchor="start" font-weight="700" class="mono">5.1 m</text>
+<text x="540" y="255.0" font-size="11" fill="#1e293b" text-anchor="end">客机巡航高度 (12000 m)</text>
+<rect x="548.0" y="242.0" width="152.0" height="18" rx="4" fill="#f1f5f9"/>
+<rect x="548.0" y="242.0" width="23.9" height="18" rx="4" fill="#dc2626"/>
+<text x="577.9" y="255.0" font-size="11" fill="#dc2626" text-anchor="start" font-weight="700" class="mono">1.7 m</text>
+<rect x="410" y="282" width="316" height="170" rx="8" fill="#f0fdfa" stroke="#99f6e4" stroke-width="1.1"/>
+<text x="422" y="303" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">杨-拉普拉斯气核定律：ΔP = 2γ / r（γ = 0.072 N/m）</text>
+<text x="422" y="323" font-size="11" fill="#1e293b" text-anchor="start">• 管壁缝隙藏着直径 ≥ 2.8 μm 微气泡：负压刚过 1 atm</text>
+<text x="422" y="341" font-size="11" fill="#1e293b" text-anchor="start">  （爬升 &gt; 10.1 m）气核瞬间失稳膨胀，扯断水柱；</text>
+<text x="422" y="361" font-size="11" fill="#1e293b" text-anchor="start">• 真空脱气 + 表面活性剂润湿除核：消除微米气核后，</text>
+<text x="422" y="379" font-size="11" fill="#1e293b" text-anchor="start">  实验室虹吸一举爬上 15.4 m（负压 -49 kPa）；</text>
+<text x="422" y="399" font-size="11" fill="#1e293b" text-anchor="start">• 北美巨杉木质部纹孔膜（纳米孔径 ~2.8 nm）：可抗</text>
+<text x="422" y="417" font-size="11" fill="#0f172a" text-anchor="start" font-weight="600">  100 MPa 级张力，靠叶片蒸腾把水拉上 110 米树冠！</text>
+<rect x="422.0" y="426.0" width="288" height="20" rx="10.0" fill="#ffffff" stroke="#0f766e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="566.0" y="439.6" font-size="10.8" fill="#0f766e" text-anchor="middle" font-weight="600">气泡越小 → 表面张力锁死越紧 → 抗负压越强</text>
+</svg>

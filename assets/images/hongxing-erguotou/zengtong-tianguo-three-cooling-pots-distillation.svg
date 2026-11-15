@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="492" viewBox="0 0 760 492" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">二锅头甑桶天锅蒸馏构造与三锅冷却水掐头去尾化学机制图</title>
+<desc id="desc">左侧剖面展示底锅沸水蒸汽穿过高粱酒醅并在顶部盛凉水的锡制天锅底壁冷凝成酒；右侧结合沸点与GCxGC-MS实测对比第一锅酒头（20.2°C乙醛、64.7°C甲醇富集）、第二锅二锅头酒心（78.3°C乙醇协同77.1°C乙酸乙酯与154°C乳酸乙酯达到清爽绵甜平衡）与第三锅酒尾（131°C异戊醇杂醇油及有机酸涌出）的取舍原理。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-ink" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#0f172a"/>
+  </marker>
+  <marker id="arr-red" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#dc2626"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes steamCutRise {
+        0% { opacity: 0.25; transform: translateY(8px); }
+        55% { opacity: 1.0; transform: translateY(-2px); }
+        100% { opacity: 1.0; transform: translateY(0px); }
+      }
+      .anim-steam-cut {
+        animation: steamCutRise 2.8s ease-out 1 forwards;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .anim-steam-cut {
+          animation: none !important;
+          opacity: 1.0 !important;
+          transform: none !important;
+        }
+      }
+</style>
+<rect x="0.5" y="0.5" width="759" height="491" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="20" y="30" font-size="15.5" fill="#0f172a" text-anchor="start" font-weight="700">“二锅头”不是蒸两遍，而是换第二锅冷却水：甑桶天锅构造与三段馏分曲线</text>
+<text x="20" y="50" font-size="12" fill="#64748b" text-anchor="start">酒汽遇锡制“天锅”冷底凝成酒珠；按冷却水换锅次序掐去头锅燥辣醛、截断三锅酸涩尾</text>
+<rect x="18" y="66" width="344" height="412" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="78.0" width="214" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="139.0" y="93.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">古法器皿剖面：甑桶 + 锡制天锅</text>
+<polygon points="74,126 270,126 252,172 172,198 92,172" fill="#dbeafe" stroke="#1d6fa5" stroke-width="2.2"/>
+<text x="172" y="148" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">天锅（盛满凉水冷却）</text>
+<text x="172" y="166" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700">连换 3 锅凉水 = 分出 3 段酒</text>
+<line x1="264.0" y1="136.0" x2="304.0" y2="118.0" stroke="#1d6fa5" stroke-width="1.6" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<text x="308" y="116" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="700">舀出热水</text>
+<text x="308" y="132" font-size="10.5" fill="#64748b" text-anchor="start">注入新凉水</text>
+<polygon points="84,172 260,172 246,348 98,348" fill="#fefce8" stroke="#b45309" stroke-width="2.2"/>
+<polygon points="154,204 196,214 298,238 298,247 154,213" fill="#e2e8f0" stroke="#475569" stroke-width="1.5"/>
+<text x="306" y="232" font-size="10.5" fill="#475569" text-anchor="start" font-weight="700">流酒槽</text>
+<rect x="284" y="254" width="64" height="54" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="1.5"/>
+<text x="316" y="276" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="700">只接第2锅</text>
+<text x="316" y="296" font-size="11" fill="#18794e" text-anchor="middle" font-weight="700">二锅头!</text>
+<g class="anim-steam-cut">
+<line x1="118.0" y1="266.0" x2="118.0" y2="192.0" stroke="#c25014" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="4,3" marker-end="url(#arr-orange)"/>
+<line x1="152.0" y1="266.0" x2="152.0" y2="192.0" stroke="#c25014" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="4,3" marker-end="url(#arr-orange)"/>
+<line x1="192.0" y1="266.0" x2="192.0" y2="192.0" stroke="#c25014" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="4,3" marker-end="url(#arr-orange)"/>
+<line x1="226.0" y1="266.0" x2="226.0" y2="192.0" stroke="#c25014" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="4,3" marker-end="url(#arr-orange)"/>
+<circle cx="172" cy="203" r="3.8" fill="#18794e"/>
+<circle cx="294" cy="250" r="3.8" fill="#18794e"/>
+</g>
+<polygon points="92,268 252,268 246,342 98,342" fill="#fde68a" stroke="#d97706" stroke-width="1.4"/>
+<text x="172" y="294" font-size="11.5" fill="#b45309" text-anchor="middle" font-weight="700">疏松高粱酒醅 + 稻壳层</text>
+<text x="172" y="314" font-size="10.5" fill="#1e293b" text-anchor="middle">轻撒匀铺：边蒸粮糊化、边蒸酒提香</text>
+<text x="172" y="333" font-size="10.5" fill="#64748b" text-anchor="middle">（混蒸混烧 / 清蒸清烧）</text>
+<line x1="96.0" y1="348.0" x2="248.0" y2="348.0" stroke="#0f172a" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="6,4"/>
+<text x="60" y="352" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700">甑箅</text>
+<polygon points="98,354 246,354 232,406 112,406" fill="#ffedd5" stroke="#c25014" stroke-width="2.0"/>
+<text x="172" y="378" font-size="11" fill="#c25014" text-anchor="middle" font-weight="700">底锅沸水：产纯净水蒸气穿醅而上</text>
+<text x="172" y="397" font-size="10.5" fill="#dc2626" text-anchor="middle">火候口诀：“缓慢蒸馏，大火追尾”</text>
+<rect x="30" y="418" width="320" height="48" rx="7" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="42" y="437" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">误区澄清：不是把酒回锅重蒸第 2 次，而是同一甑酒醅</text>
+<text x="42" y="455" font-size="10.5" fill="#dc2626" text-anchor="start" font-weight="700">在天锅换上“第 2 锅凉水”期间流出的中段精华原酒！</text>
+<rect x="376" y="66" width="366" height="412" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="390.0" y="78.0" width="326" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="553.0" y="93.0" font-size="12" fill="#18794e" text-anchor="middle" font-weight="600">三锅冷却水切出的化学世界（GC×GC-MS 实测规律）</text>
+<rect x="390" y="114" width="338" height="102" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1"/>
+<text x="402" y="134" font-size="12" fill="#dc2626" text-anchor="start" font-weight="700">① 第一锅凉水 · 酒头（75–80% vol）→ 掐头舍弃</text>
+<text x="402" y="155" font-size="10.5" fill="#1e293b" text-anchor="start">• 物理机制：低沸点、强脂溶性小分子抢先随高浓乙醇冲出</text>
+<text x="402" y="175" font-size="10.5" fill="#1e293b" text-anchor="start">• 富集物质：乙醛（沸点 20.2°C，冲鼻辣喉易眩晕）、甲醇</text>
+<text x="412" y="194" font-size="10.5" fill="#1e293b" text-anchor="start">（64.7°C）、甲酸乙酯（54.3°C）及超高浓早期醛缩物</text>
+<rect x="390" y="226" width="338" height="118" rx="8" fill="#e7f6ee" stroke="#86efac" stroke-width="1.8"/>
+<text x="402" y="247" font-size="12" fill="#18794e" text-anchor="start" font-weight="700">② 第二锅凉水 · 二锅头酒心（58–68% vol）→ 黄金中段</text>
+<text x="402" y="268" font-size="10.5" fill="#1e293b" text-anchor="start">• 物理机制：水醇比例适中，疏水香酯与亲水甜酯同步馏出</text>
+<text x="402" y="288" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">• 核心风味：乙醇（78.3°C）+ 清脆果香乙酸乙酯（77.1°C，</text>
+<text x="412" y="307" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">约 127 mg/L）+ 绵甜醇厚乳酸乙酯（154°C，随水汽共沸</text>
+<text x="412" y="326" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="700">馏出约 40 mg/L，酒头中几乎为零！）→ 净爽不燥、绵甜回甘</text>
+<rect x="390" y="354" width="338" height="112" rx="8" fill="#fef1e8" stroke="#fdba74" stroke-width="1"/>
+<text x="402" y="375" font-size="12" fill="#c25014" text-anchor="start" font-weight="700">③ 第三锅凉水 · 酒尾（&lt;48% vol）→ 去尾另存回蒸</text>
+<text x="402" y="396" font-size="10.5" fill="#1e293b" text-anchor="start">• 物理机制：酒精渐竭、温度升高，高沸点水溶性与重油涌出</text>
+<text x="402" y="416" font-size="10.5" fill="#1e293b" text-anchor="start">• 富集物质：异戊醇等杂醇油（131°C，飙升逾 212 mg/L 苦涩</text>
+<text x="412" y="435" font-size="10.5" fill="#1e293b" text-anchor="start">上头）、乙酸/乳酸（酸涩）与亚油酸乙酯（低度浑浊油花）</text>
+<text x="412" y="454" font-size="10.5" fill="#b45309" text-anchor="start" font-weight="700">注：酒尾富含香味前体，不直接饮用但可泼回下轮酒醅复蒸</text>
+</svg>

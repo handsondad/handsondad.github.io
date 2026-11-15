@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="442" viewBox="0 0 760 442" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">1990年代中国诗歌大众热潮退却的内外双因素结构解析图</title>
+<desc id="desc">从外部社会分流与内部诗学转向两方面解析90年代诗歌降温：外部因社科重建、彩电与流行音乐普及以及市场化转型，接管了诗歌超载的启蒙与大众抒情功能；内部因诗人转向个人化写作与现代汉诗语言深耕，使新诗从广场扩音器回归常态纯文学位置。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="441" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<defs><marker id="arr-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 9 5 L 0 9 z" fill="#1d6fa5"/></marker><marker id="arr-p" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 9 5 L 0 9 z" fill="#6d28d9"/></marker><marker id="arr-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 9 5 L 0 9 z" fill="#18794e"/></marker><marker id="arr-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 9 5 L 0 9 z" fill="#b45309"/></marker></defs>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">九十年代诗歌为什么突然“降温”？不是诗死了，而是卸下了千斤重担</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">当社会科学恢复、电视与流行音乐普及，诗歌不再替整个社会充当唯一的扩音器与情绪出口。</text>
+<rect x="20" y="66" width="350" height="288" rx="9" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.3"/>
+<rect x="20" y="66" width="350" height="40" rx="9" fill="#1d6fa5" stroke="none" stroke-width="1"/>
+<text x="195.0" y="91" font-size="11.4" fill="#ffffff" text-anchor="middle" font-weight="700">外部推力｜三大超载职能被专业渠道接管</text>
+<rect x="32" y="118" width="326" height="66" rx="6" fill="#eaf4fb" stroke="none" stroke-width="1"/>
+<text x="40" y="137" font-size="10.4" fill="#1d6fa5" text-anchor="start" font-weight="700">• 思想启蒙移交社科</text>
+<text x="40" y="156" font-size="9.6" fill="#0f172a" text-anchor="start">经济学、法学、社会学、心理学专著大批出版，公</text>
+<text x="40" y="172" font-size="9.6" fill="#0f172a" text-anchor="start">众讨论改革与人性不再只能借几行诗隐喻。</text>
+<rect x="32" y="194" width="326" height="66" rx="6" fill="#fef3c7" stroke="none" stroke-width="1"/>
+<text x="40" y="213" font-size="10.4" fill="#b45309" text-anchor="start" font-weight="700">• 青春抒情移交声画</text>
+<text x="40" y="232" font-size="9.6" fill="#0f172a" text-anchor="start">彩电普及、邓丽君与港台流行歌、崔健摇滚、KT</text>
+<text x="40" y="248" font-size="9.6" fill="#0f172a" text-anchor="start">V与影视剧，更直接地承接了大众恋爱与伤感。</text>
+<rect x="32" y="270" width="326" height="66" rx="6" fill="#f1f5f9" stroke="none" stroke-width="1"/>
+<text x="40" y="289" font-size="10.4" fill="#475569" text-anchor="start" font-weight="700">• 市场化与出版转型</text>
+<text x="40" y="308" font-size="9.6" fill="#0f172a" text-anchor="start">90年代商品经济潮起、期刊补贴退坡、民刊受限</text>
+<text x="40" y="324" font-size="9.6" fill="#0f172a" text-anchor="start">，除“汪国真热”短暂余晖外，纯诗集印数回落。</text>
+<rect x="390" y="66" width="350" height="288" rx="9" fill="#ffffff" stroke="#6d28d9" stroke-width="1.3"/>
+<rect x="390" y="66" width="350" height="40" rx="9" fill="#6d28d9" stroke="none" stroke-width="1"/>
+<text x="565.0" y="91" font-size="11.4" fill="#ffffff" text-anchor="middle" font-weight="700">内部拉力｜诗人主动走下广场，回归语言工坊</text>
+<rect x="402" y="118" width="326" height="66" rx="6" fill="#f3e8ff" stroke="none" stroke-width="1"/>
+<text x="410" y="137" font-size="10.4" fill="#6d28d9" text-anchor="start" font-weight="700">• 警惕广场口号与煽情</text>
+<text x="410" y="156" font-size="9.6" fill="#0f172a" text-anchor="start">经历80年代狂飙后，先锋诗人自觉反思宏大代言</text>
+<text x="410" y="172" font-size="9.6" fill="#0f172a" text-anchor="start">姿态，转向冷静、节制的“个人化写作”。</text>
+<rect x="402" y="194" width="326" height="66" rx="6" fill="#e7f6ee" stroke="none" stroke-width="1"/>
+<text x="410" y="213" font-size="10.4" fill="#18794e" text-anchor="start" font-weight="700">• 深耕“现代汉诗”尺度</text>
+<text x="410" y="232" font-size="9.6" fill="#0f172a" text-anchor="start">《现代汉诗》《倾向》《发现》等刊强调“语言的</text>
+<text x="410" y="248" font-size="9.6" fill="#0f172a" text-anchor="start">劳作”、叙事性与智性难度，拒绝迎合通俗朗诵。</text>
+<rect x="402" y="270" width="326" height="66" rx="6" fill="#ffe4e6" stroke="none" stroke-width="1"/>
+<text x="410" y="289" font-size="10.4" fill="#9f1239" text-anchor="start" font-weight="700">• 阅读圈层自然分流</text>
+<text x="410" y="308" font-size="9.6" fill="#0f172a" text-anchor="start">如同现代交响乐或纯数学，高密度语言实验提高了</text>
+<text x="410" y="324" font-size="9.6" fill="#0f172a" text-anchor="start">阅读门槛，受众从千万大众收缩为专业知音。</text>
+<line x1="195.0" y1="354.0" x2="290.0" y2="372.0" stroke="#1d6fa5" stroke-width="1.6" marker-end="url(#arr-b)"/>
+<line x1="565.0" y1="354.0" x2="470.0" y2="372.0" stroke="#6d28d9" stroke-width="1.6" marker-end="url(#arr-p)"/>
+<rect x="20" y="374" width="720" height="56" rx="9" fill="#163a5f" stroke="#f59e0b" stroke-width="1.5"/>
+<text x="380" y="397" font-size="11.2" fill="#fde68a" text-anchor="middle" font-weight="700">历史诊断：八十年代全民读诗，是万千时代情绪挤过一道窄门的特殊奇观；</text>
+<text x="380" y="417" font-size="10.4" fill="#cbd5e1" text-anchor="middle">九十年代诗歌退居安静角落，恰恰见证了中国社会打开百扇窗户后的多元与成熟。</text>
+</svg>

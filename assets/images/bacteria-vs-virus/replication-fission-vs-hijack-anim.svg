@@ -1,0 +1,195 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">细菌二分裂繁殖与病毒劫持宿主一步生长曲线动态对比图</title>
+<desc id="desc">左侧对比大肠杆菌20分钟二分裂与T4噬菌体吸附注射、隐蔽期赶工、组装裂解三阶段；右侧对数坐标曲线展示细菌平稳2^n增长、无细胞肉汤中病毒零增长，以及活细胞内病毒隐蔽归零后百倍爆发。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes bvScan {
+    0% { transform: translateX(0px); opacity: 0.95; }
+    100% { transform: translateX(188px); opacity: 0.95; }
+  }
+  @keyframes bvPinch {
+    0%, 35% { opacity: 0.35; }
+    55%, 100% { opacity: 1; }
+  }
+  @keyframes bvBurst {
+    0%, 72% { transform: scale(0.86); opacity: 0.35; }
+    88%, 100% { transform: scale(1); opacity: 1; }
+  }
+  @keyframes bvDraw {
+    0% { stroke-dashoffset: 280; }
+    100% { stroke-dashoffset: 0; }
+  }
+  .bv-cursor {
+    animation: bvScan 6.2s ease-in-out 1 forwards;
+  }
+  .bv-daughter {
+    animation: bvPinch 6.2s ease-out 1 forwards;
+  }
+  .bv-burst-pack {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: bvBurst 6.2s ease-out 1 forwards;
+  }
+  .bv-curve {
+    stroke-dasharray: 280;
+    stroke-dashoffset: 0;
+    animation: bvDraw 6.2s ease-out 1 forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .bv-cursor, .bv-daughter, .bv-burst-pack, .bv-curve {
+      animation: none !important;
+      opacity: 1 !important;
+      stroke-dashoffset: 0 !important;
+      transform: none !important;
+    }
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">繁殖方式天壤之别：稳扎稳打的“二分裂分家” vs 先隐身再百倍爆裂的“木马劫持”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左侧对比两者 30 分钟内的命运操作；右侧半对数增长曲线展示细菌指数翻倍（2ⁿ）与病毒一步生长跃迁</text>
+<rect x="20" y="64" width="436" height="202" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="74.0" width="388" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="228.0" y="89.0" font-size="12" fill="#18794e" text-anchor="middle" font-weight="600">细菌繁殖：二分裂（Binary Fission，给口肉汤就能自己生）</text>
+<rect x="36" y="108" width="122" height="108" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<text x="97" y="126" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">① 复制环状 DNA</text>
+<rect x="58" y="146" width="78" height="34" rx="17" fill="#dcfce7" stroke="#18794e" stroke-width="2"/>
+<circle cx="84" cy="163" r="9" fill="none" stroke="#1d6fa5" stroke-width="1.8"/>
+<circle cx="108" cy="163" r="9" fill="none" stroke="#1d6fa5" stroke-width="1.8"/>
+<text x="97" y="202" font-size="10.8" fill="#64748b" text-anchor="middle">0–10 min：体积长大</text>
+<line x1="162" y1="162" x2="178" y2="162" stroke="#18794e" stroke-width="1.8" marker-end="url(#arr-green)"/>
+<rect x="182" y="108" width="122" height="108" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<text x="243" y="126" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">② FtsZ 蛋白环收腰</text>
+<path d="M198,163 C198,145 234,145 243,156 C252,145 288,145 288,163 C288,181 252,181 243,170 C234,181 198,181 198,163 Z" fill="#dcfce7" stroke="#18794e" stroke-width="2"/>
+<line x1="243" y1="146" x2="243" y2="180" stroke="#c25014" stroke-width="2" stroke-dasharray="3 2"/>
+<text x="243" y="202" font-size="10.8" fill="#64748b" text-anchor="middle">15 min：砌新细胞壁隔膜</text>
+<line x1="308" y1="162" x2="324" y2="162" stroke="#18794e" stroke-width="1.8" marker-end="url(#arr-green)"/>
+<rect x="328" y="108" width="114" height="108" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="385" y="126" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">③ 一分为二（2¹）</text>
+<g class="bv-daughter">
+<rect x="346" y="138" width="76" height="24" rx="12" fill="#ffffff" stroke="#18794e" stroke-width="2"/>
+<circle cx="384" cy="150" r="6.5" fill="none" stroke="#1d6fa5" stroke-width="1.6"/>
+<rect x="346" y="168" width="76" height="24" rx="12" fill="#ffffff" stroke="#18794e" stroke-width="2"/>
+<circle cx="384" cy="180" r="6.5" fill="none" stroke="#1d6fa5" stroke-width="1.6"/>
+</g>
+<text x="385" y="206" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="600">20 min：两颗对等子细胞</text>
+<text x="238" y="236" font-size="10.8" fill="#1e293b" text-anchor="middle" font-weight="600">关键特征：全程细胞完整存在，不依赖任何活宿主细胞；</text>
+<text x="238" y="254" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="600">大肠杆菌最优每 20 分钟翻一倍（N = N₀·2ⁿ）</text>
+<rect x="20" y="278" width="436" height="224" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="288.0" width="388" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="228.0" y="303.0" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="600">病毒增殖：五步劫持裂解（纯肉汤里 100 年也是 0 增长！）</text>
+<rect x="36" y="322" width="124" height="126" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<text x="98" y="340" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">① 吸附与注射图纸</text>
+<rect x="52" y="388" width="92" height="34" rx="14" fill="#ecfdf5" stroke="#18794e" stroke-width="1.8"/>
+<polygon points="98,350 108,357 108,369 98,376 88,369 88,357" fill="#ede9fe" stroke="#6d28d9" stroke-width="1.8"/>
+<line x1="98" y1="376" x2="98" y2="402" stroke="#b91c1c" stroke-width="2.2"/>
+<text x="98" y="438" font-size="10.8" fill="#64748b" text-anchor="middle">0 min：外壳留门外</text>
+<line x1="164" y1="385" x2="178" y2="385" stroke="#6d28d9" stroke-width="1.8" marker-end="url(#arr-muted)"/>
+<rect x="182" y="322" width="124" height="126" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="1"/>
+<text x="244" y="340" font-size="11.5" fill="#b45309" text-anchor="middle" font-weight="700">② 隐蔽期劫持打印</text>
+<rect x="196" y="356" width="96" height="58" rx="16" fill="#ffffff" stroke="#b45309" stroke-width="1.8" stroke-dasharray="4 2"/>
+<circle cx="214" cy="374" r="4" fill="none" stroke="#6d28d9" stroke-width="1.6"/>
+<line x1="210" y1="380" x2="219" y2="380" stroke="#b91c1c" stroke-width="1.6"/>
+<circle cx="236" cy="370" r="4" fill="none" stroke="#6d28d9" stroke-width="1.6"/>
+<line x1="232" y1="376" x2="241" y2="376" stroke="#b91c1c" stroke-width="1.6"/>
+<circle cx="262" cy="376" r="4" fill="none" stroke="#6d28d9" stroke-width="1.6"/>
+<line x1="258" y1="382" x2="267" y2="382" stroke="#b91c1c" stroke-width="1.6"/>
+<circle cx="222" cy="396" r="4" fill="none" stroke="#6d28d9" stroke-width="1.6"/>
+<line x1="218" y1="402" x2="227" y2="402" stroke="#b91c1c" stroke-width="1.6"/>
+<circle cx="250" cy="394" r="4" fill="none" stroke="#6d28d9" stroke-width="1.6"/>
+<line x1="246" y1="400" x2="255" y2="400" stroke="#b91c1c" stroke-width="1.6"/>
+<circle cx="272" cy="396" r="4" fill="none" stroke="#6d28d9" stroke-width="1.6"/>
+<line x1="268" y1="402" x2="277" y2="402" stroke="#b91c1c" stroke-width="1.6"/>
+<text x="244" y="428" font-size="10.8" fill="#b45309" text-anchor="middle" font-weight="700">2–15 min：完整病毒=0！</text>
+<text x="244" y="442" font-size="10.5" fill="#64748b" text-anchor="middle">（拆散正借核糖体赶工）</text>
+<line x1="310" y1="385" x2="324" y2="385" stroke="#6d28d9" stroke-width="1.8" marker-end="url(#arr-muted)"/>
+<rect x="328" y="322" width="114" height="126" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="385" y="340" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">③ 组装与破壁爆裂</text>
+<path d="M346,396 C342,374 360,362 374,366 M398,366 C416,368 424,386 416,404 C406,416 362,418 350,406" fill="none" stroke="#18794e" stroke-width="1.8" stroke-dasharray="5 4"/>
+<g class="bv-burst-pack">
+<circle cx="364" cy="374" r="5" fill="#6d28d9" stroke="#fff" stroke-width="1"/>
+<circle cx="386" cy="366" r="5" fill="#6d28d9" stroke="#fff" stroke-width="1"/>
+<circle cx="408" cy="374" r="5" fill="#6d28d9" stroke="#fff" stroke-width="1"/>
+<circle cx="358" cy="394" r="5" fill="#6d28d9" stroke="#fff" stroke-width="1"/>
+<circle cx="382" cy="388" r="5" fill="#6d28d9" stroke="#fff" stroke-width="1"/>
+<circle cx="404" cy="394" r="5" fill="#6d28d9" stroke="#fff" stroke-width="1"/>
+<circle cx="374" cy="406" r="5" fill="#6d28d9" stroke="#fff" stroke-width="1"/>
+<circle cx="396" cy="408" r="5" fill="#6d28d9" stroke="#fff" stroke-width="1"/>
+</g>
+<text x="385" y="430" font-size="11" fill="#6d28d9" text-anchor="middle" font-weight="700">25–30 min：1 → 120+！</text>
+<text x="385" y="443" font-size="10.5" fill="#b91c1c" text-anchor="middle" font-weight="600">宿主炸裂同归于尽</text>
+<text x="238" y="468" font-size="10.6" fill="#1e293b" text-anchor="middle">注：温和噬菌体/疱疹/HIV 还能走“溶原潜伏”路线——</text>
+<text x="238" y="486" font-size="10.6" fill="#64748b" text-anchor="middle">把基因缝进宿主染色体装睡数年，等免疫力低时再引爆</text>
+<rect x="470" y="64" width="270" height="438" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="484.0" y="74.0" width="238" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="603.0" y="89.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">定量对决：一步生长曲线 vs 二分裂</text>
+<text x="605" y="112" font-size="11" fill="#64748b" text-anchor="middle">37 °C 下单颗起点 0–60 min 粒子数（对数纵轴）</text>
+<line x1="518.0" y1="354.0" x2="706.0" y2="354.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="513.0" y="358.0" font-size="10.5" fill="#475569" text-anchor="end">0(隐蔽)</text>
+<line x1="518.0" y1="325.3" x2="706.0" y2="325.3" stroke="#e2e8f0" stroke-width="1"/>
+<text x="513.0" y="329.3" font-size="10.5" fill="#475569" text-anchor="end">1 (10⁰)</text>
+<line x1="518.0" y1="277.5" x2="706.0" y2="277.5" stroke="#e2e8f0" stroke-width="1"/>
+<text x="513.0" y="281.5" font-size="10.5" fill="#475569" text-anchor="end">10¹</text>
+<line x1="518.0" y1="229.7" x2="706.0" y2="229.7" stroke="#e2e8f0" stroke-width="1"/>
+<text x="513.0" y="233.7" font-size="10.5" fill="#475569" text-anchor="end">10²</text>
+<line x1="518.0" y1="181.8" x2="706.0" y2="181.8" stroke="#e2e8f0" stroke-width="1"/>
+<text x="513.0" y="185.8" font-size="10.5" fill="#475569" text-anchor="end">10³</text>
+<line x1="518.0" y1="134.0" x2="706.0" y2="134.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="513.0" y="138.0" font-size="10.5" fill="#475569" text-anchor="end">10⁴</text>
+<line x1="518.0" y1="134.0" x2="518.0" y2="354.0" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="2 3"/>
+<text x="518.0" y="370.0" font-size="10.5" fill="#475569" text-anchor="middle">0</text>
+<line x1="580.7" y1="134.0" x2="580.7" y2="354.0" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="2 3"/>
+<text x="580.7" y="370.0" font-size="10.5" fill="#475569" text-anchor="middle">20</text>
+<line x1="612.0" y1="134.0" x2="612.0" y2="354.0" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="2 3"/>
+<text x="612.0" y="370.0" font-size="10.5" fill="#475569" text-anchor="middle">30</text>
+<line x1="643.3" y1="134.0" x2="643.3" y2="354.0" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="2 3"/>
+<text x="643.3" y="370.0" font-size="10.5" fill="#475569" text-anchor="middle">40</text>
+<line x1="706.0" y1="134.0" x2="706.0" y2="354.0" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="2 3"/>
+<text x="706.0" y="370.0" font-size="10.5" fill="#475569" text-anchor="middle">60</text>
+<text x="612.0" y="386.0" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="600">时间 t（分钟）</text>
+<line x1="518.0" y1="134.0" x2="518.0" y2="354.0" stroke="#0f172a" stroke-width="1.6"/>
+<line x1="518.0" y1="354.0" x2="706.0" y2="354.0" stroke="#0f172a" stroke-width="1.6"/>
+<line x1="518.0" y1="325.3" x2="706.0" y2="325.3" stroke="#475569" stroke-width="1.8" stroke-dasharray="4 3"/>
+<text x="699.7" y="339.3" font-size="10.2" fill="#475569" text-anchor="end" class="halo">无细胞肉汤中的病毒（永远=1）</text>
+<polyline class="bv-curve" points="518.0,325.3 580.7,310.9 643.3,296.5 706.0,282.1" fill="none" stroke="#18794e" stroke-width="2.8"/>
+<circle cx="518.0" cy="325.3" r="3.6" fill="#18794e"/>
+<circle cx="580.7" cy="310.9" r="3.6" fill="#18794e"/>
+<circle cx="643.3" cy="296.5" r="3.6" fill="#18794e"/>
+<circle cx="706.0" cy="282.1" r="3.6" fill="#18794e"/>
+<text x="699.7" y="273.1" font-size="10.8" fill="#18794e" text-anchor="end" font-weight="700" class="halo">大肠杆菌（60min → 8颗）</text>
+<polyline class="bv-curve" points="518.0,325.3 524.3,325.3 530.5,354.0 580.7,354.0 602.6,225.8 630.8,225.8 699.7,136.4 706.0,136.4" fill="none" stroke="#6d28d9" stroke-width="2.8"/>
+<circle cx="602.6" cy="225.8" r="4" fill="#6d28d9"/>
+<text x="606.6" y="215.8" font-size="10.8" fill="#6d28d9" text-anchor="start" font-weight="700" class="halo">首轮裂解 ~120颗</text>
+<text x="693.5" y="129.4" font-size="10.8" fill="#6d28d9" text-anchor="end" font-weight="700" class="halo">次轮波 ~10⁴颗！</text>
+<line class="bv-cursor" x1="518.0" y1="134.0" x2="518.0" y2="354.0" stroke="#c25014" stroke-width="1.6" stroke-dasharray="3 3"/>
+<rect x="484" y="394" width="242" height="94" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+<text x="496" y="414" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">看懂这张图的两个反直觉点：</text>
+<text x="496" y="434" font-size="10.8" fill="#1e293b" text-anchor="start">1. 隐蔽期：第 4–20 min 敲碎宿主也找不</text>
+<text x="496" y="451" font-size="10.8" fill="#1e293b" text-anchor="start">   到整颗病毒，因为外壳已拆成流水线；</text>
+<text x="496" y="470" font-size="10.8" fill="#6d28d9" text-anchor="start" font-weight="700">2. 爆发量：细菌 1→2，噬菌体 1→120！</text>
+</svg>

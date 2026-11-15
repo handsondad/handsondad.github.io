@@ -8348,3 +8348,2867 @@ def _register_resp_and_comp():
 
 
 _register_resp_and_comp()
+
+
+def _register_tv_antenna_bandwidth():
+    import math
+
+    from .core import (
+        BLUE,
+        BLUE_SOFT,
+        BODY,
+        BORDER,
+        CARD_BG,
+        GREEN,
+        GREEN_SOFT,
+        HAIRLINE,
+        INK,
+        MUTED,
+        ORANGE,
+        ORANGE_SOFT,
+        PANEL_TITLE,
+        PURPLE,
+        PURPLE_SOFT,
+        SLATE,
+        SLATE_SOFT,
+        card,
+        figure,
+        header,
+        pill,
+        register,
+        txt,
+        write_svg,
+    )
+
+    SUBDIR = "tv-antenna-bandwidth"
+    RED = "#b91c1c"
+    RED_SOFT = "#fef2f2"
+    C_LIGHT = 299_792_458.0  # m/s
+
+    def _line(x1, y1, x2, y2, stroke=BORDER, sw=1.3, dash=None, marker=None, opacity=None):
+        attrs = [
+            f'x1="{x1:.1f}"',
+            f'y1="{y1:.1f}"',
+            f'x2="{x2:.1f}"',
+            f'y2="{y2:.1f}"',
+            f'stroke="{stroke}"',
+            f'stroke-width="{sw}"',
+        ]
+        if dash:
+            attrs.append(f'stroke-dasharray="{dash}"')
+        if marker:
+            attrs.append(f'marker-end="url(#{marker})"')
+        if opacity is not None:
+            attrs.append(f'opacity="{opacity}"')
+        return f'<line {" ".join(attrs)}/>'
+
+    def _poly(pts, stroke=BLUE, sw=2.2, fill="none", dash=None, cls=None, opacity=None):
+        d = "M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
+        extra = ""
+        if dash:
+            extra += f' stroke-dasharray="{dash}"'
+        if cls:
+            extra += f' class="{cls}"'
+        if opacity is not None:
+            extra += f' opacity="{opacity}"'
+        return f'<path d="{d}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}" stroke-linecap="round" stroke-linejoin="round"{extra}/>'
+
+    def _build_three_tv_antennas_relay():
+        """SVG 1: Two-hop satellite-to-county-tower relay + 3 TV reception modes compared."""
+        # Verify wavelengths & free-space path loss (FSPL)
+        f_vhf1 = 52.5e6   # DS-1 center ~52.5 MHz
+        f_uhf = 600.0e6   # UHF ~600 MHz
+        f_c = 4.0e9       # C-band downlink 4 GHz
+        f_ku = 12.0e9     # Ku-band downlink 12 GHz
+        lam_vhf1 = C_LIGHT / f_vhf1  # ~5.71 m -> half-wave dipole ~2.86 m
+        lam_uhf = C_LIGHT / f_uhf    # ~0.50 m -> half-wave dipole ~0.25 m
+        lam_c = C_LIGHT / f_c        # ~7.49 cm
+        lam_ku = C_LIGHT / f_ku      # ~2.50 cm
+        assert 5.6 < lam_vhf1 < 5.8 and 0.49 < lam_uhf < 0.51
+        assert 0.074 < lam_c < 0.076 and 0.024 < lam_ku < 0.026
+
+        # Ku-band FSPL over slant range d = 38,000 km:
+        d_sat = 38_000_000.0
+        fspl_ku_db = 20.0 * math.log10(4.0 * math.pi * d_sat / lam_ku)
+        assert 205.0 < fspl_ku_db < 206.2
+        # Parabolic dish gain for D = 0.45 m Ku dish (efficiency eta = 0.60):
+        gain_45cm_dbi = 10.0 * math.log10(0.60 * (math.pi * 0.45 / lam_ku) ** 2)
+        assert 32.5 < gain_45cm_dbi < 33.5
+
+        els = header(
+            "小时候屋顶的“鱼骨天线”收的是卫星吗？——“天地二级接力”与三种电视接收方式",
+            "鱼骨天线对准的是县城地面发射塔（米波/分米波），真正直收 3.6 万公里卫星的是金属抛物面“锅”！",
+        )
+
+        # Top Wide Card: Two-stage Satellite -> County Station -> Rooftop Yagi Relay
+        els.append(card(20, 62, 720, 152))
+        els.append(
+            txt(
+                36,
+                85,
+                "① 为什么家里没装大锅，竹竿天线也能看中央台？—— 80–90 年代“卫星到县台、高塔进万家”二级接力",
+                PANEL_TITLE,
+                INK,
+                weight="700",
+            )
+        )
+
+        # 4 relay nodes across x=36..724
+        nodes = [
+            (36, 150, "1. 北京上行站", "9–12 m 大锅上星", "C/Ku 波段发射", PURPLE, PURPLE_SOFT),
+            (212, 152, "2. 赤道静止卫星", "高空 35,786 km", "落地功率仅皮瓦/m²", ORANGE, ORANGE_SOFT),
+            (390, 162, "3. 县广电局/山顶塔", "3–5 m 大锅收星", "换 VHF/UHF 强功率发射", BLUE, BLUE_SOFT),
+            (578, 146, "4. 屋顶竹竿鱼骨", "水平对准县城铁塔！", "收 30–70 km 地面波", GREEN, GREEN_SOFT),
+        ]
+        for nx, nw, t1, t2, t3, col, bg in nodes:
+            els.append(card(nx, 100, nw, 80, rx=8, fill=bg, stroke=col, sw=1.5))
+            els.append(txt(nx + nw / 2, 121, t1, 10.8, col, "middle", weight="700"))
+            els.append(txt(nx + nw / 2, 142, t2, 10.1, INK, "middle", weight="600"))
+            els.append(txt(nx + nw / 2, 162, t3, 9.8, BODY, "middle"))
+
+        # Relay arrows between nodes
+        els.append(_line(188, 140, 208, 140, stroke=ORANGE, sw=2.0, marker="arr-orange"))
+        els.append(_line(366, 140, 386, 140, stroke=ORANGE, sw=2.0, marker="arr-orange"))
+        els.append(_line(554, 140, 574, 140, stroke=BLUE, sw=2.2, marker="arr-blue"))
+
+        els.append(
+            txt(
+                380,
+                201,
+                f"关键区别：第 2→3 步跨越 3.8 万公里（Ku 路径损耗 {fspl_ku_db:.1f} dB）必须靠大锅聚焦；第 3→4 步已是本地大功率米波广播！",
+                10.1,
+                SLATE,
+                "middle",
+                weight="600",
+            )
+        )
+
+        # Bottom 3 Columns: Comparing the 3 household TV interfaces
+        cols = [
+            (
+                20,
+                "② 竹竿鱼骨 / 兔耳天线",
+                "收【本地地面塔】· 非卫星",
+                BLUE,
+                BLUE_SOFT,
+                [
+                    ("工作频段", "VHF/UHF 48.5–860 MHz"),
+                    ("电磁波长", f"0.35–6.2 m（半波振子数分米）"),
+                    ("方向对准", "水平指向几十公里内电视塔"),
+                    ("典型痛点", "怕群山阻挡、高楼反射重影"),
+                    ("演进结局", "2020 年底模拟关停 → DTMB 数字"),
+                ],
+            ),
+            (
+                264,
+                "③ 院子金属“大锅 / 小锅”",
+                "真·直收【赤道同步卫星】",
+                ORANGE,
+                ORANGE_SOFT,
+                [
+                    ("工作频段", "C 波段 4 GHz / Ku 12 GHz"),
+                    ("电磁波长", "2.5–7.5 cm（微波直穿电离层）"),
+                    ("核心部件", f"抛物面聚波 (+{gain_45cm_dbi:.0f} dBi) + 高频头"),
+                    ("典型痛点", "Ku 小锅遇暴雨易“雨衰”马赛克"),
+                    ("代表工程", "中星 9 号“村村通 / 户户通”"),
+                ],
+            ),
+            (
+                508,
+                "④ 墙上圆孔（有线 CATV）",
+                "把射频天空【关进屏蔽铜缆】",
+                GREEN,
+                GREEN_SOFT,
+                [
+                    ("工作频段", "电缆内 50–860+ MHz 射频"),
+                    ("传输介质", "75 Ω 同轴电缆 + 光纤干线 HFC"),
+                    ("信号源头", "市/县有线前端机房统一收星打包"),
+                    ("核心优势", "无视高楼遮挡，一口气排几十个台"),
+                    ("演进结局", "DVB-C 数字机顶盒 / 光纤 IPTV"),
+                ],
+            ),
+        ]
+
+        for cx, ctitle, csub, col, bg, rows in cols:
+            cw, cy, ch = 232, 226, 202
+            els.append(card(cx, cy, cw, ch))
+            els.append(txt(cx + 14, cy + 23, ctitle, 12.0, col, weight="700"))
+            els.append(pill(cx + 14, cy + 33, csub, fg=col, bg=bg, w=204, h=20, size=10.1))
+            for r_idx, (k_lbl, v_lbl) in enumerate(rows):
+                ry = cy + 74 + r_idx * 27
+                if r_idx > 0:
+                    els.append(_line(cx + 12, ry - 15, cx + cw - 12, ry - 15, stroke=HAIRLINE, sw=0.9))
+                els.append(txt(cx + 14, ry, f"{k_lbl}：", 9.9, INK, weight="700"))
+                els.append(txt(cx + 68, ry, v_lbl, 9.8, BODY))
+
+        return figure(
+            442,
+            "电视信号天地二级接力链路与鱼骨天线、卫星锅、有线电视三种接收方式对比图",
+            "上图展示北京上行站经35786公里赤道静止卫星传至县广电局大锅、再由本地电视塔用VHF/UHF向周边广播的二级接力；下图分三栏对比八木鱼骨天线（收地面塔米波）、抛物面卫星锅加LNB高频头（直收C/Ku微波）与有线电视同轴电缆。",
+            els,
+        )
+
+    def _build_horizon_ghosting_snow():
+        """SVG 2: Radio horizon + multipath ghosting math + Analog snow vs Digital cliff curve."""
+        # 1. Radio horizon with 4/3 effective Earth radius (k=4/3 -> coeff ~ 4.12 km / sqrt(m))
+        h_tower_m = 200.0
+        h_pole_m = 9.0
+        d_horizon_km = 4.12 * (math.sqrt(h_tower_m) + math.sqrt(h_pole_m))
+        assert 70.0 < d_horizon_km < 71.2
+
+        # 2. Multipath ghosting delay: extra path delta_d = 600 m -> 2.0 us -> 2/52 = 3.85% active width
+        delta_d_m = 600.0
+        delta_t_us = (delta_d_m / C_LIGHT) * 1e6
+        active_line_us = 52.0
+        ghost_shift_pct = (delta_t_us / active_line_us) * 100.0
+        assert 1.99 < delta_t_us < 2.01 and 3.80 < ghost_shift_pct < 3.90
+
+        els = header(
+            "为什么要绑高竹竿、转天线、拍电视？—— 视距遮挡、大楼重影与“雪花 vs 悬崖”",
+            "左：地球曲率限制与 2 微秒反射重影几何账；右：模拟电视渐变起雪花 vs 数字电视“悬崖效应”",
+        )
+
+        # ---------------- Left Panel: Horizon + Multipath Ghosting ----------------
+        els.append(card(20, 62, 366, 368))
+        els.append(txt(34, 85, "① 地球曲率视距与高楼反射“重影”算账", PANEL_TITLE, INK, weight="700"))
+
+        # Sub-box 1A: Curved Earth radio horizon
+        els.append(card(34, 98, 338, 134, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(46, 117, f"A. 为什么超过 ~70 km 收不到台？（地球是圆的！）", 10.6, BLUE, weight="700"))
+        # Earth arc
+        els.append('<path d="M 48,206 Q 203,162 356,208" fill="#dbeafe" stroke="#64748b" stroke-width="1.6"/>')
+        # Tower at left (x=82, base y=195, top y=135)
+        els.append(_line(82, 195, 82, 134, stroke=BLUE, sw=2.6))
+        els.append(f'<circle cx="82" cy="132" r="3.5" fill="{BLUE}"/>')
+        els.append(txt(82, 221, "200m 电视塔", 9.5, BLUE, "middle", weight="700"))
+
+        # Tangent ray touching horizon and shooting off into sky past ~70 km
+        els.append(_line(82, 133, 256, 180, stroke=GREEN, sw=1.9, marker="arr-green"))
+        els.append(_line(256, 180, 348, 205, stroke=RED, sw=1.5, dash="4 3"))
+        # Bamboo pole house at x=256 (base y=184, top y=168)
+        els.append(_line(256, 186, 256, 168, stroke=GREEN, sw=2.2))
+        els.append(txt(248, 162, "9m 竹竿可达 ~70.6 km", 9.6, GREEN, "middle", weight="700", halo=True))
+        els.append(txt(322, 186, "更远处被地平线挡住", 9.4, RED, "middle", weight="600", halo=True))
+        els.append(txt(242, 223, "视距：d ≈ 4.12×(√h塔 + √h杆) km", 9.5, SLATE, "middle", cls="mono"))
+
+        # Sub-box 1B: Building reflection ghosting
+        els.append(card(34, 244, 338, 172, rx=8, fill="#ffffff", stroke=BLUE))
+        els.append(txt(46, 262, "B. 为什么人脸上会叠一个“透明重影”？（多径延迟）", 10.5, ORANGE, weight="700"))
+
+        # Direct path vs Building bounce schematic
+        els.append(card(48, 288, 56, 42, rx=6, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(76, 306, "发射塔", 9.8, BLUE, "middle", weight="700"))
+        els.append(txt(76, 321, "信号源", 9.3, MUTED, "middle"))
+
+        els.append(card(168, 284, 62, 28, rx=5, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(199, 302, "侧面高楼/山体", 9.4, ORANGE, "middle", weight="700"))
+
+        els.append(card(276, 288, 82, 42, rx=6, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(317, 306, "显像管右移", 9.7, INK, "middle", weight="700"))
+        els.append(txt(317, 321, f"重影 +{ghost_shift_pct:.1f}%", 9.5, ORANGE, "middle", weight="700"))
+
+        # Direct solid green arrow & reflected dashed orange arrow
+        els.append(_line(106, 315, 272, 315, stroke=GREEN, sw=2.1, marker="arr-green"))
+        els.append(txt(190, 329, "① 直达波（先到）", 9.4, GREEN, "middle", weight="700"))
+        els.append(f'<path d="M 106,299 L 166,296 M 232,296 L 272,302" fill="none" stroke="{ORANGE}" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#arr-orange)"/>')
+        els.append(txt(199, 279, "② 绕远 Δd=600m 晚到 2μs", 9.3, ORANGE, "middle", weight="700"))
+
+        els.append(txt(46, 348, "• 显像管画一行画面仅需 52 μs；反射波晚到 2 μs，电子束已", 10.0, BODY))
+        els.append(txt(46, 366, f"  往右扫出 {ghost_shift_pct:.1f}% 屏宽，于是同一张脸在右边再印出淡影！", 10.0, BODY))
+        els.append(txt(46, 386, "• 转动八木鱼骨天线：用主瓣对准直达波、零深避开侧面反射楼。", 10.0, BLUE, weight="600"))
+        els.append(txt(46, 405, "• 拍电视能好？拍好的是机内发热氧化的虚焊触点，不是电磁波！", 9.9, SLATE, weight="600"))
+
+        # ---------------- Right Panel: Analog Snow vs Digital Cliff ----------------
+        els.append(card(398, 62, 342, 368))
+        els.append(txt(412, 85, "② 信号变弱时：模拟渐变雪花 vs 数字悬崖", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(412, 104, "横轴：接收信噪比 SNR (dB)｜纵轴：主观画面完好度", 10.2, MUTED))
+
+        gx0, gx1 = 446.0, 718.0  # width 272, SNR from 0 to 32 dB
+        gy0, gy1 = 126.0, 286.0  # height 160, 100% at gy0, 0% at gy1
+
+        def sx(snr_db):
+            return gx0 + (snr_db / 32.0) * (gx1 - gx0)
+
+        def qy(qual_pct):
+            return gy1 - (qual_pct / 100.0) * (gy1 - gy0)
+
+        # Gridlines
+        for q_v in (0, 50, 100):
+            yy = qy(q_v)
+            els.append(_line(gx0, yy, gx1, yy, stroke=BORDER if q_v < 100 else HAIRLINE, sw=1.0, dash="3 3" if q_v == 50 else None))
+            els.append(txt(gx0 - 6, yy + 4, f"{q_v}%", 9.8, MUTED, "end", cls="mono"))
+
+        for snr_v in (0, 8, 14, 22, 30):
+            xx = sx(snr_v)
+            els.append(_line(xx, gy0, xx, gy1, stroke=HAIRLINE, sw=0.9, dash="2 3"))
+            els.append(txt(xx, gy1 + 15, f"{snr_v}dB", 9.6, MUTED, "middle", cls="mono"))
+
+        els.append(_line(gx0, gy0, gx0, gy1, stroke=SLATE, sw=1.2))
+        els.append(_line(gx0, gy1, gx1, gy1, stroke=SLATE, sw=1.2))
+
+        # Curve 1: Analog AM TV quality (smooth degradation with thermal snow)
+        analog_pts = []
+        digital_pts = []
+        for i in range(81):
+            snr = 32.0 * (i / 80.0)
+            # Analog: gradual rise ~ 100 * (1 - exp(-snr/11.5)) * (snr / (snr + 3.5))
+            q_ana = 96.0 * (1.0 - math.exp(-snr / 10.5)) * (snr / (snr + 3.0))
+            # Digital QAM + LDPC FEC: sharp cliff centered at ~12.5 dB
+            q_dig = 100.0 / (1.0 + math.exp(-3.2 * (snr - 12.5)))
+            analog_pts.append((sx(snr), qy(q_ana)))
+            digital_pts.append((sx(snr), qy(q_dig)))
+
+        assert analog_pts[25][1] < digital_pts[25][1]  # At 10 dB, analog ~52% snowy but watchable; digital ~0%!
+        assert digital_pts[45][1] < analog_pts[45][1]  # At 18 dB, digital = 100% perfect; analog still ~79% slightly grainy!
+
+        # Highlight cliff zone around 11.5 - 13.5 dB
+        els.append(
+            f'<rect x="{sx(11.2):.1f}" y="{gy0:.1f}" width="{sx(13.8) - sx(11.2):.1f}" height="{gy1 - gy0:.1f}" '
+            f'fill="{RED_SOFT}" opacity="0.75"/>'
+        )
+        els.append(_poly(analog_pts, stroke=ORANGE, sw=2.6, dash="6 3"))
+        els.append(_poly(digital_pts, stroke=BLUE, sw=2.8))
+
+        els.append(txt(sx(23.5), qy(93), "数字电视：过门限即 100% 高清", 9.9, BLUE, "middle", weight="700", halo=True))
+        els.append(txt(sx(24.0), qy(68), "模拟电视：渐变雪花", 9.9, ORANGE, "middle", weight="700", halo=True))
+        els.append(txt(sx(6.2), qy(46), "满屏雪花仍能听声", 9.6, ORANGE, "middle", weight="600", halo=True))
+        els.append(txt(sx(6.2), qy(12), "数字跌落：黑屏/马赛克", 9.6, RED, "middle", weight="700", halo=True))
+
+        # Bottom takeaway box in Right Panel
+        els.append(card(412, 312, 314, 104, rx=8, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(424, 331, "为什么老电视只有“雪花点”，从不会“转圈缓冲”？", 10.6, ORANGE, weight="700"))
+        els.append(txt(424, 350, "• 模拟调幅直接拿【实时电压高低 = 像素明暗】；信号弱时，", 10.0, BODY))
+        els.append(txt(424, 368, "  空气与电路里的随机热噪声叠在波形上，立刻画成黑白雪花！", 10.0, BODY))
+        els.append(txt(424, 386, "• 它没有数据包、没有重传协议、更没有内存，光速到即刻画；", 10.0, BODY))
+        els.append(txt(424, 404, "  而数字电视纠错码一旦超出极限（~12 dB），瞬间跌落悬崖。", 10.0, INK, weight="600"))
+
+        return figure(
+            444,
+            "地面电视地球曲率视距、高楼多径反射重影与模拟雪花对数字悬崖效应对比图",
+            f"左图计算200米发射塔配9米竹竿天线的电波视距约{d_horizon_km:.1f}公里，以及600米大楼反射路程差带来2微秒延迟导致CRT画面右移{ghost_shift_pct:.1f}%产生重影；右图对比模拟电视随信噪比下降渐变起雪花与数字电视在约12.5dB门限处的悬崖效应。",
+            els,
+        )
+
+    def _build_phone_3khz_vs_tv_8mhz():
+        """SVG 3: 3.1 kHz dial-up phone line vs 8,000 kHz PAL-D/K TV channel & VSB spectrum."""
+        b_phone_khz = 3.1       # 300 - 3400 Hz voice passband
+        b_tv_khz = 8000.0       # 8 MHz China System D/K channel
+        ratio_bw = b_tv_khz / b_phone_khz
+        assert 2580.0 < ratio_bw < 2581.0
+
+        # PAL-D/K exact carrier offsets relative to Vision Carrier f_V = 0 MHz:
+        f_low_edge = -1.25
+        f_high_edge = +6.75
+        assert math.isclose(f_high_edge - f_low_edge, 8.0)
+        f_pal_sub = (283.75 * 15625.0 + 25.0) / 1e6  # 4.43361875 MHz
+        assert math.isclose(f_pal_sub, 4.43361875, rel_tol=1e-9)
+        f_audio = 6.50  # +6.5 MHz FM audio offset in China PAL-D/K
+
+        els = header(
+            "凭什么 56k 拨号上网开张图都卡，老电视却能看流畅视频？—— 车道宽了 2,580 倍！",
+            "电话线被语音滤波器卡死在 3.1 kHz 窄胡同；而空中一个电视频道独占整整 8,000 kHz（8 MHz）高速路！",
+        )
+
+        # ---------------- Top Card: Highway Width Comparison ----------------
+        els.append(card(20, 62, 720, 140))
+        els.append(
+            txt(
+                36,
+                85,
+                f"① 物理频谱带宽对比：1 个无线电视频道 (8,000 kHz) ≈ {ratio_bw:,.0f} 条传统电话语音通道 (3.1 kHz)！",
+                PANEL_TITLE,
+                INK,
+                weight="700",
+            )
+        )
+
+        # Row 1: Dial-up phone copper voice passband
+        els.append(txt(36, 116, "90年代电话拨号猫", 10.8, RED, weight="700"))
+        els.append(txt(36, 133, "(300–3,400 Hz 窄缝)", 9.8, MUTED))
+        bx0, bw_max = 178.0, 540.0
+        els.append(f'<rect x="{bx0}" y="103" width="{bw_max}" height="28" rx="5" fill="{SLATE_SOFT}" stroke="{BORDER}"/>')
+        # True proportional width of 3.1/8000 * 540 = 0.21 px! Draw hair-thin red slit + callout
+        els.append(f'<rect x="{bx0 + 2}" y="103" width="3.0" height="28" fill="{RED}"/>')
+        els.append(
+            txt(
+                bx0 + 14,
+                121,
+                "← 按真实比例仅 0.2 像素细丝！净宽 B = 3.1 kHz → 香农极限封死 56 kbps（半分钟才爬完一张照片）",
+                10.1,
+                RED,
+                weight="700",
+            )
+        )
+
+        # Row 2: Single China PAL-D/K TV RF Channel (8 MHz)
+        els.append(txt(36, 165, "老电视 1 个无线频道", 10.8, BLUE, weight="700"))
+        els.append(txt(36, 182, "(如 1 频道 48.5–56.5MHz)", 9.8, MUTED))
+        els.append(f'<rect x="{bx0}" y="150" width="{bw_max}" height="32" rx="6" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.8"/>')
+        els.append(
+            txt(
+                bx0 + bw_max / 2,
+                170,
+                "独占整条 B = 8,000 kHz (8 MHz) 射频大道！每秒可承载数百万次明暗电压起伏（且全城共享不拥堵）",
+                10.3,
+                BLUE,
+                "middle",
+                weight="700",
+            )
+        )
+
+        # ---------------- Bottom Card: Anatomy of China's 8 MHz PAL-D/K Channel ----------------
+        els.append(card(20, 214, 720, 216))
+        els.append(
+            txt(
+                36,
+                237,
+                "② 解剖中国 PAL-D/K 模拟电视 8 MHz 频道：三大省带宽绝招（残留边带 + 亮色交错 + 调频伴音）",
+                PANEL_TITLE,
+                INK,
+                weight="700",
+            )
+        )
+
+        sx0, sx1 = 68.0, 708.0  # spans f_rel from -1.5 MHz to +7.0 MHz (8.5 MHz span)
+        sy_top, sy_base = 272.0, 368.0
+
+        def fx(f_mhz):
+            return sx0 + ((f_mhz - (-1.5)) / 8.5) * (sx1 - sx0)
+
+        # Channel boundary box [-1.25, +6.75] = 8.0 MHz
+        els.append(
+            f'<rect x="{fx(-1.25):.1f}" y="{sy_top - 10}" width="{fx(6.75) - fx(-1.25):.1f}" height="{sy_base - sy_top + 10:.1f}" '
+            f'fill="#f8fafc" stroke="{SLATE}" stroke-width="1.2" stroke-dasharray="4 3"/>'
+        )
+        els.append(
+            txt(
+                (fx(-1.25) + fx(6.75)) / 2,
+                sy_top - 15,
+                "◀━━━━━━━━━━ 1 个标准中国电视频道总宽度 = 8.0 MHz（从 -1.25 到 +6.75 MHz）━━━━━━━━━━▶",
+                9.9,
+                SLATE,
+                "middle",
+                weight="700",
+            )
+        )
+
+        # 1) Luminance Y + VSB envelope: (-1.25,0)->(-0.75,1)->(+6.0,1)->(+6.2,0)
+        luma_poly = [
+            (fx(-1.25), sy_base),
+            (fx(-0.75), sy_top + 18),
+            (fx(6.00), sy_top + 18),
+            (fx(6.18), sy_base),
+        ]
+        d_luma = "M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in luma_poly) + " Z"
+        els.append(f'<path d="{d_luma}" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="2.0"/>')
+
+        # Chopped lower sideband ghost (-6.0 to -1.25 schematic note on left)
+        els.append(
+            f'<rect x="{fx(-1.25):.1f}" y="{sy_top + 38}" width="{fx(0.0) - fx(-1.25):.1f}" height="{sy_base - (sy_top + 38):.1f}" '
+            f'fill="{ORANGE_SOFT}" opacity="0.75"/>'
+        )
+        els.append(txt(fx(-0.62), sy_top + 60, "残留边带", 9.6, ORANGE, "middle", weight="700"))
+        els.append(txt(fx(-0.62), sy_top + 75, "VSB 省4.75MHz", 9.1, ORANGE, "middle", weight="600"))
+
+        # 2) PAL Color Subcarrier U/V dome centered at +4.4336 MHz (width ~ +-1.3 MHz -> 3.13..5.73 MHz)
+        chroma_pts = []
+        for i in range(41):
+            u = -1.3 + 2.6 * (i / 40.0)
+            f_c_pt = f_pal_sub + u
+            h_c = 56.0 * math.cos((u / 1.3) * (math.pi / 2.0)) ** 1.5
+            chroma_pts.append((fx(f_c_pt), sy_base - h_c))
+        d_chroma = f"M {fx(f_pal_sub - 1.3):.1f},{sy_base:.1f} L " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in chroma_pts) + f" L {fx(f_pal_sub + 1.3):.1f},{sy_base:.1f} Z"
+        els.append(f'<path d="{d_chroma}" fill="{PURPLE_SOFT}" stroke="{PURPLE}" stroke-width="1.8"/>')
+
+        # 3) Vision carrier spike at 0 MHz & PAL subcarrier at +4.43 MHz & FM Audio spike at +6.5 MHz
+        els.append(_line(fx(0.0), sy_base, fx(0.0), sy_top + 2, stroke=BLUE, sw=3.0, marker="arr-blue"))
+        els.append(txt(fx(0.0) + 6, sy_top + 11, "图像载波 f_V (0 MHz)", 9.8, BLUE, weight="700", halo=True))
+
+        els.append(_line(fx(f_pal_sub), sy_base, fx(f_pal_sub), sy_top + 24, stroke=PURPLE, sw=2.4))
+        els.append(txt(fx(f_pal_sub), sy_top + 36, "彩色副载波 +4.43 MHz", 9.7, PURPLE, "middle", weight="700", halo=True))
+        els.append(txt(fx(f_pal_sub), sy_top + 52, "(色度U/V嵌进亮度缝隙)", 9.2, PURPLE, "middle", halo=True))
+
+        els.append(txt(fx(2.05), sy_top + 44, "黑白亮度信号 Y（0–6 MHz）", 10.2, BLUE, "middle", weight="700"))
+        els.append(txt(fx(2.05), sy_top + 62, "人眼对明暗极敏感，给足 6 MHz", 9.6, BODY, "middle"))
+
+        # FM Sound dome + carrier at +6.5 MHz
+        els.append(f'<path d="M {fx(6.28):.1f},{sy_base:.1f} Q {fx(6.50):.1f},{sy_top + 28:.1f} {fx(6.72):.1f},{sy_base:.1f} Z" fill="{GREEN_SOFT}" stroke="{GREEN}" stroke-width="1.8"/>')
+        els.append(_line(fx(f_audio), sy_base, fx(f_audio), sy_top + 6, stroke=GREEN, sw=2.6, marker="arr-green"))
+        els.append(txt(fx(6.35), sy_top + 12, "FM 伴音 +6.5MHz", 9.7, GREEN, "end", weight="700", halo=True))
+
+        # Baseline & frequency ticks
+        els.append(_line(sx0 - 8, sy_base, sx1 + 8, sy_base, stroke=SLATE, sw=1.4))
+        for ftick, flbl in [(-1.25, "-1.25"), (0.0, "0 (f_V)"), (2.0, "+2.0"), (4.43, "+4.43"), (6.0, "+6.0"), (6.5, "+6.5"), (6.75, "+6.75 MHz")]:
+            tx = fx(ftick)
+            els.append(_line(tx, sy_base, tx, sy_base + 5, stroke=SLATE, sw=1.1))
+            anch = "start" if ftick == 6.75 else ("end" if ftick == 6.0 else "middle")
+            els.append(txt(tx, sy_base + 18, flbl, 9.4, MUTED, anch, cls="mono"))
+
+        els.append(
+            txt(
+                380,
+                413,
+                "精妙兼容：1950s 黑白电视照收 0–6 MHz 亮度 Y；1970s 彩电从 +4.43 MHz 缝隙解出色彩，两代电视同看一套广播！",
+                10.0,
+                INK,
+                "middle",
+                weight="600",
+            )
+        )
+
+        return figure(
+            442,
+            "3.1千赫电话拨号通道与8兆赫中国PAL-D/K模拟电视频道频谱结构对比图",
+            f"上图对比3.1kHz传统电话语音窄带（56kbps上限）与宽达{ratio_bw:,.0f}倍的8000kHz无线电视频道；下图解剖中国PAL-D/K频道内-1.25MHz残留边带VSB、0至6MHz亮度信号Y、+4.4336MHz正交调幅彩色副载波与+6.5MHz调频伴音载波。",
+            els,
+        )
+
+    def _build_crt_raster_interlace_scan():
+        """SVG 4: 64 us 1D raster scan waveform + 2:1 interlaced scanning with single-run beam animation."""
+        lines_per_frame = 625
+        frames_per_s = 25
+        fields_per_s = 50
+        line_freq_hz = lines_per_frame * frames_per_s  # 15,625 Hz
+        line_period_us = 1e6 / line_freq_hz            # 64.0 us
+        blanking_us = 12.0
+        active_us = 52.0
+        assert line_freq_hz == 15_625 and math.isclose(line_period_us, 64.0)
+        assert math.isclose(blanking_us + active_us, line_period_us)
+        # 275 black/white cycles across 52 us active line -> 5.288 MHz <= 6 MHz visual bandwidth
+        max_cycles = 275.0
+        bw_needed_mhz = max_cycles / active_us
+        assert 5.28 < bw_needed_mhz < 5.30
+
+        els = header(
+            "没有芯片和内存怎么传动态画面？—— 64 微秒电子束扫描与“隔行扫描”省流术",
+            "把二维画面切成每秒 15,625 根一维亮暗波形；再分奇偶两场交替画，用一半带宽消除了 25 Hz 闪烁！",
+        )
+
+        # ---------------- Left Panel: CRT Raster + 64 us Composite Line Waveform ----------------
+        els.append(card(20, 62, 372, 372))
+        els.append(txt(34, 85, "① 二维变一维：每行 64 μs 的“同步头 + 明暗电压”", PANEL_TITLE, INK, weight="700"))
+
+        # Mini CRT screen showing horizontal scan lines + animated electron spot
+        scr_x, scr_y, scr_w, scr_h = 40.0, 98.0, 332.0, 118.0
+        els.append(f'<rect x="{scr_x}" y="{scr_y}" width="{scr_w}" height="{scr_h}" rx="10" fill="#0f172a" stroke="{SLATE}" stroke-width="2"/>')
+        # Brightness gradient bar on highlighted scan line y_hl = 156 to match waveform below!
+        y_hl = 156.0
+        for seg_i, (seg_col, seg_lbl) in enumerate([("#1e293b", "暗"), ("#94a3b8", "灰"), ("#f8fafc", "亮白"), ("#475569", "灰暗")]):
+            sx_seg = scr_x + 18 + seg_i * 74
+            els.append(f'<rect x="{sx_seg}" y="{y_hl - 6}" width="72" height="12" rx="2" fill="{seg_col}"/>')
+            txt_c = "#0f172a" if seg_i == 2 else "#f8fafc"
+            els.append(txt(sx_seg + 36, y_hl + 4, seg_lbl, 9.2, txt_c, "middle", weight="700"))
+
+        # Other raster scan lines + flyback dashed lines
+        for r_y in (114, 130, 178, 194):
+            els.append(_line(scr_x + 18, r_y, scr_x + scr_w - 18, r_y, stroke="#38bdf8", sw=1.2, opacity=0.65))
+        els.append(_line(scr_x + scr_w - 18, 130, scr_x + 18, y_hl, stroke="#fb923c", sw=1.1, dash="3 3", opacity=0.8))
+
+        # Animated electron beam trace along highlighted line y_hl (single-run, ends visible at right end)
+        els.append(
+            f'<line x1="{scr_x + 18}" y1="{y_hl}" x2="{scr_x + scr_w - 22}" y2="{y_hl}" '
+            f'stroke="#38bdf8" stroke-width="2.6" pathLength="1" class="beam-line"/>'
+        )
+        els.append(f'<circle cx="{scr_x + scr_w - 22}" cy="{y_hl}" r="5" fill="#38bdf8" stroke="#ffffff" stroke-width="1.5" class="beam-dot"/>')
+        els.append(txt(scr_x + 18, scr_y + 15, "电子束从左往右扫一行 (52 μs) · 虚线消隐回扫 (12 μs)", 9.4, "#e2e8f0", weight="600"))
+        els.append(txt(scr_x + scr_w - 16, scr_y + 108, "625行×25帧 = 15,625行/秒", 9.3, "#93c5fd", "end", cls="mono"))
+
+        # Bottom of Left Panel: Exact 64 us Composite Video Waveform
+        wx0, wx1 = 54.0, 372.0  # 0 to 64 us -> 318 px
+        wy_white, wy_black, wy_sync = 252.0, 332.0, 366.0
+
+        def tx_us(t_u):
+            return wx0 + (t_u / 64.0) * (wx1 - wx0)
+
+        # Reference level lines
+        els.append(_line(wx0, wy_white, wx1, wy_white, stroke=HAIRLINE, sw=1.0, dash="3 3"))
+        els.append(_line(wx0, wy_black, wx1, wy_black, stroke=SLATE, sw=1.1, dash="3 3"))
+        els.append(_line(wx0, wy_sync, wx0 + 80, wy_sync, stroke=RED, sw=1.0, dash="2 2"))
+        els.append(txt(wx0 - 4, wy_white + 4, "+0.7V白", 8.8, MUTED, "end", cls="mono"))
+        els.append(txt(wx0 - 4, wy_black + 4, "0V消隐", 8.8, SLATE, "end", cls="mono"))
+        els.append(txt(wx0 - 4, wy_sync + 4, "-0.3V", 8.8, RED, "end", cls="mono"))
+
+        # Build exact composite line waveform:
+        # 0..1.5 front porch (0V), 1.5..6.2 H-sync (-0.3V), 6.2..12.0 back porch with color burst,
+        # 12.0..64.0 active video matching [dark -> mid gray -> bright white -> mid-dark]
+        wf_pts = [
+            (tx_us(0.0), wy_black),
+            (tx_us(1.5), wy_black),
+            (tx_us(1.5), wy_sync),
+            (tx_us(6.2), wy_sync),
+            (tx_us(6.2), wy_black),
+            (tx_us(7.0), wy_black),
+        ]
+        # Color burst wiggle (7.0..9.5 us)
+        for bi in range(11):
+            bt = 7.0 + bi * 0.23
+            by = wy_black + (9.0 if bi % 2 == 0 else -9.0)
+            wf_pts.append((tx_us(bt), by))
+        wf_pts += [
+            (tx_us(9.8), wy_black),
+            (tx_us(12.0), wy_black),
+            # Seg 1 dark (12..25 us)
+            (tx_us(13.0), wy_black - 12),
+            (tx_us(24.5), wy_black - 14),
+            # Seg 2 gray (25..38 us)
+            (tx_us(26.0), wy_black - 42),
+            (tx_us(37.5), wy_black - 44),
+            # Seg 3 bright white (38..51 us)
+            (tx_us(39.0), wy_white + 2),
+            (tx_us(50.5), wy_white + 2),
+            # Seg 4 gray-dark (51..64 us)
+            (tx_us(52.0), wy_black - 28),
+            (tx_us(63.0), wy_black - 26),
+            (tx_us(64.0), wy_black),
+        ]
+        els.append(_poly(wf_pts, stroke=BLUE, sw=2.3))
+
+        # Span labels under waveform
+        els.append(_line(tx_us(0), 382, tx_us(12), 382, stroke=RED, sw=1.6))
+        els.append(_line(tx_us(12), 382, tx_us(64), 382, stroke=BLUE, sw=1.8))
+        els.append(txt(tx_us(6), 397, "12μs 消隐", 9.2, RED, "middle", weight="700"))
+        els.append(txt(tx_us(39.5), 397, "52 μs 有效图像电压（最高 275 周 ≈ 5.3 MHz）", 9.3, BLUE, "middle", weight="700"))
+        els.append(txt(tx_us(8.4), 316, "色同步", 8.9, PURPLE, "middle", weight="700"))
+        els.append(txt(34, 421, "秘密：负脉冲“同步头”像指挥棒，强迫千家万户电子枪跟摄像机同起同落！", 9.6, INK, weight="600"))
+
+        # ---------------- Right Panel: 2:1 Interlaced Scanning ----------------
+        els.append(card(404, 62, 336, 372))
+        els.append(txt(418, 85, "② 2:1 隔行扫描（50i）：带宽省一半还不闪！", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(418, 105, "难题：每秒 25 帧全画人眼觉得闪烁；画 50 帧带宽又要翻倍到 12 MHz", 9.8, MUTED))
+
+        # Odd Field (Field 1) + Even Field (Field 2) -> Combined Perception
+        # Box A: Odd field
+        els.append(card(418, 118, 146, 126, rx=8, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(491, 137, "第 1 场：奇数行", 10.5, BLUE, "middle", weight="700"))
+        els.append(txt(491, 152, "(0 → 20 ms · 1/50 秒)", 9.3, SLATE, "middle", cls="mono"))
+        for idx_l in range(1, 7):
+            ly = 162 + idx_l * 11
+            if idx_l % 2 == 1:
+                els.append(_line(432, ly, 550, ly, stroke=BLUE, sw=2.4))
+                els.append(txt(428, ly + 3, str(idx_l), 8.6, BLUE, "end", cls="mono"))
+            else:
+                els.append(_line(432, ly, 550, ly, stroke=BORDER, sw=1.0, dash="2 3"))
+
+        # Box B: Even field
+        els.append(card(578, 118, 148, 126, rx=8, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(652, 137, "第 2 场：偶数行", 10.5, ORANGE, "middle", weight="700"))
+        els.append(txt(652, 152, "(20 → 40 ms · 1/50 秒)", 9.3, SLATE, "middle", cls="mono"))
+        for idx_l in range(1, 7):
+            ly = 162 + idx_l * 11
+            if idx_l % 2 == 0:
+                els.append(_line(592, ly, 712, ly, stroke=ORANGE, sw=2.4))
+                els.append(txt(588, ly + 3, str(idx_l), 8.6, ORANGE, "end", cls="mono"))
+            else:
+                els.append(_line(592, ly, 712, ly, stroke=BORDER, sw=1.0, dash="2 3"))
+
+        # Merge arrow into human eye persistence + CRT phosphor box
+        els.append(_line(491, 246, 548, 268, stroke=BLUE, sw=1.8, marker="arr-blue"))
+        els.append(_line(652, 246, 596, 268, stroke=ORANGE, sw=1.8, marker="arr-orange"))
+
+        els.append(card(418, 272, 308, 148, rx=8, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(572, 293, "荧光粉余辉 + 人眼视觉暂留 = 50 Hz 丝滑合成！", 10.8, GREEN, "middle", weight="700"))
+        for idx_l in range(1, 7):
+            ly = 304 + idx_l * 9
+            col_l = BLUE if idx_l % 2 == 1 else ORANGE
+            els.append(_line(446, ly, 698, ly, stroke=col_l, sw=2.2))
+        els.append(txt(430, 382, "• 真实数据量：每秒只传 25 幅完整 625 行（守住 6 MHz 带宽）", 9.7, BODY))
+        els.append(txt(430, 400, "• 视觉刷新率：每秒整屏亮 50 次（跨过 ~45 Hz 闪烁门限）", 9.7, INK, weight="700"))
+        els.append(txt(430, 415, "• 遗产：今天视频里的 1080i / 576i 字母 i 就来自 Interlaced！", 9.5, SLATE))
+
+        extra_css = """
+      .beam-line {
+        stroke-dasharray: 1;
+        stroke-dashoffset: 0;
+        animation: scanSweep 1.8s ease-out 1 both;
+      }
+      .beam-dot {
+        animation: dotPulse 1.8s ease-out 1 both;
+      }
+      @keyframes scanSweep {
+        0% { stroke-dashoffset: 1; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes dotPulse {
+        0% { opacity: 0.35; }
+        50% { opacity: 1.0; }
+        100% { opacity: 1.0; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .beam-line, .beam-dot { animation: none; }
+      }"""
+
+        return figure(
+            448,
+            "CRT显像管64微秒逐行扫描电压波形与2比1隔行扫描省带宽机制图",
+            "左图展示电子束在CRT荧光屏上按每秒15625行扫描，每行64微秒由12微秒行同步消隐（含-0.3V同步脉冲和色同步摆动）与52微秒明暗电压波形组成；右图展示奇数场与偶数场各用20毫秒交替扫描，以25帧带宽实现50Hz无闪烁刷新。",
+            els,
+            extra_css=extra_css,
+        )
+
+    def _build_digital_compression_shannon_mux():
+        """SVG 5: Raw 1.5 Gbps -> 6 Mbps H.264/HEVC compression + 8 MHz DTMB / 36 MHz DVB-S2 mux."""
+        # Raw 1080p50 (1920x1080, 24-bit RGB, 50 fps) vs 1080i50 (4:2:2 16-bit, 25 fps = HD-SDI ~1.485 Gbps)
+        raw_1080p50_mbps = 1920 * 1080 * 24 * 50 / 1e6     # 2488.32 Mbps
+        raw_hdsdi_mbps = 1485.0                              # SMPTE 292M 1080i50 studio uncompressed
+        coded_hd_mbps = 6.0                                  # H.264 / AVS+ / HEVC broadcast HD
+        comp_ratio = raw_hdsdi_mbps / coded_hd_mbps          # ~247.5x
+        assert 2480 < raw_1080p50_mbps < 2495 and 240 < comp_ratio < 255
+
+        # DTMB 8 MHz channel net bitrate (~24-32 Mbps; typical 64QAM FEC 0.6/0.8 ~ 27.1 Mbps)
+        dtmb_net_mbps = 27.1
+        hd_channels_per_8mhz = int(dtmb_net_mbps // 4.5)     # 6 HD channels at ~4.5 Mbps stat-mux!
+        assert hd_channels_per_8mhz == 6
+
+        els = header(
+            "进入数字高清时代：1.5 Gbps 原画怎么塞进同一个 8 MHz 频道还能装 6 个台？",
+            "左手靠视频编码把冗余榨干 250 倍；右手靠高阶正交调制把 8 MHz 车道撑出近 30 Mbps 净吞吐！",
+        )
+
+        # ---------------- Left Panel: 250x Video Compression ----------------
+        els.append(card(20, 62, 356, 370))
+        els.append(txt(34, 85, "① 视频压缩奇迹：不传整张图，只传“哪里动了”", PANEL_TITLE, INK, weight="700"))
+
+        # Raw vs Compressed bitrate bars
+        els.append(card(34, 98, 328, 92, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(46, 118, f"演播室未压缩高清 (1080i50 HD-SDI)：{raw_hdsdi_mbps:,.0f} Mbps", 10.1, RED, weight="700"))
+        els.append(f'<rect x="46" y="126" width="302" height="16" rx="4" fill="{RED}"/>')
+        els.append(txt(197, 138, "每秒涌出 ~186 MB 原始像素，8 MHz 天线根本装不下！", 9.3, "#ffffff", "middle", weight="700"))
+
+        els.append(txt(46, 160, f"H.264 / H.265 / AVS2 编码后：仅 ~{coded_hd_mbps:.0f} Mbps（瘦身 ~{comp_ratio:.0f} 倍！）", 10.1, GREEN, weight="700"))
+        # Proportional width: 302 * (6 / 1485) = 1.22 px -> draw crisp 6 px green bar + callout
+        els.append(f'<rect x="46" y="166" width="6.0" height="16" rx="2" fill="{GREEN}"/>')
+        els.append(txt(58, 178, "← 按比例仅一丁点绿条！画质肉眼几乎无差", 9.6, GREEN, weight="700"))
+
+        # I-frame -> P/B-frame motion compensation diagram
+        els.append(card(34, 202, 328, 138, rx=8, fill="#ffffff", stroke=BLUE))
+        els.append(txt(46, 222, "为什么能压 200 多倍？—— 空间变换 + 帧间预测", 10.5, BLUE, weight="700"))
+
+        # Frame I vs Frame P1 vs Frame P2 boxes
+        els.append(card(46, 234, 92, 68, rx=6, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(92, 252, "I 帧（关键帧）", 9.8, BLUE, "middle", weight="700"))
+        els.append(txt(92, 268, "完整演播室背景", 9.2, BODY, "middle"))
+        els.append(txt(92, 283, "+ 主持人全身", 9.2, BODY, "middle"))
+
+        els.append(_line(140, 268, 156, 268, stroke=BLUE, sw=1.6, marker="arr-blue"))
+
+        els.append(card(160, 234, 92, 68, rx=6, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(206, 252, "P 帧（预测帧）", 9.8, GREEN, "middle", weight="700"))
+        els.append(txt(206, 268, "95% 背景直接抄", 9.2, GREEN, "middle", weight="600"))
+        els.append(txt(206, 283, "只传嘴型运动 Δv", 9.2, INK, "middle", weight="700"))
+
+        els.append(_line(254, 268, 268, 268, stroke=GREEN, sw=1.6, marker="arr-green"))
+
+        els.append(card(272, 234, 78, 68, rx=6, fill=PURPLE_SOFT, stroke=PURPLE))
+        els.append(txt(311, 252, "B 帧（双向）", 9.6, PURPLE, "middle", weight="700"))
+        els.append(txt(311, 268, "前后夹击插值", 9.1, BODY, "middle"))
+        els.append(txt(311, 283, "体积再省大半", 9.1, PURPLE, "middle", weight="600"))
+
+        els.append(txt(46, 323, "• 空间去冗余（DCT/整数变换）：大片蓝天地板只记几个低频系数", 9.7, BODY))
+
+        # Bottom summary note in Left Panel
+        els.append(card(34, 350, 328, 68, rx=8, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(46, 370, "两步接力打通任督二脉：", 10.4, GREEN, weight="700"))
+        els.append(txt(46, 388, "第 1 步（信源编码）把 1,485 Mbps 压成 4.5–6 Mbps 精炼比特流；", 9.8, BODY))
+        els.append(txt(46, 405, "第 2 步（信道调制）把这串 0 和 1 装进无线电波发射出去！", 9.8, BODY))
+
+        # ---------------- Right Panel: Same 8 MHz Pipe, 1 Analog -> 6 HD Digital! ----------------
+        els.append(card(388, 62, 352, 370))
+        els.append(txt(402, 85, "② 信道复用：同样 8 MHz 车道，容量翻天覆地", PANEL_TITLE, INK, weight="700"))
+
+        # Era 1: 1980s Analog PAL-D/K (8 MHz -> 1 SD snowy channel)
+        els.append(card(402, 98, 324, 86, rx=8, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(414, 118, "A. 旧时代模拟地面电视（PAL-D/K · 8 MHz 频道）", 10.5, ORANGE, weight="700"))
+        els.append(f'<rect x="414" y="128" width="300" height="28" rx="5" fill="{ORANGE}"/>')
+        els.append(txt(564, 146, "整条 8 MHz 只能装【1 套标清台】（稍远还起雪花）", 9.9, "#ffffff", "middle", weight="700"))
+        els.append(txt(414, 173, "2020 年底中国全面关停地面模拟信号，腾出黄金频谱（如 700 MHz 5G）", 9.4, SLATE))
+
+        # Era 2: China DTMB (GB 20600-2006, SAME 8 MHz -> ~27 Mbps -> 6 HD channels!)
+        els.append(card(402, 196, 324, 118, rx=8, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(414, 216, "B. 中国地面数字电视 DTMB（同样 8 MHz 频道！）", 10.5, BLUE, weight="700"))
+        els.append(txt(414, 234, "64QAM 星座图（每符号带 6 bit）+ LDPC 纠错 ≈ 24–32 Mbps：", 9.7, BODY))
+        slot_w = 47.0
+        for ch_i in range(hd_channels_per_8mhz):
+            sx_ch = 414 + ch_i * 50.5
+            els.append(f'<rect x="{sx_ch:.1f}" y="244" width="{slot_w}" height="32" rx="4" fill="{BLUE}"/>')
+            els.append(txt(sx_ch + slot_w / 2, 258, f"高清{ch_i + 1}", 9.2, "#ffffff", "middle", weight="700"))
+            els.append(txt(sx_ch + slot_w / 2, 271, "~4.5M", 8.5, "#dbeafe", "middle", cls="mono"))
+        els.append(txt(414, 298, "一根普通室内/室外天线免费收看多套 1080i/p 央视与本地高清！", 9.7, BLUE, weight="700"))
+
+        # Era 3: Satellite Ku Transponder (36 MHz -> ~60 Mbps -> dozens of channels)
+        els.append(card(402, 326, 324, 92, rx=8, fill=PURPLE_SOFT, stroke=PURPLE))
+        els.append(txt(414, 346, "C. 直播卫星 1 个 Ku 转发器（宽 36 MHz · 中星 9 号系列）", 10.4, PURPLE, weight="700"))
+        els.append(txt(414, 366, "• 单转发器净荷达 ~54–66 Mbps，可打包 10+ 套高清或几十套标清；", 9.8, BODY))
+        els.append(txt(414, 385, "• 一颗卫星装 20–30+ 个转发器 = 总下行超 1.5 Gbps，一举让偏远", 9.8, BODY))
+        els.append(txt(414, 403, "  深山牧区“户户通”免费看上上百套数字广播电视节目！", 9.8, PURPLE, weight="700"))
+
+        return figure(
+            446,
+            "高清视频250倍帧间预测压缩与8兆赫DTMB及36兆赫卫星转发器多路复用对比图",
+            f"左图对比1485Mbps演播室未压缩高清信号与经I/P/B帧运动补偿压缩至约6Mbps的码率（压缩约{comp_ratio:.0f}倍）；右图对比同样8MHz地面频道在模拟PAL时代仅容1套标清台、在DTMB数字时代（约27Mbps）可复用6套高清台，以及36MHz卫星转发器约60Mbps吞吐能力。",
+            els,
+        )
+
+    def _build_broadcast_vs_unicast_scaling():
+        """SVG 6: Broadcast O(1) vs Internet Unicast O(N) scaling for 1 billion Spring Festival Gala viewers."""
+        per_user_mbps = 6.0
+        # Compare total network/airwave traffic at N = 1, 10^3, 10^6, 10^8 viewers
+        bcast_airwave_mhz = 8.0
+        unicast_1m_tbps = (1_000_000 * per_user_mbps) / 1e6  # 6.0 Tbps!
+        unicast_100m_tbps = (100_000_000 * per_user_mbps) / 1e6  # 600 Tbps!
+        assert math.isclose(unicast_1m_tbps, 6.0) and math.isclose(unicast_100m_tbps, 600.0)
+
+        els = header(
+            "终极秘密：为什么除夕十亿人同看春晚，天线电视永不卡顿，网络直播却怕挤爆？",
+            "广播电视是“大喇叭一对亿万”O(1) 频谱恒定；互联网视频是“快递员一对一专送”O(N) 流量随人数暴涨！",
+        )
+
+        # ---------------- Left Panel: Broadcast O(1) ----------------
+        els.append(card(20, 62, 354, 360))
+        els.append(txt(34, 85, "① 无线电/卫星“广播 (Broadcast)”：O(1) 开销", 12.2, GREEN, weight="700"))
+
+        # Concentric wave rings from central tower/satellite to many homes
+        tcx, tcy = 197.0, 174.0
+        for rad in (28, 52, 76):
+            els.append(f'<circle cx="{tcx}" cy="{tcy}" r="{rad}" fill="none" stroke="{GREEN}" stroke-width="1.4" stroke-dasharray="5 4" opacity="0.7"/>')
+        els.append(f'<circle cx="{tcx}" cy="{tcy}" r="18" fill="{GREEN_SOFT}" stroke="{GREEN}" stroke-width="2"/>')
+        els.append(txt(tcx, tcy + 4, "发射塔", 9.6, GREEN, "middle", weight="700"))
+
+        # 6 passive receiver badges around the concentric electromagnetic wave
+        rx_angles = [25, 85, 145, 205, 265, 325]
+        for idx_a, ang in enumerate(rx_angles):
+            rr = math.radians(ang)
+            hx = tcx + 92.0 * math.cos(rr)
+            hy = tcy - 62.0 * math.sin(rr)
+            els.append(f'<rect x="{hx - 24:.1f}" y="{hy - 10:.1f}" width="48" height="20" rx="5" fill="#ffffff" stroke="{GREEN}" stroke-width="1.3"/>')
+            els.append(txt(hx, hy + 4, f"电视#{idx_a + 1}", 8.9, INK, "middle", weight="600"))
+
+        els.append(card(34, 262, 326, 146, rx=8, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(46, 283, "边际带宽成本 = 0 bit/s！", 11.0, GREEN, weight="700"))
+        els.append(txt(46, 303, "• 1 个人开机看：占用空中 8 MHz 频道；", 10.1, BODY))
+        els.append(txt(46, 322, "• 10 亿人同时开机看春晚：还是同一道 8 MHz 电磁波！", 10.1, INK, weight="700"))
+        els.append(txt(46, 341, "• 电视机只收不发（单向下行），发射塔根本不知道、也不在乎", 10.0, BODY))
+        els.append(txt(46, 359, "  山下有几亿根天线在接水——所以永远不存在“服务器挤爆”！", 10.0, BODY))
+        els.append(txt(46, 384, "• 唯一代价：所有人必须同一秒看同一个台，不能独自拖进度条。", 9.8, SLATE, weight="600"))
+
+        # ---------------- Right Panel: Unicast O(N) ----------------
+        els.append(card(386, 62, 354, 360))
+        els.append(txt(400, 85, "② 互联网视频“单播 (Unicast)”：O(N) 乘法洪峰", PANEL_TITLE, ORANGE, weight="700"))
+
+        # CDN / 5G Base station sending N separate individual pipes to each phone/TV
+        scx, scy = 456.0, 174.0
+        els.append(card(412, 138, 88, 72, rx=8, fill=ORANGE_SOFT, stroke=ORANGE, sw=1.8))
+        els.append(txt(scx, 162, "CDN 节点 /", 9.9, ORANGE, "middle", weight="700"))
+        els.append(txt(scx, 178, "小区基站", 9.9, ORANGE, "middle", weight="700"))
+        els.append(txt(scx, 196, "(容量有限)", 9.2, RED, "middle", weight="600"))
+
+        users = [
+            (604, 114, "手机A：看直播 6 Mbps"),
+            (604, 146, "平板B：退回2分钟 6 Mbps"),
+            (604, 178, "电视C：4K 弹幕流 15 Mbps"),
+            (604, 210, "手机D：刷短视频 6 Mbps"),
+            (604, 242, "…… 第 N 个用户 × 6 Mbps！"),
+        ]
+        for ux, uy, ulbl in users:
+            els.append(_line(502, scy, ux - 6, uy, stroke=ORANGE, sw=1.6, marker="arr-orange"))
+            els.append(f'<rect x="{ux}" y="{uy - 11}" width="122" height="22" rx="5" fill="#ffffff" stroke="{ORANGE}" stroke-width="1.2"/>')
+            els.append(txt(ux + 61, uy + 4, ulbl, 8.8, INK, "middle", weight="600"))
+
+        els.append(card(400, 262, 326, 146, rx=8, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(412, 283, "每多 1 个人点开，全网就要多跑一路专属数据流！", 10.6, RED, weight="700"))
+        els.append(txt(412, 303, f"• 100 万人同看 1080p (6 Mbps) = {unicast_1m_tbps:.0f} Tbps 骨干/CDN 洪峰；", 10.0, BODY))
+        els.append(txt(412, 322, f"• 1 亿人同看 = {unicast_100m_tbps:.0f} Tbps！（必须靠全国上千个边缘 CDN 分摊）", 10.0, INK, weight="700"))
+        els.append(txt(412, 341, "• 体育场/春晚高峰时，几千部手机争抢同一座基站的有限频谱，", 10.0, BODY))
+        els.append(txt(412, 359, "  丢包重传与缓冲区见底就会弹出熟悉的“转圈加载中……”", 10.0, BODY))
+        els.append(txt(412, 384, "• 折中智慧：运营商 IPTV 直播频道常走“组播 Multicast”省带宽！", 9.8, BLUE, weight="700"))
+
+        return figure(
+            436,
+            "无线电卫星一对亿万广播O(1)与互联网视频一对一单播O(N)带宽扩展对比图",
+            f"左图展示广播电视发射一次8MHz电磁波即可供1台至10亿台电视同时接收，边际带宽为零；右图展示互联网单播需为每位观众建立独立数据流（100万人同看6Mbps高清即需{unicast_1m_tbps:.0f}Tbps，1亿人达{unicast_100m_tbps:.0f}Tbps），解释为何天线电视从不转圈缓冲。",
+            els,
+        )
+
+    @register("tv-antenna-bandwidth", "屋顶鱼骨天线与卫星锅原理、8MHz模拟电视频谱、CRT隔行扫描、视频压缩与广播单播对比图解", "science_tech")
+    def build_tv_antenna_bandwidth():
+        write_svg(SUBDIR, "three-tv-antennas-relay.svg", _build_three_tv_antennas_relay())
+        write_svg(SUBDIR, "horizon-ghosting-snow.svg", _build_horizon_ghosting_snow())
+        write_svg(SUBDIR, "phone-3khz-vs-tv-8mhz.svg", _build_phone_3khz_vs_tv_8mhz())
+        write_svg(SUBDIR, "crt-raster-interlace-scan.svg", _build_crt_raster_interlace_scan())
+        write_svg(SUBDIR, "digital-compression-shannon-mux.svg", _build_digital_compression_shannon_mux())
+        write_svg(SUBDIR, "broadcast-vs-unicast-scaling.svg", _build_broadcast_vs_unicast_scaling())
+
+
+_register_tv_antenna_bandwidth()
+
+
+def _register_lactose_intolerance():
+    """6 computed 760px SVGs for the Lactose Intolerance physiology, chemistry & evolution post."""
+    SUBDIR = "lactose-intolerance"
+    RED = "#dc2626"
+    RED_SOFT = "#fef2f2"
+    AMBER = "#b45309"
+    AMBER_SOFT = "#fffbeb"
+    TEAL = "#0f766e"
+    TEAL_SOFT = "#f0fdfa"
+
+    def _line(x1, y1, x2, y2, stroke=HAIRLINE, sw=1.5, dash=None, marker=None, opacity=None):
+        attrs = [
+            f'x1="{x1:.1f}"',
+            f'y1="{y1:.1f}"',
+            f'x2="{x2:.1f}"',
+            f'y2="{y2:.1f}"',
+            f'stroke="{stroke}"',
+            f'stroke-width="{sw}"',
+        ]
+        if dash:
+            attrs.append(f'stroke-dasharray="{dash}"')
+        if marker:
+            attrs.append(f'marker-end="url(#{marker})"')
+        if opacity is not None:
+            attrs.append(f'opacity="{opacity}"')
+        return f'<line {" ".join(attrs)}/>'
+
+    def _poly(pts, stroke=BLUE, sw=2.2, fill="none", dash=None, cls=None, opacity=None):
+        d = "M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
+        extra = ""
+        if dash:
+            extra += f' stroke-dasharray="{dash}"'
+        if cls:
+            extra += f' class="{cls}"'
+        if opacity is not None:
+            extra += f' opacity="{opacity}"'
+        return f'<path d="{d}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}" stroke-linecap="round" stroke-linejoin="round"{extra}/>'
+
+    def _hex_ring(cx, cy, r, fill, stroke, sw=1.8):
+        pts = [
+            (cx + r * math.cos(math.radians(60 * k - 30)), cy + r * math.sin(math.radians(60 * k - 30)))
+            for k in range(6)
+        ]
+        d = "M " + " L ".join(f"{px:.1f},{py:.1f}" for px, py in pts) + " Z"
+        return f'<path d="{d}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"/>'
+
+    def _build_lactose_lock_brush_border():
+        """SVG 1: Brush-border monosaccharide checkpoint & beta-1,4 glycosidic bond hydrolysis."""
+        m_lactose = 342.297
+        m_water = 18.015
+        m_hexose = 180.156
+        assert math.isclose(m_lactose + m_water, 2.0 * m_hexose, abs_tol=0.01)
+
+        els = header(
+            "小肠绒毛刷状缘的“单糖安检门”：为什么乳糖不剪断就一步也进不了血液？",
+            "小肠上皮细胞只给 6 碳单糖发通行证；12 碳乳糖必须先由刷状缘乳糖酶 LPH 剪开 β-1,4 糖苷键！",
+        )
+
+        # ---------------- Left Panel: Lactase Sufficient ----------------
+        els.append(card(20, 62, 354, 372))
+        els.append(txt(34, 85, "① 乳糖酶充足（婴儿期 / 成年耐受者）", PANEL_TITLE, GREEN, weight="700"))
+
+        # Lumen zone
+        els.append(card(34, 96, 326, 98, rx=8, fill=BLUE_SOFT, stroke=BLUE_LINE))
+        els.append(txt(46, 114, "小肠腔（空肠段 pH ≈ 6.0，37 °C）", 9.8, BLUE, weight="700"))
+
+        # Intact lactose disaccharide on top-left of lumen
+        els.append(_hex_ring(92, 148, 20, PURPLE_SOFT, PURPLE))
+        els.append(txt(92, 152, "半乳糖", 9.2, PURPLE, "middle", weight="700"))
+        # Upward beta-1,4 glycosidic bond bridge
+        els.append('<path d="M 110,142 L 126,130 L 142,142" fill="none" stroke="#dc2626" stroke-width="2.2"/>')
+        els.append(txt(126, 125, "β-1,4键", 8.8, RED, "middle", weight="700"))
+        els.append(_hex_ring(160, 148, 20, "#dbeafe", BLUE))
+        els.append(txt(160, 152, "葡萄糖", 9.2, BLUE, "middle", weight="700"))
+        els.append(txt(126, 182, "乳糖 C₁₂H₂₂O₁₁ (342.3) + H₂O (18.0)", 9.2, INK, "middle", weight="600"))
+
+        # Arrow to LPH enzyme & cleaved products
+        els.append(_line(188, 148, 224, 148, stroke=GREEN, sw=2.0, marker="arr-green"))
+        els.append(txt(206, 139, "水解", 9.0, GREEN, "middle", weight="700"))
+
+        els.append(_hex_ring(256, 146, 18, PURPLE_SOFT, PURPLE))
+        els.append(txt(256, 150, "半乳糖", 8.9, PURPLE, "middle", weight="700"))
+        els.append(txt(285, 150, "+", 11.5, GREEN, "middle", weight="700"))
+        els.append(_hex_ring(314, 146, 18, "#dbeafe", BLUE))
+        els.append(txt(314, 150, "葡萄糖", 8.9, BLUE, "middle", weight="700"))
+        els.append(txt(285, 182, "2 颗单糖 (各 180.16 g/mol)", 9.2, GREEN, "middle", weight="700"))
+
+        # Microvilli brush border & Enterocyte layer
+        els.append(card(34, 204, 326, 102, rx=8, fill=GREEN_SOFT, stroke=GREEN))
+        # Brush border enzyme badge anchored at top edge
+        els.append(pill(64, 195, "✂ 刷状缘乳糖酶 LPH (Glu-1749)", fg=GREEN, bg="#ffffff", w=186, h=20, size=9.6))
+        els.append(txt(46, 232, "小肠绒毛上皮细胞（细胞间由“紧密连接”焊死）", 9.8, INK, weight="700"))
+
+        # Two SGLT1 gates open
+        els.append(card(218, 244, 128, 48, rx=6, fill="#ffffff", stroke=GREEN, sw=1.5))
+        els.append(txt(282, 263, "SGLT1 转运蛋白放行", 9.6, GREEN, "middle", weight="700"))
+        els.append(txt(282, 281, "(借 Na⁺ 浓度梯度同向入胞)", 8.9, BODY, "middle"))
+        els.append(_line(256, 186, 256, 240, stroke=GREEN, sw=1.8, marker="arr-green"))
+        els.append(_line(314, 186, 314, 240, stroke=GREEN, sw=1.8, marker="arr-green"))
+
+        # Left side note inside enterocyte
+        els.append(txt(46, 258, "• 基因开关持续开启", 9.5, BODY))
+        els.append(txt(46, 276, "• 边剪断、边入胞", 9.5, BODY))
+        els.append(txt(46, 294, "• 吸收率接近 100%", 9.5, GREEN, weight="700"))
+
+        # Capillary bloodstream
+        els.append(card(34, 316, 326, 40, rx=7, fill="#fef2f2", stroke="#f87171"))
+        els.append(_line(282, 294, 282, 314, stroke=GREEN, sw=1.8, marker="arr-green"))
+        els.append(txt(197, 340, "绒毛毛细血管 → 门静脉入肝（血糖平缓升高、供给全身与脑发育）", 9.5, RED, "middle", weight="700"))
+
+        # Outcome footer
+        els.append(card(34, 366, 326, 54, rx=7, fill="#ffffff", stroke=GREEN))
+        els.append(txt(46, 386, "✅ 结局：小肠前半程即彻底吸收，几乎 0 g 乳糖漏入大肠；", 9.8, GREEN, weight="700"))
+        els.append(txt(46, 406, "肠道等渗平和、不抽水、不产气，喝鲜奶安然无恙。", 9.6, BODY))
+
+        # ---------------- Right Panel: Lactase Non-Persistent ----------------
+        els.append(card(386, 62, 354, 372))
+        els.append(txt(400, 85, "② 乳糖酶缺失（断奶后默认态 / 乳糖不耐受）", PANEL_TITLE, ORANGE, weight="700"))
+
+        # Lumen zone
+        els.append(card(400, 96, 326, 98, rx=8, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(412, 114, "小肠腔：乳糖酶表达下调 75%–90%+，缺了专用剪刀！", 9.8, ORANGE, weight="700"))
+
+        # Intact lactose stays locked
+        els.append(_hex_ring(462, 148, 20, PURPLE_SOFT, PURPLE))
+        els.append(txt(462, 152, "半乳糖", 9.2, PURPLE, "middle", weight="700"))
+        els.append('<path d="M 480,142 L 496,130 L 512,142" fill="none" stroke="#dc2626" stroke-width="2.4"/>')
+        els.append(txt(496, 125, "锁死!", 8.9, RED, "middle", weight="700"))
+        els.append(_hex_ring(530, 148, 20, "#dbeafe", BLUE))
+        els.append(txt(530, 152, "葡萄糖", 9.2, BLUE, "middle", weight="700"))
+
+        # Bounced onward to colon!
+        els.append(_line(558, 148, 708, 148, stroke=RED, sw=2.2, dash="5,3", marker="arr-orange"))
+        els.append(txt(634, 136, "原封不动冲向大肠 →", 9.5, RED, "middle", weight="700"))
+        els.append(txt(634, 168, "(滞留肠腔高渗拉水)", 9.1, ORANGE, "middle", weight="600"))
+        els.append(txt(496, 183, "双糖直径过大，无法直接过膜", 9.1, BODY, "middle"))
+
+        # Bare enterocyte layer blocking entry
+        els.append(card(400, 204, 326, 102, rx=8, fill=SLATE_SOFT, stroke=SLATE, dash="4,3"))
+        els.append(pill(428, 195, "✕ 刷状缘缺乏乳糖酶（麦芽糖酶/蔗糖酶剪不动 β 键）", fg=RED, bg="#ffffff", w=268, h=20, size=9.3))
+        els.append(txt(412, 232, "小肠绒毛上皮细胞：两道防线同时拒收双糖！", 9.8, INK, weight="700"))
+
+        els.append(card(414, 244, 142, 48, rx=6, fill="#ffffff", stroke=RED, sw=1.3))
+        els.append(txt(485, 263, "✕ SGLT1 安检口拒收", 9.4, RED, "middle", weight="700"))
+        els.append(txt(485, 281, "卡槽只认单环，不认双环", 8.9, BODY, "middle"))
+
+        els.append(card(568, 244, 144, 48, rx=6, fill="#ffffff", stroke=SLATE, sw=1.3))
+        els.append(txt(640, 263, "✕ 紧密连接严密封死", 9.4, SLATE, "middle", weight="700"))
+        els.append(txt(640, 281, "水溶性双糖钻不过细胞缝", 8.9, BODY, "middle"))
+
+        # Capillary flat glucose
+        els.append(card(400, 316, 326, 40, rx=7, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(563, 340, "绒毛毛细血管：没有单糖入血（口服乳糖后血糖曲线平直 <20 mg/dL）", 9.3, MUTED, "middle", weight="600"))
+
+        # Outcome footer
+        els.append(card(400, 366, 326, 54, rx=7, fill=RED_SOFT, stroke=RED))
+        els.append(txt(412, 386, "⚠️ 结局：整颗乳糖跨过回盲瓣涌入结肠，", 9.8, RED, weight="700"))
+        els.append(txt(412, 406, "30–120 分钟内引爆“物理渗透抽水 + 厌氧菌产气”双重风暴！", 9.6, BODY, weight="600"))
+
+        return figure(
+            446,
+            "小肠刷状缘单糖安检门与乳糖β-1,4糖苷键水解机制对比图",
+            "左图展示乳糖酶LPH在空肠刷状缘将1分子乳糖(342.3g/mol)加1分子水拆解为葡萄糖与半乳糖(各180.16g/mol)，经SGLT1顺利吸收入血；右图展示乳糖酶缺失时双糖被SGLT1与紧密连接拒之门外，原封不动涌入结肠。",
+            els,
+        )
+
+    def _build_gut_osmotic_fermentation_cascade():
+        """SVG 2: Osmotic water influx + colonic fermentation gas cascade + computed H2 breath curve (animated)."""
+        # Quantitative check for 500 mL milk (~24 g lactose):
+        lactose_g = 24.0
+        n_mmol = (lactose_g / 342.297) * 1000.0  # 70.11 mmol
+        iso_mosm_l = 290.0
+        water_hold_min_ml = (n_mmol / iso_mosm_l) * 1000.0        # ~241.8 mL
+        water_hold_max_ml = (3.0 * n_mmol / iso_mosm_l) * 1000.0  # ~725.3 mL after cleavage/SCFA split
+        pi_kpa = (n_mmol / 1000.0) * 8.31446 * 310.15             # ~180.8 kPa per L if undiluted
+        assert 70.0 < n_mmol < 70.3
+        assert 240.0 < water_hold_min_ml < 245.0 and 720.0 < water_hold_max_ml < 730.0
+        assert 180.0 < pi_kpa < 182.0
+
+        # Hydrogen breath test curve after 25 g fasting lactose load (0..180 min)
+        times_min = [0, 30, 60, 90, 120, 150, 180]
+        h2_tol_ppm = [4, 5, 6, 5, 5, 4, 4]
+        h2_intol_ppm = [4, 8, 29, 58, 52, 34, 21]
+        diag_line_ppm = h2_intol_ppm[0] + 20  # 24 ppm (+20 ppm above baseline)
+        assert max(h2_intol_ppm) - h2_intol_ppm[0] >= 20 and max(h2_tol_ppm) - h2_tol_ppm[0] < 10
+
+        extra_css = """
+  @keyframes cascadeGlow {
+    0% { stroke-dashoffset: 220; opacity: 0.35; }
+    100% { stroke-dashoffset: 0; opacity: 1; }
+  }
+  .cascade-track {
+    stroke-dasharray: 220;
+    stroke-dashoffset: 0;
+    animation: cascadeGlow 3.2s ease-out 1 forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .cascade-track {
+      animation: none !important;
+      stroke-dashoffset: 0 !important;
+      opacity: 1 !important;
+    }
+  }
+"""
+
+        els = header(
+            "喝完冰牛奶半小时，肚子里到底发生了什么？——“渗透抽水 + 菌群产气”双重暴击",
+            "左：24 g 未消化乳糖（约 500 mL 牛奶）在肠腔引发的物理与生化连锁反应；右：临床氢呼气试验曲线",
+        )
+
+        # ---------------- Left Panel: 3-Stage Gut Cascade ----------------
+        els.append(card(20, 62, 404, 386))
+        els.append(txt(34, 85, "① 30–120 分钟肠道连锁风暴（以空腹喝 500 mL 奶为例）", PANEL_TITLE, INK, weight="700"))
+
+        # Connecting animated vertical spine on left margin of cards
+        els.append(
+            f'<path d="M 48,142 L 48,386" fill="none" stroke="{ORANGE}" stroke-width="3.2" '
+            f'stroke-linecap="round" class="cascade-track"/>'
+        )
+
+        # Stage 1: Osmotic water pull
+        els.append(card(64, 98, 346, 102, rx=8, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(step_badge(48, 134, 1, fg=BLUE, bg="#ffffff"))
+        els.append(txt(76, 118, f"第一击（物理抽水）：范特霍夫渗透压 Π = cRT", 10.6, BLUE, weight="700"))
+        els.append(
+            txt(
+                76,
+                138,
+                f"• 24 g 乳糖 = {n_mmol:.1f} mmol 溶质滞留肠腔，人体体液维持 290 mOsm/L 等渗；",
+                9.6,
+                BODY,
+            )
+        )
+        els.append(
+            txt(
+                76,
+                157,
+                f"• 光靠原分子及裂解小分子，就从肠壁血管反向拽出 {water_hold_min_ml:.0f}–{water_hold_max_ml:.0f} mL 水！",
+                9.6,
+                INK,
+                weight="700",
+            )
+        )
+        els.append(txt(76, 177, "• 大量液体激荡冲刷肠腔 → 听见“咕噜咕噜”肠鸣音，诱发渗透性水样腹泻。", 9.5, ORANGE, weight="600"))
+
+        # Stage 2: Colonic bacterial fermentation
+        els.append(card(64, 212, 346, 112, rx=8, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(step_badge(48, 256, 2, fg=ORANGE, bg="#ffffff"))
+        els.append(txt(76, 232, "第二击（生化发酵）：结肠 10¹³ 厌氧菌开启“免费自助餐”", 10.6, ORANGE, weight="700"))
+        els.append(txt(76, 252, "• 结肠双歧杆菌、大肠杆菌亮出微生物 β-半乳糖苷酶 (lacZ) 飞速拆糖；", 9.6, BODY))
+        els.append(txt(76, 271, "• 产物 A（短链脂肪酸 + 乳酸）：乙酸/丙酸/丁酸使婴幼儿粪便酸化 (pH < 5.5)，", 9.5, BODY))
+        els.append(txt(76, 289, "  结肠虽能回收部分短链脂肪酸救急，但过快发酵会令渗透压再翻 3 倍！", 9.5, BODY))
+        els.append(txt(76, 309, "• 产物 B（混合气体）：狂冒无味 H₂、CO₂（及部分人 CH₄）→ 腹胀、痉挛与排气！", 9.5, RED, weight="700"))
+
+        # Stage 3: Blood diffusion -> Breath test
+        els.append(card(64, 336, 346, 98, rx=8, fill=PURPLE_SOFT, stroke=PURPLE))
+        els.append(step_badge(48, 382, 3, fg=PURPLE, bg="#ffffff"))
+        els.append(txt(76, 356, "第三步（破案铁证）：约 15%–20% 游离氢气透入血液 → 肺部呼出", 10.5, PURPLE, weight="700"))
+        els.append(txt(76, 376, "• 人类自身细胞代谢绝不产生半颗 H₂ 分子！呼气里只要检出高浓度氢气，", 9.5, BODY))
+        els.append(txt(76, 395, "  100% 说明有糖没被小肠吸收、掉进大肠喂了细菌！", 9.6, INK, weight="700"))
+        els.append(txt(76, 415, "• 抵达结肠时间恰好约 45–90 分钟 → 完美解释为何喝完奶半小时到两小时发作。", 9.4, SLATE, weight="600"))
+
+        # ---------------- Right Panel: Computed H2 Breath Curve ----------------
+        els.append(card(436, 62, 304, 386))
+        els.append(txt(450, 85, "② 氢呼气试验曲线 (口服 25 g 乳糖)", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(450, 104, "呼气 H₂ 浓度 (ppm)", 9.6, MUTED, weight="600"))
+
+        gx0, gx1 = 482.0, 720.0
+        gy0, gy1 = 304.0, 122.0  # y0 = 0 ppm, y1 = 70 ppm
+
+        def _px(t_m):
+            return gx0 + (t_m / 180.0) * (gx1 - gx0)
+
+        def _py(ppm):
+            return gy0 - (ppm / 70.0) * (gy0 - gy1)
+
+        # Gridlines & axes
+        for y_val in (0, 20, 40, 60):
+            yy = _py(y_val)
+            els.append(_line(gx0, yy, gx1, yy, stroke=HAIRLINE, sw=0.9, dash="3,3" if y_val > 0 else None))
+            els.append(txt(gx0 - 7, yy + 3.5, f"{y_val}", 9.2, MUTED, "end"))
+
+        for t_val in (0, 60, 120, 180):
+            xx = _px(t_val)
+            els.append(_line(xx, gy0, xx, gy0 + 4, stroke=SLATE, sw=1.1))
+            els.append(txt(xx, gy0 + 17, f"{t_val}分", 9.2, MUTED, "middle"))
+
+        els.append(_line(gx0, gy1, gx0, gy0, stroke=SLATE, sw=1.3))
+        els.append(_line(gx0, gy0, gx1, gy0, stroke=SLATE, sw=1.3))
+
+        # Diagnostic threshold line (+20 ppm above 4 ppm baseline = 24 ppm)
+        yd = _py(diag_line_ppm)
+        els.append(_line(gx0, yd, gx1, yd, stroke=RED, sw=1.5, dash="5,3"))
+        els.append(txt(gx0 + 6, yd - 6, "阳性红线：较基线升高 ≥ 20 ppm", 9.1, RED, weight="700"))
+
+        # Tolerant curve (dashed green)
+        pts_tol = [(_px(t), _py(v)) for t, v in zip(times_min, h2_tol_ppm)]
+        els.append(_poly(pts_tol, stroke=GREEN, sw=2.2, dash="5,3"))
+        els.append(txt(_px(135), _py(5) - 8, "乳糖耐受者 (<10 ppm)", 9.2, GREEN, "middle", weight="700"))
+
+        # Intolerant curve (solid orange-red + dots + cascade-track)
+        pts_intol = [(_px(t), _py(v)) for t, v in zip(times_min, h2_intol_ppm)]
+        els.append(_poly(pts_intol, stroke=ORANGE, sw=2.6, cls="cascade-track"))
+        for px_i, py_i in pts_intol:
+            els.append(f'<circle cx="{px_i:.1f}" cy="{py_i:.1f}" r="3.4" fill="#ffffff" stroke="{ORANGE}" stroke-width="2"/>')
+        els.append(txt(_px(98), _py(58) - 9, "乳糖吸收不良峰值 (58 ppm)", 9.3, ORANGE, "middle", weight="700"))
+
+        # Clinical caveats card
+        els.append(card(450, 336, 276, 98, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(462, 356, "临床判读两个精妙细节：", 10.0, INK, weight="700"))
+        els.append(txt(462, 375, "1. 吸收不良 ≠ 不耐受：仅当 H₂ 达标且伴随腹胀/", 9.2, BODY))
+        els.append(txt(462, 391, "   腹泻症状，才确诊临床“乳糖不耐受”；", 9.2, BODY))
+        els.append(txt(462, 409, "2. 约 35% 人群产甲烷古菌把 H₂ 转成 CH₄，同测", 9.2, PURPLE, weight="600"))
+        els.append(txt(462, 425, "   甲烷 (升高 ≥ 12 ppm) 可防漏诊假阴性！", 9.2, PURPLE, weight="600"))
+
+        return figure(
+            462,
+            "未消化乳糖肠道渗透抽水与结肠菌群发酵产气动态连锁及氢呼气曲线图",
+            f"左图分三步展示24克乳糖({n_mmol:.1f}mmol)在肠腔产生范特霍夫渗透压抽出{water_hold_min_ml:.0f}至{water_hold_max_ml:.0f}毫升水、进入结肠被厌氧菌发酵产生短链脂肪酸与氢气二氧化碳并经肺呼出；右图绘制25克乳糖氢呼气试验曲线，展示60至90分钟越过+20ppm阳性红线达58ppm峰值。",
+            els,
+            extra_css=extra_css,
+        )
+
+    def _build_mcm6_switch_famine_evolution():
+        """SVG 3: Chromosome 2q21 MCM6 enhancer switch + Evershed/Thomas 2022 Nature famine selection curve."""
+        # Logistic selection sweep check: p0 = 0.012 at -3000 (3000 BC) to +2000 (5000 yr ~ 185 generations, s = 0.044)
+        p0 = 0.012
+        s_coeff = 0.044
+        years = list(range(-7000, 2001, 500))
+
+        def _lp_freq_pct(yr):
+            if yr <= -3200:
+                return 0.6 if yr < -4500 else 1.0
+            gens = (yr - (-3200)) / 27.0
+            p = (p0 * math.exp(s_coeff * gens)) / (1.0 - p0 + p0 * math.exp(s_coeff * gens))
+            return 100.0 * p * 0.92  # NW Europe ~90% plateau
+
+        lp_2000 = _lp_freq_pct(2000)
+        assert 88.0 < lp_2000 < 92.5 and _lp_freq_pct(-3500) < 2.0
+
+        els = header(
+            "成年后不耐受不是“病”，而是哺乳动物出厂设置！—— MCM6 开关与饥荒演化史",
+            "全球约 68% 成人断奶后自动关小乳糖酶；北欧等地的高耐受率，竟是被青铜时代饥荒与瘟疫“逼”出来的",
+        )
+
+        # ---------------- Top Card: Chromosome 2q21 MCM6 -> LCT Switch + Age Curve ----------------
+        els.append(card(20, 62, 720, 166))
+        els.append(
+            txt(
+                36,
+                85,
+                "① 人类 2 号染色体 (2q21.3) 远程调控：不是 LCT 乳糖酶基因坏了，而是上游 13.9 kb 处的开关按下了节能键",
+                PANEL_TITLE,
+                INK,
+                weight="700",
+            )
+        )
+
+        # Left sub-diagram: Gene locus map (x=36..436)
+        els.append(card(36, 98, 404, 118, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        # DNA backbone bar
+        els.append(_line(54, 148, 422, 148, stroke=SLATE, sw=3.0))
+        # MCM6 gene box + intron 13 enhancer
+        els.append(card(66, 132, 154, 32, rx=6, fill=PURPLE_SOFT, stroke=PURPLE, sw=1.6))
+        els.append(txt(143, 152, "MCM6 基因 (第13内含子增强子)", 9.4, PURPLE, "middle", weight="700"))
+        # LCT gene box downstream
+        els.append(card(292, 132, 116, 32, rx=6, fill=BLUE_SOFT, stroke=BLUE, sw=1.6))
+        els.append(txt(350, 152, "LCT 乳糖酶基因", 9.8, BLUE, "middle", weight="700"))
+
+        # Enhancer loop arc from x=156 to x=298
+        els.append('<path d="M 156,132 Q 228,96 296,130" fill="none" stroke="#c25014" stroke-width="1.9" stroke-dasharray="4,3" marker-end="url(#arr-orange)"/>')
+        els.append(txt(228, 112, "远程调控启动子 (相距 ~13,910 bp)", 9.0, ORANGE, "middle", weight="700"))
+
+        els.append(txt(52, 182, "• 祖源默认态 (-13910*C)：断奶后甲基化沉默，省下合成乳糖酶的蛋白开销；", 9.2, BODY))
+        els.append(txt(52, 201, "• 趋同演化常开突变：欧洲 -13910*T、东非 -14010*C、阿拉伯 -13915*G 独立卡在“开”档！", 9.2, GREEN, weight="700"))
+
+        # Right sub-diagram: Age vs Lactase Activity (x=452..724)
+        els.append(card(452, 98, 272, 118, rx=8, fill="#ffffff", stroke=BORDER))
+        els.append(txt(464, 116, "断奶前后小肠乳糖酶相对活性 (%)", 9.7, INK, weight="700"))
+        ax0, ax1 = 486.0, 708.0
+        ay0, ay1 = 192.0, 128.0
+        els.append(_line(ax0, ay1, ax0, ay0, stroke=SLATE, sw=1.2))
+        els.append(_line(ax0, ay0, ax1, ay0, stroke=SLATE, sw=1.2))
+        els.append(txt(ax0 - 5, ay1 + 4, "100", 8.8, MUTED, "end"))
+        els.append(txt(ax0 - 5, ay0 + 3, "0", 8.8, MUTED, "end"))
+
+        for age_yr, lbl_a in ((0, "婴儿(母乳7%)"), (4, "断奶"), (12, "少年"), (24, "成人")):
+            xx = ax0 + (age_yr / 25.0) * (ax1 - ax0)
+            els.append(txt(xx, ay0 + 14, lbl_a, 8.8, MUTED, "middle"))
+
+        # Persistent curve (C/T or T/T): stays 100% -> 85%
+        pts_lp = [(ax0 + (a / 25.0) * (ax1 - ax0), ay0 - (v / 100.0) * (ay0 - ay1)) for a, v in [(0, 100), (3, 96), (8, 90), (16, 86), (25, 85)]]
+        els.append(_poly(pts_lp, stroke=GREEN, sw=2.3))
+        els.append(txt(640, 145, "持续型 (C/T, T/T)", 9.0, GREEN, "middle", weight="700"))
+
+        # Ancestral non-persistent curve (C/C): drops from 100% -> ~10%
+        pts_lnp = [(ax0 + (a / 25.0) * (ax1 - ax0), ay0 - (v / 100.0) * (ay0 - ay1)) for a, v in [(0, 100), (2, 92), (5, 38), (10, 16), (18, 10), (25, 9)]]
+        els.append(_poly(pts_lnp, stroke=ORANGE, sw=2.3, dash="5,3"))
+        els.append(txt(634, 181, "默认关闸型 (C/C ~10%)", 9.0, ORANGE, "middle", weight="700"))
+
+        # ---------------- Bottom Card: 2022 Nature Prehistoric Timeline ----------------
+        els.append(card(20, 240, 720, 200))
+        els.append(
+            txt(
+                36,
+                263,
+                "② 2022《Nature》7,000 份古陶片奶脂 + 1,700 例古人类 DNA 揭秘：先喝奶四千年，后有耐受基因狂飙！",
+                PANEL_TITLE,
+                INK,
+                weight="700",
+            )
+        )
+
+        tx0, tx1 = 76.0, 488.0
+        ty0, ty1 = 402.0, 286.0
+
+        def _tx(yr):
+            return tx0 + ((yr - (-7000)) / 9000.0) * (tx1 - tx0)
+
+        def _ty(pct):
+            return ty0 - (pct / 100.0) * (ty0 - ty1)
+
+        for p_v in (0, 50, 100):
+            yy = _ty(p_v)
+            els.append(_line(tx0, yy, tx1, yy, stroke=HAIRLINE, sw=0.9, dash="3,3" if p_v > 0 else None))
+            els.append(txt(tx0 - 7, yy + 3.5, f"{p_v}%", 9.0, MUTED, "end"))
+
+        for yr_tick, yr_lbl in ((-7000, "7000 BC"), (-5000, "5000 BC"), (-3000, "3000 BC"), (-1000, "1000 BC"), (2000, "AD 2000")):
+            xx = _tx(yr_tick)
+            els.append(_line(xx, ty0, xx, ty0 + 4, stroke=SLATE, sw=1.1))
+            els.append(txt(xx, ty0 + 17, yr_lbl, 8.9, MUTED, "middle"))
+
+        els.append(_line(tx0, ty1, tx0, ty0, stroke=SLATE, sw=1.3))
+        els.append(_line(tx0, ty0, tx1, ty0, stroke=SLATE, sw=1.3))
+
+        # Curve A: Prehistoric pottery dairy fat adoption (already widespread 55-75% across European farming sites)
+        dairy_pts = [
+            (_tx(-7000), _ty(48)),
+            (_tx(-5500), _ty(68)),
+            (_tx(-4000), _ty(62)),
+            (_tx(-2500), _ty(70)),
+            (_tx(-1000), _ty(76)),
+            (_tx(500), _ty(82)),
+            (_tx(2000), _ty(88)),
+        ]
+        els.append(_poly(dairy_pts, stroke=BLUE, sw=2.2, dash="5,3"))
+        els.append(txt(_tx(-4800), _ty(74), "古陶片奶制品普及度 (早已喝奶/做奶酪!)", 9.1, BLUE, "middle", weight="700"))
+
+        # Curve B: -13910*T lactase persistence allele sweep
+        lp_pts = [(_tx(yr), _ty(_lp_freq_pct(yr))) for yr in years]
+        els.append(_poly(lp_pts, stroke=RED, sw=2.7))
+        els.append(txt(_tx(-4900), _ty(9), "耐受基因 -13910*T 几乎为 0%", 9.0, RED, "middle", weight="700"))
+        els.append(txt(_tx(550), _ty(89), "北欧飙至 ~90%", 9.2, RED, "middle", weight="700"))
+
+        # Famine/Plague trigger callout arrow around 2500–1000 BC
+        els.append(_line(_tx(-2000), _ty(52), _tx(-1750), _ty(24), stroke=ORANGE, sw=1.6, marker="arr-orange"))
+        els.append(txt(_tx(-2050), _ty(58), "饥荒 + 聚落瘟疫触发强选择!", 9.0, ORANGE, "middle", weight="700"))
+
+        # Right explanation card
+        els.append(card(504, 276, 222, 150, rx=8, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(516, 296, "为什么晚了 4,000 年才爆发？", 10.2, ORANGE, weight="700"))
+        els.append(txt(516, 315, "• 平时健康人喝奶最多肚胀拉稀，", 9.2, BODY))
+        els.append(txt(516, 332, "  并不影响存活与繁衍后代；", 9.2, BODY))
+        els.append(txt(516, 350, "• 一旦庄稼绝收饥荒 + 疫病感染，", 9.2, INK, weight="700"))
+        els.append(txt(516, 367, "  被迫喝生鲜奶充饥时，渗透性腹泻", 9.2, BODY))
+        els.append(txt(516, 384, "  对 C/C 者变成致命脱水！", 9.2, RED, weight="700"))
+        els.append(txt(516, 405, "• 草原/东亚智慧：靠乳酸菌做酸马奶", 9.1, GREEN, weight="700"))
+        els.append(txt(516, 420, "  与奶豆腐，在体外先拆掉了乳糖！", 9.1, GREEN, weight="700"))
+
+        return figure(
+            452,
+            "2号染色体MCM6增强子远程开关与欧洲饥荒瘟疫驱动乳糖酶持续基因演化时间轴",
+            "上图展示2q21区段MCM6第13内含子增强子(-13910 C→T等趋同突变)对LCT乳糖酶基因的调控及断奶后活性分化曲线；下图依据2022年Nature古陶片奶脂与古DNA研究，展示欧洲早在公元前7000年已饮奶制酪，但耐受等位基因直到公元前3000至前1000年饥荒与聚落病原体双重压力下才急速跃升至约90%。",
+            els,
+        )
+
+    def _build_zero_lactose_sweetness_chemistry():
+        """SVG 4: Stoichiometry & relative sweetness multiplication in zero-lactose milk."""
+        lac_g = 4.80
+        h2o_g = lac_g * (18.015 / 342.297)  # 0.2526 g
+        glu_g = (lac_g + h2o_g) / 2.0       # 2.5263 g
+        gal_g = (lac_g + h2o_g) / 2.0       # 2.5263 g
+
+        sw_lac = 0.16
+        sw_glu = 0.74
+        sw_gal_hi = 0.65
+        sw_gal_lo = 0.32
+
+        eq_regular = lac_g * sw_lac                             # 0.768 g sucrose eq
+        eq_zero_hi = glu_g * sw_glu + gal_g * sw_gal_hi         # 3.512 g sucrose eq
+        eq_zero_lo = glu_g * sw_glu + gal_g * sw_gal_lo         # 2.678 g sucrose eq
+        mult_lo = eq_zero_lo / eq_regular                       # 3.49x
+        mult_hi = eq_zero_hi / eq_regular                       # 4.57x
+        assert 3.4 < mult_lo < 3.6 and 4.5 < mult_hi < 4.7
+
+        els = header(
+            "配料表明明“0 添加蔗糖”，为什么零乳糖牛奶（舒化奶）喝着甜了好几倍？",
+            "秘密藏在分子甜度表里：乳糖原本是“最不甜的糖 (0.16)”，被乳糖酶剪成两颗单糖后甜度瞬间释放 3.5–4.5 倍！",
+        )
+
+        # ---------------- Left Panel: Mass & Molar Balance per 100 mL ----------------
+        els.append(card(20, 62, 352, 366))
+        els.append(txt(34, 85, "① 100 mL 牛奶酶解前后质量账（0 克外加糖！）", PANEL_TITLE, BLUE, weight="700"))
+
+        # Before box
+        els.append(card(34, 100, 324, 78, rx=8, fill=SLATE_SOFT, stroke=SLATE))
+        els.append(txt(46, 120, "酶解前（普通纯牛奶 100 mL）：", 10.1, INK, weight="700"))
+        els.append(txt(46, 141, f"• 天然乳糖 = {lac_g:.2f} g（14.0 mmol），相对甜度仅 0.16", 9.6, BODY))
+        els.append(txt(46, 161, f"• 折合白砂糖甜感：{lac_g:.2f} × 0.16 ≈ {eq_regular:.2f} g（所以纯奶尝着很淡！）", 9.6, MUTED, weight="600"))
+
+        # Enzyme reaction arrow
+        els.append(_line(196, 182, 196, 214, stroke=GREEN, sw=2.2, marker="arr-green"))
+        els.append(pill(64, 185, f"+ {h2o_g:.2f} g 水分子 | 中性酵母乳糖酶 (Kluyveromyces)", fg=GREEN, bg=GREEN_SOFT, w=264, h=22, size=9.4))
+
+        # After box
+        els.append(card(34, 220, 324, 104, rx=8, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(46, 240, "酶解后（0乳糖牛奶 100 mL）：", 10.1, GREEN, weight="700"))
+        els.append(txt(46, 261, f"• D-葡萄糖 = {glu_g:.2f} g（甜度 0.74）+ D-半乳糖 = {gal_g:.2f} g（甜度 0.32–0.65）", 9.4, INK, weight="600"))
+        els.append(
+            txt(
+                46,
+                281,
+                f"• 折合白砂糖甜感跃升至：{eq_zero_lo:.2f}–{eq_zero_hi:.2f} g（舌尖甜感暴涨 {mult_lo:.1f}–{mult_hi:.1f} 倍！）",
+                9.5,
+                ORANGE,
+                weight="700",
+            )
+        )
+        els.append(txt(46, 303, "• 总碳水化合物质量略增 5.3%（嵌入了水分子），总热量完全相等！", 9.3, BODY))
+
+        # Bonus food-chemistry note
+        els.append(card(34, 336, 324, 78, rx=8, fill=AMBER_SOFT, stroke=AMBER))
+        els.append(txt(46, 356, "两个顺带看懂的厨房化学彩蛋：", 9.9, AMBER, weight="700"))
+        els.append(txt(46, 376, "1. 游离单糖还原端翻倍，超高温灭菌 (UHT) 时轻微美拉德反应略带焦香；", 9.1, BODY))
+        els.append(txt(46, 395, "2. 无需消化直接经 SGLT1 入血，升糖指数 (GI) 比普通纯牛奶略高一点。", 9.1, BODY))
+
+        # ---------------- Right Panel: Relative Sweetness Scale ----------------
+        els.append(card(384, 62, 356, 366))
+        els.append(txt(398, 85, "② 常见糖类相对甜度标尺（以蔗糖 = 1.00 为基准）", PANEL_TITLE, INK, weight="700"))
+
+        sugars = [
+            ("果糖 (水果/蜂蜜)", 1.45, PURPLE, PURPLE_SOFT),
+            ("蔗糖 (日常白砂糖基准)", 1.00, SLATE, SLATE_SOFT),
+            ("D-葡萄糖 (乳糖剪开一半)", 0.74, BLUE, BLUE_SOFT),
+            ("D-半乳糖 (乳糖剪开另一半)", 0.65, GREEN, GREEN_SOFT),
+            ("麦芽糖 (淀粉初步水解)", 0.39, AMBER, AMBER_SOFT),
+            ("乳糖 (牛奶原装双糖)", 0.16, ORANGE, ORANGE_SOFT),
+        ]
+        bx0, bmax_w = 548.0, 166.0  # 1.50 maps to 166 px
+        for idx_s, (s_name, s_val, s_col, s_bg) in enumerate(sugars):
+            ry = 110 + idx_s * 36
+            bw = (s_val / 1.50) * bmax_w
+            els.append(txt(398, ry + 14, s_name, 9.5, INK if s_val in (0.16, 0.65, 0.74) else BODY, weight="700" if s_val in (0.16, 0.65, 0.74) else "400"))
+            els.append(f'<rect x="{bx0}" y="{ry}" width="{bmax_w}" height="20" rx="4" fill="{SLATE_SOFT}"/>')
+            els.append(f'<rect x="{bx0}" y="{ry}" width="{bw:.1f}" height="20" rx="4" fill="{s_bg}" stroke="{s_col}" stroke-width="1.4"/>')
+            lbl_v = f"{s_val:.2f}" if s_val != 0.65 else "0.65 (0.32–0.65)"
+            els.append(txt(min(bx0 + bw + 6, 650), ry + 14, lbl_v, 9.1, s_col, weight="700"))
+
+        # Reference vertical dashed line at Sucrose = 1.00
+        x_suc = bx0 + (1.00 / 1.50) * bmax_w
+        els.append(_line(x_suc, 104, x_suc, 320, stroke=SLATE, sw=1.1, dash="3,3"))
+
+        # Perceived sweetness comparison box at bottom right
+        els.append(card(398, 334, 328, 80, rx=8, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(410, 354, "同喝 1 盒 250 mL 纯奶，舌头味蕾 T1R2/T1R3 感受到的甜度：", 9.5, INK, weight="700"))
+        # Mini dual bars
+        els.append(txt(410, 376, "普通纯奶 (12g乳糖):", 9.2, BODY, weight="600"))
+        els.append(f'<rect x="524" y="365" width="38" height="14" rx="3" fill="#cbd5e1" stroke="{SLATE}"/>')
+        els.append(txt(568, 376, "≈ 1.9 g 白糖甜感", 9.1, SLATE, weight="700"))
+
+        els.append(txt(410, 399, "0乳糖奶 (酶解单糖):", 9.2, ORANGE, weight="700"))
+        els.append(f'<rect x="524" y="388" width="142" height="14" rx="3" fill="#fdba74" stroke="{ORANGE}" stroke-width="1.4"/>')
+        els.append(txt(672, 399, "≈ 6.7–8.8 g!", 9.1, RED, weight="700"))
+
+        return figure(
+            440,
+            "零乳糖牛奶不加蔗糖却变甜数倍的水解化学计量与相对甜度对比图",
+            f"左图核算100毫升牛奶中4.80克乳糖(甜度0.16)结合0.25克水酶解为2.53克葡萄糖(甜度0.74)与2.53克半乳糖(甜度0.32至0.65)，零外加糖且总热量不变；右图对比六种常见糖相对甜度，展示甜感由{eq_regular:.2f}克跃升至{eq_zero_lo:.2f}至{eq_zero_hi:.2f}克蔗糖当量(约{mult_lo:.1f}至{mult_hi:.1f}倍)。",
+            els,
+        )
+
+    def _build_intolerance_vs_allergy_matrix():
+        """SVG 5: Lactose intolerance (digestive enzyme gap) vs Cow's milk allergy (immune attack)."""
+        els = header(
+            "千万别混为一谈：乳糖不耐受 ≠ 牛奶蛋白过敏！（换错奶粉可能出大事）",
+            "一个是肠道缺把“剪糖剪刀”（剂量问题，可喝 0乳糖奶）；一个是免疫系统对“蛋白质”拉响防空警报！",
+        )
+
+        # Left column header card: Lactose Intolerance
+        els.append(card(20, 62, 354, 368))
+        els.append(txt(34, 86, "① 乳糖不耐受 (Lactose Intolerance)", PANEL_TITLE, BLUE, weight="700"))
+        els.append(pill(34, 96, "消化系统 · 刷状缘酶缺口（全球 ~68% 成人）", fg=BLUE, bg=BLUE_SOFT, w=268, h=20, size=9.6))
+
+        # Right column header card: Cow's Milk Protein Allergy
+        els.append(card(386, 62, 354, 368))
+        els.append(txt(400, 86, "② 牛奶蛋白过敏 (Cow's Milk Allergy)", PANEL_TITLE, RED, weight="700"))
+        els.append(pill(400, 96, "免疫系统 · IgE / T细胞异常攻击（约 2%–3% 婴儿）", fg=RED, bg=RED_SOFT, w=288, h=20, size=9.6))
+
+        rows_left = [
+            ("锁定目标", "乳糖 C₁₂H₂₂O₁₁（双糖 / 碳水化合物）", BLUE),
+            ("发病原理", "小肠乳糖酶不足 → 肠腔渗透抽水 + 结肠产气", BODY),
+            ("高发人群", "断奶后儿童与成人（或急性肠炎后继发 2–4 周）", BODY),
+            ("发作表现", "仅限消化道：肠鸣、腹胀、排气、水样腹泻", ORANGE),
+            ("剂量门槛", "典型剂量依赖：随餐喝 ≤12 g（1杯奶）常无症状", GREEN),
+            ("喝0乳糖奶?", "✅ 安全有效！乳糖已被预先剪断，营养分毫不差", GREEN),
+        ]
+        rows_right = [
+            ("锁定目标", "酪蛋白、β-乳球蛋白等（大分子蛋白质抗原！）", RED),
+            ("发病原理", "IgE 交联肥大细胞释放组胺，引发全身免疫炎症", BODY),
+            ("高发人群", "1 岁以内婴幼儿最高发（多数在学龄前逐渐耐受）", BODY),
+            ("发作表现", "皮肤荨麻疹/湿疹、呕吐便血、哮喘乃至过敏性休克!", RED),
+            ("剂量门槛", "极微量即可引爆：哪怕几滴牛奶都可能触发险情", RED),
+            ("喝0乳糖奶?", "❌ 绝对禁止！0乳糖奶里牛奶蛋白一克没少，照样过敏!", RED),
+        ]
+
+        for idx_r in range(6):
+            ry = 128 + idx_r * 49
+            kl, vl, cl = rows_left[idx_r]
+            kr, vr, cr = rows_right[idx_r]
+
+            bg_l = GREEN_SOFT if idx_r == 5 else ("#ffffff" if idx_r % 2 == 0 else SLATE_SOFT)
+            bg_r = RED_SOFT if idx_r == 5 else ("#ffffff" if idx_r % 2 == 0 else SLATE_SOFT)
+            st_l = GREEN if idx_r == 5 else BORDER
+            st_r = RED if idx_r == 5 else BORDER
+
+            els.append(card(34, ry, 326, 41, rx=6, fill=bg_l, stroke=st_l, sw=1.4 if idx_r == 5 else 1.0))
+            els.append(txt(44, ry + 25, f"{kl}：", 9.6, INK, weight="700"))
+            els.append(txt(106, ry + 25, vl, 9.4, cl, weight="700" if cl != BODY else "400"))
+
+            els.append(card(400, ry, 326, 41, rx=6, fill=bg_r, stroke=st_r, sw=1.4 if idx_r == 5 else 1.0))
+            els.append(txt(410, ry + 25, f"{kr}：", 9.6, INK, weight="700"))
+            els.append(txt(472, ry + 25, vr, 9.3, cr, weight="700" if cr != BODY else "400"))
+
+        return figure(
+            444,
+            "乳糖不耐受与牛奶蛋白过敏的靶点机制、症状及零乳糖牛奶适用性对比图",
+            "左栏梳理乳糖不耐受针对乳糖双糖、属刷状缘酶缺口、具12克剂量阈值且可安全饮用0乳糖牛奶；右栏梳理牛奶蛋白过敏针对酪蛋白与乳清蛋白、属IgE或T细胞免疫反应、高发于1岁内婴儿且严禁用0乳糖牛奶替代深度水解或氨基酸配方。",
+            els,
+        )
+
+    def _build_dairy_lactose_traffic_light():
+        """SVG 6: Quantitative lactose content traffic-light chart vs NIH 12g threshold + practical tips."""
+        nih_threshold_g = 12.0
+        # Verified lactose per typical serving:
+        items = [
+            ("空腹猛灌大杯冰牛奶 (500 mL, 4.8%)", 24.0, RED, RED_SOFT, "[高危] 远超阈值，极易翻江倒海"),
+            ("山羊奶 1 杯 (250 mL, 4.7%)", 11.8, ORANGE, ORANGE_SOFT, "[踩线] 与牛奶同量! 别信无乳糖谣言"),
+            ("普通纯牛奶 1 杯 (250 mL, 4.8%)", 12.0, ORANGE, ORANGE_SOFT, "[临界] 恰踩 12g 线，随餐温饮多可耐受"),
+            ("活菌原味酸奶 1 盒 (200 g)", 8.5, GREEN, GREEN_SOFT, "[友好] 活菌带乳糖酶入肠助攻，更好吸收"),
+            ("普通浓缩乳清蛋白粉 WPC (30 g)", 2.1, GREEN, GREEN_SOFT, "[低量] 水冲低乳糖（兑牛奶则升至 14g!）"),
+            ("陈年硬奶酪：切达/帕玛森 (30 g)", 0.05, TEAL, TEAL_SOFT, "[极微] 排乳清+漫长熟化，乳糖近乎归零!"),
+            ("0乳糖舒化奶 (250 mL) / 分离乳清 WPI", 0.0, TEAL, TEAL_SOFT, "[零糖] 酶解/超滤脱除，重度不耐受放心喝"),
+        ]
+        assert items[0][1] == 2.0 * nih_threshold_g and items[5][1] < 0.2
+
+        els = header(
+            "乳糖不耐受还能痛快补钙吗？—— 乳制品“红黄绿灯”实测尺与科学喝奶五招",
+            "NIH 临床指南：绝大多数原发性乳糖不耐受者并非“滴奶不沾”，单次随餐摄入 ≤ 12 g 乳糖通常无症状！",
+        )
+
+        # ---------------- Top Card: Quantitative Lactose Traffic Light ----------------
+        els.append(card(20, 62, 720, 258))
+        els.append(txt(36, 85, "① 一份常见乳制品到底含多少克乳糖？（对照 NIH 单次 12 g 耐受参考线）", PANEL_TITLE, INK, weight="700"))
+
+        bx0, bw_max = 254.0, 214.0  # 26 g maps to 214 px
+
+        def _gx(gram):
+            return bx0 + (gram / 26.0) * bw_max
+
+        # NIH 12g vertical reference line
+        x_12 = _gx(nih_threshold_g)
+        els.append(_line(x_12, 98, x_12, 304, stroke=RED, sw=1.6, dash="5,3"))
+        els.append(txt(x_12, 95, "NIH 单次耐受参考线 (12 g)", 9.1, RED, "middle", weight="700"))
+
+        for idx_i, (name_i, g_val, col_i, bg_i, note_i) in enumerate(items):
+            ry = 106 + idx_i * 28
+            bw = max(3.0 if g_val > 0 else 0.0, (g_val / 26.0) * bw_max)
+            els.append(txt(36, ry + 14, name_i, 9.4, INK if idx_i in (0, 1, 5, 6) else BODY, weight="700" if idx_i in (0, 1, 5, 6) else "400"))
+            els.append(f'<rect x="{bx0}" y="{ry}" width="{bw_max}" height="18" rx="4" fill="{SLATE_SOFT}"/>')
+            if bw > 0:
+                els.append(f'<rect x="{bx0}" y="{ry}" width="{bw:.1f}" height="18" rx="4" fill="{bg_i}" stroke="{col_i}" stroke-width="1.4"/>')
+            g_str = f"{g_val:.1f} g" if g_val >= 0.5 else (f"{g_val:.2f} g" if g_val > 0 else "≈ 0 g")
+            els.append(txt(bx0 + bw + 6, ry + 13.5, g_str, 9.1, col_i, weight="700"))
+            els.append(txt(512, ry + 13.5, note_i, 9.1, col_i if col_i != TEAL else GREEN, weight="600"))
+
+        # ---------------- Bottom 3 Takeaway Cards ----------------
+        # Box 1: Mammalian milk myth-buster
+        els.append(card(20, 332, 232, 108, rx=8, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(32, 352, "哺乳动物乳汁冷知识", 10.2, BLUE, weight="700"))
+        els.append(txt(32, 371, "• 人类母乳乳糖高达 ~7.0%（为婴儿", 9.1, BODY))
+        els.append(txt(32, 388, "  大脑髓鞘提供半乳糖），比牛奶更高!", 9.1, BODY))
+        els.append(txt(32, 406, "• 海狮/海象乳糖 = 0%（高脂防脱水）；", 9.1, BODY))
+        els.append(txt(32, 423, "• 成年猫咪同样缺乳糖酶，别喂大碗牛奶!", 9.1, INK, weight="700"))
+
+        # Box 2: Colonic adaptation truth
+        els.append(card(264, 332, 232, 108, rx=8, fill=PURPLE_SOFT, stroke=PURPLE))
+        els.append(txt(276, 352, "“硬喝练出乳糖酶”是真的吗？", 10.2, PURPLE, weight="700"))
+        els.append(txt(276, 371, "• 小肠 LCT 基因受遗传调控，成年后", 9.1, BODY))
+        els.append(txt(276, 388, "  绝不会因为多喝奶而重新长出乳糖酶!", 9.1, RED, weight="700"))
+        els.append(txt(276, 406, "• 渐进喝奶之所以减轻胀气，是驯化了", 9.1, BODY))
+        els.append(txt(276, 423, "  结肠双歧杆菌（走产酸少产气路线）!", 9.1, PURPLE, weight="700"))
+
+        # Box 3: Practical 4 golden rules
+        els.append(card(508, 332, 232, 108, rx=8, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(520, 352, "不戒奶补钙实操四招", 10.2, GREEN, weight="700"))
+        els.append(txt(520, 371, "1. 少量分次（≤200 mL）配主食温热喝；", 9.1, BODY))
+        els.append(txt(520, 388, "2. 巧选陈年硬质奶酪、活菌发酵酸奶；", 9.1, BODY))
+        els.append(txt(520, 406, "3. 直接换 0乳糖奶，钙和蛋白毫不打折；", 9.1, BODY))
+        els.append(txt(520, 423, "4. 吃奶油大餐随第一口嚼酸性乳糖酶片。", 9.1, GREEN, weight="700"))
+
+        return figure(
+            452,
+            "常见乳制品乳糖含量红黄绿灯标尺与科学应对乳糖不耐受策略图",
+            "上图按每份乳糖克数绘制横向标尺并标注NIH单次12克耐受参考线：500毫升冰奶(24克)远超阈值，250毫升牛奶(12克)与山羊奶(11.8克)踩线，活菌酸奶(8.5克)、浓缩乳清蛋白(2.1克)、陈年硬奶酪(0.05克)与0乳糖奶(0克)依次递减；下图拆解母乳7%乳糖与成年猫不耐受、结肠菌群适应真相及四条科学补钙策略。",
+            els,
+        )
+
+    @register("lactose-intolerance", "乳糖不耐受刷状缘分子门禁、渗透压与菌群产气、MCM6饥荒演化、0乳糖奶甜度化学与红黄绿灯图解", "science_tech")
+    def build_lactose_intolerance():
+        write_svg(SUBDIR, "lactose-lock-brush-border.svg", _build_lactose_lock_brush_border())
+        write_svg(SUBDIR, "gut-osmotic-fermentation-cascade.svg", _build_gut_osmotic_fermentation_cascade())
+        write_svg(SUBDIR, "mcm6-switch-famine-evolution.svg", _build_mcm6_switch_famine_evolution())
+        write_svg(SUBDIR, "zero-lactose-sweetness-chemistry.svg", _build_zero_lactose_sweetness_chemistry())
+        write_svg(SUBDIR, "intolerance-vs-allergy-matrix.svg", _build_intolerance_vs_allergy_matrix())
+        write_svg(SUBDIR, "dairy-lactose-traffic-light.svg", _build_dairy_lactose_traffic_light())
+
+
+_register_lactose_intolerance()
+
+
+def _register_maglev_train():
+    """6 computed 760px SVGs for the Maglev Train physics & adoption-barriers post."""
+    SUBDIR = "maglev-train"
+    RED = "#dc2626"
+    RED_SOFT = "#fef2f2"
+    AMBER = "#b45309"
+    AMBER_SOFT = "#fffbeb"
+    TEAL = "#0f766e"
+    TEAL_SOFT = "#f0fdfa"
+
+    def _line(x1, y1, x2, y2, stroke=HAIRLINE, sw=1.5, dash=None, marker=None, opacity=None):
+        attrs = [
+            f'x1="{x1:.1f}"',
+            f'y1="{y1:.1f}"',
+            f'x2="{x2:.1f}"',
+            f'y2="{y2:.1f}"',
+            f'stroke="{stroke}"',
+            f'stroke-width="{sw}"',
+        ]
+        if dash:
+            attrs.append(f'stroke-dasharray="{dash}"')
+        if marker:
+            attrs.append(f'marker-end="url(#{marker})"')
+        if opacity is not None:
+            attrs.append(f'opacity="{opacity}"')
+        return f'<line {" ".join(attrs)}/>'
+
+    def _poly(pts, stroke=BLUE, sw=2.2, fill="none", dash=None, cls=None, opacity=None):
+        d = "M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
+        extra = ""
+        if dash:
+            extra += f' stroke-dasharray="{dash}"'
+        if cls:
+            extra += f' class="{cls}"'
+        if opacity is not None:
+            extra += f' opacity="{opacity}"'
+        return f'<path d="{d}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}" stroke-linecap="round" stroke-linejoin="round"{extra}/>'
+
+    def _build_earnshaw_ems_vs_eds():
+        """SVG 1: Earnshaw saddle instability + EMS (10 mm active pull) vs EDS (100 mm figure-8 null-flux push-pull)."""
+        # Verify gap ratio & sampling rate assertions:
+        ems_gap_mm = 10.0
+        eds_gap_mm = 100.0
+        sample_hz = 100_000
+        assert eds_gap_mm / ems_gap_mm == 10.0 and sample_hz == 100_000
+
+        els = header(
+            "把几百吨列车托在半空：为什么不能只贴两排永磁铁？—— 恩绍定理与两大悬浮门派",
+            "1842 年恩绍定理证明静态永磁铁无法三维稳定悬浮；人类用“高频电控吸浮 (EMS)”与“超导感应斥浮 (EDS)”破局",
+        )
+
+        # ---------------- Top Banner: Earnshaw's Theorem Saddle ----------------
+        els.append(card(20, 62, 720, 96, fill=AMBER_SOFT, stroke=AMBER))
+        els.append(txt(36, 84, "① 物理拦路虎：恩绍定理 (Earnshaw's Theorem, ∇²U = 0) —— 静态磁场的“马鞍困局”", PANEL_TITLE, AMBER, weight="700"))
+
+        # Mini visual on left: two N-poles slipping sideways
+        els.append(card(36, 94, 214, 52, rx=6, fill="#ffffff", stroke=AMBER))
+        els.append(f'<rect x="64" y="102" width="58" height="15" rx="3" fill="{RED_SOFT}" stroke="{RED}" stroke-width="1.4"/>')
+        els.append(txt(93, 113, "车底 N 极", 8.8, RED, "middle", weight="700"))
+        els.append(f'<rect x="54" y="125" width="58" height="15" rx="3" fill="{RED_SOFT}" stroke="{RED}" stroke-width="1.4"/>')
+        els.append(txt(83, 136, "轨道 N 极", 8.8, RED, "middle", weight="700"))
+        els.append(_line(128, 109, 172, 109, stroke=RED, sw=1.8, marker="arr-orange"))
+        els.append(txt(190, 115, "侧滑失稳!", 9.0, RED, "middle", weight="700"))
+        els.append(txt(190, 134, "瞬间翻转吸死", 8.8, BODY, "middle"))
+
+        els.append(txt(266, 111, "• 自由空间静磁势满足拉普拉斯方程 ∇²U = 0，不存在任何三维势能局部极小值（只有马鞍点）；", 9.4, INK, weight="600"))
+        els.append(txt(266, 130, "• 你拿两块强磁铁 N 对 N 往下按：竖直方向虽能托住，但水平稍偏 0.1 mm 就会猛地侧滑翻面！", 9.3, BODY))
+        els.append(txt(266, 148, "• 破局铁律：必须打破“静态恒定”前提 —— 要么靠毫秒级电控变流 (EMS)，要么靠运动感应电流 (EDS)！", 9.3, AMBER, weight="700"))
+
+        # ---------------- Bottom Left: EMS (German Transrapid / China) ----------------
+        els.append(card(20, 170, 354, 276))
+        els.append(txt(34, 193, "② 常导电磁吸浮 EMS（德 Transrapid / 上海 / 中国高速）", 11.2, BLUE, weight="700"))
+        els.append(pill(34, 203, "C 形臂抱轨“往上吸” · 气隙仅 8–10 mm", fg=BLUE, bg=BLUE_SOFT, w=244, h=20, size=9.4))
+
+        # Cross-section schematic of T-guideway + C-shaped wrap-around bogie
+        els.append(card(34, 230, 326, 132, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        # T-guideway girder (center x=197)
+        els.append(f'<rect x="175" y="290" width="44" height="64" fill="#cbd5e1" stroke="{SLATE}" stroke-width="1.5"/>')
+        els.append(f'<rect x="108" y="274" width="178" height="20" rx="3" fill="#94a3b8" stroke="{SLATE}" stroke-width="1.6"/>')
+        els.append(txt(197, 288, "T 形混凝土/钢轨道梁", 9.0, "#ffffff", "middle", weight="700"))
+
+        # Train cabin sitting above + C-arms wrapping under the T-wings
+        els.append(f'<rect x="116" y="238" width="162" height="26" rx="6" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.8"/>')
+        els.append(txt(197, 255, "车厢底架（悬浮离梁面 ~15 cm）", 9.1, BLUE, "middle", weight="700"))
+        # Left & Right C-arms wrapping around T-wings
+        els.append(f'<path d="M 116,256 L 86,256 L 86,318 L 138,318 L 138,304 L 98,304 L 98,266 L 116,266 Z" fill="#dbeafe" stroke="{BLUE}" stroke-width="1.6"/>')
+        els.append(f'<path d="M 278,256 L 308,256 L 308,318 L 256,318 L 256,304 L 296,304 L 296,266 L 278,266 Z" fill="#dbeafe" stroke="{BLUE}" stroke-width="1.6"/>')
+
+        # Upward attractive arrows across the tiny 10mm gap (y=304 -> y=294)
+        els.append(_line(122, 304, 122, 295, stroke=RED, sw=2.0, marker="arr-orange"))
+        els.append(_line(272, 304, 272, 295, stroke=RED, sw=2.0, marker="arr-orange"))
+        els.append(txt(62, 302, "10 mm", 9.0, RED, "middle", weight="700"))
+        els.append(txt(332, 302, "吸力↑", 9.0, RED, "middle", weight="700"))
+        els.append(txt(197, 344, "每秒 100,000 次测距斩波调流", 8.9, INK, "middle", weight="700"))
+
+        # Pros/Cons footer
+        els.append(txt(34, 381, "• 优势：0 km/h 静止也能稳稳悬空，无需起落轮胎；车厢磁场弱；", 9.3, GREEN, weight="700"))
+        els.append(txt(34, 400, "  悬浮本身极省电（每吨仅需 1–2 kW，还没车厢空调费电！）。", 9.2, BODY))
+        els.append(txt(34, 420, "• 代价：10 mm 缝隙容错极小，对高架桥沉降与轨道加工精度极苛刻；", 9.2, ORANGE, weight="600"))
+        els.append(txt(34, 437, "  一旦闭环电控失灵，车载蓄电池须立即接管防吸死擦轨。", 9.2, BODY))
+
+        # ---------------- Bottom Right: EDS (Japanese SCMaglev L0) ----------------
+        els.append(card(386, 170, 354, 276))
+        els.append(txt(400, 193, "③ 超导电动斥浮 EDS（日本 SCMaglev L0 系 603 km/h）", 11.2, PURPLE, weight="700"))
+        els.append(pill(400, 203, "液氦 4.2K 超导 + 侧壁“8字线圈” · 间隙 100 mm", fg=PURPLE, bg=PURPLE_SOFT, w=282, h=20, size=9.4))
+
+        # Cross-section schematic of U-trough guideway + figure-8 coils
+        els.append(card(400, 230, 326, 132, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        # U-shaped concrete guideway
+        els.append(f'<path d="M 434,238 L 452,238 L 452,334 L 674,334 L 674,238 L 692,238 L 692,350 L 434,350 Z" fill="#cbd5e1" stroke="{SLATE}" stroke-width="1.5"/>')
+        # Figure-8 coils on left & right inner walls
+        for cx_f in (462, 664):
+            els.append(f'<circle cx="{cx_f}" cy="268" r="9" fill="#ffffff" stroke="{GREEN}" stroke-width="1.8"/>')
+            els.append(f'<circle cx="{cx_f}" cy="288" r="9" fill="#ffffff" stroke="{ORANGE}" stroke-width="1.8"/>')
+        els.append(txt(417, 270, "8字", 8.8, INK, "middle", weight="700"))
+        els.append(txt(417, 286, "线圈", 8.8, INK, "middle", weight="700"))
+
+        # Train body + side superconducting magnets
+        els.append(f'<rect x="494" y="248" width="138" height="58" rx="7" fill="{PURPLE_SOFT}" stroke="{PURPLE}" stroke-width="1.8"/>')
+        els.append(txt(563, 273, "车厢 + 4.2K 超导磁体", 9.2, PURPLE, "middle", weight="700"))
+        els.append(txt(563, 292, "(磁场强度达常导 10 倍)", 8.8, BODY, "middle"))
+        els.append(f'<rect x="478" y="268" width="16" height="24" rx="3" fill="{PURPLE}" stroke="{PURPLE}"/>')
+        els.append(f'<rect x="632" y="268" width="16" height="24" rx="3" fill="{PURPLE}" stroke="{PURPLE}"/>')
+
+        # 100 mm clearance annotation at bottom + retracted rubber wheels
+        els.append(_line(563, 308, 563, 332, stroke=GREEN, sw=1.8, marker="arr-green"))
+        els.append(txt(563, 324, "悬浮高达 100 mm (10 cm)!", 9.0, GREEN, "middle", weight="700"))
+        els.append(txt(709, 270, "上拉↑", 8.7, GREEN, "middle", weight="700"))
+        els.append(txt(709, 290, "下推↑", 8.7, ORANGE, "middle", weight="700"))
+
+        # Pros/Cons footer
+        els.append(txt(400, 381, "• 优势：遵循楞次定律天然“被动稳定”（下沉越多回推越猛），", 9.3, GREEN, weight="700"))
+        els.append(txt(400, 400, "  无需高频测距救场；10 cm 超大离地间隙在地震多发区安全余量足。", 9.2, BODY))
+        els.append(txt(400, 420, "• 代价：车停则无磁通变化 (dΦ/dt=0)，<150 km/h 必须放下橡胶轮胎", 9.2, ORANGE, weight="600"))
+        els.append(txt(400, 437, "  像飞机一样滑跑起降；需昂贵液氦低温系统与车厢强磁屏蔽！", 9.2, BODY))
+
+        return figure(
+            458,
+            "恩绍定理静态失稳原理与常导电磁吸浮EMS及超导电动斥浮EDS横截面对比图",
+            "上部解释1842年恩绍定理为何令静态永磁同极相斥发生侧滑翻转；左下展示常导EMS用C形臂从T形钢梁下方往上吸，靠每秒10万次反馈维持10毫米间隙且静止可浮；右下展示日本超导EDS在U形槽侧壁布置8字零磁通线圈，高速掠过时产生上拉下推合力实现100毫米被动稳定悬浮，但低于150km/h须靠橡胶轮滑跑。",
+            els,
+        )
+
+    def _build_unrolled_linear_motor_wave():
+        """SVG 2: Unrolling a rotary motor into a Linear Synchronous Motor (LSM) traveling wave (animated)."""
+        # Exact Chuo Shinkansen LSM relationship: pole pitch tau = 1.35 m, f = 51.4 Hz -> v_s = 2 * tau * f
+        tau_m = 1.35
+        freq_hz = 51.44
+        v_ms = 2.0 * tau_m * freq_hz          # 138.89 m/s
+        v_kmh = v_ms * 3.6                    # 500.0 km/h
+        assert math.isclose(v_kmh, 500.0, abs_tol=0.5)
+
+        extra_css = """
+  @keyframes waveAdvance {
+    0% { transform: translateX(0px); }
+    100% { transform: translateX(64px); }
+  }
+  .lsm-mover {
+    animation: waveAdvance 3.0s ease-in-out 1 forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .lsm-mover {
+      animation: none !important;
+      transform: none !important;
+    }
+  }
+"""
+
+        els = header(
+            "车轮悬空不沾地，谁在背后推着它飙到 600 km/h？—— 把电动机“一刀剖开铺在地上”",
+            "磁悬浮没有排气管也不靠螺旋桨：整条几百公里的轨道就是一台被剪开展平的“长定子直线同步电机 (LSM)”！",
+        )
+
+        # ---------------- Top Card: Rotary Motor -> Unrolled Linear Motor ----------------
+        els.append(card(20, 62, 720, 146))
+        els.append(txt(36, 85, "① 几何变形记：从“原地打转的圆筒电机”到“贴地狂奔的直线电机”", PANEL_TITLE, INK, weight="700"))
+
+        # Left: Rotary synchronous motor (cx=140, cy=155)
+        els.append(f'<circle cx="140" cy="155" r="41" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="2.2"/>')
+        els.append(f'<circle cx="140" cy="155" r="23" fill="#ffffff" stroke="{ORANGE}" stroke-width="2.0"/>')
+        els.append(txt(140, 159, "转子 N/S", 9.0, ORANGE, "middle", weight="700"))
+        els.append(txt(140, 106, "外圈三相定子 (剪开处)", 9.0, BLUE, "middle", weight="700"))
+        els.append(_line(140, 111, 140, 130, stroke=RED, sw=2.0, dash="3,2"))
+
+        # Arrow: slice & unroll
+        els.append(_line(208, 152, 294, 152, stroke=INK, sw=2.2, marker="arr-ink"))
+        els.append(txt(251, 140, "沿半径剪开", 9.6, INK, "middle", weight="700"))
+        els.append(txt(251, 171, "把圆周摊平成直线!", 9.2, MUTED, "middle"))
+
+        # Right: Unrolled flat stator + vehicle rotor
+        els.append(card(314, 96, 408, 98, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(f'<rect x="334" y="158" width="368" height="22" rx="4" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.6"/>')
+        els.append(txt(518, 173, "原本的外圈定子 → 变成铺满整条轨道的三相推进绕组（长定子）", 9.2, BLUE, "middle", weight="700"))
+
+        els.append(f'<rect x="396" y="112" width="184" height="30" rx="6" fill="{ORANGE_SOFT}" stroke="{ORANGE}" stroke-width="1.8"/>')
+        els.append(txt(488, 131, "原本的内圈转子 → 变成列车磁体", 9.4, ORANGE, "middle", weight="700"))
+        els.append(_line(590, 127, 668, 127, stroke=ORANGE, sw=2.2, marker="arr-orange"))
+        els.append(txt(629, 120, "化旋转扭矩为直线推力!", 9.0, RED, "middle", weight="700"))
+
+        # ---------------- Bottom Card: Traveling Magnetic Wave Propulsion ----------------
+        els.append(card(20, 220, 720, 220))
+        els.append(
+            txt(
+                36,
+                243,
+                "② 行波冲浪原理：前有异极“拉”、后有同极“推”，变流站调频即精准控速 (v = 2τf)",
+                PANEL_TITLE,
+                INK,
+                weight="700",
+            )
+        )
+
+        # Track propulsion poles along bottom (static guideway reference + traveling wave poles)
+        els.append(card(36, 258, 434, 166, rx=8, fill="#ffffff", stroke=BORDER))
+
+        # Animated group containing train bogie + traveling magnetic wave poles locked in sync!
+        els.append('<g class="lsm-mover">')
+        # Train bogie with N and S onboard poles
+        els.append(f'<rect x="96" y="274" width="212" height="44" rx="8" fill="{PURPLE_SOFT}" stroke="{PURPLE}" stroke-width="2.0"/>')
+        els.append(txt(202, 293, "磁悬浮列车转向架磁极（随行波同步冲浪 →）", 9.4, PURPLE, "middle", weight="700"))
+        els.append(f'<rect x="114" y="302" width="68" height="20" rx="4" fill="{RED}" stroke="{RED}"/>')
+        els.append(txt(148, 316, "车载 N 极", 9.1, "#ffffff", "middle", weight="700"))
+        els.append(f'<rect x="222" y="302" width="68" height="20" rx="4" fill="{BLUE}" stroke="{BLUE}"/>')
+        els.append(txt(256, 316, "车载 S 极", 9.1, "#ffffff", "middle", weight="700"))
+
+        # Push & Pull diagonal force vectors from shifted ground stator wave!
+        # Ground poles shifted ahead by half pole-pitch so S pulls N forward and N pushes N forward!
+        stator_poles = [
+            (94, "N (后推)", RED_SOFT, RED),
+            (198, "S (前拉)", BLUE_SOFT, BLUE),
+            (302, "N (前拉)", RED_SOFT, RED),
+        ]
+        for sx_p, slbl, sbg, scol in stator_poles:
+            els.append(f'<rect x="{sx_p - 38}" y="362" width="76" height="24" rx="4" fill="{sbg}" stroke="{scol}" stroke-width="1.6"/>')
+            els.append(txt(sx_p, 378, f"地面 {slbl}", 8.9, scol, "middle", weight="700"))
+
+        # Force arrows:
+        # 1. Ground N(94) repels Train N(148) forward-right
+        els.append(_line(106, 360, 140, 326, stroke=ORANGE, sw=2.1, marker="arr-orange"))
+        # 2. Ground S(198) attracts Train N(148) forward-right AND repels Train S(256) forward-right!
+        els.append(_line(156, 326, 190, 360, stroke=GREEN, sw=2.1, marker="arr-green"))
+        els.append(_line(210, 360, 246, 326, stroke=ORANGE, sw=2.1, marker="arr-orange"))
+        # 3. Ground N(302) attracts Train S(256) forward-right!
+        els.append(_line(264, 326, 296, 360, stroke=GREEN, sw=2.1, marker="arr-green"))
+        els.append("</g>")
+
+        els.append(txt(253, 410, "极距 τ（相邻 N–S 中心距）· 三相交流电制造向右平移的磁场行波", 9.1, BODY, "middle", weight="600"))
+
+        # Right quantitative formula & advantages card (x=484..724)
+        els.append(card(484, 258, 240, 166, rx=8, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(496, 279, "直线同步电机速度铁律：", 10.2, BLUE, weight="700"))
+        els.append(txt(604, 303, "v = 2 · τ · f", 13.0, INK, "middle", weight="700"))
+        els.append(txt(496, 325, f"• 以日本中央新干线为例：极距 τ = {tau_m:.2f} m；", 9.1, BODY))
+        els.append(txt(496, 343, f"• 当地面变流站输出频率 f = {freq_hz:.1f} Hz：", 9.1, BODY))
+        els.append(txt(496, 361, f"  v = 2×1.35×51.44 ≈ 138.9 m/s = 500 km/h!", 9.1, INK, weight="700"))
+        els.append(txt(496, 382, "• 零打滑爬陡坡（4%–10%，高铁仅 2%–3%）；", 9.1, GREEN, weight="700"))
+        els.append(txt(496, 400, "• 告别头顶受电弓电火花，刹车直接发电回馈；", 9.1, BODY))
+        els.append(txt(496, 417, "• 分段供电：只给列车所在那几百米轨道通电！", 9.1, ORANGE, weight="700"))
+
+        return figure(
+            452,
+            "旋转电机剖开展平为直线同步电机LSM及行波磁场推拉牵引动画图",
+            f"上图展示将圆筒旋转电机沿半径剖开展平为地面长定子与车载转子；下图以单次平移动画展示地面三相绕组行波磁场对车载N/S极产生前拉后推合力，并按v=2τf核算极距1.35米、频率51.44赫兹时恰好对应500km/h同步巡航。",
+            els,
+            extra_css=extra_css,
+        )
+
+    def _build_aero_drag_cubic_wall():
+        """SVG 3: Aerodynamic drag power P ~ v^3 wall vs rolling resistance & high-altitude aircraft."""
+        # Physics parameters: A = 11.0 m^2, Cd = 0.22, rho_sea = 1.225 kg/m^3, rho_11km = 0.364 kg/m^3
+        rho_sea = 1.225
+        rho_airliner = 0.364
+        cd_a = 0.22 * 11.0  # 2.42 m^2
+
+        def _p_aero_mw(v_kmh, rho):
+            v = v_kmh / 3.6
+            return 0.5 * rho * cd_a * (v ** 3) / 1e6
+
+        def _p_mech_mw(v_kmh):
+            # Typical 400-ton high-speed wheelset rolling + mechanical resistance power (MW)
+            v = v_kmh / 3.6
+            f_roll_n = 400_000 * 9.81 * (0.0012 + 0.000018 * v)
+            return (f_roll_n * v) / 1e6
+
+        p350 = _p_aero_mw(350, rho_sea)
+        p600 = _p_aero_mw(600, rho_sea)
+        ratio_600_350 = p600 / p350  # (600/350)^3 = 5.038
+        assert math.isclose(ratio_600_350, (600.0 / 350.0) ** 3, rel_tol=1e-6) and 5.0 < ratio_600_350 < 5.1
+
+        els = header(
+            "反直觉真相：浮起来消除了车轮摩擦，为什么跑 600 km/h 反而成了“吞电巨兽”？",
+            "时速过 300 km/h 后 85% 以上阻力来自稠密空气！克服风阻所需功率按速度的立方 (P ∝ v³) 爆炸式增长",
+        )
+
+        # ---------------- Left Panel: Computed P(v) Cubic Curve ----------------
+        els.append(card(20, 62, 418, 372))
+        els.append(txt(34, 85, "① 速度–功率残酷曲线：地面风阻功率 P = ½ρ·Cd·A·v³", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(34, 104, "牵引克服阻力功率 (MW，同尺寸列车模型)", 9.3, MUTED, weight="600"))
+
+        gx0, gx1 = 74.0, 414.0
+        gy0, gy1 = 368.0, 124.0  # 0 to 16 MW
+        p_max = 16.0
+
+        def _vx(v_k):
+            return gx0 + (v_k / 620.0) * (gx1 - gx0)
+
+        def _py(mw):
+            return gy0 - min(mw / p_max, 1.0) * (gy0 - gy1)
+
+        for y_mw in (0, 4, 8, 12, 16):
+            yy = _py(y_mw)
+            els.append(_line(gx0, yy, gx1, yy, stroke=HAIRLINE, sw=0.9, dash="3,3" if y_mw > 0 else None))
+            els.append(txt(gx0 - 7, yy + 3.5, f"{y_mw}", 9.0, MUTED, "end"))
+
+        for v_tick in (0, 200, 350, 500, 600):
+            xx = _vx(v_tick)
+            els.append(_line(xx, gy0, xx, gy0 + 4, stroke=SLATE, sw=1.1))
+            els.append(txt(xx, gy0 + 17, f"{v_tick}", 9.0, MUTED, "middle"))
+        els.append(txt((gx0 + gx1) / 2, 406, "运行速度 v (km/h)", 9.4, INK, "middle", weight="600"))
+
+        els.append(_line(gx0, gy1, gx0, gy0, stroke=SLATE, sw=1.3))
+        els.append(_line(gx0, gy0, gx1, gy0, stroke=SLATE, sw=1.3))
+
+        speeds = list(range(0, 605, 25))
+        # Curve 1: Sea-level aerodynamic drag power (solid red)
+        pts_sea = [(_vx(v), _py(_p_aero_mw(v, rho_sea))) for v in speeds]
+        els.append(_poly(pts_sea, stroke=RED, sw=2.7))
+
+        # Curve 2: 11 km stratosphere air density (dashed blue — why airplanes win at 850 km/h!)
+        pts_strat = [(_vx(v), _py(_p_aero_mw(v, rho_airliner))) for v in speeds]
+        els.append(_poly(pts_strat, stroke=BLUE, sw=2.1, dash="5,3"))
+
+        # Curve 3: Wheel-rail mechanical rolling power (dotted slate, up to 400 km/h)
+        pts_roll = [(_vx(v), _py(_p_mech_mw(v))) for v in range(0, 425, 25)]
+        els.append(_poly(pts_roll, stroke=SLATE, sw=1.9, dash="2,3"))
+
+        # Key comparison markers at 350 km/h vs 600 km/h
+        x350, y350 = _vx(350), _py(p350)
+        x600, y600 = _vx(600), _py(p600)
+        els.append(f'<circle cx="{x350:.1f}" cy="{y350:.1f}" r="4" fill="#ffffff" stroke="{RED}" stroke-width="2"/>')
+        els.append(f'<circle cx="{x600:.1f}" cy="{y600:.1f}" r="4.5" fill="{RED}" stroke="#ffffff" stroke-width="1.5"/>')
+        els.append(_line(x350, y350, x350, gy0, stroke=RED, sw=1.0, dash="2,2"))
+        els.append(_line(x600, y600, x600, gy0, stroke=RED, sw=1.0, dash="2,2"))
+
+        els.append(txt(x350 - 6, y350 - 10, f"350 km/h 基准 ({p350:.1f} MW)", 9.0, INK, "end", weight="700"))
+        els.append(txt(x600 - 8, y600 + 4, f"600 km/h 风阻功率暴涨 5.04 倍! ({p600:.1f} MW)", 9.2, RED, "end", weight="700"))
+        els.append(txt(_vx(480), _py(_p_aero_mw(480, rho_airliner)) - 9, "若在万米高空 (空气密度仅地面 30%)", 8.9, BLUE, "middle", weight="700"))
+        els.append(txt(_vx(260), _py(_p_mech_mw(260)) + 15, "轮轨机械摩擦功率 (占比很小)", 8.8, SLATE, "middle", weight="600"))
+
+        # ---------------- Right Panel: 3 Engineering Consequences ----------------
+        els.append(card(450, 62, 290, 372))
+        els.append(txt(464, 85, "② 这堵“空气墙”逼出了三大后果", PANEL_TITLE, INK, weight="700"))
+
+        # Box A: Energy myth
+        els.append(card(464, 100, 262, 98, rx=8, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(476, 120, "1. 省了轮轨摩擦，却撞上立方级风阻", 9.9, ORANGE, weight="700"))
+        els.append(txt(476, 140, "• 从 350 提速到 600 km/h（快 1.71 倍）：", 9.2, BODY))
+        els.append(txt(476, 158, "  每公里风阻做功 (∝v²) 涨至 2.94 倍，", 9.2, INK, weight="700"))
+        els.append(txt(476, 176, "  瞬时牵引功率 (∝v³) 暴涨至 5.04 倍！", 9.2, RED, weight="700"))
+
+        # Box B: 15m nose & tunnel boom
+        els.append(card(464, 210, 262, 106, rx=8, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(476, 230, "2. 隧道微气压波“音爆”与 15 米长鼻子", 9.9, BLUE, weight="700"))
+        els.append(txt(476, 250, "• 列车 500 km/h 扎进隧道像活塞猛推空气，", 9.1, BODY))
+        els.append(txt(476, 268, "  出口激波 (∝v³) 如炮声震碎门窗！", 9.1, BODY))
+        els.append(txt(476, 286, "• 日本 L0 系被迫把首车 28 m 中的 15 m 全", 9.1, INK, weight="700"))
+        els.append(txt(476, 303, "  做成扁长流线鼻锥（首车仅能坐 24 人）！", 9.1, BLUE, weight="700"))
+
+        # Box C: Why aircraft & vactrains exist
+        els.append(card(464, 328, 262, 92, rx=8, fill=PURPLE_SOFT, stroke=PURPLE))
+        els.append(txt(476, 348, "3. 为什么飞机飞 850 km/h 反而划算？", 9.9, PURPLE, weight="700"))
+        els.append(txt(476, 367, "• 民航客机躲进 11 km 平流层，空气密度只", 9.1, BODY))
+        els.append(txt(476, 385, "  剩海平面 30%；地面磁浮除非套进抽真空", 9.1, BODY))
+        els.append(txt(476, 403, "  管道，否则永远在最稠密大气层硬扛风阻！", 9.1, PURPLE, weight="700"))
+
+        return figure(
+            448,
+            "磁悬浮列车气动阻力功率随速度立方增长曲线与万米高空空气密度对比图",
+            f"左图绘制0至600km/h下海平面气动功率(红实线)、11公里平流层同速气动功率(蓝虚线)与轮轨机械摩擦功率(灰点线)，标明600km/h气动功率({p600:.1f}MW)是350km/h({p350:.1f}MW)的5.04倍；右图解析高能耗、隧道音爆迫使L0系采用15米长鼻锥及飞机借稀薄大气降阻三大工程推论。",
+            els,
+        )
+
+    def _build_network_isolation_and_switch():
+        """SVG 4: Network incompatibility ('island effect') + cumbersome bending girder turnout switches."""
+        els = header(
+            "为什么没有大面积普及（上）：致命的“孤岛效应”与重达百吨的“扳道岔噩梦”",
+            "交通工具的终极竞争力不只看最高时速，更看“能不能一车跑遍全国既有路网”与“枢纽咽喉发车效率”",
+        )
+
+        # ---------------- Left Panel: Network Compatibility vs Transfer Island ----------------
+        els.append(card(20, 62, 354, 380))
+        els.append(txt(34, 85, "① 网络外部性对比：全国一张网 vs 30 公里孤岛", PANEL_TITLE, BLUE, weight="700"))
+
+        # Top sub-box: 1435mm Standard Gauge HSR
+        els.append(card(34, 98, 326, 154, rx=8, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(46, 118, "[互通优势] 轮轨高铁（1,435 mm 标准轨距）：无缝成网！", 9.7, GREEN, weight="700"))
+        # Hub-and-spoke mini network diagram
+        els.append(_line(74, 158, 206, 158, stroke=GREEN, sw=3.2))
+        els.append(txt(140, 149, "新建 350 km/h 高铁正线", 8.8, GREEN, "middle", weight="700"))
+        for bx_end, by_end, blbl in [(302, 134, "百年市中心老站"), (308, 158, "既有普速支线城市"), (302, 182, "跨局直通全国网")]:
+            els.append(_line(206, 158, bx_end - 44, by_end, stroke=SLATE, sw=2.0))
+            els.append(txt(bx_end, by_end + 3, blbl, 8.8, INK, "middle", weight="600"))
+        els.append(f'<circle cx="74" cy="158" r="5" fill="{GREEN}"/>')
+        els.append(f'<circle cx="206" cy="158" r="5" fill="{GREEN}"/>')
+        els.append(txt(46, 208, "• 法国 TGV、德国 ICE、中国复兴号修一段新线，就能立刻开进", 9.1, BODY))
+        els.append(txt(46, 225, "  既有市中心火车站，全国 4.5 万+ 公里高铁排列组合出上千车次", 9.1, INK, weight="700"))
+        els.append(txt(46, 242, "  （梅特卡夫定律：路网价值随连通节点平方 N² 暴涨！）。", 9.1, GREEN, weight="700"))
+
+        # Bottom sub-box: Maglev Isolated Track
+        els.append(card(34, 264, 326, 164, rx=8, fill=RED_SOFT, stroke=RED))
+        els.append(txt(46, 284, "[孤岛痛点] 磁悬浮轨道（T形抱轨 / U形深槽）：物理绝缘！", 9.7, RED, weight="700"))
+        els.append(_line(66, 320, 186, 320, stroke=RED, sw=3.4))
+        els.append(txt(126, 311, "浦东机场 ↔ 龙阳路 (8分钟)", 8.8, RED, "middle", weight="700"))
+        els.append(txt(202, 324, "✕", 13.0, RED, "middle", weight="700"))
+        els.append(_line(218, 320, 336, 320, stroke=SLATE, sw=2.0, dash="4,3"))
+        els.append(txt(277, 311, "进不了虹桥/上海站/全国网", 8.8, SLATE, "middle", weight="600"))
+        els.append(txt(46, 350, "• 真实痛点：上海磁浮 30.5 km 只跑 7–8 分钟，但终点停在郊区", 9.1, BODY))
+        els.append(txt(46, 368, "  龙阳路；旅客拎着大箱子上下楼梯换地铁进市区反倒多耗 20 分钟！", 9.1, INK, weight="700"))
+        els.append(txt(46, 386, "• 甚至磁浮内部都互不兼容：上海常导 T 梁、日本超导 U 槽、", 9.1, BODY))
+        els.append(txt(46, 404, "  中低速 F 轨各唱各的调，任何新线都得从零重修全套独立王国。", 9.1, RED, weight="600"))
+
+        # ---------------- Right Panel: Turnout Switch Comparison ----------------
+        els.append(card(386, 62, 354, 380))
+        els.append(txt(400, 85, "② 枢纽咽喉死穴：磁浮怎么“扳道岔”换轨？", PANEL_TITLE, ORANGE, weight="700"))
+
+        # Top sub-box: Steel rail point blades
+        els.append(card(400, 98, 326, 140, rx=8, fill="#ffffff", stroke=BORDER))
+        els.append(txt(412, 118, "传统钢轨道岔：拨动两片薄钢尖轨 ≈ 16 cm（仅需 3–5 秒！）", 9.6, GREEN, weight="700"))
+        # Simple clean rail turnout drawing
+        els.append(_line(424, 152, 696, 152, stroke=SLATE, sw=2.2))
+        els.append(_line(424, 174, 696, 174, stroke=SLATE, sw=2.2))
+        els.append(_line(510, 152, 676, 128, stroke=GREEN, sw=2.2))
+        els.append(_line(528, 174, 694, 148, stroke=GREEN, sw=2.2))
+        els.append(f'<circle cx="516" cy="152" r="4" fill="{GREEN}"/>')
+        els.append(txt(563, 198, "• 结构轻巧紧凑，一座大型高铁站咽喉区可密集排布数十组道岔，", 9.1, BODY, "middle"))
+        els.append(txt(563, 216, "  支撑每 3–4 分钟追踪发出一列 16 节大编组列车。", 9.1, INK, "middle", weight="700"))
+
+        # Bottom sub-box: Maglev articulated/bending girder switch
+        els.append(card(400, 250, 326, 178, rx=8, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(412, 270, "高速磁浮道岔：必须液压硬掰整根百米钢铁巨梁！（15–45 秒）", 9.5, ORANGE, weight="700"))
+        # Thick beam + hydraulic actuators bending it
+        els.append(f'<rect x="420" y="308" width="92" height="16" rx="2" fill="#94a3b8" stroke="{SLATE}" stroke-width="1.5"/>')
+        # Straight ghost position
+        els.append(f'<path d="M 512,308 L 696,308 L 696,324 L 512,324 Z" fill="#e2e8f0" stroke="{SLATE}" stroke-width="1.2" stroke-dasharray="4,3"/>')
+        # Bent girder position
+        els.append(f'<path d="M 512,308 Q 596,306 692,282 L 696,297 Q 598,321 512,324 Z" fill="#fed7aa" stroke="{ORANGE}" stroke-width="1.8"/>')
+        # Hydraulic cylinders pushing girder
+        for hx in (566, 622, 674):
+            els.append(_line(hx, 340, hx, 316, stroke=RED, sw=2.2, marker="arr-orange"))
+        els.append(txt(620, 353, "多台液压机同步推弯 70–150 m 钢箱梁!", 8.9, RED, "middle", weight="700"))
+
+        els.append(txt(412, 376, "• 因为C形臂死死抱住轨道（或嵌在U形深槽里），绝不能有钢轨缺口；", 9.1, BODY))
+        els.append(txt(412, 394, "• 高速道岔长逾百米、重达数百吨，掰一次慢且耗能，严苛限制了", 9.1, INK, weight="700"))
+        els.append(txt(412, 412, "  多站台枢纽布置与支线分叉能力！", 9.1, RED, weight="700"))
+
+        return figure(
+            456,
+            "轮轨高铁全国互通网络效应与磁悬浮孤岛效应及百米钢梁柔性道岔对比图",
+            "左图对比1435毫米标准轨距高铁直通既有老站与全国路网的N平方网络效应，以及磁悬浮物理不兼容导致的郊区换乘孤岛；右图对比传统钢轨拨动16厘米尖轨仅需3至5秒，而高速磁浮必须用液压机整体弯曲70至150米百吨级钢箱梁、耗时15至45秒的工程瓶颈。",
+            els,
+        )
+
+    def _build_track_stator_cost_breakdown():
+        """SVG 5: Infrastructure cost structure ('motor on train' vs 'copper stator along every km' + Chuo Shinkansen)."""
+        # Verified cost benchmarks (USD millions per km, order-of-magnitude documented figures):
+        # China 350 km/h HSR average: ~$20-28M/km; Shanghai Maglev (2004, $1.2B / 30.5 km): $39.3M/km;
+        # Incheon urban maglev: ~$65M/km; Linimo HSST: ~$100M/km; Chuo Shinkansen (>9T JPY / 285.6 km, ~90% tunnel): >$200M/km!
+        shanghai_m_per_km = 1200.0 / 30.5  # 39.34 M USD/km
+        chuo_m_per_km = 57000.0 / 285.6    # 199.58 M USD/km (at $57B for 285.6 km)
+        assert 39.0 < shanghai_m_per_km < 40.0 and chuo_m_per_km > 195.0
+
+        els = header(
+            "为什么没有大面积普及（中）：把铜线圈电机铺满几百公里大地，账单有多吓人？",
+            "普通高铁是“好钢花在刀刃（车头）上”；高速磁浮却得沿整条线路每一米铺设定子绕组、变电站与精密梁",
+        )
+
+        # ---------------- Left Panel: Architecture Cost Inversion ----------------
+        els.append(card(20, 62, 344, 372))
+        els.append(txt(34, 85, "① 成本结构大反转：“车带电机” vs “地铺电机”", PANEL_TITLE, INK, weight="700"))
+
+        # Conventional HSR box
+        els.append(card(34, 100, 316, 134, rx=8, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(46, 120, "轮轨高铁：昂贵动力系统“随车走”", 10.0, GREEN, weight="700"))
+        els.append(txt(46, 141, "• 电机与变流器：只装在几十列动车组车厢底下；", 9.3, BODY))
+        els.append(txt(46, 160, "• 几千公里轨道：只是两根无源工字钢轨 + 头顶一根接触网", 9.3, INK, weight="700"))
+        els.append(txt(46, 179, "  铜导线，没有电子元件，日晒雨淋皮实耐造；", 9.3, BODY))
+        els.append(txt(46, 198, "• 高架逃生：平板桥面自带检修步道，断电停靠乘客可开门", 9.2, BODY))
+        els.append(txt(46, 216, "  沿桥面安全疏散。", 9.2, GREEN, weight="700"))
+
+        # High-speed Maglev box
+        els.append(card(34, 246, 316, 172, rx=8, fill=RED_SOFT, stroke=RED))
+        els.append(txt(46, 266, "高速磁浮：等于修一条 1,000 公里长的巨型精密电机！", 9.9, RED, weight="700"))
+        els.append(txt(46, 287, "• 全线铺铜定子：每修 1 km 双线，就要在两侧铺满数公里", 9.2, INK, weight="700"))
+        els.append(txt(46, 305, "  高压三相定子硅钢叠片、铜电缆与分区高频变流变电站！", 9.2, BODY))
+        els.append(txt(46, 324, "• 毫米级防沉降：常导 10 mm 气隙容不得桥墩歪斜，上海", 9.2, BODY))
+        els.append(txt(46, 342, "  软土地基每隔 25 m 就要打入密集超深桩基锁死沉降；", 9.2, BODY))
+        els.append(txt(46, 361, "• 8,000 m 超大转弯半径 + 大截面消音隧道：遇山难绕弯，", 9.2, ORANGE, weight="700"))
+        els.append(txt(46, 379, "  高架抱轨梁若不额外加建逃生廊道，消防救援难度极高", 9.2, BODY))
+        els.append(txt(46, 397, "  （2006 德国拉滕试验线撞工程车事故即暴露高架救援痛点）。", 9.0, MUTED))
+
+        # ---------------- Right Panel: Real Project Cost/km Comparison ----------------
+        els.append(card(376, 62, 364, 372))
+        els.append(txt(390, 85, "② 真实项目每公里造价量级对比（公开史料折算）", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(390, 103, "注：跨时代汇率与地质（高架 vs 深埋隧道）不同，展示工程量级跃迁", 8.9, MUTED))
+
+        projects = [
+            ("中国 350 km/h 轮轨高铁均值", 25.0, GREEN, GREEN_SOFT, "~0.25 亿美元/km"),
+            ("上海浦东高速磁浮 (2004, 平原高架)", shanghai_m_per_km, BLUE, BLUE_SOFT, "~0.39 亿 (当年物价!)"),
+            ("韩国仁川机场低速磁浮 (2016)", 65.0, AMBER, AMBER_SOFT, "~0.65 亿美元/km"),
+            ("日本爱知县东部丘陵线 Linimo", 100.0, ORANGE, ORANGE_SOFT, "~1.00 亿美元/km"),
+            ("日本中央新干线 (86%+深隧道!)", 200.0, RED, RED_SOFT, "> 2.0 亿美元/km!"),
+        ]
+
+        bx0, bw_max = 392.0, 224.0  # 220 M maps to 224 px
+        for idx_p, (p_lbl, m_val, p_col, p_bg, p_tag) in enumerate(projects):
+            ry = 120 + idx_p * 42
+            els.append(txt(392, ry, p_lbl, 9.3, INK, weight="700" if idx_p in (0, 1, 4) else "600"))
+            bw = (m_val / 220.0) * bw_max
+            els.append(f'<rect x="{bx0}" y="{ry + 6}" width="{bw_max}" height="15" rx="3" fill="{SLATE_SOFT}"/>')
+            els.append(f'<rect x="{bx0}" y="{ry + 6}" width="{bw:.1f}" height="15" rx="3" fill="{p_bg}" stroke="{p_col}" stroke-width="1.4"/>')
+            els.append(txt(bx0 + bw + 6, ry + 17.5, p_tag, 9.0, p_col, weight="700"))
+
+        # Chuo Shinkansen reality case study box
+        els.append(card(390, 334, 336, 86, rx=8, fill=AMBER_SOFT, stroke=AMBER))
+        els.append(txt(402, 353, "现实警示：日本中央新干线（东京品川—名古屋 286 km）", 9.6, AMBER, weight="700"))
+        els.append(txt(402, 372, "• 为拉直 8,000 m 曲线并防噪音，全线约 90% 钻进深山与城市地下；", 9.0, BODY))
+        els.append(txt(402, 390, "• 预算突破 9 万亿日元，更因静冈县大井川隧道地下水之争停工多年，", 9.0, BODY))
+        els.append(txt(402, 408, "  通车时间已从原定 2027 年一路推迟至 2035 年以后！", 9.1, RED, weight="700"))
+
+        return figure(
+            448,
+            "轮轨高铁与高速磁浮基础设施成本构成反转及典型项目每公里造价对比图",
+            "左图对比轮轨高铁电机随车走、钢轨无源廉价，而高速磁浮须全线铺设铜定子绕组、高频变电站及毫米级防沉降桩基；右图对比中国350km/h高铁(~0.25亿美元/km)、上海磁浮(~0.39亿)、仁川磁浮(~0.65亿)、爱知Linimo(~1.0亿)与近90%隧道的日本中央新干线(>2.0亿美元/km且延至2035年后)。",
+            els,
+        )
+
+    def _build_door_to_door_sweet_spot():
+        """SVG 6: Door-to-door total travel time vs distance (100..2000 km) showing the narrow maglev sandwich."""
+        # Door-to-door time model T(D) = T_access + D / v_block (hours):
+        # 1. HSR (city-center to city-center, access+security = 0.90 h, block avg speed = 310 km/h)
+        # 2. High-Speed Maglev (access+transfer = 1.15 h, block avg speed = 435 km/h for 500 km/h cruise)
+        # 3. Commercial Jetliner (airport commute+early security+taxi = 2.65 h, block avg speed = 810 km/h)
+        def _t_hsr(d):
+            return 0.90 + d / 310.0
+
+        def _t_maglev(d):
+            return 1.15 + d / 435.0
+
+        def _t_air(d):
+            return 2.65 + d / 810.0
+
+        # Verify exact mathematical crossovers:
+        # HSR == Maglev: 0.90 + d/310 = 1.15 + d/435 => d * (125 / 134850) = 0.25 => d = 269.7 km
+        # Maglev == Air: 1.15 + d/435 = 2.65 + d/810 => d * (375 / 352350) = 1.50 => d = 1409.4 km
+        d_cross_low = 0.25 / (1.0 / 310.0 - 1.0 / 435.0)
+        d_cross_high = 1.50 / (1.0 / 435.0 - 1.0 / 810.0)
+        assert 265.0 < d_cross_low < 275.0 and 1405.0 < d_cross_high < 1415.0
+
+        els = header(
+            "为什么没有大面积普及（下）：前有 350 高铁、后有 850 飞机，尴尬的“夹心层”！",
+            "旅客买单的不是“轨道最高表显时速”，而是从家门到目的地办公室的“门到门全程总时间”",
+        )
+
+        # ---------------- Left Panel: Computed Door-to-Door Time Plot ----------------
+        els.append(card(20, 62, 436, 376))
+        els.append(txt(34, 85, "① 门到门总耗时对比：T总 = 市内接驳候车 + 里程 / 旅行均速", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(34, 104, "门到门全程耗时 (小时)", 9.3, MUTED, weight="600"))
+
+        gx0, gx1 = 68.0, 432.0
+        gy0, gy1 = 372.0, 124.0  # 0 to 7.5 hours
+
+        def _dx(d_km):
+            return gx0 + (d_km / 2000.0) * (gx1 - gx0)
+
+        def _ty(hrs):
+            return gy0 - (hrs / 7.5) * (gy0 - gy1)
+
+        # Highlight shaded sweet-spot band (600..1350 km) where maglev meaningfully beats both by ~35-55 min
+        xs0, xs1 = _dx(600), _dx(1350)
+        els.append(f'<rect x="{xs0:.1f}" y="{gy1:.1f}" width="{xs1 - xs0:.1f}" height="{gy0 - gy1:.1f}" fill="#fef3c7" opacity="0.55"/>')
+        els.append(txt((xs0 + xs1) / 2, gy1 + 15, "磁浮黄金夹缝", 9.1, AMBER, "middle", weight="700"))
+        els.append(txt((xs0 + xs1) / 2, gy1 + 29, "(600–1,300 km)", 8.8, AMBER, "middle", weight="600"))
+
+        for h_tick in range(0, 8):
+            yy = _ty(h_tick)
+            els.append(_line(gx0, yy, gx1, yy, stroke=HAIRLINE, sw=0.8, dash="3,3" if h_tick > 0 else None))
+            els.append(txt(gx0 - 7, yy + 3.5, f"{h_tick}h", 8.9, MUTED, "end"))
+
+        for d_tick in (0, 400, 800, 1200, 1600, 2000):
+            xx = _dx(d_tick)
+            els.append(_line(xx, gy0, xx, gy0 + 4, stroke=SLATE, sw=1.1))
+            els.append(txt(xx, gy0 + 17, f"{d_tick}", 8.9, MUTED, "middle"))
+        els.append(txt((gx0 + gx1) / 2, 410, "城市间出行距离 D (km)", 9.4, INK, "middle", weight="600"))
+
+        els.append(_line(gx0, gy1, gx0, gy0, stroke=SLATE, sw=1.3))
+        els.append(_line(gx0, gy0, gx1, gy0, stroke=SLATE, sw=1.3))
+
+        dists = list(range(100, 2001, 100))
+        pts_hsr = [(_dx(d), _ty(_t_hsr(d))) for d in dists]
+        pts_mag = [(_dx(d), _ty(_t_maglev(d))) for d in dists]
+        pts_air = [(_dx(d), _ty(_t_air(d))) for d in dists]
+
+        els.append(_poly(pts_hsr, stroke=GREEN, sw=2.4, dash="6,3"))
+        els.append(_poly(pts_air, stroke=BLUE, sw=2.4, dash="3,3"))
+        els.append(_poly(pts_mag, stroke=ORANGE, sw=2.8))
+
+        # Curve labels cleanly separated at right/left ends:
+        els.append(txt(_dx(1740), _ty(_t_hsr(1740)) - 9, "350 高铁 (市中心直达)", 9.0, GREEN, "middle", weight="700"))
+        els.append(txt(_dx(1780), _ty(_t_maglev(1780)) - 8, "500 高速磁浮", 9.0, ORANGE, "middle", weight="700"))
+        els.append(txt(_dx(1820), _ty(_t_air(1820)) + 16, "850 民航客机 (天空免铺轨!)", 9.0, BLUE, "middle", weight="700"))
+
+        # Crossover dots at ~270 km and ~1410 km
+        els.append(f'<circle cx="{_dx(d_cross_low):.1f}" cy="{_ty(_t_maglev(d_cross_low)):.1f}" r="4" fill="#ffffff" stroke="{GREEN}" stroke-width="2"/>')
+        els.append(f'<circle cx="{_dx(d_cross_high):.1f}" cy="{_ty(_t_maglev(d_cross_high)):.1f}" r="4" fill="#ffffff" stroke="{BLUE}" stroke-width="2"/>')
+
+        # ---------------- Right Panel: The Squeeze + Where Maglev Still Wins ----------------
+        els.append(card(468, 62, 272, 376))
+        els.append(txt(482, 85, "② 读懂“两头挤压”与未来突围口", PANEL_TITLE, INK, weight="700"))
+
+        # Short-medium squeeze
+        els.append(card(482, 100, 244, 102, rx=8, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(494, 120, "< 600 km：轮轨高铁越跑越快！", 9.8, GREEN, weight="700"))
+        els.append(txt(494, 139, "• 70 年代磁浮立项时轮轨仅 200 km/h；", 9.1, BODY))
+        els.append(txt(494, 157, "• 如今复兴号商业 350 km/h（CR450 冲", 9.1, INK, weight="700"))
+        els.append(txt(494, 175, "  400 km/h），600 km 内磁浮仅省十来分", 9.1, BODY))
+        els.append(txt(494, 192, "  钟，远抵不上另起炉灶的万亿造价！", 9.1, GREEN, weight="700"))
+
+        # Long-haul squeeze
+        els.append(card(482, 214, 244, 96, rx=8, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(494, 234, "> 1,400 km：民航客机零基建反超！", 9.8, BLUE, weight="700"))
+        els.append(txt(494, 253, "• 超过 1,400 km 后飞机门到门更快；", 9.1, BODY))
+        els.append(txt(494, 271, "• 关键在灵活性：两座机场间无需征地", 9.1, INK, weight="700"))
+        els.append(txt(494, 289, "  拆迁修一米桥墩，淡旺季随时调航线！", 9.1, BLUE, weight="700"))
+
+        # Future niches where maglev shines
+        els.append(card(482, 322, 244, 102, rx=8, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(494, 342, "磁浮真正发光的两大精准赛道：", 9.8, ORANGE, weight="700"))
+        els.append(txt(494, 361, "1. 100–160 km/h 城市/景区/机场接驳线：", 9.0, INK, weight="700"))
+        els.append(txt(494, 378, "   安静低噪、爬 6% 陡坡、转 75m 急弯；", 9.0, BODY))
+        els.append(txt(494, 396, "2. 既有高铁饱和的 800–1,200 km 超级走廊", 9.0, INK, weight="700"))
+        els.append(txt(494, 413, "   （如东京—大阪、京沪/沪杭甬远期分流）！", 9.0, ORANGE, weight="700"))
+
+        return figure(
+            452,
+            "轮轨高铁与高速磁浮及民航客机门到门全程耗时随距离变化交叉曲线图",
+            f"左图按市内接驳加区间运行均速绘制100至2000公里门到门总耗时：约{d_cross_low:.0f}公里内市中心直达的350km/h高铁更快，{d_cross_high:.0f}公里以上850km/h民航客机反超，将500km/h磁浮优势挤压在600至1300公里黄金夹缝；右图总结轮轨提速与航空免铺轨的双重挤压及磁浮两大精准适用场景。",
+            els,
+        )
+
+    @register("maglev-train", "磁悬浮恩绍定理、EMS与EDS悬浮截面、直线同步电机行波、三次方风阻墙、孤岛道岔与门到门经济性图解", "science_tech")
+    def build_maglev_train():
+        write_svg(SUBDIR, "earnshaw-ems-vs-eds.svg", _build_earnshaw_ems_vs_eds())
+        write_svg(SUBDIR, "unrolled-linear-motor-wave.svg", _build_unrolled_linear_motor_wave())
+        write_svg(SUBDIR, "aero-drag-cubic-wall.svg", _build_aero_drag_cubic_wall())
+        write_svg(SUBDIR, "network-isolation-and-switch.svg", _build_network_isolation_and_switch())
+        write_svg(SUBDIR, "track-stator-cost-breakdown.svg", _build_track_stator_cost_breakdown())
+        write_svg(SUBDIR, "door-to-door-sweet-spot.svg", _build_door_to_door_sweet_spot())
+
+
+_register_maglev_train()
+
+
+def _register_cold_diarrhea():
+    """6 computed 760px SVGs for the Cold-Induced Diarrhea physiology post."""
+    SUBDIR = "cold-diarrhea"
+    RED = "#dc2626"
+    RED_SOFT = "#fef2f2"
+    AMBER = "#b45309"
+    AMBER_SOFT = "#fffbeb"
+    TEAL = "#0f766e"
+    TEAL_SOFT = "#f0fdfa"
+
+    def _line(x1, y1, x2, y2, stroke=HAIRLINE, sw=1.5, dash=None, marker=None, opacity=None):
+        attrs = [
+            f'x1="{x1:.1f}"',
+            f'y1="{y1:.1f}"',
+            f'x2="{x2:.1f}"',
+            f'y2="{y2:.1f}"',
+            f'stroke="{stroke}"',
+            f'stroke-width="{sw}"',
+        ]
+        if dash:
+            attrs.append(f'stroke-dasharray="{dash}"')
+        if marker:
+            attrs.append(f'marker-end="url(#{marker})"')
+        if opacity is not None:
+            attrs.append(f'opacity="{opacity}"')
+        return f'<line {" ".join(attrs)}/>'
+
+    def _poly(pts, stroke=BLUE, sw=2.2, fill="none", dash=None):
+        d = "M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
+        extra = f' stroke-dasharray="{dash}"' if dash else ""
+        return f'<path d="{d}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}" stroke-linecap="round" stroke-linejoin="round"{extra}/>'
+
+    def _build_skin_belly_to_colon_reflex():
+        """SVG 1: TRPM8 (<26 C) abdominal skin -> T7-T12 spinal somatovisceral crosstalk + brain CRF -> colonic hypermotility."""
+        trpm8_thresh_c = 26.0
+        core_temp_c = 37.0
+        # Verify warming 220 mL of 4 C water to 37 C only costs ~7.3 kcal (proving core isn't 'frozen'):
+        kcal_cost = (0.220 * 4184.0 * (core_temp_c - 4.0)) / 4184.0
+        assert trpm8_thresh_c == 26.0 and math.isclose(kcal_cost, 7.26, abs_tol=0.05)
+
+        els = header(
+            "肚皮吹了阵凉风，肠子并没有结冰（恒温 37 ℃），为什么几分钟后大肠就开始翻江倒海？",
+            "冷风不是把肠道“冻坏了”，而是按响了腹壁冷觉受体 TRPM8，通过同节段脊髓反射与脑–肠轴拉响排空警报",
+        )
+
+        # Top myth-buster strip
+        els.append(card(20, 62, 720, 66, fill=TEAL_SOFT, stroke=TEAL))
+        els.append(txt(36, 84, "先破除一个直觉误会：踢被子或吹 20 ℃ 空调，冷空气根本冻不透你的肚皮！", PANEL_TITLE, TEAL, weight="700"))
+        els.append(txt(36, 104, "• 人体是精密恒温动物：腹壁脂肪与丰富毛细血管网会把腹腔深处的肠道严格维持在 ~37.0 ℃；", 9.3, INK, weight="600"))
+        els.append(txt(36, 120, "• 哪怕一口喝下 220 mL 的 4 ℃ 冰水，胃肠道仅花约 7.3 千卡热量（两口苹果的能量）就能把它捂热 —— 真正闯祸的是神经电信号！", 9.1, BODY))
+
+        # Three-stage reflex arc cards (y=140..442)
+        # Stage 1: Abdominal skin TRPM8 doorbell
+        els.append(card(20, 140, 228, 302))
+        els.append(pill(34, 154, "第 1 站：腹壁皮肤分子门铃", fg=BLUE, bg=BLUE_SOFT, w=178, h=22, size=9.6))
+        els.append(txt(34, 196, "诺奖冷觉通道 TRPM8 开启", 11.2, BLUE, weight="700"))
+
+        els.append(card(34, 210, 200, 108, rx=8, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(134, 232, "肚脐与腹壁皮肤表层降温", 9.6, INK, "middle", weight="700"))
+        els.append(txt(134, 254, "皮温跌破 ~26 ℃ 阈值", 11.0, BLUE, "middle", weight="700"))
+        els.append(txt(134, 275, "TRPM8 阳离子通道弹开 (Ca²⁺/Na⁺内流)", 8.8, BODY, "middle"))
+        els.append(txt(134, 294, "(若严寒 <17 ℃ 再叠加 TRPA1 痛冷通道)", 8.7, MUTED, "middle"))
+        els.append(txt(134, 311, "↓ 化作高频冷觉神经冲动", 9.0, BLUE, "middle", weight="700"))
+
+        els.append(txt(34, 340, "• 为什么肚脐眼周围格外怕凉？", 9.5, INK, weight="700"))
+        els.append(txt(34, 359, "  手脸常年裸露已建立强血管适应；", 9.1, BODY))
+        els.append(txt(34, 377, "  腹部常年盖衣、表皮薄且冷感受器密，", 9.1, BODY))
+        els.append(txt(34, 395, "  更关键的是它的传入神经直通管辖", 9.1, INK, weight="700"))
+        els.append(txt(34, 413, "  肠道的 T7–T12 胸段脊髓！", 9.2, BLUE, weight="700"))
+
+        # Arrow Stage 1 -> Stage 2
+        els.append(_line(248, 286, 264, 286, stroke=BLUE, sw=2.2, marker="arr-blue"))
+
+        # Stage 2: Spinal T6-L2 Crosstalk + Brain Hypothalamus CRF
+        els.append(card(266, 140, 228, 302))
+        els.append(pill(280, 154, "第 2 站：脊髓与下丘脑中枢", fg=PURPLE, bg=PURPLE_SOFT, w=178, h=22, size=9.6))
+        els.append(txt(280, 196, "两条神经通路同步拉响警报", 11.2, PURPLE, weight="700"))
+
+        # Subbox 2A: Spinal somatovisceral reflex
+        els.append(card(280, 210, 200, 102, rx=8, fill=PURPLE_SOFT, stroke=PURPLE))
+        els.append(txt(292, 230, "通路 A：躯体–内脏同节段反射", 9.5, PURPLE, weight="700"))
+        els.append(txt(292, 249, "• 腹壁皮肤神经 (T7–T12) 与肠道内脏", 8.9, BODY))
+        els.append(txt(292, 266, "  神经在脊髓背角汇聚进同一批节段；", 8.9, BODY))
+        els.append(txt(292, 284, "• 皮肤冷信号直接跨突触改写自主神", 8.9, INK, weight="700"))
+        els.append(txt(292, 301, "  经输出（无需大脑思考即秒级响应）！", 8.9, PURPLE, weight="700"))
+
+        # Subbox 2B: Brain-Gut CRF Axis
+        els.append(card(280, 324, 200, 104, rx=8, fill=AMBER_SOFT, stroke=AMBER))
+        els.append(txt(292, 344, "通路 B：下丘脑 CRF 应激脑–肠轴", 9.5, AMBER, weight="700"))
+        els.append(txt(292, 363, "• 寒冷作为急性生存应激源，促使下", 8.9, BODY))
+        els.append(txt(292, 380, "  丘脑室旁核分泌促肾上腺皮质激素", 8.9, BODY))
+        els.append(txt(292, 397, "  释放因子 (CRF)，激活迷走/骶部盆", 8.9, INK, weight="700"))
+        els.append(txt(292, 414, "  副交感神经向结肠下达排空指令！", 8.9, AMBER, weight="700"))
+
+        # Arrow Stage 2 -> Stage 3
+        els.append(_line(494, 286, 510, 286, stroke=ORANGE, sw=2.2, marker="arr-orange"))
+
+        # Stage 3: Colonic Effector Storm
+        els.append(card(512, 140, 228, 302))
+        els.append(pill(526, 154, "第 3 站：结肠效应器暴走", fg=RED, bg=RED_SOFT, w=174, h=22, size=9.6))
+        els.append(txt(526, 196, "强力推进收缩 + 分泌滑润液", 11.2, RED, weight="700"))
+
+        els.append(card(526, 210, 200, 128, rx=8, fill=RED_SOFT, stroke=RED))
+        els.append(txt(538, 231, "1. 高幅推进性收缩 (GMC)：", 9.4, RED, weight="700"))
+        els.append(txt(538, 249, "   平时温和分节揉捏的大肠突然改用", 8.9, BODY))
+        els.append(txt(538, 266, "   长距离强力蠕动波（听见肚里咕噜", 8.9, BODY))
+        els.append(txt(538, 283, "   肠鸣音 + 阵发性拧痛）！", 8.9, INK, weight="700"))
+        els.append(txt(538, 303, "2. 黏膜分泌 Cl⁻ 与黏液：", 9.4, ORANGE, weight="700"))
+        els.append(txt(538, 321, "   肠神经丛释放乙酰胆碱/5-HT 润滑肠腔。", 8.8, BODY))
+
+        els.append(txt(526, 358, "• 演化视角假说：遇到寒冷或突发", 9.2, INK, weight="700"))
+        els.append(txt(526, 376, "  应激时，身体优先保核心体温与肌", 9.1, BODY))
+        els.append(txt(526, 394, "  肉供血，干脆利落地清空大肠存货", 9.1, BODY))
+        els.append(txt(526, 412, "  以减轻内脏负担（与考前紧张拉肚", 9.1, BODY))
+        els.append(txt(526, 429, "  子共用同一条 CRF-R1 通路！）。", 9.1, RED, weight="700"))
+
+        return figure(
+            456,
+            "腹部受凉激活皮肤TRPM8受体经脊髓躯体内脏反射与下丘脑CRF轴诱发结肠高动力图",
+            "顶部说明腹腔维持37摄氏度恒温并非物理结冰；下方分三站展示腹壁皮温低于26摄氏度开启TRPM8通道，经T7至T12同节段脊髓躯体内脏反射及下丘脑CRF脑肠轴双路放大，触发结肠高幅推进性收缩与黏液氯离子分泌。",
+            els,
+        )
+
+    def _build_upstairs_brake_downstairs_rush():
+        """SVG 2: Asymmetric 'Upstairs Brake (CRF-R2/Sympathetic) vs Downstairs Rush (CRF-R1/Parasympathetic)' + 4C water 5-HT surge."""
+        # Verified clinical data: O'Brien & Thompson (Gut 1989) warm 71.8 min vs cold 93.2 min (+29.8% upper delay)
+        t_warm_min = 71.8
+        t_cold_min = 93.2
+        delay_pct = (t_cold_min - t_warm_min) / t_warm_min * 100.0
+        assert 29.0 < delay_pct < 30.5
+
+        els = header(
+            "奇妙的“上堵下泄”：为什么受凉喝冰水后，常常上面胃里发胀、下面大肠狂泻？",
+            "大脑对上下消化道发出了截然相反的指令；而一口 4 ℃ 冰水更会在敏感肠道里点燃血清素 (5-HT) 风暴",
+        )
+
+        # ---------------- Left Panel: Upstairs Brake vs Downstairs Accelerator ----------------
+        els.append(card(20, 62, 354, 374))
+        els.append(txt(34, 85, "① 脑–肠轴分流：上段踩刹车 vs 下段踩油门", 11.2, INK, weight="700"))
+
+        # Upper GI box (Stomach & Duodenum — BRAKE)
+        els.append(card(34, 100, 326, 150, rx=8, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(pill(46, 112, "上段（胃与十二指肠）：踩下刹车！", fg=BLUE, bg="#ffffff", w=216, h=20, size=9.4))
+        els.append(txt(46, 150, "• 主导受体：脑内 CRF-R2 受体 + 交感 β 肾上腺素通路；", 9.2, INK, weight="700"))
+        els.append(txt(46, 169, "• 真人实验证据：喝 2 ℃ 冰水显著降低胃窦收缩频率；", 9.1, BODY))
+        els.append(txt(46, 187, f"  冷刺激使标准餐上消化道传输从 {t_warm_min:.1f} min 拖慢至 {t_cold_min:.1f} min", 9.1, BLUE, weight="700"))
+        els.append(txt(46, 205, f"  （延缓约 +{delay_pct:.0f}%），同时内脏血管短暂收缩调血保温；", 9.1, BODY))
+        els.append(txt(46, 225, "• 你的真实体感：胃里像塞了块石头，发堵、嗳气、犯恶心！", 9.2, INK, weight="700"))
+
+        # Vertical split indicator
+        els.append(txt(197, 266, "↕ 同一个冷应激，上下截然相反！", 9.3, AMBER, "middle", weight="700"))
+
+        # Lower GI box (Colon & Rectum — GAS PEDAL)
+        els.append(card(34, 276, 326, 146, rx=8, fill=RED_SOFT, stroke=RED))
+        els.append(pill(46, 288, "下段（结肠与直肠）：猛踩油门！", fg=RED, bg="#ffffff", w=206, h=20, size=9.4))
+        els.append(txt(46, 326, "• 主导受体：中枢与肠道局部 CRF-R1 受体 + 骶副交感神经；", 9.2, INK, weight="700"))
+        els.append(txt(46, 345, "• 生理动作：激活结肠肌间神经元、促使黏膜肥大细胞脱颗粒，", 9.1, BODY))
+        els.append(txt(46, 363, "  结肠推进蠕动成倍加速，直肠排便反射阈值大幅降低；", 9.1, RED, weight="700"))
+        els.append(txt(46, 382, "• 你的真实体感：脐周和下腹一阵阵拧着痛，咕噜一声就得", 9.1, BODY))
+        els.append(txt(46, 400, "  立刻找厕所，拉完一两次瞬间如释重负！", 9.2, INK, weight="700"))
+
+        # ---------------- Right Panel: Internal Cold (4C Ice Water) & 5-HT Storm ----------------
+        els.append(card(386, 62, 354, 374))
+        els.append(txt(400, 85, "② 内冷路线：4 ℃ 冰水怎样引爆血清素 (5-HT)？", 11.2, PURPLE, weight="700"))
+
+        # Clinical experiment highlight box (Zuo et al. 2006 / 2007)
+        els.append(card(400, 100, 326, 114, rx=8, fill=PURPLE_SOFT, stroke=PURPLE))
+        els.append(txt(412, 120, "经典临床对照实验（山东大学齐鲁医院 Zuo 等，2006/2007）：", 9.4, PURPLE, weight="700"))
+        els.append(txt(412, 140, "• 受试者分别饮用 220 mL 的 37 ℃ 温水 vs 4 ℃ 冰水；", 9.1, BODY))
+        els.append(txt(412, 158, "• 喝 37 ℃ 温水：无论是健康人还是敏感人群，肠道阈值均平稳；", 9.1, GREEN, weight="700"))
+        els.append(txt(412, 176, "• 喝 4 ℃ 冰水后 20–90 分钟：腹泻型敏感者直肠排便阈值骤降，", 9.1, INK, weight="700"))
+        els.append(txt(412, 194, "  血液中 5-羟色胺 (5-HT) 显著飙升，且与腹痛腹泻程度正相关！", 9.1, RED, weight="700"))
+
+        # Step-by-step molecular cascade of cold drink
+        els.append(card(400, 226, 326, 196, rx=8, fill="#ffffff", stroke=BORDER))
+        els.append(txt(412, 247, "为什么冰饮比单吹冷风更容易“立竿见影”？三重叠加：", 9.6, INK, weight="700"))
+
+        steps_r = [
+            ("1. 胃–结肠反射抢跑", "冰水涌入胃窦扩张胃壁，迷走神经通知结肠“快腾地方”！", ORANGE),
+            ("2. 90% 血清素大本营", "人体 90% 以上的 5-HT 藏在肠道嗜铬细胞，遇冷大量释放！", PURPLE),
+            ("3. 蠕动+分泌双开关", "5-HT 激活肠神经 5-HT3/4 受体：狂催收缩并打开水盐分泌！", RED),
+        ]
+        for idx_s, (st_title, st_desc, st_col) in enumerate(steps_r):
+            sy = 270 + idx_s * 50
+            els.append(f'<rect x="412" y="{sy - 12}" width="6" height="34" rx="3" fill="{st_col}"/>')
+            els.append(txt(426, sy, st_title, 9.4, st_col, weight="700"))
+            els.append(txt(426, sy + 17, st_desc, 8.8, BODY))
+
+        return figure(
+            448,
+            "寒冷应激上消化道抑制与下消化道亢进分流及4摄氏度冰水诱发5羟色胺释放机制图",
+            "左栏展示脑肠轴CRF通路的不对称调控：CRF-R2与交感通路延缓胃排空(口盲传输由71.8分钟增至93.2分钟)导致胃胀，CRF-R1与副交感通路加速结肠推进导致腹泻；右栏结合220毫升4摄氏度冰水临床试验解析胃结肠反射与肠道嗜铬细胞释放5-HT的分子级联。",
+            els,
+        )
+
+    def _build_nine_liter_water_waterfall():
+        """SVG 3: Daily 9.0 L intestinal fluid waterfall & colonic transit-time animation (24h formed vs 2h watery)."""
+        # Exact physiological fluid balance (Keely & Barrett 2022 / Boron & Boulpaep):
+        diet_l = 2.0
+        sec_l = 7.0      # saliva 1.5 + gastric 2.0 + bile 0.8 + pancreatic 1.5 + intestinal 1.2 = 7.0 L
+        total_in_l = diet_l + sec_l          # 9.0 L
+        si_abs_l = 7.2                       # 80% absorbed in small intestine
+        colon_in_ml = round((total_in_l - si_abs_l) * 1000)  # 1800 mL
+        normal_abs_ml = 1650
+        normal_stool_ml = colon_in_ml - normal_abs_ml        # 150 mL
+        chill_abs_ml = 1250
+        chill_sec_ml = 80
+        chill_stool_ml = colon_in_ml - chill_abs_ml + chill_sec_ml  # 630 mL
+        assert total_in_l == 9.0 and colon_in_ml == 1800 and normal_stool_ml == 150 and chill_stool_ml == 630
+
+        extra_css = """
+  @keyframes slowKnead {
+    0% { transform: translateX(0px); }
+    100% { transform: translateX(176px); }
+  }
+  @keyframes fastPurge {
+    0% { transform: translateX(0px); }
+    100% { transform: translateX(272px); }
+  }
+  .bolus-normal {
+    animation: slowKnead 4.2s ease-in-out 1 forwards;
+  }
+  .bolus-chill {
+    animation: fastPurge 1.3s cubic-bezier(0.2, 0.8, 0.3, 1) 1 forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .bolus-normal, .bolus-chill {
+      animation: none !important;
+      transform: none !important;
+    }
+  }
+"""
+
+        els = header(
+            "你明明没多喝水，拉出来的半盆稀水是从哪来的？—— 每天 9 升消化液的“过站不停”账",
+            "肠道每天要回收 9,000 mL 液体！大肠只要因为蠕动太快漏收区区 500 mL（不到总量 6%），就会决堤成水样腹泻",
+        )
+
+        # ---------------- Top Strip: The 9.0 L/day Fluid Ledger ----------------
+        els.append(card(20, 62, 720, 102, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(36, 84, "① 惊人的每日肠道流水账：你肚子里每天流淌着 9.0 升（18 瓶矿泉水）液体！", PANEL_TITLE, INK, weight="700"))
+
+        # Flow boxes left-to-right inside top card
+        els.append(card(36, 94, 206, 58, rx=6, fill="#ffffff", stroke=BLUE))
+        els.append(txt(139, 114, "上游总注入：9,000 mL / 天", 9.6, BLUE, "middle", weight="700"))
+        els.append(txt(139, 132, "饮食水 2.0 L + 自产消化液 7.0 L", 8.9, BODY, "middle"))
+        els.append(txt(139, 146, "(唾液1.5+胃2.0+胰1.5+胆0.8+肠1.2)", 8.5, MUTED, "middle"))
+
+        els.append(_line(244, 123, 270, 123, stroke=BLUE, sw=2.0, marker="arr-blue"))
+
+        els.append(card(274, 94, 212, 58, rx=6, fill="#ffffff", stroke=GREEN))
+        els.append(txt(380, 114, "主力吸水段：小肠（2–5 小时）", 9.6, GREEN, "middle", weight="700"))
+        els.append(txt(380, 132, "重吸收约 7,200 mL（占 80%）", 9.0, INK, "middle", weight="700"))
+        els.append(txt(380, 146, "靠营养素与 Na⁺ 耦联把大头吸干", 8.7, BODY, "middle"))
+
+        els.append(_line(488, 123, 514, 123, stroke=ORANGE, sw=2.0, marker="arr-orange"))
+
+        els.append(card(518, 94, 206, 58, rx=6, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(621, 114, "交接给大肠：1,800 mL 稀糊食糜!", 9.6, ORANGE, "middle", weight="700"))
+        els.append(txt(621, 132, "刚过回盲瓣时，食糜本来就是稀水状!", 8.9, INK, "middle", weight="600"))
+        els.append(txt(621, 146, "全靠大肠慢工出细活把它“拧干”成型", 8.7, BODY, "middle"))
+
+        # ---------------- Middle Track: Normal Slow Colonic Drying (12-36 h) ----------------
+        els.append(card(20, 176, 720, 124))
+        els.append(txt(36, 198, "② 正常模式（大肠慢速精炼 12–36 小时）：从容吸走 1,650 mL 水 → 排出健康成型软便", 10.6, GREEN, weight="700"))
+
+        # Colon tube schematic
+        els.append(f'<rect x="36" y="214" width="446" height="44" rx="22" fill="{GREEN_SOFT}" stroke="{GREEN}" stroke-width="1.8"/>')
+        els.append(txt(92, 240, "入口: 1,800 mL 稀食糜", 9.0, INK, "middle", weight="700"))
+        # Upward/downward reabsorption arrows along colon wall
+        for ax_n in (176, 246, 316, 386):
+            els.append(_line(ax_n, 256, ax_n, 278, stroke=GREEN, sw=1.8, marker="arr-green"))
+        els.append(txt(281, 290, "上皮细胞 Na⁺ 泵充裕工作 24 小时 → 吸回 1,650 mL 水进血液!", 9.0, GREEN, "middle", weight="700"))
+
+        # Animated slow bolus
+        els.append('<g class="bolus-normal">')
+        els.append(f'<circle cx="170" cy="236" r="13" fill="{GREEN}" opacity="0.88"/>')
+        els.append(txt(170, 240, "慢", 9.0, "#ffffff", "middle", weight="700"))
+        els.append("</g>")
+
+        # Output summary box on right
+        els.append(card(500, 208, 224, 78, rx=8, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(612, 230, "最终粪便含水仅 ~150 mL", 10.2, GREEN, "middle", weight="700"))
+        els.append(txt(612, 250, "大肠脱水效率高达 91.7%", 9.2, INK, "middle", weight="700"))
+        els.append(txt(612, 269, "（布里斯托 3–4 型香蕉软便）", 9.0, BODY, "middle"))
+
+        # ---------------- Bottom Track: Cold-Triggered Hyper-Motility (1-3 h) ----------------
+        els.append(card(20, 312, 720, 128))
+        els.append(txt(36, 334, "③ 着凉模式（GMC 推进波狂飙 1–3 小时过站不停！）：没来得及吸干就直接冲出肛门", 10.6, RED, weight="700"))
+
+        els.append(f'<rect x="36" y="350" width="446" height="44" rx="22" fill="{RED_SOFT}" stroke="{RED}" stroke-width="2.0"/>')
+        els.append(txt(92, 376, "入口: 1,800 mL 稀食糜", 9.0, INK, "middle", weight="700"))
+        els.append(_line(164, 372, 424, 372, stroke=RED, sw=2.0, dash="6,3", marker="arr-orange"))
+        els.append(txt(281, 426, "停留时间缩短 8–10 倍 + 隐窝轻度分泌 (~80 mL) → 漏收近 500 mL 水!", 9.0, RED, "middle", weight="700"))
+
+        # Animated fast bolus
+        els.append('<g class="bolus-chill">')
+        els.append(f'<circle cx="164" cy="372" r="14" fill="{RED}"/>')
+        els.append(txt(164, 376, "急!", 9.0, "#ffffff", "middle", weight="700"))
+        els.append("</g>")
+
+        # Output summary box on right
+        els.append(card(500, 344, 224, 82, rx=8, fill=RED_SOFT, stroke=RED))
+        els.append(txt(612, 366, "瞬间排出 ~630 mL 稀水便!", 10.2, RED, "middle", weight="700"))
+        els.append(txt(612, 386, "并非凭空造水，而是回收来不及!", 9.1, INK, "middle", weight="700"))
+        els.append(txt(612, 405, "（布里斯托 6–7 型糊状/水样便）", 9.0, BODY, "middle"))
+
+        return figure(
+            452,
+            "人体每日9升消化液平衡账与受凉结肠过快推进导致水分漏收腹泻对比动画图",
+            "顶部展示每日9000毫升肠液中7200毫升由小肠吸收、1800毫升稀食糜进入大肠；中栏慢速动画演示正常12至36小时吸回1650毫升水仅留150毫升成型便；下栏快速动画演示着凉推进波将停留缩短至1至3小时，漏收约500毫升水即排出630毫升水样便。",
+            els,
+            extra_css=extra_css,
+        )
+
+    def _build_healthy_vs_ibsd_cold_threshold():
+        """SVG 4: Why roommates react differently — Visceral hypersensitivity curve & 4 susceptibility amplifiers."""
+        # Model normalized colonic urgent response R(s) = 100 / (1 + exp(-(s - s50)/k))
+        def _resp(s, s50, k=0.85):
+            return 100.0 / (1.0 + math.exp(-(s - s50) / k))
+
+        # At cold stimulus s = 5.0 (e.g. 220 mL 4C drink or 22C draft on belly):
+        r_norm = _resp(5.0, 7.6)   # ~4.5% (well below urgency threshold 60%)
+        r_ibsd = _resp(5.0, 3.8)   # ~80.4% (crosses urgency threshold 60% -> urgent diarrhea!)
+        assert r_norm < 15.0 and r_ibsd > 75.0
+
+        els = header(
+            "同吹一台 22 ℃ 空调、同喝一杯冰美式，为什么室友没事，你却秒变“喷射战士”？",
+            "人与人的肠道神经报警器“灵敏度阈值”相差数倍 —— 读懂内脏高敏感性 (Visceral Hypersensitivity)",
+        )
+
+        # ---------------- Left Panel: Stimulus-Response Threshold Shift Curve ----------------
+        els.append(card(20, 62, 412, 368))
+        els.append(txt(34, 85, "① 肠道冷刺激–排便反射曲线：报警器阈值左移！", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(34, 104, "结肠推进与排便急迫强度 (%)", 9.2, MUTED, weight="600"))
+
+        gx0, gx1 = 72.0, 408.0
+        gy0, gy1 = 364.0, 126.0
+
+        def _sx(s):
+            return gx0 + (s / 10.0) * (gx1 - gx0)
+
+        def _ry(pct):
+            return gy0 - (pct / 100.0) * (gy0 - gy1)
+
+        for y_pct in (0, 25, 50, 75, 100):
+            yy = _ry(y_pct)
+            els.append(_line(gx0, yy, gx1, yy, stroke=HAIRLINE, sw=0.8, dash="3,3" if y_pct > 0 else None))
+            els.append(txt(gx0 - 7, yy + 3.5, f"{y_pct}%", 8.9, MUTED, "end"))
+
+        # Urgency threshold line at 60%
+        y_urg = _ry(60)
+        els.append(_line(gx0, y_urg, gx1, y_urg, stroke=AMBER, sw=1.4, dash="5,3"))
+        els.append(txt(gx0 + 6, y_urg - 6, "排便急迫发作线 (60%)", 8.8, AMBER, "start", weight="700"))
+
+        # Vertical stimulus band at s = 5.0 ("一杯冰美式 / 半夜踢被子")
+        x_stim = _sx(5.0)
+        els.append(_line(x_stim, gy1, x_stim, gy0, stroke=BLUE, sw=1.3, dash="3,3"))
+        els.append(txt(x_stim, gy1 + 12, "日常冷刺激强度", 8.9, BLUE, "middle", weight="700"))
+        els.append(txt(x_stim, gy1 + 26, "(一杯冰水 / 吹凉风)", 8.6, BLUE, "middle"))
+
+        els.append(_line(gx0, gy1, gx0, gy0, stroke=SLATE, sw=1.3))
+        els.append(_line(gx0, gy0, gx1, gy0, stroke=SLATE, sw=1.3))
+        els.append(txt((gx0 + gx1) / 2, 404, "寒冷 / 肠腔扩张复合刺激强度 →", 9.4, INK, "middle", weight="600"))
+
+        xs = [i * 0.4 for i in range(26)]
+        pts_ibsd = [(_sx(s), _ry(_resp(s, 3.8))) for s in xs]
+        pts_norm = [(_sx(s), _ry(_resp(s, 7.6))) for s in xs]
+        els.append(_poly(pts_ibsd, stroke=RED, sw=2.7))
+        els.append(_poly(pts_norm, stroke=GREEN, sw=2.4, dash="6,3"))
+
+        # Dots at s=5.0
+        els.append(f'<circle cx="{x_stim:.1f}" cy="{_ry(r_ibsd):.1f}" r="4.5" fill="{RED}"/>')
+        els.append(f'<circle cx="{x_stim:.1f}" cy="{_ry(r_norm):.1f}" r="4.5" fill="{GREEN}"/>')
+
+        els.append(txt(_sx(2.4), _ry(_resp(2.4, 3.8)) - 10, "[高敏] 肠易激 IBS-D 曲线", 9.0, RED, "middle", weight="700"))
+        els.append(txt(_sx(7.3), _ry(22), "[耐受] 钝感健康肠道", 9.0, GREEN, "middle", weight="700"))
+
+        # ---------------- Right Panel: 4 Susceptibility Amplifiers ----------------
+        els.append(card(444, 62, 296, 368))
+        els.append(txt(458, 85, "② 把你变成“一凉就拉”的四大放大器", 11.4, INK, weight="700"))
+
+        amps = [
+            (
+                "1. 内脏高敏感性 (IBS-D 体质)",
+                "肠壁神经 TRPM8/5-HT 受体过度敏化，",
+                "别人无感的微弱降温在你肠里堪比拉警报。",
+                RED,
+                RED_SOFT,
+            ),
+            (
+                "2. 精神焦虑与熬夜应激叠加",
+                "压力已提前拉高下丘脑 CRF 基线；再吹",
+                "一阵凉风，中枢外周双重叠加瞬间破防。",
+                PURPLE,
+                PURPLE_SOFT,
+            ),
+            (
+                "3. 冰饮里的“化学合谋犯”",
+                "背锅的不只是冰块：冰拿铁的乳糖+咖啡因、",
+                "冰果茶的高果糖都在同步高渗吸水催泻！",
+                ORANGE,
+                ORANGE_SOFT,
+            ),
+            (
+                "4. 肠炎恢复期与黏膜屏障脆弱",
+                "急性胃肠炎后数月肥大细胞仍活跃；动物",
+                "实验亦提示冷应激可削弱紧密连接 ZO-1。",
+                BLUE,
+                BLUE_SOFT,
+            ),
+        ]
+        for idx_a, (a_t, a_l1, a_l2, a_c, a_bg) in enumerate(amps):
+            ay = 100 + idx_a * 80
+            els.append(card(458, ay, 268, 70, rx=7, fill=a_bg, stroke=a_c))
+            els.append(txt(470, ay + 19, a_t, 9.5, a_c, weight="700"))
+            els.append(txt(470, ay + 38, a_l1, 8.9, BODY))
+            els.append(txt(470, ay + 55, a_l2, 8.9, BODY))
+
+        return figure(
+            444,
+            "内脏高敏感IBS-D人群与健康人群肠道冷刺激排便反射阈值偏移对比及四大诱因图",
+            "左图绘制S形刺激响应曲线：在相同日常冷刺激强度下，健康肠道响应低于5%，而阈值左移的腹泻型肠易激(IBS-D)肠道响应超过80%跨过排便急迫线；右图归纳内脏高敏感、焦虑CRF叠加、冰饮乳糖咖啡因合谋及黏膜屏障脆弱四大放大器。",
+            els,
+        )
+
+    def _build_chill_vs_pathogen_detective():
+        """SVG 5: Diagnostic matrix distinguishing pure neurogenic chill diarrhea vs Norovirus vs Bacterial food poisoning."""
+        els = header(
+            "科学破案：别什么锅都甩给“着凉”！30 秒分清真受凉反射 vs 病毒与细菌偷袭",
+            "夏季“空调冰西瓜拉肚子”和冬季“冻着肚子上吐下泻”，至少有一半其实是病原体让冷风背了黑锅！",
+        )
+
+        # Top Strip: Two classic attribution illusions
+        els.append(card(20, 62, 354, 86, fill=AMBER_SOFT, stroke=AMBER))
+        els.append(txt(34, 83, "经典错觉 A：夏天吹空调吃冰镇隔夜西瓜狂拉", 9.9, AMBER, weight="700"))
+        els.append(txt(34, 103, "• 真相：冰温虽会催快蠕动，但如果连拉五六趟甚至发烧，", 9.0, BODY))
+        els.append(txt(34, 120, "  真凶多半是切瓜案板/刀具生熟混用或冰箱滋生的沙门氏菌、", 9.0, INK, weight="700"))
+        els.append(txt(34, 137, "  副溶血弧菌或金黄色葡萄球菌肠毒素！", 9.0, RED, weight="700"))
+
+        els.append(card(386, 62, 354, 86, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(400, 83, "经典错觉 B：冬天半夜觉得冷，第二天全家上吐下泻", 9.9, BLUE, weight="700"))
+        els.append(txt(400, 103, "• 真相：冬季头号元凶其实是极耐寒的诺如病毒 (Norovirus)！", 9.0, INK, weight="700"))
+        els.append(txt(400, 120, "  潜伏期恰好 12–48 小时，发作前畏寒发冷本就是病毒前驱症状，", 9.0, BODY))
+        els.append(txt(400, 137, "  却常被误以为“昨晚踢被子冻出了胃肠感冒”！", 9.0, BLUE, weight="700"))
+
+        # Comparison Matrix Table (y=160..442)
+        els.append(card(20, 160, 720, 282))
+        # Column headers
+        els.append(f'<rect x="20" y="160" width="720" height="34" rx="8" fill="{SLATE_SOFT}"/>')
+        els.append(txt(86, 182, "鉴别维度", 9.8, INK, "middle", weight="700"))
+        els.append(txt(252, 182, "单纯着凉功能性腹泻（神经反射）", 9.8, GREEN, "middle", weight="700"))
+        els.append(txt(458, 182, "诺如 / 轮状病毒性胃肠炎", 9.8, BLUE, "middle", weight="700"))
+        els.append(txt(644, 182, "细菌性肠炎 / 食物中毒", 9.8, RED, "middle", weight="700"))
+
+        rows = [
+            ("发作潜伏期", "极快（吹风/冰饮后 15 min–2 h）", "潜伏 12–48 小时后突然暴发", "2–6 h (毒素) 或 12–72 h (活菌)"),
+            ("排便与呕吐", "拉 1–2 次稀软便，排空立刻轻松", "水样便日拉数次 + 常伴喷射呕吐", "频繁腹泻，常伴剧烈腹痛里急后重"),
+            ("发烧与酸痛", "绝不发烧（体温正常）", "常伴低中度发热、头痛、肌肉酸痛", "常见中高热（>38.5 ℃）、寒战乏力"),
+            ("粪便性状", "黄色稀糊或水样，无脓血黏液", "清亮或蛋花汤样水便，无脓血", "可带大量黏液、腥臭甚至脓血丝!"),
+            ("传染与用药", "不传染；温敷补水自愈，禁抗生素", "极强传染！肥皂洗手+ORS，禁抗生素!", "同桌共食者常同病；重者须就医验便"),
+        ]
+        for r_idx, (c0, c1, c2, c3) in enumerate(rows):
+            ry = 194 + r_idx * 49
+            els.append(_line(28, ry, 732, ry, stroke=HAIRLINE, sw=1.0))
+            if r_idx % 2 == 1:
+                els.append(f'<rect x="24" y="{ry + 1}" width="712" height="47" fill="#f8fafc"/>')
+            els.append(_line(148, 164, 148, 438, stroke=HAIRLINE, sw=0.9))
+            els.append(_line(356, 164, 356, 438, stroke=HAIRLINE, sw=0.9))
+            els.append(_line(554, 164, 554, 438, stroke=HAIRLINE, sw=0.9))
+
+            cy_txt = ry + 29
+            els.append(txt(86, cy_txt, c0, 9.4, INK, "middle", weight="700"))
+            els.append(txt(252, cy_txt, c1, 8.9, GREEN if r_idx in (0, 2) else BODY, "middle", weight="600"))
+            els.append(txt(455, cy_txt, c2, 8.9, BLUE if r_idx in (1, 4) else BODY, "middle", weight="600"))
+            els.append(txt(644, cy_txt, c3, 8.9, RED if r_idx in (2, 3) else BODY, "middle", weight="600"))
+
+        return figure(
+            456,
+            "单纯受凉神经反射性腹泻与诺如病毒胃肠炎及细菌性食物中毒五维鉴别诊断表",
+            "上部拆解夏季冰西瓜细菌污染与冬季诺如病毒潜伏期被误判为着凉的两大归因错觉；下部从发作潜伏期、排便呕吐特点、发热酸痛、粪便脓血性状及传染性与抗生素禁忌五个维度对比三类腹泻。",
+            els,
+        )
+
+    def _build_warm_rescue_and_ors_guide():
+        """SVG 6: Physiology-backed relief — 40C thermal gate control, SGLT1 Na-glucose water rescue, and red flags."""
+        # SGLT1 stoichiometry check: 2 Na+ + 1 glucose co-transports ~200-260 H2O molecules osmotically!
+        na_per_cycle = 2
+        glc_per_cycle = 1
+        h2o_dragged = 210
+        assert na_per_cycle == 2 and glc_per_cycle == 1 and h2o_dragged > 180
+
+        els = header(
+            "真着凉拉肚子了怎么科学自救？—— 读懂“捂热水袋”与“口服补液盐”背后的硬核生理学",
+            "长辈说的“捂捂肚子喝点淡盐糖水”并非心理安慰，但瞎吞抗生素和猛灌纯白开水却会帮倒忙！",
+        )
+
+        # Column 1: Abdominal Thermal Gating (40 C)
+        els.append(card(20, 62, 232, 368))
+        els.append(pill(34, 76, "第 1 招：物理关掉冷警报", fg=GREEN, bg=GREEN_SOFT, w=178, h=22, size=9.5))
+        els.append(txt(34, 118, "40 ℃ 温敷肚脐为什么管用？", 11.0, GREEN, weight="700"))
+
+        els.append(card(34, 132, 204, 118, rx=8, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(46, 153, "• 关闭 TRPM8 冷通道：", 9.3, GREEN, weight="700"))
+        els.append(txt(46, 171, "  把腹壁皮温拉回 32 ℃ 以上，直接", 8.9, BODY))
+        els.append(txt(46, 188, "  切断 T7–T12 冷觉传入冲动源头；", 8.9, BODY))
+        els.append(txt(46, 208, "• 温觉反向平抚内脏：", 9.3, INK, weight="700"))
+        els.append(txt(46, 226, "  温和热刺激激活 C/Aδ 温觉纤维，", 8.9, BODY))
+        els.append(txt(46, 242, "  降低副交感痉挛张力、舒张血管。", 8.9, BODY))
+
+        els.append(txt(34, 274, "• 日常防凉重点部位：", 9.4, INK, weight="700"))
+        els.append(txt(34, 293, "  睡觉搭住肚脐小腹（薄搭毯即可）；", 9.0, BODY))
+        els.append(txt(34, 311, "  满头大汗进低温空调房先擦干汗水", 9.0, BODY))
+        els.append(txt(34, 329, "  （汗液蒸发吸热会让皮温骤降！）；", 9.0, INK, weight="600"))
+        els.append(txt(34, 349, "• 温敷安全提醒：隔衣控制在", 9.0, AMBER, weight="700"))
+        els.append(txt(34, 367, "  40–42 ℃，切勿暖宝宝贴肉过夜", 9.0, BODY))
+        els.append(txt(34, 385, "  以防低温烫伤！", 9.0, RED, weight="700"))
+
+        # Column 2: SGLT1 Oral Rehydration Physics
+        els.append(card(264, 62, 232, 368))
+        els.append(pill(278, 76, "第 2 招：启动小肠吸水泵", fg=BLUE, bg=BLUE_SOFT, w=178, h=22, size=9.5))
+        els.append(txt(278, 118, "口服补液盐 (ORS) 的分子魔术", 11.0, BLUE, weight="700"))
+
+        els.append(card(278, 132, 204, 128, rx=8, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(380, 153, "小肠绒毛 SGLT1 同向转运体", 9.5, BLUE, "middle", weight="700"))
+        els.append(txt(380, 176, "2 个 Na⁺ + 1 个葡萄糖", 10.6, INK, "middle", weight="700"))
+        els.append(txt(380, 196, f"↓ 顺带拽回 ~{h2o_dragged} 个水分子!", 9.6, GREEN, "middle", weight="700"))
+        els.append(txt(290, 220, "• 哪怕大肠正拉稀，小肠上的这台", 8.8, BODY))
+        els.append(txt(290, 237, "  钠–糖耦联吸水泵依然全速运转！", 8.8, INK, weight="700"))
+        els.append(txt(290, 253, "  （曾挽救全球数千万腹泻脱水儿童）", 8.6, MUTED))
+
+        els.append(txt(278, 282, "• 喝错水反而帮倒忙：", 9.4, INK, weight="700"))
+        els.append(txt(278, 301, "  [错] 狂灌纯白水：缺钠难锁水、腿软；", 8.9, BODY))
+        els.append(txt(278, 319, "  [错] 喝高糖果汁/可乐：渗透压太高，", 8.9, RED, weight="600"))
+        els.append(txt(278, 337, "       反而把血管里的水倒拽进肠腔！", 8.9, RED, weight="700"))
+        els.append(txt(278, 357, "  [对] 轻度拉 1–2 次喝温米汤/温水；", 8.9, GREEN, weight="700"))
+        els.append(txt(278, 375, "       多次水泻首选药店“口服补液盐III”", 8.9, INK, weight="700"))
+        els.append(txt(278, 393, "       （低渗配方 245 mOsm/L 最快吸水）。", 8.8, BODY))
+
+        # Column 3: Pitfalls & Red-Flag Checklist
+        els.append(card(508, 62, 232, 368))
+        els.append(pill(522, 76, "第 3 招：避坑与就医红线", fg=RED, bg=RED_SOFT, w=178, h=22, size=9.5))
+        els.append(txt(522, 118, "别乱吃药！认准四大就医警报", 11.0, RED, weight="700"))
+
+        els.append(card(522, 132, 204, 108, rx=8, fill=AMBER_SOFT, stroke=AMBER))
+        els.append(txt(534, 152, "头号误区：一拉肚子就吃抗生素！", 9.3, AMBER, weight="700"))
+        els.append(txt(534, 171, "• 阿莫西林/头孢/诺氟沙星只杀细菌；", 8.9, BODY))
+        els.append(txt(534, 189, "• 对受凉神经反射和诺如病毒 0 作用，", 8.9, INK, weight="700"))
+        els.append(txt(534, 207, "  反而错杀肠道有益菌群加重腹泻！", 8.9, RED, weight="700"))
+        els.append(txt(534, 225, "  (黏膜保护可用蒙脱石散，勿与他药同服)", 8.5, BODY))
+
+        els.append(card(522, 252, 204, 164, rx=8, fill=RED_SOFT, stroke=RED))
+        els.append(txt(534, 272, "出现以下任一“红旗信号”立即就医：", 9.2, RED, weight="700"))
+        els.append(txt(534, 292, "1. 发热 > 38.5 ℃ 或寒战不退；", 8.9, INK, weight="700"))
+        els.append(txt(534, 311, "2. 粪便带血丝、暗红果酱色或黑便；", 8.9, INK, weight="700"))
+        els.append(txt(534, 330, "3. 脱水征兆：半天无尿/尿深黄、口干", 8.9, BODY))
+        els.append(txt(534, 348, "   无泪、站起头晕眼花（尤其老人幼儿）；", 8.9, BODY))
+        els.append(txt(534, 367, "4. 腹痛从脐周转移并固定在右下腹", 8.9, RED, weight="700"))
+        els.append(txt(534, 385, "   （高度警惕急性阑尾炎伪装成拉肚子！）", 8.8, RED, weight="700"))
+        els.append(txt(534, 404, "   或腹泻持续 > 48 小时未见好转。", 8.8, BODY))
+
+        return figure(
+            444,
+            "受凉腹泻科学自救三步指南：40摄氏度腹部温敷门控、SGLT1口服补液盐机制与就医红线图",
+            "左栏解析40摄氏度温敷关闭腹壁TRPM8冷通道并平抚副交感痉挛的原理；中栏展示小肠SGLT1每转运2个钠离子加1个葡萄糖带动约210个水分子吸收的口服补液盐机制及纯水高糖水误区；右栏警示滥用抗生素危害与高热、便血、脱水、右下腹转移痛四大就医红线。",
+            els,
+        )
+
+    @register("cold-diarrhea", "受凉腹泻TRPM8脊髓脑肠轴反射、上下消化道CRF分流与5-HT、9升肠液过站不停、高敏阈值与病原鉴别图解", "science_tech")
+    def build_cold_diarrhea():
+        write_svg(SUBDIR, "skin-belly-to-colon-reflex.svg", _build_skin_belly_to_colon_reflex())
+        write_svg(SUBDIR, "upstairs-brake-downstairs-rush.svg", _build_upstairs_brake_downstairs_rush())
+        write_svg(SUBDIR, "nine-liter-water-waterfall.svg", _build_nine_liter_water_waterfall())
+        write_svg(SUBDIR, "healthy-vs-ibsd-cold-threshold.svg", _build_healthy_vs_ibsd_cold_threshold())
+        write_svg(SUBDIR, "chill-vs-pathogen-detective.svg", _build_chill_vs_pathogen_detective())
+        write_svg(SUBDIR, "warm-rescue-and-ors-guide.svg", _build_warm_rescue_and_ors_guide())
+
+
+_register_cold_diarrhea()

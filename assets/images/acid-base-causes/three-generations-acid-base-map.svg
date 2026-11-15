@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">阿伦尼乌斯、布朗斯特-劳里与路易斯三代酸碱理论包含关系图解</title>
+<desc id="desc">用三层嵌套结构展示从水溶液电离H+和OH-、到质子给予体与接受体、再到电子对接受体与给予体的酸碱本质统一过程。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">没有 OH⁻ 的氨水凭什么是碱？没有 H 的 CO₂ 凭什么变酸？三代酸碱大统一</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">不是推翻前人而是层层扩容：阿伦尼乌斯水电离(1884) ⊂ 布朗斯特-劳里质子战(1923) ⊂ 路易斯电子对(1923)</text>
+<rect x="24" y="84" width="712" height="362" rx="16" fill="#f3e8ff" stroke="#c4b5fd" stroke-width="2"/>
+<circle cx="44" cy="108" r="10.5" fill="#eaf4fb" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="44" y="112" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">3</text>
+<text x="66" y="113" font-size="13" fill="#6d28d9" text-anchor="start" font-weight="700">第三代终极底层：路易斯电子理论（G. N. Lewis，1923）——连氢原子都不必有！</text>
+<text x="44" y="136" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">判据：路易斯酸 = 缺电子“空房间”（接纳电子对）  ‖  路易斯碱 = 富电子“金主”（捐出孤对电子 :B）</text>
+<rect x="502" y="152" width="218" height="278" rx="12" fill="#ffffff" stroke="#c4b5fd" stroke-width="1"/>
+<text x="611" y="176" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="700">路易斯视野才懂的奇案</text>
+<text x="516" y="202" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">① 汽水与酸雨为什么酸？</text>
+<text x="516" y="220" font-size="10.6" fill="#1e293b" text-anchor="start">CO₂ 无 H，但碳带正电缺电子，</text>
+<text x="516" y="238" font-size="10.6" fill="#1e293b" text-anchor="start">一口咬住 H₂O 孤对电子 → H₂CO₃！</text>
+<text x="516" y="266" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">② 明矾/三氯化铝为何显酸性？</text>
+<text x="516" y="284" font-size="10.6" fill="#1e293b" text-anchor="start">Al³⁺ 空轨道猛拽周围水分子电子，</text>
+<text x="516" y="302" font-size="10.6" fill="#1e293b" text-anchor="start">逼得水分子当场甩出 H⁺！</text>
+<text x="516" y="330" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">③ 经典无氢配位成键：</text>
+<rect x="516.0" y="342.0" width="190" height="24" rx="12.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="611.0" y="358.3" font-size="10.2" fill="#6d28d9" text-anchor="middle" font-weight="600">BF₃(空轨道) + :NH₃ → F₃B←NH₃</text>
+<text x="516" y="388" font-size="10.5" fill="#64748b" text-anchor="start">④ 血红素 Fe²⁺ 抓 O₂、叶绿素 Mg²⁺</text>
+<text x="516" y="406" font-size="10.5" fill="#6d28d9" text-anchor="start" font-weight="600">本质全都是路易斯酸碱配位！</text>
+<rect x="42" y="152" width="446" height="278" rx="14" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1.8"/>
+<circle cx="62" cy="176" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="62" y="180" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">2</text>
+<text x="84" y="181" font-size="12.5" fill="#1e3a8a" text-anchor="start" font-weight="700">第二代：质子转移理论（Brønsted &amp; Lowry，1923）</text>
+<text x="60" y="202" font-size="11" fill="#0f172a" text-anchor="start" font-weight="600">判据：酸 = 扔出 H⁺ 的射手 ‖ 碱 = 接住 H⁺ 的捕手（突破水限制！）</text>
+<text x="60" y="224" font-size="10.8" fill="#1e293b" text-anchor="start">• 破解小苏打/氨水无 OH⁻ 之谜：它们不自带 OH⁻，而是抢走水的 H⁺！</text>
+<rect x="60.0" y="236.0" width="408" height="22" rx="11.0" fill="#ffffff" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="264.0" y="251.0" font-size="10.2" fill="#1e3a8a" text-anchor="middle" font-weight="600">NH₃(碱) + H₂O(酸) ⇌ NH₄⁺(共轭酸) + OH⁻(共轭碱)  |  隔空冒白烟也成立</text>
+<rect x="60" y="272" width="410" height="144" rx="12" fill="#ffffff" stroke="#18794e" stroke-width="1.8"/>
+<circle cx="80" cy="294" r="10.5" fill="#eaf4fb" stroke="#18794e" stroke-width="1.2"/>
+<text x="80" y="298" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">1</text>
+<text x="102" y="299" font-size="12" fill="#18794e" text-anchor="start" font-weight="700">第一代核心：水电离理论（Arrhenius，1884，诺奖）</text>
+<text x="78" y="322" font-size="10.8" fill="#0f172a" text-anchor="start">• 酸：在水中解离出 H⁺(H₃O⁺)，如 HCl、H₂SO₄、HNO₃</text>
+<text x="78" y="344" font-size="10.8" fill="#0f172a" text-anchor="start">• 碱：在水中解离出 OH⁻，如 NaOH、KOH、Ca(OH)₂</text>
+<text x="78" y="366" font-size="10.8" fill="#18794e" text-anchor="start" font-weight="600">• 中和反应本质：H₃O⁺ + OH⁻ → 2 H₂O（放热 57.3 kJ/mol）</text>
+<text x="78" y="392" font-size="10.3" fill="#64748b" text-anchor="start">局限：出了水溶液（如气态氨遇氯化氢、熔融盐、有机溶剂）就失灵</text>
+<rect x="24" y="460" width="712" height="42" rx="10" fill="#fef1e8" stroke="#fdba74" stroke-width="1"/>
+<text x="380" y="486" font-size="11.0" fill="#c25014" text-anchor="middle" font-weight="600">科学史彩蛋：拉瓦锡 1776 年误以为所有酸都含氧，才把 Oxygen 命名为“酸素”；直到 1810 年戴维证明盐酸不含氧才翻案！</text>
+</svg>

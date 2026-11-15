@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="518" viewBox="0 0 760 518" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">花样滑冰收臂加速4倍的角动量守恒与肌肉做功增能原理解析图</title>
+<desc id="desc">左栏俯视对比花滑选手双臂平展与抱胸时转动惯量减为1/4、角速度严格增至4倍的过程；右栏解释为何角动量不变但转动动能增至4倍：向内拉手臂的径向力穿过转轴力矩为零，却克服离心趋势沿径向做正功。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  .spin-wide {
+    transform-box: view-box;
+    transform-origin: 120px 236px;
+    animation: turnWide 2.8s ease-out 0.25s 1 forwards;
+  }
+  .spin-tuck {
+    transform-box: view-box;
+    transform-origin: 298px 236px;
+    animation: turnTuck 2.8s ease-out 0.25s 1 forwards;
+  }
+  @keyframes turnWide {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(-180deg); }
+  }
+  @keyframes turnTuck {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(-720deg); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .spin-wide, .spin-tuck { animation: none; }
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="517" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">花样滑冰选手一抱臂转速暴涨 4 倍，可“翻了 4 倍的动能”是谁给的？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">冰刀摩擦力矩近乎为零，角动量 L = Iω 严格守恒；但转动动能并不守恒——全靠手臂肌肉向内硬拽做功！</text>
+<rect x="24" y="66" width="376" height="434" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="42" y="92" font-size="12.4" fill="#0f172a" text-anchor="start" font-weight="700">一、俯视对比：等效半径缩半 → 惯量降为 1/4 → 转速 ×4</text>
+<rect x="38" y="108" width="348" height="254" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<text x="120" y="132" font-size="11.4" fill="#1d6fa5" text-anchor="middle" font-weight="700">① 双臂平展（初态）</text>
+<circle cx="120" cy="236" r="64" fill="none" stroke="#93c5fd" stroke-width="1.4" stroke-dasharray="4 3"/>
+<g class="spin-wide"><line x1="56" y1="236" x2="184" y2="236" stroke="#1d6fa5" stroke-width="4" stroke-linecap="round"/><circle cx="56" cy="236" r="6.5" fill="#1d6fa5"/><circle cx="184" cy="236" r="6.5" fill="#1d6fa5"/><circle cx="120" cy="236" r="16" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="2"/></g>
+<text x="120" y="240" font-size="9.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">躯干</text>
+<text x="120" y="322" font-size="10.8" fill="#0f172a" text-anchor="middle" font-weight="600">转动惯量 = I₀</text>
+<rect x="62.0" y="330.0" width="116" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="120.0" y="345.0" font-size="10.4" fill="#1d6fa5" text-anchor="middle" font-weight="600">转速 ω₀ = 1.5 转/秒</text>
+<line x1="196" y1="236" x2="228" y2="236" stroke="#c25014" stroke-width="2.2" marker-end="url(#arr-orange)"/>
+<text x="212" y="222" font-size="10.2" fill="#c25014" text-anchor="middle" font-weight="700">收臂</text>
+<text x="298" y="132" font-size="11.4" fill="#c25014" text-anchor="middle" font-weight="700">② 双臂抱胸（终态）</text>
+<circle cx="298" cy="236" r="32" fill="none" stroke="#fdba74" stroke-width="1.4" stroke-dasharray="4 3"/>
+<g class="spin-tuck"><line x1="266" y1="236" x2="330" y2="236" stroke="#c25014" stroke-width="4.5" stroke-linecap="round"/><circle cx="266" cy="236" r="6.5" fill="#c25014"/><circle cx="330" cy="236" r="6.5" fill="#c25014"/><circle cx="298" cy="236" r="16" fill="#fef1e8" stroke="#c25014" stroke-width="2"/></g>
+<text x="298" y="240" font-size="9.8" fill="#c25014" text-anchor="middle" font-weight="700">躯干</text>
+<text x="298" y="322" font-size="10.8" fill="#0f172a" text-anchor="middle" font-weight="600">转动惯量 I₁ = I₀ / 4</text>
+<rect x="238.0" y="330.0" width="120" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="298.0" y="345.0" font-size="10.4" fill="#c25014" text-anchor="middle" font-weight="600">转速 4ω₀ = 6.0 转/秒！</text>
+<rect x="38" y="374" width="348" height="112" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="52" y="397" font-size="11.4" fill="#18794e" text-anchor="start" font-weight="700">为什么体操空翻、跳水十米台全都拼命“抱膝团身”？</text>
+<text x="52" y="419" font-size="10.8" fill="#1e293b" text-anchor="start">• 腾空后重力精准穿过人体质心，外力矩 τ ≡ 0；</text>
+<text x="52" y="439" font-size="10.8" fill="#1e293b" text-anchor="start">• 把长条形身体（L_长）团成球（L_长/2），转动惯量立减</text>
+<text x="52" y="459" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">  为 1/4，0.5 秒下落就能在空中干净利落翻完两整周！</text>
+<text x="52" y="478" font-size="9.8" fill="#64748b" text-anchor="start">  （注：上方俯视动画严格按 1:4 真实角速度比播放一次）</text>
+<rect x="414" y="66" width="322" height="434" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="432" y="92" font-size="12.8" fill="#0f172a" text-anchor="start" font-weight="700">二、烧脑盲区：暴涨 3 倍的动能从哪来？</text>
+<rect x="430" y="108" width="290" height="166" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="446" y="132" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">算一笔让你吃惊的能量账：</text>
+<text x="446" y="156" font-size="10.8" fill="#1e293b" text-anchor="start">• 角动量：L₁ = (I₀/4)·(4ω₀) = I₀ω₀ （没变！）</text>
+<text x="446" y="178" font-size="10.8" fill="#1e293b" text-anchor="start">• 初态动能：Ek₀ = ½ I₀ ω₀²</text>
+<text x="446" y="200" font-size="11" fill="#6d28d9" text-anchor="start" font-weight="700">• 终态动能：Ek₁ = ½ (I₀/4) (4ω₀)² = 4 Ek₀ ！</text>
+<rect x="446.0" y="214.0" width="256" height="24" rx="12.0" fill="#ffffff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="574.0" y="230.3" font-size="11" fill="#6d28d9" text-anchor="middle" font-weight="600">凭空多出了 300% 的旋转动能！</text>
+<text x="446" y="260" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="600">既然冰面没推她，这笔巨款是谁买的单？</text>
+<rect x="430" y="288" width="290" height="198" rx="8" fill="#fffdf9" stroke="#c25014" stroke-width="1"/>
+<text x="446" y="312" font-size="11.4" fill="#c25014" text-anchor="start" font-weight="700">破案真相：径向肌肉拉力“零力矩、做正功”！</text>
+<text x="446" y="336" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">① 为什么不改角动量？</text>
+<text x="446" y="356" font-size="10.6" fill="#1e293b" text-anchor="start">   手臂往胸口拉的力 F 直指转轴（力臂=0），</text>
+<text x="446" y="375" font-size="10.6" fill="#1e293b" text-anchor="start">   力矩 τ = r × F = 0，因此 L 纹丝不动。</text>
+<text x="446" y="399" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">② 为什么猛增动能？</text>
+<text x="446" y="419" font-size="10.6" fill="#1e293b" text-anchor="start">   高速旋转中双臂拼命想往外甩，选手必须消耗</text>
+<text x="446" y="438" font-size="10.6" fill="#1e293b" text-anchor="start">   体内化学能，沿向内螺旋线硬拽双臂移动距离</text>
+<text x="446" y="457" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="700">   Δr——肌肉做的功 100% 变成了新增转动动能！</text>
+</svg>

@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="506" viewBox="0 0 760 506" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">布拉德雷恒星光行差测光速原理与矢量合成图解</title>
+<desc id="desc">左栏用雨天奔跑斜举雨伞类比地球以公转速度v运动时望远镜须前倾θ角（tanθ=v/c）；右栏展示天龙座γ星一年视位置椭圆半长轴约20.25角秒，由此算出光速约为地球公转速度的10186倍即约30.1万千米每秒。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="505" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">雨天奔跑为什么要把伞往前倾？布拉德雷“恒星光行差”意外测准光速（1728）</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">本来想找恒星周年视差，却凭 20.25 角秒的望远镜倾角把光速误差一口气压缩进 1% 以内！</text>
+<rect x="24" y="66" width="356" height="422" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="42" y="92" font-size="12.8" fill="#0f172a" text-anchor="start" font-weight="700">一、直觉破译：奔跑接雨滴 ＝ 地球带着望远镜跑</text>
+<rect x="40" y="108" width="324" height="232" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<text x="116" y="130" font-size="11.2" fill="#475569" text-anchor="middle" font-weight="700">① 地球若静止（v = 0）</text>
+<line x1="116" y1="146" x2="116" y2="274" stroke="#1d6fa5" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#arr-blue)"/>
+<rect x="106" y="186" width="20" height="86" rx="3" fill="none" stroke="#475569" stroke-width="2.2"/>
+<text x="116" y="300" font-size="10.5" fill="#1e293b" text-anchor="middle">星光以速度 c 竖直落下</text>
+<text x="116" y="318" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">镜筒竖直对准头顶（θ = 0）</text>
+<line x1="194" y1="122" x2="194" y2="326" stroke="#cbd5e1" stroke-width="1"/>
+<text x="278" y="130" font-size="11.2" fill="#c25014" text-anchor="middle" font-weight="700">② 地球向右公转（速度 v）</text>
+<g transform="translate(278,230) rotate(18)"><rect x="-10" y="-46" width="20" height="90" rx="3" fill="#fef1e8" stroke="#c25014" stroke-width="2.2"/></g>
+<line x1="298" y1="168" x2="262" y2="278" stroke="#c25014" stroke-width="2" marker-end="url(#arr-orange)"/>
+<line x1="238" y1="154" x2="238" y2="226" stroke="#1d6fa5" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+<text x="230" y="194" font-size="11.5" fill="#1d6fa5" text-anchor="end" font-weight="700">c</text>
+<line x1="238" y1="232" x2="288" y2="232" stroke="#18794e" stroke-width="1.8" marker-end="url(#arr-green)"/>
+<text x="263" y="248" font-size="10.2" fill="#18794e" text-anchor="middle" font-weight="700">地球速度 v</text>
+<text x="278" y="300" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700">必须向运动前方倾斜 θ 角</text>
+<text x="278" y="318" font-size="10.2" fill="#64748b" text-anchor="middle">tan θ = v / c（图中倾角放大示意）</text>
+<rect x="40" y="352" width="324" height="120" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="54" y="375" font-size="11.6" fill="#1d6fa5" text-anchor="start" font-weight="700">泰晤士河游船上的顿悟：</text>
+<text x="54" y="397" font-size="10.8" fill="#1e293b" text-anchor="start">• 布拉德雷乘帆船时发现，风向明明没变，船一转向，桅杆</text>
+<text x="54" y="417" font-size="10.8" fill="#1e293b" text-anchor="start">  顶端的风向标就跟着变——因为它指示的是船速与风速的</text>
+<text x="54" y="437" font-size="10.8" fill="#1e293b" text-anchor="start">  矢量合成方向！星光进入运动地球上的望远镜同理。</text>
+<text x="54" y="458" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">• 这同时成为哥白尼“地球确实在绕日运动”的首个直接实证！</text>
+<rect x="394" y="66" width="342" height="422" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="412" y="92" font-size="12.8" fill="#0f172a" text-anchor="start" font-weight="700">二、实测天龙座 γ 星：算出 30.1 万 km/s！</text>
+<rect x="410" y="108" width="310" height="166" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<ellipse cx="565" cy="188" rx="86" ry="42" fill="#e7f6ee" stroke="#18794e" stroke-width="1.8"/>
+<line x1="469" y1="188" x2="661" y2="188" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="565" y1="138" x2="565" y2="238" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="565" cy="188" r="4" fill="#475569"/>
+<text x="565" y="178" font-size="10.2" fill="#475569" text-anchor="middle">真实恒星方向</text>
+<line x1="565" y1="206" x2="649" y2="206" stroke="#c25014" stroke-width="1.8" marker-end="url(#arr-orange)"/>
+<text x="608" y="222" font-size="11" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">θ ≈ 20.25″</text>
+<text x="565" y="128" font-size="11" fill="#18794e" text-anchor="middle" font-weight="700">伦敦天顶恒星一年内在天球画出的视椭圆</text>
+<text x="565" y="260" font-size="10.4" fill="#64748b" text-anchor="middle">注：20.5 角秒仅相当于满月视直径的约 1/90！</text>
+<rect x="410" y="286" width="310" height="186" rx="8" fill="#fffdf9" stroke="#18794e" stroke-width="1"/>
+<text x="426" y="310" font-size="11.6" fill="#18794e" text-anchor="start" font-weight="700">布拉德雷的三步神算（1728 皇家学会论文）：</text>
+<text x="426" y="334" font-size="10.8" fill="#1e293b" text-anchor="start">① 测得全年最大光行差半角 θ ≈ 20.25″（现代 20.50″）</text>
+<text x="426" y="356" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">② 速度比：c / v_地 = 1 / tan(20.25″) ≈ 10,186 倍！</text>
+<text x="426" y="378" font-size="10.8" fill="#1e293b" text-anchor="start">③ 既然地球绕日一圈（2πR）要 365.25 天，光走完日地</text>
+<text x="426" y="398" font-size="10.8" fill="#1e293b" text-anchor="start">   半径 R 只需：365.25 天 ÷ (2π × 10,186) ＝ 8 分 12 秒！</text>
+<rect x="426.0" y="414.0" width="278" height="24" rx="12.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="565.0" y="430.3" font-size="11.2" fill="#c25014" text-anchor="middle" font-weight="600">折合光速 ≈ 301,000 km/s（误差仅 ~0.4%！）</text>
+<text x="426" y="458" font-size="10.8" fill="#18794e" text-anchor="start" font-weight="700">整整提前一百年达到百公里级惊人精度！</text>
+</svg>

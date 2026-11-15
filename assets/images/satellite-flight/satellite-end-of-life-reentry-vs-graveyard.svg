@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">卫星退役离轨处置：低轨五年大气层再入火化与高轨300公里坟墓轨道</title>
+<desc id="desc">对比低轨卫星受控再入尼莫点烧毁与高轨静止卫星消耗11 m/s抬升至36,086 km坟墓轨道并钝化</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="380.0" y="30" font-size="18.5" fill="#1e293b" text-anchor="middle" font-weight="700">卫星老了怎么体面谢幕？低轨“五年火化”与高轨“三百公里养老院”</text>
+<text x="380.0" y="52" font-size="12.5" fill="#64748b" text-anchor="middle">留最后一口救命燃料清场 + 排空电池余气“钝化”，绝不给人类留下一片凯斯勒碎片雷区</text>
+<rect x="22" y="68" width="356" height="430" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="38.0" y="82.0" width="286" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="181.0" y="97.0" font-size="12" fill="#c25014" text-anchor="middle" font-weight="600">低轨卫星（LEO &lt; 2,000 km）：落叶归根火化</text>
+<circle cx="186" cy="234" r="76" fill="#e0f2fe" opacity="0.7"/>
+<circle cx="186" cy="234" r="56" fill="#dbeafe" stroke="#1d6fa5" stroke-width="2"/>
+<text x="186" y="229" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">南太平洋无人区</text>
+<text x="186" y="246" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">“尼莫点”公墓</text>
+<circle cx="186" cy="234" r="102" fill="none" stroke="#64748b" stroke-width="1.6" stroke-dasharray="5 4"/>
+<circle cx="186" cy="132" r="5.5" fill="#c25014" stroke="#ffffff" stroke-width="1.5"/>
+<text x="186" y="122" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="700">末次反向点火降低近地点</text>
+<path d="M 186 132 C 272 134, 278 212, 226 260" fill="none" stroke="#dc2626" stroke-width="3.2" marker-end="url(#arr-orange)"/>
+<text x="272" y="192" font-size="10.5" fill="#dc2626" text-anchor="start" font-weight="700">80–110 km</text>
+<text x="272" y="207" font-size="10.5" fill="#dc2626" text-anchor="start">气动烧蚀解体</text>
+<rect x="38" y="350" width="324" height="132" rx="10" fill="#fef1e8" stroke="#fdba74" stroke-width="1"/>
+<text x="50" y="372" font-size="11.8" fill="#c25014" text-anchor="start" font-weight="700">国际离轨新规：从“25 年”大幅收紧至“5 年”！</text>
+<text x="50" y="393" font-size="10.6" fill="#1e293b" text-anchor="start">• 欧空局（2023 零碎片政策）等要求新发低轨卫星退役后</text>
+<text x="50" y="411" font-size="10.6" fill="#1e293b" text-anchor="start">  5 年内受控或借稀薄大气阻力再入烧毁；</text>
+<text x="50" y="429" font-size="10.6" fill="#1e293b" text-anchor="start">• 烧不尽的巨型航天器（空间站、货运飞船）精准制导坠入</text>
+<text x="50" y="447" font-size="10.6" fill="#1e293b" text-anchor="start">  距最近陆地 2,688 km 的南太平洋“尼莫点”</text>
+<text x="50" y="465" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">  （48°52.6′S, 123°23.6′W）深海安葬！</text>
+<rect x="392" y="68" width="346" height="430" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="408.0" y="82.0" width="314" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="565.0" y="97.0" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="600">高轨卫星（GEO 35,786 km）：搬上 +300 km 坟墓轨</text>
+<circle cx="556" cy="236" r="22" fill="#dbeafe" stroke="#1d6fa5" stroke-width="2"/>
+<text x="556" y="240" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">地球</text>
+<circle cx="556" cy="236" r="74" fill="none" stroke="#18794e" stroke-width="2.4"/>
+<circle cx="556" cy="236" r="102" fill="none" stroke="#6d28d9" stroke-width="2.6" stroke-dasharray="6 4"/>
+<line x1="630" y1="236" x2="655" y2="236" stroke="#6d28d9" stroke-width="2.6" marker-end="url(#arr-blue)"/>
+<text x="556" y="156" font-size="10.6" fill="#18794e" text-anchor="middle" font-weight="700">现役黄金静止环（35,786 km）</text>
+<text x="556" y="126" font-size="10.8" fill="#6d28d9" text-anchor="middle" font-weight="700">外圈“坟墓轨道”（≥ 36,086 km，抬高 +300 km）</text>
+<text x="634" y="258" font-size="10.8" fill="#6d28d9" text-anchor="start" font-weight="700">Δv ≈ 11 m/s</text>
+<rect x="408" y="350" width="314" height="132" rx="10" fill="#f3e8ff" stroke="#d8b4fe" stroke-width="1"/>
+<text x="420" y="372" font-size="11.8" fill="#6d28d9" text-anchor="start" font-weight="700">为什么高轨不往下烧，反而往上搬？</text>
+<text x="420" y="393" font-size="10.6" fill="#1e293b" text-anchor="start">• 往下回地球需 Δv ≈ 1,480 m/s（够在轨用 30 年！），</text>
+<text x="420" y="411" font-size="10.6" fill="#1e293b" text-anchor="start">  而往上抬高 300 km 仅需 Δv ≈ 10.9 m/s（3 个月余油）；</text>
+<text x="420" y="429" font-size="10.6" fill="#1e293b" text-anchor="start">• 最后一步“钝化（Passivation）”：排空残余推进剂与</text>
+<text x="420" y="447" font-size="10.6" fill="#1e293b" text-anchor="start">  高压气瓶、断开蓄电池充电，防止多年后短路自爆</text>
+<text x="420" y="465" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">  （史上超 560 起在轨解体多源于残余能源自爆！）。</text>
+</svg>

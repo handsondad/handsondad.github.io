@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="496" viewBox="0 0 760 496" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">伽利略山头双灯实验原理与人类反应时间对数对比图</title>
+<desc id="desc">左栏展示1638年伽利略两座山头相距1.6公里掀灯笼测光速的往返光程仅需10.7微秒，而人手反应需20万微秒；右栏用对数坐标直观对比两万倍时间差，并附笛卡尔月食论证与惠更斯的反驳。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="495" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">为什么伽利略站在两座山头掀灯笼测不出光速？两万倍的时间尺度鸿沟</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">光跑完 3.2 公里往返仅需 10.7 微秒，而人类神经反应与掀灯罩动作慢了近 19,000 倍</text>
+<rect x="24" y="66" width="356" height="412" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="42" y="92" font-size="13.2" fill="#0f172a" text-anchor="start" font-weight="700">一、1638《两门新科学》双灯实验构想</text>
+<rect x="40" y="106" width="324" height="178" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<path d="M40,284 Q96,208 152,284 Z" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.4"/>
+<path d="M252,284 Q308,208 364,284 Z" fill="#fef1e8" stroke="#c25014" stroke-width="1.4"/>
+<circle cx="96" cy="212" r="8" fill="#fde047" stroke="#1d6fa5" stroke-width="1.5"/>
+<text x="96" y="194" font-size="11" fill="#1d6fa5" text-anchor="middle" font-weight="700">甲（伽利略）</text>
+<circle cx="308" cy="212" r="8" fill="#fde047" stroke="#c25014" stroke-width="1.5"/>
+<text x="308" y="194" font-size="11" fill="#c25014" text-anchor="middle" font-weight="700">乙（助手）</text>
+<line x1="108" y1="206" x2="296" y2="206" stroke="#1d6fa5" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+<text x="202" y="198" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">① 去程光：5.34 微秒</text>
+<line x1="296" y1="220" x2="108" y2="220" stroke="#18794e" stroke-width="1.8" stroke-dasharray="5 3" marker-end="url(#arr-green)"/>
+<text x="202" y="236" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="600">③ 回程光：5.34 微秒</text>
+<text x="202" y="268" font-size="10.8" fill="#475569" text-anchor="middle" font-weight="600">山头间距 d ≈ 1.6 km（往返 3.2 km）</text>
+<rect x="40" y="296" width="324" height="168" rx="8" fill="#fffdf9" stroke="#c25014" stroke-width="1"/>
+<text x="54" y="319" font-size="11.8" fill="#c25014" text-anchor="start" font-weight="700">致命瓶颈：乙看到光 → 大脑反应 → 掀开灯罩</text>
+<text x="54" y="342" font-size="11" fill="#1e293b" text-anchor="start">• 光往返总耗时 Δt_光 = 2d/c ≈ 0.0000107 秒</text>
+<text x="54" y="364" font-size="11" fill="#1e293b" text-anchor="start">• 人手最快反应 τ_人 ≈ 0.20 秒（随机波动几十毫秒）</text>
+<text x="54" y="386" font-size="11" fill="#1e293b" text-anchor="start">• 噪声是信号的 18,700 倍！想靠人手分辨 0.2 秒延迟，</text>
+<text x="54" y="408" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">  两座山必须隔开 30,000 km（绕地球赤道 3/4 圈）！</text>
+<text x="54" y="434" font-size="10.5" fill="#64748b" text-anchor="start">史实：伽利略仅在不到 1 英里处试过，严谨结论“极快”。</text>
+<text x="54" y="452" font-size="10.5" fill="#64748b" text-anchor="start">1667 年佛罗伦萨西门托学院远距复测仍未能测出延迟。</text>
+<rect x="394" y="66" width="342" height="412" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="412" y="92" font-size="13.2" fill="#0f172a" text-anchor="start" font-weight="700">二、对数坐标时间尺（单位：微秒 μs）</text>
+<text x="412" y="112" font-size="10.6" fill="#64748b" text-anchor="start">注：横轴采用对数坐标（每向右一格放大 10 倍）</text>
+<line x1="424" y1="134" x2="424" y2="286" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="424" y="302" font-size="10" fill="#64748b" text-anchor="middle">1</text>
+<line x1="472" y1="134" x2="472" y2="286" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="472" y="302" font-size="10" fill="#64748b" text-anchor="middle">10</text>
+<line x1="520" y1="134" x2="520" y2="286" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="520" y="302" font-size="10" fill="#64748b" text-anchor="middle">100</text>
+<line x1="568" y1="134" x2="568" y2="286" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="568" y="302" font-size="10" fill="#64748b" text-anchor="middle">10^3</text>
+<line x1="616" y1="134" x2="616" y2="286" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="616" y="302" font-size="10" fill="#64748b" text-anchor="middle">10^4</text>
+<line x1="664" y1="134" x2="664" y2="286" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="664" y="302" font-size="10" fill="#64748b" text-anchor="middle">10^5</text>
+<line x1="712" y1="134" x2="712" y2="286" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="712" y="302" font-size="10" fill="#64748b" text-anchor="middle">10^6</text>
+<text x="424" y="141" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="600">光往返 3.2 km（10.7 μs）</text>
+<rect x="424" y="146" width="49.4" height="12" rx="4" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.3"/>
+<text x="424" y="176" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="600">步枪子弹飞 1 m（1,100 μs）</text>
+<rect x="424" y="181" width="146.0" height="12" rx="4" fill="#f1f5f9" stroke="#475569" stroke-width="1.3"/>
+<text x="424" y="211" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="600">蜂鸟振翅 1 次（12,500 μs）</text>
+<rect x="424" y="216" width="196.7" height="12" rx="4" fill="#e7f6ee" stroke="#18794e" stroke-width="1.3"/>
+<text x="424" y="246" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="600">人手掀灯反应（200,000 μs）</text>
+<rect x="424" y="251" width="254.4" height="12" rx="4" fill="#fef1e8" stroke="#c25014" stroke-width="1.3"/>
+<rect x="410" y="316" width="310" height="148" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="424" y="338" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">同期的哲学交锋：笛卡尔为什么断定光速无穷大？</text>
+<text x="424" y="360" font-size="10.8" fill="#1e293b" text-anchor="start">• 笛卡尔推理：若光从地球到月球要走 1 小时，月食</text>
+<text x="424" y="380" font-size="10.8" fill="#1e293b" text-anchor="start">  发生时地球已公转走远，食甚位置会偏离日地连线</text>
+<text x="424" y="400" font-size="10.8" fill="#1e293b" text-anchor="start">  约 33°；既然观测毫无偏角，说明光速必定无穷大！</text>
+<text x="424" y="422" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="600">• 惠更斯反击：地月光行其实仅需 1.28 秒（往返 2.6 秒），</text>
+<text x="424" y="442" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="600">  偏角不足几角秒，全淹没在地球本影模糊边缘里了！</text>
+</svg>

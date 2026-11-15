@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="518" viewBox="0 0 760 518" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">太阳核聚变质能亏损账单与引力静力平衡自动恒温器图解</title>
+<desc id="desc">左栏精确对比4颗氢原子（4.031300 u）与1颗氦-4原子（4.002603 u）的0.712%质量亏损及太阳每秒消耗6亿吨氢、湮灭426万吨质量释放3.828×10²⁶ W功率的宏观账单，右栏图解引力与热压负反馈稳住核聚变及太阳每亿年增亮1%的演化机制。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="517" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">每秒“凭空消失”426 万吨质量去哪了？爱因斯坦天平与太阳自动恒温器</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左栏给 4 颗氢核和 1 颗氦核精确过秤算清 0.71% 亏损 → 右栏看太阳稳烧 46 亿年不炸不灭的负反馈温控阀</text>
+<rect x="24" y="68" width="356" height="436" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="88" r="10" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="42" y="92" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">1</text>
+<text x="58" y="92" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">核聚变过秤单：4 颗氢比 1 颗氦重了 0.71%！</text>
+<rect x="40" y="108" width="324" height="152" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<polygon points="196,244 208,244 202,212" fill="#475569"/>
+<line x1="88" y1="222" x2="316" y2="198" stroke="#0f172a" stroke-width="3"/>
+<rect x="52" y="154" width="128" height="62" rx="7" fill="#ffffff" stroke="#dc2626" stroke-width="1.3"/>
+<text x="116" y="176" font-size="10.6" fill="#dc2626" text-anchor="middle" font-weight="700">聚变前：4 × ¹H 原子</text>
+<text x="116" y="198" font-size="10.8" fill="#0f172a" text-anchor="middle" font-weight="700">4.031300 u（更重！）</text>
+<rect x="224" y="130" width="128" height="62" rx="7" fill="#ffffff" stroke="#18794e" stroke-width="1.3"/>
+<text x="288" y="152" font-size="10.6" fill="#18794e" text-anchor="middle" font-weight="700">聚变后：1 × ⁴He 原子</text>
+<text x="288" y="174" font-size="10.8" fill="#0f172a" text-anchor="middle" font-weight="700">4.002603 u（变轻！）</text>
+<text x="202" y="253" font-size="10.3" fill="#b45309" text-anchor="middle" font-weight="700">亏损质量 Δm = 0.028697 u（占 0.712%）→ 26.731 MeV!</text>
+<rect x="40" y="272" width="324" height="216" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="52.0" y="282.0" width="300" height="20" rx="10.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="202.0" y="295.6" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">太阳每秒钟的宏观物质—能量总账单（NASA 实测）</text>
+<text x="52" y="322" font-size="10.6" fill="#1e293b" text-anchor="start">• 每秒吞下氢燃料：≈ 6.00 亿吨（约 3.7 × 10³⁸ 颗质子）</text>
+<text x="52" y="345" font-size="10.6" fill="#1e293b" text-anchor="start">• 每秒炼出氦灰烬：≈ 5.9574 亿吨</text>
+<text x="52" y="369" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="600">• 每秒彻底化作纯能量消失的质量 Δm = L☉ / c²：</text>
+<text x="64" y="393" font-size="11.0" fill="#dc2626" text-anchor="start" font-weight="700">426 万吨 / 秒！（≈ 每秒凭空蒸发 85 万头成年大象）</text>
+<text x="52" y="418" font-size="10.5" fill="#1e293b" text-anchor="start">• 总辐射光度 L☉ = 3.828 × 10²⁶ W（相当于每秒同时引爆</text>
+<text x="64" y="438" font-size="10.5" fill="#1e293b" text-anchor="start">约 915 亿颗百万吨级氢弹！地球仅接住其中 22 亿分之一）</text>
+<text x="52" y="466" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="700">• 别怕烧光：46 亿年加起来才瘦身 0.03% 太阳总质量！</text>
+<rect x="396" y="68" width="340" height="436" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="414" cy="88" r="10" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="414" y="92" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">2</text>
+<text x="430" y="92" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">天然防爆温控器：引力与热压的“负热容”太极</text>
+<text x="412" y="118" font-size="10.4" fill="#64748b" text-anchor="start">没有控制棒也没有安全壳，2500 亿大气压的太阳核心凭啥稳如钟表？</text>
+<rect x="412" y="130" width="308" height="116" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<rect x="422.0" y="138.0" width="288" height="20" rx="10.0" fill="#dbeafe" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="566.0" y="151.6" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">假如核聚变突然“烧猛了一点点”（自动踩刹车）</text>
+<text x="422" y="176" font-size="10.5" fill="#1e293b" text-anchor="start">产热 ↑ → 核心等离子体热压大于外层万有引力</text>
+<text x="422" y="198" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="700">→ 核心向外轻微膨胀做功 → 密度 ρ ↓ 且温度 T ↓</text>
+<text x="422" y="220" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600">→ 聚变速率对温度密度极敏感，立刻自动降回原位！</text>
+<rect x="412" y="258" width="308" height="116" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<rect x="422.0" y="266.0" width="288" height="20" rx="10.0" fill="#dcfce7" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="566.0" y="279.6" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="600">假如核聚变突然“偷懒弱了一点点”（自动补油门）</text>
+<text x="422" y="304" font-size="10.5" fill="#1e293b" text-anchor="start">产热 ↓ → 热压顶不住 33 万个地球质量的万有引力</text>
+<text x="422" y="326" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="700">→ 核心向内轻微收缩挤压 → 密度 ρ ↑ 且温度 T ↑</text>
+<text x="422" y="348" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600">→ 碰撞与隧穿频率回升，立刻把火力重新旺起来！</text>
+<rect x="412" y="388" width="308" height="100" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="424" y="410" font-size="11.0" fill="#6d28d9" text-anchor="start" font-weight="700">百亿年慢镜头：为什么太阳每隔 1 亿年变亮约 1%？</text>
+<text x="424" y="432" font-size="10.3" fill="#1e293b" text-anchor="start">• 4 颗氢核合 1 颗氦核，核心粒子总数减少 → 为顶住同等</text>
+<text x="432" y="452" font-size="10.3" fill="#1e293b" text-anchor="start">外层引力，核心必须缓慢收缩升温，倒逼聚变加快：如今</text>
+<text x="432" y="472" font-size="10.3" fill="#0f172a" text-anchor="start" font-weight="700">太阳已比 46 亿年前刚诞生时亮了约 30%！</text>
+</svg>

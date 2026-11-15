@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="444" viewBox="0 0 760 444" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">地面电视地球曲率视距、高楼多径反射重影与模拟雪花对数字悬崖效应对比图</title>
+<desc id="desc">左图计算200米发射塔配9米竹竿天线的电波视距约70.6公里，以及600米大楼反射路程差带来2微秒延迟导致CRT画面右移3.8%产生重影；右图对比模拟电视随信噪比下降渐变起雪花与数字电视在约12.5dB门限处的悬崖效应。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="443" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">为什么要绑高竹竿、转天线、拍电视？—— 视距遮挡、大楼重影与“雪花 vs 悬崖”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：地球曲率限制与 2 微秒反射重影几何账；右：模拟电视渐变起雪花 vs 数字电视“悬崖效应”</text>
+<rect x="20" y="62" width="366" height="368" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="34" y="85" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 地球曲率视距与高楼反射“重影”算账</text>
+<rect x="34" y="98" width="338" height="134" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="46" y="117" font-size="10.6" fill="#1d6fa5" text-anchor="start" font-weight="700">A. 为什么超过 ~70 km 收不到台？（地球是圆的！）</text>
+<path d="M 48,206 Q 203,162 356,208" fill="#dbeafe" stroke="#64748b" stroke-width="1.6"/>
+<line x1="82.0" y1="195.0" x2="82.0" y2="134.0" stroke="#1d6fa5" stroke-width="2.6"/>
+<circle cx="82" cy="132" r="3.5" fill="#1d6fa5"/>
+<text x="82" y="221" font-size="9.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">200m 电视塔</text>
+<line x1="82.0" y1="133.0" x2="256.0" y2="180.0" stroke="#18794e" stroke-width="1.9" marker-end="url(#arr-green)"/>
+<line x1="256.0" y1="180.0" x2="348.0" y2="205.0" stroke="#b91c1c" stroke-width="1.5" stroke-dasharray="4 3"/>
+<line x1="256.0" y1="186.0" x2="256.0" y2="168.0" stroke="#18794e" stroke-width="2.2"/>
+<text x="248" y="162" font-size="9.6" fill="#18794e" text-anchor="middle" font-weight="700" class="halo">9m 竹竿可达 ~70.6 km</text>
+<text x="322" y="186" font-size="9.4" fill="#b91c1c" text-anchor="middle" font-weight="600" class="halo">更远处被地平线挡住</text>
+<text x="242" y="223" font-size="9.5" fill="#475569" text-anchor="middle" class="mono">视距：d ≈ 4.12×(√h塔 + √h杆) km</text>
+<rect x="34" y="244" width="338" height="172" rx="8" fill="#ffffff" stroke="#1d6fa5" stroke-width="1"/>
+<text x="46" y="262" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="700">B. 为什么人脸上会叠一个“透明重影”？（多径延迟）</text>
+<rect x="48" y="288" width="56" height="42" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="76" y="306" font-size="9.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">发射塔</text>
+<text x="76" y="321" font-size="9.3" fill="#64748b" text-anchor="middle">信号源</text>
+<rect x="168" y="284" width="62" height="28" rx="5" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="199" y="302" font-size="9.4" fill="#c25014" text-anchor="middle" font-weight="700">侧面高楼/山体</text>
+<rect x="276" y="288" width="82" height="42" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="317" y="306" font-size="9.7" fill="#0f172a" text-anchor="middle" font-weight="700">显像管右移</text>
+<text x="317" y="321" font-size="9.5" fill="#c25014" text-anchor="middle" font-weight="700">重影 +3.8%</text>
+<line x1="106.0" y1="315.0" x2="272.0" y2="315.0" stroke="#18794e" stroke-width="2.1" marker-end="url(#arr-green)"/>
+<text x="190" y="329" font-size="9.4" fill="#18794e" text-anchor="middle" font-weight="700">① 直达波（先到）</text>
+<path d="M 106,299 L 166,296 M 232,296 L 272,302" fill="none" stroke="#c25014" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#arr-orange)"/>
+<text x="199" y="279" font-size="9.3" fill="#c25014" text-anchor="middle" font-weight="700">② 绕远 Δd=600m 晚到 2μs</text>
+<text x="46" y="348" font-size="10.0" fill="#1e293b" text-anchor="start">• 显像管画一行画面仅需 52 μs；反射波晚到 2 μs，电子束已</text>
+<text x="46" y="366" font-size="10.0" fill="#1e293b" text-anchor="start">  往右扫出 3.8% 屏宽，于是同一张脸在右边再印出淡影！</text>
+<text x="46" y="386" font-size="10.0" fill="#1d6fa5" text-anchor="start" font-weight="600">• 转动八木鱼骨天线：用主瓣对准直达波、零深避开侧面反射楼。</text>
+<text x="46" y="405" font-size="9.9" fill="#475569" text-anchor="start" font-weight="600">• 拍电视能好？拍好的是机内发热氧化的虚焊触点，不是电磁波！</text>
+<rect x="398" y="62" width="342" height="368" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="412" y="85" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 信号变弱时：模拟渐变雪花 vs 数字悬崖</text>
+<text x="412" y="104" font-size="10.2" fill="#64748b" text-anchor="start">横轴：接收信噪比 SNR (dB)｜纵轴：主观画面完好度</text>
+<line x1="446.0" y1="286.0" x2="718.0" y2="286.0" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="440.0" y="290.0" font-size="9.8" fill="#64748b" text-anchor="end" class="mono">0%</text>
+<line x1="446.0" y1="206.0" x2="718.0" y2="206.0" stroke="#e2e8f0" stroke-width="1.0" stroke-dasharray="3 3"/>
+<text x="440.0" y="210.0" font-size="9.8" fill="#64748b" text-anchor="end" class="mono">50%</text>
+<line x1="446.0" y1="126.0" x2="718.0" y2="126.0" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="440.0" y="130.0" font-size="9.8" fill="#64748b" text-anchor="end" class="mono">100%</text>
+<line x1="446.0" y1="126.0" x2="446.0" y2="286.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="2 3"/>
+<text x="446.0" y="301.0" font-size="9.6" fill="#64748b" text-anchor="middle" class="mono">0dB</text>
+<line x1="514.0" y1="126.0" x2="514.0" y2="286.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="2 3"/>
+<text x="514.0" y="301.0" font-size="9.6" fill="#64748b" text-anchor="middle" class="mono">8dB</text>
+<line x1="565.0" y1="126.0" x2="565.0" y2="286.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="2 3"/>
+<text x="565.0" y="301.0" font-size="9.6" fill="#64748b" text-anchor="middle" class="mono">14dB</text>
+<line x1="633.0" y1="126.0" x2="633.0" y2="286.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="2 3"/>
+<text x="633.0" y="301.0" font-size="9.6" fill="#64748b" text-anchor="middle" class="mono">22dB</text>
+<line x1="701.0" y1="126.0" x2="701.0" y2="286.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="2 3"/>
+<text x="701.0" y="301.0" font-size="9.6" fill="#64748b" text-anchor="middle" class="mono">30dB</text>
+<line x1="446.0" y1="126.0" x2="446.0" y2="286.0" stroke="#475569" stroke-width="1.2"/>
+<line x1="446.0" y1="286.0" x2="718.0" y2="286.0" stroke="#475569" stroke-width="1.2"/>
+<rect x="541.2" y="126.0" width="22.1" height="160.0" fill="#fef2f2" opacity="0.75"/>
+<path d="M 446.0,286.0 L 449.4,285.3 L 452.8,283.6 L 456.2,281.3 L 459.6,278.4 L 463.0,275.3 L 466.4,272.1 L 469.8,268.6 L 473.2,265.2 L 476.6,261.7 L 480.0,258.2 L 483.4,254.7 L 486.8,251.3 L 490.2,248.0 L 493.6,244.7 L 497.0,241.4 L 500.4,238.3 L 503.8,235.2 L 507.2,232.2 L 510.6,229.3 L 514.0,226.4 L 517.4,223.7 L 520.8,221.0 L 524.2,218.4 L 527.6,215.9 L 531.0,213.4 L 534.4,211.1 L 537.8,208.8 L 541.2,206.5 L 544.6,204.4 L 548.0,202.3 L 551.4,200.3 L 554.8,198.3 L 558.2,196.4 L 561.6,194.6 L 565.0,192.8 L 568.4,191.1 L 571.8,189.5 L 575.2,187.9 L 578.6,186.3 L 582.0,184.8 L 585.4,183.4 L 588.8,182.0 L 592.2,180.6 L 595.6,179.3 L 599.0,178.1 L 602.4,176.8 L 605.8,175.6 L 609.2,174.5 L 612.6,173.4 L 616.0,172.3 L 619.4,171.3 L 622.8,170.3 L 626.2,169.3 L 629.6,168.4 L 633.0,167.5 L 636.4,166.6 L 639.8,165.7 L 643.2,164.9 L 646.6,164.1 L 650.0,163.4 L 653.4,162.6 L 656.8,161.9 L 660.2,161.2 L 663.6,160.5 L 667.0,159.9 L 670.4,159.2 L 673.8,158.6 L 677.2,158.0 L 680.6,157.5 L 684.0,156.9 L 687.4,156.4 L 690.8,155.8 L 694.2,155.3 L 697.6,154.9 L 701.0,154.4 L 704.4,153.9 L 707.8,153.5 L 711.2,153.1 L 714.6,152.6 L 718.0,152.2" fill="none" stroke="#c25014" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 3"/>
+<path d="M 446.0,286.0 L 449.4,286.0 L 452.8,286.0 L 456.2,286.0 L 459.6,286.0 L 463.0,286.0 L 466.4,286.0 L 469.8,286.0 L 473.2,286.0 L 476.6,286.0 L 480.0,286.0 L 483.4,286.0 L 486.8,286.0 L 490.2,286.0 L 493.6,286.0 L 497.0,286.0 L 500.4,286.0 L 503.8,286.0 L 507.2,286.0 L 510.6,286.0 L 514.0,286.0 L 517.4,286.0 L 520.8,286.0 L 524.2,286.0 L 527.6,286.0 L 531.0,285.9 L 534.4,285.8 L 537.8,285.3 L 541.2,283.5 L 544.6,277.5 L 548.0,259.1 L 551.4,218.7 L 554.8,170.3 L 558.2,141.4 L 561.6,130.6 L 565.0,127.3 L 568.4,126.4 L 571.8,126.1 L 575.2,126.0 L 578.6,126.0 L 582.0,126.0 L 585.4,126.0 L 588.8,126.0 L 592.2,126.0 L 595.6,126.0 L 599.0,126.0 L 602.4,126.0 L 605.8,126.0 L 609.2,126.0 L 612.6,126.0 L 616.0,126.0 L 619.4,126.0 L 622.8,126.0 L 626.2,126.0 L 629.6,126.0 L 633.0,126.0 L 636.4,126.0 L 639.8,126.0 L 643.2,126.0 L 646.6,126.0 L 650.0,126.0 L 653.4,126.0 L 656.8,126.0 L 660.2,126.0 L 663.6,126.0 L 667.0,126.0 L 670.4,126.0 L 673.8,126.0 L 677.2,126.0 L 680.6,126.0 L 684.0,126.0 L 687.4,126.0 L 690.8,126.0 L 694.2,126.0 L 697.6,126.0 L 701.0,126.0 L 704.4,126.0 L 707.8,126.0 L 711.2,126.0 L 714.6,126.0 L 718.0,126.0" fill="none" stroke="#1d6fa5" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="645.8" y="137.2" font-size="9.9" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">数字电视：过门限即 100% 高清</text>
+<text x="650.0" y="177.2" font-size="9.9" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">模拟电视：渐变雪花</text>
+<text x="498.7" y="212.4" font-size="9.6" fill="#c25014" text-anchor="middle" font-weight="600" class="halo">满屏雪花仍能听声</text>
+<text x="498.7" y="266.8" font-size="9.6" fill="#b91c1c" text-anchor="middle" font-weight="700" class="halo">数字跌落：黑屏/马赛克</text>
+<rect x="412" y="312" width="314" height="104" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="424" y="331" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="700">为什么老电视只有“雪花点”，从不会“转圈缓冲”？</text>
+<text x="424" y="350" font-size="10.0" fill="#1e293b" text-anchor="start">• 模拟调幅直接拿【实时电压高低 = 像素明暗】；信号弱时，</text>
+<text x="424" y="368" font-size="10.0" fill="#1e293b" text-anchor="start">  空气与电路里的随机热噪声叠在波形上，立刻画成黑白雪花！</text>
+<text x="424" y="386" font-size="10.0" fill="#1e293b" text-anchor="start">• 它没有数据包、没有重传协议、更没有内存，光速到即刻画；</text>
+<text x="424" y="404" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="600">  而数字电视纠错码一旦超出极限（~12 dB），瞬间跌落悬崖。</text>
+</svg>

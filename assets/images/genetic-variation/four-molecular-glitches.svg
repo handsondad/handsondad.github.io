@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">细胞分裂期四大内源分子变异机制图解</title>
+<desc id="desc">分四格展示碱基互变异构瞬态错配、37摄氏度水分子诱导甲基化胞嘧啶脱氨基形成CpG十倍突变热点、重复序列复制打滑导致移码突变，以及错位不等交换产生基因重复。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<defs><marker id="arr-ink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 Z" fill="#475569"/></marker></defs>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">第二幕：哪怕躲在没紫外线的黑屋里，分裂时哪四种“分子手滑”会改写密码？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">不用核辐射也不用毒药——量子氢原子跳位、37℃ 水分子偷袭与重复序列打滑，天天都在制造自发变异！</text>
+<rect x="22" y="68" width="350" height="184" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34" y="80" width="326" height="36" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<circle cx="50" cy="98" r="10" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="50" y="102" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="67" y="103" font-size="10.8" fill="#1d6fa5" text-anchor="start" font-weight="700">① 互变异构瞬态“假面舞会”（点突变）</text>
+<text x="42" y="136" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">案发机制：碱基上的氢原子偶尔瞬间跳到隔壁氮/氧原子上</text>
+<text x="42" y="163" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">怎样骗过安检：稀有的胸腺嘧啶烯醇式 T* 几何长相酷似胞嘧啶 C，</text>
+<text x="42" y="190" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">永久改写：复制叉经过那微秒瞬间，T* 硬拉来 G 配对 → 下一轮</text>
+<text x="42" y="217" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">演化后果：分裂彻底变成 C-G 碱基对（产生同义/错义/无义点突变）！</text>
+<rect x="388" y="68" width="350" height="184" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="400" y="80" width="326" height="36" rx="7" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<circle cx="416" cy="98" r="10" fill="#ffffff" stroke="#c25014" stroke-width="1.2"/>
+<text x="416" y="102" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="433" y="103" font-size="10.8" fill="#c25014" text-anchor="start" font-weight="700">② 37℃ 体温水分子“拔氨基”（CpG 热点）</text>
+<text x="408" y="136" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">案发机制：细胞内的水分子每天自发撞掉数百个胞嘧啶 C 的氨基</text>
+<text x="408" y="163" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">甲基化陷阱：普通 C 脱氨变成非法碱基 U，修复酶一眼认出秒切；</text>
+<text x="408" y="190" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">真假美猴王：但基因调控常见的“甲基化 5-mC”脱氨后，直接变成</text>
+<text x="408" y="217" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">演化后果：合法碱基 T！修复酶难辨真假，使 CpG 突变率飙高 10 倍！</text>
+<rect x="22" y="266" width="350" height="184" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34" y="278" width="326" height="36" rx="7" fill="#fef2f2" stroke="#b91c1c" stroke-width="1"/>
+<circle cx="50" cy="296" r="10" fill="#ffffff" stroke="#b91c1c" stroke-width="1.2"/>
+<text x="50" y="300" font-size="11.5" fill="#b91c1c" text-anchor="middle" font-weight="700">3</text>
+<text x="67" y="301" font-size="10.8" fill="#b91c1c" text-anchor="start" font-weight="700">③ 聚合酶“复制打滑”（插入/缺失移码）</text>
+<text x="42" y="334" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">案发地形：遇到微卫星重复路段（如 CACACACACA... 连续重复）</text>
+<text x="42" y="361" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">打滑瞬间：聚合酶喘口气短暂脱手，新链或模板链拱起一个小环，</text>
+<text x="42" y="388" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">多抄或漏抄：重新抓紧时错位一格，白白多塞或漏掉 1～2 个字母！</text>
+<text x="42" y="415" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">演化后果：若非 3 的倍数，后面所有三联体密码子全乱套（移码突变）！</text>
+<rect x="388" y="266" width="350" height="184" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="400" y="278" width="326" height="36" rx="7" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<circle cx="416" cy="296" r="10" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="416" y="300" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">4</text>
+<text x="433" y="301" font-size="10.8" fill="#6d28d9" text-anchor="start" font-weight="700">④ 错位不等交换与转座子跳跃（大段拷贝）</text>
+<text x="408" y="334" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">案发地形：基因组里遍布相似的重复序列或“跳跃基因”逆转录转座子</text>
+<text x="408" y="361" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">错位对齐：分裂重组时两条同源染色体“看走眼”错开一格配对互换，</text>
+<text x="408" y="388" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">一多一少：一条染色体白捡了双份完整基因（基因重复！），另一条缺失；</text>
+<text x="408" y="415" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">演化后果：白捡的备份基因成了日后演化“发明全新器官功能”的金矿！</text>
+<rect x="22" y="466" width="716" height="40" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="380" y="491" font-size="10.8" fill="#0f172a" text-anchor="middle" font-weight="600">外因（紫外线胸腺嘧啶二聚体、电离辐射断链、烟草亚硝胺）只是踩下油门；内源热涨落与化学水解才是永不停歇的底噪！</text>
+</svg>

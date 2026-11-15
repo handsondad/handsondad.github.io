@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="518" viewBox="0 0 760 518" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">甲醇与乙醇分子结构、氢键效应与沸点对比图</title>
+<desc id="desc">对比甲醇与乙醇的双亲分子结构、分子间氢键网络导致的体积收缩与沸点暴涨数据，以及与同分异构体二甲醚的沸点差异和中性电离常数。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="517" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">只差一个 -CH₂- 的亲兄弟：双亲分子结构、氢键拉手网与沸点暴涨 200℃ 之谜</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">先看左栏“憎水碳尾 + 亲水羟基头”的双亲构造 → 再看右栏装上羟基后沸点怎样从极寒气体一步跨进常温液体</text>
+<rect x="24" y="66" width="352" height="282" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="86" r="10" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="42" y="90" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="58" y="90" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="700">结构对照：同样顶着极性 -OH，碳尾巴长短差一截</text>
+<rect x="38" y="102" width="324" height="80" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<line x1="78" y1="142" x2="122" y2="142" stroke="#475569" stroke-width="3.2"/>
+<line x1="122" y1="142" x2="152" y2="124" stroke="#1d6fa5" stroke-width="3.2"/>
+<line x1="78" y1="142" x2="56" y2="122" stroke="#475569" stroke-width="2.2"/>
+<line x1="78" y1="142" x2="56" y2="162" stroke="#475569" stroke-width="2.2"/>
+<line x1="78" y1="142" x2="82" y2="114" stroke="#475569" stroke-width="2.2"/>
+<circle cx="78" cy="142" r="13" fill="#b45309" stroke="#ffffff" stroke-width="1.5"/>
+<text x="78" y="146" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">C</text>
+<circle cx="54" cy="120" r="6.5" fill="#94a3b8"/><circle cx="54" cy="164" r="6.5" fill="#94a3b8"/><circle cx="83" cy="112" r="6.5" fill="#94a3b8"/>
+<circle cx="122" cy="142" r="12" fill="#dc2626" stroke="#ffffff" stroke-width="1.5"/>
+<text x="122" y="146" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">O</text>
+<circle cx="154" cy="123" r="7.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.2"/>
+<text x="154" y="127" font-size="9.5" fill="#ffffff" text-anchor="middle" font-weight="700">H</text>
+<text x="168" y="124" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">甲醇 CH₃OH（M = 32.04）</text>
+<text x="168" y="145" font-size="10.8" fill="#1e293b" text-anchor="start">• 仅 1 个碳（无 C–C 键），含氧 50%</text>
+<text x="168" y="166" font-size="10.8" fill="#c25014" text-anchor="start" font-weight="600">• 沸点 64.7℃，20℃ 蒸气压 13.0 kPa</text>
+<rect x="38" y="192" width="324" height="82" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<line x1="62" y1="238" x2="98" y2="226" stroke="#475569" stroke-width="3.2"/>
+<line x1="98" y1="226" x2="132" y2="238" stroke="#475569" stroke-width="3.2"/>
+<line x1="132" y1="238" x2="156" y2="220" stroke="#1d6fa5" stroke-width="3.2"/>
+<circle cx="62" cy="238" r="12" fill="#b45309" stroke="#ffffff" stroke-width="1.5"/>
+<text x="62" y="242" font-size="9.8" fill="#ffffff" text-anchor="middle" font-weight="700">Cβ</text>
+<circle cx="98" cy="226" r="12" fill="#b45309" stroke="#ffffff" stroke-width="1.5"/>
+<text x="98" y="230" font-size="9.8" fill="#ffffff" text-anchor="middle" font-weight="700">Cα</text>
+<circle cx="132" cy="238" r="11.5" fill="#dc2626" stroke="#ffffff" stroke-width="1.5"/>
+<text x="132" y="242" font-size="10.5" fill="#ffffff" text-anchor="middle" font-weight="700">O</text>
+<circle cx="157" cy="219" r="7.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.2"/>
+<text x="157" y="223" font-size="9.5" fill="#ffffff" text-anchor="middle" font-weight="700">H</text>
+<text x="168" y="214" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">乙醇 CH₃CH₂OH（M = 46.07）</text>
+<text x="168" y="235" font-size="10.8" fill="#1e293b" text-anchor="start">• 多 1 个 -CH₂-（有 β-碳），含氧 34.7%</text>
+<text x="168" y="256" font-size="10.8" fill="#1d6fa5" text-anchor="start" font-weight="600">• 沸点 78.2℃，20℃ 蒸气压 5.95 kPa</text>
+<text x="38" y="296" font-size="10.8" fill="#1e293b" text-anchor="start">双亲绝活：碳氢尾亲油脂，极性羟基（1.69 D）与水结氢键网——</text>
+<text x="38" y="316" font-size="11" fill="#0f766e" text-anchor="start" font-weight="700">50 mL 乙醇 + 50 mL 水混合体积缩至约 96.3 mL！</text>
+<text x="38" y="336" font-size="10.5" fill="#64748b" text-anchor="start">（水分子钻进醇氢键空隙，既能与水混溶，又能溶解油污）</text>
+<rect x="392" y="66" width="344" height="282" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="410" cy="86" r="10" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="410" y="90" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">2</text>
+<text x="426" y="90" font-size="12.4" fill="#0f172a" text-anchor="start" font-weight="700">氢键威力实测：装上 -OH 沸点飙升 167~226℃</text>
+<line x1="616.4" y1="120" x2="616.4" y2="288" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="612.4" y="115" font-size="10.2" fill="#64748b" text-anchor="end">0℃</text>
+<line x1="632.3" y1="120" x2="632.3" y2="288" stroke="#18794e" stroke-width="1.1" stroke-dasharray="3 3"/>
+<text x="636.3" y="115" font-size="10.2" fill="#18794e" text-anchor="start">25℃室温</text>
+<text x="406" y="141.5" font-size="10.8" fill="#1e293b" text-anchor="start" font-weight="600">甲烷 CH₄</text>
+<rect x="513.8" y="130" width="102.7" height="15" rx="3" fill="#475569" opacity="0.85"/>
+<text x="622.4" y="141.5" font-size="10.5" fill="#475569" text-anchor="start" font-weight="700" class="halo">-161.5℃</text>
+<text x="406" y="173.5" font-size="10.8" fill="#1e293b" text-anchor="start" font-weight="600">甲醇 CH₃OH</text>
+<rect x="616.4" y="162" width="41.1" height="15" rx="3" fill="#c25014" opacity="0.85"/>
+<text x="662.6" y="173.5" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="700" class="halo">+64.7℃</text>
+<text x="406" y="205.5" font-size="10.8" fill="#1e293b" text-anchor="start" font-weight="600">乙烷 C₂H₆</text>
+<rect x="560.1" y="194" width="56.3" height="15" rx="3" fill="#475569" opacity="0.85"/>
+<text x="622.4" y="205.5" font-size="10.5" fill="#475569" text-anchor="start" font-weight="700" class="halo">-88.6℃</text>
+<text x="406" y="237.5" font-size="10.8" fill="#1e293b" text-anchor="start" font-weight="600">二甲醚 C₂H₆O</text>
+<rect x="600.7" y="226" width="15.8" height="15" rx="3" fill="#6d28d9" opacity="0.85"/>
+<text x="622.4" y="237.5" font-size="10.5" fill="#6d28d9" text-anchor="start" font-weight="700" class="halo">-24.8℃</text>
+<text x="406" y="269.5" font-size="10.8" fill="#1e293b" text-anchor="start" font-weight="600">乙醇 C₂H₅OH</text>
+<rect x="616.4" y="258" width="49.7" height="15" rx="3" fill="#1d6fa5" opacity="0.85"/>
+<text x="671.1" y="269.5" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="700" class="halo">+78.2℃</text>
+<text x="406" y="312" font-size="10.8" fill="#6d28d9" text-anchor="start" font-weight="600">铁证：二甲醚与乙醇分子式同为 C₂H₆O，</text>
+<text x="406" y="332" font-size="10.8" fill="#6d28d9" text-anchor="start" font-weight="600">只因二甲醚无 O–H 氢键，沸点比乙醇低整整 103℃！</text>
+<rect x="24" y="362" width="712" height="140" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="40" y="386" font-size="12.4" fill="#0f172a" text-anchor="start" font-weight="700">为什么挂着 -OH 却不是碱，也不是酸？——三个最容易踩坑的基础物化性质：</text>
+<rect x="40" y="398" width="216" height="90" rx="8" fill="#ffffff" stroke="#1d6fa5" stroke-width="1"/>
+<rect x="50.0" y="406.0" width="196" height="20" rx="10.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="148.0" y="419.6" font-size="11" fill="#1d6fa5" text-anchor="middle" font-weight="600">① 水溶液中呈电中性</text>
+<text x="52" y="446" font-size="11" fill="#1e293b" text-anchor="start" font-weight="600">甲醇 pKa = 15.5，乙醇 pKa = 15.9</text>
+<text x="52" y="468" font-size="10.8" fill="#64748b" text-anchor="start">与水相当，共价 C–O 键绝不电离 OH⁻！</text>
+<rect x="274" y="398" width="216" height="90" rx="8" fill="#ffffff" stroke="#c25014" stroke-width="1"/>
+<rect x="284.0" y="406.0" width="196" height="20" rx="10.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="382.0" y="419.6" font-size="11" fill="#c25014" text-anchor="middle" font-weight="600">② 沸点差与 95.6% 共沸墙</text>
+<text x="286" y="446" font-size="11" fill="#1e293b" text-anchor="start" font-weight="600">甲醇沸点低 13.5℃，酿酒“掐头”可减除</text>
+<text x="286" y="468" font-size="10.8" fill="#64748b" text-anchor="start">乙醇与水在 78.15℃ 结成 95.6% 共沸物</text>
+<rect x="508" y="398" width="216" height="90" rx="8" fill="#ffffff" stroke="#dc2626" stroke-width="1"/>
+<rect x="518.0" y="406.0" width="196" height="20" rx="10.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="616.0" y="419.6" font-size="11" fill="#dc2626" text-anchor="middle" font-weight="600">③ 外观气味难凭感官分辨</text>
+<text x="520" y="446" font-size="11" fill="#1e293b" text-anchor="start" font-weight="600">密度几乎重叠（0.792 vs 0.789 g/cm³）</text>
+<text x="520" y="468" font-size="10.8" fill="#64748b" text-anchor="start">皆为无色微香挥发液，严禁靠闻尝鉴酒！</text>
+</svg>

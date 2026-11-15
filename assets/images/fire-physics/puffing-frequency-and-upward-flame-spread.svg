@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="490" viewBox="0 0 760 490" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">火焰浮力涡环闪烁频率定律与火柴顺逆流燃烧蔓延对比图</title>
+<desc id="desc">左图绘制火焰闪烁频率随火源直径平方根成反比的实验曲线（从2厘米蜡烛10.6赫兹到9米油池火0.5赫兹）；右图对比火柴头朝上逆流慢烧与朝下顺流预热猛烧，延伸至山火上坡加速与火场低姿逃生原理。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-ink" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#0f172a"/>
+  </marker>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-red" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#dc2626"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#6d28d9"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="489" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">浮力制造的两大奇观：篝火“呼呼”跳动定律与火柴倒拿狂烧之谜</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">小火苗安静稳定，大火堆却按 f ≈ 1.5/√D 周期脱落环形涡流；顺着浮力方向更会让火势暴涨数倍</text>
+<rect x="20" y="62" width="368" height="412" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="84" r="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="38" y="88" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="88" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="700">为什么篝火总是一跳一跳？浮力涡环脱落定律</text>
+<line x1="68.0" y1="306.0" x2="362.0" y2="306.0" stroke="#e2e8f0" stroke-width="1.0" stroke-linecap="round"/>
+<text x="62.0" y="310.0" font-size="9.8" fill="#64748b" text-anchor="end" class="mono">0Hz</text>
+<line x1="68.0" y1="262.3" x2="362.0" y2="262.3" stroke="#e2e8f0" stroke-width="1.0" stroke-linecap="round"/>
+<text x="62.0" y="266.3" font-size="9.8" fill="#64748b" text-anchor="end" class="mono">3Hz</text>
+<line x1="68.0" y1="218.6" x2="362.0" y2="218.6" stroke="#e2e8f0" stroke-width="1.0" stroke-linecap="round"/>
+<text x="62.0" y="222.6" font-size="9.8" fill="#64748b" text-anchor="end" class="mono">6Hz</text>
+<line x1="68.0" y1="175.0" x2="362.0" y2="175.0" stroke="#e2e8f0" stroke-width="1.0" stroke-linecap="round"/>
+<text x="62.0" y="179.0" font-size="9.8" fill="#64748b" text-anchor="end" class="mono">9Hz</text>
+<line x1="68.0" y1="131.3" x2="362.0" y2="131.3" stroke="#e2e8f0" stroke-width="1.0" stroke-linecap="round"/>
+<text x="62.0" y="135.3" font-size="9.8" fill="#64748b" text-anchor="end" class="mono">12Hz</text>
+<line x1="68.0" y1="306.0" x2="68.0" y2="310.0" stroke="#475569" stroke-width="1.1" stroke-linecap="round"/>
+<text x="68.0" y="323.0" font-size="9.8" fill="#64748b" text-anchor="middle" class="mono">1cm</text>
+<line x1="166.0" y1="306.0" x2="166.0" y2="310.0" stroke="#475569" stroke-width="1.1" stroke-linecap="round"/>
+<text x="166.0" y="323.0" font-size="9.8" fill="#64748b" text-anchor="middle" class="mono">10cm</text>
+<line x1="264.0" y1="306.0" x2="264.0" y2="310.0" stroke="#475569" stroke-width="1.1" stroke-linecap="round"/>
+<text x="264.0" y="323.0" font-size="9.8" fill="#64748b" text-anchor="middle" class="mono">1m</text>
+<line x1="362.0" y1="306.0" x2="362.0" y2="310.0" stroke="#475569" stroke-width="1.1" stroke-linecap="round"/>
+<text x="362.0" y="323.0" font-size="9.8" fill="#64748b" text-anchor="middle" class="mono">10m</text>
+<text x="215.0" y="340.0" font-size="10.2" fill="#64748b" text-anchor="middle">火源底部直径 D（对数坐标）</text>
+<line x1="68.0" y1="124.0" x2="68.0" y2="306.0" stroke="#475569" stroke-width="1.3" stroke-linecap="round"/>
+<line x1="68.0" y1="306.0" x2="362.0" y2="306.0" stroke="#475569" stroke-width="1.3" stroke-linecap="round"/>
+<polyline points="82.7,121.9 87.4,131.7 92.0,140.9 96.7,149.7 101.3,158.0 106.0,165.9 110.6,173.4 115.3,180.4 119.9,187.1 124.6,193.4 129.2,199.4 133.9,205.1 138.6,210.5 143.2,215.5 147.9,220.4 152.5,224.9 157.2,229.2 161.8,233.3 166.5,237.2 171.1,240.9 175.8,244.3 180.5,247.6 185.1,250.7 189.8,253.7 194.4,256.4 199.1,259.1 203.7,261.6 208.4,263.9 213.0,266.2 217.7,268.3 222.3,270.3 227.0,272.2 231.7,274.0 236.3,275.7 241.0,277.3 245.6,278.8 250.3,280.3 254.9,281.7 259.6,283.0 264.2,284.2 268.9,285.3 273.6,286.4 278.2,287.5 282.9,288.5 287.5,289.4 292.2,290.3 296.8,291.1 301.5,291.9 306.1,292.7 310.8,293.4 315.4,294.0 320.1,294.7 324.8,295.3 329.4,295.9 334.1,296.4 338.7,296.9 343.4,297.4 348.0,297.8 352.7,298.3 357.3,298.7 362.0,299.1" fill="none" stroke="#6d28d9" stroke-width="2.6"/>
+<circle cx="97.5" cy="151.2" r="4.2" fill="#c25014" stroke="#ffffff" stroke-width="1.4"/>
+<text x="105.5" y="155.2" font-size="10.0" fill="#c25014" text-anchor="start" font-weight="700">并排蜡烛 (2cm): 10.6 Hz</text>
+<circle cx="205.0" cy="262.2" r="4.2" fill="#dc2626" stroke="#ffffff" stroke-width="1.4"/>
+<text x="213.0" y="255.2" font-size="10.0" fill="#dc2626" text-anchor="start" font-weight="700">露营篝火 (25cm): 3.0 Hz</text>
+<circle cx="264.0" cy="284.1" r="4.2" fill="#6d28d9" stroke="#ffffff" stroke-width="1.4"/>
+<text x="258.0" y="275.1" font-size="10.0" fill="#6d28d9" text-anchor="end" font-weight="700">大型篝火 (1m): 1.5 Hz</text>
+<circle cx="357.5" cy="298.7" r="4.2" fill="#0f172a" stroke="#ffffff" stroke-width="1.4"/>
+<text x="353.5" y="288.7" font-size="10.0" fill="#0f172a" text-anchor="end" font-weight="700">油池大火 (9m): 0.5 Hz</text>
+<rect x="34" y="354" width="340" height="106" rx="8" fill="#f3e8ff" stroke="#d8b4fe" stroke-width="1.0"/>
+<text x="46" y="374" font-size="11" fill="#6d28d9" text-anchor="start" font-weight="700">Cetegen &amp; Ahmed 定律：f ≈ 0.48√(g/D) ≈ 1.5/√D</text>
+<text x="46" y="393" font-size="10.2" fill="#1e293b" text-anchor="start">• 热羽流加速上升剪切外围冷空气，卷出一圈圈“甜甜圈”环形涡流；</text>
+<text x="46" y="411" font-size="10.2" fill="#1e293b" text-anchor="start">• 涡环每爬升约 1 个火源直径就饱和脱落，把火舌掐脖子向上抛断；</text>
+<text x="46" y="429" font-size="10.2" fill="#1e293b" text-anchor="start">• 单支蜡烛极稳，但三支蜡烛紧挨凑成 2 cm 火源就会每秒同步狂闪</text>
+<text x="46" y="446" font-size="10.2" fill="#1e293b" text-anchor="start">  约 10 次！直径越大的巨型火场，火球吞吐反而越慢越深沉。</text>
+<rect x="402" y="62" width="338" height="412" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="420" cy="84" r="10.5" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2"/>
+<text x="420" y="88" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">2</text>
+<text x="438" y="88" font-size="12.4" fill="#0f172a" text-anchor="start" font-weight="700">顺浮力 vs 逆浮力：一根火柴看懂火场生死法则</text>
+<rect x="418" y="108" width="146" height="224" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="491" y="128" font-size="10.6" fill="#0f766e" text-anchor="middle" font-weight="700">A. 火柴头朝上（逆流慢烧）</text>
+<line x1="491.0" y1="158.0" x2="491.0" y2="136.0" stroke="#c25014" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<path d="M 491 164 C 478 184, 480 206, 491 214 C 502 206, 504 184, 491 164 Z" fill="#fde047" stroke="#ea580c" stroke-width="1.2"/>
+<rect x="487" y="212" width="8" height="72" rx="2" fill="#fde68a" stroke="#b45309" stroke-width="1.2"/>
+<ellipse cx="491" cy="212" rx="5.5" ry="7" fill="#334155"/>
+<text x="491" y="300" font-size="10.2" fill="#0f766e" text-anchor="middle" font-weight="600">热羽流飞向空中</text>
+<text x="491" y="317" font-size="9.8" fill="#64748b" text-anchor="middle">下方木杆冷，常半途自熄</text>
+<rect x="578" y="108" width="146" height="224" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1"/>
+<text x="651" y="128" font-size="10.6" fill="#dc2626" text-anchor="middle" font-weight="700">B. 火柴头朝下（顺流猛蹿）</text>
+<path d="M 651 150 C 626 196, 628 250, 651 272 C 674 250, 676 196, 651 150 Z" fill="#fb923c" fill-opacity="0.45" stroke="#dc2626" stroke-width="1.3" stroke-dasharray="3 2"/>
+<path d="M 651 174 C 635 210, 636 252, 651 268 C 666 252, 667 210, 651 174 Z" fill="#fde047" stroke="#ea580c" stroke-width="1.2"/>
+<rect x="647" y="184" width="8" height="76" rx="2" fill="#fde68a" stroke="#b45309" stroke-width="1.2"/>
+<ellipse cx="651" cy="260" rx="5.5" ry="7" fill="#334155"/>
+<line x1="626.0" y1="256.0" x2="626.0" y2="176.0" stroke="#dc2626" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arr-red)"/>
+<text x="651" y="300" font-size="10.2" fill="#dc2626" text-anchor="middle" font-weight="700">高温羽流包裹整根木杆</text>
+<text x="651" y="317" font-size="9.8" fill="#1e293b" text-anchor="middle">提前热解出可燃气，秒烧到手！</text>
+<rect x="418" y="344" width="306" height="116" rx="8" fill="#fff7ed" stroke="#fdba74" stroke-width="1.0"/>
+<text x="430" y="364" font-size="11" fill="#dc2626" text-anchor="start" font-weight="700">从火柴放大到森林山火与高层逃生铁律：</text>
+<text x="430" y="383" font-size="10.2" fill="#1e293b" text-anchor="start">1. 严禁往山上跑：陡坡与峡谷把向上热羽流压向坡面树冠（贴壁</text>
+<text x="430" y="400" font-size="10.2" fill="#1e293b" text-anchor="start">   柯恩达效应 + 辐射预热），山火上坡蔓延速度可达平地的 4–10 倍！</text>
+<text x="430" y="418" font-size="10.2" fill="#1e293b" text-anchor="start">2. 火场弯腰低姿：楼梯间与电梯井是天然大烟囱，剧毒高温烟气</text>
+<text x="430" y="435" font-size="10.2" fill="#1e293b" text-anchor="start">   以 3–5 m/s 直冲顶层，贴近地面 30 cm 才有残存低温空气层。</text>
+</svg>

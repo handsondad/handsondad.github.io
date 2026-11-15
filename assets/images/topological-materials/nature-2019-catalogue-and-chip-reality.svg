@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="500" viewBox="0 0 760 500" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">2019自然杂志拓扑电子材料大普查数据与商业芯片工程门槛对比图</title>
+<desc id="desc">左栏展示2019年Nature对39519种非磁性晶体的自动普查结果，发现8056种(20.4%)为拓扑材料（含5005种拓扑半金属、1814种拓扑绝缘体、1237种拓扑晶体绝缘体）；右栏解析三维斜散射、低温门槛与开关比三大工程挑战及已落地应用。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arr-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#6d28d9"/>
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#475569"/>
+    </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="499" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">颠覆教科书的大普查：自然界超两成晶体带拓扑！为何还没换掉硅芯片？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">2019《Nature》三篇背靠背论文筛遍数万种晶体；同时看清走向日常手机芯片的三道真实工程门槛</text>
+<rect x="16" y="68" width="354" height="414" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="36" cy="92" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="36" y="96" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="97" font-size="12.0" fill="#1d6fa5" text-anchor="start" font-weight="700">2019 大反转：拓扑材料根本不是“稀有怪胎”！</text>
+<text x="36" y="121" font-size="10.0" fill="#475569" text-anchor="start">过去靠人工逐个算陈数，十年只找到寥寥十几种；</text>
+<text x="36" y="140" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="600">2019 年“对称性指标 / 拓扑量子化学”全库自动普查：</text>
+<rect x="36.0" y="162" width="39.8" height="34" fill="#6d28d9"/>
+<rect x="75.8" y="162" width="14.4" height="34" fill="#1d6fa5"/>
+<rect x="90.2" y="162" width="9.8" height="34" fill="#18794e"/>
+<rect x="100.0" y="162" width="250.0" height="34" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1"/>
+<text x="68.0" y="155" font-size="9.9" fill="#1d6fa5" text-anchor="middle" font-weight="700">8,056 种拓扑材料 (20.4%)</text>
+<text x="225.0" y="184" font-size="9.9" fill="#475569" text-anchor="middle" font-weight="600">普通平庸晶体 31,463 种 (79.6%)</text>
+<rect x="36" y="212" width="314" height="40" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.1"/>
+<circle cx="52" cy="232" r="6" fill="#6d28d9"/>
+<text x="66" y="229" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">拓扑半金属 (TSM)：5,005 种 (12.7%)</text>
+<text x="66" y="245" font-size="9.8" fill="#64748b" text-anchor="start">外尔 / 狄拉克 / 节线半金属</text>
+<rect x="36" y="260" width="314" height="40" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.1"/>
+<circle cx="52" cy="280" r="6" fill="#1d6fa5"/>
+<text x="66" y="277" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">拓扑绝缘体 (TI)：1,814 种 (4.6%)</text>
+<text x="66" y="293" font-size="9.8" fill="#64748b" text-anchor="start">强/弱 Z₂ 自旋锁定绝缘体</text>
+<rect x="36" y="308" width="314" height="40" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.1"/>
+<circle cx="52" cy="328" r="6" fill="#18794e"/>
+<text x="66" y="325" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">拓扑晶体绝缘体 (TCI)：1,237 种 (3.1%)</text>
+<text x="66" y="341" font-size="9.8" fill="#64748b" text-anchor="start">受镜面/旋转晶体对称性保护</text>
+<rect x="36" y="362" width="314" height="104" rx="9" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.3"/>
+<text x="193" y="384" font-size="10.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">连身边的老熟人都有“隐藏拓扑身份证”！</text>
+<text x="193" y="405" font-size="9.9" fill="#0f172a" text-anchor="middle">• 另一组筛查 26,938 种化学计量晶体（Vergniory 等）</text>
+<text x="193" y="424" font-size="9.9" fill="#dc2626" text-anchor="middle" font-weight="700">  发现超 24%–27% 天然晶体具有拓扑电子结构！</text>
+<text x="193" y="444" font-size="9.9" fill="#475569" text-anchor="middle">• 连黄金(Au)表面态、单质铋(Bi)都带拓扑印记；</text>
+<text x="193" y="460" font-size="9.8" fill="#0f766e" text-anchor="middle" font-weight="600">  全球公开数据库已上线，输入化学式即可一键查验。</text>
+<rect x="386" y="68" width="358" height="414" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="92" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="406" y="96" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="426" y="97" font-size="12.0" fill="#c25014" text-anchor="start" font-weight="700">冷静祛魅：距离替代手机硅芯片差哪三步？</text>
+<rect x="402" y="114" width="326" height="82" rx="9" fill="#fff7ed" stroke="#fdba74" stroke-width="1.3"/>
+<text x="414" y="136" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="700">门槛 ①：三维表面只禁 180° 掉头，不禁斜向拐弯</text>
+<text x="414" y="158" font-size="9.9" fill="#0f172a" text-anchor="start">三维拓扑绝缘体表面是二维平面：虽严格禁止 180° 背散射，</text>
+<text x="414" y="178" font-size="9.9" fill="#475569" text-anchor="start">但电子仍能偏转 60°、90° 散射，室温下并非零电阻超导体！</text>
+<rect x="402" y="206" width="326" height="82" rx="9" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.3"/>
+<text x="414" y="228" font-size="10.5" fill="#dc2626" text-anchor="start" font-weight="700">门槛 ②：体态空位漏电 + 单行道困在极低温</text>
+<text x="414" y="250" font-size="9.9" fill="#0f172a" text-anchor="start">真实 Bi₂Se₃ 晶体常含硒空位导致内部漏电；而真正零耗散单行</text>
+<text x="414" y="270" font-size="9.9" fill="#475569" text-anchor="start">道的量子反常霍尔效应(QAHE)目前仍需几开尔文极低温。</text>
+<rect x="402" y="298" width="326" height="82" rx="9" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.3"/>
+<text x="414" y="320" font-size="10.5" fill="#475569" text-anchor="start" font-weight="700">门槛 ③：“关不断”难做数字开关 + 严谨证伪纠偏</text>
+<text x="414" y="342" font-size="9.9" fill="#0f172a" text-anchor="start">晶体管算 0 和 1 必须能彻底关断电流，拓扑边缘偏偏关不断！</text>
+<text x="414" y="362" font-size="9.9" fill="#475569" text-anchor="start">同时马约拉纳拓扑量子计算曾历经 2021《Nature》撤稿自纠。</text>
+<rect x="402" y="394" width="326" height="72" rx="9" fill="#0f172a"/>
+<text x="565" y="415" font-size="10.4" fill="#4ade80" text-anchor="middle" font-weight="700">已经率先落地的三大硬核战场：</text>
+<text x="565" y="436" font-size="9.9" fill="#f8fafc" text-anchor="middle">① 国际量子电阻基准  ② 低功耗自旋存储 (SOT-MRAM)</text>
+<text x="565" y="455" font-size="9.9" fill="#93c5fd" text-anchor="middle">③ 宽波段红外光电探测与纳米互连线抗散射材料</text>
+</svg>

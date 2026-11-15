@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="504" viewBox="0 0 760 504" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">碳元素三种同位素（碳-12、碳-13、碳-14）原子核结构与丰度对比图</title>
+<desc id="desc">左侧展示元素周期表第6号碳格（原子量12.011源于稳定同位素加权平均）及1913年索迪提出同位素（同占一格）的词源；右侧并列对比碳-12（6质子6中子，丰度98.93%，稳定）、碳-13（6质子7中子，丰度1.07%，稳定）与碳-14（6质子8中子，丰度约一万亿分之一，半衰期5730年β衰变）。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="503" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">什么是“同位素”？挤在元素周期表第 6 号座位上的碳家三兄弟</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">质子数 Z=6 决定它们都叫“碳”、化学脾气相同；中子数 N=6, 7, 8 不同，让体重与原子核寿命大相径庭</text>
+<rect x="24" y="68" width="174" height="412" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="38.0" y="82.0" width="146" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="111.0" y="97.0" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="600">为什么叫“同位”素？</text>
+<rect x="46" y="120" width="130" height="136" rx="10" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.8"/>
+<text x="58" y="144" font-size="15" fill="#6d28d9" text-anchor="start" font-weight="700" class="mono">6</text>
+<text x="164" y="142" font-size="10.5" fill="#6d28d9" text-anchor="end" font-weight="600">第6号座位</text>
+<text x="111" y="186" font-size="22" fill="#0f172a" text-anchor="middle" font-weight="700">C</text>
+<text x="111" y="218" font-size="12.5" fill="#1e293b" text-anchor="middle" font-weight="600">碳 Carbon</text>
+<text x="111" y="242" font-size="13" fill="#dc2626" text-anchor="middle" font-weight="700" class="mono">12.011</text>
+<text x="38" y="280" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">索迪（1913）造词：</text>
+<text x="38" y="299" font-size="11" fill="#1e293b" text-anchor="start">希腊语 isos(相同) +</text>
+<text x="38" y="317" font-size="11" fill="#1e293b" text-anchor="start">topos(位置) = 同占一格</text>
+<rect x="36" y="334" width="150" height="132" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="46" y="354" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">为什么原子量带小数？</text>
+<text x="46" y="374" font-size="11" fill="#1e293b" text-anchor="start" class="mono">12 × 98.93%</text>
+<text x="46" y="392" font-size="11" fill="#1e293b" text-anchor="start" class="mono">+ 13.003 × 1.07%</text>
+<text x="46" y="410" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700" class="mono">≈ 12.011！</text>
+<text x="46" y="431" font-size="10.5" fill="#64748b" text-anchor="start">小数尾数正是天然重稳定</text>
+<text x="46" y="448" font-size="10.5" fill="#64748b" text-anchor="start">同位素 ¹³C 留下的证据</text>
+<circle cx="226" cy="84" r="5" fill="#dc2626"/>
+<text x="236" y="88" font-size="11.5" fill="#1e293b" text-anchor="start" font-weight="600">质子 (+e，固定 6 个)</text>
+<circle cx="384" cy="84" r="5" fill="#1d6fa5"/>
+<text x="394" y="88" font-size="11.5" fill="#1e293b" text-anchor="start" font-weight="600">中子 (不带电，6 / 7 / 8 个)</text>
+<circle cx="566" cy="84" r="4" fill="#0f766e"/>
+<text x="576" y="88" font-size="11.5" fill="#1e293b" text-anchor="start" font-weight="600">核外电子 (6 个，决定化学键)</text>
+<rect x="212" y="102" width="166" height="378" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.0"/>
+<rect x="226.0" y="114.0" width="138" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="295.0" y="129.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">碳-12 (¹²C)</text>
+<text x="295" y="153" font-size="11.5" fill="#64748b" text-anchor="middle" font-weight="600">老大哥 · 绝对主力</text>
+<circle cx="295" cy="222" r="34" fill="none" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="295" cy="222" r="50" fill="none" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4 3"/>
+<circle cx="322.9" cy="241.5" r="3.1" fill="#0f766e"/>
+<circle cx="267.1" cy="202.5" r="3.1" fill="#0f766e"/>
+<circle cx="345.0" cy="222.0" r="3.1" fill="#0f766e"/>
+<circle cx="295.0" cy="272.0" r="3.1" fill="#0f766e"/>
+<circle cx="245.0" cy="222.0" r="3.1" fill="#0f766e"/>
+<circle cx="295.0" cy="172.0" r="3.1" fill="#0f766e"/>
+<circle cx="295.0" cy="222.0" r="4.5" fill="#dc2626" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="291.5" cy="225.2" r="4.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="295.6" cy="215.4" r="4.5" fill="#dc2626" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="300.0" cy="228.5" r="4.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="285.7" cy="220.4" r="4.5" fill="#dc2626" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="303.9" cy="216.4" r="4.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="292.0" cy="233.1" r="4.5" fill="#dc2626" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="289.3" cy="211.0" r="4.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="307.5" cy="226.6" r="4.5" fill="#dc2626" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="282.0" cy="227.4" r="4.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="301.3" cy="208.5" r="4.5" fill="#dc2626" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="299.7" cy="236.9" r="4.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="0.9"/>
+<rect x="224" y="288" width="142" height="86" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="295" y="308" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="700">6 质子 + 6 中子 = 12</text>
+<text x="295" y="330" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">自然丰度：98.93%</text>
+<text x="295" y="352" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="600">稳定（永不衰变）</text>
+<text x="226" y="398" font-size="10.5" fill="#1e293b" text-anchor="start">• 核外都有 6 个电子，都</text>
+<text x="226" y="415" font-size="10.5" fill="#1e293b" text-anchor="start">  能生成 CO₂ 进入生命体</text>
+<text x="226" y="436" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600">• 身手最轻快，植物光合</text>
+<text x="234" y="453" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600">作用吸收 CO₂ 时最偏爱它</text>
+<rect x="391" y="102" width="166" height="378" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.0"/>
+<rect x="405.0" y="114.0" width="138" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="474.0" y="129.0" font-size="12" fill="#18794e" text-anchor="middle" font-weight="600">碳-13 (¹³C)</text>
+<text x="474" y="153" font-size="11.5" fill="#64748b" text-anchor="middle" font-weight="600">二哥 · 产地指纹官</text>
+<circle cx="474" cy="222" r="34" fill="none" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="474" cy="222" r="50" fill="none" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4 3"/>
+<circle cx="501.9" cy="241.5" r="3.1" fill="#0f766e"/>
+<circle cx="446.1" cy="202.5" r="3.1" fill="#0f766e"/>
+<circle cx="524.0" cy="222.0" r="3.1" fill="#0f766e"/>
+<circle cx="474.0" cy="272.0" r="3.1" fill="#0f766e"/>
+<circle cx="424.0" cy="222.0" r="3.1" fill="#0f766e"/>
+<circle cx="474.0" cy="172.0" r="3.1" fill="#0f766e"/>
+<circle cx="474.0" cy="222.0" r="4.5" fill="#dc2626" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="470.5" cy="225.2" r="4.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="474.6" cy="215.4" r="4.5" fill="#dc2626" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="479.0" cy="228.5" r="4.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="464.7" cy="220.4" r="4.5" fill="#dc2626" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="482.9" cy="216.4" r="4.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="471.0" cy="233.1" r="4.5" fill="#dc2626" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="468.3" cy="211.0" r="4.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="486.5" cy="226.6" r="4.5" fill="#dc2626" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="461.0" cy="227.4" r="4.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="480.3" cy="208.5" r="4.5" fill="#dc2626" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="478.7" cy="236.9" r="4.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="459.9" cy="213.8" r="4.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="0.9"/>
+<rect x="403" y="288" width="142" height="86" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="474" y="308" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="700">6 质子 + 7 中子 = 13</text>
+<text x="474" y="330" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">自然丰度：1.07%</text>
+<text x="474" y="352" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="600">稳定（永不衰变）</text>
+<text x="405" y="398" font-size="10.5" fill="#1e293b" text-anchor="start">• 核外都有 6 个电子，都</text>
+<text x="405" y="415" font-size="10.5" fill="#1e293b" text-anchor="start">  能生成 CO₂ 进入生命体</text>
+<text x="405" y="436" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600">• 重约 8%，专门用来鉴别</text>
+<text x="413" y="453" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600">古人食谱、真假蜂蜜与碳源</text>
+<rect x="570" y="102" width="166" height="378" rx="10" fill="#ffffff" stroke="#c25014" stroke-width="1.5"/>
+<rect x="584.0" y="114.0" width="138" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="653.0" y="129.0" font-size="12" fill="#c25014" text-anchor="middle" font-weight="600">碳-14 (¹⁴C)</text>
+<text x="653" y="153" font-size="11.5" fill="#64748b" text-anchor="middle" font-weight="600">三弟 · 考古时间秒表</text>
+<circle cx="653" cy="222" r="34" fill="none" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+<circle cx="653" cy="222" r="50" fill="none" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4 3"/>
+<circle cx="680.9" cy="241.5" r="3.1" fill="#0f766e"/>
+<circle cx="625.1" cy="202.5" r="3.1" fill="#0f766e"/>
+<circle cx="703.0" cy="222.0" r="3.1" fill="#0f766e"/>
+<circle cx="653.0" cy="272.0" r="3.1" fill="#0f766e"/>
+<circle cx="603.0" cy="222.0" r="3.1" fill="#0f766e"/>
+<circle cx="653.0" cy="172.0" r="3.1" fill="#0f766e"/>
+<circle cx="653.0" cy="222.0" r="4.5" fill="#dc2626" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="649.5" cy="225.2" r="4.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="653.6" cy="215.4" r="4.5" fill="#dc2626" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="658.0" cy="228.5" r="4.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="643.7" cy="220.4" r="4.5" fill="#dc2626" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="661.9" cy="216.4" r="4.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="650.0" cy="233.1" r="4.5" fill="#dc2626" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="647.3" cy="211.0" r="4.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="665.5" cy="226.6" r="4.5" fill="#dc2626" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="640.0" cy="227.4" r="4.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="659.3" cy="208.5" r="4.5" fill="#dc2626" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="657.7" cy="236.9" r="4.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="638.9" cy="213.8" r="4.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="669.6" cy="218.4" r="4.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="0.9"/>
+<rect x="676.0" y="166.0" width="50" height="18" rx="9.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="701.0" y="178.2" font-size="10" fill="#dc2626" text-anchor="middle" font-weight="600">β⁻衰变</text>
+<rect x="582" y="288" width="142" height="86" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="653" y="308" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="700">6 质子 + 8 中子 = 14</text>
+<text x="653" y="330" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">自然丰度：≈ 1 / 10¹²</text>
+<text x="653" y="352" font-size="10.5" fill="#dc2626" text-anchor="middle" font-weight="600">放射性（半衰期 5730 年）</text>
+<text x="584" y="398" font-size="10.5" fill="#1e293b" text-anchor="start">• 核外都有 6 个电子，都</text>
+<text x="584" y="415" font-size="10.5" fill="#1e293b" text-anchor="start">  能生成 CO₂ 进入生命体</text>
+<text x="584" y="436" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600">• 一万亿个碳里仅 1 个！中子</text>
+<text x="592" y="453" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600">过多不稳定，死后定时衰变</text>
+</svg>

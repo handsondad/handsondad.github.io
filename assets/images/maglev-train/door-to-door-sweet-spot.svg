@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="452" viewBox="0 0 760 452" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">轮轨高铁与高速磁浮及民航客机门到门全程耗时随距离变化交叉曲线图</title>
+<desc id="desc">左图按市内接驳加区间运行均速绘制100至2000公里门到门总耗时：约270公里内市中心直达的350km/h高铁更快，1409公里以上850km/h民航客机反超，将500km/h磁浮优势挤压在600至1300公里黄金夹缝；右图总结轮轨提速与航空免铺轨的双重挤压及磁浮两大精准适用场景。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="451" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">为什么没有大面积普及（下）：前有 350 高铁、后有 850 飞机，尴尬的“夹心层”！</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">旅客买单的不是“轨道最高表显时速”，而是从家门到目的地办公室的“门到门全程总时间”</text>
+<rect x="20" y="62" width="436" height="376" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="34" y="85" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 门到门总耗时对比：T总 = 市内接驳候车 + 里程 / 旅行均速</text>
+<text x="34" y="104" font-size="9.3" fill="#64748b" text-anchor="start" font-weight="600">门到门全程耗时 (小时)</text>
+<rect x="177.2" y="124.0" width="136.5" height="248.0" fill="#fef3c7" opacity="0.55"/>
+<text x="245.5" y="139.0" font-size="9.1" fill="#b45309" text-anchor="middle" font-weight="700">磁浮黄金夹缝</text>
+<text x="245.5" y="153.0" font-size="8.8" fill="#b45309" text-anchor="middle" font-weight="600">(600–1,300 km)</text>
+<line x1="68.0" y1="372.0" x2="432.0" y2="372.0" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="61.0" y="375.5" font-size="8.9" fill="#64748b" text-anchor="end">0h</text>
+<line x1="68.0" y1="338.9" x2="432.0" y2="338.9" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="3,3"/>
+<text x="61.0" y="342.4" font-size="8.9" fill="#64748b" text-anchor="end">1h</text>
+<line x1="68.0" y1="305.9" x2="432.0" y2="305.9" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="3,3"/>
+<text x="61.0" y="309.4" font-size="8.9" fill="#64748b" text-anchor="end">2h</text>
+<line x1="68.0" y1="272.8" x2="432.0" y2="272.8" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="3,3"/>
+<text x="61.0" y="276.3" font-size="8.9" fill="#64748b" text-anchor="end">3h</text>
+<line x1="68.0" y1="239.7" x2="432.0" y2="239.7" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="3,3"/>
+<text x="61.0" y="243.2" font-size="8.9" fill="#64748b" text-anchor="end">4h</text>
+<line x1="68.0" y1="206.7" x2="432.0" y2="206.7" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="3,3"/>
+<text x="61.0" y="210.2" font-size="8.9" fill="#64748b" text-anchor="end">5h</text>
+<line x1="68.0" y1="173.6" x2="432.0" y2="173.6" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="3,3"/>
+<text x="61.0" y="177.1" font-size="8.9" fill="#64748b" text-anchor="end">6h</text>
+<line x1="68.0" y1="140.5" x2="432.0" y2="140.5" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="3,3"/>
+<text x="61.0" y="144.0" font-size="8.9" fill="#64748b" text-anchor="end">7h</text>
+<line x1="68.0" y1="372.0" x2="68.0" y2="376.0" stroke="#475569" stroke-width="1.1"/>
+<text x="68.0" y="389.0" font-size="8.9" fill="#64748b" text-anchor="middle">0</text>
+<line x1="140.8" y1="372.0" x2="140.8" y2="376.0" stroke="#475569" stroke-width="1.1"/>
+<text x="140.8" y="389.0" font-size="8.9" fill="#64748b" text-anchor="middle">400</text>
+<line x1="213.6" y1="372.0" x2="213.6" y2="376.0" stroke="#475569" stroke-width="1.1"/>
+<text x="213.6" y="389.0" font-size="8.9" fill="#64748b" text-anchor="middle">800</text>
+<line x1="286.4" y1="372.0" x2="286.4" y2="376.0" stroke="#475569" stroke-width="1.1"/>
+<text x="286.4" y="389.0" font-size="8.9" fill="#64748b" text-anchor="middle">1200</text>
+<line x1="359.2" y1="372.0" x2="359.2" y2="376.0" stroke="#475569" stroke-width="1.1"/>
+<text x="359.2" y="389.0" font-size="8.9" fill="#64748b" text-anchor="middle">1600</text>
+<line x1="432.0" y1="372.0" x2="432.0" y2="376.0" stroke="#475569" stroke-width="1.1"/>
+<text x="432.0" y="389.0" font-size="8.9" fill="#64748b" text-anchor="middle">2000</text>
+<text x="250.0" y="410" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="600">城市间出行距离 D (km)</text>
+<line x1="68.0" y1="124.0" x2="68.0" y2="372.0" stroke="#475569" stroke-width="1.3"/>
+<line x1="68.0" y1="372.0" x2="432.0" y2="372.0" stroke="#475569" stroke-width="1.3"/>
+<path d="M 86.2,331.6 L 104.4,320.9 L 122.6,310.2 L 140.8,299.6 L 159.0,288.9 L 177.2,278.2 L 195.4,267.6 L 213.6,256.9 L 231.8,246.2 L 250.0,235.6 L 268.2,224.9 L 286.4,214.2 L 304.6,203.6 L 322.8,192.9 L 341.0,182.2 L 359.2,171.6 L 377.4,160.9 L 395.6,150.2 L 413.8,139.6 L 432.0,128.9" fill="none" stroke="#18794e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6,3"/>
+<path d="M 86.2,280.3 L 104.4,276.2 L 122.6,272.1 L 140.8,268.0 L 159.0,264.0 L 177.2,259.9 L 195.4,255.8 L 213.6,251.7 L 231.8,247.6 L 250.0,243.6 L 268.2,239.5 L 286.4,235.4 L 304.6,231.3 L 322.8,227.2 L 341.0,223.1 L 359.2,219.1 L 377.4,215.0 L 395.6,210.9 L 413.8,206.8 L 432.0,202.7" fill="none" stroke="#1d6fa5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3,3"/>
+<path d="M 86.2,326.4 L 104.4,318.8 L 122.6,311.2 L 140.8,303.6 L 159.0,296.0 L 177.2,288.4 L 195.4,280.8 L 213.6,273.2 L 231.8,265.6 L 250.0,258.0 L 268.2,250.4 L 286.4,242.8 L 304.6,235.2 L 322.8,227.6 L 341.0,220.0 L 359.2,212.3 L 377.4,204.7 L 395.6,197.1 L 413.8,189.5 L 432.0,181.9" fill="none" stroke="#c25014" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="384.7" y="147.6" font-size="9.0" fill="#18794e" text-anchor="middle" font-weight="700">350 高铁 (市中心直达)</text>
+<text x="392.0" y="190.7" font-size="9.0" fill="#c25014" text-anchor="middle" font-weight="700">500 高速磁浮</text>
+<text x="399.2" y="226.1" font-size="9.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">850 民航客机 (天空免铺轨!)</text>
+<circle cx="117.1" cy="313.5" r="4" fill="#ffffff" stroke="#18794e" stroke-width="2"/>
+<circle cx="324.5" cy="226.8" r="4" fill="#ffffff" stroke="#1d6fa5" stroke-width="2"/>
+<rect x="468" y="62" width="272" height="376" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="482" y="85" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 读懂“两头挤压”与未来突围口</text>
+<rect x="482" y="100" width="244" height="102" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="494" y="120" font-size="9.8" fill="#18794e" text-anchor="start" font-weight="700">&lt; 600 km：轮轨高铁越跑越快！</text>
+<text x="494" y="139" font-size="9.1" fill="#1e293b" text-anchor="start">• 70 年代磁浮立项时轮轨仅 200 km/h；</text>
+<text x="494" y="157" font-size="9.1" fill="#0f172a" text-anchor="start" font-weight="700">• 如今复兴号商业 350 km/h（CR450 冲</text>
+<text x="494" y="175" font-size="9.1" fill="#1e293b" text-anchor="start">  400 km/h），600 km 内磁浮仅省十来分</text>
+<text x="494" y="192" font-size="9.1" fill="#18794e" text-anchor="start" font-weight="700">  钟，远抵不上另起炉灶的万亿造价！</text>
+<rect x="482" y="214" width="244" height="96" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="494" y="234" font-size="9.8" fill="#1d6fa5" text-anchor="start" font-weight="700">&gt; 1,400 km：民航客机零基建反超！</text>
+<text x="494" y="253" font-size="9.1" fill="#1e293b" text-anchor="start">• 超过 1,400 km 后飞机门到门更快；</text>
+<text x="494" y="271" font-size="9.1" fill="#0f172a" text-anchor="start" font-weight="700">• 关键在灵活性：两座机场间无需征地</text>
+<text x="494" y="289" font-size="9.1" fill="#1d6fa5" text-anchor="start" font-weight="700">  拆迁修一米桥墩，淡旺季随时调航线！</text>
+<rect x="482" y="322" width="244" height="102" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="494" y="342" font-size="9.8" fill="#c25014" text-anchor="start" font-weight="700">磁浮真正发光的两大精准赛道：</text>
+<text x="494" y="361" font-size="9.0" fill="#0f172a" text-anchor="start" font-weight="700">1. 100–160 km/h 城市/景区/机场接驳线：</text>
+<text x="494" y="378" font-size="9.0" fill="#1e293b" text-anchor="start">   安静低噪、爬 6% 陡坡、转 75m 急弯；</text>
+<text x="494" y="396" font-size="9.0" fill="#0f172a" text-anchor="start" font-weight="700">2. 既有高铁饱和的 800–1,200 km 超级走廊</text>
+<text x="494" y="413" font-size="9.0" fill="#c25014" text-anchor="start" font-weight="700">   （如东京—大阪、京沪/沪杭甬远期分流）！</text>
+</svg>

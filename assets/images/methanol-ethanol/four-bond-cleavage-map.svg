@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="522" viewBox="0 0 760 522" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">甲醇与乙醇四大化学反应拆键地图</title>
+<desc id="desc">以醇分子的O-H键、C-O键、α-C-H键和全分子氧化重整为主线，系统对比甲醇与乙醇在钠置换、酯化、脱水消去、阶梯氧化及清洁燃烧中的异同。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="521" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">醇分子的四个“拆键开关”：断哪根化学键，决定它产氢、造香精、变乙烯还是发光</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">把乙醇 R–CH₂–O–H 当作拆解模板，对比甲醇“缺少 β-碳、没有 C–C 键”带来的两处关键分岔</text>
+<rect x="24" y="64" width="712" height="58" rx="10" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="380" y="87" font-size="12.2" fill="#0f172a" text-anchor="middle" font-weight="700">拆键地图：  [ R / H ] — CβH₂ — CαH₂ — O — H    （甲醇仅含 H—CαH₂—O—H，天生没有 Cβ 碳！）</text>
+<text x="380" y="109" font-size="11" fill="#1d6fa5" text-anchor="middle" font-weight="600">开关① 断 O–H 键（置换/酯化）  |  开关② 断 C–O 键（脱水/成烯）  |  开关③ 断 O–H + Cα–H（氧化）  |  开关④ 全分子燃烧/羰基化</text>
+<rect x="24" y="134" width="348" height="180" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="154" r="10" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="42" y="158" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="58" y="158" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="700">开关 ① 只断 O–H 键：遇钠吐氢 · 遇酸造酯</text>
+<text x="40" y="184" font-size="11.4" fill="#1e293b" text-anchor="start" font-weight="600">• 与活泼金属置换（比水与钠反应温和可控）：</text>
+<text x="50" y="205" font-size="11.2" fill="#1d6fa5" text-anchor="start" font-weight="600">2 R–OH + 2 Na → 2 R–ONa（醇钠强碱）+ H₂↑</text>
+<text x="40" y="231" font-size="11.4" fill="#1e293b" text-anchor="start" font-weight="600">• 与羧酸酯化（浓硫酸加热，可逆反应）：</text>
+<text x="50" y="252" font-size="11.2" fill="#0f766e" text-anchor="start" font-weight="700">CH₃COOH + C₂H₅¹⁸OH ⇌ CH₃CO¹⁸OC₂H₅ + H₂O</text>
+<text x="40" y="276" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="600">• 同位素 ¹⁸O 铁律：“酸脱羟基（-OH），醇脱氢（-H）”</text>
+<text x="40" y="298" font-size="10.8" fill="#64748b" text-anchor="start">• 陈年老酒越放越香，正是乙醇与有机酸慢速生成果香酯！</text>
+<rect x="388" y="134" width="348" height="180" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="154" r="10" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="406" y="158" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="422" y="158" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="700">开关 ② 断 C–O 键：有无 β-碳让两兄弟分道扬镳！</text>
+<text x="404" y="184" font-size="11.4" fill="#1e293b" text-anchor="start" font-weight="600">• 乙醇（有 β-H，温控切换两条路）：</text>
+<text x="414" y="205" font-size="11.2" fill="#c25014" text-anchor="start" font-weight="600">170℃ 分子内消去 → CH₂=CH₂↑（乙烯）；140℃ → 乙醚</text>
+<text x="404" y="231" font-size="11.4" fill="#1e293b" text-anchor="start" font-weight="600">• 甲醇（无 β-碳，常规酸催化绝不能单分子消去成烯）：</text>
+<text x="414" y="252" font-size="11.2" fill="#1e293b" text-anchor="start">中温脱水 → CH₃OCH₃（二甲醚清洁燃料/气雾推进剂）</text>
+<text x="404" y="276" font-size="11.2" fill="#6d28d9" text-anchor="start" font-weight="700">• 工业神反转（MTO 甲醇制烯烃）：400℃ SAPO-34 分子筛</text>
+<text x="414" y="298" font-size="10.8" fill="#64748b" text-anchor="start">纳米笼内“碳池拼接”，把甲醇变成乙烯/丙烯造塑料！</text>
+<rect x="24" y="328" width="348" height="180" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="348" r="10" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="42" y="352" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">3</text>
+<text x="58" y="352" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="700">开关 ③ 同断 O–H 与 α-C–H：伯醇两步阶梯氧化</text>
+<text x="40" y="378" font-size="11.2" fill="#1e293b" text-anchor="start" font-weight="600">• 催化脱氢（红热铜丝黑变红：2ROH + O₂ → 2RCHO + 2H₂O）</text>
+<text x="40" y="401" font-size="11.2" fill="#18794e" text-anchor="start" font-weight="600">• 强氧化剂变色（橙红重铬酸钾 → 灰绿 Cr³⁺，测酒驾经典反应）</text>
+<text x="40" y="427" font-size="11.2" fill="#1d6fa5" text-anchor="start" font-weight="700">• 乙醇阶梯：乙醇 → 乙醛（CH₃CHO）→ 乙酸（CH₃COOH）</text>
+<text x="40" y="450" font-size="11.2" fill="#dc2626" text-anchor="start" font-weight="700">• 甲醇阶梯：甲醇 → 甲醛（HCHO）→ 甲酸（HCOOH）→ CO₂</text>
+<text x="40" y="475" font-size="10.8" fill="#64748b" text-anchor="start">• 注：甲醛与甲酸仍带醛基氢，可被继续氧化直至二氧化碳！</text>
+<text x="40" y="495" font-size="10.8" fill="#64748b" text-anchor="start">  这条氧化阶梯搬进人体肝脏，就是真假酒的生死分界线。</text>
+<rect x="388" y="328" width="348" height="180" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="348" r="10" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="406" y="352" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">4</text>
+<text x="422" y="352" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="700">开关 ④ 清洁燃烧、“幽灵蓝火”与羰基化重整</text>
+<text x="404" y="378" font-size="11.2" fill="#1e293b" text-anchor="start" font-weight="600">• 燃烧热（HHV）：甲醇 725.7 kJ/mol，乙醇 1367 kJ/mol</text>
+<text x="404" y="401" font-size="11.2" fill="#1e293b" text-anchor="start">• 自带氧原子助燃，几乎不生黑烟碳粒——尤其甲醇无 C–C 键，</text>
+<text x="414" y="422" font-size="11.2" fill="#dc2626" text-anchor="start" font-weight="700">白天燃烧呈近乎全透明的“看不见的幽灵火焰”（极易误踩）！</text>
+<text x="404" y="448" font-size="11.2" fill="#6d28d9" text-anchor="start" font-weight="700">• 铱催化 Cativa 羰基化（原子经济性 100% 造醋酸）：</text>
+<text x="414" y="470" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="600">CH₃OH + CO → CH₃COOH（现代工业冰醋酸头号主力工艺）</text>
+<text x="404" y="494" font-size="10.8" fill="#64748b" text-anchor="start">• 水蒸气重整：CH₃OH + H₂O → CO₂ + 3H₂（车载移动制氢）</text>
+</svg>

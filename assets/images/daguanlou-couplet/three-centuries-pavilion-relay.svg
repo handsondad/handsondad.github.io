@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="430" viewBox="0 0 760 430" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">昆明大观楼建筑与180字长联牌匾从1696年至2013年六阶段历史变迁图</title>
+<desc id="desc">梳理大观楼与长联木匾330年沧桑：1690-1696王继文建两层楼、乾隆孙髯翁撰联陆树堂行书首刻、1828增三层及阮元改联撤牌、1857咸丰战火焚楼毁原匾、1883重建三层大刀把木楼、1888岑毓英请38岁赵藩楷书重刻蓝底鎏金联保存至今并于2013年列入全国重点文物保护单位。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="429" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">火烧水淹也抹不掉：大观楼与长联木匾的 330 年生死接力</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">分清“谁建的楼、谁写的词、谁题的现存蓝底金字”——中间隔着一场把原匾烧成灰的战火。</text>
+<rect x="20" y="68" width="228" height="136" rx="10" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.3"/>
+<rect x="32.0" y="78.0" width="204" height="20" rx="10.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="134.0" y="91.6" font-size="10.3" fill="#1d6fa5" text-anchor="middle" font-weight="600">1690–1696｜康熙</text>
+<text x="32" y="117" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">① 王继文始建两层楼</text>
+<text x="32" y="140" font-size="10.4" fill="#1e293b" text-anchor="start">云南巡抚王继文在滇池草海北滨</text>
+<text x="32" y="158" font-size="10.4" fill="#1e293b" text-anchor="start">“近华浦”兴工，建成两层飞檐</text>
+<text x="32" y="176" font-size="10.4" fill="#1e293b" text-anchor="start">观景楼阁，面对太华山定名大观楼。</text>
+<rect x="266" y="68" width="228" height="136" rx="10" fill="#ffffff" stroke="#18794e" stroke-width="1.3"/>
+<rect x="278.0" y="78.0" width="204" height="20" rx="10.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="380.0" y="91.6" font-size="10.3" fill="#18794e" text-anchor="middle" font-weight="600">乾隆年间（18世纪中叶）</text>
+<text x="278" y="117" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">② 孙髯撰联 · 陆树堂首书</text>
+<text x="278" y="140" font-size="10.4" fill="#1e293b" text-anchor="start">布衣寒士孙髯翁呕心写下 180 字</text>
+<text x="278" y="158" font-size="10.4" fill="#1e293b" text-anchor="start">长联；昆明名士陆树堂以潇洒行书</text>
+<text x="278" y="176" font-size="10.4" fill="#1e293b" text-anchor="start">手书刻制木匾悬楼，轰动海内。</text>
+<rect x="512" y="68" width="228" height="136" rx="10" fill="#ffffff" stroke="#c25014" stroke-width="1.3"/>
+<rect x="524.0" y="78.0" width="204" height="20" rx="10.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="626.0" y="91.6" font-size="10.3" fill="#c25014" text-anchor="middle" font-weight="600">1828–道光初年</text>
+<text x="524" y="117" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">③ 增建三层 · 阮元改联风波</text>
+<text x="524" y="140" font-size="10.4" fill="#1e293b" text-anchor="start">道光八年按察使伊里布增修为三层；</text>
+<text x="524" y="158" font-size="10.4" fill="#1e293b" text-anchor="start">总督阮元忌讳联意另悬改本，遭昆</text>
+<text x="524" y="176" font-size="10.4" fill="#1e293b" text-anchor="start">明百姓群嘲抗议，不久撤去改牌。</text>
+<rect x="20" y="224" width="228" height="136" rx="10" fill="#ffffff" stroke="#9f1239" stroke-width="1.3"/>
+<rect x="32.0" y="234.0" width="204" height="20" rx="10.0" fill="#ffe4e6" stroke="#9f1239" stroke-width="1" stroke-opacity="0.35"/>
+<text x="134.0" y="247.6" font-size="10.3" fill="#9f1239" text-anchor="middle" font-weight="600">1857｜咸丰七年</text>
+<text x="32" y="273" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">④ 兵燹焚楼 · 原匾化灰！</text>
+<text x="32" y="296" font-size="10.4" fill="#1e293b" text-anchor="start">咸丰战乱波及昆明省城，大观楼与</text>
+<text x="32" y="314" font-size="10.4" fill="#1e293b" text-anchor="start">悬挂百年的陆树堂行书初刻长联木</text>
+<text x="32" y="332" font-size="10.4" fill="#1e293b" text-anchor="start">匾一同葬身火海，幸联文早已传世！</text>
+<rect x="266" y="224" width="228" height="136" rx="10" fill="#ffffff" stroke="#6d28d9" stroke-width="1.3"/>
+<rect x="278.0" y="234.0" width="204" height="20" rx="10.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="380.0" y="247.6" font-size="10.3" fill="#6d28d9" text-anchor="middle" font-weight="600">1866–1883｜同治至光绪</text>
+<text x="278" y="273" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">⑤ 重建三层攒尖顶木楼</text>
+<text x="278" y="296" font-size="10.4" fill="#1e293b" text-anchor="start">同治五年重建后又遭大水；光绪九</text>
+<text x="278" y="314" font-size="10.4" fill="#1e293b" text-anchor="start">年（1883）再建三层三重檐穿斗木</text>
+<text x="278" y="332" font-size="10.4" fill="#1e293b" text-anchor="start">楼，翼角施云南独有“大刀把”角梁。</text>
+<rect x="512" y="224" width="228" height="136" rx="10" fill="#ffffff" stroke="#b45309" stroke-width="1.3"/>
+<rect x="524.0" y="234.0" width="204" height="20" rx="10.0" fill="#fef3c7" stroke="#b45309" stroke-width="1" stroke-opacity="0.35"/>
+<text x="626.0" y="247.6" font-size="10.3" fill="#b45309" text-anchor="middle" font-weight="600">1888 至今｜国保文物</text>
+<text x="524" y="273" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">⑥ 赵藩重书蓝底鎏金联</text>
+<text x="524" y="296" font-size="10.4" fill="#1e293b" text-anchor="start">光绪十四年总督岑毓英请 38 岁白</text>
+<text x="524" y="314" font-size="10.4" fill="#1e293b" text-anchor="start">族学者赵藩以雄浑楷书重书，刻成</text>
+<text x="524" y="332" font-size="10.4" fill="#1e293b" text-anchor="start">蓝底鎏金抱柱联悬存至今；2013入国保。</text>
+<line x1="248.0" y1="136.0" x2="266.0" y2="136.0" stroke="#475569" stroke-width="1.8" marker-end="url(#arr-muted)"/>
+<line x1="494.0" y1="136.0" x2="512.0" y2="136.0" stroke="#475569" stroke-width="1.8" marker-end="url(#arr-muted)"/>
+<path d="M626,204 L626,214 L134,214 L134,224" fill="none" stroke="#64748b" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#arr-muted)"/>
+<line x1="248.0" y1="292.0" x2="266.0" y2="292.0" stroke="#475569" stroke-width="1.8" marker-end="url(#arr-muted)"/>
+<line x1="494.0" y1="292.0" x2="512.0" y2="292.0" stroke="#475569" stroke-width="1.8" marker-end="url(#arr-muted)"/>
+<rect x="20" y="374" width="720" height="44" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="380" y="401" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">冷知识彩蛋：今天大观楼门前写字的那位赵藩（1851–1927），14 年后在成都武侯祠又写下了“能攻心则反侧自消”攻心联！</text>
+</svg>

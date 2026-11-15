@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="536" viewBox="0 0 760 536" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">卫星发射多级接力、抛整流罩与早期轨道段唤醒时间轴</title>
+<desc id="desc">展示动力入轨段四次关键分离与星箭分离后黄金60分钟自主展开太阳翼寻日求生流程</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="535" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="380.0" y="30" font-size="19" fill="#1e293b" text-anchor="middle" font-weight="700">从地面铁塔到太空独立生活：10 分钟多级接力与黄金 60 分钟唤醒</text>
+<text x="380.0" y="52" font-size="12.5" fill="#64748b" text-anchor="middle">一边像竹笋剥壳甩掉 96% 死重冲出大气层，一边赶在蓄电池耗尽前展开太阳翼“晒太阳续命”</text>
+<rect x="22" y="68" width="366" height="444" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="40" y="95" font-size="15" fill="#1d6fa5" text-anchor="start" font-weight="700">第一阶段：动力入轨段（约 8–10 分钟）</text>
+<rect x="42" y="112" width="326" height="250" rx="10" fill="#0f172a"/>
+<rect x="42" y="260" width="326" height="52" fill="#1e3a8a" opacity="0.55"/>
+<rect x="42" y="312" width="326" height="50" rx="4" fill="#0284c7" opacity="0.45"/>
+<line x1="50" y1="260" x2="360" y2="260" stroke="#38bdf8" stroke-width="1.3" stroke-dasharray="5 4"/>
+<text x="358" y="254" font-size="10.5" fill="#7dd3fc" text-anchor="end">100 km 卡门线（太空边界）</text>
+<text x="358" y="354" font-size="10.5" fill="#bae6fd" text-anchor="end">稠密对流层 / 平流层</text>
+<path d="M 64 348 C 78 292, 118 228, 184 184 C 236 152, 290 144, 342 144" fill="none" stroke="#f97316" stroke-width="3.2" marker-end="url(#arr-orange)"/>
+<circle cx="64" cy="348" r="5.5" fill="#fb923c" stroke="#ffffff" stroke-width="1.8"/>
+<text x="76" y="340" font-size="11" fill="#ffffff" text-anchor="start" font-weight="700">① 点火</text>
+<text x="76" y="354" font-size="10.5" fill="#cbd5e1" text-anchor="start">T+0 s</text>
+<circle cx="114" cy="274" r="5.5" fill="#fb923c" stroke="#ffffff" stroke-width="1.8"/>
+<text x="126" y="278" font-size="11" fill="#ffffff" text-anchor="start" font-weight="700">② 助推/一级分离</text>
+<text x="126" y="292" font-size="10.5" fill="#cbd5e1" text-anchor="start">T+135 s · ~65 km</text>
+<circle cx="188" cy="182" r="5.5" fill="#fb923c" stroke="#ffffff" stroke-width="1.8"/>
+<text x="196" y="194" font-size="11" fill="#ffffff" text-anchor="start" font-weight="700">③ 抛整流罩</text>
+<text x="196" y="208" font-size="10.5" fill="#cbd5e1" text-anchor="start">T+195 s · ~110 km</text>
+<circle cx="320" cy="144" r="5.5" fill="#fb923c" stroke="#ffffff" stroke-width="1.8"/>
+<text x="232" y="128" font-size="11" fill="#ffffff" text-anchor="start" font-weight="700">④ 星箭分离</text>
+<text x="232" y="142" font-size="10.5" fill="#cbd5e1" text-anchor="start">T+540 s · 7.7 km/s</text>
+<path d="M 176 164 C 170 154, 174 146, 182 144" fill="none" stroke="#fde047" stroke-width="2"/>
+<path d="M 196 172 C 204 166, 206 156, 202 148" fill="none" stroke="#fde047" stroke-width="2"/>
+<rect x="40" y="374" width="330" height="124" rx="10" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<text x="54" y="396" font-size="12.5" fill="#1d6fa5" text-anchor="start" font-weight="700">为什么要早早“剥蚌壳”（抛整流罩）？</text>
+<text x="54" y="417" font-size="11.2" fill="#1e293b" text-anchor="start">• 低空罩住卫星：防超音速气动暴压与摩擦高温；</text>
+<text x="54" y="437" font-size="11.2" fill="#1e293b" text-anchor="start">• 冲过 110 km 后空气近真空，热流跌破 1,135 W/m²</text>
+<text x="54" y="456" font-size="11.2" fill="#1e293b" text-anchor="start">  （约等于阳光强度），立刻解锁甩掉几吨重壳！</text>
+<text x="54" y="478" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">• 星箭分离靠精密弹簧轻推（Δv ≈ 0.5–1.5 m/s）。</text>
+<rect x="402" y="68" width="336" height="444" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="420" y="95" font-size="15" fill="#18794e" text-anchor="start" font-weight="700">第二阶段：生死早期轨道段（LEOP）</text>
+<text x="420" y="115" font-size="11.2" fill="#64748b" text-anchor="start">星箭分离后蓄电池仅够撑 45–90 分钟，四步自主求生：</text>
+<rect x="418" y="128" width="304" height="84" rx="10" fill="#fef1e8" stroke="#fdba74" stroke-width="1"/>
+<text x="430" y="150" font-size="12" fill="#c25014" text-anchor="start" font-weight="700">⑤ 微动开关唤醒 &amp; 阻尼消旋（1–5 分钟）</text>
+<text x="430" y="170" font-size="11" fill="#1e293b" text-anchor="start">分离弹射常带微弱翻滚；星载电脑自动苏醒，</text>
+<text x="430" y="188" font-size="11" fill="#1e293b" text-anchor="start">靠陀螺仪测转速并点动微推力器把翻滚刹停。</text>
+<rect x="418" y="222" width="304" height="92" rx="10" fill="#e7f6ee" stroke="#86efac" stroke-width="1"/>
+<text x="430" y="244" font-size="12" fill="#18794e" text-anchor="start" font-weight="700">⑥ 解锁展开太阳翼 &amp; 寻日充电（生死红线！）</text>
+<text x="430" y="264" font-size="11" fill="#1e293b" text-anchor="start">切割器剪断压紧绳，折叠太阳翼如手风琴展开；</text>
+<text x="430" y="282" font-size="11" fill="#1e293b" text-anchor="start">太阳敏感器寻日对准阳光——充电电流涌入母线</text>
+<text x="430" y="299" font-size="11" fill="#1e293b" text-anchor="start">那一刻，测控大厅才会爆发出真正的欢呼！</text>
+<rect x="418" y="324" width="304" height="82" rx="10" fill="#f3e8ff" stroke="#d8b4fe" stroke-width="1"/>
+<text x="430" y="346" font-size="12" fill="#6d28d9" text-anchor="start" font-weight="700">⑦ 展开通信天线 &amp; 锁定测控网（TT&amp;C）</text>
+<text x="430" y="366" font-size="11" fill="#1e293b" text-anchor="start">建立双向遥测遥控链路，下传全星几千个温度</text>
+<text x="430" y="384" font-size="11" fill="#1e293b" text-anchor="start">电压体检数据，星敏感器拍星空锁死三轴姿态。</text>
+<rect x="418" y="416" width="304" height="82" rx="10" fill="#f0fdfa" stroke="#99f6e4" stroke-width="1"/>
+<text x="430" y="438" font-size="12" fill="#0f766e" text-anchor="start" font-weight="700">⑧ 在轨测试与变轨就位（数天至数月）</text>
+<text x="430" y="458" font-size="11" fill="#1e293b" text-anchor="start">依次开机相机与转发器，执行霍曼变轨或电推</text>
+<text x="430" y="476" font-size="11" fill="#1e293b" text-anchor="start">爬升，抵达预定“空中车位”后交付业务运行。</text>
+</svg>

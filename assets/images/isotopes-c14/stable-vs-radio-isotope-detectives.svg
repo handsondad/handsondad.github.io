@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="482" viewBox="0 0 760 482" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">稳定同位素示踪与放射性同位素测年家族分工对比图</title>
+<desc id="desc">左栏展示稳定同位素（氧-18冰芯古温度计、碳-13食谱与蜂蜜鉴伪、重氢与氮-15营养级追踪）；右栏按半衰期跨度对比铀-238（44.7亿年，测地球年龄）、钾-40（12.5亿年，测古人类火山灰）、碳-14（5730年，测5万年以内有机文物）及医学短寿命核素氟-18（110分钟）。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="481" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">不止碳十四！同位素神探家族的“两大破案流派”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">稳定同位素靠“轻重分馏差”查身世与古温度；放射性同位素靠“固定半衰期”给地球、古人类与文物算年龄</text>
+<rect x="24" y="68" width="346" height="392" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="40.0" y="82.0" width="312" height="22" rx="11.0" fill="#f0fdfa" stroke="#0f766e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="196.0" y="97.0" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="600">流派一：稳定同位素（永不衰变的“指纹仪”）</text>
+<text x="40" y="121" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">核心原理：化学反应一样，但“胖原子”蒸发慢、反应慢！</text>
+<rect x="40" y="136" width="314" height="100" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="50.0" y="144.0" width="294" height="20" rx="10.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="197.0" y="157.6" font-size="11" fill="#1d6fa5" text-anchor="middle" font-weight="600">氧-18 / 氧-16 (¹⁸O / ¹⁶O) · 冰芯古温度计</text>
+<text x="52" y="181" font-size="10.5" fill="#1e293b" text-anchor="start">含 ¹⁶O 的轻水分子更易蒸发，含 ¹⁸O 的重水更易凝结降落。</text>
+<text x="52" y="199" font-size="10.5" fill="#1e293b" text-anchor="start">钻取南极冰芯与深海有孔虫测 ¹⁸O 比例，就能重建过去</text>
+<text x="52" y="217" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600">80 万年冰期—间冰期的地球古温度曲线！</text>
+<rect x="40" y="248" width="314" height="100" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="50.0" y="256.0" width="294" height="20" rx="10.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="197.0" y="269.6" font-size="11" fill="#18794e" text-anchor="middle" font-weight="600">碳-13 / 碳-12 (δ¹³C) · 古人食谱与打假神探</text>
+<text x="52" y="293" font-size="10.5" fill="#1e293b" text-anchor="start">水稻/小麦(C3植物，δ¹³C≈-27‰)与小米/玉米/甘蔗(C4植物，</text>
+<text x="52" y="311" font-size="10.5" fill="#1e293b" text-anchor="start">≈-13‰)挑食程度不同。测一段古人骨胶原可知吃粟还是吃稻；</text>
+<text x="52" y="329" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600">测一勺蜂蜜立刻抓出掺入廉价玉米/甘蔗糖浆的假蜂蜜！</text>
+<rect x="40" y="360" width="314" height="84" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="50.0" y="368.0" width="294" height="20" rx="10.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="197.0" y="381.6" font-size="11" fill="#6d28d9" text-anchor="middle" font-weight="600">氢同位素：氕(¹H) · 氘(²H 重氢) + 氮-15(¹⁵N)</text>
+<text x="52" y="405" font-size="10.5" fill="#1e293b" text-anchor="start">重水(D₂O)可用作核反应堆慢化剂；骨骼 ¹⁵N 越富集代表食物链</text>
+<text x="52" y="423" font-size="10.5" fill="#1e293b" text-anchor="start">营养级越高——一眼分辨古人类究竟吃素还是吃肉为主！</text>
+<rect x="386" y="68" width="350" height="392" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="402.0" y="82.0" width="318" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="561.0" y="97.0" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="600">流派二：放射性同位素（自带节拍的“原子钟”）</text>
+<text x="402" y="121" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">核心原理：半衰期不受高温高压化学反应影响，各管一段历史！</text>
+<rect x="402" y="138" width="318" height="68" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="414" y="158" font-size="12" fill="#475569" text-anchor="start" font-weight="700">铀-238 → 铅-206</text>
+<text x="708" y="158" font-size="11" fill="#475569" text-anchor="end" font-weight="700">半衰期 44.7 亿年</text>
+<rect x="414" y="166" width="304" height="8" rx="4" fill="#475569" opacity="0.82"/>
+<text x="414" y="192" font-size="10.5" fill="#1e293b" text-anchor="start">测地球年龄(45.4亿年)、月岩与陨石</text>
+<rect x="402" y="216" width="318" height="68" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="414" y="236" font-size="12" fill="#6d28d9" text-anchor="start" font-weight="700">钾-40 → 氩-40</text>
+<text x="708" y="236" font-size="11" fill="#6d28d9" text-anchor="end" font-weight="700">半衰期 12.5 亿年</text>
+<rect x="414" y="244" width="248" height="8" rx="4" fill="#6d28d9" opacity="0.82"/>
+<text x="414" y="270" font-size="10.5" fill="#1e293b" text-anchor="start">测百万年火山灰夹层（如东非古人类化石）</text>
+<rect x="402" y="294" width="318" height="68" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="414" y="314" font-size="12" fill="#dc2626" text-anchor="start" font-weight="700">碳-14 → 氮-14</text>
+<text x="708" y="314" font-size="11" fill="#dc2626" text-anchor="end" font-weight="700">半衰期 5,730 年</text>
+<rect x="414" y="322" width="186" height="8" rx="4" fill="#dc2626" opacity="0.82"/>
+<text x="414" y="348" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600">黄金标尺：几百年 ～ 5 万年内人类文明遗存！</text>
+<rect x="402" y="372" width="318" height="68" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="414" y="392" font-size="12" fill="#1d6fa5" text-anchor="start" font-weight="700">医疗短寿核素 ¹⁸F / ¹³¹I</text>
+<text x="708" y="392" font-size="11" fill="#1d6fa5" text-anchor="end" font-weight="700">110 分钟 / 8 天</text>
+<rect x="414" y="400" width="108" height="8" rx="4" fill="#1d6fa5" opacity="0.82"/>
+<text x="414" y="426" font-size="10.5" fill="#1e293b" text-anchor="start">医院 PET-CT 肿瘤显像、甲亢靶向治疗</text>
+<text x="402" y="452" font-size="10" fill="#dc2626" text-anchor="start" font-weight="600">注：恐龙化石(≥6600万年前)远超碳十四5万年量程，须测夹层铀铅/钾氩！</text>
+</svg>

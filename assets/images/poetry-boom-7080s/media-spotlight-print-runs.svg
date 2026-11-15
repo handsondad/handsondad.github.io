@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="444" viewBox="0 0 760 444" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">1980年代初诗歌与文学期刊发行量实录及媒介注意力分流对比图</title>
+<desc id="desc">左侧条形图按真实史料比例对比1981年《十月》55万册、1979-1980年《诗刊》50万册、《收获》约35万册、《诗刊》读者选票约25万张与1990年代中期自费诗集1000册；右侧对比1980年前后无电视无网络的单一纸媒聚光灯效应与1995年后彩电、流行音乐及大众文化的多渠道分流。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="443" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">没有电视机和互联网的年代，一本诗刊能印多少册？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左图按真实文献数据等比例绘制1979–1981年峰值印数；右图解释“单通道纸媒聚光灯”如何形成。</text>
+<rect x="20" y="66" width="398" height="364" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="90" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700">① 真实史料：80年代初文学/诗歌印数 vs 90年代对比</text>
+<text x="36" y="108" font-size="9.6" fill="#64748b" text-anchor="start">横轴比例尺：0 — 60 万册（严格按数值线性换算条长）</text>
+<line x1="166.0" y1="122.0" x2="166.0" y2="382.0" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="166.0" y="398" font-size="9.2" fill="#64748b" text-anchor="middle">0万</text>
+<line x1="232.0" y1="122.0" x2="232.0" y2="382.0" stroke="#e2e8f0" stroke-width="1.0" stroke-dasharray="3 3"/>
+<text x="232.0" y="398" font-size="9.2" fill="#64748b" text-anchor="middle">20万</text>
+<line x1="298.0" y1="122.0" x2="298.0" y2="382.0" stroke="#e2e8f0" stroke-width="1.0" stroke-dasharray="3 3"/>
+<text x="298.0" y="398" font-size="9.2" fill="#64748b" text-anchor="middle">40万</text>
+<line x1="364.0" y1="122.0" x2="364.0" y2="382.0" stroke="#e2e8f0" stroke-width="1.0" stroke-dasharray="3 3"/>
+<text x="364.0" y="398" font-size="9.2" fill="#64748b" text-anchor="middle">60万</text>
+<text x="158" y="145" font-size="10.0" fill="#0f172a" text-anchor="end" font-weight="700">《十月》1981年第1期</text>
+<text x="158" y="159" font-size="8.8" fill="#64748b" text-anchor="end">光明日报载王世敏实录</text>
+<rect x="166.0" y="136.0" width="181.5" height="22" rx="4" fill="#1d6fa5"/>
+<text x="353.5" y="151" font-size="9.8" fill="#1d6fa5" text-anchor="start" font-weight="700">55 万册</text>
+<text x="158" y="195" font-size="10.0" fill="#0f172a" text-anchor="end" font-weight="700">《诗刊》1979–80峰值</text>
+<text x="158" y="209" font-size="8.8" fill="#64748b" text-anchor="end">编辑部主任王燕生口述</text>
+<rect x="166.0" y="186.0" width="165.0" height="22" rx="4" fill="#9f1239"/>
+<text x="337.0" y="201" font-size="9.8" fill="#9f1239" text-anchor="start" font-weight="700">50 万册</text>
+<text x="158" y="245" font-size="10.0" fill="#0f172a" text-anchor="end" font-weight="700">《收获》80年代初均印</text>
+<text x="158" y="259" font-size="8.8" fill="#64748b" text-anchor="end">大型文学双月刊代表</text>
+<rect x="166.0" y="236.0" width="115.5" height="22" rx="4" fill="#6d28d9"/>
+<text x="287.5" y="251" font-size="9.8" fill="#6d28d9" text-anchor="start" font-weight="700">约35 万册</text>
+<text x="158" y="295" font-size="10.0" fill="#0f172a" text-anchor="end" font-weight="700">《诗刊》单次评选选票</text>
+<text x="158" y="309" font-size="8.8" fill="#64748b" text-anchor="end">读者贴邮票寄回20–30万</text>
+<rect x="166.0" y="286.0" width="82.5" height="22" rx="4" fill="#b45309"/>
+<text x="254.5" y="301" font-size="9.8" fill="#b45309" text-anchor="start" font-weight="700">约25 万张</text>
+<text x="158" y="345" font-size="10.0" fill="#0f172a" text-anchor="end" font-weight="700">90年代中期先锋诗集</text>
+<text x="158" y="359" font-size="8.8" fill="#64748b" text-anchor="end">如1994昌耀自费预约本</text>
+<rect x="166.0" y="336.0" width="2.5" height="22" rx="4" fill="#475569"/>
+<text x="174.5" y="351" font-size="9.8" fill="#475569" text-anchor="start" font-weight="700">0.1 万册(千册)</text>
+<rect x="34" y="406" width="370" height="18" rx="4" fill="#f1f5f9" stroke="none" stroke-width="1"/>
+<text x="219.0" y="419" font-size="9.1" fill="#0f172a" text-anchor="middle">注：1本期刊常在宿舍/工厂传阅十余人，实际触达读者远超印数本身</text>
+<rect x="432" y="66" width="308" height="364" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="448" y="90" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700">② 青年精神娱乐带宽流向对比</text>
+<rect x="444" y="104" width="284" height="152" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="454" y="124" font-size="10.8" fill="#1d6fa5" text-anchor="start" font-weight="700">1980年前后：单通道超级聚光灯</text>
+<text x="454" y="144" font-size="9.6" fill="#0f172a" text-anchor="start">• 电视机：1978全国保有量极少，多为单位公看</text>
+<text x="454" y="161" font-size="9.6" fill="#0f172a" text-anchor="start">• 流行歌：录音机与港台磁带刚刚零星传入</text>
+<text x="454" y="178" font-size="9.6" fill="#0f172a" text-anchor="start">• 网络与影院：零互联网，娱乐选择极度稀缺</text>
+<rect x="452" y="190" width="268" height="56" rx="5" fill="#ffffff" stroke="#1d6fa5" stroke-width="0.9"/>
+<text x="586.0" y="210" font-size="9.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">结果：全社会青年的求知、恋爱与迷惘</text>
+<text x="586.0" y="228" font-size="9.6" fill="#0f172a" text-anchor="middle" font-weight="600">高度浓缩在【邮局订诗刊+校园朗诵+手抄本】！</text>
+<rect x="444" y="268" width="284" height="150" rx="8" fill="#fef3c7" stroke="#b45309" stroke-width="1.2"/>
+<text x="454" y="288" font-size="10.8" fill="#b45309" text-anchor="start" font-weight="700">1995年前后：多媒介大坝全面开闸</text>
+<text x="454" y="308" font-size="9.6" fill="#0f172a" text-anchor="start">• 电视普及：城镇百户彩电超百台，农村逾50台</text>
+<text x="454" y="325" font-size="9.6" fill="#0f172a" text-anchor="start">• 声画分流：港台流行情歌、摇滚、录像厅、KTV</text>
+<text x="454" y="342" font-size="9.6" fill="#0f172a" text-anchor="start">• 阅读分流：金庸武侠、周末报刊、经商社科热书</text>
+<rect x="452" y="354" width="268" height="54" rx="5" fill="#ffffff" stroke="#b45309" stroke-width="0.9"/>
+<text x="586.0" y="373" font-size="9.6" fill="#b45309" text-anchor="middle" font-weight="700">结果：并不是年轻人不再需要浪漫与追问，</text>
+<text x="586.0" y="391" font-size="9.6" fill="#0f172a" text-anchor="middle" font-weight="600">而是情绪被流行歌词、影视与新媒介分流了。</text>
+</svg>

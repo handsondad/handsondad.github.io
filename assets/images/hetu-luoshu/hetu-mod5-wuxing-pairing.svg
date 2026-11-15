@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="456" viewBox="0 0 760 456" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">河图的模5同余映射（成数=生数+5）与四方奇偶和等于20的对称结构图</title>
+<desc id="desc">左面板展示北1与6、南2与7、东3与8、西4与9、中5与10按加5同余配对并自动翻转奇偶；右面板展示顺时针五行相生回路及外围奇偶和同为20。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#6d28d9"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="455" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">河图的数理内核：模 5 同余（a ≡ b mod 5）与奇偶严格平分</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">《系辞》“五位相得而各有合”用现代算术翻译：内圈生数 k 加上中宫 5，自动翻转奇偶生成外圈成数 k+5</text>
+<rect x="16" y="68" width="378" height="372" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="28.0" y="80.0" width="174" height="24" rx="12.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="115.0" y="96.3" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">规律一：模 5 同余映射器</text>
+<text x="212" y="96" font-size="11.5" fill="#64748b" text-anchor="start">成数 = 生数 + 5（奇偶必互补）</text>
+<text x="64" y="126" font-size="11.5" fill="#64748b" text-anchor="middle" font-weight="600">方位五行</text>
+<text x="154" y="126" font-size="11.5" fill="#64748b" text-anchor="middle" font-weight="600">内圈生数</text>
+<text x="218" y="126" font-size="11.5" fill="#64748b" text-anchor="middle" font-weight="600">加中五</text>
+<text x="284" y="126" font-size="11.5" fill="#64748b" text-anchor="middle" font-weight="600">外圈成数</text>
+<text x="354" y="126" font-size="11.5" fill="#64748b" text-anchor="middle" font-weight="600">mod 5</text>
+<rect x="28.0" y="140.0" width="76" height="30" rx="15.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="66.0" y="160.4" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">下北 · 水</text>
+<rect x="116" y="140" width="74" height="30" rx="7" fill="#ffffff" stroke="#e2e8f0"/>
+<text x="153" y="160" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700">1 (奇○)</text>
+<line x1="194.0" y1="155.0" x2="240.0" y2="155.0" stroke="#c25014" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<text x="217" y="150" font-size="11" fill="#c25014" text-anchor="middle" font-weight="700">+5</text>
+<rect x="246" y="140" width="76" height="30" rx="7" fill="#ffffff" stroke="#e2e8f0"/>
+<text x="284" y="160" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700">6 (偶●)</text>
+<rect x="330.0" y="143.0" width="52" height="24" rx="12.0" fill="#f1f5f9" stroke="#475569" stroke-width="1" stroke-opacity="0.35"/>
+<text x="356.0" y="159.3" font-size="12" fill="#475569" text-anchor="middle" font-weight="600">余 1</text>
+<rect x="28.0" y="186.0" width="76" height="30" rx="15.0" fill="#fef2f2" stroke="#b91c1c" stroke-width="1" stroke-opacity="0.35"/>
+<text x="66.0" y="206.4" font-size="12" fill="#b91c1c" text-anchor="middle" font-weight="600">上南 · 火</text>
+<rect x="116" y="186" width="74" height="30" rx="7" fill="#ffffff" stroke="#e2e8f0"/>
+<text x="153" y="206" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700">2 (偶●)</text>
+<line x1="194.0" y1="201.0" x2="240.0" y2="201.0" stroke="#c25014" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<text x="217" y="196" font-size="11" fill="#c25014" text-anchor="middle" font-weight="700">+5</text>
+<rect x="246" y="186" width="76" height="30" rx="7" fill="#ffffff" stroke="#e2e8f0"/>
+<text x="284" y="206" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700">7 (奇○)</text>
+<rect x="330.0" y="189.0" width="52" height="24" rx="12.0" fill="#f1f5f9" stroke="#475569" stroke-width="1" stroke-opacity="0.35"/>
+<text x="356.0" y="205.3" font-size="12" fill="#475569" text-anchor="middle" font-weight="600">余 2</text>
+<rect x="28.0" y="232.0" width="76" height="30" rx="15.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="66.0" y="252.4" font-size="12" fill="#18794e" text-anchor="middle" font-weight="600">左东 · 木</text>
+<rect x="116" y="232" width="74" height="30" rx="7" fill="#ffffff" stroke="#e2e8f0"/>
+<text x="153" y="252" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700">3 (奇○)</text>
+<line x1="194.0" y1="247.0" x2="240.0" y2="247.0" stroke="#c25014" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<text x="217" y="242" font-size="11" fill="#c25014" text-anchor="middle" font-weight="700">+5</text>
+<rect x="246" y="232" width="76" height="30" rx="7" fill="#ffffff" stroke="#e2e8f0"/>
+<text x="284" y="252" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700">8 (偶●)</text>
+<rect x="330.0" y="235.0" width="52" height="24" rx="12.0" fill="#f1f5f9" stroke="#475569" stroke-width="1" stroke-opacity="0.35"/>
+<text x="356.0" y="251.3" font-size="12" fill="#475569" text-anchor="middle" font-weight="600">余 3</text>
+<rect x="28.0" y="278.0" width="76" height="30" rx="15.0" fill="#fffbeb" stroke="#b45309" stroke-width="1" stroke-opacity="0.35"/>
+<text x="66.0" y="298.4" font-size="12" fill="#b45309" text-anchor="middle" font-weight="600">右西 · 金</text>
+<rect x="116" y="278" width="74" height="30" rx="7" fill="#ffffff" stroke="#e2e8f0"/>
+<text x="153" y="298" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700">4 (偶●)</text>
+<line x1="194.0" y1="293.0" x2="240.0" y2="293.0" stroke="#c25014" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<text x="217" y="288" font-size="11" fill="#c25014" text-anchor="middle" font-weight="700">+5</text>
+<rect x="246" y="278" width="76" height="30" rx="7" fill="#ffffff" stroke="#e2e8f0"/>
+<text x="284" y="298" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700">9 (奇○)</text>
+<rect x="330.0" y="281.0" width="52" height="24" rx="12.0" fill="#f1f5f9" stroke="#475569" stroke-width="1" stroke-opacity="0.35"/>
+<text x="356.0" y="297.3" font-size="12" fill="#475569" text-anchor="middle" font-weight="600">余 4</text>
+<rect x="28.0" y="324.0" width="76" height="30" rx="15.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="66.0" y="344.4" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="600">中宫 · 土</text>
+<rect x="116" y="324" width="74" height="30" rx="7" fill="#ffffff" stroke="#e2e8f0"/>
+<text x="153" y="344" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700">5 (奇○)</text>
+<line x1="194.0" y1="339.0" x2="240.0" y2="339.0" stroke="#c25014" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<text x="217" y="334" font-size="11" fill="#c25014" text-anchor="middle" font-weight="700">+5</text>
+<rect x="246" y="324" width="76" height="30" rx="7" fill="#ffffff" stroke="#e2e8f0"/>
+<text x="284" y="344" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700">10 (偶●)</text>
+<rect x="330.0" y="327.0" width="52" height="24" rx="12.0" fill="#f1f5f9" stroke="#475569" stroke-width="1" stroke-opacity="0.35"/>
+<text x="356.0" y="343.3" font-size="12" fill="#475569" text-anchor="middle" font-weight="600">余 0</text>
+<rect x="28" y="374" width="354" height="54" rx="8" fill="#fef1e8" stroke="#fdba74"/>
+<text x="40" y="395" font-size="12" fill="#c25014" text-anchor="start" font-weight="700">为什么每一方都恰好“一阴一阳”？</text>
+<text x="40" y="415" font-size="11.5" fill="#1e293b" text-anchor="start">因为 5 是奇数：奇数 + 5 = 偶数，偶数 + 5 = 奇数，绝无同性相斥！</text>
+<rect x="408" y="68" width="336" height="372" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="420.0" y="80.0" width="186" height="24" rx="12.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="513.0" y="96.3" font-size="12" fill="#18794e" text-anchor="middle" font-weight="600">规律二：外围奇偶恒等于 20</text>
+<text x="614" y="96" font-size="11.5" fill="#64748b" text-anchor="start">顺时针相生回路</text>
+<circle cx="576.0" cy="232.0" r="84" fill="none" stroke="#cbd5e1" stroke-width="1.6" stroke-dasharray="5 4"/>
+<path d="M 534.0 304.0 A 84 84 0 0 1 498.0 262.0" fill="none" stroke="#18794e" stroke-width="2" marker-end="url(#arr-green)"/>
+<text x="490.0" y="294.0" font-size="11" fill="#18794e" text-anchor="middle" font-weight="600">水生木</text>
+<path d="M 498.0 202.0 A 84 84 0 0 1 534.0 160.0" fill="none" stroke="#b91c1c" stroke-width="2" marker-end="url(#arr-orange)"/>
+<text x="490.0" y="178.0" font-size="11" fill="#b91c1c" text-anchor="middle" font-weight="600">木生火</text>
+<line x1="576.0" y1="174.0" x2="576.0" y2="206.0" stroke="#b45309" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<text x="604.0" y="192.0" font-size="11" fill="#b45309" text-anchor="start" font-weight="600">火生土</text>
+<line x1="612.0" y1="232.0" x2="626.0" y2="232.0" stroke="#b45309" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<path d="M 654.0 262.0 A 84 84 0 0 1 618.0 304.0" fill="none" stroke="#1d6fa5" stroke-width="2" marker-end="url(#arr-blue)"/>
+<text x="664.0" y="294.0" font-size="11" fill="#1d6fa5" text-anchor="middle" font-weight="600">金生水</text>
+<rect x="532.0" y="134.0" width="88" height="28" rx="14.0" fill="#fef2f2" stroke="#b91c1c" stroke-width="1" stroke-opacity="0.35"/>
+<text x="576.0" y="153.0" font-size="11.5" fill="#b91c1c" text-anchor="middle" font-weight="600">南火 2●·7○</text>
+<rect x="444.0" y="218.0" width="88" height="28" rx="14.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="488.0" y="237.0" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="600">东木 3○·8●</text>
+<rect x="539.0" y="218.0" width="74" height="28" rx="14.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="576.0" y="237.0" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="600">中土 5·10</text>
+<rect x="620.0" y="218.0" width="88" height="28" rx="14.0" fill="#fffbeb" stroke="#b45309" stroke-width="1" stroke-opacity="0.35"/>
+<text x="664.0" y="237.0" font-size="11.5" fill="#b45309" text-anchor="middle" font-weight="600">西金 4●·9○</text>
+<rect x="532.0" y="302.0" width="88" height="28" rx="14.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="576.0" y="321.0" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">北水 1○·6●</text>
+<text x="624.0" y="214.0" font-size="11" fill="#b45309" text-anchor="start" font-weight="600">土生金</text>
+<rect x="420" y="346" width="312" height="82" rx="8" fill="#e7f6ee" stroke="#86efac"/>
+<text x="432" y="367" font-size="12" fill="#18794e" text-anchor="start" font-weight="700">拿掉中宫（5 与 10）后，四方奇偶不偏不倚：</text>
+<text x="432" y="389" font-size="11.5" fill="#0f172a" text-anchor="start">• 四方阳数和 = 1(北) + 7(南) + 3(东) + 9(西) = 20</text>
+<text x="432" y="411" font-size="11.5" fill="#0f172a" text-anchor="start">• 四方阴数和 = 6(北) + 2(南) + 8(东) + 4(西) = 20</text>
+</svg>

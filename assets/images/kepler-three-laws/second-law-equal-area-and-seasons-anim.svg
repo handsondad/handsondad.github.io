@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="522" viewBox="0 0 760 522" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">开普勒第二定律等面积真实计时动画与地球四季时长差异图</title>
+<desc id="desc">左图按开普勒方程精确计算12个等时间间隔位置及近远日点等面积扇形(各占T/6)，附7秒单次真实运动动画；右图说明角动量守恒本质及地球1月过近日点导致北半球春夏比秋冬长7.6天。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  .kp-planet {
+    transform: translate(364.0px, 246.0px);
+    animation: keplerTrueOrbit 7s linear 0.4s 1 forwards;
+  }
+  @keyframes keplerTrueOrbit {
+    0% { transform: translate(364.0px, 246.0px); }
+    4% { transform: translate(342.3px, 181.5px); }
+    8% { transform: translate(298.4px, 143.3px); }
+    12% { transform: translate(253.0px, 126.3px); }
+    16% { transform: translate(212.1px, 122.4px); }
+    20% { transform: translate(176.7px, 126.8px); }
+    24% { transform: translate(146.8px, 136.7px); }
+    28% { transform: translate(122.1px, 150.4px); }
+    32% { transform: translate(102.3px, 166.8px); }
+    36% { transform: translate(87.2px, 185.2px); }
+    40% { transform: translate(76.5px, 204.8px); }
+    44% { transform: translate(70.1px, 225.2px); }
+    48% { transform: translate(68.0px, 246.0px); }
+    52% { transform: translate(70.1px, 266.8px); }
+    56% { transform: translate(76.5px, 287.2px); }
+    60% { transform: translate(87.2px, 306.8px); }
+    64% { transform: translate(102.3px, 325.2px); }
+    68% { transform: translate(122.1px, 341.6px); }
+    72% { transform: translate(146.8px, 355.3px); }
+    76% { transform: translate(176.7px, 365.2px); }
+    80% { transform: translate(212.1px, 369.6px); }
+    84% { transform: translate(253.0px, 365.7px); }
+    88% { transform: translate(298.4px, 348.7px); }
+    92% { transform: translate(342.3px, 310.5px); }
+    96% { transform: translate(364.0px, 246.0px); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .kp-planet {
+      animation: none !important;
+      transform: translate(364.0px, 246.0px) !important;
+    }
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="521" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">第二定律（等面积定律）真实计时动画：为什么北半球夏天比冬天多出近 8 天？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">太阳与行星连线在相等时间内扫过相等面积；近处柄短必狂奔，远处柄长慢散步（按开普勒方程精确计时）</text>
+<rect x="22" y="68" width="396" height="386" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="90" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="42" y="94" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">1</text>
+<text x="60" y="95" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">每隔 T/12 等时间闪光拍照（e = 0.55 模型）</text>
+<polygon points="297.4,246.0 298.4,348.7 304.2,345.3 309.9,341.5 315.7,337.4 321.3,332.9 326.8,327.9 332.2,322.6 337.4,316.7 342.3,310.5 346.9,303.7 351.1,296.5 354.8,288.9 358.0,280.9 360.6,272.5 362.5,263.8 363.6,255.0 364.0,246.0 363.6,237.0 362.5,228.2 360.6,219.5 358.0,211.1 354.8,203.1 351.1,195.5 346.9,188.3 342.3,181.5 337.4,175.3 332.2,169.4 326.8,164.1 321.3,159.1 315.7,154.6 309.9,150.5 304.2,146.7 298.4,143.3" fill="#fef1e8" stroke="#c25014" stroke-width="1.6"/>
+<polygon points="297.4,246.0 76.5,204.8 75.4,207.3 74.5,209.8 73.6,212.4 72.8,214.9 72.0,217.5 71.3,220.0 70.7,222.6 70.1,225.2 69.6,227.8 69.2,230.4 68.8,233.0 68.5,235.6 68.3,238.2 68.1,240.8 68.0,243.4 68.0,246.0 68.0,248.6 68.1,251.2 68.3,253.8 68.5,256.4 68.8,259.0 69.2,261.6 69.6,264.2 70.1,266.8 70.7,269.4 71.3,272.0 72.0,274.5 72.8,277.1 73.6,279.6 74.5,282.2 75.4,284.7 76.5,287.2" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.6"/>
+<ellipse cx="216.0" cy="246.0" rx="148.0" ry="123.6" fill="none" stroke="#0f172a" stroke-width="2"/>
+<circle cx="364.0" cy="246.0" r="4.2" fill="#c25014" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="298.4" cy="143.3" r="4.2" fill="#c25014" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="212.1" cy="122.4" r="4.2" fill="#475569" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="146.8" cy="136.7" r="4.2" fill="#475569" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="102.3" cy="166.8" r="4.2" fill="#475569" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="76.5" cy="204.8" r="4.2" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="68.0" cy="246.0" r="4.2" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="76.5" cy="287.2" r="4.2" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="102.3" cy="325.2" r="4.2" fill="#475569" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="146.8" cy="355.3" r="4.2" fill="#475569" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="212.1" cy="369.6" r="4.2" fill="#475569" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="298.4" cy="348.7" r="4.2" fill="#c25014" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="297.4" cy="246.0" r="9.5" fill="#b45309" stroke="#ffffff" stroke-width="2"/>
+<text x="283.4" y="251.0" font-size="11.5" fill="#b45309" text-anchor="end" font-weight="700" class="halo">太阳</text>
+<g class="kp-planet"><circle cx="0" cy="0" r="7.5" fill="#b91c1c" stroke="#ffffff" stroke-width="2.2"/></g>
+<text x="332" y="250" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">扇形 A₁</text>
+<text x="332" y="267" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="600" class="halo">(耗时 T/6)</text>
+<text x="148" y="246" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">扇形 A₂ (耗时 T/6)</text>
+<text x="148" y="264" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="600" class="halo">面积 A₂ = A₁ 严格相等！</text>
+<text x="338" y="128" font-size="11.5" fill="#b91c1c" text-anchor="middle" font-weight="700" class="halo">近日点狂奔</text>
+<text x="338" y="145" font-size="10.5" fill="#b91c1c" text-anchor="middle" font-weight="600" class="halo">v近/v远 = 3.44 倍!</text>
+<text x="104" y="134" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">远日点慢走</text>
+<text x="104" y="151" font-size="10.5" fill="#64748b" text-anchor="middle" class="halo">点位密集成串</text>
+<rect x="36" y="386" width="368" height="54" rx="7" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="220" y="407" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="600">注：红球按开普勒方程 M = E − e sin E 真实非匀速运动 1 圈；</text>
+<text x="220" y="426" font-size="10.5" fill="#64748b" text-anchor="middle">即使未播放动画，12 个等时闪光点疏密也直观呈现快慢反差。</text>
+<rect x="432" y="68" width="306" height="182" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="452" cy="90" r="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="452" y="94" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">2</text>
+<text x="470" y="95" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">物理本质：中心力场角动量守恒！</text>
+<rect x="444" y="112" width="282" height="124" rx="7" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="456" y="134" font-size="11" fill="#0f172a" text-anchor="start" font-weight="600">• 引力沿连线指向太阳 ⇒ 力矩 τ = r × F = 0</text>
+<text x="456" y="156" font-size="11" fill="#6d28d9" text-anchor="start" font-weight="700">• 角动量 L = m r v⊥ 全程守恒不变！</text>
+<text x="456" y="178" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">• 掠面速率 dA/dt = L / (2m) = 常数</text>
+<text x="456" y="200" font-size="10.5" fill="#1e293b" text-anchor="start">• 近日/远日点切线垂直连线：v近 / v远 = (1+e)/(1−e)</text>
+<text x="456" y="220" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="700">• 适用边界：只要是中心力（哪怕平方不反比）皆成立！</text>
+<rect x="432" y="262" width="306" height="192" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="452" cy="284" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="452" y="288" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">3</text>
+<text x="470" y="289" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">身边的彩蛋：北半球夏天多赚 7.6 天！</text>
+<rect x="444" y="306" width="282" height="134" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="456" y="327" font-size="11" fill="#0f172a" text-anchor="start" font-weight="600">• 1 月初地球过近日点（北半球隆冬！）：</text>
+<text x="456" y="346" font-size="11" fill="#c25014" text-anchor="start" font-weight="700">  公转极速 30.29 km/s → 秋冬半圈嗖一下跑完！</text>
+<text x="456" y="369" font-size="11" fill="#0f172a" text-anchor="start" font-weight="600">• 7 月初地球过远日点（北半球盛夏！）：</text>
+<text x="456" y="388" font-size="11" fill="#1d6fa5" text-anchor="start" font-weight="700">  公转慢速 29.29 km/s → 春夏半圈慢悠悠散步！</text>
+<line x1="456.0" y1="400.0" x2="714.0" y2="400.0" stroke="#18794e" stroke-width="1"/>
+<text x="585" y="422" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="700">春分→秋分 186.4 天 vs 秋分→春分 178.8 天</text>
+<rect x="22" y="466" width="716" height="42" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="380" y="492" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">历史冷知识：开普勒在 1602 年先发现了“第二定律（面积律）”，靠它做时间标尺，才在 3 年后算出了“第一定律（椭圆律）”！</text>
+</svg>

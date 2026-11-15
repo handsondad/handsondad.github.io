@@ -4612,3 +4612,948 @@ def _register_calendar_astronomy():
 
 
 _register_calendar_astronomy()
+
+
+# ---------------------------------------------------------------------------
+# Geosynchronous & Geostationary Satellites (geosync-orbit)
+# ---------------------------------------------------------------------------
+def _register_geosync_orbit():
+    SUBDIR = "geosync-orbit"
+
+    # WGS84 / IERS exact constants
+    MU_E = 398600.4418  # km^3 / s^2
+    R_E = 6378.137  # km (equatorial radius)
+    T_SID = 86164.0905  # s (23h 56m 4.09s)
+    T_SOL = 86400.0  # s (24h 00m 00s)
+    OMEGA_E = 2.0 * math.pi / T_SID  # rad / s
+
+    R_GEO = (MU_E * (T_SID ** 2) / (4.0 * math.pi ** 2)) ** (1.0 / 3.0)
+    H_GEO = R_GEO - R_E
+    V_GEO = OMEGA_E * R_GEO
+    G_GEO = (MU_E * 1e9) / ((R_GEO * 1e3) ** 2)
+
+    # Assertions verifying textbook & agency numbers
+    assert abs(R_GEO - 42164.17) < 0.05, f"Unexpected R_GEO={R_GEO}"
+    assert abs(H_GEO - 35786.03) < 0.05, f"Unexpected H_GEO={H_GEO}"
+    assert abs(V_GEO - 3.07466) < 0.001, f"Unexpected V_GEO={V_GEO}"
+    assert abs(G_GEO - 0.2242) < 0.002, f"Unexpected G_GEO={G_GEO}"
+
+    # 1. Angular Chase & Kepler Third-Law Sweet Spot (Animated + Static)
+    def _build_angular_chase_sweetspot():
+        # 6 sidereal hours slice: Earth & GEO sweep exact 90 deg CCW
+        r_leo = R_E + 400.0
+        r_meo = R_E + 21528.0
+        dtheta_geo = 90.0
+        dtheta_meo = dtheta_geo * ((R_GEO / r_meo) ** 1.5)  # 167.26 deg
+        dtheta_leo = dtheta_geo * ((R_GEO / r_leo) ** 1.5)  # 1395.97 deg
+        assert abs(dtheta_meo - 167.26) < 0.2
+        assert abs(dtheta_leo - 1395.97) < 1.0
+
+        cx, cy = 192.0, 248.0
+        scale = 104.0 / R_GEO  # 104 px = 42,164 km (exact true scale!)
+        px_re = R_E * scale  # 15.73 px
+        px_leo = r_leo * scale
+        px_meo = r_meo * scale  # 68.83 px
+        px_geo = R_GEO * scale  # 104.00 px
+
+        anim_css = f"""
+      .rot-earth {{
+        transform-origin: {cx:.1f}px {cy:.1f}px;
+        animation: spinEarth 6.4s linear 0.35s 1 forwards;
+      }}
+      .rot-geo {{
+        transform-origin: {cx:.1f}px {cy:.1f}px;
+        animation: spinGeo 6.4s linear 0.35s 1 forwards;
+      }}
+      .rot-meo {{
+        transform-origin: {cx:.1f}px {cy:.1f}px;
+        animation: spinMeo 6.4s linear 0.35s 1 forwards;
+      }}
+      .rot-leo {{
+        transform-origin: {cx:.1f}px {cy:.1f}px;
+        animation: spinLeo 6.4s linear 0.35s 1 forwards;
+      }}
+      @keyframes spinEarth {{
+        from {{ transform: rotate({dtheta_geo:.2f}deg); }}
+        to   {{ transform: rotate(0deg); }}
+      }}
+      @keyframes spinGeo {{
+        from {{ transform: rotate({dtheta_geo:.2f}deg); }}
+        to   {{ transform: rotate(0deg); }}
+      }}
+      @keyframes spinMeo {{
+        from {{ transform: rotate({dtheta_meo:.2f}deg); }}
+        to   {{ transform: rotate(0deg); }}
+      }}
+      @keyframes spinLeo {{
+        from {{ transform: rotate({dtheta_leo:.2f}deg); }}
+        to   {{ transform: rotate(0deg); }}
+      }}
+      @media (prefers-reduced-motion: reduce) {{
+        .rot-earth, .rot-geo, .rot-meo, .rot-leo {{
+          animation: none;
+          transform: rotate(0deg);
+        }}
+      }}"""
+
+        els = header(
+            "角速度追逐战：为什么只有 35,786 km 能跟地球“同频锁死”？",
+            "左：北极俯视 6 恒星时真实角速度比（ω ∝ r⁻³ᐟ²）；右：开普勒第三定律唯一交点",
+        )
+
+        # Left Card
+        els.append(card(20, 62, 352, 360))
+        els.append(txt(36, 84, "① 北极俯视真比例：6 恒星时追逐", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(36, 102, "t=0 从正右方出发 → t=6h 地球与 GEO 同转 90°", 11.0, MUTED))
+
+        # Orbit circles
+        els.append(f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="{px_geo:.1f}" fill="none" stroke="{GREEN}" stroke-width="1.8" stroke-dasharray="6 4"/>')
+        els.append(f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="{px_meo:.1f}" fill="none" stroke="{PURPLE}" stroke-width="1.4" stroke-dasharray="4 4"/>')
+        els.append(f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="24.0" fill="none" stroke="{ORANGE}" stroke-width="1.2" stroke-dasharray="2.5 2.5"/>')
+
+        # Static t=0 start reference line (East, +x)
+        els.append(
+            f'<line x1="{cx:.1f}" y1="{cy:.1f}" x2="{cx + px_geo + 10:.1f}" y2="{cy:.1f}" '
+            f'stroke="{HAIRLINE}" stroke-width="1.3" stroke-dasharray="3 3"/>'
+        )
+        els.append(f'<circle cx="{cx + px_geo:.1f}" cy="{cy:.1f}" r="4.5" fill="#ffffff" stroke="{GREEN}" stroke-width="1.5" stroke-dasharray="2 2"/>')
+        els.append(txt(cx + px_geo - 4, cy + 16, "t=0 起点", 10.5, MUTED, "end"))
+
+        # Swept 90 deg sector highlight for GEO = Earth lock (from East 0 deg CCW to North 90 deg)
+        els.append(
+            f'<path d="M {cx:.1f},{cy:.1f} L {cx + px_geo:.1f},{cy:.1f} '
+            f'A {px_geo:.1f},{px_geo:.1f} 0 0 0 {cx:.1f},{cy - px_geo:.1f} Z" '
+            f'fill="{GREEN}" fill-opacity="0.06"/>'
+        )
+
+        # Earth disk
+        els.append(f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="{px_re:.1f}" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.8"/>')
+        els.append(f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="2.5" fill="{INK}"/>')
+
+        # Animated radial sightline + GEO satellite (final at North: cx, cy - px_geo)
+        els.append('<g class="rot-geo">')
+        els.append(
+            f'<line x1="{cx:.1f}" y1="{cy - px_re:.1f}" x2="{cx:.1f}" y2="{cy - px_geo + 6:.1f}" '
+            f'stroke="{GREEN}" stroke-width="1.8" stroke-dasharray="4 3"/>'
+        )
+        els.append(f'<circle cx="{cx:.1f}" cy="{cy - px_geo:.1f}" r="6.2" fill="{GREEN}" stroke="#ffffff" stroke-width="1.6"/>')
+        els.append('</g>')
+
+        # Animated rooftop dish on Earth equator (final at North: cx, cy - px_re)
+        els.append('<g class="rot-earth">')
+        els.append(f'<circle cx="{cx:.1f}" cy="{cy - px_re:.1f}" r="3.6" fill="{INK}"/>')
+        els.append('</g>')
+
+        # Animated MEO satellite (final at dtheta_meo = 167.26 deg CCW from East)
+        ang_meo = math.radians(dtheta_meo)
+        mx = cx + px_meo * math.cos(ang_meo)
+        my = cy - px_meo * math.sin(ang_meo)
+        els.append('<g class="rot-meo">')
+        els.append(f'<circle cx="{mx:.1f}" cy="{my:.1f}" r="5.0" fill="{PURPLE}" stroke="#ffffff" stroke-width="1.4"/>')
+        els.append('</g>')
+
+        # Animated LEO satellite (final at dtheta_leo = 1395.97 deg -> 315.97 deg CCW from East)
+        ang_leo = math.radians(dtheta_leo)
+        lx = cx + 24.0 * math.cos(ang_leo)
+        ly = cy - 24.0 * math.sin(ang_leo)
+        els.append('<g class="rot-leo">')
+        els.append(f'<circle cx="{lx:.1f}" cy="{ly:.1f}" r="4.2" fill="{ORANGE}" stroke="#ffffff" stroke-width="1.2"/>')
+        els.append('</g>')
+
+        # Clean static callouts for final t=6h positions
+        els.append(pill(cx - 94, cy - px_geo - 26, "GEO 35,786 km（同转 90° 锁死！）", fg=GREEN, bg=GREEN_SOFT, w=198, h=20, size=10.6))
+        els.append(txt(cx - px_meo - 2, cy - 26, "北斗 MEO", 10.5, PURPLE, "end", weight="700"))
+        els.append(txt(cx - px_meo - 2, cy - 12, "已超前 167°", 10.1, PURPLE, "end"))
+        els.append(txt(cx + 28, cy + 28, "空间站 LEO（400 km）", 10.4, ORANGE, weight="700"))
+        els.append(txt(cx + 28, cy + 42, "6h 狂飙 3.88 圈！", 10.1, ORANGE))
+
+        # Moon off-scale arrow note at bottom of Left Card
+        els.append(card(34, 364, 324, 46, rx=7, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(46, 382, "再往外？月球 r ≈ 384,400 km（GEO 的 9.1 倍）：", 10.6, INK, weight="600"))
+        els.append(txt(46, 399, "6 小时仅慢吞吞挪动 3.3°，反过来被地球自转远远甩在身后。", 10.4, MUTED))
+
+        # Right Card: Exact Kepler Third Law Curve T(h) vs Altitude h
+        els.append(card(388, 62, 352, 360))
+        els.append(txt(404, 84, "② 周期随高度抬升：唯一的同步交点", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(404, 102, "T = 2π √[(R_E + h)³ / GM_⊕] ，高度决定唯一周期", 11.0, MUTED))
+
+        gx0, gy0 = 438.0, 326.0  # plot origin (h=0, T=0)
+        gw, gh = 278.0, 196.0  # h_max = 45,000 km, T_max = 32 h
+        h_max, t_max = 45000.0, 32.0
+
+        def map_ht(h_km, t_hr):
+            return gx0 + (h_km / h_max) * gw, gy0 - (t_hr / t_max) * gh
+
+        # Gridlines
+        for t_tick in (0, 8, 16, 24, 32):
+            _, py = map_ht(0, t_tick)
+            els.append(f'<line x1="{gx0:.1f}" y1="{py:.1f}" x2="{gx0 + gw:.1f}" y2="{py:.1f}" stroke="{BORDER}" stroke-width="1"/>')
+            els.append(txt(gx0 - 7, py + 4, f"{t_tick}h", 10.2, MUTED, "end"))
+
+        for h_tick, lbl in ((0, "0"), (15000, "1.5万"), (30000, "3万"), (45000, "4.5万km")):
+            px, _ = map_ht(h_tick, 0)
+            els.append(f'<line x1="{px:.1f}" y1="{gy0 - gh:.1f}" x2="{px:.1f}" y2="{gy0:.1f}" stroke="{BORDER}" stroke-width="1"/>')
+            els.append(txt(px, gy0 + 16, lbl, 10.2, MUTED, "middle"))
+
+        # Axes
+        els.append(f'<line x1="{gx0:.1f}" y1="{gy0:.1f}" x2="{gx0 + gw:.1f}" y2="{gy0:.1f}" stroke="{SLATE}" stroke-width="1.4"/>')
+        els.append(f'<line x1="{gx0:.1f}" y1="{gy0 - gh:.1f}" x2="{gx0:.1f}" y2="{gy0:.1f}" stroke="{SLATE}" stroke-width="1.4"/>')
+
+        # Horizontal Sidereal Day target line
+        t_sid_hr = T_SID / 3600.0
+        px_geo_plot, py_geo_plot = map_ht(H_GEO, t_sid_hr)
+        els.append(
+            f'<line x1="{gx0:.1f}" y1="{py_geo_plot:.1f}" x2="{gx0 + gw:.1f}" y2="{py_geo_plot:.1f}" '
+            f'stroke="{GREEN}" stroke-width="1.6" stroke-dasharray="5 3"/>'
+        )
+        els.append(
+            f'<line x1="{px_geo_plot:.1f}" y1="{py_geo_plot:.1f}" x2="{px_geo_plot:.1f}" y2="{gy0:.1f}" '
+            f'stroke="{GREEN}" stroke-width="1.4" stroke-dasharray="4 3"/>'
+        )
+        els.append(txt(gx0 + 6, py_geo_plot - 6, "地球恒星日 23h 56m 04s", 10.4, GREEN, weight="700"))
+
+        # Exact Kepler curve points
+        pts = []
+        for i in range(91):
+            hk = (h_max * i) / 90.0
+            rk = R_E + hk
+            tk = (2.0 * math.pi * math.sqrt((rk ** 3) / MU_E)) / 3600.0
+            pts.append(map_ht(hk, tk))
+        path_d = "M " + " L ".join(f"{x:.2f},{y:.2f}" for x, y in pts)
+        els.append(f'<path d="{path_d}" fill="none" stroke="{BLUE}" stroke-width="2.5"/>')
+
+        # 3 Landmark dots: ISS, MEO, GEO
+        t_leo_hr = (2.0 * math.pi * math.sqrt((r_leo ** 3) / MU_E)) / 3600.0
+        t_meo_hr = (2.0 * math.pi * math.sqrt((r_meo ** 3) / MU_E)) / 3600.0
+        px_l, py_l = map_ht(400.0, t_leo_hr)
+        px_m, py_m = map_ht(21528.0, t_meo_hr)
+
+        els.append(f'<circle cx="{px_l:.1f}" cy="{py_l:.1f}" r="4.8" fill="{ORANGE}" stroke="#ffffff" stroke-width="1.3"/>')
+        els.append(txt(px_l + 8, py_l - 3, "空间站 400km (1.54h, 7.67km/s)", 10.2, ORANGE, weight="600"))
+
+        els.append(f'<circle cx="{px_m:.1f}" cy="{py_m:.1f}" r="5.0" fill="{PURPLE}" stroke="#ffffff" stroke-width="1.3"/>')
+        els.append(txt(px_m - 6, py_m - 10, "北斗 MEO (12.9h, 3.78km/s)", 10.2, PURPLE, "middle", weight="600"))
+
+        els.append(f'<circle cx="{px_geo_plot:.1f}" cy="{py_geo_plot:.1f}" r="6.2" fill="{GREEN}" stroke="#ffffff" stroke-width="1.6"/>')
+        els.append(txt(px_geo_plot - 8, py_geo_plot + 18, "35,786 km", 10.8, GREEN, "end", weight="700"))
+        els.append(txt(px_geo_plot - 8, py_geo_plot + 32, "v = 3.075 km/s", 10.2, GREEN, "end"))
+
+        # Bottom summary box on Right Card
+        els.append(card(402, 354, 324, 56, rx=7, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(414, 373, "黄金等式：GM_⊕ / r² = ω_⊕² r  ⇒  r = 42,164.17 km", 10.8, GREEN, weight="700"))
+        els.append(txt(414, 391, "低一分则超前向东跑，高一分则落后向西漂，", 10.3, BODY))
+        els.append(txt(414, 404, "与卫星质量无关——39 kg 轻星与 8 吨重星同轨同速！", 10.3, BODY))
+
+        return figure(
+            436,
+            "地球同步轨道角速度追逐与开普勒第三定律唯一甜蜜点图解",
+            "左图按真实比例展示地球、400公里空间站、21528公里北斗中圆轨道与35786公里地球静止轨道在6恒星时内的角速度追逐动画与终态；右图绘制轨道周期随高度变化曲线，标出23小时56分04秒对应的唯一同步高度35786公里。",
+            els,
+            extra_css=anim_css,
+        )
+
+    # 2. Sidereal Day vs Solar Day & The 77 km Error
+    def _build_sidereal_vs_solar_day():
+        r_wrong = (MU_E * (T_SOL ** 2) / (4.0 * math.pi ** 2)) ** (1.0 / 3.0)
+        dh_wrong = r_wrong - R_GEO  # +76.93 km
+        drift_deg_day = 360.0 * (T_SOL - T_SID) / T_SOL  # ~0.983 deg/day
+        assert abs(dh_wrong - 76.93) < 0.15
+
+        els = header(
+            "为什么同步周期是 23 小时 56 分 04 秒，而不是整整 24 小时？",
+            "地球一边自转一边绕太阳公转：对齐遥远恒星（惯性空间）比重新正对太阳每天少 3 分 56 秒",
+        )
+
+        # Left Panel: Sun + Orbiting Earth (exaggerated orbital step clearly noted)
+        els.append(card(20, 62, 366, 344))
+        els.append(txt(36, 84, "① 恒星日 vs 太阳日（公转角放大示意）", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(36, 102, "真实地球每天公转 Δφ = 360° ÷ 365.256 ≈ 0.986°", 10.8, MUTED))
+
+        # Sun on left
+        sx, sy = 76.0, 236.0
+        els.append(f'<circle cx="{sx:.1f}" cy="{sy:.1f}" r="26" fill="#fef3c7" stroke="{ORANGE}" stroke-width="2"/>')
+        els.append(txt(sx, sy + 4, "太阳", 12.0, ORANGE, "middle", weight="700"))
+
+        # Distant star reference rays (horizontal to the left: pointing to -x)
+        els.append(txt(206, 126, "← 遥远恒星方向（惯性空间平行基准线）", 10.4, BLUE, "middle", weight="600"))
+
+        # Orbit arc of Earth around Sun
+        els.append(f'<path d="M 278,284 A 212,212 0 0 0 264,162" fill="none" stroke="{HAIRLINE}" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arr-muted)"/>')
+        els.append(txt(314, 232, "地球公转", 10.5, MUTED))
+        els.append(txt(314, 246, "+0.986°/天", 10.5, MUTED, weight="600"))
+
+        # Day 0 Earth (bottom right: 278, 276)
+        e1x, e1y = 266.0, 278.0
+        els.append(f'<line x1="{sx + 26:.1f}" y1="{sy + 6:.1f}" x2="{e1x:.1f}" y2="{e1y:.1f}" stroke="{ORANGE}" stroke-width="1.3" stroke-dasharray="4 3"/>')
+        els.append(f'<circle cx="{e1x:.1f}" cy="{e1y:.1f}" r="20" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.7"/>')
+        # Arrow on Day 0 pointing toward Sun (left-up slightly; simplify Day 0 at y=278, put Sun at y=278? Even cleaner!)
+        # Wait: let's check geometry! If Day 0 is at (266, 278) and Sun is at (76, 278), then at Day 0 BOTH Sun and distant star in -x direction align!
+        # Let's refine coordinates right here before appending:
+        els.clear()
+        els.extend(
+            header(
+                "为什么同步周期是 23 小时 56 分 04 秒，而不是整整 24 小时？",
+                "地球一边自转一边绕太阳公转：对齐遥远恒星（惯性空间）比重新正对太阳每天少 3 分 56 秒",
+            )
+        )
+        els.append(card(20, 62, 366, 344))
+        els.append(txt(36, 84, "① 恒星日 vs 太阳日（公转角放大示意）", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(36, 102, "真实地球每天公转 0.986°，图中放大为 24° 以便看清夹角", 10.6, MUTED))
+
+        sx, sy = 76.0, 286.0
+        e0x, e0y = 268.0, 286.0
+        orb_r = e0x - sx  # 192 px
+        ang_exag = math.radians(26.0)
+        e1x = sx + orb_r * math.cos(ang_exag)  # 248.6
+        e1y = sy - orb_r * math.sin(ang_exag)  # 201.8
+
+        # Orbit arc from Day 0 to Day 1
+        els.append(
+            f'<path d="M {e0x:.1f},{e0y:.1f} A {orb_r:.1f},{orb_r:.1f} 0 0 0 {e1x:.1f},{e1y:.1f}" '
+            f'fill="none" stroke="{SLATE}" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arr-muted)"/>'
+        )
+        els.append(txt(296, 246, "公转 1 天", 10.4, SLATE, weight="600"))
+        els.append(txt(296, 260, "(+0.986°)", 10.1, MUTED))
+
+        # Sun at (sx, sy)
+        els.append(f'<circle cx="{sx:.1f}" cy="{sy:.1f}" r="24" fill="#fef3c7" stroke="{ORANGE}" stroke-width="2"/>')
+        els.append(txt(sx, sy + 4, "太阳", 12.0, ORANGE, "middle", weight="700"))
+
+        # Day 0: horizontal line pointing straight left to BOTH Sun & distant star
+        els.append(f'<line x1="{sx + 25:.1f}" y1="{e0y:.1f}" x2="{e0x - 22:.1f}" y2="{e0y:.1f}" stroke="{ORANGE}" stroke-width="1.5" marker-start="url(#arr-orange)"/>')
+        els.append(f'<circle cx="{e0x:.1f}" cy="{e0y:.1f}" r="20" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.7"/>')
+        els.append(f'<circle cx="{e0x - 20:.1f}" cy="{e0y:.1f}" r="3.5" fill="{INK}"/>')
+        els.append(txt(e0x, e0y + 34, "第 0 天正午：同时正对太阳与遥远恒星", 10.5, BODY, "middle"))
+
+        # Day 1: Horizontal parallel ray to distant star (360 deg sidereal turn!)
+        els.append(f'<line x1="{sx + 10:.1f}" y1="{e1y:.1f}" x2="{e1x - 22:.1f}" y2="{e1y:.1f}" stroke="{GREEN}" stroke-width="1.8" marker-start="url(#arr-green)"/>')
+        els.append(txt(144, e1y - 8, "① 转满 360°（恒星日 23h56m04s）", 10.4, GREEN, "middle", weight="700"))
+
+        # Day 1: Slanted ray down-left to Sun (360.986 deg solar day!)
+        ux = (sx - e1x) / orb_r
+        uy = (sy - e1y) / orb_r
+        els.append(
+            f'<line x1="{e1x + ux * 20:.1f}" y1="{e1y + uy * 20:.1f}" '
+            f'x2="{sx - ux * 26:.1f}" y2="{sy - uy * 26:.1f}" '
+            f'stroke="{ORANGE}" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#arr-orange)"/>'
+        )
+        els.append(f'<circle cx="{e1x:.1f}" cy="{e1y:.1f}" r="20" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.7"/>')
+        els.append(f'<circle cx="{e1x - 20:.1f}" cy="{e1y:.1f}" r="3.6" fill="{GREEN}"/>')
+        els.append(f'<circle cx="{e1x + ux * 20:.1f}" cy="{e1y + uy * 20:.1f}" r="3.6" fill="{ORANGE}"/>')
+
+        # Extra 0.986 deg wedge highlight on Day 1 Earth
+        els.append(txt(154, 232, "② 再多转 0.986°", 10.2, ORANGE, weight="700"))
+        els.append(txt(154, 246, "(+3分56秒=24h正午)", 9.9, ORANGE))
+
+        els.append(card(34, 344, 338, 48, rx=7, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(46, 363, "关键结论：卫星轨道平面锚定在惯性空间（恒星背景）！", 10.6, GREEN, weight="700"))
+        els.append(txt(46, 381, "所以卫星只需对齐地球转满 360° 的恒星日，绝不能对齐太阳。", 10.3, BODY))
+
+        # Right Panel: Consequences of using 24h00m00s (+77 km error)
+        els.append(card(402, 62, 338, 344))
+        els.append(txt(418, 84, "② 假如错按 24 小时入轨会发生什么？", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(418, 102, "差之四分钟，谬以七十七公里：屋顶锅盖两天失锁", 10.8, MUTED))
+
+        # Comparison cards
+        els.append(card(418, 118, 306, 86, rx=8, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(430, 138, "✅ 正确周期：恒星日 T = 86,164.09 s", 11.2, GREEN, weight="700"))
+        els.append(txt(430, 158, f"• 地心半径 r = {R_GEO:,.2f} km（高 {H_GEO:,.2f} km）", 10.6, BODY))
+        els.append(txt(430, 176, "• 地面经度漂移：0.000° / 天（稳稳钉在同一经度）", 10.6, BODY))
+        els.append(txt(430, 194, "• 家用 Ku 波段锅盖（波束宽 ~1.8°）：一次拧紧常年免调", 10.4, GREEN, weight="600"))
+
+        els.append(card(418, 214, 306, 96, rx=8, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(430, 234, "❌ 错误周期：太阳日 T = 86,400.00 s", 11.2, ORANGE, weight="700"))
+        els.append(txt(430, 254, f"• 地心半径 r = {r_wrong:,.2f} km（偏高 +{dh_wrong:.1f} km！）", 10.6, BODY))
+        els.append(txt(430, 272, f"• 地面经度西漂：−{drift_deg_day:.3f}° / 天（轨道弧长 ~725 km/天）", 10.6, BODY))
+        els.append(txt(430, 290, "• 后果：仅 2 天就漂出锅盖波束，365 天倒退绕地球一圈！", 10.5, ORANGE, weight="700"))
+
+        # Mini longitude drift timeline bar at bottom right
+        els.append(txt(418, 330, "错误 24h 轨道的星下点西漂时间轴（相对东经 105° 起点）：", 10.5, INK, weight="600"))
+        bx0, by0, bw = 424.0, 356.0, 292.0
+        els.append(f'<line x1="{bx0:.1f}" y1="{by0:.1f}" x2="{bx0 + bw:.1f}" y2="{by0:.1f}" stroke="{SLATE}" stroke-width="1.6"/>')
+        stops = [
+            (0.0, "第0天", "105°E", GREEN),
+            (0.25, "第2天", "出波束(-2°)", ORANGE),
+            (0.60, "第91天", "15°E", PURPLE),
+            (1.0, "第365天", "倒退一整圈", ORANGE),
+        ]
+        for frac, t_lbl, sub_lbl, col in stops:
+            px = bx0 + frac * bw
+            els.append(f'<circle cx="{px:.1f}" cy="{by0:.1f}" r="4.5" fill="{col}"/>')
+            anch = "start" if frac == 0 else ("end" if frac == 1.0 else "middle")
+            els.append(txt(px, by0 - 9, t_lbl, 10.0, col, anch, weight="700"))
+            els.append(txt(px, by0 + 17, sub_lbl, 9.8, BODY, anch))
+
+        return figure(
+            420,
+            "恒星日23小时56分04秒与太阳日24小时几何成因及77公里轨道误差对比图",
+            "左图展示地球在绕太阳公转同时自转满360度对齐遥远恒星只需23小时56分04秒，而重新正对太阳需多转0.986度即3分56秒；右图计算若误用24小时周期将使轨道偏高76.9公里、每天向西漂移约0.98度。",
+            els,
+        )
+
+    # 3. Why Not Hover Over Beijing + Exact GSO / GEO / IGSO Figure-8 Ground Tracks
+    def _build_gso_geo_figure8_tracks():
+        els = header(
+            "地球同步（GSO）≠ 地球静止（GEO）：为什么头顶 8 字舞与赤道单点并存？",
+            "左：地心引力锁定轨道面必过地心 O；右：真实球面几何精算的 4 类同步卫星星下点轨迹",
+        )
+
+        # Left Card: Force geometry at 40 deg N
+        els.append(card(20, 62, 336, 368))
+        els.append(txt(36, 84, "① 为什么不能悬停在北京（40°N）正上方？", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(36, 102, "万有引力永远指向地心 O，不指向自转轴！", 10.8, MUTED))
+
+        ecx, ecy, er = 156.0, 226.0, 66.0
+        # Spin axis Oz
+        els.append(f'<line x1="{ecx:.1f}" y1="126" x2="{ecx:.1f}" y2="322" stroke="{SLATE}" stroke-width="1.5" stroke-dasharray="5 3"/>')
+        els.append(txt(ecx, 120, "北极自转轴 Oz", 10.4, SLATE, "middle", weight="600"))
+
+        # Earth sphere + Equator
+        els.append(f'<circle cx="{ecx:.1f}" cy="{ecy:.1f}" r="{er:.1f}" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.8"/>')
+        els.append(f'<ellipse cx="{ecx:.1f}" cy="{ecy:.1f}" rx="{er:.1f}" ry="14" fill="none" stroke="{BLUE}" stroke-width="1.2" stroke-dasharray="4 3"/>')
+        els.append(f'<circle cx="{ecx:.1f}" cy="{ecy:.1f}" r="3.2" fill="{INK}"/>')
+        els.append(txt(ecx - 10, ecy + 15, "地心 O", 10.4, INK, "end", weight="700"))
+
+        # Hypothetical 40 deg N hovering satellite S
+        lat_rad = math.radians(40.0)
+        sat_r = 128.0
+        sx = ecx + sat_r * math.cos(lat_rad)  # 254.1
+        sy = ecy - sat_r * math.sin(lat_rad)  # 143.7
+        bx = ecx + er * math.cos(lat_rad)
+        by = ecy - er * math.sin(lat_rad)
+
+        # 40N parallel circle axis point A = (ecx, sy)
+        els.append(f'<line x1="{ecx:.1f}" y1="{sy:.1f}" x2="{sx:.1f}" y2="{sy:.1f}" stroke="{PURPLE}" stroke-width="1.6" stroke-dasharray="4 3" marker-start="url(#arr-muted)"/>')
+        els.append(txt((ecx + sx) / 2, sy - 7, "悬停所需向心力（指向轴）", 10.0, PURPLE, "middle", weight="600"))
+
+        # True Gravity vector S -> O
+        gx_end = sx + 0.52 * (ecx - sx)
+        gy_end = sy + 0.52 * (ecy - sy)
+        els.append(f'<line x1="{sx:.1f}" y1="{sy:.1f}" x2="{gx_end:.1f}" y2="{gy_end:.1f}" stroke="{ORANGE}" stroke-width="2.2" marker-end="url(#arr-orange)"/>')
+        els.append(txt(sx + 6, sy + 32, "真实引力 F_g", 10.6, ORANGE, weight="700"))
+        els.append(txt(sx + 6, sy + 46, "（直指地心 O！）", 10.2, ORANGE))
+
+        # Inclined plane slicing O from 40N to 40S
+        s_south_x = ecx - sat_r * math.cos(lat_rad)
+        s_south_y = ecy + sat_r * math.sin(lat_rad)
+        els.append(f'<line x1="{s_south_x + 28:.1f}" y1="{s_south_y - 23:.1f}" x2="{sx:.1f}" y2="{sy:.1f}" stroke="{ORANGE}" stroke-width="1.3" stroke-dasharray="3 3"/>')
+
+        els.append(f'<circle cx="{bx:.1f}" cy="{by:.1f}" r="3.6" fill="{INK}"/>')
+        els.append(txt(bx - 6, by - 6, "40°N", 10.2, INK, "end", weight="700"))
+        els.append(f'<circle cx="{sx:.1f}" cy="{sy:.1f}" r="5.8" fill="{ORANGE}" stroke="#ffffff" stroke-width="1.5"/>')
+
+        # Explanation card at bottom left
+        els.append(card(34, 334, 308, 82, rx=7, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(46, 353, "力学铁律：无外力推力时，轨道平面必过地心 O！", 10.6, ORANGE, weight="700"))
+        els.append(txt(46, 371, "• 只要在北纬 40° 出现，半圈后必穿过赤道去南纬 40°；", 10.3, BODY))
+        els.append(txt(46, 389, "• 唯一能让“向轴”与“向地心”重合的平面——只有赤道面！", 10.3, BODY))
+        els.append(txt(46, 407, "  （倾角 i = 0°、偏心率 e = 0 ⇒ 地球静止轨道 GEO）", 10.2, GREEN, weight="700"))
+
+        # Right Card: Exact Computed Sub-satellite Ground Tracks
+        els.append(card(372, 62, 368, 368))
+        els.append(txt(388, 84, "② 同步卫星星下点轨迹（以 118°E 为中心经度）", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(388, 102, "同样 23h56m04s 转一圈，倾角 i 与偏心率 e 决定地面舞步", 10.8, MUTED))
+
+        mx0, my0, mw, mh = 424.0, 122.0, 292.0, 214.0  # lon [-30, +30], lat [-65, +65]
+        lon_span, lat_span = 30.0, 65.0
+
+        def map_ll(dlon_deg, lat_deg):
+            x = mx0 + ((dlon_deg + lon_span) / (2.0 * lon_span)) * mw
+            y = my0 + ((lat_span - lat_deg) / (2.0 * lat_span)) * mh
+            return x, y
+
+        # Map box + grid
+        els.append(f'<rect x="{mx0:.1f}" y="{my0:.1f}" width="{mw:.1f}" height="{mh:.1f}" fill="#f8fafc" stroke="{BORDER}" stroke-width="1.2"/>')
+        for lat_g in (-55, -33, 0, 33, 55):
+            _, py = map_ll(0, lat_g)
+            sw = "1.5" if lat_g == 0 else "1"
+            col = SLATE if lat_g == 0 else BORDER
+            els.append(f'<line x1="{mx0:.1f}" y1="{py:.1f}" x2="{mx0 + mw:.1f}" y2="{py:.1f}" stroke="{col}" stroke-width="{sw}"/>')
+            lbl = "0° 赤道" if lat_g == 0 else (f"{lat_g}°N" if lat_g > 0 else f"{abs(lat_g)}°S")
+            els.append(txt(mx0 - 5, py + 3.5, lbl, 9.8, MUTED, "end"))
+
+        for dlon_g in (-20, -10, 0, 10, 20):
+            px, _ = map_ll(dlon_g, 0)
+            sw = "1.3" if dlon_g == 0 else "1"
+            els.append(f'<line x1="{px:.1f}" y1="{my0:.1f}" x2="{px:.1f}" y2="{my0 + mh:.1f}" stroke="{BORDER}" stroke-width="{sw}"/>')
+            lbl = "118°E" if dlon_g == 0 else (f"+{dlon_g}°" if dlon_g > 0 else f"{dlon_g}°")
+            els.append(txt(px, my0 + mh + 14, lbl, 9.8, MUTED, "middle"))
+
+        # Helper to compute exact ground track for (i_deg, e, omega_deg)
+        def ground_track(i_deg, ecc=0.0, omega_deg=270.0, steps=240):
+            inc = math.radians(i_deg)
+            om = math.radians(omega_deg)
+            # Align central crossing so mean longitude at ascending/reference matches 0
+            pts_ll = []
+            for k in range(steps + 1):
+                M = 2.0 * math.pi * k / steps
+                # Solve Kepler's equation E - e sin E = M
+                E = M
+                for _ in range(8):
+                    E = E - (E - ecc * math.sin(E) - M) / (1.0 - ecc * math.cos(E))
+                nu = 2.0 * math.atan2(
+                    math.sqrt(1.0 + ecc) * math.sin(E / 2.0),
+                    math.sqrt(1.0 - ecc) * math.cos(E / 2.0),
+                )
+                u = om + nu
+                lat = math.degrees(math.asin(math.sin(inc) * math.sin(u)))
+                ra = math.atan2(math.cos(inc) * math.sin(u), math.cos(u))
+                # Subtract Earth uniform rotation M + om_ra0
+                ra0 = math.atan2(math.cos(inc) * math.sin(om), math.cos(om))
+                dlon = math.degrees(math.atan2(math.sin(ra - (M + ra0)), math.cos(ra - (M + ra0))))
+                pts_ll.append((dlon, lat))
+            return pts_ll
+
+        # Track A: BeiDou-3 IGSO (i = 55 deg, e = 0)
+        igso_pts = ground_track(55.0, 0.0)
+        max_igso_lon = max(abs(p[0]) for p in igso_pts)
+        assert abs(max_igso_lon - 15.72) < 0.15, f"Unexpected IGSO lon width {max_igso_lon}"
+        d_igso = "M " + " L ".join(f"{map_ll(lo, la)[0]:.2f},{map_ll(lo, la)[1]:.2f}" for lo, la in igso_pts)
+        els.append(f'<path d="{d_igso}" fill="none" stroke="{BLUE}" stroke-width="2.3"/>')
+
+        # Track B: Syncom 2 (i = 33 deg, e = 0)
+        syn2_pts = ground_track(33.0, 0.0)
+        d_syn2 = "M " + " L ".join(f"{map_ll(lo, la)[0]:.2f},{map_ll(lo, la)[1]:.2f}" for lo, la in syn2_pts)
+        els.append(f'<path d="{d_syn2}" fill="none" stroke="{ORANGE}" stroke-width="1.8" stroke-dasharray="5 3"/>')
+
+        # Track C: Eccentric Tundra/QZSS-style (i = 43 deg, e = 0.075, omega = 270 deg -> apogee at +43N!)
+        # Note: at nu=180 (apogee), u = 270+180 = 90 deg (+43N)! Slow apogee -> tighter northern loop, wider southern loop!
+        qzs_pts = ground_track(43.0, 0.075, omega_deg=270.0)
+        d_qzs = "M " + " L ".join(f"{map_ll(lo, la)[0]:.2f},{map_ll(lo, la)[1]:.2f}" for lo, la in qzs_pts)
+        els.append(f'<path d="{d_qzs}" fill="none" stroke="{PURPLE}" stroke-width="1.7" stroke-dasharray="2.5 2.5"/>')
+
+        # Track D: True GEO (i = 0, e = 0) stationary dot!
+        gx_dot, gy_dot = map_ll(0.0, 0.0)
+        els.append(f'<circle cx="{gx_dot:.1f}" cy="{gy_dot:.1f}" r="6.5" fill="{GREEN}" stroke="#ffffff" stroke-width="1.8"/>')
+
+        # Clear legend below map
+        els.append(f'<circle cx="396" cy="366" r="5" fill="{GREEN}"/>')
+        els.append(txt(406, 370, "GEO（i=0°, e=0）：赤道不动点（风云四号 / 北斗 GEO）", 10.4, INK, weight="600"))
+
+        els.append(f'<line x1="390" y1="386" x2="402" y2="386" stroke="{BLUE}" stroke-width="2.4"/>')
+        els.append(txt(406, 390, "北斗 IGSO（i=55°, e=0）：±55° 对称 8 字（经度宽 ±15.7°）", 10.0, BLUE, weight="600"))
+
+        els.append(f'<line x1="390" y1="405" x2="402" y2="405" stroke="{ORANGE}" stroke-width="1.8" stroke-dasharray="4 2"/>')
+        els.append(txt(406, 409, "1963 Syncom 2（i=33°）窄 8 字", 10.2, ORANGE))
+
+        els.append(f'<line x1="564" y1="405" x2="576" y2="405" stroke="{PURPLE}" stroke-width="1.8" stroke-dasharray="2.5 2.5"/>')
+        els.append(txt(580, 409, "偏心轨道（e=0.075）北窄南宽泪滴", 10.2, PURPLE))
+
+        return figure(
+            446,
+            "非赤道悬停力学禁令与地球同步轨道星下点8字形轨迹精算图",
+            "左图证明万有引力直指地心O而非自转轴，因此任何试图在北纬40度悬停的无动力卫星都会穿过赤道摆向南纬40度；右图精确计算i=0度静止单点、Syncom 2的33度窄8字、北斗IGSO的55度对称8字与偏心轨道不对称泪滴轨迹。",
+            els,
+        )
+
+    # 4. Clarke's Three-Satellite Coverage, Polar 81.3 deg Blind Spot & Molniya Orbit
+    def _build_clarke_and_molniya():
+        phi_max = math.degrees(math.acos(R_E / R_GEO))  # 81.30 deg
+        phi_5deg = math.degrees(math.acos((R_E / R_GEO) * math.cos(math.radians(5.0)))) - 5.0  # 76.31 deg
+        assert abs(phi_max - 81.30) < 0.05
+        assert abs(phi_5deg - 76.31) < 0.08
+
+        els = header(
+            "克拉克三颗星覆盖全球的几何学：为什么 ±81.3° 极区永远看不见它？",
+            "左：真比例球面切线决定极区盲区与 120° 三星接力；右：高纬“闪电轨道”远地点慢速悬停破局",
+        )
+
+        # Left Panel: True scale Earth (R_E) vs GEO ring (6.61 R_E)
+        els.append(card(20, 62, 356, 360))
+        els.append(txt(36, 84, "① 1 : 6.61 真比例切线与三颗星全球网", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(36, 102, "cos φ_max = R_E / r_GEO = 6,378 / 42,164 ⇒ φ_max = 81.3°", 10.6, MUTED))
+
+        cx, cy = 198.0, 232.0
+        r_geo_px = 104.0
+        r_e_px = r_geo_px * (R_E / R_GEO)  # 15.73 px (exact 1 : 6.61!)
+
+        # GEO ring
+        els.append(f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="{r_geo_px:.1f}" fill="none" stroke="{GREEN}" stroke-width="1.6" stroke-dasharray="5 3"/>')
+
+        # 3 Clarke satellites 120 deg apart: Top-Right (0 deg -> put primary at East 0 deg so meridional cross-section N/S poles are Up/Down!)
+        # Wait: let's show Meridional View for primary satellite S1 on the RIGHT (cx + r_geo_px, cy), with N pole UP, S pole DOWN!
+        # Wait: can S2 and S3 be in the equatorial plane while N/S is meridional? Better: clearly label the outer 120° triangle as equatorial Clarke layout OR draw primary S1 tangent cone on meridional Earth + inset / clean dual cue! Let's make Left Panel pure Meridional Cross-Section (showing exact 81.3° N/S tangent cone!) on top/center, and a crisp Equatorial 3-Satellite 120° mini-diagram right beside it—or better yet:
+        # Let's check space in Left Panel (356 x 360):
+        # Center of Meridional Cross-section at (136, 224) with r_geo_px = 96 px (Earth r = 14.5 px, OR zoomed Earth callout? Wait: if Earth is 14.5 px, 81.3 deg is small!).
+        # Let's calculate: if we draw S1 at (332, 212) and Earth centered at (114, 212) with r_e_px = 54 px, how far is S1 at true scale? 54 * 6.61 = 357 px -> (471, 212) — across panel! Or if r_e_px = 34 px: 34 * 6.61 = 224.7 px! Check that:
+        # Earth at (104, 216) with r_e_px = 33.0 px, S1 at (104 + 218.1 = 322.1, 216)!
+        # Let's check! 104 - 33 = 71 (well inside left border 20!), and 322.1 + 14 = 336 (well inside right card border 376 = 20+356!).
+        # AND r_e_px = 33.0 px is LARGE enough to clearly draw the North Pole, South Pole, ±81.3° tangent points, right-angle symbols, AND polar blind caps, at 100% TRUE 1 : 6.61 SCALE! Plus a neat 3-satellite 120° badge in the bottom strip! That is way clearer!
+
+        ex, ey = 96.0, 206.0
+        re_p = 34.0
+        sx = ex + re_p * (R_GEO / R_E)  # 96 + 224.76 = 320.76 px!
+        sy = ey
+
+        # Exact tangent points on Earth at +-81.30 deg latitude
+        phi_rad = math.acos(R_E / R_GEO)  # 81.30 deg
+        tx = ex + re_p * math.cos(phi_rad)  # 96 + 5.14 = 101.14
+        ty_n = ey - re_p * math.sin(phi_rad)  # 206 - 33.61 = 172.39
+        ty_s = ey + re_p * math.sin(phi_rad)  # 206 + 33.61 = 239.61
+
+        # Illuminated coverage cone fill
+        els.append(
+            f'<path d="M {sx:.1f},{sy:.1f} L {tx:.1f},{ty_n:.1f} '
+            f'A {re_p:.1f},{re_p:.1f} 0 0 1 {tx:.1f},{ty_s:.1f} Z" '
+            f'fill="{GREEN}" fill-opacity="0.11"/>'
+        )
+        # Tangent rays S -> T_N and S -> T_S
+        els.append(f'<line x1="{sx:.1f}" y1="{sy:.1f}" x2="{tx:.1f}" y2="{ty_n:.1f}" stroke="{GREEN}" stroke-width="1.8"/>')
+        els.append(f'<line x1="{sx:.1f}" y1="{sy:.1f}" x2="{tx:.1f}" y2="{ty_s:.1f}" stroke="{GREEN}" stroke-width="1.8"/>')
+        els.append(f'<line x1="{ex:.1f}" y1="{ey:.1f}" x2="{sx:.1f}" y2="{sy:.1f}" stroke="{SLATE}" stroke-width="1.2" stroke-dasharray="4 3"/>')
+
+        # Earth sphere + polar blind caps (>81.3 deg N/S highlighted in orange!)
+        els.append(f'<circle cx="{ex:.1f}" cy="{ey:.1f}" r="{re_p:.1f}" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.8"/>')
+        # North polar blind cap arc from (ex - re_p*cos(phi), ty_n) over North Pole to (tx, ty_n)
+        tx_left = ex - re_p * math.cos(phi_rad)
+        els.append(
+            f'<path d="M {tx_left:.1f},{ty_n:.1f} A {re_p:.1f},{re_p:.1f} 0 0 1 {tx:.1f},{ty_n:.1f}" '
+            f'fill="none" stroke="{ORANGE}" stroke-width="3.4"/>'
+        )
+        els.append(
+            f'<path d="M {tx_left:.1f},{ty_s:.1f} A {re_p:.1f},{re_p:.1f} 0 0 0 {tx:.1f},{ty_s:.1f}" '
+            f'fill="none" stroke="{ORANGE}" stroke-width="3.4"/>'
+        )
+        # Radius to tangent point T_N
+        els.append(f'<line x1="{ex:.1f}" y1="{ey:.1f}" x2="{tx:.1f}" y2="{ty_n:.1f}" stroke="{INK}" stroke-width="1.3"/>')
+        els.append(f'<circle cx="{tx:.1f}" cy="{ty_n:.1f}" r="3.2" fill="{ORANGE}"/>')
+        els.append(f'<circle cx="{tx:.1f}" cy="{ty_s:.1f}" r="3.2" fill="{ORANGE}"/>')
+        els.append(f'<circle cx="{sx:.1f}" cy="{sy:.1f}" r="6.2" fill="{GREEN}" stroke="#ffffff" stroke-width="1.6"/>')
+
+        els.append(txt(ex, ey - re_p - 10, "北极盲区 (>81.3°N)", 10.3, ORANGE, "middle", weight="700"))
+        els.append(txt(ex, ey + re_p + 18, "南极盲区 (>81.3°S)", 10.3, ORANGE, "middle", weight="700"))
+        els.append(txt((ex + sx) / 2 + 12, ey - 8, "r_GEO = 6.61 R_E（严格 1:1 真实比例）", 10.2, SLATE, "middle"))
+        els.append(txt(sx - 6, sy + 22, "GEO 卫星", 10.6, GREEN, "end", weight="700"))
+        els.append(txt(sx - 6, sy + 36, "单星可视 42.4% 地球面积", 10.0, MUTED, "end"))
+
+        # Bottom mini-panel inside Left Card: Clarke 1945 3-satellite 120 deg equatorial relay
+        els.append(card(34, 286, 328, 122, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        mcx, mcy, mr_g, mr_e = 92.0, 347.0, 42.0, 7.0
+        els.append(f'<circle cx="{mcx:.1f}" cy="{mcy:.1f}" r="{mr_g:.1f}" fill="none" stroke="{GREEN}" stroke-width="1.3" stroke-dasharray="3 3"/>')
+        els.append(f'<circle cx="{mcx:.1f}" cy="{mcy:.1f}" r="{mr_e:.1f}" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.4"/>')
+        tri_pts = []
+        for ang_d in (90, 210, 330):
+            ar = math.radians(ang_d)
+            px = mcx + mr_g * math.cos(ar)
+            py = mcy - mr_g * math.sin(ar)
+            tri_pts.append((px, py))
+            els.append(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="4.2" fill="{GREEN}" stroke="#ffffff" stroke-width="1.2"/>')
+        els.append(
+            f'<polygon points="{" ".join(f"{x:.1f},{y:.1f}" for x, y in tri_pts)}" '
+            f'fill="none" stroke="{BLUE}" stroke-width="1.2" stroke-dasharray="3 2"/>'
+        )
+        els.append(txt(150, 311, "克拉克 1945 构想：赤道俯视 120° 三星组网", 10.8, INK, weight="700"))
+        els.append(txt(150, 331, "• 3 颗星相隔 120° 即可无缝覆盖全球经度", 10.3, BODY))
+        els.append(txt(150, 350, "• 实际工程要求仰角 ≥ 5°（防楼宇/大气折射）", 10.3, BODY))
+        els.append(txt(150, 369, f"  有效南北界约为 ±{phi_5deg:.1f}°，北冰洋仍失联！", 10.3, ORANGE, weight="700"))
+        els.append(txt(150, 389, "• 极地科考与高纬通信必须另请“奇兵” →", 10.2, MUTED))
+
+        # Right Panel: Molniya High-Eccentricity Orbit (Kepler 2nd Law Equal-Time Dots!)
+        els.append(card(392, 62, 348, 360))
+        els.append(txt(408, 84, "② 极区救星：“闪电轨道”（Molniya）", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(408, 102, "倾角 63.4°、周期 11h58m：用开普勒第二定律在北极“慢放”", 10.6, MUTED))
+
+        # Exact Molniya parameters: rp = 6378+600 = 6978 km, ra = 6378+39750 = 46128 km
+        rp_m, ra_m = R_E + 600.0, R_E + 39750.0
+        a_m = 0.5 * (rp_m + ra_m)  # 26553 km
+        e_m = (ra_m - rp_m) / (ra_m + rp_m)  # 0.7372
+        inc_m = math.radians(63.4)
+
+        # Project orbit in meridional plane: focus (Earth center) at (516, 286), apogee up-right at +63.4 deg!
+        fcx, fcy = 500.0, 292.0
+        sc_m = 178.0 / ra_m  # 178 px for ra_m = 46,128 km!
+        re_mp = R_E * sc_m  # 24.6 px
+
+        # Unit vector toward apogee (up-right at +63.4 deg from equatorial horizontal)
+        ux_a, uy_a = math.cos(inc_m), -math.sin(inc_m)
+        # Perpendicular in-plane unit vector for minor axis visual perspective (slight 3D tilt 0.55)
+        ux_b, uy_b = -math.sin(inc_m), -math.cos(inc_m)
+
+        mol_pts = []
+        for k in range(181):
+            nu = 2.0 * math.pi * k / 180.0
+            r_cur = (a_m * (1.0 - e_m ** 2)) / (1.0 + e_m * math.cos(nu))
+            # nu=0 is perigee (-ux_a), nu=pi is apogee (+ux_a)
+            x_orb = -r_cur * math.cos(nu)  # +ra at nu=pi, -rp at nu=0
+            y_orb = r_cur * math.sin(nu) * 0.62
+            px = fcx + (x_orb * ux_a + y_orb * ux_b) * sc_m
+            py = fcy + (x_orb * uy_a + y_orb * uy_b) * sc_m
+            mol_pts.append((px, py))
+
+        els.append(f'<path d="M {" L ".join(f"{x:.2f},{y:.2f}" for x, y in mol_pts)} Z" fill="{PURPLE_SOFT}" fill-opacity="0.35" stroke="{PURPLE}" stroke-width="2.0"/>')
+
+        # Spin axis + Earth at focus (fcx, fcy)
+        els.append(f'<line x1="{fcx:.1f}" y1="126" x2="{fcx:.1f}" y2="334" stroke="{SLATE}" stroke-width="1.3" stroke-dasharray="4 3"/>')
+        els.append(f'<line x1="422" y1="{fcy:.1f}" x2="640" y2="{fcy:.1f}" stroke="{BORDER}" stroke-width="1.2"/>')
+        els.append(f'<circle cx="{fcx:.1f}" cy="{fcy:.1f}" r="{re_mp:.1f}" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.8"/>')
+        els.append(txt(fcx, fcy + 4, "地球", 10.2, BLUE, "middle", weight="700"))
+
+        # Plot 12 EQUAL-TIME dots (every 1 hour of the 12-hour period!)
+        for hr in range(12):
+            M = 2.0 * math.pi * (hr / 12.0)  # hr=0 at perigee, hr=6 at apogee!
+            E = M
+            for _ in range(10):
+                E = E - (E - e_m * math.sin(E) - M) / (1.0 - e_m * math.cos(E))
+            nu = 2.0 * math.atan2(
+                math.sqrt(1.0 + e_m) * math.sin(E / 2.0),
+                math.sqrt(1.0 - e_m) * math.cos(E / 2.0),
+            )
+            r_cur = (a_m * (1.0 - e_m ** 2)) / (1.0 + e_m * math.cos(nu))
+            x_orb = -r_cur * math.cos(nu)
+            y_orb = r_cur * math.sin(nu) * 0.62
+            px = fcx + (x_orb * ux_a + y_orb * ux_b) * sc_m
+            py = fcy + (x_orb * uy_a + y_orb * uy_b) * sc_m
+            is_high = 2 <= hr <= 10
+            col = PURPLE if is_high else ORANGE
+            rad_d = 4.6 if hr == 6 else 3.6
+            els.append(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="{rad_d}" fill="{col}" stroke="#ffffff" stroke-width="1.1"/>')
+
+        # Apogee & Perigee annotations
+        ap_x = fcx + ra_m * ux_a * sc_m
+        ap_y = fcy + ra_m * uy_a * sc_m
+        els.append(txt(ap_x + 12, ap_y + 4, "远地点 39,750 km", 10.8, PURPLE, weight="700"))
+        els.append(txt(ap_x + 12, ap_y + 20, "v ≈ 1.5 km/s（极慢！）", 10.3, PURPLE))
+        els.append(txt(606, 206, "每点间隔 = 1 小时：", 10.4, INK, weight="700"))
+        els.append(txt(606, 222, "12 小时里有 8 小时以上", 10.3, PURPLE, weight="600"))
+        els.append(txt(606, 238, "高悬北半球高纬头顶！", 10.3, PURPLE, weight="600"))
+        els.append(txt(424, 326, "近地点 600 km", 10.2, ORANGE, weight="700"))
+        els.append(txt(424, 340, "v ≈ 10.0 km/s 掠过南半球", 10.0, ORANGE))
+
+        els.append(card(406, 354, 320, 54, rx=7, fill=PURPLE_SOFT, stroke=PURPLE))
+        els.append(txt(418, 373, "为什么选 63.4°“临界倾角”？因为地球扁率摄动在此归零，", 10.3, PURPLE, weight="700"))
+        els.append(txt(418, 391, "远地点永远锁在北半球不漂移，3 颗星接力即可全天照亮北极！", 10.2, BODY))
+
+        return figure(
+            436,
+            "克拉克三颗静止卫星全球覆盖几何切线81.3度盲区与闪电轨道高纬接力对比图",
+            "左图按1比6.61真实比例画出地球静止轨道切线，证明南北纬81.3度以上存在极区盲区，并展示克拉克120度三星覆盖；右图按开普勒方程标出闪电轨道12个等时间间隔（每1小时）点位，展示远地点慢速高纬悬停原理。",
+            els,
+        )
+
+    # 5. GTO Apogee Plane-Change & Why Hainan Wenchang Saves Fuel
+    def _build_gto_plane_change_wenchang():
+        rp_gto = R_E + 200.0
+        ra_gto = R_GEO
+        a_gto = 0.5 * (rp_gto + ra_gto)
+        vp = math.sqrt(MU_E * (2.0 / rp_gto - 1.0 / a_gto))  # 10.239 km/s
+        va = math.sqrt(MU_E * (2.0 / ra_gto - 1.0 / a_gto))  # 1.597 km/s
+        t_coast_hr = (math.pi * math.sqrt((a_gto ** 3) / MU_E)) / 3600.0  # 5.255 h
+
+        def akm_dv(lat_deg):
+            di = math.radians(lat_deg)
+            return math.sqrt(va ** 2 + V_GEO ** 2 - 2.0 * va * V_GEO * math.cos(di)) * 1000.0  # m/s
+
+        dv_kourou = akm_dv(5.2)
+        dv_wenchang = akm_dv(19.6)
+        dv_xichang = akm_dv(28.2)
+        dv_jiuquan = akm_dv(41.0)
+        dv_baikonur = akm_dv(45.9)
+        assert abs(dv_wenchang - 1656.0) < 5.0
+        assert abs(dv_xichang - 1831.0) < 8.0
+
+        els = header(
+            "怎么把卫星“掰”上赤道？GTO 远地点变轨与海南文昌的省油账本",
+            f"近地点 {vp:.2f} km/s 太快掰不动，必须滑行 {t_coast_hr:.2f} 小时到远地点（{va:.2f} km/s）把圆化与消倾角合二为一",
+        )
+
+        # Left Panel: GTO Transfer + Apogee Velocity Vector Triangle
+        els.append(card(20, 62, 352, 360))
+        els.append(txt(36, 84, "① 地球同步转移轨道（GTO）与余弦定理点火", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(36, 102, "Δv_AKM = √(v_a² + v_GEO² − 2 v_a v_GEO cos Δi)", 10.8, MUTED))
+
+        # Top sub-diagram: Inclined GTO ellipse meeting Equatorial GEO ring at Apogee node
+        ocx, ocy = 128.0, 198.0
+        els.append(f'<ellipse cx="{ocx + 42:.1f}" cy="{ocy:.1f}" rx="112" ry="36" fill="none" stroke="{GREEN}" stroke-width="1.6" stroke-dasharray="5 3"/>')
+        els.append(txt(ocx + 116, ocy - 36, "赤道 GEO 圆轨 (i=0°)", 10.2, GREEN, "middle", weight="600"))
+
+        # Tilted GTO ellipse
+        els.append(
+            f'<g transform="rotate(-17 {ocx + 84:.1f} {ocy:.1f})">'
+            f'<ellipse cx="{ocx + 42:.1f}" cy="{ocy:.1f}" rx="70" ry="22" fill="{ORANGE_SOFT}" fill-opacity="0.35" stroke="{ORANGE}" stroke-width="2.0"/>'
+            f'</g>'
+        )
+        els.append(f'<circle cx="{ocx - 16:.1f}" cy="{ocy + 18:.1f}" r="14" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.6"/>')
+        els.append(txt(ocx - 16, ocy + 44, "近地点 200 km", 10.0, BLUE, "middle", weight="600"))
+        els.append(txt(ocx - 16, ocy + 56, f"v_p = {vp:.2f} km/s", 9.8, MUTED, "middle"))
+
+        # Apogee node at right (ocx + 154, ocy) -> adjust exact intersection at (282, 198)
+        ax_n, ay_n = 240.0, 198.0
+        els.append(f'<circle cx="{ax_n:.1f}" cy="{ay_n:.1f}" r="6.0" fill="{ORANGE}" stroke="#ffffff" stroke-width="1.5"/>')
+        els.append(txt(ax_n + 10, ay_n - 8, "远地点交点", 10.5, ORANGE, weight="700"))
+        els.append(txt(ax_n + 10, ay_n + 6, "35,786 km 点火！", 10.2, ORANGE, weight="600"))
+
+        # Bottom sub-diagram in Left Card: Exact Velocity Vector Triangle (for Δi = 28.2 deg)
+        els.append(card(34, 268, 324, 140, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(46, 288, "远地点速度矢量三角形（以 Δi = 28.2° 为例）：", 10.6, INK, weight="700"))
+
+        vx0, vy0 = 64.0, 378.0
+        v_scale = 76.0  # px per km/s -> v_GEO (3.075) = 233.7 px!
+        # v_GEO horizontal to the right
+        vg_x, vg_y = vx0 + V_GEO * v_scale, vy0
+        # v_a tilted up by 28.2 deg
+        ang_v = math.radians(28.2)
+        va_x = vx0 + va * v_scale * math.cos(ang_v)
+        va_y = vy0 - va * v_scale * math.sin(ang_v)
+
+        els.append(f'<line x1="{vx0:.1f}" y1="{vy0:.1f}" x2="{vg_x:.1f}" y2="{vg_y:.1f}" stroke="{GREEN}" stroke-width="2.4" marker-end="url(#arr-green)"/>')
+        els.append(f'<line x1="{vx0:.1f}" y1="{vy0:.1f}" x2="{va_x:.1f}" y2="{va_y:.1f}" stroke="{BLUE}" stroke-width="2.2" marker-end="url(#arr-blue)"/>')
+        els.append(f'<line x1="{va_x:.1f}" y1="{va_y:.1f}" x2="{vg_x:.1f}" y2="{vg_y:.1f}" stroke="{ORANGE}" stroke-width="2.4" stroke-dasharray="5 3" marker-end="url(#arr-orange)"/>')
+
+        els.append(txt((vx0 + vg_x) / 2, vy0 + 18, f"目标速度 v_GEO = {V_GEO:.2f} km/s（赤道面 0°）", 10.2, GREEN, "middle", weight="700"))
+        els.append(txt(va_x - 8, va_y - 8, f"到站速度 v_a = {va:.2f} km/s", 10.2, BLUE, weight="700"))
+        els.append(txt((va_x + vg_x) / 2 + 18, (va_y + vg_y) / 2 - 6, f"合成点火 Δv = {dv_xichang/1000:.2f} km/s", 10.3, ORANGE, "middle", weight="700"))
+        els.append(txt(vx0 + 36, vy0 - 8, "Δi", 10.4, INK, weight="700"))
+
+        # Right Panel: Spaceport Latitude vs Apogee Kick Delta-V Bar Comparison
+        els.append(card(388, 62, 352, 360))
+        els.append(txt(404, 84, "② 全球发射场纬度大比拼：文昌省下多少燃料？", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(404, 102, "直接向东入轨最小倾角 i_min ≈ 发射场纬度 |φ|", 10.8, MUTED))
+
+        sites = [
+            ("赤道理想基准 (0°)", 0.0, akm_dv(0.0), SLATE),
+            ("法属库鲁 (5.2°N)", 5.2, dv_kourou, BLUE),
+            ("中国海南文昌 (19.6°N)", 19.6, dv_wenchang, GREEN),
+            ("西昌 / 卡角 (~28.3°N)", 28.2, dv_xichang, ORANGE),
+            ("中国酒泉 (41.0°N)", 41.0, dv_jiuquan, PURPLE),
+            ("拜科努尔 (45.9°N)", 45.9, dv_baikonur, SLATE),
+        ]
+
+        bx_start = 548.0
+        max_bar_w = 162.0
+        dv_cap = 2450.0
+        y_row0 = 132.0
+        row_step = 36.0
+
+        for idx, (name, lat_d, dv_val, col) in enumerate(sites):
+            ry = y_row0 + idx * row_step
+            bw = (dv_val / dv_cap) * max_bar_w
+            is_wc = "文昌" in name
+            fill_op = "0.24" if is_wc else "0.14"
+            sw = "1.8" if is_wc else "1.1"
+            els.append(txt(540, ry + 13, name, 10.5, GREEN if is_wc else BODY, "end", weight="700" if is_wc else "400"))
+            els.append(
+                f'<rect x="{bx_start:.1f}" y="{ry:.1f}" width="{bw:.1f}" height="18" rx="4" '
+                f'fill="{col}" fill-opacity="{fill_op}" stroke="{col}" stroke-width="{sw}"/>'
+            )
+            els.append(txt(bx_start + bw + 6, ry + 13, f"{dv_val:.0f} m/s", 10.3, col, weight="700"))
+
+        # Summary callout box at bottom of Right Card
+        save_vs_xc = dv_xichang - dv_wenchang
+        save_vs_jq = dv_jiuquan - dv_wenchang
+        els.append(card(402, 348, 324, 62, rx=7, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(414, 367, f"文昌红利：远地点变轨比西昌省 ~{save_vs_xc:.0f} m/s，比酒泉省 ~{save_vs_jq:.0f} m/s！", 10.5, GREEN, weight="700"))
+        els.append(txt(414, 385, "• 按每年 ~50 m/s 轨位保持燃料算，省出 3.5～10 年在轨寿命；", 10.2, BODY))
+        els.append(txt(414, 402, "• 且海运直达无铁路隧道限宽，长征五号等 5 米大火箭得以登场。", 10.2, BODY))
+
+        return figure(
+            436,
+            "地球同步转移轨道GTO远地点合成变轨矢量三角形与文昌发射场纬度省油对比图",
+            "左图展示200公里停泊轨道经GTO滑行5.26小时至35786公里远地点，利用余弦定理一次完成提速圆化与消除轨道倾角；右图对比库鲁、海南文昌、西昌/卡纳维拉尔角、酒泉与拜科努尔的远地点所需Δv。",
+            els,
+        )
+
+    # 6. Station-Keeping Perturbations, 240 ms Light Latency & +300 km Graveyard Orbit
+    def _build_station_keeping_and_graveyard():
+        # Exact light-speed propagation latency: ground -> GEO -> ground
+        # Sub-satellite vertical: 2 * 35786 / 299792.458 = 0.2387 s; mid-latitude slant (~38,500 km): 2 * 38500 / 299792.458 = 0.2568 s
+        hop_min_ms = (2.0 * H_GEO / 299792.458) * 1000.0  # 238.7 ms
+        hop_typ_ms = (2.0 * 38500.0 / 299792.458) * 1000.0  # 256.8 ms
+        assert 238.0 < hop_min_ms < 240.0
+
+        # Graveyard orbit Hohmann boost for +300 km above GEO
+        r_grave = R_GEO + 300.0
+        a_gr = 0.5 * (R_GEO + r_grave)
+        dv_grave = (
+            (math.sqrt(MU_E * (2.0 / R_GEO - 1.0 / a_gr)) - V_GEO)
+            + (math.sqrt(MU_E / r_grave) - math.sqrt(MU_E * (2.0 / r_grave - 1.0 / a_gr)))
+        ) * 1000.0  # ~10.87 m/s!
+        assert 10.5 < dv_grave < 11.3
+
+        els = header(
+            "“静止”背后的终身拔河：轨位保持、240 毫秒延迟与 +300 km 坟墓轨道",
+            "卫星并非放上去就一劳永逸——既要对抗地球扁率与日月拉扯，退役前还要留最后一口燃料让位",
+        )
+
+        # Left Panel: Station-Keeping (Equatorial Triaxiality + Lunar-Solar NSSK + ITU 0.1 deg box)
+        els.append(card(20, 62, 356, 366))
+        els.append(txt(36, 84, "① 轨位保持：严守 ±0.05°（约 74 km）“空中车位”", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(36, 102, "赤道微椭圆东西拉拽 + 日月引力每年把轨道面掰歪 ~0.85°", 10.6, MUTED))
+
+        # Equatorial triaxial cross-section (exaggerated ellipse for visibility, clearly labeled)
+        ecx, ecy = 198.0, 206.0
+        els.append(f'<circle cx="{ecx:.1f}" cy="{ecy:.1f}" r="74" fill="none" stroke="{BORDER}" stroke-width="1.4" stroke-dasharray="4 3"/>')
+        els.append(
+            f'<g transform="rotate(-15 {ecx:.1f} {ecy:.1f})">'
+            f'<ellipse cx="{ecx:.1f}" cy="{ecy:.1f}" rx="42" ry="30" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.7"/>'
+            f'</g>'
+        )
+        els.append(txt(ecx, ecy - 2, "赤道微椭圆", 10.2, BLUE, "middle", weight="700"))
+        els.append(txt(ecx, ecy + 12, "(扁率夸张示意)", 9.6, MUTED, "middle"))
+
+        # Two stable gravity wells: 75.3E (bottom-right) and 108W (top-left)
+        els.append(f'<circle cx="{ecx + 64:.1f}" cy="{ecy + 37:.1f}" r="5.2" fill="{ORANGE}"/>')
+        els.append(txt(ecx + 72, ecy + 42, "75.3°E 重力谷", 10.2, ORANGE, weight="700"))
+        els.append(f'<circle cx="{ecx - 64:.1f}" cy="{ecy - 37:.1f}" r="5.2" fill="{ORANGE}"/>')
+        els.append(txt(ecx - 72, ecy - 34, "108°W 重力谷", 10.2, ORANGE, "end", weight="700"))
+
+        # ITU Slot box at top of ring
+        els.append(f'<rect x="{ecx - 11:.1f}" y="{ecy - 85:.1f}" width="22" height="22" rx="3" fill="{GREEN_SOFT}" stroke="{GREEN}" stroke-width="1.6"/>')
+        els.append(f'<circle cx="{ecx:.1f}" cy="{ecy - 74:.1f}" r="4.2" fill="{GREEN}"/>')
+        els.append(txt(ecx + 16, ecy - 76, "ITU 轨位盒 (±0.05° ≈ 74 km)", 10.2, GREEN, weight="700"))
+
+        # Fuel budget breakdown cards
+        els.append(card(34, 298, 328, 116, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(46, 318, "每年轨位保持（Station-Keeping）燃料账单：", 10.7, INK, weight="700"))
+        els.append(txt(46, 338, "• 南北保持（对抗日月引力掰歪轨道面）：~45–50 m/s / 年（大头！）", 10.2, PURPLE, weight="600"))
+        els.append(txt(46, 357, "• 东西保持（对抗赤道重力谷滑落 + 光压）：≤ 2 m/s / 年", 10.2, BODY))
+        els.append(txt(46, 376, "• 15 年设计寿命共需 ~750 m/s；新一代霍尔电推进比冲高 5–10 倍，", 10.2, BODY))
+        els.append(txt(46, 394, "  大幅减轻燃料死重，让卫星带更多转发器上天！", 10.2, GREEN, weight="600"))
+
+        # Right Panel: Light-Speed Latency + Graveyard Orbit (+300 km)
+        els.append(card(392, 62, 348, 366))
+        els.append(txt(408, 84, "② 物理代价与体面谢幕：延迟与坟墓轨道", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(408, 102, "3.6 万公里连光也要跑四分之一秒；寿终前必须爬高让位", 10.6, MUTED))
+
+        # Sub-card A: Latency comparison (GEO vs LEO)
+        els.append(card(406, 118, 320, 128, rx=8, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(418, 138, "光速硬约束（c = 299,792 km/s）：为什么打游戏怕 GEO？", 10.7, BLUE, weight="700"))
+        els.append(txt(418, 159, f"• GEO 单跳（地面 → 星 → 地面，约 7.2–7.7 万 km）：", 10.3, BODY))
+        els.append(txt(428, 177, f"单程 {hop_min_ms:.0f}–{hop_typ_ms:.0f} ms，双向往返（RTT）高达 ~480–520 ms！", 10.3, ORANGE, weight="700"))
+        els.append(txt(418, 197, "• 低轨星座 LEO（550 km）：单跳空口仅 ~4 ms（往返 ~25 ms）", 10.3, GREEN, weight="600"))
+        els.append(txt(418, 217, "• 分工明确：电视广播/气象云图/导航增强选 GEO；", 10.2, BODY))
+        els.append(txt(428, 233, "实时语音/高频交易/低时延互联选地面光纤或 LEO。", 10.2, MUTED))
+
+        # Sub-card B: IADC Graveyard Orbit (+300 km)
+        els.append(card(406, 258, 320, 156, rx=8, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(418, 278, "退役规矩：IADC“坟墓轨道”（Graveyard Orbit）", 10.8, ORANGE, weight="700"))
+        els.append(txt(418, 297, "ΔH_min = 235 + 1000·C_R·(A/m) km（常抬高 ≥300 km）", 10.0, INK, weight="600"))
+
+        # Visual concentric arc comparison: GEO belt -> +200 km protected zone -> +300 km Graveyard
+        els.append(f'<path d="M 424,352 Q 566,326 708,352" fill="none" stroke="{GREEN}" stroke-width="2.2"/>')
+        els.append(txt(566, 360, "现役 GEO 黄金环（35,786 km）", 10.0, GREEN, "middle", weight="700"))
+
+        els.append(f'<path d="M 424,324 Q 566,298 708,324" fill="none" stroke="{ORANGE}" stroke-width="2.0" stroke-dasharray="5 3"/>')
+        els.append(txt(566, 313, "退役坟墓轨道（+300 km ≈ 36,086 km）", 10.0, ORANGE, "middle", weight="700"))
+
+        els.append(f'<line x1="678" y1="348" x2="678" y2="324" stroke="{ORANGE}" stroke-width="1.8" marker-end="url(#arr-orange)"/>')
+        els.append(txt(418, 382, f"• 仅需最后 Δv ≈ {dv_grave:.1f} m/s（约 3 个月保位燃料）即可永久让位；", 10.2, BODY))
+        els.append(txt(418, 400, "• 随后排空余气、断开电池（钝化），守护全人类唯一的静止环。", 10.2, BODY))
+
+        return figure(
+            442,
+            "地球静止卫星轨位保持摄动账单、240毫秒光速延迟与300公里坟墓轨道图解",
+            "左图展示赤道微椭圆75.3E与108W重力谷及日月引力导致的每年约50米每秒轨位保持燃料消耗；右图对比GEO双向约480至520毫秒光速延迟与LEO低延迟分工，并图解退役前消耗约11米每秒爬升300公里进入坟墓轨道的国际规则。",
+            els,
+        )
+
+    @register("geosync-orbit", "地球同步与静止轨道甜蜜点、恒星日误差、8字星下点、克拉克覆盖与闪电轨道、文昌GTO变轨及坟墓轨道", "mechanics_sky")
+    def build_geosync_orbit():
+        write_svg(SUBDIR, "angular-chase-sweetspot.svg", _build_angular_chase_sweetspot())
+        write_svg(SUBDIR, "sidereal-vs-solar-day.svg", _build_sidereal_vs_solar_day())
+        write_svg(SUBDIR, "gso-geo-figure8-tracks.svg", _build_gso_geo_figure8_tracks())
+        write_svg(SUBDIR, "clarke-three-satellites-polar-blindspot.svg", _build_clarke_and_molniya())
+        write_svg(SUBDIR, "gto-plane-change-wenchang.svg", _build_gto_plane_change_wenchang())
+        write_svg(SUBDIR, "station-keeping-graveyard-belt.svg", _build_station_keeping_and_graveyard())
+
+
+_register_geosync_orbit()

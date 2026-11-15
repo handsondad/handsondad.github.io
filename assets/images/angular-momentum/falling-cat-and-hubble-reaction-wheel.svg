@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="538" viewBox="0 0 760 538" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">落猫问题四步变惯量零角动量翻身原理与哈勃太空望远镜反作用飞轮调头示意图</title>
+<desc id="desc">上图分四步展示猫咪下落时先缩前爪伸后腿扭腰、再伸前爪缩后腿回扭，在总角动量恒为零的前提下净翻转身体；下图展示11吨哈勃望远镜利用内部45千克反作用飞轮反向旋转实现无推进剂0.007角秒级高精度调头。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="537" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">悬空零借力怎么翻身？从“落猫四步扭腰术”到哈勃望远镜的无燃料调头</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">总角动量 L ≡ 0 并不禁止转身！只要不是死板的刚体，靠内部“变惯量／转飞轮”就能凭空换朝向</text>
+<rect x="24" y="66" width="712" height="238" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="44" cy="90" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="44" y="94" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">1</text>
+<text x="62" y="95" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="700">“落猫问题”（NASA 曾专门立项研究教宇航员太空转身）：全程 L = 0 怎样翻过 180°？</text>
+<rect x="40" y="110" width="164" height="178" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="1"/>
+<text x="122" y="132" font-size="10.8" fill="#475569" text-anchor="middle" font-weight="700">① 四脚朝天松手</text>
+<rect x="78" y="160" width="38" height="22" rx="6" fill="#ffffff" stroke="#475569" stroke-width="1.6"/>
+<rect x="128" y="160" width="38" height="22" rx="6" fill="#ffffff" stroke="#475569" stroke-width="1.6"/>
+<text x="122" y="198" font-size="9.8" fill="#64748b" text-anchor="middle">背朝下 / 爪朝天</text>
+<text x="122" y="226" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="600">初态 L_总 = 0</text>
+<text x="122" y="246" font-size="10.2" fill="#475569" text-anchor="middle" font-weight="700">前后半身均未转</text>
+<text x="122" y="266" font-size="10" fill="#1e293b" text-anchor="middle">脊柱柔韧弯曲预备</text>
+<rect x="212" y="110" width="164" height="178" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="294" y="132" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">② 前爪抱胸+后腿伸直</text>
+<rect x="250" y="164" width="38" height="16" rx="5" fill="#ffffff" stroke="#1d6fa5" stroke-width="2"/>
+<rect x="300" y="148" width="38" height="44" rx="6" fill="#ffffff" stroke="#475569" stroke-width="1.6"/>
+<text x="269" y="198" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">小I快转</text>
+<text x="319" y="204" font-size="9.6" fill="#475569" text-anchor="middle">大I慢退</text>
+<text x="294" y="226" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="600">I_前 小，I_后 = 3I_前</text>
+<text x="294" y="246" font-size="10.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">前半身顺转 +120°！</text>
+<text x="294" y="266" font-size="10" fill="#1e293b" text-anchor="middle">后半身仅逆退 -40°</text>
+<rect x="384" y="110" width="164" height="178" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="466" y="132" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="700">③ 前爪张开+后腿蜷缩</text>
+<rect x="422" y="148" width="38" height="44" rx="6" fill="#ffffff" stroke="#475569" stroke-width="1.6"/>
+<rect x="472" y="164" width="38" height="16" rx="5" fill="#ffffff" stroke="#c25014" stroke-width="2"/>
+<text x="441" y="204" font-size="9.6" fill="#475569" text-anchor="middle">大I稳住</text>
+<text x="491" y="198" font-size="9.6" fill="#c25014" text-anchor="middle" font-weight="700">小I补齐</text>
+<text x="466" y="226" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="600">互换：I_前 = 3I_后</text>
+<text x="466" y="246" font-size="10.2" fill="#c25014" text-anchor="middle" font-weight="700">后半身顺追 +120°！</text>
+<text x="466" y="266" font-size="10" fill="#1e293b" text-anchor="middle">前半身仅微退 -40°</text>
+<rect x="556" y="110" width="164" height="178" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="638" y="132" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="700">④ 重复配合稳稳落地</text>
+<rect x="594" y="156" width="38" height="22" rx="6" fill="#ffffff" stroke="#18794e" stroke-width="2"/>
+<rect x="644" y="156" width="38" height="22" rx="6" fill="#ffffff" stroke="#18794e" stroke-width="2"/>
+<text x="638" y="198" font-size="9.8" fill="#18794e" text-anchor="middle" font-weight="700">四脚稳稳朝下！</text>
+<text x="638" y="226" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="600">每瞬时 L_前+L_后 ≡ 0</text>
+<text x="638" y="246" font-size="10.2" fill="#18794e" text-anchor="middle" font-weight="700">一轮净赚 +80° 姿态</text>
+<text x="638" y="266" font-size="10" fill="#1e293b" text-anchor="middle">约 0.3 秒四脚着地！</text>
+<rect x="24" y="318" width="712" height="202" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="44" cy="342" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="44" y="346" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">2</text>
+<text x="62" y="347" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="700">哈勃与韦伯太空望远镜：不烧一滴火箭燃料，靠肚子里的小飞轮在太空精准调头！</text>
+<rect x="40" y="362" width="376" height="142" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="132" y="374" width="12" height="118" rx="2" fill="#fef1e8" stroke="#c25014" stroke-width="1.4"/>
+<rect x="276" y="374" width="12" height="118" rx="2" fill="#fef1e8" stroke="#c25014" stroke-width="1.4"/>
+<rect x="108" y="406" width="204" height="54" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="2"/>
+<circle cx="210" cy="433" r="19" fill="#ffffff" stroke="#6d28d9" stroke-width="2.2"/>
+<text x="210" y="437" font-size="10" fill="#6d28d9" text-anchor="middle" font-weight="700">飞轮</text>
+<text x="210" y="396" font-size="10.2" fill="#6d28d9" text-anchor="middle" font-weight="700" class="halo">内部 45kg 飞轮顺时针转（+I_轮 ω_轮）</text>
+<text x="210" y="482" font-size="10.4" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">11 吨镜筒必逆时针缓转（-I_镜 ω_镜），总 L ≡ 0！</text>
+<rect x="430" y="362" width="290" height="142" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="446" y="385" font-size="11.4" fill="#1d6fa5" text-anchor="start" font-weight="700">NASA 哈勃指向控制系统硬核参数：</text>
+<text x="446" y="408" font-size="10.5" fill="#1e293b" text-anchor="start">• 禁用喷气推力器：防止尾气污染光学镜面！</text>
+<text x="446" y="428" font-size="10.5" fill="#1e293b" text-anchor="start">• 4 台直径约 0.6m 飞轮，全靠太阳能供电调速；</text>
+<text x="446" y="448" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">• 锁定精度 0.007 角秒（相当于从北京拿激光稳</text>
+<text x="446" y="468" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">  稳照住 320 km 外一枚硬币上的人像 24 小时）！</text>
+<text x="446" y="488" font-size="10.2" fill="#64748b" text-anchor="start">• 另配 2.4m 磁力矩棒借地磁场给飞轮“卸转速”。</text>
+</svg>

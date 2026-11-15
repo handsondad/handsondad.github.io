@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="452" viewBox="0 0 760 452" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">旋转电机剖开展平为直线同步电机LSM及行波磁场推拉牵引动画图</title>
+<desc id="desc">上图展示将圆筒旋转电机沿半径剖开展平为地面长定子与车载转子；下图以单次平移动画展示地面三相绕组行波磁场对车载N/S极产生前拉后推合力，并按v=2τf核算极距1.35米、频率51.44赫兹时恰好对应500km/h同步巡航。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes waveAdvance {
+    0% { transform: translateX(0px); }
+    100% { transform: translateX(64px); }
+  }
+  .lsm-mover {
+    animation: waveAdvance 3.0s ease-in-out 1 forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .lsm-mover {
+      animation: none !important;
+      transform: none !important;
+    }
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="451" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">车轮悬空不沾地，谁在背后推着它飙到 600 km/h？—— 把电动机“一刀剖开铺在地上”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">磁悬浮没有排气管也不靠螺旋桨：整条几百公里的轨道就是一台被剪开展平的“长定子直线同步电机 (LSM)”！</text>
+<rect x="20" y="62" width="720" height="146" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="85" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 几何变形记：从“原地打转的圆筒电机”到“贴地狂奔的直线电机”</text>
+<circle cx="140" cy="155" r="41" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="2.2"/>
+<circle cx="140" cy="155" r="23" fill="#ffffff" stroke="#c25014" stroke-width="2.0"/>
+<text x="140" y="159" font-size="9.0" fill="#c25014" text-anchor="middle" font-weight="700">转子 N/S</text>
+<text x="140" y="106" font-size="9.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">外圈三相定子 (剪开处)</text>
+<line x1="140.0" y1="111.0" x2="140.0" y2="130.0" stroke="#dc2626" stroke-width="2.0" stroke-dasharray="3,2"/>
+<line x1="208.0" y1="152.0" x2="294.0" y2="152.0" stroke="#0f172a" stroke-width="2.2" marker-end="url(#arr-ink)"/>
+<text x="251" y="140" font-size="9.6" fill="#0f172a" text-anchor="middle" font-weight="700">沿半径剪开</text>
+<text x="251" y="171" font-size="9.2" fill="#64748b" text-anchor="middle">把圆周摊平成直线!</text>
+<rect x="314" y="96" width="408" height="98" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="334" y="158" width="368" height="22" rx="4" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.6"/>
+<text x="518" y="173" font-size="9.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">原本的外圈定子 → 变成铺满整条轨道的三相推进绕组（长定子）</text>
+<rect x="396" y="112" width="184" height="30" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="1.8"/>
+<text x="488" y="131" font-size="9.4" fill="#c25014" text-anchor="middle" font-weight="700">原本的内圈转子 → 变成列车磁体</text>
+<line x1="590.0" y1="127.0" x2="668.0" y2="127.0" stroke="#c25014" stroke-width="2.2" marker-end="url(#arr-orange)"/>
+<text x="629" y="120" font-size="9.0" fill="#dc2626" text-anchor="middle" font-weight="700">化旋转扭矩为直线推力!</text>
+<rect x="20" y="220" width="720" height="220" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="243" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 行波冲浪原理：前有异极“拉”、后有同极“推”，变流站调频即精准控速 (v = 2τf)</text>
+<rect x="36" y="258" width="434" height="166" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<g class="lsm-mover">
+<rect x="96" y="274" width="212" height="44" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="2.0"/>
+<text x="202" y="293" font-size="9.4" fill="#6d28d9" text-anchor="middle" font-weight="700">磁悬浮列车转向架磁极（随行波同步冲浪 →）</text>
+<rect x="114" y="302" width="68" height="20" rx="4" fill="#dc2626" stroke="#dc2626"/>
+<text x="148" y="316" font-size="9.1" fill="#ffffff" text-anchor="middle" font-weight="700">车载 N 极</text>
+<rect x="222" y="302" width="68" height="20" rx="4" fill="#1d6fa5" stroke="#1d6fa5"/>
+<text x="256" y="316" font-size="9.1" fill="#ffffff" text-anchor="middle" font-weight="700">车载 S 极</text>
+<rect x="56" y="362" width="76" height="24" rx="4" fill="#fef2f2" stroke="#dc2626" stroke-width="1.6"/>
+<text x="94" y="378" font-size="8.9" fill="#dc2626" text-anchor="middle" font-weight="700">地面 N (后推)</text>
+<rect x="160" y="362" width="76" height="24" rx="4" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.6"/>
+<text x="198" y="378" font-size="8.9" fill="#1d6fa5" text-anchor="middle" font-weight="700">地面 S (前拉)</text>
+<rect x="264" y="362" width="76" height="24" rx="4" fill="#fef2f2" stroke="#dc2626" stroke-width="1.6"/>
+<text x="302" y="378" font-size="8.9" fill="#dc2626" text-anchor="middle" font-weight="700">地面 N (前拉)</text>
+<line x1="106.0" y1="360.0" x2="140.0" y2="326.0" stroke="#c25014" stroke-width="2.1" marker-end="url(#arr-orange)"/>
+<line x1="156.0" y1="326.0" x2="190.0" y2="360.0" stroke="#18794e" stroke-width="2.1" marker-end="url(#arr-green)"/>
+<line x1="210.0" y1="360.0" x2="246.0" y2="326.0" stroke="#c25014" stroke-width="2.1" marker-end="url(#arr-orange)"/>
+<line x1="264.0" y1="326.0" x2="296.0" y2="360.0" stroke="#18794e" stroke-width="2.1" marker-end="url(#arr-green)"/>
+</g>
+<text x="253" y="410" font-size="9.1" fill="#1e293b" text-anchor="middle" font-weight="600">极距 τ（相邻 N–S 中心距）· 三相交流电制造向右平移的磁场行波</text>
+<rect x="484" y="258" width="240" height="166" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="496" y="279" font-size="10.2" fill="#1d6fa5" text-anchor="start" font-weight="700">直线同步电机速度铁律：</text>
+<text x="604" y="303" font-size="13.0" fill="#0f172a" text-anchor="middle" font-weight="700">v = 2 · τ · f</text>
+<text x="496" y="325" font-size="9.1" fill="#1e293b" text-anchor="start">• 以日本中央新干线为例：极距 τ = 1.35 m；</text>
+<text x="496" y="343" font-size="9.1" fill="#1e293b" text-anchor="start">• 当地面变流站输出频率 f = 51.4 Hz：</text>
+<text x="496" y="361" font-size="9.1" fill="#0f172a" text-anchor="start" font-weight="700">  v = 2×1.35×51.44 ≈ 138.9 m/s = 500 km/h!</text>
+<text x="496" y="382" font-size="9.1" fill="#18794e" text-anchor="start" font-weight="700">• 零打滑爬陡坡（4%–10%，高铁仅 2%–3%）；</text>
+<text x="496" y="400" font-size="9.1" fill="#1e293b" text-anchor="start">• 告别头顶受电弓电火花，刹车直接发电回馈；</text>
+<text x="496" y="417" font-size="9.1" fill="#c25014" text-anchor="start" font-weight="700">• 分段供电：只给列车所在那几百米轨道通电！</text>
+</svg>

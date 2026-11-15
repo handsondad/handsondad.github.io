@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">生活中四大褐变与发黑化学反应的终极对比图谱</title>
+<desc id="desc">从反应物、触发温度条件、标志产物气味与生活代表场景四个维度对比酶促褐变、铁酚配位络合、美拉德反应与焦糖化反应，附三秒厨房破案口诀。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">厨房终极破案图谱：同样是“变棕变黑”，背后竟有四套完全不同的化学</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">分清酶促褐变、金属配位、美拉德反应与焦糖化反应——从此切菜防黑、煎肉增香不再张冠李戴</text>
+<rect x="24" y="66" width="712" height="314" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="24" y="66" width="712" height="36" rx="10" fill="#0f172a"/>
+<text x="36" y="89" font-size="11.5" fill="#ffffff" text-anchor="start" font-weight="700">反应类型</text>
+<text x="164" y="89" font-size="11.5" fill="#ffffff" text-anchor="start" font-weight="700">核心反应物</text>
+<text x="332" y="89" font-size="11.5" fill="#ffffff" text-anchor="start" font-weight="700">触发温度与条件</text>
+<text x="482" y="89" font-size="11.5" fill="#ffffff" text-anchor="start" font-weight="700">标志产物与气味</text>
+<text x="618" y="89" font-size="11.5" fill="#ffffff" text-anchor="start" font-weight="700">生活代表场景</text>
+<rect x="25" y="102" width="710" height="68" fill="#fffaf5"/>
+<line x1="25" y1="102" x2="735" y2="102" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="129" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">1. 酶促褐变</text>
+<text x="36" y="149" font-size="10" fill="#64748b" text-anchor="start" font-weight="600">（生物酶催化）</text>
+<text x="164" y="129" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600">多酚 / 酪氨酸 + O2</text>
+<text x="164" y="149" font-size="10" fill="#64748b" text-anchor="start">需活性双铜酶（PPO）</text>
+<text x="332" y="129" font-size="10.5" fill="#1e293b" text-anchor="start" font-weight="600">常温 20–45 °C 最快</text>
+<text x="332" y="149" font-size="10" fill="#c25014" text-anchor="start" font-weight="600">沸水 &gt;90 °C 酶死即停</text>
+<text x="482" y="129" font-size="10.5" fill="#1e293b" text-anchor="start" font-weight="600">茶黄素类 + 类黑色素</text>
+<text x="482" y="149" font-size="10" fill="#64748b" text-anchor="start">无焦香（红茶花果香）</text>
+<text x="618" y="129" font-size="10.5" fill="#1e293b" text-anchor="start">切开的藕片、苹果、</text>
+<text x="618" y="149" font-size="10.5" fill="#1e293b" text-anchor="start">红茶发酵、虾头黑变</text>
+<rect x="25" y="170" width="710" height="68" fill="#eef2ff"/>
+<line x1="25" y1="170" x2="735" y2="170" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="197" font-size="11.5" fill="#312e81" text-anchor="start" font-weight="700">2. 铁—多酚络合</text>
+<text x="36" y="217" font-size="10" fill="#64748b" text-anchor="start" font-weight="600">（配位化学）</text>
+<text x="164" y="197" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600">邻二酚 / 单宁</text>
+<text x="164" y="217" font-size="10" fill="#64748b" text-anchor="start">+ Fe2+ / Fe3+ 离子</text>
+<text x="332" y="197" font-size="10.5" fill="#1e293b" text-anchor="start" font-weight="600">常温至 100 °C 皆秒发</text>
+<text x="332" y="217" font-size="10" fill="#312e81" text-anchor="start" font-weight="600">无需酶！pH 6–8 最黑</text>
+<text x="482" y="197" font-size="10.5" fill="#1e293b" text-anchor="start" font-weight="600">多酚铁螯合物（LMCT）</text>
+<text x="482" y="217" font-size="10" fill="#64748b" text-anchor="start">深蓝紫—乌黑，略涩</text>
+<text x="618" y="197" font-size="10.5" fill="#1e293b" text-anchor="start">铁锅炒藕/山药发黑、</text>
+<text x="618" y="217" font-size="10.5" fill="#1e293b" text-anchor="start">铁胆墨水、浓茶遇铁</text>
+<rect x="25" y="238" width="710" height="68" fill="#fef2f2"/>
+<line x1="25" y1="238" x2="735" y2="238" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="265" font-size="11.5" fill="#b91c1c" text-anchor="start" font-weight="700">3. 美拉德反应</text>
+<text x="36" y="285" font-size="10" fill="#64748b" text-anchor="start" font-weight="600">（非酶褐变 A）</text>
+<text x="164" y="265" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600">还原糖（羰基 C=O）</text>
+<text x="164" y="285" font-size="10" fill="#64748b" text-anchor="start">+ 氨基酸/蛋白（-NH2）</text>
+<text x="332" y="265" font-size="10.5" fill="#1e293b" text-anchor="start" font-weight="600">140–165 °C 高速爆发</text>
+<text x="332" y="285" font-size="10" fill="#b91c1c" text-anchor="start" font-weight="600">无需酶、无需氧气！</text>
+<text x="482" y="265" font-size="10.5" fill="#1e293b" text-anchor="start" font-weight="600">类黑精 + 吡嗪/呋喃等</text>
+<text x="482" y="285" font-size="10" fill="#64748b" text-anchor="start">诱人烤肉香、麦香、咖香</text>
+<text x="618" y="265" font-size="10.5" fill="#1e293b" text-anchor="start">煎牛排焦壳、烤面包、</text>
+<text x="618" y="285" font-size="10.5" fill="#1e293b" text-anchor="start">红烧肉、烘焙咖啡豆</text>
+<rect x="25" y="306" width="710" height="68" fill="#fffbeb"/>
+<line x1="25" y1="306" x2="735" y2="306" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="333" font-size="11.5" fill="#b45309" text-anchor="start" font-weight="700">4. 焦糖化反应</text>
+<text x="36" y="353" font-size="10" fill="#64748b" text-anchor="start" font-weight="600">（非酶褐变 B）</text>
+<text x="164" y="333" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600">纯糖类单枪匹马</text>
+<text x="164" y="353" font-size="10" fill="#64748b" text-anchor="start">（无需蛋白质/氨基酸）</text>
+<text x="332" y="333" font-size="10.5" fill="#1e293b" text-anchor="start" font-weight="600">果糖 105°C / 葡萄糖 150°C</text>
+<text x="332" y="353" font-size="10" fill="#b45309" text-anchor="start" font-weight="600">蔗糖 170°C 高温脱水热解</text>
+<text x="482" y="333" font-size="10.5" fill="#1e293b" text-anchor="start" font-weight="600">焦糖素 + 双乙酰等</text>
+<text x="482" y="353" font-size="10" fill="#64748b" text-anchor="start">奶油焦甜香（过火发苦）</text>
+<text x="618" y="333" font-size="10.5" fill="#1e293b" text-anchor="start">拔丝红薯、焦糖布丁、</text>
+<text x="618" y="353" font-size="10.5" fill="#1e293b" text-anchor="start">冰糖炒糖色、可乐色</text>
+<rect x="24" y="394" width="712" height="110" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="38.0" y="406.0" width="304" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="190.0" y="421.0" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">三秒厨房破案口诀（看温度 + 看锅具 + 闻香味）</text>
+<rect x="38" y="438" width="160" height="54" rx="8" fill="#f1f5f9" stroke="#c25014" stroke-opacity="0.45"/>
+<text x="118" y="459" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="700">常温切开慢慢暗</text>
+<text x="118" y="479" font-size="10" fill="#c25014" text-anchor="middle" font-weight="700">→ 酶促褐变（泡水/焯水）</text>
+<rect x="212" y="438" width="160" height="54" rx="8" fill="#f1f5f9" stroke="#312e81" stroke-opacity="0.45"/>
+<text x="292" y="459" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="700">下铁锅秒变紫乌黑</text>
+<text x="292" y="479" font-size="10" fill="#312e81" text-anchor="middle" font-weight="700">→ 铁酚络合（换锅/加醋）</text>
+<rect x="388" y="438" width="160" height="54" rx="8" fill="#f1f5f9" stroke="#b91c1c" stroke-opacity="0.45"/>
+<text x="468" y="459" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="700">猛火干煎出肉麦香</text>
+<text x="468" y="479" font-size="10" fill="#b91c1c" text-anchor="middle" font-weight="700">→ 美拉德（擦干水分才香）</text>
+<rect x="564" y="438" width="160" height="54" rx="8" fill="#f1f5f9" stroke="#b45309" stroke-opacity="0.45"/>
+<text x="644" y="459" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="700">白糖熬化冒琥珀泡</text>
+<text x="644" y="479" font-size="10" fill="#b45309" text-anchor="middle" font-weight="700">→ 焦糖化（控温防碳化苦）</text>
+</svg>

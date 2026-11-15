@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="504" viewBox="0 0 760 504" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">英国国家口语语料库1994与2014脏话频率、性别比变化及社交语境效应图</title>
+<desc id="desc">左栏展示1994至2014年日常口语脏话率下降27.6%且男女比例从2.33比1缩窄至1.68比1，右栏展示20多岁年龄峰值与同性密友语境效应</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="503" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="380.0" y="30" font-size="18.2" fill="#1e293b" text-anchor="middle" font-weight="700">男人天生满嘴跑火车？1,500 万词真实口语录音揭开的 20 年大反转</text>
+<text x="380.0" y="52" font-size="12.0" fill="#64748b" text-anchor="middle">英国国家口语语料库（Spoken BNC1994 vs BNC2014，Love 2021）追踪 16 个核心脏话词根的真实变迁</text>
+<rect x="22" y="68" width="366" height="416" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="38.0" y="82.0" width="334" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="205.0" y="97.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">① 两大意外发现：总量降了 27.6%，性别差距缩水近半</text>
+<text x="42" y="126" font-size="11.0" fill="#0f172a" text-anchor="start" font-weight="700">A. 日常对话每百万词脏话出现次数（整体占比不足 0.2%！）</text>
+<text x="42" y="155" font-size="10.8" fill="#475569" text-anchor="start" font-weight="700">1994 年</text>
+<rect x="98" y="140" width="236" height="22" rx="5" fill="#94a3b8"/>
+<text x="340" y="155" font-size="10.8" fill="#475569" text-anchor="start" font-weight="700">1,822 词</text>
+<text x="42" y="187" font-size="10.8" fill="#1d6fa5" text-anchor="start" font-weight="700">2014 年</text>
+<rect x="98" y="172" width="171" height="22" rx="5" fill="#2563eb"/>
+<text x="277" y="187" font-size="10.8" fill="#1d6fa5" text-anchor="start" font-weight="700">1,320 词（↓27.6%）</text>
+<text x="42" y="214" font-size="9.9" fill="#64748b" text-anchor="start">注：1,320 / 1,000,000 = 0.132%，即平均每说 758 个词才蹦出 1 个脏字。</text>
+<line x1="38.0" y1="228.0" x2="372.0" y2="228.0" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="42" y="250" font-size="11.0" fill="#0f172a" text-anchor="start" font-weight="700">B. 男性 vs 女性脏话使用频率之比（以女性 = 1.00 为基准）</text>
+<text x="42" y="280" font-size="10.4" fill="#c25014" text-anchor="start" font-weight="700">1994 男</text>
+<rect x="98" y="266" width="210" height="18" rx="4" fill="#ea580c"/>
+<text x="314" y="280" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="700">2.33 倍</text>
+<text x="42" y="304" font-size="10.4" fill="#0f766e" text-anchor="start">1994 女</text>
+<rect x="98" y="290" width="90" height="18" rx="4" fill="#0f766e"/>
+<text x="194" y="304" font-size="10.2" fill="#0f766e" text-anchor="start">1.00（基准）</text>
+<text x="42" y="338" font-size="10.4" fill="#c25014" text-anchor="start" font-weight="700">2014 男</text>
+<rect x="98" y="324" width="151" height="18" rx="4" fill="#fb923c"/>
+<text x="255" y="338" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="700">1.68 倍（差距收窄！）</text>
+<text x="42" y="362" font-size="10.4" fill="#0f766e" text-anchor="start">2014 女</text>
+<rect x="98" y="348" width="90" height="18" rx="4" fill="#0f766e"/>
+<text x="194" y="362" font-size="10.2" fill="#0f766e" text-anchor="start">1.00（基准）</text>
+<rect x="38" y="382" width="334" height="86" rx="8" fill="#f0fdfa" stroke="#5eead4" stroke-width="1"/>
+<text x="50" y="404" font-size="10.8" fill="#0f766e" text-anchor="start" font-weight="700">核心结论：脏话频率并非刻在 Y 染色体上的生理本能！</text>
+<text x="50" y="424" font-size="10.0" fill="#1e293b" text-anchor="start">• 随着女性公共话语空间扩大与传统礼仪松绑，短短 20 年间</text>
+<text x="50" y="443" font-size="10.0" fill="#1e293b" text-anchor="start">  男女超额倍率差（1.33 → 0.68）直接缩水了约 49%；</text>
+<text x="50" y="461" font-size="10.0" fill="#64748b" text-anchor="start">• 词库王座也发生更替：老派 bloody 大退潮，f-word 升至第一。</text>
+<rect x="402" y="68" width="336" height="416" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="418.0" y="82.0" width="304" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="570.0" y="97.0" font-size="12" fill="#c25014" text-anchor="middle" font-weight="600">② 年龄抛物线与“看人下菜碟”变色龙效应</text>
+<rect x="418" y="120" width="304" height="156" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="432" y="141" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">全生命周期脏话频率曲线（20–29 岁达到人生巅峰）</text>
+<line x1="450.0" y1="240.0" x2="696.0" y2="240.0" stroke="#475569" stroke-width="1.3"/>
+<line x1="450.0" y1="156.0" x2="450.0" y2="240.0" stroke="#475569" stroke-width="1.3"/>
+<path d="M 462 214 Q 512 152 536 164 T 684 234" fill="none" stroke="#94a3b8" stroke-width="2.2" stroke-dasharray="5 3"/>
+<path d="M 462 218 Q 512 162 540 170 T 684 212" fill="none" stroke="#2563eb" stroke-width="2.6"/>
+<circle cx="518" cy="164" r="4.5" fill="#dc2626"/>
+<text x="518" y="154" font-size="9.8" fill="#dc2626" text-anchor="middle" font-weight="700">20多岁峰值</text>
+<text x="644" y="198" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">2014 曲线更平缓</text>
+<text x="640" y="229" font-size="9.4" fill="#475569" text-anchor="middle">1994 随年龄骤降</text>
+<text x="466" y="256" font-size="9.6" fill="#64748b" text-anchor="middle">少年</text>
+<text x="520" y="256" font-size="9.6" fill="#64748b" text-anchor="middle">20岁+</text>
+<text x="596" y="256" font-size="9.6" fill="#64748b" text-anchor="middle">40岁+</text>
+<text x="672" y="256" font-size="9.6" fill="#64748b" text-anchor="middle">60岁+</text>
+<rect x="418" y="290" width="304" height="180" rx="10" fill="#fef1e8" stroke="#fdba74" stroke-width="1"/>
+<text x="432" y="312" font-size="10.8" fill="#c25014" text-anchor="start" font-weight="700">为什么无论男女，“关起门跟同性密友聊”脏字最多？</text>
+<text x="432" y="335" font-size="10.0" fill="#1e293b" text-anchor="start">• 同性圈“卸甲投名状”（McEnery &amp; Xiao 2004）：</text>
+<text x="432" y="356" font-size="10.0" fill="#1e293b" text-anchor="start">  语料库统计显示，男性在纯男性局、女性在纯闺蜜局里的粗话</text>
+<text x="432" y="377" font-size="10.0" fill="#1e293b" text-anchor="start">  密度，远高于有异性在场的混合社交局！</text>
+<text x="432" y="398" font-size="10.0" fill="#1e293b" text-anchor="start">• 80% 以上的日常粗话根本不是为了吵架伤人（Stapleton 2022）：</text>
+<text x="432" y="419" font-size="10.0" fill="#1e293b" text-anchor="start">  而是充当“咱俩熟到不用端着装客套”的社交亲密黏合剂——</text>
+<text x="432" y="440" font-size="10.0" fill="#1e293b" text-anchor="start">  一旦踏进异性或陌生职场局，双方都会默契收起这套暗号。</text>
+</svg>

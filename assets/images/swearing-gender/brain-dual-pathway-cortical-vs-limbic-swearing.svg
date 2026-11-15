@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="512" viewBox="0 0 760 512" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">大脑语言双通道模型：左脑布罗卡语法流水线与皮层下杏仁核基底核脏话反射回路图</title>
+<desc id="desc">对比左脑威尔尼克至布罗卡命题语法通路与皮层下杏仁核、基底核及右脑整体语块通路，解释中风失语症保留骂人能力的神经机制</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="511" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<style>
+  @keyframes limbicPulse {
+    0%   { stroke-dashoffset: 380; opacity: 0.35; }
+    20%  { opacity: 1.0; }
+    100% { stroke-dashoffset: 0; opacity: 1.0; }
+  }
+  .anim-limbic-pulse {
+    stroke-dasharray: 12 8;
+    stroke-dashoffset: 0;
+    animation: limbicPulse 2.6s ease-out 1 forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .anim-limbic-pulse { animation: none !important; stroke-dashoffset: 0 !important; opacity: 1 !important; }
+  }
+</style>
+<text x="380.0" y="30" font-size="18.2" fill="#1e293b" text-anchor="middle" font-weight="700">为什么左脑中风说不出“今天星期几”，被踩脚时却能流利骂人？</text>
+<text x="380.0" y="52" font-size="11.8" fill="#64748b" text-anchor="middle">普通造句走“左脑皮层语法装配线”，而本能爆粗走“边缘系统—基底核情绪地下专线”（Broca 1861；Sidtis 1999）</text>
+<rect x="22" y="68" width="716" height="174" rx="12" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="38.0" y="82.0" width="486" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="281.0" y="97.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">公路 A：左脑新皮层“命题造句流水线”（说礼貌长句、汇报工作、答星期几）</text>
+<rect x="42" y="122" width="146" height="84" rx="8" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<text x="115.0" y="146" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">① 概念与选词</text>
+<text x="115.0" y="168" font-size="10.0" fill="#0f172a" text-anchor="middle" font-weight="700">左颞叶威尔尼克区</text>
+<text x="115.0" y="188" font-size="9.6" fill="#64748b" text-anchor="middle">按语义检索礼貌词汇</text>
+<rect x="218" y="122" width="162" height="84" rx="8" fill="#fee2e2" stroke="#f87171" stroke-width="1"/>
+<text x="299.0" y="146" font-size="10.8" fill="#dc2626" text-anchor="middle" font-weight="700">② 语法拼装中心</text>
+<text x="299.0" y="168" font-size="10.0" fill="#0f172a" text-anchor="middle" font-weight="700">左额叶布罗卡区（Broca）</text>
+<text x="299.0" y="188" font-size="9.6" fill="#64748b" text-anchor="middle">主谓宾时态逐字组装</text>
+<rect x="410" y="122" width="144" height="84" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="482.0" y="146" font-size="10.8" fill="#475569" text-anchor="middle" font-weight="700">③ 运动皮层发令</text>
+<text x="482.0" y="168" font-size="10.0" fill="#0f172a" text-anchor="middle" font-weight="700">精细唇舌声带协调</text>
+<text x="482.0" y="188" font-size="9.6" fill="#64748b" text-anchor="middle">按音节顺序吐字</text>
+<rect x="584" y="122" width="136" height="84" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1"/>
+<text x="652.0" y="146" font-size="10.8" fill="#dc2626" text-anchor="middle" font-weight="700">中风失语症后果</text>
+<text x="652.0" y="168" font-size="10.0" fill="#0f172a" text-anchor="middle" font-weight="700">✕ 普通说话彻底中断</text>
+<text x="652.0" y="188" font-size="9.6" fill="#64748b" text-anchor="middle">答不出天气与日期</text>
+<line x1="190.0" y1="164.0" x2="214.0" y2="164.0" stroke="#1d6fa5" stroke-width="2.2" marker-end="url(#arr-blue)"/>
+<line x1="382.0" y1="164.0" x2="406.0" y2="164.0" stroke="#dc2626" stroke-width="2.2" stroke-dasharray="4 3"/>
+<text x="394" y="152" font-size="9.6" fill="#dc2626" text-anchor="middle" font-weight="700">受损断路✕</text>
+<line x1="556.0" y1="164.0" x2="580.0" y2="164.0" stroke="#dc2626" stroke-width="2.2" stroke-dasharray="4 3" marker-end="url(#arr-orange)"/>
+<text x="42" y="227" font-size="10.2" fill="#1e293b" text-anchor="start">关键特征：左脑把每个词拆成零件重新组装，耗时较长，且受前额叶皮层“社会礼仪刹车片”严格审查（看场合决定忍不忍住）。</text>
+<rect x="22" y="256" width="716" height="236" rx="12" fill="#fef1e8" stroke="#fdba74" stroke-width="1"/>
+<rect x="38.0" y="270.0" width="570" height="22" rx="11.0" fill="#ffedd5" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="323.0" y="285.0" font-size="12" fill="#c25014" text-anchor="middle" font-weight="600">公路 B：皮层下“边缘系统—基底核情绪急救专线”（小脚趾撞桌角 0.2 秒脱口而出的本能呼叫）</text>
+<path class="anim-limbic-pulse" d="M 114 398 L 296 398 L 482 398 L 652 398" fill="none" stroke="#dc2626" stroke-width="3.2"/>
+<rect x="42" y="312" width="146" height="80" rx="8" fill="#ffffff" stroke="#fca5a5" stroke-width="1"/>
+<text x="115.0" y="335" font-size="10.8" fill="#dc2626" text-anchor="middle" font-weight="700">① 痛觉 / 威胁警报</text>
+<text x="115.0" y="356" font-size="10.0" fill="#0f172a" text-anchor="middle" font-weight="700">杏仁核（Amygdala）</text>
+<text x="115.0" y="375" font-size="9.5" fill="#1e293b" text-anchor="middle">瞬间拉响战或逃警报</text>
+<rect x="218" y="312" width="156" height="80" rx="8" fill="#ffffff" stroke="#fdba74" stroke-width="1"/>
+<text x="296.0" y="335" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="700">② 动作打包发射台</text>
+<text x="296.0" y="356" font-size="10.0" fill="#0f172a" text-anchor="middle" font-weight="700">基底核（Basal Ganglia）</text>
+<text x="296.0" y="375" font-size="9.5" fill="#1e293b" text-anchor="middle">像存“挥拳缩手”一样存脏话</text>
+<rect x="404" y="312" width="154" height="80" rx="8" fill="#ffffff" stroke="#fdba74" stroke-width="1"/>
+<text x="481.0" y="335" font-size="10.8" fill="#b45309" text-anchor="middle" font-weight="700">③ 整体语块提取</text>
+<text x="481.0" y="356" font-size="10.0" fill="#0f172a" text-anchor="middle" font-weight="700">右脑半球参与协助</text>
+<text x="481.0" y="375" font-size="9.5" fill="#1e293b" text-anchor="middle">整词原封不动直接弹出</text>
+<rect x="586" y="312" width="134" height="80" rx="8" fill="#e7f6ee" stroke="#86efac" stroke-width="1"/>
+<text x="653.0" y="335" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="700">✓ 绕开左脑病灶！</text>
+<text x="653.0" y="356" font-size="10.0" fill="#0f172a" text-anchor="middle" font-weight="700">失语患者照样脱口骂</text>
+<text x="653.0" y="375" font-size="9.5" fill="#1e293b" text-anchor="middle">伴随心率与微出汗飙升</text>
+<line x1="190.0" y1="352.0" x2="214.0" y2="352.0" stroke="#dc2626" stroke-width="2.4" marker-end="url(#arr-orange)"/>
+<line x1="376.0" y1="352.0" x2="400.0" y2="352.0" stroke="#c25014" stroke-width="2.4" marker-end="url(#arr-orange)"/>
+<line x1="560.0" y1="352.0" x2="582.0" y2="352.0" stroke="#18794e" stroke-width="2.4" marker-end="url(#arr-green)"/>
+<rect x="42" y="412" width="678" height="66" rx="8" fill="#ffffff" stroke="#fed7aa" stroke-width="1"/>
+<text x="56" y="434" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">神经科学铁证（美国神经科学学会 BrainFacts 档案）：</text>
+<text x="56" y="454" font-size="9.9" fill="#1e293b" text-anchor="start">• 1861 年布罗卡本人记录的失语症病人仅剩一句法语粗话完好；妥瑞氏症（Tourette）不自主秽语同样源于基底核指令脱缰；</text>
+<text x="56" y="471" font-size="9.9" fill="#c25014" text-anchor="start" font-weight="700">• 猫咪遇险时“杏仁核 → 基底核”触发炸毛哈气，人类则在同一条古老回路上把“抓咬哈气”升级成了脱口而出的禁忌音节！</text>
+</svg>

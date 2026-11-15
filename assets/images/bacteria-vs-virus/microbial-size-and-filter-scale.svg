@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">细菌与病毒的对数尺寸比例尺及1892年瓷滤器发现史图解</title>
+<desc id="desc">对数坐标对比鼻病毒30纳米、流感新冠100纳米、T4噬菌体200纳米、潘多拉病毒1微米、大肠杆菌2微米与红细胞8微米，并展示1892年尚贝兰瓷滤器实验与1935年病毒结晶。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">差出十到一百倍的微观比例尺：从纳米病毒、微米细菌到瓷滤器百年悬案</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">上方对数坐标轴（每格差 10 倍）对比真实尺寸与光学极限；下方还原 1892 年伊万诺夫斯基瓷滤器实验</text>
+<rect x="20" y="64" width="720" height="222" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="74.0" width="456" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="262.0" y="89.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">① 对数尺度全景（1 μm = 1,000 nm，注意横轴每跨一格放大 10 倍）</text>
+<rect x="56.0" y="106" width="210.8" height="106" rx="6" fill="#f3e8ff" opacity="0.55"/>
+<rect x="266.8" y="106" width="437.2" height="106" rx="6" fill="#e7f6ee" opacity="0.50"/>
+<text x="161.4" y="122" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="600">仅电子显微镜可见区（&lt;200 nm）</text>
+<text x="485.4" y="122" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="600">普通光学显微镜可见区（≥200 nm，含绝大多数细菌与真核细胞）</text>
+<line x1="56.0" y1="212" x2="704.0" y2="212" stroke="#0f172a" stroke-width="2"/>
+<line x1="56.0" y1="206" x2="56.0" y2="218" stroke="#0f172a" stroke-width="1.8"/>
+<text x="52.0" y="233" font-size="11" fill="#475569" text-anchor="start" font-weight="600">10 nm</text>
+<line x1="218.0" y1="206" x2="218.0" y2="218" stroke="#0f172a" stroke-width="1.8"/>
+<text x="218.0" y="233" font-size="11" fill="#475569" text-anchor="middle" font-weight="600">100 nm</text>
+<line x1="380.0" y1="206" x2="380.0" y2="218" stroke="#0f172a" stroke-width="1.8"/>
+<text x="380.0" y="233" font-size="11" fill="#475569" text-anchor="middle" font-weight="600">1 μm (1,000 nm)</text>
+<line x1="542.0" y1="206" x2="542.0" y2="218" stroke="#0f172a" stroke-width="1.8"/>
+<text x="542.0" y="233" font-size="11" fill="#475569" text-anchor="middle" font-weight="600">10 μm</text>
+<line x1="704.0" y1="206" x2="704.0" y2="218" stroke="#0f172a" stroke-width="1.8"/>
+<text x="710.0" y="233" font-size="11" fill="#475569" text-anchor="end" font-weight="600">100 μm（肉眼极限）</text>
+<line x1="218.0" y1="106" x2="218.0" y2="212" stroke="#c25014" stroke-width="1.5" stroke-dasharray="4 3"/>
+<line x1="266.8" y1="106" x2="266.8" y2="212" stroke="#1d6fa5" stroke-width="1.6" stroke-dasharray="5 3"/>
+<circle cx="133.3" cy="192" r="4.5" fill="#6d28d9"/>
+<line x1="133.3" y1="154" x2="133.3" y2="186" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="133.3" y="148" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="600" class="halo">鼻病毒 30 nm</text>
+<circle cx="218.0" cy="190" r="6.5" fill="#6d28d9" stroke="#fff" stroke-width="1.2"/>
+<line x1="218.0" y1="172" x2="218.0" y2="183" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="218.0" y="167" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="600" class="halo">流感/新冠 ~100 nm</text>
+<polygon points="266.8,181 272.8,189 266.8,197 260.8,189" fill="#1d6fa5"/>
+<line x1="266.8" y1="146" x2="266.8" y2="179" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="266.8" y="141" font-size="11.2" fill="#1d6fa5" text-anchor="middle" font-weight="600" class="halo">T4噬菌体 200 nm（光学极限）</text>
+<ellipse cx="380.0" cy="190" rx="8" ry="5.5" fill="#c25014" stroke="#fff" stroke-width="1"/>
+<line x1="380.0" y1="172" x2="380.0" y2="183" stroke="#c25014" stroke-width="1.2"/>
+<text x="374.0" y="167" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="600" class="halo">潘多拉巨型病毒 ~1 μm</text>
+<rect x="417.8" y="183" width="22" height="12" rx="6" fill="#18794e"/>
+<line x1="428.8" y1="146" x2="428.8" y2="181" stroke="#18794e" stroke-width="1.2"/>
+<text x="456.8" y="141" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700" class="halo">大肠杆菌 ~2 μm</text>
+<circle cx="526.3" cy="187" r="11" fill="#fef2f2" stroke="#b91c1c" stroke-width="2.2"/>
+<circle cx="526.3" cy="187" r="4" fill="none" stroke="#b91c1c" stroke-width="1" opacity="0.6"/>
+<line x1="526.3" y1="168" x2="526.3" y2="175" stroke="#b91c1c" stroke-width="1.2"/>
+<text x="542.3" y="165" font-size="11.5" fill="#b91c1c" text-anchor="start" font-weight="700" class="halo">红细胞 ~8 μm</text>
+<rect x="34" y="242" width="692" height="34" rx="7" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+<text x="380" y="264" font-size="11.5" fill="#1e293b" text-anchor="middle" font-weight="600">直观比喻：红细胞若像篮球场，大肠杆菌就像场上的家用轿车，流感病毒像轮胎旁的足球！跨界异类：华丽硫珠菌长达 1 cm</text>
+<rect x="20" y="298" width="446" height="204" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="308.0" width="380" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="224.0" y="323.0" font-size="12" fill="#c25014" text-anchor="middle" font-weight="600">② 1892 瓷滤器破案：拦得住所有细菌，却拦不住“滤过性毒”</text>
+<rect x="42" y="342" width="126" height="144" rx="8" fill="#fff7ed" stroke="#c25014" stroke-width="1"/>
+<text x="105" y="360" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700">烟草病叶汁液</text>
+<rect x="60" y="370" width="22" height="9" rx="4.5" fill="#18794e"/>
+<rect x="116" y="372" width="22" height="9" rx="4.5" fill="#18794e"/>
+<circle cx="94" cy="374" r="3.2" fill="#6d28d9"/>
+<circle cx="76" cy="386" r="3.2" fill="#6d28d9"/>
+<circle cx="108" cy="385" r="3.2" fill="#6d28d9"/>
+<circle cx="138" cy="386" r="3.2" fill="#6d28d9"/>
+<rect x="48" y="398" width="114" height="18" rx="3" fill="#fed7aa" stroke="#c25014" stroke-width="1.4"/>
+<line x1="70" y1="398" x2="70" y2="416" stroke="#ffffff" stroke-width="2.6"/>
+<line x1="94" y1="398" x2="94" y2="416" stroke="#ffffff" stroke-width="2.6"/>
+<line x1="118" y1="398" x2="118" y2="416" stroke="#ffffff" stroke-width="2.6"/>
+<line x1="142" y1="398" x2="142" y2="416" stroke="#ffffff" stroke-width="2.6"/>
+<text x="105" y="411" font-size="10.8" fill="#0f172a" text-anchor="middle" font-weight="700">100 nm 素烧瓷板</text>
+<circle cx="72" cy="430" r="3.2" fill="#6d28d9"/>
+<circle cx="96" cy="434" r="3.2" fill="#6d28d9"/>
+<circle cx="120" cy="429" r="3.2" fill="#6d28d9"/>
+<circle cx="140" cy="435" r="3.2" fill="#6d28d9"/>
+<circle cx="86" cy="446" r="3.2" fill="#6d28d9"/>
+<circle cx="114" cy="447" r="3.2" fill="#6d28d9"/>
+<text x="105" y="468" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">清澈滤液仍致病！</text>
+<text x="105" y="482" font-size="10.8" fill="#64748b" text-anchor="middle">（仅纳米颗粒穿孔）</text>
+<rect x="184" y="342" width="268" height="66" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="196" y="362" font-size="12" fill="#18794e" text-anchor="start" font-weight="700">滤渣中的细菌（≥200 nm）：</text>
+<text x="196" y="381" font-size="11.2" fill="#1e293b" text-anchor="start">• 被瓷孔死死卡住；涂在无细胞肉汤琼脂</text>
+<text x="196" y="398" font-size="11.2" fill="#1e293b" text-anchor="start">  平板上能自己吃糖长出肉眼可见菌落</text>
+<rect x="184" y="418" width="268" height="68" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="196" y="438" font-size="12" fill="#6d28d9" text-anchor="start" font-weight="700">穿孔而过的烟草花叶病毒（TMV）：</text>
+<text x="196" y="457" font-size="11.2" fill="#1e293b" text-anchor="start">• 在肉汤琼脂上死寂一片（0 繁殖）！</text>
+<text x="196" y="474" font-size="11.2" fill="#1e293b" text-anchor="start">• 唯有擦回活烟草叶细胞内才疯狂扩增</text>
+<rect x="480" y="298" width="260" height="204" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="494.0" y="308.0" width="224" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="606.0" y="323.0" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="600">③ 1935 结晶震撼与终极分界线</text>
+<polygon points="528,354 562,344 580,362 546,374" fill="#ede9fe" stroke="#6d28d9" stroke-width="1.5"/>
+<polygon points="566,358 602,348 616,366 582,376" fill="#ddd6fe" stroke="#6d28d9" stroke-width="1.5"/>
+<text x="628" y="358" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="600">斯坦利提纯出</text>
+<text x="628" y="374" font-size="11.2" fill="#6d28d9" text-anchor="start" font-weight="700">TMV 针状晶体</text>
+<text x="494" y="398" font-size="11.2" fill="#1e293b" text-anchor="start">像食盐一样装瓶结晶，兑水后仍能感染！</text>
+<line x1="494" y1="410" x2="726" y2="410" stroke="#e2e8f0" stroke-width="1"/>
+<text x="494" y="430" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">无论个头多大，铁律只有一条：</text>
+<text x="494" y="450" font-size="11.2" fill="#18794e" text-anchor="start" font-weight="600">• 细菌 = 活细胞（自带 70S 核糖体 + 产能）</text>
+<text x="494" y="470" font-size="11.2" fill="#6d28d9" text-anchor="start" font-weight="600">• 病毒 = 非细胞（0 核糖体 + 0 独立代谢）</text>
+<text x="494" y="488" font-size="11" fill="#64748b" text-anchor="start">  潘多拉病毒再大也是“巨型U盘”！</text>
+</svg>

@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="492" viewBox="0 0 760 492" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">文物古玉的三重形成过程全景图</title>
+<desc id="desc">展示一块文物古玉依次经历地质成矿、解玉砂琢磨成器与地下千年埋藏受沁风化的三重形成机制</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="491" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="380.0" y="30" font-size="18.5" fill="#1e293b" text-anchor="middle" font-weight="700">一块传世“文物古玉”的三重诞生：天地炼石、匠人攻器与岁月受沁</text>
+<text x="380.0" y="52" font-size="12.2" fill="#64748b" text-anchor="middle">博物馆里的古玉不是天生那副模样——它先后经历亿年地质变质、无铁时代砂磨与数千年地下化学风化</text>
+<rect x="22" y="72" width="224" height="396" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34" y="86" width="200" height="58" rx="9" fill="#f0fdfa" stroke="#5eead4" stroke-width="1"/>
+<text x="134" y="110" font-size="14.5" fill="#115e59" text-anchor="middle" font-weight="700">第一重诞生：天地成石</text>
+<text x="134" y="131" font-size="11" fill="#1e293b" text-anchor="middle">时间尺度：数千万至数亿年</text>
+<rect x="34" y="154" width="200" height="82" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<polygon points="48,224 84,168 118,224" fill="#cbd5e1" stroke="#64748b" stroke-width="1.5"/>
+<polygon points="92,224 128,176 162,224" fill="#94a3b8" stroke="#475569" stroke-width="1.5"/>
+<ellipse cx="182" cy="206" rx="20" ry="13" fill="#ccfbf1" stroke="#115e59" stroke-width="2"/>
+<path d="M 166 198 Q 182 190 198 199" fill="none" stroke="#d97706" stroke-width="2.5"/>
+<text x="182" y="229" font-size="10.2" fill="#115e59" text-anchor="middle" font-weight="700">红皮籽料</text>
+<text x="134" y="258" font-size="11.6" fill="#115e59" text-anchor="middle" font-weight="700">【地下高温高压变质与冰河筛选】</text>
+<text x="38" y="281" font-size="10.8" fill="#1e293b" text-anchor="start">• 软玉（和田玉/良渚玉）：岩浆热液</text>
+<text x="38" y="305" font-size="10.8" fill="#1e293b" text-anchor="start">  交代白云质大理岩，长出毛毡纤维；</text>
+<text x="38" y="329" font-size="10.8" fill="#1e293b" text-anchor="start">• 硬玉（翡翠）：大洋俯冲带 30–60 km</text>
+<text x="38" y="353" font-size="10.8" fill="#1e293b" text-anchor="start">  万倍大气压“高压低温”挤出硬玉岩；</text>
+<text x="38" y="377" font-size="10.8" fill="#1e293b" text-anchor="start">• 冰川崩落 + 河水冲刷去粗存精成籽料。</text>
+<rect x="34" y="412" width="200" height="42" rx="8" fill="#f0fdfa" stroke="#5eead4" stroke-width="1"/>
+<text x="134" y="438" font-size="11" fill="#115e59" text-anchor="middle" font-weight="700">产物：温润致密的天然玉石矿料</text>
+<rect x="268" y="72" width="224" height="396" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="280" y="86" width="200" height="58" rx="9" fill="#fffbeb" stroke="#fcd34d" stroke-width="1"/>
+<text x="380" y="110" font-size="14.5" fill="#b45309" text-anchor="middle" font-weight="700">第二重诞生：匠人成器</text>
+<text x="380" y="131" font-size="11" fill="#1e293b" text-anchor="middle">时间尺度：数月至数十年苦功</text>
+<rect x="280" y="154" width="200" height="82" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="352" y="168" width="56" height="56" rx="5" fill="#ccfbf1" stroke="#115e59" stroke-width="2.2"/>
+<circle cx="380" cy="196" r="19" fill="#ffffff" stroke="#115e59" stroke-width="1.8"/>
+<text x="380" y="200" font-size="10.5" fill="#115e59" text-anchor="middle" font-weight="700">玉琮</text>
+<text x="442" y="190" font-size="10.5" fill="#b45309" text-anchor="middle" font-weight="700">石英砂</text>
+<text x="442" y="207" font-size="10.5" fill="#1e293b" text-anchor="middle">+ 竹管钻</text>
+<text x="380" y="258" font-size="11.6" fill="#b45309" text-anchor="middle" font-weight="700">【“他山之石”解玉砂切磋琢磨】</text>
+<text x="284" y="281" font-size="10.8" fill="#1e293b" text-anchor="start">• 青铜与生铁都比玉软，根本刻不动！</text>
+<text x="284" y="305" font-size="10.8" fill="#1e293b" text-anchor="start">• 靠莫氏硬度 7 的石英砂（解玉砂）</text>
+<text x="284" y="329" font-size="10.8" fill="#1e293b" text-anchor="start">  加水，由麻绳、竹管、木片带动研磨；</text>
+<text x="284" y="353" font-size="10.8" fill="#1e293b" text-anchor="start">• 砂绳线切留弧痕、双面管钻留台痕、</text>
+<text x="284" y="377" font-size="10.8" fill="#1e293b" text-anchor="start">  燧石微刻神徽，赋予礼天敬祖灵魂。</text>
+<rect x="280" y="412" width="200" height="42" rx="8" fill="#fffbeb" stroke="#fcd34d" stroke-width="1"/>
+<text x="380" y="438" font-size="11" fill="#b45309" text-anchor="middle" font-weight="700">产物：晶莹半透明的崭新礼仪玉器</text>
+<rect x="514" y="72" width="224" height="396" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="526" y="86" width="200" height="58" rx="9" fill="#f3e8ff" stroke="#d8b4fe" stroke-width="1"/>
+<text x="626" y="110" font-size="14.5" fill="#6d28d9" text-anchor="middle" font-weight="700">第三重诞生：入土成古</text>
+<text x="626" y="131" font-size="11" fill="#1e293b" text-anchor="middle">时间尺度：埋藏一两千至五千年</text>
+<rect x="526" y="154" width="200" height="82" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="626" cy="195" r="28" fill="#f5f5f4" stroke="#78716c" stroke-width="2.2"/>
+<circle cx="626" cy="195" r="10" fill="#f8fafc" stroke="#78716c" stroke-width="1.8"/>
+<path d="M 604 182 Q 614 176 622 183" fill="none" stroke="#dc2626" stroke-width="3"/>
+<path d="M 638 206 Q 646 212 634 218" fill="none" stroke="#1e293b" stroke-width="3"/>
+<text x="564" y="188" font-size="10.2" fill="#57534e" text-anchor="middle" font-weight="700">鸡骨白</text>
+<text x="688" y="188" font-size="10.2" fill="#dc2626" text-anchor="middle" font-weight="700">朱砂/黑沁</text>
+<text x="626" y="258" font-size="11.6" fill="#6d28d9" text-anchor="middle" font-weight="700">【地下水淋滤受沁与祭祀火燎】</text>
+<text x="530" y="281" font-size="10.8" fill="#1e293b" text-anchor="start">• 弱酸碱地下水溶蚀晶界，蚀出纳米微孔，</text>
+<text x="530" y="305" font-size="10.8" fill="#1e293b" text-anchor="start">  漫反射白化成象牙般的“鸡骨白”；</text>
+<text x="530" y="329" font-size="10.8" fill="#1e293b" text-anchor="start">• 墓中朱砂（α-HgS）、铁锈、青铜绿</text>
+<text x="530" y="353" font-size="10.8" fill="#1e293b" text-anchor="start">  顺微裂隙渗入，染出红沁、黄沁、绿沁；</text>
+<text x="530" y="377" font-size="10.8" fill="#1e293b" text-anchor="start">• 辰砂转黑辰砂（β-HgS）成“水银沁”。</text>
+<rect x="526" y="412" width="200" height="42" rx="8" fill="#f3e8ff" stroke="#d8b4fe" stroke-width="1"/>
+<text x="626" y="438" font-size="11" fill="#6d28d9" text-anchor="middle" font-weight="700">产物：带历史包浆与沁色的文物古玉</text>
+<line x1="247" y1="265" x2="266" y2="265" stroke="#b45309" stroke-width="2.6" marker-end="url(#arr-orange)"/>
+<line x1="493" y1="265" x2="512" y2="265" stroke="#6d28d9" stroke-width="2.6" marker-end="url(#arr-blue)"/>
+</svg>

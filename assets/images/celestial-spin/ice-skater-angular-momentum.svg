@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="478" viewBox="0 0 760 478" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">角动量守恒驱动星云坍缩起旋与恒星至中子星四级自转加速账本图</title>
+<desc id="desc">左面板展示原始星云因湍流净角动量不为零，在引力坍缩中摊平为原行星盘并令恒星与行星同向自转；右面板列出从分子云、恒星、白矮星到中子星按I∝R²缩小的转速跃升。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#6d28d9"/>
+  </marker>
+  <marker id="arr-crimson" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#b91c1c"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="477" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">天体自转的第一推动力：太空里没人推一把，星球凭什么自己转起来？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">角动量守恒（L = Iω ∝ M·R²·ω）：只要初始气体云净涡旋不为绝对零，引力坍缩就会把微动放大百万倍</text>
+<rect x="16" y="68" width="380" height="394" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="28.0" y="80.0" width="236" height="24" rx="12.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="146.0" y="96.3" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">花样滑冰收臂效应：星云坍缩三部曲</text>
+<ellipse cx="96" cy="176" rx="58" ry="44" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.4" stroke-dasharray="4 3"/>
+<text x="96" y="171" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">① 原始星云</text>
+<text x="96" y="190" font-size="10.5" fill="#1e293b" text-anchor="middle">R ≈ 1 光年</text>
+<text x="96" y="236" font-size="10.3" fill="#64748b" text-anchor="middle">湍流无法 100% 抵消</text>
+<text x="96" y="252" font-size="10.3" fill="#0f172a" text-anchor="middle" font-weight="600">残余微弱净旋转</text>
+<line x1="160.0" y1="176.0" x2="188.0" y2="176.0" stroke="#1d6fa5" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<ellipse cx="242" cy="176" rx="46" ry="15" fill="#fef1e8" stroke="#c25014" stroke-width="1.6"/>
+<circle cx="242" cy="176" r="10" fill="#c25014"/>
+<text x="242" y="145" font-size="11" fill="#c25014" text-anchor="middle" font-weight="700">② 坍缩摊成圆盘</text>
+<text x="242" y="236" font-size="10.3" fill="#64748b" text-anchor="middle">垂直方向掉向赤道面</text>
+<text x="242" y="252" font-size="10.3" fill="#0f172a" text-anchor="middle" font-weight="600">水平角动量拉住物质</text>
+<line x1="294.0" y1="176.0" x2="318.0" y2="176.0" stroke="#c25014" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<circle cx="352" cy="176" r="24" fill="#e7f6ee" stroke="#18794e" stroke-width="1.8"/>
+<line x1="352.0" y1="142.0" x2="352.0" y2="210.0" stroke="#18794e" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 2"/>
+<text x="352" y="180" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="700">ω 暴增!</text>
+<text x="352" y="236" font-size="11" fill="#18794e" text-anchor="middle" font-weight="700">③ 恒星与行星</text>
+<text x="352" y="252" font-size="10.3" fill="#0f172a" text-anchor="middle" font-weight="600">继承同一转向</text>
+<rect x="28" y="274" width="356" height="174" rx="8" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="40" y="296" font-size="11.3" fill="#0f172a" text-anchor="start" font-weight="700">为什么牛顿当年感叹“第一推动”，而现代天体物理不慌？</text>
+<text x="40" y="319" font-size="10.8" fill="#1e293b" text-anchor="start">• 真实宇宙气体云受邻近超新星冲击与星系差异旋转扰动，</text>
+<text x="40" y="339" font-size="10.8" fill="#1e293b" text-anchor="start">  往左与往右的动量矩刚好抵消到小数点后无穷位的概率为 0；</text>
+<text x="40" y="361" font-size="10.8" fill="#1e293b" text-anchor="start">• 当半径 R 缩小 1,000 万倍凝成恒星时，哪怕最初边缘只有</text>
+<text x="40" y="381" font-size="10.8" fill="#1d6fa5" text-anchor="start" font-weight="700">  每秒几厘米的微风偏转，按 v_⊥ ∝ 1/R 也会飙升到千米/秒！</text>
+<text x="40" y="405" font-size="10.8" fill="#1e293b" text-anchor="start">• 这同时解释了为什么太阳自转、八大行星公转与大多数行星</text>
+<text x="40" y="425" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="600">  自转，从北极俯视全都是整齐划一的“逆时针（自西向东）”！</text>
+<rect x="408" y="68" width="336" height="394" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="420.0" y="80.0" width="244" height="24" rx="12.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="542.0" y="96.3" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="600">坍缩放大账本：ω₂ / ω₁ ≈ (R₁ / R₂)²</text>
+<rect x="420" y="118" width="312" height="54" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="432" y="140" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">① 星际分子云核</text>
+<text x="720" y="140" font-size="11" fill="#0f172a" text-anchor="end" font-weight="700">R ≈ 10¹² km</text>
+<text x="432" y="160" font-size="10.8" fill="#1e293b" text-anchor="start">自转速率：几百万年才微转一圈</text>
+<rect x="420" y="184" width="312" height="54" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="432" y="206" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">② 坍缩成年轻恒星</text>
+<text x="720" y="206" font-size="11" fill="#0f172a" text-anchor="end" font-weight="700">R ≈ 7×10⁵ km</text>
+<text x="432" y="226" font-size="10.8" fill="#1e293b" text-anchor="start">自转速率：几天至几十天一圈（如太阳 25天）</text>
+<rect x="420" y="250" width="312" height="54" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="432" y="272" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">③ 晚年压成白矮星</text>
+<text x="720" y="272" font-size="11" fill="#0f172a" text-anchor="end" font-weight="700">R ≈ 6,000 km</text>
+<text x="432" y="292" font-size="10.8" fill="#1e293b" text-anchor="start">自转速率：几分钟至几小时一圈</text>
+<rect x="420" y="316" width="312" height="54" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="432" y="338" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">④ 铁核坍成中子星!</text>
+<text x="720" y="338" font-size="11" fill="#0f172a" text-anchor="end" font-weight="700">R ≈ 12–16 km</text>
+<text x="432" y="358" font-size="10.8" fill="#1e293b" text-anchor="start">自转速率：每秒几十圈至 716 圈!</text>
+<rect x="420" y="386" width="312" height="62" rx="8" fill="#fffbeb" stroke="#fcd34d"/>
+<text x="432" y="407" font-size="11" fill="#b45309" text-anchor="start" font-weight="700">心算验证（③→④ 恒星铁核坍缩为中子星）：</text>
+<text x="432" y="427" font-size="10.4" fill="#1e293b" text-anchor="start">半径从 1.2万km 缩至 12km（缩 1,000倍）⇒ 转动惯量 I∝R²</text>
+<text x="432" y="442" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="600">骤降 100 万倍 ⇒ 原本 10天/圈 直接飙到 每秒超 1 圈！</text>
+</svg>

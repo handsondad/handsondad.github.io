@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="492" viewBox="0 0 760 492" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">阿喀琉斯追乌龟悖论的真实匀速运动对比与时空图解</title>
+<desc id="desc">上栏按 10:1 真实速度比展示阿喀琉斯在 10 秒、100 米处追上并反超乌龟；下栏时空图与账本揭示芝诺的无穷追赶段总耗时精确收敛于 10 秒。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes zeno-achilles-run {
+        from { transform: translateX(0px); }
+        to   { transform: translateX(636.0px); }
+      }
+      @keyframes zeno-tortoise-crawl {
+        from { transform: translateX(0px); }
+        to   { transform: translateX(63.6px); }
+      }
+      .za-runner {
+        animation: zeno-achilles-run 6s linear 0.3s 1 forwards;
+      }
+      .zt-crawler {
+        animation: zeno-tortoise-crawl 6s linear 0.3s 1 forwards;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .za-runner, .zt-crawler {
+          animation: none !important;
+        }
+      }
+</style>
+<rect x="0.5" y="0.5" width="759" height="491" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">阿喀琉斯追乌龟：真实匀速超越 vs 芝诺把时钟卡在 10 秒前的“慢放陷阱”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">设阿喀琉斯 10 m/s（起点 0 m）、乌龟 1 m/s（让先 90 m）：真实世界精确在 t = 10 s、x = 100 m 并肩反超</text>
+<rect x="20" y="66" width="720" height="178" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="78.0" width="349" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="208.5" y="93.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">上栏：真实时间匀速赛跑（0 → 12 秒，速度严格按 10 : 1 等比运动）</text>
+<text x="724" y="93" font-size="11" fill="#64748b" text-anchor="end">注：动画播放一次停在 12 s 反超终态</text>
+<line x1="64.0" y1="166.0" x2="700.0" y2="166.0" stroke="#475569" stroke-width="2.5"/>
+<line x1="64.0" y1="156.0" x2="64.0" y2="176.0" stroke="#475569" stroke-width="1.3"/>
+<text x="64.0" y="192.0" font-size="11.5" fill="#475569" text-anchor="middle">0 m</text>
+<text x="64.0" y="208.0" font-size="10.8" fill="#64748b" text-anchor="middle">起点 t=0</text>
+<line x1="329.0" y1="156.0" x2="329.0" y2="176.0" stroke="#64748b" stroke-width="1.3"/>
+<text x="329.0" y="192.0" font-size="11.5" fill="#64748b" text-anchor="middle">50 m</text>
+<text x="329.0" y="208.0" font-size="10.8" fill="#64748b" text-anchor="middle">t=5 s</text>
+<line x1="541.0" y1="156.0" x2="541.0" y2="176.0" stroke="#c25014" stroke-width="2.2"/>
+<text x="525.0" y="192.0" font-size="11.5" fill="#c25014" text-anchor="middle">90 m</text>
+<text x="525.0" y="208.0" font-size="10.8" fill="#64748b" text-anchor="middle">t₁=9 s</text>
+<line x1="594.0" y1="156.0" x2="594.0" y2="176.0" stroke="#b91c1c" stroke-width="2.2"/>
+<text x="612.0" y="192.0" font-size="11.5" fill="#b91c1c" text-anchor="middle" font-weight="700">100 m</text>
+<text x="612.0" y="208.0" font-size="10.8" fill="#b91c1c" text-anchor="middle">追上! t=10 s</text>
+<line x1="700.0" y1="156.0" x2="700.0" y2="176.0" stroke="#1d6fa5" stroke-width="1.3"/>
+<text x="700.0" y="192.0" font-size="11.5" fill="#1d6fa5" text-anchor="middle">120 m</text>
+<text x="700.0" y="208.0" font-size="10.8" fill="#64748b" text-anchor="middle">t=12 s 终态</text>
+<line x1="594.0" y1="108" x2="594.0" y2="156.0" stroke="#b91c1c" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="586.0" y="118" font-size="11" fill="#b91c1c" text-anchor="end" font-weight="600">芝诺无限拍照全部挤在这条红线左侧 (90, 99, 99.9… m)</text>
+<circle cx="700.0" cy="142.0" r="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.4" stroke-dasharray="3 2"/>
+<text x="700.0" y="128.0" font-size="10.8" fill="#1d6fa5" text-anchor="end" font-weight="600">12s 阿喀琉斯 (120m)</text>
+<circle cx="604.6" cy="158.0" r="6.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.4" stroke-dasharray="3 2"/>
+<g class="za-runner"><circle cx="64.0" cy="142.0" r="8.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.8"/><text x="64.0" y="128.0" font-size="11.2" fill="#1d6fa5" text-anchor="start" font-weight="700" class="halo">阿喀琉斯 10 m/s</text></g>
+<g class="zt-crawler"><rect x="534.0" y="151.0" width="14" height="10" rx="5" fill="#18794e" stroke="#ffffff" stroke-width="1.5"/><text x="531.0" y="146.0" font-size="10.8" fill="#18794e" text-anchor="end" font-weight="700" class="halo">乌龟 1 m/s</text></g>
+<rect x="20" y="256" width="416" height="222" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="268.0" width="247" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="157.5" y="283.0" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="600">下左：时空图 (t, x) 一眼看穿——两条直线必相交</text>
+<line x1="74.0" y1="442.0" x2="408.8" y2="442.0" stroke="#475569" stroke-width="1.5" marker-end="url(#arr-muted)"/>
+<line x1="74.0" y1="442.0" x2="74.0" y2="309.7" stroke="#475569" stroke-width="1.5" marker-end="url(#arr-muted)"/>
+<text x="66.0" y="318.1" font-size="10.8" fill="#64748b" text-anchor="end">位置 x(m)</text>
+<text x="236.0" y="472.0" font-size="10.8" fill="#64748b" text-anchor="middle">时间 t (秒)</text>
+<line x1="74.0" y1="442.0" x2="74.0" y2="446.0" stroke="#64748b" stroke-width="1.3"/>
+<text x="74.0" y="458.0" font-size="10.8" fill="#64748b" text-anchor="middle">0</text>
+<line x1="209.0" y1="442.0" x2="209.0" y2="446.0" stroke="#64748b" stroke-width="1.3"/>
+<text x="209.0" y="458.0" font-size="10.8" fill="#64748b" text-anchor="middle">5</text>
+<line x1="317.0" y1="442.0" x2="317.0" y2="446.0" stroke="#64748b" stroke-width="1.3"/>
+<text x="317.0" y="458.0" font-size="10.8" fill="#64748b" text-anchor="middle">9</text>
+<line x1="344.0" y1="442.0" x2="344.0" y2="446.0" stroke="#b91c1c" stroke-width="1.3"/>
+<text x="344.0" y="458.0" font-size="10.8" fill="#b91c1c" text-anchor="middle" font-weight="700">10</text>
+<line x1="398.0" y1="442.0" x2="398.0" y2="446.0" stroke="#64748b" stroke-width="1.3"/>
+<text x="398.0" y="458.0" font-size="10.8" fill="#64748b" text-anchor="middle">12</text>
+<line x1="70.0" y1="442.0" x2="74.0" y2="442.0" stroke="#64748b" stroke-width="1.2"/>
+<text x="66.0" y="446.0" font-size="10.8" fill="#64748b" text-anchor="end">0</text>
+<line x1="70.0" y1="347.5" x2="74.0" y2="347.5" stroke="#64748b" stroke-width="1.2"/>
+<text x="66.0" y="356.5" font-size="10.8" fill="#64748b" text-anchor="end">90</text>
+<line x1="70.0" y1="337.0" x2="74.0" y2="337.0" stroke="#64748b" stroke-width="1.2"/>
+<text x="66.0" y="334.0" font-size="10.8" fill="#b91c1c" text-anchor="end">100</text>
+<rect x="74.0" y="337.0" width="270.0" height="105.0" fill="#fef1e8" opacity="0.45"/>
+<line x1="344.0" y1="442.0" x2="344.0" y2="323.0" stroke="#b91c1c" stroke-width="1.4" stroke-dasharray="4 3"/>
+<line x1="74.0" y1="347.5" x2="398.0" y2="334.9" stroke="#18794e" stroke-width="2.4"/>
+<text x="133.4" y="341.2" font-size="11" fill="#18794e" text-anchor="start" font-weight="600">乌龟 x_T = 90 + t</text>
+<line x1="74.0" y1="442.0" x2="398.0" y2="316.0" stroke="#1d6fa5" stroke-width="2.6"/>
+<text x="190.1" y="406.3" font-size="11" fill="#1d6fa5" text-anchor="start" font-weight="700">阿喀琉斯 x_A = 10t</text>
+<polyline points="74.0,347.5 317.0,347.5 317.0,338.1 341.3,338.1" fill="none" stroke="#c25014" stroke-width="1.6" stroke-dasharray="3 2"/>
+<circle cx="344.0" cy="337.0" r="5" fill="#b91c1c" stroke="#ffffff" stroke-width="1.5"/>
+<text x="336.0" y="327.0" font-size="11.2" fill="#b91c1c" text-anchor="end" font-weight="700">交点 (10 s, 100 m)</text>
+<rect x="448" y="256" width="292" height="222" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="462.0" y="268.0" width="128" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="526.0" y="283.0" font-size="12" fill="#c25014" text-anchor="middle" font-weight="600">下右：芝诺账本漏掉了什么？</text>
+<text x="462" y="314" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">第 1 段</text>
+<text x="536" y="314" font-size="11.5" fill="#c25014" text-anchor="start" class="mono">Δt = 9 s</text>
+<text x="644" y="314" font-size="11.3" fill="#1e293b" text-anchor="start">A 到 90 m</text>
+<text x="462" y="338" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">第 2 段</text>
+<text x="536" y="338" font-size="11.5" fill="#c25014" text-anchor="start" class="mono">Δt = 0.9 s</text>
+<text x="644" y="338" font-size="11.3" fill="#1e293b" text-anchor="start">A 到 99 m</text>
+<text x="462" y="362" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">第 3 段</text>
+<text x="536" y="362" font-size="11.5" fill="#c25014" text-anchor="start" class="mono">Δt = 0.09 s</text>
+<text x="644" y="362" font-size="11.3" fill="#1e293b" text-anchor="start">A 到 99.9 m</text>
+<text x="462" y="386" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">第 k 段</text>
+<text x="536" y="386" font-size="11.5" fill="#c25014" text-anchor="start" class="mono">Δt = 9×10¹⁻ᵏ s</text>
+<text x="644" y="386" font-size="11.3" fill="#1e293b" text-anchor="start">无限逼近 100 m</text>
+<line x1="462" y1="406" x2="726" y2="406" stroke="#cbd5e1" stroke-width="1"/>
+<text x="462" y="426" font-size="11.8" fill="#b91c1c" text-anchor="start" font-weight="700">无穷段总耗时 = 9 + 0.9 + 0.09 + … = 10.0 秒！</text>
+<text x="462" y="446" font-size="11.2" fill="#1e293b" text-anchor="start">• 芝诺把 0 到 10 秒切成了无穷多帧慢镜头，</text>
+<text x="462" y="464" font-size="11.2" fill="#1e293b" text-anchor="start" font-weight="600">  却误把“无穷多步”当成“无穷长时间”！</text>
+</svg>

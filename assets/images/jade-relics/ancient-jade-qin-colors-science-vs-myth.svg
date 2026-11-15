@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="516" viewBox="0 0 760 516" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">出土古玉红沁黄沁铜绿沁与黑漆古水银沁的矿物化学成因图解</title>
+<desc id="desc">四宫格对比古玉红沁（辰砂与赤铁矿而非人血）、黄褐土沁（针铁矿）、铜绿沁（孔雀石）与黑漆古水银沁（黑辰砂β-HgS）的科学机制</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="515" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="380.0" y="30" font-size="18.5" fill="#1e293b" text-anchor="middle" font-weight="700">科学拆穿古玉“血沁”迷信：五彩斑斓的出土沁色到底从哪来？</text>
+<text x="380.0" y="52" font-size="12.2" fill="#64748b" text-anchor="middle">“千年碧血入玉”只是志怪小说——现代无损光谱与三维显微揪出了墓葬里的四种真实矿物染匠</text>
+<rect x="22" y="72" width="348" height="202" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34" y="84" width="324" height="34" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1"/>
+<text x="44" y="106" font-size="12" fill="#dc2626" text-anchor="start" font-weight="700">① 红沁 / 枣皮红：是朱砂与铁锈，绝非人血！</text>
+<text x="42" y="140" font-size="10.6" fill="#1e293b" text-anchor="start">民间传言：墓主咽气时的鲜血渗入玉肌化为“血沁”。</text>
+<text x="42" y="164" font-size="10.6" fill="#1e293b" text-anchor="start">科学铁证：血液血红蛋白是大分子有机物，入土不久便被</text>
+<text x="42" y="188" font-size="10.6" fill="#1e293b" text-anchor="start">微生物分解殆尽，二价铁氧化后也只会变成暗褐铁锈！</text>
+<text x="42" y="212" font-size="10.6" fill="#1e293b" text-anchor="start" font-weight="700">• 真凶一：先秦两汉贵族敛葬大量铺洒鲜红朱砂（辰砂 α-HgS）；</text>
+<text x="42" y="236" font-size="10.6" fill="#1e293b" text-anchor="start" font-weight="700">• 真凶二：富铁地下水沿玉器微裂纹渗入，沉淀出赤铁矿（Fe₂O₃）。</text>
+<rect x="390" y="72" width="348" height="202" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="402" y="84" width="324" height="34" rx="8" fill="#fffbeb" stroke="#fcd34d" stroke-width="1"/>
+<text x="412" y="106" font-size="12" fill="#b45309" text-anchor="start" font-weight="700">② 土沁 / 栗子黄：地下水里的针铁矿慢染</text>
+<text x="410" y="140" font-size="10.6" fill="#1e293b" text-anchor="start">常见部位：玉璧边缘、受压微裂隙与疏松白化层。</text>
+<text x="410" y="164" font-size="10.6" fill="#1e293b" text-anchor="start">科学机制：北方黄土或南方红壤中的可溶性铁离子（Fe²⁺）</text>
+<text x="410" y="188" font-size="10.6" fill="#1e293b" text-anchor="start">随毛细地下水年复一年浸润玉表受蚀微孔，在氧气参与下</text>
+<text x="410" y="212" font-size="10.6" fill="#1e293b" text-anchor="start" font-weight="700">• 水解沉淀为羟基氧化铁——针铁矿 / 褐铁矿（FeOOH）；</text>
+<text x="410" y="236" font-size="10.6" fill="#1e293b" text-anchor="start" font-weight="700">• 呈现由表及里、顺裂隙深浅过渡的自然秋葵黄与栗子皮色。</text>
+<rect x="22" y="290" width="348" height="202" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34" y="302" width="324" height="34" rx="8" fill="#e7f6ee" stroke="#86efac" stroke-width="1"/>
+<text x="44" y="324" font-size="12" fill="#18794e" text-anchor="start" font-weight="700">③ 铜绿沁（鹦哥绿）：青铜礼器邻居的“串色”</text>
+<text x="42" y="358" font-size="10.6" fill="#1e293b" text-anchor="start">典型场景：商周大墓（如殷墟妇好墓）玉器紧挨青铜鼎爵陪葬。</text>
+<text x="42" y="382" font-size="10.6" fill="#1e293b" text-anchor="start">科学机制：青铜器在潮湿墓室中发生电化学腐蚀，析出游离</text>
+<text x="42" y="406" font-size="10.6" fill="#1e293b" text-anchor="start">铜离子（Cu²⁺），随墓室积水迁移进紧贴的透闪石玉微孔：</text>
+<text x="42" y="430" font-size="10.6" fill="#1e293b" text-anchor="start" font-weight="700">• 与碳酸根结合结晶为翠绿色的孔雀石 Cu₂CO₃(OH)₂，</text>
+<text x="42" y="454" font-size="10.6" fill="#1e293b" text-anchor="start" font-weight="700">• 或蓝色的蓝铜矿，在白化古玉上染出鲜亮“松石绿/鹦哥绿”！</text>
+<rect x="390" y="290" width="348" height="202" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="402" y="302" width="324" height="34" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+<text x="412" y="324" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700">④ 水银沁 / 黑漆古：红朱砂变身“黑辰砂”！</text>
+<text x="410" y="358" font-size="10.6" fill="#1e293b" text-anchor="start">千年悬案：纯液态金属水银张力极大，实验证明钻不进完整好玉！</text>
+<text x="410" y="382" font-size="10.6" fill="#1e293b" text-anchor="start">2023 飞秒泵浦—探测非线性光学三维显微无损揭秘：</text>
+<text x="410" y="406" font-size="10.6" fill="#1e293b" text-anchor="start">• 高等级东周大墓中的黑沁并非液态纯汞直接浸染，而是墓中</text>
+<text x="410" y="430" font-size="10.6" fill="#1e293b" text-anchor="start">  红色辰砂（α-HgS）或尸身腐解硫元素与汞反应，转化为黑色</text>
+<text x="410" y="454" font-size="10.6" fill="#1e293b" text-anchor="start">  同质多象变体——黑辰砂（β-HgS，检出深达 38 μm）及炭质！</text>
+</svg>

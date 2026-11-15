@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">汽车油箱正常微压与异常强负压吸瘪油箱机理对比图</title>
+<desc id="desc">对比正常微正压/微负压与碳罐堵塞及电磁阀常开引发的强负压故障症状，并定量计算-50 kPa负压在0.6平方米油箱表面产生的约3.06吨大气压差挤压力。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">拧油箱盖一声“嗤”到底用不用修？分清健康呼吸与“三吨大气铁掌”吸瘪油箱</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左栏看无需担心的两种一秒轻响 → 右栏看加油跳枪强行凑整怎样淹死碳罐、把油箱生生吸扁</text>
+<rect x="24" y="68" width="344" height="288" rx="10" fill="#ffffff" stroke="#18794e" stroke-width="1.3"/>
+<circle cx="42" cy="88" r="10" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="42" y="92" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">1</text>
+<text x="58" y="92" font-size="12.4" fill="#0f172a" text-anchor="start" font-weight="700">完全正常：拧盖轻响 1 秒即停（±5 kPa 内）</text>
+<rect x="40" y="108" width="312" height="104" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="52" y="129" font-size="11.3" fill="#18794e" text-anchor="start" font-weight="700">场景 A：夏天暴晒或跑完长途 → 轻微向外“噗”一声</text>
+<text x="52" y="151" font-size="10.8" fill="#1e293b" text-anchor="start">• 原因：路面烘烤 + 回油升温令汽油挥发膨胀（微正压）</text>
+<text x="52" y="171" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="600">• 说明：正好证明你的油箱密封圈与 EVAP 管路严丝合缝！</text>
+<text x="52" y="191" font-size="10.3" fill="#64748b" text-anchor="start">  （若一点气都不存、还飘汽油味，反而可能是胶圈老化漏气）</text>
+<rect x="40" y="224" width="312" height="116" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="52" y="245" font-size="11.3" fill="#1d6fa5" text-anchor="start" font-weight="700">场景 B：清晨冷车或刚熄火加油 → 轻微向内吸气声</text>
+<text x="52" y="267" font-size="10.8" fill="#1e293b" text-anchor="start">• 原因：夜间油气冷却收缩（NVLD）或刚完成碳罐负压脱附</text>
+<text x="52" y="287" font-size="10.8" fill="#1e293b" text-anchor="start">• 判据：油箱盖轻松拧动、吸气声短促柔和、动力怠速平稳、</text>
+<text x="52" y="307" font-size="10.8" fill="#1d6fa5" text-anchor="start" font-weight="700">  油表准确无故障灯——属于健康工作态，完全不用修！</text>
+<rect x="384" y="68" width="352" height="288" rx="10" fill="#ffffff" stroke="#dc2626" stroke-width="1.4"/>
+<circle cx="402" cy="88" r="10" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2"/>
+<text x="402" y="92" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">2</text>
+<text x="418" y="92" font-size="12.4" fill="#dc2626" text-anchor="start" font-weight="700">故障警报：异常强负压（P1450）四大症状与真凶</text>
+<rect x="400" y="108" width="320" height="104" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1"/>
+<text x="412" y="129" font-size="11.3" fill="#dc2626" text-anchor="start" font-weight="700">危险信号（中一条以上立即排查碳罐与电磁阀！）：</text>
+<text x="412" y="151" font-size="10.7" fill="#1e293b" text-anchor="start">① 油箱盖被死死吸住极难拧动，拧开持续数秒尖锐倒吸风声</text>
+<text x="412" y="171" font-size="10.7" fill="#1e293b" text-anchor="start">② 热车跑高速突然加速无力、耸车甚至熄火（油泵抢不过真空）</text>
+<text x="412" y="191" font-size="10.7" fill="#0f172a" text-anchor="start" font-weight="600">③ 油箱底部肉眼可见内凹变形，油浮子被顶歪导致油表乱跳</text>
+<rect x="400" y="224" width="320" height="116" rx="8" fill="#fef3c7" stroke="#c25014" stroke-width="1"/>
+<text x="412" y="245" font-size="11.3" fill="#b45309" text-anchor="start" font-weight="700">两大罪魁祸首（“只抽不补”死局）：</text>
+<text x="412" y="267" font-size="10.7" fill="#1e293b" text-anchor="start">• 元凶① 碳罐呼吸口堵死：加油“跳枪后硬凑整”让液态汽油</text>
+<text x="422" y="286" font-size="10.7" fill="#dc2626" text-anchor="start" font-weight="600">顺通风管灌进碳罐，活性炭泡油结块 + 泥沙糊死大气滤网！</text>
+<text x="412" y="306" font-size="10.7" fill="#1e293b" text-anchor="start">• 元凶② 碳罐电磁阀（CPS）卡滞常开：发动机进气歧管</text>
+<text x="422" y="325" font-size="10.7" fill="#0f172a" text-anchor="start" font-weight="600">-50 kPa 强真空直接连通密闭油箱，不停顿死命狂抽！</text>
+<rect x="24" y="370" width="712" height="136" rx="10" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="40" y="393" font-size="12.3" fill="#0f172a" text-anchor="start" font-weight="700">物理算账：为什么区区半个大气压的负压，能把坚固的钢制或工程塑料（HDPE）油箱压扁？</text>
+<rect x="42" y="404" width="250" height="88" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<path d="M 88,426 Q 167,444 246,426 L 252,472 Q 167,454 82,472 Z" fill="#fee2e2" stroke="#dc2626" stroke-width="2.4"/>
+<text x="167" y="453" font-size="10.4" fill="#dc2626" text-anchor="middle" font-weight="700">油箱内被抽至 51.3 kPa</text>
+<line x1="126" y1="410" x2="126" y2="429" stroke="#6d28d9" stroke-width="2" marker-end="url(#arr-blue)"/>
+<line x1="208" y1="410" x2="208" y2="429" stroke="#6d28d9" stroke-width="2" marker-end="url(#arr-blue)"/>
+<line x1="126" y1="488" x2="126" y2="469" stroke="#6d28d9" stroke-width="2" marker-end="url(#arr-blue)"/>
+<line x1="208" y1="488" x2="208" y2="469" stroke="#6d28d9" stroke-width="2" marker-end="url(#arr-blue)"/>
+<text x="167" y="486" font-size="10.2" fill="#6d28d9" text-anchor="middle" font-weight="700">外部大气压 101.3 kPa 四面猛压</text>
+<text x="310" y="424" font-size="11.2" fill="#1e293b" text-anchor="start">• 压差计算：外部标准大气压 101.3 kPa，若歧管抽成 -50 kPa 负压，</text>
+<text x="320" y="446" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">油箱壁内外压差 ΔP = 50,000 Pa（每平方米承受 5 吨压力！）。</text>
+<text x="310" y="469" font-size="11.2" fill="#1e293b" text-anchor="start">• 以典型 60 L 扁平油箱单侧受压面积 A ≈ 0.6 m² 计算：</text>
+<text x="320" y="491" font-size="11.2" fill="#dc2626" text-anchor="start" font-weight="700">总挤压力 F = ΔP × A = 30,000 N ≈ 3.06 吨 —— 等于两辆轿车直接踩在油箱上！</text>
+</svg>

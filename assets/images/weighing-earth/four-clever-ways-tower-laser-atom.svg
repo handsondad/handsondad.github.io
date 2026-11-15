@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">四种经典与现代引力称地巧思对比图</title>
+<desc id="desc">对比 1881 慕尼黑 25 米高塔双盘天平与 5.8 吨大铅球、LAGEOS 激光测距卫星与 GRACE-FO 双星重力追逐、2014 超冷铷原子物质波干涉仪，以及 2018 武汉山洞双法扭秤破纪录实验。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arr-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#6d28d9"/>
+    </marker>
+    <marker id="arr-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#0f766e"/>
+    </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">脑洞大开的四种引力称地术：高塔天平、激光迪斯科球、冷原子与山洞双扭秤</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">从硬刚毫克增重的 25 米楼梯井，到十亿分之二精度的太空反射球，再到没有一根悬丝的量子物质波</text>
+<rect x="22" y="78" width="352" height="202" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="40" cy="98" r="10.5" fill="#fffbeb" stroke="#d97706" stroke-width="1.2"/>
+<text x="40" y="102" font-size="11.5" fill="#d97706" text-anchor="middle" font-weight="700">1</text>
+<text x="62" y="103" font-size="12.6" fill="#d97706" text-anchor="start" font-weight="700">1881 慕尼黑 25 米高塔双盘天平（冯·约利）</text>
+<rect x="44" y="118" width="94" height="146" rx="8" fill="#fffbeb" stroke="#fcd34d"/>
+<line x1="64.0" y1="132.0" x2="118.0" y2="132.0" stroke="#0f172a" stroke-width="2.2" stroke-linecap="round"/>
+<polygon points="91,124 86,132 96,132" fill="#d97706"/>
+<line x1="66.0" y1="132.0" x2="66.0" y2="152.0" stroke="#475569" stroke-width="1.3" stroke-linecap="round"/>
+<line x1="116.0" y1="132.0" x2="116.0" y2="152.0" stroke="#475569" stroke-width="1.3" stroke-linecap="round"/>
+<rect x="56" y="152" width="20" height="5" fill="#d97706"/>
+<rect x="106" y="152" width="20" height="5" fill="#d97706"/>
+<line x1="66.0" y1="157.0" x2="66.0" y2="214.0" stroke="#475569" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="3 2"/>
+<line x1="116.0" y1="157.0" x2="116.0" y2="214.0" stroke="#475569" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="3 2"/>
+<rect x="56" y="214" width="20" height="5" fill="#0284c7"/>
+<circle cx="66" cy="208" r="6" fill="#0284c7"/>
+<circle cx="66" cy="242" r="18" fill="#334155" stroke="#0f172a" stroke-width="1.5"/>
+<text x="66" y="246" font-size="9.2" fill="#ffffff" text-anchor="middle" font-weight="700">5.8吨</text>
+<text x="152" y="134" font-size="10.8" fill="#0f172a" text-anchor="start">• 21 米长悬丝上下挂两副秤盘：</text>
+<text x="152" y="154" font-size="10.8" fill="#0f172a" text-anchor="start">  5 kg 球移到下盘先增重 ~31 mg</text>
+<text x="152" y="176" font-size="10.8" fill="#0f172a" text-anchor="start">• 再往底盘正下方推入一颗重达</text>
+<text x="152" y="195" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">  5775 kg 的一米大铅球！</text>
+<text x="152" y="217" font-size="10.8" fill="#0f172a" text-anchor="start">• 天平直接“称”出大铅球额外</text>
+<text x="152" y="236" font-size="11" fill="#dc2626" text-anchor="start" font-weight="700">  往下拽了 0.589 毫克！</text>
+<text x="152" y="259" font-size="11" fill="#d97706" text-anchor="start" font-weight="700">⇒ 算出 ρ⊕ ≈ 5.69 g/cm³</text>
+<rect x="386" y="78" width="352" height="202" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="404" cy="98" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="404" y="102" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">2</text>
+<text x="426" y="103" font-size="12.3" fill="#1d6fa5" text-anchor="start" font-weight="700">太空“激光迪斯科球”与双星追逐（LAGEOS &amp; GRACE）</text>
+<rect x="402" y="118" width="96" height="146" rx="8" fill="#eff6ff" stroke="#93c5fd"/>
+<circle cx="450" cy="162" r="24" fill="#cbd5e1" stroke="#0284c7" stroke-width="2"/>
+<circle cx="442" cy="154" r="3" fill="#ffffff"/><circle cx="452" cy="152" r="3" fill="#ffffff"/><circle cx="460" cy="158" r="3" fill="#ffffff"/>
+<circle cx="440" cy="166" r="3" fill="#ffffff"/><circle cx="450" cy="164" r="3" fill="#ffffff"/><circle cx="458" cy="170" r="3" fill="#ffffff"/>
+<line x1="416.0" y1="246.0" x2="444.0" y2="184.0" stroke="#dc2626" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arr-red)"/>
+<text x="450" y="204" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">426 块角反射器</text>
+<rect x="414" y="224" width="18" height="10" rx="2" fill="#0f766e"/>
+<rect x="468" y="224" width="18" height="10" rx="2" fill="#0f766e"/>
+<line x1="434.0" y1="229.0" x2="466.0" y2="229.0" stroke="#0f766e" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 2"/>
+<text x="450" y="254" font-size="9.6" fill="#0f766e" text-anchor="middle">双星距 220 km</text>
+<text x="510" y="134" font-size="10.8" fill="#0f172a" text-anchor="start">• LAGEOS（60 cm 实心黄铜球，</text>
+<text x="510" y="154" font-size="10.8" fill="#0f172a" text-anchor="start">  重 407 kg）：地面毫米级激光</text>
+<text x="510" y="174" font-size="10.8" fill="#1d6fa5" text-anchor="start" font-weight="700">  测距把 G·M⊕ 锁准到 2×10⁻⁹！</text>
+<text x="510" y="198" font-size="10.8" fill="#0f172a" text-anchor="start">• GRACE-FO 双子星：飞过冰川</text>
+<text x="510" y="217" font-size="10.8" fill="#0f172a" text-anchor="start">  或地下水富集区时前星先加速，</text>
+<text x="510" y="236" font-size="10.8" fill="#0f172a" text-anchor="start">  微米级测距按月给冰盖和含水</text>
+<text x="510" y="256" font-size="11" fill="#0f766e" text-anchor="start" font-weight="700">  层“称体重”！</text>
+<rect x="22" y="294" width="352" height="202" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="40" cy="314" r="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="40" y="318" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">3</text>
+<text x="62" y="319" font-size="12.5" fill="#6d28d9" text-anchor="start" font-weight="700">2014 超冷铷原子量子喷泉（Rosi 等 Nature）</text>
+<rect x="44" y="334" width="94" height="146" rx="8" fill="#faf5ff" stroke="#d8b4fe"/>
+<rect x="52" y="366" width="18" height="68" rx="3" fill="#475569"/>
+<rect x="112" y="366" width="18" height="68" rx="3" fill="#475569"/>
+<text x="91" y="352" font-size="9.5" fill="#475569" text-anchor="middle" font-weight="700">516 kg 钨柱阵</text>
+<path d="M 91,446 Q 76,406 91,368 Q 106,406 91,446" fill="none" stroke="#7c3aed" stroke-width="2"/>
+<circle cx="91" cy="406" r="5" fill="#7c3aed"/>
+<text x="91" y="466" font-size="9.5" fill="#6d28d9" text-anchor="middle" font-weight="700">⁸⁷Rb 物质波</text>
+<text x="152" y="350" font-size="10.8" fill="#6d28d9" text-anchor="start" font-weight="700">• 彻底抛弃宏观悬丝（零机械老化</text>
+<text x="152" y="369" font-size="10.8" fill="#0f172a" text-anchor="start">  与金属滞弹性误差）！</text>
+<text x="152" y="391" font-size="10.8" fill="#0f172a" text-anchor="start">• 激光冷却铷-87 原子团至接近</text>
+<text x="152" y="410" font-size="10.8" fill="#0f172a" text-anchor="start">  绝对零度，向上喷射自由下落；</text>
+<text x="152" y="432" font-size="10.8" fill="#0f172a" text-anchor="start">• 两侧 516 kg 高密度钨柱改写</text>
+<text x="152" y="451" font-size="10.8" fill="#0f172a" text-anchor="start">  原子德布罗意波干涉相位，直</text>
+<text x="152" y="471" font-size="11" fill="#6d28d9" text-anchor="start" font-weight="700">  接读出 G（精度 150 ppm）！</text>
+<rect x="386" y="294" width="352" height="202" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="404" cy="314" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="404" y="318" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">4</text>
+<text x="426" y="319" font-size="12.2" fill="#18794e" text-anchor="start" font-weight="700">2018 武汉山洞双法扭秤破纪录（罗俊团队 Nature）</text>
+<rect x="402" y="334" width="96" height="146" rx="8" fill="#f0fdf4" stroke="#86efac"/>
+<path d="M 410,466 L 410,374 Q 450,342 490,374 L 490,466" fill="#dcfce7" stroke="#15803d" stroke-width="1.8"/>
+<line x1="450.0" y1="360.0" x2="450.0" y2="412.0" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round"/>
+<rect x="432" y="412" width="36" height="10" rx="2" fill="#15803d"/>
+<circle cx="422" cy="417" r="8" fill="#334155"/>
+<circle cx="478" cy="417" r="8" fill="#334155"/>
+<text x="450" y="450" font-size="9.5" fill="#18794e" text-anchor="middle" font-weight="700">恒温山洞实验室</text>
+<text x="510" y="350" font-size="10.8" fill="#0f172a" text-anchor="start">• 躲进武汉喻家山防震恒温山洞，</text>
+<text x="510" y="369" font-size="10.8" fill="#0f172a" text-anchor="start">  镀膜石英块镀金悬丝抑制静电力；</text>
+<text x="510" y="391" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">• 同时采用两套独立物理原理：</text>
+<text x="510" y="411" font-size="10.8" fill="#18794e" text-anchor="start" font-weight="700">  ① 扭摆周期法：11.64 ppm</text>
+<text x="510" y="430" font-size="10.8" fill="#18794e" text-anchor="start" font-weight="700">  ② 角加速度反馈法：11.61 ppm</text>
+<text x="510" y="453" font-size="11" fill="#dc2626" text-anchor="start" font-weight="700">⇒ 创下迄今人类测 G 最高精度</text>
+<text x="510" y="472" font-size="10.8" fill="#0f172a" text-anchor="start">  世界纪录，把地球称得最准！</text>
+</svg>

@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="495" viewBox="0 0 760 495" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">焦耳-汤姆孙膨胀降温量级证伪与哈气吹气温度随距离衰减曲线图</title>
+<desc id="desc">左卡对比实测卷吸降温（-13.8摄氏度）与喷口动能温降（-0.11摄氏度）、焦耳-汤姆孙效应（-0.004摄氏度）的悬殊差距，并给出1厘米贴唇吹气变热的实验；右卡绘出哈气与吹气混合温度随距离衰减曲线及32.5摄氏度皮温分界线。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#475569"/>
+    </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="494" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">辟谣“气体绝热膨胀致冷说”：一秒钟贴唇实验，当场抓获真凶！</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">嘴唇喷气的膨胀降温连 0.12°C 都不到；真正让冷暖反转的，是手掌离嘴唇的距离 x/D</text>
+<rect x="20" y="62" width="344" height="418" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="84" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="38" y="88" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="88" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">算账辟谣：嘴巴真的能当“空调膨胀阀”吗？</text>
+<rect x="36" y="108" width="312" height="174" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.1"/>
+<text x="48" y="128" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">实际需要降温幅度 vs 膨胀效应真实贡献：</text>
+<text x="48" y="152" font-size="10.1" fill="#1d6fa5" text-anchor="start" font-weight="700">① 湍流卷吸冷空气实测降温：</text>
+<rect x="48" y="160" width="248" height="16" rx="4" fill="#2563eb"/>
+<text x="302" y="172" font-size="10.0" fill="#1d6fa5" text-anchor="start" font-weight="700" class="mono">-13.8°C</text>
+<text x="48" y="198" font-size="10.1" fill="#c25014" text-anchor="start" font-weight="600">② 喷口高速动能折算温降（撞手掌即恢复）：</text>
+<rect x="48" y="206" width="4" height="16" rx="2" fill="#f97316"/>
+<text x="60" y="218" font-size="10.0" fill="#c25014" text-anchor="start" font-weight="700">仅 -0.11°C（差 120 倍！）</text>
+<text x="48" y="244" font-size="10.1" fill="#475569" text-anchor="start" font-weight="600">③ 焦耳—汤姆孙节流效应（NIST 实测系数）：</text>
+<rect x="48" y="252" width="2" height="16" rx="1" fill="#64748b"/>
+<text x="58" y="264" font-size="10.0" fill="#dc2626" text-anchor="start" font-weight="700">仅 -0.004°C（差 3000 倍！）</text>
+<rect x="36" y="294" width="312" height="172" rx="8" fill="#fffbeb" stroke="#fcd34d" stroke-width="1.1"/>
+<text x="48" y="315" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">🧪 现在就试！1 秒钟“贴唇吹气”证伪实验：</text>
+<text x="48" y="337" font-size="10.1" fill="#1e293b" text-anchor="start">1. 把嘴唇撅成最细的“O”形，使出浑身力气猛吹；</text>
+<text x="48" y="356" font-size="10.1" fill="#1e293b" text-anchor="start">2. 先把手心贴到离嘴唇只有【1 厘米】处——</text>
+<text x="48" y="375" font-size="10.2" fill="#dc2626" text-anchor="start" font-weight="700">   你会惊讶地发现：撅嘴猛吹的气明明是【热的】！</text>
+<text x="48" y="394" font-size="10.1" fill="#1e293b" text-anchor="start">3. 嘴型和力度丝毫不变，把手慢慢拉远到 10–15 cm：</text>
+<text x="48" y="413" font-size="10.2" fill="#1d6fa5" text-anchor="start" font-weight="700">   过了 3–5 cm 分界线后，热风突然变成了凉风！</text>
+<text x="48" y="436" font-size="10.0" fill="#1e293b" text-anchor="start">⇒ 如果是嘴唇膨胀致冷，出口 1 cm 处才最该冰凉；</text>
+<text x="48" y="453" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">   出口滚烫、半路变凉，100% 证明是半路掺了冷风！</text>
+<rect x="378" y="62" width="362" height="418" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="396" cy="84" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="396" y="88" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">2</text>
+<text x="414" y="88" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">气流混合温度随距离衰减曲线（室温 20°C）</text>
+<rect x="428.0" y="120.0" width="290.0" height="53.1" fill="#fef2f2" fill-opacity="0.65"/>
+<rect x="428.0" y="173.1" width="290.0" height="170.9" fill="#eff6ff" fill-opacity="0.65"/>
+<line x1="428.0" y1="173.1" x2="718.0" y2="173.1" stroke="#c25014" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="5,4"/>
+<text x="712.0" y="167.1" font-size="9.9" fill="#c25014" text-anchor="end" font-weight="700">手掌皮温分界线 32.5°C（上热下凉）</text>
+<line x1="428.0" y1="320.4" x2="718.0" y2="320.4" stroke="#e2e8f0" stroke-width="1.0" stroke-linecap="round"/>
+<text x="422.0" y="324.4" font-size="9.8" fill="#64748b" text-anchor="end" class="mono">20°C</text>
+<line x1="428.0" y1="261.5" x2="718.0" y2="261.5" stroke="#e2e8f0" stroke-width="1.0" stroke-linecap="round"/>
+<text x="422.0" y="265.5" font-size="9.8" fill="#64748b" text-anchor="end" class="mono">25°C</text>
+<line x1="428.0" y1="202.5" x2="718.0" y2="202.5" stroke="#e2e8f0" stroke-width="1.0" stroke-linecap="round"/>
+<text x="422.0" y="206.5" font-size="9.8" fill="#64748b" text-anchor="end" class="mono">30°C</text>
+<line x1="428.0" y1="143.6" x2="718.0" y2="143.6" stroke="#e2e8f0" stroke-width="1.0" stroke-linecap="round"/>
+<text x="422.0" y="147.6" font-size="9.8" fill="#64748b" text-anchor="end" class="mono">35°C</text>
+<line x1="428.0" y1="344.0" x2="428.0" y2="349.0" stroke="#475569" stroke-width="1.1" stroke-linecap="round"/>
+<text x="428.0" y="362.0" font-size="9.8" fill="#64748b" text-anchor="middle" class="mono">0</text>
+<line x1="486.0" y1="344.0" x2="486.0" y2="349.0" stroke="#475569" stroke-width="1.1" stroke-linecap="round"/>
+<text x="486.0" y="362.0" font-size="9.8" fill="#64748b" text-anchor="middle" class="mono">5</text>
+<line x1="544.0" y1="344.0" x2="544.0" y2="349.0" stroke="#475569" stroke-width="1.1" stroke-linecap="round"/>
+<text x="544.0" y="362.0" font-size="9.8" fill="#64748b" text-anchor="middle" class="mono">10</text>
+<line x1="602.0" y1="344.0" x2="602.0" y2="349.0" stroke="#475569" stroke-width="1.1" stroke-linecap="round"/>
+<text x="602.0" y="362.0" font-size="9.8" fill="#64748b" text-anchor="middle" class="mono">15</text>
+<line x1="660.0" y1="344.0" x2="660.0" y2="349.0" stroke="#475569" stroke-width="1.1" stroke-linecap="round"/>
+<text x="660.0" y="362.0" font-size="9.8" fill="#64748b" text-anchor="middle" class="mono">20</text>
+<line x1="718.0" y1="344.0" x2="718.0" y2="349.0" stroke="#475569" stroke-width="1.1" stroke-linecap="round"/>
+<text x="718.0" y="362.0" font-size="9.8" fill="#64748b" text-anchor="middle" class="mono">25</text>
+<text x="573.0" y="380.0" font-size="10.1" fill="#64748b" text-anchor="middle">手掌距嘴唇距离 x (cm)</text>
+<line x1="428.0" y1="120.0" x2="428.0" y2="344.0" stroke="#475569" stroke-width="1.3" stroke-linecap="round"/>
+<line x1="428.0" y1="344.0" x2="718.0" y2="344.0" stroke="#475569" stroke-width="1.3" stroke-linecap="round"/>
+<polyline points="428.0,143.6 433.8,143.7 439.6,144.0 445.4,144.5 451.2,145.1 457.0,146.0 462.8,147.0 468.6,148.2 474.4,149.6 480.2,151.0 486.0,152.7 491.8,154.4 497.6,156.2 503.4,158.2 509.2,160.2 515.0,162.2 520.8,164.4 526.6,166.6 532.4,168.8 538.2,171.0 544.0,173.3 549.8,175.5 555.6,177.8 561.4,180.1 567.2,182.3 573.0,184.6 578.8,186.8 584.6,189.0 590.4,191.1 596.2,193.3 602.0,195.4 607.8,197.4 613.6,199.5 619.4,201.5 625.2,203.4 631.0,205.3 636.8,207.2 642.6,209.0 648.4,210.8 654.2,212.6 660.0,214.3 665.8,216.0 671.6,217.6 677.4,219.2 683.2,220.8 689.0,222.3 694.8,223.8 700.6,225.3 706.4,226.7 712.2,228.1 718.0,229.4" fill="none" stroke="#dc2626" stroke-width="2.6"/>
+<polyline points="428.0,143.6 433.8,148.9 439.6,162.2 445.4,178.9 451.2,195.4 457.0,209.9 462.8,222.3 468.6,232.7 474.4,241.3 480.2,248.6 486.0,254.7 491.8,260.0 497.6,264.5 503.4,268.4 509.2,271.8 515.0,274.9 520.8,277.5 526.6,279.9 532.4,282.1 538.2,284.0 544.0,285.7 549.8,287.3 555.6,288.8 561.4,290.1 567.2,291.3 573.0,292.5 578.8,293.5 584.6,294.5 590.4,295.4 596.2,296.3 602.0,297.0 607.8,297.8 613.6,298.5 619.4,299.1 625.2,299.8 631.0,300.3 636.8,300.9 642.6,301.4 648.4,301.9 654.2,302.4 660.0,302.8 665.8,303.2 671.6,303.7 677.4,304.0 683.2,304.4 689.0,304.8 694.8,305.1 700.6,305.4 706.4,305.7 712.2,306.0 718.0,306.3" fill="none" stroke="#1d6fa5" stroke-width="2.8"/>
+<circle cx="439.6" cy="162.2" r="5" fill="#dc2626" stroke="#fff" stroke-width="1.4"/>
+<text x="449.6" y="178.2" font-size="9.9" fill="#dc2626" text-anchor="start" font-weight="700">1 cm 贴唇吹气: 33.4°C (热!)</text>
+<circle cx="602.0" cy="297.0" r="5" fill="#1d6fa5" stroke="#fff" stroke-width="1.4"/>
+<text x="602.0" y="287.0" font-size="10.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">15 cm 吹气中心: 22.0°C (凉!)</text>
+<text x="642.6" y="199.0" font-size="10.0" fill="#dc2626" text-anchor="middle" font-weight="700">张嘴哈气中心 (D=30 mm)</text>
+<rect x="394" y="392" width="330" height="74" rx="8" fill="#f0fdfa" stroke="#5eead4" stroke-width="1.0"/>
+<text x="406" y="413" font-size="10.4" fill="#0f766e" text-anchor="start" font-weight="700">反过来试：张大嘴“哈气”，但把手伸远到 40 cm 外！</text>
+<text x="406" y="433" font-size="10.0" fill="#1e293b" text-anchor="start">一旦超过 5 倍大口径（&gt;15 cm），哈气暖柱也会被冷空气</text>
+<text x="406" y="451" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="600">吞没稀释——哪怕张大嘴哈气，隔老远照样变成凉风！</text>
+</svg>

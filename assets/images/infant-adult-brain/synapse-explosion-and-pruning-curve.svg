@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="538" viewBox="0 0 760 538" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">人类大脑突触爆发式生成与修剪曲线及三阶段神经网络重塑对比图</title>
+<desc id="desc">左栏绘制视听皮层、语言区与前额叶突触密度冲上成人近200%后再修剪回100%的分波曲线，右栏对比新生儿稀疏网、幼儿全连接丛林与成人修剪后高速主干道。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-b" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#1d6fa5"/>
+    </marker>
+    <marker id="arr-o" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#c25014"/>
+    </marker>
+    <marker id="arr-g" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#18794e"/>
+    </marker>
+    <marker id="arr-p" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#6d28d9"/>
+    </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes highwayGlow {
+      0% { stroke-dashoffset: 260; opacity: 0.35; }
+      65% { stroke-dashoffset: 0; opacity: 1; }
+      100% { stroke-dashoffset: 0; opacity: 1; }
+    }
+    @keyframes pruneDim {
+      0%, 35% { opacity: 0.85; }
+      100% { opacity: 0.28; }
+    }
+    .anim-hwy {
+      stroke-dasharray: 260;
+      stroke-dashoffset: 0;
+      animation: highwayGlow 3.0s ease-out 1 both;
+    }
+    .anim-prune {
+      opacity: 0.28;
+      animation: pruneDim 3.0s ease-out 1 both;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .anim-hwy, .anim-prune {
+        animation: none !important;
+        stroke-dashoffset: 0 !important;
+      }
+      .anim-hwy { opacity: 1 !important; }
+      .anim-prune { opacity: 0.28 !important; }
+    }
+</style>
+<rect x="0.5" y="0.5" width="759" height="537" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">硬件账本第二怪：2 岁宝宝的突触连接密度，竟然是成年人的近 2 倍！</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">先看左图三大脑区分波疯长与修剪曲线 → 再看右图“先铺满小路、再修剪成高速公路”（含单次修剪强化动画）</text>
+<rect x="22" y="68" width="386" height="452" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="92" r="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="42" y="96" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">1</text>
+<text x="62" y="97" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">人类皮层突触密度随年龄变化（以成人稳态 = 100% 计）</text>
+<text x="42" y="117" font-size="10.5" fill="#64748b" text-anchor="start">生命最初几年每秒新建超 100 万个突触，随后砍掉近一半冗余连接</text>
+<line x1="74.0" y1="354.2" x2="384.0" y2="354.2" stroke="#e2e8f0" stroke-width="1"/>
+<text x="68.0" y="358.2" font-size="10.5" fill="#64748b" text-anchor="end">50%</text>
+<line x1="74.0" y1="290.4" x2="384.0" y2="290.4" stroke="#475569" stroke-width="1.5" stroke-dasharray="5,4"/>
+<text x="68.0" y="294.4" font-size="10.5" fill="#0f172a" text-anchor="end" font-weight="700">100%</text>
+<line x1="74.0" y1="226.6" x2="384.0" y2="226.6" stroke="#e2e8f0" stroke-width="1"/>
+<text x="68.0" y="230.6" font-size="10.5" fill="#64748b" text-anchor="end">150%</text>
+<line x1="74.0" y1="162.8" x2="384.0" y2="162.8" stroke="#e2e8f0" stroke-width="1"/>
+<text x="68.0" y="166.8" font-size="10.5" fill="#64748b" text-anchor="end">200%</text>
+<line x1="74.0" y1="150.0" x2="74.0" y2="418.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="74.0" y="436.0" font-size="10.5" fill="#64748b" text-anchor="middle">出生</text>
+<line x1="123.6" y1="150.0" x2="123.6" y2="418.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="123.6" y="436.0" font-size="10.5" fill="#64748b" text-anchor="middle">6月</text>
+<line x1="167.0" y1="150.0" x2="167.0" y2="418.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="167.0" y="436.0" font-size="10.5" fill="#64748b" text-anchor="middle">1岁</text>
+<line x1="222.8" y1="150.0" x2="222.8" y2="418.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="222.8" y="436.0" font-size="10.5" fill="#64748b" text-anchor="middle">3岁</text>
+<line x1="278.6" y1="150.0" x2="278.6" y2="418.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="278.6" y="436.0" font-size="10.5" fill="#64748b" text-anchor="middle">7岁</text>
+<line x1="331.3" y1="150.0" x2="331.3" y2="418.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="331.3" y="436.0" font-size="10.5" fill="#64748b" text-anchor="middle">15岁</text>
+<line x1="384.0" y1="150.0" x2="384.0" y2="418.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="384.0" y="436.0" font-size="10.5" fill="#64748b" text-anchor="middle">25岁+</text>
+<line x1="74.0" y1="150.0" x2="74.0" y2="418.0" stroke="#475569" stroke-width="1.5"/>
+<line x1="74.0" y1="418.0" x2="384.0" y2="418.0" stroke="#475569" stroke-width="1.5"/>
+<text x="380.0" y="283.4" font-size="10.5" fill="#475569" text-anchor="end" font-weight="700" class="halo">成人基准线 100%</text>
+<polyline points="74.0,351.6 98.8,245.7 126.7,173.0 167.0,194.7 222.8,239.3 278.6,275.1 331.3,287.8 384.0,290.4" fill="none" stroke="#1d6fa5" stroke-width="2.6"/>
+<polyline points="74.0,356.7 111.2,267.4 160.8,181.9 222.8,216.4 278.6,258.5 331.3,282.7 384.0,290.4" fill="none" stroke="#18794e" stroke-width="2.6" stroke-dasharray="7,4"/>
+<polyline points="74.0,364.4 123.6,296.8 173.2,226.6 222.8,185.7 278.6,211.3 331.3,254.6 384.0,290.4" fill="none" stroke="#c25014" stroke-width="2.8"/>
+<text x="123.6" y="165.3" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="700" class="halo">① 视听感官皮层（~6月达峰）</text>
+<text x="170.1" y="195.4" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="700" class="halo">② 语言区（~1岁达峰）</text>
+<text x="229.0" y="177.2" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="700" class="halo">③ 前额叶控制区（修剪至25岁）</text>
+<rect x="38" y="450" width="354" height="54" rx="8" fill="#f3e8ff" stroke="#d8b4fe" stroke-width="1"/>
+<text x="215" y="471" font-size="10.5" fill="#6d28d9" text-anchor="middle" font-weight="700">数据来源：Huttenlocher &amp; Dabholkar (1997) 人类皮层电镜实测</text>
+<text x="215" y="491" font-size="10.5" fill="#0f172a" text-anchor="middle">及哈佛大学儿童发展中心：感官先定型，高级理性控制最后定型</text>
+<rect x="422" y="68" width="316" height="452" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="442" cy="92" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="442" y="96" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">2</text>
+<text x="462" y="97" font-size="12.2" fill="#0f172a" text-anchor="start" font-weight="700">为什么长大反而要“砍掉一半连线”？</text>
+<text x="442" y="117" font-size="10.5" fill="#64748b" text-anchor="start">小胶质细胞精准修剪闲置支路，保留主干道</text>
+<rect x="438" y="134" width="284" height="106" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="450" y="154" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">A. 新生儿：神经元就位，连线尚稀疏</text>
+<line x1="506" y1="192" x2="556" y2="178" stroke="#475569" stroke-width="1.5"/>
+<line x1="556" y1="178" x2="616" y2="180" stroke="#475569" stroke-width="1.5"/>
+<line x1="554" y1="212" x2="620" y2="214" stroke="#475569" stroke-width="1.5"/>
+<circle cx="506" cy="192" r="4.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<circle cx="556" cy="178" r="4.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<circle cx="554" cy="212" r="4.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<circle cx="616" cy="180" r="4.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<circle cx="620" cy="214" r="4.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<circle cx="674" cy="194" r="4.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<text x="580" y="231" font-size="10.5" fill="#1e293b" text-anchor="middle">仅保留心跳呼吸与基础反射通路</text>
+<rect x="438" y="252" width="284" height="106" rx="8" fill="#fef1e8" stroke="#fdba74" stroke-width="1"/>
+<text x="450" y="272" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">B. 2–3 岁幼儿：全城铺满羊肠小道（~200%）</text>
+<line x1="506" y1="310" x2="556" y2="296" stroke="#c25014" stroke-width="1.5" opacity="0.72"/>
+<line x1="506" y1="310" x2="554" y2="330" stroke="#c25014" stroke-width="1.5" opacity="0.72"/>
+<line x1="506" y1="310" x2="616" y2="298" stroke="#c25014" stroke-width="1.5" opacity="0.72"/>
+<line x1="506" y1="310" x2="620" y2="332" stroke="#c25014" stroke-width="1.5" opacity="0.72"/>
+<line x1="506" y1="310" x2="674" y2="312" stroke="#c25014" stroke-width="1.5" opacity="0.72"/>
+<line x1="556" y1="296" x2="554" y2="330" stroke="#c25014" stroke-width="1.5" opacity="0.72"/>
+<line x1="556" y1="296" x2="616" y2="298" stroke="#c25014" stroke-width="1.5" opacity="0.72"/>
+<line x1="556" y1="296" x2="620" y2="332" stroke="#c25014" stroke-width="1.5" opacity="0.72"/>
+<line x1="556" y1="296" x2="674" y2="312" stroke="#c25014" stroke-width="1.5" opacity="0.72"/>
+<line x1="554" y1="330" x2="616" y2="298" stroke="#c25014" stroke-width="1.5" opacity="0.72"/>
+<line x1="554" y1="330" x2="620" y2="332" stroke="#c25014" stroke-width="1.5" opacity="0.72"/>
+<line x1="554" y1="330" x2="674" y2="312" stroke="#c25014" stroke-width="1.5" opacity="0.72"/>
+<line x1="616" y1="298" x2="620" y2="332" stroke="#c25014" stroke-width="1.5" opacity="0.72"/>
+<line x1="616" y1="298" x2="674" y2="312" stroke="#c25014" stroke-width="1.5" opacity="0.72"/>
+<line x1="620" y1="332" x2="674" y2="312" stroke="#c25014" stroke-width="1.5" opacity="0.72"/>
+<circle cx="506" cy="310" r="4.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<circle cx="556" cy="296" r="4.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<circle cx="554" cy="330" r="4.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<circle cx="616" cy="298" r="4.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<circle cx="620" cy="332" r="4.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<circle cx="674" cy="312" r="4.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<text x="580" y="349" font-size="10.5" fill="#1e293b" text-anchor="middle">万物皆可连！可塑性极强，但信号嘈杂耗能巨高</text>
+<rect x="438" y="370" width="284" height="106" rx="8" fill="#e7f6ee" stroke="#86efac" stroke-width="1"/>
+<text x="450" y="390" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">C. 成年人：用进废退，修剪成八车道高速（100%）</text>
+<line x1="506" y1="428" x2="616" y2="416" stroke="#475569" stroke-width="1.2" stroke-dasharray="3,3" class="anim-prune"/>
+<line x1="506" y1="428" x2="620" y2="450" stroke="#475569" stroke-width="1.2" stroke-dasharray="3,3" class="anim-prune"/>
+<line x1="506" y1="428" x2="674" y2="430" stroke="#475569" stroke-width="1.2" stroke-dasharray="3,3" class="anim-prune"/>
+<line x1="556" y1="414" x2="554" y2="448" stroke="#475569" stroke-width="1.2" stroke-dasharray="3,3" class="anim-prune"/>
+<line x1="556" y1="414" x2="620" y2="450" stroke="#475569" stroke-width="1.2" stroke-dasharray="3,3" class="anim-prune"/>
+<line x1="556" y1="414" x2="674" y2="430" stroke="#475569" stroke-width="1.2" stroke-dasharray="3,3" class="anim-prune"/>
+<line x1="554" y1="448" x2="616" y2="416" stroke="#475569" stroke-width="1.2" stroke-dasharray="3,3" class="anim-prune"/>
+<line x1="554" y1="448" x2="674" y2="430" stroke="#475569" stroke-width="1.2" stroke-dasharray="3,3" class="anim-prune"/>
+<line x1="616" y1="416" x2="620" y2="450" stroke="#475569" stroke-width="1.2" stroke-dasharray="3,3" class="anim-prune"/>
+<polyline points="506,428 556,414 616,416 674,430" fill="none" stroke="#18794e" stroke-width="3.6" class="anim-hwy"/>
+<polyline points="506,428 554,448 620,450 674,430" fill="none" stroke="#1d6fa5" stroke-width="2.8" class="anim-hwy"/>
+<circle cx="506" cy="428" r="4.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<circle cx="556" cy="414" r="4.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<circle cx="554" cy="448" r="4.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<circle cx="616" cy="416" r="4.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<circle cx="620" cy="450" r="4.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<circle cx="674" cy="430" r="4.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<text x="580" y="467" font-size="10.5" fill="#1e293b" text-anchor="middle">虚线闲置路被剪除，高频使用的实线主干加粗包髓鞘</text>
+<text x="580" y="502" font-size="10.6" fill="#18794e" text-anchor="middle" font-weight="700">养育启示：“发球—回球”高质量互动决定保留哪条主干道</text>
+</svg>

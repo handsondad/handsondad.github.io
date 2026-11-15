@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="522" viewBox="0 0 760 522" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">太阳系十天体开普勒第三定律对数实测图与牛顿天体称重原理</title>
+<desc id="desc">左图按真实天文数据绘制水星至海王星、谷神星及高偏心率哈雷彗星的 log(T)-log(a) 图，全部落在斜率1.5直线上；右图解释牛顿双体质量修正及偏心率因子在周期推导中精确相消。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="521" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">第三定律（调和定律 T² ∝ a³）：跨越百倍距离，十颗天体严丝合缝钉在斜率 1.5 直线上！</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">1618 年 5 月 15 日开普勒在战火与审巫案奔波中算出的宇宙节律；牛顿进一步把它升级成“天体电子秤”</text>
+<rect x="22" y="68" width="424" height="386" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="40" y="93" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">太阳系实测对数图：log₁₀(T/年) = 1.5 · log₁₀(a/AU)</text>
+<line x1="164.6" y1="116.0" x2="164.6" y2="396.0" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="164.6" y="414" font-size="10.5" fill="#475569" text-anchor="middle">1 AU</text>
+<line x1="243.1" y1="116.0" x2="243.1" y2="396.0" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="243.1" y="414" font-size="10.5" fill="#475569" text-anchor="middle">3.16</text>
+<line x1="321.7" y1="116.0" x2="321.7" y2="396.0" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="321.7" y="414" font-size="10.5" fill="#475569" text-anchor="middle">10 AU</text>
+<line x1="400.3" y1="116.0" x2="400.3" y2="396.0" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="400.3" y="414" font-size="10.5" fill="#475569" text-anchor="middle">31.6 AU</text>
+<line x1="86.0" y1="329.8" x2="420.0" y2="329.8" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="78" y="333.8" font-size="10.5" fill="#475569" text-anchor="end">1 年</text>
+<line x1="86.0" y1="241.6" x2="420.0" y2="241.6" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="78" y="245.6" font-size="10.5" fill="#475569" text-anchor="end">10 年</text>
+<line x1="86.0" y1="153.3" x2="420.0" y2="153.3" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="78" y="157.3" font-size="10.5" fill="#475569" text-anchor="end">100 年</text>
+<line x1="86.0" y1="396.0" x2="428.0" y2="396.0" stroke="#0f172a" stroke-width="1.8" marker-end="url(#arr-muted)"/>
+<line x1="86.0" y1="396.0" x2="86.0" y2="118.0" stroke="#0f172a" stroke-width="1.8" marker-end="url(#arr-muted)"/>
+<text x="256" y="436" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="600">轨道半长轴 a（对数刻度，AU）</text>
+<text x="76" y="124" font-size="11" fill="#0f172a" text-anchor="end" font-weight="600">周期 T</text>
+<line x1="89.1" y1="393.4" x2="408.1" y2="124.6" stroke="#1d6fa5" stroke-width="2.4"/>
+<circle cx="99.8" cy="384.4" r="4.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.4"/>
+<text x="107.8" y="396.4" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600" class="halo">水星</text>
+<circle cx="142.5" cy="348.4" r="4.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.4"/>
+<text x="134.5" y="340.4" font-size="10.5" fill="#0f172a" text-anchor="end" font-weight="600" class="halo">金星</text>
+<circle cx="164.6" cy="329.8" r="5.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.4"/>
+<text x="173.6" y="340.8" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="600" class="halo">地球</text>
+<circle cx="193.3" cy="305.6" r="5.5" fill="#c25014" stroke="#ffffff" stroke-width="1.4"/>
+<text x="202.3" y="315.6" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="600" class="halo">火星</text>
+<circle cx="234.0" cy="271.3" r="4.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.4"/>
+<text x="226.0" y="263.3" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600" class="halo">谷神星</text>
+<circle cx="277.1" cy="235.0" r="4.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.4"/>
+<text x="286.1" y="245.0" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600" class="halo">木星</text>
+<circle cx="318.5" cy="200.2" r="4.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.4"/>
+<text x="309.5" y="193.2" font-size="10.5" fill="#0f172a" text-anchor="end" font-weight="600" class="halo">土星</text>
+<circle cx="361.2" cy="164.2" r="5.5" fill="#b91c1c" stroke="#ffffff" stroke-width="1.4"/>
+<text x="351.2" y="156.2" font-size="10.5" fill="#b91c1c" text-anchor="end" font-weight="700" class="halo">哈雷彗星(e=0.967!)</text>
+<circle cx="366.2" cy="160.0" r="4.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.4"/>
+<text x="375.2" y="172.0" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600" class="halo">天王星</text>
+<circle cx="396.8" cy="134.2" r="4.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.4"/>
+<text x="386.8" y="126.2" font-size="10.5" fill="#1d6fa5" text-anchor="end" font-weight="600" class="halo">海王星</text>
+<text x="264" y="356" font-size="12" fill="#1d6fa5" text-anchor="start" font-weight="700" class="halo">斜率严格 = 3/2 = 1.500</text>
+<text x="264" y="374" font-size="10.5" fill="#b91c1c" text-anchor="start" font-weight="600" class="halo">哈雷彗星极扁却仍在同一直线上！</text>
+<rect x="460" y="68" width="278" height="386" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="480" cy="90" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="480" y="94" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">2</text>
+<text x="498" y="95" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">牛顿揭秘：这其实是一台宇宙秤！</text>
+<rect x="472" y="112" width="254" height="126" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="599" y="134" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">牛顿双体精确版第三定律：</text>
+<text x="599" y="162" font-size="13.5" fill="#0f172a" text-anchor="middle" font-weight="700">T² = [ 4π² / G(M + m) ] · a³</text>
+<text x="484" y="188" font-size="11" fill="#1e293b" text-anchor="start">• 比例常数 K = 4π²/[G(M+m)] 由中心</text>
+<text x="484" y="206" font-size="11" fill="#b91c1c" text-anchor="start" font-weight="600">  总质量决定（不同主星绝不能混用！）</text>
+<text x="484" y="226" font-size="10.5" fill="#64748b" text-anchor="start">• 木星重约太阳 1/1047 ⇒ T²/a³ 偏小 0.1%</text>
+<rect x="472" y="250" width="254" height="92" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="599" y="272" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">奇迹追问：为什么周期 T 跟偏心率 e 无关？</text>
+<text x="484" y="294" font-size="11" fill="#1e293b" text-anchor="start">• 椭圆面积 A = πab = πa²√(1−e²)</text>
+<text x="484" y="314" font-size="11" fill="#1e293b" text-anchor="start">• 角动量 L = m√[GMa(1−e²)]</text>
+<text x="484" y="333" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">• 相除 T = A/(L/2m) 时 √(1−e²) 完美约掉！</text>
+<rect x="472" y="354" width="254" height="86" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="599" y="375" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">隔空称天体秘诀：只要它有卫星！</text>
+<text x="484" y="396" font-size="10.5" fill="#1e293b" text-anchor="start">• 看木卫绕木星 (a, T) ⇒ 直接算出木星质量</text>
+<text x="484" y="415" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600">• 金星无天然卫星 ⇒ 直到飞船掠过才称准！</text>
+<rect x="22" y="466" width="716" height="42" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="380" y="492" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">核心洞见：同半长轴 a 的正圆行星与细长彗星，总机械能 E = −GMm/(2a) 一模一样，跑完一圈的周期 T 也一秒不差！</text>
+</svg>

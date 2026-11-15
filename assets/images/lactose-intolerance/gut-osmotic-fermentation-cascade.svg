@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="462" viewBox="0 0 760 462" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">未消化乳糖肠道渗透抽水与结肠菌群发酵产气动态连锁及氢呼气曲线图</title>
+<desc id="desc">左图分三步展示24克乳糖(70.1mmol)在肠腔产生范特霍夫渗透压抽出242至725毫升水、进入结肠被厌氧菌发酵产生短链脂肪酸与氢气二氧化碳并经肺呼出；右图绘制25克乳糖氢呼气试验曲线，展示60至90分钟越过+20ppm阳性红线达58ppm峰值。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes cascadeGlow {
+    0% { stroke-dashoffset: 220; opacity: 0.35; }
+    100% { stroke-dashoffset: 0; opacity: 1; }
+  }
+  .cascade-track {
+    stroke-dasharray: 220;
+    stroke-dashoffset: 0;
+    animation: cascadeGlow 3.2s ease-out 1 forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .cascade-track {
+      animation: none !important;
+      stroke-dashoffset: 0 !important;
+      opacity: 1 !important;
+    }
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="461" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">喝完冰牛奶半小时，肚子里到底发生了什么？——“渗透抽水 + 菌群产气”双重暴击</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：24 g 未消化乳糖（约 500 mL 牛奶）在肠腔引发的物理与生化连锁反应；右：临床氢呼气试验曲线</text>
+<rect x="20" y="62" width="404" height="386" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="34" y="85" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 30–120 分钟肠道连锁风暴（以空腹喝 500 mL 奶为例）</text>
+<path d="M 48,142 L 48,386" fill="none" stroke="#c25014" stroke-width="3.2" stroke-linecap="round" class="cascade-track"/>
+<rect x="64" y="98" width="346" height="102" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<circle cx="48" cy="134" r="10.5" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="48" y="138" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="76" y="118" font-size="10.6" fill="#1d6fa5" text-anchor="start" font-weight="700">第一击（物理抽水）：范特霍夫渗透压 Π = cRT</text>
+<text x="76" y="138" font-size="9.6" fill="#1e293b" text-anchor="start">• 24 g 乳糖 = 70.1 mmol 溶质滞留肠腔，人体体液维持 290 mOsm/L 等渗；</text>
+<text x="76" y="157" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="700">• 光靠原分子及裂解小分子，就从肠壁血管反向拽出 242–725 mL 水！</text>
+<text x="76" y="177" font-size="9.5" fill="#c25014" text-anchor="start" font-weight="600">• 大量液体激荡冲刷肠腔 → 听见“咕噜咕噜”肠鸣音，诱发渗透性水样腹泻。</text>
+<rect x="64" y="212" width="346" height="112" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<circle cx="48" cy="256" r="10.5" fill="#ffffff" stroke="#c25014" stroke-width="1.2"/>
+<text x="48" y="260" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="76" y="232" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="700">第二击（生化发酵）：结肠 10¹³ 厌氧菌开启“免费自助餐”</text>
+<text x="76" y="252" font-size="9.6" fill="#1e293b" text-anchor="start">• 结肠双歧杆菌、大肠杆菌亮出微生物 β-半乳糖苷酶 (lacZ) 飞速拆糖；</text>
+<text x="76" y="271" font-size="9.5" fill="#1e293b" text-anchor="start">• 产物 A（短链脂肪酸 + 乳酸）：乙酸/丙酸/丁酸使婴幼儿粪便酸化 (pH &lt; 5.5)，</text>
+<text x="76" y="289" font-size="9.5" fill="#1e293b" text-anchor="start">  结肠虽能回收部分短链脂肪酸救急，但过快发酵会令渗透压再翻 3 倍！</text>
+<text x="76" y="309" font-size="9.5" fill="#dc2626" text-anchor="start" font-weight="700">• 产物 B（混合气体）：狂冒无味 H₂、CO₂（及部分人 CH₄）→ 腹胀、痉挛与排气！</text>
+<rect x="64" y="336" width="346" height="98" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<circle cx="48" cy="382" r="10.5" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="48" y="386" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">3</text>
+<text x="76" y="356" font-size="10.5" fill="#6d28d9" text-anchor="start" font-weight="700">第三步（破案铁证）：约 15%–20% 游离氢气透入血液 → 肺部呼出</text>
+<text x="76" y="376" font-size="9.5" fill="#1e293b" text-anchor="start">• 人类自身细胞代谢绝不产生半颗 H₂ 分子！呼气里只要检出高浓度氢气，</text>
+<text x="76" y="395" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="700">  100% 说明有糖没被小肠吸收、掉进大肠喂了细菌！</text>
+<text x="76" y="415" font-size="9.4" fill="#475569" text-anchor="start" font-weight="600">• 抵达结肠时间恰好约 45–90 分钟 → 完美解释为何喝完奶半小时到两小时发作。</text>
+<rect x="436" y="62" width="304" height="386" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="450" y="85" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 氢呼气试验曲线 (口服 25 g 乳糖)</text>
+<text x="450" y="104" font-size="9.6" fill="#64748b" text-anchor="start" font-weight="600">呼气 H₂ 浓度 (ppm)</text>
+<line x1="482.0" y1="304.0" x2="720.0" y2="304.0" stroke="#cbd5e1" stroke-width="0.9"/>
+<text x="475.0" y="307.5" font-size="9.2" fill="#64748b" text-anchor="end">0</text>
+<line x1="482.0" y1="252.0" x2="720.0" y2="252.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3,3"/>
+<text x="475.0" y="255.5" font-size="9.2" fill="#64748b" text-anchor="end">20</text>
+<line x1="482.0" y1="200.0" x2="720.0" y2="200.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3,3"/>
+<text x="475.0" y="203.5" font-size="9.2" fill="#64748b" text-anchor="end">40</text>
+<line x1="482.0" y1="148.0" x2="720.0" y2="148.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3,3"/>
+<text x="475.0" y="151.5" font-size="9.2" fill="#64748b" text-anchor="end">60</text>
+<line x1="482.0" y1="304.0" x2="482.0" y2="308.0" stroke="#475569" stroke-width="1.1"/>
+<text x="482.0" y="321.0" font-size="9.2" fill="#64748b" text-anchor="middle">0分</text>
+<line x1="561.3" y1="304.0" x2="561.3" y2="308.0" stroke="#475569" stroke-width="1.1"/>
+<text x="561.3" y="321.0" font-size="9.2" fill="#64748b" text-anchor="middle">60分</text>
+<line x1="640.7" y1="304.0" x2="640.7" y2="308.0" stroke="#475569" stroke-width="1.1"/>
+<text x="640.7" y="321.0" font-size="9.2" fill="#64748b" text-anchor="middle">120分</text>
+<line x1="720.0" y1="304.0" x2="720.0" y2="308.0" stroke="#475569" stroke-width="1.1"/>
+<text x="720.0" y="321.0" font-size="9.2" fill="#64748b" text-anchor="middle">180分</text>
+<line x1="482.0" y1="122.0" x2="482.0" y2="304.0" stroke="#475569" stroke-width="1.3"/>
+<line x1="482.0" y1="304.0" x2="720.0" y2="304.0" stroke="#475569" stroke-width="1.3"/>
+<line x1="482.0" y1="241.6" x2="720.0" y2="241.6" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5,3"/>
+<text x="488.0" y="235.6" font-size="9.1" fill="#dc2626" text-anchor="start" font-weight="700">阳性红线：较基线升高 ≥ 20 ppm</text>
+<path d="M 482.0,293.6 L 521.7,291.0 L 561.3,288.4 L 601.0,291.0 L 640.7,291.0 L 680.3,293.6 L 720.0,293.6" fill="none" stroke="#18794e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5,3"/>
+<text x="660.5" y="283.0" font-size="9.2" fill="#18794e" text-anchor="middle" font-weight="700">乳糖耐受者 (&lt;10 ppm)</text>
+<path d="M 482.0,293.6 L 521.7,283.2 L 561.3,228.6 L 601.0,153.2 L 640.7,168.8 L 680.3,215.6 L 720.0,249.4" fill="none" stroke="#c25014" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" class="cascade-track"/>
+<circle cx="482.0" cy="293.6" r="3.4" fill="#ffffff" stroke="#c25014" stroke-width="2"/>
+<circle cx="521.7" cy="283.2" r="3.4" fill="#ffffff" stroke="#c25014" stroke-width="2"/>
+<circle cx="561.3" cy="228.6" r="3.4" fill="#ffffff" stroke="#c25014" stroke-width="2"/>
+<circle cx="601.0" cy="153.2" r="3.4" fill="#ffffff" stroke="#c25014" stroke-width="2"/>
+<circle cx="640.7" cy="168.8" r="3.4" fill="#ffffff" stroke="#c25014" stroke-width="2"/>
+<circle cx="680.3" cy="215.6" r="3.4" fill="#ffffff" stroke="#c25014" stroke-width="2"/>
+<circle cx="720.0" cy="249.4" r="3.4" fill="#ffffff" stroke="#c25014" stroke-width="2"/>
+<text x="611.6" y="144.2" font-size="9.3" fill="#c25014" text-anchor="middle" font-weight="700">乳糖吸收不良峰值 (58 ppm)</text>
+<rect x="450" y="336" width="276" height="98" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="462" y="356" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">临床判读两个精妙细节：</text>
+<text x="462" y="375" font-size="9.2" fill="#1e293b" text-anchor="start">1. 吸收不良 ≠ 不耐受：仅当 H₂ 达标且伴随腹胀/</text>
+<text x="462" y="391" font-size="9.2" fill="#1e293b" text-anchor="start">   腹泻症状，才确诊临床“乳糖不耐受”；</text>
+<text x="462" y="409" font-size="9.2" fill="#6d28d9" text-anchor="start" font-weight="600">2. 约 35% 人群产甲烷古菌把 H₂ 转成 CH₄，同测</text>
+<text x="462" y="425" font-size="9.2" fill="#6d28d9" text-anchor="start" font-weight="600">   甲烷 (升高 ≥ 12 ppm) 可防漏诊假阴性！</text>
+</svg>

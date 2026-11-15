@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="512" viewBox="0 0 760 512" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">武、灋（法）、家三字哲理重解与考古字源对比图</title>
+<desc id="desc">对比楚庄王止戈为武与甲骨文荷戈迈步、古体灋字水廌去三构件与今字法、以及家字屋下公猪豭兼具祭祀与上古音*kraː表音功能的三组汉字故事。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="511" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">三大汉字反转现场：楚庄王改写的“武”、丢掉神兽的“法”，与屋下的“豕”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">把流传最广的经典佳话与甲骨金文证据摆在一起，看懂哲理升华、神兽断案与上古谐音</text>
+<rect x="24" y="68" width="712" height="134" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="38" y="80" width="108" height="110" rx="10" fill="#fdf8ee" stroke="#dfc7a7" stroke-width="1.3"/>
+<line x1="92.0" y1="86" x2="92.0" y2="184" stroke="#dfc7a7" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.55"/>
+<line x1="44" y1="135.0" x2="140" y2="135.0" stroke="#dfc7a7" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.55"/>
+<path d="M 98,90 L 98,150 M 68,108 L 122,102 M 112,103 L 126,116 M 98,95 L 112,89"
+      fill="none" stroke="#853212" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 64,174 L 98,174 M 76,174 L 76,154 M 64,160 L 64,174 M 89,158 L 89,174"
+      fill="none" stroke="#c25014" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="162.0" y="80.0" width="156" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="240.0" y="95.0" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="600">反转 ① 武（戈 + 止）</text>
+<text x="330" y="96" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">到底是“制止战争”，还是“扛戈出征”？</text>
+<text x="162" y="124" font-size="11.5" fill="#1e293b" text-anchor="start">• 经典哲理佳话（前597年）：楚庄王在《左传·宣公十二年》提出“夫文，止戈为武”，</text>
+<text x="172" y="145" font-size="11.5" fill="#1e293b" text-anchor="start">把“止”解作止息兵祸，赋予了“武”保大定功、安民和众的崇高反战境界。</text>
+<text x="162" y="171" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="600">• 甲骨金文实证：“止”是脚趾“趾”的本字（步、走、征皆从它）！“戈+止”造字初义其实是</text>
+<text x="172" y="191" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">士兵扛着长戈迈步出征——楚庄王明知兵戈残酷，故意借字形完成了一次伟大的价值重塑。</text>
+<rect x="24" y="214" width="712" height="134" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="38" y="226" width="108" height="110" rx="10" fill="#edf7f4" stroke="#9bc9be" stroke-width="1.3"/>
+<line x1="92.0" y1="232" x2="92.0" y2="330" stroke="#9bc9be" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.55"/>
+<line x1="44" y1="281.0" x2="140" y2="281.0" stroke="#9bc9be" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.55"/>
+<path d="M 54,244 Q 60,256 53,268 M 50,278 Q 57,292 50,306 M 63,262 Q 68,278 62,296"
+      fill="none" stroke="#1d6fa5" stroke-width="3.2" stroke-linecap="round"/>
+<path d="M 96,248 L 114,234 M 84,254 Q 104,244 122,256 Q 126,268 108,272 L 86,272 Q 82,262 84,254 Z"
+      fill="none" stroke="#0f5246" stroke-width="3.0" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 90,272 L 86,286 M 114,272 L 118,286" stroke="#0f5246" stroke-width="2.8" stroke-linecap="round"/>
+<path d="M 84,298 L 122,298 M 103,288 L 103,308 M 90,322 L 104,308 L 118,322 L 90,322"
+      fill="none" stroke="#6d28d9" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="162.0" y="226.0" width="142" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="233.0" y="241.0" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">反转 ② 灋 → 法</text>
+<text x="316" y="242" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">被简化省掉的12笔里，藏着断案独角神兽“廌（獬豸）”！</text>
+<text x="162" y="270" font-size="11.5" fill="#1e293b" text-anchor="start">• 古体“灋”的三重密码（晚商作册般铜鼋、西周大盂鼎已见）：《说文》解作“平之如水，从水；</text>
+<text x="172" y="291" font-size="11.5" fill="#1e293b" text-anchor="start">廌，所以触不直者；去之，从去”——水平面代表公平，独角兽顶翻理亏撒谎之人并将其驱逐。</text>
+<text x="162" y="317" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="600">• 隶变留下的理性骨架：秦汉文书嫌画神兽太慢，省去“廌”只留“氵+ 去”，神判色彩悄然退场，</text>
+<text x="172" y="337" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">但“端平一碗水（氵）”与“祛除邪曲（去）”的法治内核一直留到了今天（荐举的“薦”也从廌）。</text>
+<rect x="24" y="360" width="712" height="134" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="38" y="372" width="108" height="110" rx="10" fill="#fef2f2" stroke="#f2b6b6" stroke-width="1.3"/>
+<line x1="92.0" y1="378" x2="92.0" y2="476" stroke="#f2b6b6" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.55"/>
+<line x1="44" y1="427.0" x2="140" y2="427.0" stroke="#f2b6b6" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.55"/>
+<path d="M 92,382 L 92,392 M 54,412 L 54,394 L 130,394 L 130,412"
+      fill="none" stroke="#991b1b" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 72,420 Q 96,412 114,424 Q 120,438 106,454 L 82,454 Q 72,440 72,420 Z"
+      fill="none" stroke="#b45309" stroke-width="3.2" stroke-linejoin="round"/>
+<path d="M 72,424 L 62,418 M 82,454 L 76,470 M 106,454 L 112,470 M 116,434 L 126,440 M 92,438 L 99,445"
+      fill="none" stroke="#b45309" stroke-width="3.0" stroke-linecap="round"/>
+<rect x="162.0" y="372.0" width="176" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="250.0" y="387.0" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="600">反转 ③ 家（宀 + 豕/豭）</text>
+<text x="350" y="388" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">屋顶下画头猪，不只是农家养猪，更是3000年前的谐音梗！</text>
+<text x="162" y="416" font-size="11.5" fill="#1e293b" text-anchor="start">• 传统生活与祭祀说：有遮风避雨的房屋（宀），蓄养或献祭珍贵的猪牲（豕），标志着定居宗族。</text>
+<text x="162" y="442" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="600">• 甲骨声训铁证：甲骨文屋下画的特指公猪“𢑓/豭”（上古拟音 *kraː），与“家（*kraː）”同音！</text>
+<text x="172" y="463" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">古文字学家（姚萱等）指出：它既绘室内祭祀，更借“豭”精准标音，后来笔画简化才与普通“豕”混同。</text>
+</svg>

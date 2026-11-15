@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="516" viewBox="0 0 760 516" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">儿童与成人大脑葡萄糖代谢占比曲线及身体生长速度权衡对比图</title>
+<desc id="desc">左栏根据Kuzawa等2014年PNAS数据绘制人类大脑占静息代谢率比例在4至5岁冲上66.3%峰值并与体重增速谷底反向对应，右栏对比幼儿66%与成人20%的能量账单。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-b" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#1d6fa5"/>
+    </marker>
+    <marker id="arr-o" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#c25014"/>
+    </marker>
+    <marker id="arr-g" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#18794e"/>
+    </marker>
+    <marker id="arr-p" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#6d28d9"/>
+    </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="515" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">能量账本：小小脑袋竟烧掉全身 66% 静息热量！人类童年为什么长不高？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">据 Kuzawa 等 (2014, PNAS) 正电子断层扫描实测：大脑抢走海量葡萄糖建突触，迫使身体生长踩下刹车</text>
+<rect x="22" y="68" width="418" height="430" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="92" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="42" y="96" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">1</text>
+<text x="62" y="97" font-size="12.4" fill="#0f172a" text-anchor="start" font-weight="700">大脑能耗占比 vs 身体长肉速度的“跷跷板效应”</text>
+<text x="42" y="117" font-size="10.5" fill="#64748b" text-anchor="start">实线：大脑葡萄糖消耗占静息代谢率（RMR%）｜ 虚线：体重增速示意</text>
+<line x1="76.0" y1="414.0" x2="416.0" y2="414.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="68.0" y="418.0" font-size="10.5" fill="#64748b" text-anchor="end">0%</text>
+<line x1="76.0" y1="344.1" x2="416.0" y2="344.1" stroke="#e2e8f0" stroke-width="1"/>
+<text x="68.0" y="348.1" font-size="10.5" fill="#64748b" text-anchor="end">20%</text>
+<line x1="76.0" y1="274.3" x2="416.0" y2="274.3" stroke="#e2e8f0" stroke-width="1"/>
+<text x="68.0" y="278.3" font-size="10.5" fill="#64748b" text-anchor="end">40%</text>
+<line x1="76.0" y1="204.4" x2="416.0" y2="204.4" stroke="#e2e8f0" stroke-width="1"/>
+<text x="68.0" y="208.4" font-size="10.5" fill="#64748b" text-anchor="end">60%</text>
+<line x1="76.0" y1="152.0" x2="76.0" y2="414.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="76.0" y="432.0" font-size="10.5" fill="#64748b" text-anchor="middle">出生</text>
+<line x1="132.7" y1="152.0" x2="132.7" y2="414.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="132.7" y="432.0" font-size="10.5" fill="#64748b" text-anchor="middle">2岁</text>
+<line x1="203.5" y1="152.0" x2="203.5" y2="414.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="203.5" y="432.0" font-size="10.5" fill="#64748b" text-anchor="middle">4.5岁</text>
+<line x1="246.0" y1="152.0" x2="246.0" y2="414.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="246.0" y="432.0" font-size="10.5" fill="#64748b" text-anchor="middle">6岁</text>
+<line x1="288.5" y1="152.0" x2="288.5" y2="414.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="288.5" y="432.0" font-size="10.5" fill="#64748b" text-anchor="middle">10岁</text>
+<line x1="331.0" y1="152.0" x2="331.0" y2="414.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="331.0" y="432.0" font-size="10.5" fill="#64748b" text-anchor="middle">14岁</text>
+<line x1="416.0" y1="152.0" x2="416.0" y2="414.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="416.0" y="432.0" font-size="10.5" fill="#64748b" text-anchor="middle">成人</text>
+<line x1="76.0" y1="152.0" x2="76.0" y2="414.0" stroke="#475569" stroke-width="1.5"/>
+<line x1="76.0" y1="414.0" x2="416.0" y2="414.0" stroke="#475569" stroke-width="1.5"/>
+<rect x="178.0" y="152.0" width="51.0" height="262.0" fill="#ffedd5" opacity="0.65"/>
+<polyline points="76.0,228.9 104.3,211.4 146.8,193.9 203.5,182.4 246.0,197.4 288.5,253.3 331.0,302.2 373.5,330.2 416.0,344.1" fill="none" stroke="#c25014" stroke-width="3.0"/>
+<circle cx="203.5" cy="182.4" r="5.5" fill="#c25014" stroke="#ffffff" stroke-width="1.5"/>
+<polyline points="76.0,176.5 104.3,288.2 146.8,337.1 203.5,365.1 246.0,358.1 288.5,330.2 325.7,260.3 362.9,361.6 416.0,400.0" fill="none" stroke="#1d6fa5" stroke-width="2.4" stroke-dasharray="6,4"/>
+<text x="209.5" y="174.4" font-size="11.0" fill="#c25014" text-anchor="start" font-weight="700" class="halo">峰值 66.3% RMR！</text>
+<text x="325.7" y="250.3" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">青春期身高体重猛蹿</text>
+<text x="203.5" y="383.1" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">童年身体增速谷底</text>
+<text x="389.4" y="335.1" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">成人稳态 ~20%</text>
+<text x="246" y="464" font-size="10.5" fill="#64748b" text-anchor="middle">注：虚线为相对体重年增速变化趋势（与大脑耗糖峰值严格反向咬合）</text>
+<text x="246" y="484" font-size="10.6" fill="#0f172a" text-anchor="middle" font-weight="700">等十几岁突触修剪完、大脑省下口粮，青少年才迎来身高暴涨！</text>
+<rect x="454" y="68" width="284" height="430" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="474" cy="92" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="474" y="96" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">2</text>
+<text x="494" y="97" font-size="12.4" fill="#0f172a" text-anchor="start" font-weight="700">全身能量账单正面对比</text>
+<text x="474" y="117" font-size="10.5" fill="#64748b" text-anchor="start">为什么幼童玩一会儿就饿、低血糖更危险？</text>
+<rect x="470" y="136" width="252" height="152" rx="8" fill="#fef1e8" stroke="#fdba74" stroke-width="1"/>
+<text x="596" y="159" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">幼儿 / 学龄前大脑（4–5 岁峰值）</text>
+<text x="596" y="188" font-size="15.0" fill="#c25014" text-anchor="middle" font-weight="700">66% 静息代谢热量</text>
+<text x="596" y="211" font-size="11.0" fill="#0f172a" text-anchor="middle" font-weight="700">（占全天总活动能耗的 43%！）</text>
+<text x="596" y="236" font-size="10.5" fill="#1e293b" text-anchor="middle">● 约 30% 葡萄糖走“有氧糖酵解”，</text>
+<text x="596" y="255" font-size="10.5" fill="#1e293b" text-anchor="middle">专门当砖瓦合成突触蛋白与细胞膜脂质</text>
+<text x="596" y="274" font-size="10.5" fill="#64748b" text-anchor="middle">● 密集突触不停放电维护，耗能是成人3倍</text>
+<rect x="470" y="304" width="252" height="112" rx="8" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<text x="596" y="327" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">成年人大脑（修剪定型后）</text>
+<text x="596" y="356" font-size="15.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">~20% 静息代谢热量</text>
+<text x="596" y="380" font-size="10.5" fill="#1e293b" text-anchor="middle">体重占比仅 ~2%，但路线精简高效，</text>
+<text x="596" y="399" font-size="10.5" fill="#1e293b" text-anchor="middle">像修好的高速公路，日常养护省电得多</text>
+<rect x="470" y="430" width="252" height="54" rx="8" fill="#e7f6ee" stroke="#86efac" stroke-width="1"/>
+<text x="596" y="452" font-size="10.5" fill="#0f172a" text-anchor="middle">演化代价：黑猩猩幼崽断奶后飞速长壮，</text>
+<text x="596" y="471" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="700">唯独人类把漫长童年全拿来“喂脑子”！</text>
+</svg>

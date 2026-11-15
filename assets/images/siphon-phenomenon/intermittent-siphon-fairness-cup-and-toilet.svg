@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="485" viewBox="0 0 760 485" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">自动间歇虹吸装置：公道杯三态演变与虹吸式马桶S型存水弯剖面</title>
+<desc id="desc">左图分知足态、越界触发态、贪心排空态展示公道杯与希罗同心套管自动虹吸原理；右图展示现代虹吸式坐便器S型存水弯水封防臭与满管负压排污过程。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-ink" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#0f172a"/>
+  </marker>
+  <marker id="arr-red" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#dc2626"/>
+  </marker>
+  <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#6d28d9"/>
+  </marker>
+  <marker id="arr-teal" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#0f766e"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="484" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">不靠嘴吸、自动触发的间歇虹吸：从“知足常乐”公道杯到抽水马桶</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">把弯管藏进容器内部：液面越过弯顶的瞬间自动排空管内空气，完成“无人工引水”自启动</text>
+<rect x="20" y="62" width="444" height="408" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="40" cy="84" r="10.5" fill="#fffbeb" stroke="#b45309" stroke-width="1.2"/>
+<text x="40" y="88" font-size="11.5" fill="#b45309" text-anchor="middle" font-weight="700">1</text>
+<text x="58" y="88" font-size="13" fill="#0f172a" text-anchor="start" font-weight="700">公道杯 / 毕达哥拉斯贪心杯：跨过红线就“倾家荡产”</text>
+<text x="40" y="108" font-size="11" fill="#64748b" text-anchor="start">古希腊希罗《气动力学》命题 12 同心套管 · 故宫藏清光绪宜兴窑绿地粉彩公道杯</text>
+<text x="97.0" y="134" font-size="11.8" fill="#18794e" text-anchor="middle" font-weight="700">① 知足态（安全）</text>
+<text x="97.0" y="150" font-size="10.5" fill="#64748b" text-anchor="middle">酒面低于暗管弯顶</text>
+<rect x="54.0" y="212.6" width="86" height="59.4" rx="4" fill="#fde68a" fill-opacity="0.85"/>
+<line x1="54.0" y1="212.6" x2="140.0" y2="212.6" stroke="#b45309" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="48.0" y1="194.2" x2="146.0" y2="194.2" stroke="#dc2626" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="3 3"/>
+<path d="M 52,164.0 L 52,272.0 L 88.0,272.0 L 88.0,310 M 142,164.0 L 142,272.0 L 106.0,272.0 L 106.0,310" fill="none" stroke="#334155" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 83.0,265 L 83.0,200.2 C 83.0,186.2 97.0,186.2 97.0,200.2 L 97.0,312" fill="none" stroke="#475569" stroke-width="8.5" stroke-linecap="butt"/>
+<path d="M 83.0,265 L 83.0,212.6" fill="none" stroke="#f59e0b" stroke-width="4.8"/>
+<path d="M 83.0,212.6 L 83.0,200.2 C 83.0,186.2 97.0,186.2 97.0,200.2 L 97.0,312" fill="none" stroke="#f8fafc" stroke-width="4.5"/>
+<text x="97.0" y="330" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="600">管顶存气·滴酒不漏</text>
+<text x="241.0" y="134" font-size="11.8" fill="#c25014" text-anchor="middle" font-weight="700">② 越界触发（自充管）</text>
+<text x="241.0" y="150" font-size="10.5" fill="#64748b" text-anchor="middle">贪倒一口淹没弯顶</text>
+<rect x="198.0" y="185.6" width="86" height="86.4" rx="4" fill="#fde68a" fill-opacity="0.85"/>
+<line x1="198.0" y1="185.6" x2="284.0" y2="185.6" stroke="#b45309" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="192.0" y1="194.2" x2="290.0" y2="194.2" stroke="#dc2626" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="3 3"/>
+<path d="M 196,164.0 L 196,272.0 L 232.0,272.0 L 232.0,310 M 286,164.0 L 286,272.0 L 250.0,272.0 L 250.0,310" fill="none" stroke="#334155" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 227.0,265 L 227.0,200.2 C 227.0,186.2 241.0,186.2 241.0,200.2 L 241.0,312" fill="none" stroke="#475569" stroke-width="8.5" stroke-linecap="butt"/>
+<path d="M 227.0,265 L 227.0,200.2 C 227.0,186.2 241.0,186.2 241.0,200.2 L 241.0,312" fill="none" stroke="#f59e0b" stroke-width="5.0"/>
+<line x1="241.0" y1="312.0" x2="241.0" y2="338.0" stroke="#d97706" stroke-width="4.2" stroke-linecap="round"/>
+<line x1="249.0" y1="314.0" x2="249.0" y2="334.0" stroke="#c25014" stroke-width="1.4" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<text x="241.0" y="352" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700">漫顶排气·瞬间启动</text>
+<text x="385.0" y="134" font-size="11.8" fill="#dc2626" text-anchor="middle" font-weight="700">③ 贪心排空（停不住）</text>
+<text x="385.0" y="150" font-size="10.5" fill="#64748b" text-anchor="middle">液面跌破弯顶仍抽干</text>
+<rect x="342.0" y="248.2" width="86" height="23.8" rx="4" fill="#fde68a" fill-opacity="0.85"/>
+<line x1="342.0" y1="248.2" x2="428.0" y2="248.2" stroke="#b45309" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="336.0" y1="194.2" x2="434.0" y2="194.2" stroke="#dc2626" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="3 3"/>
+<path d="M 340,164.0 L 340,272.0 L 376.0,272.0 L 376.0,310 M 430,164.0 L 430,272.0 L 394.0,272.0 L 394.0,310" fill="none" stroke="#334155" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 371.0,265 L 371.0,200.2 C 371.0,186.2 385.0,186.2 385.0,200.2 L 385.0,312" fill="none" stroke="#475569" stroke-width="8.5" stroke-linecap="butt"/>
+<path d="M 371.0,265 L 371.0,200.2 C 371.0,186.2 385.0,186.2 385.0,200.2 L 385.0,312" fill="none" stroke="#f59e0b" stroke-width="5.0"/>
+<line x1="385.0" y1="312.0" x2="385.0" y2="338.0" stroke="#d97706" stroke-width="4.2" stroke-linecap="round"/>
+<line x1="393.0" y1="314.0" x2="393.0" y2="334.0" stroke="#dc2626" stroke-width="1.4" stroke-linecap="round" marker-end="url(#arr-red)"/>
+<text x="385.0" y="352" font-size="10.5" fill="#dc2626" text-anchor="middle" font-weight="700">满管负压·整杯漏光</text>
+<text x="42" y="190" font-size="10.5" fill="#dc2626" text-anchor="start" font-weight="600" class="halo">平心刻度线</text>
+<rect x="34" y="368" width="416" height="88" rx="8" fill="#fffbeb" stroke="#fde68a" stroke-width="1.1"/>
+<text x="46" y="388" font-size="11.5" fill="#b45309" text-anchor="start" font-weight="700">为什么液面降回红线以下（状态 ③），酒还是停不下来？</text>
+<text x="46" y="408" font-size="11" fill="#1e293b" text-anchor="start">• 启动条件 ≠ 维持条件！弯顶红线只是“排尽空气、接通水柱”的触发门槛；</text>
+<text x="46" y="426" font-size="11" fill="#1e293b" text-anchor="start">• 一旦连通，维持流动只看【杯内液面高于杯底漏孔（H &gt; 0）】，直到酒面跌至</text>
+<text x="46" y="444" font-size="11" fill="#0f172a" text-anchor="start" font-weight="600">  杯底进水口吸入空气，水柱断裂才会停止——正合“满招损，谦受益”。</text>
+<rect x="478" y="62" width="262" height="408" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="498" cy="84" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="498" y="88" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">2</text>
+<text x="516" y="88" font-size="13" fill="#0f172a" text-anchor="start" font-weight="700">虹吸式马桶 S 型存水弯</text>
+<text x="494" y="108" font-size="11" fill="#64748b" text-anchor="start">日常水封防臭 + 冲水满管抽吸双模态</text>
+<rect x="494" y="124" width="230" height="178" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<path d="M 526,158 L 526,228 C 526,258 574,258 574,220 C 574,174 636,174 636,222 L 636,284" fill="none" stroke="#334155" stroke-width="24" stroke-linecap="round"/>
+<path d="M 526,158 L 526,228 C 526,258 574,258 574,220 C 574,174 636,174 636,222 L 636,284" fill="none" stroke="#dbeafe" stroke-width="18" stroke-linecap="round"/>
+<path d="M 526,166 L 526,228 C 526,252 574,252 574,220 C 574,180 636,180 636,222 L 636,278" fill="none" stroke="#1d6fa5" stroke-width="2.4" stroke-dasharray="5 3" marker-end="url(#arr-blue)"/>
+<line x1="506.0" y1="192.0" x2="658.0" y2="192.0" stroke="#0f766e" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="4 3"/>
+<text x="508" y="146" font-size="10.8" fill="#1d6fa5" text-anchor="start" font-weight="600">水箱急冲注水</text>
+<text x="606" y="166" font-size="10.8" fill="#dc2626" text-anchor="middle" font-weight="700">S 弯波峰堰顶</text>
+<text x="550" y="276" font-size="10.8" fill="#0f766e" text-anchor="middle" font-weight="600">5 cm 静态水封防臭</text>
+<text x="680" y="256" font-size="10.5" fill="#475569" text-anchor="middle">直通排污立管</text>
+<text x="494" y="324" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">三步读懂每次冲水的声音密码：</text>
+<text x="494" y="346" font-size="11" fill="#1e293b" text-anchor="start">① 待机防臭：水位停在 S 弯堰顶</text>
+<text x="494" y="364" font-size="11" fill="#1e293b" text-anchor="start">   边缘，5 cm 水封隔绝沼气与臭味；</text>
+<text x="494" y="386" font-size="11" fill="#1e293b" text-anchor="start">② 满管触发：水箱大流量瞬间灌满</text>
+<text x="494" y="404" font-size="11" fill="#1e293b" text-anchor="start">   越过堰顶排空空气，产生强负压抽吸；</text>
+<text x="494" y="426" font-size="11" fill="#1e293b" text-anchor="start">③ 咕噜断流：池底抽空吸进空气，</text>
+<text x="494" y="444" font-size="11" fill="#0f172a" text-anchor="start" font-weight="600">   发出“咕噜”声破除虹吸，补水封口。</text>
+</svg>

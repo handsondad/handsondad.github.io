@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="444" viewBox="0 0 760 444" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">受凉腹泻科学自救三步指南：40摄氏度腹部温敷门控、SGLT1口服补液盐机制与就医红线图</title>
+<desc id="desc">左栏解析40摄氏度温敷关闭腹壁TRPM8冷通道并平抚副交感痉挛的原理；中栏展示小肠SGLT1每转运2个钠离子加1个葡萄糖带动约210个水分子吸收的口服补液盐机制及纯水高糖水误区；右栏警示滥用抗生素危害与高热、便血、脱水、右下腹转移痛四大就医红线。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="443" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">真着凉拉肚子了怎么科学自救？—— 读懂“捂热水袋”与“口服补液盐”背后的硬核生理学</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">长辈说的“捂捂肚子喝点淡盐糖水”并非心理安慰，但瞎吞抗生素和猛灌纯白开水却会帮倒忙！</text>
+<rect x="20" y="62" width="232" height="368" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="76.0" width="178" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="123.0" y="91.0" font-size="9.5" fill="#18794e" text-anchor="middle" font-weight="600">第 1 招：物理关掉冷警报</text>
+<text x="34" y="118" font-size="11.0" fill="#18794e" text-anchor="start" font-weight="700">40 ℃ 温敷肚脐为什么管用？</text>
+<rect x="34" y="132" width="204" height="118" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="46" y="153" font-size="9.3" fill="#18794e" text-anchor="start" font-weight="700">• 关闭 TRPM8 冷通道：</text>
+<text x="46" y="171" font-size="8.9" fill="#1e293b" text-anchor="start">  把腹壁皮温拉回 32 ℃ 以上，直接</text>
+<text x="46" y="188" font-size="8.9" fill="#1e293b" text-anchor="start">  切断 T7–T12 冷觉传入冲动源头；</text>
+<text x="46" y="208" font-size="9.3" fill="#0f172a" text-anchor="start" font-weight="700">• 温觉反向平抚内脏：</text>
+<text x="46" y="226" font-size="8.9" fill="#1e293b" text-anchor="start">  温和热刺激激活 C/Aδ 温觉纤维，</text>
+<text x="46" y="242" font-size="8.9" fill="#1e293b" text-anchor="start">  降低副交感痉挛张力、舒张血管。</text>
+<text x="34" y="274" font-size="9.4" fill="#0f172a" text-anchor="start" font-weight="700">• 日常防凉重点部位：</text>
+<text x="34" y="293" font-size="9.0" fill="#1e293b" text-anchor="start">  睡觉搭住肚脐小腹（薄搭毯即可）；</text>
+<text x="34" y="311" font-size="9.0" fill="#1e293b" text-anchor="start">  满头大汗进低温空调房先擦干汗水</text>
+<text x="34" y="329" font-size="9.0" fill="#0f172a" text-anchor="start" font-weight="600">  （汗液蒸发吸热会让皮温骤降！）；</text>
+<text x="34" y="349" font-size="9.0" fill="#b45309" text-anchor="start" font-weight="700">• 温敷安全提醒：隔衣控制在</text>
+<text x="34" y="367" font-size="9.0" fill="#1e293b" text-anchor="start">  40–42 ℃，切勿暖宝宝贴肉过夜</text>
+<text x="34" y="385" font-size="9.0" fill="#dc2626" text-anchor="start" font-weight="700">  以防低温烫伤！</text>
+<rect x="264" y="62" width="232" height="368" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="278.0" y="76.0" width="178" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="367.0" y="91.0" font-size="9.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">第 2 招：启动小肠吸水泵</text>
+<text x="278" y="118" font-size="11.0" fill="#1d6fa5" text-anchor="start" font-weight="700">口服补液盐 (ORS) 的分子魔术</text>
+<rect x="278" y="132" width="204" height="128" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="380" y="153" font-size="9.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">小肠绒毛 SGLT1 同向转运体</text>
+<text x="380" y="176" font-size="10.6" fill="#0f172a" text-anchor="middle" font-weight="700">2 个 Na⁺ + 1 个葡萄糖</text>
+<text x="380" y="196" font-size="9.6" fill="#18794e" text-anchor="middle" font-weight="700">↓ 顺带拽回 ~210 个水分子!</text>
+<text x="290" y="220" font-size="8.8" fill="#1e293b" text-anchor="start">• 哪怕大肠正拉稀，小肠上的这台</text>
+<text x="290" y="237" font-size="8.8" fill="#0f172a" text-anchor="start" font-weight="700">  钠–糖耦联吸水泵依然全速运转！</text>
+<text x="290" y="253" font-size="8.6" fill="#64748b" text-anchor="start">  （曾挽救全球数千万腹泻脱水儿童）</text>
+<text x="278" y="282" font-size="9.4" fill="#0f172a" text-anchor="start" font-weight="700">• 喝错水反而帮倒忙：</text>
+<text x="278" y="301" font-size="8.9" fill="#1e293b" text-anchor="start">  [错] 狂灌纯白水：缺钠难锁水、腿软；</text>
+<text x="278" y="319" font-size="8.9" fill="#dc2626" text-anchor="start" font-weight="600">  [错] 喝高糖果汁/可乐：渗透压太高，</text>
+<text x="278" y="337" font-size="8.9" fill="#dc2626" text-anchor="start" font-weight="700">       反而把血管里的水倒拽进肠腔！</text>
+<text x="278" y="357" font-size="8.9" fill="#18794e" text-anchor="start" font-weight="700">  [对] 轻度拉 1–2 次喝温米汤/温水；</text>
+<text x="278" y="375" font-size="8.9" fill="#0f172a" text-anchor="start" font-weight="700">       多次水泻首选药店“口服补液盐III”</text>
+<text x="278" y="393" font-size="8.8" fill="#1e293b" text-anchor="start">       （低渗配方 245 mOsm/L 最快吸水）。</text>
+<rect x="508" y="62" width="232" height="368" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="522.0" y="76.0" width="178" height="22" rx="11.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="611.0" y="91.0" font-size="9.5" fill="#dc2626" text-anchor="middle" font-weight="600">第 3 招：避坑与就医红线</text>
+<text x="522" y="118" font-size="11.0" fill="#dc2626" text-anchor="start" font-weight="700">别乱吃药！认准四大就医警报</text>
+<rect x="522" y="132" width="204" height="108" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="1"/>
+<text x="534" y="152" font-size="9.3" fill="#b45309" text-anchor="start" font-weight="700">头号误区：一拉肚子就吃抗生素！</text>
+<text x="534" y="171" font-size="8.9" fill="#1e293b" text-anchor="start">• 阿莫西林/头孢/诺氟沙星只杀细菌；</text>
+<text x="534" y="189" font-size="8.9" fill="#0f172a" text-anchor="start" font-weight="700">• 对受凉神经反射和诺如病毒 0 作用，</text>
+<text x="534" y="207" font-size="8.9" fill="#dc2626" text-anchor="start" font-weight="700">  反而错杀肠道有益菌群加重腹泻！</text>
+<text x="534" y="225" font-size="8.5" fill="#1e293b" text-anchor="start">  (黏膜保护可用蒙脱石散，勿与他药同服)</text>
+<rect x="522" y="252" width="204" height="164" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1"/>
+<text x="534" y="272" font-size="9.2" fill="#dc2626" text-anchor="start" font-weight="700">出现以下任一“红旗信号”立即就医：</text>
+<text x="534" y="292" font-size="8.9" fill="#0f172a" text-anchor="start" font-weight="700">1. 发热 &gt; 38.5 ℃ 或寒战不退；</text>
+<text x="534" y="311" font-size="8.9" fill="#0f172a" text-anchor="start" font-weight="700">2. 粪便带血丝、暗红果酱色或黑便；</text>
+<text x="534" y="330" font-size="8.9" fill="#1e293b" text-anchor="start">3. 脱水征兆：半天无尿/尿深黄、口干</text>
+<text x="534" y="348" font-size="8.9" fill="#1e293b" text-anchor="start">   无泪、站起头晕眼花（尤其老人幼儿）；</text>
+<text x="534" y="367" font-size="8.9" fill="#dc2626" text-anchor="start" font-weight="700">4. 腹痛从脐周转移并固定在右下腹</text>
+<text x="534" y="385" font-size="8.8" fill="#dc2626" text-anchor="start" font-weight="700">   （高度警惕急性阑尾炎伪装成拉肚子！）</text>
+<text x="534" y="404" font-size="8.8" fill="#1e293b" text-anchor="start">   或腹泻持续 &gt; 48 小时未见好转。</text>
+</svg>

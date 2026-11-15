@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="524" viewBox="0 0 760 524" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">各标号汽油选油指南与四大常见加油误区拆解图</title>
+<desc id="desc">汇总89/92/95/98及E10乙醇汽油的适用机型，并从工程与炼油化学角度拆解阿特金森循环与涡轮压缩比反差、高标号不等于高清洁度或高热值、国五降标号脱硫机理及冬夏蒸气压与碳罐保护的关联。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="523" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">各标号汽油全景指南与四大谣言终结：92 的车加 95 真能省油、清积碳吗？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">上排速查 89 / 92 / 95 / 98 / E10 适用机型 → 下排拆穿压缩比教条、高标号崇拜与冬夏配方秘密</text>
+<rect x="24" y="66" width="136" height="114" rx="8" fill="#ffffff" stroke="#475569" stroke-width="1.2"/>
+<rect x="32.0" y="74.0" width="120" height="20" rx="10.0" fill="#f1f5f9" stroke="#475569" stroke-width="1" stroke-opacity="0.35"/>
+<text x="92.0" y="87.6" font-size="10.8" fill="#475569" text-anchor="middle" font-weight="600">89 号汽油</text>
+<text x="92" y="113" font-size="10.8" fill="#475569" text-anchor="middle" font-weight="700">RON ≥ 89</text>
+<text x="92" y="136" font-size="10.3" fill="#0f172a" text-anchor="middle" font-weight="600">低压缩比老引擎</text>
+<text x="92" y="156" font-size="10.0" fill="#64748b" text-anchor="middle">小型农机/割草机</text>
+<rect x="168" y="66" width="136" height="114" rx="8" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.2"/>
+<rect x="176.0" y="74.0" width="120" height="20" rx="10.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="236.0" y="87.6" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="600">92 号汽油</text>
+<text x="236" y="113" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">RON ≥ 92</text>
+<text x="236" y="136" font-size="10.3" fill="#0f172a" text-anchor="middle" font-weight="600">家用自然吸气主力</text>
+<text x="236" y="156" font-size="10.0" fill="#64748b" text-anchor="middle">混动阿特金森循环</text>
+<rect x="312" y="66" width="136" height="114" rx="8" fill="#ffffff" stroke="#18794e" stroke-width="1.2"/>
+<rect x="320.0" y="74.0" width="120" height="20" rx="10.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="380.0" y="87.6" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="600">95 号汽油</text>
+<text x="380" y="113" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="700">RON ≥ 95</text>
+<text x="380" y="136" font-size="10.3" fill="#0f172a" text-anchor="middle" font-weight="600">主流涡轮增压直喷</text>
+<text x="380" y="156" font-size="10.0" fill="#64748b" text-anchor="middle">欧系/国产高功率机</text>
+<rect x="456" y="66" width="136" height="114" rx="8" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+<rect x="464.0" y="74.0" width="120" height="20" rx="10.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="524.0" y="87.6" font-size="10.8" fill="#6d28d9" text-anchor="middle" font-weight="600">98 / 102 号</text>
+<text x="524" y="113" font-size="10.8" fill="#6d28d9" text-anchor="middle" font-weight="700">RON ≥ 98</text>
+<text x="524" y="136" font-size="10.3" fill="#0f172a" text-anchor="middle" font-weight="600">高增压性能车/超跑</text>
+<text x="524" y="156" font-size="10.0" fill="#64748b" text-anchor="middle">极限点火提前压榨马力</text>
+<rect x="600" y="66" width="136" height="114" rx="8" fill="#ffffff" stroke="#c25014" stroke-width="1.2"/>
+<rect x="608.0" y="74.0" width="120" height="20" rx="10.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="668.0" y="87.6" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="600">E10 乙醇汽油</text>
+<text x="668" y="113" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="700">90%油+10%醇</text>
+<text x="668" y="136" font-size="10.3" fill="#0f172a" text-anchor="middle" font-weight="600">与同标号抗爆相同</text>
+<text x="668" y="156" font-size="10.0" fill="#64748b" text-anchor="middle">亲水保质期约1个月</text>
+<rect x="24" y="194" width="348" height="152" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="214" r="10" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="42" y="218" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="58" y="218" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700">迷思 ① “压缩比超 10 就必须加 95？” → 早就过时了！</text>
+<text x="40" y="244" font-size="10.7" fill="#1e293b" text-anchor="start">• 反例 A：丰田/马自达等 13:1~14:1 高压缩比阿特金森/米勒循环</text>
+<text x="50" y="264" font-size="10.7" fill="#1d6fa5" text-anchor="start" font-weight="600">机，靠“进气门晚关”吐回部分气体，实际压缩终温低，照喝 92#！</text>
+<text x="40" y="287" font-size="10.7" fill="#1e293b" text-anchor="start">• 反例 B：涡轮机几何压缩比虽仅 9.8:1，但增压器硬塞进两倍密</text>
+<text x="50" y="307" font-size="10.7" fill="#c25014" text-anchor="start" font-weight="600">度滚烫空气，实际缸压极高，反而必须喝 95# 或 98#！</text>
+<text x="40" y="331" font-size="10.8" fill="#18794e" text-anchor="start" font-weight="700">• 唯一金标准：直接看油箱盖背面出厂贴纸，工程师已标定好！</text>
+<rect x="388" y="194" width="348" height="152" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="214" r="10" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2"/>
+<text x="406" y="218" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">2</text>
+<text x="422" y="218" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">迷思 ② “92 车加 95 更纯更省油？” → 纯智商税！</text>
+<text x="404" y="244" font-size="10.6" fill="#1e293b" text-anchor="start">• 清洁度完全相同：国六下 92/95/98 硫含量统统严控在</text>
+<text x="414" y="264" font-size="10.6" fill="#dc2626" text-anchor="start" font-weight="600">≤ 10 ppm，杂质与胶质限值一视同仁，高标号并不更纯！</text>
+<text x="404" y="287" font-size="10.6" fill="#1e293b" text-anchor="start">• 热值几乎重叠：各标号低位热值均约 43~44 MJ/kg（体积</text>
+<text x="414" y="307" font-size="10.6" fill="#1e293b" text-anchor="start">差 &lt; 1.8%），填不平 6%+ 差价；高芳烃反易生积碳。</text>
+<text x="404" y="331" font-size="10.6" fill="#64748b" text-anchor="start">• 92 车 ECU 不会凭空涨压缩比，多花的钱纯打水漂。</text>
+<rect x="24" y="358" width="348" height="152" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="378" r="10" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="42" y="382" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">3</text>
+<text x="58" y="382" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700">冷知识 ③ 当年 90/93/97 为什么集体降 1 分变 89/92/95？</text>
+<text x="40" y="408" font-size="10.7" fill="#1e293b" text-anchor="start">• 炼油化学真相：国四升国五时，环保要求把汽油硫含量从 50 ppm</text>
+<text x="50" y="428" font-size="10.7" fill="#1e293b" text-anchor="start">猛砍五分之四降到 10 ppm，必须对催化裂化汽油深度“加氢脱硫”。</text>
+<text x="40" y="451" font-size="10.7" fill="#6d28d9" text-anchor="start" font-weight="600">• 加氢拔硫时，高辛烷值的“烯烃双键”也会顺手被氢饱和成低辛烷</text>
+<text x="50" y="471" font-size="10.7" fill="#6d28d9" text-anchor="start" font-weight="600">值烷烃，导致辛烷值天然掉约 1 分！顺势定为 89/92/95 + 新增 98，</text>
+<text x="50" y="491" font-size="10.5" fill="#64748b" text-anchor="start">既保护三元催化器减少雾霾，又省下强行补辛烷值的炼厂巨额能耗。</text>
+<rect x="388" y="358" width="348" height="152" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="378" r="10" fill="#ccfbf1" stroke="#0f766e" stroke-width="1.2"/>
+<text x="406" y="382" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">4</text>
+<text x="422" y="382" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700">闭环彩蛋 ④ 冬夏汽油暗换配方，恰与油箱负压首尾相连！</text>
+<text x="404" y="408" font-size="10.7" fill="#1e293b" text-anchor="start">• 冬季配方（高蒸气压 RVP）：炼厂多调入易挥发丁烷组分，确保天</text>
+<text x="414" y="428" font-size="10.7" fill="#1e293b" text-anchor="start">寒地冻时冷启动也能迅速雾化点着火；</text>
+<text x="404" y="451" font-size="10.7" fill="#0f766e" text-anchor="start" font-weight="600">• 夏季配方（低蒸气压 RVP）：严控挥发度，一来防油管沸腾“气阻”，</text>
+<text x="414" y="471" font-size="10.7" fill="#0f766e" text-anchor="start" font-weight="600">二来防止暴晒生出海量油气冲垮活性炭罐！加上“跳枪即停不凑整”，</text>
+<text x="414" y="491" font-size="10.7" fill="#0f172a" text-anchor="start" font-weight="700">就能让你的油箱碳罐呼吸顺畅十年不坏。</text>
+</svg>

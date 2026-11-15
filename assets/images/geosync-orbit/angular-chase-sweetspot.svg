@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="436" viewBox="0 0 760 436" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">地球同步轨道角速度追逐与开普勒第三定律唯一甜蜜点图解</title>
+<desc id="desc">左图按真实比例展示地球、400公里空间站、21528公里北斗中圆轨道与35786公里地球静止轨道在6恒星时内的角速度追逐动画与终态；右图绘制轨道周期随高度变化曲线，标出23小时56分04秒对应的唯一同步高度35786公里。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  .rot-earth {
+        transform-origin: 192.0px 248.0px;
+        animation: spinEarth 6.4s linear 0.35s 1 forwards;
+      }
+      .rot-geo {
+        transform-origin: 192.0px 248.0px;
+        animation: spinGeo 6.4s linear 0.35s 1 forwards;
+      }
+      .rot-meo {
+        transform-origin: 192.0px 248.0px;
+        animation: spinMeo 6.4s linear 0.35s 1 forwards;
+      }
+      .rot-leo {
+        transform-origin: 192.0px 248.0px;
+        animation: spinLeo 6.4s linear 0.35s 1 forwards;
+      }
+      @keyframes spinEarth {
+        from { transform: rotate(90.00deg); }
+        to   { transform: rotate(0deg); }
+      }
+      @keyframes spinGeo {
+        from { transform: rotate(90.00deg); }
+        to   { transform: rotate(0deg); }
+      }
+      @keyframes spinMeo {
+        from { transform: rotate(167.15deg); }
+        to   { transform: rotate(0deg); }
+      }
+      @keyframes spinLeo {
+        from { transform: rotate(1396.34deg); }
+        to   { transform: rotate(0deg); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .rot-earth, .rot-geo, .rot-meo, .rot-leo {
+          animation: none;
+          transform: rotate(0deg);
+        }
+      }
+</style>
+<rect x="0.5" y="0.5" width="759" height="435" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">角速度追逐战：为什么只有 35,786 km 能跟地球“同频锁死”？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：北极俯视 6 恒星时真实角速度比（ω ∝ r⁻³ᐟ²）；右：开普勒第三定律唯一交点</text>
+<rect x="20" y="62" width="352" height="360" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 北极俯视真比例：6 恒星时追逐</text>
+<text x="36" y="102" font-size="11.0" fill="#64748b" text-anchor="start">t=0 从正右方出发 → t=6h 地球与 GEO 同转 90°</text>
+<circle cx="192.0" cy="248.0" r="104.0" fill="none" stroke="#18794e" stroke-width="1.8" stroke-dasharray="6 4"/>
+<circle cx="192.0" cy="248.0" r="68.8" fill="none" stroke="#6d28d9" stroke-width="1.4" stroke-dasharray="4 4"/>
+<circle cx="192.0" cy="248.0" r="24.0" fill="none" stroke="#c25014" stroke-width="1.2" stroke-dasharray="2.5 2.5"/>
+<line x1="192.0" y1="248.0" x2="306.0" y2="248.0" stroke="#cbd5e1" stroke-width="1.3" stroke-dasharray="3 3"/>
+<circle cx="296.0" cy="248.0" r="4.5" fill="#ffffff" stroke="#18794e" stroke-width="1.5" stroke-dasharray="2 2"/>
+<text x="292.0" y="264.0" font-size="10.5" fill="#64748b" text-anchor="end">t=0 起点</text>
+<path d="M 192.0,248.0 L 296.0,248.0 A 104.0,104.0 0 0 0 192.0,144.0 Z" fill="#18794e" fill-opacity="0.06"/>
+<circle cx="192.0" cy="248.0" r="15.7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.8"/>
+<circle cx="192.0" cy="248.0" r="2.5" fill="#0f172a"/>
+<g class="rot-geo">
+<line x1="192.0" y1="232.3" x2="192.0" y2="150.0" stroke="#18794e" stroke-width="1.8" stroke-dasharray="4 3"/>
+<circle cx="192.0" cy="144.0" r="6.2" fill="#18794e" stroke="#ffffff" stroke-width="1.6"/>
+</g>
+<g class="rot-earth">
+<circle cx="192.0" cy="232.3" r="3.6" fill="#0f172a"/>
+</g>
+<g class="rot-meo">
+<circle cx="124.9" cy="232.7" r="5.0" fill="#6d28d9" stroke="#ffffff" stroke-width="1.4"/>
+</g>
+<g class="rot-leo">
+<circle cx="209.4" cy="264.6" r="4.2" fill="#c25014" stroke="#ffffff" stroke-width="1.2"/>
+</g>
+<rect x="98.0" y="118.0" width="198" height="20" rx="10.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="197.0" y="131.6" font-size="10.6" fill="#18794e" text-anchor="middle" font-weight="600">GEO 35,786 km（同转 90° 锁死！）</text>
+<text x="121.2" y="222.0" font-size="10.5" fill="#6d28d9" text-anchor="end" font-weight="700">北斗 MEO</text>
+<text x="121.2" y="236.0" font-size="10.1" fill="#6d28d9" text-anchor="end">已超前 167°</text>
+<text x="220.0" y="276.0" font-size="10.4" fill="#c25014" text-anchor="start" font-weight="700">空间站 LEO（400 km）</text>
+<text x="220.0" y="290.0" font-size="10.1" fill="#c25014" text-anchor="start">6h 狂飙 3.88 圈！</text>
+<rect x="34" y="364" width="324" height="46" rx="7" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="46" y="382" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="600">再往外？月球 r ≈ 384,400 km（GEO 的 9.1 倍）：</text>
+<text x="46" y="399" font-size="10.4" fill="#64748b" text-anchor="start">6 小时仅慢吞吞挪动 3.3°，反过来被地球自转远远甩在身后。</text>
+<rect x="388" y="62" width="352" height="360" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="404" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 周期随高度抬升：唯一的同步交点</text>
+<text x="404" y="102" font-size="11.0" fill="#64748b" text-anchor="start">T = 2π √[(R_E + h)³ / GM_⊕] ，高度决定唯一周期</text>
+<line x1="438.0" y1="326.0" x2="716.0" y2="326.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="431.0" y="330.0" font-size="10.2" fill="#64748b" text-anchor="end">0h</text>
+<line x1="438.0" y1="277.0" x2="716.0" y2="277.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="431.0" y="281.0" font-size="10.2" fill="#64748b" text-anchor="end">8h</text>
+<line x1="438.0" y1="228.0" x2="716.0" y2="228.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="431.0" y="232.0" font-size="10.2" fill="#64748b" text-anchor="end">16h</text>
+<line x1="438.0" y1="179.0" x2="716.0" y2="179.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="431.0" y="183.0" font-size="10.2" fill="#64748b" text-anchor="end">24h</text>
+<line x1="438.0" y1="130.0" x2="716.0" y2="130.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="431.0" y="134.0" font-size="10.2" fill="#64748b" text-anchor="end">32h</text>
+<line x1="438.0" y1="130.0" x2="438.0" y2="326.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="438.0" y="342.0" font-size="10.2" fill="#64748b" text-anchor="middle">0</text>
+<line x1="530.7" y1="130.0" x2="530.7" y2="326.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="530.7" y="342.0" font-size="10.2" fill="#64748b" text-anchor="middle">1.5万</text>
+<line x1="623.3" y1="130.0" x2="623.3" y2="326.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="623.3" y="342.0" font-size="10.2" fill="#64748b" text-anchor="middle">3万</text>
+<line x1="716.0" y1="130.0" x2="716.0" y2="326.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="716.0" y="342.0" font-size="10.2" fill="#64748b" text-anchor="middle">4.5万km</text>
+<line x1="438.0" y1="326.0" x2="716.0" y2="326.0" stroke="#475569" stroke-width="1.4"/>
+<line x1="438.0" y1="130.0" x2="438.0" y2="326.0" stroke="#475569" stroke-width="1.4"/>
+<line x1="438.0" y1="179.4" x2="716.0" y2="179.4" stroke="#18794e" stroke-width="1.6" stroke-dasharray="5 3"/>
+<line x1="659.1" y1="179.4" x2="659.1" y2="326.0" stroke="#18794e" stroke-width="1.4" stroke-dasharray="4 3"/>
+<text x="444.0" y="173.4" font-size="10.4" fill="#18794e" text-anchor="start" font-weight="700">地球恒星日 23h 56m 04s</text>
+<path d="M 438.00,317.38 L 441.09,316.34 L 444.18,315.27 L 447.27,314.16 L 450.36,313.02 L 453.44,311.84 L 456.53,310.62 L 459.62,309.38 L 462.71,308.10 L 465.80,306.79 L 468.89,305.45 L 471.98,304.08 L 475.07,302.68 L 478.16,301.25 L 481.24,299.80 L 484.33,298.32 L 487.42,296.81 L 490.51,295.27 L 493.60,293.71 L 496.69,292.12 L 499.78,290.51 L 502.87,288.87 L 505.96,287.21 L 509.04,285.52 L 512.13,283.81 L 515.22,282.08 L 518.31,280.32 L 521.40,278.55 L 524.49,276.74 L 527.58,274.92 L 530.67,273.07 L 533.76,271.21 L 536.84,269.32 L 539.93,267.41 L 543.02,265.48 L 546.11,263.52 L 549.20,261.55 L 552.29,259.56 L 555.38,257.55 L 558.47,255.51 L 561.56,253.46 L 564.64,251.39 L 567.73,249.30 L 570.82,247.18 L 573.91,245.05 L 577.00,242.91 L 580.09,240.74 L 583.18,238.55 L 586.27,236.35 L 589.36,234.13 L 592.44,231.89 L 595.53,229.63 L 598.62,227.35 L 601.71,225.06 L 604.80,222.75 L 607.89,220.42 L 610.98,218.07 L 614.07,215.71 L 617.16,213.33 L 620.24,210.93 L 623.33,208.52 L 626.42,206.09 L 629.51,203.64 L 632.60,201.18 L 635.69,198.70 L 638.78,196.20 L 641.87,193.69 L 644.96,191.16 L 648.04,188.62 L 651.13,186.06 L 654.22,183.48 L 657.31,180.89 L 660.40,178.28 L 663.49,175.66 L 666.58,173.02 L 669.67,170.37 L 672.76,167.70 L 675.84,165.02 L 678.93,162.32 L 682.02,159.61 L 685.11,156.88 L 688.20,154.14 L 691.29,151.39 L 694.38,148.61 L 697.47,145.83 L 700.56,143.03 L 703.64,140.21 L 706.73,137.38 L 709.82,134.54 L 712.91,131.68 L 716.00,128.81" fill="none" stroke="#1d6fa5" stroke-width="2.5"/>
+<circle cx="440.5" cy="316.6" r="4.8" fill="#c25014" stroke="#ffffff" stroke-width="1.3"/>
+<text x="448.5" y="313.6" font-size="10.2" fill="#c25014" text-anchor="start" font-weight="600">空间站 400km (1.54h, 7.67km/s)</text>
+<circle cx="571.0" cy="247.1" r="5.0" fill="#6d28d9" stroke="#ffffff" stroke-width="1.3"/>
+<text x="565.0" y="237.1" font-size="10.2" fill="#6d28d9" text-anchor="middle" font-weight="600">北斗 MEO (12.9h, 3.78km/s)</text>
+<circle cx="659.1" cy="179.4" r="6.2" fill="#18794e" stroke="#ffffff" stroke-width="1.6"/>
+<text x="651.1" y="197.4" font-size="10.8" fill="#18794e" text-anchor="end" font-weight="700">35,786 km</text>
+<text x="651.1" y="211.4" font-size="10.2" fill="#18794e" text-anchor="end">v = 3.075 km/s</text>
+<rect x="402" y="354" width="324" height="56" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="414" y="373" font-size="10.8" fill="#18794e" text-anchor="start" font-weight="700">黄金等式：GM_⊕ / r² = ω_⊕² r  ⇒  r = 42,164.17 km</text>
+<text x="414" y="391" font-size="10.3" fill="#1e293b" text-anchor="start">低一分则超前向东跑，高一分则落后向西漂，</text>
+<text x="414" y="404" font-size="10.3" fill="#1e293b" text-anchor="start">与卫星质量无关——39 kg 轻星与 8 吨重星同轨同速！</text>
+</svg>

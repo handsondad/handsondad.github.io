@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="482" viewBox="0 0 760 482" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">厄尔尼诺对我国当年冬季与次年夏季气候影响的接力机制图</title>
+<desc id="desc">左侧说明厄尔尼诺发展年冬季东亚冬季风偏弱、总体偏暖概率高，但在充沛水汽配合下仍易出现阶段性寒潮与冻雨雪灾；右侧拆解厄尔尼诺次年夏季通过热带印度洋滞后增暖（电容器效应）维持西太平洋副热带高压偏强偏西，源源不断向长江中下游输送水汽，复现1998、2016、2024年次年夏季洪涝规律。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="481" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">为什么中国气象台最警惕“厄尔尼诺次年夏天”？（1998 · 2016 · 2024 复盘）</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">依据国家气候中心机理：当年冬季偏暖但防寒潮过山车；次年夏季“印度洋电容器 + 西太副高”联手向长江泵水</text>
+<rect x="24" y="68" width="332" height="322" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="40.0" y="82.0" width="294" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="187.0" y="97.0" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="600">阶段一：厄尔尼诺发展年冬季（当年 12–2 月）</text>
+<rect x="40" y="118" width="300" height="118" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1.1"/>
+<text x="54" y="141" font-size="12" fill="#c25014" text-anchor="start" font-weight="700">总体趋势：东亚冬季风偏弱 → 暖冬概率高</text>
+<text x="54" y="163" font-size="11.5" fill="#1e293b" text-anchor="start">• 西伯利亚冷高压与东亚大槽平均强度偏弱</text>
+<text x="54" y="183" font-size="11.5" fill="#1e293b" text-anchor="start">• 冷空气主力偏北，我国大部冬季均温易偏高</text>
+<text x="54" y="203" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="600">• 南方水汽充沛，华南/江南冬季降水往往偏多</text>
+<text x="54" y="223" font-size="11" fill="#64748b" text-anchor="start">（如 2023/24 冬季全国平均气温明显偏暖）</text>
+<rect x="40" y="250" width="300" height="124" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1.1" stroke-dasharray="4 2"/>
+<text x="54" y="273" font-size="12" fill="#dc2626" text-anchor="start" font-weight="700">反直觉陷阱：“暖冬 ≠ 没有暴雪寒潮！”</text>
+<text x="54" y="295" font-size="11.5" fill="#1e293b" text-anchor="start">• 暖冬说的是整个冬季（3 个月）的平均账本</text>
+<text x="54" y="315" font-size="11.5" fill="#1e293b" text-anchor="start">• 西风带剧烈摆动时，极地寒潮仍会阶段性南下</text>
+<text x="54" y="335" font-size="11.5" fill="#1e293b" text-anchor="start">• 强冷空气撞上异常丰沛的暖湿气流 → 极易触发</text>
+<text x="54" y="355" font-size="11" fill="#dc2626" text-anchor="start" font-weight="600">  大范围雨雪冰冻与“断崖式降温”（如 2024 年 2 月）</text>
+<rect x="372" y="68" width="364" height="322" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="388.0" y="82.0" width="328" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="552.0" y="97.0" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">阶段二：厄尔尼诺次年夏季（次年 6–8 月 · 防汛大考）</text>
+<rect x="388" y="118" width="332" height="176" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="400" y="232" width="126" height="48" rx="8" fill="#fffbeb" stroke="#c25014" stroke-width="1.3"/>
+<circle cx="416" cy="250" r="9.5" fill="#ffffff" stroke="#c25014" stroke-width="1.2"/>
+<text x="416" y="254" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">1</text>
+<text x="430" y="253" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">印度洋“电容器”</text>
+<text x="410" y="271" font-size="10.5" fill="#1e293b" text-anchor="start">滞后增暖，东传开尔文波</text>
+<line x1="528.0" y1="252.0" x2="568.0" y2="232.0" stroke="#c25014" stroke-width="2.1" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<ellipse cx="634" cy="218" rx="74" ry="34" fill="#dbeafe" stroke="#1d6fa5" stroke-width="1.8"/>
+<circle cx="580" cy="210" r="9.5" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="580" y="214" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">2</text>
+<text x="640" y="214" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">西太副高偏强偏西</text>
+<text x="640" y="232" font-size="10" fill="#475569" text-anchor="middle">顺时针高压脊盘踞南海—西太</text>
+<path d="M564,228 Q536,196 544,166" fill="none" stroke="#1d6fa5" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-blue)"/>
+<text x="486" y="200" font-size="11" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">西南暖湿水汽泵</text>
+<line x1="516.0" y1="126.0" x2="536.0" y2="146.0" stroke="#475569" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arr-muted)"/>
+<text x="464" y="136" font-size="10.5" fill="#475569" text-anchor="middle">北方冷空气南下交汇</text>
+<rect x="488" y="132" width="218" height="42" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.6"/>
+<circle cx="504" cy="153" r="9.5" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="504" y="157" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">3</text>
+<text x="518" y="150" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">长江中下游/江南锋面雨带停滞</text>
+<text x="518" y="166" font-size="10.5" fill="#1e293b" text-anchor="start">梅雨偏强、流域性暴雨洪涝风险骤增</text>
+<text x="390" y="314" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">• 历史铁证：1998、2016、2024 均为强厄尔尼诺衰减次年夏季大水</text>
+<text x="390" y="336" font-size="11.5" fill="#1e293b" text-anchor="start">• 北方防旱涝急转：华北部分时段易高温少雨，盛夏需防北上暴雨</text>
+<text x="390" y="358" font-size="11.5" fill="#1e293b" text-anchor="start">• 台风特征：西北太平洋生成总数常偏少，但单个位置偏远、强度偏强</text>
+<text x="390" y="378" font-size="11" fill="#dc2626" text-anchor="start" font-weight="600">• 2026 超强厄尔尼诺启示：2026/27 冬防阶段寒潮，2027 夏防大汛</text>
+<rect x="24" y="404" width="712" height="60" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="42" y="426" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">为什么东太平洋退烧后中国还下暴雨？厄尔尼诺冬季给热带印度洋“充饱热电”，次夏持续放电维持西太异常反气旋！</text>
+<text x="42" y="448" font-size="11" fill="#64748b" text-anchor="start">（学界称为 Xie et al. 2009“印度洋电容器效应 Indian Ocean Capacitor Effect”，是我国汛期气候预测的核心物理抓手。）</text>
+</svg>

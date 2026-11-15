@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="528" viewBox="0 0 760 528" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">婴儿与成人大脑硬件尺度对比：860亿神经元存量、体积四倍增长与轴突髓鞘化提速图</title>
+<desc id="desc">左栏展示从足月新生儿340克到成人1350克脑容量增长里程碑，右栏对比婴儿未髓鞘化轴突每秒1米慢速传导与成人髓鞘化跳跃传导每秒60米以上的高速机制。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-b" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#1d6fa5"/>
+    </marker>
+    <marker id="arr-o" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#c25014"/>
+    </marker>
+    <marker id="arr-g" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#18794e"/>
+    </marker>
+    <marker id="arr-p" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#6d28d9"/>
+    </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="527" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">硬件账本第一怪：刚出生的宝宝已有约 860 亿神经元，脑重凭什么还涨 4 倍？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">神经元总数出生即基本配齐 → 暴涨的体积来自树突丛林、胶质细胞与“髓鞘绝缘皮”（传导提速数十倍）</text>
+<rect x="22" y="68" width="368" height="442" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="92" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="42" y="96" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="62" y="97" font-size="12.4" fill="#0f172a" text-anchor="start" font-weight="700">脑容量狂飙曲线：出生头 90 天每天长约 1%！</text>
+<text x="42" y="117" font-size="10.6" fill="#64748b" text-anchor="start">神经元颗粒数几乎不增，但单颗体积、树突分支与白质猛涨</text>
+<text x="40" y="162" font-size="11.4" fill="#0f172a" text-anchor="start" font-weight="700">足月新生儿</text>
+<rect x="132.0" y="147" width="232.0" height="20" rx="10" fill="#f1f5f9" stroke="#e2e8f0"/>
+<rect x="132.0" y="147" width="62.6" height="20" rx="10" fill="#1d6fa5" opacity="0.85"/>
+<text x="140.0" y="182" font-size="10.5" fill="#1e293b" text-anchor="start">~340–360 g（成人 27%）｜约 860 亿神经元已就位</text>
+<text x="40" y="224" font-size="11.4" fill="#0f172a" text-anchor="start" font-weight="700">出生 90 天</text>
+<rect x="132.0" y="209" width="232.0" height="20" rx="10" fill="#f1f5f9" stroke="#e2e8f0"/>
+<rect x="132.0" y="209" width="99.8" height="20" rx="10" fill="#18794e" opacity="0.85"/>
+<text x="140.0" y="244" font-size="10.5" fill="#1e293b" text-anchor="start">~560 cm³（暴涨 +64%！）｜小脑体积 3 个月翻一倍多</text>
+<text x="40" y="286" font-size="11.4" fill="#0f172a" text-anchor="start" font-weight="700">2 岁幼儿</text>
+<rect x="132.0" y="271" width="232.0" height="20" rx="10" fill="#f1f5f9" stroke="#e2e8f0"/>
+<rect x="132.0" y="271" width="185.6" height="20" rx="10" fill="#c25014" opacity="0.85"/>
+<text x="140.0" y="306" font-size="10.5" fill="#1e293b" text-anchor="start">~1,050 g（约成人 80%）｜皮层厚度在 1.7 岁达一生峰值</text>
+<text x="40" y="348" font-size="11.4" fill="#0f172a" text-anchor="start" font-weight="700">成年人</text>
+<rect x="132.0" y="333" width="232.0" height="20" rx="10" fill="#f1f5f9" stroke="#e2e8f0"/>
+<rect x="132.0" y="333" width="232.0" height="20" rx="10" fill="#6d28d9" opacity="0.85"/>
+<text x="140.0" y="368" font-size="10.5" fill="#1e293b" text-anchor="start">~1,300–1,400 g（100%）｜灰质 5.9 岁达峰；白质涨到 28.7 岁</text>
+<rect x="38" y="404" width="336" height="90" rx="8" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<text x="206" y="426" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">反直觉真相（Herculano-Houzel 2009 / Stiles 2010）：</text>
+<text x="206" y="447" font-size="11.0" fill="#0f172a" text-anchor="middle" font-weight="700">大脑皮层神经元早在孕中期前就基本生产完毕！</text>
+<text x="206" y="467" font-size="10.5" fill="#1e293b" text-anchor="middle">婴儿不是“缺芯片”，而是芯片之间还没铺好光纤绝缘层，</text>
+<text x="206" y="485" font-size="10.5" fill="#64748b" text-anchor="middle">甚至核磁共振 T1 图像上新生儿灰白质明暗都与成人相反。</text>
+<rect x="404" y="68" width="334" height="442" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="424" cy="92" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="424" y="96" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="444" y="97" font-size="12.4" fill="#0f172a" text-anchor="start" font-weight="700">髓鞘化（Myelination）：从漏电裸线到高速光纤</text>
+<text x="424" y="117" font-size="10.6" fill="#64748b" text-anchor="start">少突胶质细胞给轴突裹上脂肪髓鞘，信号“蛙跳”前进</text>
+<rect x="420" y="136" width="302" height="136" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="434" y="158" font-size="11.4" fill="#475569" text-anchor="start" font-weight="700">婴儿未髓鞘化轴突（裸露轴突膜）</text>
+<circle cx="454" cy="204" r="15" fill="#93c5fd" stroke="#1d6fa5" stroke-width="2"/>
+<line x1="469" y1="204" x2="692" y2="204" stroke="#475569" stroke-width="4"/>
+<path d="M 485,196 Q 497,184 509,196" fill="none" stroke="#1d6fa5" stroke-width="1.5" marker-end="url(#arr-b)"/>
+<path d="M 513,196 Q 525,184 537,196" fill="none" stroke="#1d6fa5" stroke-width="1.5" marker-end="url(#arr-b)"/>
+<path d="M 541,196 Q 553,184 565,196" fill="none" stroke="#1d6fa5" stroke-width="1.5" marker-end="url(#arr-b)"/>
+<path d="M 569,196 Q 581,184 593,196" fill="none" stroke="#1d6fa5" stroke-width="1.5" marker-end="url(#arr-b)"/>
+<path d="M 597,196 Q 609,184 621,196" fill="none" stroke="#1d6fa5" stroke-width="1.5" marker-end="url(#arr-b)"/>
+<path d="M 625,196 Q 637,184 649,196" fill="none" stroke="#1d6fa5" stroke-width="1.5" marker-end="url(#arr-b)"/>
+<path d="M 653,196 Q 665,184 677,196" fill="none" stroke="#1d6fa5" stroke-width="1.5" marker-end="url(#arr-b)"/>
+<text x="571" y="232" font-size="10.8" fill="#475569" text-anchor="middle" font-weight="700">传导速度仅 ~0.5–2 m/s（连续爬行、易串扰）</text>
+<text x="571" y="253" font-size="10.5" fill="#64748b" text-anchor="middle">跨脑区 15 cm 路程耗时 ≈ 150 毫秒（动作慢半拍）</text>
+<rect x="420" y="286" width="302" height="148" rx="8" fill="#fef1e8" stroke="#fdba74" stroke-width="1"/>
+<text x="434" y="308" font-size="11.4" fill="#c25014" text-anchor="start" font-weight="700">成人已髓鞘化轴突（郎飞结跳跃式传导）</text>
+<circle cx="454" cy="358" r="15" fill="#fdba74" stroke="#c25014" stroke-width="2"/>
+<line x1="469" y1="358" x2="696" y2="358" stroke="#c25014" stroke-width="4"/>
+<rect x="478" y="348" width="44" height="20" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.8"/>
+<rect x="536" y="348" width="44" height="20" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.8"/>
+<rect x="594" y="348" width="44" height="20" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.8"/>
+<rect x="652" y="348" width="44" height="20" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.8"/>
+<path d="M 474,346 Q 503,318 532,346" fill="none" stroke="#c25014" stroke-width="2.2" marker-end="url(#arr-o)"/>
+<path d="M 532,346 Q 561,318 590,346" fill="none" stroke="#c25014" stroke-width="2.2" marker-end="url(#arr-o)"/>
+<path d="M 590,346 Q 619,318 648,346" fill="none" stroke="#c25014" stroke-width="2.2" marker-end="url(#arr-o)"/>
+<text x="571" y="394" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="700">传导速度飙至 50–100 m/s（提速 50–100 倍！）</text>
+<text x="571" y="415" font-size="10.6" fill="#0f172a" text-anchor="middle" font-weight="700">同样 15 cm 跨脑区路程仅需 ≈ 2.5 毫秒！</text>
+<rect x="420" y="446" width="302" height="50" rx="8" fill="#e7f6ee" stroke="#86efac" stroke-width="1"/>
+<text x="571" y="467" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="700">铺设顺序（从后往前、从下往上）：</text>
+<text x="571" y="486" font-size="10.5" fill="#0f172a" text-anchor="middle">感官运动区最先包好 → 前额叶控制区要包到 25 岁后！</text>
+</svg>

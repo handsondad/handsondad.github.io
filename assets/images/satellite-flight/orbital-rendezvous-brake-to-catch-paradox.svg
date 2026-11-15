@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="524" viewBox="0 0 760 524" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">太空交会对接踩刹车超车悖论与大气阻力加速悖论图解</title>
+<desc id="desc">对比1965年双子星4号直踩油门升入高慢轨追丢目标与正确向后减速切入内圈超车道流程</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="523" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="380.0" y="30" font-size="18.5" fill="#1e293b" text-anchor="middle" font-weight="700">太空超车大反直觉：为什么猛踩油门反而追丢，踩刹车才能追上前车？</text>
+<text x="380.0" y="52" font-size="12.5" fill="#64748b" text-anchor="middle">1965 年“双子星 4 号”烧掉 42% 燃料买来的教训：加速 = 升上慢车道，减速 = 切入内圈超车道</text>
+<rect x="22" y="68" width="356" height="336" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="38.0" y="82.0" width="266" height="22" rx="11.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="171.0" y="97.0" font-size="12" fill="#dc2626" text-anchor="middle" font-weight="600">错觉翻车：1965 双子星 4 号直踩油门</text>
+<path d="M 48 314 A 240 240 0 0 1 352 314" fill="none" stroke="#64748b" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="205" y="256" font-size="10.8" fill="#64748b" text-anchor="middle">目标空间站圆轨（v₀，周期 T₀）</text>
+<rect x="280.9" y="201.5" width="18" height="12" rx="3" fill="#18794e" stroke="#ffffff" stroke-width="1.5"/>
+<text x="303.9" y="211.5" font-size="11.2" fill="#18794e" text-anchor="start" font-weight="700">前车（目标）</text>
+<circle cx="117.9" cy="204.5" r="6.5" fill="#dc2626" stroke="#ffffff" stroke-width="1.6"/>
+<text x="116" y="228" font-size="11" fill="#dc2626" text-anchor="middle" font-weight="700">后车猛踩油门 Δv &gt; 0</text>
+<path d="M 117.9 204.5 Q 186 144 238 152" fill="none" stroke="#dc2626" stroke-width="3" marker-end="url(#arr-orange)"/>
+<text x="200" y="128" font-size="11.2" fill="#dc2626" text-anchor="middle" font-weight="700">被甩进更高外圈：周期变长、越追越远！</text>
+<rect x="38" y="322" width="324" height="68" rx="9" fill="#fef2f2" stroke="#fca5a5" stroke-width="1"/>
+<text x="50" y="344" font-size="11" fill="#dc2626" text-anchor="start" font-weight="700">铁律：向前加速 → 半长轴 a 变大 → T ∝ a^(3/2) 变长</text>
+<text x="50" y="363" font-size="10.6" fill="#1e293b" text-anchor="start">麦克迪维特对着泰坦二级直喷追赶，结果飞到头顶越落</text>
+<text x="50" y="379" font-size="10.6" fill="#1e293b" text-anchor="start">越远，白烧 42% 燃料被迫放弃——太空不是地面高速路！</text>
+<rect x="392" y="68" width="346" height="336" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="408.0" y="82.0" width="272" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="544.0" y="97.0" font-size="12" fill="#18794e" text-anchor="middle" font-weight="600">正确超车：先踩刹车切入低轨“超车道”</text>
+<path d="M 416 314 A 240 240 0 0 1 714 314" fill="none" stroke="#64748b" stroke-width="2" stroke-dasharray="5 4"/>
+<path d="M 438 338 A 198 198 0 0 1 692 338" fill="none" stroke="#1d6fa5" stroke-width="2.4"/>
+<path d="M 475.1 207.5 Q 518 228 565.0 232.0 Q 608 228 654.9 207.5" fill="none" stroke="#18794e" stroke-width="3" marker-end="url(#arr-green)"/>
+<circle cx="475.1" cy="207.5" r="6" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.6"/>
+<rect x="645.9" y="201.5" width="18" height="12" rx="3" fill="#18794e" stroke="#ffffff" stroke-width="1.5"/>
+<text x="422" y="186" font-size="11" fill="#1d6fa5" text-anchor="start" font-weight="700">① 向后刹车 Δv &lt; 0</text>
+<text x="565.0" y="254.0" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">② 内圈周长短 + 线速度更快，下方超车！</text>
+<text x="714" y="186" font-size="11" fill="#18794e" text-anchor="end" font-weight="700">③ 追平再加速升轨</text>
+<rect x="408" y="322" width="314" height="68" rx="9" fill="#e7f6ee" stroke="#86efac" stroke-width="1"/>
+<text x="420" y="344" font-size="11" fill="#18794e" text-anchor="start" font-weight="700">神舟 / 天舟飞船追“天宫”空间站同款秘籍：</text>
+<text x="420" y="363" font-size="10.6" fill="#1e293b" text-anchor="start">先在比空间站低几十公里的调相轨道快速追赶缩小相位差，</text>
+<text x="420" y="379" font-size="10.6" fill="#1e293b" text-anchor="start">追到前下方后再分级点火抬轨，最快 2 小时精准对接！</text>
+<rect x="22" y="418" width="716" height="86" rx="12" fill="#f3e8ff" stroke="#d8b4fe" stroke-width="1"/>
+<text x="40" y="443" font-size="12.8" fill="#6d28d9" text-anchor="start" font-weight="700">同源奇观——“大气阻力悖论”：为什么低轨卫星被稀薄空气摩擦，速度反而越掉越快？</text>
+<text x="40" y="465" font-size="11" fill="#1e293b" text-anchor="start">圆轨道总机械能 E = −μm/(2r)，而动能 Ek = +μm/(2r) = −E！空气阻力每摩掉 1 焦耳总能量（ΔE = −1 J），轨道降低，</text>
+<text x="40" y="485" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">地球引力立刻把 2 焦耳势能兑换成动能（ΔEk = +1 J）——卫星一边螺旋下坠，一边越飞越快，直至冲入稠密大气烧毁！</text>
+</svg>

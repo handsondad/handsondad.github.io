@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">土星五号、长征五号与猎鹰9号三大经典多级运载火箭动力架构对比图</title>
+<desc id="desc">三栏并列拆解土星五号三级纯串联(F-1煤油+J-2氢氧)、长征五号并联煤油助推加氢氧芯级、以及猎鹰9号两级同源煤油机配合预留余油垂直反推回收的动力系统参数与工程取舍。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">第五关：三代经典运载火箭动力架构同台拆解——从一次性登月巨兽到垂直回收</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">把前面四关物理拼在一起，看懂人类三条标志性技术路线怎样各自驯服火箭方程！</text>
+<rect x="22" y="68" width="228" height="386" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32" y="78" width="208" height="52" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="136" y="98" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">① 土星五号 (Saturn V)</text>
+<text x="136" y="118" font-size="9.6" fill="#0f172a" text-anchor="middle" font-weight="600">三级纯串联登月巨兽｜起飞 2,965 吨</text>
+<rect x="32" y="140" width="208" height="72" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="40" y="158" font-size="10.3" fill="#c25014" text-anchor="start" font-weight="700">一级 S-IC（大力拔地）</text>
+<text x="40" y="179" font-size="9.6" fill="#1e293b" text-anchor="start">5 台 F-1 液氧煤油机</text>
+<text x="40" y="197" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="600">推力 3400 吨，150秒烧掉 2214 吨油</text>
+<rect x="32" y="218" width="208" height="72" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="40" y="236" font-size="10.3" fill="#c25014" text-anchor="start" font-weight="700">二级 S-II（高空接力）</text>
+<text x="40" y="257" font-size="9.6" fill="#1e293b" text-anchor="start">5 台 J-2 液氧液氢机</text>
+<text x="40" y="275" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="600">真空比冲 424 s，轻分子高比冲横扫中段</text>
+<rect x="32" y="296" width="208" height="72" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="40" y="314" font-size="10.3" fill="#c25014" text-anchor="start" font-weight="700">三级 S-IVB（入轨+奔月）</text>
+<text x="40" y="335" font-size="9.6" fill="#1e293b" text-anchor="start">1 台 J-2 液氧液氢机</text>
+<text x="40" y="353" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="600">二次点火把阿波罗飞船推上奔月轨道</text>
+<rect x="32" y="374" width="208" height="72" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="40" y="392" font-size="10.3" fill="#c25014" text-anchor="start" font-weight="700">LEO 运力与历史定位</text>
+<text x="40" y="413" font-size="9.6" fill="#1e293b" text-anchor="start">近地轨道 140 吨（约占起飞重 4.7%）</text>
+<text x="40" y="431" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="600">人类载人深空串联教科书</text>
+<rect x="266" y="68" width="228" height="386" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="276" y="78" width="208" height="52" rx="8" fill="#fef2f2" stroke="#b91c1c" stroke-width="1"/>
+<text x="380" y="98" font-size="11.5" fill="#b91c1c" text-anchor="middle" font-weight="700">② 长征五号（中国“胖五”）</text>
+<text x="380" y="118" font-size="9.6" fill="#0f172a" text-anchor="middle" font-weight="600">并联助推 + 氢氧芯级｜起飞 852 吨</text>
+<rect x="276" y="140" width="208" height="72" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="284" y="158" font-size="10.3" fill="#b91c1c" text-anchor="start" font-weight="700">4 枚助推器（零级重拳）</text>
+<text x="284" y="179" font-size="9.6" fill="#1e293b" text-anchor="start">8 台 YF-100 高压补燃液氧煤油机</text>
+<text x="284" y="197" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="600">贡献起飞 90% 推力（960 吨）！</text>
+<rect x="276" y="218" width="208" height="72" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="284" y="236" font-size="10.3" fill="#b91c1c" text-anchor="start" font-weight="700">5 米芯一级（氢氧长跑）</text>
+<text x="284" y="257" font-size="9.6" fill="#1e293b" text-anchor="start">2 台 YF-77 液氧液氢机</text>
+<text x="284" y="275" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="600">地面与助推同点，真空比冲高达 428 s</text>
+<rect x="276" y="296" width="208" height="72" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="284" y="314" font-size="10.3" fill="#b91c1c" text-anchor="start" font-weight="700">芯二级（真空精推）</text>
+<text x="284" y="335" font-size="9.6" fill="#1e293b" text-anchor="start">2 台 YF-75D 膨胀循环氢氧机</text>
+<text x="284" y="353" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="600">比冲 ~442 s，送天和核心舱与嫦娥</text>
+<rect x="276" y="374" width="208" height="72" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="284" y="392" font-size="10.3" fill="#b91c1c" text-anchor="start" font-weight="700">LEO 运力与技术亮点</text>
+<text x="284" y="413" font-size="9.6" fill="#1e293b" text-anchor="start">近地轨道 25 吨</text>
+<text x="284" y="431" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="600">煤油高推重比与液氢超高比冲混搭的典范！</text>
+<rect x="510" y="68" width="228" height="386" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="520" y="78" width="208" height="52" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="624" y="98" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">③ 猎鹰 9 号 (Falcon 9 B5)</text>
+<text x="624" y="118" font-size="9.6" fill="#0f172a" text-anchor="middle" font-weight="600">两级液氧煤油 + 一级回收｜起飞 549 吨</text>
+<rect x="520" y="140" width="208" height="72" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="528" y="158" font-size="10.3" fill="#1d6fa5" text-anchor="start" font-weight="700">一级（9 机并联+复用）</text>
+<text x="528" y="179" font-size="9.6" fill="#1e293b" text-anchor="start">9 台梅林 1D 液氧煤油机（ε≈16）</text>
+<text x="528" y="197" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="600">刻意提早分离留 ~10% 返航油</text>
+<rect x="520" y="218" width="208" height="72" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="528" y="236" font-size="10.3" fill="#1d6fa5" text-anchor="start" font-weight="700">二级（单机大裙摆冲刺）</text>
+<text x="528" y="257" font-size="9.6" fill="#1e293b" text-anchor="start">1 台真空梅林 MVac（ε=165!）</text>
+<text x="528" y="275" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="600">比冲跃升至 348 s 独自完成入轨</text>
+<rect x="520" y="296" width="208" height="72" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="528" y="314" font-size="10.3" fill="#1d6fa5" text-anchor="start" font-weight="700">一级三脚刹车回收术</text>
+<text x="528" y="335" font-size="9.6" fill="#1e293b" text-anchor="start">高空掉头→再入减速点火→单机悬停</text>
+<text x="528" y="353" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="600">“自杀式着陆点火 (TWR&gt;1)”</text>
+<rect x="520" y="374" width="208" height="72" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="528" y="392" font-size="10.3" fill="#1d6fa5" text-anchor="start" font-weight="700">运力代价换成本革命</text>
+<text x="528" y="413" font-size="9.6" fill="#1e293b" text-anchor="start">不回收运力 22.8 吨 → 海上回收 17.5 吨</text>
+<text x="528" y="431" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="600">牺牲 23% 运力省下整级箭！</text>
+<rect x="22" y="466" width="716" height="40" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="380" y="491" font-size="11.3" fill="#0f172a" text-anchor="middle" font-weight="600">殊途同归的动力哲学：无论构型如何演变，“拉瓦尔超音速喷管 + 高比冲推进剂 + 分级甩死重”永远是入轨三大支柱！</text>
+</svg>

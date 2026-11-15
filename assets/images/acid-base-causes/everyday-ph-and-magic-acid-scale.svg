@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">日常物质酸碱度pH全景标尺、紫甘蓝花青素变色与奥拉超强酸魔酸原理图</title>
+<desc id="desc">展示从负值超强酸到pH 14强碱的对数标尺，解释紫甘蓝花青素随质子得失变色的共轭原理及乔治·奥拉魔酸质子化烷烃溶解蜡烛的诺奖发现。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">从厨房紫甘蓝“变色龙”到一口吞掉蜡烛的“魔酸”：全景酸碱标尺</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">每差 1 个 pH 单位代表 [H⁺] 相差 10 倍！上排看日常全景标尺 → 下排看花青素天然试纸与诺奖超强酸</text>
+<rect x="24" y="84" width="712" height="158" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="40" y="106" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">酸碱度全景阶梯（pH 每降 1 格，氢离子浓度翻 10 倍；可乐 pH 2.4 比纯水酸约 40,000 倍！）</text>
+<rect x="34" y="120" width="71" height="108" rx="8" fill="#fef2f2" stroke="#7f1d1d" stroke-width="1.4"/>
+<text x="69.5" y="142" font-size="11.5" fill="#7f1d1d" text-anchor="middle" font-weight="700">pH&lt;0</text>
+<text x="69.5" y="168" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="700">超强酸·魔酸</text>
+<text x="69.5" y="192" font-size="9.6" fill="#1e293b" text-anchor="middle">H₀ ≈ −23</text>
+<rect x="111" y="120" width="71" height="108" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="1.4"/>
+<text x="146.5" y="142" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">1.5</text>
+<text x="146.5" y="168" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="700">人体胃酸</text>
+<text x="146.5" y="192" font-size="9.6" fill="#1e293b" text-anchor="middle">杀菌助消化</text>
+<rect x="188" y="120" width="71" height="108" rx="8" fill="#ffedd5" stroke="#ea580c" stroke-width="1.4"/>
+<text x="223.5" y="142" font-size="11.5" fill="#ea580c" text-anchor="middle" font-weight="700">2.4</text>
+<text x="223.5" y="168" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="700">柠檬/可乐</text>
+<text x="223.5" y="192" font-size="9.6" fill="#1e293b" text-anchor="middle">酸味浓郁</text>
+<rect x="265" y="120" width="71" height="108" rx="8" fill="#fef9c3" stroke="#ca8a04" stroke-width="1.4"/>
+<text x="300.5" y="142" font-size="11.5" fill="#ca8a04" text-anchor="middle" font-weight="700">5.6</text>
+<text x="300.5" y="168" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="700">正常雨水</text>
+<text x="300.5" y="192" font-size="9.6" fill="#1e293b" text-anchor="middle">溶空气 CO₂</text>
+<rect x="342" y="120" width="71" height="108" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1.4"/>
+<text x="377.5" y="142" font-size="11.5" fill="#16a34a" text-anchor="middle" font-weight="700">7.0</text>
+<text x="377.5" y="168" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="700">25°C纯水</text>
+<text x="377.5" y="192" font-size="9.6" fill="#1e293b" text-anchor="middle">中性分水岭</text>
+<rect x="419" y="120" width="71" height="108" rx="8" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.4"/>
+<text x="454.5" y="142" font-size="11.5" fill="#0d9488" text-anchor="middle" font-weight="700">7.4</text>
+<text x="454.5" y="168" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="700">人体动脉血</text>
+<text x="454.5" y="192" font-size="9.6" fill="#1e293b" text-anchor="middle">微弱偏碱</text>
+<rect x="496" y="120" width="71" height="108" rx="8" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.4"/>
+<text x="531.5" y="142" font-size="11.5" fill="#0284c7" text-anchor="middle" font-weight="700">8.3</text>
+<text x="531.5" y="168" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="700">小苏打水</text>
+<text x="531.5" y="192" font-size="9.6" fill="#1e293b" text-anchor="middle">馒头蓬松</text>
+<rect x="573" y="120" width="71" height="108" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.4"/>
+<text x="608.5" y="142" font-size="11.5" fill="#2563eb" text-anchor="middle" font-weight="700">10.2</text>
+<text x="608.5" y="168" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="700">肥皂/皮蛋</text>
+<text x="608.5" y="192" font-size="9.6" fill="#1e293b" text-anchor="middle">皂化微滑</text>
+<rect x="650" y="120" width="71" height="108" rx="8" fill="#ede9fe" stroke="#6d28d9" stroke-width="1.4"/>
+<text x="685.5" y="142" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">13.5</text>
+<text x="685.5" y="168" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="700">管道通/烧碱</text>
+<text x="685.5" y="192" font-size="9.6" fill="#1e293b" text-anchor="middle">强腐蚀溶发!</text>
+<rect x="24" y="256" width="348" height="192" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="278" r="10.5" fill="#eaf4fb" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="42" y="282" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">1</text>
+<text x="62" y="283" font-size="12.2" fill="#6d28d9" text-anchor="start" font-weight="700">厨房里的天然试纸：紫甘蓝汤为什么变五彩？</text>
+<text x="40" y="306" font-size="10.8" fill="#1e293b" text-anchor="start">紫甘蓝、黑枸杞、蓝莓富含花青素（Anthocyanin），</text>
+<text x="40" y="324" font-size="10.8" fill="#1e293b" text-anchor="start">得失 H⁺ 会直接改写分子共轭双键长度，切换吸收光色：</text>
+<rect x="40.0" y="338.0" width="74" height="24" rx="12.0" fill="#fee2e2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="77.0" y="354.3" font-size="9.8" fill="#b91c1c" text-anchor="middle" font-weight="600">滴白醋:亮红</text>
+<rect x="120.0" y="338.0" width="74" height="24" rx="12.0" fill="#ede9fe" stroke="#7c3aed" stroke-width="1" stroke-opacity="0.35"/>
+<text x="157.0" y="354.3" font-size="9.8" fill="#6d28d9" text-anchor="middle" font-weight="600">自来水:紫蓝</text>
+<rect x="200.0" y="338.0" width="74" height="24" rx="12.0" fill="#dcfce7" stroke="#16a34a" stroke-width="1" stroke-opacity="0.35"/>
+<text x="237.0" y="354.3" font-size="9.8" fill="#15803d" text-anchor="middle" font-weight="600">小苏打:翠绿</text>
+<rect x="280.0" y="338.0" width="76" height="24" rx="12.0" fill="#fef9c3" stroke="#ca8a04" stroke-width="1" stroke-opacity="0.35"/>
+<text x="318.0" y="354.3" font-size="9.8" fill="#a16207" text-anchor="middle" font-weight="600">强碱水:亮黄</text>
+<text x="40" y="386" font-size="10.4" fill="#0f172a" text-anchor="start">• 炒紫甘蓝滴醋红艳诱人；拿碱性井水焯烫秒变蓝绿“黑暗料理”！</text>
+<text x="40" y="408" font-size="10.4" fill="#64748b" text-anchor="start">• 温度彩蛋：100°C 沸水中性点其实是 pH 6.14（自偶电离吸热），</text>
+<text x="40" y="426" font-size="10.4" fill="#0f766e" text-anchor="start" font-weight="600">  此时 [H⁺] = [OH⁻]，它依然是百分之百的中性水！</text>
+<rect x="388" y="256" width="348" height="192" rx="10" fill="#fef2f2" stroke="#fca5a5" stroke-width="1"/>
+<circle cx="406" cy="278" r="10.5" fill="#eaf4fb" stroke="#b91c1c" stroke-width="1.2"/>
+<text x="406" y="282" font-size="11.5" fill="#b91c1c" text-anchor="middle" font-weight="700">2</text>
+<text x="426" y="283" font-size="12.2" fill="#b91c1c" text-anchor="start" font-weight="700">酸性的天花板：把圣诞蜡烛溶化的诺奖“魔酸”</text>
+<text x="404" y="306" font-size="10.8" fill="#0f172a" text-anchor="start">在水里比不出高下的强酸（水的拉平效应），换上路易斯酸</text>
+<text x="404" y="324" font-size="10.8" fill="#0f172a" text-anchor="start">助阵就能突破天际！1966 圣诞派对后，奥拉实验室把石蜡蜡烛</text>
+<text x="404" y="342" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="600">丢进 FSO₃H·SbF₅ 混合液，蜡烛竟像冰块一样溶化了：</text>
+<rect x="404.0" y="356.0" width="316" height="26" rx="13.0" fill="#ffffff" stroke="#b91c1c" stroke-width="1" stroke-opacity="0.35"/>
+<text x="562.0" y="373.7" font-size="10.3" fill="#b91c1c" text-anchor="middle" font-weight="600">CH₄(极稳烷烃) + H⁺ ──魔酸──▶ CH₅⁺(五配位碳正离子!)</text>
+<text x="404" y="404" font-size="10.4" fill="#1e293b" text-anchor="start">• 氟锑酸 (HF·SbF₅) 酸性高达纯硫酸的 10¹⁶–10¹⁹ 倍，必须装在</text>
+<text x="404" y="424" font-size="10.4" fill="#b91c1c" text-anchor="start" font-weight="600">  聚四氟乙烯(特氟龙)瓶里——乔治·奥拉凭此独揽 1994 化学诺奖！</text>
+<rect x="24" y="460" width="712" height="42" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="380" y="486" font-size="10.9" fill="#0f172a" text-anchor="middle" font-weight="600">跳出“0 到 14”刻板印象：10 mol/L 浓盐酸 pH 约为 −1，10 mol/L 浓烧碱 pH 约为 15；pH &lt; 0 时改用哈米特酸度函数 H₀ 丈量</text>
+</svg>

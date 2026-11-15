@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="462" viewBox="0 0 760 462" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">中国七八十年代诗歌兴起的五大核心原因结构图</title>
+<desc id="desc">剖析七八十年代全民读诗写诗的五重耦合动力：知青时期高压蓄能与短诗易手抄的体裁优势、思想解放期文学替哲学社科冲锋的功能超载、内部黄皮书与外国现代诗译介火种、缺乏电视网络的单一纸媒聚光灯效应，以及恢复高考后高校诗社与青春诗会的组织生态网。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="461" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<defs><marker id="arr-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 9 5 L 0 9 z" fill="#1d6fa5"/></marker><marker id="arr-p" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 9 5 L 0 9 z" fill="#6d28d9"/></marker><marker id="arr-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 9 5 L 0 9 z" fill="#18794e"/></marker><marker id="arr-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 9 5 L 0 9 z" fill="#b45309"/></marker></defs>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">为什么七八十年代全中国都在读诗写诗？五大时代齿轮的咬合</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">并非那代人天生偏爱分行文字，而是压抑已久的个体情感、思想破冰与单一纸媒聚光灯撞在了同一历史窗口。</text>
+<rect x="20" y="66" width="720" height="58" rx="10" fill="#163a5f" stroke="#f59e0b" stroke-width="1.6"/>
+<text x="380" y="90" font-size="12.6" fill="#fde68a" text-anchor="middle" font-weight="700">核心奇观：1979–1980《诗刊》印数飙至 50 万份 · 万人体育馆诗歌朗诵会座无虚席</text>
+<text x="380" y="111" font-size="10.5" fill="#cbd5e1" text-anchor="middle">一首新诗发表即可轰动全国、二三十万张读者选票贴邮票寄回编辑部——五大底层动力缺一不可</text>
+<rect x="20" y="138" width="352" height="104" rx="9" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.3"/>
+<circle cx="42" cy="160" r="11" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="42" y="164" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="60" y="164" font-size="11.6" fill="#1d6fa5" text-anchor="start" font-weight="700">高压蓄能与体裁优势：煤油灯下最轻便的容器</text>
+<text x="34" y="187" font-size="10.1" fill="#0f172a" text-anchor="start">约1700万上山下乡知青远离故土，宏大口号容不下私人悲欢；</text>
+<text x="34" y="205" font-size="10.1" fill="#0f172a" text-anchor="start">长篇小说难写难藏，十几行短诗3分钟就能手抄、站岗时默诵。</text>
+<rect x="32" y="215" width="328" height="20" rx="4" fill="#eaf4fb" stroke="none" stroke-width="1"/>
+<text x="40" y="229" font-size="9.6" fill="#1d6fa5" text-anchor="start" font-weight="600">代表现场：食指1968手抄诗、白洋淀诗群、贵州地下创作</text>
+<rect x="388" y="138" width="352" height="104" rx="9" fill="#ffffff" stroke="#9f1239" stroke-width="1.3"/>
+<circle cx="410" cy="160" r="11" fill="#ffe4e6" stroke="#9f1239" stroke-width="1.2"/>
+<text x="410" y="164" font-size="11.5" fill="#9f1239" text-anchor="middle" font-weight="700">2</text>
+<text x="428" y="164" font-size="11.6" fill="#9f1239" text-anchor="start" font-weight="700">社会功能“超载”：替哲学与社会科学冲锋</text>
+<text x="402" y="187" font-size="10.1" fill="#0f172a" text-anchor="start">1978思想解放初期，现代心理学、社会学与法学尚在重建；</text>
+<text x="402" y="205" font-size="10.1" fill="#0f172a" text-anchor="start">诗歌充当思想轻骑兵，率先把主语从集体“我们”换回独立“我”。</text>
+<rect x="400" y="215" width="328" height="20" rx="4" fill="#ffe4e6" stroke="none" stroke-width="1"/>
+<text x="408" y="229" font-size="9.6" fill="#9f1239" text-anchor="start" font-weight="600">代表现场：《回答》《致橡树》引发全民讨论与“美学热”</text>
+<rect x="20" y="254" width="352" height="104" rx="9" fill="#ffffff" stroke="#b45309" stroke-width="1.3"/>
+<circle cx="42" cy="276" r="11" fill="#fef3c7" stroke="#b45309" stroke-width="1.2"/>
+<text x="42" y="280" font-size="11.5" fill="#b45309" text-anchor="middle" font-weight="700">3</text>
+<text x="60" y="280" font-size="11.6" fill="#b45309" text-anchor="start" font-weight="700">隐秘火种：内部“黄皮书”与现代派译诗滋养</text>
+<text x="34" y="303" font-size="10.1" fill="#0f172a" text-anchor="start">60–70年代内部发行的“黄皮书”流转青年手中，打开异域视野；</text>
+<text x="34" y="321" font-size="10.1" fill="#0f172a" text-anchor="start">80年代现代派译诗井喷、1981《九叶集》重现，重接现代诗艺。</text>
+<rect x="32" y="331" width="328" height="20" rx="4" fill="#fef3c7" stroke="none" stroke-width="1"/>
+<text x="40" y="345" font-size="9.6" fill="#b45309" text-anchor="start" font-weight="600">代表养分：波德莱尔、艾略特、洛尔迦、聂鲁达、穆旦等</text>
+<rect x="388" y="254" width="352" height="104" rx="9" fill="#ffffff" stroke="#18794e" stroke-width="1.3"/>
+<circle cx="410" cy="276" r="11" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="410" y="280" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">4</text>
+<text x="428" y="280" font-size="11.6" fill="#18794e" text-anchor="start" font-weight="700">单通道媒介聚光灯：没有电视和网络的时代</text>
+<text x="402" y="303" font-size="10.1" fill="#0f172a" text-anchor="start">70年代末家庭电视罕见，流行乐、摇滚与互联网尚未分流；</text>
+<text x="402" y="321" font-size="10.1" fill="#0f172a" text-anchor="start">邮局订刊+书店排队+广播朗诵聚拢了全国青年的精神带宽。</text>
+<rect x="400" y="331" width="328" height="20" rx="4" fill="#e7f6ee" stroke="none" stroke-width="1"/>
+<text x="408" y="345" font-size="9.6" fill="#18794e" text-anchor="start" font-weight="600">代表规模：《十月》55万册、《诗刊》50万册、万人朗诵会</text>
+<rect x="20" y="370" width="720" height="78" rx="9" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.3"/>
+<circle cx="42" cy="392" r="11" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="42" y="396" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">5</text>
+<text x="60" y="396" font-size="11.8" fill="#6d28d9" text-anchor="start" font-weight="700">组织放大器：1977恢复高考 + 百所大学校园诗社 + 《诗刊》青春诗会 + 民间诗报网络</text>
+<text x="60" y="418" font-size="10.2" fill="#0f172a" text-anchor="start">77/78/79级学子带着社会阅历涌入大学，北大五四文学社、复旦诗社、吉大赤子心、武大浪淘沙等社团星罗棋布；</text>
+<text x="60" y="436" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="600">上连1980年起被誉为“诗坛黄埔军校”的《诗刊》青春诗会，外接1986年两报“现代诗群体大展”（84个民间社团同台亮相）！</text>
+</svg>

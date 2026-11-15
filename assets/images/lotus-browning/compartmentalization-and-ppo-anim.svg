@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">莲藕切开变黑的细胞区室化崩塌与多酚氧化酶催化动画</title>
+<desc id="desc">对比完整莲藕细胞中液泡多酚与质体双铜多酚氧化酶的隔离状态，以及切开后氧气涌入触发邻苯醌生成与自发聚合成类黑色素的三步过程。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes bladeDrop {
+    0% { transform: translateY(-6px); opacity: 0.35; }
+    22% { transform: translateY(4px); opacity: 1; }
+    100% { transform: translateY(4px); opacity: 1; }
+  }
+  @keyframes o2Enter {
+    0%, 15% { transform: translate(-18px, -6px); opacity: 0; }
+    42%, 100% { transform: translate(0px, 0px); opacity: 1; }
+  }
+  @keyframes sliceDarken {
+    0%, 30% { opacity: 0; }
+    65% { opacity: 0.55; }
+    100% { opacity: 1; }
+  }
+  @keyframes stepGlow {
+    0%, 45% { opacity: 0.35; }
+    78%, 100% { opacity: 1; }
+  }
+  .anim-blade { animation: bladeDrop 6.2s ease-out 1 forwards; }
+  .anim-o2 { animation: o2Enter 6.2s ease-out 1 forwards; }
+  .anim-dark-slice { animation: sliceDarken 6.2s ease-in-out 1 forwards; }
+  .anim-final { animation: stepGlow 6.2s ease-out 1 forwards; }
+  @media (prefers-reduced-motion: reduce) {
+    .anim-blade, .anim-o2, .anim-dark-slice, .anim-final {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">凶手一（酶促褐变）：完整莲藕雪白脆嫩，凭什么一刀切开就发黑？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">核心机制：细胞区室化隔离被刀刃打破，液泡多酚、质体双铜酶（PPO）与空气氧气三方会师</text>
+<rect x="24" y="66" width="338" height="232" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="38.0" y="78.0" width="254" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="165.0" y="93.0" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="600">状态 A：淤泥里的完整细胞（分区上锁）</text>
+<rect x="42" y="110" width="212" height="142" rx="18" fill="#f8fafc" stroke="#18794e" stroke-width="2"/>
+<rect x="48" y="116" width="200" height="130" rx="14" fill="#ffffff" stroke="#86efac" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="56" y="132" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="600">细胞壁 + 完整细胞膜（阻挡外界 O2）</text>
+<rect x="58" y="142" width="108" height="92" rx="12" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.5"/>
+<text x="112" y="160" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">液泡保险箱</text>
+<text x="112" y="177" font-size="10.5" fill="#1e293b" text-anchor="middle">(+)-儿茶素</text>
+<text x="112" y="193" font-size="10.5" fill="#1e293b" text-anchor="middle">(-)-EGC / 绿原酸</text>
+<text x="112" y="211" font-size="10" fill="#64748b" text-anchor="middle">（无色邻二酚底物）</text>
+<text x="112" y="227" font-size="10" fill="#1d6fa5" text-anchor="middle" font-weight="600">液泡膜完好上锁</text>
+<rect x="174" y="142" width="66" height="92" rx="12" fill="#fef1e8" stroke="#c25014" stroke-width="1.5"/>
+<text x="207" y="160" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">质体车间</text>
+<text x="207" y="179" font-size="11" fill="#1e293b" text-anchor="middle" font-weight="600">PPO 酶</text>
+<circle cx="197" cy="198" r="7" fill="#fed7aa" stroke="#c25014" stroke-width="1.2"/>
+<circle cx="217" cy="198" r="7" fill="#fed7aa" stroke="#c25014" stroke-width="1.2"/>
+<text x="197" y="201.5" font-size="8.5" fill="#c25014" text-anchor="middle" font-weight="700">Cu</text>
+<text x="217" y="201.5" font-size="8.5" fill="#c25014" text-anchor="middle" font-weight="700">Cu</text>
+<text x="207" y="224" font-size="10" fill="#64748b" text-anchor="middle">双铜中心</text>
+<g>
+<circle cx="306.0" cy="176.0" r="38.0" fill="#fdfcf7" stroke="#cbd5e1" stroke-width="2"/>
+<circle cx="306.0" cy="176.0" r="6.1" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<ellipse cx="306.0" cy="154.7" rx="6.5" ry="4.6" transform="rotate(0.0 306.0 154.7)" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<ellipse cx="322.6" cy="162.7" rx="6.5" ry="4.6" transform="rotate(51.4 322.6 162.7)" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<ellipse cx="326.7" cy="180.7" rx="6.5" ry="4.6" transform="rotate(102.9 326.7 180.7)" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<ellipse cx="315.2" cy="195.2" rx="6.5" ry="4.6" transform="rotate(154.3 315.2 195.2)" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<ellipse cx="296.8" cy="195.2" rx="6.5" ry="4.6" transform="rotate(205.7 296.8 195.2)" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<ellipse cx="285.3" cy="180.7" rx="6.5" ry="4.6" transform="rotate(257.1 285.3 180.7)" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<ellipse cx="289.4" cy="162.7" rx="6.5" ry="4.6" transform="rotate(308.6 289.4 162.7)" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+</g>
+<text x="306" y="232" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">雪白脆嫩</text>
+<text x="306" y="248" font-size="10.5" fill="#64748b" text-anchor="middle">0 褐变色素</text>
+<text x="42" y="282" font-size="11" fill="#18794e" text-anchor="start" font-weight="600">结论：底物与酶隔膜相望 + 淤泥缺氧 = 几个月都不变黑</text>
+<rect x="378" y="66" width="358" height="232" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="392.0" y="78.0" width="252" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="518.0" y="93.0" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="600">状态 B：菜刀切开瞬间（破壁 + 见氧）</text>
+<rect x="394" y="114" width="218" height="136" rx="16" fill="#fffaf5" stroke="#c25014" stroke-width="1.6" stroke-dasharray="6 4"/>
+<polygon class="anim-blade" points="488,103 510,103 502,136 496,136" fill="#64748b" stroke="#334155" stroke-width="1"/><text x="518" y="139" font-size="10.5" fill="#b91c1c" font-weight="700">① 刀刃破膜</text>
+<g class="anim-o2"><rect x="404" y="124" width="66" height="22" rx="11" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/><text x="437" y="139" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">空气 O2 涌入</text></g>
+<rect x="404" y="154" width="198" height="40" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="503" y="171" font-size="11" fill="#c25014" text-anchor="middle" font-weight="700">② 双铜 PPO 催化夺氢（酶促步）</text>
+<text x="503" y="187" font-size="10.5" fill="#1e293b" text-anchor="middle">无色邻二酚 + O2 → 淡黄邻苯醌 + H2O</text>
+<g class="anim-final">
+<rect x="404" y="202" width="198" height="40" rx="8" fill="#f8f1ea" stroke="#6b4423" stroke-width="1.3"/>
+<text x="503" y="219" font-size="11" fill="#6b4423" text-anchor="middle" font-weight="700">③ 邻苯醌自发聚合（无需酶！）</text>
+<text x="503" y="235" font-size="10.5" fill="#1e293b" text-anchor="middle">交联氨基酸 → 茶黄素类 + 类黑色素</text>
+</g>
+<g>
+<circle cx="674.0" cy="176.0" r="38.0" fill="#fdfcf7" stroke="#cbd5e1" stroke-width="2"/>
+<circle cx="674.0" cy="176.0" r="6.1" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<ellipse cx="674.0" cy="154.7" rx="6.5" ry="4.6" transform="rotate(0.0 674.0 154.7)" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<ellipse cx="690.6" cy="162.7" rx="6.5" ry="4.6" transform="rotate(51.4 690.6 162.7)" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<ellipse cx="694.7" cy="180.7" rx="6.5" ry="4.6" transform="rotate(102.9 694.7 180.7)" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<ellipse cx="683.2" cy="195.2" rx="6.5" ry="4.6" transform="rotate(154.3 683.2 195.2)" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<ellipse cx="664.8" cy="195.2" rx="6.5" ry="4.6" transform="rotate(205.7 664.8 195.2)" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<ellipse cx="653.3" cy="180.7" rx="6.5" ry="4.6" transform="rotate(257.1 653.3 180.7)" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<ellipse cx="657.4" cy="162.7" rx="6.5" ry="4.6" transform="rotate(308.6 657.4 162.7)" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+</g>
+<g class="anim-dark-slice">
+<circle cx="674.0" cy="176.0" r="38.0" fill="#7c5841" stroke="#4a3222" stroke-width="2"/>
+<circle cx="674.0" cy="176.0" r="6.1" fill="#f8fafc" stroke="#4a3222" stroke-width="1"/>
+<ellipse cx="674.0" cy="154.7" rx="6.5" ry="4.6" transform="rotate(0.0 674.0 154.7)" fill="#f8fafc" stroke="#4a3222" stroke-width="1"/>
+<ellipse cx="690.6" cy="162.7" rx="6.5" ry="4.6" transform="rotate(51.4 690.6 162.7)" fill="#f8fafc" stroke="#4a3222" stroke-width="1"/>
+<ellipse cx="694.7" cy="180.7" rx="6.5" ry="4.6" transform="rotate(102.9 694.7 180.7)" fill="#f8fafc" stroke="#4a3222" stroke-width="1"/>
+<ellipse cx="683.2" cy="195.2" rx="6.5" ry="4.6" transform="rotate(154.3 683.2 195.2)" fill="#f8fafc" stroke="#4a3222" stroke-width="1"/>
+<ellipse cx="664.8" cy="195.2" rx="6.5" ry="4.6" transform="rotate(205.7 664.8 195.2)" fill="#f8fafc" stroke="#4a3222" stroke-width="1"/>
+<ellipse cx="653.3" cy="180.7" rx="6.5" ry="4.6" transform="rotate(257.1 653.3 180.7)" fill="#f8fafc" stroke="#4a3222" stroke-width="1"/>
+<ellipse cx="657.4" cy="162.7" rx="6.5" ry="4.6" transform="rotate(308.6 657.4 162.7)" fill="#f8fafc" stroke="#4a3222" stroke-width="1"/>
+</g>
+<text x="674" y="232" font-size="11.5" fill="#6b4423" text-anchor="middle" font-weight="700">灰褐—黑褐色</text>
+<text x="674" y="248" font-size="10.5" fill="#64748b" text-anchor="middle">伤口保护铠甲</text>
+<text x="394" y="282" font-size="11" fill="#6b4423" text-anchor="start" font-weight="600">植物本意：用不溶性醌聚合物封住伤口、抵御病菌入侵</text>
+<rect x="24" y="312" width="712" height="192" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="38.0" y="324.0" width="326" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="201.0" y="339.0" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">分步化学拆解与实验实测参数（Nelumbo nucifera）</text>
+<rect x="38" y="356" width="412" height="134" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+<circle cx="58" cy="376" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="58" y="380" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">1</text>
+<text x="76" y="380" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">酶促氧化步（必须有活性 PPO + Cu2+ + O2）：</text>
+<text x="56" y="402" font-size="11" fill="#c25014" text-anchor="start" font-weight="600">2 邻二酚（如儿茶素） + O2  ──PPO──▶  2 邻苯醌（高活性亲电体） + 2 H2O</text>
+<line x1="52" y1="416" x2="436" y2="416" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4 3"/>
+<circle cx="58" cy="436" r="10.5" fill="#f8f1ea" stroke="#6b4423" stroke-width="1.2"/>
+<text x="58" y="440" font-size="11.5" fill="#6b4423" text-anchor="middle" font-weight="700">2</text>
+<text x="76" y="440" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">非酶聚合步（一旦生成邻苯醌，关掉酶也会继续变黑）：</text>
+<text x="56" y="462" font-size="11" fill="#6b4423" text-anchor="start" font-weight="600">邻苯醌 + 多酚 / 蛋白质氨基  ──自发聚合──▶  茶黄素类 + 类黑色素（褐黑）</text>
+<text x="56" y="481" font-size="10" fill="#64748b" text-anchor="start">注：催化还原产物是水（H2O）而非双氧水；双铜间距在氧化/还原态间由 3.3 Å 呼吸至 4.4 Å。</text>
+<rect x="464" y="356" width="258" height="134" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+<text x="478" y="377" font-size="12" fill="#b45309" text-anchor="start" font-weight="700">实验室实测莲藕褐变档案</text>
+<text x="478" y="399" font-size="11" fill="#1e293b" text-anchor="start" font-weight="600">• 最适巅峰：35 °C、pH 6.5</text>
+<text x="478" y="419" font-size="11" fill="#1e293b" text-anchor="start">• 速度冠军：(+)-儿茶素（Vmax 最高）</text>
+<text x="478" y="439" font-size="11" fill="#1e293b" text-anchor="start">• 亲和冠军：(-)-EGC（Km 最低）</text>
+<text x="478" y="459" font-size="11" fill="#18794e" text-anchor="start" font-weight="700">• 食用安全：褐变主产物为茶黄素类</text>
+<text x="488" y="477" font-size="10.5" fill="#18794e" text-anchor="start">（与红茶同源！不发黏发臭即可安心吃）</text>
+</svg>

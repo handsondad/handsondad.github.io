@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="448" viewBox="0 0 760 448" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">寒冷应激上消化道抑制与下消化道亢进分流及4摄氏度冰水诱发5羟色胺释放机制图</title>
+<desc id="desc">左栏展示脑肠轴CRF通路的不对称调控：CRF-R2与交感通路延缓胃排空(口盲传输由71.8分钟增至93.2分钟)导致胃胀，CRF-R1与副交感通路加速结肠推进导致腹泻；右栏结合220毫升4摄氏度冰水临床试验解析胃结肠反射与肠道嗜铬细胞释放5-HT的分子级联。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="447" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">奇妙的“上堵下泄”：为什么受凉喝冰水后，常常上面胃里发胀、下面大肠狂泻？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">大脑对上下消化道发出了截然相反的指令；而一口 4 ℃ 冰水更会在敏感肠道里点燃血清素 (5-HT) 风暴</text>
+<rect x="20" y="62" width="354" height="374" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="34" y="85" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">① 脑–肠轴分流：上段踩刹车 vs 下段踩油门</text>
+<rect x="34" y="100" width="326" height="150" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<rect x="46.0" y="112.0" width="216" height="20" rx="10.0" fill="#ffffff" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="154.0" y="125.6" font-size="9.4" fill="#1d6fa5" text-anchor="middle" font-weight="600">上段（胃与十二指肠）：踩下刹车！</text>
+<text x="46" y="150" font-size="9.2" fill="#0f172a" text-anchor="start" font-weight="700">• 主导受体：脑内 CRF-R2 受体 + 交感 β 肾上腺素通路；</text>
+<text x="46" y="169" font-size="9.1" fill="#1e293b" text-anchor="start">• 真人实验证据：喝 2 ℃ 冰水显著降低胃窦收缩频率；</text>
+<text x="46" y="187" font-size="9.1" fill="#1d6fa5" text-anchor="start" font-weight="700">  冷刺激使标准餐上消化道传输从 71.8 min 拖慢至 93.2 min</text>
+<text x="46" y="205" font-size="9.1" fill="#1e293b" text-anchor="start">  （延缓约 +30%），同时内脏血管短暂收缩调血保温；</text>
+<text x="46" y="225" font-size="9.2" fill="#0f172a" text-anchor="start" font-weight="700">• 你的真实体感：胃里像塞了块石头，发堵、嗳气、犯恶心！</text>
+<text x="197" y="266" font-size="9.3" fill="#b45309" text-anchor="middle" font-weight="700">↕ 同一个冷应激，上下截然相反！</text>
+<rect x="34" y="276" width="326" height="146" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1"/>
+<rect x="46.0" y="288.0" width="206" height="20" rx="10.0" fill="#ffffff" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="149.0" y="301.6" font-size="9.4" fill="#dc2626" text-anchor="middle" font-weight="600">下段（结肠与直肠）：猛踩油门！</text>
+<text x="46" y="326" font-size="9.2" fill="#0f172a" text-anchor="start" font-weight="700">• 主导受体：中枢与肠道局部 CRF-R1 受体 + 骶副交感神经；</text>
+<text x="46" y="345" font-size="9.1" fill="#1e293b" text-anchor="start">• 生理动作：激活结肠肌间神经元、促使黏膜肥大细胞脱颗粒，</text>
+<text x="46" y="363" font-size="9.1" fill="#dc2626" text-anchor="start" font-weight="700">  结肠推进蠕动成倍加速，直肠排便反射阈值大幅降低；</text>
+<text x="46" y="382" font-size="9.1" fill="#1e293b" text-anchor="start">• 你的真实体感：脐周和下腹一阵阵拧着痛，咕噜一声就得</text>
+<text x="46" y="400" font-size="9.2" fill="#0f172a" text-anchor="start" font-weight="700">  立刻找厕所，拉完一两次瞬间如释重负！</text>
+<rect x="386" y="62" width="354" height="374" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="400" y="85" font-size="11.2" fill="#6d28d9" text-anchor="start" font-weight="700">② 内冷路线：4 ℃ 冰水怎样引爆血清素 (5-HT)？</text>
+<rect x="400" y="100" width="326" height="114" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="412" y="120" font-size="9.4" fill="#6d28d9" text-anchor="start" font-weight="700">经典临床对照实验（山东大学齐鲁医院 Zuo 等，2006/2007）：</text>
+<text x="412" y="140" font-size="9.1" fill="#1e293b" text-anchor="start">• 受试者分别饮用 220 mL 的 37 ℃ 温水 vs 4 ℃ 冰水；</text>
+<text x="412" y="158" font-size="9.1" fill="#18794e" text-anchor="start" font-weight="700">• 喝 37 ℃ 温水：无论是健康人还是敏感人群，肠道阈值均平稳；</text>
+<text x="412" y="176" font-size="9.1" fill="#0f172a" text-anchor="start" font-weight="700">• 喝 4 ℃ 冰水后 20–90 分钟：腹泻型敏感者直肠排便阈值骤降，</text>
+<text x="412" y="194" font-size="9.1" fill="#dc2626" text-anchor="start" font-weight="700">  血液中 5-羟色胺 (5-HT) 显著飙升，且与腹痛腹泻程度正相关！</text>
+<rect x="400" y="226" width="326" height="196" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="412" y="247" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="700">为什么冰饮比单吹冷风更容易“立竿见影”？三重叠加：</text>
+<rect x="412" y="258" width="6" height="34" rx="3" fill="#c25014"/>
+<text x="426" y="270" font-size="9.4" fill="#c25014" text-anchor="start" font-weight="700">1. 胃–结肠反射抢跑</text>
+<text x="426" y="287" font-size="8.8" fill="#1e293b" text-anchor="start">冰水涌入胃窦扩张胃壁，迷走神经通知结肠“快腾地方”！</text>
+<rect x="412" y="308" width="6" height="34" rx="3" fill="#6d28d9"/>
+<text x="426" y="320" font-size="9.4" fill="#6d28d9" text-anchor="start" font-weight="700">2. 90% 血清素大本营</text>
+<text x="426" y="337" font-size="8.8" fill="#1e293b" text-anchor="start">人体 90% 以上的 5-HT 藏在肠道嗜铬细胞，遇冷大量释放！</text>
+<rect x="412" y="358" width="6" height="34" rx="3" fill="#dc2626"/>
+<text x="426" y="370" font-size="9.4" fill="#dc2626" text-anchor="start" font-weight="700">3. 蠕动+分泌双开关</text>
+<text x="426" y="387" font-size="8.8" fill="#1e293b" text-anchor="start">5-HT 激活肠神经 5-HT3/4 受体：狂催收缩并打开水盐分泌！</text>
+</svg>

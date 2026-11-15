@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="472" viewBox="0 0 760 472" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">恐鸟骨骼古 DNA 的 521 年半衰期与阿伦尼乌斯温度生存上限</title>
+<desc id="desc">左图展示13.1摄氏度下242bp线粒体DNA每521年减半的指数衰减；右图在对数时间轴上对比不同埋藏温度下30bp半衰期与683万年彻底归零线，说明白垩纪恐龙DNA不可能存活。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-ink" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#0f172a"/>
+  </marker>
+  <marker id="arr-red" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#dc2626"/>
+  </marker>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="471" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="20" y="30" font-size="15.5" fill="#0f172a" text-anchor="start" font-weight="700">521 年半衰期与温度生死钟：从恐鸟骨骼实测到 683 万年彻底归零铁律</text>
+<text x="20" y="50" font-size="12" fill="#64748b" text-anchor="start">基于 Allentoft 等（2012）158 块碳十四定年恐鸟胫跗骨实测与阿伦尼乌斯方程（Ea = 127 kJ/mol）</text>
+<rect x="18" y="66" width="344" height="392" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="78.0" width="292" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="178.0" y="93.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">实测曲线：242 bp 线粒体片段半衰期 = 521 年</text>
+<text x="32" y="116" font-size="11.3" fill="#1e293b" text-anchor="start">埋藏等效温度 13.1°C 下，完好模板随年代指数减半：</text>
+<line x1="66.0" y1="316.0" x2="338.0" y2="316.0" stroke="#0f172a" stroke-width="1.4" stroke-linecap="round"/>
+<text x="58" y="320.0" font-size="10.5" fill="#64748b" text-anchor="end">0%</text>
+<line x1="66.0" y1="272.5" x2="338.0" y2="272.5" stroke="#e2e8f0" stroke-width="1.0" stroke-linecap="round"/>
+<text x="58" y="276.5" font-size="10.5" fill="#64748b" text-anchor="end">25%</text>
+<line x1="66.0" y1="229.0" x2="338.0" y2="229.0" stroke="#e2e8f0" stroke-width="1.0" stroke-linecap="round"/>
+<text x="58" y="233.0" font-size="10.5" fill="#64748b" text-anchor="end">50%</text>
+<line x1="66.0" y1="185.5" x2="338.0" y2="185.5" stroke="#e2e8f0" stroke-width="1.0" stroke-linecap="round"/>
+<text x="58" y="189.5" font-size="10.5" fill="#64748b" text-anchor="end">75%</text>
+<line x1="66.0" y1="142.0" x2="338.0" y2="142.0" stroke="#e2e8f0" stroke-width="1.0" stroke-linecap="round"/>
+<text x="58" y="146.0" font-size="10.5" fill="#64748b" text-anchor="end">100%</text>
+<line x1="66.0" y1="142.0" x2="66.0" y2="316.0" stroke="#0f172a" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="66.0" y1="316.0" x2="66.0" y2="320.0" stroke="#0f172a" stroke-width="1.2" stroke-linecap="round"/>
+<text x="66.0" y="333" font-size="10.2" fill="#64748b" text-anchor="middle">0</text>
+<line x1="120.4" y1="316.0" x2="120.4" y2="320.0" stroke="#0f172a" stroke-width="1.2" stroke-linecap="round"/>
+<text x="120.4" y="333" font-size="10.2" fill="#64748b" text-anchor="middle">521</text>
+<line x1="174.8" y1="316.0" x2="174.8" y2="320.0" stroke="#0f172a" stroke-width="1.2" stroke-linecap="round"/>
+<text x="174.8" y="333" font-size="10.2" fill="#64748b" text-anchor="middle">1042</text>
+<line x1="229.2" y1="316.0" x2="229.2" y2="320.0" stroke="#0f172a" stroke-width="1.2" stroke-linecap="round"/>
+<text x="229.2" y="333" font-size="10.2" fill="#64748b" text-anchor="middle">1563</text>
+<line x1="283.6" y1="316.0" x2="283.6" y2="320.0" stroke="#0f172a" stroke-width="1.2" stroke-linecap="round"/>
+<text x="283.6" y="333" font-size="10.2" fill="#64748b" text-anchor="middle">2084</text>
+<line x1="338.0" y1="316.0" x2="338.0" y2="320.0" stroke="#0f172a" stroke-width="1.2" stroke-linecap="round"/>
+<text x="338.0" y="333" font-size="10.2" fill="#64748b" text-anchor="middle">2605</text>
+<text x="202.0" y="350" font-size="11" fill="#1e293b" text-anchor="middle">骨骼埋藏时间 t（年，每格 = 1 个半衰期 521 年）</text>
+<path d="M 66.0,142.0 L 71.2,153.2 L 76.5,163.7 L 81.7,173.5 L 86.9,182.7 L 92.2,191.3 L 97.4,199.3 L 102.6,206.9 L 107.8,213.9 L 113.1,220.5 L 118.3,226.6 L 123.5,232.4 L 128.8,237.8 L 134.0,242.8 L 139.2,247.5 L 144.5,252.0 L 149.7,256.1 L 154.9,259.9 L 160.2,263.6 L 165.4,266.9 L 170.6,270.1 L 175.8,273.1 L 181.1,275.8 L 186.3,278.4 L 191.5,280.8 L 196.8,283.1 L 202.0,285.2 L 207.2,287.2 L 212.5,289.1 L 217.7,290.8 L 222.9,292.4 L 228.2,293.9 L 233.4,295.4 L 238.6,296.7 L 243.8,297.9 L 249.1,299.1 L 254.3,300.2 L 259.5,301.2 L 264.8,302.2 L 270.0,303.1 L 275.2,303.9 L 280.5,304.7 L 285.7,305.4 L 290.9,306.1 L 296.2,306.7 L 301.4,307.3 L 306.6,307.9 L 311.8,308.4 L 317.1,308.9 L 322.3,309.4 L 327.5,309.8 L 332.8,310.2 L 338.0,310.6" fill="none" stroke="#1d6fa5" stroke-width="2.8"/>
+<line x1="120.4" y1="229.0" x2="120.4" y2="316.0" stroke="#93c5fd" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="3,3"/>
+<circle cx="120.4" cy="229.0" r="4.0" fill="#c25014"/>
+<text x="126.4" y="221.0" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="700">521年: 50%</text>
+<line x1="174.8" y1="272.5" x2="174.8" y2="316.0" stroke="#93c5fd" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="3,3"/>
+<circle cx="174.8" cy="272.5" r="4.0" fill="#c25014"/>
+<text x="180.8" y="264.5" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="700">1042年: 25%</text>
+<line x1="283.6" y1="305.1" x2="283.6" y2="316.0" stroke="#93c5fd" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="3,3"/>
+<circle cx="283.6" cy="305.1" r="4.0" fill="#c25014"/>
+<text x="289.6" y="295.1" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="700">2084年: 6.25%</text>
+<rect x="30" y="360" width="320" height="86" rx="8" fill="#e7f6ee" stroke="#86efac" stroke-width="1"/>
+<text x="42" y="380" font-size="11.8" fill="#18794e" text-anchor="start" font-weight="700">骨骼为什么比试管水里耐放 384 倍？</text>
+<text x="42" y="399" font-size="11" fill="#1e293b" text-anchor="start">• 骨磷灰石微晶溶解缓冲至 pH 7.5（单此一项慢 73 倍）；</text>
+<text x="42" y="417" font-size="11" fill="#1e293b" text-anchor="start">• 矿物表面吸附排挤自由水；环状线粒体又比核 DNA</text>
+<text x="42" y="435" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">  降解慢 2–2.5 倍，且单细胞拷贝数多出成百上千倍。</text>
+<rect x="376" y="66" width="366" height="392" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="390.0" y="78.0" width="304" height="22" rx="11.0" fill="#f0fdfa" stroke="#0f766e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="542.0" y="93.0" font-size="12" fill="#0f766e" text-anchor="middle" font-weight="600">温度决定上限：降温 20°C，寿命暴涨百倍以上</text>
+<line x1="680.1" y1="114.0" x2="680.1" y2="388.0" stroke="#dc2626" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="4,3"/>
+<text x="676.1" y="124" font-size="10.5" fill="#dc2626" text-anchor="end" font-weight="700">683 万年物理天花板（连 1 bp 都断光）</text>
+<text x="490" y="153" font-size="11" fill="#0f172a" text-anchor="end" font-weight="700">+25°C 热带浅埋</text>
+<rect x="498.0" y="142.0" width="88.2" height="15" rx="4" fill="#dc2626" opacity="0.22"/>
+<rect x="498.0" y="142.0" width="26.3" height="15" rx="4" fill="#dc2626"/>
+<text x="498" y="171" font-size="10.3" fill="#1e293b" text-anchor="start">2.2 万年断至 1 bp（热带古 DNA 极难保存）</text>
+<text x="490" y="196" font-size="11" fill="#0f172a" text-anchor="end" font-weight="700">+15°C 温带土层</text>
+<rect x="498.0" y="185.0" width="117.4" height="15" rx="4" fill="#c25014" opacity="0.22"/>
+<rect x="498.0" y="185.0" width="55.6" height="15" rx="4" fill="#c25014"/>
+<text x="498" y="214" font-size="10.3" fill="#1e293b" text-anchor="start">13.1 万年归零（普通露天遗址上限数万年）</text>
+<text x="490" y="239" font-size="11" fill="#0f172a" text-anchor="end" font-weight="700">+5°C 恒温深洞</text>
+<rect x="498.0" y="228.0" width="148.6" height="15" rx="4" fill="#1d6fa5" opacity="0.22"/>
+<rect x="498.0" y="228.0" width="86.7" height="15" rx="4" fill="#1d6fa5"/>
+<text x="498" y="257" font-size="10.3" fill="#1e293b" text-anchor="start">88.2 万年归零（胡瑟裂谷 43 万年古人核 DNA）</text>
+<text x="490" y="282" font-size="11" fill="#0f172a" text-anchor="end" font-weight="700">-5°C 永久冻土</text>
+<rect x="498.0" y="271.0" width="182.1" height="15" rx="4" fill="#0f766e" opacity="0.22"/>
+<rect x="498.0" y="271.0" width="120.5" height="15" rx="4" fill="#0f766e"/>
+<text x="498" y="300" font-size="10.3" fill="#1e293b" text-anchor="start">683 万年最后 1 个键断裂（猛犸象 120 万年）</text>
+<text x="490" y="325" font-size="11" fill="#0f172a" text-anchor="end" font-weight="700">-17°C 极地冻土黏土</text>
+<rect x="498.0" y="314.0" width="162.0" height="15" rx="4" fill="#18794e"/>
+<text x="498" y="343" font-size="10.3" fill="#1e293b" text-anchor="start">实测世界纪录：北格陵兰 200 万年环境 DNA</text>
+<text x="490" y="368" font-size="11" fill="#0f172a" text-anchor="end" font-weight="700">6600万年 白垩纪恐龙</text>
+<rect x="680.1" y="357.0" width="37.1" height="15" rx="4" fill="#cbd5e1" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="3,2"/>
+<text x="498" y="386" font-size="10.3" fill="#dc2626" text-anchor="start">远超物理极限 10 倍以上 → 可读 DNA = 0！</text>
+<line x1="498.0" y1="408.0" x2="724.0" y2="408.0" stroke="#0f172a" stroke-width="1.3" stroke-linecap="round"/>
+<line x1="498.0" y1="408.0" x2="498.0" y2="412.0" stroke="#0f172a" stroke-width="1.2" stroke-linecap="round"/>
+<text x="498.0" y="425" font-size="10.3" fill="#64748b" text-anchor="middle">100年</text>
+<line x1="535.7" y1="408.0" x2="535.7" y2="412.0" stroke="#0f172a" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="573.3" y1="408.0" x2="573.3" y2="412.0" stroke="#0f172a" stroke-width="1.2" stroke-linecap="round"/>
+<text x="573.3" y="425" font-size="10.3" fill="#64748b" text-anchor="middle">1万年</text>
+<line x1="611.0" y1="408.0" x2="611.0" y2="412.0" stroke="#0f172a" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="648.7" y1="408.0" x2="648.7" y2="412.0" stroke="#0f172a" stroke-width="1.2" stroke-linecap="round"/>
+<text x="648.7" y="425" font-size="10.3" fill="#64748b" text-anchor="middle">100万年</text>
+<line x1="686.3" y1="408.0" x2="686.3" y2="412.0" stroke="#0f172a" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="724.0" y1="408.0" x2="724.0" y2="412.0" stroke="#0f172a" stroke-width="1.2" stroke-linecap="round"/>
+<text x="724.0" y="425" font-size="10.3" fill="#64748b" text-anchor="middle">1亿年</text>
+<text x="559" y="444" font-size="10.5" fill="#64748b" text-anchor="middle">对数时间轴（深色 = 30 bp 半衰期，浅色 = 1 bp 归零点）</text>
+</svg>

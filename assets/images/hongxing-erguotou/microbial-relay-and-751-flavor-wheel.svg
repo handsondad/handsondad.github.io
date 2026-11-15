@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="518" viewBox="0 0 760 518" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">红星二锅头四路微生物生化接力与751种微量风味分子感官映射图</title>
+<desc id="desc">左侧展示曲霉糖化蛋白水解、酿酒酵母糖酵解与艾氏途径、威克汉姆生香酵母AATase合成乙酸乙酯、乳酸菌与高粱单宁生成乳酸乙酯及酚类吡嗪的四棒接力；右侧将清爽果香、绵柔回甘、玫瑰蜜香、烘焙粮香、凛冽生津、陈年柔熟与冲辣苦涩逐一对应到具体化学分子与嗅觉阈值。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-ink" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#0f172a"/>
+  </marker>
+  <marker id="arr-red" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#dc2626"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="517" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="20" y="30" font-size="15.5" fill="#0f172a" text-anchor="start" font-weight="700">2% 微量分子决定灵魂：地缸四棒微生物接力与红星二锅头“清爽绵甜凛”风味解码</text>
+<text x="20" y="50" font-size="12" fill="#64748b" text-anchor="start">98% 是乙醇与水，剩下 2%（已检出 751 种微量成分）由霉菌、双酵母、细菌与高粱单宁合力锻造</text>
+<rect x="18" y="66" width="348" height="438" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="78.0" width="308" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="186.0" y="93.0" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="600">地缸里的“四棒微生物接力赛”（边糖化边发酵）</text>
+<rect x="30" y="114" width="324" height="76" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="42" y="135" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">第 1 棒 · 曲霉/根霉 + 扣囊复膜孢酵母</text>
+<text x="42" y="156" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">分泌淀粉酶与蛋白酶（开路先锋）</text>
+<text x="42" y="176" font-size="10.5" fill="#1e293b" text-anchor="start">高粱支链淀粉 → 可发酵葡萄糖；蛋白质 → 亮氨酸/苯丙氨酸</text>
+<line x1="192.0" y1="191.0" x2="192.0" y2="203.0" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round" marker-end="url(#arr-ink)"/>
+<rect x="30" y="204" width="324" height="76" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="42" y="225" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">第 2 棒 · 酿酒酵母 (S. cerevisiae)</text>
+<text x="42" y="246" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">厌氧糖酵解 + 艾氏途径 (Ehrlich)</text>
+<text x="42" y="266" font-size="10.5" fill="#1e293b" text-anchor="start">葡萄糖 → 主体乙醇；苯丙氨酸脱羧还原 → 玫瑰蜜香 β-苯乙醇</text>
+<line x1="192.0" y1="281.0" x2="192.0" y2="293.0" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round" marker-end="url(#arr-ink)"/>
+<rect x="30" y="294" width="324" height="76" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="42" y="315" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">第 3 棒 · 异常威克汉姆酵母 / 毕赤酵母</text>
+<text x="42" y="336" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">醇酰基转移酶 (AATase / ATF1) 生香引擎</text>
+<text x="42" y="356" font-size="10.5" fill="#1e293b" text-anchor="start">乙酰辅酶 A + 乙醇 → 头号清香酯“乙酸乙酯”（清脆果香）</text>
+<line x1="192.0" y1="371.0" x2="192.0" y2="383.0" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round" marker-end="url(#arr-ink)"/>
+<rect x="30" y="384" width="324" height="76" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="1.2"/>
+<text x="42" y="405" font-size="11.5" fill="#b45309" text-anchor="start" font-weight="700">第 4 棒 · 乳酸菌 + 芽孢杆菌 + 高粱单宁</text>
+<text x="42" y="426" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">酯化绵甜骨架 + 蒸馏热裂解粮香</text>
+<text x="42" y="446" font-size="10.5" fill="#1e293b" text-anchor="start">乳酸 → 乳酸乙酯（塑黄金乙乳比）；产四甲基吡嗪与愈创木酚</text>
+<text x="32" y="486" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="700">核心比例：清香型追求“清香纯正”，乙酸乙酯 : 乳酸乙酯常保持 &gt; 1.2 : 1</text>
+<rect x="380" y="66" width="362" height="438" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="394.0" y="78.0" width="304" height="22" rx="11.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="546.0" y="93.0" font-size="12" fill="#dc2626" text-anchor="middle" font-weight="600">舌尖与鼻腔的分子字典：每种味道从何而来？</text>
+<rect x="392" y="114" width="338" height="46" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1.0"/>
+<text x="402" y="132" font-size="11" fill="#18794e" text-anchor="start" font-weight="700">清脆果香（清·爽）</text>
+<text x="720" y="132" font-size="11" fill="#0f172a" text-anchor="end" font-weight="700">乙酸乙酯</text>
+<text x="402" y="151" font-size="10.5" fill="#1e293b" text-anchor="start">阈值 32.6 mg/L · 清香头号骨架，苹果梨香</text>
+<rect x="392" y="168" width="338" height="46" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.0"/>
+<text x="402" y="186" font-size="11" fill="#1d6fa5" text-anchor="start" font-weight="700">绵柔醇甜（绵·甜）</text>
+<text x="720" y="186" font-size="11" fill="#0f172a" text-anchor="end" font-weight="700">乳酸乙酯+多元醇</text>
+<text x="402" y="205" font-size="10.5" fill="#1e293b" text-anchor="start">阈值 128 mg/L · 增稠压辣，拉长回甘尾韵</text>
+<rect x="392" y="222" width="338" height="46" rx="7" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.0"/>
+<text x="402" y="240" font-size="11" fill="#6d28d9" text-anchor="start" font-weight="700">玫瑰蜜香（幽·雅）</text>
+<text x="720" y="240" font-size="11" fill="#0f172a" text-anchor="end" font-weight="700">β-苯乙醇/苯乙酯</text>
+<text x="402" y="259" font-size="10.5" fill="#1e293b" text-anchor="start">阈值 0.41 mg/L · 极微浓度赋予花蜜细香</text>
+<rect x="392" y="276" width="338" height="46" rx="7" fill="#fffbeb" stroke="#b45309" stroke-width="1.0"/>
+<text x="402" y="294" font-size="11" fill="#b45309" text-anchor="start" font-weight="700">烘焙粮香（醇·厚）</text>
+<text x="720" y="294" font-size="11" fill="#0f172a" text-anchor="end" font-weight="700">四甲基吡嗪+愈创木酚</text>
+<text x="402" y="313" font-size="10.5" fill="#1e293b" text-anchor="start">高粱单宁裂解与芽孢杆菌合成坚果谷物香</text>
+<rect x="392" y="330" width="338" height="46" rx="7" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.0"/>
+<text x="402" y="348" font-size="11" fill="#0f766e" text-anchor="start" font-weight="700">凛冽生津（凛·净）</text>
+<text x="720" y="348" font-size="11" fill="#0f172a" text-anchor="end" font-weight="700">乙酸 + 乳酸</text>
+<text x="402" y="367" font-size="10.5" fill="#1e293b" text-anchor="start">恰当有机酸压住浮香，入口挺拔落口爽净</text>
+<rect x="392" y="384" width="338" height="46" rx="7" fill="#fef1e8" stroke="#c25014" stroke-width="1.0"/>
+<text x="402" y="402" font-size="11" fill="#c25014" text-anchor="start" font-weight="700">陈年柔熟（柔·陈）</text>
+<text x="720" y="402" font-size="11" fill="#0f172a" text-anchor="end" font-weight="700">乙缩醛 (二乙氧基乙烷)</text>
+<text x="402" y="421" font-size="10.5" fill="#1e293b" text-anchor="start">阈值 2.09 mg/L · 陶坛陈酿圆润度金指标</text>
+<rect x="392" y="438" width="338" height="46" rx="7" fill="#fef2f2" stroke="#dc2626" stroke-width="1.0"/>
+<text x="402" y="456" font-size="11" fill="#dc2626" text-anchor="start" font-weight="700">冲辣苦涩（需驯服）</text>
+<text x="720" y="456" font-size="11" fill="#0f172a" text-anchor="end" font-weight="700">游离乙醛+过量杂醇油</text>
+<text x="402" y="475" font-size="10.5" fill="#1e293b" text-anchor="start">新酒暴辣上头元凶 · 靠掐头去尾与陈酿消减</text>
+</svg>

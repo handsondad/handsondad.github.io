@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">脊椎动物心脏演化四阶段与鳄鱼潘氏孔分流、长颈鹿高压抗荷机制对比图</title>
+<desc id="desc">展示鱼类1房1室、两栖类2房1室、鳄目双模4腔与恒温动物全隔4腔的演化逻辑，详解鳄鱼水下潘氏孔右向左分流和长颈鹿250毫米汞柱血压适应。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">脊椎动物心脏演化四部曲与极端改装：从鱼类单循环、鳄鱼潘氏孔到长颈鹿</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">上排看心腔分隔演化（1房1室 → 2房1室 → 鳄鱼可切换4腔 → 恒温完全4腔）→ 下排看两大极端生存黑科技</text>
+<rect x="24" y="86" width="166" height="188" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="40" cy="106" r="10.5" fill="#eaf4fb" stroke="#1d4ed8" stroke-width="1.2"/>
+<text x="40" y="110" font-size="11.5" fill="#1d4ed8" text-anchor="middle" font-weight="700">1</text>
+<text x="58" y="111" font-size="12.5" fill="#1e3a8a" text-anchor="start" font-weight="700">鱼类：1房1室</text>
+<rect x="36" y="124" width="142" height="62" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+<text x="107" y="146" font-size="10.8" fill="#1e3a8a" text-anchor="middle" font-weight="700">心房 → 心室 → 鳃丝</text>
+<text x="107" y="168" font-size="10.5" fill="#1e293b" text-anchor="middle">→ 全身毛细血管(串联)</text>
+<text x="36" y="206" font-size="10.6" fill="#1e293b" text-anchor="start">• 单循环瓶颈：血液过鳃</text>
+<text x="36" y="224" font-size="10.6" fill="#1e293b" text-anchor="start">  后血压掉大半，全身慢流</text>
+<text x="36" y="244" font-size="10.6" fill="#64748b" text-anchor="start">• 水浮力托身，耗氧较低</text>
+<rect x="206" y="86" width="166" height="188" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="222" cy="106" r="10.5" fill="#eaf4fb" stroke="#0f766e" stroke-width="1.2"/>
+<text x="222" y="110" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">2</text>
+<text x="240" y="111" font-size="12.5" fill="#0f766e" text-anchor="start" font-weight="700">两栖类：2房1室</text>
+<rect x="218" y="124" width="142" height="62" rx="8" fill="#f0fdfa" stroke="#5eead4" stroke-width="1"/>
+<text x="289" y="146" font-size="10.8" fill="#0f766e" text-anchor="middle" font-weight="700">左房(肺) + 右房(体)</text>
+<text x="289" y="168" font-size="10.5" fill="#1e293b" text-anchor="middle">共入单心室（螺旋瓣导流）</text>
+<text x="218" y="206" font-size="10.6" fill="#1e293b" text-anchor="start">• 肺皮双循环：湿润皮肤</text>
+<text x="218" y="224" font-size="10.6" fill="#1e293b" text-anchor="start">  全天候补氧，水下可关肺</text>
+<text x="218" y="244" font-size="10.6" fill="#64748b" text-anchor="start">• 心室肌小梁减少清浊混血</text>
+<rect x="388" y="86" width="166" height="188" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="404" cy="106" r="10.5" fill="#eaf4fb" stroke="#c25014" stroke-width="1.2"/>
+<text x="404" y="110" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">3</text>
+<text x="422" y="111" font-size="12.5" fill="#c25014" text-anchor="start" font-weight="700">鳄目：双模4腔</text>
+<rect x="400" y="124" width="142" height="62" rx="8" fill="#fef1e8" stroke="#fdba74" stroke-width="1"/>
+<text x="471" y="146" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="700">完全四腔 + 潘氏孔</text>
+<text x="471" y="168" font-size="10.5" fill="#1e293b" text-anchor="middle">+ 肺动脉主动“齿轮瓣”</text>
+<text x="400" y="206" font-size="10.6" fill="#1e293b" text-anchor="start">• 陆上呼吸 = 纯四腔不混血</text>
+<text x="400" y="224" font-size="10.6" fill="#1e293b" text-anchor="start">• 潜水屏息 = 主动关肺分流</text>
+<text x="400" y="244" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="600">• 爬行类最精密流体阀门！</text>
+<rect x="570" y="86" width="166" height="188" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="586" cy="106" r="10.5" fill="#eaf4fb" stroke="#b91c1c" stroke-width="1.2"/>
+<text x="586" y="110" font-size="11.5" fill="#b91c1c" text-anchor="middle" font-weight="700">4</text>
+<text x="604" y="111" font-size="12.5" fill="#b91c1c" text-anchor="start" font-weight="700">鸟与哺乳：全隔4腔</text>
+<rect x="582" y="124" width="142" height="62" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1"/>
+<text x="653" y="146" font-size="10.8" fill="#b91c1c" text-anchor="middle" font-weight="700">室间隔 100% 彻底焊死</text>
+<text x="653" y="168" font-size="10.5" fill="#1e293b" text-anchor="middle">低压护肺 ‖ 高压灌全身</text>
+<text x="582" y="206" font-size="10.6" fill="#1e293b" text-anchor="start">• 零混血高纯氧供应全身</text>
+<text x="582" y="224" font-size="10.6" fill="#1e293b" text-anchor="start">• 支撑恒温 37–41°C 与飞翔</text>
+<text x="582" y="244" font-size="10.6" fill="#64748b" text-anchor="start">• 鸟类与哺乳类独立趋同演化</text>
+<rect x="24" y="288" width="348" height="160" rx="10" fill="#fef1e8" stroke="#fdba74" stroke-width="1"/>
+<text x="40" y="312" font-size="12.5" fill="#9a3412" text-anchor="start" font-weight="700">深潜黑科技 ①：鳄鱼“潘氏孔 + 齿轮瓣”双模切换</text>
+<text x="40" y="336" font-size="11" fill="#0f172a" text-anchor="start">• 潜伏水底屏息 1 小时，肺里氧气耗尽，继续泵肺纯属空转；</text>
+<text x="40" y="358" font-size="11" fill="#0f172a" text-anchor="start">• 肺动脉口特化的结缔组织“齿轮瓣”受迷走神经控制主动咬合；</text>
+<text x="40" y="380" font-size="11" fill="#0f172a" text-anchor="start">• 右心室压力升高，缺氧血经左右主动脉根部的【潘氏孔】改道</text>
+<text x="40" y="400" font-size="11" fill="#0f172a" text-anchor="start">  注入体循环（右向左分流），优先保住大脑与心脏供血；</text>
+<rect x="40.0" y="414.0" width="314" height="22" rx="11.0" fill="#ffedd5" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="197.0" y="429.0" font-size="10.3" fill="#9a3412" text-anchor="middle" font-weight="600">副产物：高 CO₂ 血液直送胃部，造出溶化兽骨的超强胃酸！</text>
+<rect x="388" y="288" width="348" height="160" rx="10" fill="#fef2f2" stroke="#fca5a5" stroke-width="1"/>
+<text x="404" y="312" font-size="12.5" fill="#b91c1c" text-anchor="start" font-weight="700">高空黑科技 ②：长颈鹿把血顶上 2 米高空的四重防护</text>
+<text x="404" y="336" font-size="11" fill="#0f172a" text-anchor="start" font-weight="600">• 光克服 2 m 血柱静水压 (ρgh) 就得先损耗 ~155 mmHg！</text>
+<text x="404" y="358" font-size="11" fill="#0f172a" text-anchor="start">• ① 11 kg 超级心脏：左室壁厚达 7.5 cm，动脉压 ~250 mmHg；</text>
+<text x="404" y="380" font-size="11" fill="#0f172a" text-anchor="start">• ② 低头喝水防脑溢血：颈静脉 ~7 道单向瓣 + 颅底奇网缓冲；</text>
+<text x="404" y="400" font-size="11" fill="#0f172a" text-anchor="start">• ③ 猛抬头防晕厥：奇网血管收缩补血，不患体位性低血压；</text>
+<rect x="404.0" y="414.0" width="314" height="22" rx="11.0" fill="#fee2e2" stroke="#b91c1c" stroke-width="1" stroke-opacity="0.35"/>
+<text x="561.0" y="429.0" font-size="10.3" fill="#b91c1c" text-anchor="middle" font-weight="600">④ 小腿紧绷厚皮筋膜 = 战斗机飞行员“天然抗荷服”防腿肿！</text>
+<rect x="24" y="460" width="712" height="42" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="380" y="486" font-size="11.1" fill="#0f172a" text-anchor="middle" font-weight="600">演化视角：没有“绝对完美”的心脏——两栖与鳄鱼的受控分流是外温动物省能杰作，恒温四腔则是高能耗发动机</text>
+</svg>

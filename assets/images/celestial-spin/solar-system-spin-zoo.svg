@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="486" viewBox="0 0 760 486" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">太阳系八大行星NASA实测自转轴倾角与自转周期全览对比图</title>
+<desc id="desc">按真实倾角绘制水星0.03°、金星177.4°（逆向自转243天）、地球23.4°、火星25.2°、木星3.1°（9小时56分最快）、土星26.7°、天王星97.8°（横躺自转致42年极昼极夜）及海王星28.3°。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#6d28d9"/>
+  </marker>
+  <marker id="arr-crimson" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#b91c1c"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="485" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">太阳系八大行星“自转怪咖图鉴”：正转、倒转与横躺着滚的星球</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">按 NASA 实测自转轴倾角（Obliquity）精确绘制：6 颗逆时针正转，唯独金星倒立逆转、天王星横躺打滚</text>
+<rect x="16" y="68" width="728" height="402" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="32" y="92" font-size="11.2" fill="#64748b" text-anchor="start">灰色水平虚线 = 绕太阳公转轨道面；带箭头斜轴 = 北自转轴指向（右手法则拇指朝向）：</text>
+<rect x="28" y="106" width="168" height="124" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.1"/>
+<line x1="46.0" y1="162.0" x2="178.0" y2="162.0" stroke="#cbd5e1" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="3 3"/>
+<circle cx="112" cy="162" r="20" fill="#ffffff" stroke="#475569" stroke-width="2.0"/>
+<line x1="112.0" y1="188.3" x2="112.0" y2="131.0" stroke="#475569" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arr-muted)"/>
+<line x1="93.0" y1="162.0" x2="131.0" y2="162.0" stroke="#475569" stroke-width="1.3" stroke-linecap="round" stroke-dasharray="2 2"/>
+<text x="38" y="125" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">水星 · 倾角 0.03°</text>
+<text x="112" y="219" font-size="10.6" fill="#1e293b" text-anchor="middle" font-weight="600">自转 58.6 地球日</text>
+<rect x="206" y="106" width="168" height="124" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1.6"/>
+<line x1="224.0" y1="162.0" x2="356.0" y2="162.0" stroke="#cbd5e1" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="3 3"/>
+<circle cx="290" cy="162" r="20" fill="#ffffff" stroke="#c25014" stroke-width="2.0"/>
+<line x1="288.8" y1="135.7" x2="291.4" y2="193.0" stroke="#c25014" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<line x1="309.0" y1="161.1" x2="271.0" y2="162.9" stroke="#c25014" stroke-width="1.3" stroke-linecap="round" stroke-dasharray="2 2"/>
+<text x="216" y="125" font-size="11.2" fill="#c25014" text-anchor="start" font-weight="700">金星 · 倾角 177.4°</text>
+<text x="290" y="219" font-size="10.6" fill="#b91c1c" text-anchor="middle" font-weight="700">自转 243.0 地球日（逆!）</text>
+<rect x="384" y="106" width="168" height="124" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.1"/>
+<line x1="402.0" y1="162.0" x2="534.0" y2="162.0" stroke="#cbd5e1" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="3 3"/>
+<circle cx="468" cy="162" r="20" fill="#ffffff" stroke="#1d6fa5" stroke-width="2.0"/>
+<line x1="457.5" y1="186.2" x2="480.3" y2="133.6" stroke="#1d6fa5" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<line x1="450.6" y1="154.4" x2="485.4" y2="169.6" stroke="#1d6fa5" stroke-width="1.3" stroke-linecap="round" stroke-dasharray="2 2"/>
+<text x="394" y="125" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">地球 · 倾角 23.4°</text>
+<text x="468" y="219" font-size="10.6" fill="#1e293b" text-anchor="middle" font-weight="600">自转 23h 56m</text>
+<rect x="562" y="106" width="168" height="124" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.1"/>
+<line x1="580.0" y1="162.0" x2="712.0" y2="162.0" stroke="#cbd5e1" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="3 3"/>
+<circle cx="646" cy="162" r="20" fill="#ffffff" stroke="#b91c1c" stroke-width="2.0"/>
+<line x1="634.8" y1="185.8" x2="659.2" y2="133.9" stroke="#b91c1c" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arr-muted)"/>
+<line x1="628.8" y1="153.9" x2="663.2" y2="170.1" stroke="#b91c1c" stroke-width="1.3" stroke-linecap="round" stroke-dasharray="2 2"/>
+<text x="572" y="125" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">火星 · 倾角 25.2°</text>
+<text x="646" y="219" font-size="10.6" fill="#1e293b" text-anchor="middle" font-weight="600">自转 24h 37m</text>
+<rect x="28" y="242" width="168" height="124" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.1"/>
+<line x1="46.0" y1="298.0" x2="178.0" y2="298.0" stroke="#cbd5e1" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="3 3"/>
+<circle cx="112" cy="298" r="20" fill="#ffffff" stroke="#b45309" stroke-width="2.0"/>
+<line x1="110.6" y1="324.3" x2="113.7" y2="267.0" stroke="#b45309" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<line x1="93.0" y1="297.0" x2="131.0" y2="299.0" stroke="#b45309" stroke-width="1.3" stroke-linecap="round" stroke-dasharray="2 2"/>
+<text x="38" y="261" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">木星 · 倾角 3.1°</text>
+<text x="112" y="355" font-size="10.6" fill="#1e293b" text-anchor="middle" font-weight="600">自转 9h 56m</text>
+<rect x="206" y="242" width="168" height="124" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.1"/>
+<line x1="224.0" y1="298.0" x2="356.0" y2="298.0" stroke="#cbd5e1" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="3 3"/>
+<circle cx="290" cy="298" r="20" fill="#ffffff" stroke="#0f766e" stroke-width="2.0"/>
+<line x1="278.1" y1="321.5" x2="303.9" y2="270.3" stroke="#0f766e" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arr-muted)"/>
+<line x1="273.0" y1="289.5" x2="307.0" y2="306.5" stroke="#0f766e" stroke-width="1.3" stroke-linecap="round" stroke-dasharray="2 2"/>
+<text x="216" y="261" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">土星 · 倾角 26.7°</text>
+<text x="290" y="355" font-size="10.6" fill="#1e293b" text-anchor="middle" font-weight="600">自转 10h 39m</text>
+<rect x="384" y="242" width="168" height="124" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.6"/>
+<line x1="402.0" y1="298.0" x2="534.0" y2="298.0" stroke="#cbd5e1" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="3 3"/>
+<circle cx="468" cy="298" r="20" fill="#ffffff" stroke="#6d28d9" stroke-width="2.0"/>
+<line x1="441.9" y1="294.4" x2="498.7" y2="302.2" stroke="#6d28d9" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arr-purple)"/>
+<line x1="470.6" y1="279.2" x2="465.4" y2="316.8" stroke="#6d28d9" stroke-width="1.3" stroke-linecap="round" stroke-dasharray="2 2"/>
+<text x="394" y="261" font-size="11.2" fill="#6d28d9" text-anchor="start" font-weight="700">天王星 · 倾角 97.8°</text>
+<text x="468" y="355" font-size="10.6" fill="#b91c1c" text-anchor="middle" font-weight="700">自转 17h 14m（横躺!）</text>
+<rect x="562" y="242" width="168" height="124" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.1"/>
+<line x1="580.0" y1="298.0" x2="712.0" y2="298.0" stroke="#cbd5e1" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="3 3"/>
+<circle cx="646" cy="298" r="20" fill="#ffffff" stroke="#1d6fa5" stroke-width="2.0"/>
+<line x1="633.5" y1="321.2" x2="660.7" y2="270.7" stroke="#1d6fa5" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<line x1="629.3" y1="289.0" x2="662.7" y2="307.0" stroke="#1d6fa5" stroke-width="1.3" stroke-linecap="round" stroke-dasharray="2 2"/>
+<text x="572" y="261" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">海王星 · 倾角 28.3°</text>
+<text x="646" y="355" font-size="10.6" fill="#1e293b" text-anchor="middle" font-weight="600">自转 16h 07m</text>
+<rect x="28" y="380" width="346" height="78" rx="8" fill="#fef1e8" stroke="#fdba74"/>
+<text x="40" y="401" font-size="11.3" fill="#c25014" text-anchor="start" font-weight="700">怪咖 ① 金星（倾角 177.4°）：太阳打西边出来！</text>
+<text x="40" y="421" font-size="10.5" fill="#1e293b" text-anchor="start">早期巨型撞击 + 92 倍地球气压浓厚大气的“太阳热潮汐力矩”，</text>
+<text x="40" y="440" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600">把金星搓成了极其缓慢的倒转，赤道自转线速度仅 6.5 km/h（慢跑速）！</text>
+<rect x="386" y="380" width="346" height="78" rx="8" fill="#f3e8ff" stroke="#d8b4fe"/>
+<text x="398" y="401" font-size="11.3" fill="#6d28d9" text-anchor="start" font-weight="700">怪咖 ② 天王星（倾角 97.8°）：躺着滚完 84 年！</text>
+<text x="398" y="421" font-size="10.5" fill="#1e293b" text-anchor="start">疑被地球级原行星斜撞放倒。虽然每 17.2 小时自转一圈，但南北极</text>
+<text x="398" y="440" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600">轮流直对太阳：一侧连晒 42 年极昼，另一侧连熬 42 年极夜！</text>
+</svg>

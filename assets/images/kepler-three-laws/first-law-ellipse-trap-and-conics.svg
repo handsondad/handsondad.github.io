@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">开普勒第一定律椭圆几何解剖与真实偏心率对比图</title>
+<desc id="desc">左图展示椭圆两焦点(太阳在F1、F2为空)、半长轴a、短半轴b、半通径p与r1+r2=2a；右上对比真实火星轨道焦点偏移9.34%而短轴仅缩扁0.44%；右下列出按总能量E划分的四类圆锥曲线轨道。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">第一定律（椭圆定律）全拆解：别被夸张示意图骗了，“偏心”比“压扁”显著得多！</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">行星沿椭圆运行，太阳独占其中一个焦点（另一焦点空无一物）；总机械能 E 决定四类圆锥曲线命运</text>
+<rect x="22" y="68" width="392" height="384" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="90" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="42" y="94" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="60" y="95" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">椭圆几何解剖图（以 e = 0.60 放大示意几何关系）</text>
+<line x1="73.0" y1="232.0" x2="363.0" y2="232.0" stroke="#e2e8f0" stroke-width="1.3" stroke-dasharray="4,3"/>
+<line x1="218.0" y1="116.0" x2="218.0" y2="348.0" stroke="#e2e8f0" stroke-width="1.3" stroke-dasharray="4,3"/>
+<ellipse cx="218.0" cy="232.0" rx="145.0" ry="116.0" fill="#eaf4fb" fill-opacity="0.42" stroke="#1d6fa5" stroke-width="2.6"/>
+<line x1="305.0" y1="232.0" x2="279.3" y2="126.9" stroke="#c25014" stroke-width="2.2"/>
+<line x1="131.0" y1="232.0" x2="279.3" y2="126.9" stroke="#6d28d9" stroke-width="1.8" stroke-dasharray="5,3"/>
+<line x1="305.0" y1="232.0" x2="305.0" y2="139.2" stroke="#18794e" stroke-width="1.8" stroke-dasharray="3,2"/>
+<text x="311.0" y="184.0" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="700" class="halo">半通径 p</text>
+<circle cx="218.0" cy="232.0" r="3.5" fill="#475569"/>
+<text x="218.0" y="249.0" font-size="11" fill="#475569" text-anchor="middle" class="halo">中心 O</text>
+<circle cx="131.0" cy="232.0" r="5" fill="#ffffff" stroke="#6d28d9" stroke-width="2" stroke-dasharray="2,2"/>
+<text x="131.0" y="252.0" font-size="11" fill="#6d28d9" text-anchor="middle" font-weight="600" class="halo">空焦点 F₂</text>
+<text x="131.0" y="266.0" font-size="10.5" fill="#64748b" text-anchor="middle" class="halo">(空无一物!)</text>
+<circle cx="305.0" cy="232.0" r="9" fill="#b45309" stroke="#ffffff" stroke-width="2"/>
+<text x="301.0" y="255.0" font-size="11.5" fill="#b45309" text-anchor="middle" font-weight="700" class="halo">太阳 F₁</text>
+<circle cx="363.0" cy="232.0" r="4.5" fill="#b91c1c"/>
+<text x="367.0" y="222.0" font-size="11" fill="#b91c1c" text-anchor="end" font-weight="700" class="halo">近日点</text>
+<circle cx="73.0" cy="232.0" r="4.5" fill="#1d6fa5"/>
+<text x="77.0" y="222.0" font-size="11" fill="#1d6fa5" text-anchor="start" font-weight="700" class="halo">远日点</text>
+<circle cx="279.3" cy="126.9" r="6.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="2"/>
+<text x="287.3" y="118.9" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700" class="halo">行星 P</text>
+<text x="300.1" y="175.4" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700" class="halo">r₁</text>
+<text x="197.1" y="173.4" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700" class="halo">r₂</text>
+<rect x="36" y="362" width="364" height="78" rx="7" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="48" y="382" font-size="11" fill="#0f172a" text-anchor="start" font-weight="600">• 绳长铁律：r₁ + r₂ = 2a（半长轴 a）；半焦距 c = a·e</text>
+<text x="48" y="402" font-size="11" fill="#1e293b" text-anchor="start">• 近日距 r近 = a(1−e)，远日距 r远 = a(1+e)，短半轴 b = a√(1−e²)</text>
+<text x="48" y="422" font-size="11" fill="#1d6fa5" text-anchor="start" font-weight="700">• 极坐标方程（以太阳为原点）：r(θ) = a(1−e²) / (1 + e cos θ)</text>
+<rect x="428" y="68" width="310" height="192" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="448" cy="90" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="448" y="94" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="466" y="95" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">视觉反常识：真实火星轨道有多“圆”？</text>
+<circle cx="492.0" cy="170.0" r="46.0" fill="none" stroke="#475569" stroke-width="1.5" stroke-dasharray="3,3"/>
+<ellipse cx="492.0" cy="170.0" rx="46.0" ry="45.8" fill="none" stroke="#c25014" stroke-width="2.2"/>
+<circle cx="492.0" cy="170.0" r="2.5" fill="#475569"/>
+<circle cx="496.3" cy="170.0" r="5.2" fill="#b45309"/>
+<text x="492" y="238" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="600">真实火星轨道 (e=0.093)</text>
+<text x="556" y="130" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">对火星 e = 0.0934：</text>
+<text x="556" y="152" font-size="11" fill="#b91c1c" text-anchor="start" font-weight="700">• 焦点偏移 c/a = 9.34%</text>
+<text x="556" y="170" font-size="10.5" fill="#64748b" text-anchor="start">  （一阶效应 ∝ e，很明显）</text>
+<text x="556" y="194" font-size="11" fill="#1d6fa5" text-anchor="start" font-weight="700">• 短轴缩扁 1−b/a = 0.44%!</text>
+<text x="556" y="212" font-size="10.5" fill="#64748b" text-anchor="start">  （二阶效应 ≈ e²/2，肉眼</text>
+<text x="556" y="228" font-size="10.5" fill="#64748b" text-anchor="start">   几乎看不出比正圆扁！）</text>
+<rect x="428" y="272" width="310" height="180" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="448" cy="294" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="448" y="298" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">3</text>
+<text x="466" y="299" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">牛顿推广：总机械能 E 决定四类轨道</text>
+<text x="440" y="328" font-size="11" fill="#18794e" text-anchor="start" font-weight="700">正圆 e = 0</text>
+<text x="524" y="328" font-size="10.5" fill="#1e293b" text-anchor="start">E = −GMm/(2r) 极小值</text>
+<text x="440" y="358" font-size="11" fill="#1d6fa5" text-anchor="start" font-weight="700">椭圆 0 &lt; e &lt; 1</text>
+<text x="524" y="358" font-size="10.5" fill="#1e293b" text-anchor="start">E = −GMm/(2a) &lt; 0（行星/彗星）</text>
+<text x="440" y="388" font-size="11" fill="#c25014" text-anchor="start" font-weight="700">抛物线 e = 1</text>
+<text x="524" y="388" font-size="10.5" fill="#1e293b" text-anchor="start">E = 0（第二宇宙速度逃逸临界）</text>
+<text x="440" y="418" font-size="11" fill="#b91c1c" text-anchor="start" font-weight="700">双曲线 e &gt; 1</text>
+<text x="524" y="418" font-size="10.5" fill="#1e293b" text-anchor="start">E &gt; 0（星际访客，如奥陌陌）</text>
+<rect x="22" y="464" width="716" height="42" rx="8" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<text x="380" y="490" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">记忆口诀：地球轨道短轴仅比长轴短 0.014%（画在 A4 纸上差不到半根头发丝），但日地距离冬夏却实打实差了 500 万公里！</text>
+</svg>

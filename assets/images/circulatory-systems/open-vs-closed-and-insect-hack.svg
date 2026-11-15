@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">无血管扩散、昆虫开放式循环加气管系统与章鱼三心闭管式循环对比图</title>
+<desc id="desc">对比扁形动物压扁身体突破菲克扩散限制、昆虫用气管网直供氧气配合低压血腔、以及章鱼演化出两颗鳃心加一颗主心的闭管式高压循环。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">无血管、开放洗浴与闭管三心：动物界破解“菲克扩散死锁”的三套方案</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">按菲克定律 t ≈ L²/(2D) 距离翻 10 倍耗时翻 100 倍 → 对比涡虫压扁、昆虫气管外挂与章鱼闭管三心</text>
+<rect x="24" y="86" width="224" height="362" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="108" r="10.5" fill="#eaf4fb" stroke="#0f766e" stroke-width="1.2"/>
+<text x="42" y="112" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">1</text>
+<text x="62" y="113" font-size="13" fill="#0f766e" text-anchor="start" font-weight="700">无循环系统：压扁身体</text>
+<text x="36" y="134" font-size="11" fill="#64748b" text-anchor="start">代表：水母、海葵、涡虫</text>
+<rect x="40" y="148" width="192" height="92" rx="10" fill="#f0fdfa" stroke="#99f6e4" stroke-width="1"/>
+<ellipse cx="136" cy="194" rx="76" ry="16" fill="#ccfbf1" stroke="#0f766e" stroke-width="2"/>
+<text x="136" y="198" font-size="10.5" fill="#0f766e" text-anchor="middle" font-weight="700">扁平身体 + 分支消化腔</text>
+<text x="136" y="168" font-size="10" fill="#0f766e" text-anchor="middle">↓ 水中 O₂ 直接扩散 (&lt;0.5 mm) ↓</text>
+<text x="136" y="228" font-size="10" fill="#1e293b" text-anchor="middle">厚度 &lt; 1 mm：细胞贴水自取</text>
+<text x="36" y="264" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">为什么变厚就必死？(t ≈ L²/2D)</text>
+<text x="36" y="286" font-size="11" fill="#18794e" text-anchor="start">• 10 μm 单细胞：~0.025 秒</text>
+<text x="36" y="308" font-size="11" fill="#b45309" text-anchor="start">• 1 mm 扁虫极限：~4.2 分钟</text>
+<text x="36" y="330" font-size="11" fill="#b91c1c" text-anchor="start" font-weight="700">• 1 cm 厚肉块：~6.9 小时(窒息!)</text>
+<rect x="36" y="350" width="200" height="82" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="46" y="372" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">工程省钱法：</text>
+<text x="46" y="392" font-size="10.8" fill="#1e293b" text-anchor="start">不造心脏与血管，代价是</text>
+<text x="46" y="412" font-size="10.8" fill="#1e293b" text-anchor="start">永远长不大、没法变厚实。</text>
+<rect x="268" y="86" width="224" height="362" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="286" cy="108" r="10.5" fill="#eaf4fb" stroke="#c25014" stroke-width="1.2"/>
+<text x="286" y="112" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="306" y="113" font-size="13" fill="#c25014" text-anchor="start" font-weight="700">开放式 + 昆虫气管外挂</text>
+<text x="280" y="134" font-size="11" fill="#64748b" text-anchor="start">代表：蝗虫、蜜蜂、虾蟹、鲎</text>
+<rect x="284" y="148" width="192" height="112" rx="10" fill="#fef1e8" stroke="#fed7aa" stroke-width="1"/>
+<rect x="304" y="160" width="152" height="18" rx="8" fill="#fdba74" stroke="#c25014" stroke-width="1.6"/>
+<text x="380" y="173" font-size="10" fill="#7c2d12" text-anchor="middle" font-weight="700">背血管管状心（带单向心门）</text>
+<text x="380" y="198" font-size="10" fill="#c25014" text-anchor="middle">↙ 血腔低压漫灌（无色血淋巴）↘</text>
+<rect x="300" y="212" width="160" height="36" rx="6" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.5" stroke-dasharray="4 2"/>
+<text x="380" y="228" font-size="10.5" fill="#1e3a8a" text-anchor="middle" font-weight="700">独立外挂：气门 → 微气管网</text>
+<text x="380" y="243" font-size="10" fill="#1e3a8a" text-anchor="middle">气态 O₂ 直插飞行肌线粒体！</text>
+<text x="280" y="282" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">为什么低压漫灌还能振翅 200Hz？</text>
+<text x="280" y="304" font-size="11" fill="#1e293b" text-anchor="start">• 血液只送营养/激素，不送氧！</text>
+<text x="280" y="326" font-size="11" fill="#1e3a8a" text-anchor="start" font-weight="700">• 空气中 O₂ 扩散比水快 10⁴ 倍</text>
+<rect x="280" y="350" width="200" height="82" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="290" y="372" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">体型枷锁：</text>
+<text x="290" y="392" font-size="10.8" fill="#1e293b" text-anchor="start">气管扩散距离有限，现代氧气</text>
+<text x="290" y="412" font-size="10.8" fill="#1e293b" text-anchor="start">21% 下造不出汽车大的甲虫。</text>
+<rect x="512" y="86" width="224" height="362" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="530" cy="108" r="10.5" fill="#eaf4fb" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="530" y="112" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">3</text>
+<text x="550" y="113" font-size="13" fill="#6d28d9" text-anchor="start" font-weight="700">闭管式：章鱼三心高压</text>
+<text x="524" y="134" font-size="11" fill="#64748b" text-anchor="start">代表：蚯蚓、章鱼/乌贼、脊椎动物</text>
+<rect x="528" y="148" width="192" height="112" rx="10" fill="#f3e8ff" stroke="#d8b4fe" stroke-width="1"/>
+<circle cx="564" cy="182" r="18" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.8"/>
+<text x="564" y="186" font-size="9.8" fill="#1e3a8a" text-anchor="middle" font-weight="700">左鳃心</text>
+<circle cx="684" cy="182" r="18" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.8"/>
+<text x="684" y="186" font-size="9.8" fill="#1e3a8a" text-anchor="middle" font-weight="700">右鳃心</text>
+<rect x="594" y="166" width="60" height="34" rx="10" fill="#ede9fe" stroke="#6d28d9" stroke-width="2.2"/>
+<text x="624" y="187" font-size="10.5" fill="#6d28d9" text-anchor="middle" font-weight="700">系统主心</text>
+<text x="624" y="218" font-size="10" fill="#6d28d9" text-anchor="middle" font-weight="600">鳃心专克鳃部压降 → 主心 &gt;75 mmHg</text>
+<text x="624" y="238" font-size="10" fill="#1e293b" text-anchor="middle">全程密封管道 + 铜基蓝色血蓝蛋白</text>
+<text x="524" y="282" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">软体动物里的“高智商异类”：</text>
+<text x="524" y="304" font-size="11" fill="#1e293b" text-anchor="start">• 双鳃心先给静脉血增压过鳃</text>
+<text x="524" y="326" font-size="11" fill="#1e293b" text-anchor="start">• 主心高压精准喂饱巨型神经系统</text>
+<rect x="524" y="350" width="200" height="82" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1"/>
+<text x="534" y="372" font-size="11" fill="#b91c1c" text-anchor="start" font-weight="700">章鱼的软肋：</text>
+<text x="534" y="392" font-size="10.8" fill="#1e293b" text-anchor="start">喷水疾游时外周阻力暴增，主心</text>
+<text x="534" y="412" font-size="10.8" fill="#1e293b" text-anchor="start">会短暂罢工，所以平时爱爬行！</text>
+<rect x="24" y="460" width="712" height="42" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="380" y="486" font-size="11.1" fill="#0f172a" text-anchor="middle" font-weight="600">血量账本：开放式循环须灌满血腔，血淋巴占体重 20%–40%；闭管式循环密封高压快流，人血仅占体重 ~7%–8%（约 5 升）</text>
+</svg>

@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="482" viewBox="0 0 760 482" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">自转离心扁率（地球、木星与土星9.8%扁率真实比例）及太阳纬度较差自转扭曲磁力线图</title>
+<desc id="desc">左面板按真实比例绘制土星9.8%扁率椭圆与正圆对比，列出地球（21.3 km，钦博拉索山离地心最远）、木星（4,638 km）、土星（5,904 km）赤道隆起；右面板按NASA公式展示太阳赤道25.05天与极区34.4天较差自转缠绕磁力线机制。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#6d28d9"/>
+  </marker>
+  <marker id="arr-crimson" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#b91c1c"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="481" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">自转怎样重塑星球身材？把土星甩扁近 10%，把太阳磁场拧成“麻花”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左看离心力如何把旋转星球甩成赤道鼓起的扁球；右看流体太阳“赤道快、两极慢”的较差自转</text>
+<rect x="16" y="68" width="362" height="398" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="28.0" y="80.0" width="292" height="24" rx="12.0" fill="#f0fdfa" stroke="#0f766e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="174.0" y="96.3" font-size="12" fill="#0f766e" text-anchor="middle" font-weight="600">离心扁率 f = (赤道半径 − 极半径) / 赤道半径</text>
+<circle cx="197.0" cy="194.0" r="63.0" fill="none" stroke="#b91c1c" stroke-width="1.3" stroke-dasharray="4 3"/>
+<ellipse cx="197.0" cy="194.0" rx="63.0" ry="56.83" fill="#f0fdfa" stroke="#0f766e" stroke-width="2.2"/>
+<line x1="81.0" y1="194.0" x2="313.0" y2="194.0" stroke="#b45309" stroke-width="2.2" stroke-linecap="round"/>
+<text x="197.0" y="186.0" font-size="11" fill="#0f766e" text-anchor="middle" font-weight="700" class="halo">土星真实扁率轮廓</text>
+<text x="197.0" y="210.0" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600" class="halo">10.7 小时转一圈 · 扁率 9.8%!</text>
+<text x="197.0" y="123.0" font-size="10.2" fill="#b91c1c" text-anchor="middle" font-weight="600">红色虚线 = 假想正球体（两极被压矮整整 5,904 km!）</text>
+<rect x="28" y="272" width="338" height="38" rx="6" fill="#f8fafc" stroke="#e2e8f0"/>
+<text x="38" y="288" font-size="10.6" fill="#1d6fa5" text-anchor="start" font-weight="700">地球（岩石刚度高，24h/圈）</text>
+<text x="38" y="304" font-size="10.3" fill="#1e293b" text-anchor="start">赤道比极半径鼓出 21.3 km（扁率 0.335%）</text>
+<rect x="28" y="316" width="338" height="38" rx="6" fill="#f8fafc" stroke="#e2e8f0"/>
+<text x="38" y="332" font-size="10.6" fill="#b45309" text-anchor="start" font-weight="700">木星（气态狂转，9.9h/圈）</text>
+<text x="38" y="348" font-size="10.3" fill="#1e293b" text-anchor="start">赤道比极半径鼓出 4,638 km（扁率 6.49%）</text>
+<rect x="28" y="360" width="338" height="38" rx="6" fill="#f8fafc" stroke="#e2e8f0"/>
+<text x="38" y="376" font-size="10.6" fill="#0f766e" text-anchor="start" font-weight="700">土星（密度低于水，10.7h/圈）</text>
+<text x="38" y="392" font-size="10.3" fill="#1e293b" text-anchor="start">赤道比极半径鼓出 5,904 km（扁率 9.80% 冠军!）</text>
+<text x="28" y="424" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="600">趣味彩蛋：正因地球赤道鼓起 21.3 km，南美赤道附近的钦博拉索山</text>
+<text x="28" y="443" font-size="10.4" fill="#1d6fa5" text-anchor="start" font-weight="700">（海拔 6,263 m）离地心的真实距离，反倒比珠穆朗玛峰还要远约 2.1 km！</text>
+<rect x="390" y="68" width="354" height="398" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="402.0" y="80.0" width="288" height="24" rx="12.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="546.0" y="96.3" font-size="12" fill="#c25014" text-anchor="middle" font-weight="600">较差自转：气体与等离子体星球不按整块转！</text>
+<circle cx="524.0" cy="214.0" r="78.0" fill="#fef1e8" stroke="#c25014" stroke-width="2.0"/>
+<line x1="524.0" y1="124.0" x2="524.0" y2="304.0" stroke="#475569" stroke-width="1.3" stroke-linecap="round" stroke-dasharray="3 2"/>
+<path d="M 524.0 136.0 Q 498.0 214.0 524.0 292.0" fill="none" stroke="#475569" stroke-width="1.3" stroke-dasharray="3 3"/>
+<path d="M 524.0 136.0 C 532.0 166.0, 592.0 196.0, 592.0 214.0 C 592.0 232.0, 532.0 262.0, 524.0 292.0" fill="none" stroke="#b91c1c" stroke-width="2.3"/>
+<line x1="500.0" y1="148.0" x2="518.0" y2="148.0" stroke="#475569" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<text x="614.0" y="146.0" font-size="10.3" fill="#0f172a" text-anchor="start" font-weight="700">极区 (≈80°–90°)</text>
+<text x="614.0" y="161.0" font-size="10.0" fill="#475569" text-anchor="start" font-weight="600">≈ 34.4 天/圈（慢）</text>
+<line x1="500.0" y1="178.0" x2="534.0" y2="178.0" stroke="#b45309" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<text x="614.0" y="176.0" font-size="10.3" fill="#0f172a" text-anchor="start" font-weight="700">中纬 (45°)</text>
+<text x="614.0" y="191.0" font-size="10.0" fill="#b45309" text-anchor="start" font-weight="600">≈ 27.9 天/圈</text>
+<line x1="500.0" y1="214.0" x2="556.0" y2="214.0" stroke="#b91c1c" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arr-crimson)"/>
+<text x="614.0" y="212.0" font-size="10.3" fill="#0f172a" text-anchor="start" font-weight="700">赤道 (0°)</text>
+<text x="614.0" y="227.0" font-size="10.0" fill="#b91c1c" text-anchor="start" font-weight="600">25.05 天/圈（最快!）</text>
+<line x1="500.0" y1="250.0" x2="534.0" y2="250.0" stroke="#b45309" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<text x="614.0" y="248.0" font-size="10.3" fill="#0f172a" text-anchor="start" font-weight="700">南纬 45°</text>
+<text x="614.0" y="263.0" font-size="10.0" fill="#b45309" text-anchor="start" font-weight="600">≈ 27.9 天/圈</text>
+<rect x="402" y="316" width="330" height="134" rx="8" fill="#fffbeb" stroke="#fcd34d"/>
+<text x="414" y="338" font-size="11.3" fill="#b45309" text-anchor="start" font-weight="700">较差自转的蝴蝶效应：11 年太阳黑子与耀斑周期</text>
+<text x="414" y="360" font-size="10.6" fill="#1e293b" text-anchor="start">• 地球是坚硬岩石，北京与赤道角速度严格相等（同为 24h）；</text>
+<text x="414" y="380" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="600">• 太阳是沸腾等离子体球，赤道每转 3.5 圈就比两极多套 1 圈！</text>
+<text x="414" y="401" font-size="10.6" fill="#1e293b" text-anchor="start">• 冻结在等离子体里的南北向磁力线（红线）被赤道越拽越长，</text>
+<text x="414" y="421" font-size="10.6" fill="#1e293b" text-anchor="start">  像缠毛线一样绕着赤道拧成强磁绳，浮出表面便炸开太阳黑子</text>
+<text x="414" y="439" font-size="10.4" fill="#64748b" text-anchor="start">  与日冕物质抛射（木星大红斑与彩带云系同理受快自转塑造）。</text>
+</svg>

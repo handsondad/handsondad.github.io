@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="486" viewBox="0 0 760 486" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">慢中子俘获（s-过程）与快中子俘获（r-过程）核素攀登路径及GW170817、韦布望远镜实测证据图</title>
+<desc id="desc">左面板在(N,Z)核素图上对比AGB恒星s-过程沿稳定谷拾级而上至铅铋，与双中子星并合r-过程瞬间冲入丰中子区再经β衰变合成金、铂、铀；右面板总结2017年GW170817检出锶及2023年JWST检出碲的观测证据。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#6d28d9"/>
+  </marker>
+  <marker id="arr-crimson" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#b91c1c"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="485" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">铁之后的元素怎么造？零电荷中子“暗度陈仓”：慢俘获（s）vs 快俘获（r）</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">中子不带电、无视几十个质子的电磁斥力钻进原子核，再靠 β⁻ 衰变（n → p + e⁻）把元素序号往上推</text>
+<rect x="16" y="68" width="392" height="402" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="28.0" y="80.0" width="242" height="24" rx="12.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="149.0" y="96.3" font-size="12" fill="#18794e" text-anchor="middle" font-weight="600">核素图攀登路线：慢走楼梯 vs 海啸冲锋</text>
+<line x1="66.0" y1="132.0" x2="66.0" y2="388.0" stroke="#475569" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="66.0" y1="388.0" x2="386.0" y2="388.0" stroke="#475569" stroke-width="1.5" stroke-linecap="round"/>
+<text x="40" y="260.0" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="700">质子数 Z</text>
+<text x="40" y="276.0" font-size="10" fill="#64748b" text-anchor="middle">(元素种类)</text>
+<text x="226.0" y="410.0" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="600">中子数 N（向右 = 吞入不带电中子）</text>
+<polygon points="84.0,364.0 302.0,152.0 324.0,164.0 102.0,374.0" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+<text x="178.0" y="238.0" font-size="10.5" fill="#475569" text-anchor="start" font-weight="700" class="halo">β 稳定核素谷</text>
+<circle cx="94.0" cy="366.0" r="6" fill="#0f172a"/>
+<text x="90.0" y="354.0" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700" class="halo">⁵⁶Fe 种子</text>
+<polyline points="94.0,366.0 120.0,366.0 110.0,342.0 138.0,342.0 128.0,318.0 158.0,318.0 148.0,292.0 180.0,292.0 170.0,264.0 206.0,264.0 196.0,236.0 236.0,236.0 226.0,208.0 266.0,208.0 258.0,180.0" fill="none" stroke="#18794e" stroke-width="2.2"/>
+<circle cx="258.0" cy="180.0" r="5.5" fill="#18794e"/>
+<rect x="128.0" y="150.0" width="166" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="211.0" y="165.0" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="600">s-过程终点：铅(82)/铋(83)</text>
+<text x="114.0" y="306.0" font-size="11" fill="#18794e" text-anchor="start" font-weight="700" class="halo">s-慢俘获</text>
+<line x1="94.0" y1="366.0" x2="310.0" y2="344.0" stroke="#c25014" stroke-width="2.4" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<line x1="310.0" y1="344.0" x2="372.0" y2="228.0" stroke="#c25014" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="5 3"/>
+<line x1="372.0" y1="228.0" x2="308.0" y2="148.0" stroke="#6d28d9" stroke-width="2.4" stroke-linecap="round" marker-end="url(#arr-purple)"/>
+<line x1="322.0" y1="292.0" x2="252.0" y2="216.0" stroke="#6d28d9" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arr-purple)"/>
+<text x="262.0" y="370.0" font-size="10.3" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">r-快俘获（&lt;1s 狂吞数十中子）</text>
+<text x="352.0" y="302.0" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="600" class="halo">极端丰中子区</text>
+<text x="346.0" y="188.0" font-size="10.5" fill="#6d28d9" text-anchor="middle" font-weight="700" class="halo">连环 β⁻ 衰变</text>
+<rect x="268.0" y="124.0" width="178" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="357.0" y="139.0" font-size="10.5" fill="#6d28d9" text-anchor="middle" font-weight="600">越过断层 → 金(79)·铂·铀(92)!</text>
+<text x="28" y="433" font-size="10.3" fill="#1e293b" text-anchor="start">• s-过程（衰老红巨星）：数十年吞 1 中子，遇不稳定核先衰变，造锶、钡、铅；</text>
+<text x="28" y="453" font-size="10.3" fill="#0f172a" text-anchor="start" font-weight="600">• r-过程（中子星并合）：中子密度 &gt;10²²/cm³，秒级越过裂变断层造黄金与铀！</text>
+<rect x="420" y="68" width="324" height="402" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="432.0" y="80.0" width="236" height="24" rx="12.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="550.0" y="96.3" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="600">天文破案铁证：当场抓获宇宙炼金炉</text>
+<rect x="432" y="116" width="300" height="146" rx="8" fill="#fef1e8" stroke="#fdba74"/>
+<rect x="444.0" y="128.0" width="242" height="22" rx="11.0" fill="#ffffff" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="565.0" y="143.0" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="600">证据 ①：2017 双中子星并合 GW170817</text>
+<text x="444" y="170" font-size="11" fill="#1e293b" text-anchor="start">• 距离 1.3 亿光年（NGC 4993 星系），LIGO 先听见</text>
+<text x="444" y="190" font-size="11" fill="#1e293b" text-anchor="start">  引力波，全球 70 多台望远镜紧接着拍到“千新星”！</text>
+<text x="444" y="212" font-size="11" fill="#c25014" text-anchor="start" font-weight="700">• 欧洲南方天文台 VLT 光谱当场检出新生的 38 号锶(Sr)，</text>
+<text x="444" y="232" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="600">  单次碰撞抛出的黄金、铂金等重元素总量达数倍地球质量！</text>
+<rect x="432" y="274" width="300" height="118" rx="8" fill="#f3e8ff" stroke="#d8b4fe"/>
+<rect x="444.0" y="286.0" width="242" height="22" rx="11.0" fill="#ffffff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="565.0" y="301.0" font-size="10.8" fill="#6d28d9" text-anchor="middle" font-weight="600">证据 ②：2023 韦布望远镜直测 52 号碲</text>
+<text x="444" y="326" font-size="11" fill="#1e293b" text-anchor="start">• 韦布（JWST）追踪亮伽马暴千新星 GRB 230307A，</text>
+<text x="444" y="347" font-size="11" fill="#6d28d9" text-anchor="start" font-weight="700">  在 2.1 微米中红外波段首次直接捕获重元素碲（Te）！</text>
+<text x="444" y="368" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="600">• 周期表上紧挨着碲的邻居，正是人体必需的 53 号碘（I）！</text>
+<rect x="432" y="402" width="300" height="56" rx="8" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="444" y="422" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">前沿边界说明：</text>
+<text x="444" y="441" font-size="10.3" fill="#64748b" text-anchor="start">除中子星并合外，强磁场极超新星（磁旋转超新星）对早期宇宙</text>
+<text x="444" y="454" font-size="10.3" fill="#64748b" text-anchor="start">r-过程元素的分担比例，仍是当今核天体物理活跃课题。</text>
+</svg>

@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="505" viewBox="0 0 760 505" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">兰伯特余弦投影摊薄与Kasten-Young球壳大气38倍光学质量消光对比图</title>
+<desc id="desc">左卡对比正午54.4度（光束集中于1.23平方米）与日出5度（摊薄于11.5平方米）的余弦面积效应；右卡绘出地面水平直射辐照度随太阳高度角暴涨曲线，从日出5度的23瓦每平方米跃升至正午757至935瓦每平方米。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#1d6fa5"/>
+    </marker>
+    <marker id="arr-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#c25014"/>
+    </marker>
+    <marker id="arr-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#18794e"/>
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#475569"/>
+    </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="504" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">替“探汤派”破案（上）：为什么早晨沧沧凉凉、中午火辣烫手？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">不是太阳跑近了，而是“斜射余弦摊薄 10 倍”叠加上“球壳大气层 38 倍闯关削弱”！</text>
+<rect x="20" y="62" width="360" height="426" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="84" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="38" y="88" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="88" font-size="12.2" fill="#0f172a" text-anchor="start" font-weight="700">第一刀：兰伯特余弦定律（1 m² 光束摊多宽？）</text>
+<rect x="36" y="106" width="328" height="126" rx="8" fill="#fffbeb" stroke="#fcd34d" stroke-width="1"/>
+<text x="48" y="126" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="700">☀️ 正午高悬（曲阜春分 α＝54.4°，夏至 α＝77.8°）</text>
+<polygon points="154,136 194,136 164,204 116,204" fill="#fde047" fill-opacity="0.65" stroke="#eab308" stroke-width="1.3"/>
+<line x1="54.0" y1="204.0" x2="344.0" y2="204.0" stroke="#0f172a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="116.0" y1="212.0" x2="164.0" y2="212.0" stroke="#dc2626" stroke-width="2.4" stroke-linecap="round"/>
+<text x="252" y="164" font-size="10.5" fill="#dc2626" text-anchor="middle" font-weight="700">光束集中砸在 1.23 m²</text>
+<text x="252" y="183" font-size="10.0" fill="#1e293b" text-anchor="middle">（夏至仅 1.02 m²，火力全开！）</text>
+<text x="140" y="225" font-size="10.0" fill="#dc2626" text-anchor="middle" font-weight="700" class="mono">1.23 m²</text>
+<rect x="36" y="242" width="328" height="130" rx="8" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<text x="48" y="262" font-size="10.6" fill="#1d6fa5" text-anchor="start" font-weight="700">🌅 日出低斜（刚出山 α＝5°）</text>
+<polygon points="344,274 344,294 64,344 268,344" fill="#93c5fd" fill-opacity="0.48" stroke="#3b82f6" stroke-width="1.2"/>
+<line x1="48.0" y1="344.0" x2="350.0" y2="344.0" stroke="#0f172a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="64.0" y1="352.0" x2="268.0" y2="352.0" stroke="#1d6fa5" stroke-width="2.4" stroke-linecap="round"/>
+<text x="166" y="366" font-size="10.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">同一束光被拉长摊薄在 11.5 m² 大地上！（先打 0.87 折）</text>
+<rect x="36" y="382" width="328" height="92" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="48" y="402" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">手电筒直照 vs 斜擦桌面实验：</text>
+<text x="48" y="421" font-size="10.0" fill="#1e293b" text-anchor="start">大气层顶太阳常数恒为 S₀＝1361 W/m²（IAU 2015 标准）。</text>
+<text x="48" y="439" font-size="10.0" fill="#1e293b" text-anchor="start">单靠几何投影 E ＝ I·sin α，5° 低阳比春分正午就已被摊薄了</text>
+<text x="48" y="457" font-size="10.1" fill="#dc2626" text-anchor="start" font-weight="700">sin 54.4° ÷ sin 5° ≈ 9.3 倍！这还只是第一刀。</text>
+<rect x="394" y="62" width="346" height="426" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="412" cy="84" r="10.5" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2"/>
+<text x="412" y="88" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">2</text>
+<text x="430" y="88" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">第二刀：穿过 38 倍厚大气层（Kasten–Young 曲线）</text>
+<line x1="444.0" y1="312.0" x2="718.0" y2="312.0" stroke="#e2e8f0" stroke-width="1.0" stroke-linecap="round"/>
+<text x="438.0" y="316.0" font-size="9.8" fill="#64748b" text-anchor="end" class="mono">0</text>
+<line x1="444.0" y1="264.5" x2="718.0" y2="264.5" stroke="#e2e8f0" stroke-width="1.0" stroke-linecap="round"/>
+<text x="438.0" y="268.5" font-size="9.8" fill="#64748b" text-anchor="end" class="mono">250</text>
+<line x1="444.0" y1="217.0" x2="718.0" y2="217.0" stroke="#e2e8f0" stroke-width="1.0" stroke-linecap="round"/>
+<text x="438.0" y="221.0" font-size="9.8" fill="#64748b" text-anchor="end" class="mono">500</text>
+<line x1="444.0" y1="169.5" x2="718.0" y2="169.5" stroke="#e2e8f0" stroke-width="1.0" stroke-linecap="round"/>
+<text x="438.0" y="173.5" font-size="9.8" fill="#64748b" text-anchor="end" class="mono">750</text>
+<line x1="444.0" y1="122.0" x2="718.0" y2="122.0" stroke="#e2e8f0" stroke-width="1.0" stroke-linecap="round"/>
+<text x="438.0" y="126.0" font-size="9.8" fill="#64748b" text-anchor="end" class="mono">1000</text>
+<line x1="444.0" y1="312.0" x2="444.0" y2="317.0" stroke="#475569" stroke-width="1.1" stroke-linecap="round"/>
+<text x="444.0" y="330.0" font-size="9.8" fill="#64748b" text-anchor="middle" class="mono">0°</text>
+<line x1="495.4" y1="312.0" x2="495.4" y2="317.0" stroke="#475569" stroke-width="1.1" stroke-linecap="round"/>
+<text x="495.4" y="330.0" font-size="9.8" fill="#64748b" text-anchor="middle" class="mono">15°</text>
+<line x1="546.8" y1="312.0" x2="546.8" y2="317.0" stroke="#475569" stroke-width="1.1" stroke-linecap="round"/>
+<text x="546.8" y="330.0" font-size="9.8" fill="#64748b" text-anchor="middle" class="mono">30°</text>
+<line x1="630.3" y1="312.0" x2="630.3" y2="317.0" stroke="#475569" stroke-width="1.1" stroke-linecap="round"/>
+<text x="630.3" y="330.0" font-size="9.8" fill="#64748b" text-anchor="middle" class="mono">54.4°</text>
+<line x1="710.5" y1="312.0" x2="710.5" y2="317.0" stroke="#475569" stroke-width="1.1" stroke-linecap="round"/>
+<text x="710.5" y="330.0" font-size="9.8" fill="#64748b" text-anchor="middle" class="mono">77.8°</text>
+<text x="581.0" y="348.0" font-size="10.0" fill="#64748b" text-anchor="middle">太阳高度角 α（0° 日出地平线 → 77.8° 曲阜夏至正午）</text>
+<line x1="444.0" y1="122.0" x2="444.0" y2="312.0" stroke="#475569" stroke-width="1.3" stroke-linecap="round"/>
+<line x1="444.0" y1="312.0" x2="718.0" y2="312.0" stroke="#475569" stroke-width="1.3" stroke-linecap="round"/>
+<polygon points="444.0,312.0 444.0,312.0 450.9,311.4 457.7,309.4 464.6,306.3 471.4,302.3 478.2,297.7 485.1,292.6 491.9,287.2 498.8,281.5 505.6,275.6 512.5,269.6 519.4,263.5 526.2,257.3 533.0,251.2 539.9,245.0 546.8,238.8 553.6,232.8 560.5,226.7 567.3,220.8 574.1,215.0 581.0,209.2 587.9,203.6 594.7,198.2 601.5,192.9 608.4,187.7 615.2,182.8 622.1,178.0 629.0,173.4 635.8,169.0 642.6,164.8 649.5,160.8 656.4,157.1 663.2,153.6 670.0,150.3 676.9,147.3 683.8,144.5 690.6,141.9 697.5,139.7 704.3,137.6 711.1,135.9 718.0,134.4 718.0,312.0" fill="#fed7aa" fill-opacity="0.48"/>
+<polyline points="444.0,312.0 450.9,311.4 457.7,309.4 464.6,306.3 471.4,302.3 478.2,297.7 485.1,292.6 491.9,287.2 498.8,281.5 505.6,275.6 512.5,269.6 519.4,263.5 526.2,257.3 533.0,251.2 539.9,245.0 546.8,238.8 553.6,232.8 560.5,226.7 567.3,220.8 574.1,215.0 581.0,209.2 587.9,203.6 594.7,198.2 601.5,192.9 608.4,187.7 615.2,182.8 622.1,178.0 629.0,173.4 635.8,169.0 642.6,164.8 649.5,160.8 656.4,157.1 663.2,153.6 670.0,150.3 676.9,147.3 683.8,144.5 690.6,141.9 697.5,139.7 704.3,137.6 711.1,135.9 718.0,134.4" fill="none" stroke="#dc2626" stroke-width="2.6"/>
+<circle cx="461.1" cy="308.0" r="4.8" fill="#1d6fa5" stroke="#fff" stroke-width="1.3"/>
+<circle cx="630.3" cy="172.5" r="4.8" fill="#c25014" stroke="#fff" stroke-width="1.3"/>
+<circle cx="710.5" cy="136.0" r="4.8" fill="#dc2626" stroke="#fff" stroke-width="1.3"/>
+<text x="467.1" y="298.0" font-size="10.0" fill="#1d6fa5" text-anchor="start" font-weight="700">α=5°: 仅 21 W/m² (10.4 AM)</text>
+<text x="622.3" y="190.5" font-size="10.0" fill="#c25014" text-anchor="end" font-weight="700">春分正午 734 W/m² (1.23 AM)</text>
+<text x="702.5" y="130.0" font-size="10.0" fill="#dc2626" text-anchor="end" font-weight="700">夏至正午 926 W/m²</text>
+<text x="450.0" y="136.0" font-size="10.2" fill="#dc2626" text-anchor="start" font-weight="700">晴空地面直射火力 (W/m²)</text>
+<rect x="410" y="360" width="314" height="114" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.0"/>
+<text x="422" y="380" font-size="10.7" fill="#dc2626" text-anchor="start" font-weight="700">日出切线光学质量高达 38 倍大气厚度（38 AM）！</text>
+<text x="422" y="399" font-size="10.0" fill="#1e293b" text-anchor="start">• 蓝紫短波被空气分子瑞利散射一空，只剩红橙光染红朝阳；</text>
+<text x="422" y="417" font-size="10.0" fill="#1e293b" text-anchor="start">• 水汽与尘埃再截留大半红外热能，叠加余弦摊薄后，5° 低阳</text>
+<text x="422" y="435" font-size="10.1" fill="#0f172a" text-anchor="start" font-weight="700">  地面火力（21 W/m²）不到夏至正午（926 W/m²）的 1/40！</text>
+<text x="422" y="453" font-size="10.0" fill="#1e293b" text-anchor="start">  这就是早晨直视朝阳不刺眼、晒在身上也不烫的物理根源。</text>
+</svg>

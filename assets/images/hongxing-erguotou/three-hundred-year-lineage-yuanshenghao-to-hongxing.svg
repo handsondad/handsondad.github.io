@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="460" viewBox="0 0 760 460" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">北京二锅头三百四十余年历史渊源与红星非遗传承脉络图</title>
+<desc id="desc">展示从元明烧酒、1680年康熙十九年前门源升号赵氏三兄弟定型掐头去尾取二锅、1792年大酒缸民俗，到1949年整合12家老烧锅创立红星献礼开国大典、1952年方心芳麸曲革新、1965年传艺京郊及2008年入选国家级非遗VIII-144的完整历程。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-ink" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#0f172a"/>
+  </marker>
+  <marker id="arr-red" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#dc2626"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="459" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="20" y="30" font-size="15.5" fill="#0f172a" text-anchor="start" font-weight="700">从康熙前门源升号到开国大典献礼酒：北京二锅头三百四十余年非遗传承脉络</text>
+<text x="20" y="50" font-size="12" fill="#64748b" text-anchor="start">中国首个以“蒸馏摘酒工艺”命名的白酒品类；2008 年列入国家级非物质文化遗产（项目编号 Ⅷ-144）</text>
+<rect x="18" y="66" width="724" height="214" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="78.0" width="318" height="22" rx="11.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="191.0" y="93.0" font-size="12" fill="#dc2626" text-anchor="middle" font-weight="600">历史主轴：从京城老烧锅手艺暗语到国民口粮酒标杆</text>
+<line x1="56.0" y1="132.0" x2="704.0" y2="132.0" stroke="#cbd5e1" stroke-width="3.2" stroke-linecap="round"/>
+<circle cx="68" cy="132" r="8.5" fill="#f1f5f9" stroke="#475569" stroke-width="2.6"/>
+<text x="68" y="116" font-size="11" fill="#475569" text-anchor="middle" font-weight="700">元明肇始</text>
+<rect x="14" y="148" width="108" height="116" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="1.1"/>
+<text x="68" y="170" font-size="11.5" fill="#475569" text-anchor="middle" font-weight="700">烧酒入京</text>
+<text x="68" y="200" font-size="10.5" fill="#0f172a" text-anchor="middle">高粱蒸馏烧酒兴起</text>
+<text x="68" y="224" font-size="10.5" fill="#1e293b" text-anchor="middle" font-weight="700">留存三条烧酒胡同</text>
+<text x="68" y="248" font-size="11" fill="#475569" text-anchor="middle" font-weight="700">•</text>
+<circle cx="192" cy="132" r="8.5" fill="#fffbeb" stroke="#b45309" stroke-width="2.6"/>
+<text x="192" y="116" font-size="11" fill="#b45309" text-anchor="middle" font-weight="700">1680 康熙</text>
+<rect x="138" y="148" width="108" height="116" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="1.1"/>
+<text x="192" y="170" font-size="11.5" fill="#b45309" text-anchor="middle" font-weight="700">前门源升号</text>
+<text x="192" y="200" font-size="10.5" fill="#0f172a" text-anchor="middle">赵氏三兄弟定型</text>
+<text x="192" y="224" font-size="10.5" fill="#1e293b" text-anchor="middle" font-weight="700">掐头去尾取二锅</text>
+<text x="192" y="248" font-size="11" fill="#b45309" text-anchor="middle" font-weight="700">•</text>
+<circle cx="316" cy="132" r="8.5" fill="#fef1e8" stroke="#c25014" stroke-width="2.6"/>
+<text x="316" y="116" font-size="11" fill="#c25014" text-anchor="middle" font-weight="700">1792 乾隆</text>
+<rect x="262" y="148" width="108" height="116" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1.1"/>
+<text x="316" y="170" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">大酒缸风尚</text>
+<text x="316" y="200" font-size="10.5" fill="#0f172a" text-anchor="middle">半埋陶缸覆朱木盖</text>
+<text x="316" y="224" font-size="10.5" fill="#1e293b" text-anchor="middle" font-weight="700">平民站饮京味武酒</text>
+<text x="316" y="248" font-size="11" fill="#c25014" text-anchor="middle" font-weight="700">•</text>
+<circle cx="440" cy="132" r="8.5" fill="#fef2f2" stroke="#dc2626" stroke-width="2.6"/>
+<text x="440" y="116" font-size="11" fill="#dc2626" text-anchor="middle" font-weight="700">1949.05</text>
+<rect x="386" y="148" width="108" height="116" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1.1"/>
+<text x="440" y="170" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">收编十二烧锅</text>
+<text x="440" y="200" font-size="10.5" fill="#0f172a" text-anchor="middle">建专卖公司实验厂</text>
+<text x="440" y="224" font-size="10.5" fill="#1e293b" text-anchor="middle" font-weight="700">开国大典献礼定名</text>
+<text x="440" y="248" font-size="11" fill="#dc2626" text-anchor="middle" font-weight="700">↓</text>
+<circle cx="564" cy="132" r="8.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="2.6"/>
+<text x="564" y="116" font-size="11" fill="#1d6fa5" text-anchor="middle" font-weight="700">1952–1965</text>
+<rect x="510" y="148" width="108" height="116" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="564" y="170" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">科学化与授艺</text>
+<text x="564" y="200" font-size="10.5" fill="#0f172a" text-anchor="middle">方心芳创麸曲节粮</text>
+<text x="564" y="224" font-size="10.5" fill="#1e293b" text-anchor="middle" font-weight="700">向京郊 19 厂传艺</text>
+<text x="564" y="248" font-size="11" fill="#1d6fa5" text-anchor="middle" font-weight="700">•</text>
+<circle cx="686" cy="132" r="8.5" fill="#e7f6ee" stroke="#18794e" stroke-width="2.6"/>
+<text x="686" y="116" font-size="11" fill="#18794e" text-anchor="middle" font-weight="700">1980s–2008</text>
+<rect x="632" y="148" width="108" height="116" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.1"/>
+<text x="686" y="170" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">提净与非遗</text>
+<text x="686" y="200" font-size="10.5" fill="#0f172a" text-anchor="middle">清蒸清烧大麸结合</text>
+<text x="686" y="224" font-size="10.5" fill="#1e293b" text-anchor="middle" font-weight="700">国家级非遗 Ⅷ-144</text>
+<text x="686" y="248" font-size="11" fill="#18794e" text-anchor="middle" font-weight="700">•</text>
+<rect x="18" y="294" width="354" height="152" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="306.0" width="224" height="22" rx="11.0" fill="#fffbeb" stroke="#b45309" stroke-width="1" stroke-opacity="0.35"/>
+<text x="144.0" y="321.0" font-size="12" fill="#b45309" text-anchor="middle" font-weight="600">前店后坊与老北京“大酒缸”文化</text>
+<text x="32" y="346" font-size="11.5" fill="#1e293b" text-anchor="start">• 源升号格局：前门大街临街设铺售酒，后院立灶蒸烧，</text>
+<text x="42" y="366" font-size="11.5" fill="#1e293b" text-anchor="start">清人载“灶火如屋，突烟腾上，数里外皆见之”。</text>
+<text x="32" y="390" font-size="11.5" fill="#1e293b" text-anchor="start">• 大酒缸民俗：大陶缸半截埋土保温，缸口扣朱漆大木盘</text>
+<text x="42" y="410" font-size="11.5" fill="#1e293b" text-anchor="start">当圆桌；车夫、匠人与文人围缸站饮，配开花豆、拍黄瓜。</text>
+<text x="32" y="434" font-size="11.5" fill="#b45309" text-anchor="start" font-weight="700">• 关键突破：打破按地名命名的惯例，直接以纯度承诺命名。</text>
+<rect x="388" y="294" width="354" height="152" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="402.0" y="306.0" width="214" height="22" rx="11.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="509.0" y="321.0" font-size="12" fill="#dc2626" text-anchor="middle" font-weight="600">红星诞生与现代风味科学解码</text>
+<text x="402" y="346" font-size="11.5" fill="#1e293b" text-anchor="start">• 1949 年整合源升号、龙泉等 12 家老烧锅组建国营酒厂；</text>
+<text x="412" y="366" font-size="11.5" fill="#1e293b" text-anchor="start">1949.10 献礼开国大典；1951.06 注册新中国首批“红星”商标。</text>
+<text x="402" y="390" font-size="11.5" fill="#1e293b" text-anchor="start">• 技艺迭代：从传统大曲老五甑，拓展出麸曲纯种发酵、</text>
+<text x="412" y="410" font-size="11.5" fill="#1e293b" text-anchor="start">清蒸清烧与大麸曲结合，兼具醇厚底蕴与清爽净度。</text>
+<text x="402" y="434" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">• 分子家底：GC-MS 检出 751 种微量风味物，传承人高景炎领衔。</text>
+</svg>

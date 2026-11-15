@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="458" viewBox="0 0 760 458" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">恩绍定理静态失稳原理与常导电磁吸浮EMS及超导电动斥浮EDS横截面对比图</title>
+<desc id="desc">上部解释1842年恩绍定理为何令静态永磁同极相斥发生侧滑翻转；左下展示常导EMS用C形臂从T形钢梁下方往上吸，靠每秒10万次反馈维持10毫米间隙且静止可浮；右下展示日本超导EDS在U形槽侧壁布置8字零磁通线圈，高速掠过时产生上拉下推合力实现100毫米被动稳定悬浮，但低于150km/h须靠橡胶轮滑跑。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="457" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">把几百吨列车托在半空：为什么不能只贴两排永磁铁？—— 恩绍定理与两大悬浮门派</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">1842 年恩绍定理证明静态永磁铁无法三维稳定悬浮；人类用“高频电控吸浮 (EMS)”与“超导感应斥浮 (EDS)”破局</text>
+<rect x="20" y="62" width="720" height="96" rx="10" fill="#fffbeb" stroke="#b45309" stroke-width="1"/>
+<text x="36" y="84" font-size="13.5" fill="#b45309" text-anchor="start" font-weight="700">① 物理拦路虎：恩绍定理 (Earnshaw&#x27;s Theorem, ∇²U = 0) —— 静态磁场的“马鞍困局”</text>
+<rect x="36" y="94" width="214" height="52" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1"/>
+<rect x="64" y="102" width="58" height="15" rx="3" fill="#fef2f2" stroke="#dc2626" stroke-width="1.4"/>
+<text x="93" y="113" font-size="8.8" fill="#dc2626" text-anchor="middle" font-weight="700">车底 N 极</text>
+<rect x="54" y="125" width="58" height="15" rx="3" fill="#fef2f2" stroke="#dc2626" stroke-width="1.4"/>
+<text x="83" y="136" font-size="8.8" fill="#dc2626" text-anchor="middle" font-weight="700">轨道 N 极</text>
+<line x1="128.0" y1="109.0" x2="172.0" y2="109.0" stroke="#dc2626" stroke-width="1.8" marker-end="url(#arr-orange)"/>
+<text x="190" y="115" font-size="9.0" fill="#dc2626" text-anchor="middle" font-weight="700">侧滑失稳!</text>
+<text x="190" y="134" font-size="8.8" fill="#1e293b" text-anchor="middle">瞬间翻转吸死</text>
+<text x="266" y="111" font-size="9.4" fill="#0f172a" text-anchor="start" font-weight="600">• 自由空间静磁势满足拉普拉斯方程 ∇²U = 0，不存在任何三维势能局部极小值（只有马鞍点）；</text>
+<text x="266" y="130" font-size="9.3" fill="#1e293b" text-anchor="start">• 你拿两块强磁铁 N 对 N 往下按：竖直方向虽能托住，但水平稍偏 0.1 mm 就会猛地侧滑翻面！</text>
+<text x="266" y="148" font-size="9.3" fill="#b45309" text-anchor="start" font-weight="700">• 破局铁律：必须打破“静态恒定”前提 —— 要么靠毫秒级电控变流 (EMS)，要么靠运动感应电流 (EDS)！</text>
+<rect x="20" y="170" width="354" height="276" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="34" y="193" font-size="11.2" fill="#1d6fa5" text-anchor="start" font-weight="700">② 常导电磁吸浮 EMS（德 Transrapid / 上海 / 中国高速）</text>
+<rect x="34.0" y="203.0" width="244" height="20" rx="10.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="156.0" y="216.6" font-size="9.4" fill="#1d6fa5" text-anchor="middle" font-weight="600">C 形臂抱轨“往上吸” · 气隙仅 8–10 mm</text>
+<rect x="34" y="230" width="326" height="132" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="175" y="290" width="44" height="64" fill="#cbd5e1" stroke="#475569" stroke-width="1.5"/>
+<rect x="108" y="274" width="178" height="20" rx="3" fill="#94a3b8" stroke="#475569" stroke-width="1.6"/>
+<text x="197" y="288" font-size="9.0" fill="#ffffff" text-anchor="middle" font-weight="700">T 形混凝土/钢轨道梁</text>
+<rect x="116" y="238" width="162" height="26" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.8"/>
+<text x="197" y="255" font-size="9.1" fill="#1d6fa5" text-anchor="middle" font-weight="700">车厢底架（悬浮离梁面 ~15 cm）</text>
+<path d="M 116,256 L 86,256 L 86,318 L 138,318 L 138,304 L 98,304 L 98,266 L 116,266 Z" fill="#dbeafe" stroke="#1d6fa5" stroke-width="1.6"/>
+<path d="M 278,256 L 308,256 L 308,318 L 256,318 L 256,304 L 296,304 L 296,266 L 278,266 Z" fill="#dbeafe" stroke="#1d6fa5" stroke-width="1.6"/>
+<line x1="122.0" y1="304.0" x2="122.0" y2="295.0" stroke="#dc2626" stroke-width="2.0" marker-end="url(#arr-orange)"/>
+<line x1="272.0" y1="304.0" x2="272.0" y2="295.0" stroke="#dc2626" stroke-width="2.0" marker-end="url(#arr-orange)"/>
+<text x="62" y="302" font-size="9.0" fill="#dc2626" text-anchor="middle" font-weight="700">10 mm</text>
+<text x="332" y="302" font-size="9.0" fill="#dc2626" text-anchor="middle" font-weight="700">吸力↑</text>
+<text x="197" y="344" font-size="8.9" fill="#0f172a" text-anchor="middle" font-weight="700">每秒 100,000 次测距斩波调流</text>
+<text x="34" y="381" font-size="9.3" fill="#18794e" text-anchor="start" font-weight="700">• 优势：0 km/h 静止也能稳稳悬空，无需起落轮胎；车厢磁场弱；</text>
+<text x="34" y="400" font-size="9.2" fill="#1e293b" text-anchor="start">  悬浮本身极省电（每吨仅需 1–2 kW，还没车厢空调费电！）。</text>
+<text x="34" y="420" font-size="9.2" fill="#c25014" text-anchor="start" font-weight="600">• 代价：10 mm 缝隙容错极小，对高架桥沉降与轨道加工精度极苛刻；</text>
+<text x="34" y="437" font-size="9.2" fill="#1e293b" text-anchor="start">  一旦闭环电控失灵，车载蓄电池须立即接管防吸死擦轨。</text>
+<rect x="386" y="170" width="354" height="276" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="400" y="193" font-size="11.2" fill="#6d28d9" text-anchor="start" font-weight="700">③ 超导电动斥浮 EDS（日本 SCMaglev L0 系 603 km/h）</text>
+<rect x="400.0" y="203.0" width="282" height="20" rx="10.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="541.0" y="216.6" font-size="9.4" fill="#6d28d9" text-anchor="middle" font-weight="600">液氦 4.2K 超导 + 侧壁“8字线圈” · 间隙 100 mm</text>
+<rect x="400" y="230" width="326" height="132" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<path d="M 434,238 L 452,238 L 452,334 L 674,334 L 674,238 L 692,238 L 692,350 L 434,350 Z" fill="#cbd5e1" stroke="#475569" stroke-width="1.5"/>
+<circle cx="462" cy="268" r="9" fill="#ffffff" stroke="#18794e" stroke-width="1.8"/>
+<circle cx="462" cy="288" r="9" fill="#ffffff" stroke="#c25014" stroke-width="1.8"/>
+<circle cx="664" cy="268" r="9" fill="#ffffff" stroke="#18794e" stroke-width="1.8"/>
+<circle cx="664" cy="288" r="9" fill="#ffffff" stroke="#c25014" stroke-width="1.8"/>
+<text x="417" y="270" font-size="8.8" fill="#0f172a" text-anchor="middle" font-weight="700">8字</text>
+<text x="417" y="286" font-size="8.8" fill="#0f172a" text-anchor="middle" font-weight="700">线圈</text>
+<rect x="494" y="248" width="138" height="58" rx="7" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.8"/>
+<text x="563" y="273" font-size="9.2" fill="#6d28d9" text-anchor="middle" font-weight="700">车厢 + 4.2K 超导磁体</text>
+<text x="563" y="292" font-size="8.8" fill="#1e293b" text-anchor="middle">(磁场强度达常导 10 倍)</text>
+<rect x="478" y="268" width="16" height="24" rx="3" fill="#6d28d9" stroke="#6d28d9"/>
+<rect x="632" y="268" width="16" height="24" rx="3" fill="#6d28d9" stroke="#6d28d9"/>
+<line x1="563.0" y1="308.0" x2="563.0" y2="332.0" stroke="#18794e" stroke-width="1.8" marker-end="url(#arr-green)"/>
+<text x="563" y="324" font-size="9.0" fill="#18794e" text-anchor="middle" font-weight="700">悬浮高达 100 mm (10 cm)!</text>
+<text x="709" y="270" font-size="8.7" fill="#18794e" text-anchor="middle" font-weight="700">上拉↑</text>
+<text x="709" y="290" font-size="8.7" fill="#c25014" text-anchor="middle" font-weight="700">下推↑</text>
+<text x="400" y="381" font-size="9.3" fill="#18794e" text-anchor="start" font-weight="700">• 优势：遵循楞次定律天然“被动稳定”（下沉越多回推越猛），</text>
+<text x="400" y="400" font-size="9.2" fill="#1e293b" text-anchor="start">  无需高频测距救场；10 cm 超大离地间隙在地震多发区安全余量足。</text>
+<text x="400" y="420" font-size="9.2" fill="#c25014" text-anchor="start" font-weight="600">• 代价：车停则无磁通变化 (dΦ/dt=0)，&lt;150 km/h 必须放下橡胶轮胎</text>
+<text x="400" y="437" font-size="9.2" fill="#1e293b" text-anchor="start">  像飞机一样滑跑起降；需昂贵液氦低温系统与车厢强磁屏蔽！</text>
+</svg>

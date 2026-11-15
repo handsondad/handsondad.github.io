@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">地球动物五种血液颜色与呼吸色素金属配位化学图谱</title>
+<desc id="desc">对比血红蛋白（铁红）、血蓝蛋白（铜蓝）、血绿蛋白与绿血石龙子胆绿素（绿）、血紫蛋白（双铁紫粉）以及南极冰鱼无血红蛋白透明血。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">血液为什么不全是红色？地球生命“五彩血液”的元素周期表密码</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">从铁红、铜蓝、海洋蠕虫与绿血蜥蜴、双铁紫罗兰到南极冰鱼的“零红细胞透明血”</text>
+<rect x="24" y="86" width="132" height="362" rx="10" fill="#fef2f2" stroke="#fca5a5" stroke-width="1"/>
+<text x="90" y="110" font-size="12.5" fill="#b91c1c" text-anchor="middle" font-weight="700">鲜红 · 铁血</text>
+<text x="90" y="129" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">血红蛋白</text>
+<text x="90" y="145" font-size="9.8" fill="#64748b" text-anchor="middle">Hemoglobin</text>
+<rect x="70" y="156" width="40" height="76" rx="18" fill="#ffffff" stroke="#b91c1c" stroke-width="1.8"/>
+<rect x="74" y="182" width="32" height="46" rx="14" fill="#dc2626" stroke="#fca5a5" stroke-width="1"/>
+<line x1="66" y1="156" x2="114" y2="156" stroke="#b91c1c" stroke-width="2.4"/>
+<text x="90" y="256" font-size="10.4" fill="#b91c1c" text-anchor="middle" font-weight="700">血红素卟啉 Fe²⁺</text>
+<text x="90" y="278" font-size="10.2" fill="#0f172a" text-anchor="middle">氧合鲜红 / 脱氧暗红</text>
+<text x="90" y="300" font-size="10.0" fill="#1e293b" text-anchor="middle">红细胞封装(浓67倍)</text>
+<line x1="36" y1="316" x2="144" y2="316" stroke="#fca5a5" stroke-width="1"/>
+<text x="90" y="338" font-size="10.2" fill="#64748b" text-anchor="middle" font-weight="700">代表生物</text>
+<text x="90" y="358" font-size="10.4" fill="#0f172a" text-anchor="middle" font-weight="600">人类与几乎所有</text>
+<text x="90" y="376" font-size="10.4" fill="#0f172a" text-anchor="middle" font-weight="600">脊椎动物、蚯蚓</text>
+<rect x="32.0" y="402.0" width="116" height="24" rx="12.0" fill="#ffffff" stroke="#fca5a5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="90.0" y="418.3" font-size="9.8" fill="#b91c1c" text-anchor="middle" font-weight="600">温血高代谢首选</text>
+<rect x="169" y="86" width="132" height="362" rx="10" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+<text x="235" y="110" font-size="12.5" fill="#1e3a8a" text-anchor="middle" font-weight="700">皇家蓝 · 铜血</text>
+<text x="235" y="129" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">血蓝蛋白</text>
+<text x="235" y="145" font-size="9.8" fill="#64748b" text-anchor="middle">Hemocyanin</text>
+<rect x="215" y="156" width="40" height="76" rx="18" fill="#ffffff" stroke="#1e3a8a" stroke-width="1.8"/>
+<rect x="219" y="182" width="32" height="46" rx="14" fill="#2563eb" stroke="#93c5fd" stroke-width="1"/>
+<line x1="211" y1="156" x2="259" y2="156" stroke="#1e3a8a" stroke-width="2.4"/>
+<text x="235" y="256" font-size="10.4" fill="#1e3a8a" text-anchor="middle" font-weight="700">双铜中心 Cu⁺→Cu²⁺</text>
+<text x="235" y="278" font-size="10.2" fill="#0f172a" text-anchor="middle">氧合天蓝 / 脱氧无色</text>
+<text x="235" y="300" font-size="10.0" fill="#1e293b" text-anchor="middle">巨型蛋白溶在血浆</text>
+<line x1="181" y1="316" x2="289" y2="316" stroke="#93c5fd" stroke-width="1"/>
+<text x="235" y="338" font-size="10.2" fill="#64748b" text-anchor="middle" font-weight="700">代表生物</text>
+<text x="235" y="358" font-size="10.4" fill="#0f172a" text-anchor="middle" font-weight="600">章鱼、乌贼、龙虾</text>
+<text x="235" y="376" font-size="10.4" fill="#0f172a" text-anchor="middle" font-weight="600">蜘蛛、中华鲎(LAL)</text>
+<rect x="177.0" y="402.0" width="116" height="24" rx="12.0" fill="#ffffff" stroke="#93c5fd" stroke-width="1" stroke-opacity="0.35"/>
+<text x="235.0" y="418.3" font-size="9.8" fill="#1e3a8a" text-anchor="middle" font-weight="600">深海冰冷低氧更强</text>
+<rect x="314" y="86" width="132" height="362" rx="10" fill="#e7f6ee" stroke="#86efac" stroke-width="1"/>
+<text x="380" y="110" font-size="12.5" fill="#18794e" text-anchor="middle" font-weight="700">翡翠绿 · 绿血</text>
+<text x="380" y="129" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">血绿蛋白/胆绿素</text>
+<text x="380" y="145" font-size="9.8" fill="#64748b" text-anchor="middle">Chlorocruorin</text>
+<rect x="360" y="156" width="40" height="76" rx="18" fill="#ffffff" stroke="#18794e" stroke-width="1.8"/>
+<rect x="364" y="182" width="32" height="46" rx="14" fill="#16a34a" stroke="#86efac" stroke-width="1"/>
+<line x1="356" y1="156" x2="404" y2="156" stroke="#18794e" stroke-width="2.4"/>
+<text x="380" y="256" font-size="10.4" fill="#18794e" text-anchor="middle" font-weight="700">改构铁卟啉 / 胆绿素</text>
+<text x="380" y="278" font-size="10.2" fill="#0f172a" text-anchor="middle">稀绿浓红 / 翠绿血浆</text>
+<text x="380" y="300" font-size="10.0" fill="#1e293b" text-anchor="middle">海虫血浆 / 蜥蜴血浆</text>
+<line x1="326" y1="316" x2="434" y2="316" stroke="#86efac" stroke-width="1"/>
+<text x="380" y="338" font-size="10.2" fill="#64748b" text-anchor="middle" font-weight="700">代表生物</text>
+<text x="380" y="358" font-size="10.4" fill="#0f172a" text-anchor="middle" font-weight="600">海洋羽鳃蠕虫 +</text>
+<text x="380" y="376" font-size="10.4" fill="#0f172a" text-anchor="middle" font-weight="600">新几内亚绿血石龙子</text>
+<rect x="322.0" y="402.0" width="116" height="24" rx="12.0" fill="#ffffff" stroke="#86efac" stroke-width="1" stroke-opacity="0.35"/>
+<text x="380.0" y="418.3" font-size="9.8" fill="#18794e" text-anchor="middle" font-weight="600">黄疸毒素超标40倍!</text>
+<rect x="459" y="86" width="132" height="362" rx="10" fill="#faf5ff" stroke="#d8b4fe" stroke-width="1"/>
+<text x="525" y="110" font-size="12.5" fill="#6b21a8" text-anchor="middle" font-weight="700">紫粉 · 双铁血</text>
+<text x="525" y="129" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">血紫蛋白</text>
+<text x="525" y="145" font-size="9.8" fill="#64748b" text-anchor="middle">Hemerythrin</text>
+<rect x="505" y="156" width="40" height="76" rx="18" fill="#ffffff" stroke="#6b21a8" stroke-width="1.8"/>
+<rect x="509" y="182" width="32" height="46" rx="14" fill="#9333ea" stroke="#d8b4fe" stroke-width="1"/>
+<line x1="501" y1="156" x2="549" y2="156" stroke="#6b21a8" stroke-width="2.4"/>
+<text x="525" y="256" font-size="10.4" fill="#6b21a8" text-anchor="middle" font-weight="700">非血红素双铁中心</text>
+<text x="525" y="278" font-size="10.2" fill="#0f172a" text-anchor="middle">氧合紫粉 / 脱氧无色</text>
+<text x="525" y="300" font-size="10.0" fill="#1e293b" text-anchor="middle">血细胞内(效率~1/4)</text>
+<line x1="471" y1="316" x2="579" y2="316" stroke="#d8b4fe" stroke-width="1"/>
+<text x="525" y="338" font-size="10.2" fill="#64748b" text-anchor="middle" font-weight="700">代表生物</text>
+<text x="525" y="358" font-size="10.4" fill="#0f172a" text-anchor="middle" font-weight="600">星虫、鳃曳动物</text>
+<text x="525" y="376" font-size="10.4" fill="#0f172a" text-anchor="middle" font-weight="600">海豆芽(腕足动物)</text>
+<rect x="467.0" y="402.0" width="116" height="24" rx="12.0" fill="#ffffff" stroke="#d8b4fe" stroke-width="1" stroke-opacity="0.35"/>
+<text x="525.0" y="418.3" font-size="9.8" fill="#6b21a8" text-anchor="middle" font-weight="600">虽叫heme却无血红素</text>
+<rect x="604" y="86" width="132" height="362" rx="10" fill="#f0f9ff" stroke="#7dd3fc" stroke-width="1"/>
+<text x="670" y="110" font-size="12.5" fill="#0369a1" text-anchor="middle" font-weight="700">冰晶透明 · 白血</text>
+<text x="670" y="129" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">零血红蛋白</text>
+<text x="670" y="145" font-size="9.8" fill="#64748b" text-anchor="middle">Pigment-Free</text>
+<rect x="650" y="156" width="40" height="76" rx="18" fill="#ffffff" stroke="#0369a1" stroke-width="1.8"/>
+<rect x="654" y="182" width="32" height="46" rx="14" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="1"/>
+<line x1="646" y1="156" x2="694" y2="156" stroke="#0369a1" stroke-width="2.4"/>
+<text x="670" y="256" font-size="10.4" fill="#0369a1" text-anchor="middle" font-weight="700">无金属载氧蛋白！</text>
+<text x="670" y="278" font-size="10.2" fill="#0f172a" text-anchor="middle">全程晶莹透明无色</text>
+<text x="670" y="300" font-size="10.0" fill="#1e293b" text-anchor="middle">纯靠冰水血浆物理溶氧</text>
+<line x1="616" y1="316" x2="724" y2="316" stroke="#7dd3fc" stroke-width="1"/>
+<text x="670" y="338" font-size="10.2" fill="#64748b" text-anchor="middle" font-weight="700">代表生物</text>
+<text x="670" y="358" font-size="10.4" fill="#0f172a" text-anchor="middle" font-weight="600">南极鳄冰鱼（唯一</text>
+<text x="670" y="376" font-size="10.4" fill="#0f172a" text-anchor="middle" font-weight="600">成年白血脊椎动物）</text>
+<rect x="612.0" y="402.0" width="116" height="24" rx="12.0" fill="#ffffff" stroke="#7dd3fc" stroke-width="1" stroke-opacity="0.35"/>
+<text x="670.0" y="418.3" font-size="9.8" fill="#0369a1" text-anchor="middle" font-weight="600">4倍血量+5倍心输出</text>
+<rect x="24" y="460" width="712" height="42" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="380" y="486" font-size="10.9" fill="#0f172a" text-anchor="middle" font-weight="600">化学底层原因：37°C 纯血浆每升仅溶氧 ~3 mL；过渡金属 (Fe/Cu) 利用可变 d 轨道可逆抓放 O₂，把人类全血携氧拉高到 ~200 mL/L！</text>
+</svg>

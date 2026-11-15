@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">生活中多酚氧化酶与酪氨酸酶的四大家族现象图谱</title>
+<desc id="desc">以第3型双铜氧化酶为核心，串联果蔬切面褐变、绿茶杀青与红茶酶促氧化、虾蟹死后酪氨酸黑变，以及人类皮肤紫外线黑色素合成与美白机制。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">一把“双铜氧化剪刀”走天下：生活里原来全是莲藕的化学亲戚</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">从切苹果发锈、红茶“假发酵”、冰鲜大虾黑头到夏天晒黑长斑——底层竟是同一个含铜酶家族</text>
+<rect x="24" y="66" width="712" height="52" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="1.3"/>
+<rect x="38.0" y="81.0" width="108" height="22" rx="11.0" fill="#ffedd5" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="92.0" y="96.0" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="600">共同底层引擎</text>
+<text x="158" y="90" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700">第 3 型双铜金属酶家族（植物多酚氧化酶 PPO / 动物与真菌酪氨酸酶 Tyrosinase）</text>
+<text x="158" y="108" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="600">统一套路：单酚 / 邻二酚底物  +  O2  ──双铜活性中心──▶  高活性邻苯醌  ──自发聚合──▶  棕红/褐黑色素</text>
+<rect x="24" y="130" width="348" height="180" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="24" y="130" width="348" height="44" rx="10" fill="#eaf4fb"/>
+<line x1="24" y1="174" x2="372" y2="174" stroke="#1d6fa5" stroke-opacity="0.3"/>
+<text x="38" y="149" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">① 餐桌上的“颜值刺客”：果蔬切面褐变</text>
+<text x="38" y="166" font-size="10" fill="#64748b" text-anchor="start" font-weight="600">讨厌它？得想方设法关掉酶</text>
+<text x="38" y="194" font-size="10.3" fill="#1e293b" text-anchor="start">• 代表成员：苹果、梨、土豆、茄子、牛油果、香蕉黑斑、白蘑菇</text>
+<text x="38" y="216" font-size="10.3" fill="#1e293b" text-anchor="start">• 各自底物：苹果/土豆富绿原酸，香蕉皮富多巴胺，蘑菇富酪氨酸</text>
+<text x="38" y="238" font-size="10.3" fill="#1e293b" text-anchor="start">• 碰撞与冷害：香蕉放冰箱冷藏（&lt;12 °C）细胞膜冻伤渗漏，皮秒变黑</text>
+<text x="38" y="260" font-size="10.3" fill="#1e293b" text-anchor="start">• 现代生物黑科技：北美 Arctic 转基因苹果通过 RNA 干扰直接让</text>
+<text x="38" y="282" font-size="10.3" fill="#1e293b" text-anchor="start">  PPO 基因“静音”，切开摆几小时依然雪白不发锈！</text>
+<rect x="388" y="130" width="348" height="180" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="388" y="130" width="348" height="44" rx="10" fill="#fffbeb"/>
+<line x1="388" y1="174" x2="736" y2="174" stroke="#b45309" stroke-opacity="0.3"/>
+<text x="402" y="149" font-size="11.5" fill="#b45309" text-anchor="start" font-weight="700">② 化腐朽为神奇：红茶、乌龙茶与可可豆</text>
+<text x="402" y="166" font-size="10" fill="#64748b" text-anchor="start" font-weight="600">利用它！故意揉破细胞催生香气色泽</text>
+<text x="402" y="194" font-size="10.3" fill="#1e293b" text-anchor="start">• 百年误称：红茶所谓“全发酵茶”其实 0 微生物参与，纯属酶促褐变！</text>
+<text x="402" y="216" font-size="10.3" fill="#1e293b" text-anchor="start">• 一叶分天下（茶鲜叶儿茶素占干重 ~25%）：</text>
+<text x="402" y="238" font-size="10.3" fill="#1e293b" text-anchor="start">  - 绿茶：摘下立刻高温炒/蒸“杀青”，烫死 PPO → 保住翠绿清鲜</text>
+<text x="402" y="260" font-size="10.3" fill="#1e293b" text-anchor="start">  - 红茶：用力揉捻压破液泡，任 PPO 100% 氧化儿茶素 → 生成金红</text>
+<text x="402" y="282" font-size="10.3" fill="#1e293b" text-anchor="start">    透亮的茶黄素与醇厚茶红素！（可可豆、咖啡、葡萄干同理）</text>
+<rect x="24" y="322" width="348" height="180" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="24" y="322" width="348" height="44" rx="10" fill="#f0fdfa"/>
+<line x1="24" y1="366" x2="372" y2="366" stroke="#0f766e" stroke-opacity="0.3"/>
+<text x="38" y="341" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">③ 海鲜市场大冤案：虾头、蟹脚为什么发黑？</text>
+<text x="38" y="358" font-size="10" fill="#64748b" text-anchor="start" font-weight="600">别慌！多半不是重金属超标或变质中毒</text>
+<text x="38" y="386" font-size="10.3" fill="#1e293b" text-anchor="start">• 现象（Melanosis 黑变病）：冰鲜大虾解冻后虾头、虾尾先泛黑</text>
+<text x="38" y="408" font-size="10.3" fill="#1e293b" text-anchor="start">• 真凶：虾头肝胰腺与外壳富集含铜“酪氨酸酶”，死后照样开工，</text>
+<text x="38" y="430" font-size="10.3" fill="#1e293b" text-anchor="start">  把虾体天然无色的酪氨酸氧化聚合成黑色素（跟藕变黑一模一样！）</text>
+<text x="38" y="452" font-size="10.3" fill="#1e293b" text-anchor="start">• 鉴别金标准：仅虾头黑但虾肉紧实弹牙、无氨臭酸味 = 安全可食；</text>
+<text x="38" y="474" font-size="10.3" fill="#1e293b" text-anchor="start">  若头肉脱节、发黏发臭，才是细菌分解蛋白质产生的真腐败。</text>
+<rect x="388" y="322" width="348" height="180" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="388" y="322" width="348" height="44" rx="10" fill="#f3e8ff"/>
+<line x1="388" y1="366" x2="736" y2="366" stroke="#6d28d9" stroke-opacity="0.3"/>
+<text x="402" y="341" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">④ 藏在你皮肤里的同款工厂：防晒黑与白化病</text>
+<text x="402" y="358" font-size="10" fill="#64748b" text-anchor="start" font-weight="600">人体黑色素细胞同样握着这把双铜剪刀</text>
+<text x="402" y="386" font-size="10.3" fill="#1e293b" text-anchor="start">• 人体 TYR 基因编码含铜酪氨酸酶（坐镇皮肤黑色素小体）：</text>
+<text x="402" y="408" font-size="10.3" fill="#1e293b" text-anchor="start">  紫外线照射 → 激活酶催化 L-酪氨酸 → L-多巴 → 多巴醌 → 黑色素</text>
+<text x="402" y="430" font-size="10.3" fill="#1e293b" text-anchor="start">• 生理使命：黑色素像小黑伞盖在细胞核上方，替 DNA 挡住紫外线伤害</text>
+<text x="402" y="452" font-size="10.3" fill="#1e293b" text-anchor="start">• 医学与护肤映射：TYR 基因失活突变会导致先天性白化病（OCA1）；</text>
+<text x="402" y="474" font-size="10.3" fill="#1e293b" text-anchor="start">  而美白精华里的维 C、熊果苷、曲酸，本质就是“皮肤版柠檬汁”！</text>
+</svg>

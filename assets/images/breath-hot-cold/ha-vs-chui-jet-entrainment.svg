@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="515" viewBox="0 0 760 515" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">张嘴哈气与撅嘴吹气的湍流射流卷吸效应对比图</title>
+<desc id="desc">上图展示张嘴哈气（口径约30毫米）势流核心长达15厘米，10厘米处手掌仍接收34至35摄氏度肺部暖湿气；下图展示撅嘴吹气（孔径约4毫米）高速湍流射流按Ricou-Spalding定律在15厘米内卷入约11倍20摄氏度室温空气，混合气温降至21.2摄氏度。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#475569"/>
+    </marker>
+    
+    <style>
+      @keyframes warmFlow {
+        0%   { transform: translateX(-18px); opacity: 0.35; }
+        100% { transform: translateX(0px); opacity: 1; }
+      }
+      @keyframes coldEntrain {
+        0%   { transform: translateY(-10px); opacity: 0.25; }
+        100% { transform: translateY(0px); opacity: 1; }
+      }
+      .anim-warm {
+        animation: warmFlow 2.6s ease-out 1 forwards;
+      }
+      .anim-entrain {
+        animation: coldEntrain 2.6s cubic-bezier(0.22, 1, 0.36, 1) 1 forwards;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .anim-warm, .anim-entrain {
+          animation: none !important;
+          transform: none !important;
+          opacity: 1 !important;
+        }
+      }
+    </style>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="514" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">同一张嘴吐出 35°C 肺部暖气，为什么“哈气”暖手、“吹气”冰凉？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">核心第一关：嘴唇口径相差 7–8 倍，决定了暖气是“抱团直达”还是半路卷进 11 倍室温冷空气！</text>
+<rect x="20" y="62" width="720" height="198" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="84" r="10.5" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2"/>
+<text x="38" y="88" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="88" font-size="12.4" fill="#0f172a" text-anchor="start" font-weight="700">张大嘴“哈——气”：大口径慢速暖柱（口裂 D ≈ 30 mm，流速 v₀ ≈ 1.5 m/s）</text>
+<path d="M 48 134 Q 72 130 82 142 L 82 182 Q 72 194 48 190" fill="none" stroke="#be123c" stroke-width="3.2" stroke-linecap="round"/>
+<text x="64" y="212" font-size="10.0" fill="#dc2626" text-anchor="middle" font-weight="700">35°C 肺部暖湿气</text>
+<text x="64" y="228" font-size="9.9" fill="#64748b" text-anchor="middle">（口径 30 mm）</text>
+<g class="anim-warm">
+<polygon points="84,142 346,128 346,196 84,182" fill="#fecaca" fill-opacity="0.62" stroke="#f87171" stroke-width="1.4"/>
+<polygon points="84,146 318,156 318,168 84,178" fill="#fca5a5" fill-opacity="0.72"/>
+<line x1="106.0" y1="162.0" x2="326.0" y2="162.0" stroke="#dc2626" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arr-red)"/>
+</g>
+<text x="214" y="120" font-size="10.3" fill="#dc2626" text-anchor="middle" font-weight="700">未稀释“势流核心区”长达 ~5D（约 15 cm）！</text>
+<text x="222" y="212" font-size="10.0" fill="#475569" text-anchor="middle">剪切弱、涡旋少，20°C 空气难混入核心</text>
+<rect x="348" y="118" width="16" height="90" rx="7" fill="#fed7aa" stroke="#ea580c" stroke-width="1.8"/>
+<text x="356" y="230" font-size="10.1" fill="#c25014" text-anchor="middle" font-weight="700">手掌（10 cm）</text>
+<text x="356" y="246" font-size="9.9" fill="#64748b" text-anchor="middle">皮温 32.5°C</text>
+<rect x="418" y="102" width="304" height="142" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.1"/>
+<text x="432" y="124" font-size="11.0" fill="#dc2626" text-anchor="start" font-weight="700">🔥 抵达手掌温度：中心仍高达 34–35°C！</text>
+<text x="432" y="146" font-size="10.1" fill="#1e293b" text-anchor="start">• 10 cm 仅相当于 3.3 倍口径（x/D ≈ 3.3），平均仅混入</text>
+<text x="432" y="165" font-size="10.1" fill="#1e293b" text-anchor="start">  约 32% 外界空气，核心区几乎原汁原味保留肺温；</text>
+<text x="432" y="184" font-size="10.1" fill="#1e293b" text-anchor="start">• 气流温度（34.5°C）＞ 皮肤温度（32.5°C），加上饱和</text>
+<text x="432" y="203" font-size="10.1" fill="#0f172a" text-anchor="start" font-weight="600">  水汽遇冷手凝结放热，热量实打实往手心里灌！</text>
+<text x="432" y="224" font-size="10.3" fill="#dc2626" text-anchor="start" font-weight="700">⇒ 手感结论：温润暖洋洋（冬天暖手姿势）</text>
+<rect x="20" y="274" width="720" height="224" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="296" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="38" y="300" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">2</text>
+<text x="56" y="300" font-size="12.4" fill="#0f172a" text-anchor="start" font-weight="700">撅起嘴“呼——吹气”：细孔高速湍流射流（圆孔 D ≈ 4 mm，流速 v₀ ≈ 15 m/s）</text>
+<path d="M 48 378 Q 76 386 82 394 M 48 418 Q 76 410 82 402" fill="none" stroke="#be123c" stroke-width="3.2" stroke-linecap="round"/>
+<text x="64" y="438" font-size="10.0" fill="#dc2626" text-anchor="middle" font-weight="700">同样 35°C 出发！</text>
+<text x="64" y="455" font-size="9.9" fill="#64748b" text-anchor="middle">（圆孔仅 4 mm）</text>
+<polygon points="84,394 366,346 366,450 84,402" fill="#dbeafe" fill-opacity="0.72" stroke="#60a5fa" stroke-width="1.4"/>
+<polygon points="84,394 122,397 122,399 84,402" fill="#ef4444"/>
+<line x1="124.0" y1="398.0" x2="350.0" y2="398.0" stroke="#1d6fa5" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<g class="anim-entrain">
+<line x1="152.0" y1="338.0" x2="166.0" y2="366.0" stroke="#1d6fa5" stroke-width="1.7" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<line x1="152.0" y1="458.0" x2="166.0" y2="430.0" stroke="#1d6fa5" stroke-width="1.7" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<line x1="218.0" y1="334.0" x2="232.0" y2="362.0" stroke="#1d6fa5" stroke-width="1.7" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<line x1="218.0" y1="462.0" x2="232.0" y2="434.0" stroke="#1d6fa5" stroke-width="1.7" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<line x1="284.0" y1="330.0" x2="298.0" y2="358.0" stroke="#1d6fa5" stroke-width="1.7" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<line x1="284.0" y1="466.0" x2="298.0" y2="438.0" stroke="#1d6fa5" stroke-width="1.7" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+</g>
+<text x="224" y="324" font-size="10.1" fill="#1d6fa5" text-anchor="middle" font-weight="700">高速涡旋疯狂“卷吸”周围 20°C 空气！（Ricou–Spalding 定律）</text>
+<text x="224" y="486" font-size="10.0" fill="#1d6fa5" text-anchor="middle" font-weight="600">暖核 2 cm 内被扯碎，1 份肺气裹进 11 份冷空气！</text>
+<rect x="368" y="346" width="16" height="104" rx="7" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.8"/>
+<text x="376" y="466" font-size="10.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">手掌 (15 cm)</text>
+<rect x="418" y="316" width="304" height="166" rx="8" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1.1"/>
+<text x="432" y="338" font-size="10.8" fill="#1d6fa5" text-anchor="start" font-weight="700">❄️ 抵达手掌温度：暴跌至 21.2°C（几乎等于室温）！</text>
+<text x="432" y="360" font-size="10.1" fill="#1e293b" text-anchor="start">• 15 cm 相当于 37.5 倍孔径（x/D ＝ 37.5）！按经典圆射流</text>
+<text x="432" y="379" font-size="10.1" fill="#1e293b" text-anchor="start">  卷吸公式 m/m₀ ≈ 0.32(x/D)，总流量暴涨至约 12 倍；</text>
+<text x="432" y="398" font-size="10.1" fill="#1e293b" text-anchor="start">• 1 份 35°C 呼气 ＋ 11.2 份 20°C 室温空气混合后仅 21.2°C；</text>
+<text x="432" y="417" font-size="10.1" fill="#1e293b" text-anchor="start">• 21.2°C 凉风猛吹 32.5°C 温热手掌，撕开保温层＋加速汗液</text>
+<text x="432" y="436" font-size="10.1" fill="#0f172a" text-anchor="start" font-weight="600">  蒸发，三重抽热叠加，瞬间让你感觉凉风嗖嗖！</text>
+<text x="432" y="460" font-size="10.3" fill="#1d6fa5" text-anchor="start" font-weight="700">⇒ 手感结论：清凉降温（吹热粥／吹烫手姿势）</text>
+</svg>

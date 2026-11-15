@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="512" viewBox="0 0 760 512" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">70%-75%医用乙醇与95%乙醇杀菌机理对比及消毒盲区图解</title>
+<desc id="desc">对比95%乙醇使细菌表面蛋白瞬间凝固结壳阻挡渗透与70%-75%乙醇借助水分子穿透细胞膜彻底变性蛋白质的机理，并列出细菌芽孢、无包膜病毒及禁用甲醇三大注意事项。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="511" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">消毒反直觉真相：为什么 70%–75% 酒精杀菌稳准狠，95% 纯酒精反而失手？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">先对比左栏“瞬间脱水结硬壳”与中栏“水分子开路穿透全菌” → 右栏牢记酒精杀不死的三类对手</text>
+<rect x="24" y="68" width="224" height="428" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="88" r="10" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="42" y="92" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">1</text>
+<text x="58" y="92" font-size="13" fill="#0f172a" text-anchor="start" font-weight="700">95%–99% 高浓乙醇</text>
+<text x="42" y="112" font-size="11.2" fill="#c25014" text-anchor="start" font-weight="600">过猛脱水 → 表面结出“保护硬壳”</text>
+<rect x="40" y="124" width="192" height="146" rx="8" fill="#fef1e8" stroke="#e2e8f0" stroke-width="1"/>
+<ellipse cx="136" cy="197" rx="58" ry="38" fill="#fef9c3" stroke="#dc2626" stroke-width="6"/>
+<ellipse cx="136" cy="197" rx="44" ry="25" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="3 3"/>
+<text x="136" y="194" font-size="10.8" fill="#0f172a" text-anchor="middle" font-weight="600">内部酶蛋白</text>
+<text x="136" y="210" font-size="10.8" fill="#dc2626" text-anchor="middle" font-weight="700">完好幸存！</text>
+<path d="M 52,158 L 76,174 M 76,174 L 66,177 M 76,174 L 74,164" fill="none" stroke="#c25014" stroke-width="2.2" stroke-linecap="round"/>
+<path d="M 220,158 L 196,174 M 196,174 L 206,177 M 196,174 L 198,164" fill="none" stroke="#c25014" stroke-width="2.2" stroke-linecap="round"/>
+<text x="136" y="145" font-size="10.5" fill="#dc2626" text-anchor="middle" font-weight="700">外膜蛋白瞬间凝固成致密硬壳</text>
+<text x="136" y="256" font-size="10.2" fill="#1e293b" text-anchor="middle">后续酒精分子被自己造的壳挡在门外</text>
+<text x="40" y="294" font-size="11.3" fill="#1e293b" text-anchor="start" font-weight="600">• 机理：纯乙醇是强脱水剂，一碰</text>
+<text x="50" y="315" font-size="11.3" fill="#1e293b" text-anchor="start">细菌外壳就令表层蛋白瞬间凝结</text>
+<text x="40" y="341" font-size="11.3" fill="#1e293b" text-anchor="start">• 后果：硬壳阻断酒精继续向细胞</text>
+<text x="50" y="362" font-size="11.3" fill="#1e293b" text-anchor="start">内部渗透，且挥发极快停留太短</text>
+<text x="40" y="388" font-size="11.3" fill="#c25014" text-anchor="start" font-weight="600">• 部分微生物仅暂时休眠，等酒精</text>
+<text x="50" y="409" font-size="11.3" fill="#c25014" text-anchor="start" font-weight="600">挥发干后仍可能“死灰复燃”！</text>
+<text x="40" y="442" font-size="11" fill="#64748b" text-anchor="start">• 95% 酒精真正用途：紫外灯擦拭、</text>
+<text x="50" y="462" font-size="11" fill="#64748b" text-anchor="start">酒精灯燃料、病理组织脱水固定</text>
+<rect x="268" y="68" width="224" height="428" rx="10" fill="#ffffff" stroke="#18794e" stroke-width="1.4"/>
+<circle cx="286" cy="88" r="10" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="286" y="92" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">2</text>
+<text x="302" y="92" font-size="13" fill="#0f172a" text-anchor="start" font-weight="700">70%–75% 医用乙醇</text>
+<text x="286" y="112" font-size="11.2" fill="#18794e" text-anchor="start" font-weight="700">水分子开路 → 溶膜 + 全员蛋白变性</text>
+<rect x="284" y="124" width="192" height="146" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<ellipse cx="380" cy="197" rx="58" ry="38" fill="#ffffff" stroke="#18794e" stroke-width="2.6" stroke-dasharray="7 5"/>
+<path d="M 300,174 L 342,188" fill="none" stroke="#1d6fa5" stroke-width="2.2" marker-end="url(#arr-blue)"/>
+<path d="M 460,174 L 418,188" fill="none" stroke="#1d6fa5" stroke-width="2.2" marker-end="url(#arr-blue)"/>
+<path d="M 352,196 Q 364,182 376,198 Q 388,214 404,192" fill="none" stroke="#18794e" stroke-width="2.6" stroke-linecap="round"/>
+<text x="380" y="145" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">水分子延缓挥发并保持膜孔张开</text>
+<text x="380" y="222" font-size="10.6" fill="#18794e" text-anchor="middle" font-weight="700">胞内酶解链失活·彻底死亡</text>
+<text x="380" y="256" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700">CDC 黄金窗口：60%–80%（v/v）</text>
+<text x="284" y="294" font-size="11.3" fill="#1e293b" text-anchor="start" font-weight="600">• 第一步（破墙）：碳氢尾巴插入并</text>
+<text x="294" y="315" font-size="11.3" fill="#1e293b" text-anchor="start">溶解细菌细胞膜与病毒脂质包膜</text>
+<text x="284" y="341" font-size="11.3" fill="#1e293b" text-anchor="start" font-weight="600">• 第二步（攻心）：25%–30% 的水</text>
+<text x="294" y="362" font-size="11.3" fill="#1e293b" text-anchor="start">防止表皮过早结壳，协助乙醇深</text>
+<text x="294" y="383" font-size="11.3" fill="#1e293b" text-anchor="start">入内部拆散蛋白质氢键与疏水核</text>
+<text x="284" y="411" font-size="11.3" fill="#18794e" text-anchor="start" font-weight="700">• 实测速度：10 秒内灭活金葡菌、</text>
+<text x="294" y="432" font-size="11.3" fill="#18794e" text-anchor="start" font-weight="700">大肠杆菌、流感病毒与冠状病毒</text>
+<text x="284" y="462" font-size="11" fill="#64748b" text-anchor="start">• 低于 50% 时杀菌力断崖式下跌</text>
+<rect x="512" y="68" width="224" height="428" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="530" cy="88" r="10" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2"/>
+<text x="530" y="92" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">3</text>
+<text x="546" y="92" font-size="13" fill="#0f172a" text-anchor="start" font-weight="700">酒精消毒三大禁区</text>
+<text x="530" y="112" font-size="11.2" fill="#dc2626" text-anchor="start" font-weight="600">这些场景喷再多酒精也不管用！</text>
+<rect x="526" y="126" width="196" height="104" rx="8" fill="#ffffff" stroke="#6d28d9" stroke-width="1.1"/>
+<rect x="536.0" y="134.0" width="176" height="20" rx="10.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="624.0" y="147.6" font-size="10.6" fill="#6d28d9" text-anchor="middle" font-weight="600">禁区① 细菌芽孢纹丝不动</text>
+<text x="536" y="176" font-size="10.8" fill="#1e293b" text-anchor="start">破伤风梭菌、炭疽芽孢有厚壁盔甲，</text>
+<text x="536" y="198" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="600">手术刀绝不能只泡酒精（需高温高压）</text>
+<rect x="526" y="242" width="196" height="104" rx="8" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.1"/>
+<rect x="536.0" y="250.0" width="176" height="20" rx="10.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="624.0" y="263.6" font-size="10.6" fill="#1d6fa5" text-anchor="middle" font-weight="600">禁区② 部分无包膜肠道病毒</text>
+<text x="536" y="292" font-size="10.8" fill="#1e293b" text-anchor="start">诺如病毒、甲肝病毒、脊灰病毒没有</text>
+<text x="536" y="314" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="600">脂质包膜，需肥皂流水洗手或含氯消毒</text>
+<rect x="526" y="358" width="196" height="104" rx="8" fill="#ffffff" stroke="#dc2626" stroke-width="1.1"/>
+<rect x="536.0" y="366.0" width="176" height="20" rx="10.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="624.0" y="379.6" font-size="10.6" fill="#dc2626" text-anchor="middle" font-weight="600">禁区③ 严禁拿甲醇冒充消毒水</text>
+<text x="536" y="408" font-size="10.8" fill="#1e293b" text-anchor="start">CDC 明文指出：甲醇杀菌力在醇类中</text>
+<text x="536" y="430" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="600">最垫底，且经皮肤吸收与吸入可中毒！</text>
+<text x="528" y="482" font-size="10.6" fill="#dc2626" text-anchor="start" font-weight="600">安全提示：远离明火，切勿大面积喷洒空气</text>
+</svg>

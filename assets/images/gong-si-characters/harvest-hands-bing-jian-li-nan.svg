@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="516" viewBox="0 0 760 516" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">秉、兼、力、男四字古文字动作拆解图</title>
+<desc id="desc">通过甲骨金文构件对比展示一只手握一禾为秉、握二禾为兼，翻土木耒为力，扶耒耕田为男的造字画面。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="515" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">田间手脚连环画：抓一棵禾是“秉”，抓两棵是“兼”，扶耒翻田就是“男”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">看清古文字里的“右手（又）”抓了几株庄稼、“农田（田）”旁立着什么农具，四个常用字秒懂</text>
+<rect x="24" y="68" width="346" height="208" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="88" r="10" fill="#fef3c7" stroke="#b45309" stroke-width="1.2"/>
+<text x="42" y="92" font-size="11.5" fill="#b45309" text-anchor="middle" font-weight="700">1</text>
+<text x="58" y="92" font-size="13" fill="#0f172a" text-anchor="start" font-weight="700">秉（bǐng）：一只手握住一株禾</text>
+<rect x="40" y="106" width="114" height="152" rx="10" fill="#fdf8ee" stroke="#dfc7a7" stroke-width="1.3"/>
+<line x1="97.0" y1="112" x2="97.0" y2="252" stroke="#dfc7a7" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.55"/>
+<line x1="46" y1="182.0" x2="148" y2="182.0" stroke="#dfc7a7" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.55"/>
+<path d="M 97,240 L 97,132 C 97,120 84,116 68,127"
+      fill="none" stroke="#853212" stroke-width="3.8" stroke-linecap="round"/>
+<path d="M 73,148 Q 97,140 121,148" fill="none" stroke="#853212" stroke-width="3.3" stroke-linecap="round"/>
+<path d="M 97,212 L 79,236 M 97,212 L 115,236" fill="none" stroke="#853212" stroke-width="3.1" stroke-linecap="round"/>
+<path d="M 134,196 L 112,182 L 88,182 M 112,182 L 90,171 M 112,182 L 91,193"
+      fill="none" stroke="#c25014" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="168" y="124" font-size="11.8" fill="#b45309" text-anchor="start" font-weight="700">构件：禾（一株谷）+ 又（右手）</text>
+<text x="168" y="149" font-size="11.5" fill="#1e293b" text-anchor="start">• 《诗经》：“彼有遗秉”</text>
+<text x="168" y="173" font-size="11.5" fill="#1e293b" text-anchor="start">• 本义：手攥一把禾（古量词）</text>
+<text x="168" y="197" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">• 引申：秉持 · 秉公 · 秉烛夜游</text>
+<text x="168" y="223" font-size="11.2" fill="#64748b" text-anchor="start">• 把原则像谷穗一样攥紧在手心，</text>
+<text x="178" y="243" font-size="11.2" fill="#64748b" text-anchor="start">就是“秉公办理”最生动的画面！</text>
+<rect x="390" y="68" width="346" height="208" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="408" cy="88" r="10" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="408" y="92" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="424" y="92" font-size="13" fill="#0f172a" text-anchor="start" font-weight="700">兼（jiān）：一只手同时抓两株禾！</text>
+<rect x="406" y="106" width="114" height="152" rx="10" fill="#fdf8ee" stroke="#dfc7a7" stroke-width="1.3"/>
+<line x1="463.0" y1="112" x2="463.0" y2="252" stroke="#dfc7a7" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.55"/>
+<line x1="412" y1="182.0" x2="514" y2="182.0" stroke="#dfc7a7" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.55"/>
+<path d="M 446,240 L 446,134 C 446,123 436,119 423,128"
+      fill="none" stroke="#853212" stroke-width="3.5" stroke-linecap="round"/>
+<path d="M 430,148 Q 446,142 460,148" fill="none" stroke="#853212" stroke-width="3.0" stroke-linecap="round"/>
+<path d="M 446,214 L 434,236 M 446,214 L 456,236" fill="none" stroke="#853212" stroke-width="2.8" stroke-linecap="round"/>
+<path d="M 480,240 L 480,134 C 480,123 470,119 458,128"
+      fill="none" stroke="#853212" stroke-width="3.5" stroke-linecap="round"/>
+<path d="M 465,148 Q 480,142 496,148" fill="none" stroke="#853212" stroke-width="3.0" stroke-linecap="round"/>
+<path d="M 480,214 L 469,236 M 480,214 L 492,236" fill="none" stroke="#853212" stroke-width="2.8" stroke-linecap="round"/>
+<path d="M 508,198 L 488,182 L 438,182 M 488,182 L 440,171 M 488,182 L 440,193"
+      fill="none" stroke="#c25014" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="534" y="124" font-size="11.8" fill="#c25014" text-anchor="start" font-weight="700">构件：秝（二禾并列）+ 又（手）</text>
+<text x="534" y="149" font-size="11.5" fill="#1e293b" text-anchor="start">• 《说文》：“兼，并也。持二禾”</text>
+<text x="534" y="173" font-size="11.5" fill="#1e293b" text-anchor="start" font-weight="600">• 对比：“秉持一禾，兼持二禾”</text>
+<text x="534" y="197" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">• 引申：兼顾 · 兼职 · 兼听则明</text>
+<text x="534" y="223" font-size="11.2" fill="#64748b" text-anchor="start">• 今天“兼”字头顶两点和中间两竖，</text>
+<text x="544" y="243" font-size="11.2" fill="#64748b" text-anchor="start">正是当年并排立着的两棵庄稼！</text>
+<rect x="24" y="292" width="346" height="208" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="312" r="10" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="42" y="316" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">3</text>
+<text x="58" y="316" font-size="13" fill="#0f172a" text-anchor="start" font-weight="700">力（lì）：破土翻地的尖头木农具</text>
+<rect x="40" y="330" width="114" height="152" rx="10" fill="#edf7f4" stroke="#9bc9be" stroke-width="1.3"/>
+<line x1="97.0" y1="336" x2="97.0" y2="476" stroke="#9bc9be" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.55"/>
+<line x1="46" y1="406.0" x2="148" y2="406.0" stroke="#9bc9be" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.55"/>
+<path d="M 105,346 L 88,458" fill="none" stroke="#0f5246" stroke-width="4.4" stroke-linecap="round"/>
+<path d="M 72,388 L 122,388 L 116,442 C 114,454 106,458 98,452"
+      fill="none" stroke="#1d6fa5" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="168" y="348" font-size="11.8" fill="#1d6fa5" text-anchor="start" font-weight="700">考古释读：带踏横的翻土木耒</text>
+<text x="168" y="373" font-size="11.5" fill="#1e293b" text-anchor="start">• 徐中舒考证甲骨“力”象耒耜形</text>
+<text x="168" y="396" font-size="11.2" fill="#64748b" text-anchor="start">• （《说文》旧说象人筋脉之形）</text>
+<text x="168" y="420" font-size="11.5" fill="#1e293b" text-anchor="start">• 脚踩横木刺破板结土最耗体力</text>
+<text x="168" y="444" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">• 引申：力气 · 戮力 · 量力而行</text>
+<text x="168" y="468" font-size="11.2" fill="#1d6fa5" text-anchor="start" font-weight="600">• 加口吆喝助威，就是“加”字！</text>
+<rect x="390" y="292" width="346" height="208" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="408" cy="312" r="10" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="408" y="316" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">4</text>
+<text x="424" y="316" font-size="13" fill="#0f172a" text-anchor="start" font-weight="700">男（nán）：把“力”插进阡陌“田”畴</text>
+<rect x="406" y="330" width="114" height="152" rx="10" fill="#edf7f4" stroke="#9bc9be" stroke-width="1.3"/>
+<line x1="463.0" y1="336" x2="463.0" y2="476" stroke="#9bc9be" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.55"/>
+<line x1="412" y1="406.0" x2="514" y2="406.0" stroke="#9bc9be" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.55"/>
+<rect x="418" y="362" width="44" height="54" rx="4" fill="none" stroke="#18794e" stroke-width="3.6"/>
+<line x1="440" y1="362" x2="440" y2="416" stroke="#18794e" stroke-width="3.2"/>
+<line x1="418" y1="389" x2="462" y2="389" stroke="#18794e" stroke-width="3.2"/>
+<path d="M 490,352 L 477,454" fill="none" stroke="#0f5246" stroke-width="3.8" stroke-linecap="round"/>
+<path d="M 469,388 L 506,388 L 501,440 C 499,450 492,453 486,447"
+      fill="none" stroke="#1d6fa5" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="534" y="348" font-size="11.8" fill="#18794e" text-anchor="start" font-weight="700">构件：田（农田）+ 力（耒耕）</text>
+<text x="534" y="373" font-size="11.5" fill="#1e293b" text-anchor="start">• 《说文》：“言男用力於田也”</text>
+<text x="534" y="397" font-size="11.5" fill="#1e293b" text-anchor="start">• 甲骨金文多作左右并排（田+力）</text>
+<text x="534" y="421" font-size="11.5" fill="#1e293b" text-anchor="start">• 如实记录早期农耕重体力分工</text>
+<text x="534" y="445" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">• 西周亦用作五等爵“公侯伯子男”</text>
+<text x="534" y="468" font-size="11.2" fill="#64748b" text-anchor="start">• 守土治田之职，与农事一脉相承</text>
+</svg>

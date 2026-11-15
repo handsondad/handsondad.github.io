@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="500" viewBox="0 0 760 500" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">全球淡水与海洋鱼类物种数量倒挂及演化起源图</title>
+<desc id="desc">左图对比海洋占超99%液态栖息空间而淡水鱼却占辐鳍鱼物种总数50.7%（15150种对14740种）；右图拆解河流湖泊地理隔离加速成种及现存海洋辐鳍鱼起源于淡水祖先重返海洋两大机制。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arr-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#6d28d9"/>
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#475569"/>
+    </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="499" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">生态学头号悬案：不到 1% 的淡水，凭什么养出超过一半的鱼种？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">据《英国皇家学会学报 B》（Carrete Vega &amp; Wiens, 2012）辐鳍鱼纲（占现存鱼类 96%）全球物种普查</text>
+<rect x="16" y="68" width="356" height="416" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="36" cy="92" r="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="36" y="96" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="97" font-size="12.0" fill="#6d28d9" text-anchor="start" font-weight="700">水体体积 vs 鱼类物种数的惊天倒挂</text>
+<text x="34" y="130" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">① 地球液态水栖息体积占比（海洋 &gt; 99% vs 淡水 &lt; 0.01%）</text>
+<rect x="34" y="140" width="316" height="32" rx="6" fill="#c25014"/>
+<rect x="350" y="140" width="4" height="32" rx="2" fill="#1d6fa5"/>
+<text x="192.0" y="160" font-size="9.9" fill="#ffffff" text-anchor="middle" font-weight="700">海洋咸水：占地球总水量 ≈ 97.5%（栖息空间 &gt; 99%）</text>
+<text x="354" y="186" font-size="9.8" fill="#1d6fa5" text-anchor="end" font-weight="700">↑ 江河湖泊可用液态淡水仅 ≈ 0.01%（放大才看得见！）</text>
+<text x="34" y="214" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">② 地球表面积覆盖占比（海洋 ≈ 71% vs 淡水湿地 ≈ 1%–2%）</text>
+<rect x="34" y="224" width="313.4" height="30" rx="6" fill="#fb923c"/>
+<rect x="347.4" y="224" width="6.6" height="30" rx="3" fill="#1d6fa5"/>
+<text x="190.7" y="243" font-size="10.0" fill="#ffffff" text-anchor="middle" font-weight="700">海洋面积 ≈ 71%</text>
+<text x="354" y="268" font-size="9.8" fill="#1d6fa5" text-anchor="end" font-weight="600">↑ 淡水面积仅 ≈ 1%–2%</text>
+<text x="34" y="298" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">③ 辐鳍鱼物种数量占比（淡水 15,150 种 vs 海洋 14,740 种）</text>
+<rect x="34" y="308" width="162.2" height="42" rx="6" fill="#1d6fa5"/>
+<rect x="196.2" y="308" width="157.8" height="42" rx="6" fill="#c25014"/>
+<text x="115.1" y="326" font-size="10.6" fill="#ffffff" text-anchor="middle" font-weight="700">淡水鱼：50.7%</text>
+<text x="115.1" y="342" font-size="9.8" fill="#e0f2fe" text-anchor="middle">(15,150 种)</text>
+<text x="275.1" y="326" font-size="10.6" fill="#ffffff" text-anchor="middle" font-weight="700">咸水鱼：49.3%</text>
+<text x="275.1" y="342" font-size="9.8" fill="#ffedd5" text-anchor="middle">(14,740 种)</text>
+<rect x="34" y="368" width="320" height="100" rx="9" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="46" y="389" font-size="10.1" fill="#6d28d9" text-anchor="start" font-weight="700">跨界极其罕见：仅约 720 种（≈ 2.4%–4%）能咸淡通吃！</text>
+<text x="46" y="409" font-size="9.8" fill="#475569" text-anchor="start">• 渗透压生死墙把绝大多数鱼死死锁在单一水体；</text>
+<text x="46" y="428" font-size="9.8" fill="#1d6fa5" text-anchor="start" font-weight="700">• 单位体积水体的淡水鱼物种密度，竟是海洋的近万倍！</text>
+<text x="46" y="448" font-size="9.8" fill="#64748b" text-anchor="start">• 最新鱼类目录（超 3.6 万种）中淡水鱼依然稳占约 51%。</text>
+<rect x="388" y="68" width="356" height="416" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="408" cy="92" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="408" y="96" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">2</text>
+<text x="428" y="97" font-size="12.0" fill="#18794e" text-anchor="start" font-weight="700">破案两大推手：水下群岛隔离 + 淡水老祖宗</text>
+<rect x="404" y="116" width="324" height="162" rx="10" fill="#f0fdf4" stroke="#86efac" stroke-width="1.3"/>
+<text x="418" y="138" font-size="10.8" fill="#18794e" text-anchor="start" font-weight="700">推手 A：山脉切碎水系 →“水下孤岛”加速分化</text>
+<rect x="418" y="148" width="142" height="58" rx="7" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+<circle cx="444" cy="177" r="14" fill="#bae6fd" stroke="#0284c7" stroke-width="1.5"/>
+<circle cx="489" cy="177" r="14" fill="#bae6fd" stroke="#0284c7" stroke-width="1.5"/>
+<circle cx="534" cy="177" r="14" fill="#bae6fd" stroke="#0284c7" stroke-width="1.5"/>
+<text x="489" y="220" font-size="9.8" fill="#18794e" text-anchor="middle" font-weight="600">陆地隔断各水系 = 上万座孤岛</text>
+<rect x="572" y="148" width="142" height="58" rx="7" fill="#ffedd5" stroke="#ea580c" stroke-width="1.2"/>
+<line x1="586.0" y1="177.0" x2="698.0" y2="177.0" stroke="#c25014" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<text x="643" y="168" font-size="9.8" fill="#c25014" text-anchor="middle" font-weight="700">大洋连通</text>
+<text x="643" y="220" font-size="9.8" fill="#c25014" text-anchor="middle" font-weight="600">洋流混洗基因 = 不易隔离成种</text>
+<text x="418" y="244" font-size="9.8" fill="#0f172a" text-anchor="start">• 一座山隆起就能把一条河切成两半，两岸鱼群从此老死</text>
+<text x="418" y="263" font-size="9.8" fill="#475569" text-anchor="start">  不相往来（异域成种）；东非三大湖慈鲷几百万年分化上千种！</text>
+<rect x="404" y="290" width="324" height="178" rx="10" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.3"/>
+<text x="418" y="312" font-size="10.8" fill="#1d6fa5" text-anchor="start" font-weight="700">推手 B：演化大反转——现存海鱼竟是“淡水海归”！</text>
+<rect x="418" y="330" width="96" height="38" rx="7" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="466" y="347" font-size="9.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">远古淡水祖先</text>
+<text x="466" y="361" font-size="9.8" fill="#475569" text-anchor="middle">辐鳍鱼冠群</text>
+<line x1="514.0" y1="342.0" x2="554.0" y2="330.0" stroke="#1d6fa5" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<line x1="514.0" y1="356.0" x2="554.0" y2="374.0" stroke="#c25014" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<rect x="558" y="316" width="156" height="32" rx="6" fill="#ffffff" stroke="#2563eb" stroke-width="1.2"/>
+<text x="636" y="336" font-size="9.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">骨鳔总目（鲤/鲶/脂鲤）留守淡水</text>
+<rect x="558" y="358" width="156" height="32" rx="6" fill="#ffffff" stroke="#ea580c" stroke-width="1.2"/>
+<text x="636" y="378" font-size="9.8" fill="#c25014" text-anchor="middle" font-weight="700">鲈形总目等重新下海大辐射！</text>
+<text x="418" y="412" font-size="9.8" fill="#0f172a" text-anchor="start">• 古生代—中生代海洋大灭绝曾重创早期海生辐鳍鱼支系；</text>
+<text x="418" y="432" font-size="9.8" fill="#0f172a" text-anchor="start">• 现存海洋硬骨鱼的共同祖先来自淡水内陆，这也解释了为什么</text>
+<text x="418" y="451" font-size="9.8" fill="#1d6fa5" text-anchor="start" font-weight="700">  今天海鱼血液盐度仍停留在 ≈ 9‰–11‰（留着淡水老家的底色）！</text>
+</svg>

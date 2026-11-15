@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="515" viewBox="0 0 760 515" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">南极 IceCube 中微子零引力透视称重与地球年度质量收支账本图</title>
+<desc id="desc">左图按真实核幔半径比例（3485 km / 6371 km）展示高能大气中微子穿过地幔与地核的弱力吸收差异；右图对比每年约 5200 吨微陨石落地增重与约 9.66 万吨氢氦逃逸减重。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arr-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#6d28d9"/>
+    </marker>
+    <marker id="arr-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#0f766e"/>
+    </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="514" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">彻底不用引力的终极脑洞：南极幽灵粒子“弱力 CT”称地球，外加地球年度减肥账单</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">数一数穿透地心的 TeV 级中微子被拦下几成就能算出地球质量；而地球每年正悄悄向太空净瘦身约 9 万吨</text>
+<rect x="20" y="76" width="408" height="420" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="96" r="10.5" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.2"/>
+<text x="38" y="100" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">1</text>
+<text x="60" y="101" font-size="12.8" fill="#0f766e" text-anchor="start" font-weight="700">2018 零引力称重：南极 IceCube 中微子透视地球</text>
+<rect x="38.0" y="114.0" width="324" height="22" rx="11.0" fill="#f0fdfa" stroke="#0f766e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="200.0" y="129.0" font-size="12" fill="#0f766e" text-anchor="middle" font-weight="600">靠弱相互作用吸收率反推核幔密度（Donini 等 2018）</text>
+<circle cx="200.0" cy="258.0" r="96.0" fill="#dbeafe" stroke="#0284c7" stroke-width="2"/>
+<circle cx="200.0" cy="258.0" r="52.5" fill="#fde68a" stroke="#d97706" stroke-width="2"/>
+<circle cx="200.0" cy="258.0" r="18.4" fill="#fca5a5" stroke="#dc2626" stroke-width="1.5"/>
+<text x="200.0" y="262.0" font-size="10" fill="#dc2626" text-anchor="middle" font-weight="700">致密铁核</text>
+<text x="200.0" y="190.0" font-size="10" fill="#1d6fa5" text-anchor="middle" font-weight="700">硅酸盐地幔</text>
+<text x="116" y="148" font-size="10.2" fill="#6d28d9" text-anchor="start" font-weight="700">北半球大气层宇宙线簇射 (&gt;5 TeV 中微子)</text>
+<line x1="192.0" y1="154.0" x2="192.0" y2="350.0" stroke="#dc2626" stroke-width="2.3" stroke-linecap="round" stroke-dasharray="6 3" marker-end="url(#arr-red)"/>
+<line x1="118.0" y1="186.0" x2="196.0" y2="350.0" stroke="#0f766e" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arr-teal)"/>
+<line x1="282.0" y1="186.0" x2="204.0" y2="350.0" stroke="#0f766e" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arr-teal)"/>
+<rect x="174.0" y="352.0" width="52" height="22" rx="4" fill="#0f172a"/>
+<text x="200.0" y="367.0" font-size="9.5" fill="#38bdf8" text-anchor="middle" font-weight="700">IceCube</text>
+<text x="234.0" y="367.0" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">南极冰下 1 km³ 探测器</text>
+<text x="312" y="232" font-size="10.5" fill="#0f766e" text-anchor="start" font-weight="700">擦边穿地幔：</text>
+<text x="312" y="249" font-size="10.2" fill="#0f172a" text-anchor="start">密度低，近九成穿过</text>
+<text x="302" y="286" font-size="10.5" fill="#dc2626" text-anchor="start" font-weight="700">直穿高密地核：</text>
+<text x="302" y="303" font-size="10.2" fill="#dc2626" text-anchor="start" font-weight="700">&gt;5 TeV 约一半被吸收！</text>
+<rect x="36" y="386" width="376" height="96" rx="10" fill="#f0fdfa" stroke="#99f6e4" stroke-width="1"/>
+<text x="50" y="408" font-size="10.8" fill="#0f172a" text-anchor="start">• 原理：高能中微子撞击质子／中子的弱力截面已知</text>
+<text x="50" y="429" font-size="11" fill="#0f766e" text-anchor="start" font-weight="700">• 纯弱力测得地球质量：M⊕(ν) = (6.0 +1.6 / −1.3) × 10²⁴ kg</text>
+<text x="50" y="450" font-size="11" fill="#1d6fa5" text-anchor="start" font-weight="700">• 引力测得标准质量：  M⊕(引力) = 5.9722 × 10²⁴ kg</text>
+<text x="50" y="471" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">⇒ 人类首次完全不靠万有引力，独立验证地球体重与重核！</text>
+<rect x="444" y="76" width="296" height="420" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="462" cy="96" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="462" y="100" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="484" y="101" font-size="12.8" fill="#c25014" text-anchor="start" font-weight="700">彩蛋：地球每年变胖还是变瘦？</text>
+<rect x="462.0" y="114.0" width="236" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="580.0" y="129.0" font-size="12" fill="#c25014" text-anchor="middle" font-weight="600">太空尘埃进账 vs 大气逃逸出账</text>
+<rect x="460" y="148" width="264" height="96" rx="10" fill="#e7f6ee" stroke="#86efac" stroke-width="1"/>
+<text x="476" y="170" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">【年度增重】彗星与小行星微陨石</text>
+<text x="476" y="192" font-size="10.5" fill="#0f172a" text-anchor="start">• 南极 Concordia 站 20 年雪样实测</text>
+<text x="476" y="211" font-size="10.5" fill="#0f172a" text-anchor="start">  （Rojas 等 2021）：落达地表约</text>
+<text x="476" y="231" font-size="10.8" fill="#18794e" text-anchor="start" font-weight="700">  +5,200 吨 / 年（大气顶层约 1.5～4 万吨）</text>
+<rect x="460" y="256" width="264" height="108" rx="10" fill="#fef2f2" stroke="#fca5a5" stroke-width="1"/>
+<text x="476" y="278" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">【年度减重】高层大气轻气体逃逸</text>
+<text x="476" y="300" font-size="10.5" fill="#0f172a" text-anchor="start">• 太阳极紫外加热顶层大气：</text>
+<text x="476" y="320" font-size="10.6" fill="#dc2626" text-anchor="start" font-weight="700">  氢气逃逸：约 −95,000 吨 / 年（每秒 3 kg）</text>
+<text x="476" y="340" font-size="10.6" fill="#0f172a" text-anchor="start">  氦气逃逸：约 −1,600 吨 / 年</text>
+<text x="476" y="356" font-size="9.8" fill="#64748b" text-anchor="start">  （核裂变／辐射质能亏损微乎其微）</text>
+<rect x="460" y="376" width="264" height="106" rx="10" fill="#fffbeb" stroke="#fcd34d" stroke-width="1"/>
+<text x="592" y="400" font-size="11.3" fill="#dc2626" text-anchor="middle" font-weight="700">年度净账单：每年净“瘦身”约 5～9 万吨！</text>
+<text x="476" y="424" font-size="10.5" fill="#0f172a" text-anchor="start">• 听起来很多？除以 5.9722×10²⁴ kg：</text>
+<text x="476" y="444" font-size="10.5" fill="#0f172a" text-anchor="start">  每年仅流失约 1.5 × 10⁻¹⁷（千万亿分</text>
+<text x="476" y="464" font-size="10.5" fill="#d97706" text-anchor="start" font-weight="700">  之一点五），一亿年也瘦不到十亿分之一！</text>
+</svg>

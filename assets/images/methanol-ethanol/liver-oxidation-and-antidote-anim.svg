@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="528" viewBox="0 0 760 528" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">乙醇与甲醇肝脏代谢分岔及急诊竞争性解毒动画</title>
+<desc id="desc">分步展示乙醇经ADH与ALDH2安全转化为乙酸根、甲醇经同一酶系转化为甲酸根抑制线粒体细胞色素c氧化酶致盲的机理，以及甲吡唑和乙醇竞争性抑制ADH的急救方案。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes laneFade {
+    0% { opacity: 0.16; transform: translateX(-4px); }
+    100% { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes shieldPulse {
+    0%, 45% { stroke-opacity: 0; }
+    70% { stroke-opacity: 0.95; }
+    100% { stroke-opacity: 0.85; }
+  }
+  .lv-1 { opacity: 0.16; animation: laneFade 0.85s ease-out 0.15s forwards; }
+  .lv-2 { opacity: 0.16; animation: laneFade 0.85s ease-out 1.75s forwards; }
+  .lv-3 { opacity: 0.16; animation: laneFade 0.95s ease-out 3.55s forwards; }
+  .adh-lock { stroke-opacity: 0; animation: shieldPulse 5.2s ease-out 0s forwards; }
+  @media (prefers-reduced-motion: reduce) {
+    .lv-1, .lv-2, .lv-3 {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+    .adh-lock {
+      animation: none !important;
+      stroke-opacity: 0.85 !important;
+    }
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="527" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">肝脏里的生死分岔口：同样走过两道脱氢酶，为什么乙醇变食醋，甲醇却致盲夺命？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">先看上排乙醇安全代谢链 → 再看中排甲酸根锁死视神经线粒体 → 下排揭秘急诊“真酒救假酒”抢座原理</text>
+<g class="lv-1">
+  <rect x="24" y="66" width="712" height="130" rx="10" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+  <circle cx="42" cy="86" r="10" fill="#ffffff" stroke="#18794e" stroke-width="1.2"/>
+<text x="42" y="90" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">1</text>
+  <text x="58" y="90" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="700">乙醇正常代谢通道：两步脱氢变成“食醋成分”，最终化作二氧化碳和水</text>
+
+  <rect x="40" y="104" width="136" height="56" rx="8" fill="#ffffff" stroke="#1d6fa5" stroke-width="1"/>
+  <text x="108" y="127" font-size="11.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">乙醇 C₂H₅OH</text>
+  <text x="108" y="147" font-size="10.8" fill="#64748b" text-anchor="middle">微醺镇静</text>
+
+  <line x1="180" y1="132" x2="226" y2="132" stroke="#18794e" stroke-width="2" marker-end="url(#arr-green)"/>
+  <text x="203" y="123" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="700">ADH酶</text>
+
+  <rect x="230" y="104" width="146" height="56" rx="8" fill="#ffffff" stroke="#c25014" stroke-width="1"/>
+  <text x="303" y="127" font-size="11.8" fill="#c25014" text-anchor="middle" font-weight="700">乙醛 CH₃CHO</text>
+  <text x="303" y="147" font-size="10.8" fill="#64748b" text-anchor="middle">脸红心跳·宿醉伤肝</text>
+
+  <line x1="380" y1="132" x2="428" y2="132" stroke="#18794e" stroke-width="2" marker-end="url(#arr-green)"/>
+  <text x="404" y="123" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="700">ALDH2</text>
+
+  <rect x="432" y="104" width="142" height="56" rx="8" fill="#ffffff" stroke="#18794e" stroke-width="1"/>
+  <text x="503" y="127" font-size="11.8" fill="#18794e" text-anchor="middle" font-weight="700">乙酸根 CH₃COO⁻</text>
+  <text x="503" y="147" font-size="10.8" fill="#64748b" text-anchor="middle">普通食醋温和代谢物</text>
+
+  <line x1="578" y1="132" x2="614" y2="132" stroke="#18794e" stroke-width="2" marker-end="url(#arr-green)"/>
+  <rect x="618" y="104" width="104" height="56" rx="8" fill="#ffffff" stroke="#18794e" stroke-width="1"/>
+  <text x="670" y="127" font-size="11.8" fill="#18794e" text-anchor="middle" font-weight="700">CO₂ + H₂O</text>
+  <text x="670" y="147" font-size="10.5" fill="#64748b" text-anchor="middle">三羧酸循环排出</text>
+
+  <text x="40" y="181" font-size="11" fill="#1e293b" text-anchor="start">注：约半数东亚人群携带 ALDH2 慢速突变，导致中间产物“乙醛”堆积上脸，所以喝酒脸红其实是酶警报！</text>
+</g>
+<g class="lv-2">
+  <rect x="24" y="208" width="712" height="146" rx="10" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2"/>
+  <circle cx="42" cy="228" r="10" fill="#ffffff" stroke="#dc2626" stroke-width="1.2"/>
+<text x="42" y="232" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">2</text>
+  <text x="58" y="232" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="700">甲醇致命“代谢增毒”陷阱：潜伏 10–30 小时后，甲酸根掐断视神经线粒体呼吸链！</text>
+
+  <rect x="40" y="246" width="136" height="58" rx="8" fill="#ffffff" stroke="#c25014" stroke-width="1"/>
+  <text x="108" y="269" font-size="11.8" fill="#c25014" text-anchor="middle" font-weight="700">甲醇 CH₃OH</text>
+  <text x="108" y="289" font-size="10.8" fill="#64748b" text-anchor="middle">初喝仅似轻度醉酒</text>
+
+  <line x1="180" y1="275" x2="226" y2="275" stroke="#c25014" stroke-width="2" marker-end="url(#arr-orange)"/>
+  <text x="203" y="266" font-size="10.2" fill="#dc2626" text-anchor="middle" font-weight="700">同一ADH</text>
+
+  <rect x="230" y="246" width="146" height="58" rx="8" fill="#ffffff" stroke="#fca5a5" stroke-width="1"/>
+  <text x="303" y="269" font-size="11.8" fill="#dc2626" text-anchor="middle" font-weight="700">甲醛 HCHO</text>
+  <text x="303" y="289" font-size="10.8" fill="#64748b" text-anchor="middle">约1–2分钟即转走</text>
+
+  <line x1="380" y1="275" x2="428" y2="275" stroke="#c25014" stroke-width="2" marker-end="url(#arr-orange)"/>
+  <text x="404" y="266" font-size="10.0" fill="#dc2626" text-anchor="middle" font-weight="700">FDH/ALDH</text>
+
+  <rect x="432" y="246" width="152" height="58" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="508" y="269" font-size="12" fill="#dc2626" text-anchor="middle" font-weight="700">甲酸根 HCOO⁻</text>
+  <text x="508" y="289" font-size="10.8" fill="#dc2626" text-anchor="middle" font-weight="600">终极真凶·极难排出！</text>
+
+  <line x1="588" y1="275" x2="614" y2="275" stroke="#dc2626" stroke-width="2" marker-end="url(#arr-orange)"/>
+  <rect x="618" y="246" width="104" height="58" rx="8" fill="#ffffff" stroke="#dc2626" stroke-width="1"/>
+  <text x="670" y="268" font-size="10.8" fill="#dc2626" text-anchor="middle" font-weight="700">锁死细胞色素</text>
+  <text x="670" y="287" font-size="10.6" fill="#dc2626" text-anchor="middle" font-weight="700">c 氧化酶 → 失明</text>
+
+  <text x="40" y="324" font-size="11" fill="#0f172a" text-anchor="start" font-weight="600">• 关键辟谣：甲醛在血中半衰期仅约 1 分钟，来不及积聚；真正致盲夺命的是排不出去的“甲酸/甲酸根”！</text>
+  <text x="40" y="343" font-size="11" fill="#dc2626" text-anchor="start" font-weight="600">• 剂量红线：视网膜耗氧极高，误饮纯甲醇仅 4–15 mL 即可致暴风雪样永久失明，约 30–70 mL 可致死。</text>
+</g>
+<g class="lv-3">
+  <rect x="24" y="366" width="712" height="148" rx="10" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+  <circle cx="42" cy="386" r="10" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="42" y="390" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">3</text>
+  <text x="58" y="390" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="700">急诊室“抢座位”解毒法：为什么甲吡唑或医用真乙醇能救回假酒中毒患者？</text>
+
+  <rect x="40" y="404" width="244" height="94" rx="8" fill="#ffffff" stroke="#6d28d9" stroke-width="1.3"/>
+  <rect class="adh-lock" x="37" y="401" width="250" height="100" rx="10" fill="none" stroke="#6d28d9" stroke-width="2.2" stroke-dasharray="5 3"/>
+  <rect x="52.0" y="412.0" width="218" height="20" rx="10.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="161.0" y="425.6" font-size="11" fill="#6d28d9" text-anchor="middle" font-weight="600">抢先霸占 ADH 酶活性口袋</text>
+  <text x="52" y="450" font-size="11.2" fill="#6d28d9" text-anchor="start" font-weight="700">• 首选甲吡唑（亲和力高数千倍）</text>
+  <text x="52" y="471" font-size="11.2" fill="#1d6fa5" text-anchor="start" font-weight="700">• 应急输注医用乙醇（高 10–20 倍）</text>
+  <text x="52" y="490" font-size="10.8" fill="#1e293b" text-anchor="start">→ 把甲醇死死堵在第一道酶门外！</text>
+
+  <line x1="288" y1="451" x2="322" y2="451" stroke="#1d6fa5" stroke-width="2" marker-end="url(#arr-blue)"/>
+
+  <rect x="326" y="404" width="190" height="94" rx="8" fill="#ffffff" stroke="#1d6fa5" stroke-width="1"/>
+  <rect x="338.0" y="412.0" width="166" height="20" rx="10.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="421.0" y="425.6" font-size="11" fill="#1d6fa5" text-anchor="middle" font-weight="600">未氧化甲醇原样排出</text>
+  <text x="338" y="450" font-size="11.2" fill="#1e293b" text-anchor="start" font-weight="600">• 不再变成甲醛与甲酸根</text>
+  <text x="338" y="471" font-size="11.2" fill="#1d6fa5" text-anchor="start" font-weight="600">• 经肾脏尿液与肺部呼吸排走</text>
+  <text x="338" y="490" font-size="10.8" fill="#64748b" text-anchor="start">• 重症同步上血液透析快速滤除</text>
+
+  <line x1="520" y1="451" x2="548" y2="451" stroke="#18794e" stroke-width="2" marker-end="url(#arr-green)"/>
+
+  <rect x="552" y="404" width="170" height="94" rx="8" fill="#ffffff" stroke="#18794e" stroke-width="1"/>
+  <rect x="562.0" y="412.0" width="150" height="20" rx="10.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="637.0" y="425.6" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="600">清除残余甲酸根组合拳</text>
+  <text x="562" y="450" font-size="11" fill="#1e293b" text-anchor="start" font-weight="600">• 碳酸氢钠：纠正酸中毒</text>
+  <text x="562" y="471" font-size="11" fill="#18794e" text-anchor="start" font-weight="600">• 亚叶酸/叶酸：激活一碳</text>
+  <text x="572" y="490" font-size="10.8" fill="#18794e" text-anchor="start" font-weight="600">通道把甲酸拆成 CO₂！</text>
+</g>
+</svg>

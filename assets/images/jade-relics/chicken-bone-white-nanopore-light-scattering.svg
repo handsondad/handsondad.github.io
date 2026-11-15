@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="506" viewBox="0 0 760 506" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">古玉鸡骨白纳米微孔散射白化机制与盘玉回润光学原理图</title>
+<desc id="desc">对比致密新玉深层透射与风化古玉微孔米氏散射白化，解释为何鸡骨白并非碳酸钙化以及油脂填充微孔降低折射率差的物理效应</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="505" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="380.0" y="30" font-size="18.5" fill="#1e293b" text-anchor="middle" font-weight="700">古玉“鸡骨白”并不是变成了石灰！显微溶蚀孔隙与散射光学揭秘</text>
+<text x="380.0" y="52" font-size="12.2" fill="#64748b" text-anchor="middle">就像透明冰块砸成碎冰茬会变白雪：拉曼光谱证实鸡骨白仍是透闪石，白化源于微孔对光线的漫散射</text>
+<rect x="22" y="68" width="356" height="318" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="38.0" y="82.0" width="274" height="22" rx="11.0" fill="#f0fdfa" stroke="#115e59" stroke-width="1" stroke-opacity="0.35"/>
+<text x="175.0" y="97.0" font-size="12" fill="#115e59" text-anchor="middle" font-weight="600">入土前的新玉：致密无隙 · 温润半透明</text>
+<rect x="44" y="166" width="312" height="106" rx="10" fill="#ccfbf1" stroke="#115e59" stroke-width="2"/>
+<rect x="56" y="178" width="44" height="22" rx="4" fill="#99f6e4" stroke="#0d9488" stroke-width="1"/>
+<rect x="105" y="178" width="44" height="22" rx="4" fill="#99f6e4" stroke="#0d9488" stroke-width="1"/>
+<rect x="154" y="178" width="44" height="22" rx="4" fill="#99f6e4" stroke="#0d9488" stroke-width="1"/>
+<rect x="203" y="178" width="44" height="22" rx="4" fill="#99f6e4" stroke="#0d9488" stroke-width="1"/>
+<rect x="252" y="178" width="44" height="22" rx="4" fill="#99f6e4" stroke="#0d9488" stroke-width="1"/>
+<rect x="301" y="178" width="44" height="22" rx="4" fill="#99f6e4" stroke="#0d9488" stroke-width="1"/>
+<rect x="66" y="206" width="44" height="22" rx="4" fill="#99f6e4" stroke="#0d9488" stroke-width="1"/>
+<rect x="115" y="206" width="44" height="22" rx="4" fill="#99f6e4" stroke="#0d9488" stroke-width="1"/>
+<rect x="164" y="206" width="44" height="22" rx="4" fill="#99f6e4" stroke="#0d9488" stroke-width="1"/>
+<rect x="213" y="206" width="44" height="22" rx="4" fill="#99f6e4" stroke="#0d9488" stroke-width="1"/>
+<rect x="262" y="206" width="44" height="22" rx="4" fill="#99f6e4" stroke="#0d9488" stroke-width="1"/>
+<rect x="56" y="234" width="44" height="22" rx="4" fill="#99f6e4" stroke="#0d9488" stroke-width="1"/>
+<rect x="105" y="234" width="44" height="22" rx="4" fill="#99f6e4" stroke="#0d9488" stroke-width="1"/>
+<rect x="154" y="234" width="44" height="22" rx="4" fill="#99f6e4" stroke="#0d9488" stroke-width="1"/>
+<rect x="203" y="234" width="44" height="22" rx="4" fill="#99f6e4" stroke="#0d9488" stroke-width="1"/>
+<rect x="252" y="234" width="44" height="22" rx="4" fill="#99f6e4" stroke="#0d9488" stroke-width="1"/>
+<rect x="301" y="234" width="44" height="22" rx="4" fill="#99f6e4" stroke="#0d9488" stroke-width="1"/>
+<line x1="96" y1="118" x2="134" y2="236" stroke="#b45309" stroke-width="2.6" marker-end="url(#arr-orange)"/>
+<line x1="166" y1="118" x2="204" y2="244" stroke="#b45309" stroke-width="2.6" marker-end="url(#arr-orange)"/>
+<line x1="204" y1="244" x2="266" y2="124" stroke="#0d9488" stroke-width="2.2" stroke-dasharray="5 3" marker-end="url(#arr-green)"/>
+<text x="132" y="132" font-size="10.8" fill="#b45309" text-anchor="middle" font-weight="700">入射自然光</text>
+<text x="286" y="146" font-size="10.8" fill="#115e59" text-anchor="middle" font-weight="700">深层柔和透射</text>
+<text x="44" y="298" font-size="10.8" fill="#1e293b" text-anchor="start">• 微晶严丝合缝，晶间孔隙远小于可见光波长（&lt;10 nm）；</text>
+<text x="44" y="318" font-size="10.8" fill="#1e293b" text-anchor="start">• 内部折射率处处均匀（n ≈ 1.61–1.63），光线深入玉肉</text>
+<text x="44" y="338" font-size="10.8" fill="#115e59" text-anchor="start" font-weight="700">  再柔柔折回人眼，呈现凝脂般的“油脂光泽”。</text>
+<rect x="392" y="68" width="346" height="318" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="408.0" y="82.0" width="288" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="552.0" y="97.0" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="600">千年古玉“鸡骨白”：微孔散射 · 象牙白化</text>
+<rect x="412" y="166" width="306" height="106" rx="10" fill="#f5f5f4" stroke="#78716c" stroke-width="2"/>
+<circle cx="444" cy="186" r="9" fill="#ffffff" stroke="#a8a29e" stroke-width="1.3"/>
+<circle cx="482" cy="194" r="11" fill="#ffffff" stroke="#a8a29e" stroke-width="1.3"/>
+<circle cx="524" cy="184" r="8" fill="#ffffff" stroke="#a8a29e" stroke-width="1.3"/>
+<circle cx="566" cy="196" r="12" fill="#ffffff" stroke="#a8a29e" stroke-width="1.3"/>
+<circle cx="612" cy="186" r="10" fill="#ffffff" stroke="#a8a29e" stroke-width="1.3"/>
+<circle cx="658" cy="194" r="9" fill="#ffffff" stroke="#a8a29e" stroke-width="1.3"/>
+<circle cx="462" cy="222" r="10" fill="#ffffff" stroke="#a8a29e" stroke-width="1.3"/>
+<circle cx="506" cy="228" r="9" fill="#ffffff" stroke="#a8a29e" stroke-width="1.3"/>
+<circle cx="548" cy="220" r="11" fill="#ffffff" stroke="#a8a29e" stroke-width="1.3"/>
+<circle cx="592" cy="232" r="8" fill="#ffffff" stroke="#a8a29e" stroke-width="1.3"/>
+<circle cx="638" cy="224" r="11" fill="#ffffff" stroke="#a8a29e" stroke-width="1.3"/>
+<circle cx="682" cy="218" r="8" fill="#ffffff" stroke="#a8a29e" stroke-width="1.3"/>
+<circle cx="486" cy="252" r="8" fill="#ffffff" stroke="#a8a29e" stroke-width="1.3"/>
+<circle cx="536" cy="250" r="10" fill="#ffffff" stroke="#a8a29e" stroke-width="1.3"/>
+<circle cx="582" cy="254" r="9" fill="#ffffff" stroke="#a8a29e" stroke-width="1.3"/>
+<circle cx="628" cy="250" r="8" fill="#ffffff" stroke="#a8a29e" stroke-width="1.3"/>
+<line x1="496" y1="118" x2="524" y2="184" stroke="#b45309" stroke-width="2.6"/>
+<line x1="524" y1="184" x2="458" y2="128" stroke="#6d28d9" stroke-width="2.0" marker-end="url(#arr-blue)"/>
+<line x1="524" y1="184" x2="512" y2="122" stroke="#6d28d9" stroke-width="2.0" marker-end="url(#arr-blue)"/>
+<line x1="524" y1="184" x2="574" y2="124" stroke="#6d28d9" stroke-width="2.0" marker-end="url(#arr-blue)"/>
+<line x1="524" y1="184" x2="624" y2="138" stroke="#6d28d9" stroke-width="2.0" marker-end="url(#arr-blue)"/>
+<text x="565" y="118" font-size="10.8" fill="#6d28d9" text-anchor="middle" font-weight="700">全波段强烈漫散射 → 肉眼见纯白！</text>
+<text x="412" y="298" font-size="10.8" fill="#1e293b" text-anchor="start">• 成因 A（自然受沁）：土壤弱酸碱地下水淋滤溶蚀晶界；</text>
+<text x="412" y="318" font-size="10.8" fill="#1e293b" text-anchor="start">• 成因 B（祭祀燎玉）：商周/红山火烧 &gt;800℃ 脱水相变扩孔；</text>
+<text x="412" y="338" font-size="10.8" fill="#6d28d9" text-anchor="start" font-weight="700">• 空气孔（n=1.00）与玉晶（n=1.62）界面单次反射率飙升！</text>
+<rect x="22" y="400" width="716" height="88" rx="12" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<text x="40" y="425" font-size="12.5" fill="#1d6fa5" text-anchor="start" font-weight="700">连破两大谜团：① 为什么说“古玉钙化”是用词错误？ ② 为什么手盘古玉会慢慢“回润变透”？</text>
+<text x="40" y="447" font-size="10.7" fill="#1e293b" text-anchor="start">• 钙化误区：红外与拉曼光谱检测表明，鸡骨白古玉并未变成碳酸钙（CaCO₃），反而因地下水淋滤流失了部分钙镁硅，应称“白化/受沁风化”。</text>
+<text x="40" y="468" font-size="10.7" fill="#0f172a" text-anchor="start" font-weight="700">• 盘玉光学：人体皮脂（n ≈ 1.48）渗入表层微孔赶走空气（n = 1.00），界面散射率骤降超 25 倍，光线重新穿透——但出土文物严禁手盘污染！</text>
+</svg>

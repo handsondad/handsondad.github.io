@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="442" viewBox="0 0 760 442" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">电视信号天地二级接力链路与鱼骨天线、卫星锅、有线电视三种接收方式对比图</title>
+<desc id="desc">上图展示北京上行站经35786公里赤道静止卫星传至县广电局大锅、再由本地电视塔用VHF/UHF向周边广播的二级接力；下图分三栏对比八木鱼骨天线（收地面塔米波）、抛物面卫星锅加LNB高频头（直收C/Ku微波）与有线电视同轴电缆。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="441" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">小时候屋顶的“鱼骨天线”收的是卫星吗？——“天地二级接力”与三种电视接收方式</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">鱼骨天线对准的是县城地面发射塔（米波/分米波），真正直收 3.6 万公里卫星的是金属抛物面“锅”！</text>
+<rect x="20" y="62" width="720" height="152" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="85" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 为什么家里没装大锅，竹竿天线也能看中央台？—— 80–90 年代“卫星到县台、高塔进万家”二级接力</text>
+<rect x="36" y="100" width="150" height="80" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.5"/>
+<text x="111.0" y="121" font-size="10.8" fill="#6d28d9" text-anchor="middle" font-weight="700">1. 北京上行站</text>
+<text x="111.0" y="142" font-size="10.1" fill="#0f172a" text-anchor="middle" font-weight="600">9–12 m 大锅上星</text>
+<text x="111.0" y="162" font-size="9.8" fill="#1e293b" text-anchor="middle">C/Ku 波段发射</text>
+<rect x="212" y="100" width="152" height="80" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1.5"/>
+<text x="288.0" y="121" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="700">2. 赤道静止卫星</text>
+<text x="288.0" y="142" font-size="10.1" fill="#0f172a" text-anchor="middle" font-weight="600">高空 35,786 km</text>
+<text x="288.0" y="162" font-size="9.8" fill="#1e293b" text-anchor="middle">落地功率仅皮瓦/m²</text>
+<rect x="390" y="100" width="162" height="80" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.5"/>
+<text x="471.0" y="121" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">3. 县广电局/山顶塔</text>
+<text x="471.0" y="142" font-size="10.1" fill="#0f172a" text-anchor="middle" font-weight="600">3–5 m 大锅收星</text>
+<text x="471.0" y="162" font-size="9.8" fill="#1e293b" text-anchor="middle">换 VHF/UHF 强功率发射</text>
+<rect x="578" y="100" width="146" height="80" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.5"/>
+<text x="651.0" y="121" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="700">4. 屋顶竹竿鱼骨</text>
+<text x="651.0" y="142" font-size="10.1" fill="#0f172a" text-anchor="middle" font-weight="600">水平对准县城铁塔！</text>
+<text x="651.0" y="162" font-size="9.8" fill="#1e293b" text-anchor="middle">收 30–70 km 地面波</text>
+<line x1="188.0" y1="140.0" x2="208.0" y2="140.0" stroke="#c25014" stroke-width="2.0" marker-end="url(#arr-orange)"/>
+<line x1="366.0" y1="140.0" x2="386.0" y2="140.0" stroke="#c25014" stroke-width="2.0" marker-end="url(#arr-orange)"/>
+<line x1="554.0" y1="140.0" x2="574.0" y2="140.0" stroke="#1d6fa5" stroke-width="2.2" marker-end="url(#arr-blue)"/>
+<text x="380" y="201" font-size="10.1" fill="#475569" text-anchor="middle" font-weight="600">关键区别：第 2→3 步跨越 3.8 万公里（Ku 路径损耗 205.6 dB）必须靠大锅聚焦；第 3→4 步已是本地大功率米波广播！</text>
+<rect x="20" y="226" width="232" height="202" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="34" y="249" font-size="12.0" fill="#1d6fa5" text-anchor="start" font-weight="700">② 竹竿鱼骨 / 兔耳天线</text>
+<rect x="34.0" y="259.0" width="204" height="20" rx="10.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="136.0" y="272.6" font-size="10.1" fill="#1d6fa5" text-anchor="middle" font-weight="600">收【本地地面塔】· 非卫星</text>
+<text x="34" y="300" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="700">工作频段：</text>
+<text x="88" y="300" font-size="9.8" fill="#1e293b" text-anchor="start">VHF/UHF 48.5–860 MHz</text>
+<line x1="32.0" y1="312.0" x2="240.0" y2="312.0" stroke="#cbd5e1" stroke-width="0.9"/>
+<text x="34" y="327" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="700">电磁波长：</text>
+<text x="88" y="327" font-size="9.8" fill="#1e293b" text-anchor="start">0.35–6.2 m（半波振子数分米）</text>
+<line x1="32.0" y1="339.0" x2="240.0" y2="339.0" stroke="#cbd5e1" stroke-width="0.9"/>
+<text x="34" y="354" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="700">方向对准：</text>
+<text x="88" y="354" font-size="9.8" fill="#1e293b" text-anchor="start">水平指向几十公里内电视塔</text>
+<line x1="32.0" y1="366.0" x2="240.0" y2="366.0" stroke="#cbd5e1" stroke-width="0.9"/>
+<text x="34" y="381" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="700">典型痛点：</text>
+<text x="88" y="381" font-size="9.8" fill="#1e293b" text-anchor="start">怕群山阻挡、高楼反射重影</text>
+<line x1="32.0" y1="393.0" x2="240.0" y2="393.0" stroke="#cbd5e1" stroke-width="0.9"/>
+<text x="34" y="408" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="700">演进结局：</text>
+<text x="88" y="408" font-size="9.8" fill="#1e293b" text-anchor="start">2020 年底模拟关停 → DTMB 数字</text>
+<rect x="264" y="226" width="232" height="202" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="278" y="249" font-size="12.0" fill="#c25014" text-anchor="start" font-weight="700">③ 院子金属“大锅 / 小锅”</text>
+<rect x="278.0" y="259.0" width="204" height="20" rx="10.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="380.0" y="272.6" font-size="10.1" fill="#c25014" text-anchor="middle" font-weight="600">真·直收【赤道同步卫星】</text>
+<text x="278" y="300" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="700">工作频段：</text>
+<text x="332" y="300" font-size="9.8" fill="#1e293b" text-anchor="start">C 波段 4 GHz / Ku 12 GHz</text>
+<line x1="276.0" y1="312.0" x2="484.0" y2="312.0" stroke="#cbd5e1" stroke-width="0.9"/>
+<text x="278" y="327" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="700">电磁波长：</text>
+<text x="332" y="327" font-size="9.8" fill="#1e293b" text-anchor="start">2.5–7.5 cm（微波直穿电离层）</text>
+<line x1="276.0" y1="339.0" x2="484.0" y2="339.0" stroke="#cbd5e1" stroke-width="0.9"/>
+<text x="278" y="354" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="700">核心部件：</text>
+<text x="332" y="354" font-size="9.8" fill="#1e293b" text-anchor="start">抛物面聚波 (+33 dBi) + 高频头</text>
+<line x1="276.0" y1="366.0" x2="484.0" y2="366.0" stroke="#cbd5e1" stroke-width="0.9"/>
+<text x="278" y="381" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="700">典型痛点：</text>
+<text x="332" y="381" font-size="9.8" fill="#1e293b" text-anchor="start">Ku 小锅遇暴雨易“雨衰”马赛克</text>
+<line x1="276.0" y1="393.0" x2="484.0" y2="393.0" stroke="#cbd5e1" stroke-width="0.9"/>
+<text x="278" y="408" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="700">代表工程：</text>
+<text x="332" y="408" font-size="9.8" fill="#1e293b" text-anchor="start">中星 9 号“村村通 / 户户通”</text>
+<rect x="508" y="226" width="232" height="202" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="522" y="249" font-size="12.0" fill="#18794e" text-anchor="start" font-weight="700">④ 墙上圆孔（有线 CATV）</text>
+<rect x="522.0" y="259.0" width="204" height="20" rx="10.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="624.0" y="272.6" font-size="10.1" fill="#18794e" text-anchor="middle" font-weight="600">把射频天空【关进屏蔽铜缆】</text>
+<text x="522" y="300" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="700">工作频段：</text>
+<text x="576" y="300" font-size="9.8" fill="#1e293b" text-anchor="start">电缆内 50–860+ MHz 射频</text>
+<line x1="520.0" y1="312.0" x2="728.0" y2="312.0" stroke="#cbd5e1" stroke-width="0.9"/>
+<text x="522" y="327" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="700">传输介质：</text>
+<text x="576" y="327" font-size="9.8" fill="#1e293b" text-anchor="start">75 Ω 同轴电缆 + 光纤干线 HFC</text>
+<line x1="520.0" y1="339.0" x2="728.0" y2="339.0" stroke="#cbd5e1" stroke-width="0.9"/>
+<text x="522" y="354" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="700">信号源头：</text>
+<text x="576" y="354" font-size="9.8" fill="#1e293b" text-anchor="start">市/县有线前端机房统一收星打包</text>
+<line x1="520.0" y1="366.0" x2="728.0" y2="366.0" stroke="#cbd5e1" stroke-width="0.9"/>
+<text x="522" y="381" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="700">核心优势：</text>
+<text x="576" y="381" font-size="9.8" fill="#1e293b" text-anchor="start">无视高楼遮挡，一口气排几十个台</text>
+<line x1="520.0" y1="393.0" x2="728.0" y2="393.0" stroke="#cbd5e1" stroke-width="0.9"/>
+<text x="522" y="408" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="700">演进结局：</text>
+<text x="576" y="408" font-size="9.8" fill="#1e293b" text-anchor="start">DVB-C 数字机顶盒 / 光纤 IPTV</text>
+</svg>

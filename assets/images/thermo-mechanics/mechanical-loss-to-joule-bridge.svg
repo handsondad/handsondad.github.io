@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="508" viewBox="0 0 760 508" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">力学机械能损耗与热力学第一定律能量守恒统一图解</title>
+<desc id="desc">展示无摩擦单摆中机械能守恒、摩擦刹车中宏观机械能看似消失，经伦福德钻炮、迈尔放血观察与焦耳叶轮实验（1 cal = 4.184 J）统一为热力学第一定律 ΔU = Q - W对外。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="507" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">刹车停下后机械能去哪了？从“热质假说”崩塌到热力学第一定律大一统</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">纯力学只盯住宏观动能与势能；一旦算上 10²⁴ 个分子的微观热运动内能 U，宇宙总账一焦耳都没丢</text>
+<rect x="22" y="68" width="224" height="368" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="90" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="42" y="94" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="60" y="95" font-size="13" fill="#0f172a" text-anchor="start" font-weight="700">纯力学账本：遇摩擦就“破产”</text>
+<rect x="34" y="110" width="200" height="132" rx="8" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<text x="46" y="130" font-size="12" fill="#1d6fa5" text-anchor="start" font-weight="700">理想无摩擦（仅保守力做功）</text>
+<path d="M52,152 Q134,226 216,152" fill="none" stroke="#1d6fa5" stroke-width="2.2"/>
+<circle cx="66" cy="163" r="7" fill="#1d6fa5"/>
+<circle cx="134" cy="189" r="7" fill="#18794e"/>
+<line x1="75.0" y1="166.0" x2="118.0" y2="184.0" stroke="#1d6fa5" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+<text x="134" y="212" font-size="11.5" fill="#1e293b" text-anchor="middle" font-weight="600">势能 Ep ⇄ 动能 Ek 互换</text>
+<text x="134" y="231" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">E机 = Ek + Ep = 常数（守恒）</text>
+<rect x="34" y="254" width="200" height="168" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="46" y="274" font-size="12" fill="#c25014" text-anchor="start" font-weight="700">真实世界（踩刹车 / 橡皮泥落地）</text>
+<line x1="46.0" y1="326.0" x2="220.0" y2="326.0" stroke="#475569" stroke-width="2"/>
+<rect x="52" y="302" width="38" height="24" rx="4" fill="#1d6fa5" opacity="0.85"/>
+<text x="71" y="318" font-size="11.5" fill="#ffffff" text-anchor="middle" font-weight="700">v₀</text>
+<line x1="96.0" y1="314.0" x2="144.0" y2="314.0" stroke="#c25014" stroke-width="1.8" stroke-dasharray="4,3" marker-end="url(#arr-orange)"/>
+<rect x="154" y="302" width="38" height="24" rx="4" fill="#475569"/>
+<text x="173" y="318" font-size="11.5" fill="#ffffff" text-anchor="middle" font-weight="700">v=0</text>
+<path d="M112,300 Q116,291 112,283 M126,300 Q130,291 126,283 M140,300 Q144,291 140,283" fill="none" stroke="#c25014" stroke-width="1.6"/>
+<text x="134" y="350" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">末态宏观 Ek = 0，Ep = 0</text>
+<text x="134" y="370" font-size="12" fill="#b91c1c" text-anchor="middle" font-weight="700">ΔE机 = W非保守 &lt; 0</text>
+<text x="134" y="391" font-size="11.5" fill="#c25014" text-anchor="middle">表面悬案：宏观机械能“蒸发”了！</text>
+<text x="134" y="410" font-size="11" fill="#64748b" text-anchor="middle">旧物理曾误以为热是守恒流体“热质”</text>
+<line x1="248.0" y1="250.0" x2="266.0" y2="250.0" stroke="#c25014" stroke-width="2" marker-end="url(#arr-orange)"/>
+<rect x="270" y="68" width="224" height="368" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="290" cy="90" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="290" y="94" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="308" y="95" font-size="13" fill="#0f172a" text-anchor="start" font-weight="700">三步破案：锁定“功—热汇率”</text>
+<rect x="282" y="110" width="200" height="74" rx="7" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="292" y="129" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700">① 1798 伦福德钝钻头钻炮筒</text>
+<text x="292" y="148" font-size="11.5" fill="#1e293b" text-anchor="start">无碎屑仍 2.5 小时烧开整箱冰水：</text>
+<text x="292" y="167" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="600">热不是挤出的“热质”，而是运动！</text>
+<rect x="282" y="194" width="200" height="78" rx="7" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="292" y="213" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700">② 1840–1842 迈尔热带放血顿悟</text>
+<text x="292" y="232" font-size="11.5" fill="#1e293b" text-anchor="start">爪哇水手静脉血鲜红→少耗氧产热；</text>
+<text x="292" y="251" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="600">由气体 Cp − Cv = R 首算热功当量</text>
+<rect x="282" y="282" width="200" height="140" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="292" y="302" font-size="12" fill="#18794e" text-anchor="start" font-weight="700">③ 1850 焦耳重锤叶轮精确测汇率</text>
+<rect x="296" y="318" width="56" height="46" rx="4" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.4"/>
+<line x1="324.0" y1="312.0" x2="324.0" y2="358.0" stroke="#475569" stroke-width="1.8"/>
+<line x1="310.0" y1="334.0" x2="338.0" y2="334.0" stroke="#c25014" stroke-width="2.2"/>
+<line x1="310.0" y1="348.0" x2="338.0" y2="348.0" stroke="#c25014" stroke-width="2.2"/>
+<line x1="324.0" y1="312.0" x2="368.0" y2="312.0" stroke="#475569" stroke-width="1.3"/>
+<line x1="368.0" y1="312.0" x2="368.0" y2="344.0" stroke="#475569" stroke-width="1.3"/>
+<rect x="360" y="344" width="16" height="18" rx="2" fill="#c25014"/>
+<text x="380" y="332" font-size="12" fill="#18794e" text-anchor="start" font-weight="700">1 cal = 4.184 J</text>
+<text x="380" y="352" font-size="11" fill="#1e293b" text-anchor="start">1 kg 下落 427 m</text>
+<text x="380" y="370" font-size="11" fill="#c25014" text-anchor="start" font-weight="700">升温 1 kg 水 1 K</text>
+<text x="382" y="405" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">机械功与热只是同一种货币！</text>
+<line x1="496.0" y1="250.0" x2="514.0" y2="250.0" stroke="#18794e" stroke-width="2" marker-end="url(#arr-green)"/>
+<rect x="518" y="68" width="220" height="368" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="538" cy="90" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="538" y="94" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">3</text>
+<text x="556" y="95" font-size="13" fill="#0f172a" text-anchor="start" font-weight="700">热力学第一定律：宇宙总账</text>
+<rect x="530" y="110" width="196" height="128" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="628" y="130" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="700">新状态参量：内能 U（微观总账）</text>
+<circle cx="554" cy="158" r="4.5" fill="#6d28d9"/>
+<line x1="554.0" y1="158.0" x2="566.0" y2="150.0" stroke="#6d28d9" stroke-width="1.4"/>
+<circle cx="592" cy="174" r="4.5" fill="#6d28d9"/>
+<line x1="592.0" y1="174.0" x2="579.0" y2="165.0" stroke="#6d28d9" stroke-width="1.4"/>
+<circle cx="632" cy="154" r="4.5" fill="#6d28d9"/>
+<line x1="632.0" y1="154.0" x2="643.0" y2="164.0" stroke="#6d28d9" stroke-width="1.4"/>
+<circle cx="674" cy="170" r="4.5" fill="#6d28d9"/>
+<line x1="674.0" y1="170.0" x2="662.0" y2="178.0" stroke="#6d28d9" stroke-width="1.4"/>
+<circle cx="700" cy="152" r="4.5" fill="#6d28d9"/>
+<line x1="700.0" y1="152.0" x2="690.0" y2="142.0" stroke="#6d28d9" stroke-width="1.4"/>
+<circle cx="572" cy="192" r="4.5" fill="#6d28d9"/>
+<line x1="572.0" y1="192.0" x2="586.0" y2="197.0" stroke="#6d28d9" stroke-width="1.4"/>
+<circle cx="652" cy="192" r="4.5" fill="#6d28d9"/>
+<line x1="652.0" y1="192.0" x2="641.0" y2="185.0" stroke="#6d28d9" stroke-width="1.4"/>
+<text x="628" y="216" font-size="11.5" fill="#1e293b" text-anchor="middle">U = Σ(分子平动/转动/振动动能</text>
+<text x="628" y="232" font-size="11.5" fill="#1e293b" text-anchor="middle">    + 分子间相互作用势能)</text>
+<rect x="530" y="250" width="196" height="172" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="628" y="272" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700">静止闭系第一定律：</text>
+<text x="628" y="296" font-size="15" fill="#1d6fa5" text-anchor="middle" font-weight="700">ΔU = Q − W对外</text>
+<text x="540" y="320" font-size="11.5" fill="#1e293b" text-anchor="start">• 吸热 Q &gt; 0：热传递存入能量</text>
+<text x="540" y="340" font-size="11.5" fill="#1e293b" text-anchor="start">• 对外做功 W对外 &gt; 0：对外支取</text>
+<text x="540" y="360" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">• 总账：Δ(Ek+Ep+U) = Q − W</text>
+<line x1="542.0" y1="374.0" x2="714.0" y2="374.0" stroke="#93c5fd" stroke-width="1"/>
+<text x="628" y="393" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">深层根源：1918 诺特定理</text>
+<text x="628" y="411" font-size="11" fill="#64748b" text-anchor="middle">物理定律的时间平移对称性 ⇒ 能量守恒</text>
+<rect x="22" y="448" width="716" height="46" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="380" y="476" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="600">一句话贯通：力学守恒只看“整块物体齐步走”（1 个宏观自由度），热力学把“分子乱撞的热运动”并表入账，能量分毫未损！</text>
+</svg>

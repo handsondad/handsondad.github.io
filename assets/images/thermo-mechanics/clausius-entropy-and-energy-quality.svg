@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="512" viewBox="0 0 760 512" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">克劳修斯熵状态参量诞生与能量守恒下的品质贬值图解</title>
+<desc id="desc">左图对比 1,000 J 热量注入 1,000 K 高温炉(+1 J/K)与 250 K 冰窖(+4 J/K)说明 dS=δQrev/T 如何成为状态参量；右图用 1 kWh 电能耗散为 25℃ 室温内能(+12,074 J/K)解释为何能量守恒仍需节约能源。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="511" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">克劳修斯的神来之笔（dS = δQrev/T）与终极反问：能量守恒，为啥还要省电？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">第一定律管“总金额一分不少”，第二定律与状态参量“熵 S”管“整钞一旦花成散碎硬币就捡不回来了”</text>
+<rect x="22" y="68" width="350" height="374" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="90" r="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="42" y="94" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">1</text>
+<text x="60" y="95" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">1865 克劳修斯：除以 T，过程量变态函数！</text>
+<rect x="34" y="112" width="326" height="132" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="197" y="133" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">同样输入 δQ = +1,000 J 热量，冲击力一样吗？</text>
+<rect x="46" y="146" width="144" height="86" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="118" y="166" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">1,000 K 炼钢炉</text>
+<text x="118" y="187" font-size="11" fill="#1e293b" text-anchor="middle">像在嘈杂菜市场喊一声</text>
+<text x="118" y="212" font-size="11" fill="#c25014" text-anchor="middle" font-weight="700">ΔS = 1000/1000 = +1 J/K</text>
+<rect x="204" y="146" width="144" height="86" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="276" y="166" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">250 K 寂静冰窖</text>
+<text x="276" y="187" font-size="11" fill="#1e293b" text-anchor="middle">像在安静图书馆喊一声</text>
+<text x="276" y="212" font-size="11" fill="#1d6fa5" text-anchor="middle" font-weight="700">ΔS = 1000/250 = +4 J/K</text>
+<rect x="34" y="256" width="326" height="174" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="197" y="280" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700">数学奇迹：积分因子 1/T 消除路径依赖</text>
+<text x="197" y="308" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="700">∮ δQrev ≠ 0   ──除以 T──▶   ∮ (δQrev / T) = 0</text>
+<text x="48" y="336" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">• 定义新状态参量“熵”：dS = δQrev / T</text>
+<text x="48" y="358" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">• 微观真身（玻尔兹曼墓碑公式）：S = kB ln Ω</text>
+<text x="48" y="380" font-size="11" fill="#1e293b" text-anchor="start">  Ω 是同一宏观态对应的微观排列方式总数</text>
+<text x="48" y="404" font-size="11.5" fill="#b91c1c" text-anchor="start" font-weight="700">• 不可逆自发过程铁律：ΔS总 = ΔS系统 + ΔS环境 &gt; 0</text>
+<rect x="388" y="68" width="350" height="374" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="408" cy="90" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="408" y="94" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="426" y="95" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">1 度电开风扇吹一晚：数量 100% 在，品质归零</text>
+<rect x="400" y="112" width="326" height="86" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="414" y="134" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">输入：1 kWh 电能 = 3,600,000 J（高品位自由能）</text>
+<text x="414" y="156" font-size="11.5" fill="#1e293b" text-anchor="start">• 电子定向驱动电机做功，携带的熵增 ΔS电 = 0 J/K</text>
+<text x="414" y="178" font-size="11" fill="#18794e" text-anchor="start" font-weight="600">• 可用能（Exergy）占比 = 100%，可提重物 367 吨升 1 米！</text>
+<line x1="563.0" y1="200.0" x2="563.0" y2="224.0" stroke="#c25014" stroke-width="2.2" marker-end="url(#arr-orange)"/>
+<text x="575" y="216" font-size="11" fill="#c25014" text-anchor="start" font-weight="600">叶片搅动空气粘滞摩擦生热</text>
+<rect x="400" y="224" width="326" height="98" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="412" y="245" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">输出：25℃(298.15 K) 空气升温 → ΔU = +3.60 MJ</text>
+<text x="412" y="266" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">• 第一定律：总能量 3.60 MJ（一焦耳都没丢！）</text>
+<text x="412" y="287" font-size="11.5" fill="#b91c1c" text-anchor="start" font-weight="700">• 第二定律：ΔS = 3.6×10⁶/298.15 = +12,074 J/K</text>
+<text x="412" y="308" font-size="11" fill="#1e293b" text-anchor="start">• 无温差(TH=TC) ⇒ 卡诺效率 η=0，可用功 = 0 J</text>
+<rect x="400" y="330" width="326" height="102" rx="8" fill="#fef2f2" stroke="#b91c1c" stroke-width="1"/>
+<text x="563" y="350" font-size="11.5" fill="#b91c1c" text-anchor="middle" font-weight="700">反例：为何温水不会自发半边结冰、半边沸腾？</text>
+<text x="412" y="371" font-size="11" fill="#1e293b" text-anchor="start">• 左半降温放热给右半升温：ΔU=0 不违背第一定律</text>
+<text x="412" y="392" font-size="11" fill="#0f172a" text-anchor="start" font-weight="600">• 但高温吸热 ΔS正 &lt; 低温放热 |ΔS负|，导致</text>
+<text x="412" y="412" font-size="11" fill="#b91c1c" text-anchor="start" font-weight="700">  总熵变 ΔS总 &lt; 0，被第二定律一票否决！</text>
+<rect x="22" y="454" width="716" height="44" rx="8" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<text x="380" y="481" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">克劳修斯 1865 名言：“宇宙的能量是恒定的（第一定律）；宇宙的熵趋于极大值（第二定律）。”省电省的是低熵可用能！</text>
+</svg>

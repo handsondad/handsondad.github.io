@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="532" viewBox="0 0 760 532" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">全球主流航天发射场地球自转线速度对比与齐奥尔科夫斯基载荷增益图</title>
+<desc id="desc">左栏按纬度余弦公式对比赤道、库鲁、文昌、卡纳维拉尔角、酒泉与拜科努尔的东向自转线速度，右栏解析火箭方程指数放大效应与赤道静止轨道倾角变轨节省原理。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-b" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#1d6fa5"/>
+    </marker>
+    <marker id="arr-o" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#c25014"/>
+    </marker>
+    <marker id="arr-g" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#18794e"/>
+    </marker>
+    <marker id="arr-p" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#6d28d9"/>
+    </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="531" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">第一重旋转：借地球自转的“免费弹弓”——为什么文昌比酒泉天生多赚 87 m/s？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">先看左栏全球五大发射场随纬度余弦衰减的初始东向线速度 → 再看右栏齐奥尔科夫斯基公式如何把小速度放大成大载荷</text>
+<rect x="22" y="68" width="418" height="446" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="92" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="42" y="96" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="62" y="97" font-size="12.2" fill="#0f172a" text-anchor="start" font-weight="700">地球自西向东转：站在赤道不动已超 1.36 倍音速！</text>
+<text x="42" y="117" font-size="10.5" fill="#64748b" text-anchor="start">各纬度东向初始线速度 v(φ) = 465.1 × cos φ（单位：m/s）</text>
+<text x="38" y="162" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">赤道理想极限 (0.0°)</text>
+<rect x="194.0" y="148" width="224.0" height="20" rx="6" fill="#f1f5f9" stroke="#e2e8f0"/>
+<rect x="194.0" y="148" width="217.0" height="20" rx="6" fill="#6d28d9" opacity="0.88"/>
+<text x="202.0" y="162" font-size="10.5" fill="#ffffff" text-anchor="start" font-weight="700">465 m/s</text>
+<text x="194.0" y="183" font-size="10.5" fill="#1e293b" text-anchor="start">1,674 km/h（理论满额弹弓）</text>
+<text x="38" y="216" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">法属圭亚那库鲁 (5.2°N)</text>
+<rect x="194.0" y="202" width="224.0" height="20" rx="6" fill="#f1f5f9" stroke="#e2e8f0"/>
+<rect x="194.0" y="202" width="216.2" height="20" rx="6" fill="#18794e" opacity="0.88"/>
+<text x="202.0" y="216" font-size="10.5" fill="#ffffff" text-anchor="start" font-weight="700">463 m/s</text>
+<text x="194.0" y="237" font-size="10.5" fill="#1e293b" text-anchor="start">欧空局王牌港，吃满 99.6% 红利</text>
+<text x="38" y="270" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">中国海南文昌 (19.6°N)</text>
+<rect x="194.0" y="256" width="224.0" height="20" rx="6" fill="#f1f5f9" stroke="#e2e8f0"/>
+<rect x="194.0" y="256" width="204.4" height="20" rx="6" fill="#c25014" opacity="0.88"/>
+<text x="202.0" y="270" font-size="10.5" fill="#ffffff" text-anchor="start" font-weight="700">438 m/s</text>
+<text x="194.0" y="291" font-size="10.5" fill="#1e293b" text-anchor="start">长征五号母港，比酒泉多送 87 m/s！</text>
+<text x="38" y="324" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">美国卡纳维拉尔角 (28.5°N)</text>
+<rect x="194.0" y="310" width="224.0" height="20" rx="6" fill="#f1f5f9" stroke="#e2e8f0"/>
+<rect x="194.0" y="310" width="190.7" height="20" rx="6" fill="#1d6fa5" opacity="0.88"/>
+<text x="202.0" y="324" font-size="10.5" fill="#ffffff" text-anchor="start" font-weight="700">409 m/s</text>
+<text x="194.0" y="345" font-size="10.5" fill="#1e293b" text-anchor="start">阿波罗与猎鹰主力港（87.9%）</text>
+<text x="38" y="378" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">中国甘肃酒泉 (41.0°N)</text>
+<rect x="194.0" y="364" width="224.0" height="20" rx="6" fill="#f1f5f9" stroke="#e2e8f0"/>
+<rect x="194.0" y="364" width="163.9" height="20" rx="6" fill="#1d6fa5" opacity="0.88"/>
+<text x="202.0" y="378" font-size="10.5" fill="#ffffff" text-anchor="start" font-weight="700">351 m/s</text>
+<text x="194.0" y="399" font-size="10.5" fill="#1e293b" text-anchor="start">内陆高纬载人港（75.5%）</text>
+<text x="38" y="432" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">哈萨克拜科努尔 (46.0°N)</text>
+<rect x="194.0" y="418" width="224.0" height="20" rx="6" fill="#f1f5f9" stroke="#e2e8f0"/>
+<rect x="194.0" y="418" width="150.9" height="20" rx="6" fill="#475569" opacity="0.88"/>
+<text x="202.0" y="432" font-size="10.5" fill="#ffffff" text-anchor="start" font-weight="700">323 m/s</text>
+<text x="194.0" y="453" font-size="10.5" fill="#1e293b" text-anchor="start">苏联早期高纬港（仅剩 69.5%）</text>
+<rect x="38" y="468" width="386" height="32" rx="8" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<text x="231" y="489" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">注：北极点 cos 90° = 0（原地自转线速度为 0，半点顺风车也蹭不到）</text>
+<rect x="454" y="68" width="284" height="446" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="474" cy="92" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="474" y="96" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="494" y="97" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">才省 400 多米/秒，凭啥省出几吨载荷？</text>
+<text x="474" y="117" font-size="10.5" fill="#64748b" text-anchor="start">火箭方程的“指数暴政”＋赤道变轨双杀红利</text>
+<rect x="470" y="136" width="252" height="166" rx="8" fill="#fef1e8" stroke="#fdba74" stroke-width="1"/>
+<text x="596" y="158" font-size="11.0" fill="#c25014" text-anchor="middle" font-weight="700">第一重暴击：燃料也要烧燃料推着飞！</text>
+<text x="596" y="182" font-size="11.2" fill="#0f172a" text-anchor="middle" font-weight="700">入轨总需求 Δv ≈ 9,300 m/s</text>
+<text x="484" y="206" font-size="10.5" fill="#1e293b" text-anchor="start">● 无自转借力：质量比 m₀/mf ≈ 18.3</text>
+<text x="484" y="226" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="700">● 文昌顺风东射：质量比降至 ≈ 16.0</text>
+<text x="484" y="248" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">→ 同样起飞总重，入轨干重提升约 +14.7%！</text>
+<text x="484" y="269" font-size="10.5" fill="#64748b" text-anchor="start">因为被省掉的是最底层要托举全箭的燃料，</text>
+<text x="484" y="288" font-size="10.5" fill="#64748b" text-anchor="start">每少带 1 吨末级燃料，起飞少装十几吨！</text>
+<rect x="470" y="316" width="252" height="182" rx="8" fill="#e7f6ee" stroke="#86efac" stroke-width="1"/>
+<text x="596" y="338" font-size="11.0" fill="#18794e" text-anchor="middle" font-weight="700">第二重暴击：地球静止轨道（GEO）倾角税</text>
+<text x="484" y="362" font-size="10.5" fill="#1e293b" text-anchor="start">静止通信卫星必须悬在 0° 赤道正上空。</text>
+<text x="484" y="383" font-size="10.5" fill="#1e293b" text-anchor="start">发射场纬度 φ 越高，入轨轨道面越歪，</text>
+<text x="484" y="404" font-size="10.5" fill="#1e293b" text-anchor="start">在远地点强行把轨道“掰平”需额外消耗：</text>
+<text x="596" y="428" font-size="11.2" fill="#18794e" text-anchor="middle" font-weight="700">Δv_掰平 = 2 v sin(Δi / 2)</text>
+<text x="484" y="452" font-size="10.5" fill="#0f172a" text-anchor="start">库鲁（5.2°）几乎不用掰弯；而西昌/卡角</text>
+<text x="484" y="471" font-size="10.6" fill="#18794e" text-anchor="start" font-weight="700">转向文昌后，GTO 运力直接暴增 15%–25%！</text>
+</svg>

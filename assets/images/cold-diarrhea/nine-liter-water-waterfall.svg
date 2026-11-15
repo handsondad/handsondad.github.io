@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="452" viewBox="0 0 760 452" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">人体每日9升消化液平衡账与受凉结肠过快推进导致水分漏收腹泻对比动画图</title>
+<desc id="desc">顶部展示每日9000毫升肠液中7200毫升由小肠吸收、1800毫升稀食糜进入大肠；中栏慢速动画演示正常12至36小时吸回1650毫升水仅留150毫升成型便；下栏快速动画演示着凉推进波将停留缩短至1至3小时，漏收约500毫升水即排出630毫升水样便。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes slowKnead {
+    0% { transform: translateX(0px); }
+    100% { transform: translateX(176px); }
+  }
+  @keyframes fastPurge {
+    0% { transform: translateX(0px); }
+    100% { transform: translateX(272px); }
+  }
+  .bolus-normal {
+    animation: slowKnead 4.2s ease-in-out 1 forwards;
+  }
+  .bolus-chill {
+    animation: fastPurge 1.3s cubic-bezier(0.2, 0.8, 0.3, 1) 1 forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .bolus-normal, .bolus-chill {
+      animation: none !important;
+      transform: none !important;
+    }
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="451" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">你明明没多喝水，拉出来的半盆稀水是从哪来的？—— 每天 9 升消化液的“过站不停”账</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">肠道每天要回收 9,000 mL 液体！大肠只要因为蠕动太快漏收区区 500 mL（不到总量 6%），就会决堤成水样腹泻</text>
+<rect x="20" y="62" width="720" height="102" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 惊人的每日肠道流水账：你肚子里每天流淌着 9.0 升（18 瓶矿泉水）液体！</text>
+<rect x="36" y="94" width="206" height="58" rx="6" fill="#ffffff" stroke="#1d6fa5" stroke-width="1"/>
+<text x="139" y="114" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">上游总注入：9,000 mL / 天</text>
+<text x="139" y="132" font-size="8.9" fill="#1e293b" text-anchor="middle">饮食水 2.0 L + 自产消化液 7.0 L</text>
+<text x="139" y="146" font-size="8.5" fill="#64748b" text-anchor="middle">(唾液1.5+胃2.0+胰1.5+胆0.8+肠1.2)</text>
+<line x1="244.0" y1="123.0" x2="270.0" y2="123.0" stroke="#1d6fa5" stroke-width="2.0" marker-end="url(#arr-blue)"/>
+<rect x="274" y="94" width="212" height="58" rx="6" fill="#ffffff" stroke="#18794e" stroke-width="1"/>
+<text x="380" y="114" font-size="9.6" fill="#18794e" text-anchor="middle" font-weight="700">主力吸水段：小肠（2–5 小时）</text>
+<text x="380" y="132" font-size="9.0" fill="#0f172a" text-anchor="middle" font-weight="700">重吸收约 7,200 mL（占 80%）</text>
+<text x="380" y="146" font-size="8.7" fill="#1e293b" text-anchor="middle">靠营养素与 Na⁺ 耦联把大头吸干</text>
+<line x1="488.0" y1="123.0" x2="514.0" y2="123.0" stroke="#c25014" stroke-width="2.0" marker-end="url(#arr-orange)"/>
+<rect x="518" y="94" width="206" height="58" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="621" y="114" font-size="9.6" fill="#c25014" text-anchor="middle" font-weight="700">交接给大肠：1,800 mL 稀糊食糜!</text>
+<text x="621" y="132" font-size="8.9" fill="#0f172a" text-anchor="middle" font-weight="600">刚过回盲瓣时，食糜本来就是稀水状!</text>
+<text x="621" y="146" font-size="8.7" fill="#1e293b" text-anchor="middle">全靠大肠慢工出细活把它“拧干”成型</text>
+<rect x="20" y="176" width="720" height="124" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="198" font-size="10.6" fill="#18794e" text-anchor="start" font-weight="700">② 正常模式（大肠慢速精炼 12–36 小时）：从容吸走 1,650 mL 水 → 排出健康成型软便</text>
+<rect x="36" y="214" width="446" height="44" rx="22" fill="#e7f6ee" stroke="#18794e" stroke-width="1.8"/>
+<text x="92" y="240" font-size="9.0" fill="#0f172a" text-anchor="middle" font-weight="700">入口: 1,800 mL 稀食糜</text>
+<line x1="176.0" y1="256.0" x2="176.0" y2="278.0" stroke="#18794e" stroke-width="1.8" marker-end="url(#arr-green)"/>
+<line x1="246.0" y1="256.0" x2="246.0" y2="278.0" stroke="#18794e" stroke-width="1.8" marker-end="url(#arr-green)"/>
+<line x1="316.0" y1="256.0" x2="316.0" y2="278.0" stroke="#18794e" stroke-width="1.8" marker-end="url(#arr-green)"/>
+<line x1="386.0" y1="256.0" x2="386.0" y2="278.0" stroke="#18794e" stroke-width="1.8" marker-end="url(#arr-green)"/>
+<text x="281" y="290" font-size="9.0" fill="#18794e" text-anchor="middle" font-weight="700">上皮细胞 Na⁺ 泵充裕工作 24 小时 → 吸回 1,650 mL 水进血液!</text>
+<g class="bolus-normal">
+<circle cx="170" cy="236" r="13" fill="#18794e" opacity="0.88"/>
+<text x="170" y="240" font-size="9.0" fill="#ffffff" text-anchor="middle" font-weight="700">慢</text>
+</g>
+<rect x="500" y="208" width="224" height="78" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="612" y="230" font-size="10.2" fill="#18794e" text-anchor="middle" font-weight="700">最终粪便含水仅 ~150 mL</text>
+<text x="612" y="250" font-size="9.2" fill="#0f172a" text-anchor="middle" font-weight="700">大肠脱水效率高达 91.7%</text>
+<text x="612" y="269" font-size="9.0" fill="#1e293b" text-anchor="middle">（布里斯托 3–4 型香蕉软便）</text>
+<rect x="20" y="312" width="720" height="128" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="334" font-size="10.6" fill="#dc2626" text-anchor="start" font-weight="700">③ 着凉模式（GMC 推进波狂飙 1–3 小时过站不停！）：没来得及吸干就直接冲出肛门</text>
+<rect x="36" y="350" width="446" height="44" rx="22" fill="#fef2f2" stroke="#dc2626" stroke-width="2.0"/>
+<text x="92" y="376" font-size="9.0" fill="#0f172a" text-anchor="middle" font-weight="700">入口: 1,800 mL 稀食糜</text>
+<line x1="164.0" y1="372.0" x2="424.0" y2="372.0" stroke="#dc2626" stroke-width="2.0" stroke-dasharray="6,3" marker-end="url(#arr-orange)"/>
+<text x="281" y="426" font-size="9.0" fill="#dc2626" text-anchor="middle" font-weight="700">停留时间缩短 8–10 倍 + 隐窝轻度分泌 (~80 mL) → 漏收近 500 mL 水!</text>
+<g class="bolus-chill">
+<circle cx="164" cy="372" r="14" fill="#dc2626"/>
+<text x="164" y="376" font-size="9.0" fill="#ffffff" text-anchor="middle" font-weight="700">急!</text>
+</g>
+<rect x="500" y="344" width="224" height="82" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1"/>
+<text x="612" y="366" font-size="10.2" fill="#dc2626" text-anchor="middle" font-weight="700">瞬间排出 ~630 mL 稀水便!</text>
+<text x="612" y="386" font-size="9.1" fill="#0f172a" text-anchor="middle" font-weight="700">并非凭空造水，而是回收来不及!</text>
+<text x="612" y="405" font-size="9.0" fill="#1e293b" text-anchor="middle">（布里斯托 6–7 型糊状/水样便）</text>
+</svg>

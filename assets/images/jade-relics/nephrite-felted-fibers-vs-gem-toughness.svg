@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="518" viewBox="0 0 760 518" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">软玉毛毡状纤维交织结构与GIA宝石断裂韧性对比图</title>
+<desc id="desc">左图对比软玉微米纤维束阻断裂纹与单晶宝石解理劈裂，右图按真实比例绘制GIA断裂韧性标度（软玉225,000对比刚玉600）</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="517" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="380.0" y="30" font-size="19" fill="#1e293b" text-anchor="middle" font-weight="700">硬度只排中游的玉，凭什么是宝石界“最抗砸的冠军”？</text>
+<text x="380.0" y="52" font-size="12.2" fill="#64748b" text-anchor="middle">抗刮擦看“莫氏硬度”，抗砸裂看“断裂韧性”——毛毡般绞抱的微晶纤维让软玉韧性高达刚玉的 375 倍</text>
+<rect x="22" y="68" width="344" height="428" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="40" y="95" font-size="14.8" fill="#115e59" text-anchor="start" font-weight="700">显微密码：毛毡交织纤维 vs 平直解理面</text>
+<rect x="38" y="112" width="312" height="174" rx="10" fill="#f0fdfa" stroke="#5eead4" stroke-width="1"/>
+<text x="52" y="134" font-size="12.2" fill="#115e59" text-anchor="start" font-weight="700">① 软玉（透闪石）：乱向拧绞的“微米藤甲”</text>
+<path d="M 56 162 Q 98 148 142 168 T 218 158" fill="none" stroke="#0d9488" stroke-width="2.6" opacity="0.72"/>
+<path d="M 54 182 Q 104 198 148 174 T 220 188" fill="none" stroke="#0d9488" stroke-width="2.6" opacity="0.72"/>
+<path d="M 60 204 Q 108 182 154 210 T 216 202" fill="none" stroke="#0d9488" stroke-width="2.6" opacity="0.72"/>
+<path d="M 58 222 Q 102 234 150 214 T 218 226" fill="none" stroke="#0d9488" stroke-width="2.6" opacity="0.72"/>
+<path d="M 82 150 Q 96 192 78 232" fill="none" stroke="#0d9488" stroke-width="2.6" opacity="0.72"/>
+<path d="M 126 150 Q 112 192 134 232" fill="none" stroke="#0d9488" stroke-width="2.6" opacity="0.72"/>
+<path d="M 172 150 Q 188 190 166 232" fill="none" stroke="#0d9488" stroke-width="2.6" opacity="0.72"/>
+<polyline points="136,146 132,164 146,174 138,188" fill="none" stroke="#dc2626" stroke-width="3"/>
+<circle cx="138" cy="188" r="4.5" fill="#dc2626"/>
+<text x="232" y="172" font-size="10.8" fill="#dc2626" text-anchor="start" font-weight="700">外力裂纹撞上</text>
+<text x="232" y="190" font-size="10.8" fill="#1e293b" text-anchor="start">乱向纤维束，被</text>
+<text x="232" y="208" font-size="10.8" fill="#1e293b" text-anchor="start">迫拐弯分叉耗尽</text>
+<text x="232" y="226" font-size="10.8" fill="#115e59" text-anchor="start" font-weight="700">能量，砸不碎！</text>
+<text x="52" y="256" font-size="10.6" fill="#1e293b" text-anchor="start">• 旧石器“打制劈裂法”对它完全失效，逼出研磨工艺</text>
+<text x="52" y="274" font-size="10.6" fill="#1e293b" text-anchor="start">• 硬玉（翡翠）为粒状变晶镶嵌，韧性居亚军但光泽更亮</text>
+<rect x="38" y="298" width="312" height="180" rx="10" fill="#fef1e8" stroke="#fdba74" stroke-width="1"/>
+<text x="52" y="320" font-size="12.2" fill="#c25014" text-anchor="start" font-weight="700">② 钻石 / 单晶宝石：极硬，但有平直“解理面”</text>
+<polygon points="84,344 156,344 182,380 120,428 58,380" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+<line x1="72" y1="358" x2="168" y2="404" stroke="#dc2626" stroke-width="2.8" stroke-dasharray="5 3"/>
+<text x="200" y="366" font-size="10.8" fill="#dc2626" text-anchor="start" font-weight="700">铁锤猛敲解理方向：</text>
+<text x="200" y="385" font-size="10.8" fill="#1e293b" text-anchor="start">裂纹沿整齐原子平面</text>
+<text x="200" y="404" font-size="10.8" fill="#1e293b" text-anchor="start">一劈到底瞬间崩裂！</text>
+<text x="52" y="448" font-size="10.6" fill="#1e293b" text-anchor="start">• 钻石莫氏硬度 10（谁也划不动它），却怕重锤猛磕；</text>
+<text x="52" y="466" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">• 软玉莫氏硬度仅 6–6.5（会被石英砂划伤），却极耐冲击！</text>
+<rect x="380" y="68" width="358" height="428" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="398" y="95" font-size="14.5" fill="#1d6fa5" text-anchor="start" font-weight="700">GIA 宝石耐用性实测：断裂韧性 vs 莫氏硬度</text>
+<text x="398" y="115" font-size="11" fill="#64748b" text-anchor="start">断裂功相对标度（数值越大越抗砸裂，注意悬殊倍数！）</text>
+<text x="398" y="150" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">软玉（和田玉/良渚玉）</text>
+<text x="720" y="150" font-size="10.8" fill="#0d9488" text-anchor="end" font-weight="700">莫氏 6.0–6.5</text>
+<rect x="398" y="158" width="304.0" height="18" rx="5" fill="#f1f5f9"/>
+<rect x="398" y="158" width="304.0" height="18" rx="5" fill="#0d9488"/>
+<text x="408" y="171" font-size="10.5" fill="#ffffff" text-anchor="start" font-weight="700">225,000（抗砸总冠军！）</text>
+<text x="398" y="212" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">硬玉（缅甸翡翠）</text>
+<text x="720" y="212" font-size="10.8" fill="#18794e" text-anchor="end" font-weight="700">莫氏 6.5–7.0</text>
+<rect x="398" y="220" width="304.0" height="18" rx="5" fill="#f1f5f9"/>
+<rect x="398" y="220" width="162.1" height="18" rx="5" fill="#18794e"/>
+<text x="408" y="233" font-size="10.5" fill="#ffffff" text-anchor="start" font-weight="700">120,000（微晶颗粒交织）</text>
+<text x="398" y="274" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">金刚石（钻石）</text>
+<text x="720" y="274" font-size="10.8" fill="#c25014" text-anchor="end" font-weight="700">莫氏 10（最抗刮）</text>
+<rect x="398" y="282" width="304.0" height="18" rx="5" fill="#f1f5f9"/>
+<rect x="398" y="282" width="10.1" height="18" rx="5" fill="#c25014"/>
+<text x="416.1" y="295" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">5,000–8,000（具八面体解理）</text>
+<text x="398" y="336" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">石英（解玉砂主力）</text>
+<text x="720" y="336" font-size="10.8" fill="#1d6fa5" text-anchor="end" font-weight="700">莫氏 7.0</text>
+<rect x="398" y="344" width="304.0" height="18" rx="5" fill="#f1f5f9"/>
+<rect x="398" y="344" width="4.0" height="18" rx="5" fill="#1d6fa5"/>
+<text x="410.0" y="357" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">~1,000（比软玉硬，可磨玉！）</text>
+<text x="398" y="398" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">刚玉（红蓝宝石）</text>
+<text x="720" y="398" font-size="10.8" fill="#6d28d9" text-anchor="end" font-weight="700">莫氏 9.0</text>
+<rect x="398" y="406" width="304.0" height="18" rx="5" fill="#f1f5f9"/>
+<rect x="398" y="406" width="4.0" height="18" rx="5" fill="#6d28d9"/>
+<text x="410.0" y="419" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">600（软玉韧性是它的 375 倍）</text>
+<rect x="396" y="446" width="326" height="36" rx="8" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<text x="559" y="469" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1863 年法国矿物学家达穆尔首次测出“软玉”与“硬玉”分属两族矿物</text>
+</svg>

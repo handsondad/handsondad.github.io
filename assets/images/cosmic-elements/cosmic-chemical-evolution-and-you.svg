@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="492" viewBox="0 0 760 492" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">138亿年宇宙三代恒星（Pop III/II/I）重元素演化与70公斤成年人体元素宇宙产地账单图</title>
+<desc id="desc">上半部分展示从零金属第三星族巨星、贫金属第二星族到富含1.4%重元素的第一星族太阳系演化；下半部分按70 kg人体质量拆解氧65%、碳18.5%、大爆炸氢9.5%、白矮星与超新星铁4.2g、中子星并合碘20mg的宇宙来源。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#6d28d9"/>
+  </marker>
+  <marker id="arr-crimson" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#b91c1c"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="491" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">138 亿年宇宙化学接力与你的身体：三代恒星演化及“人体 70 kg 产地账单”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">宇宙重元素丰度（Z）从 0% 一代代攒到太阳系的 1.4%，才凝结出岩质地球与我们一身滚烫的星尘</text>
+<rect x="16" y="68" width="728" height="186" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="28.0" y="80.0" width="342" height="24" rx="12.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="199.0" y="96.3" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">上半场：138 亿年三代恒星“重元素（金属丰度 Z）”接力赛</text>
+<text x="380" y="96" font-size="11" fill="#64748b" text-anchor="start">天文学把氢、氦以外的所有元素统称“金属”</text>
+<rect x="28" y="114" width="224" height="126" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="38" y="134" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">第三星族 Pop III（最早!）</text>
+<text x="38" y="152" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600">宇宙约 1–3 亿岁 · Z = 0%</text>
+<text x="38" y="173" font-size="10.2" fill="#1e293b" text-anchor="start">纯大爆炸氢氦云凝结，缺碳氧冷却，长成数</text>
+<text x="38" y="189" font-size="10.2" fill="#1e293b" text-anchor="start">十至上百倍太阳质量巨兽；仅活几百万年便</text>
+<text x="38" y="205" font-size="10.2" fill="#1e293b" text-anchor="start">轰然爆炸，播撒宇宙第一批碳、氧、硅、铁</text>
+<text x="38" y="221" font-size="10.2" fill="#1e293b" text-anchor="start">！</text>
+<rect x="268" y="114" width="224" height="126" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="1.2"/>
+<text x="278" y="134" font-size="11.5" fill="#b45309" text-anchor="start" font-weight="700">第二星族 Pop II（贫金属）</text>
+<text x="278" y="152" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600">宇宙约 3–80 亿岁 · Z ≈ 0.01%</text>
+<text x="278" y="173" font-size="10.2" fill="#1e293b" text-anchor="start">含微量重元素，寿命可达百亿年（至今仍存</text>
+<text x="278" y="189" font-size="10.2" fill="#1e293b" text-anchor="start">于银河系晕与球状星团）；但硅镁铁尘埃太</text>
+<text x="278" y="205" font-size="10.2" fill="#1e293b" text-anchor="start">稀薄，尚难大量孕育类地岩质行星。</text>
+<rect x="508" y="114" width="224" height="126" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="518" y="134" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">第一星族 Pop I（太阳与地球）</text>
+<text x="518" y="152" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600">92 亿岁太阳诞生 · Z☉ ≈ 1.4%</text>
+<text x="518" y="173" font-size="10.2" fill="#1e293b" text-anchor="start">浓缩前百代超新星、AGB 星风、白矮星</text>
+<text x="518" y="189" font-size="10.2" fill="#1e293b" text-anchor="start">与中子星遗产！就靠这 1.4% 的“重</text>
+<text x="518" y="205" font-size="10.2" fill="#1e293b" text-anchor="start">元素佐料”，凝聚出了地球铁核、硅酸盐地</text>
+<text x="518" y="221" font-size="10.2" fill="#1e293b" text-anchor="start">壳与生命海洋。</text>
+<line x1="254.0" y1="176.0" x2="266.0" y2="176.0" stroke="#475569" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arr-muted)"/>
+<line x1="494.0" y1="176.0" x2="506.0" y2="176.0" stroke="#475569" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arr-muted)"/>
+<rect x="16" y="266" width="728" height="210" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="28.0" y="278.0" width="324" height="24" rx="12.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="190.0" y="294.3" font-size="12" fill="#c25014" text-anchor="middle" font-weight="600">下半场：一个 70 kg 成年人体的“宇宙产地溯源账单”</text>
+<text x="362" y="294" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">你体重的 90.5% 诞生于恒星熔炉与星体爆炸！</text>
+<rect x="28" y="312" width="456" height="30" rx="4" fill="#18794e"/>
+<text x="256.0" y="332" font-size="10.5" fill="#ffffff" text-anchor="middle" font-weight="700">氧 O 65% (45.5kg)</text>
+<rect x="484" y="312" width="130" height="30" rx="4" fill="#0f766e"/>
+<text x="549.0" y="332" font-size="10.5" fill="#ffffff" text-anchor="middle" font-weight="700">碳 C 18.5% (13kg)</text>
+<rect x="614" y="312" width="67" height="30" rx="4" fill="#1d6fa5"/>
+<text x="647.5" y="332" font-size="10.5" fill="#ffffff" text-anchor="middle" font-weight="700">氢 9.5%</text>
+<rect x="681" y="312" width="51" height="30" rx="4" fill="#6d28d9"/>
+<text x="706.5" y="332" font-size="10.5" fill="#ffffff" text-anchor="middle" font-weight="700">氮钙铁碘</text>
+<rect x="28" y="354" width="174" height="108" rx="8" fill="#e7f6ee" stroke="#e2e8f0"/>
+<text x="38" y="374" font-size="11" fill="#18794e" text-anchor="start" font-weight="700">大质量恒星 &amp; 红巨星</text>
+<text x="38" y="393" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">≈ 63.3 kg（90.5%）</text>
+<text x="38" y="414" font-size="10.2" fill="#1e293b" text-anchor="start">呼吸的水氧、DNA 碳氮骨架</text>
+<text x="38" y="431" font-size="10.2" fill="#1e293b" text-anchor="start">、骨骼钙磷全由恒星聚变锻造。</text>
+<rect x="210" y="354" width="168" height="108" rx="8" fill="#eaf4fb" stroke="#e2e8f0"/>
+<text x="220" y="374" font-size="11" fill="#1d6fa5" text-anchor="start" font-weight="700">宇宙大爆炸前 3 分钟</text>
+<text x="220" y="393" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">≈ 6.65 kg（9.5%）</text>
+<text x="220" y="414" font-size="10.2" fill="#1e293b" text-anchor="start">体内所有水分子和有机物里的氢</text>
+<text x="220" y="431" font-size="10.2" fill="#1e293b" text-anchor="start">(H)，已满 138 亿岁高</text>
+<text x="220" y="448" font-size="10.2" fill="#1e293b" text-anchor="start">龄！</text>
+<rect x="386" y="354" width="172" height="108" rx="8" fill="#fef2f2" stroke="#e2e8f0"/>
+<text x="396" y="374" font-size="11" fill="#b91c1c" text-anchor="start" font-weight="700">白矮星 Ia + 坍缩超新星</text>
+<text x="396" y="393" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">≈ 4.2 g 铁 + 锌铜</text>
+<text x="396" y="414" font-size="10.2" fill="#1e293b" text-anchor="start">红细胞血红蛋白里的铁（够打一</text>
+<text x="396" y="431" font-size="10.2" fill="#1e293b" text-anchor="start">枚铁钉），六成源自白矮星殉爆</text>
+<text x="396" y="448" font-size="10.2" fill="#1e293b" text-anchor="start">。</text>
+<rect x="566" y="354" width="166" height="108" rx="8" fill="#f3e8ff" stroke="#e2e8f0"/>
+<text x="576" y="374" font-size="11" fill="#6d28d9" text-anchor="start" font-weight="700">双中子星并合千新星</text>
+<text x="576" y="393" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">≈ 20 mg 碘 + 微量金</text>
+<text x="576" y="414" font-size="10.2" fill="#1e293b" text-anchor="start">调节代谢的甲状腺素碘原子，每</text>
+<text x="576" y="431" font-size="10.2" fill="#1e293b" text-anchor="start">一颗都经历过中子星相撞！</text>
+</svg>

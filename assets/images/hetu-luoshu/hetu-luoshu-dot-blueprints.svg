@@ -1,0 +1,272 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="492" viewBox="0 0 760 492" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">河图（左，55点十数同余配对图）与洛书（右，45点三阶幻方九宫图）的绳结黑白点阵及数字对照图</title>
+<desc id="desc">左图展示河图上南火2与7、下北水1与6、左东木3与8、右西金4与9、中宫土5与10的黑白点阵；右图展示洛书492、357、816九宫幻方黑白点阵，横竖斜8条线之和均为15。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#6d28d9"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="491" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">一眼分清河图与洛书：五十五点“十数配对图” vs 四十五点“九宫幻方图”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">白圈 ○ 表奇数（天数/阳），黑点 ● 表偶数（地数/阴）；古图方位皆为“上南下北、左东右西”</text>
+<rect x="16" y="68" width="358" height="408" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="28.0" y="80.0" width="156" height="24" rx="12.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="106.0" y="96.3" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">河图 · 1~10 共 55 点</text>
+<text x="194" y="96" font-size="11.5" fill="#64748b" text-anchor="start">五方奇偶相合（外减内恒为 5）</text>
+<rect x="157.0" y="228.0" width="76" height="76" rx="10" fill="#fffbeb" stroke="#fcd34d" stroke-width="1.2"/>
+<line x1="195.0" y1="180.0" x2="195.0" y2="224.0" stroke="#e2e8f0" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="3 3"/>
+<line x1="195.0" y1="308.0" x2="195.0" y2="352.0" stroke="#e2e8f0" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="3 3"/>
+<line x1="101.0" y1="266.0" x2="153.0" y2="266.0" stroke="#e2e8f0" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="3 3"/>
+<line x1="237.0" y1="266.0" x2="289.0" y2="266.0" stroke="#e2e8f0" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="3 3"/>
+<line x1="184.0" y1="266.0" x2="206.0" y2="266.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="195.0" y1="255.0" x2="195.0" y2="277.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="195.0" cy="266.0" r="3.7" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<circle cx="195.0" cy="255.0" r="3.7" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<circle cx="195.0" cy="277.0" r="3.7" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<circle cx="184.0" cy="266.0" r="3.7" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<circle cx="206.0" cy="266.0" r="3.7" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<line x1="173.0" y1="239.0" x2="184.0" y2="239.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="184.0" y1="239.0" x2="195.0" y2="239.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="195.0" y1="239.0" x2="206.0" y2="239.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="206.0" y1="239.0" x2="217.0" y2="239.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="173.0" cy="239.0" r="3.5" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+  <circle cx="184.0" cy="239.0" r="3.5" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+  <circle cx="195.0" cy="239.0" r="3.5" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+  <circle cx="206.0" cy="239.0" r="3.5" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+  <circle cx="217.0" cy="239.0" r="3.5" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+<line x1="173.0" y1="293.0" x2="184.0" y2="293.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="184.0" y1="293.0" x2="195.0" y2="293.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="195.0" y1="293.0" x2="206.0" y2="293.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="206.0" y1="293.0" x2="217.0" y2="293.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="173.0" cy="293.0" r="3.5" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+  <circle cx="184.0" cy="293.0" r="3.5" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+  <circle cx="195.0" cy="293.0" r="3.5" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+  <circle cx="206.0" cy="293.0" r="3.5" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+  <circle cx="217.0" cy="293.0" r="3.5" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+<line x1="188.5" y1="210.0" x2="201.5" y2="210.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="188.5" cy="210.0" r="3.7" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+  <circle cx="201.5" cy="210.0" r="3.7" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+<line x1="160.5" y1="189.0" x2="172.0" y2="189.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="172.0" y1="189.0" x2="183.5" y2="189.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="183.5" y1="189.0" x2="195.0" y2="189.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="195.0" y1="189.0" x2="206.5" y2="189.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="206.5" y1="189.0" x2="218.0" y2="189.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="218.0" y1="189.0" x2="229.5" y2="189.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="160.5" cy="189.0" r="3.7" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+  <circle cx="172.0" cy="189.0" r="3.7" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+  <circle cx="183.5" cy="189.0" r="3.7" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+  <circle cx="195.0" cy="189.0" r="3.7" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+  <circle cx="206.5" cy="189.0" r="3.7" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+  <circle cx="218.0" cy="189.0" r="3.7" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+  <circle cx="229.5" cy="189.0" r="3.7" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<circle cx="195.0" cy="322.0" r="3.7" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<line x1="166.2" y1="343.0" x2="177.8" y2="343.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="177.8" y1="343.0" x2="189.2" y2="343.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="189.2" y1="343.0" x2="200.8" y2="343.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="200.8" y1="343.0" x2="212.2" y2="343.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="212.2" y1="343.0" x2="223.8" y2="343.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="166.2" cy="343.0" r="3.7" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+  <circle cx="177.8" cy="343.0" r="3.7" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+  <circle cx="189.2" cy="343.0" r="3.7" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+  <circle cx="200.8" cy="343.0" r="3.7" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+  <circle cx="212.2" cy="343.0" r="3.7" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+  <circle cx="223.8" cy="343.0" r="3.7" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+<line x1="137.0" y1="254.0" x2="137.0" y2="266.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="137.0" y1="266.0" x2="137.0" y2="278.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="137.0" cy="254.0" r="3.7" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+  <circle cx="137.0" cy="266.0" r="3.7" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+  <circle cx="137.0" cy="278.0" r="3.7" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<line x1="113.0" y1="227.5" x2="113.0" y2="238.5" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="113.0" y1="238.5" x2="113.0" y2="249.5" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="113.0" y1="249.5" x2="113.0" y2="260.5" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="113.0" y1="260.5" x2="113.0" y2="271.5" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="113.0" y1="271.5" x2="113.0" y2="282.5" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="113.0" y1="282.5" x2="113.0" y2="293.5" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="113.0" y1="293.5" x2="113.0" y2="304.5" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="113.0" cy="227.5" r="3.7" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+  <circle cx="113.0" cy="238.5" r="3.7" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+  <circle cx="113.0" cy="249.5" r="3.7" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+  <circle cx="113.0" cy="260.5" r="3.7" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+  <circle cx="113.0" cy="271.5" r="3.7" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+  <circle cx="113.0" cy="282.5" r="3.7" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+  <circle cx="113.0" cy="293.5" r="3.7" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+  <circle cx="113.0" cy="304.5" r="3.7" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+<line x1="253.0" y1="248.0" x2="253.0" y2="260.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="253.0" y1="260.0" x2="253.0" y2="272.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="253.0" y1="272.0" x2="253.0" y2="284.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="253.0" cy="248.0" r="3.7" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+  <circle cx="253.0" cy="260.0" r="3.7" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+  <circle cx="253.0" cy="272.0" r="3.7" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+  <circle cx="253.0" cy="284.0" r="3.7" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+<line x1="277.0" y1="223.6" x2="277.0" y2="234.2" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="277.0" y1="234.2" x2="277.0" y2="244.8" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="277.0" y1="244.8" x2="277.0" y2="255.4" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="277.0" y1="255.4" x2="277.0" y2="266.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="277.0" y1="266.0" x2="277.0" y2="276.6" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="277.0" y1="276.6" x2="277.0" y2="287.2" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="277.0" y1="287.2" x2="277.0" y2="297.8" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="277.0" y1="297.8" x2="277.0" y2="308.4" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="277.0" cy="223.6" r="3.7" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+  <circle cx="277.0" cy="234.2" r="3.7" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+  <circle cx="277.0" cy="244.8" r="3.7" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+  <circle cx="277.0" cy="255.4" r="3.7" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+  <circle cx="277.0" cy="266.0" r="3.7" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+  <circle cx="277.0" cy="276.6" r="3.7" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+  <circle cx="277.0" cy="287.2" r="3.7" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+  <circle cx="277.0" cy="297.8" r="3.7" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+  <circle cx="277.0" cy="308.4" r="3.7" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<text x="195.0" y="134" font-size="12.5" fill="#b91c1c" text-anchor="middle" font-weight="700">上南 · 火</text>
+<text x="195.0" y="151" font-size="11.5" fill="#1e293b" text-anchor="middle">外 7○ · 内 2●</text>
+<text x="195.0" y="368" font-size="11.5" fill="#1e293b" text-anchor="middle">内 1○ · 外 6●</text>
+<text x="195.0" y="386" font-size="12.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">下北 · 水</text>
+<text x="64" y="256.0" font-size="12.5" fill="#18794e" text-anchor="middle" font-weight="700">左东·木</text>
+<text x="64" y="274.0" font-size="11.5" fill="#1e293b" text-anchor="middle">外8● 内3○</text>
+<text x="326" y="256.0" font-size="12.5" fill="#b45309" text-anchor="middle" font-weight="700">右西·金</text>
+<text x="326" y="274.0" font-size="11.5" fill="#1e293b" text-anchor="middle">内4● 外9○</text>
+<text x="195.0" y="315.0" font-size="11" fill="#b45309" text-anchor="middle" font-weight="700" class="halo">中土 5○·10●</text>
+<rect x="28" y="404" width="334" height="58" rx="8" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="40" y="425" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">天数（5 奇 ○）：1 + 3 + 5 + 7 + 9 = 25</text>
+<text x="40" y="446" font-size="11.5" fill="#1e293b" text-anchor="start">地数（5 偶 ●）：2 + 4 + 6 + 8 + 10 = 30（总和 55）</text>
+<rect x="386" y="68" width="358" height="408" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="398.0" y="80.0" width="152" height="24" rx="12.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="474.0" y="96.3" font-size="12" fill="#c25014" text-anchor="middle" font-weight="600">洛书 · 1~9 共 45 点</text>
+<text x="560" y="96" font-size="11.5" fill="#64748b" text-anchor="start">三阶幻方（横竖斜 8 线皆 = 15）</text>
+<text x="696.0" y="179.0" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">→15</text>
+<text x="696.0" y="257.0" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">→15</text>
+<text x="696.0" y="335.0" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">→15</text>
+<text x="464.0" y="388.0" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">↓15</text>
+<text x="552.0" y="388.0" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">↓15</text>
+<text x="640.0" y="388.0" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">↓15</text>
+<text x="696.0" y="128.0" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">↙15</text>
+<text x="696.0" y="388.0" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">↘15</text>
+<rect x="422.0" y="138.0" width="84.0" height="74.0" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.3"/>
+<text x="429.0" y="154.0" font-size="13" fill="#475569" text-anchor="start" font-weight="700">4</text>
+<text x="499.0" y="153.0" font-size="10.5" fill="#64748b" text-anchor="end">偶●</text>
+<line x1="456.0" y1="174.0" x2="472.0" y2="174.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="456.0" cy="174.0" r="3.5" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+  <circle cx="472.0" cy="174.0" r="3.5" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+<line x1="456.0" y1="190.0" x2="472.0" y2="190.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="456.0" cy="190.0" r="3.5" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+  <circle cx="472.0" cy="190.0" r="3.5" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+<rect x="510.0" y="138.0" width="84.0" height="74.0" rx="8" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1.3"/>
+<text x="517.0" y="154.0" font-size="13" fill="#1d6fa5" text-anchor="start" font-weight="700">9</text>
+<text x="587.0" y="153.0" font-size="10.5" fill="#64748b" text-anchor="end">奇○</text>
+<line x1="539.0" y1="172.0" x2="552.0" y2="172.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="552.0" y1="172.0" x2="565.0" y2="172.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="539.0" cy="172.0" r="3.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+  <circle cx="552.0" cy="172.0" r="3.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+  <circle cx="565.0" cy="172.0" r="3.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<line x1="539.0" y1="182.0" x2="552.0" y2="182.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="552.0" y1="182.0" x2="565.0" y2="182.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="539.0" cy="182.0" r="3.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+  <circle cx="552.0" cy="182.0" r="3.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+  <circle cx="565.0" cy="182.0" r="3.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<line x1="539.0" y1="192.0" x2="552.0" y2="192.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="552.0" y1="192.0" x2="565.0" y2="192.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="539.0" cy="192.0" r="3.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+  <circle cx="552.0" cy="192.0" r="3.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+  <circle cx="565.0" cy="192.0" r="3.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<rect x="598.0" y="138.0" width="84.0" height="74.0" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.3"/>
+<text x="605.0" y="154.0" font-size="13" fill="#475569" text-anchor="start" font-weight="700">2</text>
+<text x="675.0" y="153.0" font-size="10.5" fill="#64748b" text-anchor="end">偶●</text>
+<line x1="632.0" y1="182.0" x2="648.0" y2="182.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="632.0" cy="182.0" r="3.5" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+  <circle cx="648.0" cy="182.0" r="3.5" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+<rect x="422.0" y="216.0" width="84.0" height="74.0" rx="8" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1.3"/>
+<text x="429.0" y="232.0" font-size="13" fill="#1d6fa5" text-anchor="start" font-weight="700">3</text>
+<text x="499.0" y="231.0" font-size="10.5" fill="#64748b" text-anchor="end">奇○</text>
+<line x1="464.0" y1="247.0" x2="464.0" y2="260.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="464.0" y1="260.0" x2="464.0" y2="273.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="464.0" cy="247.0" r="3.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+  <circle cx="464.0" cy="260.0" r="3.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+  <circle cx="464.0" cy="273.0" r="3.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<rect x="510.0" y="216.0" width="84.0" height="74.0" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.3"/>
+<text x="517.0" y="232.0" font-size="13" fill="#b45309" text-anchor="start" font-weight="700">5</text>
+<text x="587.0" y="231.0" font-size="10.5" fill="#64748b" text-anchor="end">中五○</text>
+<line x1="541.0" y1="260.0" x2="563.0" y2="260.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="552.0" y1="249.0" x2="552.0" y2="271.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="552.0" cy="260.0" r="3.6" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<circle cx="541.0" cy="260.0" r="3.6" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<circle cx="563.0" cy="260.0" r="3.6" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<circle cx="552.0" cy="249.0" r="3.6" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<circle cx="552.0" cy="271.0" r="3.6" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<rect x="598.0" y="216.0" width="84.0" height="74.0" rx="8" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1.3"/>
+<text x="605.0" y="232.0" font-size="13" fill="#1d6fa5" text-anchor="start" font-weight="700">7</text>
+<text x="675.0" y="231.0" font-size="10.5" fill="#64748b" text-anchor="end">奇○</text>
+<line x1="629.0" y1="248.0" x2="651.0" y2="248.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="629.0" y1="248.0" x2="629.0" y2="260.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="629.0" y1="260.0" x2="629.0" y2="272.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="629.0" cy="248.0" r="3.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+  <circle cx="629.0" cy="260.0" r="3.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+  <circle cx="629.0" cy="272.0" r="3.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<circle cx="640.0" cy="248.0" r="3.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<line x1="651.0" y1="248.0" x2="651.0" y2="260.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="651.0" y1="260.0" x2="651.0" y2="272.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="651.0" cy="248.0" r="3.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+  <circle cx="651.0" cy="260.0" r="3.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+  <circle cx="651.0" cy="272.0" r="3.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<rect x="422.0" y="294.0" width="84.0" height="74.0" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.3"/>
+<text x="429.0" y="310.0" font-size="13" fill="#475569" text-anchor="start" font-weight="700">8</text>
+<text x="499.0" y="309.0" font-size="10.5" fill="#64748b" text-anchor="end">偶●</text>
+<line x1="447.5" y1="331.0" x2="458.5" y2="331.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="458.5" y1="331.0" x2="469.5" y2="331.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="469.5" y1="331.0" x2="480.5" y2="331.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="447.5" cy="331.0" r="3.5" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+  <circle cx="458.5" cy="331.0" r="3.5" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+  <circle cx="469.5" cy="331.0" r="3.5" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+  <circle cx="480.5" cy="331.0" r="3.5" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+<line x1="447.5" y1="345.0" x2="458.5" y2="345.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="458.5" y1="345.0" x2="469.5" y2="345.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="469.5" y1="345.0" x2="480.5" y2="345.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="447.5" cy="345.0" r="3.5" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+  <circle cx="458.5" cy="345.0" r="3.5" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+  <circle cx="469.5" cy="345.0" r="3.5" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+  <circle cx="480.5" cy="345.0" r="3.5" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+<rect x="510.0" y="294.0" width="84.0" height="74.0" rx="8" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1.3"/>
+<text x="517.0" y="310.0" font-size="13" fill="#1d6fa5" text-anchor="start" font-weight="700">1</text>
+<text x="587.0" y="309.0" font-size="10.5" fill="#64748b" text-anchor="end">奇○</text>
+<circle cx="552.0" cy="338.0" r="3.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<rect x="598.0" y="294.0" width="84.0" height="74.0" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.3"/>
+<text x="605.0" y="310.0" font-size="13" fill="#475569" text-anchor="start" font-weight="700">6</text>
+<text x="675.0" y="309.0" font-size="10.5" fill="#64748b" text-anchor="end">偶●</text>
+<line x1="628.0" y1="331.0" x2="640.0" y2="331.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="640.0" y1="331.0" x2="652.0" y2="331.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="628.0" cy="331.0" r="3.5" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+  <circle cx="640.0" cy="331.0" r="3.5" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+  <circle cx="652.0" cy="331.0" r="3.5" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+<line x1="628.0" y1="345.0" x2="640.0" y2="345.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="640.0" y1="345.0" x2="652.0" y2="345.0" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="628.0" cy="345.0" r="3.5" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+  <circle cx="640.0" cy="345.0" r="3.5" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+  <circle cx="652.0" cy="345.0" r="3.5" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+<rect x="398" y="404" width="334" height="58" rx="8" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="410" y="425" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">口诀：戴九履一，左三右七，二四为肩，六八为足</text>
+<text x="410" y="446" font-size="11.5" fill="#1e293b" text-anchor="start">阳居四正中五（和 25）· 阴居四角（和 20，总和 45）</text>
+</svg>

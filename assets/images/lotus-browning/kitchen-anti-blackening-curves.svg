@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">莲藕多酚氧化酶温度与pH活性曲线及厨房防黑四板斧</title>
+<desc id="desc">绘出莲藕PPO在35摄氏度与pH6.5处的活性峰值曲线，警示温水泡藕误区，并拆解凉水隔氧、沸水杀青、酸与维C三重阻断及换非铁锅四项防黑机制。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">厨房防黑四板斧：每一招民间窍门，都精准卡死一个化学齿轮</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">基于莲藕多酚氧化酶（PPO）温度—活性与 pH—活性实测规律（最适 35 °C、pH 6.5）的定量拆解</text>
+<rect x="24" y="66" width="344" height="232" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="40" y="88" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">图 A：温度对莲藕 PPO 活性的影响</text>
+<rect x="150.0" y="110.0" width="42.0" height="146.0" fill="#fef2f2"/>
+<rect x="304.0" y="110.0" width="42.0" height="146.0" fill="#e7f6ee"/>
+<line x1="66.0" y1="256.0" x2="346.0" y2="256.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="60.0" y="260.0" font-size="10" fill="#64748b" text-anchor="end">0%</text>
+<line x1="66.0" y1="183.0" x2="346.0" y2="183.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="60.0" y="187.0" font-size="10" fill="#64748b" text-anchor="end">50%</text>
+<line x1="66.0" y1="110.0" x2="346.0" y2="110.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="60.0" y="114.0" font-size="10" fill="#64748b" text-anchor="end">100%</text>
+<line x1="66.0" y1="256.0" x2="66.0" y2="260.0" stroke="#475569" stroke-width="1"/>
+<text x="66.0" y="272.0" font-size="10" fill="#64748b" text-anchor="middle">0°C</text>
+<line x1="122.0" y1="256.0" x2="122.0" y2="260.0" stroke="#475569" stroke-width="1"/>
+<text x="122.0" y="272.0" font-size="10" fill="#64748b" text-anchor="middle">20°C</text>
+<line x1="164.0" y1="256.0" x2="164.0" y2="260.0" stroke="#475569" stroke-width="1"/>
+<text x="164.0" y="272.0" font-size="10" fill="#64748b" text-anchor="middle">35°C</text>
+<line x1="234.0" y1="256.0" x2="234.0" y2="260.0" stroke="#475569" stroke-width="1"/>
+<text x="234.0" y="272.0" font-size="10" fill="#64748b" text-anchor="middle">60°C</text>
+<line x1="290.0" y1="256.0" x2="290.0" y2="260.0" stroke="#475569" stroke-width="1"/>
+<text x="290.0" y="272.0" font-size="10" fill="#64748b" text-anchor="middle">80°C</text>
+<line x1="346.0" y1="256.0" x2="346.0" y2="260.0" stroke="#475569" stroke-width="1"/>
+<text x="346.0" y="272.0" font-size="10" fill="#64748b" text-anchor="middle">100°C</text>
+<line x1="66.0" y1="110.0" x2="66.0" y2="256.0" stroke="#475569" stroke-width="1.2"/>
+<line x1="66.0" y1="256.0" x2="346.0" y2="256.0" stroke="#475569" stroke-width="1.2"/>
+<polyline points="66.0,227.1 71.6,221.4 77.2,215.0 82.8,208.0 88.4,200.3 94.0,192.1 99.6,183.5 105.2,174.5 110.8,165.4 116.4,156.4 122.0,147.6 127.6,139.2 133.2,131.6 138.8,124.8 144.4,119.2 150.0,114.7 155.6,111.7 161.2,110.2 166.8,110.1 172.4,111.5 178.0,114.6 183.6,119.7 189.2,126.7 194.8,135.3 200.4,145.3 206.0,156.4 211.6,168.0 217.2,179.8 222.8,191.4 228.4,202.3 234.0,212.3 239.6,221.2 245.2,228.9 250.8,235.4 256.4,240.7 262.0,244.8 267.6,248.1 273.2,250.5 278.8,252.3 284.4,253.5 290.0,254.4 295.6,255.0 301.2,255.4 306.8,255.6 312.4,255.8 318.0,255.9 323.6,256.0 329.2,256.0 334.8,256.0 340.4,256.0 346.0,256.0" fill="none" stroke="#c25014" stroke-width="2.6"/>
+<circle cx="77.2" cy="215.0" r="4" fill="#1d6fa5"/>
+<text x="83.2" y="209.0" font-size="10" fill="#1d6fa5" text-anchor="start" font-weight="600" class="halo">4°C 冷藏慢速</text>
+<circle cx="164.0" cy="110.0" r="4.5" fill="#b91c1c"/>
+<text x="172.0" y="122.0" font-size="10" fill="#b91c1c" text-anchor="start" font-weight="700" class="halo">35°C 巅峰！温水泡藕反而催黑</text>
+<circle cx="332.0" cy="256.0" r="4.5" fill="#18794e"/>
+<text x="300.0" y="204.0" font-size="10.5" fill="#18794e" text-anchor="end" font-weight="700" class="halo">沸水焯烫杀青</text>
+<text x="300.0" y="220.0" font-size="10" fill="#18794e" text-anchor="end" class="halo">蛋白变性归零</text>
+<text x="196" y="290" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">温度 T（°C）</text>
+<rect x="392" y="66" width="344" height="232" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="408" y="88" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">图 B：酸碱度（pH）对莲藕 PPO 活性的影响</text>
+<rect x="434.0" y="110.0" width="74.7" height="146.0" fill="#e7f6ee"/>
+<line x1="434.0" y1="256.0" x2="714.0" y2="256.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="428.0" y="260.0" font-size="10" fill="#64748b" text-anchor="end">0%</text>
+<line x1="434.0" y1="183.0" x2="714.0" y2="183.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="428.0" y="187.0" font-size="10" fill="#64748b" text-anchor="end">50%</text>
+<line x1="434.0" y1="110.0" x2="714.0" y2="110.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="428.0" y="114.0" font-size="10" fill="#64748b" text-anchor="end">100%</text>
+<line x1="434.0" y1="256.0" x2="434.0" y2="260.0" stroke="#475569" stroke-width="1"/>
+<text x="434.0" y="272.0" font-size="10" fill="#64748b" text-anchor="middle">2.0</text>
+<line x1="490.0" y1="256.0" x2="490.0" y2="260.0" stroke="#475569" stroke-width="1"/>
+<text x="490.0" y="272.0" font-size="10" fill="#64748b" text-anchor="middle">3.5</text>
+<line x1="546.0" y1="256.0" x2="546.0" y2="260.0" stroke="#475569" stroke-width="1"/>
+<text x="546.0" y="272.0" font-size="10" fill="#64748b" text-anchor="middle">5.0</text>
+<line x1="602.0" y1="256.0" x2="602.0" y2="260.0" stroke="#475569" stroke-width="1"/>
+<text x="602.0" y="272.0" font-size="10" fill="#64748b" text-anchor="middle">6.5</text>
+<line x1="658.0" y1="256.0" x2="658.0" y2="260.0" stroke="#475569" stroke-width="1"/>
+<text x="658.0" y="272.0" font-size="10" fill="#64748b" text-anchor="middle">8.0</text>
+<line x1="714.0" y1="256.0" x2="714.0" y2="260.0" stroke="#475569" stroke-width="1"/>
+<text x="714.0" y="272.0" font-size="10" fill="#64748b" text-anchor="middle">9.5</text>
+<line x1="434.0" y1="110.0" x2="434.0" y2="256.0" stroke="#475569" stroke-width="1.2"/>
+<line x1="434.0" y1="256.0" x2="714.0" y2="256.0" stroke="#475569" stroke-width="1.2"/>
+<polyline points="434.0,255.6 437.7,255.4 441.5,255.2 445.2,255.0 448.9,254.8 452.7,254.4 456.4,254.0 460.1,253.5 463.9,252.9 467.6,252.1 471.3,251.2 475.1,250.1 478.8,248.9 482.5,247.4 486.3,245.7 490.0,243.7 493.7,241.4 497.5,238.8 501.2,235.9 504.9,232.6 508.7,228.9 512.4,224.9 516.1,220.5 519.9,215.7 523.6,210.6 527.3,205.1 531.1,199.4 534.8,193.3 538.5,187.0 542.3,180.5 546.0,174.0 549.7,167.3 553.5,160.7 557.2,154.2 560.9,147.9 564.7,141.8 568.4,136.1 572.1,130.8 575.9,126.0 579.6,121.8 583.3,118.1 587.1,115.2 590.8,112.8 594.5,111.2 598.3,110.3 602.0,110.0 605.7,110.5 609.5,111.9 613.2,114.2 616.9,117.4 620.7,121.4 624.4,126.2 628.1,131.6 631.9,137.5 635.6,143.9 639.3,150.7 643.1,157.7 646.8,164.8 650.5,171.9 654.3,179.0 658.0,186.0 661.7,192.7 665.5,199.2 669.2,205.3 672.9,211.1 676.7,216.5 680.4,221.4 684.1,225.9 687.9,230.0 691.6,233.7 695.3,237.0 699.1,239.9 702.8,242.5 706.5,244.7 710.3,246.6 714.0,248.3" fill="none" stroke="#1d6fa5" stroke-width="2.6"/>
+<circle cx="490.0" cy="243.7" r="4.5" fill="#18794e"/>
+<text x="494.0" y="225.7" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="700" class="halo">白醋/柠檬汁区</text>
+<text x="494.0" y="239.7" font-size="10" fill="#18794e" text-anchor="start" class="halo">pH≤3.5 活性&lt;8%</text>
+<circle cx="602.0" cy="110.0" r="4.5" fill="#b91c1c"/>
+<text x="602.0" y="132.0" font-size="10" fill="#b91c1c" text-anchor="middle" font-weight="700" class="halo">鲜藕汁天然 pH≈6.5</text>
+<text x="602.0" y="146.0" font-size="10" fill="#b91c1c" text-anchor="middle" class="halo">正撞最适枪口！</text>
+<text x="564" y="290" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">溶液酸碱度 pH</text>
+<rect x="24" y="312" width="712" height="192" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="38.0" y="324.0" width="282" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="179.0" y="339.0" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="600">厨房实战防黑四板斧（按菜式精准选招）</text>
+<rect x="38" y="356" width="164" height="134" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-opacity="0.4"/>
+<text x="48" y="376" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">① 切完立刻泡凉水</text>
+<text x="48" y="395" font-size="10" fill="#0f172a" text-anchor="start" font-weight="700">卡死齿轮：隔绝氧气 O2</text>
+<line x1="48" y1="404" x2="192" y2="404" stroke="#1d6fa5" stroke-opacity="0.25"/>
+<text x="48" y="424" font-size="10" fill="#1e293b" text-anchor="start">常温水溶氧仅 ~8.3 mg/L，</text>
+<text x="48" y="443" font-size="10" fill="#1e293b" text-anchor="start">且 O2 在水中扩散速度比</text>
+<text x="48" y="462" font-size="10" fill="#1e293b" text-anchor="start">空气慢约 10,000 倍！</text>
+<rect x="210" y="356" width="164" height="134" rx="8" fill="#fef1e8" stroke="#c25014" stroke-opacity="0.4"/>
+<text x="220" y="376" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">② 沸水焯烫 1–2 分钟</text>
+<text x="220" y="395" font-size="10" fill="#0f172a" text-anchor="start" font-weight="700">卡死齿轮：高温废掉 PPO</text>
+<line x1="220" y1="404" x2="364" y2="404" stroke="#c25014" stroke-opacity="0.25"/>
+<text x="220" y="424" font-size="10" fill="#1e293b" text-anchor="start">95–100 °C 令双铜酶蛋白</text>
+<text x="220" y="443" font-size="10" fill="#1e293b" text-anchor="start">不可逆变性坍塌（与绿茶</text>
+<text x="220" y="462" font-size="10" fill="#1e293b" text-anchor="start">“杀青”保翠绿完全同源）。</text>
+<rect x="382" y="356" width="164" height="134" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-opacity="0.4"/>
+<text x="392" y="376" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">③ 白醋 / 柠檬汁一箭三雕</text>
+<text x="392" y="395" font-size="10" fill="#0f172a" text-anchor="start" font-weight="700">降 pH + 螯合金属 + 还原醌</text>
+<line x1="392" y1="404" x2="536" y2="404" stroke="#18794e" stroke-opacity="0.25"/>
+<text x="392" y="424" font-size="10" fill="#1e293b" text-anchor="start">酸度压低酶活；柠檬酸抢</text>
+<text x="392" y="443" font-size="10" fill="#1e293b" text-anchor="start">走 Cu2+/Fe3+；维 C 把邻</text>
+<text x="392" y="462" font-size="10" fill="#1e293b" text-anchor="start">苯醌重新还原回无色酚！</text>
+<rect x="554" y="356" width="164" height="134" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-opacity="0.4"/>
+<text x="564" y="376" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">④ 避开铁锅与碳钢刀</text>
+<text x="564" y="395" font-size="10" fill="#0f172a" text-anchor="start" font-weight="700">卡死齿轮：断绝游离铁源</text>
+<line x1="564" y1="404" x2="708" y2="404" stroke="#6d28d9" stroke-opacity="0.25"/>
+<text x="564" y="424" font-size="10" fill="#1e293b" text-anchor="start">改用不锈钢刀切片，搭配</text>
+<text x="564" y="443" font-size="10" fill="#1e293b" text-anchor="start">不锈钢锅、陶瓷锅或砂锅，</text>
+<text x="564" y="462" font-size="10" fill="#1e293b" text-anchor="start">彻底杜绝铁酚紫黑墨水。</text>
+</svg>

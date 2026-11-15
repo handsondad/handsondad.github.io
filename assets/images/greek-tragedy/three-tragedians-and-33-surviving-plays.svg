@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="558" viewBox="0 0 760 558" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">古希腊三大悲剧家对比与33部传世剧本手稿幸存漏斗图</title>
+<desc id="desc">上方对比埃斯库罗斯、索福克勒斯与欧里庇得斯的生平、夺冠次数、舞台革新与精神母题；下方展示从上千部首演剧目经国家定本到24部拜占庭精选本加9部欧里庇得斯字母残卷共33部存世剧本的流传过程。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="557" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">三大巨匠写下近三百部戏，为何今天只剩 33 部完整剧本？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">上：公元前 5 世纪三代悲剧家的精神接力；下：历经两千四百年传抄的“双通道”手稿幸存漏斗</text>
+<rect x="24" y="66" width="228" height="232" rx="10" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="38" y="91" font-size="13" fill="#1d6fa5" text-anchor="start" font-weight="700">埃斯库罗斯 Aeschylus</text>
+<rect x="38.0" y="102.0" width="200" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="138.0" y="117.0" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="600">约前 525—前 456｜夺冠 13 次</text>
+<text x="38" y="145" font-size="11.2" fill="#1e293b" text-anchor="start">身份：马拉松与萨拉米斯海战老兵</text>
+<text x="38" y="168" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">传世：7 部 / 约 70–90 部</text>
+<text x="38" y="191" font-size="11.2" fill="#1e293b" text-anchor="start">革新：第 2 演员，宏大连贯三联剧</text>
+<line x1="38" y1="205" x2="238" y2="205" stroke="#cbd5e1" stroke-width="1"/>
+<text x="38" y="227" font-size="11.2" fill="#1e293b" text-anchor="start">母题：神义宇宙秩序、家族血仇如何</text>
+<text x="38" y="249" font-size="11.2" fill="#1e293b" text-anchor="start">走入公民法庭（《俄瑞斯忒亚》）</text>
+<text x="38" y="278" font-size="10.8" fill="#64748b" text-anchor="start">代表存世率：约 9%</text>
+<rect x="266" y="66" width="228" height="232" rx="10" fill="#ffffff" stroke="#18794e" stroke-width="1.2"/>
+<text x="280" y="91" font-size="13" fill="#18794e" text-anchor="start" font-weight="700">索福克勒斯 Sophocles</text>
+<rect x="280.0" y="102.0" width="200" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="380.0" y="117.0" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="600">约前 496—前 406｜夺冠约 24 次</text>
+<text x="280" y="145" font-size="11.2" fill="#1e293b" text-anchor="start">身份：雅典将军、司库（从未排第 3）</text>
+<text x="280" y="168" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">传世：7 部 / 约 123 部</text>
+<text x="280" y="191" font-size="11.2" fill="#1e293b" text-anchor="start">革新：第 3 演员与景画，单剧独立</text>
+<line x1="280" y1="205" x2="480" y2="205" stroke="#cbd5e1" stroke-width="1"/>
+<text x="280" y="227" font-size="11.2" fill="#1e293b" text-anchor="start">母题：孤傲高贵的英雄直面认知盲区</text>
+<text x="280" y="249" font-size="11.2" fill="#1e293b" text-anchor="start">与命运铁律（《俄狄浦斯王》）</text>
+<text x="280" y="278" font-size="10.8" fill="#64748b" text-anchor="start">代表存世率：约 6%</text>
+<rect x="508" y="66" width="228" height="232" rx="10" fill="#ffffff" stroke="#c25014" stroke-width="1.2"/>
+<text x="522" y="91" font-size="13" fill="#c25014" text-anchor="start" font-weight="700">欧里庇得斯 Euripides</text>
+<rect x="522.0" y="102.0" width="200" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="622.0" y="117.0" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="600">约前 485—前 406｜夺冠仅 5 次</text>
+<text x="522" y="145" font-size="11.2" fill="#1e293b" text-anchor="start">身份：质疑传统的哲人（死后最红）</text>
+<text x="522" y="168" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">传世：19 部 / 约 90 部（含 1 羊）</text>
+<text x="522" y="191" font-size="11.2" fill="#1e293b" text-anchor="start">革新：心理写实、平民口吻、论辩戏</text>
+<line x1="522" y1="205" x2="722" y2="205" stroke="#cbd5e1" stroke-width="1"/>
+<text x="522" y="227" font-size="11.2" fill="#1e293b" text-anchor="start">母题：替女性与战俘发声，解剖极端</text>
+<text x="522" y="249" font-size="11.2" fill="#1e293b" text-anchor="start">激情与非理性（《美狄亚》）</text>
+<text x="522" y="278" font-size="10.8" fill="#64748b" text-anchor="start">代表存世率：约 21%</text>
+<rect x="24" y="312" width="712" height="232" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="42" y="338" font-size="12.8" fill="#0f172a" text-anchor="start" font-weight="700">手稿幸存漏斗：为什么欧里庇得斯生前夺冠最少，传世剧本（19 部）反倒比前两位之和还多？</text>
+<rect x="40" y="360" width="138" height="134" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="1"/>
+<text x="109" y="383" font-size="11.5" fill="#475569" text-anchor="middle" font-weight="700">① 雅典首演总库</text>
+<text x="109" y="416" font-size="18" fill="#0f172a" text-anchor="middle" font-weight="700">1,000+ 部</text>
+<text x="109" y="442" font-size="10.8" fill="#1e293b" text-anchor="middle">三大师合写约 300 部</text>
+<text x="109" y="462" font-size="10.8" fill="#64748b" text-anchor="middle">多数剧本仅演一场</text>
+<text x="109" y="480" font-size="10.8" fill="#64748b" text-anchor="middle">莎草纸极易霉烂散佚</text>
+<line x1="178" y1="427" x2="198" y2="427" stroke="#1d6fa5" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+<rect x="202" y="360" width="146" height="134" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="275" y="383" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">② 国家官本与馆藏</text>
+<text x="275" y="416" font-size="17" fill="#1d6fa5" text-anchor="middle" font-weight="700">约 220 卷</text>
+<text x="275" y="442" font-size="10.8" fill="#1e293b" text-anchor="middle">前 330 吕库古存官本</text>
+<text x="275" y="462" font-size="10.8" fill="#1e293b" text-anchor="middle">防演员篡改台词，后归</text>
+<text x="275" y="480" font-size="10.8" fill="#1e293b" text-anchor="middle">亚历山大图书馆整编</text>
+<path d="M348,412 L370,392" fill="none" stroke="#1d6fa5" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+<path d="M348,442 L370,464" fill="none" stroke="#c25014" stroke-width="1.6" marker-end="url(#arr-orange)"/>
+<rect x="374" y="354" width="192" height="68" rx="8" fill="#f0f9ff" stroke="#1d6fa5" stroke-width="1"/>
+<text x="470" y="375" font-size="11.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">通道 A：拜占庭学校“精选教材本”</text>
+<text x="470" y="395" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">埃 7 ＋ 索 7 ＋ 欧 10 ＝ 24 部</text>
+<text x="470" y="413" font-size="10.5" fill="#64748b" text-anchor="middle">附教学评注，师生世代抄写得以保全</text>
+<rect x="374" y="432" width="192" height="68" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="470" y="453" font-size="11.2" fill="#c25014" text-anchor="middle" font-weight="700">通道 B：欧氏“字母顺序全集残卷”</text>
+<text x="470" y="473" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">奇迹幸存希腊字母 Ε–Κ 卷 ＝ 9 部</text>
+<text x="470" y="491" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="600">含唯一完整萨堤尔剧《独目巨人》！</text>
+<path d="M566,392 L586,412" fill="none" stroke="#18794e" stroke-width="1.6" marker-end="url(#arr-green)"/>
+<path d="M566,464 L586,442" fill="none" stroke="#18794e" stroke-width="1.6" marker-end="url(#arr-green)"/>
+<rect x="590" y="360" width="130" height="134" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.4"/>
+<text x="655" y="383" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">④ 今日传世全本</text>
+<text x="655" y="418" font-size="20" fill="#18794e" text-anchor="middle" font-weight="700">33 部</text>
+<text x="655" y="444" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="700">24 + 9 汇合</text>
+<text x="655" y="464" font-size="10.6" fill="#1e293b" text-anchor="middle">32 悲剧 ＋ 1 羊人剧</text>
+<text x="655" y="482" font-size="10.6" fill="#64748b" text-anchor="middle">人类戏剧无价遗产</text>
+<text x="42" y="528" font-size="10.8" fill="#64748b" text-anchor="start">学术限定：《被缚的普罗米修斯》（归埃氏）与《瑞索斯》（归欧氏）现代学界多推断为后人托名之作，但均计入这 33 部古希腊存世剧本。</text>
+</svg>

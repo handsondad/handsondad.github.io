@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="478" viewBox="0 0 760 478" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">亚化石矿物铠甲、完全石化岩石与琥珀标本的古 DNA 存留真相对比</title>
+<desc id="desc">三栏对比保留原生骨磷灰石与蒙脱石吸附铠甲的亚化石（可达120万至200万年）、经历成岩矿化置换的恐龙岩石化石（DNA为零）以及年轻柯巴脂昆虫亦无内源DNA的实验证据，底部展示古蛋白质组学延伸至380万年的接力。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-ink" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#0f172a"/>
+  </marker>
+  <marker id="arr-red" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#dc2626"/>
+  </marker>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="477" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="20" y="30" font-size="15.5" fill="#0f172a" text-anchor="start" font-weight="700">为什么“远古动物化石”里能测出 DNA？亚化石矿物铠甲 vs 完全石化岩石</text>
+<text x="20" y="50" font-size="12" fill="#64748b" text-anchor="start">日常新闻统称的“化石”其实分两类：能提 DNA 的全是保留原生骨矿物的“亚化石”，而非变成石头的恐龙骨</text>
+<rect x="18" y="68" width="232" height="274" rx="10" fill="#ffffff" stroke="#86efac" stroke-width="1"/>
+<rect x="30.0" y="80.0" width="206" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="133.0" y="95.0" font-size="12" fill="#18794e" text-anchor="middle" font-weight="600">① 亚化石：骨与黏土矿物铠甲</text>
+<text x="30" y="118" font-size="11.2" fill="#18794e" text-anchor="start" font-weight="700">年代：数千年 → 120 万年猛犸臼齿</text>
+<rect x="30" y="130" width="208" height="92" rx="8" fill="#e7f6ee" stroke="#86efac" stroke-width="1"/>
+<text x="134" y="148" font-size="11" fill="#1d6fa5" text-anchor="middle" font-weight="700">DNA 负电磷酸骨架 (PO4⁻)</text>
+<line x1="50.0" y1="158.0" x2="218.0" y2="158.0" stroke="#1d6fa5" stroke-width="3.0" stroke-linecap="round"/>
+<circle cx="72" cy="176" r="7" fill="#ffffff" stroke="#18794e" stroke-width="1.6"/>
+<text x="72" y="180" font-size="8.8" fill="#18794e" text-anchor="middle" font-weight="700">Ca²⁺</text>
+<circle cx="114" cy="176" r="7" fill="#ffffff" stroke="#18794e" stroke-width="1.6"/>
+<text x="114" y="180" font-size="8.8" fill="#18794e" text-anchor="middle" font-weight="700">Ca²⁺</text>
+<circle cx="156" cy="176" r="7" fill="#ffffff" stroke="#18794e" stroke-width="1.6"/>
+<text x="156" y="180" font-size="8.8" fill="#18794e" text-anchor="middle" font-weight="700">Ca²⁺</text>
+<circle cx="198" cy="176" r="7" fill="#ffffff" stroke="#18794e" stroke-width="1.6"/>
+<text x="198" y="180" font-size="8.8" fill="#18794e" text-anchor="middle" font-weight="700">Ca²⁺</text>
+<rect x="42" y="190" width="184" height="22" rx="4" fill="#18794e"/>
+<text x="134" y="205" font-size="10.5" fill="#ffffff" text-anchor="middle" font-weight="700">羟基磷灰石晶格 / 蒙脱石黏土层</text>
+<text x="30" y="242" font-size="11" fill="#1e293b" text-anchor="start">• 静电锁死：Ca²⁺ 阳离子桥把短片段</text>
+<text x="30" y="260" font-size="11" fill="#1e293b" text-anchor="start">  牢牢吸在骨磷灰石与黏土表面；</text>
+<text x="30" y="278" font-size="11" fill="#18794e" text-anchor="start" font-weight="700">• 蒙脱石吸附力是石英的 200 倍；</text>
+<text x="30" y="296" font-size="11" fill="#1e293b" text-anchor="start">• 改变构象让微生物核酸酶咬不动，</text>
+<text x="30" y="314" font-size="11" fill="#1e293b" text-anchor="start">  冻土里护住 120 万–200 万年密码！</text>
+<rect x="264" y="68" width="232" height="274" rx="10" fill="#ffffff" stroke="#fca5a5" stroke-width="1"/>
+<rect x="276.0" y="80.0" width="206" height="22" rx="11.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="379.0" y="95.0" font-size="12" fill="#dc2626" text-anchor="middle" font-weight="600">② 完全石化化石：已成真石头</text>
+<text x="276" y="118" font-size="11.2" fill="#dc2626" text-anchor="start" font-weight="700">年代：数千万 → 上亿年（如恐龙）</text>
+<rect x="276" y="130" width="208" height="92" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1"/>
+<text x="380" y="149" font-size="10.8" fill="#dc2626" text-anchor="middle" font-weight="700">地下水携 SiO2 / 方解石 / 黄铁矿渗入</text>
+<polygon points="290,182 308,164 328,176 320,206 296,206" fill="#cbd5e1" stroke="#64748b" stroke-width="1.4"/>
+<polygon points="336,182 354,164 374,176 366,206 342,206" fill="#cbd5e1" stroke="#64748b" stroke-width="1.4"/>
+<polygon points="382,182 400,164 420,176 412,206 388,206" fill="#cbd5e1" stroke="#64748b" stroke-width="1.4"/>
+<polygon points="428,182 446,164 466,176 458,206 434,206" fill="#cbd5e1" stroke="#64748b" stroke-width="1.4"/>
+<text x="380" y="201" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700">硅化 / 钙化矿物重结晶置换</text>
+<text x="276" y="242" font-size="11" fill="#1e293b" text-anchor="start">• 偷梁换柱：漫长成岩热压下，原生</text>
+<text x="276" y="260" font-size="11" fill="#1e293b" text-anchor="start">  有机质与微晶骨矿物被岩石置换；</text>
+<text x="276" y="278" font-size="11" fill="#dc2626" text-anchor="start" font-weight="700">• 宏观保留骨小梁形状，化学已是岩石；</text>
+<text x="276" y="296" font-size="11" fill="#1e293b" text-anchor="start">• 加上早超 683 万年热力学大限，</text>
+<text x="276" y="314" font-size="11" fill="#1e293b" text-anchor="start">  恐龙化石里的内源 DNA 严格为 0。</text>
+<rect x="510" y="68" width="232" height="274" rx="10" fill="#ffffff" stroke="#fcd34d" stroke-width="1"/>
+<rect x="522.0" y="80.0" width="208" height="22" rx="11.0" fill="#fffbeb" stroke="#b45309" stroke-width="1" stroke-opacity="0.35"/>
+<text x="626.0" y="95.0" font-size="12" fill="#b45309" text-anchor="middle" font-weight="600">③ 琥珀蚊子：科幻电影的美丽误会</text>
+<text x="522" y="118" font-size="11.2" fill="#b45309" text-anchor="start" font-weight="700">实测检验：Penney 等（2013）洁净室</text>
+<rect x="522" y="130" width="208" height="92" rx="8" fill="#fffbeb" stroke="#fcd34d" stroke-width="1"/>
+<ellipse cx="626" cy="176" rx="76" ry="34" fill="#fde68a" stroke="#b45309" stroke-width="1.8"/>
+<text x="626" y="171" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700">60 年与 1.06 万年年轻柯巴脂无刺蜂</text>
+<text x="626" y="191" font-size="11" fill="#dc2626" text-anchor="middle" font-weight="700">二代测序内源蜂 DNA = 0 条！</text>
+<text x="522" y="242" font-size="11" fill="#1e293b" text-anchor="start">• 树脂只封外壳，未抽干虫体内水分</text>
+<text x="522" y="260" font-size="11" fill="#1e293b" text-anchor="start">  与肠道细菌，内部照样发生水解；</text>
+<text x="522" y="278" font-size="11" fill="#1e293b" text-anchor="start">• 树脂变成琥珀需经历地热高压聚合；</text>
+<text x="522" y="296" font-size="11" fill="#1e293b" text-anchor="start">• 90 年代轰动一时的“千万年琥珀虫</text>
+<text x="522" y="314" font-size="11" fill="#b45309" text-anchor="start" font-weight="700">  DNA”均被证实是现代真菌/昆虫污染。</text>
+<rect x="18" y="356" width="724" height="108" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="32" y="380" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">深时分子接力棒：DNA 断光之后，矿物锁住的“古蛋白质”还能多撑数百万年！</text>
+<rect x="32" y="394" width="210" height="22" rx="5" fill="#1d6fa5"/>
+<text x="137" y="409" font-size="10.8" fill="#ffffff" text-anchor="middle" font-weight="700">人类谱系古 DNA：43 万年（胡瑟裂谷）</text>
+<rect x="252" y="394" width="220" height="22" rx="5" fill="#0f766e"/>
+<text x="362" y="409" font-size="10.8" fill="#ffffff" text-anchor="middle" font-weight="700">冻土猛犸与黏土 eDNA：120 万–200 万年</text>
+<rect x="482" y="394" width="246" height="22" rx="5" fill="#6d28d9"/>
+<text x="605" y="409" font-size="10.8" fill="#ffffff" text-anchor="middle" font-weight="700">牙釉质/蛋壳古蛋白质：190 万–380 万年+</text>
+<text x="32" y="438" font-size="10.8" fill="#1e293b" text-anchor="start">原理（Demarchi 2016）：肽键远比糖苷键稳固；巨猿牙釉质与 380 万年鸵鸟蛋壳蛋白靠晶体锁死接力溯源。</text>
+<text x="32" y="455" font-size="10.8" fill="#64748b" text-anchor="start">区分界限：蛋白质只能还原几百个氨基酸亲缘线索，无法像完整基因组那样拼出整套生命蓝图。</text>
+</svg>

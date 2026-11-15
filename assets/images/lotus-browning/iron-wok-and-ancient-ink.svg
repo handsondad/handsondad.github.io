@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">铁锅炒藕变紫黑的铁酚配位络合机制与铁胆墨水家族</title>
+<desc id="desc">展示铁锅溶出的铁离子与莲藕邻二酚形成五元螯合环并通过电荷转移跃迁显紫黑色的机制，对比铁胆墨水、草木染、土豆返黑及白醋降pH解救原理。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">凶手二（铁酚络合）：为什么铁锅炒藕会“秒变蓝紫乌黑”？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">就算沸水已经烫死所有酶，莲藕多酚抓到铁离子仍会瞬间配位——你其实在铁锅里熬出了中世纪墨水</text>
+<rect x="24" y="66" width="348" height="286" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="38.0" y="78.0" width="262" height="22" rx="11.0" fill="#eef2ff" stroke="#312e81" stroke-width="1" stroke-opacity="0.35"/>
+<text x="169.0" y="93.0" font-size="11.5" fill="#312e81" text-anchor="middle" font-weight="600">铁锅现场：五元螯合环 + 电荷转移跃迁</text>
+<rect x="38" y="110" width="320" height="58" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+<circle cx="56" cy="139" r="10.5" fill="#eef2ff" stroke="#312e81" stroke-width="1.2"/>
+<text x="56" y="143" font-size="11.5" fill="#312e81" text-anchor="middle" font-weight="700">1</text>
+<text x="74" y="132" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">铸铁锅 / 碳钢菜刀溶出微量铁离子</text>
+<text x="74" y="152" font-size="10.5" fill="#64748b" text-anchor="start">热油翻炒 + 食盐/微酸加速溶出 Fe2+，遇空气 O2 迅速氧化为 Fe3+</text>
+<rect x="38" y="176" width="320" height="96" rx="8" fill="#eef2ff" stroke="#818cf8" stroke-width="1.3"/>
+<circle cx="56" cy="198" r="10.5" fill="#ffffff" stroke="#312e81" stroke-width="1.2"/>
+<text x="56" y="202" font-size="11.5" fill="#312e81" text-anchor="middle" font-weight="700">2</text>
+<text x="74" y="201" font-size="11.5" fill="#312e81" text-anchor="start" font-weight="700">邻二酚“螃蟹钳”死死夹住 Fe3+（双齿螯合）</text>
+<polygon points="135.0,240.0 126.5,254.7 109.5,254.7 101.0,240.0 109.5,225.3 126.5,225.3" fill="#ffffff" stroke="#312e81" stroke-width="1.6"/>
+<circle cx="118" cy="240" r="9" fill="none" stroke="#6366f1" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="82" y="244" font-size="10" fill="#312e81" text-anchor="end" font-weight="600">酚环</text>
+<line x1="127" y1="226" x2="158" y2="230" stroke="#312e81" stroke-width="1.8"/>
+<line x1="127" y1="254" x2="158" y2="250" stroke="#312e81" stroke-width="1.8"/>
+<circle cx="158" cy="230" r="7.5" fill="#ffffff" stroke="#b91c1c" stroke-width="1.3"/>
+<circle cx="158" cy="250" r="7.5" fill="#ffffff" stroke="#b91c1c" stroke-width="1.3"/>
+<text x="158" y="233.5" font-size="9.5" fill="#b91c1c" text-anchor="middle" font-weight="700">O</text>
+<text x="158" y="253.5" font-size="9.5" fill="#b91c1c" text-anchor="middle" font-weight="700">O</text>
+<line x1="166" y1="231" x2="194" y2="238" stroke="#4338ca" stroke-width="2" stroke-dasharray="3 2"/>
+<line x1="166" y1="249" x2="194" y2="242" stroke="#4338ca" stroke-width="2" stroke-dasharray="3 2"/>
+<circle cx="204" cy="240" r="13" fill="#312e81" stroke="#1e1b4b" stroke-width="1.5"/>
+<text x="204" y="244" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="700">Fe3+</text>
+<text x="226" y="232" font-size="10.5" fill="#312e81" text-anchor="start" font-weight="700">五元螯合环极稳固</text>
+<text x="226" y="248" font-size="10.5" fill="#b91c1c" text-anchor="start" font-weight="700">无需任何酶参与！</text>
+<text x="226" y="264" font-size="10" fill="#64748b" text-anchor="start">100 °C 沸锅照样秒发</text>
+<rect x="38" y="280" width="320" height="58" rx="8" fill="#1e1b4b" stroke="#312e81"/>
+<text x="52" y="302" font-size="11" fill="#e0e7ff" text-anchor="start" font-weight="700">③ 配体→金属电荷转移跃迁（LMCT 强吸光）：</text>
+<text x="52" y="322" font-size="10.5" fill="#c7d2fe" text-anchor="start">强烈吞掉 550–600 nm 黄绿光 → 肉眼呈现深蓝紫至乌黑色！</text>
+<rect x="388" y="66" width="348" height="286" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="402.0" y="78.0" width="282" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="543.0" y="93.0" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="600">同款化学四胞胎：从达·芬奇手稿到饭后浓茶</text>
+<rect x="402" y="110" width="320" height="54" rx="7" fill="#f3e8ff" stroke="#6d28d9" stroke-opacity="0.35"/>
+<text x="412" y="127" font-size="11" fill="#6d28d9" text-anchor="start" font-weight="700">1. 欧洲千年“铁胆墨水”（Iron Gall Ink）</text>
+<text x="412" y="143" font-size="10" fill="#1e293b" text-anchor="start">橡树五倍子单宁/没食子酸 + 绿矾（FeSO4）→ 见氧变不溶紫黑墨迹；</text>
+<text x="412" y="157" font-size="10" fill="#64748b" text-anchor="start">公元 5–19 世纪欧洲标准墨水，达·芬奇、巴赫、牛顿手稿皆用它写成。</text>
+<rect x="402" y="170" width="320" height="54" rx="7" fill="#f8f1ea" stroke="#6b4423" stroke-opacity="0.35"/>
+<text x="412" y="187" font-size="11" fill="#6b4423" text-anchor="start" font-weight="700">2. 中国非遗草木染“皂矾媒染乌黑布”</text>
+<text x="412" y="203" font-size="10" fill="#1e293b" text-anchor="start">莲蓬壳、五倍子、栗壳熬出多酚染液 + 皂矾（绿矾 FeSO4）固色，</text>
+<text x="412" y="217" font-size="10" fill="#64748b" text-anchor="start">纤维内原位生成耐洗铁—单宁黑络合物（香云纱河泥铁染同源）。</text>
+<rect x="402" y="230" width="320" height="54" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-opacity="0.35"/>
+<text x="412" y="247" font-size="11" fill="#1d6fa5" text-anchor="start" font-weight="700">3. 碳钢刀切柿子留黑印 &amp; 土豆熟后返青黑</text>
+<text x="412" y="263" font-size="10" fill="#1e293b" text-anchor="start">涩柿子单宁遇铁刀秒留蓝黑印；土豆富含绿原酸，煮熟时与薯内 Fe2+</text>
+<text x="412" y="277" font-size="10" fill="#64748b" text-anchor="start">结合，出锅晾凉遇空气氧化成 Fe3+–绿原酸络合物，令熟土豆发灰发乌。</text>
+<rect x="402" y="290" width="320" height="54" rx="7" fill="#fef1e8" stroke="#c25014" stroke-opacity="0.35"/>
+<text x="412" y="307" font-size="11" fill="#c25014" text-anchor="start" font-weight="700">4. 贫血人群“饭后忌立刻喝浓茶”</text>
+<text x="412" y="323" font-size="10" fill="#1e293b" text-anchor="start">浓茶单宁与儿茶素在胃肠道内用同款“螯合钳”锁死植物性非血红素铁，</text>
+<text x="412" y="337" font-size="10" fill="#64748b" text-anchor="start">形成难溶沉淀随粪便排出，显著拉低铁剂与蔬菜铁的吸收率。</text>
+<rect x="24" y="366" width="712" height="138" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="38.0" y="378.0" width="456" height="22" rx="11.0" fill="#f0fdfa" stroke="#0f766e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="266.0" y="393.0" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="600">Fe3+–邻二酚络合物的 pH 变色光谱 &amp; 为什么淋一勺白醋能“一键褪黑”</text>
+<rect x="38" y="410" width="162" height="80" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.3"/>
+<text x="119.0" y="430" font-size="11" fill="#18794e" text-anchor="middle" font-weight="700">pH &lt; 4.0（白醋/柠檬汁）</text>
+<text x="119.0" y="451" font-size="10" fill="#1e293b" text-anchor="middle">H+ 夺回酚羟基 + 柠檬酸抢铁</text>
+<text x="119.0" y="472" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="700">络合解体 → 恢复浅白！</text>
+<rect x="210" y="410" width="158" height="80" rx="8" fill="#f0fdfa" stroke="#14b8a6" stroke-width="1.3"/>
+<text x="289.0" y="430" font-size="11" fill="#0f766e" text-anchor="middle" font-weight="700">pH 5.0–6.0（弱酸单配位）</text>
+<text x="289.0" y="451" font-size="10" fill="#1e293b" text-anchor="middle">1 个多酚夹 1 个铁 [FeL]+</text>
+<text x="289.0" y="472" font-size="10.5" fill="#0f766e" text-anchor="middle" font-weight="700">呈灰绿 — 暗蓝绿色</text>
+<rect x="378" y="410" width="174" height="80" rx="8" fill="#eef2ff" stroke="#4338ca" stroke-width="1.3"/>
+<text x="465.0" y="430" font-size="11" fill="#312e81" text-anchor="middle" font-weight="700">pH 6.5–8.0（日常炒菜区）</text>
+<text x="465.0" y="451" font-size="10" fill="#1e293b" text-anchor="middle">2 个多酚夹 1 个铁 [FeL2]-</text>
+<text x="465.0" y="472" font-size="10.5" fill="#312e81" text-anchor="middle" font-weight="700">呈深紫蓝 — 乌黑色！</text>
+<rect x="562" y="410" width="160" height="80" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1.3"/>
+<text x="642.0" y="430" font-size="11" fill="#b91c1c" text-anchor="middle" font-weight="700">pH &gt; 9.0（强碱三配位）</text>
+<text x="642.0" y="451" font-size="10" fill="#1e293b" text-anchor="middle">3 个多酚夹 1 个铁 [FeL3]3-</text>
+<text x="642.0" y="472" font-size="10.5" fill="#b91c1c" text-anchor="middle" font-weight="700">呈暗红褐色（加小苏打更糟）</text>
+</svg>

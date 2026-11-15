@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="524" viewBox="0 0 760 524" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">卫星活力公式与闪电高椭圆轨道等时间间隔悬停原理图</title>
+<desc id="desc">精确求解开普勒方程绘制12小时闪电轨道每1小时点位，展示近快远慢与开普勒第二定律等面积扇形</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="523" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="380.0" y="30" font-size="19" fill="#1e293b" text-anchor="middle" font-weight="700">不踩油门凭什么飞十几年？活力公式与“近快远慢”悬停魔术</text>
+<text x="380.0" y="52" font-size="12.5" fill="#64748b" text-anchor="middle">引力与惯性永恒拔河：每 1 小时打一个点，高偏心“闪电轨道”自动在北极头顶慢放 8 小时</text>
+<rect x="22" y="68" width="392" height="434" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="40" y="95" font-size="14.2" fill="#0f172a" text-anchor="start" font-weight="700">12 小时“闪电轨道”等时间间隔（每 1 小时 1 点）</text>
+<polygon points="132.0,366.0 76.3,327.7 77.1,338.9 78.8,349.7 81.6,359.8 85.4,369.2 90.0,377.9 95.7,385.6 102.1,392.5 109.4,398.3 117.3,403.1 126.0,406.9 135.2,409.5 144.9,410.9 155.1,411.2 165.5,410.4 176.2,408.4 187.0,405.2" fill="#fed7aa" stroke="#f97316" stroke-width="1.2" opacity="0.78"/>
+<polygon points="132.0,366.0 283.5,175.6 282.2,174.2 280.9,172.9 279.5,171.6 278.1,170.3 276.7,169.1 275.3,167.9 273.8,166.8 272.3,165.7 270.7,164.6 269.1,163.6 267.5,162.7 265.9,161.7 264.2,160.9 262.6,160.0 260.8,159.2 259.1,158.5" fill="#bbf7d0" stroke="#16a34a" stroke-width="1.2" opacity="0.78"/>
+<polyline points="109.4,398.3 113.7,401.1 118.2,403.6 123.0,405.7 127.9,407.5 133.0,409.0 138.2,410.1 143.6,410.8 149.1,411.2 154.8,411.2 160.5,410.9 166.3,410.3 172.2,409.2 178.2,407.9 184.1,406.2 190.1,404.1 196.1,401.7 202.1,399.0 208.0,396.0 213.9,392.6 219.8,389.0 225.5,385.0 231.2,380.8 236.8,376.3 242.2,371.6 247.5,366.6 252.6,361.3 257.6,355.9 262.3,350.2 266.9,344.4 271.3,338.4 275.4,332.2 279.4,325.9 283.0,319.5 286.5,313.0 289.6,306.3 292.5,299.7 295.1,292.9 297.5,286.2 299.5,279.4 301.2,272.7 302.7,265.9 303.8,259.2 304.6,252.6 305.1,246.1 305.3,239.6 305.2,233.3 304.8,227.1 304.0,221.0 302.9,215.2 301.6,209.5 299.9,204.0 297.9,198.7 295.7,193.6 293.1,188.8 290.3,184.2 287.2,180.0 283.8,175.9 280.2,172.2 276.4,168.8 272.3,165.7 267.9,162.9 263.4,160.4 258.7,158.3 253.7,156.5 248.6,155.1 243.4,154.0 238.0,153.2 232.5,152.8 226.8,152.8 221.1,153.1 215.3,153.8 209.4,154.8 203.5,156.2 197.5,157.9 191.5,159.9 185.5,162.3 179.5,165.0 173.6,168.1 167.7,171.4 161.8,175.1 156.1,179.0 150.4,183.2 144.9,187.7 139.4,192.5 134.1,197.5 129.0,202.7 124.1,208.2 119.3,213.8 114.7,219.7 110.3,225.7 106.2,231.8 102.3,238.1 98.6,244.6 95.1,251.1 92.0,257.7 89.1,264.4 86.5,271.1 84.2,277.8 82.1,284.6 80.4,291.4 78.9,298.1 77.8,304.8 77.0,311.4 76.5,318.0 76.3,324.4 76.4,330.8 76.9,337.0 77.6,343.0 78.7,348.9 80.0,354.6 81.7,360.1 83.7,365.4 85.9,370.4 88.5,375.2 91.3,379.8 94.4,384.1 97.8,388.1 101.4,391.8 105.3,395.2 109.4,398.3" fill="none" stroke="#2563eb" stroke-width="2.4"/>
+<circle cx="132.0" cy="366.0" r="25" fill="#dbeafe" stroke="#1d6fa5" stroke-width="2.2"/>
+<line x1="99.0" y1="366.0" x2="165.0" y2="366.0" stroke="#64748b" stroke-width="1.1" stroke-dasharray="3 3"/>
+<text x="132.0" y="370.0" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">地球</text>
+<circle cx="109.4" cy="398.3" r="5.0" fill="#c25014" stroke="#ffffff" stroke-width="1.5"/>
+<text x="93.4" y="413.3" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="700" class="halo">0h</text>
+<circle cx="235.8" cy="377.1" r="5.0" fill="#c25014" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="285.0" cy="315.9" r="5.0" fill="#18794e" stroke="#ffffff" stroke-width="1.5"/>
+<text x="296.0" y="319.9" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="700" class="halo">2h</text>
+<circle cx="303.2" cy="263.2" r="5.0" fill="#18794e" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="303.9" cy="220.6" r="5.0" fill="#18794e" stroke="#ffffff" stroke-width="1.5"/>
+<text x="314.9" y="224.6" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="700" class="halo">4h</text>
+<circle cx="292.7" cy="188.1" r="5.0" fill="#18794e" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="272.3" cy="165.7" r="5.0" fill="#18794e" stroke="#ffffff" stroke-width="1.5"/>
+<text x="282.3" y="155.7" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="700" class="halo">6h</text>
+<circle cx="244.2" cy="154.1" r="5.0" fill="#18794e" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="209.8" cy="154.7" r="5.0" fill="#18794e" stroke="#ffffff" stroke-width="1.5"/>
+<text x="219.8" y="158.7" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="700" class="halo">8h</text>
+<circle cx="170.0" cy="170.0" r="5.0" fill="#18794e" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="126.8" cy="205.1" r="5.0" fill="#18794e" stroke="#ffffff" stroke-width="1.5"/>
+<text x="110.8" y="209.1" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="700" class="halo">10h</text>
+<circle cx="86.1" cy="272.2" r="5.0" fill="#c25014" stroke="#ffffff" stroke-width="1.5"/>
+<text x="40" y="434" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">近地点 h = 500 km</text>
+<text x="40" y="452" font-size="11" fill="#1e293b" text-anchor="start">狂飙 vp = 10.0 km/s（嗖地掠过南半球）</text>
+<text x="40" y="124" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">远地点 ha = 39,870 km</text>
+<text x="40" y="142" font-size="11" fill="#1e293b" text-anchor="start">慢走 va = 1.5 km/s（连盯北极 8 小时！）</text>
+<text x="40" y="484" font-size="10.6" fill="#6d28d9" text-anchor="start" font-weight="600">两块彩色扇形耗时同为 1 小时，扫过面积严格相等（开普勒第二定律）</text>
+<rect x="428" y="68" width="310" height="434" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="446" y="95" font-size="15" fill="#6d28d9" text-anchor="start" font-weight="700">天体力学总开关：活力公式</text>
+<rect x="444" y="110" width="278" height="86" rx="10" fill="#f3e8ff" stroke="#d8b4fe" stroke-width="1"/>
+<text x="583" y="138" font-size="16.5" fill="#6d28d9" text-anchor="middle" font-weight="700">v² = μ ( 2 / r − 1 / a )</text>
+<text x="583" y="161" font-size="11" fill="#1e293b" text-anchor="middle">r：当前到地心距离 · a：椭圆半长轴</text>
+<text x="583" y="180" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="700">总机械能 E = −μm / (2a) 全程守恒！</text>
+<rect x="444" y="210" width="278" height="88" rx="10" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<text x="456" y="231" font-size="12" fill="#1d6fa5" text-anchor="start" font-weight="700">① 正圆轨道特例（r = a）</text>
+<text x="456" y="250" font-size="10.8" fill="#1e293b" text-anchor="start">代入得 v = √(μ/r)：高度越高，引力越弱，</text>
+<text x="456" y="266" font-size="10.8" fill="#1e293b" text-anchor="start">巡航反而越慢（400 km 跑 7.67 km/s，静止轨</text>
+<text x="456" y="282" font-size="10.8" fill="#1e293b" text-anchor="start">3.07 km/s），完全不需要发动机持续推着走！</text>
+<rect x="444" y="310" width="278" height="86" rx="10" fill="#e7f6ee" stroke="#86efac" stroke-width="1"/>
+<text x="456" y="331" font-size="12" fill="#18794e" text-anchor="start" font-weight="700">② 椭圆轨道自动“能量换挡”</text>
+<text x="456" y="350" font-size="10.8" fill="#1e293b" text-anchor="start">爬向远地点：引力拉后腿，动能自动存成势能；</text>
+<text x="456" y="366" font-size="10.8" fill="#1e293b" text-anchor="start">跌回近地点：势能兑现回动能，一滴油不烧</text>
+<text x="456" y="382" font-size="10.8" fill="#1e293b" text-anchor="start">就能让卫星在目标上空“定点慢放”！</text>
+<rect x="444" y="408" width="278" height="80" rx="10" fill="#fef1e8" stroke="#fdba74" stroke-width="1"/>
+<text x="456" y="429" font-size="12" fill="#c25014" text-anchor="start" font-weight="700">③ 63.4° 临界倾角锁死远地点</text>
+<text x="456" y="448" font-size="10.8" fill="#1e293b" text-anchor="start">赤道鼓包会使普通椭圆拱线漂移；唯独令</text>
+<text x="456" y="464" font-size="10.8" fill="#1e293b" text-anchor="start">5cos²i − 1 = 0（i = 63.43°），远地点永远</text>
+<text x="456" y="480" font-size="10.8" fill="#1e293b" text-anchor="start">钉在北半球不南漂——3 颗星全天覆盖北极！</text>
+</svg>

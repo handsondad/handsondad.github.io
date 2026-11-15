@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="528" viewBox="0 0 760 528" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">自旋稳定火箭与三轴推力矢量控制火箭原理对比及双子座8号失控案例图</title>
+<desc id="desc">左栏展示自旋稳定通过陀螺刚度与推力偏心抵消稳定固体上面级和星链释放，右栏解析液体推进剂离心吸空风险、万向节摆动喷管原理及阿姆斯特朗双子座8号每秒1转紧急制动事件。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-b" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#1d6fa5"/>
+    </marker>
+    <marker id="arr-o" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#c25014"/>
+    </marker>
+    <marker id="arr-g" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#18794e"/>
+    </marker>
+    <marker id="arr-p" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#6d28d9"/>
+    </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="527" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">第三重旋转：为什么探空火箭像步枪子弹一样狂转，而载人火箭却拼死“禁转”？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左看自旋稳定如何靠“每分钟 60–750 转”抹平固体发动机偏心 → 右看液体晃动与阿姆斯特朗双子座 8 号惊魂时刻</text>
+<rect x="22" y="68" width="352" height="442" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="38" y="82" width="320" height="28" rx="8" fill="#e7f6ee" stroke="#86efac" stroke-width="1"/>
+<text x="198" y="101" font-size="11.4" fill="#18794e" text-anchor="middle" font-weight="700">自旋稳定派（Spin Stabilization）：无控固推的省钱神技</text>
+<rect x="180" y="140" width="36" height="96" rx="8" fill="#dcfce7" stroke="#18794e" stroke-width="2"/>
+<polygon points="180,140 198,112 216,140" fill="#18794e"/>
+<polygon points="180,212 160,236 180,234" fill="#18794e" opacity="0.8"/>
+<polygon points="216,212 236,236 216,234" fill="#18794e" opacity="0.8"/>
+<ellipse cx="198" cy="188" rx="48" ry="14" fill="none" stroke="#c25014" stroke-width="2.2" stroke-dasharray="5,3"/>
+<text x="254" y="192" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="700">ω = 60–750 rpm</text>
+<polygon points="198,236 172,276 224,276" fill="#ffedd5" stroke="#c25014" stroke-width="1.4" stroke-dasharray="3,3"/>
+<text x="198" y="292" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700">喷管哪怕歪 0.3°，转一圈侧向力也刚好正负抵消！</text>
+<rect x="38" y="306" width="320" height="188" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="52" y="328" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">● 两大物理法宝：</text>
+<text x="62" y="349" font-size="10.5" fill="#1e293b" text-anchor="start">1. 陀螺定轴性（L = I·ω 越大，外力矩越掰不动指向）；</text>
+<text x="62" y="369" font-size="10.5" fill="#1e293b" text-anchor="start">2. 推力偏心积分归零（省掉昂贵沉重的液压伺服电脑！）。</text>
+<text x="52" y="394" font-size="10.8" fill="#18794e" text-anchor="start" font-weight="700">● 真实服役明星：</text>
+<text x="62" y="415" font-size="10.5" fill="#1e293b" text-anchor="start">• 气象/探空火箭（尾翼微斜几度，靠迎面气流自动吹转）；</text>
+<text x="62" y="435" font-size="10.5" fill="#1e293b" text-anchor="start">• 1958 探险者 1 号上面级旋转桶（电机预旋至 750 rpm）；</text>
+<text x="62" y="455" font-size="10.5" fill="#1e293b" text-anchor="start">• 新视野号冥王星探测器第三级 Star-48B（约 62 rpm）；</text>
+<text x="62" y="475" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">• SpaceX 星链卫星堆叠体：末级慢速自旋后松开拉杆像飞盘撒开！</text>
+<rect x="386" y="68" width="352" height="442" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="402" y="82" width="320" height="28" rx="8" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<text x="562" y="101" font-size="11.4" fill="#1d6fa5" text-anchor="middle" font-weight="700">三轴主动稳定派（3-Axis TVC）：液体大火箭与载人标配</text>
+<rect x="480" y="138" width="44" height="92" rx="8" fill="#eff6ff" stroke="#1d6fa5" stroke-width="2"/>
+<path d="M 482,168 L 482,228 L 495,228 Q 492,196 482,168 Z" fill="#60a5fa"/>
+<path d="M 522,168 L 522,228 L 509,228 Q 512,196 522,168 Z" fill="#60a5fa"/>
+<text x="502" y="244" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700">若狂转：液氧离心贴壁</text>
+<text x="502" y="261" font-size="10.5" fill="#c25014" text-anchor="middle">底部抽液口直接吸空断火！</text>
+<rect x="626" y="138" width="32" height="84" rx="6" fill="#f1f5f9" stroke="#475569" stroke-width="1.8"/>
+<circle cx="642" cy="180" r="4" fill="#0f172a"/>
+<text x="664" y="184" font-size="10.5" fill="#0f172a" text-anchor="start">CG 质心</text>
+<polygon points="637,222 647,222 658,244 644,248" fill="#1d6fa5"/>
+<line x1="651" y1="246" x2="662" y2="272" stroke="#c25014" stroke-width="2.6" marker-end="url(#arr-o)"/>
+<text x="642" y="288" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">万向节摆动喷管锁死三轴</text>
+<rect x="402" y="306" width="320" height="188" rx="8" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<text x="416" y="328" font-size="10.8" fill="#1d6fa5" text-anchor="start" font-weight="700">● 为什么液体火箭与载人飞船严禁持续自旋？</text>
+<text x="426" y="349" font-size="10.5" fill="#0f172a" text-anchor="start">1. 几百吨液氧煤油一旦旋转晃动，离心吸空＋谐振能撕裂箭体；</text>
+<text x="426" y="369" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">2. 人类前庭与脑供血承受不住高速滚转！</text>
+<text x="416" y="395" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="700">● 1966 年 3 月 16 日《双子座 8 号》生死 25 分钟（NASA 史实）：</text>
+<text x="426" y="416" font-size="10.5" fill="#1e293b" text-anchor="start">完成人类首次太空对接后，8 号姿态喷管短路卡死常开，</text>
+<text x="426" y="436" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">飞船失控狂转飙至 1 圈/秒（60 rpm）！指令长尼尔·阿姆斯特朗</text>
+<text x="426" y="456" font-size="10.5" fill="#1e293b" text-anchor="start">在眩晕黑视边缘果断关停主姿态系统、启用再入反推火箭才刹住，</text>
+<text x="426" y="476" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="700">这次教科书级临危不乱直接让他被选为阿波罗 11 号登月第一人！</text>
+</svg>

@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="512" viewBox="0 0 760 512" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">亲属脏话靶向错位机制与男女贬损词双轨审判台对比图</title>
+<desc id="desc">左栏展示男性冲突借母系亲属攻击血统与荣誉的三角机制，右栏对比骂男性聚焦能力公德与骂女性聚焦性道德及温顺规训的不对称结构</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="511" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="380.0" y="30" font-size="18.2" fill="#1e293b" text-anchor="middle" font-weight="700">两个男人街头吵架，为什么枪口却总瞄准无辜的“妈妈与姐妹”？</text>
+<text x="380.0" y="52" font-size="12.0" fill="#64748b" text-anchor="middle">跨语言“亲属脏话靶向错位”与男女贬义词的“双轨审判台”（鲁迅 1925；Kumar 2025；Graziano 2024）</text>
+<rect x="22" y="68" width="354" height="424" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="38.0" y="82.0" width="320" height="22" rx="11.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="198.0" y="97.0" font-size="12" fill="#dc2626" text-anchor="middle" font-weight="600">① 诡异的“隔山打牛”：男对男冲突中的母系靶心</text>
+<rect x="42" y="126" width="124" height="54" rx="10" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<text x="104" y="149" font-size="11.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">争执甲方（男性）</text>
+<text x="104" y="168" font-size="10.0" fill="#64748b" text-anchor="middle">施骂者</text>
+<rect x="232" y="126" width="124" height="54" rx="10" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<text x="294" y="149" font-size="11.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">争执乙方（男性）</text>
+<text x="294" y="168" font-size="10.0" fill="#64748b" text-anchor="middle">真正想羞辱的目标</text>
+<line x1="168.0" y1="153.0" x2="228.0" y2="153.0" stroke="#475569" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#arr-muted)"/>
+<text x="198" y="143" font-size="9.8" fill="#64748b" text-anchor="middle">正面冲突</text>
+<rect x="54" y="214" width="290" height="74" rx="10" fill="#fef2f2" stroke="#fca5a5" stroke-width="1"/>
+<text x="199" y="237" font-size="11.2" fill="#dc2626" text-anchor="middle" font-weight="700">象征靶心：乙方母亲 / 姐妹与血统合法性</text>
+<text x="199" y="257" font-size="10.0" fill="#1e293b" text-anchor="middle">• 魏晋门阀“祖宗护符”：毁其母系 = 釜底抽薪瓦解门第</text>
+<text x="199" y="275" font-size="10.0" fill="#1e293b" text-anchor="middle">• 父权荣誉捆绑：将男性面子寄生于女性亲属贞洁之上</text>
+<line x1="104.0" y1="182.0" x2="148.0" y2="212.0" stroke="#dc2626" stroke-width="2.4" marker-end="url(#arr-orange)"/>
+<text x="92" y="203" font-size="10.0" fill="#dc2626" text-anchor="middle" font-weight="700">言语攻击</text>
+<line x1="250.0" y1="212.0" x2="294.0" y2="182.0" stroke="#c25014" stroke-width="2.4" marker-end="url(#arr-orange)"/>
+<text x="306" y="203" font-size="10.0" fill="#c25014" text-anchor="middle" font-weight="700">折射羞辱</text>
+<rect x="38" y="302" width="322" height="174" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="52" y="324" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">两大底层人类学根源：</text>
+<text x="52" y="346" font-size="10.0" fill="#1e293b" text-anchor="start">1. 血统确定性不对称（鲁迅《论“他妈的！”》引北魏邢子才）：</text>
+<text x="52" y="366" font-size="10.0" fill="#1e293b" text-anchor="start">   母系分娩 100% 确定，而古代父系血统无法自证（“妇人不可保，</text>
+<text x="52" y="386" font-size="10.0" fill="#1e293b" text-anchor="start">   能保五世耶？”）——攻击母系即动摇整个父系宗族护符。</text>
+<text x="52" y="406" font-size="10.0" fill="#1e293b" text-anchor="start">2. “内容涉女、靶子对男”的代理暴力（Kumar 2025）：</text>
+<text x="52" y="426" font-size="10.0" fill="#1e293b" text-anchor="start">   街头与网络上的“涉母/涉姐国骂”极少对女性本人说，而是男人</text>
+<text x="52" y="446" font-size="10.0" fill="#1e293b" text-anchor="start">   之间把女性亲属当作“荣誉抵押品”进行的支配权表演。</text>
+<rect x="390" y="68" width="348" height="424" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="406.0" y="82.0" width="316" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="564.0" y="97.0" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="600">② 词库解剖：骂男人 vs 骂女人的“双轨审判台”</text>
+<rect x="406" y="124" width="316" height="144" rx="10" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<text x="420" y="146" font-size="11.0" fill="#1d6fa5" text-anchor="start" font-weight="700">针对男性的高频贬损词：审判“能力、勇气与公共契约”</text>
+<text x="420" y="169" font-size="10.1" fill="#1e293b" text-anchor="start">• 攻击实力与担当：窝囊废、怂包、软蛋、吃软饭；</text>
+<text x="420" y="188" font-size="10.1" fill="#1e293b" text-anchor="start">• 攻击血统与公德：兰开斯特大学 BNC2014 语料显示，bastard</text>
+<text x="420" y="207" font-size="10.1" fill="#1e293b" text-anchor="start">  绝大部分指向男性，用于审判背信弃义与破坏公平规则；</text>
+<text x="420" y="226" font-size="10.1" fill="#1e293b" text-anchor="start">• 终极羞辱居然是“女性化”：骂男人“娘炮 / 像个娘们”，暗含</text>
+<text x="420" y="245" font-size="10.1" fill="#1e293b" text-anchor="start">  把“跌出阳刚等级、沦为女性位置”当成降级惩罚！</text>
+<rect x="406" y="282" width="316" height="194" rx="10" fill="#f3e8ff" stroke="#d8b4fe" stroke-width="1"/>
+<text x="420" y="304" font-size="11.0" fill="#6d28d9" text-anchor="start" font-weight="700">针对女性的高频贬损词：规训“性贞洁与温顺服从”</text>
+<text x="420" y="327" font-size="10.1" fill="#1e293b" text-anchor="start">• 轨道 A（性双重标准 SDS，Gómez-Berrocal 2022）：</text>
+<text x="420" y="347" font-size="10.1" fill="#1e293b" text-anchor="start">  同样丰富的情感经历，在男性常被夸“风流本事”，在女性却</text>
+<text x="420" y="367" font-size="10.1" fill="#1e293b" text-anchor="start">  对应成打的荡妇羞辱词汇，且几乎找不到对等的男性贬义词；</text>
+<text x="420" y="387" font-size="10.1" fill="#1e293b" text-anchor="start">• 轨道 B（温顺度警棍，Graziano 2024 / McEnery 2026）：</text>
+<text x="420" y="407" font-size="10.1" fill="#1e293b" text-anchor="start">  当女性表现得强势、果断、不好惹时，立刻触发“泼妇 / 悍妇</text>
+<text x="420" y="427" font-size="10.1" fill="#1e293b" text-anchor="start">  / bitch”标签——语言哲学指出这类词根本没有“中性对应词”，</text>
+<text x="420" y="447" font-size="10.1" fill="#0f172a" text-anchor="start" font-weight="700">  因为它们的唯一功能就是把越界女性重新赶回温顺框架！</text>
+</svg>

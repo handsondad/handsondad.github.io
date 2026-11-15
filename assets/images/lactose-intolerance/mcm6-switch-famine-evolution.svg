@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="452" viewBox="0 0 760 452" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">2号染色体MCM6增强子远程开关与欧洲饥荒瘟疫驱动乳糖酶持续基因演化时间轴</title>
+<desc id="desc">上图展示2q21区段MCM6第13内含子增强子(-13910 C→T等趋同突变)对LCT乳糖酶基因的调控及断奶后活性分化曲线；下图依据2022年Nature古陶片奶脂与古DNA研究，展示欧洲早在公元前7000年已饮奶制酪，但耐受等位基因直到公元前3000至前1000年饥荒与聚落病原体双重压力下才急速跃升至约90%。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="451" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">成年后不耐受不是“病”，而是哺乳动物出厂设置！—— MCM6 开关与饥荒演化史</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">全球约 68% 成人断奶后自动关小乳糖酶；北欧等地的高耐受率，竟是被青铜时代饥荒与瘟疫“逼”出来的</text>
+<rect x="20" y="62" width="720" height="166" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="85" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 人类 2 号染色体 (2q21.3) 远程调控：不是 LCT 乳糖酶基因坏了，而是上游 13.9 kb 处的开关按下了节能键</text>
+<rect x="36" y="98" width="404" height="118" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<line x1="54.0" y1="148.0" x2="422.0" y2="148.0" stroke="#475569" stroke-width="3.0"/>
+<rect x="66" y="132" width="154" height="32" rx="6" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.6"/>
+<text x="143" y="152" font-size="9.4" fill="#6d28d9" text-anchor="middle" font-weight="700">MCM6 基因 (第13内含子增强子)</text>
+<rect x="292" y="132" width="116" height="32" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.6"/>
+<text x="350" y="152" font-size="9.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">LCT 乳糖酶基因</text>
+<path d="M 156,132 Q 228,96 296,130" fill="none" stroke="#c25014" stroke-width="1.9" stroke-dasharray="4,3" marker-end="url(#arr-orange)"/>
+<text x="228" y="112" font-size="9.0" fill="#c25014" text-anchor="middle" font-weight="700">远程调控启动子 (相距 ~13,910 bp)</text>
+<text x="52" y="182" font-size="9.2" fill="#1e293b" text-anchor="start">• 祖源默认态 (-13910*C)：断奶后甲基化沉默，省下合成乳糖酶的蛋白开销；</text>
+<text x="52" y="201" font-size="9.2" fill="#18794e" text-anchor="start" font-weight="700">• 趋同演化常开突变：欧洲 -13910*T、东非 -14010*C、阿拉伯 -13915*G 独立卡在“开”档！</text>
+<rect x="452" y="98" width="272" height="118" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="464" y="116" font-size="9.7" fill="#0f172a" text-anchor="start" font-weight="700">断奶前后小肠乳糖酶相对活性 (%)</text>
+<line x1="486.0" y1="128.0" x2="486.0" y2="192.0" stroke="#475569" stroke-width="1.2"/>
+<line x1="486.0" y1="192.0" x2="708.0" y2="192.0" stroke="#475569" stroke-width="1.2"/>
+<text x="481.0" y="132.0" font-size="8.8" fill="#64748b" text-anchor="end">100</text>
+<text x="481.0" y="195.0" font-size="8.8" fill="#64748b" text-anchor="end">0</text>
+<text x="486.0" y="206.0" font-size="8.8" fill="#64748b" text-anchor="middle">婴儿(母乳7%)</text>
+<text x="521.5" y="206.0" font-size="8.8" fill="#64748b" text-anchor="middle">断奶</text>
+<text x="592.6" y="206.0" font-size="8.8" fill="#64748b" text-anchor="middle">少年</text>
+<text x="699.1" y="206.0" font-size="8.8" fill="#64748b" text-anchor="middle">成人</text>
+<path d="M 486.0,128.0 L 512.6,130.6 L 557.0,134.4 L 628.1,137.0 L 708.0,137.6" fill="none" stroke="#18794e" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="640" y="145" font-size="9.0" fill="#18794e" text-anchor="middle" font-weight="700">持续型 (C/T, T/T)</text>
+<path d="M 486.0,128.0 L 503.8,133.1 L 530.4,167.7 L 574.8,181.8 L 645.8,185.6 L 708.0,186.2" fill="none" stroke="#c25014" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5,3"/>
+<text x="634" y="181" font-size="9.0" fill="#c25014" text-anchor="middle" font-weight="700">默认关闸型 (C/C ~10%)</text>
+<rect x="20" y="240" width="720" height="200" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="263" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 2022《Nature》7,000 份古陶片奶脂 + 1,700 例古人类 DNA 揭秘：先喝奶四千年，后有耐受基因狂飙！</text>
+<line x1="76.0" y1="402.0" x2="488.0" y2="402.0" stroke="#cbd5e1" stroke-width="0.9"/>
+<text x="69.0" y="405.5" font-size="9.0" fill="#64748b" text-anchor="end">0%</text>
+<line x1="76.0" y1="344.0" x2="488.0" y2="344.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3,3"/>
+<text x="69.0" y="347.5" font-size="9.0" fill="#64748b" text-anchor="end">50%</text>
+<line x1="76.0" y1="286.0" x2="488.0" y2="286.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3,3"/>
+<text x="69.0" y="289.5" font-size="9.0" fill="#64748b" text-anchor="end">100%</text>
+<line x1="76.0" y1="402.0" x2="76.0" y2="406.0" stroke="#475569" stroke-width="1.1"/>
+<text x="76.0" y="419.0" font-size="8.9" fill="#64748b" text-anchor="middle">7000 BC</text>
+<line x1="167.6" y1="402.0" x2="167.6" y2="406.0" stroke="#475569" stroke-width="1.1"/>
+<text x="167.6" y="419.0" font-size="8.9" fill="#64748b" text-anchor="middle">5000 BC</text>
+<line x1="259.1" y1="402.0" x2="259.1" y2="406.0" stroke="#475569" stroke-width="1.1"/>
+<text x="259.1" y="419.0" font-size="8.9" fill="#64748b" text-anchor="middle">3000 BC</text>
+<line x1="350.7" y1="402.0" x2="350.7" y2="406.0" stroke="#475569" stroke-width="1.1"/>
+<text x="350.7" y="419.0" font-size="8.9" fill="#64748b" text-anchor="middle">1000 BC</text>
+<line x1="488.0" y1="402.0" x2="488.0" y2="406.0" stroke="#475569" stroke-width="1.1"/>
+<text x="488.0" y="419.0" font-size="8.9" fill="#64748b" text-anchor="middle">AD 2000</text>
+<line x1="76.0" y1="286.0" x2="76.0" y2="402.0" stroke="#475569" stroke-width="1.3"/>
+<line x1="76.0" y1="402.0" x2="488.0" y2="402.0" stroke="#475569" stroke-width="1.3"/>
+<path d="M 76.0,346.3 L 144.7,323.1 L 213.3,330.1 L 282.0,320.8 L 350.7,313.8 L 419.3,306.9 L 488.0,299.9" fill="none" stroke="#1d6fa5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5,3"/>
+<text x="176.7" y="316.2" font-size="9.1" fill="#1d6fa5" text-anchor="middle" font-weight="700">古陶片奶制品普及度 (早已喝奶/做奶酪!)</text>
+<path d="M 76.0,401.3 L 98.9,401.3 L 121.8,401.3 L 144.7,401.3 L 167.6,401.3 L 190.4,400.8 L 213.3,400.8 L 236.2,400.8 L 259.1,400.2 L 282.0,398.1 L 304.9,393.6 L 327.8,384.7 L 350.7,369.5 L 373.6,348.9 L 396.4,328.3 L 419.3,312.9 L 442.2,303.9 L 465.1,299.3 L 488.0,297.1" fill="none" stroke="#dc2626" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="172.1" y="391.6" font-size="9.0" fill="#dc2626" text-anchor="middle" font-weight="700">耐受基因 -13910*T 几乎为 0%</text>
+<text x="421.6" y="298.8" font-size="9.2" fill="#dc2626" text-anchor="middle" font-weight="700">北欧飙至 ~90%</text>
+<line x1="304.9" y1="341.7" x2="316.3" y2="374.2" stroke="#c25014" stroke-width="1.6" marker-end="url(#arr-orange)"/>
+<text x="302.6" y="334.7" font-size="9.0" fill="#c25014" text-anchor="middle" font-weight="700">饥荒 + 聚落瘟疫触发强选择!</text>
+<rect x="504" y="276" width="222" height="150" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="516" y="296" font-size="10.2" fill="#c25014" text-anchor="start" font-weight="700">为什么晚了 4,000 年才爆发？</text>
+<text x="516" y="315" font-size="9.2" fill="#1e293b" text-anchor="start">• 平时健康人喝奶最多肚胀拉稀，</text>
+<text x="516" y="332" font-size="9.2" fill="#1e293b" text-anchor="start">  并不影响存活与繁衍后代；</text>
+<text x="516" y="350" font-size="9.2" fill="#0f172a" text-anchor="start" font-weight="700">• 一旦庄稼绝收饥荒 + 疫病感染，</text>
+<text x="516" y="367" font-size="9.2" fill="#1e293b" text-anchor="start">  被迫喝生鲜奶充饥时，渗透性腹泻</text>
+<text x="516" y="384" font-size="9.2" fill="#dc2626" text-anchor="start" font-weight="700">  对 C/C 者变成致命脱水！</text>
+<text x="516" y="405" font-size="9.1" fill="#18794e" text-anchor="start" font-weight="700">• 草原/东亚智慧：靠乳酸菌做酸马奶</text>
+<text x="516" y="420" font-size="9.1" fill="#18794e" text-anchor="start" font-weight="700">  与奶豆腐，在体外先拆掉了乳糖！</text>
+</svg>

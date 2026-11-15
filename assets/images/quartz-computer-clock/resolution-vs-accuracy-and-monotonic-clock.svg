@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="510" viewBox="0 0 760 510" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">电脑计时分辨率与准确度区别及CLOCK_REALTIME与CLOCK_MONOTONIC对比图</title>
+<desc id="desc">上半图对比3GHz高分辨率TSC因50ppm偏差日漂4.32秒与温补晶振高准确度，下半图对比会回跳的日历时钟与永不倒退的单调时钟</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="509" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="380.0" y="30" font-size="18.5" fill="#1e293b" text-anchor="middle" font-weight="700">电脑计时的两大认知陷阱：皮秒刻度照样慢 4 秒 &amp; 时间倒流 Bug</text>
+<text x="380.0" y="52" font-size="12.2" fill="#64748b" text-anchor="middle">高分辨率不等于高准确度；测耗时若误用“日历时钟”，一次网络校时往回拨表就能让程序瞬间死锁崩溃</text>
+<rect x="22" y="68" width="716" height="198" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="38.0" y="82.0" width="606" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="341.0" y="97.0" font-size="12" fill="#c25014" text-anchor="middle" font-weight="600">陷阱一：3 GHz CPU 计数器能切出 0.33 纳秒刻度，为什么断网一天照样能歪 4.3 秒？</text>
+<rect x="38" y="122" width="332" height="126" rx="10" fill="#fef1e8" stroke="#fdba74" stroke-width="1"/>
+<text x="52" y="145" font-size="11.0" fill="#c25014" text-anchor="start" font-weight="700">A. 未联网校准的 3 GHz 电脑 TSC（高分辨率 · 低准确度）</text>
+<line x1="54.0" y1="168.0" x2="350.0" y2="168.0" stroke="#c25014" stroke-width="2"/>
+<line x1="54.0" y1="158.0" x2="54.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="60.0" y1="163.0" x2="60.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="66.0" y1="163.0" x2="66.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="72.0" y1="163.0" x2="72.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="78.0" y1="163.0" x2="78.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="84.0" y1="158.0" x2="84.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="90.0" y1="163.0" x2="90.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="96.0" y1="163.0" x2="96.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="102.0" y1="163.0" x2="102.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="108.0" y1="163.0" x2="108.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="114.0" y1="158.0" x2="114.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="120.0" y1="163.0" x2="120.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="126.0" y1="163.0" x2="126.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="132.0" y1="163.0" x2="132.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="138.0" y1="163.0" x2="138.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="144.0" y1="158.0" x2="144.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="150.0" y1="163.0" x2="150.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="156.0" y1="163.0" x2="156.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="162.0" y1="163.0" x2="162.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="168.0" y1="163.0" x2="168.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="174.0" y1="158.0" x2="174.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="180.0" y1="163.0" x2="180.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="186.0" y1="163.0" x2="186.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="192.0" y1="163.0" x2="192.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="198.0" y1="163.0" x2="198.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="204.0" y1="158.0" x2="204.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="210.0" y1="163.0" x2="210.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="216.0" y1="163.0" x2="216.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="222.0" y1="163.0" x2="222.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="228.0" y1="163.0" x2="228.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="234.0" y1="158.0" x2="234.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="240.0" y1="163.0" x2="240.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="246.0" y1="163.0" x2="246.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="252.0" y1="163.0" x2="252.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="258.0" y1="163.0" x2="258.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="264.0" y1="158.0" x2="264.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="270.0" y1="163.0" x2="270.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="276.0" y1="163.0" x2="276.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="282.0" y1="163.0" x2="282.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="288.0" y1="163.0" x2="288.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="294.0" y1="158.0" x2="294.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="300.0" y1="163.0" x2="300.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="306.0" y1="163.0" x2="306.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="312.0" y1="163.0" x2="312.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="318.0" y1="163.0" x2="318.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="324.0" y1="158.0" x2="324.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="330.0" y1="163.0" x2="330.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="336.0" y1="163.0" x2="336.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="342.0" y1="163.0" x2="342.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<line x1="348.0" y1="163.0" x2="348.0" y2="168.0" stroke="#c25014" stroke-width="1.1"/>
+<text x="52" y="192" font-size="10.3" fill="#1e293b" text-anchor="start">• 分辨率（最小刻度）：1 ÷ 3×10⁹ = 0.333 纳秒（极精细！）</text>
+<text x="52" y="212" font-size="10.3" fill="#1e293b" text-anchor="start">• 准确度受主板晶振 ±50 ppm 公差拖累：86,400 秒 × 50×10⁻⁶</text>
+<text x="52" y="232" font-size="10.3" fill="#dc2626" text-anchor="start" font-weight="700">  → 走满一天累计偏差 ±4.32 秒！（像印满微米刻度的橡皮尺）</text>
+<rect x="386" y="122" width="336" height="126" rx="10" fill="#f0fdfa" stroke="#5eead4" stroke-width="1"/>
+<text x="400" y="145" font-size="11.0" fill="#0f766e" text-anchor="start" font-weight="700">B. 温补石英表 TCXO 秒脉冲（低分辨率 · 高准确度）</text>
+<line x1="402.0" y1="168.0" x2="702.0" y2="168.0" stroke="#0f766e" stroke-width="2"/>
+<line x1="402.0" y1="156.0" x2="402.0" y2="168.0" stroke="#0f766e" stroke-width="2"/>
+<line x1="462.0" y1="156.0" x2="462.0" y2="168.0" stroke="#0f766e" stroke-width="2"/>
+<line x1="522.0" y1="156.0" x2="522.0" y2="168.0" stroke="#0f766e" stroke-width="2"/>
+<line x1="582.0" y1="156.0" x2="582.0" y2="168.0" stroke="#0f766e" stroke-width="2"/>
+<line x1="642.0" y1="156.0" x2="642.0" y2="168.0" stroke="#0f766e" stroke-width="2"/>
+<line x1="702.0" y1="156.0" x2="702.0" y2="168.0" stroke="#0f766e" stroke-width="2"/>
+<text x="400" y="192" font-size="10.3" fill="#1e293b" text-anchor="start">• 分辨率（最小刻度）：每秒才跳 1 下（1.0 秒，测不了微秒耗时）</text>
+<text x="400" y="212" font-size="10.3" fill="#1e293b" text-anchor="start">• 但晶振经过 ±2 ppm 精密温补：86,400 秒 × 2×10⁻⁶</text>
+<text x="400" y="232" font-size="10.3" fill="#0f766e" text-anchor="start" font-weight="700">  → 走满一天误差仅 ±0.17 秒！（刻度虽疏，总长却稳如钢尺）</text>
+<rect x="22" y="282" width="716" height="208" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="38.0" y="296.0" width="564" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="320.0" y="311.0" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="600">陷阱二：为什么所有现代操作系统都强制拆分“墙上日历钟”与“单调秒表钟”？</text>
+<rect x="38" y="336" width="332" height="138" rx="10" fill="#fef2f2" stroke="#fca5a5" stroke-width="1"/>
+<text x="52" y="358" font-size="11.2" fill="#dc2626" text-anchor="start" font-weight="700">❌ 日历墙上钟 CLOCK_REALTIME（会跳变倒流！）</text>
+<polyline points="56,418 156,382 156,412 246,378" fill="none" stroke="#dc2626" stroke-width="2.6"/>
+<circle cx="156" cy="382" r="4" fill="#dc2626"/>
+<text x="166" y="412" font-size="9.8" fill="#dc2626" text-anchor="start" font-weight="700">NTP/手动回拨 −2 秒！</text>
+<text x="52" y="438" font-size="10.2" fill="#1e293b" text-anchor="start">• 用途：给人类看现在几点、给文件盖 UTC 日期戳；</text>
+<text x="52" y="458" font-size="10.2" fill="#dc2626" text-anchor="start" font-weight="700">• 禁忌：测耗时算 t₂ − t₁ 可能算出负数，导致超时器卡死！</text>
+<rect x="386" y="336" width="336" height="138" rx="10" fill="#e7f6ee" stroke="#86efac" stroke-width="1"/>
+<text x="400" y="358" font-size="11.2" fill="#18794e" text-anchor="start" font-weight="700">✅ 单调秒表钟 CLOCK_MONOTONIC / QPC（绝不倒退！）</text>
+<line x1="406" y1="418" x2="596" y2="372" stroke="#16a34a" stroke-width="2.8" marker-end="url(#arr-green)"/>
+<text x="604" y="384" font-size="9.8" fill="#18794e" text-anchor="start" font-weight="700">开机起算</text>
+<text x="604" y="400" font-size="9.8" fill="#18794e" text-anchor="start" font-weight="700">永远单调递增</text>
+<text x="400" y="438" font-size="10.2" fill="#1e293b" text-anchor="start">• 用途：测量函数耗时、网络超时、游戏帧间隔、动画计时；</text>
+<text x="400" y="458" font-size="10.2" fill="#18794e" text-anchor="start" font-weight="700">• 铁律：不管用户把系统年份改到哪一年，它都稳步向前走！</text>
+</svg>

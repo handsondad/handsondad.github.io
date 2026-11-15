@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="460" viewBox="0 0 760 460" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">洛书幻方与抢15纸牌博弈的井字棋同构及行平方和、正反三位数平方和恒等式图解</title>
+<desc id="desc">左面板展示从1至9轮流抽牌凑15等价于在洛书上玩井字棋（先手拿5,4,2形成9与8双杀）；右面板验证顶底行平方和均为101、左右列平方和均为89，且492²+357²+816²=294²+753²+618²=1,035,369。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#6d28d9"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="459" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">洛书的两大隐藏彩蛋：“凑 15 纸牌博弈”同构井字棋 &amp; 平方和惊人守恒</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">换个视角看幻方：心算抢牌瞬间降维成三子连线；连把每行数字正读、倒读求平方和都分毫不差</text>
+<rect x="16" y="68" width="358" height="376" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="28.0" y="80.0" width="202" height="24" rx="12.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="129.0" y="96.3" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">彩蛋一：“抢 15” = 洛书井字棋</text>
+<text x="28" y="121" font-size="11.5" fill="#1e293b" text-anchor="start">规则：9 张牌 1~9 轮流拿，谁先凑齐任意三张和=15 获胜</text>
+<rect x="28.0" y="134" width="33" height="40" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="1.3"/>
+<text x="44.5" y="151" font-size="12.5" fill="#c25014" text-anchor="middle" font-weight="700">1</text>
+<text x="44.5" y="167" font-size="9.5" fill="#c25014" text-anchor="middle">后×</text>
+<rect x="65.5" y="134" width="33" height="40" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.3"/>
+<text x="82.0" y="151" font-size="12.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">2</text>
+<text x="82.0" y="167" font-size="9.5" fill="#1d6fa5" text-anchor="middle">先●</text>
+<rect x="103.0" y="134" width="33" height="40" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.3"/>
+<text x="119.5" y="151" font-size="12.5" fill="#1e293b" text-anchor="middle" font-weight="700">3</text>
+<text x="119.5" y="167" font-size="9.5" fill="#64748b" text-anchor="middle">空</text>
+<rect x="140.5" y="134" width="33" height="40" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.3"/>
+<text x="157.0" y="151" font-size="12.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">4</text>
+<text x="157.0" y="167" font-size="9.5" fill="#1d6fa5" text-anchor="middle">先●</text>
+<rect x="178.0" y="134" width="33" height="40" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.3"/>
+<text x="194.5" y="151" font-size="12.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">5</text>
+<text x="194.5" y="167" font-size="9.5" fill="#1d6fa5" text-anchor="middle">先●</text>
+<rect x="215.5" y="134" width="33" height="40" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="1.3"/>
+<text x="232.0" y="151" font-size="12.5" fill="#c25014" text-anchor="middle" font-weight="700">6</text>
+<text x="232.0" y="167" font-size="9.5" fill="#c25014" text-anchor="middle">后×</text>
+<rect x="253.0" y="134" width="33" height="40" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.3"/>
+<text x="269.5" y="151" font-size="12.5" fill="#1e293b" text-anchor="middle" font-weight="700">7</text>
+<text x="269.5" y="167" font-size="9.5" fill="#64748b" text-anchor="middle">空</text>
+<rect x="290.5" y="134" width="33" height="40" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.3"/>
+<text x="307.0" y="151" font-size="12.5" fill="#1e293b" text-anchor="middle" font-weight="700">8</text>
+<text x="307.0" y="167" font-size="9.5" fill="#64748b" text-anchor="middle">空</text>
+<rect x="328.0" y="134" width="33" height="40" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.3"/>
+<text x="344.5" y="151" font-size="12.5" fill="#1e293b" text-anchor="middle" font-weight="700">9</text>
+<text x="344.5" y="167" font-size="9.5" fill="#64748b" text-anchor="middle">空</text>
+<rect x="66.0" y="194.0" width="52.0" height="52.0" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.4"/>
+<text x="75.0" y="209.0" font-size="11.5" fill="#64748b" text-anchor="start" font-weight="700">4</text>
+<circle cx="92.0" cy="225.0" r="11" fill="none" stroke="#1d6fa5" stroke-width="2.6"/>
+<rect x="122.0" y="194.0" width="52.0" height="52.0" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.4"/>
+<text x="131.0" y="209.0" font-size="11.5" fill="#64748b" text-anchor="start" font-weight="700">9</text>
+<text x="148.0" y="229.0" font-size="11" fill="#18794e" text-anchor="middle" font-weight="700">双杀!</text>
+<rect x="178.0" y="194.0" width="52.0" height="52.0" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.4"/>
+<text x="187.0" y="209.0" font-size="11.5" fill="#64748b" text-anchor="start" font-weight="700">2</text>
+<circle cx="204.0" cy="225.0" r="11" fill="none" stroke="#1d6fa5" stroke-width="2.6"/>
+<rect x="66.0" y="250.0" width="52.0" height="52.0" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.4"/>
+<text x="75.0" y="265.0" font-size="11.5" fill="#64748b" text-anchor="start" font-weight="700">3</text>
+<rect x="122.0" y="250.0" width="52.0" height="52.0" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.4"/>
+<text x="131.0" y="265.0" font-size="11.5" fill="#64748b" text-anchor="start" font-weight="700">5</text>
+<circle cx="148.0" cy="281.0" r="11" fill="none" stroke="#1d6fa5" stroke-width="2.6"/>
+<rect x="178.0" y="250.0" width="52.0" height="52.0" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.4"/>
+<text x="187.0" y="265.0" font-size="11.5" fill="#64748b" text-anchor="start" font-weight="700">7</text>
+<rect x="66.0" y="306.0" width="52.0" height="52.0" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.4"/>
+<text x="75.0" y="321.0" font-size="11.5" fill="#64748b" text-anchor="start" font-weight="700">8</text>
+<text x="92.0" y="341.0" font-size="11" fill="#18794e" text-anchor="middle" font-weight="700">双杀!</text>
+<rect x="122.0" y="306.0" width="52.0" height="52.0" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1.4"/>
+<text x="131.0" y="321.0" font-size="11.5" fill="#64748b" text-anchor="start" font-weight="700">1</text>
+<line x1="139.0" y1="328.0" x2="157.0" y2="346.0" stroke="#c25014" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="157.0" y1="328.0" x2="139.0" y2="346.0" stroke="#c25014" stroke-width="2.6" stroke-linecap="round"/>
+<rect x="178.0" y="306.0" width="52.0" height="52.0" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1.4"/>
+<text x="187.0" y="321.0" font-size="11.5" fill="#64748b" text-anchor="start" font-weight="700">6</text>
+<line x1="195.0" y1="328.0" x2="213.0" y2="346.0" stroke="#c25014" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="213.0" y1="328.0" x2="195.0" y2="346.0" stroke="#c25014" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="74.0" y1="220.0" x2="222.0" y2="220.0" stroke="#18794e" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="4 3"/>
+<line x1="215.2" y1="208.8" x2="80.8" y2="343.2" stroke="#18794e" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="4 3"/>
+<text x="244" y="212" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">同构揭秘：</text>
+<text x="244" y="234" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">先手●拿 {5, 4, 2}</text>
+<text x="244" y="254" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="600">后手×拿 {1, 6} 堵斜线</text>
+<text x="244" y="280" font-size="11.5" fill="#1e293b" text-anchor="start">此时●同时听两张牌：</text>
+<text x="244" y="300" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">• 顶行 4+2+9 = 15</text>
+<text x="244" y="320" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">• 斜线 2+5+8 = 15</text>
+<text x="244" y="344" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">后手堵不住双杀必败！</text>
+<rect x="28" y="372" width="334" height="58" rx="8" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="40" y="393" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">数学同构（Isomorphism）：8 组和为 15 的三元数组</text>
+<text x="40" y="414" font-size="11.5" fill="#1e293b" text-anchor="start">一一对应井字棋 8 条连线；双方最优策略必成平局！</text>
+<rect x="386" y="68" width="358" height="376" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="398.0" y="80.0" width="216" height="24" rx="12.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="506.0" y="96.3" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="600">彩蛋二：平方和与正反三位数恒等</text>
+<text x="398" y="121" font-size="11.5" fill="#1e293b" text-anchor="start">洛书不仅一次方和 = 15，连二次方和也暗藏精妙对称：</text>
+<rect x="398" y="136" width="334" height="68" rx="8" fill="#eaf4fb" stroke="#93c5fd"/>
+<text x="410" y="157" font-size="12" fill="#1d6fa5" text-anchor="start" font-weight="700">① 顶行平方和 ＝ 底行平方和 ＝ 101</text>
+<text x="410" y="179" font-size="11.5" fill="#0f172a" text-anchor="start">4² + 9² + 2² = 16 + 81 + 4 = 101</text>
+<text x="410" y="196" font-size="11.5" fill="#0f172a" text-anchor="start">8² + 1² + 6² = 64 +  1 + 36 = 101</text>
+<rect x="398" y="214" width="334" height="68" rx="8" fill="#e7f6ee" stroke="#86efac"/>
+<text x="410" y="235" font-size="12" fill="#18794e" text-anchor="start" font-weight="700">② 左列平方和 ＝ 右列平方和 ＝ 89</text>
+<text x="410" y="257" font-size="11.5" fill="#0f172a" text-anchor="start">4² + 3² + 8² = 16 +  9 + 64 = 89</text>
+<text x="410" y="274" font-size="11.5" fill="#0f172a" text-anchor="start">2² + 7² + 6² =  4 + 49 + 36 = 89</text>
+<rect x="398" y="292" width="334" height="72" rx="8" fill="#f3e8ff" stroke="#d8b4fe"/>
+<text x="410" y="313" font-size="12" fill="#6d28d9" text-anchor="start" font-weight="700">③ 把三行连成三位数，正着读 vs 倒着读平方和相等！</text>
+<text x="410" y="335" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">正读：492² + 357² + 816² = 1,035,369</text>
+<text x="410" y="354" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">倒读：294² + 753² + 618² = 1,035,369</text>
+<rect x="398" y="372" width="334" height="58" rx="8" fill="#fffbeb" stroke="#fcd34d"/>
+<text x="410" y="393" font-size="11.5" fill="#b45309" text-anchor="start" font-weight="700">为什么不是巧合？</text>
+<text x="410" y="414" font-size="11.5" fill="#1e293b" text-anchor="start">因为每对中心对称格满足 a + a&#x27; = 10，展开二次项恰好对消！</text>
+</svg>

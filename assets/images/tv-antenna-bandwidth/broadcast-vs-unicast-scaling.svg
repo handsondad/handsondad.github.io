@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="436" viewBox="0 0 760 436" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">无线电卫星一对亿万广播O(1)与互联网视频一对一单播O(N)带宽扩展对比图</title>
+<desc id="desc">左图展示广播电视发射一次8MHz电磁波即可供1台至10亿台电视同时接收，边际带宽为零；右图展示互联网单播需为每位观众建立独立数据流（100万人同看6Mbps高清即需6Tbps，1亿人达600Tbps），解释为何天线电视从不转圈缓冲。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="435" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">终极秘密：为什么除夕十亿人同看春晚，天线电视永不卡顿，网络直播却怕挤爆？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">广播电视是“大喇叭一对亿万”O(1) 频谱恒定；互联网视频是“快递员一对一专送”O(N) 流量随人数暴涨！</text>
+<rect x="20" y="62" width="354" height="360" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="34" y="85" font-size="12.2" fill="#18794e" text-anchor="start" font-weight="700">① 无线电/卫星“广播 (Broadcast)”：O(1) 开销</text>
+<circle cx="197.0" cy="174.0" r="28" fill="none" stroke="#18794e" stroke-width="1.4" stroke-dasharray="5 4" opacity="0.7"/>
+<circle cx="197.0" cy="174.0" r="52" fill="none" stroke="#18794e" stroke-width="1.4" stroke-dasharray="5 4" opacity="0.7"/>
+<circle cx="197.0" cy="174.0" r="76" fill="none" stroke="#18794e" stroke-width="1.4" stroke-dasharray="5 4" opacity="0.7"/>
+<circle cx="197.0" cy="174.0" r="18" fill="#e7f6ee" stroke="#18794e" stroke-width="2"/>
+<text x="197.0" y="178.0" font-size="9.6" fill="#18794e" text-anchor="middle" font-weight="700">发射塔</text>
+<rect x="256.4" y="137.8" width="48" height="20" rx="5" fill="#ffffff" stroke="#18794e" stroke-width="1.3"/>
+<text x="280.4" y="151.8" font-size="8.9" fill="#0f172a" text-anchor="middle" font-weight="600">电视#1</text>
+<rect x="181.0" y="102.2" width="48" height="20" rx="5" fill="#ffffff" stroke="#18794e" stroke-width="1.3"/>
+<text x="205.0" y="116.2" font-size="8.9" fill="#0f172a" text-anchor="middle" font-weight="600">电视#2</text>
+<rect x="97.6" y="128.4" width="48" height="20" rx="5" fill="#ffffff" stroke="#18794e" stroke-width="1.3"/>
+<text x="121.6" y="142.4" font-size="8.9" fill="#0f172a" text-anchor="middle" font-weight="600">电视#3</text>
+<rect x="89.6" y="190.2" width="48" height="20" rx="5" fill="#ffffff" stroke="#18794e" stroke-width="1.3"/>
+<text x="113.6" y="204.2" font-size="8.9" fill="#0f172a" text-anchor="middle" font-weight="600">电视#4</text>
+<rect x="165.0" y="225.8" width="48" height="20" rx="5" fill="#ffffff" stroke="#18794e" stroke-width="1.3"/>
+<text x="189.0" y="239.8" font-size="8.9" fill="#0f172a" text-anchor="middle" font-weight="600">电视#5</text>
+<rect x="248.4" y="199.6" width="48" height="20" rx="5" fill="#ffffff" stroke="#18794e" stroke-width="1.3"/>
+<text x="272.4" y="213.6" font-size="8.9" fill="#0f172a" text-anchor="middle" font-weight="600">电视#6</text>
+<rect x="34" y="262" width="326" height="146" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="46" y="283" font-size="11.0" fill="#18794e" text-anchor="start" font-weight="700">边际带宽成本 = 0 bit/s！</text>
+<text x="46" y="303" font-size="10.1" fill="#1e293b" text-anchor="start">• 1 个人开机看：占用空中 8 MHz 频道；</text>
+<text x="46" y="322" font-size="10.1" fill="#0f172a" text-anchor="start" font-weight="700">• 10 亿人同时开机看春晚：还是同一道 8 MHz 电磁波！</text>
+<text x="46" y="341" font-size="10.0" fill="#1e293b" text-anchor="start">• 电视机只收不发（单向下行），发射塔根本不知道、也不在乎</text>
+<text x="46" y="359" font-size="10.0" fill="#1e293b" text-anchor="start">  山下有几亿根天线在接水——所以永远不存在“服务器挤爆”！</text>
+<text x="46" y="384" font-size="9.8" fill="#475569" text-anchor="start" font-weight="600">• 唯一代价：所有人必须同一秒看同一个台，不能独自拖进度条。</text>
+<rect x="386" y="62" width="354" height="360" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="400" y="85" font-size="13.5" fill="#c25014" text-anchor="start" font-weight="700">② 互联网视频“单播 (Unicast)”：O(N) 乘法洪峰</text>
+<rect x="412" y="138" width="88" height="72" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1.8"/>
+<text x="456.0" y="162" font-size="9.9" fill="#c25014" text-anchor="middle" font-weight="700">CDN 节点 /</text>
+<text x="456.0" y="178" font-size="9.9" fill="#c25014" text-anchor="middle" font-weight="700">小区基站</text>
+<text x="456.0" y="196" font-size="9.2" fill="#b91c1c" text-anchor="middle" font-weight="600">(容量有限)</text>
+<line x1="502.0" y1="174.0" x2="598.0" y2="114.0" stroke="#c25014" stroke-width="1.6" marker-end="url(#arr-orange)"/>
+<rect x="604" y="103" width="122" height="22" rx="5" fill="#ffffff" stroke="#c25014" stroke-width="1.2"/>
+<text x="665" y="118" font-size="8.8" fill="#0f172a" text-anchor="middle" font-weight="600">手机A：看直播 6 Mbps</text>
+<line x1="502.0" y1="174.0" x2="598.0" y2="146.0" stroke="#c25014" stroke-width="1.6" marker-end="url(#arr-orange)"/>
+<rect x="604" y="135" width="122" height="22" rx="5" fill="#ffffff" stroke="#c25014" stroke-width="1.2"/>
+<text x="665" y="150" font-size="8.8" fill="#0f172a" text-anchor="middle" font-weight="600">平板B：退回2分钟 6 Mbps</text>
+<line x1="502.0" y1="174.0" x2="598.0" y2="178.0" stroke="#c25014" stroke-width="1.6" marker-end="url(#arr-orange)"/>
+<rect x="604" y="167" width="122" height="22" rx="5" fill="#ffffff" stroke="#c25014" stroke-width="1.2"/>
+<text x="665" y="182" font-size="8.8" fill="#0f172a" text-anchor="middle" font-weight="600">电视C：4K 弹幕流 15 Mbps</text>
+<line x1="502.0" y1="174.0" x2="598.0" y2="210.0" stroke="#c25014" stroke-width="1.6" marker-end="url(#arr-orange)"/>
+<rect x="604" y="199" width="122" height="22" rx="5" fill="#ffffff" stroke="#c25014" stroke-width="1.2"/>
+<text x="665" y="214" font-size="8.8" fill="#0f172a" text-anchor="middle" font-weight="600">手机D：刷短视频 6 Mbps</text>
+<line x1="502.0" y1="174.0" x2="598.0" y2="242.0" stroke="#c25014" stroke-width="1.6" marker-end="url(#arr-orange)"/>
+<rect x="604" y="231" width="122" height="22" rx="5" fill="#ffffff" stroke="#c25014" stroke-width="1.2"/>
+<text x="665" y="246" font-size="8.8" fill="#0f172a" text-anchor="middle" font-weight="600">…… 第 N 个用户 × 6 Mbps！</text>
+<rect x="400" y="262" width="326" height="146" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="412" y="283" font-size="10.6" fill="#b91c1c" text-anchor="start" font-weight="700">每多 1 个人点开，全网就要多跑一路专属数据流！</text>
+<text x="412" y="303" font-size="10.0" fill="#1e293b" text-anchor="start">• 100 万人同看 1080p (6 Mbps) = 6 Tbps 骨干/CDN 洪峰；</text>
+<text x="412" y="322" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">• 1 亿人同看 = 600 Tbps！（必须靠全国上千个边缘 CDN 分摊）</text>
+<text x="412" y="341" font-size="10.0" fill="#1e293b" text-anchor="start">• 体育场/春晚高峰时，几千部手机争抢同一座基站的有限频谱，</text>
+<text x="412" y="359" font-size="10.0" fill="#1e293b" text-anchor="start">  丢包重传与缓冲区见底就会弹出熟悉的“转圈加载中……”</text>
+<text x="412" y="384" font-size="9.8" fill="#1d6fa5" text-anchor="start" font-weight="700">• 折中智慧：运营商 IPTV 直播频道常走“组播 Multicast”省带宽！</text>
+</svg>

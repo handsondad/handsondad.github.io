@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="492" viewBox="0 0 760 492" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">河图洛书三千年历史与考古证据分级时间轴（从凌家滩假说、阜阳汉墓太乙九宫占盘到宋代刘牧朱熹易名）</title>
+<desc id="desc">按证据等级排列五个阶段：前3300年凌家滩玉龟玉版思想假说、先秦尚书与周易文献、前173年阜阳西汉太乙九宫占盘实物铁证、宋代刘牧首绘黑白点与朱熹对调十河九洛、清代胡渭考辨及现代数学。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#6d28d9"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="491" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">河图洛书三千年证据链全史：考古实物、先秦文献与宋代“名字大对调”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">严格区分“新石器宇宙观假说 → 先秦礼器文献 → 西汉出土九宫铁证 → 宋儒黑白点重构”四级史料</text>
+<rect x="16" y="68" width="728" height="408" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<line x1="118.0" y1="96.0" x2="118.0" y2="444.0" stroke="#94a3b8" stroke-width="2.4" stroke-linecap="round"/>
+<text x="104.0" y="111" font-size="11.5" fill="#b45309" text-anchor="end" font-weight="700">约前 3300 年</text>
+<circle cx="118.0" cy="106.0" r="6.5" fill="#b45309" stroke="#ffffff" stroke-width="2"/>
+<rect x="136" y="84.0" width="596" height="66" rx="8" fill="#fffbeb" stroke="#e2e8f0"/>
+<rect x="146.0" y="92.0" width="136" height="21" rx="10.5" fill="#ffffff" stroke="#b45309" stroke-width="1" stroke-opacity="0.35"/>
+<text x="214.0" y="106.3" font-size="10.5" fill="#b45309" text-anchor="middle" font-weight="600">新石器假说·谨慎界定</text>
+<text x="292" y="107" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">安徽含山凌家滩出土“玉龟 + 八角星纹玉版”</text>
+<text x="146" y="133" font-size="11" fill="#1e293b" text-anchor="start">证实 5300 年前已有“天圆地方、八方中宫”宇宙观；但玉版无 1~9/1~10 数字，属思想前驱假说。</text>
+<text x="104.0" y="189" font-size="11.5" fill="#1d6fa5" text-anchor="end" font-weight="700">西周至战国</text>
+<circle cx="118.0" cy="184.0" r="6.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="2"/>
+<rect x="136" y="162.0" width="596" height="66" rx="8" fill="#eaf4fb" stroke="#e2e8f0"/>
+<rect x="146.0" y="170.0" width="136" height="21" rx="10.5" fill="#ffffff" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="214.0" y="184.3" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">先秦文献·礼器与数理</text>
+<text x="292" y="185" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">《尚书·顾命》“河图在东序”·《周易·系辞》“河出图，洛出书”</text>
+<text x="146" y="211" font-size="11" fill="#1e293b" text-anchor="start">西周将“河图”与大玉并列东序（礼器/古图籍）；《系辞》载“天地之数五十五”，尚无黑白点图。</text>
+<text x="104.0" y="267" font-size="11.5" fill="#18794e" text-anchor="end" font-weight="700">公元前 173 年</text>
+<circle cx="118.0" cy="262.0" r="6.5" fill="#18794e" stroke="#ffffff" stroke-width="2"/>
+<rect x="136" y="240.0" width="596" height="66" rx="8" fill="#e7f6ee" stroke="#e2e8f0"/>
+<rect x="146.0" y="248.0" width="136" height="21" rx="10.5" fill="#ffffff" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="214.0" y="262.3" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="600">考古铁证·最早幻方</text>
+<text x="292" y="263" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">1977 阜阳西汉汝阴侯墓出土“太乙九宫占盘” + 《大戴礼记·明堂》</text>
+<text x="146" y="289" font-size="11" fill="#1e293b" text-anchor="start">占盘按九宫刻戴九履一、左三右七、二四为肩、六八为足；《明堂》载 294/753/618，系最早实物铁证！</text>
+<text x="104.0" y="345" font-size="11.5" fill="#c25014" text-anchor="end" font-weight="700">北宋 → 南宋</text>
+<circle cx="118.0" cy="340.0" r="6.5" fill="#c25014" stroke="#ffffff" stroke-width="2"/>
+<rect x="136" y="318.0" width="596" height="66" rx="8" fill="#fef1e8" stroke="#e2e8f0"/>
+<rect x="146.0" y="326.0" width="136" height="21" rx="10.5" fill="#ffffff" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="214.0" y="340.3" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="600">黑白点与名字大对调</text>
+<text x="292" y="341" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">刘牧《易数钩隐图》（九河十洛）→ 朱熹《周易本义》（1177，十河九洛）</text>
+<text x="146" y="367" font-size="11" fill="#1e293b" text-anchor="start">北宋刘牧首创黑白连珠图却以九宫为河图；南宋朱熹、蔡元定对调为“十河九洛”；1275 杨辉创纵横图数学。</text>
+<text x="104.0" y="423" font-size="11.5" fill="#6d28d9" text-anchor="end" font-weight="700">清代考据至今</text>
+<circle cx="118.0" cy="418.0" r="6.5" fill="#6d28d9" stroke="#ffffff" stroke-width="2"/>
+<rect x="136" y="396.0" width="596" height="66" rx="8" fill="#f3e8ff" stroke="#e2e8f0"/>
+<rect x="146.0" y="404.0" width="136" height="21" rx="10.5" fill="#ffffff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="214.0" y="418.3" font-size="10.5" fill="#6d28d9" text-anchor="middle" font-weight="600">辨伪祛魅与数学新生</text>
+<text x="292" y="419" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">黄宗羲、胡渭《易图明辨》（1706）考辨源流 → 现代组合与群论</text>
+<text x="146" y="445" font-size="11" fill="#1e293b" text-anchor="start">清儒考证黑白点图系宋儒据《系辞》与九宫重构；剥去神学外衣后，模 5 同余与幻方结构成数学史瑰宝。</text>
+</svg>

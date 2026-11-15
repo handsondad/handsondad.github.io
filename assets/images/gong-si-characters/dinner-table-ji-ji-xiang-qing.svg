@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="514" viewBox="0 0 760 514" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">即、既、飨（卿）围绕食器皀的三幕动作图解</title>
+<desc id="desc">展示甲骨金文中以盛饭食器皀为中心，单人凑近就食为即、吃饱转头为既、双人对坐共食分化出飨、乡、卿三字的演变关系。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="513" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">饭桌上的时间微电影：围着同一碗香米饭（皀），古人拍下了三张快照</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">先认清正中盛满熟饭的高足食簋“皀” → 再看碗边跪坐的人朝哪边转头，秒懂将来、完成与共餐礼仪</text>
+<rect x="70" y="64" width="620" height="40" rx="20" fill="#fef3c7" stroke="#b45309" stroke-width="1.1"/>
+<text x="380" y="89" font-size="11.8" fill="#0f172a" text-anchor="middle" font-weight="600">核心道具“皀（bī / xiāng）”：甲骨金文像高足食簋里堆尖的热米饭（白米飘香，正是“香”字源头）</text>
+<rect x="24" y="118" width="224" height="378" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="44" cy="138" r="10" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="44" y="142" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="60" y="142" font-size="13" fill="#0f172a" text-anchor="start" font-weight="700">第一幕：即（凑近开吃）</text>
+<rect x="42" y="156" width="188" height="138" rx="10" fill="#fdf8ee" stroke="#dfc7a7" stroke-width="1.3"/>
+<line x1="136.0" y1="162" x2="136.0" y2="288" stroke="#dfc7a7" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.55"/>
+<line x1="48" y1="225.0" x2="224" y2="225.0" stroke="#dfc7a7" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.55"/>
+<path d="M 76,226 Q 96,204 116,226 Z" fill="#fef3c7" stroke="#b45309" stroke-width="2.8" stroke-linejoin="round"/>
+<path d="M 74,226 L 118,226 L 113,248 Q 96,256 79,248 Z" fill="none" stroke="#853212" stroke-width="3.4" stroke-linejoin="round"/>
+<path d="M 96,252 L 96,268 M 80,268 L 112,268" fill="none" stroke="#853212" stroke-width="3.4" stroke-linecap="round"/>
+<path d="M 89,202 Q 85,194 91,188 M 103,202 Q 99,194 105,188" fill="none" stroke="#c25014" stroke-width="2.0" stroke-linecap="round"/>
+<circle cx="164" cy="188" r="10" fill="none" stroke="#1d6fa5" stroke-width="3.4"/>
+<path d="M 154,188 L 146,188" stroke="#1d6fa5" stroke-width="3.0" stroke-linecap="round"/>
+<path d="M 166,198 C 166,222 162,240 150,252 L 178,258" fill="none" stroke="#1d6fa5" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 162,212 L 136,218" fill="none" stroke="#1d6fa5" stroke-width="3.4" stroke-linecap="round"/>
+<path d="M 142,174 L 122,174" fill="none" stroke="#c25014" stroke-width="1.8" marker-end="url(#arr-orange)"/>
+<text x="40" y="318" font-size="11.5" fill="#1e293b" text-anchor="start" font-weight="600">• 镜头：人跪坐在食簋旁，面朝</text>
+<text x="50" y="338" font-size="11.5" fill="#1e293b" text-anchor="start">热气腾腾的米饭俯身伸手就食</text>
+<text x="40" y="364" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="600">• 空间→时间：靠近饭碗，马上</text>
+<text x="50" y="384" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="600">要开动 → 即将 · 立即 · 即刻</text>
+<text x="40" y="412" font-size="11.2" fill="#1e293b" text-anchor="start">• 若即若离：好像凑近又像走开</text>
+<text x="40" y="436" font-size="11.2" fill="#1e293b" text-anchor="start">• 即位：走近尊位坐下主持大礼</text>
+<text x="40" y="464" font-size="11" fill="#64748b" text-anchor="start">• 楷书左旁不是“艮”，正是饭碗！</text>
+<rect x="268" y="118" width="224" height="378" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="288" cy="138" r="10" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="288" y="142" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="304" y="142" font-size="13" fill="#0f172a" text-anchor="start" font-weight="700">第二幕：既（吃饱扭头）</text>
+<rect x="286" y="156" width="188" height="138" rx="10" fill="#fdf8ee" stroke="#dfc7a7" stroke-width="1.3"/>
+<line x1="380.0" y1="162" x2="380.0" y2="288" stroke="#dfc7a7" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.55"/>
+<line x1="292" y1="225.0" x2="468" y2="225.0" stroke="#dfc7a7" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.55"/>
+<path d="M 316,226 Q 336,204 356,226 Z" fill="#fef3c7" stroke="#b45309" stroke-width="2.8" stroke-linejoin="round"/>
+<path d="M 314,226 L 358,226 L 353,248 Q 336,256 319,248 Z" fill="none" stroke="#853212" stroke-width="3.4" stroke-linejoin="round"/>
+<path d="M 336,252 L 336,268 M 320,268 L 352,268" fill="none" stroke="#853212" stroke-width="3.4" stroke-linecap="round"/>
+<path d="M 329,202 Q 325,194 331,188 M 343,202 Q 339,194 345,188" fill="none" stroke="#c25014" stroke-width="2.0" stroke-linecap="round"/>
+<path d="M 404,180 C 414,176 424,182 424,188 L 413,192 L 424,197 C 420,203 408,202 404,196 Z"
+      fill="none" stroke="#c25014" stroke-width="3.2" stroke-linejoin="round"/>
+<path d="M 408,200 C 408,224 404,240 392,252 L 420,258" fill="none" stroke="#c25014" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 406,214 L 388,224" fill="none" stroke="#c25014" stroke-width="3.2" stroke-linecap="round"/>
+<path d="M 432,188 Q 442,183 448,186 M 433,195 Q 443,197 449,194" fill="none" stroke="#c25014" stroke-width="2.0" stroke-linecap="round"/>
+<text x="284" y="318" font-size="11.5" fill="#1e293b" text-anchor="start" font-weight="600">• 镜头：米饭吃完，人把脸背过</text>
+<text x="294" y="338" font-size="11.5" fill="#1e293b" text-anchor="start">去张嘴打了个心满意足的饱嗝</text>
+<text x="284" y="364" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="600">• 动作→时间：这顿饭吃完了 →</text>
+<text x="294" y="384" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="600">已经 · 既然 · 既往不咎</text>
+<text x="284" y="412" font-size="11.2" fill="#1e293b" text-anchor="start">• 天文“日食既”：太阳被月亮彻</text>
+<text x="294" y="432" font-size="11.2" fill="#1e293b" text-anchor="start">底“吃光”的食甚全食时刻！</text>
+<text x="284" y="464" font-size="11" fill="#64748b" text-anchor="start">• 一转头，就造出了汉语完成时</text>
+<rect x="512" y="118" width="224" height="378" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="532" cy="138" r="10" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="532" y="142" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">3</text>
+<text x="548" y="142" font-size="13" fill="#0f172a" text-anchor="start" font-weight="700">第三幕：飨·卿（对坐共食）</text>
+<rect x="530" y="156" width="188" height="138" rx="10" fill="#edf7f4" stroke="#9bc9be" stroke-width="1.3"/>
+<line x1="624.0" y1="162" x2="624.0" y2="288" stroke="#9bc9be" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.55"/>
+<line x1="536" y1="225.0" x2="712" y2="225.0" stroke="#9bc9be" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.55"/>
+<path d="M 604,228 Q 624,206 644,228 Z" fill="#fef3c7" stroke="#b45309" stroke-width="2.8" stroke-linejoin="round"/>
+<path d="M 602,228 L 646,228 L 641,250 Q 624,258 607,250 Z" fill="none" stroke="#853212" stroke-width="3.4" stroke-linejoin="round"/>
+<path d="M 624,254 L 624,270 M 608,270 L 640,270" fill="none" stroke="#853212" stroke-width="3.4" stroke-linecap="round"/>
+<path d="M 617,204 Q 613,196 619,190 M 631,204 Q 627,196 633,190" fill="none" stroke="#c25014" stroke-width="2.0" stroke-linecap="round"/>
+<circle cx="566" cy="190" r="9" fill="none" stroke="#0f5246" stroke-width="3.2"/>
+<path d="M 564,200 C 564,222 568,240 578,252 L 552,258" fill="none" stroke="#0f5246" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 568,213 L 590,219" fill="none" stroke="#0f5246" stroke-width="3.2" stroke-linecap="round"/>
+<circle cx="682" cy="190" r="9" fill="none" stroke="#0f5246" stroke-width="3.2"/>
+<path d="M 684,200 C 684,222 680,240 670,252 L 696,258" fill="none" stroke="#0f5246" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 680,213 L 658,219" fill="none" stroke="#0f5246" stroke-width="3.2" stroke-linecap="round"/>
+<text x="528" y="318" font-size="11.5" fill="#1e293b" text-anchor="start" font-weight="600">• 镜头：宾主二人隔着盛满美馔</text>
+<text x="538" y="338" font-size="11.5" fill="#1e293b" text-anchor="start">的食簋促膝对坐、隆重共餐</text>
+<text x="528" y="364" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="600">• 一幅画面分化出三个高频字：</text>
+<text x="538" y="386" font-size="11.2" fill="#1e293b" text-anchor="start">1. 飨（xiǎng）：设宴款待宾客</text>
+<text x="538" y="408" font-size="11.2" fill="#1e293b" text-anchor="start">2. 乡（xiāng）：共食的同族聚落</text>
+<text x="538" y="430" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="600">3. 卿（qīng）：能与君王同席共餐</text>
+<text x="552" y="450" font-size="11.2" fill="#18794e" text-anchor="start" font-weight="700">的最高执政大臣（公卿大夫）！</text>
+</svg>

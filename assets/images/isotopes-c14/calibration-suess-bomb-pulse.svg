@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="504" viewBox="0 0 760 504" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">碳十四树轮校准IntCal20、化石燃料苏斯效应与1963核爆脉冲应用图</title>
+<desc id="desc">左栏上方说明宇宙射线波动与14000年树轮校准曲线IntCal20及三星堆短寿命竹屑取样原则；左栏下方说明化石燃料不含碳十四稀释大气（苏斯效应），成为人类排放二氧化碳的铁证；右栏绘出1950至2024年大气核试验引发的1963核爆碳十四尖峰及其在名酒字画鉴伪、盗猎象牙取证与人体细胞年龄测定中的跨界应用。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="503" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">碳十四时钟的“三大剧情反转”：树轮校准、化石燃料铁证与 1963 核爆脉冲</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">大气 ¹⁴C 并非一成不变——修正误差后，它不仅测得更准，还跨界成了气候取证与法医鉴伪神器！</text>
+<rect x="24" y="68" width="336" height="198" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="44" cy="90" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="44" y="94" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">1</text>
+<text x="62" y="94" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">反转一：太阳与地磁场波动 → 树轮标尺校准</text>
+<text x="42" y="120" font-size="11" fill="#1e293b" text-anchor="start">• 宇宙射线强弱随地磁场与太阳活动波动几个百分点</text>
+<text x="42" y="141" font-size="11" fill="#1e293b" text-anchor="start">• 科学家用长寿刺果松、古橡木一圈一圈重叠拼接，建起</text>
+<text x="42" y="160" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="700">  连续 14,000 年树轮账本（结合石笋珊瑚达 5.5 万年：IntCal20）</text>
+<rect x="42" y="174" width="300" height="76" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="54" y="195" font-size="11" fill="#dc2626" text-anchor="start" font-weight="700">考古采样铁律（以三星堆为例）：</text>
+<text x="54" y="214" font-size="10.5" fill="#1e293b" text-anchor="start">青铜器不含碳不能直接测！北大团队专挑坑内“短寿命碳化</text>
+<text x="54" y="233" font-size="10.5" fill="#1e293b" text-anchor="start">竹屑/种子”测 200+ 份，避开百年老树心“老木头偏老误差”。</text>
+<rect x="24" y="280" width="336" height="202" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="44" cy="302" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="44" y="306" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="62" y="306" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">反转二：苏斯效应 → 锁定人类烧煤排碳的铁证</text>
+<text x="42" y="332" font-size="11" fill="#1e293b" text-anchor="start">• 煤炭、石油埋藏上亿年，里面的 ¹⁴C 早已 100% 死光！</text>
+<text x="42" y="353" font-size="11" fill="#1e293b" text-anchor="start">• 19 世纪末工业革命以来，大量“零 ¹⁴C 化石碳”排入天空，</text>
+<text x="42" y="372" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="600">  把大气 ¹⁴C 浓度冲淡了（1900 年的木头测出来反而显老！）</text>
+<rect x="42" y="388" width="300" height="78" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1.1"/>
+<text x="54" y="410" font-size="11" fill="#c25014" text-anchor="start" font-weight="700">意外立大功（NOAA 温室气体溯源核心证据）：</text>
+<text x="54" y="430" font-size="10.5" fill="#1e293b" text-anchor="start">正是大气 CO₂ 暴涨同时 Δ¹⁴C 与 δ¹³C 双双下降，铁证如山</text>
+<text x="54" y="449" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600">地证明新增 CO₂ 来自人类燃烧化石燃料，而非海洋释放！</text>
+<rect x="376" y="68" width="360" height="414" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="396" cy="90" r="10.5" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2"/>
+<text x="396" y="94" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">3</text>
+<text x="414" y="94" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">反转三：1963“核爆脉冲”变身现代鉴伪神尺</text>
+<text x="394" y="118" font-size="10.5" fill="#64748b" text-anchor="start">大气核试验瞬间让北半球 ¹⁴C 暴涨近一倍（Δ¹⁴C ‰，据 NOAA）：</text>
+<path d="M426.0,302.4 L716.0,302.4" fill="none" stroke="#475569" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="420.0" y="306.4" font-size="10" fill="#475569" text-anchor="end" class="mono">0‰</text>
+<path d="M426.0,262.4 L716.0,262.4" fill="none" stroke="#cbd5e1" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<text x="420.0" y="266.4" font-size="10" fill="#475569" text-anchor="end" class="mono">+250‰</text>
+<path d="M426.0,222.4 L716.0,222.4" fill="none" stroke="#cbd5e1" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<text x="420.0" y="226.4" font-size="10" fill="#475569" text-anchor="end" class="mono">+500‰</text>
+<path d="M426.0,182.4 L716.0,182.4" fill="none" stroke="#cbd5e1" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<text x="420.0" y="186.4" font-size="10" fill="#475569" text-anchor="end" class="mono">+750‰</text>
+<path d="M426.0,142.4 L716.0,142.4" fill="none" stroke="#cbd5e1" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<text x="420.0" y="146.4" font-size="10" fill="#475569" text-anchor="end" class="mono">+1000‰</text>
+<line x1="426.0" y1="312.0" x2="426.0" y2="316.0" stroke="#475569"/>
+<text x="426.0" y="328.0" font-size="10" fill="#475569" text-anchor="middle" class="mono">1950</text>
+<line x1="476.3" y1="312.0" x2="476.3" y2="316.0" stroke="#475569"/>
+<text x="476.3" y="328.0" font-size="10" fill="#dc2626" text-anchor="middle" font-weight="700" class="mono">1963</text>
+<line x1="542.0" y1="312.0" x2="542.0" y2="316.0" stroke="#475569"/>
+<text x="542.0" y="328.0" font-size="10" fill="#475569" text-anchor="middle" class="mono">1980</text>
+<line x1="619.3" y1="312.0" x2="619.3" y2="316.0" stroke="#475569"/>
+<text x="619.3" y="328.0" font-size="10" fill="#475569" text-anchor="middle" class="mono">2000</text>
+<line x1="696.7" y1="312.0" x2="696.7" y2="316.0" stroke="#475569"/>
+<text x="696.7" y="328.0" font-size="10" fill="#475569" text-anchor="middle" class="mono">2020</text>
+<path d="M426.0,305.6 L445.3,305.3 L460.8,280.0 L472.4,265.6 L484.0,198.4 L495.6,216.0 L511.1,235.2 L542.0,261.6 L580.7,279.7 L619.3,289.6 L658.0,296.3 L696.7,302.1 L712.1,304.3" fill="none" stroke="#1d6fa5" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 3"/>
+<path d="M426.0,305.6 L441.5,305.9 L449.2,295.2 L456.9,276.8 L460.8,256.0 L468.5,264.0 L472.4,233.6 L478.6,152.0 L484.0,180.8 L495.6,212.8 L511.1,233.6 L526.5,249.6 L542.0,260.8 L561.3,271.2 L580.7,279.2 L600.0,285.1 L619.3,289.3 L638.7,293.1 L658.0,296.3 L677.3,299.5 L696.7,302.4 L712.1,304.6" fill="none" stroke="#dc2626" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="478.6" cy="152.0" r="3.8" fill="#dc2626" stroke="#fff" stroke-width="1"/>
+<text x="486.6" y="156.0" font-size="10" fill="#dc2626" text-anchor="start" font-weight="700" class="halo">1963 禁试条约生效（北半球峰值近翻倍！）</text>
+<text x="545.9" y="212.8" font-size="10" fill="#475569" text-anchor="start" class="halo">海洋与森林快速吸走核爆 ¹⁴C</text>
+<text x="487.9" y="246.4" font-size="9.8" fill="#1d6fa5" text-anchor="start" font-weight="600" class="halo">南半球（滞后约1年）</text>
+<rect x="392" y="338" width="328" height="128" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1.1"/>
+<text x="404" y="359" font-size="11" fill="#dc2626" text-anchor="start" font-weight="700">1955 年后每一年浓度都不同 → 精确到“哪一年生”：</text>
+<text x="404" y="380" font-size="10.5" fill="#1e293b" text-anchor="start">① 抓假陈年名酒/假字画：标称 1945 年红酒若含核爆 ¹⁴C 必假！</text>
+<text x="404" y="400" font-size="10.5" fill="#1e293b" text-anchor="start">② 抓盗猎象牙：一测象牙尖端 ¹⁴C，立判大象死于禁贸令前或后</text>
+<text x="404" y="420" font-size="10.5" fill="#1e293b" text-anchor="start">③ 测人体细胞生日：牙釉质与大脑皮层神经元 DNA 保留你出生</text>
+<text x="404" y="439" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600">   那年的核爆 ¹⁴C（终身几乎不换），肠道上皮细胞仅几岁年轻！</text>
+</svg>

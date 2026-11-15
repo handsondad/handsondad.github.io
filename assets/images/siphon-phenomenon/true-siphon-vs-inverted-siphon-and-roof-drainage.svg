@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="485" viewBox="0 0 760 485" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">正虹吸、倒虹吸与现代屋面满管虹吸排水工程对比图</title>
+<desc id="desc">左上展示唐代通典渴乌隔山取水的正虹吸负压结构；左下展示古罗马引水渠与南水北调穿黄倒虹吸的高正压连通器本质；右侧对比传统气水混流重力排水与防漩涡满管负压虹吸屋面排水系统。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-ink" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#0f172a"/>
+  </marker>
+  <marker id="arr-red" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#dc2626"/>
+  </marker>
+  <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#6d28d9"/>
+  </marker>
+  <marker id="arr-teal" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#0f766e"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="484" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">名字最骗人的水利工程：“正虹吸”翻山越岭 vs “倒虹吸”穿河过谷</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">“倒虹吸”本质是有压连通器而非真虹吸！右附现代大型场馆“屋面满管虹吸排水”提速奥秘</text>
+<rect x="20" y="62" width="352" height="196" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="40" cy="84" r="10.5" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2"/>
+<text x="40" y="88" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">1</text>
+<text x="58" y="88" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">正虹吸（∩ 型翻山）：唐《通典》“渴乌隔山取水”</text>
+<path d="M 42,206 Q 186,100 344,206 Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.2"/>
+<rect x="36" y="176" width="54" height="30" rx="3" fill="#bfdbfe" stroke="#1d6fa5" stroke-width="1.2"/>
+<rect x="298" y="192" width="54" height="24" rx="3" fill="#bfdbfe" stroke="#1d6fa5" stroke-width="1.2"/>
+<path d="M 64,192 L 64,154 Q 186,88 320,164 L 320,204" fill="none" stroke="#334155" stroke-width="9" stroke-linecap="round"/>
+<path d="M 64,192 L 64,154 Q 186,88 320,164 L 320,204" fill="none" stroke="#60a5fa" stroke-width="5" stroke-linecap="round"/>
+<circle cx="186" cy="126" r="5" fill="#dc2626" stroke="#ffffff" stroke-width="1.5"/>
+<text x="186" y="113" font-size="10.8" fill="#dc2626" text-anchor="middle" font-weight="700" class="halo">管顶负表压（+6m 处 ≈ 43 kPa）</text>
+<text x="36" y="226" font-size="10.8" fill="#1e293b" text-anchor="start">• 必须人工引水（唐代竹筒麻漆封裹、筒尾燃松桦干草排气）</text>
+<text x="36" y="244" font-size="10.8" fill="#dc2626" text-anchor="start" font-weight="600">• 受 ~10.1 m 气蚀红线限制；管顶一旦漏气立刻断流停摆</text>
+<rect x="20" y="270" width="352" height="198" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="40" cy="292" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="40" y="296" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">2</text>
+<text x="58" y="296" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">倒虹吸（∪ 型穿河）：古罗马引水渠 &amp; 南水北调穿黄</text>
+<path d="M 38,324 L 112,324 Q 186,412 260,334 L 348,334 L 348,414 L 38,414 Z" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.2"/>
+<path d="M 148,354 Q 186,374 224,354 Z" fill="#bae6fd" stroke="#0284c7" stroke-width="1.2"/>
+<text x="186" y="350" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">地上河流/深谷</text>
+<path d="M 64,324 L 122,386 Q 186,408 250,386 L 318,334" fill="none" stroke="#1e293b" stroke-width="10" stroke-linecap="round"/>
+<path d="M 64,324 L 122,386 Q 186,408 250,386 L 318,334" fill="none" stroke="#38bdf8" stroke-width="5.5" stroke-linecap="round"/>
+<circle cx="186" cy="396" r="5" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.5"/>
+<text x="186" y="384" font-size="10.8" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">谷底超高压（深40m ≈ 493 kPa）</text>
+<text x="36" y="434" font-size="10.8" fill="#1e293b" text-anchor="start">• 实为【有压连通器】：无需抽真空，灌水即靠进出水位差自流</text>
+<text x="36" y="452" font-size="10.8" fill="#1d6fa5" text-anchor="start" font-weight="600">• 无 10 米限制！里昂古渠深 120 m 谷底承压 12.8 bar 考验防爆管</text>
+<rect x="388" y="62" width="352" height="406" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="408" cy="84" r="10.5" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.2"/>
+<text x="408" y="88" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">3</text>
+<text x="426" y="88" font-size="13" fill="#0f172a" text-anchor="start" font-weight="700">现代建筑黑科技：屋面满管虹吸雨水系统</text>
+<text x="404" y="108" font-size="11" fill="#64748b" text-anchor="start">机场航站楼与奥运场馆如何在暴雨中秒排万吨积水？</text>
+<rect x="404" y="124" width="320" height="134" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="418" y="145" font-size="11.8" fill="#475569" text-anchor="start" font-weight="700">传统重力式雨水排水（气水混流·效率低）</text>
+<line x1="432.0" y1="162.0" x2="468.0" y2="162.0" stroke="#64748b" stroke-width="2.0" stroke-linecap="round"/>
+<line x1="450.0" y1="162.0" x2="450.0" y2="192.0" stroke="#64748b" stroke-width="12" stroke-linecap="round"/>
+<line x1="450.0" y1="192.0" x2="690.0" y2="214.0" stroke="#64748b" stroke-width="14" stroke-linecap="round"/>
+<line x1="450.0" y1="192.0" x2="690.0" y2="214.0" stroke="#ffffff" stroke-width="8" stroke-linecap="round"/>
+<line x1="450.0" y1="195.0" x2="690.0" y2="217.0" stroke="#60a5fa" stroke-width="4" stroke-linecap="round"/>
+<text x="575" y="186" font-size="10.8" fill="#475569" text-anchor="middle">漩涡卷入约 2/3 空气，横管必须留坡度</text>
+<text x="418" y="240" font-size="10.8" fill="#64748b" text-anchor="start">• 管内常压附壁流，流速慢（~1 m/s），需大量粗立管</text>
+<rect x="404" y="270" width="320" height="182" rx="8" fill="#f0fdfa" stroke="#99f6e4" stroke-width="1.2"/>
+<text x="418" y="291" font-size="11.8" fill="#0f766e" text-anchor="start" font-weight="700">虹吸式屋面雨水排水（防漩涡斗·100% 满管负压）</text>
+<rect x="432" y="304" width="38" height="7" rx="3" fill="#0f766e"/>
+<text x="480" y="312" font-size="10.5" fill="#0f766e" text-anchor="start" font-weight="600">防漩涡挡板隔绝空气</text>
+<path d="M 451,312 L 451,334 L 682,334 L 682,404" fill="none" stroke="#1e293b" stroke-width="9" stroke-linejoin="round"/>
+<path d="M 451,312 L 451,334 L 682,334 L 682,404" fill="none" stroke="#0d9488" stroke-width="5.2" stroke-linejoin="round"/>
+<line x1="510.0" y1="334.0" x2="620.0" y2="334.0" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="4 4" marker-end="url(#arr-teal)"/>
+<text x="566" y="352" font-size="10.8" fill="#0f766e" text-anchor="middle" font-weight="700">水平悬吊管【零坡度】满流狂飙</text>
+<text x="640" y="382" font-size="10.5" fill="#0f172a" text-anchor="end" font-weight="600">整栋楼落差 H</text>
+<text x="418" y="408" font-size="10.8" fill="#1e293b" text-anchor="start">• 借十几米立管坠落形成强负压抽吸，流速飙至 3–8 m/s</text>
+<text x="418" y="426" font-size="10.8" fill="#1e293b" text-anchor="start">• 管径缩减约 1/3～1/2，悬吊横管零坡度节省顶棚净空，</text>
+<text x="418" y="443" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="600">  但必须精确核算最低负压区，严防管材吸瘪与气蚀震颤。</text>
+</svg>

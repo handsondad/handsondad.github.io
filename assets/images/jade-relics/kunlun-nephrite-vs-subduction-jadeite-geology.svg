@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="534" viewBox="0 0 760 534" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">透闪石软玉接触交代与硬玉翡翠俯冲带高压低温成矿对比图</title>
+<desc id="desc">左图单次动画演示昆仑山软玉原生矿经冰川河水搬运滚磨成籽料，右图展示大洋俯冲带30至60公里高压低温生成翡翠</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  .anim-river {
+        stroke-dasharray: 290;
+        stroke-dashoffset: 290;
+        animation: riverTransport 3.8s ease-out 0.3s 1 forwards;
+      }
+      @keyframes riverTransport {
+        from { stroke-dashoffset: 290; }
+        to   { stroke-dashoffset: 0; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .anim-river {
+          animation: none !important;
+          stroke-dashoffset: 0 !important;
+        }
+      }
+</style>
+<rect x="0.5" y="0.5" width="759" height="533" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="380.0" y="30" font-size="18.5" fill="#1e293b" text-anchor="middle" font-weight="700">两种“玉”的地下炼丹炉：昆仑山热液交代 vs 大洋俯冲高压低温带</text>
+<text x="380.0" y="52" font-size="12.2" fill="#64748b" text-anchor="middle">中华八千年古玉皆为透闪石软玉；而清代风靡的缅甸翡翠（硬玉），则诞生于板块俯冲的万倍高压冷缝</text>
+<rect x="22" y="68" width="360" height="444" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="38.0" y="82.0" width="314" height="22" rx="11.0" fill="#f0fdfa" stroke="#115e59" stroke-width="1" stroke-opacity="0.35"/>
+<text x="195.0" y="97.0" font-size="12" fill="#115e59" text-anchor="middle" font-weight="600">软玉（和田玉）：中温低压接触交代 + 冰河淘洗</text>
+<rect x="38" y="118" width="328" height="232" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<polygon points="48,256 124,136 204,256" fill="#e2e8f0" stroke="#64748b" stroke-width="1.6"/>
+<polygon points="98,177 124,136 150,177 136,184 124,174 112,184" fill="#ffffff"/>
+<text x="124" y="130" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700">昆仑雪山原生矿（&gt;4,000 m）</text>
+<path d="M 44 256 L 360 256 L 360 342 L 44 342 Z" fill="#f1f5f9"/>
+<path d="M 44 342 L 44 286 Q 98 268 142 342 Z" fill="#fecaca" stroke="#dc2626" stroke-width="1.6"/>
+<text x="84" y="326" font-size="10.2" fill="#dc2626" text-anchor="middle" font-weight="700">中酸性岩浆侵入</text>
+<rect x="136" y="274" width="112" height="44" rx="6" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.3"/>
+<text x="192" y="294" font-size="10.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">白云质大理岩</text>
+<text x="192" y="310" font-size="9.8" fill="#1e293b" text-anchor="middle">CaMg(CO₃)₂</text>
+<ellipse cx="134" cy="292" rx="18" ry="11" transform="rotate(-28 134 292)" fill="#0d9488" stroke="#ffffff" stroke-width="1.8"/>
+<text x="134" y="268" font-size="10.2" fill="#115e59" text-anchor="middle" font-weight="700" class="halo">① 成玉带（300–500℃）</text>
+<path d="M 136 178 C 166 206, 214 236, 334 244" fill="none" stroke="#bae6fd" stroke-width="5"/>
+<path class="anim-river" d="M 136 178 C 166 206, 214 236, 334 244" fill="none" stroke="#0284c7" stroke-width="3.2" marker-end="url(#arr-blue)"/>
+<polygon points="152,188 166,184 170,196 156,199" fill="#99f6e4" stroke="#0f766e" stroke-width="1.4"/>
+<text x="198" y="190" font-size="10" fill="#115e59" text-anchor="start" font-weight="700">② 山料（棱角多裂）</text>
+<ellipse cx="252" cy="228" rx="9" ry="6" fill="#99f6e4" stroke="#0f766e" stroke-width="1.4"/>
+<text x="264" y="216" font-size="10" fill="#1e293b" text-anchor="start">③ 山流水</text>
+<ellipse cx="332" cy="242" rx="12" ry="8" fill="#ccfbf1" stroke="#b45309" stroke-width="2.2"/>
+<text x="314" y="272" font-size="10.5" fill="#b45309" text-anchor="middle" font-weight="700">④ 玉龙喀什河“籽料”</text>
+<rect x="38" y="362" width="328" height="134" rx="10" fill="#f0fdfa" stroke="#5eead4" stroke-width="1"/>
+<text x="50" y="384" font-size="12" fill="#115e59" text-anchor="start" font-weight="700">为什么老匠人偏爱河床里的“籽料”？</text>
+<text x="50" y="404" font-size="10.6" fill="#1e293b" text-anchor="start">• 岩浆热液含硅流体交代白云岩（0.2–0.7 GPa）生成透闪石；</text>
+<text x="50" y="422" font-size="10.6" fill="#1e293b" text-anchor="start">• 造山抬升后冰川崩落，洪水裹挟玉石翻滚碰撞几十公里，</text>
+<text x="50" y="440" font-size="10.6" fill="#1e293b" text-anchor="start">  天然替工匠砸掉松散裂隙，只留最致密玉核；</text>
+<text x="50" y="458" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">• 河床铁锰离子渗入表皮氧化，染出金黄/枣红“洒金皮”！</text>
+<text x="50" y="478" font-size="10.2" fill="#64748b" text-anchor="start">（另有一类“碧玉”由超基性蛇纹岩接触交代生成，含铁铬显深绿）</text>
+<rect x="396" y="68" width="342" height="444" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="412.0" y="82.0" width="308" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="566.0" y="97.0" font-size="12" fill="#18794e" text-anchor="middle" font-weight="600">硬玉（缅甸翡翠）：板块俯冲“高压低温”奇迹</text>
+<rect x="412" y="118" width="310" height="232" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<polygon points="534,158 716,158 716,336 618,336" fill="#e2e8f0" stroke="#64748b" stroke-width="1.5"/>
+<text x="646" y="184" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700">上覆大陆/岛弧地幔楔</text>
+<text x="646" y="202" font-size="10" fill="#64748b" text-anchor="middle">（蛇纹石化橄榄岩）</text>
+<polygon points="418,166 516,166 636,336 568,336" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.8"/>
+<line x1="468" y1="186" x2="542" y2="268" stroke="#1d6fa5" stroke-width="2.4" marker-end="url(#arr-blue)"/>
+<text x="474" y="154" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">大洋板块携海水俯冲</text>
+<ellipse cx="576" cy="272" rx="22" ry="13" transform="rotate(42 576 272)" fill="#22c55e" stroke="#ffffff" stroke-width="2"/>
+<text x="502" y="298" font-size="11" fill="#18794e" text-anchor="middle" font-weight="700">硬玉岩结晶带</text>
+<text x="502" y="315" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="700">深 30–60 km</text>
+<text x="502" y="331" font-size="10" fill="#0f172a" text-anchor="middle">1.0–2.5 GPa · 200–450℃</text>
+<rect x="412" y="362" width="310" height="134" rx="10" fill="#e7f6ee" stroke="#86efac" stroke-width="1"/>
+<text x="424" y="384" font-size="12" fill="#18794e" text-anchor="start" font-weight="700">为什么宝石级翡翠产地比软玉稀罕得多？</text>
+<text x="424" y="404" font-size="10.6" fill="#1e293b" text-anchor="start">• 地下越深通常越烫，硬玉却偏要“1–2 万倍大气压 +</text>
+<text x="424" y="422" font-size="10.6" fill="#1e293b" text-anchor="start">  仅两三百度低温”！只有冰冷大洋板块快速俯冲才具备；</text>
+<text x="424" y="440" font-size="10.6" fill="#1e293b" text-anchor="start">• 高压挤出富钠铝热液结晶成 NaAlSi₂O₆，微量 Cr³⁺</text>
+<text x="424" y="458" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">  混入晶格染出惊艳帝王绿，18 世纪末自缅甸传入中国。</text>
+<text x="424" y="478" font-size="10.4" fill="#dc2626" text-anchor="start" font-weight="700">（因此先秦两汉高古玉器中绝无缅甸硬玉翡翠！）</text>
+</svg>

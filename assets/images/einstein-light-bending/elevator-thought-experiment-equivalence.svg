@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="510" viewBox="0 0 760 510" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">爱因斯坦加速电梯思想实验与等效原理推导光线弯曲示意图</title>
+<desc id="desc">对比无引力深空向上加速火箭与天体引力场静置房间内的激光轨迹，展示等效原理如何预言光线弯曲及日常尺度下垂量级。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-b" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#1d6fa5"/>
+    </marker>
+    <marker id="arr-o" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#c25014"/>
+    </marker>
+    <marker id="arr-g" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#18794e"/>
+    </marker>
+    <marker id="arr-p" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#6d28d9"/>
+    </marker>
+    <marker id="arr-s" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#475569"/>
+    </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="509" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">没有质量的光，凭什么会被引力掰弯？——爱因斯坦“加速电梯”思想实验</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">先看左舱火箭向上加速 → 再用等效原理平移到右舱引力场：只要等效原理成立，光线在引力场中必然向下弯曲</text>
+<rect x="22" y="68" width="346" height="358" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="92" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="42" y="96" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="62" y="97" font-size="12.8" fill="#0f172a" text-anchor="start" font-weight="700">深空无引力场：火箭以加速度 a = g 向上猛推</text>
+<text x="42" y="117" font-size="10.8" fill="#64748b" text-anchor="start">舱外看光走水平直线；但光飞越舱宽 L 期间地板迎面往上追</text>
+<rect x="76" y="152" width="236" height="174" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="2"/>
+<polygon points="174,326 214,326 194,352" fill="#fb923c" opacity="0.85"/>
+<polygon points="184,326 204,326 194,342" fill="#fde047"/>
+<line x1="48" y1="285" x2="48" y2="180" stroke="#1d6fa5" stroke-width="2.4" marker-end="url(#arr-b)"/>
+<text x="48" y="168" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">a = g</text>
+<rect x="72" y="186" width="8" height="16" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.5"/>
+<line x1="80" y1="194" x2="306" y2="194" stroke="#475569" stroke-width="1.5" stroke-dasharray="5,4"/>
+<text x="194" y="184" font-size="10.5" fill="#475569" text-anchor="middle">舱外惯性系看：光沿水平虚线直飞</text>
+<path d="M 80,194 Q 206,198 306,262" fill="none" stroke="#c25014" stroke-width="3" marker-end="url(#arr-o)"/>
+<circle cx="308" cy="262" r="5" fill="#c25014"/>
+<text x="190" y="246" font-size="11.2" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">舱内乘客看：光画出向下抛物线！</text>
+<line x1="324" y1="194" x2="324" y2="262" stroke="#c25014" stroke-width="1.6"/>
+<line x1="319" y1="194" x2="329" y2="194" stroke="#c25014" stroke-width="1.6"/>
+<line x1="319" y1="262" x2="329" y2="262" stroke="#c25014" stroke-width="1.6"/>
+<text x="332" y="232.0" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">Δy</text>
+<rect x="40" y="362" width="310" height="48" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="195" y="382" font-size="11.2" fill="#0f172a" text-anchor="middle" font-weight="700">飞越舱宽耗时 Δt = L / c</text>
+<text x="195" y="401" font-size="10.6" fill="#64748b" text-anchor="middle">地板上追距离 Δy = ½ g (L / c)²（图中曲率已放大示意）</text>
+<rect x="353" y="224" width="54" height="42" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="380" y="243" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">等效</text>
+<text x="380" y="259" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">原理</text>
+<rect x="392" y="68" width="346" height="358" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="412" cy="92" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="412" y="96" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">2</text>
+<text x="432" y="97" font-size="12.8" fill="#0f172a" text-anchor="start" font-weight="700">天体表面引力场 g：静置不动的封闭房间</text>
+<text x="412" y="117" font-size="10.8" fill="#64748b" text-anchor="start">局域内无法区分“向上加速”与“向下引力”→ 光必同样下弯</text>
+<path d="M 422,348 Q 564,316 706,348" fill="#fde68a" stroke="#d97706" stroke-width="2"/>
+<text x="564" y="346" font-size="10.6" fill="#92400e" text-anchor="middle" font-weight="700">大质量天体表面（太阳 / 地球引力场 g）</text>
+<rect x="446" y="152" width="236" height="174" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="2"/>
+<rect x="442" y="186" width="8" height="16" fill="#ffffff" stroke="#18794e" stroke-width="1.5"/>
+<line x1="450" y1="194" x2="676" y2="194" stroke="#475569" stroke-width="1.5" stroke-dasharray="5,4"/>
+<text x="564" y="184" font-size="10.5" fill="#475569" text-anchor="middle">若引力不影响光：本该打在同高度靶心</text>
+<path d="M 450,194 Q 576,198 676,262" fill="none" stroke="#c25014" stroke-width="3" marker-end="url(#arr-o)"/>
+<circle cx="678" cy="262" r="5" fill="#c25014"/>
+<text x="560" y="246" font-size="11.2" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">真实结果：引力场把光线往下拽弯 Δy！</text>
+<line x1="704" y1="180" x2="704" y2="285" stroke="#18794e" stroke-width="2.4" marker-end="url(#arr-g)"/>
+<text x="704" y="168" font-size="11.2" fill="#18794e" text-anchor="middle" font-weight="700">引力 g</text>
+<rect x="410" y="362" width="310" height="48" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="565" y="382" font-size="11.2" fill="#18794e" text-anchor="middle" font-weight="700">无需光子有静止质量 m₀！</text>
+<text x="565" y="401" font-size="10.6" fill="#64748b" text-anchor="middle">光线走的是弯曲时空里的“最直短程线”（测地线）</text>
+<rect x="22" y="438" width="716" height="56" rx="10" fill="#fef1e8" stroke="#fdba74" stroke-width="1"/>
+<text x="40" y="461" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">为什么平时拿激光笔照墙看不出下垂？算笔账：房间宽 L = 3 m 时，光飞过去仅需 10⁻⁸ 秒，下坠量 Δy ≈ 4.9 × 10⁻¹⁶ 米</text>
+<text x="40" y="482" font-size="10.8" fill="#c25014" text-anchor="start">——这还不到一颗质子直径的二分之一！想肉眼测出弯曲，必须请出太阳系最重的“引力怪兽”：太阳（M☉ ≈ 2×10³⁰ kg）！</text>
+</svg>

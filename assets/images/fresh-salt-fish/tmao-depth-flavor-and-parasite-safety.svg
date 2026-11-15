@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="515" viewBox="0 0 760 515" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">海洋鱼类TMAO深海极限曲线与淡水海鱼生食寄生虫风险对比图</title>
+<desc id="desc">左图按2014年PNAS实测数据绘制海鱼肌肉TMAO随水深线性飙升至8200米等渗红线并对比海腥味TMA与淡水土臭素；右图对比淡水鱼生1类致癌物肝吸虫风险与海鱼异尖线虫FDA零下20度7天急冻规范。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arr-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#6d28d9"/>
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#475569"/>
+    </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="514" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">餐桌上的终极较量：鲜甜与土腥从哪来？为什么淡水鱼绝不能生吃？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左看 TMAO 抗压鲜味分子与 8,200 米深海鱼类禁区（PNAS, 2014）｜右看肝吸虫与异尖线虫安全红线</text>
+<rect x="16" y="68" width="362" height="432" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="36" cy="92" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="36" y="96" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="97" font-size="12.0" fill="#1d6fa5" text-anchor="start" font-weight="700">风味密码：TMAO 海鲜甜 vs 蓝藻“土臭素”</text>
+<rect x="70" y="128" width="286" height="196" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<line x1="70.0" y1="324.0" x2="356.0" y2="324.0" stroke="#e2e8f0" stroke-width="1.0" stroke-linecap="round" stroke-dasharray="4,3"/>
+<text x="64" y="327.5" font-size="9.8" fill="#64748b" text-anchor="end">0</text>
+<line x1="70.0" y1="265.2" x2="356.0" y2="265.2" stroke="#e2e8f0" stroke-width="1.0" stroke-linecap="round" stroke-dasharray="4,3"/>
+<text x="64" y="268.7" font-size="9.8" fill="#64748b" text-anchor="end">150</text>
+<line x1="70.0" y1="206.4" x2="356.0" y2="206.4" stroke="#e2e8f0" stroke-width="1.0" stroke-linecap="round" stroke-dasharray="4,3"/>
+<text x="64" y="209.9" font-size="9.8" fill="#64748b" text-anchor="end">300</text>
+<line x1="70.0" y1="147.6" x2="356.0" y2="147.6" stroke="#e2e8f0" stroke-width="1.0" stroke-linecap="round" stroke-dasharray="4,3"/>
+<text x="64" y="151.1" font-size="9.8" fill="#64748b" text-anchor="end">450</text>
+<line x1="70.0" y1="324.0" x2="70.0" y2="328.0" stroke="#475569" stroke-width="1.1" stroke-linecap="round"/>
+<text x="70.0" y="339" font-size="9.8" fill="#64748b" text-anchor="middle" font-weight="500">0km</text>
+<line x1="165.3" y1="324.0" x2="165.3" y2="328.0" stroke="#475569" stroke-width="1.1" stroke-linecap="round"/>
+<text x="165.3" y="339" font-size="9.8" fill="#64748b" text-anchor="middle" font-weight="500">3km</text>
+<line x1="260.7" y1="324.0" x2="260.7" y2="328.0" stroke="#475569" stroke-width="1.1" stroke-linecap="round"/>
+<text x="260.7" y="339" font-size="9.8" fill="#64748b" text-anchor="middle" font-weight="500">6km</text>
+<line x1="330.6" y1="324.0" x2="330.6" y2="328.0" stroke="#475569" stroke-width="1.1" stroke-linecap="round"/>
+<text x="330.6" y="339" font-size="9.8" fill="#dc2626" text-anchor="middle" font-weight="700">8.2km</text>
+<text x="62" y="120" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">肌肉 TMAO (mmol/kg)</text>
+<text x="213.0" y="355" font-size="9.9" fill="#0f172a" text-anchor="middle" font-weight="700">海洋栖息水深 →（万米深渊无真骨鱼之谜）</text>
+<line x1="330.6" y1="134.0" x2="330.6" y2="324.0" stroke="#dc2626" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="5,3"/>
+<text x="82" y="150" font-size="9.8" fill="#dc2626" text-anchor="start" font-weight="700">8,200m 等渗红线（更深再无任何鱼类！）→</text>
+<line x1="276.0" y1="147.0" x2="325.6" y2="147.0" stroke="#dc2626" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="3,2" marker-end="url(#arr-red)"/>
+<polyline points="70.0,307.5 101.8,295.0 149.4,266.0 224.1,221.7 292.4,172.7 330.6,148.4" fill="none" stroke="#c25014" stroke-width="2.8"/>
+<circle cx="70.0" cy="307.5" r="4.2" fill="#c25014" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="101.8" cy="295.0" r="4.2" fill="#c25014" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="149.4" cy="266.0" r="4.2" fill="#c25014" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="224.1" cy="221.7" r="4.2" fill="#c25014" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="292.4" cy="172.7" r="4.2" fill="#c25014" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="70.0" cy="322.8" r="5.0" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.4"/>
+<text x="77.9" y="316.8" font-size="9.8" fill="#1d6fa5" text-anchor="start" font-weight="700">淡水鱼 ≈ 0</text>
+<text x="282.4" y="166.7" font-size="9.8" fill="#c25014" text-anchor="end" font-weight="700">7km 狮子鱼: 386</text>
+<rect x="30" y="366" width="334" height="122" rx="9" fill="#f0f9ff" stroke="#bae6fd" stroke-width="1.2"/>
+<text x="42" y="386" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="600">• 海鱼鲜甜与海腥：活海鱼富含无臭 TMAO（抗盐抗深海高压）</text>
+<text x="42" y="405" font-size="9.8" fill="#475569" text-anchor="start">  与甘氨酸，入口自带清甜；死后细菌把 TMAO 还原成挥发性</text>
+<text x="42" y="424" font-size="9.8" fill="#c25014" text-anchor="start" font-weight="700">  三甲胺（TMA 海腥味）——挤柠檬汁/醋酸碱中和即可去腥！</text>
+<text x="42" y="446" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="600">• 淡水鱼泥土腥：TMAO 极低，鱼鳃易从池底蓝藻/放线菌富集</text>
+<text x="42" y="465" font-size="9.8" fill="#1d6fa5" text-anchor="start" font-weight="700">  脂溶性“土臭素（Geosmin）”与 2-MIB——靠清水吊水+葱姜料酒！</text>
+<rect x="394" y="68" width="350" height="432" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="414" cy="92" r="10.5" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2"/>
+<text x="414" y="96" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">2</text>
+<text x="434" y="97" font-size="12.0" fill="#dc2626" text-anchor="start" font-weight="700">生食安全红线：肝吸虫 vs 海鱼异尖线虫</text>
+<rect x="410" y="114" width="318" height="176" rx="10" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.4"/>
+<text x="424" y="136" font-size="10.4" fill="#dc2626" text-anchor="start" font-weight="700">✗ 淡水鱼生（草鱼/鲫鱼/麦穗等超 100 种）：严禁生吃！</text>
+<text x="424" y="157" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="600">• 头号元凶：华支睾吸虫（肝吸虫）——世卫组织 IARC</text>
+<text x="424" y="176" font-size="9.8" fill="#dc2626" text-anchor="start" font-weight="700">  认证“1 类明确致癌物”（直接诱发胆管癌、肝硬化）！</text>
+<text x="424" y="196" font-size="9.8" fill="#475569" text-anchor="start">• 渗透压同源陷阱：淡水鱼体液（≈300 mOsm）与人体胆汁</text>
+<text x="424" y="215" font-size="9.8" fill="#0f172a" text-anchor="start">  环境高度匹配，囊蚴钻入人类肝胆管可存活 20–30 年！</text>
+<text x="424" y="236" font-size="9.8" fill="#dc2626" text-anchor="start" font-weight="600">• 致命误区：高度白酒、芥末、陈醋、大蒜泡几分钟全杀不死！</text>
+<text x="424" y="258" font-size="10.0" fill="#18794e" text-anchor="start" font-weight="700">✓ 唯一铁律：中心温度 ≥ 63°C（沸水/热油彻底熟透）！</text>
+<rect x="410" y="302" width="318" height="186" rx="10" fill="#f0fdf4" stroke="#86efac" stroke-width="1.4"/>
+<text x="424" y="324" font-size="10.4" fill="#18794e" text-anchor="start" font-weight="700">⚠ 海鱼刺身真相：海鱼并非没虫，靠“急冻+控源”！</text>
+<text x="424" y="345" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="600">• 野生海鱼常见虫：异尖线虫（Anisakis，终宿主鲸/海豹）</text>
+<text x="424" y="364" font-size="9.8" fill="#475569" text-anchor="start">• 虽难在人体长期定居发育，但活虫钻胃壁会引发剧烈急腹痛</text>
+<text x="424" y="383" font-size="9.8" fill="#c25014" text-anchor="start" font-weight="700">  与严重过敏！刚钓上船的野生海鱼现切生吃同样危险！</text>
+<text x="424" y="406" font-size="9.9" fill="#18794e" text-anchor="start" font-weight="700">✓ 正规海鱼刺身两大安全屏障（FDA / 欧盟强制规范）：</text>
+<text x="424" y="426" font-size="9.8" fill="#0f172a" text-anchor="start">  1. 工业超低温急冻：−20°C 以下冻满 7 天，或 −35°C</text>
+<text x="424" y="445" font-size="9.8" fill="#475569" text-anchor="start">     冻硬后保冷 ≥ 15 小时（家用冰箱 −18°C 往往不够稳）；</text>
+<text x="424" y="466" font-size="9.8" fill="#0f766e" text-anchor="start" font-weight="600">  2. 全封闭人工颗粒饲料海水养殖（从食物链源头阻断虫卵）。</text>
+</svg>

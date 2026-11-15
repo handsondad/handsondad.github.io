@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">火箭真空反推原理、拉瓦尔喷管超音速反转与海平面及真空喷管对比图</title>
+<desc id="desc">左图展示拉瓦尔收缩扩张喷管在喉部达到M=1音速后利用(1-M^2)符号反转将3500K热能转化为超音速射流；右图对比一级短喷管(膨胀比16)、二级真空大喷管(膨胀比165)及地面过膨胀流分离破坏。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">第一关：太空没空气可“蹬”，火箭推谁？拉瓦尔喷管的超音速反转密码</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">火箭不推空气而是“反推自己扔出的燃气”；先捏细卡住 1 倍音速，再敞开喇叭反而飙到 10 倍音速！</text>
+<rect x="22" y="68" width="412" height="386" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="90" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="42" y="94" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">1</text>
+<text x="60" y="95" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700">拉瓦尔喷管（收缩—扩张喷管）：为什么“越敞开飞得越快”？</text>
+<rect x="36" y="112" width="384" height="170" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<defs><linearGradient id="noz-grad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#dc2626" stop-opacity="0.85"/><stop offset="48%" stop-color="#f97316" stop-opacity="0.85"/><stop offset="100%" stop-color="#3b82f6" stop-opacity="0.75"/></linearGradient></defs>
+<path d="M54,152 L136,152 C164,152 184,176 205,176 C236,176 296,144 366,140 L366,240 C296,236 236,204 205,204 C184,204 164,228 136,228 L54,228 Z" fill="url(#noz-grad)"/>
+<path d="M54,152 L136,152 C164,152 184,176 205,176 C236,176 296,144 366,140" fill="none" stroke="#0f172a" stroke-width="3.2" stroke-linecap="round"/>
+<path d="M54,228 L136,228 C164,228 184,204 205,204 C236,204 296,236 366,240" fill="none" stroke="#0f172a" stroke-width="3.2" stroke-linecap="round"/>
+<line x1="54.0" y1="152.0" x2="54.0" y2="228.0" stroke="#0f172a" stroke-width="3.2"/>
+<line x1="205.0" y1="130.0" x2="205.0" y2="250.0" stroke="#0f172a" stroke-width="1.5" stroke-dasharray="3,2"/>
+<text x="100" y="194" font-size="10.5" fill="#ffffff" text-anchor="middle" font-weight="700">燃烧室 M&lt;1</text>
+<text x="205" y="126" font-size="10" fill="#b91c1c" text-anchor="middle" font-weight="700">喉部 M = 1.0（音速咽喉）</text>
+<text x="306" y="194" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">扩张段 M&gt;3!</text>
+<line x1="368.0" y1="190.0" x2="410.0" y2="190.0" stroke="#1d6fa5" stroke-width="2.6" marker-end="url(#arr-blue)"/>
+<line x1="92.0" y1="134.0" x2="50.0" y2="134.0" stroke="#18794e" stroke-width="2.8"/>
+<text x="126" y="268" font-size="9.6" fill="#b91c1c" text-anchor="middle" font-weight="600">红区：高温高压乱撞热能 (3500 K)</text>
+<text x="322" y="268" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">蓝区：降温减压→定向超音速动能!</text>
+<rect x="36" y="294" width="384" height="146" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="48" y="315" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">可压缩流体面积—速度反转定律：</text>
+<text x="228" y="338" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700">(1 − M²) · (dv / v) = − (dA / A)</text>
+<text x="48" y="362" font-size="10.2" fill="#1e293b" text-anchor="start">• 前半截亚音速 (M &lt; 1)：1−M² &gt; 0，像捏扁浇花水管，管子越细流得越快；</text>
+<text x="48" y="383" font-size="10.2" fill="#1e293b" text-anchor="start">• 喉部卡死 M = 1 后进入超音速 (M &gt; 1)：1−M² 变成负数！气体剧烈膨胀</text>
+<text x="48" y="402" font-size="10.2" fill="#b91c1c" text-anchor="start" font-weight="700">  密度暴跌，喇叭口越敞开 (dA &gt; 0)，喷气速度 v 反而一路狂飙破 3–4.5 km/s！</text>
+<text x="48" y="424" font-size="10.2" fill="#1d6fa5" text-anchor="start" font-weight="700">• 广义推力公式：F = ṁ·ve + (pe − p0)·Ae（动量推力 + 喷口压差推力）</text>
+<rect x="448" y="68" width="290" height="386" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="468" cy="90" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="468" y="94" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">2</text>
+<text x="486" y="95" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700">为什么一级短喷管、二级大裙摆？</text>
+<rect x="460" y="112" width="266" height="102" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="472" y="133" font-size="10.8" fill="#1d6fa5" text-anchor="start" font-weight="700">① 海平面一级发动机（短小喷口 ε≈16）</text>
+<text x="472" y="155" font-size="10.1" fill="#1e293b" text-anchor="start" font-weight="400">地面大气压 p0 = 1 atm 顶着喷口：</text>
+<text x="472" y="174" font-size="10.1" fill="#1e293b" text-anchor="start" font-weight="400">必须收短喇叭让出口压 pe ≈ 1 atm，</text>
+<text x="472" y="193" font-size="10.1" fill="#0f172a" text-anchor="start" font-weight="600">羽流笔直紧束，推力扎实不抖动！</text>
+<rect x="460" y="224" width="266" height="102" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="472" y="245" font-size="10.8" fill="#6d28d9" text-anchor="start" font-weight="700">② 太空二级发动机（巨型钟罩 ε≈165）</text>
+<text x="472" y="267" font-size="10.1" fill="#1e293b" text-anchor="start" font-weight="400">高空真空 p0 ≈ 0，毫无空气背压：</text>
+<text x="472" y="286" font-size="10.1" fill="#1e293b" text-anchor="start" font-weight="400">接上巨大铌合金裙摆把燃气榨干到极致，</text>
+<text x="472" y="305" font-size="10.1" fill="#0f172a" text-anchor="start" font-weight="600">猎鹰9同款核心机比冲从 282s 飙到 348s！</text>
+<rect x="460" y="336" width="266" height="102" rx="8" fill="#fef2f2" stroke="#b91c1c" stroke-width="1"/>
+<text x="472" y="357" font-size="10.8" fill="#b91c1c" text-anchor="start" font-weight="700">③ 禁忌反例：把真空大喷管放地面点火！</text>
+<text x="472" y="379" font-size="10.1" fill="#1e293b" text-anchor="start" font-weight="400">口太大导致 pe 远低于外界 1 atm →</text>
+<text x="472" y="398" font-size="10.1" fill="#1e293b" text-anchor="start" font-weight="400">大气强行倒灌进喷管壁引发“过膨胀分离”，</text>
+<text x="472" y="417" font-size="10.1" fill="#0f172a" text-anchor="start" font-weight="600">剧烈侧向狂抖，几秒钟撕碎整台发动机！</text>
+<rect x="22" y="466" width="716" height="40" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="380" y="491" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">多级火箭的第一个隐形红利：不仅扔掉死重，还能在地面和太空分别换上“专属尺寸”的最佳膨胀比喷管！</text>
+</svg>

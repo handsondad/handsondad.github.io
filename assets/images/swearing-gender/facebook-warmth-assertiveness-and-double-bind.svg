@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="508" viewBox="0 0 760 508" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">社交语言温暖度与果断度二维分布及女性双输语言困境图解</title>
+<desc id="desc">左栏基于5.2万用户消息证明女性语言兼具高温暖度与高果断度，右栏拆解拉科夫双输语言陷阱与谐音替身、词义重夺及语义漂白路径</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="507" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="380.0" y="30" font-size="18.2" fill="#1e293b" text-anchor="middle" font-weight="700">少说脏话 = 说话软弱没主见？1,000 万条消息击碎半世纪语言偏见</text>
+<text x="380.0" y="52" font-size="12.0" fill="#64748b" text-anchor="middle">宾大与剑桥计算语言学研究（Park 等，PLOS ONE 2016）对比拉科夫“女性双输语言困境”</text>
+<rect x="22" y="68" width="356" height="420" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="38.0" y="82.0" width="324" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="200.0" y="97.0" font-size="12" fill="#18794e" text-anchor="middle" font-weight="600">① 5.2 万用户实测：温柔礼貌与果断自信毫不冲突</text>
+<rect x="38" y="120" width="324" height="248" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<line x1="62.0" y1="248.0" x2="342.0" y2="248.0" stroke="#475569" stroke-width="1.5" marker-end="url(#arr-muted)"/>
+<line x1="200.0" y1="346.0" x2="200.0" y2="140.0" stroke="#475569" stroke-width="1.5" marker-end="url(#arr-muted)"/>
+<text x="200" y="134" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="700">高果断自信度（Assertiveness ↑）</text>
+<text x="200" y="360" font-size="9.8" fill="#64748b" text-anchor="middle">低果断 / 顺从犹豫（↓）</text>
+<text x="66" y="240" font-size="9.6" fill="#c25014" text-anchor="start">冷漠敌意·粗话</text>
+<text x="336" y="240" font-size="9.6" fill="#0f766e" text-anchor="end">温暖共情·礼貌</text>
+<circle cx="278" cy="304" r="24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="4 3"/>
+<text x="278" y="301" font-size="9.5" fill="#475569" text-anchor="middle">旧刻板印象</text>
+<text x="278" y="315" font-size="9.2" fill="#475569" text-anchor="middle">礼貌=软弱?</text>
+<text x="278" y="338" font-size="9.6" fill="#dc2626" text-anchor="middle" font-weight="700">✕ 被数据推翻</text>
+<ellipse cx="124" cy="214" rx="48" ry="28" fill="#ffedd5" stroke="#ea580c" stroke-width="2"/>
+<text x="124" y="210" font-size="10.2" fill="#c25014" text-anchor="middle" font-weight="700">男性高频语言簇</text>
+<text x="124" y="226" font-size="9.4" fill="#1e293b" text-anchor="middle">脏话·愤怒·论辩·聊物</text>
+<ellipse cx="282" cy="196" rx="50" ry="28" fill="#ccfbf1" stroke="#0f766e" stroke-width="2.2"/>
+<text x="282" y="192" font-size="10.2" fill="#0f766e" text-anchor="middle" font-weight="700">女性高频语言簇</text>
+<text x="282" y="208" font-size="9.5" fill="#0f766e" text-anchor="middle" font-weight="700">温暖·礼貌·且更果断!</text>
+<line x1="282.0" y1="274.0" x2="282.0" y2="230.0" stroke="#0f766e" stroke-width="2.0" marker-end="url(#arr-green)"/>
+<rect x="38" y="380" width="324" height="94" rx="8" fill="#e7f6ee" stroke="#86efac" stroke-width="1"/>
+<text x="50" y="401" font-size="10.6" fill="#18794e" text-anchor="start" font-weight="700">PLOS ONE（2016）颠覆性结论：</text>
+<text x="50" y="421" font-size="9.9" fill="#1e293b" text-anchor="start">• 男性在社交网络显著更多使用脏话、愤怒词与冷漠对抗表达；</text>
+<text x="50" y="440" font-size="9.9" fill="#1e293b" text-anchor="start">• 女性虽极少靠爆粗口立威，直接表达主张的“果断度”反而略超</text>
+<text x="50" y="459" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">  男性——证明“不靠骂街也能硬气把事办成”！</text>
+<rect x="394" y="68" width="344" height="420" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="410.0" y="82.0" width="312" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="566.0" y="97.0" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="600">② 听众耳朵里的双标：拉科夫“双输陷阱”与突围</text>
+<rect x="410" y="120" width="312" height="146" rx="10" fill="#fef2f2" stroke="#fca5a5" stroke-width="1"/>
+<text x="566" y="142" font-size="10.8" fill="#dc2626" text-anchor="middle" font-weight="700">罗宾·拉科夫（Robin Lakoff）揭示的女性语言两难：</text>
+<rect x="422" y="156" width="138" height="96" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="491" y="176" font-size="10.4" fill="#475569" text-anchor="middle" font-weight="700">若全程轻声温顺</text>
+<text x="491" y="195" font-size="9.8" fill="#64748b" text-anchor="middle">只说“哎呀 / 天哪”</text>
+<text x="491" y="217" font-size="9.6" fill="#1e293b" text-anchor="middle">→ 易被刻板印象当成</text>
+<text x="491" y="235" font-size="9.8" fill="#dc2626" text-anchor="middle" font-weight="700">“缺乏气场、好拿捏”</text>
+<rect x="572" y="156" width="138" height="96" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="641" y="176" font-size="10.4" fill="#c25014" text-anchor="middle" font-weight="700">若像男性一样爆粗口</text>
+<text x="641" y="195" font-size="9.8" fill="#64748b" text-anchor="middle">说完全相同的禁忌词</text>
+<text x="641" y="217" font-size="9.6" fill="#1e293b" text-anchor="middle">→ 违反性别角色期待</text>
+<text x="641" y="235" font-size="9.8" fill="#dc2626" text-anchor="middle" font-weight="700">被批“粗俗、情绪失控”</text>
+<rect x="410" y="280" width="312" height="194" rx="10" fill="#f3e8ff" stroke="#d8b4fe" stroke-width="1"/>
+<text x="424" y="302" font-size="10.8" fill="#6d28d9" text-anchor="start" font-weight="700">日常语言如何聪明破解禁忌与规训？三条演化路径：</text>
+<text x="424" y="323.0" font-size="9.7" fill="#1e293b" text-anchor="start">1. 谐音与委婉替身（Euphemism）：</text>
+<text x="424" y="339.5" font-size="9.7" fill="#1e293b" text-anchor="start">   中文“卧槽 / 我勒个去 / 栓Q”、英语 fudge / shoot，既保留</text>
+<text x="424" y="356.0" font-size="9.7" fill="#1e293b" text-anchor="start">   情绪重音，又巧妙绕开社会礼仪红线；</text>
+<text x="424" y="372.5" font-size="9.7" fill="#1e293b" text-anchor="start">2. 圈内词义重夺（Insular Reclamation，Graziano 2024）：</text>
+<text x="424" y="389.0" font-size="9.7" fill="#1e293b" text-anchor="start">   年轻女性在闺蜜间互称“bad bitch / 狠角色”，把原本惩罚女性</text>
+<text x="424" y="405.5" font-size="9.7" fill="#1e293b" text-anchor="start">   强势的贬义词反向改造成赞美独立果敢的勋章；</text>
+<text x="424" y="422.0" font-size="9.7" fill="#1e293b" text-anchor="start">3. 语义漂白（Semantic Bleaching，鲁迅 1925 记载）：</text>
+<text x="424" y="438.5" font-size="9.7" fill="#1e293b" text-anchor="start">   鲁迅曾见乡农父子夹菜：“这不坏，妈的你尝尝看！”——粗话彻底</text>
+<text x="424" y="455.0" font-size="9.7" fill="#1e293b" text-anchor="start">   褪去攻击性，醇化成了表达惊叹与亲昵的语气助词。</text>
+</svg>

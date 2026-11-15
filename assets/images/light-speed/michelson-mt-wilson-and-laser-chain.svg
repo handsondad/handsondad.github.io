@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="536" viewBox="0 0 760 536" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">迈克耳孙威尔逊山八面旋转镜实验与战后谐振腔及稳频激光测光速原理图</title>
+<desc id="desc">上图展示1926年迈克耳孙在35.4千米山峰基线上用528转每秒八面镜测得299796千米每秒；下图展示战后转向c=λν波动法，包括埃森微波谐振腔与1972年埃文森团队甲烷稳频激光频率链将不确定度缩小到1.1米每秒。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="535" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">从加州双峰八面转镜到甲烷稳频激光：人类如何把光速逼到 1 m/s 级精度？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">上半场把“飞行时间法”推向机械极限（迈克耳孙）；下半场彻底换赛道改用波动方程 c = λν（谐振腔与激光）</text>
+<rect x="24" y="66" width="712" height="218" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="44" cy="90" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="44" y="94" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">1</text>
+<text x="62" y="95" font-size="12.8" fill="#0f172a" text-anchor="start" font-weight="700">1926 年迈克耳孙（Michelson）威尔逊山八面旋转镜：机械光学时代的封神绝唱</text>
+<rect x="40" y="108" width="424" height="160" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<polygon points="140.0,195.9 125.9,210.0 106.1,210.0 92.0,195.9 92.0,176.1 106.1,162.0 125.9,162.0 140.0,176.1" fill="#e7f6ee" stroke="#18794e" stroke-width="2"/>
+<text x="116" y="190" font-size="10" fill="#18794e" text-anchor="middle" font-weight="700">8面镜</text>
+<text x="116" y="234" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="700">威尔逊山天文台</text>
+<text x="116" y="252" font-size="10.2" fill="#64748b" text-anchor="middle">转速 ≈ 528 转/秒</text>
+<line x1="146" y1="176" x2="392" y2="176" stroke="#c25014" stroke-width="2" marker-end="url(#arr-orange)"/>
+<line x1="392" y1="194" x2="146" y2="194" stroke="#1d6fa5" stroke-width="2" stroke-dasharray="5 3" marker-end="url(#arr-blue)"/>
+<path d="M366,256 L406,162 L446,256 Z" fill="#f1f5f9" stroke="#475569" stroke-width="1.3"/>
+<rect x="398" y="168" width="8" height="32" rx="2" fill="#1d6fa5"/>
+<text x="406" y="246" font-size="10.2" fill="#475569" text-anchor="middle" font-weight="700">圣安东尼奥山</text>
+<text x="268" y="164" font-size="10.4" fill="#0f172a" text-anchor="middle" font-weight="700">大地测量局毫米级勘测基线 d ≈ 35.4 km</text>
+<text x="268" y="214" font-size="10.4" fill="#1d6fa5" text-anchor="middle" font-weight="600">往返约 236 μs，八面镜恰转过 1/8 圈复位！</text>
+<rect x="478" y="108" width="242" height="160" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="494" y="132" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">为什么八面镜比傅科更准百倍？</text>
+<text x="494" y="155" font-size="10.8" fill="#1e293b" text-anchor="start">• 同步零位法：下一镜面精准替代前</text>
+<text x="494" y="175" font-size="10.8" fill="#1e293b" text-anchor="start">  一镜面角度，无需测极小位移：</text>
+<text x="494" y="197" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">  c_空气 = 16 f d（音叉频闪校准转速）</text>
+<rect x="494.0" y="210.0" width="210" height="24" rx="12.0" fill="#ffffff" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="599.0" y="226.3" font-size="11" fill="#18794e" text-anchor="middle" font-weight="600">真空值：299,796 ± 4 km/s</text>
+<text x="494" y="252" font-size="10.2" fill="#64748b" text-anchor="start">晚年更修 1.6 km 真空铁管排除空气干扰</text>
+<rect x="24" y="298" width="712" height="222" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="44" cy="322" r="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="44" y="326" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">2</text>
+<text x="62" y="327" font-size="12.8" fill="#0f172a" text-anchor="start" font-weight="700">二战后换道超车：不跑长途了！直接同测一束电磁波的“波长 λ × 频率 ν ＝ c”</text>
+<rect x="40" y="342" width="332" height="162" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="56" y="366" font-size="11.6" fill="#1d6fa5" text-anchor="start" font-weight="700">① 埃森微波谐振腔（1946–1950，英国 NPL）</text>
+<rect x="56" y="380" width="136" height="34" rx="5" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.5"/>
+<polyline points="60.0,397.0 64.0,401.2 68.0,404.8 72.0,407.2 76.0,408.0 80.0,407.2 84.0,404.8 88.0,401.2 92.0,397.0 96.0,392.8 100.0,389.2 104.0,386.8 108.0,386.0 112.0,386.8 116.0,389.2 120.0,392.8 124.0,397.0 128.0,401.2 132.0,404.8 136.0,407.2 140.0,408.0 144.0,407.2 148.0,404.8 152.0,401.2 156.0,397.0 160.0,392.8 164.0,389.2 168.0,386.8 172.0,386.0 176.0,386.8 180.0,389.2 184.0,392.8 188.0,397.0" fill="none" stroke="#1d6fa5" stroke-width="1.6"/>
+<polyline points="60.0,397.0 64.0,392.8 68.0,389.2 72.0,386.8 76.0,386.0 80.0,386.8 84.0,389.2 88.0,392.8 92.0,397.0 96.0,401.2 100.0,404.8 104.0,407.2 108.0,408.0 112.0,407.2 116.0,404.8 120.0,401.2 124.0,397.0 128.0,392.8 132.0,389.2 136.0,386.8 140.0,386.0 144.0,386.8 148.0,389.2 152.0,392.8 156.0,397.0 160.0,401.2 164.0,404.8 168.0,407.2 172.0,408.0 176.0,407.2 180.0,404.8 184.0,401.2 188.0,397.0" fill="none" stroke="#c25014" stroke-width="1.3" stroke-dasharray="3 2"/>
+<text x="204" y="394" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">精密真空金属腔</text>
+<text x="204" y="412" font-size="10.4" fill="#1e293b" text-anchor="start">尺寸定 λ，石英钟测 ν</text>
+<text x="56" y="438" font-size="10.8" fill="#1e293b" text-anchor="start">• 揪出战前光学界偏低 16 km/s 的系统误差！</text>
+<text x="56" y="460" font-size="10.8" fill="#1e293b" text-anchor="start">• 1950 年得出 299,792.5 ± 1 km/s，埃森随后更</text>
+<text x="56" y="480" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="600">  造出世界首台实用铯原子钟，改写“秒”的定义。</text>
+<rect x="388" y="342" width="332" height="162" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="404" y="366" font-size="11.6" fill="#6d28d9" text-anchor="start" font-weight="700">② 埃文森与霍尔稳频激光链（1972，美国 NIST）</text>
+<text x="404" y="390" font-size="10.6" fill="#1e293b" text-anchor="start">• 难点：可见／红外激光每秒震荡近百太赫兹（10^14 Hz），</text>
+<text x="404" y="410" font-size="10.6" fill="#1e293b" text-anchor="start">  任何电子计数器都数不过来！</text>
+<text x="404" y="432" font-size="10.6" fill="#1e293b" text-anchor="start">• 破局：搭起多级谐波激光“频率梯”，把铯原子钟频率一</text>
+<text x="404" y="452" font-size="10.6" fill="#1e293b" text-anchor="start">  路锁相传递到 3.39 μm 甲烷稳频氦氖激光（88.38 THz）</text>
+<rect x="404.0" y="466.0" width="300" height="24" rx="12.0" fill="#ffffff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="554.0" y="482.3" font-size="10.8" fill="#6d28d9" text-anchor="middle" font-weight="600">精度暴涨百倍：299,792,456.2 ± 1.1 m/s</text>
+</svg>

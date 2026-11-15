@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="544" viewBox="0 0 760 544" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">近年厄尔尼诺现象愈发强烈的四重物理机制与科学置信度拆解图</title>
+<desc id="desc">四宫格依次拆解：①全球变暖抬升1.2°C以上底温与海洋热含量；②克劳修斯-克拉佩龙每度约7%水汽倍增与28°C热带深对流门槛突破；③赤道太平洋表层比深层升温更快导致上层层结增强、放大海气耦合；④印太暖池翻倍与三重拉尼娜蓄能，同时明确区分热力学高信度放大与年代际自然变率边界。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="543" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">近些年厄尔尼诺为什么如此凶猛？四重物理放大器与科学置信度</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">综合 IPCC AR6、Cai 等（Nature Rev. 2021）与 NOAA 观测：区分“板上钉钉的热力学放大”与“前沿动力学课题”</text>
+<rect x="24" y="68" width="348" height="222" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="44" cy="90" r="10.5" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2"/>
+<text x="44" y="94" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">1</text>
+<text x="62" y="94" font-size="13" fill="#0f172a" text-anchor="start" font-weight="700">底温抬升：踩在 +1.2°C 高台上起跳</text>
+<rect x="274.0" y="78.0" width="84" height="20" rx="10.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="316.0" y="91.6" font-size="10.5" fill="#dc2626" text-anchor="middle" font-weight="600">高信度共识</text>
+<rect x="42" y="112" width="312" height="108" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="82" y="160" width="54" height="44" rx="3" fill="#fb923c"/>
+<text x="109" y="153" font-size="10.5" fill="#64748b" text-anchor="middle">绝对峰值</text>
+<text x="109" y="186" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">+2.1°C</text>
+<text x="109" y="215" font-size="10.5" fill="#475569" text-anchor="middle">20世纪中后期</text>
+<line x1="152.0" y1="172.0" x2="194.0" y2="152.0" stroke="#dc2626" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<rect x="212" y="182" width="64" height="22" rx="2" fill="#6d28d9"/>
+<rect x="212" y="128" width="64" height="54" rx="3" fill="#dc2626"/>
+<text x="244" y="122" font-size="11" fill="#dc2626" text-anchor="middle" font-weight="700">破历史极值！</text>
+<text x="244" y="158" font-size="10.5" fill="#ffffff" text-anchor="middle" font-weight="700">ENSO 振幅</text>
+<text x="244" y="197" font-size="10" fill="#ffffff" text-anchor="middle">全球底温抬升</text>
+<text x="244" y="215" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700">2023–2026 年</text>
+<text x="42" y="242" font-size="11.5" fill="#1e293b" text-anchor="start">• 温室效应逾 90% 额外热量存入海洋（海洋热含量屡创新高）</text>
+<text x="42" y="261" font-size="11.5" fill="#1e293b" text-anchor="start">• 同样幅度的圣婴叠加在变暖底座上，使 2024 首破 +1.5°C 关口</text>
+<text x="42" y="279" font-size="11" fill="#64748b" text-anchor="start">• 珊瑚白化、农业热害感受的是“总绝对温度”，而非去趋势指数</text>
+<rect x="388" y="68" width="348" height="222" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="408" cy="90" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="408" y="94" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">2</text>
+<text x="426" y="94" font-size="13" fill="#0f172a" text-anchor="start" font-weight="700">水汽倍增与 28 °C 深对流“点火线”</text>
+<rect x="638.0" y="78.0" width="84" height="20" rx="10.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="680.0" y="91.6" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">极可能(IPCC)</text>
+<rect x="406" y="112" width="312" height="108" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<path d="M432,202 L700,202" fill="none" stroke="#475569" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M607,120 L607,202" fill="none" stroke="#dc2626" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 3"/>
+<text x="603" y="132" font-size="10.5" fill="#dc2626" text-anchor="end" font-weight="700">28 °C 深对流门槛</text>
+<path d="M436,197 Q555,195 607,178 Q645,142 692,124" fill="none" stroke="#1d6fa5" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="442" y="214" font-size="10" fill="#64748b" text-anchor="start" class="mono">24°C</text>
+<text x="520" y="214" font-size="10" fill="#64748b" text-anchor="start" class="mono">26°C</text>
+<text x="607" y="214" font-size="10" fill="#dc2626" text-anchor="middle" font-weight="700" class="mono">28°C</text>
+<text x="684" y="214" font-size="10" fill="#dc2626" text-anchor="middle" class="mono">30°C</text>
+<text x="652" y="172" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">暴雨非线性暴增</text>
+<text x="406" y="242" font-size="11.5" fill="#1e293b" text-anchor="start">• 克劳修斯—克拉佩龙：每升 1°C 饱和水汽增约 6%–7%</text>
+<text x="406" y="261" font-size="11.5" fill="#1e293b" text-anchor="start">• 热带海温一旦跨过约 28°C 门槛，雷暴深对流像点火一样爆发</text>
+<text x="406" y="279" font-size="11" fill="#64748b" text-anchor="start">• 东太平洋背景变暖后，圣婴年更容易大片跨过 28°C 制造极端豪雨</text>
+<rect x="24" y="304" width="348" height="222" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="44" cy="326" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="44" y="330" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">3</text>
+<text x="62" y="330" font-size="13" fill="#0f172a" text-anchor="start" font-weight="700">上层海洋“层结增强”放大海气耦合</text>
+<rect x="270.0" y="314.0" width="88" height="20" rx="10.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="314.0" y="327.6" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="600">动力学强证据</text>
+<rect x="42" y="348" width="312" height="104" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="126" y="366" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">过去：上下温差较缓</text>
+<rect x="74" y="374" width="104" height="24" rx="3" fill="#fb923c" opacity="0.8"/>
+<rect x="74" y="398" width="104" height="44" rx="3" fill="#1d6fa5" opacity="0.85"/>
+<text x="126" y="390" font-size="10.5" fill="#ffffff" text-anchor="middle">表层 0–75 m</text>
+<text x="126" y="424" font-size="10.5" fill="#e0f2fe" text-anchor="middle">次表层冷水</text>
+<text x="268" y="366" font-size="10.5" fill="#dc2626" text-anchor="middle" font-weight="700">近年：表层升温快、层结变陡</text>
+<rect x="214" y="374" width="108" height="22" rx="3" fill="#dc2626"/>
+<line x1="214" y1="396" x2="322" y2="396" stroke="#fde047" stroke-width="2.4"/>
+<rect x="214" y="398" width="108" height="44" rx="3" fill="#0c4a6e"/>
+<text x="268" y="389" font-size="10.5" fill="#ffffff" text-anchor="middle" font-weight="700">更轻更暖薄盖层</text>
+<text x="268" y="424" font-size="10.5" fill="#fef08a" text-anchor="middle">密度跃层更锋利</text>
+<text x="42" y="474" font-size="11.5" fill="#1e293b" text-anchor="start">• 表层海水比 100–300 m 深处升温更快 → 垂直密度层结更强</text>
+<text x="42" y="493" font-size="11.5" fill="#1e293b" text-anchor="start">• 暖水盖层更轻薄，同样的西风异常更容易推动暖池大幅东移</text>
+<text x="42" y="511" font-size="11" fill="#64748b" text-anchor="start">• 高仿真气候模式显示：极端厄尔尼诺与极端拉尼娜摆动更频繁</text>
+<rect x="388" y="304" width="348" height="222" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="408" cy="326" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="408" y="330" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">4</text>
+<text x="426" y="330" font-size="13" fill="#0f172a" text-anchor="start" font-weight="700">暖池扩容蓄能 + 严谨的科学边界</text>
+<rect x="634.0" y="314.0" width="88" height="20" rx="10.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="678.0" y="327.6" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="600">理性区分边界</text>
+<rect x="406" y="348" width="312" height="104" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.0"/>
+<text x="418" y="370" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">蓄能弹簧：印太暖池 (&gt;28°C) 面积较 1900 年近乎翻倍</text>
+<text x="418" y="390" font-size="11" fill="#1e293b" text-anchor="start">2020–2023 罕见“三重拉尼娜”连续三年把巨量暖水死死压在</text>
+<text x="418" y="408" font-size="11" fill="#1e293b" text-anchor="start">西太平洋次表层；信风一松，蓄积热能便接连剧烈释放。</text>
+<text x="418" y="434" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">科学界诚实限定：太平洋本身存在 20–30 年年代际自然波动</text>
+<text x="406" y="474" font-size="11.5" fill="#1e293b" text-anchor="start">• 已证实：1950 年以来 ENSO 变率显著强于过去数百年珊瑚记录</text>
+<text x="406" y="493" font-size="11.5" fill="#1e293b" text-anchor="start">• 已明确：全球变暖必然放大厄尔尼诺带来的极端暴雨、热浪与干旱</text>
+<text x="406" y="511" font-size="11" fill="#64748b" text-anchor="start">• 仍在攻关：单次事件海温振幅中“人为强迫 vs 自然波动”精确占比</text>
+</svg>

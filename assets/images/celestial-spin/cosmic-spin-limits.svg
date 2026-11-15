@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="482" viewBox="0 0 760 482" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">宇宙天体赤道自转线速度对数跨度榜与离心解体极限（金星至每秒716圈脉冲星）图</title>
+<desc id="desc">对数尺度对比金星（1.81 m/s）、地球（465.1 m/s，解体极限周期84.5分钟）、木星（12.57 km/s）、高速恒星VFTS 102（约500-600 km/s）与最快毫秒脉冲星PSR J1748-2446ad（每秒716圈，赤道约0.24倍光速）及旋转黑洞参考系拖拽。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#6d28d9"/>
+  </marker>
+  <marker id="arr-crimson" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#b91c1c"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="481" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">宇宙自转的终极狂飙：星球转太快会散架吗？从慢跑金星到每秒 716 圈脉冲星</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">向心引力 GM/R² 必须拽住离心加速度 ω²R：一旦越过解体红线星球当场崩飞，中子星赤道飙至 24% 光速</text>
+<rect x="16" y="68" width="728" height="398" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="28.0" y="80.0" width="366" height="24" rx="12.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="211.0" y="96.3" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="600">天体赤道自转线速度跨度榜（横跨 7 个数量级的对数标尺！）</text>
+<text x="406" y="96" font-size="11.2" fill="#b91c1c" text-anchor="start" font-weight="700">解体极限周期 T_min = 2π√(R³ / GM)</text>
+<rect x="28" y="118" width="704" height="44" rx="7" fill="#f8fafc" stroke="#e2e8f0"/>
+<rect x="28" y="118" width="48" height="44" rx="7" fill="#f1f5f9" stroke="#475569" stroke-width="1.2"/>
+<text x="40" y="136" font-size="11.3" fill="#475569" text-anchor="start" font-weight="700" class="halo">金星赤道</text>
+<text x="720" y="136" font-size="11.3" fill="#0f172a" text-anchor="end" font-weight="700" class="halo">1.81 m/s（6.5 km/h）</text>
+<text x="40" y="154" font-size="10.3" fill="#1e293b" text-anchor="start" class="halo">比普通人慢跑还慢！在金星赤道迎着西边散步就能让日落永远停在半空</text>
+<rect x="28" y="172" width="704" height="44" rx="7" fill="#f8fafc" stroke="#e2e8f0"/>
+<rect x="28" y="172" width="174" height="44" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="40" y="190" font-size="11.3" fill="#1d6fa5" text-anchor="start" font-weight="700" class="halo">地球赤道</text>
+<text x="720" y="190" font-size="11.3" fill="#0f172a" text-anchor="end" font-weight="700" class="halo">465.1 m/s（1,674 km/h）</text>
+<text x="40" y="208" font-size="10.3" fill="#1e293b" text-anchor="start" class="halo">超音速 1.36 倍（文昌发射火箭白捡这笔顺风速度；若缩至 84.5 分钟/圈地球将解体!）</text>
+<rect x="28" y="226" width="704" height="44" rx="7" fill="#f8fafc" stroke="#e2e8f0"/>
+<rect x="28" y="226" width="306" height="44" rx="7" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.2"/>
+<text x="40" y="244" font-size="11.3" fill="#0f766e" text-anchor="start" font-weight="700" class="halo">木星赤道</text>
+<text x="720" y="244" font-size="11.3" fill="#0f172a" text-anchor="end" font-weight="700" class="halo">12.57 km/s（4.53 万 km/h）</text>
+<text x="40" y="262" font-size="10.3" fill="#1e293b" text-anchor="start" class="halo">太阳系行星自转冠军（9小时56分转完 45 万公里腰围，比地球第一宇宙速度还快）</text>
+<rect x="28" y="280" width="704" height="44" rx="7" fill="#f8fafc" stroke="#e2e8f0"/>
+<rect x="28" y="280" width="458" height="44" rx="7" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="40" y="298" font-size="11.3" fill="#c25014" text-anchor="start" font-weight="700" class="halo">大质量狂转星 VFTS 102</text>
+<text x="720" y="298" font-size="11.3" fill="#0f172a" text-anchor="end" font-weight="700" class="halo">≈ 500–600 km/s</text>
+<text x="40" y="316" font-size="10.3" fill="#1e293b" text-anchor="start" class="halo">大麦哲伦云恒星测速纪录保持者，已被离心力甩成扁橄榄球，赤道物质正往外甩盘</text>
+<rect x="28" y="334" width="704" height="44" rx="7" fill="#f8fafc" stroke="#e2e8f0"/>
+<rect x="28" y="334" width="644" height="44" rx="7" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="40" y="352" font-size="11.3" fill="#6d28d9" text-anchor="start" font-weight="700" class="halo">脉冲星 PSR J1748-2446ad</text>
+<text x="720" y="352" font-size="11.3" fill="#0f172a" text-anchor="end" font-weight="700" class="halo">≈ 72,000 km/s（0.24 c!）</text>
+<text x="40" y="370" font-size="10.3" fill="#1e293b" text-anchor="start" class="halo">直径不足 32 km 的中子星每秒狂转 716 圈（快过料理机刀片），赤道逼近四分之一光速！</text>
+<rect x="28" y="394" width="704" height="58" rx="8" fill="#fef2f2" stroke="#fca5a5"/>
+<text x="40" y="415" font-size="10.8" fill="#b91c1c" text-anchor="start" font-weight="700">为什么中子星每秒转 716 圈都不散架？因为它的密度超原子核（每立方厘米上亿吨），表面引力是地球的千亿倍！</text>
+<text x="40" y="436" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600">而若再坍缩成“克尔旋转黑洞（Kerr Black Hole）”，连实体表面都消失了——高速自转甚至会把周围的时空本身一起拽着旋转（参考系拖拽）！</text>
+</svg>

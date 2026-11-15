@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="454" viewBox="0 0 760 454" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">1962至1986年中国新诗潮从内部译本与地下手抄本到全国高校诗社及现代诗大展的五级传播接力图</title>
+<desc id="desc">按传播次序展示五级接力网络：①内部黄皮书译本与九叶派暗流提供现代语言养分；②知青手抄本跨省秘密流转；③民刊《今天》与官刊《诗刊》及地方文学刊物双向共振破壁；④1977恢复高考后的大学校园诗社与1980《诗刊》青春诗会孵化人才；⑤1986年两报现代诗群体大展汇集84个民间社团。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="453" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<defs><marker id="arr-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 9 5 L 0 9 z" fill="#1d6fa5"/></marker><marker id="arr-p" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 9 5 L 0 9 z" fill="#6d28d9"/></marker><marker id="arr-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 9 5 L 0 9 z" fill="#18794e"/></marker><marker id="arr-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 9 5 L 0 9 z" fill="#b45309"/></marker></defs>
+<style>
+  @keyframes stationGlow {
+    0%   { stroke-width: 1.3; filter: none; }
+    35%  { stroke-width: 3.0; filter: drop-shadow(0 2px 6px rgba(37,99,235,0.28)); }
+    100% { stroke-width: 1.6; filter: none; }
+  }
+  @keyframes sparkTravel {
+    0%   { stroke-dashoffset: 620; opacity: 0.25; }
+    15%  { opacity: 1; }
+    100% { stroke-dashoffset: 0; opacity: 0.9; }
+  }
+  .relay-track {
+    stroke-dasharray: 620;
+    stroke-dashoffset: 0;
+    animation: sparkTravel 4.8s ease-out 0.2s 1 both;
+  }
+  .st-1 { animation: stationGlow 1.1s ease-out 0.1s 1 both; }
+  .st-2 { animation: stationGlow 1.1s ease-out 1.1s 1 both; }
+  .st-3 { animation: stationGlow 1.1s ease-out 2.1s 1 both; }
+  .st-4 { animation: stationGlow 1.1s ease-out 3.1s 1 both; }
+  .st-5 { animation: stationGlow 1.2s ease-out 4.1s 1 both; }
+  @media (prefers-reduced-motion: reduce) {
+    .relay-track, .st-1, .st-2, .st-3, .st-4, .st-5 {
+      animation: none !important;
+      stroke-dashoffset: 0 !important;
+      opacity: 1 !important;
+      filter: none !important;
+    }
+  }
+</style>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">一粒火种怎样燎原全国？新诗潮“五级传播接力网”（1962–1986）</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">从内部译本与煤油灯手抄本起步，经民刊与官刊罕见共振，最终在大学校园与全国诗报完成裂变。</text>
+<path class="relay-track" d="M 134 160 L 626 160 L 626 258 L 195 258 L 195 344 L 565 344" fill="none" stroke="#f59e0b" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect class="st-1" x="20" y="74" width="228" height="172" rx="9" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+<circle cx="40" cy="96" r="11" fill="#fef3c7" stroke="#b45309" stroke-width="1.2"/>
+<text x="40" y="100" font-size="11.5" fill="#b45309" text-anchor="middle" font-weight="700">1</text>
+<text x="58" y="100" font-size="11.2" fill="#b45309" text-anchor="start" font-weight="700">源头译介与先驱暗流</text>
+<rect x="30" y="112" width="208" height="20" rx="4" fill="#fef3c7" stroke="none" stroke-width="1"/>
+<text x="36" y="126" font-size="9.4" fill="#b45309" text-anchor="start" font-weight="700">1962–78 内部“黄皮书” + 九叶派</text>
+<text x="32" y="150" font-size="9.5" fill="#0f172a" text-anchor="start">• 人文社内部印行《麦田里的守望者》</text>
+<text x="32" y="168" font-size="9.5" fill="#0f172a" text-anchor="start">  《等待戈多》及苏东现代派译作</text>
+<text x="32" y="190" font-size="9.5" fill="#0f172a" text-anchor="start">• 穆旦等40年代现代诗传统暗中存续，</text>
+<text x="32" y="208" font-size="9.5" fill="#0f172a" text-anchor="start">  1981《九叶集》出版完成隔代重逢</text>
+<rect class="st-2" x="266" y="74" width="228" height="172" rx="9" fill="#ffffff" stroke="#475569" stroke-width="1.5"/>
+<circle cx="286" cy="96" r="11" fill="#f1f5f9" stroke="#475569" stroke-width="1.2"/>
+<text x="286" y="100" font-size="11.5" fill="#475569" text-anchor="middle" font-weight="700">2</text>
+<text x="304" y="100" font-size="11.2" fill="#475569" text-anchor="start" font-weight="700">知青点手抄本秘密流转</text>
+<rect x="276" y="112" width="208" height="20" rx="4" fill="#f1f5f9" stroke="none" stroke-width="1"/>
+<text x="282" y="126" font-size="9.4" fill="#475569" text-anchor="start" font-weight="700">1968–1977 跨省人际传抄网</text>
+<text x="278" y="150" font-size="9.5" fill="#0f172a" text-anchor="start">• 知青探亲、串联在火车站手抄接力</text>
+<text x="278" y="168" font-size="9.5" fill="#0f172a" text-anchor="start">• 食指诗作、白洋淀诗群（芒克、多多、</text>
+<text x="278" y="190" font-size="9.5" fill="#0f172a" text-anchor="start">  根子）打破“假大空”口号垄断</text>
+<text x="278" y="208" font-size="9.5" fill="#0f172a" text-anchor="start">• 证明现代汉语完全能安放真实灵魂</text>
+<rect class="st-3" x="512" y="74" width="228" height="172" rx="9" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.5"/>
+<circle cx="532" cy="96" r="11" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="532" y="100" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">3</text>
+<text x="550" y="100" font-size="11.2" fill="#1d6fa5" text-anchor="start" font-weight="700">油印民刊 × 国家级官刊破壁</text>
+<rect x="522" y="112" width="208" height="20" rx="4" fill="#eaf4fb" stroke="none" stroke-width="1"/>
+<text x="528" y="126" font-size="9.4" fill="#1d6fa5" text-anchor="start" font-weight="700">1978–1981 罕见的官民双向共振</text>
+<text x="524" y="150" font-size="9.5" fill="#0f172a" text-anchor="start">• 北岛带油印《今天》去《诗刊》编辑部，</text>
+<text x="524" y="168" font-size="9.5" fill="#0f172a" text-anchor="start">  编辑一页页贴墙阅读并选发《致橡树》</text>
+<text x="524" y="190" font-size="9.5" fill="#0f172a" text-anchor="start">• 《福建文艺》《安徽文学》等地方刊物</text>
+<text x="524" y="208" font-size="9.5" fill="#0f172a" text-anchor="start">  连开专栏，把新诗推向50万级大众视野</text>
+<line x1="248.0" y1="160.0" x2="264.0" y2="160.0" stroke="#1d6fa5" stroke-width="1.8" marker-end="url(#arr-b)"/>
+<line x1="494.0" y1="160.0" x2="510.0" y2="160.0" stroke="#1d6fa5" stroke-width="1.8" marker-end="url(#arr-b)"/>
+<line x1="195.0" y1="258.0" x2="195.0" y2="270.0" stroke="#6d28d9" stroke-width="1.8" marker-end="url(#arr-p)"/>
+<line x1="370.0" y1="348.0" x2="388.0" y2="348.0" stroke="#18794e" stroke-width="1.8" marker-end="url(#arr-g)"/>
+<rect class="st-4" x="20" y="272" width="350" height="148" rx="9" fill="#ffffff" stroke="#6d28d9" stroke-width="1.5"/>
+<circle cx="40" cy="294" r="11" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="40" y="298" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">4</text>
+<text x="58" y="298" font-size="11.4" fill="#6d28d9" text-anchor="start" font-weight="700">高考恢复与“高校诗社 + 青春诗会”孵化器</text>
+<rect x="32" y="310" width="326" height="20" rx="4" fill="#f3e8ff" stroke="none" stroke-width="1"/>
+<text x="38" y="324" font-size="9.4" fill="#6d28d9" text-anchor="start" font-weight="700">1977恢复高考 · 1980《诗刊》首届青春诗会</text>
+<text x="34" y="348" font-size="9.6" fill="#0f172a" text-anchor="start">• 77/78级学子涌入高校，北大五四文学社、复旦诗社、吉大赤子心等</text>
+<text x="34" y="366" font-size="9.6" fill="#0f172a" text-anchor="start">  数百个校园诗社自办油印诗刊、举办万人级露天与礼堂朗诵会；</text>
+<text x="34" y="386" font-size="9.6" fill="#0f172a" text-anchor="start">• 1980年7月《诗刊》创办“青春诗会”（舒婷、顾城、江河、梁小斌、</text>
+<text x="34" y="404" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="600">  徐敬亚等17人首届入选），形成发现青年诗人的“黄埔军校”。</text>
+<rect class="st-5" x="390" y="272" width="350" height="148" rx="9" fill="#ffffff" stroke="#18794e" stroke-width="1.5"/>
+<circle cx="410" cy="294" r="11" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="410" y="298" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">5</text>
+<text x="428" y="298" font-size="11.4" fill="#18794e" text-anchor="start" font-weight="700">民间社团井喷与两报“现代诗群体大展”</text>
+<rect x="402" y="310" width="326" height="20" rx="4" fill="#e7f6ee" stroke="none" stroke-width="1"/>
+<text x="408" y="324" font-size="9.4" fill="#18794e" text-anchor="start" font-weight="700">1985–1986 全国先锋诗歌网络大合流</text>
+<text x="404" y="348" font-size="9.6" fill="#0f172a" text-anchor="start">• 老诗人牛汉主持《中国》、严阵创办《诗歌报》、骆一禾编《十月》</text>
+<text x="404" y="366" font-size="9.6" fill="#0f172a" text-anchor="start">  诗歌栏，与民间《他们》《非非》《海上》形成跨省联动；</text>
+<text x="404" y="386" font-size="9.6" fill="#0f172a" text-anchor="start">• 1986年10月《诗歌报》与《深圳青年报》联办现代诗群体大展，</text>
+<text x="404" y="404" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="600">  一次性集中展示 84 个民间现代诗社团，将诗歌潮推向多元巅峰！</text>
+<text x="380" y="440" font-size="9.4" fill="#64748b" text-anchor="middle">注：金色轨迹单次演示火种自①至⑤的传递次序并定格于终态；开启系统“减少动态效果”时自动转为纯静态展示。</text>
+</svg>

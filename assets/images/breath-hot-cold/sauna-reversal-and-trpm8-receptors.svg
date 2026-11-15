@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="495" viewBox="0 0 760 495" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">48摄氏度桑拿房吹气变烫极限反例与2021诺贝尔奖TRP温度离子通道原理图</title>
+<desc id="desc">左卡展示在48摄氏度干蒸桑拿房中吹气会卷入11倍48摄氏度热空气，混合风达47摄氏度使干包裹越吹越烫；右卡展示2021年诺贝尔生理学或医学奖揭示的TRPM8冷觉薄荷醇通道与TRPV3/TRPV1热觉辣椒素通道。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#475569"/>
+    </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="494" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">终极反转与大脑彩蛋：桑拿房里吹气反而烫手？薄荷糖为何骗过冷觉神经？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">卷吸进什么温度的空气就吹出什么风；而皮肤报给大脑的不是“温度读数”，而是“失温速率”！</text>
+<rect x="20" y="62" width="356" height="418" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="84" r="10.5" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2"/>
+<text x="38" y="88" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="88" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">极限反例：在 48°C 干蒸桑拿房里撅嘴吹温度计！</text>
+<rect x="38" y="108" width="320" height="178" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1"/>
+<text x="198" y="130" font-size="10.2" fill="#dc2626" text-anchor="middle" font-weight="700">当环境室温（48°C）＞ 肺温（35.5°C）＞ 皮温（34°C）</text>
+<polygon points="62,188 286,154 286,226 62,194" fill="#fecaca" fill-opacity="0.75" stroke="#ef4444" stroke-width="1.4"/>
+<line x1="128.0" y1="138.0" x2="144.0" y2="166.0" stroke="#dc2626" stroke-width="1.7" stroke-linecap="round" marker-end="url(#arr-red)"/>
+<line x1="208.0" y1="136.0" x2="224.0" y2="162.0" stroke="#dc2626" stroke-width="1.7" stroke-linecap="round" marker-end="url(#arr-red)"/>
+<line x1="128.0" y1="244.0" x2="144.0" y2="216.0" stroke="#dc2626" stroke-width="1.7" stroke-linecap="round" marker-end="url(#arr-red)"/>
+<line x1="208.0" y1="246.0" x2="224.0" y2="220.0" stroke="#dc2626" stroke-width="1.7" stroke-linecap="round" marker-end="url(#arr-red)"/>
+<text x="176" y="194" font-size="10.1" fill="#7f1d1d" text-anchor="middle" font-weight="700">卷入 11 倍热浪 → 混合风高达 47°C！</text>
+<rect x="290" y="150" width="48" height="82" rx="6" fill="#f97316" stroke="#c2410c" stroke-width="1.5"/>
+<text x="314" y="188" font-size="10.0" fill="#fff" text-anchor="middle" font-weight="700">干包裹</text>
+<text x="314" y="206" font-size="9.9" fill="#fef08a" text-anchor="middle" font-weight="700">越吹越烫!</text>
+<text x="198" y="272" font-size="10.0" fill="#dc2626" text-anchor="middle" font-weight="700">这正是【空气炸锅】与【沙漠热风】的强制对流加热原理！</text>
+<rect x="38" y="298" width="320" height="168" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="50" y="320" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">为什么桑拿房里吹“湿手”和“干手套”截然不同？</text>
+<text x="50" y="341" font-size="10.0" fill="#1e293b" text-anchor="start">• 对着戴薄橡胶手套的手（或干温度计）吹气：隔绝了汗水</text>
+<text x="50" y="360" font-size="10.0" fill="#1e293b" text-anchor="start">  蒸发后，47°C 热风撕开隔热层，你会觉得像电吹风一样烫！</text>
+<text x="50" y="379" font-size="10.0" fill="#1e293b" text-anchor="start">• 对着满是汗珠的裸手吹气：只要桑拿房很干燥（湿球温度</text>
+<text x="50" y="398" font-size="10.0" fill="#1e293b" text-anchor="start">  低于皮温），汗珠猛烈蒸发仍能抢回一丝短暂凉意；但若</text>
+<text x="50" y="417" font-size="10.0" fill="#dc2626" text-anchor="start" font-weight="600">  是 100% 湿度的蒸汽浴室，蒸发归零，怎么吹都是滚烫的！</text>
+<text x="50" y="444" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">⇒ 铁证闭环：卷吸改气温 ＋ 风速破保温 ＋ 湿度定相变。</text>
+<rect x="390" y="62" width="350" height="418" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="408" cy="84" r="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="408" y="88" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">2</text>
+<text x="426" y="88" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">2021 诺奖彩蛋：皮肤里的冷热分子开关</text>
+<rect x="408" y="108" width="314" height="178" rx="8" fill="#f3e8ff" stroke="#d8b4fe" stroke-width="1"/>
+<text x="565" y="129" font-size="10.2" fill="#6d28d9" text-anchor="middle" font-weight="700">David Julius 等发现的皮肤 TRP 温度离子通道家族</text>
+<line x1="434.0" y1="236.0" x2="698.0" y2="236.0" stroke="#475569" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="456.0" y1="236.0" x2="456.0" y2="241.0" stroke="#475569" stroke-width="1.2" stroke-linecap="round"/>
+<text x="456.0" y="254.0" font-size="9.8" fill="#64748b" text-anchor="middle" class="mono">15°C</text>
+<line x1="529.3" y1="236.0" x2="529.3" y2="241.0" stroke="#475569" stroke-width="1.2" stroke-linecap="round"/>
+<text x="529.3" y="254.0" font-size="9.8" fill="#64748b" text-anchor="middle" class="mono">25°C</text>
+<line x1="584.3" y1="236.0" x2="584.3" y2="241.0" stroke="#475569" stroke-width="1.2" stroke-linecap="round"/>
+<text x="584.3" y="254.0" font-size="9.8" fill="#64748b" text-anchor="middle" class="mono">32.5°C</text>
+<line x1="661.3" y1="236.0" x2="661.3" y2="241.0" stroke="#475569" stroke-width="1.2" stroke-linecap="round"/>
+<text x="661.3" y="254.0" font-size="9.8" fill="#64748b" text-anchor="middle" class="mono">43°C</text>
+<path d="M 436 164 Q 496 164 552 234" fill="none" stroke="#2563eb" stroke-width="2.8"/>
+<text x="484" y="156" font-size="10.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">TRPM8 冷觉＋薄荷醇通道</text>
+<text x="484" y="198" font-size="9.9" fill="#1d6fa5" text-anchor="middle">＜28°C 开启</text>
+<path d="M 556 234 Q 604 176 644 234" fill="none" stroke="#ea580c" stroke-width="2.4"/>
+<text x="604" y="174" font-size="9.9" fill="#c25014" text-anchor="middle" font-weight="700">TRPV3/4 温热</text>
+<path d="M 648 234 Q 674 166 698 158" fill="none" stroke="#dc2626" stroke-width="2.6"/>
+<text x="668" y="152" font-size="9.9" fill="#dc2626" text-anchor="middle" font-weight="700">TRPV1 灼痛/辣椒素</text>
+<text x="565" y="272" font-size="10.0" fill="#0f172a" text-anchor="middle" font-weight="700">皮肤神经对【温度变化率 dT/dt】比绝对温度敏感十倍！</text>
+<rect x="408" y="298" width="314" height="168" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="420" y="320" font-size="10.5" fill="#6d28d9" text-anchor="start" font-weight="700">含一颗薄荷糖再吸气／吹气，为什么像进了北极？</text>
+<text x="420" y="341" font-size="10.0" fill="#1e293b" text-anchor="start">• 平时室温铁块和木块同为 20°C，摸铁块却冰手得多——因</text>
+<text x="420" y="360" font-size="10.0" fill="#1e293b" text-anchor="start">  为铁导热快，让表皮每秒跌温更快，猛烈触发 TRPM8；</text>
+<text x="420" y="379" font-size="10.0" fill="#1e293b" text-anchor="start">• 薄荷醇（Menthol）是一把化学万能钥匙，能把 TRPM8 的</text>
+<text x="420" y="398" font-size="10.0" fill="#1e293b" text-anchor="start">  激活门槛从 28°C 抬高到 34°C 以上！吃颗薄荷糖在手背涂</text>
+<text x="420" y="417" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="600">  一点薄荷清凉油，哪怕轻轻哈一口暖气都会觉得透心凉！</text>
+<text x="420" y="444" font-size="9.9" fill="#dc2626" text-anchor="start" font-weight="600">（辣椒素同理强开 TRPV1，所以吃火锅像嘴里着了火！）</text>
+</svg>

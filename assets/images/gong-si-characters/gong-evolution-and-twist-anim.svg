@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="522" viewBox="0 0 760 522" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">“公”字三千年字形演变与双层释读图解</title>
+<desc id="desc">展示商代甲骨文、西周金文、战国秦篆到现代楷书中“公”字的演变，对比甲骨金文平分器物本义与韩非子“背私为公”哲理重解。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes stageReveal {
+    0% { opacity: 0.18; transform: translateY(5px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes ringHighlight {
+    0%, 35% { stroke-opacity: 0; }
+    55% { stroke-opacity: 0.95; }
+    100% { stroke-opacity: 0.85; }
+  }
+  .g-st1 { opacity: 0.18; animation: stageReveal 0.85s ease-out 0.15s forwards; }
+  .g-st2 { opacity: 0.18; animation: stageReveal 0.85s ease-out 1.45s forwards; }
+  .g-st3 { opacity: 0.18; animation: stageReveal 0.85s ease-out 2.85s forwards; }
+  .g-st4 { opacity: 0.18; animation: stageReveal 0.85s ease-out 4.25s forwards; }
+  .g-st5 { opacity: 0.18; animation: stageReveal 0.95s ease-out 5.55s forwards; }
+  .morph-ring { stroke-opacity: 0; animation: ringHighlight 6.4s ease-out 0s forwards; }
+  @media (prefers-reduced-motion: reduce) {
+    .g-st1, .g-st2, .g-st3, .g-st4, .g-st5 {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+    .morph-ring {
+      animation: none !important;
+      stroke-opacity: 0.85 !important;
+    }
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="521" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">“公”字三千年变形记：从当众平分器物，到“背私为公”的哲理反转</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">先看商周下方闭合的“口/瓮” → 再看战国秦篆开口讹变成“厶” → 分清考古初形与诸子哲理重解</text>
+<g class="g-st1">
+<rect x="24" y="66" width="162" height="228" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.1"/>
+<circle cx="44" cy="86" r="10" fill="#fdf8ee" stroke="#853212" stroke-width="1.2"/>
+<text x="44" y="90" font-size="11.5" fill="#853212" text-anchor="middle" font-weight="700">1</text>
+<text x="60" y="90" font-size="13" fill="#0f172a" text-anchor="start" font-weight="700">商代甲骨文</text>
+<text x="40" y="110" font-size="11" fill="#64748b" text-anchor="start">约前13—前11世纪</text>
+<rect x="49" y="120" width="112" height="98" rx="10" fill="#fdf8ee" stroke="#dfc7a7" stroke-width="1.3"/>
+<line x1="105.0" y1="126" x2="105.0" y2="212" stroke="#dfc7a7" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.55"/>
+<line x1="55" y1="169.0" x2="155" y2="169.0" stroke="#dfc7a7" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.55"/>
+</g>
+<g class="g-st2">
+<rect x="206" y="66" width="162" height="228" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.1"/>
+<circle cx="226" cy="86" r="10" fill="#edf7f4" stroke="#0f5246" stroke-width="1.2"/>
+<text x="226" y="90" font-size="11.5" fill="#0f5246" text-anchor="middle" font-weight="700">2</text>
+<text x="242" y="90" font-size="13" fill="#0f172a" text-anchor="start" font-weight="700">西周金文</text>
+<text x="222" y="110" font-size="11" fill="#64748b" text-anchor="start">毛公鼎·约前9世纪</text>
+<rect x="231" y="120" width="112" height="98" rx="10" fill="#edf7f4" stroke="#9bc9be" stroke-width="1.3"/>
+<line x1="287.0" y1="126" x2="287.0" y2="212" stroke="#9bc9be" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.55"/>
+<line x1="237" y1="169.0" x2="337" y2="169.0" stroke="#9bc9be" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.55"/>
+</g>
+<g class="g-st3">
+<rect x="388" y="66" width="162" height="228" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.1"/>
+<circle cx="408" cy="86" r="10" fill="#fef2f2" stroke="#991b1b" stroke-width="1.2"/>
+<text x="408" y="90" font-size="11.5" fill="#991b1b" text-anchor="middle" font-weight="700">3</text>
+<text x="424" y="90" font-size="13" fill="#0f172a" text-anchor="start" font-weight="700">战国简·秦小篆</text>
+<text x="404" y="110" font-size="11" fill="#64748b" text-anchor="start">约前4—前3世纪</text>
+<rect x="413" y="120" width="112" height="98" rx="10" fill="#fef2f2" stroke="#f2b6b6" stroke-width="1.3"/>
+<line x1="469.0" y1="126" x2="469.0" y2="212" stroke="#f2b6b6" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.55"/>
+<line x1="419" y1="169.0" x2="519" y2="169.0" stroke="#f2b6b6" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.55"/>
+</g>
+<g class="g-st4">
+<rect x="570" y="66" width="162" height="228" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.1"/>
+<circle cx="590" cy="86" r="10" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.2"/>
+<text x="590" y="90" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">4</text>
+<text x="606" y="90" font-size="13" fill="#0f172a" text-anchor="start" font-weight="700">汉隶至现代楷书</text>
+<text x="586" y="110" font-size="11" fill="#64748b" text-anchor="start">汉代定型沿用至今</text>
+<rect x="595" y="120" width="112" height="98" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1.3"/>
+<line x1="651.0" y1="126" x2="651.0" y2="212" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.55"/>
+<line x1="601" y1="169.0" x2="701" y2="169.0" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.55"/>
+</g>
+<g class="g-st1">
+  <path d="M 94,134 Q 84,151 67,163 M 116,134 Q 126,151 143,163"
+        fill="none" stroke="#853212" stroke-width="3.8" stroke-linecap="round"/>
+  <path d="M 83,172 L 127,172 L 124,203 L 86,203 Z"
+        fill="none" stroke="#1d6fa5" stroke-width="3.6" stroke-linejoin="round"/>
+  <text x="105" y="237" font-size="11.5" fill="#1e293b" text-anchor="middle" font-weight="600">上“八”：向两侧分开</text>
+  <text x="105" y="256" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">下“口/瓮”：宗邑或圆器</text>
+  <text x="105" y="276" font-size="11" fill="#64748b" text-anchor="middle">初义：当众平分共有物</text>
+</g>
+<g class="g-st2">
+  <path d="M 275,133 C 268,149 257,160 245,166 M 299,133 C 306,149 317,160 329,166"
+        fill="none" stroke="#0f5246" stroke-width="5.6" stroke-linecap="round"/>
+  <path d="M 266,173 L 308,173 L 306,193 C 305,204 297,207 287,207 C 277,207 269,204 268,193 Z"
+        fill="none" stroke="#0f5246" stroke-width="5.0" stroke-linejoin="round"/>
+  <text x="287" y="237" font-size="11.5" fill="#1e293b" text-anchor="middle" font-weight="600">厚重青铜铭文铸造</text>
+  <text x="287" y="256" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="600">下方依然是闭合圆口</text>
+  <text x="287" y="276" font-size="11" fill="#64748b" text-anchor="middle">引申：公室·王公尊称</text>
+</g>
+<g class="g-st3">
+  <path d="M 456,132 C 452,150 442,162 428,168 M 482,132 C 486,150 496,162 510,168"
+        fill="none" stroke="#991b1b" stroke-width="3.8" stroke-linecap="round"/>
+  <path d="M 468,171 C 446,175 444,203 468,205 C 488,206 495,192 483,181"
+        fill="none" stroke="#c25014" stroke-width="4.0" stroke-linecap="round"/>
+  <circle class="morph-ring" cx="469" cy="189" r="24" fill="none"
+          stroke="#c25014" stroke-width="1.6" stroke-dasharray="4 3"/>
+  <text x="469" y="237" font-size="11.5" fill="#1e293b" text-anchor="middle" font-weight="600">圆口快写开口盘曲</text>
+  <text x="469" y="256" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">与“厶（私）”撞脸！</text>
+  <text x="469" y="276" font-size="11" fill="#64748b" text-anchor="middle">触发韩非子哲理新解</text>
+</g>
+<g class="g-st4">
+  <path d="M 639,136 C 632,151 621,163 609,171 M 661,134 C 670,150 681,162 694,170"
+        fill="none" stroke="#0f172a" stroke-width="4.4" stroke-linecap="round"/>
+  <path d="M 649,167 L 630,198 L 668,195"
+        fill="none" stroke="#0f172a" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 661,184 L 675,204"
+        fill="none" stroke="#0f172a" stroke-width="4.4" stroke-linecap="round"/>
+  <text x="651" y="237" font-size="11.5" fill="#1e293b" text-anchor="middle" font-weight="600">隶变拉直为撇折加点</text>
+  <text x="651" y="256" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">“八 + 厶”字形定格</text>
+  <text x="651" y="276" font-size="11" fill="#64748b" text-anchor="middle">公平·公共·天下为公</text>
+</g>
+<line x1="188" y1="169" x2="204" y2="169" stroke="#1d6fa5" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+<line x1="370" y1="169" x2="386" y2="169" stroke="#1d6fa5" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+<line x1="552" y1="169" x2="568" y2="169" stroke="#1d6fa5" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+<g class="g-st5">
+  <rect x="24" y="310" width="356" height="196" rx="10" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+  <rect x="38.0" y="322.0" width="214" height="22" rx="11.0" fill="#ffffff" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="145.0" y="337.0" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">第一层：商周甲骨金文考古实证</text>
+  <text x="38" y="364" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="600">“八”是分开的象形（加刀是“分”，分牛是“半”）：</text>
+  <text x="38" y="388" font-size="11.5" fill="#1e293b" text-anchor="start">• 高鸿缙“平分说”：上“八（分）”+ 下“口（器物）”，</text>
+  <text x="50" y="408" font-size="11.5" fill="#1e293b" text-anchor="start">画的是氏族成员把猎物或粮食当众平均分配。</text>
+  <text x="38" y="432" font-size="11.5" fill="#1e293b" text-anchor="start">• 朱芳圃“大口瓮说”：象宽口圆腹陶瓮（瓮的初文），</text>
+  <text x="50" y="452" font-size="11.5" fill="#1e293b" text-anchor="start">因聚落共饮共食假借为公共、公平与宗族长老。</text>
+  <text x="38" y="480" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">结论：造字之初，下面那个圈真不是“自私”的私！</text>
+
+  <rect x="396" y="310" width="340" height="196" rx="10" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+  <rect x="410.0" y="322.0" width="224" height="22" rx="11.0" fill="#ffffff" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="522.0" y="337.0" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="600">第二层：战国秦汉思想家哲理重解</text>
+  <text x="410" y="364" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="600">战国时下方圆口演变成“厶”，恰被哲人借题发挥：</text>
+  <text x="410" y="388" font-size="11.5" fill="#1e293b" text-anchor="start">• 《韩非子·五蠹》：“自环者谓之私，背私谓之公。”</text>
+  <text x="410" y="412" font-size="11.5" fill="#1e293b" text-anchor="start">• 东汉许慎《说文》：“公，平分也。从八从厶，</text>
+  <text x="422" y="432" font-size="11.5" fill="#1e293b" text-anchor="start">八犹背也。”（用小篆字形将两说巧妙缝合）</text>
+  <text x="410" y="458" font-size="11.5" fill="#1e293b" text-anchor="start">价值：虽非甲骨初义，却成就了汉字史上最精彩</text>
+  <text x="410" y="480" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">的一次“美丽误会”，让公私对立深入文化血脉。</text>
+</g>
+</svg>

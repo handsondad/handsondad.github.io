@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="456" viewBox="0 0 760 456" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">苯甲酸胆固醇酯双熔点与扭曲向列型（TN）液晶电控光阀原理图</title>
+<desc id="desc">上半图展示1888年莱尼泽尔发现苯甲酸胆固醇酯在145.5°C初熔为浑浊液晶态、178.5°C突变为各向同性清亮液体；下半图对比TN常白模式在断电时螺旋拧光90°透光与加电后顺电场立正遮光的电光开关机制。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-ink" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#0f172a"/>
+  </marker>
+  <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#6d28d9"/>
+  </marker>
+  <marker id="arr-red" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#dc2626"/>
+  </marker>
+  <marker id="arr-teal" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#0f766e"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes lcStandUp {
+      0%, 18% { transform: scaleX(0.42) rotate(-32deg); opacity: 0.72; }
+      58%, 100% { transform: scaleX(1) rotate(0deg); opacity: 1; }
+    }
+    @keyframes shutterBlockFade {
+      0%, 18% { opacity: 0.85; }
+      58%, 100% { opacity: 0.14; }
+    }
+    .anim-lc-shutter {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: lcStandUp 4.2s cubic-bezier(0.22, 1, 0.36, 1) 1 forwards;
+    }
+    .anim-blocked-beam {
+      animation: shutterBlockFade 4.2s ease-out 1 forwards;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .anim-lc-shutter, .anim-blocked-beam {
+        animation: none !important;
+      }
+    }
+</style>
+<rect x="0.5" y="0.5" width="759" height="455" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="380" y="28" font-size="17" fill="#0f172a" text-anchor="middle" font-weight="700">从胡萝卜“双熔点怪液”到拧光 90° 的液晶百叶窗</text>
+<text x="380" y="48" font-size="12" fill="#64748b" text-anchor="middle">1888 年莱尼泽尔发现第四态物质；1971 年沙德特与赫尔弗里希把它夹进正交偏振片做成电控光阀</text>
+<rect x="24" y="60" width="712" height="108" rx="12" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="38.0" y="68.0" width="298" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="187.0" y="83.0" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">第一步：为什么叫“液态晶体”？苯甲酸胆固醇酯的两次熔化（1888）</text>
+<rect x="38" y="96" width="194" height="62" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="135" y="115" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700">① 固态晶体 (&lt; 145.5 °C)</text>
+<text x="135" y="134" font-size="11" fill="#1e293b" text-anchor="middle">位置锁死 + 方向整齐</text>
+<text x="135" y="150" font-size="10.5" fill="#64748b" text-anchor="middle">刚性晶格，不能流动</text>
+<line x1="236" y1="127" x2="272" y2="127" stroke="#c25014" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<text x="254" y="116" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700">145.5°C</text>
+<text x="254" y="143" font-size="10" fill="#c25014" text-anchor="middle">初熔浑浊</text>
+<rect x="278" y="96" width="208" height="62" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.5"/>
+<text x="382" y="115" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="700">② 液晶态 (145.5~178.5 °C)</text>
+<text x="382" y="134" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="600">位置自由流动 + 长轴方向对齐</text>
+<text x="382" y="150" font-size="10.5" fill="#1d6fa5" text-anchor="middle">兼具液体流动性与晶体双折射 Δn</text>
+<line x1="490" y1="127" x2="526" y2="127" stroke="#6d28d9" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arr-purple)"/>
+<text x="508" y="116" font-size="10.5" fill="#6d28d9" text-anchor="middle" font-weight="700">178.5°C</text>
+<text x="508" y="143" font-size="10" fill="#6d28d9" text-anchor="middle">清亮化点</text>
+<rect x="532" y="96" width="190" height="62" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="627" y="115" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700">③ 清亮液体 (&gt; 178.5 °C)</text>
+<text x="627" y="134" font-size="11" fill="#1e293b" text-anchor="middle">位置无序 + 方向随机乱撞</text>
+<text x="627" y="150" font-size="10.5" fill="#64748b" text-anchor="middle">光学各向同性，失去旋光本领</text>
+<rect x="24" y="182" width="346" height="260" rx="12" fill="#ffffff" stroke="#18794e" stroke-width="1.5"/>
+<rect x="38.0" y="192.0" width="256" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="166.0" y="207.0" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="600">断电亮态 (V = 0)：螺旋阶梯把光拧转 90° 放行</text>
+<line x1="44" y1="282" x2="326" y2="282" stroke="#cbd5e1" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="4,3"/>
+<rect x="40" y="250" width="44" height="64" rx="7" fill="#fffbeb" stroke="#b45309" stroke-width="1.3"/>
+<text x="62" y="278" font-size="11.5" fill="#b45309" text-anchor="middle" font-weight="700">背光</text>
+<text x="62" y="295" font-size="10" fill="#b45309" text-anchor="middle">自然光</text>
+<rect x="96" y="240" width="34" height="84" rx="5" fill="#f1f5f9" stroke="#475569" stroke-width="1.4"/>
+<line x1="113" y1="248" x2="113" y2="255" stroke="#475569" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="113" y1="260" x2="113" y2="267" stroke="#475569" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="113" y1="272" x2="113" y2="279" stroke="#475569" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="113" y1="284" x2="113" y2="291" stroke="#475569" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="113" y1="296" x2="113" y2="303" stroke="#475569" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="113" y1="308" x2="113" y2="315" stroke="#475569" stroke-width="1.8" stroke-linecap="round"/>
+<text x="113" y="232" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="700">起偏器 P1</text>
+<text x="113" y="339" font-size="10.5" fill="#475569" text-anchor="middle">竖直 0°</text>
+<rect x="144" y="240" width="114" height="84" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="1.3"/>
+<text x="201" y="232" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="700">液晶盒 d≈4.8 μm</text>
+<g transform="translate(158.0,282.0) rotate(90.0)"><rect x="-22.0" y="-3.5" width="44.0" height="7.0" rx="3.5" fill="#34d399" stroke="#18794e" stroke-width="1.3"/></g>
+<g transform="translate(179.0,282.0) rotate(72.0)"><rect x="-19.0" y="-3.5" width="38.0" height="7.0" rx="3.5" fill="#34d399" stroke="#18794e" stroke-width="1.3"/></g>
+<g transform="translate(201.0,282.0) rotate(50.0)"><rect x="-15.0" y="-3.5" width="30.0" height="7.0" rx="3.5" fill="#34d399" stroke="#18794e" stroke-width="1.3"/></g>
+<g transform="translate(223.0,282.0) rotate(26.0)"><rect x="-10.5" y="-3.5" width="21.0" height="7.0" rx="3.5" fill="#34d399" stroke="#18794e" stroke-width="1.3"/></g>
+<g transform="translate(244.0,282.0) rotate(0.0)"><rect x="-6.0" y="-3.5" width="12.0" height="7.0" rx="3.5" fill="#34d399" stroke="#18794e" stroke-width="1.3"/></g>
+<text x="201" y="339" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="700">螺旋扭转偏振面 90°</text>
+<rect x="272" y="240" width="34" height="84" rx="5" fill="#f1f5f9" stroke="#475569" stroke-width="1.4"/>
+<line x1="279" y1="250" x2="299" y2="250" stroke="#475569" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="279" y1="261" x2="299" y2="261" stroke="#475569" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="279" y1="272" x2="299" y2="272" stroke="#475569" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="279" y1="283" x2="299" y2="283" stroke="#475569" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="279" y1="294" x2="299" y2="294" stroke="#475569" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="279" y1="305" x2="299" y2="305" stroke="#475569" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="279" y1="316" x2="299" y2="316" stroke="#475569" stroke-width="1.8" stroke-linecap="round"/>
+<text x="289" y="232" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="700">检偏器 P2</text>
+<text x="289" y="339" font-size="10.5" fill="#475569" text-anchor="middle">水平 90°</text>
+<line x1="308" y1="282" x2="354" y2="282" stroke="#18794e" stroke-width="3.2" stroke-linecap="round" marker-end="url(#arr-green)"/>
+<text x="335" y="266" font-size="12" fill="#18794e" text-anchor="middle" font-weight="700">亮态!</text>
+<text x="335" y="304" font-size="10.5" fill="#18794e" text-anchor="middle">顺畅通过</text>
+<rect x="38" y="354" width="318" height="74" rx="8" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
+<text x="50" y="374" font-size="11" fill="#0f172a" text-anchor="start">• 上下配向膜沟槽互成 90°，迫使棒状分子排成旋转楼梯</text>
+<text x="50" y="394" font-size="11" fill="#1e293b" text-anchor="start">• 满足波导条件 d·Δn = (√3/2)λ ≈ 0.48 μm 时，竖直偏振光</text>
+<text x="50" y="414" font-size="11" fill="#18794e" text-anchor="start" font-weight="700">  顺着分子长轴被拧成水平偏振，完美穿过 P2 呈现亮白</text>
+<rect x="390" y="182" width="346" height="260" rx="12" fill="#ffffff" stroke="#6d28d9" stroke-width="1.5"/>
+<rect x="404.0" y="192.0" width="264" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="536.0" y="207.0" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="600">加电暗态 (V &gt; 1.2 V)：分子顺电场立正，正交关闸</text>
+<line x1="410" y1="282" x2="636" y2="282" stroke="#cbd5e1" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="4,3"/>
+<rect x="406" y="250" width="44" height="64" rx="7" fill="#fffbeb" stroke="#b45309" stroke-width="1.3"/>
+<text x="428" y="278" font-size="11.5" fill="#b45309" text-anchor="middle" font-weight="700">背光</text>
+<text x="428" y="295" font-size="10" fill="#b45309" text-anchor="middle">自然光</text>
+<rect x="462" y="240" width="34" height="84" rx="5" fill="#f1f5f9" stroke="#475569" stroke-width="1.4"/>
+<line x1="479" y1="248" x2="479" y2="255" stroke="#475569" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="479" y1="260" x2="479" y2="267" stroke="#475569" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="479" y1="272" x2="479" y2="279" stroke="#475569" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="479" y1="284" x2="479" y2="291" stroke="#475569" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="479" y1="296" x2="479" y2="303" stroke="#475569" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="479" y1="308" x2="479" y2="315" stroke="#475569" stroke-width="1.8" stroke-linecap="round"/>
+<text x="479" y="232" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="700">起偏器 P1</text>
+<text x="479" y="339" font-size="10.5" fill="#475569" text-anchor="middle">竖直 0°</text>
+<rect x="510" y="240" width="114" height="84" rx="6" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.4"/>
+<text x="567" y="232" font-size="10.5" fill="#6d28d9" text-anchor="middle" font-weight="700">透明 ITO 加电压 V</text>
+<line x1="520" y1="252" x2="612" y2="252" stroke="#6d28d9" stroke-width="1.3" stroke-linecap="round" stroke-dasharray="3,2" marker-end="url(#arr-purple)"/>
+<text x="567" y="265" font-size="9.8" fill="#6d28d9" text-anchor="middle">电场 E 沿传播方向</text>
+<g class="anim-lc-shutter" transform="translate(526.0,293.0) rotate(0.0)"><rect x="-8.0" y="-3.5" width="16.0" height="7.0" rx="3.5" fill="#c4b5fd" stroke="#6d28d9" stroke-width="1.3"/></g>
+<g class="anim-lc-shutter" transform="translate(546.0,293.0) rotate(0.0)"><rect x="-8.0" y="-3.5" width="16.0" height="7.0" rx="3.5" fill="#c4b5fd" stroke="#6d28d9" stroke-width="1.3"/></g>
+<g class="anim-lc-shutter" transform="translate(567.0,293.0) rotate(0.0)"><rect x="-8.0" y="-3.5" width="16.0" height="7.0" rx="3.5" fill="#c4b5fd" stroke="#6d28d9" stroke-width="1.3"/></g>
+<g class="anim-lc-shutter" transform="translate(588.0,293.0) rotate(0.0)"><rect x="-8.0" y="-3.5" width="16.0" height="7.0" rx="3.5" fill="#c4b5fd" stroke="#6d28d9" stroke-width="1.3"/></g>
+<g class="anim-lc-shutter" transform="translate(608.0,293.0) rotate(0.0)"><rect x="-8.0" y="-3.5" width="16.0" height="7.0" rx="3.5" fill="#c4b5fd" stroke="#6d28d9" stroke-width="1.3"/></g>
+<text x="567" y="339" font-size="10.5" fill="#dc2626" text-anchor="middle" font-weight="700">螺旋解开，偏振不转!</text>
+<rect x="638" y="240" width="34" height="84" rx="5" fill="#f1f5f9" stroke="#475569" stroke-width="1.4"/>
+<line x1="645" y1="250" x2="665" y2="250" stroke="#475569" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="645" y1="261" x2="665" y2="261" stroke="#475569" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="645" y1="272" x2="665" y2="272" stroke="#475569" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="645" y1="283" x2="665" y2="283" stroke="#475569" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="645" y1="294" x2="665" y2="294" stroke="#475569" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="645" y1="305" x2="665" y2="305" stroke="#475569" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="645" y1="316" x2="665" y2="316" stroke="#475569" stroke-width="1.8" stroke-linecap="round"/>
+<text x="655" y="232" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="700">检偏器 P2</text>
+<text x="655" y="339" font-size="10.5" fill="#475569" text-anchor="middle">水平 90°</text>
+<line x1="674" y1="282" x2="704" y2="282" stroke="#dc2626" stroke-width="2.6" stroke-linecap="round" class="anim-blocked-beam" stroke-dasharray="3,3"/>
+<rect x="682" y="258" width="44" height="48" rx="7" fill="#0f172a" stroke="#dc2626" stroke-width="1.4"/>
+<text x="704" y="279" font-size="11.5" fill="#f8fafc" text-anchor="middle" font-weight="700">暗态</text>
+<text x="704" y="296" font-size="10.5" fill="#fca5a5" text-anchor="middle" font-weight="700">I = 0</text>
+<rect x="404" y="354" width="318" height="74" rx="8" fill="#f3e8ff" stroke="#ddd6fe" stroke-width="1"/>
+<text x="416" y="374" font-size="10.8" fill="#0f172a" text-anchor="start">• 超过弗雷德里克兹阈值电压 (~1.2–1.5 V)，分子顺电场齐刷刷躺直</text>
+<text x="416" y="394" font-size="10.8" fill="#1e293b" text-anchor="start">• 竖直偏振光不再被拧转，一头撞上水平检偏器 P2（夹角 90°）</text>
+<text x="416" y="414" font-size="10.8" fill="#6d28d9" text-anchor="start" font-weight="700">• 马吕斯定律 cos²90° = 0 全拦；微调中间电压即可捏出 256 级灰阶</text>
+</svg>

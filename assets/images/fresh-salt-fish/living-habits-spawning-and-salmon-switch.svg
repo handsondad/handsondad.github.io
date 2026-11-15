@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="510" viewBox="0 0 760 510" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">淡水鱼与咸水鱼生活繁殖习性及三文鱼鳗鲡跨界换芯机制图</title>
+<desc id="desc">上半部对比淡水鱼耐寒耐缺氧、黏沉性卵护幼与咸水鱼大洋洄游、百万粒浮性卵策略；下半部展示三文鱼与鳗鲡在河口通过皮质醇和生长激素将鳃离子泵在吸盐与排盐模式间双向切换。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arr-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#6d28d9"/>
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#475569"/>
+    </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="509" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">生活习性与跨界特种兵：剧变江湖 vs 恒稳大洋，三文鱼怎么“换芯”入海？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">水体稳定性决定冬眠、呼吸与产卵策略；广盐洄游鱼靠激素一键翻转鳃部离子泵方向</text>
+<rect x="16" y="68" width="356" height="208" rx="10" fill="#f0f9ff" stroke="#7dd3fc" stroke-width="1"/>
+<circle cx="36" cy="92" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="36" y="96" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="97" font-size="11.6" fill="#1d6fa5" text-anchor="start" font-weight="700">淡水习性：在冰封、缺氧与洪水中“精打细算”</text>
+<text x="32" y="124" font-size="9.9" fill="#0f172a" text-anchor="start">• 四季极端折腾：冬结冰潜入深潭半冬眠，夏夜闷热溶氧暴跌；</text>
+<text x="32" y="145" font-size="9.9" fill="#475569" text-anchor="start">• 副呼吸绝活：泥鳅吞气用肠壁呼吸、乌鳢（黑鱼）靠鳃上迷器、</text>
+<text x="32" y="165" font-size="9.9" fill="#1d6fa5" text-anchor="start" font-weight="600">  黄鳝靠口腔咽喉表皮直接吸空气，离水数小时仍能存活！</text>
+<rect x="30" y="180" width="328" height="82" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+<text x="42" y="200" font-size="10.1" fill="#1d6fa5" text-anchor="start" font-weight="700">产卵策略：沉性卵 / 黏性卵 + 筑巢护幼（防冲进大海！）</text>
+<text x="42" y="220" font-size="9.8" fill="#0f172a" text-anchor="start">怀卵量多在数千～数万粒，卵膜带黏性死死粘住水草石块；</text>
+<text x="42" y="240" font-size="9.8" fill="#0f766e" text-anchor="start" font-weight="600">演化出罗非鱼“口孵”、斗鱼吐泡巢、鳑鲏借河蚌鳃腔育儿！</text>
+<rect x="388" y="68" width="356" height="208" rx="10" fill="#fff7ed" stroke="#fdba74" stroke-width="1"/>
+<circle cx="408" cy="92" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="408" y="96" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="428" y="97" font-size="11.6" fill="#c25014" text-anchor="start" font-weight="700">咸水习性：在恒温富氧大洋里“远征撒网”</text>
+<text x="404" y="124" font-size="9.9" fill="#0f172a" text-anchor="start">• 环境宏大稳定：大洋热容极大、波浪搅动溶氧充足，极少缺氧；</text>
+<text x="404" y="145" font-size="9.9" fill="#475569" text-anchor="start">• 昼夜垂直迁徙 + 跨洋巡游：灯笼鱼每晚上升数百米觅食；金枪</text>
+<text x="404" y="165" font-size="9.9" fill="#c25014" text-anchor="start" font-weight="600">  鱼靠奇网锁住肌肉代谢热（局部恒温），跨太平洋高速追猎！</text>
+<rect x="402" y="180" width="328" height="82" rx="8" fill="#ffffff" stroke="#fdba74" stroke-width="1.2"/>
+<text x="414" y="200" font-size="10.1" fill="#c25014" text-anchor="start" font-weight="700">产卵策略：巨量透明“浮性卵”（随洋流广种薄收！）</text>
+<text x="414" y="220" font-size="9.8" fill="#0f172a" text-anchor="start">翻车鱼单次产卵可达上亿粒，鳕鱼/大黄鱼产卵数十万～数百万粒；</text>
+<text x="414" y="240" font-size="9.8" fill="#d97706" text-anchor="start" font-weight="600">卵内自带一颗轻质“油球”，浮在阳光表层随洋流漂向远方牧场。</text>
+<rect x="16" y="290" width="728" height="204" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="36" cy="314" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="36" y="318" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">3</text>
+<text x="56" y="319" font-size="12.0" fill="#18794e" text-anchor="start" font-weight="700">跨界奇迹：三文鱼与鳗鲡凭什么横穿生死线？——入海前的“全身硬件重装（银化）”</text>
+<rect x="32" y="338" width="214" height="140" rx="10" fill="#eff6ff" stroke="#60a5fa" stroke-width="1.4"/>
+<text x="139" y="360" font-size="11.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">江河淡水模式</text>
+<text x="139" y="380" font-size="9.9" fill="#0f172a" text-anchor="middle" font-weight="600">• 鳃泵亚型：NKA α1a（吸盐）</text>
+<text x="139" y="400" font-size="9.8" fill="#475569" text-anchor="middle">• 顶膜通道：NHE3 / NCC 开启</text>
+<text x="139" y="420" font-size="9.8" fill="#475569" text-anchor="middle">• 肾脏：高滤过率狂排稀尿</text>
+<text x="139" y="440" font-size="9.8" fill="#6d28d9" text-anchor="middle" font-weight="600">• 视觉：维 A₂ 红移适应河水</text>
+<text x="139" y="462" font-size="9.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">（三文鱼幼鱼 / 成年河鳗）</text>
+<line x1="250.0" y1="392.0" x2="286.0" y2="392.0" stroke="#18794e" stroke-width="2.4" stroke-linecap="round" marker-end="url(#arr-green)"/>
+<line x1="286.0" y1="424.0" x2="250.0" y2="424.0" stroke="#6d28d9" stroke-width="2.4" stroke-linecap="round" marker-end="url(#arr-purple)"/>
+<rect x="290" y="338" width="180" height="140" rx="10" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.6"/>
+<text x="380" y="360" font-size="11.0" fill="#18794e" text-anchor="middle" font-weight="700">河口“银化”换芯期</text>
+<text x="380" y="381" font-size="9.9" fill="#0f172a" text-anchor="middle" font-weight="700">皮质醇 + 生长激素飙升</text>
+<text x="380" y="401" font-size="9.8" fill="#475569" text-anchor="middle">停留在半咸水河口数天～数周：</text>
+<text x="380" y="421" font-size="9.8" fill="#18794e" text-anchor="middle" font-weight="700">拆掉旧吸盐泵、组装排盐泵！</text>
+<text x="380" y="443" font-size="9.8" fill="#1d6fa5" text-anchor="middle">溯河：大马哈鱼/中华鲟（海→河产卵）</text>
+<text x="380" y="462" font-size="9.8" fill="#6d28d9" text-anchor="middle">降海：日本鳗鲡（河→马里亚纳海沟）</text>
+<line x1="474.0" y1="392.0" x2="510.0" y2="392.0" stroke="#18794e" stroke-width="2.4" stroke-linecap="round" marker-end="url(#arr-green)"/>
+<line x1="510.0" y1="424.0" x2="474.0" y2="424.0" stroke="#6d28d9" stroke-width="2.4" stroke-linecap="round" marker-end="url(#arr-purple)"/>
+<rect x="514" y="338" width="214" height="140" rx="10" fill="#fff7ed" stroke="#fb923c" stroke-width="1.4"/>
+<text x="621" y="360" font-size="11.0" fill="#c25014" text-anchor="middle" font-weight="700">大洋咸水模式</text>
+<text x="621" y="380" font-size="9.9" fill="#0f172a" text-anchor="middle" font-weight="600">• 鳃泵亚型：NKA α1b（排盐）</text>
+<text x="621" y="400" font-size="9.8" fill="#475569" text-anchor="middle">• 排盐引擎：NKCC1 + CFTR 开启</text>
+<text x="621" y="420" font-size="9.8" fill="#475569" text-anchor="middle">• 肠道开启喝水，肾脏关小排尿</text>
+<text x="621" y="440" font-size="9.8" fill="#c25014" text-anchor="middle" font-weight="600">• 视觉：切换维 A₁ 匹配蓝海</text>
+<text x="621" y="462" font-size="9.8" fill="#c25014" text-anchor="middle" font-weight="700">（海洋育肥三文鱼 / 产卵海鳗）</text>
+</svg>

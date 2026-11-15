@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="524" viewBox="0 0 760 524" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">太阳核心中微子8分钟直飞逃逸与伽马光子十万年随机漫步对比图</title>
+<desc id="desc">剖面展示太阳核心、辐射区、对流区至地球的两条信使路径：电子中微子2.3秒穿出太阳、8分20秒抵地球并发生三味振荡；伽马光子在辐射区经历约10的21次方次散射随机漫步耗时1万至17万年降级为5772K可见光。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="523" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">同在太阳中心诞生：为什么中微子 8 分钟到地球，光子却要迷路十万年？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">上路看视十倍铅密度如空气的“幽灵中微子”穿墙直飞 → 下路看伽马光子在辐射区碰撞百亿亿次的“醉汉漫步”</text>
+<rect x="24" y="68" width="712" height="294" rx="10" fill="#0f172a" stroke="#475569" stroke-width="1.4"/>
+<clipPath id="sun-clip"><rect x="26" y="70" width="708" height="290" rx="9"/></clipPath>
+<g clip-path="url(#sun-clip)">
+  <circle cx="128" cy="215" r="248" fill="#ea580c" opacity="0.92"/>
+  <circle cx="128" cy="215" r="184" fill="#f59e0b" opacity="0.95"/>
+  <circle cx="128" cy="215" r="72" fill="#fef08a"/>
+</g>
+<text x="128" y="208" font-size="11.0" fill="#0f172a" text-anchor="middle" font-weight="700">核聚变核心</text>
+<text x="128" y="226" font-size="9.8" fill="#b45309" text-anchor="middle" font-weight="700">0~0.24 R☉</text>
+<text x="128" y="243" font-size="9.6" fill="#0f172a" text-anchor="middle" font-weight="600">162 g/cm³</text>
+<text x="250" y="298" font-size="10.4" fill="#fffbeb" text-anchor="middle" font-weight="700">辐射区（0.24~0.71 R☉）</text>
+<text x="250" y="315" font-size="9.6" fill="#fef3c7" text-anchor="middle">自由电子密布如铜墙铁壁</text>
+<text x="342" y="336" font-size="10.0" fill="#ffedd5" text-anchor="middle" font-weight="700">对流区 → 光球层 5772 K</text>
+<circle cx="674" cy="215" r="24" fill="#2563eb" stroke="#93c5fd" stroke-width="2"/>
+<text x="674" y="219" font-size="10.8" fill="#ffffff" text-anchor="middle" font-weight="700">地球</text>
+<text x="674" y="256" font-size="9.8" fill="#cbd5e1" text-anchor="middle">1.5 亿公里</text>
+<line x1="154" y1="138" x2="644" y2="138" stroke="#38bdf8" stroke-width="2.8" stroke-dasharray="8 4" marker-end="url(#arr-blue)"/>
+<rect x="392" y="84" width="326" height="44" rx="7" fill="#1e293b" stroke="#38bdf8" stroke-width="1.1"/>
+<text x="555" y="103" font-size="10.2" fill="#7dd3fc" text-anchor="middle" font-weight="700">① 电子中微子 νₑ：只受弱力，2.3 秒直穿太阳，8分20秒抵地球！</text>
+<text x="555" y="121" font-size="9.6" fill="#e2e8f0" text-anchor="middle">每秒约 650 亿颗穿过你指甲盖 · 途中三味振荡变脸（νₑ↔ν_μ↔ν_τ）</text>
+<polyline points="164,224 178,198 170,236 194,206 188,248 212,212 206,254 232,202 228,246 254,196 248,242 276,206 272,248 298,214 318,232 344,208 376,224" fill="none" stroke="#ffffff" stroke-width="2.2"/>
+<line x1="376" y1="224" x2="644" y2="224" stroke="#fde047" stroke-width="2.8" marker-end="url(#arr-orange)"/>
+<rect x="392" y="272" width="326" height="74" rx="7" fill="#1e293b" stroke="#fde047" stroke-width="1.1"/>
+<text x="555" y="292" font-size="10.2" fill="#fde047" text-anchor="middle" font-weight="700">② 伽马光子 γ：每飞 &lt; 1 厘米就撞电子转向，迷路 1 万~17 万年！</text>
+<text x="555" y="311" font-size="9.6" fill="#e2e8f0" text-anchor="middle">经历 ~10²¹ 次散射层层降级：1 颗致命 MeV 伽马光子裂变成几百万颗</text>
+<text x="555" y="330" font-size="9.6" fill="#fef08a" text-anchor="middle" font-weight="600">5772 K 温柔可见光，出太阳表面后再用 8 分 20 秒洒在你肩头！</text>
+<rect x="24" y="374" width="348" height="138" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="394" r="10" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="42" y="398" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">1</text>
+<text x="58" y="398" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700">为什么光走 70 万公里要花十几万年？（醉汉漫步）</text>
+<text x="40" y="424" font-size="10.5" fill="#1e293b" text-anchor="start">• 若直线飞出半径 R☉ ≈ 70 万公里，光速只需 R☉/c ≈ 2.3 秒；</text>
+<text x="40" y="445" font-size="10.5" fill="#1e293b" text-anchor="start">• 但在辐射区每步自由程 ℓ 仅毫米级，随机散射走远距离按</text>
+<text x="48" y="466" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="700">步数平方根推进：总步数 N ≈ (R/ℓ)² ≈ 10²¹ 步！</text>
+<text x="40" y="489" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="600">• 今天晒暖你的阳光，其实在冰河期旧石器时代就已在核心点燃！</text>
+<rect x="388" y="374" width="348" height="138" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="394" r="10" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="406" y="398" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">2</text>
+<text x="422" y="398" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700">两夺诺奖悬案：如果太阳今晚熄火，谁先报信？</text>
+<text x="404" y="424" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="600">• 光照会靠十万年存货继续亮很久，但中微子 8 分钟就会断流！</text>
+<text x="404" y="445" font-size="10.5" fill="#1e293b" text-anchor="start">• 1968 年戴维斯用 600 吨干洗剂只抓到理论 1/3 的太阳中微子，</text>
+<text x="412" y="466" font-size="10.5" fill="#1e293b" text-anchor="start">一度让人怀疑太阳停火了！直到 SNO 与超级神冈证实 2/3 在</text>
+<text x="412" y="489" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="600">半路变身成了 μ/τ 中微子，完美印证标准太阳核聚变模型！</text>
+</svg>

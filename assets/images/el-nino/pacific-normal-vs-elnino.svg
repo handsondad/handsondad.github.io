@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="596" viewBox="0 0 760 596" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">赤道太平洋常态年与厄尔尼诺年海气耦合剖面对比图</title>
+<desc id="desc">上方展示常态年强劲东风信风将29至30摄氏度暖水推向印尼一侧、秘鲁寒流冷水上翻并构成闭合沃克环流；下方展示厄尔尼诺年西风爆发触发水下开尔文波在约67天内东传压平温跃层，使暴雨中心东移至中东太平洋、印尼澳洲转入下沉干旱。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <linearGradient id="ocean-deep" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1d6fa5"/>
+      <stop offset="100%" stop-color="#0c4a6e"/>
+    </linearGradient>
+    <linearGradient id="warm-pool" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#dc2626"/>
+      <stop offset="65%" stop-color="#ea580c"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <marker id="arr-red" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#dc2626"/>
+    </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes kelvin-surge {
+      0%   { transform: translateX(-210px); opacity: 0.25; }
+      20%  { opacity: 0.95; }
+      85%  { transform: translateX(0px); opacity: 0.95; }
+      100% { transform: translateX(0px); opacity: 0.92; }
+    }
+    @keyframes rain-shift {
+      0%   { transform: translateX(-165px); opacity: 0.35; }
+      100% { transform: translateX(0px); opacity: 1; }
+    }
+    .kelvin-pulse {
+      animation: kelvin-surge 7.5s cubic-bezier(0.22, 0.61, 0.36, 1) 1 forwards;
+    }
+    .conv-shift {
+      animation: rain-shift 7.5s cubic-bezier(0.22, 0.61, 0.36, 1) 1 forwards;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .kelvin-pulse, .conv-shift {
+        animation: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+      }
+    }
+</style>
+<rect x="0.5" y="0.5" width="759" height="595" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">赤道太平洋“海—气大跷跷板”：常态年 vs 厄尔尼诺年剖面图</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">横跨约 15,000 km（西：印尼/澳洲 120°E → 东：秘鲁/厄瓜多尔 80°W），纵向放大展示海面落差与温跃层倾角</text>
+<rect x="24" y="68" width="712" height="236" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="38.0" y="80.0" width="238" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="157.0" y="95.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">常态年（沃克环流强劲 · 西暖东冷）</text>
+<text x="290" y="95" font-size="12" fill="#64748b" text-anchor="start">赤道东风信风像推土机把暖水推向西太平洋，秘鲁近岸冷水上翻</text>
+<path d="M84,186 L676,193 L676,282 L84,282 Z" fill="url(#ocean-deep)" opacity="0.92"/>
+<path d="M84,184 Q240,185 380,189 L676,193 L676,204 Q470,212 310,238 Q195,256 84,256 Z" fill="url(#warm-pool)" opacity="0.88"/>
+<path d="M84,256 Q195,256 310,238 Q470,212 676,204" fill="none" stroke="#fef08a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 4"/>
+<path d="M40,174 L84,174 L84,282 L40,282 Z" fill="#cbd5e1" stroke="#94a3b8"/>
+<path d="M676,170 L720,170 L720,282 L676,282 Z" fill="#cbd5e1" stroke="#94a3b8"/>
+<text x="62" y="296" font-size="11.5" fill="#475569" text-anchor="middle" font-weight="600">印尼/澳洲(120°E)</text>
+<text x="380" y="296" font-size="11.5" fill="#64748b" text-anchor="middle">日界线(180°) · 中太平洋</text>
+<text x="698" y="296" font-size="11.5" fill="#475569" text-anchor="middle" font-weight="600">秘鲁/南美(80°W)</text>
+<line x1="605.0" y1="174.0" x2="245.0" y2="174.0" stroke="#1d6fa5" stroke-width="2.6" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<text x="425" y="166" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">强劲赤道东风信风（把表层暖水向西推）</text>
+<line x1="148.0" y1="174.0" x2="148.0" y2="128.0" stroke="#dc2626" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arr-red)"/>
+<g transform="translate(155.0,124.0) scale(0.88)"><path d="M-24,6 C-30,6 -34,1 -34,-4 C-34,-10 -29,-14 -23,-14 C-21,-22 -13,-27 -4,-26 C3,-31 14,-28 18,-20 C25,-20 31,-14 31,-7 C31,1 25,6 18,6 Z" fill="#dbeafe" stroke="#1d6fa5" stroke-width="1.3"/></g>
+<line x1="138" y1="133" x2="134" y2="147" stroke="#1d6fa5" stroke-width="1.6"/>
+<line x1="152" y1="133" x2="148" y2="147" stroke="#1d6fa5" stroke-width="1.6"/>
+<line x1="166" y1="133" x2="162" y2="147" stroke="#1d6fa5" stroke-width="1.6"/>
+<text x="155" y="108" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">深对流上升多雨</text>
+<line x1="205.0" y1="114.0" x2="590.0" y2="114.0" stroke="#475569" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="5 4" marker-end="url(#arr-muted)"/>
+<text x="400" y="109" font-size="11" fill="#64748b" text-anchor="middle">高空西风回流（沃克环流闭合）</text>
+<line x1="632.0" y1="120.0" x2="632.0" y2="168.0" stroke="#c25014" stroke-width="2.1" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<text x="626" y="142" font-size="11.5" fill="#c25014" text-anchor="end" font-weight="600" class="halo">下沉干冷少雨</text>
+<text x="185" y="214" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="700">西太平洋暖池 29–30 °C</text>
+<text x="185" y="232" font-size="11" fill="#ffedd5" text-anchor="middle">海面比东岸高约 40–50 cm</text>
+<text x="185" y="248" font-size="11" fill="#fef08a" text-anchor="middle">温跃层深达 150–200 m</text>
+<text x="435" y="252" font-size="11.5" fill="#fef08a" text-anchor="middle" font-weight="600">20 °C 温跃层（上暖下冷分界）</text>
+<line x1="654.0" y1="268.0" x2="654.0" y2="202.0" stroke="#bae6fd" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<text x="640" y="232" font-size="11.5" fill="#e0f2fe" text-anchor="end" font-weight="700">秘鲁寒流涌升(20–22°C)</text>
+<text x="640" y="248" font-size="11" fill="#bae6fd" text-anchor="end">上翻营养盐 → 鳀鱼丰收</text>
+<rect x="24" y="316" width="712" height="258" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="38.0" y="328.0" width="282" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="179.0" y="343.0" font-size="12" fill="#c25014" text-anchor="middle" font-weight="600">厄尔尼诺年（信风松劲 · 暖池东泻 · 暴雨搬家）</text>
+<text x="332" y="343" font-size="12" fill="#64748b" text-anchor="start">水下开尔文波约 2–3 个月横穿太平洋，压平温跃层并切断秘鲁冷水上翻</text>
+<path d="M84,442 L676,435 L676,536 L84,536 Z" fill="url(#ocean-deep)" opacity="0.92"/>
+<path d="M84,442 Q350,438 676,434 L676,496 Q450,498 260,486 Q150,478 84,474 Z" fill="url(#warm-pool)" opacity="0.90"/>
+<g class="kelvin-pulse"><ellipse cx="455" cy="472" rx="135" ry="16" fill="#fde047" opacity="0.32" stroke="#fef08a" stroke-width="1.4" stroke-dasharray="5 3"/><line x1="345.0" y1="472.0" x2="560.0" y2="472.0" stroke="#fef08a" stroke-width="2.6" stroke-linecap="round" marker-end="url(#arr-orange)"/></g>
+<path d="M84,474 Q180,480 340,490 Q510,498 676,496" fill="none" stroke="#fef08a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 4"/>
+<path d="M40,426 L84,426 L84,536 L40,536 Z" fill="#cbd5e1" stroke="#94a3b8"/>
+<path d="M676,422 L720,422 L720,536 L676,536 Z" fill="#cbd5e1" stroke="#94a3b8"/>
+<circle cx="198" cy="418" r="10.5" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2"/>
+<text x="198" y="422" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">1</text>
+<line x1="214.0" y1="418.0" x2="355.0" y2="418.0" stroke="#dc2626" stroke-width="2.6" stroke-linecap="round" marker-end="url(#arr-red)"/>
+<text x="285" y="405" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700" class="halo">西风爆发/信风减弱</text>
+<line x1="132.0" y1="368.0" x2="132.0" y2="418.0" stroke="#c25014" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<text x="136" y="362" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700" class="halo">下沉少雨 → 印尼/澳洲干旱山火</text>
+<g class="conv-shift">
+<g transform="translate(475.0,378.0) scale(0.95)"><path d="M-24,6 C-30,6 -34,1 -34,-4 C-34,-10 -29,-14 -23,-14 C-21,-22 -13,-27 -4,-26 C3,-31 14,-28 18,-20 C25,-20 31,-14 31,-7 C31,1 25,6 18,6 Z" fill="#dbeafe" stroke="#1d6fa5" stroke-width="1.3"/></g>
+<line x1="456" y1="388" x2="451" y2="404" stroke="#1d6fa5" stroke-width="1.8"/>
+<line x1="472" y1="388" x2="467" y2="404" stroke="#1d6fa5" stroke-width="1.8"/>
+<line x1="488" y1="388" x2="483" y2="404" stroke="#1d6fa5" stroke-width="1.8"/>
+<line x1="502" y1="388" x2="497" y2="404" stroke="#1d6fa5" stroke-width="1.8"/>
+</g>
+<circle cx="420" cy="376" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="420" y="380" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">4</text>
+<line x1="475.0" y1="426.0" x2="475.0" y2="396.0" stroke="#dc2626" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arr-red)"/>
+<text x="518" y="375" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700" class="halo">深对流东移：中东太平洋与秘鲁豪雨</text>
+<line x1="430.0" y1="362.0" x2="175.0" y2="362.0" stroke="#475569" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="4 4" marker-end="url(#arr-muted)"/>
+<text x="172" y="462" font-size="11" fill="#ffedd5" text-anchor="middle">西侧海面降 15–20 cm</text>
+<circle cx="325" cy="456" r="10.5" fill="#fffbeb" stroke="#c25014" stroke-width="1.2"/>
+<text x="325" y="460" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="458" y="459" font-size="11.5" fill="#ffffff" text-anchor="middle" font-weight="700">赤道开尔文波东传（约 67 天横穿太平洋）</text>
+<circle cx="568" cy="514" r="10.5" fill="#fffbeb" stroke="#c25014" stroke-width="1.2"/>
+<text x="568" y="518" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">3</text>
+<text x="552" y="518" font-size="11.5" fill="#fef08a" text-anchor="end" font-weight="600">东岸海面抬高 30–40 cm，温跃层压深至 &gt;120 m，冷水上翻中断</text>
+<text x="62" y="554" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="600">西太平洋暖池变浅</text>
+<text x="380" y="554" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">Niño 3.4 监测核心区（170°W–120°W）显著发烧</text>
+<text x="698" y="554" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="600">鳀鱼减产/海岸洪涝</text>
+</svg>

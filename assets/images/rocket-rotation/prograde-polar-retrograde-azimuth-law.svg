@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">火箭顺行东射、太阳同步极轨与逆行西射方位角对比图</title>
+<desc id="desc">左栏展示球面发射方位角定律与三条典型入轨航向，右栏对比顺风东射、利用赤道隆起进动的98度太阳同步轨道以及以色列为避开邻国向地中海逆风西射损失790米每秒速度的极端案例。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-b" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#1d6fa5"/>
+    </marker>
+    <marker id="arr-o" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#c25014"/>
+    </marker>
+    <marker id="arr-g" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#18794e"/>
+    </marker>
+    <marker id="arr-p" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#6d28d9"/>
+    </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">方向博弈：既然往东打最省油，为什么有些火箭偏偏往极地甚至往西“逆行”？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">先看左图球面发射方位角定律 → 再看右栏三种经典航向：顺风东射、98° 太阳同步极轨与以色列向西硬刚</text>
+<rect x="22" y="68" width="352" height="434" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="92" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="42" y="96" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="62" y="97" font-size="12.2" fill="#0f172a" text-anchor="start" font-weight="700">地球大转盘上的三条截然不同航线</text>
+<text x="42" y="117" font-size="10.5" fill="#64748b" text-anchor="start">球面三角铁律：sin β = cos i / cos φ（i 为轨道倾角）</text>
+<circle cx="198" cy="266" r="112" fill="#eff6ff" stroke="#1d6fa5" stroke-width="2"/>
+<ellipse cx="198" cy="266" rx="112" ry="30" fill="none" stroke="#93c5fd" stroke-width="1.5" stroke-dasharray="5,4"/>
+<line x1="198" y1="140" x2="198" y2="392" stroke="#475569" stroke-width="1.4" stroke-dasharray="4,4"/>
+<text x="198" y="134" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="700">北极 N (90°)</text>
+<text x="304" y="282" font-size="10.5" fill="#1d6fa5" text-anchor="end" font-weight="700" class="halo">赤道 0°</text>
+<path d="M 136,288 Q 198,302 264,286" fill="none" stroke="#1d6fa5" stroke-width="2.6" marker-end="url(#arr-b)"/>
+<text x="198" y="314" font-size="10.6" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">地球自西向东转 (+v_地)</text>
+<circle cx="180" cy="232" r="5.5" fill="#0f172a"/>
+<path d="M 180,232 Q 246,204 304,210" fill="none" stroke="#18794e" stroke-width="3" marker-end="url(#arr-g)"/>
+<text x="266" y="194" font-size="10.8" fill="#18794e" text-anchor="start" font-weight="700" class="halo">① 顺行东射</text>
+<path d="M 180,232 Q 166,176 160,156" fill="none" stroke="#6d28d9" stroke-width="2.8" marker-end="url(#arr-p)"/>
+<text x="120" y="168" font-size="10.6" fill="#6d28d9" text-anchor="start" font-weight="700" class="halo">② 太阳同步极轨</text>
+<path d="M 180,232 Q 122,218 86,248" fill="none" stroke="#c25014" stroke-width="2.8" marker-end="url(#arr-o)"/>
+<text x="110" y="264" font-size="10.8" fill="#c25014" text-anchor="start" font-weight="700" class="halo">③ 逆行西射</text>
+<rect x="38" y="408" width="320" height="80" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="198" y="430" font-size="10.8" fill="#0f172a" text-anchor="middle" font-weight="700">几何硬约束（为什么拜科努尔打不了低倾角）：</text>
+<text x="198" y="451" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">因为 |sin β| ≤ 1 ⇒ cos i ≤ cos φ ⇒ 轨道倾角 i ≥ 发射场纬度 φ！</text>
+<text x="198" y="471" font-size="10.5" fill="#1e293b" text-anchor="middle">所以国际空间站定在 51.6° 倾角，只为照顾高纬度的俄罗斯火箭。</text>
+<rect x="388" y="68" width="350" height="434" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="408" cy="92" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="408" y="96" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="428" y="97" font-size="12.2" fill="#0f172a" text-anchor="start" font-weight="700">三种发射航向的得失总账</text>
+<rect x="404" y="116" width="318" height="112" rx="8" fill="#e7f6ee" stroke="#86efac" stroke-width="1"/>
+<text x="416" y="138" font-size="10.8" fill="#18794e" text-anchor="start" font-weight="700">① 顺行东射（倾角 0°–90°）：占全球发射 70% 以上</text>
+<text x="416" y="160" font-size="10.5" fill="#0f172a" text-anchor="start">顺着地球自转起飞（朝东或东北/东南），白捡 +300 至</text>
+<text x="416" y="180" font-size="10.5" fill="#1e293b" text-anchor="start">+465 m/s 线速度；天宫、国际空间站与通信卫星均用此法。</text>
+<rect x="404" y="242" width="318" height="118" rx="8" fill="#f3e8ff" stroke="#d8b4fe" stroke-width="1"/>
+<text x="416" y="264" font-size="10.8" fill="#6d28d9" text-anchor="start" font-weight="700">② 太阳同步轨道（倾角 96°–98°）：遥感卫星最爱</text>
+<text x="416" y="286" font-size="10.5" fill="#0f172a" text-anchor="start">故意朝“正北/正南偏西一点”打，反消地球东向初速。</text>
+<text x="416" y="306" font-size="10.5" fill="#1e293b" text-anchor="start">妙处：借赤道隆起引力矩让轨道面每天东进 0.9856°，</text>
+<text x="416" y="326" font-size="10.5" fill="#1e293b" text-anchor="start">抵消公转，每天固定地方时（如 10:30）飞过同一城市！</text>
+<rect x="404" y="374" width="318" height="114" rx="8" fill="#fef1e8" stroke="#fdba74" stroke-width="1"/>
+<text x="416" y="396" font-size="10.8" fill="#c25014" text-anchor="start" font-weight="700">③ 极端反例：以色列“沙维特”向西逆射（倾角 143°）</text>
+<text x="416" y="418" font-size="10.5" fill="#0f172a" text-anchor="start">基地（31.9°N）东边全是邻国，残骸绝不能往东掉！</text>
+<text x="416" y="438" font-size="10.5" fill="#1e293b" text-anchor="start">被迫朝地中海向西硬打：先抹平 395 m/s 再反向加速，</text>
+<text x="416" y="458" font-size="10.5" fill="#1e293b" text-anchor="start">里外里多亏约 790 m/s，有效运力直接腰斩近一半！</text>
+</svg>

@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">新石器时代解玉砂微磨削、砂绳线切割与双面空心管钻工艺图解</title>
+<desc id="desc">分三栏展示硬度7石英砂磨削原理、柔性砂绳切割抛物线弧痕以及双面管钻形成的蜂腰孔与对钻错位台痕</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="380.0" y="30" font-size="19" fill="#1e293b" text-anchor="middle" font-weight="700">五千年前连铁器都没有，良渚先民凭什么雕出玉琮王？</text>
+<text x="380.0" y="52" font-size="12.2" fill="#64748b" text-anchor="middle">“他山之石，可以攻玉”：竹木麻绳只是搬运工，真正啃下硬玉的是莫氏硬度 7 的石英“解玉砂”</text>
+<rect x="22" y="68" width="232" height="430" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="36.0" y="82.0" width="186" height="22" rx="11.0" fill="#fffbeb" stroke="#b45309" stroke-width="1" stroke-opacity="0.35"/>
+<text x="129.0" y="97.0" font-size="12" fill="#b45309" text-anchor="middle" font-weight="600">① 核心原理：以砂攻玉</text>
+<rect x="44" y="132" width="188" height="36" rx="6" fill="#fde68a" stroke="#d97706" stroke-width="1.8"/>
+<text x="138" y="154" font-size="10.5" fill="#b45309" text-anchor="middle" font-weight="700">柔韧工具载体（竹管 / 麻绳 / 木片）</text>
+<line x1="84" y1="120" x2="192" y2="120" stroke="#b45309" stroke-width="2.2" marker-end="url(#arr-orange)"/>
+<text x="138" y="113" font-size="10.2" fill="#b45309" text-anchor="middle">往复拉动或旋转施压</text>
+<rect x="44" y="168" width="188" height="34" fill="#e0f2fe"/>
+<polygon points="68,172 82,178 78,196 62,194" fill="#38bdf8" stroke="#0369a1" stroke-width="1.6"/>
+<polygon points="108,172 122,178 118,196 102,194" fill="#38bdf8" stroke="#0369a1" stroke-width="1.6"/>
+<polygon points="148,172 162,178 158,196 142,194" fill="#38bdf8" stroke="#0369a1" stroke-width="1.6"/>
+<polygon points="188,172 202,178 198,196 182,194" fill="#38bdf8" stroke="#0369a1" stroke-width="1.6"/>
+<text x="138" y="217" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">石英解玉砂 SiO₂（硬度 7.0）+ 水</text>
+<rect x="44" y="202" width="188" height="58" rx="6" fill="#ccfbf1" stroke="#115e59" stroke-width="2"/>
+<text x="138" y="244" font-size="11" fill="#115e59" text-anchor="middle" font-weight="700">透闪石玉料（硬度 6.0–6.5）</text>
+<rect x="36" y="276" width="204" height="206" rx="10" fill="#fffbeb" stroke="#fcd34d" stroke-width="1"/>
+<text x="48" y="298" font-size="11.4" fill="#b45309" text-anchor="start" font-weight="700">为什么软竹片反而比硬刀好用？</text>
+<text x="48" y="320" font-size="10.5" fill="#1e293b" text-anchor="start">• 石英砂棱角嵌进微软的竹木或麻绳</text>
+<text x="48" y="338" font-size="10.5" fill="#1e293b" text-anchor="start">  表层，就变成了一把“天然砂轮”；</text>
+<text x="48" y="358" font-size="10.5" fill="#1e293b" text-anchor="start">• 清水既防摩擦高热炸裂玉料，又把</text>
+<text x="48" y="376" font-size="10.5" fill="#1e293b" text-anchor="start">  磨下的石粉及时冲出沟槽；</text>
+<text x="48" y="396" font-size="10.5" fill="#1e293b" text-anchor="start">• 商周以后升级为青铜/铁质圆盘</text>
+<text x="48" y="414" font-size="10.5" fill="#1e293b" text-anchor="start">  “水凳砣机”，并引入硬度 7.5</text>
+<text x="48" y="432" font-size="10.5" fill="#1e293b" text-anchor="start">  石榴子石红砂与硬度 9 刚玉砂，</text>
+<text x="48" y="450" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">  本质仍是“工具带砂磨玉”！</text>
+<rect x="268" y="68" width="224" height="430" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="282.0" y="82.0" width="186" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="375.0" y="97.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">② 开料绝技：砂绳线切割</text>
+<rect x="302" y="136" width="156" height="114" rx="10" fill="#ccfbf1" stroke="#115e59" stroke-width="2"/>
+<path d="M 314 158 Q 380 180 446 158" fill="none" stroke="#0d9488" stroke-width="1.4" stroke-dasharray="4 3"/>
+<path d="M 314 176 Q 380 198 446 176" fill="none" stroke="#0d9488" stroke-width="1.4" stroke-dasharray="4 3"/>
+<path d="M 314 194 Q 380 216 446 194" fill="none" stroke="#0d9488" stroke-width="1.4" stroke-dasharray="4 3"/>
+<path d="M 314 212 Q 380 234 446 212" fill="none" stroke="#0d9488" stroke-width="1.4" stroke-dasharray="4 3"/>
+<path d="M 280 152 Q 380 218 480 152" fill="none" stroke="#b45309" stroke-width="2.8"/>
+<text x="380" y="126" font-size="10.5" fill="#b45309" text-anchor="middle" font-weight="700">蘸满湿砂的兽皮条 / 麻绳拉锯</text>
+<text x="380" y="240" font-size="10.3" fill="#1d6fa5" text-anchor="middle" font-weight="700">标志性微痕：抛物线状弧形切痕</text>
+<rect x="282" y="276" width="196" height="206" rx="10" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<text x="294" y="298" font-size="11.4" fill="#1d6fa5" text-anchor="start" font-weight="700">微痕考古怎么一眼认出真古玉？</text>
+<text x="294" y="320" font-size="10.5" fill="#1e293b" text-anchor="start">• 兴隆洼、红山至良渚玉器上广泛留有</text>
+<text x="294" y="338" font-size="10.5" fill="#1e293b" text-anchor="start">  弯弯的“砂绳切割凹弧痕”；</text>
+<text x="294" y="358" font-size="10.5" fill="#1e293b" text-anchor="start">• 硬石片（石锯）直拉切割则会留下</text>
+<text x="294" y="376" font-size="10.5" fill="#1e293b" text-anchor="start">  笔直平行的沟槽；</text>
+<text x="294" y="396" font-size="10.5" fill="#1e293b" text-anchor="start">• 良渚玉琮神人兽面纹细如发丝</text>
+<text x="294" y="414" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">  （1 毫米内刻 3–5 道阴线！），</text>
+<text x="294" y="432" font-size="10.5" fill="#1e293b" text-anchor="start">  系用尖锐燧石（硬度 7）或鲨鱼齿</text>
+<text x="294" y="450" font-size="10.5" fill="#1e293b" text-anchor="start">  在抛光玉面上反复刮刻而成。</text>
+<rect x="506" y="68" width="232" height="430" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="520.0" y="82.0" width="196" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="618.0" y="97.0" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="600">③ 穿孔铁证：双面空心管钻</text>
+<rect x="556" y="132" width="132" height="122" rx="6" fill="#ccfbf1" stroke="#115e59" stroke-width="2.2"/>
+<polygon points="598,132 642,132 637,194 603,194" fill="#ffffff" stroke="#0f766e" stroke-width="1.6"/>
+<polygon points="607,194 641,194 646,254 602,254" fill="#ffffff" stroke="#0f766e" stroke-width="1.6"/>
+<line x1="604" y1="150" x2="639" y2="150" stroke="#94a3b8" stroke-width="1.1" stroke-dasharray="3 2"/>
+<line x1="604" y1="168" x2="639" y2="168" stroke="#94a3b8" stroke-width="1.1" stroke-dasharray="3 2"/>
+<line x1="604" y1="214" x2="639" y2="214" stroke="#94a3b8" stroke-width="1.1" stroke-dasharray="3 2"/>
+<line x1="604" y1="232" x2="639" y2="232" stroke="#94a3b8" stroke-width="1.1" stroke-dasharray="3 2"/>
+<circle cx="605" cy="194" r="5" fill="none" stroke="#dc2626" stroke-width="2"/>
+<line x1="548" y1="194" x2="599" y2="194" stroke="#dc2626" stroke-width="1.8" marker-end="url(#arr-orange)"/>
+<text x="544" y="182" font-size="10.2" fill="#dc2626" text-anchor="end" font-weight="700">对钻错位</text>
+<text x="544" y="198" font-size="10.2" fill="#dc2626" text-anchor="end" font-weight="700">“台痕”</text>
+<text x="622" y="122" font-size="10.5" fill="#6d28d9" text-anchor="middle" font-weight="700">竹管/骨管双面对钻</text>
+<rect x="520" y="276" width="204" height="206" rx="10" fill="#f3e8ff" stroke="#d8b4fe" stroke-width="1"/>
+<text x="532" y="298" font-size="11.2" fill="#6d28d9" text-anchor="start" font-weight="700">为什么古玉孔道大多“两头大中间窄”？</text>
+<text x="532" y="320" font-size="10.5" fill="#1e293b" text-anchor="start">• 空心竹管只磨一圈环形窄缝，中间</text>
+<text x="532" y="338" font-size="10.5" fill="#1e293b" text-anchor="start">  掉出圆柱“玉芯”，比实心钻省力数倍；</text>
+<text x="532" y="358" font-size="10.5" fill="#1e293b" text-anchor="start">• 越往下钻竹管外壁越磨损变细，且单面</text>
+<text x="532" y="376" font-size="10.5" fill="#1e293b" text-anchor="start">  钻到底易崩裂，故从上下两面相向对钻；</text>
+<text x="532" y="396" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">• 两孔交汇处留下的“蜂腰孔、错位台痕</text>
+<text x="532" y="414" font-size="10.5" fill="#1e293b" text-anchor="start">  与不等距螺旋砂纹”，是现代高速金刚石</text>
+<text x="532" y="432" font-size="10.5" fill="#1e293b" text-anchor="start">  钻头极难自然模仿的时代指纹！</text>
+</svg>

@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="515" viewBox="0 0 760 515" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">普通金属铜线与拓扑绝缘体及量子反常霍尔边缘导电通道对比图</title>
+<desc id="desc">第一栏普通铜线电子遇杂质发生180度散射发热；第二栏拓扑绝缘体内部绝缘、表面自旋-动量锁定，电子遇非磁性杂质自动绕行；第三栏磁性拓扑绝缘体实现单向手性无耗散边缘通道。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arr-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#6d28d9"/>
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#475569"/>
+    </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes glideAround {
+        0%   { stroke-dashoffset: 260; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes bounceBack {
+        0%   { stroke-dashoffset: 180; }
+        100% { stroke-dashoffset: 0; }
+      }
+      .anim-glide {
+        stroke-dasharray: 260;
+        stroke-dashoffset: 0;
+        animation: glideAround 2.8s ease-out 1 forwards;
+      }
+      .anim-bounce {
+        stroke-dasharray: 180;
+        stroke-dashoffset: 0;
+        animation: bounceBack 2.2s ease-out 1 forwards;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .anim-glide, .anim-bounce {
+          animation: none !important;
+          stroke-dashoffset: 0 !important;
+        }
+      }
+</style>
+<rect x="0.5" y="0.5" width="759" height="514" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">为什么叫它“内绝缘、外导电的电子防弹衣”？三种导电车道大比拼</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">普通铜线像弹珠台乱撞发热；拓扑绝缘体表面“自旋锁死方向”；量子反常霍尔干脆拆掉逆行道！</text>
+<rect x="16" y="68" width="728" height="126" rx="10" fill="#fff7ed" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="36" cy="92" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="36" y="96" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="97" font-size="12.2" fill="#c25014" text-anchor="start" font-weight="700">普通金属导体（如铜线）：全员挤在内部跑，撞上杂质就 180° 弹回发热</text>
+<rect x="36" y="110" width="430" height="68" rx="8" fill="#ffedd5" stroke="#fdba74" stroke-width="1.4"/>
+<circle cx="150" cy="134" r="11" fill="#9a3412"/>
+<text x="150" y="138" font-size="9.8" fill="#ffffff" text-anchor="middle" font-weight="700">杂</text>
+<circle cx="255" cy="154" r="11" fill="#9a3412"/>
+<text x="255" y="158" font-size="9.8" fill="#ffffff" text-anchor="middle" font-weight="700">杂</text>
+<circle cx="350" cy="132" r="11" fill="#9a3412"/>
+<text x="350" y="136" font-size="9.8" fill="#ffffff" text-anchor="middle" font-weight="700">杂</text>
+<path class="anim-bounce" d="M 54 136 L 136 134 L 88 164 M 170 156 L 242 154 L 198 122 M 274 134 L 336 132 L 296 164" fill="none" stroke="#dc2626" stroke-width="2.4" marker-end="url(#arr-red)"/>
+<text x="486" y="132" font-size="10.3" fill="#0f172a" text-anchor="start">• 去程与返程混在同一条路，随时掉头背散射</text>
+<text x="486" y="153" font-size="10.3" fill="#dc2626" text-anchor="start" font-weight="700">• 每次乱撞都把电能变成晶格振动（焦耳热 I²R）</text>
+<text x="486" y="173" font-size="10.0" fill="#475569" text-anchor="start">• 芯片越做越薄，表面粗糙散射让发热雪上加霜</text>
+<rect x="16" y="206" width="728" height="162" rx="10" fill="#eff6ff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="36" cy="230" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="36" y="234" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">2</text>
+<text x="56" y="235" font-size="12.2" fill="#1d6fa5" text-anchor="start" font-weight="700">拓扑绝缘体（如硒化铋 Bi₂Se₃）：内部彻底绝缘，边界“自旋-动量锁死”绕过杂质！</text>
+<rect x="36" y="250" width="430" height="102" rx="10" fill="#e2e8f0" stroke="#64748b" stroke-width="1.5"/>
+<text x="251" y="308" font-size="10.2" fill="#475569" text-anchor="middle" font-weight="700">体态内部：绝缘禁区（带隙 ≈ 0.30 eV，室温电子钻不进去）</text>
+<circle cx="246" cy="264" r="13" fill="#475569"/>
+<text x="246" y="268" font-size="9.8" fill="#ffffff" text-anchor="middle" font-weight="700">杂</text>
+<path class="anim-glide" d="M 52 260 L 214 260 Q 246 294 278 260 L 444 260" fill="none" stroke="#1d4ed8" stroke-width="3.0" marker-end="url(#arr-blue)"/>
+<text x="134" y="255" font-size="9.9" fill="#1d6fa5" text-anchor="middle" font-weight="700">右行道：只准自旋 ↑</text>
+<text x="364" y="255" font-size="9.9" fill="#1d6fa5" text-anchor="middle" font-weight="700">绕过杂质继续前进 ↑</text>
+<line x1="444.0" y1="340.0" x2="56.0" y2="340.0" stroke="#6d28d9" stroke-width="2.3" stroke-linecap="round" stroke-dasharray="6,4" marker-end="url(#arr-purple)"/>
+<text x="251" y="334" font-size="9.8" fill="#6d28d9" text-anchor="middle" font-weight="600">反向车道：只准自旋 ↓（时间反演伙伴）</text>
+<text x="486" y="268" font-size="10.2" fill="#1d6fa5" text-anchor="start" font-weight="700">• 交规铁律：往右跑必须自旋 ↑，往左跑必须自旋 ↓</text>
+<text x="486" y="290" font-size="10.1" fill="#0f172a" text-anchor="start">• 撞见非磁性杂质想 180° 掉头？必须把 ↑ 翻成 ↓！</text>
+<text x="486" y="312" font-size="10.1" fill="#18794e" text-anchor="start" font-weight="700">• 普通灰尘没有磁性翻不动自旋 → 180° 背散射率 = 0！</text>
+<text x="486" y="334" font-size="10.0" fill="#475569" text-anchor="start">• 哪怕切掉一块角，新表面自动长出导电高速公路</text>
+<rect x="16" y="380" width="728" height="120" rx="10" fill="#f0fdf4" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="36" cy="404" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="36" y="408" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">3</text>
+<text x="56" y="409" font-size="11.9" fill="#18794e" text-anchor="start" font-weight="700">磁性拓扑绝缘体（量子反常霍尔效应 QAHE，薛其坤、常翠祖团队 2013 首测）：纯单向零电阻车道！</text>
+<rect x="36" y="424" width="430" height="62" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="251" y="460" font-size="10.0" fill="#0f766e" text-anchor="middle" font-weight="700">磁性体态绝缘（无需外加巨型磁铁！内部磁性自动清退逆行道）</text>
+<line x1="52.0" y1="432.0" x2="444.0" y2="432.0" stroke="#18794e" stroke-width="3.0" stroke-linecap="round" marker-end="url(#arr-green)"/>
+<line x1="444.0" y1="478.0" x2="52.0" y2="478.0" stroke="#18794e" stroke-width="3.0" stroke-linecap="round" marker-end="url(#arr-green)"/>
+<text x="251" y="444" font-size="9.8" fill="#18794e" text-anchor="middle" font-weight="700">上边缘只向右 →</text>
+<text x="251" y="474" font-size="9.8" fill="#18794e" text-anchor="middle" font-weight="700">← 下边缘只向左</text>
+<text x="486" y="440" font-size="10.1" fill="#0f172a" text-anchor="start">• 掺入铬(Cr)磁性原子打破时间反演，删掉一半车道</text>
+<text x="486" y="462" font-size="10.1" fill="#18794e" text-anchor="start" font-weight="700">• 上边缘连逆行车道都没修，电子想拐弯掉头都没路！</text>
+<text x="486" y="483" font-size="10.0" fill="#0f766e" text-anchor="start" font-weight="600">• 零外磁场下实现 R_xy = h/e²、纵向无耗散传输</text>
+</svg>

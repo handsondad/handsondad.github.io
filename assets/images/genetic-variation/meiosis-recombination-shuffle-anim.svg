@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">减数分裂同源重组交叉互换与独立分配单次动画及染色体分离变异图解</title>
+<desc id="desc">上图通过单次动画依次展示减数分裂前期I由SPO11酶启动的同源非姐妹染色单体交叉互换、中期I二十三对染色体独立分配产生838.8万种配子，以及终局四颗各不相同的单倍体配子；下图对比有丝分裂保真与减数分裂染色体不分离及全基因组加倍。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes chiasma-glow {
+        0%, 15% { opacity: 0.25; }
+        35%, 100% { opacity: 1; }
+      }
+      @keyframes swap-seg {
+        0%, 25% { opacity: 0; transform: translateY(-6px); }
+        48%, 100% { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes gamete-pop {
+        0%, 55% { opacity: 0.2; }
+        82%, 100% { opacity: 1; }
+      }
+      .anim-chiasma { animation: chiasma-glow 6.5s ease-out 1 forwards; }
+      .anim-swap { animation: swap-seg 6.5s ease-out 1 forwards; }
+      .anim-gametes { animation: gamete-pop 6.5s ease-out 1 forwards; }
+      @media (prefers-reduced-motion: reduce) {
+        .anim-chiasma, .anim-swap, .anim-gametes {
+          animation: none !important; opacity: 1 !important; transform: none !important;
+        }
+      }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<defs><marker id="arr-ink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 Z" fill="#475569"/></marker></defs>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">第三幕：减数分裂不是“复印机”，而是演化最疯狂的“三层基因洗牌机”！</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">为什么同一对父母生出的亲兄妹长相性格迥异？SPO11 主动断链互换 + 2²³ 独立分配把底牌洗出万亿花样</text>
+<rect x="22" y="68" width="716" height="224" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="90" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="42" y="94" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="60" y="95" font-size="11.4" fill="#0f172a" text-anchor="start" font-weight="700">减数分裂（一次复制、两次分裂）：把父母两套染色体剪接洗牌成独一无二的配子</text>
+<rect x="36" y="110" width="214" height="168" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="143" y="130" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">① 前期I：同源联会与交叉互换</text>
+<rect x="92" y="144" width="12" height="68" rx="6" fill="#1d6fa5"/>
+<rect x="110" y="144" width="12" height="68" rx="6" fill="#1d6fa5"/>
+<rect x="164" y="144" width="12" height="68" rx="6" fill="#c25014"/>
+<rect x="182" y="144" width="12" height="68" rx="6" fill="#c25014"/>
+<g class="anim-chiasma"><line x1="116" y1="162" x2="170" y2="198" stroke="#1d6fa5" stroke-width="5" stroke-linecap="round"/><line x1="170" y1="162" x2="116" y2="198" stroke="#c25014" stroke-width="5" stroke-linecap="round"/><circle cx="143" cy="180" r="8" fill="#ffffff" stroke="#b91c1c" stroke-width="2"/><text x="143" y="184" font-size="10" fill="#b91c1c" text-anchor="middle" font-weight="700">✂</text></g>
+<text x="143" y="232" font-size="9.5" fill="#b91c1c" text-anchor="middle" font-weight="700">SPO11 酶故意剪断约 250 处双链！</text>
+<text x="143" y="250" font-size="9.5" fill="#1e293b" text-anchor="middle">爷爷与外婆的基因片段当场互换</text>
+<text x="143" y="267" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="600">每条染色体平均交换 1～3 处</text>
+<line x1="254.0" y1="194.0" x2="272.0" y2="194.0" stroke="#475569" stroke-width="2.0" marker-end="url(#arr-ink)"/>
+<rect x="276" y="110" width="214" height="168" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="383" y="130" font-size="10.5" fill="#6d28d9" text-anchor="middle" font-weight="700">② 中期I：23对染色体随机站队</text>
+<g class="anim-swap"><rect x="316" y="146" width="12" height="58" rx="5" fill="#1d6fa5"/><rect x="334" y="146" width="12" height="38" rx="4" fill="#1d6fa5"/><rect x="334" y="180" width="12" height="24" rx="4" fill="#c25014"/><rect x="420" y="146" width="12" height="38" rx="4" fill="#c25014"/><rect x="420" y="180" width="12" height="24" rx="4" fill="#1d6fa5"/><rect x="438" y="146" width="12" height="58" rx="5" fill="#c25014"/><line x1="383.0" y1="142.0" x2="383.0" y2="210.0" stroke="#6d28d9" stroke-width="1.5" stroke-dasharray="3,2"/><text x="383" y="180" font-size="9.2" fill="#6d28d9" text-anchor="middle" font-weight="700" class="halo">左/右抛硬币</text></g>
+<text x="383" y="232" font-size="9.5" fill="#6d28d9" text-anchor="middle" font-weight="700">单凭左右随机分配：2²³ = 838.8 万种</text>
+<text x="383" y="250" font-size="9.5" fill="#b91c1c" text-anchor="middle" font-weight="700">精卵结合底牌：2⁴⁶ ≈ 70.4 万亿种！</text>
+<text x="383" y="267" font-size="9.4" fill="#1e293b" text-anchor="middle">相当于全球总人口的 8,500 倍以上</text>
+<line x1="494.0" y1="194.0" x2="512.0" y2="194.0" stroke="#475569" stroke-width="2.0" marker-end="url(#arr-ink)"/>
+<rect x="516" y="110" width="208" height="168" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="620" y="130" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="700">③ 终局：4 颗全异单倍体配子</text>
+<g class="anim-gametes">
+<circle cx="546" cy="178" r="20" fill="#ffffff" stroke="#18794e" stroke-width="1.8"/>
+<rect x="542" y="165" width="8" height="26" rx="4" fill="#1d6fa5"/>
+<circle cx="595" cy="178" r="20" fill="#ffffff" stroke="#18794e" stroke-width="1.8"/>
+<rect x="591" y="165" width="8" height="15" rx="3" fill="#1d6fa5"/>
+<rect x="591" y="178" width="8" height="13" rx="3" fill="#c25014"/>
+<circle cx="645" cy="178" r="20" fill="#ffffff" stroke="#18794e" stroke-width="1.8"/>
+<rect x="641" y="165" width="8" height="15" rx="3" fill="#c25014"/>
+<rect x="641" y="178" width="8" height="13" rx="3" fill="#1d6fa5"/>
+<circle cx="694" cy="178" r="20" fill="#ffffff" stroke="#18794e" stroke-width="1.8"/>
+<rect x="690" y="165" width="8" height="26" rx="4" fill="#c25014"/>
+</g>
+<text x="620" y="232" font-size="9.3" fill="#0f172a" text-anchor="middle" font-weight="700">1 颗全父本 + 2 颗新拼嵌合 + 1 颗全母本</text>
+<text x="620" y="250" font-size="9.5" fill="#1e293b" text-anchor="middle">哪怕一个新点突变都没发生，</text>
+<text x="620" y="267" font-size="9.5" fill="#18794e" text-anchor="middle" font-weight="700">每颗精卵也是从未存在过的新配方！</text>
+<rect x="22" y="304" width="350" height="150" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="326" r="10.5" fill="#f1f5f9" stroke="#475569" stroke-width="1.2"/>
+<text x="42" y="330" font-size="11.5" fill="#475569" text-anchor="middle" font-weight="700">2</text>
+<text x="60" y="331" font-size="11.4" fill="#0f172a" text-anchor="start" font-weight="700">有丝分裂 vs 减数分裂：保真与求变的双轨制</text>
+<text x="40" y="356" font-size="9.9" fill="#1e293b" text-anchor="start">• 体细胞有丝分裂（2n → 2n）：目标是“零走样复印”，</text>
+<text x="40" y="375" font-size="9.9" fill="#1e293b" text-anchor="start">  同源染色体互不联会互换；一旦失控积累突变只会引发</text>
+<text x="40" y="394" font-size="9.9" fill="#475569" text-anchor="start" font-weight="600">  个体衰老或肿瘤，随着个体去世归零，不传给下一代；</text>
+<text x="40" y="416" font-size="9.9" fill="#1e293b" text-anchor="start">• 生殖系减数分裂（2n → n）：专为跨代演化而生！把点突变</text>
+<text x="40" y="435" font-size="9.9" fill="#1d6fa5" text-anchor="start" font-weight="700">  创造的“新零件”与同源重组的“新组装”打包送进受精卵。</text>
+<rect x="388" y="304" width="350" height="150" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="408" cy="326" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="408" y="330" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">3</text>
+<text x="426" y="331" font-size="11.4" fill="#0f172a" text-anchor="start" font-weight="700">纺锤丝拉拽失手：非整倍体与全基因组加倍</text>
+<text x="406" y="356" font-size="9.9" fill="#1e293b" text-anchor="start">• 单条染色体不分离（Nondisjunction）：两姐妹或同源体</text>
+<text x="406" y="375" font-size="9.9" fill="#b91c1c" text-anchor="start" font-weight="600">  挤进同一颗配子，造成剂量失衡（如人类 21 三体综合征）；</text>
+<text x="406" y="397" font-size="9.9" fill="#1e293b" text-anchor="start">• 整套染色体翻倍（多倍化 Polyploidy）：在植物界直接催生</text>
+<text x="406" y="416" font-size="9.9" fill="#1e293b" text-anchor="start">  新物种（如六倍体普通小麦、无籽西瓜）；5亿年前寒武纪</text>
+<text x="406" y="435" font-size="9.9" fill="#18794e" text-anchor="start" font-weight="700">  脊椎动物祖先更是靠“两轮全基因组加倍 (2R)”跃升复杂生命！</text>
+<rect x="22" y="466" width="716" height="40" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="380" y="491" font-size="11.0" fill="#0f172a" text-anchor="middle" font-weight="600">一句话分清两大源泉：DNA 复制突变负责发明“新等位基因字母”，减数分裂重组负责把字母拼成“亿万种新句子”！</text>
+</svg>

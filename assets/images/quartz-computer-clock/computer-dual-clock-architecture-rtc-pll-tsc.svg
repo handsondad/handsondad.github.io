@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="524" viewBox="0 0 760 524" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">电脑双时钟架构：主板纽扣电池RTC实时时钟与高频晶振PLL倍频TSC系统时钟协作图</title>
+<desc id="desc">左栏展示CR2032供电的32.768kHz断电守夜RTC，右栏展示24至100MHz主晶振经PLL倍频至GHz驱动TSC与操作系统内核纳秒时钟</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="523" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="380.0" y="30" font-size="18.5" fill="#1e293b" text-anchor="middle" font-weight="700">拔掉电源插头半个月，电脑开机为什么还知道今天是几号？</text>
+<text x="380.0" y="52" font-size="12.2" fill="#64748b" text-anchor="middle">一台电脑里其实住着两套分工迥异的时钟：微安级“守夜更夫（RTC）”与十亿赫兹“狂飙节拍器（PLL+TSC）”</text>
+<rect x="22" y="68" width="326" height="336" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="38.0" y="82.0" width="294" height="22" rx="11.0" fill="#fffbeb" stroke="#b45309" stroke-width="1" stroke-opacity="0.35"/>
+<text x="185.0" y="97.0" font-size="12" fill="#b45309" text-anchor="middle" font-weight="600">第一套：硬件实时时钟 RTC（断电守夜人）</text>
+<rect x="38" y="122" width="294" height="92" rx="10" fill="#fffbeb" stroke="#fcd34d" stroke-width="1"/>
+<circle cx="82" cy="168" r="26" fill="#e2e8f0" stroke="#64748b" stroke-width="2"/>
+<text x="82" y="164" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="700">CR2032</text>
+<text x="82" y="180" font-size="9.2" fill="#1e293b" text-anchor="middle">3V 纽扣电池</text>
+<line x1="112.0" y1="168.0" x2="146.0" y2="168.0" stroke="#b45309" stroke-width="2.2" marker-end="url(#arr-orange)"/>
+<rect x="150" y="136" width="168" height="64" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="1"/>
+<text x="234" y="158" font-size="10.8" fill="#b45309" text-anchor="middle" font-weight="700">主板南桥/PCH 内置 RTC</text>
+<text x="234" y="176" font-size="10.3" fill="#1e293b" text-anchor="middle">+ 32.768 kHz 石英音叉</text>
+<text x="234" y="192" font-size="10.0" fill="#0f766e" text-anchor="middle" font-weight="700">（待机功耗 &lt; 1 μA！）</text>
+<text x="38" y="238" font-size="10.4" fill="#1e293b" text-anchor="start">• 源自 1984 年 IBM PC/AT 的 MC146818 芯片传统；</text>
+<text x="38" y="260" font-size="10.4" fill="#1e293b" text-anchor="start">• 哪怕主机彻底关机拔掉插线板，纽扣电池依然供它</text>
+<text x="38" y="282" font-size="10.4" fill="#1e293b" text-anchor="start">  每秒钟静静 +1，把年月日时分秒记在寄存器里；</text>
+<text x="38" y="304" font-size="10.4" fill="#1e293b" text-anchor="start">• 精度粗（通常只到秒级）、读取慢（走低速总线），</text>
+<text x="38" y="326" font-size="10.4" fill="#1e293b" text-anchor="start">  绝对没法拿来指挥每秒几十亿拍的 CPU 运算；</text>
+<text x="38" y="348" font-size="10.4" fill="#dc2626" text-anchor="start" font-weight="700">• 一旦五六年电池耗尽 → 开机瞬间时间倒退回</text>
+<text x="38" y="370" font-size="10.4" fill="#dc2626" text-anchor="start" font-weight="700">  1970-01-01 或主板出厂日，BIOS 报错提示按 F1！</text>
+<line x1="350.0" y1="168.0" x2="396.0" y2="168.0" stroke="#6d28d9" stroke-width="2.8" marker-end="url(#arr-blue)"/>
+<text x="373" y="144" font-size="10.2" fill="#6d28d9" text-anchor="middle" font-weight="700">开机瞬间</text>
+<text x="373" y="159" font-size="10.2" fill="#6d28d9" text-anchor="middle" font-weight="700">读取一次</text>
+<rect x="400" y="68" width="338" height="336" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="416.0" y="82.0" width="304" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="568.0" y="97.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">第二套：高频系统时钟树（开机狂飙总指挥）</text>
+<rect x="416" y="122" width="138" height="62" rx="8" fill="#f0fdfa" stroke="#5eead4" stroke-width="1"/>
+<text x="485" y="145" font-size="10.6" fill="#0f766e" text-anchor="middle" font-weight="700">高频基准石英晶振</text>
+<text x="485" y="163" font-size="10.4" fill="#0f172a" text-anchor="middle" font-weight="700">24 / 25 / 100 MHz</text>
+<text x="485" y="178" font-size="9.5" fill="#64748b" text-anchor="middle">（AT 切薄晶片）</text>
+<line x1="556.0" y1="153.0" x2="584.0" y2="153.0" stroke="#1d6fa5" stroke-width="2.2" marker-end="url(#arr-blue)"/>
+<rect x="588" y="122" width="134" height="62" rx="8" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<text x="655" y="145" font-size="10.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">PLL 锁相环倍频器</text>
+<text x="655" y="163" font-size="10.6" fill="#0f172a" text-anchor="middle" font-weight="700">×40 倍 → 4.0 GHz</text>
+<text x="655" y="178" font-size="9.6" fill="#1d6fa5" text-anchor="middle">（每秒 40 亿拍！）</text>
+<rect x="416" y="198" width="306" height="86" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="428" y="218" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">硬件高速计数器阵列：</text>
+<text x="428" y="238" font-size="10.1" fill="#1e293b" text-anchor="start">• CPU 内部恒定速率 TSC 寄存器（RDTSC 指令，0.25 ns 级极速读数）</text>
+<text x="428" y="256" font-size="10.1" fill="#1e293b" text-anchor="start">• 主板平台定时器 HPET（≥10 MHz）与 ACPI PM Timer（3.58 MHz）</text>
+<text x="428" y="274" font-size="10.1" fill="#1e293b" text-anchor="start">• ARM 架构通用系统计数器（Generic Timer，现代固定 1 GHz）</text>
+<rect x="416" y="296" width="306" height="92" rx="8" fill="#f3e8ff" stroke="#d8b4fe" stroke-width="1"/>
+<text x="428" y="317" font-size="10.8" fill="#6d28d9" text-anchor="start" font-weight="700">操作系统内核软件时钟（Linux / Windows / macOS）：</text>
+<text x="428" y="338" font-size="10.2" fill="#1e293b" text-anchor="start">• 接过开机时 RTC 报出的日历初值后，彻底甩开慢吞吞的 RTC；</text>
+<text x="428" y="357" font-size="10.2" fill="#1e293b" text-anchor="start">• 用快速移位乘法 ns ≈ (ticks × mult) &gt;&gt; shift 把硬件计数值</text>
+<text x="428" y="376" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">  实时换算成纳秒级系统时间，关机瞬间断电清零！</text>
+<rect x="22" y="418" width="716" height="86" rx="12" fill="#f0fdfa" stroke="#5eead4" stroke-width="1"/>
+<text x="40" y="443" font-size="12" fill="#0f766e" text-anchor="start" font-weight="700">灵魂追问：为什么不直接切一块每秒震动 40 亿次（4 GHz）的石英晶片给 CPU 用，非要靠 PLL 锁相环倍频？</text>
+<text x="40" y="465" font-size="10.6" fill="#1e293b" text-anchor="start">• AT 切石英晶片基频与厚度成反比（f ≈ 1.66 MHz·mm ÷ 厚度 d）：25 MHz 晶片厚约 66 微米（接近头发丝），结实耐造；</text>
+<text x="40" y="486" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">• 若硬切到 4,000 MHz 基频，石英片厚度只剩 0.41 微米（比肥皂泡膜还薄）——一碰就碎成渣！所以必须“低频稳晶振 + 电子倍频”。</text>
+</svg>

@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="460" viewBox="0 0 760 460" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">TFT-LCD七层子像素截面结构、4K主动矩阵寻址与光子透射率漏斗图</title>
+<desc id="desc">左图自上而下拆解TFT-LCD七层三明治结构并验证4K分辨率下主动矩阵把引线从2488万根压缩到13680根（减少1819倍）；右图定量计算背光经过下偏振片、开口率、RGB滤光片和检偏器后仅剩约5.9%（含DBEF约8%~9%）的能量漏斗。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-ink" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#0f172a"/>
+  </marker>
+  <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#6d28d9"/>
+  </marker>
+  <marker id="arr-red" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#dc2626"/>
+  </marker>
+  <marker id="arr-teal" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#0f766e"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="459" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="380" y="28" font-size="16.8" fill="#0f172a" text-anchor="middle" font-weight="700">液晶自己一粒光子都不发：七层“三明治”解剖与 6% 光子闯关账本</text>
+<text x="380" y="48" font-size="12" fill="#64748b" text-anchor="middle">4K 屏幕靠 1.37 万根行列母线指挥 2488 万个子像素阀门，但超九成背光能量损耗在闯关路上</text>
+<rect x="24" y="62" width="366" height="384" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="38.0" y="72.0" width="205" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="140.5" y="87.0" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">左图：单个子像素的七层光学三明治（自上而下）</text>
+<rect x="38" y="104" width="338" height="31" rx="6" fill="#f1f5f9" stroke="#475569" stroke-width="1.1"/>
+<text x="48" y="124" font-size="11" fill="#475569" text-anchor="start" font-weight="700">⑦ 上偏振片 (90°)</text>
+<text x="368" y="124" font-size="10" fill="#1e293b" text-anchor="end">决定拧转后的光放行多少</text>
+<rect x="38" y="140" width="338" height="31" rx="6" fill="#fef2f2" stroke="#dc2626" stroke-width="1.1"/>
+<text x="48" y="160" font-size="11" fill="#dc2626" text-anchor="start" font-weight="700">⑥ RGB 彩色滤光片</text>
+<text x="368" y="160" font-size="10" fill="#1e293b" text-anchor="end">拆成红绿蓝三扇滤色小窗</text>
+<rect x="38" y="176" width="338" height="31" rx="6" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.1"/>
+<text x="48" y="196" font-size="11" fill="#0f766e" text-anchor="start" font-weight="700">⑤ 透明电极 + 配向膜</text>
+<text x="368" y="196" font-size="10" fill="#1e293b" text-anchor="end">纳米沟槽锚定分子初始方向</text>
+<rect x="38" y="212" width="338" height="31" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="1.1"/>
+<text x="48" y="232" font-size="11" fill="#18794e" text-anchor="start" font-weight="700">④ 液晶层 (3~5 μm)</text>
+<text x="368" y="232" font-size="10" fill="#1e293b" text-anchor="end">比发丝细二十倍的旋光阀门</text>
+<rect x="38" y="248" width="338" height="31" rx="6" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.1"/>
+<text x="48" y="268" font-size="11" fill="#6d28d9" text-anchor="start" font-weight="700">③ TFT 开关 + 电容 Cs</text>
+<text x="368" y="268" font-size="10" fill="#1e293b" text-anchor="end">逐行锁住灰阶电压防漏电</text>
+<rect x="38" y="284" width="338" height="31" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="48" y="304" font-size="11" fill="#1d6fa5" text-anchor="start" font-weight="700">② 下偏振片 + 增亮膜</text>
+<text x="368" y="304" font-size="10" fill="#1e293b" text-anchor="end">起偏过滤 + DBEF 回收废光</text>
+<rect x="38" y="320" width="338" height="31" rx="6" fill="#fffbeb" stroke="#b45309" stroke-width="1.1"/>
+<text x="48" y="340" font-size="11" fill="#b45309" text-anchor="start" font-weight="700">① LED 背光模组</text>
+<text x="368" y="340" font-size="10" fill="#1e293b" text-anchor="end">整块液晶屏唯一真正光源</text>
+<rect x="38" y="362" width="338" height="72" rx="8" fill="#f8fafc" stroke="#93c5fd" stroke-width="1.2"/>
+<text x="50" y="381" font-size="11.2" fill="#1d6fa5" text-anchor="start" font-weight="700">4K 主动矩阵寻址（AM-TFT）为什么离不开晶体管？</text>
+<text x="50" y="401" font-size="10.5" fill="#1e293b" text-anchor="start">• 3840×2160×3 = 24,883,200 个子像素，直连需两千四百万根线</text>
+<text x="50" y="420" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">• 行列网格仅需 11,520 列 + 2,160 行 = 13,680 根线（骤减 1819 倍！）</text>
+<rect x="404" y="62" width="332" height="384" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="418.0" y="72.0" width="230" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="533.0" y="87.0" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="600">右图：100% 背光出发，为何到人眼只剩 ~6%？</text>
+<text x="420" y="108" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">出发：LED 白光背光模组总光通量</text>
+<rect x="420" y="115" width="236" height="16" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.8"/>
+<rect x="420" y="115" width="236.0" height="16" rx="4" fill="#b45309" stroke="#b45309" stroke-width="0.8"/>
+<text x="666" y="127" font-size="11.5" fill="#b45309" text-anchor="start" font-weight="700">100%</text>
+<text x="420" y="144" font-size="10" fill="#64748b" text-anchor="start">漫反射匀光后向上射出</text>
+<text x="420" y="160" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">第一关：下偏振片拦掉正交偏振分量</text>
+<rect x="420" y="167" width="236" height="16" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.8"/>
+<rect x="420" y="167" width="101.48" height="16" rx="4" fill="#1d6fa5" stroke="#1d6fa5" stroke-width="0.8"/>
+<text x="666" y="179" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">43%</text>
+<text x="420" y="196" font-size="10" fill="#64748b" text-anchor="start">理论上限 50%，实测吸收后剩 ~43%</text>
+<text x="420" y="212" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">第二关：TFT 晶体管走线与黑矩阵遮挡</text>
+<rect x="420" y="219" width="236" height="16" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.8"/>
+<rect x="420" y="219" width="63.012" height="16" rx="4" fill="#6d28d9" stroke="#6d28d9" stroke-width="0.8"/>
+<text x="666" y="231" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">26.7%</text>
+<text x="420" y="248" font-size="10" fill="#64748b" text-anchor="start">子像素透光开口率约 62%</text>
+<text x="420" y="264" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">第三关：RGB 吸收式彩色滤光片</text>
+<rect x="420" y="271" width="236" height="16" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.8"/>
+<rect x="420" y="271" width="16.992" height="16" rx="4" fill="#dc2626" stroke="#dc2626" stroke-width="0.8"/>
+<text x="666" y="283" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">7.2%</text>
+<text x="420" y="300" font-size="10" fill="#64748b" text-anchor="start">红滤片吃掉绿蓝光，损失逾七成！</text>
+<text x="420" y="316" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">终点：液晶盒效率与上检偏器损耗</text>
+<rect x="420" y="323" width="236" height="16" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.8"/>
+<rect x="420" y="323" width="13.924000000000001" height="16" rx="4" fill="#18794e" stroke="#18794e" stroke-width="0.8"/>
+<text x="666" y="335" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">~5.9%</text>
+<text x="420" y="352" font-size="10" fill="#64748b" text-anchor="start">贴 DBEF 反射增亮膜可救回至 ~8–9%</text>
+<rect x="418" y="368" width="304" height="66" rx="8" fill="#fef1e8" stroke="#fdba74" stroke-width="1.2"/>
+<text x="430" y="388" font-size="11" fill="#c25014" text-anchor="start" font-weight="700">工程启示（Huang &amp; Wu, 2020, PMC7303200）：</text>
+<text x="430" y="406" font-size="10.4" fill="#1e293b" text-anchor="start">想让 65 寸 4K 液晶电视飙到 1000 nit 峰值亮度，背光整机</text>
+<text x="430" y="423" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="700">功耗高达 ~280 W——因为超九成光子被偏振片与色片吃掉了。</text>
+</svg>

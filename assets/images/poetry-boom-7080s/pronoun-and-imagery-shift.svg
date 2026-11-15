@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="450" viewBox="0 0 760 450" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">中国七八十年代诗歌三阶段人称、意象与审美姿态对比图</title>
+<desc id="desc">横向对比三种诗歌语言范式：旧式传声筒以集体“我们”和红日战旗口号压抑私人情感；归来者与朦胧诗恢复独立思考的“我”与平等“你”，借黑夜眼睛、橡树木棉等意象击穿千万读者的心灵积郁；80年代中后期第三代诗进一步转向日常口语、反崇高与现代汉语实验。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="449" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">几行诗凭什么让人热泪盈眶？从“高音喇叭”到“觉醒之我”的语言革命</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">读懂七八十年代诗歌冲击力，最直观的钥匙是看主语代词、核心意象与说话姿态发生了怎样剧烈的翻转。</text>
+<rect x="20" y="66" width="228" height="48" rx="8" fill="#475569" stroke="none" stroke-width="1"/>
+<text x="134.0" y="86" font-size="11.0" fill="#ffffff" text-anchor="middle" font-weight="700">旧惯性｜传声筒式的“大我”</text>
+<text x="134.0" y="104" font-size="9.6" fill="#e2e8f0" text-anchor="middle">60年代末–70年代中主流范式</text>
+<rect x="20" y="120" width="228" height="316" rx="8" fill="#ffffff" stroke="#475569" stroke-width="1.2"/>
+<rect x="28" y="132" width="212" height="52" rx="5" fill="#f1f5f9" stroke="none" stroke-width="1"/>
+<text x="34" y="148" font-size="9.5" fill="#475569" text-anchor="start" font-weight="700">【主语人称】</text>
+<text x="34" y="164" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">“我们 / 亿万人民 / 战友”</text>
+<text x="34" y="178" font-size="9.0" fill="#64748b" text-anchor="start">个体“小我”必须隐身或作检讨</text>
+<rect x="28" y="192" width="212" height="52" rx="5" fill="#f1f5f9" stroke="none" stroke-width="1"/>
+<text x="34" y="208" font-size="9.5" fill="#475569" text-anchor="start" font-weight="700">【高频意象】</text>
+<text x="34" y="224" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">红日 · 东风 · 战旗 · 炉火</text>
+<text x="34" y="238" font-size="9.0" fill="#64748b" text-anchor="start">高度统一的公共政治象征符号库</text>
+<rect x="28" y="252" width="212" height="52" rx="5" fill="#f1f5f9" stroke="none" stroke-width="1"/>
+<text x="34" y="268" font-size="9.5" fill="#475569" text-anchor="start" font-weight="700">【句式声调】</text>
+<text x="34" y="284" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">感叹号密集 · 祈使口号句</text>
+<text x="34" y="298" font-size="9.0" fill="#64748b" text-anchor="start">居高临下的广场齐声朗诵腔</text>
+<rect x="28" y="312" width="212" height="52" rx="5" fill="#f1f5f9" stroke="none" stroke-width="1"/>
+<text x="34" y="328" font-size="9.5" fill="#475569" text-anchor="start" font-weight="700">【情感边界】</text>
+<text x="34" y="344" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">只许写昂扬斗志与集体颂歌</text>
+<text x="34" y="358" font-size="9.0" fill="#64748b" text-anchor="start">私人孤独、迷惘与爱情被视作小资</text>
+<rect x="28" y="372" width="212" height="52" rx="5" fill="#f1f5f9" stroke="none" stroke-width="1"/>
+<text x="34" y="388" font-size="9.5" fill="#475569" text-anchor="start" font-weight="700">【读者体验】</text>
+<text x="34" y="404" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">被动仰视与跟读，千篇一面</text>
+<text x="34" y="418" font-size="9.0" fill="#64748b" text-anchor="start">真实的生活痛感在纸面上找不到出口</text>
+<rect x="266" y="66" width="228" height="48" rx="8" fill="#1d6fa5" stroke="none" stroke-width="1"/>
+<text x="380.0" y="86" font-size="11.0" fill="#ffffff" text-anchor="middle" font-weight="700">第一变｜归来者与朦胧诗“觉醒之我”</text>
+<text x="380.0" y="104" font-size="9.6" fill="#e2e8f0" text-anchor="middle">70年代地下潜流 → 1978–1984主潮</text>
+<rect x="266" y="120" width="228" height="316" rx="8" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.2"/>
+<rect x="274" y="132" width="212" height="52" rx="5" fill="#eaf4fb" stroke="none" stroke-width="1"/>
+<text x="280" y="148" font-size="9.5" fill="#1d6fa5" text-anchor="start" font-weight="700">【主语人称】</text>
+<text x="280" y="164" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">独立的“我”与平等的“你”</text>
+<text x="280" y="178" font-size="9.0" fill="#64748b" text-anchor="start">个人良知、怀疑权利与独立人格归来</text>
+<rect x="274" y="192" width="212" height="52" rx="5" fill="#eaf4fb" stroke="none" stroke-width="1"/>
+<text x="280" y="208" font-size="9.5" fill="#1d6fa5" text-anchor="start" font-weight="700">【高频意象】</text>
+<text x="280" y="224" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">黑夜与眼睛 · 橡树与木棉 · 礁石</text>
+<text x="280" y="238" font-size="9.0" fill="#64748b" text-anchor="start">用自然与生命隐喻折射历史创伤与尊严</text>
+<rect x="274" y="252" width="212" height="52" rx="5" fill="#eaf4fb" stroke="none" stroke-width="1"/>
+<text x="280" y="268" font-size="9.5" fill="#1d6fa5" text-anchor="start" font-weight="700">【句式声调】</text>
+<text x="280" y="284" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">复调追问 · 通感 · 错位蒙太奇</text>
+<text x="280" y="298" font-size="9.0" fill="#64748b" text-anchor="start">沉思、悲悯而富于张力的心灵独白</text>
+<rect x="274" y="312" width="212" height="52" rx="5" fill="#eaf4fb" stroke="none" stroke-width="1"/>
+<text x="280" y="328" font-size="9.5" fill="#1d6fa5" text-anchor="start" font-weight="700">【情感边界】</text>
+<text x="280" y="344" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">直面历史伤痕、信仰重建与独立爱情</text>
+<text x="280" y="358" font-size="9.0" fill="#64748b" text-anchor="start">拒绝依附攀援，宣告“木棉作为树的形象”</text>
+<rect x="274" y="372" width="212" height="52" rx="5" fill="#eaf4fb" stroke="none" stroke-width="1"/>
+<text x="280" y="388" font-size="9.5" fill="#1d6fa5" text-anchor="start" font-weight="700">【读者体验】</text>
+<text x="280" y="404" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">灵魂击穿感：“替我说出了憋十年的话！”</text>
+<text x="280" y="418" font-size="9.0" fill="#64748b" text-anchor="start">电台一播有人捏裂收音机，手抄本疯传全国</text>
+<rect x="512" y="66" width="228" height="48" rx="8" fill="#18794e" stroke="none" stroke-width="1"/>
+<text x="626.0" y="86" font-size="11.0" fill="#ffffff" text-anchor="middle" font-weight="700">第二变｜第三代“日常肉身与口语”</text>
+<text x="626.0" y="104" font-size="9.6" fill="#e2e8f0" text-anchor="middle">1984–1989先锋裂变期</text>
+<rect x="512" y="120" width="228" height="316" rx="8" fill="#ffffff" stroke="#18794e" stroke-width="1.2"/>
+<rect x="520" y="132" width="212" height="52" rx="5" fill="#e7f6ee" stroke="none" stroke-width="1"/>
+<text x="526" y="148" font-size="9.5" fill="#18794e" text-anchor="start" font-weight="700">【主语人称】</text>
+<text x="526" y="164" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">街头凡人“我 / 他 / 某个人”</text>
+<text x="526" y="178" font-size="9.0" fill="#64748b" text-anchor="start">主动走下英雄纪念碑，还原世俗普通人</text>
+<rect x="520" y="192" width="212" height="52" rx="5" fill="#e7f6ee" stroke="none" stroke-width="1"/>
+<text x="526" y="208" font-size="9.5" fill="#18794e" text-anchor="start" font-weight="700">【高频意象】</text>
+<text x="526" y="224" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">大雁塔台阶 · 茶馆 · 街道 · 苹果</text>
+<text x="526" y="238" font-size="9.0" fill="#64748b" text-anchor="start">剥去崇高光环，直写日常器物与凡俗现场</text>
+<rect x="520" y="252" width="212" height="52" rx="5" fill="#e7f6ee" stroke="none" stroke-width="1"/>
+<text x="526" y="268" font-size="9.5" fill="#18794e" text-anchor="start" font-weight="700">【句式声调】</text>
+<text x="526" y="284" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">冷峻口语 · 反讽叙事 · 语感实验</text>
+<text x="526" y="298" font-size="9.0" fill="#64748b" text-anchor="start">消解隐喻深度，追求现代汉语自身弹性</text>
+<rect x="520" y="312" width="212" height="52" rx="5" fill="#e7f6ee" stroke="none" stroke-width="1"/>
+<text x="526" y="328" font-size="9.5" fill="#18794e" text-anchor="start" font-weight="700">【情感边界】</text>
+<text x="526" y="344" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">调侃宏大叙事、书写都市青年个体经验</text>
+<text x="526" y="358" font-size="9.0" fill="#64748b" text-anchor="start">同代还并存海子等“麦地与太阳”神性长诗</text>
+<rect x="520" y="372" width="212" height="52" rx="5" fill="#e7f6ee" stroke="none" stroke-width="1"/>
+<text x="526" y="388" font-size="9.5" fill="#18794e" text-anchor="start" font-weight="700">【读者体验】</text>
+<text x="526" y="404" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">大学诗社与民刊圈层狂飙突进</text>
+<text x="526" y="418" font-size="9.0" fill="#64748b" text-anchor="start">审美迅速专业化，与大众广场朗诵渐行渐远</text>
+</svg>

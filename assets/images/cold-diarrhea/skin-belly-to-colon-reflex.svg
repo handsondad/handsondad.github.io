@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="456" viewBox="0 0 760 456" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">腹部受凉激活皮肤TRPM8受体经脊髓躯体内脏反射与下丘脑CRF轴诱发结肠高动力图</title>
+<desc id="desc">顶部说明腹腔维持37摄氏度恒温并非物理结冰；下方分三站展示腹壁皮温低于26摄氏度开启TRPM8通道，经T7至T12同节段脊髓躯体内脏反射及下丘脑CRF脑肠轴双路放大，触发结肠高幅推进性收缩与黏液氯离子分泌。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="455" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">肚皮吹了阵凉风，肠子并没有结冰（恒温 37 ℃），为什么几分钟后大肠就开始翻江倒海？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">冷风不是把肠道“冻坏了”，而是按响了腹壁冷觉受体 TRPM8，通过同节段脊髓反射与脑–肠轴拉响排空警报</text>
+<rect x="20" y="62" width="720" height="66" rx="10" fill="#f0fdfa" stroke="#0f766e" stroke-width="1"/>
+<text x="36" y="84" font-size="13.5" fill="#0f766e" text-anchor="start" font-weight="700">先破除一个直觉误会：踢被子或吹 20 ℃ 空调，冷空气根本冻不透你的肚皮！</text>
+<text x="36" y="104" font-size="9.3" fill="#0f172a" text-anchor="start" font-weight="600">• 人体是精密恒温动物：腹壁脂肪与丰富毛细血管网会把腹腔深处的肠道严格维持在 ~37.0 ℃；</text>
+<text x="36" y="120" font-size="9.1" fill="#1e293b" text-anchor="start">• 哪怕一口喝下 220 mL 的 4 ℃ 冰水，胃肠道仅花约 7.3 千卡热量（两口苹果的能量）就能把它捂热 —— 真正闯祸的是神经电信号！</text>
+<rect x="20" y="140" width="228" height="302" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="154.0" width="178" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="123.0" y="169.0" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="600">第 1 站：腹壁皮肤分子门铃</text>
+<text x="34" y="196" font-size="11.2" fill="#1d6fa5" text-anchor="start" font-weight="700">诺奖冷觉通道 TRPM8 开启</text>
+<rect x="34" y="210" width="200" height="108" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="134" y="232" font-size="9.6" fill="#0f172a" text-anchor="middle" font-weight="700">肚脐与腹壁皮肤表层降温</text>
+<text x="134" y="254" font-size="11.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">皮温跌破 ~26 ℃ 阈值</text>
+<text x="134" y="275" font-size="8.8" fill="#1e293b" text-anchor="middle">TRPM8 阳离子通道弹开 (Ca²⁺/Na⁺内流)</text>
+<text x="134" y="294" font-size="8.7" fill="#64748b" text-anchor="middle">(若严寒 &lt;17 ℃ 再叠加 TRPA1 痛冷通道)</text>
+<text x="134" y="311" font-size="9.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">↓ 化作高频冷觉神经冲动</text>
+<text x="34" y="340" font-size="9.5" fill="#0f172a" text-anchor="start" font-weight="700">• 为什么肚脐眼周围格外怕凉？</text>
+<text x="34" y="359" font-size="9.1" fill="#1e293b" text-anchor="start">  手脸常年裸露已建立强血管适应；</text>
+<text x="34" y="377" font-size="9.1" fill="#1e293b" text-anchor="start">  腹部常年盖衣、表皮薄且冷感受器密，</text>
+<text x="34" y="395" font-size="9.1" fill="#0f172a" text-anchor="start" font-weight="700">  更关键的是它的传入神经直通管辖</text>
+<text x="34" y="413" font-size="9.2" fill="#1d6fa5" text-anchor="start" font-weight="700">  肠道的 T7–T12 胸段脊髓！</text>
+<line x1="248.0" y1="286.0" x2="264.0" y2="286.0" stroke="#1d6fa5" stroke-width="2.2" marker-end="url(#arr-blue)"/>
+<rect x="266" y="140" width="228" height="302" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="280.0" y="154.0" width="178" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="369.0" y="169.0" font-size="9.6" fill="#6d28d9" text-anchor="middle" font-weight="600">第 2 站：脊髓与下丘脑中枢</text>
+<text x="280" y="196" font-size="11.2" fill="#6d28d9" text-anchor="start" font-weight="700">两条神经通路同步拉响警报</text>
+<rect x="280" y="210" width="200" height="102" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="292" y="230" font-size="9.5" fill="#6d28d9" text-anchor="start" font-weight="700">通路 A：躯体–内脏同节段反射</text>
+<text x="292" y="249" font-size="8.9" fill="#1e293b" text-anchor="start">• 腹壁皮肤神经 (T7–T12) 与肠道内脏</text>
+<text x="292" y="266" font-size="8.9" fill="#1e293b" text-anchor="start">  神经在脊髓背角汇聚进同一批节段；</text>
+<text x="292" y="284" font-size="8.9" fill="#0f172a" text-anchor="start" font-weight="700">• 皮肤冷信号直接跨突触改写自主神</text>
+<text x="292" y="301" font-size="8.9" fill="#6d28d9" text-anchor="start" font-weight="700">  经输出（无需大脑思考即秒级响应）！</text>
+<rect x="280" y="324" width="200" height="104" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="1"/>
+<text x="292" y="344" font-size="9.5" fill="#b45309" text-anchor="start" font-weight="700">通路 B：下丘脑 CRF 应激脑–肠轴</text>
+<text x="292" y="363" font-size="8.9" fill="#1e293b" text-anchor="start">• 寒冷作为急性生存应激源，促使下</text>
+<text x="292" y="380" font-size="8.9" fill="#1e293b" text-anchor="start">  丘脑室旁核分泌促肾上腺皮质激素</text>
+<text x="292" y="397" font-size="8.9" fill="#0f172a" text-anchor="start" font-weight="700">  释放因子 (CRF)，激活迷走/骶部盆</text>
+<text x="292" y="414" font-size="8.9" fill="#b45309" text-anchor="start" font-weight="700">  副交感神经向结肠下达排空指令！</text>
+<line x1="494.0" y1="286.0" x2="510.0" y2="286.0" stroke="#c25014" stroke-width="2.2" marker-end="url(#arr-orange)"/>
+<rect x="512" y="140" width="228" height="302" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="526.0" y="154.0" width="174" height="22" rx="11.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="613.0" y="169.0" font-size="9.6" fill="#dc2626" text-anchor="middle" font-weight="600">第 3 站：结肠效应器暴走</text>
+<text x="526" y="196" font-size="11.2" fill="#dc2626" text-anchor="start" font-weight="700">强力推进收缩 + 分泌滑润液</text>
+<rect x="526" y="210" width="200" height="128" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1"/>
+<text x="538" y="231" font-size="9.4" fill="#dc2626" text-anchor="start" font-weight="700">1. 高幅推进性收缩 (GMC)：</text>
+<text x="538" y="249" font-size="8.9" fill="#1e293b" text-anchor="start">   平时温和分节揉捏的大肠突然改用</text>
+<text x="538" y="266" font-size="8.9" fill="#1e293b" text-anchor="start">   长距离强力蠕动波（听见肚里咕噜</text>
+<text x="538" y="283" font-size="8.9" fill="#0f172a" text-anchor="start" font-weight="700">   肠鸣音 + 阵发性拧痛）！</text>
+<text x="538" y="303" font-size="9.4" fill="#c25014" text-anchor="start" font-weight="700">2. 黏膜分泌 Cl⁻ 与黏液：</text>
+<text x="538" y="321" font-size="8.8" fill="#1e293b" text-anchor="start">   肠神经丛释放乙酰胆碱/5-HT 润滑肠腔。</text>
+<text x="526" y="358" font-size="9.2" fill="#0f172a" text-anchor="start" font-weight="700">• 演化视角假说：遇到寒冷或突发</text>
+<text x="526" y="376" font-size="9.1" fill="#1e293b" text-anchor="start">  应激时，身体优先保核心体温与肌</text>
+<text x="526" y="394" font-size="9.1" fill="#1e293b" text-anchor="start">  肉供血，干脆利落地清空大肠存货</text>
+<text x="526" y="412" font-size="9.1" fill="#1e293b" text-anchor="start">  以减轻内脏负担（与考前紧张拉肚</text>
+<text x="526" y="429" font-size="9.1" fill="#dc2626" text-anchor="start" font-weight="700">  子共用同一条 CRF-R1 通路！）。</text>
+</svg>

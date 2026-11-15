@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="444" viewBox="0 0 760 444" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">乳糖不耐受与牛奶蛋白过敏的靶点机制、症状及零乳糖牛奶适用性对比图</title>
+<desc id="desc">左栏梳理乳糖不耐受针对乳糖双糖、属刷状缘酶缺口、具12克剂量阈值且可安全饮用0乳糖牛奶；右栏梳理牛奶蛋白过敏针对酪蛋白与乳清蛋白、属IgE或T细胞免疫反应、高发于1岁内婴儿且严禁用0乳糖牛奶替代深度水解或氨基酸配方。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="443" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">千万别混为一谈：乳糖不耐受 ≠ 牛奶蛋白过敏！（换错奶粉可能出大事）</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">一个是肠道缺把“剪糖剪刀”（剂量问题，可喝 0乳糖奶）；一个是免疫系统对“蛋白质”拉响防空警报！</text>
+<rect x="20" y="62" width="354" height="368" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="34" y="86" font-size="13.5" fill="#1d6fa5" text-anchor="start" font-weight="700">① 乳糖不耐受 (Lactose Intolerance)</text>
+<rect x="34.0" y="96.0" width="268" height="20" rx="10.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="168.0" y="109.6" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="600">消化系统 · 刷状缘酶缺口（全球 ~68% 成人）</text>
+<rect x="386" y="62" width="354" height="368" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="400" y="86" font-size="13.5" fill="#dc2626" text-anchor="start" font-weight="700">② 牛奶蛋白过敏 (Cow&#x27;s Milk Allergy)</text>
+<rect x="400.0" y="96.0" width="288" height="20" rx="10.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="544.0" y="109.6" font-size="9.6" fill="#dc2626" text-anchor="middle" font-weight="600">免疫系统 · IgE / T细胞异常攻击（约 2%–3% 婴儿）</text>
+<rect x="34" y="128" width="326" height="41" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="44" y="153" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="700">锁定目标：</text>
+<text x="106" y="153" font-size="9.4" fill="#1d6fa5" text-anchor="start" font-weight="700">乳糖 C₁₂H₂₂O₁₁（双糖 / 碳水化合物）</text>
+<rect x="400" y="128" width="326" height="41" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="410" y="153" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="700">锁定目标：</text>
+<text x="472" y="153" font-size="9.3" fill="#dc2626" text-anchor="start" font-weight="700">酪蛋白、β-乳球蛋白等（大分子蛋白质抗原！）</text>
+<rect x="34" y="177" width="326" height="41" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="44" y="202" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="700">发病原理：</text>
+<text x="106" y="202" font-size="9.4" fill="#1e293b" text-anchor="start" font-weight="400">小肠乳糖酶不足 → 肠腔渗透抽水 + 结肠产气</text>
+<rect x="400" y="177" width="326" height="41" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="410" y="202" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="700">发病原理：</text>
+<text x="472" y="202" font-size="9.3" fill="#1e293b" text-anchor="start" font-weight="400">IgE 交联肥大细胞释放组胺，引发全身免疫炎症</text>
+<rect x="34" y="226" width="326" height="41" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="44" y="251" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="700">高发人群：</text>
+<text x="106" y="251" font-size="9.4" fill="#1e293b" text-anchor="start" font-weight="400">断奶后儿童与成人（或急性肠炎后继发 2–4 周）</text>
+<rect x="400" y="226" width="326" height="41" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="410" y="251" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="700">高发人群：</text>
+<text x="472" y="251" font-size="9.3" fill="#1e293b" text-anchor="start" font-weight="400">1 岁以内婴幼儿最高发（多数在学龄前逐渐耐受）</text>
+<rect x="34" y="275" width="326" height="41" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="44" y="300" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="700">发作表现：</text>
+<text x="106" y="300" font-size="9.4" fill="#c25014" text-anchor="start" font-weight="700">仅限消化道：肠鸣、腹胀、排气、水样腹泻</text>
+<rect x="400" y="275" width="326" height="41" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="410" y="300" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="700">发作表现：</text>
+<text x="472" y="300" font-size="9.3" fill="#dc2626" text-anchor="start" font-weight="700">皮肤荨麻疹/湿疹、呕吐便血、哮喘乃至过敏性休克!</text>
+<rect x="34" y="324" width="326" height="41" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="44" y="349" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="700">剂量门槛：</text>
+<text x="106" y="349" font-size="9.4" fill="#18794e" text-anchor="start" font-weight="700">典型剂量依赖：随餐喝 ≤12 g（1杯奶）常无症状</text>
+<rect x="400" y="324" width="326" height="41" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="410" y="349" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="700">剂量门槛：</text>
+<text x="472" y="349" font-size="9.3" fill="#dc2626" text-anchor="start" font-weight="700">极微量即可引爆：哪怕几滴牛奶都可能触发险情</text>
+<rect x="34" y="373" width="326" height="41" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="1.4"/>
+<text x="44" y="398" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="700">喝0乳糖奶?：</text>
+<text x="106" y="398" font-size="9.4" fill="#18794e" text-anchor="start" font-weight="700">✅ 安全有效！乳糖已被预先剪断，营养分毫不差</text>
+<rect x="400" y="373" width="326" height="41" rx="6" fill="#fef2f2" stroke="#dc2626" stroke-width="1.4"/>
+<text x="410" y="398" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="700">喝0乳糖奶?：</text>
+<text x="472" y="398" font-size="9.3" fill="#dc2626" text-anchor="start" font-weight="700">❌ 绝对禁止！0乳糖奶里牛奶蛋白一克没少，照样过敏!</text>
+</svg>

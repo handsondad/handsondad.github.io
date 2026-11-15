@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="490" viewBox="0 0 760 490" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">皮肤表面静止空气保温边界层在哈气与吹气下的强制对流剥离对比图</title>
+<desc id="desc">左卡展示平时手掌表面裹着3至5毫米静止暖空气边界层，张嘴哈气（34.5摄氏度）使热量向皮肤内净流入；右卡展示撅嘴吹气高速凉风（21.2摄氏度）将边界层削薄至约1毫米，对流换热系数暴涨5倍，显热抽走功率超380瓦每平方米。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#475569"/>
+    </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="489" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">核心第二关：吹气怎样一把掀掉皮肤表面的“3 毫米隐形羽绒服”？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">静止空气是极佳的隔热棉；高速凉风把热边界层削薄 4 倍，让皮肤散热功率瞬间飙升！</text>
+<rect x="20" y="62" width="352" height="412" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="84" r="10.5" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2"/>
+<text x="38" y="88" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="88" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">平时与哈气：厚保温层护体 → 暖气倒灌进皮肤</text>
+<rect x="44" y="256" width="304" height="54" rx="8" fill="#fdba74" stroke="#ea580c" stroke-width="1.5"/>
+<text x="196" y="279" font-size="10.5" fill="#7c2d12" text-anchor="middle" font-weight="700">手掌真皮与毛细血管网（恒温供热 32.5°C）</text>
+<text x="196" y="298" font-size="10.0" fill="#dc2626" text-anchor="middle" font-weight="700">暖觉受体 TRPV3 / TRPV4 被激活 → 大脑报“暖！”</text>
+<rect x="44" y="182" width="304" height="74" rx="6" fill="#fee2e2" fill-opacity="0.82" stroke="#f87171" stroke-dasharray="5,3"/>
+<text x="196" y="206" font-size="10.3" fill="#dc2626" text-anchor="middle" font-weight="700">平时：厚约 3–5 mm 的“静止暖空气羽绒服”</text>
+<text x="196" y="226" font-size="9.9" fill="#1e293b" text-anchor="middle">空气导热极慢 k ≈ 0.026 W/(m·K)，牢牢锁住体温</text>
+<line x1="96.0" y1="122.0" x2="96.0" y2="176.0" stroke="#dc2626" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arr-red)"/>
+<line x1="196.0" y1="122.0" x2="196.0" y2="176.0" stroke="#dc2626" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arr-red)"/>
+<line x1="296.0" y1="122.0" x2="296.0" y2="176.0" stroke="#dc2626" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arr-red)"/>
+<text x="196" y="114" font-size="10.3" fill="#dc2626" text-anchor="middle" font-weight="700">张嘴哈气：34.5°C 暖湿气流（高于皮温 32.5°C）</text>
+<text x="196" y="246" font-size="10.0" fill="#dc2626" text-anchor="middle" font-weight="700">↓ 热量净流入皮肤（显热＋凝结潜热双加热）↓</text>
+<rect x="38" y="326" width="316" height="132" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1"/>
+<text x="50" y="347" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">为什么 20°C 房间里不吹风时手不觉得冷？</text>
+<text x="50" y="368" font-size="10.0" fill="#1e293b" text-anchor="start">• 房间明明只有 20°C，但贴着你皮肤的那几毫米空气已被</text>
+<text x="50" y="386" font-size="10.0" fill="#1e293b" text-anchor="start">  体温焐热到了 28–31°C，自然对流换热系数仅 h ≈ 6 W/m²K；</text>
+<text x="50" y="404" font-size="10.0" fill="#1e293b" text-anchor="start">• 张嘴哈气直接送来 34.5°C 热气团，比这件“隐形羽绒服”</text>
+<text x="50" y="422" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="600">  还要烫，热流方向从外往里走，冰凉的手立刻缓过劲来！</text>
+<rect x="388" y="62" width="352" height="412" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="84" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="406" y="88" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">2</text>
+<text x="424" y="88" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">撅嘴吹气：削薄保温层 4 倍 → 热量狂泻而出</text>
+<rect x="412" y="256" width="304" height="54" rx="8" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="564" y="279" font-size="10.5" fill="#1e3a8a" text-anchor="middle" font-weight="700">手掌表皮迅速失温（dT/dt ＜ 0，跌破 28°C）</text>
+<text x="564" y="298" font-size="10.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">冷觉离子通道 TRPM8 高频放电 → 大脑报“好凉！”</text>
+<rect x="412" y="238" width="304" height="18" rx="3" fill="#dbeafe" stroke="#3b82f6" stroke-dasharray="4,2"/>
+<text x="564" y="251" font-size="9.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">边界层被高速风削薄至 ≈ 1 mm！（h 暴涨 5 倍至 34 W/m²K）</text>
+<line x1="422.0" y1="162.0" x2="702.0" y2="162.0" stroke="#1d6fa5" stroke-width="2.6" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<line x1="422.0" y1="196.0" x2="702.0" y2="196.0" stroke="#1d6fa5" stroke-width="2.6" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<line x1="476.0" y1="254.0" x2="496.0" y2="174.0" stroke="#c25014" stroke-width="1.9" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<line x1="564.0" y1="254.0" x2="584.0" y2="174.0" stroke="#c25014" stroke-width="1.9" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<line x1="652.0" y1="254.0" x2="672.0" y2="174.0" stroke="#c25014" stroke-width="1.9" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<text x="564" y="138" font-size="10.4" fill="#1d6fa5" text-anchor="middle" font-weight="700">21.2°C 高速混合风（v ≈ 4–5 m/s）横扫手面</text>
+<text x="564" y="224" font-size="10.1" fill="#c25014" text-anchor="middle" font-weight="700">↑ 仅对流显热流失就高达 q&#x27;&#x27; ≈ 384 W/m²！↑</text>
+<rect x="406" y="326" width="316" height="132" rx="8" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<text x="418" y="347" font-size="10.6" fill="#1d6fa5" text-anchor="start" font-weight="700">电风扇与“风寒效应（Wind Chill）”同一原理！</text>
+<text x="418" y="368" font-size="10.0" fill="#1e293b" text-anchor="start">• 夏天开电风扇并没有降低屋里的空气温度，却让你一秒</text>
+<text x="418" y="386" font-size="10.0" fill="#1e293b" text-anchor="start">  凉快下来——因为它遵循边界层定律 δ ∝ 1/√v；</text>
+<text x="418" y="404" font-size="10.0" fill="#1e293b" text-anchor="start">• 吹气风速比自然对流快近 20 倍，一把扯掉皮肤表面的</text>
+<text x="418" y="422" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="600">  暖气被子，让 21.2°C 凉空气贴脸抽走你的热量！</text>
+</svg>

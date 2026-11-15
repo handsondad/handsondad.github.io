@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="476" viewBox="0 0 760 476" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">红巨星霍伊尔3α共振合成碳-12单次动画分步图与锂铍硼宇宙射线散裂起源图</title>
+<desc id="desc">左面板展示两颗氦-4先碰撞为寿命8.2×10⁻¹⁷秒的铍-8，第3颗氦-4借7.654 MeV霍伊尔共振态合成稳定碳-12；右面板展示星际高能宇宙射线质子击碎碳氧核产生3号锂、4号铍、5号硼。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#6d28d9"/>
+  </marker>
+  <marker id="arr-crimson" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#b91c1c"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes ta-a1 {
+        0%        { transform: translate(-54px, -24px); }
+        34%, 100% { transform: translate(0px, 0px); }
+      }
+      @keyframes ta-a2 {
+        0%        { transform: translate(-54px, 24px); }
+        34%, 100% { transform: translate(0px, 0px); }
+      }
+      @keyframes ta-a3 {
+        0%, 30%   { transform: translate(-112px, -48px); opacity: 0.45; }
+        62%, 100% { transform: translate(0px, 0px); opacity: 1; }
+      }
+      @keyframes ta-c12 {
+        0%, 58%   { opacity: 0.25; }
+        82%, 100% { opacity: 1; }
+      }
+      .ta-1 { animation: ta-a1 7s ease-out 0.3s 1 forwards; }
+      .ta-2 { animation: ta-a2 7s ease-out 0.3s 1 forwards; }
+      .ta-3 { animation: ta-a3 7s ease-in-out 0.3s 1 forwards; }
+      .ta-fin { animation: ta-c12 7s ease-out 0.3s 1 forwards; }
+      @media (prefers-reduced-motion: reduce) {
+        .ta-1, .ta-2, .ta-3, .ta-fin {
+          animation: none !important;
+          transform: none !important;
+          opacity: 1 !important;
+        }
+      }
+</style>
+<rect x="0.5" y="0.5" width="759" height="475" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">跨越 A=8 断崖的奇迹：霍伊尔“3α 共振”造碳术与锂铍硼的宇宙射线身世</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左看红巨星亿度核心如何靠 7.654 MeV 共振态三氦成碳（含单次动画）；右看宇宙射线如何敲碎碳氧补齐锂铍硼</text>
+<rect x="16" y="68" width="388" height="392" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="28.0" y="80.0" width="214" height="24" rx="12.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="135.0" y="96.3" font-size="12" fill="#c25014" text-anchor="middle" font-weight="600">红巨星核心（≥ 1 亿 K）：3α 过程</text>
+<text x="250" y="96" font-size="11.5" fill="#64748b" text-anchor="start">霍伊尔 1953 预言共振态</text>
+<circle cx="56" cy="164" r="16" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.5" stroke-dasharray="3 2"/>
+<text x="56" y="168" font-size="11" fill="#1d6fa5" text-anchor="middle" font-weight="700">⁴He</text>
+<circle cx="56" cy="224" r="16" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.5" stroke-dasharray="3 2"/>
+<text x="56" y="228" font-size="11" fill="#1d6fa5" text-anchor="middle" font-weight="700">⁴He</text>
+<line x1="76.0" y1="172.0" x2="112.0" y2="188.0" stroke="#1d6fa5" stroke-width="1.6" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<line x1="76.0" y1="216.0" x2="112.0" y2="200.0" stroke="#1d6fa5" stroke-width="1.6" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<text x="92" y="152" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">① 双氦先撞</text>
+<rect x="116" y="168" width="64" height="52" rx="8" fill="#fef2f2" stroke="#b91c1c" stroke-width="1.4" stroke-dasharray="4 2"/>
+<g class="ta-1"><circle cx="136" cy="186" r="7" fill="#1d6fa5"/></g><g class="ta-2"><circle cx="158" cy="186" r="7" fill="#1d6fa5"/></g>
+<text x="148" y="211" font-size="11" fill="#b91c1c" text-anchor="middle" font-weight="700">⁸Be 瞬态</text>
+<text x="148" y="236" font-size="10.5" fill="#b91c1c" text-anchor="middle">仅活 8.2×10⁻¹⁷s</text>
+<circle cx="148" cy="126" r="14" fill="#fef1e8" stroke="#c25014" stroke-width="1.4" stroke-dasharray="3 2"/>
+<text x="148" y="130" font-size="9.5" fill="#c25014" text-anchor="middle" font-weight="700">第3颗⁴He</text>
+<line x1="164.0" y1="134.0" x2="212.0" y2="170.0" stroke="#c25014" stroke-width="1.7" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<line x1="184.0" y1="194.0" x2="212.0" y2="194.0" stroke="#c25014" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<text x="206" y="146" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700">② 趁未散架闪击!</text>
+<rect x="216" y="162" width="80" height="64" rx="9" fill="#fffbeb" stroke="#b45309" stroke-width="1.8"/>
+<g class="ta-3"><circle cx="256" cy="176" r="6.5" fill="#c25014"/></g>
+<text x="256" y="198" font-size="11" fill="#b45309" text-anchor="middle" font-weight="700">¹²C* 霍伊尔态</text>
+<text x="256" y="216" font-size="10" fill="#1e293b" text-anchor="middle">7.654 MeV 共振</text>
+<line x1="300.0" y1="194.0" x2="322.0" y2="194.0" stroke="#18794e" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arr-green)"/>
+<text x="311" y="178" font-size="10" fill="#18794e" text-anchor="middle" font-weight="700">③放γ</text>
+<g class="ta-fin"><rect x="326" y="164" width="66" height="60" rx="9" fill="#e7f6ee" stroke="#18794e" stroke-width="1.8"/><text x="359" y="191" font-size="12" fill="#18794e" text-anchor="middle" font-weight="700">稳定 ¹²C</text><text x="359" y="212" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="600">碳诞生!</text></g>
+<rect x="28" y="256" width="364" height="190" rx="8" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="40" y="278" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700">为什么霍伊尔敢靠“人类存在”倒推核能级？</text>
+<text x="40" y="301" font-size="11" fill="#1e293b" text-anchor="start">• ⁸Be + ⁴He 门槛能量恰比基态 ¹²C 高出 7.367 MeV；</text>
+<text x="40" y="323" font-size="11" fill="#1e293b" text-anchor="start">• 红巨星亿度热运动再添约 0.29 MeV，合计 ≈ 7.65 MeV；</text>
+<text x="40" y="345" font-size="11" fill="#c25014" text-anchor="start" font-weight="700">• 1953 年福勒实验室果真在 7.654 MeV 测出 ¹²C 激发态！</text>
+<text x="40" y="367" font-size="11" fill="#1e293b" text-anchor="start">  共振把反应率放大超 1000 万倍；若此能级偏移 4%，</text>
+<text x="40" y="387" font-size="11" fill="#1e293b" text-anchor="start">  宇宙几乎造不出碳和氧（¹²C + ⁴He → ¹⁶O），生命无从谈起。</text>
+<text x="40" y="412" font-size="11" fill="#18794e" text-anchor="start" font-weight="700">• 净释能：3 颗 ⁴He → ¹²C + 7.275 MeV（紧接着吃第 4 颗氦变 ¹⁶O）</text>
+<text x="40" y="434" font-size="10.5" fill="#64748b" text-anchor="start">  （注：开启“减少动态效果”时直接静态呈现完整三步链）</text>
+<rect x="416" y="68" width="328" height="392" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="428.0" y="80.0" width="212" height="24" rx="12.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="534.0" y="96.3" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="600">星际冷空间：宇宙射线散裂补缺</text>
+<text x="648" y="96" font-size="11.5" fill="#64748b" text-anchor="start">3·4·5 号从哪来？</text>
+<text x="428" y="125" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">悬念：恒星从 2 号氦直接跳到 6 号碳，</text>
+<text x="428" y="145" font-size="11.5" fill="#1e293b" text-anchor="start">那 3 号锂(Li)、4 号铍(Be)、5 号硼(B)谁造的？</text>
+<rect x="428" y="160" width="304" height="136" rx="8" fill="#f3e8ff" stroke="#d8b4fe"/>
+<rect x="438.0" y="214.0" width="104" height="24" rx="12.0" fill="#ffffff" stroke="#b91c1c" stroke-width="1" stroke-opacity="0.35"/>
+<text x="490.0" y="230.3" font-size="10.5" fill="#b91c1c" text-anchor="middle" font-weight="600">高能宇宙射线 p</text>
+<line x1="546.0" y1="226.0" x2="582.0" y2="226.0" stroke="#b91c1c" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arr-crimson)"/>
+<circle cx="610" cy="226" r="23" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.8"/>
+<text x="610" y="223" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">¹²C / ¹⁶O</text>
+<text x="610" y="238" font-size="9.5" fill="#1e293b" text-anchor="middle">星际重核</text>
+<line x1="634.0" y1="212.0" x2="668.0" y2="186.0" stroke="#6d28d9" stroke-width="1.7" stroke-linecap="round" marker-end="url(#arr-purple)"/>
+<line x1="636.0" y1="226.0" x2="668.0" y2="226.0" stroke="#6d28d9" stroke-width="1.7" stroke-linecap="round" marker-end="url(#arr-purple)"/>
+<line x1="634.0" y1="240.0" x2="668.0" y2="266.0" stroke="#6d28d9" stroke-width="1.7" stroke-linecap="round" marker-end="url(#arr-purple)"/>
+<rect x="672.0" y="172.0" width="52" height="22" rx="11.0" fill="#ffffff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="698.0" y="187.0" font-size="10.5" fill="#6d28d9" text-anchor="middle" font-weight="600">³Li 锂</text>
+<rect x="672.0" y="215.0" width="52" height="22" rx="11.0" fill="#ffffff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="698.0" y="230.0" font-size="10.5" fill="#6d28d9" text-anchor="middle" font-weight="600">⁴Be 铍</text>
+<rect x="672.0" y="256.0" width="52" height="22" rx="11.0" fill="#ffffff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="698.0" y="271.0" font-size="10.5" fill="#6d28d9" text-anchor="middle" font-weight="600">⁵B 硼</text>
+<rect x="428" y="310" width="304" height="136" rx="8" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="440" y="332" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">为什么锂铍硼在宇宙里比碳氧稀少上百万倍？</text>
+<text x="440" y="355" font-size="11" fill="#1e293b" text-anchor="start">• 在恒星内部：锂铍硼非但造不出来，在几百万度</text>
+<text x="440" y="375" font-size="11" fill="#1e293b" text-anchor="start">  下反而会被质子迅速烧毁（恒星是它们的坟场）；</text>
+<text x="440" y="398" font-size="11" fill="#1e293b" text-anchor="start">• 在星际空间：只能靠超新星加速的高能质子反向</text>
+<text x="440" y="418" font-size="11" fill="#0f172a" text-anchor="start" font-weight="600">  “敲碎”现成的碳氮氧核（散裂反应），产量极低！</text>
+<text x="440" y="437" font-size="10.5" fill="#64748b" text-anchor="start">  （你家耐热高硼硅玻璃里的硼，全是星际撞击碎片）</text>
+</svg>

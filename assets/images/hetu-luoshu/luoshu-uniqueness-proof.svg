@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="482" viewBox="0 0 760 482" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">三阶幻方（洛书）在362,880种排列中唯一性的三步数学证明与D4对称群说明图</title>
+<desc id="desc">第一步由4条中心线和60=45+3c推出中心必为5；第二步列出全部8组和为15的三元组，偶数各出现3次、奇数各出现2次；第三步对照角格过3线、边格过2线锁死奇偶位置，在D4群8种对称下唯一。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#6d28d9"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="481" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">362,880 种填法里为什么只有“唯一”一个洛书？三步纯数学证明</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">无需穷举试错：仅靠加法不变量与凑 15 频次统计，就能把中五、四正奇数、四维偶数全部锁死</text>
+<rect x="16" y="68" width="234" height="294" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="36" cy="92" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="36" y="96" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="97" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">定幻和与锁死中五</text>
+<rect x="28" y="114" width="210" height="54" rx="8" fill="#eaf4fb" stroke="#93c5fd"/>
+<text x="133" y="134" font-size="11.5" fill="#1e293b" text-anchor="middle">三行不重叠覆盖 1~9（总和 45）</text>
+<text x="133" y="155" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="700">⇒ 每条线幻和 M = 45 ÷ 3 = 15</text>
+<rect x="82.0" y="181.0" width="34.0" height="34.0" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.2"/>
+<rect x="116.0" y="181.0" width="34.0" height="34.0" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.2"/>
+<rect x="150.0" y="181.0" width="34.0" height="34.0" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.2"/>
+<rect x="82.0" y="215.0" width="34.0" height="34.0" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.2"/>
+<rect x="116.0" y="215.0" width="34.0" height="34.0" fill="#fffbeb" stroke="#e2e8f0" stroke-width="1.2"/>
+<rect x="150.0" y="215.0" width="34.0" height="34.0" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.2"/>
+<rect x="82.0" y="249.0" width="34.0" height="34.0" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.2"/>
+<rect x="116.0" y="249.0" width="34.0" height="34.0" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.2"/>
+<rect x="150.0" y="249.0" width="34.0" height="34.0" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.2"/>
+<line x1="77.0" y1="232.0" x2="189.0" y2="232.0" stroke="#c25014" stroke-width="2.0" stroke-linecap="round"/>
+<line x1="133.0" y1="176.0" x2="133.0" y2="288.0" stroke="#c25014" stroke-width="2.0" stroke-linecap="round"/>
+<line x1="81.0" y1="180.0" x2="185.0" y2="284.0" stroke="#c25014" stroke-width="2.0" stroke-linecap="round"/>
+<line x1="81.0" y1="284.0" x2="185.0" y2="180.0" stroke="#c25014" stroke-width="2.0" stroke-linecap="round"/>
+<circle cx="133.0" cy="232.0" r="13" fill="#fffbeb" stroke="#d97706" stroke-width="2"/>
+<text x="133.0" y="236.5" font-size="11.5" fill="#b45309" text-anchor="middle" font-weight="700">c=5</text>
+<text x="133" y="308" font-size="11.5" fill="#1e293b" text-anchor="middle">4 条过中心线之和 = 4×15 = 60</text>
+<text x="133" y="328" font-size="11.5" fill="#1e293b" text-anchor="middle">全图 45 + 中心多算 3 次：45+3c=60</text>
+<text x="133" y="348" font-size="12" fill="#c25014" text-anchor="middle" font-weight="700">⇒ 中心格唯一解 c = 5！</text>
+<rect x="263" y="68" width="234" height="294" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="283" cy="92" r="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="283" y="96" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">2</text>
+<text x="303" y="97" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">穷尽 8 组“三数和=15”</text>
+<rect x="275.0" y="116.0" width="100" height="22" rx="11.0" fill="#f1f5f9" stroke="#1e293b" stroke-width="1" stroke-opacity="0.35"/>
+<text x="325.0" y="131.0" font-size="11.5" fill="#1e293b" text-anchor="middle" font-weight="600">9 + 5 + 1</text>
+<rect x="385.0" y="116.0" width="100" height="22" rx="11.0" fill="#f1f5f9" stroke="#1e293b" stroke-width="1" stroke-opacity="0.35"/>
+<text x="435.0" y="131.0" font-size="11.5" fill="#1e293b" text-anchor="middle" font-weight="600">8 + 4 + 3</text>
+<rect x="275.0" y="142.0" width="100" height="22" rx="11.0" fill="#f1f5f9" stroke="#1e293b" stroke-width="1" stroke-opacity="0.35"/>
+<text x="325.0" y="157.0" font-size="11.5" fill="#1e293b" text-anchor="middle" font-weight="600">9 + 4 + 2</text>
+<rect x="385.0" y="142.0" width="100" height="22" rx="11.0" fill="#f1f5f9" stroke="#1e293b" stroke-width="1" stroke-opacity="0.35"/>
+<text x="435.0" y="157.0" font-size="11.5" fill="#1e293b" text-anchor="middle" font-weight="600">7 + 5 + 3</text>
+<rect x="275.0" y="168.0" width="100" height="22" rx="11.0" fill="#f1f5f9" stroke="#1e293b" stroke-width="1" stroke-opacity="0.35"/>
+<text x="325.0" y="183.0" font-size="11.5" fill="#1e293b" text-anchor="middle" font-weight="600">8 + 5 + 2</text>
+<rect x="385.0" y="168.0" width="100" height="22" rx="11.0" fill="#f1f5f9" stroke="#1e293b" stroke-width="1" stroke-opacity="0.35"/>
+<text x="435.0" y="183.0" font-size="11.5" fill="#1e293b" text-anchor="middle" font-weight="600">7 + 6 + 2</text>
+<rect x="275.0" y="194.0" width="100" height="22" rx="11.0" fill="#f1f5f9" stroke="#1e293b" stroke-width="1" stroke-opacity="0.35"/>
+<text x="325.0" y="209.0" font-size="11.5" fill="#1e293b" text-anchor="middle" font-weight="600">8 + 6 + 1</text>
+<rect x="385.0" y="194.0" width="100" height="22" rx="11.0" fill="#f1f5f9" stroke="#1e293b" stroke-width="1" stroke-opacity="0.35"/>
+<text x="435.0" y="209.0" font-size="11.5" fill="#1e293b" text-anchor="middle" font-weight="600">6 + 5 + 4</text>
+<rect x="275" y="228" width="210" height="122" rx="8" fill="#f3e8ff" stroke="#d8b4fe"/>
+<text x="287" y="249" font-size="12" fill="#6d28d9" text-anchor="start" font-weight="700">统计每个数字登场的线数：</text>
+<text x="287" y="272" font-size="11.5" fill="#0f172a" text-anchor="start">• 中五 {5}：登场 4 次（米字中心）</text>
+<text x="287" y="295" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">• 偶数 {2,4,6,8}：各登场 3 次！</text>
+<text x="287" y="318" font-size="11.5" fill="#b91c1c" text-anchor="start" font-weight="700">• 奇数 {1,3,7,9}：各只登场 2 次！</text>
+<text x="287" y="340" font-size="11" fill="#64748b" text-anchor="start">（例：含 9 的组合仅 951、942 两组）</text>
+<rect x="510" y="68" width="234" height="294" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="530" cy="92" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="530" y="96" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">3</text>
+<text x="550" y="97" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">线数对号入座即唯一</text>
+<rect x="562.5" y="131.5" width="41.0" height="41.0" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="583.0" y="148.0" font-size="10.5" fill="#1e293b" text-anchor="middle">角·3线</text>
+<text x="583.0" y="164.0" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">必偶</text>
+<rect x="606.5" y="131.5" width="41.0" height="41.0" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="627.0" y="148.0" font-size="10.5" fill="#1e293b" text-anchor="middle">边·2线</text>
+<text x="627.0" y="164.0" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">必奇</text>
+<rect x="650.5" y="131.5" width="41.0" height="41.0" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="671.0" y="148.0" font-size="10.5" fill="#1e293b" text-anchor="middle">角·3线</text>
+<text x="671.0" y="164.0" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">必偶</text>
+<rect x="562.5" y="175.5" width="41.0" height="41.0" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="583.0" y="192.0" font-size="10.5" fill="#1e293b" text-anchor="middle">边·2线</text>
+<text x="583.0" y="208.0" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">必奇</text>
+<rect x="606.5" y="175.5" width="41.0" height="41.0" rx="6" fill="#fffbeb" stroke="#b45309" stroke-width="1.2"/>
+<text x="627.0" y="192.0" font-size="10.5" fill="#1e293b" text-anchor="middle">中·4线</text>
+<text x="627.0" y="208.0" font-size="11.5" fill="#b45309" text-anchor="middle" font-weight="700">必 5</text>
+<rect x="650.5" y="175.5" width="41.0" height="41.0" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="671.0" y="192.0" font-size="10.5" fill="#1e293b" text-anchor="middle">边·2线</text>
+<text x="671.0" y="208.0" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">必奇</text>
+<rect x="562.5" y="219.5" width="41.0" height="41.0" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="583.0" y="236.0" font-size="10.5" fill="#1e293b" text-anchor="middle">角·3线</text>
+<text x="583.0" y="252.0" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">必偶</text>
+<rect x="606.5" y="219.5" width="41.0" height="41.0" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="627.0" y="236.0" font-size="10.5" fill="#1e293b" text-anchor="middle">边·2线</text>
+<text x="627.0" y="252.0" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">必奇</text>
+<rect x="650.5" y="219.5" width="41.0" height="41.0" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="671.0" y="236.0" font-size="10.5" fill="#1e293b" text-anchor="middle">角·3线</text>
+<text x="671.0" y="252.0" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">必偶</text>
+<text x="522" y="286" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="600">• 角格横+竖+斜过 3 线 ⇒ 必填偶数</text>
+<text x="522" y="308" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="600">• 边格仅横+竖过 2 线 ⇒ 必填奇数</text>
+<text x="522" y="330" font-size="11.5" fill="#1e293b" text-anchor="start">• “阳居四正、阴居四维”并非玄学，</text>
+<text x="522" y="348" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">  而是线性方程组唯一允许的解！</text>
+<rect x="16" y="374" width="728" height="92" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="28.0" y="386.0" width="216" height="24" rx="12.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="136.0" y="402.3" font-size="12" fill="#c25014" text-anchor="middle" font-weight="600">结论：9! = 362,880 种填法中仅 8 解</text>
+<text x="254" y="402" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">这 8 个解在正方形二面体群 D₄（4 次旋转 × 2 次镜像翻转）下完全同构，本质只有 1 个洛书！</text>
+<text x="28" y="430" font-size="11.5" fill="#1e293b" text-anchor="start">• 为什么古籍有两种写法？《大戴礼记·明堂》记作“2 9 4 / 7 5 3 / 6 1 8”，朱熹《周易本义》画作“4 9 2 / 3 5 7 / 8 1 6”：</text>
+<text x="28" y="451" font-size="11.5" fill="#64748b" text-anchor="start">  两者只是左右镜像（人面南而坐时的自身左右 vs 读者看图时的纸面左右），在群论里属于同一个对称轨道。</text>
+</svg>

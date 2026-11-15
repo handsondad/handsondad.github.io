@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">基因重复新功能化演化出灵长类三色视觉与穆勒棘轮及突变率刀锋平衡图</title>
+<desc id="desc">左图以旧大陆灵长类X染色体视蛋白基因不等交换重复与3个氨基酸突变分化出530nm绿光和560nm红光视觉为例解析大野乾基因重复理论；右图解析有性减数分裂重组如何打破穆勒棘轮，以及突变率处于零差错僵死与错误灾难崩溃之间的刀锋平衡。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<defs><marker id="arr-ink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 Z" fill="#475569"/></marker></defs>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">第五幕：演化怎样无中生有发明“新功能”？为什么不进化出 100% 零差错？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">靠“备份基因自由试错”让我们看清万紫千红；靠减数分裂重组打破穆勒棘轮，守住演化刀锋平衡！</text>
+<rect x="22" y="68" width="352" height="386" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="90" r="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="42" y="94" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">1</text>
+<text x="60" y="95" font-size="11.1" fill="#0f172a" text-anchor="start" font-weight="700">大野乾“备份试错法”：人类凭啥比猫狗多看懂红色？</text>
+<rect x="36" y="112" width="324" height="90" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="1"/>
+<text x="48" y="134" font-size="10.4" fill="#475569" text-anchor="start" font-weight="700">① 独苗基因不敢乱改（猫狗祖先二色视觉）</text>
+<text x="48" y="157" font-size="9.7" fill="#1e293b" text-anchor="start">只剩蓝光 + 1 个中长波视蛋白基因：一旦突变改坏就变瞎，</text>
+<text x="48" y="178" font-size="9.7" fill="#0f172a" text-anchor="start" font-weight="600">净化选择死死锁住它，几千万年寸步难行（红绿不分）！</text>
+<line x1="198.0" y1="204.0" x2="198.0" y2="214.0" stroke="#475569" stroke-width="1.8" marker-end="url(#arr-ink)"/>
+<rect x="36" y="216" width="324" height="90" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="48" y="238" font-size="10.4" fill="#6d28d9" text-anchor="start" font-weight="700">② 减数分裂“不等交换”：天降双份拷贝！</text>
+<text x="48" y="261" font-size="9.7" fill="#1e293b" text-anchor="start">约 3500 万年前旧大陆灵长类祖先 X 染色体错位重组，</text>
+<text x="48" y="282" font-size="9.7" fill="#0f172a" text-anchor="start" font-weight="600">白捡了一份一模一样的“冗余备份视蛋白基因”！</text>
+<line x1="198.0" y1="308.0" x2="198.0" y2="318.0" stroke="#475569" stroke-width="1.8" marker-end="url(#arr-ink)"/>
+<rect x="36" y="320" width="324" height="90" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="48" y="342" font-size="10.4" fill="#18794e" text-anchor="start" font-weight="700">③ 正本保命、副本狂野试错（新功能化！）</text>
+<text x="48" y="365" font-size="9.7" fill="#1e293b" text-anchor="start">正本继续看绿光（530 nm），副本卸下保命包袱自由突变：</text>
+<text x="48" y="386" font-size="9.7" fill="#0f172a" text-anchor="start" font-weight="600">仅改了 3 个关键氨基酸就把吸收峰推到 560 nm 红光——</text>
+<rect x="36" y="422" width="324" height="24" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="198" y="438" font-size="9.5" fill="#c25014" text-anchor="middle" font-weight="700">一眼在绿叶丛中认出熟透红果！血红蛋白家族同样靠这招诞生</text>
+<rect x="390" y="68" width="348" height="386" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="410" cy="90" r="10.5" fill="#fef2f2" stroke="#b91c1c" stroke-width="1.2"/>
+<text x="410" y="94" font-size="11.5" fill="#b91c1c" text-anchor="middle" font-weight="700">2</text>
+<text x="428" y="95" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">穆勒棘轮与终极追问：为何不进化到“零突变”？</text>
+<rect x="404" y="112" width="320" height="148" rx="8" fill="#fef2f2" stroke="#b91c1c" stroke-width="1"/>
+<text x="416" y="133" font-size="10.0" fill="#b91c1c" text-anchor="start" font-weight="700">为什么高等生物宁付“两倍繁殖代价”也要搞有性减数分裂？</text>
+<text x="416" y="155" font-size="9.6" fill="#1e293b" text-anchor="start">• 无性克隆死局（穆勒棘轮 Muller&#x27;s Ratchet）：没有重组，子代</text>
+<text x="416" y="174" font-size="9.6" fill="#1e293b" text-anchor="start">  只能整包继承母亲的全部暗伤；一旦最健康个体也攒上 1 个</text>
+<text x="416" y="193" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="600">  微害突变，全族就再也回不到 0 伤状态，咔哒咔哒滑向灭绝！</text>
+<text x="416" y="215" font-size="9.6" fill="#1e293b" text-anchor="start">• 减数分裂解药：把爸爸的“A段好基因”与妈妈的“B段好基因”</text>
+<text x="416" y="234" font-size="9.6" fill="#18794e" text-anchor="start" font-weight="700">  交叉拼接，一举重塑零暗伤子代，还能把两项有利突变合体！</text>
+<rect x="404" y="272" width="320" height="170" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="416" y="293" font-size="10.2" fill="#1d6fa5" text-anchor="start" font-weight="700">突变率的“刀锋平衡”：太高会融化，等于零会团灭！</text>
+<text x="416" y="315" font-size="9.6" fill="#1e293b" text-anchor="start">① 往左走到 0（绝对零差错）：先不说每再准 10 倍都要烧掉巨量</text>
+<text x="416" y="334" font-size="9.6" fill="#1e293b" text-anchor="start">   ATP 拖慢分裂；一旦冰期或新瘟疫降临，基因库一潭死水</text>
+<text x="416" y="353" font-size="9.6" fill="#475569" text-anchor="start" font-weight="700">   拿不出一张新底牌，整个物种直接走入灭绝死胡同！</text>
+<text x="416" y="375" font-size="9.6" fill="#1e293b" text-anchor="start">② 往右太高（越过艾根错误灾难阈值）：每代把祖传核心基因</text>
+<text x="416" y="394" font-size="9.6" fill="#b91c1c" text-anchor="start" font-weight="600">   全抄烂，遗传信息彻底崩溃（这也是抗病毒药诱变杀毒原理）！</text>
+<text x="416" y="417" font-size="9.8" fill="#1d6fa5" text-anchor="start" font-weight="700">→ 百亿分之一的微小笔误，正是生命跨越 38 亿年的火种！</text>
+<rect x="22" y="466" width="716" height="40" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="380" y="491" font-size="10.9" fill="#0f172a" text-anchor="middle" font-weight="600">结语：所谓“完美无瑕的复制”只会造出脆弱的化石；恰到好处的分裂小瑕疵，才让一团原始细胞写出了整部生命史诗。</text>
+</svg>

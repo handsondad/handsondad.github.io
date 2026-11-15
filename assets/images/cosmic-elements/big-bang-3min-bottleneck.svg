@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="482" viewBox="0 0 760 482" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">宇宙大爆炸前20分钟原初核合成75%氢与25%氦比例计算及A=5、A=8质量断崖图</title>
+<desc id="desc">左面板展示中子质子比1:7（2中子配14质子）合成1个氦-4与12个氢-1，严格得出氦占质量25%、氢占75%；右面板展示因缺乏A=5（⁵He/⁵Li）和A=8（⁸Be寿命仅8.2×10⁻¹⁷秒）稳定核且宇宙急速膨胀降温，大爆炸无法合成碳及更重元素。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#6d28d9"/>
+  </marker>
+  <marker id="arr-crimson" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#b91c1c"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="481" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">创世前 20 分钟的闪电炼金：为什么宇宙大爆炸只造出氢和氦就紧急熄火了？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">受困于“氘瓶颈”与质量数 A=5、A=8 两大无人断崖：中子质子比 1:7 直接算出了 75% 氢与 25% 氦</text>
+<rect x="16" y="68" width="362" height="398" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="28.0" y="80.0" width="208" height="24" rx="12.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="132.0" y="96.3" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">第 3 分钟账本：16 个核子的分配</text>
+<text x="244" y="96" font-size="11.5" fill="#64748b" text-anchor="start">n : p ≈ 1 : 7（即 2 : 14）</text>
+<text x="28" y="124" font-size="11.5" fill="#1e293b" text-anchor="start">① 冷却至约 9 亿度（t ≈ 180 秒），氘核不再被光子打碎：</text>
+<rect x="28" y="136" width="174" height="54" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1.3" stroke-dasharray="4 3"/>
+<text x="115" y="151" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700">2中子 + 2质子 锁进 1 个氦-4</text>
+<circle cx="49" cy="172" r="11" fill="#475569"/>
+<text x="49" y="176" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">n</text>
+<circle cx="93" cy="172" r="11" fill="#475569"/>
+<text x="93" y="176" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">n</text>
+<circle cx="137" cy="172" r="11" fill="#1d6fa5"/>
+<text x="137" y="176" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">p</text>
+<circle cx="181" cy="172" r="11" fill="#1d6fa5"/>
+<text x="181" y="176" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">p</text>
+<circle cx="222" cy="172" r="11" fill="#1d6fa5"/>
+<text x="222" y="176" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">p</text>
+<circle cx="258" cy="172" r="11" fill="#1d6fa5"/>
+<text x="258" y="176" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">p</text>
+<circle cx="294" cy="172" r="11" fill="#1d6fa5"/>
+<text x="294" y="176" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">p</text>
+<circle cx="330" cy="172" r="11" fill="#1d6fa5"/>
+<text x="330" y="176" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">p</text>
+<circle cx="49" cy="212" r="11" fill="#1d6fa5"/>
+<text x="49" y="216" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">p</text>
+<circle cx="89" cy="212" r="11" fill="#1d6fa5"/>
+<text x="89" y="216" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">p</text>
+<circle cx="129" cy="212" r="11" fill="#1d6fa5"/>
+<text x="129" y="216" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">p</text>
+<circle cx="169" cy="212" r="11" fill="#1d6fa5"/>
+<text x="169" y="216" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">p</text>
+<circle cx="209" cy="212" r="11" fill="#1d6fa5"/>
+<text x="209" y="216" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">p</text>
+<circle cx="249" cy="212" r="11" fill="#1d6fa5"/>
+<text x="249" y="216" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">p</text>
+<circle cx="289" cy="212" r="11" fill="#1d6fa5"/>
+<text x="289" y="216" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">p</text>
+<circle cx="329" cy="212" r="11" fill="#1d6fa5"/>
+<text x="329" y="216" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">p</text>
+<line x1="197.0" y1="232.0" x2="197.0" y2="258.0" stroke="#1d6fa5" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<text x="210" y="249" font-size="11" fill="#1d6fa5" text-anchor="start" font-weight="600">瞬间聚变清场</text>
+<rect x="28" y="266" width="156" height="86" rx="8" fill="#fef1e8" stroke="#fdba74"/>
+<text x="106" y="288" font-size="12.5" fill="#c25014" text-anchor="middle" font-weight="700">氦-4（⁴He）</text>
+<text x="106" y="311" font-size="11.5" fill="#1e293b" text-anchor="middle">占 4 / 16 核子质量</text>
+<text x="106" y="336" font-size="13" fill="#c25014" text-anchor="middle" font-weight="700">质量占比 ≈ 25%</text>
+<rect x="196" y="266" width="170" height="86" rx="8" fill="#eaf4fb" stroke="#93c5fd"/>
+<text x="281" y="288" font-size="12.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">氢-1（¹H 单质子）</text>
+<text x="281" y="311" font-size="11.5" fill="#1e293b" text-anchor="middle">剩 12 / 16 核子质量</text>
+<text x="281" y="336" font-size="13" fill="#1d6fa5" text-anchor="middle" font-weight="700">质量占比 ≈ 75%</text>
+<rect x="28" y="366" width="338" height="86" rx="8" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="40" y="387" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">注意区分“按质量算”与“按原子个数算”：</text>
+<text x="40" y="408" font-size="11" fill="#1e293b" text-anchor="start">• 按质量：75% 氢 + 25% 氦（外加约 10⁻⁹ 量级锂-7）</text>
+<text x="40" y="428" font-size="11" fill="#1d6fa5" text-anchor="start" font-weight="600">• 按个数：12 颗氢对 1 颗氦 ⇒ 氢占 92.3%，氦占 7.7%！</text>
+<text x="40" y="445" font-size="10.5" fill="#64748b" text-anchor="start">  （宇宙微波背景与古老气体云实测完美吻合这一理论预言）</text>
+<rect x="390" y="68" width="354" height="398" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="402.0" y="80.0" width="214" height="24" rx="12.0" fill="#fef2f2" stroke="#b91c1c" stroke-width="1" stroke-opacity="0.35"/>
+<text x="509.0" y="96.3" font-size="12" fill="#b91c1c" text-anchor="middle" font-weight="600">第 20 分钟熄火：两道质量数断崖</text>
+<text x="624" y="96" font-size="11.5" fill="#64748b" text-anchor="start">A=5 与 A=8 无稳定核</text>
+<rect x="400.0" y="164" width="44" height="52" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1.5"/>
+<text x="422" y="184" font-size="11" fill="#18794e" text-anchor="middle" font-weight="700">A=1</text>
+<text x="422" y="204" font-size="10" fill="#1e293b" text-anchor="middle">¹H 稳</text>
+<rect x="446.0" y="164" width="44" height="52" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1.5"/>
+<text x="468" y="184" font-size="11" fill="#18794e" text-anchor="middle" font-weight="700">A=2,3</text>
+<text x="468" y="204" font-size="10" fill="#1e293b" text-anchor="middle">²H ³He</text>
+<rect x="496.0" y="164" width="44" height="52" rx="7" fill="#fef1e8" stroke="#c25014" stroke-width="1.5"/>
+<text x="518" y="184" font-size="11" fill="#c25014" text-anchor="middle" font-weight="700">A=4</text>
+<text x="518" y="204" font-size="10" fill="#1e293b" text-anchor="middle">⁴He 极稳</text>
+<rect x="550.0" y="182" width="44" height="54" rx="7" fill="#fef2f2" stroke="#b91c1c" stroke-width="1.5" stroke-dasharray="3 3"/>
+<text x="572" y="202" font-size="11" fill="#b91c1c" text-anchor="middle" font-weight="700">A=5</text>
+<text x="572" y="222" font-size="10.5" fill="#b91c1c" text-anchor="middle" font-weight="700">断崖!</text>
+<rect x="604.0" y="182" width="44" height="54" rx="7" fill="#fef2f2" stroke="#b91c1c" stroke-width="1.5" stroke-dasharray="3 3"/>
+<text x="626" y="202" font-size="11" fill="#b91c1c" text-anchor="middle" font-weight="700">A=8</text>
+<text x="626" y="222" font-size="10.5" fill="#b91c1c" text-anchor="middle" font-weight="700">断崖!</text>
+<rect x="672.0" y="164" width="44" height="52" rx="7" fill="#f1f5f9" stroke="#64748b" stroke-width="1.5"/>
+<text x="694" y="184" font-size="11" fill="#64748b" text-anchor="middle" font-weight="700">A=12</text>
+<text x="694" y="204" font-size="10" fill="#1e293b" text-anchor="middle">¹²C 碳</text>
+<path d="M 526 160 Q 548 128 568 176" fill="none" stroke="#b91c1c" stroke-width="1.7" marker-end="url(#arr-crimson)"/>
+<text x="546" y="134" font-size="10.5" fill="#b91c1c" text-anchor="middle" font-weight="700">⁴He+p</text>
+<path d="M 532 160 Q 580 108 622 176" fill="none" stroke="#b91c1c" stroke-width="1.7" marker-end="url(#arr-crimson)"/>
+<text x="588" y="120" font-size="10.5" fill="#b91c1c" text-anchor="middle" font-weight="700">⁴He+⁴He</text>
+<rect x="402" y="252" width="330" height="96" rx="8" fill="#fef2f2" stroke="#fca5a5"/>
+<text x="414" y="273" font-size="11.5" fill="#b91c1c" text-anchor="start" font-weight="700">为什么跨不过去？自然界缺失两块关键踏脚石：</text>
+<text x="414" y="295" font-size="11" fill="#1e293b" text-anchor="start">• A = 5 全灭：⁵He 与 ⁵Li 在约 10⁻²² 秒内瞬间散架；</text>
+<text x="414" y="316" font-size="11" fill="#1e293b" text-anchor="start">• A = 8 全灭：两个氦拼成的 ⁸Be 在 8.2×10⁻¹⁷ 秒内裂回两半；</text>
+<text x="414" y="336" font-size="11" fill="#0f172a" text-anchor="start" font-weight="600">• 等不及第 3 颗氦撞上来，宇宙已极速膨胀变冷！</text>
+<rect x="402" y="362" width="330" height="90" rx="8" fill="#fffbeb" stroke="#fcd34d"/>
+<text x="414" y="383" font-size="11.5" fill="#b45309" text-anchor="start" font-weight="700">宇宙前 1~2 亿年“黑暗时代”的化学真相：</text>
+<text x="414" y="405" font-size="11" fill="#1e293b" text-anchor="start">• 第 20 分钟后核聚变彻底停火：0 颗碳、0 颗氧、0 颗铁！</text>
+<text x="414" y="426" font-size="11" fill="#1e293b" text-anchor="start">• 没有岩石行星，没有一滴水（H₂O 缺氧），只有漫天氢氦云，</text>
+<text x="414" y="444" font-size="11" fill="#0f172a" text-anchor="start" font-weight="600">  静待引力把它们重新压进第一代恒星的高压炉。</text>
+</svg>

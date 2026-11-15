@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">无叶春花的跨年淀粉账本与碳十四老碳年龄图解</title>
+<desc id="desc">左侧展示先花后叶植物从去年夏末花芽分化、秋季淀粉入库、冬季蔗糖防冻到早春破封的四棒接力；右侧展示双碳池模型与加速器质谱碳十四实测早春无叶芽4至9年的老碳年龄。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-ink" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#0f172a"/>
+  </marker>
+  <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#6d28d9"/>
+  </marker>
+  <marker id="arr-red" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#dc2626"/>
+  </marker>
+  <marker id="arr-pink" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#db2777"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="380" y="30" font-size="17" fill="#0f172a" text-anchor="middle" font-weight="700">“先花后叶”的跨年能量账本：春天满树繁花，花的是前几年的存款</text>
+<text x="380" y="52" font-size="12" fill="#64748b" text-anchor="middle">无叶早春并没有光合作用工厂——花芽早在去年夏末已建好，启动资金来自木射线与鳞茎的淀粉金库</text>
+<rect x="24" y="72" width="362" height="396" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="40.0" y="86.0" width="178" height="24" rx="12.0" fill="#fdf2f8" stroke="#db2777" stroke-width="1" stroke-opacity="0.35"/>
+<text x="129.0" y="102.3" font-size="12" fill="#db2777" text-anchor="middle" font-weight="600">跨年四棒接力时间轴</text>
+<text x="230" y="102" font-size="11" fill="#64748b" text-anchor="start">以樱桃/桃/玉兰与郁金香为例</text>
+<rect x="40" y="124" width="330" height="62" rx="10" fill="#e7f6ee" stroke="#18794e" stroke-width="1.3"/>
+<text x="52" y="142" font-size="11" fill="#18794e" text-anchor="start" font-weight="700">① 去年夏末（7–9月）</text>
+<text x="196" y="142" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">绿叶狂攒糖 + 花芽悄悄成型</text>
+<text x="52" y="161" font-size="11" fill="#1e293b" text-anchor="start">叶片光合盈余泵入枝干木射线；枝头花芽已分</text>
+<text x="52" y="177" font-size="11" fill="#1e293b" text-anchor="start">化出萼片、花瓣、雄蕊与雌蕊雏形</text>
+<line x1="205" y1="186" x2="205" y2="198" stroke="#64748b" stroke-width="1.5" stroke-linecap="round" marker-end="url(#arr-ink)"/>
+<rect x="40" y="198" width="330" height="62" rx="10" fill="#fffbeb" stroke="#b45309" stroke-width="1.3"/>
+<text x="52" y="216" font-size="11" fill="#b45309" text-anchor="start" font-weight="700">② 深秋撤退（10–11月）</text>
+<text x="196" y="216" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">落叶前回收氮磷，锁进不溶淀粉</text>
+<text x="52" y="235" font-size="11" fill="#1e293b" text-anchor="start">把可溶糖聚合成渗透压≈0的淀粉颗粒，存入</text>
+<text x="52" y="251" font-size="11" fill="#1e293b" text-anchor="start">树干薄壁细胞、粗根或地下鳞茎金库</text>
+<line x1="205" y1="260" x2="205" y2="272" stroke="#64748b" stroke-width="1.5" stroke-linecap="round" marker-end="url(#arr-ink)"/>
+<rect x="40" y="272" width="330" height="62" rx="10" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.3"/>
+<text x="52" y="290" font-size="11" fill="#1d6fa5" text-anchor="start" font-weight="700">③ 寒冬蛰伏（12–2月）</text>
+<text x="196" y="290" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">54%低含水 + 蔗糖防冻 + 暗攒淀粉</text>
+<text x="52" y="309" font-size="11" fill="#1e293b" text-anchor="start">部分淀粉转成蔗糖防结冰；甜樱桃子房甚至</text>
+<text x="52" y="325" font-size="11" fill="#1e293b" text-anchor="start">随需冷量达标继续把淀粉攒到峰值</text>
+<line x1="205" y1="334" x2="205" y2="346" stroke="#64748b" stroke-width="1.5" stroke-linecap="round" marker-end="url(#arr-ink)"/>
+<rect x="40" y="346" width="330" height="62" rx="10" fill="#fdf2f8" stroke="#db2777" stroke-width="1.3"/>
+<text x="52" y="364" font-size="11" fill="#db2777" text-anchor="start" font-weight="700">④ 早春破封（2月末–3月）</text>
+<text x="196" y="364" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">淀粉闪电解聚 → 80%高含水爆花</text>
+<text x="52" y="383" font-size="11" fill="#1e293b" text-anchor="start">酶切淀粉与蔗糖变单糖，一夜间既当液压千</text>
+<text x="52" y="399" font-size="11" fill="#1e293b" text-anchor="start">斤顶又当呼吸燃料，抢在长叶前盛放</text>
+<text x="205" y="434" font-size="11" fill="#0f766e" text-anchor="middle" font-weight="700">木本储在树干木射线与粗根；球根花卉储在地下肥厚鳞茎</text>
+<text x="205" y="453" font-size="11" fill="#64748b" text-anchor="middle">共同铁律：春花绝不是靠春光“现赚现花”，而是提前半年备货</text>
+<rect x="402" y="72" width="334" height="396" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="418.0" y="86.0" width="194" height="24" rx="12.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="515.0" y="102.3" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">碳十四测年揭开“老碳金库”</text>
+<text x="418" y="128" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700">树木非结构性碳（NSC）双账户模型：</text>
+<rect x="418" y="140" width="302" height="68" rx="10" fill="#e7f6ee" stroke="#18794e" stroke-width="1.3"/>
+<text x="432" y="160" font-size="12" fill="#18794e" text-anchor="start" font-weight="700">活期账户：可溶性糖快池（周转 &lt; 1 年）</text>
+<text x="432" y="180" font-size="11" fill="#1e293b" text-anchor="start">蔗糖、葡萄糖、果糖、山梨醇：随产随用，</text>
+<text x="432" y="197" font-size="11" fill="#1e293b" text-anchor="start">负责日常呼吸、韧皮部运输与冬季防冻液</text>
+<line x1="530" y1="208" x2="530" y2="226" stroke="#b45309" stroke-width="1.6" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<line x1="608" y1="226" x2="608" y2="208" stroke="#1d6fa5" stroke-width="1.6" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<text x="468" y="221" font-size="11" fill="#b45309" text-anchor="start">夏秋存入</text>
+<text x="622" y="221" font-size="11" fill="#1d6fa5" text-anchor="start">早春支取</text>
+<rect x="418" y="228" width="302" height="74" rx="10" fill="#fef1e8" stroke="#c25014" stroke-width="1.4"/>
+<text x="432" y="248" font-size="12" fill="#b45309" text-anchor="start" font-weight="700">定期金库：不溶性淀粉慢池（跨年复利）</text>
+<text x="432" y="268" font-size="11" fill="#1e293b" text-anchor="start">深藏木质部射线与粗根；无渗透压不撑破细胞，</text>
+<text x="432" y="286" font-size="11" fill="#1e293b" text-anchor="start">早春与新旧碳混合调拨，专供开花展叶与救灾</text>
+<text x="418" y="324" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">加速器质谱 ¹⁴C 实测早春碳年龄（Varga 2024 等）：</text>
+<text x="418" y="351" font-size="11" fill="#1e293b" text-anchor="start">红枫早春花芽</text>
+<rect x="512" y="338" width="38" height="16" rx="5" fill="#18794e" opacity="0.85"/>
+<text x="556" y="351" font-size="11" fill="#18794e" text-anchor="start" font-weight="700">约 2 年</text>
+<text x="418" y="379" font-size="11" fill="#1e293b" text-anchor="start">糖枫早春树液</text>
+<rect x="512" y="366" width="74" height="16" rx="5" fill="#1d6fa5" opacity="0.85"/>
+<text x="592" y="379" font-size="11" fill="#1d6fa5" text-anchor="start" font-weight="700">3–5 年</text>
+<text x="418" y="407" font-size="11" fill="#1e293b" text-anchor="start">欧洲早春无叶芽</text>
+<rect x="512" y="394" width="118" height="16" rx="5" fill="#db2777" opacity="0.85"/>
+<text x="636" y="407" font-size="11" fill="#db2777" text-anchor="start" font-weight="700">4–9 年老碳</text>
+<text x="418" y="435" font-size="11" fill="#1e293b" text-anchor="start">环剥救急深层碳</text>
+<rect x="512" y="422" width="146" height="16" rx="5" fill="#6d28d9" opacity="0.85"/>
+<text x="664" y="435" font-size="11" fill="#6d28d9" text-anchor="start" font-weight="700">13–14 年</text>
+<text x="569" y="456" font-size="11" fill="#6d28d9" text-anchor="middle" font-weight="700">早春一朵花里，流淌着四五年前夏日阳光攒下的碳原子</text>
+<rect x="24" y="478" width="712" height="28" rx="8" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="380" y="497" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="700">先看左卡四季接力，再看右卡 ¹⁴C 碳龄实测：植物不是“春天现造能量”，而是动用跨年淀粉信托基金抢占早春窗口</text>
+</svg>

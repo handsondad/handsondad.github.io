@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="528" viewBox="0 0 760 528" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">卫星三轴反作用飞轮姿态控制与终身轨道维持机制图解</title>
+<desc id="desc">左图展示星敏感器与三轴反作用飞轮及磁力矩器动量卸载，右图拆解低轨大气阻力、高轨日月摄动与碎片规避</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="527" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="380.0" y="30" font-size="19" fill="#1e293b" text-anchor="middle" font-weight="700">在天上怎么稳住镜头与车位？无燃料飞轮调姿与终身轨道维持</text>
+<text x="380.0" y="52" font-size="12.5" fill="#64748b" text-anchor="middle">姿态控制负责“眼睛朝哪看”（角秒级稳像），轨道维持负责对抗大气阻力与日月拉扯“不跑偏”</text>
+<rect x="22" y="68" width="362" height="438" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="40" y="95" font-size="15" fill="#1d6fa5" text-anchor="start" font-weight="700">姿态控制（AACS）：不喷气怎么转身？</text>
+<rect x="52" y="194" width="76" height="38" rx="4" fill="#1d4ed8" stroke="#1d6fa5" stroke-width="1.6"/>
+<rect x="278" y="194" width="76" height="38" rx="4" fill="#1d4ed8" stroke="#1d6fa5" stroke-width="1.6"/>
+<line x1="90" y1="194" x2="90" y2="232" stroke="#93c5fd" stroke-width="1"/>
+<line x1="316" y1="194" x2="316" y2="232" stroke="#93c5fd" stroke-width="1"/>
+<line x1="128" y1="213" x2="135" y2="213" stroke="#0f172a" stroke-width="2.5"/>
+<line x1="271" y1="213" x2="278" y2="213" stroke="#0f172a" stroke-width="2.5"/>
+<rect x="135" y="156" width="136" height="118" rx="12" fill="#fef3c7" stroke="#d97706" stroke-width="2.2"/>
+<polygon points="188,156 178,128 208,128 198,156" fill="#e2e8f0" stroke="#334155" stroke-width="1.6"/>
+<text x="203" y="120" font-size="10.8" fill="#0f172a" text-anchor="middle" font-weight="700">星敏感器（拍星空认星座定姿）</text>
+<ellipse cx="182" cy="202" rx="22" ry="8" fill="#dbeafe" stroke="#1d6fa5" stroke-width="2"/>
+<ellipse cx="226" cy="214" rx="8" ry="22" fill="#dcfce7" stroke="#18794e" stroke-width="2"/>
+<circle cx="186" cy="240" r="15" fill="#f3e8ff" stroke="#6d28d9" stroke-width="2"/>
+<text x="203" y="294" font-size="11" fill="#1d6fa5" text-anchor="middle" font-weight="700">三轴正交反作用飞轮：飞轮顺转 → 卫星逆转</text>
+<text x="203" y="312" font-size="10.5" fill="#64748b" text-anchor="middle">（内部角动量守恒 Is·ωs = −Iw·ωw，用电不用油！）</text>
+<rect x="38" y="330" width="330" height="160" rx="10" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<text x="52" y="353" font-size="12" fill="#1d6fa5" text-anchor="start" font-weight="700">飞轮越转越快“转爆表”了怎么办？（动量卸载）</text>
+<text x="52" y="374" font-size="10.8" fill="#1e293b" text-anchor="start">• 太阳光压等微弱外力矩会让飞轮朝单向越攒越快；</text>
+<text x="52" y="393" font-size="10.8" fill="#1e293b" text-anchor="start">• 近地轨道绝活：给“磁力矩器”线圈通电，借地磁场</text>
+<text x="52" y="411" font-size="10.8" fill="#1e293b" text-anchor="start">  产生力矩 τ = m × B⊕ 悄悄给飞轮减速（哈勃望远镜</text>
+<text x="52" y="429" font-size="10.8" fill="#1e293b" text-anchor="start">  全靠这招，绝不喷一滴尾气污染光学镜面！）；</text>
+<text x="52" y="449" font-size="10.8" fill="#1e293b" text-anchor="start">• 高轨或深空磁场太弱时，才点动 1 N 小推力器卸载；</text>
+<text x="52" y="469" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">• 金色外衣（MLI 多层隔热膜）：防暴晒与深空严寒。</text>
+<rect x="398" y="68" width="340" height="438" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="416" y="95" font-size="15" fill="#c25014" text-anchor="start" font-weight="700">轨道维持：对抗三大“太空偷车贼”</text>
+<rect x="414" y="114" width="308" height="118" rx="10" fill="#fef1e8" stroke="#fdba74" stroke-width="1"/>
+<text x="426" y="136" font-size="11.8" fill="#c25014" text-anchor="start" font-weight="700">① 低轨头号小偷：高层大气阻力与太阳峰年</text>
+<text x="426" y="157" font-size="10.8" fill="#1e293b" text-anchor="start">400 km 仍有稀薄气体；每 11 年太阳活动高年，</text>
+<text x="426" y="176" font-size="10.8" fill="#1e293b" text-anchor="start">紫外暴晒使热层大气膨胀上涌！平时一年只需抬轨</text>
+<text x="426" y="195" font-size="10.8" fill="#1e293b" text-anchor="start">约 4 次，太阳峰年每 2–3 周就得点火抬升一次。</text>
+<rect x="414" y="246" width="308" height="118" rx="10" fill="#f3e8ff" stroke="#d8b4fe" stroke-width="1"/>
+<text x="426" y="268" font-size="11.8" fill="#6d28d9" text-anchor="start" font-weight="700">② 高轨头号小偷：日月拉扯 + 赤道微椭圆重力谷</text>
+<text x="426" y="289" font-size="10.8" fill="#1e293b" text-anchor="start">日月引力每年把静止轨道掰歪约 0.85°（南北保持</text>
+<text x="426" y="308" font-size="10.8" fill="#1e293b" text-anchor="start">年耗 Δv ≈ 45–50 m/s）；赤道半径差约 70 m 的重力谷</text>
+<text x="426" y="327" font-size="10.8" fill="#1e293b" text-anchor="start">还会拽着卫星东西漂移，须死守 ±0.05° 窄小车位！</text>
+<rect x="414" y="378" width="308" height="112" rx="10" fill="#fef2f2" stroke="#fca5a5" stroke-width="1"/>
+<text x="426" y="400" font-size="11.8" fill="#dc2626" text-anchor="start" font-weight="700">③ 致命暗器：太空碎片预警与紧急变轨闪避</text>
+<text x="426" y="421" font-size="10.8" fill="#1e293b" text-anchor="start">监控网追踪约 4.7 万个 &gt;10 cm 目标；相对碰撞速度</text>
+<text x="426" y="440" font-size="10.8" fill="#1e293b" text-anchor="start">达 10–14 km/s（1 克铝球堪比手榴弹）！碰撞概率</text>
+<text x="426" y="459" font-size="10.8" fill="#1e293b" text-anchor="start">一旦越过警戒线，卫星提前半圈微推几厘米/秒闪避。</text>
+</svg>

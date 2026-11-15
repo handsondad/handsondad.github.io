@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="514" viewBox="0 0 760 514" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">第谷8角分观测危机与开普勒687天火星三角测量法图解</title>
+<desc id="desc">左图对比满月视直径(30角分)、开普勒偏心圆误差(8角分)与第谷肉眼观测精度(1-2角分)；右图展示利用火星687天周期回到空间同一点M，从地球轨道两处E1、E2解三角形测定日火距离。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="513" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">既没望远镜更没飞出地球，开普勒怎么量出火星的三维轨道？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">靠第谷精确到 1～2 角分的肉眼星表“死磕 8 角分误差”，再用 687 天重合法在太空中解三角形！</text>
+<rect x="22" y="68" width="342" height="378" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="90" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="42" y="94" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">1</text>
+<text x="60" y="95" font-size="13" fill="#0f172a" text-anchor="start" font-weight="700">导火索：逼疯开普勒的“8 角分裂缝”</text>
+<rect x="36" y="112" width="314" height="152" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="193" y="132" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">夜空视角尺度直观对比（1° = 60 角分 = 60′）</text>
+<circle cx="104" cy="196" r="42" fill="#fffbeb" stroke="#b45309" stroke-width="1.8"/>
+<line x1="62.0" y1="196.0" x2="146.0" y2="196.0" stroke="#b45309" stroke-width="1.4" stroke-dasharray="3,3"/>
+<text x="104" y="191" font-size="11" fill="#b45309" text-anchor="middle" font-weight="700">满月视直径</text>
+<text x="104" y="210" font-size="11" fill="#1e293b" text-anchor="middle">≈ 30′ (0.5°)</text>
+<text x="162" y="166" font-size="11" fill="#1e293b" text-anchor="start">• 开普勒“代用偏心圆”最大偏差：</text>
+<rect x="174" y="175" width="45" height="12" rx="3" fill="#b91c1c"/>
+<text x="226" y="185" font-size="11" fill="#b91c1c" text-anchor="start" font-weight="700">8′（约满月 1/4 宽）</text>
+<text x="162" y="210" font-size="11" fill="#1e293b" text-anchor="start">• 第谷墙象限仪肉眼极限误差：</text>
+<rect x="174" y="219" width="11" height="12" rx="2" fill="#18794e"/>
+<text x="193" y="229" font-size="11" fill="#18794e" text-anchor="start" font-weight="700">仅 1′～2′（一缕发丝宽）</text>
+<text x="193" y="255" font-size="11" fill="#b91c1c" text-anchor="middle" font-weight="700">8′ 远超第谷误差上限 ⇒ 两千年正圆假说必错！</text>
+<rect x="36" y="276" width="314" height="156" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="48" y="298" font-size="12" fill="#c25014" text-anchor="start" font-weight="700">开普勒“向战神马尔斯宣战”的三轮试错：</text>
+<text x="48" y="322" font-size="11" fill="#1e293b" text-anchor="start">① 偏心正圆（Ch.39–44）：两侧轨道偏胖，超调 +8′</text>
+<text x="48" y="344" font-size="11" fill="#1e293b" text-anchor="start">② 鸡蛋形卵线（Ch.45–50）：两侧收得太窄，反偏 −8′</text>
+<text x="48" y="366" font-size="11" fill="#0f172a" text-anchor="start" font-weight="600">③ 1605 复活节顿悟（Ch.58）：正圆与卵线正中间——</text>
+<text x="62" y="388" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">椭圆 r = a(1 − e cos E) 完美命中全部观测！</text>
+<text x="48" y="414" font-size="10.5" fill="#64748b" text-anchor="start">注：开普勒顺手发明了“轨道(orbit)”与“焦点(focus)”两词</text>
+<rect x="378" y="68" width="360" height="378" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="398" cy="90" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="398" y="94" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">2</text>
+<text x="416" y="95" font-size="13" fill="#0f172a" text-anchor="start" font-weight="700">破局神技：每隔 687 天给火星“太空三角定位”</text>
+<rect x="392" y="112" width="332" height="220" rx="8" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<circle cx="532.0" cy="226.0" r="64.0" fill="none" stroke="#1d6fa5" stroke-width="1.6" stroke-dasharray="4,3"/>
+<ellipse cx="520.0" cy="226.0" rx="116" ry="112" fill="none" stroke="#c25014" stroke-width="1.4" stroke-dasharray="6,4"/>
+<line x1="532.0" y1="226.0" x2="624.0" y2="168.0" stroke="#b91c1c" stroke-width="2.2"/>
+<line x1="532.0" y1="226.0" x2="594.6" y2="212.7" stroke="#1d6fa5" stroke-width="1.8"/>
+<line x1="532.0" y1="226.0" x2="556.0" y2="166.7" stroke="#1d6fa5" stroke-width="1.8"/>
+<line x1="594.6" y1="212.7" x2="624.0" y2="168.0" stroke="#18794e" stroke-width="1.8" stroke-dasharray="4,2"/>
+<line x1="556.0" y1="166.7" x2="624.0" y2="168.0" stroke="#18794e" stroke-width="1.8" stroke-dasharray="4,2"/>
+<circle cx="532.0" cy="226.0" r="8" fill="#b45309" stroke="#ffffff" stroke-width="1.5"/>
+<text x="518.0" y="231.0" font-size="11.5" fill="#b45309" text-anchor="end" font-weight="700" class="halo">太阳 S</text>
+<circle cx="594.6" cy="212.7" r="5.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.5"/>
+<text x="602.6" y="226.7" font-size="11" fill="#1d6fa5" text-anchor="start" font-weight="700" class="halo">地球 E₁ (第 0 天)</text>
+<circle cx="556.0" cy="166.7" r="5.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.5"/>
+<text x="550.0" y="158.7" font-size="11" fill="#1d6fa5" text-anchor="end" font-weight="700" class="halo">地球 E₂ (第 687 天)</text>
+<circle cx="624.0" cy="168.0" r="6.5" fill="#b91c1c" stroke="#ffffff" stroke-width="1.5"/>
+<text x="632.0" y="162.0" font-size="11.5" fill="#b91c1c" text-anchor="start" font-weight="700" class="halo">火星同一点 M</text>
+<text x="580" y="206" font-size="11.5" fill="#b91c1c" text-anchor="start" font-weight="700" class="halo">rM = ?</text>
+<text x="458" y="318" font-size="11" fill="#1d6fa5" text-anchor="start" font-weight="600">地球轨道半径 ≈ 1 AU（已知基线尺）</text>
+<rect x="392" y="342" width="332" height="90" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="404" y="363" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">• 关键妙招：火星恒星周期 T火 = 687.0 天早已测准！</text>
+<text x="404" y="384" font-size="11" fill="#1e293b" text-anchor="start">• 挑相隔 687 天的两夜：火星必回到宇宙同一点 M，而地球</text>
+<text x="404" y="403" font-size="11" fill="#1e293b" text-anchor="start">  换到了 E₁、E₂ 两处，实测视线角即可解出日火距离 rM！</text>
+<text x="404" y="422" font-size="11" fill="#18794e" text-anchor="start" font-weight="700">• 攒够几十个点 M₁, M₂… 真相浮现：不是正圆，是椭圆！</text>
+<rect x="22" y="458" width="716" height="42" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="380" y="484" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">为什么偏偏是火星立功？金星(e=0.007)和地球(e=0.017)太接近正圆，肉眼绝难分辨；火星(e=0.093)是肉眼可见最偏的外行星！</text>
+</svg>

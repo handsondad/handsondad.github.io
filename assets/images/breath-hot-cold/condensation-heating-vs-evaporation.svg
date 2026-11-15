@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="500" viewBox="0 0 760 500" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">水蒸气相变潜热双向放大效应：哈气露点凝结放热与吹气稀释蒸发吸热对比图</title>
+<desc id="desc">左卡展示肺部呼气含水量37.7克每立方米（露点34.1摄氏度），遇冷手或镜片凝结成水雾并每克释放2420焦耳潜热；右卡展示吹气混入11倍室温干空气后含水量降至9.4克每立方米（露点10摄氏度），驱动手面微汗急速蒸发并每克吸走2420焦耳潜热。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#475569"/>
+    </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="499" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">核心第三关：水蒸气的“正反外挂”——为什么哈气起白雾，吹气秒除雾？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">每 1 克水相变藏着 2420 焦耳潜热（顶得上把 1 克水烧开近 6 次）！哈气凝结放热，吹气蒸发吸热</text>
+<rect x="20" y="62" width="352" height="422" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="84" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="38" y="88" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="88" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">哈气＝微型蒸汽熨斗：水汽凝结释放潜热</text>
+<rect x="38" y="108" width="316" height="186" rx="8" fill="#fff7ed" stroke="#fdba74" stroke-width="1"/>
+<text x="196" y="130" font-size="10.3" fill="#c25014" text-anchor="middle" font-weight="700">肺部呼气含水量高达 37.7 g/m³（露点 ≈ 34.1°C）</text>
+<rect x="58" y="236" width="276" height="36" rx="6" fill="#fed7aa" stroke="#ea580c" stroke-width="1.4"/>
+<text x="196" y="259" font-size="10.1" fill="#7c2d12" text-anchor="middle" font-weight="700">冬天冰凉的手 / 眼镜片（15–25°C ＜ 露点 34.1°C）</text>
+<line x1="94.0" y1="148.0" x2="94.0" y2="214.0" stroke="#c25014" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="4,3" marker-end="url(#arr-orange)"/>
+<circle cx="94" cy="230" r="5.2" fill="#38bdf8" stroke="#0284c7" stroke-width="1.2"/>
+<line x1="146.0" y1="148.0" x2="146.0" y2="214.0" stroke="#c25014" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="4,3" marker-end="url(#arr-orange)"/>
+<circle cx="146" cy="230" r="5.2" fill="#38bdf8" stroke="#0284c7" stroke-width="1.2"/>
+<line x1="198.0" y1="148.0" x2="198.0" y2="214.0" stroke="#c25014" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="4,3" marker-end="url(#arr-orange)"/>
+<circle cx="198" cy="230" r="5.2" fill="#38bdf8" stroke="#0284c7" stroke-width="1.2"/>
+<line x1="250.0" y1="148.0" x2="250.0" y2="214.0" stroke="#c25014" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="4,3" marker-end="url(#arr-orange)"/>
+<circle cx="250" cy="230" r="5.2" fill="#38bdf8" stroke="#0284c7" stroke-width="1.2"/>
+<line x1="300.0" y1="148.0" x2="300.0" y2="214.0" stroke="#c25014" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="4,3" marker-end="url(#arr-orange)"/>
+<circle cx="300" cy="230" r="5.2" fill="#38bdf8" stroke="#0284c7" stroke-width="1.2"/>
+<text x="196" y="192" font-size="10.1" fill="#0f172a" text-anchor="middle" font-weight="700">水蒸气无处可逃 → 凝结成微米水珠（起白雾！）</text>
+<text x="196" y="284" font-size="10.2" fill="#dc2626" text-anchor="middle" font-weight="700">🔥 每凝结 1 克水珠，向手心释放 +2420 J 潜热！</text>
+<rect x="38" y="308" width="316" height="160" rx="8" fill="#fffbeb" stroke="#fcd34d" stroke-width="1"/>
+<text x="50" y="329" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">擦眼镜动作里藏着的相变铁证：</text>
+<text x="50" y="350" font-size="10.0" fill="#1e293b" text-anchor="start">• 想擦眼镜时，所有人都会本能地【张大嘴哈气】：因为</text>
+<text x="50" y="369" font-size="10.0" fill="#1e293b" text-anchor="start">  未稀释暖气露点高达 34°C，碰到室温镜片必结一层白雾；</text>
+<text x="50" y="388" font-size="10.0" fill="#1e293b" text-anchor="start">• 冬天冻僵的手只有十来度，哈气时不仅没法蒸发汗水，</text>
+<text x="50" y="407" font-size="10.0" fill="#1e293b" text-anchor="start">  反而在手背结出肉眼难辨的微水膜，把气化潜热倒贴给</text>
+<text x="50" y="426" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="600">  你的皮肤——这就是哈气总带着一股“湿热劲儿”的原因！</text>
+<text x="50" y="450" font-size="9.9" fill="#dc2626" text-anchor="start" font-weight="700">（注：2420 J 足以让 1 克液态水升温 579°C！）</text>
+<rect x="388" y="62" width="352" height="422" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="84" r="10.5" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.2"/>
+<text x="406" y="88" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">2</text>
+<text x="424" y="88" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">吹气＝高速抽湿机：微汗瞬间蒸发狂吸潜热</text>
+<rect x="406" y="108" width="316" height="186" rx="8" fill="#f0fdfa" stroke="#5eead4" stroke-width="1"/>
+<text x="564" y="130" font-size="10.1" fill="#0f766e" text-anchor="middle" font-weight="700">掺入 11 倍干空气后含水量骤降至 9.4 g/m³（露点仅 10°C）</text>
+<rect x="426" y="236" width="276" height="36" rx="6" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.4"/>
+<text x="564" y="259" font-size="10.0" fill="#1e3a8a" text-anchor="middle" font-weight="700">手掌微汗毛孔表面饱和水汽 ≈ 34.7 g/m³（远高于 9.4！）</text>
+<line x1="432.0" y1="162.0" x2="696.0" y2="162.0" stroke="#1d6fa5" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<circle cx="474" cy="230" r="4.2" fill="#38bdf8" fill-opacity="0.55" stroke="#0284c7" stroke-dasharray="2,2"/>
+<line x1="474.0" y1="224.0" x2="490.0" y2="170.0" stroke="#0f766e" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arr-green)"/>
+<circle cx="534" cy="230" r="4.2" fill="#38bdf8" fill-opacity="0.55" stroke="#0284c7" stroke-dasharray="2,2"/>
+<line x1="534.0" y1="224.0" x2="550.0" y2="170.0" stroke="#0f766e" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arr-green)"/>
+<circle cx="594" cy="230" r="4.2" fill="#38bdf8" fill-opacity="0.55" stroke="#0284c7" stroke-dasharray="2,2"/>
+<line x1="594.0" y1="224.0" x2="610.0" y2="170.0" stroke="#0f766e" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arr-green)"/>
+<circle cx="654" cy="230" r="4.2" fill="#38bdf8" fill-opacity="0.55" stroke="#0284c7" stroke-dasharray="2,2"/>
+<line x1="654.0" y1="224.0" x2="670.0" y2="170.0" stroke="#0f766e" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arr-green)"/>
+<text x="564" y="204" font-size="10.1" fill="#0f766e" text-anchor="middle" font-weight="700">巨大湿度差＋强风吹散 → 隐性微汗瞬间气化飞走！</text>
+<text x="564" y="284" font-size="10.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">❄️ 每蒸发 1 克微汗，从皮肤硬抢走 -2420 J 潜热！</text>
+<rect x="406" y="308" width="316" height="160" rx="8" fill="#f0fdfa" stroke="#5eead4" stroke-width="1"/>
+<text x="418" y="329" font-size="10.6" fill="#0f766e" text-anchor="start" font-weight="700">🧪 沾一滴水再试：冷热反差当场放大 5 倍！</text>
+<text x="418" y="350" font-size="10.0" fill="#1e293b" text-anchor="start">• 哪怕你觉得手是“干”的，人类手掌每平方厘米也有数百</text>
+<text x="418" y="369" font-size="10.0" fill="#1e293b" text-anchor="start">  条汗腺时刻在分泌微量“不显性失水（TEWL）”；</text>
+<text x="418" y="388" font-size="10.0" fill="#1e293b" text-anchor="start">• 在手背抹半滴自来水再撅嘴吹一口：你会冻得一激灵！</text>
+<text x="418" y="407" font-size="10.0" fill="#1e293b" text-anchor="start">• 平时我们端起滚烫的稀饭【撅嘴吹气】，高达 70%–80%</text>
+<text x="418" y="426" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="600">  的降温功劳，正是吹走粥面饱和蒸汽、逼着热水蒸发吸热！</text>
+<text x="418" y="450" font-size="9.9" fill="#1d6fa5" text-anchor="start" font-weight="700">（套一只密封塑料袋在手上再吹，凉意立刻减半！）</text>
+</svg>

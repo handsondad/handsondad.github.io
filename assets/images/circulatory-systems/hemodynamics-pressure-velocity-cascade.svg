@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">人体血管树血压瀑布、总横截面积与血流速度定量关系图</title>
+<desc id="desc">展示从主动脉、微动脉、毛细血管到腔静脉的血压级联下降（泊肃叶阻力定律）以及截面积扩大700倍使毛细血管流速降至0.5毫米每秒的连续性原理。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">血管树的流体力学奇迹：微动脉怎样管血压，毛细血管怎样刹慢 700 倍？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">上栏看血压瀑布（泊肃叶定律 R ∝ 1/r⁴ 水龙头）→ 下栏看总截面积暴涨与流速急刹（A₁v₁ = A₂v₂）</text>
+<rect x="24" y="82" width="712" height="174" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="102" font-size="12" fill="#b91c1c" text-anchor="start" font-weight="700">① 血压级联瀑布 (mmHg)</text>
+<line x1="74" y1="110.4" x2="718" y2="110.4" stroke="#cbd5e1" stroke-dasharray="3 3"/>
+<text x="68" y="114.4" font-size="10.5" fill="#64748b" text-anchor="end">120</text>
+<line x1="74" y1="154.3" x2="718" y2="154.3" stroke="#cbd5e1" stroke-dasharray="3 3"/>
+<text x="68" y="158.3" font-size="10.5" fill="#64748b" text-anchor="end">80</text>
+<line x1="74" y1="198.1" x2="718" y2="198.1" stroke="#cbd5e1" stroke-dasharray="3 3"/>
+<text x="68" y="202.1" font-size="10.5" fill="#64748b" text-anchor="end">40</text>
+<line x1="74" y1="242.0" x2="718" y2="242.0" stroke="#e2e8f0"/>
+<text x="68" y="246.0" font-size="10.5" fill="#64748b" text-anchor="end">0</text>
+<line x1="98" y1="94" x2="98" y2="242" stroke="#f1f5f9" stroke-width="1"/>
+<line x1="192" y1="94" x2="192" y2="242" stroke="#f1f5f9" stroke-width="1"/>
+<line x1="296" y1="94" x2="296" y2="242" stroke="#f1f5f9" stroke-width="1"/>
+<line x1="412" y1="94" x2="412" y2="242" stroke="#f1f5f9" stroke-width="1"/>
+<line x1="522" y1="94" x2="522" y2="242" stroke="#f1f5f9" stroke-width="1"/>
+<line x1="614" y1="94" x2="614" y2="242" stroke="#f1f5f9" stroke-width="1"/>
+<line x1="698" y1="94" x2="698" y2="242" stroke="#f1f5f9" stroke-width="1"/>
+<polygon points="98.0,110.4 192.0,108.3 296.0,148.8 412.0,209.1 522.0,225.6 614.0,232.1 698.0,237.6 698.0,239.8 614.0,234.3 522.0,228.8 412.0,220.1 296.0,181.7 192.0,158.7 98.0,154.3" fill="#fecaca" fill-opacity="0.65"/>
+<polyline points="98.0,137.9 192.0,142.2 296.0,176.2 412.0,215.7 522.0,227.7 614.0,233.2 698.0,238.7" fill="none" stroke="#b91c1c" stroke-width="2.8"/>
+<circle cx="98" cy="137.9" r="4" fill="#b91c1c" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="192" cy="142.2" r="4" fill="#b91c1c" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="296" cy="176.2" r="4" fill="#b91c1c" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="412" cy="215.7" r="4" fill="#b91c1c" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="522" cy="227.7" r="4" fill="#b91c1c" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="614" cy="233.2" r="4" fill="#b91c1c" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="698" cy="238.7" r="4" fill="#b91c1c" stroke="#ffffff" stroke-width="1.2"/>
+<rect x="108.0" y="188.0" width="154" height="22" rx="11.0" fill="#fef2f2" stroke="#fca5a5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="185.0" y="203.0" font-size="10.5" fill="#b91c1c" text-anchor="middle" font-weight="600">弹性贮器稳压 120/80</text>
+<rect x="296.0" y="110.0" width="214" height="22" rx="11.0" fill="#fef1e8" stroke="#fdba74" stroke-width="1" stroke-opacity="0.35"/>
+<text x="403.0" y="125.0" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="600">微动脉陡降：r 缩半 → 阻力涨 16 倍！</text>
+<rect x="504.0" y="156.0" width="206" height="22" rx="11.0" fill="#eff6ff" stroke="#93c5fd" stroke-width="1" stroke-opacity="0.35"/>
+<text x="607.0" y="171.0" font-size="10.5" fill="#1e3a8a" text-anchor="middle" font-weight="600">静脉低压贮血 ~64%（靠瓣膜+肌肉泵）</text>
+<rect x="24" y="268" width="712" height="184" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="288" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700">② 流速 v (cm/s，蓝实线) vs 总横截面积 A (cm² 对数尺，绿虚线)</text>
+<line x1="74" y1="297.1" x2="718" y2="297.1" stroke="#cbd5e1" stroke-dasharray="3 3"/>
+<text x="68" y="301.1" font-size="10" fill="#1e3a8a" text-anchor="end">35 cm/s</text>
+<line x1="74" y1="370.7" x2="718" y2="370.7" stroke="#cbd5e1" stroke-dasharray="3 3"/>
+<text x="68" y="374.7" font-size="10" fill="#1e3a8a" text-anchor="end">15 cm/s</text>
+<line x1="74" y1="426.0" x2="718" y2="426.0" stroke="#e2e8f0"/>
+<text x="68" y="430.0" font-size="10" fill="#1e3a8a" text-anchor="end">0</text>
+<polyline points="98.0,402.6 192.0,375.4 296.0,345.2 412.0,292.0 522.0,313.2 614.0,352.0 698.0,377.2" fill="none" stroke="#18794e" stroke-width="2.6" stroke-dasharray="6 4"/>
+<polyline points="98.0,297.1 192.0,359.7 296.0,413.1 412.0,425.8 522.0,424.5 614.0,409.4 698.0,374.4" fill="none" stroke="#1d4ed8" stroke-width="2.8"/>
+<circle cx="98" cy="297.1" r="3.8" fill="#1d4ed8" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="192" cy="359.7" r="3.8" fill="#1d4ed8" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="296" cy="413.1" r="3.8" fill="#1d4ed8" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="412" cy="425.8" r="3.8" fill="#1d4ed8" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="522" cy="424.5" r="3.8" fill="#1d4ed8" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="614" cy="409.4" r="3.8" fill="#1d4ed8" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="698" cy="374.4" r="3.8" fill="#1d4ed8" stroke="#ffffff" stroke-width="1.2"/>
+<rect x="94.5" y="399.1" width="7" height="7" fill="#18794e" stroke="#ffffff" stroke-width="1"/>
+<rect x="188.5" y="371.9" width="7" height="7" fill="#18794e" stroke="#ffffff" stroke-width="1"/>
+<rect x="292.5" y="341.7" width="7" height="7" fill="#18794e" stroke="#ffffff" stroke-width="1"/>
+<rect x="408.5" y="288.5" width="7" height="7" fill="#18794e" stroke="#ffffff" stroke-width="1"/>
+<rect x="518.5" y="309.7" width="7" height="7" fill="#18794e" stroke="#ffffff" stroke-width="1"/>
+<rect x="610.5" y="348.5" width="7" height="7" fill="#18794e" stroke="#ffffff" stroke-width="1"/>
+<rect x="694.5" y="373.7" width="7" height="7" fill="#18794e" stroke="#ffffff" stroke-width="1"/>
+<rect x="326.0" y="304.0" width="198" height="22" rx="11.0" fill="#e7f6ee" stroke="#86efac" stroke-width="1" stroke-opacity="0.35"/>
+<text x="425.0" y="319.0" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="600">总截面积暴涨 700 倍 (~2,800 cm²)</text>
+<rect x="310.0" y="392.0" width="212" height="22" rx="11.0" fill="#eff6ff" stroke="#93c5fd" stroke-width="1" stroke-opacity="0.35"/>
+<text x="416.0" y="407.0" font-size="10.5" fill="#1e3a8a" text-anchor="middle" font-weight="600">流速急刹至 0.5 mm/s：从容换气 1–2s</text>
+<text x="690" y="362" font-size="10.5" fill="#1e3a8a" text-anchor="end" font-weight="600">汇流提速 ~14 cm/s</text>
+<text x="98" y="444" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="600">主动脉</text>
+<text x="192" y="444" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="600">大中动脉</text>
+<text x="296" y="444" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="700">微动脉</text>
+<text x="412" y="444" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="700">毛细血管</text>
+<text x="522" y="444" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="600">微静脉</text>
+<text x="614" y="444" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="600">静脉</text>
+<text x="698" y="444" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="600">腔静脉</text>
+<rect x="24" y="460" width="712" height="42" rx="10" fill="#f0fdfa" stroke="#5eead4" stroke-width="1"/>
+<text x="380" y="486" font-size="11.0" fill="#0f766e" text-anchor="middle" font-weight="600">百年教材勘误（Poole 等 2021）：70 kg 成人毛细血管总长实为 9,000–19,000 km；“10 万公里”系 1922 年按 50 kg 纯肌肉外推误传</text>
+</svg>

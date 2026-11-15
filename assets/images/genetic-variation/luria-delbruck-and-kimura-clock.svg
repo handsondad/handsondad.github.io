@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">卢瑞亚德尔布吕克波动实验与木村资生中性演化分子钟原理图</title>
+<desc id="desc">左图对比环境诱导假说的均匀泊松分布与分裂随机预突变假说的头奖克隆爆发波动；右图展示新发突变的有害、中性与有利谱系，并推导木村资生分子演化速率k等于中性突变率μ0的种群规模约分公式。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<defs><marker id="arr-ink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 Z" fill="#475569"/></marker></defs>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">第四幕：变异是“被环境逼出来的”吗？波动实验铁证与中性分子钟</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">破除“用进废退定向变异”迷思：分裂变异完全盲目超前，自然选择与随机漂变决定谁留下！</text>
+<rect x="22" y="68" width="352" height="386" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="90" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="42" y="94" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">1</text>
+<text x="60" y="95" font-size="11.3" fill="#0f172a" text-anchor="start" font-weight="700">1943 波动实验：细菌不是见了毒药才学着抗药！</text>
+<rect x="36" y="112" width="324" height="134" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="48" y="132" font-size="10.2" fill="#64748b" text-anchor="start" font-weight="700">假说 A（错）：见了噬菌体/抗生素才“被逼变异”</text>
+<text x="48" y="150" font-size="9.5" fill="#1e293b" text-anchor="start">→ 每支平行培养管临阵抱佛脚概率一样（均匀泊松分布）：</text>
+<rect x="58" y="194" width="26" height="24" rx="3" fill="#475569"/>
+<text x="71" y="190" font-size="9.2" fill="#475569" text-anchor="middle" font-weight="700">4</text>
+<text x="71" y="234" font-size="8.8" fill="#64748b" text-anchor="middle">管1</text>
+<rect x="104" y="188" width="26" height="30" rx="3" fill="#475569"/>
+<text x="117" y="184" font-size="9.2" fill="#475569" text-anchor="middle" font-weight="700">5</text>
+<text x="117" y="234" font-size="8.8" fill="#64748b" text-anchor="middle">管2</text>
+<rect x="150" y="200" width="26" height="18" rx="3" fill="#475569"/>
+<text x="163" y="196" font-size="9.2" fill="#475569" text-anchor="middle" font-weight="700">3</text>
+<text x="163" y="234" font-size="8.8" fill="#64748b" text-anchor="middle">管3</text>
+<rect x="196" y="194" width="26" height="24" rx="3" fill="#475569"/>
+<text x="209" y="190" font-size="9.2" fill="#475569" text-anchor="middle" font-weight="700">4</text>
+<text x="209" y="234" font-size="8.8" fill="#64748b" text-anchor="middle">管4</text>
+<rect x="242" y="188" width="26" height="30" rx="3" fill="#475569"/>
+<text x="255" y="184" font-size="9.2" fill="#475569" text-anchor="middle" font-weight="700">5</text>
+<text x="255" y="234" font-size="8.8" fill="#64748b" text-anchor="middle">管5</text>
+<rect x="288" y="194" width="26" height="24" rx="3" fill="#475569"/>
+<text x="301" y="190" font-size="9.2" fill="#475569" text-anchor="middle" font-weight="700">4</text>
+<text x="301" y="234" font-size="8.8" fill="#64748b" text-anchor="middle">管6</text>
+<rect x="36" y="258" width="324" height="182" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="48" y="278" font-size="10.2" fill="#c25014" text-anchor="start" font-weight="700">真实实验 B（1969诺奖）：分裂时早就随机盲目突变！</text>
+<text x="48" y="296" font-size="9.5" fill="#1e293b" text-anchor="start">→ 早几代偶然撞上突变的管子，翻倍繁衍出“头奖克隆团”：</text>
+<rect x="58" y="382" width="26" height="2" rx="3" fill="#1d6fa5"/>
+<text x="71" y="377" font-size="9.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">0!</text>
+<text x="71" y="400" font-size="8.8" fill="#64748b" text-anchor="middle">管1</text>
+<rect x="104" y="382" width="26" height="2" rx="3" fill="#1d6fa5"/>
+<text x="117" y="377" font-size="9.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">0!</text>
+<text x="117" y="400" font-size="8.8" fill="#64748b" text-anchor="middle">管2</text>
+<rect x="150" y="378" width="26" height="6" rx="3" fill="#1d6fa5"/>
+<text x="163" y="373" font-size="9.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">1!</text>
+<text x="163" y="400" font-size="8.8" fill="#64748b" text-anchor="middle">管3</text>
+<rect x="196" y="322" width="26" height="62" rx="3" fill="#b91c1c"/>
+<text x="209" y="317" font-size="9.5" fill="#b91c1c" text-anchor="middle" font-weight="700">64!</text>
+<text x="209" y="400" font-size="8.8" fill="#0f172a" text-anchor="middle">管4</text>
+<rect x="242" y="382" width="26" height="2" rx="3" fill="#1d6fa5"/>
+<text x="255" y="377" font-size="9.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">0!</text>
+<text x="255" y="400" font-size="8.8" fill="#64748b" text-anchor="middle">管5</text>
+<rect x="288" y="374" width="26" height="10" rx="3" fill="#1d6fa5"/>
+<text x="301" y="369" font-size="9.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">2!</text>
+<text x="301" y="400" font-size="8.8" fill="#64748b" text-anchor="middle">管6</text>
+<text x="198" y="426" font-size="9.7" fill="#b91c1c" text-anchor="middle" font-weight="700">铁证：变异是分裂前乱掷的骰子，抗生素只是事后筛子！</text>
+<rect x="390" y="68" width="348" height="386" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="410" cy="90" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="410" y="94" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">2</text>
+<text x="428" y="95" font-size="11.3" fill="#0f172a" text-anchor="start" font-weight="700">突变命运三岔口与木村资生“分子钟神仙约分”</text>
+<text x="406" y="120" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="600">新发突变对生存繁衍（适应度）的三类真实比例：</text>
+<rect x="406" y="130" width="200" height="24" rx="4" fill="#1d6fa5"/>
+<text x="506" y="146" font-size="9.4" fill="#ffffff" text-anchor="middle" font-weight="700">中性/近中性 (~70–85%)</text>
+<rect x="608" y="130" width="94" height="24" rx="4" fill="#475569"/>
+<text x="655" y="146" font-size="9.2" fill="#ffffff" text-anchor="middle" font-weight="700">有害(被淘汰)</text>
+<rect x="704" y="130" width="18" height="24" rx="3" fill="#18794e"/>
+<text x="406" y="173" font-size="9.6" fill="#1e293b" text-anchor="start">• 有害突变：破坏关键酶结构，被“净化选择”迅速扫出种群；</text>
+<text x="406" y="192" font-size="9.6" fill="#1e293b" text-anchor="start">• 极少数有利突变（右端绿线 &lt;1%）：如藏族高原低氧 EPAS1、</text>
+<text x="406" y="210" font-size="9.6" fill="#18794e" text-anchor="start" font-weight="700">  欧洲牧民成年乳糖酶持久、疟区镰刀红细胞杂合优势→正选择暴涨！</text>
+<text x="406" y="229" font-size="9.6" fill="#1d6fa5" text-anchor="start" font-weight="600">• 海量中性突变：非编码区或同义密码子替换，靠“随机漂变”浮沉。</text>
+<rect x="404" y="246" width="320" height="194" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="564" y="268" font-size="10.4" fill="#1d6fa5" text-anchor="middle" font-weight="700">木村资生（1968）中性演化分子钟的惊天约分：</text>
+<text x="416" y="291" font-size="9.6" fill="#1e293b" text-anchor="start">设二倍体种群有 N 个个体（共 2N 份基因拷贝）：</text>
+<text x="416" y="311" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="600">① 每代全族新诞生的中性突变总数 = 2N · μ₀</text>
+<text x="416" y="331" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="600">② 任一中性新突变纯凭运气最终占领全族概率 = 1 / (2N)</text>
+<rect x="420" y="344" width="288" height="36" rx="6" fill="#ffffff" stroke="#1d6fa5" stroke-width="1"/>
+<text x="564" y="367" font-size="10.6" fill="#b91c1c" text-anchor="middle" font-weight="700">物种基因替换速率  k = (2N · μ₀) × [1 / (2N)] = μ₀ ！</text>
+<text x="416" y="400" font-size="9.5" fill="#1e293b" text-anchor="start">种群大小 2N 完美抵消！无论老鼠还是鲸鱼，中性位点固定</text>
+<text x="416" y="419" font-size="9.5" fill="#0f172a" text-anchor="start" font-weight="700">突变的步调只等于突变率 μ₀ —— 分裂笔误直接化作“生命时钟”！</text>
+<rect x="22" y="466" width="716" height="40" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="380" y="491" font-size="10.8" fill="#0f172a" text-anchor="middle" font-weight="600">达尔文自然选择雕刻“适应环境的精巧表型”，木村资生中性漂变刻下“记录亿万年分家时间的分子钟”——二者完美互补！</text>
+</svg>

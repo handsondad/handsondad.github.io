@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="492" viewBox="0 0 760 492" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">红星二锅头固态酿造五步工艺、陶土地缸控温曲线与看花摘酒流体物理图</title>
+<desc id="desc">上方展示红高粱润糁、大麦豌豆大曲/麸曲、清蒸辅料去糠味、陶土地缸28天发酵及装甑六字诀；左下方对比陶土地缸隔绝杂菌机制与前缓中挺后缓落品温曲线；右下方解析50至65度乙醇水氢键黏度峰值及马兰戈尼效应如何形成大清花、小清花、云花与水花。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-ink" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#0f172a"/>
+  </marker>
+  <marker id="arr-red" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#dc2626"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="491" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="20" y="30" font-size="15.5" fill="#0f172a" text-anchor="start" font-weight="700">一粒红高粱怎样炼成清香原酒：固态酿造五步法、地缸控温与“看花摘酒”流体物理</text>
+<text x="20" y="50" font-size="12" fill="#64748b" text-anchor="start">陶土地缸隔绝泥土杂菌守护“一清到底”；水醇表面张力差与黏度峰造就毫米级酒花标尺</text>
+<rect x="18" y="66" width="724" height="158" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="78.0" width="328" height="22" rx="11.0" fill="#fffbeb" stroke="#b45309" stroke-width="1" stroke-opacity="0.35"/>
+<text x="196.0" y="93.0" font-size="12" fill="#b45309" text-anchor="middle" font-weight="600">国家级非遗酿造主线：老五甑混蒸混烧 / 现代清蒸清烧</text>
+<rect x="28" y="112" width="134" height="98" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="1.2"/>
+<text x="95" y="132" font-size="11.5" fill="#b45309" text-anchor="middle" font-weight="700">① 选粮润糁</text>
+<text x="95" y="152" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="700">红高粱粉碎</text>
+<text x="95" y="174" font-size="10.5" fill="#1e293b" text-anchor="middle">支链淀粉 ~80%</text>
+<text x="95" y="194" font-size="10.5" fill="#1e293b" text-anchor="middle">单宁 ~1% 烂心不烂皮</text>
+<line x1="163.0" y1="161.0" x2="196.0" y2="161.0" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round" marker-end="url(#arr-ink)"/>
+<rect x="170" y="112" width="134" height="98" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="237" y="132" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">② 大麦豌豆曲</text>
+<text x="237" y="152" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="700">糖化发酵剂</text>
+<text x="237" y="174" font-size="10.5" fill="#1e293b" text-anchor="middle">大麦:豌豆 = 6:4</text>
+<text x="237" y="194" font-size="10.5" fill="#1e293b" text-anchor="middle">或大曲+麸曲结合</text>
+<line x1="305.0" y1="161.0" x2="338.0" y2="161.0" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round" marker-end="url(#arr-ink)"/>
+<rect x="312" y="112" width="134" height="98" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="379" y="132" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">③ 清蒸糊化</text>
+<text x="379" y="152" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="700">辅料单独清蒸</text>
+<text x="379" y="174" font-size="10.5" fill="#1e293b" text-anchor="middle">稻壳单蒸 ≥30 min</text>
+<text x="379" y="194" font-size="10.5" fill="#1e293b" text-anchor="middle">彻底驱除生糠邪杂味</text>
+<line x1="447.0" y1="161.0" x2="480.0" y2="161.0" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round" marker-end="url(#arr-ink)"/>
+<rect x="454" y="112" width="134" height="98" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="521" y="132" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">④ 地缸发酵</text>
+<text x="521" y="152" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="700">闭关 ≥28 天</text>
+<text x="521" y="174" font-size="10.5" fill="#1e293b" text-anchor="middle">陶缸埋地隔菌控温</text>
+<text x="521" y="194" font-size="10.5" fill="#1e293b" text-anchor="middle">前缓、中挺、后缓落</text>
+<line x1="589.0" y1="161.0" x2="622.0" y2="161.0" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round" marker-end="url(#arr-ink)"/>
+<rect x="596" y="112" width="134" height="98" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2"/>
+<text x="663" y="132" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">⑤ 装甑摘酒</text>
+<text x="663" y="152" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="700">六字诀探汽上甑</text>
+<text x="663" y="174" font-size="10.5" fill="#1e293b" text-anchor="middle">轻·松·薄·匀·散·准</text>
+<text x="663" y="194" font-size="10.5" fill="#1e293b" text-anchor="middle">看花摘酒·取二锅心</text>
+<rect x="18" y="238" width="354" height="240" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="250.0" width="268" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="166.0" y="265.0" font-size="12" fill="#18794e" text-anchor="middle" font-weight="600">为什么用“陶土地缸”而不用浓香“泥窖”？</text>
+<text x="32" y="288" font-size="10.5" fill="#64748b" text-anchor="start">• 四川泥窖：窖泥富集己酸菌/梭菌，产浓郁己酸乙酯与窖香</text>
+<text x="32" y="308" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="700">• 北京陶缸：致密陶壁严防土壤梭菌侵入，刷洗消毒极净，</text>
+<text x="42" y="326" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">让酵母与乳酸菌纯粹接力，成就“清字当头、一清到底”！</text>
+<rect x="32" y="340" width="324" height="124" rx="7" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="44" y="358" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">地缸 28 天发酵品温曲线（°C）：前缓 → 中挺 → 后缓落</text>
+<line x1="64.0" y1="438.0" x2="330.0" y2="438.0" stroke="#475569" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="64.0" y1="438.0" x2="64.0" y2="376.0" stroke="#475569" stroke-width="1.2" stroke-linecap="round"/>
+<text x="58" y="436" font-size="10" fill="#64748b" text-anchor="end">18°</text>
+<text x="58" y="382" font-size="10" fill="#64748b" text-anchor="end">32°</text>
+<polyline points="64.0,433.9 111.5,402.9 178.0,384.3 235.0,390.5 330.0,419.4" fill="none" stroke="#18794e" stroke-width="2.6"/>
+<circle cx="64.0" cy="433.9" r="3.6" fill="#18794e"/>
+<text x="64.0" y="454" font-size="10" fill="#64748b" text-anchor="middle">0天</text>
+<circle cx="111.5" cy="402.9" r="3.6" fill="#18794e"/>
+<text x="111.5" y="454" font-size="10" fill="#64748b" text-anchor="middle">5天</text>
+<circle cx="178.0" cy="384.3" r="3.6" fill="#18794e"/>
+<text x="178.0" y="454" font-size="10" fill="#64748b" text-anchor="middle">12天</text>
+<circle cx="235.0" cy="390.5" r="3.6" fill="#18794e"/>
+<text x="235.0" y="454" font-size="10" fill="#64748b" text-anchor="middle">18天</text>
+<circle cx="330.0" cy="419.4" r="3.6" fill="#18794e"/>
+<text x="330.0" y="454" font-size="10" fill="#64748b" text-anchor="middle">28天</text>
+<text x="82.0" y="425.9" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">前缓</text>
+<text x="178.0" y="376.3" font-size="10.5" fill="#dc2626" text-anchor="middle" font-weight="700">中挺顶温 31°C</text>
+<text x="306.0" y="409.4" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="700">后缓落产酯</text>
+<rect x="388" y="238" width="354" height="240" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="402.0" y="250.0" width="328" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="566.0" y="265.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">“看花摘酒”背后的流体力学：表面张力与马兰戈尼效应</text>
+<text x="402" y="288" font-size="10.5" fill="#1e293b" text-anchor="start">• 纯水表面张力 72.0 mN/m（泡大易破），纯乙醇仅 22.3 mN/m；</text>
+<text x="402" y="307" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="700">• 50–65% vol 时水醇氢键网络黏度暴涨至 ~2.7 mPa·s（纯水 3 倍），</text>
+<text x="412" y="325" font-size="10.5" fill="#1e293b" text-anchor="start">液膜蒸发触发马兰戈尼回流自愈，酒花大小与寿命精确锁定酒度！</text>
+<rect x="402" y="340" width="326" height="27" rx="5" fill="#fffbeb" stroke="#b45309" stroke-width="1.0"/>
+<text x="412" y="358" font-size="11" fill="#b45309" text-anchor="start" font-weight="700">大清花</text>
+<text x="482" y="358" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">65–75% vol</text>
+<text x="556" y="358" font-size="10.5" fill="#1e293b" text-anchor="start">黄豆大·晶莹速散</text>
+<text x="720" y="358" font-size="10.5" fill="#b45309" text-anchor="end" font-weight="700">初段高度头酒</text>
+<rect x="402" y="372" width="326" height="27" rx="5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.0"/>
+<text x="412" y="390" font-size="11" fill="#18794e" text-anchor="start" font-weight="700">小清花</text>
+<text x="482" y="390" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">55–65% vol</text>
+<text x="556" y="390" font-size="10.5" fill="#1e293b" text-anchor="start">绿豆大·持久匀净</text>
+<text x="720" y="390" font-size="10.5" fill="#18794e" text-anchor="end" font-weight="700">二锅头核心中段!</text>
+<rect x="402" y="404" width="326" height="27" rx="5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.0"/>
+<text x="412" y="422" font-size="11" fill="#1d6fa5" text-anchor="start" font-weight="700">云花</text>
+<text x="482" y="422" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">45–55% vol</text>
+<text x="556" y="422" font-size="10.5" fill="#1e293b" text-anchor="start">米粒叠聚·绵密慢散</text>
+<text x="720" y="422" font-size="10.5" fill="#1d6fa5" text-anchor="end" font-weight="700">中后段临界区</text>
+<rect x="402" y="436" width="326" height="27" rx="5" fill="#fef2f2" stroke="#dc2626" stroke-width="1.0"/>
+<text x="412" y="454" font-size="11" fill="#dc2626" text-anchor="start" font-weight="700">水花/油花</text>
+<text x="482" y="454" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">&lt;40% vol</text>
+<text x="556" y="454" font-size="10.5" fill="#1e293b" text-anchor="start">碎沫铺面·浮油微浑</text>
+<text x="720" y="454" font-size="10.5" fill="#dc2626" text-anchor="end" font-weight="700">断花截尾信号!</text>
+</svg>

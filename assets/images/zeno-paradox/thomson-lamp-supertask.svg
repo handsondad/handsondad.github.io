@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="484" viewBox="0 0 760 484" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">汤姆逊台灯超任务悖论（1954）、贝纳塞拉夫逻辑拆解与相对论光速极限图解</title>
+<desc id="desc">左栏绘制汤姆逊台灯在 2 分钟内无限次按指数减半间隔开关的方波震荡及与阿喀琉斯连续极限的对比；右栏给出贝纳塞拉夫逻辑欠定分析与按钮超光速物理限制。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="483" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">汤姆逊台灯超任务（1954）：2 分钟内按无穷次开关，最后灯是亮还是灭？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">微积分解决了连续位移收敛，却被 20 世纪哲学家追问出一个新陷阱：如果状态序列没有极限怎么办？</text>
+<rect x="20" y="66" width="404" height="404" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="78.0" width="264" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="166.0" y="93.0" font-size="12" fill="#c25014" text-anchor="middle" font-weight="600">左栏：开关状态 S(t) 在 t → 2 分钟时的极限震荡</text>
+<line x1="72.0" y1="244.0" x2="404" y2="244.0" stroke="#475569" stroke-width="1.5"/>
+<line x1="72.0" y1="252.0" x2="72.0" y2="128" stroke="#475569" stroke-width="1.5"/>
+<line x1="72.0" y1="154.0" x2="372.0" y2="154.0" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="64.0" y="158.0" font-size="11.2" fill="#c25014" text-anchor="end" font-weight="700">亮 (1)</text>
+<text x="64.0" y="248.0" font-size="11.2" fill="#475569" text-anchor="end" font-weight="700">灭 (0)</text>
+<rect x="72.0" y="154.0" width="150.0" height="90.0" fill="#fffbeb" opacity="0.65"/>
+<rect x="297.0" y="154.0" width="37.5" height="90.0" fill="#fffbeb" opacity="0.65"/>
+<rect x="353.2" y="154.0" width="9.4" height="90.0" fill="#fffbeb" opacity="0.65"/>
+<rect x="367.3" y="154.0" width="2.3" height="90.0" fill="#fffbeb" opacity="0.65"/>
+<polyline points="72.0,154.0 222.0,154.0 222.0,244.0 297.0,244.0 297.0,154.0 334.5,154.0 334.5,244.0 353.2,244.0 353.2,154.0 362.6,154.0 362.6,244.0 367.3,244.0 367.3,154.0 369.7,154.0 369.7,244.0 370.8,244.0" fill="none" stroke="#c25014" stroke-width="2.2"/>
+<rect x="367.0" y="154.0" width="5.0" height="90.0" fill="#c25014" opacity="0.45"/>
+<line x1="372.0" y1="126" x2="372.0" y2="262" stroke="#b91c1c" stroke-width="2" stroke-dasharray="5 3"/>
+<circle cx="372.0" cy="199.0" r="13" fill="#fef2f2" stroke="#b91c1c" stroke-width="1.8"/>
+<text x="372.0" y="204.0" font-size="15" fill="#b91c1c" text-anchor="middle" font-weight="700">?</text>
+<text x="380.0" y="140" font-size="11.2" fill="#b91c1c" text-anchor="start" font-weight="700">t = 2 分钟</text>
+<line x1="72.0" y1="244.0" x2="72.0" y2="249.0" stroke="#0f172a" stroke-width="1.3"/>
+<text x="72.0" y="263.0" font-size="10.5" fill="#64748b" text-anchor="middle">0</text>
+<line x1="222.0" y1="244.0" x2="222.0" y2="249.0" stroke="#0f172a" stroke-width="1.3"/>
+<text x="222.0" y="263.0" font-size="10.5" fill="#64748b" text-anchor="middle">1</text>
+<line x1="297.0" y1="244.0" x2="297.0" y2="249.0" stroke="#0f172a" stroke-width="1.3"/>
+<text x="297.0" y="263.0" font-size="10.5" fill="#64748b" text-anchor="middle">1.5</text>
+<line x1="334.5" y1="244.0" x2="334.5" y2="249.0" stroke="#0f172a" stroke-width="1.3"/>
+<text x="334.5" y="263.0" font-size="10.5" fill="#64748b" text-anchor="middle">1.75</text>
+<line x1="372.0" y1="244.0" x2="372.0" y2="249.0" stroke="#0f172a" stroke-width="1.3"/>
+<text x="372.0" y="263.0" font-size="10.5" fill="#b91c1c" text-anchor="middle" font-weight="700">2.0 min</text>
+<rect x="36" y="286" width="372" height="168" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="50" y="308" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">核心差异：连续收敛 vs 离散震荡发散</text>
+<text x="50" y="331" font-size="11" fill="#1d6fa5" text-anchor="start" font-weight="600">• 阿喀琉斯位置序列：90, 99, 99.9… → 极限唯一存在 (= 100 m)，</text>
+<text x="50" y="349" font-size="10.8" fill="#1e293b" text-anchor="start">  加上运动连续性，t = 10 s 时的位置被唯一锁定为 100 m。</text>
+<text x="50" y="373" font-size="11" fill="#b91c1c" text-anchor="start" font-weight="600">• 汤姆逊台灯状态序列：1, 0, 1, 0, 1, 0… → 极限根本不存在！</text>
+<text x="50" y="391" font-size="10.8" fill="#1e293b" text-anchor="start">  每次开灯后都有更晚一次关灯，每次关灯后也都有更晚一次开灯；</text>
+<text x="50" y="409" font-size="10.8" fill="#1e293b" text-anchor="start">  不能把平均值 1/2 当答案——开关只有 0 和 1 两个离散态，</text>
+<text x="50" y="427" font-size="10.8" fill="#1e293b" text-anchor="start" font-weight="600">  没有“半亮半灭”的中间位置！</text>
+<rect x="440" y="66" width="300" height="404" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="454.0" y="78.0" width="145" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="526.5" y="93.0" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="600">右栏：逻辑拆解与物理极限两道关</text>
+<circle cx="466" cy="124" r="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="466" y="128" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">1</text>
+<text x="484" y="128" font-size="11.8" fill="#6d28d9" text-anchor="start" font-weight="700">贝纳塞拉夫（1962）的逻辑破案</text>
+<text x="454" y="150" font-size="10.9" fill="#1e293b" text-anchor="start">题目只规定了 t &lt; 2 每一刻的开关规则，</text>
+<text x="454" y="168" font-size="10.9" fill="#0f172a" text-anchor="start" font-weight="600">压根没有规定 t = 2 那一刻的状态！</text>
+<text x="454" y="188" font-size="10.8" fill="#1e293b" text-anchor="start">• 无穷动作序列 1, 2, 3…（序数 ω）</text>
+<text x="454" y="206" font-size="10.8" fill="#1e293b" text-anchor="start">  满足“每一步都被执行完”，但不存在</text>
+<text x="454" y="224" font-size="10.8" fill="#b91c1c" text-anchor="start" font-weight="600">  所谓的“最后第 ∞ 次按键”！</text>
+<text x="454" y="242" font-size="10.8" fill="#1e293b" text-anchor="start">• 因此 t = 2 时灯亮或灭在纯逻辑上都不</text>
+<text x="454" y="260" font-size="10.8" fill="#1e293b" text-anchor="start">  矛盾——只是题目条件欠定（不连续）。</text>
+<line x1="454" y1="278" x2="726" y2="278" stroke="#cbd5e1" stroke-width="1"/>
+<circle cx="466" cy="302" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="466" y="306" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">2</text>
+<text x="484" y="306" font-size="11.8" fill="#18794e" text-anchor="start" font-weight="700">真实物理宇宙为什么造不出这盏灯？</text>
+<text x="454" y="328" font-size="10.9" fill="#1e293b" text-anchor="start">设按钮行程仅 δ = 1 mm，第 n 次按键</text>
+<text x="454" y="346" font-size="10.9" fill="#1e293b" text-anchor="start">必须在 Δt_n = 60 × 2⁻ⁿ 秒内完成：</text>
+<rect x="454" y="358" width="272" height="54" rx="10" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="590" y="378" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="700">第 n = 35 次按键（距 2 分钟差 1.7 ns）</text>
+<text x="590" y="398" font-size="10.6" fill="#0f172a" text-anchor="middle" font-weight="600">按钮速度 v₃₅ &gt; 5.7×10⁵ m/s → 第 45 次超光速 c！</text>
+<text x="454" y="432" font-size="10.8" fill="#1e293b" text-anchor="start">结论：连续运动无需离散机械往返，而离散</text>
+<text x="454" y="450" font-size="10.8" fill="#1e293b" text-anchor="start" font-weight="600">无限按键会被狭义相对论光速上限直接熔断。</text>
+</svg>

@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="485" viewBox="0 0 760 485" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">火焰蓝光与黄光光谱机制及扩散预混火焰对比图</title>
+<desc id="desc">左图对比1450K纳米碳烟连续普朗克黑体辐射曲线与CH*、C2*自由基离散化学发光谱峰；右图展示灶台风门开闭对应的扩散黄火与预混蓝火，并澄清火焰颜色与温度的对应条件。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="484" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">为什么燃气灶是蓝火、蜡烛篝火是黄火？两种截然不同的发光物理</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">黄光是纳米固体碳粒的“连续黑体热辐射”，蓝光是 CH* 与 C₂* 自由基的“量子跃迁化学发光”</text>
+<rect x="20" y="62" width="364" height="404" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="84" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="38" y="88" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="88" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="700">可见光谱对决：离散分子谱线 vs 连续黑体尾翼</text>
+<rect x="62.0" y="310.0" width="47.4" height="6" fill="#8b5cf6" opacity="0.8"/>
+<rect x="109.4" y="310.0" width="39.5" height="6" fill="#2563eb" opacity="0.8"/>
+<rect x="148.8" y="310.0" width="55.3" height="6" fill="#10b981" opacity="0.8"/>
+<rect x="204.1" y="310.0" width="27.6" height="6" fill="#eab308" opacity="0.8"/>
+<rect x="231.7" y="310.0" width="31.6" height="6" fill="#f97316" opacity="0.8"/>
+<rect x="263.3" y="310.0" width="98.7" height="6" fill="#ef4444" opacity="0.8"/>
+<line x1="62.0" y1="310.0" x2="362.0" y2="310.0" stroke="#e2e8f0" stroke-width="1.0" stroke-linecap="round"/>
+<line x1="62.0" y1="217.0" x2="362.0" y2="217.0" stroke="#e2e8f0" stroke-width="1.0" stroke-linecap="round"/>
+<line x1="62.0" y1="124.0" x2="362.0" y2="124.0" stroke="#e2e8f0" stroke-width="1.0" stroke-linecap="round"/>
+<text x="56.0" y="128.0" font-size="10" fill="#64748b" text-anchor="end">强</text>
+<text x="56.0" y="314.0" font-size="10" fill="#64748b" text-anchor="end" class="mono">0</text>
+<line x1="77.8" y1="316.0" x2="77.8" y2="320.0" stroke="#475569" stroke-width="1.1" stroke-linecap="round"/>
+<text x="77.8" y="332.0" font-size="9.8" fill="#64748b" text-anchor="middle" class="mono">400</text>
+<line x1="133.1" y1="316.0" x2="133.1" y2="320.0" stroke="#475569" stroke-width="1.1" stroke-linecap="round"/>
+<text x="133.1" y="332.0" font-size="9.8" fill="#64748b" text-anchor="middle" class="mono">470</text>
+<line x1="196.2" y1="316.0" x2="196.2" y2="320.0" stroke="#475569" stroke-width="1.1" stroke-linecap="round"/>
+<text x="196.2" y="332.0" font-size="9.8" fill="#64748b" text-anchor="middle" class="mono">550</text>
+<line x1="259.4" y1="316.0" x2="259.4" y2="320.0" stroke="#475569" stroke-width="1.1" stroke-linecap="round"/>
+<text x="259.4" y="332.0" font-size="9.8" fill="#64748b" text-anchor="middle" class="mono">630</text>
+<line x1="314.6" y1="316.0" x2="314.6" y2="320.0" stroke="#475569" stroke-width="1.1" stroke-linecap="round"/>
+<text x="314.6" y="332.0" font-size="9.8" fill="#64748b" text-anchor="middle" class="mono">700</text>
+<line x1="362.0" y1="316.0" x2="362.0" y2="320.0" stroke="#475569" stroke-width="1.1" stroke-linecap="round"/>
+<text x="362.0" y="332.0" font-size="9.8" fill="#64748b" text-anchor="middle" class="mono">760</text>
+<text x="212.0" y="348.0" font-size="10.2" fill="#64748b" text-anchor="middle">波长 λ (nm) — 右侧 &gt;780 nm 进入红外热辐射主峰区</text>
+<line x1="62.0" y1="124.0" x2="62.0" y2="310.0" stroke="#475569" stroke-width="1.3" stroke-linecap="round"/>
+<line x1="62.0" y1="310.0" x2="362.0" y2="310.0" stroke="#475569" stroke-width="1.3" stroke-linecap="round"/>
+<polygon points="62.0,310.0 62.0,310.0 66.7,310.0 71.5,310.0 76.2,310.0 80.9,310.0 85.7,309.9 90.4,309.9 95.2,309.9 99.9,309.9 104.6,309.8 109.4,309.8 114.1,309.7 118.8,309.7 123.6,309.6 128.3,309.5 133.1,309.3 137.8,309.2 142.5,309.0 147.3,308.8 152.0,308.6 156.7,308.3 161.5,308.0 166.2,307.6 170.9,307.2 175.7,306.7 180.4,306.1 185.2,305.4 189.9,304.7 194.6,303.9 199.4,303.0 204.1,301.9 208.8,300.8 213.6,299.5 218.3,298.0 223.1,296.4 227.8,294.7 232.5,292.7 237.3,290.6 242.0,288.3 246.7,285.8 251.5,283.0 256.2,280.0 260.9,276.8 265.7,273.3 270.4,269.5 275.2,265.4 279.9,261.0 284.6,256.3 289.4,251.3 294.1,245.9 298.8,240.2 303.6,234.1 308.3,227.6 313.1,220.7 317.8,213.5 322.5,205.8 327.3,197.7 332.0,189.1 336.7,180.1 341.5,170.6 346.2,160.7 350.9,150.2 355.7,139.3 360.4,127.9 362.0,310.0" fill="#fed7aa" fill-opacity="0.45"/>
+<polyline points="62.0,310.0 66.7,310.0 71.5,310.0 76.2,310.0 80.9,310.0 85.7,309.9 90.4,309.9 95.2,309.9 99.9,309.9 104.6,309.8 109.4,309.8 114.1,309.7 118.8,309.7 123.6,309.6 128.3,309.5 133.1,309.3 137.8,309.2 142.5,309.0 147.3,308.8 152.0,308.6 156.7,308.3 161.5,308.0 166.2,307.6 170.9,307.2 175.7,306.7 180.4,306.1 185.2,305.4 189.9,304.7 194.6,303.9 199.4,303.0 204.1,301.9 208.8,300.8 213.6,299.5 218.3,298.0 223.1,296.4 227.8,294.7 232.5,292.7 237.3,290.6 242.0,288.3 246.7,285.8 251.5,283.0 256.2,280.0 260.9,276.8 265.7,273.3 270.4,269.5 275.2,265.4 279.9,261.0 284.6,256.3 289.4,251.3 294.1,245.9 298.8,240.2 303.6,234.1 308.3,227.6 313.1,220.7 317.8,213.5 322.5,205.8 327.3,197.7 332.0,189.1 336.7,180.1 341.5,170.6 346.2,160.7 350.9,150.2 355.7,139.3 360.4,127.9" fill="none" stroke="#c25014" stroke-width="2.6"/>
+<polyline points="62.0,306.3 63.6,306.3 65.2,306.3 66.7,306.3 68.3,306.3 69.9,306.3 71.5,306.3 73.1,306.3 74.6,306.3 76.2,306.3 77.8,306.3 79.4,306.3 80.9,306.3 82.5,306.3 84.1,306.3 85.7,306.2 87.3,306.0 88.8,305.2 90.4,303.1 92.0,297.9 93.6,287.1 95.2,267.8 96.7,238.7 98.3,202.5 99.9,166.5 101.5,141.4 103.1,135.9 104.6,152.0 106.2,183.8 107.8,221.2 109.4,254.4 110.9,278.6 112.5,293.3 114.1,301.0 115.7,304.4 117.3,305.7 118.8,306.1 120.4,306.2 122.0,306.1 123.6,305.4 125.2,303.6 126.7,298.8 128.3,288.7 129.9,271.0 131.5,246.1 133.1,218.6 134.6,197.4 136.2,191.2 137.8,202.5 139.4,226.6 140.9,254.1 142.5,277.2 144.1,292.5 145.7,300.7 147.3,304.3 148.8,305.7 150.4,306.1 152.0,306.2 153.6,306.1 155.2,305.7 156.7,304.5 158.3,301.4 159.9,294.3 161.5,280.7 163.1,258.4 164.6,227.6 166.2,193.2 167.8,163.7 169.4,148.8 170.9,154.0 172.5,177.2 174.1,210.4 175.7,243.9 177.3,270.7 178.8,288.5 180.4,298.5 182.0,303.3 183.6,305.3 185.2,306.0 186.7,306.2 188.3,306.2 189.9,306.2 191.5,306.1 193.1,305.6 194.6,304.7 196.2,302.7 197.8,299.2 199.4,293.5 200.9,285.8 202.5,277.0 204.1,268.6 205.7,263.0 207.3,261.8 208.8,265.4 210.4,272.6 212.0,281.5 213.6,289.9 215.2,296.6 216.7,301.2 218.3,303.9 219.9,305.3 221.5,305.9 223.1,306.1 224.6,306.2 226.2,306.3 227.8,306.3 229.4,306.3 230.9,306.3 232.5,306.3 234.1,306.3 235.7,306.3 237.3,306.3 238.8,306.3 240.4,306.3 242.0,306.3 243.6,306.3 245.2,306.3 246.7,306.3 248.3,306.3 249.9,306.3 251.5,306.3 253.1,306.3 254.6,306.3 256.2,306.3 257.8,306.3 259.4,306.3 260.9,306.3 262.5,306.3 264.1,306.3 265.7,306.3 267.3,306.3 268.8,306.3 270.4,306.3 272.0,306.3 273.6,306.3 275.2,306.3 276.7,306.3 278.3,306.3 279.9,306.3 281.5,306.3 283.1,306.3 284.6,306.3 286.2,306.3 287.8,306.3 289.4,306.3 290.9,306.3 292.5,306.3 294.1,306.3 295.7,306.3 297.3,306.3 298.8,306.3 300.4,306.3 302.0,306.3 303.6,306.3 305.2,306.3 306.7,306.3 308.3,306.3 309.9,306.3 311.5,306.3 313.1,306.3 314.6,306.3 316.2,306.3 317.8,306.3 319.4,306.3 320.9,306.3 322.5,306.3 324.1,306.3 325.7,306.3 327.3,306.3 328.8,306.3 330.4,306.3 332.0,306.3 333.6,306.3 335.2,306.3 336.7,306.3 338.3,306.3 339.9,306.3 341.5,306.3 343.1,306.3 344.6,306.3 346.2,306.3 347.8,306.3 349.4,306.3 350.9,306.3 352.5,306.3 354.1,306.3 355.7,306.3 357.3,306.3 358.8,306.3 360.4,306.3 362.0,306.3" fill="none" stroke="#1d6fa5" stroke-width="2.2"/>
+<text x="102.7" y="130.9" font-size="10.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">CH* (431 nm)</text>
+<text x="173.8" y="143.9" font-size="10.2" fill="#0f766e" text-anchor="start" font-weight="700">C₂* 斯旺带 (516 nm)</text>
+<text x="324.1" y="202.1" font-size="10.5" fill="#c25014" text-anchor="end" font-weight="700">1450 K 碳烟黑体辐射</text>
+<text x="324.1" y="218.9" font-size="9.8" fill="#dc2626" text-anchor="end">（98% 能量在红外区！）</text>
+<rect x="34" y="360" width="336" height="92" rx="8" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1.0"/>
+<text x="46" y="380" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">为什么隔着一米烤篝火，脸还没碰到火就觉得烫？</text>
+<text x="46" y="398" font-size="10.3" fill="#1e293b" text-anchor="start">按维恩位移定律，1450 K 碳烟辐射峰值在近红外 2.00 μm！</text>
+<text x="46" y="415" font-size="10.3" fill="#1e293b" text-anchor="start">热空气虽全部向上飞走，但纳米碳烟像无数微型红外浴霸灯，以</text>
+<text x="46" y="432" font-size="10.3" fill="#1e293b" text-anchor="start">光速向四面八方直线发射红外线；纯氢／甲醇无碳烟火反而辐射弱。</text>
+<rect x="396" y="62" width="344" height="404" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="414" cy="84" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="414" y="88" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="432" y="88" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="700">灶台风门一调，黄火秒变蓝火的秘密</text>
+<rect x="412" y="108" width="150" height="214" rx="8" fill="#fffbeb" stroke="#fcd34d" stroke-width="1"/>
+<text x="487" y="128" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="700">① 扩散火焰（风门堵死）</text>
+<path d="M 487 142 C 463 176, 465 212, 487 228 C 509 212, 511 176, 487 142 Z" fill="#facc15" stroke="#ea580c" stroke-width="1.3"/>
+<rect x="475" y="228" width="24" height="34" rx="2" fill="#64748b"/>
+<text x="487" y="278" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600">先出气、再找氧</text>
+<text x="487" y="295" font-size="9.8" fill="#1e293b" text-anchor="middle">缺氧裂解出碳烟 · 熏黑锅底</text>
+<text x="487" y="311" font-size="9.8" fill="#dc2626" text-anchor="middle" font-weight="600">生成一氧化碳 · 约 1200°C</text>
+<rect x="574" y="108" width="150" height="214" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+<text x="649" y="128" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">② 预混火焰（风门打开）</text>
+<path d="M 649 156 C 631 186, 633 214, 649 228 C 665 214, 667 186, 649 156 Z" fill="#60a5fa" fill-opacity="0.55" stroke="#2563eb" stroke-width="1.3"/>
+<path d="M 649 184 L 638 228 L 660 228 Z" fill="#38bdf8" stroke="#0284c7" stroke-width="1.2"/>
+<rect x="637" y="228" width="24" height="34" rx="2" fill="#64748b"/>
+<circle cx="649" cy="248" r="4.2" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.2"/>
+<text x="649" y="278" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600">管内先混足氧气再烧</text>
+<text x="649" y="295" font-size="9.8" fill="#1e293b" text-anchor="middle">碳烟零生成 · 只剩自由基光</text>
+<text x="649" y="311" font-size="9.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">双锥烈焰 · 1750–1950°C</text>
+<rect x="412" y="334" width="312" height="118" rx="8" fill="#fef2f2" stroke="#fecaca" stroke-width="1.0"/>
+<text x="424" y="354" font-size="11" fill="#dc2626" text-anchor="start" font-weight="700">破除误区：“蓝火一定比黄火白火温度高”？不一定！</text>
+<text x="424" y="373" font-size="10.2" fill="#1e293b" text-anchor="start">• 只有同属【黑体热辐射】（如铁水、恒星）时，颜色越偏蓝白才越热；</text>
+<text x="424" y="391" font-size="10.2" fill="#1e293b" text-anchor="start">• 燃气灶蓝火比蜡烛黄火热，是因为【预混供氧充分、无散热碳烟】；</text>
+<text x="424" y="409" font-size="10.2" fill="#1e293b" text-anchor="start">• 反例：空间站微重力“冷焰”也泛微弱蓝光，温度却仅 300–500°C，</text>
+<text x="424" y="427" font-size="10.2" fill="#1e293b" text-anchor="start">  而氧-乙炔焰掺碳白炽区（&gt;2500°C）比普通酒精灯蓝焰烫得多！</text>
+</svg>

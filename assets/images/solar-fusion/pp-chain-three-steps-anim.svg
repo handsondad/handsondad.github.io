@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="538" viewBox="0 0 760 538" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">太阳质子—质子链（pp链）三步核聚变分步动画图</title>
+<desc id="desc">分三步展示占太阳99%能量的质子—质子链：第一步两对质子经弱力β+衰变生成两颗氘核，第二步氘核在1秒内捕获质子生成两颗氦-3，第三步两颗氦-3合成为氦-4并退还两颗质子，总释放26.731 MeV能量，并附pp-II与pp-III分支。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes sfStep {
+    0% { opacity: 0.15; transform: translateY(4px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  .sf-1 { opacity: 0.15; animation: sfStep 0.85s ease-out 0.15s forwards; }
+  .sf-2 { opacity: 0.15; animation: sfStep 0.85s ease-out 1.75s forwards; }
+  .sf-3 { opacity: 0.15; animation: sfStep 0.90s ease-out 3.35s forwards; }
+  @media (prefers-reduced-motion: reduce) {
+    .sf-1, .sf-2, .sf-3 {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="537" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">四颗质子怎样拼成一颗氦核？分步跟读占太阳 99% 能量的“质子—质子链”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">按上→中→下三步跟读 pp-I 主干道（领 6 颗质子入场、退还 2 颗媒人质子）→ 底栏速查 pp-II / pp-III 支线</text>
+<g class="sf-1">
+  <rect x="24" y="66" width="712" height="130" rx="10" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+  <circle cx="42" cy="86" r="10" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="42" y="90" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">1</text>
+  <text x="58" y="90" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">第一步（弱核力破冰 · 需平行发生 ×2 次）：两颗质子隧穿相撞，一颗变身中子锁成“氘核 ²D”</text>
+
+  <rect x="40" y="104" width="152" height="58" rx="8" fill="#ffffff" stroke="#dc2626" stroke-width="1"/>
+  <circle cx="72" cy="133" r="11" fill="#dc2626"/><text x="72" y="137" font-size="10.2" fill="#fff" text-anchor="middle" font-weight="700">p⁺</text>
+  <text x="96" y="137" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="700">+</text>
+  <circle cx="120" cy="133" r="11" fill="#dc2626"/><text x="120" y="137" font-size="10.2" fill="#fff" text-anchor="middle" font-weight="700">p⁺</text>
+  <text x="162" y="137" font-size="10.6" fill="#6d28d9" text-anchor="middle" font-weight="700">×2组</text>
+
+  <line x1="196" y1="133" x2="252" y2="133" stroke="#6d28d9" stroke-width="2.2" marker-end="url(#arr-blue)"/>
+  <text x="224" y="122" font-size="9.8" fill="#6d28d9" text-anchor="middle" font-weight="700">等90亿年</text>
+
+  <rect x="256" y="104" width="198" height="58" rx="8" fill="#ffffff" stroke="#6d28d9" stroke-width="1"/>
+  <circle cx="284" cy="133" r="11" fill="#dc2626"/><text x="284" y="137" font-size="9.8" fill="#fff" text-anchor="middle" font-weight="700">p⁺</text>
+  <circle cx="305" cy="133" r="11" fill="#475569"/><text x="305" y="137" font-size="9.8" fill="#fff" text-anchor="middle" font-weight="700">n⁰</text>
+  <text x="384" y="127" font-size="11.0" fill="#0f172a" text-anchor="middle" font-weight="700">重氢：氘核 ²₁D（×2）</text>
+  <text x="384" y="147" font-size="10.0" fill="#64748b" text-anchor="middle">1质子 + 1中子紧紧吸住</text>
+
+  <line x1="458" y1="133" x2="496" y2="133" stroke="#c25014" stroke-width="2.2" marker-end="url(#arr-orange)"/>
+
+  <rect x="500" y="104" width="220" height="58" rx="8" fill="#ffffff" stroke="#c25014" stroke-width="1"/>
+  <text x="610" y="126" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="700">抛出 e⁺ 正电子 + νₑ 电子中微子</text>
+  <text x="610" y="147" font-size="10.0" fill="#1e293b" text-anchor="middle">e⁺遇电子湮灭成2γ · 每组放能 1.442 MeV</text>
+
+  <text x="40" y="182" font-size="10.5" fill="#1e293b" text-anchor="start">• 方程：¹H + ¹H → ²D + e⁺ + νₑ（连同 e⁺+e⁻→2γ 湮灭，两组共释放 2 × 1.442 = 2.884 MeV；中微子 2.3 秒直飞出太阳）</text>
+</g>
+<g class="sf-2">
+  <rect x="24" y="208" width="712" height="128" rx="10" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+  <circle cx="42" cy="228" r="10" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="42" y="232" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">2</text>
+  <text x="58" y="232" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">第二步（强核力秒杀 · 同样发生 ×2 次）：刚出生的氘核只活约 1 秒，立刻吞下第 3 颗质子变“氦-3”</text>
+
+  <rect x="40" y="246" width="186" height="56" rx="8" fill="#ffffff" stroke="#1d6fa5" stroke-width="1"/>
+  <text x="133" y="270" font-size="11.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">氘核 ²₁D + 第3颗质子 ¹₁H</text>
+  <text x="133" y="290" font-size="10.0" fill="#64748b" text-anchor="middle">（上下两路同步进行 ×2 组）</text>
+
+  <line x1="230" y1="274" x2="290" y2="274" stroke="#1d6fa5" stroke-width="2.4" marker-end="url(#arr-blue)"/>
+  <text x="260" y="264" font-size="10.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">仅需 ~1 秒!</text>
+
+  <rect x="294" y="246" width="206" height="56" rx="8" fill="#ffffff" stroke="#0f766e" stroke-width="1"/>
+  <circle cx="322" cy="274" r="10" fill="#dc2626"/>
+  <circle cx="340" cy="268" r="10" fill="#dc2626"/>
+  <circle cx="332" cy="284" r="10" fill="#475569"/>
+  <text x="424" y="270" font-size="10.8" fill="#0f766e" text-anchor="middle" font-weight="700">轻氦同位素：氦-3 ³₂He（×2）</text>
+  <text x="424" y="290" font-size="10.0" fill="#64748b" text-anchor="middle">2 质子 + 1 中子稳定核</text>
+
+  <line x1="504" y1="274" x2="540" y2="274" stroke="#c25014" stroke-width="2.2" marker-end="url(#arr-orange)"/>
+
+  <rect x="544" y="246" width="176" height="56" rx="8" fill="#ffffff" stroke="#c25014" stroke-width="1"/>
+  <text x="632" y="270" font-size="11.0" fill="#c25014" text-anchor="middle" font-weight="700">射出高能伽马光子 γ</text>
+  <text x="632" y="290" font-size="10.4" fill="#0f172a" text-anchor="middle" font-weight="600">每组释放 5.493 MeV</text>
+
+  <text x="40" y="322" font-size="10.5" fill="#1e293b" text-anchor="start">• 方程：²D + ¹H → ³He + γ（无需弱力变身，强核力瞬间拉拢，两组共释放 2 × 5.493 = 10.986 MeV 辐射热能）</text>
+</g>
+<g class="sf-3">
+  <rect x="24" y="348" width="712" height="176" rx="10" fill="#e7f6ee" stroke="#18794e" stroke-width="1.3"/>
+  <circle cx="42" cy="368" r="10" fill="#ffffff" stroke="#18794e" stroke-width="1.2"/>
+<text x="42" y="372" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">3</text>
+  <text x="58" y="372" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">第三步（终极合体 · 氦-3 平均巡游约 400 年）：两颗氦-3 迎头拼出氦-4，原封不动退还 2 颗媒人质子！</text>
+
+  <rect x="40" y="386" width="184" height="58" rx="8" fill="#ffffff" stroke="#0f766e" stroke-width="1"/>
+  <text x="132" y="410" font-size="12.0" fill="#0f766e" text-anchor="middle" font-weight="700">³₂He  +  ³₂He</text>
+  <text x="132" y="431" font-size="10.0" fill="#1e293b" text-anchor="middle">pp-I 主干道（占 pp 链 83.3%）</text>
+
+  <line x1="228" y1="415" x2="282" y2="415" stroke="#18794e" stroke-width="2.4" marker-end="url(#arr-green)"/>
+  <text x="255" y="405" font-size="9.8" fill="#18794e" text-anchor="middle" font-weight="700">~400年</text>
+
+  <rect x="286" y="386" width="224" height="58" rx="8" fill="#ffffff" stroke="#18794e" stroke-width="1"/>
+  <text x="398" y="409" font-size="11.0" fill="#18794e" text-anchor="middle" font-weight="700">氦-4 ⁴₂He（α粒子）+ 退回 2 颗 ¹₁H</text>
+  <text x="398" y="430" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="600">领 6 颗氢进场，退 2 颗，净耗 4 颗！</text>
+
+  <line x1="514" y1="415" x2="546" y2="415" stroke="#c25014" stroke-width="2.2" marker-end="url(#arr-orange)"/>
+
+  <rect x="550" y="386" width="170" height="58" rx="8" fill="#ffffff" stroke="#dc2626" stroke-width="1"/>
+  <text x="635" y="409" font-size="11.0" fill="#dc2626" text-anchor="middle" font-weight="700">单步猛放 12.859 MeV</text>
+  <text x="635" y="430" font-size="10.4" fill="#0f172a" text-anchor="middle" font-weight="700">全链总计 26.731 MeV!</text>
+
+  <rect x="40" y="454" width="680" height="58" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="52" y="475" font-size="10.3" fill="#1e293b" text-anchor="start">• 旁路支线：pp-II（约 16.68%）：³He 先抱住现成的 ⁴He 变铍-7（⁷Be），俘获电子变锂-7（⁷Li），再吃 1 颗质子裂成两颗 ⁴He；</text>
+  <text x="52" y="497" font-size="10.3" fill="#6d28d9" text-anchor="start" font-weight="600">• 探针支线：pp-III（仅 0.02%）：⁷Be 再吃 1 颗质子变硼-8（⁸B）衰变出高达 14.06 MeV 超高能中微子，帮人类解开中微子失踪案！</text>
+</g>
+</svg>

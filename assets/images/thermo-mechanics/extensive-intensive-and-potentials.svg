@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="524" viewBox="0 0 760 524" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">热力学强度量与广延量切半测试及四大热力学势对比图</title>
+<desc id="desc">上半图用 400 mL 80℃ 热茶一分为二说明强度量(T,P,μ)不变而广延量(V,m,U,S)减半；下半图展示通过勒让德变换构造的内能 U、焓 H、亥姆霍兹自由能 F 与吉布斯自由能 G 的各自适用场景。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="523" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">把一杯 80℃ 热茶一刀切两半：秒懂“强度量 vs 广延量”与四大能量家族</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">强度量管“往哪流”（推动力），广延量管“装多少”（容量）；两者成对相乘恰好就是功与热！</text>
+<rect x="22" y="68" width="716" height="198" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="90" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="42" y="94" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="60" y="95" font-size="13" fill="#0f172a" text-anchor="start" font-weight="700">思想实验：在热平衡的 400 mL 热茶正中央，轻轻插进一块薄隔板</text>
+<rect x="36" y="110" width="212" height="142" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="142" y="130" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">原系统：400 mL，80℃，1 atm</text>
+<rect x="58" y="144" width="76" height="72" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="1.6"/>
+<rect x="150" y="144" width="76" height="72" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="1.6"/>
+<line x1="142.0" y1="138.0" x2="142.0" y2="224.0" stroke="#b91c1c" stroke-width="2" stroke-dasharray="5,3"/>
+<text x="96" y="174" font-size="12" fill="#c25014" text-anchor="middle" font-weight="700">左半杯</text>
+<text x="96" y="194" font-size="11.5" fill="#1e293b" text-anchor="middle">200 mL</text>
+<text x="96" y="210" font-size="11.5" fill="#b91c1c" text-anchor="middle" font-weight="700">80℃!</text>
+<text x="188" y="174" font-size="12" fill="#c25014" text-anchor="middle" font-weight="700">右半杯</text>
+<text x="188" y="194" font-size="11.5" fill="#1e293b" text-anchor="middle">200 mL</text>
+<text x="188" y="210" font-size="11.5" fill="#b91c1c" text-anchor="middle" font-weight="700">80℃!</text>
+<text x="142" y="242" font-size="11" fill="#b91c1c" text-anchor="middle" font-weight="600">切半后温度绝不会变成 40℃！</text>
+<rect x="262" y="110" width="224" height="142" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="374" y="131" font-size="12" fill="#c25014" text-anchor="middle" font-weight="700">强度量（Intensive：不随大小变）</text>
+<text x="274" y="154" font-size="11.5" fill="#1e293b" text-anchor="start">• 温度 T（80℃ 不变 → 管热量流向）</text>
+<text x="274" y="175" font-size="11.5" fill="#1e293b" text-anchor="start">• 压强 P（1 atm 不变 → 管边界膨胀）</text>
+<text x="274" y="196" font-size="11.5" fill="#1e293b" text-anchor="start">• 化学势 μ、密度 ρ、比热容 c</text>
+<text x="374" y="222" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="600">本质：决定平衡与否的“水位高度”</text>
+<text x="374" y="241" font-size="11" fill="#64748b" text-anchor="middle">不可直接相加（80℃+80℃ ≠ 160℃）</text>
+<rect x="500" y="110" width="224" height="142" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="612" y="131" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="700">广延量（Extensive：随份额减半）</text>
+<text x="512" y="154" font-size="11.5" fill="#1e293b" text-anchor="start">• 体积 V、质量 m、摩尔数 n（全减半）</text>
+<text x="512" y="175" font-size="11.5" fill="#1e293b" text-anchor="start">• 内能 U、焓 H、自由能 F、G（减半）</text>
+<text x="512" y="196" font-size="11.5" fill="#1e293b" text-anchor="start">• 熵 S（无序度规模也严格减半）</text>
+<text x="612" y="222" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">本质：具有严格可加性的“蓄水容量”</text>
+<text x="612" y="241" font-size="11" fill="#64748b" text-anchor="middle">广延量 ÷ 广延量 = 强度量（如 ρ=m/V）</text>
+<rect x="22" y="278" width="716" height="232" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="300" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="42" y="304" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">2</text>
+<text x="60" y="305" font-size="13" fill="#0f172a" text-anchor="start" font-weight="700">共轭配对铁律 dU = T dS − P dV + μ dN，以及为什么要造出“四大能量态函数”？</text>
+<rect x="36" y="320" width="162" height="176" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="117" y="342" font-size="12.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">内能 U(S, V)</text>
+<text x="117" y="362" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="600">系统微粒真身总家底</text>
+<line x1="48.0" y1="372.0" x2="186.0" y2="372.0" stroke="#1d6fa5" stroke-width="0.9"/>
+<text x="117" y="394" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">dU = T dS − P dV</text>
+<text x="117" y="422" font-size="11" fill="#1e293b" text-anchor="middle">主场：密封刚性钢罐（恒容 V）</text>
+<rect x="46" y="440" width="142" height="44" rx="6" fill="#ffffff" stroke="#1d6fa5" stroke-width="1"/>
+<text x="117" y="467" font-size="11" fill="#1d6fa5" text-anchor="middle" font-weight="700">等容吸热 Qv = ΔU</text>
+<rect x="208" y="320" width="162" height="176" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="289" y="342" font-size="12.5" fill="#c25014" text-anchor="middle" font-weight="700">焓 H = U + PV</text>
+<text x="289" y="362" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="600">自带“挤开大气过路费”</text>
+<line x1="220.0" y1="372.0" x2="358.0" y2="372.0" stroke="#c25014" stroke-width="0.9"/>
+<text x="289" y="394" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">dH = T dS + V dP</text>
+<text x="289" y="422" font-size="11" fill="#1e293b" text-anchor="middle">主场：敞口烧杯/锅炉（恒压 P）</text>
+<rect x="218" y="440" width="142" height="44" rx="6" fill="#ffffff" stroke="#c25014" stroke-width="1"/>
+<text x="289" y="467" font-size="11" fill="#c25014" text-anchor="middle" font-weight="700">等压反应热 Qp = ΔH</text>
+<rect x="380" y="320" width="162" height="176" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="461" y="342" font-size="12.5" fill="#6d28d9" text-anchor="middle" font-weight="700">亥姆霍兹 F = U − TS</text>
+<text x="461" y="362" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="600">扣掉恒温必交的“热税 TS”</text>
+<line x1="392.0" y1="372.0" x2="530.0" y2="372.0" stroke="#6d28d9" stroke-width="0.9"/>
+<text x="461" y="394" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">dF = −S dT − P dV</text>
+<text x="461" y="422" font-size="11" fill="#1e293b" text-anchor="middle">主场：恒温恒容容器（恒 T, V）</text>
+<rect x="390" y="440" width="142" height="44" rx="6" fill="#ffffff" stroke="#6d28d9" stroke-width="1"/>
+<text x="461" y="467" font-size="11" fill="#6d28d9" text-anchor="middle" font-weight="700">最大总功 Wmax = −ΔF</text>
+<rect x="552" y="320" width="162" height="176" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="633" y="342" font-size="12.5" fill="#18794e" text-anchor="middle" font-weight="700">吉布斯 G = H − TS</text>
+<text x="633" y="362" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="600">化工与生命细胞的终极裁判</text>
+<line x1="564.0" y1="372.0" x2="702.0" y2="372.0" stroke="#18794e" stroke-width="0.9"/>
+<text x="633" y="394" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">dG = −S dT + V dP</text>
+<text x="633" y="422" font-size="11" fill="#1e293b" text-anchor="middle">主场：室温常压（恒 T, P）</text>
+<rect x="562" y="440" width="142" height="44" rx="6" fill="#ffffff" stroke="#18794e" stroke-width="1"/>
+<text x="633" y="467" font-size="11" fill="#18794e" text-anchor="middle" font-weight="700">ΔG&lt;0 自发；电功≤−ΔG</text>
+</svg>

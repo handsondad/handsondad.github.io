@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="498" viewBox="0 0 760 498" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">力学微观相空间与平衡态热力学状态参量的降维对比图</title>
+<desc id="desc">展示 1 mol 气体的 3.61×10²⁴ 个经典力学位置动量坐标如何经统计平均与理想气体状态方程 PV=nRT 降维为仅需 2 个独立热力学状态参量。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="497" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">从 3.6×10²⁴ 个力学坐标到 2 个热力学表盘：物理学最震撼的“史诗级降维”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">为什么力学里描述 1 mol 气体会让超级计算机崩溃，而平衡态热力学只看两块仪表就能锁死全局？</text>
+<rect x="22" y="68" width="232" height="358" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="90" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="42" y="94" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">1</text>
+<text x="60" y="95" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">力学微观态：拉普拉斯妖的噩梦</text>
+<rect x="34" y="112" width="208" height="134" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="138" y="132" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">1 mol 气体 = 6.022×10²³ 个分子</text>
+<circle cx="64" cy="166" r="5" fill="#c25014"/>
+<line x1="64.0" y1="166.0" x2="82.0" y2="156.0" stroke="#0f172a" stroke-width="1.5"/>
+<text x="64" y="184" font-size="11" fill="#1e293b" text-anchor="middle">r₁,p₁</text>
+<circle cx="136" cy="162" r="5" fill="#c25014"/>
+<line x1="136.0" y1="162.0" x2="120.0" y2="174.0" stroke="#0f172a" stroke-width="1.5"/>
+<text x="136" y="180" font-size="11" fill="#1e293b" text-anchor="middle">r₂,p₂</text>
+<circle cx="194" cy="174" r="5" fill="#c25014"/>
+<line x1="194.0" y1="174.0" x2="180.0" y2="162.0" stroke="#0f172a" stroke-width="1.5"/>
+<text x="194" y="192" font-size="11" fill="#1e293b" text-anchor="middle">rᵢ,pᵢ</text>
+<circle cx="96" cy="204" r="5" fill="#c25014"/>
+<line x1="96.0" y1="204.0" x2="112.0" y2="212.0" stroke="#0f172a" stroke-width="1.5"/>
+<text x="96" y="222" font-size="11" fill="#1e293b" text-anchor="middle">…</text>
+<circle cx="168" cy="208" r="5" fill="#c25014"/>
+<line x1="168.0" y1="208.0" x2="153.0" y2="214.0" stroke="#0f172a" stroke-width="1.5"/>
+<text x="168" y="226" font-size="11" fill="#1e293b" text-anchor="middle">rₙ,pₙ</text>
+<rect x="34" y="258" width="208" height="154" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="46" y="280" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">每个质点需 6 个力学状态量：</text>
+<text x="46" y="300" font-size="11.5" fill="#1e293b" text-anchor="start">位置 (xᵢ, yᵢ, zᵢ) + 动量 (pₓᵢ, pᵧᵢ, p₂ᵢ)</text>
+<text x="138" y="328" font-size="13" fill="#b91c1c" text-anchor="middle" font-weight="700">总维数 = 6 Nₐ ≈ 3.61×10²⁴</text>
+<text x="46" y="352" font-size="11" fill="#64748b" text-anchor="start">• 哪怕每秒抄写 1 万亿个数字，</text>
+<text x="46" y="370" font-size="11" fill="#64748b" text-anchor="start">  写完一瞬间的状态也要 11.4 万年！</text>
+<text x="46" y="392" font-size="11" fill="#1e293b" text-anchor="start">• 微观可逆，且受初值混沌高度敏感</text>
+<rect x="272" y="68" width="216" height="358" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="292" cy="90" r="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="292" y="94" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">2</text>
+<text x="310" y="95" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">统计物理漏斗：碰撞抹平细节</text>
+<polygon points="288,118 472,118 434,242 326,242" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.5"/>
+<text x="380" y="144" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">每秒 ~10⁹ 次/分子激烈碰撞</text>
+<text x="380" y="166" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">进入“热动平衡态”后：</text>
+<text x="380" y="190" font-size="11.5" fill="#1e293b" text-anchor="middle">① 平动动能均值 → 温度 T</text>
+<text x="380" y="208" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">   ⟨ε平⟩ = (3/2) kB T</text>
+<text x="380" y="230" font-size="11.5" fill="#1e293b" text-anchor="middle">② 器壁冲量密度 → 压强 P</text>
+<line x1="380.0" y1="244.0" x2="380.0" y2="266.0" stroke="#6d28d9" stroke-width="2" marker-end="url(#arr-muted)"/>
+<rect x="284" y="272" width="192" height="140" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="380" y="294" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="700">状态方程再砍掉 1 个自由度！</text>
+<text x="380" y="320" font-size="15" fill="#0f172a" text-anchor="middle" font-weight="700">P V = n R T</text>
+<text x="380" y="344" font-size="11.5" fill="#1e293b" text-anchor="middle" font-weight="600">吉布斯相律：F = C − Φ + 2</text>
+<text x="380" y="366" font-size="11" fill="#64748b" text-anchor="middle">纯单相闭系（C=1, Φ=1）：</text>
+<text x="380" y="388" font-size="12" fill="#18794e" text-anchor="middle" font-weight="700">独立强度参量仅 F = 2 个！</text>
+<rect x="506" y="68" width="232" height="358" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="526" cy="90" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="526" y="94" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">3</text>
+<text x="544" y="95" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">热力学宏观态：2 个表盘定乾坤</text>
+<rect x="518" y="112" width="208" height="120" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<circle cx="572" cy="164" r="30" fill="#ffffff" stroke="#c25014" stroke-width="2"/>
+<line x1="572.0" y1="164.0" x2="590.0" y2="146.0" stroke="#c25014" stroke-width="2.4"/>
+<text x="572" y="184" font-size="13" fill="#c25014" text-anchor="middle" font-weight="700">T</text>
+<text x="572" y="214" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">温度计</text>
+<circle cx="672" cy="164" r="30" fill="#ffffff" stroke="#1d6fa5" stroke-width="2"/>
+<line x1="672.0" y1="164.0" x2="692.0" y2="152.0" stroke="#1d6fa5" stroke-width="2.4"/>
+<text x="672" y="184" font-size="13" fill="#1d6fa5" text-anchor="middle" font-weight="700">P</text>
+<text x="672" y="214" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">压力表</text>
+<line x1="622.0" y1="234.0" x2="622.0" y2="254.0" stroke="#18794e" stroke-width="2" marker-end="url(#arr-green)"/>
+<rect x="518" y="258" width="208" height="154" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="622" y="280" font-size="12" fill="#18794e" text-anchor="middle" font-weight="700">一旦固定 n 并读出 (T, P)：</text>
+<text x="530" y="304" font-size="11.5" fill="#1e293b" text-anchor="start">• 体积 V = V(T, P) 自动锁死</text>
+<text x="530" y="325" font-size="11.5" fill="#1e293b" text-anchor="start">• 内能 U = U(T, P) 自动锁死</text>
+<text x="530" y="346" font-size="11.5" fill="#1e293b" text-anchor="start">• 熵 S、焓 H、自由能 G 全锁死</text>
+<line x1="530.0" y1="362.0" x2="714.0" y2="362.0" stroke="#cbd5e1" stroke-width="1"/>
+<text x="622" y="382" font-size="11.5" fill="#b91c1c" text-anchor="middle" font-weight="700">适用边界：必须处于热平衡态！</text>
+<text x="622" y="400" font-size="11" fill="#64748b" text-anchor="middle">爆炸湍流瞬间不能用单个 P、T 概括</text>
+<rect x="22" y="438" width="716" height="46" rx="8" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<text x="380" y="466" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="600">对比精髓：力学追踪“每一棵树的枝叶摇晃”（6N 维相空间）；热力学测量“整片森林的海拔与气温”（2～3 维平衡态流形）。</text>
+</svg>

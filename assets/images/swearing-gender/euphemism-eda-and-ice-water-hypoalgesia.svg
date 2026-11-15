@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="514" viewBox="0 0 760 514" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">冰水疼痛耐受实验四组实测对比与委婉词皮肤电反应及耐药脱敏机制图</title>
+<desc id="desc">左栏展示真禁忌词使冰水忍痛极限提升33%而搞笑伪词无效的实测数据，右栏展示委婉词降低皮肤电唤醒与低频使用者镇痛更强的耐药定律</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="513" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="380.0" y="30" font-size="18.0" fill="#1e293b" text-anchor="middle" font-weight="700">手泡冰水喊真脏话能多扛 18.4 秒！为什么搞笑替身词却完全止不住疼？</text>
+<text x="380.0" y="52" font-size="11.8" fill="#64748b" text-anchor="middle">基尔大学冰水镇痛实验（Stephens &amp; Robertson 2020，N=92）与皮肤电反应（Bowers 2011）及性别耐药效应</text>
+<rect x="22" y="68" width="392" height="426" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="38.0" y="82.0" width="360" height="22" rx="11.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="218.0" y="97.0" font-size="12" fill="#dc2626" text-anchor="middle" font-weight="600">① 冰水冷压实验实测（N=92）：唯有真禁忌词能镇痛</text>
+<text x="40" y="122" font-size="10.3" fill="#1e293b" text-anchor="start">双手浸入冰水时重复喊不同词，测“开始觉得疼”与“忍痛极限”：</text>
+<rect x="42" y="135" width="12" height="12" rx="2" fill="#fb923c"/>
+<text x="60" y="145" font-size="9.8" fill="#1e293b" text-anchor="start">疼痛阈值（开始疼的秒数）</text>
+<rect x="214" y="135" width="12" height="12" rx="2" fill="#dc2626"/>
+<text x="232" y="145" font-size="9.8" fill="#dc2626" text-anchor="start" font-weight="700">忍痛极限（坚持总秒数）</text>
+<text x="130" y="181" font-size="10.4" fill="#dc2626" text-anchor="end" font-weight="700">真禁忌脏话</text>
+<rect x="138" y="168" width="91.2" height="15" rx="3" fill="#fb923c"/>
+<text x="235.2" y="180" font-size="9.8" fill="#c25014" text-anchor="start" font-weight="700">35.77 s</text>
+<rect x="138" y="187" width="189.4" height="17" rx="3" fill="#dc2626"/>
+<text x="333.4" y="200" font-size="10.2" fill="#dc2626" text-anchor="start" font-weight="700">74.28 s</text>
+<text x="138" y="217" font-size="9.4" fill="#dc2626" text-anchor="start" font-weight="700">阈值 +31.5% | 极限 +33.0%！</text>
+<text x="130" y="245" font-size="10.4" fill="#0f172a" text-anchor="end">自造词 fouch</text>
+<rect x="138" y="232" width="72.0" height="15" rx="3" fill="#cbd5e1"/>
+<text x="216.0" y="244" font-size="9.8" fill="#475569" text-anchor="start">28.23 s</text>
+<rect x="138" y="251" width="149.0" height="17" rx="3" fill="#94a3b8"/>
+<text x="293.0" y="264" font-size="10.2" fill="#475569" text-anchor="start">58.44 s</text>
+<text x="138" y="281" font-size="9.4" fill="#64748b" text-anchor="start">与中性词无显著差异</text>
+<text x="130" y="309" font-size="10.4" fill="#0f172a" text-anchor="end">搞笑词 twizpipe</text>
+<rect x="138" y="296" width="64.9" height="15" rx="3" fill="#cbd5e1"/>
+<text x="208.9" y="308" font-size="9.8" fill="#475569" text-anchor="start">25.45 s</text>
+<rect x="138" y="315" width="133.8" height="17" rx="3" fill="#94a3b8"/>
+<text x="277.8" y="328" font-size="10.2" fill="#475569" text-anchor="start">52.47 s</text>
+<text x="138" y="345" font-size="9.4" fill="#64748b" text-anchor="start">幽默分最高(51分)却零止痛！</text>
+<text x="130" y="373" font-size="10.4" fill="#0f172a" text-anchor="end">中性词（桌子）</text>
+<rect x="138" y="360" width="69.4" height="15" rx="3" fill="#cbd5e1"/>
+<text x="213.4" y="372" font-size="9.8" fill="#475569" text-anchor="start">27.20 s</text>
+<rect x="138" y="379" width="142.5" height="17" rx="3" fill="#94a3b8"/>
+<text x="286.5" y="392" font-size="10.2" fill="#475569" text-anchor="start">55.87 s</text>
+<text x="138" y="409" font-size="9.4" fill="#64748b" text-anchor="start">对照组基准线</text>
+<rect x="38" y="424" width="360" height="56" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="50" y="444" font-size="9.9" fill="#1e293b" text-anchor="start">为什么编个搞笑新词不管用？因为止痛靠的不是“分心或好玩”，</text>
+<text x="50" y="464" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="700">而是童年挨训刻进杏仁核的“禁忌语音条件反射”激活了内源性镇痛！</text>
+<rect x="428" y="68" width="310" height="426" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="444.0" y="82.0" width="278" height="22" rx="11.0" fill="#f0fdfa" stroke="#0f766e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="583.0" y="97.0" font-size="12" fill="#0f766e" text-anchor="middle" font-weight="600">② 谐音脱敏与“越少骂越止痛”性别反转</text>
+<rect x="444" y="120" width="278" height="162" rx="10" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<text x="458" y="142" font-size="10.6" fill="#1d6fa5" text-anchor="start" font-weight="700">皮肤电导（EDA）测谎级实验（PLOS ONE 2011）：</text>
+<line x1="462.0" y1="208.0" x2="704.0" y2="208.0" stroke="#475569" stroke-width="1.0" stroke-dasharray="3 2"/>
+<path d="M 466 206 L 496 206 L 512 156 L 530 194 L 552 204 L 574 206" fill="none" stroke="#dc2626" stroke-width="2.5"/>
+<text x="516" y="224" font-size="9.6" fill="#dc2626" text-anchor="middle" font-weight="700">读出真禁忌词原音</text>
+<text x="516" y="239" font-size="9.2" fill="#dc2626" text-anchor="middle">掌心瞬间微出汗飙升!</text>
+<path d="M 594 206 L 622 206 L 636 193 L 652 204 L 696 206" fill="none" stroke="#0f766e" stroke-width="2.3"/>
+<text x="646" y="224" font-size="9.6" fill="#0f766e" text-anchor="middle" font-weight="700">改读“F-word/谐音词”</text>
+<text x="646" y="239" font-size="9.2" fill="#0f766e" text-anchor="middle">意思全懂但生理波澜小</text>
+<text x="458" y="267" font-size="9.7" fill="#0f172a" text-anchor="start" font-weight="700">启示：委婉词换掉了“扣动杏仁核扳机的语音外壳”！</text>
+<rect x="444" y="296" width="278" height="184" rx="10" fill="#f0fdfa" stroke="#5eead4" stroke-width="1"/>
+<text x="458" y="318" font-size="10.6" fill="#0f766e" text-anchor="start" font-weight="700">最妙的性别彩蛋：平时克制的人，止痛药效更猛！</text>
+<text x="458" y="340" font-size="9.7" fill="#1e293b" text-anchor="start">• 2009 年首篇冰水实验（Stephens 等，获搞笑诺奖）</text>
+<text x="458" y="357" font-size="9.7" fill="#1e293b" text-anchor="start">  意外发现：受试女性爆粗后的疼痛下降幅度，显著</text>
+<text x="458" y="374" font-size="9.7" fill="#1e293b" text-anchor="start">  强于部分高灾难化焦虑的受试男性！</text>
+<text x="458" y="391" font-size="9.7" fill="#1e293b" text-anchor="start">• 后续追踪揭开了“耐药脱敏定律”：</text>
+<text x="458" y="408" font-size="9.7" fill="#1e293b" text-anchor="start">  如果一个人每天把脏字当标点符号挂嘴边狂飙，</text>
+<text x="458" y="425" font-size="9.7" fill="#1e293b" text-anchor="start">  大脑杏仁核早已麻木脱敏，真受伤时再骂也不止痛；</text>
+<text x="458" y="442" font-size="9.7" fill="#1e293b" text-anchor="start">• 相反，平时很少说脏话的人（统计上女性占比更高）</text>
+<text x="458" y="459" font-size="9.7" fill="#0f172a" text-anchor="start" font-weight="700">  关键时刻骂出一句，就像急救箱里未开封的肾上腺素！</text>
+</svg>

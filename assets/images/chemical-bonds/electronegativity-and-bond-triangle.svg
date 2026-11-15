@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">鲍林电负性拔河、键型连续谱三角与离子金属晶体力学对比</title>
+<desc id="desc">左侧展示非极性共价、极性共价与离子键的电子云偏移，以及连接离子键、金属键、共价键的范阿克尔-凯特拉尔键型三角；右侧解析氯化钠晶格能负769千焦每摩尔如何扭转气态抢电子亏本，以及食盐错位脆断与金属电子海延展性的微观机制。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-red" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#b91c1c"/></marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">化学键不是孤立抽屉：电负性拔河与三大主价键连续谱</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">平均电负性 χ̄ 与电负性差 Δχ 决定电子归属；三维晶格能与电子海塑造截然不同的宏观物性</text>
+<rect x="20" y="74" width="368" height="412" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="40" cy="96" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="40" y="100" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="62" y="101" font-size="14" fill="#0f172a" text-anchor="start" font-weight="700">鲍林电负性差 Δχ 与键型三角连续谱</text>
+<rect x="36" y="114" width="336" height="38" rx="8" fill="#eaf4fb" stroke="#1d6fa5"/>
+<text x="48" y="130" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">非极性共价 H–H</text>
+<text x="48" y="145" font-size="10.5" fill="#1e293b" text-anchor="start">Δχ = 0.0｜电子云完全对称均分</text>
+<ellipse cx="322" cy="133" rx="28" ry="11" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.6"/>
+<circle cx="308" cy="133" r="3.5" fill="#1d6fa5"/><circle cx="336" cy="133" r="3.5" fill="#1d6fa5"/>
+<rect x="36" y="158" width="336" height="38" rx="8" fill="#f3e8ff" stroke="#6d28d9"/>
+<text x="48" y="174" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">极性共价 Hδ⁺–Clδ⁻</text>
+<text x="48" y="189" font-size="10.5" fill="#1e293b" text-anchor="start">Δχ = 0.9｜电子云偏向高电负性氯</text>
+<path d="M294,177 C294,169 322,163 344,165 C356,167 356,187 344,189 C322,191 294,185 294,177 Z" fill="#ffffff" stroke="#6d28d9" stroke-width="1.6"/>
+<circle cx="304" cy="177" r="3" fill="#6d28d9"/><circle cx="340" cy="177" r="4.5" fill="#6d28d9"/>
+<rect x="36" y="202" width="336" height="38" rx="8" fill="#fef1e8" stroke="#c25014"/>
+<text x="48" y="218" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">离子键 Na⁺ Cl⁻</text>
+<text x="48" y="233" font-size="10.5" fill="#1e293b" text-anchor="start">Δχ = 2.1｜价电子近似转移成阴阳离子</text>
+<circle cx="304" cy="221" r="8" fill="#ffffff" stroke="#c25014" stroke-width="1.5"/>
+<circle cx="338" cy="221" r="13" fill="#ffffff" stroke="#c25014" stroke-width="1.8"/>
+<text x="304" y="224.5" font-size="10" fill="#c25014" text-anchor="middle" font-weight="700">+</text>
+<text x="338" y="224.5" font-size="11" fill="#c25014" text-anchor="middle" font-weight="700">−</text>
+<text x="204" y="266" font-size="12" fill="#475569" text-anchor="middle" font-weight="700">范阿克尔-凯特拉尔键型三角（无绝对分界线）</text>
+<polygon points="204,294 84,434 324,434" fill="#f1f5f9" stroke="#475569" stroke-width="2"/>
+<circle cx="204" cy="294" r="7" fill="#c25014"/>
+<text x="204" y="283" font-size="11" fill="#c25014" text-anchor="middle" font-weight="700">离子键 (CsF / NaCl)</text>
+<circle cx="84" cy="434" r="7" fill="#18794e"/>
+<text x="92" y="454" font-size="11" fill="#18794e" text-anchor="middle" font-weight="700">金属键 (Na / Cu)</text>
+<text x="92" y="469" font-size="10" fill="#64748b" text-anchor="middle">低 χ̄：大家都松手 → 电子海</text>
+<circle cx="324" cy="434" r="7" fill="#1d6fa5"/>
+<text x="304" y="454" font-size="11" fill="#1d6fa5" text-anchor="middle" font-weight="700">共价键 (F₂ / 金刚石)</text>
+<text x="304" y="469" font-size="10" fill="#64748b" text-anchor="middle">高 χ̄：大家都抓紧 → 共享对</text>
+<circle cx="264" cy="364" r="4.5" fill="#6d28d9"/>
+<text x="308" y="362" font-size="10.5" fill="#6d28d9" text-anchor="middle" font-weight="700">极性共价</text>
+<text x="308" y="376" font-size="10" fill="#1e293b" text-anchor="middle">(HCl / H₂O)</text>
+<circle cx="204" cy="422" r="4.5" fill="#0f766e"/>
+<text x="204" y="412" font-size="10" fill="#0f766e" text-anchor="middle" font-weight="600">半导体 Si（共价↔金属过渡）</text>
+<line x1="204.0" y1="392.0" x2="204.0" y2="318.0" stroke="#64748b" stroke-width="1.3" stroke-dasharray="3 3" marker-end="url(#arr-muted)"/>
+<text x="204" y="356" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">Δχ 增大</text>
+<rect x="404" y="74" width="336" height="412" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="424" cy="96" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="424" y="100" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="446" y="101" font-size="14" fill="#0f172a" text-anchor="start" font-weight="700">食盐晶格反转与“脆盐 vs 韧铜”之谜</text>
+<rect x="420" y="114" width="304" height="122" rx="10" fill="#fef1e8" stroke="#c25014"/>
+<text x="432" y="134" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">反转真相：孤立一对钠氯抢电子其实亏本！</text>
+<text x="432" y="154" font-size="10.5" fill="#1e293b" text-anchor="start">• 从 Na(g) 拔走电子（电离能）：+496 kJ/mol</text>
+<text x="432" y="172" font-size="10.5" fill="#1e293b" text-anchor="start">• Cl(g) 接住电子（电子亲和能）：−349 kJ/mol</text>
+<text x="432" y="190" font-size="10.5" fill="#b91c1c" text-anchor="start" font-weight="700">→ 气态单对移交净亏 +147 kJ/mol（吸热不划算）</text>
+<line x1="432.0" y1="200.0" x2="712.0" y2="200.0" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="432" y="219" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="700">★ 全靠三维晶格能 −769 kJ/mol 一举扭亏成盐！</text>
+<rect x="420" y="248" width="304" height="106" rx="10" fill="#fef2f2" stroke="#b91c1c"/>
+<text x="432" y="268" font-size="11.5" fill="#b91c1c" text-anchor="start" font-weight="700">① 离子晶体（食盐 NaCl）：一敲就沿平面崩裂</text>
+<line x1="430.0" y1="294.0" x2="444.0" y2="294.0" stroke="#b91c1c" stroke-width="1.8" marker-end="url(#arr-red)"/>
+<circle cx="456" cy="294" r="10" fill="#ffffff" stroke="#c25014" stroke-width="1.8"/>
+<text x="456" y="298" font-size="11" fill="#c25014" text-anchor="middle" font-weight="700">+</text>
+<circle cx="484" cy="294" r="10" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.8"/>
+<text x="484" y="298" font-size="11" fill="#1d6fa5" text-anchor="middle" font-weight="700">−</text>
+<circle cx="512" cy="294" r="10" fill="#ffffff" stroke="#c25014" stroke-width="1.8"/>
+<text x="512" y="298" font-size="11" fill="#c25014" text-anchor="middle" font-weight="700">+</text>
+<circle cx="456" cy="326" r="10" fill="#ffffff" stroke="#c25014" stroke-width="1.8"/>
+<text x="456" y="330" font-size="11" fill="#c25014" text-anchor="middle" font-weight="700">+</text>
+<circle cx="484" cy="326" r="10" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.8"/>
+<text x="484" y="330" font-size="11" fill="#1d6fa5" text-anchor="middle" font-weight="700">−</text>
+<circle cx="512" cy="326" r="10" fill="#ffffff" stroke="#c25014" stroke-width="1.8"/>
+<text x="512" y="330" font-size="11" fill="#c25014" text-anchor="middle" font-weight="700">+</text>
+<text x="540" y="296" font-size="10.5" fill="#1e293b" text-anchor="start" font-weight="600">外力推错半格 →</text>
+<text x="540" y="315" font-size="10.5" fill="#b91c1c" text-anchor="start" font-weight="700">+对+、−对− 同号相斥</text>
+<text x="540" y="334" font-size="10.5" fill="#1e293b" text-anchor="start">瞬间产生解理脆断！</text>
+<rect x="420" y="366" width="304" height="106" rx="10" fill="#e7f6ee" stroke="#18794e"/>
+<text x="432" y="386" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">② 金属晶体（铜/金）：自由电子海柔性润滑</text>
+<rect x="442" y="398" width="84" height="60" rx="10" fill="#eaf4fb" stroke="#1d6fa5" stroke-dasharray="3 2"/>
+<circle cx="460" cy="414" r="9" fill="#ffffff" stroke="#18794e" stroke-width="1.8"/>
+<text x="460" y="417.5" font-size="10" fill="#18794e" text-anchor="middle" font-weight="700">+</text>
+<circle cx="488" cy="414" r="9" fill="#ffffff" stroke="#18794e" stroke-width="1.8"/>
+<text x="488" y="417.5" font-size="10" fill="#18794e" text-anchor="middle" font-weight="700">+</text>
+<circle cx="514" cy="414" r="9" fill="#ffffff" stroke="#18794e" stroke-width="1.8"/>
+<text x="514" y="417.5" font-size="10" fill="#18794e" text-anchor="middle" font-weight="700">+</text>
+<circle cx="452" cy="442" r="9" fill="#ffffff" stroke="#18794e" stroke-width="1.8"/>
+<text x="452" y="445.5" font-size="10" fill="#18794e" text-anchor="middle" font-weight="700">+</text>
+<circle cx="480" cy="442" r="9" fill="#ffffff" stroke="#18794e" stroke-width="1.8"/>
+<text x="480" y="445.5" font-size="10" fill="#18794e" text-anchor="middle" font-weight="700">+</text>
+<circle cx="508" cy="442" r="9" fill="#ffffff" stroke="#18794e" stroke-width="1.8"/>
+<text x="508" y="445.5" font-size="10" fill="#18794e" text-anchor="middle" font-weight="700">+</text>
+<text x="540" y="414" font-size="10.5" fill="#1e293b" text-anchor="start" font-weight="600">无方向性离域电子海</text>
+<text x="540" y="433" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="700">随阳离子滑移即时填补</text>
+<text x="540" y="452" font-size="10.5" fill="#1e293b" text-anchor="start">捶成金箔不断、导电反光</text>
+<text x="380" y="505" font-size="11" fill="#64748b" text-anchor="middle">数据来源：OpenStax Chemistry 2e 7.1、7.2、7.5 与 10.5 节；鲍林电负性标度（F = 4.0）</text>
+</svg>

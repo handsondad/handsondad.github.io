@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="448" viewBox="0 0 760 448" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">轮轨高铁与高速磁浮基础设施成本构成反转及典型项目每公里造价对比图</title>
+<desc id="desc">左图对比轮轨高铁电机随车走、钢轨无源廉价，而高速磁浮须全线铺设铜定子绕组、高频变电站及毫米级防沉降桩基；右图对比中国350km/h高铁(~0.25亿美元/km)、上海磁浮(~0.39亿)、仁川磁浮(~0.65亿)、爱知Linimo(~1.0亿)与近90%隧道的日本中央新干线(&gt;2.0亿美元/km且延至2035年后)。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="447" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">为什么没有大面积普及（中）：把铜线圈电机铺满几百公里大地，账单有多吓人？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">普通高铁是“好钢花在刀刃（车头）上”；高速磁浮却得沿整条线路每一米铺设定子绕组、变电站与精密梁</text>
+<rect x="20" y="62" width="344" height="372" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="34" y="85" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 成本结构大反转：“车带电机” vs “地铺电机”</text>
+<rect x="34" y="100" width="316" height="134" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="46" y="120" font-size="10.0" fill="#18794e" text-anchor="start" font-weight="700">轮轨高铁：昂贵动力系统“随车走”</text>
+<text x="46" y="141" font-size="9.3" fill="#1e293b" text-anchor="start">• 电机与变流器：只装在几十列动车组车厢底下；</text>
+<text x="46" y="160" font-size="9.3" fill="#0f172a" text-anchor="start" font-weight="700">• 几千公里轨道：只是两根无源工字钢轨 + 头顶一根接触网</text>
+<text x="46" y="179" font-size="9.3" fill="#1e293b" text-anchor="start">  铜导线，没有电子元件，日晒雨淋皮实耐造；</text>
+<text x="46" y="198" font-size="9.2" fill="#1e293b" text-anchor="start">• 高架逃生：平板桥面自带检修步道，断电停靠乘客可开门</text>
+<text x="46" y="216" font-size="9.2" fill="#18794e" text-anchor="start" font-weight="700">  沿桥面安全疏散。</text>
+<rect x="34" y="246" width="316" height="172" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1"/>
+<text x="46" y="266" font-size="9.9" fill="#dc2626" text-anchor="start" font-weight="700">高速磁浮：等于修一条 1,000 公里长的巨型精密电机！</text>
+<text x="46" y="287" font-size="9.2" fill="#0f172a" text-anchor="start" font-weight="700">• 全线铺铜定子：每修 1 km 双线，就要在两侧铺满数公里</text>
+<text x="46" y="305" font-size="9.2" fill="#1e293b" text-anchor="start">  高压三相定子硅钢叠片、铜电缆与分区高频变流变电站！</text>
+<text x="46" y="324" font-size="9.2" fill="#1e293b" text-anchor="start">• 毫米级防沉降：常导 10 mm 气隙容不得桥墩歪斜，上海</text>
+<text x="46" y="342" font-size="9.2" fill="#1e293b" text-anchor="start">  软土地基每隔 25 m 就要打入密集超深桩基锁死沉降；</text>
+<text x="46" y="361" font-size="9.2" fill="#c25014" text-anchor="start" font-weight="700">• 8,000 m 超大转弯半径 + 大截面消音隧道：遇山难绕弯，</text>
+<text x="46" y="379" font-size="9.2" fill="#1e293b" text-anchor="start">  高架抱轨梁若不额外加建逃生廊道，消防救援难度极高</text>
+<text x="46" y="397" font-size="9.0" fill="#64748b" text-anchor="start">  （2006 德国拉滕试验线撞工程车事故即暴露高架救援痛点）。</text>
+<rect x="376" y="62" width="364" height="372" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="390" y="85" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 真实项目每公里造价量级对比（公开史料折算）</text>
+<text x="390" y="103" font-size="8.9" fill="#64748b" text-anchor="start">注：跨时代汇率与地质（高架 vs 深埋隧道）不同，展示工程量级跃迁</text>
+<text x="392" y="120" font-size="9.3" fill="#0f172a" text-anchor="start" font-weight="700">中国 350 km/h 轮轨高铁均值</text>
+<rect x="392.0" y="126" width="224.0" height="15" rx="3" fill="#f1f5f9"/>
+<rect x="392.0" y="126" width="25.5" height="15" rx="3" fill="#e7f6ee" stroke="#18794e" stroke-width="1.4"/>
+<text x="423.5" y="137.5" font-size="9.0" fill="#18794e" text-anchor="start" font-weight="700">~0.25 亿美元/km</text>
+<text x="392" y="162" font-size="9.3" fill="#0f172a" text-anchor="start" font-weight="700">上海浦东高速磁浮 (2004, 平原高架)</text>
+<rect x="392.0" y="168" width="224.0" height="15" rx="3" fill="#f1f5f9"/>
+<rect x="392.0" y="168" width="40.1" height="15" rx="3" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.4"/>
+<text x="438.1" y="179.5" font-size="9.0" fill="#1d6fa5" text-anchor="start" font-weight="700">~0.39 亿 (当年物价!)</text>
+<text x="392" y="204" font-size="9.3" fill="#0f172a" text-anchor="start" font-weight="600">韩国仁川机场低速磁浮 (2016)</text>
+<rect x="392.0" y="210" width="224.0" height="15" rx="3" fill="#f1f5f9"/>
+<rect x="392.0" y="210" width="66.2" height="15" rx="3" fill="#fffbeb" stroke="#b45309" stroke-width="1.4"/>
+<text x="464.2" y="221.5" font-size="9.0" fill="#b45309" text-anchor="start" font-weight="700">~0.65 亿美元/km</text>
+<text x="392" y="246" font-size="9.3" fill="#0f172a" text-anchor="start" font-weight="600">日本爱知县东部丘陵线 Linimo</text>
+<rect x="392.0" y="252" width="224.0" height="15" rx="3" fill="#f1f5f9"/>
+<rect x="392.0" y="252" width="101.8" height="15" rx="3" fill="#fef1e8" stroke="#c25014" stroke-width="1.4"/>
+<text x="499.8" y="263.5" font-size="9.0" fill="#c25014" text-anchor="start" font-weight="700">~1.00 亿美元/km</text>
+<text x="392" y="288" font-size="9.3" fill="#0f172a" text-anchor="start" font-weight="700">日本中央新干线 (86%+深隧道!)</text>
+<rect x="392.0" y="294" width="224.0" height="15" rx="3" fill="#f1f5f9"/>
+<rect x="392.0" y="294" width="203.6" height="15" rx="3" fill="#fef2f2" stroke="#dc2626" stroke-width="1.4"/>
+<text x="601.6" y="305.5" font-size="9.0" fill="#dc2626" text-anchor="start" font-weight="700">&gt; 2.0 亿美元/km!</text>
+<rect x="390" y="334" width="336" height="86" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="1"/>
+<text x="402" y="353" font-size="9.6" fill="#b45309" text-anchor="start" font-weight="700">现实警示：日本中央新干线（东京品川—名古屋 286 km）</text>
+<text x="402" y="372" font-size="9.0" fill="#1e293b" text-anchor="start">• 为拉直 8,000 m 曲线并防噪音，全线约 90% 钻进深山与城市地下；</text>
+<text x="402" y="390" font-size="9.0" fill="#1e293b" text-anchor="start">• 预算突破 9 万亿日元，更因静冈县大井川隧道地下水之争停工多年，</text>
+<text x="402" y="408" font-size="9.1" fill="#dc2626" text-anchor="start" font-weight="700">  通车时间已从原定 2027 年一路推迟至 2035 年以后！</text>
+</svg>

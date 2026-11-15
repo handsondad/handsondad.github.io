@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="468" viewBox="0 0 760 468" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">传统β衰变计数法与现代加速器质谱仪AMS原理对比图</title>
+<desc id="desc">上方对比1949年利比衰变计数法（需数克样品苦等每2.4小时一次的衰变）与现代AMS（仅需0.5至1毫克样品直接数出数千万个碳十四原子）；下方拆解AMS三道关卡：①铯离子源制取负离子C⁻直接淘汰无法形成稳定负离子的氮-14；②高压加速穿剥离膜炸碎¹³CH与¹²CH₂干扰分子；③强磁场按质量分道逐颗计数¹⁴C。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="467" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">从“烧掉几克木炭苦等爆炸”到“几毫克直接点名”：加速器质谱（AMS）革命</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">算一笔惊人账：1 毫克 5730 岁的古碳里藏着约 3000 万个 ¹⁴C 原子，但每 2.4 小时才衰变 1 个！</text>
+<rect x="24" y="68" width="344" height="152" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="40.0" y="82.0" width="254" height="22" rx="11.0" fill="#f1f5f9" stroke="#475569" stroke-width="1" stroke-opacity="0.35"/>
+<text x="167.0" y="97.0" font-size="11.5" fill="#475569" text-anchor="middle" font-weight="600">初代方法：β 衰变计数法（利比 1949）</text>
+<text x="40" y="120" font-size="11" fill="#1e293b" text-anchor="start">• 做法：守株待兔，用盖革/液闪计数器等 ¹⁴C 自己衰变</text>
+<text x="40" y="142" font-size="11" fill="#dc2626" text-anchor="start" font-weight="600">• 痛点：1 mg 古碳每 2.4 小时才蹦出 1 个电子！效率极低</text>
+<text x="40" y="164" font-size="11" fill="#1e293b" text-anchor="start">• 代价：必须烧毁 1～10 克木炭/骨骼，屏蔽宇宙射线测数天</text>
+<text x="40" y="186" font-size="10.5" fill="#64748b" text-anchor="start">  （珍贵丝绸、字画、单粒种子根本舍不得烧！）</text>
+<rect x="384" y="68" width="352" height="152" rx="10" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.4"/>
+<rect x="400.0" y="82.0" width="318" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="559.0" y="97.0" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">现代王牌：加速器质谱法 AMS（灵敏度升百万倍）</text>
+<text x="400" y="120" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">• 思路逆转：不等它衰变，把样品电离加速，直接数 ¹⁴C 原子！</text>
+<text x="400" y="142" font-size="11" fill="#18794e" text-anchor="start" font-weight="700">• 用量骤降：仅需 0.5～1 毫克碳（几粒炭屑、一根毛发、一粒稻谷）</text>
+<text x="400" y="164" font-size="11" fill="#1e293b" text-anchor="start">• 速度飞跃：几十分钟即可数出上万颗 ¹⁴C 离子，精度达 ±20–30 年</text>
+<text x="400" y="186" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="600">• 但它必须连闯“三大冒牌货关卡”（空气里全是同体重的 ¹⁴N！）</text>
+<rect x="24" y="234" width="712" height="214" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="42" y="258" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700">AMS 三关筛出“一万亿分之一”真身：怎样剔除体重几乎一模一样的氮-14 (¹⁴N) 与氢化物分子 (¹³CH)？</text>
+<rect x="40" y="274" width="206" height="154" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1.3"/>
+<circle cx="58" cy="294" r="10.5" fill="#ffffff" stroke="#c25014" stroke-width="1.2"/>
+<text x="58" y="298" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">1</text>
+<text x="76" y="298" font-size="12" fill="#c25014" text-anchor="start" font-weight="700">铯束轰击制负离子 C⁻</text>
+<text x="52" y="322" font-size="10.5" fill="#1e293b" text-anchor="start">样品还原成约 0.5 mg 石墨靶，</text>
+<text x="52" y="340" font-size="10.5" fill="#1e293b" text-anchor="start">用铯离子轰出带负电的碳离子 C⁻。</text>
+<rect x="52" y="354" width="182" height="60" rx="6" fill="#ffffff" stroke="#c25014" stroke-width="1"/>
+<text x="143" y="375" font-size="11" fill="#dc2626" text-anchor="middle" font-weight="700">第一关秒杀：淘汰氮-14！</text>
+<text x="143" y="395" font-size="10" fill="#1e293b" text-anchor="middle">¹⁴N 虽占空气78%，但无法形成</text>
+<text x="143" y="408" font-size="10" fill="#1e293b" text-anchor="middle">稳定负离子 N⁻，当场出局！</text>
+<line x1="250.0" y1="351.0" x2="272.0" y2="351.0" stroke="#c25014" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<rect x="276" y="274" width="210" height="154" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.3"/>
+<circle cx="294" cy="294" r="10.5" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="294" y="298" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">2</text>
+<text x="312" y="298" font-size="12" fill="#6d28d9" text-anchor="start" font-weight="700">百万伏加速 + 剥离碎分子</text>
+<text x="288" y="322" font-size="10.5" fill="#1e293b" text-anchor="start">高压电场把 C⁻ 加速到约数千 km/s</text>
+<text x="288" y="340" font-size="10.5" fill="#1e293b" text-anchor="start">穿过气体/薄膜剥离器扯掉外层电子。</text>
+<rect x="288" y="354" width="186" height="60" rx="6" fill="#ffffff" stroke="#6d28d9" stroke-width="1"/>
+<text x="381" y="375" font-size="11" fill="#6d28d9" text-anchor="middle" font-weight="700">第二关秒杀：炸碎 ¹³CH / ¹²CH₂！</text>
+<text x="381" y="395" font-size="10" fill="#1e293b" text-anchor="middle">凑够质量14的冒牌分子失去成键</text>
+<text x="381" y="408" font-size="10" fill="#1e293b" text-anchor="middle">电子后瞬间解体，仅剩纯 C³⁺！</text>
+<line x1="490.0" y1="351.0" x2="512.0" y2="351.0" stroke="#1d6fa5" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<rect x="516" y="274" width="204" height="154" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.3"/>
+<circle cx="534" cy="294" r="10.5" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="534" y="298" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">3</text>
+<text x="552" y="298" font-size="12" fill="#1d6fa5" text-anchor="start" font-weight="700">强磁场偏转 · 逐颗点名</text>
+<text x="528" y="322" font-size="10.5" fill="#1e293b" text-anchor="start">磁场按质量把三种碳弯成三条轨道：</text>
+<path d="M532,352 Q582,350 618,336" fill="none" stroke="#475569" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="624" y="339" font-size="10" fill="#475569" text-anchor="start">¹²C (最轻弯最急)</text>
+<path d="M532,358 Q585,358 622,356" fill="none" stroke="#18794e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="628" y="360" font-size="10" fill="#18794e" text-anchor="start">¹³C (法拉第杯测)</text>
+<path d="M532,364 Q588,368 622,380" fill="none" stroke="#dc2626" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="628" y="384" font-size="10" fill="#dc2626" text-anchor="start" font-weight="700">¹⁴C (探测器逐颗数!)</text>
+<text x="528" y="412" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">直接算出 ¹⁴C / ¹²C 精确原子个数比！</text>
+</svg>

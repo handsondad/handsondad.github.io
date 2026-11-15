@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="442" viewBox="0 0 760 442" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">地球静止卫星轨位保持摄动账单、240毫秒光速延迟与300公里坟墓轨道图解</title>
+<desc id="desc">左图展示赤道微椭圆75.3E与108W重力谷及日月引力导致的每年约50米每秒轨位保持燃料消耗；右图对比GEO双向约480至520毫秒光速延迟与LEO低延迟分工，并图解退役前消耗约11米每秒爬升300公里进入坟墓轨道的国际规则。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="441" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">“静止”背后的终身拔河：轨位保持、240 毫秒延迟与 +300 km 坟墓轨道</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">卫星并非放上去就一劳永逸——既要对抗地球扁率与日月拉扯，退役前还要留最后一口燃料让位</text>
+<rect x="20" y="62" width="356" height="366" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 轨位保持：严守 ±0.05°（约 74 km）“空中车位”</text>
+<text x="36" y="102" font-size="10.6" fill="#64748b" text-anchor="start">赤道微椭圆东西拉拽 + 日月引力每年把轨道面掰歪 ~0.85°</text>
+<circle cx="198.0" cy="206.0" r="74" fill="none" stroke="#e2e8f0" stroke-width="1.4" stroke-dasharray="4 3"/>
+<g transform="rotate(-15 198.0 206.0)"><ellipse cx="198.0" cy="206.0" rx="42" ry="30" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.7"/></g>
+<text x="198.0" y="204.0" font-size="10.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">赤道微椭圆</text>
+<text x="198.0" y="218.0" font-size="9.6" fill="#64748b" text-anchor="middle">(扁率夸张示意)</text>
+<circle cx="262.0" cy="243.0" r="5.2" fill="#c25014"/>
+<text x="270.0" y="248.0" font-size="10.2" fill="#c25014" text-anchor="start" font-weight="700">75.3°E 重力谷</text>
+<circle cx="134.0" cy="169.0" r="5.2" fill="#c25014"/>
+<text x="126.0" y="172.0" font-size="10.2" fill="#c25014" text-anchor="end" font-weight="700">108°W 重力谷</text>
+<rect x="187.0" y="121.0" width="22" height="22" rx="3" fill="#e7f6ee" stroke="#18794e" stroke-width="1.6"/>
+<circle cx="198.0" cy="132.0" r="4.2" fill="#18794e"/>
+<text x="214.0" y="130.0" font-size="10.2" fill="#18794e" text-anchor="start" font-weight="700">ITU 轨位盒 (±0.05° ≈ 74 km)</text>
+<rect x="34" y="298" width="328" height="116" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="46" y="318" font-size="10.7" fill="#0f172a" text-anchor="start" font-weight="700">每年轨位保持（Station-Keeping）燃料账单：</text>
+<text x="46" y="338" font-size="10.2" fill="#6d28d9" text-anchor="start" font-weight="600">• 南北保持（对抗日月引力掰歪轨道面）：~45–50 m/s / 年（大头！）</text>
+<text x="46" y="357" font-size="10.2" fill="#1e293b" text-anchor="start">• 东西保持（对抗赤道重力谷滑落 + 光压）：≤ 2 m/s / 年</text>
+<text x="46" y="376" font-size="10.2" fill="#1e293b" text-anchor="start">• 15 年设计寿命共需 ~750 m/s；新一代霍尔电推进比冲高 5–10 倍，</text>
+<text x="46" y="394" font-size="10.2" fill="#18794e" text-anchor="start" font-weight="600">  大幅减轻燃料死重，让卫星带更多转发器上天！</text>
+<rect x="392" y="62" width="348" height="366" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="408" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 物理代价与体面谢幕：延迟与坟墓轨道</text>
+<text x="408" y="102" font-size="10.6" fill="#64748b" text-anchor="start">3.6 万公里连光也要跑四分之一秒；寿终前必须爬高让位</text>
+<rect x="406" y="118" width="320" height="128" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="418" y="138" font-size="10.7" fill="#1d6fa5" text-anchor="start" font-weight="700">光速硬约束（c = 299,792 km/s）：为什么打游戏怕 GEO？</text>
+<text x="418" y="159" font-size="10.3" fill="#1e293b" text-anchor="start">• GEO 单跳（地面 → 星 → 地面，约 7.2–7.7 万 km）：</text>
+<text x="428" y="177" font-size="10.3" fill="#c25014" text-anchor="start" font-weight="700">单程 239–257 ms，双向往返（RTT）高达 ~480–520 ms！</text>
+<text x="418" y="197" font-size="10.3" fill="#18794e" text-anchor="start" font-weight="600">• 低轨星座 LEO（550 km）：单跳空口仅 ~4 ms（往返 ~25 ms）</text>
+<text x="418" y="217" font-size="10.2" fill="#1e293b" text-anchor="start">• 分工明确：电视广播/气象云图/导航增强选 GEO；</text>
+<text x="428" y="233" font-size="10.2" fill="#64748b" text-anchor="start">实时语音/高频交易/低时延互联选地面光纤或 LEO。</text>
+<rect x="406" y="258" width="320" height="156" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="418" y="278" font-size="10.8" fill="#c25014" text-anchor="start" font-weight="700">退役规矩：IADC“坟墓轨道”（Graveyard Orbit）</text>
+<text x="418" y="297" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="600">ΔH_min = 235 + 1000·C_R·(A/m) km（常抬高 ≥300 km）</text>
+<path d="M 424,352 Q 566,326 708,352" fill="none" stroke="#18794e" stroke-width="2.2"/>
+<text x="566" y="360" font-size="10.0" fill="#18794e" text-anchor="middle" font-weight="700">现役 GEO 黄金环（35,786 km）</text>
+<path d="M 424,324 Q 566,298 708,324" fill="none" stroke="#c25014" stroke-width="2.0" stroke-dasharray="5 3"/>
+<text x="566" y="313" font-size="10.0" fill="#c25014" text-anchor="middle" font-weight="700">退役坟墓轨道（+300 km ≈ 36,086 km）</text>
+<line x1="678" y1="348" x2="678" y2="324" stroke="#c25014" stroke-width="1.8" marker-end="url(#arr-orange)"/>
+<text x="418" y="382" font-size="10.2" fill="#1e293b" text-anchor="start">• 仅需最后 Δv ≈ 10.9 m/s（约 3 个月保位燃料）即可永久让位；</text>
+<text x="418" y="400" font-size="10.2" fill="#1e293b" text-anchor="start">• 随后排空余气、断开电池（钝化），守护全人类唯一的静止环。</text>
+</svg>

@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="528" viewBox="0 0 760 528" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">婴儿语音知觉窄化曲线与真人互动对决电视录像社交门控实验图</title>
+<desc id="desc">左栏展示6至8个月美日婴儿同等分辨英语r-l音素而10至12个月出现母语分化，右栏展示Kuhl等2003年PNAS实验证明9个月婴儿仅能从真人互动学会普通话音素而看电视与听录音完全无效。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-b" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#1d6fa5"/>
+    </marker>
+    <marker id="arr-o" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#c25014"/>
+    </marker>
+    <marker id="arr-g" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#18794e"/>
+    </marker>
+    <marker id="arr-p" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#6d28d9"/>
+    </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="527" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">语言超能力与“真人开关”：6 个月听懂全球语音，为什么看电视学外语却等于零？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左看帕特里夏·库尔（Kuhl）美日婴儿语音窄化实验 → 右看轰动学界的“真人互动 vs 电视录像”对照实验</text>
+<rect x="22" y="68" width="356" height="442" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="92" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="42" y="96" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="62" y="97" font-size="12.4" fill="#0f172a" text-anchor="start" font-weight="700">从“世界公民”到“母语专家”仅需半年</text>
+<text x="42" y="117" font-size="10.5" fill="#64748b" text-anchor="start">测试美、日婴儿分辨英语 /ra/–/la/ 辅音正确率（Kuhl 2006）</text>
+<line x1="76.0" y1="376.0" x2="352.0" y2="376.0" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4,4"/>
+<text x="70.0" y="380.0" font-size="10.5" fill="#64748b" text-anchor="end">50%</text>
+<line x1="76.0" y1="313.7" x2="352.0" y2="313.7" stroke="#e2e8f0" stroke-width="1"/>
+<text x="70.0" y="317.7" font-size="10.5" fill="#64748b" text-anchor="end">60%</text>
+<line x1="76.0" y1="251.4" x2="352.0" y2="251.4" stroke="#e2e8f0" stroke-width="1"/>
+<text x="70.0" y="255.4" font-size="10.5" fill="#64748b" text-anchor="end">70%</text>
+<line x1="76.0" y1="189.1" x2="352.0" y2="189.1" stroke="#e2e8f0" stroke-width="1"/>
+<text x="70.0" y="193.1" font-size="10.5" fill="#64748b" text-anchor="end">80%</text>
+<line x1="76.0" y1="158.0" x2="76.0" y2="376.0" stroke="#475569" stroke-width="1.5"/>
+<line x1="76.0" y1="376.0" x2="352.0" y2="376.0" stroke="#475569" stroke-width="1.5"/>
+<text x="348.0" y="370.0" font-size="10.5" fill="#64748b" text-anchor="end">随机瞎猜线 50%</text>
+<text x="136.0" y="396.0" font-size="10.6" fill="#0f172a" text-anchor="middle" font-weight="700">6–8 个月（世界公民期）</text>
+<text x="294.0" y="396.0" font-size="10.6" fill="#0f172a" text-anchor="middle" font-weight="700">10–12 个月（神经定型期）</text>
+<line x1="136.0" y1="283.8" x2="294.0" y2="197.2" stroke="#1d6fa5" stroke-width="3"/>
+<circle cx="136.0" cy="283.8" r="5.5" fill="#1d6fa5"/>
+<circle cx="294.0" cy="197.2" r="5.5" fill="#1d6fa5"/>
+<text x="288.0" y="185.2" font-size="10.8" fill="#1d6fa5" text-anchor="end" font-weight="700" class="halo">美国婴儿 ↑ 79%</text>
+<line x1="136.0" y1="287.6" x2="294.0" y2="321.2" stroke="#c25014" stroke-width="3" stroke-dasharray="6,4"/>
+<circle cx="136.0" cy="287.6" r="5.5" fill="#c25014"/>
+<circle cx="294.0" cy="321.2" r="5.5" fill="#c25014"/>
+<text x="288.0" y="341.2" font-size="10.8" fill="#c25014" text-anchor="end" font-weight="700" class="halo">日本婴儿 ↓ 59%</text>
+<text x="144.0" y="269.8" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700" class="halo">6个月时美日宝宝同分 (~65%)！</text>
+<rect x="38" y="412" width="324" height="82" rx="8" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<text x="200" y="434" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">知觉窄化（Perceptual Narrowing）：</text>
+<text x="200" y="454" font-size="10.5" fill="#0f172a" text-anchor="middle">半岁婴儿能听清全世界所有语言约 800 种音素差异；</text>
+<text x="200" y="474" font-size="10.5" fill="#1e293b" text-anchor="middle">1 岁前大脑统计母语高频音并修剪其余通道，成人反而听不出！</text>
+<rect x="392" y="68" width="346" height="442" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="412" cy="92" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="412" y="96" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">2</text>
+<text x="432" y="97" font-size="12.4" fill="#0f172a" text-anchor="start" font-weight="700">震撼实验：给 9 个月美国宝宝听中文 12 次</text>
+<text x="412" y="117" font-size="10.5" fill="#64748b" text-anchor="start">同样 ~33,000 个普通话音节，不同媒介学习效果天壤之别</text>
+<text x="416.0" y="148" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">① 真人老师面对面陪玩读绘本</text>
+<rect x="416.0" y="156" width="296.0" height="22" rx="6" fill="#f1f5f9" stroke="#e2e8f0"/>
+<rect x="416.0" y="156" width="229.1" height="22" rx="6" fill="#18794e" opacity="0.88"/>
+<text x="424.0" y="171" font-size="10.5" fill="#ffffff" text-anchor="start" font-weight="700">65.9%（追平中国台湾母语宝宝！）</text>
+<text x="416.0" y="210" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">② 高清电视播放同款老师录像</text>
+<rect x="416.0" y="218" width="296.0" height="22" rx="6" fill="#f1f5f9" stroke="#e2e8f0"/>
+<rect x="416.0" y="218" width="78.9" height="22" rx="6" fill="#475569" opacity="0.88"/>
+<text x="424.0" y="233" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">52.2%（完全没学会 ≈ 瞎猜）</text>
+<text x="416.0" y="272" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">③ 纯音响播放同款普通话录音</text>
+<rect x="416.0" y="280" width="296.0" height="22" rx="6" fill="#f1f5f9" stroke="#e2e8f0"/>
+<rect x="416.0" y="280" width="70.2" height="22" rx="6" fill="#475569" opacity="0.88"/>
+<text x="424.0" y="295" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">51.4%（完全没学会 ≈ 瞎猜）</text>
+<text x="416.0" y="334" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">④ 对照组（只听英语未接触中文）</text>
+<rect x="416.0" y="342" width="296.0" height="22" rx="6" fill="#f1f5f9" stroke="#e2e8f0"/>
+<rect x="416.0" y="342" width="76.7" height="22" rx="6" fill="#64748b" opacity="0.88"/>
+<text x="424.0" y="357" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">52.0%（基准对照线）</text>
+<rect x="408" y="404" width="314" height="90" rx="8" fill="#e7f6ee" stroke="#86efac" stroke-width="1"/>
+<text x="565" y="426" font-size="11.0" fill="#18794e" text-anchor="middle" font-weight="700">社交门控假说（Social Gating Hypothesis）：</text>
+<text x="565" y="447" font-size="10.5" fill="#0f172a" text-anchor="middle">婴儿大脑不是冷冰冰的录音机！只有真人的眼神追随、</text>
+<text x="565" y="466" font-size="10.5" fill="#0f172a" text-anchor="middle">表情回应与共同注意，才能拧开听觉皮层的可塑性开关——</text>
+<text x="565" y="485" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="700">把平板和电视丢给一岁宝宝“磨耳朵”，神经科学证明无效。</text>
+</svg>

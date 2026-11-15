@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">强酸与弱酸滴定曲线对比及人体血液碳酸氢盐缓冲体系机制图</title>
+<desc id="desc">左侧绘制0.1M氢氧化钠滴定盐酸与醋酸的精确pH曲线及缓冲平台，右侧详解人体血液依靠CO2与碳酸氢根死守pH 7.35至7.45的原理。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">强酸与弱酸差在哪？为什么弱酸配盐能炼成“稳压防弹衣”（缓冲溶液）？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左看精确计算的滴定曲线（醋酸半中和稳压平台与 pH 8.72 碱性终点）→ 右看人体血液 pH 7.40 生死护盾</text>
+<rect x="24" y="84" width="450" height="364" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="38" y="102" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700">0.1 M NaOH 滴定 25 mL 盐酸(红) vs 醋酸(蓝)</text>
+<line x1="72.0" y1="401.1" x2="452.0" y2="401.1" stroke="#cbd5e1" stroke-dasharray="3 3"/><text x="66.0" y="405.1" font-size="10" fill="#64748b" text-anchor="end">1</text>
+<line x1="72.0" y1="309.7" x2="452.0" y2="309.7" stroke="#cbd5e1" stroke-dasharray="3 3"/><text x="66.0" y="313.7" font-size="10" fill="#64748b" text-anchor="end">5</text>
+<line x1="72.0" y1="264.0" x2="452.0" y2="264.0" stroke="#cbd5e1" stroke-dasharray="3 3"/><text x="66.0" y="268.0" font-size="10" fill="#64748b" text-anchor="end">7</text>
+<line x1="72.0" y1="218.3" x2="452.0" y2="218.3" stroke="#cbd5e1" stroke-dasharray="3 3"/><text x="66.0" y="222.3" font-size="10" fill="#64748b" text-anchor="end">9</text>
+<line x1="72.0" y1="126.9" x2="452.0" y2="126.9" stroke="#cbd5e1" stroke-dasharray="3 3"/><text x="66.0" y="130.9" font-size="10" fill="#64748b" text-anchor="end">13</text>
+<line x1="72.0" y1="424.0" x2="452.0" y2="424.0" stroke="#e2e8f0"/>
+<text x="66.0" y="428.0" font-size="10" fill="#64748b" text-anchor="end">0</text>
+<text x="38" y="266" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">pH</text>
+<rect x="119.5" y="292.3" width="142.5" height="45.7" rx="6" fill="#eaf4fb" fill-opacity="0.7" stroke="#93c5fd" stroke-dasharray="4 2"/>
+<text x="190.8" y="286.3" font-size="10.3" fill="#1e3a8a" text-anchor="middle" font-weight="700">缓冲平台区（pH ≈ pKa ± 1）</text>
+<line x1="309.5" y1="112" x2="309.5" y2="424.0" stroke="#b45309" stroke-width="1.3" stroke-dasharray="4 3"/>
+<polyline points="72.0,401.1 76.8,400.7 81.5,400.3 86.2,400.0 91.0,399.6 95.8,399.2 100.5,398.7 105.2,398.3 110.0,397.9 114.8,397.5 119.5,397.1 124.2,396.7 129.0,396.3 133.8,395.9 138.5,395.4 143.2,395.0 148.0,394.6 152.8,394.1 157.5,393.7 162.2,393.2 167.0,392.7 171.8,392.3 176.5,391.8 181.2,391.3 186.0,390.8 190.8,390.2 195.5,389.7 200.2,389.1 205.0,388.6 209.8,388.0 214.5,387.4 219.2,386.7 224.0,386.1 228.8,385.4 233.5,384.7 238.2,383.9 243.0,383.1 247.8,382.3 252.5,381.4 257.2,380.4 262.0,379.3 266.8,378.2 271.5,376.9 276.2,375.5 281.0,373.8 285.8,371.9 290.5,369.6 295.2,366.6 300.0,362.5 304.8,355.5 309.5,264.0 314.2,172.7 319.0,165.9 323.8,162.0 328.5,159.2 333.2,157.1 338.0,155.4 342.8,153.9 347.5,152.7 352.2,151.6 357.0,150.7 361.8,149.8 366.5,149.0 371.2,148.3 376.0,147.7 380.8,147.1 385.5,146.5 390.2,146.0 395.0,145.5 399.8,145.1 404.5,144.6 409.2,144.2 414.0,143.9 418.8,143.5 423.5,143.2 428.2,142.8 433.0,142.5 437.8,142.2 442.5,141.9 447.2,141.7 452.0,141.4" fill="none" stroke="#dc2626" stroke-width="2.6"/>
+<polyline points="72.0,358.1 76.8,351.0 81.5,345.8 86.2,342.1 91.0,339.2 95.8,336.9 100.5,334.9 105.2,333.2 110.0,331.7 114.8,330.3 119.5,329.0 124.2,327.8 129.0,326.7 133.8,325.6 138.5,324.6 143.2,323.7 148.0,322.7 152.8,321.8 157.5,321.0 162.2,320.1 167.0,319.3 171.8,318.5 176.5,317.7 181.2,316.8 186.0,316.1 190.8,315.3 195.5,314.5 200.2,313.7 205.0,312.9 209.8,312.1 214.5,311.2 219.2,310.4 224.0,309.6 228.8,308.7 233.5,307.8 238.2,306.9 243.0,305.9 247.8,304.9 252.5,303.8 257.2,302.7 262.0,301.5 266.8,300.2 271.5,298.8 276.2,297.2 281.0,295.5 285.8,293.5 290.5,291.0 295.2,288.0 300.0,283.7 304.8,276.6 309.5,224.5 314.2,172.7 319.0,165.9 323.8,162.0 328.5,159.2 333.2,157.1 338.0,155.4 342.8,153.9 347.5,152.7 352.2,151.6 357.0,150.7 361.8,149.8 366.5,149.0 371.2,148.3 376.0,147.7 380.8,147.1 385.5,146.5 390.2,146.0 395.0,145.5 399.8,145.1 404.5,144.6 409.2,144.2 414.0,143.9 418.8,143.5 423.5,143.2 428.2,142.8 433.0,142.5 437.8,142.2 442.5,141.9 447.2,141.7 452.0,141.4" fill="none" stroke="#1d6fa5" stroke-width="2.8"/>
+<circle cx="190.8" cy="315.3" r="4.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.4"/>
+<circle cx="309.5" cy="224.5" r="4.5" fill="#6d28d9" stroke="#ffffff" stroke-width="1.4"/>
+<circle cx="309.5" cy="264.0" r="4.5" fill="#dc2626" stroke="#ffffff" stroke-width="1.4"/>
+<text x="366.5" y="228.7" font-size="10.2" fill="#6d28d9" text-anchor="start" font-weight="700">← 醋酸终点 pH 8.72(偏碱!)</text>
+<text x="366.5" y="278.0" font-size="10.2" fill="#b91c1c" text-anchor="start" font-weight="600">← 盐酸终点 pH 7.00</text>
+<text x="190.8" y="331.2" font-size="10" fill="#1e3a8a" text-anchor="middle" font-weight="600">半中和 pH=4.76</text>
+<text x="72.0" y="440" font-size="9.8" fill="#64748b" text-anchor="middle">0mL</text>
+<text x="190.8" y="440" font-size="9.8" fill="#64748b" text-anchor="middle">12.5mL</text>
+<text x="309.5" y="440" font-size="9.8" fill="#64748b" text-anchor="middle">25mL</text>
+<text x="452.0" y="440" font-size="9.8" fill="#64748b" text-anchor="middle">40mL</text>
+<rect x="490" y="84" width="246" height="364" rx="10" fill="#f0fdfa" stroke="#5eead4" stroke-width="1"/>
+<circle cx="508" cy="108" r="10.5" fill="#eaf4fb" stroke="#0f766e" stroke-width="1.2"/>
+<text x="508" y="112" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">1</text>
+<text x="528" y="113" font-size="13" fill="#0f766e" text-anchor="start" font-weight="700">生命的酸碱防弹衣</text>
+<text x="504" y="136" font-size="11" fill="#0f172a" text-anchor="start">人体动脉血必须死守：</text>
+<rect x="504.0" y="146.0" width="218" height="26" rx="13.0" fill="#ffffff" stroke="#0f766e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="613.0" y="163.7" font-size="10.4" fill="#0f766e" text-anchor="middle" font-weight="600">pH 7.35 – 7.45（偏离 0.4 即危及生命）</text>
+<text x="504" y="194" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">为什么喝柠檬水或狂跑产乳酸，</text>
+<text x="504" y="212" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">血液不会变酸？靠双向弹簧库：</text>
+<rect x="504" y="224" width="218" height="66" rx="8" fill="#ffffff" stroke="#99f6e4" stroke-width="1"/>
+<text x="613" y="246" font-size="11.2" fill="#0f766e" text-anchor="middle" font-weight="700">CO₂ + H₂O ⇌ H₂CO₃</text>
+<text x="613" y="268" font-size="11.2" fill="#1e3a8a" text-anchor="middle" font-weight="700">⇌ H⁺ + HCO₃⁻（碳酸氢根）</text>
+<text x="504" y="312" font-size="10.8" fill="#b91c1c" text-anchor="start" font-weight="700">• 酸冲进来（+H⁺）：</text>
+<text x="504" y="330" font-size="10.5" fill="#1e293b" text-anchor="start">  海量 HCO₃⁻ 捕手瞬间吞掉 H⁺</text>
+<text x="504" y="348" font-size="10.5" fill="#1e293b" text-anchor="start">  化成 CO₂，肺大口喘气呼出体外！</text>
+<text x="504" y="372" font-size="10.8" fill="#1e3a8a" text-anchor="start" font-weight="700">• 碱冲进来（+OH⁻）：</text>
+<text x="504" y="390" font-size="10.5" fill="#1e293b" text-anchor="start">  H₂CO₃ 立刻补吐 H⁺ 把它中和成水！</text>
+<rect x="504.0" y="410.0" width="218" height="24" rx="12.0" fill="#fef2f2" stroke="#b91c1c" stroke-width="1" stroke-opacity="0.35"/>
+<text x="613.0" y="426.3" font-size="10.1" fill="#b91c1c" text-anchor="middle" font-weight="600">粉碎谣言：“酸碱体质食疗”纯属伪科学！</text>
+<rect x="24" y="460" width="712" height="42" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="380" y="486" font-size="10.9" fill="#0f172a" text-anchor="middle" font-weight="600">强弱不等于浓稀：醋酸虽只电离 ~1%（弱酸），但 1 升 0.1 M 醋酸最终能中和的烧碱总量与 0.1 M 盐酸分毫不差（仓库照样吐光）！</text>
+</svg>

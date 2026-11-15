@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="482" viewBox="0 0 760 482" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">原子核比结合能曲线（AME2020实验值）与铁-56聚变终点绝壁图</title>
+<desc id="desc">按实验核质量绘制质量数A从1到238的平均核子结合能B/A曲线：氢-1为0，氦-4跃升至7.07 MeV，至铁-56（8.79 MeV）与镍-62（8.795 MeV）达最高峰，此后向金-197（7.92 MeV）与铀-238（7.57 MeV）回落，解释为何恒星放能聚变止步于铁。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#6d28d9"/>
+  </marker>
+  <marker id="arr-crimson" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#b91c1c"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="481" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">核物理第一铁律：比结合能曲线（B/A）为什么把恒星聚变死死卡在“铁-56”？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">按 AME2020 实验核质量精确绘制：铁峰左侧“聚变放能”点亮恒星，铁峰右侧“聚变倒贴能量”立刻熄火</text>
+<rect x="16" y="68" width="728" height="400" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="98.0" y="104.0" width="139.3" height="258.0" fill="#fef1e8" opacity="0.55"/>
+<rect x="237.3" y="104.0" width="482.7" height="258.0" fill="#eaf4fb" opacity="0.45"/>
+<line x1="98.0" y1="362.0" x2="720.0" y2="362.0" stroke="#475569" stroke-width="1.5" stroke-linecap="round"/>
+<text x="90.0" y="366.0" font-size="11" fill="#64748b" text-anchor="end">0</text>
+<line x1="98.0" y1="307.7" x2="720.0" y2="307.7" stroke="#e2e8f0" stroke-width="1.1" stroke-linecap="round"/>
+<text x="90.0" y="311.7" font-size="11" fill="#64748b" text-anchor="end">2</text>
+<line x1="98.0" y1="253.4" x2="720.0" y2="253.4" stroke="#e2e8f0" stroke-width="1.1" stroke-linecap="round"/>
+<text x="90.0" y="257.4" font-size="11" fill="#64748b" text-anchor="end">4</text>
+<line x1="98.0" y1="199.1" x2="720.0" y2="199.1" stroke="#e2e8f0" stroke-width="1.1" stroke-linecap="round"/>
+<text x="90.0" y="203.1" font-size="11" fill="#64748b" text-anchor="end">6</text>
+<line x1="98.0" y1="144.7" x2="720.0" y2="144.7" stroke="#e2e8f0" stroke-width="1.1" stroke-linecap="round"/>
+<text x="90.0" y="148.7" font-size="11" fill="#64748b" text-anchor="end">8</text>
+<line x1="98.0" y1="117.6" x2="720.0" y2="117.6" stroke="#e2e8f0" stroke-width="1.1" stroke-linecap="round"/>
+<text x="90.0" y="121.6" font-size="11" fill="#64748b" text-anchor="end">9</text>
+<line x1="98.0" y1="362.0" x2="98.0" y2="367.0" stroke="#475569" stroke-width="1.2" stroke-linecap="round"/>
+<text x="98.0" y="381.0" font-size="11" fill="#64748b" text-anchor="middle">0</text>
+<line x1="222.4" y1="362.0" x2="222.4" y2="367.0" stroke="#475569" stroke-width="1.2" stroke-linecap="round"/>
+<text x="222.4" y="381.0" font-size="11" fill="#64748b" text-anchor="middle">50</text>
+<line x1="346.8" y1="362.0" x2="346.8" y2="367.0" stroke="#475569" stroke-width="1.2" stroke-linecap="round"/>
+<text x="346.8" y="381.0" font-size="11" fill="#64748b" text-anchor="middle">100</text>
+<line x1="471.2" y1="362.0" x2="471.2" y2="367.0" stroke="#475569" stroke-width="1.2" stroke-linecap="round"/>
+<text x="471.2" y="381.0" font-size="11" fill="#64748b" text-anchor="middle">150</text>
+<line x1="595.6" y1="362.0" x2="595.6" y2="367.0" stroke="#475569" stroke-width="1.2" stroke-linecap="round"/>
+<text x="595.6" y="381.0" font-size="11" fill="#64748b" text-anchor="middle">200</text>
+<line x1="720.0" y1="362.0" x2="720.0" y2="367.0" stroke="#475569" stroke-width="1.2" stroke-linecap="round"/>
+<text x="720.0" y="381.0" font-size="11" fill="#64748b" text-anchor="middle">250</text>
+<line x1="98.0" y1="104.0" x2="98.0" y2="362.0" stroke="#475569" stroke-width="1.5" stroke-linecap="round"/>
+<text x="48" y="232" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="700">比结合能</text>
+<text x="48" y="250" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">B/A (MeV)</text>
+<text x="409.0" y="398.0" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">原子核质量数 A（质子数 Z + 中子数 N）</text>
+<line x1="237.3" y1="104.0" x2="237.3" y2="362.0" stroke="#b91c1c" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="5 3"/>
+<rect x="173.3" y="82.0" width="128" height="22" rx="11.0" fill="#fef2f2" stroke="#b91c1c" stroke-width="1" stroke-opacity="0.35"/>
+<text x="237.3" y="97.0" font-size="11" fill="#b91c1c" text-anchor="middle" font-weight="600">铁峰绝壁 A≈56–62</text>
+<polyline points="100.5,362.0 103.0,331.8 105.5,292.1 108.0,169.9 115.4,209.8 120.4,186.5 127.9,153.4 137.8,145.4 157.7,137.6 167.7,132.6 197.5,129.8 237.3,123.3 252.3,123.1 316.9,124.8 396.6,131.0 441.3,134.1 588.1,147.0 615.5,148.3 690.1,156.4" fill="none" stroke="#1d6fa5" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="100.5" cy="362.0" r="3.4" fill="#c25014" stroke="#ffffff" stroke-width="1.2"/>
+<text x="116.5" y="358.0" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600" class="halo">¹H</text>
+<circle cx="103.0" cy="331.8" r="3.4" fill="#c25014" stroke="#ffffff" stroke-width="1.2"/>
+<text x="121.0" y="335.8" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600" class="halo">²H</text>
+<circle cx="105.5" cy="292.1" r="3.4" fill="#c25014" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="108.0" cy="169.9" r="3.4" fill="#c25014" stroke="#ffffff" stroke-width="1.2"/>
+<text x="136.0" y="159.9" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">⁴He(7.07)</text>
+<circle cx="115.4" cy="209.8" r="3.4" fill="#c25014" stroke="#ffffff" stroke-width="1.2"/>
+<text x="135.4" y="222.8" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600" class="halo">⁷Li</text>
+<circle cx="120.4" cy="186.5" r="3.4" fill="#c25014" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="127.9" cy="153.4" r="3.4" fill="#c25014" stroke="#ffffff" stroke-width="1.2"/>
+<text x="125.9" y="140.4" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600" class="halo">¹²C</text>
+<circle cx="137.8" cy="145.4" r="3.4" fill="#c25014" stroke="#ffffff" stroke-width="1.2"/>
+<text x="153.8" y="137.4" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600" class="halo">¹⁶O</text>
+<circle cx="157.7" cy="137.6" r="3.4" fill="#c25014" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="167.7" cy="132.6" r="3.4" fill="#c25014" stroke="#ffffff" stroke-width="1.2"/>
+<text x="183.7" y="145.6" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600" class="halo">²⁸Si</text>
+<circle cx="197.5" cy="129.8" r="3.4" fill="#c25014" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="237.3" cy="123.3" r="4.4" fill="#b91c1c" stroke="#ffffff" stroke-width="1.2"/>
+<text x="217.3" y="111.3" font-size="10.5" fill="#b91c1c" text-anchor="middle" font-weight="700" class="halo">⁵⁶Fe(8.79)</text>
+<circle cx="252.3" cy="123.1" r="4.4" fill="#b91c1c" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="316.9" cy="124.8" r="3.4" fill="#6d28d9" stroke="#ffffff" stroke-width="1.2"/>
+<text x="332.9" y="114.8" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600" class="halo">⁸⁸Sr</text>
+<circle cx="396.6" cy="131.0" r="3.4" fill="#6d28d9" stroke="#ffffff" stroke-width="1.2"/>
+<text x="414.6" y="123.0" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600" class="halo">¹²⁰Sn</text>
+<circle cx="441.3" cy="134.1" r="3.4" fill="#6d28d9" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="588.1" cy="147.0" r="3.4" fill="#6d28d9" stroke="#ffffff" stroke-width="1.2"/>
+<text x="574.1" y="163.0" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">¹⁹⁷Au</text>
+<circle cx="615.5" cy="148.3" r="3.4" fill="#6d28d9" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="690.1" cy="156.4" r="3.4" fill="#6d28d9" stroke="#ffffff" stroke-width="1.2"/>
+<text x="672.1" y="144.4" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">²³⁸U(7.57)</text>
+<rect x="122" y="258" width="214" height="76" rx="8" fill="#ffffff" stroke="#c25014" stroke-width="1.3"/>
+<text x="134" y="279" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">↖ 聚变放能上坡区（A &lt; 56）</text>
+<text x="134" y="299" font-size="10.8" fill="#1e293b" text-anchor="start">轻核拼成重核 ⇒ 结合得更紧，</text>
+<text x="134" y="318" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="600">多余质量按 ΔE=Δmc² 化作星光！</text>
+<rect x="374" y="246" width="332" height="96" rx="8" fill="#ffffff" stroke="#6d28d9" stroke-width="1.3"/>
+<text x="386" y="267" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">↘ 铁后下坡区（A &gt; 56：金、铂、铅、铀）</text>
+<text x="386" y="288" font-size="10.8" fill="#b91c1c" text-anchor="start" font-weight="600">• 往右强行聚变 = 倒贴巨额能量，恒星核心当场熄火坍缩！</text>
+<text x="386" y="308" font-size="10.8" fill="#1e293b" text-anchor="start">• 往左核裂变（如 ²³⁸U/²³⁵U 裂回中等核）= 重新爬坡放能；</text>
+<text x="386" y="328" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="600">• 造金和铀必须靠灾变现场倒贴能量“硬塞中子”！</text>
+<text x="32" y="436" font-size="10.5" fill="#64748b" text-anchor="start">严谨注：单核子结合能绝对冠军其实是镍-62（8.795 MeV），铁-56（8.790 MeV）紧随第三；</text>
+<text x="32" y="454" font-size="10.5" fill="#64748b" text-anchor="start">因大质量恒星硅燃烧沿 α 链直产双幻核镍-56 并经 β⁺ 衰变为铁-56，故宇宙元素丰度呈显著“铁峰”。</text>
+</svg>

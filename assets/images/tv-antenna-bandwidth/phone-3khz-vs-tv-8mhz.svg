@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="442" viewBox="0 0 760 442" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">3.1千赫电话拨号通道与8兆赫中国PAL-D/K模拟电视频道频谱结构对比图</title>
+<desc id="desc">上图对比3.1kHz传统电话语音窄带（56kbps上限）与宽达2,581倍的8000kHz无线电视频道；下图解剖中国PAL-D/K频道内-1.25MHz残留边带VSB、0至6MHz亮度信号Y、+4.4336MHz正交调幅彩色副载波与+6.5MHz调频伴音载波。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="441" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">凭什么 56k 拨号上网开张图都卡，老电视却能看流畅视频？—— 车道宽了 2,580 倍！</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">电话线被语音滤波器卡死在 3.1 kHz 窄胡同；而空中一个电视频道独占整整 8,000 kHz（8 MHz）高速路！</text>
+<rect x="20" y="62" width="720" height="140" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="85" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 物理频谱带宽对比：1 个无线电视频道 (8,000 kHz) ≈ 2,581 条传统电话语音通道 (3.1 kHz)！</text>
+<text x="36" y="116" font-size="10.8" fill="#b91c1c" text-anchor="start" font-weight="700">90年代电话拨号猫</text>
+<text x="36" y="133" font-size="9.8" fill="#64748b" text-anchor="start">(300–3,400 Hz 窄缝)</text>
+<rect x="178.0" y="103" width="540.0" height="28" rx="5" fill="#f1f5f9" stroke="#e2e8f0"/>
+<rect x="180.0" y="103" width="3.0" height="28" fill="#b91c1c"/>
+<text x="192.0" y="121" font-size="10.1" fill="#b91c1c" text-anchor="start" font-weight="700">← 按真实比例仅 0.2 像素细丝！净宽 B = 3.1 kHz → 香农极限封死 56 kbps（半分钟才爬完一张照片）</text>
+<text x="36" y="165" font-size="10.8" fill="#1d6fa5" text-anchor="start" font-weight="700">老电视 1 个无线频道</text>
+<text x="36" y="182" font-size="9.8" fill="#64748b" text-anchor="start">(如 1 频道 48.5–56.5MHz)</text>
+<rect x="178.0" y="150" width="540.0" height="32" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.8"/>
+<text x="448.0" y="170" font-size="10.3" fill="#1d6fa5" text-anchor="middle" font-weight="700">独占整条 B = 8,000 kHz (8 MHz) 射频大道！每秒可承载数百万次明暗电压起伏（且全城共享不拥堵）</text>
+<rect x="20" y="214" width="720" height="216" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="237" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 解剖中国 PAL-D/K 模拟电视 8 MHz 频道：三大省带宽绝招（残留边带 + 亮色交错 + 调频伴音）</text>
+<rect x="86.8" y="262.0" width="602.4" height="106.0" fill="#f8fafc" stroke="#475569" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="388.0" y="257.0" font-size="9.9" fill="#475569" text-anchor="middle" font-weight="700">◀━━━━━━━━━━ 1 个标准中国电视频道总宽度 = 8.0 MHz（从 -1.25 到 +6.75 MHz）━━━━━━━━━━▶</text>
+<path d="M 86.8,368.0 L 124.5,290.0 L 632.7,290.0 L 646.3,368.0 Z" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="2.0"/>
+<rect x="86.8" y="310.0" width="94.1" height="58.0" fill="#fef1e8" opacity="0.75"/>
+<text x="134.3" y="332.0" font-size="9.6" fill="#c25014" text-anchor="middle" font-weight="700">残留边带</text>
+<text x="134.3" y="347.0" font-size="9.1" fill="#c25014" text-anchor="middle" font-weight="600">VSB 省4.75MHz</text>
+<path d="M 416.9,368.0 L 416.9,368.0 L 421.8,366.8 L 426.7,364.5 L 431.6,361.7 L 436.5,358.4 L 441.4,354.7 L 446.2,350.9 L 451.1,346.8 L 456.0,342.8 L 460.9,338.7 L 465.8,334.7 L 470.7,330.9 L 475.6,327.3 L 480.5,323.9 L 485.4,320.9 L 490.3,318.3 L 495.2,316.1 L 500.1,314.3 L 505.0,313.0 L 509.9,312.3 L 514.8,312.0 L 519.7,312.3 L 524.6,313.0 L 529.4,314.3 L 534.3,316.1 L 539.2,318.3 L 544.1,320.9 L 549.0,323.9 L 553.9,327.3 L 558.8,330.9 L 563.7,334.7 L 568.6,338.7 L 573.5,342.8 L 578.4,346.8 L 583.3,350.9 L 588.2,354.7 L 593.1,358.4 L 598.0,361.7 L 602.9,364.5 L 607.8,366.8 L 612.6,368.0 L 612.6,368.0 Z" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.8"/>
+<line x1="180.9" y1="368.0" x2="180.9" y2="274.0" stroke="#1d6fa5" stroke-width="3.0" marker-end="url(#arr-blue)"/>
+<text x="186.9" y="283.0" font-size="9.8" fill="#1d6fa5" text-anchor="start" font-weight="700" class="halo">图像载波 f_V (0 MHz)</text>
+<line x1="514.8" y1="368.0" x2="514.8" y2="296.0" stroke="#6d28d9" stroke-width="2.4"/>
+<text x="514.8" y="308.0" font-size="9.7" fill="#6d28d9" text-anchor="middle" font-weight="700" class="halo">彩色副载波 +4.43 MHz</text>
+<text x="514.8" y="324.0" font-size="9.2" fill="#6d28d9" text-anchor="middle" class="halo">(色度U/V嵌进亮度缝隙)</text>
+<text x="335.3" y="316.0" font-size="10.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">黑白亮度信号 Y（0–6 MHz）</text>
+<text x="335.3" y="334.0" font-size="9.6" fill="#1e293b" text-anchor="middle">人眼对明暗极敏感，给足 6 MHz</text>
+<path d="M 653.8,368.0 Q 670.4,300.0 686.9,368.0 Z" fill="#e7f6ee" stroke="#18794e" stroke-width="1.8"/>
+<line x1="670.4" y1="368.0" x2="670.4" y2="278.0" stroke="#18794e" stroke-width="2.6" marker-end="url(#arr-green)"/>
+<text x="659.1" y="284.0" font-size="9.7" fill="#18794e" text-anchor="end" font-weight="700" class="halo">FM 伴音 +6.5MHz</text>
+<line x1="60.0" y1="368.0" x2="716.0" y2="368.0" stroke="#475569" stroke-width="1.4"/>
+<line x1="86.8" y1="368.0" x2="86.8" y2="373.0" stroke="#475569" stroke-width="1.1"/>
+<text x="86.8" y="386.0" font-size="9.4" fill="#64748b" text-anchor="middle" class="mono">-1.25</text>
+<line x1="180.9" y1="368.0" x2="180.9" y2="373.0" stroke="#475569" stroke-width="1.1"/>
+<text x="180.9" y="386.0" font-size="9.4" fill="#64748b" text-anchor="middle" class="mono">0 (f_V)</text>
+<line x1="331.5" y1="368.0" x2="331.5" y2="373.0" stroke="#475569" stroke-width="1.1"/>
+<text x="331.5" y="386.0" font-size="9.4" fill="#64748b" text-anchor="middle" class="mono">+2.0</text>
+<line x1="514.5" y1="368.0" x2="514.5" y2="373.0" stroke="#475569" stroke-width="1.1"/>
+<text x="514.5" y="386.0" font-size="9.4" fill="#64748b" text-anchor="middle" class="mono">+4.43</text>
+<line x1="632.7" y1="368.0" x2="632.7" y2="373.0" stroke="#475569" stroke-width="1.1"/>
+<text x="632.7" y="386.0" font-size="9.4" fill="#64748b" text-anchor="end" class="mono">+6.0</text>
+<line x1="670.4" y1="368.0" x2="670.4" y2="373.0" stroke="#475569" stroke-width="1.1"/>
+<text x="670.4" y="386.0" font-size="9.4" fill="#64748b" text-anchor="middle" class="mono">+6.5</text>
+<line x1="689.2" y1="368.0" x2="689.2" y2="373.0" stroke="#475569" stroke-width="1.1"/>
+<text x="689.2" y="386.0" font-size="9.4" fill="#64748b" text-anchor="start" class="mono">+6.75 MHz</text>
+<text x="380" y="413" font-size="10.0" fill="#0f172a" text-anchor="middle" font-weight="600">精妙兼容：1950s 黑白电视照收 0–6 MHz 亮度 Y；1970s 彩电从 +4.43 MHz 缝隙解出色彩，两代电视同看一套广播！</text>
+</svg>

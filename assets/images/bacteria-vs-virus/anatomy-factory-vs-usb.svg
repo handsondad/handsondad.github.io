@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">细菌细胞结构与病毒非细胞结构对比及酒精消毒差异图解</title>
+<desc id="desc">左图拆解细菌的环状双链DNA、质粒、70S核糖体、细胞膜ATP合成与肽聚糖细胞壁；右图对比有包膜病毒、无包膜裸病毒与噬菌体，底部解释75%酒精为何对无包膜诺如病毒无效。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">解剖台正面交锋：五脏俱全的“自给自足微缩工厂” vs 极简“劫持型代码胶囊”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左侧细菌拥有双链DNA、70S核糖体与ATP发电膜；右侧病毒仅含核酸+蛋白壳（部分披脂质包膜），决定了消毒弱点</text>
+<rect x="20" y="64" width="354" height="294" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="74.0" width="274" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="171.0" y="89.0" font-size="12" fill="#18794e" text-anchor="middle" font-weight="600">细菌（原核活细胞）：全套生产线齐全</text>
+<rect x="52" y="122" width="218" height="112" rx="56" fill="#dcfce7" stroke="#18794e" stroke-width="3"/>
+<rect x="62" y="132" width="198" height="92" rx="46" fill="#fefce8" stroke="#b45309" stroke-width="2" stroke-dasharray="5 3"/>
+<rect x="70" y="140" width="182" height="76" rx="38" fill="#ffffff" stroke="#0f766e" stroke-width="1.5"/>
+<path d="M112,176 C122,154 152,156 160,176 C168,196 196,194 202,174 C206,158 176,152 154,170 C134,188 118,196 112,176 Z" fill="none" stroke="#1d6fa5" stroke-width="2.4"/>
+<circle cx="226" cy="178" r="11" fill="none" stroke="#c25014" stroke-width="2.2"/>
+<circle cx="92" cy="166" r="3.3" fill="#6d28d9"/>
+<circle cx="98" cy="188" r="3.3" fill="#6d28d9"/>
+<circle cx="138" cy="198" r="3.3" fill="#6d28d9"/>
+<circle cx="182" cy="156" r="3.3" fill="#6d28d9"/>
+<circle cx="206" cy="196" r="3.3" fill="#6d28d9"/>
+<circle cx="168" cy="202" r="3.3" fill="#6d28d9"/>
+<path d="M270,178 Q292,158 310,178 T348,174" fill="none" stroke="#18794e" stroke-width="2.6" stroke-linecap="round"/>
+<text x="92" y="114" font-size="11.2" fill="#18794e" text-anchor="start" font-weight="600">肽聚糖细胞壁（抗渗透压盔甲）</text>
+<line x1="146" y1="117" x2="146" y2="122" stroke="#18794e" stroke-width="1.2"/>
+<text x="314" y="152" font-size="11.2" fill="#18794e" text-anchor="middle" font-weight="600">旋转鞭毛马达</text>
+<text x="34" y="256" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">① 遗传主机：</text>
+<text x="108" y="256" font-size="11.2" fill="#1e293b" text-anchor="start">环状双链 DNA 拟核 + 可插拔质粒（常携耐药基因）</text>
+<text x="34" y="280" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">② 蛋白打印：</text>
+<text x="108" y="280" font-size="11.2" fill="#1e293b" text-anchor="start">自带数万台 70S 核糖体（30S+50S），独立造酶</text>
+<text x="34" y="304" font-size="11.5" fill="#b45309" text-anchor="start" font-weight="700">③ 能源电网：</text>
+<text x="108" y="304" font-size="11.2" fill="#1e293b" text-anchor="start">细胞膜质子泵自己合成 ATP，喝糖水就能活</text>
+<text x="34" y="328" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">④ 生态真相：</text>
+<text x="108" y="328" font-size="11.2" fill="#1e293b" text-anchor="start">人体约 38 万亿细菌（≈1:1），99%以上无害或有益！</text>
+<rect x="386" y="64" width="354" height="294" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="400.0" y="74.0" width="304" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="552.0" y="89.0" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="600">病毒（非细胞寄生体）：核酸图纸 + 蛋白快递盒</text>
+<circle cx="466" cy="168" r="38" fill="#fff1f2" stroke="#c25014" stroke-width="2.2" stroke-dasharray="5 3"/>
+<line x1="504.0" y1="168.0" x2="513.0" y2="168.0" stroke="#c25014" stroke-width="2.2"/>
+<circle cx="513.0" cy="168.0" r="2.8" fill="#c25014"/>
+<line x1="492.9" y1="194.9" x2="499.2" y2="201.2" stroke="#c25014" stroke-width="2.2"/>
+<circle cx="499.2" cy="201.2" r="2.8" fill="#c25014"/>
+<line x1="466.0" y1="206.0" x2="466.0" y2="215.0" stroke="#c25014" stroke-width="2.2"/>
+<circle cx="466.0" cy="215.0" r="2.8" fill="#c25014"/>
+<line x1="439.1" y1="194.9" x2="432.8" y2="201.2" stroke="#c25014" stroke-width="2.2"/>
+<circle cx="432.8" cy="201.2" r="2.8" fill="#c25014"/>
+<line x1="428.0" y1="168.0" x2="419.0" y2="168.0" stroke="#c25014" stroke-width="2.2"/>
+<circle cx="419.0" cy="168.0" r="2.8" fill="#c25014"/>
+<line x1="439.1" y1="141.1" x2="432.8" y2="134.8" stroke="#c25014" stroke-width="2.2"/>
+<circle cx="432.8" cy="134.8" r="2.8" fill="#c25014"/>
+<line x1="466.0" y1="130.0" x2="466.0" y2="121.0" stroke="#c25014" stroke-width="2.2"/>
+<circle cx="466.0" cy="121.0" r="2.8" fill="#c25014"/>
+<line x1="492.9" y1="141.1" x2="499.2" y2="134.8" stroke="#c25014" stroke-width="2.2"/>
+<circle cx="499.2" cy="134.8" r="2.8" fill="#c25014"/>
+<polygon points="486.8,180.0 466.0,192.0 445.2,180.0 445.2,156.0 466.0,144.0 486.8,156.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="2"/>
+<path d="M453,168 Q460,159 466,168 T479,168" fill="none" stroke="#b91c1c" stroke-width="2.2"/>
+<text x="466" y="229" font-size="11.2" fill="#c25014" text-anchor="middle" font-weight="700">有包膜病毒（流感/新冠）</text>
+<text x="466" y="112" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="600">脂质包膜+刺突</text>
+<polygon points="622.0,168.0 607.0,194.0 577.0,194.0 562.0,168.0 577.0,142.0 607.0,142.0" fill="#e0f2fe" stroke="#1d6fa5" stroke-width="2.4"/>
+<path d="M578,168 Q585,158 592,168 T606,168" fill="none" stroke="#1d6fa5" stroke-width="2.2"/>
+<text x="592" y="229" font-size="11.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">无包膜裸病毒（诺如）</text>
+<text x="592" y="124" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="600">纯蛋白二十面体壳</text>
+<polygon points="692,126 708,136 708,154 692,164 676,154 676,136" fill="#ede9fe" stroke="#6d28d9" stroke-width="2"/>
+<rect x="688" y="164" width="8" height="26" fill="#ddd6fe" stroke="#6d28d9" stroke-width="1.6"/>
+<path d="M692,190 L683,198 L674,210" fill="none" stroke="#6d28d9" stroke-width="1.5"/>
+<path d="M692,190 L687,198 L682,210" fill="none" stroke="#6d28d9" stroke-width="1.5"/>
+<path d="M692,190 L697,198 L702,210" fill="none" stroke="#6d28d9" stroke-width="1.5"/>
+<path d="M692,190 L701,198 L710,210" fill="none" stroke="#6d28d9" stroke-width="1.5"/>
+<text x="692" y="229" font-size="11.2" fill="#6d28d9" text-anchor="middle" font-weight="700">噬菌体</text>
+<text x="398" y="262" font-size="11.2" fill="#6d28d9" text-anchor="start" font-weight="700">① 极简家当：</text>
+<text x="468" y="262" font-size="10.8" fill="#1e293b" text-anchor="start">DNA 或 RNA 二选一，仅数个至数百基因</text>
+<text x="398" y="290" font-size="11.2" fill="#b91c1c" text-anchor="start" font-weight="700">② 三无人员：</text>
+<text x="468" y="290" font-size="10.8" fill="#1e293b" text-anchor="start">0 细胞壁、0 核糖体、0 产 ATP，离体如结晶</text>
+<text x="398" y="318" font-size="11.2" fill="#1d6fa5" text-anchor="start" font-weight="700">③ 专一开锁：</text>
+<text x="468" y="318" font-size="10.8" fill="#1e293b" text-anchor="start">靠刺突/尾丝配对受体（连细菌也遭噬菌体感染）</text>
+<rect x="20" y="370" width="720" height="132" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="380.0" width="516" height="22" rx="11.0" fill="#f1f5f9" stroke="#0f172a" stroke-width="1" stroke-opacity="0.35"/>
+<text x="292.0" y="395.0" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="600">日常洗手实战推论：为什么 75% 酒精秒杀流感和新冠，遇到“诺如病毒”却失灵？</text>
+<rect x="34" y="412" width="336" height="78" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="48" y="434" font-size="12" fill="#c25014" text-anchor="start" font-weight="700">有包膜病毒（流感 / 新冠 / 疱疹）：怕酒精 &amp; 肥皂</text>
+<text x="48" y="455" font-size="11.2" fill="#1e293b" text-anchor="start">外层是偷来的脆弱磷脂双分子油膜——75% 医用酒精或肥皂</text>
+<text x="48" y="474" font-size="11.2" fill="#1e293b" text-anchor="start">一碰就把脂质包膜溶解拆散，刺突钥匙脱落，瞬间丧失感染力！</text>
+<rect x="386" y="412" width="340" height="78" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="400" y="434" font-size="12" fill="#1d6fa5" text-anchor="start" font-weight="700">无包膜裸病毒（诺如 / 手足口 / 鼻病毒）：不怕酒精！</text>
+<text x="400" y="455" font-size="11.2" fill="#1e293b" text-anchor="start">浑身没有半点油脂包膜，致密蛋白硬壳让免洗酒精凝露无从下嘴；</text>
+<text x="400" y="474" font-size="11.2" fill="#1e293b" text-anchor="start">CDC 指南：必须用肥皂+流动水搓洗 ≥20 秒冲走，物表用含氯消毒液！</text>
+</svg>

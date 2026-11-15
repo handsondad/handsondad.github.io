@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">桑蚕丝脱胶前后三棱柱截面光学原理与方向各向异性图解</title>
+<desc id="desc">左图对比粗糙丝胶包裹的生丝与精练脱胶后折射率1.548的圆角三棱镜熟丝截面；右图展示同色丝线在0度顺光与90度横切排布下的明暗反差，解释暗花缎与刺绣立体光影来源。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">底层材料密码：为什么唯独桑蚕丝自带“珍珠柔光”？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">精练脱去粗糙丝胶后，露出两根折射率 n ≈ 1.55 的天然圆角三棱镜丝素；转个角度就能变幻明暗！</text>
+<rect x="22" y="68" width="356" height="384" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="90" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="42" y="94" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">1</text>
+<text x="60" y="95" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">微米级横截面：从“毛玻璃生丝”到“双棱镜熟丝”</text>
+<rect x="36" y="112" width="328" height="134" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="48" y="133" font-size="11.5" fill="#475569" text-anchor="start" font-weight="700">① 未脱胶“生丝”（20%–25% 丝胶包裹两根丝素）</text>
+<path d="M74,192 C66,166 86,150 116,154 C138,148 168,162 164,190 C168,214 140,226 116,220 C88,226 68,214 74,192 Z" fill="#e2e8f0" stroke="#475569" stroke-width="2" stroke-dasharray="4,2"/>
+<path d="M84,202 Q96,164 112,202 Q98,210 84,202 Z" fill="#fffbeb" stroke="#b45309" stroke-width="1.8"/>
+<path d="M120,202 Q134,164 150,202 Q135,210 120,202 Z" fill="#fffbeb" stroke="#b45309" stroke-width="1.8"/>
+<text x="117" y="236" font-size="10.5" fill="#64748b" text-anchor="middle">总宽约 25 μm</text>
+<text x="180" y="162" font-size="10.5" fill="#1e293b" text-anchor="start">• 外层丝胶粗糙凹凸 → 漫反射发乌</text>
+<text x="180" y="184" font-size="10.5" fill="#1e293b" text-anchor="start">• 丝身挺括偏硬（用于织生绢、轻绡）</text>
+<text x="180" y="208" font-size="11" fill="#c25014" text-anchor="start" font-weight="700">↓ 碱性皂液煮练脱胶（精练）</text>
+<rect x="36" y="258" width="328" height="180" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="1"/>
+<text x="48" y="279" font-size="11.5" fill="#b45309" text-anchor="start" font-weight="700">② 脱胶“熟丝”：单根丝素 ≈ 10–12 μm 圆角三棱镜！</text>
+<path d="M68,388 Q114,298 160,388 Q114,402 68,388 Z" fill="#ffffff" stroke="#b45309" stroke-width="2.6"/>
+<line x1="46.0" y1="322.0" x2="92.0" y2="344.0" stroke="#c25014" stroke-width="2.2" marker-end="url(#arr-orange)"/>
+<line x1="92.0" y1="344.0" x2="66.0" y2="304.0" stroke="#1d6fa5" stroke-width="1.8" stroke-dasharray="3,2" marker-end="url(#arr-blue)"/>
+<line x1="92.0" y1="344.0" x2="138.0" y2="356.0" stroke="#b91c1c" stroke-width="2.0"/>
+<line x1="138.0" y1="356.0" x2="114.0" y2="392.0" stroke="#b91c1c" stroke-width="2.0"/>
+<line x1="114.0" y1="392.0" x2="162.0" y2="332.0" stroke="#6d28d9" stroke-width="2.2" marker-end="url(#arr-blue)"/>
+<text x="114" y="422" font-size="10.5" fill="#b45309" text-anchor="middle" font-weight="700">圆角三角形截面</text>
+<text x="176" y="312" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">• 折射率 n ≈ 1.548（堪比光学玻璃）</text>
+<text x="176" y="334" font-size="10.5" fill="#b91c1c" text-anchor="start" font-weight="700">• 全反射临界角 θc ≈ 40.2°！</text>
+<text x="176" y="356" font-size="10.5" fill="#1e293b" text-anchor="start">• 平坦侧面镜面反光 + 内部棱镜折射</text>
+<text x="176" y="376" font-size="10.5" fill="#1e293b" text-anchor="start">  叠加出柔和深邃的“内蕴珠光”</text>
+<text x="176" y="400" font-size="10.5" fill="#64748b" text-anchor="start">• 对比：棉纤维扁塌发暗；化纤圆柱</text>
+<text x="176" y="418" font-size="10.5" fill="#64748b" text-anchor="start">  截面只剩一道刺眼“塑料贼光”！</text>
+<rect x="392" y="68" width="346" height="384" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="412" cy="90" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="412" y="94" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">2</text>
+<text x="430" y="95" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">织锦与刺绣的魔术：同一根色线“转角即变色”</text>
+<rect x="406" y="112" width="318" height="178" rx="8" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<text x="565" y="132" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="700">完全同一种染缸色号，仅改变丝线排布方向：</text>
+<rect x="424" y="146" width="124" height="86" rx="6" fill="#f87171" stroke="#b91c1c" stroke-width="1.8"/>
+<line x1="430.0" y1="156.0" x2="542.0" y2="156.0" stroke="#fca5a5" stroke-width="3.2"/>
+<line x1="430.0" y1="167.0" x2="542.0" y2="167.0" stroke="#fca5a5" stroke-width="3.2"/>
+<line x1="430.0" y1="178.0" x2="542.0" y2="178.0" stroke="#fef2f2" stroke-width="3.2"/>
+<line x1="430.0" y1="189.0" x2="542.0" y2="189.0" stroke="#fef2f2" stroke-width="3.2"/>
+<line x1="430.0" y1="200.0" x2="542.0" y2="200.0" stroke="#fca5a5" stroke-width="3.2"/>
+<line x1="430.0" y1="211.0" x2="542.0" y2="211.0" stroke="#fca5a5" stroke-width="3.2"/>
+<line x1="430.0" y1="222.0" x2="542.0" y2="222.0" stroke="#fca5a5" stroke-width="3.2"/>
+<text x="486" y="250" font-size="11" fill="#b91c1c" text-anchor="middle" font-weight="700">顺光排针/浮线 (0°)</text>
+<text x="486" y="268" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600">柱面高光入眼 → 鲜亮耀目</text>
+<rect x="582" y="146" width="124" height="86" rx="6" fill="#7f1d1d" stroke="#b91c1c" stroke-width="1.8"/>
+<line x1="592.0" y1="152.0" x2="592.0" y2="226.0" stroke="#991b1b" stroke-width="3.0"/>
+<line x1="603.5" y1="152.0" x2="603.5" y2="226.0" stroke="#991b1b" stroke-width="3.0"/>
+<line x1="615.0" y1="152.0" x2="615.0" y2="226.0" stroke="#991b1b" stroke-width="3.0"/>
+<line x1="626.5" y1="152.0" x2="626.5" y2="226.0" stroke="#991b1b" stroke-width="3.0"/>
+<line x1="638.0" y1="152.0" x2="638.0" y2="226.0" stroke="#991b1b" stroke-width="3.0"/>
+<line x1="649.5" y1="152.0" x2="649.5" y2="226.0" stroke="#991b1b" stroke-width="3.0"/>
+<line x1="661.0" y1="152.0" x2="661.0" y2="226.0" stroke="#991b1b" stroke-width="3.0"/>
+<line x1="672.5" y1="152.0" x2="672.5" y2="226.0" stroke="#991b1b" stroke-width="3.0"/>
+<line x1="684.0" y1="152.0" x2="684.0" y2="226.0" stroke="#991b1b" stroke-width="3.0"/>
+<line x1="695.5" y1="152.0" x2="695.5" y2="226.0" stroke="#991b1b" stroke-width="3.0"/>
+<text x="644" y="250" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="700">横切排针/浮线 (90°)</text>
+<text x="644" y="268" font-size="10.5" fill="#1e293b" text-anchor="middle">反射光锥偏开 → 深沉浓郁</text>
+<rect x="406" y="302" width="318" height="136" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="418" y="324" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">光学各向异性（Optical Anisotropy）实战威力：</text>
+<text x="418" y="347" font-size="10.5" fill="#1e293b" text-anchor="start">• 织缎：经面缎竖直反光，纬面缎横向反光——把经面缎</text>
+<text x="418" y="366" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600">  做底、纬面缎织花（暗花绸/绫），纯白单色也能显花！</text>
+<text x="418" y="390" font-size="10.5" fill="#1e293b" text-anchor="start">• 刺绣：苏绣猫眼、湘绣虎斑顺着肌肉骨骼旋转运针，</text>
+<text x="418" y="409" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="700">  人走动一步，高光跟着流转，仿佛活物呼吸！</text>
+<rect x="22" y="464" width="716" height="42" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="380" y="490" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">一句话总结：绘画靠“颜料吸收光”，而锦缎与丝绣靠成千上万根微米三棱镜“定向操控反射光”！</text>
+</svg>

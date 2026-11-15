@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">多级火箭升空锯齿形过载时间曲线动画与冷分离及热分离原理对比</title>
+<desc id="desc">上图通过单次分段动画展示三级接力升空过程中因推进剂消耗质量减轻导致的锯齿状过载上升与换级归零曲线；下图对比防失重吸空的冷分离正推沉底法与镂空级间环热分离直喷点火法。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  .st-p1 { opacity: 1; animation: stFade1 7.0s ease-out 0.2s 1 forwards; }
+  .st-p2 { opacity: 0.35; animation: stFade2 7.0s ease-out 0.2s 1 forwards; }
+  .st-p3 { opacity: 0.35; animation: stFade3 7.0s ease-out 0.2s 1 forwards; }
+  .g-dot { opacity: 0; animation: dotShow 7.0s ease-out 0.2s 1 forwards; }
+  @keyframes stFade1 {
+    0%, 33% { opacity: 1; }
+    34%, 92% { opacity: 0.85; }
+    100% { opacity: 1; }
+  }
+  @keyframes stFade2 {
+    0%, 32% { opacity: 0.3; }
+    33%, 66% { opacity: 1; }
+    67%, 92% { opacity: 0.85; }
+    100% { opacity: 1; }
+  }
+  @keyframes stFade3 {
+    0%, 65% { opacity: 0.3; }
+    66%, 100% { opacity: 1; }
+  }
+  @keyframes dotShow {
+    0%, 70% { opacity: 0; }
+    85%, 100% { opacity: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .st-p1, .st-p2, .st-p3, .g-dot { animation: none !important; opacity: 1 !important; }
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">第四关：10 分钟高空换挡实录——“锯齿形过载曲线”与失重状态怎么点火？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">为什么宇航员感觉推背感一浪高过一浪又突然归零？一级刚关机燃料全飘起来，二级怎么防吸空爆炸？</text>
+<rect x="22" y="68" width="716" height="212" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="88" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="42" y="92" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="60" y="93" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">多级火箭标志性指纹：过载加速度“锯齿波”（推力恒定，越烧越轻→过载猛涨，换级瞬间跌零！）</text>
+<line x1="74.0" y1="242.0" x2="710.0" y2="242.0" stroke="#475569" stroke-width="1.4"/>
+<text x="66.0" y="246.0" font-size="9.8" fill="#64748b" text-anchor="end">0g</text>
+<line x1="74.0" y1="216.2" x2="710.0" y2="216.2" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="66.0" y="220.2" font-size="9.8" fill="#64748b" text-anchor="end">1g</text>
+<line x1="74.0" y1="190.4" x2="710.0" y2="190.4" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="66.0" y="194.4" font-size="9.8" fill="#64748b" text-anchor="end">2g</text>
+<line x1="74.0" y1="164.7" x2="710.0" y2="164.7" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="66.0" y="168.7" font-size="9.8" fill="#64748b" text-anchor="end">3g</text>
+<line x1="74.0" y1="138.9" x2="710.0" y2="138.9" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="66.0" y="142.9" font-size="9.8" fill="#64748b" text-anchor="end">4g</text>
+<line x1="74.0" y1="126.0" x2="74.0" y2="242.0" stroke="#475569" stroke-width="1.4"/>
+<line x1="74.0" y1="242.0" x2="74.0" y2="246.0" stroke="#475569" stroke-width="1.2"/>
+<text x="74.0" y="260.0" font-size="9.6" fill="#64748b" text-anchor="middle" font-weight="400">0s 点火</text>
+<line x1="239.4" y1="242.0" x2="239.4" y2="246.0" stroke="#475569" stroke-width="1.2"/>
+<text x="239.4" y="260.0" font-size="9.6" fill="#0f172a" text-anchor="middle" font-weight="600">156s 换级</text>
+<line x1="307.2" y1="242.0" x2="307.2" y2="246.0" stroke="#475569" stroke-width="1.2"/>
+<text x="307.2" y="260.0" font-size="9.6" fill="#64748b" text-anchor="middle" font-weight="400">220s 抛罩</text>
+<line x1="519.2" y1="242.0" x2="519.2" y2="246.0" stroke="#475569" stroke-width="1.2"/>
+<text x="519.2" y="260.0" font-size="9.6" fill="#64748b" text-anchor="middle" font-weight="400">420s 二级关机</text>
+<line x1="688.8" y1="242.0" x2="688.8" y2="246.0" stroke="#475569" stroke-width="1.2"/>
+<text x="688.8" y="260.0" font-size="9.6" fill="#0f172a" text-anchor="middle" font-weight="600">580s 三级入轨!</text>
+<g class="st-p1"><polyline points="74.0,207.2 132.3,194.3 153.5,199.5 201.2,173.7 239.4,140.2 243.6,240.7" fill="none" stroke="#c25014" stroke-width="3.0" stroke-linecap="round" stroke-linejoin="round"/><text x="154" y="118" font-size="9.8" fill="#c25014" text-anchor="middle" font-weight="700">① 一级/助推猛推 (v→2.4 km/s)</text></g>
+<g class="st-p2"><polyline points="243.6,240.7 252.1,217.5 307.2,209.8 311.4,206.4 423.8,185.3 515.0,154.4 521.3,240.7" fill="none" stroke="#1d6fa5" stroke-width="3.0" stroke-linecap="round" stroke-linejoin="round"/><text x="340" y="118" font-size="9.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">② 二级接力 + 抛罩 (v→5.6 km/s)</text></g>
+<g class="st-p3"><polyline points="521.3,240.7 527.7,220.1 614.6,199.5 688.8,166.0" fill="none" stroke="#18794e" stroke-width="3.0" stroke-linecap="round" stroke-linejoin="round"/><text x="548" y="118" font-size="9.8" fill="#18794e" text-anchor="middle" font-weight="700">③ 末级冲刺入轨 (v = 7.8 km/s!)</text></g>
+<circle class="g-dot" cx="688.8" cy="166.0" r="5.5" fill="#18794e" stroke="#ffffff" stroke-width="1.5"/>
+<rect x="22" y="292" width="350" height="162" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="314" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="42" y="318" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">2</text>
+<text x="60" y="319" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700">高空换挡方案 A：冷分离 + 正推沉底</text>
+<text x="40" y="344" font-size="10.2" fill="#1e293b" text-anchor="start">• 生死隐患：一级刚熄火瞬间进入失重，二级油箱里</text>
+<text x="40" y="363" font-size="10.2" fill="#1e293b" text-anchor="start">  几十吨液氧煤油全飘成悬浮气泡！涡轮泵一旦吸入气体</text>
+<text x="40" y="382" font-size="10.2" fill="#b91c1c" text-anchor="start" font-weight="700">  会瞬间超速飞车甚至炸毁发动机！</text>
+<text x="40" y="404" font-size="10.2" fill="#1d6fa5" text-anchor="start" font-weight="700">• 冷分离三步曲（土星五号 / 猎鹰 9 号）：</text>
+<text x="40" y="423" font-size="10" fill="#1e293b" text-anchor="start">  ① 一级关机解锁推开 → ② 点燃小型“正推火箭/冷气”</text>
+<text x="40" y="441" font-size="10" fill="#0f172a" text-anchor="start" font-weight="600">  制造微重力把液体压回箱底吸口 → ③ 二级主引擎点火！</text>
+<rect x="388" y="292" width="350" height="162" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="408" cy="314" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="408" y="318" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">3</text>
+<text x="426" y="319" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700">高空换挡方案 B：惊心动魄的“热分离”</text>
+<text x="406" y="344" font-size="10.2" fill="#c25014" text-anchor="start" font-weight="700">• 暴力美学（联盟号 / 长征二号F / SpaceX 星舰）：</text>
+<text x="406" y="363" font-size="10.2" fill="#1e293b" text-anchor="start">  根本不等一级脱开！在一级推力即将结束前最后 1～2 秒，</text>
+<text x="406" y="382" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">  二级主发动机直接对着镂空网格级间环喷火点燃！</text>
+<text x="406" y="404" font-size="10.2" fill="#1e293b" text-anchor="start">• 两大奇效：① 借一级残余推力天然压实液面，省掉沉底</text>
+<text x="406" y="423" font-size="10.2" fill="#1e293b" text-anchor="start">  小火箭；② 彻底消灭几秒钟无动力掉速（重力损耗），</text>
+<text x="406" y="441" font-size="10.2" fill="#18794e" text-anchor="start" font-weight="700">  星舰改用热分离后近地轨道运力直接暴涨约 10%！</text>
+<rect x="22" y="466" width="716" height="40" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="380" y="491" font-size="11.3" fill="#0f172a" text-anchor="middle" font-weight="600">并联捆绑 vs 串联叠罗汉：四周助推器与芯一级地面同时点火叫“并联半级”，头顶一级接一级点叫“串联分级”！</text>
+</svg>

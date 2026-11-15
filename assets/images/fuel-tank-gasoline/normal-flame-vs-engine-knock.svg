@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="518" viewBox="0 0 760 518" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">汽油机正常火焰推进与爆震敲缸机理及ECU推迟点火对比图</title>
+<desc id="desc">对比正常火花塞点火20-40m/s平顺燃烧与低辛烷值末端混合气自燃产生超1000m/s激波敲缸的物理过程，并解释现代爆震传感器推迟点火提前角保命却降低热效率的机制。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="517" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">气缸里的 3 毫秒生死战：柔顺推活塞 vs 超音速“爆震敲缸”怎样砸穿发动机？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">先对比左缸正常火焰推进与右缸末端混合气自燃对撞 → 下排看现代 ECU 推迟点火救命的油耗代价</text>
+<rect x="24" y="68" width="348" height="304" rx="10" fill="#ffffff" stroke="#18794e" stroke-width="1.3"/>
+<circle cx="42" cy="88" r="10" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="42" y="92" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">1</text>
+<text x="58" y="92" font-size="12.3" fill="#0f172a" text-anchor="start" font-weight="700">正常受控燃烧（标号匹配）：单核火焰柔顺推进</text>
+<rect x="42" y="108" width="312" height="156" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<rect x="118" y="122" width="160" height="128" rx="6" fill="#ffffff" stroke="#475569" stroke-width="2.5"/>
+<rect x="193" y="110" width="10" height="16" rx="2" fill="#0f172a"/>
+<polygon points="198,126 193,136 200,136 196,145" fill="#c25014"/>
+<path d="M 156,126 Q 198,168 240,126" fill="none" stroke="#1d6fa5" stroke-width="2.2" stroke-dasharray="5 3"/>
+<path d="M 132,140 Q 198,200 264,140" fill="none" stroke="#18794e" stroke-width="2.8"/>
+<rect x="122" y="206" width="152" height="34" rx="4" fill="#cbd5e1" stroke="#475569" stroke-width="2"/>
+<line x1="198" y1="214" x2="198" y2="236" stroke="#18794e" stroke-width="3" marker-end="url(#arr-green)"/>
+<text x="198" y="172" font-size="10.6" fill="#18794e" text-anchor="middle" font-weight="700" class="halo">火焰锋面 20~40 m/s 平顺扩散</text>
+<text x="198" y="257" font-size="10.3" fill="#0f172a" text-anchor="middle" font-weight="600">上止点后 10°~15° 达峰值压力，稳推活塞下行</text>
+<text x="42" y="286" font-size="10.8" fill="#1e293b" text-anchor="start">• 火花塞在上止点前 10°~35° 点火，单一火焰波像海浪一样推进</text>
+<text x="42" y="307" font-size="10.8" fill="#1e293b" text-anchor="start">• 角落里的未燃混合气“定力够高”，耐心等火焰扫过才燃烧</text>
+<text x="42" y="328" font-size="10.8" fill="#18794e" text-anchor="start" font-weight="700">• 缸压曲线圆润平滑，正好在曲柄力臂黄金角度发力做功</text>
+<text x="42" y="349" font-size="10.5" fill="#64748b" text-anchor="start">• 气缸壁附着一层低温气体边界层，保护铝活塞不被烧熔</text>
+<rect x="388" y="68" width="348" height="304" rx="10" fill="#ffffff" stroke="#dc2626" stroke-width="1.4"/>
+<circle cx="406" cy="88" r="10" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2"/>
+<text x="406" y="92" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">2</text>
+<text x="422" y="92" font-size="12.3" fill="#dc2626" text-anchor="start" font-weight="700">爆震敲缸（辛烷值不足）：末端自燃激波对撞！</text>
+<rect x="406" y="108" width="312" height="156" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1"/>
+<rect x="482" y="122" width="160" height="128" rx="6" fill="#fff1f2" stroke="#dc2626" stroke-width="2.5"/>
+<rect x="557" y="110" width="10" height="16" rx="2" fill="#0f172a"/>
+<path d="M 510,132 Q 562,176 614,132" fill="none" stroke="#c25014" stroke-width="2.4"/>
+<circle cx="506" cy="186" r="16" fill="#fecaca" stroke="#dc2626" stroke-width="2.2" stroke-dasharray="3 2"/>
+<circle cx="618" cy="186" r="16" fill="#fecaca" stroke="#dc2626" stroke-width="2.2" stroke-dasharray="3 2"/>
+<text x="506" y="190" font-size="9.8" fill="#dc2626" text-anchor="middle" font-weight="700">自燃!</text>
+<text x="618" y="190" font-size="9.8" fill="#dc2626" text-anchor="middle" font-weight="700">自燃!</text>
+<rect x="486" y="206" width="152" height="34" rx="4" fill="#cbd5e1" stroke="#dc2626" stroke-width="2"/>
+<text x="562" y="162" font-size="10.4" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">主火焰未到，角落混合气先炸了！</text>
+<text x="562" y="227" font-size="10.1" fill="#dc2626" text-anchor="middle" font-weight="700">活塞正往上顶 ← 激波 &gt;1000 m/s 迎头猛砸</text>
+<text x="562" y="257" font-size="10.3" fill="#dc2626" text-anchor="middle" font-weight="700">发出清脆铁锤敲击般“咔啦咔啦”金属敲缸声</text>
+<text x="406" y="286" font-size="10.8" fill="#1e293b" text-anchor="start">• 主火焰膨胀把角落未燃油气挤得又热又密，低标号油撑不住自燃</text>
+<text x="406" y="307" font-size="10.8" fill="#dc2626" text-anchor="start" font-weight="700">• 速度从几十米/秒突变为超音速激波（&gt;1000 m/s），峰值缸压翻倍</text>
+<text x="406" y="328" font-size="10.8" fill="#1e293b" text-anchor="start">• 激波刮掉缸壁隔热边界层 → 铝活塞顶像被喷砂一样蚀坑甚至烧穿！</text>
+<text x="406" y="349" font-size="10.5" fill="#64748b" text-anchor="start">• 涡轮直喷机更需警惕机油液滴诱发的破坏性“低速早燃/超级爆震”</text>
+<rect x="24" y="386" width="712" height="118" rx="10" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="40" y="410" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">实战问答：规定加 95 号的涡轮车，偏远地区被迫加了一箱 92 号油，为什么没听到敲缸却觉得肉、还更费油？</text>
+<text x="40" y="436" font-size="11" fill="#1e293b" text-anchor="start">1. 爆震传感器立功：缸体上的压电陶瓷“听诊器”刚捕捉到微弱爆震高频振动，立刻向行车电脑 ECU 拉响警报；</text>
+<text x="40" y="459" font-size="11" fill="#6d28d9" text-anchor="start" font-weight="700">2. 推迟点火提前角（丢卒保车）：ECU 被迫等活塞越过上止点开始往下走了才点火、并泄掉部分涡轮增压值来降温防炸；</text>
+<text x="40" y="482" font-size="11" fill="#1e293b" text-anchor="start">3. 隐藏代价：燃烧追着下行的活塞跑，热效率大跌 → 动力变肉、排气滚烫、百公里油耗反升（应急时务必轻踩油门）！</text>
+</svg>

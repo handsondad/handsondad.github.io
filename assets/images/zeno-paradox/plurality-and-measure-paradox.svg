@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="484" viewBox="0 0 760 484" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">芝诺多之悖论（彻底分割两难）与康托尔连续统及勒贝格测度解答图解</title>
+<desc id="desc">左栏展示把木棍无限分割陷入微元大于零则无穷长、等于零则长度为零的两难；右栏用中心投影证明不同长度线段点集等势，并对比有理数零测度与实数区间测度。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="483" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">芝诺更狠的底牌“多之悖论”：无数个长度为 0 的点，凭什么拼出 1 米长的线段？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">微积分级数只能算“可数无穷项”，真正破解“零长点拼线段”靠的是康托尔不可数集与勒贝格测度论</text>
+<rect x="20" y="66" width="346" height="404" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="78.0" width="314" height="22" rx="11.0" fill="#fef2f2" stroke="#b91c1c" stroke-width="1" stroke-opacity="0.35"/>
+<text x="191.0" y="93.0" font-size="12" fill="#b91c1c" text-anchor="middle" font-weight="600">左栏：芝诺“彻底分割”两难推理（进退皆荒谬）</text>
+<rect x="56" y="114" width="274" height="44" rx="10" fill="#f1f5f9" stroke="#475569" stroke-width="1"/>
+<text x="193" y="133" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">把一根 1 米木棍“彻头彻尾”无限分割到底</text>
+<text x="193" y="150" font-size="11" fill="#64748b" text-anchor="middle">最终剩下的终极组元，尺寸 ε 是多少？</text>
+<line x1="135" y1="158" x2="104" y2="192" stroke="#c25014" stroke-width="1.8" marker-end="url(#arr-orange)"/>
+<line x1="251" y1="158" x2="282" y2="192" stroke="#1d6fa5" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+<rect x="34" y="198" width="148" height="132" rx="10" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="108" y="219" font-size="11.2" fill="#c25014" text-anchor="middle" font-weight="700">分支 A：终极微元 ε &gt; 0</text>
+<text x="108" y="241" font-size="10.8" fill="#1e293b" text-anchor="middle">哪怕 ε 小到 10⁻¹⁰⁰ 米，</text>
+<text x="108" y="259" font-size="10.8" fill="#1e293b" text-anchor="middle">无穷多个相等正数相加：</text>
+<text x="108" y="281" font-size="11.5" fill="#b91c1c" text-anchor="middle" font-weight="700" class="mono">ε + ε + ε + … = ∞</text>
+<text x="108" y="304" font-size="10.8" fill="#b91c1c" text-anchor="middle" font-weight="600">结论：木棍变成无穷长！</text>
+<text x="108" y="321" font-size="10.3" fill="#64748b" text-anchor="middle">（且 ε&gt;0 意味着还能再切）</text>
+<rect x="204" y="198" width="148" height="132" rx="10" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="278" y="219" font-size="11.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">分支 B：终极几何点 ε = 0</text>
+<text x="278" y="241" font-size="10.8" fill="#1e293b" text-anchor="middle">加一个 0 不会变大，</text>
+<text x="278" y="259" font-size="10.8" fill="#1e293b" text-anchor="middle">无数个 0 加起来呢？</text>
+<text x="278" y="281" font-size="11.5" fill="#b91c1c" text-anchor="middle" font-weight="700" class="mono">0 + 0 + 0 + … = 0 ?</text>
+<text x="278" y="304" font-size="10.8" fill="#b91c1c" text-anchor="middle" font-weight="600">结论：木棍缩成长度 0！</text>
+<text x="278" y="321" font-size="10.3" fill="#64748b" text-anchor="middle">（整个物质世界沦为幻觉）</text>
+<rect x="34" y="346" width="318" height="108" rx="10" fill="#ffffff" stroke="#b91c1c" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="46" y="368" font-size="11.4" fill="#b91c1c" text-anchor="start" font-weight="700">为什么柯西级数救不了分支 B？</text>
+<text x="46" y="389" font-size="10.9" fill="#1e293b" text-anchor="start">• 在柯西无穷级数里，0 + 0 + 0 + … 确实严格等于 0！</text>
+<text x="46" y="409" font-size="10.9" fill="#1e293b" text-anchor="start">• 但级数求和每次只能排第 1、第 2、第 3…个点（可数无穷），</text>
+<text x="46" y="429" font-size="10.9" fill="#0f172a" text-anchor="start" font-weight="600">  而 1 米线段上的实数点根本排不成队——它是“不可数无穷”！</text>
+<rect x="382" y="66" width="358" height="404" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="396.0" y="78.0" width="196" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="494.0" y="93.0" font-size="12" fill="#18794e" text-anchor="middle" font-weight="600">右栏：康托尔一一对应 &amp; 测度论的终极解答</text>
+<circle cx="536.0" cy="120.0" r="3.8" fill="#6d28d9"/>
+<text x="544.0" y="124.0" font-size="10.8" fill="#6d28d9" text-anchor="start" font-weight="600">投影中心 O</text>
+<line x1="536.0" y1="120.0" x2="439.2" y2="226.0" stroke="#64748b" stroke-width="1.1" stroke-dasharray="3 2"/>
+<line x1="536.0" y1="120.0" x2="493.4" y2="226.0" stroke="#6d28d9" stroke-width="1.4" stroke-dasharray="3 2"/>
+<circle cx="517.5" cy="166.0" r="3.4" fill="#1d6fa5"/>
+<circle cx="493.4" cy="226.0" r="3.4" fill="#18794e"/>
+<line x1="536.0" y1="120.0" x2="559.2" y2="226.0" stroke="#6d28d9" stroke-width="1.4" stroke-dasharray="3 2"/>
+<circle cx="546.1" cy="166.0" r="3.4" fill="#1d6fa5"/>
+<circle cx="559.2" cy="226.0" r="3.4" fill="#18794e"/>
+<line x1="536.0" y1="120.0" x2="632.8" y2="226.0" stroke="#64748b" stroke-width="1.1" stroke-dasharray="3 2"/>
+<line x1="494.0" y1="166.0" x2="578.0" y2="166.0" stroke="#1d6fa5" stroke-width="3.2"/>
+<text x="586.0" y="170.0" font-size="10.8" fill="#1d6fa5" text-anchor="start" font-weight="700">1 cm 线段（基数 = c）</text>
+<line x1="439.2" y1="226.0" x2="632.8" y2="226.0" stroke="#18794e" stroke-width="3.6"/>
+<text x="561" y="246.0" font-size="10.9" fill="#18794e" text-anchor="middle" font-weight="700">1 m 线段（点集基数同样 = c，点的个数一模一样！）</text>
+<rect x="396" y="262" width="330" height="86" rx="10" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="408" y="283" font-size="11" fill="#1d6fa5" text-anchor="start" font-weight="700">① 可数稠密点集（如 [0,1] 内全部有理数 Q，基数 ℵ₀）：</text>
+<text x="408" y="303" font-size="10.8" fill="#1e293b" text-anchor="start">虽密密麻麻，但能编号 q₁, q₂, q₃… 用长 ε/2ⁿ 的小盖子全盖住，</text>
+<text x="408" y="321" font-size="10.8" fill="#1e293b" text-anchor="start">总盖长 ≤ ε → 0，勒贝格测度 μ(Q) = 0（像筛子一样全是洞）！</text>
+<text x="408" y="339" font-size="10.6" fill="#64748b" text-anchor="start">这正是“可数个零加起来仍是零”的精确数学体现。</text>
+<rect x="396" y="358" width="330" height="98" rx="10" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="408" y="379" font-size="11" fill="#18794e" text-anchor="start" font-weight="700">② 连续实数区间 [a, b]（含无理数，不可数基数 c = 2^ℵ₀）：</text>
+<text x="408" y="399" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="600">1 cm 与 1 m 点的个数相同 ⇒ 单靠“数点再相加”算不出长度！</text>
+<text x="408" y="419" font-size="10.8" fill="#1e293b" text-anchor="start">现代数学中，长度不是点尺寸的算术和，而是定义在区间集合</text>
+<text x="408" y="438" font-size="10.8" fill="#1e293b" text-anchor="start">上的测度函数 μ([a, b]) = b − a（满足可数可加性，彻底自洽）。</text>
+</svg>

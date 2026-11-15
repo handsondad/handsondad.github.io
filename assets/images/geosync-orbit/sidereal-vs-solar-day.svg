@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="420" viewBox="0 0 760 420" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">恒星日23小时56分04秒与太阳日24小时几何成因及77公里轨道误差对比图</title>
+<desc id="desc">左图展示地球在绕太阳公转同时自转满360度对齐遥远恒星只需23小时56分04秒，而重新正对太阳需多转0.986度即3分56秒；右图计算若误用24小时周期将使轨道偏高76.9公里、每天向西漂移约0.98度。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="419" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">为什么同步周期是 23 小时 56 分 04 秒，而不是整整 24 小时？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">地球一边自转一边绕太阳公转：对齐遥远恒星（惯性空间）比重新正对太阳每天少 3 分 56 秒</text>
+<rect x="20" y="62" width="366" height="344" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 恒星日 vs 太阳日（公转角放大示意）</text>
+<text x="36" y="102" font-size="10.6" fill="#64748b" text-anchor="start">真实地球每天公转 0.986°，图中放大为 24° 以便看清夹角</text>
+<path d="M 268.0,286.0 A 192.0,192.0 0 0 0 248.6,201.8" fill="none" stroke="#475569" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arr-muted)"/>
+<text x="296" y="246" font-size="10.4" fill="#475569" text-anchor="start" font-weight="600">公转 1 天</text>
+<text x="296" y="260" font-size="10.1" fill="#64748b" text-anchor="start">(+0.986°)</text>
+<circle cx="76.0" cy="286.0" r="24" fill="#fef3c7" stroke="#c25014" stroke-width="2"/>
+<text x="76.0" y="290.0" font-size="12.0" fill="#c25014" text-anchor="middle" font-weight="700">太阳</text>
+<line x1="101.0" y1="286.0" x2="246.0" y2="286.0" stroke="#c25014" stroke-width="1.5" marker-start="url(#arr-orange)"/>
+<circle cx="268.0" cy="286.0" r="20" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.7"/>
+<circle cx="248.0" cy="286.0" r="3.5" fill="#0f172a"/>
+<text x="268.0" y="320.0" font-size="10.5" fill="#1e293b" text-anchor="middle">第 0 天正午：同时正对太阳与遥远恒星</text>
+<line x1="86.0" y1="201.8" x2="226.6" y2="201.8" stroke="#18794e" stroke-width="1.8" marker-start="url(#arr-green)"/>
+<text x="144" y="193.8" font-size="10.4" fill="#18794e" text-anchor="middle" font-weight="700">① 转满 360°（恒星日 23h56m04s）</text>
+<line x1="230.6" y1="210.6" x2="99.4" y2="274.6" stroke="#c25014" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#arr-orange)"/>
+<circle cx="248.6" cy="201.8" r="20" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.7"/>
+<circle cx="228.6" cy="201.8" r="3.6" fill="#18794e"/>
+<circle cx="230.6" cy="210.6" r="3.6" fill="#c25014"/>
+<text x="154" y="232" font-size="10.2" fill="#c25014" text-anchor="start" font-weight="700">② 再多转 0.986°</text>
+<text x="154" y="246" font-size="9.9" fill="#c25014" text-anchor="start">(+3分56秒=24h正午)</text>
+<rect x="34" y="344" width="338" height="48" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="46" y="363" font-size="10.6" fill="#18794e" text-anchor="start" font-weight="700">关键结论：卫星轨道平面锚定在惯性空间（恒星背景）！</text>
+<text x="46" y="381" font-size="10.3" fill="#1e293b" text-anchor="start">所以卫星只需对齐地球转满 360° 的恒星日，绝不能对齐太阳。</text>
+<rect x="402" y="62" width="338" height="344" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="418" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 假如错按 24 小时入轨会发生什么？</text>
+<text x="418" y="102" font-size="10.8" fill="#64748b" text-anchor="start">差之四分钟，谬以七十七公里：屋顶锅盖两天失锁</text>
+<rect x="418" y="118" width="306" height="86" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="430" y="138" font-size="11.2" fill="#18794e" text-anchor="start" font-weight="700">✅ 正确周期：恒星日 T = 86,164.09 s</text>
+<text x="430" y="158" font-size="10.6" fill="#1e293b" text-anchor="start">• 地心半径 r = 42,164.17 km（高 35,786.03 km）</text>
+<text x="430" y="176" font-size="10.6" fill="#1e293b" text-anchor="start">• 地面经度漂移：0.000° / 天（稳稳钉在同一经度）</text>
+<text x="430" y="194" font-size="10.4" fill="#18794e" text-anchor="start" font-weight="600">• 家用 Ku 波段锅盖（波束宽 ~1.8°）：一次拧紧常年免调</text>
+<rect x="418" y="214" width="306" height="96" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="430" y="234" font-size="11.2" fill="#c25014" text-anchor="start" font-weight="700">❌ 错误周期：太阳日 T = 86,400.00 s</text>
+<text x="430" y="254" font-size="10.6" fill="#1e293b" text-anchor="start">• 地心半径 r = 42,241.10 km（偏高 +76.9 km！）</text>
+<text x="430" y="272" font-size="10.6" fill="#1e293b" text-anchor="start">• 地面经度西漂：−0.983° / 天（轨道弧长 ~725 km/天）</text>
+<text x="430" y="290" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="700">• 后果：仅 2 天就漂出锅盖波束，365 天倒退绕地球一圈！</text>
+<text x="418" y="330" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600">错误 24h 轨道的星下点西漂时间轴（相对东经 105° 起点）：</text>
+<line x1="424.0" y1="356.0" x2="716.0" y2="356.0" stroke="#475569" stroke-width="1.6"/>
+<circle cx="424.0" cy="356.0" r="4.5" fill="#18794e"/>
+<text x="424.0" y="347.0" font-size="10.0" fill="#18794e" text-anchor="start" font-weight="700">第0天</text>
+<text x="424.0" y="373.0" font-size="9.8" fill="#1e293b" text-anchor="start">105°E</text>
+<circle cx="497.0" cy="356.0" r="4.5" fill="#c25014"/>
+<text x="497.0" y="347.0" font-size="10.0" fill="#c25014" text-anchor="middle" font-weight="700">第2天</text>
+<text x="497.0" y="373.0" font-size="9.8" fill="#1e293b" text-anchor="middle">出波束(-2°)</text>
+<circle cx="599.2" cy="356.0" r="4.5" fill="#6d28d9"/>
+<text x="599.2" y="347.0" font-size="10.0" fill="#6d28d9" text-anchor="middle" font-weight="700">第91天</text>
+<text x="599.2" y="373.0" font-size="9.8" fill="#1e293b" text-anchor="middle">15°E</text>
+<circle cx="716.0" cy="356.0" r="4.5" fill="#c25014"/>
+<text x="716.0" y="347.0" font-size="10.0" fill="#c25014" text-anchor="end" font-weight="700">第365天</text>
+<text x="716.0" y="373.0" font-size="9.8" fill="#1e293b" text-anchor="end">倒退一整圈</text>
+</svg>

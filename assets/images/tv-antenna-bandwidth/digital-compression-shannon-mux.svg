@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="446" viewBox="0 0 760 446" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">高清视频250倍帧间预测压缩与8兆赫DTMB及36兆赫卫星转发器多路复用对比图</title>
+<desc id="desc">左图对比1485Mbps演播室未压缩高清信号与经I/P/B帧运动补偿压缩至约6Mbps的码率（压缩约248倍）；右图对比同样8MHz地面频道在模拟PAL时代仅容1套标清台、在DTMB数字时代（约27Mbps）可复用6套高清台，以及36MHz卫星转发器约60Mbps吞吐能力。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="445" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">进入数字高清时代：1.5 Gbps 原画怎么塞进同一个 8 MHz 频道还能装 6 个台？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左手靠视频编码把冗余榨干 250 倍；右手靠高阶正交调制把 8 MHz 车道撑出近 30 Mbps 净吞吐！</text>
+<rect x="20" y="62" width="356" height="370" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="34" y="85" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 视频压缩奇迹：不传整张图，只传“哪里动了”</text>
+<rect x="34" y="98" width="328" height="92" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="46" y="118" font-size="10.1" fill="#b91c1c" text-anchor="start" font-weight="700">演播室未压缩高清 (1080i50 HD-SDI)：1,485 Mbps</text>
+<rect x="46" y="126" width="302" height="16" rx="4" fill="#b91c1c"/>
+<text x="197" y="138" font-size="9.3" fill="#ffffff" text-anchor="middle" font-weight="700">每秒涌出 ~186 MB 原始像素，8 MHz 天线根本装不下！</text>
+<text x="46" y="160" font-size="10.1" fill="#18794e" text-anchor="start" font-weight="700">H.264 / H.265 / AVS2 编码后：仅 ~6 Mbps（瘦身 ~248 倍！）</text>
+<rect x="46" y="166" width="6.0" height="16" rx="2" fill="#18794e"/>
+<text x="58" y="178" font-size="9.6" fill="#18794e" text-anchor="start" font-weight="700">← 按比例仅一丁点绿条！画质肉眼几乎无差</text>
+<rect x="34" y="202" width="328" height="138" rx="8" fill="#ffffff" stroke="#1d6fa5" stroke-width="1"/>
+<text x="46" y="222" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="700">为什么能压 200 多倍？—— 空间变换 + 帧间预测</text>
+<rect x="46" y="234" width="92" height="68" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="92" y="252" font-size="9.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">I 帧（关键帧）</text>
+<text x="92" y="268" font-size="9.2" fill="#1e293b" text-anchor="middle">完整演播室背景</text>
+<text x="92" y="283" font-size="9.2" fill="#1e293b" text-anchor="middle">+ 主持人全身</text>
+<line x1="140.0" y1="268.0" x2="156.0" y2="268.0" stroke="#1d6fa5" stroke-width="1.6" marker-end="url(#arr-blue)"/>
+<rect x="160" y="234" width="92" height="68" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="206" y="252" font-size="9.8" fill="#18794e" text-anchor="middle" font-weight="700">P 帧（预测帧）</text>
+<text x="206" y="268" font-size="9.2" fill="#18794e" text-anchor="middle" font-weight="600">95% 背景直接抄</text>
+<text x="206" y="283" font-size="9.2" fill="#0f172a" text-anchor="middle" font-weight="700">只传嘴型运动 Δv</text>
+<line x1="254.0" y1="268.0" x2="268.0" y2="268.0" stroke="#18794e" stroke-width="1.6" marker-end="url(#arr-green)"/>
+<rect x="272" y="234" width="78" height="68" rx="6" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="311" y="252" font-size="9.6" fill="#6d28d9" text-anchor="middle" font-weight="700">B 帧（双向）</text>
+<text x="311" y="268" font-size="9.1" fill="#1e293b" text-anchor="middle">前后夹击插值</text>
+<text x="311" y="283" font-size="9.1" fill="#6d28d9" text-anchor="middle" font-weight="600">体积再省大半</text>
+<text x="46" y="323" font-size="9.7" fill="#1e293b" text-anchor="start">• 空间去冗余（DCT/整数变换）：大片蓝天地板只记几个低频系数</text>
+<rect x="34" y="350" width="328" height="68" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="46" y="370" font-size="10.4" fill="#18794e" text-anchor="start" font-weight="700">两步接力打通任督二脉：</text>
+<text x="46" y="388" font-size="9.8" fill="#1e293b" text-anchor="start">第 1 步（信源编码）把 1,485 Mbps 压成 4.5–6 Mbps 精炼比特流；</text>
+<text x="46" y="405" font-size="9.8" fill="#1e293b" text-anchor="start">第 2 步（信道调制）把这串 0 和 1 装进无线电波发射出去！</text>
+<rect x="388" y="62" width="352" height="370" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="402" y="85" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 信道复用：同样 8 MHz 车道，容量翻天覆地</text>
+<rect x="402" y="98" width="324" height="86" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="414" y="118" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="700">A. 旧时代模拟地面电视（PAL-D/K · 8 MHz 频道）</text>
+<rect x="414" y="128" width="300" height="28" rx="5" fill="#c25014"/>
+<text x="564" y="146" font-size="9.9" fill="#ffffff" text-anchor="middle" font-weight="700">整条 8 MHz 只能装【1 套标清台】（稍远还起雪花）</text>
+<text x="414" y="173" font-size="9.4" fill="#475569" text-anchor="start">2020 年底中国全面关停地面模拟信号，腾出黄金频谱（如 700 MHz 5G）</text>
+<rect x="402" y="196" width="324" height="118" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="414" y="216" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="700">B. 中国地面数字电视 DTMB（同样 8 MHz 频道！）</text>
+<text x="414" y="234" font-size="9.7" fill="#1e293b" text-anchor="start">64QAM 星座图（每符号带 6 bit）+ LDPC 纠错 ≈ 24–32 Mbps：</text>
+<rect x="414.0" y="244" width="47.0" height="32" rx="4" fill="#1d6fa5"/>
+<text x="437.5" y="258" font-size="9.2" fill="#ffffff" text-anchor="middle" font-weight="700">高清1</text>
+<text x="437.5" y="271" font-size="8.5" fill="#dbeafe" text-anchor="middle" class="mono">~4.5M</text>
+<rect x="464.5" y="244" width="47.0" height="32" rx="4" fill="#1d6fa5"/>
+<text x="488.0" y="258" font-size="9.2" fill="#ffffff" text-anchor="middle" font-weight="700">高清2</text>
+<text x="488.0" y="271" font-size="8.5" fill="#dbeafe" text-anchor="middle" class="mono">~4.5M</text>
+<rect x="515.0" y="244" width="47.0" height="32" rx="4" fill="#1d6fa5"/>
+<text x="538.5" y="258" font-size="9.2" fill="#ffffff" text-anchor="middle" font-weight="700">高清3</text>
+<text x="538.5" y="271" font-size="8.5" fill="#dbeafe" text-anchor="middle" class="mono">~4.5M</text>
+<rect x="565.5" y="244" width="47.0" height="32" rx="4" fill="#1d6fa5"/>
+<text x="589.0" y="258" font-size="9.2" fill="#ffffff" text-anchor="middle" font-weight="700">高清4</text>
+<text x="589.0" y="271" font-size="8.5" fill="#dbeafe" text-anchor="middle" class="mono">~4.5M</text>
+<rect x="616.0" y="244" width="47.0" height="32" rx="4" fill="#1d6fa5"/>
+<text x="639.5" y="258" font-size="9.2" fill="#ffffff" text-anchor="middle" font-weight="700">高清5</text>
+<text x="639.5" y="271" font-size="8.5" fill="#dbeafe" text-anchor="middle" class="mono">~4.5M</text>
+<rect x="666.5" y="244" width="47.0" height="32" rx="4" fill="#1d6fa5"/>
+<text x="690.0" y="258" font-size="9.2" fill="#ffffff" text-anchor="middle" font-weight="700">高清6</text>
+<text x="690.0" y="271" font-size="8.5" fill="#dbeafe" text-anchor="middle" class="mono">~4.5M</text>
+<text x="414" y="298" font-size="9.7" fill="#1d6fa5" text-anchor="start" font-weight="700">一根普通室内/室外天线免费收看多套 1080i/p 央视与本地高清！</text>
+<rect x="402" y="326" width="324" height="92" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="414" y="346" font-size="10.4" fill="#6d28d9" text-anchor="start" font-weight="700">C. 直播卫星 1 个 Ku 转发器（宽 36 MHz · 中星 9 号系列）</text>
+<text x="414" y="366" font-size="9.8" fill="#1e293b" text-anchor="start">• 单转发器净荷达 ~54–66 Mbps，可打包 10+ 套高清或几十套标清；</text>
+<text x="414" y="385" font-size="9.8" fill="#1e293b" text-anchor="start">• 一颗卫星装 20–30+ 个转发器 = 总下行超 1.5 Gbps，一举让偏远</text>
+<text x="414" y="403" font-size="9.8" fill="#6d28d9" text-anchor="start" font-weight="700">  深山牧区“户户通”免费看上上百套数字广播电视节目！</text>
+</svg>

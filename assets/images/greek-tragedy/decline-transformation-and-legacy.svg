@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">古希腊悲剧在公元前4世纪的制度转型与两千四百年文化传承时间轴</title>
+<desc id="desc">上方对比公元前404年雅典战败及前386年旧剧重演制度带来的历史转型与尼采《悲剧的诞生》日神酒神哲学视角；下方展示古罗马拜占庭传抄、1590年代佛罗伦萨复原古剧意外发明歌剧、莎士比亚与拉辛近代双峰、以及现代心理学与全球重演四次重生。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">雅典战败后悲剧“死”了吗？从城邦祭礼转型到两千四百年的四次重生</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">前 404 年终结的是“古典原创黄金期”；悲剧随后化身经典重演、欧洲歌剧火种与现代心理学母题</text>
+<rect x="24" y="66" width="712" height="194" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="42" y="91" font-size="13.2" fill="#0f172a" text-anchor="start" font-weight="700">一、公元前 4 世纪大转折：黄金时代为何谢幕？（历史制度变迁 vs 哲学美学假说）</text>
+<rect x="40" y="104" width="426" height="142" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="54" y="126" font-size="11.8" fill="#1d6fa5" text-anchor="start" font-weight="700">历史与剧场机制真相：不是突然消亡，而是转型“国际经典”</text>
+<text x="54" y="148" font-size="11" fill="#1e293b" text-anchor="start">• 前 406 年欧、索二圣同年离世；前 404 年雅典在伯罗奔尼撒战争战败；</text>
+<text x="54" y="170" font-size="11" fill="#1e293b" text-anchor="start">• 前 386 年制度拐点：酒神节增设“旧剧重演”，新剧难敌死去大师经典；</text>
+<text x="54" y="192" font-size="11" fill="#1e293b" text-anchor="start">• 剧场从“城邦民主神学思辨”转向巡回明星演员炫技（欧氏成头号巨星）；</text>
+<text x="54" y="214" font-size="11" fill="#1e293b" text-anchor="start">• 公共政治退潮后，聚焦市民婚恋与家务的米南德“新喜剧”成为舞台主流。</text>
+<text x="54" y="234" font-size="10.3" fill="#64748b" text-anchor="start">  （注：前 4 世纪阿伽通首创纯虚构剧情悲剧，但后世未入学校精选本而失传）</text>
+<rect x="480" y="104" width="240" height="142" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="494" y="126" font-size="11.8" fill="#6d28d9" text-anchor="start" font-weight="700">尼采 1872《悲剧的诞生》视角</text>
+<text x="494" y="149" font-size="11" fill="#1e293b" text-anchor="start">• 提炼“酒神精神（音乐狂醉）”与</text>
+<text x="494" y="170" font-size="11" fill="#1e293b" text-anchor="start">  “日神精神（梦境造型）”二元合力；</text>
+<text x="494" y="191" font-size="11" fill="#1e293b" text-anchor="start">• 认为“苏格拉底理性＋欧里庇得斯”</text>
+<text x="494" y="212" font-size="11" fill="#1e293b" text-anchor="start">  杀死悲剧——属深刻哲学洞见，但</text>
+<text x="494" y="233" font-size="10.6" fill="#6d28d9" text-anchor="start" font-weight="600">  现代古典学强调城邦转型才是主因。</text>
+<rect x="24" y="274" width="712" height="232" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="42" y="300" font-size="13.2" fill="#0f172a" text-anchor="start" font-weight="700">二、跨越两千四百年的四次“借壳重生”时间轴</text>
+<line x1="88" y1="326" x2="672" y2="326" stroke="#1d6fa5" stroke-width="2.2"/>
+<circle cx="117.0" cy="326" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="117.0" y="330" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<rect x="36" y="344" width="162" height="146" rx="8" fill="#f8fafc" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="117.0" y="366" font-size="11.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">古罗马与拜占庭传抄</text>
+<text x="117.0" y="384" font-size="10.4" fill="#64748b" text-anchor="middle">前 1 世纪—15 世纪</text>
+<text x="117.0" y="408" font-size="10.8" fill="#1e293b" text-anchor="middle">罗马塞内卡改成室内</text>
+<text x="117.0" y="428" font-size="10.8" fill="#1e293b" text-anchor="middle">诵读的血腥修辞悲剧；</text>
+<text x="117.0" y="448" font-size="10.8" fill="#1e293b" text-anchor="middle">拜占庭学者守护希腊</text>
+<text x="117.0" y="468" font-size="10.8" fill="#1e293b" text-anchor="middle">抄本西传文艺复兴欧洲</text>
+<circle cx="293.0" cy="326" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="293.0" y="330" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<rect x="212" y="344" width="162" height="146" rx="8" fill="#f8fafc" stroke="#c25014" stroke-width="1.1"/>
+<text x="293.0" y="366" font-size="11.6" fill="#c25014" text-anchor="middle" font-weight="700">美丽误会催生“歌剧”</text>
+<text x="293.0" y="384" font-size="10.4" fill="#64748b" text-anchor="middle">1590 年代·佛罗伦萨</text>
+<text x="293.0" y="408" font-size="10.8" fill="#1e293b" text-anchor="middle">卡梅拉塔文人社试图</text>
+<text x="293.0" y="428" font-size="10.8" fill="#1e293b" text-anchor="middle">复原古希腊“全剧配乐</text>
+<text x="293.0" y="448" font-size="10.8" fill="#1e293b" text-anchor="middle">吟唱”，意外发明现代</text>
+<text x="293.0" y="468" font-size="10.8" fill="#1e293b" text-anchor="middle">歌剧《达芙妮》等名作</text>
+<circle cx="469.0" cy="326" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="469.0" y="330" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">3</text>
+<rect x="388" y="344" width="162" height="146" rx="8" fill="#f8fafc" stroke="#18794e" stroke-width="1.1"/>
+<text x="469.0" y="366" font-size="11.6" fill="#18794e" text-anchor="middle" font-weight="700">近代欧洲悲剧双峰</text>
+<text x="469.0" y="384" font-size="10.4" fill="#64748b" text-anchor="middle">17 世纪·英法舞台</text>
+<text x="469.0" y="408" font-size="10.8" fill="#1e293b" text-anchor="middle">莎士比亚借塞内卡传统</text>
+<text x="469.0" y="428" font-size="10.8" fill="#1e293b" text-anchor="middle">写就四大悲剧；法国拉</text>
+<text x="469.0" y="448" font-size="10.8" fill="#1e293b" text-anchor="middle">辛直承欧里庇得斯写出</text>
+<text x="469.0" y="468" font-size="10.8" fill="#1e293b" text-anchor="middle">古典主义巅峰《费德尔》</text>
+<circle cx="645.0" cy="326" r="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="645.0" y="330" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">4</text>
+<rect x="564" y="344" width="162" height="146" rx="8" fill="#f8fafc" stroke="#6d28d9" stroke-width="1.1"/>
+<text x="645.0" y="366" font-size="11.6" fill="#6d28d9" text-anchor="middle" font-weight="700">现代心理与全球剧场</text>
+<text x="645.0" y="384" font-size="10.4" fill="#64748b" text-anchor="middle">20 世纪至今</text>
+<text x="645.0" y="408" font-size="10.8" fill="#1e293b" text-anchor="middle">弗洛伊德借索氏剧命名</text>
+<text x="645.0" y="428" font-size="10.8" fill="#1e293b" text-anchor="middle">“俄狄浦斯情结”；阿努</text>
+<text x="645.0" y="448" font-size="10.8" fill="#1e293b" text-anchor="middle">伊二战改编《安提戈涅》</text>
+<text x="645.0" y="468" font-size="10.8" fill="#1e293b" text-anchor="middle">反抗强权，全球常演不衰</text>
+</svg>

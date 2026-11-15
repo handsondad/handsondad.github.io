@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="522" viewBox="0 0 760 522" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">太阳核聚变伽莫夫量子隧穿与弱核力90亿年慢门机理图</title>
+<desc id="desc">左栏展示1.35 keV核心质子如何借约6 keV伽莫夫窗口量子隧穿翻越约550 keV库仑势垒，右栏对比氢弹强核力瞬爆与太阳弱核力90亿年等待时间，并定量对比太阳核心276.5 W/m³与人体1200 W/m³的单位体积发热功率。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="521" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">1570 万度根本不够点火？“量子穿墙术”与“90 亿年弱力慢门”双密码</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左栏看质子怎样钻过百倍高的静电排斥山峰 → 右栏看为什么太阳不像氢弹一秒炸完、功率密度还不如人体</text>
+<rect x="24" y="68" width="358" height="440" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="88" r="10" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="42" y="92" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="58" y="92" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">第一关：翻不过库仑高山，全靠伽莫夫“量子隧穿”</text>
+<rect x="40" y="108" width="326" height="214" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<line x1="68" y1="272" x2="352" y2="272" stroke="#475569" stroke-width="1.4"/>
+<line x1="76" y1="120" x2="76" y2="310" stroke="#475569" stroke-width="1.4"/>
+<rect x="76" y="272" width="38" height="32" fill="#e7f6ee"/>
+<polyline points="76,304 114,304 114,134 114.0,134.0 120.0,152.8 126.0,167.1 132.0,178.4 138.0,187.4 144.0,194.9 150.0,201.1 156.0,206.4 162.0,211.0 168.0,215.0 174.0,218.5 180.0,221.6 186.0,224.3 192.0,226.8 198.0,229.0 204.0,231.0 210.0,232.9 216.0,234.5 222.0,236.1 228.0,237.5 234.0,238.8 240.0,240.0 246.0,241.2 252.0,242.2 258.0,243.2 264.0,244.1 270.0,245.0 276.0,245.8 282.0,246.5 288.0,247.3 294.0,247.9 300.0,248.6 306.0,249.2 312.0,249.8 318.0,250.3 324.0,250.9 330.0,251.4 336.0,251.8 342.0,252.3 348.0,252.7" fill="none" stroke="#dc2626" stroke-width="2.6"/>
+<rect x="114" y="230" width="166" height="16" fill="#eaf4fb" opacity="0.85"/>
+<polyline points="280.0,238.0 275.0,243.0 270.0,242.1 265.0,236.3 260.0,232.5 255.0,235.2 250.0,241.2 245.0,243.4 240.0,239.2 235.0,233.6 230.0,233.2 225.0,238.5 220.0,243.2 215.0,239.7 210.0,237.1 205.0,235.7 200.0,237.1 195.0,239.3 190.0,239.8 185.0,238.2 180.0,236.6 175.0,236.7 170.0,238.2 165.0,239.2 160.0,238.7 155.0,237.5 150.0,237.1 145.0,237.7 140.0,238.5 135.0,238.6 130.0,238.0 125.0,237.4 120.0,237.5 115.0,238.2" fill="none" stroke="#1d6fa5" stroke-width="2.2"/>
+<line x1="126" y1="238" x2="98" y2="238" stroke="#1d6fa5" stroke-width="2.2" marker-end="url(#arr-blue)"/>
+<line x1="76" y1="262" x2="346" y2="262" stroke="#c25014" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="122" y="130" font-size="10.0" fill="#dc2626" text-anchor="start" font-weight="700">同性电荷库仑势垒峰 ≈ 550 keV（需几十亿度！）</text>
+<text x="95" y="293" font-size="9.6" fill="#18794e" text-anchor="middle" font-weight="700">强核力深井</text>
+<text x="244" y="224" font-size="10.0" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">伽莫夫隧穿窗口 ≈ 6 keV（概率波穿墙！）</text>
+<text x="258" y="258" font-size="9.8" fill="#c25014" text-anchor="middle" font-weight="600">核心平均热动能 kT ≈ 1.35 keV</text>
+<text x="214" y="312" font-size="10.0" fill="#64748b" text-anchor="middle">两颗质子间距 r（强力吸引区 &lt; 2 飞米） →</text>
+<text x="40" y="346" font-size="10.6" fill="#1e293b" text-anchor="start">• 经典死局：太阳核心 1571 万 K 的质子平均动能仅 1.35 keV，</text>
+<text x="50" y="366" font-size="10.6" fill="#1e293b" text-anchor="start">离翻越 550 keV 静电排斥墙差了 400 倍，按经典物理绝无可能点火！</text>
+<text x="40" y="390" font-size="10.6" fill="#1d6fa5" text-anchor="start" font-weight="600">• 量子破局（1928 伽莫夫）：微观质子不是硬钢珠，而是弥散的概率波；</text>
+<text x="50" y="410" font-size="10.6" fill="#1d6fa5" text-anchor="start" font-weight="600">高能尾端约 6 keV 的快质子，靠“量子隧穿”直接钻进山体另一侧。</text>
+<text x="40" y="434" font-size="10.6" fill="#1e293b" text-anchor="start">• 即使靠穿墙术撞进核力范围，两颗裸质子拼成的“双质子 ²He”极不稳，</text>
+<text x="50" y="454" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="600">超 99.999999% 会在 10⁻²¹ 秒内原路弹开——还得等右边第二道慢门！</text>
+<text x="40" y="488" font-size="9.8" fill="#64748b" text-anchor="start">（注：纵轴能量刻度做示意拉伸，突出 1.35 / 6 / 550 keV 三级反差）</text>
+<rect x="398" y="68" width="338" height="440" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="416" cy="88" r="10" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="416" y="92" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">2</text>
+<text x="432" y="92" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">第二关：为什么太阳没像氢弹一样一秒炸光？</text>
+<rect x="414" y="108" width="306" height="82" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1"/>
+<rect x="424.0" y="116.0" width="282" height="20" rx="10.0" fill="#fee2e2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="565.0" y="129.6" font-size="10.4" fill="#dc2626" text-anchor="middle" font-weight="600">人造氢弹（氘 D + 氚 T）：自带中子，强核力秒炸</text>
+<text x="424" y="154" font-size="10.5" fill="#1e293b" text-anchor="start">• 反应：²D + ³T → ⁴He + n，无需质子临时变中子</text>
+<text x="424" y="174" font-size="10.5" fill="#dc2626" text-anchor="start" font-weight="700">• 纯走强核力高速路，百万分之一秒内倾泻全部能量！</text>
+<rect x="414" y="200" width="306" height="98" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<rect x="424.0" y="208.0" width="282" height="20" rx="10.0" fill="#ede9fe" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="565.0" y="221.6" font-size="10.4" fill="#6d28d9" text-anchor="middle" font-weight="600">太阳核心（质子 p + 质子 p）：弱核力卡住咽喉！</text>
+<text x="424" y="245" font-size="10.4" fill="#1e293b" text-anchor="start">• 没有现成中子！必须在撞击那 10⁻²¹ 秒瞬间触发弱核力</text>
+<text x="424" y="265" font-size="10.4" fill="#6d28d9" text-anchor="start" font-weight="700">  β⁺ 衰变（p → n + e⁺ + νₑ），才能锁死成稳定的氘核 ²D。</text>
+<text x="424" y="285" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="700">• 平均每颗质子每秒撞上亿次，却要排队苦等约 90 亿年！</text>
+<rect x="414" y="310" width="306" height="182" rx="8" fill="#fef3c7" stroke="#c25014" stroke-width="1"/>
+<text x="426" y="332" font-size="11.1" fill="#b45309" text-anchor="start" font-weight="700">颠覆直觉：太阳最中心每立方米发热还不如你的身体！</text>
+<text x="426" y="358" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="700">太阳核心峰值</text>
+<rect x="506" y="346" width="46" height="16" rx="4" fill="#c25014"/>
+<text x="558" y="358" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="600">276.5 W/m³（≈ 农家发酵堆肥堆）</text>
+<text x="426" y="386" font-size="10.4" fill="#dc2626" text-anchor="start" font-weight="700">静卧成年人体</text>
+<rect x="506" y="374" width="194" height="16" rx="4" fill="#dc2626"/>
+<text x="514" y="386" font-size="10.0" fill="#ffffff" text-anchor="start" font-weight="700">≈ 1200 W/m³（太阳中心的 4.3 倍！）</text>
+<text x="426" y="416" font-size="10.3" fill="#1e293b" text-anchor="start">• 70 kg 人体体积约 0.07 m³，静息功率 85 W → 1214 W/m³！</text>
+<text x="426" y="437" font-size="10.3" fill="#1e293b" text-anchor="start">• 为什么太阳还能飙到 1571 万度？因为核心体积高达地球</text>
+<text x="434" y="457" font-size="10.3" fill="#0f172a" text-anchor="start" font-weight="600">的 3 万多倍，外裹 70 万公里厚隔热层，热量攒了十万年</text>
+<text x="434" y="477" font-size="10.3" fill="#b45309" text-anchor="start" font-weight="700">排不出去！慢门锁死了功率，才赐予地球百亿年温柔阳光。</text>
+</svg>

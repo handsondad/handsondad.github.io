@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="510" viewBox="0 0 760 510" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">终结虹吸百年争论的四组极限实验对比图</title>
+<desc id="desc">四宫格展示2011年高真空离子液体虹吸、2011年二氧化碳气体与气泡断链虹吸、2014年低压舱管内瀑布实验与2015至2016年15.4米绝对负压水虹吸实验，底部总结重力引擎与双传力桥梁统一定论。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="509" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">大气压“推泵”还是分子“链条”？终结百年词典之争的四组极限实验</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">2010 年《牛津英语词典》释义争议引爆物理学界实测潮：单一假说均被证伪，重力与双传力机制缺一不可</text>
+<rect x="20" y="64" width="352" height="168" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="20" y="64" width="352" height="6" rx="3" fill="#6d28d9"/>
+<circle cx="40" cy="88" r="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="40" y="92" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">1</text>
+<text x="58" y="92" font-size="12.8" fill="#0f172a" text-anchor="start" font-weight="700">高真空离子液体虹吸（2011）</text>
+<text x="36" y="112" font-size="11" fill="#6d28d9" text-anchor="start" font-weight="600">环境气压 P₀ ≈ 0 Pa · 极低蒸气压液体</text>
+<text x="36" y="133" font-size="11" fill="#1e293b" text-anchor="start">• 诺丁汉大学团队（Boatwright 等）在超高真空腔内实验</text>
+<text x="36" y="151" font-size="11" fill="#1e293b" text-anchor="start">• 完全没有大气压“推”液面，不可挥发的离子液体照样翻越</text>
+<text x="36" y="169" font-size="11" fill="#1e293b" text-anchor="start">  弯管流向下游容器！</text>
+<text x="36" y="187" font-size="11" fill="#1e293b" text-anchor="start">• 结论：证伪“虹吸必须有大气压”，分子内聚拉力可独立传力。</text>
+<rect x="36.0" y="204.0" width="236" height="20" rx="10.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="154.0" y="217.6" font-size="11" fill="#6d28d9" text-anchor="middle" font-weight="600">支持：重力 + 分子内聚力链条</text>
+<rect x="388" y="64" width="352" height="168" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="388" y="64" width="352" height="6" rx="3" fill="#c25014"/>
+<circle cx="408" cy="88" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="408" y="92" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="426" y="92" font-size="12.8" fill="#0f172a" text-anchor="start" font-weight="700">CO₂ 重气体虹吸与气泡断链虹吸（2011）</text>
+<text x="404" y="112" font-size="11" fill="#c25014" text-anchor="start" font-weight="600">分子内聚拉力 = 0 · 环境气压 P₀ = 1 atm</text>
+<text x="404" y="133" font-size="11" fill="#1e293b" text-anchor="start">• Ramette 等用密度大于空气的二氧化碳气体完成“无液虹吸”；</text>
+<text x="404" y="151" font-size="11" fill="#1e293b" text-anchor="start">• Richert 与 Binder 在水虹吸管顶部注入大气泡截断水柱</text>
+<text x="404" y="169" font-size="11" fill="#1e293b" text-anchor="start">• 气体无内聚拉力、水分子链彻底断开，虹吸依然稳定运行！</text>
+<text x="404" y="187" font-size="11" fill="#1e293b" text-anchor="start">• 结论：证伪“虹吸必须靠分子手拉手”，正气压差可独立传力。</text>
+<rect x="404.0" y="204.0" width="236" height="20" rx="10.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="522.0" y="217.6" font-size="11" fill="#c25014" text-anchor="middle" font-weight="600">支持：重力 + 大气压差推动</text>
+<rect x="20" y="244" width="352" height="168" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="20" y="244" width="352" height="6" rx="3" fill="#1d6fa5"/>
+<circle cx="40" cy="268" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="40" y="272" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">3</text>
+<text x="58" y="272" font-size="12.8" fill="#0f172a" text-anchor="start" font-weight="700">低压舱 1.2 万米高空“管内瀑布”（2014）</text>
+<text x="36" y="292" font-size="11" fill="#1d6fa5" text-anchor="start" font-weight="600">P₀ = 18.75 kPa（0.185 atm）· 理论限高 1.58 m</text>
+<text x="36" y="313" font-size="11" fill="#1e293b" text-anchor="start">• Hughes 与 Gurung 将 1.52 m 虹吸管升至等效 4 万英尺高空</text>
+<text x="36" y="331" font-size="11" fill="#1e293b" text-anchor="start">• 管顶水室温沸腾，下游出现高约 41 cm 的自由落体“管内瀑布”</text>
+<text x="36" y="349" font-size="11" fill="#1e293b" text-anchor="start">• 水柱虽在下游断开，仍维持 4.1 L/min 流量；再降至 17.9 kPa</text>
+<text x="36" y="367" font-size="11" fill="#1e293b" text-anchor="start">  彻底分裂成两支背靠背气压计，升压后水柱自动重连恢复！</text>
+<rect x="36.0" y="384.0" width="236" height="20" rx="10.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="154.0" y="397.6" font-size="11" fill="#1d6fa5" text-anchor="middle" font-weight="600">揭示：虹吸与气压计的连续相变边界</text>
+<rect x="388" y="244" width="352" height="168" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="388" y="244" width="352" height="6" rx="3" fill="#18794e"/>
+<circle cx="408" cy="268" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="408" y="272" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">4</text>
+<text x="426" y="272" font-size="12.8" fill="#0f172a" text-anchor="start" font-weight="700">突破 10.33 米铁律：15.4 米负压水虹吸（2015–2016）</text>
+<text x="404" y="292" font-size="11" fill="#18794e" text-anchor="start" font-weight="600">管顶绝对压强 ≈ -49.4 kPa（绝对负压拉伸态）</text>
+<text x="404" y="313" font-size="11" fill="#1e293b" text-anchor="start">• Boatwright 等（15.04 m 深度脱气水）与 Vera 等（15.4 m</text>
+<text x="404" y="331" font-size="11" fill="#1e293b" text-anchor="start">  脱气+洗洁精表面活性剂除核）先后打破托里拆利极限！</text>
+<text x="404" y="349" font-size="11" fill="#1e293b" text-anchor="start">• 管顶水处于约 -0.5 atm 亚稳态张力下持续双向换向流动 224 s</text>
+<text x="404" y="367" font-size="11" fill="#1e293b" text-anchor="start">• 结论：10.3 米不是绝对上限，而是普通含气水的“气蚀红线”。</text>
+<rect x="404.0" y="384.0" width="236" height="20" rx="10.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="522.0" y="397.6" font-size="11" fill="#18794e" text-anchor="middle" font-weight="600">打通：工程虹吸与百米巨杉木质部输水</text>
+<rect x="20" y="424" width="720" height="72" rx="10" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.3"/>
+<text x="36" y="444" font-size="12.2" fill="#0f172a" text-anchor="start" font-weight="700">现代流体力学终极定论（动力源 vs 传力桥梁）：</text>
+<text x="36" y="464" font-size="11" fill="#1e293b" text-anchor="start">① 唯一能量引擎永远是【重力】（进出口液面落差 H &gt; 0 释放引力势能，无论真空还是高压均不可违背）；</text>
+<text x="36" y="483" font-size="11" fill="#1e293b" text-anchor="start">② 跨过管顶传递动量的桥梁有两条：含气液体与气体虹吸靠【环境正气压防断流】，真空与超 10 米靠【脱气液体内聚抗拉强度】。</text>
+</svg>

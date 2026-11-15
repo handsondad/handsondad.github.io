@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="504" viewBox="0 0 760 504" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">32768赫兹15级二进制分频链与超声波低功耗甜点原理解析图</title>
+<desc id="desc">顶部单次动画展示32768Hz经15级除以2触发器输出1Hz整秒脉冲，底部对比20kHz静音门槛、微安级功耗与NIST频率误差压缩效应</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  .anim-div-pulse {
+        stroke-dasharray: 660;
+        stroke-dashoffset: 660;
+        animation: divCascade 3.4s ease-out 0.25s 1 forwards;
+      }
+      @keyframes divCascade {
+        from { stroke-dashoffset: 660; }
+        to   { stroke-dashoffset: 0; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .anim-div-pulse {
+          animation: none !important;
+          stroke-dashoffset: 0 !important;
+        }
+      }
+</style>
+<rect x="0.5" y="0.5" width="759" height="503" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="380.0" y="30" font-size="18.5" fill="#1e293b" text-anchor="middle" font-weight="700">为什么全世界的石英表和电脑主板，都偏爱“32,768 Hz”？</text>
+<text x="380.0" y="52" font-size="12.2" fill="#64748b" text-anchor="middle">32,768 = 2¹⁵：既能靠 15 个触发器一路对半除出整 1 秒，又恰好卡在人耳超声波静音区与微安省电甜点上</text>
+<rect x="22" y="68" width="716" height="206" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="38.0" y="82.0" width="512" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="294.0" y="97.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">核心密码一：二进制完美对半砍 15 刀（32,768 ÷ 2¹⁵ = 1.000 Hz 整秒脉冲）</text>
+<line x1="96.0" y1="166.0" x2="686.0" y2="166.0" stroke="#cbd5e1" stroke-width="6"/>
+<line class="anim-div-pulse" x1="96" y1="166" x2="686" y2="166" stroke="#2563eb" stroke-width="3.6" marker-end="url(#arr-blue)"/>
+<rect x="40" y="122" width="112" height="88" rx="10" fill="#f0fdfa" stroke="#0f766e" stroke-width="1"/>
+<text x="96.0" y="144" font-size="10.6" fill="#0f766e" text-anchor="middle" font-weight="700">石英音叉输入</text>
+<text x="96.0" y="169" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="700">32,768 Hz</text>
+<text x="96.0" y="192" font-size="10" fill="#1e293b" text-anchor="middle">2¹⁵ 次/秒</text>
+<rect x="166" y="122" width="112" height="88" rx="10" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="222.0" y="144" font-size="10.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">第 1 级 ÷2</text>
+<text x="222.0" y="169" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="700">16,384 Hz</text>
+<text x="222.0" y="192" font-size="10" fill="#1e293b" text-anchor="middle">2¹⁴ 次/秒</text>
+<rect x="286" y="122" width="112" height="88" rx="10" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="342.0" y="144" font-size="10.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">第 2 级 ÷2</text>
+<text x="342.0" y="169" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="700">8,192 Hz</text>
+<text x="342.0" y="192" font-size="10" fill="#1e293b" text-anchor="middle">1969 首款石英表</text>
+<rect x="420" y="122" width="124" height="88" rx="10" fill="#f1f5f9" stroke="#475569" stroke-width="1"/>
+<text x="482.0" y="144" font-size="10.6" fill="#475569" text-anchor="middle" font-weight="700">… 第 3–14 级 …</text>
+<text x="482.0" y="169" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="700">一路 ÷2 递减</text>
+<text x="482.0" y="192" font-size="10" fill="#1e293b" text-anchor="middle">共串联 15 级触发器</text>
+<rect x="562" y="122" width="156" height="88" rx="10" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="640.0" y="144" font-size="10.6" fill="#18794e" text-anchor="middle" font-weight="700">第 15 级 ÷2</text>
+<text x="640.0" y="169" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="700">1.000 Hz</text>
+<text x="640.0" y="192" font-size="10" fill="#1e293b" text-anchor="middle">精准每秒 1 滴答！</text>
+<text x="380" y="238" font-size="10.8" fill="#1e293b" text-anchor="middle">• 数字电路里“除以 10”很麻烦，但 T 触发器“每来两个脉冲翻转一次（除以 2）”只需寥寥几颗晶体管！</text>
+<text x="380" y="258" font-size="10.8" fill="#0f172a" text-anchor="middle" font-weight="700">• 输出的 1 Hz 秒脉冲：在石英钟里驱动步进马达秒针跳一格；在电脑主板里让实时时钟（RTC）秒寄存器 +1。</text>
+<rect x="22" y="288" width="228" height="196" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32" y="298" width="208" height="32" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1"/>
+<text x="136" y="319" font-size="11.4" fill="#dc2626" text-anchor="middle" font-weight="700">为什么不选更低的 16,384 Hz？</text>
+<text x="38" y="352" font-size="10.4" fill="#1e293b" text-anchor="start">• 2¹⁴ = 16,384 Hz（及 1969 精工</text>
+<text x="38" y="373" font-size="10.4" fill="#1e293b" text-anchor="start">  初代 Astron 的 8,192 Hz）全都落</text>
+<text x="38" y="394" font-size="10.4" fill="#1e293b" text-anchor="start">  在人耳听觉上限（20,000 Hz）以内！</text>
+<text x="38" y="415" font-size="10.4" fill="#1e293b" text-anchor="start">• 夜深人静贴近耳朵会听到细微高频</text>
+<text x="38" y="436" font-size="10.4" fill="#1e293b" text-anchor="start">  蚊鸣声，且低频音叉体积更长更厚，</text>
+<text x="38" y="457" font-size="10.4" fill="#1e293b" text-anchor="start">  难塞进超薄女表与紧凑主板。</text>
+<rect x="266" y="288" width="228" height="196" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="276" y="298" width="208" height="32" rx="8" fill="#f0fdfa" stroke="#5eead4" stroke-width="1"/>
+<text x="380" y="319" font-size="11.4" fill="#0f766e" text-anchor="middle" font-weight="700">为什么 32,768 Hz 是“黄金甜点”？</text>
+<text x="282" y="352" font-size="10.4" fill="#1e293b" text-anchor="start">• 刚好跃过 20 kHz 人耳极限 → 绝对静音！</text>
+<text x="282" y="373" font-size="10.4" fill="#1e293b" text-anchor="start">• CMOS 电路动态功耗 P ∝ C·V²·f：</text>
+<text x="282" y="394" font-size="10.4" fill="#1e293b" text-anchor="start">  频率越低越省电！在 32.768 kHz 下</text>
+<text x="282" y="415" font-size="10.4" fill="#1e293b" text-anchor="start">  整颗 RTC 耗电不足 1 微安（&lt;1 μA），</text>
+<text x="282" y="436" font-size="10.4" fill="#1e293b" text-anchor="start">• 一颗 2 元钱的 CR2032 纽扣电池能</text>
+<text x="282" y="457" font-size="10.4" fill="#1e293b" text-anchor="start" font-weight="700">  在电脑彻底拔插头后苦撑 5–10 年！</text>
+<rect x="510" y="288" width="228" height="196" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="520" y="298" width="208" height="32" rx="8" fill="#f3e8ff" stroke="#d8b4fe" stroke-width="1"/>
+<text x="624" y="319" font-size="11.4" fill="#6d28d9" text-anchor="middle" font-weight="700">NIST 算账：高频分频有多抗误差？</text>
+<text x="526" y="352" font-size="10.4" fill="#1e293b" text-anchor="start">• 假定计时摆受干扰偏了 0.1 Hz：</text>
+<text x="526" y="373" font-size="10.4" fill="#1e293b" text-anchor="start">• 老式 1 Hz 大摆钟偏 0.1 Hz → 走</text>
+<text x="526" y="394" font-size="10.4" fill="#1e293b" text-anchor="start">  10 秒钟就错出整整 1 秒！</text>
+<text x="526" y="415" font-size="10.4" fill="#1e293b" text-anchor="start">• 32,768 Hz 石英晶振偏 0.1 Hz →</text>
+<text x="526" y="436" font-size="10.4" fill="#1e293b" text-anchor="start">  相对误差仅百万分之三，要走完</text>
+<text x="526" y="457" font-size="10.4" fill="#1e293b" text-anchor="start" font-weight="700">  327,680 秒才差 1 秒（每天 0.26 秒）！</text>
+</svg>

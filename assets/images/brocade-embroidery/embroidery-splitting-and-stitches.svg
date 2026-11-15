@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="518" viewBox="0 0 760 518" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">苏绣1/128劈丝尺度对比与齐针、散套针、乱针绣光学混色原理图</title>
+<desc id="desc">左图对比1股花线(200微米)、人发(70微米)、1/16丝与1/128极细丝(2-4微米)及人眼90微米分辨极限混色原理；右图对比齐针断层、散套针犬牙嵌合晕染与乱针绣多层斜叉叠光。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="517" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">从“织”跨入“绣”：挣脱 90° 经纬网格，1/128 劈丝与“以针代笔”光学混色</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">染好的丝线不能像油彩一样调和，绣娘靠“微米劈丝 + 犬牙套针/斜叉乱针”骗过人眼分辨率！</text>
+<rect x="22" y="68" width="356" height="384" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="90" r="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="42" y="94" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">1</text>
+<text x="60" y="95" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700">指尖微米手术：一根绣花线劈成 128 丝有多细？</text>
+<rect x="36" y="112" width="328" height="198" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="68" cy="142" r="16.0" fill="#6d28d9"/>
+<text x="96" y="140" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">1 根原装花线（1 股）</text>
+<text x="96" y="156" font-size="10.5" fill="#64748b" text-anchor="start" font-weight="400">直径约 200 μm｜粗犷打底</text>
+<circle cx="68" cy="186" r="7.0" fill="#475569"/>
+<text x="96" y="184" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">成人头发丝（参照标尺）</text>
+<text x="96" y="200" font-size="10.5" fill="#64748b" text-anchor="start" font-weight="400">直径约 70 μm</text>
+<circle cx="68" cy="230" r="3.2" fill="#1d6fa5"/>
+<text x="96" y="228" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">劈成 1/16 丝（精细平绣）</text>
+<text x="96" y="244" font-size="10.5" fill="#64748b" text-anchor="start" font-weight="400">约 1～2 根单蚕丝（~12 μm）</text>
+<circle cx="68" cy="274" r="1.1" fill="#b91c1c"/>
+<text x="96" y="272" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">劈成 1/64～1/128 丝！</text>
+<text x="96" y="288" font-size="10.5" fill="#b91c1c" text-anchor="start" font-weight="600">仅约 2～4 μm（发丝的 1/20！）</text>
+<rect x="36" y="322" width="328" height="116" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="48" y="344" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">为什么非要劈到肉眼几乎看不见？</text>
+<text x="48" y="367" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">• 人眼在 30 cm 正常观赏距离的分辨极限约 90 μm！</text>
+<text x="48" y="388" font-size="10.5" fill="#1e293b" text-anchor="start">• 当丝线细至几微米（远小于 90 μm），深红、绯红、粉白</text>
+<text x="48" y="407" font-size="10.5" fill="#1e293b" text-anchor="start">  几十种色丝并排穿插，视网膜会自动融合成无缝柔光渐变，</text>
+<text x="48" y="426" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="700">  彻底消灭笔刷痕迹！（原理同手机视网膜屏亚像素混色）</text>
+<rect x="392" y="68" width="346" height="384" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="412" cy="90" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="412" y="94" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="430" y="95" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700">三大里程碑针法：如何消除色块硬边与制造景深？</text>
+<rect x="406" y="112" width="318" height="94" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="418" y="132" font-size="10.5" fill="#475569" text-anchor="start" font-weight="700">① 齐针并排（反例）：同长齐头换色 → 必留“生硬刀切缝”</text>
+<line x1="426.0" y1="146.0" x2="536.0" y2="146.0" stroke="#dc2626" stroke-width="2.6"/>
+<line x1="540.0" y1="146.0" x2="650.0" y2="146.0" stroke="#fca5a5" stroke-width="2.6"/>
+<line x1="426.0" y1="154.0" x2="536.0" y2="154.0" stroke="#dc2626" stroke-width="2.6"/>
+<line x1="540.0" y1="154.0" x2="650.0" y2="154.0" stroke="#fca5a5" stroke-width="2.6"/>
+<line x1="426.0" y1="162.0" x2="536.0" y2="162.0" stroke="#dc2626" stroke-width="2.6"/>
+<line x1="540.0" y1="162.0" x2="650.0" y2="162.0" stroke="#fca5a5" stroke-width="2.6"/>
+<line x1="426.0" y1="170.0" x2="536.0" y2="170.0" stroke="#dc2626" stroke-width="2.6"/>
+<line x1="540.0" y1="170.0" x2="650.0" y2="170.0" stroke="#fca5a5" stroke-width="2.6"/>
+<line x1="426.0" y1="178.0" x2="536.0" y2="178.0" stroke="#dc2626" stroke-width="2.6"/>
+<line x1="540.0" y1="178.0" x2="650.0" y2="178.0" stroke="#fca5a5" stroke-width="2.6"/>
+<line x1="426.0" y1="186.0" x2="536.0" y2="186.0" stroke="#dc2626" stroke-width="2.6"/>
+<line x1="540.0" y1="186.0" x2="650.0" y2="186.0" stroke="#fca5a5" stroke-width="2.6"/>
+<line x1="538.0" y1="140.0" x2="538.0" y2="194.0" stroke="#0f172a" stroke-width="1.4" stroke-dasharray="2,2"/>
+<text x="684" y="172" font-size="10.5" fill="#b91c1c" text-anchor="middle" font-weight="700">断层刺眼!</text>
+<rect x="406" y="216" width="318" height="104" rx="8" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<text x="418" y="236" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="700">② 苏绣“散套针”：长短犬牙嵌合 → 如水彩晕染无痕过渡！</text>
+<line x1="426.0" y1="250.0" x2="534.0" y2="250.0" stroke="#b91c1c" stroke-width="2.3"/>
+<line x1="510.0" y1="247.0" x2="608.0" y2="247.0" stroke="#ef4444" stroke-width="2.3"/>
+<line x1="582.0" y1="250.0" x2="694.0" y2="250.0" stroke="#fca5a5" stroke-width="2.3"/>
+<line x1="426.0" y1="259.0" x2="506.0" y2="259.0" stroke="#b91c1c" stroke-width="2.3"/>
+<line x1="486.0" y1="256.0" x2="586.0" y2="256.0" stroke="#ef4444" stroke-width="2.3"/>
+<line x1="560.0" y1="259.0" x2="694.0" y2="259.0" stroke="#fca5a5" stroke-width="2.3"/>
+<line x1="426.0" y1="268.0" x2="548.0" y2="268.0" stroke="#b91c1c" stroke-width="2.3"/>
+<line x1="520.0" y1="265.0" x2="622.0" y2="265.0" stroke="#ef4444" stroke-width="2.3"/>
+<line x1="598.0" y1="268.0" x2="694.0" y2="268.0" stroke="#fca5a5" stroke-width="2.3"/>
+<line x1="426.0" y1="277.0" x2="518.0" y2="277.0" stroke="#b91c1c" stroke-width="2.3"/>
+<line x1="494.0" y1="274.0" x2="596.0" y2="274.0" stroke="#ef4444" stroke-width="2.3"/>
+<line x1="570.0" y1="277.0" x2="694.0" y2="277.0" stroke="#fca5a5" stroke-width="2.3"/>
+<line x1="426.0" y1="286.0" x2="540.0" y2="286.0" stroke="#b91c1c" stroke-width="2.3"/>
+<line x1="514.0" y1="283.0" x2="614.0" y2="283.0" stroke="#ef4444" stroke-width="2.3"/>
+<line x1="588.0" y1="286.0" x2="694.0" y2="286.0" stroke="#fca5a5" stroke-width="2.3"/>
+<line x1="426.0" y1="295.0" x2="512.0" y2="295.0" stroke="#b91c1c" stroke-width="2.3"/>
+<line x1="490.0" y1="292.0" x2="590.0" y2="292.0" stroke="#ef4444" stroke-width="2.3"/>
+<line x1="566.0" y1="295.0" x2="694.0" y2="295.0" stroke="#fca5a5" stroke-width="2.3"/>
+<text x="565" y="311" font-size="10" fill="#0f172a" text-anchor="middle" font-weight="600">后一批色丝深插进前一批缝隙，丝光顺畅接力！</text>
+<rect x="406" y="330" width="318" height="110" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="418" y="350" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="700">③ 现代突破“乱针绣”（杨守玉创立）：斜叉叠压出油画景深！</text>
+<line x1="426.0" y1="418.0" x2="488.0" y2="364.0" stroke="#6d28d9" stroke-width="2.2"/>
+<line x1="452.0" y1="422.0" x2="520.0" y2="364.0" stroke="#1d6fa5" stroke-width="2.2"/>
+<line x1="492.0" y1="420.0" x2="558.0" y2="366.0" stroke="#6d28d9" stroke-width="2.2"/>
+<line x1="434.0" y1="368.0" x2="506.0" y2="418.0" stroke="#c25014" stroke-width="2.2"/>
+<line x1="470.0" y1="366.0" x2="542.0" y2="420.0" stroke="#b91c1c" stroke-width="2.2"/>
+<line x1="512.0" y1="368.0" x2="576.0" y2="418.0" stroke="#b45309" stroke-width="2.2"/>
+<line x1="444.0" y1="404.0" x2="534.0" y2="378.0" stroke="#f59e0b" stroke-width="2.2"/>
+<line x1="480.0" y1="412.0" x2="566.0" y2="380.0" stroke="#ef4444" stroke-width="2.2"/>
+<text x="590" y="376" font-size="10" fill="#1e293b" text-anchor="start">• 底层粗丝铺大色块</text>
+<text x="590" y="395" font-size="10" fill="#1e293b" text-anchor="start">• 面层细丝多角度斜叉</text>
+<text x="590" y="414" font-size="10.5" fill="#b91c1c" text-anchor="start" font-weight="700">• 三维立体散射混色！</text>
+<rect x="22" y="464" width="716" height="40" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="380" y="489" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">苏绣八字真言“平、齐、细、密、和、顺、光、匀”——每一字背后都是纤维张力控制与微米级光学排列！</text>
+</svg>

@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="505" viewBox="0 0 760 505" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">牛顿遭遇的 GM 乘积死锁与引力常数 G 精度瓶颈图</title>
+<desc id="desc">展示自由落体与天体轨道只能测准地心引力常数 G·M⊕，假想轻球与重球可产生相同地面重力 g，以及 CODATA 2022 中 G·M⊕ 与 G 相差一万倍的不确定度鸿沟。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arr-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#6d28d9"/>
+    </marker>
+    <marker id="arr-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#0f766e"/>
+    </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="504" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">为什么苹果落地和月亮绕地测不出地球质量？牛顿遭遇的 GM“乘积死锁”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">自由落体与卫星轨道只能测准乘积 G·M⊕；想拆开这把锁，必须搬来一块“已知质量的地面砝码”单测 G</text>
+<rect x="22" y="76" width="716" height="134" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="96" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="42" y="100" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="64" y="101" font-size="13.5" fill="#1d6fa5" text-anchor="start" font-weight="700">看落体与轨道：无论掉苹果还是发卫星，G 与地球质量 M⊕ 永远黏在一起</text>
+<rect x="40" y="114" width="214" height="82" rx="10" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<text x="147" y="136" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="700">地面掉苹果：g = G·M⊕ / R⊕²</text>
+<text x="147" y="158" font-size="11" fill="#0f172a" text-anchor="middle">已知 g ≈ 9.81 m/s²，R⊕ ≈ 6371 km</text>
+<text x="147" y="178" font-size="11" fill="#dc2626" text-anchor="middle" font-weight="700">只能算出 G·M⊕，拆不出 M⊕！</text>
+<rect x="272" y="114" width="216" height="82" rx="10" fill="#fffbeb" stroke="#fcd34d" stroke-width="1"/>
+<text x="380" y="136" font-size="12" fill="#d97706" text-anchor="middle" font-weight="700">地心引力常数（乘积死锁）</text>
+<text x="380" y="158" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">μ⊕ = G·M⊕ = 3.986004418×10¹⁴</text>
+<text x="380" y="178" font-size="10.8" fill="#64748b" text-anchor="middle">单位 m³/s²（有效数字高达 10 位！）</text>
+<rect x="506" y="114" width="214" height="82" rx="10" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<text x="613" y="136" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="700">月球与卫星：4π²a³ / T² = G·M⊕</text>
+<text x="613" y="158" font-size="11" fill="#0f172a" text-anchor="middle">被吸引物质量 m 在等式两边约掉了</text>
+<text x="613" y="178" font-size="11" fill="#dc2626" text-anchor="middle" font-weight="700">同样只能锁死乘积 G·M⊕！</text>
+<rect x="22" y="222" width="716" height="136" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="242" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="42" y="246" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="64" y="247" font-size="13.2" fill="#c25014" text-anchor="start" font-weight="700">思想实验：如果不测 G，下面两颗假地球在地面产生的重力 g = 9.81 m/s² 一模一样！</text>
+<rect x="40" y="260" width="216" height="84" rx="10" fill="#fff7ed" stroke="#fdba74" stroke-width="1"/>
+<circle cx="76" cy="302" r="24" fill="#fef3c7" stroke="#d97706" stroke-width="2" stroke-dasharray="4 3"/>
+<text x="76" y="306" font-size="9.5" fill="#d97706" text-anchor="middle" font-weight="700">空心轻球</text>
+<text x="180" y="283" font-size="11.8" fill="#c25014" text-anchor="middle" font-weight="700">假想 A：棉花糖轻地球</text>
+<text x="180" y="304" font-size="11" fill="#0f172a" text-anchor="middle">M⊕ 极小 × 引力常数 G 极大</text>
+<text x="180" y="324" font-size="10.5" fill="#64748b" text-anchor="middle">乘积不变 ⇒ 苹果照样 9.81 落地</text>
+<rect x="272" y="260" width="216" height="84" rx="10" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+<circle cx="308" cy="302" r="24" fill="#334155" stroke="#0f172a" stroke-width="2"/>
+<text x="308" y="306" font-size="9.5" fill="#ffffff" text-anchor="middle" font-weight="700">超重铅球</text>
+<text x="412" y="283" font-size="11.8" fill="#0f172a" text-anchor="middle" font-weight="700">假想 B：纯锇重金属地球</text>
+<text x="412" y="304" font-size="11" fill="#0f172a" text-anchor="middle">M⊕ 极大 × 引力常数 G 极小</text>
+<text x="412" y="324" font-size="10.5" fill="#64748b" text-anchor="middle">乘积不变 ⇒ 月亮轨道分毫不差</text>
+<rect x="504" y="260" width="216" height="84" rx="10" fill="#e7f6ee" stroke="#86efac" stroke-width="1"/>
+<text x="612" y="282" font-size="11.8" fill="#18794e" text-anchor="middle" font-weight="700">破局唯一钥匙：地面已知质量 m₀</text>
+<text x="612" y="303" font-size="10.8" fill="#0f172a" text-anchor="middle">拿一座山或两颗铅球测出微弱引力</text>
+<text x="612" y="323" font-size="11" fill="#18794e" text-anchor="middle" font-weight="700">先定 G ⇒ M⊕ = (G·M⊕) / G 解锁！</text>
+<rect x="22" y="370" width="716" height="118" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="390" r="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="42" y="394" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">3</text>
+<text x="64" y="395" font-size="13" fill="#6d28d9" text-anchor="start" font-weight="700">直到今天：G 仍是物理学最难测准的基本常数，拖累地球质量止步于 5 位有效数字</text>
+<text x="42" y="427" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">乘积 μ⊕ = G·M⊕（激光卫星）</text>
+<rect x="232.0" y="414" width="243.6" height="18" rx="5" fill="#0f766e"/>
+<text x="483.6" y="428" font-size="11" fill="#0f766e" text-anchor="start" font-weight="700">相对误差 2×10⁻⁹（准到近 9 位数字！）</text>
+<text x="42" y="456" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">引力常数 G（CODATA 2022）</text>
+<rect x="232.0" y="443" width="130.4" height="18" rx="5" fill="#dc2626"/>
+<text x="370.4" y="457" font-size="11" fill="#dc2626" text-anchor="start" font-weight="700">相对误差 2.2×10⁻⁵（差 1 万倍 ⇒ M⊕ ≈ 5.9722×10²⁴ kg）</text>
+<text x="380" y="479" font-size="10.8" fill="#64748b" text-anchor="middle">注：牛顿 1687 年在《原理》中盲猜地球平均密度是水的 5～6 倍，现代实测为 5.514 g/cm³，神级直觉！</text>
+</svg>

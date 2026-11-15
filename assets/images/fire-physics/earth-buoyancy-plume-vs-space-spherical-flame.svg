@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="505" viewBox="0 0 760 505" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">地球重力对流泪滴火焰与太空微重力球形蓝色火焰对比图</title>
+<desc id="desc">左图展示地球1g重力下密度降低5倍的高温燃气产生约4.1g浮力加速度，拉出向上泪滴形黄火；右图展示太空微重力下浮力消失，仅靠360度各向同性分子扩散形成1.5厘米无碳烟淡蓝色球形火焰。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-ink" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#0f172a"/>
+  </marker>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-red" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#dc2626"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#6d28d9"/>
+  </marker>
+  <radialGradient id="grad-space-blue" cx="50%" cy="55%" r="50%">
+    <stop offset="0%" stop-color="#e0f2fe" stop-opacity="0.95"/>
+    <stop offset="55%" stop-color="#38bdf8" stop-opacity="0.78"/>
+    <stop offset="88%" stop-color="#2563eb" stop-opacity="0.65"/>
+    <stop offset="100%" stop-color="#1d4ed8" stop-opacity="0.0"/>
+  </radialGradient>
+  <linearGradient id="grad-earth-tear" x1="0%" y1="100%" x2="0%" y2="0%">
+    <stop offset="0%" stop-color="#2563eb"/>
+    <stop offset="22%" stop-color="#f97316"/>
+    <stop offset="68%" stop-color="#fde047"/>
+    <stop offset="100%" stop-color="#fef9c3"/>
+  </linearGradient>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes risePlume {
+    0%   { stroke-dashoffset: 220; opacity: 0.25; }
+    20%  { opacity: 0.95; }
+    100% { stroke-dashoffset: 0; opacity: 0.95; }
+  }
+  @keyframes diffuseSphere {
+    0%   { stroke-dashoffset: 90; opacity: 0.25; }
+    25%  { opacity: 0.95; }
+    100% { stroke-dashoffset: 0; opacity: 0.95; }
+  }
+  .anim-plume {
+    stroke-dasharray: 8 10;
+    stroke-dashoffset: 220;
+    animation: risePlume 2.8s cubic-bezier(0.22, 0.61, 0.36, 1) 1 forwards;
+  }
+  .anim-diff {
+    stroke-dasharray: 6 8;
+    stroke-dashoffset: 90;
+    animation: diffuseSphere 2.8s ease-out 1 forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .anim-plume, .anim-diff {
+      animation: none !important;
+      stroke-dashoffset: 0 !important;
+      opacity: 0.95 !important;
+    }
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="504" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">火为什么偏偏向上烧？地球 1g“浮力烟囱” vs 太空 0g“蓝色圆球”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">火本身没有方向！是重力让沉重冷空气下沉挤压、把轻了 5 倍的热燃气向上拔成了尖尖的泪滴</text>
+<rect x="20" y="62" width="352" height="424" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="84" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="38" y="88" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="88" font-size="12.8" fill="#0f172a" text-anchor="start" font-weight="700">地球表面（1g 重力场）：自然对流拔尖拉长</text>
+<path d="M 132.0 310 Q 156.0 240 160.0 118 L 212.0 118 Q 216.0 240 240.0 310 Z" fill="#fff7ed" stroke="#fed7aa" stroke-width="1.2" stroke-dasharray="4 3"/>
+<path d="M 122.0 312 Q 156.0 296 166.0 224 L 170.0 112" fill="none" stroke="#c25014" stroke-width="2.2" class="anim-plume" marker-end="url(#arr-orange)"/>
+<path d="M 250.0 312 Q 216.0 296 206.0 224 L 202.0 112" fill="none" stroke="#c25014" stroke-width="2.2" class="anim-plume" marker-end="url(#arr-orange)"/>
+<line x1="186.0" y1="160.0" x2="186.0" y2="108.0" stroke="#dc2626" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arr-red)"/>
+<path d="M 186.0 168 C 154.0 222, 156.0 280, 186.0 304 C 216.0 280, 218.0 222, 186.0 168 Z" fill="url(#grad-earth-tear)" stroke="#ea580c" stroke-width="1.2"/>
+<rect x="162.0" y="316" width="48" height="46" rx="4" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+<line x1="186.0" y1="316.0" x2="186.0" y2="294.0" stroke="#334155" stroke-width="3.0" stroke-linecap="round"/>
+<line x1="54.0" y1="292.0" x2="128.0" y2="292.0" stroke="#1d6fa5" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<line x1="318.0" y1="292.0" x2="244.0" y2="292.0" stroke="#1d6fa5" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<text x="42" y="278" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="700">重冷空气下沉补氧</text>
+<text x="42" y="310" font-size="10.2" fill="#64748b" text-anchor="start" class="mono">ρ₀ ≈ 1.20 kg/m³</text>
+<text x="244" y="278" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="700">横向夹带收拢底座</text>
+<text x="216.0" y="134" font-size="10.8" fill="#dc2626" text-anchor="start" font-weight="700">热羽流飙至 ~0.8 m/s</text>
+<text x="216.0" y="151" font-size="10.0" fill="#1e293b" text-anchor="start" class="mono">高温燃气 ρ_f ≈ 0.24 kg/m³</text>
+<text x="152.0" y="198" font-size="10.3" fill="#c25014" text-anchor="end" font-weight="600">碳烟被热流</text>
+<text x="152.0" y="213" font-size="10.3" fill="#c25014" text-anchor="end" font-weight="600">裹挟向上烧亮</text>
+<rect x="34" y="372" width="324" height="100" rx="8" fill="#fef1e8" stroke="#fdba74" stroke-width="1.0"/>
+<text x="46" y="392" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">阿基米德浮力账本（温度暴涨 5 倍 → 密度剩 1/5）：</text>
+<text x="46" y="411" font-size="10.4" fill="#1e293b" text-anchor="start">• 向上净浮力加速度 a = g(T_f/T₀ − 1) ≈ 4.1g（约 40 m/s²）</text>
+<text x="46" y="429" font-size="10.4" fill="#1e293b" text-anchor="start">• 底部源源不断卷入氧气，燃烧猛烈、碳烟多、火焰呈亮黄色；</text>
+<text x="46" y="447" font-size="10.4" fill="#1e293b" text-anchor="start">• 上升气流收束火苗腰身，在顶端交汇削出尖锐“泪滴锥形”。</text>
+<text x="46" y="464" font-size="10.4" fill="#c25014" text-anchor="start" font-weight="700">• 地面同款蜡烛寿命：约 10 分钟迅速烧完。</text>
+<rect x="388" y="62" width="352" height="424" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+<circle cx="406" cy="84" r="10.5" fill="#1e293b" stroke="#38bdf8" stroke-width="1.2"/>
+<text x="406" y="88" font-size="11.5" fill="#38bdf8" text-anchor="middle" font-weight="700">2</text>
+<text x="424" y="88" font-size="12.8" fill="#f8fafc" text-anchor="start" font-weight="700">太空微重力（0g 空间站）：静谧的淡蓝圆球</text>
+<circle cx="564.0" cy="238.0" r="54" fill="url(#grad-space-blue)"/>
+<circle cx="564.0" cy="238.0" r="42" fill="none" stroke="#7dd3fc" stroke-width="1.8" stroke-dasharray="4 3"/>
+<circle cx="564.0" cy="238.0" r="16" fill="#0f172a" fill-opacity="0.72"/>
+<rect x="542.0" y="286" width="44" height="68" rx="4" fill="#cbd5e1" stroke="#64748b" stroke-width="1.4"/>
+<line x1="564.0" y1="286.0" x2="564.0" y2="244.0" stroke="#475569" stroke-width="3.2" stroke-linecap="round"/>
+<line x1="636.1" y1="187.5" x2="605.0" y2="209.3" stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round" class="anim-diff" marker-end="url(#arr-blue)"/>
+<line x1="564.0" y1="150.0" x2="564.0" y2="188.0" stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round" class="anim-diff" marker-end="url(#arr-blue)"/>
+<line x1="491.9" y1="187.5" x2="523.0" y2="209.3" stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round" class="anim-diff" marker-end="url(#arr-blue)"/>
+<line x1="484.2" y1="275.2" x2="518.7" y2="259.1" stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round" class="anim-diff" marker-end="url(#arr-blue)"/>
+<line x1="643.8" y1="275.2" x2="609.3" y2="259.1" stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round" class="anim-diff" marker-end="url(#arr-blue)"/>
+<text x="564.0" y="132" font-size="10.8" fill="#7dd3fc" text-anchor="middle" font-weight="700">360° 各向同性分子慢扩散供氧（O₂）</text>
+<text x="620.0" y="236" font-size="10.8" fill="#bae6fd" text-anchor="start" font-weight="700">直径 ≈ 1.5 cm</text>
+<text x="620.0" y="253" font-size="10.3" fill="#94a3b8" text-anchor="start">无碳烟 · 纯蓝色</text>
+<rect x="402" y="372" width="324" height="100" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.0"/>
+<text x="414" y="392" font-size="10.8" fill="#38bdf8" text-anchor="start" font-weight="700">NASA 和平号与国际空间站实测（Dietrich 等，2001/2012）：</text>
+<text x="414" y="411" font-size="10.3" fill="#e2e8f0" text-anchor="start">• g = 0 时热空气不再上升！冷热气体不分轻重，浮力对流彻底归零；</text>
+<text x="414" y="429" font-size="10.3" fill="#e2e8f0" text-anchor="start">• 氧气仅靠菲克分子扩散均匀渗入，火焰完美呈球冠／球形且不闪烁；</text>
+<text x="414" y="447" font-size="10.3" fill="#e2e8f0" text-anchor="start">• 慢速充分氧化不生碳烟，黄光消失只剩自由基蓝光，最长慢烧 45 分钟；</text>
+<text x="414" y="464" font-size="10.3" fill="#fde047" text-anchor="start" font-weight="600">• 液滴熄灭后甚至能转为 600–800 K 肉眼看不见的“隐形冷焰”！</text>
+</svg>

@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="536" viewBox="0 0 760 536" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">火箭起飞滚转程序方位对齐与零攻角重力转弯飞行时序图</title>
+<desc id="desc">左栏图解土星五号从90度东向固定发射台滚转49.1度对准目标轨道方位角的原理，右栏展示越塔滚转、程序俯仰、最大动压零攻角穿越至7.8公里每秒水平入轨的重力转弯全过程。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-b" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#1d6fa5"/>
+    </marker>
+    <marker id="arr-o" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#c25014"/>
+    </marker>
+    <marker id="arr-g" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#18794e"/>
+    </marker>
+    <marker id="arr-p" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#6d28d9"/>
+    </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes trajectoryDraw {
+      0% { stroke-dashoffset: 460; }
+      100% { stroke-dashoffset: 0; }
+    }
+    .anim-traj {
+      stroke-dasharray: 460;
+      stroke-dashoffset: 0;
+      animation: trajectoryDraw 3.2s ease-out 1 both;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .anim-traj {
+        animation: none !important;
+        stroke-dashoffset: 0 !important;
+      }
+    }
+</style>
+<rect x="0.5" y="0.5" width="759" height="535" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">第二重旋转：火箭刚离塔架几秒钟，为什么突然在半空“自己拧一下腰”？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">先看左栏滚转程序（Roll Program）如何对齐水泥发射台与目标轨道面 → 再看右栏零攻角重力转弯（含单次轨迹动画）</text>
+<rect x="22" y="68" width="336" height="450" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="92" r="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="42" y="96" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">1</text>
+<text x="62" y="97" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">滚转程序：不动水泥塔架，半空拧身瞄准！</text>
+<text x="42" y="117" font-size="10.5" fill="#64748b" text-anchor="start">绕纵轴（Roll Axis）自转特定角度，对准目标方位角 β</text>
+<circle cx="190" cy="214" r="66" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1.5"/>
+<line x1="190" y1="142" x2="190" y2="286" stroke="#cbd5e1" stroke-width="1"/>
+<line x1="118" y1="214" x2="262" y2="214" stroke="#cbd5e1" stroke-width="1"/>
+<text x="190" y="138" font-size="10.5" fill="#64748b" text-anchor="middle">北 0°</text>
+<text x="270" y="218" font-size="10.5" fill="#64748b" text-anchor="start">东 90°</text>
+<line x1="190" y1="214" x2="246" y2="214" stroke="#475569" stroke-width="2.6" stroke-dasharray="5,3"/>
+<line x1="190" y1="214" x2="228" y2="170" stroke="#6d28d9" stroke-width="3" marker-end="url(#arr-p)"/>
+<path d="M 228,214 A 38,38 0 0,0 215,185" fill="none" stroke="#c25014" stroke-width="2.2" marker-end="url(#arr-o)"/>
+<text x="236" y="198" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="700" class="halo">拧转 49.1°</text>
+<text x="190" y="302" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700">真实案例：土星五号 SA-513（天空实验室1号，NASA 1973）</text>
+<text x="190" y="320" font-size="10.5" fill="#64748b" text-anchor="middle">塔架固定朝正东 90°，离塔后滚转 49.12° 对准 40.88° 航向！</text>
+<rect x="38" y="336" width="304" height="166" rx="8" fill="#f3e8ff" stroke="#d8b4fe" stroke-width="1"/>
+<text x="52" y="358" font-size="10.6" fill="#6d28d9" text-anchor="start" font-weight="700">为什么不在地上就把火箭转好再摆上去？三大工程原因：</text>
+<text x="52" y="380" font-size="10.5" fill="#0f172a" text-anchor="start">① 脐带塔、导流槽与加注摆臂是万吨钢筋水泥浇死的，</text>
+<text x="64" y="399" font-size="10.5" fill="#1e293b" text-anchor="start">而每次任务的倾角甚至发射窗口每分钟方位角都在变；</text>
+<text x="52" y="421" font-size="10.5" fill="#0f172a" text-anchor="start">② 先对准俯仰平面，随后只需单轴低头（Pitch）就能入轨；</text>
+<text x="52" y="443" font-size="10.5" fill="#0f172a" text-anchor="start">③ 航天飞机等有翼/载人器滚转成“头朝下倒飞”，既减轻机翼</text>
+<text x="64" y="462" font-size="10.5" fill="#1e293b" text-anchor="start">气动载荷，又让机腹天线无遮挡对准地面测控站，还能看清地平线！</text>
+<rect x="372" y="68" width="366" height="450" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="392" cy="92" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="392" y="96" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">2</text>
+<text x="412" y="97" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">拧完腰立刻“低头弯腰”：零攻角重力转弯</text>
+<text x="392" y="117" font-size="10.5" fill="#64748b" text-anchor="start">入轨 80% 以上能量花在“水平加速到 7.8 km/s”，而非单纯爬高！</text>
+<line x1="412.0" y1="378.0" x2="718" y2="378.0" stroke="#475569" stroke-width="2"/>
+<text x="570" y="396.0" font-size="10.5" fill="#64748b" text-anchor="middle">水平下航程距离（数百至上千公里）→</text>
+<rect x="424.0" y="286.0" width="290" height="92" fill="#e0f2fe" opacity="0.55"/>
+<text x="712" y="366.0" font-size="10.5" fill="#1d6fa5" text-anchor="end">稠密低层大气带</text>
+<path d="M 436,378 L 436,336 C 438,266 492,196 706,168" fill="none" stroke="#1d6fa5" stroke-width="3.4" class="anim-traj" marker-end="url(#arr-b)"/>
+<circle cx="436" cy="344" r="5" fill="#c25014" stroke="#ffffff" stroke-width="1.5"/>
+<text x="450" y="350" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="700" class="halo">① T+10s 越塔滚转程序</text>
+<circle cx="454" cy="292" r="5" fill="#6d28d9" stroke="#ffffff" stroke-width="1.5"/>
+<text x="470" y="298" font-size="10.5" fill="#6d28d9" text-anchor="start" font-weight="700" class="halo">② 程序俯仰（轻点低头 2°–3°）</text>
+<circle cx="498" cy="242" r="5" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.5"/>
+<text x="514" y="248" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="700" class="halo">③ Max-Q 最大动压（攻角 α≈0° 防折断！）</text>
+<circle cx="666" cy="171" r="5" fill="#18794e" stroke="#ffffff" stroke-width="1.5"/>
+<text x="532" y="156" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="700" class="halo">④ 近水平狂飙至 7.8 km/s 入轨</text>
+<rect x="390" y="408" width="330" height="94" rx="8" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<text x="555" y="430" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">为什么绝不能“竖直飞到 400 km 再直角拐弯”？</text>
+<text x="404" y="451" font-size="10.5" fill="#0f172a" text-anchor="start">● 竖直硬顶重力悬停最费油（重力损耗 g·t 最大）；</text>
+<text x="404" y="471" font-size="10.5" fill="#1e293b" text-anchor="start">● 薄壁箭体像易拉罐：竖着顶力极结实，但在超音速区若侧着</text>
+<text x="416" y="490" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="700">大角度硬掰（攻角 α 过大），狂暴侧风会瞬间把火箭拦腰折断！</text>
+</svg>

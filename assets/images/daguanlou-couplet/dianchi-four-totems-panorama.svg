@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="486" viewBox="0 0 760 486" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">大观楼俯瞰五百里滇池与东西南北四山图腾空间方位图</title>
+<desc id="desc">以滇池北端草海近华浦的大观楼为观察原点，按上联顺序标示①东骧神骏（金马山）、②西翥灵仪（碧鸡山/西山）、③北走蜿蜒（长虫山/蛇山）、④南翔缟素（晋宁白鹤山），中景标出蟹屿螺洲与蘋天苇地，底部归纳四围香稻、万顷晴沙、九夏芙蓉、三春杨柳四季盛景。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes beamSweep {
+    0%   { opacity: 0.18; }
+    25%  { opacity: 0.95; }
+    100% { opacity: 0.78; }
+  }
+  @keyframes cardPop {
+    0%   { opacity: 0.35; }
+    100% { opacity: 1; }
+  }
+  .gaze-1 { animation: beamSweep 1.6s ease-out 0.1s 1 both; }
+  .gaze-2 { animation: beamSweep 1.6s ease-out 1.0s 1 both; }
+  .gaze-3 { animation: beamSweep 1.6s ease-out 1.9s 1 both; }
+  .gaze-4 { animation: beamSweep 1.6s ease-out 2.8s 1 both; }
+  .totem-1 { animation: cardPop 0.9s ease-out 0.2s 1 both; }
+  .totem-2 { animation: cardPop 0.9s ease-out 1.1s 1 both; }
+  .totem-3 { animation: cardPop 0.9s ease-out 2.0s 1 both; }
+  .totem-4 { animation: cardPop 0.9s ease-out 2.9s 1 both; }
+  @media (prefers-reduced-motion: reduce) {
+    .gaze-1, .gaze-2, .gaze-3, .gaze-4,
+    .totem-1, .totem-2, .totem-3, .totem-4 {
+      animation: none !important;
+      opacity: 1 !important;
+    }
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="485" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">登大观楼看什么？五百里滇池与“东骧·西翥·北走·南翔”四方山势图</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">上北下南方位示意（非等比例测绘图）：立于草海北滨近华浦大观楼，四面山川与四季湖景尽收眼底。</text>
+<rect x="20" y="64" width="720" height="344" rx="12" fill="#f4f9fd" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="644" y="76" width="82" height="46" rx="7" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="685" y="94" font-size="11.2" fill="#0f172a" text-anchor="middle" font-weight="700">↑ 北 (N)</text>
+<text x="685" y="112" font-size="10.2" fill="#64748b" text-anchor="middle">方位示意</text>
+<path d="M278,158 C325,146 410,150 442,176 C474,202 486,252 470,308 C454,352 396,368 342,360 C294,352 268,312 262,262 C256,214 246,170 278,158 Z" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.6"/>
+<ellipse cx="352" cy="184" rx="64" ry="22" fill="#bae6fd" stroke="#38bdf8" stroke-width="1" stroke-dasharray="4 3"/>
+<ellipse cx="322" cy="216" rx="14" ry="6" fill="#bbf7d0" stroke="#16a34a" stroke-width="1"/>
+<ellipse cx="392" cy="228" rx="11" ry="5" fill="#bbf7d0" stroke="#16a34a" stroke-width="1"/>
+<text x="360" y="248" font-size="10.6" fill="#1d6fa5" text-anchor="middle" font-weight="600" class="halo">蟹屿螺洲 · 蘋天苇地</text>
+<text x="368" y="274" font-size="12.2" fill="#1e40af" text-anchor="middle" font-weight="700" class="halo">五百里滇池（外海）</text>
+<text x="368" y="293" font-size="10.3" fill="#475569" text-anchor="middle" class="halo">海拔约 1886m · 今面积约 309.5 km²</text>
+<g class="gaze-1"><line x1="384.0" y1="186.0" x2="534.0" y2="218.0" stroke="#b45309" stroke-width="2.1" stroke-dasharray="6 4" marker-end="url(#arr-orange)"/></g>
+<g class="gaze-2"><line x1="328.0" y1="186.0" x2="224.0" y2="224.0" stroke="#18794e" stroke-width="2.1" stroke-dasharray="6 4" marker-end="url(#arr-green)"/></g>
+<g class="gaze-3"><line x1="356.0" y1="156.0" x2="356.0" y2="128.0" stroke="#6d28d9" stroke-width="2.1" stroke-dasharray="6 4" marker-end="url(#arr-blue)"/></g>
+<g class="gaze-4"><line x1="360.0" y1="194.0" x2="366.0" y2="330.0" stroke="#1d6fa5" stroke-width="2.1" stroke-dasharray="6 4" marker-end="url(#arr-blue)"/></g>
+<rect x="294" y="157" width="124" height="34" rx="8" fill="#163a5f" stroke="#f59e0b" stroke-width="1.8"/>
+<text x="356" y="178" font-size="11.0" fill="#fde68a" text-anchor="middle" font-weight="700">★ 大观楼（近华浦）</text>
+<g class="totem-3">
+<rect x="236" y="74" width="244" height="52" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.3"/>
+<text x="248" y="94" font-size="11.4" fill="#6d28d9" text-anchor="start" font-weight="700">③ 北走蜿蜒 → 长虫山（蛇山）</text>
+<text x="248" y="113" font-size="10.3" fill="#1e293b" text-anchor="start">北郊山脉如长蛇蜿蜒南下，护卫昆明城垣</text>
+</g>
+<g class="totem-2">
+<rect x="34" y="194" width="188" height="92" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.4"/>
+<text x="46" y="215" font-size="11.8" fill="#18794e" text-anchor="start" font-weight="700">② 西翥灵仪</text>
+<text x="46" y="234" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">→ 碧鸡山（西山/太华山）</text>
+<text x="46" y="253" font-size="10.2" fill="#1e293b" text-anchor="start">隔草海正对大观楼，峰峦</text>
+<text x="46" y="270" font-size="10.2" fill="#1e293b" text-anchor="start">叠翠如凤凰展翅高飞</text>
+</g>
+<g class="totem-1">
+<rect x="538" y="194" width="188" height="92" rx="8" fill="#fef3c7" stroke="#b45309" stroke-width="1.4"/>
+<text x="550" y="215" font-size="11.8" fill="#b45309" text-anchor="start" font-weight="700">① 东骧神骏</text>
+<text x="550" y="234" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">→ 金马山（东郊丘陵）</text>
+<text x="550" y="253" font-size="10.2" fill="#1e293b" text-anchor="start">山势起伏奔腾，如神骏</text>
+<text x="550" y="270" font-size="10.2" fill="#1e293b" text-anchor="start">昂首腾骧；与碧鸡相望</text>
+</g>
+<g class="totem-4">
+<rect x="224" y="334" width="286" height="62" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.4"/>
+<text x="236" y="355" font-size="11.3" fill="#1d6fa5" text-anchor="start" font-weight="700">④ 南翔缟素 → 晋宁白鹤山（毗邻古滇国石寨山）</text>
+<text x="236" y="374" font-size="10.3" fill="#1e293b" text-anchor="start">“缟素”指洁白鹤羽；远眺南岸群峰如白鹤凌波翱翔</text>
+</g>
+<rect x="20" y="418" width="720" height="56" rx="9" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="34" y="440" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">收束近景 · 四季风物：</text>
+<rect x="172" y="425" width="132" height="42" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="1.0"/>
+<text x="238" y="443" font-size="10.8" fill="#b45309" text-anchor="middle" font-weight="700">秋 · 四围香稻</text>
+<text x="238" y="459" font-size="10.0" fill="#1e293b" text-anchor="middle">湖滨万亩稻浪</text>
+<rect x="312" y="425" width="132" height="42" rx="6" fill="#f1f5f9" stroke="#475569" stroke-width="1.0"/>
+<text x="378" y="443" font-size="10.8" fill="#475569" text-anchor="middle" font-weight="700">冬 · 万顷晴沙</text>
+<text x="378" y="459" font-size="10.0" fill="#1e293b" text-anchor="middle">水落晴沙浩渺</text>
+<rect x="452" y="425" width="132" height="42" rx="6" fill="#ffe4e6" stroke="#9f1239" stroke-width="1.0"/>
+<text x="518" y="443" font-size="10.8" fill="#9f1239" text-anchor="middle" font-weight="700">夏 · 九夏芙蓉</text>
+<text x="518" y="459" font-size="10.0" fill="#1e293b" text-anchor="middle">盛夏荷花映日</text>
+<rect x="592" y="425" width="132" height="42" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="1.0"/>
+<text x="658" y="443" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="700">春 · 三春杨柳</text>
+<text x="658" y="459" font-size="10.0" fill="#1e293b" text-anchor="middle">长堤烟柳拂波</text>
+</svg>

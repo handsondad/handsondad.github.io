@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">DNA复制三重纠错保真机制与人类父母年龄对新生儿新发突变数量影响实测图</title>
+<desc id="desc">左图展示DNA聚合酶碱基几何筛选、外切酶校对与错配修复将错误率从十万分之一压低至百亿分之一；右图按Kong等2012年Nature冰岛家系全基因组测序结果绘制母源恒定约15个与父源随年龄每年增加约2个新发突变的线性规律。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<defs><marker id="arr-ink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 Z" fill="#475569"/></marker></defs>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">第一幕：三道安检把错字率压到百亿分之一，为何每个新生儿仍自带 ~60 个新突变？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">DNA 聚合酶几何卡槽 × 外切酶“退格键” × 错配修复巡逻队，遇上 64 亿碱基与精原干细胞终身分裂！</text>
+<rect x="22" y="68" width="356" height="386" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="90" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="42" y="94" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="60" y="95" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">细胞分裂 S 期：DNA 复制的“三重纠错安检门”</text>
+<rect x="36" y="112" width="328" height="86" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="48" y="134" font-size="10.6" fill="#1d6fa5" text-anchor="start" font-weight="700">第 1 关：聚合酶活性口袋“几何卡槽筛选”</text>
+<text x="48" y="156" font-size="9.8" fill="#1e293b" text-anchor="start">正确 A-T / G-C 碱基对几何宽度严丝合缝才给成键</text>
+<text x="48" y="179" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">漏网错字率：~ 10⁻⁵（每抄 10 万字错 1 个）</text>
+<line x1="200.0" y1="200.0" x2="200.0" y2="212.0" stroke="#475569" stroke-width="1.8" marker-end="url(#arr-ink)"/>
+<rect x="36" y="214" width="328" height="86" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="48" y="236" font-size="10.6" fill="#6d28d9" text-anchor="start" font-weight="700">第 2 关：3&#x27;→5&#x27; 外切酶即时“退格键校对”</text>
+<text x="48" y="258" font-size="9.8" fill="#1e293b" text-anchor="start">刚装歪瞬间聚合酶卡壳倒车，一刀切掉错碱基重填</text>
+<text x="48" y="281" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">再压低 100 倍 → 错字率降至 ~ 10⁻⁷（千万分之一）</text>
+<line x1="200.0" y1="302.0" x2="200.0" y2="314.0" stroke="#475569" stroke-width="1.8" marker-end="url(#arr-ink)"/>
+<rect x="36" y="316" width="328" height="86" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="48" y="338" font-size="10.6" fill="#18794e" text-anchor="start" font-weight="700">第 3 关：复制后错配修复巡逻队（MMR）</text>
+<text x="48" y="360" font-size="9.8" fill="#1e293b" text-anchor="start">MutS/MutL 沿新链扫描凸起鼓包，剪除错段补齐</text>
+<text x="48" y="383" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">再压低 100～1000 倍 → 终极错字率 ~ 10⁻¹⁰！</text>
+<rect x="36" y="416" width="328" height="28" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="200" y="434" font-size="9.8" fill="#c25014" text-anchor="middle" font-weight="700">比喻：相当于连抄 1000 部《红楼梦》只许打错 1 个标点！</text>
+<rect x="394" y="68" width="344" height="386" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="414" cy="90" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="414" y="94" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="432" y="95" font-size="11.3" fill="#0f172a" text-anchor="start" font-weight="700">百亿分之一 × 几十轮分裂 = 新生儿 ~60 个突变</text>
+<line x1="446.0" y1="274.0" x2="714.0" y2="274.0" stroke="#475569" stroke-width="1.4"/>
+<text x="440.0" y="278.0" font-size="9.4" fill="#64748b" text-anchor="end">0</text>
+<line x1="446.0" y1="243.3" x2="714.0" y2="243.3" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="440.0" y="247.3" font-size="9.4" fill="#64748b" text-anchor="end">20</text>
+<line x1="446.0" y1="212.5" x2="714.0" y2="212.5" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="440.0" y="216.5" font-size="9.4" fill="#64748b" text-anchor="end">40</text>
+<line x1="446.0" y1="181.8" x2="714.0" y2="181.8" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="440.0" y="185.8" font-size="9.4" fill="#64748b" text-anchor="end">60</text>
+<line x1="446.0" y1="151.1" x2="714.0" y2="151.1" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="440.0" y="155.1" font-size="9.4" fill="#64748b" text-anchor="end">80</text>
+<line x1="446.0" y1="128.0" x2="446.0" y2="274.0" stroke="#475569" stroke-width="1.4"/>
+<line x1="465.1" y1="274.0" x2="465.1" y2="278.0" stroke="#475569" stroke-width="1.2"/>
+<text x="465.1" y="290.0" font-size="9.2" fill="#64748b" text-anchor="middle">20岁</text>
+<line x1="513.0" y1="274.0" x2="513.0" y2="278.0" stroke="#475569" stroke-width="1.2"/>
+<text x="513.0" y="290.0" font-size="9.2" fill="#64748b" text-anchor="middle">25岁</text>
+<line x1="560.9" y1="274.0" x2="560.9" y2="278.0" stroke="#475569" stroke-width="1.2"/>
+<text x="560.9" y="290.0" font-size="9.2" fill="#64748b" text-anchor="middle">30岁</text>
+<line x1="608.7" y1="274.0" x2="608.7" y2="278.0" stroke="#475569" stroke-width="1.2"/>
+<text x="608.7" y="290.0" font-size="9.2" fill="#64748b" text-anchor="middle">35岁</text>
+<line x1="656.6" y1="274.0" x2="656.6" y2="278.0" stroke="#475569" stroke-width="1.2"/>
+<text x="656.6" y="290.0" font-size="9.2" fill="#64748b" text-anchor="middle">40岁</text>
+<line x1="704.4" y1="274.0" x2="704.4" y2="278.0" stroke="#475569" stroke-width="1.2"/>
+<text x="704.4" y="290.0" font-size="9.2" fill="#64748b" text-anchor="middle">45岁</text>
+<text x="580" y="120" font-size="9.6" fill="#0f172a" text-anchor="middle" font-weight="600">Kong 等 (2012 Nature) 父母年龄与子代新发突变实测线</text>
+<polyline points="446.0,250.9 704.4,250.9" fill="none" stroke="#6d28d9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4,3"/>
+<text x="708" y="244.9" font-size="9.4" fill="#6d28d9" text-anchor="end" font-weight="700" class="halo">母源卵子恒定 ~15 个</text>
+<polyline points="455.6,238.7 704.4,158.7" fill="none" stroke="#1d6fa5" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="455.6,215.6 704.4,135.7" fill="none" stroke="#b91c1c" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="465.1" cy="212.5" r="4.2" fill="#b91c1c" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="560.9" cy="181.8" r="4.2" fill="#b91c1c" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="656.6" cy="151.1" r="4.2" fill="#b91c1c" stroke="#ffffff" stroke-width="1.2"/>
+<text x="552.9" y="171.8" font-size="9.5" fill="#b91c1c" text-anchor="middle" font-weight="700" class="halo">30岁生娃：总计 ~60 个</text>
+<text x="631.9" y="201.3" font-size="9.4" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">父源精子线 (+2个/年)</text>
+<rect x="408" y="302" width="316" height="140" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="420" y="323" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">为什么子代新发突变 ~75% 来自爸爸？</text>
+<text x="420" y="344" font-size="9.7" fill="#1e293b" text-anchor="start">• 妈妈卵子：女婴出生前卵原细胞就停止有丝分裂</text>
+<text x="420" y="362" font-size="9.7" fill="#1e293b" text-anchor="start">  （一生固定约 23 次分裂），年龄再大也不多抄书；</text>
+<text x="420" y="382" font-size="9.7" fill="#1e293b" text-anchor="start">• 爸爸精子：青春期后精原干细胞每 16 天分裂一轮</text>
+<text x="420" y="400" font-size="9.7" fill="#1e293b" text-anchor="start">  （每年多抄 23 遍）！20岁约分裂150次，40岁已达</text>
+<text x="420" y="418" font-size="9.7" fill="#b91c1c" text-anchor="start" font-weight="700">  610 次——多抄一次，就多攒一点微小复制笔误！</text>
+<rect x="22" y="466" width="716" height="40" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="380" y="491" font-size="11.0" fill="#0f172a" text-anchor="middle" font-weight="600">记住第一条铁律：体细胞（皮肤/肌肉）分裂突变只影响自己，唯有生殖细胞（精卵）里的突变才能遗传并参与演化！</text>
+</svg>

@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="436" viewBox="0 0 760 436" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">地球同步转移轨道GTO远地点合成变轨矢量三角形与文昌发射场纬度省油对比图</title>
+<desc id="desc">左图展示200公里停泊轨道经GTO滑行5.26小时至35786公里远地点，利用余弦定理一次完成提速圆化与消除轨道倾角；右图对比库鲁、海南文昌、西昌/卡纳维拉尔角、酒泉与拜科努尔的远地点所需Δv。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="435" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">怎么把卫星“掰”上赤道？GTO 远地点变轨与海南文昌的省油账本</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">近地点 10.24 km/s 太快掰不动，必须滑行 5.26 小时到远地点（1.60 km/s）把圆化与消倾角合二为一</text>
+<rect x="20" y="62" width="352" height="360" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 地球同步转移轨道（GTO）与余弦定理点火</text>
+<text x="36" y="102" font-size="10.8" fill="#64748b" text-anchor="start">Δv_AKM = √(v_a² + v_GEO² − 2 v_a v_GEO cos Δi)</text>
+<ellipse cx="170.0" cy="198.0" rx="112" ry="36" fill="none" stroke="#18794e" stroke-width="1.6" stroke-dasharray="5 3"/>
+<text x="244.0" y="162.0" font-size="10.2" fill="#18794e" text-anchor="middle" font-weight="600">赤道 GEO 圆轨 (i=0°)</text>
+<g transform="rotate(-17 212.0 198.0)"><ellipse cx="170.0" cy="198.0" rx="70" ry="22" fill="#fef1e8" fill-opacity="0.35" stroke="#c25014" stroke-width="2.0"/></g>
+<circle cx="112.0" cy="216.0" r="14" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.6"/>
+<text x="112.0" y="242.0" font-size="10.0" fill="#1d6fa5" text-anchor="middle" font-weight="600">近地点 200 km</text>
+<text x="112.0" y="254.0" font-size="9.8" fill="#64748b" text-anchor="middle">v_p = 10.24 km/s</text>
+<circle cx="240.0" cy="198.0" r="6.0" fill="#c25014" stroke="#ffffff" stroke-width="1.5"/>
+<text x="250.0" y="190.0" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="700">远地点交点</text>
+<text x="250.0" y="204.0" font-size="10.2" fill="#c25014" text-anchor="start" font-weight="600">35,786 km 点火！</text>
+<rect x="34" y="268" width="324" height="140" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="46" y="288" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">远地点速度矢量三角形（以 Δi = 28.2° 为例）：</text>
+<line x1="64.0" y1="378.0" x2="297.7" y2="378.0" stroke="#18794e" stroke-width="2.4" marker-end="url(#arr-green)"/>
+<line x1="64.0" y1="378.0" x2="171.0" y2="320.6" stroke="#1d6fa5" stroke-width="2.2" marker-end="url(#arr-blue)"/>
+<line x1="171.0" y1="320.6" x2="297.7" y2="378.0" stroke="#c25014" stroke-width="2.4" stroke-dasharray="5 3" marker-end="url(#arr-orange)"/>
+<text x="180.8" y="396.0" font-size="10.2" fill="#18794e" text-anchor="middle" font-weight="700">目标速度 v_GEO = 3.07 km/s（赤道面 0°）</text>
+<text x="163.0" y="312.6" font-size="10.2" fill="#1d6fa5" text-anchor="start" font-weight="700">到站速度 v_a = 1.60 km/s</text>
+<text x="252.3" y="343.3" font-size="10.3" fill="#c25014" text-anchor="middle" font-weight="700">合成点火 Δv = 1.83 km/s</text>
+<text x="100.0" y="370.0" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="700">Δi</text>
+<rect x="388" y="62" width="352" height="360" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="404" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 全球发射场纬度大比拼：文昌省下多少燃料？</text>
+<text x="404" y="102" font-size="10.8" fill="#64748b" text-anchor="start">直接向东入轨最小倾角 i_min ≈ 发射场纬度 |φ|</text>
+<text x="540" y="145.0" font-size="10.5" fill="#1e293b" text-anchor="end" font-weight="400">赤道理想基准 (0°)</text>
+<rect x="548.0" y="132.0" width="97.7" height="18" rx="4" fill="#475569" fill-opacity="0.14" stroke="#475569" stroke-width="1.1"/>
+<text x="651.7" y="145.0" font-size="10.3" fill="#475569" text-anchor="start" font-weight="700">1477 m/s</text>
+<text x="540" y="181.0" font-size="10.5" fill="#1e293b" text-anchor="end" font-weight="400">法属库鲁 (5.2°N)</text>
+<rect x="548.0" y="168.0" width="98.6" height="18" rx="4" fill="#1d6fa5" fill-opacity="0.14" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="652.6" y="181.0" font-size="10.3" fill="#1d6fa5" text-anchor="start" font-weight="700">1491 m/s</text>
+<text x="540" y="217.0" font-size="10.5" fill="#18794e" text-anchor="end" font-weight="700">中国海南文昌 (19.6°N)</text>
+<rect x="548.0" y="204.0" width="109.7" height="18" rx="4" fill="#18794e" fill-opacity="0.24" stroke="#18794e" stroke-width="1.8"/>
+<text x="663.7" y="217.0" font-size="10.3" fill="#18794e" text-anchor="start" font-weight="700">1659 m/s</text>
+<text x="540" y="253.0" font-size="10.5" fill="#1e293b" text-anchor="end" font-weight="400">西昌 / 卡角 (~28.3°N)</text>
+<rect x="548.0" y="240.0" width="121.0" height="18" rx="4" fill="#c25014" fill-opacity="0.14" stroke="#c25014" stroke-width="1.1"/>
+<text x="675.0" y="253.0" font-size="10.3" fill="#c25014" text-anchor="start" font-weight="700">1830 m/s</text>
+<text x="540" y="289.0" font-size="10.5" fill="#1e293b" text-anchor="end" font-weight="400">中国酒泉 (41.0°N)</text>
+<rect x="548.0" y="276.0" width="141.7" height="18" rx="4" fill="#6d28d9" fill-opacity="0.14" stroke="#6d28d9" stroke-width="1.1"/>
+<text x="695.7" y="289.0" font-size="10.3" fill="#6d28d9" text-anchor="start" font-weight="700">2143 m/s</text>
+<text x="540" y="325.0" font-size="10.5" fill="#1e293b" text-anchor="end" font-weight="400">拜科努尔 (45.9°N)</text>
+<rect x="548.0" y="312.0" width="150.3" height="18" rx="4" fill="#475569" fill-opacity="0.14" stroke="#475569" stroke-width="1.1"/>
+<text x="704.3" y="325.0" font-size="10.3" fill="#475569" text-anchor="start" font-weight="700">2274 m/s</text>
+<rect x="402" y="348" width="324" height="62" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="414" y="367" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="700">文昌红利：远地点变轨比西昌省 ~171 m/s，比酒泉省 ~484 m/s！</text>
+<text x="414" y="385" font-size="10.2" fill="#1e293b" text-anchor="start">• 按每年 ~50 m/s 轨位保持燃料算，省出 3.5～10 年在轨寿命；</text>
+<text x="414" y="402" font-size="10.2" fill="#1e293b" text-anchor="start">• 且海运直达无铁路隧道限宽，长征五号等 5 米大火箭得以登场。</text>
+</svg>

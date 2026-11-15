@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="446" viewBox="0 0 760 446" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">小肠刷状缘单糖安检门与乳糖β-1,4糖苷键水解机制对比图</title>
+<desc id="desc">左图展示乳糖酶LPH在空肠刷状缘将1分子乳糖(342.3g/mol)加1分子水拆解为葡萄糖与半乳糖(各180.16g/mol)，经SGLT1顺利吸收入血；右图展示乳糖酶缺失时双糖被SGLT1与紧密连接拒之门外，原封不动涌入结肠。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="445" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">小肠绒毛刷状缘的“单糖安检门”：为什么乳糖不剪断就一步也进不了血液？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">小肠上皮细胞只给 6 碳单糖发通行证；12 碳乳糖必须先由刷状缘乳糖酶 LPH 剪开 β-1,4 糖苷键！</text>
+<rect x="20" y="62" width="354" height="372" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="34" y="85" font-size="13.5" fill="#18794e" text-anchor="start" font-weight="700">① 乳糖酶充足（婴儿期 / 成年耐受者）</text>
+<rect x="34" y="96" width="326" height="98" rx="8" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<text x="46" y="114" font-size="9.8" fill="#1d6fa5" text-anchor="start" font-weight="700">小肠腔（空肠段 pH ≈ 6.0，37 °C）</text>
+<path d="M 109.3,138.0 L 109.3,158.0 L 92.0,168.0 L 74.7,158.0 L 74.7,138.0 L 92.0,128.0 Z" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.8"/>
+<text x="92" y="152" font-size="9.2" fill="#6d28d9" text-anchor="middle" font-weight="700">半乳糖</text>
+<path d="M 110,142 L 126,130 L 142,142" fill="none" stroke="#dc2626" stroke-width="2.2"/>
+<text x="126" y="125" font-size="8.8" fill="#dc2626" text-anchor="middle" font-weight="700">β-1,4键</text>
+<path d="M 177.3,138.0 L 177.3,158.0 L 160.0,168.0 L 142.7,158.0 L 142.7,138.0 L 160.0,128.0 Z" fill="#dbeafe" stroke="#1d6fa5" stroke-width="1.8"/>
+<text x="160" y="152" font-size="9.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">葡萄糖</text>
+<text x="126" y="182" font-size="9.2" fill="#0f172a" text-anchor="middle" font-weight="600">乳糖 C₁₂H₂₂O₁₁ (342.3) + H₂O (18.0)</text>
+<line x1="188.0" y1="148.0" x2="224.0" y2="148.0" stroke="#18794e" stroke-width="2.0" marker-end="url(#arr-green)"/>
+<text x="206" y="139" font-size="9.0" fill="#18794e" text-anchor="middle" font-weight="700">水解</text>
+<path d="M 271.6,137.0 L 271.6,155.0 L 256.0,164.0 L 240.4,155.0 L 240.4,137.0 L 256.0,128.0 Z" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.8"/>
+<text x="256" y="150" font-size="8.9" fill="#6d28d9" text-anchor="middle" font-weight="700">半乳糖</text>
+<text x="285" y="150" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">+</text>
+<path d="M 329.6,137.0 L 329.6,155.0 L 314.0,164.0 L 298.4,155.0 L 298.4,137.0 L 314.0,128.0 Z" fill="#dbeafe" stroke="#1d6fa5" stroke-width="1.8"/>
+<text x="314" y="150" font-size="8.9" fill="#1d6fa5" text-anchor="middle" font-weight="700">葡萄糖</text>
+<text x="285" y="182" font-size="9.2" fill="#18794e" text-anchor="middle" font-weight="700">2 颗单糖 (各 180.16 g/mol)</text>
+<rect x="34" y="204" width="326" height="102" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<rect x="64.0" y="195.0" width="186" height="20" rx="10.0" fill="#ffffff" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="157.0" y="208.6" font-size="9.6" fill="#18794e" text-anchor="middle" font-weight="600">✂ 刷状缘乳糖酶 LPH (Glu-1749)</text>
+<text x="46" y="232" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">小肠绒毛上皮细胞（细胞间由“紧密连接”焊死）</text>
+<rect x="218" y="244" width="128" height="48" rx="6" fill="#ffffff" stroke="#18794e" stroke-width="1.5"/>
+<text x="282" y="263" font-size="9.6" fill="#18794e" text-anchor="middle" font-weight="700">SGLT1 转运蛋白放行</text>
+<text x="282" y="281" font-size="8.9" fill="#1e293b" text-anchor="middle">(借 Na⁺ 浓度梯度同向入胞)</text>
+<line x1="256.0" y1="186.0" x2="256.0" y2="240.0" stroke="#18794e" stroke-width="1.8" marker-end="url(#arr-green)"/>
+<line x1="314.0" y1="186.0" x2="314.0" y2="240.0" stroke="#18794e" stroke-width="1.8" marker-end="url(#arr-green)"/>
+<text x="46" y="258" font-size="9.5" fill="#1e293b" text-anchor="start">• 基因开关持续开启</text>
+<text x="46" y="276" font-size="9.5" fill="#1e293b" text-anchor="start">• 边剪断、边入胞</text>
+<text x="46" y="294" font-size="9.5" fill="#18794e" text-anchor="start" font-weight="700">• 吸收率接近 100%</text>
+<rect x="34" y="316" width="326" height="40" rx="7" fill="#fef2f2" stroke="#f87171" stroke-width="1"/>
+<line x1="282.0" y1="294.0" x2="282.0" y2="314.0" stroke="#18794e" stroke-width="1.8" marker-end="url(#arr-green)"/>
+<text x="197" y="340" font-size="9.5" fill="#dc2626" text-anchor="middle" font-weight="700">绒毛毛细血管 → 门静脉入肝（血糖平缓升高、供给全身与脑发育）</text>
+<rect x="34" y="366" width="326" height="54" rx="7" fill="#ffffff" stroke="#18794e" stroke-width="1"/>
+<text x="46" y="386" font-size="9.8" fill="#18794e" text-anchor="start" font-weight="700">✅ 结局：小肠前半程即彻底吸收，几乎 0 g 乳糖漏入大肠；</text>
+<text x="46" y="406" font-size="9.6" fill="#1e293b" text-anchor="start">肠道等渗平和、不抽水、不产气，喝鲜奶安然无恙。</text>
+<rect x="386" y="62" width="354" height="372" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="400" y="85" font-size="13.5" fill="#c25014" text-anchor="start" font-weight="700">② 乳糖酶缺失（断奶后默认态 / 乳糖不耐受）</text>
+<rect x="400" y="96" width="326" height="98" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="412" y="114" font-size="9.8" fill="#c25014" text-anchor="start" font-weight="700">小肠腔：乳糖酶表达下调 75%–90%+，缺了专用剪刀！</text>
+<path d="M 479.3,138.0 L 479.3,158.0 L 462.0,168.0 L 444.7,158.0 L 444.7,138.0 L 462.0,128.0 Z" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.8"/>
+<text x="462" y="152" font-size="9.2" fill="#6d28d9" text-anchor="middle" font-weight="700">半乳糖</text>
+<path d="M 480,142 L 496,130 L 512,142" fill="none" stroke="#dc2626" stroke-width="2.4"/>
+<text x="496" y="125" font-size="8.9" fill="#dc2626" text-anchor="middle" font-weight="700">锁死!</text>
+<path d="M 547.3,138.0 L 547.3,158.0 L 530.0,168.0 L 512.7,158.0 L 512.7,138.0 L 530.0,128.0 Z" fill="#dbeafe" stroke="#1d6fa5" stroke-width="1.8"/>
+<text x="530" y="152" font-size="9.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">葡萄糖</text>
+<line x1="558.0" y1="148.0" x2="708.0" y2="148.0" stroke="#dc2626" stroke-width="2.2" stroke-dasharray="5,3" marker-end="url(#arr-orange)"/>
+<text x="634" y="136" font-size="9.5" fill="#dc2626" text-anchor="middle" font-weight="700">原封不动冲向大肠 →</text>
+<text x="634" y="168" font-size="9.1" fill="#c25014" text-anchor="middle" font-weight="600">(滞留肠腔高渗拉水)</text>
+<text x="496" y="183" font-size="9.1" fill="#1e293b" text-anchor="middle">双糖直径过大，无法直接过膜</text>
+<rect x="400" y="204" width="326" height="102" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="1" stroke-dasharray="4,3"/>
+<rect x="428.0" y="195.0" width="268" height="20" rx="10.0" fill="#ffffff" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="562.0" y="208.6" font-size="9.3" fill="#dc2626" text-anchor="middle" font-weight="600">✕ 刷状缘缺乏乳糖酶（麦芽糖酶/蔗糖酶剪不动 β 键）</text>
+<text x="412" y="232" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">小肠绒毛上皮细胞：两道防线同时拒收双糖！</text>
+<rect x="414" y="244" width="142" height="48" rx="6" fill="#ffffff" stroke="#dc2626" stroke-width="1.3"/>
+<text x="485" y="263" font-size="9.4" fill="#dc2626" text-anchor="middle" font-weight="700">✕ SGLT1 安检口拒收</text>
+<text x="485" y="281" font-size="8.9" fill="#1e293b" text-anchor="middle">卡槽只认单环，不认双环</text>
+<rect x="568" y="244" width="144" height="48" rx="6" fill="#ffffff" stroke="#475569" stroke-width="1.3"/>
+<text x="640" y="263" font-size="9.4" fill="#475569" text-anchor="middle" font-weight="700">✕ 紧密连接严密封死</text>
+<text x="640" y="281" font-size="8.9" fill="#1e293b" text-anchor="middle">水溶性双糖钻不过细胞缝</text>
+<rect x="400" y="316" width="326" height="40" rx="7" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="563" y="340" font-size="9.3" fill="#64748b" text-anchor="middle" font-weight="600">绒毛毛细血管：没有单糖入血（口服乳糖后血糖曲线平直 &lt;20 mg/dL）</text>
+<rect x="400" y="366" width="326" height="54" rx="7" fill="#fef2f2" stroke="#dc2626" stroke-width="1"/>
+<text x="412" y="386" font-size="9.8" fill="#dc2626" text-anchor="start" font-weight="700">⚠️ 结局：整颗乳糖跨过回盲瓣涌入结肠，</text>
+<text x="412" y="406" font-size="9.6" fill="#1e293b" text-anchor="start" font-weight="600">30–120 分钟内引爆“物理渗透抽水 + 厌氧菌产气”双重风暴！</text>
+</svg>

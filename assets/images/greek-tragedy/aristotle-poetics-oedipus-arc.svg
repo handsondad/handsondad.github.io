@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="524" viewBox="0 0 760 524" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">亚里士多德《诗学》悲剧动力学曲线与《俄狄浦斯王》结构解剖</title>
+<desc id="desc">以索福克勒斯《俄狄浦斯王》为例，绘制开场白、进场歌、场与合唱歌、高潮突转与发现同刻引爆直至退场歌净化的戏剧张力曲线，并对比悲剧性过失与净化的三种现代学术解释。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  .arc-trace {
+    stroke-dasharray: 760;
+    stroke-dashoffset: 760;
+    animation: drawArc 4.8s ease-in-out 0.25s 1 forwards;
+  }
+  .apex-ring {
+    transform-box: fill-box;
+    transform-origin: center;
+    opacity: 0;
+    animation: apexPulse 1.4s ease-out 3.2s 1 forwards;
+  }
+  @keyframes drawArc {
+    to { stroke-dashoffset: 0; }
+  }
+  @keyframes apexPulse {
+    0% { opacity: 0.9; transform: scale(0.7); }
+    100% { opacity: 0.35; transform: scale(1.65); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .arc-trace {
+      animation: none;
+      stroke-dashoffset: 0;
+    }
+    .apex-ring {
+      animation: none;
+      opacity: 0.35;
+    }
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="523" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">为什么《俄狄浦斯王》被亚里士多德奉为满分模板？《诗学》悲剧动力学曲线</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">顶级悲剧不写“恶人遭报应”，而写高贵者在认知盲区（Hamartia）中亲手推倒查清真相的多米诺骨牌</text>
+<rect x="24" y="66" width="712" height="300" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<line x1="88" y1="122" x2="708" y2="122" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="80" y="126" font-size="10.8" fill="#64748b" text-anchor="end">顺境／威望</text>
+<line x1="88" y1="210" x2="708" y2="210" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="80" y="214" font-size="10.8" fill="#64748b" text-anchor="end">追查临界</text>
+<line x1="88" y1="302" x2="708" y2="302" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="80" y="306" font-size="10.8" fill="#64748b" text-anchor="end">崩塌／真相</text>
+<rect x="96" y="324" width="88" height="26" rx="5" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+<text x="140.0" y="341" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">开场白 Prologue</text>
+<rect x="190" y="324" width="88" height="26" rx="5" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+<text x="234.0" y="341" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">进场歌 Parodos</text>
+<rect x="284" y="324" width="180" height="26" rx="5" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+<text x="374.0" y="341" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">第 1–3 场与合唱歌</text>
+<rect x="470" y="324" width="118" height="26" rx="5" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+<text x="529.0" y="341" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">第 4 场：高潮奇点</text>
+<rect x="594" y="324" width="110" height="26" rx="5" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+<text x="649.0" y="341" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">退场歌 Exodos</text>
+<path d="M 124 152 C 180 150, 224 143, 276 140 C 340 136, 404 120, 446 128 C 482 135, 502 226, 536 268 C 568 295, 612 296, 656 296" fill="none" stroke="#93c5fd" stroke-width="2.2" stroke-dasharray="5 4"/>
+<path d="M 124 152 C 180 150, 224 143, 276 140 C 340 136, 404 120, 446 128 C 482 135, 502 226, 536 268 C 568 295, 612 296, 656 296" class="arc-trace" fill="none" stroke="#c25014" stroke-width="3.4" stroke-linecap="round"/>
+<circle cx="536" cy="268" r="14" class="apex-ring" fill="none" stroke="#c25014" stroke-width="2.2"/>
+<circle cx="124" cy="152" r="10" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="124" y="156" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="132" y="184" font-size="11.3" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">救城明君立誓追凶</text>
+<text x="132" y="201" font-size="10.5" fill="#1e293b" text-anchor="middle" class="halo">刚正果敢，浑然不知凶手是谁</text>
+<circle cx="276" cy="140" r="10" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="276" y="144" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">2</text>
+<text x="282" y="172" font-size="11.3" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">悲剧性过失 Hamartia</text>
+<text x="282" y="189" font-size="10.5" fill="#1e293b" text-anchor="middle" class="halo">急躁多疑，怒斥先知与内兄</text>
+<circle cx="446" cy="128" r="10" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="446" y="132" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">3</text>
+<text x="418" y="86" font-size="11.3" fill="#6d28d9" text-anchor="middle" font-weight="700" class="halo">虚假安心（戏剧反讽顶点）</text>
+<text x="418" y="103" font-size="10.5" fill="#1e293b" text-anchor="middle" class="halo">闻科林斯养父病逝，以为神谕失效</text>
+<circle cx="536" cy="268" r="10" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="536" y="272" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">4</text>
+<text x="526" y="206" font-size="11.3" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">突转＋发现同刻引爆！</text>
+<text x="526" y="223" font-size="10.5" fill="#1e293b" text-anchor="middle" class="halo">牧人对质：报喜瞬间翻转为弑父娶母真相</text>
+<circle cx="656" cy="296" r="10" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="656" y="300" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">5</text>
+<text x="636" y="250" font-size="11.3" fill="#18794e" text-anchor="middle" font-weight="700" class="halo">苦难 Pathos → 净化 Katharsis</text>
+<text x="636" y="267" font-size="10.5" fill="#1e293b" text-anchor="middle" class="halo">刺目流放，激起观众怜悯与恐惧</text>
+<rect x="24" y="380" width="350" height="130" rx="10" fill="#ffffff" stroke="#1d6fa5" stroke-width="1"/>
+<text x="40" y="404" font-size="12.2" fill="#1d6fa5" text-anchor="start" font-weight="700">《诗学》第 13 章：为什么主角不能是圣人或恶棍？</text>
+<text x="40" y="427" font-size="11" fill="#1e293b" text-anchor="start">• 完人无辜遭殃 → 观众只觉残忍反感，毫无悲剧感；</text>
+<text x="40" y="449" font-size="11" fill="#1e293b" text-anchor="start">• 恶棍由盛转衰 → 虽大快人心，却无“怜悯与恐惧”；</text>
+<text x="40" y="471" font-size="11" fill="#1e293b" text-anchor="start">• 唯有声望崇高却带认知盲区／误判（Hamartia）者坠落，</text>
+<text x="40" y="493" font-size="11" fill="#0f172a" text-anchor="start" font-weight="600">  才令人怜其本非邪恶、惧凡人皆难逃认知局限。</text>
+<rect x="388" y="380" width="348" height="130" rx="10" fill="#ffffff" stroke="#18794e" stroke-width="1"/>
+<text x="404" y="404" font-size="12.2" fill="#18794e" text-anchor="start" font-weight="700">学界百年公案：“净化（Katharsis）”到底指什么？</text>
+<text x="404" y="427" font-size="10.8" fill="#64748b" text-anchor="start">亚里士多德全书未给定义，现代研究主要分三大流派：</text>
+<text x="404" y="449" font-size="11" fill="#1e293b" text-anchor="start">① 医学排泄说（伯奈斯）：如泻药排毒般宣泄积压情绪；</text>
+<text x="404" y="471" font-size="11" fill="#1e293b" text-anchor="start">② 伦理陶冶说（莱辛／扬科）：把过度悲惧调校到适度；</text>
+<text x="404" y="493" font-size="11" fill="#1e293b" text-anchor="start">③ 认知澄明说（努斯鲍姆）：在安全距离看清人类命运处境。</text>
+</svg>

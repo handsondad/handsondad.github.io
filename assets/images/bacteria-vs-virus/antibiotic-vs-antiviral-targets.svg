@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">抗生素四大细菌靶点脱靶原因与抗病毒药物四大拦截机制图解</title>
+<desc id="desc">左侧展示青霉素头孢、阿奇霉素、左氧氟沙星和磺胺类分别攻击细菌细胞壁、70S核糖体、DNA旋转酶与叶酸合成，而病毒完全缺失这四大结构；右侧展示疫苗中和抗体、核苷类似物、蛋白酶抑制剂与奥司他韦阻断释放。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">药箱里的靶点真相：为什么头孢和阿莫西林对感冒病毒“四枪全脱靶”？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左图：抗生素专打细菌独有零件，病毒压根没这些靶点；右图：疫苗与抗病毒药如何在宿主体内精准设卡</text>
+<rect x="20" y="64" width="362" height="438" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="74.0" width="244" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="156.0" y="89.0" font-size="12" fill="#18794e" text-anchor="middle" font-weight="600">抗生素（抗菌药）的四把狙击枪</text>
+<rect x="34" y="108" width="160" height="88" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="114" y="128" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">细菌（全套靶点齐全）</text>
+<rect x="64" y="138" width="100" height="42" rx="21" fill="#ffffff" stroke="#18794e" stroke-width="2.5"/>
+<circle cx="96" cy="159" r="9" fill="none" stroke="#1d6fa5" stroke-width="1.8"/>
+<circle cx="122" cy="152" r="3.5" fill="#6d28d9"/>
+<circle cx="134" cy="166" r="3.5" fill="#6d28d9"/>
+<text x="114" y="190" font-size="10.6" fill="#18794e" text-anchor="middle" font-weight="600">吃对症抗生素 → 精准瓦解</text>
+<rect x="208" y="108" width="160" height="88" rx="8" fill="#fef2f2" stroke="#b91c1c" stroke-width="1"/>
+<text x="288" y="128" font-size="11.5" fill="#b91c1c" text-anchor="middle" font-weight="700">感冒/流感病毒</text>
+<polygon points="306.0,158.0 297.0,173.6 279.0,173.6 270.0,158.0 279.0,142.4 297.0,142.4" fill="#ffffff" stroke="#b91c1c" stroke-width="2"/>
+<path d="M279,158 Q288,149 297,158" fill="none" stroke="#b91c1c" stroke-width="1.8"/>
+<text x="288" y="190" font-size="10.6" fill="#b91c1c" text-anchor="middle" font-weight="700">吃头孢/青霉素 → 0 伤害！</text>
+<rect x="34" y="208" width="334" height="46" rx="7" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<text x="44" y="226" font-size="11.4" fill="#0f172a" text-anchor="start" font-weight="700">靶点① 肽聚糖细胞壁</text>
+<text x="358" y="226" font-size="10.6" fill="#b91c1c" text-anchor="end" font-weight="700">404 无细胞壁！（连支原体也无）</text>
+<text x="44" y="245" font-size="10.8" fill="#18794e" text-anchor="start" font-weight="600">代表药：青霉素 / 阿莫西林 / 头孢</text>
+<rect x="34" y="260" width="334" height="46" rx="7" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<text x="44" y="278" font-size="11.4" fill="#0f172a" text-anchor="start" font-weight="700">靶点② 细菌 70S 核糖体</text>
+<text x="358" y="278" font-size="10.6" fill="#b91c1c" text-anchor="end" font-weight="700">404 无核糖体！（借人80S打印）</text>
+<text x="44" y="297" font-size="10.8" fill="#18794e" text-anchor="start" font-weight="600">代表药：阿奇霉素 / 红霉素 / 四环素</text>
+<rect x="34" y="312" width="334" height="46" rx="7" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<text x="44" y="330" font-size="11.4" fill="#0f172a" text-anchor="start" font-weight="700">靶点③ 细菌 DNA 旋转酶</text>
+<text x="358" y="330" font-size="10.6" fill="#b91c1c" text-anchor="end" font-weight="700">404 无此酶！</text>
+<text x="44" y="349" font-size="10.8" fill="#18794e" text-anchor="start" font-weight="600">代表药：左氧氟沙星 / 莫西沙星</text>
+<rect x="34" y="364" width="334" height="46" rx="7" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<text x="44" y="382" font-size="11.4" fill="#0f172a" text-anchor="start" font-weight="700">靶点④ 细菌叶酸合成酶</text>
+<text x="358" y="382" font-size="10.6" fill="#b91c1c" text-anchor="end" font-weight="700">404 不做代谢！</text>
+<text x="44" y="401" font-size="10.8" fill="#18794e" text-anchor="start" font-weight="600">代表药：复方磺胺甲噁唑</text>
+<rect x="34" y="422" width="334" height="68" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="46" y="441" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">病毒性感冒乱吃抗生素的三大实锤代价：</text>
+<text x="46" y="460" font-size="10.8" fill="#1e293b" text-anchor="start">• 病程 1 秒不缩短，却把肠道有益菌无差别误伤致腹泻；</text>
+<text x="46" y="478" font-size="10.8" fill="#1e293b" text-anchor="start">• 替幸存耐药菌清场，亲手筛选出无药可医的“超级细菌”！</text>
+<rect x="396" y="64" width="344" height="438" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="410.0" y="74.0" width="298" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="559.0" y="89.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">对付病毒的真正王牌：疫苗 + 精准抗病毒药</text>
+<rect x="410" y="110" width="316" height="72" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="422" y="131" font-size="11.6" fill="#1d6fa5" text-anchor="start" font-weight="700">防线 A｜门外拦截（疫苗预演免疫记忆）</text>
+<text x="422" y="152" font-size="10.9" fill="#1e293b" text-anchor="start">接种流感 / HPV / 乙肝 / 狂犬疫苗 </text>
+<text x="422" y="170" font-size="10.9" fill="#1e293b" text-anchor="start">→ 提前训练 B/T 细胞，中和抗体在病毒进门前直接糊住刺突钥匙！</text>
+<rect x="410" y="192" width="316" height="72" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="422" y="213" font-size="11.6" fill="#6d28d9" text-anchor="start" font-weight="700">防线 B｜伪装积木卡死复制酶（核苷类似物）</text>
+<text x="422" y="234" font-size="10.9" fill="#1e293b" text-anchor="start">阿昔洛韦（需疱疹病毒胸苷激酶激活才生效！）、索</text>
+<text x="422" y="252" font-size="10.9" fill="#1e293b" text-anchor="start">磷布韦等冒充核苷原料，一嵌进病毒链就当场停机</text>
+<rect x="410" y="274" width="316" height="72" rx="8" fill="#f0fdfa" stroke="#0f766e" stroke-width="1"/>
+<text x="422" y="295" font-size="11.6" fill="#0f766e" text-anchor="start" font-weight="700">防线 C｜没收蛋白裁剪刀（蛋白酶/内切酶抑制）</text>
+<text x="422" y="316" font-size="10.9" fill="#1e293b" text-anchor="start">玛巴洛沙韦（掐断流感抢帽内切酶）、奈玛特韦或 </text>
+<text x="422" y="334" font-size="10.9" fill="#1e293b" text-anchor="start">HIV 蛋白酶抑制剂，让病毒造出一长串废料切不开</text>
+<rect x="410" y="356" width="316" height="72" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="422" y="377" font-size="11.6" fill="#c25014" text-anchor="start" font-weight="700">防线 D｜焊死出口大门（神经氨酸酶抑制剂）</text>
+<text x="422" y="398" font-size="10.9" fill="#1e293b" text-anchor="start">奥司他韦（达菲）专门锁死流感的 N 刺突小剪刀</text>
+<text x="422" y="416" font-size="10.9" fill="#1e293b" text-anchor="start">——新病毒出芽后剪不断绳子，成串粘死在旧细胞表面！</text>
+<rect x="410" y="440" width="316" height="50" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+<text x="422" y="460" font-size="11.4" fill="#0f172a" text-anchor="start" font-weight="700">以毒攻毒彩蛋：噬菌体疗法（Phage Therapy）</text>
+<text x="422" y="479" font-size="10.8" fill="#6d28d9" text-anchor="start" font-weight="600">派专吃细菌的病毒去猎杀超级耐药菌，连有益菌都不伤！</text>
+</svg>

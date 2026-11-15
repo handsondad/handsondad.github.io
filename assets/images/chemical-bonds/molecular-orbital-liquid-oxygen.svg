@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">液氧顺磁性实验与氧气分子轨道能级排布图</title>
+<desc id="desc">左侧对比路易斯结构预言抗磁性与真实负183摄氏度淡蓝色液氧悬停在磁铁两极间的顺磁现象，总结成键与反键轨道叠加规则；右侧绘出氧气2p分子轨道能级图，显示两颗电子按洪特规则分占两个简并反键π星轨道，键级为2。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-red" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#b91c1c"/></marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">为什么淡蓝色液氧会被磁铁吸住悬空？——分子轨道（MO）破案</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">路易斯点式把电子全配成双而失算；量子力学反键轨道 π* 揭开两颗单身电子与键级公式</text>
+<rect x="20" y="74" width="336" height="412" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="40" cy="96" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="40" y="100" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">1</text>
+<text x="62" y="101" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">路易斯结构的盲区：液氧顺磁性实验</text>
+<rect x="36" y="114" width="304" height="72" rx="10" fill="#fef2f2" stroke="#b91c1c"/>
+<text x="48" y="134" font-size="12" fill="#b91c1c" text-anchor="start" font-weight="700">路易斯点式写法：  :Ö = Ö:</text>
+<text x="48" y="154" font-size="10.5" fill="#1e293b" text-anchor="start">表面看 12 颗价电子全部两两成对 →</text>
+<text x="48" y="173" font-size="10.5" fill="#b91c1c" text-anchor="start" font-weight="700">错误预言：氧气应当抗磁（不被磁铁吸引）</text>
+<rect x="36" y="198" width="304" height="122" rx="10" fill="#eaf4fb" stroke="#1d6fa5"/>
+<text x="188" y="218" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">真实物理实验：−183°C 液氧悬停在磁极间！</text>
+<rect x="54" y="238" width="76" height="44" rx="6" fill="#b91c1c" />
+<text x="92" y="265" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">N 极</text>
+<rect x="246" y="238" width="76" height="44" rx="6" fill="#475569" />
+<text x="284" y="265" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">S 极</text>
+<ellipse cx="188" cy="260" rx="54" ry="18" fill="#38bdf8" stroke="#1d6fa5" stroke-width="2"/>
+<text x="188" y="264" font-size="10.5" fill="#ffffff" text-anchor="middle" font-weight="700">淡蓝液氧 O₂ ↑↓?</text>
+<text x="188" y="305" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700">古伊磁天平实测：每个 O₂ 必含 2 颗未成对电子！</text>
+<rect x="36" y="332" width="304" height="140" rx="10" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="48" y="352" font-size="11.5" fill="#475569" text-anchor="start" font-weight="700">原子轨道线性组合（LCAO）两条铁律：</text>
+<text x="48" y="375" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="700">• 同相叠加（ψₐ + ψᵦ）→ 成键轨道 (σ / π)</text>
+<text x="56" y="393" font-size="10.5" fill="#1e293b" text-anchor="start">核间电子密度暴增，能量降低，把两核拉紧</text>
+<text x="48" y="417" font-size="10.5" fill="#b91c1c" text-anchor="start" font-weight="700">• 反相相减（ψₐ − ψᵦ）→ 反键轨道 (σ* / π*)</text>
+<text x="56" y="435" font-size="10.5" fill="#1e293b" text-anchor="start">核间出现电子为零的“节面”，能量升高拆台</text>
+<text x="48" y="458" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="700">★ 键级 BO = (成键电子数 − 反键电子数) ÷ 2</text>
+<rect x="372" y="74" width="368" height="412" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="392" cy="96" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="392" y="100" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">2</text>
+<text x="414" y="101" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">O₂ 的 2p 分子轨道能级图（洪特规则破案）</text>
+<line x1="394.0" y1="368.0" x2="394.0" y2="128.0" stroke="#475569" stroke-width="1.5" marker-end="url(#arr-muted)"/>
+<text x="394" y="122" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="700">能量</text>
+<line x1="412.0" y1="248.0" x2="430.0" y2="248.0" stroke="#475569" stroke-width="2.6"/><text x="416.0" y="244" font-size="13" fill="#475569" text-anchor="middle" font-weight="700">↑</text><text x="426.0" y="244" font-size="13" fill="#475569" text-anchor="middle" font-weight="700">↓</text>
+<line x1="435.0" y1="248.0" x2="453.0" y2="248.0" stroke="#475569" stroke-width="2.6"/><text x="444.0" y="244" font-size="14" fill="#475569" text-anchor="middle" font-weight="700">↑</text>
+<line x1="458.0" y1="248.0" x2="476.0" y2="248.0" stroke="#475569" stroke-width="2.6"/><text x="467.0" y="244" font-size="14" fill="#475569" text-anchor="middle" font-weight="700">↑</text>
+<text x="444" y="266" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">左 O (2p⁴)</text>
+<line x1="640.0" y1="248.0" x2="658.0" y2="248.0" stroke="#475569" stroke-width="2.6"/><text x="644.0" y="244" font-size="13" fill="#475569" text-anchor="middle" font-weight="700">↑</text><text x="654.0" y="244" font-size="13" fill="#475569" text-anchor="middle" font-weight="700">↓</text>
+<line x1="663.0" y1="248.0" x2="681.0" y2="248.0" stroke="#475569" stroke-width="2.6"/><text x="672.0" y="244" font-size="14" fill="#475569" text-anchor="middle" font-weight="700">↑</text>
+<line x1="686.0" y1="248.0" x2="704.0" y2="248.0" stroke="#475569" stroke-width="2.6"/><text x="695.0" y="244" font-size="14" fill="#475569" text-anchor="middle" font-weight="700">↑</text>
+<text x="672" y="266" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">右 O (2p⁴)</text>
+<line x1="542.0" y1="148.0" x2="574.0" y2="148.0" stroke="#64748b" stroke-width="2.6"/>
+<text x="558" y="164" font-size="10" fill="#64748b" text-anchor="middle">σ*₂ₚ（反键空）</text>
+<rect x="506" y="176" width="104" height="44" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1.6"/>
+<line x1="518.0" y1="204.0" x2="550.0" y2="204.0" stroke="#c25014" stroke-width="2.6"/><text x="534.0" y="200" font-size="14" fill="#c25014" text-anchor="middle" font-weight="700">↑</text>
+<line x1="566.0" y1="204.0" x2="598.0" y2="204.0" stroke="#c25014" stroke-width="2.6"/><text x="582.0" y="200" font-size="14" fill="#c25014" text-anchor="middle" font-weight="700">↑</text>
+<text x="558" y="233" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700">π*₂ₚ（2 颗单身同自旋！）</text>
+<line x1="518.0" y1="292.0" x2="550.0" y2="292.0" stroke="#1d6fa5" stroke-width="2.6"/><text x="529.0" y="288" font-size="13" fill="#1d6fa5" text-anchor="middle" font-weight="700">↑</text><text x="539.0" y="288" font-size="13" fill="#1d6fa5" text-anchor="middle" font-weight="700">↓</text>
+<line x1="566.0" y1="292.0" x2="598.0" y2="292.0" stroke="#1d6fa5" stroke-width="2.6"/><text x="577.0" y="288" font-size="13" fill="#1d6fa5" text-anchor="middle" font-weight="700">↑</text><text x="587.0" y="288" font-size="13" fill="#1d6fa5" text-anchor="middle" font-weight="700">↓</text>
+<text x="558" y="309" font-size="10" fill="#1d6fa5" text-anchor="middle" font-weight="600">π₂ₚ（成键 4e⁻）</text>
+<line x1="542.0" y1="344.0" x2="574.0" y2="344.0" stroke="#18794e" stroke-width="2.6"/><text x="553.0" y="340" font-size="13" fill="#18794e" text-anchor="middle" font-weight="700">↑</text><text x="563.0" y="340" font-size="13" fill="#18794e" text-anchor="middle" font-weight="700">↓</text>
+<text x="558" y="361" font-size="10" fill="#18794e" text-anchor="middle" font-weight="600">σ₂ₚ（成键 2e⁻）</text>
+<line x1="478.0" y1="248.0" x2="540.0" y2="148.0" stroke="#cbd5e1" stroke-width="1.1" stroke-dasharray="3 3"/>
+<line x1="638.0" y1="248.0" x2="576.0" y2="148.0" stroke="#cbd5e1" stroke-width="1.1" stroke-dasharray="3 3"/>
+<line x1="478.0" y1="248.0" x2="514.0" y2="204.0" stroke="#cbd5e1" stroke-width="1.1" stroke-dasharray="3 3"/>
+<line x1="638.0" y1="248.0" x2="602.0" y2="204.0" stroke="#cbd5e1" stroke-width="1.1" stroke-dasharray="3 3"/>
+<line x1="478.0" y1="248.0" x2="514.0" y2="292.0" stroke="#cbd5e1" stroke-width="1.1" stroke-dasharray="3 3"/>
+<line x1="638.0" y1="248.0" x2="602.0" y2="292.0" stroke="#cbd5e1" stroke-width="1.1" stroke-dasharray="3 3"/>
+<line x1="478.0" y1="248.0" x2="540.0" y2="344.0" stroke="#cbd5e1" stroke-width="1.1" stroke-dasharray="3 3"/>
+<line x1="638.0" y1="248.0" x2="576.0" y2="344.0" stroke="#cbd5e1" stroke-width="1.1" stroke-dasharray="3 3"/>
+<rect x="388" y="376" width="336" height="96" rx="10" fill="#e7f6ee" stroke="#18794e"/>
+<text x="400" y="396" font-size="11" fill="#18794e" text-anchor="start" font-weight="700">键级公式一算即准（含 2s 成/反键抵消后）：</text>
+<text x="400" y="417" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">• 氧气 O₂：(8 成键 − 4 反键)÷2 = 键级 2（顺磁双键）</text>
+<text x="400" y="437" font-size="10.5" fill="#1e293b" text-anchor="start">• 氮气 N₂：(8 成键 − 2 反键)÷2 = 键级 3（946 kJ 极稳）</text>
+<text x="400" y="457" font-size="10.5" fill="#1e293b" text-anchor="start">• 双氦 He₂：(2 成键 − 2 反键)÷2 = 键级 0（根本不成键）</text>
+<text x="380" y="505" font-size="11" fill="#64748b" text-anchor="middle">数据来源：OpenStax Chemistry 2e 8.4 节（分子轨道理论、二周期双原子分子排布与键级）</text>
+</svg>

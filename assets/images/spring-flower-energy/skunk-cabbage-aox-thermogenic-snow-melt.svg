@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">臭菘零下雪地23摄氏度恒温融雪开花与线粒体AOX产热机制图解</title>
+<desc id="desc">左侧展示臭菘肉穗花序在零下冰雪气温中连续1至2周稳定维持约23摄氏度恒温的实测规律与传粉收益；右侧对比常规COX产ATP路线与低温H2S触发SrAOX交替氧化酶加SrUCPb解偶联蛋白短路产热机制。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-ink" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#0f172a"/>
+  </marker>
+  <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#6d28d9"/>
+  </marker>
+  <marker id="arr-red" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#dc2626"/>
+  </marker>
+  <marker id="arr-pink" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#db2777"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="380" y="30" font-size="17" fill="#0f172a" text-anchor="middle" font-weight="700">植物界的“恒温热血怪兽”：零下冰雪里发烧到 23°C 融雪开花的臭菘</text>
+<text x="380" y="52" font-size="12" fill="#64748b" text-anchor="middle">故意把线粒体 ATP 生产线“短路”成纯电热丝，狂烧地下根茎淀粉，在雪地里烫出温暖传粉温室</text>
+<rect x="24" y="72" width="352" height="396" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="40.0" y="86.0" width="226" height="24" rx="12.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="153.0" y="102.3" font-size="12" fill="#dc2626" text-anchor="middle" font-weight="600">冰天雪地里的 23°C 恒温花序</text>
+<text x="40" y="126" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">臭菘（Symplocarpus）肉穗花序实测控温（Onda 2008）：</text>
+<rect x="40" y="138" width="320" height="186" rx="10" fill="#ffffff" stroke="#e2e8f0"/>
+<line x1="82" y1="160" x2="82" y2="296" stroke="#475569" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="82" y1="254" x2="344" y2="254" stroke="#93c5fd" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="4,4"/>
+<line x1="82" y1="296" x2="344" y2="296" stroke="#475569" stroke-width="1.4" stroke-linecap="round"/>
+<text x="74" y="174" font-size="11" fill="#dc2626" text-anchor="end" font-weight="700">23°C</text>
+<text x="74" y="214" font-size="11" fill="#64748b" text-anchor="end">10°C</text>
+<text x="74" y="257" font-size="11" fill="#1d6fa5" text-anchor="end" font-weight="700">0°C</text>
+<text x="74" y="294" font-size="11" fill="#1d6fa5" text-anchor="end">-10°C</text>
+<polyline points="92,172 132,170 172,173 212,171 252,172 292,170 334,172" fill="none" stroke="#dc2626" stroke-width="3.2" stroke-linecap="round"/>
+<text x="214" y="156" font-size="11" fill="#dc2626" text-anchor="middle" font-weight="700">肉穗花序温度：稳锁约 23°C（连烧 1–2 周！）</text>
+<polyline points="92,278 122,242 152,288 182,248 212,284 242,238 272,276 302,246 334,282" fill="none" stroke="#1d6fa5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="200" y="315" font-size="11" fill="#1d6fa5" text-anchor="middle" font-weight="700">外界雪地气温：跌破 -1°C 至 -10°C</text>
+<line x1="152" y1="282" x2="152" y2="178" stroke="#c25014" stroke-width="1.6" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<text x="162" y="224" font-size="11" fill="#b45309" text-anchor="start" font-weight="700">ΔT ≈ +30°C</text>
+<rect x="40" y="338" width="320" height="116" rx="10" fill="#fef1e8" stroke="#c25014" stroke-width="1.3"/>
+<text x="54" y="358" font-size="12" fill="#b45309" text-anchor="start" font-weight="700">为什么要豪掷整根地下茎的淀粉“发高烧”？</text>
+<text x="54" y="380" font-size="11" fill="#1e293b" text-anchor="start">1. 融化积雪凿出通风烟囱，蒸发气味招引早春昆虫</text>
+<text x="54" y="400" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">2. 23°C 恰是其花粉萌发与花粉管伸长的最适生理温度</text>
+<text x="54" y="420" font-size="11" fill="#1e293b" text-anchor="start">3. 给冻僵的访花昆虫提供“23°C 暖气旅馆”换取传粉</text>
+<text x="54" y="440" font-size="11" fill="#64748b" text-anchor="start">注：荷花、魔芋、喜林芋等大花植物同样拥有产热本领</text>
+<rect x="392" y="72" width="344" height="396" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="408.0" y="86.0" width="264" height="24" rx="12.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="540.0" y="102.3" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">线粒体“短路产热”切换开关（Tanimoto 2024）</text>
+<rect x="408" y="124" width="312" height="102" rx="10" fill="#e7f6ee" stroke="#18794e" stroke-width="1.3"/>
+<text x="422" y="145" font-size="12" fill="#18794e" text-anchor="start" font-weight="700">常规花朵呼吸链（细胞色素氧化酶 COX 路线）</text>
+<text x="422" y="166" font-size="11" fill="#1e293b" text-anchor="start">葡萄糖（ΔH° ≈ -2805 kJ/mol）→ 泛醌 UQ → 复合体 III/IV</text>
+<text x="422" y="186" font-size="11" fill="#18794e" text-anchor="start" font-weight="700">跨膜泵出质子 H⁺ → 驱动 ATP 合酶产出 30–32 个 ATP</text>
+<text x="422" y="206" font-size="11" fill="#64748b" text-anchor="start">能量去向：约四成存进 ATP 干活，其余温和散失</text>
+<line x1="432" y1="226" x2="432" y2="250" stroke="#dc2626" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arr-red)"/>
+<text x="446" y="243" font-size="11" fill="#dc2626" text-anchor="start" font-weight="700">低温触发 H₂S 抑制 COX，强行改道产热！</text>
+<rect x="408" y="254" width="312" height="132" rx="10" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="422" y="275" font-size="12" fill="#dc2626" text-anchor="start" font-weight="700">臭菘产热专线：SrAOX 交替氧化酶 + SrUCPb 解偶联</text>
+<text x="422" y="297" font-size="11" fill="#1e293b" text-anchor="start">• 第一刀（SrAOX 旁路）：电子从泛醌直接交给氧气成水，</text>
+<text x="432" y="316" font-size="11" fill="#dc2626" text-anchor="start" font-weight="700">彻底绕开复合体 III 与 IV，不泵质子、不攒 ATP！</text>
+<text x="422" y="337" font-size="11" fill="#1e293b" text-anchor="start">• 第二刀（SrUCPb 泄洪）：像哺乳动物棕色脂肪一样，把</text>
+<text x="432" y="356" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">残余质子梯度直接漏回基质，化学能近 100% 变热能！</text>
+<text x="422" y="376" font-size="11" fill="#64748b" text-anchor="start">气温越冷，呼吸耗氧速率越高，精准恒温在 23°C</text>
+<rect x="408" y="398" width="312" height="56" rx="8" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="564" y="419" font-size="11" fill="#6d28d9" text-anchor="middle" font-weight="700">单位质量耗氧率堪比蜂鸟振翅肌肉！</text>
+<text x="564" y="440" font-size="11" fill="#1e293b" text-anchor="middle">燃料全部来自肥大地下根茎提前一年囤积的巨量淀粉</text>
+<rect x="24" y="480" width="712" height="28" rx="8" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="380" y="499" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="700">先看左卡雪地 23°C 恒温奇迹，再看右卡线粒体双刀改道：植物不仅能用旧糖当液压泵，甚至能当恒温暖炉烧</text>
+</svg>

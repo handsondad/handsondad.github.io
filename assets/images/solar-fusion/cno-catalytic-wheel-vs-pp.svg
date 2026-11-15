@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="522" viewBox="0 0 760 522" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">太阳碳氮氧（CNO）催化循环转盘与pp/CNO温度敏感度对比图</title>
+<desc id="desc">左栏展示碳-12作为催化剂吞下4颗质子生成1颗氦-4并复原的六步CNO-I循环及2020年Borexino实验证实，右栏对数曲线对比pp链（正比于T的4次方）与CNO循环（正比于T的16至17次方）在约1800万K的产能反超分水岭。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="521" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">太阳核心 1% 的隐藏副业：碳氮氧（CNO）催化转盘与恒星温度分水岭</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左栏顺时针看碳-12 怎样当“不消耗媒人”吞四颗氢吐一颗氦 → 右栏看为什么超 1.3 倍太阳质量恒星全靠它当家</text>
+<rect x="24" y="68" width="358" height="440" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="88" r="10" fill="#ccfbf1" stroke="#0f766e" stroke-width="1.2"/>
+<text x="42" y="92" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">1</text>
+<text x="58" y="92" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">CNO-I 催化转盘：碳-12 借壳生蛋，循环不息</text>
+<circle cx="203" cy="254" r="106" fill="none" stroke="#0f766e" stroke-width="2.2" stroke-dasharray="6 4"/>
+<circle cx="203" cy="254" r="54" fill="#ccfbf1" stroke="#0f766e" stroke-width="1.2"/>
+<text x="203" y="242" font-size="10.6" fill="#0f766e" text-anchor="middle" font-weight="700">催化净反应</text>
+<text x="203" y="261" font-size="11.4" fill="#0f172a" text-anchor="middle" font-weight="700">4 ¹H → ⁴He</text>
+<text x="203" y="279" font-size="10.2" fill="#1e293b" text-anchor="middle" font-weight="600">26.73 MeV</text>
+<rect x="161.0" y="124.0" width="84" height="48" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.4"/>
+<text x="203.0" y="143.0" font-size="9.9" fill="#1d6fa5" text-anchor="middle" font-weight="700">¹²C (+p → γ)</text>
+<text x="203.0" y="161.0" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="600">碳-12 起点</text>
+<rect x="252.79869280115054" y="177.0" width="84" height="48" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1.4"/>
+<text x="294.8" y="196.0" font-size="9.9" fill="#c25014" text-anchor="middle" font-weight="700">¹³N (e⁺+νₑ)</text>
+<text x="294.8" y="214.0" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="600">9.97分 β⁺</text>
+<rect x="252.79869280115054" y="283.0" width="84" height="48" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.4"/>
+<text x="294.8" y="302.0" font-size="9.9" fill="#1d6fa5" text-anchor="middle" font-weight="700">¹³C (+p → γ)</text>
+<text x="294.8" y="320.0" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="600">碳-13</text>
+<rect x="161.0" y="336.0" width="84" height="48" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1.4"/>
+<text x="203.0" y="355.0" font-size="9.9" fill="#dc2626" text-anchor="middle" font-weight="700">¹⁴N (+p 极慢)</text>
+<text x="203.0" y="373.0" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="600">最慢瓶颈!</text>
+<rect x="69.20130719884949" y="283.0" width="84" height="48" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1.4"/>
+<text x="111.2" y="302.0" font-size="9.9" fill="#c25014" text-anchor="middle" font-weight="700">¹⁵O (e⁺+νₑ)</text>
+<text x="111.2" y="320.0" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="600">122秒 β⁺</text>
+<rect x="69.2013071988495" y="177.0" width="84" height="48" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.4"/>
+<text x="111.2" y="196.0" font-size="9.9" fill="#18794e" text-anchor="middle" font-weight="700">¹⁵N (+p→⁴He!)</text>
+<text x="111.2" y="214.0" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="600">氮-15 收官</text>
+<text x="40" y="404" font-size="10.5" fill="#1e293b" text-anchor="start">• 催化剂奥秘：太阳诞生时继承自前代超新星的少量 ¹²C，顺时针</text>
+<text x="50" y="424" font-size="10.5" fill="#1e293b" text-anchor="start">连吞 4 颗质子 + 2 次 β⁺ 衰变，最后在 ¹⁵N+¹H→¹²C+⁴He 吐出氦核</text>
+<text x="50" y="444" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600">并满血变回 ¹²C！最慢一步卡在 ¹⁴N 吃质子（决定球状星团年龄）。</text>
+<text x="40" y="468" font-size="10.5" fill="#0f766e" text-anchor="start" font-weight="700">• 2020 里程碑：意大利地下 Borexino 实验首次直接抓到太阳 CNO</text>
+<text x="50" y="488" font-size="10.5" fill="#0f766e" text-anchor="start" font-weight="700">中微子（《Nature》），实锤证实它贡献了太阳约 0.8%~1% 能量！</text>
+<rect x="398" y="68" width="338" height="440" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="416" cy="88" r="10" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="416" y="92" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">2</text>
+<text x="432" y="92" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">温度分水岭：为什么太阳由 pp 当家、巨星靠 CNO？</text>
+<rect x="414" y="108" width="306" height="228" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<line x1="462" y1="300" x2="704" y2="300" stroke="#475569" stroke-width="1.4"/>
+<line x1="462" y1="128" x2="462" y2="300" stroke="#475569" stroke-width="1.4"/>
+<polyline points="462.0,248.7 468.1,245.6 474.1,242.8 480.1,240.1 486.2,237.5 492.2,235.1 498.3,232.8 504.4,230.6 510.4,228.5 516.5,226.4 522.5,224.5 528.5,222.6 534.6,220.8 540.6,219.0 546.7,217.3 552.8,215.7 558.8,214.1 564.9,212.6 570.9,211.1 577.0,209.7 583.0,208.3 589.0,206.9 595.1,205.6 601.1,204.3 607.2,203.0 613.2,201.8 619.3,200.6 625.4,199.4 631.4,198.3 637.5,197.2 643.5,196.1 649.5,195.0 655.6,193.9 661.6,192.9 667.7,191.9 673.8,190.9 679.8,190.0 685.9,189.0 691.9,188.1 698.0,187.2 704.0,186.3" fill="none" stroke="#1d6fa5" stroke-width="2.8"/>
+<polyline points="510.4,291.6 516.5,283.2 522.5,275.1 528.5,267.4 534.6,259.9 540.6,252.7 546.7,245.7 552.8,239.0 558.8,232.5 564.9,226.1 570.9,220.0 577.0,214.1 583.0,208.3 589.0,202.6 595.1,197.2 601.1,191.8 607.2,186.6 613.2,181.6 619.3,176.6 625.4,171.8 631.4,167.0 637.5,162.4 643.5,157.9 649.5,153.5 655.6,149.2 661.6,144.9 667.7,140.8 673.8,136.7 679.8,132.7 685.9,128.8" fill="none" stroke="#dc2626" stroke-width="2.8" stroke-dasharray="6 3"/>
+<line x1="555.2" y1="128" x2="555.2" y2="300" stroke="#c25014" stroke-width="1.6" stroke-dasharray="3 3"/>
+<circle cx="555.2" cy="215.1" r="5" fill="#c25014"/>
+<circle cx="555.2" cy="236.4" r="4.5" fill="#dc2626"/>
+<text x="549.2" y="144" font-size="9.8" fill="#c25014" text-anchor="end" font-weight="700">太阳 15.7 MK</text>
+<circle cx="583.0" cy="208.3" r="5" fill="#6d28d9"/>
+<text x="591.0" y="222.3" font-size="9.8" fill="#6d28d9" text-anchor="start" font-weight="700">反超点 ≈ 18 MK</text>
+<text x="648" y="190" font-size="10.2" fill="#1d6fa5" text-anchor="start" font-weight="700">pp 链 (∝ T⁴)</text>
+<text x="612" y="144" font-size="10.2" fill="#dc2626" text-anchor="start" font-weight="700">CNO (∝ T¹⁶~¹⁷)</text>
+<text x="486.2" y="315" font-size="9.6" fill="#64748b" text-anchor="middle">10</text>
+<text x="546.7" y="315" font-size="9.6" fill="#64748b" text-anchor="middle">15</text>
+<text x="607.2" y="315" font-size="9.6" fill="#64748b" text-anchor="middle">20</text>
+<text x="667.7" y="315" font-size="9.6" fill="#64748b" text-anchor="middle">25</text>
+<text x="583.0" y="330" font-size="9.8" fill="#1e293b" text-anchor="middle" font-weight="600">恒星核心温度 T（百万开尔文 MK）</text>
+<text x="438" y="218" font-size="9.6" fill="#64748b" text-anchor="middle">对数产率</text>
+<text x="414" y="360" font-size="10.4" fill="#1e293b" text-anchor="start">• 电荷门槛更高：碳氮原子核带 +6/+7 正电荷，库仑排斥墙比单质子</text>
+<text x="424" y="380" font-size="10.4" fill="#1e293b" text-anchor="start">高 6~7 倍！在太阳 1571 万 K 下，质子极难钻进碳氮核，仅占 ~1%。</text>
+<text x="414" y="404" font-size="10.3" fill="#6d28d9" text-anchor="start" font-weight="600">• 指数级狂飙：pp 产率平缓（∝ T⁴），CNO 对温度极敏感</text>
+<text x="424" y="424" font-size="10.3" fill="#6d28d9" text-anchor="start" font-weight="600">（∝ T¹⁶~¹⁷）！一旦超 ~1800 万 K（&gt;1.3 M☉，如天狼星 A），</text>
+<text x="424" y="444" font-size="10.3" fill="#0f172a" text-anchor="start" font-weight="600">CNO 立刻接管全星，猛烧燃料把恒星寿命缩短至几亿年！</text>
+<text x="414" y="482" font-size="9.6" fill="#64748b" text-anchor="start">（注：曲线按核天体物理对数相对产率关系 log₁₀ ε 绘制）</text>
+</svg>

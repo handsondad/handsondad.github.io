@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="505" viewBox="0 0 760 505" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">拓扑不变量洞数与量子霍尔效应精确电阻台阶图</title>
+<desc id="desc">左图对比球面g=0、甜甜圈与马克杯g=1、双孔卷饼g=2在连续形变下洞数不变；右图绘制量子霍尔效应在ν=1,2,3,4处的精确电阻平台25812.8/ν欧姆及纵向电阻归零现象。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arr-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#6d28d9"/>
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,1 L9,5 L0,9 z" fill="#475569"/>
+    </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="504" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">什么是“拓扑保护”？从面包洞数到十亿分之一精度的量子台阶</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">连续揉捏改不了整数“洞数” g —— 电子波函数的拓扑数 C 同样锁死了霍尔电阻台阶（2016 诺奖核心）</text>
+<rect x="16" y="68" width="350" height="420" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="36" cy="92" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="36" y="96" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="97" font-size="12.4" fill="#1d6fa5" text-anchor="start" font-weight="700">数学直觉：橡皮泥怎么捏，“洞数”都是整数</text>
+<rect x="30" y="114" width="322" height="84" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<ellipse cx="78" cy="156" rx="30" ry="22" fill="#fde68a" stroke="#d97706" stroke-width="2"/>
+<path d="M 60 152 Q 78 140 96 152" fill="none" stroke="#b45309" stroke-width="1.6"/>
+<text x="124" y="142" font-size="11.0" fill="#0f172a" text-anchor="start" font-weight="700">圆面包 / 实心球：洞数 g = 0</text>
+<text x="124" y="162" font-size="9.9" fill="#475569" text-anchor="start">压扁成盘子、捏成碗，只要不戳破，</text>
+<text x="124" y="180" font-size="9.9" fill="#d97706" text-anchor="start" font-weight="600">洞数永远等于 0（绝不会冒出 0.3 个洞！）</text>
+<rect x="30" y="208" width="322" height="96" rx="10" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.4"/>
+<circle cx="62" cy="256" r="22" fill="#fed7aa" stroke="#ea580c" stroke-width="2"/>
+<circle cx="62" cy="256" r="8" fill="#eff6ff" stroke="#ea580c" stroke-width="2"/>
+<text x="100" y="260" font-size="15.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">⇄</text>
+<rect x="116" y="238" width="26" height="34" rx="4" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="1.8"/>
+<path d="M 142 244 C 156 244, 156 266, 142 266" fill="none" stroke="#1d4ed8" stroke-width="3.2"/>
+<text x="166" y="236" font-size="11.0" fill="#1d6fa5" text-anchor="start" font-weight="700">甜甜圈 ⇄ 马克杯：g = 1</text>
+<text x="166" y="256" font-size="9.9" fill="#475569" text-anchor="start">杯身凹陷能慢慢抚平，唯独杯把</text>
+<text x="166" y="274" font-size="9.9" fill="#1d6fa5" text-anchor="start" font-weight="600">上的 1 个洞跟甜甜圈拓扑等价！</text>
+<text x="166" y="292" font-size="9.8" fill="#dc2626" text-anchor="start" font-weight="700">想变 g=0？除非暴力撕裂杯把！</text>
+<rect x="30" y="314" width="322" height="82" rx="10" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="1.2"/>
+<rect x="42" y="334" width="68" height="40" rx="18" fill="#ddd6fe" stroke="#7c3aed" stroke-width="2"/>
+<circle cx="62" cy="354" r="7.5" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.8"/>
+<circle cx="90" cy="354" r="7.5" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.8"/>
+<text x="124" y="344" font-size="11.0" fill="#6d28d9" text-anchor="start" font-weight="700">双孔椒盐卷饼 / 眼镜框：g = 2</text>
+<text x="124" y="364" font-size="9.9" fill="#475569" text-anchor="start">局部凹凸曲率千变万化，但高斯-博内</text>
+<text x="124" y="382" font-size="9.9" fill="#6d28d9" text-anchor="start" font-weight="600">全局曲率积分永远锁死整数 2 − 2g！</text>
+<rect x="30" y="406" width="322" height="68" rx="9" fill="#0f172a"/>
+<text x="191" y="428" font-size="10.5" fill="#fbbf24" text-anchor="middle" font-weight="700">索利斯（Thouless, 1982）的天才跨界：</text>
+<text x="191" y="448" font-size="9.9" fill="#f8fafc" text-anchor="middle">晶体里电子波函数在动量空间也拧着整数“陈数” C！</text>
+<text x="191" y="465" font-size="9.8" fill="#93c5fd" text-anchor="middle">杂质、形变就像捏橡皮泥，只要能隙不关，C 一步不跳！</text>
+<rect x="382" y="68" width="362" height="420" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="402" cy="92" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="402" y="96" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">2</text>
+<text x="422" y="97" font-size="12.4" fill="#18794e" text-anchor="start" font-weight="700">物理奇迹：无视杂质的“量子霍尔电阻阶梯”</text>
+<rect x="436" y="132" width="286" height="224" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<line x1="436.0" y1="153.1" x2="722.0" y2="153.1" stroke="#e2e8f0" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="4,3"/>
+<text x="430" y="156.6" font-size="9.8" fill="#64748b" text-anchor="end">25.8</text>
+<line x1="436.0" y1="254.6" x2="722.0" y2="254.6" stroke="#e2e8f0" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="4,3"/>
+<text x="430" y="258.1" font-size="9.8" fill="#64748b" text-anchor="end">12.9</text>
+<line x1="436.0" y1="288.4" x2="722.0" y2="288.4" stroke="#e2e8f0" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="4,3"/>
+<text x="430" y="291.9" font-size="9.8" fill="#64748b" text-anchor="end">8.6</text>
+<line x1="436.0" y1="305.3" x2="722.0" y2="305.3" stroke="#e2e8f0" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="4,3"/>
+<text x="430" y="308.8" font-size="9.8" fill="#64748b" text-anchor="end">6.5</text>
+<text x="428" y="124" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">霍尔电阻 R_xy (kΩ)</text>
+<text x="579.0" y="386" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="700">外加磁场强度 B (特斯拉 T) →</text>
+<line x1="436.0" y1="356.0" x2="436.0" y2="360.0" stroke="#475569" stroke-width="1.2" stroke-linecap="round"/>
+<text x="436.0" y="370" font-size="9.8" fill="#64748b" text-anchor="middle">2</text>
+<line x1="507.5" y1="356.0" x2="507.5" y2="360.0" stroke="#475569" stroke-width="1.2" stroke-linecap="round"/>
+<text x="507.5" y="370" font-size="9.8" fill="#64748b" text-anchor="middle">5</text>
+<line x1="579.0" y1="356.0" x2="579.0" y2="360.0" stroke="#475569" stroke-width="1.2" stroke-linecap="round"/>
+<text x="579.0" y="370" font-size="9.8" fill="#64748b" text-anchor="middle">8</text>
+<line x1="650.5" y1="356.0" x2="650.5" y2="360.0" stroke="#475569" stroke-width="1.2" stroke-linecap="round"/>
+<text x="650.5" y="370" font-size="9.8" fill="#64748b" text-anchor="middle">11</text>
+<line x1="722.0" y1="356.0" x2="722.0" y2="360.0" stroke="#475569" stroke-width="1.2" stroke-linecap="round"/>
+<text x="722.0" y="370" font-size="9.8" fill="#64748b" text-anchor="middle">14</text>
+<line x1="436.0" y1="322.2" x2="702.9" y2="132.9" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="5,4"/>
+<text x="607.6" y="157.9" font-size="9.8" fill="#64748b" text-anchor="end">经典直线预期</text>
+<path d="M 436.0,322.2 L 455.1,305.3 L 469.4,305.3 L 481.3,288.4 L 505.1,288.4 L 526.6,254.6 L 574.2,254.6 L 641.0,153.1 L 717.2,153.1" fill="none" stroke="#dc2626" stroke-width="3.0" stroke-linejoin="round"/>
+<polyline points="436.0,356.0 438.4,355.9 440.8,355.0 443.1,351.7 445.5,344.4 447.9,336.8 450.3,336.8 452.7,344.4 455.1,351.7 457.4,355.0 459.8,355.9 462.2,355.9 464.6,355.6 467.0,354.0 469.4,349.1 471.8,340.2 474.1,332.1 476.5,332.1 478.9,340.2 481.3,349.1 483.7,354.0 486.1,355.6 488.4,356.0 490.8,356.0 493.2,356.0 495.6,356.0 498.0,355.9 500.4,355.7 502.7,354.9 505.1,352.7 507.5,347.9 509.9,340.3 512.3,331.5 514.6,325.4 517.0,325.4 519.4,331.5 521.8,340.3 524.2,347.9 526.6,352.7 529.0,354.9 531.3,355.7 533.7,355.9 536.1,356.0 538.5,356.0 540.9,356.0 543.2,356.0 545.6,356.0 548.0,356.0 550.4,356.0 552.8,356.0 555.2,356.0 557.5,356.0 559.9,356.0 562.3,356.0 564.7,356.0 567.1,356.0 569.5,356.0 571.8,356.0 574.2,355.9 576.6,355.8 579.0,355.7 581.4,355.3 583.8,354.5 586.1,353.2 588.5,351.1 590.9,347.9 593.3,343.6 595.7,338.1 598.1,331.9 600.4,325.6 602.8,320.2 605.2,316.5 607.6,315.1 610.0,316.5 612.4,320.2 614.8,325.6 617.1,331.9 619.5,338.1 621.9,343.6 624.3,347.9 626.7,351.1 629.1,353.2 631.4,354.5 633.8,355.3 636.2,355.7 638.6,355.8 641.0,355.9 643.4,356.0 645.7,356.0 648.1,356.0 650.5,356.0 652.9,356.0 655.3,356.0 657.6,356.0 660.0,356.0 662.4,356.0 664.8,356.0 667.2,356.0 669.6,356.0 671.9,356.0 674.3,356.0 676.7,356.0 679.1,356.0 681.5,356.0 683.9,356.0 686.2,356.0 688.6,356.0 691.0,356.0 693.4,356.0 695.8,356.0 698.2,356.0 700.6,356.0 702.9,356.0 705.3,356.0 707.7,356.0 710.1,356.0 712.5,356.0 714.8,356.0 717.2,356.0 719.6,356.0 722.0,356.0" fill="none" stroke="#18794e" stroke-width="2.1"/>
+<text x="679.1" y="343.4" font-size="9.9" fill="#18794e" text-anchor="middle" font-weight="700">纵向电阻 R_xx → 0（无耗散！）</text>
+<text x="676.7" y="144.1" font-size="10.2" fill="#dc2626" text-anchor="middle" font-weight="700">C=1: 25,812.8 Ω</text>
+<text x="550.4" y="245.6" font-size="10.0" fill="#dc2626" text-anchor="middle" font-weight="700">C=2: 12,906.4 Ω</text>
+<text x="493.2" y="278.4" font-size="9.8" fill="#dc2626" text-anchor="middle" font-weight="700">C=3</text>
+<rect x="398" y="400" width="330" height="74" rx="9" fill="#f0fdf4" stroke="#86efac" stroke-width="1.3"/>
+<text x="563" y="421" font-size="10.4" fill="#18794e" text-anchor="middle" font-weight="700">冯·克利青（1980 发现 / 1985 诺奖）：R_H = h / (C·e²)</text>
+<text x="563" y="441" font-size="10.0" fill="#0f172a" text-anchor="middle">哪怕芯片脏一点、形状歪一点，台阶精度仍达 10⁻⁹！</text>
+<text x="563" y="460" font-size="9.9" fill="#0f766e" text-anchor="middle" font-weight="600">2019 年起，25,812.807 Ω 直接成为国际“欧姆”量子基准。</text>
+</svg>

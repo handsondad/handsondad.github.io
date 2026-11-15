@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="506" viewBox="0 0 760 506" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">直升机反扭矩现象与尾桨、纵列双桨及机智号共轴反转双桨三种角动量平衡方案图</title>
+<desc id="desc">三栏并列对比单旋翼配侧推尾桨施加外力矩、支奴干纵列双旋翼正反转抵消角动量、以及NASA机智号火星直升机共轴双旋翼2400转每分对转实现零净角动量的工程设计。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="505" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">断了尾桨的直升机为什么秒变“空中旋转木马”？三种角动量清零工程方案</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">悬空机身没有地面撑脚：发动机让头顶旋翼逆时针转（+L），机身就必定顺时针反着转（-L）！</text>
+<rect x="24" y="66" width="228" height="422" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="46" cy="92" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="46" y="96" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="64" y="97" font-size="12.4" fill="#0f172a" text-anchor="start" font-weight="700">单旋翼 ＋ 抗扭尾桨</text>
+<text x="46" y="118" font-size="10.4" fill="#1d6fa5" text-anchor="start" font-weight="600">经典构型（阿帕奇 / 直-20）</text>
+<rect x="40" y="132" width="196" height="138" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="110" y="176" width="44" height="22" rx="10" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.6"/>
+<line x1="154" y1="187" x2="206" y2="187" stroke="#1d6fa5" stroke-width="3"/>
+<circle cx="132" cy="187" r="42" fill="none" stroke="#1d6fa5" stroke-width="1.6" stroke-dasharray="5 3"/>
+<text x="132" y="145" font-size="9.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">主旋翼 +L（逆时针）</text>
+<line x1="206" y1="175" x2="206" y2="199" stroke="#c25014" stroke-width="3"/>
+<line x1="206" y1="224" x2="206" y2="202" stroke="#c25014" stroke-width="2" marker-end="url(#arr-orange)"/>
+<text x="180" y="248" font-size="9.8" fill="#c25014" text-anchor="middle" font-weight="700">尾桨侧推力矩抵消反转</text>
+<text x="42" y="294" font-size="10.5" fill="#1e293b" text-anchor="start">• 头顶主旋翼逆时针狂转（+L_主），对机</text>
+<text x="42" y="314" font-size="10.5" fill="#1e293b" text-anchor="start">  身施加顺时针反扭矩；</text>
+<text x="42" y="338" font-size="10.5" fill="#1e293b" text-anchor="start">• 机尾长梁末端竖装高速小尾桨，向侧方</text>
+<text x="42" y="358" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">  推气产生反向力矩死死顶住机身！</text>
+<rect x="40" y="378" width="196" height="94" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="50" y="404" font-size="10.2" fill="#1e293b" text-anchor="start">代价：尾桨要白白吃掉约 8%–10% 动力，</text>
+<text x="50" y="424" font-size="10.2" fill="#1d6fa5" text-anchor="start" font-weight="700">一旦尾桨受损机身立刻失控原地打转。</text>
+<text x="50" y="452" font-size="9.8" fill="#64748b" text-anchor="start">本质：向外部借力矩 vs 内部抵消</text>
+<rect x="266" y="66" width="228" height="422" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="288" cy="92" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="288" y="96" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">2</text>
+<text x="306" y="97" font-size="12.4" fill="#0f172a" text-anchor="start" font-weight="700">纵列双旋翼反向对转</text>
+<text x="288" y="118" font-size="10.4" fill="#18794e" text-anchor="start" font-weight="600">重载运输机（CH-47 支奴干）</text>
+<rect x="282" y="132" width="196" height="138" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="326" y="184" width="108" height="24" rx="10" fill="#e7f6ee" stroke="#18794e" stroke-width="1.6"/>
+<circle cx="344" cy="196" r="36" fill="none" stroke="#1d6fa5" stroke-width="1.6" stroke-dasharray="5 3"/>
+<circle cx="416" cy="196" r="36" fill="none" stroke="#c25014" stroke-width="1.6" stroke-dasharray="5 3"/>
+<text x="338" y="152" font-size="10" fill="#1d6fa5" text-anchor="middle" font-weight="700">前桨 +L</text>
+<text x="422" y="152" font-size="10" fill="#c25014" text-anchor="middle" font-weight="700">后桨 -L</text>
+<text x="380" y="252" font-size="10.2" fill="#18794e" text-anchor="middle" font-weight="700">L_总 = (+L) + (-L) = 0</text>
+<text x="284" y="294" font-size="10.5" fill="#1e293b" text-anchor="start">• 机头机尾各装一副等大主旋翼，通过同</text>
+<text x="284" y="314" font-size="10.5" fill="#1e293b" text-anchor="start">  步传动轴严格一正一反等速旋转；</text>
+<text x="284" y="338" font-size="10.5" fill="#1e293b" text-anchor="start">• 角动量天生互相抵消：(+L) + (-L) = 0，</text>
+<text x="284" y="358" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">  机身净反扭矩直接归零！</text>
+<rect x="282" y="378" width="196" height="94" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="292" y="404" font-size="10.2" fill="#1e293b" text-anchor="start">优势：省掉尾桨功率损耗，100% 发动机</text>
+<text x="292" y="424" font-size="10.2" fill="#18794e" text-anchor="start" font-weight="700">马力全用来吊运几十吨重装备！</text>
+<text x="292" y="452" font-size="9.8" fill="#64748b" text-anchor="start">本质：向外部借力矩 vs 内部抵消</text>
+<rect x="508" y="66" width="228" height="422" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="530" cy="92" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="530" y="96" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">3</text>
+<text x="548" y="97" font-size="12.4" fill="#0f172a" text-anchor="start" font-weight="700">共轴上下双旋翼对转</text>
+<text x="530" y="118" font-size="10.4" fill="#c25014" text-anchor="start" font-weight="600">NASA“机智号”火星直升机</text>
+<rect x="524" y="132" width="196" height="138" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="604" y="204" width="36" height="28" rx="4" fill="#fef1e8" stroke="#c25014" stroke-width="1.6"/>
+<line x1="622" y1="154" x2="622" y2="204" stroke="#475569" stroke-width="2.4"/>
+<rect x="598" y="148" width="48" height="6" rx="2" fill="#475569"/>
+<ellipse cx="622" cy="168" rx="68" ry="8" fill="none" stroke="#1d6fa5" stroke-width="1.8"/>
+<ellipse cx="622" cy="186" rx="68" ry="8" fill="none" stroke="#c25014" stroke-width="1.8"/>
+<line x1="606" y1="232" x2="580" y2="256" stroke="#475569" stroke-width="1.6"/>
+<line x1="638" y1="232" x2="664" y2="256" stroke="#475569" stroke-width="1.6"/>
+<text x="622" y="254" font-size="10" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">上桨 +L / 下桨 -L 对消</text>
+<text x="526" y="294" font-size="10.5" fill="#1e293b" text-anchor="start">• 上下两副 1.2 米碳纤维旋翼套在同一根</text>
+<text x="526" y="314" font-size="10.5" fill="#1e293b" text-anchor="start">  立轴上，以约 2,400 RPM 正反对转；</text>
+<text x="526" y="338" font-size="10.5" fill="#1e293b" text-anchor="start">• 无需长尾梁和尾桨，结构极致紧凑且</text>
+<text x="526" y="358" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">  上下角动量当场清零！</text>
+<rect x="524" y="378" width="196" height="94" rx="7" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="534" y="404" font-size="10.2" fill="#1e293b" text-anchor="start">战绩：在仅地球 1% 大气密度的火星荒原</text>
+<text x="534" y="424" font-size="10.2" fill="#c25014" text-anchor="start" font-weight="700">稳稳完成 72 次飞行，开创人类历史！</text>
+<text x="534" y="452" font-size="9.8" fill="#64748b" text-anchor="start">本质：向外部借力矩 vs 内部抵消</text>
+</svg>

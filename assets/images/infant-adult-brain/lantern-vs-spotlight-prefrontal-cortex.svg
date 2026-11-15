@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="512" viewBox="0 0 760 512" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">婴儿灯笼意识与成人探照灯注意力对比及前额叶探索利用权衡示意图</title>
+<desc id="desc">左栏展示婴儿前额叶未成熟形成360度全景接收的灯笼意识与高探索灵活性，右栏展示成人前额叶抑制成熟形成窄束聚焦探照灯注意力与高执行效率。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-b" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#1d6fa5"/>
+    </marker>
+    <marker id="arr-o" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#c25014"/>
+    </marker>
+    <marker id="arr-g" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#18794e"/>
+    </marker>
+    <marker id="arr-p" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#6d28d9"/>
+    </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="511" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">认知模式大不同：为什么宝宝管不住手脚，却能发现大人完全漏掉的规律？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">前额叶“刹车片”尚未包好髓鞘：婴儿是 360° 全景探索的“灯笼意识”，成人是窄束高效的“激光探照灯”</text>
+<rect x="22" y="68" width="352" height="366" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="38" y="82" width="320" height="28" rx="8" fill="#fef1e8" stroke="#fdba74" stroke-width="1"/>
+<text x="198" y="101" font-size="11.6" fill="#c25014" text-anchor="middle" font-weight="700">婴幼儿大脑：360° 敞亮“灯笼意识”（广角探索模式）</text>
+<circle cx="198" cy="206" r="74" fill="#fef3c7" opacity="0.65"/>
+<circle cx="198" cy="206" r="48" fill="#fde68a" opacity="0.75"/>
+<circle cx="198" cy="206" r="18" fill="#c25014"/>
+<text x="198" y="210" font-size="11.0" fill="#ffffff" text-anchor="middle" font-weight="700">幼脑</text>
+<text x="96" y="154" font-size="10.6" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">★ 新奇声音</text>
+<text x="300" y="154" font-size="10.6" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">★ 妈妈表情</text>
+<text x="90" y="254" font-size="10.6" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">★ 地板纹理</text>
+<text x="306" y="254" font-size="10.6" fill="#18794e" text-anchor="middle" font-weight="700" class="halo">★ 隐藏因果律</text>
+<text x="198" y="128" font-size="10.6" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">★ 陌生语音细节</text>
+<rect x="38" y="300" width="320" height="120" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="52" y="323" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">● 硬件根源：前额叶皮层（PFC）抑制通路尚未成熟</text>
+<text x="52" y="345" font-size="10.5" fill="#1e293b" text-anchor="start">● 短板（算力散）：屏蔽不了干扰，没法自己系鞋带、</text>
+<text x="64" y="364" font-size="10.5" fill="#1e293b" text-anchor="start">做长计划，情绪说崩就崩（缺“顶层刹车片”）。</text>
+<text x="52" y="386" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="700">● 超能力（无成见）：没有先验偏见束缚，像算法里的</text>
+<text x="64" y="405" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="700">“高温模拟退火”，最擅长破解反常规抽象规律！</text>
+<rect x="386" y="68" width="352" height="366" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="402" y="82" width="320" height="28" rx="8" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<text x="562" y="101" font-size="11.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">成年人大脑：窄束聚焦“探照灯”（高效执行模式）</text>
+<polygon points="486,224 676,142 676,222" fill="#dbeafe" stroke="#1d6fa5" stroke-width="1.5"/>
+<circle cx="486" cy="224" r="18" fill="#1d6fa5"/>
+<text x="486" y="228" font-size="11.0" fill="#ffffff" text-anchor="middle" font-weight="700">成脑</text>
+<text x="486" y="258" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">前额叶强力屏蔽噪音</text>
+<circle cx="650" cy="182" r="9" fill="#18794e"/>
+<text x="650" y="206" font-size="10.6" fill="#18794e" text-anchor="middle" font-weight="700" class="halo">当前KPI目标</text>
+<text x="546" y="142" font-size="10.5" fill="#64748b" text-anchor="middle">× 背景细节（已过滤）</text>
+<text x="628" y="258" font-size="10.5" fill="#64748b" text-anchor="middle">× 外语微弱音差（已过滤）</text>
+<rect x="402" y="300" width="320" height="120" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="416" y="323" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">● 硬件根源：前额叶髓鞘化完成＋GABA 抑制网络成熟</text>
+<text x="416" y="345" font-size="10.5" fill="#1e293b" text-anchor="start">● 优势（执行稳）：能瞬间屏蔽 95% 无关信息，专注</text>
+<text x="428" y="364" font-size="10.5" fill="#1e293b" text-anchor="start">开车、写代码、压住脾气完成跨年复杂工程。</text>
+<text x="416" y="386" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="700">● 代价（思维定势）：被已有经验牢牢锁死（低温锁定），</text>
+<text x="428" y="405" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="700">遇到反直觉新规则时，有时反而输给四岁小孩！</text>
+<rect x="22" y="446" width="716" height="52" rx="10" fill="#e7f6ee" stroke="#86efac" stroke-width="1"/>
+<text x="380" y="468" font-size="11.0" fill="#18794e" text-anchor="middle" font-weight="700">发展心理学家艾莉森·高普尼克（Alison Gopnik）总结的人类演化神分工：</text>
+<text x="380" y="488" font-size="10.8" fill="#0f172a" text-anchor="middle" font-weight="700">“婴儿是人类的研发部（R&amp;D，负责不设限探索新世界）；成人是生产部（Production，负责高效执行与兜底照料）。”</text>
+</svg>

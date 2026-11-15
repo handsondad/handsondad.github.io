@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="452" viewBox="0 0 760 452" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">常见乳制品乳糖含量红黄绿灯标尺与科学应对乳糖不耐受策略图</title>
+<desc id="desc">上图按每份乳糖克数绘制横向标尺并标注NIH单次12克耐受参考线：500毫升冰奶(24克)远超阈值，250毫升牛奶(12克)与山羊奶(11.8克)踩线，活菌酸奶(8.5克)、浓缩乳清蛋白(2.1克)、陈年硬奶酪(0.05克)与0乳糖奶(0克)依次递减；下图拆解母乳7%乳糖与成年猫不耐受、结肠菌群适应真相及四条科学补钙策略。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="451" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">乳糖不耐受还能痛快补钙吗？—— 乳制品“红黄绿灯”实测尺与科学喝奶五招</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">NIH 临床指南：绝大多数原发性乳糖不耐受者并非“滴奶不沾”，单次随餐摄入 ≤ 12 g 乳糖通常无症状！</text>
+<rect x="20" y="62" width="720" height="258" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="85" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 一份常见乳制品到底含多少克乳糖？（对照 NIH 单次 12 g 耐受参考线）</text>
+<line x1="352.8" y1="98.0" x2="352.8" y2="304.0" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="5,3"/>
+<text x="352.8" y="95" font-size="9.1" fill="#dc2626" text-anchor="middle" font-weight="700">NIH 单次耐受参考线 (12 g)</text>
+<text x="36" y="120" font-size="9.4" fill="#0f172a" text-anchor="start" font-weight="700">空腹猛灌大杯冰牛奶 (500 mL, 4.8%)</text>
+<rect x="254.0" y="106" width="214.0" height="18" rx="4" fill="#f1f5f9"/>
+<rect x="254.0" y="106" width="197.5" height="18" rx="4" fill="#fef2f2" stroke="#dc2626" stroke-width="1.4"/>
+<text x="457.5" y="119.5" font-size="9.1" fill="#dc2626" text-anchor="start" font-weight="700">24.0 g</text>
+<text x="512" y="119.5" font-size="9.1" fill="#dc2626" text-anchor="start" font-weight="600">[高危] 远超阈值，极易翻江倒海</text>
+<text x="36" y="148" font-size="9.4" fill="#0f172a" text-anchor="start" font-weight="700">山羊奶 1 杯 (250 mL, 4.7%)</text>
+<rect x="254.0" y="134" width="214.0" height="18" rx="4" fill="#f1f5f9"/>
+<rect x="254.0" y="134" width="97.1" height="18" rx="4" fill="#fef1e8" stroke="#c25014" stroke-width="1.4"/>
+<text x="357.1" y="147.5" font-size="9.1" fill="#c25014" text-anchor="start" font-weight="700">11.8 g</text>
+<text x="512" y="147.5" font-size="9.1" fill="#c25014" text-anchor="start" font-weight="600">[踩线] 与牛奶同量! 别信无乳糖谣言</text>
+<text x="36" y="176" font-size="9.4" fill="#1e293b" text-anchor="start" font-weight="400">普通纯牛奶 1 杯 (250 mL, 4.8%)</text>
+<rect x="254.0" y="162" width="214.0" height="18" rx="4" fill="#f1f5f9"/>
+<rect x="254.0" y="162" width="98.8" height="18" rx="4" fill="#fef1e8" stroke="#c25014" stroke-width="1.4"/>
+<text x="358.8" y="175.5" font-size="9.1" fill="#c25014" text-anchor="start" font-weight="700">12.0 g</text>
+<text x="512" y="175.5" font-size="9.1" fill="#c25014" text-anchor="start" font-weight="600">[临界] 恰踩 12g 线，随餐温饮多可耐受</text>
+<text x="36" y="204" font-size="9.4" fill="#1e293b" text-anchor="start" font-weight="400">活菌原味酸奶 1 盒 (200 g)</text>
+<rect x="254.0" y="190" width="214.0" height="18" rx="4" fill="#f1f5f9"/>
+<rect x="254.0" y="190" width="70.0" height="18" rx="4" fill="#e7f6ee" stroke="#18794e" stroke-width="1.4"/>
+<text x="330.0" y="203.5" font-size="9.1" fill="#18794e" text-anchor="start" font-weight="700">8.5 g</text>
+<text x="512" y="203.5" font-size="9.1" fill="#18794e" text-anchor="start" font-weight="600">[友好] 活菌带乳糖酶入肠助攻，更好吸收</text>
+<text x="36" y="232" font-size="9.4" fill="#1e293b" text-anchor="start" font-weight="400">普通浓缩乳清蛋白粉 WPC (30 g)</text>
+<rect x="254.0" y="218" width="214.0" height="18" rx="4" fill="#f1f5f9"/>
+<rect x="254.0" y="218" width="17.3" height="18" rx="4" fill="#e7f6ee" stroke="#18794e" stroke-width="1.4"/>
+<text x="277.3" y="231.5" font-size="9.1" fill="#18794e" text-anchor="start" font-weight="700">2.1 g</text>
+<text x="512" y="231.5" font-size="9.1" fill="#18794e" text-anchor="start" font-weight="600">[低量] 水冲低乳糖（兑牛奶则升至 14g!）</text>
+<text x="36" y="260" font-size="9.4" fill="#0f172a" text-anchor="start" font-weight="700">陈年硬奶酪：切达/帕玛森 (30 g)</text>
+<rect x="254.0" y="246" width="214.0" height="18" rx="4" fill="#f1f5f9"/>
+<rect x="254.0" y="246" width="3.0" height="18" rx="4" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.4"/>
+<text x="263.0" y="259.5" font-size="9.1" fill="#0f766e" text-anchor="start" font-weight="700">0.05 g</text>
+<text x="512" y="259.5" font-size="9.1" fill="#18794e" text-anchor="start" font-weight="600">[极微] 排乳清+漫长熟化，乳糖近乎归零!</text>
+<text x="36" y="288" font-size="9.4" fill="#0f172a" text-anchor="start" font-weight="700">0乳糖舒化奶 (250 mL) / 分离乳清 WPI</text>
+<rect x="254.0" y="274" width="214.0" height="18" rx="4" fill="#f1f5f9"/>
+<text x="260.0" y="287.5" font-size="9.1" fill="#0f766e" text-anchor="start" font-weight="700">≈ 0 g</text>
+<text x="512" y="287.5" font-size="9.1" fill="#18794e" text-anchor="start" font-weight="600">[零糖] 酶解/超滤脱除，重度不耐受放心喝</text>
+<rect x="20" y="332" width="232" height="108" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="32" y="352" font-size="10.2" fill="#1d6fa5" text-anchor="start" font-weight="700">哺乳动物乳汁冷知识</text>
+<text x="32" y="371" font-size="9.1" fill="#1e293b" text-anchor="start">• 人类母乳乳糖高达 ~7.0%（为婴儿</text>
+<text x="32" y="388" font-size="9.1" fill="#1e293b" text-anchor="start">  大脑髓鞘提供半乳糖），比牛奶更高!</text>
+<text x="32" y="406" font-size="9.1" fill="#1e293b" text-anchor="start">• 海狮/海象乳糖 = 0%（高脂防脱水）；</text>
+<text x="32" y="423" font-size="9.1" fill="#0f172a" text-anchor="start" font-weight="700">• 成年猫咪同样缺乳糖酶，别喂大碗牛奶!</text>
+<rect x="264" y="332" width="232" height="108" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="276" y="352" font-size="10.2" fill="#6d28d9" text-anchor="start" font-weight="700">“硬喝练出乳糖酶”是真的吗？</text>
+<text x="276" y="371" font-size="9.1" fill="#1e293b" text-anchor="start">• 小肠 LCT 基因受遗传调控，成年后</text>
+<text x="276" y="388" font-size="9.1" fill="#dc2626" text-anchor="start" font-weight="700">  绝不会因为多喝奶而重新长出乳糖酶!</text>
+<text x="276" y="406" font-size="9.1" fill="#1e293b" text-anchor="start">• 渐进喝奶之所以减轻胀气，是驯化了</text>
+<text x="276" y="423" font-size="9.1" fill="#6d28d9" text-anchor="start" font-weight="700">  结肠双歧杆菌（走产酸少产气路线）!</text>
+<rect x="508" y="332" width="232" height="108" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="520" y="352" font-size="10.2" fill="#18794e" text-anchor="start" font-weight="700">不戒奶补钙实操四招</text>
+<text x="520" y="371" font-size="9.1" fill="#1e293b" text-anchor="start">1. 少量分次（≤200 mL）配主食温热喝；</text>
+<text x="520" y="388" font-size="9.1" fill="#1e293b" text-anchor="start">2. 巧选陈年硬质奶酪、活菌发酵酸奶；</text>
+<text x="520" y="406" font-size="9.1" fill="#1e293b" text-anchor="start">3. 直接换 0乳糖奶，钙和蛋白毫不打折；</text>
+<text x="520" y="423" font-size="9.1" fill="#18794e" text-anchor="start" font-weight="700">4. 吃奶油大餐随第一口嚼酸性乳糖酶片。</text>
+</svg>

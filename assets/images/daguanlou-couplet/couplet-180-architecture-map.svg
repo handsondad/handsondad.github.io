@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="582" viewBox="0 0 760 582" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">大观楼180字长联三幕二十拍结构与声律对称解剖图</title>
+<desc id="desc">将孙髯翁180字大观楼长联拆解为上联90字写景与下联90字咏史两大翼，按第一幕20字登楼起势、第二幕51字中腹铺陈（17字四方对四朝、10字转折、24字扇面对偶句）、第三幕19字四言收束逐行对照，并点明四万九三对几半两一的数词递减机锋。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="581" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">180 字分毫必合：大观楼长联“三幕二十拍”精密对称解剖图</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">上联 90 字拓空间写实景（喜），下联 90 字贯古今咏兴亡（叹）；20 个分句字数、句式、领字严丝合缝。</text>
+<rect x="20" y="62" width="720" height="34" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="84" font-size="11.5" fill="#475569" text-anchor="start" font-weight="700">结构分段（字数）</text>
+<text x="206" y="84" font-size="12.0" fill="#1d6fa5" text-anchor="start" font-weight="700">上联 · 90 字｜空间实景 · 眼底之“喜”</text>
+<text x="482" y="84" font-size="12.0" fill="#c25014" text-anchor="start" font-weight="700">下联 · 90 字｜时间历史 · 心头之“叹”</text>
+<rect x="20" y="104" width="720" height="76" rx="9" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="114.0" width="74" height="20" rx="10.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="69.0" y="127.6" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="600">第一幕</text>
+<text x="32" y="150" font-size="11.4" fill="#0f172a" text-anchor="start" font-weight="700">登楼起势（20字）</text>
+<text x="32" y="167" font-size="10.3" fill="#64748b" text-anchor="start">5·4·4·7 破题立眼</text>
+<line x1="194.0" y1="112.0" x2="194.0" y2="172.0" stroke="#cbd5e1" stroke-width="1.0"/>
+<rect x="204" y="112" width="260" height="50" rx="6" fill="#f8fbff" stroke="#dbeafe" stroke-width="1"/>
+<text x="214" y="130" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="600">五百里滇池，奔来眼底，</text>
+<text x="214" y="148" font-size="11.2" fill="#1d6fa5" text-anchor="start" font-weight="700">披襟岸帻，喜茫茫空阔无边。</text>
+<rect x="474" y="112" width="256" height="50" rx="6" fill="#fffaf5" stroke="#fed7aa" stroke-width="1"/>
+<text x="484" y="130" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="600">数千年往事，注到心头，</text>
+<text x="484" y="148" font-size="11.2" fill="#c25014" text-anchor="start" font-weight="700">把酒凌虚，叹滚滚英雄谁在？</text>
+<text x="206" y="173" font-size="10.3" fill="#1d6fa5" text-anchor="start" font-weight="600">↳ 联眼对撞：“奔来眼底·喜”对“注到心头·叹”</text>
+<rect x="20" y="188" width="720" height="82" rx="9" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="198.0" width="74" height="20" rx="10.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="69.0" y="211.6" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="600">第二幕A</text>
+<text x="32" y="234" font-size="11.4" fill="#0f172a" text-anchor="start" font-weight="700">一字领四方/四朝（17字）</text>
+<text x="32" y="251" font-size="10.3" fill="#64748b" text-anchor="start">1字领 + 四组四言排比</text>
+<line x1="194.0" y1="196.0" x2="194.0" y2="262.0" stroke="#cbd5e1" stroke-width="1.0"/>
+<rect x="204" y="196" width="260" height="56" rx="6" fill="#f8fbff" stroke="#dbeafe" stroke-width="1"/>
+<text x="214" y="214" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="600">看：东骧神骏，西翥灵仪，</text>
+<text x="214" y="232" font-size="11.2" fill="#1d6fa5" text-anchor="start" font-weight="700">北走蜿蜒，南翔缟素。</text>
+<rect x="474" y="196" width="256" height="56" rx="6" fill="#fffaf5" stroke="#fed7aa" stroke-width="1"/>
+<text x="484" y="214" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="600">想：汉习楼船，唐标铁柱，</text>
+<text x="484" y="232" font-size="11.2" fill="#c25014" text-anchor="start" font-weight="700">宋挥玉斧，元跨革囊。</text>
+<text x="206" y="263" font-size="10.3" fill="#18794e" text-anchor="start" font-weight="600">↳ 以“看”摄东西南北四山，以“想”贯汉唐宋元四朝</text>
+<rect x="20" y="278" width="720" height="68" rx="9" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="288.0" width="74" height="20" rx="10.0" fill="#f1f5f9" stroke="#475569" stroke-width="1" stroke-opacity="0.35"/>
+<text x="69.0" y="301.6" font-size="10.8" fill="#475569" text-anchor="middle" font-weight="600">第二幕B</text>
+<text x="32" y="324" font-size="11.4" fill="#0f172a" text-anchor="start" font-weight="700">承上转折过渡（10字）</text>
+<text x="32" y="341" font-size="10.3" fill="#64748b" text-anchor="start">4·6 蓄势换气</text>
+<line x1="194.0" y1="286.0" x2="194.0" y2="338.0" stroke="#cbd5e1" stroke-width="1.0"/>
+<rect x="204" y="286" width="260" height="40" rx="6" fill="#f8fbff" stroke="#dbeafe" stroke-width="1"/>
+<text x="214" y="307" font-size="11.4" fill="#1d6fa5" text-anchor="start" font-weight="700">高人韵士，何妨选胜登临。</text>
+<rect x="474" y="286" width="256" height="40" rx="6" fill="#fffaf5" stroke="#fed7aa" stroke-width="1"/>
+<text x="484" y="307" font-size="11.4" fill="#c25014" text-anchor="start" font-weight="700">伟烈丰功，费尽移山心力。</text>
+<text x="206" y="339" font-size="10.3" fill="#475569" text-anchor="start" font-weight="600">↳ 上联邀雅士赏景，下联叹帝王霸业劳神</text>
+<rect x="20" y="354" width="720" height="82" rx="9" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="364.0" width="74" height="20" rx="10.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="69.0" y="377.6" font-size="10.8" fill="#6d28d9" text-anchor="middle" font-weight="600">第二幕C</text>
+<text x="32" y="400" font-size="11.4" fill="#0f172a" text-anchor="start" font-weight="700">隔句扇面对铺陈（24字）</text>
+<text x="32" y="417" font-size="10.3" fill="#64748b" text-anchor="start">5·7 + 5·7 流水偶句</text>
+<line x1="194.0" y1="362.0" x2="194.0" y2="428.0" stroke="#cbd5e1" stroke-width="1.0"/>
+<rect x="204" y="362" width="260" height="56" rx="6" fill="#f8fbff" stroke="#dbeafe" stroke-width="1"/>
+<text x="214" y="380" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="600">趁蟹屿螺洲，梳裹就风鬟雾鬓；</text>
+<text x="214" y="398" font-size="11.2" fill="#1d6fa5" text-anchor="start" font-weight="700">更蘋天苇地，点缀些翠羽丹霞。</text>
+<rect x="474" y="362" width="256" height="56" rx="6" fill="#fffaf5" stroke="#fed7aa" stroke-width="1"/>
+<text x="484" y="380" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="600">尽珠帘画栋，卷不及暮雨朝云；</text>
+<text x="484" y="398" font-size="11.2" fill="#c25014" text-anchor="start" font-weight="700">便断碣残碑，都付与苍烟落照。</text>
+<text x="206" y="429" font-size="10.3" fill="#6d28d9" text-anchor="start" font-weight="600">↳ 化用王勃《滕王阁序》，浓墨重彩转向荒烟残碑</text>
+<rect x="20" y="444" width="720" height="86" rx="9" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="454.0" width="74" height="20" rx="10.0" fill="#fef3c7" stroke="#b45309" stroke-width="1" stroke-opacity="0.35"/>
+<text x="69.0" y="467.6" font-size="10.8" fill="#b45309" text-anchor="middle" font-weight="600">第三幕</text>
+<text x="32" y="490" font-size="11.4" fill="#0f172a" text-anchor="start" font-weight="700">三字领四言收束（19字）</text>
+<text x="32" y="507" font-size="10.3" fill="#64748b" text-anchor="start">3字领 + 4·4·4·4 余韵</text>
+<line x1="194.0" y1="452.0" x2="194.0" y2="522.0" stroke="#cbd5e1" stroke-width="1.0"/>
+<rect x="204" y="452" width="260" height="60" rx="6" fill="#f8fbff" stroke="#dbeafe" stroke-width="1"/>
+<text x="214" y="470" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="600">莫辜负：四围香稻，万顷晴沙，</text>
+<text x="214" y="488" font-size="11.2" fill="#1d6fa5" text-anchor="start" font-weight="700">九夏芙蓉，三春杨柳。（仄收）</text>
+<rect x="474" y="452" width="256" height="60" rx="6" fill="#fffaf5" stroke="#fed7aa" stroke-width="1"/>
+<text x="484" y="470" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="600">只赢得：几杵疏钟，半江渔火，</text>
+<text x="484" y="488" font-size="11.2" fill="#c25014" text-anchor="start" font-weight="700">两行秋雁，一枕清霜。（平收）</text>
+<text x="206" y="523" font-size="10.3" fill="#b45309" text-anchor="start" font-weight="600">↳ 数词暗藏机锋：“四·万·九·三”繁华对“几·半·两·一”归零！</text>
+<rect x="20" y="538" width="720" height="32" rx="7" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="380" y="558" font-size="11.2" fill="#0f172a" text-anchor="middle" font-weight="700">字数验算：20（起势）+ 17（四排）+ 10（转折）+ 24（偶句）+ 19（收束）= 90 字/联 × 2 = 180 字整</text>
+</svg>

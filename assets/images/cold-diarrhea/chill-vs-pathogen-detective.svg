@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="456" viewBox="0 0 760 456" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">单纯受凉神经反射性腹泻与诺如病毒胃肠炎及细菌性食物中毒五维鉴别诊断表</title>
+<desc id="desc">上部拆解夏季冰西瓜细菌污染与冬季诺如病毒潜伏期被误判为着凉的两大归因错觉；下部从发作潜伏期、排便呕吐特点、发热酸痛、粪便脓血性状及传染性与抗生素禁忌五个维度对比三类腹泻。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="455" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">科学破案：别什么锅都甩给“着凉”！30 秒分清真受凉反射 vs 病毒与细菌偷袭</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">夏季“空调冰西瓜拉肚子”和冬季“冻着肚子上吐下泻”，至少有一半其实是病原体让冷风背了黑锅！</text>
+<rect x="20" y="62" width="354" height="86" rx="10" fill="#fffbeb" stroke="#b45309" stroke-width="1"/>
+<text x="34" y="83" font-size="9.9" fill="#b45309" text-anchor="start" font-weight="700">经典错觉 A：夏天吹空调吃冰镇隔夜西瓜狂拉</text>
+<text x="34" y="103" font-size="9.0" fill="#1e293b" text-anchor="start">• 真相：冰温虽会催快蠕动，但如果连拉五六趟甚至发烧，</text>
+<text x="34" y="120" font-size="9.0" fill="#0f172a" text-anchor="start" font-weight="700">  真凶多半是切瓜案板/刀具生熟混用或冰箱滋生的沙门氏菌、</text>
+<text x="34" y="137" font-size="9.0" fill="#dc2626" text-anchor="start" font-weight="700">  副溶血弧菌或金黄色葡萄球菌肠毒素！</text>
+<rect x="386" y="62" width="354" height="86" rx="10" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="400" y="83" font-size="9.9" fill="#1d6fa5" text-anchor="start" font-weight="700">经典错觉 B：冬天半夜觉得冷，第二天全家上吐下泻</text>
+<text x="400" y="103" font-size="9.0" fill="#0f172a" text-anchor="start" font-weight="700">• 真相：冬季头号元凶其实是极耐寒的诺如病毒 (Norovirus)！</text>
+<text x="400" y="120" font-size="9.0" fill="#1e293b" text-anchor="start">  潜伏期恰好 12–48 小时，发作前畏寒发冷本就是病毒前驱症状，</text>
+<text x="400" y="137" font-size="9.0" fill="#1d6fa5" text-anchor="start" font-weight="700">  却常被误以为“昨晚踢被子冻出了胃肠感冒”！</text>
+<rect x="20" y="160" width="720" height="282" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="20" y="160" width="720" height="34" rx="8" fill="#f1f5f9"/>
+<text x="86" y="182" font-size="9.8" fill="#0f172a" text-anchor="middle" font-weight="700">鉴别维度</text>
+<text x="252" y="182" font-size="9.8" fill="#18794e" text-anchor="middle" font-weight="700">单纯着凉功能性腹泻（神经反射）</text>
+<text x="458" y="182" font-size="9.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">诺如 / 轮状病毒性胃肠炎</text>
+<text x="644" y="182" font-size="9.8" fill="#dc2626" text-anchor="middle" font-weight="700">细菌性肠炎 / 食物中毒</text>
+<line x1="28.0" y1="194.0" x2="732.0" y2="194.0" stroke="#cbd5e1" stroke-width="1.0"/>
+<line x1="148.0" y1="164.0" x2="148.0" y2="438.0" stroke="#cbd5e1" stroke-width="0.9"/>
+<line x1="356.0" y1="164.0" x2="356.0" y2="438.0" stroke="#cbd5e1" stroke-width="0.9"/>
+<line x1="554.0" y1="164.0" x2="554.0" y2="438.0" stroke="#cbd5e1" stroke-width="0.9"/>
+<text x="86" y="223" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="700">发作潜伏期</text>
+<text x="252" y="223" font-size="8.9" fill="#18794e" text-anchor="middle" font-weight="600">极快（吹风/冰饮后 15 min–2 h）</text>
+<text x="455" y="223" font-size="8.9" fill="#1e293b" text-anchor="middle" font-weight="600">潜伏 12–48 小时后突然暴发</text>
+<text x="644" y="223" font-size="8.9" fill="#1e293b" text-anchor="middle" font-weight="600">2–6 h (毒素) 或 12–72 h (活菌)</text>
+<line x1="28.0" y1="243.0" x2="732.0" y2="243.0" stroke="#cbd5e1" stroke-width="1.0"/>
+<rect x="24" y="244" width="712" height="47" fill="#f8fafc"/>
+<line x1="148.0" y1="164.0" x2="148.0" y2="438.0" stroke="#cbd5e1" stroke-width="0.9"/>
+<line x1="356.0" y1="164.0" x2="356.0" y2="438.0" stroke="#cbd5e1" stroke-width="0.9"/>
+<line x1="554.0" y1="164.0" x2="554.0" y2="438.0" stroke="#cbd5e1" stroke-width="0.9"/>
+<text x="86" y="272" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="700">排便与呕吐</text>
+<text x="252" y="272" font-size="8.9" fill="#1e293b" text-anchor="middle" font-weight="600">拉 1–2 次稀软便，排空立刻轻松</text>
+<text x="455" y="272" font-size="8.9" fill="#1d6fa5" text-anchor="middle" font-weight="600">水样便日拉数次 + 常伴喷射呕吐</text>
+<text x="644" y="272" font-size="8.9" fill="#1e293b" text-anchor="middle" font-weight="600">频繁腹泻，常伴剧烈腹痛里急后重</text>
+<line x1="28.0" y1="292.0" x2="732.0" y2="292.0" stroke="#cbd5e1" stroke-width="1.0"/>
+<line x1="148.0" y1="164.0" x2="148.0" y2="438.0" stroke="#cbd5e1" stroke-width="0.9"/>
+<line x1="356.0" y1="164.0" x2="356.0" y2="438.0" stroke="#cbd5e1" stroke-width="0.9"/>
+<line x1="554.0" y1="164.0" x2="554.0" y2="438.0" stroke="#cbd5e1" stroke-width="0.9"/>
+<text x="86" y="321" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="700">发烧与酸痛</text>
+<text x="252" y="321" font-size="8.9" fill="#18794e" text-anchor="middle" font-weight="600">绝不发烧（体温正常）</text>
+<text x="455" y="321" font-size="8.9" fill="#1e293b" text-anchor="middle" font-weight="600">常伴低中度发热、头痛、肌肉酸痛</text>
+<text x="644" y="321" font-size="8.9" fill="#dc2626" text-anchor="middle" font-weight="600">常见中高热（&gt;38.5 ℃）、寒战乏力</text>
+<line x1="28.0" y1="341.0" x2="732.0" y2="341.0" stroke="#cbd5e1" stroke-width="1.0"/>
+<rect x="24" y="342" width="712" height="47" fill="#f8fafc"/>
+<line x1="148.0" y1="164.0" x2="148.0" y2="438.0" stroke="#cbd5e1" stroke-width="0.9"/>
+<line x1="356.0" y1="164.0" x2="356.0" y2="438.0" stroke="#cbd5e1" stroke-width="0.9"/>
+<line x1="554.0" y1="164.0" x2="554.0" y2="438.0" stroke="#cbd5e1" stroke-width="0.9"/>
+<text x="86" y="370" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="700">粪便性状</text>
+<text x="252" y="370" font-size="8.9" fill="#1e293b" text-anchor="middle" font-weight="600">黄色稀糊或水样，无脓血黏液</text>
+<text x="455" y="370" font-size="8.9" fill="#1e293b" text-anchor="middle" font-weight="600">清亮或蛋花汤样水便，无脓血</text>
+<text x="644" y="370" font-size="8.9" fill="#dc2626" text-anchor="middle" font-weight="600">可带大量黏液、腥臭甚至脓血丝!</text>
+<line x1="28.0" y1="390.0" x2="732.0" y2="390.0" stroke="#cbd5e1" stroke-width="1.0"/>
+<line x1="148.0" y1="164.0" x2="148.0" y2="438.0" stroke="#cbd5e1" stroke-width="0.9"/>
+<line x1="356.0" y1="164.0" x2="356.0" y2="438.0" stroke="#cbd5e1" stroke-width="0.9"/>
+<line x1="554.0" y1="164.0" x2="554.0" y2="438.0" stroke="#cbd5e1" stroke-width="0.9"/>
+<text x="86" y="419" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="700">传染与用药</text>
+<text x="252" y="419" font-size="8.9" fill="#1e293b" text-anchor="middle" font-weight="600">不传染；温敷补水自愈，禁抗生素</text>
+<text x="455" y="419" font-size="8.9" fill="#1d6fa5" text-anchor="middle" font-weight="600">极强传染！肥皂洗手+ORS，禁抗生素!</text>
+<text x="644" y="419" font-size="8.9" fill="#1e293b" text-anchor="middle" font-weight="600">同桌共食者常同病；重者须就医验便</text>
+</svg>

@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="530" viewBox="0 0 760 530" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">花瓣淀粉水解两倍胎压千斤顶与开花高能耗代谢账单图解</title>
+<desc id="desc">左侧展示淀粉与蔗糖酶切倍增溶质颗粒产生0.48 MPa渗透压（超两倍轿车胎压）、PIP2水通道开启及内外侧不对称膨胀撬开花冠；右侧展示开花期线粒体ATP驱动色素、花香、花蜜、花粉管及绿色花萼光合补贴。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-ink" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#0f172a"/>
+  </marker>
+  <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#6d28d9"/>
+  </marker>
+  <marker id="arr-red" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#dc2626"/>
+  </marker>
+  <marker id="arr-pink" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#db2777"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="529" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="380" y="30" font-size="17" fill="#0f172a" text-anchor="middle" font-weight="700">没有一块肌肉的花苞，凭什么在春风里 5–30 分钟撑开花瓣？</text>
+<text x="380" y="52" font-size="12" fill="#64748b" text-anchor="middle">糖分的“双重身份”：一半化身两倍汽车胎压的液压千斤顶，一半进线粒体烧出色彩、花香与花蜜</text>
+<rect x="24" y="72" width="362" height="404" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="40.0" y="86.0" width="214" height="24" rx="12.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="147.0" y="102.3" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">身份一：0.48 MPa 液压千斤顶</text>
+<rect x="40" y="122" width="330" height="96" rx="10" fill="#fffbeb" stroke="#b45309" stroke-width="1.3"/>
+<text x="54" y="142" font-size="12" fill="#b45309" text-anchor="start" font-weight="700">① 酶切“颗粒倍增术”（范特霍夫定律 Π = MiRT）</text>
+<text x="54" y="163" font-size="11" fill="#1e293b" text-anchor="start">不溶淀粉粒：M ≈ 0 → 渗透压 ≈ 0 MPa（冬储零负担）</text>
+<text x="54" y="183" font-size="11" fill="#1e293b" text-anchor="start">0.10 M 蔗糖（0.24 MPa）→ 转化酶切成 0.10 M 葡萄糖</text>
+<text x="54" y="203" font-size="11" fill="#dc2626" text-anchor="start" font-weight="700">+ 0.10 M 果糖 = 0.20 M 单糖 → Π 翻倍达 0.48 MPa！</text>
+<line x1="205" y1="218" x2="205" y2="232" stroke="#1d6fa5" stroke-width="1.6" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<rect x="40" y="234" width="330" height="106" rx="10" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.3"/>
+<text x="54" y="254" font-size="12" fill="#1d6fa5" text-anchor="start" font-weight="700">② 水通道蛋白闸门全开 + 两倍轿车胎压撑大液泡</text>
+<text x="54" y="275" font-size="11" fill="#1e293b" text-anchor="start">春晨升温触发 Ca²⁺ 磷酸化开启 PIP2;2 水通道（郁金香实证）</text>
+<text x="54" y="300" font-size="11" fill="#64748b" text-anchor="start">家用轿车胎压</text>
+<rect x="138" y="288" width="82" height="15" rx="4" fill="#475569" opacity="0.65"/>
+<text x="228" y="300" font-size="11" fill="#475569" text-anchor="start" font-weight="700">0.23 MPa</text>
+<text x="54" y="325" font-size="11" fill="#1d6fa5" text-anchor="start" font-weight="700">花瓣细胞膨压</text>
+<rect x="138" y="313" width="166" height="15" rx="4" fill="#1d6fa5"/>
+<text x="310" y="325" font-size="11" fill="#1d6fa5" text-anchor="start" font-weight="700">0.48 MPa</text>
+<line x1="205" y1="340" x2="205" y2="354" stroke="#db2777" stroke-width="1.6" stroke-linecap="round" marker-end="url(#arr-pink)"/>
+<rect x="40" y="356" width="330" height="108" rx="10" fill="#fdf2f8" stroke="#db2777" stroke-width="1.3"/>
+<text x="54" y="375" font-size="12" fill="#db2777" text-anchor="start" font-weight="700">③ 内外侧不对称膨胀：像双金属片一样撬开花冠</text>
+<text x="54" y="395" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">花芽含水率从越冬 54% → 膨大芽 60% → 盛花 80%！</text>
+<text x="54" y="415" font-size="11" fill="#1e293b" text-anchor="start">细胞壁松弛蛋白解锁纤维素后，花瓣近轴面（内侧）细胞</text>
+<text x="54" y="434" font-size="11" fill="#1e293b" text-anchor="start">吸水伸长快于远轴面（外侧），无需肌肉就把花瓣向外推开</text>
+<text x="54" y="453" font-size="11" fill="#64748b" text-anchor="start">反证：抑制百合花瓣淀粉降解，花苞便无法正常张开</text>
+<rect x="402" y="72" width="334" height="404" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="418.0" y="86.0" width="214" height="24" rx="12.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="525.0" y="102.3" font-size="12" fill="#b45309" text-anchor="middle" font-weight="600">身份二：高能耗代谢熔炉（ATP）</text>
+<text x="418" y="126" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">花朵由闭转开瞬间，线粒体三羧酸循环（TCA）飙升：</text>
+<rect x="418" y="140" width="302" height="54" rx="9" fill="#fdf2f8" stroke="#db2777" stroke-width="1.2"/>
+<text x="432" y="160" font-size="11" fill="#db2777" text-anchor="start" font-weight="700">视觉广告：花青素与类胡萝卜素合成</text>
+<text x="432" y="180" font-size="11" fill="#1e293b" text-anchor="start">消耗糖骨架与 ATP 刷出粉白紫红，给传粉昆虫亮信号灯</text>
+<rect x="418" y="206" width="302" height="54" rx="9" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="432" y="226" font-size="11" fill="#6d28d9" text-anchor="start" font-weight="700">嗅觉广播：挥发性芳香物质（VOCs）</text>
+<text x="432" y="246" font-size="11" fill="#1e293b" text-anchor="start">萜类与苯丙烷类香气分子持续合成挥发，远距离导航蜜蜂</text>
+<rect x="418" y="272" width="302" height="54" rx="9" fill="#fffbeb" stroke="#b45309" stroke-width="1.2"/>
+<text x="432" y="292" font-size="11" fill="#b45309" text-anchor="start" font-weight="700">甜蜜报酬：细胞壁外花蜜分泌</text>
+<text x="432" y="312" font-size="11" fill="#1e293b" text-anchor="start">SWEET 转运蛋白泵出蔗糖再水解，雇佣早春熊蜂与食蚜蝇</text>
+<rect x="418" y="338" width="302" height="54" rx="9" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="432" y="358" font-size="11" fill="#1d6fa5" text-anchor="start" font-weight="700">极速冲刺：花粉管尖端生长</text>
+<text x="432" y="378" font-size="11" fill="#1e293b" text-anchor="start">AtSUC1 狂吸蔗糖+脯氨酸，维持 0.2–0.3 MPa 膨压破壁授粉</text>
+<rect x="418" y="404" width="302" height="56" rx="9" fill="#e7f6ee" stroke="#18794e" stroke-width="1.3"/>
+<text x="432" y="424" font-size="11" fill="#18794e" text-anchor="start" font-weight="700">绿色花萼/花梗/幼果的“自力更生补贴”</text>
+<text x="432" y="444" font-size="11" fill="#1e293b" text-anchor="start">δ¹³C 同位素证实绿萼就地光合回血，并借微弱蒸腾补钙 Ca²⁺</text>
+<rect x="24" y="488" width="712" height="28" rx="8" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="380" y="507" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="700">先看左卡力学撑开（糖变渗透压拉水入液泡），再看右卡生化账单（糖进线粒体换色香味蜜）：一克春糖打两份工</text>
+</svg>

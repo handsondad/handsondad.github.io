@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="498" viewBox="0 0 760 498" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">碳十四5730年半衰期指数衰变曲线与典型文物年代标定图</title>
+<desc id="desc">精确绘制N(t)/N0=2^(-t/5730)指数衰变曲线，标出都灵裹尸布（约670年，剩92.2%）、三星堆祭祀坑炭屑（约3100年，剩68.7%）、1个半衰期5730年（剩50%）、2个半衰期11460年（剩25%）、3个半衰期17190年（剩12.5%）及约5万年测年上限（不足0.2%），底部说明5568年惯用半衰期与5730年物理半衰期的国际换算约定。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="497" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">碳十四指数衰变曲线：从都灵裹尸布、三星堆祭祀坑到 5 万年量程极限</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">按真实物理半衰期 T₁/₂ = 5,730 年精确计算：每多走一个半衰期减半一次，10 个半衰期后不足千分之一</text>
+<rect x="24" y="68" width="712" height="336" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<path d="M76.0,98.0 L708.0,98.0" fill="none" stroke="#cbd5e1" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 4"/>
+<text x="68.0" y="102.0" font-size="11" fill="#475569" text-anchor="end" class="mono">100%</text>
+<path d="M76.0,162.0 L708.0,162.0" fill="none" stroke="#cbd5e1" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 4"/>
+<text x="68.0" y="166.0" font-size="11" fill="#475569" text-anchor="end" class="mono">75%</text>
+<path d="M76.0,226.0 L708.0,226.0" fill="none" stroke="#cbd5e1" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 4"/>
+<text x="68.0" y="230.0" font-size="11" fill="#475569" text-anchor="end" class="mono">50%</text>
+<path d="M76.0,290.0 L708.0,290.0" fill="none" stroke="#cbd5e1" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 4"/>
+<text x="68.0" y="294.0" font-size="11" fill="#475569" text-anchor="end" class="mono">25%</text>
+<path d="M76.0,354.0 L708.0,354.0" fill="none" stroke="#475569" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="68.0" y="358.0" font-size="11" fill="#475569" text-anchor="end" class="mono">0%</text>
+<path d="M76.0,98.0 L76.0,354.0" fill="none" stroke="#cbd5e1" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 4"/>
+<text x="76.0" y="371.0" font-size="10.5" fill="#475569" text-anchor="middle" class="mono">0(现代)</text>
+<path d="M139.2,98.0 L139.2,354.0" fill="none" stroke="#cbd5e1" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 4"/>
+<text x="139.2" y="371.0" font-size="10.5" fill="#475569" text-anchor="middle" class="mono">5,730</text>
+<text x="139.2" y="386.0" font-size="10" fill="#64748b" text-anchor="middle" class="mono">1T₁/₂</text>
+<path d="M202.4,98.0 L202.4,354.0" fill="none" stroke="#cbd5e1" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 4"/>
+<text x="202.4" y="371.0" font-size="10.5" fill="#475569" text-anchor="middle" class="mono">11,460</text>
+<text x="202.4" y="386.0" font-size="10" fill="#64748b" text-anchor="middle" class="mono">2T₁/₂</text>
+<path d="M265.6,98.0 L265.6,354.0" fill="none" stroke="#cbd5e1" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 4"/>
+<text x="265.6" y="371.0" font-size="10.5" fill="#475569" text-anchor="middle" class="mono">17,190</text>
+<text x="265.6" y="386.0" font-size="10" fill="#64748b" text-anchor="middle" class="mono">3T₁/₂</text>
+<path d="M392.0,98.0 L392.0,354.0" fill="none" stroke="#cbd5e1" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 4"/>
+<text x="392.0" y="371.0" font-size="10.5" fill="#475569" text-anchor="middle" class="mono">28,650</text>
+<text x="392.0" y="386.0" font-size="10" fill="#64748b" text-anchor="middle" class="mono">5T₁/₂</text>
+<path d="M581.6,98.0 L581.6,354.0" fill="none" stroke="#cbd5e1" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 4"/>
+<text x="581.6" y="371.0" font-size="10.5" fill="#475569" text-anchor="middle" class="mono">45,840</text>
+<path d="M708.0,98.0 L708.0,354.0" fill="none" stroke="#cbd5e1" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 4"/>
+<text x="708.0" y="371.0" font-size="10.5" fill="#475569" text-anchor="middle" class="mono">57,300</text>
+<text x="708.0" y="386.0" font-size="10" fill="#64748b" text-anchor="middle" class="mono">10T₁/₂</text>
+<text x="548" y="387.0" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="600">死亡距今年数 t（年）</text>
+<path d="M76.00,98.00 L81.27,112.37 L86.53,125.93 L91.80,138.73 L97.07,150.81 L102.33,162.22 L107.60,172.98 L112.87,183.14 L118.13,192.73 L123.40,201.78 L128.67,210.32 L133.93,218.39 L139.20,226.00 L144.47,233.18 L149.73,239.96 L155.00,246.37 L160.27,252.41 L165.53,258.11 L170.80,263.49 L176.07,268.57 L181.33,273.37 L186.60,277.89 L191.87,282.16 L197.13,286.19 L202.40,290.00 L207.67,293.59 L212.93,296.98 L218.20,300.18 L223.47,303.20 L228.73,306.05 L234.00,308.75 L239.27,311.29 L244.53,313.68 L249.80,315.95 L255.07,318.08 L260.33,320.10 L265.60,322.00 L270.87,323.80 L276.13,325.49 L281.40,327.09 L286.67,328.60 L291.93,330.03 L297.20,331.37 L302.47,332.64 L307.73,333.84 L313.00,334.97 L318.27,336.04 L323.53,337.05 L328.80,338.00 L334.07,338.90 L339.33,339.75 L344.60,340.55 L349.87,341.30 L355.13,342.01 L360.40,342.69 L365.67,343.32 L370.93,343.92 L376.20,344.49 L381.47,345.02 L386.73,345.52 L392.00,346.00 L397.27,346.45 L402.53,346.87 L407.80,347.27 L413.07,347.65 L418.33,348.01 L423.60,348.34 L428.87,348.66 L434.13,348.96 L439.40,349.24 L444.67,349.51 L449.93,349.76 L455.20,350.00 L460.47,350.22 L465.73,350.44 L471.00,350.64 L476.27,350.83 L481.53,351.00 L486.80,351.17 L492.07,351.33 L497.33,351.48 L502.60,351.62 L507.87,351.76 L513.13,351.88 L518.40,352.00 L523.67,352.11 L528.93,352.22 L534.20,352.32 L539.47,352.41 L544.73,352.50 L550.00,352.59 L555.27,352.67 L560.53,352.74 L565.80,352.81 L571.07,352.88 L576.33,352.94 L581.60,353.00 L586.87,353.06 L592.13,353.11 L597.40,353.16 L602.67,353.21 L607.93,353.25 L613.20,353.29 L618.47,353.33 L623.73,353.37 L629.00,353.41 L634.27,353.44 L639.53,353.47 L644.80,353.50 L650.07,353.53 L655.33,353.55 L660.60,353.58 L665.87,353.60 L671.13,353.63 L676.40,353.65 L681.67,353.67 L686.93,353.69 L692.20,353.70 L697.47,353.72 L702.73,353.74 L708.00,353.75 L708.00,354.00 L76.00,354.00 Z" fill="#fef1e8" opacity="0.55"/>
+<path d="M76.00,98.00 L81.27,112.37 L86.53,125.93 L91.80,138.73 L97.07,150.81 L102.33,162.22 L107.60,172.98 L112.87,183.14 L118.13,192.73 L123.40,201.78 L128.67,210.32 L133.93,218.39 L139.20,226.00 L144.47,233.18 L149.73,239.96 L155.00,246.37 L160.27,252.41 L165.53,258.11 L170.80,263.49 L176.07,268.57 L181.33,273.37 L186.60,277.89 L191.87,282.16 L197.13,286.19 L202.40,290.00 L207.67,293.59 L212.93,296.98 L218.20,300.18 L223.47,303.20 L228.73,306.05 L234.00,308.75 L239.27,311.29 L244.53,313.68 L249.80,315.95 L255.07,318.08 L260.33,320.10 L265.60,322.00 L270.87,323.80 L276.13,325.49 L281.40,327.09 L286.67,328.60 L291.93,330.03 L297.20,331.37 L302.47,332.64 L307.73,333.84 L313.00,334.97 L318.27,336.04 L323.53,337.05 L328.80,338.00 L334.07,338.90 L339.33,339.75 L344.60,340.55 L349.87,341.30 L355.13,342.01 L360.40,342.69 L365.67,343.32 L370.93,343.92 L376.20,344.49 L381.47,345.02 L386.73,345.52 L392.00,346.00 L397.27,346.45 L402.53,346.87 L407.80,347.27 L413.07,347.65 L418.33,348.01 L423.60,348.34 L428.87,348.66 L434.13,348.96 L439.40,349.24 L444.67,349.51 L449.93,349.76 L455.20,350.00 L460.47,350.22 L465.73,350.44 L471.00,350.64 L476.27,350.83 L481.53,351.00 L486.80,351.17 L492.07,351.33 L497.33,351.48 L502.60,351.62 L507.87,351.76 L513.13,351.88 L518.40,352.00 L523.67,352.11 L528.93,352.22 L534.20,352.32 L539.47,352.41 L544.73,352.50 L550.00,352.59 L555.27,352.67 L560.53,352.74 L565.80,352.81 L571.07,352.88 L576.33,352.94 L581.60,353.00 L586.87,353.06 L592.13,353.11 L597.40,353.16 L602.67,353.21 L607.93,353.25 L613.20,353.29 L618.47,353.33 L623.73,353.37 L629.00,353.41 L634.27,353.44 L639.53,353.47 L644.80,353.50 L650.07,353.53 L655.33,353.55 L660.60,353.58 L665.87,353.60 L671.13,353.63 L676.40,353.65 L681.67,353.67 L686.93,353.69 L692.20,353.70 L697.47,353.72 L702.73,353.74 L708.00,353.75" fill="none" stroke="#dc2626" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="83.4" cy="117.9" r="4" fill="#6d28d9" stroke="#fff" stroke-width="1.2"/>
+<path d="M87.4,115.9 L129.4,105.9" fill="none" stroke="#6d28d9" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="133.4" y="107.9" font-size="10.5" fill="#6d28d9" text-anchor="start" font-weight="700" class="halo">都灵裹尸布 (~670年, 剩92.2% → 中世纪亚麻)</text>
+<circle cx="110.2" cy="178.1" r="4.5" fill="#dc2626" stroke="#fff" stroke-width="1.3"/>
+<path d="M115.2,176.1 L164.2,164.1" fill="none" stroke="#dc2626" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="168.2" y="167.1" font-size="11" fill="#dc2626" text-anchor="start" font-weight="700" class="halo">三星堆祭祀坑炭屑 (~3100年, 剩68.7% → 商代晚期)</text>
+<circle cx="139.2" cy="226.0" r="4.5" fill="#1d6fa5" stroke="#fff" stroke-width="1.3"/>
+<path d="M144.2,226.0 L185.2,220.0" fill="none" stroke="#1d6fa5" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="189.2" y="223.0" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="700" class="halo">1个半衰期 5,730年：剩 50.0%（冰人奥兹 ~5300年近此）</text>
+<circle cx="202.4" cy="290.0" r="4" fill="#1d6fa5" stroke="#fff" stroke-width="1.2"/>
+<text x="214.4" y="284.0" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="600" class="halo">2个半衰期 (11,460年)：剩 25.0%（万年新石器之交）</text>
+<circle cx="265.6" cy="322.0" r="4" fill="#0f766e" stroke="#fff" stroke-width="1.2"/>
+<text x="277.6" y="312.0" font-size="10.5" fill="#0f766e" text-anchor="start" font-weight="600" class="halo">3个半衰期 (17,190年)：剩 12.5%（拉斯科洞穴壁画期）</text>
+<circle cx="644.8" cy="353.5" r="4" fill="#475569" stroke="#fff" stroke-width="1.2"/>
+<text x="702" y="339.9" font-size="10" fill="#475569" text-anchor="end" font-weight="700" class="halo">≈5万年测年上限：剩 &lt;0.2%（10T₁/₂ 仅剩 1/1024）</text>
+<rect x="24" y="414" width="712" height="68" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="38.0" y="426.0" width="258" height="20" rx="10.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="167.0" y="439.6" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="600">为什么报告有两个半衰期(5568 vs 5730)？</text>
+<text x="306" y="440" font-size="10" fill="#1e293b" text-anchor="start">利比初测 5568 年(均寿 8033 年)，精确物理值 5730±40 年(均寿 8267 年)。</text>
+<text x="38" y="466" font-size="10" fill="#64748b" text-anchor="start">国际约定原始“惯用年龄 BP(距1950年)”仍按 5568 年报数，再用 IntCal20 树轮曲线统一校正为日历年(cal BC/AD)！</text>
+</svg>

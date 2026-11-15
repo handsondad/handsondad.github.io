@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="518" viewBox="0 0 760 518" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">开普勒定律现代前沿应用：银心黑洞S2轨道测重与星系暗物质旋转曲线</title>
+<desc id="desc">左图展示恒星S2沿偏心率0.885椭圆每16.05年绕Sgr A*一周，由第三定律测出415万倍太阳质量黑洞；右图展示星系平坦旋转曲线揭示暗物质晕及近日点进动验证广义相对论。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="517" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">四百年后的硬核战场：用开普勒定律称出银心黑洞，再用它的“失效”揪出暗物质！</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">当观测完美符合它，人类找到了 415 万倍太阳质量黑洞；当观测违背它，人类发现了广义相对论与暗物质晕</text>
+<rect x="22" y="68" width="356" height="382" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="90" r="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="42" y="94" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">1</text>
+<text x="60" y="95" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">巅峰应用：恒星 S2 称出银河系中心黑洞</text>
+<rect x="36" y="112" width="328" height="198" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<g transform="rotate(-18 196.0 206.0)"><ellipse cx="196.0" cy="206.0" rx="112.0" ry="52.2" fill="#f3e8ff" fill-opacity="0.55" stroke="#6d28d9" stroke-width="2.4"/></g>
+<circle cx="290.2" cy="175.4" r="7.5" fill="#111827" stroke="#b45309" stroke-width="2.2"/>
+<text x="278.2" y="163.4" font-size="11" fill="#0f172a" text-anchor="end" font-weight="700" class="halo">银心黑洞 Sgr A*</text>
+<circle cx="302.5" cy="171.4" r="5" fill="#b91c1c"/>
+<text x="304.5" y="189.4" font-size="10.5" fill="#b91c1c" text-anchor="end" font-weight="700" class="halo">2018 近心点: 7,650 km/s!</text>
+<circle cx="89.5" cy="240.6" r="5" fill="#1d6fa5"/>
+<text x="95.5" y="262.6" font-size="11" fill="#6d28d9" text-anchor="start" font-weight="700" class="halo">恒星 S2 (e=0.885)</text>
+<text x="200" y="296" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="600">周期 T = 16.05 年，半长轴 a ≈ 1,020 AU</text>
+<rect x="36" y="320" width="328" height="118" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="48" y="342" font-size="11" fill="#0f172a" text-anchor="start" font-weight="600">• 直接代入第三定律 M = a³ / T²（太阳单位）：</text>
+<text x="200" y="368" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="700">M ≈ 1020³ / 16.05² ≈ 415 万倍太阳质量！</text>
+<text x="48" y="392" font-size="10.5" fill="#1e293b" text-anchor="start">• 400 多万颗太阳塞进比海王星轨道大不了多少的空间</text>
+<text x="48" y="412" font-size="11" fill="#18794e" text-anchor="start" font-weight="700">• 根泽尔与盖兹凭此斩获 2020 年诺贝尔物理学奖！</text>
+<rect x="392" y="68" width="346" height="382" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="412" cy="90" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="412" y="94" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="430" y="95" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">当开普勒定律“算不准”：两大新物理诞生！</text>
+<rect x="406" y="112" width="318" height="188" rx="8" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<text x="418" y="133" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">反常 ①：星系外围恒星拒绝按 v ∝ 1/√r 减速！</text>
+<line x1="442.0" y1="258.0" x2="706.0" y2="258.0" stroke="#0f172a" stroke-width="1.5" marker-end="url(#arr-muted)"/>
+<line x1="442.0" y1="258.0" x2="442.0" y2="148.0" stroke="#0f172a" stroke-width="1.5" marker-end="url(#arr-muted)"/>
+<text x="436" y="158" font-size="11" fill="#0f172a" text-anchor="end" font-weight="700">v</text>
+<text x="698" y="274" font-size="10.5" fill="#475569" text-anchor="end">距星系中心距离 r</text>
+<path d="M442,258 Q466,182 496,178 L694,175" fill="none" stroke="#b91c1c" stroke-width="2.6"/>
+<path d="M496,178 Q554,218 694,238" fill="none" stroke="#1d6fa5" stroke-width="2.2" stroke-dasharray="5,4"/>
+<text x="596" y="166" font-size="10.5" fill="#b91c1c" text-anchor="middle" font-weight="700" class="halo">实测星系旋转曲线：v ≈ 常数（平坦！）</text>
+<text x="612" y="248" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="600" class="halo">开普勒预期：v ∝ r⁻¹/²</text>
+<text x="565" y="290" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700">推论：外围包着巨量看不见的“暗物质晕” M(r) ∝ r！</text>
+<rect x="406" y="310" width="318" height="128" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="418" y="332" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">反常 ②：强引力场下椭圆不再严格闭合（进动）</text>
+<text x="418" y="355" font-size="10.5" fill="#1e293b" text-anchor="start">• 纯 1/r² 引力特有的拉普拉斯—龙格—楞次矢量守恒，</text>
+<text x="418" y="374" font-size="10.5" fill="#1e293b" text-anchor="start">  才保证理想二体椭圆万年不转圈；</text>
+<text x="418" y="396" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600">• 水星每世纪多转 43 角秒、恒星 S2 每圈进动 12 角分，</text>
+<text x="418" y="416" font-size="10.5" fill="#b91c1c" text-anchor="start" font-weight="700">  精准验证爱因斯坦广义相对论的时空弯曲修正！</text>
+<rect x="22" y="462" width="716" height="42" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="380" y="488" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">科学史最美闭环：1609 年开普勒因“8 角分偏差”掀翻正圆；300 年后爱因斯坦因水星“43 角秒偏差”掀翻牛顿绝对时空！</text>
+</svg>

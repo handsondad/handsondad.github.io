@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="516" viewBox="0 0 760 516" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">1958年探险者1号柔性天线耗能引发扁平自旋失稳与最大转动惯量法则图</title>
+<desc id="desc">左栏展示探险者1号细长箭体绕最小转动惯量轴750转每分自旋及鞭状天线耗能，右栏用E等于L平方除以2I证明角动量守恒下动能损耗必然迫使卫星翻转90度进入最大惯量轴扁平翻滚。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-b" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#1d6fa5"/>
+    </marker>
+    <marker id="arr-o" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#c25014"/>
+    </marker>
+    <marker id="arr-g" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#18794e"/>
+    </marker>
+    <marker id="arr-p" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M0,1 L9,5 L0,9 z" fill="#6d28d9"/>
+    </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="515" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">改写教科书的太空翻车：1958 年美国首颗卫星“探险者 1 号”为什么自己横过来翻跟头？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">角动量 L 严格守恒，但柔性天线甩动摩擦偷走了动能 E = L²/(2I) → 铅笔形卫星被迫翻成转动惯量最大的“螺旋桨扁平自旋”！</text>
+<rect x="22" y="68" width="344" height="344" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="38" y="82" width="312" height="28" rx="8" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<text x="194" y="101" font-size="11.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">入轨初态：绕细长轴（最小惯量 I_min）每分钟转 750 圈</text>
+<line x1="64" y1="198" x2="330" y2="198" stroke="#1d6fa5" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arr-b)"/>
+<text x="326" y="188" font-size="10.5" fill="#1d6fa5" text-anchor="end" font-weight="700">角动量 L 方向</text>
+<rect x="116" y="189" width="144" height="18" rx="4" fill="#dbeafe" stroke="#1d6fa5" stroke-width="2"/>
+<polygon points="260,189 286,198 260,207" fill="#1d6fa5"/>
+<path d="M 204,189 Q 198,154 184,136" fill="none" stroke="#c25014" stroke-width="2.2"/>
+<path d="M 204,207 Q 198,242 184,260" fill="none" stroke="#c25014" stroke-width="2.2"/>
+<text x="260" y="152" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="700">4 根柔性鞭状天线</text>
+<text x="260" y="170" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="700">微晃生热 ΔE &lt; 0！</text>
+<rect x="38" y="286" width="312" height="110" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="52" y="309" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">● 细铅笔几何账：长 2.05 m，直径仅 0.15 m</text>
+<text x="52" y="331" font-size="10.5" fill="#1e293b" text-anchor="start">● 绕细长轴转动惯量极小（I_min），横向翻滚惯量大 120 倍！</text>
+<text x="52" y="353" font-size="10.5" fill="#1e293b" text-anchor="start">● 致命盲区：当年冯·布劳恩与 JPL 团队按“纯刚体欧拉方程”</text>
+<text x="64" y="372" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="700">计算认为绕最小轴自旋稳定，忽略了弹性天线的内摩擦耗能！</text>
+<rect x="380" y="68" width="358" height="344" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="396" y="82" width="326" height="28" rx="8" fill="#fef1e8" stroke="#fdba74" stroke-width="1"/>
+<text x="559" y="101" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="700">仅飞一圈后终态：翻转 90° 变成“电风扇扁平翻滚”（I_max）！</text>
+<line x1="427" y1="198" x2="701" y2="198" stroke="#1d6fa5" stroke-width="2.2" stroke-dasharray="5,4" marker-end="url(#arr-b)"/>
+<text x="697" y="188" font-size="10.5" fill="#1d6fa5" text-anchor="end" font-weight="700">L 方向纹丝不动！</text>
+<ellipse cx="559" cy="198" rx="28" ry="68" fill="#ffedd5" opacity="0.55" stroke="#c25014" stroke-width="1.8" stroke-dasharray="4,3"/>
+<rect x="551" y="140" width="16" height="116" rx="4" fill="#fed7aa" stroke="#c25014" stroke-width="2"/>
+<polygon points="551,140 559,122 567,140" fill="#c25014"/>
+<text x="515" y="146" font-size="10.5" fill="#c25014" text-anchor="end" font-weight="700">像竹蜻蜓/电扇叶</text>
+<text x="515" y="164" font-size="10.5" fill="#c25014" text-anchor="end" font-weight="700">横着翻跟头！</text>
+<rect x="396" y="286" width="326" height="110" rx="8" fill="#fef1e8" stroke="#fdba74" stroke-width="1"/>
+<text x="559" y="310" font-size="11.6" fill="#c25014" text-anchor="middle" font-weight="700">一行公式破案：E_转 = L² / (2·I)</text>
+<text x="410" y="333" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">太空中无外力矩 ⇒ 角动量 L 铁打不变；</text>
+<text x="410" y="353" font-size="10.5" fill="#1e293b" text-anchor="start">天线甩动与液体晃动耗散动能 ⇒ E_转 不断减小；</text>
+<text x="410" y="373" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="700">分子 L² 不变而 E_转 要变小 ⇒ 分母 I 必须涨到最大的 I_max！</text>
+<rect x="22" y="424" width="716" height="78" rx="10" fill="#e7f6ee" stroke="#86efac" stroke-width="1"/>
+<text x="380" y="448" font-size="11.4" fill="#18794e" text-anchor="middle" font-weight="700">航天器姿态动力学“最大轴铁律”（Major-Axis Rule）：</text>
+<text x="380" y="470" font-size="10.6" fill="#0f172a" text-anchor="middle" font-weight="700">存在任何内部能量耗散（天线颤振、燃料晃动）时，唯有绕“最大转动惯量轴（扁圆盘轴）”的自旋才是永久稳定的！</text>
+<text x="380" y="490" font-size="10.5" fill="#1e293b" text-anchor="middle">这就是为什么后来的自旋稳定通信卫星全都造得像“矮胖大圆鼓”，而细长火箭若要自旋必须加装主动章动阻尼器。</text>
+</svg>
