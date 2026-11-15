@@ -3,6 +3,7 @@ theme: jekyll-theme-chirpy
 baseurl: ''
 lang: zh-CN
 timezone: Asia/Shanghai
+future: true
 
 title: Hands-on Dad
 tagline: 专为奶爸打造的育儿宝库
