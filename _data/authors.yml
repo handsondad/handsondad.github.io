@@ -1,0 +1,8 @@
+## Chirpy author registry (_layouts/post.html reads site.data.authors[author])
+奶爸-Liang+AI:
+  name: 奶爸-Liang+AI
+  url: https://github.com/handsondad
+
+奶爸-Liang:
+  name: 奶爸-Liang
+  url: https://github.com/handsondad
