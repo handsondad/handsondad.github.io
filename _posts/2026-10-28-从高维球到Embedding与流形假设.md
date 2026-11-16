@@ -217,13 +217,13 @@ $$
 在 $$B_n(1)$$ 内均匀取一个点 $$X$$，那么：
 
 $$
-\Pr(\|X\|\le a)=a^n,\qquad 0\le a\le1.
+\Pr(\lVert X\rVert\le a)=a^n,\qquad 0\le a\le1.
 $$
 
 所以，最外层厚度为 $$\varepsilon$$ 的壳，占总体积的比例是：
 
 $$
-\Pr(1-\varepsilon<\|X\|\le1)
+\Pr(1-\varepsilon<\lVert X\rVert\le1)
 =1-(1-\varepsilon)^n.
 $$
 
@@ -243,7 +243,7 @@ _原创数值图：横条长度表示体积比例，不是假装把高维球画�
 更细一点，球内均匀采样时：
 
 $$
-\mathbb{E}[\|X\|]=\frac{n}{n+1}.
+\mathbb{E}[\lVert X\rVert]=\frac{n}{n+1}.
 $$
 
 典型的半径缺口只有 $$1/(n+1)$$ 量级。维度越高，要包含相同体积比例，壳可以越薄。
@@ -291,7 +291,7 @@ $$
 例如 $$X$$ 在 $$[-1,1]^n$$ 中均匀分布时：
 
 $$
-\mathbb{E}[\|X\|^2]=\frac n3.
+\mathbb{E}[\lVert X\rVert^2]=\frac n3.
 $$
 
 典型半径约为 $$\sqrt{n/3}$$，而顶点半径为 $$\sqrt n$$。它们都随 $$\sqrt n$$ 增长，但不是同一回事。
@@ -325,7 +325,7 @@ $$
 令：
 
 $$
-D^2=\|X-Y\|^2=\sum_{i=1}^n(X_i-Y_i)^2.
+D^2=\lVert X-Y\rVert^2=\sum_{i=1}^n(X_i-Y_i)^2.
 $$
 
 可以计算出：
@@ -416,20 +416,20 @@ $$s$$ 是相似度，$$\tau$$ 是温度参数。优化过程提高正样本的�
 
 $$
 \operatorname{cos}(x,y)=
-\frac{x^\top y}{\|x\|\|y\|}.
+\frac{x^\top y}{\lVert x\rVert\lVert y\rVert}.
 $$
 
 如果都做了单位长度归一化：
 
 $$
-\hat x=\frac{x}{\|x\|},\qquad
-\hat y=\frac{y}{\|y\|},
+\hat x=\frac{x}{\lVert x\rVert},\qquad
+\hat y=\frac{y}{\lVert y\rVert},
 $$
 
 就有：
 
 $$
-\|\hat x-\hat y\|^2
+\lVert\hat x-\hat y\rVert^2
 =2-2\hat x^\top\hat y.
 $$
 
@@ -885,7 +885,7 @@ $$
 在适当参数范围内，球面集中的概率界可以写成类似：
 
 $$
-\Pr(|u^\top v|>\varepsilon)
+\Pr(\lvert u^\top v\rvert>\varepsilon)
 \le 2\exp(-c\,d\varepsilon^2)
 $$
 
@@ -910,7 +910,7 @@ $$
 但单位向量满足：
 
 $$
-\|u-v\|^2=2-2u^\top v.
+\lVert u-v\rVert^2=2-2u^\top v.
 $$
 
 当内积都接近 0，距离就都接近 $$\sqrt2$$。这又是“距离反差变弱”的来源之一。
@@ -930,9 +930,9 @@ $$
 维空间的方法，使所有点对满足：
 
 $$
-(1-\varepsilon)\|x-y\|^2
-\le \|f(x)-f(y)\|^2
-\le (1+\varepsilon)\|x-y\|^2.
+(1-\varepsilon)\lVert x-y\rVert^2
+\le \lVert f(x)-f(y)\rVert^2
+\le (1+\varepsilon)\lVert x-y\rVert^2.
 $$
 
 这就是 Johnson–Lindenstrauss 引理的经典形式。合适的随机投影可以实现这种保距效果。
@@ -978,7 +978,7 @@ $$
 因此，输出中的局部平方距离近似为：
 
 $$
-\|\Delta f\|^2
+\lVert\Delta f\rVert^2
 \approx\Delta x^\top J_f(x)^\top J_f(x)\Delta x.
 $$
 
@@ -989,7 +989,7 @@ $$
 如果数据本身由 $$x=g(z)$$ 生成，沿潜在变量的小变化，还会得到：
 
 $$
-\|\Delta f\|^2
+\lVert\Delta f\rVert^2
 \approx
 \Delta z^\top
 J_g(z)^\top J_f(x)^\top J_f(x)J_g(z)
