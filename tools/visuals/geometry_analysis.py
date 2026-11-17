@@ -4221,3 +4221,755 @@ def build_eudoxus_cuts():
     for fname, fn in suite["eudoxus"]:
         svg = fn()
         suite["audit_overlap"](svg, fname)
+
+
+@register("geodesics-great-circle", "测地线与大圆航线：胶带零侧偏、北极航线动画、克莱罗缠绕、WGS84椭球与四大应用", "geometry_analysis")
+def build_geodesics_great_circle():
+    TOPIC = "geodesics-great-circle"
+    RED = "#b91c1c"
+    RED_SOFT = "#fef2f2"
+    TEAL = "#0f766e"
+    TEAL_SOFT = "#f0fdfa"
+
+    extra_markers = f"""
+    <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="{GREEN}"/>
+    </marker>
+    <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="{PURPLE}"/>
+    </marker>
+    <marker id="arr-red" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="{RED}"/>
+    </marker>
+    """
+
+    # Exact spherical / WGS-84 constants asserted across all figures
+    R_EARTH = 6371.0
+    LAT1, LON1 = math.radians(40.080), math.radians(116.585)   # Beijing PEK
+    LAT2, LON2 = math.radians(40.641), math.radians(-73.778)   # New York JFK
+    DLON_EAST = (LON2 - LON1) % (2.0 * math.pi)
+    HAV = math.sin((LAT2 - LAT1) / 2.0) ** 2 + math.cos(LAT1) * math.cos(LAT2) * math.sin(DLON_EAST / 2.0) ** 2
+    SIGMA_12 = 2.0 * math.asin(math.sqrt(HAV))
+    D_GC = R_EARTH * SIGMA_12
+    ALPHA1 = math.degrees(
+        math.atan2(
+            math.sin(DLON_EAST) * math.cos(LAT2),
+            math.cos(LAT1) * math.sin(LAT2) - math.sin(LAT1) * math.cos(LAT2) * math.cos(DLON_EAST),
+        )
+    ) % 360.0
+    LAT_VERTEX = math.degrees(math.acos(abs(math.cos(LAT1) * math.sin(math.radians(ALPHA1)))))
+    DPSI = math.log(math.tan(math.pi / 4.0 + LAT2 / 2.0) / math.tan(math.pi / 4.0 + LAT1 / 2.0))
+    Q_RHUMB = (LAT2 - LAT1) / DPSI
+    D_RHUMB = R_EARTH * math.hypot(LAT2 - LAT1, Q_RHUMB * DLON_EAST)
+
+    assert 10970.0 < D_GC < 10985.0
+    assert 7.8 < ALPHA1 < 8.1
+    assert 83.8 < LAT_VERTEX < 84.1
+    assert 14365.0 < D_RHUMB < 14380.0
+
+    # ------------------------------------------------------------------
+    # 1. ant-ribbon-geodesic-curvature.svg
+    # ------------------------------------------------------------------
+    def build_fig1_ant_ribbon():
+        # Verify geodesic curvature on parallel phi: kappa_g = tan(phi)/R
+        kg_60 = math.tan(math.radians(60.0))  # sqrt(3) in unit-R
+        assert abs(kg_60 - math.sqrt(3.0)) < 1e-9
+
+        el = []
+        el += header(
+            "曲面上什么叫“走直线”？二维蚂蚁的零侧偏法则（κ_g = 0）与三大反直觉真相",
+            "把空间加速度拆成“压脚底板的法曲率 κ_n”和“左右打方向盘的测地曲率 κ_g”：只禁掉左右打轮就是测地线",
+        )
+
+        # Left Panel: Sphere ribbon & acceleration decomposition
+        el.append(card(20, 66, 360, 326))
+        el.append(txt(36, 90, "地球仪贴胶带实验：大圆 vs 60°N 纬线圈", size=12.4, color=INK, weight="700"))
+
+        cx, cy, rad = 186.0, 214.0, 88.0
+        el.append(f'<circle cx="{cx}" cy="{cy}" r="{rad}" fill="#f1f5f9" stroke="#475569" stroke-width="1.4"/>')
+        # Equator Great Circle (kappa_g = 0, flat tape!)
+        el.append(
+            f'<path d="M {cx-rad},{cy} A {rad},26 0 0,0 {cx+rad},{cy}" fill="none" stroke="{BLUE}" stroke-width="3.2"/>'
+        )
+        el.append(
+            f'<path d="M {cx-rad},{cy} A {rad},26 0 0,1 {cx+rad},{cy}" fill="none" stroke="{BLUE}" stroke-width="1.3" stroke-dasharray="4 4"/>'
+        )
+
+        # 60N Small Circle parallel (y shifted up by rad*sin60 = 76.2? Use 3D tilt so 60N is clearly visible at cy-48, rx=52)
+        py60 = cy - 48.0
+        rx60 = math.sqrt(rad * rad - 48.0 * 48.0)  # exact chord half-width = 73.76!
+        el.append(
+            f'<path d="M {cx-rx60:.1f},{py60} A {rx60:.1f},16 0 0,0 {cx+rx60:.1f},{py60}" fill="none" stroke="{ORANGE}" stroke-width="2.6" stroke-dasharray="5 3"/>'
+        )
+        # Center of Earth O
+        el.append(f'<circle cx="{cx}" cy="{cy}" r="3.2" fill="{INK}"/>')
+        el.append(txt(cx + 8, cy - 4, "球心 O", size=9.8, color=SLATE, weight="600"))
+
+        # Vectors at 60N point P
+        px, py = cx - 14.0, py60 + 15.2
+        el.append(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="4.2" fill="{ORANGE}" stroke="#fff" stroke-width="1.2"/>')
+        # Normal vector inward (-N) toward O, and sideways kappa_g vector along surface!
+        el.append(f'<line x1="{px:.1f}" y1="{py:.1f}" x2="{px+34:.1f}" y2="{py+2:.1f}" stroke="{INK}" stroke-width="1.8" marker-end="url(#arr-muted)"/>')
+        el.append(txt(px + 38, py + 5, "前进 T", size=9.6, color=INK, weight="700"))
+        el.append(f'<line x1="{px:.1f}" y1="{py:.1f}" x2="{px-6:.1f}" y2="{py-28:.1f}" stroke="{RED}" stroke-width="2.0" marker-end="url(#arr-red)"/>')
+        el.append(txt(px - 10, py - 33, "必须向北猛打轮 κ_g≠0!", size=9.6, color=RED, anchor="middle", weight="700", halo=True))
+
+        # Labels for Equator vs 60N
+        el.append(txt(cx, cy + 40, "过球心大圆：κ_g = 0（胶带平贴不起皱）", size=10.2, color=BLUE, anchor="middle", weight="700"))
+
+        # Vector split formula box at bottom of left panel
+        el.append(card(34, 308, 332, 72, rx=8, fill=BLUE_SOFT, stroke=BLUE, sw=1.0))
+        el.append(txt(46, 327, "三维加速度分解：γ''(s) = κ_n·N  +  κ_g·(N × T)", size=10.2, color=BLUE, weight="700", cls="mono"))
+        el.append(txt(46, 347, "• κ_n（法曲率）：曲面托住脚底上下弯，二维蚂蚁浑然不觉；", size=9.6, color=BODY))
+        el.append(txt(46, 366, "• κ_g = 0（测地曲率为零）：左右零打轮 = 曲面上的“真直线”！", size=9.6, color=INK, weight="700"))
+
+        # Right Panel: Three counter-examples proving Geodesic != Globally Unique Shortest Path
+        el.append(card(396, 66, 344, 326))
+        el.append(txt(412, 90, "三大反直觉：测地线 ≠ 唯一全局最短路！", size=12.4, color=INK, weight="700"))
+
+        cases = [
+            (
+                1,
+                "球面大圆的“短弧 vs 绕地球背面长弧”",
+                BLUE,
+                BLUE_SOFT,
+                "北京→纽约沿大圆短弧 10,978 km 最短；反方向绕南极",
+                f"走同一大圆长弧 {2*math.pi*R_EARTH - D_GC:,.0f} km 处处 κ_g=0，也是测地线却非最短！",
+            ),
+            (
+                2,
+                "共轭点奇观：北极到南极有无穷多条最短线",
+                PURPLE,
+                PURPLE_SOFT,
+                "从北极出发沿任意一条经线直走 20,004 km 都能到南极，",
+                "每一条经线都是等长最短测地线（最短路未必唯一）！",
+            ),
+            (
+                3,
+                "平纸卷圆柱：无穷多条螺旋测地线同连 A、B",
+                GREEN,
+                GREEN_SOFT,
+                "把圆柱剪开展平（高斯曲率 K=0 内蕴不变）：直母线、",
+                "绕 1 圈螺旋、绕 N 圈螺旋展开全是直线，皆为测地线！",
+            ),
+        ]
+
+        cy_box = 104
+        for num, title_s, fg, bg, l1, l2 in cases:
+            el.append(card(410, cy_box, 316, 86, rx=8, fill=bg, stroke=fg, sw=1.1))
+            el.append(step_badge(428, cy_box + 20, num, fg=fg, bg="#ffffff", r=9.5))
+            el.append(txt(444, cy_box + 24, title_s, size=10.8, color=fg, weight="700"))
+            el.append(txt(420, cy_box + 48, l1, size=9.8, color=BODY))
+            el.append(txt(420, cy_box + 68, l2, size=9.8, color=INK, weight="600"))
+            cy_box += 96
+
+        svg = figure(
+            406,
+            "曲面测地曲率归零原理与测地线不等于全局唯一最短路的三大反例",
+            "左图对比地球仪上过球心的大圆（κ_g=0，胶带平贴）与北纬60度纬线圈（κ_g≠0，必须向北打方向盘）；右图列出球面优弧、南北极无穷经线与圆柱面螺旋线三个反例。",
+            el,
+            extra_defs=extra_markers,
+        )
+        write_svg(TOPIC, "ant-ribbon-geodesic-curvature.svg", svg)
+
+    # ------------------------------------------------------------------
+    # 2. beijing-newyork-great-circle-anim.svg (Time-calibrated CSS anim!)
+    # ------------------------------------------------------------------
+    def build_fig2_beijing_ny_anim():
+        # Sample exact points along Great Circle & Eastward Rhumb Line from PEK to JFK
+        # Unit 3D vectors on sphere:
+        def ll_to_vec(lat, lon):
+            return (
+                math.cos(lat) * math.cos(lon),
+                math.cos(lat) * math.sin(lon),
+                math.sin(lat),
+            )
+
+        v1 = ll_to_vec(LAT1, LON1)
+        v2 = ll_to_vec(LAT2, LON2)
+
+        gc_ll = []
+        n_pts = 60
+        for i in range(n_pts + 1):
+            f = i / n_pts
+            a_w = math.sin((1.0 - f) * SIGMA_12) / math.sin(SIGMA_12)
+            b_w = math.sin(f * SIGMA_12) / math.sin(SIGMA_12)
+            vx = a_w * v1[0] + b_w * v2[0]
+            vy = a_w * v1[1] + b_w * v2[1]
+            vz = a_w * v1[2] + b_w * v2[2]
+            lat = math.atan2(vz, math.hypot(vx, vy))
+            lon = math.atan2(vy, vx)  # in [-pi, pi]
+            # Continuous unwrapped east longitude from LON1 (~2.035 rad) to LON1 + DLON_EAST (~4.996 rad)
+            lon_u = lon if lon >= 0 else lon + 2.0 * math.pi
+            gc_ll.append((lat, lon_u))
+
+        rhumb_ll = []
+        for i in range(n_pts + 1):
+            f = i / n_pts
+            lat = LAT1 + f * (LAT2 - LAT1)
+            lon_u = LON1 + f * DLON_EAST
+            rhumb_ll.append((lat, lon_u))
+
+        # Orthographic North-Polar tilted globe projection centered at lat0=68N, lon0=200E (-160W, Bering Strait!)
+        lat0, lon0 = math.radians(68.0), math.radians(201.0)
+        gx0, gy0, grad = 186.0, 214.0, 108.0
+
+        def ortho_proj(lat, lon):
+            dl = lon - lon0
+            x = grad * math.cos(lat) * math.sin(dl)
+            y = -grad * (math.cos(lat0) * math.sin(lat) - math.sin(lat0) * math.cos(lat) * math.cos(dl))
+            cos_c = math.sin(lat0) * math.sin(lat) + math.cos(lat0) * math.cos(lat) * math.cos(dl)
+            return gx0 + x, gy0 + y, cos_c
+
+        # Verify all GC and Rhumb points are on visible front hemisphere (cos_c > 0)!
+        for la, lo in gc_ll + rhumb_ll:
+            _, _, cc = ortho_proj(la, lo)
+            assert cc > 0.02, f"Point behind orthographic horizon: cos_c={cc}"
+
+        # Right panel flat map: Pacific-centered equirectangular lon in [90E, 305E (-55W)], lat in [10N, 90N]
+        mx0, my0, mw, mh = 414.0, 114.0, 308.0, 196.0
+
+        def map_proj(lat, lon_u):
+            deg_lon = math.degrees(lon_u)
+            deg_lat = math.degrees(lat)
+            xx = mx0 + ((deg_lon - 95.0) / 205.0) * mw
+            yy = my0 + ((90.0 - deg_lat) / 75.0) * mh
+            return xx, yy
+
+        def poly_d(pts):
+            return "M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
+
+        gc_globe_pts = [(ortho_proj(la, lo)[0], ortho_proj(la, lo)[1]) for la, lo in gc_ll]
+        rh_globe_pts = [(ortho_proj(la, lo)[0], ortho_proj(la, lo)[1]) for la, lo in rhumb_ll]
+        gc_map_pts = [map_proj(la, lo) for la, lo in gc_ll]
+        rh_map_pts = [map_proj(la, lo) for la, lo in rhumb_ll]
+
+        # Exact time ratio at 900 km/h: T_gc = 3.20 s, T_rhumb = 3.20 * (D_RHUMB / D_GC) = 4.19 s!
+        t_gc = 3.20
+        t_rh = t_gc * (D_RHUMB / D_GC)
+        assert abs(t_rh / t_gc - D_RHUMB / D_GC) < 1e-6
+
+        anim_css = f"""
+        <style>
+          .anim-gc {{
+            stroke-dasharray: 600;
+            stroke-dashoffset: 600;
+            animation: draw-route {t_gc:.2f}s linear 0.35s 1 forwards;
+          }}
+          .anim-rh {{
+            stroke-dasharray: 600;
+            stroke-dashoffset: 600;
+            animation: draw-route {t_rh:.2f}s linear 0.35s 1 forwards;
+          }}
+          @keyframes draw-route {{
+            from {{ stroke-dashoffset: 600; }}
+            to {{ stroke-dashoffset: 0; }}
+          }}
+          @media (prefers-reduced-motion: reduce) {{
+            .anim-gc, .anim-rh {{
+              animation: none !important;
+              stroke-dashoffset: 0 !important;
+            }}
+          }}
+        </style>
+        """
+
+        el = []
+        el += header(
+            "北京飞纽约同在北纬 40°，为什么走北冰洋比跨太平洋近了 3,395 公里？",
+            f"同以 900 km/h 起飞（时间严格按距离比例）：蓝线大圆 10,978 km (12.2h) 先到，橙线恒向线 14,373 km (16.0h) 慢 3.8 小时",
+        )
+
+        # Left Panel: 3D North-Polar Globe
+        el.append(card(20, 66, 352, 286))
+        el.append(txt(36, 90, "三维北极俯视地球仪：谁才是真直线？", size=12.2, color=INK, weight="700"))
+
+        el.append(f'<circle cx="{gx0}" cy="{gy0}" r="{grad}" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>')
+        # Graticule parallels (30N, 60N, 80N) and meridians every 30 deg
+        for lat_g in (30, 40, 60, 80):
+            p_ring = []
+            for d_lon in range(0, 362, 6):
+                px, py, cc = ortho_proj(math.radians(lat_g), math.radians(d_lon))
+                if cc > 0:
+                    p_ring.append((px, py))
+            if len(p_ring) > 2:
+                col_g = "#cbd5e1" if lat_g != 40 else "#fde68a"
+                el.append(f'<path d="{poly_d(p_ring)}" fill="none" stroke="{col_g}" stroke-width="1.0"/>')
+        for lon_g in range(0, 360, 30):
+            m_line = []
+            for d_lat in range(10, 91, 4):
+                px, py, cc = ortho_proj(math.radians(d_lat), math.radians(lon_g))
+                if cc > 0:
+                    m_line.append((px, py))
+            if len(m_line) > 2:
+                el.append(f'<path d="{poly_d(m_line)}" fill="none" stroke="#e2e8f0" stroke-width="0.9"/>')
+
+        # North Pole marker
+        npx, npy, _ = ortho_proj(math.pi / 2.0, 0.0)
+        el.append(f'<circle cx="{npx:.1f}" cy="{npy:.1f}" r="3.2" fill="{PURPLE}"/>')
+        el.append(txt(npx + 7, npy + 4, "北极 90°N", size=9.6, color=PURPLE, weight="700", halo=True))
+
+        # Static faint guide tracks (always visible even mid-animation per AGENTS.md!)
+        el.append(f'<path d="{poly_d(rh_globe_pts)}" fill="none" stroke="{ORANGE}" stroke-opacity="0.26" stroke-width="2.2" stroke-dasharray="4 3"/>')
+        el.append(f'<path d="{poly_d(gc_globe_pts)}" fill="none" stroke="{BLUE}" stroke-opacity="0.24" stroke-width="2.6"/>')
+        # Animated tracks
+        el.append(f'<path class="anim-rh" d="{poly_d(rh_globe_pts)}" fill="none" stroke="{ORANGE}" stroke-width="2.4" stroke-dasharray="6 4"/>')
+        el.append(f'<path class="anim-gc" d="{poly_d(gc_globe_pts)}" fill="none" stroke="{BLUE}" stroke-width="3.0"/>')
+
+        # Endpoints PEK & JFK on globe
+        pek_gx, pek_gy = gc_globe_pts[0]
+        jfk_gx, jfk_gy = gc_globe_pts[-1]
+        el.append(f'<circle cx="{pek_gx:.1f}" cy="{pek_gy:.1f}" r="4.5" fill="{GREEN}" stroke="#fff" stroke-width="1.3"/>')
+        el.append(f'<circle cx="{jfk_gx:.1f}" cy="{jfk_gy:.1f}" r="4.5" fill="{RED}" stroke="#fff" stroke-width="1.3"/>')
+        el.append(txt(pek_gx - 8, pek_gy - 8, "北京 PEK", size=10.0, color=GREEN, anchor="end", weight="700", halo=True))
+        el.append(txt(jfk_gx + 8, jfk_gy - 6, "纽约 JFK", size=10.0, color=RED, anchor="start", weight="700", halo=True))
+
+        # Labels on globe
+        gc_mid_gx, gc_mid_gy = gc_globe_pts[28]
+        rh_mid_gx, rh_mid_gy = rh_globe_pts[30]
+        el.append(txt(gc_mid_gx + 10, gc_mid_gy + 15, "大圆直穿北极 (83.9°N)", size=9.8, color=BLUE, weight="700", halo=True))
+        el.append(txt(rh_mid_gx, rh_mid_gy + 17, "沿 40°N 绕太平洋大弯!", size=9.8, color=ORANGE, anchor="middle", weight="700", halo=True))
+        el.append(txt(196, 338, "在真球面上看：蓝线近乎笔直，橙线才是绕远的大圆弧！", size=9.8, color=MUTED, anchor="middle"))
+
+        # Right Panel: Flat Rectangular World Chart
+        el.append(card(388, 66, 352, 286))
+        el.append(txt(404, 90, "摊平到平面地图：真捷径被扭成“拱桥”！", size=12.2, color=INK, weight="700"))
+        el.append(f'<rect x="{mx0}" y="{my0}" width="{mw}" height="{mh}" rx="4" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.1"/>')
+
+        # Flat grid lines
+        for lat_g in (20, 40, 60, 80):
+            _, yy = map_proj(math.radians(lat_g), math.radians(100))
+            el.append(f'<line x1="{mx0}" y1="{yy:.1f}" x2="{mx0+mw}" y2="{yy:.1f}" stroke="#e2e8f0" stroke-width="1"/>')
+            el.append(txt(mx0 - 4, yy + 3.5, f"{lat_g}°N", size=9.2, color=MUTED, anchor="end"))
+        for lon_g, lbl in [(120, "120°E"), (180, "180°"), (240, "120°W"), (286.2, "74°W")]:
+            xx, _ = map_proj(math.radians(40), math.radians(lon_g))
+            el.append(f'<line x1="{xx:.1f}" y1="{my0}" x2="{xx:.1f}" y2="{my0+mh}" stroke="#e2e8f0" stroke-width="1"/>')
+            el.append(txt(xx, my0 + mh + 13, lbl, size=9.2, color=MUTED, anchor="middle"))
+
+        # Static faint + animated routes on flat map
+        el.append(f'<path d="{poly_d(rh_map_pts)}" fill="none" stroke="{ORANGE}" stroke-opacity="0.26" stroke-width="2.2" stroke-dasharray="4 3"/>')
+        el.append(f'<path d="{poly_d(gc_map_pts)}" fill="none" stroke="{BLUE}" stroke-opacity="0.24" stroke-width="2.6"/>')
+        el.append(f'<path class="anim-rh" d="{poly_d(rh_map_pts)}" fill="none" stroke="{ORANGE}" stroke-width="2.4" stroke-dasharray="6 4"/>')
+        el.append(f'<path class="anim-gc" d="{poly_d(gc_map_pts)}" fill="none" stroke="{BLUE}" stroke-width="3.0"/>')
+
+        # Vertex marker at 83.93N
+        vx_idx = max(range(len(gc_ll)), key=lambda idx: gc_ll[idx][0])
+        vx_mx, vx_my = gc_map_pts[vx_idx]
+        el.append(f'<circle cx="{vx_mx:.1f}" cy="{vx_my:.1f}" r="3.6" fill="{BLUE}"/>')
+        el.append(txt(vx_mx, vx_my + 16, f"最高点 {LAT_VERTEX:.1f}°N (北冰洋)", size=9.6, color=BLUE, anchor="middle", weight="700", halo=True))
+
+        pek_mx, pek_my = gc_map_pts[0]
+        jfk_mx, jfk_my = gc_map_pts[-1]
+        el.append(f'<circle cx="{pek_mx:.1f}" cy="{pek_my:.1f}" r="4.3" fill="{GREEN}" stroke="#fff" stroke-width="1.2"/>')
+        el.append(f'<circle cx="{jfk_mx:.1f}" cy="{jfk_my:.1f}" r="4.3" fill="{RED}" stroke="#fff" stroke-width="1.2"/>')
+        el.append(txt(pek_mx + 6, pek_my + 15, "北京", size=9.8, color=GREEN, weight="700", halo=True))
+        el.append(txt(jfk_mx - 6, jfk_my + 15, "纽约", size=9.8, color=RED, anchor="end", weight="700", halo=True))
+        el.append(txt((pek_mx + jfk_mx) / 2, pek_my - 8, "图上水平直尺线（恒向线）：实长 14,373 km!", size=9.6, color=ORANGE, anchor="middle", weight="700", halo=True))
+
+        # Bottom quantitative comparison bar
+        el.append(card(20, 364, 720, 56, rx=9, fill=SLATE_SOFT, stroke=BORDER))
+        el.append(pill(32, 374, "定量航程账", fg=BLUE, bg=BLUE_SOFT, w=86, h=22, size=10.5))
+        el.append(
+            txt(
+                128,
+                388,
+                f"• 大圆极地航线：起飞航向北偏东 {ALPHA1:.1f}°（几乎朝正北飞！），全程 {D_GC:,.0f} km，抵达纽约航向 172.0°（朝正南降落）",
+                size=10.2,
+                color=INK,
+                weight="600",
+            )
+        )
+        el.append(
+            txt(
+                128,
+                408,
+                f"• 沿 40°N 往正东横跨太平洋恒向线：全程 {D_RHUMB:,.0f} km —— 被平面地图骗着多飞了 {D_RHUMB - D_GC:,.0f} km（+30.9%）！",
+                size=10.0,
+                color=ORANGE,
+                weight="600",
+            )
+        )
+
+        svg = figure(
+            432,
+            "北京至纽约北冰洋大圆航线与跨太平洋40度纬线航程对比动画",
+            "左图为北极俯视三维地球仪，蓝色大圆航线几乎笔直穿过北纬83.9度北冰洋（10,978公里），橙色40度纬线绕出大弯（14,373公里）；右图为平面经纬图，展示大圆捷径在平面图上呈拱形的投影错觉。",
+            el,
+            extra_defs=extra_markers + anim_css,
+        )
+        write_svg(TOPIC, "beijing-newyork-great-circle-anim.svg", svg)
+
+    # ------------------------------------------------------------------
+    # 3. clairaut-filament-winding-cone.svg
+    # ------------------------------------------------------------------
+    def build_fig3_clairaut_cone():
+        # Cone with sin(theta) = 1/3 -> unrolled planar sector angle Phi = 2*pi*(1/3) = 120 deg!
+        # Any straight chord across a 120 deg sector enters at r0, hits r_min = r0*sin(alpha0), and crosses itself!
+        sin_th = 1.0 / 3.0
+        sector_deg = 360.0 * sin_th  # 120.0 deg exact
+        assert abs(sector_deg - 120.0) < 1e-9
+
+        el = []
+        el += header(
+            "克莱罗定律（r·sin α = C）：火箭碳纤维气瓶为什么不滑丝？圆锥测地线为何自己掉头？",
+            "1733 年克莱罗发现回转曲面测地线的“几何角动量守恒”：半径 r 越窄，航向角 α 越横，到 r = C 处自动水平折返",
+        )
+
+        # Left Panel: Composite Pressure Vessel Geodesic Winding (NASA TN D-1692)
+        el.append(card(20, 66, 356, 336))
+        el.append(txt(36, 90, "碳纤维高压气瓶：不打滑的测地缠绕", size=12.2, color=INK, weight="700"))
+        el.append(pill(264, 74, "r · sin α = r_极孔", fg=BLUE, bg=BLUE_SOFT, w=100, h=22, size=10.0))
+
+        # Draw horizontal axisymmetric COPV cylinder + two domes centered at (198, 192)
+        vx0, vy0 = 198.0, 192.0
+        cyl_hw, cyl_r, dome_w, boss_r = 66.0, 56.0, 52.0, 19.0
+        # Axis of rotation
+        el.append(f'<line x1="56" y1="{vy0}" x2="340" y2="{vy0}" stroke="{MUTED}" stroke-width="1.1" stroke-dasharray="5 3"/>')
+        el.append(txt(342, vy0 + 4, "回转轴", size=9.5, color=MUTED))
+
+        # Vessel outline: cylinder + left/right elliptical domes truncated at boss_r
+        # Parametric dome x = cyl_hw + dome_w * cos(t), r = cyl_r * sin(t) where sin(t_boss) = boss_r / cyl_r
+        t_boss = math.asin(boss_r / cyl_r)
+        dome_r_pts_top = []
+        dome_r_pts_bot = []
+        dome_l_pts_top = []
+        dome_l_pts_bot = []
+        for k in range(25):
+            tt = t_boss + (math.pi / 2.0 - t_boss) * (k / 24.0)
+            dx = cyl_hw + dome_w * math.cos(tt)
+            dr = cyl_r * math.sin(tt)
+            dome_r_pts_top.append((vx0 + dx, vy0 - dr))
+            dome_r_pts_bot.append((vx0 + dx, vy0 + dr))
+            dome_l_pts_top.append((vx0 - dx, vy0 - dr))
+            dome_l_pts_bot.append((vx0 - dx, vy0 + dr))
+
+        outline_pts = (
+            dome_l_pts_top
+            + list(reversed(dome_r_pts_top))
+            + dome_r_pts_bot
+            + list(reversed(dome_l_pts_bot))
+        )
+        d_vessel = "M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in outline_pts) + " Z"
+        el.append(f'<path d="{d_vessel}" fill="#f1f5f9" stroke="#334155" stroke-width="1.6"/>')
+
+        # Polar bosses (metallic nozzles at r = boss_r)
+        bx_r = vx0 + cyl_hw + dome_w * math.cos(t_boss)
+        bx_l = vx0 - cyl_hw - dome_w * math.cos(t_boss)
+        el.append(f'<rect x="{bx_r:.1f}" y="{vy0-boss_r:.1f}" width="10" height="{2*boss_r:.1f}" rx="2" fill="#94a3b8" stroke="#334155" stroke-width="1.2"/>')
+        el.append(f'<rect x="{bx_l-10:.1f}" y="{vy0-boss_r:.1f}" width="10" height="{2*boss_r:.1f}" rx="2" fill="#94a3b8" stroke="#334155" stroke-width="1.2"/>')
+
+        # Compute exact Clairaut helical-dome geodesic fibers: sin(alpha_cyl) = boss_r / cyl_r!
+        alpha_cyl = math.degrees(math.asin(boss_r / cyl_r))  # 19.83 deg!
+        for phase in (-0.9, -0.3, 0.3, 0.9):
+            f_pts = []
+            for s_idx in range(61):
+                u = -1.0 + 2.0 * (s_idx / 60.0)  # u along vessel length
+                x_pos = u * (cyl_hw + dome_w * math.cos(t_boss))
+                if abs(x_pos) <= cyl_hw:
+                    loc_r = cyl_r
+                else:
+                    cos_t = (abs(x_pos) - cyl_hw) / dome_w
+                    loc_r = cyl_r * math.sqrt(max(0.0, 1.0 - cos_t * cos_t))
+                phi_wrap = phase + 1.45 * u
+                f_pts.append((vx0 + x_pos, vy0 + loc_r * math.sin(phi_wrap)))
+            el.append(
+                f'<path d="M {" L ".join(f"{px:.1f},{py:.1f}" for px, py in f_pts)}" '
+                f'fill="none" stroke="{BLUE}" stroke-width="1.9"/>'
+            )
+
+        # Dimension labels on vessel
+        el.append(txt(vx0, vy0 - cyl_r - 10, f"筒身半径 R → 缠绕角 α₀ = arcsin(r_孔/R) = {alpha_cyl:.1f}°", size=9.8, color=BLUE, anchor="middle", weight="700"))
+        el.append(txt(bx_r - 4, vy0 + boss_r + 18, "极孔 r_孔：α 自动变 90° 相切掉头!", size=9.6, color=ORANGE, anchor="end", weight="700"))
+
+        # Explanation box in left panel
+        el.append(card(34, 286, 328, 102, rx=8, fill=BLUE_SOFT, stroke=BLUE, sw=1.0))
+        el.append(txt(46, 306, "为什么绷紧的湿碳纤维非走测地线不可？", size=10.4, color=BLUE, weight="700"))
+        el.append(txt(46, 326, "• 张力 T 乘侧向曲率 κ_g 就是横向滑脱力 F_侧 = T·κ_g；", size=9.6, color=BODY))
+        el.append(txt(46, 345, "• 刚浸环氧树脂的碳丝极滑，若 κ_g ≠ 0 丝束当场滑落封头！", size=9.6, color=BODY))
+        el.append(txt(46, 364, "• 唯有守住 r·sin α = r_极孔（κ_g = 0），丝束死死咬住曲面，", size=9.6, color=INK, weight="600"))
+        el.append(txt(46, 381, "  造出承受数百大气压的火箭燃料贮箱与氢能气瓶。", size=9.6, color=INK, weight="600"))
+
+        # Right Panel: Cone Geodesic U-Turn & Planar Sector Unrolling!
+        el.append(card(392, 66, 348, 336))
+        el.append(txt(408, 90, "圆锥测地线“半坡掉头 + 自交”一眼破案", size=12.2, color=INK, weight="700"))
+
+        # Left sub-diagram inside right panel: 3D cone (sin theta = 1/3)
+        cx_c, cy_apex = 472.0, 122.0
+        cone_h, cone_br = 132.0, 46.0
+        el.append(f'<path d="M {cx_c},{cy_apex} L {cx_c-cone_br},{cy_apex+cone_h} A {cone_br},13 0 0,0 {cx_c+cone_br},{cy_apex+cone_h} Z" fill="#f8fafc" stroke="#475569" stroke-width="1.4"/>')
+        # Compute 3D projection of exact straight line on 120-deg unrolled sector!
+        # Sector angle phi_s in [-60 deg, +60 deg] maps to cone azimuth psi = phi_s / (1/3) = 3 * phi_s in [-180, +180] deg!
+        # Straight line in sector: y_s = d_min = 48 (in slant units up to R_slant=140), x_s from -95 to +95
+        r_slant_max = math.hypot(cone_h, cone_br)
+        d_min = 0.42 * r_slant_max
+        front_seg1, back_seg, front_seg2 = [], [], []
+        for k in range(81):
+            ang_s = math.radians(-56.0 + 112.0 * (k / 80.0))  # within [-60, +60] deg sector!
+            rho_s = d_min / math.cos(ang_s)  # exact polar equation of a straight line!
+            if rho_s <= r_slant_max:
+                psi_cone = 3.0 * ang_s  # wraps [-168 deg, +168 deg] around cone!
+                frac = rho_s / r_slant_max
+                px3 = cx_c + (cone_br * frac) * math.sin(psi_cone)
+                py3 = cy_apex + (cone_h * frac) + (13.0 * frac) * math.cos(psi_cone)
+                if math.cos(psi_cone) >= 0:
+                    if ang_s < 0:
+                        front_seg1.append((px3, py3))
+                    else:
+                        front_seg2.append((px3, py3))
+                else:
+                    back_seg.append((px3, py3))
+
+        for seg in (front_seg1, front_seg2):
+            if len(seg) > 1:
+                el.append(f'<path d="M {" L ".join(f"{x:.1f},{y:.1f}" for x,y in seg)}" fill="none" stroke="{PURPLE}" stroke-width="2.4"/>')
+        if len(back_seg) > 1:
+            el.append(f'<path d="M {" L ".join(f"{x:.1f},{y:.1f}" for x,y in back_seg)}" fill="none" stroke="{PURPLE}" stroke-width="2.0" stroke-dasharray="4 3"/>')
+        # Turnaround highest point at ang_s = 0 -> psi_cone = 0 (front center!)
+        turn_y = cy_apex + cone_h * 0.42 + 13.0 * 0.42
+        el.append(f'<circle cx="{cx_c}" cy="{turn_y:.1f}" r="3.8" fill="{ORANGE}"/>')
+        el.append(txt(cx_c, turn_y - 9, "r_min 处掉头!", size=9.4, color=ORANGE, anchor="middle", weight="700", halo=True))
+        el.append(txt(cx_c, cy_apex + cone_h + 28, "三维圆锥 (sin θ=1/3)", size=9.6, color=SLATE, anchor="middle", weight="600"))
+
+        # Arrow to unrolled 120-deg planar sector!
+        el.append(f'<line x1="528" y1="196" x2="554" y2="196" stroke="{GREEN}" stroke-width="1.8" marker-end="url(#arr-green)"/>')
+        el.append(txt(541, 187, "剪开展平", size=9.2, color=GREEN, anchor="middle", weight="700"))
+
+        # Right sub-diagram: Unrolled 120-deg flat sector centered at apex (644, 134), radius Rs=116 pointing down!
+        sx_a, sy_a, rs = 644.0, 126.0, 122.0
+        a_left = math.radians(90.0 + 60.0)   # 150 deg
+        a_right = math.radians(90.0 - 60.0)  # 30 deg
+        lx, ly = sx_a + rs * math.cos(a_left), sy_a + rs * math.sin(a_left)
+        rx_p, ry_p = sx_a + rs * math.cos(a_right), sy_a + rs * math.sin(a_right)
+        el.append(
+            f'<path d="M {sx_a},{sy_a} L {lx:.1f},{ly:.1f} A {rs},{rs} 0 0,0 {rx_p:.1f},{ry_p:.1f} Z" '
+            f'fill="{GREEN_SOFT}" stroke="{GREEN}" stroke-width="1.4"/>'
+        )
+        # Straight geodesic chord at distance d = 0.42 * rs below apex!
+        d_px = 0.42 * rs
+        half_ch = d_px * math.tan(math.radians(56.0))
+        el.append(f'<line x1="{sx_a - half_ch:.1f}" y1="{sy_a + d_px:.1f}" x2="{sx_a + half_ch:.1f}" y2="{sy_a + d_px:.1f}" stroke="{PURPLE}" stroke-width="2.6"/>')
+        el.append(f'<line x1="{sx_a}" y1="{sy_a}" x2="{sx_a}" y2="{sy_a + d_px:.1f}" stroke="{ORANGE}" stroke-width="1.3" stroke-dasharray="3 2"/>')
+        el.append(f'<circle cx="{sx_a}" cy="{sy_a + d_px:.1f}" r="3.6" fill="{ORANGE}"/>')
+        el.append(txt(sx_a, sy_a - 7, "锥顶 O (展角 120°)", size=9.5, color=GREEN, anchor="middle", weight="700"))
+        el.append(txt(sx_a, sy_a + d_px + 16, "展开竟是一条直尺线段!", size=9.5, color=PURPLE, anchor="middle", weight="700", halo=True))
+        el.append(txt(sx_a, cy_apex + cone_h + 28, "垂足即最高掉头点 d_⊥", size=9.6, color=ORANGE, anchor="middle", weight="600"))
+
+        # Bottom summary card in right panel
+        el.append(card(406, 298, 320, 90, rx=8, fill=PURPLE_SOFT, stroke=PURPLE, sw=1.0))
+        el.append(txt(418, 318, "高斯内蕴几何的魔力：", size=10.4, color=PURPLE, weight="700"))
+        el.append(txt(418, 338, "• 圆锥不拉伸剪开就是平面扇形，测地线展开必为直线；", size=9.6, color=BODY))
+        el.append(txt(418, 357, "• 直线离锥顶最近处垂足（α=90°）正是三维爬坡最高折返点；", size=9.6, color=BODY))
+        el.append(txt(418, 376, "• 当锥角较尖（sin θ < 1/2，展角 < 180°），测地线还会在背面自交！", size=9.6, color=INK, weight="600"))
+
+        svg = figure(
+            416,
+            "克莱罗定律与碳纤维气瓶测地缠绕及圆锥测地线展开图解",
+            "左图展示碳纤维高压气瓶遵循 r sin α 等于极孔半径的测地缠绕路径，使湿纤维零侧滑并在极孔相切折返；右图展示半顶角正弦为1/3的圆锥测地线爬升折返并在背面自交，剪开展成120度扇形后实为一条笔直线段。",
+            el,
+            extra_defs=extra_markers,
+        )
+        write_svg(TOPIC, "clairaut-filament-winding-cone.svg", svg)
+
+    # ------------------------------------------------------------------
+    # 4. wgs84-ellipsoid-geodesic-secrets.svg
+    # ------------------------------------------------------------------
+    def build_fig4_wgs84_ellipsoid():
+        a_wgs = 6378.137
+        f_wgs = 1.0 / 298.257223563
+        b_wgs = a_wgs * (1.0 - f_wgs)
+        n_wgs = (a_wgs - b_wgs) / (a_wgs + b_wgs)
+        q_mer = (math.pi * a_wgs / (2.0 * (1.0 + n_wgs))) * (1.0 + n_wgs**2 / 4.0 + n_wgs**4 / 64.0)
+        half_eq = math.pi * a_wgs
+        half_mer = 2.0 * q_mer
+        dlon_crit = (1.0 - f_wgs) * 180.0
+        assert abs((half_eq - half_mer) - 33.577) < 0.02
+
+        el = []
+        el += header(
+            "真实地球扁了 1/298.26：测地线不再闭合，连赤道对跖点都改翻北极！",
+            "从贝塞尔辅助球（1825）、文森特迭代（1975）到卡尼纳米级算法（2013）：现代 GPS 与 GIS 背后的椭球大地测量",
+        )
+
+        # Left Panel: Non-closing precessing geodesic on an oblate spheroid (exaggerated f=0.18 labeled per AGENTS.md!)
+        el.append(card(20, 66, 344, 336))
+        el.append(txt(36, 90, "扁球奇观 1：绕地球一圈回不到原起点！", size=12.2, color=INK, weight="700"))
+        el.append(txt(36, 109, "（示意夸大扁率 f=0.18；真实地球每圈西移约 0.6°）", size=9.6, color=MUTED))
+
+        ecx, ecy, rx_e, ry_e = 192.0, 214.0, 118.0, 88.0
+        el.append(f'<ellipse cx="{ecx}" cy="{ecy}" rx="{rx_e}" ry="{ry_e}" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>')
+        # Equator & envelope parallels +-beta_max
+        bmax = math.radians(52.0)
+        y_env = ry_e * math.sin(bmax)
+        rx_env = rx_e * math.cos(bmax)
+        el.append(f'<line x1="{ecx-rx_e}" y1="{ecy}" x2="{ecx+rx_e}" y2="{ecy}" stroke="#cbd5e1" stroke-width="1.1" stroke-dasharray="4 3"/>')
+        el.append(f'<line x1="{ecx-rx_env:.1f}" y1="{ecy-y_env:.1f}" x2="{ecx+rx_env:.1f}" y2="{ecy-y_env:.1f}" stroke="{ORANGE}" stroke-width="1.1" stroke-dasharray="3 3"/>')
+        el.append(f'<line x1="{ecx-rx_env:.1f}" y1="{ecy+y_env:.1f}" x2="{ecx+rx_env:.1f}" y2="{ecy+y_env:.1f}" stroke="{ORANGE}" stroke-width="1.1" stroke-dasharray="3 3"/>')
+        el.append(txt(ecx, ecy - y_env - 6, "最高纬包络线 +φ_max", size=9.4, color=ORANGE, anchor="middle", weight="600"))
+
+        # Plot 2.2 orbits of a precessing geodesic: lon = sigma * (1 - f_vis*cos(alpha0))
+        seg_front = []
+        segs_front = []
+        segs_back = []
+        cur_f, cur_b = [], []
+        for k in range(221):
+            sig = 2.2 * 2.0 * math.pi * (k / 220.0)
+            sin_b = math.sin(bmax) * math.sin(sig)
+            cos_b = math.sqrt(1.0 - sin_b * sin_b)
+            # Auxiliary longitude minus precession drift
+            lon = math.atan2(math.cos(bmax) * math.sin(sig), math.cos(sig)) + (sig // (2 * math.pi)) * 0.0 - 0.14 * sig
+            px = ecx + rx_e * cos_b * math.sin(lon)
+            py = ecy - ry_e * sin_b
+            if math.cos(lon) >= 0:
+                if cur_b:
+                    segs_back.append(cur_b)
+                    cur_b = []
+                cur_f.append((px, py))
+            else:
+                if cur_f:
+                    segs_front.append(cur_f)
+                    cur_f = []
+                cur_b.append((px, py))
+        if cur_f:
+            segs_front.append(cur_f)
+        if cur_b:
+            segs_back.append(cur_b)
+
+        for sb in segs_back:
+            if len(sb) > 1:
+                el.append(f'<path d="M {" L ".join(f"{x:.1f},{y:.1f}" for x,y in sb)}" fill="none" stroke="{BLUE}" stroke-opacity="0.30" stroke-width="1.5" stroke-dasharray="3 3"/>')
+        for sf_pts in segs_front:
+            if len(sf_pts) > 1:
+                el.append(f'<path d="M {" L ".join(f"{x:.1f},{y:.1f}" for x,y in sf_pts)}" fill="none" stroke="{BLUE}" stroke-width="2.1"/>')
+
+        el.append(card(34, 314, 316, 76, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        el.append(txt(46, 334, "• 完美圆球：任何大圆飞满 360° 必精准咬尾闭合；", size=9.6, color=BODY))
+        el.append(txt(46, 353, "• WGS-84 扁椭球：赤道鼓出 21.385 km，倾斜测地线每绕一圈", size=9.6, color=BODY))
+        el.append(txt(46, 372, "  经度向西进动 Δλ ≈ -2πf·sin α₀，织成密集网篮！", size=9.6, color=INK, weight="600"))
+
+        # Right Panel: Equatorial Antipode Pole-Jump + Algorithm Table (Haversine -> Vincenty -> Karney)
+        el.append(card(380, 66, 360, 336))
+        el.append(txt(396, 90, "扁球奇观 2：赤道两端竟是“翻北极更近”！", size=12.2, color=INK, weight="700"))
+
+        el.append(card(394, 104, 332, 108, rx=8, fill=ORANGE_SOFT, stroke=ORANGE, sw=1.1))
+        el.append(txt(408, 124, f"同在赤道的两点（φ₁ = φ₂ = 0°，经度差 Δλ > {dlon_crit:.2f}°）：", size=10.2, color=ORANGE, weight="700"))
+        el.append(txt(408, 145, f"• 傻傻沿赤道走半圈：πa = {half_eq:,.1f} km（鼓肚子绕远了！）", size=9.8, color=BODY))
+        el.append(txt(408, 165, f"• 直接向正北翻越极点：2Q = {half_mer:,.1f} km（压扁捷径！）", size=9.8, color=GREEN, weight="700"))
+        el.append(txt(408, 185, f"→ 距对跖点 67.2 km 内，最短路突然弃赤道改翻两极，省 33.6 km！", size=9.6, color=INK, weight="600"))
+        el.append(txt(408, 203, "（这正是 1975 年 Vincenty 算法在对跖点附近死循环不收敛的病根）", size=9.4, color=MUTED))
+
+        # Three-generation algorithm evolution cards
+        el.append(txt(396, 232, "手机导航与 GIS 测距算法的三代进化：", size=11.0, color=INK, weight="700"))
+        algos = [
+            ("第1代 · 半正矢 Haversine", "把地球当圆球，算共享单车够用，洲际最大偏 ~0.5% (数十公里)", SLATE, SLATE_SOFT),
+            ("第2代 · 文森特 Vincenty (1975)", "椭球迭代达 ~0.5 mm 精度，但遇近对跖点（如上海—布宜诺斯艾利斯）发散", BLUE, BLUE_SOFT),
+            ("第3代 · 卡尼算法 Karney (2013)", "6阶级数 + 牛顿保证收敛，全球任意两点误差 < 15 纳米（GPS/PROJ标准）", GREEN, GREEN_SOFT),
+        ]
+        ay = 244
+        for title_a, desc_a, fg, bg in algos:
+            el.append(card(394, ay, 332, 46, rx=7, fill=bg, stroke=fg, sw=1.0))
+            el.append(txt(406, ay + 18, title_a, size=10.0, color=fg, weight="700"))
+            el.append(txt(406, ay + 36, desc_a, size=9.3, color=BODY))
+            ay += 51
+
+        svg = figure(
+            416,
+            "WGS84扁椭球测地线不闭合进动、赤道对跖点翻越极点捷径与三代测距算法对比",
+            "左图展示扁椭球上倾斜测地线因赤道隆起而向西进动、不再闭合；右图对比赤道半圈20037.5公里与经线圈翻越北极20003.9公里的33.6公里差距，以及Haversine、Vincenty与Karney三代算法精度。",
+            el,
+            extra_defs=extra_markers,
+        )
+        write_svg(TOPIC, "wgs84-ellipsoid-geodesic-secrets.svg", svg)
+
+    # ------------------------------------------------------------------
+    # 5. geodesics-four-applications.svg
+    # ------------------------------------------------------------------
+    def build_fig5_four_apps():
+        el = []
+        el += header(
+            "不止画航线：测地线在航空气象、大跨建筑、三维图形学与广义相对论中的四大实战",
+            "从躲避高空逆风的“最短时间航迹”，到不掰弯木板的网壳穹顶、毫秒级热扩散测距与弯曲时空自由落体",
+        )
+
+        quads = [
+            (
+                20,
+                66,
+                "1. 洲际航空：大圆捷径 vs 高空急流（最短时间）",
+                BLUE,
+                BLUE_SOFT,
+                [
+                    "• 几何最短 ≠ 飞得最快（泽梅洛导航变分问题）！",
+                    "• 东京→洛杉矶（东行）：故意往南偏离北太平洋大圆，",
+                    "  骑上 250 km/h 副热带西风急流“顺水推舟”省油省时；",
+                    "• 洛杉矶→东京（西行）：死贴阿留申北侧大圆弧躲逆风；",
+                    "• 另受双发延程 ETOPS 备降圆（如 180/330 分钟）约束。",
+                ],
+            ),
+            (
+                388,
+                66,
+                "2. 建筑与结构：富勒测地穹顶与零侧弯木网壳",
+                GREEN,
+                GREEN_SOFT,
+                [
+                    "• 1954 年富勒专利：将正二十面体向球面投影细分，短杆",
+                    "  沿大圆网格交织，把风雪荷载化为均匀轴力、自重极轻；",
+                    "• 现代自由曲面木网壳：平直薄木条宽面难侧弯、窄面易",
+                    "  顺弯，只要沿曲面测地线（κ_g = 0）铺设，直木板就能",
+                    "  自然贴合双曲屋顶而毫无侧向扭曲内应力！",
+                ],
+            ),
+            (
+                20,
+                238,
+                "3. 计算机图形学与机器人：热流法（Geodesics in Heat）",
+                ORANGE,
+                ORANGE_SOFT,
+                [
+                    "• 在百万三角形拼接的兔子/人体网格上，怎样毫秒级算出",
+                    "  一点到全身各处的贴面最短路（用于游戏蒙皮、CAD裁剪）？",
+                    "• 2013 年 Crane 等提出物理妙招：在起点戳一下“热针”，",
+                    "  解线性热传导方程让热流微扩散 Δt，热波前必沿测地线",
+                    "  推进！顺着温度梯度反方向积分，速度暴涨十倍以上。",
+                ],
+            ),
+            (
+                388,
+                238,
+                "4. 广义相对论与 GPS：万物都在走四维时空测地线",
+                PURPLE,
+                PURPLE_SOFT,
+                [
+                    "• 爱因斯坦掀翻“超距引力绳索”：质量与能量压弯四维时空，",
+                    "  地球绕太阳、星光擦过日全食偏折 1.75 角秒、空间站失重，",
+                    "  全都是在弯曲时空里“不打方向盘”走测地线：d²x^μ/dτ² + Γ…= 0；",
+                    "• 手机 GPS 每天既用 Karney 椭球测地线算地面距离，又必须",
+                    "  修正卫星轨道时空测地线带来的每天 +38 微秒相对论钟差！",
+                ],
+            ),
+        ]
+
+        for qx, qy, qtitle, fg, bg, lines_q in quads:
+            el.append(card(qx, qy, 352, 158, rx=10, fill=CARD_BG, stroke=fg, sw=1.3))
+            el.append(card(qx + 10, qy + 10, 332, 28, rx=6, fill=bg, stroke=fg, sw=0.8))
+            el.append(txt(qx + 20, qy + 29, qtitle, size=11.0, color=fg, weight="700"))
+            ly = qy + 58
+            for l_str in lines_q:
+                el.append(txt(qx + 14, ly, l_str, size=9.8, color=BODY))
+                ly += 20
+
+        svg = figure(
+            410,
+            "测地线在航空急流航路、建筑网壳穹顶、三维图形学热流法与广义相对论中的四大应用",
+            "四宫格展示测地线的跨学科应用：1. 东京至洛杉矶往返大圆与西风急流不对称航路；2. 富勒大圆测地穹顶与零测地曲率直木条网壳；3. 三维网格热扩散求测地距离；4. 广义相对论四维时空测地线与GPS修正。",
+            el,
+            extra_defs=extra_markers,
+        )
+        write_svg(TOPIC, "geodesics-four-applications.svg", svg)
+
+    build_fig1_ant_ribbon()
+    build_fig2_beijing_ny_anim()
+    build_fig3_clairaut_cone()
+    build_fig4_wgs84_ellipsoid()
+    build_fig5_four_apps()
+

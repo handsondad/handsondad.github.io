@@ -11212,3 +11212,739 @@ def _register_cold_diarrhea():
 
 
 _register_cold_diarrhea()
+
+
+def _register_electronic_scale():
+    """Electronic scale physics & engineering: 5-stage signal relay, Roberval + Wheatstone bridge animation,
+    ratiometric 24-bit Delta-Sigma ADC, EMFR analytical balance, and latitude gravity / air buoyancy / BIA."""
+
+    SUBDIR = "electronic-scale"
+    RED = "#b91c1c"
+    RED_SOFT = "#fef2f2"
+    AMBER = "#b45309"
+    AMBER_SOFT = "#fffbeb"
+    TEAL = "#0f766e"
+    TEAL_SOFT = "#f0fdfa"
+
+    # Shared physics baseline for 5 kg kitchen precision scale
+    CAP_G = 5000.0
+    R0_OHM = 350.0
+    GF = 2.0
+    EPS_FS = 1000e-6          # 1000 microstrain = 0.1% at full scale
+    DR_FS = R0_OHM * GF * EPS_FS  # 0.70 ohm
+    SENS_MV_PER_V = (DR_FS / R0_OHM) * 1000.0  # 2.00 mV/V full bridge
+    V_EXC = 5.0               # 5.00 V excitation
+    V_FS_MV = SENS_MV_PER_V * V_EXC  # 10.00 mV at 5000 g
+    V_1G_UV = (V_FS_MV * 1000.0) / CAP_G  # 2.00 uV per gram
+
+    assert math.isclose(DR_FS, 0.70, rel_tol=1e-9)
+    assert math.isclose(SENS_MV_PER_V, 2.00, rel_tol=1e-9)
+    assert math.isclose(V_FS_MV, 10.00, rel_tol=1e-9)
+    assert math.isclose(V_1G_UV, 2.00, rel_tol=1e-9)
+
+    def _wgs84_gravity(lat_deg: float) -> float:
+        """Exact WGS-84 Somigliana closed-form normal gravity at sea level (m/s^2)."""
+        s2 = math.sin(math.radians(lat_deg)) ** 2
+        ge = 9.7803253359
+        k = 0.00193185265241
+        e2 = 0.00669437999014
+        return ge * (1.0 + k * s2) / math.sqrt(1.0 - e2 * s2)
+
+    def _build_signal_chain_five_stages():
+        """SVG 1: Complete 5-stage physical-to-digital signal chain for 1 g on a 5 kg electronic scale."""
+        eps_1g = EPS_FS / CAP_G             # 0.2e-6 = 0.2 microstrain? Wait: 1000e-6 / 5000 = 0.2e-6!
+        # Wait: 1000e-6 / 5000 = 2.0e-7 = 0.2 microstrain! On a 5 mm grid (5e-3 m), dL = 5e-3 * 2e-7 = 1.0e-9 m = 1.0 nm!
+        dl_1g_nm = 5e-3 * eps_1g * 1e9      # 1.00 nm!
+        dr_1g_mohm = (DR_FS / CAP_G) * 1e3  # 0.14 mOhm!
+        assert math.isclose(eps_1g * 1e6, 0.20, rel_tol=1e-9)
+        assert math.isclose(dl_1g_nm, 1.00, rel_tol=1e-9)
+        assert math.isclose(dr_1g_mohm, 0.14, rel_tol=1e-9)
+
+        els = header(
+            "看不见弹簧也没砝码，电子秤靠哪“五棒接力”称出 1 克盐？",
+            "以量程 5 kg、激励电压 5 V、350 Ω 康铜全桥传感器为例：追踪 1 g 重力怎样从 1 纳米拉伸变成屏幕数字",
+        )
+
+        stages = [
+            (
+                1,
+                "第 1 棒 · 弹性微弯",
+                "铝合金平行梁变形",
+                BLUE,
+                BLUE_SOFT,
+                "F = mg → 应变 ε",
+                [
+                    "• 满载 5 kg 时梁面：",
+                    "  ε_max = 1000 με (0.1%)",
+                    f"• 放 1 g 盐：ε = {eps_1g*1e6:.1f} με",
+                    f"  5 mm 栅丝拉长 {dl_1g_nm:.1f} nm",
+                    "  (约 4 颗铜镍原子宽!)",
+                ],
+            ),
+            (
+                2,
+                "第 2 棒 · 栅丝变阻",
+                "康铜箔应变片传感",
+                ORANGE,
+                ORANGE_SOFT,
+                "ε → 阻值变化 ΔR",
+                [
+                    "• 蛇形往返光刻金属栅",
+                    "  灵敏系数 K ≈ 2.0",
+                    f"• 满载 5 kg：ΔR = {DR_FS:.2f} Ω",
+                    f"• 放 1 g 盐：ΔR={dr_1g_mohm:.2f} mΩ",
+                    "  (原阻值的五百万分之一)",
+                ],
+            ),
+            (
+                3,
+                "第 3 棒 · 差分电桥",
+                "惠斯通全桥剥底噪",
+                GREEN,
+                GREEN_SOFT,
+                "ΔR → 差分 V_out",
+                [
+                    "• 2 拉(+ΔR) + 2 压(-ΔR)",
+                    "• 剥掉 2.50 V 底数与温漂",
+                    f"• 满载 5 kg：+{V_FS_MV:.2f} mV",
+                    f"• 放 1 g 盐：+{V_1G_UV:.2f} μV",
+                    "  (比干电池小 75 万倍)",
+                ],
+            ),
+            (
+                4,
+                "第 4 棒 · 模数转换",
+                "128× PGA + 24位ADC",
+                PURPLE,
+                PURPLE_SOFT,
+                "V_out → 数字码 N",
+                [
+                    "• 低噪放大 128 倍至毫伏",
+                    "• ΔΣ 过采样 + 噪声整形",
+                    "• 比率参考抵消电池掉电",
+                    "• 输出 ~9 万级无噪内码",
+                    "  (陷波滤除 50 Hz 杂波)",
+                ],
+            ),
+            (
+                5,
+                "第 5 棒 · 算法标定",
+                "单片机去皮与换算",
+                TEAL,
+                TEAL_SOFT,
+                "N → 屏幕克数 (g)",
+                [
+                    "• 开机采空秤零点 N_0",
+                    "• TARE 键刷新皮重基准",
+                    "• 乘出厂砝码斜率 k_cal",
+                    "• 零点跟踪 + 判稳锁数",
+                    "• 液晶屏稳亮：1.0 g !",
+                ],
+            ),
+        ]
+
+        card_w = 136
+        gap = 10
+        x0 = 20
+        y0 = 66
+        card_h = 260
+
+        for idx, (num, tag_lbl, sub_t, fg, bg, eq_str, bullets) in enumerate(stages):
+            cx = x0 + idx * (card_w + gap)
+            els.append(card(cx, y0, card_w, card_h, rx=10, fill=CARD_BG, stroke=fg, sw=1.2))
+            els.append(step_badge(cx + 17, y0 + 20, num, fg=fg, bg=bg, r=9.5))
+            els.append(txt(cx + 31, y0 + 24, tag_lbl, 10.4, fg, weight="700"))
+            els.append(txt(cx + 10, y0 + 45, sub_t, 10.8, INK, weight="700"))
+
+            els.append(card(cx + 8, y0 + 55, card_w - 16, 25, rx=6, fill=bg, stroke=fg, sw=0.8))
+            els.append(txt(cx + card_w / 2, y0 + 71, eq_str, 10.0, fg, "middle", weight="700"))
+
+            by = y0 + 101
+            for b in bullets:
+                is_hi = ("1 g 盐" in b) or ("1.0 nm" in b) or ("2.00 μV" in b) or ("1.0 g" in b)
+                els.append(txt(cx + 8, by, b, 9.5, INK if is_hi else BODY, weight="700" if is_hi else None))
+                by += 21
+
+            if idx < len(stages) - 1:
+                ax1 = cx + card_w + 1
+                ax2 = cx + card_w + gap - 1
+                ay = y0 + 68
+                els.append(
+                    f'<line x1="{ax1}" y1="{ay}" x2="{ax2}" y2="{ay}" stroke="{MUTED}" '
+                    f'stroke-width="1.6" marker-end="url(#arr-muted)"/>'
+                )
+
+        # Bottom summary bar: scale comparison across orders of magnitude
+        els.append(card(20, 338, 720, 64, rx=9, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(pill(32, 349, "量级直觉账", fg=BLUE, bg=BLUE_SOFT, w=86, h=22, size=10.6))
+        els.append(
+            txt(
+                130,
+                363,
+                "普通万用表连 0.1 Ω 都测不稳；电子秤在 350 Ω 背景上抓出 0.00014 Ω，好比在珠峰顶测出 3.5 毫米新雪！",
+                10.6,
+                INK,
+                weight="600",
+            )
+        )
+        els.append(
+            txt(
+                130,
+                386,
+                "秘诀不靠硬测总电阻，而是靠“双孔梁浓缩应变 + 惠斯通全桥归零底数 + 24 位 ΔΣ 过采样”三招联手。",
+                10.4,
+                MUTED,
+            )
+        )
+
+        return figure(
+            414,
+            "电子秤内部五棒信号接力全流程图：从弹性体微弯、应变片变阻、惠斯通全桥到24位ADC与去皮显示",
+            "按1至5顺序展示5千克电子秤称量1克食盐时的信号链：铝合金梁产生0.2微应变（5毫米栅丝仅拉长1纳米），350欧康铜应变片变阻0.14毫欧，四臂惠斯通全桥输出2.00微伏差分电压，经128倍PGA与24位Delta-Sigma模数转换器数字化后由单片机去皮标定显示1.0克。",
+            els,
+        )
+
+    def _build_roberval_binocular_wheatstone_anim():
+        """SVG 2 (Animated): Binocular Roberval parallel-beam load cell + 4-active Wheatstone full bridge."""
+        v_plus = V_EXC * (R0_OHM + DR_FS) / (2.0 * R0_OHM)   # 2.5050 V
+        v_minus = V_EXC * (R0_OHM - DR_FS) / (2.0 * R0_OHM)  # 2.4950 V
+        v_diff_mv = (v_plus - v_minus) * 1000.0              # +10.00 mV
+        assert math.isclose(v_plus, 2.505, rel_tol=1e-9)
+        assert math.isclose(v_minus, 2.495, rel_tol=1e-9)
+        assert math.isclose(v_diff_mv, 10.0, rel_tol=1e-9)
+
+        extra_css = """
+  @keyframes loadDeflect {
+    0% { opacity: 0.15; transform: translateY(-4px); }
+    100% { opacity: 1; transform: translateY(0px); }
+  }
+  @keyframes pulseBridge {
+    0% { stroke-dashoffset: 160; opacity: 0.35; }
+    100% { stroke-dashoffset: 0; opacity: 1; }
+  }
+  .beam-loaded {
+    animation: loadDeflect 2.2s cubic-bezier(0.22, 0.8, 0.26, 1) 1 forwards;
+  }
+  .sig-flow {
+    stroke-dasharray: 160;
+    stroke-dashoffset: 0;
+    animation: pulseBridge 2.4s ease-out 1 forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .beam-loaded, .sig-flow {
+      animation: none !important;
+      transform: none !important;
+      stroke-dashoffset: 0 !important;
+      opacity: 1 !important;
+    }
+  }"""
+
+        els = header(
+            "苹果放秤盘角落为什么不偏数？—— 双孔平行梁与惠斯通全桥的四倍放大术",
+            "左看铝合金“眼镜孔”怎样把偏载弯矩锁进上下横梁；右看 2 拉 2 压四枚应变片怎样在菱形电桥里叠加成 +10.00 mV",
+        )
+
+        # ---------------- Left Panel: Binocular Roberval Load Cell ----------------
+        els.append(card(20, 64, 364, 374))
+        els.append(step_badge(38, 84, 1, fg=BLUE, bg=BLUE_SOFT))
+        els.append(txt(55, 88, "双孔平行梁（罗贝瓦尔机构）：只认竖直总力 F", 12.2, INK, weight="700"))
+
+        # Fixed wall on left
+        els.append('<rect x="34" y="152" width="16" height="136" rx="3" fill="#cbd5e1" stroke="#475569" stroke-width="1.2"/>')
+        for hy in range(160, 282, 16):
+            els.append(f'<line x1="34" y1="{hy}" x2="46" y2="{hy+10}" stroke="#475569" stroke-width="1"/>')
+        els.append(txt(42, 302, "固定端", 10.2, SLATE, "middle", weight="600"))
+
+        # Unloaded reference outline (dashed)
+        els.append(
+            '<rect x="50" y="176" width="236" height="90" rx="6" fill="none" '
+            'stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4 4"/>'
+        )
+        els.append(txt(300, 302, "(虚线框：空载水平位)", 9.8, MUTED, "middle"))
+
+        # Deformed S-curve parallel beam group (animated once, ends at exact coordinates)
+        beam_path = (
+            "M 50,176 L 106,176 "
+            "C 148,176 188,188 230,188 "
+            "L 286,188 L 286,278 L 230,278 "
+            "C 188,278 148,266 106,266 "
+            "L 50,266 Z"
+        )
+        hole_path = (
+            "M 126,190 "
+            "A 30,30 0 1,0 126,250 "
+            "L 210,262 "
+            "A 30,30 0 1,0 210,202 Z"
+        )
+        els.append('<g class="beam-loaded">')
+        els.append(f'<path d="{beam_path}" fill="#e2e8f0" stroke="#334155" stroke-width="1.6"/>')
+        els.append(f'<path d="{hole_path}" fill="{CARD_BG}" stroke="#475569" stroke-width="1.4"/>')
+
+        # Weighing pan supported on right end, extending left/right with off-center apple load on corner!
+        els.append('<rect x="252" y="156" width="16" height="32" rx="3" fill="#94a3b8" stroke="#334155" stroke-width="1.2"/>')
+        els.append('<rect x="192" y="146" width="174" height="10" rx="4" fill="#dbeafe" stroke="#1d6fa5" stroke-width="1.4"/>')
+        # Off-center weight on right corner of pan (x=338)
+        els.append('<circle cx="338" cy="130" r="14" fill="#fef2f2" stroke="#b91c1c" stroke-width="1.5"/>')
+        els.append(txt(338, 134, "5kg", 10.2, RED, "middle", weight="700"))
+        els.append(
+            f'<line x1="338" y1="100" x2="338" y2="114" stroke="{RED}" stroke-width="2.2" marker-end="url(#arr-orange)"/>'
+        )
+        els.append(txt(326, 113, "偏角压重物 F", 10.4, RED, "end", weight="700"))
+
+        # 4 Strain gauges at the 4 thin binocular necks!
+        els.append(f'<rect x="108" y="171" width="28" height="6" rx="2" fill="{ORANGE}" stroke="#7c2d12" stroke-width="0.8"/>')
+        els.append(txt(122, 165, "T1 拉(+ΔR)", 10.2, ORANGE, "middle", weight="700", halo=True))
+
+        els.append(f'<rect x="108" y="265" width="28" height="6" rx="2" fill="{BLUE}" stroke="#1e3a8a" stroke-width="0.8"/>')
+        els.append(txt(122, 285, "C1 压(-ΔR)", 10.2, BLUE, "middle", weight="700", halo=True))
+
+        els.append(f'<rect x="200" y="183" width="28" height="6" rx="2" fill="{BLUE}" stroke="#1e3a8a" stroke-width="0.8"/>')
+        els.append(txt(206, 177, "C2 压(-ΔR)", 10.2, BLUE, "middle", weight="700", halo=True))
+
+        els.append(f'<rect x="200" y="277" width="28" height="6" rx="2" fill="{ORANGE}" stroke="#7c2d12" stroke-width="0.8"/>')
+        els.append(txt(214, 297, "T2 拉(+ΔR)", 10.2, ORANGE, "middle", weight="700", halo=True))
+        els.append("</g>")
+
+        # Explanation box inside left panel
+        els.append(card(34, 308, 336, 118, rx=8, fill=BLUE_SOFT, stroke=BLUE, sw=1))
+        els.append(txt(46, 327, "• 为什么双孔挖空？", 11.2, BLUE, weight="700"))
+        els.append(txt(152, 327, "把全梁弯曲精准浓缩到 4 处最薄“颈部”！", 11.0, INK, weight="600"))
+        els.append(txt(46, 349, "• 为什么放角落不偏数？", 11.2, BLUE, weight="700"))
+        els.append(txt(46, 368, "  右端自由块始终平行下沉（呈平行四边形 S 变形）；偏心距", 10.8, BODY))
+        els.append(txt(46, 386, "  产生的额外翻转力矩 M = F·e 变成上下横梁一拉一推的水平", 10.8, BODY))
+        els.append(txt(46, 404, "  内力偶被对称抵消，4 枚应变片总输出只取决于竖直力 F！", 10.8, INK, weight="600"))
+
+        # ---------------- Right Panel: Full Wheatstone Bridge ----------------
+        els.append(card(396, 64, 344, 374))
+        els.append(step_badge(414, 84, 2, fg=GREEN, bg=GREEN_SOFT))
+        els.append(txt(431, 88, "惠斯通四臂全桥：两拉两压对角排布", 12.2, INK, weight="700"))
+
+        # Diamond nodes: Top (568, 122), Left V+ (468, 206), Right V- (668, 206), Bottom (568, 290)
+        tx, ty = 568, 124
+        lx, ly = 466, 206
+        rx_n, ry_n = 670, 206
+        bx, by_n = 568, 288
+
+        # Excitation rail labels
+        els.append(pill(512, 98, "V_exc = +5.000 V", fg=GREEN, bg=GREEN_SOFT, w=112, h=20, size=10.8))
+        els.append(pill(524, 294, "GND = 0.000 V", fg=SLATE, bg=SLATE_SOFT, w=92, h=20, size=10.5))
+
+        # Four diamond arms
+        els.append(f'<line x1="{tx}" y1="{ty}" x2="{lx}" y2="{ly}" stroke="{ORANGE}" stroke-width="2.2"/>')
+        els.append(f'<line x1="{lx}" y1="{ly}" x2="{bx}" y2="{by_n}" stroke="{BLUE}" stroke-width="2.2"/>')
+        els.append(f'<line x1="{tx}" y1="{ty}" x2="{rx_n}" y2="{ry_n}" stroke="{BLUE}" stroke-width="2.2"/>')
+        els.append(f'<line x1="{rx_n}" y1="{ry_n}" x2="{bx}" y2="{by_n}" stroke="{ORANGE}" stroke-width="2.2"/>')
+
+        # Resistor badges on the 4 arms
+        def _res_box(mx, my, label1, label2, col, soft):
+            els.append(card(mx - 44, my - 18, 88, 34, rx=6, fill=soft, stroke=col, sw=1.3))
+            els.append(txt(mx, my - 3, label1, 10.6, col, "middle", weight="700"))
+            els.append(txt(mx, my + 11, label2, 9.8, INK, "middle", cls="mono"))
+
+        _res_box(506, 158, "T1 受拉 ↑", "350.70 Ω", ORANGE, ORANGE_SOFT)
+        _res_box(630, 158, "C2 受压 ↓", "349.30 Ω", BLUE, BLUE_SOFT)
+        _res_box(506, 254, "C1 受压 ↓", "349.30 Ω", BLUE, BLUE_SOFT)
+        _res_box(630, 254, "T2 受拉 ↑", "350.70 Ω", ORANGE, ORANGE_SOFT)
+
+        # Center differential line + V_out meter
+        els.append(
+            f'<line x1="{lx}" y1="{ly}" x2="{rx_n}" y2="{ry_n}" stroke="{GREEN}" '
+            f'stroke-width="2.0" class="sig-flow"/>'
+        )
+        els.append(f'<circle cx="{lx}" cy="{ly}" r="4.5" fill="{GREEN}"/>')
+        els.append(f'<circle cx="{rx_n}" cy="{ry_n}" r="4.5" fill="{GREEN}"/>')
+        els.append(f'<circle cx="{tx}" cy="{ty}" r="4" fill="{INK}"/>')
+        els.append(f'<circle cx="{bx}" cy="{by_n}" r="4" fill="{INK}"/>')
+
+        els.append(txt(lx - 6, ly - 10, f"V+ = {v_plus:.3f} V", 10.5, GREEN, "end", weight="700", halo=True))
+        els.append(txt(rx_n + 6, ry_n - 10, f"V- = {v_minus:.3f} V", 10.5, BLUE, "start", weight="700", halo=True))
+
+        els.append(card(512, 187, 112, 38, rx=8, fill=GREEN_SOFT, stroke=GREEN, sw=1.5))
+        els.append(txt(568, 203, "差分输出 V_out", 10.2, GREEN, "middle", weight="700"))
+        els.append(txt(568, 219, f"+{v_diff_mv:.2f} mV", 11.8, INK, "middle", weight="700", cls="mono"))
+
+        # Formula & 3-advantage box at bottom right
+        els.append(card(410, 322, 316, 104, rx=8, fill=GREEN_SOFT, stroke=GREEN, sw=1))
+        els.append(txt(422, 342, "全桥精确公式：V_out = V_exc · (ΔR / R)", 11.4, GREEN, weight="700"))
+        els.append(txt(422, 363, "① 灵敏度 ×4：比单贴 1 片应变片的 1/4 桥放大整整 4 倍；", 10.6, INK, weight="600"))
+        els.append(txt(422, 383, "② 零非线性：分母 R+ΔR+(R-ΔR) = 2R 恒定，彻底消掉弯曲项；", 10.6, BODY))
+        els.append(txt(422, 403, "③ 温漂自消：升温让 4 臂同涨 ΔR_T，左右分压比不变，输出仍为 0！", 10.6, BODY))
+
+        return figure(
+            452,
+            "双孔平行梁罗贝瓦尔偏载不变形机理与四臂惠斯通全桥差分放大动画图",
+            "左图展示双孔平行梁在偏心5千克负载下呈平行四边形S形微弯，四处薄颈T1与T2受拉、C1与C2受压，偏载弯矩转化为上下横梁水平内力偶抵消；右图展示5.000V激励下四枚350欧应变片组成惠斯通全桥，左节点升至2.505V、右节点降至2.495V，输出严格线性的+10.00毫伏差分信号并自动抵消温度漂移。",
+            els,
+            extra_css=extra_css,
+        )
+
+    def _build_ratiometric_delta_sigma_adc():
+        """SVG 3: Ratiometric excitation cancellation + 24-bit Delta-Sigma oversampling & noise shaping."""
+        # Verify exact ratiometric math when 5.00 V battery sags by 10% to 4.50 V
+        dr_ratio = DR_FS / R0_OHM  # 0.002000
+        v_exc_hi, v_exc_lo = 5.00, 4.50
+        v_sig_hi_mv = v_exc_hi * dr_ratio * 1000.0  # 10.00 mV
+        v_sig_lo_mv = v_exc_lo * dr_ratio * 1000.0  # 9.00 mV
+        ratio_hi = (v_sig_hi_mv / 1000.0) / v_exc_hi
+        ratio_lo = (v_sig_lo_mv / 1000.0) / v_exc_lo
+        assert math.isclose(ratio_hi, ratio_lo, rel_tol=1e-12)
+
+        # Verify TI ADS1232 real noise-free counts at V_exc=5V, PGA=128, 10 SPS:
+        # Full-scale ADC differential input = +/- (V_ref / 2) / 128 = +/- 19.53 mV (span 39.06 mV);
+        # At 10 SPS, PGA=128, ADS1232 input-referred noise is 17 nV_rms (110 nV_pp).
+        # Over a 10 mV load-cell span: noise-free counts = 10 mV / 110 nV_pp = 90,909 counts!
+        v_noise_pp_nv = 110.0
+        nf_counts = int(round((V_FS_MV * 1e6) / v_noise_pp_nv))  # 90909 counts
+        assert 85000 <= nf_counts <= 95000
+
+        els = header(
+            "电池快没电了为什么秤不飘？——“比率式消源术”与 24 位 ΔΣ 模数转换器",
+            "左：让电桥与 ADC 共用同一根电源作标尺，电压掉 10% 读数纹丝不动；右：高频过采样怎样从热噪声里捞出 2 微伏",
+        )
+
+        # ---------------- Left Panel: Ratiometric Measurement ----------------
+        els.append(card(20, 64, 356, 356))
+        els.append(step_badge(38, 84, 1, fg=BLUE, bg=BLUE_SOFT))
+        els.append(txt(55, 88, "比率式测量（Ratiometric）：借尺量尺消掉电源漂移", 12.0, INK, weight="700"))
+
+        # Block diagram of shared V_exc -> Bridge AND V_ref
+        els.append(card(36, 106, 92, 52, rx=8, fill=ORANGE_SOFT, stroke=ORANGE, sw=1.3))
+        els.append(txt(82, 127, "电池 / 稳压源", 10.8, ORANGE, "middle", weight="700"))
+        els.append(txt(82, 145, "V_exc (会波动)", 10.2, BODY, "middle"))
+
+        # Branch 1 to Bridge, Branch 2 directly to ADC V_ref!
+        els.append(f'<line x1="128" y1="122" x2="166" y2="122" stroke="{ORANGE}" stroke-width="1.8" marker-end="url(#arr-orange)"/>')
+        els.append(f'<path d="M 142,122 L 142,196 L 250,196" fill="none" stroke="{BLUE}" stroke-width="1.8" marker-end="url(#arr-blue)"/>')
+        els.append(txt(144, 190, "直通 V_ref!", 9.8, BLUE, weight="700"))
+
+        els.append(card(168, 102, 74, 58, rx=8, fill=GREEN_SOFT, stroke=GREEN, sw=1.3))
+        els.append(txt(205, 125, "惠斯通全桥", 10.6, GREEN, "middle", weight="700"))
+        els.append(txt(205, 144, "V_exc·ΔR/R", 10.0, INK, "middle", cls="mono"))
+
+        els.append(f'<line x1="242" y1="131" x2="252" y2="131" stroke="{GREEN}" stroke-width="1.8"/>')
+
+        els.append(card(252, 102, 108, 102, rx=8, fill=PURPLE_SOFT, stroke=PURPLE, sw=1.4))
+        els.append(txt(306, 122, "128× PGA", 10.6, PURPLE, "middle", weight="700"))
+        els.append(txt(306, 139, "+ 24-bit ADC", 10.6, PURPLE, "middle", weight="700"))
+        els.append(txt(306, 158, "输出码 D ∝", 10.0, BODY, "middle"))
+        els.append(txt(306, 176, "V_out / V_ref", 10.4, INK, "middle", weight="700", cls="mono"))
+
+        # Quantitative comparison table: 5.00 V vs 4.50 V
+        els.append(card(36, 214, 324, 114, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(48, 234, "同放 5000.0 g 砝码时的实测对比：", 11.0, INK, weight="700"))
+        els.append(txt(48, 255, "• 新电池 V_exc = 5.00 V：", 10.6, GREEN, weight="700"))
+        els.append(
+            txt(182, 255, f"V_out={v_sig_hi_mv:.2f} mV ÷ 5.00 V → 5000.0 g", 10.4, INK, cls="mono")
+        )
+        els.append(txt(48, 278, "• 旧电池 V_exc = 4.50 V：", 10.6, ORANGE, weight="700"))
+        els.append(
+            txt(182, 278, f"V_out= {v_sig_lo_mv:.2f} mV ÷ 4.50 V → 5000.0 g", 10.4, INK, cls="mono")
+        )
+        els.append(
+            txt(48, 304, "分子分母里的 V_exc 上下完美约分：D = G·(ΔR/R)·2²³，", 10.6, BLUE, weight="700")
+        )
+        els.append(txt(48, 320, "电源跌落 10% 甚至带低频纹波，称重结果理论误差 0.00%！", 10.5, BODY))
+
+        # Industrial upgrade note: 6-wire sense & AC excitation
+        els.append(card(36, 338, 324, 70, rx=8, fill=BLUE_SOFT, stroke=BLUE, sw=0.9))
+        els.append(txt(48, 357, "• 工业地磅进阶两招（TI TIDUAC1A / SBAA532A）：", 10.6, BLUE, weight="700"))
+        els.append(txt(48, 376, "  ① 六线制（+Sense/-Sense）：绕开几十米电缆铜阻压降；", 10.3, BODY))
+        els.append(txt(48, 394, "  ② 交流方波反转激励：正反相减彻底消掉焊点微伏级热电偶电势。", 10.3, BODY))
+
+        # ---------------- Right Panel: 24-bit Delta-Sigma Noise Shaping ----------------
+        els.append(card(388, 64, 352, 356))
+        els.append(step_badge(406, 84, 2, fg=PURPLE, bg=PURPLE_SOFT))
+        els.append(txt(423, 88, "24 位 ΔΣ ADC：为什么标称 1677 万格，实测约 9 万格？", 11.8, INK, weight="700"))
+
+        # Plot of Noise Shaping + Digital Sinc Low-Pass Filter
+        px0, py0, pw, ph = 414, 114, 304, 126
+        els.append(card(px0, py0, pw, ph, rx=6, fill="#ffffff", stroke=HAIRLINE))
+        # Axes
+        ax_x0, ax_y0 = px0 + 34, py0 + ph - 24
+        ax_x1, ax_y1 = px0 + pw - 14, py0 + 16
+        els.append(f'<line x1="{ax_x0}" y1="{ax_y0}" x2="{ax_x1}" y2="{ax_y0}" stroke="{SLATE}" stroke-width="1.2"/>')
+        els.append(f'<line x1="{ax_x0}" y1="{ax_y0}" x2="{ax_x0}" y2="{ax_y1}" stroke="{SLATE}" stroke-width="1.2"/>')
+        els.append(txt(ax_x0 - 6, ax_y1 + 8, "噪声", 10.0, MUTED, "end"))
+        els.append(txt(ax_x0 - 6, ax_y1 + 21, "密度", 10.0, MUTED, "end"))
+        els.append(txt(ax_x1, ax_y0 + 16, "频率 f →", 10.2, MUTED, "end"))
+        els.append(txt(ax_x0 + 18, ax_y0 + 16, "0~5 Hz 称重信号带", 10.0, GREEN, "start", weight="700"))
+
+        # Passband green shaded zone (0..5 Hz low frequency)
+        els.append(f'<rect x="{ax_x0+1}" y="{ax_y1+4}" width="44" height="{ax_y0-ax_y1-5}" fill="{GREEN_SOFT}" opacity="0.85"/>')
+        els.append(f'<line x1="{ax_x0+45}" y1="{ax_y1+4}" x2="{ax_x0+45}" y2="{ax_y0}" stroke="{GREEN}" stroke-width="1.3" stroke-dasharray="3 3"/>')
+
+        # Flat Nyquist quantization noise (dashed grey)
+        els.append(f'<line x1="{ax_x0+2}" y1="{ax_y0-36}" x2="{ax_x1-6}" y2="{ax_y0-36}" stroke="#94a3b8" stroke-width="1.3" stroke-dasharray="4 3"/>')
+        els.append(txt(ax_x0 + 52, ax_y0 - 22, "虚线：普通 ADC 平坦量化噪声", 9.5, MUTED, "start"))
+
+        # Delta-Sigma shaped noise curve: suppressed near 0, pushed steeply up at high f, then cut by Digital Sinc filter!
+        pts = []
+        for i in range(41):
+            u = i / 40.0
+            xx = ax_x0 + 2 + u * (ax_x1 - ax_x0 - 10)
+            yy = ax_y0 - 4 - 82 * (u ** 2.1)
+            pts.append(f"{xx:.1f},{yy:.1f}")
+        els.append(f'<polyline points="{" ".join(pts)}" fill="none" stroke="{PURPLE}" stroke-width="2.2"/>')
+        els.append(txt(ax_x0 + 52, py0 + 28, "ΔΣ 调制把噪声推往高频，", 9.8, PURPLE, weight="700"))
+        els.append(txt(ax_x0 + 52, py0 + 42, "数字滤波器切除高频 + 陷波 50Hz!", 9.8, GREEN, weight="700"))
+
+        # Resolution funnel bars at bottom right
+        els.append(card(406, 250, 316, 158, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(418, 270, "真实电子秤分辨率漏斗（以 TI ADS1232 10 SPS 为例）：", 10.8, INK, weight="700"))
+
+        bars = [
+            ("24 位理论总格数", "16,777,216 格", 206, "#cbd5e1", SLATE),
+            ("10 mV 传感器实测无闪烁内码", f"≈ {nf_counts:,} 格 (~110 nV_pp)", 148, PURPLE_SOFT, PURPLE),
+            ("商用计价秤显示分度 (OIML III)", "3,000 ~ 10,000 格 (稳如磐石!)", 96, GREEN_SOFT, GREEN),
+        ]
+        by = 282
+        for lbl, val_s, bw, bfill, bcol in bars:
+            els.append(txt(418, by + 12, lbl, 10.2, BODY))
+            els.append(card(418, by + 17, bw, 18, rx=4, fill=bfill, stroke=bcol, sw=1))
+            els.append(txt(418 + bw + 6, by + 30, val_s, 10.0, bcol, weight="700"))
+            by += 41
+
+        return figure(
+            434,
+            "电子秤比率式参考消漂移原理与24位Delta-Sigma模数转换器噪声整形分辨率图",
+            "左图展示电桥与ADC共用V_exc做参考电压，电池从5.00V跌至4.50V时信号与标尺同步缩水10%，5000.0克读数误差为0%；右图展示Delta-Sigma调制器将量化噪声推向高频并由数字滤波器切除，在10mV满量程与110纳伏峰峰值热噪声下提供约90909个无闪烁内码，远超商用秤3000至10000分度需求。",
+            els,
+        )
+
+    def _build_strain_gauge_vs_emfr_balance():
+        """SVG 4: Why 0.1 mg / 1 ug lab analytical balances use Electromagnetic Force Restoration (EMFR)."""
+        # Lorentz force verification: m = 200 g = 0.200 kg, lever mechanical advantage L1/L2 = 1 : 10 -> coil force = 0.196 N
+        # For B = 0.50 T, coil wire length L_w = 8.0 m -> I_max = F / (B * L_w) = 0.196 / 4.0 = 49.0 mA!
+        # At 0.1 mg (1e-7 kg), coil current step dI = 24.5 nA!
+        m_max_kg = 0.200
+        g0 = 9.80
+        lever_ratio = 10.0
+        b_tesla = 0.50
+        l_wire_m = 8.0
+        f_coil_max = (m_max_kg * g0) / lever_ratio  # 0.196 N
+        i_max_ma = (f_coil_max / (b_tesla * l_wire_m)) * 1000.0  # 49.0 mA
+        assert math.isclose(f_coil_max, 0.196, rel_tol=1e-9)
+        assert math.isclose(i_max_ma, 49.0, rel_tol=1e-9)
+
+        els = header(
+            "为什么厨房秤只能看清 0.1 克，实验室分析天平却能称出半根睫毛（0.0001 克）？",
+            "当精度跨越十万分之一，金属弯曲的“蠕变与疲软”成了死穴——顶级天平干脆不让横梁弯，改用电磁力顶回零位！",
+        )
+
+        # ---------------- Left Panel: Strain-Gauge Scale Limits ----------------
+        els.append(card(20, 64, 326, 336))
+        els.append(pill(34, 78, "路线 A · 应变片电子秤（靠弹性变形读数）", fg=ORANGE, bg=ORANGE_SOFT, w=262, h=22, size=10.8))
+        els.append(txt(34, 118, "适用：体重秤、快递秤、商超计价秤、厨房秤", 11.0, INK, weight="700"))
+        els.append(txt(34, 138, "法定准确度：OIML III / II 级（约 3,000 ~ 30,000 分度）", 10.5, MUTED))
+
+        limits = [
+            (
+                "① 金属蠕变（Creep）",
+                "重物压在秤上几分钟，铝合金晶格会发生极其缓慢的滑移，即便重量没变，应变片也会多拉长一点点。",
+            ),
+            (
+                "② 机械滞后（Hysteresis）",
+                "从 0 加到 5 kg 再卸回 2 kg，金属卸力回弹轨迹与加载轨迹不能 100% 重合，留下万分之几的残余偏差。",
+            ),
+            (
+                "③ 杨氏模量温漂（金属受热变“软”）",
+                "全桥虽抵消了热胀冷缩，但温度每升 10 ℃，铝合金弹性模量 E 会变软约 0.5%！高精度传感器必须额外串联正温度系数镍/铜补偿电阻。",
+            ),
+        ]
+        ly = 156
+        for t_head, t_desc in limits:
+            els.append(card(34, ly, 298, 72, rx=7, fill=ORANGE_SOFT, stroke=ORANGE, sw=0.9))
+            els.append(txt(44, ly + 19, t_head, 10.8, ORANGE, weight="700"))
+            # Wrap description cleanly in 2 lines
+            if len(t_desc) <= 44:
+                els.append(txt(44, ly + 39, t_desc[:23], 10.1, BODY))
+                els.append(txt(44, ly + 56, t_desc[23:], 10.1, BODY))
+            else:
+                els.append(txt(44, ly + 37, t_desc[:25], 9.8, BODY))
+                els.append(txt(44, ly + 52, t_desc[25:50], 9.8, BODY))
+                els.append(txt(44, ly + 66, t_desc[50:], 9.8, BODY))
+            ly += 80
+
+        # ---------------- Right Panel: EMFR Analytical Balance ----------------
+        els.append(card(358, 64, 382, 336))
+        els.append(pill(372, 78, "路线 B · 电磁力平衡天平 EMFR（零位移闭环）", fg=BLUE, bg=BLUE_SOFT, w=292, h=22, size=10.8))
+        els.append(txt(372, 118, "适用：万分之一克 (0.1 mg) 分析天平、微克级超微量天平", 11.0, INK, weight="700"))
+        els.append(txt(372, 138, "法定准确度：OIML I 级特种准确度（200 万 ~ 2,000 万分度！）", 10.5, BLUE, weight="600"))
+
+        # Closed-loop schematic box
+        els.append(card(372, 150, 354, 154, rx=8, fill="#ffffff", stroke=BLUE_LINE, sw=1.2))
+
+        # Pan on left -> Flexure lever -> Slit optical detector + Voice coil in permanent magnet
+        # Pan
+        els.append('<rect x="388" y="168" width="52" height="7" rx="3" fill="#dbeafe" stroke="#1d6fa5" stroke-width="1.3"/>')
+        els.append(txt(414, 162, "防风罩秤盘 mg", 10.0, BLUE, "middle", weight="700"))
+        els.append('<line x1="414" y1="175" x2="414" y2="210" stroke="#334155" stroke-width="2"/>')
+
+        # Lever beam with flexure fulcrum (1:10 mechanical advantage)
+        els.append('<line x1="414" y1="210" x2="612" y2="210" stroke="#0f172a" stroke-width="3"/>')
+        els.append('<polygon points="448,210 441,224 455,224" fill="#64748b"/>')
+        els.append(txt(448, 237, "无摩擦柔性支点", 9.6, MUTED, "middle"))
+
+        # Permanent magnet cup + Lorentz coil at x=548
+        els.append('<rect x="524" y="232" width="48" height="42" rx="4" fill="#e2e8f0" stroke="#475569" stroke-width="1.3"/>')
+        els.append(txt(548, 267, "恒温永磁体 B", 9.8, SLATE, "middle", weight="700"))
+        els.append(f'<rect x="536" y="216" width="24" height="28" rx="3" fill="{ORANGE_SOFT}" stroke="{ORANGE}" stroke-width="1.5"/>')
+        els.append('<line x1="548" y1="210" x2="548" y2="216" stroke="#0f172a" stroke-width="2"/>')
+        els.append(
+            f'<line x1="548" y1="242" x2="548" y2="220" stroke="{GREEN}" stroke-width="2" marker-end="url(#arr-green)"/>'
+        )
+        els.append(txt(548, 202, "安培力 F=BLI", 10.0, GREEN, "middle", weight="700"))
+
+        # Optical null detector at right tip (x=612)
+        els.append(f'<circle cx="624" cy="196" r="5" fill="{AMBER_SOFT}" stroke="{AMBER}" stroke-width="1.2"/>')
+        els.append(f'<rect x="618" y="220" width="12" height="8" rx="2" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.2"/>')
+        els.append(txt(640, 200, "光电零位检测器", 10.0, INK, weight="700"))
+        els.append(txt(640, 214, "(偏离几纳米即报警)", 9.5, MUTED))
+
+        # PID feedback controller -> current I -> precision resistor R_sense
+        els.append(card(626, 240, 88, 52, rx=6, fill=GREEN_SOFT, stroke=GREEN, sw=1.2))
+        els.append(txt(670, 258, "PID 伺服闭环", 10.2, GREEN, "middle", weight="700"))
+        els.append(txt(670, 273, "测电流 I ∝ mg", 10.0, INK, "middle", weight="700"))
+        els.append(txt(670, 286, "0.1mg~24.5nA", 9.3, MUTED, "middle", cls="mono"))
+        els.append(
+            f'<path d="M 624,228 L 624,266 L 626,266" fill="none" stroke="{BLUE}" stroke-width="1.5"/>'
+        )
+        els.append(
+            f'<path d="M 626,256 L 562,256 L 562,232" fill="none" stroke="{ORANGE}" stroke-width="1.6" marker-end="url(#arr-orange)"/>'
+        )
+
+        # Key insight box at bottom right
+        els.append(card(372, 314, 354, 74, rx=8, fill=BLUE_SOFT, stroke=BLUE, sw=1))
+        els.append(txt(384, 334, "核心降维打击：把“测弯曲变形”变成“零位移测电流”！", 11.0, BLUE, weight="700"))
+        els.append(txt(384, 354, "• 反馈电流时刻把横梁死死拉回原位（形变 Δx → 0），从根源消除了", 10.3, BODY))
+        els.append(txt(384, 373, "  弹性体弯曲非线性和大形变蠕变，再配内置校准砝码自动消温漂！", 10.3, INK, weight="600"))
+
+        return figure(
+            414,
+            "应变片电子秤三大物理极限与电磁力平衡EMFR万分之一克分析天平闭环原理对比图",
+            "左栏剖析应变片电子秤受限于金属蠕变、滞后与杨氏模量温漂，通常止步于3000至30000分度；右栏展示电磁力平衡（EMFR）分析天平通过光电零位传感器、PID伺服控制器与永磁体音圈产生安培力F=BLI将横梁严格拉回零位，通过精密测量电流实现200万分度（0.1毫克）以上的超高线性分辨率。",
+            els,
+        )
+
+    def _build_gravity_buoyancy_and_bia_scale():
+        """SVG 5: Latitude gravity shift (WGS-84), NIST air buoyancy, and barefoot BIA body-fat scales."""
+        # 1. Exact WGS-84 sea-level normal gravity at 5 locations, calibrated in Beijing (39.9 N) for 1000.00 g gold
+        g_bj = _wgs84_gravity(39.9042)
+        places = [
+            ("北极点 90°N", 90.0),
+            ("漠河 53.5°N", 53.5),
+            ("北京 39.9°N (校准地)", 39.9042),
+            ("三亚 18.3°N", 18.25),
+            ("赤道 0°", 0.0),
+        ]
+        readings = []
+        for name_p, lat in places:
+            gp = _wgs84_gravity(lat)
+            m_app = 1000.0 * (gp / g_bj)
+            readings.append((name_p, gp, m_app, m_app - 1000.0))
+
+        # Sanity assertions on WGS-84 physics
+        assert math.isclose(readings[0][1], 9.83218, abs_tol=1e-4)  # Pole
+        assert math.isclose(readings[-1][1], 9.78033, abs_tol=1e-4)  # Equator
+        assert math.isclose(readings[2][2], 1000.00, abs_tol=1e-6)   # Beijing exact 1000.00 g
+        assert -2.3 < readings[-1][3] < -2.0                         # ~ -2.16 g at Equator!
+
+        # 2. Exact NIST SOP 2 air buoyancy difference for 1000.00 g true mass in rho_air = 1.20 kg/m^3
+        # Calibrated against conventional stainless steel standard (rho_c = 8000 kg/m^3):
+        # Apparent reading M_ind = M_true * (1 - rho_air / rho_obj) / (1 - rho_air / rho_c)
+        rho_air = 1.20
+        rho_c = 8000.0
+        m_water_ind = 1000.0 * (1.0 - rho_air / 1000.0) / (1.0 - rho_air / rho_c)  # 998.95 g (-1.05 g!)
+        buoy_loss_g = 1000.0 - m_water_ind
+        assert math.isclose(buoy_loss_g, 1.05016, abs_tol=1e-3)
+
+        els = header(
+            "电子秤测的其实是“力”不是“质量”！—— 读懂南北掉秤、空气浮力与光脚体脂秤",
+            "把同一块 1000.00 g 黄金带去赤道为什么少了 2.16 g？称 1 kg 水为什么被空气偷走 1.05 g？体脂秤到底怎么测脂肪？",
+        )
+
+        # ---------------- Column 1: Latitude Gravity Effect ----------------
+        els.append(card(20, 64, 244, 354))
+        els.append(pill(32, 78, "真相 1 · 赤道真的会“掉秤”", fg=BLUE, bg=BLUE_SOFT, w=192, h=22, size=10.5))
+        els.append(txt(32, 117, "北京校准的电子秤称 1000.00 g 金条", 10.8, INK, weight="700"))
+        els.append(txt(32, 134, "(按 WGS-84 地球椭球重力公式精算)", 9.8, MUTED))
+
+        ry = 152
+        for pname, gp, m_app, diff in readings:
+            is_ref = abs(diff) < 1e-4
+            col = GREEN if is_ref else (ORANGE if diff > 0 else RED)
+            soft = GREEN_SOFT if is_ref else (ORANGE_SOFT if diff > 0 else RED_SOFT)
+            els.append(card(32, ry, 220, 36, rx=6, fill=soft, stroke=col, sw=0.9))
+            els.append(txt(40, ry + 15, pname, 10.0, INK, weight="700"))
+            els.append(txt(40, ry + 29, f"g = {gp:.4f} m/s²", 9.5, MUTED, cls="mono"))
+            sign_s = "基准" if is_ref else f"{diff:+.2f} g"
+            els.append(txt(244, ry + 15, f"{m_app:.2f} g", 10.4, col, "end", weight="700", cls="mono"))
+            els.append(txt(244, ry + 29, f"({sign_s})", 9.6, col, "end", weight="600"))
+            ry += 42
+
+        els.append(txt(32, 376, "• 地球自转离心力 + 赤道鼓出，让北极比", 9.9, BODY))
+        els.append(txt(32, 393, "  赤道重 0.53%！天平两边同乘 g 不受影响，", 9.9, BODY))
+        els.append(txt(32, 409, "  电子秤跨省搬家须按当地 g 重新砝码校准。", 9.9, INK, weight="700"))
+
+        # ---------------- Column 2: Air Buoyancy ----------------
+        els.append(card(274, 64, 222, 354))
+        els.append(pill(286, 78, "真相 2 · 空气浮力偷走重量", fg=TEAL, bg=TEAL_SOFT, w=186, h=22, size=10.5))
+        els.append(txt(286, 117, "同样 1000.00 g 真质量在空气中", 10.8, INK, weight="700"))
+        els.append(txt(286, 134, "(空气密度 ρ_air ≈ 1.20 kg/m³)", 9.8, MUTED))
+
+        els.append(card(286, 148, 198, 76, rx=7, fill=SLATE_SOFT, stroke=SLATE, sw=1))
+        els.append(txt(296, 167, "不锈钢标准砝码 (ρ=8000)", 10.2, INK, weight="700"))
+        els.append(txt(296, 185, "• 体积仅 0.125 L，排开空气 0.15 g", 9.8, BODY))
+        els.append(txt(296, 203, "• 校准后秤面定义为：1000.00 g", 10.0, GREEN, weight="700"))
+
+        els.append(card(286, 234, 198, 86, rx=7, fill=TEAL_SOFT, stroke=TEAL, sw=1.1))
+        els.append(txt(296, 253, "纯水 1 升 (ρ=1000，膨胀 8 倍!)", 10.2, TEAL, weight="700"))
+        els.append(txt(296, 271, "• 体积 1.000 L，排开空气重 1.20 g", 9.8, BODY))
+        els.append(txt(296, 289, f"• 比钢砝码多受浮力：{buoy_loss_g:.2f} g", 10.0, RED, weight="700"))
+        els.append(txt(296, 307, f"• 精密天平实测仅显：{m_water_ind:.2f} g!", 10.1, INK, weight="700"))
+
+        els.append(txt(286, 344, "• 阿基米德定律不止在水里生效：", 10.0, INK, weight="700"))
+        els.append(txt(286, 362, "  我们活在“空气海底”！胖体积物体", 9.9, BODY))
+        els.append(txt(286, 380, "  被空气向上托得更多；计量实验室", 9.9, BODY))
+        els.append(txt(286, 398, "  必须测温湿度气压做 NIST 浮力修正。", 9.9, INK, weight="600"))
+
+        # ---------------- Column 3: Barefoot BIA Body-Fat Scale ----------------
+        els.append(card(506, 64, 234, 354))
+        els.append(pill(518, 78, "真相 3 · 体脂秤为什么必须光脚", fg=PURPLE, bg=PURPLE_SOFT, w=206, h=22, size=10.5))
+        els.append(txt(518, 117, "生物电阻抗法 (BIA, ~50 kHz 微电流)", 10.6, INK, weight="700"))
+        els.append(txt(518, 134, "安全无感交流电 (< 500 μA) 探路", 9.8, MUTED))
+
+        els.append(card(518, 148, 210, 92, rx=7, fill=PURPLE_SOFT, stroke=PURPLE, sw=1))
+        els.append(txt(528, 168, "• 肌肉组织（含水 ~73%+电解质）：", 10.0, GREEN, weight="700"))
+        els.append(txt(528, 185, "  像宽敞盐水河，电流畅通、阻抗低！", 9.8, BODY))
+        els.append(txt(528, 206, "• 脂肪组织（含水仅 ~10%–15%）：", 10.0, ORANGE, weight="700"))
+        els.append(txt(528, 223, "  像油滴绝缘墙，电流难走、阻抗高！", 9.8, BODY))
+
+        els.append(card(518, 250, 210, 86, rx=7, fill=AMBER_SOFT, stroke=AMBER, sw=0.9))
+        els.append(txt(528, 269, "三大常见猫腻（ESPEN 临床指南）：", 10.1, AMBER, weight="700"))
+        els.append(txt(528, 287, "1. 穿袜子 = 踩绝缘垫，只能称体重；", 9.8, BODY))
+        els.append(txt(528, 304, "2. 4电极脚踏秤电流抄近道走双腿跨部，", 9.8, BODY))
+        els.append(txt(528, 321, "   上半身啤酒肚靠身高年龄公式“猜”！", 9.8, INK, weight="700"))
+
+        els.append(txt(518, 356, "• 喝一大杯水或跑完步出汗，体内水盐", 9.9, BODY))
+        els.append(txt(518, 374, "  一变体脂率立刻跳 1%–3%！建议每天", 9.9, BODY))
+        els.append(txt(518, 392, "  晨起排尿后空腹光脚测长期趋势，", 9.9, INK, weight="600"))
+        els.append(txt(518, 409, "  追求准度选带手柄 8 电极多频体脂秤。", 9.9, PURPLE, weight="700"))
+
+        return figure(
+            432,
+            "电子秤三大生活真相图解：WGS-84纬度重力差、NIST空气浮力损失与光脚体脂秤BIA生物电阻抗原理",
+            "左栏按WGS-84公式算出北京校准的1000.00克金条在北极显1003.13克、漠河1001.25克、三亚998.37克、赤道997.84克；中栏按NIST规程算出1千克纯水因体积比不锈钢砝码大8倍，多受1.05克空气浮力而显998.95克；右栏解析体脂秤50kHz微电流利用肌肉含水73%低阻与脂肪含水10%-15%高阻测算体脂，指出穿袜断路与四电极只测下半身的局限。",
+            els,
+        )
+
+    @register("electronic-scale", "电子秤五棒信号接力、双孔平行梁与惠斯通全桥动画、比率式24位ΔΣ ADC、电磁力分析天平与重力浮力体脂秤图解", "science_tech")
+    def build_electronic_scale():
+        write_svg(SUBDIR, "signal-chain-five-stages.svg", _build_signal_chain_five_stages())
+        write_svg(SUBDIR, "roberval-binocular-wheatstone-anim.svg", _build_roberval_binocular_wheatstone_anim())
+        write_svg(SUBDIR, "ratiometric-delta-sigma-adc.svg", _build_ratiometric_delta_sigma_adc())
+        write_svg(SUBDIR, "strain-gauge-vs-emfr-balance.svg", _build_strain_gauge_vs_emfr_balance())
+        write_svg(SUBDIR, "gravity-buoyancy-and-bia-scale.svg", _build_gravity_buoyancy_and_bia_scale())
+
+
+_register_electronic_scale()

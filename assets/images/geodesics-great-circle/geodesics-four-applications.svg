@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="410" viewBox="0 0 760 410" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">测地线在航空急流航路、建筑网壳穹顶、三维图形学热流法与广义相对论中的四大应用</title>
+<desc id="desc">四宫格展示测地线的跨学科应用：1. 东京至洛杉矶往返大圆与西风急流不对称航路；2. 富勒大圆测地穹顶与零测地曲率直木条网壳；3. 三维网格热扩散求测地距离；4. 广义相对论四维时空测地线与GPS修正。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+    </marker>
+    <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#6d28d9"/>
+    </marker>
+    <marker id="arr-red" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#b91c1c"/>
+    </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="409" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">不止画航线：测地线在航空气象、大跨建筑、三维图形学与广义相对论中的四大实战</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">从躲避高空逆风的“最短时间航迹”，到不掰弯木板的网壳穹顶、毫秒级热扩散测距与弯曲时空自由落体</text>
+<rect x="20" y="66" width="352" height="158" rx="10" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.3"/>
+<rect x="30" y="76" width="332" height="28" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="0.8"/>
+<text x="40" y="95" font-size="11.0" fill="#1d6fa5" text-anchor="start" font-weight="700">1. 洲际航空：大圆捷径 vs 高空急流（最短时间）</text>
+<text x="34" y="124" font-size="9.8" fill="#1e293b" text-anchor="start">• 几何最短 ≠ 飞得最快（泽梅洛导航变分问题）！</text>
+<text x="34" y="144" font-size="9.8" fill="#1e293b" text-anchor="start">• 东京→洛杉矶（东行）：故意往南偏离北太平洋大圆，</text>
+<text x="34" y="164" font-size="9.8" fill="#1e293b" text-anchor="start">  骑上 250 km/h 副热带西风急流“顺水推舟”省油省时；</text>
+<text x="34" y="184" font-size="9.8" fill="#1e293b" text-anchor="start">• 洛杉矶→东京（西行）：死贴阿留申北侧大圆弧躲逆风；</text>
+<text x="34" y="204" font-size="9.8" fill="#1e293b" text-anchor="start">• 另受双发延程 ETOPS 备降圆（如 180/330 分钟）约束。</text>
+<rect x="388" y="66" width="352" height="158" rx="10" fill="#ffffff" stroke="#18794e" stroke-width="1.3"/>
+<rect x="398" y="76" width="332" height="28" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="0.8"/>
+<text x="408" y="95" font-size="11.0" fill="#18794e" text-anchor="start" font-weight="700">2. 建筑与结构：富勒测地穹顶与零侧弯木网壳</text>
+<text x="402" y="124" font-size="9.8" fill="#1e293b" text-anchor="start">• 1954 年富勒专利：将正二十面体向球面投影细分，短杆</text>
+<text x="402" y="144" font-size="9.8" fill="#1e293b" text-anchor="start">  沿大圆网格交织，把风雪荷载化为均匀轴力、自重极轻；</text>
+<text x="402" y="164" font-size="9.8" fill="#1e293b" text-anchor="start">• 现代自由曲面木网壳：平直薄木条宽面难侧弯、窄面易</text>
+<text x="402" y="184" font-size="9.8" fill="#1e293b" text-anchor="start">  顺弯，只要沿曲面测地线（κ_g = 0）铺设，直木板就能</text>
+<text x="402" y="204" font-size="9.8" fill="#1e293b" text-anchor="start">  自然贴合双曲屋顶而毫无侧向扭曲内应力！</text>
+<rect x="20" y="238" width="352" height="158" rx="10" fill="#ffffff" stroke="#c25014" stroke-width="1.3"/>
+<rect x="30" y="248" width="332" height="28" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="0.8"/>
+<text x="40" y="267" font-size="11.0" fill="#c25014" text-anchor="start" font-weight="700">3. 计算机图形学与机器人：热流法（Geodesics in Heat）</text>
+<text x="34" y="296" font-size="9.8" fill="#1e293b" text-anchor="start">• 在百万三角形拼接的兔子/人体网格上，怎样毫秒级算出</text>
+<text x="34" y="316" font-size="9.8" fill="#1e293b" text-anchor="start">  一点到全身各处的贴面最短路（用于游戏蒙皮、CAD裁剪）？</text>
+<text x="34" y="336" font-size="9.8" fill="#1e293b" text-anchor="start">• 2013 年 Crane 等提出物理妙招：在起点戳一下“热针”，</text>
+<text x="34" y="356" font-size="9.8" fill="#1e293b" text-anchor="start">  解线性热传导方程让热流微扩散 Δt，热波前必沿测地线</text>
+<text x="34" y="376" font-size="9.8" fill="#1e293b" text-anchor="start">  推进！顺着温度梯度反方向积分，速度暴涨十倍以上。</text>
+<rect x="388" y="238" width="352" height="158" rx="10" fill="#ffffff" stroke="#6d28d9" stroke-width="1.3"/>
+<rect x="398" y="248" width="332" height="28" rx="6" fill="#f3e8ff" stroke="#6d28d9" stroke-width="0.8"/>
+<text x="408" y="267" font-size="11.0" fill="#6d28d9" text-anchor="start" font-weight="700">4. 广义相对论与 GPS：万物都在走四维时空测地线</text>
+<text x="402" y="296" font-size="9.8" fill="#1e293b" text-anchor="start">• 爱因斯坦掀翻“超距引力绳索”：质量与能量压弯四维时空，</text>
+<text x="402" y="316" font-size="9.8" fill="#1e293b" text-anchor="start">  地球绕太阳、星光擦过日全食偏折 1.75 角秒、空间站失重，</text>
+<text x="402" y="336" font-size="9.8" fill="#1e293b" text-anchor="start">  全都是在弯曲时空里“不打方向盘”走测地线：d²x^μ/dτ² + Γ…= 0；</text>
+<text x="402" y="356" font-size="9.8" fill="#1e293b" text-anchor="start">• 手机 GPS 每天既用 Karney 椭球测地线算地面距离，又必须</text>
+<text x="402" y="376" font-size="9.8" fill="#1e293b" text-anchor="start">  修正卫星轨道时空测地线带来的每天 +38 微秒相对论钟差！</text>
+</svg>

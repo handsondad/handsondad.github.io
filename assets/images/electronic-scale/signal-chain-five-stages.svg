@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="414" viewBox="0 0 760 414" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">电子秤内部五棒信号接力全流程图：从弹性体微弯、应变片变阻、惠斯通全桥到24位ADC与去皮显示</title>
+<desc id="desc">按1至5顺序展示5千克电子秤称量1克食盐时的信号链：铝合金梁产生0.2微应变（5毫米栅丝仅拉长1纳米），350欧康铜应变片变阻0.14毫欧，四臂惠斯通全桥输出2.00微伏差分电压，经128倍PGA与24位Delta-Sigma模数转换器数字化后由单片机去皮标定显示1.0克。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="413" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">看不见弹簧也没砝码，电子秤靠哪“五棒接力”称出 1 克盐？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">以量程 5 kg、激励电压 5 V、350 Ω 康铜全桥传感器为例：追踪 1 g 重力怎样从 1 纳米拉伸变成屏幕数字</text>
+<rect x="20" y="66" width="136" height="260" rx="10" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.2"/>
+<circle cx="37" cy="86" r="9.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="37" y="90" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="51" y="90" font-size="10.4" fill="#1d6fa5" text-anchor="start" font-weight="700">第 1 棒 · 弹性微弯</text>
+<text x="30" y="111" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">铝合金平行梁变形</text>
+<rect x="28" y="121" width="120" height="25" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="0.8"/>
+<text x="88.0" y="137" font-size="10.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">F = mg → 应变 ε</text>
+<text x="28" y="167" font-size="9.5" fill="#1e293b" text-anchor="start">• 满载 5 kg 时梁面：</text>
+<text x="28" y="188" font-size="9.5" fill="#1e293b" text-anchor="start">  ε_max = 1000 με (0.1%)</text>
+<text x="28" y="209" font-size="9.5" fill="#0f172a" text-anchor="start" font-weight="700">• 放 1 g 盐：ε = 0.2 με</text>
+<text x="28" y="230" font-size="9.5" fill="#0f172a" text-anchor="start" font-weight="700">  5 mm 栅丝拉长 1.0 nm</text>
+<text x="28" y="251" font-size="9.5" fill="#1e293b" text-anchor="start">  (约 4 颗铜镍原子宽!)</text>
+<line x1="157" y1="134" x2="165" y2="134" stroke="#64748b" stroke-width="1.6" marker-end="url(#arr-muted)"/>
+<rect x="166" y="66" width="136" height="260" rx="10" fill="#ffffff" stroke="#c25014" stroke-width="1.2"/>
+<circle cx="183" cy="86" r="9.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="183" y="90" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="197" y="90" font-size="10.4" fill="#c25014" text-anchor="start" font-weight="700">第 2 棒 · 栅丝变阻</text>
+<text x="176" y="111" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">康铜箔应变片传感</text>
+<rect x="174" y="121" width="120" height="25" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="0.8"/>
+<text x="234.0" y="137" font-size="10.0" fill="#c25014" text-anchor="middle" font-weight="700">ε → 阻值变化 ΔR</text>
+<text x="174" y="167" font-size="9.5" fill="#1e293b" text-anchor="start">• 蛇形往返光刻金属栅</text>
+<text x="174" y="188" font-size="9.5" fill="#1e293b" text-anchor="start">  灵敏系数 K ≈ 2.0</text>
+<text x="174" y="209" font-size="9.5" fill="#1e293b" text-anchor="start">• 满载 5 kg：ΔR = 0.70 Ω</text>
+<text x="174" y="230" font-size="9.5" fill="#0f172a" text-anchor="start" font-weight="700">• 放 1 g 盐：ΔR=0.14 mΩ</text>
+<text x="174" y="251" font-size="9.5" fill="#1e293b" text-anchor="start">  (原阻值的五百万分之一)</text>
+<line x1="303" y1="134" x2="311" y2="134" stroke="#64748b" stroke-width="1.6" marker-end="url(#arr-muted)"/>
+<rect x="312" y="66" width="136" height="260" rx="10" fill="#ffffff" stroke="#18794e" stroke-width="1.2"/>
+<circle cx="329" cy="86" r="9.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="329" y="90" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">3</text>
+<text x="343" y="90" font-size="10.4" fill="#18794e" text-anchor="start" font-weight="700">第 3 棒 · 差分电桥</text>
+<text x="322" y="111" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">惠斯通全桥剥底噪</text>
+<rect x="320" y="121" width="120" height="25" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="0.8"/>
+<text x="380.0" y="137" font-size="10.0" fill="#18794e" text-anchor="middle" font-weight="700">ΔR → 差分 V_out</text>
+<text x="320" y="167" font-size="9.5" fill="#1e293b" text-anchor="start">• 2 拉(+ΔR) + 2 压(-ΔR)</text>
+<text x="320" y="188" font-size="9.5" fill="#1e293b" text-anchor="start">• 剥掉 2.50 V 底数与温漂</text>
+<text x="320" y="209" font-size="9.5" fill="#1e293b" text-anchor="start">• 满载 5 kg：+10.00 mV</text>
+<text x="320" y="230" font-size="9.5" fill="#0f172a" text-anchor="start" font-weight="700">• 放 1 g 盐：+2.00 μV</text>
+<text x="320" y="251" font-size="9.5" fill="#1e293b" text-anchor="start">  (比干电池小 75 万倍)</text>
+<line x1="449" y1="134" x2="457" y2="134" stroke="#64748b" stroke-width="1.6" marker-end="url(#arr-muted)"/>
+<rect x="458" y="66" width="136" height="260" rx="10" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+<circle cx="475" cy="86" r="9.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="475" y="90" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">4</text>
+<text x="489" y="90" font-size="10.4" fill="#6d28d9" text-anchor="start" font-weight="700">第 4 棒 · 模数转换</text>
+<text x="468" y="111" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">128× PGA + 24位ADC</text>
+<rect x="466" y="121" width="120" height="25" rx="6" fill="#f3e8ff" stroke="#6d28d9" stroke-width="0.8"/>
+<text x="526.0" y="137" font-size="10.0" fill="#6d28d9" text-anchor="middle" font-weight="700">V_out → 数字码 N</text>
+<text x="466" y="167" font-size="9.5" fill="#1e293b" text-anchor="start">• 低噪放大 128 倍至毫伏</text>
+<text x="466" y="188" font-size="9.5" fill="#1e293b" text-anchor="start">• ΔΣ 过采样 + 噪声整形</text>
+<text x="466" y="209" font-size="9.5" fill="#1e293b" text-anchor="start">• 比率参考抵消电池掉电</text>
+<text x="466" y="230" font-size="9.5" fill="#1e293b" text-anchor="start">• 输出 ~9 万级无噪内码</text>
+<text x="466" y="251" font-size="9.5" fill="#1e293b" text-anchor="start">  (陷波滤除 50 Hz 杂波)</text>
+<line x1="595" y1="134" x2="603" y2="134" stroke="#64748b" stroke-width="1.6" marker-end="url(#arr-muted)"/>
+<rect x="604" y="66" width="136" height="260" rx="10" fill="#ffffff" stroke="#0f766e" stroke-width="1.2"/>
+<circle cx="621" cy="86" r="9.5" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.2"/>
+<text x="621" y="90" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">5</text>
+<text x="635" y="90" font-size="10.4" fill="#0f766e" text-anchor="start" font-weight="700">第 5 棒 · 算法标定</text>
+<text x="614" y="111" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">单片机去皮与换算</text>
+<rect x="612" y="121" width="120" height="25" rx="6" fill="#f0fdfa" stroke="#0f766e" stroke-width="0.8"/>
+<text x="672.0" y="137" font-size="10.0" fill="#0f766e" text-anchor="middle" font-weight="700">N → 屏幕克数 (g)</text>
+<text x="612" y="167" font-size="9.5" fill="#1e293b" text-anchor="start">• 开机采空秤零点 N_0</text>
+<text x="612" y="188" font-size="9.5" fill="#1e293b" text-anchor="start">• TARE 键刷新皮重基准</text>
+<text x="612" y="209" font-size="9.5" fill="#1e293b" text-anchor="start">• 乘出厂砝码斜率 k_cal</text>
+<text x="612" y="230" font-size="9.5" fill="#1e293b" text-anchor="start">• 零点跟踪 + 判稳锁数</text>
+<text x="612" y="251" font-size="9.5" fill="#0f172a" text-anchor="start" font-weight="700">• 液晶屏稳亮：1.0 g !</text>
+<rect x="20" y="338" width="720" height="64" rx="9" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="349.0" width="86" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="75.0" y="364.0" font-size="10.6" fill="#1d6fa5" text-anchor="middle" font-weight="600">量级直觉账</text>
+<text x="130" y="363" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="600">普通万用表连 0.1 Ω 都测不稳；电子秤在 350 Ω 背景上抓出 0.00014 Ω，好比在珠峰顶测出 3.5 毫米新雪！</text>
+<text x="130" y="386" font-size="10.4" fill="#64748b" text-anchor="start">秘诀不靠硬测总电阻，而是靠“双孔梁浓缩应变 + 惠斯通全桥归零底数 + 24 位 ΔΣ 过采样”三招联手。</text>
+</svg>

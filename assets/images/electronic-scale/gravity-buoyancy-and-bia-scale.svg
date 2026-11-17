@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="432" viewBox="0 0 760 432" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">电子秤三大生活真相图解：WGS-84纬度重力差、NIST空气浮力损失与光脚体脂秤BIA生物电阻抗原理</title>
+<desc id="desc">左栏按WGS-84公式算出北京校准的1000.00克金条在北极显1003.13克、漠河1001.25克、三亚998.37克、赤道997.84克；中栏按NIST规程算出1千克纯水因体积比不锈钢砝码大8倍，多受1.05克空气浮力而显998.95克；右栏解析体脂秤50kHz微电流利用肌肉含水73%低阻与脂肪含水10%-15%高阻测算体脂，指出穿袜断路与四电极只测下半身的局限。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="431" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">电子秤测的其实是“力”不是“质量”！—— 读懂南北掉秤、空气浮力与光脚体脂秤</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">把同一块 1000.00 g 黄金带去赤道为什么少了 2.16 g？称 1 kg 水为什么被空气偷走 1.05 g？体脂秤到底怎么测脂肪？</text>
+<rect x="20" y="64" width="244" height="354" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="78.0" width="192" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="128.0" y="93.0" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">真相 1 · 赤道真的会“掉秤”</text>
+<text x="32" y="117" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">北京校准的电子秤称 1000.00 g 金条</text>
+<text x="32" y="134" font-size="9.8" fill="#64748b" text-anchor="start">(按 WGS-84 地球椭球重力公式精算)</text>
+<rect x="32" y="152" width="220" height="36" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="0.9"/>
+<text x="40" y="167" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">北极点 90°N</text>
+<text x="40" y="181" font-size="9.5" fill="#64748b" text-anchor="start" class="mono">g = 9.8322 m/s²</text>
+<text x="244" y="167" font-size="10.4" fill="#c25014" text-anchor="end" font-weight="700" class="mono">1003.12 g</text>
+<text x="244" y="181" font-size="9.6" fill="#c25014" text-anchor="end" font-weight="600">(+3.12 g)</text>
+<rect x="32" y="194" width="220" height="36" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="0.9"/>
+<text x="40" y="209" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">漠河 53.5°N</text>
+<text x="40" y="223" font-size="9.5" fill="#64748b" text-anchor="start" class="mono">g = 9.8138 m/s²</text>
+<text x="244" y="209" font-size="10.4" fill="#c25014" text-anchor="end" font-weight="700" class="mono">1001.24 g</text>
+<text x="244" y="223" font-size="9.6" fill="#c25014" text-anchor="end" font-weight="600">(+1.24 g)</text>
+<rect x="32" y="236" width="220" height="36" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="0.9"/>
+<text x="40" y="251" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">北京 39.9°N (校准地)</text>
+<text x="40" y="265" font-size="9.5" fill="#64748b" text-anchor="start" class="mono">g = 9.8016 m/s²</text>
+<text x="244" y="251" font-size="10.4" fill="#18794e" text-anchor="end" font-weight="700" class="mono">1000.00 g</text>
+<text x="244" y="265" font-size="9.6" fill="#18794e" text-anchor="end" font-weight="600">(基准)</text>
+<rect x="32" y="278" width="220" height="36" rx="6" fill="#fef2f2" stroke="#b91c1c" stroke-width="0.9"/>
+<text x="40" y="293" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">三亚 18.3°N</text>
+<text x="40" y="307" font-size="9.5" fill="#64748b" text-anchor="start" class="mono">g = 9.7854 m/s²</text>
+<text x="244" y="293" font-size="10.4" fill="#b91c1c" text-anchor="end" font-weight="700" class="mono">998.35 g</text>
+<text x="244" y="307" font-size="9.6" fill="#b91c1c" text-anchor="end" font-weight="600">(-1.65 g)</text>
+<rect x="32" y="320" width="220" height="36" rx="6" fill="#fef2f2" stroke="#b91c1c" stroke-width="0.9"/>
+<text x="40" y="335" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">赤道 0°</text>
+<text x="40" y="349" font-size="9.5" fill="#64748b" text-anchor="start" class="mono">g = 9.7803 m/s²</text>
+<text x="244" y="335" font-size="10.4" fill="#b91c1c" text-anchor="end" font-weight="700" class="mono">997.83 g</text>
+<text x="244" y="349" font-size="9.6" fill="#b91c1c" text-anchor="end" font-weight="600">(-2.17 g)</text>
+<text x="32" y="376" font-size="9.9" fill="#1e293b" text-anchor="start">• 地球自转离心力 + 赤道鼓出，让北极比</text>
+<text x="32" y="393" font-size="9.9" fill="#1e293b" text-anchor="start">  赤道重 0.53%！天平两边同乘 g 不受影响，</text>
+<text x="32" y="409" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="700">  电子秤跨省搬家须按当地 g 重新砝码校准。</text>
+<rect x="274" y="64" width="222" height="354" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="286.0" y="78.0" width="186" height="22" rx="11.0" fill="#f0fdfa" stroke="#0f766e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="379.0" y="93.0" font-size="10.5" fill="#0f766e" text-anchor="middle" font-weight="600">真相 2 · 空气浮力偷走重量</text>
+<text x="286" y="117" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">同样 1000.00 g 真质量在空气中</text>
+<text x="286" y="134" font-size="9.8" fill="#64748b" text-anchor="start">(空气密度 ρ_air ≈ 1.20 kg/m³)</text>
+<rect x="286" y="148" width="198" height="76" rx="7" fill="#f1f5f9" stroke="#475569" stroke-width="1"/>
+<text x="296" y="167" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">不锈钢标准砝码 (ρ=8000)</text>
+<text x="296" y="185" font-size="9.8" fill="#1e293b" text-anchor="start">• 体积仅 0.125 L，排开空气 0.15 g</text>
+<text x="296" y="203" font-size="10.0" fill="#18794e" text-anchor="start" font-weight="700">• 校准后秤面定义为：1000.00 g</text>
+<rect x="286" y="234" width="198" height="86" rx="7" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.1"/>
+<text x="296" y="253" font-size="10.2" fill="#0f766e" text-anchor="start" font-weight="700">纯水 1 升 (ρ=1000，膨胀 8 倍!)</text>
+<text x="296" y="271" font-size="9.8" fill="#1e293b" text-anchor="start">• 体积 1.000 L，排开空气重 1.20 g</text>
+<text x="296" y="289" font-size="10.0" fill="#b91c1c" text-anchor="start" font-weight="700">• 比钢砝码多受浮力：1.05 g</text>
+<text x="296" y="307" font-size="10.1" fill="#0f172a" text-anchor="start" font-weight="700">• 精密天平实测仅显：998.95 g!</text>
+<text x="286" y="344" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">• 阿基米德定律不止在水里生效：</text>
+<text x="286" y="362" font-size="9.9" fill="#1e293b" text-anchor="start">  我们活在“空气海底”！胖体积物体</text>
+<text x="286" y="380" font-size="9.9" fill="#1e293b" text-anchor="start">  被空气向上托得更多；计量实验室</text>
+<text x="286" y="398" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="600">  必须测温湿度气压做 NIST 浮力修正。</text>
+<rect x="506" y="64" width="234" height="354" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="518.0" y="78.0" width="206" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="621.0" y="93.0" font-size="10.5" fill="#6d28d9" text-anchor="middle" font-weight="600">真相 3 · 体脂秤为什么必须光脚</text>
+<text x="518" y="117" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">生物电阻抗法 (BIA, ~50 kHz 微电流)</text>
+<text x="518" y="134" font-size="9.8" fill="#64748b" text-anchor="start">安全无感交流电 (&lt; 500 μA) 探路</text>
+<rect x="518" y="148" width="210" height="92" rx="7" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="528" y="168" font-size="10.0" fill="#18794e" text-anchor="start" font-weight="700">• 肌肉组织（含水 ~73%+电解质）：</text>
+<text x="528" y="185" font-size="9.8" fill="#1e293b" text-anchor="start">  像宽敞盐水河，电流畅通、阻抗低！</text>
+<text x="528" y="206" font-size="10.0" fill="#c25014" text-anchor="start" font-weight="700">• 脂肪组织（含水仅 ~10%–15%）：</text>
+<text x="528" y="223" font-size="9.8" fill="#1e293b" text-anchor="start">  像油滴绝缘墙，电流难走、阻抗高！</text>
+<rect x="518" y="250" width="210" height="86" rx="7" fill="#fffbeb" stroke="#b45309" stroke-width="0.9"/>
+<text x="528" y="269" font-size="10.1" fill="#b45309" text-anchor="start" font-weight="700">三大常见猫腻（ESPEN 临床指南）：</text>
+<text x="528" y="287" font-size="9.8" fill="#1e293b" text-anchor="start">1. 穿袜子 = 踩绝缘垫，只能称体重；</text>
+<text x="528" y="304" font-size="9.8" fill="#1e293b" text-anchor="start">2. 4电极脚踏秤电流抄近道走双腿跨部，</text>
+<text x="528" y="321" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">   上半身啤酒肚靠身高年龄公式“猜”！</text>
+<text x="518" y="356" font-size="9.9" fill="#1e293b" text-anchor="start">• 喝一大杯水或跑完步出汗，体内水盐</text>
+<text x="518" y="374" font-size="9.9" fill="#1e293b" text-anchor="start">  一变体脂率立刻跳 1%–3%！建议每天</text>
+<text x="518" y="392" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="600">  晨起排尿后空腹光脚测长期趋势，</text>
+<text x="518" y="409" font-size="9.9" fill="#6d28d9" text-anchor="start" font-weight="700">  追求准度选带手柄 8 电极多频体脂秤。</text>
+</svg>

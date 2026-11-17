@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="406" viewBox="0 0 760 406" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">曲面测地曲率归零原理与测地线不等于全局唯一最短路的三大反例</title>
+<desc id="desc">左图对比地球仪上过球心的大圆（κ_g=0，胶带平贴）与北纬60度纬线圈（κ_g≠0，必须向北打方向盘）；右图列出球面优弧、南北极无穷经线与圆柱面螺旋线三个反例。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+    </marker>
+    <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#6d28d9"/>
+    </marker>
+    <marker id="arr-red" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#b91c1c"/>
+    </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="405" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">曲面上什么叫“走直线”？二维蚂蚁的零侧偏法则（κ_g = 0）与三大反直觉真相</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">把空间加速度拆成“压脚底板的法曲率 κ_n”和“左右打方向盘的测地曲率 κ_g”：只禁掉左右打轮就是测地线</text>
+<rect x="20" y="66" width="360" height="326" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="90" font-size="12.4" fill="#0f172a" text-anchor="start" font-weight="700">地球仪贴胶带实验：大圆 vs 60°N 纬线圈</text>
+<circle cx="186.0" cy="214.0" r="88.0" fill="#f1f5f9" stroke="#475569" stroke-width="1.4"/>
+<path d="M 98.0,214.0 A 88.0,26 0 0,0 274.0,214.0" fill="none" stroke="#1d6fa5" stroke-width="3.2"/>
+<path d="M 98.0,214.0 A 88.0,26 0 0,1 274.0,214.0" fill="none" stroke="#1d6fa5" stroke-width="1.3" stroke-dasharray="4 4"/>
+<path d="M 112.2,166.0 A 73.8,16 0 0,0 259.8,166.0" fill="none" stroke="#c25014" stroke-width="2.6" stroke-dasharray="5 3"/>
+<circle cx="186.0" cy="214.0" r="3.2" fill="#0f172a"/>
+<text x="194.0" y="210.0" font-size="9.8" fill="#475569" text-anchor="start" font-weight="600">球心 O</text>
+<circle cx="172.0" cy="181.2" r="4.2" fill="#c25014" stroke="#fff" stroke-width="1.2"/>
+<line x1="172.0" y1="181.2" x2="206.0" y2="183.2" stroke="#0f172a" stroke-width="1.8" marker-end="url(#arr-muted)"/>
+<text x="210.0" y="186.2" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="700">前进 T</text>
+<line x1="172.0" y1="181.2" x2="166.0" y2="153.2" stroke="#b91c1c" stroke-width="2.0" marker-end="url(#arr-red)"/>
+<text x="162.0" y="148.2" font-size="9.6" fill="#b91c1c" text-anchor="middle" font-weight="700" class="halo">必须向北猛打轮 κ_g≠0!</text>
+<text x="186.0" y="254.0" font-size="10.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">过球心大圆：κ_g = 0（胶带平贴不起皱）</text>
+<rect x="34" y="308" width="332" height="72" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.0"/>
+<text x="46" y="327" font-size="10.2" fill="#1d6fa5" text-anchor="start" font-weight="700" class="mono">三维加速度分解：γ&#x27;&#x27;(s) = κ_n·N  +  κ_g·(N × T)</text>
+<text x="46" y="347" font-size="9.6" fill="#1e293b" text-anchor="start">• κ_n（法曲率）：曲面托住脚底上下弯，二维蚂蚁浑然不觉；</text>
+<text x="46" y="366" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="700">• κ_g = 0（测地曲率为零）：左右零打轮 = 曲面上的“真直线”！</text>
+<rect x="396" y="66" width="344" height="326" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="412" y="90" font-size="12.4" fill="#0f172a" text-anchor="start" font-weight="700">三大反直觉：测地线 ≠ 唯一全局最短路！</text>
+<rect x="410" y="104" width="316" height="86" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<circle cx="428" cy="124" r="9.5" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="428" y="128" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="444" y="128" font-size="10.8" fill="#1d6fa5" text-anchor="start" font-weight="700">球面大圆的“短弧 vs 绕地球背面长弧”</text>
+<text x="420" y="152" font-size="9.8" fill="#1e293b" text-anchor="start">北京→纽约沿大圆短弧 10,978 km 最短；反方向绕南极</text>
+<text x="420" y="172" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="600">走同一大圆长弧 29,052 km 处处 κ_g=0，也是测地线却非最短！</text>
+<rect x="410" y="200" width="316" height="86" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.1"/>
+<circle cx="428" cy="220" r="9.5" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="428" y="224" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">2</text>
+<text x="444" y="224" font-size="10.8" fill="#6d28d9" text-anchor="start" font-weight="700">共轭点奇观：北极到南极有无穷多条最短线</text>
+<text x="420" y="248" font-size="9.8" fill="#1e293b" text-anchor="start">从北极出发沿任意一条经线直走 20,004 km 都能到南极，</text>
+<text x="420" y="268" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="600">每一条经线都是等长最短测地线（最短路未必唯一）！</text>
+<rect x="410" y="296" width="316" height="86" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.1"/>
+<circle cx="428" cy="316" r="9.5" fill="#ffffff" stroke="#18794e" stroke-width="1.2"/>
+<text x="428" y="320" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">3</text>
+<text x="444" y="320" font-size="10.8" fill="#18794e" text-anchor="start" font-weight="700">平纸卷圆柱：无穷多条螺旋测地线同连 A、B</text>
+<text x="420" y="344" font-size="9.8" fill="#1e293b" text-anchor="start">把圆柱剪开展平（高斯曲率 K=0 内蕴不变）：直母线、</text>
+<text x="420" y="364" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="600">绕 1 圈螺旋、绕 N 圈螺旋展开全是直线，皆为测地线！</text>
+</svg>
