@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="464" viewBox="0 0 760 464" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">超越根号求解一般五次方程的四条现代数学与计算大道总览图</title>
+<desc id="desc">左上展示布林-杰拉德标准型y^5+y+c=0及单变量布林根式BR(c)；右上展示1858埃尔米特椭圆模函数与1884克莱因正二十面体超几何级数解析解；下方左右展示现代科学计算使用的5×5弗罗贝尼乌斯伴随矩阵QR特征值法与牛顿迭代4步达16位精度的二阶收敛。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="463" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">跳出“只准开根号”的牢笼后，人类究竟怎么解五次方程？—— 四条现代破壁大道</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">代数不死，只是换了更趁手的武器：单参数布林根式、埃尔米特椭圆模函数、克莱因二十面体与伴随矩阵特征值</text>
+<rect x="20" y="62" width="352" height="168" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="75.0" width="324" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="196.0" y="90.0" font-size="9.3" fill="#1d6fa5" text-anchor="middle" font-weight="600">大道① 极致瘦身：布林-杰拉德标准型 (1786 / 1834)</text>
+<text x="34" y="114" font-size="8.9" fill="#1e293b" text-anchor="start">任意五次方程原本拖着 5 个自由系数，连表都没法查：</text>
+<text x="196" y="134" font-size="9.2" fill="#475569" text-anchor="middle" font-weight="700" class="mono">x⁵ + a x⁴ + b x³ + c x² + d x + e = 0</text>
+<text x="196" y="152" font-size="8.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">↓ 奇尔恩豪斯变换（仅用二、三、四次根号消去 x⁴, x³, x² 三项！）</text>
+<rect x="66" y="160" width="260" height="28" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.3"/>
+<text x="196" y="179" font-size="9.5" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono">y⁵ + y + c = 0   （只剩唯一参数 c！）</text>
+<text x="34" y="206" font-size="8.8" fill="#0f172a" text-anchor="start" font-weight="600">• 定义单变量新函数【布林根式 BR(c)】为 y⁵+y+c=0 的唯一实根，</text>
+<text x="34" y="221" font-size="8.8" fill="#1e293b" text-anchor="start">  就像当年引进 sin x 一样，天下一切五次方程当场拥有闭式精确解！</text>
+<rect x="386" y="62" width="354" height="168" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="400.0" y="75.0" width="326" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="563.0" y="90.0" font-size="9.3" fill="#6d28d9" text-anchor="middle" font-weight="600">大道② 超越函数闭式解：椭圆模函数 &amp; 正二十面体</text>
+<text x="400" y="114" font-size="8.8" fill="#1e293b" text-anchor="start">• 三次方程可借圆的三角函数 cos 3θ = 4cos³θ − 3cosθ 三等分角求解；</text>
+<text x="400" y="133" font-size="8.9" fill="#6d28d9" text-anchor="start" font-weight="700">• 1858 埃尔米特 &amp; 克罗内克：把单周期“圆”升级成双周期“环面”，</text>
+<text x="400" y="150" font-size="8.8" fill="#0f172a" text-anchor="start" font-weight="600">  用【椭圆模函数 θ(τ)】像查三角函数一样一步写出五次方程精确根！</text>
+<text x="400" y="170" font-size="8.9" fill="#0f766e" text-anchor="start" font-weight="700">• 1884 克莱因《正二十面体讲义》：A₅ 就是黎曼球面内接正二十面体</text>
+<text x="400" y="187" font-size="8.8" fill="#1e293b" text-anchor="start">  的 60 重旋转对称群，反演二十面体不变量（高斯超几何级数 ₂F₁）</text>
+<text x="400" y="204" font-size="8.8" fill="#0f172a" text-anchor="start" font-weight="600">  即可直接给出解析通解——群论、复几何与代数方程在此大一统！</text>
+<rect x="20" y="242" width="720" height="208" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="34" y="264" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">大道③ &amp; ④ 现代计算机一微秒算准 16 位有效数字的幕后真相：伴随矩阵特征值 + 二阶牛顿迭代</text>
+<rect x="34" y="278" width="336" height="156" rx="7" fill="#f8fafc" stroke="#0f766e" stroke-width="1.1"/>
+<text x="46" y="297" font-size="9.1" fill="#0f766e" text-anchor="start" font-weight="700">MATLAB / Python numpy.roots 真正跑的算法：</text>
+<text x="46" y="314" font-size="8.7" fill="#1e293b" text-anchor="start">连三四次求根公式都不用！直接构造 5×5 伴随矩阵 C：</text>
+<polyline points="54.0,326.0 48.0,326.0 48.0,416.0 54.0,416.0" fill="none" stroke="#0f172a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="186.0,326.0 192.0,326.0 192.0,416.0 186.0,416.0" fill="none" stroke="#0f172a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="67.0" y="341.0" font-size="8.8" fill="#64748b" text-anchor="middle" font-weight="700" class="mono">0</text>
+<text x="93.0" y="341.0" font-size="8.8" fill="#64748b" text-anchor="middle" font-weight="700" class="mono">0</text>
+<text x="119.0" y="341.0" font-size="8.8" fill="#64748b" text-anchor="middle" font-weight="700" class="mono">0</text>
+<text x="145.0" y="341.0" font-size="8.8" fill="#64748b" text-anchor="middle" font-weight="700" class="mono">0</text>
+<text x="171.0" y="341.0" font-size="8.8" fill="#dc2626" text-anchor="middle" font-weight="700" class="mono">+1</text>
+<text x="67.0" y="358.0" font-size="8.8" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono">1</text>
+<text x="93.0" y="358.0" font-size="8.8" fill="#64748b" text-anchor="middle" font-weight="700" class="mono">0</text>
+<text x="119.0" y="358.0" font-size="8.8" fill="#64748b" text-anchor="middle" font-weight="700" class="mono">0</text>
+<text x="145.0" y="358.0" font-size="8.8" fill="#64748b" text-anchor="middle" font-weight="700" class="mono">0</text>
+<text x="171.0" y="358.0" font-size="8.8" fill="#dc2626" text-anchor="middle" font-weight="700" class="mono">+1</text>
+<text x="67.0" y="375.0" font-size="8.8" fill="#64748b" text-anchor="middle" font-weight="700" class="mono">0</text>
+<text x="93.0" y="375.0" font-size="8.8" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono">1</text>
+<text x="119.0" y="375.0" font-size="8.8" fill="#64748b" text-anchor="middle" font-weight="700" class="mono">0</text>
+<text x="145.0" y="375.0" font-size="8.8" fill="#64748b" text-anchor="middle" font-weight="700" class="mono">0</text>
+<text x="171.0" y="375.0" font-size="8.8" fill="#64748b" text-anchor="middle" font-weight="700" class="mono">0</text>
+<text x="67.0" y="392.0" font-size="8.8" fill="#64748b" text-anchor="middle" font-weight="700" class="mono">0</text>
+<text x="93.0" y="392.0" font-size="8.8" fill="#64748b" text-anchor="middle" font-weight="700" class="mono">0</text>
+<text x="119.0" y="392.0" font-size="8.8" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono">1</text>
+<text x="145.0" y="392.0" font-size="8.8" fill="#64748b" text-anchor="middle" font-weight="700" class="mono">0</text>
+<text x="171.0" y="392.0" font-size="8.8" fill="#64748b" text-anchor="middle" font-weight="700" class="mono">0</text>
+<text x="67.0" y="409.0" font-size="8.8" fill="#64748b" text-anchor="middle" font-weight="700" class="mono">0</text>
+<text x="93.0" y="409.0" font-size="8.8" fill="#64748b" text-anchor="middle" font-weight="700" class="mono">0</text>
+<text x="119.0" y="409.0" font-size="8.8" fill="#64748b" text-anchor="middle" font-weight="700" class="mono">0</text>
+<text x="145.0" y="409.0" font-size="8.8" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono">1</text>
+<text x="171.0" y="409.0" font-size="8.8" fill="#64748b" text-anchor="middle" font-weight="700" class="mono">0</text>
+<text x="206" y="344" font-size="8.7" fill="#0f172a" text-anchor="start" font-weight="700">特征多项式：</text>
+<text x="206" y="361" font-size="8.8" fill="#1d6fa5" text-anchor="start" font-weight="700" class="mono">det(xI − C) = x⁵ − x − 1</text>
+<text x="206" y="382" font-size="8.7" fill="#1e293b" text-anchor="start">用正交 QR 算法求 5 个特征值：</text>
+<text x="206" y="399" font-size="8.7" fill="#1e293b" text-anchor="start">数值极稳、不炸误差，一次吐出</text>
+<text x="206" y="416" font-size="8.7" fill="#18794e" text-anchor="start" font-weight="700">全部 5 颗复根（耗时 &lt; 0.05 ms）！</text>
+<rect x="384" y="278" width="342" height="156" rx="7" fill="#f8fafc" stroke="#18794e" stroke-width="1.1"/>
+<text x="396" y="297" font-size="9.1" fill="#18794e" text-anchor="start" font-weight="700">牛顿切线迭代 xₙ₊₁ = xₙ − f(xₙ)/f&#x27;(xₙ)（初值 x₀ = 1.2）：</text>
+<text x="396" y="314" font-size="8.7" fill="#1e293b" text-anchor="start">每算一步，正确小数位数【直接翻倍】（二阶收敛）！</text>
+<text x="398" y="339" font-size="8.5" fill="#0f172a" text-anchor="start" font-weight="700">第 0 步</text>
+<rect x="448" y="328" width="17.8" height="13" rx="3" fill="#18794e" fill-opacity="0.82"/>
+<text x="471.8" y="338.5" font-size="8.4" fill="#18794e" text-anchor="start" font-weight="700">准 1.5 位有效数字</text>
+<text x="398" y="359" font-size="8.5" fill="#0f172a" text-anchor="start" font-weight="700">第 1 步</text>
+<rect x="448" y="348" width="32.6" height="13" rx="3" fill="#18794e" fill-opacity="0.82"/>
+<text x="486.6" y="358.5" font-size="8.4" fill="#18794e" text-anchor="start" font-weight="700">准 2.7 位有效数字</text>
+<text x="398" y="379" font-size="8.5" fill="#0f172a" text-anchor="start" font-weight="700">第 2 步</text>
+<rect x="448" y="368" width="61.8" height="13" rx="3" fill="#18794e" fill-opacity="0.82"/>
+<text x="515.8" y="378.5" font-size="8.4" fill="#18794e" text-anchor="start" font-weight="700">准 5.2 位有效数字</text>
+<text x="398" y="399" font-size="8.5" fill="#0f172a" text-anchor="start" font-weight="700">第 3 步</text>
+<rect x="448" y="388" width="120.3" height="13" rx="3" fill="#18794e" fill-opacity="0.82"/>
+<text x="574.3" y="398.5" font-size="8.4" fill="#18794e" text-anchor="start" font-weight="700">准 10.0 位有效数字</text>
+<text x="398" y="419" font-size="8.5" fill="#0f172a" text-anchor="start" font-weight="700">第 4 步</text>
+<rect x="448" y="408" width="192.0" height="13" rx="3" fill="#18794e" fill-opacity="0.82"/>
+<text x="646.0" y="418.5" font-size="8.4" fill="#18794e" text-anchor="start" font-weight="700">准 16.0 位有效数字</text>
+</svg>

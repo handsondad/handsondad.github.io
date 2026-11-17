@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="438" viewBox="0 0 760 438" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">萨凯里双直角四边形三假说与罗巴切夫斯基平行角精确函数图解</title>
+<desc id="desc">左栏对比萨凯里四边形在直角、钝角、锐角三种假说下的顶角与顶边变化；右栏按精确公式绘制双曲平行角Π(d)=2arctan(e^(-d/R))随距离d/R从90度指数衰减的曲线。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="neg-arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1d6fa5"/>
+    </marker>
+    <marker id="neg-arr-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#18794e"/>
+    </marker>
+    <marker id="neg-arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#dc2626"/>
+    </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="437" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">死磕两千年的“第五公设悬案”：萨凯里三假说与罗巴切夫斯基平行角公式</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">想用反证法保卫欧几里得，却意外推演出零破绽的“锐角新宇宙”：平行角 Π(d) = 2 arctan(e^(-d/R))</text>
+<rect x="20" y="66" width="352" height="358" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="90" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">① 萨凯里双直角四边形 ABCD（1733）</text>
+<text x="36" y="109" font-size="9.6" fill="#64748b" text-anchor="start">底边 ∠A=∠B=90°，立柱 AD=BC：顶角 ∠C, ∠D 等于几度？</text>
+<rect x="34" y="120" width="324" height="86" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.0"/>
+<text x="46" y="139" font-size="9.9" fill="#1d6fa5" text-anchor="start" font-weight="700">直角假说（∠D = ∠C = 90°）→ 欧氏平面 K = 0</text>
+<line x1="58.0" y1="192.0" x2="128.0" y2="192.0" stroke="#0f172a" stroke-width="1.8"/>
+<line x1="58.0" y1="192.0" x2="58.0" y2="154.0" stroke="#1d6fa5" stroke-width="1.9"/>
+<line x1="128.0" y1="192.0" x2="128.0" y2="154.0" stroke="#1d6fa5" stroke-width="1.9"/>
+<path d="M 58.0,154.0 Q 93.0,154.0 128.0,154.0" fill="none" stroke="#1d6fa5" stroke-width="2.0"/>
+<rect x="58.0" y="186.0" width="6" height="6" fill="none" stroke="#0f172a" stroke-width="1.0"/>
+<rect x="122.0" y="186.0" width="6" height="6" fill="none" stroke="#0f172a" stroke-width="1.0"/>
+<text x="148" y="168" font-size="9.5" fill="#1e293b" text-anchor="start">顶边 DC = 底边 AB，平行线</text>
+<text x="148" y="187" font-size="9.5" fill="#0f172a" text-anchor="start" font-weight="600">处处等距且唯一</text>
+<rect x="34" y="216" width="324" height="86" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1.0"/>
+<text x="46" y="235" font-size="9.9" fill="#c25014" text-anchor="start" font-weight="700">钝角假说（∠D = ∠C &gt; 90°）→ 球面几何 K &gt; 0</text>
+<line x1="58.0" y1="288.0" x2="128.0" y2="288.0" stroke="#0f172a" stroke-width="1.8"/>
+<line x1="58.0" y1="288.0" x2="72.0" y2="250.0" stroke="#c25014" stroke-width="1.9"/>
+<line x1="128.0" y1="288.0" x2="114.0" y2="250.0" stroke="#c25014" stroke-width="1.9"/>
+<path d="M 72.0,250.0 Q 93.0,245.0 114.0,250.0" fill="none" stroke="#c25014" stroke-width="2.0"/>
+<rect x="58.0" y="282.0" width="6" height="6" fill="none" stroke="#0f172a" stroke-width="1.0"/>
+<rect x="122.0" y="282.0" width="6" height="6" fill="none" stroke="#0f172a" stroke-width="1.0"/>
+<text x="148" y="264" font-size="9.5" fill="#1e293b" text-anchor="start">立柱往内收拢，顶边 DC &lt; AB</text>
+<text x="148" y="283" font-size="9.5" fill="#0f172a" text-anchor="start" font-weight="600">，继续延伸必相交</text>
+<rect x="34" y="312" width="324" height="86" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.0"/>
+<text x="46" y="331" font-size="9.9" fill="#18794e" text-anchor="start" font-weight="700">锐角假说（∠D = ∠C &lt; 90°）→ 双曲几何 K &lt; 0</text>
+<line x1="58.0" y1="384.0" x2="128.0" y2="384.0" stroke="#0f172a" stroke-width="1.8"/>
+<line x1="58.0" y1="384.0" x2="43.0" y2="346.0" stroke="#18794e" stroke-width="1.9"/>
+<line x1="128.0" y1="384.0" x2="143.0" y2="346.0" stroke="#18794e" stroke-width="1.9"/>
+<path d="M 43.0,346.0 Q 93.0,352.0 143.0,346.0" fill="none" stroke="#18794e" stroke-width="2.0"/>
+<rect x="58.0" y="378.0" width="6" height="6" fill="none" stroke="#0f172a" stroke-width="1.0"/>
+<rect x="122.0" y="378.0" width="6" height="6" fill="none" stroke="#0f172a" stroke-width="1.0"/>
+<text x="148" y="360" font-size="9.5" fill="#1e293b" text-anchor="start">立柱往外敞开，顶边 DC &gt; AB</text>
+<text x="148" y="379" font-size="9.5" fill="#0f172a" text-anchor="start" font-weight="600">，萨凯里苦找矛盾却扑空!</text>
+<rect x="388" y="66" width="352" height="358" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="404" y="90" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">② 罗巴切夫斯基平行角 Π(d) 精确曲线</text>
+<text x="404" y="109" font-size="9.6" fill="#64748b" text-anchor="start">垂距 d 越远，临界平行角 Π(d) 越锐，平行扇区张得越宽！</text>
+<line x1="436.0" y1="292.0" x2="712.0" y2="292.0" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="430.0" y="295.5" font-size="9.2" fill="#64748b" text-anchor="end">0°</text>
+<line x1="436.0" y1="245.2" x2="712.0" y2="245.2" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="430.0" y="248.7" font-size="9.2" fill="#64748b" text-anchor="end">30°</text>
+<line x1="436.0" y1="198.4" x2="712.0" y2="198.4" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="430.0" y="201.9" font-size="9.2" fill="#64748b" text-anchor="end">60°</text>
+<line x1="436.0" y1="151.6" x2="712.0" y2="151.6" stroke="#1d6fa5" stroke-width="1.2" stroke-dasharray="5 3"/>
+<text x="430.0" y="155.1" font-size="9.2" fill="#64748b" text-anchor="end">90°</text>
+<text x="708.0" y="145.6" font-size="9.3" fill="#1d6fa5" text-anchor="end" font-weight="700">欧氏恒为 Π = 90° (唯一平行)</text>
+<line x1="436.0" y1="292.0" x2="436.0" y2="296.0" stroke="#0f172a" stroke-width="1.2"/>
+<text x="436.0" y="308.0" font-size="9.2" fill="#64748b" text-anchor="middle">0R</text>
+<line x1="517.2" y1="292.0" x2="517.2" y2="296.0" stroke="#0f172a" stroke-width="1.2"/>
+<text x="517.2" y="308.0" font-size="9.2" fill="#64748b" text-anchor="middle">1R</text>
+<line x1="598.4" y1="292.0" x2="598.4" y2="296.0" stroke="#0f172a" stroke-width="1.2"/>
+<text x="598.4" y="308.0" font-size="9.2" fill="#64748b" text-anchor="middle">2R</text>
+<line x1="679.5" y1="292.0" x2="679.5" y2="296.0" stroke="#0f172a" stroke-width="1.2"/>
+<text x="679.5" y="308.0" font-size="9.2" fill="#64748b" text-anchor="middle">3R</text>
+<text x="574.0" y="323.0" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="600">无量纲距离 d / R（R 为双曲曲率半径）</text>
+<line x1="436.0" y1="136.0" x2="436.0" y2="292.0" stroke="#0f172a" stroke-width="1.4"/>
+<line x1="436.0" y1="292.0" x2="712.0" y2="292.0" stroke="#0f172a" stroke-width="1.4"/>
+<path d="M 436.0,151.6 L 436.0,151.6 L 440.1,156.1 L 444.1,160.5 L 448.2,165.0 L 452.2,169.4 L 456.3,173.7 L 460.4,178.0 L 464.4,182.3 L 468.5,186.4 L 472.5,190.5 L 476.6,194.5 L 480.6,198.5 L 484.7,202.3 L 488.8,206.0 L 492.8,209.6 L 496.9,213.1 L 500.9,216.5 L 505.0,219.8 L 509.1,223.0 L 513.1,226.0 L 517.2,229.0 L 521.2,231.8 L 525.3,234.6 L 529.4,237.2 L 533.4,239.7 L 537.5,242.1 L 541.5,244.4 L 545.6,246.7 L 549.6,248.8 L 553.7,250.8 L 557.8,252.8 L 561.8,254.6 L 565.9,256.4 L 569.9,258.1 L 574.0,259.7 L 578.1,261.2 L 582.1,262.7 L 586.2,264.1 L 590.2,265.5 L 594.3,266.7 L 598.4,268.0 L 602.4,269.1 L 606.5,270.2 L 610.5,271.3 L 614.6,272.3 L 618.6,273.2 L 622.7,274.1 L 626.8,275.0 L 630.8,275.8 L 634.9,276.6 L 638.9,277.4 L 643.0,278.1 L 647.1,278.7 L 651.1,279.4 L 655.2,280.0 L 659.2,280.6 L 663.3,281.1 L 667.4,281.7 L 671.4,282.2 L 675.5,282.7 L 679.5,283.1 L 683.6,283.5 L 687.6,284.0 L 691.7,284.3 L 695.8,284.7 L 699.8,285.1 L 703.9,285.4 L 707.9,285.7 L 712.0,286.0 L 712.0,151.6 Z" fill="#18794e" fill-opacity="0.11"/>
+<text x="618.6" y="204.6" font-size="9.3" fill="#18794e" text-anchor="middle" font-weight="700">超平行安全带 (Π &lt; θ ≤ 90°)</text>
+<path d="M 436.0,151.6 L 440.1,156.1 L 444.1,160.5 L 448.2,165.0 L 452.2,169.4 L 456.3,173.7 L 460.4,178.0 L 464.4,182.3 L 468.5,186.4 L 472.5,190.5 L 476.6,194.5 L 480.6,198.5 L 484.7,202.3 L 488.8,206.0 L 492.8,209.6 L 496.9,213.1 L 500.9,216.5 L 505.0,219.8 L 509.1,223.0 L 513.1,226.0 L 517.2,229.0 L 521.2,231.8 L 525.3,234.6 L 529.4,237.2 L 533.4,239.7 L 537.5,242.1 L 541.5,244.4 L 545.6,246.7 L 549.6,248.8 L 553.7,250.8 L 557.8,252.8 L 561.8,254.6 L 565.9,256.4 L 569.9,258.1 L 574.0,259.7 L 578.1,261.2 L 582.1,262.7 L 586.2,264.1 L 590.2,265.5 L 594.3,266.7 L 598.4,268.0 L 602.4,269.1 L 606.5,270.2 L 610.5,271.3 L 614.6,272.3 L 618.6,273.2 L 622.7,274.1 L 626.8,275.0 L 630.8,275.8 L 634.9,276.6 L 638.9,277.4 L 643.0,278.1 L 647.1,278.7 L 651.1,279.4 L 655.2,280.0 L 659.2,280.6 L 663.3,281.1 L 667.4,281.7 L 671.4,282.2 L 675.5,282.7 L 679.5,283.1 L 683.6,283.5 L 687.6,284.0 L 691.7,284.3 L 695.8,284.7 L 699.8,285.1 L 703.9,285.4 L 707.9,285.7 L 712.0,286.0" fill="none" stroke="#18794e" stroke-width="2.5"/>
+<circle cx="436.0" cy="151.6" r="3.8" fill="#dc2626" stroke="#fff" stroke-width="1.2"/>
+<text x="452.0" y="149.6" font-size="9.2" fill="#dc2626" text-anchor="start" font-weight="700" class="halo">d→0: 90.0°</text>
+<circle cx="517.2" cy="229.0" r="3.8" fill="#dc2626" stroke="#fff" stroke-width="1.2"/>
+<text x="525.2" y="224.0" font-size="9.2" fill="#dc2626" text-anchor="start" font-weight="700" class="halo">d=R: 40.4°</text>
+<circle cx="598.4" cy="268.0" r="3.8" fill="#dc2626" stroke="#fff" stroke-width="1.2"/>
+<text x="604.4" y="262.0" font-size="9.2" fill="#dc2626" text-anchor="start" font-weight="700" class="halo">d=2R: 15.4°</text>
+<rect x="402" y="332" width="324" height="78" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="414" y="351" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="700">为什么日常生活里我们察觉不到双曲平行角？</text>
+<text x="414" y="370" font-size="9.5" fill="#1e293b" text-anchor="start">• 若宇宙曲率半径 R 达百亿光年，教室里 d/R ≈ 10⁻²⁶，</text>
+<text x="414" y="389" font-size="9.5" fill="#18794e" text-anchor="start" font-weight="700">  此时 Π(d) ≈ 89.999999999999999999999999° ≈ 90°！</text>
+<text x="414" y="405" font-size="9.4" fill="#64748b" text-anchor="start">  局部极小范围内，非欧几何严丝合缝退回欧氏几何！</text>
+</svg>

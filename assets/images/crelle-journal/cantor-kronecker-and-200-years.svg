@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="450" viewBox="0 0 760 450" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">克列尔杂志第77卷与第84卷康托尔集合论审稿风暴及1826至2026两百年主编接力全景图</title>
+<desc id="desc">左上展示1874年第77卷康托尔以实代数数为标题证明实数不可数；右上动画展示1878年第84卷康托尔用小数奇偶位拉链穿插把二维正方形[0,1]^2映射到一维线段[0,1]及克罗内克阻挠始末；下方时间轴展示1826至2026两百年主编传承。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  .zip-digit-x {
+        animation: dropZipX 3.4s cubic-bezier(0.25, 0.8, 0.25, 1) 0.3s 1 forwards;
+      }
+      .zip-digit-y {
+        animation: dropZipY 3.4s cubic-bezier(0.25, 0.8, 0.25, 1) 0.3s 1 forwards;
+      }
+      @keyframes dropZipX {
+        0%   { opacity: 0.35; transform: translateY(-10px); }
+        100% { opacity: 1.0;  transform: translateY(0px); }
+      }
+      @keyframes dropZipY {
+        0%   { opacity: 0.35; transform: translateY(10px); }
+        100% { opacity: 1.0;  transform: translateY(0px); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .zip-digit-x, .zip-digit-y { animation: none; opacity: 1; transform: none; }
+      }
+</style>
+<rect x="0.5" y="0.5" width="759" height="449" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">第 77 卷与第 84 卷的审稿暗战，以及横跨两百年（1826–2026）的神刊接力</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">康托尔如何用“低调标题”瞒过克罗内克创立集合论，又因“正方形压进线段”遭压稿而拂袖离去？</text>
+<rect x="20" y="64" width="344" height="214" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="78.0" width="316" height="23" rx="11.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="192.0" y="93.6" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="600">第 77 卷 (1874, p.258–262) · 集合论出生证</text>
+<text x="34" y="118" font-size="12.2" fill="#0f172a" text-anchor="start" font-weight="700">表面标题：《论全体实代数数的一个性质》</text>
+<text x="34" y="140" font-size="11.4" fill="#1e293b" text-anchor="start">• 忌惮柏林霸主克罗内克（“上帝造整数，其余皆人造”），</text>
+<text x="34" y="159" font-size="11.4" fill="#1e293b" text-anchor="start">  康托尔故意用克罗内克最爱的“代数数”当保护色；</text>
+<text x="34" y="180" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">• 5 页短文藏着惊雷：代数数可排成一列，实数却不可数！</text>
+<rect x="34" y="194" width="316" height="70" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="46" y="215" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">震撼推论（不动手算就证出无穷多超越数）：</text>
+<text x="46" y="236" font-size="11.3" fill="#0f172a" text-anchor="start">数轴上几乎全都是超越数，有理数与代数数只占零测尘埃！</text>
+<text x="46" y="254" font-size="11.2" fill="#64748b" text-anchor="start">主编博夏特（Borchardt）顺利放行，集合论悄然诞生。</text>
+<rect x="378" y="64" width="362" height="214" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="392.0" y="78.0" width="334" height="23" rx="11.5" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="559.0" y="93.6" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="600">第 84 卷 (1878, p.242–258) · 维数崩塌风暴</text>
+<text x="392" y="118" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">康托尔致信戴德金：“我看到了，但我简直不敢相信！”</text>
+<rect x="392" y="128" width="334" height="82" rx="7" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="404" y="149" font-size="11.6" fill="#1d6fa5" text-anchor="start" font-weight="700" class="mono">横坐标 x = 0 .</text>
+<text x="404" y="171" font-size="11.6" fill="#c25014" text-anchor="start" font-weight="700" class="mono">纵坐标 y = 0 .</text>
+<text x="502" y="149" font-size="12.2" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono">3</text>
+<text x="502" y="171" font-size="12.2" fill="#c25014" text-anchor="middle" font-weight="700" class="mono">7</text>
+<text x="526" y="149" font-size="12.2" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono">8</text>
+<text x="526" y="171" font-size="12.2" fill="#c25014" text-anchor="middle" font-weight="700" class="mono">1</text>
+<text x="550" y="149" font-size="12.2" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono">5</text>
+<text x="550" y="171" font-size="12.2" fill="#c25014" text-anchor="middle" font-weight="700" class="mono">4</text>
+<text x="576" y="160" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">⇒ 穿插拉链 ⇒</text>
+<text x="404" y="198" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700" class="mono">合成单点 z = 0 .</text>
+<text x="520" y="198" font-size="12.6" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono zip-digit-x">3</text>
+<text x="540" y="198" font-size="12.6" fill="#c25014" text-anchor="middle" font-weight="700" class="mono zip-digit-y">7</text>
+<text x="560" y="198" font-size="12.6" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono zip-digit-x">8</text>
+<text x="580" y="198" font-size="12.6" fill="#c25014" text-anchor="middle" font-weight="700" class="mono zip-digit-y">1</text>
+<text x="600" y="198" font-size="12.6" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono zip-digit-x">5</text>
+<text x="620" y="198" font-size="12.6" fill="#c25014" text-anchor="middle" font-weight="700" class="mono zip-digit-y">4</text>
+<text x="652" y="198" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700" class="mono">∈ [0,1]！</text>
+<text x="392" y="229" font-size="11.4" fill="#c25014" text-anchor="start" font-weight="700">• 整个单位正方形的点，竟和一条单位线段的点一样多！</text>
+<text x="392" y="248" font-size="11.3" fill="#1e293b" text-anchor="start">• 克罗内克斥为荒谬并拖延排印；经戴德金力争虽于第 84 卷</text>
+<text x="392" y="266" font-size="11.3" fill="#b91c1c" text-anchor="start" font-weight="600">  印出（与弗罗贝尼乌斯、若尔当同卷），康托尔却发誓永不再投！</text>
+<rect x="20" y="292" width="720" height="144" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="316" font-size="12.8" fill="#0f172a" text-anchor="start" font-weight="700">世界现存最古老的连续出版数学期刊：两百年历任主编接力（1826–2026 创刊 200 周年）</text>
+<line x1="48.0" y1="366.0" x2="712.0" y2="366.0" stroke="#cbd5e1" stroke-width="2.5"/>
+<circle cx="78" cy="366" r="6.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="2"/>
+<text x="78" y="344" font-size="11.2" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono">1826–1855</text>
+<text x="78" y="392" font-size="11.8" fill="#0f172a" text-anchor="middle" font-weight="700">克列尔</text>
+<text x="78" y="412" font-size="11.0" fill="#64748b" text-anchor="middle">亲编 52 卷</text>
+<circle cx="194" cy="366" r="6.5" fill="#0f766e" stroke="#ffffff" stroke-width="2"/>
+<text x="194" y="344" font-size="11.2" fill="#0f766e" text-anchor="middle" font-weight="700" class="mono">1856–1880</text>
+<text x="194" y="392" font-size="11.8" fill="#0f172a" text-anchor="middle" font-weight="700">博夏特</text>
+<text x="194" y="412" font-size="11.0" fill="#64748b" text-anchor="middle">严谨黄金期</text>
+<circle cx="310" cy="366" r="6.5" fill="#6d28d9" stroke="#ffffff" stroke-width="2"/>
+<text x="310" y="344" font-size="11.2" fill="#6d28d9" text-anchor="middle" font-weight="700" class="mono">1881–1892</text>
+<text x="310" y="392" font-size="11.8" fill="#0f172a" text-anchor="middle" font-weight="700">克罗内克/魏氏</text>
+<text x="310" y="412" font-size="11.0" fill="#64748b" text-anchor="middle">柏林双雄执掌</text>
+<circle cx="426" cy="366" r="6.5" fill="#b45309" stroke="#ffffff" stroke-width="2"/>
+<text x="426" y="344" font-size="11.2" fill="#b45309" text-anchor="middle" font-weight="700" class="mono">1892–1936</text>
+<text x="426" y="392" font-size="11.8" fill="#0f172a" text-anchor="middle" font-weight="700">富克斯→亨泽尔</text>
+<text x="426" y="412" font-size="11.0" fill="#64748b" text-anchor="middle">p 进数时代</text>
+<circle cx="542" cy="366" r="6.5" fill="#c25014" stroke="#ffffff" stroke-width="2"/>
+<text x="542" y="344" font-size="11.2" fill="#c25014" text-anchor="middle" font-weight="700" class="mono">1929–1979</text>
+<text x="542" y="392" font-size="11.8" fill="#0f172a" text-anchor="middle" font-weight="700">哈塞执编50年</text>
+<text x="542" y="412" font-size="11.0" fill="#64748b" text-anchor="middle">渡过二战浩劫</text>
+<circle cx="658" cy="366" r="6.5" fill="#18794e" stroke="#ffffff" stroke-width="2"/>
+<text x="658" y="344" font-size="11.2" fill="#18794e" text-anchor="middle" font-weight="700" class="mono">1980–2026</text>
+<text x="658" y="392" font-size="11.8" fill="#0f172a" text-anchor="middle" font-weight="700">国际编委会</text>
+<text x="658" y="412" font-size="11.0" fill="#64748b" text-anchor="middle">满 200 周年!</text>
+</svg>

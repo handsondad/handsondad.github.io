@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="472" viewBox="0 0 760 472" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">网球Love-15-30-40-Deuce单局状态机、中世纪起源与分-局-盘三层嵌套及抢七发球规则图解</title>
+<desc id="desc">左图绘制0(Love)→15→30→40与Deuce⇄Ad-In/Ad-Out连赢两球解锁状态机，并梳理1435年奥尔良公爵诗歌、60进制钱币/刻钟与Love词源；右图绘制分→局→盘三层清零金字塔及常规7分抢七、2022大满贯决胜盘10分抢十的1-2-2-2发球顺序与每6分换边机制。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="471" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">为什么有好好的 1、2、3 不用，非要喊 Love、15、30、40？拆解网球三层嵌套计分机</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：单局“领先两球锁死”有限状态机与中世纪法国起源考据 · 右：分→局→盘三层金字塔与 7 分 / 10 分抢七发球口诀</text>
+<rect x="16" y="64" width="366" height="396" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="28.0" y="76.0" width="292" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="174.0" y="91.0" font-size="9.8" fill="#6d28d9" text-anchor="middle" font-weight="600">① 单局状态机 · 到 40–40 必须连赢两球才能解锁</text>
+<rect x="28" y="114" width="52" height="44" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.4"/>
+<text x="54" y="131" font-size="8.4" fill="#64748b" text-anchor="middle" font-weight="600">0 分</text>
+<text x="54" y="148" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">Love</text>
+<line x1="81" y1="136" x2="103" y2="136" stroke="#1d6fa5" stroke-width="1.8"/>
+<polygon points="103,136 98,132.5 98,139.5" fill="#1d6fa5"/>
+<rect x="104" y="114" width="52" height="44" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.4"/>
+<text x="130" y="131" font-size="8.4" fill="#64748b" text-anchor="middle" font-weight="600">1 分</text>
+<text x="130" y="148" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">15</text>
+<line x1="157" y1="136" x2="179" y2="136" stroke="#1d6fa5" stroke-width="1.8"/>
+<polygon points="179,136 174,132.5 174,139.5" fill="#1d6fa5"/>
+<rect x="180" y="114" width="52" height="44" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.4"/>
+<text x="206" y="131" font-size="8.4" fill="#64748b" text-anchor="middle" font-weight="600">2 分</text>
+<text x="206" y="148" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">30</text>
+<line x1="233" y1="136" x2="255" y2="136" stroke="#1d6fa5" stroke-width="1.8"/>
+<polygon points="255,136 250,132.5 250,139.5" fill="#1d6fa5"/>
+<rect x="256" y="114" width="52" height="44" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1.4"/>
+<text x="282" y="131" font-size="8.4" fill="#64748b" text-anchor="middle" font-weight="600">3 分</text>
+<text x="282" y="148" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">40</text>
+<rect x="296" y="182" width="74" height="34" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1.4"/>
+<text x="333" y="197" font-size="8.3" fill="#18794e" text-anchor="middle" font-weight="700">直接拿下本局</text>
+<text x="333" y="210" font-size="8.0" fill="#1e293b" text-anchor="middle">(对手≤30)</text>
+<line x1="296" y1="158" x2="322" y2="181" stroke="#18794e" stroke-width="1.6"/>
+<rect x="28" y="182" width="260" height="110" rx="9" fill="#faf5ff" stroke="#6d28d9" stroke-width="1.3"/>
+<text x="158" y="199" font-size="8.8" fill="#6d28d9" text-anchor="middle" font-weight="700">双方各赢 3 球 (3–3) 进入【平分死锁环】</text>
+<rect x="117" y="212" width="82" height="36" rx="8" fill="#ffffff" stroke="#6d28d9" stroke-width="1.5"/>
+<text x="158" y="228" font-size="10.2" fill="#6d28d9" text-anchor="middle" font-weight="700" class="mono">Deuce</text>
+<text x="158" y="241" font-size="8.0" fill="#64748b" text-anchor="middle">平分(差0球)</text>
+<rect x="34" y="254" width="78" height="32" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="73" y="268" font-size="7.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">Ad-In 发球占先</text>
+<text x="73" y="280" font-size="7.7" fill="#0f172a" text-anchor="middle">再赢1球保发！</text>
+<rect x="204" y="254" width="78" height="32" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="243" y="268" font-size="7.8" fill="#c25014" text-anchor="middle" font-weight="700">Ad-Out 接发占先</text>
+<text x="243" y="280" font-size="7.7" fill="#0f172a" text-anchor="middle">再赢1球破发！</text>
+<path d="M 117,232 L 76,253" fill="none" stroke="#1d6fa5" stroke-width="1.4"/>
+<path d="M 112,266 L 136,248" fill="none" stroke="#6d28d9" stroke-width="1.2" stroke-dasharray="3 2"/>
+<path d="M 199,232 L 240,253" fill="none" stroke="#c25014" stroke-width="1.4"/>
+<path d="M 204,266 L 180,248" fill="none" stroke="#6d28d9" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="158" y="275" font-size="7.9" fill="#6d28d9" text-anchor="middle" font-weight="600">失手退回 Deuce</text>
+<rect x="28" y="302" width="342" height="146" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="40" y="320" font-size="8.9" fill="#0f172a" text-anchor="start" font-weight="700">史学考据：怪异数字从哪来？（源自中世纪法国掌球戏 Jeu de paume）</text>
+<text x="40" y="339" font-size="8.5" fill="#1e293b" text-anchor="start">• 15→30→40：1435 年奥尔良公爵诗歌最早记载的是 15、30、45！</text>
+<text x="40" y="356" font-size="8.4" fill="#1e293b" text-anchor="start">  学界主流指向【60 进制赌注钱币（4×15 第纳尔 = 60）】或【十四世纪大</text>
+<text x="40" y="373" font-size="8.4" fill="#1e293b" text-anchor="start">  教堂刻钟（1386 韦尔斯/1389 鲁昂每 15 分钟报刻）】；法语 quarante-cinq</text>
+<text x="40" y="390" font-size="8.4" fill="#0f172a" text-anchor="start" font-weight="600">  (45) 嫌绕口或为留出“40→50(占先)→60(胜)”刻度，遂简读成 40。</text>
+<text x="40" y="409" font-size="8.5" fill="#1e293b" text-anchor="start">• Love (0分)：一说源自英语/荷兰语 play for love（不赌钱只为荣誉白玩）；</text>
+<text x="40" y="426" font-size="8.5" fill="#64748b" text-anchor="start">  另一广传趣味说源自法语 l&#x27;œuf（鸡蛋 = 鸭蛋形状的 0）——两说并存。</text>
+<text x="40" y="442" font-size="8.5" fill="#6d28d9" text-anchor="start" font-weight="600">• Deuce：源自古法语 à deux le jeu（距离赢下这一局还差连续两球）。</text>
+<rect x="396" y="64" width="348" height="396" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="408.0" y="76.0" width="292" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="554.0" y="91.0" font-size="9.8" fill="#1d6fa5" text-anchor="middle" font-weight="600">② 三层清零金字塔 · 每一级都自带“清零重算”开关</text>
+<rect x="464" y="110" width="212" height="48" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.5"/>
+<text x="570" y="128" font-size="9.6" fill="#1d4ed8" text-anchor="middle" font-weight="700">第 3 层：场（Match）</text>
+<text x="570" y="146" font-size="8.3" fill="#1e293b" text-anchor="middle">巡回赛/女单：三盘两胜 · 大满贯男单：五盘三胜</text>
+<rect x="436" y="170" width="268" height="56" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.5"/>
+<text x="570" y="188" font-size="9.5" fill="#18794e" text-anchor="middle" font-weight="700">第 2 层：盘（Set）— 赢完一盘，局分清零！</text>
+<text x="570" y="205" font-size="8.3" fill="#1e293b" text-anchor="middle">先赢 6 局且净胜≥2 局（6–4、7–5）；战至 6–6 进抢七！</text>
+<text x="570" y="219" font-size="8.0" fill="#64748b" text-anchor="middle">（单数局结束交换场地：第 1、3、5、7… 局换边）</text>
+<rect x="408" y="238" width="324" height="52" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1.5"/>
+<text x="570" y="256" font-size="9.5" fill="#c25014" text-anchor="middle" font-weight="700">第 1 层：局（Game）— 赢完一局，小分清零！</text>
+<text x="570" y="274" font-size="8.3" fill="#1e293b" text-anchor="middle">同一人发满整局，每分右区↔左区交替；先赢 4 分且净胜≥2 分</text>
+<rect x="408" y="304" width="324" height="144" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.3"/>
+<text x="420" y="323" font-size="9.0" fill="#b45309" text-anchor="start" font-weight="700">6–6 抢七局（Tiebreak）：1965 范阿伦发明 · 2022 四大满贯统一</text>
+<text x="420" y="342" font-size="8.6" fill="#1e293b" text-anchor="start">• 常规盘 6–6：抢 7 分（先到 7 分且净胜≥2 分，记为 7–6）</text>
+<text x="420" y="360" font-size="8.6" fill="#dc2626" text-anchor="start" font-weight="700">• 大满贯决胜盘 6–6（2022 起统一）：抢 10 分！（先到 10 分且净胜≥2）</text>
+<text x="420" y="379" font-size="8.6" fill="#0f172a" text-anchor="start" font-weight="700">• 独门【1–2–2–2 发球序列】与【每 6 分换边】公平铁律：</text>
+<rect x="420" y="390" width="52" height="46" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="446.0" y="407" font-size="7.9" fill="#1d6fa5" text-anchor="middle" font-weight="700">第1分 A发</text>
+<text x="446.0" y="423" font-size="7.7" fill="#0f172a" text-anchor="middle">右区(1球)</text>
+<rect x="478" y="390" width="76" height="46" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="1.1"/>
+<text x="516.0" y="407" font-size="7.9" fill="#c25014" text-anchor="middle" font-weight="700">第2-3分 B发</text>
+<text x="516.0" y="423" font-size="7.7" fill="#0f172a" text-anchor="middle">左→右(2球)</text>
+<rect x="560" y="390" width="76" height="46" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="598.0" y="407" font-size="7.9" fill="#1d6fa5" text-anchor="middle" font-weight="700">第4-5分 A发</text>
+<text x="598.0" y="423" font-size="7.7" fill="#0f172a" text-anchor="middle">左→右(2球)</text>
+<rect x="642" y="390" width="78" height="46" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="1.1"/>
+<text x="681.0" y="407" font-size="7.9" fill="#18794e" text-anchor="middle" font-weight="700">第6分B发后</text>
+<text x="681.0" y="423" font-size="7.7" fill="#0f172a" text-anchor="middle">满6分换边！</text>
+</svg>

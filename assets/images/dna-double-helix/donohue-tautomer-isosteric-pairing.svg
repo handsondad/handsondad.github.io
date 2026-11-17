@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="484" viewBox="0 0 760 484" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">多诺休酮式烯醇式互变异构纠错、查伽夫碱基比例与沃森硬纸板10.85埃等宽互补配对动画图解</title>
+<desc id="desc">左上对比旧教科书错误烯醇式与水溶液中占99.99%以上的真实酮式构型；右上展示查伽夫1950年人源DNA实测比例（A=30.9%≈T=29.4%，G=19.9%≈C=19.8%）；下方动画演示双环嘌呤配单环嘧啶（A=T两氢键、G≡C三氢键）如何令C1&#x27;···C1&#x27;跨度精确同构于10.85Å。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  .cardboard-slide {
+        animation: slidePlate 3.2s cubic-bezier(0.25, 0.8, 0.25, 1) 0.3s 1 forwards;
+      }
+      @keyframes slidePlate {
+        0%   { transform: translateX(34px); opacity: 0.55; }
+        75%  { transform: translateX(0px); opacity: 1; }
+        100% { transform: translateX(0px); opacity: 1; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .cardboard-slide { animation: none; }
+      }
+</style>
+<rect x="0.5" y="0.5" width="759" height="483" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">一颗氢原子搬家救活双螺旋：多诺休“酮式纠错”与 2 月 28 日硬纸板等宽拼图</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">教科书画错了互变异构体！一旦换回真实酮式（C=O），A=T 与 G≡C 的骨架跨度分毫不差锁死在 10.85 Å</text>
+<rect x="20" y="62" width="386" height="178" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="34" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 2月27日办公室神助攻：多诺休指出教科书画反了！</text>
+<rect x="32" y="96" width="168" height="96" rx="7" fill="#fef2f2" stroke="#dc2626" stroke-width="1.1"/>
+<text x="116" y="114" font-size="9.3" fill="#dc2626" text-anchor="middle" font-weight="700">✗ 旧教科书：烯醇式 (Enol)</text>
+<text x="116" y="136" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">C4 — O — H  |  N3 (无H)</text>
+<text x="116" y="156" font-size="8.9" fill="#1e293b" text-anchor="middle">H 挂在氧上，氢键方向全歪</text>
+<text x="116" y="173" font-size="8.9" fill="#dc2626" text-anchor="middle" font-weight="700">水溶液中占比 &lt; 0.01%！</text>
+<line x1="204.0" y1="144.0" x2="224.0" y2="144.0" stroke="#18794e" stroke-width="2.0" marker-end="url(#arr-green)"/>
+<rect x="228" y="96" width="166" height="96" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="311" y="114" font-size="9.3" fill="#18794e" text-anchor="middle" font-weight="700">✓ 真实生理态：酮式 (Keto)</text>
+<text x="311" y="136" font-size="9.1" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">C4 = O (受体) | N3 — H (供体)</text>
+<text x="311" y="156" font-size="8.9" fill="#1e293b" text-anchor="middle">H 搬回环氮，精准对位配对</text>
+<text x="311" y="173" font-size="8.9" fill="#18794e" text-anchor="middle" font-weight="700">水溶液中占比 &gt; 99.99%！</text>
+<text x="34" y="212" font-size="9.1" fill="#1e293b" text-anchor="start">• 沃森起初按旧书烯醇式硬拼“同类配同类”（A配A宽 ~24 Å、T配T窄</text>
+<text x="34" y="228" font-size="9.1" fill="#0f172a" text-anchor="start" font-weight="600">  ~16 Å），骨架鼓包塌腰全变形；多诺休一句话推倒重来！</text>
+<rect x="418" y="62" width="322" height="178" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="432" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 查伽夫定则（1950）：为什么两两相等？</text>
+<text x="432" y="115" font-size="9.0" fill="#0f172a" text-anchor="start" font-weight="600">腺嘌呤 A (双环)</text>
+<rect x="546" y="104" width="92.7" height="15" rx="3" fill="#1d6fa5" fill-opacity="0.82"/>
+<text x="644.7" y="115.5" font-size="9.0" fill="#1d6fa5" text-anchor="start" font-weight="700" class="mono">30.9%</text>
+<text x="432" y="140" font-size="9.0" fill="#0f172a" text-anchor="start" font-weight="600">胸腺嘧啶 T (单环)</text>
+<rect x="546" y="129" width="88.2" height="15" rx="3" fill="#1d6fa5" fill-opacity="0.82"/>
+<text x="640.2" y="140.5" font-size="9.0" fill="#1d6fa5" text-anchor="start" font-weight="700" class="mono">29.4%</text>
+<text x="432" y="169" font-size="9.0" fill="#0f172a" text-anchor="start" font-weight="600">鸟嘌呤 G (双环)</text>
+<rect x="546" y="158" width="59.7" height="15" rx="3" fill="#0f766e" fill-opacity="0.82"/>
+<text x="611.7" y="169.5" font-size="9.0" fill="#0f766e" text-anchor="start" font-weight="700" class="mono">19.9%</text>
+<text x="432" y="194" font-size="9.0" fill="#0f172a" text-anchor="start" font-weight="600">胞嘧啶 C (单环)</text>
+<rect x="546" y="183" width="59.4" height="15" rx="3" fill="#0f766e" fill-opacity="0.82"/>
+<text x="611.4" y="194.5" font-size="9.0" fill="#0f766e" text-anchor="start" font-weight="700" class="mono">19.8%</text>
+<text x="714" y="123" font-size="9.3" fill="#1d6fa5" text-anchor="middle" font-weight="700">A ≈ T</text>
+<text x="714" y="177" font-size="9.3" fill="#0f766e" text-anchor="middle" font-weight="700">G ≈ C</text>
+<text x="432" y="214" font-size="9.0" fill="#1e293b" text-anchor="start">• 不同物种 (A+T)/(G+C) 千差万别（排除四核苷酸死循环），</text>
+<text x="432" y="229" font-size="9.0" fill="#6d28d9" text-anchor="start" font-weight="700">  但永远满足 A=T、G=C —— 暗示大环必牵手小环！</text>
+<rect x="20" y="252" width="720" height="220" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="34" y="274" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">③ 1953年2月28日清晨硬纸板顿悟：双环嘌呤 + 单环嘧啶 = 10.85 Å 完全等宽同构（Isosteric）！</text>
+<line x1="64.0" y1="294.0" x2="64.0" y2="424.0" stroke="#0f172a" stroke-width="3.0"/>
+<line x1="324.0" y1="294.0" x2="324.0" y2="424.0" stroke="#0f172a" stroke-width="3.0"/>
+<circle cx="64.0" cy="368" r="5.5" fill="#0f172a"/>
+<circle cx="324.0" cy="368" r="5.5" fill="#0f172a"/>
+<text x="64.0" y="289" font-size="8.8" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">C1&#x27;</text>
+<text x="324.0" y="289" font-size="8.8" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">C1&#x27;</text>
+<line x1="64.0" y1="368.0" x2="86.0" y2="355.0" stroke="#475569" stroke-width="2.2"/>
+<rect x="86.0" y="320" width="112" height="60" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.8"/>
+<line x1="130.0" y1="320.0" x2="130.0" y2="380.0" stroke="#1d6fa5" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="142.0" y="345" font-size="9.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">腺嘌呤 A (嘌呤·双环)</text>
+<text x="168.0" y="365" font-size="8.5" fill="#1e293b" text-anchor="middle" class="mono">N6-H ··· / N1</text>
+<g class="cardboard-slide">
+<rect x="230.0" y="320" width="72" height="60" rx="6" fill="#fffbeb" stroke="#b45309" stroke-width="1.8"/>
+<line x1="302.0" y1="355.0" x2="324.0" y2="368.0" stroke="#475569" stroke-width="2.2"/>
+<text x="266.0" y="345" font-size="9.2" fill="#b45309" text-anchor="middle" font-weight="700">胸腺嘧啶 </text>
+<text x="266.0" y="364" font-size="8.6" fill="#1e293b" text-anchor="middle">酮式拼板</text>
+<line x1="199.0" y1="337.0" x2="229.0" y2="337.0" stroke="#dc2626" stroke-width="2.1" stroke-dasharray="3 2"/>
+<line x1="199.0" y1="362.0" x2="229.0" y2="362.0" stroke="#dc2626" stroke-width="2.1" stroke-dasharray="3 2"/>
+</g>
+<text x="214.0" y="308" font-size="9.1" fill="#dc2626" text-anchor="middle" font-weight="700">2 条氢键 (A=T)</text>
+<line x1="68.0" y1="404.0" x2="320.0" y2="404.0" stroke="#18794e" stroke-width="1.8"/>
+<text x="194.0" y="420" font-size="9.3" fill="#18794e" text-anchor="middle" font-weight="700">糖苷键跨度 C1&#x27;···C1&#x27; = 10.85 Å（完全等宽！）</text>
+<line x1="436.0" y1="294.0" x2="436.0" y2="424.0" stroke="#0f172a" stroke-width="3.0"/>
+<line x1="696.0" y1="294.0" x2="696.0" y2="424.0" stroke="#0f172a" stroke-width="3.0"/>
+<circle cx="436.0" cy="368" r="5.5" fill="#0f172a"/>
+<circle cx="696.0" cy="368" r="5.5" fill="#0f172a"/>
+<text x="436.0" y="289" font-size="8.8" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">C1&#x27;</text>
+<text x="696.0" y="289" font-size="8.8" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">C1&#x27;</text>
+<line x1="436.0" y1="368.0" x2="458.0" y2="355.0" stroke="#475569" stroke-width="2.2"/>
+<rect x="458.0" y="320" width="112" height="60" rx="6" fill="#ccfbf1" stroke="#0f766e" stroke-width="1.8"/>
+<line x1="502.0" y1="320.0" x2="502.0" y2="380.0" stroke="#0f766e" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="514.0" y="345" font-size="9.2" fill="#0f766e" text-anchor="middle" font-weight="700">鸟嘌呤 G (嘌呤·双环)</text>
+<text x="538.0" y="365" font-size="8.4" fill="#1e293b" text-anchor="middle" class="mono">O6 / N1-H / N2-H</text>
+<g class="cardboard-slide">
+<rect x="602.0" y="320" width="72" height="60" rx="6" fill="#fffbeb" stroke="#b45309" stroke-width="1.8"/>
+<line x1="674.0" y1="355.0" x2="696.0" y2="368.0" stroke="#475569" stroke-width="2.2"/>
+<text x="638.0" y="345" font-size="9.2" fill="#b45309" text-anchor="middle" font-weight="700">胞嘧啶 C</text>
+<text x="638.0" y="364" font-size="8.6" fill="#1e293b" text-anchor="middle">酮式拼板</text>
+<line x1="571.0" y1="332.0" x2="601.0" y2="332.0" stroke="#dc2626" stroke-width="2.1" stroke-dasharray="3 2"/>
+<line x1="571.0" y1="350.0" x2="601.0" y2="350.0" stroke="#dc2626" stroke-width="2.1" stroke-dasharray="3 2"/>
+<line x1="571.0" y1="368.0" x2="601.0" y2="368.0" stroke="#dc2626" stroke-width="2.1" stroke-dasharray="3 2"/>
+</g>
+<text x="586.0" y="308" font-size="9.1" fill="#dc2626" text-anchor="middle" font-weight="700">3 条氢键 (G≡C，更耐热!)</text>
+<line x1="440.0" y1="404.0" x2="692.0" y2="404.0" stroke="#18794e" stroke-width="1.8"/>
+<text x="566.0" y="420" font-size="9.3" fill="#18794e" text-anchor="middle" font-weight="700">糖苷键跨度 C1&#x27;···C1&#x27; = 10.85 Å（完全等宽！）</text>
+<text x="380" y="452" font-size="9.3" fill="#0f172a" text-anchor="middle" font-weight="700">★ 终极几何奇迹：无论写 A-T、T-A、G-C 还是 C-G，两根扶手间距恒定不变 → 单链字母顺序完全自由，可编码无穷生命信息，另一条链自动互补锁死！</text>
+</svg>

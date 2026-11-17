@@ -37,8 +37,8 @@ description: 和孩子一起玩游戏、读故事、探索身体与科学，也�
     <main id="main">
       <section class="hero wrap" aria-labelledby="hero-title">
         <header class="hero-title">
-          <h1 id="hero-title"><span aria-hidden="true">🚀</span> 大手牵小手，世界有意思</h1>
-          <p>把孩子的每一个「为什么」，变成我们一起探索的起点</p>
+          <h1 id="hero-title"><span class="hero-lead"><span class="hero-emoji" aria-hidden="true">🚀</span><span class="hero-grad is-head">大手牵小手，</span></span><span class="hero-grad is-tail">世界有意思</span></h1>
+          <p><span>把孩子的每一个「为什么」，</span><span>变成我们一起探索的起点</span></p>
         </header>
         <div class="duo-stage" data-duo-stage data-model="{{ '/assets/models/character.glb' | relative_url }}?v={{ build }}" role="group" aria-label="小念和爸爸站在小星球上聊天，点气泡或点他们会接着聊">
           <img class="duo-poster" src="{{ '/assets/images/home-duo-poster.webp' | relative_url }}?v={{ build }}" width="1200" height="400" fetchpriority="high" decoding="async" alt="" aria-hidden="true">
@@ -105,6 +105,15 @@ description: 和孩子一起玩游戏、读故事、探索身体与科学，也�
     </footer>
     <script>
       (() => {
+        const repaintHeroTitle = () => {
+          const heroTitle = document.getElementById("hero-title");
+          if (!heroTitle) return;
+          heroTitle.style.transform = "translateZ(0)";
+          requestAnimationFrame(() => { heroTitle.style.transform = ""; });
+        };
+        document.fonts?.ready?.then(repaintHeroTitle);
+        document.fonts?.addEventListener?.("loadingdone", repaintHeroTitle);
+
         const stage = document.querySelector("[data-duo-stage]");
         const chats = [
           ["爸爸，世界上怎么有那么多为什么？", "你问一个，我们就一起找一个答案。"],

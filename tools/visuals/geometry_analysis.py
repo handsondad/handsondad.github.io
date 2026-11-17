@@ -4973,3 +4973,678 @@ def build_geodesics_great_circle():
     build_fig4_wgs84_ellipsoid()
     build_fig5_four_apps()
 
+
+@register("non-euclidean-geometry", "曲面平行线与非欧几何：三类曲率平行检验、平行角、庞加莱圆盘动画与高斯-博内", "geometry_analysis")
+def build_non_euclidean_geometry():
+    TOPIC = "non-euclidean-geometry"
+    RED = "#dc2626"
+    RED_SOFT = "#fef2f2"
+
+    extra_markers = f"""
+    <marker id="neg-arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="{BLUE}"/>
+    </marker>
+    <marker id="neg-arr-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="{GREEN}"/>
+    </marker>
+    <marker id="neg-arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="{RED}"/>
+    </marker>
+    """
+
+    # ------------------------------------------------------------------
+    # 1. three-surfaces-parallel-test.svg
+    # ------------------------------------------------------------------
+    def build_fig1_three_surfaces():
+        el = []
+        el += header(
+            "同一道考题“过线外一点 P 作直线 l 的平行线”，三种曲面交出三份答卷！",
+            "先守住铁律：曲面上的“直线”必须是零侧偏测地线（窄胶带平贴不起皱），绝不能拿打方向盘的纬线圈冒充",
+        )
+
+        # Card 1: Flat / Cylinder (K = 0) -> Exactly 1 parallel
+        el.append(card(20, 66, 232, 356, rx=10, fill=CARD_BG, stroke=BLUE, sw=1.3))
+        el.append(card(30, 76, 212, 28, rx=6, fill=BLUE_SOFT, stroke=BLUE, sw=0.8))
+        el.append(txt(136, 95, "① 零曲率面 (K = 0)：恰有 1 条", size=11.0, color=BLUE, anchor="middle", weight="700"))
+
+        # Flat sheet illustration + mini cylinder reminder
+        el.append(card(36, 116, 200, 146, rx=6, fill="#f8fafc", stroke=BORDER))
+        # Base line l
+        el.append(f'<line x1="48" y1="224" x2="224" y2="224" stroke="{INK}" stroke-width="2.3"/>')
+        el.append(txt(220, 240, "基准直线 l", size=9.6, color=INK, anchor="end", weight="700"))
+        # External point P and unique parallel m
+        px1, py1 = 136.0, 156.0
+        el.append(f'<line x1="48" y1="{py1}" x2="224" y2="{py1}" stroke="{GREEN}" stroke-width="2.3"/>')
+        el.append(txt(220, py1 - 8, "唯一平行线 m ∥ l", size=9.5, color=GREEN, anchor="end", weight="700"))
+        # Slightly tilted line intersects l!
+        el.append(f'<line x1="56" y1="132" x2="216" y2="246" stroke="{RED}" stroke-width="1.4" stroke-dasharray="4 3"/>')
+        el.append(txt(60, 128, "微偏一点必相交", size=9.2, color=RED))
+        el.append(f'<circle cx="{px1}" cy="{py1}" r="4.2" fill="{BLUE}" stroke="#fff" stroke-width="1.3"/>')
+        el.append(txt(px1, py1 + 16, "线外点 P", size=9.6, color=BLUE, anchor="middle", weight="700"))
+
+        el.append(card(32, 272, 208, 138, rx=7, fill=SLATE_SOFT, stroke=BORDER))
+        el.append(txt(42, 291, "欧几里得几何（平面 & 圆柱面）：", size=10.0, color=BLUE, weight="700"))
+        el.append(txt(42, 311, "• 过 P 只有 1 条直线永不与 l 相交；", size=9.6, color=BODY))
+        el.append(txt(42, 330, "• 反直觉彩蛋：圆柱面看着弯，但", size=9.6, color=BODY))
+        el.append(txt(42, 348, "  沿母线剪开能无拉伸摊成平纸！", size=9.6, color=INK, weight="600"))
+        el.append(txt(42, 367, "• 高斯曲率 K = κ₁·κ₂ = (1/R)·0 = 0，", size=9.6, color=INK, weight="600"))
+        el.append(txt(42, 386, "  平行公理与 180° 内角和照常成立！", size=9.6, color=GREEN, weight="700"))
+
+        # Card 2: Sphere (K > 0) -> 0 parallels!
+        el.append(card(264, 66, 232, 356, rx=10, fill=CARD_BG, stroke=ORANGE, sw=1.3))
+        el.append(card(274, 76, 212, 28, rx=6, fill=ORANGE_SOFT, stroke=ORANGE, sw=0.8))
+        el.append(txt(380, 95, "② 正曲率球面 (K > 0)：0 条平行", size=11.0, color=ORANGE, anchor="middle", weight="700"))
+
+        scx, scy, sr = 380.0, 189.0, 62.0
+        el.append(f'<circle cx="{scx}" cy="{scy}" r="{sr}" fill="#fffdf9" stroke="#475569" stroke-width="1.5"/>')
+        # Fake parallel latitude line (crossed out!)
+        lat_y = scy - sr * 0.62
+        lat_rx = sr * math.sqrt(1.0 - 0.62**2)
+        el.append(f'<path d="M {scx-lat_rx:.1f},{lat_y:.1f} A {lat_rx:.1f},{lat_rx*0.22:.1f} 0 0,0 {scx+lat_rx:.1f},{lat_y:.1f}" fill="none" stroke="{MUTED}" stroke-width="1.3" stroke-dasharray="3 3"/>')
+        el.append(txt(scx, lat_y - 9, "✕ 纬线圈需打轮，不是直线!", size=9.0, color=RED, anchor="middle", weight="700"))
+
+        # Base great circle l (Equator)
+        el.append(f'<path d="M {scx-sr},{scy} A {sr},16 0 0,1 {scx+sr},{scy}" fill="none" stroke="{INK}" stroke-opacity="0.25" stroke-width="1.5" stroke-dasharray="4 3"/>')
+        el.append(f'<path d="M {scx-sr},{scy} A {sr},16 0 0,0 {scx+sr},{scy}" fill="none" stroke="{INK}" stroke-width="2.4"/>')
+        el.append(txt(scx, scy + 27, "基准大圆 l (赤道)", size=9.5, color=INK, anchor="middle", weight="700"))
+
+        # Two great circles passing through P in northern hemisphere, intersecting equator at two antipodal pairs!
+        p_sp_x, p_sp_y = scx - 8.0, scy - 24.0
+        for rot_deg, col_gc in ((-28.0, ORANGE), (24.0, BLUE)):
+            ang = math.radians(rot_deg)
+            pts_f = []
+            for k in range(37):
+                t = math.pi * (k / 36.0)
+                # Great circle tilted so it passes near p_sp and meets equator at two opposite endpoints
+                gx = sr * math.cos(t + ang * 0.4)
+                gy = -24.0 * math.sin(t) + 12.0 * math.cos(t) * math.sin(ang)
+                pts_f.append((scx + gx, scy + gy))
+            el.append(f'<path d="M {" L ".join(f"{x:.1f},{y:.1f}" for x,y in pts_f)}" fill="none" stroke="{col_gc}" stroke-width="1.9"/>')
+
+        # Intersection dots on equator & point P
+        el.append(f'<circle cx="{scx-sr+2:.1f}" cy="{scy+3:.1f}" r="3.6" fill="{RED}"/>')
+        el.append(f'<circle cx="{scx+sr-2:.1f}" cy="{scy-3:.1f}" r="3.6" fill="{RED}"/>')
+        el.append(f'<circle cx="{scx:.1f}" cy="{scy-22:.1f}" r="4.2" fill="{BLUE}" stroke="#fff" stroke-width="1.3"/>')
+        el.append(txt(scx + 18, scy - 28, "点 P", size=9.5, color=BLUE, weight="700", halo=True))
+
+        el.append(card(276, 272, 208, 138, rx=7, fill=ORANGE_SOFT, stroke=ORANGE, sw=0.8))
+        el.append(txt(286, 291, "黎曼椭圆 / 球面几何（K = +1/R²）：", size=10.0, color=ORANGE, weight="700"))
+        el.append(txt(286, 311, "• 球面“直线”只能是过球心的大圆；", size=9.6, color=BODY))
+        el.append(txt(286, 330, "• 任意两个不同过球心平面必交于", size=9.6, color=BODY))
+        el.append(txt(286, 348, "  一条直径 → 大圆必相交 2 次！", size=9.6, color=RED, weight="700"))
+        el.append(txt(286, 367, "• 平行线 = 0 条！空间往里收拢，", size=9.6, color=INK, weight="600"))
+        el.append(txt(286, 386, "  连赤道上垂线都会在北极撞车！", size=9.6, color=INK, weight="600"))
+
+        # Card 3: Saddle / Hyperbolic (K < 0) -> Infinitely many parallels!
+        el.append(card(508, 66, 232, 356, rx=10, fill=CARD_BG, stroke=GREEN, sw=1.3))
+        el.append(card(518, 76, 212, 28, rx=6, fill=GREEN_SOFT, stroke=GREEN, sw=0.8))
+        el.append(txt(624, 95, "③ 负曲率马鞍 (K < 0)：无穷多条", size=11.0, color=GREEN, anchor="middle", weight="700"))
+
+        # 3D isometric saddle z = 0.42*(u^2 - v^2)
+        def proj_saddle(u, v):
+            z = 0.45 * (u * u - v * v)
+            sx = 624.0 + 58.0 * u + 32.0 * v
+            sy = 192.0 - 38.0 * z + 22.0 * v - 10.0 * u
+            return sx, sy
+
+        # Wireframe mesh lines
+        for uv in (-1.0, -0.5, 0.0, 0.5, 1.0):
+            p_u = [proj_saddle( -1.0 + 2.0 * k / 24.0, uv) for k in range(25)]
+            p_v = [proj_saddle(uv, -1.0 + 2.0 * k / 24.0) for k in range(25)]
+            el.append(f'<path d="M {" L ".join(f"{x:.1f},{y:.1f}" for x,y in p_u)}" fill="none" stroke="#cbd5e1" stroke-width="1.0"/>')
+            el.append(f'<path d="M {" L ".join(f"{x:.1f},{y:.1f}" for x,y in p_v)}" fill="none" stroke="#cbd5e1" stroke-width="1.0"/>')
+
+        # Base geodesic-like curve l at v = 0.55
+        pts_l = [proj_saddle(-1.0 + 2.0 * k / 30.0, 0.58) for k in range(31)]
+        el.append(f'<path d="M {" L ".join(f"{x:.1f},{y:.1f}" for x,y in pts_l)}" fill="none" stroke="{INK}" stroke-width="2.4"/>')
+        el.append(txt(624, 248, "基准测地线 l", size=9.5, color=INK, anchor="middle", weight="700"))
+
+        # Fan of 3 non-intersecting curves through P(0, -0.35) flaring outward on the saddle!
+        for slope_v, col_h, sw_h in ((-0.26, GREEN, 2.1), (0.0, GREEN, 2.3), (0.26, BLUE, 2.0)):
+            pts_m = []
+            for k in range(31):
+                u = -1.0 + 2.0 * k / 30.0
+                v = -0.35 + slope_v * u - 0.18 * u * u
+                pts_m.append(proj_saddle(u, v))
+            el.append(f'<path d="M {" L ".join(f"{x:.1f},{y:.1f}" for x,y in pts_m)}" fill="none" stroke="{col_h}" stroke-width="{sw_h}"/>')
+
+        p_sad_x, p_sad_y = proj_saddle(0.0, -0.35)
+        el.append(f'<circle cx="{p_sad_x:.1f}" cy="{p_sad_y:.1f}" r="4.2" fill="{BLUE}" stroke="#fff" stroke-width="1.3"/>')
+        el.append(txt(p_sad_x, p_sad_y - 11, "点 P (张开整把平行扇!)", size=9.3, color=GREEN, anchor="middle", weight="700", halo=True))
+
+        el.append(card(520, 272, 208, 138, rx=7, fill=GREEN_SOFT, stroke=GREEN, sw=0.8))
+        el.append(txt(530, 291, "罗巴切夫斯基双曲几何（K = -1/R²）：", size=10.0, color=GREEN, weight="700"))
+        el.append(txt(530, 311, "• 前后往上翘、左右往下塌（一正", size=9.6, color=BODY))
+        el.append(txt(530, 330, "  一负主曲率相乘 K = κ₁·κ₂ < 0）；", size=9.6, color=BODY))
+        el.append(txt(530, 348, "• 空间像喇叭口往外疯长，过点 P", size=9.6, color=BODY))
+        el.append(txt(530, 367, "  有无穷多条测地线与 l 永不相交！", size=9.6, color=GREEN, weight="700"))
+        el.append(txt(530, 386, "• 掀翻两千年“唯一平行”执念！", size=9.6, color=INK, weight="600"))
+
+        svg = figure(
+            436,
+            "三种曲率曲面上过点P作平行线的对比图解：平面圆柱唯一平行、球面零平行、马鞍面无穷多条平行",
+            "三列对比零曲率平面与圆柱面（恰有1条平行测地线）、正曲率球面（大圆必相交两次故0条平行，纬线圈并非测地线）以及负曲率马鞍面（无穷多条不相交测地线）。",
+            el,
+            extra_defs=extra_markers,
+        )
+        write_svg(TOPIC, "three-surfaces-parallel-test.svg", svg)
+
+    # ------------------------------------------------------------------
+    # 2. euclid-fifth-saccheri-lobachevsky.svg
+    # ------------------------------------------------------------------
+    def build_fig2_saccheri_lobachevsky():
+        # Exact Lobachevsky angle of parallelism Pi(x) = 2 * atan(exp(-x)) in degrees where x = d/R
+        def pi_deg(x):
+            return math.degrees(2.0 * math.atan(math.exp(-x)))
+
+        assert abs(pi_deg(0.0) - 90.0) < 1e-12
+        assert abs(pi_deg(1.0) - 40.395063) < 1e-4
+        assert abs(pi_deg(2.0) - 15.414627) < 1e-4
+
+        el = []
+        el += header(
+            "死磕两千年的“第五公设悬案”：萨凯里三假说与罗巴切夫斯基平行角公式",
+            "想用反证法保卫欧几里得，却意外推演出零破绽的“锐角新宇宙”：平行角 Π(d) = 2 arctan(e^(-d/R))",
+        )
+
+        # Left Panel: Saccheri Quadrilateral (1733) three hypotheses stacked cleanly
+        el.append(card(20, 66, 352, 358))
+        el.append(txt(36, 90, "① 萨凯里双直角四边形 ABCD（1733）", size=12.0, color=INK, weight="700"))
+        el.append(txt(36, 109, "底边 ∠A=∠B=90°，立柱 AD=BC：顶角 ∠C, ∠D 等于几度？", size=9.6, color=MUTED))
+
+        rows = [
+            (
+                120,
+                "直角假说（∠D = ∠C = 90°）→ 欧氏平面 K = 0",
+                BLUE,
+                BLUE_SOFT,
+                0.0,
+                "顶边 DC = 底边 AB，平行线处处等距且唯一",
+            ),
+            (
+                216,
+                "钝角假说（∠D = ∠C > 90°）→ 球面几何 K > 0",
+                ORANGE,
+                ORANGE_SOFT,
+                +14.0,
+                "立柱往内收拢，顶边 DC < AB，继续延伸必相交",
+            ),
+            (
+                312,
+                "锐角假说（∠D = ∠C < 90°）→ 双曲几何 K < 0",
+                GREEN,
+                GREEN_SOFT,
+                -15.0,
+                "立柱往外敞开，顶边 DC > AB，萨凯里苦找矛盾却扑空!",
+            ),
+        ]
+
+        for ry, rtitle, fg, bg, dx_in, rnote in rows:
+            el.append(card(34, ry, 324, 86, rx=8, fill=bg, stroke=fg, sw=1.0))
+            el.append(txt(46, ry + 19, rtitle, size=9.9, color=fg, weight="700"))
+            # Mini quadrilateral on left of row (x: 52..136, y: ry+30..ry+74)
+            ax, bx, by = 58.0, 128.0, ry + 72.0
+            dx_l, cx_r, ty = ax + dx_in, bx - dx_in, ry + 34.0
+            # Base AB + pillars AD, BC + curved/straight summit DC
+            el.append(f'<line x1="{ax}" y1="{by}" x2="{bx}" y2="{by}" stroke="{INK}" stroke-width="1.8"/>')
+            el.append(f'<line x1="{ax}" y1="{by}" x2="{dx_l}" y2="{ty}" stroke="{fg}" stroke-width="1.9"/>')
+            el.append(f'<line x1="{bx}" y1="{by}" x2="{cx_r}" y2="{ty}" stroke="{fg}" stroke-width="1.9"/>')
+            mid_dip = -5.0 if dx_in > 0 else (6.0 if dx_in < 0 else 0.0)
+            el.append(f'<path d="M {dx_l},{ty} Q {(dx_l+cx_r)/2},{ty+mid_dip} {cx_r},{ty}" fill="none" stroke="{fg}" stroke-width="2.0"/>')
+            # Right-angle squares at A and B
+            el.append(f'<rect x="{ax}" y="{by-6}" width="6" height="6" fill="none" stroke="{INK}" stroke-width="1.0"/>')
+            el.append(f'<rect x="{bx-6}" y="{by-6}" width="6" height="6" fill="none" stroke="{INK}" stroke-width="1.0"/>')
+            el.append(txt(148, ry + 48, rnote[:17], size=9.5, color=BODY))
+            el.append(txt(148, ry + 67, rnote[17:], size=9.5, color=INK, weight="600"))
+
+        # Right Panel: Lobachevsky Angle of Parallelism Pi(d) = 2 arctan(e^(-d/R))
+        el.append(card(388, 66, 352, 358))
+        el.append(txt(404, 90, "② 罗巴切夫斯基平行角 Π(d) 精确曲线", size=12.0, color=INK, weight="700"))
+        el.append(txt(404, 109, "垂距 d 越远，临界平行角 Π(d) 越锐，平行扇区张得越宽！", size=9.6, color=MUTED))
+
+        # Coordinate plot x = d/R in [0, 3.4], y = deg in [0, 100]
+        gx0, gy0, gw, gh = 436.0, 292.0, 276.0, 156.0
+        def X_g(u):
+            return gx0 + (u / 3.4) * gw
+        def Y_g(deg):
+            return gy0 - (deg / 100.0) * gh
+
+        # Grid & Euclidean 90-deg horizontal reference
+        for deg_tick in (0, 30, 60, 90):
+            yy = Y_g(deg_tick)
+            st_col = BLUE if deg_tick == 90 else "#e2e8f0"
+            dash = ' stroke-dasharray="5 3"' if deg_tick == 90 else ""
+            el.append(f'<line x1="{gx0}" y1="{yy:.1f}" x2="{gx0+gw}" y2="{yy:.1f}" stroke="{st_col}" stroke-width="1.2"{dash}/>')
+            el.append(txt(gx0 - 6, yy + 3.5, f"{deg_tick}°", size=9.2, color=MUTED, anchor="end"))
+
+        el.append(txt(gx0 + gw - 4, Y_g(90) - 6, "欧氏恒为 Π = 90° (唯一平行)", size=9.3, color=BLUE, anchor="end", weight="700"))
+
+        for u_tick in (0, 1, 2, 3):
+            xx = X_g(u_tick)
+            el.append(f'<line x1="{xx:.1f}" y1="{gy0}" x2="{xx:.1f}" y2="{gy0+4}" stroke="{INK}" stroke-width="1.2"/>')
+            el.append(txt(xx, gy0 + 16, f"{u_tick}R", size=9.2, color=MUTED, anchor="middle"))
+        el.append(txt(gx0 + gw / 2, gy0 + 31, "无量纲距离 d / R（R 为双曲曲率半径）", size=9.4, color=INK, anchor="middle", weight="600"))
+
+        # Axes
+        el.append(f'<line x1="{gx0}" y1="{gy0-gh}" x2="{gx0}" y2="{gy0}" stroke="{INK}" stroke-width="1.4"/>')
+        el.append(f'<line x1="{gx0}" y1="{gy0}" x2="{gx0+gw}" y2="{gy0}" stroke="{INK}" stroke-width="1.4"/>')
+
+        # Shaded parallel margin between 90 deg and Pi(d)
+        poly_sh = [(X_g(0), Y_g(90))] + [(X_g(3.4 * k / 68.0), Y_g(pi_deg(3.4 * k / 68.0))) for k in range(69)] + [(X_g(3.4), Y_g(90))]
+        el.append(f'<path d="M {" L ".join(f"{x:.1f},{y:.1f}" for x,y in poly_sh)} Z" fill="{GREEN}" fill-opacity="0.11"/>')
+        el.append(txt(X_g(2.25), Y_g(56), "超平行安全带 (Π < θ ≤ 90°)", size=9.3, color=GREEN, anchor="middle", weight="700"))
+
+        # Exact curve Pi(d/R)
+        pts_pi = [(X_g(3.4 * k / 68.0), Y_g(pi_deg(3.4 * k / 68.0))) for k in range(69)]
+        el.append(f'<path d="M {" L ".join(f"{x:.1f},{y:.1f}" for x,y in pts_pi)}" fill="none" stroke="{GREEN}" stroke-width="2.5"/>')
+
+        # Key sample points (0, 90), (1, 40.4), (2, 15.5)
+        for u_pt, lbl_pt, dx_lbl, dy_lbl, anc in (
+            (0.0, "d→0: 90.0°", 16, -2, "start"),
+            (1.0, f"d=R: {pi_deg(1.0):.1f}°", 8, -5, "start"),
+            (2.0, f"d=2R: {pi_deg(2.0):.1f}°", 6, -6, "start"),
+        ):
+            px_u, py_u = X_g(u_pt), Y_g(pi_deg(u_pt))
+            el.append(f'<circle cx="{px_u:.1f}" cy="{py_u:.1f}" r="3.8" fill="{RED}" stroke="#fff" stroke-width="1.2"/>')
+            el.append(txt(px_u + dx_lbl, py_u + dy_lbl, lbl_pt, size=9.2, color=RED, anchor=anc, weight="700", halo=True))
+
+        # Bottom takeaway card in right panel
+        el.append(card(402, 332, 324, 78, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        el.append(txt(414, 351, "为什么日常生活里我们察觉不到双曲平行角？", size=9.9, color=INK, weight="700"))
+        el.append(txt(414, 370, "• 若宇宙曲率半径 R 达百亿光年，教室里 d/R ≈ 10⁻²⁶，", size=9.5, color=BODY))
+        el.append(txt(414, 389, "  此时 Π(d) ≈ 89.999999999999999999999999° ≈ 90°！", size=9.5, color=GREEN, weight="700"))
+        el.append(txt(414, 405, "  局部极小范围内，非欧几何严丝合缝退回欧氏几何！", size=9.4, color=MUTED))
+
+        svg = figure(
+            438,
+            "萨凯里双直角四边形三假说与罗巴切夫斯基平行角精确函数图解",
+            "左栏对比萨凯里四边形在直角、钝角、锐角三种假说下的顶角与顶边变化；右栏按精确公式绘制双曲平行角Π(d)=2arctan(e^(-d/R))随距离d/R从90度指数衰减的曲线。",
+            el,
+            extra_defs=extra_markers,
+        )
+        write_svg(TOPIC, "euclid-fifth-saccheri-lobachevsky.svg", svg)
+
+    # ------------------------------------------------------------------
+    # 3. poincare-disk-parallel-fan-anim.svg
+    # ------------------------------------------------------------------
+    def build_fig3_poincare_beltrami():
+        # Exact Poincaré disk model centered at (dcx, dcy) with radius dr = 114
+        dcx, dcy, dr = 198.0, 214.0, 112.0
+        y0 = 0.42  # point P = (0, y0) in unit disk
+        d_hyp = math.log((1.0 + y0) / (1.0 - y0))
+        pi_rad = 2.0 * math.atan((1.0 - y0) / (1.0 + y0))
+        pi_deg_val = math.degrees(pi_rad)
+        # Verify exact analytic identity tan(Pi(d)) == (1 - y0^2) / (2 * y0)!
+        assert abs(math.tan(pi_rad) - (1.0 - y0 * y0) / (2.0 * y0)) < 1e-12
+
+        def disk_xy(ux, uy):
+            return dcx + dr * ux, dcy - dr * uy
+
+        def ortho_geodesic_pts(alpha_deg, n_pts=65):
+            """Exact Euclidean circular arc orthogonal to unit circle through P(0, y0)
+            with tangent vector (sin alpha, -cos alpha) from downward vertical."""
+            a = math.radians(alpha_deg)
+            s = (1.0 - y0 * y0) / (2.0 * y0 * math.sin(a))
+            cx_u = s * math.cos(a)
+            cy_u = y0 + s * math.sin(a)
+            rho = abs(s)
+            # Find intersections of (x - cx_u)^2 + (y - cy_u)^2 = rho^2 with x^2 + y^2 = 1:
+            # Since cx_u^2 + cy_u^2 = 1 + rho^2, 2*(cx_u*x + cy_u*y) = 2 -> cx_u*x + cy_u*y = 1!
+            c_dist2 = cx_u * cx_u + cy_u * cy_u
+            assert abs(c_dist2 - (1.0 + rho * rho)) < 1e-9
+            c_dist = math.sqrt(c_dist2)
+            base_ang = math.atan2(-cy_u, -cx_u)
+            half_span = math.acos(rho / c_dist)  # exact orthogonality triangle!
+            pts = []
+            for k in range(n_pts):
+                th = (base_ang - half_span) + 2.0 * half_span * (k / (n_pts - 1))
+                ux = cx_u + rho * math.cos(th)
+                uy = cy_u + rho * math.sin(th)
+                pts.append(disk_xy(ux, uy))
+            return pts
+
+        anim_css = """
+        <style>
+          .sweep-ray {
+            transform-box: fill-box;
+            transform-origin: 0% 0%;
+            animation: sweepParallel 4.4s cubic-bezier(0.32, 0, 0.24, 1) 0.3s 1 forwards;
+          }
+          @keyframes sweepParallel {
+            0%   { opacity: 0.25; }
+            100% { opacity: 1.0; }
+          }
+          .pulse-arc {
+            stroke-dasharray: 280;
+            stroke-dashoffset: 280;
+            animation: drawHyperArc 2.8s ease-out 0.3s 1 forwards;
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .sweep-ray { animation: none; opacity: 1.0; }
+            .pulse-arc { animation: none; stroke-dashoffset: 0; }
+          }
+          @keyframes drawHyperArc {
+            to { stroke-dashoffset: 0; }
+          }
+        </style>
+        """
+
+        el = []
+        el += header(
+            "把无穷大双曲平面装进圆盘：庞加莱圆盘上的“双渐近平行 + 超平行扇束”",
+            "边界圆周代表无穷远，凡与边界垂直相交的圆弧都是货真价实的双曲“直线”（测地线）",
+        )
+
+        # Left Panel: Poincaré Conformal Disk
+        el.append(card(20, 66, 360, 382))
+        el.append(txt(36, 90, f"① 庞加莱保角圆盘（P 处平行角 Π ≈ {pi_deg_val:.1f}°）", size=11.8, color=INK, weight="700"))
+
+        # Unit disk background
+        el.append(f'<circle cx="{dcx}" cy="{dcy}" r="{dr}" fill="#f8fafc" stroke="{INK}" stroke-width="1.8"/>')
+
+        # Shaded ultraparallel band between upper ultraparallels and limiting parallels
+        lim_r_pts = ortho_geodesic_pts(+pi_deg_val)
+        lim_l_pts = ortho_geodesic_pts(-pi_deg_val)
+        # Draw 4 ultraparallel arcs (|alpha| > 44.42 deg: e.g. +-62 deg, +-78 deg, and 90 deg symmetric!)
+        for a_ultra in (-64.0, +64.0, +90.0):
+            u_pts = ortho_geodesic_pts(a_ultra)
+            cls_u = ' class="pulse-arc"' if a_ultra == 90.0 else ""
+            sw_u = "2.5" if a_ultra == 90.0 else "1.7"
+            el.append(f'<path{cls_u} d="M {" L ".join(f"{x:.1f},{y:.1f}" for x,y in u_pts)}" fill="none" stroke="{BLUE}" stroke-width="{sw_u}"/>')
+
+        # Draw 2 intersecting red arcs (|alpha| < 44.42 deg: +-22 deg) + perpendicular vertical diameter!
+        px_d, py_d = disk_xy(0.0, y0)
+        el.append(f'<line x1="{dcx}" y1="{dcy-dr}" x2="{dcx}" y2="{dcy+dr}" stroke="{MUTED}" stroke-width="1.2" stroke-dasharray="4 3"/>')
+        for a_cut in (-23.0, +23.0):
+            c_pts = ortho_geodesic_pts(a_cut)
+            el.append(f'<path d="M {" L ".join(f"{x:.1f},{y:.1f}" for x,y in c_pts)}" fill="none" stroke="{RED}" stroke-width="1.4" stroke-dasharray="4 3"/>')
+
+        # Draw 2 exact GREEN Limiting (Asymptotic) Parallels meeting l at A_inf=(-1,0) and B_inf=(+1,0)!
+        el.append(f'<path class="pulse-arc" d="M {" L ".join(f"{x:.1f},{y:.1f}" for x,y in lim_r_pts)}" fill="none" stroke="{GREEN}" stroke-width="2.5"/>')
+        el.append(f'<path class="pulse-arc" d="M {" L ".join(f"{x:.1f},{y:.1f}" for x,y in lim_l_pts)}" fill="none" stroke="{GREEN}" stroke-width="2.5"/>')
+
+        # Base geodesic l (horizontal diameter)
+        el.append(f'<line x1="{dcx-dr}" y1="{dcy}" x2="{dcx+dr}" y2="{dcy}" stroke="{INK}" stroke-width="2.6"/>')
+        el.append(txt(dcx, dcy + 16, "基准双曲直线 l", size=9.6, color=INK, anchor="middle", weight="700"))
+
+        # Ideal points A_inf, B_inf & point P
+        el.append(f'<circle cx="{dcx-dr}" cy="{dcy}" r="4.0" fill="{GREEN}" stroke="#fff" stroke-width="1.2"/>')
+        el.append(f'<circle cx="{dcx+dr}" cy="{dcy}" r="4.0" fill="{GREEN}" stroke="#fff" stroke-width="1.2"/>')
+        el.append(txt(dcx - dr - 5, dcy + 4, "A∞", size=9.2, color=GREEN, anchor="end", weight="700"))
+        el.append(txt(dcx + dr + 5, dcy + 4, "B∞", size=9.2, color=GREEN, anchor="start", weight="700"))
+
+        el.append(f'<circle cx="{px_d:.1f}" cy="{py_d:.1f}" r="4.6" fill="{BLUE}" stroke="#fff" stroke-width="1.4"/>')
+        el.append(txt(px_d, py_d - 34, "蓝弧：无穷多条超平行线", size=9.3, color=BLUE, anchor="middle", weight="700", halo=True))
+        el.append(txt(px_d + 10, py_d + 20, f"绿弧：2条渐近平行 (Π≈{pi_deg_val:.1f}°)", size=9.1, color=GREEN, anchor="start", weight="700", halo=True))
+        el.append(txt(dcx, dcy + 62, "红虚弧：相交线 (<Π)", size=9.1, color=RED, anchor="middle", weight="600", halo=True))
+        el.append(txt(dcx, dcy + dr + 16, "无穷远地平线边界 |z| = 1（走到边界需无穷远路程）", size=9.2, color=MUTED, anchor="middle"))
+
+        # Bottom legend inside Left Panel
+        el.append(card(34, 352, 332, 84, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        el.append(txt(46, 371, "• 绿实弧（恰 2 条渐近平行）：在无穷远边界 A∞、B∞ 刚好追上 l；", size=9.4, color=GREEN, weight="700"))
+        el.append(txt(46, 390, "• 蓝实弧（无穷多条超平行）：连在无穷远边界都与 l 隔开一段弧，", size=9.4, color=BLUE, weight="700"))
+        el.append(txt(46, 409, "  两线拥有唯一公垂线，往两侧越走分得越开！", size=9.4, color=BODY))
+        el.append(txt(46, 427, "• 红虚弧（相交簇）：夹角小于 Π(d)，在有限远处刺穿 l。", size=9.4, color=RED))
+
+        # Right Panel: Beltrami Pseudosphere (1868) & Hilbert's Theorem (1901)
+        el.append(card(396, 66, 344, 382))
+        el.append(txt(412, 90, "② 贝特拉米伪球面 (1868) 与三维边界墙", size=11.8, color=INK, weight="700"))
+
+        # Draw exact vertical tractrix horn centered at px_b = 568, rim at py_rim = 278, scale R_ps = 64
+        px_b, py_rim, R_ps = 568.0, 274.0, 64.0
+        # Tractrix: r = R*sin(t), h = R*(ln(cot(t/2)) - cos(t)) for t in [0.16, pi/2]
+        tr_left, tr_right = [], []
+        for k in range(45):
+            t = 0.17 + (math.pi / 2.0 - 0.17) * (k / 44.0)
+            rr = R_ps * math.sin(t)
+            hh = R_ps * (math.log(1.0 / math.tan(t / 2.0)) - math.cos(t)) * 0.72
+            tr_left.append((px_b - rr, py_rim - hh))
+            tr_right.append((px_b + rr, py_rim - hh))
+
+        # Shaded horn body
+        body_pts = tr_left + list(reversed(tr_right))
+        el.append(f'<path d="M {" L ".join(f"{x:.1f},{y:.1f}" for x,y in body_pts)} Z" fill="#f0fdf4" stroke="{GREEN}" stroke-width="1.8"/>')
+
+        # Latitude cross-section ellipses + sharp singular rim at t = pi/2 (rr = R_ps)
+        for t_ring in (0.42, 0.75, 1.12):
+            rr = R_ps * math.sin(t_ring)
+            hh = R_ps * (math.log(1.0 / math.tan(t_ring / 2.0)) - math.cos(t_ring)) * 0.72
+            el.append(f'<ellipse cx="{px_b}" cy="{py_rim-hh:.1f}" rx="{rr:.1f}" ry="{rr*0.20:.1f}" fill="none" stroke="{GREEN}" stroke-opacity="0.45" stroke-width="1.1"/>')
+
+        # Red singular rim at equator r = R!
+        el.append(f'<ellipse cx="{px_b}" cy="{py_rim}" rx="{R_ps}" ry="13" fill="none" stroke="{RED}" stroke-width="2.3"/>')
+        el.append(txt(px_b, py_rim + 27, "奇异锋利赤道棱 r = R（三维空间再往下就卡死!）", size=9.3, color=RED, anchor="middle", weight="700"))
+        el.append(txt(px_b + 12, 128, "曳物线旋转喇叭", size=9.5, color=GREEN, weight="700"))
+        el.append(txt(px_b + 12, 145, "处处恒负曲率 K = -1/R²", size=9.4, color=INK, weight="600"))
+
+        el.append(card(410, 314, 316, 122, rx=8, fill=GREEN_SOFT, stroke=GREEN, sw=0.9))
+        el.append(txt(422, 334, "为什么非要用圆盘地图？—— 希尔伯特定理 (1901)", size=9.9, color=GREEN, weight="700"))
+        el.append(txt(422, 353, "• 1868 年贝特拉米在伪球面上找到双曲几何真身，铁证：", size=9.4, color=BODY))
+        el.append(txt(422, 371, "  若非欧几何有矛盾，欧氏几何自己也会当场崩塌！", size=9.4, color=INK, weight="700"))
+        el.append(txt(422, 390, "• 但 1901 年希尔伯特证明：完整的恒负曲率平面面积", size=9.4, color=BODY))
+        el.append(txt(422, 408, "  暴涨太猛，绝无法无奇点塞进三维欧氏空间 ℝ³；", size=9.4, color=BODY))
+        el.append(txt(422, 426, "  庞加莱圆盘用“越靠边步尺越缩”完美装下整个双曲宇宙！", size=9.4, color=BLUE, weight="700"))
+
+        svg = figure(
+            462,
+            "庞加莱保角圆盘渐近平行与超平行扇束动画及贝特拉米伪球面图解",
+            "左栏在庞加莱圆盘上按正交圆精确绘出过点P的2条绿色渐近平行线、无穷多条蓝色超平行线与红色相交线；右栏绘出贝特拉米曳物线伪球面及其r=R奇异棱，解释希尔伯特定理。",
+            el,
+            extra_defs=extra_markers + anim_css,
+        )
+        write_svg(TOPIC, "poincare-disk-parallel-fan-anim.svg", svg)
+
+    # ------------------------------------------------------------------
+    # 4. triangle-angles-and-circle-growth.svg
+    # ------------------------------------------------------------------
+    def build_fig4_gauss_bonnet_growth():
+        el = []
+        el += header(
+            "平行线一旦分家，三角形内角和与圆周长全变了！—— 高斯-博内三界对决",
+            "内角和不再死守 180°：α + β + γ = 180° + K·A（球面角盈 > 180°，双曲角亏 < 180°，非欧世界无相似三角形！）",
+        )
+
+        # Top row: 3 side-by-side triangle cards
+        # 1) Spherical 3-right-angle octant triangle (270 deg!)
+        el.append(card(20, 66, 232, 168, rx=9, fill=CARD_BG, stroke=ORANGE, sw=1.2))
+        el.append(txt(136, 87, "球面大三角形：内角和 = 270°!", size=10.8, color=ORANGE, anchor="middle", weight="700"))
+        # Draw octant on mini sphere centered at (102, 162), R=48
+        ox, oy, orad = 96.0, 162.0, 48.0
+        el.append(f'<circle cx="{ox}" cy="{oy}" r="{orad}" fill="#fffdf9" stroke="#cbd5e1" stroke-width="1.2"/>')
+        p_n = (ox, oy - orad)
+        p_a = (ox - 34.0, oy + 12.0)
+        p_b = (ox + 38.0, oy + 10.0)
+        d_oct = (
+            f"M {p_n[0]},{p_n[1]} "
+            f"Q {ox-36},{oy-22} {p_a[0]},{p_a[1]} "
+            f"Q {ox},{oy+22} {p_b[0]},{p_b[1]} "
+            f"Q {ox+38},{oy-22} {p_n[0]},{p_n[1]} Z"
+        )
+        el.append(f'<path d="{d_oct}" fill="{ORANGE}" fill-opacity="0.18" stroke="{ORANGE}" stroke-width="2.2"/>')
+        el.append(txt(ox, oy - 6, "90°×3", size=9.6, color=ORANGE, anchor="middle", weight="700"))
+        el.append(txt(158, 128, "北极+赤道经差90°：", size=9.3, color=BODY))
+        el.append(txt(158, 148, "三个角全是 90°！", size=9.5, color=ORANGE, weight="700"))
+        el.append(txt(158, 168, "Σ = π + A/R²", size=9.5, color=INK, weight="700"))
+        el.append(txt(158, 188, "面积越大越鼓胀", size=9.3, color=MUTED))
+        el.append(txt(136, 220, "角盈 = +A/R² > 0", size=9.5, color=ORANGE, anchor="middle", weight="700"))
+
+        # 2) Euclidean flat triangle (180 deg)
+        el.append(card(264, 66, 232, 168, rx=9, fill=CARD_BG, stroke=BLUE, sw=1.2))
+        el.append(txt(380, 87, "欧氏平面三角形：恒为 180°", size=10.8, color=BLUE, anchor="middle", weight="700"))
+        el.append(f'<polygon points="292,192 362,192 322,120" fill="{BLUE}" fill-opacity="0.15" stroke="{BLUE}" stroke-width="2.1"/>')
+        el.append(f'<polygon points="376,192 414,192 392,153" fill="{BLUE}" fill-opacity="0.10" stroke="{BLUE}" stroke-width="1.5" stroke-dasharray="3 2"/>')
+        el.append(txt(380, 128, "大小两个相似形：", size=9.4, color=BODY))
+        el.append(txt(380, 147, "角度不变可任意缩放", size=9.4, color=BLUE, weight="700"))
+        el.append(txt(380, 178, "（唯独 K=0 才有相似性!）", size=9.2, color=MUTED, anchor="middle"))
+        el.append(txt(380, 220, "Σ ≡ 180°（与面积无关）", size=9.5, color=BLUE, anchor="middle", weight="700"))
+
+        # 3) Hyperbolic ideal triangle (0 deg, finite max area pi*R^2!)
+        el.append(card(508, 66, 232, 168, rx=9, fill=CARD_BG, stroke=GREEN, sw=1.2))
+        el.append(txt(624, 87, "双曲理想三角形：内角和 → 0°!", size=10.8, color=GREEN, anchor="middle", weight="700"))
+        hcx, hcy, hr = 564.0, 156.0, 48.0
+        el.append(f'<circle cx="{hcx}" cy="{hcy}" r="{hr}" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.3"/>')
+        # Exact 3 ideal vertices at 90, 210, 330 deg -> orthogonal circles have centers at sec(60)=2*hr, radius tan(60)=sqrt(3)*hr!
+        rho_id = math.sqrt(3.0) * hr
+        v_angs = [math.radians(90), math.radians(210), math.radians(330)]
+        v_pts = [(hcx + hr * math.cos(a), hcy - hr * math.sin(a)) for a in v_angs]
+        d_ideal = (
+            f"M {v_pts[0][0]:.1f},{v_pts[0][1]:.1f} "
+            f"A {rho_id:.1f},{rho_id:.1f} 0 0,1 {v_pts[1][0]:.1f},{v_pts[1][1]:.1f} "
+            f"A {rho_id:.1f},{rho_id:.1f} 0 0,1 {v_pts[2][0]:.1f},{v_pts[2][1]:.1f} "
+            f"A {rho_id:.1f},{rho_id:.1f} 0 0,1 {v_pts[0][0]:.1f},{v_pts[0][1]:.1f} Z"
+        )
+        el.append(f'<path d="{d_ideal}" fill="{GREEN}" fill-opacity="0.18" stroke="{GREEN}" stroke-width="2.1"/>')
+        el.append(txt(626, 126, "三顶点全推到无穷远：", size=9.2, color=BODY))
+        el.append(txt(626, 145, "0° + 0° + 0° = 0°！", size=9.5, color=GREEN, weight="700"))
+        el.append(txt(626, 165, "面积竟封顶 A_max=πR²", size=9.3, color=INK, weight="700"))
+        el.append(txt(626, 185, "角度直接锁死绝对大小", size=9.2, color=MUTED))
+        el.append(txt(624, 220, "角亏 = π - Σ = A/R²", size=9.5, color=GREEN, anchor="middle", weight="700"))
+
+        # Bottom wide card: Exact Geodesic Circle Circumference Growth C(r) / (2*pi*R)
+        el.append(card(20, 246, 720, 194))
+        el.append(txt(36, 270, "为什么双曲空间装得下无穷平行线？—— 测地圆周长 C(r) 的指数暴涨真账", size=11.8, color=INK, weight="700"))
+
+        cx0, cy0, cw_p, ch_p = 74.0, 412.0, 326.0, 122.0
+        u_max, y_max = 2.4, 5.6
+        def X_c(u):
+            return cx0 + (u / u_max) * cw_p
+        def Y_c(val):
+            return cy0 - (val / y_max) * ch_p
+
+        for y_tk in (0, 2, 4):
+            yy = Y_c(y_tk)
+            el.append(f'<line x1="{cx0}" y1="{yy:.1f}" x2="{cx0+cw_p}" y2="{yy:.1f}" stroke="#e2e8f0" stroke-width="1.1"/>')
+            el.append(txt(cx0 - 6, yy + 3.5, f"{y_tk}·2πR", size=8.9, color=MUTED, anchor="end"))
+        for u_tk in (0, 1, 2):
+            xx = X_c(u_tk)
+            el.append(f'<line x1="{xx:.1f}" y1="{cy0}" x2="{xx:.1f}" y2="{cy0+4}" stroke="{INK}" stroke-width="1.2"/>')
+            el.append(txt(xx, cy0 + 16, f"r={u_tk}R", size=9.0, color=MUTED, anchor="middle"))
+
+        el.append(f'<line x1="{cx0}" y1="{cy0-ch_p}" x2="{cx0}" y2="{cy0}" stroke="{INK}" stroke-width="1.4"/>')
+        el.append(f'<line x1="{cx0}" y1="{cy0}" x2="{cx0+cw_p}" y2="{cy0}" stroke="{INK}" stroke-width="1.4"/>')
+
+        pts_hyp = [(X_c(u_max * k / 60.0), Y_c(math.sinh(u_max * k / 60.0))) for k in range(61)]
+        pts_euc = [(X_c(u_max * k / 60.0), Y_c(u_max * k / 60.0)) for k in range(61)]
+        pts_sph = [(X_c(u_max * k / 60.0), Y_c(math.sin(u_max * k / 60.0))) for k in range(61)]
+
+        el.append(f'<path d="M {" L ".join(f"{x:.1f},{y:.1f}" for x,y in pts_hyp)}" fill="none" stroke="{GREEN}" stroke-width="2.5"/>')
+        el.append(f'<path d="M {" L ".join(f"{x:.1f},{y:.1f}" for x,y in pts_euc)}" fill="none" stroke="{BLUE}" stroke-width="2.1" stroke-dasharray="5 3"/>')
+        el.append(f'<path d="M {" L ".join(f"{x:.1f},{y:.1f}" for x,y in pts_sph)}" fill="none" stroke="{ORANGE}" stroke-width="2.2"/>')
+
+        el.append(txt(X_c(1.92), Y_c(4.7), "双曲 C = 2πR·sinh(r/R)", size=9.3, color=GREEN, anchor="end", weight="700"))
+        el.append(txt(X_c(2.40), Y_c(1.82), "欧氏 C = 2πr", size=9.2, color=BLUE, anchor="end", weight="700", halo=True))
+        el.append(txt(X_c(2.35), Y_c(0.38), "球面 C = 2πR·sin(r/R)", size=9.2, color=ORANGE, anchor="end", weight="700"))
+
+        # Right callout box explaining circumference + non-existence of similar triangles
+        el.append(card(422, 282, 302, 144, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        el.append(txt(434, 302, "一张图读懂两件颠覆直觉的大事：", size=10.0, color=INK, weight="700"))
+        el.append(txt(434, 322, "① 周长账：在 r = 3R 处，双曲圆周长已是欧氏圆的", size=9.4, color=BODY))
+        el.append(txt(434, 340, "   sinh(3)/3 ≈ 3.34 倍！到 r = 10R 更暴涨到 1,101 倍！", size=9.4, color=GREEN, weight="700"))
+        el.append(txt(434, 359, "   外围地盘多到花不完，平行线当然各走各的撞不上。", size=9.4, color=BODY))
+        el.append(txt(434, 380, "② 相似形灭绝：由 A = R²·|180°−Σ|（弧度制 π−Σ），", size=9.4, color=BODY))
+        el.append(txt(434, 398, "   在球面和双曲世界，一旦固定三个内角，三角形面积", size=9.4, color=INK, weight="600"))
+        el.append(txt(434, 416, "   就被唯一钉死——世上根本没有“放大版同角三角形”！", size=9.4, color=RED, weight="700"))
+
+        svg = figure(
+            454,
+            "球面、欧氏与双曲三角形内角和对比及测地圆周长指数增长曲线",
+            "上排三卡片对比球面三直角三角形（270度）、欧氏相似三角形（180度）与双曲理想三角形（0度且最大面积πR²）；下排按精确函数对比sinh(r/R)、r/R与sin(r/R)的圆周长增长规律。",
+            el,
+            extra_defs=extra_markers,
+        )
+        write_svg(TOPIC, "triangle-angles-and-circle-growth.svg", svg)
+
+    # ------------------------------------------------------------------
+    # 5. non-euclidean-four-frontiers.svg
+    # ------------------------------------------------------------------
+    def build_fig5_four_frontiers():
+        el = []
+        el += header(
+            "非欧几何就在你身边：从卷边生菜、薯片薄壳到 AI 词向量与 138 亿光年宇宙",
+            "只要出现“边缘比中心长得快”“双向反弯抗压”或“指数级分叉树”，负曲率双曲几何就是大自然与工程师的首选",
+        )
+
+        quads = [
+            (
+                20,
+                66,
+                "1. 生物与手工：卷边生菜、珊瑚礁与钩针双曲面",
+                GREEN,
+                GREEN_SOFT,
+                [
+                    "• 为什么生菜叶、木耳、海蛞蝓与珊瑚边缘全都是波浪荷叶边？",
+                    "• 因为叶片边缘细胞分裂比中心快，周长按 C ~ sinh(r) 暴涨，",
+                    "  平纸塞不下多余周长，只能在三维里自动拱成负曲率褶皱！",
+                    "• 1997 年数学家戴娜·泰米娜用毛线钩针“每 N 针加 1 针”，",
+                    "  第一次让人们亲手摸到并折纸验证了柔韧的双曲平面。",
+                ],
+            ),
+            (
+                388,
+                66,
+                "2. 工程与美食：品客薯片与百米核电双曲冷却塔",
+                ORANGE,
+                ORANGE_SOFT,
+                [
+                    "• 平薯片一捏就碎，品客薯片做成双曲抛物面 z = x²/a² − y²/b²",
+                    "  （K < 0）：没有固定折痕线，应力向双向分散，装罐不碎！",
+                    "• 发电厂百米冷却塔采用单叶双曲面：整个弯曲塔身竟然完全",
+                    "  由笔直钢筋（直母线）交叉编成！一方向拱受压、另一方向",
+                    "  索受拉，混凝土壳厚仅十几厘米就能硬扛十二级台风。",
+                ],
+            ),
+            (
+                20,
+                238,
+                "3. 人工智能：庞加莱双曲嵌入（Nickel & Kiela 2017）",
+                BLUE,
+                BLUE_SOFT,
+                [
+                    "• 人类词汇表、生物分类树与社交网络每往下走 1 层，节点数",
+                    "  按 b^d 指数爆炸——塞进欧氏空间（体积仅 r^n）拥挤不堪；",
+                    "• 把知识树放进庞加莱双曲球：圆周长 sinh(r) 同样指数增长！",
+                    "• 树根放圆心、叶子铺向无穷远边界，仅用 5 维双曲向量的",
+                    "  重构精度就远超 200 维欧氏词向量（WordNet 实测突破）。",
+                ],
+            ),
+            (
+                388,
+                238,
+                "4. 宇宙学与相对论：给可观测宇宙量“大三角形内角和”",
+                PURPLE,
+                PURPLE_SOFT,
+                [
+                    "• 1820 年代高斯思考过测量三座山峰光线大三角形检验空间曲率；",
+                    "• 今天普朗克卫星拿 138 亿光年外的宇宙微波背景辐射（CMB）",
+                    "  声学斑块当底边，实测宇宙大三角形内角和几乎精确等于 180°",
+                    "  （|Ω_K| < 0.005，大尺度近乎平坦）；而在太阳与黑洞附近，",
+                    "  黎曼非欧弯曲时空每天都在偏折星光、校准你手机里的 GPS！",
+                ],
+            ),
+        ]
+
+        for qx, qy, qtitle, fg, bg, lines_q in quads:
+            el.append(card(qx, qy, 352, 158, rx=10, fill=CARD_BG, stroke=fg, sw=1.3))
+            el.append(card(qx + 10, qy + 10, 332, 28, rx=6, fill=bg, stroke=fg, sw=0.8))
+            el.append(txt(qx + 20, qy + 29, qtitle, size=10.8, color=fg, weight="700"))
+            ly = qy + 56
+            for l_str in lines_q:
+                el.append(txt(qx + 14, ly, l_str, size=9.6, color=BODY))
+                ly += 20
+
+        svg = figure(
+            410,
+            "非欧几何在自然荷叶边生物、双曲薄壳建筑、AI双曲词向量与宇宙学曲率测量中的四大前沿应用",
+            "四宫格展示非欧几何的真实世界应用：1. 生菜珊瑚与泰米娜钩针双曲面；2. 双曲抛物面薯片与直母线双曲冷却塔；3. AI庞加莱圆盘层级树嵌入；4. CMB宇宙大三角形测量与广义相对论。",
+            el,
+            extra_defs=extra_markers,
+        )
+        write_svg(TOPIC, "non-euclidean-four-frontiers.svg", svg)
+
+    build_fig1_three_surfaces()
+    build_fig2_saccheri_lobachevsky()
+    build_fig3_poincare_beltrami()
+    build_fig4_gauss_bonnet_growth()
+    build_fig5_four_frontiers()
+
+

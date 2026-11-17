@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="454" viewBox="0 0 760 454" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">五次方程x^5-x-1=0的实轴交点曲线与复平面五颗真根精确分布图</title>
+<desc id="desc">左图绘制y=x^5-x-1实曲线在r1≈1.167304处穿过横轴；右图在复平面标出全部5个精确根（1个实根与2对共轭复根，重心和为0），阐明不可根式解并非无解而是有限根号工具箱无法表出。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="453" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">最大误解先破除：“五次方程没有根式通解” ≠ “五次方程没有解”！</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">以经典不可根式解方程 x⁵ − x − 1 = 0 为例：实轴上必穿横轴 1 次，复平面上分毫不差躺着 5 颗真根</text>
+<rect x="20" y="62" width="352" height="378" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="34" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 实数视角：奇次曲线从 −∞ 冲向 +∞，必穿横轴！</text>
+<rect x="54.0" y="104.0" width="298.0" height="214.0" rx="6" fill="#f8fafc" stroke="#e2e8f0"/>
+<line x1="54.0" y1="199.9" x2="352.0" y2="199.9" stroke="#475569" stroke-width="1.3"/>
+<line x1="200.3" y1="104.0" x2="200.3" y2="318.0" stroke="#475569" stroke-width="1.3"/>
+<text x="346.0" y="193.9" font-size="8.6" fill="#475569" text-anchor="end" font-weight="700">x 轴</text>
+<text x="206.3" y="117.0" font-size="8.6" fill="#1d6fa5" text-anchor="start" font-weight="700">y = x⁵−x−1</text>
+<polyline points="62.5,312.5 64.6,304.0 66.8,296.1 68.9,288.8 71.0,281.9 73.2,275.6 75.3,269.6 77.4,264.2 79.5,259.1 81.7,254.4 83.8,250.1 85.9,246.2 88.1,242.6 90.2,239.3 92.3,236.3 94.4,233.6 96.6,231.2 98.7,229.0 100.8,227.0 103.0,225.3 105.1,223.7 107.2,222.4 109.3,221.2 111.5,220.2 113.6,219.4 115.7,218.7 117.9,218.2 120.0,217.7 122.1,217.4 124.2,217.2 126.4,217.1 128.5,217.1 130.6,217.2 132.8,217.3 134.9,217.5 137.0,217.8 139.1,218.1 141.3,218.5 143.4,218.9 145.5,219.4 147.7,219.9 149.8,220.4 151.9,221.0 154.0,221.6 156.2,222.2 158.3,222.9 160.4,223.5 162.6,224.2 164.7,224.8 166.8,225.5 168.9,226.2 171.1,226.9 173.2,227.6 175.3,228.4 177.5,229.1 179.6,229.8 181.7,230.5 183.8,231.2 186.0,232.0 188.1,232.7 190.2,233.4 192.4,234.1 194.5,234.9 196.6,235.6 198.7,236.3 200.9,237.0 203.0,237.7 205.1,238.5 207.3,239.2 209.4,239.9 211.5,240.6 213.6,241.4 215.8,242.1 217.9,242.8 220.0,243.5 222.2,244.3 224.3,245.0 226.4,245.7 228.5,246.4 230.7,247.1 232.8,247.8 234.9,248.5 237.1,249.2 239.2,249.9 241.3,250.5 243.4,251.2 245.6,251.8 247.7,252.4 249.8,253.0 252.0,253.5 254.1,254.0 256.2,254.5 258.3,255.0 260.5,255.4 262.6,255.7 264.7,256.0 266.9,256.3 269.0,256.4 271.1,256.5 273.2,256.6 275.4,256.5 277.5,256.3 279.6,256.1 281.8,255.7 283.9,255.2 286.0,254.6 288.1,253.8 290.3,252.9 292.4,251.8 294.5,250.6 296.7,249.1 298.8,247.5 300.9,245.6 303.0,243.5 305.2,241.2 307.3,238.6 309.4,235.8 311.6,232.6 313.7,229.1 315.8,225.4 317.9,221.2 320.1,216.7 322.2,211.8 324.3,206.6 326.5,200.8 328.6,194.7 330.7,188.1 332.8,180.9 335.0,173.3 337.1,165.1 339.2,156.3 341.4,146.9 343.5,136.9 345.6,126.3 347.7,114.9" fill="none" stroke="#1d6fa5" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="127.8" cy="217.1" r="3.6" fill="#b45309"/>
+<circle cx="272.8" cy="256.6" r="3.6" fill="#b45309"/>
+<text x="133.8" y="232.1" font-size="8.3" fill="#b45309" text-anchor="start" font-weight="600">极大 −0.47 (&lt;0)</text>
+<text x="272.8" y="271.6" font-size="8.3" fill="#b45309" text-anchor="middle" font-weight="600">极小 −1.53</text>
+<circle cx="326.8" cy="199.9" r="5.4" fill="#dc2626" stroke="#ffffff" stroke-width="1.5"/>
+<text x="320.8" y="189.9" font-size="8.8" fill="#dc2626" text-anchor="end" font-weight="700">唯一实根 r₁ ≈ 1.167304</text>
+<rect x="34" y="330" width="324" height="96" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.0"/>
+<text x="44" y="349" font-size="9.3" fill="#1d6fa5" text-anchor="start" font-weight="700">介值定理保底（为什么五次方程绝不可能“无解”）：</text>
+<text x="44" y="367" font-size="9.0" fill="#0f172a" text-anchor="start" font-weight="600">• 代入 x = 1 得 f(1) = −1 &lt; 0，代入 x = 2 得 f(2) = +29 &gt; 0；</text>
+<text x="44" y="385" font-size="9.0" fill="#1e293b" text-anchor="start">• 连续曲线从水下浮出水面，中间必有精确交点 r₁ ≈ 1.167304；</text>
+<text x="44" y="403" font-size="9.0" fill="#18794e" text-anchor="start" font-weight="700">• 二分法/牛顿法一眨眼就能算到小数点后一万位！</text>
+<rect x="386" y="62" width="354" height="378" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="400" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 复平面全景：代数基本定理锁死整整 5 颗根！</text>
+<rect x="400" y="104" width="326" height="214" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="556.0" cy="211.0" r="74.0" fill="none" stroke="#cbd5e1" stroke-width="1.1" stroke-dasharray="4 3"/>
+<line x1="410.0" y1="211.0" x2="716.0" y2="211.0" stroke="#475569" stroke-width="1.2"/>
+<line x1="556.0" y1="112.0" x2="556.0" y2="310.0" stroke="#475569" stroke-width="1.2"/>
+<text x="712" y="205.0" font-size="8.4" fill="#475569" text-anchor="end" font-weight="700">实轴 Re</text>
+<text x="562.0" y="122" font-size="8.4" fill="#475569" text-anchor="start" font-weight="700">虚轴 Im</text>
+<text x="490.0" y="149.0" font-size="8.1" fill="#64748b" text-anchor="start">|z|=1 参考圆</text>
+<polyline points="642.4,211.0 569.4,130.8 499.4,184.9 499.4,237.1 569.4,291.2 642.4,211.0" fill="none" stroke="#94a3b8" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 2"/>
+<circle cx="642.4" cy="211.0" r="5.0" fill="#dc2626" stroke="#ffffff" stroke-width="1.4"/>
+<text x="642.4" y="227.0" font-size="8.5" fill="#dc2626" text-anchor="middle" font-weight="700" class="mono">r₁ ≈ +1.167</text>
+<circle cx="569.4" cy="130.8" r="5.0" fill="#6d28d9" stroke="#ffffff" stroke-width="1.4"/>
+<text x="579.4" y="134.8" font-size="8.5" fill="#6d28d9" text-anchor="start" font-weight="700" class="mono">r₂ ≈ +0.181 + 1.084i</text>
+<circle cx="569.4" cy="291.2" r="5.0" fill="#6d28d9" stroke="#ffffff" stroke-width="1.4"/>
+<text x="579.4" y="295.2" font-size="8.5" fill="#6d28d9" text-anchor="start" font-weight="700" class="mono">r₃ ≈ +0.181 − 1.084i</text>
+<circle cx="499.4" cy="184.9" r="5.0" fill="#0f766e" stroke="#ffffff" stroke-width="1.4"/>
+<text x="491.4" y="176.9" font-size="8.5" fill="#0f766e" text-anchor="end" font-weight="700" class="mono">r₄ ≈ −0.765 + 0.352i</text>
+<circle cx="499.4" cy="237.1" r="5.0" fill="#0f766e" stroke="#ffffff" stroke-width="1.4"/>
+<text x="491.4" y="252.1" font-size="8.5" fill="#0f766e" text-anchor="end" font-weight="700" class="mono">r₅ ≈ −0.765 − 0.352i</text>
+<circle cx="556.0" cy="211.0" r="3.2" fill="#0f172a"/>
+<text x="548.0" y="225.0" font-size="8.2" fill="#0f172a" text-anchor="end" font-weight="600">重心 Σrₖ = 0</text>
+<rect x="400" y="330" width="326" height="96" rx="7" fill="#fef2f2" stroke="#dc2626" stroke-width="1.0"/>
+<text x="410" y="349" font-size="9.3" fill="#dc2626" text-anchor="start" font-weight="700">那阿贝尔和伽罗瓦到底证明了什么“不可能”？</text>
+<text x="410" y="367" font-size="9.0" fill="#0f172a" text-anchor="start" font-weight="600">• 这 5 个数客观存在，但若【只准用系数做有限次 + − × ÷</text>
+<text x="410" y="385" font-size="9.0" fill="#dc2626" text-anchor="start" font-weight="700">  和开 n 次根号 √】，绝对拼不出上面这颗 1.167304…！</text>
+<text x="410" y="403" font-size="8.9" fill="#1e293b" text-anchor="start">• 好比“尺规不能三等分任意角”——不是角不存在，是工具不够！</text>
+</svg>

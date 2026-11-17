@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="456" viewBox="0 0 760 456" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">8腔磁控管正交电磁场电子轮辐旋转动画与传统继电器通断对变频连续控温对比图</title>
+<desc id="desc">左图展示-4kV阴极与0V八腔铜阳极在0.18T轴向磁场下由洛伦兹力形成4道π模电子轮辐旋转激振2.45GHz微波；右图对比传统微波炉中火50%采用15秒800W加15秒0W继电器通断与变频微波炉连续输出400W的本质差异。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  .spokes-rot {
+        transform-box: view-box;
+        transform-origin: 206px 222px;
+        animation: turnSpokes 3.2s cubic-bezier(0.35, 0, 0.25, 1) 0.2s 1 forwards;
+      }
+      @keyframes turnSpokes {
+        from { transform: rotate(0deg); }
+        to   { transform: rotate(180deg); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .spokes-rot { animation: none; }
+      }
+</style>
+<rect x="0.5" y="0.5" width="759" height="455" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">微波炉的心脏：腔体磁控管怎样把电子掰成“风车轮辐”，吐出 2.45 GHz 微波？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：8 腔铜阳极 + 轴向强磁场 B ≈ 0.18 T 的洛伦兹拐弯与 π 模轮辐（动画）；右：“中火 50%”的继电器通断真相</text>
+<rect x="20" y="62" width="372" height="380" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="34" y="85" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 磁控管横截面：正交 E × B 场与 4 道电子轮辐</text>
+<rect x="196.0" y="96" width="20" height="32" rx="3" fill="#e2e8f0" stroke="#475569" stroke-width="1.2"/>
+<line x1="206.0" y1="149.0" x2="206.0" y2="98.0" stroke="#c25014" stroke-width="2.6" marker-end="url(#arr-orange)"/>
+<text x="222.0" y="109" font-size="9.8" fill="#c25014" text-anchor="start" font-weight="700">天线探针耦合输出</text>
+<text x="222.0" y="122" font-size="9.4" fill="#64748b" text-anchor="start" class="mono">2.45 GHz → 波导管</text>
+<circle cx="206.0" cy="222.0" r="98.0" fill="#fed7aa" stroke="#c2410c" stroke-width="2.0"/>
+<circle cx="206.0" cy="222.0" r="46.0" fill="#fffbeb" stroke="#c2410c" stroke-width="1.5"/>
+<circle cx="279.0" cy="222.0" r="14.5" fill="#fffbeb" stroke="#c2410c" stroke-width="1.5"/>
+<path d="M 250.5,226.2 L 267.0,226.2 L 267.0,217.8 L 250.5,217.8 Z" fill="#fffbeb" stroke="none"/>
+<circle cx="257.6" cy="273.6" r="14.5" fill="#fffbeb" stroke="#c2410c" stroke-width="1.5"/>
+<path d="M 234.5,256.4 L 246.2,268.1 L 252.1,262.2 L 240.4,250.5 Z" fill="#fffbeb" stroke="none"/>
+<circle cx="206.0" cy="295.0" r="14.5" fill="#fffbeb" stroke="#c2410c" stroke-width="1.5"/>
+<path d="M 201.8,266.5 L 201.8,283.0 L 210.2,283.0 L 210.2,266.5 Z" fill="#fffbeb" stroke="none"/>
+<circle cx="154.4" cy="273.6" r="14.5" fill="#fffbeb" stroke="#c2410c" stroke-width="1.5"/>
+<path d="M 171.6,250.5 L 159.9,262.2 L 165.8,268.1 L 177.5,256.4 Z" fill="#fffbeb" stroke="none"/>
+<circle cx="133.0" cy="222.0" r="14.5" fill="#fffbeb" stroke="#c2410c" stroke-width="1.5"/>
+<path d="M 161.5,217.8 L 145.0,217.8 L 145.0,226.2 L 161.5,226.2 Z" fill="#fffbeb" stroke="none"/>
+<circle cx="154.4" cy="170.4" r="14.5" fill="#fffbeb" stroke="#c2410c" stroke-width="1.5"/>
+<path d="M 177.5,187.6 L 165.8,175.9 L 159.9,181.8 L 171.6,193.5 Z" fill="#fffbeb" stroke="none"/>
+<circle cx="206.0" cy="149.0" r="14.5" fill="#fffbeb" stroke="#c2410c" stroke-width="1.5"/>
+<path d="M 210.2,177.5 L 210.2,161.0 L 201.8,161.0 L 201.8,177.5 Z" fill="#fffbeb" stroke="none"/>
+<circle cx="257.6" cy="170.4" r="14.5" fill="#fffbeb" stroke="#c2410c" stroke-width="1.5"/>
+<path d="M 240.4,193.5 L 252.1,181.8 L 246.2,175.9 L 234.5,187.6 Z" fill="#fffbeb" stroke="none"/>
+<circle cx="206.0" cy="222.0" r="53" fill="none" stroke="#6d28d9" stroke-width="1.2" stroke-dasharray="3 3"/>
+<text x="254.0" y="245.7" font-size="11.2" fill="#dc2626" text-anchor="middle" font-weight="700" class="halo">+</text>
+<text x="225.9" y="273.8" font-size="11.2" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">−</text>
+<text x="186.1" y="273.8" font-size="11.2" fill="#dc2626" text-anchor="middle" font-weight="700" class="halo">+</text>
+<text x="158.0" y="245.7" font-size="11.2" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">−</text>
+<text x="158.0" y="205.9" font-size="11.2" fill="#dc2626" text-anchor="middle" font-weight="700" class="halo">+</text>
+<text x="186.1" y="177.8" font-size="11.2" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">−</text>
+<text x="225.9" y="177.8" font-size="11.2" fill="#dc2626" text-anchor="middle" font-weight="700" class="halo">+</text>
+<text x="254.0" y="205.9" font-size="11.2" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">−</text>
+<g class="spokes-rot">
+<circle cx="206.0" cy="222.0" r="21" fill="#1d6fa5" fill-opacity="0.18" stroke="#1d6fa5" stroke-width="1.0" stroke-dasharray="2 2"/>
+<path d="M 223.9,223.9 Q 235.1,237.5 239.1,251.8 Q 225.5,246.1 222.7,228.7 Z" fill="#1d6fa5" fill-opacity="0.38" stroke="#1d6fa5" stroke-width="1.4"/>
+<path d="M 204.1,239.9 Q 190.5,251.1 176.2,255.1 Q 181.9,241.5 199.3,238.7 Z" fill="#1d6fa5" fill-opacity="0.38" stroke="#1d6fa5" stroke-width="1.4"/>
+<path d="M 188.1,220.1 Q 176.9,206.5 172.9,192.2 Q 186.5,197.9 189.3,215.3 Z" fill="#1d6fa5" fill-opacity="0.38" stroke="#1d6fa5" stroke-width="1.4"/>
+<path d="M 207.9,204.1 Q 221.5,192.9 235.8,188.9 Q 230.1,202.5 212.7,205.3 Z" fill="#1d6fa5" fill-opacity="0.38" stroke="#1d6fa5" stroke-width="1.4"/>
+</g>
+<line x1="193.7" y1="214.3" x2="169.5" y2="199.2" stroke="#475569" stroke-width="1.4" stroke-dasharray="3 2" marker-end="url(#arr-muted)"/>
+<circle cx="206.0" cy="222.0" r="12.5" fill="#dc2626" stroke="#ffffff" stroke-width="1.6"/>
+<text x="206.0" y="225.8" font-size="8.8" fill="#ffffff" text-anchor="middle" font-weight="700" class="mono">−4kV</text>
+<text x="34" y="148" font-size="9.6" fill="#475569" text-anchor="start" font-weight="700">无磁场 B=0：</text>
+<text x="34" y="162" font-size="9.4" fill="#64748b" text-anchor="start">直撞阳极只发热</text>
+<rect x="298" y="142" width="82" height="46" rx="6" fill="#f3e8ff" stroke="#6d28d9" stroke-width="0.9"/>
+<text x="339" y="160" font-size="9.6" fill="#6d28d9" text-anchor="middle" font-weight="700">⊙ 轴向磁场</text>
+<text x="339" y="177" font-size="9.5" fill="#6d28d9" text-anchor="middle" font-weight="700" class="mono">B ≈ 0.18 T</text>
+<text x="302" y="294" font-size="9.7" fill="#c25014" text-anchor="start" font-weight="700">铜阳极块 (0 V)</text>
+<text x="302" y="309" font-size="9.4" fill="#1e293b" text-anchor="start">8 个 LC 谐振腔</text>
+<text x="34" y="294" font-size="9.7" fill="#6d28d9" text-anchor="start" font-weight="700">π 模均压环：</text>
+<text x="34" y="309" font-size="9.4" fill="#1e293b" text-anchor="start">相邻腔反相 180°</text>
+<rect x="34" y="332" width="344" height="98" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.0"/>
+<text x="46" y="351" font-size="9.7" fill="#0f172a" text-anchor="start" font-weight="600">• 洛伦兹力 F = −e(E + v × B) 把径向飞出的电子掰弯成回旋曲线；</text>
+<text x="46" y="370" font-size="9.7" fill="#1e293b" text-anchor="start">• 跑得快的电子被逆向射频场减速，聚拢成 N/2 = 4 道旋转“电子轮辐”；</text>
+<text x="46" y="389" font-size="9.7" fill="#1e293b" text-anchor="start">• 轮辐同步扫过腔口，源源不断把 −4000 V 势能泵成 2.45 GHz 电磁波，</text>
+<text x="46" y="408" font-size="9.7" fill="#1d6fa5" text-anchor="start" font-weight="700">  就像对着一排空啤酒瓶口吹气，激发出极其纯粹的高频哨音！</text>
+<rect x="404" y="62" width="336" height="380" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="418" y="85" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 按下“中火 50%”，火力真的变小了吗？</text>
+<rect x="418" y="100" width="308" height="142" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1.0"/>
+<text x="430" y="120" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="700">A. 传统变压器微波炉：继电器“打打停停”</text>
+<line x1="462.0" y1="144.0" x2="462.0" y2="206.0" stroke="#475569" stroke-width="1.2"/>
+<line x1="462.0" y1="206.0" x2="708.0" y2="206.0" stroke="#475569" stroke-width="1.2"/>
+<text x="457.0" y="148.0" font-size="9.2" fill="#c25014" text-anchor="end" font-weight="700" class="mono">800W</text>
+<text x="457.0" y="209.0" font-size="9.2" fill="#64748b" text-anchor="end" class="mono">0W</text>
+<rect x="462.0" y="144.0" width="123.0" height="62.0" fill="#c25014" opacity="0.25"/>
+<path d="M 462.0,144.0 L 583.4,144.0 L 583.4,206.0 L 704.7,206.0" fill="none" stroke="#c25014" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="462.0" y1="175.0" x2="708.0" y2="175.0" stroke="#475569" stroke-width="1.1" stroke-dasharray="4 3"/>
+<text x="523.5" y="160.0" font-size="9.3" fill="#0f172a" text-anchor="middle" font-weight="700">满功率 800 W 猛轰 15s</text>
+<text x="646.5" y="198.0" font-size="9.3" fill="#64748b" text-anchor="middle" font-weight="600">断电 0 W 停歇 15s</text>
+<text x="708.0" y="170.0" font-size="9.0" fill="#475569" text-anchor="end" font-weight="600">平均 400W</text>
+<text x="462.0" y="220.0" font-size="9.0" fill="#64748b" text-anchor="middle" class="mono">0s</text>
+<text x="585.0" y="220.0" font-size="9.0" fill="#64748b" text-anchor="middle" class="mono">15s</text>
+<text x="708.0" y="220.0" font-size="9.0" fill="#64748b" text-anchor="middle" class="mono">30s</text>
+<text x="430" y="233" font-size="9.4" fill="#dc2626" text-anchor="start" font-weight="700">痛点：前 15 秒仍是 100% 猛火，化黄油/热牛奶照样扑锅！</text>
+<rect x="418" y="254" width="308" height="134" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.0"/>
+<text x="430" y="274" font-size="10.6" fill="#18794e" text-anchor="start" font-weight="700">B. 变频微波炉（Inverter）：IGBT 真连续半火</text>
+<line x1="462.0" y1="298.0" x2="462.0" y2="356.0" stroke="#475569" stroke-width="1.2"/>
+<line x1="462.0" y1="356.0" x2="708.0" y2="356.0" stroke="#475569" stroke-width="1.2"/>
+<text x="457.0" y="302.0" font-size="9.2" fill="#64748b" text-anchor="end" class="mono">800W</text>
+<text x="457.0" y="331.0" font-size="9.2" fill="#18794e" text-anchor="end" font-weight="700" class="mono">400W</text>
+<text x="457.0" y="359.0" font-size="9.2" fill="#64748b" text-anchor="end" class="mono">0W</text>
+<rect x="462.0" y="327.0" width="246.0" height="29.0" fill="#18794e" opacity="0.22"/>
+<line x1="462.0" y1="327.0" x2="708.0" y2="327.0" stroke="#18794e" stroke-width="2.6"/>
+<text x="585.0" y="320.0" font-size="9.4" fill="#18794e" text-anchor="middle" font-weight="700">20–40 kHz 逆变电源：全程恒定输出 400 W</text>
+<text x="462.0" y="370.0" font-size="9.0" fill="#64748b" text-anchor="middle" class="mono">0s</text>
+<text x="585.0" y="370.0" font-size="9.0" fill="#64748b" text-anchor="middle" class="mono">15s</text>
+<text x="708.0" y="370.0" font-size="9.0" fill="#64748b" text-anchor="middle" class="mono">30s</text>
+<text x="430" y="380" font-size="9.4" fill="#0f172a" text-anchor="start" font-weight="600">优势：温火慢炖不溢锅，化冻边缘不易被脉冲峰值烤熟。</text>
+<text x="418" y="409" font-size="9.7" fill="#0f172a" text-anchor="start" font-weight="700">👂 听声音秒辨你家是哪一种：设中火加热 1 分钟——</text>
+<text x="418" y="427" font-size="9.5" fill="#1e293b" text-anchor="start">每隔十多秒“咔哒”变安静的是传统通断式；全程平稳轻响是真变频！</text>
+</svg>

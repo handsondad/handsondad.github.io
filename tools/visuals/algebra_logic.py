@@ -4588,3 +4588,933 @@ def build_ai_impact_and_principles():
         svg = fn()
         suite["check_overlaps"](svg, f"{subdir}/{fname}")
         write_svg(subdir, fname, svg)
+
+
+def _register_quintic_equation():
+    """5 calculated 760px SVGs for the Quintic Equation Solutions post."""
+    SUBDIR = "quintic-equation"
+    RED = "#dc2626"
+    RED_SOFT = "#fef2f2"
+    AMBER = "#b45309"
+    AMBER_SOFT = "#fffbeb"
+    TEAL = "#0f766e"
+    TEAL_SOFT = "#f0fdfa"
+
+    def _ln(x1, y1, x2, y2, stroke=INK, sw=1.6, dash="", marker=""):
+        da = f' stroke-dasharray="{dash}"' if dash else ""
+        mk = f' marker-end="url(#{marker})"' if marker else ""
+        return f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{stroke}" stroke-width="{sw}"{da}{mk}/>'
+
+    def _pl(pts, stroke=BLUE, sw=2.2, fill="none", dash=""):
+        da = f' stroke-dasharray="{dash}"' if dash else ""
+        p_str = " ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
+        return f'<polyline points="{p_str}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}" stroke-linecap="round" stroke-linejoin="round"{da}/>'
+
+    # Compute all 5 exact roots of f(z) = z^5 - z - 1 = 0 via Aberth-Ehrlich iteration
+    def _solve_bj_roots():
+        zs = [cmath.exp(2j * math.pi * k / 5) * 1.1 for k in range(5)]
+        for _ in range(40):
+            nxt = []
+            for i, z in enumerate(zs):
+                fz = z ** 5 - z - 1.0
+                dfz = 5.0 * (z ** 4) - 1.0
+                rep = sum(1.0 / (z - zs[j]) for j in range(5) if j != i)
+                nxt.append(z - (fz / dfz) / (1.0 - (fz / dfz) * rep))
+            zs = nxt
+        zs.sort(key=lambda z: (0 if abs(z.imag) < 1e-10 else (1 if z.real > 0 else 2), -z.imag))
+        for z in zs:
+            assert abs(z ** 5 - z - 1.0) < 1e-13
+        assert abs(sum(zs)) < 1e-12
+        return zs
+
+    BJ_ROOTS = _solve_bj_roots()
+
+    def _build_quintic_has_five_roots():
+        """SVG 1: Debunking 'Quintic has no solution' — Real curve crossing + 5 Complex roots."""
+        r_real = BJ_ROOTS[0].real
+        assert abs(r_real - 1.167303978261) < 1e-9
+
+        els = header(
+            "最大误解先破除：“五次方程没有根式通解” ≠ “五次方程没有解”！",
+            "以经典不可根式解方程 x⁵ − x − 1 = 0 为例：实轴上必穿横轴 1 次，复平面上分毫不差躺着 5 颗真根",
+        )
+
+        # ---------------- Left Panel: Real Curve y = x^5 - x - 1 ----------------
+        els.append(card(20, 62, 352, 378))
+        els.append(txt(34, 84, "① 实数视角：奇次曲线从 −∞ 冲向 +∞，必穿横轴！", PANEL_TITLE, INK, weight="700"))
+
+        # Plot box x in [-1.35, 1.40], y in [-3.2, +2.6]
+        gx0, gy0, gw, gh = 54.0, 104.0, 298.0, 214.0
+        xmin, xmax = -1.35, 1.40
+        ymin, ymax = -3.20, 2.60
+
+        def X_p(xv):
+            return gx0 + (xv - xmin) / (xmax - xmin) * gw
+
+        def Y_p(yv):
+            return gy0 + gh - (yv - ymin) / (ymax - ymin) * gh
+
+        els.append(f'<rect x="{gx0}" y="{gy0}" width="{gw}" height="{gh}" rx="6" fill="#f8fafc" stroke="{BORDER}"/>')
+        # Zero axes
+        els.append(_ln(gx0, Y_p(0), gx0 + gw, Y_p(0), stroke=SLATE, sw=1.3))
+        els.append(_ln(X_p(0), gy0, X_p(0), gy0 + gh, stroke=SLATE, sw=1.3))
+        els.append(txt(gx0 + gw - 6, Y_p(0) - 6, "x 轴", 8.6, SLATE, "end", weight="700"))
+        els.append(txt(X_p(0) + 6, gy0 + 13, "y = x⁵−x−1", 8.6, BLUE, "start", weight="700"))
+
+        # Sample curve points clamped smoothly inside box
+        c_pts = []
+        for k in range(141):
+            xv = xmin + (xmax - xmin) * (k / 140.0)
+            yv = xv ** 5 - xv - 1.0
+            if ymin <= yv <= ymax:
+                c_pts.append((X_p(xv), Y_p(yv)))
+        els.append(_pl(c_pts, stroke=BLUE, sw=2.6))
+
+        # Highlight local max (-0.6687, -0.4651) and local min (+0.6687, -1.5349) + real root (1.1673, 0)
+        x_ext = (0.2) ** 0.25  # 0.66874
+        y_lmax = (-x_ext) ** 5 - (-x_ext) - 1.0  # -0.4650
+        y_lmin = (x_ext) ** 5 - x_ext - 1.0      # -1.5350
+        els.append(f'<circle cx="{X_p(-x_ext):.1f}" cy="{Y_p(y_lmax):.1f}" r="3.6" fill="{AMBER}"/>')
+        els.append(f'<circle cx="{X_p(x_ext):.1f}" cy="{Y_p(y_lmin):.1f}" r="3.6" fill="{AMBER}"/>')
+        els.append(txt(X_p(-x_ext) + 6, Y_p(y_lmax) + 15, "极大 −0.47 (<0)", 8.3, AMBER, "start", weight="600"))
+        els.append(txt(X_p(x_ext), Y_p(y_lmin) + 15, "极小 −1.53", 8.3, AMBER, "middle", weight="600"))
+
+        # Real root dot!
+        els.append(f'<circle cx="{X_p(r_real):.1f}" cy="{Y_p(0):.1f}" r="5.4" fill="{RED}" stroke="#ffffff" stroke-width="1.5"/>')
+        els.append(txt(X_p(r_real) - 6, Y_p(0) - 10, f"唯一实根 r₁ ≈ {r_real:.6f}", 8.8, RED, "end", weight="700"))
+
+        els.append(card(34, 330, 324, 96, rx=7, fill=BLUE_SOFT, stroke=BLUE, sw=1.0))
+        els.append(txt(44, 349, "介值定理保底（为什么五次方程绝不可能“无解”）：", 9.3, BLUE, weight="700"))
+        els.append(txt(44, 367, "• 代入 x = 1 得 f(1) = −1 < 0，代入 x = 2 得 f(2) = +29 > 0；", 9.0, INK, weight="600"))
+        els.append(txt(44, 385, "• 连续曲线从水下浮出水面，中间必有精确交点 r₁ ≈ 1.167304；", 9.0, BODY))
+        els.append(txt(44, 403, "• 二分法/牛顿法一眨眼就能算到小数点后一万位！", 9.0, GREEN, weight="700"))
+
+        # ---------------- Right Panel: Complex Plane with All 5 True Roots ----------------
+        els.append(card(386, 62, 354, 378))
+        els.append(txt(400, 84, "② 复平面全景：代数基本定理锁死整整 5 颗根！", PANEL_TITLE, INK, weight="700"))
+
+        cx0, cy0, scale_c = 556.0, 211.0, 74.0  # 1 unit = 74 px
+        els.append(card(400, 104, 326, 214, rx=6, fill="#f8fafc", stroke=BORDER))
+        # Unit circle dashed reference |z| = 1
+        els.append(f'<circle cx="{cx0}" cy="{cy0}" r="{scale_c}" fill="none" stroke="#cbd5e1" stroke-width="1.1" stroke-dasharray="4 3"/>')
+        els.append(_ln(410, cy0, 716, cy0, stroke=SLATE, sw=1.2))
+        els.append(_ln(cx0, 112, cx0, 310, stroke=SLATE, sw=1.2))
+        els.append(txt(712, cy0 - 6, "实轴 Re", 8.4, SLATE, "end", weight="700"))
+        els.append(txt(cx0 + 6, 122, "虚轴 Im", 8.4, SLATE, "start", weight="700"))
+        els.append(txt(cx0 - scale_c + 8, cy0 - scale_c + 12, "|z|=1 参考圆", 8.1, MUTED))
+
+        root_labels = [
+            ("r₁ ≈ +1.167", RED, 0, 16, "middle"),
+            ("r₂ ≈ +0.181 + 1.084i", PURPLE, 10, 4, "start"),
+            ("r₃ ≈ +0.181 − 1.084i", PURPLE, 10, 4, "start"),
+            ("r₄ ≈ −0.765 + 0.352i", TEAL, -8, -8, "end"),
+            ("r₅ ≈ −0.765 − 0.352i", TEAL, -8, 15, "end"),
+        ]
+        # Draw dashed polygon connecting the 5 roots & center of mass O
+        poly_5 = [(cx0 + BJ_ROOTS[idx].real * scale_c, cy0 - BJ_ROOTS[idx].imag * scale_c) for idx in (0, 1, 3, 4, 2)]
+        els.append(_pl(poly_5 + [poly_5[0]], stroke="#94a3b8", sw=1.1, dash="3 2"))
+
+        for z_val, (rlbl, rcol, dx, dy, anc) in zip(BJ_ROOTS, root_labels):
+            px = cx0 + z_val.real * scale_c
+            py = cy0 - z_val.imag * scale_c
+            els.append(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="5.0" fill="{rcol}" stroke="#ffffff" stroke-width="1.4"/>')
+            els.append(txt(px + dx, py + dy, rlbl, 8.5, rcol, anc, weight="700", cls="mono"))
+
+        # Center of mass at origin (Vieta sum = 0!)
+        els.append(f'<circle cx="{cx0}" cy="{cy0}" r="3.2" fill="{INK}"/>')
+        els.append(txt(cx0 - 8, cy0 + 14, "重心 Σrₖ = 0", 8.2, INK, "end", weight="600"))
+
+        els.append(card(400, 330, 326, 96, rx=7, fill=RED_SOFT, stroke=RED, sw=1.0))
+        els.append(txt(410, 349, "那阿贝尔和伽罗瓦到底证明了什么“不可能”？", 9.3, RED, weight="700"))
+        els.append(txt(410, 367, "• 这 5 个数客观存在，但若【只准用系数做有限次 + − × ÷", 9.0, INK, weight="600"))
+        els.append(txt(410, 385, "  和开 n 次根号 √】，绝对拼不出上面这颗 1.167304…！", 9.0, RED, weight="700"))
+        els.append(txt(410, 403, "• 好比“尺规不能三等分任意角”——不是角不存在，是工具不够！", 8.9, BODY))
+
+        return figure(
+            454,
+            "五次方程x^5-x-1=0的实轴交点曲线与复平面五颗真根精确分布图",
+            "左图绘制y=x^5-x-1实曲线在r1≈1.167304处穿过横轴；右图在复平面标出全部5个精确根（1个实根与2对共轭复根，重心和为0），阐明不可根式解并非无解而是有限根号工具箱无法表出。",
+            els,
+        )
+
+    def _build_resolvent_degree_wall():
+        """SVG 2: Why Degrees 2, 3, 4 succeeded via Lagrange Resolvent degree-drop, while Degree 5 exploded to 6 or 24!"""
+        # Verify Cardano casus irreducibilis example y^3 - 15y - 4 = 0 -> roots 4, -2+sqrt(3), -2-sqrt(3)
+        for yr in (4.0, -2.0 + math.sqrt(3.0), -2.0 - math.sqrt(3.0)):
+            assert abs(yr ** 3 - 15.0 * yr - 4.0) < 1e-11
+        # Verify Lagrange resolvent index counts: 2!/2=1, 3!/3=2, 4!/8=3, 5!/20=6!
+        assert math.factorial(3) // 3 == 2
+        assert math.factorial(4) // 8 == 3
+        assert math.factorial(5) // 20 == 6
+
+        els = header(
+            "前四次方程凭什么一路通关，一到五次却集体撞墙？—— 拉格朗日“降次阶梯”的惊天反转",
+            "1770 年拉格朗日复盘三百年秘籍：前四次靠对称辅助量总能“降一级次数”，唯独五次辅助方程反倒暴涨成 6 次！",
+        )
+
+        cols = [
+            (
+                20, 168, "二次方程 (n = 2)", "古巴比伦 (~前1800)", BLUE, BLUE_SOFT,
+                "x² + bx + c = 0", "平移 x = y − b/2", "辅助次数：1 次",
+                "S₂ 共 2! = 2 种排列", "配成 (x+b/2)² = Δ/4", "开 1 层平方根 √Δ 通关！", True
+            ),
+            (
+                200, 174, "三次方程 (n = 3)", "塔尔塔利亚 & 卡尔达诺 (1545)", TEAL, TEAL_SOFT,
+                "y³ + py + q = 0", "拆 y = u+v，令 3uv = −p", "辅助次数：3→2 次!",
+                "S₃ 共 3! = 6 种排列", "u³, v³ 满足二次预解式", "立方根套平方根通关！", True
+            ),
+            (
+                386, 174, "四次方程 (n = 4)", "20岁费拉里 (1540/1545)", GREEN, GREEN_SOFT,
+                "y⁴ + py² + qy + r = 0", "借参数 m 凑 (y²+m)²", "辅助次数：4→3 次!",
+                "S₄ 共 4! = 24 种排列", "u=x₁x₂+x₃x₄ 仅 3 种取值", "解 3 次预解式丝滑通关！", True
+            ),
+            (
+                572, 168, "五次方程 (n = 5)", "拉格朗日撞墙 (1770)!", RED, RED_SOFT,
+                "y⁵ + py³ + qy² + ry + s = 0", "穷尽 5! = 120 种根排列", "暴涨成 6 次 / 24 次!",
+                "S₅ 共 120 种排列", "最少取值数 = 120÷20 = 6", "不降反升！老套路彻底报废", False
+            ),
+        ]
+
+        for cx, cw, ctitle, cera, cfg, cbg, eq_s, trick_s, deg_badge, perm_s, res_s, end_s, ok in cols:
+            els.append(card(cx, 62, cw, 256, stroke=cfg if not ok else BORDER, sw=1.6 if not ok else 1.0))
+            els.append(txt(cx + cw / 2, 83, ctitle, 10.4, cfg, "middle", weight="700"))
+            els.append(txt(cx + cw / 2, 99, cera, 8.3, MUTED, "middle"))
+
+            els.append(card(cx + 10, 109, cw - 20, 28, rx=5, fill="#f8fafc", stroke=HAIRLINE))
+            els.append(txt(cx + cw / 2, 127, eq_s, 8.6, INK, "middle", weight="700", cls="mono"))
+
+            els.append(txt(cx + cw / 2, 154, trick_s, 8.7, BODY, "middle", weight="600"))
+            els.append(pill(cx + 12, 166, deg_badge, fg=cfg, bg=cbg, w=cw - 24, h=24, size=9.4))
+
+            els.append(txt(cx + 10, 212, f"• {perm_s}", 8.5, INK, weight="600"))
+            els.append(txt(cx + 10, 231, f"• {res_s}", 8.5, BODY))
+            els.append(txt(cx + 10, 254, ("✓ " if ok else "✗ ") + end_s, 8.8, cfg, weight="700"))
+
+            # Visual bar of degree change (n vs resolvent degree) at bottom of each card
+            n_orig = int(ctitle[0].translate(str.maketrans("二三四五", "2345")))
+            n_res = {2: 1, 3: 2, 4: 3, 5: 6}[n_orig]
+            els.append(txt(cx + 12, 282, f"原 {n_orig} 次", 8.2, SLATE, weight="700"))
+            els.append(f'<rect x="{cx + 54}" y="273" width="{n_orig * 14}" height="10" rx="3" fill="#94a3b8"/>')
+            els.append(txt(cx + 12, 300, f"预 {n_res} 次", 8.2, cfg, weight="700"))
+            els.append(f'<rect x="{cx + 54}" y="291" width="{n_res * 14}" height="10" rx="3" fill="{cfg}"/>')
+
+        # Bottom wide callout: Casus irreducibilis + Lagrange's unified insight
+        els.append(card(20, 332, 720, 108, rx=8, fill=AMBER_SOFT, stroke=AMBER, sw=1.1))
+        els.append(txt(34, 353, "💡 两个改写数学史的意外收获：① 三次公式逼出“复数”  ② 拉格朗日预解式催生“群论”", 9.6, AMBER, weight="700"))
+        els.append(txt(34, 374, "• 卡尔达诺“不可约迷局”（邦贝利 1572 破解）：方程 y³ − 15y − 4 = 0 明明有 3 个实数根（y = 4 和 −2±√3），代进求根公式却冒出", 9.0, INK))
+        els.append(txt(34, 391, "  ∛(2 + √−121) + ∛(2 − √−121) = (2 + i) + (2 − i) = 4！要想算出实数真根，半路【必须穿过虚数隧道】——复数从此拿到合法户口！", 9.0, BODY))
+        els.append(txt(34, 410, "• 拉格朗日看穿本质：辅助方程是 k 次，当且仅当根的某个组合在全部 n! 种洗牌里只变出 k 个不同值。5! = 120 里竟找不到任何 2、3、4 值", 9.0, INK, weight="600"))
+        els.append(txt(34, 426, "  的非平凡中间跳板（2 值只有判别式，下一步直接跳到 6 值！）—— 这道裂谷直接把鲁菲尼、阿贝尔和伽罗瓦引向了不可解证明！", 9.0, RED, weight="700"))
+
+        return figure(
+            454,
+            "二次三次四次方程降次预解阶梯与五次方程预解次数反升至6次对比图",
+            "四栏对比二次（2→1次）、三次（3→2次）、四次（4→3次）方程通过拉格朗日预解式逐级降次的机制，以及五次方程（5!=120）预解式反升为6次（120/20=6）导致降次法失效，底部说明邦贝利复数绕行与预解值个数原理。",
+            els,
+        )
+
+    def _build_arnold_monodromy_commutator_anim():
+        """SVG 3: V. I. Arnold's (1963) visual topological proof — Root-braiding commutator loop vs frozen radical winding."""
+        # Verify commutator of sigma=(1->2->3->1) and tau=(1->4->5->1) in sequential execution sigma, tau, sigma^-1, tau^-1
+        sigma = {1: 2, 2: 3, 3: 1, 4: 4, 5: 5}
+        tau = {1: 4, 4: 5, 5: 1, 2: 2, 3: 3}
+        inv_s = {v: k for k, v in sigma.items()}
+        inv_t = {v: k for k, v in tau.items()}
+        final_seat = {i: inv_t[inv_s[tau[sigma[i]]]] for i in range(1, 6)}
+        assert final_seat == {1: 5, 5: 3, 3: 1, 2: 2, 4: 4}  # Root 1 lands on seat 5!
+
+        extra_css = """
+      .root1-runner {
+        animation: hopCommutator 4.6s cubic-bezier(0.35, 0, 0.25, 1) 0.4s 1 forwards;
+      }
+      @keyframes hopCommutator {
+        0%   { transform: translate(24px, -78px); }
+        25%  { transform: translate(94px, -23px); }
+        50%  { transform: translate(94px, -23px); }
+        75%  { transform: translate(24px, -78px); }
+        100% { transform: translate(-96px, -23px); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .root1-runner { animation: none; transform: translate(-96px, -23px); }
+      }"""
+
+        els = header(
+            "不用背群论公理也能亲眼看懂！—— 阿诺德“溜根换位”拓扑证明（1963）",
+            "让系数走一趟“正转 A → 正转 B → 倒退 A⁻¹ → 倒退 B⁻¹”：一切根号公式原地冻结，5 颗真根却当面换了座位！",
+        )
+
+        # ---------------- Left Panel: 5 Roots Pentagon Dance (Root 1 walks to Seat 5!) ----------------
+        els.append(card(20, 62, 368, 392))
+        els.append(txt(34, 84, "① 真根复平面：走完四步回路，1号根跳到了5号位！", PANEL_TITLE, INK, weight="700"))
+
+        px_c, py_c, R_pent = 204.0, 198.0, 74.0
+        els.append(card(34, 96, 340, 206, rx=7, fill="#f8fafc", stroke=BORDER))
+
+        # 5 pentagon seats: 1(top), 2(top-right), 3(bottom-right), 4(bottom-left), 5(top-left)
+        seats = {}
+        for idx, ang_deg in enumerate([-90, -18, 54, 126, 198], 1):
+            rad = math.radians(ang_deg)
+            seats[idx] = (px_c + R_pent * math.cos(rad), py_c + R_pent * math.sin(rad))
+
+        # Draw cycle sigma = (1 -> 2 -> 3 -> 1) in BLUE and cycle tau = (1 -> 4 -> 5 -> 1) in ORANGE
+        for a, b in ((1, 2), (2, 3), (3, 1)):
+            els.append(_ln(seats[a][0], seats[a][1], seats[b][0], seats[b][1], stroke=BLUE, sw=1.8, dash="4 2"))
+        for a, b in ((1, 4), (4, 5), (5, 1)):
+            els.append(_ln(seats[a][0], seats[a][1], seats[b][0], seats[b][1], stroke=ORANGE, sw=1.8, dash="4 2"))
+
+        # Highlight net commutator jump 1 -> 5 in bold RED!
+        els.append(_ln(seats[1][0] - 12, seats[1][1] + 5, seats[5][0] + 12, seats[5][1] - 5, stroke=RED, sw=2.6, marker="arr-red"))
+        els.append(txt(px_c - 84, py_c - 72, "终局净位移：r₁→r₅!", 8.6, RED, "middle", weight="700"))
+
+        for idx, (sx, sy) in seats.items():
+            els.append(f'<circle cx="{sx:.1f}" cy="{sy:.1f}" r="13.5" fill="#ffffff" stroke="{INK}" stroke-width="1.5"/>')
+            els.append(txt(sx, sy + 4, f"r{idx}", 9.4, INK, "middle", weight="700", cls="mono"))
+
+        # Animated red token tracking Root #1 parked cleanly outside each visited seat circle!
+        els.append(
+            f'<g transform="translate({px_c:.1f},{py_c:.1f})"><g class="root1-runner">'
+            f'<circle cx="0" cy="0" r="9.5" fill="{RED}" stroke="#ffffff" stroke-width="1.5"/>'
+            f'<text x="0" y="3.2" font-size="8.0" fill="#ffffff" text-anchor="middle" font-weight="700">1号</text>'
+            f'</g></g>'
+        )
+
+        els.append(txt(308, 120, "蓝回路 σ=(1 2 3)", 8.5, BLUE, "middle", weight="700"))
+        els.append(txt(308, 136, "橙回路 τ=(1 4 5)", 8.5, ORANGE, "middle", weight="700"))
+
+        # Step-by-step trace box for Root 1
+        els.append(card(34, 312, 340, 128, rx=7, fill=RED_SOFT, stroke=RED, sw=1.0))
+        els.append(txt(44, 331, "跟着 1 号真根走一遍四步“换位子舞步” (σ → τ → σ⁻¹ → τ⁻¹)：", 9.1, RED, weight="700"))
+        els.append(txt(44, 350, "① 走蓝圈 σ (1→2→3)：1 号根挪到【2号位】；", 8.9, INK))
+        els.append(txt(44, 367, "② 走橙圈 τ (1→4→5)：只动 1,4,5 位，2号位上的它【原地不动】；", 8.9, BODY))
+        els.append(txt(44, 384, "③ 倒退蓝圈 σ⁻¹ (3←2←1)：从 2号位退回【1号位】；", 8.9, BODY))
+        els.append(txt(44, 401, "④ 倒退橙圈 τ⁻¹ (5←4←1)：此时它在 1号位！一把被拽去了【5号位】！", 8.9, RED, weight="700"))
+        els.append(txt(44, 421, "★ 算完四步合成结果 = (1→5→3→1)，依然是一个活蹦乱跳的三轮换！", 8.9, INK, weight="700"))
+
+        # ---------------- Right Panel: Why Every Radical Formula Freezes at Zero Winding! ----------------
+        els.append(card(402, 62, 338, 392))
+        els.append(txt(416, 84, "② 根号公式的死穴：正转+反转 = 绕数清零冻结！", PANEL_TITLE, INK, weight="700"))
+
+        # Winding cancellation diagram
+        els.append(card(416, 96, 310, 118, rx=7, fill=BLUE_SOFT, stroke=BLUE, sw=1.0))
+        els.append(txt(426, 115, "为什么开根号 √f 抓不住刚才那次换座位？", 9.2, BLUE, weight="700"))
+        els.append(txt(426, 134, "• 复数开 n 次根号，只有绕原点净转非零圈才换分支；", 8.9, BODY))
+        els.append(txt(426, 152, "• 走完 σ → τ → σ⁻¹ → τ⁻¹ 后，内部函数绕原点的总圈数：", 8.9, INK, weight="600"))
+        els.append(txt(571, 173, "净圈数 W = (+w_σ) + (+w_τ) + (−w_σ) + (−w_τ) = 0！", 9.1, GREEN, "middle", weight="700", cls="mono"))
+        els.append(txt(426, 194, "• 圈数归零 ⇒ 根号 √f 被迫回到原值！（套 k 层根号同理被", 8.9, INK))
+        els.append(txt(426, 208, "  k 层嵌套换位子彻底清零冻结！）", 8.9, BLUE, weight="700"))
+
+        # Comparison table of commutator death for n=2, 3, 4 vs eternal survival at n=5!
+        els.append(card(416, 226, 310, 214, rx=7, fill="#f8fafc", stroke=BORDER))
+        els.append(txt(426, 246, "嵌套换位子“熄火层数” = 求根公式至少要套几层根号：", 9.1, INK, weight="700"))
+
+        rows_c = [
+            ("2 次 (S₂)", "第 1 层就全归零", "只需 1 层根号 √Δ", GREEN),
+            ("3 次 (S₃)", "第 2 层才全归零", "需 2 层嵌套 ∛(…+√…)", TEAL),
+            ("4 次 (S₄)", "第 3 层才全归零", "需 3 层嵌套 √(…+∛(…+√))", BLUE),
+            ("5 次 (S₅)", "永远不归零! [A₅,A₅]=A₅", "套一万层根号也抓不住真根!", RED),
+        ]
+        for idx, (deg_t, comm_t, rad_t, r_col) in enumerate(rows_c):
+            yy = 260 + idx * 41
+            bg_r = RED_SOFT if idx == 3 else "#ffffff"
+            els.append(card(424, yy, 294, 35, rx=5, fill=bg_r, stroke=r_col, sw=1.2 if idx == 3 else 0.9))
+            els.append(txt(432, yy + 14, deg_t, 8.9, r_col, weight="700"))
+            els.append(txt(496, yy + 14, comm_t, 8.6, INK, weight="600"))
+            els.append(txt(432, yy + 29, f"⇒ {rad_t}", 8.5, r_col if idx == 3 else BODY, weight="700" if idx == 3 else "400"))
+
+        els.append(txt(426, 432, "矛盾一锤定音：公式输出原地不动 ≠ 真根已经搬去5号位！", 8.9, RED, weight="700"))
+
+        return figure(
+            468,
+            "阿诺德1963拓扑单值性证明五次方程无根式通解的五根换位子回路动画图解",
+            "左图动画演示五边形上5个根沿σ=(1 2 3)与τ=(1 4 5)依次走σ→τ→σ⁻¹→τ⁻¹四步回路后，1号根净移至5号位形成新三轮换(1 5 3)；右图说明任何k层嵌套根式在k层换位子回路上绕数正反抵消恒为0而输出不变，从而导出矛盾。",
+            els,
+            extra_css=extra_css,
+        )
+
+    def _build_solvable_vs_unsolvable_quintics():
+        """SVG 4: Galois's Exact Criterion — Which quintics ARE solvable by radicals (F20 subgroup) vs S5/A5."""
+        # Verify De Moivre solvable quintic x^5 - 5x^3 + 5x - 4 = 0 exact radical root!
+        x_dm = (2.0 + math.sqrt(3.0)) ** 0.2 + (2.0 - math.sqrt(3.0)) ** 0.2
+        assert abs(x_dm ** 5 - 5.0 * (x_dm ** 3) + 5.0 * x_dm - 4.0) < 1e-12
+
+        els = header(
+            "伽罗瓦的终极手术刀：同样是不可约五次方程，为什么有的能开根号、有的绝对不行？",
+            "五次方程能不能用根号解，全看 5 个根的“对称洗牌群”有没有落进 20 元安全区 F₂₀ 之内！",
+        )
+
+        # ---------------- Left Card: Concrete Solvable Quintic (Galois group D5 <= F20) ----------------
+        els.append(card(20, 62, 352, 378))
+        els.append(pill(34, 76, "✓ 可用根号精确解 · 对称群落入 F₂₀ 安全区 (≤20元)", fg=GREEN, bg=GREEN_SOFT, w=324, h=22, size=9.4))
+
+        els.append(card(34, 108, 324, 146, rx=7, fill="#f0fdf4", stroke=GREEN, sw=1.2))
+        els.append(txt(46, 128, "真题实算：不可约五次方程  x⁵ − 5x³ + 5x − 4 = 0", 9.4, GREEN, weight="700"))
+        els.append(txt(46, 149, "• 有理根检验 ±1, ±2, ±4 全败，整系数二次因式分解也全败！", 8.7, BODY))
+        els.append(txt(46, 168, "• 棣莫弗神代换（令 x = u + 1/u）：展开立消全部中间项！", 8.9, INK, weight="700"))
+        els.append(txt(196, 188, "(u + 1/u)⁵ − 5(u + 1/u)³ + 5(u + 1/u) ≡ u⁵ + 1/u⁵ = 4", 8.8, BLUE, "middle", weight="700", cls="mono"))
+        els.append(txt(46, 208, "• 瞬间退化成二次方程 (u⁵)² − 4(u⁵) + 1 = 0 ⇒ u⁵ = 2 ± √3：", 8.8, BODY))
+        els.append(
+            txt(
+                196,
+                232,
+                f"精确根 x₁ = ⁵√(2+√3) + ⁵√(2−√3) ≈ {x_dm:.6f}！",
+                9.3,
+                GREEN,
+                "middle",
+                weight="700",
+            )
+        )
+
+        # Solvable chain ladder F20 -> D5 -> C5 -> {e}
+        els.append(txt(34, 274, "为什么它能解？因为它的根对称群是正五边形二面体群 D₅：", 9.0, INK, weight="700"))
+        els.append(card(34, 286, 324, 62, rx=6, fill="#f8fafc", stroke=BORDER))
+        chain_ok = [("F₂₀ (20元)", 54), ("D₅ (10元)", 138), ("C₅ (5元)", 220), ("{e} (1元)", 302)]
+        for idx, (clbl, cx_n) in enumerate(chain_ok):
+            els.append(card(cx_n - 32, 300, 64, 34, rx=5, fill=GREEN_SOFT if idx > 0 else "#f1f5f9", stroke=GREEN if idx > 0 else SLATE))
+            els.append(txt(cx_n, 321, clbl, 8.4, INK, "middle", weight="700"))
+            if idx < 3:
+                els.append(_ln(cx_n + 33, 317, chain_ok[idx + 1][1] - 34, 317, stroke=GREEN, sw=1.5, marker="arr-green"))
+
+        els.append(txt(34, 368, "• 伽罗瓦充要判据（1831）& 达米特显式判别式（1991）：", 9.0, INK, weight="700"))
+        els.append(txt(34, 386, "  不可约有理五次方程能用根号解 ⇔ 伽罗瓦群是【20 元弗罗贝", 8.9, BODY))
+        els.append(txt(34, 403, "  尼乌斯群 F₂₀】的子群（仅 C₅=5元、D₅=10元、F₂₀=20元 三种，", 8.9, BODY))
+        els.append(txt(34, 420, "  如 x⁵−5x+12=0 也属 D₅ 可根式解！）。", 8.9, GREEN, weight="600"))
+
+        # ---------------- Right Card: Unsolvable Quintic (Galois group A5=60 or S5=120) ----------------
+        els.append(card(386, 62, 354, 378))
+        els.append(pill(400, 76, "✗ 绝无根式解 · 对称群撞上 A₅ (60元) 或 S₅ (120元)", fg=RED, bg=RED_SOFT, w=326, h=22, size=9.4))
+
+        els.append(card(400, 108, 326, 146, rx=7, fill=RED_SOFT, stroke=RED, sw=1.2))
+        els.append(txt(412, 128, "经典铁壁算例：f(x) = x⁵ − 4x + 2 = 0（伽罗瓦群 = S₅）", 9.4, RED, weight="700"))
+        els.append(txt(412, 149, "① 艾森斯坦判别法（素数 p=2 整除 −4, 2，p²=4 不整除 2）：", 8.8, INK, weight="600"))
+        els.append(txt(412, 166, "   f(x) 在有理数域不可约 ⇒ 对称群阶数必被 5 整除（含 5-轮换）；", 8.7, BODY))
+        els.append(txt(412, 185, "② 求导 f'(x) = 5x⁴ − 4 = 0 仅两个极值点（极大 +4.15 > 0，", 8.8, INK, weight="600"))
+        els.append(txt(412, 202, "   极小 −0.15 < 0）⇒ 恰好穿过实轴 3 次（3 实根 + 1 对共轭复根）；", 8.7, BODY))
+        els.append(txt(412, 221, "③ 复共轭只对调那 2 个复根（1个对换）+ 5-轮换 ⇒ 直接生成", 8.8, RED, weight="700"))
+        els.append(txt(412, 238, "   全部 5! = 120 种洗牌的全对称群 S₅！", 8.8, RED, weight="700"))
+
+        # Blocked ladder S5(120) -> A5(60) -X-> {e}
+        els.append(txt(400, 274, "为什么 S₅ 和 A₅ 死活拆不开？正二十面体 60 重旋转铁球：", 9.0, INK, weight="700"))
+        els.append(card(400, 286, 326, 62, rx=6, fill="#f8fafc", stroke=BORDER))
+        els.append(card(412, 300, 74, 34, rx=5, fill="#f1f5f9", stroke=SLATE))
+        els.append(txt(449, 321, "S₅ (120元)", 8.5, INK, "middle", weight="700"))
+        els.append(_ln(487, 317, 514, 317, stroke=BLUE, sw=1.5, marker="arr-blue"))
+        els.append(txt(500, 297, "√Δ", 8.2, BLUE, "middle", weight="700"))
+
+        els.append(card(516, 297, 108, 40, rx=5, fill=RED_SOFT, stroke=RED, sw=1.6))
+        els.append(txt(570, 314, "A₅ (60元单群)", 8.6, RED, "middle", weight="700"))
+        els.append(txt(570, 329, "无正规子群铁板!", 8.0, RED, "middle", weight="600"))
+
+        els.append(_ln(626, 317, 658, 317, stroke=RED, sw=1.8, dash="3 2"))
+        els.append(txt(642, 313, "✗", 11.0, RED, "middle", weight="700"))
+        els.append(card(662, 300, 54, 34, rx=5, fill="#f1f5f9", stroke=SLATE))
+        els.append(txt(689, 321, "{e} (1)", 8.5, MUTED, "middle", weight="700"))
+
+        els.append(txt(400, 368, "• 绝大多数随机写下的整系数五次方程（如 x⁵−x−1=0），", 9.0, INK, weight="600"))
+        els.append(txt(400, 386, "  概率上 100% 落入 S₅（120元），被 60 元非交换单群 A₅", 8.9, BODY))
+        els.append(txt(400, 403, "  死死挡在门外——这就是“一般五次无根式通解”的全貌！", 8.9, RED, weight="700"))
+        els.append(txt(400, 420, "  （阿贝尔 26 岁贫病离世、伽罗瓦 20 岁决斗陨落，双星照亮代数！）", 8.5, MUTED))
+
+        return figure(
+            454,
+            "可根式解五次方程D5子群阶梯与不可根式解五次方程S5交错单群A5阻断对比图",
+            "左栏以不可约方程x^5-5x^3+5x-4=0为例展示x=u+1/u代换得出精确五次根式解及F20→D5→C5→{e}可解子群链；右栏以x^5-4x+2=0为例通过艾森斯坦判别法与3实根2复根证明其伽罗瓦群为S5，卡死在60元非交换单群A5。",
+            els,
+        )
+
+    def _build_beyond_radicals_four_highways():
+        """SVG 5: How Humanity Actually Solves General Quintics Beyond Radicals! (Bring-Jerrard, Hermite/Klein, Companion Matrix + Newton)."""
+        # Verify Newton quadratic convergence on f(x) = x^5 - x - 1 starting from x0 = 1.2
+        r_true = BJ_ROOTS[0].real
+        xk = 1.2
+        errs = [abs(xk - r_true)]
+        for _ in range(4):
+            xk = xk - (xk ** 5 - xk - 1.0) / (5.0 * (xk ** 4) - 1.0)
+            errs.append(abs(xk - r_true))
+        assert errs[0] < 0.04 and errs[-1] < 1e-15
+
+        els = header(
+            "跳出“只准开根号”的牢笼后，人类究竟怎么解五次方程？—— 四条现代破壁大道",
+            "代数不死，只是换了更趁手的武器：单参数布林根式、埃尔米特椭圆模函数、克莱因二十面体与伴随矩阵特征值",
+        )
+
+        # ---------------- Top-Left: Highway 1 — Bring-Jerrard Normal Form (1786 / 1834) ----------------
+        els.append(card(20, 62, 352, 168))
+        els.append(pill(34, 75, "大道① 极致瘦身：布林-杰拉德标准型 (1786 / 1834)", fg=BLUE, bg=BLUE_SOFT, w=324, h=22, size=9.3))
+        els.append(txt(34, 114, "任意五次方程原本拖着 5 个自由系数，连表都没法查：", 8.9, BODY))
+        els.append(txt(196, 134, "x⁵ + a x⁴ + b x³ + c x² + d x + e = 0", 9.2, SLATE, "middle", weight="700", cls="mono"))
+        els.append(txt(196, 152, "↓ 奇尔恩豪斯变换（仅用二、三、四次根号消去 x⁴, x³, x² 三项！）", 8.5, BLUE, "middle", weight="700"))
+        els.append(card(66, 160, 260, 28, rx=6, fill=BLUE_SOFT, stroke=BLUE, sw=1.3))
+        els.append(txt(196, 179, "y⁵ + y + c = 0   （只剩唯一参数 c！）", 9.5, BLUE, "middle", weight="700", cls="mono"))
+        els.append(txt(34, 206, "• 定义单变量新函数【布林根式 BR(c)】为 y⁵+y+c=0 的唯一实根，", 8.8, INK, weight="600"))
+        els.append(txt(34, 221, "  就像当年引进 sin x 一样，天下一切五次方程当场拥有闭式精确解！", 8.8, BODY))
+
+        # ---------------- Top-Right: Highway 2 — Hermite Elliptic Modular (1858) & Klein Icosahedron (1884) ----------------
+        els.append(card(386, 62, 354, 168))
+        els.append(pill(400, 75, "大道② 超越函数闭式解：椭圆模函数 & 正二十面体", fg=PURPLE, bg=PURPLE_SOFT, w=326, h=22, size=9.3))
+        els.append(txt(400, 114, "• 三次方程可借圆的三角函数 cos 3θ = 4cos³θ − 3cosθ 三等分角求解；", 8.8, BODY))
+        els.append(txt(400, 133, "• 1858 埃尔米特 & 克罗内克：把单周期“圆”升级成双周期“环面”，", 8.9, PURPLE, weight="700"))
+        els.append(txt(400, 150, "  用【椭圆模函数 θ(τ)】像查三角函数一样一步写出五次方程精确根！", 8.8, INK, weight="600"))
+        els.append(txt(400, 170, "• 1884 克莱因《正二十面体讲义》：A₅ 就是黎曼球面内接正二十面体", 8.9, TEAL, weight="700"))
+        els.append(txt(400, 187, "  的 60 重旋转对称群，反演二十面体不变量（高斯超几何级数 ₂F₁）", 8.8, BODY))
+        els.append(txt(400, 204, "  即可直接给出解析通解——群论、复几何与代数方程在此大一统！", 8.8, INK, weight="600"))
+
+        # ---------------- Bottom Wide Card: Highway 3 & 4 — Companion Matrix Eigenvalues & Newton/Aberth ----------------
+        els.append(card(20, 242, 720, 208))
+        els.append(txt(34, 264, "大道③ & ④ 现代计算机一微秒算准 16 位有效数字的幕后真相：伴随矩阵特征值 + 二阶牛顿迭代", PANEL_TITLE, INK, weight="700"))
+
+        # Left sub-card: 5x5 Frobenius Companion Matrix of x^5 - x - 1 = 0
+        els.append(card(34, 278, 336, 156, rx=7, fill="#f8fafc", stroke=TEAL, sw=1.1))
+        els.append(txt(46, 297, "MATLAB / Python numpy.roots 真正跑的算法：", 9.1, TEAL, weight="700"))
+        els.append(txt(46, 314, "连三四次求根公式都不用！直接构造 5×5 伴随矩阵 C：", 8.7, BODY))
+
+        # Draw crisp 5x5 matrix C for x^5 - x - 1 = 0 (characteristic poly det(xI - C) = x^5 - x - 1)
+        mat_rows = [
+            ["0", "0", "0", "0", "+1"],
+            ["1", "0", "0", "0", "+1"],
+            ["0", "1", "0", "0", " 0"],
+            ["0", "0", "1", "0", " 0"],
+            ["0", "0", "0", "1", " 0"],
+        ]
+        mx0, my0 = 54.0, 326.0
+        els.append(_pl([(mx0, my0), (mx0 - 6, my0), (mx0 - 6, my0 + 90), (mx0, my0 + 90)], stroke=INK, sw=1.6))
+        els.append(_pl([(mx0 + 132, my0), (mx0 + 138, my0), (mx0 + 138, my0 + 90), (mx0 + 132, my0 + 90)], stroke=INK, sw=1.6))
+        for r_i, row_v in enumerate(mat_rows):
+            for c_i, cell_s in enumerate(row_v):
+                col_c = RED if c_i == 4 and cell_s.startswith("+") else (BLUE if cell_s == "1" else MUTED)
+                els.append(txt(mx0 + 13 + c_i * 26, my0 + 15 + r_i * 17, cell_s.strip(), 8.8, col_c, "middle", weight="700", cls="mono"))
+
+        els.append(txt(206, 344, "特征多项式：", 8.7, INK, weight="700"))
+        els.append(txt(206, 361, "det(xI − C) = x⁵ − x − 1", 8.8, BLUE, weight="700", cls="mono"))
+        els.append(txt(206, 382, "用正交 QR 算法求 5 个特征值：", 8.7, BODY))
+        els.append(txt(206, 399, "数值极稳、不炸误差，一次吐出", 8.7, BODY))
+        els.append(txt(206, 416, "全部 5 颗复根（耗时 < 0.05 ms）！", 8.7, GREEN, weight="700"))
+
+        # Right sub-card: Log10 error plunge of Newton iteration on x^5 - x - 1 = 0 from x0 = 1.2
+        els.append(card(384, 278, 342, 156, rx=7, fill="#f8fafc", stroke=GREEN, sw=1.1))
+        els.append(txt(396, 297, "牛顿切线迭代 xₙ₊₁ = xₙ − f(xₙ)/f'(xₙ)（初值 x₀ = 1.2）：", 9.1, GREEN, weight="700"))
+        els.append(txt(396, 314, "每算一步，正确小数位数【直接翻倍】（二阶收敛）！", 8.7, BODY))
+
+        # Horizontal precision bar chart (correct digits -log10(err))
+        for step_k, err_v in enumerate(errs):
+            digits = min(16.0, -math.log10(max(err_v, 1e-16)))
+            yy_k = 328 + step_k * 20
+            els.append(txt(398, yy_k + 11, f"第 {step_k} 步", 8.5, INK, weight="700"))
+            bw_d = digits * 12.0
+            els.append(f'<rect x="448" y="{yy_k}" width="{bw_d:.1f}" height="13" rx="3" fill="{GREEN}" fill-opacity="0.82"/>')
+            els.append(txt(454 + bw_d, yy_k + 10.5, f"准 {digits:.1f} 位有效数字", 8.4, GREEN, weight="700"))
+
+        return figure(
+            464,
+            "超越根号求解一般五次方程的四条现代数学与计算大道总览图",
+            "左上展示布林-杰拉德标准型y^5+y+c=0及单变量布林根式BR(c)；右上展示1858埃尔米特椭圆模函数与1884克莱因正二十面体超几何级数解析解；下方左右展示现代科学计算使用的5×5弗罗贝尼乌斯伴随矩阵QR特征值法与牛顿迭代4步达16位精度的二阶收敛。",
+            els,
+        )
+
+    @register("quintic-equation", "五次方程5根实复分布、拉格朗日预解降次高墙、阿诺德溜根换位拓扑证明动画、可解与不可解五次方程判据、现代四条求解大道", "algebra_logic")
+    def build_quintic_equation():
+        write_svg(SUBDIR, "quintic-has-five-roots.svg", _build_quintic_has_five_roots())
+        write_svg(SUBDIR, "resolvent-degree-wall.svg", _build_resolvent_degree_wall())
+        write_svg(SUBDIR, "arnold-monodromy-commutator-anim.svg", _build_arnold_monodromy_commutator_anim())
+        write_svg(SUBDIR, "solvable-vs-unsolvable-quintics.svg", _build_solvable_vs_unsolvable_quintics())
+        write_svg(SUBDIR, "beyond-radicals-four-highways.svg", _build_beyond_radicals_four_highways())
+
+
+_register_quintic_equation()
+
+
+# ---------------------------------------------------------------------------
+# Topic: Crelle's Journal 200-Year Legend (1826-2026)
+# ---------------------------------------------------------------------------
+def _register_crelle_journal():
+    SUBDIR = "crelle-journal"
+    RED = "#b91c1c"
+    RED_SOFT = "#fef2f2"
+    TEAL = "#0f766e"
+    TEAL_SOFT = "#f0fdfa"
+    AMBER = "#b45309"
+    AMBER_SOFT = "#fffbeb"
+
+    def _ln(x1, y1, x2, y2, stroke=INK, sw=1.5, dash=None, marker=None):
+        d_attr = f' stroke-dasharray="{dash}"' if dash else ""
+        m_attr = f' marker-end="url(#{marker})"' if marker else ""
+        return (
+            f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" '
+            f'stroke="{stroke}" stroke-width="{sw}"{d_attr}{m_attr}/>'
+        )
+
+    def _build_academy_wall_vs_crelle_vol1():
+        """SVG 1: Closed Academy Gates before 1826 vs Crelle's Volume 1 (1826, 387 pages) exact page breakdown."""
+        total_pages = 387
+        # Exact page counts verified from De Gruyter Volume 1 (1826) digitized TOC:
+        # Abel (7 papers): (11-15)=5, (65-84)=20, (117-137)=21, (153-157)=5, (159-160)=2, (185-221)=37, (311-339)=29 -> 119 pp
+        abel_spans = [(11, 15), (65, 84), (117, 137), (153, 157), (159, 160), (185, 221), (311, 339)]
+        abel_pages = sum(b - a + 1 for a, b in abel_spans)
+        assert len(abel_spans) == 7 and abel_pages == 119
+
+        # Steiner (5 papers): (38-52)=15, (161-184)=24, (252-288)=37, (349-364)=16, (364-366)=3 (p.364 shared -> 94 distinct pp)
+        steiner_pages = 94
+        jacobi_pages = 308 - 301 + 1  # 8 pp
+        others_pages = total_pages - (abel_pages + steiner_pages + jacobi_pages)
+        assert jacobi_pages == 8 and others_pages == 166
+        youth_pct = (abel_pages + steiner_pages + jacobi_pages) / total_pages * 100.0
+        assert 57.0 < youth_pct < 57.2  # 221 / 387 = 57.11%!
+
+        els = header(
+            "1826 年以前数学新星有多绝望？—— 皇家科学院高墙 vs《克列尔》创刊号破壁",
+            "左边是必须靠院士引荐的封闭院刊；右边是修路工程师克列尔敞开大门的第 1 卷（1826 年，共 387 页）真实账本",
+        )
+
+        # Left Card: The Closed Academy Gate
+        els.append(card(20, 64, 334, 376))
+        els.append(pill(34, 78, "旧秩序 · 封闭的皇家科学院院刊", fg=RED, bg=RED_SOFT, w=306, h=24, size=11.8))
+
+        gate_items = [
+            ("① 投稿门槛：没头衔连门都进不去", "巴黎、柏林、伦敦院刊只收院士报告；外人手稿", "必须托院士代呈审查，生杀大权全看大人物心情。"),
+            ("② 1824 哥廷根冷遇：原封未拆的小册子", "22 岁挪威穷青年阿贝尔节衣缩食把五次方程证明", "压成 6 页法文册寄给高斯，高斯嫌太简略未拆封。"),
+            ("③ 1826 巴黎石沉大海：被弄丢的巨著", "阿贝尔向巴黎科学院呈交超越函数大论文，主审", "柯西随手压进故纸堆，直到阿贝尔病逝仍未印出！"),
+        ]
+        for idx, (gt, g1, g2) in enumerate(gate_items):
+            cy = 114 + idx * 96
+            els.append(card(34, cy, 306, 84, rx=8, fill=RED_SOFT if idx == 2 else "#f8fafc", stroke=RED if idx == 2 else BORDER))
+            els.append(txt(46, cy + 23, gt, 12.2, RED if idx == 2 else INK, weight="700"))
+            els.append(txt(46, cy + 46, g1, 11.5, BODY))
+            els.append(txt(46, cy + 66, g2, 11.5, BODY))
+
+        els.append(txt(34, 418, "痛点：1810 法国《热尔岗年刊》独木难支（1832 停刊）", 11.5, MUTED))
+
+        # Right Card: Crelle's Open Salon & Volume 1 Exact Page Breakdown
+        els.append(card(368, 64, 372, 376))
+        els.append(pill(382, 78, "新纪元 · 1826 年柏林《克列尔》创刊第 1 卷（387页）", fg=BLUE, bg=BLUE_SOFT, w=344, h=24, size=11.8))
+
+        els.append(txt(382, 122, "三位毫无名气的年轻人，包揽创刊号 57.1% 篇幅！", 12.8, INK, weight="700"))
+
+        # Exact proportional stacked bar (total width = 344px)
+        bar_x, bar_y, bar_w, bar_h = 382.0, 134.0, 344.0, 32.0
+        segments = [
+            ("阿贝尔 30.7%", abel_pages, BLUE),
+            ("施泰纳 24.3%", steiner_pages, GREEN),
+            ("雅可比", jacobi_pages, PURPLE),
+            ("克列尔等 42.9%", others_pages, SLATE),
+        ]
+        cur_x = bar_x
+        for idx, (slbl, spages, scol) in enumerate(segments):
+            sw_px = bar_w * (spages / total_pages)
+            els.append(
+                f'<rect x="{cur_x:.1f}" y="{bar_y:.1f}" width="{sw_px:.1f}" height="{bar_h:.1f}" '
+                f'rx="{4 if idx in (0, 3) else 0}" fill="{scol}"/>'
+            )
+            if sw_px >= 68:
+                els.append(txt(cur_x + sw_px / 2, bar_y + 20.5, slbl, 11.5, "#ffffff", "middle", weight="700"))
+            cur_x += sw_px
+        assert abs(cur_x - (bar_x + bar_w)) < 1e-6
+
+        # Detailed verified cards for Volume 1 contributors
+        vol1_rows = [
+            (BLUE, BLUE_SOFT, "23 岁阿贝尔 · 连发 7 篇（119 页，占 30.7%）",
+             "五次方程无根式解(p.65)、积分方程(p.153)、二项级数(p.311)"),
+            (GREEN, GREEN_SOFT, "30 岁施泰纳 · 连发 5 篇（94 页，占 24.3%）",
+             "瑞士农家子逆袭！首创圆幂定理与空间分割公式(p.349)"),
+            (PURPLE, PURPLE_SOFT, "21 岁雅可比 · 处女作登场（p.301–308，8 页）",
+             "解析高斯求积法；次年即与阿贝尔共创椭圆函数巅峰"),
+            (SLATE, SLATE_SOFT, "46 岁克列尔与工程同侪（166 页，占 42.9%）",
+             "既推纯数神作，也发自己的离心泵(p.85)与齿轮论文(p.375)"),
+        ]
+        for idx, (fg_c, bg_c, r_title, r_desc) in enumerate(vol1_rows):
+            ry = 178 + idx * 62
+            els.append(card(382, ry, 344, 54, rx=7, fill=bg_c, stroke=fg_c, sw=1.1))
+            els.append(txt(394, ry + 21, r_title, 11.8, fg_c, weight="700"))
+            els.append(txt(394, ry + 41, r_desc, 11.2, BODY))
+
+        return figure(
+            456,
+            "1826年皇家科学院封闭审稿壁垒与克列尔杂志创刊第1卷387页真实版面构成对比图",
+            "左栏展示1826年前科学院院刊需院士引荐的高墙及阿贝尔在哥廷根与巴黎遭遇的冷遇；右栏按德古意特数字化原刊目录精确统计创刊第1卷387页构成：23岁阿贝尔7篇119页(30.7%)、30岁施泰纳5篇94页(24.3%)、21岁雅可比1篇8页(2.1%)，三位青年合计占57.1%。",
+            els,
+        )
+
+    def _build_steiner_space_cutting_vol1():
+        """SVG 2: Hands-on theorem from Volume 1 (1826, pp. 349-364) — Steiner's Plane & Space Division."""
+        def L_plane(n):
+            return (n * n + n + 2) // 2
+
+        def S_space(n):
+            return (n ** 3 + 5 * n + 6) // 6
+
+        assert [L_plane(n) for n in range(6)] == [1, 2, 4, 7, 11, 16]
+        assert [S_space(n) for n in range(6)] == [1, 2, 4, 8, 15, 26]
+        # Verify Pascal binomial sum identity S_n = C(n,0)+C(n,1)+C(n,2)+C(n,3)
+        for n in range(7):
+            assert S_space(n) == sum(math.comb(n, k) for k in range(4))
+            assert L_plane(n) == sum(math.comb(n, k) for k in range(3))
+
+        els = header(
+            "翻开 1826 年创刊号第 349 页做道题：切西瓜 4 刀，为什么死活切不出 16 块？",
+            "施泰纳《平面与空间分割定律》：直觉以为每多切一刀块数必翻倍（1, 2, 4, 8, 16…），第 3 刀切饼、第 4 刀切瓜当场翻车！",
+        )
+
+        # Left Card: 3 lines cut a circular pancake into 7 regions (NOT 8!)
+        els.append(card(20, 64, 356, 366))
+        els.append(txt(36, 88, "① 切圆饼实验：第 3 刀为什么得 7 块而非 8 块？", 12.6, INK, weight="700"))
+
+        cx, cy, R = 198.0, 206.0, 92.0
+        els.append(f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="{R:.1f}" fill="#fffbeb" stroke="{AMBER}" stroke-width="2.0"/>')
+
+        # Compute exact circle chord endpoints for 3 lines in general position enclosing a central triangle!
+        # Line 1: y = cy - 26
+        # Line 2: angle +58 deg offset -22 from center
+        # Line 3: angle -58 deg offset -22 from center
+        lines_spec = [
+            (0.0, 1.0, -24.0, BLUE, "第1刀"),
+            (math.sin(math.radians(58)), -math.cos(math.radians(58)), -20.0, GREEN, "第2刀"),
+            (-math.sin(math.radians(58)), -math.cos(math.radians(58)), -20.0, ORANGE, "第3刀"),
+        ]
+        for nx_v, ny_v, d_off, lcol, _ in lines_spec:
+            # Points on x*nx + y*ny = d_off (relative to cx, cy) intersecting circle r=R
+            half_chord = math.sqrt(R * R - d_off * d_off)
+            tx, ty = -ny_v, nx_v
+            x1 = cx + d_off * nx_v - half_chord * tx
+            y1 = cy + d_off * ny_v - half_chord * ty
+            x2 = cx + d_off * nx_v + half_chord * tx
+            y2 = cy + d_off * ny_v + half_chord * ty
+            els.append(_ln(x1, y1, x2, y2, stroke=lcol, sw=2.3))
+
+        # Mark the 2 intersection points along the 3rd knife (Orange) that split it into 3 segments!
+        def intersect(l_a, l_b):
+            a1, b1, c1 = l_a[0], l_a[1], l_a[2]
+            a2, b2, c2 = l_b[0], l_b[1], l_b[2]
+            det = a1 * b2 - a2 * b1
+            rx = (c1 * b2 - c2 * b1) / det
+            ry = (a1 * c2 - a2 * c1) / det
+            return cx + rx, cy + ry
+
+        p13 = intersect(lines_spec[0], lines_spec[2])
+        p23 = intersect(lines_spec[1], lines_spec[2])
+        p12 = intersect(lines_spec[0], lines_spec[1])
+        for px, py in (p13, p23, p12):
+            els.append(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="4.2" fill="#ffffff" stroke="{RED}" stroke-width="1.8"/>')
+
+        # Number all 7 regions cleanly at their visual centroids!
+        region_badges = [
+            (cx, cy - 6, "⑦", RED),         # central triangle!
+            (cx, cy - 58, "①", INK),        # top cap
+            (cx - 62, cy - 30, "②", INK),   # top-left
+            (cx + 62, cy - 30, "③", INK),   # top-right
+            (cx - 56, cy + 32, "④", INK),   # bottom-left
+            (cx + 56, cy + 32, "⑤", INK),   # bottom-right
+            (cx, cy + 62, "⑥", INK),        # bottom middle
+        ]
+        for rx, ry, rlbl, rcol in region_badges:
+            els.append(txt(rx, ry + 4.5, rlbl, 13.5, rcol, "middle", weight="700", halo=True))
+
+        els.append(txt(cx - 94, cy - 31, "第1刀", 11.5, BLUE, "end", weight="700"))
+        els.append(txt(cx - 64, cy + 92, "第2刀", 11.5, GREEN, "middle", weight="700"))
+        els.append(txt(cx + 68, cy + 92, "第3刀(橙)", 11.5, ORANGE, "middle", weight="700"))
+
+        els.append(card(34, 314, 328, 102, rx=7, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(46, 336, "施泰纳递推揭秘（为什么不是 4×2 = 8 块？）：", 11.8, BLUE, weight="700"))
+        els.append(txt(46, 357, "• 第 3 刀穿过前 2 刀得 2 个交点，刀痕被分成 3 段；", 11.4, BODY))
+        els.append(txt(46, 377, "• 每段刀痕把旧饼一分为二 ⇒ 净增 3 块：4 + 3 = 7 块！", 11.4, INK, weight="700"))
+        els.append(txt(46, 398, "• 平面通项：L(n) = 1+(1+2+…+n) = (n²+n+2)/2", 11.4, BLUE, weight="700", cls="mono"))
+
+        # Right Card: 3D Watermelon Cuts S_n vs Naive 2^n
+        els.append(card(390, 64, 350, 366))
+        els.append(txt(406, 88, "② 三维切西瓜：前 3 刀乖乖翻倍，第 4 刀少 1 块！", 12.6, INK, weight="700"))
+
+        # Crisp comparison table / horizontal bar visual for n = 0..5
+        headers_t = [(426, "刀数 n"), (492, "错觉 2ⁿ"), (570, "切饼 L(n)"), (662, "切瓜 S(n)")]
+        els.append(card(404, 102, 322, 206, rx=7, fill="#f8fafc", stroke=BORDER))
+        for hx, htxt in headers_t:
+            els.append(txt(hx, 123, htxt, 11.5, MUTED, "middle", weight="700"))
+        els.append(_ln(414, 131, 716, 131, stroke=HAIRLINE, sw=1.0))
+
+        for n in range(6):
+            ry = 152 + n * 28
+            naive_v = 2 ** n
+            ln_v = L_plane(n)
+            sn_v = S_space(n)
+            if n == 4:
+                els.append(f'<rect x="412" y="{ry - 15}" width="306" height="24" rx="5" fill="{ORANGE_SOFT}" stroke="{ORANGE}" stroke-width="1.2"/>')
+            els.append(txt(426, ry + 2, f"{n} 刀", 11.8, INK, "middle", weight="700" if n == 4 else "600"))
+            els.append(txt(492, ry + 2, str(naive_v), 11.8, RED if n >= 4 else MUTED, "middle", weight="700" if n == 4 else "400", cls="mono"))
+            els.append(txt(570, ry + 2, str(ln_v), 11.8, BLUE, "middle", weight="600", cls="mono"))
+            sn_lbl = f"{sn_v} ★" if n == 4 else str(sn_v)
+            els.append(txt(662, ry + 2, sn_lbl, 12.2 if n == 4 else 11.8, ORANGE if n >= 4 else GREEN, "middle", weight="700", cls="mono"))
+
+        els.append(card(404, 314, 322, 102, rx=7, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(416, 336, "为什么第 4 刀最多只添 7 块（8 + 7 = 15 块）？", 11.8, ORANGE, weight="700"))
+        els.append(txt(416, 357, "• 第 4 个切面交前 3 个切面，在刀面上留下 3 条交线；", 11.4, BODY))
+        els.append(txt(416, 377, "• 由左图刚证，3 条直线最多把切面分成 L(3) = 7 片！", 11.4, INK, weight="700"))
+        els.append(txt(416, 398, "• 空间通项：S(n) = (n³ + 5n + 6) / 6（组合数前4项和）", 11.2, ORANGE, weight="700"))
+
+        return figure(
+            446,
+            "克列尔杂志创刊号施泰纳平面与空间分割公式切圆饼7块与切西瓜15块几何推导图",
+            "左栏绘制3条一般位置直线切割圆饼得到7块区域的精确交点与编号，解释第3刀被2个交点分成3段从而4+3=7；右栏对比n=0至5刀时错觉2^n、平面L_n与三维空间S_n，高亮第4刀切西瓜因切面最多分成L_3=7片而得到8+7=15块。",
+            els,
+        )
+
+    def _build_crelle_outsider_talent_radar():
+        """SVG 3: Five Outsider Geniuses Rescued by Crelle's Journal (1826-1857)."""
+        els = header(
+            "克列尔的“逆袭伯乐榜”：五位被这本杂志改写命运的草根、孤儿与乡村教师",
+            "不看文凭、不问出身——谁能写出真定理，谁就登上柏林头版！这五段逆袭全发生在《克列尔》前 54 卷",
+        )
+
+        rescues = [
+            ("1826 · 第 1–4 卷", "阿贝尔（23 岁 · 挪威贫寒青年）", BLUE, BLUE_SOFT,
+             "困境：父亲早逝抚养弟妹，高斯的沉默与柯西的积压让他走投无路。",
+             "逆袭：克列尔连发其五次方程与椭圆函数巨著，四处奔走为他争下柏林大学教席（聘书惜晚到两天）。"),
+            ("1826 · 第 1 卷起", "施泰纳（30 岁 · 14 岁才识字的瑞士牧童）", GREEN, GREEN_SOFT,
+             "困境：放牛长大，因拒绝照本宣科使用校长教材被柏林中学解雇，靠家教糊口。",
+             "逆袭：在《克列尔》发表 62 篇射影与综合几何杰作，获洪堡与克列尔力荐，执掌柏林大学几何教席。"),
+            ("1844 · 第 27–28 卷", "艾森斯坦（21 岁 · 贫病交加的大一新生）", PURPLE, PURPLE_SOFT,
+             "困境：童年患脑膜炎体弱多病、家境困顿，刚迈入柏林大学校门。",
+             "逆袭：克列尔一眼识珠，允许他边证边排印，1844 一年狂发 25 篇作品！高斯惊叹其才华比肩阿贝尔。"),
+            ("1850–54 · 第 39/44/47 卷", "乔治·格林（已故英国磨坊主之子）", TEAL, TEAL_SOFT,
+             "困境：在面粉风车磨坊自学成才，1828 年自费印 51 册《电磁学数学分析》无人问津，抱憾离世。",
+             "逆袭：青年开尔文寻得孤本转交柏林，《克列尔》分三卷全文重印，“格林函数”从此照亮现代物理！"),
+            ("1854 · 第 47 卷", "魏尔斯特拉斯（38 岁 · 偏远小城体操兼书法老师）", ORANGE, ORANGE_SOFT,
+             "困境：大学未拿学位，在波兰边境小城中学教算术、写字和体操长达 12 年，靠借阅《克列尔》自学。",
+             "逆袭：p.289 发表《阿贝尔函数论》震惊学界，哥尼斯堡大学火速登门颁授荣誉博士，旋即受聘柏林！"),
+        ]
+
+        for idx, (vol_tag, who, fg_c, bg_c, plight, triumph) in enumerate(rescues):
+            ry = 66 + idx * 78
+            els.append(card(20, ry, 720, 70, rx=9, fill=CARD_BG, stroke=fg_c, sw=1.2))
+            els.append(pill(32, ry + 11, vol_tag, fg=fg_c, bg=bg_c, w=166, h=22, size=11.3))
+            els.append(txt(210, ry + 27, who, 12.8, INK, weight="700"))
+            els.append(txt(32, ry + 47, plight, 11.4, MUTED))
+            els.append(txt(32, ry + 63, triumph, 11.5, fg_c, weight="600"))
+
+        # Footer note on Lobachevsky (Vol.17, 1837) & Riemann (Vol.54, 1857)
+        els.append(card(20, 458, 720, 34, rx=7, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(
+            txt(
+                380,
+                480,
+                "同刊高光：第 17 卷 (1837) 把罗巴切夫斯基非欧几何推向西欧；第 54 卷 (1857) 刊出黎曼曲面与亏格奠基之作！",
+                11.6,
+                INK,
+                "middle",
+                weight="600",
+            )
+        )
+
+        return figure(
+            506,
+            "克列尔杂志前54卷发掘与拯救的五位草根及局外数学家代表时间榜",
+            "依次展示1826阿贝尔、1826施泰纳、1844一年发表25篇的艾森斯坦、1850-1854重印格林函数遗作的磨坊之子乔治·格林、以及1854第47卷一鸣惊人的中学体育书法老师魏尔斯特拉斯，并附1837罗巴切夫斯基与1857黎曼。",
+            els,
+        )
+
+    def _build_cantor_kronecker_and_200_years():
+        """SVG 4: Cantor vs Kronecker in Vol. 77 (1874) & Vol. 84 (1878) + 200-Year Editorial Relay (1826-2026)."""
+        # Verify Cantor's decimal interleaving bijection on (x, y) = (0.385, 0.714) -> z = 0.378154
+        x_digits = [3, 8, 5]
+        y_digits = [7, 1, 4]
+        interleaved = []
+        for a, b in zip(x_digits, y_digits):
+            interleaved.extend([a, b])
+        assert interleaved == [3, 7, 8, 1, 5, 4]
+
+        extra_css = """
+      .zip-digit-x {
+        animation: dropZipX 3.4s cubic-bezier(0.25, 0.8, 0.25, 1) 0.3s 1 forwards;
+      }
+      .zip-digit-y {
+        animation: dropZipY 3.4s cubic-bezier(0.25, 0.8, 0.25, 1) 0.3s 1 forwards;
+      }
+      @keyframes dropZipX {
+        0%   { opacity: 0.35; transform: translateY(-10px); }
+        100% { opacity: 1.0;  transform: translateY(0px); }
+      }
+      @keyframes dropZipY {
+        0%   { opacity: 0.35; transform: translateY(10px); }
+        100% { opacity: 1.0;  transform: translateY(0px); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .zip-digit-x, .zip-digit-y { animation: none; opacity: 1; transform: none; }
+      }"""
+
+        els = header(
+            "第 77 卷与第 84 卷的审稿暗战，以及横跨两百年（1826–2026）的神刊接力",
+            "康托尔如何用“低调标题”瞒过克罗内克创立集合论，又因“正方形压进线段”遭压稿而拂袖离去？",
+        )
+
+        # Top-Left Card: Vol. 77 (1874) Stealth Title
+        els.append(card(20, 64, 344, 214))
+        els.append(pill(34, 78, "第 77 卷 (1874, p.258–262) · 集合论出生证", fg=GREEN, bg=GREEN_SOFT, w=316, h=23, size=11.5))
+        els.append(txt(34, 118, "表面标题：《论全体实代数数的一个性质》", 12.2, INK, weight="700"))
+        els.append(txt(34, 140, "• 忌惮柏林霸主克罗内克（“上帝造整数，其余皆人造”），", 11.4, BODY))
+        els.append(txt(34, 159, "  康托尔故意用克罗内克最爱的“代数数”当保护色；", 11.4, BODY))
+        els.append(txt(34, 180, "• 5 页短文藏着惊雷：代数数可排成一列，实数却不可数！", 11.5, GREEN, weight="700"))
+        els.append(card(34, 194, 316, 70, rx=7, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(46, 215, "震撼推论（不动手算就证出无穷多超越数）：", 11.5, GREEN, weight="700"))
+        els.append(txt(46, 236, "数轴上几乎全都是超越数，有理数与代数数只占零测尘埃！", 11.3, INK))
+        els.append(txt(46, 254, "主编博夏特（Borchardt）顺利放行，集合论悄然诞生。", 11.2, MUTED))
+
+        # Top-Right Card: Vol. 84 (1878) Decimal Zipping & Kronecker Clash
+        els.append(card(378, 64, 362, 214))
+        els.append(pill(392, 78, "第 84 卷 (1878, p.242–258) · 维数崩塌风暴", fg=ORANGE, bg=ORANGE_SOFT, w=334, h=23, size=11.5))
+        els.append(txt(392, 118, "康托尔致信戴德金：“我看到了，但我简直不敢相信！”", 12.0, INK, weight="700"))
+
+        # Visual zipper box: (x, y) in [0,1]^2 <-> z in [0,1]
+        els.append(card(392, 128, 334, 82, rx=7, fill="#f8fafc", stroke=BORDER))
+        els.append(txt(404, 149, "横坐标 x = 0 .", 11.6, BLUE, weight="700", cls="mono"))
+        els.append(txt(404, 171, "纵坐标 y = 0 .", 11.6, ORANGE, weight="700", cls="mono"))
+        for i, (dx, dy) in enumerate(zip(x_digits, y_digits)):
+            els.append(txt(502 + i * 24, 149, str(dx), 12.2, BLUE, "middle", weight="700", cls="mono"))
+            els.append(txt(502 + i * 24, 171, str(dy), 12.2, ORANGE, "middle", weight="700", cls="mono"))
+        els.append(txt(576, 160, "⇒ 穿插拉链 ⇒", 11.2, INK, weight="700"))
+
+        els.append(txt(404, 198, "合成单点 z = 0 .", 11.6, INK, weight="700", cls="mono"))
+        for k, d_val in enumerate(interleaved):
+            is_x = (k % 2 == 0)
+            cls_k = "mono zip-digit-x" if is_x else "mono zip-digit-y"
+            col_k = BLUE if is_x else ORANGE
+            els.append(txt(520 + k * 20, 198, str(d_val), 12.6, col_k, "middle", weight="700", cls=cls_k))
+        els.append(txt(652, 198, "∈ [0,1]！", 11.5, INK, weight="700", cls="mono"))
+
+        els.append(txt(392, 229, "• 整个单位正方形的点，竟和一条单位线段的点一样多！", 11.4, ORANGE, weight="700"))
+        els.append(txt(392, 248, "• 克罗内克斥为荒谬并拖延排印；经戴德金力争虽于第 84 卷", 11.3, BODY))
+        els.append(txt(392, 266, "  印出（与弗罗贝尼乌斯、若尔当同卷），康托尔却发誓永不再投！", 11.3, RED, weight="600"))
+
+        # Bottom Wide Card: 200-Year Continuous Relay Timeline (1826 - 2026)
+        els.append(card(20, 292, 720, 144))
+        els.append(txt(36, 316, "世界现存最古老的连续出版数学期刊：两百年历任主编接力（1826–2026 创刊 200 周年）", 12.8, INK, weight="700"))
+
+        eras = [
+            ("1826–1855", "克列尔", "亲编 52 卷", BLUE),
+            ("1856–1880", "博夏特", "严谨黄金期", TEAL),
+            ("1881–1892", "克罗内克/魏氏", "柏林双雄执掌", PURPLE),
+            ("1892–1936", "富克斯→亨泽尔", "p 进数时代", AMBER),
+            ("1929–1979", "哈塞执编50年", "渡过二战浩劫", ORANGE),
+            ("1980–2026", "国际编委会", "满 200 周年!", GREEN),
+        ]
+        # Horizontal timeline spine
+        els.append(_ln(48, 366, 712, 366, stroke=HAIRLINE, sw=2.5))
+        for idx, (yr, ed_name, note_s, ecol) in enumerate(eras):
+            cx_e = 78 + idx * 116
+            els.append(f'<circle cx="{cx_e}" cy="366" r="6.5" fill="{ecol}" stroke="#ffffff" stroke-width="2"/>')
+            els.append(txt(cx_e, 344, yr, 11.2, ecol, "middle", weight="700", cls="mono"))
+            els.append(txt(cx_e, 392, ed_name, 11.8, INK, "middle", weight="700"))
+            els.append(txt(cx_e, 412, note_s, 11.0, MUTED, "middle"))
+
+        return figure(
+            450,
+            "克列尔杂志第77卷与第84卷康托尔集合论审稿风暴及1826至2026两百年主编接力全景图",
+            "左上展示1874年第77卷康托尔以实代数数为标题证明实数不可数；右上动画展示1878年第84卷康托尔用小数奇偶位拉链穿插把二维正方形[0,1]^2映射到一维线段[0,1]及克罗内克阻挠始末；下方时间轴展示1826至2026两百年主编传承。",
+            els,
+            extra_css=extra_css,
+        )
+
+    @register("crelle-journal", "克列尔杂志创刊第1卷版面拆解、施泰纳切空间公式、五位草根奇才逆袭榜、康托尔审稿风暴与200年接力", "algebra_logic")
+    def build_crelle_journal():
+        write_svg(SUBDIR, "academy-wall-vs-crelle-vol1.svg", _build_academy_wall_vs_crelle_vol1())
+        write_svg(SUBDIR, "steiner-space-cutting-vol1.svg", _build_steiner_space_cutting_vol1())
+        write_svg(SUBDIR, "crelle-outsider-talent-radar.svg", _build_crelle_outsider_talent_radar())
+        write_svg(SUBDIR, "cantor-kronecker-and-200-years.svg", _build_cantor_kronecker_and_200_years())
+
+
+_register_crelle_journal()
+

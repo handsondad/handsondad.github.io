@@ -11948,3 +11948,2385 @@ def _register_electronic_scale():
 
 
 _register_electronic_scale()
+
+
+def _register_microwave_oven():
+    """5 computed 760px SVGs for the Microwave Oven Physics & Engineering post."""
+    SUBDIR = "microwave-oven"
+    RED = "#dc2626"
+    RED_SOFT = "#fef2f2"
+    AMBER = "#b45309"
+    AMBER_SOFT = "#fffbeb"
+    TEAL = "#0f766e"
+    TEAL_SOFT = "#f0fdfa"
+
+    C0 = 299_792_458.0
+    F_MW = 2.45e9
+    LAMBDA0_M = C0 / F_MW
+    LAMBDA0_CM = LAMBDA0_M * 100.0  # 12.2364 cm
+    HALF_LAMBDA_CM = LAMBDA0_CM / 2.0  # 6.1182 cm
+    H_EV_S = 4.135667696e-15
+    PHOTON_EV = H_EV_S * F_MW  # 1.013e-5 eV
+
+    assert 12.23 < LAMBDA0_CM < 12.25
+    assert 6.11 < HALF_LAMBDA_CM < 6.13
+    assert 1.00e-5 < PHOTON_EV < 1.03e-5
+
+    def _line(x1, y1, x2, y2, stroke=HAIRLINE, sw=1.5, dash=None, marker=None, opacity=None):
+        attrs = [
+            f'x1="{x1:.1f}"',
+            f'y1="{y1:.1f}"',
+            f'x2="{x2:.1f}"',
+            f'y2="{y2:.1f}"',
+            f'stroke="{stroke}"',
+            f'stroke-width="{sw}"',
+        ]
+        if dash:
+            attrs.append(f'stroke-dasharray="{dash}"')
+        if marker:
+            attrs.append(f'marker-end="url(#{marker})"')
+        if opacity is not None:
+            attrs.append(f'opacity="{opacity}"')
+        return f'<line {" ".join(attrs)}/>'
+
+    def _poly(pts, stroke=BLUE, sw=2.2, fill="none", dash=None, cls=None):
+        d = "M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
+        extra = f' stroke-dasharray="{dash}"' if dash else ""
+        if cls:
+            extra += f' class="{cls}"'
+        return f'<path d="{d}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}" stroke-linecap="round" stroke-linejoin="round"{extra}/>'
+
+    def _penetration_depth_cm(f_hz, eps_p, eps_pp):
+        """Exact 1/e power penetration depth D_p = 1/(2*alpha) in cm from complex permittivity."""
+        loss_ratio = eps_pp / eps_p
+        alpha = (2.0 * math.pi * f_hz / C0) * math.sqrt(0.5 * eps_p * (math.sqrt(1.0 + loss_ratio ** 2) - 1.0))
+        return (1.0 / (2.0 * alpha)) * 100.0
+
+    # Verify exact penetration depth at 2.45 GHz (25 C water, Kaatze 1989: eps'=77.0, eps''=12.3 -> ~1.39 cm)
+    DP_245_CM = _penetration_depth_cm(F_MW, 77.0, 12.3)
+    assert 1.35 < DP_245_CM < 1.45
+
+    def _build_five_stage_chain():
+        """SVG 1: 5-stage physical & energy conversion chain from 220V/50Hz wall AC to 1.4cm dielectric heating."""
+        p_in_w = 1150.0
+        p_rf_w = 800.0
+        eff_pct = (p_rf_w / p_in_w) * 100.0
+        assert 69.0 < eff_pct < 70.0
+
+        els = header(
+            "没有明火也不烫炉壁，微波炉凭什么两分钟热透一杯牛奶？—— 五棒物理能量链",
+            "从墙上 220 V / 50 Hz 工频电到 2.45 GHz 微波与 1.4 cm 偶极子耗散，逐级追踪电压、频率与波长",
+        )
+
+        stages = [
+            (
+                "第 1 棒",
+                "插座工频交流电",
+                "220 V · 50 Hz",
+                SLATE,
+                SLATE_SOFT,
+                [
+                    "整机输入约 1150 W",
+                    "每秒仅来回晃 50 次",
+                    "远追不上极性水分子",
+                    "顺带驱动风扇与转盘",
+                ],
+                "起点：普通市电",
+            ),
+            (
+                "第 2 棒",
+                "半波倍压升压电路",
+                "≈ −4000 V 脉动直流",
+                PURPLE,
+                PURPLE_SOFT,
+                [
+                    "升压变压器抬至 ~2.1 kV",
+                    "高压电容+二极管倍压",
+                    "阳极接地 0 V 保安全",
+                    "灯丝阴极悬在 −4 kV！",
+                ],
+                "蓄势：高能电子弹弓",
+            ),
+            (
+                "第 3 棒",
+                "腔体磁控管心脏",
+                "2.45 GHz · 12.24 cm",
+                ORANGE,
+                ORANGE_SOFT,
+                [
+                    "E × B 正交电磁场掰弯",
+                    "电子轮辐扫过 8/10 铜腔",
+                    "直流高压变 800 W 微波",
+                    f"转换效率约 {eff_pct:.0f}%",
+                ],
+                "生波：真空雷达遗产",
+            ),
+            (
+                "第 4 棒",
+                "波导管与金属炉腔",
+                "驻波半波长 6.12 cm",
+                BLUE,
+                BLUE_SOFT,
+                [
+                    "矩形金属波导定向引波",
+                    "冷钢壁全反射叠出驻波",
+                    "炉门 1.5 mm 网孔锁死",
+                    "偏心转盘扫匀冷热死区",
+                ],
+                "囚波：法拉第谐振箱",
+            ),
+            (
+                "第 5 棒",
+                "水偶极子滞后生热",
+                f"穿透 D_p ≈ {DP_245_CM:.1f} cm",
+                GREEN,
+                GREEN_SOFT,
+                [
+                    "电场每秒翻转 49 亿次",
+                    "水分子氢键拖拽摩擦热",
+                    "盐离子往复冲撞添火力",
+                    "外层吸波 → 中心靠导热",
+                ],
+                "终点：电磁功直接变内能",
+            ),
+        ]
+
+        cw, ch = 134, 244
+        gap = 12
+        x0, y0 = 20, 64
+        for idx, (step_lbl, title_s, badge_s, col, bg, bullets, foot_s) in enumerate(stages):
+            cx = x0 + idx * (cw + gap)
+            els.append(card(cx, y0, cw, ch))
+            els.append(pill(cx + 10, y0 + 12, step_lbl, fg=col, bg=bg, w=68, h=20, size=10.2))
+            els.append(txt(cx + 10, y0 + 50, title_s, 11.8, INK, weight="700"))
+            els.append(card(cx + 8, y0 + 60, cw - 16, 26, rx=6, fill=bg, stroke=col, sw=0.9))
+            els.append(txt(cx + cw / 2, y0 + 77, badge_s, 9.3, col, "middle", weight="700", cls="mono"))
+            for b_i, bline in enumerate(bullets):
+                els.append(txt(cx + 10, y0 + 108 + b_i * 22, f"• {bline}", 9.9, BODY))
+            els.append(_line(cx + 10, y0 + 208, cx + cw - 10, y0 + 208, stroke=HAIRLINE, sw=0.9))
+            els.append(txt(cx + cw / 2, y0 + 228, foot_s, 9.7, col, "middle", weight="700"))
+
+            if idx < len(stages) - 1:
+                ax1 = cx + cw + 1
+                ax2 = cx + cw + gap - 2
+                ay = y0 + 124
+                m_id = "arr-orange" if idx in (1, 2) else ("arr-green" if idx == 3 else "arr-blue")
+                s_c = ORANGE if idx in (1, 2) else (GREEN if idx == 3 else BLUE)
+                els.append(_line(ax1, ay, ax2, ay, stroke=s_c, sw=2.1, marker=m_id))
+
+        # Bottom panel: Quantitative Power Budget + Busting "Inside-Out" Myth
+        by, bh = 320, 126
+        els.append(card(20, by, 720, bh))
+        els.append(txt(36, by + 22, "整机能量账单与第一条反直觉真相：微波炉从来不是“从最中心往外加热”！", 11.8, INK, weight="700"))
+
+        # Stacked energy bar (x=36..402, total width=366 px for 1150 W)
+        bar_x, bar_y, bar_w, bar_h = 36.0, by + 36.0, 362.0, 28.0
+        w_rf = bar_w * (p_rf_w / p_in_w)
+        w_loss = bar_w - w_rf
+        els.append(f'<rect x="{bar_x:.1f}" y="{bar_y:.1f}" width="{w_rf:.1f}" height="{bar_h}" rx="5" fill="{GREEN}"/>')
+        els.append(f'<rect x="{bar_x + w_rf + 2:.1f}" y="{bar_y:.1f}" width="{w_loss - 2:.1f}" height="{bar_h}" rx="5" fill="{ORANGE}"/>')
+        els.append(txt(bar_x + w_rf / 2, bar_y + 18, f"有效微波输出 ≈ 800 W ({eff_pct:.0f}%)", 10.0, "#ffffff", "middle", weight="700"))
+        els.append(txt(bar_x + w_rf + w_loss / 2, bar_y + 18, "≈ 350 W 余热", 9.6, "#ffffff", "middle", weight="700"))
+
+        # Right side mini callout box in upper-right of bottom panel (y = by+12 .. by+72)
+        els.append(card(414, by + 30, 310, 46, rx=7, fill=TEAL_SOFT, stroke=TEAL, sw=1.0))
+        els.append(txt(426, by + 48, "烤箱：先烤热 200 ℃ 空气，热量从焦皮硬往里爬；", 9.5, BODY))
+        els.append(txt(426, by + 66, "微波：穿过冷空气，直达外层 1–2 cm 水分子同步产热！", 9.5, TEAL, weight="700"))
+
+        # Full-width takeaway bullets cleanly below both boxes
+        els.append(txt(36, by + 95, "• 为什么磁控管长满散热片还要风扇狂吹？那 ~350 W 损耗全积在铜阳极上，不吹风会过热退磁。", 9.7, BODY))
+        els.append(txt(36, by + 113, "• 为什么错觉“从里往外热”？只因空气、冷炉壁和干瓷碗不吸波，表层 1.4 cm 水分直接生热（厚汤中心仍靠导热）！", 9.7, BLUE, weight="700"))
+
+        return figure(
+            460,
+            "微波炉五棒物理能量转换链与整机功率账单图解",
+            f"分五棒展示220V/50Hz市电（约1150W）经半波倍压升至-4000V脉动直流、驱动腔体磁控管产生800W的2.45GHz（波长12.24cm）微波、经波导管送入金属驻波腔（半波长6.12cm）、最终在食物外层约{DP_245_CM:.1f}cm水分子中耗散生热的全过程。",
+            els,
+        )
+
+    def _build_magnetron_electron_spokes():
+        """SVG 2: 8-cavity pi-mode magnetron cross-section with rotating electron spokes + Relay vs Inverter 50% power."""
+        extra_css = """
+      .spokes-rot {
+        transform-box: view-box;
+        transform-origin: 206px 222px;
+        animation: turnSpokes 3.2s cubic-bezier(0.35, 0, 0.25, 1) 0.2s 1 forwards;
+      }
+      @keyframes turnSpokes {
+        from { transform: rotate(0deg); }
+        to   { transform: rotate(180deg); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .spokes-rot { animation: none; }
+      }"""
+
+        els = header(
+            "微波炉的心脏：腔体磁控管怎样把电子掰成“风车轮辐”，吐出 2.45 GHz 微波？",
+            "左：8 腔铜阳极 + 轴向强磁场 B ≈ 0.18 T 的洛伦兹拐弯与 π 模轮辐（动画）；右：“中火 50%”的继电器通断真相",
+        )
+
+        # ---------------- Left Panel: 8-Cavity Magnetron Cross-Section ----------------
+        els.append(card(20, 62, 372, 380))
+        els.append(txt(34, 85, "① 磁控管横截面：正交 E × B 场与 4 道电子轮辐", PANEL_TITLE, INK, weight="700"))
+
+        cx, cy = 206.0, 222.0
+        r_block = 98.0
+        r_cav_center = 73.0
+        r_cav_hole = 14.5
+        r_anode_bore = 46.0
+        r_cathode = 12.5
+
+        # Output RF antenna coaxial stub at top (270 deg -> x=cx, y=cy-73 up to y=96)
+        els.append(f'<rect x="{cx - 10:.1f}" y="96" width="20" height="32" rx="3" fill="#e2e8f0" stroke="{SLATE}" stroke-width="1.2"/>')
+        els.append(_line(cx, cy - r_cav_center, cx, 98, stroke=ORANGE, sw=2.6, marker="arr-orange"))
+        els.append(txt(cx + 16, 109, "天线探针耦合输出", 9.8, ORANGE, weight="700"))
+        els.append(txt(cx + 16, 122, "2.45 GHz → 波导管", 9.4, MUTED, cls="mono"))
+
+        # Copper anode block disc
+        els.append(f'<circle cx="{cx}" cy="{cy}" r="{r_block}" fill="#fed7aa" stroke="#c2410c" stroke-width="2.0"/>')
+        # Central interaction space bore
+        els.append(f'<circle cx="{cx}" cy="{cy}" r="{r_anode_bore}" fill="#fffbeb" stroke="#c2410c" stroke-width="1.5"/>')
+
+        # 8 keyhole resonant cavities (holes + radial coupling slots)
+        for k in range(8):
+            ang = math.radians(k * 45.0)
+            hx = cx + r_cav_center * math.cos(ang)
+            hy = cy + r_cav_center * math.sin(ang)
+            els.append(f'<circle cx="{hx:.1f}" cy="{hy:.1f}" r="{r_cav_hole}" fill="#fffbeb" stroke="#c2410c" stroke-width="1.5"/>')
+            # Radial slot carving open the gap between bore and cavity hole
+            perp_x = -math.sin(ang) * 4.2
+            perp_y = math.cos(ang) * 4.2
+            r_in = r_anode_bore - 1.5
+            r_out = r_cav_center - r_cav_hole + 2.5
+            pts_slot = [
+                (cx + r_in * math.cos(ang) + perp_x, cy + r_in * math.sin(ang) + perp_y),
+                (cx + r_out * math.cos(ang) + perp_x, cy + r_out * math.sin(ang) + perp_y),
+                (cx + r_out * math.cos(ang) - perp_x, cy + r_out * math.sin(ang) - perp_y),
+                (cx + r_in * math.cos(ang) - perp_x, cy + r_in * math.sin(ang) - perp_y),
+            ]
+            d_slot = "M " + " L ".join(f"{px:.1f},{py:.1f}" for px, py in pts_slot) + " Z"
+            els.append(f'<path d="{d_slot}" fill="#fffbeb" stroke="none"/>')
+
+        # Pi-mode strapping ring (dashed purple circle) + alternating +/- vane tips
+        els.append(f'<circle cx="{cx}" cy="{cy}" r="53" fill="none" stroke="{PURPLE}" stroke-width="1.2" stroke-dasharray="3 3"/>')
+        for k in range(8):
+            vane_ang = math.radians(k * 45.0 + 22.5)
+            vx = cx + 52.0 * math.cos(vane_ang)
+            vy = cy + 52.0 * math.sin(vane_ang)
+            sign_ch = "+" if k % 2 == 0 else "−"
+            sign_col = RED if k % 2 == 0 else BLUE
+            els.append(txt(vx, vy + 3.8, sign_ch, 11.2, sign_col, "middle", weight="700", halo=True))
+
+        # Rotating 4 electron spokes (N/2 = 4 spokes for 8 cavities in pi-mode!)
+        spoke_els = ['<g class="spokes-rot">']
+        # Space-charge hub ring around cathode
+        spoke_els.append(f'<circle cx="{cx}" cy="{cy}" r="21" fill="{BLUE}" fill-opacity="0.18" stroke="{BLUE}" stroke-width="1.0" stroke-dasharray="2 2"/>')
+        for s_idx in range(4):
+            base_deg = s_idx * 90.0 + 18.0
+            a0 = math.radians(base_deg - 12.0)
+            a1 = math.radians(base_deg + 10.0)
+            am = math.radians(base_deg + 24.0)
+            r0 = 18.0
+            rm = 33.0
+            rtip = 44.5
+            x_s0, y_s0 = cx + r0 * math.cos(a0), cy + r0 * math.sin(a0)
+            x_c1, y_c1 = cx + rm * math.cos(a1), cy + rm * math.sin(a1)
+            x_tp, y_tp = cx + rtip * math.cos(am), cy + rtip * math.sin(am)
+            a0_b = math.radians(base_deg + 4.0)
+            am_b = math.radians(base_deg + 33.0)
+            x_s1, y_s1 = cx + r0 * math.cos(a0_b), cy + r0 * math.sin(a0_b)
+            x_c2, y_c2 = cx + (rm - 2) * math.cos(am_b), cy + (rm - 2) * math.sin(am_b)
+            d_sp = (
+                f"M {x_s0:.1f},{y_s0:.1f} Q {x_c1:.1f},{y_c1:.1f} {x_tp:.1f},{y_tp:.1f} "
+                f"Q {x_c2:.1f},{y_c2:.1f} {x_s1:.1f},{y_s1:.1f} Z"
+            )
+            spoke_els.append(f'<path d="{d_sp}" fill="{BLUE}" fill-opacity="0.38" stroke="{BLUE}" stroke-width="1.4"/>')
+        spoke_els.append("</g>")
+        els.extend(spoke_els)
+
+        # Reference straight dashed arrow if B=0 (at -148 deg)
+        b0_ang = math.radians(-148.0)
+        els.append(
+            _line(
+                cx + (r_cathode + 2) * math.cos(b0_ang),
+                cy + (r_cathode + 2) * math.sin(b0_ang),
+                cx + (r_anode_bore - 3) * math.cos(b0_ang),
+                cy + (r_anode_bore - 3) * math.sin(b0_ang),
+                stroke=SLATE,
+                sw=1.4,
+                dash="3 2",
+                marker="arr-muted",
+            )
+        )
+
+        # Central hot thorium-tungsten cathode (-4 kV)
+        els.append(f'<circle cx="{cx}" cy="{cy}" r="{r_cathode}" fill="{RED}" stroke="#ffffff" stroke-width="1.6"/>')
+        els.append(txt(cx, cy + 3.8, "−4kV", 8.8, "#ffffff", "middle", weight="700", cls="mono"))
+
+        # Callout labels around magnetron (cleanly outside r_block=98)
+        els.append(txt(34, 148, "无磁场 B=0：", 9.6, SLATE, weight="700"))
+        els.append(txt(34, 162, "直撞阳极只发热", 9.4, MUTED))
+
+        els.append(card(298, 142, 82, 46, rx=6, fill=PURPLE_SOFT, stroke=PURPLE, sw=0.9))
+        els.append(txt(339, 160, "⊙ 轴向磁场", 9.6, PURPLE, "middle", weight="700"))
+        els.append(txt(339, 177, "B ≈ 0.18 T", 9.5, PURPLE, "middle", weight="700", cls="mono"))
+
+        els.append(txt(302, 294, "铜阳极块 (0 V)", 9.7, ORANGE, weight="700"))
+        els.append(txt(302, 309, "8 个 LC 谐振腔", 9.4, BODY))
+        els.append(txt(34, 294, "π 模均压环：", 9.7, PURPLE, weight="700"))
+        els.append(txt(34, 309, "相邻腔反相 180°", 9.4, BODY))
+
+        # Bottom summary inside Left Card
+        els.append(card(34, 332, 344, 98, rx=8, fill=BLUE_SOFT, stroke=BLUE, sw=1.0))
+        els.append(txt(46, 351, "• 洛伦兹力 F = −e(E + v × B) 把径向飞出的电子掰弯成回旋曲线；", 9.7, INK, weight="600"))
+        els.append(txt(46, 370, "• 跑得快的电子被逆向射频场减速，聚拢成 N/2 = 4 道旋转“电子轮辐”；", 9.7, BODY))
+        els.append(txt(46, 389, "• 轮辐同步扫过腔口，源源不断把 −4000 V 势能泵成 2.45 GHz 电磁波，", 9.7, BODY))
+        els.append(txt(46, 408, "  就像对着一排空啤酒瓶口吹气，激发出极其纯粹的高频哨音！", 9.7, BLUE, weight="700"))
+
+        # ---------------- Right Panel: 50% Medium Power Duty-Cycle vs Inverter ----------------
+        els.append(card(404, 62, 336, 380))
+        els.append(txt(418, 85, "② 按下“中火 50%”，火力真的变小了吗？", PANEL_TITLE, INK, weight="700"))
+
+        # Plot A: Conventional Transformer Relay PWM (0..30s)
+        els.append(card(418, 100, 308, 142, rx=8, fill=ORANGE_SOFT, stroke=ORANGE, sw=1.0))
+        els.append(txt(430, 120, "A. 传统变压器微波炉：继电器“打打停停”", 10.6, ORANGE, weight="700"))
+
+        px0, px1 = 462.0, 708.0  # 246 px for 0..30 s
+        py_top, py_bot = 144.0, 206.0  # 800 W -> 0 W
+        els.append(_line(px0, py_top, px0, py_bot, stroke=SLATE, sw=1.2))
+        els.append(_line(px0, py_bot, px1, py_bot, stroke=SLATE, sw=1.2))
+        els.append(txt(px0 - 5, py_top + 4, "800W", 9.2, ORANGE, "end", weight="700", cls="mono"))
+        els.append(txt(px0 - 5, py_bot + 3, "0W", 9.2, MUTED, "end", cls="mono"))
+
+        def tx_s(sec):
+            return px0 + (sec / 30.0) * (px1 - px0)
+
+        # Shaded 100% burst 0..15s
+        els.append(f'<rect x="{tx_s(0):.1f}" y="{py_top:.1f}" width="{tx_s(15) - tx_s(0):.1f}" height="{py_bot - py_top:.1f}" fill="{ORANGE}" opacity="0.25"/>')
+        pwm_pts = [
+            (tx_s(0), py_top),
+            (tx_s(14.8), py_top),
+            (tx_s(14.8), py_bot),
+            (tx_s(29.6), py_bot),
+        ]
+        els.append(_poly(pwm_pts, stroke=ORANGE, sw=2.4))
+        # Average 400 W dashed reference
+        py_mid = (py_top + py_bot) / 2.0
+        els.append(_line(px0, py_mid, px1, py_mid, stroke=SLATE, sw=1.1, dash="4 3"))
+        els.append(txt(tx_s(7.5), py_top + 16, "满功率 800 W 猛轰 15s", 9.3, INK, "middle", weight="700"))
+        els.append(txt(tx_s(22.5), py_bot - 8, "断电 0 W 停歇 15s", 9.3, MUTED, "middle", weight="600"))
+        els.append(txt(px1, py_mid - 5, "平均 400W", 9.0, SLATE, "end", weight="600"))
+        for st in (0, 15, 30):
+            els.append(txt(tx_s(st), py_bot + 14, f"{st}s", 9.0, MUTED, "middle", cls="mono"))
+        els.append(txt(430, 233, "痛点：前 15 秒仍是 100% 猛火，化黄油/热牛奶照样扑锅！", 9.4, RED, weight="700"))
+
+        # Plot B: Inverter Continuous Power (0..30s)
+        els.append(card(418, 254, 308, 134, rx=8, fill=GREEN_SOFT, stroke=GREEN, sw=1.0))
+        els.append(txt(430, 274, "B. 变频微波炉（Inverter）：IGBT 真连续半火", 10.6, GREEN, weight="700"))
+
+        iy_top, iy_bot = 298.0, 356.0
+        iy_mid = (iy_top + iy_bot) / 2.0
+        els.append(_line(px0, iy_top, px0, iy_bot, stroke=SLATE, sw=1.2))
+        els.append(_line(px0, iy_bot, px1, iy_bot, stroke=SLATE, sw=1.2))
+        els.append(txt(px0 - 5, iy_top + 4, "800W", 9.2, MUTED, "end", cls="mono"))
+        els.append(txt(px0 - 5, iy_mid + 4, "400W", 9.2, GREEN, "end", weight="700", cls="mono"))
+        els.append(txt(px0 - 5, iy_bot + 3, "0W", 9.2, MUTED, "end", cls="mono"))
+
+        els.append(f'<rect x="{px0:.1f}" y="{iy_mid:.1f}" width="{px1 - px0:.1f}" height="{iy_bot - iy_mid:.1f}" fill="{GREEN}" opacity="0.22"/>')
+        els.append(_line(px0, iy_mid, px1, iy_mid, stroke=GREEN, sw=2.6))
+        els.append(txt((px0 + px1) / 2, iy_mid - 7, "20–40 kHz 逆变电源：全程恒定输出 400 W", 9.4, GREEN, "middle", weight="700"))
+        for st in (0, 15, 30):
+            els.append(txt(tx_s(st), iy_bot + 14, f"{st}s", 9.0, MUTED, "middle", cls="mono"))
+        els.append(txt(430, 380, "优势：温火慢炖不溢锅，化冻边缘不易被脉冲峰值烤熟。", 9.4, INK, weight="600"))
+
+        # Ear test note at bottom of Right Card
+        els.append(txt(418, 409, "👂 听声音秒辨你家是哪一种：设中火加热 1 分钟——", 9.7, INK, weight="700"))
+        els.append(txt(418, 427, "每隔十多秒“咔哒”变安静的是传统通断式；全程平稳轻响是真变频！", 9.5, BODY))
+
+        return figure(
+            456,
+            "8腔磁控管正交电磁场电子轮辐旋转动画与传统继电器通断对变频连续控温对比图",
+            "左图展示-4kV阴极与0V八腔铜阳极在0.18T轴向磁场下由洛伦兹力形成4道π模电子轮辐旋转激振2.45GHz微波；右图对比传统微波炉中火50%采用15秒800W加15秒0W继电器通断与变频微波炉连续输出400W的本质差异。",
+            els,
+            extra_css=extra_css,
+        )
+
+    def _build_debye_water_ice_curve():
+        """SVG 3: Calculated Debye dielectric loss eps''(f) for 25C water vs 0C ice + penetration depth & defrost runaway."""
+        # Exact Debye model parameters:
+        # 1) 25 C pure liquid water (Kaatze 1989): eps_s = 78.4, eps_inf = 5.2, tau_D = 8.27 ps -> f_rel = 19.25 GHz
+        eps_s_w, eps_inf_w, tau_w = 78.4, 5.2, 8.27e-12
+        f_rel_w = 1.0 / (2.0 * math.pi * tau_w)  # 1.9245e10 Hz = 19.25 GHz
+        assert 19.20e9 < f_rel_w < 19.30e9
+
+        # Penetration depth at 19.25 GHz peak: eps_p = (78.4+5.2)/2 = 41.8, eps_pp = (78.4-5.2)/2 = 36.6
+        dp_peak_mm = _penetration_depth_cm(f_rel_w, 41.8, 36.6) * 10.0  # ~0.46 mm!
+        assert 0.43 < dp_peak_mm < 0.50
+
+        # 2) 0 C hexagonal ice (Ice Ih, Matzler & Wegmuller 1987): eps_s = 91.5, eps_inf = 3.17, tau_D = 2.0e-5 s -> f_rel = 7.96 kHz
+        eps_s_ice, eps_inf_ice, tau_ice = 91.5, 3.17, 2.0e-5
+        f_rel_ice = 1.0 / (2.0 * math.pi * tau_ice)
+        assert 7.8e3 < f_rel_ice < 8.1e3
+
+        def debye_eps_pp(f_hz, es, einf, tau):
+            wt = 2.0 * math.pi * f_hz * tau
+            return (es - einf) * wt / (1.0 + wt * wt)
+
+        # Verify >10,000x ratio between 0C water (~21) and 0C ice (~0.0015) at 2.45 GHz
+        eps_pp_w0 = debye_eps_pp(F_MW, 87.9, 5.7, 17.7e-12)  # ~20.8 at 0 C water
+        eps_pp_ice_245 = 0.0015  # Matzler 1987 measured value at 2.45 GHz (Debye + lattice tail)
+        ratio_water_ice = eps_pp_w0 / eps_pp_ice_245
+        assert ratio_water_ice > 13000.0
+
+        els = header(
+            "破除最大科普谣言：2.45 GHz 根本不是水分子的“共振频率”！—— 德拜弛豫与化冻陷阱",
+            "左：据 Kaatze (1989) 精确计算水与冰的介电损耗曲线 ε''(f)；右：穿透深度黄金折中与冰水差万倍的“热失控”",
+        )
+
+        # ---------------- Left Panel: Log-Frequency Debye Loss Plot ----------------
+        els.append(card(20, 62, 422, 386))
+        els.append(txt(34, 85, "① 介电损耗谱 ε''(f)：水峰在 19.2 GHz，冰峰在 8 kHz！", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(34, 104, "纵轴：损耗因子 ε''（决定同电场下的吸波发热本领）", 9.8, MUTED))
+
+        gx0, gx1 = 68.0, 420.0  # log10(f) from 3.0 (1 kHz) to 11.4 (250 GHz)
+        gy_top, gy_bot = 128.0, 314.0  # eps'' from 0 to 46
+
+        def fx(logf):
+            return gx0 + ((logf - 3.0) / 8.4) * (gx1 - gx0)
+
+        def ey(eps_val):
+            return gy_bot - (min(eps_val, 46.0) / 46.0) * (gy_bot - gy_top)
+
+        # Gridlines & axes
+        for ev in (0, 10, 20, 30, 40):
+            yy = ey(ev)
+            els.append(_line(gx0, yy, gx1, yy, stroke=HAIRLINE if ev > 0 else SLATE, sw=0.9 if ev > 0 else 1.2, dash="3 3" if ev > 0 else None))
+            els.append(txt(gx0 - 6, yy + 3.5, str(ev), 9.4, MUTED, "end", cls="mono"))
+
+        ticks_f = [
+            (3.0, "1kHz"),
+            (5.0, "100k"),
+            (7.0, "10MHz"),
+            (9.0, "1GHz"),
+            (10.0, "10G"),
+            (11.0, "100G"),
+        ]
+        for lf, flbl in ticks_f:
+            xx = fx(lf)
+            els.append(_line(xx, gy_top, xx, gy_bot, stroke=HAIRLINE, sw=0.8, dash="2 3"))
+            els.append(txt(xx, gy_bot + 15, flbl, 9.2, MUTED, "middle", cls="mono"))
+        els.append(_line(gx0, gy_top, gx0, gy_bot, stroke=SLATE, sw=1.2))
+        els.append(txt((gx0 + gx1) / 2, gy_bot + 31, "电磁波频率 f（对数坐标：跨越 8500 万倍频率！）", 9.7, INK, "middle", weight="600"))
+
+        # Sample Ice (0 C) curve & Liquid Water (25 C) curve
+        pts_ice = []
+        pts_wat = []
+        for i in range(141):
+            lf = 3.0 + 8.4 * (i / 140.0)
+            f_val = 10.0 ** lf
+            pts_ice.append((fx(lf), ey(debye_eps_pp(f_val, eps_s_ice, eps_inf_ice, tau_ice))))
+            pts_wat.append((fx(lf), ey(debye_eps_pp(f_val, eps_s_w, eps_inf_w, tau_w))))
+
+        els.append(_poly(pts_ice, stroke=BLUE, sw=2.3, dash="6 3"))
+        els.append(_poly(pts_wat, stroke=ORANGE, sw=2.7))
+
+        # Highlight f = 2.45 GHz vertical marker (log10(2.45e9) = 9.389)
+        lf_mw = math.log10(F_MW)
+        x_mw = fx(lf_mw)
+        y_mw_w = ey(debye_eps_pp(F_MW, eps_s_w, eps_inf_w, tau_w))
+        els.append(_line(x_mw, gy_top + 4, x_mw, gy_bot, stroke=GREEN, sw=1.8, dash="4 2"))
+        els.append(f'<circle cx="{x_mw:.1f}" cy="{y_mw_w:.1f}" r="4.8" fill="{GREEN}" stroke="#ffffff" stroke-width="1.4"/>')
+        els.append(f'<circle cx="{x_mw:.1f}" cy="{gy_bot:.1f}" r="4.2" fill="{BLUE}" stroke="#ffffff" stroke-width="1.2"/>')
+
+        # Highlight 25 C water peak at 19.25 GHz (log10 = 10.284, eps'' = 36.6)
+        lf_pk = math.log10(f_rel_w)
+        x_pk = fx(lf_pk)
+        y_pk = ey(36.6)
+        els.append(f'<circle cx="{x_pk:.1f}" cy="{y_pk:.1f}" r="4.8" fill="{RED}" stroke="#ffffff" stroke-width="1.4"/>')
+
+        # Highlight 0 C ice peak at 7.96 kHz (log10 = 3.901, eps'' = 44.16)
+        lf_ice_pk = math.log10(f_rel_ice)
+        x_ice_pk = fx(lf_ice_pk)
+        y_ice_pk = ey(44.16)
+        els.append(f'<circle cx="{x_ice_pk:.1f}" cy="{y_ice_pk:.1f}" r="4.5" fill="{BLUE}" stroke="#ffffff" stroke-width="1.3"/>')
+
+        # Non-overlapping annotations inside plot
+        els.append(txt(x_ice_pk + 8, y_ice_pk + 6, "0℃ 冰弛豫峰 (~8 kHz)", 9.6, BLUE, weight="700", halo=True))
+        els.append(txt(x_ice_pk + 8, y_ice_pk + 20, "氢键晶格锁死，转身慢百万倍", 9.1, BLUE, halo=True))
+
+        els.append(txt(x_pk - 5, y_pk - 9, "25℃ 液态水峰 19.2 GHz", 9.6, RED, "end", weight="700", halo=True))
+        els.append(txt(x_pk - 5, y_pk + 16, f"(D_p 仅 {dp_peak_mm:.2f} mm!)", 9.2, RED, "end", weight="700", halo=True))
+
+        els.append(txt(x_mw - 8, y_mw_w - 17, "微波炉 2.45 GHz →", 9.7, GREEN, "end", weight="700", halo=True))
+        els.append(txt(x_mw - 8, y_mw_w - 3, "山坡左翼甜点区！", 9.2, GREEN, "end", weight="600", halo=True))
+        els.append(txt(x_mw - 8, gy_bot - 7, "冰在此处 ε''≈0.0015 →", 9.1, BLUE, "end", weight="700", halo=True))
+
+        # Bottom explanation box in Left Panel
+        els.append(card(34, 356, 394, 78, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(46, 375, "• 液态水是氢键牵扯的“拥挤舞池”，没有孤立气体水分子的 22.2 GHz 尖锐共振，", 9.5, INK, weight="600"))
+        els.append(txt(46, 393, "  只有宽缓的【德拜转向弛豫】：水偶极子追赶交变电场时慢半拍，滞后功全变热；", 9.5, BODY))
+        els.append(txt(46, 411, "• 若真用 19.2 GHz 峰值加热，微波在表皮 0.46 mm 就被吸干，外皮烤焦里面冰凉！", 9.5, RED, weight="700"))
+
+        # ---------------- Right Panel: Penetration Trade-off + Defrost Thermal Runaway ----------------
+        els.append(card(454, 62, 286, 386))
+        els.append(txt(468, 85, "② 黄金穿透深度 & 化冻“外熟内冰”之谜", PANEL_TITLE, INK, weight="700"))
+
+        # Top sub-box: Penetration depth comparison across 3 frequencies
+        els.append(card(468, 100, 258, 146, rx=8, fill=GREEN_SOFT, stroke=GREEN, sw=1.0))
+        els.append(txt(480, 120, "A. 为什么全世界微波炉偏偏选 2.45 GHz？", 10.3, GREEN, weight="700"))
+
+        bars_dp = [
+            ("915 MHz 工业解冻", 118.0, "穿透 ~4–9 cm（腔体太大）", BLUE),
+            ("2.45 GHz 家用黄金频段", 54.0, f"D_p ≈ {DP_245_CM:.1f} cm（内外兼顾！）", GREEN),
+            ("19.2 GHz 水弛豫峰", 4.0, f"仅 {dp_peak_mm:.2f} mm（瞬间糊皮！）", RED),
+        ]
+        for b_idx, (blbl, bw_px, bnote, bcol) in enumerate(bars_dp):
+            ry_b = 136 + b_idx * 35
+            els.append(txt(480, ry_b, blbl, 9.4, INK, weight="700"))
+            els.append(f'<rect x="480" y="{ry_b + 5}" width="{bw_px:.1f}" height="10" rx="3" fill="{bcol}"/>')
+            els.append(txt(480 + bw_px + 6, ry_b + 14, bnote, 9.1, bcol, weight="700"))
+
+        # Bottom sub-box: Defrost Thermal Runaway (>10,000x gap)
+        els.append(card(468, 258, 258, 176, rx=8, fill=AMBER_SOFT, stroke=AMBER, sw=1.0))
+        els.append(txt(480, 278, "B. 化冻死结：水比冰吸波强 10,000 倍以上！", 10.2, AMBER, weight="700"))
+
+        # Mini steak schematic with frozen core + boiled rim droplet
+        els.append(card(480, 290, 234, 58, rx=7, fill="#dbeafe", stroke=BLUE, sw=1.2))
+        els.append(f'<rect x="480" y="290" width="54" height="58" rx="7" fill="{RED_SOFT}" stroke="{RED}" stroke-width="1.3"/>')
+        els.append(txt(507, 314, "先化水滴", 9.2, RED, "middle", weight="700"))
+        els.append(txt(507, 329, "ε'' ≈ 21", 9.1, RED, "middle", weight="700", cls="mono"))
+        els.append(txt(507, 342, "疯狂抢波!", 8.9, RED, "middle", weight="700"))
+
+        els.append(txt(622, 314, "内部 0℃ 冰晶 (Ice Ih)", 9.5, BLUE, "middle", weight="700"))
+        els.append(txt(622, 331, "ε'' ≈ 0.0015（对微波近乎透明！）", 9.0, BLUE, "middle", weight="600"))
+
+        els.append(txt(480, 368, "• 尖角一旦化出一滴液态水，吸波能力暴涨上万倍，", 9.4, BODY))
+        els.append(txt(480, 386, "  形成【热失控】：水滴沸腾把肉边煮熟，冰芯仍硬！", 9.4, RED, weight="700"))
+        els.append(txt(480, 405, "• 正确解冻：开低功率断续档，趁停歇期靠热传导融冰；", 9.4, INK, weight="600"))
+        els.append(txt(480, 422, "  同理，汤里加盐（Na⁺/Cl⁻ 导电损耗）会让表层更易滚烫。", 9.2, MUTED))
+
+        return figure(
+            462,
+            "水与冰德拜介电损耗频率曲线、微波穿透深度折中与化冻热失控原理图",
+            f"左图按德拜方程绘制0℃冰（峰值约8kHz，2.45GHz处仅0.0015）与25℃液态水（峰值19.2GHz，穿透仅{dp_peak_mm:.2f}mm）的损耗曲线，标明2.45GHz处于山坡左翼甜点区（穿透约{DP_245_CM:.1f}cm）；右图对比915MHz、2.45GHz与19.2GHz穿透深度，并解释液态水比冰吸波强上万倍导致化冻边缘煮熟的热失控。",
+            els,
+        )
+
+    def _build_standing_wave_turntable():
+        """SVG 4: Standing wave sin^2(kx) hotspots (6.12 cm) & cheese speed-of-light lab + Off-center turntable orbit."""
+        extra_css = """
+      .mug-orbit {
+        transform-box: view-box;
+        transform-origin: 590px 214px;
+        animation: sweepMug 3.6s cubic-bezier(0.35, 0, 0.25, 1) 0.2s 1 forwards;
+      }
+      @keyframes sweepMug {
+        from { transform: rotate(-135deg); }
+        to   { transform: rotate(0deg); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .mug-orbit { animation: none; }
+      }"""
+
+        c_calc_e8 = (2.0 * HALF_LAMBDA_CM / 100.0 * F_MW) / 1e8  # 2.9979
+        assert math.isclose(c_calc_e8, 2.99792, rel_tol=1e-4)
+
+        els = header(
+            "为什么微波炉里非要装个转盘？—— 6.12 厘米驻波死点、厨房测光速与偏心摆碗秘诀",
+            "左：金属壁反射叠出半波长（6.12 cm）冷热条纹与芝士测光速实验；右：碗放圆心 vs 放盘边的受热轨迹",
+        )
+
+        # ---------------- Left Panel: Standing Wave Curve + Cheese Speed-of-Light ----------------
+        els.append(card(20, 62, 412, 378))
+        els.append(txt(34, 85, "① 炉腔驻波：每隔 λ₀/2 = 6.12 cm 就有一处“冷死点”！", PANEL_TITLE, INK, weight="700"))
+
+        wx0, wx1 = 58.0, 412.0  # x_cm from 0 to 18.36 cm (1.5 lambda_0 = 3 half-wave lobes)
+        wy_mid = 172.0
+        amp_e = 44.0
+        wy_pwr_base = 236.0
+        amp_p = 44.0
+        x_span_cm = 1.5 * LAMBDA0_CM  # 18.355 cm
+
+        def cx_cm(x_cm):
+            return wx0 + (x_cm / x_span_cm) * (wx1 - wx0)
+
+        # Standing wave E-field envelopes +cos and -cos around wy_mid
+        els.append(_line(wx0, wy_mid, wx1, wy_mid, stroke=HAIRLINE, sw=1.0))
+        pts_e_pos = []
+        pts_e_neg = []
+        pts_pwr = []
+        for i in range(121):
+            xc = x_span_cm * (i / 120.0)
+            s_val = math.sin(2.0 * math.pi * xc / LAMBDA0_CM)
+            pts_e_pos.append((cx_cm(xc), wy_mid - amp_e * s_val))
+            pts_e_neg.append((cx_cm(xc), wy_mid + amp_e * s_val))
+            pts_pwr.append((cx_cm(xc), wy_pwr_base - amp_p * (s_val * s_val)))
+
+        # Shaded sin^2 heating power lobes at wy_pwr_base
+        d_pwr_area = (
+            f"M {wx0:.1f},{wy_pwr_base:.1f} L "
+            + " L ".join(f"{px:.1f},{py:.1f}" for px, py in pts_pwr)
+            + f" L {wx1:.1f},{wy_pwr_base:.1f} Z"
+        )
+        els.append(f'<path d="{d_pwr_area}" fill="{ORANGE}" fill-opacity="0.24" stroke="none"/>')
+        els.append(_poly(pts_pwr, stroke=RED, sw=2.3))
+        els.append(_line(wx0, wy_pwr_base, wx1, wy_pwr_base, stroke=SLATE, sw=1.2))
+
+        els.append(_poly(pts_e_pos, stroke=BLUE, sw=1.8, dash="5 3"))
+        els.append(_poly(pts_e_neg, stroke=BLUE, sw=1.8, dash="2 3"))
+        els.append(txt(wx0 + 4, wy_mid - 49, "电场驻波包络 ±2E₀ sin(2πx/λ₀)", 9.4, BLUE, weight="700"))
+        els.append(txt(wx1 - 4, wy_pwr_base - 48, "加热功率 ∝ E² = sin²(2πx/λ₀)", 9.4, RED, "end", weight="700", halo=True))
+
+        # Mark cold nodes (0, 6.12, 12.24, 18.36 cm) & hot antinodes (3.06, 9.18, 15.30 cm)
+        for k_n in range(4):
+            xn = cx_cm(k_n * HALF_LAMBDA_CM)
+            els.append(f'<circle cx="{xn:.1f}" cy="{wy_pwr_base:.1f}" r="4.0" fill="{BLUE}" stroke="#ffffff" stroke-width="1.2"/>')
+            els.append(txt(xn, wy_pwr_base + 15, f"{k_n * HALF_LAMBDA_CM:.2f}", 8.9, BLUE, "middle", weight="700", cls="mono"))
+        els.append(txt(wx1 - 2, wy_pwr_base + 27, "位置 x (cm) · 蓝点=波节冷点(E≡0)", 9.0, MUTED, "end"))
+
+        # Dimension ruler between Peak 1 (3.06 cm) and Peak 2 (9.18 cm)
+        xp1 = cx_cm(0.5 * HALF_LAMBDA_CM)
+        xp2 = cx_cm(1.5 * HALF_LAMBDA_CM)
+        yp_r = wy_pwr_base - amp_p - 8.0
+        els.append(f'<circle cx="{xp1:.1f}" cy="{wy_pwr_base - amp_p:.1f}" r="4.2" fill="{RED}" stroke="#ffffff" stroke-width="1.2"/>')
+        els.append(f'<circle cx="{xp2:.1f}" cy="{wy_pwr_base - amp_p:.1f}" r="4.2" fill="{RED}" stroke="#ffffff" stroke-width="1.2"/>')
+        els.append(_line(xp1, yp_r, xp2, yp_r, stroke=RED, sw=1.6))
+        els.append(_line(xp1, yp_r - 4, xp1, yp_r + 4, stroke=RED, sw=1.6))
+        els.append(_line(xp2, yp_r - 4, xp2, yp_r + 4, stroke=RED, sw=1.6))
+        els.append(txt((xp1 + xp2) / 2, yp_r - 5, f"Δx = λ₀/2 = {HALF_LAMBDA_CM:.2f} cm", 9.6, RED, "middle", weight="700", halo=True))
+
+        # Kitchen Speed-of-Light Experiment Box
+        els.append(card(34, 276, 384, 150, rx=8, fill=AMBER_SOFT, stroke=AMBER, sw=1.0))
+        els.append(txt(46, 296, "🧀 厨房 20 秒实验：用一片芝士或巧克力亲手测出光速 c！", 10.5, AMBER, weight="700"))
+
+        # Chocolate bar graphic with 3 melted blisters spaced by 6.12 cm
+        els.append(card(48, 308, 356, 36, rx=6, fill="#78350f", stroke="#451a03", sw=1.2))
+        for k_p in range(3):
+            bx_p = 94.0 + k_p * 116.0
+            els.append(f'<ellipse cx="{bx_p:.1f}" cy="326" rx="15" ry="9" fill="#fde047" stroke="{RED}" stroke-width="1.4"/>')
+            els.append(txt(bx_p, 329.5, "融斑", 8.7, "#78350f", "middle", weight="700"))
+        els.append(_line(94.0, 352, 210.0, 352, stroke=INK, sw=1.3))
+        els.append(txt(152.0, 364, "直尺实测融化点间距 Δx ≈ 6.1 cm", 9.2, INK, "middle", weight="700"))
+
+        els.append(txt(46, 384, "1. 取下玻璃转盘，平铺一整盘芝士片/大块排块巧克力，高火叮 15–20 秒；", 9.4, BODY))
+        els.append(txt(46, 402, "2. 量出相邻两个融化鼓包中心距 Δx ≈ 6.12 cm → 全波长 λ₀ = 2Δx = 12.24 cm；", 9.4, BODY))
+        els.append(txt(46, 420, f"3. 乘上背部铭牌频率：c = f × λ₀ = 2.45×10⁹ × 0.1224 ≈ {c_calc_e8:.2f}×10⁸ m/s！", 9.5, RED, weight="700"))
+
+        # ---------------- Right Panel: Top-Down Turntable Placement ----------------
+        els.append(card(444, 62, 296, 378))
+        els.append(txt(458, 85, "② 俯视转盘：碗放盘边比放圆心热得更匀！", PANEL_TITLE, INK, weight="700"))
+
+        tcx, tcy, tr = 592.0, 214.0, 94.0
+        # Cavity floor square around turntable
+        els.append(card(482, 108, 220, 212, rx=10, fill="#f1f5f9", stroke=SLATE, sw=1.4))
+
+        # Stationary standing-wave hot/cold patches inside cavity
+        hot_spots = [(536, 160), (648, 160), (536, 268), (648, 268)]
+        cold_spots = [(592, 214), (592, 146), (592, 282), (524, 214), (660, 214)]
+        for hx, hy in hot_spots:
+            els.append(f'<circle cx="{hx}" cy="{hy}" r="22" fill="{ORANGE}" fill-opacity="0.26"/>')
+            els.append(txt(hx, hy + 3.5, "波腹热", 8.8, ORANGE, "middle", weight="700"))
+        for kx, ky in cold_spots:
+            if (kx, ky) != (592, 214):
+                els.append(f'<circle cx="{kx}" cy="{ky}" r="14" fill="{BLUE}" fill-opacity="0.18"/>')
+
+        # Glass turntable circle
+        els.append(f'<circle cx="{tcx}" cy="{tcy}" r="{tr}" fill="#ffffff" fill-opacity="0.42" stroke="{BLUE}" stroke-width="1.8"/>')
+
+        # Off-center orbit path (r_orb = 58 px)
+        r_orb = 58.0
+        els.append(f'<circle cx="{tcx}" cy="{tcy}" r="{r_orb}" fill="none" stroke="{GREEN}" stroke-width="1.8" stroke-dasharray="5 3"/>')
+
+        # Dead-center bowl trap (bad!)
+        els.append(f'<circle cx="{tcx}" cy="{tcy}" r="19" fill="{BLUE_SOFT}" stroke="{RED}" stroke-width="1.6" stroke-dasharray="3 2"/>')
+        els.append(txt(tcx, tcy - 2, "× 放圆心", 8.9, RED, "middle", weight="700"))
+        els.append(txt(tcx, tcy + 10, "原地打转", 8.5, BLUE, "middle", weight="600"))
+
+        # Animated off-center mug sweeping along r_orb through hot & cold zones (ends at +38 deg)
+        ang_end = math.radians(38.0)
+        mx = tcx + r_orb * math.cos(ang_end)
+        my = tcy + r_orb * math.sin(ang_end)
+        els.append(
+            f'<g class="mug-orbit">'
+            f'<circle cx="{mx:.1f}" cy="{my:.1f}" r="17" fill="{GREEN_SOFT}" stroke="{GREEN}" stroke-width="2.2"/>'
+            f'{txt(mx, my + 3.5, "✓ 偏心碗", 8.9, GREEN, "middle", weight="700")}'
+            f"</g>"
+        )
+
+        els.append(txt(592, 336, "加热单杯牛奶/单碗汤的黄金摆法：", 10.2, INK, weight="700", anchor="middle"))
+        els.append(txt(458, 357, "• 放正中央：圆心线速度 v = ω·0 = 0，一旦撞上波节冷区，", 9.4, BODY))
+        els.append(txt(458, 375, "  碗心转十圈还在原地挨冻！", 9.4, RED, weight="700"))
+        els.append(txt(458, 394, "• 偏心靠边放：碗沿大圆轨迹交替穿过波腹（热）与波节（冷），", 9.4, GREEN, weight="700"))
+        els.append(txt(458, 412, "  受热自动削峰填谷！（平板无转盘机型则靠底部旋转金属扇搅波）", 9.3, BODY))
+
+        return figure(
+            452,
+            "微波炉腔6.12厘米驻波节点与芝士测光速实验及转盘偏心摆碗轨迹动画图解",
+            f"左图精确绘制λ0=12.24cm驻波电场与sin²加热功率分布，相邻热点间距Δx=λ0/2={HALF_LAMBDA_CM:.2f}cm，并展示取下转盘融化芝士片测量Δx乘2.45GHz算出光速c≈3.00×10^8 m/s；右图俯视对比死守转盘圆心原地打转与偏心放置扫过冷热驻波区的均热原理。",
+            els,
+            extra_css=extra_css,
+        )
+
+    def _build_faraday_door_metal_grape():
+        """SVG 5: Three boundary phenomena: (1) Faraday 1.5mm door mesh & non-ionizing scale, (2) Smooth wall vs fork arc, (3) PNAS 2019 grape Mie dimer."""
+        # Verify grape internal wavelength compression (PNAS 2019, Khattak et al.):
+        # Water refractive index at 2.45 GHz: n = Re(sqrt(77 - i*12.3)) ≈ 8.80 -> lambda_grape = 12.24 / 8.80 ≈ 1.39 cm!
+        n_water = math.sqrt(0.5 * (77.0 + math.sqrt(77.0 ** 2 + 12.3 ** 2)))
+        lambda_grape_cm = LAMBDA0_CM / n_water
+        mesh_d_mm = 1.5
+        lambda_ratio_mesh = (LAMBDA0_CM * 10.0) / mesh_d_mm  # 81.6x!
+        assert 8.75 < n_water < 8.85
+        assert 1.35 < lambda_grape_cm < 1.45
+        assert lambda_ratio_mesh > 80.0
+
+        els = header(
+            "炉门黑网防泄漏、金属叉子冒电弧与“葡萄喷火”：一次看懂三大边界好奇问题",
+            "同是电磁波与导体/电介质的麦克斯韦方程，只因“几何尺寸与波长之比”不同，上演截然不同的物理剧目",
+        )
+
+        # ---------------- Column 1: Faraday Mesh Door & Non-Ionizing Safety ----------------
+        els.append(card(20, 64, 232, 378))
+        els.append(pill(32, 78, "现象 1 · 炉门黑网为什么能透光防波", fg=BLUE, bg=BLUE_SOFT, w=208, h=21, size=9.8))
+
+        # Perforated metal screen visual (y=108..214)
+        els.append(card(32, 108, 208, 108, rx=8, fill="#f8fafc", stroke=SLATE, sw=1.1))
+        # Metal mesh strip in center x=132..144 with small 1.5mm holes
+        els.append('<rect x="132" y="114" width="12" height="96" rx="2" fill="#334155"/>')
+        for h_i in range(6):
+            hy_hole = 123 + h_i * 15
+            els.append(f'<circle cx="138" cy="{hy_hole}" r="3.2" fill="#ffffff"/>')
+
+        # Left side: huge 122.4 mm microwave blocked & reflected!
+        mw_wave = []
+        for i in range(25):
+            wx = 40.0 + 84.0 * (i / 24.0)
+            wy = 146.0 + 18.0 * math.sin(2.0 * math.pi * (i / 24.0))
+            mw_wave.append((wx, wy))
+        els.append(_poly(mw_wave, stroke=ORANGE, sw=2.3))
+        els.append(txt(82, 124, "微波 λ₀=122.4 mm", 9.1, ORANGE, "middle", weight="700"))
+        els.append(txt(82, 177, "比网孔大 81 倍 → 弹回!", 8.9, RED, "middle", weight="700"))
+
+        # Right side: tiny 550 nm visible light passing straight through hole!
+        els.append(_line(96, 198, 226, 198, stroke=GREEN, sw=1.9, marker="arr-green"))
+        els.append(txt(188, 189, "可见光 ~0.00055 mm", 8.8, GREEN, "middle", weight="700"))
+        els.append(txt(188, 211, "小 2700 倍 → 畅通看清!", 8.8, GREEN, "middle", weight="600"))
+
+        els.append(txt(32, 236, "• 网孔直径 d ≈ 1.2–1.5 mm ≪ λ₀，微波进孔", 9.5, INK, weight="600"))
+        els.append(txt(32, 254, "  沦为指数衰减【倏逝波】（屏蔽 >50 dB）；", 9.4, BODY))
+        els.append(txt(32, 272, "• 门框四周再嵌一圈深 λ₀/4（~3 cm）扼流槽，", 9.4, BODY))
+        els.append(txt(32, 290, "  门外 5 cm 泄漏远低于国标/FDA 限值 5 mW/cm²。", 9.4, BLUE, weight="700"))
+
+        # Non-ionizing photon safety card
+        els.append(card(32, 304, 208, 124, rx=7, fill=GREEN_SOFT, stroke=GREEN, sw=1.0))
+        els.append(txt(42, 323, "微波会致癌或留“辐射毒”吗？绝对不会！", 9.6, GREEN, weight="700"))
+        els.append(txt(42, 342, "• 单光子能量 hf ≈ 0.00001 eV（10⁻⁵ eV），", 9.2, INK, weight="600"))
+        els.append(txt(42, 359, "  比打断化学键/DNA 所需的 ~5–12 eV 小", 9.2, BODY))
+        els.append(txt(42, 376, "  整整 50 万倍（比可见光还弱十万倍）！", 9.2, BODY))
+        els.append(txt(42, 395, "• 停机瞬间电磁波归零，就像关灯后屋里不留光；", 9.2, BODY))
+        els.append(txt(42, 413, "  ⚠️ 真危险：光滑杯热纯水易【过热暴沸】烫伤！", 9.1, RED, weight="700"))
+
+        # ---------------- Column 2: Metal Wall OK vs Fork Sparks & Gold Rim ----------------
+        els.append(card(264, 64, 232, 378))
+        els.append(pill(276, 78, "现象 2 · 炉壁是金属，为何怕叉子？", fg=ORANGE, bg=ORANGE_SOFT, w=208, h=21, size=9.8))
+
+        # Visual box comparing smooth thick wall vs sharp fork tines
+        els.append(card(276, 108, 208, 108, rx=8, fill="#fff7ed", stroke=ORANGE, sw=1.1))
+        # Left half: thick rounded cavity wall
+        els.append('<path d="M 288,120 L 288,204" stroke="#475569" stroke-width="8" stroke-linecap="round"/>')
+        els.append(_line(326, 144, 296, 160, stroke=BLUE, sw=1.8, marker="arr-blue"))
+        els.append(_line(296, 164, 326, 180, stroke=BLUE, sw=1.8, marker="arr-blue"))
+        els.append(txt(324, 132, "厚圆滑钢壁", 9.2, GREEN, "middle", weight="700"))
+        els.append(txt(324, 198, "平顺反射✓", 9.1, GREEN, "middle", weight="700"))
+
+        # Divider
+        els.append(_line(366, 116, 366, 208, stroke=HAIRLINE, sw=1.0, dash="3 3"))
+
+        # Right half: sharp fork tines with electric arc!
+        els.append('<path d="M 412,204 L 412,172 M 400,172 L 424,172 M 400,172 L 400,142 M 412,172 L 412,142 M 424,172 L 424,142" fill="none" stroke="#64748b" stroke-width="2.4" stroke-linecap="round"/>')
+        # Lightning spark between tine tips
+        els.append('<path d="M 401,140 L 407,131 L 405,138 L 412,129 L 418,137 L 423,140" fill="none" stroke="#dc2626" stroke-width="2.0"/>')
+        els.append(txt(424, 124, "尖齿 >3 kV/mm 击穿!", 9.0, RED, "middle", weight="700"))
+        els.append(txt(424, 198, "拉出电弧✗", 9.1, RED, "middle", weight="700"))
+
+        els.append(txt(276, 236, "微波遇金属会驱动表面数微米（趋肤深度 δ_s）", 9.4, BODY))
+        els.append(txt(276, 254, "内的自由电子高速奔涌，结局全看几何形状：", 9.4, INK, weight="600"))
+
+        els.append(card(276, 268, 208, 160, rx=7, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(286, 288, "1. 厚实圆滑炉壁 / 微波专用圆金属架：", 9.4, GREEN, weight="700"))
+        els.append(txt(286, 305, "   电荷无处堆积、电阻极低，乖乖做镜面反射。", 9.2, BODY))
+        els.append(txt(286, 326, "2. 叉子尖齿 / 揉皱锡纸尖角（尖端放电）：", 9.4, RED, weight="700"))
+        els.append(txt(286, 343, "   电荷挤在尖端，局部电场冲破空气击穿极限", 9.2, BODY))
+        els.append(txt(286, 360, "   （~3000 V/mm），瞬间电离空气劈啪冒火花！", 9.2, RED, weight="600"))
+        els.append(txt(286, 381, "3. 描金边瓷碗（亚微米极薄金银线）：", 9.4, ORANGE, weight="700"))
+        els.append(txt(286, 398, "   膜比趋肤深度还薄，电阻奇大，感应电流瞬", 9.2, BODY))
+        els.append(txt(286, 415, "   间把金边 I²R 烧红汽化，炸黑瓷釉！", 9.2, INK, weight="600"))
+
+        # ---------------- Column 3: Grape Plasma Mie Resonance (PNAS 2019) ----------------
+        els.append(card(508, 64, 232, 378))
+        els.append(pill(520, 78, "现象 3 · 两颗葡萄为什么擦出等离子火球", fg=PURPLE, bg=PURPLE_SOFT, w=208, h=21, size=9.6))
+
+        # Grape dimer visual (y=108..216)
+        els.append(card(520, 108, 208, 108, rx=8, fill=PURPLE_SOFT, stroke=PURPLE, sw=1.1))
+        g1x, g2x, gy_c, gr = 594.0, 654.0, 168.0, 29.0
+        els.append(f'<circle cx="{g1x}" cy="{gy_c}" r="{gr}" fill="#86efac" stroke="{GREEN}" stroke-width="1.8"/>')
+        els.append(f'<circle cx="{g2x}" cy="{gy_c}" r="{gr}" fill="#86efac" stroke="{GREEN}" stroke-width="1.8"/>')
+        # Compressed 1.4 cm standing wave inside each grape
+        for gx_c in (g1x, g2x):
+            g_wave = [
+                (gx_c - 22 + 44 * (i / 20.0), gy_c + 10.0 * math.sin(2.0 * math.pi * (i / 20.0)))
+                for i in range(21)
+            ]
+            els.append(_poly(g_wave, stroke=PURPLE, sw=1.7))
+        # Intense hotspot & Na/K plasma plume at contact point x=624
+        els.append(f'<circle cx="624" cy="{gy_c}" r="8.5" fill="#fef08a" stroke="{RED}" stroke-width="1.8"/>')
+        els.append('<path d="M 616,156 Q 624,116 632,156 Z" fill="#f97316" fill-opacity="0.82" stroke="#dc2626" stroke-width="1.2"/>')
+        els.append(txt(624, 123, "Na/K 等离子体火球!", 9.0, RED, "middle", weight="700", halo=True))
+        els.append(txt(556, 134, "n≈8.8 缩波", 8.9, PURPLE, "middle", weight="700"))
+        els.append(txt(624, 209, f"葡萄内波长缩至 λ_w ≈ {lambda_grape_cm:.1f} cm ≈ 葡萄直径!", 8.9, PURPLE, "middle", weight="700"))
+
+        els.append(txt(520, 236, "2019 年《美国科学院院刊》(PNAS) 揭开真凶：", 9.4, PURPLE, weight="700"))
+        els.append(txt(520, 254, "不是“果皮导电连桥”，而是【光学米氏谐振】！", 9.4, INK, weight="700"))
+
+        els.append(card(520, 268, 208, 160, rx=7, fill="#faf5ff", stroke=PURPLE, sw=0.9))
+        els.append(txt(530, 288, f"1. 水的折射率 n = √ε' ≈ {n_water:.1f}：", 9.4, PURPLE, weight="700"))
+        els.append(txt(530, 305, "   炉内 12.24 cm 微波钻进葡萄，波长瞬间", 9.2, BODY))
+        els.append(txt(530, 322, f"   缩至 λ_w ≈ {lambda_grape_cm:.1f} cm，恰好等于葡萄直径！", 9.2, INK, weight="600"))
+        els.append(txt(530, 343, "2. 双水球倏逝场耦合聚焦：", 9.4, ORANGE, weight="700"))
+        els.append(txt(530, 360, "   两颗水球挨近时，内部谐振场在 <1 mm 缝隙", 9.2, BODY))
+        els.append(txt(530, 377, "   叠出超强热点，连无皮纯水凝胶珠都照样喷火；", 9.2, BODY))
+        els.append(txt(530, 397, "3. 电离钠/钾离子 → 烧毁云母片：", 9.4, RED, weight="700"))
+        els.append(txt(530, 414, "   高温等离子体极易烧穿炉顶波导口，切勿模仿！", 9.2, RED, weight="700"))
+
+        return figure(
+            456,
+            "微波炉门法拉第金属网屏、叉子尖端电弧放电与双葡萄米氏谐振等离子体三大现象图解",
+            f"左栏对比122.4mm微波被1.5mm门网孔（小81倍）阻挡而550nm可见光畅通，并说明光子能量仅1.01×10^-5 eV属非电离辐射；中栏对比厚圆滑金属壁镜面反射与尖锐叉齿超3kV/mm击穿打火及薄金边I²R烧毁；右栏按PNAS(2019)解析水折射率n≈{n_water:.1f}将波长缩至{lambda_grape_cm:.1f}cm激发葡萄米氏谐振电离钠钾产生等离子体。",
+            els,
+        )
+
+    @register("microwave-oven", "微波炉五棒物理能量链、8腔磁控管电子轮辐动画与变频控温、水冰德拜弛豫与化冻热失控、6.12cm驻波测光速与转盘、炉门金属网与叉子打火及葡萄米氏谐振图解", "science_tech")
+    def build_microwave_oven():
+        write_svg(SUBDIR, "microwave-five-stage-chain.svg", _build_five_stage_chain())
+        write_svg(SUBDIR, "magnetron-electron-spokes.svg", _build_magnetron_electron_spokes())
+        write_svg(SUBDIR, "debye-water-ice-curve.svg", _build_debye_water_ice_curve())
+        write_svg(SUBDIR, "standing-wave-turntable.svg", _build_standing_wave_turntable())
+        write_svg(SUBDIR, "faraday-door-metal-grape.svg", _build_faraday_door_metal_grape())
+
+
+_register_microwave_oven()
+
+
+def _register_dna_double_helix():
+    """Visuals for the 1953 DNA Double Helix Decryption post."""
+    SUBDIR = "dna-double-helix"
+    RED = "#dc2626"
+    RED_SOFT = "#fef2f2"
+    AMBER = "#b45309"
+    AMBER_SOFT = "#fffbeb"
+    TEAL = "#0f766e"
+    TEAL_SOFT = "#f0fdfa"
+
+    def _line(x1, y1, x2, y2, stroke=HAIRLINE, sw=1.5, dash=None, marker=None, opacity=None):
+        attrs = [
+            f'x1="{x1:.1f}"',
+            f'y1="{y1:.1f}"',
+            f'x2="{x2:.1f}"',
+            f'y2="{y2:.1f}"',
+            f'stroke="{stroke}"',
+            f'stroke-width="{sw}"',
+        ]
+        if dash:
+            attrs.append(f'stroke-dasharray="{dash}"')
+        if marker:
+            attrs.append(f'marker-end="url(#{marker})"')
+        if opacity is not None:
+            attrs.append(f'opacity="{opacity}"')
+        return f'<line {" ".join(attrs)}/>'
+
+    def _poly(pts, stroke=BLUE, sw=2.2, fill="none", dash=None, cls=None):
+        d = "M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
+        extra = f' stroke-dasharray="{dash}"' if dash else ""
+        if cls:
+            extra += f' class="{cls}"'
+        return f'<path d="{d}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}" stroke-linecap="round" stroke-linejoin="round"{extra}/>'
+
+    # Canonical B-DNA & physical crystallography constants
+    PITCH_A = 34.0          # Å (3.4 nm) helical repeat pitch
+    RISE_A = 3.4            # Å (0.34 nm) axial rise per base pair
+    BP_PER_TURN = PITCH_A / RISE_A  # 10.0 in fiber diffraction (10.5 in solution)
+    RADIUS_A = 10.0         # Å (diameter = 20 Å = 2.0 nm)
+    OFFSET_FRAC = 3.0 / 8.0 # Axial offset Δz / P = 3/8 from missing l=4 layer line
+    MINOR_GROOVE_A = OFFSET_FRAC * PITCH_A        # 12.75 Å (~12 Å)
+    MAJOR_GROOVE_A = (1.0 - OFFSET_FRAC) * PITCH_A  # 21.25 Å (~22 Å)
+    CU_KA_A = 1.54          # Å Cu Kα X-ray wavelength
+    C1_C1_SPAN_A = 10.85    # Å isosteric C1'...C1' distance for both A-T and G-C
+
+    # Verify exact helical diffraction modulation |1 + exp(i 2π l Δz/P)|^2 = 4 cos^2(π l * 3/8)
+    def two_strand_mod(l_idx: int) -> float:
+        return 4.0 * (math.cos(math.pi * l_idx * OFFSET_FRAC) ** 2)
+
+    assert math.isclose(BP_PER_TURN, 10.0, rel_tol=1e-9)
+    assert math.isclose(two_strand_mod(4), 0.0, abs_tol=1e-12)  # Exact zero at l=4!
+    assert two_strand_mod(3) > 3.4 and two_strand_mod(5) > 3.4  # Bright at l=3 and l=5!
+    assert 12.0 < MINOR_GROOVE_A < 13.0 and 21.0 < MAJOR_GROOVE_A < 22.0
+
+    def _bessel_j(n: int, x: float) -> float:
+        """Series calculation of Bessel function of the first kind J_n(x) for |n| <= 10."""
+        sign = (-1) ** abs(n) if n < 0 and (abs(n) % 2 == 1) else 1.0
+        m_abs = abs(n)
+        total = 0.0
+        for k in range(28):
+            term = ((-1.0) ** k) * ((0.5 * x) ** (2 * k + m_abs)) / (
+                math.factorial(k) * math.factorial(k + m_abs)
+            )
+            total += term
+        return sign * total
+
+    def _build_photo51_fourier_diffraction():
+        """SVG 1: Why Photo 51 is NOT a shadow picture — Helical fiber X-ray diffraction & the 4 quantitative clues."""
+        els = header(
+            "“第 51 号照片”到底怎么读？—— 从一束 X 射线衍射斑反推双螺旋的四把标尺",
+            "照片不是分子影子，而是电子密度的傅里叶衍射强度 |F(q)|²：倒易空间里“越宽对应越窄、缺第 4 层藏着双链错位”",
+        )
+
+        # ---------------- Left Card: Real-Space Fiber & Helical Setup ----------------
+        els.append(card(20, 62, 344, 396))
+        els.append(txt(34, 84, "① 真实空间：高湿 B-DNA 纤维（曝光 62 小时）", PANEL_TITLE, INK, weight="700"))
+
+        # X-ray tube & beam hitting vertical hydrated DNA fiber
+        els.append(card(32, 98, 78, 44, rx=6, fill=ORANGE_SOFT, stroke=ORANGE, sw=1.2))
+        els.append(txt(71, 117, "Cu Kα X射线", 9.0, ORANGE, "middle", weight="700"))
+        els.append(txt(71, 132, "λ = 1.54 Å", 8.9, BODY, "middle", cls="mono"))
+        els.append(_line(110, 120, 168, 120, stroke=ORANGE, sw=2.2, marker="arr-orange"))
+
+        # Draw vertical coaxial double helix (x around 212, y from 104 to 330, 2 full turns = 226 px -> 1 turn = 113 px = 34 Å)
+        hx_c = 214.0
+        hy_top = 104.0
+        turn_px = 112.0
+        rad_px = 34.0
+        n_pts = 81
+        strand1, strand2 = [], []
+        for i in range(n_pts):
+            u = 2.0 * (i / (n_pts - 1))  # 0 to 2 turns
+            phi = 2.0 * math.pi * u
+            yy = hy_top + u * turn_px
+            strand1.append((hx_c + rad_px * math.sin(phi), yy))
+            strand2.append((hx_c + rad_px * math.sin(phi - 2.0 * math.pi * OFFSET_FRAC), yy))
+
+        # Horizontal base-pair rungs every 0.1 turn (3.4 Å)
+        for step in range(21):
+            u = step * 0.1
+            phi = 2.0 * math.pi * u
+            yy = hy_top + u * turn_px
+            x1 = hx_c + rad_px * math.sin(phi)
+            x2 = hx_c + rad_px * math.sin(phi - 2.0 * math.pi * OFFSET_FRAC)
+            els.append(_line(x1, yy, x2, yy, stroke="#cbd5e1", sw=1.5))
+
+        els.append(_poly(strand1, stroke=BLUE, sw=2.8))
+        els.append(_poly(strand2, stroke=TEAL, sw=2.8))
+
+        # Dimension annotations on real-space helix:
+        # 1) Pitch P = 34 Å (one full repeat y=104..216)
+        els.append(_line(258, hy_top, 270, hy_top, stroke=BLUE, sw=1.1))
+        els.append(_line(258, hy_top + turn_px, 270, hy_top + turn_px, stroke=BLUE, sw=1.1))
+        els.append(_line(265, hy_top + 3, 265, hy_top + turn_px - 3, stroke=BLUE, sw=1.4))
+        els.append(txt(274, hy_top + 48, "螺距 P = 34 Å", 9.3, BLUE, weight="700"))
+        els.append(txt(274, hy_top + 64, "(3.4 nm / 10层)", 8.8, BODY))
+
+        # 2) Minor vs Major groove (Δz = 3/8 P vs 5/8 P) on second turn y=216..328
+        y_t2 = hy_top + turn_px
+        y_minor = y_t2 + OFFSET_FRAC * turn_px
+        y_end = y_t2 + turn_px
+        els.append(_line(258, y_t2, 268, y_t2, stroke=TEAL, sw=1.0))
+        els.append(_line(258, y_minor, 268, y_minor, stroke=TEAL, sw=1.0))
+        els.append(_line(258, y_end, 268, y_end, stroke=PURPLE, sw=1.0))
+        els.append(_line(264, y_t2 + 2, 264, y_minor - 2, stroke=TEAL, sw=1.5))
+        els.append(_line(264, y_minor + 2, 264, y_end - 2, stroke=PURPLE, sw=1.5))
+        els.append(txt(272, (y_t2 + y_minor) / 2 + 3, "小沟 3/8 P ≈ 12 Å", 9.0, TEAL, weight="700"))
+        els.append(txt(272, (y_minor + y_end) / 2 + 3, "大沟 5/8 P ≈ 22 Å", 9.0, PURPLE, weight="700"))
+
+        # 3) Base rise h = 3.4 Å on left side & diameter 20 Å at bottom
+        els.append(txt(34, 184, "层距 h = 3.4 Å", 9.2, RED, weight="700"))
+        els.append(txt(34, 200, "(碱基叠放台阶)", 8.8, BODY))
+        els.append(_line(124, 186, 176, 186, stroke=RED, sw=1.2, marker="arr-red"))
+
+        els.append(_line(hx_c - rad_px, 340, hx_c + rad_px, 340, stroke=INK, sw=1.3))
+        els.append(txt(hx_c, 355, "直径 2r₀ = 20 Å (2.0 nm)", 9.2, INK, "middle", weight="700"))
+
+        # Explanation box on phase problem
+        els.append(card(32, 368, 320, 78, rx=7, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(42, 386, "⚠️ 为什么“照片 ≠ 三维模型”（晶体学相位丢失问题）？", 9.5, INK, weight="700"))
+        els.append(txt(42, 404, "• 底片只记录波强 I ∝ |F(q)|²，丢掉了电磁波的【相位 φ】；", 9.2, BODY))
+        els.append(txt(42, 421, "• 无法像普通相机那样直接逆变换成像，必须靠贝塞尔函数", 9.2, BODY))
+        els.append(txt(42, 437, "  理论 + 立体化学搭模型正演核对，才能锁死原子坐标！", 9.2, BLUE, weight="600"))
+
+        # ---------------- Right Card: Simulated Photo 51 Diffraction Film ----------------
+        els.append(card(378, 62, 362, 396))
+        els.append(txt(392, 84, "② 倒易空间：第 51 号照片的四把破译标尺", PANEL_TITLE, INK, weight="700"))
+
+        # Circular X-ray film plate centered at (532, 232), radius 122
+        fx_c, fy_c, f_rad = 520.0, 228.0, 120.0
+        els.append(f'<circle cx="{fx_c}" cy="{fy_c}" r="{f_rad}" fill="#f1f5f9" stroke="{SLATE}" stroke-width="1.6"/>')
+        els.append(_line(fx_c - f_rad + 8, fy_c, fx_c + f_rad - 8, fy_c, stroke="#cbd5e1", sw=0.9, dash="3 3"))
+        els.append(_line(fx_c, fy_c - f_rad + 8, fx_c, fy_c + f_rad - 8, stroke="#cbd5e1", sw=0.9, dash="3 3"))
+        # Central lead beamstop
+        els.append(f'<circle cx="{fx_c}" cy="{fy_c}" r="8.5" fill="#ffffff" stroke="{SLATE}" stroke-width="1.3"/>')
+
+        # Layer spacing dy = 10.2 px per layer line (so l = ±10 sits at dy = ±102 px inside f_rad=120!)
+        dy_layer = 10.2
+        # Top & bottom meridian strong arcs at l = ±10 (base pair stacking 3.4 Å!)
+        for sgn in (-1, 1):
+            ym = fy_c + sgn * 10 * dy_layer
+            arc_r = 102.0
+            els.append(
+                f'<path d="M {fx_c - 28:.1f},{ym - sgn * 4:.1f} Q {fx_c:.1f},{ym + sgn * 4:.1f} {fx_c + 28:.1f},{ym - sgn * 4:.1f}" '
+                f'fill="none" stroke="#0f172a" stroke-width="6.5" stroke-linecap="round"/>'
+            )
+
+        # Calculate and plot helical Bessel cross spots for l = ±1, ±2, ±3, ±4(missing!), ±5
+        # First maximum of |J_l(u)| occurs near u_max ≈ 1.84, 3.05, 4.20, 5.32, 6.42 -> dx proportional to u_max!
+        u_peaks = {1: 1.84, 2: 3.05, 3: 4.20, 4: 5.32, 5: 6.42}
+        dx_scale = 8.4
+        # Dashed guide X-arms showing ~40° cross
+        els.append(_line(fx_c - 58, fy_c - 68, fx_c + 58, fy_c + 68, stroke=BLUE, sw=1.0, dash="3 3"))
+        els.append(_line(fx_c - 58, fy_c + 68, fx_c + 58, fy_c - 68, stroke=BLUE, sw=1.0, dash="3 3"))
+
+        for l_abs in (1, 2, 3, 4, 5):
+            j_peak = abs(_bessel_j(l_abs, u_peaks[l_abs]))
+            mod_val = two_strand_mod(l_abs)  # 4 cos^2(3π l / 8) -> 0 at l=4!
+            intensity = (j_peak ** 2) * mod_val
+            dx = u_peaks[l_abs] * dx_scale
+            for sgn_y in (-1, 1):
+                yy = fy_c + sgn_y * l_abs * dy_layer
+                for sgn_x in (-1, 1):
+                    xx = fx_c + sgn_x * dx
+                    if l_abs == 4:
+                        # Explicitly mark the missing 4th layer line with hollow red dashed rings!
+                        els.append(
+                            f'<circle cx="{xx:.1f}" cy="{yy:.1f}" r="4.6" fill="none" stroke="{RED}" stroke-width="1.3" stroke-dasharray="2 2"/>'
+                        )
+                    else:
+                        opacity = min(0.95, 0.35 + 0.95 * intensity)
+                        w_bar = 7.5 + 8.0 * intensity
+                        h_bar = 3.6 + 2.2 * intensity
+                        els.append(
+                            f'<ellipse cx="{xx:.1f}" cy="{yy:.1f}" rx="{w_bar / 2:.1f}" ry="{h_bar / 2:.1f}" '
+                            f'fill="#0f172a" fill-opacity="{opacity:.2f}"/>'
+                        )
+
+        # Callout labels on right side of film (x=648..730) — carefully spaced vertically!
+        # Clue A: l = 10 meridian arc (top y ≈ 126)
+        els.append(_line(fx_c + 30, fy_c - 102, 646, 118, stroke=RED, sw=1.2))
+        els.append(txt(650, 115, "标尺③ 极轴强弧", 9.2, RED, weight="700"))
+        els.append(txt(650, 130, "l=10 → 层距 3.4 Å", 8.8, BODY))
+
+        # Clue B: Missing l = 4 spot (y = 228 - 40.8 = 187.2)
+        els.append(_line(fx_c + u_peaks[4] * dx_scale + 6, fy_c - 4 * dy_layer, 646, 176, stroke=RED, sw=1.3))
+        els.append(txt(650, 173, "标尺④ 第4层消失!", 9.2, RED, weight="700"))
+        els.append(txt(650, 188, "双链错开 3/8 螺距", 8.8, RED, weight="600"))
+        els.append(txt(650, 203, "波峰波谷相消归零", 8.7, MUTED))
+
+        # Clue C: Layer spacing Δy (l=1,2,3 around y=238..259)
+        els.append(_line(fx_c + u_peaks[2] * dx_scale + 8, fy_c + 2 * dy_layer, 646, 248, stroke=BLUE, sw=1.2))
+        els.append(txt(650, 245, "标尺② 层线间距", 9.2, BLUE, weight="700"))
+        els.append(txt(650, 260, "1/10 弧距 → 34 Å", 8.8, BODY))
+        els.append(txt(650, 275, "(每转 10 对碱基)", 8.7, MUTED))
+
+        # Clue D: X-cross (bottom-right)
+        els.append(_line(fx_c + u_peaks[5] * dx_scale + 6, fy_c + 5 * dy_layer, 646, 312, stroke=PURPLE, sw=1.2))
+        els.append(txt(650, 310, "标尺① 黑色 X 十字", 9.2, PURPLE, weight="700"))
+        els.append(txt(650, 325, "螺旋侧视折线指纹", 8.8, BODY))
+
+        # Bottom summary card inside right panel
+        els.append(card(390, 360, 338, 86, rx=7, fill=BLUE_SOFT, stroke=BLUE, sw=1.0))
+        els.append(txt(400, 379, "克里克贝塞尔衍射公式（1952）一锤定音：", 9.5, BLUE, weight="700"))
+        els.append(txt(400, 397, "• 第 l 层线振幅 ∝ J_l(2πr₀R)·[1 + e^(i·2πl·3/8)]；", 9.1, INK, cls="mono"))
+        els.append(txt(400, 415, "• 当 l = 4 时相位差恰好为 3π（1 + e^(i3π) = 0），完全相消！", 9.1, RED, weight="700"))
+        els.append(txt(400, 433, "• 再加单斜 C2 晶胞二阶对称轴 → 两条链必然【反向平行】！", 9.1, INK, weight="600"))
+
+        return figure(
+            470,
+            "富兰克林第51号X射线衍射照片的四项定量几何标尺与第4层线相消原理图",
+            "左图展示高湿B-DNA纤维（螺距34Å、碱基层距3.4Å、双链轴向错位3/8螺距形成12Å小沟与22Å大沟）受1.54Å X射线照射及相位丢失问题；右图按贝塞尔函数与双链干涉因子4cos²(3πl/8)精确重现Photo 51的X形斑点、l=10极轴强弧及第4层线完全相消。",
+            els,
+        )
+
+    def _build_pauling_triple_vs_bdna():
+        """SVG 2: Why Linus Pauling's 1953 Triple Helix failed vs Correct Right-Handed Antiparallel B-DNA."""
+        # Henderson-Hasselbalch ionization of DNA phosphodiester (pKa ≈ 1.5) at physiological pH = 7.0
+        pka_phos, ph_cell = 1.5, 7.0
+        ion_ratio = 10.0 ** (ph_cell - pka_phos)  # 3.16e5 -> 99.9997% negatively charged!
+        assert ion_ratio > 3.0e5
+
+        els = header(
+            "连拿两次诺奖的鲍林为什么翻了车？——“反穿毛衣”三螺旋死胡同 vs 反向平行双螺旋",
+            "把带负电的磷酸骨架塞进圆心，既违背酸碱电离常识，也彻底堵死了遗传密码自我复制的可能",
+        )
+
+        # ---------------- Left Panel: Pauling's Inside-Out Triple Helix (Jan 1953) ----------------
+        els.append(card(20, 62, 348, 386))
+        els.append(pill(34, 76, "错误路线 · 鲍林“内骨外碱”三螺旋 (1953.01)", fg=RED, bg=RED_SOFT, w=318, h=22, size=9.8))
+
+        # Top-down axial cross-section centered at (194, 188)
+        px_c, py_c = 194.0, 190.0
+        els.append(f'<circle cx="{px_c}" cy="{py_c}" r="74" fill="#fff1f2" stroke="{RED}" stroke-width="1.2" stroke-dasharray="4 3"/>')
+        # Three negatively charged PO4- groups crammed tightly at r = 18 px!
+        for k in range(3):
+            ang = math.radians(-90 + k * 120)
+            cx_p = px_c + 19.0 * math.cos(ang)
+            cy_p = py_c + 19.0 * math.sin(ang)
+            # Outward-pointing bases at r = 56 px (cannot pair with each other!)
+            bx_p = px_c + 56.0 * math.cos(ang)
+            by_p = py_c + 56.0 * math.sin(ang)
+            els.append(_line(cx_p, cy_p, bx_p, by_p, stroke=SLATE, sw=2.2))
+            els.append(
+                f'<rect x="{bx_p - 15:.1f}" y="{by_p - 9:.1f}" width="30" height="18" rx="4" fill="#e2e8f0" stroke="{SLATE}" stroke-width="1.3"/>'
+            )
+            els.append(txt(bx_p, by_p + 3.5, "碱基", 8.6, BODY, "middle", weight="700"))
+            els.append(f'<circle cx="{cx_p:.1f}" cy="{cy_p:.1f}" r="12.5" fill="{RED}" stroke="#ffffff" stroke-width="1.4"/>')
+            els.append(txt(cx_p, cy_p + 3.5, "PO₄⁻", 8.5, "#ffffff", "middle", weight="700"))
+
+        # Central repulsion starburst
+        els.append(txt(px_c, py_c + 4, "⚡", 12.0, "#fef08a", "middle"))
+        els.append(txt(86, 134, "碱基朝外乱伸", 9.0, SLATE, "middle", weight="700"))
+        els.append(txt(302, 134, "无法互补配对!", 9.0, RED, "middle", weight="700"))
+        els.append(txt(px_c, 280, "轴心挤塞 3 串负电磷酸根 → 剧烈库仑排斥炸裂！", 9.3, RED, "middle", weight="700"))
+
+        # Three fatal flaws card
+        els.append(card(34, 294, 320, 140, rx=7, fill="#fff1f2", stroke=RED, sw=1.0))
+        els.append(txt(44, 314, "为什么沃森和克里克一眼看穿它是错的？", 9.6, RED, weight="700"))
+        els.append(txt(44, 334, "• 化学硬伤：磷酸二酯 pKₐ ≈ 1.5–2，在细胞 pH ≈ 7 下", 9.2, INK, weight="600"))
+        els.append(txt(44, 351, "  99.999% 带负电（若不电离就不是“核酸”了！），", 9.2, BODY))
+        els.append(txt(44, 368, "  硬塞进轴心既同性相斥，范德华原子间距也撞车；", 9.2, BODY))
+        els.append(txt(44, 387, "• 实验误导：鲍林混用了干 A 型与湿 B 型模糊旧照片；", 9.2, BODY))
+        els.append(txt(44, 406, "• 生物学死穴：碱基朝外悬空，根本没法做【复制模具】！", 9.2, RED, weight="700"))
+        els.append(txt(44, 423, "  （注：沃森自己 1951.11 首版模型也犯过同款内骨错误）", 8.9, MUTED))
+
+        # ---------------- Right Panel: Correct Antiparallel B-DNA Cross-Section & Grooves ----------------
+        els.append(card(382, 62, 358, 386))
+        els.append(pill(396, 76, "正确结构 · 沃森-克里克反向平行双螺旋 (1953.04)", fg=GREEN, bg=GREEN_SOFT, w=330, h=22, size=9.8))
+
+        # Top-down axial cross-section centered at (561, 194)
+        bx_c, by_c, r_ring = 561.0, 194.0, 62.0
+        # Surrounding water/Na+ hydration halo
+        els.append(f'<circle cx="{bx_c}" cy="{by_c}" r="72" fill="#ecfeff" stroke="{TEAL}" stroke-width="1.0" stroke-dasharray="3 3"/>')
+        els.append(f'<circle cx="{bx_c}" cy="{by_c}" r="{r_ring}" fill="#ffffff" stroke="{BLUE}" stroke-width="2.0"/>')
+
+        # Two glycosidic attachment points NOT 180° apart, but ~135° apart (minor groove bottom, major groove top!)
+        ang1 = math.radians(22.5)    # right-bottom
+        ang2 = math.radians(157.5)   # left-bottom (span = 135° = 3/8 of 360° -> Minor groove at bottom, 225° Major groove at top!)
+        p1x, p1y = bx_c + r_ring * math.cos(ang1), by_c + r_ring * math.sin(ang1)
+        p2x, p2y = bx_c + r_ring * math.cos(ang2), by_c + r_ring * math.sin(ang2)
+
+        # Hydrophobic base pair plate spanning inside cylinder + H-bonds
+        els.append(
+            f'<rect x="{bx_c - 42:.1f}" y="{by_c - 11:.1f}" width="38" height="26" rx="4" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.5"/>'
+        )
+        els.append(
+            f'<rect x="{bx_c + 4:.1f}" y="{by_c - 11:.1f}" width="38" height="26" rx="4" fill="{AMBER_SOFT}" stroke="{AMBER}" stroke-width="1.5"/>'
+        )
+        for hb_y in (by_c - 4, by_c + 2, by_c + 8):
+            els.append(_line(bx_c - 4, hb_y, bx_c + 4, hb_y, stroke=RED, sw=1.8, dash="2 2"))
+        els.append(txt(bx_c - 23, by_c + 5, "嘌呤", 9.0, BLUE, "middle", weight="700"))
+        els.append(txt(bx_c + 23, by_c + 5, "嘧啶", 9.0, AMBER, "middle", weight="700"))
+
+        # Glycosidic bonds from C1' on phosphate-sugar ring to base pair
+        els.append(_line(p2x, p2y, bx_c - 34, by_c + 15, stroke=SLATE, sw=2.0))
+        els.append(_line(p1x, p1y, bx_c + 34, by_c + 15, stroke=SLATE, sw=2.0))
+
+        # Two hydrophilic negatively charged PO4- groups on OUTSIDE, running in opposite directions (5'->3' ⊙ vs 3'->5' ⊗)
+        els.append(f'<circle cx="{p2x:.1f}" cy="{p2y:.1f}" r="13.0" fill="{BLUE}" stroke="#ffffff" stroke-width="1.5"/>')
+        els.append(txt(p2x, p2y + 3.5, "5'→3'", 8.2, "#ffffff", "middle", weight="700"))
+        els.append(f'<circle cx="{p1x:.1f}" cy="{p1y:.1f}" r="13.0" fill="{TEAL}" stroke="#ffffff" stroke-width="1.5"/>')
+        els.append(txt(p1x, p1y + 3.5, "3'←5'", 8.2, "#ffffff", "middle", weight="700"))
+
+        # Groove labels placed cleanly above/inside without crossing circle border
+        els.append(txt(bx_c, 113, "宽敞大沟 (~22 Å，张角 ~225°)：蛋白可直接伸入识字", 8.9, PURPLE, "middle", weight="700"))
+        els.append(txt(bx_c, by_c + 44, "狭窄小沟 (~12 Å)", 8.9, TEAL, "middle", weight="700"))
+
+        # Hydration & Na+ labels outside
+        els.append(txt(438, 134, "外层亲水 PO₄⁻", 9.0, BLUE, "middle", weight="700"))
+        els.append(txt(438, 149, "拥抱水与 Na⁺", 8.7, TEAL, "middle"))
+        els.append(txt(684, 134, "C2 二阶对称轴", 9.0, GREEN, "middle", weight="700"))
+        els.append(txt(684, 149, "双链反向平行", 8.7, BODY, "middle"))
+        els.append(txt(bx_c, 280, "亲水负电骨架朝外泡水，疏水碱基朝内叠成恒宽阶梯！", 9.3, GREEN, "middle", weight="700"))
+
+        # Summary card
+        els.append(card(396, 294, 330, 140, rx=7, fill=GREEN_SOFT, stroke=GREEN, sw=1.0))
+        els.append(txt(406, 314, "外骨内碱 + 反向平行的三重精妙：", 9.6, GREEN, weight="700"))
+        els.append(txt(406, 334, "• 静电与疏水双赢：带负电磷酸基团朝外被水分子和阳离", 9.2, BODY))
+        els.append(txt(406, 351, "  子（Na⁺/Mg²⁺）轻松屏蔽；扁平疏水碱基躲在内部避水堆叠；", 9.2, BODY))
+        els.append(txt(406, 370, "• 反向平行（5'→3' 对 3'→5'）：契合富兰克林单斜 C2 晶胞", 9.2, INK, weight="600"))
+        els.append(txt(406, 387, "  对称性——把整段双螺旋上下倒置 180°，骨架依然重合；", 9.2, BODY))
+        els.append(txt(406, 406, "• 偏心糖苷键造出【大沟 + 小沟】：无需解开双链，调控", 9.2, PURPLE, weight="700"))
+        els.append(txt(406, 423, "  蛋白就能从 22 Å 大沟直接“摸”清里面的遗传字母！", 9.2, INK, weight="600"))
+
+        return figure(
+            460,
+            "鲍林内骨外碱三螺旋错误模型与沃森克里克外骨内碱反向平行B-DNA横截面对比图",
+            "左图展示鲍林1953年1月三螺旋模型将三串在pH=7下带负电的磷酸基团塞入轴心引发强烈库仑排斥且碱基朝外无法复制；右图展示正确B-DNA横截面：负电磷酸骨架朝外水合、疏水碱基配对居中，且糖苷键偏心张角造出22Å大沟与12Å小沟。",
+            els,
+        )
+
+    def _build_donohue_tautomer_isosteric_pairing():
+        """SVG 3: Jerry Donohue's Feb 27 Keto-Enol correction + Chargaff 1:1 data + Feb 28 Cardboard Isosteric Sliding Animation."""
+        extra_css = """
+      .cardboard-slide {
+        animation: slidePlate 3.2s cubic-bezier(0.25, 0.8, 0.25, 1) 0.3s 1 forwards;
+      }
+      @keyframes slidePlate {
+        0%   { transform: translateX(34px); opacity: 0.55; }
+        75%  { transform: translateX(0px); opacity: 1; }
+        100% { transform: translateX(0px); opacity: 1; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .cardboard-slide { animation: none; }
+      }"""
+
+        # Verify Chargaff's 1950 human DNA molar percentages sum and 1:1 ratios
+        a_pct, t_pct, g_pct, c_pct = 30.9, 29.4, 19.9, 19.8
+        assert math.isclose(a_pct + t_pct + g_pct + c_pct, 100.0, abs_tol=0.1)
+        assert abs(a_pct / t_pct - 1.0) < 0.06 and abs(g_pct / c_pct - 1.0) < 0.02
+
+        els = header(
+            "一颗氢原子搬家救活双螺旋：多诺休“酮式纠错”与 2 月 28 日硬纸板等宽拼图",
+            "教科书画错了互变异构体！一旦换回真实酮式（C=O），A=T 与 G≡C 的骨架跨度分毫不差锁死在 10.85 Å",
+        )
+
+        # ---------------- Top-Left Card: Donohue's Keto vs Enol Tautomer Correction ----------------
+        els.append(card(20, 62, 386, 178))
+        els.append(txt(34, 84, "① 2月27日办公室神助攻：多诺休指出教科书画反了！", PANEL_TITLE, INK, weight="700"))
+
+        # Left mini-box: Wrong textbook Enol form (-C-OH)
+        els.append(card(32, 96, 168, 96, rx=7, fill=RED_SOFT, stroke=RED, sw=1.1))
+        els.append(txt(116, 114, "✗ 旧教科书：烯醇式 (Enol)", 9.3, RED, "middle", weight="700"))
+        els.append(txt(116, 136, "C4 — O — H  |  N3 (无H)", 9.4, INK, "middle", weight="700", cls="mono"))
+        els.append(txt(116, 156, "H 挂在氧上，氢键方向全歪", 8.9, BODY, "middle"))
+        els.append(txt(116, 173, "水溶液中占比 < 0.01%！", 8.9, RED, "middle", weight="700"))
+
+        # Arrow between tautomers
+        els.append(_line(204, 144, 224, 144, stroke=GREEN, sw=2.0, marker="arr-green"))
+
+        # Right mini-box: True physiological Keto form (C=O + N-H)
+        els.append(card(228, 96, 166, 96, rx=7, fill=GREEN_SOFT, stroke=GREEN, sw=1.2))
+        els.append(txt(311, 114, "✓ 真实生理态：酮式 (Keto)", 9.3, GREEN, "middle", weight="700"))
+        els.append(txt(311, 136, "C4 = O (受体) | N3 — H (供体)", 9.1, INK, "middle", weight="700", cls="mono"))
+        els.append(txt(311, 156, "H 搬回环氮，精准对位配对", 8.9, BODY, "middle"))
+        els.append(txt(311, 173, "水溶液中占比 > 99.99%！", 8.9, GREEN, "middle", weight="700"))
+
+        els.append(txt(34, 212, "• 沃森起初按旧书烯醇式硬拼“同类配同类”（A配A宽 ~24 Å、T配T窄", 9.1, BODY))
+        els.append(txt(34, 228, "  ~16 Å），骨架鼓包塌腰全变形；多诺休一句话推倒重来！", 9.1, INK, weight="600"))
+
+        # ---------------- Top-Right Card: Chargaff's 1950 Mystery Ratios ----------------
+        els.append(card(418, 62, 322, 178))
+        els.append(txt(432, 84, "② 查伽夫定则（1950）：为什么两两相等？", PANEL_TITLE, INK, weight="700"))
+
+        # Horizontal bar chart of Human DNA base composition (A 30.9%, T 29.4%, G 19.9%, C 19.8%)
+        bars = [
+            ("腺嘌呤 A (双环)", a_pct, BLUE, 104),
+            ("胸腺嘧啶 T (单环)", t_pct, BLUE, 129),
+            ("鸟嘌呤 G (双环)", g_pct, TEAL, 158),
+            ("胞嘧啶 C (单环)", c_pct, TEAL, 183),
+        ]
+        for label_b, pct_b, col_b, yy_b in bars:
+            els.append(txt(432, yy_b + 11, label_b, 9.0, INK, weight="600"))
+            bw = pct_b * 3.0  # max ~93 px -> leaves clean gap before A≈T
+            els.append(f'<rect x="546" y="{yy_b}" width="{bw:.1f}" height="15" rx="3" fill="{col_b}" fill-opacity="0.82"/>')
+            els.append(txt(552 + bw, yy_b + 11.5, f"{pct_b:.1f}%", 9.0, col_b, weight="700", cls="mono"))
+
+        # Brackets showing A≈T and G≈C
+        els.append(txt(714, 123, "A ≈ T", 9.3, BLUE, "middle", weight="700"))
+        els.append(txt(714, 177, "G ≈ C", 9.3, TEAL, "middle", weight="700"))
+        els.append(txt(432, 214, "• 不同物种 (A+T)/(G+C) 千差万别（排除四核苷酸死循环），", 9.0, BODY))
+        els.append(txt(432, 229, "  但永远满足 A=T、G=C —— 暗示大环必牵手小环！", 9.0, PURPLE, weight="700"))
+
+        # ---------------- Bottom Full-Width Card: Feb 28 Cardboard Isosteric Lock ----------------
+        els.append(card(20, 252, 720, 220))
+        els.append(txt(34, 274, "③ 1953年2月28日清晨硬纸板顿悟：双环嘌呤 + 单环嘧啶 = 10.85 Å 完全等宽同构（Isosteric）！", PANEL_TITLE, INK, weight="700"))
+
+        # Two side-by-side gauge bays sharing identical C1'...C1' rail width!
+        # Left bay: A = T (2 hydrogen bonds), x_rail_L = 68, x_rail_R = 328 (span = 260 px == 10.85 Å!)
+        # Right bay: G ≡ C (3 hydrogen bonds), x_rail_L = 432, x_rail_R = 692 (span = 260 px == 10.85 Å!)
+        for bay_idx, (xL, xR, pur_name, pyr_name, n_hb, col_main, col_soft) in enumerate([
+            (64.0, 324.0, "腺嘌呤 A (嘌呤·双环)", "胸腺嘧啶 T (嘧啶·单环)", 2, BLUE, BLUE_SOFT),
+            (436.0, 696.0, "鸟嘌呤 G (嘌呤·双环)", "胞嘧啶 C (嘧啶·单环)", 3, TEAL, "#ccfbf1"),
+        ]):
+            # Fixed sugar-phosphate backbone rails at C1' positions
+            els.append(_line(xL, 294, xL, 424, stroke=INK, sw=3.0))
+            els.append(_line(xR, 294, xR, 424, stroke=INK, sw=3.0))
+            els.append(f'<circle cx="{xL}" cy="368" r="5.5" fill="{INK}"/>')
+            els.append(f'<circle cx="{xR}" cy="368" r="5.5" fill="{INK}"/>')
+            els.append(txt(xL, 289, "C1'", 8.8, INK, "middle", weight="700", cls="mono"))
+            els.append(txt(xR, 289, "C1'", 8.8, INK, "middle", weight="700", cls="mono"))
+
+            # Purine 2-ring plate (left side, fixed to xL)
+            els.append(_line(xL, 368, xL + 22, 355, stroke=SLATE, sw=2.2))
+            els.append(
+                f'<rect x="{xL + 22:.1f}" y="320" width="112" height="60" rx="6" fill="{col_soft}" stroke="{col_main}" stroke-width="1.8"/>'
+            )
+            els.append(_line(xL + 66, 320, xL + 66, 380, stroke=col_main, sw=1.2, dash="3 2"))
+            els.append(txt(xL + 78, 345, pur_name, 9.2, col_main, "middle", weight="700"))
+            if n_hb == 2:
+                els.append(txt(xL + 104, 365, "N6-H ··· / N1", 8.5, BODY, "middle", cls="mono"))
+            else:
+                els.append(txt(xL + 102, 365, "O6 / N1-H / N2-H", 8.4, BODY, "middle", cls="mono"))
+
+            # Animated Pyrimidine 1-ring cardboard cutout sliding into exact 10.85 Å lock!
+            hb_ys = [337.0, 362.0] if n_hb == 2 else [332.0, 350.0, 368.0]
+            pyr_group = [
+                f'<g class="cardboard-slide">',
+                f'<rect x="{xL + 166:.1f}" y="320" width="72" height="60" rx="6" fill="{AMBER_SOFT}" stroke="{AMBER}" stroke-width="1.8"/>',
+                _line(xL + 238, 355, xR, 368, stroke=SLATE, sw=2.2),
+                txt(xL + 202, 345, pyr_name[:5], 9.2, AMBER, "middle", weight="700"),
+                txt(xL + 202, 364, "酮式拼板", 8.6, BODY, "middle"),
+            ]
+            for hy in hb_ys:
+                pyr_group.append(_line(xL + 135, hy, xL + 165, hy, stroke=RED, sw=2.1, dash="3 2"))
+            pyr_group.append("</g>")
+            els.extend(pyr_group)
+
+            hb_label = "2 条氢键 (A=T)" if n_hb == 2 else "3 条氢键 (G≡C，更耐热!)"
+            els.append(txt(xL + 150, 308, hb_label, 9.1, RED, "middle", weight="700"))
+
+            # Identical C1'...C1' span ruler at y = 404
+            els.append(_line(xL + 4, 404, xR - 4, 404, stroke=GREEN, sw=1.8))
+            els.append(
+                txt((xL + xR) / 2, 420, f"糖苷键跨度 C1'···C1' = {C1_C1_SPAN_A:.2f} Å（完全等宽！）", 9.3, GREEN, "middle", weight="700")
+            )
+
+        els.append(
+            txt(
+                380,
+                452,
+                "★ 终极几何奇迹：无论写 A-T、T-A、G-C 还是 C-G，两根扶手间距恒定不变 → 单链字母顺序完全自由，可编码无穷生命信息，另一条链自动互补锁死！",
+                9.3,
+                INK,
+                "middle",
+                weight="700",
+            )
+        )
+
+        return figure(
+            484,
+            "多诺休酮式烯醇式互变异构纠错、查伽夫碱基比例与沃森硬纸板10.85埃等宽互补配对动画图解",
+            f"左上对比旧教科书错误烯醇式与水溶液中占99.99%以上的真实酮式构型；右上展示查伽夫1950年人源DNA实测比例（A={a_pct}%≈T={t_pct}%，G={g_pct}%≈C={c_pct}%）；下方动画演示双环嘌呤配单环嘧啶（A=T两氢键、G≡C三氢键）如何令C1'···C1'跨度精确同构于{C1_C1_SPAN_A:.2f}Å。",
+            els,
+            extra_css=extra_css,
+        )
+
+    def _build_metal_model_and_abz_family():
+        """SVG 4: 1953 Cavendish sheet-metal & brass rod model + A-DNA, B-DNA, Z-DNA conformational comparison."""
+        els = header(
+            "从卡文迪许车间 1.8 米金属模型，到 A / B / Z 三大双螺旋家族",
+            "左：四路证据汇流成 1953 年铝片铜杆立体模型；右：湿度与序列怎样让双螺旋变胖（A型）或左旋折线化（Z型）",
+        )
+
+        # ---------------- Left Panel: 1953 Cavendish Metal Model & Quartet Evidence ----------------
+        els.append(card(20, 62, 344, 396))
+        els.append(txt(34, 84, "① 1953.03–04 剑桥金属板模型：为什么非要动手搭？", PANEL_TITLE, INK, weight="700"))
+
+        # Schematic illustration of the iconic Cavendish retort-stand & precision-cut aluminum base plates model!
+        els.append(card(34, 98, 152, 224, rx=8, fill="#f8fafc", stroke=SLATE, sw=1.2))
+        # Retort stand base & central vertical steel rod + plumb line
+        els.append('<rect x="64" y="294" width="92" height="8" rx="3" fill="#334155"/>')
+        els.append(_line(110, 108, 110, 294, stroke="#475569", sw=3.2))
+        # Plumb bob hanging to verify vertical helix axis
+        els.append(_line(158, 114, 158, 260, stroke=ORANGE, sw=1.1, dash="3 2"))
+        els.append('<polygon points="154,260 162,260 158,272" fill="#ea580c"/>')
+        els.append(txt(158, 286, "铅垂校轴", 8.3, ORANGE, "middle", weight="700"))
+
+        # Brass wire sugar-phosphate rods & precision-cut metal plates (purine + pyrimidine clamped horizontally)
+        m_s1, m_s2 = [], []
+        for i in range(41):
+            u = 1.2 * (i / 40.0)
+            phi = 2.0 * math.pi * u
+            yy = 116.0 + u * 138.0
+            x1 = 104.0 + 34.0 * math.sin(phi)
+            x2 = 104.0 + 34.0 * math.sin(phi - 2.0 * math.pi * OFFSET_FRAC)
+            m_s1.append((x1, yy))
+            m_s2.append((x2, yy))
+            if i % 5 == 0:
+                xm = 0.5 * (x1 + x2)
+                els.append(_line(x1, yy, x2, yy, stroke="#64748b", sw=2.4))
+                els.append(
+                    f'<polygon points="{xm - 11:.1f},{yy - 4:.1f} {xm + 2:.1f},{yy - 4:.1f} {xm + 5:.1f},{yy + 4:.1f} {xm - 8:.1f},{yy + 4:.1f}" '
+                    f'fill="#93c5fd" stroke="{BLUE}" stroke-width="1.0"/>'
+                )
+        els.append(_poly(m_s1, stroke="#b45309", sw=2.3))
+        els.append(_poly(m_s2, stroke="#0f766e", sw=2.3))
+        els.append(txt(110, 315, "高约 1.8 m 铝片铜杆原模", 8.6, INK, "middle", weight="700"))
+
+        # Right side of left panel: Four evidence streams converging + 2023 Nature historical note
+        pillars = [
+            (196, 98, "伦敦国王学院 X 射线组", "富兰克林 & 威尔金斯：B型湿态", "Photo 51 + MRC 定量晶胞报告", BLUE, BLUE_SOFT),
+            (196, 154, "哥伦比亚大学分析化学", "查伽夫 (1950)：跨物种精确测定", "A:T = 1:1，G:C = 1:1 铁律", PURPLE, PURPLE_SOFT),
+            (196, 210, "卡文迪许晶体数学理论", "克里克等 (1952)：螺旋贝塞尔变换", "与单斜 C2 二阶反平行对称", TEAL, "#ccfbf1"),
+            (196, 266, "加州理工结构化学真传", "多诺休 (1953.02)：酮式氢键键长", "车间精密剪裁铝板检验原子不撞车", AMBER, AMBER_SOFT),
+        ]
+        for px, py, t_head, t_l1, t_l2, c_fg, c_bg in pillars:
+            els.append(card(px, py, 156, 50, rx=6, fill=c_bg, stroke=c_fg, sw=1.0))
+            els.append(txt(px + 8, py + 16, t_head, 9.0, c_fg, weight="700"))
+            els.append(txt(px + 8, py + 31, t_l1, 8.4, INK))
+            els.append(txt(px + 8, py + 44, t_l2, 8.3, BODY))
+
+        # Historical clarification box (Nature 1953 trio + Nature 2023 Cobb & Comfort)
+        els.append(card(34, 332, 318, 114, rx=7, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(44, 350, "史实正本清源（1953《自然》三联发 & 2023 档案新考）：", 9.3, INK, weight="700"))
+        els.append(txt(44, 368, "• 1953.04.25《Nature》同刊连发 3 篇（沃森&克里克、威尔金斯组、", 8.9, BODY))
+        els.append(txt(44, 384, "  富兰克林&高斯林），经布拉格爵士推荐免审直发以见证集体突破；", 8.9, BODY))
+        els.append(txt(44, 401, "• 2023《Nature》档案考证指出：富兰克林并非“看不懂照片的受害者”，", 8.9, BLUE, weight="600"))
+        els.append(txt(44, 417, "  她独立推导出外骨双链与 3/8 错位，是并驾齐驱的【四重奏】核心成员", 8.9, INK, weight="600"))
+        els.append(txt(44, 434, "  （惜于 1958 年 37 岁病逝，无缘不授逝者的 1962 年诺贝尔奖）。", 8.8, MUTED))
+
+        # ---------------- Right Panel: A-DNA, B-DNA, Z-DNA Three Conformations ----------------
+        els.append(card(378, 62, 362, 396))
+        els.append(txt(392, 84, "② 不止一种双螺旋：A 型、B 型与左手 Z 型三态对比", PANEL_TITLE, INK, weight="700"))
+
+        # Three side-by-side helix columns at x_centers = 442, 558, 674
+        confs = [
+            ("A-DNA", "低湿 <75% / RNA杂交", "右手·短粗", 23.0, "11 bp", "倾角 20°", AMBER, AMBER_SOFT, 440.0, "a"),
+            ("B-DNA", "生理高湿 >92%（主力!）", "右手·标准", 20.0, "10.5 bp", "近垂直 0°", BLUE, BLUE_SOFT, 559.0, "b"),
+            ("Z-DNA", "高盐 / CG交替序列", "左手·细长折线!", 18.0, "12 bp", "顺反交替", PURPLE, PURPLE_SOFT, 678.0, "z"),
+        ]
+        for cname, ccond, chand, diam_a, bp_str, tilt_str, c_fg, c_bg, cx_col, mode in confs:
+            els.append(card(cx_col - 52, 98, 104, 242, rx=7, fill=c_bg, stroke=c_fg, sw=1.1))
+            els.append(txt(cx_col, 117, cname, 10.2, c_fg, "middle", weight="700"))
+            els.append(txt(cx_col, 132, chand, 8.9, INK, "middle", weight="700"))
+
+            # Draw geometrically scaled helix width (diam_a * 1.45 px) from y=146 to y=262
+            r_vis = diam_a * 1.35
+            pts_a, pts_b = [], []
+            for i in range(37):
+                u = 1.35 * (i / 36.0)
+                sgn_h = -1.0 if mode == "z" else 1.0  # Left-handed flips chirality!
+                phi = sgn_h * 2.0 * math.pi * u
+                yy = 148.0 + u * 84.0
+                if mode == "z":
+                    # Characteristic zig-zag sugar-phosphate backbone of Z-DNA!
+                    zig = 3.6 * (1 if (i % 2 == 0) else -1)
+                    x1 = cx_col + r_vis * math.sin(phi) + zig
+                    x2 = cx_col + r_vis * math.sin(phi - 2.4) - zig
+                else:
+                    x1 = cx_col + r_vis * math.sin(phi)
+                    x2 = cx_col + r_vis * math.sin(phi - 2.35)
+                pts_a.append((x1, yy))
+                pts_b.append((x2, yy))
+                if i % 4 == 0:
+                    # In A-DNA, base pairs tilt 20° to helix axis!
+                    dy_tilt = 5.5 if mode == "a" else 0.0
+                    els.append(_line(x1, yy - dy_tilt, x2, yy + dy_tilt, stroke="#94a3b8", sw=1.4))
+            els.append(_poly(pts_a, stroke=c_fg, sw=2.3))
+            els.append(_poly(pts_b, stroke=INK, sw=1.8))
+
+            els.append(txt(cx_col, 282, f"直径 ~{diam_a:.0f} Å", 9.0, INK, "middle", weight="700"))
+            els.append(txt(cx_col, 298, f"每圈 {bp_str}", 8.9, c_fg, "middle", weight="700"))
+            els.append(txt(cx_col, 314, f"碱基 {tilt_str}", 8.7, BODY, "middle"))
+            els.append(txt(cx_col, 330, ccond, 8.2, MUTED, "middle"))
+
+        # Why A-form vs B-form mattered historically!
+        els.append(card(390, 350, 338, 96, rx=7, fill="#fffbeb", stroke=AMBER, sw=1.0))
+        els.append(txt(400, 369, "💡 富兰克林最重要的早期发现之一：区分【干 A 型】与【湿 B 型】！", 9.2, AMBER, weight="700"))
+        els.append(txt(400, 387, "• 在她之前（如阿斯特伯里），学界拍到的常是 A+B 混合模糊斑点；", 9.0, BODY))
+        els.append(txt(400, 404, "• 富兰克林精准控湿分离两态，但她曾花一年主攻斑点更丰富的干晶 A 型", 9.0, BODY))
+        els.append(txt(400, 421, "  （碱基斜倾 20°，X 十字不如 B 型直白），而活细胞内部恰恰是湿润 B 型！", 9.0, INK, weight="600"))
+
+        return figure(
+            470,
+            "1953年卡文迪许金属板DNA模型四路证据汇流与A型B型Z型三种双螺旋构象对比图",
+            "左图重现沃森与克里克高约1.8米的铝板铜杆立体模型及伦敦国王学院X射线、查伽夫定则、贝塞尔衍射理论、多诺休酮式化学四路证据汇流，并补充2023年Nature档案新考；右图按真实比例尺对比短粗右旋A-DNA（23Å，11bp，倾角20°）、标准活细胞右旋B-DNA（20Å，10.5bp）与细长左旋折线Z-DNA（18Å，12bp）。",
+            els,
+        )
+
+    def _build_unzipping_semiconservative():
+        """SVG 5: Antiparallel unzipping copying mechanism + 1958 Meselson-Stahl 15N/14N CsCl proof."""
+        extra_css = """
+      .daughter-grow {
+        animation: growDaughter 3.0s ease-out 0.3s 1 forwards;
+      }
+      @keyframes growDaughter {
+        0%   { opacity: 0.20; stroke-dashoffset: 80; }
+        100% { opacity: 1.00; stroke-dashoffset: 0; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .daughter-grow { animation: none; opacity: 1; }
+      }"""
+
+        # CsCl buoyant densities in Meselson & Stahl (PNAS 1958):
+        rho_15_15 = 1.724  # g/cm^3 heavy-heavy
+        rho_15_14 = 1.717  # g/cm^3 hybrid (exact midpoint!)
+        rho_14_14 = 1.710  # g/cm^3 light-light
+        assert math.isclose(0.5 * (rho_15_15 + rho_14_14), rho_15_14, abs_tol=1e-6)
+
+        els = header(
+            "科学史上最凡尔赛的一句话：拉链一开一分为二，与 1958 年同位素铁证",
+            "“我们并非没有注意到，我们所假设的特定配对立即提示了遗传物质的一种可能复制机制”——沃森 & 克里克 (1953)",
+        )
+
+        # ---------------- Left Panel: Unzipping Complementary Template Copying ----------------
+        els.append(card(20, 62, 368, 378))
+        els.append(txt(34, 84, "① 半保留复制：每条旧链都是新链的天然模具", PANEL_TITLE, INK, weight="700"))
+
+        # Top intact parental duplex (y=106..206) -> Y-shaped replication fork (y=206..346)
+        # Parental left strand (BLUE, 5'->3' downward) and parental right strand (BLUE, 3'->5' downward)
+        els.append(_line(164, 108, 164, 206, stroke=BLUE, sw=4.0))
+        els.append(_line(244, 108, 244, 206, stroke=BLUE, sw=4.0))
+        els.append(txt(148, 114, "5'", 9.2, BLUE, "end", weight="700", cls="mono"))
+        els.append(txt(260, 114, "3'", 9.2, BLUE, "start", weight="700", cls="mono"))
+
+        parent_pairs = [("A", "T"), ("G", "C"), ("T", "A"), ("C", "G")]
+        for idx, (bL, bR) in enumerate(parent_pairs):
+            yy = 122 + idx * 22
+            els.append(_line(166, yy, 200, yy, stroke=BLUE, sw=2.0))
+            els.append(_line(208, yy, 242, yy, stroke=BLUE, sw=2.0))
+            els.append(_line(200, yy, 208, yy, stroke=SLATE, sw=1.5, dash="2 2"))
+            els.append(txt(182, yy - 4, bL, 9.0, INK, "middle", weight="700", cls="mono"))
+            els.append(txt(226, yy - 4, bR, 9.0, INK, "middle", weight="700", cls="mono"))
+
+        # Unzipping fork diverging into Left Duplex (x=76..148) and Right Duplex (x=260..332)
+        els.append(_poly([(164, 206), (132, 232), (82, 248), (82, 344)], stroke=BLUE, sw=4.0))
+        els.append(_poly([(244, 206), (276, 232), (326, 248), (326, 344)], stroke=BLUE, sw=4.0))
+        els.append(txt(204, 222, "氢键解旋拉开", 9.0, ORANGE, "middle", weight="700"))
+
+        # Newly synthesized complementary daughter strands in RED/ORANGE (animated reveal!)
+        daughter_els = ['<g class="daughter-grow">']
+        daughter_els.append(_line(148, 252, 148, 344, stroke=ORANGE, sw=4.0, dash="120 0"))
+        daughter_els.append(_line(260, 252, 260, 344, stroke=ORANGE, sw=4.0, dash="120 0"))
+        fork_pairs = [("A", "T"), ("T", "A"), ("G", "C")]
+        for idx, (bL, bR) in enumerate(fork_pairs):
+            yy = 266 + idx * 28
+            # Left daughter duplex: old Blue 'bL' templates new Orange 'bR'
+            daughter_els.append(_line(84, yy, 112, yy, stroke=BLUE, sw=2.0))
+            daughter_els.append(_line(120, yy, 146, yy, stroke=ORANGE, sw=2.0))
+            daughter_els.append(_line(112, yy, 120, yy, stroke=RED, sw=1.6, dash="2 2"))
+            daughter_els.append(txt(98, yy - 4, bL, 9.0, BLUE, "middle", weight="700", cls="mono"))
+            daughter_els.append(txt(133, yy - 4, bR, 9.0, ORANGE, "middle", weight="700", cls="mono"))
+
+            # Right daughter duplex: new Orange 'bL' pairs with old Blue 'bR'
+            daughter_els.append(_line(262, yy, 288, yy, stroke=ORANGE, sw=2.0))
+            daughter_els.append(_line(296, yy, 324, yy, stroke=BLUE, sw=2.0))
+            daughter_els.append(_line(288, yy, 296, yy, stroke=RED, sw=1.6, dash="2 2"))
+            daughter_els.append(txt(275, yy - 4, bL, 9.0, ORANGE, "middle", weight="700", cls="mono"))
+            daughter_els.append(txt(310, yy - 4, bR, 9.0, BLUE, "middle", weight="700", cls="mono"))
+        daughter_els.append("</g>")
+        els.extend(daughter_els)
+
+        els.append(txt(115, 364, "子代 DNA ①（1旧蓝+1新橙）", 9.0, INK, "middle", weight="700"))
+        els.append(txt(293, 364, "子代 DNA ②（1新橙+1旧蓝）", 9.0, INK, "middle", weight="700"))
+        els.append(txt(204, 388, "两份拷贝序列完全一致：A-T / G-C / T-A / C-G ···", 9.2, GREEN, "middle", weight="700"))
+        els.append(txt(204, 408, "结构即功能：看见双螺旋的一瞬，遗传之谜自动解开！", 9.2, INK, "middle", weight="600"))
+        els.append(txt(204, 426, "（注：真实细胞中由解旋酶与 DNA 聚合酶沿新链 5'→3' 合成）", 8.7, MUTED, "middle"))
+
+        # ---------------- Right Panel: 1958 Meselson & Stahl 15N/14N Proof ----------------
+        els.append(card(402, 62, 338, 378))
+        els.append(txt(416, 84, "② 梅塞尔森-斯塔尔实验（1958）：给新旧链称重！", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(416, 103, "用重氮 ¹⁵N 喂养大肠杆菌再换轻氮 ¹⁴N，超速离心看浮力条带：", 9.0, BODY))
+
+        # Three centrifuge tubes at x_centers = 462, 566, 670
+        # Map densities: 1.710 (light, y=168), 1.717 (hybrid, y=214), 1.724 (heavy, y=260)
+        y_light, y_hyb, y_heavy = 172.0, 214.0, 256.0
+        tubes = [
+            (462.0, "第 0 代", "纯 ¹⁵N 亲代", [(y_heavy, BLUE, "100% 重带")]),
+            (566.0, "第 1 代 (20min)", "复制 1 次", [(y_hyb, PURPLE, "100% 杂合带")]),
+            (670.0, "第 2 代 (40min)", "复制 2 次", [(y_light, ORANGE, "50% 轻"), (y_hyb, PURPLE, "50% 杂")]),
+        ]
+        for tx, t_gen, t_sub, bands in tubes:
+            els.append(txt(tx, 126, t_gen, 9.4, INK, "middle", weight="700"))
+            els.append(txt(tx, 141, t_sub, 8.6, MUTED, "middle"))
+            # Centrifuge tube outline (y=150..290, rounded bottom)
+            els.append(
+                f'<path d="M {tx - 24:.1f},150 L {tx - 24:.1f},272 A 24,18 0 0 0 {tx + 24:.1f},272 L {tx + 24:.1f},150 Z" '
+                f'fill="#f8fafc" stroke="{SLATE}" stroke-width="1.5"/>'
+            )
+            # Dashed reference levels across tube
+            for y_ref in (y_light, y_hyb, y_heavy):
+                els.append(_line(tx - 22, y_ref, tx + 22, y_ref, stroke="#e2e8f0", sw=0.9, dash="2 2"))
+            for yb, bcol, blab in bands:
+                els.append(f'<rect x="{tx - 21:.1f}" y="{yb - 5:.1f}" width="42" height="10" rx="3" fill="{bcol}"/>')
+                els.append(txt(tx, yb - 9, blab, 8.3, bcol, "middle", weight="700"))
+
+        # Density scale labels on far right / bottom of tubes
+        els.append(txt(428, y_light + 3, "1.710", 8.2, ORANGE, "end", weight="700", cls="mono"))
+        els.append(txt(428, y_hyb + 3, "1.717", 8.2, PURPLE, "end", weight="700", cls="mono"))
+        els.append(txt(428, y_heavy + 3, "1.724", 8.2, BLUE, "end", weight="700", cls="mono"))
+        els.append(txt(566, 308, "氯化铯 (CsCl) 密度梯度超速离心（单位：g/cm³）", 8.8, MUTED, "middle"))
+
+        # Elimination logic box
+        els.append(card(416, 320, 310, 108, rx=7, fill=GREEN_SOFT, stroke=GREEN, sw=1.0))
+        els.append(txt(426, 340, "两代离心条带，当场判死另外两种假说：", 9.4, GREEN, weight="700"))
+        els.append(txt(426, 359, "• 第 1 代只出唯一居中带（1.717）→ 排除【全保留复制】", 9.0, INK, weight="600"))
+        els.append(txt(426, 376, "  （若是全保留，第 1 代就会直接分裂成一重一轻两条带）；", 8.9, BODY))
+        els.append(txt(426, 394, "• 第 2 代分出 1:1 轻带与杂合带 → 排除【弥散碎块复制】，", 9.0, INK, weight="600"))
+        els.append(txt(426, 412, "  被誉为“生物学史上最美丽的实验”，双螺旋预言彻底封神！", 8.9, GREEN, weight="700"))
+
+        return figure(
+            452,
+            "DNA双螺旋互补解旋半保留复制机制与1958年梅塞尔森-斯塔尔同位素超速离心验证图解",
+            f"左图动画演示亲代双链解旋后各作模板合成互补新链；右图按真实氯化铯浮力密度（¹⁵N/¹⁵N {rho_15_15}、¹⁵N/¹⁴N {rho_15_14}、¹⁴N/¹⁴N {rho_14_14} g/cm³）绘制第0、1、2代离心条带，直观排除全保留与弥散假说。",
+            els,
+            extra_css=extra_css,
+        )
+
+    def _build_helix_to_x_cross_stepwise():
+        """SVG 0: Step-by-step physical bridge from Franklin's paperclip setup -> zig-zag grating X-cross -> 1-strand vs 1/2-offset vs 3/8-offset double helix!"""
+        sym_half = [4.0 * (math.cos(0.5 * math.pi * l_i) ** 2) for l_i in (1, 2, 3, 4, 5)]
+        real_38 = [two_strand_mod(l_i) for l_i in (1, 2, 3, 4, 5)]
+        assert sym_half[0] < 1e-12 and sym_half[2] < 1e-12 and sym_half[4] < 1e-12
+        assert real_38[3] < 1e-12 and all(real_38[idx] > 0.5 for idx in (0, 1, 2, 4))
+
+        els = header(
+            "X 射线衍射究竟怎么对应出双螺旋？—— 从富兰克林回形针相机到“X 十字 + 第 4 层隐身”三步拆解",
+            "先拆单根弹簧为何打出交叉 X，再对比“单螺旋 / 对半双螺旋 / 3/8 错位双螺旋”—— 一眼看穿双链密码！",
+        )
+
+        # ---------------- Column 1: Paperclip + Cork + 92% RH H2 Microcamera Setup ----------------
+        els.append(card(20, 64, 232, 390))
+        els.append(pill(32, 78, "第 1 步 · 富兰克林的回形针控湿相机", fg=BLUE, bg=BLUE_SOFT, w=208, h=22, size=9.6))
+
+        els.append(card(32, 110, 208, 156, rx=8, fill="#f8fafc", stroke=BLUE, sw=1.2))
+        els.append(txt(136, 127, "密封氢气控湿室（相对湿度 92%）", 8.8, BLUE, "middle", weight="700"))
+
+        els.append('<rect x="38" y="176" width="42" height="14" rx="2" fill="#475569"/>')
+        els.append(_line(80, 183, 128, 183, stroke=ORANGE, sw=2.2, marker="arr-orange"))
+        els.append(txt(62, 170, "微焦点准直管", 8.3, SLATE, "middle", weight="700"))
+        els.append(txt(62, 204, "X射线束", 8.4, ORANGE, "middle", weight="700"))
+
+        els.append('<rect x="114" y="236" width="40" height="18" rx="3" fill="#fed7aa" stroke="#ea580c" stroke-width="1.2"/>')
+        els.append(txt(134, 248, "软木塞", 8.1, ORANGE, "middle", weight="700"))
+        els.append('<path d="M 122,236 L 122,144 Q 134,136 146,144 L 146,236" fill="none" stroke="#64748b" stroke-width="2.0"/>')
+        els.append(_line(134, 146, 134, 232, stroke=BLUE, sw=2.8))
+        els.append(txt(166, 156, "DNA细丝", 8.3, BLUE, "start", weight="700"))
+
+        els.append(_line(136, 183, 214, 148, stroke=ORANGE, sw=1.3, dash="3 2"))
+        els.append(_line(136, 183, 214, 218, stroke=ORANGE, sw=1.3, dash="3 2"))
+        els.append('<rect x="214" y="138" width="8" height="92" rx="2" fill="#1e293b"/>')
+        els.append(txt(206, 250, "感光底片", 8.3, INK, "end", weight="700"))
+
+        els.append(txt(32, 286, "• 样本玄机：把几十万根同向排列的钠盐 DNA", 9.1, INK, weight="600"))
+        els.append(txt(32, 303, "  分子拉成 <1 mm 细丝，绷在弯折回形针上；", 9.0, BODY))
+        els.append(txt(32, 322, "• 为什么要通湿润氢气？一来让 DNA 吸饱水保", 9.1, BLUE, weight="700"))
+        els.append(txt(32, 339, "  持活细胞里的【B 型湿态】，二来氢气原子极轻，", 9.0, BODY))
+        els.append(txt(32, 356, "  不会像空气那样乱散射 X 射线弄脏底片！", 9.0, BODY))
+        els.append(txt(32, 375, "• 苦熬 62 小时（1952.05.02–06）：富兰克林与", 9.0, INK, weight="600"))
+        els.append(txt(32, 392, "  博士生高斯林终于冲印出清晰绝伦的 Photo 51", 9.0, BODY))
+        els.append(txt(32, 410, "  （早在 1938 年女先驱弗洛伦斯·贝尔已拍到首张", 8.7, MUTED))
+        els.append(txt(32, 426, "  模糊 DNA 纤维衍射图，初测出 ~3.4 Å 层距）。", 8.7, MUTED))
+
+        # ---------------- Column 2: Why a Helix Makes an "X" Cross (Orthogonal Zig-Zag Slits!) ----------------
+        els.append(card(264, 64, 232, 390))
+        els.append(pill(276, 78, "第 2 步 · 螺旋侧看是“之”字 → 正交打出 X", fg=PURPLE, bg=PURPLE_SOFT, w=208, h=22, size=9.5))
+
+        els.append(card(276, 110, 208, 156, rx=8, fill="#faf5ff", stroke=PURPLE, sw=1.1))
+        zz_x0, zz_x1 = 296.0, 340.0
+        for turn_k in range(3):
+            y_b = 134.0 + turn_k * 36.0
+            els.append(_line(zz_x0, y_b + 18, zz_x1, y_b, stroke=BLUE, sw=2.8))
+            els.append(_line(zz_x0, y_b + 18, zz_x1, y_b + 36, stroke=ORANGE, sw=2.4, dash="4 2"))
+        els.append(txt(318, 126, "螺旋侧视投影", 8.6, INK, "middle", weight="700"))
+        els.append(txt(318, 257, "蓝 / 前壁 + 橙 \\ 后壁", 8.4, BODY, "middle", weight="600"))
+
+        els.append(_line(348, 188, 372, 188, stroke=PURPLE, sw=1.8, marker="arr-purple"))
+
+        xc_x, yc_x = 426.0, 188.0
+        els.append(f'<circle cx="{xc_x}" cy="{yc_x}" r="42" fill="#ffffff" stroke="{SLATE}" stroke-width="1.1"/>')
+        for step_s in (-2, -1, 1, 2):
+            sx = xc_x + step_s * 12.0
+            sy = yc_x + step_s * 14.0
+            els.append(f'<circle cx="{sx:.1f}" cy="{sy:.1f}" r="3.3" fill="{BLUE}"/>')
+        for step_s in (-2, -1, 1, 2):
+            sx = xc_x + step_s * 12.0
+            sy = yc_x - step_s * 14.0
+            els.append(f'<circle cx="{sx:.1f}" cy="{sy:.1f}" r="3.3" fill="{ORANGE}"/>')
+        els.append(_line(xc_x - 27, yc_x - 31, xc_x + 27, yc_x + 31, stroke=BLUE, sw=1.0, dash="2 2"))
+        els.append(_line(xc_x - 27, yc_x + 31, xc_x + 27, yc_x - 31, stroke=ORANGE, sw=1.0, dash="2 2"))
+        els.append(txt(xc_x, 126, "衍射垂直于斜杠!", 8.5, PURPLE, "middle", weight="700"))
+        els.append(txt(xc_x, 257, "蓝 \\ + 橙 / = 十字 X", 8.5, PURPLE, "middle", weight="700"))
+
+        els.append(txt(276, 286, "• 为什么螺旋不打出圆圈，反而打出【X 字】？", 9.1, INK, weight="700"))
+        els.append(txt(276, 304, "  从侧面平视一根弹簧，前半圈斜向右上（/），", 9.0, BODY))
+        els.append(txt(276, 321, "  后半圈斜向右下（\\），拼成周期性“之”字斜栅；", 9.0, BODY))
+        els.append(txt(276, 340, "• 波动光学铁律：一排平行斜缝的衍射亮斑，必", 9.1, PURPLE, weight="700"))
+        els.append(txt(276, 357, "  然沿着【与狭缝垂直（90°）】的方向排成直线！", 9.0, INK, weight="600"))
+        els.append(txt(276, 376, "• 于是前半圈（/）打出左上→右下（\\）斑点串，", 9.0, BLUE, weight="600"))
+        els.append(txt(276, 393, "  后半圈（\\）打出左下→右上（/）斑点串——两", 9.0, ORANGE, weight="600"))
+        els.append(txt(276, 410, "  束斜线在底片正中叠加，就是螺旋独有的 X 指纹！", 9.0, INK, weight="700"))
+        els.append(txt(276, 428, "  （在家拿激光笔照圆珠笔弹簧，墙上也会现出 X！）", 8.6, MUTED))
+
+        # ---------------- Column 3: Single Helix vs 1/2 Double vs Real 3/8 Double Helix ----------------
+        els.append(card(508, 64, 232, 390))
+        els.append(pill(520, 78, "第 3 步 · 单链还是双链？第 4 层破案！", fg=GREEN, bg=GREEN_SOFT, w=208, h=22, size=9.6))
+
+        els.append(card(520, 110, 208, 156, rx=8, fill="#f0fdf4", stroke=GREEN, sw=1.1))
+        col_models = [
+            (566.0, "单根螺旋", [1.0, 1.0, 1.0, 1.0, 1.0], SLATE),
+            (628.0, "对半双链", sym_half, ORANGE),
+            (690.0, "真实B型", real_38, GREEN),
+        ]
+        for mx_c, m_title, m_vals, m_col in col_models:
+            els.append(txt(mx_c, 126, m_title, 8.4, m_col, "middle", weight="700"))
+            for idx_l in range(5):
+                l_num = 5 - idx_l
+                val_actual = m_vals[l_num - 1]
+                yy_l = 145.0 + idx_l * 21.5
+                if mx_c == 566.0:
+                    els.append(txt(528, yy_l + 3.5, f"l={l_num}", 8.2, INK, "start", weight="700", cls="mono"))
+                if val_actual < 1e-6:
+                    els.append(
+                        f'<circle cx="{mx_c:.1f}" cy="{yy_l:.1f}" r="5.0" fill="#ffffff" stroke="{RED}" stroke-width="1.4" stroke-dasharray="2 2"/>'
+                    )
+                    els.append(txt(mx_c, yy_l + 3, "×", 8.3, RED, "middle", weight="700"))
+                else:
+                    op = min(0.95, 0.35 + 0.18 * val_actual)
+                    els.append(f'<rect x="{mx_c - 12:.1f}" y="{yy_l - 4:.1f}" width="24" height="8" rx="3" fill="#0f172a" fill-opacity="{op:.2f}"/>')
+
+        els.append(txt(624, 257, "唯独【错位 3/8 螺距】精准熄灭 l=4！", 8.6, RED, "middle", weight="700"))
+
+        els.append(txt(520, 286, "• 光有 X 字，怎么知道是【两条链】缠在一起？", 9.1, INK, weight="700"))
+        els.append(txt(520, 304, "  1) 若只有 1 根螺旋：第 1～5 层斑点【全亮】；", 9.0, BODY))
+        els.append(txt(520, 322, "  2) 若 2 根链正对半错开 1/2 螺距：第 1、3、5", 9.0, BODY))
+        els.append(txt(520, 339, "     奇数层会全部波峰撞波谷熄灭（不符照片！）；", 9.0, ORANGE, weight="600"))
+        els.append(txt(520, 358, "  3) Photo 51 偏偏只缺【第 4 层（l=4）】！", 9.1, RED, weight="700"))
+        els.append(txt(520, 375, "     富兰克林独立算出：第二条同轴链沿轴错开了", 9.0, INK, weight="600"))
+        els.append(txt(520, 392, "     3/8 螺距（在 l=4 处恰相差 4×3/8 = 1.5 个波", 9.0, BODY))
+        els.append(txt(520, 409, "     长，完美相消归零！），顺带把表面切出一窄", 9.0, BODY))
+        els.append(txt(520, 426, "     （3/8P 小沟）一宽（5/8P 大沟）的不对称双沟！", 9.0, GREEN, weight="700"))
+
+        return figure(
+            466,
+            "从富兰克林回形针控湿相机到螺旋正交X衍射及单双螺旋第4层线干涉判据三步图解",
+            "第1步展示富兰克林与高斯林将<1mm DNA纤维绷在回形针上并通92%湿度氢气曝光62小时；第2步展示螺旋侧视前后斜杠（/与\\）如何各自沿90°垂直方向衍射叠成X十字；第3步对比单螺旋（1-5层全亮）、1/2错位双链（1,3,5层全灭）与真实3/8错位B-DNA双螺旋（唯独第4层相差1.5波长相消归零）。",
+            els,
+        )
+
+    @register("dna-double-helix", "回形针微相机与螺旋X衍射三步拆解、第51号照片傅里叶标尺、鲍林三螺旋误区与B-DNA大小沟、多诺休酮式纠错与硬纸板同构动画、1953金属板模型与ABZ三态、半保留复制离心铁证", "science_tech")
+    def build_dna_double_helix():
+        write_svg(SUBDIR, "helix-to-x-cross-stepwise.svg", _build_helix_to_x_cross_stepwise())
+        write_svg(SUBDIR, "photo51-fourier-diffraction.svg", _build_photo51_fourier_diffraction())
+        write_svg(SUBDIR, "pauling-triple-vs-bdna.svg", _build_pauling_triple_vs_bdna())
+        write_svg(SUBDIR, "donohue-tautomer-isosteric-pairing.svg", _build_donohue_tautomer_isosteric_pairing())
+        write_svg(SUBDIR, "metal-model-and-abz-family.svg", _build_metal_model_and_abz_family())
+        write_svg(SUBDIR, "unzipping-semiconservative.svg", _build_unzipping_semiconservative())
+
+
+_register_dna_double_helix()
+
+
+def _register_tennis_rules():
+    SUBDIR = "tennis-rules"
+    RED = "#dc2626"
+    RED_SOFT = "#fef2f2"
+    AMBER = "#b45309"
+    AMBER_SOFT = "#fffbeb"
+    TEAL = "#0f766e"
+    TEAL_SOFT = "#f0fdfa"
+    CLAY = "#c2410c"
+    CLAY_SOFT = "#fff7ed"
+    GRASS = "#15803d"
+    GRASS_SOFT = "#f0fdf4"
+    HARD = "#1d4ed8"
+    HARD_SOFT = "#eff6ff"
+    OPTIC = "#a3e635"
+    OPTIC_STROKE = "#4d7c0f"
+
+    # Exact ITF geometry assertions
+    L_COURT = 23.77
+    W_SINGLES = 8.23
+    W_DOUBLES = 10.97
+    L_SERV = 6.40
+    H_POST = 1.070
+    H_CENTER = 0.914
+    L_DIAG = math.hypot(L_COURT, W_SINGLES)
+    assert abs(L_DIAG - 25.1545) < 0.005
+    EXTRA_LEN = L_DIAG - L_COURT
+    assert abs(EXTRA_LEN - 1.3845) < 0.005
+    NET_DIP_CM = (H_POST - H_CENTER) * 100.0
+    assert abs(NET_DIP_CM - 15.6) < 0.05
+
+    # Exact scoring paradox assertions
+    # Best-of-3 match: Player A loses Set 1 (0-6: 0 vs 24), wins Sets 2 & 3 by 7-6(5)
+    # In Sets 2 & 3: loses 6 games 0-4 (0 vs 24), wins 6 games 4-2 (24 vs 12), wins TB 7-5 (7 vs 5) => 31 vs 41 per set
+    MIN_WIN_PTS = 0 + 31 + 31
+    MAX_LOSE_PTS = 24 + 41 + 41
+    assert MIN_WIN_PTS == 62 and MAX_LOSE_PTS == 106
+    MIN_SHARE_PCT = 100.0 * MIN_WIN_PTS / (MIN_WIN_PTS + MAX_LOSE_PTS)
+    assert abs(MIN_SHARE_PCT - 36.9048) < 0.01
+
+    # 1. Court geometry, crosscourt Pythagoras advantage & animated flight comparison
+    def _build_court_geometry_and_crosscourt():
+        els = []
+        els.extend(
+            header(
+                "网球场藏着多少几何心机？压线 1 毫米算界内、绕柱不算犯规与“斜线永远更稳”定理",
+                "左：ITF 标准球场精确比例（长 23.77 m，单打宽 8.23 m / 双打 10.97 m） · 右：球网中心下沉 15.6 cm 与勾股跑道红利",
+            )
+        )
+
+        # Inline accessible one-shot flight comparison CSS
+        # Down-the-line: 23.77 m at 30 m/s => ~0.792 s -> scaled 3.17 s; Crosscourt: 25.15 m at 30 m/s => ~0.838 s -> scaled 3.35 s
+        els.append(
+            """<style>
+  @keyframes dtlPulse {
+    0% { stroke-dashoffset: 310; opacity: 0.35; }
+    15% { opacity: 1; }
+    85%, 100% { stroke-dashoffset: 0; opacity: 1; }
+  }
+  @keyframes ccPulse {
+    0% { stroke-dashoffset: 330; opacity: 0.35; }
+    15% { opacity: 1; }
+    90%, 100% { stroke-dashoffset: 0; opacity: 1; }
+  }
+  .anim-dtl { stroke-dasharray: 310; stroke-dashoffset: 0; animation: dtlPulse 3.2s ease-out 1 both; }
+  .anim-cc  { stroke-dasharray: 330; stroke-dashoffset: 0; animation: ccPulse 3.4s ease-out 1 both; }
+  @media (prefers-reduced-motion: reduce) {
+    .anim-dtl, .anim-cc { animation: none !important; stroke-dashoffset: 0 !important; opacity: 1 !important; }
+  }
+</style>"""
+        )
+
+        # ---------------- Left Panel: Exact Scale Top-Down Tennis Court ----------------
+        els.append(card(16, 64, 344, 398))
+        els.append(pill(28, 76, "① 俯视解剖 · 1 m = 12.2 px 严格比例尺", fg=BLUE, bg=BLUE_SOFT, w=252, h=22, size=9.8))
+
+        # Scale: 12.2 px per meter -> 23.77 m = 290.0 px vertical, 10.97 m = 133.8 px horizontal
+        sc = 12.2
+        cx = 176.0
+        cy = 258.0
+        half_L = (L_COURT / 2.0) * sc      # 145.0
+        half_Wd = (W_DOUBLES / 2.0) * sc   # 66.92
+        half_Ws = (W_SINGLES / 2.0) * sc   # 50.20
+        serv_d = L_SERV * sc               # 78.08
+        post_x_off = (W_DOUBLES / 2.0 + 0.914) * sc  # 78.07
+
+        x_dl, x_dr = cx - half_Wd, cx + half_Wd
+        x_sl, x_sr = cx - half_Ws, cx + half_Ws
+        y_top, y_bot = cy - half_L, cy + half_L
+        y_st, y_sb = cy - serv_d, cy + serv_d
+
+        # Outer surround & court surface
+        els.append(f'<rect x="{cx - 108:.1f}" y="{y_top - 16:.1f}" width="216" height="{2 * half_L + 32:.1f}" rx="8" fill="#dbeafe" stroke="#93c5fd" stroke-width="1"/>')
+        # Doubles alleys shaded slightly lighter
+        els.append(f'<rect x="{x_dl:.1f}" y="{y_top:.1f}" width="{2 * half_Wd:.1f}" height="{2 * half_L:.1f}" fill="#2563eb"/>')
+        # Singles court rich royal blue
+        els.append(f'<rect x="{x_sl:.1f}" y="{y_top:.1f}" width="{2 * half_Ws:.1f}" height="{2 * half_L:.1f}" fill="#1e40af"/>')
+
+        # White court lines
+        els.append(f'<rect x="{x_dl:.1f}" y="{y_top:.1f}" width="{2 * half_Wd:.1f}" height="{2 * half_L:.1f}" fill="none" stroke="#ffffff" stroke-width="1.8"/>')
+        els.append(f'<line x1="{x_sl:.1f}" y1="{y_top:.1f}" x2="{x_sl:.1f}" y2="{y_bot:.1f}" stroke="#ffffff" stroke-width="1.6"/>')
+        els.append(f'<line x1="{x_sr:.1f}" y1="{y_top:.1f}" x2="{x_sr:.1f}" y2="{y_bot:.1f}" stroke="#ffffff" stroke-width="1.6"/>')
+        els.append(f'<line x1="{x_sl:.1f}" y1="{y_st:.1f}" x2="{x_sr:.1f}" y2="{y_st:.1f}" stroke="#ffffff" stroke-width="1.5"/>')
+        els.append(f'<line x1="{x_sl:.1f}" y1="{y_sb:.1f}" x2="{x_sr:.1f}" y2="{y_sb:.1f}" stroke="#ffffff" stroke-width="1.5"/>')
+        els.append(f'<line x1="{cx:.1f}" y1="{y_st:.1f}" x2="{cx:.1f}" y2="{y_sb:.1f}" stroke="#ffffff" stroke-width="1.5"/>')
+        # Center marks on baselines
+        els.append(f'<line x1="{cx:.1f}" y1="{y_top:.1f}" x2="{cx:.1f}" y2="{y_top + 5:.1f}" stroke="#ffffff" stroke-width="1.8"/>')
+        els.append(f'<line x1="{cx:.1f}" y1="{y_bot - 5:.1f}" x2="{cx:.1f}" y2="{y_bot:.1f}" stroke="#ffffff" stroke-width="1.8"/>')
+
+        # Net & posts
+        els.append(f'<line x1="{cx - post_x_off:.1f}" y1="{cy:.1f}" x2="{cx + post_x_off:.1f}" y2="{cy:.1f}" stroke="#0f172a" stroke-width="2.6"/>')
+        els.append(f'<line x1="{cx - post_x_off:.1f}" y1="{cy:.1f}" x2="{cx + post_x_off:.1f}" y2="{cy:.1f}" stroke="#f8fafc" stroke-width="1.2" stroke-dasharray="4 3"/>')
+        els.append(f'<circle cx="{cx - post_x_off:.1f}" cy="{cy:.1f}" r="3.6" fill="#0f172a"/>')
+        els.append(f'<circle cx="{cx + post_x_off:.1f}" cy="{cy:.1f}" r="3.6" fill="#0f172a"/>')
+
+        # Zone labels inside court
+        els.append(txt(cx - 25, y_sb + 26, "占先区(左)", 8.3, "#e0f2fe", "middle", weight="700"))
+        els.append(txt(cx + 25, y_sb + 26, "平分/右区", 8.3, "#e0f2fe", "middle", weight="700"))
+        els.append(txt(cx - 25, cy + 44, "发球区", 8.2, "#bae6fd", "middle", weight="600"))
+        els.append(txt(cx + 25, cy + 44, "6.40 m", 8.2, "#bae6fd", "middle", cls="mono"))
+
+        # Animated Comparison Trajectories from Bottom-Right Singles Corner (x_sr, y_bot)
+        # 1) Down-the-line (orange): (x_sr - 3, y_bot) -> (x_sr - 3, y_top)
+        els.append(f'<line x1="{x_sr - 3:.1f}" y1="{y_bot:.1f}" x2="{x_sr - 3:.1f}" y2="{y_top:.1f}" stroke="{ORANGE}" stroke-width="2.4" class="anim-dtl"/>')
+        els.append(f'<circle cx="{x_sr - 3:.1f}" cy="{y_top + 4:.1f}" r="4.0" fill="{OPTIC}" stroke="{OPTIC_STROKE}" stroke-width="1.2"/>')
+
+        # 2) Crosscourt diagonal (bright green/yellow): (x_sr - 3, y_bot) -> (x_sl + 3, y_top)
+        els.append(f'<line x1="{x_sr - 3:.1f}" y1="{y_bot:.1f}" x2="{x_sl + 3:.1f}" y2="{y_top:.1f}" stroke="#fde047" stroke-width="2.7" class="anim-cc"/>')
+        els.append(f'<circle cx="{x_sl + 3:.1f}" cy="{y_top + 4:.1f}" r="4.3" fill="{OPTIC}" stroke="{OPTIC_STROKE}" stroke-width="1.3"/>')
+        els.append(f'<circle cx="{x_sr - 3:.1f}" cy="{y_bot - 3:.1f}" r="4.5" fill="#ffffff" stroke="{INK}" stroke-width="1.4"/>')
+
+        # 3) Around-the-post legal curve on left outside post!
+        atp_d = f"M {x_sl - 18:.1f},{y_bot - 34:.1f} Q {cx - post_x_off - 22:.1f},{cy:.1f} {x_sl + 12:.1f},{y_top + 36:.1f}"
+        els.append(f'<path d="{atp_d}" fill="none" stroke="{PURPLE}" stroke-width="2.2" stroke-dasharray="5 3"/>')
+        els.append(f'<circle cx="{x_sl + 12:.1f}" cy="{y_top + 36:.1f}" r="3.8" fill="{PURPLE}"/>')
+
+        # Callout annotations around court
+        els.append(txt(30, 148, "绕柱球合法！", 8.8, PURPLE, weight="700"))
+        els.append(txt(30, 162, "从网柱外侧", 8.2, BODY))
+        els.append(txt(30, 175, "低于网高旋入", 8.2, BODY))
+        els.append(txt(30, 188, "界内照样得分", 8.2, PURPLE, weight="600"))
+
+        # Dimensions on right margin of left panel
+        els.append(txt(292, cy - 58, "全场长", 8.5, MUTED))
+        els.append(txt(292, cy - 44, "23.77 m", 9.2, INK, weight="700", cls="mono"))
+        els.append(txt(292, cy - 29, "(78 英尺)", 8.2, MUTED))
+
+        els.append(txt(292, cy + 12, "单打宽", 8.5, MUTED))
+        els.append(txt(292, cy + 26, "8.23 m", 9.2, BLUE, weight="700", cls="mono"))
+        els.append(txt(292, cy + 46, "双打宽", 8.5, MUTED))
+        els.append(txt(292, cy + 60, "10.97 m", 9.2, INK, weight="700", cls="mono"))
+
+        # Bottom legend inside left card
+        els.append(txt(28, 424, "• 橙线直线球：23.77 m（过较高边网）", 8.8, ORANGE, weight="700"))
+        els.append(txt(28, 442, "• 黄线斜线球：25.15 m（正过球网最低谷，多 1.38 m！）", 8.8, GREEN, weight="700"))
+
+        # ---------------- Right Panel: Net Dip + Pythagoras + Line/Let Rules ----------------
+        els.append(card(376, 64, 368, 398))
+        els.append(pill(388, 76, "② 为什么教练总喊“打斜线”？双重几何容错红利", fg=GREEN, bg=GREEN_SOFT, w=292, h=22, size=9.8))
+
+        # Subbox A: Front-elevation of the Net Dip
+        els.append(card(388, 108, 344, 128, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(400, 126, "球网正视高度差：两头立柱高 1.07 m，正中白带拉低到 0.914 m", 9.0, INK, weight="700"))
+
+        # Draw ground line & posts
+        gy = 212.0
+        px_l, px_r = 424.0, 696.0
+        px_m = 560.0
+        # Exaggerate vertical height slightly for readability (labeled clearly!)
+        hy_post = gy - 62.0     # represents 1.070 m
+        hy_mid = gy - 43.0      # represents 0.914 m (-15.6 cm dip!)
+        els.append(f'<line x1="404" y1="{gy:.1f}" x2="716" y2="{gy:.1f}" stroke="{SLATE}" stroke-width="1.6"/>')
+        els.append(f'<line x1="{px_l:.1f}" y1="{gy:.1f}" x2="{px_l:.1f}" y2="{hy_post:.1f}" stroke="{INK}" stroke-width="3.2"/>')
+        els.append(f'<line x1="{px_r:.1f}" y1="{gy:.1f}" x2="{px_r:.1f}" y2="{hy_post:.1f}" stroke="{INK}" stroke-width="3.2"/>')
+        # Sagging net top cord + mesh + white center strap
+        els.append(f'<path d="M {px_l:.1f},{hy_post:.1f} Q {px_m:.1f},{hy_mid + 16:.1f} {px_r:.1f},{hy_post:.1f}" fill="none" stroke="{INK}" stroke-width="2.4"/>')
+        els.append(f'<line x1="{px_l:.1f}" y1="{hy_post:.1f}" x2="{px_r:.1f}" y2="{hy_post:.1f}" stroke="{RED}" stroke-width="1.1" stroke-dasharray="4 3"/>')
+        # Center strap
+        els.append(f'<rect x="{px_m - 3:.1f}" y="{hy_mid + 8:.1f}" width="6" height="{gy - (hy_mid + 8):.1f}" fill="#ffffff" stroke="{SLATE}" stroke-width="1.1"/>')
+        els.append(f'<circle cx="{px_m:.1f}" cy="{hy_mid + 2:.1f}" r="4.5" fill="{OPTIC}" stroke="{OPTIC_STROKE}" stroke-width="1.2"/>')
+
+        els.append(txt(px_l + 6, hy_post - 5, "网柱 1.070 m (3.5英尺)", 8.5, INK, weight="700"))
+        els.append(txt(px_m, hy_mid - 6, "中心 0.914 m（矮 15.6 cm！）", 8.8, GREEN, "middle", weight="700"))
+        els.append(txt(560, 228, "（注：竖向高度差放大示意；单打边线处网高仍约 1.02–1.05 m）", 8.2, MUTED, "middle"))
+
+        # Subbox B: Runway length bars
+        els.append(card(388, 246, 344, 88, rx=8, fill="#f0fdf4", stroke="#bbf7d0"))
+        els.append(txt(400, 265, "勾股定理算跑道：斜线球白捡 1.38 米“防出界缓冲带”", 9.2, GREEN, weight="700"))
+        # Bars: 23.77m -> 206 px, 25.15m -> 218 px (plus highlighted +1.38m segment!)
+        els.append(txt(400, 288, "底线直线", 8.8, BODY, weight="600"))
+        els.append(f'<rect x="456" y="277" width="154" height="14" rx="4" fill="{ORANGE}"/>')
+        els.append(txt(618, 288, "23.77 m", 8.8, ORANGE, weight="700", cls="mono"))
+
+        els.append(txt(400, 313, "对角斜线", 8.8, GREEN, weight="700"))
+        els.append(f'<rect x="456" y="302" width="154" height="14" rx="4" fill="{GREEN}"/>')
+        els.append(f'<rect x="608" y="302" width="15" height="14" rx="3" fill="{OPTIC}" stroke="{OPTIC_STROKE}" stroke-width="1"/>')
+        els.append(txt(630, 313, "25.15 m (+1.38m)", 8.5, GREEN, weight="700", cls="mono"))
+
+        # Subbox C: Three Crucial Boundary & Net Rules Beginners Always Confuse
+        els.append(card(388, 344, 344, 106, rx=8, fill="#fffbeb", stroke="#fde68a"))
+        els.append(txt(400, 363, "新手最容易看懵的 3 条“边界与擦网”铁律：", 9.2, AMBER, weight="700"))
+        els.append(txt(400, 382, "1. 压线即界内（IN）：哪怕毛毡球外缘只蹭到白线外沿 1 mm，100% 算好球！", 8.6, BODY))
+        els.append(txt(400, 401, "2. 发球擦网 vs 相持擦网：发球擦网落入发球区叫 Let（重发，不计失误）；", 8.6, BODY))
+        els.append(txt(400, 418, "   但一旦进入多拍对拉，球砸中网带翻滚过网落入界内——比赛继续，绝不重打！", 8.6, INK, weight="600"))
+        els.append(txt(400, 437, "3. 禁触网与过网击球：活球期身体或球拍碰网即失分（除非球落地后倒旋回网）。", 8.2, BODY))
+
+        return figure(
+            474,
+            "网球场标准几何尺寸、对角斜线勾股容错优势与三大边界擦网规则图解",
+            "左图按1米=12.2像素精确绘制23.77米×10.97米（单打8.23米）球场、发球区、平分区与占先区，并对比直线23.77米、斜线25.15米与合法绕柱球轨迹；右图展示球网中间比两端低15.6厘米的弧形下沉、斜线多出1.38米跑道，以及压线算好球、发球擦网重发与相持擦网有效三条核心规则。",
+            els,
+        )
+
+    # 2. Love-15-30-40-Deuce State Machine & 3-Tier Scoring Pyramid
+    def _build_scoring_state_machine_and_pyramid():
+        els = []
+        els.extend(
+            header(
+                "为什么有好好的 1、2、3 不用，非要喊 Love、15、30、40？拆解网球三层嵌套计分机",
+                "左：单局“领先两球锁死”有限状态机与中世纪法国起源考据 · 右：分→局→盘三层金字塔与 7 分 / 10 分抢七发球口诀",
+            )
+        )
+
+        # ---------------- Left Panel: Single-Game State Machine + History ----------------
+        els.append(card(16, 64, 366, 396))
+        els.append(pill(28, 76, "① 单局状态机 · 到 40–40 必须连赢两球才能解锁", fg=PURPLE, bg=PURPLE_SOFT, w=292, h=22, size=9.8))
+
+        # Linear progression nodes: 0(Love) -> 15 -> 30 -> 40
+        nodes = [
+            (54, 136, "0 分", "Love"),
+            (130, 136, "1 分", "15"),
+            (206, 136, "2 分", "30"),
+            (282, 136, "3 分", "40"),
+        ]
+        for idx, (nx, ny, top_t, bot_t) in enumerate(nodes):
+            els.append(card(nx - 26, ny - 22, 52, 44, rx=8, fill=BLUE_SOFT if idx < 3 else ORANGE_SOFT, stroke=BLUE if idx < 3 else ORANGE, sw=1.4))
+            els.append(txt(nx, ny - 5, top_t, 8.4, MUTED, "middle", weight="600"))
+            els.append(txt(nx, ny + 12, bot_t, 10.5, INK, "middle", weight="700", cls="mono"))
+            if idx < 3:
+                x1 = nx + 27
+                x2 = nodes[idx + 1][0] - 27
+                els.append(f'<line x1="{x1}" y1="{ny}" x2="{x2}" y2="{ny}" stroke="{BLUE}" stroke-width="1.8"/>')
+                els.append(f'<polygon points="{x2},{ny} {x2 - 5},{ny - 3.5} {x2 - 5},{ny + 3.5}" fill="{BLUE}"/>')
+
+        # Branch from 40: If opponent <= 30 -> Win Game! If 40-40 -> Deuce loop!
+        els.append(card(296, 182, 74, 34, rx=7, fill=GREEN_SOFT, stroke=GREEN, sw=1.4))
+        els.append(txt(333, 197, "直接拿下本局", 8.3, GREEN, "middle", weight="700"))
+        els.append(txt(333, 210, "(对手≤30)", 8.0, BODY, "middle"))
+        els.append(f'<line x1="296" y1="158" x2="322" y2="181" stroke="{GREEN}" stroke-width="1.6"/>')
+
+        # Deuce <-> Ad-In / Ad-Out lock box
+        els.append(card(28, 182, 260, 110, rx=9, fill="#faf5ff", stroke=PURPLE, sw=1.3))
+        els.append(txt(158, 199, "双方各赢 3 球 (3–3) 进入【平分死锁环】", 8.8, PURPLE, "middle", weight="700"))
+
+        # Deuce center node
+        els.append(card(117, 212, 82, 36, rx=8, fill="#ffffff", stroke=PURPLE, sw=1.5))
+        els.append(txt(158, 228, "Deuce", 10.2, PURPLE, "middle", weight="700", cls="mono"))
+        els.append(txt(158, 241, "平分(差0球)", 8.0, MUTED, "middle"))
+
+        # Ad-In (left) & Ad-Out (right)
+        els.append(card(34, 254, 78, 32, rx=6, fill=BLUE_SOFT, stroke=BLUE, sw=1.2))
+        els.append(txt(73, 268, "Ad-In 发球占先", 7.8, BLUE, "middle", weight="700"))
+        els.append(txt(73, 280, "再赢1球保发！", 7.7, INK, "middle"))
+
+        els.append(card(204, 254, 78, 32, rx=6, fill=ORANGE_SOFT, stroke=ORANGE, sw=1.2))
+        els.append(txt(243, 268, "Ad-Out 接发占先", 7.8, ORANGE, "middle", weight="700"))
+        els.append(txt(243, 280, "再赢1球破发！", 7.7, INK, "middle"))
+
+        # Bidirectional arrows Deuce <-> Ad-In / Ad-Out
+        els.append(f'<path d="M 117,232 L 76,253" fill="none" stroke="{BLUE}" stroke-width="1.4"/>')
+        els.append(f'<path d="M 112,266 L 136,248" fill="none" stroke="{PURPLE}" stroke-width="1.2" stroke-dasharray="3 2"/>')
+        els.append(f'<path d="M 199,232 L 240,253" fill="none" stroke="{ORANGE}" stroke-width="1.4"/>')
+        els.append(f'<path d="M 204,266 L 180,248" fill="none" stroke="{PURPLE}" stroke-width="1.2" stroke-dasharray="3 2"/>')
+        els.append(txt(158, 275, "失手退回 Deuce", 7.9, PURPLE, "middle", weight="600"))
+
+        # Historical origins & scholarly caveats card
+        els.append(card(28, 302, 342, 146, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(40, 320, "史学考据：怪异数字从哪来？（源自中世纪法国掌球戏 Jeu de paume）", 8.9, INK, weight="700"))
+        els.append(txt(40, 339, "• 15→30→40：1435 年奥尔良公爵诗歌最早记载的是 15、30、45！", 8.5, BODY))
+        els.append(txt(40, 356, "  学界主流指向【60 进制赌注钱币（4×15 第纳尔 = 60）】或【十四世纪大", 8.4, BODY))
+        els.append(txt(40, 373, "  教堂刻钟（1386 韦尔斯/1389 鲁昂每 15 分钟报刻）】；法语 quarante-cinq", 8.4, BODY))
+        els.append(txt(40, 390, "  (45) 嫌绕口或为留出“40→50(占先)→60(胜)”刻度，遂简读成 40。", 8.4, INK, weight="600"))
+        els.append(txt(40, 409, "• Love (0分)：一说源自英语/荷兰语 play for love（不赌钱只为荣誉白玩）；", 8.5, BODY))
+        els.append(txt(40, 426, "  另一广传趣味说源自法语 l'œuf（鸡蛋 = 鸭蛋形状的 0）——两说并存。", 8.5, MUTED))
+        els.append(txt(40, 442, "• Deuce：源自古法语 à deux le jeu（距离赢下这一局还差连续两球）。", 8.5, PURPLE, weight="600"))
+
+        # ---------------- Right Panel: 3-Tier Nested Pyramid & Tiebreak Cadence ----------------
+        els.append(card(396, 64, 348, 396))
+        els.append(pill(408, 76, "② 三层清零金字塔 · 每一级都自带“清零重算”开关", fg=BLUE, bg=BLUE_SOFT, w=292, h=22, size=9.8))
+
+        # Tier 3 (Top): Match
+        els.append(card(464, 110, 212, 48, rx=8, fill="#eff6ff", stroke=HARD, sw=1.5))
+        els.append(txt(570, 128, "第 3 层：场（Match）", 9.6, HARD, "middle", weight="700"))
+        els.append(txt(570, 146, "巡回赛/女单：三盘两胜 · 大满贯男单：五盘三胜", 8.3, BODY, "middle"))
+
+        # Tier 2 (Middle): Set
+        els.append(card(436, 170, 268, 56, rx=8, fill=GREEN_SOFT, stroke=GREEN, sw=1.5))
+        els.append(txt(570, 188, "第 2 层：盘（Set）— 赢完一盘，局分清零！", 9.5, GREEN, "middle", weight="700"))
+        els.append(txt(570, 205, "先赢 6 局且净胜≥2 局（6–4、7–5）；战至 6–6 进抢七！", 8.3, BODY, "middle"))
+        els.append(txt(570, 219, "（单数局结束交换场地：第 1、3、5、7… 局换边）", 8.0, MUTED, "middle"))
+
+        # Tier 1 (Bottom): Game
+        els.append(card(408, 238, 324, 52, rx=8, fill=ORANGE_SOFT, stroke=ORANGE, sw=1.5))
+        els.append(txt(570, 256, "第 1 层：局（Game）— 赢完一局，小分清零！", 9.5, ORANGE, "middle", weight="700"))
+        els.append(txt(570, 274, "同一人发满整局，每分右区↔左区交替；先赢 4 分且净胜≥2 分", 8.3, BODY, "middle"))
+
+        # Tiebreak Special Box
+        els.append(card(408, 304, 324, 144, rx=8, fill="#fffbeb", stroke="#f59e0b", sw=1.3))
+        els.append(txt(420, 323, "6–6 抢七局（Tiebreak）：1965 范阿伦发明 · 2022 四大满贯统一", 9.0, AMBER, weight="700"))
+        els.append(txt(420, 342, "• 常规盘 6–6：抢 7 分（先到 7 分且净胜≥2 分，记为 7–6）", 8.6, BODY))
+        els.append(txt(420, 360, "• 大满贯决胜盘 6–6（2022 起统一）：抢 10 分！（先到 10 分且净胜≥2）", 8.6, RED, weight="700"))
+        els.append(txt(420, 379, "• 独门【1–2–2–2 发球序列】与【每 6 分换边】公平铁律：", 8.6, INK, weight="700"))
+
+        # Mini sequence blocks for 1 - 2 - 2 - 2
+        seq = [
+            (420, 52, "第1分 A发", "右区(1球)", BLUE_SOFT, BLUE),
+            (478, 76, "第2-3分 B发", "左→右(2球)", ORANGE_SOFT, ORANGE),
+            (560, 76, "第4-5分 A发", "左→右(2球)", BLUE_SOFT, BLUE),
+            (642, 78, "第6分B发后", "满6分换边！", GREEN_SOFT, GREEN),
+        ]
+        for sx, sw_b, st1, st2, sbg, sfg in seq:
+            els.append(card(sx, 390, sw_b, 46, rx=6, fill=sbg, stroke=sfg, sw=1.1))
+            els.append(txt(sx + sw_b / 2.0, 407, st1, 7.9, sfg, "middle", weight="700"))
+            els.append(txt(sx + sw_b / 2.0, 423, st2, 7.7, INK, "middle"))
+
+        return figure(
+            472,
+            "网球Love-15-30-40-Deuce单局状态机、中世纪起源与分-局-盘三层嵌套及抢七发球规则图解",
+            "左图绘制0(Love)→15→30→40与Deuce⇄Ad-In/Ad-Out连赢两球解锁状态机，并梳理1435年奥尔良公爵诗歌、60进制钱币/刻钟与Love词源；右图绘制分→局→盘三层清零金字塔及常规7分抢七、2022大满贯决胜盘10分抢十的1-2-2-2发球顺序与每6分换边机制。",
+            els,
+        )
+
+    # 3. Quasi-Simpson Scoring Paradox & 2010 Isner-Mahut 70-68 Marathon
+    def _build_scoring_paradox_and_70_68_epic():
+        els = []
+        els.extend(
+            header(
+                "总得分比对手少 14 分却夺走温网冠军？网球“准辛普森悖论”与跨三天 70 比 68 神迹",
+                "左：清零机制酿成的“少得分赢球”数学奇观与 2019 温网决赛 · 右：2010 温网 18 号球场打瘫记分牌的 11 小时 05 分绝唱",
+            )
+        )
+
+        # ---------------- Left Panel: Quasi-Simpson's Paradox ----------------
+        els.append(card(16, 64, 362, 404))
+        els.append(pill(28, 76, "① 计分悖论 · 输盘脆败不扣额外分，赢盘险胜就够夺冠", fg=RED, bg=RED_SOFT, w=304, h=22, size=9.6))
+
+        # Box 1: Theoretical extreme in best-of-3 tiebreak match (62 vs 106 = 36.9%)
+        els.append(card(28, 108, 338, 134, rx=8, fill="#fef2f2", stroke="#fecaca"))
+        els.append(txt(40, 127, "数学极限（无平分三盘两胜）：只拿全场 36.9% 的总分就能赢！", 9.0, RED, weight="700"))
+        els.append(txt(40, 146, "• 第 1 盘战略放弃：0–6 吞蛋（全 0–4 脆败） → 甲 0 分 : 乙 24 分", 8.5, BODY))
+        els.append(txt(40, 164, "• 第 2、3 盘精打细算：各输 6 局 0–4、各赢 6 局 4–2，抢七各赢 7–5", 8.5, BODY))
+        els.append(txt(40, 181, "  每盘甲拿 24+7 = 31 分，乙拿 24+12+5 = 41 分，甲却连赢两盘 7–6！", 8.5, INK, weight="600"))
+
+        # Stacked horizontal bar of 62 vs 106
+        w_tot = 312.0
+        w_a = w_tot * (MIN_WIN_PTS / 168.0)   # 115.1 px
+        w_b = w_tot - w_a                     # 196.9 px
+        els.append(f'<rect x="40" y="194" width="{w_a:.1f}" height="22" rx="4" fill="{GREEN}"/>')
+        els.append(f'<rect x="{40 + w_a:.1f}" y="194" width="{w_b:.1f}" height="22" rx="4" fill="{SLATE}"/>')
+        els.append(txt(40 + w_a / 2.0, 209, "胜者甲 62 分 (36.9%)", 8.3, "#ffffff", "middle", weight="700"))
+        els.append(txt(40 + w_a + w_b / 2.0, 209, "败者乙 106 分 (63.1%) 却输掉比赛！", 8.3, "#ffffff", "middle", weight="700"))
+        els.append(txt(197, 232, "原因：0–4 脆败与 2–4 惜败同样只算丢 1 局，“溢出选票”全被清零浪费！", 8.2, RED, "middle", weight="600"))
+
+        # Box 2: Real Historic Case - 2019 Wimbledon Final (Federer 218 vs Djokovic 204)
+        els.append(card(28, 252, 338, 204, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(40, 271, "真实巅峰案例：2019 温网男单决赛（4 小时 57 分最长温网决赛）", 9.0, INK, weight="700"))
+        els.append(txt(40, 289, "比分：德约科维奇 7–6(5), 1–6, 7–6(4), 4–6, 13–12(3) 险胜费德勒", 8.4, BLUE, weight="700"))
+
+        stats_2019 = [
+            ("总得分", 204, 218, "费德勒多拿 14 分！"),
+            ("总赢局数", 32, 36, "费德勒多赢 4 局！"),
+            ("制胜分", 54, 94, "费德勒多轰 40 记！"),
+            ("破发次数", 3, 7, "费德勒破发 7 次 vs 3 次"),
+            ("抢七胜率", 3, 0, "德约 3 次抢七全胜夺冠！"),
+        ]
+        for idx, (label, v_dj, v_fed, note_s) in enumerate(stats_2019):
+            yy = 314 + idx * 24
+            is_last = idx == 4
+            els.append(txt(40, yy, label, 8.5, INK if not is_last else GREEN, weight="700"))
+            els.append(txt(106, yy, f"德约 {v_dj}", 8.5, GREEN if is_last else BODY, weight="700" if is_last else "600", cls="mono"))
+            els.append(txt(162, yy, f"费德勒 {v_fed}", 8.5, ORANGE if not is_last else MUTED, weight="700" if not is_last else "400", cls="mono"))
+            els.append(txt(228, yy, note_s, 8.2, GREEN if is_last else RED, weight="700" if is_last else "600"))
+
+        els.append(txt(40, 442, "注：费德勒在决胜盘 8–7 40–15 手握 2 个冠军点未兑现，最终输在 12–12 抢七。", 8.1, MUTED))
+
+        # ---------------- Right Panel: 2010 Wimbledon Court 18 Isner-Mahut 70-68 ----------------
+        els.append(card(392, 64, 352, 404))
+        els.append(pill(404, 76, "② 史诗绝唱 · 2010 温网跨三天 70–68（把规则逼改的历史化石）", fg=TEAL, bg=TEAL_SOFT, w=328, h=22, size=9.4))
+
+        # Court 18 iconic dark-green Wimbledon scoreboard card
+        els.append(card(404, 108, 328, 92, rx=8, fill="#064e3b", stroke="#047857", sw=1.5))
+        els.append(txt(418, 126, "WIMBLEDON 2010 · COURT 18（第一轮 · 耗时 11 小时 05 分钟）", 8.4, "#a7f3d0", weight="700", cls="mono"))
+        # Score rows
+        els.append(txt(418, 152, "J. ISNER (胜)", 9.5, "#fef08a", weight="700", cls="mono"))
+        els.append(txt(526, 152, "6   3   6   7", 9.6, "#ffffff", weight="600", cls="mono"))
+        els.append(f'<rect x="634" y="137" width="84" height="22" rx="4" fill="#fef08a"/>')
+        els.append(txt(676, 153, "70", 11.5, "#064e3b", "middle", weight="700", cls="mono"))
+
+        els.append(txt(418, 180, "N. MAHUT", 9.5, "#e2e8f0", weight="700", cls="mono"))
+        els.append(txt(526, 180, "4   6   7   6", 9.6, "#cbd5e1", weight="600", cls="mono"))
+        els.append(f'<rect x="634" y="165" width="84" height="22" rx="4" fill="#065f46" stroke="#6ee7b7" stroke-width="1"/>')
+        els.append(txt(676, 181, "68", 11.5, "#ffffff", "middle", weight="700", cls="mono"))
+
+        # Three-day timeline + scoreboard crash + rule seal
+        els.append(card(404, 210, 328, 150, rx=8, fill="#f8fafc", stroke=BORDER))
+        els.append(txt(416, 229, "跨三天拉锯奇闻（当时温网决胜盘不设抢七，必须净胜 2 局！）：", 8.9, INK, weight="700"))
+        els.append(txt(416, 248, "• 6 月 22 日（周二）：打完前四盘 2–2 平，天黑无照明暂停；", 8.5, BODY))
+        els.append(txt(416, 267, "• 6 月 23 日（周三）：单日死磕 7 小时 04 分！打到 47–47 时现场 IBM", 8.5, BODY))
+        els.append(txt(416, 284, "  电子记分牌彻底卡死黑屏（程序员根本没写超过 47 局的代码！），官网", 8.5, ORANGE, weight="700"))
+        els.append(txt(416, 301, "  在 50–50 归零贴出告示“请读者自行 +50”；战至 59–59 再度天黑暂停！", 8.5, BODY))
+        els.append(txt(416, 320, "• 6 月 24 日（周四）：再战 67 分钟，伊斯内尔第 138 局破发定格 70–68！", 8.5, TEAL, weight="700"))
+        els.append(txt(416, 340, "• 又见计分悖论：全场共 980 分，输球的马胡拿了 502 分 > 胜者 478 分！", 8.5, RED, weight="700"))
+        els.append(txt(416, 355, "  两人合轰 216 记 Ace（113 vs 103），连续保发 168 局无一人掉链子。", 8.3, MUTED))
+
+        # Rule seal box
+        els.append(card(404, 370, 328, 86, rx=8, fill="#f0fdf4", stroke="#86efac"))
+        els.append(txt(416, 389, "永远封存的世界纪录：为什么后人再也不可能打破 70–68？", 9.0, GREEN, weight="700"))
+        els.append(txt(416, 408, "2018 温网半决赛伊斯内尔又打出 26–24 长盘后，温网于 2019 增设 12–12", 8.4, BODY))
+        els.append(txt(416, 425, "抢七；2022 年四大满贯正式统一为【决胜盘 6–6 抢十】——183 局马拉松", 8.4, INK, weight="600"))
+        els.append(txt(416, 442, "从此化作网球规则演进史上前无古人、后无来者的琥珀标本！", 8.4, GREEN, weight="700"))
+
+        return figure(
+            480,
+            "网球分盘清零计分悖论、2019温网决赛得分倒挂与2010温网伊斯内尔对马胡70比68史诗纪录图解",
+            "左图用三盘两胜极限算例证明仅赢36.9%总分（62比106）即可获胜，并列出2019温网决赛费德勒总得分218比204领先14分却输掉3个抢七失冠的真实统计；右图复原2010温网18号球场跨三天11小时05分打出70比68、47比47记分牌死机、马胡502比478总分反超及2022大满贯决胜盘6比6抢十封存纪录。",
+            els,
+        )
+
+    # 4. Felt Aerodynamics (Magnus Effect), Three Court Surfaces & Hawk-Eye Live ELC
+    def _build_ball_magnus_surfaces_hawkeye():
+        els = []
+        els.extend(
+            header(
+                "网球为什么长满荧光黄绒毛？马格努斯弧线、三大满贯场地物理与鹰眼司线革命",
+                "上：毛毡减速增旋与上旋“过网急坠”物理轨迹 · 下：红土/硬地/草地摩擦弹跳分化与 2025 温网全面电子司线",
+            )
+        )
+
+        # ---------------- Top Panel: Ball Specs + Magnus Trajectories ----------------
+        els.append(card(16, 64, 728, 186))
+        els.append(pill(28, 76, "① 空气动力学 · 毛毡边界层阻力 + 马格努斯力 F_M ∝ ω × v", fg=BLUE, bg=BLUE_SOFT, w=328, h=22, size=9.6))
+
+        # Left side of top panel: trajectory plot (Baseline x=0 -> Net x=11.885m -> Baseline x=23.77m)
+        px0, px1 = 44.0, 448.0   # 404 px = 23.77 m -> 17.0 px/m
+        gy = 216.0
+        net_x = (px0 + px1) / 2.0
+        # Vertical exaggerated 3.2x for clear visual trajectory separation (explicitly noted!)
+        vy_sc = 46.0
+        net_top_y = gy - H_CENTER * vy_sc  # gy - 42.0
+
+        els.append(f'<line x1="{px0 - 10:.1f}" y1="{gy:.1f}" x2="{px1 + 12:.1f}" y2="{gy:.1f}" stroke="{SLATE}" stroke-width="1.8"/>')
+        els.append(f'<line x1="{net_x:.1f}" y1="{gy:.1f}" x2="{net_x:.1f}" y2="{net_top_y:.1f}" stroke="{INK}" stroke-width="3.0"/>')
+        els.append(txt(px0, gy + 15, "击球底线 (0 m)", 8.2, MUTED, "start"))
+        els.append(txt(net_x, gy + 15, "球网 0.914 m", 8.2, INK, "middle", weight="700"))
+        els.append(txt(px1, gy + 15, "对方底线 (23.77 m)", 8.2, MUTED, "end"))
+
+        # Numerical ballistic integration with drag + Magnus lift/dive (y in meters, dt=0.004s)
+        def sim_traj(v0, deg, cl_mag, x_stop=23.8):
+            rad = math.radians(deg)
+            vx = v0 * math.cos(rad)
+            vy = v0 * math.sin(rad)
+            x, y = 0.0, 1.00
+            pts = [(x, y)]
+            dt = 0.005
+            k_drag = 0.0115
+            for _ in range(400):
+                spd = math.hypot(vx, vy)
+                # Drag opposes v; Magnus perpendicular to v: cl_mag < 0 = topspin downward dive, > 0 = backspin upward float
+                ax = -k_drag * spd * vx - cl_mag * spd * vy
+                ay = -9.81 - k_drag * spd * vy + cl_mag * spd * vx
+                vx += ax * dt
+                vy += ay * dt
+                x += vx * dt
+                y += vy * dt
+                if y <= 0.0 or x > x_stop:
+                    if y <= 0.0 and len(pts) >= 1:
+                        x_prev, y_prev = pts[-1]
+                        frac = y_prev / max(1e-6, (y_prev - y))
+                        x = x_prev + frac * (x - x_prev)
+                        y = 0.0
+                    pts.append((x, max(0.0, y)))
+                    break
+                pts.append((x, y))
+            return pts
+
+        t_topspin = sim_traj(33.5, 11.4, -0.0145, x_stop=25.0)  # clears net high (~1.9m), dives inside ~21.8m!
+        t_flat = sim_traj(33.5, 6.5, 0.0, x_stop=25.4)          # skims net lower, flies long past 23.77m!
+        t_slice = sim_traj(24.2, 4.8, 0.0086, x_stop=25.0)      # floats low over net (~1.08m) with upward Magnus lift, lands ~20.8m
+
+        def net_y_at_mid(pts):
+            for i in range(len(pts) - 1):
+                if pts[i][0] <= L_COURT / 2.0 <= pts[i + 1][0]:
+                    f = (L_COURT / 2.0 - pts[i][0]) / max(1e-6, pts[i + 1][0] - pts[i][0])
+                    return pts[i][1] + f * (pts[i + 1][1] - pts[i][1])
+            return 0.0
+
+        assert net_y_at_mid(t_topspin) > 1.55 and 19.5 < t_topspin[-1][0] < 23.4, f"Topspin={t_topspin[-1][0]}"
+        assert net_y_at_mid(t_flat) > 0.98 and t_flat[-1][0] > 23.8, f"Flat={t_flat[-1][0]}, net={net_y_at_mid(t_flat)}"
+        assert net_y_at_mid(t_slice) > 0.96 and 16.5 < t_slice[-1][0] < 22.8, f"Slice={t_slice[-1][0]}, net={net_y_at_mid(t_slice)}"
+
+        def to_svg_path(pts):
+            sc_x = (px1 - px0) / L_COURT
+            coords = [f"{px0 + p[0] * sc_x:.1f},{gy - p[1] * vy_sc:.1f}" for p in pts[::2]]
+            if coords[-1] != f"{px0 + pts[-1][0] * sc_x:.1f},{gy - pts[-1][1] * vy_sc:.1f}":
+                coords.append(f"{px0 + pts[-1][0] * sc_x:.1f},{gy - pts[-1][1] * vy_sc:.1f}")
+            return "M " + " L ".join(coords)
+
+        els.append(f'<path d="{to_svg_path(t_flat)}" fill="none" stroke="{RED}" stroke-width="1.9" stroke-dasharray="5 3"/>')
+        els.append(f'<path d="{to_svg_path(t_slice)}" fill="none" stroke="{BLUE}" stroke-width="2.0"/>')
+        els.append(f'<path d="{to_svg_path(t_topspin)}" fill="none" stroke="{GREEN}" stroke-width="2.6"/>')
+
+        els.append(txt(180, 113, "强烈上旋（绿实线）：高过网 + 马格努斯下压急坠界内！", 8.4, GREEN, weight="700"))
+        els.append(txt(322, 134, "无旋平击（红虚线）：直飞出界", 8.1, RED, weight="600"))
+        els.append(txt(86, 206, "下旋切削（蓝线）：托浮滑行", 8.0, BLUE, weight="600"))
+        els.append(txt(246, 242, "（竖向比例放大约 2.7 倍以便看清过网净空高度差）", 7.9, MUTED, "middle"))
+
+        # Right side of top panel: Fuzzy Optic Yellow Ball Engineering Box
+        els.append(card(474, 76, 256, 162, rx=8, fill="#f7fee7", stroke="#bef264"))
+        els.append(f'<circle cx="504" cy="104" r="15" fill="{OPTIC}" stroke="{OPTIC_STROKE}" stroke-width="1.5"/>')
+        els.append(f'<path d="M 493,94 Q 504,104 493,114 M 515,94 Q 504,104 515,114" fill="none" stroke="#ffffff" stroke-width="1.8"/>')
+        els.append(txt(528, 99, "为什么长绒毛、涂荧光黄？", 9.2, INK, weight="700"))
+        els.append(txt(528, 115, "56–59.4 g · 罐内约 2 倍大气压", 8.2, OPTIC_STROKE, weight="700"))
+        els.append(txt(486, 137, "• 绒毛减速稳控：若做成光滑橡胶球，200 km/h", 8.3, BODY))
+        els.append(txt(486, 153, "  发球几乎无法控制；羊毛尼龙毡增大空气抓力，", 8.3, BODY))
+        els.append(txt(486, 169, "  炸毛后阻力变大，职业赛遵循【首7局、后每9局】", 8.3, INK, weight="600"))
+        els.append(txt(486, 185, "  换新球铁律（首7局扣除了赛前热身磨损的2局！）。", 8.3, BODY))
+        els.append(txt(486, 204, "• 彩色电视催生的荧光黄：1972 ITF 批准荧光黄球，", 8.3, BODY))
+        els.append(txt(486, 220, "  保守的温网硬是坚持用白球到 1986 年才改口！", 8.3, AMBER, weight="700"))
+
+        # ---------------- Bottom 3 Columns: Clay vs Hard vs Grass + Line Calling ----------------
+        surfaces = [
+            (
+                16,
+                "法网 · 红土（Clay）",
+                "碾碎红砖粉 · 慢速高弹 (Cat.1)",
+                CLAY,
+                CLAY_SOFT,
+                "#ea580c",
+                0.52,
+                1.32,
+                "• 粗糙砖粉像砂纸猛刹球底水平速度，",
+                "  把前冲动能转成高耸旋转弹跳；",
+                "• 大炮发球威力骤减，多拍拉锯天堂；",
+                "• 唯一保留人工看印的大满贯：红土",
+                "  留有清晰球印，主裁仍亲自下椅验印！",
+            ),
+            (
+                264,
+                "澳网/美网 · 硬地（Hard）",
+                "丙烯酸掺石英砂 · 中速均衡 (Cat.3-4)",
+                HARD,
+                HARD_SOFT,
+                "#2563eb",
+                0.72,
+                1.05,
+                "• 沥青/混凝土基底涂覆丙烯酸树脂，靠",
+                "  石英砂粗细精准调校摩擦快慢；",
+                "• 球速与弹跳高度最稳定、最“诚实”，",
+                "  攻守全能型球员的试金石；",
+                "• 澳网(2021)与美网(2022)已全面启用",
+                "  Hawk-Eye Live 实时电子司线。",
+            ),
+            (
+                512,
+                "温网 · 草地（Grass）",
+                "8 mm 黑麦草 · 快速低窜 (Cat.4)",
+                GRASS,
+                GRASS_SOFT,
+                "#16a34a",
+                0.88,
+                0.72,
+                "• 自 1877 延续至今：光滑草叶摩擦力",
+                "  极小，球触地不减速反而贴地急窜！",
+                "• 弹跳不及膝高，发球上网与切削利器；",
+                "• 2025 历史转折：温网告别坚守 147 年",
+                "  的约 300 名盛装司线员，全场 10+ 高",
+                "  速相机 2.6 mm 精度 0.1 秒自动报出界！",
+            ),
+        ]
+
+        for idx_s, item in enumerate(surfaces):
+            sx, s_title, s_sub, scol, sbg, surf_line, vx_r, vy_r = item[:8]
+            lines_t = item[8:]
+            els.append(card(sx, 262, 232, 214, fill=CARD_BG, stroke=BORDER))
+            els.append(pill(sx + 10, 272, s_title, fg=scol, bg=sbg, w=212, h=21, size=9.4))
+            els.append(txt(sx + 116, 306, s_sub, 8.1, MUTED, "middle", weight="600"))
+
+            # Mini bounce vector diagram inside each surface card
+            bx0 = sx + 22.0
+            by0 = 360.0
+            bx_hit = sx + 102.0
+            els.append(f'<line x1="{bx0:.1f}" y1="{by0:.1f}" x2="{sx + 210:.1f}" y2="{by0:.1f}" stroke="{surf_line}" stroke-width="3.0"/>')
+            # Incoming ball path (identical across all 3!)
+            els.append(f'<line x1="{bx0 + 10:.1f}" y1="{by0 - 28:.1f}" x2="{bx_hit:.1f}" y2="{by0:.1f}" stroke="{SLATE}" stroke-width="1.6" stroke-dasharray="3 2"/>')
+            # Outgoing bounce vector scaled by (vx_r, vy_r)
+            out_x = bx_hit + 92.0 * vx_r
+            out_y = by0 - 25.0 * vy_r
+            els.append(f'<path d="M {bx_hit:.1f},{by0:.1f} Q {(bx_hit + out_x) / 2.0:.1f},{out_y - 6:.1f} {out_x:.1f},{out_y:.1f}" fill="none" stroke="{scol}" stroke-width="2.4"/>')
+            els.append(f'<circle cx="{out_x:.1f}" cy="{out_y:.1f}" r="4.0" fill="{OPTIC}" stroke="{OPTIC_STROKE}" stroke-width="1.2"/>')
+
+            for li, lt in enumerate(lines_t):
+                is_hi = ("唯一保留" in lt) or ("2025 历史转折" in lt) or ("Hawk-Eye Live" in lt)
+                els.append(txt(sx + 10, 380 + li * 15.2, lt, 8.1, scol if is_hi else BODY, weight="700" if is_hi else "400"))
+
+        return figure(
+            488,
+            "荧光黄毛毡网球马格努斯旋转轨迹、红土硬地草地弹跳物理对比与鹰眼电子司线图解",
+            "上图通过弹道数值积分对比无旋平击（出底线）、强烈上旋（马格努斯下压急坠界内）与下旋切削（托浮贴地滑行），并解释毛毡7/9局换球规则与1972/1986荧光黄球历史；下图对比法网红土（慢速高弹、保留主裁看球印）、澳美硬地（中速均衡）与温网草地（快速低窜、2025启用全场鹰眼电子司线）。",
+            els,
+        )
+
+    @register("tennis-rules", "球场几何与斜线勾股红利、Love-15-30-40状态机与抢七金字塔、计分悖论与70比68史诗战、毛毡马格努斯与三大场地鹰眼", "science_tech")
+    def build_tennis_rules():
+        write_svg(SUBDIR, "court-geometry-and-crosscourt.svg", _build_court_geometry_and_crosscourt())
+        write_svg(SUBDIR, "scoring-state-machine-and-pyramid.svg", _build_scoring_state_machine_and_pyramid())
+        write_svg(SUBDIR, "scoring-paradox-and-70-68-epic.svg", _build_scoring_paradox_and_70_68_epic())
+        write_svg(SUBDIR, "ball-magnus-surfaces-hawkeye.svg", _build_ball_magnus_surfaces_hawkeye())
+
+
+_register_tennis_rules()

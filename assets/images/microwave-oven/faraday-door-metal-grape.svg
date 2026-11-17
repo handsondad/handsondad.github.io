@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="456" viewBox="0 0 760 456" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">微波炉门法拉第金属网屏、叉子尖端电弧放电与双葡萄米氏谐振等离子体三大现象图解</title>
+<desc id="desc">左栏对比122.4mm微波被1.5mm门网孔（小81倍）阻挡而550nm可见光畅通，并说明光子能量仅1.01×10^-5 eV属非电离辐射；中栏对比厚圆滑金属壁镜面反射与尖锐叉齿超3kV/mm击穿打火及薄金边I²R烧毁；右栏按PNAS(2019)解析水折射率n≈8.8将波长缩至1.4cm激发葡萄米氏谐振电离钠钾产生等离子体。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="455" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">炉门黑网防泄漏、金属叉子冒电弧与“葡萄喷火”：一次看懂三大边界好奇问题</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">同是电磁波与导体/电介质的麦克斯韦方程，只因“几何尺寸与波长之比”不同，上演截然不同的物理剧目</text>
+<rect x="20" y="64" width="232" height="378" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="78.0" width="208" height="21" rx="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="136.0" y="92.3" font-size="9.8" fill="#1d6fa5" text-anchor="middle" font-weight="600">现象 1 · 炉门黑网为什么能透光防波</text>
+<rect x="32" y="108" width="208" height="108" rx="8" fill="#f8fafc" stroke="#475569" stroke-width="1.1"/>
+<rect x="132" y="114" width="12" height="96" rx="2" fill="#334155"/>
+<circle cx="138" cy="123" r="3.2" fill="#ffffff"/>
+<circle cx="138" cy="138" r="3.2" fill="#ffffff"/>
+<circle cx="138" cy="153" r="3.2" fill="#ffffff"/>
+<circle cx="138" cy="168" r="3.2" fill="#ffffff"/>
+<circle cx="138" cy="183" r="3.2" fill="#ffffff"/>
+<circle cx="138" cy="198" r="3.2" fill="#ffffff"/>
+<path d="M 40.0,146.0 L 43.5,150.7 L 47.0,155.0 L 50.5,158.7 L 54.0,161.6 L 57.5,163.4 L 61.0,164.0 L 64.5,163.4 L 68.0,161.6 L 71.5,158.7 L 75.0,155.0 L 78.5,150.7 L 82.0,146.0 L 85.5,141.3 L 89.0,137.0 L 92.5,133.3 L 96.0,130.4 L 99.5,128.6 L 103.0,128.0 L 106.5,128.6 L 110.0,130.4 L 113.5,133.3 L 117.0,137.0 L 120.5,141.3 L 124.0,146.0" fill="none" stroke="#c25014" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="82" y="124" font-size="9.1" fill="#c25014" text-anchor="middle" font-weight="700">微波 λ₀=122.4 mm</text>
+<text x="82" y="177" font-size="8.9" fill="#dc2626" text-anchor="middle" font-weight="700">比网孔大 81 倍 → 弹回!</text>
+<line x1="96.0" y1="198.0" x2="226.0" y2="198.0" stroke="#18794e" stroke-width="1.9" marker-end="url(#arr-green)"/>
+<text x="188" y="189" font-size="8.8" fill="#18794e" text-anchor="middle" font-weight="700">可见光 ~0.00055 mm</text>
+<text x="188" y="211" font-size="8.8" fill="#18794e" text-anchor="middle" font-weight="600">小 2700 倍 → 畅通看清!</text>
+<text x="32" y="236" font-size="9.5" fill="#0f172a" text-anchor="start" font-weight="600">• 网孔直径 d ≈ 1.2–1.5 mm ≪ λ₀，微波进孔</text>
+<text x="32" y="254" font-size="9.4" fill="#1e293b" text-anchor="start">  沦为指数衰减【倏逝波】（屏蔽 &gt;50 dB）；</text>
+<text x="32" y="272" font-size="9.4" fill="#1e293b" text-anchor="start">• 门框四周再嵌一圈深 λ₀/4（~3 cm）扼流槽，</text>
+<text x="32" y="290" font-size="9.4" fill="#1d6fa5" text-anchor="start" font-weight="700">  门外 5 cm 泄漏远低于国标/FDA 限值 5 mW/cm²。</text>
+<rect x="32" y="304" width="208" height="124" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1.0"/>
+<text x="42" y="323" font-size="9.6" fill="#18794e" text-anchor="start" font-weight="700">微波会致癌或留“辐射毒”吗？绝对不会！</text>
+<text x="42" y="342" font-size="9.2" fill="#0f172a" text-anchor="start" font-weight="600">• 单光子能量 hf ≈ 0.00001 eV（10⁻⁵ eV），</text>
+<text x="42" y="359" font-size="9.2" fill="#1e293b" text-anchor="start">  比打断化学键/DNA 所需的 ~5–12 eV 小</text>
+<text x="42" y="376" font-size="9.2" fill="#1e293b" text-anchor="start">  整整 50 万倍（比可见光还弱十万倍）！</text>
+<text x="42" y="395" font-size="9.2" fill="#1e293b" text-anchor="start">• 停机瞬间电磁波归零，就像关灯后屋里不留光；</text>
+<text x="42" y="413" font-size="9.1" fill="#dc2626" text-anchor="start" font-weight="700">  ⚠️ 真危险：光滑杯热纯水易【过热暴沸】烫伤！</text>
+<rect x="264" y="64" width="232" height="378" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="276.0" y="78.0" width="208" height="21" rx="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="380.0" y="92.3" font-size="9.8" fill="#c25014" text-anchor="middle" font-weight="600">现象 2 · 炉壁是金属，为何怕叉子？</text>
+<rect x="276" y="108" width="208" height="108" rx="8" fill="#fff7ed" stroke="#c25014" stroke-width="1.1"/>
+<path d="M 288,120 L 288,204" stroke="#475569" stroke-width="8" stroke-linecap="round"/>
+<line x1="326.0" y1="144.0" x2="296.0" y2="160.0" stroke="#1d6fa5" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+<line x1="296.0" y1="164.0" x2="326.0" y2="180.0" stroke="#1d6fa5" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+<text x="324" y="132" font-size="9.2" fill="#18794e" text-anchor="middle" font-weight="700">厚圆滑钢壁</text>
+<text x="324" y="198" font-size="9.1" fill="#18794e" text-anchor="middle" font-weight="700">平顺反射✓</text>
+<line x1="366.0" y1="116.0" x2="366.0" y2="208.0" stroke="#cbd5e1" stroke-width="1.0" stroke-dasharray="3 3"/>
+<path d="M 412,204 L 412,172 M 400,172 L 424,172 M 400,172 L 400,142 M 412,172 L 412,142 M 424,172 L 424,142" fill="none" stroke="#64748b" stroke-width="2.4" stroke-linecap="round"/>
+<path d="M 401,140 L 407,131 L 405,138 L 412,129 L 418,137 L 423,140" fill="none" stroke="#dc2626" stroke-width="2.0"/>
+<text x="424" y="124" font-size="9.0" fill="#dc2626" text-anchor="middle" font-weight="700">尖齿 &gt;3 kV/mm 击穿!</text>
+<text x="424" y="198" font-size="9.1" fill="#dc2626" text-anchor="middle" font-weight="700">拉出电弧✗</text>
+<text x="276" y="236" font-size="9.4" fill="#1e293b" text-anchor="start">微波遇金属会驱动表面数微米（趋肤深度 δ_s）</text>
+<text x="276" y="254" font-size="9.4" fill="#0f172a" text-anchor="start" font-weight="600">内的自由电子高速奔涌，结局全看几何形状：</text>
+<rect x="276" y="268" width="208" height="160" rx="7" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="286" y="288" font-size="9.4" fill="#18794e" text-anchor="start" font-weight="700">1. 厚实圆滑炉壁 / 微波专用圆金属架：</text>
+<text x="286" y="305" font-size="9.2" fill="#1e293b" text-anchor="start">   电荷无处堆积、电阻极低，乖乖做镜面反射。</text>
+<text x="286" y="326" font-size="9.4" fill="#dc2626" text-anchor="start" font-weight="700">2. 叉子尖齿 / 揉皱锡纸尖角（尖端放电）：</text>
+<text x="286" y="343" font-size="9.2" fill="#1e293b" text-anchor="start">   电荷挤在尖端，局部电场冲破空气击穿极限</text>
+<text x="286" y="360" font-size="9.2" fill="#dc2626" text-anchor="start" font-weight="600">   （~3000 V/mm），瞬间电离空气劈啪冒火花！</text>
+<text x="286" y="381" font-size="9.4" fill="#c25014" text-anchor="start" font-weight="700">3. 描金边瓷碗（亚微米极薄金银线）：</text>
+<text x="286" y="398" font-size="9.2" fill="#1e293b" text-anchor="start">   膜比趋肤深度还薄，电阻奇大，感应电流瞬</text>
+<text x="286" y="415" font-size="9.2" fill="#0f172a" text-anchor="start" font-weight="600">   间把金边 I²R 烧红汽化，炸黑瓷釉！</text>
+<rect x="508" y="64" width="232" height="378" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="520.0" y="78.0" width="208" height="21" rx="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="624.0" y="92.3" font-size="9.6" fill="#6d28d9" text-anchor="middle" font-weight="600">现象 3 · 两颗葡萄为什么擦出等离子火球</text>
+<rect x="520" y="108" width="208" height="108" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.1"/>
+<circle cx="594.0" cy="168.0" r="29.0" fill="#86efac" stroke="#18794e" stroke-width="1.8"/>
+<circle cx="654.0" cy="168.0" r="29.0" fill="#86efac" stroke="#18794e" stroke-width="1.8"/>
+<path d="M 572.0,168.0 L 574.2,171.1 L 576.4,173.9 L 578.6,176.1 L 580.8,177.5 L 583.0,178.0 L 585.2,177.5 L 587.4,176.1 L 589.6,173.9 L 591.8,171.1 L 594.0,168.0 L 596.2,164.9 L 598.4,162.1 L 600.6,159.9 L 602.8,158.5 L 605.0,158.0 L 607.2,158.5 L 609.4,159.9 L 611.6,162.1 L 613.8,164.9 L 616.0,168.0" fill="none" stroke="#6d28d9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 632.0,168.0 L 634.2,171.1 L 636.4,173.9 L 638.6,176.1 L 640.8,177.5 L 643.0,178.0 L 645.2,177.5 L 647.4,176.1 L 649.6,173.9 L 651.8,171.1 L 654.0,168.0 L 656.2,164.9 L 658.4,162.1 L 660.6,159.9 L 662.8,158.5 L 665.0,158.0 L 667.2,158.5 L 669.4,159.9 L 671.6,162.1 L 673.8,164.9 L 676.0,168.0" fill="none" stroke="#6d28d9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="624" cy="168.0" r="8.5" fill="#fef08a" stroke="#dc2626" stroke-width="1.8"/>
+<path d="M 616,156 Q 624,116 632,156 Z" fill="#f97316" fill-opacity="0.82" stroke="#dc2626" stroke-width="1.2"/>
+<text x="624" y="123" font-size="9.0" fill="#dc2626" text-anchor="middle" font-weight="700" class="halo">Na/K 等离子体火球!</text>
+<text x="556" y="134" font-size="8.9" fill="#6d28d9" text-anchor="middle" font-weight="700">n≈8.8 缩波</text>
+<text x="624" y="209" font-size="8.9" fill="#6d28d9" text-anchor="middle" font-weight="700">葡萄内波长缩至 λ_w ≈ 1.4 cm ≈ 葡萄直径!</text>
+<text x="520" y="236" font-size="9.4" fill="#6d28d9" text-anchor="start" font-weight="700">2019 年《美国科学院院刊》(PNAS) 揭开真凶：</text>
+<text x="520" y="254" font-size="9.4" fill="#0f172a" text-anchor="start" font-weight="700">不是“果皮导电连桥”，而是【光学米氏谐振】！</text>
+<rect x="520" y="268" width="208" height="160" rx="7" fill="#faf5ff" stroke="#6d28d9" stroke-width="0.9"/>
+<text x="530" y="288" font-size="9.4" fill="#6d28d9" text-anchor="start" font-weight="700">1. 水的折射率 n = √ε&#x27; ≈ 8.8：</text>
+<text x="530" y="305" font-size="9.2" fill="#1e293b" text-anchor="start">   炉内 12.24 cm 微波钻进葡萄，波长瞬间</text>
+<text x="530" y="322" font-size="9.2" fill="#0f172a" text-anchor="start" font-weight="600">   缩至 λ_w ≈ 1.4 cm，恰好等于葡萄直径！</text>
+<text x="530" y="343" font-size="9.4" fill="#c25014" text-anchor="start" font-weight="700">2. 双水球倏逝场耦合聚焦：</text>
+<text x="530" y="360" font-size="9.2" fill="#1e293b" text-anchor="start">   两颗水球挨近时，内部谐振场在 &lt;1 mm 缝隙</text>
+<text x="530" y="377" font-size="9.2" fill="#1e293b" text-anchor="start">   叠出超强热点，连无皮纯水凝胶珠都照样喷火；</text>
+<text x="530" y="397" font-size="9.4" fill="#dc2626" text-anchor="start" font-weight="700">3. 电离钠/钾离子 → 烧毁云母片：</text>
+<text x="530" y="414" font-size="9.2" fill="#dc2626" text-anchor="start" font-weight="700">   高温等离子体极易烧穿炉顶波导口，切勿模仿！</text>
+</svg>

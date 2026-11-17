@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="480" viewBox="0 0 760 480" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">网球分盘清零计分悖论、2019温网决赛得分倒挂与2010温网伊斯内尔对马胡70比68史诗纪录图解</title>
+<desc id="desc">左图用三盘两胜极限算例证明仅赢36.9%总分（62比106）即可获胜，并列出2019温网决赛费德勒总得分218比204领先14分却输掉3个抢七失冠的真实统计；右图复原2010温网18号球场跨三天11小时05分打出70比68、47比47记分牌死机、马胡502比478总分反超及2022大满贯决胜盘6比6抢十封存纪录。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="479" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">总得分比对手少 14 分却夺走温网冠军？网球“准辛普森悖论”与跨三天 70 比 68 神迹</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：清零机制酿成的“少得分赢球”数学奇观与 2019 温网决赛 · 右：2010 温网 18 号球场打瘫记分牌的 11 小时 05 分绝唱</text>
+<rect x="16" y="64" width="362" height="404" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="28.0" y="76.0" width="304" height="22" rx="11.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="180.0" y="91.0" font-size="9.6" fill="#dc2626" text-anchor="middle" font-weight="600">① 计分悖论 · 输盘脆败不扣额外分，赢盘险胜就够夺冠</text>
+<rect x="28" y="108" width="338" height="134" rx="8" fill="#fef2f2" stroke="#fecaca" stroke-width="1"/>
+<text x="40" y="127" font-size="9.0" fill="#dc2626" text-anchor="start" font-weight="700">数学极限（无平分三盘两胜）：只拿全场 36.9% 的总分就能赢！</text>
+<text x="40" y="146" font-size="8.5" fill="#1e293b" text-anchor="start">• 第 1 盘战略放弃：0–6 吞蛋（全 0–4 脆败） → 甲 0 分 : 乙 24 分</text>
+<text x="40" y="164" font-size="8.5" fill="#1e293b" text-anchor="start">• 第 2、3 盘精打细算：各输 6 局 0–4、各赢 6 局 4–2，抢七各赢 7–5</text>
+<text x="40" y="181" font-size="8.5" fill="#0f172a" text-anchor="start" font-weight="600">  每盘甲拿 24+7 = 31 分，乙拿 24+12+5 = 41 分，甲却连赢两盘 7–6！</text>
+<rect x="40" y="194" width="115.1" height="22" rx="4" fill="#18794e"/>
+<rect x="155.1" y="194" width="196.9" height="22" rx="4" fill="#475569"/>
+<text x="97.6" y="209" font-size="8.3" fill="#ffffff" text-anchor="middle" font-weight="700">胜者甲 62 分 (36.9%)</text>
+<text x="253.6" y="209" font-size="8.3" fill="#ffffff" text-anchor="middle" font-weight="700">败者乙 106 分 (63.1%) 却输掉比赛！</text>
+<text x="197" y="232" font-size="8.2" fill="#dc2626" text-anchor="middle" font-weight="600">原因：0–4 脆败与 2–4 惜败同样只算丢 1 局，“溢出选票”全被清零浪费！</text>
+<rect x="28" y="252" width="338" height="204" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="40" y="271" font-size="9.0" fill="#0f172a" text-anchor="start" font-weight="700">真实巅峰案例：2019 温网男单决赛（4 小时 57 分最长温网决赛）</text>
+<text x="40" y="289" font-size="8.4" fill="#1d6fa5" text-anchor="start" font-weight="700">比分：德约科维奇 7–6(5), 1–6, 7–6(4), 4–6, 13–12(3) 险胜费德勒</text>
+<text x="40" y="314" font-size="8.5" fill="#0f172a" text-anchor="start" font-weight="700">总得分</text>
+<text x="106" y="314" font-size="8.5" fill="#1e293b" text-anchor="start" font-weight="600" class="mono">德约 204</text>
+<text x="162" y="314" font-size="8.5" fill="#c25014" text-anchor="start" font-weight="700" class="mono">费德勒 218</text>
+<text x="228" y="314" font-size="8.2" fill="#dc2626" text-anchor="start" font-weight="600">费德勒多拿 14 分！</text>
+<text x="40" y="338" font-size="8.5" fill="#0f172a" text-anchor="start" font-weight="700">总赢局数</text>
+<text x="106" y="338" font-size="8.5" fill="#1e293b" text-anchor="start" font-weight="600" class="mono">德约 32</text>
+<text x="162" y="338" font-size="8.5" fill="#c25014" text-anchor="start" font-weight="700" class="mono">费德勒 36</text>
+<text x="228" y="338" font-size="8.2" fill="#dc2626" text-anchor="start" font-weight="600">费德勒多赢 4 局！</text>
+<text x="40" y="362" font-size="8.5" fill="#0f172a" text-anchor="start" font-weight="700">制胜分</text>
+<text x="106" y="362" font-size="8.5" fill="#1e293b" text-anchor="start" font-weight="600" class="mono">德约 54</text>
+<text x="162" y="362" font-size="8.5" fill="#c25014" text-anchor="start" font-weight="700" class="mono">费德勒 94</text>
+<text x="228" y="362" font-size="8.2" fill="#dc2626" text-anchor="start" font-weight="600">费德勒多轰 40 记！</text>
+<text x="40" y="386" font-size="8.5" fill="#0f172a" text-anchor="start" font-weight="700">破发次数</text>
+<text x="106" y="386" font-size="8.5" fill="#1e293b" text-anchor="start" font-weight="600" class="mono">德约 3</text>
+<text x="162" y="386" font-size="8.5" fill="#c25014" text-anchor="start" font-weight="700" class="mono">费德勒 7</text>
+<text x="228" y="386" font-size="8.2" fill="#dc2626" text-anchor="start" font-weight="600">费德勒破发 7 次 vs 3 次</text>
+<text x="40" y="410" font-size="8.5" fill="#18794e" text-anchor="start" font-weight="700">抢七胜率</text>
+<text x="106" y="410" font-size="8.5" fill="#18794e" text-anchor="start" font-weight="700" class="mono">德约 3</text>
+<text x="162" y="410" font-size="8.5" fill="#64748b" text-anchor="start" font-weight="400" class="mono">费德勒 0</text>
+<text x="228" y="410" font-size="8.2" fill="#18794e" text-anchor="start" font-weight="700">德约 3 次抢七全胜夺冠！</text>
+<text x="40" y="442" font-size="8.1" fill="#64748b" text-anchor="start">注：费德勒在决胜盘 8–7 40–15 手握 2 个冠军点未兑现，最终输在 12–12 抢七。</text>
+<rect x="392" y="64" width="352" height="404" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="404.0" y="76.0" width="328" height="22" rx="11.0" fill="#f0fdfa" stroke="#0f766e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="568.0" y="91.0" font-size="9.4" fill="#0f766e" text-anchor="middle" font-weight="600">② 史诗绝唱 · 2010 温网跨三天 70–68（把规则逼改的历史化石）</text>
+<rect x="404" y="108" width="328" height="92" rx="8" fill="#064e3b" stroke="#047857" stroke-width="1.5"/>
+<text x="418" y="126" font-size="8.4" fill="#a7f3d0" text-anchor="start" font-weight="700" class="mono">WIMBLEDON 2010 · COURT 18（第一轮 · 耗时 11 小时 05 分钟）</text>
+<text x="418" y="152" font-size="9.5" fill="#fef08a" text-anchor="start" font-weight="700" class="mono">J. ISNER (胜)</text>
+<text x="526" y="152" font-size="9.6" fill="#ffffff" text-anchor="start" font-weight="600" class="mono">6   3   6   7</text>
+<rect x="634" y="137" width="84" height="22" rx="4" fill="#fef08a"/>
+<text x="676" y="153" font-size="11.5" fill="#064e3b" text-anchor="middle" font-weight="700" class="mono">70</text>
+<text x="418" y="180" font-size="9.5" fill="#e2e8f0" text-anchor="start" font-weight="700" class="mono">N. MAHUT</text>
+<text x="526" y="180" font-size="9.6" fill="#cbd5e1" text-anchor="start" font-weight="600" class="mono">4   6   7   6</text>
+<rect x="634" y="165" width="84" height="22" rx="4" fill="#065f46" stroke="#6ee7b7" stroke-width="1"/>
+<text x="676" y="181" font-size="11.5" fill="#ffffff" text-anchor="middle" font-weight="700" class="mono">68</text>
+<rect x="404" y="210" width="328" height="150" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="416" y="229" font-size="8.9" fill="#0f172a" text-anchor="start" font-weight="700">跨三天拉锯奇闻（当时温网决胜盘不设抢七，必须净胜 2 局！）：</text>
+<text x="416" y="248" font-size="8.5" fill="#1e293b" text-anchor="start">• 6 月 22 日（周二）：打完前四盘 2–2 平，天黑无照明暂停；</text>
+<text x="416" y="267" font-size="8.5" fill="#1e293b" text-anchor="start">• 6 月 23 日（周三）：单日死磕 7 小时 04 分！打到 47–47 时现场 IBM</text>
+<text x="416" y="284" font-size="8.5" fill="#c25014" text-anchor="start" font-weight="700">  电子记分牌彻底卡死黑屏（程序员根本没写超过 47 局的代码！），官网</text>
+<text x="416" y="301" font-size="8.5" fill="#1e293b" text-anchor="start">  在 50–50 归零贴出告示“请读者自行 +50”；战至 59–59 再度天黑暂停！</text>
+<text x="416" y="320" font-size="8.5" fill="#0f766e" text-anchor="start" font-weight="700">• 6 月 24 日（周四）：再战 67 分钟，伊斯内尔第 138 局破发定格 70–68！</text>
+<text x="416" y="340" font-size="8.5" fill="#dc2626" text-anchor="start" font-weight="700">• 又见计分悖论：全场共 980 分，输球的马胡拿了 502 分 &gt; 胜者 478 分！</text>
+<text x="416" y="355" font-size="8.3" fill="#64748b" text-anchor="start">  两人合轰 216 记 Ace（113 vs 103），连续保发 168 局无一人掉链子。</text>
+<rect x="404" y="370" width="328" height="86" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1"/>
+<text x="416" y="389" font-size="9.0" fill="#18794e" text-anchor="start" font-weight="700">永远封存的世界纪录：为什么后人再也不可能打破 70–68？</text>
+<text x="416" y="408" font-size="8.4" fill="#1e293b" text-anchor="start">2018 温网半决赛伊斯内尔又打出 26–24 长盘后，温网于 2019 增设 12–12</text>
+<text x="416" y="425" font-size="8.4" fill="#0f172a" text-anchor="start" font-weight="600">抢七；2022 年四大满贯正式统一为【决胜盘 6–6 抢十】——183 局马拉松</text>
+<text x="416" y="442" font-size="8.4" fill="#18794e" text-anchor="start" font-weight="700">从此化作网球规则演进史上前无古人、后无来者的琥珀标本！</text>
+</svg>

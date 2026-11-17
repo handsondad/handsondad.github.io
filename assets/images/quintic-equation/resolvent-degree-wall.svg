@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="454" viewBox="0 0 760 454" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">二次三次四次方程降次预解阶梯与五次方程预解次数反升至6次对比图</title>
+<desc id="desc">四栏对比二次（2→1次）、三次（3→2次）、四次（4→3次）方程通过拉格朗日预解式逐级降次的机制，以及五次方程（5!=120）预解式反升为6次（120/20=6）导致降次法失效，底部说明邦贝利复数绕行与预解值个数原理。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="453" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">前四次方程凭什么一路通关，一到五次却集体撞墙？—— 拉格朗日“降次阶梯”的惊天反转</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">1770 年拉格朗日复盘三百年秘籍：前四次靠对称辅助量总能“降一级次数”，唯独五次辅助方程反倒暴涨成 6 次！</text>
+<rect x="20" y="62" width="168" height="256" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="104.0" y="83" font-size="10.4" fill="#1d6fa5" text-anchor="middle" font-weight="700">二次方程 (n = 2)</text>
+<text x="104.0" y="99" font-size="8.3" fill="#64748b" text-anchor="middle">古巴比伦 (~前1800)</text>
+<rect x="30" y="109" width="148" height="28" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<text x="104.0" y="127" font-size="8.6" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">x² + bx + c = 0</text>
+<text x="104.0" y="154" font-size="8.7" fill="#1e293b" text-anchor="middle" font-weight="600">平移 x = y − b/2</text>
+<rect x="32.0" y="166.0" width="144" height="24" rx="12.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="104.0" y="182.3" font-size="9.4" fill="#1d6fa5" text-anchor="middle" font-weight="600">辅助次数：1 次</text>
+<text x="30" y="212" font-size="8.5" fill="#0f172a" text-anchor="start" font-weight="600">• S₂ 共 2! = 2 种排列</text>
+<text x="30" y="231" font-size="8.5" fill="#1e293b" text-anchor="start">• 配成 (x+b/2)² = Δ/4</text>
+<text x="30" y="254" font-size="8.8" fill="#1d6fa5" text-anchor="start" font-weight="700">✓ 开 1 层平方根 √Δ 通关！</text>
+<text x="32" y="282" font-size="8.2" fill="#475569" text-anchor="start" font-weight="700">原 2 次</text>
+<rect x="74" y="273" width="28" height="10" rx="3" fill="#94a3b8"/>
+<text x="32" y="300" font-size="8.2" fill="#1d6fa5" text-anchor="start" font-weight="700">预 1 次</text>
+<rect x="74" y="291" width="14" height="10" rx="3" fill="#1d6fa5"/>
+<rect x="200" y="62" width="174" height="256" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="287.0" y="83" font-size="10.4" fill="#0f766e" text-anchor="middle" font-weight="700">三次方程 (n = 3)</text>
+<text x="287.0" y="99" font-size="8.3" fill="#64748b" text-anchor="middle">塔尔塔利亚 &amp; 卡尔达诺 (1545)</text>
+<rect x="210" y="109" width="154" height="28" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<text x="287.0" y="127" font-size="8.6" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">y³ + py + q = 0</text>
+<text x="287.0" y="154" font-size="8.7" fill="#1e293b" text-anchor="middle" font-weight="600">拆 y = u+v，令 3uv = −p</text>
+<rect x="212.0" y="166.0" width="150" height="24" rx="12.0" fill="#f0fdfa" stroke="#0f766e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="287.0" y="182.3" font-size="9.4" fill="#0f766e" text-anchor="middle" font-weight="600">辅助次数：3→2 次!</text>
+<text x="210" y="212" font-size="8.5" fill="#0f172a" text-anchor="start" font-weight="600">• S₃ 共 3! = 6 种排列</text>
+<text x="210" y="231" font-size="8.5" fill="#1e293b" text-anchor="start">• u³, v³ 满足二次预解式</text>
+<text x="210" y="254" font-size="8.8" fill="#0f766e" text-anchor="start" font-weight="700">✓ 立方根套平方根通关！</text>
+<text x="212" y="282" font-size="8.2" fill="#475569" text-anchor="start" font-weight="700">原 3 次</text>
+<rect x="254" y="273" width="42" height="10" rx="3" fill="#94a3b8"/>
+<text x="212" y="300" font-size="8.2" fill="#0f766e" text-anchor="start" font-weight="700">预 2 次</text>
+<rect x="254" y="291" width="28" height="10" rx="3" fill="#0f766e"/>
+<rect x="386" y="62" width="174" height="256" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="473.0" y="83" font-size="10.4" fill="#18794e" text-anchor="middle" font-weight="700">四次方程 (n = 4)</text>
+<text x="473.0" y="99" font-size="8.3" fill="#64748b" text-anchor="middle">20岁费拉里 (1540/1545)</text>
+<rect x="396" y="109" width="154" height="28" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<text x="473.0" y="127" font-size="8.6" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">y⁴ + py² + qy + r = 0</text>
+<text x="473.0" y="154" font-size="8.7" fill="#1e293b" text-anchor="middle" font-weight="600">借参数 m 凑 (y²+m)²</text>
+<rect x="398.0" y="166.0" width="150" height="24" rx="12.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="473.0" y="182.3" font-size="9.4" fill="#18794e" text-anchor="middle" font-weight="600">辅助次数：4→3 次!</text>
+<text x="396" y="212" font-size="8.5" fill="#0f172a" text-anchor="start" font-weight="600">• S₄ 共 4! = 24 种排列</text>
+<text x="396" y="231" font-size="8.5" fill="#1e293b" text-anchor="start">• u=x₁x₂+x₃x₄ 仅 3 种取值</text>
+<text x="396" y="254" font-size="8.8" fill="#18794e" text-anchor="start" font-weight="700">✓ 解 3 次预解式丝滑通关！</text>
+<text x="398" y="282" font-size="8.2" fill="#475569" text-anchor="start" font-weight="700">原 4 次</text>
+<rect x="440" y="273" width="56" height="10" rx="3" fill="#94a3b8"/>
+<text x="398" y="300" font-size="8.2" fill="#18794e" text-anchor="start" font-weight="700">预 3 次</text>
+<rect x="440" y="291" width="42" height="10" rx="3" fill="#18794e"/>
+<rect x="572" y="62" width="168" height="256" rx="10" fill="#ffffff" stroke="#dc2626" stroke-width="1.6"/>
+<text x="656.0" y="83" font-size="10.4" fill="#dc2626" text-anchor="middle" font-weight="700">五次方程 (n = 5)</text>
+<text x="656.0" y="99" font-size="8.3" fill="#64748b" text-anchor="middle">拉格朗日撞墙 (1770)!</text>
+<rect x="582" y="109" width="148" height="28" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<text x="656.0" y="127" font-size="8.6" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">y⁵ + py³ + qy² + ry + s = 0</text>
+<text x="656.0" y="154" font-size="8.7" fill="#1e293b" text-anchor="middle" font-weight="600">穷尽 5! = 120 种根排列</text>
+<rect x="584.0" y="166.0" width="144" height="24" rx="12.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="656.0" y="182.3" font-size="9.4" fill="#dc2626" text-anchor="middle" font-weight="600">暴涨成 6 次 / 24 次!</text>
+<text x="582" y="212" font-size="8.5" fill="#0f172a" text-anchor="start" font-weight="600">• S₅ 共 120 种排列</text>
+<text x="582" y="231" font-size="8.5" fill="#1e293b" text-anchor="start">• 最少取值数 = 120÷20 = 6</text>
+<text x="582" y="254" font-size="8.8" fill="#dc2626" text-anchor="start" font-weight="700">✗ 不降反升！老套路彻底报废</text>
+<text x="584" y="282" font-size="8.2" fill="#475569" text-anchor="start" font-weight="700">原 5 次</text>
+<rect x="626" y="273" width="70" height="10" rx="3" fill="#94a3b8"/>
+<text x="584" y="300" font-size="8.2" fill="#dc2626" text-anchor="start" font-weight="700">预 6 次</text>
+<rect x="626" y="291" width="84" height="10" rx="3" fill="#dc2626"/>
+<rect x="20" y="332" width="720" height="108" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="1.1"/>
+<text x="34" y="353" font-size="9.6" fill="#b45309" text-anchor="start" font-weight="700">💡 两个改写数学史的意外收获：① 三次公式逼出“复数”  ② 拉格朗日预解式催生“群论”</text>
+<text x="34" y="374" font-size="9.0" fill="#0f172a" text-anchor="start">• 卡尔达诺“不可约迷局”（邦贝利 1572 破解）：方程 y³ − 15y − 4 = 0 明明有 3 个实数根（y = 4 和 −2±√3），代进求根公式却冒出</text>
+<text x="34" y="391" font-size="9.0" fill="#1e293b" text-anchor="start">  ∛(2 + √−121) + ∛(2 − √−121) = (2 + i) + (2 − i) = 4！要想算出实数真根，半路【必须穿过虚数隧道】——复数从此拿到合法户口！</text>
+<text x="34" y="410" font-size="9.0" fill="#0f172a" text-anchor="start" font-weight="600">• 拉格朗日看穿本质：辅助方程是 k 次，当且仅当根的某个组合在全部 n! 种洗牌里只变出 k 个不同值。5! = 120 里竟找不到任何 2、3、4 值</text>
+<text x="34" y="426" font-size="9.0" fill="#dc2626" text-anchor="start" font-weight="700">  的非平凡中间跳板（2 值只有判别式，下一步直接跳到 6 值！）—— 这道裂谷直接把鲁菲尼、阿贝尔和伽罗瓦引向了不可解证明！</text>
+</svg>

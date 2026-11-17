@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="506" viewBox="0 0 760 506" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">克列尔杂志前54卷发掘与拯救的五位草根及局外数学家代表时间榜</title>
+<desc id="desc">依次展示1826阿贝尔、1826施泰纳、1844一年发表25篇的艾森斯坦、1850-1854重印格林函数遗作的磨坊之子乔治·格林、以及1854第47卷一鸣惊人的中学体育书法老师魏尔斯特拉斯，并附1837罗巴切夫斯基与1857黎曼。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="505" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">克列尔的“逆袭伯乐榜”：五位被这本杂志改写命运的草根、孤儿与乡村教师</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">不看文凭、不问出身——谁能写出真定理，谁就登上柏林头版！这五段逆袭全发生在《克列尔》前 54 卷</text>
+<rect x="20" y="66" width="720" height="70" rx="9" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.2"/>
+<rect x="32.0" y="77.0" width="166" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="115.0" y="92.0" font-size="11.3" fill="#1d6fa5" text-anchor="middle" font-weight="600">1826 · 第 1–4 卷</text>
+<text x="210" y="93" font-size="12.8" fill="#0f172a" text-anchor="start" font-weight="700">阿贝尔（23 岁 · 挪威贫寒青年）</text>
+<text x="32" y="113" font-size="11.4" fill="#64748b" text-anchor="start">困境：父亲早逝抚养弟妹，高斯的沉默与柯西的积压让他走投无路。</text>
+<text x="32" y="129" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="600">逆袭：克列尔连发其五次方程与椭圆函数巨著，四处奔走为他争下柏林大学教席（聘书惜晚到两天）。</text>
+<rect x="20" y="144" width="720" height="70" rx="9" fill="#ffffff" stroke="#18794e" stroke-width="1.2"/>
+<rect x="32.0" y="155.0" width="166" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="115.0" y="170.0" font-size="11.3" fill="#18794e" text-anchor="middle" font-weight="600">1826 · 第 1 卷起</text>
+<text x="210" y="171" font-size="12.8" fill="#0f172a" text-anchor="start" font-weight="700">施泰纳（30 岁 · 14 岁才识字的瑞士牧童）</text>
+<text x="32" y="191" font-size="11.4" fill="#64748b" text-anchor="start">困境：放牛长大，因拒绝照本宣科使用校长教材被柏林中学解雇，靠家教糊口。</text>
+<text x="32" y="207" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="600">逆袭：在《克列尔》发表 62 篇射影与综合几何杰作，获洪堡与克列尔力荐，执掌柏林大学几何教席。</text>
+<rect x="20" y="222" width="720" height="70" rx="9" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+<rect x="32.0" y="233.0" width="166" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="115.0" y="248.0" font-size="11.3" fill="#6d28d9" text-anchor="middle" font-weight="600">1844 · 第 27–28 卷</text>
+<text x="210" y="249" font-size="12.8" fill="#0f172a" text-anchor="start" font-weight="700">艾森斯坦（21 岁 · 贫病交加的大一新生）</text>
+<text x="32" y="269" font-size="11.4" fill="#64748b" text-anchor="start">困境：童年患脑膜炎体弱多病、家境困顿，刚迈入柏林大学校门。</text>
+<text x="32" y="285" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="600">逆袭：克列尔一眼识珠，允许他边证边排印，1844 一年狂发 25 篇作品！高斯惊叹其才华比肩阿贝尔。</text>
+<rect x="20" y="300" width="720" height="70" rx="9" fill="#ffffff" stroke="#0f766e" stroke-width="1.2"/>
+<rect x="32.0" y="311.0" width="166" height="22" rx="11.0" fill="#f0fdfa" stroke="#0f766e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="115.0" y="326.0" font-size="11.3" fill="#0f766e" text-anchor="middle" font-weight="600">1850–54 · 第 39/44/47 卷</text>
+<text x="210" y="327" font-size="12.8" fill="#0f172a" text-anchor="start" font-weight="700">乔治·格林（已故英国磨坊主之子）</text>
+<text x="32" y="347" font-size="11.4" fill="#64748b" text-anchor="start">困境：在面粉风车磨坊自学成才，1828 年自费印 51 册《电磁学数学分析》无人问津，抱憾离世。</text>
+<text x="32" y="363" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="600">逆袭：青年开尔文寻得孤本转交柏林，《克列尔》分三卷全文重印，“格林函数”从此照亮现代物理！</text>
+<rect x="20" y="378" width="720" height="70" rx="9" fill="#ffffff" stroke="#c25014" stroke-width="1.2"/>
+<rect x="32.0" y="389.0" width="166" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="115.0" y="404.0" font-size="11.3" fill="#c25014" text-anchor="middle" font-weight="600">1854 · 第 47 卷</text>
+<text x="210" y="405" font-size="12.8" fill="#0f172a" text-anchor="start" font-weight="700">魏尔斯特拉斯（38 岁 · 偏远小城体操兼书法老师）</text>
+<text x="32" y="425" font-size="11.4" fill="#64748b" text-anchor="start">困境：大学未拿学位，在波兰边境小城中学教算术、写字和体操长达 12 年，靠借阅《克列尔》自学。</text>
+<text x="32" y="441" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="600">逆袭：p.289 发表《阿贝尔函数论》震惊学界，哥尼斯堡大学火速登门颁授荣誉博士，旋即受聘柏林！</text>
+<rect x="20" y="458" width="720" height="34" rx="7" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="380" y="480" font-size="11.6" fill="#0f172a" text-anchor="middle" font-weight="600">同刊高光：第 17 卷 (1837) 把罗巴切夫斯基非欧几何推向西欧；第 54 卷 (1857) 刊出黎曼曲面与亏格奠基之作！</text>
+</svg>

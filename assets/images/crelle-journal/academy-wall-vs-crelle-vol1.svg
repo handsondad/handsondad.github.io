@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="456" viewBox="0 0 760 456" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">1826年皇家科学院封闭审稿壁垒与克列尔杂志创刊第1卷387页真实版面构成对比图</title>
+<desc id="desc">左栏展示1826年前科学院院刊需院士引荐的高墙及阿贝尔在哥廷根与巴黎遭遇的冷遇；右栏按德古意特数字化原刊目录精确统计创刊第1卷387页构成：23岁阿贝尔7篇119页(30.7%)、30岁施泰纳5篇94页(24.3%)、21岁雅可比1篇8页(2.1%)，三位青年合计占57.1%。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="455" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">1826 年以前数学新星有多绝望？—— 皇家科学院高墙 vs《克列尔》创刊号破壁</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左边是必须靠院士引荐的封闭院刊；右边是修路工程师克列尔敞开大门的第 1 卷（1826 年，共 387 页）真实账本</text>
+<rect x="20" y="64" width="334" height="376" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="78.0" width="306" height="24" rx="12.0" fill="#fef2f2" stroke="#b91c1c" stroke-width="1" stroke-opacity="0.35"/>
+<text x="187.0" y="94.3" font-size="11.8" fill="#b91c1c" text-anchor="middle" font-weight="600">旧秩序 · 封闭的皇家科学院院刊</text>
+<rect x="34" y="114" width="306" height="84" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="46" y="137" font-size="12.2" fill="#0f172a" text-anchor="start" font-weight="700">① 投稿门槛：没头衔连门都进不去</text>
+<text x="46" y="160" font-size="11.5" fill="#1e293b" text-anchor="start">巴黎、柏林、伦敦院刊只收院士报告；外人手稿</text>
+<text x="46" y="180" font-size="11.5" fill="#1e293b" text-anchor="start">必须托院士代呈审查，生杀大权全看大人物心情。</text>
+<rect x="34" y="210" width="306" height="84" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="46" y="233" font-size="12.2" fill="#0f172a" text-anchor="start" font-weight="700">② 1824 哥廷根冷遇：原封未拆的小册子</text>
+<text x="46" y="256" font-size="11.5" fill="#1e293b" text-anchor="start">22 岁挪威穷青年阿贝尔节衣缩食把五次方程证明</text>
+<text x="46" y="276" font-size="11.5" fill="#1e293b" text-anchor="start">压成 6 页法文册寄给高斯，高斯嫌太简略未拆封。</text>
+<rect x="34" y="306" width="306" height="84" rx="8" fill="#fef2f2" stroke="#b91c1c" stroke-width="1"/>
+<text x="46" y="329" font-size="12.2" fill="#b91c1c" text-anchor="start" font-weight="700">③ 1826 巴黎石沉大海：被弄丢的巨著</text>
+<text x="46" y="352" font-size="11.5" fill="#1e293b" text-anchor="start">阿贝尔向巴黎科学院呈交超越函数大论文，主审</text>
+<text x="46" y="372" font-size="11.5" fill="#1e293b" text-anchor="start">柯西随手压进故纸堆，直到阿贝尔病逝仍未印出！</text>
+<text x="34" y="418" font-size="11.5" fill="#64748b" text-anchor="start">痛点：1810 法国《热尔岗年刊》独木难支（1832 停刊）</text>
+<rect x="368" y="64" width="372" height="376" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="382.0" y="78.0" width="344" height="24" rx="12.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="554.0" y="94.3" font-size="11.8" fill="#1d6fa5" text-anchor="middle" font-weight="600">新纪元 · 1826 年柏林《克列尔》创刊第 1 卷（387页）</text>
+<text x="382" y="122" font-size="12.8" fill="#0f172a" text-anchor="start" font-weight="700">三位毫无名气的年轻人，包揽创刊号 57.1% 篇幅！</text>
+<rect x="382.0" y="134.0" width="105.8" height="32.0" rx="4" fill="#1d6fa5"/>
+<text x="434.9" y="154.5" font-size="11.5" fill="#ffffff" text-anchor="middle" font-weight="700">阿贝尔 30.7%</text>
+<rect x="487.8" y="134.0" width="83.6" height="32.0" rx="0" fill="#18794e"/>
+<text x="529.6" y="154.5" font-size="11.5" fill="#ffffff" text-anchor="middle" font-weight="700">施泰纳 24.3%</text>
+<rect x="571.3" y="134.0" width="7.1" height="32.0" rx="0" fill="#6d28d9"/>
+<rect x="578.4" y="134.0" width="147.6" height="32.0" rx="4" fill="#475569"/>
+<text x="652.2" y="154.5" font-size="11.5" fill="#ffffff" text-anchor="middle" font-weight="700">克列尔等 42.9%</text>
+<rect x="382" y="178" width="344" height="54" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="394" y="199" font-size="11.8" fill="#1d6fa5" text-anchor="start" font-weight="700">23 岁阿贝尔 · 连发 7 篇（119 页，占 30.7%）</text>
+<text x="394" y="219" font-size="11.2" fill="#1e293b" text-anchor="start">五次方程无根式解(p.65)、积分方程(p.153)、二项级数(p.311)</text>
+<rect x="382" y="240" width="344" height="54" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1.1"/>
+<text x="394" y="261" font-size="11.8" fill="#18794e" text-anchor="start" font-weight="700">30 岁施泰纳 · 连发 5 篇（94 页，占 24.3%）</text>
+<text x="394" y="281" font-size="11.2" fill="#1e293b" text-anchor="start">瑞士农家子逆袭！首创圆幂定理与空间分割公式(p.349)</text>
+<rect x="382" y="302" width="344" height="54" rx="7" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.1"/>
+<text x="394" y="323" font-size="11.8" fill="#6d28d9" text-anchor="start" font-weight="700">21 岁雅可比 · 处女作登场（p.301–308，8 页）</text>
+<text x="394" y="343" font-size="11.2" fill="#1e293b" text-anchor="start">解析高斯求积法；次年即与阿贝尔共创椭圆函数巅峰</text>
+<rect x="382" y="364" width="344" height="54" rx="7" fill="#f1f5f9" stroke="#475569" stroke-width="1.1"/>
+<text x="394" y="385" font-size="11.8" fill="#475569" text-anchor="start" font-weight="700">46 岁克列尔与工程同侪（166 页，占 42.9%）</text>
+<text x="394" y="405" font-size="11.2" fill="#1e293b" text-anchor="start">既推纯数神作，也发自己的离心泵(p.85)与齿轮论文(p.375)</text>
+</svg>

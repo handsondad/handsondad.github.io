@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="454" viewBox="0 0 760 454" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">可根式解五次方程D5子群阶梯与不可根式解五次方程S5交错单群A5阻断对比图</title>
+<desc id="desc">左栏以不可约方程x^5-5x^3+5x-4=0为例展示x=u+1/u代换得出精确五次根式解及F20→D5→C5→{e}可解子群链；右栏以x^5-4x+2=0为例通过艾森斯坦判别法与3实根2复根证明其伽罗瓦群为S5，卡死在60元非交换单群A5。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="453" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">伽罗瓦的终极手术刀：同样是不可约五次方程，为什么有的能开根号、有的绝对不行？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">五次方程能不能用根号解，全看 5 个根的“对称洗牌群”有没有落进 20 元安全区 F₂₀ 之内！</text>
+<rect x="20" y="62" width="352" height="378" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="76.0" width="324" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="196.0" y="91.0" font-size="9.4" fill="#18794e" text-anchor="middle" font-weight="600">✓ 可用根号精确解 · 对称群落入 F₂₀ 安全区 (≤20元)</text>
+<rect x="34" y="108" width="324" height="146" rx="7" fill="#f0fdf4" stroke="#18794e" stroke-width="1.2"/>
+<text x="46" y="128" font-size="9.4" fill="#18794e" text-anchor="start" font-weight="700">真题实算：不可约五次方程  x⁵ − 5x³ + 5x − 4 = 0</text>
+<text x="46" y="149" font-size="8.7" fill="#1e293b" text-anchor="start">• 有理根检验 ±1, ±2, ±4 全败，整系数二次因式分解也全败！</text>
+<text x="46" y="168" font-size="8.9" fill="#0f172a" text-anchor="start" font-weight="700">• 棣莫弗神代换（令 x = u + 1/u）：展开立消全部中间项！</text>
+<text x="196" y="188" font-size="8.8" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono">(u + 1/u)⁵ − 5(u + 1/u)³ + 5(u + 1/u) ≡ u⁵ + 1/u⁵ = 4</text>
+<text x="46" y="208" font-size="8.8" fill="#1e293b" text-anchor="start">• 瞬间退化成二次方程 (u⁵)² − 4(u⁵) + 1 = 0 ⇒ u⁵ = 2 ± √3：</text>
+<text x="196" y="232" font-size="9.3" fill="#18794e" text-anchor="middle" font-weight="700">精确根 x₁ = ⁵√(2+√3) + ⁵√(2−√3) ≈ 2.069777！</text>
+<text x="34" y="274" font-size="9.0" fill="#0f172a" text-anchor="start" font-weight="700">为什么它能解？因为它的根对称群是正五边形二面体群 D₅：</text>
+<rect x="34" y="286" width="324" height="62" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="22" y="300" width="64" height="34" rx="5" fill="#f1f5f9" stroke="#475569" stroke-width="1"/>
+<text x="54" y="321" font-size="8.4" fill="#0f172a" text-anchor="middle" font-weight="700">F₂₀ (20元)</text>
+<line x1="87.0" y1="317.0" x2="104.0" y2="317.0" stroke="#18794e" stroke-width="1.5" marker-end="url(#arr-green)"/>
+<rect x="106" y="300" width="64" height="34" rx="5" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="138" y="321" font-size="8.4" fill="#0f172a" text-anchor="middle" font-weight="700">D₅ (10元)</text>
+<line x1="171.0" y1="317.0" x2="186.0" y2="317.0" stroke="#18794e" stroke-width="1.5" marker-end="url(#arr-green)"/>
+<rect x="188" y="300" width="64" height="34" rx="5" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="220" y="321" font-size="8.4" fill="#0f172a" text-anchor="middle" font-weight="700">C₅ (5元)</text>
+<line x1="253.0" y1="317.0" x2="268.0" y2="317.0" stroke="#18794e" stroke-width="1.5" marker-end="url(#arr-green)"/>
+<rect x="270" y="300" width="64" height="34" rx="5" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="302" y="321" font-size="8.4" fill="#0f172a" text-anchor="middle" font-weight="700">{e} (1元)</text>
+<text x="34" y="368" font-size="9.0" fill="#0f172a" text-anchor="start" font-weight="700">• 伽罗瓦充要判据（1831）&amp; 达米特显式判别式（1991）：</text>
+<text x="34" y="386" font-size="8.9" fill="#1e293b" text-anchor="start">  不可约有理五次方程能用根号解 ⇔ 伽罗瓦群是【20 元弗罗贝</text>
+<text x="34" y="403" font-size="8.9" fill="#1e293b" text-anchor="start">  尼乌斯群 F₂₀】的子群（仅 C₅=5元、D₅=10元、F₂₀=20元 三种，</text>
+<text x="34" y="420" font-size="8.9" fill="#18794e" text-anchor="start" font-weight="600">  如 x⁵−5x+12=0 也属 D₅ 可根式解！）。</text>
+<rect x="386" y="62" width="354" height="378" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="400.0" y="76.0" width="326" height="22" rx="11.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="563.0" y="91.0" font-size="9.4" fill="#dc2626" text-anchor="middle" font-weight="600">✗ 绝无根式解 · 对称群撞上 A₅ (60元) 或 S₅ (120元)</text>
+<rect x="400" y="108" width="326" height="146" rx="7" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2"/>
+<text x="412" y="128" font-size="9.4" fill="#dc2626" text-anchor="start" font-weight="700">经典铁壁算例：f(x) = x⁵ − 4x + 2 = 0（伽罗瓦群 = S₅）</text>
+<text x="412" y="149" font-size="8.8" fill="#0f172a" text-anchor="start" font-weight="600">① 艾森斯坦判别法（素数 p=2 整除 −4, 2，p²=4 不整除 2）：</text>
+<text x="412" y="166" font-size="8.7" fill="#1e293b" text-anchor="start">   f(x) 在有理数域不可约 ⇒ 对称群阶数必被 5 整除（含 5-轮换）；</text>
+<text x="412" y="185" font-size="8.8" fill="#0f172a" text-anchor="start" font-weight="600">② 求导 f&#x27;(x) = 5x⁴ − 4 = 0 仅两个极值点（极大 +4.15 &gt; 0，</text>
+<text x="412" y="202" font-size="8.7" fill="#1e293b" text-anchor="start">   极小 −0.15 &lt; 0）⇒ 恰好穿过实轴 3 次（3 实根 + 1 对共轭复根）；</text>
+<text x="412" y="221" font-size="8.8" fill="#dc2626" text-anchor="start" font-weight="700">③ 复共轭只对调那 2 个复根（1个对换）+ 5-轮换 ⇒ 直接生成</text>
+<text x="412" y="238" font-size="8.8" fill="#dc2626" text-anchor="start" font-weight="700">   全部 5! = 120 种洗牌的全对称群 S₅！</text>
+<text x="400" y="274" font-size="9.0" fill="#0f172a" text-anchor="start" font-weight="700">为什么 S₅ 和 A₅ 死活拆不开？正二十面体 60 重旋转铁球：</text>
+<rect x="400" y="286" width="326" height="62" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="412" y="300" width="74" height="34" rx="5" fill="#f1f5f9" stroke="#475569" stroke-width="1"/>
+<text x="449" y="321" font-size="8.5" fill="#0f172a" text-anchor="middle" font-weight="700">S₅ (120元)</text>
+<line x1="487.0" y1="317.0" x2="514.0" y2="317.0" stroke="#1d6fa5" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+<text x="500" y="297" font-size="8.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">√Δ</text>
+<rect x="516" y="297" width="108" height="40" rx="5" fill="#fef2f2" stroke="#dc2626" stroke-width="1.6"/>
+<text x="570" y="314" font-size="8.6" fill="#dc2626" text-anchor="middle" font-weight="700">A₅ (60元单群)</text>
+<text x="570" y="329" font-size="8.0" fill="#dc2626" text-anchor="middle" font-weight="600">无正规子群铁板!</text>
+<line x1="626.0" y1="317.0" x2="658.0" y2="317.0" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="3 2"/>
+<text x="642" y="313" font-size="11.0" fill="#dc2626" text-anchor="middle" font-weight="700">✗</text>
+<rect x="662" y="300" width="54" height="34" rx="5" fill="#f1f5f9" stroke="#475569" stroke-width="1"/>
+<text x="689" y="321" font-size="8.5" fill="#64748b" text-anchor="middle" font-weight="700">{e} (1)</text>
+<text x="400" y="368" font-size="9.0" fill="#0f172a" text-anchor="start" font-weight="600">• 绝大多数随机写下的整系数五次方程（如 x⁵−x−1=0），</text>
+<text x="400" y="386" font-size="8.9" fill="#1e293b" text-anchor="start">  概率上 100% 落入 S₅（120元），被 60 元非交换单群 A₅</text>
+<text x="400" y="403" font-size="8.9" fill="#dc2626" text-anchor="start" font-weight="700">  死死挡在门外——这就是“一般五次无根式通解”的全貌！</text>
+<text x="400" y="420" font-size="8.5" fill="#64748b" text-anchor="start">  （阿贝尔 26 岁贫病离世、伽罗瓦 20 岁决斗陨落，双星照亮代数！）</text>
+</svg>

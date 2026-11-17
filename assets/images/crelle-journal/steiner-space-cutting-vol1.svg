@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="446" viewBox="0 0 760 446" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">克列尔杂志创刊号施泰纳平面与空间分割公式切圆饼7块与切西瓜15块几何推导图</title>
+<desc id="desc">左栏绘制3条一般位置直线切割圆饼得到7块区域的精确交点与编号，解释第3刀被2个交点分成3段从而4+3=7；右栏对比n=0至5刀时错觉2^n、平面L_n与三维空间S_n，高亮第4刀切西瓜因切面最多分成L_3=7片而得到8+7=15块。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="445" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">翻开 1826 年创刊号第 349 页做道题：切西瓜 4 刀，为什么死活切不出 16 块？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">施泰纳《平面与空间分割定律》：直觉以为每多切一刀块数必翻倍（1, 2, 4, 8, 16…），第 3 刀切饼、第 4 刀切瓜当场翻车！</text>
+<rect x="20" y="64" width="356" height="366" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="88" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="700">① 切圆饼实验：第 3 刀为什么得 7 块而非 8 块？</text>
+<circle cx="198.0" cy="206.0" r="92.0" fill="#fffbeb" stroke="#b45309" stroke-width="2.0"/>
+<line x1="286.8" y1="182.0" x2="109.2" y2="182.0" stroke="#1d6fa5" stroke-width="2.3"/>
+<line x1="133.5" y1="140.4" x2="228.6" y2="292.8" stroke="#18794e" stroke-width="2.3"/>
+<line x1="167.4" y1="292.8" x2="262.5" y2="140.4" stroke="#c25014" stroke-width="2.3"/>
+<circle cx="236.6" cy="182.0" r="4.2" fill="#ffffff" stroke="#b91c1c" stroke-width="1.8"/>
+<circle cx="198.0" cy="243.7" r="4.2" fill="#ffffff" stroke="#b91c1c" stroke-width="1.8"/>
+<circle cx="159.4" cy="182.0" r="4.2" fill="#ffffff" stroke="#b91c1c" stroke-width="1.8"/>
+<text x="198.0" y="204.5" font-size="13.5" fill="#b91c1c" text-anchor="middle" font-weight="700" class="halo">⑦</text>
+<text x="198.0" y="152.5" font-size="13.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">①</text>
+<text x="136.0" y="180.5" font-size="13.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">②</text>
+<text x="260.0" y="180.5" font-size="13.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">③</text>
+<text x="142.0" y="242.5" font-size="13.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">④</text>
+<text x="254.0" y="242.5" font-size="13.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">⑤</text>
+<text x="198.0" y="272.5" font-size="13.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">⑥</text>
+<text x="104.0" y="175.0" font-size="11.5" fill="#1d6fa5" text-anchor="end" font-weight="700">第1刀</text>
+<text x="134.0" y="298.0" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">第2刀</text>
+<text x="266.0" y="298.0" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">第3刀(橙)</text>
+<rect x="34" y="314" width="328" height="102" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="46" y="336" font-size="11.8" fill="#1d6fa5" text-anchor="start" font-weight="700">施泰纳递推揭秘（为什么不是 4×2 = 8 块？）：</text>
+<text x="46" y="357" font-size="11.4" fill="#1e293b" text-anchor="start">• 第 3 刀穿过前 2 刀得 2 个交点，刀痕被分成 3 段；</text>
+<text x="46" y="377" font-size="11.4" fill="#0f172a" text-anchor="start" font-weight="700">• 每段刀痕把旧饼一分为二 ⇒ 净增 3 块：4 + 3 = 7 块！</text>
+<text x="46" y="398" font-size="11.4" fill="#1d6fa5" text-anchor="start" font-weight="700" class="mono">• 平面通项：L(n) = 1+(1+2+…+n) = (n²+n+2)/2</text>
+<rect x="390" y="64" width="350" height="366" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="406" y="88" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="700">② 三维切西瓜：前 3 刀乖乖翻倍，第 4 刀少 1 块！</text>
+<rect x="404" y="102" width="322" height="206" rx="7" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="426" y="123" font-size="11.5" fill="#64748b" text-anchor="middle" font-weight="700">刀数 n</text>
+<text x="492" y="123" font-size="11.5" fill="#64748b" text-anchor="middle" font-weight="700">错觉 2ⁿ</text>
+<text x="570" y="123" font-size="11.5" fill="#64748b" text-anchor="middle" font-weight="700">切饼 L(n)</text>
+<text x="662" y="123" font-size="11.5" fill="#64748b" text-anchor="middle" font-weight="700">切瓜 S(n)</text>
+<line x1="414.0" y1="131.0" x2="716.0" y2="131.0" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="426" y="154" font-size="11.8" fill="#0f172a" text-anchor="middle" font-weight="600">0 刀</text>
+<text x="492" y="154" font-size="11.8" fill="#64748b" text-anchor="middle" font-weight="400" class="mono">1</text>
+<text x="570" y="154" font-size="11.8" fill="#1d6fa5" text-anchor="middle" font-weight="600" class="mono">1</text>
+<text x="662" y="154" font-size="11.8" fill="#18794e" text-anchor="middle" font-weight="700" class="mono">1</text>
+<text x="426" y="182" font-size="11.8" fill="#0f172a" text-anchor="middle" font-weight="600">1 刀</text>
+<text x="492" y="182" font-size="11.8" fill="#64748b" text-anchor="middle" font-weight="400" class="mono">2</text>
+<text x="570" y="182" font-size="11.8" fill="#1d6fa5" text-anchor="middle" font-weight="600" class="mono">2</text>
+<text x="662" y="182" font-size="11.8" fill="#18794e" text-anchor="middle" font-weight="700" class="mono">2</text>
+<text x="426" y="210" font-size="11.8" fill="#0f172a" text-anchor="middle" font-weight="600">2 刀</text>
+<text x="492" y="210" font-size="11.8" fill="#64748b" text-anchor="middle" font-weight="400" class="mono">4</text>
+<text x="570" y="210" font-size="11.8" fill="#1d6fa5" text-anchor="middle" font-weight="600" class="mono">4</text>
+<text x="662" y="210" font-size="11.8" fill="#18794e" text-anchor="middle" font-weight="700" class="mono">4</text>
+<text x="426" y="238" font-size="11.8" fill="#0f172a" text-anchor="middle" font-weight="600">3 刀</text>
+<text x="492" y="238" font-size="11.8" fill="#64748b" text-anchor="middle" font-weight="400" class="mono">8</text>
+<text x="570" y="238" font-size="11.8" fill="#1d6fa5" text-anchor="middle" font-weight="600" class="mono">7</text>
+<text x="662" y="238" font-size="11.8" fill="#18794e" text-anchor="middle" font-weight="700" class="mono">8</text>
+<rect x="412" y="249" width="306" height="24" rx="5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="426" y="266" font-size="11.8" fill="#0f172a" text-anchor="middle" font-weight="700">4 刀</text>
+<text x="492" y="266" font-size="11.8" fill="#b91c1c" text-anchor="middle" font-weight="700" class="mono">16</text>
+<text x="570" y="266" font-size="11.8" fill="#1d6fa5" text-anchor="middle" font-weight="600" class="mono">11</text>
+<text x="662" y="266" font-size="12.2" fill="#c25014" text-anchor="middle" font-weight="700" class="mono">15 ★</text>
+<text x="426" y="294" font-size="11.8" fill="#0f172a" text-anchor="middle" font-weight="600">5 刀</text>
+<text x="492" y="294" font-size="11.8" fill="#b91c1c" text-anchor="middle" font-weight="400" class="mono">32</text>
+<text x="570" y="294" font-size="11.8" fill="#1d6fa5" text-anchor="middle" font-weight="600" class="mono">16</text>
+<text x="662" y="294" font-size="11.8" fill="#c25014" text-anchor="middle" font-weight="700" class="mono">26</text>
+<rect x="404" y="314" width="322" height="102" rx="7" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="416" y="336" font-size="11.8" fill="#c25014" text-anchor="start" font-weight="700">为什么第 4 刀最多只添 7 块（8 + 7 = 15 块）？</text>
+<text x="416" y="357" font-size="11.4" fill="#1e293b" text-anchor="start">• 第 4 个切面交前 3 个切面，在刀面上留下 3 条交线；</text>
+<text x="416" y="377" font-size="11.4" fill="#0f172a" text-anchor="start" font-weight="700">• 由左图刚证，3 条直线最多把切面分成 L(3) = 7 片！</text>
+<text x="416" y="398" font-size="11.2" fill="#c25014" text-anchor="start" font-weight="700">• 空间通项：S(n) = (n³ + 5n + 6) / 6（组合数前4项和）</text>
+</svg>

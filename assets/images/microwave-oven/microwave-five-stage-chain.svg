@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="460" viewBox="0 0 760 460" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">微波炉五棒物理能量转换链与整机功率账单图解</title>
+<desc id="desc">分五棒展示220V/50Hz市电（约1150W）经半波倍压升至-4000V脉动直流、驱动腔体磁控管产生800W的2.45GHz（波长12.24cm）微波、经波导管送入金属驻波腔（半波长6.12cm）、最终在食物外层约1.4cm水分子中耗散生热的全过程。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="459" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">没有明火也不烫炉壁，微波炉凭什么两分钟热透一杯牛奶？—— 五棒物理能量链</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">从墙上 220 V / 50 Hz 工频电到 2.45 GHz 微波与 1.4 cm 偶极子耗散，逐级追踪电压、频率与波长</text>
+<rect x="20" y="64" width="134" height="244" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="30.0" y="76.0" width="68" height="20" rx="10.0" fill="#f1f5f9" stroke="#475569" stroke-width="1" stroke-opacity="0.35"/>
+<text x="64.0" y="89.6" font-size="10.2" fill="#475569" text-anchor="middle" font-weight="600">第 1 棒</text>
+<text x="30" y="114" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">插座工频交流电</text>
+<rect x="28" y="124" width="118" height="26" rx="6" fill="#f1f5f9" stroke="#475569" stroke-width="0.9"/>
+<text x="87.0" y="141" font-size="9.3" fill="#475569" text-anchor="middle" font-weight="700" class="mono">220 V · 50 Hz</text>
+<text x="30" y="172" font-size="9.9" fill="#1e293b" text-anchor="start">• 整机输入约 1150 W</text>
+<text x="30" y="194" font-size="9.9" fill="#1e293b" text-anchor="start">• 每秒仅来回晃 50 次</text>
+<text x="30" y="216" font-size="9.9" fill="#1e293b" text-anchor="start">• 远追不上极性水分子</text>
+<text x="30" y="238" font-size="9.9" fill="#1e293b" text-anchor="start">• 顺带驱动风扇与转盘</text>
+<line x1="30.0" y1="272.0" x2="144.0" y2="272.0" stroke="#cbd5e1" stroke-width="0.9"/>
+<text x="87.0" y="292" font-size="9.7" fill="#475569" text-anchor="middle" font-weight="700">起点：普通市电</text>
+<line x1="155.0" y1="188.0" x2="164.0" y2="188.0" stroke="#1d6fa5" stroke-width="2.1" marker-end="url(#arr-blue)"/>
+<rect x="166" y="64" width="134" height="244" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="176.0" y="76.0" width="68" height="20" rx="10.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="210.0" y="89.6" font-size="10.2" fill="#6d28d9" text-anchor="middle" font-weight="600">第 2 棒</text>
+<text x="176" y="114" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">半波倍压升压电路</text>
+<rect x="174" y="124" width="118" height="26" rx="6" fill="#f3e8ff" stroke="#6d28d9" stroke-width="0.9"/>
+<text x="233.0" y="141" font-size="9.3" fill="#6d28d9" text-anchor="middle" font-weight="700" class="mono">≈ −4000 V 脉动直流</text>
+<text x="176" y="172" font-size="9.9" fill="#1e293b" text-anchor="start">• 升压变压器抬至 ~2.1 kV</text>
+<text x="176" y="194" font-size="9.9" fill="#1e293b" text-anchor="start">• 高压电容+二极管倍压</text>
+<text x="176" y="216" font-size="9.9" fill="#1e293b" text-anchor="start">• 阳极接地 0 V 保安全</text>
+<text x="176" y="238" font-size="9.9" fill="#1e293b" text-anchor="start">• 灯丝阴极悬在 −4 kV！</text>
+<line x1="176.0" y1="272.0" x2="290.0" y2="272.0" stroke="#cbd5e1" stroke-width="0.9"/>
+<text x="233.0" y="292" font-size="9.7" fill="#6d28d9" text-anchor="middle" font-weight="700">蓄势：高能电子弹弓</text>
+<line x1="301.0" y1="188.0" x2="310.0" y2="188.0" stroke="#c25014" stroke-width="2.1" marker-end="url(#arr-orange)"/>
+<rect x="312" y="64" width="134" height="244" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="322.0" y="76.0" width="68" height="20" rx="10.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="356.0" y="89.6" font-size="10.2" fill="#c25014" text-anchor="middle" font-weight="600">第 3 棒</text>
+<text x="322" y="114" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">腔体磁控管心脏</text>
+<rect x="320" y="124" width="118" height="26" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="0.9"/>
+<text x="379.0" y="141" font-size="9.3" fill="#c25014" text-anchor="middle" font-weight="700" class="mono">2.45 GHz · 12.24 cm</text>
+<text x="322" y="172" font-size="9.9" fill="#1e293b" text-anchor="start">• E × B 正交电磁场掰弯</text>
+<text x="322" y="194" font-size="9.9" fill="#1e293b" text-anchor="start">• 电子轮辐扫过 8/10 铜腔</text>
+<text x="322" y="216" font-size="9.9" fill="#1e293b" text-anchor="start">• 直流高压变 800 W 微波</text>
+<text x="322" y="238" font-size="9.9" fill="#1e293b" text-anchor="start">• 转换效率约 70%</text>
+<line x1="322.0" y1="272.0" x2="436.0" y2="272.0" stroke="#cbd5e1" stroke-width="0.9"/>
+<text x="379.0" y="292" font-size="9.7" fill="#c25014" text-anchor="middle" font-weight="700">生波：真空雷达遗产</text>
+<line x1="447.0" y1="188.0" x2="456.0" y2="188.0" stroke="#c25014" stroke-width="2.1" marker-end="url(#arr-orange)"/>
+<rect x="458" y="64" width="134" height="244" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="468.0" y="76.0" width="68" height="20" rx="10.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="502.0" y="89.6" font-size="10.2" fill="#1d6fa5" text-anchor="middle" font-weight="600">第 4 棒</text>
+<text x="468" y="114" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">波导管与金属炉腔</text>
+<rect x="466" y="124" width="118" height="26" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="0.9"/>
+<text x="525.0" y="141" font-size="9.3" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono">驻波半波长 6.12 cm</text>
+<text x="468" y="172" font-size="9.9" fill="#1e293b" text-anchor="start">• 矩形金属波导定向引波</text>
+<text x="468" y="194" font-size="9.9" fill="#1e293b" text-anchor="start">• 冷钢壁全反射叠出驻波</text>
+<text x="468" y="216" font-size="9.9" fill="#1e293b" text-anchor="start">• 炉门 1.5 mm 网孔锁死</text>
+<text x="468" y="238" font-size="9.9" fill="#1e293b" text-anchor="start">• 偏心转盘扫匀冷热死区</text>
+<line x1="468.0" y1="272.0" x2="582.0" y2="272.0" stroke="#cbd5e1" stroke-width="0.9"/>
+<text x="525.0" y="292" font-size="9.7" fill="#1d6fa5" text-anchor="middle" font-weight="700">囚波：法拉第谐振箱</text>
+<line x1="593.0" y1="188.0" x2="602.0" y2="188.0" stroke="#18794e" stroke-width="2.1" marker-end="url(#arr-green)"/>
+<rect x="604" y="64" width="134" height="244" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="614.0" y="76.0" width="68" height="20" rx="10.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="648.0" y="89.6" font-size="10.2" fill="#18794e" text-anchor="middle" font-weight="600">第 5 棒</text>
+<text x="614" y="114" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">水偶极子滞后生热</text>
+<rect x="612" y="124" width="118" height="26" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="0.9"/>
+<text x="671.0" y="141" font-size="9.3" fill="#18794e" text-anchor="middle" font-weight="700" class="mono">穿透 D_p ≈ 1.4 cm</text>
+<text x="614" y="172" font-size="9.9" fill="#1e293b" text-anchor="start">• 电场每秒翻转 49 亿次</text>
+<text x="614" y="194" font-size="9.9" fill="#1e293b" text-anchor="start">• 水分子氢键拖拽摩擦热</text>
+<text x="614" y="216" font-size="9.9" fill="#1e293b" text-anchor="start">• 盐离子往复冲撞添火力</text>
+<text x="614" y="238" font-size="9.9" fill="#1e293b" text-anchor="start">• 外层吸波 → 中心靠导热</text>
+<line x1="614.0" y1="272.0" x2="728.0" y2="272.0" stroke="#cbd5e1" stroke-width="0.9"/>
+<text x="671.0" y="292" font-size="9.7" fill="#18794e" text-anchor="middle" font-weight="700">终点：电磁功直接变内能</text>
+<rect x="20" y="320" width="720" height="126" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="342" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">整机能量账单与第一条反直觉真相：微波炉从来不是“从最中心往外加热”！</text>
+<rect x="36.0" y="356.0" width="251.8" height="28.0" rx="5" fill="#18794e"/>
+<rect x="289.8" y="356.0" width="108.2" height="28.0" rx="5" fill="#c25014"/>
+<text x="161.9" y="374.0" font-size="10.0" fill="#ffffff" text-anchor="middle" font-weight="700">有效微波输出 ≈ 800 W (70%)</text>
+<text x="342.9" y="374.0" font-size="9.6" fill="#ffffff" text-anchor="middle" font-weight="700">≈ 350 W 余热</text>
+<rect x="414" y="350" width="310" height="46" rx="7" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.0"/>
+<text x="426" y="368" font-size="9.5" fill="#1e293b" text-anchor="start">烤箱：先烤热 200 ℃ 空气，热量从焦皮硬往里爬；</text>
+<text x="426" y="386" font-size="9.5" fill="#0f766e" text-anchor="start" font-weight="700">微波：穿过冷空气，直达外层 1–2 cm 水分子同步产热！</text>
+<text x="36" y="415" font-size="9.7" fill="#1e293b" text-anchor="start">• 为什么磁控管长满散热片还要风扇狂吹？那 ~350 W 损耗全积在铜阳极上，不吹风会过热退磁。</text>
+<text x="36" y="433" font-size="9.7" fill="#1d6fa5" text-anchor="start" font-weight="700">• 为什么错觉“从里往外热”？只因空气、冷炉壁和干瓷碗不吸波，表层 1.4 cm 水分直接生热（厚汤中心仍靠导热）！</text>
+</svg>

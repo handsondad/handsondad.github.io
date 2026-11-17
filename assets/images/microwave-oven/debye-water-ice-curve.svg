@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="462" viewBox="0 0 760 462" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">水与冰德拜介电损耗频率曲线、微波穿透深度折中与化冻热失控原理图</title>
+<desc id="desc">左图按德拜方程绘制0℃冰（峰值约8kHz，2.45GHz处仅0.0015）与25℃液态水（峰值19.2GHz，穿透仅0.47mm）的损耗曲线，标明2.45GHz处于山坡左翼甜点区（穿透约1.4cm）；右图对比915MHz、2.45GHz与19.2GHz穿透深度，并解释液态水比冰吸波强上万倍导致化冻边缘煮熟的热失控。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="461" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">破除最大科普谣言：2.45 GHz 根本不是水分子的“共振频率”！—— 德拜弛豫与化冻陷阱</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：据 Kaatze (1989) 精确计算水与冰的介电损耗曲线 ε&#x27;&#x27;(f)；右：穿透深度黄金折中与冰水差万倍的“热失控”</text>
+<rect x="20" y="62" width="422" height="386" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="34" y="85" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 介电损耗谱 ε&#x27;&#x27;(f)：水峰在 19.2 GHz，冰峰在 8 kHz！</text>
+<text x="34" y="104" font-size="9.8" fill="#64748b" text-anchor="start">纵轴：损耗因子 ε&#x27;&#x27;（决定同电场下的吸波发热本领）</text>
+<line x1="68.0" y1="314.0" x2="420.0" y2="314.0" stroke="#475569" stroke-width="1.2"/>
+<text x="62.0" y="317.5" font-size="9.4" fill="#64748b" text-anchor="end" class="mono">0</text>
+<line x1="68.0" y1="273.6" x2="420.0" y2="273.6" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="62.0" y="277.1" font-size="9.4" fill="#64748b" text-anchor="end" class="mono">10</text>
+<line x1="68.0" y1="233.1" x2="420.0" y2="233.1" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="62.0" y="236.6" font-size="9.4" fill="#64748b" text-anchor="end" class="mono">20</text>
+<line x1="68.0" y1="192.7" x2="420.0" y2="192.7" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="62.0" y="196.2" font-size="9.4" fill="#64748b" text-anchor="end" class="mono">30</text>
+<line x1="68.0" y1="152.3" x2="420.0" y2="152.3" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="62.0" y="155.8" font-size="9.4" fill="#64748b" text-anchor="end" class="mono">40</text>
+<line x1="68.0" y1="128.0" x2="68.0" y2="314.0" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="2 3"/>
+<text x="68.0" y="329.0" font-size="9.2" fill="#64748b" text-anchor="middle" class="mono">1kHz</text>
+<line x1="151.8" y1="128.0" x2="151.8" y2="314.0" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="2 3"/>
+<text x="151.8" y="329.0" font-size="9.2" fill="#64748b" text-anchor="middle" class="mono">100k</text>
+<line x1="235.6" y1="128.0" x2="235.6" y2="314.0" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="2 3"/>
+<text x="235.6" y="329.0" font-size="9.2" fill="#64748b" text-anchor="middle" class="mono">10MHz</text>
+<line x1="319.4" y1="128.0" x2="319.4" y2="314.0" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="2 3"/>
+<text x="319.4" y="329.0" font-size="9.2" fill="#64748b" text-anchor="middle" class="mono">1GHz</text>
+<line x1="361.3" y1="128.0" x2="361.3" y2="314.0" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="2 3"/>
+<text x="361.3" y="329.0" font-size="9.2" fill="#64748b" text-anchor="middle" class="mono">10G</text>
+<line x1="403.2" y1="128.0" x2="403.2" y2="314.0" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="2 3"/>
+<text x="403.2" y="329.0" font-size="9.2" fill="#64748b" text-anchor="middle" class="mono">100G</text>
+<line x1="68.0" y1="128.0" x2="68.0" y2="314.0" stroke="#475569" stroke-width="1.2"/>
+<text x="244.0" y="345.0" font-size="9.7" fill="#0f172a" text-anchor="middle" font-weight="600">电磁波频率 f（对数坐标：跨越 8500 万倍频率！）</text>
+<path d="M 68.0,269.8 L 70.5,263.5 L 73.0,256.4 L 75.5,248.4 L 78.1,239.6 L 80.6,229.7 L 83.1,219.0 L 85.6,207.6 L 88.1,195.5 L 90.6,183.2 L 93.1,171.1 L 95.7,159.7 L 98.2,149.8 L 100.7,142.1 L 103.2,137.2 L 105.7,135.4 L 108.2,137.1 L 110.7,141.9 L 113.3,149.6 L 115.8,159.5 L 118.3,170.8 L 120.8,182.9 L 123.3,195.2 L 125.8,207.3 L 128.3,218.8 L 130.9,229.5 L 133.4,239.3 L 135.9,248.2 L 138.4,256.2 L 140.9,263.3 L 143.4,269.7 L 145.9,275.2 L 148.5,280.1 L 151.0,284.4 L 153.5,288.2 L 156.0,291.5 L 158.5,294.4 L 161.0,296.9 L 163.5,299.1 L 166.1,301.0 L 168.6,302.7 L 171.1,304.2 L 173.6,305.4 L 176.1,306.5 L 178.6,307.5 L 181.1,308.3 L 183.7,309.1 L 186.2,309.7 L 188.7,310.3 L 191.2,310.7 L 193.7,311.2 L 196.2,311.5 L 198.7,311.8 L 201.3,312.1 L 203.8,312.4 L 206.3,312.6 L 208.8,312.8 L 211.3,312.9 L 213.8,313.1 L 216.3,313.2 L 218.9,313.3 L 221.4,313.4 L 223.9,313.5 L 226.4,313.5 L 228.9,313.6 L 231.4,313.6 L 233.9,313.7 L 236.5,313.7 L 239.0,313.8 L 241.5,313.8 L 244.0,313.8 L 246.5,313.8 L 249.0,313.9 L 251.5,313.9 L 254.1,313.9 L 256.6,313.9 L 259.1,313.9 L 261.6,313.9 L 264.1,313.9 L 266.6,313.9 L 269.1,314.0 L 271.7,314.0 L 274.2,314.0 L 276.7,314.0 L 279.2,314.0 L 281.7,314.0 L 284.2,314.0 L 286.7,314.0 L 289.3,314.0 L 291.8,314.0 L 294.3,314.0 L 296.8,314.0 L 299.3,314.0 L 301.8,314.0 L 304.3,314.0 L 306.9,314.0 L 309.4,314.0 L 311.9,314.0 L 314.4,314.0 L 316.9,314.0 L 319.4,314.0 L 321.9,314.0 L 324.5,314.0 L 327.0,314.0 L 329.5,314.0 L 332.0,314.0 L 334.5,314.0 L 337.0,314.0 L 339.5,314.0 L 342.1,314.0 L 344.6,314.0 L 347.1,314.0 L 349.6,314.0 L 352.1,314.0 L 354.6,314.0 L 357.1,314.0 L 359.7,314.0 L 362.2,314.0 L 364.7,314.0 L 367.2,314.0 L 369.7,314.0 L 372.2,314.0 L 374.7,314.0 L 377.3,314.0 L 379.8,314.0 L 382.3,314.0 L 384.8,314.0 L 387.3,314.0 L 389.8,314.0 L 392.3,314.0 L 394.9,314.0 L 397.4,314.0 L 399.9,314.0 L 402.4,314.0 L 404.9,314.0 L 407.4,314.0 L 409.9,314.0 L 412.5,314.0 L 415.0,314.0 L 417.5,314.0 L 420.0,314.0" fill="none" stroke="#1d6fa5" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 3"/>
+<path d="M 68.0,314.0 L 70.5,314.0 L 73.0,314.0 L 75.5,314.0 L 78.1,314.0 L 80.6,314.0 L 83.1,314.0 L 85.6,314.0 L 88.1,314.0 L 90.6,314.0 L 93.1,314.0 L 95.7,314.0 L 98.2,314.0 L 100.7,314.0 L 103.2,314.0 L 105.7,314.0 L 108.2,314.0 L 110.7,314.0 L 113.3,314.0 L 115.8,314.0 L 118.3,314.0 L 120.8,314.0 L 123.3,314.0 L 125.8,314.0 L 128.3,314.0 L 130.9,314.0 L 133.4,314.0 L 135.9,314.0 L 138.4,314.0 L 140.9,314.0 L 143.4,314.0 L 145.9,314.0 L 148.5,314.0 L 151.0,314.0 L 153.5,314.0 L 156.0,314.0 L 158.5,314.0 L 161.0,314.0 L 163.5,314.0 L 166.1,314.0 L 168.6,314.0 L 171.1,314.0 L 173.6,314.0 L 176.1,314.0 L 178.6,314.0 L 181.1,314.0 L 183.7,314.0 L 186.2,314.0 L 188.7,314.0 L 191.2,314.0 L 193.7,314.0 L 196.2,314.0 L 198.7,314.0 L 201.3,314.0 L 203.8,314.0 L 206.3,314.0 L 208.8,314.0 L 211.3,314.0 L 213.8,314.0 L 216.3,313.9 L 218.9,313.9 L 221.4,313.9 L 223.9,313.9 L 226.4,313.9 L 228.9,313.9 L 231.4,313.9 L 233.9,313.9 L 236.5,313.8 L 239.0,313.8 L 241.5,313.8 L 244.0,313.8 L 246.5,313.7 L 249.0,313.7 L 251.5,313.6 L 254.1,313.6 L 256.6,313.5 L 259.1,313.4 L 261.6,313.4 L 264.1,313.3 L 266.6,313.2 L 269.1,313.0 L 271.7,312.9 L 274.2,312.7 L 276.7,312.5 L 279.2,312.3 L 281.7,312.1 L 284.2,311.8 L 286.7,311.4 L 289.3,311.1 L 291.8,310.6 L 294.3,310.1 L 296.8,309.6 L 299.3,308.9 L 301.8,308.2 L 304.3,307.3 L 306.9,306.3 L 309.4,305.2 L 311.9,303.9 L 314.4,302.4 L 316.9,300.6 L 319.4,298.7 L 321.9,296.4 L 324.5,293.8 L 327.0,290.9 L 329.5,287.5 L 332.0,283.6 L 334.5,279.3 L 337.0,274.3 L 339.5,268.7 L 342.1,262.3 L 344.6,255.3 L 347.1,247.5 L 349.6,238.9 L 352.1,229.6 L 354.6,219.8 L 357.1,209.6 L 359.7,199.5 L 362.2,189.7 L 364.7,181.0 L 367.2,173.8 L 369.7,168.8 L 372.2,166.2 L 374.7,166.5 L 377.3,169.5 L 379.8,175.0 L 382.3,182.6 L 384.8,191.5 L 387.3,201.4 L 389.8,211.6 L 392.3,221.7 L 394.9,231.4 L 397.4,240.6 L 399.9,249.0 L 402.4,256.7 L 404.9,263.6 L 407.4,269.8 L 409.9,275.3 L 412.5,280.1 L 415.0,284.4 L 417.5,288.2 L 420.0,291.5" fill="none" stroke="#c25014" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="335.7" y1="132.0" x2="335.7" y2="314.0" stroke="#18794e" stroke-width="1.8" stroke-dasharray="4 2"/>
+<circle cx="335.7" cy="276.9" r="4.8" fill="#18794e" stroke="#ffffff" stroke-width="1.4"/>
+<circle cx="335.7" cy="314.0" r="4.2" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="373.2" cy="166.0" r="4.8" fill="#dc2626" stroke="#ffffff" stroke-width="1.4"/>
+<circle cx="105.7" cy="135.4" r="4.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.3"/>
+<text x="113.7" y="141.4" font-size="9.6" fill="#1d6fa5" text-anchor="start" font-weight="700" class="halo">0℃ 冰弛豫峰 (~8 kHz)</text>
+<text x="113.7" y="155.4" font-size="9.1" fill="#1d6fa5" text-anchor="start" class="halo">氢键晶格锁死，转身慢百万倍</text>
+<text x="368.2" y="157.0" font-size="9.6" fill="#dc2626" text-anchor="end" font-weight="700" class="halo">25℃ 液态水峰 19.2 GHz</text>
+<text x="368.2" y="182.0" font-size="9.2" fill="#dc2626" text-anchor="end" font-weight="700" class="halo">(D_p 仅 0.47 mm!)</text>
+<text x="327.7" y="259.9" font-size="9.7" fill="#18794e" text-anchor="end" font-weight="700" class="halo">微波炉 2.45 GHz →</text>
+<text x="327.7" y="273.9" font-size="9.2" fill="#18794e" text-anchor="end" font-weight="600" class="halo">山坡左翼甜点区！</text>
+<text x="327.7" y="307.0" font-size="9.1" fill="#1d6fa5" text-anchor="end" font-weight="700" class="halo">冰在此处 ε&#x27;&#x27;≈0.0015 →</text>
+<rect x="34" y="356" width="394" height="78" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="46" y="375" font-size="9.5" fill="#0f172a" text-anchor="start" font-weight="600">• 液态水是氢键牵扯的“拥挤舞池”，没有孤立气体水分子的 22.2 GHz 尖锐共振，</text>
+<text x="46" y="393" font-size="9.5" fill="#1e293b" text-anchor="start">  只有宽缓的【德拜转向弛豫】：水偶极子追赶交变电场时慢半拍，滞后功全变热；</text>
+<text x="46" y="411" font-size="9.5" fill="#dc2626" text-anchor="start" font-weight="700">• 若真用 19.2 GHz 峰值加热，微波在表皮 0.46 mm 就被吸干，外皮烤焦里面冰凉！</text>
+<rect x="454" y="62" width="286" height="386" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="468" y="85" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 黄金穿透深度 &amp; 化冻“外熟内冰”之谜</text>
+<rect x="468" y="100" width="258" height="146" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.0"/>
+<text x="480" y="120" font-size="10.3" fill="#18794e" text-anchor="start" font-weight="700">A. 为什么全世界微波炉偏偏选 2.45 GHz？</text>
+<text x="480" y="136" font-size="9.4" fill="#0f172a" text-anchor="start" font-weight="700">915 MHz 工业解冻</text>
+<rect x="480" y="141" width="118.0" height="10" rx="3" fill="#1d6fa5"/>
+<text x="604.0" y="150" font-size="9.1" fill="#1d6fa5" text-anchor="start" font-weight="700">穿透 ~4–9 cm（腔体太大）</text>
+<text x="480" y="171" font-size="9.4" fill="#0f172a" text-anchor="start" font-weight="700">2.45 GHz 家用黄金频段</text>
+<rect x="480" y="176" width="54.0" height="10" rx="3" fill="#18794e"/>
+<text x="540.0" y="185" font-size="9.1" fill="#18794e" text-anchor="start" font-weight="700">D_p ≈ 1.4 cm（内外兼顾！）</text>
+<text x="480" y="206" font-size="9.4" fill="#0f172a" text-anchor="start" font-weight="700">19.2 GHz 水弛豫峰</text>
+<rect x="480" y="211" width="4.0" height="10" rx="3" fill="#dc2626"/>
+<text x="490.0" y="220" font-size="9.1" fill="#dc2626" text-anchor="start" font-weight="700">仅 0.47 mm（瞬间糊皮！）</text>
+<rect x="468" y="258" width="258" height="176" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="1.0"/>
+<text x="480" y="278" font-size="10.2" fill="#b45309" text-anchor="start" font-weight="700">B. 化冻死结：水比冰吸波强 10,000 倍以上！</text>
+<rect x="480" y="290" width="234" height="58" rx="7" fill="#dbeafe" stroke="#1d6fa5" stroke-width="1.2"/>
+<rect x="480" y="290" width="54" height="58" rx="7" fill="#fef2f2" stroke="#dc2626" stroke-width="1.3"/>
+<text x="507" y="314" font-size="9.2" fill="#dc2626" text-anchor="middle" font-weight="700">先化水滴</text>
+<text x="507" y="329" font-size="9.1" fill="#dc2626" text-anchor="middle" font-weight="700" class="mono">ε&#x27;&#x27; ≈ 21</text>
+<text x="507" y="342" font-size="8.9" fill="#dc2626" text-anchor="middle" font-weight="700">疯狂抢波!</text>
+<text x="622" y="314" font-size="9.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">内部 0℃ 冰晶 (Ice Ih)</text>
+<text x="622" y="331" font-size="9.0" fill="#1d6fa5" text-anchor="middle" font-weight="600">ε&#x27;&#x27; ≈ 0.0015（对微波近乎透明！）</text>
+<text x="480" y="368" font-size="9.4" fill="#1e293b" text-anchor="start">• 尖角一旦化出一滴液态水，吸波能力暴涨上万倍，</text>
+<text x="480" y="386" font-size="9.4" fill="#dc2626" text-anchor="start" font-weight="700">  形成【热失控】：水滴沸腾把肉边煮熟，冰芯仍硬！</text>
+<text x="480" y="405" font-size="9.4" fill="#0f172a" text-anchor="start" font-weight="600">• 正确解冻：开低功率断续档，趁停歇期靠热传导融冰；</text>
+<text x="480" y="422" font-size="9.2" fill="#64748b" text-anchor="start">  同理，汤里加盐（Na⁺/Cl⁻ 导电损耗）会让表层更易滚烫。</text>
+</svg>

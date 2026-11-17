@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="452" viewBox="0 0 760 452" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">DNA双螺旋互补解旋半保留复制机制与1958年梅塞尔森-斯塔尔同位素超速离心验证图解</title>
+<desc id="desc">左图动画演示亲代双链解旋后各作模板合成互补新链；右图按真实氯化铯浮力密度（¹⁵N/¹⁵N 1.724、¹⁵N/¹⁴N 1.717、¹⁴N/¹⁴N 1.71 g/cm³）绘制第0、1、2代离心条带，直观排除全保留与弥散假说。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  .daughter-grow {
+        animation: growDaughter 3.0s ease-out 0.3s 1 forwards;
+      }
+      @keyframes growDaughter {
+        0%   { opacity: 0.20; stroke-dashoffset: 80; }
+        100% { opacity: 1.00; stroke-dashoffset: 0; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .daughter-grow { animation: none; opacity: 1; }
+      }
+</style>
+<rect x="0.5" y="0.5" width="759" height="451" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">科学史上最凡尔赛的一句话：拉链一开一分为二，与 1958 年同位素铁证</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">“我们并非没有注意到，我们所假设的特定配对立即提示了遗传物质的一种可能复制机制”——沃森 &amp; 克里克 (1953)</text>
+<rect x="20" y="62" width="368" height="378" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="34" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 半保留复制：每条旧链都是新链的天然模具</text>
+<line x1="164.0" y1="108.0" x2="164.0" y2="206.0" stroke="#1d6fa5" stroke-width="4.0"/>
+<line x1="244.0" y1="108.0" x2="244.0" y2="206.0" stroke="#1d6fa5" stroke-width="4.0"/>
+<text x="148" y="114" font-size="9.2" fill="#1d6fa5" text-anchor="end" font-weight="700" class="mono">5&#x27;</text>
+<text x="260" y="114" font-size="9.2" fill="#1d6fa5" text-anchor="start" font-weight="700" class="mono">3&#x27;</text>
+<line x1="166.0" y1="122.0" x2="200.0" y2="122.0" stroke="#1d6fa5" stroke-width="2.0"/>
+<line x1="208.0" y1="122.0" x2="242.0" y2="122.0" stroke="#1d6fa5" stroke-width="2.0"/>
+<line x1="200.0" y1="122.0" x2="208.0" y2="122.0" stroke="#475569" stroke-width="1.5" stroke-dasharray="2 2"/>
+<text x="182" y="118" font-size="9.0" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">A</text>
+<text x="226" y="118" font-size="9.0" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">T</text>
+<line x1="166.0" y1="144.0" x2="200.0" y2="144.0" stroke="#1d6fa5" stroke-width="2.0"/>
+<line x1="208.0" y1="144.0" x2="242.0" y2="144.0" stroke="#1d6fa5" stroke-width="2.0"/>
+<line x1="200.0" y1="144.0" x2="208.0" y2="144.0" stroke="#475569" stroke-width="1.5" stroke-dasharray="2 2"/>
+<text x="182" y="140" font-size="9.0" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">G</text>
+<text x="226" y="140" font-size="9.0" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">C</text>
+<line x1="166.0" y1="166.0" x2="200.0" y2="166.0" stroke="#1d6fa5" stroke-width="2.0"/>
+<line x1="208.0" y1="166.0" x2="242.0" y2="166.0" stroke="#1d6fa5" stroke-width="2.0"/>
+<line x1="200.0" y1="166.0" x2="208.0" y2="166.0" stroke="#475569" stroke-width="1.5" stroke-dasharray="2 2"/>
+<text x="182" y="162" font-size="9.0" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">T</text>
+<text x="226" y="162" font-size="9.0" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">A</text>
+<line x1="166.0" y1="188.0" x2="200.0" y2="188.0" stroke="#1d6fa5" stroke-width="2.0"/>
+<line x1="208.0" y1="188.0" x2="242.0" y2="188.0" stroke="#1d6fa5" stroke-width="2.0"/>
+<line x1="200.0" y1="188.0" x2="208.0" y2="188.0" stroke="#475569" stroke-width="1.5" stroke-dasharray="2 2"/>
+<text x="182" y="184" font-size="9.0" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">C</text>
+<text x="226" y="184" font-size="9.0" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">G</text>
+<path d="M 164.0,206.0 L 132.0,232.0 L 82.0,248.0 L 82.0,344.0" fill="none" stroke="#1d6fa5" stroke-width="4.0" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 244.0,206.0 L 276.0,232.0 L 326.0,248.0 L 326.0,344.0" fill="none" stroke="#1d6fa5" stroke-width="4.0" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="204" y="222" font-size="9.0" fill="#c25014" text-anchor="middle" font-weight="700">氢键解旋拉开</text>
+<g class="daughter-grow">
+<line x1="148.0" y1="252.0" x2="148.0" y2="344.0" stroke="#c25014" stroke-width="4.0" stroke-dasharray="120 0"/>
+<line x1="260.0" y1="252.0" x2="260.0" y2="344.0" stroke="#c25014" stroke-width="4.0" stroke-dasharray="120 0"/>
+<line x1="84.0" y1="266.0" x2="112.0" y2="266.0" stroke="#1d6fa5" stroke-width="2.0"/>
+<line x1="120.0" y1="266.0" x2="146.0" y2="266.0" stroke="#c25014" stroke-width="2.0"/>
+<line x1="112.0" y1="266.0" x2="120.0" y2="266.0" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="2 2"/>
+<text x="98" y="262" font-size="9.0" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono">A</text>
+<text x="133" y="262" font-size="9.0" fill="#c25014" text-anchor="middle" font-weight="700" class="mono">T</text>
+<line x1="262.0" y1="266.0" x2="288.0" y2="266.0" stroke="#c25014" stroke-width="2.0"/>
+<line x1="296.0" y1="266.0" x2="324.0" y2="266.0" stroke="#1d6fa5" stroke-width="2.0"/>
+<line x1="288.0" y1="266.0" x2="296.0" y2="266.0" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="2 2"/>
+<text x="275" y="262" font-size="9.0" fill="#c25014" text-anchor="middle" font-weight="700" class="mono">A</text>
+<text x="310" y="262" font-size="9.0" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono">T</text>
+<line x1="84.0" y1="294.0" x2="112.0" y2="294.0" stroke="#1d6fa5" stroke-width="2.0"/>
+<line x1="120.0" y1="294.0" x2="146.0" y2="294.0" stroke="#c25014" stroke-width="2.0"/>
+<line x1="112.0" y1="294.0" x2="120.0" y2="294.0" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="2 2"/>
+<text x="98" y="290" font-size="9.0" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono">T</text>
+<text x="133" y="290" font-size="9.0" fill="#c25014" text-anchor="middle" font-weight="700" class="mono">A</text>
+<line x1="262.0" y1="294.0" x2="288.0" y2="294.0" stroke="#c25014" stroke-width="2.0"/>
+<line x1="296.0" y1="294.0" x2="324.0" y2="294.0" stroke="#1d6fa5" stroke-width="2.0"/>
+<line x1="288.0" y1="294.0" x2="296.0" y2="294.0" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="2 2"/>
+<text x="275" y="290" font-size="9.0" fill="#c25014" text-anchor="middle" font-weight="700" class="mono">T</text>
+<text x="310" y="290" font-size="9.0" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono">A</text>
+<line x1="84.0" y1="322.0" x2="112.0" y2="322.0" stroke="#1d6fa5" stroke-width="2.0"/>
+<line x1="120.0" y1="322.0" x2="146.0" y2="322.0" stroke="#c25014" stroke-width="2.0"/>
+<line x1="112.0" y1="322.0" x2="120.0" y2="322.0" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="2 2"/>
+<text x="98" y="318" font-size="9.0" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono">G</text>
+<text x="133" y="318" font-size="9.0" fill="#c25014" text-anchor="middle" font-weight="700" class="mono">C</text>
+<line x1="262.0" y1="322.0" x2="288.0" y2="322.0" stroke="#c25014" stroke-width="2.0"/>
+<line x1="296.0" y1="322.0" x2="324.0" y2="322.0" stroke="#1d6fa5" stroke-width="2.0"/>
+<line x1="288.0" y1="322.0" x2="296.0" y2="322.0" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="2 2"/>
+<text x="275" y="318" font-size="9.0" fill="#c25014" text-anchor="middle" font-weight="700" class="mono">G</text>
+<text x="310" y="318" font-size="9.0" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono">C</text>
+</g>
+<text x="115" y="364" font-size="9.0" fill="#0f172a" text-anchor="middle" font-weight="700">子代 DNA ①（1旧蓝+1新橙）</text>
+<text x="293" y="364" font-size="9.0" fill="#0f172a" text-anchor="middle" font-weight="700">子代 DNA ②（1新橙+1旧蓝）</text>
+<text x="204" y="388" font-size="9.2" fill="#18794e" text-anchor="middle" font-weight="700">两份拷贝序列完全一致：A-T / G-C / T-A / C-G ···</text>
+<text x="204" y="408" font-size="9.2" fill="#0f172a" text-anchor="middle" font-weight="600">结构即功能：看见双螺旋的一瞬，遗传之谜自动解开！</text>
+<text x="204" y="426" font-size="8.7" fill="#64748b" text-anchor="middle">（注：真实细胞中由解旋酶与 DNA 聚合酶沿新链 5&#x27;→3&#x27; 合成）</text>
+<rect x="402" y="62" width="338" height="378" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="416" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 梅塞尔森-斯塔尔实验（1958）：给新旧链称重！</text>
+<text x="416" y="103" font-size="9.0" fill="#1e293b" text-anchor="start">用重氮 ¹⁵N 喂养大肠杆菌再换轻氮 ¹⁴N，超速离心看浮力条带：</text>
+<text x="462.0" y="126" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="700">第 0 代</text>
+<text x="462.0" y="141" font-size="8.6" fill="#64748b" text-anchor="middle">纯 ¹⁵N 亲代</text>
+<path d="M 438.0,150 L 438.0,272 A 24,18 0 0 0 486.0,272 L 486.0,150 Z" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<line x1="440.0" y1="172.0" x2="484.0" y2="172.0" stroke="#e2e8f0" stroke-width="0.9" stroke-dasharray="2 2"/>
+<line x1="440.0" y1="214.0" x2="484.0" y2="214.0" stroke="#e2e8f0" stroke-width="0.9" stroke-dasharray="2 2"/>
+<line x1="440.0" y1="256.0" x2="484.0" y2="256.0" stroke="#e2e8f0" stroke-width="0.9" stroke-dasharray="2 2"/>
+<rect x="441.0" y="251.0" width="42" height="10" rx="3" fill="#1d6fa5"/>
+<text x="462.0" y="247.0" font-size="8.3" fill="#1d6fa5" text-anchor="middle" font-weight="700">100% 重带</text>
+<text x="566.0" y="126" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="700">第 1 代 (20min)</text>
+<text x="566.0" y="141" font-size="8.6" fill="#64748b" text-anchor="middle">复制 1 次</text>
+<path d="M 542.0,150 L 542.0,272 A 24,18 0 0 0 590.0,272 L 590.0,150 Z" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<line x1="544.0" y1="172.0" x2="588.0" y2="172.0" stroke="#e2e8f0" stroke-width="0.9" stroke-dasharray="2 2"/>
+<line x1="544.0" y1="214.0" x2="588.0" y2="214.0" stroke="#e2e8f0" stroke-width="0.9" stroke-dasharray="2 2"/>
+<line x1="544.0" y1="256.0" x2="588.0" y2="256.0" stroke="#e2e8f0" stroke-width="0.9" stroke-dasharray="2 2"/>
+<rect x="545.0" y="209.0" width="42" height="10" rx="3" fill="#6d28d9"/>
+<text x="566.0" y="205.0" font-size="8.3" fill="#6d28d9" text-anchor="middle" font-weight="700">100% 杂合带</text>
+<text x="670.0" y="126" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="700">第 2 代 (40min)</text>
+<text x="670.0" y="141" font-size="8.6" fill="#64748b" text-anchor="middle">复制 2 次</text>
+<path d="M 646.0,150 L 646.0,272 A 24,18 0 0 0 694.0,272 L 694.0,150 Z" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<line x1="648.0" y1="172.0" x2="692.0" y2="172.0" stroke="#e2e8f0" stroke-width="0.9" stroke-dasharray="2 2"/>
+<line x1="648.0" y1="214.0" x2="692.0" y2="214.0" stroke="#e2e8f0" stroke-width="0.9" stroke-dasharray="2 2"/>
+<line x1="648.0" y1="256.0" x2="692.0" y2="256.0" stroke="#e2e8f0" stroke-width="0.9" stroke-dasharray="2 2"/>
+<rect x="649.0" y="167.0" width="42" height="10" rx="3" fill="#c25014"/>
+<text x="670.0" y="163.0" font-size="8.3" fill="#c25014" text-anchor="middle" font-weight="700">50% 轻</text>
+<rect x="649.0" y="209.0" width="42" height="10" rx="3" fill="#6d28d9"/>
+<text x="670.0" y="205.0" font-size="8.3" fill="#6d28d9" text-anchor="middle" font-weight="700">50% 杂</text>
+<text x="428" y="175.0" font-size="8.2" fill="#c25014" text-anchor="end" font-weight="700" class="mono">1.710</text>
+<text x="428" y="217.0" font-size="8.2" fill="#6d28d9" text-anchor="end" font-weight="700" class="mono">1.717</text>
+<text x="428" y="259.0" font-size="8.2" fill="#1d6fa5" text-anchor="end" font-weight="700" class="mono">1.724</text>
+<text x="566" y="308" font-size="8.8" fill="#64748b" text-anchor="middle">氯化铯 (CsCl) 密度梯度超速离心（单位：g/cm³）</text>
+<rect x="416" y="320" width="310" height="108" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1.0"/>
+<text x="426" y="340" font-size="9.4" fill="#18794e" text-anchor="start" font-weight="700">两代离心条带，当场判死另外两种假说：</text>
+<text x="426" y="359" font-size="9.0" fill="#0f172a" text-anchor="start" font-weight="600">• 第 1 代只出唯一居中带（1.717）→ 排除【全保留复制】</text>
+<text x="426" y="376" font-size="8.9" fill="#1e293b" text-anchor="start">  （若是全保留，第 1 代就会直接分裂成一重一轻两条带）；</text>
+<text x="426" y="394" font-size="9.0" fill="#0f172a" text-anchor="start" font-weight="600">• 第 2 代分出 1:1 轻带与杂合带 → 排除【弥散碎块复制】，</text>
+<text x="426" y="412" font-size="8.9" fill="#18794e" text-anchor="start" font-weight="700">  被誉为“生物学史上最美丽的实验”，双螺旋预言彻底封神！</text>
+</svg>

@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="436" viewBox="0 0 760 436" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">三种曲率曲面上过点P作平行线的对比图解：平面圆柱唯一平行、球面零平行、马鞍面无穷多条平行</title>
+<desc id="desc">三列对比零曲率平面与圆柱面（恰有1条平行测地线）、正曲率球面（大圆必相交两次故0条平行，纬线圈并非测地线）以及负曲率马鞍面（无穷多条不相交测地线）。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="neg-arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1d6fa5"/>
+    </marker>
+    <marker id="neg-arr-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#18794e"/>
+    </marker>
+    <marker id="neg-arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#dc2626"/>
+    </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="435" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">同一道考题“过线外一点 P 作直线 l 的平行线”，三种曲面交出三份答卷！</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">先守住铁律：曲面上的“直线”必须是零侧偏测地线（窄胶带平贴不起皱），绝不能拿打方向盘的纬线圈冒充</text>
+<rect x="20" y="66" width="232" height="356" rx="10" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.3"/>
+<rect x="30" y="76" width="212" height="28" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="0.8"/>
+<text x="136" y="95" font-size="11.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">① 零曲率面 (K = 0)：恰有 1 条</text>
+<rect x="36" y="116" width="200" height="146" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<line x1="48" y1="224" x2="224" y2="224" stroke="#0f172a" stroke-width="2.3"/>
+<text x="220" y="240" font-size="9.6" fill="#0f172a" text-anchor="end" font-weight="700">基准直线 l</text>
+<line x1="48" y1="156.0" x2="224" y2="156.0" stroke="#18794e" stroke-width="2.3"/>
+<text x="220" y="148.0" font-size="9.5" fill="#18794e" text-anchor="end" font-weight="700">唯一平行线 m ∥ l</text>
+<line x1="56" y1="132" x2="216" y2="246" stroke="#dc2626" stroke-width="1.4" stroke-dasharray="4 3"/>
+<text x="60" y="128" font-size="9.2" fill="#dc2626" text-anchor="start">微偏一点必相交</text>
+<circle cx="136.0" cy="156.0" r="4.2" fill="#1d6fa5" stroke="#fff" stroke-width="1.3"/>
+<text x="136.0" y="172.0" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">线外点 P</text>
+<rect x="32" y="272" width="208" height="138" rx="7" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="42" y="291" font-size="10.0" fill="#1d6fa5" text-anchor="start" font-weight="700">欧几里得几何（平面 &amp; 圆柱面）：</text>
+<text x="42" y="311" font-size="9.6" fill="#1e293b" text-anchor="start">• 过 P 只有 1 条直线永不与 l 相交；</text>
+<text x="42" y="330" font-size="9.6" fill="#1e293b" text-anchor="start">• 反直觉彩蛋：圆柱面看着弯，但</text>
+<text x="42" y="348" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="600">  沿母线剪开能无拉伸摊成平纸！</text>
+<text x="42" y="367" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="600">• 高斯曲率 K = κ₁·κ₂ = (1/R)·0 = 0，</text>
+<text x="42" y="386" font-size="9.6" fill="#18794e" text-anchor="start" font-weight="700">  平行公理与 180° 内角和照常成立！</text>
+<rect x="264" y="66" width="232" height="356" rx="10" fill="#ffffff" stroke="#c25014" stroke-width="1.3"/>
+<rect x="274" y="76" width="212" height="28" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="0.8"/>
+<text x="380" y="95" font-size="11.0" fill="#c25014" text-anchor="middle" font-weight="700">② 正曲率球面 (K &gt; 0)：0 条平行</text>
+<circle cx="380.0" cy="189.0" r="62.0" fill="#fffdf9" stroke="#475569" stroke-width="1.5"/>
+<path d="M 331.4,150.6 A 48.6,10.7 0 0,0 428.6,150.6" fill="none" stroke="#64748b" stroke-width="1.3" stroke-dasharray="3 3"/>
+<text x="380.0" y="141.6" font-size="9.0" fill="#dc2626" text-anchor="middle" font-weight="700">✕ 纬线圈需打轮，不是直线!</text>
+<path d="M 318.0,189.0 A 62.0,16 0 0,1 442.0,189.0" fill="none" stroke="#0f172a" stroke-opacity="0.25" stroke-width="1.5" stroke-dasharray="4 3"/>
+<path d="M 318.0,189.0 A 62.0,16 0 0,0 442.0,189.0" fill="none" stroke="#0f172a" stroke-width="2.4"/>
+<text x="380.0" y="216.0" font-size="9.5" fill="#0f172a" text-anchor="middle" font-weight="700">基准大圆 l (赤道)</text>
+<path d="M 440.8,183.4 L 441.6,181.3 L 442.0,179.3 L 441.9,177.3 L 441.3,175.5 L 440.2,173.8 L 438.7,172.1 L 436.7,170.6 L 434.3,169.3 L 431.5,168.0 L 428.3,167.0 L 424.7,166.1 L 420.8,165.4 L 416.6,164.9 L 412.1,164.5 L 407.4,164.4 L 402.4,164.4 L 397.3,164.6 L 392.0,165.0 L 386.7,165.6 L 381.3,166.3 L 375.9,167.3 L 370.5,168.4 L 365.2,169.6 L 360.0,171.0 L 355.0,172.6 L 350.1,174.2 L 345.5,176.0 L 341.2,177.9 L 337.1,179.8 L 333.4,181.9 L 330.0,184.0 L 327.0,186.1 L 324.4,188.2 L 322.2,190.4 L 320.5,192.5 L 319.2,194.6" fill="none" stroke="#c25014" stroke-width="1.9"/>
+<path d="M 441.1,193.9 L 440.0,191.8 L 438.4,189.6 L 436.4,187.5 L 433.9,185.4 L 431.0,183.3 L 427.8,181.2 L 424.1,179.2 L 420.2,177.3 L 415.9,175.5 L 411.4,173.8 L 406.6,172.1 L 401.6,170.7 L 396.5,169.3 L 391.2,168.1 L 385.8,167.1 L 380.4,166.2 L 375.0,165.5 L 369.7,165.0 L 364.4,164.7 L 359.2,164.5 L 354.2,164.6 L 349.4,164.8 L 344.8,165.2 L 340.5,165.8 L 336.5,166.5 L 332.8,167.5 L 329.5,168.6 L 326.5,169.8 L 324.0,171.2 L 321.9,172.8 L 320.2,174.4 L 319.0,176.2 L 318.3,178.1 L 318.0,180.0 L 318.2,182.0 L 318.9,184.1" fill="none" stroke="#1d6fa5" stroke-width="1.9"/>
+<circle cx="320.0" cy="192.0" r="3.6" fill="#dc2626"/>
+<circle cx="440.0" cy="186.0" r="3.6" fill="#dc2626"/>
+<circle cx="380.0" cy="167.0" r="4.2" fill="#1d6fa5" stroke="#fff" stroke-width="1.3"/>
+<text x="398.0" y="161.0" font-size="9.5" fill="#1d6fa5" text-anchor="start" font-weight="700" class="halo">点 P</text>
+<rect x="276" y="272" width="208" height="138" rx="7" fill="#fef1e8" stroke="#c25014" stroke-width="0.8"/>
+<text x="286" y="291" font-size="10.0" fill="#c25014" text-anchor="start" font-weight="700">黎曼椭圆 / 球面几何（K = +1/R²）：</text>
+<text x="286" y="311" font-size="9.6" fill="#1e293b" text-anchor="start">• 球面“直线”只能是过球心的大圆；</text>
+<text x="286" y="330" font-size="9.6" fill="#1e293b" text-anchor="start">• 任意两个不同过球心平面必交于</text>
+<text x="286" y="348" font-size="9.6" fill="#dc2626" text-anchor="start" font-weight="700">  一条直径 → 大圆必相交 2 次！</text>
+<text x="286" y="367" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="600">• 平行线 = 0 条！空间往里收拢，</text>
+<text x="286" y="386" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="600">  连赤道上垂线都会在北极撞车！</text>
+<rect x="508" y="66" width="232" height="356" rx="10" fill="#ffffff" stroke="#18794e" stroke-width="1.3"/>
+<rect x="518" y="76" width="212" height="28" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="0.8"/>
+<text x="624" y="95" font-size="11.0" fill="#18794e" text-anchor="middle" font-weight="700">③ 负曲率马鞍 (K &lt; 0)：无穷多条</text>
+<path d="M 534.0,180.0 L 538.8,181.9 L 543.7,183.6 L 548.5,185.0 L 553.3,186.2 L 558.2,187.1 L 563.0,187.8 L 567.8,188.3 L 572.7,188.5 L 577.5,188.5 L 582.3,188.3 L 587.2,187.8 L 592.0,187.1 L 596.8,186.1 L 601.7,185.0 L 606.5,183.5 L 611.3,181.9 L 616.2,180.0 L 621.0,177.8 L 625.8,175.4 L 630.7,172.8 L 635.5,170.0 L 640.3,166.9 L 645.2,163.6 L 650.0,160.0" fill="none" stroke="#cbd5e1" stroke-width="1.0"/>
+<path d="M 534.0,180.0 L 536.7,179.1 L 539.3,178.4 L 542.0,178.0 L 544.7,177.8 L 547.3,177.9 L 550.0,178.2 L 552.7,178.7 L 555.3,179.5 L 558.0,180.5 L 560.7,181.7 L 563.3,183.2 L 566.0,184.9 L 568.7,186.9 L 571.3,189.0 L 574.0,191.5 L 576.7,194.1 L 579.3,197.0 L 582.0,200.2 L 584.7,203.6 L 587.3,207.2 L 590.0,211.0 L 592.7,215.1 L 595.3,219.4 L 598.0,224.0" fill="none" stroke="#cbd5e1" stroke-width="1.0"/>
+<path d="M 550.0,178.2 L 554.8,180.1 L 559.7,181.7 L 564.5,183.2 L 569.3,184.3 L 574.2,185.3 L 579.0,186.0 L 583.8,186.5 L 588.7,186.7 L 593.5,186.7 L 598.3,186.5 L 603.2,186.0 L 608.0,185.3 L 612.8,184.3 L 617.7,183.1 L 622.5,181.7 L 627.3,180.0 L 632.2,178.1 L 637.0,176.0 L 641.8,173.6 L 646.7,171.0 L 651.5,168.2 L 656.3,165.1 L 661.2,161.7 L 666.0,158.2" fill="none" stroke="#cbd5e1" stroke-width="1.0"/>
+<path d="M 563.0,187.8 L 565.7,186.9 L 568.3,186.3 L 571.0,185.8 L 573.7,185.7 L 576.3,185.7 L 579.0,186.0 L 581.7,186.5 L 584.3,187.3 L 587.0,188.3 L 589.7,189.5 L 592.3,191.0 L 595.0,192.7 L 597.7,194.7 L 600.3,196.9 L 603.0,199.3 L 605.7,202.0 L 608.3,204.9 L 611.0,208.0 L 613.7,211.4 L 616.3,215.0 L 619.0,218.8 L 621.7,222.9 L 624.3,227.3 L 627.0,231.8" fill="none" stroke="#cbd5e1" stroke-width="1.0"/>
+<path d="M 566.0,184.9 L 570.8,186.8 L 575.7,188.5 L 580.5,189.9 L 585.3,191.1 L 590.2,192.0 L 595.0,192.7 L 599.8,193.2 L 604.7,193.4 L 609.5,193.4 L 614.3,193.2 L 619.2,192.7 L 624.0,192.0 L 628.8,191.0 L 633.7,189.9 L 638.5,188.4 L 643.3,186.8 L 648.2,184.9 L 653.0,182.7 L 657.8,180.3 L 662.7,177.7 L 667.5,174.9 L 672.3,171.8 L 677.2,168.5 L 682.0,164.9" fill="none" stroke="#cbd5e1" stroke-width="1.0"/>
+<path d="M 592.0,187.1 L 594.7,186.2 L 597.3,185.5 L 600.0,185.1 L 602.7,184.9 L 605.3,185.0 L 608.0,185.3 L 610.7,185.8 L 613.3,186.6 L 616.0,187.6 L 618.7,188.8 L 621.3,190.3 L 624.0,192.0 L 626.7,194.0 L 629.3,196.1 L 632.0,198.6 L 634.7,201.2 L 637.3,204.1 L 640.0,207.3 L 642.7,210.7 L 645.3,214.3 L 648.0,218.1 L 650.7,222.2 L 653.3,226.5 L 656.0,231.1" fill="none" stroke="#cbd5e1" stroke-width="1.0"/>
+<path d="M 582.0,200.2 L 586.8,202.1 L 591.7,203.7 L 596.5,205.2 L 601.3,206.3 L 606.2,207.3 L 611.0,208.0 L 615.8,208.5 L 620.7,208.7 L 625.5,208.7 L 630.3,208.5 L 635.2,208.0 L 640.0,207.3 L 644.8,206.3 L 649.7,205.1 L 654.5,203.7 L 659.3,202.0 L 664.2,200.1 L 669.0,198.0 L 673.8,195.6 L 678.7,193.0 L 683.5,190.2 L 688.3,187.1 L 693.2,183.7 L 698.0,180.2" fill="none" stroke="#cbd5e1" stroke-width="1.0"/>
+<path d="M 621.0,177.8 L 623.7,176.9 L 626.3,176.3 L 629.0,175.8 L 631.7,175.7 L 634.3,175.7 L 637.0,176.0 L 639.7,176.5 L 642.3,177.3 L 645.0,178.3 L 647.7,179.5 L 650.3,181.0 L 653.0,182.7 L 655.7,184.7 L 658.3,186.9 L 661.0,189.3 L 663.7,192.0 L 666.3,194.9 L 669.0,198.0 L 671.7,201.4 L 674.3,205.0 L 677.0,208.8 L 679.7,212.9 L 682.3,217.3 L 685.0,221.8" fill="none" stroke="#cbd5e1" stroke-width="1.0"/>
+<path d="M 598.0,224.0 L 602.8,225.9 L 607.7,227.6 L 612.5,229.0 L 617.3,230.2 L 622.2,231.1 L 627.0,231.8 L 631.8,232.3 L 636.7,232.5 L 641.5,232.5 L 646.3,232.3 L 651.2,231.8 L 656.0,231.1 L 660.8,230.1 L 665.7,229.0 L 670.5,227.5 L 675.3,225.9 L 680.2,224.0 L 685.0,221.8 L 689.8,219.4 L 694.7,216.8 L 699.5,214.0 L 704.3,210.9 L 709.2,207.6 L 714.0,204.0" fill="none" stroke="#cbd5e1" stroke-width="1.0"/>
+<path d="M 650.0,160.0 L 652.7,159.1 L 655.3,158.4 L 658.0,158.0 L 660.7,157.8 L 663.3,157.9 L 666.0,158.2 L 668.7,158.7 L 671.3,159.5 L 674.0,160.5 L 676.7,161.7 L 679.3,163.2 L 682.0,164.9 L 684.7,166.9 L 687.3,169.0 L 690.0,171.5 L 692.7,174.1 L 695.3,177.0 L 698.0,180.2 L 700.7,183.6 L 703.3,187.2 L 706.0,191.0 L 708.7,195.1 L 711.3,199.4 L 714.0,204.0" fill="none" stroke="#cbd5e1" stroke-width="1.0"/>
+<path d="M 584.6,203.4 L 588.4,204.9 L 592.3,206.3 L 596.2,207.6 L 600.0,208.6 L 603.9,209.6 L 607.8,210.4 L 611.6,211.0 L 615.5,211.5 L 619.4,211.8 L 623.2,211.9 L 627.1,212.0 L 631.0,211.8 L 634.8,211.5 L 638.7,211.1 L 642.6,210.5 L 646.4,209.8 L 650.3,208.9 L 654.2,207.8 L 658.0,206.6 L 661.9,205.3 L 665.8,203.8 L 669.6,202.1 L 673.5,200.3 L 677.4,198.4 L 681.2,196.2 L 685.1,194.0 L 689.0,191.6 L 692.8,189.0 L 696.7,186.3 L 700.6,183.4" fill="none" stroke="#0f172a" stroke-width="2.4"/>
+<text x="624" y="248" font-size="9.5" fill="#0f172a" text-anchor="middle" font-weight="700">基准测地线 l</text>
+<path d="M 557.4,180.2 L 561.4,181.8 L 565.4,183.3 L 569.4,184.5 L 573.3,185.6 L 577.1,186.5 L 580.9,187.3 L 584.7,187.9 L 588.4,188.3 L 592.0,188.5 L 595.6,188.6 L 599.1,188.5 L 602.6,188.2 L 606.1,187.8 L 609.5,187.2 L 612.8,186.4 L 616.1,185.5 L 619.3,184.4 L 622.5,183.2 L 625.6,181.8 L 628.7,180.3 L 631.8,178.6 L 634.7,176.8 L 637.7,174.9 L 640.5,172.9 L 643.4,170.7 L 646.1,168.4 L 648.9,166.0 L 651.5,163.5 L 654.2,160.9 L 656.7,158.2" fill="none" stroke="#18794e" stroke-width="2.1"/>
+<path d="M 549.0,178.0 L 553.6,179.7 L 558.2,181.2 L 562.7,182.5 L 567.2,183.7 L 571.6,184.8 L 575.9,185.7 L 580.2,186.4 L 584.5,187.0 L 588.7,187.4 L 592.8,187.6 L 596.9,187.7 L 601.0,187.6 L 605.0,187.4 L 608.9,187.0 L 612.8,186.4 L 616.6,185.6 L 620.4,184.7 L 624.2,183.6 L 627.9,182.4 L 631.5,181.0 L 635.1,179.4 L 638.6,177.6 L 642.1,175.7 L 645.5,173.7 L 648.9,171.4 L 652.2,169.1 L 655.5,166.5 L 658.7,163.8 L 661.9,161.0 L 665.0,158.0" fill="none" stroke="#18794e" stroke-width="2.3"/>
+<path d="M 540.7,178.2 L 545.9,179.6 L 551.0,180.8 L 556.1,182.0 L 561.1,183.1 L 566.0,184.0 L 570.9,184.9 L 575.8,185.6 L 580.6,186.2 L 585.4,186.6 L 590.1,187.0 L 594.7,187.1 L 599.3,187.2 L 603.9,187.1 L 608.4,186.8 L 612.8,186.4 L 617.2,185.8 L 621.5,185.1 L 625.8,184.2 L 630.1,183.1 L 634.3,181.9 L 638.4,180.5 L 642.5,178.9 L 646.5,177.2 L 650.5,175.3 L 654.5,173.2 L 658.3,171.0 L 662.2,168.5 L 666.0,165.9 L 669.7,163.2 L 673.4,160.2" fill="none" stroke="#1d6fa5" stroke-width="2.0"/>
+<circle cx="612.8" cy="186.4" r="4.2" fill="#1d6fa5" stroke="#fff" stroke-width="1.3"/>
+<text x="612.8" y="175.4" font-size="9.3" fill="#18794e" text-anchor="middle" font-weight="700" class="halo">点 P (张开整把平行扇!)</text>
+<rect x="520" y="272" width="208" height="138" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="0.8"/>
+<text x="530" y="291" font-size="10.0" fill="#18794e" text-anchor="start" font-weight="700">罗巴切夫斯基双曲几何（K = -1/R²）：</text>
+<text x="530" y="311" font-size="9.6" fill="#1e293b" text-anchor="start">• 前后往上翘、左右往下塌（一正</text>
+<text x="530" y="330" font-size="9.6" fill="#1e293b" text-anchor="start">  一负主曲率相乘 K = κ₁·κ₂ &lt; 0）；</text>
+<text x="530" y="348" font-size="9.6" fill="#1e293b" text-anchor="start">• 空间像喇叭口往外疯长，过点 P</text>
+<text x="530" y="367" font-size="9.6" fill="#18794e" text-anchor="start" font-weight="700">  有无穷多条测地线与 l 永不相交！</text>
+<text x="530" y="386" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="600">• 掀翻两千年“唯一平行”执念！</text>
+</svg>

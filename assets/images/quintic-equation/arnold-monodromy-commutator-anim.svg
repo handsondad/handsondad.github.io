@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="468" viewBox="0 0 760 468" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">阿诺德1963拓扑单值性证明五次方程无根式通解的五根换位子回路动画图解</title>
+<desc id="desc">左图动画演示五边形上5个根沿σ=(1 2 3)与τ=(1 4 5)依次走σ→τ→σ⁻¹→τ⁻¹四步回路后，1号根净移至5号位形成新三轮换(1 5 3)；右图说明任何k层嵌套根式在k层换位子回路上绕数正反抵消恒为0而输出不变，从而导出矛盾。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  .root1-runner {
+        animation: hopCommutator 4.6s cubic-bezier(0.35, 0, 0.25, 1) 0.4s 1 forwards;
+      }
+      @keyframes hopCommutator {
+        0%   { transform: translate(24px, -78px); }
+        25%  { transform: translate(94px, -23px); }
+        50%  { transform: translate(94px, -23px); }
+        75%  { transform: translate(24px, -78px); }
+        100% { transform: translate(-96px, -23px); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .root1-runner { animation: none; transform: translate(-96px, -23px); }
+      }
+</style>
+<rect x="0.5" y="0.5" width="759" height="467" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">不用背群论公理也能亲眼看懂！—— 阿诺德“溜根换位”拓扑证明（1963）</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">让系数走一趟“正转 A → 正转 B → 倒退 A⁻¹ → 倒退 B⁻¹”：一切根号公式原地冻结，5 颗真根却当面换了座位！</text>
+<rect x="20" y="62" width="368" height="392" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="34" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 真根复平面：走完四步回路，1号根跳到了5号位！</text>
+<rect x="34" y="96" width="340" height="206" rx="7" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<line x1="204.0" y1="124.0" x2="274.4" y2="175.1" stroke="#1d6fa5" stroke-width="1.8" stroke-dasharray="4 2"/>
+<line x1="274.4" y1="175.1" x2="247.5" y2="257.9" stroke="#1d6fa5" stroke-width="1.8" stroke-dasharray="4 2"/>
+<line x1="247.5" y1="257.9" x2="204.0" y2="124.0" stroke="#1d6fa5" stroke-width="1.8" stroke-dasharray="4 2"/>
+<line x1="204.0" y1="124.0" x2="160.5" y2="257.9" stroke="#c25014" stroke-width="1.8" stroke-dasharray="4 2"/>
+<line x1="160.5" y1="257.9" x2="133.6" y2="175.1" stroke="#c25014" stroke-width="1.8" stroke-dasharray="4 2"/>
+<line x1="133.6" y1="175.1" x2="204.0" y2="124.0" stroke="#c25014" stroke-width="1.8" stroke-dasharray="4 2"/>
+<line x1="192.0" y1="129.0" x2="145.6" y2="170.1" stroke="#dc2626" stroke-width="2.6" marker-end="url(#arr-red)"/>
+<text x="120.0" y="126.0" font-size="8.6" fill="#dc2626" text-anchor="middle" font-weight="700">终局净位移：r₁→r₅!</text>
+<circle cx="204.0" cy="124.0" r="13.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.5"/>
+<text x="204.0" y="128.0" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">r1</text>
+<circle cx="274.4" cy="175.1" r="13.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.5"/>
+<text x="274.4" y="179.1" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">r2</text>
+<circle cx="247.5" cy="257.9" r="13.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.5"/>
+<text x="247.5" y="261.9" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">r3</text>
+<circle cx="160.5" cy="257.9" r="13.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.5"/>
+<text x="160.5" y="261.9" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">r4</text>
+<circle cx="133.6" cy="175.1" r="13.5" fill="#ffffff" stroke="#0f172a" stroke-width="1.5"/>
+<text x="133.6" y="179.1" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">r5</text>
+<g transform="translate(204.0,198.0)"><g class="root1-runner"><circle cx="0" cy="0" r="9.5" fill="#dc2626" stroke="#ffffff" stroke-width="1.5"/><text x="0" y="3.2" font-size="8.0" fill="#ffffff" text-anchor="middle" font-weight="700">1号</text></g></g>
+<text x="308" y="120" font-size="8.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">蓝回路 σ=(1 2 3)</text>
+<text x="308" y="136" font-size="8.5" fill="#c25014" text-anchor="middle" font-weight="700">橙回路 τ=(1 4 5)</text>
+<rect x="34" y="312" width="340" height="128" rx="7" fill="#fef2f2" stroke="#dc2626" stroke-width="1.0"/>
+<text x="44" y="331" font-size="9.1" fill="#dc2626" text-anchor="start" font-weight="700">跟着 1 号真根走一遍四步“换位子舞步” (σ → τ → σ⁻¹ → τ⁻¹)：</text>
+<text x="44" y="350" font-size="8.9" fill="#0f172a" text-anchor="start">① 走蓝圈 σ (1→2→3)：1 号根挪到【2号位】；</text>
+<text x="44" y="367" font-size="8.9" fill="#1e293b" text-anchor="start">② 走橙圈 τ (1→4→5)：只动 1,4,5 位，2号位上的它【原地不动】；</text>
+<text x="44" y="384" font-size="8.9" fill="#1e293b" text-anchor="start">③ 倒退蓝圈 σ⁻¹ (3←2←1)：从 2号位退回【1号位】；</text>
+<text x="44" y="401" font-size="8.9" fill="#dc2626" text-anchor="start" font-weight="700">④ 倒退橙圈 τ⁻¹ (5←4←1)：此时它在 1号位！一把被拽去了【5号位】！</text>
+<text x="44" y="421" font-size="8.9" fill="#0f172a" text-anchor="start" font-weight="700">★ 算完四步合成结果 = (1→5→3→1)，依然是一个活蹦乱跳的三轮换！</text>
+<rect x="402" y="62" width="338" height="392" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="416" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 根号公式的死穴：正转+反转 = 绕数清零冻结！</text>
+<rect x="416" y="96" width="310" height="118" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.0"/>
+<text x="426" y="115" font-size="9.2" fill="#1d6fa5" text-anchor="start" font-weight="700">为什么开根号 √f 抓不住刚才那次换座位？</text>
+<text x="426" y="134" font-size="8.9" fill="#1e293b" text-anchor="start">• 复数开 n 次根号，只有绕原点净转非零圈才换分支；</text>
+<text x="426" y="152" font-size="8.9" fill="#0f172a" text-anchor="start" font-weight="600">• 走完 σ → τ → σ⁻¹ → τ⁻¹ 后，内部函数绕原点的总圈数：</text>
+<text x="571" y="173" font-size="9.1" fill="#18794e" text-anchor="middle" font-weight="700" class="mono">净圈数 W = (+w_σ) + (+w_τ) + (−w_σ) + (−w_τ) = 0！</text>
+<text x="426" y="194" font-size="8.9" fill="#0f172a" text-anchor="start">• 圈数归零 ⇒ 根号 √f 被迫回到原值！（套 k 层根号同理被</text>
+<text x="426" y="208" font-size="8.9" fill="#1d6fa5" text-anchor="start" font-weight="700">  k 层嵌套换位子彻底清零冻结！）</text>
+<rect x="416" y="226" width="310" height="214" rx="7" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="426" y="246" font-size="9.1" fill="#0f172a" text-anchor="start" font-weight="700">嵌套换位子“熄火层数” = 求根公式至少要套几层根号：</text>
+<rect x="424" y="260" width="294" height="35" rx="5" fill="#ffffff" stroke="#18794e" stroke-width="0.9"/>
+<text x="432" y="274" font-size="8.9" fill="#18794e" text-anchor="start" font-weight="700">2 次 (S₂)</text>
+<text x="496" y="274" font-size="8.6" fill="#0f172a" text-anchor="start" font-weight="600">第 1 层就全归零</text>
+<text x="432" y="289" font-size="8.5" fill="#1e293b" text-anchor="start" font-weight="400">⇒ 只需 1 层根号 √Δ</text>
+<rect x="424" y="301" width="294" height="35" rx="5" fill="#ffffff" stroke="#0f766e" stroke-width="0.9"/>
+<text x="432" y="315" font-size="8.9" fill="#0f766e" text-anchor="start" font-weight="700">3 次 (S₃)</text>
+<text x="496" y="315" font-size="8.6" fill="#0f172a" text-anchor="start" font-weight="600">第 2 层才全归零</text>
+<text x="432" y="330" font-size="8.5" fill="#1e293b" text-anchor="start" font-weight="400">⇒ 需 2 层嵌套 ∛(…+√…)</text>
+<rect x="424" y="342" width="294" height="35" rx="5" fill="#ffffff" stroke="#1d6fa5" stroke-width="0.9"/>
+<text x="432" y="356" font-size="8.9" fill="#1d6fa5" text-anchor="start" font-weight="700">4 次 (S₄)</text>
+<text x="496" y="356" font-size="8.6" fill="#0f172a" text-anchor="start" font-weight="600">第 3 层才全归零</text>
+<text x="432" y="371" font-size="8.5" fill="#1e293b" text-anchor="start" font-weight="400">⇒ 需 3 层嵌套 √(…+∛(…+√))</text>
+<rect x="424" y="383" width="294" height="35" rx="5" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2"/>
+<text x="432" y="397" font-size="8.9" fill="#dc2626" text-anchor="start" font-weight="700">5 次 (S₅)</text>
+<text x="496" y="397" font-size="8.6" fill="#0f172a" text-anchor="start" font-weight="600">永远不归零! [A₅,A₅]=A₅</text>
+<text x="432" y="412" font-size="8.5" fill="#dc2626" text-anchor="start" font-weight="700">⇒ 套一万层根号也抓不住真根!</text>
+<text x="426" y="432" font-size="8.9" fill="#dc2626" text-anchor="start" font-weight="700">矛盾一锤定音：公式输出原地不动 ≠ 真根已经搬去5号位！</text>
+</svg>
