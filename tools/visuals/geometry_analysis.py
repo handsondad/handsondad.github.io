@@ -5648,3 +5648,2656 @@ def build_non_euclidean_geometry():
     build_fig5_four_frontiers()
 
 
+@register("bezier-curve", "贝塞尔曲线：德卡斯特里奥算法、凸包、样条拼接、圆弧误差与CSS缓动", "geometry_analysis")
+def build_bezier_curve():
+    TOPIC = "bezier-curve"
+
+    def lerp2(a, b, t):
+        return (a[0] * (1.0 - t) + b[0] * t, a[1] * (1.0 - t) + b[1] * t)
+
+    def de_casteljau_layers(pts, t):
+        layers = [list(pts)]
+        cur = list(pts)
+        while len(cur) > 1:
+            cur = [lerp2(cur[i], cur[i + 1], t) for i in range(len(cur) - 1)]
+            layers.append(cur)
+        return layers
+
+    def bernstein(n, i, t):
+        return math.comb(n, i) * ((1.0 - t) ** (n - i)) * (t ** i)
+
+    def eval_bezier_bernstein(pts, t):
+        n = len(pts) - 1
+        x = sum(bernstein(n, i, t) * pts[i][0] for i in range(n + 1))
+        y = sum(bernstein(n, i, t) * pts[i][1] for i in range(n + 1))
+        return (x, y)
+
+    def poly_d(pts):
+        return "M " + " L ".join(f"{p[0]:.2f},{p[1]:.2f}" for p in pts)
+
+    # ------------------------------------------------------------------
+    # Fig 1: de Casteljau recursive lerp (Quadratic string art + Cubic anim)
+    # ------------------------------------------------------------------
+    def build_fig1_de_casteljau():
+        el = []
+        el.extend(
+            header(
+                "没有圆规怎么拿直尺画曲线？德卡斯特里奥（de Casteljau）逐层等比例插值",
+                "左：二次贝塞尔“拉线艺术”与 t=0.35 切线；右：三次贝塞尔 3→2→1 递推与单次渐进动画",
+            )
+        )
+
+        # Left card: Quadratic Bezier
+        el.append(card(20, 62, 352, 362, rx=10, fill=CARD_BG, stroke=BORDER))
+        el.append(pill(34, 74, "二次贝塞尔 (n=2)：3 点 → 2 线 → 1 条抛物线", fg=BLUE, bg=BLUE_SOFT, w=324, h=22, size=10.8))
+
+        qp0, qp1, qp2 = (54.0, 296.0), (190.0, 118.0), (336.0, 296.0)
+        # String art envelope for t = 0.1..0.9
+        for k in range(1, 10):
+            tk = k / 10.0
+            a = lerp2(qp0, qp1, tk)
+            b = lerp2(qp1, qp2, tk)
+            el.append(
+                f'<line x1="{a[0]:.2f}" y1="{a[1]:.2f}" x2="{b[0]:.2f}" y2="{b[1]:.2f}" '
+                f'stroke="#cbd5e1" stroke-width="0.9"/>'
+            )
+
+        # Control polygon
+        el.append(
+            f'<polyline points="{qp0[0]},{qp0[1]} {qp1[0]},{qp1[1]} {qp2[0]},{qp2[1]}" '
+            f'fill="none" stroke="{SLATE}" stroke-width="1.3" stroke-dasharray="4 3"/>'
+        )
+        # Exact quadratic SVG Q curve + verify midpoint & t=0.35
+        tq = 0.35
+        qlayers = de_casteljau_layers([qp0, qp1, qp2], tq)
+        qq0, qq1 = qlayers[1]
+        qb = qlayers[2][0]
+        qb_bern = eval_bezier_bernstein([qp0, qp1, qp2], tq)
+        assert math.hypot(qb[0] - qb_bern[0], qb[1] - qb_bern[1]) < 1e-11
+        # Derivative B'(tq) = 2*(qq1 - qq0) -> tangent strictly collinear with qq0-qq1!
+        deriv_q = (2.0 * (qq1[0] - qq0[0]), 2.0 * (qq1[1] - qq0[1]))
+        exact_dq = (
+            2 * (1 - tq) * (qp1[0] - qp0[0]) + 2 * tq * (qp2[0] - qp1[0]),
+            2 * (1 - tq) * (qp1[1] - qp0[1]) + 2 * tq * (qp2[1] - qp1[1]),
+        )
+        assert math.hypot(deriv_q[0] - exact_dq[0], deriv_q[1] - exact_dq[1]) < 1e-11
+
+        el.append(
+            f'<path d="M {qp0[0]},{qp0[1]} Q {qp1[0]},{qp1[1]} {qp2[0]},{qp2[1]}" '
+            f'fill="none" stroke="{BLUE}" stroke-width="2.6"/>'
+        )
+        # Highlight t=0.35 bridge
+        el.append(
+            f'<line x1="{qq0[0]:.2f}" y1="{qq0[1]:.2f}" x2="{qq1[0]:.2f}" y2="{qq1[1]:.2f}" '
+            f'stroke="{GREEN}" stroke-width="2.0"/>'
+        )
+        for pt, lbl, dx, dy, col in [
+            (qp0, "P0", -4, 17, INK),
+            (qp1, "P1 (控制点)", 0, -9, INK),
+            (qp2, "P2", 4, 17, INK),
+            (qq0, "Q0(0.35)", -28, -5, GREEN),
+            (qq1, "Q1(0.35)", 28, -5, GREEN),
+            (qb, "B(0.35)", 6, 18, ORANGE),
+        ]:
+            el.append(f'<circle cx="{pt[0]:.2f}" cy="{pt[1]:.2f}" r="4.2" fill="{col}" stroke="#fff" stroke-width="1.2"/>')
+            el.append(txt(pt[0] + dx, pt[1] + dy, lbl, size=10.2, color=col, anchor="middle", weight="700", halo=True))
+
+        el.append(card(34, 326, 324, 84, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        el.append(txt(46, 345, "• 规则极简：在 P0P1、P1P2 上同取比例 t，连成绿线 Q0Q1；", size=9.8, color=BODY))
+        el.append(txt(46, 365, "• 再在 Q0Q1 上取同样比例 t，落点 B(t) 自动描出精确抛物线！", size=9.8, color=BODY))
+        el.append(txt(46, 385, "• 绿线 Q0Q1 恰好是曲线在 B(t) 处的严格切线（TrueType 字体核心）。", size=9.8, color=GREEN, weight="600"))
+
+        # Right card: Cubic Bezier with one-shot CSS animation
+        el.append(card(388, 62, 352, 362, rx=10, fill=CARD_BG, stroke=BORDER))
+        el.append(pill(402, 74, "三次贝塞尔 (n=3)：4 点递推 + 自动一分为二", fg=ORANGE, bg=ORANGE_SOFT, w=324, h=22, size=10.8))
+
+        cp0, cp1, cp2, cp3 = (418.0, 294.0), (452.0, 122.0), (654.0, 120.0), (708.0, 294.0)
+        tc = 0.40
+        clayers = de_casteljau_layers([cp0, cp1, cp2, cp3], tc)
+        cq0, cq1, cq2 = clayers[1]
+        cr0, cr1 = clayers[2]
+        cb = clayers[3][0]
+
+        for k in range(21):
+            tk = k / 20.0
+            p_dc = de_casteljau_layers([cp0, cp1, cp2, cp3], tk)[3][0]
+            p_bn = eval_bezier_bernstein([cp0, cp1, cp2, cp3], tk)
+            assert math.hypot(p_dc[0] - p_bn[0], p_dc[1] - p_bn[1]) < 1e-10
+        # Verify subdivision left subcurve [cp0, cq0, cr0, cb] matches original at u=0.5 -> t=0.2
+        sub_mid = eval_bezier_bernstein([cp0, cq0, cr0, cb], 0.5)
+        orig_02 = eval_bezier_bernstein([cp0, cp1, cp2, cp3], 0.5 * tc)
+        assert math.hypot(sub_mid[0] - orig_02[0], sub_mid[1] - orig_02[1]) < 1e-10
+
+        # Outer control polygon
+        el.append(
+            f'<polyline points="{cp0[0]},{cp0[1]} {cp1[0]},{cp1[1]} {cp2[0]},{cp2[1]} {cp3[0]},{cp3[1]}" '
+            f'fill="none" stroke="{SLATE}" stroke-width="1.3" stroke-dasharray="4 3"/>'
+        )
+        # Faint full guide curve so static readers always see full curve even at frame 0
+        cubic_d = f"M {cp0[0]},{cp0[1]} C {cp1[0]},{cp1[1]} {cp2[0]},{cp2[1]} {cp3[0]},{cp3[1]}"
+        el.append(f'<path d="{cubic_d}" fill="none" stroke="#fed7aa" stroke-width="3.0"/>')
+
+        # Layer 1 (Q0-Q1-Q2, blue)
+        el.append(
+            f'<polyline class="dc-step1" points="{cq0[0]:.2f},{cq0[1]:.2f} {cq1[0]:.2f},{cq1[1]:.2f} {cq2[0]:.2f},{cq2[1]:.2f}" '
+            f'fill="none" stroke="{BLUE}" stroke-width="1.6"/>'
+        )
+        # Layer 2 (R0-R1, green tangent)
+        el.append(
+            f'<line class="dc-step2" x1="{cr0[0]:.2f}" y1="{cr0[1]:.2f}" x2="{cr1[0]:.2f}" y2="{cr1[1]:.2f}" '
+            f'stroke="{GREEN}" stroke-width="2.1"/>'
+        )
+        # Animated main cubic curve (pathLength=1000 so dashoffset works cleanly!)
+        el.append(
+            f'<path class="dc-curve" d="{cubic_d}" pathLength="1000" '
+            f'fill="none" stroke="{ORANGE}" stroke-width="2.8"/>'
+        )
+
+        for pt, lbl, dx, dy, col, cls_n in [
+            (cp0, "P0", -2, 17, INK, None),
+            (cp1, "P1", -12, -7, INK, None),
+            (cp2, "P2", 12, -7, INK, None),
+            (cp3, "P3", 2, 17, INK, None),
+            (cq0, "Q0", -15, 3, BLUE, "dc-step1"),
+            (cq1, "Q1", 0, -9, BLUE, "dc-step1"),
+            (cq2, "Q2", 16, 3, BLUE, "dc-step1"),
+            (cr0, "R0", -12, 14, GREEN, "dc-step2"),
+            (cr1, "R1", 15, 14, GREEN, "dc-step2"),
+            (cb, "B(0.4)", 0, 19, ORANGE, "dc-step3"),
+        ]:
+            g_cls = f' class="{cls_n}"' if cls_n else ""
+            r_dot = "4.8" if col == ORANGE else "3.9"
+            el.append(
+                f'<g{g_cls}><circle cx="{pt[0]:.2f}" cy="{pt[1]:.2f}" r="{r_dot}" fill="{col}" stroke="#fff" stroke-width="1.2"/>'
+                + txt(pt[0] + dx, pt[1] + dy, lbl, size=10.0, color=col, anchor="middle", weight="700", halo=True)
+                + "</g>"
+            )
+
+        el.append(card(402, 326, 324, 84, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        el.append(txt(414, 345, "• 第1轮算蓝点 Q0,Q1,Q2 → 第2轮算绿点 R0,R1 → 第3轮得 B(0.4)；", size=9.8, color=BODY))
+        el.append(txt(414, 365, "• 数值绝对稳定：全程只在 [0,1] 做凸组合，绝无高次幂溢出；", size=9.8, color=BODY))
+        el.append(txt(414, 385, "• 买一送一：(P0,Q0,R0,B) 与 (B,R1,Q2,P3) 恰好是左右两半控制点！", size=9.8, color=ORANGE, weight="600"))
+
+        extra_css = """
+  @keyframes dcFade1 { 0%, 10% { opacity: 0.2; } 28%, 100% { opacity: 1; } }
+  @keyframes dcFade2 { 0%, 28% { opacity: 0.2; } 48%, 100% { opacity: 1; } }
+  @keyframes dcFade3 { 0%, 46% { opacity: 0.2; } 64%, 100% { opacity: 1; } }
+  @keyframes dcDraw { 0%, 15% { stroke-dashoffset: 1000; } 92%, 100% { stroke-dashoffset: 0; } }
+  .dc-step1 { animation: dcFade1 5.2s ease-out 1 forwards; }
+  .dc-step2 { animation: dcFade2 5.2s ease-out 1 forwards; }
+  .dc-step3 { animation: dcFade3 5.2s ease-out 1 forwards; }
+  .dc-curve { stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: dcDraw 5.2s ease-in-out 1 forwards; }
+  @media (prefers-reduced-motion: reduce) {
+    .dc-step1, .dc-step2, .dc-step3, .dc-curve {
+      animation: none !important;
+      opacity: 1 !important;
+      stroke-dashoffset: 0 !important;
+    }
+  }"""
+        svg = figure(
+            440,
+            "德卡斯特里奥递推几何作图法（二次与三次贝塞尔曲线及单次渐进动画）",
+            "左图展示二次贝塞尔曲线在 t=0.1..0.9 的拉线包络与 t=0.35 切线；右图展示三次贝塞尔在 t=0.40 处的三层线性插值（Q0-Q2、R0-R1、B）及左右子曲线细分性质。",
+            el,
+            extra_css=extra_css,
+        )
+        write_svg(TOPIC, "de-casteljau-construction-anim.svg", svg)
+
+    # ------------------------------------------------------------------
+    # Fig 2: Bernstein Basis Functions + Convex Hull Safety Cage vs Lagrange Oscillation
+    # ------------------------------------------------------------------
+    def build_fig2_bernstein_convex_hull():
+        el = []
+        el.extend(
+            header(
+                "为什么汽车设计师敢放心拖拽控制点？伯恩斯坦权重与“橡皮筋凸包安全笼”",
+                "左：四项伯恩斯坦基函数非负且总和恒等于 1；右：普通六次多项式插值剧烈甩飞 vs 贝塞尔稳守凸包",
+            )
+        )
+
+        # Left card: Cubic Bernstein polynomials b_{i,3}(t)
+        el.append(card(20, 62, 352, 370, rx=10, fill=CARD_BG, stroke=BORDER))
+        el.append(pill(34, 74, "伯恩斯坦基函数 b_{i,3}(t)：抛 3 次硬币的二项分布！", fg=BLUE, bg=BLUE_SOFT, w=324, h=22, size=10.6))
+
+        gx0, gy0, gw, gh = 64.0, 294.0, 272.0, 174.0
+        # Axes & grid
+        for yv in [0.0, 0.25, 0.5, 0.75, 1.0]:
+            yy = gy0 - yv * gh
+            el.append(f'<line x1="{gx0}" y1="{yy:.1f}" x2="{gx0 + gw}" y2="{yy:.1f}" stroke="#e2e8f0" stroke-width="0.9"/>')
+            el.append(txt(gx0 - 7, yy + 3.5, f"{yv:.2g}", size=9.5, color=MUTED, anchor="end"))
+        for xv in [0.0, 1 / 3, 2 / 3, 1.0]:
+            xx = gx0 + xv * gw
+            lbl_x = "0" if xv == 0 else ("1/3" if abs(xv - 1 / 3) < 0.01 else ("2/3" if abs(xv - 2 / 3) < 0.01 else "1"))
+            el.append(f'<line x1="{xx:.1f}" y1="{gy0 - gh}" x2="{xx:.1f}" y2="{gy0}" stroke="#e2e8f0" stroke-width="0.9"/>')
+            el.append(txt(xx, gy0 + 15, lbl_x, size=9.5, color=MUTED, anchor="middle"))
+
+        # Sum = 1 top line
+        el.append(
+            f'<line x1="{gx0}" y1="{gy0 - gh:.1f}" x2="{gx0 + gw}" y2="{gy0 - gh:.1f}" '
+            f'stroke="{INK}" stroke-width="1.6" stroke-dasharray="5 3"/>'
+        )
+        el.append(txt(gx0 + gw / 2, gy0 - gh - 7, "四条曲线之和 ∑ b_{i,3}(t) ≡ 1（单位分解）", size=9.8, color=INK, anchor="middle", weight="700"))
+
+        colors_b = [BLUE, GREEN, ORANGE, PURPLE]
+        dashes_b = [None, "6 2", "3 2", None]
+        labels_b = [
+            ("b0=(1−t)³", 0.11, 0.74, "start"),
+            ("b1=3t(1−t)²", 1 / 3, 4 / 9 + 0.055, "middle"),
+            ("b2=3t²(1−t)", 2 / 3, 4 / 9 + 0.055, "middle"),
+            ("b3=t³", 0.89, 0.74, "end"),
+        ]
+        # Verify partition of unity & peaks
+        assert abs(bernstein(3, 1, 1 / 3) - 4 / 9) < 1e-12
+        assert abs(bernstein(3, 2, 2 / 3) - 4 / 9) < 1e-12
+        for k in range(51):
+            tk = k / 50.0
+            vals = [bernstein(3, i, tk) for i in range(4)]
+            assert all(v >= -1e-15 for v in vals) and abs(sum(vals) - 1.0) < 1e-12
+
+        for i in range(4):
+            pts_i = [(gx0 + (k / 80.0) * gw, gy0 - bernstein(3, i, k / 80.0) * gh) for k in range(81)]
+            d_attr = f' stroke-dasharray="{dashes_b[i]}"' if dashes_b[i] else ""
+            el.append(f'<path d="{poly_d(pts_i)}" fill="none" stroke="{colors_b[i]}" stroke-width="2.2"{d_attr}/>')
+            lb_txt, tx_p, ty_p, anc = labels_b[i]
+            el.append(txt(gx0 + tx_p * gw, gy0 - ty_p * gh, lb_txt, size=9.6, color=colors_b[i], anchor=anc, weight="700", halo=True))
+
+        # Peak dots at (1/3, 4/9) and (2/3, 4/9)
+        for tx_p, col_p in [(1 / 3, GREEN), (2 / 3, ORANGE)]:
+            el.append(f'<circle cx="{gx0 + tx_p * gw:.2f}" cy="{gy0 - (4 / 9) * gh:.2f}" r="3.6" fill="{col_p}" stroke="#fff" stroke-width="1"/>')
+
+        el.append(card(34, 322, 324, 96, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        el.append(txt(46, 342, "• 每个权重 b_{i,n}(t) ≥ 0，且总和恒为 1（恰似重心质量配比）；", size=9.7, color=BODY))
+        el.append(txt(46, 362, "• 仿射不变性：先旋转控制点再画线 = 先画线再整条旋转；", size=9.7, color=BODY))
+        el.append(txt(46, 382, "• t=0 时 b0=1（锁死起点 P0），t=1 时 b3=1（锁死终点 P3），", size=9.7, color=BODY))
+        el.append(txt(46, 402, "  中间 P1、P2 像两块磁铁在 t=1/3 与 2/3 处施力最大（峰值 4/9）！", size=9.7, color=BLUE, weight="600"))
+
+        # Right card: Convex Hull vs 6th-degree Lagrange Polynomial Oscillation
+        el.append(card(388, 62, 352, 370, rx=10, fill=CARD_BG, stroke=BORDER))
+        el.append(pill(402, 74, "车身轮廓对比：六次插值狂甩塌陷 vs 贝塞尔凸包安全笼", fg=GREEN, bg=GREEN_SOFT, w=324, h=22, size=10.5))
+
+        wx0, wy_bot, w_span, h_span = 418.0, 294.0, 294.0, 178.0
+        y_min_w, y_max_w = -0.60, 1.95
+
+        def w2s(wx, wy):
+            sx = wx0 + (wx / 6.0) * w_span
+            sy = wy_bot - ((wy - y_min_w) / (y_max_w - y_min_w)) * h_span
+            return (sx, sy)
+
+        car_w = [
+            (0.0, 0.15),
+            (1.0, 0.18),
+            (2.0, 0.22),
+            (3.0, 1.68),
+            (4.0, 0.22),
+            (5.0, 0.18),
+            (6.0, 0.15),
+        ]
+        car_s = [w2s(x, y) for x, y in car_w]
+
+        # Convex hull of car_w in world coords: triangle (0,0.15) -> (3,1.68) -> (6,0.15)
+        hull_idx = [0, 3, 6]
+        hull_pts_s = [car_s[i] for i in hull_idx]
+        hull_poly_str = " ".join(f"{p[0]:.2f},{p[1]:.2f}" for p in hull_pts_s)
+        el.append(
+            f'<polygon points="{hull_poly_str}" fill="#dcfce7" fill-opacity="0.65" '
+            f'stroke="{GREEN}" stroke-width="1.3" stroke-dasharray="5 3"/>'
+        )
+        el.append(
+            f'<polyline points="{" ".join(f"{p[0]:.2f},{p[1]:.2f}" for p in car_s)}" '
+            f'fill="none" stroke="{SLATE}" stroke-width="1.0" stroke-dasharray="2 2"/>'
+        )
+
+        # Evaluate 6th-degree Lagrange polynomial passing through all 7 points
+        def eval_lagrange(xw):
+            total = 0.0
+            for i, (xi, yi) in enumerate(car_w):
+                term = yi
+                for j, (xj, _) in enumerate(car_w):
+                    if i != j:
+                        term *= (xw - xj) / (xi - xj)
+                total += term
+            return total
+
+        lag_world = [(6.0 * k / 120.0, eval_lagrange(6.0 * k / 120.0)) for k in range(121)]
+        bez_world = [eval_bezier_bernstein(car_w, k / 120.0) for k in range(121)]
+
+        # Assert Bezier stays strictly inside convex hull [0.15, 1.68] while Lagrange plunges below -0.35!
+        bez_ys = [p[1] for p in bez_world]
+        lag_ys = [p[1] for p in lag_world]
+        assert min(bez_ys) >= 0.15 - 1e-12 and max(bez_ys) <= 1.68 + 1e-12
+        assert min(lag_ys) < -0.35
+
+        lag_s = [w2s(x, y) for x, y in lag_world]
+        bez_s = [w2s(x, y) for x, y in bez_world]
+
+        el.append(f'<path d="{poly_d(lag_s)}" fill="none" stroke="#dc2626" stroke-width="2.0" stroke-dasharray="5 2.5"/>')
+        el.append(f'<path d="{poly_d(bez_s)}" fill="none" stroke="{GREEN}" stroke-width="2.8"/>')
+
+        for idx, pt in enumerate(car_s):
+            el.append(f'<circle cx="{pt[0]:.2f}" cy="{pt[1]:.2f}" r="3.6" fill="{INK}" stroke="#fff" stroke-width="1.1"/>')
+            dy_l = -9 if idx == 3 else -8
+            el.append(txt(pt[0], pt[1] + dy_l, f"P{idx}", size=9.2, color=INK, anchor="middle", weight="700", halo=True))
+
+        # Labels on curves
+        min_lag_pt = min(lag_world, key=lambda p: p[1])
+        ml_s = w2s(min_lag_pt[0], min_lag_pt[1])
+        el.append(txt(565, ml_s[1] + 13, "强迫过每点的六次插值：车头车尾深坑塌陷！", size=9.4, color="#dc2626", anchor="middle", weight="700", halo=True))
+        mid_bez_s = w2s(*eval_bezier_bernstein(car_w, 0.5))
+        el.append(txt(mid_bez_s[0], mid_bez_s[1] - 9, "贝塞尔曲线：稳守绿色凸包安全笼", size=9.6, color=GREEN, anchor="middle", weight="700", halo=True))
+
+        el.append(card(402, 322, 324, 96, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        el.append(txt(414, 342, "• 绿色虚线框 = 拿橡皮筋套住所有控制点绷出的“凸包”；", size=9.7, color=BODY))
+        el.append(txt(414, 362, "• 红虚线（六次拉格朗日插值）：死磕过每点，两端龙格震荡深陷；", size=9.7, color="#b91c1c"))
+        el.append(txt(414, 382, "• 绿实线（贝塞尔）：放弃穿过中间点，换来绝不出界的流线钢板，", size=9.7, color=BODY))
+        el.append(txt(414, 402, "  且保变差缩减（曲线拐弯次数绝不超过控制折线）！", size=9.7, color=GREEN, weight="600"))
+
+        svg = figure(
+            448,
+            "伯恩斯坦基函数单位分解与贝塞尔曲线凸包安全笼对比拉格朗日插值震荡",
+            "左图绘制三次伯恩斯坦基函数 b0..b3 及其非负性与和恒为 1；右图对比 6 个车顶控制点下五次拉格朗日插值两端甩出凸包与贝塞尔曲线平稳锁在绿色凸包内。",
+            el,
+        )
+        write_svg(TOPIC, "bernstein-convex-hull-vs-runge.svg", svg)
+
+    # ------------------------------------------------------------------
+    # Fig 3: Why Cubic (n=3) Rules Vector Graphics + Spline Continuity G0/G1/C1
+    # ------------------------------------------------------------------
+    def build_fig3_cubic_and_splines():
+        el = []
+        el.extend(
+            header(
+                "为什么钢笔工具偏爱“三次”再分段拼接？S 形拐点与 G0 / G1 / C1 缝合铁律",
+                "上排：二次曲线永远拗不出 S 弯，三次曲线仅靠 4 点包揽单拱、S 拐点与自交环；下排：两段拼接三档平滑度",
+            )
+        )
+
+        # Top row: 3 cards (w=228 each, x = 20, 266, 512)
+        top_specs = [
+            (
+                20,
+                "① 同侧手柄：C 形单拱",
+                BLUE,
+                BLUE_SOFT,
+                [(42, 184), (72, 108), (196, 108), (226, 184)],
+                "无拐点，曲率同号（二次也能画）",
+            ),
+            (
+                266,
+                "② 异侧手柄：S 形拐点（三次独门！）",
+                ORANGE,
+                ORANGE_SOFT,
+                [(288, 182), (332, 102), (446, 196), (490, 114)],
+                "中间曲率过零翻面！二次抛物线绝无可能",
+            ),
+            (
+                512,
+                "③ 交叉长手柄：自交环（Loop）",
+                PURPLE,
+                PURPLE_SOFT,
+                [(552, 186), (716, 104), (532, 104), (696, 186)],
+                "手柄反叉拉长即可打出丝带结或尖点",
+            ),
+        ]
+
+        # Verify S-curve inflection point at t=0.5 by symmetry of second card!
+        sp0, sp1, sp2, sp3 = top_specs[1][4]
+        # B'(t) x B''(t) changes sign between t=0.2 and t=0.8
+        def cross_d1_d2(pts, t):
+            p0, p1, p2, p3 = pts
+            d1x = 3 * ((1 - t) ** 2 * (p1[0] - p0[0]) + 2 * (1 - t) * t * (p2[0] - p1[0]) + t ** 2 * (p3[0] - p2[0]))
+            d1y = 3 * ((1 - t) ** 2 * (p1[1] - p0[1]) + 2 * (1 - t) * t * (p2[1] - p1[1]) + t ** 2 * (p3[1] - p2[1]))
+            d2x = 6 * ((1 - t) * (p2[0] - 2 * p1[0] + p0[0]) + t * (p3[0] - 2 * p2[0] + p1[0]))
+            d2y = 6 * ((1 - t) * (p2[1] - 2 * p1[1] + p0[1]) + t * (p3[1] - 2 * p2[1] + p1[1]))
+            return d1x * d2y - d1y * d2x
+
+        assert cross_d1_d2([sp0, sp1, sp2, sp3], 0.15) * cross_d1_d2([sp0, sp1, sp2, sp3], 0.85) < 0
+
+        for cx_card, ctitle, fg, bg, cpts, note_s in top_specs:
+            el.append(card(cx_card, 62, 228, 170, rx=10, fill=CARD_BG, stroke=BORDER))
+            el.append(pill(cx_card + 10, 72, ctitle, fg=fg, bg=bg, w=208, h=21, size=9.8))
+            p0, p1, p2, p3 = cpts
+            el.append(f'<line x1="{p0[0]}" y1="{p0[1]}" x2="{p1[0]}" y2="{p1[1]}" stroke="{SLATE}" stroke-width="1.2" stroke-dasharray="3 2"/>')
+            el.append(f'<line x1="{p3[0]}" y1="{p3[1]}" x2="{p2[0]}" y2="{p2[1]}" stroke="{SLATE}" stroke-width="1.2" stroke-dasharray="3 2"/>')
+            el.append(f'<path d="M {p0[0]},{p0[1]} C {p1[0]},{p1[1]} {p2[0]},{p2[1]} {p3[0]},{p3[1]}" fill="none" stroke="{fg}" stroke-width="2.6"/>')
+            for pt in (p0, p3):
+                el.append(f'<circle cx="{pt[0]}" cy="{pt[1]}" r="3.8" fill="{INK}" stroke="#fff" stroke-width="1"/>')
+            for pt in (p1, p2):
+                el.append(f'<rect x="{pt[0]-3.2:.1f}" y="{pt[1]-3.2:.1f}" width="6.4" height="6.4" rx="1.2" fill="#fff" stroke="{fg}" stroke-width="1.5"/>')
+            if cx_card == 266:
+                inf_pt = eval_bezier_bernstein(cpts, 0.5)
+                el.append(f'<circle cx="{inf_pt[0]:.1f}" cy="{inf_pt[1]:.1f}" r="4.3" fill="#dc2626" stroke="#fff" stroke-width="1.2"/>')
+                el.append(txt(inf_pt[0] + 8, inf_pt[1] - 7, "拐点", size=9.5, color="#dc2626", weight="700", halo=True))
+            el.append(txt(cx_card + 114, 219, note_s, size=9.5, color=MUTED, anchor="middle"))
+
+        # Bottom row: 3 cards showing composite Bezier spline continuity at joint J
+        # Card 1: G0 corner (broken handles)
+        # Card 2: G1 smooth direction (collinear handles, lengths 1 : 2.2)
+        # Card 3: C1 velocity continuous (collinear + equal handle lengths 1 : 1, SVG 'S' command)
+        bot_specs = [
+            (
+                20,
+                "A. 折断手柄：仅 C0/G0（尖角点）",
+                "#dc2626",
+                "#fef2f2",
+                [(38, 378), (64, 308), (104, 304), (134, 348)],
+                [(134, 348), (164, 302), (206, 308), (230, 378)],
+                "左右手柄成夹角 → 切线突变出尖折角",
+            ),
+            (
+                266,
+                "B. 共线不等长：G1 几何切线连续",
+                BLUE,
+                BLUE_SOFT,
+                [(284, 378), (304, 314), (352, 346), (376, 338)],
+                [(376, 338), (430, 320), (468, 334), (492, 378)],
+                "三点共线（长短不同）→ 视觉丝滑无折痕",
+            ),
+            (
+                512,
+                "C. 共线且等长：C1 导数连续（SVG S）",
+                GREEN,
+                GREEN_SOFT,
+                [(530, 378), (554, 312), (590, 348), (626, 336)],
+                [(626, 336), (662, 324), (698, 336), (722, 378)],
+                "镜像对称等长 → 方向与运动速度全连续！",
+            ),
+        ]
+
+        # Assert G1 collinearity on B & C1 vector equality on C
+        _, _, _, _, seg1_b, seg2_b, _ = bot_specs[1]
+        v1_b = (seg1_b[3][0] - seg1_b[2][0], seg1_b[3][1] - seg1_b[2][1])  # (24, -8)
+        v2_b = (seg2_b[1][0] - seg2_b[0][0], seg2_b[1][1] - seg2_b[0][1])  # (54, -18) = 2.25 * (24, -8)
+        assert abs(v1_b[0] * v2_b[1] - v1_b[1] * v2_b[0]) < 1e-9
+
+        _, _, _, _, seg1_c, seg2_c, _ = bot_specs[2]
+        v1_c = (seg1_c[3][0] - seg1_c[2][0], seg1_c[3][1] - seg1_c[2][1])  # (36, -12)
+        v2_c = (seg2_c[1][0] - seg2_c[0][0], seg2_c[1][1] - seg2_c[0][1])  # (36, -12)
+        assert v1_c == v2_c
+
+        for cx_card, btitle, fg, bg, s1, s2, bnote in bot_specs:
+            el.append(card(cx_card, 248, 228, 190, rx=10, fill=CARD_BG, stroke=BORDER))
+            el.append(pill(cx_card + 10, 258, btitle, fg=fg, bg=bg, w=208, h=21, size=9.6))
+            # Draw both cubic segments
+            el.append(f'<path d="M {s1[0][0]},{s1[0][1]} C {s1[1][0]},{s1[1][1]} {s1[2][0]},{s1[2][1]} {s1[3][0]},{s1[3][1]}" fill="none" stroke="{fg}" stroke-width="2.6"/>')
+            el.append(f'<path d="M {s2[0][0]},{s2[0][1]} C {s2[1][0]},{s2[1][1]} {s2[2][0]},{s2[2][1]} {s2[3][0]},{s2[3][1]}" fill="none" stroke="{fg}" stroke-width="2.6" stroke-opacity="0.82"/>')
+            # Highlight joint handles s1[2] -- J -- s2[1]
+            el.append(f'<line x1="{s1[2][0]}" y1="{s1[2][1]}" x2="{s1[3][0]}" y2="{s1[3][1]}" stroke="{INK}" stroke-width="1.5"/>')
+            el.append(f'<line x1="{s2[0][0]}" y1="{s2[0][1]}" x2="{s2[1][0]}" y2="{s2[1][1]}" stroke="{INK}" stroke-width="1.5"/>')
+            for hp in (s1[2], s2[1]):
+                el.append(f'<circle cx="{hp[0]}" cy="{hp[1]}" r="3.5" fill="#fff" stroke="{INK}" stroke-width="1.4"/>')
+            jpt = s1[3]
+            el.append(f'<circle cx="{jpt[0]}" cy="{jpt[1]}" r="4.6" fill="{fg}" stroke="#fff" stroke-width="1.3"/>')
+            el.append(txt(jpt[0], jpt[1] + 17, "锚点 J", size=9.3, color=fg, anchor="middle", weight="700", halo=True))
+            el.append(txt(cx_card + 114, 424, bnote, size=9.4, color=MUTED, anchor="middle"))
+
+        svg = figure(
+            452,
+            "三次贝塞尔曲线形状表达力（单拱、S拐点、自交环）与复合样条拼接连续性（G0/G1/C1）",
+            "上排对比同侧手柄单拱、异侧手柄S形拐点与交叉手柄自交环；下排对比分段拼接处手柄折断（G0尖角）、三点共线不等长（G1切线连续）与共线等长镜像（C1一阶导连续）。",
+            el,
+        )
+        write_svg(TOPIC, "cubic-inflection-and-spline-joins.svg", svg)
+
+    # ------------------------------------------------------------------
+    # Fig 4: Can Bezier Draw an Exact Circle? k=0.55228475 Drift vs Rational NURBS Exact Circle
+    # ------------------------------------------------------------------
+    def build_fig4_circle_and_rational():
+        el = []
+        el.extend(
+            header(
+                "惊人反例：三次贝塞尔竟然画不出绝对正圆！k≈0.55228 误差解剖与 NURBS 救场",
+                "左：四段三次曲线拟合圆弧的千倍放大径向漂移；右：给控制点加上权重 w1=√2/2 后误差严格归零",
+            )
+        )
+
+        k_std = 4.0 * (math.sqrt(2.0) - 1.0) / 3.0  # 0.5522847498307936
+        # Verify radial drift of standard quarter-circle cubic Bezier
+        std_pts = [(1.0, 0.0), (1.0, k_std), (k_std, 1.0), (0.0, 1.0)]
+        drifts_std = []
+        for i in range(401):
+            t = i / 400.0
+            x, y = eval_bezier_bernstein(std_pts, t)
+            r = math.hypot(x, y)
+            drifts_std.append((t, math.degrees(math.atan2(y, x)), r - 1.0))
+        max_drift_std = max(d[2] for d in drifts_std)
+        min_drift_std = min(d[2] for d in drifts_std)
+        assert abs(drifts_std[200][2]) < 1e-15  # exact 0 at t=0.5 (45 deg)
+        assert min_drift_std >= -1e-15  # never dips inside unit circle
+        assert 2.72e-4 < max_drift_std < 2.73e-4  # ~0.00027253
+
+        # Verify Rational Quadratic Bezier with w0=1, w1=sqrt(2)/2, w2=1 is IDENTICALLY on unit circle!
+        w0, w1, w2 = 1.0, math.sqrt(2.0) / 2.0, 1.0
+        for i in range(101):
+            t = i / 100.0
+            b0, b1, b2 = (1 - t) ** 2, 2 * t * (1 - t), t ** 2
+            denom = b0 * w0 + b1 * w1 + b2 * w2
+            rx = (b0 * 1.0 * w0 + b1 * 1.0 * w1 + b2 * 0.0 * w2) / denom
+            ry = (b0 * 0.0 * w0 + b1 * 1.0 * w1 + b2 * 1.0 * w2) / denom
+            assert abs(rx * rx + ry * ry - 1.0) < 1e-15
+
+        # Left card: Quarter circle + 1000x radial drift plot
+        el.append(card(20, 62, 352, 370, rx=10, fill=CARD_BG, stroke=BORDER))
+        el.append(pill(34, 74, "三次多项式拟合 90° 圆弧：魔术常数 k = 0.55228475", fg=ORANGE, bg=ORANGE_SOFT, w=324, h=22, size=10.3))
+
+        # Mini quarter-circle geometry on upper-left of left card
+        ox, oy, rad = 64.0, 224.0, 108.0
+        el.append(f'<line x1="{ox}" y1="{oy}" x2="{ox + rad + 16}" y2="{oy}" stroke="{HAIRLINE}" stroke-width="1"/>')
+        el.append(f'<line x1="{ox}" y1="{oy}" x2="{ox}" y2="{oy - rad - 16}" stroke="{HAIRLINE}" stroke-width="1"/>')
+        # True circle arc
+        el.append(
+            f'<path d="M {ox + rad},{oy} A {rad},{rad} 0 0 0 {ox},{oy - rad}" '
+            f'fill="none" stroke="{BLUE}" stroke-width="2.2"/>'
+        )
+        # Control handles (1,0)->(1,k)->(k,1)->(0,1)
+        s_p0 = (ox + rad, oy)
+        s_p1 = (ox + rad, oy - k_std * rad)
+        s_p2 = (ox + k_std * rad, oy - rad)
+        s_p3 = (ox, oy - rad)
+        el.append(
+            f'<polyline points="{s_p0[0]:.1f},{s_p0[1]:.1f} {s_p1[0]:.1f},{s_p1[1]:.1f} {s_p2[0]:.1f},{s_p2[1]:.1f} {s_p3[0]:.1f},{s_p3[1]:.1f}" '
+            f'fill="none" stroke="{ORANGE}" stroke-width="1.3" stroke-dasharray="4 2"/>'
+        )
+        mid_45 = (ox + rad * math.sqrt(0.5), oy - rad * math.sqrt(0.5))
+        el.append(f'<circle cx="{mid_45[0]:.1f}" cy="{mid_45[1]:.1f}" r="3.8" fill="{GREEN}" stroke="#fff" stroke-width="1"/>')
+        el.append(txt(mid_45[0] + 10, mid_45[1] + 4, "t=0.5 强制贴圆", size=9.4, color=GREEN, weight="700", halo=True))
+        for sp, slbl, dx, dy in [
+            (s_p0, "(1,0)", 2, 14),
+            (s_p1, "(1, k)", 22, 3),
+            (s_p2, "(k, 1)", 6, -7),
+            (s_p3, "(0,1)", 22, -3),
+        ]:
+            el.append(f'<circle cx="{sp[0]:.1f}" cy="{sp[1]:.1f}" r="3.5" fill="{ORANGE}" stroke="#fff" stroke-width="1"/>')
+            el.append(txt(sp[0] + dx, sp[1] + dy, slbl, size=9.4, color=ORANGE, anchor="middle", weight="700", halo=True))
+
+        # Formula box on upper-right of left card
+        el.append(card(216, 112, 142, 112, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        el.append(txt(226, 132, "手柄长度公式：", size=9.8, color=INK, weight="700"))
+        el.append(txt(226, 152, "k = 4(√2 − 1) / 3", size=10.2, color=ORANGE, weight="700", cls="mono"))
+        el.append(txt(226, 170, "  ≈ 0.55228475", size=9.8, color=ORANGE, cls="mono"))
+        el.append(txt(226, 192, "半径 1000px 大圆", size=9.5, color=BODY))
+        el.append(txt(226, 210, "最大鼓包仅 0.27px！", size=9.5, color=GREEN, weight="700"))
+
+        # Bottom sub-chart inside left card: 1000x magnified radial drift r(theta) - 1
+        ex0, ey0, ew, eh = 68.0, 368.0, 276.0, 82.0
+        el.append(txt(202, 266, "径向误差 Δr = r(θ) − 1 放大 3000 倍实测曲线", size=10.0, color=INK, anchor="middle", weight="700"))
+        el.append(f'<line x1="{ex0}" y1="{ey0}" x2="{ex0 + ew}" y2="{ey0}" stroke="{BLUE}" stroke-width="1.4"/>')
+        el.append(txt(ex0 - 6, ey0 + 3, "0", size=9.2, color=BLUE, anchor="end", weight="700"))
+        top_err_y = ey0 - (max_drift_std / 3.0e-4) * eh
+        el.append(f'<line x1="{ex0}" y1="{top_err_y:.1f}" x2="{ex0 + ew}" y2="{top_err_y:.1f}" stroke="#fed7aa" stroke-width="1" stroke-dasharray="3 2"/>')
+        el.append(txt(ex0 - 6, top_err_y + 3, "+2.73e-4", size=8.8, color=ORANGE, anchor="end"))
+
+        for deg_m in [0, 45, 90]:
+            xx = ex0 + (deg_m / 90.0) * ew
+            el.append(f'<circle cx="{xx:.1f}" cy="{ey0}" r="3.2" fill="{BLUE}"/>')
+            el.append(txt(xx, ey0 + 15, f"{deg_m}°", size=9.2, color=MUTED, anchor="middle"))
+
+        err_pts = [(ex0 + (ang / 90.0) * ew, ey0 - (dr / 3.0e-4) * eh) for _, ang, dr in drifts_std]
+        el.append(f'<path d="{poly_d(err_pts)}" fill="none" stroke="{ORANGE}" stroke-width="2.2"/>')
+        el.append(txt(ex0 + ew * 0.23, top_err_y - 6, "鼓出 +0.027%", size=9.2, color=ORANGE, anchor="middle", weight="700"))
+        el.append(txt(ex0 + ew * 0.77, top_err_y - 6, "鼓出 +0.027%", size=9.2, color=ORANGE, anchor="middle", weight="700"))
+        el.append(txt(196, 412, "注：若改取极小极大常数 c≈0.551915，误差可再压低 5 倍至 ±5.5e-5", size=9.3, color=MUTED, anchor="middle"))
+
+        # Right card: Rational Bezier / NURBS exact circle
+        el.append(card(388, 62, 352, 370, rx=10, fill=CARD_BG, stroke=BORDER))
+        el.append(pill(402, 74, "有理贝塞尔 / NURBS：引入齐次权重 w 实现 0 误差真圆！", fg=GREEN, bg=GREEN_SOFT, w=324, h=22, size=10.3))
+
+        rox, roy, rrad = 456.0, 238.0, 122.0
+        el.append(f'<line x1="{rox}" y1="{roy}" x2="{rox + rrad + 24}" y2="{roy}" stroke="{HAIRLINE}" stroke-width="1"/>')
+        el.append(f'<line x1="{rox}" y1="{roy}" x2="{rox}" y2="{roy - rrad - 24}" stroke="{HAIRLINE}" stroke-width="1"/>')
+        rp0 = (rox + rrad, roy)
+        rp1 = (rox + rrad, roy - rrad)
+        rp2 = (rox, roy - rrad)
+
+        # Control polygon P0 - P1 - P2
+        el.append(
+            f'<polyline points="{rp0[0]},{rp0[1]} {rp1[0]},{rp1[1]} {rp2[0]},{rp2[1]}" '
+            f'fill="none" stroke="{SLATE}" stroke-width="1.3" stroke-dasharray="4 3"/>'
+        )
+        # Compare ordinary quadratic (w1=1 -> parabola dipping inside!) vs rational (w1=sqrt(2)/2 -> exact circle!)
+        quad_unweighted = [eval_bezier_bernstein([rp0, rp1, rp2], i / 60.0) for i in range(61)]
+        el.append(f'<path d="{poly_d(quad_unweighted)}" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="4 3"/>')
+        el.append(
+            f'<path d="M {rp0[0]},{rp0[1]} A {rrad},{rrad} 0 0 0 {rp2[0]},{rp2[1]}" '
+            f'fill="none" stroke="{GREEN}" stroke-width="2.8"/>'
+        )
+
+        # Midpoint comparison at t=0.5: unweighted is (0.75, 0.75) -> r = 0.75*sqrt(2) = 1.06066 OUTSIDE!
+        uw_mid = eval_bezier_bernstein([rp0, rp1, rp2], 0.5)
+        rt_mid = (rox + rrad * math.sqrt(0.5), roy - rrad * math.sqrt(0.5))
+        el.append(f'<line x1="{rp1[0]}" y1="{rp1[1]}" x2="{rox}" y2="{roy}" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/>')
+        el.append(f'<circle cx="{uw_mid[0]:.1f}" cy="{uw_mid[1]:.1f}" r="3.4" fill="#64748b"/>')
+        el.append(txt(uw_mid[0] + 10, uw_mid[1] - 4, "w1=1 普通抛物线 (偏外 6.1%)", size=9.3, color=SLATE, halo=True))
+        el.append(f'<circle cx="{rt_mid[0]:.1f}" cy="{rt_mid[1]:.1f}" r="4.2" fill="{GREEN}" stroke="#fff" stroke-width="1.2"/>')
+        el.append(txt(rt_mid[0] + 22, rt_mid[1] + 16, "w1=√2/2 拉回真圆 (误差 ≡ 0)", size=9.5, color=GREEN, weight="700", halo=True))
+
+        for rpt, rlbl, dx, dy, col in [
+            (rp0, "P0(1,0) w0=1", 4, 16, INK),
+            (rp1, "P1(1,1) w1=√2/2", 8, -9, GREEN),
+            (rp2, "P2(0,1) w2=1", 38, -4, INK),
+        ]:
+            el.append(f'<circle cx="{rpt[0]}" cy="{rpt[1]}" r="4.0" fill="{col}" stroke="#fff" stroke-width="1.1"/>')
+            el.append(txt(rpt[0] + dx, rpt[1] + dy, rlbl, size=9.5, color=col, anchor="middle", weight="700", halo=True))
+
+        el.append(card(402, 278, 324, 138, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        el.append(txt(414, 298, "• 为什么多项式画不出正圆？x(t)²+y(t)² 最高次项系数 a_n²+b_n²>0，", size=9.5, color=BODY))
+        el.append(txt(414, 317, "  不可能恒等于常数 R²！网页/字体用 k≈0.55228 近似已足够肉眼无感；", size=9.5, color=BODY))
+        el.append(txt(414, 338, "• 航空发动机与汽车模具（CAD）不允许哪怕微米级原理误差：", size=9.5, color=BODY))
+        el.append(txt(414, 357, "  借射影几何把三维锥面投影回平面，分子分母同乘权重 w_i：", size=9.5, color=BODY))
+        el.append(txt(414, 377, "  w1 < 1 精确生成椭圆/正圆，w1 = 1 抛物线，w1 > 1 双曲线！", size=9.5, color=GREEN, weight="700"))
+        el.append(txt(414, 397, "  再结合分段局部B样条，就诞生了工业界霸主 NURBS 曲面。", size=9.5, color=INK, weight="600"))
+
+        svg = figure(
+            446,
+            "三次贝塞尔曲线拟合正圆的径向漂移误差（k≈0.55228）与有理贝塞尔（NURBS）零误差真圆对比",
+            "左图展示四段三次贝塞尔用 k=4(√2-1)/3 近似圆弧时最大 +0.027% 的径向漂移；右图展示有理二次贝塞尔赋予角点权重 w1=√2/2 后严格满足 x²+y²≡1。",
+            el,
+        )
+        write_svg(TOPIC, "circle-paradox-and-rational-nurbs.svg", svg)
+
+    # ------------------------------------------------------------------
+    # Fig 5: CSS cubic-bezier Time Easing + Spatial Equal-dt vs Equal-Arc-Length Trap
+    # ------------------------------------------------------------------
+    def build_fig5_css_and_arclength():
+        el = []
+        el.extend(
+            header(
+                "从手机滑屏动画到自动驾驶轨迹：CSS 时间缓动与“等 t 不等速”陷阱",
+                "左：CSS cubic-bezier 怎样把曲线斜率变成动画快慢与回弹；右：为什么按 Δt=0.1 走车会忽快忽慢？",
+            )
+        )
+
+        # Left card: CSS cubic-bezier(x1, y1, x2, y2)
+        el.append(card(20, 62, 352, 372, rx=10, fill=CARD_BG, stroke=BORDER))
+        el.append(pill(34, 74, "时间域贝塞尔：CSS cubic-bezier(x1, y1, x2, y2)", fg=PURPLE, bg=PURPLE_SOFT, w=324, h=22, size=10.5))
+
+        cx0, cy0, cw, ch = 68.0, 296.0, 248.0, 124.0
+
+        def c2s_clean(ux, uy):
+            return (cx0 + ux * cw, cy0 - uy * ch)
+
+        el.append(f'<rect x="{cx0}" y="{cy0 - ch}" width="{cw}" height="{ch}" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>')
+        el.append(txt(cx0 + cw / 2, cy0 + 18, "输入时间比例 x ∈ [0, 1]（禁止越界防时间倒流）", size=9.5, color=MUTED, anchor="middle"))
+        el.append(txt(cx0 - 7, cy0 + 3, "0%", size=9.2, color=MUTED, anchor="end"))
+        el.append(txt(cx0 - 7, cy0 - ch + 4, "100%", size=9.2, color=MUTED, anchor="end"))
+
+        el.append(f'<line x1="{cx0}" y1="{cy0}" x2="{cx0 + cw}" y2="{cy0 - ch}" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 3"/>')
+        eio_pts = [c2s_clean(*eval_bezier_bernstein([(0, 0), (0.42, 0.0), (0.58, 1.0), (1, 1)], k / 80.0)) for k in range(81)]
+        el.append(f'<path d="{poly_d(eio_pts)}" fill="none" stroke="{BLUE}" stroke-width="2.4"/>')
+
+        ovr_world = [eval_bezier_bernstein([(0, 0), (0.34, 1.45), (0.64, 1.15), (1, 1)], k / 80.0) for k in range(81)]
+        assert max(p[1] for p in ovr_world) > 1.10
+        ovr_pts = [c2s_clean(*p) for p in ovr_world]
+        el.append(f'<path d="{poly_d(ovr_pts)}" fill="none" stroke="{PURPLE}" stroke-width="2.4"/>')
+        ph1 = c2s_clean(0.34, 1.45)
+        el.append(f'<line x1="{cx0}" y1="{cy0}" x2="{ph1[0]:.1f}" y2="{ph1[1]:.1f}" stroke="{PURPLE}" stroke-width="1.2" stroke-dasharray="3 2"/>')
+        el.append(f'<circle cx="{ph1[0]:.1f}" cy="{ph1[1]:.1f}" r="3.6" fill="{PURPLE}" stroke="#fff" stroke-width="1"/>')
+        el.append(txt(ph1[0] + 8, ph1[1] + 3, "y1=1.45 冲过 100% 产生Q弹回弹！", size=9.3, color=PURPLE, weight="700", halo=True))
+        el.append(txt(cx0 + cw * 0.66, cy0 - ch * 0.42, "ease-in-out：两头平缓=慢起慢停", size=9.3, color=BLUE, weight="700", halo=True))
+        el.append(txt(cx0 + cw * 0.36, cy0 - ch * 0.25, "linear 匀速", size=9.0, color=SLATE, halo=True))
+
+        el.append(card(34, 324, 324, 96, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        el.append(txt(46, 344, "• 曲线斜率 dy/dx 就是瞬时速度：越陡冲得越快，越平越慢；", size=9.6, color=BODY))
+        el.append(txt(46, 364, "• 纵坐标 y1, y2 允许超出 [0,1]，弹窗就会冲过头再弹回来；", size=9.6, color=BODY))
+        el.append(txt(46, 384, "• 横坐标 x1, x2 严禁出 [0,1]：否则曲线横着往回折，同一时刻", size=9.6, color=BODY))
+        el.append(txt(46, 404, "  对应三个位置（时间倒流），浏览器会直接判为非法丢弃！", size=9.6, color=PURPLE, weight="600"))
+
+        # Right card: Equal dt vs Equal Arc-Length reparameterization
+        el.append(card(388, 62, 352, 372, rx=10, fill=CARD_BG, stroke=BORDER))
+        el.append(pill(402, 74, "空间轨迹陷阱：等参数 Δt=0.1 ≠ 等距离匀速行驶！", fg=ORANGE, bg=ORANGE_SOFT, w=324, h=22, size=10.5))
+
+        # Curve 1 (upper): Equal dt = 0.1 with short P0P1 handle & very long P2P3 handle
+        u_pts = [(418.0, 184.0), (432.0, 124.0), (540.0, 114.0), (712.0, 184.0)]
+        el.append(txt(414, 112, "① 直接按 t = 0, 0.1, 0.2, …, 1.0 采样（11 颗橙点）：", size=9.8, color=ORANGE, weight="700"))
+        el.append(
+            f'<polyline points="{" ".join(f"{p[0]},{p[1]}" for p in u_pts)}" '
+            f'fill="none" stroke="#cbd5e1" stroke-width="1.1" stroke-dasharray="3 2"/>'
+        )
+        el.append(
+            f'<path d="M {u_pts[0][0]},{u_pts[0][1]} C {u_pts[1][0]},{u_pts[1][1]} {u_pts[2][0]},{u_pts[2][1]} {u_pts[3][0]},{u_pts[3][1]}" '
+            f'fill="none" stroke="{ORANGE}" stroke-width="2.3"/>'
+        )
+        dt_samples = [eval_bezier_bernstein(u_pts, k / 10.0) for k in range(11)]
+        dt_gaps = [math.hypot(dt_samples[k + 1][0] - dt_samples[k][0], dt_samples[k + 1][1] - dt_samples[k][1]) for k in range(10)]
+        assert max(dt_gaps) / min(dt_gaps) > 2.6  # dramatic speed variation!
+
+        for pt in dt_samples:
+            el.append(f'<circle cx="{pt[0]:.2f}" cy="{pt[1]:.2f}" r="4.0" fill="{ORANGE}" stroke="#fff" stroke-width="1.1"/>')
+        el.append(txt(448, 202, "短手柄处挤成一团（慢）", size=9.2, color=ORANGE, anchor="middle", weight="600"))
+        el.append(txt(640, 202, "长跨度处大步狂飙（快 2.8 倍！）", size=9.2, color=ORANGE, anchor="middle", weight="600"))
+
+        # Curve 2 (lower, shifted down by +102px): Arc-length parameterized 11 green dots!
+        v_pts = [(p[0], p[1] + 102.0) for p in u_pts]
+        el.append(txt(414, 224, "② 弧长重参数化 s(t) = ∫|B'(u)|du 等距采样（11 颗绿点）：", size=9.8, color=GREEN, weight="700"))
+        el.append(
+            f'<path d="M {v_pts[0][0]},{v_pts[0][1]} C {v_pts[1][0]},{v_pts[1][1]} {v_pts[2][0]},{v_pts[2][1]} {v_pts[3][0]},{v_pts[3][1]}" '
+            f'fill="none" stroke="{GREEN}" stroke-width="2.3"/>'
+        )
+        # Compute dense LUT of 2000 steps to place 11 equal-arc-length points
+        dense_N = 2000
+        dense_pts = [eval_bezier_bernstein(v_pts, i / dense_N) for i in range(dense_N + 1)]
+        cum_s = [0.0]
+        for i in range(dense_N):
+            cum_s.append(cum_s[-1] + math.hypot(dense_pts[i + 1][0] - dense_pts[i][0], dense_pts[i + 1][1] - dense_pts[i][1]))
+        total_len = cum_s[-1]
+
+        arc_samples = []
+        idx_s = 0
+        for k in range(11):
+            target = total_len * (k / 10.0)
+            while idx_s < dense_N and cum_s[idx_s + 1] < target:
+                idx_s += 1
+            if idx_s >= dense_N:
+                arc_samples.append(dense_pts[-1])
+            else:
+                seg_l = cum_s[idx_s + 1] - cum_s[idx_s]
+                frac = 0.0 if seg_l == 0 else (target - cum_s[idx_s]) / seg_l
+                arc_samples.append(lerp2(dense_pts[idx_s], dense_pts[idx_s + 1], frac))
+
+        arc_gaps = [math.hypot(arc_samples[k + 1][0] - arc_samples[k][0], arc_samples[k + 1][1] - arc_samples[k][1]) for k in range(10)]
+        assert max(arc_gaps) / min(arc_gaps) < 1.03  # genuinely uniform chord steps!
+
+        for pt in arc_samples:
+            el.append(f'<circle cx="{pt[0]:.2f}" cy="{pt[1]:.2f}" r="4.0" fill="{GREEN}" stroke="#fff" stroke-width="1.1"/>')
+        el.append(txt(564, 304, "像铁轨枕木一样步步等距！数控机床与自动驾驶必做这一步", size=9.3, color=GREEN, anchor="middle", weight="700"))
+
+        el.append(card(402, 324, 324, 96, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        el.append(txt(414, 344, "• 贝塞尔弧长 ∫√(x'²+y'²)dt 一般没有初等公式解（阿贝尔积分）！", size=9.6, color=BODY))
+        el.append(txt(414, 364, "• 游戏摄像机、激光切割头与无人车变道规划，都必须先用高斯积", size=9.6, color=BODY))
+        el.append(txt(414, 384, "  分或查表把弧长 s 反解回 t(s)，否则过弯就会急刹顿挫；", size=9.6, color=BODY))
+        el.append(txt(414, 404, "• 同理：三次曲线的平行等距线（描边）高达 10 次代数曲线！", size=9.6, color=ORANGE, weight="600"))
+
+        svg = figure(
+            448,
+            "CSS cubic-bezier 动画时间缓动曲线与空间贝塞尔等参数步长 vs 等弧长匀速重参数化对比",
+            "左图对比 CSS linear、ease-in-out 与超出 100% 的弹性回弹曲线并解释 x∈[0,1] 防时间倒流约束；右图对比 Δt=0.1 非匀速点列（速度相差 2.8 倍）与数值弧长重参数化后的等距点列。",
+            el,
+        )
+        write_svg(TOPIC, "css-easing-and-arclength-trap.svg", svg)
+
+    build_fig1_de_casteljau()
+    build_fig2_bernstein_convex_hull()
+    build_fig3_cubic_and_splines()
+    build_fig4_circle_and_rational()
+    build_fig5_css_and_arclength()
+
+
+@register(
+    "mobius-strip",
+    "莫比乌斯环：单侧不可定向拓扑、剪纸二分三分铁律、克莱因瓶与六色地图、√3最短纸带定理及无感电阻应用",
+    "geometry_analysis",
+)
+def build_mobius_strip():
+    TOPIC = "mobius-strip"
+
+    def badge(x, y, label, fill=BLUE_SOFT, fg=BLUE, w=None, h=22, size=10.5):
+        return pill(x, y, label, fg=fg, bg=fill, w=w, h=h, size=size)
+
+    def proj3d(x, y, z, cx, cy, scale, elev_deg=32.0, azim_deg=-52.0):
+        az = math.radians(azim_deg)
+        el_ang = math.radians(elev_deg)
+        # Rotate around Z by azim, then tilt around X by elev
+        x1 = x * math.cos(az) - y * math.sin(az)
+        y1 = x * math.sin(az) + y * math.cos(az)
+        sx = cx + scale * x1
+        sy = cy - scale * (z * math.cos(el_ang) - y1 * math.sin(el_ang))
+        depth = y1 * math.cos(el_ang) + z * math.sin(el_ang)
+        return sx, sy, depth
+
+    def mobius_pt_and_normal(u, v, R=1.0):
+        cu, su = math.cos(u), math.sin(u)
+        ch, sh = math.cos(0.5 * u), math.sin(0.5 * u)
+        rad = R + v * ch
+        x = rad * cu
+        y = rad * su
+        z = v * sh
+        # Partial derivatives r_u and r_v; choose r_v x r_u so N(0, 0) = (0, 0, +1)
+        xu = -0.5 * v * sh * cu - rad * su
+        yu = -0.5 * v * sh * su + rad * cu
+        zu = 0.5 * v * ch
+        xv = ch * cu
+        yv = ch * su
+        zv = sh
+        nx = yv * zu - zv * yu
+        ny = zv * xu - xv * zu
+        nz = xv * yu - yv * xu
+        norm = math.sqrt(nx * nx + ny * ny + nz * nz)
+        return (x, y, z), (nx / norm, ny / norm, nz / norm)
+
+    # Core orientation-reversal verification: N(2*pi, 0) == -N(0, 0) and N(4*pi, 0) == +N(0, 0)
+    _, n0 = mobius_pt_and_normal(0.0, 0.0)
+    _, n2pi = mobius_pt_and_normal(2.0 * math.pi, 0.0)
+    _, n4pi = mobius_pt_and_normal(4.0 * math.pi, 0.0)
+    assert abs((n0[0] * n2pi[0] + n0[1] * n2pi[1] + n0[2] * n2pi[2]) - (-1.0)) < 1e-12
+    assert abs((n0[0] * n4pi[0] + n0[1] * n4pi[1] + n0[2] * n4pi[2]) - 1.0) < 1e-12
+
+    # ------------------------------------------------------------------
+    # Figure 1: Fundamental Polygon Gluing + 3D Normal Flip (4pi Animation)
+    # ------------------------------------------------------------------
+    def build_fig1_gluing_and_normal():
+        el = []
+        el += header(
+            "半圈扭转的拓扑魔法：从双面双边圆柱环到单面单边莫比乌斯环",
+            "左：基本矩形粘合法则与表盘旋向翻转　|　右：三维正交投影与法向量绕行 4π（720°）双圈归位",
+        )
+
+        # Left card: Cylinder vs Mobius fundamental square gluing
+        el.append(card(18, 66, 344, 392))
+        el.append(txt(34, 90, "基本多边形粘合对比（纸条 [0, L] × [−w, w]）", size=12.6, weight="700", color=INK))
+
+        # Top sub-box: Cylinder
+        el.append(card(32, 102, 316, 134, rx=8, fill="#f8fafc", stroke=BORDER))
+        el.append(badge(42, 110, "普通圆柱环：(0, y) ~ (L, y) 同向粘合", fill=BLUE_SOFT, fg=BLUE, w=234, h=20, size=10.2))
+        rx0, ry0, rw, rh = 52, 142, 174, 58
+        el.append(f'<rect x="{rx0}" y="{ry0}" width="{rw}" height="{rh}" fill="#eff6ff" stroke="none"/>')
+        # Top edge #1 (blue), bottom edge #2 (green)
+        el.append(f'<line x1="{rx0}" y1="{ry0}" x2="{rx0 + rw}" y2="{ry0}" stroke="{BLUE}" stroke-width="2.6"/>')
+        el.append(f'<line x1="{rx0}" y1="{ry0 + rh}" x2="{rx0 + rw}" y2="{ry0 + rh}" stroke="{GREEN}" stroke-width="2.6"/>')
+        # Left & right vertical edges pointing UP (same orientation)
+        el.append(f'<line x1="{rx0}" y1="{ry0 + rh}" x2="{rx0}" y2="{ry0 + 3}" stroke="{ORANGE}" stroke-width="2.2" marker-end="url(#arr-orange)"/>')
+        el.append(f'<line x1="{rx0 + rw}" y1="{ry0 + rh}" x2="{rx0 + rw}" y2="{ry0 + 3}" stroke="{ORANGE}" stroke-width="2.2" marker-end="url(#arr-orange)"/>')
+        el.append(txt(rx0 + rw / 2, ry0 - 5, "上边 ①（长 L 独立圆）", size=9.4, color=BLUE, anchor="middle", weight="600"))
+        el.append(txt(rx0 + rw / 2, ry0 + rh + 13, "下边 ②（长 L 独立圆）", size=9.4, color=GREEN, anchor="middle", weight="600"))
+        # Two small clockwise clocks inside
+        for clk_x in (rx0 + 44, rx0 + rw - 44):
+            clk_y = ry0 + rh / 2
+            el.append(f'<circle cx="{clk_x:.1f}" cy="{clk_y:.1f}" r="14" fill="#fff" stroke="{BLUE}" stroke-width="1.3"/>')
+            el.append(txt(clk_x, clk_y + 4, "↻", size=13.5, color=BLUE, anchor="middle", weight="700"))
+        el.append(f'<line x1="{rx0 + 64}" y1="{ry0 + rh / 2}" x2="{rx0 + rw - 64}" y2="{ry0 + rh / 2}" stroke="{MUTED}" stroke-width="1.2" stroke-dasharray="3 2.5" marker-end="url(#arr-muted)"/>')
+        # Summary right column
+        el.append(txt(242, 154, "• 2 个独立面", size=10.0, color=BODY, weight="600"))
+        el.append(txt(242, 173, "• 2 条闭合边", size=10.0, color=BODY, weight="600"))
+        el.append(txt(242, 192, "• 可定向（↻→↻）", size=10.0, color=BLUE, weight="700"))
+        el.append(txt(42, 228, "上蓝接上蓝、下绿接下绿：正反两面永远隔绝", size=9.6, color=MUTED))
+
+        # Bottom sub-box: Mobius strip
+        el.append(card(32, 246, 316, 198, rx=8, fill="#fffdf9", stroke="#fed7aa"))
+        el.append(badge(42, 254, "莫比乌斯环：(0, y) ~ (L, −y) 拧 180° 粘合", fill=ORANGE_SOFT, fg=ORANGE, w=254, h=20, size=10.2))
+        mx0, my0, mw, mh = 52, 290, 174, 62
+        el.append(f'<rect x="{mx0}" y="{my0}" width="{mw}" height="{mh}" fill="{ORANGE_SOFT}" stroke="none"/>')
+        # Top half-edge P->Q and bottom half-edge Q->P (BOTH form ONE single loop of length 2L!)
+        el.append(f'<line x1="{mx0}" y1="{my0}" x2="{mx0 + mw}" y2="{my0}" stroke="{PURPLE}" stroke-width="2.6"/>')
+        el.append(f'<line x1="{mx0}" y1="{my0 + mh}" x2="{mx0 + mw}" y2="{my0 + mh}" stroke="{PURPLE}" stroke-width="2.6" stroke-dasharray="5 2.5"/>')
+        # Left seam UP, right seam DOWN!
+        el.append(f'<line x1="{mx0}" y1="{my0 + mh}" x2="{mx0}" y2="{my0 + 3}" stroke="{ORANGE}" stroke-width="2.3" marker-end="url(#arr-orange)"/>')
+        el.append(f'<line x1="{mx0 + mw}" y1="{my0}" x2="{mx0 + mw}" y2="{my0 + mh - 3}" stroke="{ORANGE}" stroke-width="2.3" marker-end="url(#arr-orange)"/>')
+        el.append(txt(mx0 - 7, my0 + 5, "P", size=9.8, color=PURPLE, anchor="end", weight="700"))
+        el.append(txt(mx0 + mw + 7, my0 + 5, "Q", size=9.8, color=PURPLE, weight="700"))
+        el.append(txt(mx0 - 7, my0 + mh + 3, "Q", size=9.8, color=PURPLE, anchor="end", weight="700"))
+        el.append(txt(mx0 + mw + 7, my0 + mh + 3, "P", size=9.8, color=PURPLE, weight="700"))
+        el.append(txt(mx0 + mw / 2, my0 - 5, "前半段边 P→Q（长 L）", size=9.4, color=PURPLE, anchor="middle", weight="600"))
+        el.append(txt(mx0 + mw / 2, my0 + mh + 13, "后半段边 Q→P（拼成唯一长 2L 边！）", size=9.4, color=PURPLE, anchor="middle", weight="600"))
+        # Clock reversal inside Mobius rectangle!
+        cy_m = my0 + mh / 2
+        el.append(f'<circle cx="{mx0 + 44:.1f}" cy="{cy_m:.1f}" r="14.5" fill="#fff" stroke="{BLUE}" stroke-width="1.4"/>')
+        el.append(txt(mx0 + 44, cy_m + 4.5, "↻", size=14.0, color=BLUE, anchor="middle", weight="700"))
+        el.append(f'<circle cx="{mx0 + mw - 44:.1f}" cy="{cy_m:.1f}" r="14.5" fill="#fff" stroke="{ORANGE}" stroke-width="1.4"/>')
+        el.append(txt(mx0 + mw - 44, cy_m + 4.5, "↺", size=14.0, color=ORANGE, anchor="middle", weight="700"))
+        el.append(f'<line x1="{mx0 + 64}" y1="{cy_m}" x2="{mx0 + mw - 64}" y2="{cy_m}" stroke="{ORANGE}" stroke-width="1.3" stroke-dasharray="3 2.5" marker-end="url(#arr-orange)"/>')
+        el.append(txt(244, 304, "• 唯一 1 个面", size=10.0, color=ORANGE, weight="700"))
+        el.append(txt(244, 323, "• 唯一 1 条边", size=10.0, color=PURPLE, weight="700"))
+        el.append(txt(244, 342, "• 不可定向！", size=10.0, color=ORANGE, weight="700"))
+
+        el.append(txt(42, 386, "• 追边检验：左上 P → 右上 Q ≡ 左下 Q → 右下 P ≡ 左上 P，总长 2L；", size=9.6, color=BODY))
+        el.append(txt(42, 405, "• 不可定向检验：顺时针表盘 ↻ 跨过右端翻转粘合线回来，上下颠倒变", size=9.6, color=BODY))
+        el.append(txt(42, 424, "  成逆时针镜像 ↺！欧拉示性数 χ = 0 与圆柱相同，但定向性截然相反。", size=9.6, color=BODY))
+
+        # Right card: 3D Projected Mobius Strip + Normal Flip 4pi Animation
+        el.append(card(376, 66, 366, 392))
+        el.append(txt(392, 90, "三维莫比乌斯环与法向量 4π 双圈归位", size=12.6, weight="700", color=INK))
+        el.append(txt(392, 108, "注：三维参数曲面（R=1, w=0.38）仰角 33° 正交投影示意", size=9.6, color=MUTED))
+
+        cx3, cy3, sc3 = 542.0, 232.0, 96.0
+        elev_d, azim_d = 33.0, -48.0
+        w_half = 0.38
+        nu, nv = 72, 6
+
+        # Camera view direction vector (pointing toward viewer)
+        az_r, el_r = math.radians(azim_d), math.radians(elev_d)
+        # depth = y1*cos(el) + z*sin(el), where y1 = x*sin(az) + y*cos(az)
+        # Toward viewer is -depth direction:
+        cam_vec = (-math.sin(az_r) * math.cos(el_r), -math.cos(az_r) * math.cos(el_r), -math.sin(el_r))
+
+        quads = []
+        for i in range(nu):
+            u0 = 2.0 * math.pi * i / nu
+            u1 = 2.0 * math.pi * (i + 1) / nu
+            um = 0.5 * (u0 + u1)
+            for j in range(nv):
+                v0 = -w_half + 2.0 * w_half * j / nv
+                v1 = -w_half + 2.0 * w_half * (j + 1) / nv
+                vm = 0.5 * (v0 + v1)
+                corners_3d = [
+                    mobius_pt_and_normal(u0, v0)[0],
+                    mobius_pt_and_normal(u1, v0)[0],
+                    mobius_pt_and_normal(u1, v1)[0],
+                    mobius_pt_and_normal(u0, v1)[0],
+                ]
+                proj_c = [proj3d(p[0], p[1], p[2], cx3, cy3, sc3, elev_d, azim_d) for p in corners_3d]
+                avg_depth = sum(pc[2] for pc in proj_c) / 4.0
+                _, nm = mobius_pt_and_normal(um, vm)
+                facing = nm[0] * cam_vec[0] + nm[1] * cam_vec[1] + nm[2] * cam_vec[2]
+                # Subtle shading by normal orientation so twist is crystal clear!
+                if facing >= 0:
+                    lum = 0.86 + 0.12 * abs(facing)
+                    r_c = int(212 * lum + 24)
+                    g_c = int(231 * lum + 18)
+                    b_c = int(248 * lum + 6)
+                else:
+                    lum = 0.84 + 0.13 * abs(facing)
+                    r_c = int(246 * lum + 8)
+                    g_c = int(224 * lum + 14)
+                    b_c = int(204 * lum + 18)
+                fill_hex = f"#{min(255,r_c):02x}{min(255,g_c):02x}{min(255,b_c):02x}"
+                pts_attr = " ".join(f"{pc[0]:.2f},{pc[1]:.2f}" for pc in proj_c)
+                quads.append((avg_depth, pts_attr, fill_hex))
+
+        # Painter's algorithm: farthest depth (largest positive depth) first!
+        quads.sort(key=lambda item: item[0], reverse=True)
+        for _, pts_attr, fill_hex in quads:
+            el.append(f'<polygon points="{pts_attr}" fill="{fill_hex}" stroke="{ fill_hex }" stroke-width="0.45"/>')
+
+        # Single continuous boundary curve: v = +w_half for u in [0, 4*pi]
+        b_pts = []
+        for k in range(161):
+            u_b = 4.0 * math.pi * k / 160.0
+            p3, _ = mobius_pt_and_normal(u_b, w_half)
+            sx, sy, _ = proj3d(p3[0], p3[1], p3[2], cx3, cy3, sc3, elev_d, azim_d)
+            b_pts.append((sx, sy))
+        # Assert closed loop at 4*pi (NOT at 2*pi!)
+        p_b0, _ = mobius_pt_and_normal(0.0, w_half)
+        p_b2pi, _ = mobius_pt_and_normal(2.0 * math.pi, w_half)
+        p_b4pi, _ = mobius_pt_and_normal(4.0 * math.pi, w_half)
+        assert math.dist(p_b0, p_b2pi) > 0.7  # NOT closed after 1 lap!
+        assert math.dist(p_b0, p_b4pi) < 1e-12  # Closes after 2 laps!
+        b_d = "M " + " L ".join(f"{p[0]:.2f},{p[1]:.2f}" for p in b_pts)
+        el.append(f'<path d="{b_d}" fill="none" stroke="{PURPLE}" stroke-width="1.8" opacity="0.88"/>')
+
+        # Centerline curve (v = 0, u in [0, 2*pi])
+        c_pts = []
+        for k in range(81):
+            u_c = 2.0 * math.pi * k / 80.0
+            p3, _ = mobius_pt_and_normal(u_c, 0.0)
+            sx, sy, _ = proj3d(p3[0], p3[1], p3[2], cx3, cy3, sc3, elev_d, azim_d)
+            c_pts.append((sx, sy))
+        c_d = "M " + " L ".join(f"{p[0]:.2f},{p[1]:.2f}" for p in c_pts)
+        el.append(f'<path d="{c_d}" fill="none" stroke="{SLATE}" stroke-width="1.2" stroke-dasharray="4 3"/>')
+
+        # Animated 4*pi normal-tip trajectory: p(u, 0) + 0.24 * N(u, 0) for u in [0, 4*pi]
+        tip_pts = []
+        tip_len = 0.0
+        for k in range(181):
+            u_t = 4.0 * math.pi * k / 180.0
+            p3, n3 = mobius_pt_and_normal(u_t, 0.0)
+            tx = p3[0] + 0.25 * n3[0]
+            ty = p3[1] + 0.25 * n3[1]
+            tz = p3[2] + 0.25 * n3[2]
+            sx, sy, _ = proj3d(tx, ty, tz, cx3, cy3, sc3, elev_d, azim_d)
+            if tip_pts:
+                tip_len += math.hypot(sx - tip_pts[-1][0], sy - tip_pts[-1][1])
+            tip_pts.append((sx, sy))
+        tip_d = "M " + " L ".join(f"{p[0]:.2f},{p[1]:.2f}" for p in tip_pts)
+        # Static faint track + animated one-shot draw path
+        el.append(f'<path d="{tip_d}" fill="none" stroke="{GREEN}" stroke-width="1.3" stroke-dasharray="3 3" opacity="0.45"/>')
+        el.append(f'<path class="mobius-4pi-track" d="{tip_d}" fill="none" stroke="{GREEN}" stroke-width="2.4" stroke-linecap="round"/>')
+
+        # Key normal vectors along the loop: u = 0 (+n up), u = pi (tilted), u = 2*pi (-n down at SAME point!)
+        u_station = -0.32  # front-right clearly visible station!
+        stations = [
+            (u_station, BLUE, "arr-blue", "① 起点 u=0 (+n 朝上)", (8, -10)),
+            (u_station + math.pi, GREEN, "arr-green", "② 半圈 u=π (侧倾)", (-6, -14)),
+            (u_station + 2.0 * math.pi, ORANGE, "arr-orange", "③ 满1圈 u=2π (−n 倒立！)", (8, 15)),
+        ]
+        for u_s, col_s, mk_s, lbl_s, (dx_l, dy_l) in stations:
+            p3, n3 = mobius_pt_and_normal(u_s, 0.0)
+            sx0, sy0, _ = proj3d(p3[0], p3[1], p3[2], cx3, cy3, sc3, elev_d, azim_d)
+            sx1, sy1, _ = proj3d(p3[0] + 0.27 * n3[0], p3[1] + 0.27 * n3[1], p3[2] + 0.27 * n3[2], cx3, cy3, sc3, elev_d, azim_d)
+            el.append(f'<circle cx="{sx0:.2f}" cy="{sy0:.2f}" r="3.2" fill="{col_s}" stroke="#fff" stroke-width="1"/>')
+            el.append(f'<line x1="{sx0:.2f}" y1="{sy0:.2f}" x2="{sx1:.2f}" y2="{sy1:.2f}" stroke="{col_s}" stroke-width="2.5" marker-end="url(#{mk_s})"/>')
+            anc = "end" if u_s > 2.0 and u_s < 4.5 else "start"
+            lx = sx1 + dx_l
+            ly = sy1 + dy_l
+            el.append(txt(lx, ly, lbl_s, size=9.6, color=col_s, anchor=anc, weight="700", cls="halo"))
+
+        # Bottom note box inside right card
+        el.append(card(390, 344, 338, 100, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        el.append(txt(402, 364, "• 蚂蚁沿虚线中轴爬 1 圈（2π）：不用翻越紫色边界，直接抵达出发点", size=9.6, color=BODY))
+        el.append(txt(402, 383, "  正背面的③号橙色位置（法向量 n 翻转成 −n，头脚彻底倒立）！", size=9.6, color=ORANGE, weight="600"))
+        el.append(txt(402, 402, "• 必须继续爬满第 2 圈（绿线全长 4π = 720° 双重覆盖），头顶箭头才", size=9.6, color=BODY))
+        el.append(txt(402, 421, "  重新指回正上方①；紫色唯一外边界同样要绕 4π 才闭合。", size=9.6, color=PURPLE, weight="600"))
+        el.append(txt(402, 438, "（动画单次播放 6s 绘出 4π 双圈法向轨迹；开启减少动态效果时直接显示终态）", size=8.9, color=MUTED))
+
+        extra_css = f"""
+  .mobius-4pi-track {{
+    stroke-dasharray: {tip_len:.1f};
+    stroke-dashoffset: {tip_len:.1f};
+    animation: mobiusDraw4pi 6s cubic-bezier(0.35, 0.05, 0.25, 1) 0.25s 1 forwards;
+  }}
+  @media (prefers-reduced-motion: reduce) {{
+    .mobius-4pi-track {{
+      animation: none;
+      stroke-dashoffset: 0;
+    }}
+  }}
+  @keyframes mobiusDraw4pi {{
+    from {{ stroke-dashoffset: {tip_len:.1f}; }}
+    to   {{ stroke-dashoffset: 0; }}
+  }}"""
+
+        svg = figure(
+            474,
+            "莫比乌斯环基本矩形粘合法则与三维法向量绕行 4π 双圈归位图解",
+            "左图对比普通圆柱环同向粘合产生2面2边与莫比乌斯环180度反向粘合产生唯一长2L边、唯一面及顺时针表盘镜像翻转；右图为三维参数曲面正交投影与法向量绕行2π倒立、4π归位的单次动画。",
+            el,
+            extra_css=extra_css,
+        )
+        write_svg(TOPIC, "gluing-and-normal-flip-anim.svg", svg)
+
+    # ------------------------------------------------------------------
+    # Figure 2: Scissors Cut Laws (1/2 Centerline, 1/3 Offset, General k)
+    # ------------------------------------------------------------------
+    def build_fig2_scissors_cuts():
+        el = []
+        el += header(
+            "莫比乌斯环剪纸铁律：为什么中线一刀剪不断，偏三分之一却剪出大小套环？",
+            "用“展开带粘合追踪法”严格推导每一刀的拓扑结局，不再靠死记硬背魔术口诀",
+        )
+
+        # Column 1: 1/2 centerline cut
+        el.append(card(18, 66, 232, 404))
+        el.append(badge(30, 78, "① 沿 1/2 正中线剪开", fill=BLUE_SOFT, fg=BLUE, w=156, h=22, size=10.8))
+        el.append(txt(30, 116, "刀口只走 1 圈（长 L）即首尾相接：", size=9.8, color=MUTED))
+
+        # Unrolled diagram Col 1
+        ux, uy, uw, uh = 34, 128, 198, 68
+        el.append(f'<rect x="{ux}" y="{uy}" width="{uw}" height="{uh / 2}" fill="{BLUE_SOFT}" stroke="none"/>')
+        el.append(f'<rect x="{ux}" y="{uy + uh / 2}" width="{uw}" height="{uh / 2}" fill="#dbeafe" stroke="none"/>')
+        el.append(f'<line x1="{ux}" y1="{uy}" x2="{ux + uw}" y2="{uy}" stroke="{PURPLE}" stroke-width="2.2"/>')
+        el.append(f'<line x1="{ux}" y1="{uy + uh}" x2="{ux + uw}" y2="{uy + uh}" stroke="{PURPLE}" stroke-width="2.2"/>')
+        # Scissors red dashed cut at y = uh/2
+        el.append(f'<line x1="{ux}" y1="{uy + uh / 2}" x2="{ux + uw}" y2="{uy + uh / 2}" stroke="#dc2626" stroke-width="2.0" stroke-dasharray="4 3"/>')
+        # Twisted vertical ends
+        el.append(f'<line x1="{ux}" y1="{uy + uh}" x2="{ux}" y2="{uy + 3}" stroke="{ORANGE}" stroke-width="2.0" marker-end="url(#arr-orange)"/>')
+        el.append(f'<line x1="{ux + uw}" y1="{uy}" x2="{ux + uw}" y2="{uy + uh - 3}" stroke="{ORANGE}" stroke-width="2.0" marker-end="url(#arr-orange)"/>')
+        el.append(txt(ux + uw / 2, uy + 19, "上半带 α（长 L）", size=9.5, color=BLUE, anchor="middle", weight="700"))
+        el.append(txt(ux + uw / 2, uy + 53, "下半带 β（右端拧过来接 α！）", size=9.5, color=BLUE, anchor="middle", weight="700"))
+        el.append(txt(ux + 4, uy + uh / 2 - 4, "✂ 红虚线剪 1 圈闭合", size=8.9, color="#dc2626", weight="700", cls="halo"))
+
+        # 3D double-loop single band diagram (center (134, 286))
+        cx1, cy1 = 134.0, 286.0
+        loop_pts = []
+        for k in range(201):
+            t = 4.0 * math.pi * k / 200.0
+            rad = 1.0 + 0.24 * math.cos(0.5 * t)
+            x3 = rad * math.cos(t)
+            y3 = rad * math.sin(t)
+            z3 = 0.28 * math.sin(0.5 * t)
+            sx, sy, _ = proj3d(x3, y3, z3, cx1, cy1, 58.0, 38.0, -42.0)
+            loop_pts.append((sx, sy))
+        d_single = "M " + " L ".join(f"{p[0]:.2f},{p[1]:.2f}" for p in loop_pts)
+        el.append(f'<path d="{d_single}" fill="none" stroke="#fff" stroke-width="10.5" stroke-linecap="round"/>')
+        el.append(f'<path d="{d_single}" fill="none" stroke="{BLUE}" stroke-width="6.5" stroke-linecap="round" opacity="0.88"/>')
+        el.append(f'<path d="{d_single}" fill="none" stroke="#eff6ff" stroke-width="2.2" stroke-linecap="round"/>')
+        el.append(txt(134, 356, "α 与 β 首尾串成唯一 1 个大双侧环", size=9.5, color=BLUE, anchor="middle", weight="700"))
+
+        el.append(card(30, 368, 208, 90, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        el.append(txt(40, 388, "• 结果：1 个双面双边大纸环！", size=9.8, color=BLUE, weight="700"))
+        el.append(txt(40, 407, "• 周长翻倍为 2L，宽度减半为 w；", size=9.5, color=BODY))
+        el.append(txt(40, 426, "• 含 4 个半扭转（720°）：2 个来自原", size=9.5, color=BODY))
+        el.append(txt(40, 444, "  半圈走两遍 + 2 个来自双圈盘绕。", size=9.5, color=ORANGE, weight="600"))
+
+        # Column 2: 1/3 width cut
+        el.append(card(264, 66, 232, 404))
+        el.append(badge(276, 78, "② 沿距边 1/3 处剪开", fill=ORANGE_SOFT, fg=ORANGE, w=162, h=22, size=10.8))
+        el.append(txt(276, 116, "刀口自动绕 2 圈（长 2L）才回到起点：", size=9.8, color=MUTED))
+
+        ux2, uy2, uw2, uh2 = 280, 128, 198, 68
+        h3 = uh2 / 3.0
+        el.append(f'<rect x="{ux2}" y="{uy2:.2f}" width="{uw2}" height="{h3:.2f}" fill="{ORANGE_SOFT}" stroke="none"/>')
+        el.append(f'<rect x="{ux2}" y="{uy2 + h3:.2f}" width="{uw2}" height="{h3:.2f}" fill="{PURPLE_SOFT}" stroke="none"/>')
+        el.append(f'<rect x="{ux2}" y="{uy2 + 2 * h3:.2f}" width="{uw2}" height="{h3:.2f}" fill="{ORANGE_SOFT}" stroke="none"/>')
+        el.append(f'<line x1="{ux2}" y1="{uy2}" x2="{ux2 + uw2}" y2="{uy2}" stroke="{ORANGE}" stroke-width="2.0"/>')
+        el.append(f'<line x1="{ux2}" y1="{uy2 + uh2}" x2="{ux2 + uw2}" y2="{uy2 + uh2}" stroke="{ORANGE}" stroke-width="2.0"/>')
+        el.append(f'<line x1="{ux2}" y1="{uy2 + h3:.2f}" x2="{ux2 + uw2}" y2="{uy2 + h3:.2f}" stroke="#dc2626" stroke-width="1.9" stroke-dasharray="4 3"/>')
+        el.append(f'<line x1="{ux2}" y1="{uy2 + 2 * h3:.2f}" x2="{ux2 + uw2}" y2="{uy2 + 2 * h3:.2f}" stroke="#dc2626" stroke-width="1.9" stroke-dasharray="4 3"/>')
+        el.append(f'<line x1="{ux2}" y1="{uy2 + uh2}" x2="{ux2}" y2="{uy2 + 3}" stroke="{ORANGE}" stroke-width="2.0" marker-end="url(#arr-orange)"/>')
+        el.append(f'<line x1="{ux2 + uw2}" y1="{uy2}" x2="{ux2 + uw2}" y2="{uy2 + uh2 - 3}" stroke="{ORANGE}" stroke-width="2.0" marker-end="url(#arr-orange)"/>')
+        el.append(txt(ux2 + uw2 / 2, uy2 + 15, "上外 1/3 带（接下外 1/3）", size=9.0, color=ORANGE, anchor="middle", weight="600"))
+        el.append(txt(ux2 + uw2 / 2, uy2 + 38, "正中 1/3 带（自拧成小莫环）", size=9.0, color=PURPLE, anchor="middle", weight="700"))
+        el.append(txt(ux2 + uw2 / 2, uy2 + 61, "下外 1/3 带（合成长 2L 环）", size=9.0, color=ORANGE, anchor="middle", weight="600"))
+
+        # 3D Hopf-linked pair (purple thin Mobius ring C1 + orange 2L ring C2) with exact linking number = 1!
+        c1_3d = []
+        c2_3d = []
+        n_lk = 120
+        for k in range(n_lk):
+            t = 2.0 * math.pi * k / n_lk
+            # Ring 1 (purple L-ring in XY-tilted plane centered at (-0.34, 0, 0))
+            c1_3d.append((-0.34 + 0.72 * math.cos(t), 0.72 * math.sin(t), 0.14 * math.sin(t)))
+            # Ring 2 (orange 2L-ring passing cleanly through Ring 1!)
+            c2_3d.append((0.34 + 0.86 * math.cos(t), 0.25 * math.sin(t), 0.76 * math.sin(t)))
+
+        # Verify exact Gauss linking number |Lk(C1, C2)| == 1!
+        lk_sum = 0.0
+        for i in range(n_lk):
+            r1 = c1_3d[i]
+            r1n = c1_3d[(i + 1) % n_lk]
+            dr1 = (r1n[0] - r1[0], r1n[1] - r1[1], r1n[2] - r1[2])
+            rm1 = (0.5 * (r1[0] + r1n[0]), 0.5 * (r1[1] + r1n[1]), 0.5 * (r1[2] + r1n[2]))
+            for j in range(n_lk):
+                r2 = c2_3d[j]
+                r2n = c2_3d[(j + 1) % n_lk]
+                dr2 = (r2n[0] - r2[0], r2n[1] - r2[1], r2n[2] - r2[2])
+                rm2 = (0.5 * (r2[0] + r2n[0]), 0.5 * (r2[1] + r2n[1]), 0.5 * (r2[2] + r2n[2]))
+                diff = (rm1[0] - rm2[0], rm1[1] - rm2[1], rm1[2] - rm2[2])
+                dist3 = (diff[0] ** 2 + diff[1] ** 2 + diff[2] ** 2) ** 1.5
+                cr = (
+                    dr1[1] * dr2[2] - dr1[2] * dr2[1],
+                    dr1[2] * dr2[0] - dr1[0] * dr2[2],
+                    dr1[0] * dr2[1] - dr1[1] * dr2[0],
+                )
+                lk_sum += (diff[0] * cr[0] + diff[1] * cr[1] + diff[2] * cr[2]) / dist3
+        lk_val = abs(lk_sum / (4.0 * math.pi))
+        assert abs(lk_val - 1.0) < 0.03
+
+        # Render linked rings cleanly: full closed paths first, then front-crossing bridges so over/under is crystal clear!
+        cx2, cy2 = 380.0, 286.0
+        p1_2d = [proj3d(*pt, cx2, cy2, 48.0, 26.0, -32.0) for pt in c1_3d]
+        p2_2d = [proj3d(*pt, cx2, cy2, 48.0, 26.0, -32.0) for pt in c2_3d]
+        d_c1 = "M " + " L ".join(f"{p[0]:.2f},{p[1]:.2f}" for p in p1_2d) + " Z"
+        d_c2 = "M " + " L ".join(f"{p[0]:.2f},{p[1]:.2f}" for p in p2_2d) + " Z"
+
+        # Base paths
+        el.append(f'<path d="{d_c1}" fill="none" stroke="{PURPLE}" stroke-width="5.2" stroke-linejoin="round"/>')
+        el.append(f'<path d="{d_c2}" fill="none" stroke="{ORANGE}" stroke-width="5.2" stroke-linejoin="round"/>')
+
+        # Over-crossing bridges: find where C1 is in front of C2 (smaller depth = closer to camera!)
+        # At t around pi..2pi on C1 vs C2: let's draw the front half of C1 (depth < 0) or exact crossing arcs!
+        # Let's check exact 2D segment intersections between p1_2d and p2_2d and overpaint the closer arc!
+        def seg_intersect_2d(a1, a2, b1, b2):
+            dx1, dy1 = a2[0] - a1[0], a2[1] - a1[1]
+            dx2, dy2 = b2[0] - b1[0], b2[1] - b1[1]
+            denom = dx1 * dy2 - dy1 * dx2
+            if abs(denom) < 1e-9:
+                return None
+            ua = ((b1[0] - a1[0]) * dy2 - (b1[1] - a1[1]) * dx2) / denom
+            ub = ((b1[0] - a1[0]) * dy1 - (b1[1] - a1[1]) * dx1) / denom
+            if 0.0 <= ua <= 1.0 and 0.0 <= ub <= 1.0:
+                da = a1[2] + ua * (a2[2] - a1[2])
+                db = b1[2] + ub * (b2[2] - b1[2])
+                return ua, ub, da, db
+            return None
+
+        crossings_found = 0
+        for i in range(n_lk):
+            for j in range(n_lk):
+                hit = seg_intersect_2d(p1_2d[i], p1_2d[(i + 1) % n_lk], p2_2d[j], p2_2d[(j + 1) % n_lk])
+                if hit is not None:
+                    crossings_found += 1
+                    _, _, d1_h, d2_h = hit
+                    # Smaller depth is closer to camera!
+                    if d1_h < d2_h:
+                        arc_pts = [p1_2d[(i + off) % n_lk] for off in range(-5, 7)]
+                        over_col = PURPLE
+                    else:
+                        arc_pts = [p2_2d[(j + off) % n_lk] for off in range(-5, 7)]
+                        over_col = ORANGE
+                    d_arc = "M " + " L ".join(f"{p[0]:.2f},{p[1]:.2f}" for p in arc_pts)
+                    el.append(f'<path d="{d_arc}" fill="none" stroke="#ffffff" stroke-width="9.5" stroke-linecap="butt" stroke-linejoin="round"/>')
+                    el.append(f'<path d="{d_arc}" fill="none" stroke="{over_col}" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round"/>')
+        assert crossings_found == 2  # Classic Hopf link projection has 2 exact crossings (1 over, 1 under)!
+
+        el.append(txt(332, 234, "窄莫比乌斯环 (L)", size=9.2, color=PURPLE, anchor="middle", weight="700"))
+        el.append(txt(432, 344, "双倍长双侧环 (2L)", size=9.2, color=ORANGE, anchor="middle", weight="700"))
+        el.append(txt(380, 360, "拓扑环绕数 |Lk| = 1，死死相扣", size=9.4, color=INK, anchor="middle", weight="700"))
+
+        el.append(card(276, 368, 208, 90, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        el.append(txt(286, 388, "• 结果：一大一小 2 个相扣纸环！", size=9.8, color=ORANGE, weight="700"))
+        el.append(txt(286, 407, "• 紫环：正中 1/3 留作长 L 窄莫环；", size=9.5, color=PURPLE, weight="600"))
+        el.append(txt(286, 426, "• 橙环：上下两侧拼成长 2L 双侧环；", size=9.5, color=BODY))
+        el.append(txt(286, 444, "• 任意距边 1/n 剪同理得 1 小 + 1 大！", size=9.5, color=BODY))
+
+        # Column 3: General k half-twists (Listing's Paradromic Rings)
+        el.append(card(510, 66, 232, 404))
+        el.append(badge(522, 78, "③ 拧 k 个半圈沿中线剪", fill=GREEN_SOFT, fg=GREEN, w=170, h=22, size=10.8))
+        el.append(txt(522, 116, "李斯廷（1858）并走环奇偶通则：", size=9.8, color=MUTED))
+
+        # Odd k box + Trefoil knot illustration for k = 3!
+        el.append(card(522, 128, 208, 174, rx=8, fill="#f5f3ff", stroke="#ddd6fe"))
+        el.append(txt(532, 148, "奇数 k = 2m+1 个半圈（单侧族）", size=10.2, color=PURPLE, weight="700"))
+        el.append(txt(532, 167, "→ 剪出 1 个长 2L、拧 2k+2 半圈环", size=9.5, color=BODY, weight="600"))
+        el.append(txt(532, 185, "• k=1：拧 4 个半圈的无结大环；", size=9.3, color=BODY))
+        el.append(txt(532, 203, "• k=3（拧 540°）：剪成 1 个拧 8 半", size=9.3, color=BODY))
+        el.append(txt(532, 220, "  圈且自身打死结的“三叶结”！", size=9.3, color=PURPLE, weight="700"))
+
+        # Exact 3D Trefoil knot projection with clean over-crossing bridges!
+        kx, ky = 618.0, 263.0
+        n_tr = 180
+        tr_pts = []
+        for i in range(n_tr):
+            t = 2.0 * math.pi * i / n_tr
+            xt = math.sin(t) + 2.0 * math.sin(2.0 * t)
+            yt = math.cos(t) - 2.0 * math.cos(2.0 * t)
+            zt = -math.sin(3.0 * t)
+            tr_pts.append((kx + 11.2 * xt, ky - 9.2 * yt, zt))
+        d_tr_full = "M " + " L ".join(f"{p[0]:.2f},{p[1]:.2f}" for p in tr_pts) + " Z"
+        el.append(f'<path d="{d_tr_full}" fill="none" stroke="{PURPLE}" stroke-width="3.8" stroke-linejoin="round"/>')
+
+        # Find the 3 exact 2D self-crossings of the trefoil knot and paint the zt > 0 (front) over-bridges!
+        tr_crossings = 0
+        for i in range(n_tr):
+            for j in range(i + 8, n_tr):
+                if i == 0 and j >= n_tr - 8:
+                    continue
+                hit = seg_intersect_2d(tr_pts[i], tr_pts[(i + 1) % n_tr], tr_pts[j], tr_pts[(j + 1) % n_tr])
+                if hit is not None:
+                    tr_crossings += 1
+                    _, _, z_i, z_j = hit
+                    win_idx = i if z_i > z_j else j
+                    b_arc = [tr_pts[(win_idx + off) % n_tr] for off in range(-5, 7)]
+                    d_barc = "M " + " L ".join(f"{p[0]:.2f},{p[1]:.2f}" for p in b_arc)
+                    el.append(f'<path d="{d_barc}" fill="none" stroke="#f5f3ff" stroke-width="7.8" stroke-linecap="butt" stroke-linejoin="round"/>')
+                    el.append(f'<path d="{d_barc}" fill="none" stroke="{PURPLE}" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>')
+        assert tr_crossings == 3  # Exact trefoil knot has 3 crossings!
+        el.append(txt(684, 292, "k=3 三叶结", size=9.0, color=PURPLE, weight="700"))
+
+        # Even k box
+        el.append(card(522, 312, 208, 146, rx=8, fill=GREEN_SOFT, stroke="#bbf7d0"))
+        el.append(txt(532, 332, "偶数 k = 2m 个半圈（双侧圆柱族）", size=10.2, color=GREEN, weight="700"))
+        el.append(txt(532, 352, "→ 剪出 2 个原长 L、各拧 k 半圈环", size=9.5, color=BODY, weight="600"))
+        el.append(txt(532, 372, "• 两环互相套绕圈数 Lk = m：", size=9.4, color=GREEN, weight="700"))
+        el.append(txt(532, 392, "  - k=0（不拧）：2 个分离圆环 (m=0)", size=9.3, color=BODY))
+        el.append(txt(532, 411, "  - k=2（拧 360°）：相扣 1 圈 (m=1)", size=9.3, color=BODY))
+        el.append(txt(532, 430, "  - k=4（拧 720°）：套绕 2 圈 (m=2)", size=9.3, color=BODY))
+        el.append(txt(532, 448, "靠剪刀结果可反推分子/DNA 扭转数！", size=9.1, color=GREEN, weight="600"))
+
+        svg = figure(
+            486,
+            "莫比乌斯环剪纸拓扑规律：二分之一中线剪、三分之一偏心剪与一般 k 个半扭转奇偶通则",
+            "左列用展开带证明沿中线剪开得到1个长2L含4个半扭转的双侧环；中列证明沿距边1/3剪开得到环绕数为1的1个窄莫比乌斯环与1个长2L双侧环；右列总结拧k个半圈沿中线剪的奇偶通则与k=3三叶结。",
+            el,
+        )
+        write_svg(TOPIC, "scissors-cut-topology.svg", svg)
+
+    # ------------------------------------------------------------------
+    # Figure 3: Gluing Two Mobius Strips -> Klein Bottle & 6-Color Tietze Map
+    # ------------------------------------------------------------------
+    def build_fig3_klein_and_tietze():
+        el = []
+        el += header(
+            "莫比乌斯环的高阶拓扑：缝出无内外的克莱因瓶，打破平面四色定理",
+            "左：两条镜像莫比乌斯环沿唯一圆边界缝合成克莱因瓶　|　右：莫比乌斯环上的蒂策六国两两接壤地图",
+        )
+
+        # Left card: Two Mobius strips -> Klein Bottle
+        el.append(card(18, 66, 348, 392))
+        el.append(txt(34, 90, "两条莫比乌斯环面对面拉链缝合 = 克莱因瓶", size=12.4, weight="700", color=INK))
+
+        # Equation pills at top
+        el.append(card(32, 102, 114, 46, rx=8, fill=BLUE_SOFT, stroke=BLUE_LINE))
+        el.append(txt(89, 121, "左旋莫比乌斯环", size=9.8, color=BLUE, anchor="middle", weight="700"))
+        el.append(txt(89, 139, "唯一圆边界 ∂M₁ ≅ S¹", size=8.9, color=MUTED, anchor="middle"))
+
+        el.append(txt(157, 130, "+", size=15, color=INK, anchor="middle", weight="700"))
+
+        el.append(card(168, 102, 114, 46, rx=8, fill=ORANGE_SOFT, stroke="#fdba74"))
+        el.append(txt(225, 121, "右旋莫比乌斯环", size=9.8, color=ORANGE, anchor="middle", weight="700"))
+        el.append(txt(225, 139, "唯一圆边界 ∂M₂ ≅ S¹", size=8.9, color=MUTED, anchor="middle"))
+
+        el.append(txt(296, 121, "缝合", size=9.5, color=PURPLE, anchor="middle", weight="700"))
+        el.append(txt(296, 137, "══▶", size=11.5, color=PURPLE, anchor="middle", weight="700"))
+        el.append(badge(312, 108, "χ=0", fill=PURPLE_SOFT, fg=PURPLE, w=40, h=32, size=10.5))
+
+        # Classical Klein bottle longitudinal cross-section (single unmistakable closed curve with 1 wall self-crossing!)
+        el.append(card(32, 158, 320, 206, rx=8, fill="#f8fafc", stroke=BORDER))
+        el.append(txt(44, 176, "三维浸入纵截面示意（四维 ℝ⁴ 抬高第四坐标 w 即无自交）", size=9.2, color=MUTED))
+
+        # Left wall + bottom left U-rim + inner left tube rising up, arching over swan handle, piercing right wall, into inner right tube + bottom right U-rim + right outer wall!
+        # Let's draw a crystal-clear textbook Klein bottle cross-section with soft shaded interior wall thickness:
+        # 1) Main bottle bulb & bottom folded rim leading into central funnel:
+        kb_left_wall = (
+            "M 152,226 "
+            "C 120,248 102,282 108,314 "
+            "C 112,334 128,340 140,334 "
+            "C 150,328 152,312 150,288 "
+            "C 148,256 148,224 164,202 "
+            "C 180,180 214,180 226,198 "
+            "C 236,214 224,234 202,246 "
+            "C 182,258 176,276 176,298 "
+            "C 176,318 180,330 190,334 "
+            "C 202,340 218,334 222,312 "
+            "C 228,280 210,246 182,226 "
+            "C 168,216 164,198 180,192 "
+            "C 196,186 214,194 214,206 "
+            "C 214,218 198,226 178,236 "
+            "C 160,246 158,236 152,226 Z"
+        )
+        # Even cleaner: two crisp parallel wall contours forming the Klein bottle glass wall!
+        # Wall strip A (outer left -> bottom left rim -> inner left funnel -> over top handle -> pierces right shoulder -> inner right throat):
+        wall_blue = (
+            "M 142,334 "
+            "C 114,334 100,312 104,280 "
+            "C 108,248 130,228 148,210 "
+            "C 166,192 178,182 200,182 "
+            "C 224,182 238,198 234,216 "
+            "C 230,234 210,244 192,256 "
+            "C 178,266 174,284 174,310 "
+            "C 174,328 182,334 194,334"
+        )
+        wall_orange = (
+            "M 194,334 "
+            "C 218,334 230,312 226,282 "
+            "C 222,256 204,238 184,222 "
+            "C 166,208 164,198 182,196 "
+            "C 202,194 216,202 214,212 "
+            "C 212,222 194,232 174,244 "
+            "C 156,256 152,276 152,308 "
+            "C 152,328 148,334 142,334"
+        )
+        el.append(f'<path d="{wall_blue}" fill="none" stroke="{BLUE}" stroke-width="3.2" stroke-linecap="round"/>')
+        el.append(f'<path d="{wall_orange}" fill="none" stroke="{ORANGE}" stroke-width="3.2" stroke-linecap="round"/>')
+
+        # Self-intersection circle highlight around (198, 238) where swan neck passes through right shoulder wall in R^3!
+        el.append(f'<circle cx="198" cy="238" r="12" fill="{PURPLE_SOFT}" fill-opacity="0.55" stroke="{PURPLE}" stroke-width="1.6" stroke-dasharray="3 2"/>')
+        el.append(txt(42, 195, "三维被迫自交处", size=9.1, color=PURPLE, weight="700"))
+        el.append(txt(42, 209, "（ℝ⁴ 令 w≠0 即错开）", size=8.7, color=PURPLE))
+        el.append(f'<line x1="132" y1="207" x2="186" y2="233" stroke="{PURPLE}" stroke-width="1.2" stroke-dasharray="3 2"/>')
+
+        # Continuous ant path: bottom opening -> inside central tube -> over swan handle -> onto outer left belly!
+        ant_kb = (
+            "M 163,332 "
+            "C 163,294 163,262 184,244 "
+            "C 206,226 226,218 224,204 "
+            "C 222,190 196,188 176,198 "
+            "C 146,214 116,252 114,296"
+        )
+        el.append(f'<path d="{ant_kb}" fill="none" stroke="{GREEN}" stroke-width="2.1" stroke-dasharray="4 2.5" marker-end="url(#arr-green)"/>')
+        el.append(f'<circle cx="163" cy="332" r="3.5" fill="{GREEN}"/>')
+        el.append(txt(244, 268, "绿虚线：从底部喉管", size=9.2, color=GREEN, weight="700"))
+        el.append(txt(244, 284, "顺天鹅颈钻出，不跨", size=9.2, color=GREEN, weight="700"))
+        el.append(txt(244, 300, "任何边缘直接爬到瓶", size=9.2, color=GREEN, weight="700"))
+        el.append(txt(244, 316, "肚子外表面——无内", size=9.2, color=GREEN, weight="700"))
+        el.append(txt(244, 332, "无外、无瓶口边界！", size=9.2, color=GREEN, weight="700"))
+        el.append(txt(192, 355, "蓝半壁 + 橙半壁 = 两条镜像莫比乌斯环完美闭合成瓶", size=9.2, color=BODY, anchor="middle", weight="600"))
+
+        # Footer comparison box
+        el.append(card(32, 372, 320, 74, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        el.append(txt(44, 392, "• 克莱因瓶（1882）：无边界、不可定向、欧拉示性数 χ = 0；", size=9.5, color=BODY))
+        el.append(txt(44, 411, "• 若改拿 1 条莫比乌斯环 + 1 张普通圆盘 D² 沿唯一圆边界缝合：", size=9.5, color=BODY))
+        el.append(txt(44, 430, "  就得到射影几何舞台——实射影平面 ℝP²（无边界，χ = 1）！", size=9.5, color=BLUE, weight="600"))
+
+        # Right card: Exact Verified 6-Color Tietze Map on Mobius Strip!
+        el.append(card(380, 66, 362, 392))
+        el.append(txt(396, 90, "平面四色定理失效！莫比乌斯环需 6 种颜色", size=12.4, weight="700", color=INK))
+        el.append(txt(396, 108, "左右两端拧 180° 粘合 (0, y) ~ (L, H−y)：6 国两两共享边界！", size=9.5, color=MUTED))
+
+        # Exact verified 4x5 rectilinear Mobius map:
+        #   Row 0: [2, 2, 2, 2, 5]
+        #   Row 1: [4, 4, 3, 1, 5]
+        #   Row 2: [5, 5, 3, 1, 4]
+        #   Row 3: [5, 5, 6, 6, 6]
+        grid = [
+            [2, 2, 2, 2, 5],
+            [4, 4, 3, 1, 5],
+            [5, 5, 3, 1, 4],
+            [5, 5, 6, 6, 6],
+        ]
+        H_g, W_g = 4, 5
+        # Assert all 15 pairs of {1..6} share at least 1 grid edge on the Mobius strip!
+        adj_pairs = set()
+        for r in range(H_g):
+            for c in range(W_g):
+                a = grid[r][c]
+                b_right = grid[r][c + 1] if c + 1 < W_g else grid[H_g - 1 - r][0]
+                if a != b_right:
+                    adj_pairs.add((min(a, b_right), max(a, b_right)))
+                if r + 1 < H_g:
+                    b_down = grid[r + 1][c]
+                    if a != b_down:
+                        adj_pairs.add((min(a, b_down), max(a, b_down)))
+        assert len(adj_pairs) == 15  # Every pair among 6 countries shares a border!
+
+        reg_colors = {
+            1: ("#dbeafe", "#1d4ed8"),
+            2: ("#dcfce7", "#15803d"),
+            3: ("#fef3c7", "#b45309"),
+            4: ("#fce7f3", "#be185d"),
+            5: ("#ede9fe", "#6d28d9"),
+            6: ("#ffedd5", "#c2410c"),
+        }
+
+        gx0, gy0 = 418.0, 128.0
+        cw, ch = 56.0, 42.0
+        # Fill cells
+        for r in range(H_g):
+            for c in range(W_g):
+                fill_c, _ = reg_colors[grid[r][c]]
+                el.append(f'<rect x="{gx0 + c * cw:.1f}" y="{gy0 + r * ch:.1f}" width="{cw:.1f}" height="{ch:.1f}" fill="{fill_c}" stroke="none"/>')
+
+        # Draw interior region borders (only where adjacent cells have different region IDs!)
+        for r in range(H_g):
+            for c in range(W_g):
+                if c + 1 < W_g and grid[r][c] != grid[r][c + 1]:
+                    x_b = gx0 + (c + 1) * cw
+                    el.append(f'<line x1="{x_b:.1f}" y1="{gy0 + r * ch:.1f}" x2="{x_b:.1f}" y2="{gy0 + (r + 1) * ch:.1f}" stroke="{INK}" stroke-width="2.0"/>')
+                if r + 1 < H_g and grid[r][c] != grid[r + 1][c]:
+                    y_b = gy0 + (r + 1) * ch
+                    el.append(f'<line x1="{gx0 + c * cw:.1f}" y1="{y_b:.1f}" x2="{gx0 + (c + 1) * cw:.1f}" y2="{y_b:.1f}" stroke="{INK}" stroke-width="2.0"/>')
+
+        # Top & bottom free boundary edges
+        el.append(f'<line x1="{gx0}" y1="{gy0}" x2="{gx0 + W_g * cw}" y2="{gy0}" stroke="{INK}" stroke-width="2.2"/>')
+        el.append(f'<line x1="{gx0}" y1="{gy0 + H_g * ch}" x2="{gx0 + W_g * cw}" y2="{gy0 + H_g * ch}" stroke="{INK}" stroke-width="2.2"/>')
+        # Left & right Mobius twisted glue edges (dashed orange with opposite arrows!)
+        el.append(f'<line x1="{gx0}" y1="{gy0 + H_g * ch}" x2="{gx0}" y2="{gy0 + 4}" stroke="{ORANGE}" stroke-width="2.6" marker-end="url(#arr-orange)"/>')
+        el.append(f'<line x1="{gx0 + W_g * cw}" y1="{gy0}" x2="{gx0 + W_g * cw}" y2="{gy0 + H_g * ch - 4}" stroke="{ORANGE}" stroke-width="2.6" marker-end="url(#arr-orange)"/>')
+
+        # Seam row matching ticks (α, β, γ, δ flipped top-to-bottom!)
+        seam_tags = ["a", "b", "c", "d"]
+        for r in range(H_g):
+            el.append(txt(gx0 - 9, gy0 + (r + 0.58) * ch, seam_tags[r], size=9.8, color=ORANGE, anchor="end", weight="700", cls="mono"))
+            el.append(txt(gx0 + W_g * cw + 9, gy0 + (H_g - 1 - r + 0.58) * ch, seam_tags[r], size=9.8, color=ORANGE, weight="700", cls="mono"))
+
+        # Region labels placed cleanly at region centers
+        reg_labels = [
+            (1, gx0 + 3.5 * cw, gy0 + 2.0 * ch, "① 国"),
+            (2, gx0 + 2.0 * cw, gy0 + 0.52 * ch, "② 国"),
+            (3, gx0 + 2.5 * cw, gy0 + 2.0 * ch, "③ 国"),
+            (4, gx0 + 1.0 * cw, gy0 + 1.52 * ch, "④ 国"),
+            (4, gx0 + 4.5 * cw, gy0 + 2.52 * ch, "④(跨缝)"),
+            (5, gx0 + 1.0 * cw, gy0 + 3.0 * ch, "⑤ 国"),
+            (5, gx0 + 4.5 * cw, gy0 + 1.0 * ch, "⑤(跨缝)"),
+            (6, gx0 + 3.5 * cw, gy0 + 3.52 * ch, "⑥ 国"),
+        ]
+        for rid, lx, ly, ltxt in reg_labels:
+            _, fg_c = reg_colors[rid]
+            sz = 9.4 if "跨缝" in ltxt else 11.2
+            el.append(txt(lx, ly + 3.5, ltxt, size=sz, color=fg_c, anchor="middle", weight="700", cls="halo"))
+
+        # Verification walkthrough box
+        el.append(card(394, 310, 334, 136, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        el.append(txt(406, 330, "手指逐国验算（共 C(6,2) = 15 条公共国界，无一遗漏！）：", size=9.8, color=INK, weight="700"))
+        el.append(txt(406, 350, "• ①国与③国居中：上下左右直接挨遍其余全部 5 国；", size=9.5, color=BODY))
+        el.append(txt(406, 369, "• ②国上横条挨④③①⑤，左端 a 格拧 180° 跨缝直通右下角⑥国！", size=9.5, color=ORANGE, weight="600"))
+        el.append(txt(406, 388, "• ④国由左 b 格与右 b 格跨缝连成一片；⑤国由左 c,d 接右 c,d；", size=9.5, color=BODY))
+        el.append(txt(406, 408, "• 结论：6 国两两接壤（完全图 K₆ 对偶），最少必须用 6 种颜色！", size=9.5, color=PURPLE, weight="700"))
+        el.append(txt(406, 427, "  同理，“三座房子通水电气（K₃,₃）”在平面必交叉，在莫环零交叉可解。", size=9.3, color=BLUE, weight="600"))
+
+        svg = figure(
+            474,
+            "克莱因瓶双莫比乌斯环缝合原理与莫比乌斯环六国两两接壤六色地图",
+            "左图展示左旋与右旋莫比乌斯环沿唯一圆边界S1缝合成无边界无内外的克莱因瓶，并标注三维浸入自交处与四维无自交解释；右图用严格可验算的4x5矩形翻转粘合网格构造6个两两相邻区域，证明莫比乌斯环色数为6。",
+            el,
+        )
+        write_svg(TOPIC, "klein-bottle-and-map-coloring.svg", svg)
+
+    # ------------------------------------------------------------------
+    # Figure 4: Schwartz 2023 Optimal Paper Mobius Band (L/w > sqrt(3))
+    # ------------------------------------------------------------------
+    def build_fig4_schwartz_sqrt3():
+        el = []
+        el += header(
+            "悬置 46 年的几何难题告破：多短的纸条折不出莫比乌斯环？",
+            "施瓦茨（Richard Schwartz, 2023/2024《数学年刊》）严格证明：光滑无自交纸带必满足 L / w > √3 ≈ 1.7321",
+        )
+
+        # Left card: Exact sqrt(3) x 1 strip -> 3 equilateral triangles flat limit!
+        el.append(card(18, 66, 378, 384))
+        el.append(txt(34, 90, "为什么极限常数偏偏是 √3？三块正三角形完美拼出极限带", size=12.2, weight="700", color=INK))
+
+        # Top diagram inside left card: Exact [0, sqrt(3)] x [0, 1] strip!
+        s3 = math.sqrt(3.0)
+        sc_p = 136.0  # 1 unit of width = 136 px -> length sqrt(3)*136 = 235.56 px!
+        px0, py0 = 42.0, 126.0
+        pw = s3 * sc_p
+        ph = 1.0 * sc_p
+
+        # Vertices on [0, sqrt(3)] x [0, 1] (SVG y goes down: y=0 top, y=ph bottom):
+        # Top: T0=(0,0), T2=(2/sqrt(3), 0), T3=(sqrt(3), 0)
+        # Bottom: B0=(0,1), B1=(1/sqrt(3), 1), B3=(sqrt(3), 1)
+        T0 = (px0, py0)
+        T2 = (px0 + (2.0 / s3) * sc_p, py0)
+        T3 = (px0 + pw, py0)
+        B0 = (px0, py0 + ph)
+        B1 = (px0 + (1.0 / s3) * sc_p, py0 + ph)
+        B3 = (px0 + pw, py0 + ph)
+
+        # Mathematical assertion: Triangles (T0, B1, T2) and (B1, T2, B3) are EXACT equilateral triangles of side 2/sqrt(3)!
+        side_eq = (2.0 / s3) * sc_p
+        for tri in [(T0, B1, T2), (B1, T2, B3)]:
+            for idx in range(3):
+                d_e = math.dist(tri[idx], tri[(idx + 1) % 3])
+                assert abs(d_e - side_eq) < 1e-9
+
+        # Polygons:
+        # Left half-triangle (T0, B0, B1) + Right half-triangle (T2, T3, B3) glue across twisted ends into Equilateral Triangle #3!
+        def poly_str(pts):
+            return " ".join(f"{p[0]:.2f},{p[1]:.2f}" for p in pts)
+
+        el.append(f'<polygon points="{poly_str([T0, B0, B1])}" fill="{ORANGE_SOFT}" stroke="{INK}" stroke-width="1.5"/>')
+        el.append(f'<polygon points="{poly_str([T0, B1, T2])}" fill="{BLUE_SOFT}" stroke="{INK}" stroke-width="1.5"/>')
+        el.append(f'<polygon points="{poly_str([B1, T2, B3])}" fill="{GREEN_SOFT}" stroke="{INK}" stroke-width="1.5"/>')
+        el.append(f'<polygon points="{poly_str([T2, T3, B3])}" fill="{ORANGE_SOFT}" stroke="{INK}" stroke-width="1.5"/>')
+
+        # Highlight 60-degree crease lines
+        for p_a, p_b in [(T0, B1), (B1, T2), (T2, B3)]:
+            el.append(f'<line x1="{p_a[0]:.2f}" y1="{p_a[1]:.2f}" x2="{p_b[0]:.2f}" y2="{p_b[1]:.2f}" stroke="{PURPLE}" stroke-width="2.2" stroke-dasharray="5 3"/>')
+
+        # Twisted glue arrows on left (T0<-B0) and right (T3->B3)
+        el.append(f'<line x1="{B0[0]:.2f}" y1="{B0[1]:.2f}" x2="{T0[0]:.2f}" y2="{T0[1] + 4:.2f}" stroke="{ORANGE}" stroke-width="2.6" marker-end="url(#arr-orange)"/>')
+        el.append(f'<line x1="{T3[0]:.2f}" y1="{T3[1]:.2f}" x2="{B3[0]:.2f}" y2="{B3[1] - 4:.2f}" stroke="{ORANGE}" stroke-width="2.6" marker-end="url(#arr-orange)"/>')
+
+        # Labels on strip
+        el.append(txt(px0 + pw / 2, py0 - 8, "精确长宽比：长 L = √3 ≈ 1.7321，宽 w = 1", size=10.2, color=INK, anchor="middle", weight="700"))
+        el.append(txt(px0 - 10, py0 + ph / 2 + 4, "w=1", size=9.8, color=INK, anchor="end", weight="700", cls="mono"))
+        el.append(txt(px0 + 0.96 * sc_p / s3, py0 + 0.42 * ph, "正△ ①", size=10.5, color=BLUE, anchor="middle", weight="700"))
+        el.append(txt(px0 + 1.98 * sc_p / s3, py0 + 0.66 * ph, "正△ ②", size=10.5, color=GREEN, anchor="middle", weight="700"))
+        el.append(txt(px0 + 0.27 * sc_p / s3, py0 + 0.78 * ph, "半③", size=9.4, color=ORANGE, anchor="middle", weight="700"))
+        el.append(txt(px0 + 2.73 * sc_p / s3, py0 + 0.28 * ph, "半③", size=9.4, color=ORANGE, anchor="middle", weight="700"))
+        el.append(txt(B1[0] + 18, B1[1] - 6, "60°", size=9.2, color=PURPLE, weight="700", cls="mono"))
+
+        # Folded equilateral triangle icon on the right side of Left Card!
+        tri_cx, tri_cy = 348.0, 198.0
+        r_tri = 36.0
+        ft_pts = [
+            (tri_cx + r_tri * math.cos(math.radians(-90 + 120 * k)), tri_cy + r_tri * math.sin(math.radians(-90 + 120 * k)))
+            for k in range(3)
+        ]
+        el.append(txt(296, 186, "平折", size=9.0, color=PURPLE, anchor="middle", weight="700"))
+        el.append(txt(296, 202, "═▶", size=11.5, color=PURPLE, anchor="middle", weight="700"))
+        el.append(f'<polygon points="{poly_str(ft_pts)}" fill="{PURPLE_SOFT}" stroke="{PURPLE}" stroke-width="2.2"/>')
+        el.append(txt(tri_cx, tri_cy + 8, "3层叠合", size=9.0, color=PURPLE, anchor="middle", weight="700"))
+        el.append(txt(tri_cx, tri_cy + 46, "正三角形环", size=9.4, color=PURPLE, anchor="middle", weight="700"))
+        el.append(txt(tri_cx, tri_cy + 61, "边长 2/√3", size=8.8, color=MUTED, anchor="middle", cls="mono"))
+
+        # Step-by-step arithmetic proof box
+        el.append(card(32, 288, 350, 148, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        el.append(txt(44, 308, "三步读懂为什么 √3 是不可逾越的硬门槛：", size=10.0, color=INK, weight="700"))
+        el.append(txt(44, 328, "1. 真实纸张不可拉伸（高斯曲率 K=0 可展曲面），表面布满直母线；", size=9.5, color=BODY))
+        el.append(txt(44, 348, "2. 施瓦茨发现“T 字正交截面引理”：任何无自交光滑纸莫比乌斯环必", size=9.5, color=BODY))
+        el.append(txt(44, 367, "   含一对互相垂直的直母线组成 T 形骨架，将展开面积卡死下限；", size=9.5, color=BLUE, weight="600"))
+        el.append(txt(44, 387, "3. 当高 w=1 时，60° 折痕水平跨度恰为 cot 60° = 1/√3；三段正△拼", size=9.5, color=BODY))
+        el.append(txt(44, 406, "   合（左右两块橙色半直角△拧 180° 合成正△③），总长 3×(1/√3)=√3！", size=9.5, color=ORANGE, weight="700"))
+        el.append(txt(44, 425, "   只要 L ≤ √3w，纸面要么撕裂起皱，要么被迫自己穿过自己。", size=9.4, color=PURPLE, weight="600"))
+
+        # Right card: Aspect Ratio Number Line (0 to 3.2) & Milestones
+        el.append(card(410, 66, 332, 384))
+        el.append(txt(426, 90, "纸条长宽比 L / w 全景禁区地图", size=12.2, weight="700", color=INK))
+        el.append(txt(426, 108, "横轴按真实数值比例绘制（范围 1.0 ～ 2.6）", size=9.5, color=MUTED))
+
+        # Horizontal scale bar for L/w in [1.0, 2.6]
+        ax0, ax1, ay = 432.0, 720.0, 156.0
+        def map_lw(val):
+            return ax0 + (val - 1.0) / (2.6 - 1.0) * (ax1 - ax0)
+
+        x_pi2 = map_lw(math.pi / 2.0)
+        x_s3 = map_lw(s3)
+
+        # Three colored zones along the bar
+        el.append(f'<rect x="{ax0:.1f}" y="{ay - 12:.1f}" width="{x_pi2 - ax0:.1f}" height="24" rx="4" fill="#fee2e2" stroke="#ef4444" stroke-width="1.2"/>')
+        el.append(f'<rect x="{x_pi2:.1f}" y="{ay - 12:.1f}" width="{x_s3 - x_pi2:.1f}" height="24" fill="#fef3c7" stroke="{ORANGE}" stroke-width="1.2"/>')
+        el.append(f'<rect x="{x_s3:.1f}" y="{ay - 12:.1f}" width="{ax1 - x_s3:.1f}" height="24" rx="4" fill="{GREEN_SOFT}" stroke="{GREEN}" stroke-width="1.2"/>')
+
+        # Milestone ticks
+        ticks = [
+            (1.0, "1.0", MUTED, 28),
+            (math.pi / 2.0, "π/2≈1.571", "#dc2626", -20),
+            (s3, "√3≈1.732", PURPLE, 28),
+            (2.2, "2.2", GREEN, -20),
+            (2.6, "2.6+", GREEN, 28),
+        ]
+        for val, lbl, col_t, dy_t in ticks:
+            xt = map_lw(val)
+            el.append(f'<line x1="{xt:.1f}" y1="{ay - 16:.1f}" x2="{xt:.1f}" y2="{ay + 16:.1f}" stroke="{col_t}" stroke-width="2.0"/>')
+            el.append(txt(xt, ay + dy_t, lbl, size=9.3, color=col_t, anchor="middle", weight="700", cls="mono"))
+
+        # Three milestone explanation cards stacked cleanly below the scale
+        el.append(card(426, 200, 300, 70, rx=8, fill="#fef2f2", stroke="#fecaca"))
+        el.append(txt(438, 220, "① L / w ≤ π/2 ≈ 1.5708（绝对禁区）", size=10.0, color="#b91c1c", weight="700"))
+        el.append(txt(438, 239, "Halpern & Weaver (1977) 证明：即便允许纸带像幽灵一样", size=9.3, color=BODY))
+        el.append(txt(438, 256, "穿透自身，也不存在光滑等距浸入解。", size=9.3, color=BODY))
+
+        el.append(card(426, 280, 300, 76, rx=8, fill="#fffbeb", stroke="#fde68a"))
+        el.append(txt(438, 300, "② π/2 < L / w ≤ √3 ≈ 1.7321（自交陷阱区）", size=10.0, color=ORANGE, weight="700"))
+        el.append(txt(438, 319, "1977 年提出猜想，卡住数学界 46 年！布朗大学施瓦茨于", size=9.3, color=BODY))
+        el.append(txt(438, 336, "2023 年彻底证毕：此区间纸面必定自交，现实纸条做不出！", size=9.3, color=ORANGE, weight="600"))
+
+        el.append(card(426, 366, 300, 70, rx=8, fill=GREEN_SOFT, stroke="#bbf7d0"))
+        el.append(txt(438, 386, "③ L / w > √3（真实纸条可行区）", size=10.0, color=GREEN, weight="700"))
+        el.append(txt(438, 405, "越逼近 √3 纸带越紧绷趋向左图三折正三角形；日常手工", size=9.3, color=BODY))
+        el.append(txt(438, 422, "用 A4 纸裁长宽比 L/w ≥ 5～8，胶带一粘最舒展好看。", size=9.3, color=BODY))
+
+        svg = figure(
+            468,
+            "施瓦茨2023最优纸莫比乌斯环定理：长宽比√3正三角形折叠极限与全景区间图",
+            "左图精确构造宽1长√3矩形沿三条60度折痕分成3个边长2/√3的正三角形并叠合为平折正三角形莫比乌斯环；右图按真实比例标出L/w≤π/2绝对禁区、π/2到√3自交区与大于√3光滑无自交可行区。",
+            el,
+        )
+        write_svg(TOPIC, "paper-aspect-ratio-sqrt3.svg", svg)
+
+    # ------------------------------------------------------------------
+    # Figure 5: Engineering & Chemistry Applications (Belt, Resistor, Aromaticity)
+    # ------------------------------------------------------------------
+    def build_fig5_applications():
+        el = []
+        el += header(
+            "不只是纸上游戏：莫比乌斯拓扑在机械、高频电子与量子化学里的三大硬核工程",
+            "把“单面双圈倍增”与“180° 相位反转”直接转化为双倍耐磨寿命、零寄生电感与反休克尔芳香分子",
+        )
+
+        # Panel 1: Double-life Conveyor Belt & Printer Ribbon
+        el.append(card(18, 66, 232, 376))
+        el.append(badge(30, 78, "① 机械工程：双倍寿命传送带", fill=BLUE_SOFT, fg=BLUE, w=186, h=22, size=10.5))
+        el.append(txt(30, 114, "B. F. Goodrich 1957 专利 / 针式色带：", size=9.4, color=MUTED))
+
+        # Top mini-diagram: Ordinary belt (inner side red worn out, outer side untouched!)
+        el.append(card(30, 126, 208, 86, rx=8, fill="#f8fafc", stroke=BORDER))
+        el.append(txt(40, 143, "普通皮带：内圈受压磨穿，外圈白白浪费", size=9.2, color="#b91c1c", weight="700"))
+        el.append(f'<circle cx="72" cy="178" r="18" fill="#e2e8f0" stroke="{SLATE}" stroke-width="1.8"/>')
+        el.append(f'<circle cx="196" cy="178" r="18" fill="#e2e8f0" stroke="{SLATE}" stroke-width="1.8"/>')
+        # Outer green untouched, inner red worn
+        el.append(f'<rect x="50" y="156" width="168" height="44" rx="22" fill="none" stroke="{GREEN}" stroke-width="2.4"/>')
+        el.append(f'<rect x="55" y="161" width="158" height="34" rx="17" fill="none" stroke="#dc2626" stroke-width="2.6" stroke-dasharray="4 2"/>')
+        el.append(txt(134, 182, "内红100%磨损", size=8.9, color="#dc2626", anchor="middle", weight="700"))
+
+        # Bottom mini-diagram: Mobius belt (180 twist in mid-span -> uniform wear on entire 2L single surface!)
+        el.append(card(30, 222, 208, 102, rx=8, fill=BLUE_SOFT, stroke=BLUE_LINE))
+        el.append(txt(40, 240, "莫比乌斯皮带：每转一圈自动换面轮休！", size=9.2, color=BLUE, weight="700"))
+        el.append(f'<circle cx="68" cy="282" r="18" fill="#dbeafe" stroke="{BLUE}" stroke-width="1.8"/>')
+        el.append(f'<circle cx="200" cy="282" r="18" fill="#dbeafe" stroke="{BLUE}" stroke-width="1.8"/>')
+        # Figure-8 half-twist crossover on top span, straight return on bottom span
+        el.append(f'<path d="M 68,264 C 118,264 150,278 200,264" fill="none" stroke="{BLUE}" stroke-width="3.0"/>')
+        el.append(f'<path d="M 68,268 C 118,280 150,256 200,268" fill="none" stroke="{ORANGE}" stroke-width="2.2" stroke-dasharray="4 2"/>')
+        el.append(f'<line x1="68" y1="300" x2="200" y2="300" stroke="{BLUE}" stroke-width="3.0"/>')
+        el.append(txt(134, 316, "单面总长 2L 均匀受热受磨 → 寿命 ×2", size=9.0, color=BLUE, anchor="middle", weight="700"))
+
+        el.append(txt(32, 346, "• 工业高温传送带不会单侧烤裂卷边；", size=9.4, color=BODY))
+        el.append(txt(32, 366, "• 老式打字机/票据打印机循环色带盒、", size=9.4, color=BODY))
+        el.append(txt(32, 386, "  无尽磁带录音机利用半圈扭转吃满双面", size=9.4, color=BODY))
+        el.append(txt(32, 406, "  油墨与磁粉；国际回收标志 ♻ 同源！", size=9.4, color=GREEN, weight="600"))
+
+        # Panel 2: Davis 1964 Non-inductive Mobius Resistor
+        el.append(card(264, 66, 232, 376))
+        el.append(badge(276, 78, "② 高频电子：零电感莫比乌斯电阻", fill=ORANGE_SOFT, fg=ORANGE, w=198, h=22, size=10.5))
+        el.append(txt(276, 114, "Davis 1964 专利（US 3,267,406）：", size=9.4, color=MUTED))
+
+        # Schematic of two counter-propagating current loops on dielectric Mobius strip
+        el.append(card(276, 126, 208, 198, rx=8, fill="#fffdf9", stroke="#fed7aa"))
+        # Outer loop clockwise +I1 (blue), paired opposite foil counter-clockwise -I2 (orange)
+        rcx, rcy = 380.0, 222.0
+        el.append(f'<ellipse cx="{rcx}" cy="{rcy}" rx="74" ry="48" fill="none" stroke="#cbd5e1" stroke-width="9"/>')
+        # +I clockwise arc
+        el.append(f'<path d="M {rcx - 70},{rcy - 12} A 74,48 0 0,1 {rcx + 68},{rcy - 16}" fill="none" stroke="{BLUE}" stroke-width="2.6" marker-end="url(#arr-blue)"/>')
+        # -I counter-clockwise arc right across dielectric!
+        el.append(f'<path d="M {rcx - 62},{rcy + 18} A 68,42 0 0,0 {rcx + 64},{rcy + 16}" fill="none" stroke="{ORANGE}" stroke-width="2.6" marker-end="url(#arr-orange)"/>')
+        # Twist symbol on right (rcx+74, rcy) & solder terminal on left (rcx-74, rcy)
+        el.append(f'<circle cx="{rcx - 74}" cy="{rcy}" r="7" fill="{INK}"/>')
+        el.append(txt(rcx - 74, rcy - 13, "同点馈电端", size=9.0, color=INK, anchor="middle", weight="700", cls="halo"))
+        el.append(f'<circle cx="{rcx + 74}" cy="{rcy}" r="9" fill="{PURPLE_SOFT}" stroke="{PURPLE}" stroke-width="1.8"/>')
+        el.append(txt(rcx + 74, rcy + 3.5, "180°", size=8.4, color=PURPLE, anchor="middle", weight="700", cls="mono"))
+        # Self-canceling magnetic flux in center: (+B dot) + (-B cross) = 0!
+        el.append(txt(rcx, rcy - 7, "⊙ +B  ⊕  ⊗ −B", size=10.6, color=INK, anchor="middle", weight="700", cls="mono"))
+        el.append(txt(rcx, rcy + 13, "净磁通 Φ ≡ 0（无自感！）", size=9.6, color=GREEN, anchor="middle", weight="700"))
+        el.append(txt(rcx, 294, "上顺时针电流 I₁ 与背面逆时针 I₂", size=9.1, color=BODY, anchor="middle"))
+        el.append(txt(rcx, 311, "紧贴绝缘膜处处反向对称抵消磁场", size=9.1, color=ORANGE, anchor="middle", weight="600"))
+
+        el.append(txt(278, 346, "• 普通绕线电阻一通高频脉冲就变电感线圈", size=9.4, color=BODY))
+        el.append(txt(278, 366, "  （V = L·dI/dt 产生剧烈振铃失真）；", size=9.4, color=BODY))
+        el.append(txt(278, 386, "• 莫比乌斯双面金属箔拧半圈短接后，正反", size=9.4, color=BODY))
+        el.append(txt(278, 406, "  电流严丝合缝相消，寄生电感趋近于零！", size=9.4, color=ORANGE, weight="600"))
+
+        # Panel 3: Heilbronner-Herges Mobius Aromaticity (4n vs 4n+2)
+        el.append(card(510, 66, 232, 376))
+        el.append(badge(522, 78, "③ 量子化学：莫比乌斯芳香烃", fill=PURPLE_SOFT, fg=PURPLE, w=186, h=22, size=10.5))
+        el.append(txt(522, 114, "Heilbronner 1964 预言 / Herges 2003 合成：", size=9.2, color=MUTED))
+
+        # Top sub-box: Planar Huckel ring (6 p-orbitals all + on top, - on bottom -> 4n+2)
+        el.append(card(522, 126, 208, 92, rx=8, fill="#f8fafc", stroke=BORDER))
+        el.append(txt(532, 144, "平面休克尔环（如苯 6e⁻）：0 次相位翻转", size=9.1, color=BLUE, weight="700"))
+        el.append(f'<ellipse cx="626" cy="180" rx="56" ry="18" fill="none" stroke="{BLUE}" stroke-width="1.8"/>')
+        for ang_d in (0, 60, 120, 180, 240, 300):
+            ang_r = math.radians(ang_d)
+            ox = 626.0 + 56.0 * math.cos(ang_r)
+            oy = 180.0 + 18.0 * math.sin(ang_r)
+            el.append(f'<ellipse cx="{ox:.1f}" cy="{oy - 7:.1f}" rx="3.8" ry="6.5" fill="{BLUE}"/>')
+            el.append(f'<ellipse cx="{ox:.1f}" cy="{oy + 7:.1f}" rx="3.8" ry="6.5" fill="#fff" stroke="{BLUE}" stroke-width="1.2"/>')
+        el.append(txt(626, 211, "上瓣全同相(+) → 稳定判据：4n + 2 个 π 电子", size=8.9, color=BLUE, anchor="middle", weight="600"))
+
+        # Bottom sub-box: Twisted Mobius conjugated ring (p-orbitals rotate half-turn -> 1 node inversion -> 4n aromatic!)
+        el.append(card(522, 226, 208, 98, rx=8, fill="#f5f3ff", stroke="#ddd6fe"))
+        el.append(txt(532, 244, "莫比乌斯扭转环：p 轨道绕一圈拧 180°！", size=9.1, color=PURPLE, weight="700"))
+        el.append(f'<ellipse cx="626" cy="280" rx="56" ry="18" fill="none" stroke="{PURPLE}" stroke-width="1.8"/>')
+        for idx_o, ang_d in enumerate((0, 45, 90, 135, 180, 225, 270, 315)):
+            ang_r = math.radians(ang_d)
+            ox = 626.0 + 56.0 * math.cos(ang_r)
+            oy = 280.0 + 18.0 * math.sin(ang_r)
+            tilt_r = 0.5 * ang_r  # Half-twist rotation of p-orbital!
+            dx_o = 6.8 * math.sin(tilt_r)
+            dy_o = -6.8 * math.cos(tilt_r)
+            el.append(f'<circle cx="{ox + dx_o:.1f}" cy="{oy + dy_o:.1f}" r="4.2" fill="{PURPLE}"/>')
+            el.append(f'<circle cx="{ox - dx_o:.1f}" cy="{oy - dy_o:.1f}" r="4.2" fill="#fff" stroke="{PURPLE}" stroke-width="1.2"/>')
+        el.append(txt(686, 266, "±反相结", size=8.8, color="#dc2626", weight="700"))
+        el.append(txt(626, 316, "规则彻底颠倒 → 4n 个 π 电子（8/16e⁻）变芳香稳定！", size=8.8, color=PURPLE, anchor="middle", weight="700"))
+
+        el.append(txt(524, 346, "• 中学化学教“4n+2 芳香稳定、4n 反芳香", size=9.4, color=BODY))
+        el.append(txt(524, 366, "  极不稳定”，前提是分子环处于平面；", size=9.4, color=BODY))
+        el.append(txt(524, 386, "• 把共轭大环电子云拧成莫比乌斯态后，波", size=9.4, color=BODY))
+        el.append(txt(524, 406, "  函数边界条件反号，4n 与 4n+2 角色互换！", size=9.4, color=PURPLE, weight="600"))
+
+        svg = figure(
+            458,
+            "莫比乌斯拓扑三大跨界应用：双倍寿命传送带、零寄生电感无感电阻与4n莫比乌斯芳香烃",
+            "三栏对比展示莫比乌斯皮带每圈换面实现双倍耐磨寿命、Davis莫比乌斯无感电阻靠正反电流对消磁通实现零寄生电感、以及共轭分子p轨道半圈扭转使休克尔4n+2规则反转为4n芳香稳定。",
+            el,
+        )
+        write_svg(TOPIC, "engineering-and-chemistry-mobius.svg", svg)
+
+    build_fig1_gluing_and_normal()
+    build_fig2_scissors_cuts()
+    build_fig3_klein_and_tietze()
+    build_fig4_schwartz_sqrt3()
+    build_fig5_applications()
+
+
+@register("elliptic-curves", "椭圆函数与椭圆曲线：椭圆周长反演、阿贝尔与雅可比竞速、双周期复环面、弦切群律动画及ECC与费马大定理", "geometry_analysis")
+def build_elliptic_curves():
+    TOPIC = "elliptic-curves"
+
+    EXTRA_ARR = f"""<marker id="arr-ink" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="{INK}"/>
+  </marker>
+  <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="{PURPLE}"/>
+  </marker>"""
+
+    def badge(x, y, label, fill=BLUE_SOFT, fg=BLUE, w=180, h=22, size=10.5):
+        return pill(x, y, label, fg=fg, bg=fill, w=w, h=h, size=size)
+
+    def poly_str(pts):
+        return " ".join(f"{x:.2f},{y:.2f}" for x, y in pts)
+
+    def path_from_pts(pts, close=False):
+        if not pts:
+            return ""
+        segs = [f"M {pts[0][0]:.2f} {pts[0][1]:.2f}"]
+        for x, y in pts[1:]:
+            segs.append(f"L {x:.2f} {y:.2f}")
+        if close:
+            segs.append("Z")
+        return " ".join(segs)
+
+    def agm_K(k):
+        """Exact complete elliptic integral K(k) via Gauss's Arithmetic-Geometric Mean."""
+        assert 0.0 <= k < 1.0
+        a = 1.0
+        b = math.sqrt(1.0 - k * k)
+        for _ in range(12):
+            a, b = 0.5 * (a + b), math.sqrt(a * b)
+        return math.pi / (2.0 * a)
+
+    def jacobi_sncndn_rk4(u_max, k, steps=900):
+        """Solve s'=cd, c'=-sd, d'=-k^2 sc on [0, u_max] via 4th-order Runge-Kutta."""
+        du = u_max / steps
+        m = k * k
+        u = 0.0
+        s, c, d = 0.0, 1.0, 1.0
+        out = [(u, s, c, d)]
+
+        def rhs(sv, cv, dv):
+            return (cv * dv, -sv * dv, -m * sv * cv)
+
+        for _ in range(steps):
+            k1s, k1c, k1d = rhs(s, c, d)
+            k2s, k2c, k2d = rhs(s + 0.5 * du * k1s, c + 0.5 * du * k1c, d + 0.5 * du * k1d)
+            k3s, k3c, k3d = rhs(s + 0.5 * du * k2s, c + 0.5 * du * k2c, d + 0.5 * du * k2d)
+            k4s, k4c, k4d = rhs(s + du * k3s, c + du * k3c, d + du * k3d)
+            s += (du / 6.0) * (k1s + 2 * k2s + 2 * k3s + k4s)
+            c += (du / 6.0) * (k1c + 2 * k2c + 2 * k3c + k4c)
+            d += (du / 6.0) * (k1d + 2 * k2d + 2 * k3d + k4d)
+            u += du
+            out.append((u, s, c, d))
+        return out
+
+    # Verify Gauss's Lemniscate Constant identity pi / varpi = AGM(1, sqrt(2))
+    a_g, b_g = 1.0, math.sqrt(2.0)
+    for _ in range(12):
+        a_g, b_g = 0.5 * (a_g + b_g), math.sqrt(a_g * b_g)
+    varpi_calc = math.pi / a_g
+    assert abs(varpi_calc - 2.622057554292119) < 1e-12
+
+    # ------------------------------------------------------------------
+    # Figure 1: From Ellipse Arc-Length Dead-End to Abel-Jacobi Inversion
+    # ------------------------------------------------------------------
+    def build_fig1_inversion():
+        el = []
+        el += header(
+            "从“算不出椭圆周长”到 1827 惊天反演：把卡死四十年的积分掉个头",
+            "正着算积分 u(x) 被困在 [-1, 1] 死胡同；阿贝尔与雅可比把自变量和因变量对调，瞬间涌出平滑周期波",
+        )
+
+        # Left card: Geometric origin & inversion contrast
+        el.append(card(18, 66, 350, 384))
+        el.append(badge(32, 78, "① 为什么椭圆周长与单摆卡住了微积分？", fill=ORANGE_SOFT, fg=ORANGE, w=254, h=22, size=10.5))
+
+        # Mini geometric trio: Circle (k=0), Ellipse (k=e), Bernoulli Lemniscate
+        # 1) Circle
+        ccx, ccy, cr = 74.0, 148.0, 28.0
+        el.append(f'<circle cx="{ccx}" cy="{ccy}" r="{cr}" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="2.0"/>')
+        arc_c = [(ccx + cr * math.cos(t), ccy - cr * math.sin(t)) for t in [i * 1.15 / 24 for i in range(25)]]
+        el.append(f'<path d="{path_from_pts(arc_c)}" fill="none" stroke="{ORANGE}" stroke-width="3.0"/>')
+        el.append(txt(ccx, 192, "正圆 (k=0)", size=9.6, color=BLUE, anchor="middle", weight="700"))
+        el.append(txt(ccx, 206, "周长 2πr 秒算", size=8.8, color=MUTED, anchor="middle"))
+
+        # 2) Ellipse
+        ecx, ecy, ea, eb = 192.0, 148.0, 44.0, 23.0
+        el.append(f'<ellipse cx="{ecx}" cy="{ecy}" rx="{ea}" ry="{eb}" fill="{ORANGE_SOFT}" stroke="{ORANGE}" stroke-width="2.0"/>')
+        arc_e = [(ecx + ea * math.sin(t), ecy - eb * math.cos(t)) for t in [i * 1.25 / 28 for i in range(29)]]
+        el.append(f'<path d="{path_from_pts(arc_e)}" fill="none" stroke="#b91c1c" stroke-width="3.0"/>')
+        el.append(txt(ecx, 192, "椭圆 (离心率 k=e)", size=9.6, color=ORANGE, anchor="middle", weight="700"))
+        el.append(txt(ecx, 206, "无初等周长公式!", size=8.8, color="#b91c1c", anchor="middle", weight="600"))
+
+        # 3) Bernoulli Lemniscate: r^2 = cos(2t) -> x = a cos t / (1+sin^2 t), y = a sin t cos t / (1+sin^2 t)
+        lcx, lcy, la = 310.0, 148.0, 40.0
+        lem_pts = []
+        for i in range(121):
+            t = 2.0 * math.pi * i / 120.0
+            den = 1.0 + math.sin(t) ** 2
+            lem_pts.append((lcx + la * math.cos(t) / den, lcy - la * math.sin(t) * math.cos(t) / den))
+        el.append(f'<path d="{path_from_pts(lem_pts, close=True)}" fill="{PURPLE_SOFT}" stroke="{PURPLE}" stroke-width="2.0"/>')
+        el.append(txt(lcx, 192, "双纽线 (1-t⁴)", size=9.6, color=PURPLE, anchor="middle", weight="700"))
+        el.append(txt(lcx, 206, "常数 ϖ≈2.622", size=8.8, color=MUTED, anchor="middle", cls="mono"))
+
+        # Comparison Box A: Circle lesson
+        el.append(card(32, 220, 322, 92, rx=8, fill=BLUE_SOFT, stroke="#bfdbfe"))
+        el.append(txt(44, 240, "热身启发：如果当年没人学过 sin，硬算圆弧积分会怎样？", size=9.8, color=BLUE, weight="700"))
+        el.append(txt(44, 260, "• 正着盯积分：u(x) = ∫₀ˣ dt/√(1−t²) = arcsin x（困在 [-1,1]）", size=9.3, color=BODY))
+        el.append(txt(44, 279, "• 掉头取反演：x(u) = sin u ── 瞬间冲出区间，变成周期 2π 波！", size=9.3, color=BLUE, weight="700"))
+        el.append(txt(44, 298, "• 微分方程自动简化：(x')² = 1 − x²，连加法定理都一目了然。", size=9.2, color=MUTED))
+
+        # Comparison Box B: Elliptic integral inversion
+        el.append(card(32, 322, 322, 114, rx=8, fill=GREEN_SOFT, stroke="#bbf7d0"))
+        el.append(txt(44, 342, "1827 破壁一跃：把勒让德盯了 40 年的第一类椭圆积分翻过来！", size=9.8, color=GREEN, weight="700"))
+        el.append(txt(44, 362, "• 正向死胡同：u = ∫₀ˣ dt / √[(1−t²)(1−k²t²)]（初等函数表不出）", size=9.3, color=BODY))
+        el.append(txt(44, 381, "• 逆向造新函数：记 x = sn(u, k)（雅可比正弦幅函数，阿贝尔记 φ）", size=9.3, color=GREEN, weight="700"))
+        el.append(txt(44, 400, "• 配套双生搭档：cn(u)=√(1−sn²u)，dn(u)=√(1−k²sn²u)", size=9.3, color=INK, cls="mono"))
+        el.append(txt(44, 419, "• 实最小正周期：4K(k)，其中 K(k) = π / [2·AGM(1, √(1−k²))]！", size=9.2, color=PURPLE, weight="700"))
+
+        # Right card: Two exact RK4-computed plots!
+        el.append(card(384, 66, 358, 384))
+        el.append(badge(398, 78, "② 数值真算：从正弦波到平顶波与孤立波的连续变形", fill=BLUE_SOFT, fg=BLUE, w=300, h=22, size=10.5))
+
+        # Top sub-plot: sn(u, k) for k = 0, 0.80, 0.98, 1.0 on u in [0, 9.6]
+        px0, px1 = 424.0, 724.0
+        py_mid, py_amp = 168.0, 44.0
+        u_end = 9.6
+
+        def map_top(uv, yv):
+            return (px0 + (uv / u_end) * (px1 - px0), py_mid - yv * py_amp)
+
+        # Grid & axes for top sub-plot
+        for y_val, lbl_y in [(1.0, "+1"), (0.0, "0"), (-1.0, "-1")]:
+            _, yy = map_top(0, y_val)
+            st_col = HAIRLINE if y_val != 0 else "#94a3b8"
+            el.append(f'<line x1="{px0}" y1="{yy:.1f}" x2="{px1}" y2="{yy:.1f}" stroke="{st_col}" stroke-width="1.0" stroke-dasharray="{"3 3" if y_val != 0 else "none"}"/>')
+            el.append(txt(px0 - 7, yy + 3.5, lbl_y, size=8.8, color=MUTED, anchor="end", cls="mono"))
+        el.append(f'<line x1="{px0}" y1="{py_mid - py_amp - 8:.1f}" x2="{px0}" y2="{py_mid + py_amp + 8:.1f}" stroke="#94a3b8" stroke-width="1.2"/>')
+
+        for u_tick in [0, 2, 4, 6, 8]:
+            xx, _ = map_top(u_tick, 0)
+            el.append(f'<line x1="{xx:.1f}" y1="{py_mid + py_amp}" x2="{xx:.1f}" y2="{py_mid + py_amp + 4}" stroke="#94a3b8" stroke-width="1.0"/>')
+            el.append(txt(xx, py_mid + py_amp + 15, str(u_tick), size=8.5, color=MUTED, anchor="middle", cls="mono"))
+        el.append(txt(px1, py_mid + py_amp + 15, "u", size=9.0, color=INK, anchor="end", weight="700", cls="mono"))
+
+        # Compute & verify k=0 (sin u), k=0.80, k=0.98, k=1 (tanh u)
+        pts_sin = [map_top(u_end * i / 240, math.sin(u_end * i / 240)) for i in range(241)]
+        pts_tanh = [map_top(u_end * i / 240, math.tanh(u_end * i / 240)) for i in range(241)]
+
+        sol_80 = jacobi_sncndn_rk4(u_end, 0.80, steps=1200)
+        K_80 = agm_K(0.80)
+        # Verify sn(K_80, 0.80) == 1 and invariants s^2 + c^2 == 1
+        sol_check80 = jacobi_sncndn_rk4(K_80, 0.80, steps=600)
+        assert abs(sol_check80[-1][1] - 1.0) < 1e-9
+        assert abs(sol_80[-1][1] ** 2 + sol_80[-1][2] ** 2 - 1.0) < 1e-8
+        pts_80 = [map_top(u, s) for u, s, _, _ in sol_80[::6]]
+
+        sol_98 = jacobi_sncndn_rk4(u_end, 0.98, steps=1200)
+        K_98 = agm_K(0.98)
+        sol_check98 = jacobi_sncndn_rk4(K_98, 0.98, steps=600)
+        assert abs(sol_check98[-1][1] - 1.0) < 1e-9
+        pts_98 = [map_top(u, s) for u, s, _, _ in sol_98[::6]]
+
+        el.append(f'<path d="{path_from_pts(pts_sin)}" fill="none" stroke="#94a3b8" stroke-width="1.6" stroke-dasharray="4 3"/>')
+        el.append(f'<path d="{path_from_pts(pts_80)}" fill="none" stroke="{BLUE}" stroke-width="2.2"/>')
+        el.append(f'<path d="{path_from_pts(pts_98)}" fill="none" stroke="{ORANGE}" stroke-width="2.3"/>')
+        el.append(f'<path d="{path_from_pts(pts_tanh)}" fill="none" stroke="{PURPLE}" stroke-width="1.9" stroke-dasharray="6 3"/>')
+
+        # Top sub-plot legend row (cleanly spaced, zero overlap)
+        el.append(txt(398, 113, "sn(u,k)：", size=9.0, color=INK, weight="700", cls="mono"))
+        el.append(txt(452, 113, "灰虚 k=0(sin)", size=8.6, color=MUTED, weight="600"))
+        el.append(txt(536, 113, "蓝 k=0.8", size=8.6, color=BLUE, weight="700"))
+        el.append(txt(594, 113, "橙 k=0.98", size=8.6, color=ORANGE, weight="700"))
+        el.append(txt(658, 113, "紫虚 k=1(tanh)", size=8.6, color=PURPLE, weight="700"))
+
+        # Bottom sub-plot: Trio sn(u), cn(u), dn(u) at k = 0.85 over [0, 4K]
+        k_trio = 0.85
+        K_trio = agm_K(k_trio)
+        u_4K = 4.0 * K_trio
+        sol_trio = jacobi_sncndn_rk4(u_4K, k_trio, steps=720)
+        # Verify exact periodicity at 4K and dn minimum sqrt(1 - k^2) at K
+        assert abs(sol_trio[-1][1]) < 1e-8 and abs(sol_trio[-1][2] - 1.0) < 1e-8
+        dn_min_exact = math.sqrt(1.0 - k_trio ** 2)
+        assert abs(sol_trio[180][3] - dn_min_exact) < 1e-8
+
+        el.append(txt(400, 256, f"固定模数 k = 0.85 时三兄弟同台（整周期 4K ≈ {u_4K:.2f}）：", size=9.5, color=INK, weight="700"))
+        by_mid, by_amp = 338.0, 50.0
+
+        def map_bot(uv, yv):
+            return (px0 + (uv / u_4K) * (px1 - px0), by_mid - yv * by_amp)
+
+        for y_val, lbl_y in [(1.0, "+1"), (0.0, "0"), (-1.0, "-1")]:
+            _, yy = map_bot(0, y_val)
+            st_col = HAIRLINE if y_val != 0 else "#94a3b8"
+            el.append(f'<line x1="{px0}" y1="{yy:.1f}" x2="{px1}" y2="{yy:.1f}" stroke="{st_col}" stroke-width="1.0" stroke-dasharray="{"3 3" if y_val != 0 else "none"}"/>')
+            el.append(txt(px0 - 7, yy + 3.5, lbl_y, size=8.8, color=MUTED, anchor="end", cls="mono"))
+        el.append(f'<line x1="{px0}" y1="{by_mid - by_amp - 8:.1f}" x2="{px0}" y2="{by_mid + by_amp + 8:.1f}" stroke="#94a3b8" stroke-width="1.2"/>')
+
+        for idx_q, q_lbl in [(0, "0"), (1, "K"), (2, "2K"), (3, "3K"), (4, "4K")]:
+            xx, _ = map_bot(idx_q * K_trio, 0)
+            el.append(f'<line x1="{xx:.1f}" y1="{by_mid - by_amp}" x2="{xx:.1f}" y2="{by_mid + by_amp}" stroke="{HAIRLINE}" stroke-width="0.9" stroke-dasharray="2 3"/>')
+            el.append(txt(xx, by_mid + by_amp + 15, q_lbl, size=8.8, color=INK, anchor="middle", weight="600", cls="mono"))
+
+        pts_sn_t = [map_bot(u, s) for u, s, _, _ in sol_trio[::4]]
+        pts_cn_t = [map_bot(u, c) for u, _, c, _ in sol_trio[::4]]
+        pts_dn_t = [map_bot(u, d) for u, _, _, d in sol_trio[::4]]
+
+        el.append(f'<path d="{path_from_pts(pts_sn_t)}" fill="none" stroke="{BLUE}" stroke-width="2.3"/>')
+        el.append(f'<path d="{path_from_pts(pts_cn_t)}" fill="none" stroke="{ORANGE}" stroke-width="2.1" stroke-dasharray="6 3"/>')
+        el.append(f'<path d="{path_from_pts(pts_dn_t)}" fill="none" stroke="{GREEN}" stroke-width="2.3"/>')
+
+        # Legend & invariant footer inside Right Card
+        el.append(txt(400, 422, "蓝实线 sn(u) (周期4K)   橙虚线 cn(u) (周期4K)   绿实线 dn(u)>0 (周期2K)", size=8.9, color=INK, weight="600"))
+        el.append(txt(400, 439, "恒等式处处成立：sn²u + cn²u = 1，dn²u + k²·sn²u = 1（dn 谷底 √(1−k²)≈0.53）", size=8.8, color=MUTED))
+
+        svg = figure(
+            468,
+            "椭圆积分反演为雅可比椭圆函数：正圆与椭圆弧长对比及sn、cn、dn数值曲线",
+            "左图对比正圆弧长反演得sin u与椭圆、双纽线弧长引出的第一类椭圆积分反演；右图用四阶龙格库塔精确绘制模数k从0到1时sn(u,k)由正弦波向双曲正切孤立波的演化，以及k=0.85时sn、cn、dn在4K周期内的同台波形。",
+            el,
+            extra_defs=EXTRA_ARR,
+        )
+        write_svg(TOPIC, "ellipse-arc-to-jacobi-inversion.svg", svg)
+
+    # ------------------------------------------------------------------
+    # Figure 2: The 1827 Abel & Jacobi Sprint Timeline
+    # ------------------------------------------------------------------
+    def build_fig2_race_timeline():
+        el = []
+        el += header(
+            "数学史最悲壮也最璀璨的双星竞速：高斯秘藏、阿贝尔遗稿与雅可比破局",
+            "按史实严格区分“未发表手稿”“呈交遗失”与“正式刊印”：两个二十出头的年轻人在两年内掀翻四十年困局",
+        )
+
+        # Six structured milestone cards in a 3 x 2 connected grid
+        cards_meta = [
+            (
+                18, 72, PURPLE, PURPLE_SOFT, "#ddd6fe",
+                "① 1797–1799 哥廷根秘档",
+                "20 岁高斯私下破局却不发表",
+                [
+                    "• 算出双纽线 ∫dt/√(1−t⁴) 反函数",
+                    "  具有实虚双周期（正方形晶格）；",
+                    "• 1799.05.30 日记发现 π/ϖ = M(1,√2)",
+                    "  称“将开辟分析学全新天地”；",
+                    "• 恪守“少而精”，秘藏抽屉近三十年。",
+                ],
+            ),
+            (
+                262, 72, MUTED, SLATE_SOFT, BORDER,
+                "② 1786–1825 巴黎孤守",
+                "勒让德独自苦算椭圆积分 40 年",
+                [
+                    "• 将千奇百怪的椭圆积分化归为第一、",
+                    "  第二、第三类三大标准型；",
+                    "• 耗尽心血编印三大卷精密函数表；",
+                    "• 始终顺着积分硬啃而未想到掉头反",
+                    "  演，巨著出版后学界一度无人问津。",
+                ],
+            ),
+            (
+                506, 72, "#b91c1c", "#fef2f2", "#fecaca",
+                "③ 1826.10 巴黎冷遇与遗失",
+                "24 岁阿贝尔呈交不朽巨著被搁置",
+                [
+                    "• 游学巴黎每天只吃一顿饭，10 月向",
+                    "  法国科学院呈交《超越函数通论》；",
+                    "• 内含统摄任意代数曲线积分和的“阿",
+                    "  贝尔定理”及亏格 p 雏形；",
+                    "• 审稿人柯西随手塞进文件堆遗失！",
+                ],
+            ),
+            (
+                18, 258, BLUE, BLUE_SOFT, "#bfdbfe",
+                "④ 1827.09 双星同月破晓",
+                "《克列尔》与《天文通讯》同时炸响",
+                [
+                    "• 9 月 20 日《克列尔》第 2 卷刊出阿",
+                    "  贝尔《椭圆函数研究》，系统给出反",
+                    "  演、加法定理与复平面双周期性！",
+                    "• 同月 22 岁雅可比在《天文通讯》宣",
+                    "  布高次变换公式，巅峰竞速正式打响！",
+                ],
+            ),
+            (
+                262, 258, ORANGE, ORANGE_SOFT, "#fed7aa",
+                "⑤ 1828–1829 冰雪绝唱",
+                "隔空过招、《新基础》与迟到聘书",
+                [
+                    "• 两人轮番发文推高理论，76 岁勒让",
+                    "  德盛赞：“你们跻身当代头号分析家！”",
+                    "• 1829 雅可比出版《椭圆函数理论新",
+                    "  基础》，引入四个极快收敛 θ 函数；",
+                    "• 1829.04.06 阿贝尔 26 岁病逝，克列",
+                    "  尔寄出的柏林教授聘书迟到了两天。",
+                ],
+            ),
+            (
+                506, 258, GREEN, GREEN_SOFT, "#bbf7d0",
+                "⑥ 1830–1862 薪火大一统",
+                "追授巴黎大奖、遗稿重现与复环面",
+                [
+                    "• 1830 巴黎科学院将数学大奖共同授",
+                    "  予已故阿贝尔与雅可比；同年找回遗",
+                    "  稿（竟拖到 1841 年才正式印出）；",
+                    "• 1834 雅可比证双周期比值必非实数；",
+                    "• 1854–1862 魏尔斯特拉斯与黎曼用",
+                    "  ℘(z) 与复环面完成几何代数大统一！",
+                ],
+            ),
+        ]
+
+        for x0, y0, col_fg, col_bg, col_bd, tag_s, sub_s, lines in cards_meta:
+            ch_card = 182 if y0 > 200 else 168
+            el.append(card(x0, y0, 236, ch_card, rx=10, fill=CARD_BG, stroke=col_bd))
+            el.append(badge(x0 + 12, y0 + 10, tag_s, fill=col_bg, fg=col_fg, w=186, h=22, size=10.0))
+            el.append(txt(x0 + 12, y0 + 48, sub_s, size=10.2, color=INK, weight="700"))
+            yy = y0 + 68
+            for ln in lines:
+                el.append(txt(x0 + 12, yy, ln, size=9.0, color=BODY))
+                yy += 17.5
+
+        # Connecting arrows between timeline cards
+        el.append(f'<line x1="254" y1="156" x2="261" y2="156" stroke="{INK}" stroke-width="1.8" marker-end="url(#arr-ink)"/>')
+        el.append(f'<line x1="498" y1="156" x2="505" y2="156" stroke="{INK}" stroke-width="1.8" marker-end="url(#arr-ink)"/>')
+        el.append(f'<path d="M 624 240 L 624 249 L 136 249 L 136 256" fill="none" stroke="{BLUE}" stroke-width="1.8" marker-end="url(#arr-blue)"/>')
+        el.append(f'<line x1="254" y1="349" x2="261" y2="349" stroke="{ORANGE}" stroke-width="1.8" marker-end="url(#arr-orange)"/>')
+        el.append(f'<line x1="498" y1="349" x2="505" y2="349" stroke="{GREEN}" stroke-width="1.8" marker-end="url(#arr-green)"/>')
+
+        svg = figure(
+            458,
+            "椭圆函数与阿贝尔雅可比双星竞速六幕历史时间轴（1797-1862）",
+            "六张分步卡片依次展示1797-1799高斯未发表双纽线日记、1786-1825勒让德四十年积分分类、1826阿贝尔巴黎遗失手稿、1827年9月阿贝尔与雅可比同月破局、1829新基础专著与阿贝尔26岁早逝及迟到两天的柏林聘书、1830巴黎大奖与魏尔斯特拉斯复环面统一。",
+            el,
+            extra_defs=EXTRA_ARR,
+        )
+        write_svg(TOPIC, "abel-jacobi-1827-race-timeline.svg", svg)
+
+    # ------------------------------------------------------------------
+    # Figure 3: Doubly Periodic Complex Lattice -> Complex Torus -> Cubic Curve
+    # ------------------------------------------------------------------
+    def build_fig3_lattice_to_torus():
+        el = []
+        el += header(
+            "为什么明明不是椭圆，却叫“椭圆曲线”？从双周期晶格到甜甜圈变形记",
+            "闯进复平面 C 后涌现两个独立周期 ω₁, ω₂；把基本平行四边形对边黏成复环面，经 ℘(z) 投射恰为三次曲线！",
+        )
+
+        # Left card: Doubly periodic lattice Lambda = Z*w1 + Z*w2 in C
+        el.append(card(18, 66, 352, 392))
+        el.append(badge(32, 78, "① 复平面双周期晶格 Λ = Zω₁ + Zω₂", fill=BLUE_SOFT, fg=BLUE, w=242, h=22, size=10.5))
+        el.append(txt(32, 114, "sin z 只有实轴 1 个周期 2π；椭圆函数沿实、虚两向平铺：", size=9.3, color=MUTED))
+
+        # Skewed lattice origin & basis vectors (SVG y downwards, so w2 has negative dy -> Im(w2/w1) > 0)
+        ox, oy = 68.0, 272.0
+        w1x, w1y = 78.0, 0.0
+        w2x, w2y = 26.0, -56.0
+        # Check Jacobi's 1834 condition Im(w2 / w1) != 0 (in math coords w2 = (26, +56))
+        im_tau = 56.0 / 78.0
+        assert im_tau > 0.5
+
+        # Draw 3 x 2 tiled parallelograms
+        for m_i in range(0, 3):
+            for n_j in range(-1, 2):
+                p00 = (ox + m_i * w1x + n_j * w2x, oy + m_i * w1y + n_j * w2y)
+                p10 = (p00[0] + w1x, p00[1] + w1y)
+                p11 = (p00[0] + w1x + w2x, p00[1] + w1y + w2y)
+                p01 = (p00[0] + w2x, p00[1] + w2y)
+                is_fund = (m_i == 1 and n_j == 0)
+                fill_c = "#dbeafe" if is_fund else "#f8fafc"
+                st_c = BLUE if is_fund else "#cbd5e1"
+                sw = "2.2" if is_fund else "1.0"
+                el.append(f'<polygon points="{poly_str([p00, p10, p11, p01])}" fill="{fill_c}" stroke="{st_c}" stroke-width="{sw}"/>')
+
+        # Highlight Fundamental Parallelogram P0 (at m_i=1, n_j=0) gluing arrows!
+        f00 = (ox + w1x, oy)
+        f10 = (ox + 2 * w1x, oy)
+        f01 = (ox + w1x + w2x, oy + w2y)
+        f11 = (ox + 2 * w1x + w2x, oy + w2y)
+        # Bottom & top orange arrows (gluing side a along w1)
+        el.append(f'<line x1="{f00[0]:.1f}" y1="{f00[1]:.1f}" x2="{f10[0] - 4:.1f}" y2="{f10[1]:.1f}" stroke="{ORANGE}" stroke-width="2.6" marker-end="url(#arr-orange)"/>')
+        el.append(f'<line x1="{f01[0]:.1f}" y1="{f01[1]:.1f}" x2="{f11[0] - 4:.1f}" y2="{f11[1]:.1f}" stroke="{ORANGE}" stroke-width="2.6" marker-end="url(#arr-orange)"/>')
+        # Left & right blue arrows (gluing side b along w2)
+        el.append(f'<line x1="{f00[0]:.1f}" y1="{f00[1]:.1f}" x2="{f01[0] - 1:.1f}" y2="{f01[1] + 3:.1f}" stroke="{BLUE}" stroke-width="2.6" marker-end="url(#arr-blue)"/>')
+        el.append(f'<line x1="{f10[0]:.1f}" y1="{f10[1]:.1f}" x2="{f11[0] - 1:.1f}" y2="{f11[1] + 3:.1f}" stroke="{BLUE}" stroke-width="2.6" marker-end="url(#arr-blue)"/>')
+
+        # Mark lattice poles (red crosses at vertices) & shifted congruent points z, z+w1, z+w2
+        for m_i in range(0, 4):
+            for n_j in range(-1, 3):
+                vx = ox + m_i * w1x + n_j * w2x
+                vy = oy + m_i * w1y + n_j * w2y
+                if 38 <= vx <= 346 and 136 <= vy <= 340:
+                    el.append(f'<circle cx="{vx:.1f}" cy="{vy:.1f}" r="3.4" fill="#dc2626" stroke="#ffffff" stroke-width="1.0"/>')
+                # Repeating interior sample point z + m*w1 + n*w2
+                zx, zy = vx + 0.42 * w1x + 0.45 * w2x, vy + 0.42 * w1y + 0.45 * w2y
+                if 48 <= zx <= 336 and 146 <= zy <= 330 and m_i < 3 and n_j < 2:
+                    el.append(f'<circle cx="{zx:.1f}" cy="{zy:.1f}" r="2.8" fill="{GREEN}"/>')
+
+        el.append(txt(f00[0] + 46, f00[1] - 24, "基本胞腔 P₀", size=9.6, color=BLUE, anchor="middle", weight="700"))
+        el.append(txt(f00[0] + 39, f00[1] + 15, "+ω₁ (橙边黏合)", size=8.8, color=ORANGE, anchor="middle", weight="700"))
+        el.append(txt(f00[0] - 6, f00[1] - 30, "+ω₂", size=9.0, color=BLUE, anchor="end", weight="700"))
+        el.append(txt(42, 145, "Im(z)", size=9.0, color=MUTED, weight="700", cls="mono"))
+        el.append(txt(334, 342, "Re(z)", size=9.0, color=MUTED, anchor="end", weight="700", cls="mono"))
+
+        # Liouville's 3 laws summary box
+        el.append(card(32, 352, 324, 94, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        el.append(txt(44, 371, "刘维尔椭圆函数铁律（为什么全纯双周期必为常数？）：", size=9.6, color=INK, weight="700"))
+        el.append(txt(44, 390, "• 若处处无极点，闭合有界胞腔 P₀ 锁死最大值 ⇒ 全平面有界必常数！", size=9.0, color=BODY))
+        el.append(txt(44, 408, "• 留数和为 0 ⇒ 不可能有单极点！最简选择：魏尔斯特拉斯 ℘(z) 在格", size=9.0, color=BODY))
+        el.append(txt(44, 426, "  点放 1 个二阶极点（红点 ●），绿点 z 与 z+ω₁, z+ω₂ 函数值全相等。", size=9.0, color=GREEN, weight="600"))
+
+        # Right card: Complex Torus C/Lambda -> Weierstrass Cubic y^2 = 4x^3 - g2 x - g3
+        el.append(card(386, 66, 356, 392))
+        el.append(badge(400, 78, "② 对边黏成复环面 C/Λ ──▶ 投射成三次代数曲线", fill=PURPLE_SOFT, fg=PURPLE, w=306, h=22, size=10.5))
+
+        # Top-right: Projected 3D Torus (R=56, r=22, tilt=54 deg) centered at (516, 168)
+        tcx, tcy = 496.0, 168.0
+        R_tor, r_tor = 54.0, 21.0
+        tilt = math.radians(56.0)
+        ct, st = math.cos(tilt), math.sin(tilt)
+
+        def torus_pt(u_ang, v_ang):
+            x3 = (R_tor + r_tor * math.cos(v_ang)) * math.cos(u_ang)
+            y3 = (R_tor + r_tor * math.cos(v_ang)) * math.sin(u_ang)
+            z3 = r_tor * math.sin(v_ang)
+            sx = tcx + x3
+            sy = tcy - (y3 * ct + z3 * st)
+            return sx, sy
+
+        # Outer & inner silhouettes + subtle wireframe rings
+        outer_ring = [torus_pt(2 * math.pi * i / 90, 0.0) for i in range(91)]
+        el.append(f'<path d="{path_from_pts(outer_ring, close=True)}" fill="{PURPLE_SOFT}" stroke="{PURPLE}" stroke-width="1.8"/>')
+        # Inner hole ellipse approximation
+        hole_pts = [torus_pt(2 * math.pi * i / 72, math.pi) for i in range(73)]
+        el.append(f'<ellipse cx="{tcx}" cy="{tcy}" rx="{R_tor - r_tor:.1f}" ry="{(R_tor - r_tor) * ct:.1f}" fill="#ffffff" stroke="{PURPLE}" stroke-width="1.5"/>')
+        # Smile arc around hole to give crisp 3D donut look
+        smile_pts = [(tcx + (R_tor - r_tor + 7) * math.cos(t), tcy + (R_tor - r_tor) * ct * math.sin(t) - 2) for t in [math.pi * (0.12 + 0.76 * i / 36) for i in range(37)]]
+        el.append(f'<path d="{path_from_pts(smile_pts)}" fill="none" stroke="{PURPLE}" stroke-width="1.5"/>')
+
+        # Orange longitudinal cycle (omega_1) and Blue meridian cycle (omega_2)
+        loop_w1 = [torus_pt(2 * math.pi * i / 80, -0.55) for i in range(81)]
+        el.append(f'<path d="{path_from_pts(loop_w1, close=True)}" fill="none" stroke="{ORANGE}" stroke-width="2.3"/>')
+        loop_w2_front = [torus_pt(-1.15, -math.pi * 0.55 + math.pi * 1.15 * i / 36) for i in range(37)]
+        loop_w2_back = [torus_pt(-1.15, math.pi * 0.60 + math.pi * 0.85 * i / 28) for i in range(29)]
+        el.append(f'<path d="{path_from_pts(loop_w2_back)}" fill="none" stroke="{BLUE}" stroke-width="1.5" stroke-dasharray="3 3"/>')
+        el.append(f'<path d="{path_from_pts(loop_w2_front)}" fill="none" stroke="{BLUE}" stroke-width="2.4"/>')
+
+        # Origin point z=0 on torus (mapped to point at infinity O)
+        z0_x, z0_y = torus_pt(-1.15, -0.55)
+        el.append(f'<circle cx="{z0_x:.1f}" cy="{z0_y:.1f}" r="4.5" fill="#dc2626" stroke="#ffffff" stroke-width="1.3"/>')
+        el.append(txt(tcx, 224, "复环面 C/Λ（亏格 g=1 甜甜圈）", size=9.4, color=PURPLE, anchor="middle", weight="700"))
+        el.append(txt(590, 142, "橙圈：ω₁ 周期", size=9.0, color=ORANGE, weight="700"))
+        el.append(txt(590, 162, "蓝圈：ω₂ 周期", size=9.0, color=BLUE, weight="700"))
+        el.append(txt(590, 182, "红点 0 ↦ 无穷远点 O", size=9.0, color="#dc2626", weight="700"))
+
+        # Mapping arrow downwards from Torus to Cubic Curve
+        el.append(f'<line x1="496" y1="232" x2="496" y2="258" stroke="{PURPLE}" stroke-width="2.2" marker-end="url(#arr-purple)"/>')
+        el.append(txt(508, 249, "Φ(z) = ( x=℘(z), y=℘'(z) ) 同构投射", size=9.2, color=PURPLE, weight="700"))
+
+        # Bottom-right: Smooth cubic curve y^2 = x^3 - 2x + 1.5 + explanation
+        cx0, cy0 = 458.0, 346.0
+        scx, scy = 24.5, 16.0
+        # Plot y^2 = x^3 - 2x + 1.5 (root near x0 = -1.69562)
+        # Find exact root via bisection
+        lo, hi = -2.0, -1.5
+        for _ in range(50):
+            mid = 0.5 * (lo + hi)
+            if mid ** 3 - 2 * mid + 1.5 > 0:
+                hi = mid
+            else:
+                lo = mid
+        x_root = 0.5 * (lo + hi)
+        upper_c, lower_c = [], []
+        for i in range(91):
+            xv = x_root + (2.35 - x_root) * (i / 90.0) ** 1.5
+            yv = math.sqrt(max(0.0, xv ** 3 - 2.0 * xv + 1.5))
+            upper_c.append((cx0 + xv * scx, cy0 - yv * scy))
+            lower_c.append((cx0 + xv * scx, cy0 + yv * scy))
+        cubic_pts = list(reversed(lower_c)) + upper_c[1:]
+        el.append(f'<line x1="400" y1="{cy0}" x2="526" y2="{cy0}" stroke="#94a3b8" stroke-width="1.1"/>')
+        el.append(f'<line x1="{cx0}" y1="274" x2="{cx0}" y2="418" stroke="#94a3b8" stroke-width="1.1"/>')
+        el.append(f'<path d="{path_from_pts(cubic_pts)}" fill="none" stroke="{GREEN}" stroke-width="2.6"/>')
+        el.append(txt(464, 434, "光滑三次曲线 y² = x³+ax+b", size=9.0, color=GREEN, anchor="middle", weight="700"))
+
+        # Explanation card beside the cubic curve
+        el.append(card(536, 268, 194, 178, rx=8, fill=GREEN_SOFT, stroke="#bbf7d0"))
+        el.append(txt(547, 288, "命名冤案彻底破案：", size=9.8, color=GREEN, weight="700"))
+        el.append(txt(547, 308, "1. ℘ 含 z⁻²，导数 ℘' 含 −2z⁻³；", size=8.9, color=BODY))
+        el.append(txt(547, 326, "   配成 (℘')² − 4℘³ 刚好抵消", size=8.9, color=BODY))
+        el.append(txt(547, 344, "   6 阶主极点！", size=8.9, color=GREEN, weight="700"))
+        el.append(txt(547, 364, "2. 化简即得三次代数曲线方程：", size=8.9, color=BODY))
+        el.append(txt(547, 382, "   y² = 4x³ − g₂x − g₃；", size=9.1, color=INK, weight="700", cls="mono"))
+        el.append(txt(547, 402, "3. 它是椭圆函数复环面的真身，", size=8.9, color=BODY))
+        el.append(txt(547, 420, "   绝不是压扁的椭圆！", size=8.9, color=PURPLE, weight="700"))
+
+        svg = figure(
+            474,
+            "椭圆函数双周期晶格黏合为复环面并经魏尔斯特拉斯函数同构映射为三次椭圆曲线",
+            "左图展示复平面双周期平行四边形晶格Λ=Zω₁+Zω₂、基本胞腔对边黏合箭头与二阶极点分布；右图展示黏合后的亏格1复环面（甜甜圈）经Φ(z)=(℘(z),℘'(z))映射为光滑三次曲线y²=4x³-g₂x-g₃的过程，解释椭圆曲线得名的真正原因。",
+            el,
+            extra_defs=EXTRA_ARR,
+        )
+        write_svg(TOPIC, "double-period-lattice-to-torus.svg", svg)
+
+    # ------------------------------------------------------------------
+    # Figure 4: Chord-and-Tangent Group Law Animation on E: y^2 = x^3 - 7x + 10
+    # ------------------------------------------------------------------
+    def build_fig4_group_law_anim():
+        # Exact integer curve E: y^2 = x^3 - 7x + 10
+        # Verify discriminant Delta = -16*(4*(-7)^3 + 27*10^2) = -16*(-1372 + 2700) = -21248 != 0
+        a_c, b_c = -7, 10
+        disc = -16 * (4 * (a_c ** 3) + 27 * (b_c ** 2))
+        assert disc == -21248
+
+        # Exact integer Chord Addition: P = (-3, -2), Q = (1, 2) -> s = 1 -> R' = (3, 4) -> P+Q = (3, -4)
+        P = (-3.0, -2.0)
+        Q = (1.0, 2.0)
+        assert P[1] ** 2 == P[0] ** 3 + a_c * P[0] + b_c
+        assert Q[1] ** 2 == Q[0] ** 3 + a_c * Q[0] + b_c
+        s_pq = (Q[1] - P[1]) / (Q[0] - P[0])
+        assert s_pq == 1.0
+        x_Rp = s_pq ** 2 - P[0] - Q[0]
+        y_Rp = P[1] + s_pq * (x_Rp - P[0])
+        Rp = (x_Rp, y_Rp)
+        R_sum = (x_Rp, -y_Rp)
+        assert Rp == (3.0, 4.0) and R_sum == (3.0, -4.0)
+        assert R_sum[1] ** 2 == R_sum[0] ** 3 + a_c * R_sum[0] + b_c
+
+        # Exact integer Tangent Doubling at Q = (1, 2): s_tan = (3*1^2 - 7)/(2*2) = -1 -> D' = (-1, 4) -> 2Q = (-1, -4)
+        s_tan = (3.0 * Q[0] ** 2 + a_c) / (2.0 * Q[1])
+        assert s_tan == -1.0
+        x_Dp = s_tan ** 2 - 2.0 * Q[0]
+        y_Dp = Q[1] + s_tan * (x_Dp - Q[0])
+        Dp = (x_Dp, y_Dp)
+        Q2 = (x_Dp, -y_Dp)
+        assert Dp == (-1.0, 4.0) and Q2 == (-1.0, -4.0)
+        assert Q2[1] ** 2 == Q2[0] ** 3 + a_c * Q2[0] + b_c
+
+        # Find exact real root of x^3 - 7x + 10 = 0 near -3.4920
+        lo, hi = -3.6, -3.4
+        for _ in range(60):
+            mid = 0.5 * (lo + hi)
+            if mid ** 3 - 7.0 * mid + 10.0 > 0:
+                hi = mid
+            else:
+                lo = mid
+        x_r0 = 0.5 * (lo + hi)
+
+        ox, oy = 228.0, 266.0
+        sx_u, sy_u = 46.0, 31.0
+
+        def mp(xv, yv):
+            return (ox + xv * sx_u, oy - yv * sy_u)
+
+        # Sample smooth curve E on [x_r0, 3.42]
+        up_pts, lo_pts = [], []
+        for i in range(131):
+            xv = x_r0 + (3.42 - x_r0) * (i / 130.0) ** 1.4
+            yv = math.sqrt(max(0.0, xv ** 3 - 7.0 * xv + 10.0))
+            up_pts.append(mp(xv, yv))
+            lo_pts.append(mp(xv, -yv))
+        curve_full = list(reversed(lo_pts)) + up_pts[1:]
+
+        p_svg = mp(*P)
+        q_svg = mp(*Q)
+        rp_svg = mp(*Rp)
+        rsum_svg = mp(*R_sum)
+        dp_svg = mp(*Dp)
+        q2_svg = mp(*Q2)
+
+        # Extended chord line from x=-3.65 to x=3.45
+        ch_start = mp(-3.65, -3.65 + 1.0)
+        ch_end = mp(3.45, 3.45 + 1.0)
+        chord_len = math.hypot(rp_svg[0] - p_svg[0], rp_svg[1] - p_svg[1])
+        flip_len = abs(rsum_svg[1] - rp_svg[1])
+
+        # Extended tangent line at Q(1,2): y = -x + 3 from x=-1.55 to x=2.55
+        tan_start = mp(-1.55, 1.55 + 3.0)
+        tan_end = mp(2.55, -2.55 + 3.0)
+
+        anim_css = f"""
+    .ec-ray {{
+      stroke-dasharray: {chord_len:.1f};
+      stroke-dashoffset: {chord_len:.1f};
+      animation: ecDrawChord 2.6s ease-out 0.3s 1 forwards;
+    }}
+    .ec-flip {{
+      stroke-dasharray: {flip_len:.1f};
+      stroke-dashoffset: {flip_len:.1f};
+      animation: ecDrawFlip 1.6s ease-out 2.9s 1 forwards;
+    }}
+    .ec-pulse {{
+      opacity: 0.25;
+      animation: ecShowSum 0.9s ease-out 4.4s 1 forwards;
+    }}
+    @keyframes ecDrawChord {{
+      to {{ stroke-dashoffset: 0; }}
+    }}
+    @keyframes ecDrawFlip {{
+      to {{ stroke-dashoffset: 0; }}
+    }}
+    @keyframes ecShowSum {{
+      to {{ opacity: 1; }}
+    }}
+    @media (prefers-reduced-motion: reduce) {{
+      .ec-ray, .ec-flip {{ animation: none !important; stroke-dashoffset: 0 !important; }}
+      .ec-pulse {{ animation: none !important; opacity: 1 !important; }}
+    }}"""
+
+        el = []
+        el += header(
+            "椭圆曲线上的“弦切加法”：连线找第三交点再翻折，凭什么构成完美阿贝尔群？",
+            "实算整数模型 E : y² = x³ − 7x + 10（Δ = −21248 ≠ 0）：全部坐标与斜率均为小整数，可口算核对每一步",
+        )
+
+        # Left card: Main geometric chord & tangent diagram
+        el.append(card(18, 66, 418, 404))
+        el.append(badge(30, 78, "① 割线相加 P+Q 与切线倍点 2Q（单次动画 + 静态全貌）", fill=BLUE_SOFT, fg=BLUE, w=342, h=22, size=10.2))
+
+        # Grid & coordinate axes
+        for gx in range(-3, 4):
+            xx, _ = mp(gx, 0)
+            el.append(f'<line x1="{xx:.1f}" y1="112" x2="{xx:.1f}" y2="424" stroke="{HAIRLINE}" stroke-width="0.8" stroke-dasharray="2 3"/>')
+            if gx != 0:
+                el.append(txt(xx, oy + 14, str(gx), size=8.4, color=MUTED, anchor="middle", cls="mono"))
+        for gy in [-4, -2, 2, 4]:
+            _, yy = mp(0, gy)
+            el.append(f'<line x1="44" y1="{yy:.1f}" x2="404" y2="{yy:.1f}" stroke="{HAIRLINE}" stroke-width="0.8" stroke-dasharray="2 3"/>')
+            el.append(txt(ox - 6, yy + 3, str(gy), size=8.4, color=MUTED, anchor="end", cls="mono"))
+
+        el.append(f'<line x1="40" y1="{oy:.1f}" x2="412" y2="{oy:.1f}" stroke="#64748b" stroke-width="1.3" marker-end="url(#arr-ink)"/>')
+        el.append(f'<line x1="{ox:.1f}" y1="428" x2="{ox:.1f}" y2="108" stroke="#64748b" stroke-width="1.3" marker-end="url(#arr-ink)"/>')
+        el.append(txt(412, oy - 6, "x", size=9.2, color=INK, anchor="end", weight="700", cls="mono"))
+        el.append(txt(ox + 8, 115, "y", size=9.2, color=INK, weight="700", cls="mono"))
+
+        # Smooth curve E
+        el.append(f'<path d="{path_from_pts(curve_full)}" fill="none" stroke="{GREEN}" stroke-width="2.7"/>')
+
+        # Secondary static guide: Tangent doubling at Q(1,2) -> D'(-1,4) -> 2Q(-1,-4)
+        el.append(f'<line x1="{tan_start[0]:.1f}" y1="{tan_start[1]:.1f}" x2="{tan_end[0]:.1f}" y2="{tan_end[1]:.1f}" stroke="{PURPLE}" stroke-width="1.5" stroke-dasharray="5 3"/>')
+        el.append(f'<line x1="{dp_svg[0]:.1f}" y1="{dp_svg[1]:.1f}" x2="{q2_svg[0]:.1f}" y2="{q2_svg[1]:.1f}" stroke="{PURPLE}" stroke-width="1.4" stroke-dasharray="3 3"/>')
+
+        # Primary static base + animated highlight for Chord Addition P(-3,-2) + Q(1,2) -> R'(3,4) -> P+Q(3,-4)
+        el.append(f'<line x1="{ch_start[0]:.1f}" y1="{ch_start[1]:.1f}" x2="{ch_end[0]:.1f}" y2="{ch_end[1]:.1f}" stroke="#93c5fd" stroke-width="1.6"/>')
+        el.append(f'<line class="ec-ray" x1="{p_svg[0]:.1f}" y1="{p_svg[1]:.1f}" x2="{rp_svg[0]:.1f}" y2="{rp_svg[1]:.1f}" stroke="{BLUE}" stroke-width="2.9"/>')
+        el.append(f'<line x1="{rp_svg[0]:.1f}" y1="{rp_svg[1]:.1f}" x2="{rsum_svg[0]:.1f}" y2="{rsum_svg[1]:.1f}" stroke="#fed7aa" stroke-width="1.6" stroke-dasharray="4 3"/>')
+        el.append(f'<line class="ec-flip" x1="{rp_svg[0]:.1f}" y1="{rp_svg[1]:.1f}" x2="{rsum_svg[0]:.1f}" y2="{rsum_svg[1] - 5:.1f}" stroke="{ORANGE}" stroke-width="2.6" marker-end="url(#arr-orange)"/>')
+
+        # Plot key integer points and crisp haloed non-overlapping labels
+        pts_annot = [
+            (p_svg, BLUE, "P(-3, -2)", 10, 16, "start"),
+            (q_svg, BLUE, "Q(1, 2)", 10, 14, "start"),
+            (rp_svg, "#475569", "R'(3, 4)", -9, -8, "end"),
+            (dp_svg, PURPLE, "D'(-1, 4)", -9, -8, "end"),
+            (q2_svg, PURPLE, "2Q(-1, -4)", -9, 15, "end"),
+        ]
+        for (px, py), col_p, lbl_p, dx_l, dy_l, anc_l in pts_annot:
+            el.append(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="4.3" fill="{col_p}" stroke="#ffffff" stroke-width="1.3"/>')
+            el.append(txt(px + dx_l, py + dy_l, lbl_p, size=9.1, color=col_p, anchor=anc_l, weight="700", halo=True, cls="mono"))
+
+        # Result point P+Q(3,-4) with gentle final pulse highlight
+        el.append(f'<circle class="ec-pulse" cx="{rsum_svg[0]:.1f}" cy="{rsum_svg[1]:.1f}" r="8.5" fill="{ORANGE_SOFT}" stroke="{ORANGE}" stroke-width="1.5"/>')
+        el.append(f'<circle cx="{rsum_svg[0]:.1f}" cy="{rsum_svg[1]:.1f}" r="4.8" fill="{ORANGE}" stroke="#ffffff" stroke-width="1.3"/>')
+        el.append(txt(rsum_svg[0] - 11, rsum_svg[1] + 4, "P+Q = (3, -4)", size=9.5, color=ORANGE, anchor="end", weight="700", halo=True, cls="mono"))
+
+        # Bottom two-line note inside Left Card (fits cleanly inside w=418)
+        el.append(txt(30, 443, "• 蓝实线（割线相加）：过 P, Q 连 y=x+1 交 R'(3,4)，沿 x 轴翻折得 P+Q=(3,-4)", size=8.5, color=BODY))
+        el.append(txt(30, 459, "• 紫虚线（切线倍点）：过 Q 作切线 y=−x+3 交 D'(-1,4)，翻折得 2Q=(-1,-4)", size=8.5, color=MUTED))
+
+        # Right card: Torus secret of Associativity + Singular Delta=0 counterexamples
+        el.append(card(450, 66, 292, 404))
+        el.append(badge(464, 78, "② 两大灵魂追问：为什么要翻折？结合律怎证？", fill=ORANGE_SOFT, fg=ORANGE, w=264, h=22, size=10.0))
+
+        el.append(card(464, 108, 264, 182, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        el.append(txt(476, 127, "复环面视角一秒看穿（免去 50 行死算！）：", size=9.6, color=INK, weight="700"))
+        el.append(txt(476, 146, "1. 直线 y = sx + d 代入 (℘(z), ℘'(z))，在格点", size=8.9, color=BODY))
+        el.append(txt(476, 163, "   0 处有 3 阶极点，故三交点参数必满足：", size=8.9, color=BODY))
+        el.append(txt(596, 183, "z_P + z_Q + z_R' ≡ 0 (mod Λ)", size=9.3, color=BLUE, anchor="middle", weight="700", cls="mono"))
+        el.append(txt(476, 203, "2. 所以第三交点 R' 对应的是 −(z_P + z_Q)！", size=8.9, color=ORANGE, weight="700"))
+        el.append(txt(476, 221, "   因 ℘(-z)=℘(z) 偶、℘'(-z)=-℘'(z) 奇，", size=8.9, color=BODY))
+        el.append(txt(476, 239, "   沿 x 轴上下翻折变号，恰好还原 z_P + z_Q！", size=8.9, color=ORANGE, weight="700"))
+        el.append(txt(476, 259, "3. 环面上普通复数加法天然满足结合律，故", size=8.9, color=BODY))
+        el.append(txt(476, 276, "   (P+Q)+S = P+(Q+S) 不证自明（零元为 O）！", size=8.9, color=GREEN, weight="700"))
+
+        # Bottom sub-box: Forbidden Delta = 0 singular curves (Cusp & Node)
+        el.append(card(464, 298, 264, 158, rx=8, fill="#fef2f2", stroke="#fecaca"))
+        el.append(txt(476, 318, "红线禁区：为什么必须要求判别式 Δ ≠ 0？", size=9.6, color="#b91c1c", weight="700"))
+        el.append(txt(476, 336, "一旦 4a³ + 27b² = 0，曲线出现奇点，群律崩塌：", size=8.9, color=BODY))
+
+        # Mini plot 1: Cusp y^2 = x^3 around (528, 392)
+        c1x, c1y = 514.0, 390.0
+        cusp_up = [(c1x + (t ** 2) * 24.0, c1y - (t ** 3) * 20.0) for t in [i / 20.0 for i in range(26)]]
+        cusp_lo = [(c1x + (t ** 2) * 24.0, c1y + (t ** 3) * 20.0) for t in [i / 20.0 for i in range(26)]]
+        el.append(f'<line x1="484" y1="{c1y}" x2="568" y2="{c1y}" stroke="#cbd5e1" stroke-width="1.0"/>')
+        el.append(f'<path d="{path_from_pts(list(reversed(cusp_lo)) + cusp_up[1:])}" fill="none" stroke="#dc2626" stroke-width="2.1"/>')
+        el.append(f'<circle cx="{c1x}" cy="{c1y}" r="3.5" fill="#dc2626"/>')
+        el.append(txt(526, 434, "尖点 y² = x³", size=8.8, color="#b91c1c", anchor="middle", weight="700", cls="mono"))
+        el.append(txt(526, 448, "(0,0) 切线退化", size=8.3, color=MUTED, anchor="middle"))
+
+        # Mini plot 2: Self-intersecting node y^2 = (x-1)^2 (x+2) -> x(t)=t^2-2, y(t)=t(t^2-3) around (654, 390)
+        c2x, c2y = 656.0, 390.0
+        node_pts = []
+        for i in range(-28, 29):
+            tv = i * 2.05 / 28.0
+            xv = tv * tv - 2.0
+            yv = tv * (tv * tv - 3.0)
+            node_pts.append((c2x + xv * 14.0, c2y - yv * 9.5))
+        el.append(f'<line x1="612" y1="{c2y}" x2="712" y2="{c2y}" stroke="#cbd5e1" stroke-width="1.0"/>')
+        el.append(f'<path d="{path_from_pts(node_pts)}" fill="none" stroke="#dc2626" stroke-width="2.1"/>')
+        nx_s = c2x + 1.0 * 14.0
+        el.append(f'<circle cx="{nx_s:.1f}" cy="{c2y}" r="3.5" fill="#dc2626"/>')
+        el.append(txt(662, 434, "自交结点 Δ=0", size=8.8, color="#b91c1c", anchor="middle", weight="700"))
+        el.append(txt(662, 448, "两条切线打架", size=8.3, color=MUTED, anchor="middle"))
+
+        svg = figure(
+            484,
+            "椭圆曲线y²=x³-7x+10上的弦切加法动画、复环面结合律证明与奇异三次曲线反例",
+            "左图在精确光滑曲线y²=x³-7x+10上演绎P(-3,-2)与Q(1,2)连线交R'(3,4)后沿x轴翻折得P+Q=(3,-4)及切线倍点2Q=(-1,-4)的单次动画；右图用复环面z_P+z_Q+z_R'≡0解释翻折与结合律，并给出Δ=0尖点与自交结点两个退化反例。",
+            el,
+            extra_css=anim_css,
+            extra_defs=EXTRA_ARR,
+        )
+        write_svg(TOPIC, "chord-and-tangent-group-law-anim.svg", svg)
+
+    # ------------------------------------------------------------------
+    # Figure 5: Modern Twin Titans — Finite-Field ECC & Fermat's Last Theorem
+    # ------------------------------------------------------------------
+    def build_fig5_ecc_and_fermat():
+        # Exact calculation on E(F_17): y^2 = x^3 + 2x + 2 (mod 17)
+        p_mod = 17
+        a_f, b_f = 2, 2
+        assert (4 * (a_f ** 3) + 27 * (b_f ** 2)) % p_mod != 0
+
+        f17_pts = []
+        for x in range(p_mod):
+            rhs = (x ** 3 + a_f * x + b_f) % p_mod
+            for y in range(p_mod):
+                if (y * y) % p_mod == rhs:
+                    f17_pts.append((x, y))
+        # Plus point at infinity O -> total 19 points (prime cyclic group!)
+        assert len(f17_pts) == 18
+
+        def ec_add_mod(P1, P2):
+            if P1 is None:
+                return P2
+            if P2 is None:
+                return P1
+            x1, y1 = P1
+            x2, y2 = P2
+            if x1 == x2 and (y1 + y2) % p_mod == 0:
+                return None
+            if P1 == P2:
+                lam = ((3 * x1 * x1 + a_f) * pow(2 * y1, -1, p_mod)) % p_mod
+            else:
+                lam = ((y2 - y1) * pow(x2 - x1, -1, p_mod)) % p_mod
+            x3 = (lam * lam - x1 - x2) % p_mod
+            y3 = (lam * (x1 - x3) - y1) % p_mod
+            return (x3, y3)
+
+        G = (5, 1)
+        assert G in f17_pts
+        multiples = {}
+        cur = None
+        for k in range(1, 20):
+            cur = ec_add_mod(cur, G)
+            multiples[k] = cur
+        assert multiples[1] == (5, 1)
+        assert multiples[2] == (6, 3)
+        assert multiples[3] == (10, 6)
+        assert multiples[7] == (0, 6)
+        assert multiples[19] is None  # Exact prime order n = 19!
+
+        el = []
+        el += header(
+            "从终结 358 年费马大定理到守护每一次手机支付：椭圆曲线的两大现代王炸",
+            "把连续实数换成模素数有限域 F_p 造出密码学单向陷门；把不定方程塞进椭圆曲线一举攻克数论珠峰",
+        )
+
+        # Left card: Finite-Field Elliptic Curve E(F_17) & ECC Trapdoor
+        el.append(card(18, 66, 376, 392))
+        el.append(badge(32, 78, "① 现代密码学基石：有限域离散点云 E(F₁₇)", fill=BLUE_SOFT, fg=BLUE, w=274, h=22, size=10.3))
+        el.append(txt(32, 113, "y² ≡ x³ + 2x + 2 (mod 17)：共 18 个有限格点 + O = 19 阶素循环群", size=9.0, color=MUTED))
+
+        gx0, gy0 = 56.0, 326.0
+        step_g = 12.2
+
+        def mf(xv, yv):
+            return (gx0 + xv * step_g, gy0 - yv * step_g)
+
+        # Grid frame [0..16] x [0..16]
+        el.append(f'<rect x="{gx0 - 6:.1f}" y="{gy0 - 16 * step_g - 6:.1f}" width="{16 * step_g + 12:.1f}" height="{16 * step_g + 12:.1f}" rx="4" fill="#f8fafc" stroke="{BORDER}"/>')
+        for t_v in range(0, 17, 4):
+            xx, _ = mf(t_v, 0)
+            _, yy = mf(0, t_v)
+            el.append(f'<line x1="{xx:.1f}" y1="{gy0 - 16 * step_g}" x2="{xx:.1f}" y2="{gy0}" stroke="{HAIRLINE}" stroke-width="0.7"/>')
+            el.append(f'<line x1="{gx0}" y1="{yy:.1f}" x2="{gx0 + 16 * step_g}" y2="{yy:.1f}" stroke="{HAIRLINE}" stroke-width="0.7"/>')
+            el.append(txt(xx, gy0 + 14, str(t_v), size=8.0, color=MUTED, anchor="middle", cls="mono"))
+            el.append(txt(gx0 - 8, yy + 3, str(t_v), size=8.0, color=MUTED, anchor="end", cls="mono"))
+
+        # Symmetry axis y = 8.5 (since (-y)^2 = (17-y)^2 mod 17!)
+        _, y_sym = mf(0, 8.5)
+        el.append(f'<line x1="{gx0}" y1="{y_sym:.1f}" x2="{gx0 + 16 * step_g}" y2="{y_sym:.1f}" stroke="{PURPLE}" stroke-width="1.0" stroke-dasharray="4 3"/>')
+
+        # Hop arrows G(5,1) -> 2G(6,3) -> 3G(10,6) -> ... -> 7G(0,6)
+        hop_chain = [multiples[1], multiples[2], multiples[3], multiples[4]]
+        for i in range(len(hop_chain) - 1):
+            p1s = mf(*hop_chain[i])
+            p2s = mf(*hop_chain[i + 1])
+            el.append(f'<line x1="{p1s[0]:.1f}" y1="{p1s[1]:.1f}" x2="{p2s[0]:.1f}" y2="{p2s[1]:.1f}" stroke="{ORANGE}" stroke-width="1.6" stroke-dasharray="3 2" marker-end="url(#arr-orange)"/>')
+
+        # Plot all 18 points of E(F_17)
+        special_k = {multiples[1]: ("G", BLUE), multiples[2]: ("2G", ORANGE), multiples[3]: ("3G", ORANGE), multiples[7]: ("7G", GREEN)}
+        for pt in f17_pts:
+            px, py = mf(*pt)
+            if pt in special_k:
+                lbl_k, col_k = special_k[pt]
+                el.append(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="4.3" fill="{col_k}" stroke="#ffffff" stroke-width="1.2"/>')
+                dx_k = 7 if pt[0] < 13 else -7
+                anc_k = "start" if pt[0] < 13 else "end"
+                el.append(txt(px + dx_k, py - 4, lbl_k, size=8.8, color=col_k, anchor=anc_k, weight="700", cls="mono"))
+            else:
+                el.append(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="3.1" fill="#475569"/>')
+
+        # Right side mini-column inside Left Card (x=266..382)
+        el.append(txt(268, 140, "对称轴 y = 8.5", size=8.8, color=PURPLE, weight="700"))
+        el.append(txt(268, 156, "(y 与 17−y 配对)", size=8.4, color=MUTED))
+        el.append(txt(268, 184, "倍点跳蛙链：", size=9.0, color=INK, weight="700"))
+        el.append(txt(268, 202, "1G = (5, 1)", size=8.6, color=BLUE, weight="700", cls="mono"))
+        el.append(txt(268, 219, "2G = (6, 3)", size=8.6, color=ORANGE, cls="mono"))
+        el.append(txt(268, 236, "3G = (10, 6)", size=8.6, color=ORANGE, cls="mono"))
+        el.append(txt(268, 253, "4G = (3, 1)", size=8.6, color=BODY, cls="mono"))
+        el.append(txt(268, 270, "7G = (0, 6)", size=8.6, color=GREEN, weight="700", cls="mono"))
+        el.append(txt(268, 287, "19G = O (回零!)", size=8.6, color="#b91c1c", weight="700", cls="mono"))
+
+        # ECC Trapdoor summary box at bottom of Left Card
+        el.append(card(32, 350, 348, 96, rx=8, fill=BLUE_SOFT, stroke="#bfdbfe"))
+        el.append(txt(44, 370, "椭圆曲线离散对数单向陷门（HTTPS / TLS / 比特币基石）：", size=9.4, color=BLUE, weight="700"))
+        el.append(txt(44, 389, "• 正算极快：已知私钥 k 算公钥 Q=kG，靠“倍点+相加”256 位仅需毫秒；", size=8.9, color=BODY))
+        el.append(txt(44, 408, "• 反推绝望：已知 G 和散乱落点 Q 反猜跳了几步 k，经典计算机束手无策；", size=8.9, color=BODY))
+        el.append(txt(44, 427, "• 钥匙瘦身 12 倍：256 位 ECC 安全强度 ≈ 3072 位 RSA（NIST 标准）！", size=8.9, color=ORANGE, weight="700"))
+
+        # Right card: Proof chain of Fermat's Last Theorem (Frey -> Ribet -> Wiles)
+        el.append(card(404, 66, 338, 392))
+        el.append(badge(416, 78, "② 攻克数论珠峰：椭圆曲线智破费马大定理", fill=PURPLE_SOFT, fg=PURPLE, w=278, h=22, size=10.3))
+
+        steps_flt = [
+            (
+                114, "#fef2f2", "#fecaca", "#b91c1c",
+                "第 1 步｜弗雷构造“怪物曲线”（Frey, 1984–1985）",
+                "假设费马大定理有反例 Aᵖ + Bᵖ = Cᵖ (素数 p ≥ 5)，",
+                "造弗雷曲线 y² = x(x−Aᵖ)(x+Bᵖ)，判别式竟是 2p 次幂！",
+            ),
+            (
+                200, ORANGE_SOFT, "#fed7aa", ORANGE,
+                "第 2 步｜里贝特定理断后路（Ribet, 1986）",
+                "严格证出塞尔 ε 猜想：这头“弗雷曲线”扭曲到极点，",
+                "绝不可能是模形式化身（必然违反谷山—志村猜想）！",
+            ),
+            (
+                286, BLUE_SOFT, "#bfdbfe", BLUE,
+                "第 3 步｜怀尔斯七年铸剑（Wiles & Taylor, 1994–1995）",
+                "安德鲁·怀尔斯面壁七年并携泰勒补齐最后一环，",
+                "证出半稳定有理椭圆曲线 100% 模块化（谷山—志村成立）！",
+            ),
+            (
+                372, GREEN_SOFT, "#bbf7d0", GREEN,
+                "第 4 步｜绝杀归谬（悬置 358 年难题终结！）",
+                "既必须模块化、又绝不可能模块化 ⇒ 弗雷曲线不存在",
+                "⇒ Aⁿ + Bⁿ = Cⁿ (n ≥ 3) 无正整数解！椭圆曲线一锤定音。",
+            ),
+        ]
+
+        for y_s, bg_s, bd_s, fg_s, t_head, ln1, ln2 in steps_flt:
+            el.append(card(416, y_s, 314, 72, rx=8, fill=bg_s, stroke=bd_s))
+            el.append(txt(427, y_s + 20, t_head, size=9.4, color=fg_s, weight="700"))
+            el.append(txt(427, y_s + 40, ln1, size=8.8, color=BODY))
+            el.append(txt(427, y_s + 58, ln2, size=8.8, color=INK, weight="600"))
+
+        for y_arr in [186, 272, 358]:
+            el.append(f'<line x1="573" y1="{y_arr}" x2="573" y2="{y_arr + 12}" stroke="{INK}" stroke-width="1.8" marker-end="url(#arr-ink)"/>')
+
+        svg = figure(
+            472,
+            "有限域椭圆曲线密码学E(F17)离散点云与费马大定理弗雷-里贝特-怀尔斯四步绝杀链",
+            "左图精确计算模17有限域上椭圆曲线y²≡x³+2x+2的全部18个离散格点及生成元G=(5,1)倍点跳变，解释ECC离散对数单向陷门为何以256位密钥匹敌3072位RSA；右图展示弗雷曲线、里贝特定理与怀尔斯模性定理终结费马大定理的四步逻辑链。",
+            el,
+            extra_defs=EXTRA_ARR,
+        )
+        write_svg(TOPIC, "ecc-finite-field-and-fermat.svg", svg)
+
+    build_fig1_inversion()
+    build_fig2_race_timeline()
+    build_fig3_lattice_to_torus()
+    build_fig4_group_law_anim()
+    build_fig5_ecc_and_fermat()
+
+
+
+
+

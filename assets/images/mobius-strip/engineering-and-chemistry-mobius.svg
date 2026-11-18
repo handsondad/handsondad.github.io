@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="458" viewBox="0 0 760 458" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">莫比乌斯拓扑三大跨界应用：双倍寿命传送带、零寄生电感无感电阻与4n莫比乌斯芳香烃</title>
+<desc id="desc">三栏对比展示莫比乌斯皮带每圈换面实现双倍耐磨寿命、Davis莫比乌斯无感电阻靠正反电流对消磁通实现零寄生电感、以及共轭分子p轨道半圈扭转使休克尔4n+2规则反转为4n芳香稳定。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="457" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">不只是纸上游戏：莫比乌斯拓扑在机械、高频电子与量子化学里的三大硬核工程</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">把“单面双圈倍增”与“180° 相位反转”直接转化为双倍耐磨寿命、零寄生电感与反休克尔芳香分子</text>
+<rect x="18" y="66" width="232" height="376" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="30.0" y="78.0" width="186" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="123.0" y="93.0" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">① 机械工程：双倍寿命传送带</text>
+<text x="30" y="114" font-size="9.4" fill="#64748b" text-anchor="start">B. F. Goodrich 1957 专利 / 针式色带：</text>
+<rect x="30" y="126" width="208" height="86" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="40" y="143" font-size="9.2" fill="#b91c1c" text-anchor="start" font-weight="700">普通皮带：内圈受压磨穿，外圈白白浪费</text>
+<circle cx="72" cy="178" r="18" fill="#e2e8f0" stroke="#475569" stroke-width="1.8"/>
+<circle cx="196" cy="178" r="18" fill="#e2e8f0" stroke="#475569" stroke-width="1.8"/>
+<rect x="50" y="156" width="168" height="44" rx="22" fill="none" stroke="#18794e" stroke-width="2.4"/>
+<rect x="55" y="161" width="158" height="34" rx="17" fill="none" stroke="#dc2626" stroke-width="2.6" stroke-dasharray="4 2"/>
+<text x="134" y="182" font-size="8.9" fill="#dc2626" text-anchor="middle" font-weight="700">内红100%磨损</text>
+<rect x="30" y="222" width="208" height="102" rx="8" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<text x="40" y="240" font-size="9.2" fill="#1d6fa5" text-anchor="start" font-weight="700">莫比乌斯皮带：每转一圈自动换面轮休！</text>
+<circle cx="68" cy="282" r="18" fill="#dbeafe" stroke="#1d6fa5" stroke-width="1.8"/>
+<circle cx="200" cy="282" r="18" fill="#dbeafe" stroke="#1d6fa5" stroke-width="1.8"/>
+<path d="M 68,264 C 118,264 150,278 200,264" fill="none" stroke="#1d6fa5" stroke-width="3.0"/>
+<path d="M 68,268 C 118,280 150,256 200,268" fill="none" stroke="#c25014" stroke-width="2.2" stroke-dasharray="4 2"/>
+<line x1="68" y1="300" x2="200" y2="300" stroke="#1d6fa5" stroke-width="3.0"/>
+<text x="134" y="316" font-size="9.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">单面总长 2L 均匀受热受磨 → 寿命 ×2</text>
+<text x="32" y="346" font-size="9.4" fill="#1e293b" text-anchor="start">• 工业高温传送带不会单侧烤裂卷边；</text>
+<text x="32" y="366" font-size="9.4" fill="#1e293b" text-anchor="start">• 老式打字机/票据打印机循环色带盒、</text>
+<text x="32" y="386" font-size="9.4" fill="#1e293b" text-anchor="start">  无尽磁带录音机利用半圈扭转吃满双面</text>
+<text x="32" y="406" font-size="9.4" fill="#18794e" text-anchor="start" font-weight="600">  油墨与磁粉；国际回收标志 ♻ 同源！</text>
+<rect x="264" y="66" width="232" height="376" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="276.0" y="78.0" width="198" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="375.0" y="93.0" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="600">② 高频电子：零电感莫比乌斯电阻</text>
+<text x="276" y="114" font-size="9.4" fill="#64748b" text-anchor="start">Davis 1964 专利（US 3,267,406）：</text>
+<rect x="276" y="126" width="208" height="198" rx="8" fill="#fffdf9" stroke="#fed7aa" stroke-width="1"/>
+<ellipse cx="380.0" cy="222.0" rx="74" ry="48" fill="none" stroke="#cbd5e1" stroke-width="9"/>
+<path d="M 310.0,210.0 A 74,48 0 0,1 448.0,206.0" fill="none" stroke="#1d6fa5" stroke-width="2.6" marker-end="url(#arr-blue)"/>
+<path d="M 318.0,240.0 A 68,42 0 0,0 444.0,238.0" fill="none" stroke="#c25014" stroke-width="2.6" marker-end="url(#arr-orange)"/>
+<circle cx="306.0" cy="222.0" r="7" fill="#0f172a"/>
+<text x="306.0" y="209.0" font-size="9.0" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">同点馈电端</text>
+<circle cx="454.0" cy="222.0" r="9" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.8"/>
+<text x="454.0" y="225.5" font-size="8.4" fill="#6d28d9" text-anchor="middle" font-weight="700" class="mono">180°</text>
+<text x="380.0" y="215.0" font-size="10.6" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">⊙ +B  ⊕  ⊗ −B</text>
+<text x="380.0" y="235.0" font-size="9.6" fill="#18794e" text-anchor="middle" font-weight="700">净磁通 Φ ≡ 0（无自感！）</text>
+<text x="380.0" y="294" font-size="9.1" fill="#1e293b" text-anchor="middle">上顺时针电流 I₁ 与背面逆时针 I₂</text>
+<text x="380.0" y="311" font-size="9.1" fill="#c25014" text-anchor="middle" font-weight="600">紧贴绝缘膜处处反向对称抵消磁场</text>
+<text x="278" y="346" font-size="9.4" fill="#1e293b" text-anchor="start">• 普通绕线电阻一通高频脉冲就变电感线圈</text>
+<text x="278" y="366" font-size="9.4" fill="#1e293b" text-anchor="start">  （V = L·dI/dt 产生剧烈振铃失真）；</text>
+<text x="278" y="386" font-size="9.4" fill="#1e293b" text-anchor="start">• 莫比乌斯双面金属箔拧半圈短接后，正反</text>
+<text x="278" y="406" font-size="9.4" fill="#c25014" text-anchor="start" font-weight="600">  电流严丝合缝相消，寄生电感趋近于零！</text>
+<rect x="510" y="66" width="232" height="376" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="522.0" y="78.0" width="186" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="615.0" y="93.0" font-size="10.5" fill="#6d28d9" text-anchor="middle" font-weight="600">③ 量子化学：莫比乌斯芳香烃</text>
+<text x="522" y="114" font-size="9.2" fill="#64748b" text-anchor="start">Heilbronner 1964 预言 / Herges 2003 合成：</text>
+<rect x="522" y="126" width="208" height="92" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="532" y="144" font-size="9.1" fill="#1d6fa5" text-anchor="start" font-weight="700">平面休克尔环（如苯 6e⁻）：0 次相位翻转</text>
+<ellipse cx="626" cy="180" rx="56" ry="18" fill="none" stroke="#1d6fa5" stroke-width="1.8"/>
+<ellipse cx="682.0" cy="173.0" rx="3.8" ry="6.5" fill="#1d6fa5"/>
+<ellipse cx="682.0" cy="187.0" rx="3.8" ry="6.5" fill="#fff" stroke="#1d6fa5" stroke-width="1.2"/>
+<ellipse cx="654.0" cy="188.6" rx="3.8" ry="6.5" fill="#1d6fa5"/>
+<ellipse cx="654.0" cy="202.6" rx="3.8" ry="6.5" fill="#fff" stroke="#1d6fa5" stroke-width="1.2"/>
+<ellipse cx="598.0" cy="188.6" rx="3.8" ry="6.5" fill="#1d6fa5"/>
+<ellipse cx="598.0" cy="202.6" rx="3.8" ry="6.5" fill="#fff" stroke="#1d6fa5" stroke-width="1.2"/>
+<ellipse cx="570.0" cy="173.0" rx="3.8" ry="6.5" fill="#1d6fa5"/>
+<ellipse cx="570.0" cy="187.0" rx="3.8" ry="6.5" fill="#fff" stroke="#1d6fa5" stroke-width="1.2"/>
+<ellipse cx="598.0" cy="157.4" rx="3.8" ry="6.5" fill="#1d6fa5"/>
+<ellipse cx="598.0" cy="171.4" rx="3.8" ry="6.5" fill="#fff" stroke="#1d6fa5" stroke-width="1.2"/>
+<ellipse cx="654.0" cy="157.4" rx="3.8" ry="6.5" fill="#1d6fa5"/>
+<ellipse cx="654.0" cy="171.4" rx="3.8" ry="6.5" fill="#fff" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="626" y="211" font-size="8.9" fill="#1d6fa5" text-anchor="middle" font-weight="600">上瓣全同相(+) → 稳定判据：4n + 2 个 π 电子</text>
+<rect x="522" y="226" width="208" height="98" rx="8" fill="#f5f3ff" stroke="#ddd6fe" stroke-width="1"/>
+<text x="532" y="244" font-size="9.1" fill="#6d28d9" text-anchor="start" font-weight="700">莫比乌斯扭转环：p 轨道绕一圈拧 180°！</text>
+<ellipse cx="626" cy="280" rx="56" ry="18" fill="none" stroke="#6d28d9" stroke-width="1.8"/>
+<circle cx="682.0" cy="273.2" r="4.2" fill="#6d28d9"/>
+<circle cx="682.0" cy="286.8" r="4.2" fill="#fff" stroke="#6d28d9" stroke-width="1.2"/>
+<circle cx="668.2" cy="286.4" r="4.2" fill="#6d28d9"/>
+<circle cx="663.0" cy="299.0" r="4.2" fill="#fff" stroke="#6d28d9" stroke-width="1.2"/>
+<circle cx="630.8" cy="293.2" r="4.2" fill="#6d28d9"/>
+<circle cx="621.2" cy="302.8" r="4.2" fill="#fff" stroke="#6d28d9" stroke-width="1.2"/>
+<circle cx="592.7" cy="290.1" r="4.2" fill="#6d28d9"/>
+<circle cx="580.1" cy="295.3" r="4.2" fill="#fff" stroke="#6d28d9" stroke-width="1.2"/>
+<circle cx="576.8" cy="280.0" r="4.2" fill="#6d28d9"/>
+<circle cx="563.2" cy="280.0" r="4.2" fill="#fff" stroke="#6d28d9" stroke-width="1.2"/>
+<circle cx="592.7" cy="269.9" r="4.2" fill="#6d28d9"/>
+<circle cx="580.1" cy="264.7" r="4.2" fill="#fff" stroke="#6d28d9" stroke-width="1.2"/>
+<circle cx="630.8" cy="266.8" r="4.2" fill="#6d28d9"/>
+<circle cx="621.2" cy="257.2" r="4.2" fill="#fff" stroke="#6d28d9" stroke-width="1.2"/>
+<circle cx="668.2" cy="273.6" r="4.2" fill="#6d28d9"/>
+<circle cx="663.0" cy="261.0" r="4.2" fill="#fff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="686" y="266" font-size="8.8" fill="#dc2626" text-anchor="start" font-weight="700">±反相结</text>
+<text x="626" y="316" font-size="8.8" fill="#6d28d9" text-anchor="middle" font-weight="700">规则彻底颠倒 → 4n 个 π 电子（8/16e⁻）变芳香稳定！</text>
+<text x="524" y="346" font-size="9.4" fill="#1e293b" text-anchor="start">• 中学化学教“4n+2 芳香稳定、4n 反芳香</text>
+<text x="524" y="366" font-size="9.4" fill="#1e293b" text-anchor="start">  极不稳定”，前提是分子环处于平面；</text>
+<text x="524" y="386" font-size="9.4" fill="#1e293b" text-anchor="start">• 把共轭大环电子云拧成莫比乌斯态后，波</text>
+<text x="524" y="406" font-size="9.4" fill="#6d28d9" text-anchor="start" font-weight="600">  函数边界条件反号，4n 与 4n+2 角色互换！</text>
+</svg>

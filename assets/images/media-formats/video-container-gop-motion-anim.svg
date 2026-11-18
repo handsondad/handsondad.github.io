@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="504" viewBox="0 0 760 504" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">视频封装容器（MP4/MKV/WebM）与视频编码标准（H.264/HEVC/AV1）关系及I/P/B帧运动矢量补偿动画图解</title>
+<desc id="desc">上图拆解视频封装容器（外包装盒，复用视频轨、音频轨、字幕与时间轴索引）与视频编码器（压缩算法）的区别；下图通过四帧GOP（I0-B1-B2-P3）及无障碍单次动画展示静止背景零重传、运动矢量Δx搬运宏块以及解码顺序（I0→P3→B1→B2）为何不同于播放顺序。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes gopScan {
+    0%, 10% { transform: translateX(0px); opacity: 1; }
+    32%, 48% { transform: translateX(486px); opacity: 1; }
+    64%, 78% { transform: translateX(162px); opacity: 1; }
+    88%, 100% { transform: translateX(324px); opacity: 1; }
+  }
+  @keyframes vecPulse {
+    0%, 22% { stroke-dashoffset: 120; opacity: 0.25; }
+    45%, 100% { stroke-dashoffset: 0; opacity: 1; }
+  }
+  .gop-cursor {
+    animation: gopScan 6.8s cubic-bezier(0.25, 0.8, 0.25, 1) 1 forwards;
+  }
+  .mv-anim {
+    stroke-dasharray: 120;
+    stroke-dashoffset: 0;
+    animation: vecPulse 5.2s ease-out 1 forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .gop-cursor, .mv-anim {
+      animation: none !important;
+      transform: none !important;
+      stroke-dashoffset: 0 !important;
+      opacity: 1 !important;
+    }
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="503" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="20" y="26" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">延伸到视频格式：为什么同是 .mp4 有的黑屏？I / P / B 帧怎样把数据狂压 300 倍？</text>
+<text x="20" y="46" font-size="12.5" fill="#64748b" text-anchor="start">上：封装容器（便当盒）≠ 编码标准（做菜手艺）；下：解码器先解 I0 与 P3，再用运动矢量双向拼出 B1、B2</text>
+<rect x="16" y="58" width="728" height="162" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="28.0" y="68.0" width="590" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="323.0" y="83.0" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">核心铁律 · 后缀名 .mp4 / .mkv / .webm 只是“外包装盒”，能不能播取决于盒里的“编码器”</text>
+<rect x="28" y="98" width="456" height="110" rx="10" fill="#f8fafc" stroke="#1d6fa5" stroke-width="1.5" stroke-dasharray="5 3"/>
+<text x="38" y="116" font-size="10.6" fill="#1d6fa5" text-anchor="start" font-weight="700">封装容器 Container：.mp4 ｜ .mkv (RFC 9559 万能盒) ｜ .webm ｜ .mov</text>
+<rect x="38" y="126" width="176" height="72" rx="7" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="46" y="146" font-size="11.0" fill="#c25014" text-anchor="start" font-weight="700">视频编码轨 Video</text>
+<text x="46" y="168" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="600">H.264 · HEVC · AV1 · ProRes</text>
+<text x="46" y="186" font-size="9.8" fill="#64748b" text-anchor="start">决定画质/算力/硬件解码</text>
+<rect x="222" y="126" width="122" height="72" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="230" y="146" font-size="11.0" fill="#18794e" text-anchor="start" font-weight="700">多音轨 Audio</text>
+<text x="230" y="168" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="600">AAC · Opus · FLAC</text>
+<text x="230" y="186" font-size="9.8" fill="#64748b" text-anchor="start">决定多语言伴音</text>
+<rect x="352" y="126" width="122" height="72" rx="7" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="360" y="146" font-size="11.0" fill="#6d28d9" text-anchor="start" font-weight="700">字幕与时间轴</text>
+<text x="360" y="168" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="600">ASS/SRT · 章节索引</text>
+<text x="360" y="186" font-size="9.8" fill="#64748b" text-anchor="start">拖动进度条秒定位</text>
+<rect x="496" y="98" width="236" height="110" rx="8" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
+<text x="506" y="118" font-size="11.2" fill="#b45309" text-anchor="start" font-weight="700">秒懂两个日常高频疑问：</text>
+<text x="506" y="139" font-size="10.4" fill="#1e293b" text-anchor="start">1. 有声音却黑屏？播放器认得 .mp4</text>
+<text x="506" y="156" font-size="10.4" fill="#dc2626" text-anchor="start" font-weight="700">   盒子，但缺盒内 HEVC/AV1 解码器！</text>
+<text x="506" y="176" font-size="10.4" fill="#1e293b" text-anchor="start">2. MKV 转 MP4 只需 0.5 秒？</text>
+<text x="506" y="193" font-size="10.3" fill="#18794e" text-anchor="start" font-weight="700" class="mono">   ffmpeg -c copy 只换盒不重算像素！</text>
+<rect x="16" y="232" width="728" height="268" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="28.0" y="242.0" width="652" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="354.0" y="257.0" font-size="11.3" fill="#c25014" text-anchor="middle" font-weight="600">时间维魔法 · 1080p60 未压缩高达 373 MB/s（1.34 TB/小时），靠 I/P/B 运动矢量省去 99.6% 重复背景</text>
+<g class="gop-cursor"><rect x="30" y="272" width="146" height="154" rx="10" fill="none" stroke="#c25014" stroke-width="2.0" stroke-dasharray="4 3"/></g>
+<text x="103" y="286" font-size="10.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">t=0 · I₀ 关键帧 (解码第 1 步)</text>
+<rect x="34" y="292" width="138" height="82" rx="6" fill="#dbeafe" stroke="#1d6fa5" stroke-width="1.4"/>
+<polygon points="46,350 78,314 112,350" fill="#93c5fd"/>
+<polygon points="92,350 130,320 162,350" fill="#60a5fa"/>
+<rect x="35" y="350" width="136" height="23" rx="3" fill="#cbd5e1"/>
+<text x="103" y="308" font-size="9.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">完整存全图宏块</text>
+<rect x="52" y="340" width="22" height="13" rx="3" fill="#c25014" stroke="#ffffff" stroke-width="1"/>
+<rect x="34" y="382" width="138" height="10" rx="3" fill="#e2e8f0"/>
+<rect x="34" y="382" width="138.0" height="10" rx="3" fill="#1d6fa5"/>
+<text x="103" y="406" font-size="10.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">100% 体积 (~180 KB)</text>
+<text x="265" y="286" font-size="10.6" fill="#6d28d9" text-anchor="middle" font-weight="700">t=1 · B₁ 双向帧 (解码第 3 步)</text>
+<rect x="196" y="292" width="138" height="82" rx="6" fill="#f8fafc" stroke="#6d28d9" stroke-width="1.4"/>
+<line x1="223.6" y1="292" x2="223.6" y2="374" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2 2"/>
+<line x1="251.2" y1="292" x2="251.2" y2="374" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2 2"/>
+<line x1="278.8" y1="292" x2="278.8" y2="374" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2 2"/>
+<line x1="306.4" y1="292" x2="306.4" y2="374" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2 2"/>
+<line x1="196" y1="333" x2="334" y2="333" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2 2"/>
+<text x="265" y="308" font-size="9.8" fill="#64748b" text-anchor="middle" font-weight="600">静止背景 = 0 重传!</text>
+<rect x="214" y="340" width="22" height="13" rx="3" fill="none" stroke="#94a3b8" stroke-width="1" stroke-dasharray="2 2"/>
+<line class="mv-anim" x1="236" y1="346.5" x2="239" y2="346.5" stroke="#c25014" stroke-width="2.0" marker-end="url(#arr-orange)"/>
+<text x="239.0" y="336" font-size="9.6" fill="#c25014" text-anchor="middle" font-weight="700" class="mono">Δx</text>
+<rect x="242" y="340" width="22" height="13" rx="3" fill="#c25014" stroke="#ffffff" stroke-width="1"/>
+<rect x="196" y="382" width="138" height="10" rx="3" fill="#e2e8f0"/>
+<rect x="196" y="382" width="11.0" height="10" rx="3" fill="#6d28d9"/>
+<text x="265" y="406" font-size="10.2" fill="#6d28d9" text-anchor="middle" font-weight="700">仅 ~5% (~9 KB)</text>
+<text x="427" y="286" font-size="10.6" fill="#6d28d9" text-anchor="middle" font-weight="700">t=2 · B₂ 双向帧 (解码第 4 步)</text>
+<rect x="358" y="292" width="138" height="82" rx="6" fill="#f8fafc" stroke="#6d28d9" stroke-width="1.4"/>
+<line x1="385.6" y1="292" x2="385.6" y2="374" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2 2"/>
+<line x1="413.2" y1="292" x2="413.2" y2="374" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2 2"/>
+<line x1="440.8" y1="292" x2="440.8" y2="374" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2 2"/>
+<line x1="468.4" y1="292" x2="468.4" y2="374" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2 2"/>
+<line x1="358" y1="333" x2="496" y2="333" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2 2"/>
+<text x="427" y="308" font-size="9.8" fill="#64748b" text-anchor="middle" font-weight="600">静止背景 = 0 重传!</text>
+<rect x="376" y="340" width="22" height="13" rx="3" fill="none" stroke="#94a3b8" stroke-width="1" stroke-dasharray="2 2"/>
+<line class="mv-anim" x1="398" y1="346.5" x2="429" y2="346.5" stroke="#c25014" stroke-width="2.0" marker-end="url(#arr-orange)"/>
+<text x="415.0" y="336" font-size="9.6" fill="#c25014" text-anchor="middle" font-weight="700" class="mono">Δx</text>
+<rect x="432" y="340" width="22" height="13" rx="3" fill="#c25014" stroke="#ffffff" stroke-width="1"/>
+<rect x="358" y="382" width="138" height="10" rx="3" fill="#e2e8f0"/>
+<rect x="358" y="382" width="11.0" height="10" rx="3" fill="#6d28d9"/>
+<text x="427" y="406" font-size="10.2" fill="#6d28d9" text-anchor="middle" font-weight="700">仅 ~5% (~9 KB)</text>
+<text x="589" y="286" font-size="10.6" fill="#18794e" text-anchor="middle" font-weight="700">t=3 · P₃ 前向帧 (解码第 2 步)</text>
+<rect x="520" y="292" width="138" height="82" rx="6" fill="#f8fafc" stroke="#18794e" stroke-width="1.4"/>
+<line x1="547.6" y1="292" x2="547.6" y2="374" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2 2"/>
+<line x1="575.2" y1="292" x2="575.2" y2="374" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2 2"/>
+<line x1="602.8" y1="292" x2="602.8" y2="374" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2 2"/>
+<line x1="630.4" y1="292" x2="630.4" y2="374" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2 2"/>
+<line x1="520" y1="333" x2="658" y2="333" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2 2"/>
+<text x="589" y="308" font-size="9.8" fill="#64748b" text-anchor="middle" font-weight="600">静止背景 = 0 重传!</text>
+<rect x="538" y="340" width="22" height="13" rx="3" fill="none" stroke="#94a3b8" stroke-width="1" stroke-dasharray="2 2"/>
+<line class="mv-anim" x1="560" y1="346.5" x2="619" y2="346.5" stroke="#c25014" stroke-width="2.0" marker-end="url(#arr-orange)"/>
+<text x="591.0" y="336" font-size="9.6" fill="#c25014" text-anchor="middle" font-weight="700" class="mono">Δx</text>
+<rect x="622" y="340" width="22" height="13" rx="3" fill="#c25014" stroke="#ffffff" stroke-width="1"/>
+<rect x="520" y="382" width="138" height="10" rx="3" fill="#e2e8f0"/>
+<rect x="520" y="382" width="27.6" height="10" rx="3" fill="#18794e"/>
+<text x="589" y="406" font-size="10.2" fill="#18794e" text-anchor="middle" font-weight="700">仅 ~14% (~25 KB)</text>
+<path class="mv-anim" d="M 103,420 Q 346.0,456 589,420" fill="none" stroke="#18794e" stroke-width="1.8" marker-end="url(#arr-green)"/>
+<path class="mv-anim" d="M 115,418 Q 184.0,436 259,418" fill="none" stroke="#6d28d9" stroke-width="1.4" stroke-dasharray="3 2"/>
+<path class="mv-anim" d="M 577,418 Q 508.0,436 433,418" fill="none" stroke="#6d28d9" stroke-width="1.4" stroke-dasharray="3 2"/>
+<text x="380" y="462" font-size="10.8" fill="#0f172a" text-anchor="middle" font-weight="700">播放顺序 I₀→B₁→B₂→P₃，但解码顺序必须是 I₀→P₃→B₁→B₂（先拿到未来帧 P₃ 才能双向插值 B 帧！）</text>
+<text x="380" y="483" font-size="10.4" fill="#475569" text-anchor="middle">代际跃迁：H.264(兼容之王) → H.265/HEVC(4K HDR省流40%) → AV1(免版税流媒体新王) ｜ ProRes 全用 I 帧专供顺滑倒放剪辑</text>
+</svg>

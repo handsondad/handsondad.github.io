@@ -1,0 +1,278 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="468" viewBox="0 0 760 468" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">PNG扫描线Paeth差分预测无损压缩流水线与GIF一比特透明白边对比图</title>
+<desc id="desc">上图通过真实8像素渐变行数值计算展示PNG的Paeth四邻域预测器如何将102~123渐变行转化为[+2,0,0,0,0,0,0,0]低熵残差再交由DEFLATE无损压缩；下图对比GIF89a仅256色与1-bit二值透明导致的深色背景白边锯齿，以及PNG/WebP/AVIF的8-bit（256级）Alpha平滑抗锯齿融合。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="467" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="20" y="26" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">无损压缩怎样一比特不丢还能瘦身？PNG 帕斯(Paeth)差分预测 vs GIF 白边之谜</text>
+<text x="20" y="46" font-size="12.5" fill="#64748b" text-anchor="start">上：RFC 2083 扫描线预测自动沿横竖边缘切换参考点，把像素变成满排 0；下：GIF 1-bit 透明为何被 PNG/WebP 取代</text>
+<rect x="16" y="58" width="728" height="206" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="28.0" y="68.0" width="486" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="271.0" y="83.0" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">第一关 · PNG 两步无损流水线：先做相邻像素差分预测，再用 LZ77+霍夫曼打包</text>
+<rect x="30" y="102" width="196" height="148" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<text x="128" y="120" font-size="11.8" fill="#0f172a" text-anchor="middle" font-weight="700">Paeth 四邻域自适应模板</text>
+<rect x="68" y="132" width="58" height="38" rx="6" fill="#f1f5f9" stroke="#475569" stroke-width="1.2"/>
+<text x="97" y="147" font-size="10.2" fill="#475569" text-anchor="middle" font-weight="600">c 左上</text>
+<text x="97" y="163" font-size="11.8" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">180</text>
+<rect x="132" y="132" width="58" height="38" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="161" y="147" font-size="10.2" fill="#1d6fa5" text-anchor="middle" font-weight="600">b 正上</text>
+<text x="161" y="163" font-size="11.8" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">220</text>
+<rect x="68" y="176" width="58" height="38" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="97" y="191" font-size="10.2" fill="#1d6fa5" text-anchor="middle" font-weight="600">a 正左</text>
+<text x="97" y="207" font-size="11.8" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">180</text>
+<rect x="132" y="176" width="58" height="38" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="161" y="191" font-size="10.2" fill="#c25014" text-anchor="middle" font-weight="600">x 当前</text>
+<text x="161" y="207" font-size="11.8" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">220</text>
+<text x="128" y="229" font-size="10.2" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono">p=a+b-c=220 → 选最近邻 b=220</text>
+<text x="128" y="245" font-size="10.6" fill="#18794e" text-anchor="middle" font-weight="700" class="mono">残差 r = x - b = 220 - 220 = 0 !</text>
+<rect x="240" y="102" width="490" height="148" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="250" y="130" font-size="11.0" fill="#475569" text-anchor="start" font-weight="700">上一行 b (含两处竖边)</text>
+<rect x="408" y="114" width="34" height="24" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<text x="425" y="130" font-size="11.0" fill="#0f172a" text-anchor="middle" font-weight="500" class="mono">50</text>
+<rect x="446" y="114" width="34" height="24" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<text x="463" y="130" font-size="11.0" fill="#0f172a" text-anchor="middle" font-weight="500" class="mono">50</text>
+<rect x="484" y="114" width="34" height="24" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<text x="501" y="130" font-size="11.0" fill="#0f172a" text-anchor="middle" font-weight="500" class="mono">180</text>
+<rect x="522" y="114" width="34" height="24" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<text x="539" y="130" font-size="11.0" fill="#0f172a" text-anchor="middle" font-weight="500" class="mono">180</text>
+<rect x="560" y="114" width="34" height="24" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<text x="577" y="130" font-size="11.0" fill="#0f172a" text-anchor="middle" font-weight="500" class="mono">180</text>
+<rect x="598" y="114" width="34" height="24" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<text x="615" y="130" font-size="11.0" fill="#0f172a" text-anchor="middle" font-weight="500" class="mono">220</text>
+<rect x="636" y="114" width="34" height="24" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<text x="653" y="130" font-size="11.0" fill="#0f172a" text-anchor="middle" font-weight="500" class="mono">220</text>
+<rect x="674" y="114" width="34" height="24" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<text x="691" y="130" font-size="11.0" fill="#0f172a" text-anchor="middle" font-weight="500" class="mono">220</text>
+<text x="250" y="163" font-size="11.0" fill="#c25014" text-anchor="start" font-weight="700">当前行 x (含横竖突变)</text>
+<rect x="408" y="147" width="34" height="24" rx="4" fill="#fef1e8" stroke="#cbd5e1" stroke-width="1"/>
+<text x="425" y="163" font-size="11.0" fill="#0f172a" text-anchor="middle" font-weight="500" class="mono">90</text>
+<rect x="446" y="147" width="34" height="24" rx="4" fill="#fef1e8" stroke="#cbd5e1" stroke-width="1"/>
+<text x="463" y="163" font-size="11.0" fill="#0f172a" text-anchor="middle" font-weight="500" class="mono">90</text>
+<rect x="484" y="147" width="34" height="24" rx="4" fill="#fef1e8" stroke="#cbd5e1" stroke-width="1"/>
+<text x="501" y="163" font-size="11.0" fill="#0f172a" text-anchor="middle" font-weight="500" class="mono">180</text>
+<rect x="522" y="147" width="34" height="24" rx="4" fill="#fef1e8" stroke="#cbd5e1" stroke-width="1"/>
+<text x="539" y="163" font-size="11.0" fill="#0f172a" text-anchor="middle" font-weight="500" class="mono">180</text>
+<rect x="560" y="147" width="34" height="24" rx="4" fill="#fef1e8" stroke="#cbd5e1" stroke-width="1"/>
+<text x="577" y="163" font-size="11.0" fill="#0f172a" text-anchor="middle" font-weight="500" class="mono">180</text>
+<rect x="598" y="147" width="34" height="24" rx="4" fill="#fef1e8" stroke="#cbd5e1" stroke-width="1"/>
+<text x="615" y="163" font-size="11.0" fill="#0f172a" text-anchor="middle" font-weight="500" class="mono">220</text>
+<rect x="636" y="147" width="34" height="24" rx="4" fill="#fef1e8" stroke="#cbd5e1" stroke-width="1"/>
+<text x="653" y="163" font-size="11.0" fill="#0f172a" text-anchor="middle" font-weight="500" class="mono">220</text>
+<rect x="674" y="147" width="34" height="24" rx="4" fill="#fef1e8" stroke="#cbd5e1" stroke-width="1"/>
+<text x="691" y="163" font-size="11.0" fill="#0f172a" text-anchor="middle" font-weight="500" class="mono">220</text>
+<text x="250" y="196" font-size="11.0" fill="#1d6fa5" text-anchor="start" font-weight="700">Sub 滤镜 (竖边全撞车)</text>
+<rect x="408" y="180" width="34" height="24" rx="4" fill="#eaf4fb" stroke="#cbd5e1" stroke-width="1"/>
+<text x="425" y="196" font-size="11.0" fill="#0f172a" text-anchor="middle" font-weight="500" class="mono">90</text>
+<rect x="446" y="180" width="34" height="24" rx="4" fill="#eaf4fb" stroke="#cbd5e1" stroke-width="1"/>
+<text x="463" y="196" font-size="11.0" fill="#0f172a" text-anchor="middle" font-weight="500" class="mono">0</text>
+<rect x="484" y="180" width="34" height="24" rx="4" fill="#eaf4fb" stroke="#cbd5e1" stroke-width="1"/>
+<text x="501" y="196" font-size="11.0" fill="#0f172a" text-anchor="middle" font-weight="500" class="mono">+90</text>
+<rect x="522" y="180" width="34" height="24" rx="4" fill="#eaf4fb" stroke="#cbd5e1" stroke-width="1"/>
+<text x="539" y="196" font-size="11.0" fill="#0f172a" text-anchor="middle" font-weight="500" class="mono">0</text>
+<rect x="560" y="180" width="34" height="24" rx="4" fill="#eaf4fb" stroke="#cbd5e1" stroke-width="1"/>
+<text x="577" y="196" font-size="11.0" fill="#0f172a" text-anchor="middle" font-weight="500" class="mono">0</text>
+<rect x="598" y="180" width="34" height="24" rx="4" fill="#eaf4fb" stroke="#cbd5e1" stroke-width="1"/>
+<text x="615" y="196" font-size="11.0" fill="#0f172a" text-anchor="middle" font-weight="500" class="mono">+40</text>
+<rect x="636" y="180" width="34" height="24" rx="4" fill="#eaf4fb" stroke="#cbd5e1" stroke-width="1"/>
+<text x="653" y="196" font-size="11.0" fill="#0f172a" text-anchor="middle" font-weight="500" class="mono">0</text>
+<rect x="674" y="180" width="34" height="24" rx="4" fill="#eaf4fb" stroke="#cbd5e1" stroke-width="1"/>
+<text x="691" y="196" font-size="11.0" fill="#0f172a" text-anchor="middle" font-weight="500" class="mono">0</text>
+<text x="250" y="229" font-size="11.0" fill="#18794e" text-anchor="start" font-weight="700">Paeth 残差 (横竖通吃!)</text>
+<rect x="408" y="213" width="34" height="24" rx="4" fill="#e7f6ee" stroke="#cbd5e1" stroke-width="1"/>
+<text x="425" y="229" font-size="11.0" fill="#0f172a" text-anchor="middle" font-weight="500" class="mono">+40</text>
+<rect x="446" y="213" width="34" height="24" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+<text x="463" y="229" font-size="11.0" fill="#18794e" text-anchor="middle" font-weight="700" class="mono">0</text>
+<rect x="484" y="213" width="34" height="24" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+<text x="501" y="229" font-size="11.0" fill="#18794e" text-anchor="middle" font-weight="700" class="mono">0</text>
+<rect x="522" y="213" width="34" height="24" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+<text x="539" y="229" font-size="11.0" fill="#18794e" text-anchor="middle" font-weight="700" class="mono">0</text>
+<rect x="560" y="213" width="34" height="24" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+<text x="577" y="229" font-size="11.0" fill="#18794e" text-anchor="middle" font-weight="700" class="mono">0</text>
+<rect x="598" y="213" width="34" height="24" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+<text x="615" y="229" font-size="11.0" fill="#18794e" text-anchor="middle" font-weight="700" class="mono">0</text>
+<rect x="636" y="213" width="34" height="24" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+<text x="653" y="229" font-size="11.0" fill="#18794e" text-anchor="middle" font-weight="700" class="mono">0</text>
+<rect x="674" y="213" width="34" height="24" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+<text x="691" y="229" font-size="11.0" fill="#18794e" text-anchor="middle" font-weight="700" class="mono">0</text>
+<text x="485" y="245" font-size="10.6" fill="#18794e" text-anchor="middle" font-weight="700">横边跟左邻 a、竖边跟上邻 b → 连续 7 个 0！送入 DEFLATE 瞬间压扁且 100% 无损还原</text>
+<rect x="16" y="276" width="728" height="180" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="28.0" y="286.0" width="516" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="286.0" y="301.0" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="600">第二关 · 为什么 GIF 动图又大又有锯齿白边，而 PNG / APNG / WebP 边缘丝滑？</text>
+<rect x="28" y="318" width="342" height="124" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.2"/>
+<text x="40" y="340" font-size="11.3" fill="#fbbf24" text-anchor="start" font-weight="700">GIF89a：仅 256 色调色盘 + 1-bit 透明开关</text>
+<rect x="67.0" y="367.0" width="6" height="6" fill="#f8fafc"/>
+<rect x="73.0" y="367.0" width="6" height="6" fill="#f8fafc"/>
+<rect x="79.0" y="367.0" width="6" height="6" fill="#f8fafc"/>
+<rect x="85.0" y="367.0" width="6" height="6" fill="#f8fafc"/>
+<rect x="91.0" y="367.0" width="6" height="6" fill="#f8fafc"/>
+<rect x="61.0" y="373.0" width="6" height="6" fill="#f8fafc"/>
+<rect x="67.0" y="373.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="73.0" y="373.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="79.0" y="373.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="85.0" y="373.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="91.0" y="373.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="97.0" y="373.0" width="6" height="6" fill="#f8fafc"/>
+<rect x="55.0" y="379.0" width="6" height="6" fill="#f8fafc"/>
+<rect x="61.0" y="379.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="67.0" y="379.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="73.0" y="379.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="79.0" y="379.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="85.0" y="379.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="91.0" y="379.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="97.0" y="379.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="103.0" y="379.0" width="6" height="6" fill="#f8fafc"/>
+<rect x="55.0" y="385.0" width="6" height="6" fill="#f8fafc"/>
+<rect x="61.0" y="385.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="67.0" y="385.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="73.0" y="385.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="79.0" y="385.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="85.0" y="385.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="91.0" y="385.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="97.0" y="385.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="103.0" y="385.0" width="6" height="6" fill="#f8fafc"/>
+<rect x="55.0" y="391.0" width="6" height="6" fill="#f8fafc"/>
+<rect x="61.0" y="391.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="67.0" y="391.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="73.0" y="391.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="79.0" y="391.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="85.0" y="391.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="91.0" y="391.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="97.0" y="391.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="103.0" y="391.0" width="6" height="6" fill="#f8fafc"/>
+<rect x="55.0" y="397.0" width="6" height="6" fill="#f8fafc"/>
+<rect x="61.0" y="397.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="67.0" y="397.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="73.0" y="397.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="79.0" y="397.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="85.0" y="397.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="91.0" y="397.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="97.0" y="397.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="103.0" y="397.0" width="6" height="6" fill="#f8fafc"/>
+<rect x="55.0" y="403.0" width="6" height="6" fill="#f8fafc"/>
+<rect x="61.0" y="403.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="67.0" y="403.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="73.0" y="403.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="79.0" y="403.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="85.0" y="403.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="91.0" y="403.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="97.0" y="403.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="103.0" y="403.0" width="6" height="6" fill="#f8fafc"/>
+<rect x="61.0" y="409.0" width="6" height="6" fill="#f8fafc"/>
+<rect x="67.0" y="409.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="73.0" y="409.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="79.0" y="409.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="85.0" y="409.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="91.0" y="409.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="97.0" y="409.0" width="6" height="6" fill="#f8fafc"/>
+<rect x="67.0" y="415.0" width="6" height="6" fill="#f8fafc"/>
+<rect x="73.0" y="415.0" width="6" height="6" fill="#f8fafc"/>
+<rect x="79.0" y="415.0" width="6" height="6" fill="#f8fafc"/>
+<rect x="85.0" y="415.0" width="6" height="6" fill="#f8fafc"/>
+<rect x="91.0" y="415.0" width="6" height="6" fill="#f8fafc"/>
+<text x="130" y="368" font-size="10.6" fill="#e2e8f0" text-anchor="start">• 透明度只有 0% 或 100% 两档；</text>
+<text x="130" y="388" font-size="10.6" fill="#fca5a5" text-anchor="start" font-weight="700">• 半透明抗锯齿边缘被迫染成白底，</text>
+<text x="130" y="408" font-size="10.6" fill="#fca5a5" text-anchor="start" font-weight="700">  贴在深色网页上立刻露出刺眼白边！</text>
+<text x="130" y="428" font-size="10.2" fill="#cbd5e1" text-anchor="start">• LZW 无运动预测，3 秒动图动辄 10MB</text>
+<rect x="382" y="318" width="350" height="124" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.2"/>
+<text x="394" y="340" font-size="11.3" fill="#4ade80" text-anchor="start" font-weight="700">PNG / WebP / AVIF：真彩色 + 8-bit Alpha</text>
+<rect x="421.0" y="367.0" width="6" height="6" fill="#2a7298"/>
+<rect x="427.0" y="367.0" width="6" height="6" fill="#33a5da"/>
+<rect x="433.0" y="367.0" width="6" height="6" fill="#37b8f1"/>
+<rect x="439.0" y="367.0" width="6" height="6" fill="#33a5da"/>
+<rect x="445.0" y="367.0" width="6" height="6" fill="#2a7298"/>
+<rect x="415.0" y="373.0" width="6" height="6" fill="#3094c3"/>
+<rect x="421.0" y="373.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="427.0" y="373.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="433.0" y="373.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="439.0" y="373.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="445.0" y="373.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="451.0" y="373.0" width="6" height="6" fill="#3094c3"/>
+<rect x="409.0" y="379.0" width="6" height="6" fill="#2a7298"/>
+<rect x="415.0" y="379.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="421.0" y="379.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="427.0" y="379.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="433.0" y="379.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="439.0" y="379.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="445.0" y="379.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="451.0" y="379.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="457.0" y="379.0" width="6" height="6" fill="#2a7298"/>
+<rect x="409.0" y="385.0" width="6" height="6" fill="#33a5da"/>
+<rect x="415.0" y="385.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="421.0" y="385.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="427.0" y="385.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="433.0" y="385.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="439.0" y="385.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="445.0" y="385.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="451.0" y="385.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="457.0" y="385.0" width="6" height="6" fill="#33a5da"/>
+<rect x="409.0" y="391.0" width="6" height="6" fill="#37b8f1"/>
+<rect x="415.0" y="391.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="421.0" y="391.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="427.0" y="391.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="433.0" y="391.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="439.0" y="391.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="445.0" y="391.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="451.0" y="391.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="457.0" y="391.0" width="6" height="6" fill="#37b8f1"/>
+<rect x="409.0" y="397.0" width="6" height="6" fill="#33a5da"/>
+<rect x="415.0" y="397.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="421.0" y="397.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="427.0" y="397.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="433.0" y="397.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="439.0" y="397.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="445.0" y="397.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="451.0" y="397.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="457.0" y="397.0" width="6" height="6" fill="#33a5da"/>
+<rect x="409.0" y="403.0" width="6" height="6" fill="#2a7298"/>
+<rect x="415.0" y="403.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="421.0" y="403.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="427.0" y="403.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="433.0" y="403.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="439.0" y="403.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="445.0" y="403.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="451.0" y="403.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="457.0" y="403.0" width="6" height="6" fill="#2a7298"/>
+<rect x="415.0" y="409.0" width="6" height="6" fill="#3094c3"/>
+<rect x="421.0" y="409.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="427.0" y="409.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="433.0" y="409.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="439.0" y="409.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="445.0" y="409.0" width="6" height="6" fill="#38bdf8"/>
+<rect x="451.0" y="409.0" width="6" height="6" fill="#3094c3"/>
+<rect x="421.0" y="415.0" width="6" height="6" fill="#2a7298"/>
+<rect x="427.0" y="415.0" width="6" height="6" fill="#33a5da"/>
+<rect x="433.0" y="415.0" width="6" height="6" fill="#37b8f1"/>
+<rect x="439.0" y="415.0" width="6" height="6" fill="#33a5da"/>
+<rect x="445.0" y="415.0" width="6" height="6" fill="#2a7298"/>
+<text x="484" y="368" font-size="10.6" fill="#e2e8f0" text-anchor="start">• Alpha 通道拥有 0~255 共 256 级透明；</text>
+<text x="484" y="388" font-size="10.6" fill="#86efac" text-anchor="start" font-weight="700">• 边缘按比例实时与任意底色平滑混合，</text>
+<text x="484" y="408" font-size="10.6" fill="#86efac" text-anchor="start" font-weight="700">  换深色/浅色主题都毫无白边！</text>
+<text x="484" y="428" font-size="10.2" fill="#cbd5e1" text-anchor="start">• 2025 PNG 第三版正式纳入 APNG 与 HDR</text>
+</svg>

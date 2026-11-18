@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="440" viewBox="0 0 760 440" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">德卡斯特里奥递推几何作图法（二次与三次贝塞尔曲线及单次渐进动画）</title>
+<desc id="desc">左图展示二次贝塞尔曲线在 t=0.1..0.9 的拉线包络与 t=0.35 切线；右图展示三次贝塞尔在 t=0.40 处的三层线性插值（Q0-Q2、R0-R1、B）及左右子曲线细分性质。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes dcFade1 { 0%, 10% { opacity: 0.2; } 28%, 100% { opacity: 1; } }
+  @keyframes dcFade2 { 0%, 28% { opacity: 0.2; } 48%, 100% { opacity: 1; } }
+  @keyframes dcFade3 { 0%, 46% { opacity: 0.2; } 64%, 100% { opacity: 1; } }
+  @keyframes dcDraw { 0%, 15% { stroke-dashoffset: 1000; } 92%, 100% { stroke-dashoffset: 0; } }
+  .dc-step1 { animation: dcFade1 5.2s ease-out 1 forwards; }
+  .dc-step2 { animation: dcFade2 5.2s ease-out 1 forwards; }
+  .dc-step3 { animation: dcFade3 5.2s ease-out 1 forwards; }
+  .dc-curve { stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: dcDraw 5.2s ease-in-out 1 forwards; }
+  @media (prefers-reduced-motion: reduce) {
+    .dc-step1, .dc-step2, .dc-step3, .dc-curve {
+      animation: none !important;
+      opacity: 1 !important;
+      stroke-dashoffset: 0 !important;
+    }
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="439" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">没有圆规怎么拿直尺画曲线？德卡斯特里奥（de Casteljau）逐层等比例插值</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：二次贝塞尔“拉线艺术”与 t=0.35 切线；右：三次贝塞尔 3→2→1 递推与单次渐进动画</text>
+<rect x="20" y="62" width="352" height="362" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="74.0" width="324" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="196.0" y="89.0" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="600">二次贝塞尔 (n=2)：3 点 → 2 线 → 1 条抛物线</text>
+<line x1="67.60" y1="278.20" x2="204.60" y2="135.80" stroke="#cbd5e1" stroke-width="0.9"/>
+<line x1="81.20" y1="260.40" x2="219.20" y2="153.60" stroke="#cbd5e1" stroke-width="0.9"/>
+<line x1="94.80" y1="242.60" x2="233.80" y2="171.40" stroke="#cbd5e1" stroke-width="0.9"/>
+<line x1="108.40" y1="224.80" x2="248.40" y2="189.20" stroke="#cbd5e1" stroke-width="0.9"/>
+<line x1="122.00" y1="207.00" x2="263.00" y2="207.00" stroke="#cbd5e1" stroke-width="0.9"/>
+<line x1="135.60" y1="189.20" x2="277.60" y2="224.80" stroke="#cbd5e1" stroke-width="0.9"/>
+<line x1="149.20" y1="171.40" x2="292.20" y2="242.60" stroke="#cbd5e1" stroke-width="0.9"/>
+<line x1="162.80" y1="153.60" x2="306.80" y2="260.40" stroke="#cbd5e1" stroke-width="0.9"/>
+<line x1="176.40" y1="135.80" x2="321.40" y2="278.20" stroke="#cbd5e1" stroke-width="0.9"/>
+<polyline points="54.0,296.0 190.0,118.0 336.0,296.0" fill="none" stroke="#475569" stroke-width="1.3" stroke-dasharray="4 3"/>
+<path d="M 54.0,296.0 Q 190.0,118.0 336.0,296.0" fill="none" stroke="#1d6fa5" stroke-width="2.6"/>
+<line x1="101.60" y1="233.70" x2="241.10" y2="180.30" stroke="#18794e" stroke-width="2.0"/>
+<circle cx="54.00" cy="296.00" r="4.2" fill="#0f172a" stroke="#fff" stroke-width="1.2"/>
+<text x="50.0" y="313.0" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">P0</text>
+<circle cx="190.00" cy="118.00" r="4.2" fill="#0f172a" stroke="#fff" stroke-width="1.2"/>
+<text x="190.0" y="109.0" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">P1 (控制点)</text>
+<circle cx="336.00" cy="296.00" r="4.2" fill="#0f172a" stroke="#fff" stroke-width="1.2"/>
+<text x="340.0" y="313.0" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">P2</text>
+<circle cx="101.60" cy="233.70" r="4.2" fill="#18794e" stroke="#fff" stroke-width="1.2"/>
+<text x="73.6" y="228.7" font-size="10.2" fill="#18794e" text-anchor="middle" font-weight="700" class="halo">Q0(0.35)</text>
+<circle cx="241.10" cy="180.30" r="4.2" fill="#18794e" stroke="#fff" stroke-width="1.2"/>
+<text x="269.1" y="175.3" font-size="10.2" fill="#18794e" text-anchor="middle" font-weight="700" class="halo">Q1(0.35)</text>
+<circle cx="150.42" cy="215.01" r="4.2" fill="#c25014" stroke="#fff" stroke-width="1.2"/>
+<text x="156.4" y="233.0" font-size="10.2" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">B(0.35)</text>
+<rect x="34" y="326" width="324" height="84" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="46" y="345" font-size="9.8" fill="#1e293b" text-anchor="start">• 规则极简：在 P0P1、P1P2 上同取比例 t，连成绿线 Q0Q1；</text>
+<text x="46" y="365" font-size="9.8" fill="#1e293b" text-anchor="start">• 再在 Q0Q1 上取同样比例 t，落点 B(t) 自动描出精确抛物线！</text>
+<text x="46" y="385" font-size="9.8" fill="#18794e" text-anchor="start" font-weight="600">• 绿线 Q0Q1 恰好是曲线在 B(t) 处的严格切线（TrueType 字体核心）。</text>
+<rect x="388" y="62" width="352" height="362" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="402.0" y="74.0" width="324" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="564.0" y="89.0" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="600">三次贝塞尔 (n=3)：4 点递推 + 自动一分为二</text>
+<polyline points="418.0,294.0 452.0,122.0 654.0,120.0 708.0,294.0" fill="none" stroke="#475569" stroke-width="1.3" stroke-dasharray="4 3"/>
+<path d="M 418.0,294.0 C 452.0,122.0 654.0,120.0 708.0,294.0" fill="none" stroke="#fed7aa" stroke-width="3.0"/>
+<polyline class="dc-step1" points="431.60,225.20 532.80,121.20 675.60,189.60" fill="none" stroke="#1d6fa5" stroke-width="1.6"/>
+<line class="dc-step2" x1="472.08" y1="183.60" x2="589.92" y2="148.56" stroke="#18794e" stroke-width="2.1"/>
+<path class="dc-curve" d="M 418.0,294.0 C 452.0,122.0 654.0,120.0 708.0,294.0" pathLength="1000" fill="none" stroke="#c25014" stroke-width="2.8"/>
+<g><circle cx="418.00" cy="294.00" r="3.9" fill="#0f172a" stroke="#fff" stroke-width="1.2"/><text x="416.0" y="311.0" font-size="10.0" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">P0</text></g>
+<g><circle cx="452.00" cy="122.00" r="3.9" fill="#0f172a" stroke="#fff" stroke-width="1.2"/><text x="440.0" y="115.0" font-size="10.0" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">P1</text></g>
+<g><circle cx="654.00" cy="120.00" r="3.9" fill="#0f172a" stroke="#fff" stroke-width="1.2"/><text x="666.0" y="113.0" font-size="10.0" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">P2</text></g>
+<g><circle cx="708.00" cy="294.00" r="3.9" fill="#0f172a" stroke="#fff" stroke-width="1.2"/><text x="710.0" y="311.0" font-size="10.0" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">P3</text></g>
+<g class="dc-step1"><circle cx="431.60" cy="225.20" r="3.9" fill="#1d6fa5" stroke="#fff" stroke-width="1.2"/><text x="416.6" y="228.2" font-size="10.0" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">Q0</text></g>
+<g class="dc-step1"><circle cx="532.80" cy="121.20" r="3.9" fill="#1d6fa5" stroke="#fff" stroke-width="1.2"/><text x="532.8" y="112.2" font-size="10.0" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">Q1</text></g>
+<g class="dc-step1"><circle cx="675.60" cy="189.60" r="3.9" fill="#1d6fa5" stroke="#fff" stroke-width="1.2"/><text x="691.6" y="192.6" font-size="10.0" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">Q2</text></g>
+<g class="dc-step2"><circle cx="472.08" cy="183.60" r="3.9" fill="#18794e" stroke="#fff" stroke-width="1.2"/><text x="460.1" y="197.6" font-size="10.0" fill="#18794e" text-anchor="middle" font-weight="700" class="halo">R0</text></g>
+<g class="dc-step2"><circle cx="589.92" cy="148.56" r="3.9" fill="#18794e" stroke="#fff" stroke-width="1.2"/><text x="604.9" y="162.6" font-size="10.0" fill="#18794e" text-anchor="middle" font-weight="700" class="halo">R1</text></g>
+<g class="dc-step3"><circle cx="519.22" cy="169.58" r="4.8" fill="#c25014" stroke="#fff" stroke-width="1.2"/><text x="519.2" y="188.6" font-size="10.0" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">B(0.4)</text></g>
+<rect x="402" y="326" width="324" height="84" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="414" y="345" font-size="9.8" fill="#1e293b" text-anchor="start">• 第1轮算蓝点 Q0,Q1,Q2 → 第2轮算绿点 R0,R1 → 第3轮得 B(0.4)；</text>
+<text x="414" y="365" font-size="9.8" fill="#1e293b" text-anchor="start">• 数值绝对稳定：全程只在 [0,1] 做凸组合，绝无高次幂溢出；</text>
+<text x="414" y="385" font-size="9.8" fill="#c25014" text-anchor="start" font-weight="600">• 买一送一：(P0,Q0,R0,B) 与 (B,R1,Q2,P3) 恰好是左右两半控制点！</text>
+</svg>

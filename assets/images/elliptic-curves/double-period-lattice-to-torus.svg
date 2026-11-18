@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="474" viewBox="0 0 760 474" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">椭圆函数双周期晶格黏合为复环面并经魏尔斯特拉斯函数同构映射为三次椭圆曲线</title>
+<desc id="desc">左图展示复平面双周期平行四边形晶格Λ=Zω₁+Zω₂、基本胞腔对边黏合箭头与二阶极点分布；右图展示黏合后的亏格1复环面（甜甜圈）经Φ(z)=(℘(z),℘&#x27;(z))映射为光滑三次曲线y²=4x³-g₂x-g₃的过程，解释椭圆曲线得名的真正原因。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-ink" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#0f172a"/>
+  </marker>
+  <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#6d28d9"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="473" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">为什么明明不是椭圆，却叫“椭圆曲线”？从双周期晶格到甜甜圈变形记</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">闯进复平面 C 后涌现两个独立周期 ω₁, ω₂；把基本平行四边形对边黏成复环面，经 ℘(z) 投射恰为三次曲线！</text>
+<rect x="18" y="66" width="352" height="392" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="78.0" width="242" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="153.0" y="93.0" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">① 复平面双周期晶格 Λ = Zω₁ + Zω₂</text>
+<text x="32" y="114" font-size="9.3" fill="#64748b" text-anchor="start">sin z 只有实轴 1 个周期 2π；椭圆函数沿实、虚两向平铺：</text>
+<polygon points="42.00,328.00 120.00,328.00 146.00,272.00 68.00,272.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0"/>
+<polygon points="68.00,272.00 146.00,272.00 172.00,216.00 94.00,216.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0"/>
+<polygon points="94.00,216.00 172.00,216.00 198.00,160.00 120.00,160.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0"/>
+<polygon points="120.00,328.00 198.00,328.00 224.00,272.00 146.00,272.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0"/>
+<polygon points="146.00,272.00 224.00,272.00 250.00,216.00 172.00,216.00" fill="#dbeafe" stroke="#1d6fa5" stroke-width="2.2"/>
+<polygon points="172.00,216.00 250.00,216.00 276.00,160.00 198.00,160.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0"/>
+<polygon points="198.00,328.00 276.00,328.00 302.00,272.00 224.00,272.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0"/>
+<polygon points="224.00,272.00 302.00,272.00 328.00,216.00 250.00,216.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0"/>
+<polygon points="250.00,216.00 328.00,216.00 354.00,160.00 276.00,160.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0"/>
+<line x1="146.0" y1="272.0" x2="220.0" y2="272.0" stroke="#c25014" stroke-width="2.6" marker-end="url(#arr-orange)"/>
+<line x1="172.0" y1="216.0" x2="246.0" y2="216.0" stroke="#c25014" stroke-width="2.6" marker-end="url(#arr-orange)"/>
+<line x1="146.0" y1="272.0" x2="171.0" y2="219.0" stroke="#1d6fa5" stroke-width="2.6" marker-end="url(#arr-blue)"/>
+<line x1="224.0" y1="272.0" x2="249.0" y2="219.0" stroke="#1d6fa5" stroke-width="2.6" marker-end="url(#arr-blue)"/>
+<circle cx="42.0" cy="328.0" r="3.4" fill="#dc2626" stroke="#ffffff" stroke-width="1.0"/>
+<circle cx="86.5" cy="302.8" r="2.8" fill="#18794e"/>
+<circle cx="68.0" cy="272.0" r="3.4" fill="#dc2626" stroke="#ffffff" stroke-width="1.0"/>
+<circle cx="112.5" cy="246.8" r="2.8" fill="#18794e"/>
+<circle cx="94.0" cy="216.0" r="3.4" fill="#dc2626" stroke="#ffffff" stroke-width="1.0"/>
+<circle cx="138.5" cy="190.8" r="2.8" fill="#18794e"/>
+<circle cx="120.0" cy="160.0" r="3.4" fill="#dc2626" stroke="#ffffff" stroke-width="1.0"/>
+<circle cx="120.0" cy="328.0" r="3.4" fill="#dc2626" stroke="#ffffff" stroke-width="1.0"/>
+<circle cx="164.5" cy="302.8" r="2.8" fill="#18794e"/>
+<circle cx="146.0" cy="272.0" r="3.4" fill="#dc2626" stroke="#ffffff" stroke-width="1.0"/>
+<circle cx="190.5" cy="246.8" r="2.8" fill="#18794e"/>
+<circle cx="172.0" cy="216.0" r="3.4" fill="#dc2626" stroke="#ffffff" stroke-width="1.0"/>
+<circle cx="216.5" cy="190.8" r="2.8" fill="#18794e"/>
+<circle cx="198.0" cy="160.0" r="3.4" fill="#dc2626" stroke="#ffffff" stroke-width="1.0"/>
+<circle cx="198.0" cy="328.0" r="3.4" fill="#dc2626" stroke="#ffffff" stroke-width="1.0"/>
+<circle cx="242.5" cy="302.8" r="2.8" fill="#18794e"/>
+<circle cx="224.0" cy="272.0" r="3.4" fill="#dc2626" stroke="#ffffff" stroke-width="1.0"/>
+<circle cx="268.5" cy="246.8" r="2.8" fill="#18794e"/>
+<circle cx="250.0" cy="216.0" r="3.4" fill="#dc2626" stroke="#ffffff" stroke-width="1.0"/>
+<circle cx="294.5" cy="190.8" r="2.8" fill="#18794e"/>
+<circle cx="276.0" cy="160.0" r="3.4" fill="#dc2626" stroke="#ffffff" stroke-width="1.0"/>
+<circle cx="276.0" cy="328.0" r="3.4" fill="#dc2626" stroke="#ffffff" stroke-width="1.0"/>
+<circle cx="302.0" cy="272.0" r="3.4" fill="#dc2626" stroke="#ffffff" stroke-width="1.0"/>
+<circle cx="328.0" cy="216.0" r="3.4" fill="#dc2626" stroke="#ffffff" stroke-width="1.0"/>
+<text x="192.0" y="248.0" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">基本胞腔 P₀</text>
+<text x="185.0" y="287.0" font-size="8.8" fill="#c25014" text-anchor="middle" font-weight="700">+ω₁ (橙边黏合)</text>
+<text x="140.0" y="242.0" font-size="9.0" fill="#1d6fa5" text-anchor="end" font-weight="700">+ω₂</text>
+<text x="42" y="145" font-size="9.0" fill="#64748b" text-anchor="start" font-weight="700" class="mono">Im(z)</text>
+<text x="334" y="342" font-size="9.0" fill="#64748b" text-anchor="end" font-weight="700" class="mono">Re(z)</text>
+<rect x="32" y="352" width="324" height="94" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="44" y="371" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="700">刘维尔椭圆函数铁律（为什么全纯双周期必为常数？）：</text>
+<text x="44" y="390" font-size="9.0" fill="#1e293b" text-anchor="start">• 若处处无极点，闭合有界胞腔 P₀ 锁死最大值 ⇒ 全平面有界必常数！</text>
+<text x="44" y="408" font-size="9.0" fill="#1e293b" text-anchor="start">• 留数和为 0 ⇒ 不可能有单极点！最简选择：魏尔斯特拉斯 ℘(z) 在格</text>
+<text x="44" y="426" font-size="9.0" fill="#18794e" text-anchor="start" font-weight="600">  点放 1 个二阶极点（红点 ●），绿点 z 与 z+ω₁, z+ω₂ 函数值全相等。</text>
+<rect x="386" y="66" width="356" height="392" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="400.0" y="78.0" width="306" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="553.0" y="93.0" font-size="10.5" fill="#6d28d9" text-anchor="middle" font-weight="600">② 对边黏成复环面 C/Λ ──▶ 投射成三次代数曲线</text>
+<path d="M 571.00 168.00 L 570.82 165.07 L 570.27 162.16 L 569.36 159.28 L 568.09 156.44 L 566.48 153.66 L 564.52 150.94 L 562.22 148.31 L 559.60 145.78 L 556.68 143.35 L 553.45 141.04 L 549.95 138.87 L 546.18 136.83 L 542.17 134.95 L 537.94 133.23 L 533.50 131.68 L 528.88 130.31 L 524.10 129.11 L 519.18 128.11 L 514.14 127.31 L 509.02 126.70 L 503.84 126.29 L 498.62 126.09 L 493.38 126.09 L 488.16 126.29 L 482.98 126.70 L 477.86 127.31 L 472.82 128.11 L 467.90 129.11 L 463.12 130.31 L 458.50 131.68 L 454.06 133.23 L 449.83 134.95 L 445.82 136.83 L 442.05 138.87 L 438.55 141.04 L 435.32 143.35 L 432.40 145.78 L 429.78 148.31 L 427.48 150.94 L 425.52 153.66 L 423.91 156.44 L 422.64 159.28 L 421.73 162.16 L 421.18 165.07 L 421.00 168.00 L 421.18 170.93 L 421.73 173.84 L 422.64 176.72 L 423.91 179.56 L 425.52 182.34 L 427.48 185.06 L 429.78 187.69 L 432.40 190.22 L 435.32 192.65 L 438.55 194.96 L 442.05 197.13 L 445.82 199.17 L 449.83 201.05 L 454.06 202.77 L 458.50 204.32 L 463.12 205.69 L 467.90 206.89 L 472.82 207.89 L 477.86 208.69 L 482.98 209.30 L 488.16 209.71 L 493.38 209.91 L 498.62 209.91 L 503.84 209.71 L 509.02 209.30 L 514.14 208.69 L 519.18 207.89 L 524.10 206.89 L 528.88 205.69 L 533.50 204.32 L 537.94 202.77 L 542.17 201.05 L 546.18 199.17 L 549.95 197.13 L 553.45 194.96 L 556.68 192.65 L 559.60 190.22 L 562.22 187.69 L 564.52 185.06 L 566.48 182.34 L 568.09 179.56 L 569.36 176.72 L 570.27 173.84 L 570.82 170.93 L 571.00 168.00 Z" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.8"/>
+<ellipse cx="496.0" cy="168.0" rx="33.0" ry="18.5" fill="#ffffff" stroke="#6d28d9" stroke-width="1.5"/>
+<path d="M 533.19 172.79 L 532.13 173.92 L 530.92 175.00 L 529.55 176.05 L 528.03 177.05 L 526.37 178.01 L 524.58 178.91 L 522.66 179.76 L 520.63 180.54 L 518.48 181.26 L 516.24 181.92 L 513.91 182.50 L 511.50 183.01 L 509.02 183.45 L 506.49 183.81 L 503.91 184.09 L 501.29 184.29 L 498.65 184.41 L 496.00 184.45 L 493.35 184.41 L 490.71 184.29 L 488.09 184.09 L 485.51 183.81 L 482.98 183.45 L 480.50 183.01 L 478.09 182.50 L 475.76 181.92 L 473.52 181.26 L 471.37 180.54 L 469.34 179.76 L 467.42 178.91 L 465.63 178.01 L 463.97 177.05 L 462.45 176.05 L 461.08 175.00 L 459.87 173.92 L 458.81 172.79" fill="none" stroke="#6d28d9" stroke-width="1.5"/>
+<path d="M 567.90 177.10 L 567.68 173.95 L 567.02 170.81 L 565.92 167.71 L 564.38 164.68 L 562.43 161.71 L 560.07 158.85 L 557.31 156.09 L 554.17 153.47 L 550.68 150.99 L 546.84 148.67 L 542.70 146.53 L 538.26 144.57 L 533.57 142.82 L 528.64 141.27 L 523.52 139.95 L 518.22 138.86 L 512.79 138.00 L 507.25 137.39 L 501.64 137.02 L 496.00 136.89 L 490.36 137.02 L 484.75 137.39 L 479.21 138.00 L 473.78 138.86 L 468.48 139.95 L 463.36 141.27 L 458.43 142.82 L 453.74 144.57 L 449.30 146.53 L 445.16 148.67 L 441.32 150.99 L 437.83 153.47 L 434.69 156.09 L 431.93 158.85 L 429.57 161.71 L 427.62 164.68 L 426.08 167.71 L 424.98 170.81 L 424.32 173.95 L 424.10 177.10 L 424.32 180.25 L 424.98 183.39 L 426.08 186.49 L 427.62 189.52 L 429.57 192.49 L 431.93 195.35 L 434.69 198.11 L 437.83 200.73 L 441.32 203.21 L 445.16 205.53 L 449.30 207.67 L 453.74 209.63 L 458.43 211.38 L 463.36 212.93 L 468.48 214.25 L 473.78 215.34 L 479.21 216.20 L 484.75 216.81 L 490.36 217.18 L 496.00 217.31 L 501.64 217.18 L 507.25 216.81 L 512.79 216.20 L 518.22 215.34 L 523.52 214.25 L 528.64 212.93 L 533.57 211.38 L 538.26 209.63 L 542.70 207.67 L 546.84 205.53 L 550.68 203.21 L 554.17 200.73 L 557.31 198.11 L 560.07 195.35 L 562.43 192.49 L 564.38 189.52 L 565.92 186.49 L 567.02 183.39 L 567.68 180.25 L 567.90 177.10 Z" fill="none" stroke="#c25014" stroke-width="2.3"/>
+<path d="M 515.41 175.69 L 514.64 175.32 L 513.91 175.14 L 513.21 175.14 L 512.56 175.33 L 511.96 175.70 L 511.41 176.25 L 510.93 176.98 L 510.50 177.87 L 510.15 178.93 L 509.87 180.14 L 509.66 181.49 L 509.53 182.96 L 509.48 184.55 L 509.51 186.24 L 509.61 188.02 L 509.79 189.86 L 510.04 191.76 L 510.37 193.69 L 510.77 195.63 L 511.23 197.58 L 511.76 199.51 L 512.34 201.40 L 512.98 203.24 L 513.66 205.01 L 514.38 206.69 L 515.13 208.28 L 515.92 209.74 L 516.72 211.08" fill="none" stroke="#1d6fa5" stroke-width="1.5" stroke-dasharray="3 3"/>
+<path d="M 516.72 211.08 L 517.57 212.34 L 518.43 213.42 L 519.29 214.33 L 520.13 215.05 L 520.96 215.57 L 521.75 215.89 L 522.51 216.01 L 523.22 215.92 L 523.88 215.62 L 524.48 215.13 L 525.02 214.43 L 525.49 213.55 L 525.88 212.49 L 526.19 211.25 L 526.43 209.86 L 526.57 208.32 L 526.63 206.66 L 526.61 204.88 L 526.50 203.01 L 526.30 201.07 L 526.03 199.07 L 525.67 197.03 L 525.23 194.98 L 524.72 192.94 L 524.15 190.92 L 523.51 188.95 L 522.82 187.04 L 522.09 185.22 L 521.31 183.51 L 520.49 181.91 L 519.66 180.46 L 518.81 179.15 L 517.95 178.01 L 517.09 177.05 L 516.24 176.27 L 515.41 175.69" fill="none" stroke="#1d6fa5" stroke-width="2.4"/>
+<circle cx="525.4" cy="213.8" r="4.5" fill="#dc2626" stroke="#ffffff" stroke-width="1.3"/>
+<text x="496.0" y="224" font-size="9.4" fill="#6d28d9" text-anchor="middle" font-weight="700">复环面 C/Λ（亏格 g=1 甜甜圈）</text>
+<text x="590" y="142" font-size="9.0" fill="#c25014" text-anchor="start" font-weight="700">橙圈：ω₁ 周期</text>
+<text x="590" y="162" font-size="9.0" fill="#1d6fa5" text-anchor="start" font-weight="700">蓝圈：ω₂ 周期</text>
+<text x="590" y="182" font-size="9.0" fill="#dc2626" text-anchor="start" font-weight="700">红点 0 ↦ 无穷远点 O</text>
+<line x1="496" y1="232" x2="496" y2="258" stroke="#6d28d9" stroke-width="2.2" marker-end="url(#arr-purple)"/>
+<text x="508" y="249" font-size="9.2" fill="#6d28d9" text-anchor="start" font-weight="700">Φ(z) = ( x=℘(z), y=℘&#x27;(z) ) 同构投射</text>
+<line x1="400" y1="346.0" x2="526" y2="346.0" stroke="#94a3b8" stroke-width="1.1"/>
+<line x1="458.0" y1="274" x2="458.0" y2="418" stroke="#94a3b8" stroke-width="1.1"/>
+<path d="M 515.58 396.03 L 513.93 393.54 L 512.29 391.11 L 510.66 388.72 L 509.04 386.39 L 507.43 384.12 L 505.82 381.90 L 504.23 379.73 L 502.65 377.63 L 501.08 375.58 L 499.51 373.60 L 497.96 371.68 L 496.42 369.84 L 494.88 368.06 L 493.36 366.36 L 491.84 364.75 L 490.34 363.23 L 488.85 361.82 L 487.36 360.53 L 485.89 359.37 L 484.43 358.37 L 482.97 357.54 L 481.53 356.91 L 480.10 356.49 L 478.68 356.29 L 477.27 356.29 L 475.87 356.48 L 474.48 356.84 L 473.10 357.33 L 471.74 357.92 L 470.38 358.58 L 469.04 359.29 L 467.71 360.04 L 466.39 360.80 L 465.08 361.57 L 463.78 362.33 L 462.49 363.08 L 461.22 363.81 L 459.95 364.53 L 458.70 365.22 L 457.47 365.88 L 456.24 366.51 L 455.03 367.11 L 453.83 367.68 L 452.64 368.21 L 451.46 368.71 L 450.30 369.17 L 449.15 369.60 L 448.01 369.99 L 446.89 370.34 L 445.78 370.65 L 444.69 370.92 L 443.61 371.16 L 442.54 371.35 L 441.49 371.51 L 440.45 371.63 L 439.43 371.70 L 438.42 371.74 L 437.42 371.74 L 436.45 371.69 L 435.48 371.61 L 434.54 371.49 L 433.61 371.32 L 432.69 371.11 L 431.80 370.87 L 430.92 370.58 L 430.06 370.25 L 429.21 369.88 L 428.38 369.47 L 427.58 369.01 L 426.79 368.52 L 426.02 367.98 L 425.27 367.39 L 424.54 366.76 L 423.83 366.09 L 423.15 365.37 L 422.48 364.61 L 421.84 363.80 L 421.23 362.94 L 420.64 362.02 L 420.07 361.06 L 419.53 360.04 L 419.03 358.96 L 418.55 357.82 L 418.10 356.60 L 417.70 355.31 L 417.33 353.92 L 417.00 352.42 L 416.73 350.75 L 416.51 348.84 L 416.40 346.00 L 416.51 343.16 L 416.73 341.25 L 417.00 339.58 L 417.33 338.08 L 417.70 336.69 L 418.10 335.40 L 418.55 334.18 L 419.03 333.04 L 419.53 331.96 L 420.07 330.94 L 420.64 329.98 L 421.23 329.06 L 421.84 328.20 L 422.48 327.39 L 423.15 326.63 L 423.83 325.91 L 424.54 325.24 L 425.27 324.61 L 426.02 324.02 L 426.79 323.48 L 427.58 322.99 L 428.38 322.53 L 429.21 322.12 L 430.06 321.75 L 430.92 321.42 L 431.80 321.13 L 432.69 320.89 L 433.61 320.68 L 434.54 320.51 L 435.48 320.39 L 436.45 320.31 L 437.42 320.26 L 438.42 320.26 L 439.43 320.30 L 440.45 320.37 L 441.49 320.49 L 442.54 320.65 L 443.61 320.84 L 444.69 321.08 L 445.78 321.35 L 446.89 321.66 L 448.01 322.01 L 449.15 322.40 L 450.30 322.83 L 451.46 323.29 L 452.64 323.79 L 453.83 324.32 L 455.03 324.89 L 456.24 325.49 L 457.47 326.12 L 458.70 326.78 L 459.95 327.47 L 461.22 328.19 L 462.49 328.92 L 463.78 329.67 L 465.08 330.43 L 466.39 331.20 L 467.71 331.96 L 469.04 332.71 L 470.38 333.42 L 471.74 334.08 L 473.10 334.67 L 474.48 335.16 L 475.87 335.52 L 477.27 335.71 L 478.68 335.71 L 480.10 335.51 L 481.53 335.09 L 482.97 334.46 L 484.43 333.63 L 485.89 332.63 L 487.36 331.47 L 488.85 330.18 L 490.34 328.77 L 491.84 327.25 L 493.36 325.64 L 494.88 323.94 L 496.42 322.16 L 497.96 320.32 L 499.51 318.40 L 501.08 316.42 L 502.65 314.37 L 504.23 312.27 L 505.82 310.10 L 507.43 307.88 L 509.04 305.61 L 510.66 303.28 L 512.29 300.89 L 513.93 298.46 L 515.58 295.97" fill="none" stroke="#18794e" stroke-width="2.6"/>
+<text x="464" y="434" font-size="9.0" fill="#18794e" text-anchor="middle" font-weight="700">光滑三次曲线 y² = x³+ax+b</text>
+<rect x="536" y="268" width="194" height="178" rx="8" fill="#e7f6ee" stroke="#bbf7d0" stroke-width="1"/>
+<text x="547" y="288" font-size="9.8" fill="#18794e" text-anchor="start" font-weight="700">命名冤案彻底破案：</text>
+<text x="547" y="308" font-size="8.9" fill="#1e293b" text-anchor="start">1. ℘ 含 z⁻²，导数 ℘&#x27; 含 −2z⁻³；</text>
+<text x="547" y="326" font-size="8.9" fill="#1e293b" text-anchor="start">   配成 (℘&#x27;)² − 4℘³ 刚好抵消</text>
+<text x="547" y="344" font-size="8.9" fill="#18794e" text-anchor="start" font-weight="700">   6 阶主极点！</text>
+<text x="547" y="364" font-size="8.9" fill="#1e293b" text-anchor="start">2. 化简即得三次代数曲线方程：</text>
+<text x="547" y="382" font-size="9.1" fill="#0f172a" text-anchor="start" font-weight="700" class="mono">   y² = 4x³ − g₂x − g₃；</text>
+<text x="547" y="402" font-size="8.9" fill="#1e293b" text-anchor="start">3. 它是椭圆函数复环面的真身，</text>
+<text x="547" y="420" font-size="8.9" fill="#6d28d9" text-anchor="start" font-weight="700">   绝不是压扁的椭圆！</text>
+</svg>

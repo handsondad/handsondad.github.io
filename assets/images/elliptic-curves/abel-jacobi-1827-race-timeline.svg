@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="458" viewBox="0 0 760 458" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">椭圆函数与阿贝尔雅可比双星竞速六幕历史时间轴（1797-1862）</title>
+<desc id="desc">六张分步卡片依次展示1797-1799高斯未发表双纽线日记、1786-1825勒让德四十年积分分类、1826阿贝尔巴黎遗失手稿、1827年9月阿贝尔与雅可比同月破局、1829新基础专著与阿贝尔26岁早逝及迟到两天的柏林聘书、1830巴黎大奖与魏尔斯特拉斯复环面统一。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-ink" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#0f172a"/>
+  </marker>
+  <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#6d28d9"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="457" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">数学史最悲壮也最璀璨的双星竞速：高斯秘藏、阿贝尔遗稿与雅可比破局</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">按史实严格区分“未发表手稿”“呈交遗失”与“正式刊印”：两个二十出头的年轻人在两年内掀翻四十年困局</text>
+<rect x="18" y="72" width="236" height="168" rx="10" fill="#ffffff" stroke="#ddd6fe" stroke-width="1"/>
+<rect x="30.0" y="82.0" width="186" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="123.0" y="97.0" font-size="10.0" fill="#6d28d9" text-anchor="middle" font-weight="600">① 1797–1799 哥廷根秘档</text>
+<text x="30" y="120" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">20 岁高斯私下破局却不发表</text>
+<text x="30" y="140" font-size="9.0" fill="#1e293b" text-anchor="start">• 算出双纽线 ∫dt/√(1−t⁴) 反函数</text>
+<text x="30" y="157.5" font-size="9.0" fill="#1e293b" text-anchor="start">  具有实虚双周期（正方形晶格）；</text>
+<text x="30" y="175.0" font-size="9.0" fill="#1e293b" text-anchor="start">• 1799.05.30 日记发现 π/ϖ = M(1,√2)</text>
+<text x="30" y="192.5" font-size="9.0" fill="#1e293b" text-anchor="start">  称“将开辟分析学全新天地”；</text>
+<text x="30" y="210.0" font-size="9.0" fill="#1e293b" text-anchor="start">• 恪守“少而精”，秘藏抽屉近三十年。</text>
+<rect x="262" y="72" width="236" height="168" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="274.0" y="82.0" width="186" height="22" rx="11.0" fill="#f1f5f9" stroke="#64748b" stroke-width="1" stroke-opacity="0.35"/>
+<text x="367.0" y="97.0" font-size="10.0" fill="#64748b" text-anchor="middle" font-weight="600">② 1786–1825 巴黎孤守</text>
+<text x="274" y="120" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">勒让德独自苦算椭圆积分 40 年</text>
+<text x="274" y="140" font-size="9.0" fill="#1e293b" text-anchor="start">• 将千奇百怪的椭圆积分化归为第一、</text>
+<text x="274" y="157.5" font-size="9.0" fill="#1e293b" text-anchor="start">  第二、第三类三大标准型；</text>
+<text x="274" y="175.0" font-size="9.0" fill="#1e293b" text-anchor="start">• 耗尽心血编印三大卷精密函数表；</text>
+<text x="274" y="192.5" font-size="9.0" fill="#1e293b" text-anchor="start">• 始终顺着积分硬啃而未想到掉头反</text>
+<text x="274" y="210.0" font-size="9.0" fill="#1e293b" text-anchor="start">  演，巨著出版后学界一度无人问津。</text>
+<rect x="506" y="72" width="236" height="168" rx="10" fill="#ffffff" stroke="#fecaca" stroke-width="1"/>
+<rect x="518.0" y="82.0" width="186" height="22" rx="11.0" fill="#fef2f2" stroke="#b91c1c" stroke-width="1" stroke-opacity="0.35"/>
+<text x="611.0" y="97.0" font-size="10.0" fill="#b91c1c" text-anchor="middle" font-weight="600">③ 1826.10 巴黎冷遇与遗失</text>
+<text x="518" y="120" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">24 岁阿贝尔呈交不朽巨著被搁置</text>
+<text x="518" y="140" font-size="9.0" fill="#1e293b" text-anchor="start">• 游学巴黎每天只吃一顿饭，10 月向</text>
+<text x="518" y="157.5" font-size="9.0" fill="#1e293b" text-anchor="start">  法国科学院呈交《超越函数通论》；</text>
+<text x="518" y="175.0" font-size="9.0" fill="#1e293b" text-anchor="start">• 内含统摄任意代数曲线积分和的“阿</text>
+<text x="518" y="192.5" font-size="9.0" fill="#1e293b" text-anchor="start">  贝尔定理”及亏格 p 雏形；</text>
+<text x="518" y="210.0" font-size="9.0" fill="#1e293b" text-anchor="start">• 审稿人柯西随手塞进文件堆遗失！</text>
+<rect x="18" y="258" width="236" height="182" rx="10" fill="#ffffff" stroke="#bfdbfe" stroke-width="1"/>
+<rect x="30.0" y="268.0" width="186" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="123.0" y="283.0" font-size="10.0" fill="#1d6fa5" text-anchor="middle" font-weight="600">④ 1827.09 双星同月破晓</text>
+<text x="30" y="306" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">《克列尔》与《天文通讯》同时炸响</text>
+<text x="30" y="326" font-size="9.0" fill="#1e293b" text-anchor="start">• 9 月 20 日《克列尔》第 2 卷刊出阿</text>
+<text x="30" y="343.5" font-size="9.0" fill="#1e293b" text-anchor="start">  贝尔《椭圆函数研究》，系统给出反</text>
+<text x="30" y="361.0" font-size="9.0" fill="#1e293b" text-anchor="start">  演、加法定理与复平面双周期性！</text>
+<text x="30" y="378.5" font-size="9.0" fill="#1e293b" text-anchor="start">• 同月 22 岁雅可比在《天文通讯》宣</text>
+<text x="30" y="396.0" font-size="9.0" fill="#1e293b" text-anchor="start">  布高次变换公式，巅峰竞速正式打响！</text>
+<rect x="262" y="258" width="236" height="182" rx="10" fill="#ffffff" stroke="#fed7aa" stroke-width="1"/>
+<rect x="274.0" y="268.0" width="186" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="367.0" y="283.0" font-size="10.0" fill="#c25014" text-anchor="middle" font-weight="600">⑤ 1828–1829 冰雪绝唱</text>
+<text x="274" y="306" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">隔空过招、《新基础》与迟到聘书</text>
+<text x="274" y="326" font-size="9.0" fill="#1e293b" text-anchor="start">• 两人轮番发文推高理论，76 岁勒让</text>
+<text x="274" y="343.5" font-size="9.0" fill="#1e293b" text-anchor="start">  德盛赞：“你们跻身当代头号分析家！”</text>
+<text x="274" y="361.0" font-size="9.0" fill="#1e293b" text-anchor="start">• 1829 雅可比出版《椭圆函数理论新</text>
+<text x="274" y="378.5" font-size="9.0" fill="#1e293b" text-anchor="start">  基础》，引入四个极快收敛 θ 函数；</text>
+<text x="274" y="396.0" font-size="9.0" fill="#1e293b" text-anchor="start">• 1829.04.06 阿贝尔 26 岁病逝，克列</text>
+<text x="274" y="413.5" font-size="9.0" fill="#1e293b" text-anchor="start">  尔寄出的柏林教授聘书迟到了两天。</text>
+<rect x="506" y="258" width="236" height="182" rx="10" fill="#ffffff" stroke="#bbf7d0" stroke-width="1"/>
+<rect x="518.0" y="268.0" width="186" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="611.0" y="283.0" font-size="10.0" fill="#18794e" text-anchor="middle" font-weight="600">⑥ 1830–1862 薪火大一统</text>
+<text x="518" y="306" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">追授巴黎大奖、遗稿重现与复环面</text>
+<text x="518" y="326" font-size="9.0" fill="#1e293b" text-anchor="start">• 1830 巴黎科学院将数学大奖共同授</text>
+<text x="518" y="343.5" font-size="9.0" fill="#1e293b" text-anchor="start">  予已故阿贝尔与雅可比；同年找回遗</text>
+<text x="518" y="361.0" font-size="9.0" fill="#1e293b" text-anchor="start">  稿（竟拖到 1841 年才正式印出）；</text>
+<text x="518" y="378.5" font-size="9.0" fill="#1e293b" text-anchor="start">• 1834 雅可比证双周期比值必非实数；</text>
+<text x="518" y="396.0" font-size="9.0" fill="#1e293b" text-anchor="start">• 1854–1862 魏尔斯特拉斯与黎曼用</text>
+<text x="518" y="413.5" font-size="9.0" fill="#1e293b" text-anchor="start">  ℘(z) 与复环面完成几何代数大统一！</text>
+<line x1="254" y1="156" x2="261" y2="156" stroke="#0f172a" stroke-width="1.8" marker-end="url(#arr-ink)"/>
+<line x1="498" y1="156" x2="505" y2="156" stroke="#0f172a" stroke-width="1.8" marker-end="url(#arr-ink)"/>
+<path d="M 624 240 L 624 249 L 136 249 L 136 256" fill="none" stroke="#1d6fa5" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+<line x1="254" y1="349" x2="261" y2="349" stroke="#c25014" stroke-width="1.8" marker-end="url(#arr-orange)"/>
+<line x1="498" y1="349" x2="505" y2="349" stroke="#18794e" stroke-width="1.8" marker-end="url(#arr-green)"/>
+</svg>

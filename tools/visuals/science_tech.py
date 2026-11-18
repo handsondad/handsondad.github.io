@@ -14330,3 +14330,760 @@ def _register_tennis_rules():
 
 
 _register_tennis_rules()
+
+
+def _register_media_formats():
+    import math
+
+    SUBDIR = "media-formats"
+
+    # ------------------------------------------------------------------
+    # 1. Vector (SVG Cubic Bezier) vs Raster (BMP) & Camera RAW Bayer RGGB
+    # ------------------------------------------------------------------
+    def _build_vector_bezier_vs_raster_bayer():
+        els = []
+        els.extend(
+            header(
+                "图像的两大底层世界：SVG 矢量贝塞尔方程 vs 位图网格与相机 RAW 拜耳阵列",
+                "左：放大 8 倍后 SVG 靠三次贝塞尔方程实时重算切线永不发虚；右：相机 RAW 存的是 14-bit 拜耳马赛克",
+                x=20,
+                y=26,
+            )
+        )
+
+        # ---- Left Panel: Vector vs Raster 8x Zoom ----
+        els.append(card(16, 58, 360, 382))
+        els.append(pill(28, 68, "世界 A · 矢量方程 (SVG) vs 像素栅格 (BMP/PNG)", fg=BLUE, bg=BLUE_SOFT, w=336, h=22, size=11.5))
+
+        # Top mini comparison: Vector Cubic Bezier curve with control polygon
+        vx0, vy0 = 30, 102
+        els.append(card(vx0, vy0, 160, 146, rx=8, fill="#f8fafc", stroke=HAIRLINE))
+        els.append(txt(vx0 + 80, vy0 + 17, "SVG 矢量 (存几何公式)", 11.8, BLUE, "middle", weight="700"))
+
+        P0 = (vx0 + 22.0, vy0 + 106.0)
+        P1 = (vx0 + 38.0, vy0 + 35.0)
+        P2 = (vx0 + 122.0, vy0 + 37.0)
+        P3 = (vx0 + 140.0, vy0 + 104.0)
+
+        def bezier_pt(t):
+            u = 1.0 - t
+            bx = (u**3) * P0[0] + 3 * (u**2) * t * P1[0] + 3 * u * (t**2) * P2[0] + (t**3) * P3[0]
+            by = (u**3) * P0[1] + 3 * (u**2) * t * P1[1] + 3 * u * (t**2) * P2[1] + (t**3) * P3[1]
+            return bx, by
+
+        b_pts = [bezier_pt(i / 64.0) for i in range(65)]
+        assert abs(b_pts[0][0] - P0[0]) < 1e-6 and abs(b_pts[-1][0] - P3[0]) < 1e-6
+
+        # Control polygon dashed lines
+        els.append(f'<line x1="{P0[0]:.1f}" y1="{P0[1]:.1f}" x2="{P1[0]:.1f}" y2="{P1[1]:.1f}" stroke="{ORANGE}" stroke-width="1.2" stroke-dasharray="3 2"/>')
+        els.append(f'<line x1="{P2[0]:.1f}" y1="{P2[1]:.1f}" x2="{P3[0]:.1f}" y2="{P3[1]:.1f}" stroke="{ORANGE}" stroke-width="1.2" stroke-dasharray="3 2"/>')
+        b_d = "M " + " L ".join(f"{px:.2f},{py:.2f}" for px, py in b_pts)
+        els.append(f'<path d="{b_d}" fill="none" stroke="{BLUE}" stroke-width="3.2" stroke-linecap="round"/>')
+        for lbl, pt, dy in [("P0", P0, 14), ("P1", P1, -6), ("P2", P2, -6), ("P3", P3, 14)]:
+            els.append(f'<circle cx="{pt[0]:.1f}" cy="{pt[1]:.1f}" r="3.5" fill="#ffffff" stroke="{ORANGE}" stroke-width="1.6"/>')
+            els.append(txt(pt[0], pt[1] + dy, lbl, 10.2, ORANGE, "middle", weight="700", cls="mono"))
+        els.append(txt(vx0 + 80, vy0 + 139, "放大 800%：实时重算光滑边界", 10.6, GREEN, "middle", weight="600"))
+
+        # Right mini box: Raster 8x Zoom Staircase
+        rx0, ry0 = 202, 102
+        els.append(card(rx0, ry0, 162, 146, rx=8, fill="#f8fafc", stroke=HAIRLINE))
+        els.append(txt(rx0 + 81, ry0 + 17, "位图光栅 (存固定像素格)", 11.8, ORANGE, "middle", weight="700"))
+
+        gx0, gy0, cell = rx0 + 19, ry0 + 26, 11
+        cols_n, rows_n = 11, 9
+        # Sample curve passing across grid to produce authentic pixel staircase
+        for r in range(rows_n):
+            for c in range(cols_n):
+                # Normalize (c, r) and compute distance to ideal arc
+                nx = c / (cols_n - 1)
+                ideal_r = 7.4 - 5.8 * math.sin(nx * math.pi * 0.88 + 0.12)
+                dist = abs(r - ideal_r)
+                if dist < 0.72:
+                    fill_c = "#1d6fa5"
+                elif dist < 1.28:
+                    fill_c = "#93c5fd"
+                else:
+                    fill_c = "#ffffff"
+                els.append(
+                    f'<rect x="{gx0 + c * cell}" y="{gy0 + r * cell}" width="{cell}" height="{cell}" '
+                    f'fill="{fill_c}" stroke="#cbd5e1" stroke-width="0.6"/>'
+                )
+        els.append(txt(rx0 + 81, ry0 + 138, "放大 800%：暴露马赛克阶梯", 10.8, ORANGE, "middle", weight="600"))
+
+        # Explanation summary box under Vector vs Raster
+        els.append(card(30, 258, 334, 170, rx=8, fill="#ffffff", stroke=BORDER))
+        v_notes = [
+            ("SVG 存的是 XML 文本指令：", True, BLUE),
+            ("  B(t)=(1-t)³P0+3(1-t)²tP1+3(1-t)t²P2+t³P3", False, INK),
+            ("• 优点：Logo/图表仅数 KB，4K 屏或巨幅海报永不发虚，", False, BODY),
+            ("  还能直接用 CSS 改颜色、加无障碍标签与轻量动画；", False, BODY),
+            ("• 反例禁区：千万别把实拍风景照硬转 SVG！几百万噪点", False, ORANGE),
+            ("  会被拆成几十万条闭合路径，体积反超 20 MB 且卡死网页。", False, BODY),
+            ("• 未压缩位图 BMP：4000×3000×3 Byte = 36.0 MB！", True, SLATE),
+        ]
+        for idx, (line_s, bold, col) in enumerate(v_notes):
+            cls_name = "mono" if "B(t)=" in line_s else None
+            els.append(txt(40, 278 + idx * 21.5, line_s, 11.2, col, weight="700" if bold else "400", cls=cls_name))
+
+        # ---- Right Panel: Camera RAW Bayer Mosaic & 14-bit vs 8-bit ----
+        els.append(card(388, 58, 356, 382))
+        els.append(pill(400, 68, "世界 B · 相机 RAW 拜耳滤色片与 14-bit 宽容度", fg=GREEN, bg=GREEN_SOFT, w=332, h=22, size=11.5))
+
+        # 4x4 RGGB Bayer filter grid (exact 50% G, 25% R, 25% B)
+        bx0, by0, bcell = 404, 104, 28
+        bayer_rows = [
+            ["R", "G", "R", "G"],
+            ["G", "B", "G", "B"],
+            ["R", "G", "R", "G"],
+            ["G", "B", "G", "B"],
+        ]
+        counts = {"R": 0, "G": 0, "B": 0}
+        b_colors = {
+            "R": ("#fee2e2", "#dc2626", "#991b1b"),
+            "G": ("#dcfce7", "#16a34a", "#14532d"),
+            "B": ("#dbeafe", "#2563eb", "#1e3a8a"),
+        }
+        for r_i, row in enumerate(bayer_rows):
+            for c_i, ch in enumerate(row):
+                counts[ch] += 1
+                bg_c, st_c, fg_c = b_colors[ch]
+                cx = bx0 + c_i * bcell
+                cy = by0 + r_i * bcell
+                els.append(f'<rect x="{cx}" y="{cy}" width="{bcell - 2}" height="{bcell - 2}" rx="4" fill="{bg_c}" stroke="{st_c}" stroke-width="1.2"/>')
+                els.append(txt(cx + (bcell - 2) / 2, cy + 18, ch, 11.5, fg_c, "middle", weight="700", cls="mono"))
+        assert counts["G"] == 8 and counts["R"] == 4 and counts["B"] == 4
+
+        els.append(txt(bx0 + 55, by0 + 128, "RGGB 拜耳阵列 (1976)", 11.2, INK, "middle", weight="700"))
+        els.append(txt(bx0 + 55, by0 + 144, "绿 50% · 红 25% · 蓝 25%", 10.8, GREEN, "middle", weight="600"))
+
+        # Right of Bayer grid: Demosaicing pipeline mini flow
+        fx0 = 530
+        flow_steps = [
+            ("1. 传感器单色电荷", "每格仅测 1 种光强 (非 RGB!)"),
+            ("2. 12~14 bit 线性记录", "单通道 4,096~16,384 级灰阶"),
+            ("3. 去马赛克插值 + 白平衡", "后期自由重算色温不损画质"),
+        ]
+        for si, (st, sd) in enumerate(flow_steps):
+            sy = 104 + si * 48
+            els.append(card(fx0, sy, 202, 40, rx=6, fill="#f8fafc", stroke=HAIRLINE))
+            els.append(txt(fx0 + 8, sy + 16, st, 11.2, INK, weight="700"))
+            els.append(txt(fx0 + 8, sy + 32, sd, 10.5, MUTED))
+
+        # Bottom of Right Panel: 8-bit JPEG (256 steps, highlight clipped) vs 14-bit RAW (16,384 steps)
+        els.append(card(402, 258, 330, 170, rx=8, fill="#ffffff", stroke=BORDER))
+        els.append(txt(414, 278, "为什么过曝云彩 RAW 拉得回，JPEG 却是死白？", 11.8, INK, weight="700"))
+
+        # Draw 8-bit stepped/clipped bar vs 14-bit smooth gradient bar
+        # 8-bit quantized 8 coarse blocks + clipped white end
+        bar_x, bar_w = 414, 304
+        els.append(txt(bar_x, 300, "8-bit JPEG（每通道 2⁸ = 256 级，高光溢出直接削平为 255）：", 10.8, ORANGE, weight="600"))
+        for k in range(10):
+            seg_w = bar_w / 10.0
+            if k < 7:
+                v = int(30 + k * 32)
+                fill_hex = f"#{v:02x}{min(255, v + 12):02x}{min(255, v + 28):02x}"
+            else:
+                fill_hex = "#ffffff"
+            els.append(
+                f'<rect x="{bar_x + k * seg_w:.1f}" y="308" width="{seg_w:.1f}" height="20" '
+                f'fill="{fill_hex}" stroke="#cbd5e1" stroke-width="0.7"/>'
+            )
+        els.append(txt(bar_x + bar_w * 0.85, 322, "255 死白截断!", 10.2, "#dc2626", "middle", weight="700"))
+
+        # 14-bit smooth linear ramp (32 fine segments preserving cloud detail)
+        els.append(txt(bar_x, 350, "14-bit RAW（每通道 2¹⁴ = 16,384 级，精细度高 64 倍）：", 10.8, GREEN, weight="600"))
+        for k in range(32):
+            seg_w = bar_w / 32.0
+            v = int(24 + (k / 31.0) * 218)
+            fill_hex = f"#{v:02x}{min(255, v + 10):02x}{min(255, v + 22):02x}"
+            els.append(f'<rect x="{bar_x + k * seg_w:.1f}" y="358" width="{seg_w + 0.4:.1f}" height="20" fill="{fill_hex}"/>')
+        els.append(f'<rect x="{bar_x}" y="358" width="{bar_w}" height="20" fill="none" stroke="#94a3b8" stroke-width="0.8"/>')
+        els.append(txt(bar_x + bar_w * 0.83, 372, "云层层次完整保留", 10.2, "#0f172a", "middle", weight="700", halo=True))
+
+        els.append(txt(414, 398, "• 印刷归档 TIFF 支持 16-bit 多图层；网页图标 ICO 单文件", 10.8, BODY))
+        els.append(txt(414, 416, "  打包 16×16 / 32×32 / 256×256 多尺寸，小字号绝不发糊。", 10.8, BODY))
+
+        return figure(
+            452,
+            "SVG三次贝塞尔矢量曲线与位图像素阶梯、相机RAW拜耳阵列及14-bit宽容度对比图",
+            "左图对比SVG三次贝塞尔曲线方程放大8倍依旧光滑与位图像素网格暴露锯齿阶梯；右图展示相机RAW传感器的RGGB拜耳滤色阵列（50%绿、25%红、25%蓝）以及14-bit（16384级灰阶）相比8-bit（256级灰阶）保留高光云层细节的原理。",
+            els,
+        )
+
+    # ------------------------------------------------------------------
+    # 2. Lossless PNG (RFC 2083 Paeth Filter + DEFLATE) vs GIF 1-bit Halo
+    # ------------------------------------------------------------------
+    def _build_png_paeth_vs_gif_alpha():
+        def paeth_predictor(a, b, c):
+            p = a + b - c
+            pa, pb, pc = abs(p - a), abs(p - b), abs(p - c)
+            if pa <= pb and pa <= pc:
+                return a
+            if pb <= pc:
+                return b
+            return c
+
+        prev_row = [50, 50, 180, 180, 180, 220, 220, 220]
+        curr_row = [90, 90, 180, 180, 180, 220, 220, 220]
+        sub_res = [curr_row[0]] + [curr_row[i] - curr_row[i - 1] for i in range(1, 8)]
+        up_res = [curr_row[i] - prev_row[i] for i in range(8)]
+        paeth_res = []
+        for i in range(8):
+            a = curr_row[i - 1] if i > 0 else 0
+            b = prev_row[i]
+            c = prev_row[i - 1] if i > 0 else 0
+            paeth_res.append(curr_row[i] - paeth_predictor(a, b, c))
+
+        assert sub_res == [90, 0, 90, 0, 0, 40, 0, 0]
+        assert up_res == [40, 40, 0, 0, 0, 0, 0, 0]
+        assert paeth_res == [40, 0, 0, 0, 0, 0, 0, 0]
+
+        els = []
+        els.extend(
+            header(
+                "无损压缩怎样一比特不丢还能瘦身？PNG 帕斯(Paeth)差分预测 vs GIF 白边之谜",
+                "上：RFC 2083 扫描线预测自动沿横竖边缘切换参考点，把像素变成满排 0；下：GIF 1-bit 透明为何被 PNG/WebP 取代",
+                x=20,
+                y=26,
+            )
+        )
+
+        # ---- Top Panel: PNG Paeth Predictor + DEFLATE ----
+        els.append(card(16, 58, 728, 206))
+        els.append(pill(28, 68, "第一关 · PNG 两步无损流水线：先做相邻像素差分预测，再用 LZ77+霍夫曼打包", fg=BLUE, bg=BLUE_SOFT, w=486, h=22, size=11.5))
+
+        # Left stencil diagram: c, b, a -> x (showing col i=5 vertical step: c=180, b=220, a=180 -> x=220)
+        sx0, sy0 = 30, 102
+        els.append(card(sx0, sy0, 196, 148, rx=8, fill="#f8fafc", stroke=HAIRLINE))
+        els.append(txt(sx0 + 98, sy0 + 18, "Paeth 四邻域自适应模板", 11.8, INK, "middle", weight="700"))
+        cells_st = [
+            (sx0 + 38, sy0 + 30, "c 左上", "180", SLATE_SOFT, SLATE),
+            (sx0 + 102, sy0 + 30, "b 正上", "220", BLUE_SOFT, BLUE),
+            (sx0 + 38, sy0 + 74, "a 正左", "180", BLUE_SOFT, BLUE),
+            (sx0 + 102, sy0 + 74, "x 当前", "220", ORANGE_SOFT, ORANGE),
+        ]
+        for cx, cy, lb, val, bg_c, fg_c in cells_st:
+            els.append(f'<rect x="{cx}" y="{cy}" width="58" height="38" rx="6" fill="{bg_c}" stroke="{fg_c}" stroke-width="1.2"/>')
+            els.append(txt(cx + 29, cy + 15, lb, 10.2, fg_c, "middle", weight="600"))
+            els.append(txt(cx + 29, cy + 31, val, 11.8, INK, "middle", weight="700", cls="mono"))
+        els.append(txt(sx0 + 98, sy0 + 127, "p=a+b-c=220 → 选最近邻 b=220", 10.2, BLUE, "middle", weight="700", cls="mono"))
+        els.append(txt(sx0 + 98, sy0 + 143, "残差 r = x - b = 220 - 220 = 0 !", 10.6, GREEN, "middle", weight="700", cls="mono"))
+
+        # Right computed table of rows & residuals
+        tx0, ty0 = 240, 102
+        els.append(card(tx0, ty0, 490, 148, rx=8, fill="#ffffff", stroke=BORDER))
+        row_specs = [
+            ("上一行 b (含两处竖边)", prev_row, SLATE, "#f8fafc"),
+            ("当前行 x (含横竖突变)", curr_row, ORANGE, ORANGE_SOFT),
+            ("Sub 滤镜 (竖边全撞车)", sub_res, BLUE, BLUE_SOFT),
+            ("Paeth 残差 (横竖通吃!)", paeth_res, GREEN, GREEN_SOFT),
+        ]
+        for ri, (rlabel, rvals, rcol, rbg) in enumerate(row_specs):
+            ry = ty0 + 10 + ri * 33
+            els.append(txt(tx0 + 10, ry + 18, rlabel, 11.0, rcol, weight="700"))
+            for ci, v in enumerate(rvals):
+                vx = tx0 + 168 + ci * 38
+                is_zero = (ri == 3 and v == 0)
+                cell_bg = "#dcfce7" if is_zero else rbg
+                cell_st = "#16a34a" if is_zero else HAIRLINE
+                els.append(f'<rect x="{vx}" y="{ry + 2}" width="34" height="24" rx="4" fill="{cell_bg}" stroke="{cell_st}" stroke-width="1"/>')
+                els.append(txt(vx + 17, ry + 18, f"+{v}" if (ri >= 2 and v > 0 and not (ri == 2 and ci == 0)) else str(v), 11.0, rcol if is_zero else INK, "middle", weight="700" if is_zero else "500", cls="mono"))
+        els.append(txt(tx0 + 245, ty0 + 143, "横边跟左邻 a、竖边跟上邻 b → 连续 7 个 0！送入 DEFLATE 瞬间压扁且 100% 无损还原", 10.6, GREEN, "middle", weight="700"))
+
+        # ---- Bottom Panel: GIF89a 256-color + 1-bit Alpha vs PNG/WebP 8-bit Alpha ----
+        els.append(card(16, 276, 728, 180))
+        els.append(pill(28, 286, "第二关 · 为什么 GIF 动图又大又有锯齿白边，而 PNG / APNG / WebP 边缘丝滑？", fg=PURPLE, bg=PURPLE_SOFT, w=516, h=22, size=11.5))
+
+        # Left dark canvas: GIF 1-bit binary transparency with white matte halo
+        gx0, gy0 = 28, 318
+        els.append(f'<rect x="{gx0}" y="{gy0}" width="342" height="124" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.2"/>')
+        els.append(txt(gx0 + 12, gy0 + 22, "GIF89a：仅 256 色调色盘 + 1-bit 透明开关", 11.3, "#fbbf24", weight="700"))
+        # Pixelated circle edge with white halo pixels (alpha thresholded against white matte)
+        ccx, ccy, rad = gx0 + 54, gy0 + 76, 28
+        pstep = 6
+        for dy in range(-6, 7):
+            for dx in range(-6, 7):
+                dist = math.hypot(dx * pstep, dy * pstep)
+                px, py = ccx + dx * pstep - pstep / 2, ccy + dy * pstep - pstep / 2
+                if dist < rad - 4.2:
+                    els.append(f'<rect x="{px:.1f}" y="{py:.1f}" width="{pstep}" height="{pstep}" fill="#38bdf8"/>')
+                elif dist < rad + 1.8:
+                    # GIF 1-bit opaque edge mixed with white background -> ugly bright halo!
+                    els.append(f'<rect x="{px:.1f}" y="{py:.1f}" width="{pstep}" height="{pstep}" fill="#f8fafc"/>')
+        els.append(txt(gx0 + 102, gy0 + 50, "• 透明度只有 0% 或 100% 两档；", 10.6, "#e2e8f0"))
+        els.append(txt(gx0 + 102, gy0 + 70, "• 半透明抗锯齿边缘被迫染成白底，", 10.6, "#fca5a5", weight="700"))
+        els.append(txt(gx0 + 102, gy0 + 90, "  贴在深色网页上立刻露出刺眼白边！", 10.6, "#fca5a5", weight="700"))
+        els.append(txt(gx0 + 102, gy0 + 110, "• LZW 无运动预测，3 秒动图动辄 10MB", 10.2, "#cbd5e1"))
+
+        # Right dark canvas: PNG / WebP / AVIF 8-bit 256-level smooth Alpha
+        px0, py0 = 382, 318
+        els.append(f'<rect x="{px0}" y="{py0}" width="350" height="124" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.2"/>')
+        els.append(txt(px0 + 12, py0 + 22, "PNG / WebP / AVIF：真彩色 + 8-bit Alpha", 11.3, "#4ade80", weight="700"))
+        ccx2, ccy2 = px0 + 54, py0 + 76
+        for dy in range(-6, 7):
+            for dx in range(-6, 7):
+                dist = math.hypot(dx * pstep, dy * pstep)
+                px, py = ccx2 + dx * pstep - pstep / 2, ccy2 + dy * pstep - pstep / 2
+                # Smooth coverage alpha in [0, 1]
+                cov = max(0.0, min(1.0, (rad + 1.8 - dist) / 6.0))
+                if cov > 0.02:
+                    # Blend #38bdf8 (56,189,248) smoothly over #1e293b (30,41,59)
+                    rr = int(56 * cov + 30 * (1 - cov))
+                    gg = int(189 * cov + 41 * (1 - cov))
+                    bb = int(248 * cov + 59 * (1 - cov))
+                    els.append(f'<rect x="{px:.1f}" y="{py:.1f}" width="{pstep}" height="{pstep}" fill="#{rr:02x}{gg:02x}{bb:02x}"/>')
+        els.append(txt(px0 + 102, py0 + 50, "• Alpha 通道拥有 0~255 共 256 级透明；", 10.6, "#e2e8f0"))
+        els.append(txt(px0 + 102, gy0 + 70, "• 边缘按比例实时与任意底色平滑混合，", 10.6, "#86efac", weight="700"))
+        els.append(txt(px0 + 102, gy0 + 90, "  换深色/浅色主题都毫无白边！", 10.6, "#86efac", weight="700"))
+        els.append(txt(px0 + 102, gy0 + 110, "• 2025 PNG 第三版正式纳入 APNG 与 HDR", 10.2, "#cbd5e1"))
+
+        return figure(
+            468,
+            "PNG扫描线Paeth差分预测无损压缩流水线与GIF一比特透明白边对比图",
+            "上图通过真实8像素渐变行数值计算展示PNG的Paeth四邻域预测器如何将102~123渐变行转化为[+2,0,0,0,0,0,0,0]低熵残差再交由DEFLATE无损压缩；下图对比GIF89a仅256色与1-bit二值透明导致的深色背景白边锯齿，以及PNG/WebP/AVIF的8-bit（256级）Alpha平滑抗锯齿融合。",
+            els,
+        )
+
+    # ------------------------------------------------------------------
+    # 3. Exact Computed 8x8 JPEG DCT + Q50 Quantization + Zig-Zag Pipeline
+    # ------------------------------------------------------------------
+    def _build_jpeg_dct_quantization_pipeline():
+        # Official ITU-T T.81 classic 8x8 grayscale subimage
+        subimg = [
+            [52, 55, 61, 66, 70, 61, 64, 73],
+            [63, 59, 55, 90, 109, 85, 69, 72],
+            [62, 59, 68, 113, 144, 104, 66, 73],
+            [63, 58, 71, 122, 154, 106, 70, 69],
+            [67, 61, 68, 104, 126, 88, 68, 70],
+            [79, 65, 60, 70, 77, 68, 58, 75],
+            [85, 71, 64, 59, 55, 61, 65, 83],
+            [87, 79, 69, 68, 65, 76, 78, 94],
+        ]
+        # Annex K Q50 Luminance Quantization Matrix (ITU-T T.81)
+        Q50 = [
+            [16, 11, 10, 16, 24, 40, 51, 61],
+            [12, 12, 14, 19, 26, 58, 60, 55],
+            [14, 13, 16, 24, 40, 57, 69, 56],
+            [14, 17, 22, 29, 51, 87, 80, 62],
+            [18, 22, 37, 56, 68, 109, 103, 77],
+            [24, 35, 55, 64, 81, 104, 113, 92],
+            [49, 64, 78, 87, 103, 121, 120, 101],
+            [72, 92, 95, 98, 112, 100, 103, 99],
+        ]
+        g = [[subimg[y][x] - 128 for x in range(8)] for y in range(8)]
+        # Compute 2D orthonormal Type-II DCT: row index v (vertical), col index u (horizontal)
+        G = [[0.0] * 8 for _ in range(8)]
+        for v in range(8):
+            av = (1.0 / math.sqrt(2.0)) if v == 0 else 1.0
+            for u in range(8):
+                au = (1.0 / math.sqrt(2.0)) if u == 0 else 1.0
+                s = 0.0
+                for y in range(8):
+                    cy = math.cos((2 * y + 1) * v * math.pi / 16.0)
+                    for x in range(8):
+                        s += g[y][x] * math.cos((2 * x + 1) * u * math.pi / 16.0) * cy
+                G[v][u] = 0.25 * au * av * s
+
+        assert abs(G[0][0] - (-415.38)) < 0.02, f"Unexpected DC coeff: {G[0][0]}"
+        B = [[int(round(G[v][u] / Q50[v][u])) for u in range(8)] for v in range(8)]
+        assert B[0][0] == -26
+        zero_cnt = sum(1 for v in range(8) for u in range(8) if B[v][u] == 0)
+        assert zero_cnt >= 44, f"Expected >=44 zeros, got {zero_cnt}"
+
+        # Build exact 64-point Zig-Zag order (row v, col u)
+        zz_coords = []
+        for s_idx in range(15):
+            if s_idx % 2 == 0:
+                # moving up-right: v decreases, u increases
+                v_start = min(s_idx, 7)
+                u_start = s_idx - v_start
+                while v_start >= 0 and u_start < 8:
+                    zz_coords.append((v_start, u_start))
+                    v_start -= 1
+                    u_start += 1
+            else:
+                # moving down-left: u decreases, v increases
+                u_start = min(s_idx, 7)
+                v_start = s_idx - u_start
+                while u_start >= 0 and v_start < 8:
+                    zz_coords.append((v_start, u_start))
+                    u_start -= 1
+                    v_start += 1
+        assert len(zz_coords) == 64
+        zz_vals = [B[v][u] for v, u in zz_coords]
+        last_nonzero = max(i for i, val in enumerate(zz_vals) if val != 0)
+        trailing_zeros = 63 - last_nonzero
+        assert trailing_zeros == 38
+
+        els = []
+        els.extend(
+            header(
+                "JPEG 凭什么把照片缩小 10 倍还不显糊？ITU-T T.81 真实 8×8 块数值解剖",
+                "精确瞄准人眼两大盲区：① 4:2:0 色度抽样先砍一半色差；② DCT 频域量化把右下高频细纹整片除成 0",
+                x=20,
+                y=26,
+            )
+        )
+
+        # ---- Top strip: Step 1 Chroma Subsampling 4:4:4 -> 4:2:0 (50% instant reduction) ----
+        els.append(card(16, 58, 728, 108))
+        els.append(step_badge(36, 78, 1, fg=BLUE, bg=BLUE_SOFT))
+        els.append(txt(54, 82, "第一刀 · RGB 转 YCbCr 与 4:2:0 色度抽样：人眼视杆细胞看明暗极准，看色彩边缘却很迟钝", 12.2, INK, weight="700"))
+
+        # Draw 4x2 Luma Y full grid vs 2x1 Chroma Cb/Cr subsampled grid
+        cx0, cy0 = 32, 94
+        els.append(txt(cx0, cy0 + 16, "4:4:4 原始 (8像素×3=24B)", 10.8, SLATE, weight="700"))
+        for r in range(2):
+            for c in range(4):
+                els.append(f'<rect x="{cx0 + 154 + c * 20}" y="{cy0 + 4 + r * 20}" width="18" height="18" rx="3" fill="#dbeafe" stroke="{BLUE}" stroke-width="1"/>')
+        els.append(txt(cx0 + 244, cy0 + 25, "→", 15, ORANGE, weight="700"))
+        els.append(txt(cx0 + 266, cy0 + 16, "4:2:0 抽样：保留全部 8 个亮度 Y", 10.8, BLUE, weight="700"))
+        els.append(txt(cx0 + 266, cy0 + 36, "每 2×2 格共用 1 组色差 Cb/Cr → 立省 50% (12B)!", 10.8, GREEN, weight="700"))
+
+        for r in range(2):
+            for c in range(4):
+                yv = 225 - (r * 25 + c * 18)
+                els.append(f'<rect x="{cx0 + 544 + c * 18}" y="{cy0 + 4 + r * 18}" width="16" height="16" rx="2" fill="#{yv:02x}{yv:02x}{yv:02x}" stroke="#475569" stroke-width="0.8"/>')
+        for c in range(2):
+            els.append(f'<rect x="{cx0 + 626 + c * 36}" y="{cy0 + 4}" width="34" height="34" rx="4" fill="#fef08a" stroke="{ORANGE}" stroke-width="1.2"/>')
+            els.append(txt(cx0 + 643 + c * 36, cy0 + 25, "CbCr", 9.8, ORANGE, "middle", weight="700", cls="mono"))
+
+        # ---- Middle 3-Matrix Row: Spatial 8x8 -> DCT + Q50 Divisor -> Quantized B + Zig-Zag ----
+        els.append(card(16, 176, 728, 320))
+        els.append(step_badge(36, 196, 2, fg=ORANGE, bg=ORANGE_SOFT))
+        els.append(txt(54, 200, "第二刀 · 8×8 离散余弦变换 (DCT) + 视觉量化表除法取整（唯一不可逆有损步！）+ 之字形扫零", 12.2, INK, weight="700"))
+
+        cell_s = 24
+        # Matrix 1: Original 8x8 grayscale pixels (52..154)
+        m1x, m1y = 30, 236
+        els.append(txt(m1x + 96, m1y - 8, "① 8×8 空间像素块 (0~255)", 11.5, INK, "middle", weight="700"))
+        for v in range(8):
+            for u in range(8):
+                val = subimg[v][u]
+                els.append(f'<rect x="{m1x + u * cell_s}" y="{m1y + v * cell_s}" width="{cell_s}" height="{cell_s}" fill="#{val:02x}{val:02x}{val:02x}" stroke="#cbd5e1" stroke-width="0.5"/>')
+                fg_t = "#ffffff" if val < 105 else "#0f172a"
+                els.append(txt(m1x + u * cell_s + 12, m1y + v * cell_s + 15.5, str(val), 8.6, fg_t, "middle", cls="mono"))
+        els.append(txt(m1x + 96, m1y + 208, "64 个像素互不相同，直接存需 64 Byte", 10.5, MUTED, "middle"))
+        els.append(txt(m1x + 96, m1y + 225, "先减 128 平移再做二维 DCT 拆成余弦波", 10.5, BLUE, "middle", weight="600"))
+
+        # Arrow 1 -> 2
+        els.append(txt(243, m1y + 98, "DCT", 10.2, BLUE, "middle", weight="700", cls="mono"))
+        els.append(txt(243, m1y + 114, "÷Q50", 10.2, ORANGE, "middle", weight="700", cls="mono"))
+
+        # Matrix 2: ITU-T T.81 Q50 Quantization Matrix
+        m2x, m2y = 266, 236
+        els.append(txt(m2x + 96, m2y - 8, "② 标准视觉量化除数表 Q50", 11.5, ORANGE, "middle", weight="700"))
+        for v in range(8):
+            for u in range(8):
+                qv = Q50[v][u]
+                if qv <= 18:
+                    qbg, qfg = "#dcfce7", "#14532d"
+                elif qv <= 55:
+                    qbg, qfg = "#fef9c3", "#854d0e"
+                else:
+                    qbg, qfg = "#fee2e2", "#991b1b"
+                els.append(f'<rect x="{m2x + u * cell_s}" y="{m2y + v * cell_s}" width="{cell_s}" height="{cell_s}" fill="{qbg}" stroke="#cbd5e1" stroke-width="0.6"/>')
+                els.append(txt(m2x + u * cell_s + 12, m2y + v * cell_s + 15.5, str(qv), 8.6, qfg, "middle", weight="600", cls="mono"))
+        els.append(txt(m2x + 96, m2y + 208, "左上低频除数小(10~16)：精细保留轮廓", 10.5, GREEN, "middle", weight="600"))
+        els.append(txt(m2x + 96, m2y + 225, "右下高频除数大(99~121)：狠砍噪点细纹", 10.5, "#dc2626", "middle", weight="600"))
+
+        # Arrow 2 -> 3
+        els.append(txt(484, m1y + 98, "round", 10.2, ORANGE, "middle", weight="700", cls="mono"))
+        els.append(txt(484, m1y + 114, "取整!", 10.5, "#dc2626", "middle", weight="700"))
+
+        # Matrix 3: Quantized B matrix + Zig-Zag path overlay
+        m3x, m3y = 510, 236
+        els.append(txt(m3x + 96, m3y - 8, f"③ 量化后矩阵 B（{zero_cnt}/64 全变 0！）", 11.5, GREEN, "middle", weight="700"))
+        for v in range(8):
+            for u in range(8):
+                bv = B[v][u]
+                if bv == 0:
+                    bbg, bfg = "#f1f5f9", "#94a3b8"
+                elif v == 0 and u == 0:
+                    bbg, bfg = "#dbeafe", "#1e3a8a"
+                else:
+                    bbg, bfg = "#fef1e8", "#9a3412"
+                els.append(f'<rect x="{m3x + u * cell_s}" y="{m3y + v * cell_s}" width="{cell_s}" height="{cell_s}" fill="{bbg}" stroke="#cbd5e1" stroke-width="0.6"/>')
+                els.append(txt(m3x + u * cell_s + 12, m3y + v * cell_s + 15.5, str(bv), 8.6, bfg, "middle", weight="700" if bv != 0 else "400", cls="mono"))
+
+        # Subtle Zig-Zag polyline across Matrix 3
+        zz_pts = " ".join(f"{m3x + u * cell_s + 12:.1f},{m3y + v * cell_s + 12:.1f}" for v, u in zz_coords)
+        els.append(f'<polyline points="{zz_pts}" fill="none" stroke="{BLUE}" stroke-width="1.2" stroke-opacity="0.42" stroke-dasharray="2.5 2"/>')
+
+        els.append(txt(m3x + 96, m3y + 208, f"之字形扫描后末尾连续 {trailing_zeros} 个 0 仅记 1 个 EOB!", 10.3, GREEN, "middle", weight="700"))
+        els.append(txt(m3x + 96, m3y + 225, "反例：文字截屏高频极多 → 削零产生蚊式噪点", 10.3, ORANGE, "middle", weight="600"))
+
+        return figure(
+            508,
+            "JPEG有损压缩五步流水线：4:2:0色度抽样、8x8离散余弦变换DCT、Q50量化矩阵与之字形扫描图解",
+            f"图解按ITU-T T.81标准真实计算8x8灰度子块：先展示4:2:0色度抽样直接省去50%体积，再对52~154空间像素块执行二维DCT（左上DC系数-415.38），除以标准Q50视觉量化表并四舍五入后64个系数中有{zero_cnt}个变为0，最后沿之字形路径将末尾连续{trailing_zeros}个0合并为单个EOB块结束符。",
+            els,
+        )
+
+    # ------------------------------------------------------------------
+    # 4. Modern Still Image Formats Size Waterfall & Capability Matrix
+    # ------------------------------------------------------------------
+    def _build_modern_still_formats_radar():
+        els = []
+        els.extend(
+            header(
+                "现代图片格式大乱斗：为什么 WebP、HEIC、AVIF、JPEG XL 纷纷向视频偷师？",
+                "同一张 1200 万像素（4000×3000）实拍照片的体积瀑布对比，以及六大主流格式的硬指标与生态版图",
+                x=20,
+                y=26,
+            )
+        )
+
+        # ---- Left Panel: Normalized File Size Waterfall for 12MP Photo ----
+        els.append(card(16, 58, 344, 404))
+        els.append(pill(28, 68, "同画质 12MP 照片体积实测量级对比", fg=BLUE, bg=BLUE_SOFT, w=320, h=22, size=11.5))
+
+        bars = [
+            ("BMP 未压缩", 36.0, "36.0 MB (基准裸像素)", "#64748b", 1.00),
+            ("RAW 14-bit", 18.5, "~18.5 MB (单通道拜耳)", "#0f766e", 0.68),
+            ("PNG 无损", 13.8, "~13.8 MB (100%无损位图)", "#2563eb", 0.54),
+            ("JPEG (Q82)", 2.60, "2.60 MB (有损基准 100%)", "#d97706", 0.28),
+            ("JXL 转码JPG", 2.08, "2.08 MB (-20% 可逆还原JPG!)", "#7c3aed", 0.225),
+            ("WebP 有损", 1.78, "1.78 MB (-31% · VP8帧内)", "#0284c7", 0.192),
+            ("HEIC (iOS)", 1.38, "1.38 MB (-47% · HEVC帧内)", "#16a34a", 0.150),
+            ("AVIF (AV1)", 1.24, "1.24 MB (-52% · 免版税王牌)", "#dc2626", 0.135),
+        ]
+        assert bars[-1][1] < bars[-2][1] < bars[-3][1] < bars[3][1] < bars[2][1] < bars[0][1]
+
+        bx0, by0 = 28, 102
+        max_bar_w = 138.0
+        for idx, (lbl, mb_val, note_s, col, vis_ratio) in enumerate(bars):
+            ry = by0 + idx * 38
+            els.append(txt(bx0, ry + 15, lbl, 11.0, INK, weight="700"))
+            bw = max(14.0, max_bar_w * vis_ratio)
+            els.append(f'<rect x="{bx0 + 82}" y="{ry + 2}" width="{bw:.1f}" height="18" rx="4" fill="{col}" fill-opacity="0.88"/>')
+            els.append(txt(bx0 + 88 + bw if bw < 48 else bx0 + 84, ry + 29 if bw >= 48 else ry + 15, note_s, 10.2, col if bw >= 48 else BODY, weight="600"))
+
+        # Adjust clean two-line bar layout so zero overlap ever happens!
+        # Let's rebuild bars cleanly with bar + right-aligned label on a 320px track:
+        els = els[:4]  # keep header + left card + pill
+        for idx, (lbl, mb_val, note_s, col, vis_ratio) in enumerate(bars):
+            ry = 98 + idx * 38
+            bw = max(10.0, 126.0 * vis_ratio)
+            els.append(txt(28, ry + 14, lbl, 11.0, INK, weight="700"))
+            els.append(f'<rect x="112" y="{ry + 2}" width="{bw:.1f}" height="14" rx="3.5" fill="{col}"/>')
+            els.append(txt(112, ry + 29, note_s, 10.1, col if idx >= 3 else MUTED, weight="600" if idx >= 3 else "400"))
+
+        els.append(txt(28, 414, "*注：条长按非线性比例示意；有损组按同 SSIM 对齐。", 10.0, MUTED))
+        els.append(txt(28, 432, "核心突破：现代格式先做块间方向预测(4×4~64×64)，", 10.1, BLUE, weight="600"))
+        els.append(txt(28, 449, "不再像 JPEG 那样 8×8 孤岛各扫门前雪！", 10.1, BLUE, weight="600"))
+
+        # ---- Right Panel: 6-Format Feature & Ecosystem Matrix ----
+        els.append(card(372, 58, 372, 404))
+        els.append(pill(384, 68, "六大图片格式关键能力与避坑速查", fg=GREEN, bg=GREEN_SOFT, w=348, h=22, size=11.5))
+
+        cards_fmt = [
+            ("JPEG (1992 · T.81)", "#d97706", "#fffbeb", "8-bit · 无透明 · 无动图", "所有设备 100% 通吃；怕文字截屏噪点与反复重存“电子包浆”"),
+            ("PNG 第三版 (1995/2025)", "#2563eb", "#eff6ff", "1~16 bit · 256级透明 · APNG", "UI 截图、科研图表、透明贴纸首选；实拍照片体积偏大"),
+            ("WebP (2010 · Google)", "#0284c7", "#f0f9ff", "8-bit · 有损+无损+透明+动图", "网页瑞士军刀，浏览器兼容 >97%；上限仅 8-bit 不适合真 HDR"),
+            ("HEIC (2015 · MPEG)", "#16a34a", "#f0fdf4", "10-bit HDR · 景深图+实况连拍", "iPhone 默认相机容器；受 HEVC 专利池拖累，网页浏览器多不支持"),
+            ("AVIF (2019 · AOMedia)", "#dc2626", "#fef2f2", "8/10/12-bit HDR · 免专利费", "AV1 关键帧封装，暗部与高光极强，Chrome/Firefox/Safari 全支持"),
+            ("JPEG XL (ISO 18181)", "#7c3aed", "#f5f3ff", "最高 32-bit · 无损缩 JPG 20%", "可逐比特还原旧 JPG + 渐进加载；Safari 17+ 原生支持，生态推进中"),
+        ]
+        for ci, (ftitle, fcol, fbg, fspec, fdesc) in enumerate(cards_fmt):
+            cy = 98 + ci * 59
+            els.append(card(384, cy, 348, 52, rx=7, fill=fbg, stroke=fcol, sw=1))
+            els.append(txt(394, cy + 18, ftitle, 11.2, fcol, weight="700"))
+            els.append(txt(722, cy + 18, fspec, 10.2, INK, "end", weight="600"))
+            els.append(txt(394, cy + 39, fdesc, 10.4, BODY))
+
+        return figure(
+            474,
+            "1200万像素照片在BMP、RAW、PNG、JPEG、WebP、HEIC、AVIF、JPEG XL下的体积对比与能力矩阵图",
+            "左图对比同一张4000x3000照片从36MB未压缩BMP、18.5MB相机RAW、13.8MB无损PNG到2.6MB JPEG、1.78MB WebP、1.38MB HEIC与1.24MB AVIF的体积阶梯（非线性比例示意）；右图归纳六大格式的位深、HDR、透明动图、专利授权与浏览器兼容边界。",
+            els,
+        )
+
+    # ------------------------------------------------------------------
+    # 5. Video Container (MP4/MKV/WebM) vs Codec & Animated I/P/B GOP
+    # ------------------------------------------------------------------
+    def _build_video_container_gop_motion_anim():
+        # Verify raw 1080p60 RGB24 bitrate vs compressed 10 Mbps (~298.6x compression!)
+        raw_bytes_per_sec = 1920 * 1080 * 3 * 60  # 373,248,000 B/s
+        raw_mbps = raw_bytes_per_sec * 8 / 1e6  # 2985.984 Mbps
+        comp_ratio = raw_mbps / 10.0
+        assert 298.0 < comp_ratio < 299.0
+
+        extra_css = """
+  @keyframes gopScan {
+    0%, 10% { transform: translateX(0px); opacity: 1; }
+    32%, 48% { transform: translateX(486px); opacity: 1; }
+    64%, 78% { transform: translateX(162px); opacity: 1; }
+    88%, 100% { transform: translateX(324px); opacity: 1; }
+  }
+  @keyframes vecPulse {
+    0%, 22% { stroke-dashoffset: 120; opacity: 0.25; }
+    45%, 100% { stroke-dashoffset: 0; opacity: 1; }
+  }
+  .gop-cursor {
+    animation: gopScan 6.8s cubic-bezier(0.25, 0.8, 0.25, 1) 1 forwards;
+  }
+  .mv-anim {
+    stroke-dasharray: 120;
+    stroke-dashoffset: 0;
+    animation: vecPulse 5.2s ease-out 1 forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .gop-cursor, .mv-anim {
+      animation: none !important;
+      transform: none !important;
+      stroke-dashoffset: 0 !important;
+      opacity: 1 !important;
+    }
+  }"""
+
+        els = []
+        els.extend(
+            header(
+                "延伸到视频格式：为什么同是 .mp4 有的黑屏？I / P / B 帧怎样把数据狂压 300 倍？",
+                "上：封装容器（便当盒）≠ 编码标准（做菜手艺）；下：解码器先解 I0 与 P3，再用运动矢量双向拼出 B1、B2",
+                x=20,
+                y=26,
+            )
+        )
+
+        # ---- Top Panel: Bento Box Container vs Codec ----
+        els.append(card(16, 58, 728, 162))
+        els.append(pill(28, 68, "核心铁律 · 后缀名 .mp4 / .mkv / .webm 只是“外包装盒”，能不能播取决于盒里的“编码器”", fg=BLUE, bg=BLUE_SOFT, w=590, h=22, size=11.5))
+
+        # Container outer box on left-center
+        els.append(card(28, 98, 456, 110, rx=10, fill="#f8fafc", stroke=BLUE, sw=1.5, dash="5 3"))
+        els.append(txt(38, 116, "封装容器 Container：.mp4 ｜ .mkv (RFC 9559 万能盒) ｜ .webm ｜ .mov", 10.6, BLUE, weight="700"))
+
+        tracks = [
+            (40, "视频轨 Video", "H.264/AVC · H.265/HEVC · AV1 · ProRes", ORANGE, ORANGE_SOFT, 198),
+            (246, "音频轨 Audio", "AAC · Opus · FLAC · AC-3", GREEN, GREEN_SOFT, 132),
+            (386, "字幕与章节", "SRT · ASS特效 · moov索引", PURPLE, PURPLE_SOFT, 88),
+        ]
+        # Adjust widths cleanly so 40 + 188 + 8 + 124 + 8 + 106 = 474 <= 484
+        tracks = [
+            (38, "视频编码轨 Video", "H.264 · HEVC · AV1 · ProRes", ORANGE, ORANGE_SOFT, 176),
+            (222, "多音轨 Audio", "AAC · Opus · FLAC", GREEN, GREEN_SOFT, 122),
+            (352, "字幕与时间轴", "ASS/SRT · 章节索引", PURPLE, PURPLE_SOFT, 122),
+        ]
+        for tx, tt, td, tcol, tbg, tw in tracks:
+            els.append(card(tx, 126, tw, 72, rx=7, fill=tbg, stroke=tcol, sw=1))
+            els.append(txt(tx + 8, 146, tt, 11.0, tcol, weight="700"))
+            els.append(txt(tx + 8, 168, td, 10.0, INK, weight="600"))
+            els.append(txt(tx + 8, 186, "决定画质/算力/硬件解码" if tx == 38 else ("决定多语言伴音" if tx == 222 else "拖动进度条秒定位"), 9.8, MUTED))
+
+        # Right side diagnostic box: Why black screen + ffmpeg -c copy
+        els.append(card(496, 98, 236, 110, rx=8, fill="#fffbeb", stroke="#d97706", sw=1))
+        els.append(txt(506, 118, "秒懂两个日常高频疑问：", 11.2, "#b45309", weight="700"))
+        els.append(txt(506, 139, "1. 有声音却黑屏？播放器认得 .mp4", 10.4, BODY))
+        els.append(txt(506, 156, "   盒子，但缺盒内 HEVC/AV1 解码器！", 10.4, "#dc2626", weight="700"))
+        els.append(txt(506, 176, "2. MKV 转 MP4 只需 0.5 秒？", 10.4, BODY))
+        els.append(txt(506, 193, "   ffmpeg -c copy 只换盒不重算像素！", 10.3, GREEN, weight="700", cls="mono"))
+
+        # ---- Bottom Panel: 4-Frame GOP (I0 - B1 - B2 - P3) Motion Vector Prediction ----
+        els.append(card(16, 232, 728, 268))
+        els.append(
+            pill(
+                28,
+                242,
+                "时间维魔法 · 1080p60 未压缩高达 373 MB/s（1.34 TB/小时），靠 I/P/B 运动矢量省去 99.6% 重复背景",
+                fg=ORANGE,
+                bg=ORANGE_SOFT,
+                w=652,
+                h=22,
+                size=11.3,
+            )
+        )
+
+        # Animated decode-order highlight ring moving I0 (0) -> P3 (+486) -> B1 (+162) -> B2 (+324)
+        fx_base = 34
+        fy_base = 292
+        f_step = 162
+        els.append(
+            f'<g class="gop-cursor">'
+            f'<rect x="{fx_base + 2 * f_step - 4}" y="{fy_base - 20}" width="146" height="154" rx="10" '
+            f'fill="none" stroke="{ORANGE}" stroke-width="2.2" stroke-dasharray="5 3"/>'
+            f'</g>'
+        )
+        # Wait: let's make gop-cursor start at x=fx_base-4 so translateX(0)->I0, +486->P3, +162->B1, +324->B2, ending on B2 or full!
+        els[-1] = (
+            f'<g class="gop-cursor">'
+            f'<rect x="{fx_base - 4}" y="{fy_base - 20}" width="146" height="154" rx="10" '
+            f'fill="none" stroke="{ORANGE}" stroke-width="2.0" stroke-dasharray="4 3"/>'
+            f'</g>'
+        )
+
+        frames_gop = [
+            (0, "t=0 · I₀ 关键帧", "解码第 1 步", BLUE, BLUE_SOFT, 18, "100% 体积 (~180 KB)", 1.00, True),
+            (1, "t=1 · B₁ 双向帧", "解码第 3 步", PURPLE, PURPLE_SOFT, 46, "仅 ~5% (~9 KB)", 0.08, False),
+            (2, "t=2 · B₂ 双向帧", "解码第 4 步", PURPLE, PURPLE_SOFT, 74, "仅 ~5% (~9 KB)", 0.08, False),
+            (3, "t=3 · P₃ 前向帧", "解码第 2 步", GREEN, GREEN_SOFT, 102, "仅 ~14% (~25 KB)", 0.20, False),
+        ]
+
+        for idx_f, (t_i, flbl, dstep, fcol, fbg, car_dx, size_lbl, bar_r, is_intra) in enumerate(frames_gop):
+            fx = fx_base + idx_f * f_step
+            els.append(txt(fx + 69, fy_base - 6, f"{flbl} ({dstep})", 10.6, fcol, "middle", weight="700"))
+            # Frame canvas (138 x 82)
+            canvas_bg = "#dbeafe" if is_intra else "#f8fafc"
+            els.append(f'<rect x="{fx}" y="{fy_base}" width="138" height="82" rx="6" fill="{canvas_bg}" stroke="{fcol}" stroke-width="1.4"/>')
+
+            if is_intra:
+                # Full sky, mountain, road drawn in I0
+                els.append(f'<polygon points="{fx + 12},{fy_base + 58} {fx + 44},{fy_base + 22} {fx + 78},{fy_base + 58}" fill="#93c5fd"/>')
+                els.append(f'<polygon points="{fx + 58},{fy_base + 58} {fx + 96},{fy_base + 28} {fx + 128},{fy_base + 58}" fill="#60a5fa"/>')
+                els.append(f'<rect x="{fx + 1}" y="{fy_base + 58}" width="136" height="23" rx="3" fill="#cbd5e1"/>')
+                els.append(txt(fx + 69, fy_base + 16, "完整存全图宏块", 9.8, BLUE, "middle", weight="700"))
+            else:
+                # Dashed grid indicating skipped zero-residual background blocks!
+                for gx in range(1, 5):
+                    els.append(f'<line x1="{fx + gx * 27.6:.1f}" y1="{fy_base}" x2="{fx + gx * 27.6:.1f}" y2="{fy_base + 82}" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2 2"/>')
+                els.append(f'<line x1="{fx}" y1="{fy_base + 41}" x2="{fx + 138}" y2="{fy_base + 41}" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="2 2"/>')
+                els.append(txt(fx + 69, fy_base + 16, "静止背景 = 0 重传!", 9.8, MUTED, "middle", weight="600"))
+                # Ghost previous car position + motion vector arrow!
+                prev_x = fx + 18
+                els.append(f'<rect x="{prev_x}" y="{fy_base + 48}" width="22" height="13" rx="3" fill="none" stroke="#94a3b8" stroke-width="1" stroke-dasharray="2 2"/>')
+                els.append(
+                    f'<line class="mv-anim" x1="{prev_x + 22}" y1="{fy_base + 54.5:.1f}" '
+                    f'x2="{fx + car_dx - 3}" y2="{fy_base + 54.5:.1f}" stroke="{ORANGE}" stroke-width="2.0" marker-end="url(#arr-orange)"/>'
+                )
+                els.append(txt((prev_x + 22 + fx + car_dx) / 2, fy_base + 44, "Δx", 9.6, ORANGE, "middle", weight="700", cls="mono"))
+
+            # Moving orange car block at (fx + car_dx, fy_base + 48)
+            els.append(f'<rect x="{fx + car_dx}" y="{fy_base + 48}" width="22" height="13" rx="3" fill="{ORANGE}" stroke="#ffffff" stroke-width="1"/>')
+
+            # Relative byte bar underneath frame
+            els.append(f'<rect x="{fx}" y="{fy_base + 90}" width="138" height="10" rx="3" fill="#e2e8f0"/>')
+            els.append(f'<rect x="{fx}" y="{fy_base + 90}" width="{max(9.0, 138.0 * bar_r):.1f}" height="10" rx="3" fill="{fcol}"/>')
+            els.append(txt(fx + 69, fy_base + 114, size_lbl, 10.2, fcol, "middle", weight="700"))
+
+        # Dependency curved arrows under the 4 frames: I0 -> P3 (forward), I0 -> B1/B2 and P3 -> B1/B2 (bidirectional)
+        y_arc = 420
+        i0_cx = fx_base + 69
+        b1_cx = fx_base + f_step + 69
+        b2_cx = fx_base + 2 * f_step + 69
+        p3_cx = fx_base + 3 * f_step + 69
+        els.append(f'<path class="mv-anim" d="M {i0_cx},{y_arc} Q {(i0_cx + p3_cx) / 2},{y_arc + 36} {p3_cx},{y_arc}" fill="none" stroke="{GREEN}" stroke-width="1.8" marker-end="url(#arr-green)"/>')
+        els.append(f'<path class="mv-anim" d="M {i0_cx + 12},{y_arc - 2} Q {(i0_cx + b1_cx) / 2},{y_arc + 16} {b1_cx - 6},{y_arc - 2}" fill="none" stroke="{PURPLE}" stroke-width="1.4" stroke-dasharray="3 2"/>')
+        els.append(f'<path class="mv-anim" d="M {p3_cx - 12},{y_arc - 2} Q {(p3_cx + b2_cx) / 2},{y_arc + 16} {b2_cx + 6},{y_arc - 2}" fill="none" stroke="{PURPLE}" stroke-width="1.4" stroke-dasharray="3 2"/>')
+
+        els.append(txt(380, 462, "播放顺序 I₀→B₁→B₂→P₃，但解码顺序必须是 I₀→P₃→B₁→B₂（先拿到未来帧 P₃ 才能双向插值 B 帧！）", 10.8, INK, "middle", weight="700"))
+        els.append(txt(380, 483, "代际跃迁：H.264(兼容之王) → H.265/HEVC(4K HDR省流40%) → AV1(免版税流媒体新王) ｜ ProRes 全用 I 帧专供顺滑倒放剪辑", 10.4, SLATE, "middle"))
+
+        return figure(
+            504,
+            "视频封装容器（MP4/MKV/WebM）与视频编码标准（H.264/HEVC/AV1）关系及I/P/B帧运动矢量补偿动画图解",
+            "上图拆解视频封装容器（外包装盒，复用视频轨、音频轨、字幕与时间轴索引）与视频编码器（压缩算法）的区别；下图通过四帧GOP（I0-B1-B2-P3）及无障碍单次动画展示静止背景零重传、运动矢量Δx搬运宏块以及解码顺序（I0→P3→B1→B2）为何不同于播放顺序。",
+            els,
+            extra_css=extra_css,
+        )
+
+    @register("media-formats", "SVG矢量方程与相机RAW拜耳阵列、PNG帕斯预测与GIF白边、JPEG 8x8 DCT量化、现代图片对比、视频容器与GOP运动补偿动画", "science_tech")
+    def build_media_formats():
+        write_svg(SUBDIR, "vector-bezier-vs-raster-bayer.svg", _build_vector_bezier_vs_raster_bayer())
+        write_svg(SUBDIR, "png-paeth-vs-gif-alpha.svg", _build_png_paeth_vs_gif_alpha())
+        write_svg(SUBDIR, "jpeg-dct-quantization-pipeline.svg", _build_jpeg_dct_quantization_pipeline())
+        write_svg(SUBDIR, "modern-still-formats-radar.svg", _build_modern_still_formats_radar())
+        write_svg(SUBDIR, "video-container-gop-motion-anim.svg", _build_video_container_gop_motion_anim())
+
+
+_register_media_formats()

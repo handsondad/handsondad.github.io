@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="452" viewBox="0 0 760 452" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">三次贝塞尔曲线形状表达力（单拱、S拐点、自交环）与复合样条拼接连续性（G0/G1/C1）</title>
+<desc id="desc">上排对比同侧手柄单拱、异侧手柄S形拐点与交叉手柄自交环；下排对比分段拼接处手柄折断（G0尖角）、三点共线不等长（G1切线连续）与共线等长镜像（C1一阶导连续）。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="451" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">为什么钢笔工具偏爱“三次”再分段拼接？S 形拐点与 G0 / G1 / C1 缝合铁律</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">上排：二次曲线永远拗不出 S 弯，三次曲线仅靠 4 点包揽单拱、S 拐点与自交环；下排：两段拼接三档平滑度</text>
+<rect x="20" y="62" width="228" height="170" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="30.0" y="72.0" width="208" height="21" rx="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="134.0" y="86.3" font-size="9.8" fill="#1d6fa5" text-anchor="middle" font-weight="600">① 同侧手柄：C 形单拱</text>
+<line x1="42" y1="184" x2="72" y2="108" stroke="#475569" stroke-width="1.2" stroke-dasharray="3 2"/>
+<line x1="226" y1="184" x2="196" y2="108" stroke="#475569" stroke-width="1.2" stroke-dasharray="3 2"/>
+<path d="M 42,184 C 72,108 196,108 226,184" fill="none" stroke="#1d6fa5" stroke-width="2.6"/>
+<circle cx="42" cy="184" r="3.8" fill="#0f172a" stroke="#fff" stroke-width="1"/>
+<circle cx="226" cy="184" r="3.8" fill="#0f172a" stroke="#fff" stroke-width="1"/>
+<rect x="68.8" y="104.8" width="6.4" height="6.4" rx="1.2" fill="#fff" stroke="#1d6fa5" stroke-width="1.5"/>
+<rect x="192.8" y="104.8" width="6.4" height="6.4" rx="1.2" fill="#fff" stroke="#1d6fa5" stroke-width="1.5"/>
+<text x="134" y="219" font-size="9.5" fill="#64748b" text-anchor="middle">无拐点，曲率同号（二次也能画）</text>
+<rect x="266" y="62" width="228" height="170" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="276.0" y="72.0" width="208" height="21" rx="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="380.0" y="86.3" font-size="9.8" fill="#c25014" text-anchor="middle" font-weight="600">② 异侧手柄：S 形拐点（三次独门！）</text>
+<line x1="288" y1="182" x2="332" y2="102" stroke="#475569" stroke-width="1.2" stroke-dasharray="3 2"/>
+<line x1="490" y1="114" x2="446" y2="196" stroke="#475569" stroke-width="1.2" stroke-dasharray="3 2"/>
+<path d="M 288,182 C 332,102 446,196 490,114" fill="none" stroke="#c25014" stroke-width="2.6"/>
+<circle cx="288" cy="182" r="3.8" fill="#0f172a" stroke="#fff" stroke-width="1"/>
+<circle cx="490" cy="114" r="3.8" fill="#0f172a" stroke="#fff" stroke-width="1"/>
+<rect x="328.8" y="98.8" width="6.4" height="6.4" rx="1.2" fill="#fff" stroke="#c25014" stroke-width="1.5"/>
+<rect x="442.8" y="192.8" width="6.4" height="6.4" rx="1.2" fill="#fff" stroke="#c25014" stroke-width="1.5"/>
+<circle cx="389.0" cy="148.8" r="4.3" fill="#dc2626" stroke="#fff" stroke-width="1.2"/>
+<text x="397.0" y="141.8" font-size="9.5" fill="#dc2626" text-anchor="start" font-weight="700" class="halo">拐点</text>
+<text x="380" y="219" font-size="9.5" fill="#64748b" text-anchor="middle">中间曲率过零翻面！二次抛物线绝无可能</text>
+<rect x="512" y="62" width="228" height="170" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="522.0" y="72.0" width="208" height="21" rx="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="626.0" y="86.3" font-size="9.8" fill="#6d28d9" text-anchor="middle" font-weight="600">③ 交叉长手柄：自交环（Loop）</text>
+<line x1="552" y1="186" x2="716" y2="104" stroke="#475569" stroke-width="1.2" stroke-dasharray="3 2"/>
+<line x1="696" y1="186" x2="532" y2="104" stroke="#475569" stroke-width="1.2" stroke-dasharray="3 2"/>
+<path d="M 552,186 C 716,104 532,104 696,186" fill="none" stroke="#6d28d9" stroke-width="2.6"/>
+<circle cx="552" cy="186" r="3.8" fill="#0f172a" stroke="#fff" stroke-width="1"/>
+<circle cx="696" cy="186" r="3.8" fill="#0f172a" stroke="#fff" stroke-width="1"/>
+<rect x="712.8" y="100.8" width="6.4" height="6.4" rx="1.2" fill="#fff" stroke="#6d28d9" stroke-width="1.5"/>
+<rect x="528.8" y="100.8" width="6.4" height="6.4" rx="1.2" fill="#fff" stroke="#6d28d9" stroke-width="1.5"/>
+<text x="626" y="219" font-size="9.5" fill="#64748b" text-anchor="middle">手柄反叉拉长即可打出丝带结或尖点</text>
+<rect x="20" y="248" width="228" height="190" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="30.0" y="258.0" width="208" height="21" rx="10.5" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="134.0" y="272.3" font-size="9.6" fill="#dc2626" text-anchor="middle" font-weight="600">A. 折断手柄：仅 C0/G0（尖角点）</text>
+<path d="M 38,378 C 64,308 104,304 134,348" fill="none" stroke="#dc2626" stroke-width="2.6"/>
+<path d="M 134,348 C 164,302 206,308 230,378" fill="none" stroke="#dc2626" stroke-width="2.6" stroke-opacity="0.82"/>
+<line x1="104" y1="304" x2="134" y2="348" stroke="#0f172a" stroke-width="1.5"/>
+<line x1="134" y1="348" x2="164" y2="302" stroke="#0f172a" stroke-width="1.5"/>
+<circle cx="104" cy="304" r="3.5" fill="#fff" stroke="#0f172a" stroke-width="1.4"/>
+<circle cx="164" cy="302" r="3.5" fill="#fff" stroke="#0f172a" stroke-width="1.4"/>
+<circle cx="134" cy="348" r="4.6" fill="#dc2626" stroke="#fff" stroke-width="1.3"/>
+<text x="134" y="365" font-size="9.3" fill="#dc2626" text-anchor="middle" font-weight="700" class="halo">锚点 J</text>
+<text x="134" y="424" font-size="9.4" fill="#64748b" text-anchor="middle">左右手柄成夹角 → 切线突变出尖折角</text>
+<rect x="266" y="248" width="228" height="190" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="276.0" y="258.0" width="208" height="21" rx="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="380.0" y="272.3" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="600">B. 共线不等长：G1 几何切线连续</text>
+<path d="M 284,378 C 304,314 352,346 376,338" fill="none" stroke="#1d6fa5" stroke-width="2.6"/>
+<path d="M 376,338 C 430,320 468,334 492,378" fill="none" stroke="#1d6fa5" stroke-width="2.6" stroke-opacity="0.82"/>
+<line x1="352" y1="346" x2="376" y2="338" stroke="#0f172a" stroke-width="1.5"/>
+<line x1="376" y1="338" x2="430" y2="320" stroke="#0f172a" stroke-width="1.5"/>
+<circle cx="352" cy="346" r="3.5" fill="#fff" stroke="#0f172a" stroke-width="1.4"/>
+<circle cx="430" cy="320" r="3.5" fill="#fff" stroke="#0f172a" stroke-width="1.4"/>
+<circle cx="376" cy="338" r="4.6" fill="#1d6fa5" stroke="#fff" stroke-width="1.3"/>
+<text x="376" y="355" font-size="9.3" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">锚点 J</text>
+<text x="380" y="424" font-size="9.4" fill="#64748b" text-anchor="middle">三点共线（长短不同）→ 视觉丝滑无折痕</text>
+<rect x="512" y="248" width="228" height="190" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="522.0" y="258.0" width="208" height="21" rx="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="626.0" y="272.3" font-size="9.6" fill="#18794e" text-anchor="middle" font-weight="600">C. 共线且等长：C1 导数连续（SVG S）</text>
+<path d="M 530,378 C 554,312 590,348 626,336" fill="none" stroke="#18794e" stroke-width="2.6"/>
+<path d="M 626,336 C 662,324 698,336 722,378" fill="none" stroke="#18794e" stroke-width="2.6" stroke-opacity="0.82"/>
+<line x1="590" y1="348" x2="626" y2="336" stroke="#0f172a" stroke-width="1.5"/>
+<line x1="626" y1="336" x2="662" y2="324" stroke="#0f172a" stroke-width="1.5"/>
+<circle cx="590" cy="348" r="3.5" fill="#fff" stroke="#0f172a" stroke-width="1.4"/>
+<circle cx="662" cy="324" r="3.5" fill="#fff" stroke="#0f172a" stroke-width="1.4"/>
+<circle cx="626" cy="336" r="4.6" fill="#18794e" stroke="#fff" stroke-width="1.3"/>
+<text x="626" y="353" font-size="9.3" fill="#18794e" text-anchor="middle" font-weight="700" class="halo">锚点 J</text>
+<text x="626" y="424" font-size="9.4" fill="#64748b" text-anchor="middle">镜像对称等长 → 方向与运动速度全连续！</text>
+</svg>

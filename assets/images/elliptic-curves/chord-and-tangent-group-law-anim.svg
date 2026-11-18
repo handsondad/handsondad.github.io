@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="484" viewBox="0 0 760 484" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">椭圆曲线y²=x³-7x+10上的弦切加法动画、复环面结合律证明与奇异三次曲线反例</title>
+<desc id="desc">左图在精确光滑曲线y²=x³-7x+10上演绎P(-3,-2)与Q(1,2)连线交R&#x27;(3,4)后沿x轴翻折得P+Q=(3,-4)及切线倍点2Q=(-1,-4)的单次动画；右图用复环面z_P+z_Q+z_R&#x27;≡0解释翻折与结合律，并给出Δ=0尖点与自交结点两个退化反例。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-ink" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#0f172a"/>
+  </marker>
+  <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#6d28d9"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  .ec-ray {
+      stroke-dasharray: 332.8;
+      stroke-dashoffset: 332.8;
+      animation: ecDrawChord 2.6s ease-out 0.3s 1 forwards;
+    }
+    .ec-flip {
+      stroke-dasharray: 248.0;
+      stroke-dashoffset: 248.0;
+      animation: ecDrawFlip 1.6s ease-out 2.9s 1 forwards;
+    }
+    .ec-pulse {
+      opacity: 0.25;
+      animation: ecShowSum 0.9s ease-out 4.4s 1 forwards;
+    }
+    @keyframes ecDrawChord {
+      to { stroke-dashoffset: 0; }
+    }
+    @keyframes ecDrawFlip {
+      to { stroke-dashoffset: 0; }
+    }
+    @keyframes ecShowSum {
+      to { opacity: 1; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .ec-ray, .ec-flip { animation: none !important; stroke-dashoffset: 0 !important; }
+      .ec-pulse { animation: none !important; opacity: 1 !important; }
+    }
+</style>
+<rect x="0.5" y="0.5" width="759" height="483" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">椭圆曲线上的“弦切加法”：连线找第三交点再翻折，凭什么构成完美阿贝尔群？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">实算整数模型 E : y² = x³ − 7x + 10（Δ = −21248 ≠ 0）：全部坐标与斜率均为小整数，可口算核对每一步</text>
+<rect x="18" y="66" width="418" height="404" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="30.0" y="78.0" width="342" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="201.0" y="93.0" font-size="10.2" fill="#1d6fa5" text-anchor="middle" font-weight="600">① 割线相加 P+Q 与切线倍点 2Q（单次动画 + 静态全貌）</text>
+<line x1="90.0" y1="112" x2="90.0" y2="424" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="2 3"/>
+<text x="90.0" y="280.0" font-size="8.4" fill="#64748b" text-anchor="middle" class="mono">-3</text>
+<line x1="136.0" y1="112" x2="136.0" y2="424" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="2 3"/>
+<text x="136.0" y="280.0" font-size="8.4" fill="#64748b" text-anchor="middle" class="mono">-2</text>
+<line x1="182.0" y1="112" x2="182.0" y2="424" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="2 3"/>
+<text x="182.0" y="280.0" font-size="8.4" fill="#64748b" text-anchor="middle" class="mono">-1</text>
+<line x1="228.0" y1="112" x2="228.0" y2="424" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="2 3"/>
+<line x1="274.0" y1="112" x2="274.0" y2="424" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="2 3"/>
+<text x="274.0" y="280.0" font-size="8.4" fill="#64748b" text-anchor="middle" class="mono">1</text>
+<line x1="320.0" y1="112" x2="320.0" y2="424" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="2 3"/>
+<text x="320.0" y="280.0" font-size="8.4" fill="#64748b" text-anchor="middle" class="mono">2</text>
+<line x1="366.0" y1="112" x2="366.0" y2="424" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="2 3"/>
+<text x="366.0" y="280.0" font-size="8.4" fill="#64748b" text-anchor="middle" class="mono">3</text>
+<line x1="44" y1="390.0" x2="404" y2="390.0" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="2 3"/>
+<text x="222.0" y="393.0" font-size="8.4" fill="#64748b" text-anchor="end" class="mono">-4</text>
+<line x1="44" y1="328.0" x2="404" y2="328.0" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="2 3"/>
+<text x="222.0" y="331.0" font-size="8.4" fill="#64748b" text-anchor="end" class="mono">-2</text>
+<line x1="44" y1="204.0" x2="404" y2="204.0" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="2 3"/>
+<text x="222.0" y="207.0" font-size="8.4" fill="#64748b" text-anchor="end" class="mono">2</text>
+<line x1="44" y1="142.0" x2="404" y2="142.0" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="2 3"/>
+<text x="222.0" y="145.0" font-size="8.4" fill="#64748b" text-anchor="end" class="mono">4</text>
+<line x1="40" y1="266.0" x2="412" y2="266.0" stroke="#64748b" stroke-width="1.3" marker-end="url(#arr-ink)"/>
+<line x1="228.0" y1="428" x2="228.0" y2="108" stroke="#64748b" stroke-width="1.3" marker-end="url(#arr-ink)"/>
+<text x="412" y="260.0" font-size="9.2" fill="#0f172a" text-anchor="end" font-weight="700" class="mono">x</text>
+<text x="236.0" y="115" font-size="9.2" fill="#0f172a" text-anchor="start" font-weight="700" class="mono">y</text>
+<path d="M 385.32 424.26 L 381.95 418.05 L 378.58 411.95 L 375.23 405.96 L 371.89 400.09 L 368.56 394.34 L 365.24 388.72 L 361.93 383.22 L 358.63 377.87 L 355.34 372.65 L 352.06 367.59 L 348.80 362.68 L 345.54 357.95 L 342.30 353.39 L 339.06 349.03 L 335.84 344.88 L 332.63 340.95 L 329.43 337.27 L 326.24 333.86 L 323.06 330.73 L 319.90 327.91 L 316.74 325.43 L 313.60 323.31 L 310.47 321.56 L 307.35 320.21 L 304.24 319.25 L 301.15 318.70 L 298.06 318.53 L 294.99 318.74 L 291.93 319.30 L 288.88 320.17 L 285.85 321.33 L 282.82 322.74 L 279.81 324.36 L 276.81 326.17 L 273.82 328.12 L 270.85 330.19 L 267.89 332.36 L 264.94 334.60 L 262.01 336.89 L 259.08 339.22 L 256.17 341.57 L 253.28 343.93 L 250.39 346.29 L 247.52 348.64 L 244.66 350.96 L 241.82 353.26 L 238.99 355.53 L 236.17 357.76 L 233.37 359.95 L 230.58 362.09 L 227.81 364.17 L 225.05 366.21 L 222.30 368.19 L 219.57 370.10 L 216.85 371.96 L 214.14 373.75 L 211.45 375.48 L 208.78 377.13 L 206.12 378.72 L 203.47 380.24 L 200.84 381.69 L 198.23 383.06 L 195.63 384.36 L 193.05 385.58 L 190.48 386.73 L 187.93 387.80 L 185.39 388.79 L 182.87 389.70 L 180.36 390.54 L 177.88 391.29 L 175.40 391.96 L 172.95 392.54 L 170.51 393.05 L 168.09 393.47 L 165.69 393.80 L 163.30 394.05 L 160.93 394.22 L 158.58 394.29 L 156.25 394.28 L 153.93 394.18 L 151.64 393.99 L 149.36 393.71 L 147.10 393.33 L 144.86 392.86 L 142.64 392.30 L 140.44 391.65 L 138.26 390.89 L 136.10 390.04 L 133.96 389.09 L 131.84 388.04 L 129.74 386.89 L 127.67 385.63 L 125.61 384.26 L 123.58 382.79 L 121.57 381.20 L 119.58 379.50 L 117.62 377.69 L 115.68 375.75 L 113.76 373.69 L 111.87 371.50 L 110.00 369.18 L 108.16 366.72 L 106.35 364.11 L 104.56 361.35 L 102.80 358.43 L 101.07 355.33 L 99.36 352.05 L 97.69 348.57 L 96.04 344.88 L 94.43 340.93 L 92.85 336.71 L 91.30 332.17 L 89.78 327.26 L 88.30 321.88 L 86.86 315.91 L 85.45 309.12 L 84.09 301.07 L 82.77 290.57 L 81.48 266.00 L 80.25 266.00 L 79.06 266.00 L 77.93 266.00 L 76.85 266.00 L 75.83 266.00 L 74.88 266.00 L 74.00 266.00 L 73.20 266.00 L 72.51 266.00 L 71.94 266.00 L 71.60 266.00 L 71.94 266.00 L 72.51 266.00 L 73.20 266.00 L 74.00 266.00 L 74.88 266.00 L 75.83 266.00 L 76.85 266.00 L 77.93 266.00 L 79.06 266.00 L 80.25 266.00 L 81.48 266.00 L 82.77 241.43 L 84.09 230.93 L 85.45 222.88 L 86.86 216.09 L 88.30 210.12 L 89.78 204.74 L 91.30 199.83 L 92.85 195.29 L 94.43 191.07 L 96.04 187.12 L 97.69 183.43 L 99.36 179.95 L 101.07 176.67 L 102.80 173.57 L 104.56 170.65 L 106.35 167.89 L 108.16 165.28 L 110.00 162.82 L 111.87 160.50 L 113.76 158.31 L 115.68 156.25 L 117.62 154.31 L 119.58 152.50 L 121.57 150.80 L 123.58 149.21 L 125.61 147.74 L 127.67 146.37 L 129.74 145.11 L 131.84 143.96 L 133.96 142.91 L 136.10 141.96 L 138.26 141.11 L 140.44 140.35 L 142.64 139.70 L 144.86 139.14 L 147.10 138.67 L 149.36 138.29 L 151.64 138.01 L 153.93 137.82 L 156.25 137.72 L 158.58 137.71 L 160.93 137.78 L 163.30 137.95 L 165.69 138.20 L 168.09 138.53 L 170.51 138.95 L 172.95 139.46 L 175.40 140.04 L 177.88 140.71 L 180.36 141.46 L 182.87 142.30 L 185.39 143.21 L 187.93 144.20 L 190.48 145.27 L 193.05 146.42 L 195.63 147.64 L 198.23 148.94 L 200.84 150.31 L 203.47 151.76 L 206.12 153.28 L 208.78 154.87 L 211.45 156.52 L 214.14 158.25 L 216.85 160.04 L 219.57 161.90 L 222.30 163.81 L 225.05 165.79 L 227.81 167.83 L 230.58 169.91 L 233.37 172.05 L 236.17 174.24 L 238.99 176.47 L 241.82 178.74 L 244.66 181.04 L 247.52 183.36 L 250.39 185.71 L 253.28 188.07 L 256.17 190.43 L 259.08 192.78 L 262.01 195.11 L 264.94 197.40 L 267.89 199.64 L 270.85 201.81 L 273.82 203.88 L 276.81 205.83 L 279.81 207.64 L 282.82 209.26 L 285.85 210.67 L 288.88 211.83 L 291.93 212.70 L 294.99 213.26 L 298.06 213.47 L 301.15 213.30 L 304.24 212.75 L 307.35 211.79 L 310.47 210.44 L 313.60 208.69 L 316.74 206.57 L 319.90 204.09 L 323.06 201.27 L 326.24 198.14 L 329.43 194.73 L 332.63 191.05 L 335.84 187.12 L 339.06 182.97 L 342.30 178.61 L 345.54 174.05 L 348.80 169.32 L 352.06 164.41 L 355.34 159.35 L 358.63 154.13 L 361.93 148.78 L 365.24 143.28 L 368.56 137.66 L 371.89 131.91 L 375.23 126.04 L 378.58 120.05 L 381.95 113.95 L 385.32 107.74" fill="none" stroke="#18794e" stroke-width="2.7"/>
+<line x1="156.7" y1="125.0" x2="345.3" y2="252.0" stroke="#6d28d9" stroke-width="1.5" stroke-dasharray="5 3"/>
+<line x1="182.0" y1="142.0" x2="182.0" y2="390.0" stroke="#6d28d9" stroke-width="1.4" stroke-dasharray="3 3"/>
+<line x1="60.1" y1="348.1" x2="386.7" y2="128.0" stroke="#93c5fd" stroke-width="1.6"/>
+<line class="ec-ray" x1="90.0" y1="328.0" x2="366.0" y2="142.0" stroke="#1d6fa5" stroke-width="2.9"/>
+<line x1="366.0" y1="142.0" x2="366.0" y2="390.0" stroke="#fed7aa" stroke-width="1.6" stroke-dasharray="4 3"/>
+<line class="ec-flip" x1="366.0" y1="142.0" x2="366.0" y2="385.0" stroke="#c25014" stroke-width="2.6" marker-end="url(#arr-orange)"/>
+<circle cx="90.0" cy="328.0" r="4.3" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.3"/>
+<text x="100.0" y="344.0" font-size="9.1" fill="#1d6fa5" text-anchor="start" font-weight="700" class="halo mono">P(-3, -2)</text>
+<circle cx="274.0" cy="204.0" r="4.3" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.3"/>
+<text x="284.0" y="218.0" font-size="9.1" fill="#1d6fa5" text-anchor="start" font-weight="700" class="halo mono">Q(1, 2)</text>
+<circle cx="366.0" cy="142.0" r="4.3" fill="#475569" stroke="#ffffff" stroke-width="1.3"/>
+<text x="357.0" y="134.0" font-size="9.1" fill="#475569" text-anchor="end" font-weight="700" class="halo mono">R&#x27;(3, 4)</text>
+<circle cx="182.0" cy="142.0" r="4.3" fill="#6d28d9" stroke="#ffffff" stroke-width="1.3"/>
+<text x="173.0" y="134.0" font-size="9.1" fill="#6d28d9" text-anchor="end" font-weight="700" class="halo mono">D&#x27;(-1, 4)</text>
+<circle cx="182.0" cy="390.0" r="4.3" fill="#6d28d9" stroke="#ffffff" stroke-width="1.3"/>
+<text x="173.0" y="405.0" font-size="9.1" fill="#6d28d9" text-anchor="end" font-weight="700" class="halo mono">2Q(-1, -4)</text>
+<circle class="ec-pulse" cx="366.0" cy="390.0" r="8.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.5"/>
+<circle cx="366.0" cy="390.0" r="4.8" fill="#c25014" stroke="#ffffff" stroke-width="1.3"/>
+<text x="355.0" y="394.0" font-size="9.5" fill="#c25014" text-anchor="end" font-weight="700" class="halo mono">P+Q = (3, -4)</text>
+<text x="30" y="443" font-size="8.5" fill="#1e293b" text-anchor="start">• 蓝实线（割线相加）：过 P, Q 连 y=x+1 交 R&#x27;(3,4)，沿 x 轴翻折得 P+Q=(3,-4)</text>
+<text x="30" y="459" font-size="8.5" fill="#64748b" text-anchor="start">• 紫虚线（切线倍点）：过 Q 作切线 y=−x+3 交 D&#x27;(-1,4)，翻折得 2Q=(-1,-4)</text>
+<rect x="450" y="66" width="292" height="404" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="464.0" y="78.0" width="264" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="596.0" y="93.0" font-size="10.0" fill="#c25014" text-anchor="middle" font-weight="600">② 两大灵魂追问：为什么要翻折？结合律怎证？</text>
+<rect x="464" y="108" width="264" height="182" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="476" y="127" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="700">复环面视角一秒看穿（免去 50 行死算！）：</text>
+<text x="476" y="146" font-size="8.9" fill="#1e293b" text-anchor="start">1. 直线 y = sx + d 代入 (℘(z), ℘&#x27;(z))，在格点</text>
+<text x="476" y="163" font-size="8.9" fill="#1e293b" text-anchor="start">   0 处有 3 阶极点，故三交点参数必满足：</text>
+<text x="596" y="183" font-size="9.3" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono">z_P + z_Q + z_R&#x27; ≡ 0 (mod Λ)</text>
+<text x="476" y="203" font-size="8.9" fill="#c25014" text-anchor="start" font-weight="700">2. 所以第三交点 R&#x27; 对应的是 −(z_P + z_Q)！</text>
+<text x="476" y="221" font-size="8.9" fill="#1e293b" text-anchor="start">   因 ℘(-z)=℘(z) 偶、℘&#x27;(-z)=-℘&#x27;(z) 奇，</text>
+<text x="476" y="239" font-size="8.9" fill="#c25014" text-anchor="start" font-weight="700">   沿 x 轴上下翻折变号，恰好还原 z_P + z_Q！</text>
+<text x="476" y="259" font-size="8.9" fill="#1e293b" text-anchor="start">3. 环面上普通复数加法天然满足结合律，故</text>
+<text x="476" y="276" font-size="8.9" fill="#18794e" text-anchor="start" font-weight="700">   (P+Q)+S = P+(Q+S) 不证自明（零元为 O）！</text>
+<rect x="464" y="298" width="264" height="158" rx="8" fill="#fef2f2" stroke="#fecaca" stroke-width="1"/>
+<text x="476" y="318" font-size="9.6" fill="#b91c1c" text-anchor="start" font-weight="700">红线禁区：为什么必须要求判别式 Δ ≠ 0？</text>
+<text x="476" y="336" font-size="8.9" fill="#1e293b" text-anchor="start">一旦 4a³ + 27b² = 0，曲线出现奇点，群律崩塌：</text>
+<line x1="484" y1="390.0" x2="568" y2="390.0" stroke="#cbd5e1" stroke-width="1.0"/>
+<path d="M 551.50 429.06 L 548.56 424.56 L 545.74 420.42 L 543.04 416.62 L 540.46 413.15 L 538.00 410.00 L 535.66 407.15 L 533.44 404.58 L 531.34 402.28 L 529.36 400.24 L 527.50 398.44 L 525.76 396.86 L 524.14 395.49 L 522.64 394.32 L 521.26 393.33 L 520.00 392.50 L 518.86 391.82 L 517.84 391.28 L 516.94 390.86 L 516.16 390.54 L 515.50 390.31 L 514.96 390.16 L 514.54 390.07 L 514.24 390.02 L 514.06 390.00 L 514.00 390.00 L 514.06 390.00 L 514.24 389.98 L 514.54 389.93 L 514.96 389.84 L 515.50 389.69 L 516.16 389.46 L 516.94 389.14 L 517.84 388.72 L 518.86 388.18 L 520.00 387.50 L 521.26 386.67 L 522.64 385.68 L 524.14 384.51 L 525.76 383.14 L 527.50 381.56 L 529.36 379.76 L 531.34 377.72 L 533.44 375.42 L 535.66 372.85 L 538.00 370.00 L 540.46 366.85 L 543.04 363.38 L 545.74 359.58 L 548.56 355.44 L 551.50 350.94" fill="none" stroke="#dc2626" stroke-width="2.1"/>
+<circle cx="514.0" cy="390.0" r="3.5" fill="#dc2626"/>
+<text x="526" y="434" font-size="8.8" fill="#b91c1c" text-anchor="middle" font-weight="700" class="mono">尖点 y² = x³</text>
+<text x="526" y="448" font-size="8.3" fill="#64748b" text-anchor="middle">(0,0) 切线退化</text>
+<line x1="612" y1="390.0" x2="712" y2="390.0" stroke="#cbd5e1" stroke-width="1.0"/>
+<path d="M 686.84 413.42 L 682.71 407.05 L 678.73 401.28 L 674.90 396.09 L 671.23 391.46 L 667.70 387.37 L 664.32 383.79 L 661.09 380.71 L 658.02 378.09 L 655.09 375.93 L 652.31 374.18 L 649.69 372.84 L 647.21 371.89 L 644.89 371.28 L 642.71 371.02 L 640.68 371.07 L 638.81 371.40 L 637.08 372.01 L 635.50 372.86 L 634.08 373.94 L 632.80 375.22 L 631.68 376.67 L 630.70 378.29 L 629.88 380.03 L 629.20 381.89 L 628.68 383.84 L 628.30 385.86 L 628.08 387.92 L 628.00 390.00 L 628.08 392.08 L 628.30 394.14 L 628.68 396.16 L 629.20 398.11 L 629.88 399.97 L 630.70 401.71 L 631.68 403.33 L 632.80 404.78 L 634.08 406.06 L 635.50 407.14 L 637.08 407.99 L 638.81 408.60 L 640.68 408.93 L 642.71 408.98 L 644.89 408.72 L 647.21 408.11 L 649.69 407.16 L 652.31 405.82 L 655.09 404.07 L 658.02 401.91 L 661.09 399.29 L 664.32 396.21 L 667.70 392.63 L 671.23 388.54 L 674.90 383.91 L 678.73 378.72 L 682.71 372.95 L 686.84 366.58" fill="none" stroke="#dc2626" stroke-width="2.1"/>
+<circle cx="670.0" cy="390.0" r="3.5" fill="#dc2626"/>
+<text x="662" y="434" font-size="8.8" fill="#b91c1c" text-anchor="middle" font-weight="700">自交结点 Δ=0</text>
+<text x="662" y="448" font-size="8.3" fill="#64748b" text-anchor="middle">两条切线打架</text>
+</svg>

@@ -1,0 +1,260 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="452" viewBox="0 0 760 452" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">SVG三次贝塞尔矢量曲线与位图像素阶梯、相机RAW拜耳阵列及14-bit宽容度对比图</title>
+<desc id="desc">左图对比SVG三次贝塞尔曲线方程放大8倍依旧光滑与位图像素网格暴露锯齿阶梯；右图展示相机RAW传感器的RGGB拜耳滤色阵列（50%绿、25%红、25%蓝）以及14-bit（16384级灰阶）相比8-bit（256级灰阶）保留高光云层细节的原理。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="451" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="20" y="26" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">图像的两大底层世界：SVG 矢量贝塞尔方程 vs 位图网格与相机 RAW 拜耳阵列</text>
+<text x="20" y="46" font-size="12.5" fill="#64748b" text-anchor="start">左：放大 8 倍后 SVG 靠三次贝塞尔方程实时重算切线永不发虚；右：相机 RAW 存的是 14-bit 拜耳马赛克</text>
+<rect x="16" y="58" width="360" height="382" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="28.0" y="68.0" width="336" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="196.0" y="83.0" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">世界 A · 矢量方程 (SVG) vs 像素栅格 (BMP/PNG)</text>
+<rect x="30" y="102" width="160" height="146" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<text x="110" y="119" font-size="11.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">SVG 矢量 (存几何公式)</text>
+<line x1="52.0" y1="208.0" x2="68.0" y2="137.0" stroke="#c25014" stroke-width="1.2" stroke-dasharray="3 2"/>
+<line x1="152.0" y1="139.0" x2="170.0" y2="206.0" stroke="#c25014" stroke-width="1.2" stroke-dasharray="3 2"/>
+<path d="M 52.00,208.00 L 52.80,204.73 L 53.70,201.56 L 54.68,198.50 L 55.76,195.54 L 56.93,192.69 L 58.18,189.95 L 59.52,187.31 L 60.93,184.78 L 62.41,182.36 L 63.97,180.03 L 65.60,177.82 L 67.29,175.71 L 69.04,173.70 L 70.86,171.80 L 72.73,170.01 L 74.66,168.31 L 76.63,166.72 L 78.66,165.24 L 80.72,163.86 L 82.83,162.58 L 84.98,161.41 L 87.16,160.33 L 89.38,159.37 L 91.62,158.50 L 93.89,157.74 L 96.18,157.08 L 98.50,156.52 L 100.83,156.06 L 103.17,155.71 L 105.52,155.45 L 107.88,155.30 L 110.25,155.25 L 112.62,155.30 L 114.98,155.45 L 117.34,155.70 L 119.70,156.06 L 122.04,156.51 L 124.37,157.06 L 126.68,157.72 L 128.97,158.47 L 131.24,159.32 L 133.48,160.27 L 135.70,161.32 L 137.88,162.47 L 140.02,163.72 L 142.13,165.07 L 144.20,166.52 L 146.22,168.06 L 148.19,169.71 L 150.12,171.45 L 151.98,173.28 L 153.80,175.22 L 155.55,177.25 L 157.24,179.39 L 158.86,181.61 L 160.42,183.94 L 161.90,186.36 L 163.31,188.88 L 164.64,191.49 L 165.88,194.20 L 167.05,197.01 L 168.12,199.91 L 169.11,202.91 L 170.00,206.00" fill="none" stroke="#1d6fa5" stroke-width="3.2" stroke-linecap="round"/>
+<circle cx="52.0" cy="208.0" r="3.5" fill="#ffffff" stroke="#c25014" stroke-width="1.6"/>
+<text x="52.0" y="222.0" font-size="10.2" fill="#c25014" text-anchor="middle" font-weight="700" class="mono">P0</text>
+<circle cx="68.0" cy="137.0" r="3.5" fill="#ffffff" stroke="#c25014" stroke-width="1.6"/>
+<text x="68.0" y="131.0" font-size="10.2" fill="#c25014" text-anchor="middle" font-weight="700" class="mono">P1</text>
+<circle cx="152.0" cy="139.0" r="3.5" fill="#ffffff" stroke="#c25014" stroke-width="1.6"/>
+<text x="152.0" y="133.0" font-size="10.2" fill="#c25014" text-anchor="middle" font-weight="700" class="mono">P2</text>
+<circle cx="170.0" cy="206.0" r="3.5" fill="#ffffff" stroke="#c25014" stroke-width="1.6"/>
+<text x="170.0" y="220.0" font-size="10.2" fill="#c25014" text-anchor="middle" font-weight="700" class="mono">P3</text>
+<text x="110" y="241" font-size="10.6" fill="#18794e" text-anchor="middle" font-weight="600">放大 800%：实时重算光滑边界</text>
+<rect x="202" y="102" width="162" height="146" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<text x="283" y="119" font-size="11.8" fill="#c25014" text-anchor="middle" font-weight="700">位图光栅 (存固定像素格)</text>
+<rect x="221" y="128" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="232" y="128" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="243" y="128" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="254" y="128" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="265" y="128" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="276" y="128" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="287" y="128" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="298" y="128" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="309" y="128" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="320" y="128" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="331" y="128" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="221" y="139" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="232" y="139" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="243" y="139" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="254" y="139" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="265" y="139" width="11" height="11" fill="#93c5fd" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="276" y="139" width="11" height="11" fill="#1d6fa5" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="287" y="139" width="11" height="11" fill="#93c5fd" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="298" y="139" width="11" height="11" fill="#93c5fd" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="309" y="139" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="320" y="139" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="331" y="139" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="221" y="150" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="232" y="150" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="243" y="150" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="254" y="150" width="11" height="11" fill="#1d6fa5" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="265" y="150" width="11" height="11" fill="#1d6fa5" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="276" y="150" width="11" height="11" fill="#1d6fa5" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="287" y="150" width="11" height="11" fill="#1d6fa5" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="298" y="150" width="11" height="11" fill="#1d6fa5" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="309" y="150" width="11" height="11" fill="#93c5fd" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="320" y="150" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="331" y="150" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="221" y="161" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="232" y="161" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="243" y="161" width="11" height="11" fill="#93c5fd" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="254" y="161" width="11" height="11" fill="#1d6fa5" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="265" y="161" width="11" height="11" fill="#93c5fd" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="276" y="161" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="287" y="161" width="11" height="11" fill="#93c5fd" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="298" y="161" width="11" height="11" fill="#93c5fd" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="309" y="161" width="11" height="11" fill="#1d6fa5" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="320" y="161" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="331" y="161" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="221" y="172" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="232" y="172" width="11" height="11" fill="#93c5fd" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="243" y="172" width="11" height="11" fill="#1d6fa5" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="254" y="172" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="265" y="172" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="276" y="172" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="287" y="172" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="298" y="172" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="309" y="172" width="11" height="11" fill="#93c5fd" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="320" y="172" width="11" height="11" fill="#1d6fa5" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="331" y="172" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="221" y="183" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="232" y="183" width="11" height="11" fill="#1d6fa5" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="243" y="183" width="11" height="11" fill="#93c5fd" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="254" y="183" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="265" y="183" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="276" y="183" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="287" y="183" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="298" y="183" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="309" y="183" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="320" y="183" width="11" height="11" fill="#1d6fa5" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="331" y="183" width="11" height="11" fill="#93c5fd" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="221" y="194" width="11" height="11" fill="#1d6fa5" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="232" y="194" width="11" height="11" fill="#93c5fd" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="243" y="194" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="254" y="194" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="265" y="194" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="276" y="194" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="287" y="194" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="298" y="194" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="309" y="194" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="320" y="194" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="331" y="194" width="11" height="11" fill="#1d6fa5" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="221" y="205" width="11" height="11" fill="#1d6fa5" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="232" y="205" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="243" y="205" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="254" y="205" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="265" y="205" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="276" y="205" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="287" y="205" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="298" y="205" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="309" y="205" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="320" y="205" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="331" y="205" width="11" height="11" fill="#93c5fd" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="221" y="216" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="232" y="216" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="243" y="216" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="254" y="216" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="265" y="216" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="276" y="216" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="287" y="216" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="298" y="216" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="309" y="216" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="320" y="216" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<rect x="331" y="216" width="11" height="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+<text x="283" y="240" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="600">放大 800%：暴露马赛克阶梯</text>
+<rect x="30" y="258" width="334" height="170" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="40" y="278.0" font-size="11.2" fill="#1d6fa5" text-anchor="start" font-weight="700">SVG 存的是 XML 文本指令：</text>
+<text x="40" y="299.5" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="400" class="mono">  B(t)=(1-t)³P0+3(1-t)²tP1+3(1-t)t²P2+t³P3</text>
+<text x="40" y="321.0" font-size="11.2" fill="#1e293b" text-anchor="start" font-weight="400">• 优点：Logo/图表仅数 KB，4K 屏或巨幅海报永不发虚，</text>
+<text x="40" y="342.5" font-size="11.2" fill="#1e293b" text-anchor="start" font-weight="400">  还能直接用 CSS 改颜色、加无障碍标签与轻量动画；</text>
+<text x="40" y="364.0" font-size="11.2" fill="#c25014" text-anchor="start" font-weight="400">• 反例禁区：千万别把实拍风景照硬转 SVG！几百万噪点</text>
+<text x="40" y="385.5" font-size="11.2" fill="#1e293b" text-anchor="start" font-weight="400">  会被拆成几十万条闭合路径，体积反超 20 MB 且卡死网页。</text>
+<text x="40" y="407.0" font-size="11.2" fill="#475569" text-anchor="start" font-weight="700">• 未压缩位图 BMP：4000×3000×3 Byte = 36.0 MB！</text>
+<rect x="388" y="58" width="356" height="382" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="400.0" y="68.0" width="332" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="566.0" y="83.0" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="600">世界 B · 相机 RAW 拜耳滤色片与 14-bit 宽容度</text>
+<rect x="404" y="104" width="26" height="26" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="1.2"/>
+<text x="417.0" y="122" font-size="11.5" fill="#991b1b" text-anchor="middle" font-weight="700" class="mono">R</text>
+<rect x="432" y="104" width="26" height="26" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+<text x="445.0" y="122" font-size="11.5" fill="#14532d" text-anchor="middle" font-weight="700" class="mono">G</text>
+<rect x="460" y="104" width="26" height="26" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="1.2"/>
+<text x="473.0" y="122" font-size="11.5" fill="#991b1b" text-anchor="middle" font-weight="700" class="mono">R</text>
+<rect x="488" y="104" width="26" height="26" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+<text x="501.0" y="122" font-size="11.5" fill="#14532d" text-anchor="middle" font-weight="700" class="mono">G</text>
+<rect x="404" y="132" width="26" height="26" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+<text x="417.0" y="150" font-size="11.5" fill="#14532d" text-anchor="middle" font-weight="700" class="mono">G</text>
+<rect x="432" y="132" width="26" height="26" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.2"/>
+<text x="445.0" y="150" font-size="11.5" fill="#1e3a8a" text-anchor="middle" font-weight="700" class="mono">B</text>
+<rect x="460" y="132" width="26" height="26" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+<text x="473.0" y="150" font-size="11.5" fill="#14532d" text-anchor="middle" font-weight="700" class="mono">G</text>
+<rect x="488" y="132" width="26" height="26" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.2"/>
+<text x="501.0" y="150" font-size="11.5" fill="#1e3a8a" text-anchor="middle" font-weight="700" class="mono">B</text>
+<rect x="404" y="160" width="26" height="26" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="1.2"/>
+<text x="417.0" y="178" font-size="11.5" fill="#991b1b" text-anchor="middle" font-weight="700" class="mono">R</text>
+<rect x="432" y="160" width="26" height="26" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+<text x="445.0" y="178" font-size="11.5" fill="#14532d" text-anchor="middle" font-weight="700" class="mono">G</text>
+<rect x="460" y="160" width="26" height="26" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="1.2"/>
+<text x="473.0" y="178" font-size="11.5" fill="#991b1b" text-anchor="middle" font-weight="700" class="mono">R</text>
+<rect x="488" y="160" width="26" height="26" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+<text x="501.0" y="178" font-size="11.5" fill="#14532d" text-anchor="middle" font-weight="700" class="mono">G</text>
+<rect x="404" y="188" width="26" height="26" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+<text x="417.0" y="206" font-size="11.5" fill="#14532d" text-anchor="middle" font-weight="700" class="mono">G</text>
+<rect x="432" y="188" width="26" height="26" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.2"/>
+<text x="445.0" y="206" font-size="11.5" fill="#1e3a8a" text-anchor="middle" font-weight="700" class="mono">B</text>
+<rect x="460" y="188" width="26" height="26" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+<text x="473.0" y="206" font-size="11.5" fill="#14532d" text-anchor="middle" font-weight="700" class="mono">G</text>
+<rect x="488" y="188" width="26" height="26" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.2"/>
+<text x="501.0" y="206" font-size="11.5" fill="#1e3a8a" text-anchor="middle" font-weight="700" class="mono">B</text>
+<text x="459" y="232" font-size="11.2" fill="#0f172a" text-anchor="middle" font-weight="700">RGGB 拜耳阵列 (1976)</text>
+<text x="459" y="248" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="600">绿 50% · 红 25% · 蓝 25%</text>
+<rect x="530" y="104" width="202" height="40" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<text x="538" y="120" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">1. 传感器单色电荷</text>
+<text x="538" y="136" font-size="10.5" fill="#64748b" text-anchor="start">每格仅测 1 种光强 (非 RGB!)</text>
+<rect x="530" y="152" width="202" height="40" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<text x="538" y="168" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">2. 12~14 bit 线性记录</text>
+<text x="538" y="184" font-size="10.5" fill="#64748b" text-anchor="start">单通道 4,096~16,384 级灰阶</text>
+<rect x="530" y="200" width="202" height="40" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<text x="538" y="216" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">3. 去马赛克插值 + 白平衡</text>
+<text x="538" y="232" font-size="10.5" fill="#64748b" text-anchor="start">后期自由重算色温不损画质</text>
+<rect x="402" y="258" width="330" height="170" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="414" y="278" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">为什么过曝云彩 RAW 拉得回，JPEG 却是死白？</text>
+<text x="414" y="300" font-size="10.8" fill="#c25014" text-anchor="start" font-weight="600">8-bit JPEG（每通道 2⁸ = 256 级，高光溢出直接削平为 255）：</text>
+<rect x="414.0" y="308" width="30.4" height="20" fill="#1e2a3a" stroke="#cbd5e1" stroke-width="0.7"/>
+<rect x="444.4" y="308" width="30.4" height="20" fill="#3e4a5a" stroke="#cbd5e1" stroke-width="0.7"/>
+<rect x="474.8" y="308" width="30.4" height="20" fill="#5e6a7a" stroke="#cbd5e1" stroke-width="0.7"/>
+<rect x="505.2" y="308" width="30.4" height="20" fill="#7e8a9a" stroke="#cbd5e1" stroke-width="0.7"/>
+<rect x="535.6" y="308" width="30.4" height="20" fill="#9eaaba" stroke="#cbd5e1" stroke-width="0.7"/>
+<rect x="566.0" y="308" width="30.4" height="20" fill="#becada" stroke="#cbd5e1" stroke-width="0.7"/>
+<rect x="596.4" y="308" width="30.4" height="20" fill="#deeafa" stroke="#cbd5e1" stroke-width="0.7"/>
+<rect x="626.8" y="308" width="30.4" height="20" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.7"/>
+<rect x="657.2" y="308" width="30.4" height="20" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.7"/>
+<rect x="687.6" y="308" width="30.4" height="20" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.7"/>
+<text x="672.4" y="322" font-size="10.2" fill="#dc2626" text-anchor="middle" font-weight="700">255 死白截断!</text>
+<text x="414" y="350" font-size="10.8" fill="#18794e" text-anchor="start" font-weight="600">14-bit RAW（每通道 2¹⁴ = 16,384 级，精细度高 64 倍）：</text>
+<rect x="414.0" y="358" width="9.9" height="20" fill="#18222e"/>
+<rect x="423.5" y="358" width="9.9" height="20" fill="#1f2935"/>
+<rect x="433.0" y="358" width="9.9" height="20" fill="#26303c"/>
+<rect x="442.5" y="358" width="9.9" height="20" fill="#2d3743"/>
+<rect x="452.0" y="358" width="9.9" height="20" fill="#343e4a"/>
+<rect x="461.5" y="358" width="9.9" height="20" fill="#3b4551"/>
+<rect x="471.0" y="358" width="9.9" height="20" fill="#424c58"/>
+<rect x="480.5" y="358" width="9.9" height="20" fill="#49535f"/>
+<rect x="490.0" y="358" width="9.9" height="20" fill="#505a66"/>
+<rect x="499.5" y="358" width="9.9" height="20" fill="#57616d"/>
+<rect x="509.0" y="358" width="9.9" height="20" fill="#5e6874"/>
+<rect x="518.5" y="358" width="9.9" height="20" fill="#656f7b"/>
+<rect x="528.0" y="358" width="9.9" height="20" fill="#6c7682"/>
+<rect x="537.5" y="358" width="9.9" height="20" fill="#737d89"/>
+<rect x="547.0" y="358" width="9.9" height="20" fill="#7a8490"/>
+<rect x="556.5" y="358" width="9.9" height="20" fill="#818b97"/>
+<rect x="566.0" y="358" width="9.9" height="20" fill="#88929e"/>
+<rect x="575.5" y="358" width="9.9" height="20" fill="#8f99a5"/>
+<rect x="585.0" y="358" width="9.9" height="20" fill="#96a0ac"/>
+<rect x="594.5" y="358" width="9.9" height="20" fill="#9da7b3"/>
+<rect x="604.0" y="358" width="9.9" height="20" fill="#a4aeba"/>
+<rect x="613.5" y="358" width="9.9" height="20" fill="#abb5c1"/>
+<rect x="623.0" y="358" width="9.9" height="20" fill="#b2bcc8"/>
+<rect x="632.5" y="358" width="9.9" height="20" fill="#b9c3cf"/>
+<rect x="642.0" y="358" width="9.9" height="20" fill="#c0cad6"/>
+<rect x="651.5" y="358" width="9.9" height="20" fill="#c7d1dd"/>
+<rect x="661.0" y="358" width="9.9" height="20" fill="#ced8e4"/>
+<rect x="670.5" y="358" width="9.9" height="20" fill="#d5dfeb"/>
+<rect x="680.0" y="358" width="9.9" height="20" fill="#dce6f2"/>
+<rect x="689.5" y="358" width="9.9" height="20" fill="#e3edf9"/>
+<rect x="699.0" y="358" width="9.9" height="20" fill="#eaf4ff"/>
+<rect x="708.5" y="358" width="9.9" height="20" fill="#f2fcff"/>
+<rect x="414" y="358" width="304" height="20" fill="none" stroke="#94a3b8" stroke-width="0.8"/>
+<text x="666.3" y="372" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">云层层次完整保留</text>
+<text x="414" y="398" font-size="10.8" fill="#1e293b" text-anchor="start">• 印刷归档 TIFF 支持 16-bit 多图层；网页图标 ICO 单文件</text>
+<text x="414" y="416" font-size="10.8" fill="#1e293b" text-anchor="start">  打包 16×16 / 32×32 / 256×256 多尺寸，小字号绝不发糊。</text>
+</svg>

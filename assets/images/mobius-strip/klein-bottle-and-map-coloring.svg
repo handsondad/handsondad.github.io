@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="474" viewBox="0 0 760 474" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">克莱因瓶双莫比乌斯环缝合原理与莫比乌斯环六国两两接壤六色地图</title>
+<desc id="desc">左图展示左旋与右旋莫比乌斯环沿唯一圆边界S1缝合成无边界无内外的克莱因瓶，并标注三维浸入自交处与四维无自交解释；右图用严格可验算的4x5矩形翻转粘合网格构造6个两两相邻区域，证明莫比乌斯环色数为6。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="473" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">莫比乌斯环的高阶拓扑：缝出无内外的克莱因瓶，打破平面四色定理</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：两条镜像莫比乌斯环沿唯一圆边界缝合成克莱因瓶　|　右：莫比乌斯环上的蒂策六国两两接壤地图</text>
+<rect x="18" y="66" width="348" height="392" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="34" y="90" font-size="12.4" fill="#0f172a" text-anchor="start" font-weight="700">两条莫比乌斯环面对面拉链缝合 = 克莱因瓶</text>
+<rect x="32" y="102" width="114" height="46" rx="8" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<text x="89" y="121" font-size="9.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">左旋莫比乌斯环</text>
+<text x="89" y="139" font-size="8.9" fill="#64748b" text-anchor="middle">唯一圆边界 ∂M₁ ≅ S¹</text>
+<text x="157" y="130" font-size="15" fill="#0f172a" text-anchor="middle" font-weight="700">+</text>
+<rect x="168" y="102" width="114" height="46" rx="8" fill="#fef1e8" stroke="#fdba74" stroke-width="1"/>
+<text x="225" y="121" font-size="9.8" fill="#c25014" text-anchor="middle" font-weight="700">右旋莫比乌斯环</text>
+<text x="225" y="139" font-size="8.9" fill="#64748b" text-anchor="middle">唯一圆边界 ∂M₂ ≅ S¹</text>
+<text x="296" y="121" font-size="9.5" fill="#6d28d9" text-anchor="middle" font-weight="700">缝合</text>
+<text x="296" y="137" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">══▶</text>
+<rect x="312.0" y="108.0" width="40" height="32" rx="16.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="332.0" y="129.8" font-size="10.5" fill="#6d28d9" text-anchor="middle" font-weight="600">χ=0</text>
+<rect x="32" y="158" width="320" height="206" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="44" y="176" font-size="9.2" fill="#64748b" text-anchor="start">三维浸入纵截面示意（四维 ℝ⁴ 抬高第四坐标 w 即无自交）</text>
+<path d="M 142,334 C 114,334 100,312 104,280 C 108,248 130,228 148,210 C 166,192 178,182 200,182 C 224,182 238,198 234,216 C 230,234 210,244 192,256 C 178,266 174,284 174,310 C 174,328 182,334 194,334" fill="none" stroke="#1d6fa5" stroke-width="3.2" stroke-linecap="round"/>
+<path d="M 194,334 C 218,334 230,312 226,282 C 222,256 204,238 184,222 C 166,208 164,198 182,196 C 202,194 216,202 214,212 C 212,222 194,232 174,244 C 156,256 152,276 152,308 C 152,328 148,334 142,334" fill="none" stroke="#c25014" stroke-width="3.2" stroke-linecap="round"/>
+<circle cx="198" cy="238" r="12" fill="#f3e8ff" fill-opacity="0.55" stroke="#6d28d9" stroke-width="1.6" stroke-dasharray="3 2"/>
+<text x="42" y="195" font-size="9.1" fill="#6d28d9" text-anchor="start" font-weight="700">三维被迫自交处</text>
+<text x="42" y="209" font-size="8.7" fill="#6d28d9" text-anchor="start">（ℝ⁴ 令 w≠0 即错开）</text>
+<line x1="132" y1="207" x2="186" y2="233" stroke="#6d28d9" stroke-width="1.2" stroke-dasharray="3 2"/>
+<path d="M 163,332 C 163,294 163,262 184,244 C 206,226 226,218 224,204 C 222,190 196,188 176,198 C 146,214 116,252 114,296" fill="none" stroke="#18794e" stroke-width="2.1" stroke-dasharray="4 2.5" marker-end="url(#arr-green)"/>
+<circle cx="163" cy="332" r="3.5" fill="#18794e"/>
+<text x="244" y="268" font-size="9.2" fill="#18794e" text-anchor="start" font-weight="700">绿虚线：从底部喉管</text>
+<text x="244" y="284" font-size="9.2" fill="#18794e" text-anchor="start" font-weight="700">顺天鹅颈钻出，不跨</text>
+<text x="244" y="300" font-size="9.2" fill="#18794e" text-anchor="start" font-weight="700">任何边缘直接爬到瓶</text>
+<text x="244" y="316" font-size="9.2" fill="#18794e" text-anchor="start" font-weight="700">肚子外表面——无内</text>
+<text x="244" y="332" font-size="9.2" fill="#18794e" text-anchor="start" font-weight="700">无外、无瓶口边界！</text>
+<text x="192" y="355" font-size="9.2" fill="#1e293b" text-anchor="middle" font-weight="600">蓝半壁 + 橙半壁 = 两条镜像莫比乌斯环完美闭合成瓶</text>
+<rect x="32" y="372" width="320" height="74" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="44" y="392" font-size="9.5" fill="#1e293b" text-anchor="start">• 克莱因瓶（1882）：无边界、不可定向、欧拉示性数 χ = 0；</text>
+<text x="44" y="411" font-size="9.5" fill="#1e293b" text-anchor="start">• 若改拿 1 条莫比乌斯环 + 1 张普通圆盘 D² 沿唯一圆边界缝合：</text>
+<text x="44" y="430" font-size="9.5" fill="#1d6fa5" text-anchor="start" font-weight="600">  就得到射影几何舞台——实射影平面 ℝP²（无边界，χ = 1）！</text>
+<rect x="380" y="66" width="362" height="392" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="396" y="90" font-size="12.4" fill="#0f172a" text-anchor="start" font-weight="700">平面四色定理失效！莫比乌斯环需 6 种颜色</text>
+<text x="396" y="108" font-size="9.5" fill="#64748b" text-anchor="start">左右两端拧 180° 粘合 (0, y) ~ (L, H−y)：6 国两两共享边界！</text>
+<rect x="418.0" y="128.0" width="56.0" height="42.0" fill="#dcfce7" stroke="none"/>
+<rect x="474.0" y="128.0" width="56.0" height="42.0" fill="#dcfce7" stroke="none"/>
+<rect x="530.0" y="128.0" width="56.0" height="42.0" fill="#dcfce7" stroke="none"/>
+<rect x="586.0" y="128.0" width="56.0" height="42.0" fill="#dcfce7" stroke="none"/>
+<rect x="642.0" y="128.0" width="56.0" height="42.0" fill="#ede9fe" stroke="none"/>
+<rect x="418.0" y="170.0" width="56.0" height="42.0" fill="#fce7f3" stroke="none"/>
+<rect x="474.0" y="170.0" width="56.0" height="42.0" fill="#fce7f3" stroke="none"/>
+<rect x="530.0" y="170.0" width="56.0" height="42.0" fill="#fef3c7" stroke="none"/>
+<rect x="586.0" y="170.0" width="56.0" height="42.0" fill="#dbeafe" stroke="none"/>
+<rect x="642.0" y="170.0" width="56.0" height="42.0" fill="#ede9fe" stroke="none"/>
+<rect x="418.0" y="212.0" width="56.0" height="42.0" fill="#ede9fe" stroke="none"/>
+<rect x="474.0" y="212.0" width="56.0" height="42.0" fill="#ede9fe" stroke="none"/>
+<rect x="530.0" y="212.0" width="56.0" height="42.0" fill="#fef3c7" stroke="none"/>
+<rect x="586.0" y="212.0" width="56.0" height="42.0" fill="#dbeafe" stroke="none"/>
+<rect x="642.0" y="212.0" width="56.0" height="42.0" fill="#fce7f3" stroke="none"/>
+<rect x="418.0" y="254.0" width="56.0" height="42.0" fill="#ede9fe" stroke="none"/>
+<rect x="474.0" y="254.0" width="56.0" height="42.0" fill="#ede9fe" stroke="none"/>
+<rect x="530.0" y="254.0" width="56.0" height="42.0" fill="#ffedd5" stroke="none"/>
+<rect x="586.0" y="254.0" width="56.0" height="42.0" fill="#ffedd5" stroke="none"/>
+<rect x="642.0" y="254.0" width="56.0" height="42.0" fill="#ffedd5" stroke="none"/>
+<line x1="418.0" y1="170.0" x2="474.0" y2="170.0" stroke="#0f172a" stroke-width="2.0"/>
+<line x1="474.0" y1="170.0" x2="530.0" y2="170.0" stroke="#0f172a" stroke-width="2.0"/>
+<line x1="530.0" y1="170.0" x2="586.0" y2="170.0" stroke="#0f172a" stroke-width="2.0"/>
+<line x1="642.0" y1="128.0" x2="642.0" y2="170.0" stroke="#0f172a" stroke-width="2.0"/>
+<line x1="586.0" y1="170.0" x2="642.0" y2="170.0" stroke="#0f172a" stroke-width="2.0"/>
+<line x1="418.0" y1="212.0" x2="474.0" y2="212.0" stroke="#0f172a" stroke-width="2.0"/>
+<line x1="530.0" y1="170.0" x2="530.0" y2="212.0" stroke="#0f172a" stroke-width="2.0"/>
+<line x1="474.0" y1="212.0" x2="530.0" y2="212.0" stroke="#0f172a" stroke-width="2.0"/>
+<line x1="586.0" y1="170.0" x2="586.0" y2="212.0" stroke="#0f172a" stroke-width="2.0"/>
+<line x1="642.0" y1="170.0" x2="642.0" y2="212.0" stroke="#0f172a" stroke-width="2.0"/>
+<line x1="642.0" y1="212.0" x2="698.0" y2="212.0" stroke="#0f172a" stroke-width="2.0"/>
+<line x1="530.0" y1="212.0" x2="530.0" y2="254.0" stroke="#0f172a" stroke-width="2.0"/>
+<line x1="586.0" y1="212.0" x2="586.0" y2="254.0" stroke="#0f172a" stroke-width="2.0"/>
+<line x1="530.0" y1="254.0" x2="586.0" y2="254.0" stroke="#0f172a" stroke-width="2.0"/>
+<line x1="642.0" y1="212.0" x2="642.0" y2="254.0" stroke="#0f172a" stroke-width="2.0"/>
+<line x1="586.0" y1="254.0" x2="642.0" y2="254.0" stroke="#0f172a" stroke-width="2.0"/>
+<line x1="642.0" y1="254.0" x2="698.0" y2="254.0" stroke="#0f172a" stroke-width="2.0"/>
+<line x1="530.0" y1="254.0" x2="530.0" y2="296.0" stroke="#0f172a" stroke-width="2.0"/>
+<line x1="418.0" y1="128.0" x2="698.0" y2="128.0" stroke="#0f172a" stroke-width="2.2"/>
+<line x1="418.0" y1="296.0" x2="698.0" y2="296.0" stroke="#0f172a" stroke-width="2.2"/>
+<line x1="418.0" y1="296.0" x2="418.0" y2="132.0" stroke="#c25014" stroke-width="2.6" marker-end="url(#arr-orange)"/>
+<line x1="698.0" y1="128.0" x2="698.0" y2="292.0" stroke="#c25014" stroke-width="2.6" marker-end="url(#arr-orange)"/>
+<text x="409.0" y="152.4" font-size="9.8" fill="#c25014" text-anchor="end" font-weight="700" class="mono">a</text>
+<text x="707.0" y="278.4" font-size="9.8" fill="#c25014" text-anchor="start" font-weight="700" class="mono">a</text>
+<text x="409.0" y="194.4" font-size="9.8" fill="#c25014" text-anchor="end" font-weight="700" class="mono">b</text>
+<text x="707.0" y="236.4" font-size="9.8" fill="#c25014" text-anchor="start" font-weight="700" class="mono">b</text>
+<text x="409.0" y="236.4" font-size="9.8" fill="#c25014" text-anchor="end" font-weight="700" class="mono">c</text>
+<text x="707.0" y="194.4" font-size="9.8" fill="#c25014" text-anchor="start" font-weight="700" class="mono">c</text>
+<text x="409.0" y="278.4" font-size="9.8" fill="#c25014" text-anchor="end" font-weight="700" class="mono">d</text>
+<text x="707.0" y="152.4" font-size="9.8" fill="#c25014" text-anchor="start" font-weight="700" class="mono">d</text>
+<text x="614.0" y="215.5" font-size="11.2" fill="#1d4ed8" text-anchor="middle" font-weight="700" class="halo">① 国</text>
+<text x="530.0" y="153.3" font-size="11.2" fill="#15803d" text-anchor="middle" font-weight="700" class="halo">② 国</text>
+<text x="558.0" y="215.5" font-size="11.2" fill="#b45309" text-anchor="middle" font-weight="700" class="halo">③ 国</text>
+<text x="474.0" y="195.3" font-size="11.2" fill="#be185d" text-anchor="middle" font-weight="700" class="halo">④ 国</text>
+<text x="670.0" y="237.3" font-size="9.4" fill="#be185d" text-anchor="middle" font-weight="700" class="halo">④(跨缝)</text>
+<text x="474.0" y="257.5" font-size="11.2" fill="#6d28d9" text-anchor="middle" font-weight="700" class="halo">⑤ 国</text>
+<text x="670.0" y="173.5" font-size="9.4" fill="#6d28d9" text-anchor="middle" font-weight="700" class="halo">⑤(跨缝)</text>
+<text x="614.0" y="279.3" font-size="11.2" fill="#c2410c" text-anchor="middle" font-weight="700" class="halo">⑥ 国</text>
+<rect x="394" y="310" width="334" height="136" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="406" y="330" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">手指逐国验算（共 C(6,2) = 15 条公共国界，无一遗漏！）：</text>
+<text x="406" y="350" font-size="9.5" fill="#1e293b" text-anchor="start">• ①国与③国居中：上下左右直接挨遍其余全部 5 国；</text>
+<text x="406" y="369" font-size="9.5" fill="#c25014" text-anchor="start" font-weight="600">• ②国上横条挨④③①⑤，左端 a 格拧 180° 跨缝直通右下角⑥国！</text>
+<text x="406" y="388" font-size="9.5" fill="#1e293b" text-anchor="start">• ④国由左 b 格与右 b 格跨缝连成一片；⑤国由左 c,d 接右 c,d；</text>
+<text x="406" y="408" font-size="9.5" fill="#6d28d9" text-anchor="start" font-weight="700">• 结论：6 国两两接壤（完全图 K₆ 对偶），最少必须用 6 种颜色！</text>
+<text x="406" y="427" font-size="9.3" fill="#1d6fa5" text-anchor="start" font-weight="600">  同理，“三座房子通水电气（K₃,₃）”在平面必交叉，在莫环零交叉可解。</text>
+</svg>

@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="474" viewBox="0 0 760 474" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">1200万像素照片在BMP、RAW、PNG、JPEG、WebP、HEIC、AVIF、JPEG XL下的体积对比与能力矩阵图</title>
+<desc id="desc">左图对比同一张4000x3000照片从36MB未压缩BMP、18.5MB相机RAW、13.8MB无损PNG到2.6MB JPEG、1.78MB WebP、1.38MB HEIC与1.24MB AVIF的体积阶梯（非线性比例示意）；右图归纳六大格式的位深、HDR、透明动图、专利授权与浏览器兼容边界。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="473" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="20" y="26" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">现代图片格式大乱斗：为什么 WebP、HEIC、AVIF、JPEG XL 纷纷向视频偷师？</text>
+<text x="20" y="46" font-size="12.5" fill="#64748b" text-anchor="start">同一张 1200 万像素（4000×3000）实拍照片的体积瀑布对比，以及六大主流格式的硬指标与生态版图</text>
+<rect x="16" y="58" width="344" height="404" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="28.0" y="68.0" width="320" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="188.0" y="83.0" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">同画质 12MP 照片体积实测量级对比</text>
+<text x="28" y="112" font-size="11.0" fill="#0f172a" text-anchor="start" font-weight="700">BMP 未压缩</text>
+<rect x="112" y="100" width="126.0" height="14" rx="3.5" fill="#64748b"/>
+<text x="112" y="127" font-size="10.1" fill="#64748b" text-anchor="start" font-weight="400">36.0 MB (基准裸像素)</text>
+<text x="28" y="150" font-size="11.0" fill="#0f172a" text-anchor="start" font-weight="700">RAW 14-bit</text>
+<rect x="112" y="138" width="85.7" height="14" rx="3.5" fill="#0f766e"/>
+<text x="112" y="165" font-size="10.1" fill="#64748b" text-anchor="start" font-weight="400">~18.5 MB (单通道拜耳)</text>
+<text x="28" y="188" font-size="11.0" fill="#0f172a" text-anchor="start" font-weight="700">PNG 无损</text>
+<rect x="112" y="176" width="68.0" height="14" rx="3.5" fill="#2563eb"/>
+<text x="112" y="203" font-size="10.1" fill="#64748b" text-anchor="start" font-weight="400">~13.8 MB (100%无损位图)</text>
+<text x="28" y="226" font-size="11.0" fill="#0f172a" text-anchor="start" font-weight="700">JPEG (Q82)</text>
+<rect x="112" y="214" width="35.3" height="14" rx="3.5" fill="#d97706"/>
+<text x="112" y="241" font-size="10.1" fill="#d97706" text-anchor="start" font-weight="600">2.60 MB (有损基准 100%)</text>
+<text x="28" y="264" font-size="11.0" fill="#0f172a" text-anchor="start" font-weight="700">JXL 转码JPG</text>
+<rect x="112" y="252" width="28.4" height="14" rx="3.5" fill="#7c3aed"/>
+<text x="112" y="279" font-size="10.1" fill="#7c3aed" text-anchor="start" font-weight="600">2.08 MB (-20% 可逆还原JPG!)</text>
+<text x="28" y="302" font-size="11.0" fill="#0f172a" text-anchor="start" font-weight="700">WebP 有损</text>
+<rect x="112" y="290" width="24.2" height="14" rx="3.5" fill="#0284c7"/>
+<text x="112" y="317" font-size="10.1" fill="#0284c7" text-anchor="start" font-weight="600">1.78 MB (-31% · VP8帧内)</text>
+<text x="28" y="340" font-size="11.0" fill="#0f172a" text-anchor="start" font-weight="700">HEIC (iOS)</text>
+<rect x="112" y="328" width="18.9" height="14" rx="3.5" fill="#16a34a"/>
+<text x="112" y="355" font-size="10.1" fill="#16a34a" text-anchor="start" font-weight="600">1.38 MB (-47% · HEVC帧内)</text>
+<text x="28" y="378" font-size="11.0" fill="#0f172a" text-anchor="start" font-weight="700">AVIF (AV1)</text>
+<rect x="112" y="366" width="17.0" height="14" rx="3.5" fill="#dc2626"/>
+<text x="112" y="393" font-size="10.1" fill="#dc2626" text-anchor="start" font-weight="600">1.24 MB (-52% · 免版税王牌)</text>
+<text x="28" y="414" font-size="10.0" fill="#64748b" text-anchor="start">*注：条长按非线性比例示意；有损组按同 SSIM 对齐。</text>
+<text x="28" y="432" font-size="10.1" fill="#1d6fa5" text-anchor="start" font-weight="600">核心突破：现代格式先做块间方向预测(4×4~64×64)，</text>
+<text x="28" y="449" font-size="10.1" fill="#1d6fa5" text-anchor="start" font-weight="600">不再像 JPEG 那样 8×8 孤岛各扫门前雪！</text>
+<rect x="372" y="58" width="372" height="404" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="384.0" y="68.0" width="348" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="558.0" y="83.0" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="600">六大图片格式关键能力与避坑速查</text>
+<rect x="384" y="98" width="348" height="52" rx="7" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
+<text x="394" y="116" font-size="11.2" fill="#d97706" text-anchor="start" font-weight="700">JPEG (1992 · T.81)</text>
+<text x="722" y="116" font-size="10.2" fill="#0f172a" text-anchor="end" font-weight="600">8-bit · 无透明 · 无动图</text>
+<text x="394" y="137" font-size="10.4" fill="#1e293b" text-anchor="start">所有设备 100% 通吃；怕文字截屏噪点与反复重存“电子包浆”</text>
+<rect x="384" y="157" width="348" height="52" rx="7" fill="#eff6ff" stroke="#2563eb" stroke-width="1"/>
+<text x="394" y="175" font-size="11.2" fill="#2563eb" text-anchor="start" font-weight="700">PNG 第三版 (1995/2025)</text>
+<text x="722" y="175" font-size="10.2" fill="#0f172a" text-anchor="end" font-weight="600">1~16 bit · 256级透明 · APNG</text>
+<text x="394" y="196" font-size="10.4" fill="#1e293b" text-anchor="start">UI 截图、科研图表、透明贴纸首选；实拍照片体积偏大</text>
+<rect x="384" y="216" width="348" height="52" rx="7" fill="#f0f9ff" stroke="#0284c7" stroke-width="1"/>
+<text x="394" y="234" font-size="11.2" fill="#0284c7" text-anchor="start" font-weight="700">WebP (2010 · Google)</text>
+<text x="722" y="234" font-size="10.2" fill="#0f172a" text-anchor="end" font-weight="600">8-bit · 有损+无损+透明+动图</text>
+<text x="394" y="255" font-size="10.4" fill="#1e293b" text-anchor="start">网页瑞士军刀，浏览器兼容 &gt;97%；上限仅 8-bit 不适合真 HDR</text>
+<rect x="384" y="275" width="348" height="52" rx="7" fill="#f0fdf4" stroke="#16a34a" stroke-width="1"/>
+<text x="394" y="293" font-size="11.2" fill="#16a34a" text-anchor="start" font-weight="700">HEIC (2015 · MPEG)</text>
+<text x="722" y="293" font-size="10.2" fill="#0f172a" text-anchor="end" font-weight="600">10-bit HDR · 景深图+实况连拍</text>
+<text x="394" y="314" font-size="10.4" fill="#1e293b" text-anchor="start">iPhone 默认相机容器；受 HEVC 专利池拖累，网页浏览器多不支持</text>
+<rect x="384" y="334" width="348" height="52" rx="7" fill="#fef2f2" stroke="#dc2626" stroke-width="1"/>
+<text x="394" y="352" font-size="11.2" fill="#dc2626" text-anchor="start" font-weight="700">AVIF (2019 · AOMedia)</text>
+<text x="722" y="352" font-size="10.2" fill="#0f172a" text-anchor="end" font-weight="600">8/10/12-bit HDR · 免专利费</text>
+<text x="394" y="373" font-size="10.4" fill="#1e293b" text-anchor="start">AV1 关键帧封装，暗部与高光极强，Chrome/Firefox/Safari 全支持</text>
+<rect x="384" y="393" width="348" height="52" rx="7" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1"/>
+<text x="394" y="411" font-size="11.2" fill="#7c3aed" text-anchor="start" font-weight="700">JPEG XL (ISO 18181)</text>
+<text x="722" y="411" font-size="10.2" fill="#0f172a" text-anchor="end" font-weight="600">最高 32-bit · 无损缩 JPG 20%</text>
+<text x="394" y="432" font-size="10.4" fill="#1e293b" text-anchor="start">可逐比特还原旧 JPG + 渐进加载；Safari 17+ 原生支持，生态推进中</text>
+</svg>

@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="448" viewBox="0 0 760 448" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">CSS cubic-bezier 动画时间缓动曲线与空间贝塞尔等参数步长 vs 等弧长匀速重参数化对比</title>
+<desc id="desc">左图对比 CSS linear、ease-in-out 与超出 100% 的弹性回弹曲线并解释 x∈[0,1] 防时间倒流约束；右图对比 Δt=0.1 非匀速点列（速度相差 2.8 倍）与数值弧长重参数化后的等距点列。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="447" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">从手机滑屏动画到自动驾驶轨迹：CSS 时间缓动与“等 t 不等速”陷阱</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：CSS cubic-bezier 怎样把曲线斜率变成动画快慢与回弹；右：为什么按 Δt=0.1 走车会忽快忽慢？</text>
+<rect x="20" y="62" width="352" height="372" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="74.0" width="324" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="196.0" y="89.0" font-size="10.5" fill="#6d28d9" text-anchor="middle" font-weight="600">时间域贝塞尔：CSS cubic-bezier(x1, y1, x2, y2)</text>
+<rect x="68.0" y="172.0" width="248.0" height="124.0" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<text x="192.0" y="314.0" font-size="9.5" fill="#64748b" text-anchor="middle">输入时间比例 x ∈ [0, 1]（禁止越界防时间倒流）</text>
+<text x="61.0" y="299.0" font-size="9.2" fill="#64748b" text-anchor="end">0%</text>
+<text x="61.0" y="176.0" font-size="9.2" fill="#64748b" text-anchor="end">100%</text>
+<line x1="68.0" y1="296.0" x2="316.0" y2="172.0" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 3"/>
+<path d="M 68.00,296.00 L 71.88,295.94 L 75.69,295.77 L 79.45,295.49 L 83.16,295.10 L 86.81,294.61 L 90.40,294.01 L 93.95,293.32 L 97.44,292.53 L 100.89,291.64 L 104.29,290.67 L 107.64,289.61 L 110.95,288.47 L 114.22,287.24 L 117.45,285.94 L 120.64,284.56 L 123.79,283.10 L 126.90,281.58 L 129.98,279.99 L 133.03,278.34 L 136.05,276.62 L 139.03,274.85 L 141.99,273.03 L 144.91,271.15 L 147.82,269.22 L 150.69,267.24 L 153.55,265.22 L 156.39,263.16 L 159.20,261.06 L 162.00,258.93 L 164.78,256.77 L 167.54,254.57 L 170.30,252.35 L 173.03,250.11 L 175.76,247.85 L 178.48,245.56 L 181.20,243.27 L 183.90,240.96 L 186.60,238.65 L 189.30,236.32 L 192.00,234.00 L 194.70,231.68 L 197.40,229.35 L 200.10,227.04 L 202.80,224.73 L 205.52,222.44 L 208.24,220.15 L 210.97,217.89 L 213.70,215.65 L 216.46,213.43 L 219.22,211.23 L 222.00,209.07 L 224.80,206.94 L 227.61,204.84 L 230.45,202.78 L 233.31,200.76 L 236.18,198.78 L 239.09,196.85 L 242.01,194.97 L 244.97,193.15 L 247.95,191.38 L 250.97,189.66 L 254.02,188.01 L 257.10,186.42 L 260.21,184.90 L 263.36,183.44 L 266.55,182.06 L 269.78,180.76 L 273.05,179.53 L 276.36,178.39 L 279.71,177.33 L 283.11,176.36 L 286.56,175.47 L 290.05,174.68 L 293.60,173.99 L 297.19,173.39 L 300.84,172.90 L 304.55,172.51 L 308.31,172.23 L 312.12,172.06 L 316.00,172.00" fill="none" stroke="#1d6fa5" stroke-width="2.4"/>
+<path d="M 68.00,296.00 L 71.16,289.36 L 74.31,282.92 L 77.45,276.68 L 80.58,270.63 L 83.70,264.77 L 86.82,259.11 L 89.92,253.63 L 93.02,248.33 L 96.12,243.22 L 99.20,238.29 L 102.28,233.53 L 105.36,228.94 L 108.43,224.53 L 111.49,220.28 L 114.55,216.20 L 117.60,212.28 L 120.65,208.51 L 123.69,204.91 L 126.73,201.46 L 129.77,198.16 L 132.80,195.00 L 135.83,192.00 L 138.86,189.13 L 141.88,186.41 L 144.90,183.82 L 147.92,181.37 L 150.94,179.05 L 153.95,176.86 L 156.97,174.79 L 159.98,172.85 L 163.00,171.03 L 166.01,169.32 L 169.02,167.73 L 172.04,166.26 L 175.05,164.89 L 178.07,163.63 L 181.08,162.47 L 184.10,161.42 L 187.12,160.46 L 190.14,159.60 L 193.16,158.83 L 196.19,158.15 L 199.22,157.56 L 202.25,157.06 L 205.29,156.64 L 208.33,156.29 L 211.37,156.02 L 214.42,155.83 L 217.47,155.71 L 220.53,155.65 L 223.59,155.66 L 226.66,155.74 L 229.74,155.87 L 232.82,156.06 L 235.90,156.30 L 239.00,156.60 L 242.10,156.94 L 245.20,157.33 L 248.32,157.77 L 251.44,158.24 L 254.57,158.76 L 257.71,159.30 L 260.86,159.88 L 264.02,160.49 L 267.19,161.13 L 270.36,161.79 L 273.55,162.47 L 276.74,163.17 L 279.95,163.88 L 283.17,164.61 L 286.40,165.35 L 289.64,166.10 L 292.89,166.85 L 296.15,167.60 L 299.43,168.35 L 302.72,169.10 L 306.02,169.84 L 309.33,170.57 L 312.66,171.29 L 316.00,172.00" fill="none" stroke="#6d28d9" stroke-width="2.4"/>
+<line x1="68.0" y1="296.0" x2="152.3" y2="116.2" stroke="#6d28d9" stroke-width="1.2" stroke-dasharray="3 2"/>
+<circle cx="152.3" cy="116.2" r="3.6" fill="#6d28d9" stroke="#fff" stroke-width="1"/>
+<text x="160.3" y="119.2" font-size="9.3" fill="#6d28d9" text-anchor="start" font-weight="700" class="halo">y1=1.45 冲过 100% 产生Q弹回弹！</text>
+<text x="231.7" y="243.9" font-size="9.3" fill="#1d6fa5" text-anchor="start" font-weight="700" class="halo">ease-in-out：两头平缓=慢起慢停</text>
+<text x="157.3" y="265.0" font-size="9.0" fill="#475569" text-anchor="start" class="halo">linear 匀速</text>
+<rect x="34" y="324" width="324" height="96" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="46" y="344" font-size="9.6" fill="#1e293b" text-anchor="start">• 曲线斜率 dy/dx 就是瞬时速度：越陡冲得越快，越平越慢；</text>
+<text x="46" y="364" font-size="9.6" fill="#1e293b" text-anchor="start">• 纵坐标 y1, y2 允许超出 [0,1]，弹窗就会冲过头再弹回来；</text>
+<text x="46" y="384" font-size="9.6" fill="#1e293b" text-anchor="start">• 横坐标 x1, x2 严禁出 [0,1]：否则曲线横着往回折，同一时刻</text>
+<text x="46" y="404" font-size="9.6" fill="#6d28d9" text-anchor="start" font-weight="600">  对应三个位置（时间倒流），浏览器会直接判为非法丢弃！</text>
+<rect x="388" y="62" width="352" height="372" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="402.0" y="74.0" width="324" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="564.0" y="89.0" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="600">空间轨迹陷阱：等参数 Δt=0.1 ≠ 等距离匀速行驶！</text>
+<text x="414" y="112" font-size="9.8" fill="#c25014" text-anchor="start" font-weight="700">① 直接按 t = 0, 0.1, 0.2, …, 1.0 采样（11 颗橙点）：</text>
+<polyline points="418.0,184.0 432.0,124.0 540.0,114.0 712.0,184.0" fill="none" stroke="#cbd5e1" stroke-width="1.1" stroke-dasharray="3 2"/>
+<path d="M 418.0,184.0 C 432.0,124.0 540.0,114.0 712.0,184.0" fill="none" stroke="#c25014" stroke-width="2.3"/>
+<circle cx="418.00" cy="184.00" r="4.0" fill="#c25014" stroke="#fff" stroke-width="1.1"/>
+<circle cx="424.99" cy="167.53" r="4.0" fill="#c25014" stroke="#fff" stroke-width="1.1"/>
+<circle cx="437.44" cy="154.24" r="4.0" fill="#c25014" stroke="#fff" stroke-width="1.1"/>
+<circle cx="455.17" cy="144.31" r="4.0" fill="#c25014" stroke="#fff" stroke-width="1.1"/>
+<circle cx="478.00" cy="137.92" r="4.0" fill="#c25014" stroke="#fff" stroke-width="1.1"/>
+<circle cx="505.75" cy="135.25" r="4.0" fill="#c25014" stroke="#fff" stroke-width="1.1"/>
+<circle cx="538.24" cy="136.48" r="4.0" fill="#c25014" stroke="#fff" stroke-width="1.1"/>
+<circle cx="575.29" cy="141.79" r="4.0" fill="#c25014" stroke="#fff" stroke-width="1.1"/>
+<circle cx="616.72" cy="151.36" r="4.0" fill="#c25014" stroke="#fff" stroke-width="1.1"/>
+<circle cx="662.35" cy="165.37" r="4.0" fill="#c25014" stroke="#fff" stroke-width="1.1"/>
+<circle cx="712.00" cy="184.00" r="4.0" fill="#c25014" stroke="#fff" stroke-width="1.1"/>
+<text x="448" y="202" font-size="9.2" fill="#c25014" text-anchor="middle" font-weight="600">短手柄处挤成一团（慢）</text>
+<text x="640" y="202" font-size="9.2" fill="#c25014" text-anchor="middle" font-weight="600">长跨度处大步狂飙（快 2.8 倍！）</text>
+<text x="414" y="224" font-size="9.8" fill="#18794e" text-anchor="start" font-weight="700">② 弧长重参数化 s(t) = ∫|B&#x27;(u)|du 等距采样（11 颗绿点）：</text>
+<path d="M 418.0,286.0 C 432.0,226.0 540.0,216.0 712.0,286.0" fill="none" stroke="#18794e" stroke-width="2.3"/>
+<circle cx="418.00" cy="286.00" r="4.0" fill="#18794e" stroke="#fff" stroke-width="1.1"/>
+<circle cx="434.26" cy="258.86" r="4.0" fill="#18794e" stroke="#fff" stroke-width="1.1"/>
+<circle cx="462.37" cy="243.73" r="4.0" fill="#18794e" stroke="#fff" stroke-width="1.1"/>
+<circle cx="493.93" cy="237.87" r="4.0" fill="#18794e" stroke="#fff" stroke-width="1.1"/>
+<circle cx="526.06" cy="237.58" r="4.0" fill="#18794e" stroke="#fff" stroke-width="1.1"/>
+<circle cx="558.04" cy="240.88" r="4.0" fill="#18794e" stroke="#fff" stroke-width="1.1"/>
+<circle cx="589.66" cy="246.72" r="4.0" fill="#18794e" stroke="#fff" stroke-width="1.1"/>
+<circle cx="620.86" cy="254.49" r="4.0" fill="#18794e" stroke="#fff" stroke-width="1.1"/>
+<circle cx="651.65" cy="263.80" r="4.0" fill="#18794e" stroke="#fff" stroke-width="1.1"/>
+<circle cx="682.02" cy="274.36" r="4.0" fill="#18794e" stroke="#fff" stroke-width="1.1"/>
+<circle cx="712.00" cy="286.00" r="4.0" fill="#18794e" stroke="#fff" stroke-width="1.1"/>
+<text x="564" y="304" font-size="9.3" fill="#18794e" text-anchor="middle" font-weight="700">像铁轨枕木一样步步等距！数控机床与自动驾驶必做这一步</text>
+<rect x="402" y="324" width="324" height="96" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="414" y="344" font-size="9.6" fill="#1e293b" text-anchor="start">• 贝塞尔弧长 ∫√(x&#x27;²+y&#x27;²)dt 一般没有初等公式解（阿贝尔积分）！</text>
+<text x="414" y="364" font-size="9.6" fill="#1e293b" text-anchor="start">• 游戏摄像机、激光切割头与无人车变道规划，都必须先用高斯积</text>
+<text x="414" y="384" font-size="9.6" fill="#1e293b" text-anchor="start">  分或查表把弧长 s 反解回 t(s)，否则过弯就会急刹顿挫；</text>
+<text x="414" y="404" font-size="9.6" fill="#c25014" text-anchor="start" font-weight="600">• 同理：三次曲线的平行等距线（描边）高达 10 次代数曲线！</text>
+</svg>

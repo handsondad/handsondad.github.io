@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="472" viewBox="0 0 760 472" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">有限域椭圆曲线密码学E(F17)离散点云与费马大定理弗雷-里贝特-怀尔斯四步绝杀链</title>
+<desc id="desc">左图精确计算模17有限域上椭圆曲线y²≡x³+2x+2的全部18个离散格点及生成元G=(5,1)倍点跳变，解释ECC离散对数单向陷门为何以256位密钥匹敌3072位RSA；右图展示弗雷曲线、里贝特定理与怀尔斯模性定理终结费马大定理的四步逻辑链。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-ink" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#0f172a"/>
+  </marker>
+  <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#6d28d9"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="471" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">从终结 358 年费马大定理到守护每一次手机支付：椭圆曲线的两大现代王炸</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">把连续实数换成模素数有限域 F_p 造出密码学单向陷门；把不定方程塞进椭圆曲线一举攻克数论珠峰</text>
+<rect x="18" y="66" width="376" height="392" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="78.0" width="274" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="169.0" y="93.0" font-size="10.3" fill="#1d6fa5" text-anchor="middle" font-weight="600">① 现代密码学基石：有限域离散点云 E(F₁₇)</text>
+<text x="32" y="113" font-size="9.0" fill="#64748b" text-anchor="start">y² ≡ x³ + 2x + 2 (mod 17)：共 18 个有限格点 + O = 19 阶素循环群</text>
+<rect x="50.0" y="124.8" width="207.2" height="207.2" rx="4" fill="#f8fafc" stroke="#e2e8f0"/>
+<line x1="56.0" y1="130.8" x2="56.0" y2="326.0" stroke="#cbd5e1" stroke-width="0.7"/>
+<line x1="56.0" y1="326.0" x2="251.2" y2="326.0" stroke="#cbd5e1" stroke-width="0.7"/>
+<text x="56.0" y="340.0" font-size="8.0" fill="#64748b" text-anchor="middle" class="mono">0</text>
+<text x="48.0" y="329.0" font-size="8.0" fill="#64748b" text-anchor="end" class="mono">0</text>
+<line x1="104.8" y1="130.8" x2="104.8" y2="326.0" stroke="#cbd5e1" stroke-width="0.7"/>
+<line x1="56.0" y1="277.2" x2="251.2" y2="277.2" stroke="#cbd5e1" stroke-width="0.7"/>
+<text x="104.8" y="340.0" font-size="8.0" fill="#64748b" text-anchor="middle" class="mono">4</text>
+<text x="48.0" y="280.2" font-size="8.0" fill="#64748b" text-anchor="end" class="mono">4</text>
+<line x1="153.6" y1="130.8" x2="153.6" y2="326.0" stroke="#cbd5e1" stroke-width="0.7"/>
+<line x1="56.0" y1="228.4" x2="251.2" y2="228.4" stroke="#cbd5e1" stroke-width="0.7"/>
+<text x="153.6" y="340.0" font-size="8.0" fill="#64748b" text-anchor="middle" class="mono">8</text>
+<text x="48.0" y="231.4" font-size="8.0" fill="#64748b" text-anchor="end" class="mono">8</text>
+<line x1="202.4" y1="130.8" x2="202.4" y2="326.0" stroke="#cbd5e1" stroke-width="0.7"/>
+<line x1="56.0" y1="179.6" x2="251.2" y2="179.6" stroke="#cbd5e1" stroke-width="0.7"/>
+<text x="202.4" y="340.0" font-size="8.0" fill="#64748b" text-anchor="middle" class="mono">12</text>
+<text x="48.0" y="182.6" font-size="8.0" fill="#64748b" text-anchor="end" class="mono">12</text>
+<line x1="251.2" y1="130.8" x2="251.2" y2="326.0" stroke="#cbd5e1" stroke-width="0.7"/>
+<line x1="56.0" y1="130.8" x2="251.2" y2="130.8" stroke="#cbd5e1" stroke-width="0.7"/>
+<text x="251.2" y="340.0" font-size="8.0" fill="#64748b" text-anchor="middle" class="mono">16</text>
+<text x="48.0" y="133.8" font-size="8.0" fill="#64748b" text-anchor="end" class="mono">16</text>
+<line x1="56.0" y1="222.3" x2="251.2" y2="222.3" stroke="#6d28d9" stroke-width="1.0" stroke-dasharray="4 3"/>
+<line x1="117.0" y1="313.8" x2="129.2" y2="289.4" stroke="#c25014" stroke-width="1.6" stroke-dasharray="3 2" marker-end="url(#arr-orange)"/>
+<line x1="129.2" y1="289.4" x2="178.0" y2="252.8" stroke="#c25014" stroke-width="1.6" stroke-dasharray="3 2" marker-end="url(#arr-orange)"/>
+<line x1="178.0" y1="252.8" x2="92.6" y2="313.8" stroke="#c25014" stroke-width="1.6" stroke-dasharray="3 2" marker-end="url(#arr-orange)"/>
+<circle cx="56.0" cy="252.8" r="4.3" fill="#18794e" stroke="#ffffff" stroke-width="1.2"/>
+<text x="63.0" y="248.8" font-size="8.8" fill="#18794e" text-anchor="start" font-weight="700" class="mono">7G</text>
+<circle cx="56.0" cy="191.8" r="3.1" fill="#475569"/>
+<circle cx="92.6" cy="313.8" r="3.1" fill="#475569"/>
+<circle cx="92.6" cy="130.8" r="3.1" fill="#475569"/>
+<circle cx="117.0" cy="313.8" r="4.3" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.2"/>
+<text x="124.0" y="309.8" font-size="8.8" fill="#1d6fa5" text-anchor="start" font-weight="700" class="mono">G</text>
+<circle cx="117.0" cy="130.8" r="3.1" fill="#475569"/>
+<circle cx="129.2" cy="289.4" r="4.3" fill="#c25014" stroke="#ffffff" stroke-width="1.2"/>
+<text x="136.2" y="285.4" font-size="8.8" fill="#c25014" text-anchor="start" font-weight="700" class="mono">2G</text>
+<circle cx="129.2" cy="155.2" r="3.1" fill="#475569"/>
+<circle cx="141.4" cy="252.8" r="3.1" fill="#475569"/>
+<circle cx="141.4" cy="191.8" r="3.1" fill="#475569"/>
+<circle cx="165.8" cy="313.8" r="3.1" fill="#475569"/>
+<circle cx="165.8" cy="130.8" r="3.1" fill="#475569"/>
+<circle cx="178.0" cy="252.8" r="4.3" fill="#c25014" stroke="#ffffff" stroke-width="1.2"/>
+<text x="185.0" y="248.8" font-size="8.8" fill="#c25014" text-anchor="start" font-weight="700" class="mono">3G</text>
+<circle cx="178.0" cy="191.8" r="3.1" fill="#475569"/>
+<circle cx="214.6" cy="240.6" r="3.1" fill="#475569"/>
+<circle cx="214.6" cy="204.0" r="3.1" fill="#475569"/>
+<circle cx="251.2" cy="277.2" r="3.1" fill="#475569"/>
+<circle cx="251.2" cy="167.4" r="3.1" fill="#475569"/>
+<text x="268" y="140" font-size="8.8" fill="#6d28d9" text-anchor="start" font-weight="700">对称轴 y = 8.5</text>
+<text x="268" y="156" font-size="8.4" fill="#64748b" text-anchor="start">(y 与 17−y 配对)</text>
+<text x="268" y="184" font-size="9.0" fill="#0f172a" text-anchor="start" font-weight="700">倍点跳蛙链：</text>
+<text x="268" y="202" font-size="8.6" fill="#1d6fa5" text-anchor="start" font-weight="700" class="mono">1G = (5, 1)</text>
+<text x="268" y="219" font-size="8.6" fill="#c25014" text-anchor="start" class="mono">2G = (6, 3)</text>
+<text x="268" y="236" font-size="8.6" fill="#c25014" text-anchor="start" class="mono">3G = (10, 6)</text>
+<text x="268" y="253" font-size="8.6" fill="#1e293b" text-anchor="start" class="mono">4G = (3, 1)</text>
+<text x="268" y="270" font-size="8.6" fill="#18794e" text-anchor="start" font-weight="700" class="mono">7G = (0, 6)</text>
+<text x="268" y="287" font-size="8.6" fill="#b91c1c" text-anchor="start" font-weight="700" class="mono">19G = O (回零!)</text>
+<rect x="32" y="350" width="348" height="96" rx="8" fill="#eaf4fb" stroke="#bfdbfe" stroke-width="1"/>
+<text x="44" y="370" font-size="9.4" fill="#1d6fa5" text-anchor="start" font-weight="700">椭圆曲线离散对数单向陷门（HTTPS / TLS / 比特币基石）：</text>
+<text x="44" y="389" font-size="8.9" fill="#1e293b" text-anchor="start">• 正算极快：已知私钥 k 算公钥 Q=kG，靠“倍点+相加”256 位仅需毫秒；</text>
+<text x="44" y="408" font-size="8.9" fill="#1e293b" text-anchor="start">• 反推绝望：已知 G 和散乱落点 Q 反猜跳了几步 k，经典计算机束手无策；</text>
+<text x="44" y="427" font-size="8.9" fill="#c25014" text-anchor="start" font-weight="700">• 钥匙瘦身 12 倍：256 位 ECC 安全强度 ≈ 3072 位 RSA（NIST 标准）！</text>
+<rect x="404" y="66" width="338" height="392" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="416.0" y="78.0" width="278" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="555.0" y="93.0" font-size="10.3" fill="#6d28d9" text-anchor="middle" font-weight="600">② 攻克数论珠峰：椭圆曲线智破费马大定理</text>
+<rect x="416" y="114" width="314" height="72" rx="8" fill="#fef2f2" stroke="#fecaca" stroke-width="1"/>
+<text x="427" y="134" font-size="9.4" fill="#b91c1c" text-anchor="start" font-weight="700">第 1 步｜弗雷构造“怪物曲线”（Frey, 1984–1985）</text>
+<text x="427" y="154" font-size="8.8" fill="#1e293b" text-anchor="start">假设费马大定理有反例 Aᵖ + Bᵖ = Cᵖ (素数 p ≥ 5)，</text>
+<text x="427" y="172" font-size="8.8" fill="#0f172a" text-anchor="start" font-weight="600">造弗雷曲线 y² = x(x−Aᵖ)(x+Bᵖ)，判别式竟是 2p 次幂！</text>
+<rect x="416" y="200" width="314" height="72" rx="8" fill="#fef1e8" stroke="#fed7aa" stroke-width="1"/>
+<text x="427" y="220" font-size="9.4" fill="#c25014" text-anchor="start" font-weight="700">第 2 步｜里贝特定理断后路（Ribet, 1986）</text>
+<text x="427" y="240" font-size="8.8" fill="#1e293b" text-anchor="start">严格证出塞尔 ε 猜想：这头“弗雷曲线”扭曲到极点，</text>
+<text x="427" y="258" font-size="8.8" fill="#0f172a" text-anchor="start" font-weight="600">绝不可能是模形式化身（必然违反谷山—志村猜想）！</text>
+<rect x="416" y="286" width="314" height="72" rx="8" fill="#eaf4fb" stroke="#bfdbfe" stroke-width="1"/>
+<text x="427" y="306" font-size="9.4" fill="#1d6fa5" text-anchor="start" font-weight="700">第 3 步｜怀尔斯七年铸剑（Wiles &amp; Taylor, 1994–1995）</text>
+<text x="427" y="326" font-size="8.8" fill="#1e293b" text-anchor="start">安德鲁·怀尔斯面壁七年并携泰勒补齐最后一环，</text>
+<text x="427" y="344" font-size="8.8" fill="#0f172a" text-anchor="start" font-weight="600">证出半稳定有理椭圆曲线 100% 模块化（谷山—志村成立）！</text>
+<rect x="416" y="372" width="314" height="72" rx="8" fill="#e7f6ee" stroke="#bbf7d0" stroke-width="1"/>
+<text x="427" y="392" font-size="9.4" fill="#18794e" text-anchor="start" font-weight="700">第 4 步｜绝杀归谬（悬置 358 年难题终结！）</text>
+<text x="427" y="412" font-size="8.8" fill="#1e293b" text-anchor="start">既必须模块化、又绝不可能模块化 ⇒ 弗雷曲线不存在</text>
+<text x="427" y="430" font-size="8.8" fill="#0f172a" text-anchor="start" font-weight="600">⇒ Aⁿ + Bⁿ = Cⁿ (n ≥ 3) 无正整数解！椭圆曲线一锤定音。</text>
+<line x1="573" y1="186" x2="573" y2="198" stroke="#0f172a" stroke-width="1.8" marker-end="url(#arr-ink)"/>
+<line x1="573" y1="272" x2="573" y2="284" stroke="#0f172a" stroke-width="1.8" marker-end="url(#arr-ink)"/>
+<line x1="573" y1="358" x2="573" y2="370" stroke="#0f172a" stroke-width="1.8" marker-end="url(#arr-ink)"/>
+</svg>
