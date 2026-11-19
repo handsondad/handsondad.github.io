@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="476" viewBox="0 0 760 476" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">1843年哈密顿布鲁姆桥发明四元数：非交换乘法环、向量分析∇算子与免万向节死锁三维旋转</title>
+<desc id="desc">左上展示1843年10月16日布鲁姆桥石刻公式与i、j、k顺正逆负的非交换循环；右上说明四元数乘法如何拆出标量点积、向量叉积及哈密顿算子∇；左下与右下对比欧拉角在俯仰90度时的万向节死锁与单位四元数v&#x27;=qvq^-1在三维空间无奇点SLERP球面插值旋转及1856年哈密顿回路。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="hm-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#1d6fa5"/></marker><marker id="hm-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#c25014"/></marker><marker id="hm-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#18794e"/></marker><marker id="hm-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#6d28d9"/></marker><marker id="hm-ink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#0f172a"/></marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="475" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">1843 布鲁姆桥头那一刀：砍掉交换律生出四元数，无心插柳孕育向量分析与三维旋转引擎</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">上：i² = j² = k² = ijk = −1 非交换循环与 ∇ 向量算子｜下：欧拉角 90° 万向节死锁 vs 单位四元数无奇点旋转</text>
+<rect x="20" y="62" width="352" height="186" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 1843.10.16 布鲁姆桥石刻：放弃 ab = ba！</text>
+<text x="36" y="102" font-size="10.4" fill="#64748b" text-anchor="start">实数可除代数仅存 1、2、4 维（无 3 维！）⇒ 升入四维 ℍ</text>
+<rect x="34" y="116" width="166" height="116" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+<text x="117" y="136" font-size="10.2" fill="#64748b" text-anchor="middle" font-weight="600">都柏林·皇家运河桥头</text>
+<text x="117" y="160" font-size="13.0" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">i² = j² = k²</text>
+<text x="117" y="180" font-size="13.0" fill="#6d28d9" text-anchor="middle" font-weight="700" class="mono">= i j k = −1</text>
+<text x="117" y="203" font-size="10.2" fill="#18794e" text-anchor="middle" font-weight="700">顺乘为正：ij = +k</text>
+<text x="117" y="219" font-size="10.2" fill="#c25014" text-anchor="middle" font-weight="700">逆乘反号：ji = −k</text>
+<circle cx="286.0" cy="174.0" r="44.0" fill="none" stroke="#18794e" stroke-width="1.8" stroke-dasharray="5 3"/>
+<circle cx="286.0" cy="130.0" r="14" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.8"/>
+<text x="286.0" y="134.0" font-size="12.6" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono">i</text>
+<circle cx="324.1" cy="196.0" r="14" fill="#fef1e8" stroke="#c25014" stroke-width="1.8"/>
+<text x="324.1" y="200.0" font-size="12.6" fill="#c25014" text-anchor="middle" font-weight="700" class="mono">j</text>
+<circle cx="247.9" cy="196.0" r="14" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.8"/>
+<text x="247.9" y="200.0" font-size="12.6" fill="#6d28d9" text-anchor="middle" font-weight="700" class="mono">k</text>
+<text x="328.0" y="146.0" font-size="10.2" fill="#18794e" text-anchor="start" font-weight="700">顺 +</text>
+<text x="222.0" y="146.0" font-size="10.2" fill="#c25014" text-anchor="start" font-weight="700">逆 −</text>
+<text x="286.0" y="179.0" font-size="9.8" fill="#64748b" text-anchor="middle">非交换环</text>
+<rect x="388" y="62" width="352" height="186" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="404" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 拆开四元数乘法：现代向量分析与 ∇ 算子诞生</text>
+<text x="404" y="102" font-size="10.4" fill="#64748b" text-anchor="start">哈密顿亲手造词：标量 Scalar、向量 Vector、张量 Tensor</text>
+<rect x="402" y="116" width="324" height="56" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="414" y="136" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">纯虚四元数相乘： u · v  =  −(u · v)  +  (u × v)</text>
+<text x="414" y="157" font-size="10.2" fill="#1d6fa5" text-anchor="start" font-weight="600">标量部 = 负点积（功/通量） ｜ 向量部 = 叉积（力矩/洛伦兹力）</text>
+<rect x="402" y="180" width="324" height="54" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="414" y="199" font-size="10.6" fill="#18794e" text-anchor="start" font-weight="700">哈密顿算子 ∇ = i ∂/∂x + j ∂/∂y + k ∂/∂z（形似腓尼基竖琴）</text>
+<text x="414" y="220" font-size="10.1" fill="#1e293b" text-anchor="start">梯度 ∇f  ｜  散度 ∇·E = ρ/ε₀  ｜  旋度 ∇×B （麦克斯韦方程组灵魂）</text>
+<rect x="20" y="260" width="352" height="202" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="282" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">③ 欧拉角死穴：俯仰 90° 触发“万向节死锁”</text>
+<text x="36" y="300" font-size="10.3" fill="#64748b" text-anchor="start">外环（偏航 Yaw）与内环（滚转 Roll）共面重合，痛失 1 个自由度！</text>
+<ellipse cx="114.0" cy="376.0" rx="64" ry="26" fill="none" stroke="#c25014" stroke-width="3.0"/>
+<ellipse cx="114.0" cy="376.0" rx="42" ry="17" fill="none" stroke="#c25014" stroke-width="2.4" stroke-dasharray="5 3"/>
+<ellipse cx="114.0" cy="376.0" rx="18" ry="52" fill="none" stroke="#475569" stroke-width="1.8"/>
+<line x1="114.0" y1="434.0" x2="114.0" y2="316.0" stroke="#dc2626" stroke-width="2.2" marker-end="url(#hm-orange)"/>
+<text x="114.0" y="446.0" font-size="10.2" fill="#dc2626" text-anchor="middle" font-weight="700">两轴共线锁死！</text>
+<text x="196" y="334" font-size="10.3" fill="#1e293b" text-anchor="start">• 正常态：三枚环轴两两正交</text>
+<text x="196" y="355" font-size="10.3" fill="#c25014" text-anchor="start" font-weight="700">• 死锁态（Pitch = ±90°）：</text>
+<text x="204" y="373" font-size="10.1" fill="#1e293b" text-anchor="start">转外环与转内环产生完全相同旋转，</text>
+<text x="204" y="390" font-size="10.1" fill="#1e293b" text-anchor="start">横向抬头自由度瞬间清零！</text>
+<text x="196" y="414" font-size="10.1" fill="#64748b" text-anchor="start">• 阿波罗 11 号与早期动画相机</text>
+<text x="204" y="430" font-size="10.1" fill="#64748b" text-anchor="start">都曾专门防范万向节死锁报警。</text>
+<rect x="388" y="260" width="352" height="202" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="404" y="282" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">④ 王者归来：四元数三明治旋转 v′ = q v q⁻¹</text>
+<text x="404" y="300" font-size="10.2" fill="#64748b" text-anchor="start">q = cos(α/2) + u·sin(α/2)：零死锁、4 数紧凑、球面匀速插值 SLERP</text>
+<circle cx="462.0" cy="376.0" r="50.0" fill="#eaf4fb" fill-opacity="0.55" stroke="#1d6fa5" stroke-width="1.6"/>
+<ellipse cx="462.0" cy="376.0" rx="50.0" ry="16" fill="none" stroke="#93c5fd" stroke-width="1.1" stroke-dasharray="3 3"/>
+<line x1="440.0" y1="410.0" x2="486.0" y2="332.0" stroke="#18794e" stroke-width="2.1" marker-end="url(#hm-green)"/>
+<text x="480.0" y="324.0" font-size="10.0" fill="#18794e" text-anchor="middle" font-weight="700" class="halo">转轴 u</text>
+<line x1="462.0" y1="376.0" x2="422.0" y2="368.0" stroke="#475569" stroke-width="1.8" stroke-dasharray="3 2"/>
+<line x1="462.0" y1="376.0" x2="496.0" y2="394.0" stroke="#6d28d9" stroke-width="2.3" marker-end="url(#hm-purple)"/>
+<path d="M 422.0,368.0 Q 466.0,342.0 496.0,394.0" fill="none" stroke="#6d28d9" stroke-width="2.0" marker-end="url(#hm-purple)"/>
+<circle cx="422.0" cy="368.0" r="3.6" fill="#475569"/>
+<circle cx="496.0" cy="394.0" r="4.0" fill="#6d28d9"/>
+<text x="418.0" y="360.0" font-size="10.4" fill="#475569" text-anchor="end" font-weight="700">v</text>
+<text x="502.0" y="398.0" font-size="10.4" fill="#6d28d9" text-anchor="start" font-weight="700">v′</text>
+<text x="462.0" y="444.0" font-size="10.1" fill="#1d6fa5" text-anchor="middle" font-weight="700">SLERP 大圆平滑插值</text>
+<text x="546" y="330" font-size="10.3" fill="#0f172a" text-anchor="start" font-weight="700">• 为什么乘半角 α/2？</text>
+<text x="554" y="348" font-size="10.0" fill="#1e293b" text-anchor="start">左乘 q、右乘 q⁻¹ 各转 α/2，</text>
+<text x="554" y="364" font-size="10.0" fill="#1e293b" text-anchor="start">抵消四维分量、净转恰好 α！</text>
+<text x="546" y="386" font-size="10.1" fill="#18794e" text-anchor="start" font-weight="700">• 飞船姿态、机械臂、Unity/UE</text>
+<text x="554" y="402" font-size="10.0" fill="#1e293b" text-anchor="start">三维引擎底层旋转标配。</text>
+<rect x="546" y="412" width="180" height="38" rx="6" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="554" y="428" font-size="10.0" fill="#6d28d9" text-anchor="start" font-weight="700">图论彩蛋：1856 二十面体棋</text>
+<text x="554" y="443" font-size="9.8" fill="#1e293b" text-anchor="start">开创“哈密顿回路”遍历难题！</text>
+</svg>

@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="516" viewBox="0 0 760 516" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">欧洲四大片区父名与族裔姓氏后缀速查图</title>
+<desc id="desc">分四个象限归纳欧洲最具辨识度的父名与地区后缀：①北欧区的丹麦挪威-sen、瑞典双s的-sson与冰岛活态-son/-dóttir/-bur；②凯尔特与英伦区的爱尔兰O&#x27;、苏爱共用的Mac/Mc、诺曼Fitz-及威尔士ap吞音；③斯拉夫四支的俄保-ov、乌克兰-enko、波兰-ski、捷克-ová与前南-ić；④罗曼与希腊区的西-ez葡-es、意北-i南-o、罗马尼亚-escu与希腊岛屿后缀。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="515" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">全欧洲都在喊“某某家的娃”：四大片区父名与族裔词缀速查图</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">把各国拼写“儿子 / 后代”的后缀排成四宫格，九成陌生欧洲姓氏第一眼就能锁定语系与国别。</text>
+<rect x="20" y="64" width="352" height="210" rx="9" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.4"/>
+<rect x="20" y="64" width="352" height="36" rx="9" fill="#eaf4fb" stroke="none" stroke-width="1"/>
+<circle cx="38" cy="82" r="10" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="38" y="86" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="55" y="87" font-size="11.4" fill="#1d6fa5" text-anchor="start" font-weight="700">北欧日耳曼区｜单 s、双 s 与冰岛活化石</text>
+<rect x="30" y="108" width="332" height="34" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="38" y="122" font-size="10.2" fill="#1d6fa5" text-anchor="start" font-weight="700">丹麦 / 挪威 -sen</text>
+<text x="38" y="136" font-size="9.9" fill="#0f172a" text-anchor="start">Eriksen · Sørensen · Ødegaard（配 ø / æ）</text>
+<rect x="30" y="148" width="332" height="34" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="38" y="162" font-size="10.2" fill="#1d6fa5" text-anchor="start" font-weight="700">瑞典 -sson（双 s）</text>
+<text x="38" y="176" font-size="9.9" fill="#0f172a" text-anchor="start">Andersson · Johansson + 自然姓 Lindberg</text>
+<rect x="30" y="188" width="332" height="34" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="38" y="202" font-size="10.2" fill="#1d6fa5" text-anchor="start" font-weight="700">冰岛 -son / -dóttir</text>
+<text x="38" y="216" font-size="9.9" fill="#0f172a" text-anchor="start">Jónsson(儿) · Jónsdóttir(女) · Jónsbur(中)</text>
+<rect x="30" y="228" width="332" height="34" rx="6" fill="#eaf4fb" stroke="none" stroke-width="0.8"/>
+<text x="38" y="242" font-size="10.2" fill="#1d6fa5" text-anchor="start" font-weight="700">关键区分</text>
+<text x="38" y="256" font-size="9.9" fill="#0f172a" text-anchor="start">冰岛至今不设世袭姓，电话簿按教名排序！</text>
+<rect x="388" y="64" width="352" height="210" rx="9" fill="#ffffff" stroke="#18794e" stroke-width="1.4"/>
+<rect x="388" y="64" width="352" height="36" rx="9" fill="#e7f6ee" stroke="none" stroke-width="1"/>
+<circle cx="406" cy="82" r="10" fill="#ffffff" stroke="#18794e" stroke-width="1.2"/>
+<text x="406" y="86" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">2</text>
+<text x="423" y="87" font-size="11.4" fill="#18794e" text-anchor="start" font-weight="700">不列颠与凯尔特区｜O&#x27;、Mac 与吞音变形</text>
+<rect x="398" y="108" width="332" height="34" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="406" y="122" font-size="10.2" fill="#18794e" text-anchor="start" font-weight="700">爱尔兰专属 O&#x27;</text>
+<text x="406" y="136" font-size="9.9" fill="#0f172a" text-anchor="start">O&#x27;Brien · O&#x27;Connor（古爱尔兰语“某之孙”）</text>
+<rect x="398" y="148" width="332" height="34" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="406" y="162" font-size="10.2" fill="#18794e" text-anchor="start" font-weight="700">苏格兰 / 爱尔兰 Mac</text>
+<text x="406" y="176" font-size="9.9" fill="#0f172a" text-anchor="start">MacDonald · McGregor（Mc 只是 Mac 缩写）</text>
+<rect x="398" y="188" width="332" height="34" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="406" y="202" font-size="10.2" fill="#18794e" text-anchor="start" font-weight="700">盎格鲁–诺曼 Fitz-</text>
+<text x="406" y="216" font-size="9.9" fill="#0f172a" text-anchor="start">Fitzgerald · Fitzroy（古法语 fiz“儿子”）</text>
+<rect x="398" y="228" width="332" height="34" rx="6" fill="#e7f6ee" stroke="none" stroke-width="0.8"/>
+<text x="406" y="242" font-size="10.2" fill="#18794e" text-anchor="start" font-weight="700">威尔士 ap 吞音与 -s</text>
+<text x="406" y="256" font-size="9.9" fill="#0f172a" text-anchor="start">ap Rhys→Price · ap Richard→Pritchard · Jones</text>
+<rect x="20" y="288" width="352" height="214" rx="9" fill="#ffffff" stroke="#6d28d9" stroke-width="1.4"/>
+<rect x="20" y="288" width="352" height="36" rx="9" fill="#f3e8ff" stroke="none" stroke-width="1"/>
+<circle cx="38" cy="306" r="10" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="38" y="310" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">3</text>
+<text x="55" y="311" font-size="11.4" fill="#6d28d9" text-anchor="start" font-weight="700">斯拉夫四分天下｜看词尾秒辨东南西北</text>
+<rect x="30" y="332" width="332" height="34" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="38" y="346" font-size="10.2" fill="#6d28d9" text-anchor="start" font-weight="700">俄 / 保 -ov / -ev</text>
+<text x="38" y="360" font-size="9.9" fill="#0f172a" text-anchor="start">Ivanov（女 Ivanova），俄语中间夹 -ovich</text>
+<rect x="30" y="372" width="332" height="34" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="38" y="386" font-size="10.2" fill="#6d28d9" text-anchor="start" font-weight="700">乌克兰 -enko / -uk</text>
+<text x="38" y="400" font-size="9.9" fill="#0f172a" text-anchor="start">Shevchenko · Mudryk（男女同形，不加 -a）</text>
+<rect x="30" y="412" width="332" height="34" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="38" y="426" font-size="10.2" fill="#6d28d9" text-anchor="start" font-weight="700">波兰 / 捷克西支</text>
+<text x="38" y="440" font-size="9.9" fill="#0f172a" text-anchor="start">波 -ski/-wicz（女 -ska）；捷克女普加 -ová</text>
+<rect x="30" y="452" width="332" height="34" rx="6" fill="#f3e8ff" stroke="none" stroke-width="0.8"/>
+<text x="38" y="466" font-size="10.2" fill="#6d28d9" text-anchor="start" font-weight="700">前南斯拉夫 -ić</text>
+<text x="38" y="480" font-size="9.9" fill="#0f172a" text-anchor="start">Modrić · Đoković（克/塞/波黑高频，男女不变）</text>
+<rect x="388" y="288" width="352" height="214" rx="9" fill="#ffffff" stroke="#c25014" stroke-width="1.4"/>
+<rect x="388" y="288" width="352" height="36" rx="9" fill="#fef1e8" stroke="none" stroke-width="1"/>
+<circle cx="406" cy="306" r="10" fill="#ffffff" stroke="#c25014" stroke-width="1.2"/>
+<text x="406" y="310" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">4</text>
+<text x="423" y="311" font-size="11.4" fill="#c25014" text-anchor="start" font-weight="700">罗曼与爱琴海区｜拉丁尾音与“一尾定一岛”</text>
+<rect x="398" y="332" width="332" height="34" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="406" y="346" font-size="10.2" fill="#c25014" text-anchor="start" font-weight="700">西班牙 -ez vs 葡萄牙 -es</text>
+<text x="406" y="360" font-size="9.9" fill="#0f172a" text-anchor="start">西 Rodríguez / Pérez ｜ 葡 Rodrigues / Peres</text>
+<rect x="398" y="372" width="332" height="34" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="406" y="386" font-size="10.2" fill="#c25014" text-anchor="start" font-weight="700">意大利北 -i 南 -o</text>
+<text x="406" y="400" font-size="9.9" fill="#0f172a" text-anchor="start">中北部多复数 -i（Rossi）· 南部多 -o（Russo）</text>
+<rect x="398" y="412" width="332" height="34" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="406" y="426" font-size="10.2" fill="#c25014" text-anchor="start" font-weight="700">罗马尼亚 -escu / -eanu</text>
+<text x="406" y="440" font-size="9.9" fill="#0f172a" text-anchor="start">Popescu（神父之子）· Munteanu（山里人）</text>
+<rect x="398" y="452" width="332" height="34" rx="6" fill="#fef1e8" stroke="none" stroke-width="0.8"/>
+<text x="406" y="466" font-size="10.2" fill="#c25014" text-anchor="start" font-weight="700">希腊半岛岛屿地图</text>
+<text x="406" y="480" font-size="9.9" fill="#0f172a" text-anchor="start">伯罗奔尼撒 -opoulos · 克里特 -akis · 本都 -idis</text>
+</svg>

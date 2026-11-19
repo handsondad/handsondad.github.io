@@ -5557,3 +5557,1573 @@ def _register_geosync_orbit():
 
 
 _register_geosync_orbit()
+
+
+# ---------------------------------------------------------------------------
+# William Rowan Hamilton: Optics, Dynamics, Quantum Bridge & Quaternions
+# ---------------------------------------------------------------------------
+def _register_hamilton_optics_physics():
+    SUBDIR = "hamilton-optics-physics"
+
+    EXTRA_ARR = (
+        f'<marker id="hm-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">'
+        f'<path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="{BLUE}"/></marker>'
+        f'<marker id="hm-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">'
+        f'<path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="{ORANGE}"/></marker>'
+        f'<marker id="hm-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">'
+        f'<path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="{GREEN}"/></marker>'
+        f'<marker id="hm-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">'
+        f'<path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="{PURPLE}"/></marker>'
+        f'<marker id="hm-ink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">'
+        f'<path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="{INK}"/></marker>'
+    )
+
+    # 1. Conical Refraction & Fresnel Biaxial Wave-Vector Surface (1832)
+    def _build_conical_refraction():
+        # Real aragonite refractive indices (yellow D-line) for numerical assertion
+        nx_ar, ny_ar, nz_ar = 1.5301, 1.6816, 1.6859
+        a_ar = nx_ar ** -2 - ny_ar ** -2
+        b_ar = ny_ar ** -2 - nz_ar ** -2
+        cone_deg = math.degrees(math.atan(ny_ar * ny_ar * math.sqrt(a_ar * b_ar)))
+        optic_half_deg = math.degrees(math.atan(math.sqrt(b_ar / a_ar)))
+        assert 1.80 < cone_deg < 1.95, f"Unexpected aragonite cone angle {cone_deg}"
+        assert 8.5 < optic_half_deg < 9.5, f"Unexpected optic axis half-angle {optic_half_deg}"
+
+        els = header(
+            "1832 年纸笔预言“锥形折射”：一束细光射进双轴晶体，为什么炸成空心光环？",
+            "左：菲涅耳四次波矢曲面截面与四个圆锥漏斗奇点（非真实比例放大示意）｜右：劳埃德霰石实验与半角偏振旋转",
+        )
+
+        # Left Card: Exact kx-kz cross-section of Fresnel wavevector surface
+        els.append(card(20, 62, 352, 386))
+        els.append(txt(36, 84, "① 双轴晶体波矢曲面 kx–kz 截面（各向异性放大示意）", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(36, 102, "圆截叶 r = ny 与椭圆截叶 (nx, nz) 横截相交出 4 个圆锥奇点", 10.6, MUTED))
+
+        cx, cy = 196.0, 212.0
+        sc = 50.0
+        nx_d, ny_d, nz_d = 1.16, 1.52, 1.86
+        sin2_th = (1.0 / ny_d ** 2 - 1.0 / nz_d ** 2) / (1.0 / nx_d ** 2 - 1.0 / nz_d ** 2)
+        th_c = math.asin(math.sqrt(sin2_th))
+
+        # Axes
+        els.append(f'<line x1="{cx - 118:.1f}" y1="{cy:.1f}" x2="{cx + 118:.1f}" y2="{cy:.1f}" stroke="{HAIRLINE}" stroke-width="1.2"/>')
+        els.append(f'<line x1="{cx:.1f}" y1="{cy - 84:.1f}" x2="{cx:.1f}" y2="{cy + 84:.1f}" stroke="{HAIRLINE}" stroke-width="1.2"/>')
+        els.append(txt(cx + 116, cy + 14, "kx", 10.5, MUTED, "end"))
+        els.append(txt(cx + 8, cy - 74, "kz", 10.5, MUTED))
+
+        # Sheet A: circle radius ny_d * sc
+        r_ny = ny_d * sc
+        els.append(f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="{r_ny:.1f}" fill="{BLUE}" fill-opacity="0.05" stroke="{BLUE}" stroke-width="2.1"/>')
+
+        # Sheet B: ellipse rx = nz_d * sc, ry = nx_d * sc
+        rx_nz = nz_d * sc
+        ry_nx = nx_d * sc
+        els.append(f'<ellipse cx="{cx:.1f}" cy="{cy:.1f}" rx="{rx_nz:.1f}" ry="{ry_nx:.1f}" fill="{ORANGE}" fill-opacity="0.05" stroke="{ORANGE}" stroke-width="2.1"/>')
+
+        # Two optic axes lines + 4 exact conoidal singular points
+        for sx in (-1.0, 1.0):
+            for sz in (-1.0, 1.0):
+                px = cx + sx * r_ny * math.cos(th_c)
+                py = cy - sz * r_ny * math.sin(th_c)
+                err_el = ((sx * ny_d * math.cos(th_c)) / nz_d) ** 2 + ((sz * ny_d * math.sin(th_c)) / nx_d) ** 2 - 1.0
+                assert abs(err_el) < 1e-12
+                if sx > 0 and sz > 0:
+                    els.append(
+                        f'<line x1="{cx - 1.18 * r_ny * math.cos(th_c):.1f}" y1="{cy + 1.18 * r_ny * math.sin(th_c):.1f}" '
+                        f'x2="{cx + 1.18 * r_ny * math.cos(th_c):.1f}" y2="{cy - 1.18 * r_ny * math.sin(th_c):.1f}" '
+                        f'stroke="{PURPLE}" stroke-width="1.3" stroke-dasharray="4 3"/>'
+                    )
+                    els.append(
+                        f'<line x1="{cx - 1.18 * r_ny * math.cos(th_c):.1f}" y1="{cy - 1.18 * r_ny * math.sin(th_c):.1f}" '
+                        f'x2="{cx + 1.18 * r_ny * math.cos(th_c):.1f}" y2="{cy + 1.18 * r_ny * math.sin(th_c):.1f}" '
+                        f'stroke="{PURPLE}" stroke-width="1.3" stroke-dasharray="4 3"/>'
+                    )
+                els.append(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="5.2" fill="{PURPLE}" stroke="#ffffff" stroke-width="1.5"/>')
+
+        # Tangent plane line across top-right conoidal dimple
+        c_x = math.sqrt(ny_d ** 2 - nx_d ** 2)
+        c_z = math.sqrt(nz_d ** 2 - ny_d ** 2)
+        rhs = ny_d * math.sqrt(nz_d ** 2 - nx_d ** 2)
+        kx0 = ny_d * math.cos(th_c)
+        t_pts = []
+        for dk in (-0.34, 0.34):
+            kxv = kx0 + dk
+            kzv = (rhs - c_x * kxv) / c_z
+            t_pts.append((cx + kxv * sc, cy - kzv * sc))
+        els.append(
+            f'<line x1="{t_pts[0][0]:.1f}" y1="{t_pts[0][1]:.1f}" x2="{t_pts[1][0]:.1f}" y2="{t_pts[1][1]:.1f}" '
+            f'stroke="{GREEN}" stroke-width="2.2"/>'
+        )
+        els.append(txt(cx + 68, cy - 68, "切平面盖住圆环", 10.4, GREEN, weight="700", halo=True))
+        els.append(txt(cx - 88, cy - 58, "光轴 I", 10.3, PURPLE, weight="700", halo=True))
+        els.append(txt(cx - 94, cy + 68, "圆叶 r=ny", 10.3, BLUE, weight="600", halo=True))
+        els.append(txt(cx + 58, cy + 68, "椭圆叶", 10.3, ORANGE, weight="600", halo=True))
+
+        # Bottom comparison sub-cards inside Left Card: Fresnel's mistake vs Hamilton's funnel
+        els.append(card(34, 304, 154, 128, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(111, 322, "菲涅耳误判：平滑相切", 10.6, SLATE, "middle", weight="700"))
+        els.append(f'<path d="M 52,374 Q 111,344 170,374" fill="none" stroke="{BLUE}" stroke-width="1.8"/>')
+        els.append(f'<path d="M 52,344 Q 111,374 170,344" fill="none" stroke="{ORANGE}" stroke-width="1.8" stroke-dasharray="3 2"/>')
+        els.append(f'<line x1="62" y1="359" x2="160" y2="359" stroke="{SLATE}" stroke-width="1.4"/>')
+        els.append(txt(111, 398, "若仅1条法线 → 只出1束光", 10.0, MUTED, "middle"))
+        els.append(txt(111, 415, "（漏掉了三维方向 ky！）", 10.0, MUTED, "middle"))
+
+        els.append(card(198, 304, 160, 128, rx=8, fill=PURPLE_SOFT, stroke=PURPLE))
+        els.append(txt(278, 322, "哈密顿严算：圆锥漏斗坑", 10.6, PURPLE, "middle", weight="700"))
+        els.append(f'<ellipse cx="278" cy="350" rx="34" ry="8" fill="{GREEN_SOFT}" stroke="{GREEN}" stroke-width="1.6"/>')
+        els.append(f'<path d="M 244,350 L 278,378 L 312,350" fill="none" stroke="{PURPLE}" stroke-width="2.0"/>')
+        els.append(f'<circle cx="278" cy="378" r="3.8" fill="{PURPLE}"/>')
+        for dx_n in (-20, -8, 8, 20):
+            els.append(f'<line x1="278" y1="378" x2="{278 + dx_n}" y2="334" stroke="{ORANGE}" stroke-width="1.3" marker-end="url(#hm-orange)"/>')
+        els.append(txt(278, 398, "尖点拥有一整圈无穷多法线", 10.1, INK, "middle", weight="600"))
+        els.append(txt(278, 415, "⇒ 单束光炸成一圈空心光锥！", 10.1, PURPLE, "middle", weight="700"))
+
+        # Right Card: Lloyd's Aragonite Experiment (Dec 14, 1832) + Half-Angle Polarization Ring
+        els.append(card(388, 62, 352, 386))
+        els.append(txt(404, 84, "② 劳埃德霰石实验（1832.12）与偏振半角旋转", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(404, 102, f"霰石 n=(1.530, 1.682, 1.686) ⇒ 内锥顶角 {cone_deg:.2f}°（1°52′）", 10.4, MUTED))
+
+        els.append(card(402, 116, 324, 174, rx=8, fill="#f8fafc", stroke=BORDER))
+        els.append(f'<line x1="414" y1="196" x2="466" y2="196" stroke="{ORANGE}" stroke-width="2.6" marker-end="url(#hm-orange)"/>')
+        els.append(txt(440, 182, "单束入射光", 10.2, ORANGE, "middle", weight="700"))
+        els.append(f'<line x1="468" y1="150" x2="468" y2="191" stroke="{INK}" stroke-width="3.2"/>')
+        els.append(f'<line x1="468" y1="201" x2="468" y2="242" stroke="{INK}" stroke-width="3.2"/>')
+        els.append(txt(468, 256, "针孔光阑", 10.0, MUTED, "middle"))
+
+        els.append(f'<rect x="472" y="142" width="96" height="108" rx="4" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.7"/>')
+        els.append(txt(520, 159, "霰石晶体 CaCO₃", 10.4, BLUE, "middle", weight="700"))
+        els.append(f'<polygon points="472,196 568,172 568,220" fill="{ORANGE}" fill-opacity="0.14"/>')
+        els.append(f'<line x1="472" y1="196" x2="568" y2="172" stroke="{ORANGE}" stroke-width="2.1"/>')
+        els.append(f'<line x1="472" y1="196" x2="568" y2="220" stroke="{ORANGE}" stroke-width="2.1"/>')
+        els.append(f'<ellipse cx="568" cy="196" rx="6" ry="24" fill="none" stroke="{ORANGE}" stroke-width="1.5" stroke-dasharray="3 2"/>')
+        els.append(txt(522, 238, "空心光锥 ~1°52′", 10.2, ORANGE, "middle", weight="700"))
+
+        els.append(f'<rect x="568" y="172" width="88" height="48" fill="{ORANGE}" fill-opacity="0.10"/>')
+        els.append(f'<line x1="568" y1="172" x2="656" y2="172" stroke="{ORANGE}" stroke-width="2.1" marker-end="url(#hm-orange)"/>')
+        els.append(f'<line x1="568" y1="220" x2="656" y2="220" stroke="{ORANGE}" stroke-width="2.1" marker-end="url(#hm-orange)"/>')
+        els.append(txt(612, 162, "平行空心光柱", 10.2, GREEN, "middle", weight="700"))
+        els.append(txt(612, 238, "移远屏幕环径不变！", 10.0, GREEN, "middle", weight="600"))
+
+        els.append(f'<polygon points="660,136 714,126 714,256 660,266" fill="#ffffff" stroke="{SLATE}" stroke-width="1.4"/>')
+        els.append(f'<ellipse cx="687" cy="196" rx="13" ry="24" fill="none" stroke="{ORANGE}" stroke-width="3.2"/>')
+        els.append(f'<circle cx="687" cy="196" r="2.2" fill="{SLATE_SOFT}"/>')
+        els.append(txt(687, 279, "银纸亮环", 10.3, INK, "middle", weight="700"))
+
+        els.append(card(402, 302, 324, 130, rx=8, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(414, 322, "意外彩蛋：绕亮环走 360°，偏振片只转 180°！", 10.7, GREEN, weight="700"))
+
+        rcx, rcy, rr = 452.0, 378.0, 31.0
+        els.append(f'<circle cx="{rcx:.1f}" cy="{rcy:.1f}" r="{rr:.1f}" fill="#ffffff" stroke="{ORANGE}" stroke-width="2.6"/>')
+        for k in range(8):
+            phi = math.radians(90.0 - k * 45.0)
+            px = rcx + rr * math.cos(phi)
+            py = rcy - rr * math.sin(phi)
+            pol_ang = math.radians(90.0 - k * 22.5)
+            dx = 7.5 * math.cos(pol_ang)
+            dy = -7.5 * math.sin(pol_ang)
+            els.append(f'<line x1="{px - dx:.1f}" y1="{py - dy:.1f}" x2="{px + dx:.1f}" y2="{py + dy:.1f}" stroke="{INK}" stroke-width="2.0"/>')
+            els.append(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="2.2" fill="{ORANGE}"/>')
+
+        els.append(txt(500, 348, "• 环顶（φ=0°）：偏振竖直 ↕", 10.3, BODY))
+        els.append(txt(500, 368, "• 环底（φ=180°）：偏振水平 ↔（转 90°）", 10.3, BODY))
+        els.append(txt(500, 388, "• 绕环一周 360° ⇒ 偏振仅转 φ/2 = 180°", 10.3, INK, weight="700"))
+        els.append(txt(500, 408, "• 现代物理：拓扑“贝里几何相位 π”先声", 10.2, PURPLE, weight="600"))
+
+        return figure(
+            464,
+            "哈密顿1832年预言双轴晶体锥形折射：菲涅耳波矢曲面圆锥奇点与劳埃德霰石亮环实验",
+            "左图展示双轴晶体四次波矢曲面截面在四个光轴方向横截形成的圆锥漏斗奇点，对比菲涅耳误以为的平滑相切与哈密顿发现的无穷多法线圆锥；右图还原1832年12月劳埃德用霰石薄片测得顶角约1度52分的空心光锥与平行空心光柱亮环，并标出沿环旋转360度偏振仅转180度的半角规律。",
+            els,
+            extra_defs=EXTRA_ARR,
+        )
+
+    # 2. Characteristic Function V(rA, rB): Wavefronts Orthogonal to Rays + Snell's Law
+    def _build_characteristic_function_optics():
+        els = header(
+            "哈密顿光学特征函数 V(A, B)：只记一笔“光程总账”，自动吐出所有光线与波前",
+            "左：渐变折射率介质中实算等光程波前 V = const 与正交弯曲光线｜右：切向梯度连续一步推出斯涅耳折射定律",
+        )
+
+        els.append(card(20, 62, 372, 378))
+        els.append(txt(36, 84, "① 渐变折射率透镜：光线 p = ∇V 处处垂直于等光程波前", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(36, 102, "中心折射率高 n(y) = 1.60·sech(0.014y)，光程微分 dV = n·ds", 10.5, MUTED))
+
+        ox, oy = 54.0, 224.0
+        n0, alpha = 1.60, 0.0135
+
+        def n_val(yv):
+            return n0 / math.cosh(alpha * yv)
+
+        def dn_dy(yv):
+            sh = math.sinh(alpha * yv)
+            ch = math.cosh(alpha * yv)
+            return -n0 * alpha * sh / (ch * ch)
+
+        def trace_ray(th0_deg, v_max=430.0, steps=900):
+            dv = v_max / steps
+            x, y = 0.0, 0.0
+            px = n0 * math.cos(math.radians(th0_deg))
+            py = n0 * math.sin(math.radians(th0_deg))
+            pts = [(0.0, x, y, px, py)]
+            for i in range(1, steps + 1):
+                def deriv(xv, yv, pxv, pyv):
+                    nv = n_val(yv)
+                    inv_n2 = 1.0 / (nv * nv)
+                    return pxv * inv_n2, pyv * inv_n2, 0.0, dn_dy(yv) / nv
+
+                dx1, dy1, _, dpy1 = deriv(x, y, px, py)
+                dx2, dy2, _, dpy2 = deriv(x + 0.5 * dv * dx1, y + 0.5 * dv * dy1, px, py + 0.5 * dv * dpy1)
+                dx3, dy3, _, dpy3 = deriv(x + 0.5 * dv * dx2, y + 0.5 * dv * dy2, px, py + 0.5 * dv * dpy2)
+                dx4, dy4, _, dpy4 = deriv(x + dv * dx3, y + dv * dy3, px, py + dv * dpy3)
+                x += (dv / 6.0) * (dx1 + 2 * dx2 + 2 * dx3 + dx4)
+                y += (dv / 6.0) * (dy1 + 2 * dy2 + 2 * dy3 + dy4)
+                py += (dv / 6.0) * (dpy1 + 2 * dpy2 + 2 * dpy3 + dpy4)
+                pts.append((i * dv, x, y, px, py))
+            return pts
+
+        els.append(card(36, 118, 340, 212, rx=8, fill="#f8fafc", stroke=BORDER))
+        for band_h, op in ((84, 0.05), (56, 0.07), (28, 0.10)):
+            els.append(f'<rect x="38" y="{oy - band_h:.1f}" width="336" height="{2 * band_h:.1f}" fill="{BLUE}" fill-opacity="{op}"/>')
+        els.append(f'<line x1="42" y1="{oy:.1f}" x2="370" y2="{oy:.1f}" stroke="{HAIRLINE}" stroke-width="1.1" stroke-dasharray="4 3"/>')
+
+        v_levels = [95.0, 185.0, 275.0, 365.0]
+        dense_angles = [-36.0 + 1.5 * k for k in range(49)]
+        dense_rays = [trace_ray(a, v_max=415.0, steps=830) for a in dense_angles]
+        for idx_v, v_target in enumerate(v_levels):
+            step_i = int(round(v_target / (415.0 / 830)))
+            wf_pts = []
+            for r_pts in dense_rays:
+                _, xv, yv, pxv, pyv = r_pts[step_i]
+                if ox + xv <= 368.0 and abs(yv) <= 95.0:
+                    wf_pts.append((ox + xv, oy - yv, pxv, pyv))
+            if len(wf_pts) >= 5:
+                mid = len(wf_pts) // 4
+                tx_w = wf_pts[mid + 1][0] - wf_pts[mid - 1][0]
+                ty_w = -(wf_pts[mid + 1][1] - wf_pts[mid - 1][1])
+                px_m, py_m = wf_pts[mid][2], wf_pts[mid][3]
+                cos_err = abs(tx_w * px_m + ty_w * py_m) / (math.hypot(tx_w, ty_w) * math.hypot(px_m, py_m))
+                assert cos_err < 0.015, f"Wavefront not orthogonal to ray: cos={cos_err}"
+            d_wf = "M " + " L ".join(f"{p[0]:.1f},{p[1]:.1f}" for p in wf_pts)
+            els.append(f'<path d="{d_wf}" fill="none" stroke="{GREEN}" stroke-width="1.9" stroke-dasharray="5 3"/>')
+            top_p = min(wf_pts, key=lambda p: p[1])
+            els.append(txt(top_p[0], top_p[1] - 6, f"V{idx_v + 1}", 10.0, GREEN, "middle", weight="700", halo=True))
+
+        for ang in (-33, -22, -11, 0, 11, 22, 33):
+            r_pts = trace_ray(ang, v_max=425.0, steps=850)
+            clipped = [(ox + p[1], oy - p[2]) for p in r_pts if ox + p[1] <= 366.0]
+            d_ray = "M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in clipped[::6] + [clipped[-1]])
+            els.append(f'<path d="{d_ray}" fill="none" stroke="{ORANGE}" stroke-width="1.85"/>')
+
+        r_dn = trace_ray(-22.0, v_max=425.0, steps=850)
+        _, x_h, y_h, px_h, py_h = r_dn[int(round(185.0 / 0.5))]
+        sx_h, sy_h = ox + x_h, oy - y_h
+        un_x, un_y = px_h / math.hypot(px_h, py_h), -py_h / math.hypot(px_h, py_h)
+        els.append(f'<circle cx="{sx_h:.1f}" cy="{sy_h:.1f}" r="4.0" fill="{INK}"/>')
+        els.append(
+            f'<line x1="{sx_h:.1f}" y1="{sy_h:.1f}" x2="{sx_h + 26 * un_x:.1f}" y2="{sy_h + 26 * un_y:.1f}" '
+            f'stroke="{INK}" stroke-width="2.1" marker-end="url(#hm-ink)"/>'
+        )
+        els.append(txt(sx_h + 12, sy_h + 26, "p = ∇V ⊥ 波前", 10.3, INK, weight="700", halo=True))
+
+        els.append(f'<circle cx="{ox:.1f}" cy="{oy:.1f}" r="4.8" fill="{BLUE}" stroke="#ffffff" stroke-width="1.5"/>')
+        els.append(txt(ox + 2, oy + 18, "光源 A", 10.4, BLUE, weight="700", halo=True))
+        focus_x = ox + math.pi / alpha
+        els.append(f'<circle cx="{focus_x:.1f}" cy="{oy:.1f}" r="4.8" fill="{PURPLE}" stroke="#ffffff" stroke-width="1.5"/>')
+        els.append(txt(focus_x, oy + 20, "自聚焦点 B", 10.4, PURPLE, "middle", weight="700", halo=True))
+
+        els.append(card(36, 340, 340, 86, rx=8, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(48, 360, "哈密顿核心总账：V(r_A, r_B) = ∫ n(r) ds（真实光程）", 10.8, BLUE, weight="700"))
+        els.append(txt(48, 380, "• 终点求梯度得光学动量：p_B = ∇_B V = n(r_B)·u_B", 10.4, BODY))
+        els.append(txt(48, 399, "• 两边取模平方得程函方程：|∇V|² = n²(r)（费马=惠更斯！）", 10.4, INK, weight="600"))
+        els.append(txt(48, 417, "• 实线橙：光线轨迹；虚线绿：等光程波前，两者处处 90° 正交", 10.1, MUTED))
+
+        # Right Card: Snell's Law from Tangential Continuity of Optical Momentum p = grad V
+        els.append(card(408, 62, 332, 378))
+        els.append(txt(424, 84, "② 一步秒推折射定律：切向动量 px 守恒", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(424, 102, "界面 y=0 两侧波前连续 ⇒ ∂V/∂x 相等 ⇒ n₁sinθ₁ = n₂sinθ₂", 10.5, MUTED))
+
+        n1, n2 = 1.00, 1.50
+        th1 = math.radians(45.0)
+        th2 = math.asin((n1 / n2) * math.sin(th1))
+        assert abs(math.degrees(th2) - 28.1255) < 0.01
+
+        icx, icy = 574.0, 224.0
+        sc_p = 66.0
+
+        els.append(card(422, 118, 304, 212, rx=8, fill="#f8fafc", stroke=BORDER))
+        els.append(f'<rect x="424" y="120" width="300" height="104" fill="#ffffff"/>')
+        els.append(f'<rect x="424" y="224" width="300" height="104" fill="{BLUE_SOFT}" fill-opacity="0.65"/>')
+        els.append(f'<line x1="428" y1="{icy:.1f}" x2="720" y2="{icy:.1f}" stroke="{INK}" stroke-width="1.8"/>')
+        els.append(f'<line x1="{icx:.1f}" y1="126" x2="{icx:.1f}" y2="322" stroke="{SLATE}" stroke-width="1.2" stroke-dasharray="4 3"/>')
+        els.append(txt(436, 140, "空气 n₁ = 1.00", 10.5, SLATE, weight="700"))
+        els.append(txt(436, 316, "玻璃 n₂ = 1.50", 10.5, BLUE, weight="700"))
+
+        r1_px, r2_px = n1 * sc_p, n2 * sc_p
+        els.append(f'<circle cx="{icx:.1f}" cy="{icy:.1f}" r="{r1_px:.1f}" fill="none" stroke="{ORANGE}" stroke-width="1.3" stroke-dasharray="3 3"/>')
+        els.append(f'<circle cx="{icx:.1f}" cy="{icy:.1f}" r="{r2_px:.1f}" fill="none" stroke="{BLUE}" stroke-width="1.3" stroke-dasharray="4 3"/>')
+
+        in_x, in_y = icx - 74 * math.sin(th1), icy - 74 * math.cos(th1)
+        els.append(f'<line x1="{in_x:.1f}" y1="{in_y:.1f}" x2="{icx:.1f}" y2="{icy:.1f}" stroke="{ORANGE}" stroke-width="2.2" marker-end="url(#hm-orange)"/>')
+        els.append(txt(in_x - 4, in_y + 14, "θ₁ = 45°", 10.3, ORANGE, weight="700", halo=True))
+
+        px_shared = n1 * math.sin(th1) * sc_p
+        p1_end = (icx + px_shared, icy + n1 * math.cos(th1) * sc_p)
+        p2_end = (icx + px_shared, icy + n2 * math.cos(th2) * sc_p)
+        els.append(f'<line x1="{icx:.1f}" y1="{icy:.1f}" x2="{p1_end[0]:.1f}" y2="{p1_end[1]:.1f}" stroke="{ORANGE}" stroke-width="1.6" stroke-dasharray="3 2" marker-end="url(#hm-orange)"/>')
+        els.append(f'<line x1="{icx:.1f}" y1="{icy:.1f}" x2="{p2_end[0]:.1f}" y2="{p2_end[1]:.1f}" stroke="{BLUE}" stroke-width="2.5" marker-end="url(#hm-blue)"/>')
+
+        els.append(f'<line x1="{icx + px_shared:.1f}" y1="{icy:.1f}" x2="{p2_end[0]:.1f}" y2="{p2_end[1]:.1f}" stroke="{GREEN}" stroke-width="1.8" stroke-dasharray="3 2"/>')
+        els.append(f'<line x1="{icx:.1f}" y1="{icy:.1f}" x2="{icx + px_shared:.1f}" y2="{icy:.1f}" stroke="{GREEN}" stroke-width="2.6"/>')
+        els.append(txt(icx + px_shared / 2, icy - 7, "px 相等!", 10.2, GREEN, "middle", weight="700", halo=True))
+        els.append(txt(p2_end[0] + 6, p2_end[1] - 14, "|p₂| = n₂ = 1.50", 10.1, BLUE, weight="700", halo=True))
+        els.append(txt(p2_end[0] + 6, p2_end[1] + 1, "θ₂ = 28.13°", 10.1, BLUE, weight="600", halo=True))
+
+        els.append(card(422, 340, 304, 86, rx=8, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(434, 360, "光学哈密顿视角（把 z 当作“演化时间”）：", 10.8, GREEN, weight="700"))
+        els.append(txt(434, 380, "• 折射率只随纵深 y 变、不随横向 x 变 ⇒ ∂H/∂x = 0", 10.3, BODY))
+        els.append(txt(434, 399, "• 正则方程 dp_x/dy = −∂H/∂x = 0 ⇒ 横向动量 px 守恒！", 10.3, INK, weight="700"))
+        els.append(txt(434, 417, "• 即 n₁sinθ₁ = n₂sinθ₂ = 0.7071（对称性直接给出守恒律）", 10.2, MUTED))
+
+        return figure(
+            456,
+            "哈密顿光学特征函数：渐变折射率等光程波前正交光线与切向光学动量守恒推导斯涅耳定律",
+            "左图通过四阶龙格库塔法精确积分双曲正割渐变折射率介质中的光线与等光程波前V=常数，验证光学动量p=∇V处处垂直于波前并实现自聚焦；右图展示界面横向平移不变导致光学动量横分量px守恒，一步推出n1 sinθ1 = n2 sinθ2。",
+            els,
+            extra_defs=EXTRA_ARR,
+        )
+
+    # 3. Canonical Phase Space & Liouville's Theorem (Animated + Static)
+    def _build_phase_space_liouville():
+        def rk4_pend(q0, p0, t_end, gamma=0.0, steps=240):
+            dt = t_end / steps
+            q, p = q0, p0
+            for _ in range(steps):
+                dq1, dp1 = p, -math.sin(q) - gamma * p
+                dq2, dp2 = p + 0.5 * dt * dp1, -math.sin(q + 0.5 * dt * dq1) - gamma * (p + 0.5 * dt * dp1)
+                dq3, dp3 = p + 0.5 * dt * dp2, -math.sin(q + 0.5 * dt * dq2) - gamma * (p + 0.5 * dt * dp2)
+                dq4, dp4 = p + dt * dp3, -math.sin(q + dt * dq3) - gamma * (p + dt * dp3)
+                q += (dt / 6.0) * (dq1 + 2 * dq2 + 2 * dq3 + dq4)
+                p += (dt / 6.0) * (dp1 + 2 * dp2 + 2 * dp3 + dp4)
+            return q, p
+
+        def poly_area(pts):
+            s = 0.0
+            n = len(pts)
+            for i in range(n):
+                x1, y1 = pts[i]
+                x2, y2 = pts[(i + 1) % n]
+                s += x1 * y2 - x2 * y1
+            return 0.5 * abs(s)
+
+        qc0, pc0, rad0 = -1.48, 0.92, 0.34
+        n_b = 240
+        blob_t0 = [(qc0 + rad0 * math.cos(2 * math.pi * k / n_b), pc0 + rad0 * math.sin(2 * math.pi * k / n_b)) for k in range(n_b)]
+        blob_t1 = [rk4_pend(q, p, 1.35, gamma=0.0) for q, p in blob_t0]
+        blob_t2 = [rk4_pend(q, p, 2.70, gamma=0.0) for q, p in blob_t0]
+
+        area0 = poly_area(blob_t0)
+        area1 = poly_area(blob_t1)
+        area2 = poly_area(blob_t2)
+        assert abs(area1 - area0) / area0 < 5e-4, f"Liouville area drift t1: {area0} -> {area1}"
+        assert abs(area2 - area0) / area0 < 5e-4, f"Liouville area drift t2: {area0} -> {area2}"
+
+        gamma_d = 0.45
+        damped_t1 = [rk4_pend(q, p, 1.50, gamma=gamma_d) for q, p in blob_t0]
+        damped_t2 = [rk4_pend(q, p, 3.20, gamma=gamma_d) for q, p in blob_t0]
+        ratio_d2 = poly_area(damped_t2) / area0
+        assert abs(ratio_d2 - math.exp(-gamma_d * 3.20)) < 0.005
+
+        anim_css = """
+      .lv-flow {
+        stroke-dasharray: 260;
+        stroke-dashoffset: 260;
+        animation: lvDraw 3.2s ease-in-out 0.3s 1 forwards;
+      }
+      .lv-mid {
+        opacity: 0.25;
+        animation: lvShowMid 3.2s ease-out 0.3s 1 forwards;
+      }
+      .lv-end {
+        opacity: 0.25;
+        animation: lvShowEnd 3.2s ease-out 0.3s 1 forwards;
+      }
+      @keyframes lvDraw {
+        0% { stroke-dashoffset: 260; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes lvShowMid {
+        0%, 35% { opacity: 0.25; }
+        55%, 100% { opacity: 1; }
+      }
+      @keyframes lvShowEnd {
+        0%, 72% { opacity: 0.25; }
+        95%, 100% { opacity: 1; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .lv-flow { animation: none; stroke-dashoffset: 0; }
+        .lv-mid, .lv-end { animation: none; opacity: 1; }
+      }"""
+
+        els = header(
+            "哈密顿相空间 (q, p) 与刘维尔定理：状态云被拉成弯月，面积却一分不少！",
+            "左：无耗散非线性单摆 H = p²/2 + (1−cos q) 的保面积辛流｜右：有阻尼耗散收缩对比与正则方程反对称奥秘",
+        )
+
+        els.append(card(20, 62, 412, 396))
+        els.append(txt(36, 84, "① 保守哈密顿流（∇·v = 0）：形状剧烈扭曲，面积严格守恒", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(36, 102, f"实算 240 边形相体积：A(0) = {area0:.4f}，A(1.35) = {area1:.4f}，A(2.70) = {area2:.4f}", 10.4, MUTED))
+
+        gx0, gy0, gw, gh = 52.0, 120.0, 362.0, 232.0
+        q_min, q_max = -math.pi, math.pi
+        p_min, p_max = -2.35, 2.35
+
+        def mp(qv, pv):
+            return gx0 + ((qv - q_min) / (q_max - q_min)) * gw, gy0 + ((p_max - pv) / (p_max - p_min)) * gh
+
+        els.append(f'<rect x="{gx0:.1f}" y="{gy0:.1f}" width="{gw:.1f}" height="{gh:.1f}" rx="6" fill="#f8fafc" stroke="{BORDER}"/>')
+        zx, zy = mp(0.0, 0.0)
+        els.append(f'<line x1="{gx0:.1f}" y1="{zy:.1f}" x2="{gx0 + gw:.1f}" y2="{zy:.1f}" stroke="{HAIRLINE}" stroke-width="1.2"/>')
+        els.append(f'<line x1="{zx:.1f}" y1="{gy0:.1f}" x2="{zx:.1f}" y2="{gy0 + gh:.1f}" stroke="{HAIRLINE}" stroke-width="1.2"/>')
+        els.append(txt(gx0 + gw - 6, zy - 7, "位置 q (rad)", 10.0, MUTED, "end", halo=True))
+        els.append(txt(zx - 6, gy0 + 14, "动量 p", 10.0, MUTED, "end", halo=True))
+
+        for e_lvl in (0.35, 0.90, 1.50):
+            q_max_e = math.acos(1.0 - e_lvl)
+            pts_up = []
+            pts_dn = []
+            for k in range(61):
+                qv = -q_max_e + (2 * q_max_e * k) / 60.0
+                pv = math.sqrt(max(0.0, 2.0 * (e_lvl - (1.0 - math.cos(qv)))))
+                pts_up.append(mp(qv, pv))
+                pts_dn.append(mp(qv, -pv))
+            loop = pts_up + list(reversed(pts_dn))
+            d_loop = "M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in loop) + " Z"
+            els.append(f'<path d="{d_loop}" fill="none" stroke="#cbd5e1" stroke-width="1.1"/>')
+
+        for sgn in (1.0, -1.0):
+            sep_pts = [mp(-math.pi + (2 * math.pi * k) / 80.0, sgn * 2.0 * math.cos((-math.pi + (2 * math.pi * k) / 80.0) / 2.0)) for k in range(81)]
+            d_sep = "M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in sep_pts)
+            els.append(f'<path d="{d_sep}" fill="none" stroke="{SLATE}" stroke-width="1.3" stroke-dasharray="4 3"/>')
+        els.append(txt(gx0 + 10, gy0 + 22, "分界线 E=2", 9.9, SLATE))
+
+        for sample_idx in (0, 60, 120, 180):
+            q_s, p_s = blob_t0[sample_idx]
+            tr = [mp(q_s, p_s)]
+            for st in range(1, 55):
+                qt, pt = rk4_pend(q_s, p_s, 2.70 * st / 54.0, gamma=0.0, steps=40)
+                tr.append(mp(qt, pt))
+            d_tr = "M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in tr)
+            els.append(f'<path class="lv-flow" d="{d_tr}" fill="none" stroke="{ORANGE}" stroke-width="1.3" stroke-dasharray="3 2" opacity="0.75"/>')
+
+        def blob_svg(b_pts, stroke_c, fill_c, cls_name=""):
+            scr = [mp(q, p) for q, p in b_pts[::3]]
+            d = "M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in scr) + " Z"
+            c_attr = f' class="{cls_name}"' if cls_name else ""
+            return f'<path{c_attr} d="{d}" fill="{fill_c}" fill-opacity="0.32" stroke="{stroke_c}" stroke-width="2.1"/>'
+
+        els.append(blob_svg(blob_t0, BLUE, BLUE))
+        els.append(blob_svg(blob_t1, ORANGE, ORANGE, "lv-mid"))
+        els.append(blob_svg(blob_t2, GREEN, GREEN, "lv-end"))
+
+        x0_l, y0_l = mp(qc0 - 0.15, pc0 + 0.50)
+        els.append(txt(x0_l, y0_l, "t = 0 初态圆团", 10.3, BLUE, "middle", weight="700", halo=True))
+        x1_l, y1_l = mp(0.88, 1.88)
+        els.append(txt(x1_l, y1_l, "t = 1.35 剪切椭圆", 10.3, ORANGE, "middle", weight="700", halo=True))
+        x2_l, y2_l = mp(1.38, -0.78)
+        els.append(txt(x2_l, y2_l, "t = 2.70 细弯月（面积不变）", 10.3, GREEN, "middle", weight="700", halo=True))
+
+        els.append(card(36, 362, 380, 82, rx=8, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(46, 382, "为什么面积分毫不差？看正则方程一正一负的偏导抵消：", 10.5, GREEN, weight="700"))
+        els.append(txt(46, 402, "q̇=+∂H/∂p, ṗ=−∂H/∂q  ⇒  ∂q̇/∂q + ∂ṗ/∂p = ∂²H/∂q∂p − ∂²H/∂p∂q = 0", 9.8, INK, weight="700"))
+        els.append(txt(46, 422, "相空间流体像“不可压缩理想流体”——统计力学系综与保辛算法的根基！", 10.0, BODY))
+
+        # Right Card: Damped Contraction Contrast + Legendre Transform Comparison
+        els.append(card(448, 62, 292, 396))
+        els.append(txt(464, 84, "② 反例：一旦加入摩擦耗散", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(464, 102, f"阻尼 γ=0.45 ⇒ 散度 = −γ < 0，面积收缩至 {ratio_d2 * 100:.0f}%", 10.4, MUTED))
+
+        dx0, dy0, dw, dh = 464.0, 118.0, 260.0, 152.0
+        els.append(f'<rect x="{dx0:.1f}" y="{dy0:.1f}" width="{dw:.1f}" height="{dh:.1f}" rx="6" fill="#f8fafc" stroke="{BORDER}"/>')
+
+        def mpd(qv, pv):
+            return dx0 + ((qv + 2.4) / 4.8) * dw, dy0 + ((1.8 - pv) / 3.6) * dh
+
+        dzx, dzy = mpd(0.0, 0.0)
+        els.append(f'<line x1="{dx0:.1f}" y1="{dzy:.1f}" x2="{dx0 + dw:.1f}" y2="{dzy:.1f}" stroke="{HAIRLINE}" stroke-width="1.1"/>')
+        els.append(f'<line x1="{dzx:.1f}" y1="{dy0:.1f}" x2="{dzx:.1f}" y2="{dy0 + dh:.1f}" stroke="{HAIRLINE}" stroke-width="1.1"/>')
+
+        sp = [mpd(qc0, pc0)]
+        for st in range(1, 90):
+            qt, pt = rk4_pend(qc0, pc0, 5.5 * st / 89.0, gamma=gamma_d, steps=45)
+            sp.append(mpd(qt, pt))
+        els.append(f'<path d="{"M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in sp)}" fill="none" stroke="{PURPLE}" stroke-width="1.5" stroke-dasharray="3 2"/>')
+
+        for b_pts, col in ((blob_t0, BLUE), (damped_t1, ORANGE), (damped_t2, PURPLE)):
+            scr = [mpd(q, p) for q, p in b_pts[::3]]
+            els.append(f'<path d="{"M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in scr) + " Z"}" fill="{col}" fill-opacity="0.30" stroke="{col}" stroke-width="1.8"/>')
+
+        els.append(txt(dx0 + 10, dy0 + 18, "A₀ (100%)", 10.0, BLUE, weight="700"))
+        els.append(txt(dx0 + dw - 10, dy0 + 22, "t=1.5 (51%)", 10.0, ORANGE, "end", weight="700"))
+        els.append(txt(dx0 + dw - 14, dy0 + dh - 14, f"t=3.2 ({ratio_d2 * 100:.0f}%) 缩向吸引子", 10.0, PURPLE, "end", weight="700"))
+
+        els.append(card(464, 282, 260, 162, rx=8, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(476, 302, "勒让德变换：从拉格朗日升维到哈密顿", 10.7, BLUE, weight="700"))
+        els.append(txt(476, 323, "• 拉格朗日 L(q, q̇) = T − U", 10.3, BODY))
+        els.append(txt(486, 340, "n 个二阶方程，速度 q̇ 只是位置附庸", 10.0, MUTED))
+        els.append(txt(476, 362, "• 定义正则动量：p = ∂L/∂q̇", 10.3, INK, weight="600"))
+        els.append(txt(476, 382, "• 哈密顿量：H(q, p) = p·q̇ − L (= T + U)", 10.3, BLUE, weight="700"))
+        els.append(txt(486, 400, "2n 个一阶对称方程，q 与 p 平起平坐", 10.1, BODY))
+        els.append(txt(486, 418, "坐标变换升级为自由度翻倍的“正则变换”！", 10.1, GREEN, weight="600"))
+
+        return figure(
+            474,
+            "哈密顿相空间刘维尔定理单次动画与耗散系统面积收缩对比",
+            "左图通过精确数值积分展示无耗散非线性单摆相空间中一团圆形初态在t=0、1.35、2.70时刻被剪切拉长成弯月但面积严格保持0.3626不变（刘维尔定理）；右图对比阻尼单摆相面积按指数收缩至24%，并总结勒让德变换H=pq̇-L的结构升级。",
+            els,
+            extra_css=anim_css,
+        )
+
+    # 4. Optico-Mechanical Analogy -> 1926 Schrödinger Wave Mechanics Bridge
+    def _build_optico_mechanical_quantum():
+        els = header(
+            "跨越 95 年的神级伏笔：哈密顿“光学—力学类比”怎样直接引出薛定谔方程？",
+            "1831 年哈密顿把质点运动写成等作用量波前；1926 年薛定谔只需补上普朗克常数 ℏ，波动力学应运而生！",
+        )
+
+        cols = [
+            (
+                20,
+                "① 几何光学（短波极限 λ→0）",
+                BLUE,
+                BLUE_SOFT,
+                [
+                    ("变分原理", "费马原理 δ∫ n ds = 0"),
+                    ("主函数", "光程函数 V(r)"),
+                    ("波前方程", "程函方程 |∇V|² = n²(r)"),
+                    ("几何图景", "光线 p=∇V ⊥ 等相波前"),
+                ],
+            ),
+            (
+                268,
+                "② 哈密顿—雅可比经典力学",
+                ORANGE,
+                ORANGE_SOFT,
+                [
+                    ("变分原理", "驻定作用量 δ∫ L dt = 0"),
+                    ("主函数", "作用量主函数 S(q, t)"),
+                    ("波前方程", "−∂S/∂t = |∇S|²/(2m) + U"),
+                    ("几何图景", "轨迹 p=∇S ⊥ 等作用量面"),
+                ],
+            ),
+            (
+                516,
+                "③ 薛定谔波动力学（1926）",
+                PURPLE,
+                PURPLE_SOFT,
+                [
+                    ("相位钥匙", "ψ = A · exp(i S / ℏ)"),
+                    ("核心算符", "Ĥ = −(ℏ²/2m)∇² + U(q)"),
+                    ("波动方程", "iℏ ∂ψ/∂t = Ĥ ψ（线性）"),
+                    ("经典极限", "ℏ→0 退回 ② H–J 方程"),
+                ],
+            ),
+        ]
+        for x0, title_s, fg, bg, rows in cols:
+            els.append(card(x0, 62, 224, 174, rx=10, fill=CARD_BG, stroke=fg, sw=1.5))
+            els.append(f'<rect x="{x0 + 1}" y="63" width="222" height="28" rx="9" fill="{bg}"/>')
+            els.append(txt(x0 + 112, 82, title_s, 11.4, fg, "middle", weight="700"))
+            for r_i, (k_lbl, v_lbl) in enumerate(rows):
+                ry = 110 + r_i * 31
+                els.append(pill(x0 + 8, ry - 12, k_lbl, fg=fg, bg=bg, w=58, h=19, size=9.6))
+                els.append(txt(x0 + 72, ry + 2, v_lbl, 10.0, INK, weight="600" if r_i == 2 else "400"))
+
+        els.append(f'<line x1="246" y1="149" x2="266" y2="149" stroke="{ORANGE}" stroke-width="2.0" marker-end="url(#hm-orange)"/>')
+        els.append(f'<line x1="494" y1="149" x2="514" y2="149" stroke="{PURPLE}" stroke-width="2.0" marker-end="url(#hm-purple)"/>')
+
+        els.append(card(20, 250, 352, 202))
+        els.append(txt(36, 272, "④ 经典极限（ℏ → 0）：势垒前硬折返，禁区绝对为零", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(36, 290, "能量 E < U₀ 时 p = √[2m(E−U)] 变虚数，经典粒子撞上转折点 x_t", 10.4, MUTED))
+
+        bx0, by0, bw, bh = 38.0, 304.0, 316.0, 132.0
+        els.append(f'<rect x="{bx0:.1f}" y="{by0:.1f}" width="{bw:.1f}" height="{bh:.1f}" rx="6" fill="#f8fafc" stroke="{BORDER}"/>')
+
+        def map_bx(xv, yv):
+            return bx0 + (xv / 10.0) * bw, by0 + bh - (yv / 1.35) * (bh - 14.0) - 6.0
+
+        u_pts = [map_bx(10.0 * k / 100.0, 1.0 / (1.0 + math.exp(-(10.0 * k / 100.0 - 6.2) / 0.45))) for k in range(101)]
+        poly_u = [map_bx(0.0, 0.0)] + u_pts + [map_bx(10.0, 0.0)]
+        els.append(f'<path d="{"M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in poly_u) + " Z"}" fill="{SLATE_SOFT}" stroke="none"/>')
+        els.append(f'<path d="{"M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in u_pts)}" fill="none" stroke="{SLATE}" stroke-width="2.0"/>')
+
+        e_val = 0.72
+        xt = 6.2 + 0.45 * math.log(e_val / (1.0 - e_val))
+        ex0, ey = map_bx(0.2, e_val)
+        ext, _ = map_bx(xt, e_val)
+        els.append(f'<line x1="{ex0:.1f}" y1="{ey:.1f}" x2="{ext:.1f}" y2="{ey:.1f}" stroke="{ORANGE}" stroke-width="2.4" marker-end="url(#hm-orange)"/>')
+        els.append(f'<circle cx="{ext:.1f}" cy="{ey:.1f}" r="4.6" fill="{ORANGE}" stroke="#ffffff" stroke-width="1.4"/>')
+        s_acc = 0.0
+        next_s = 0.35
+        for k in range(1, 200):
+            xk = xt * k / 200.0
+            uk = 1.0 / (1.0 + math.exp(-(xk - 6.2) / 0.45))
+            if e_val > uk:
+                s_acc += math.sqrt(e_val - uk) * (xt / 200.0)
+                if s_acc >= next_s:
+                    wx, _ = map_bx(xk, e_val)
+                    els.append(f'<line x1="{wx:.1f}" y1="{ey - 20:.1f}" x2="{wx:.1f}" y2="{ey + 20:.1f}" stroke="{BLUE}" stroke-width="1.6" stroke-dasharray="3 2"/>')
+                    next_s += 0.58
+        els.append(txt(bx0 + 12, ey - 26, "等作用量波前 S = const", 10.1, BLUE, weight="700"))
+        els.append(txt(ext - 6, ey + 24, "经典转折点 x_t", 10.1, ORANGE, "end", weight="700"))
+        els.append(txt(bx0 + bw - 12, ey - 6, "经典禁区", 10.3, SLATE, "end", weight="700"))
+        els.append(txt(bx0 + bw - 12, ey + 12, "(概率 = 0)", 10.0, MUTED, "end"))
+
+        els.append(card(388, 250, 352, 202))
+        els.append(txt(404, 272, "⑤ 波动真身（有限 ℏ）：驻波干涉 + 指数隧穿尾巴！", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(404, 290, "实算薛定谔本征波函数 ψ(x)：正如光的全反射倏逝波渗入禁区", 10.4, MUTED))
+
+        qx0, qy0, qw, qh = 406.0, 304.0, 316.0, 132.0
+        els.append(f'<rect x="{qx0:.1f}" y="{qy0:.1f}" width="{qw:.1f}" height="{qh:.1f}" rx="6" fill="#f8fafc" stroke="{BORDER}"/>')
+
+        def map_qx(xv, yv):
+            return qx0 + (xv / 10.0) * qw, qy0 + qh - (yv / 1.35) * (qh - 14.0) - 6.0
+
+        qu_pts = [map_qx(10.0 * k / 100.0, 1.0 / (1.0 + math.exp(-(10.0 * k / 100.0 - 6.2) / 0.45))) for k in range(101)]
+        qpoly_u = [map_qx(0.0, 0.0)] + qu_pts + [map_qx(10.0, 0.0)]
+        els.append(f'<path d="{"M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in qpoly_u) + " Z"}" fill="{PURPLE_SOFT}" fill-opacity="0.55" stroke="none"/>')
+        els.append(f'<path d="{"M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in qu_pts)}" fill="none" stroke="{SLATE}" stroke-width="1.8"/>')
+
+        c_qm = 15.0
+        n_q = 500
+        dx_q = 10.0 / n_q
+        kap_r = math.sqrt(c_qm * (1.0 - e_val))
+        psi_arr = [0.0] * (n_q + 1)
+        psi_arr[n_q] = 1e-4
+        psi_arr[n_q - 1] = 1e-4 * math.exp(kap_r * dx_q)
+        for i in range(n_q - 1, 0, -1):
+            xi = i * dx_q
+            ui = 1.0 / (1.0 + math.exp(-(xi - 6.2) / 0.45))
+            fi = c_qm * (ui - e_val)
+            psi_arr[i - 1] = (2.0 + fi * dx_q * dx_q) * psi_arr[i] - psi_arr[i + 1]
+        max_psi = max(abs(v) for v in psi_arr)
+        psi_pts = [map_qx(i * dx_q, e_val + 0.34 * (psi_arr[i] / max_psi)) for i in range(0, n_q + 1, 2)]
+        q_ext, q_ey = map_qx(xt, e_val)
+        els.append(f'<line x1="{qx0 + 4:.1f}" y1="{q_ey:.1f}" x2="{qx0 + qw - 4:.1f}" y2="{q_ey:.1f}" stroke="{HAIRLINE}" stroke-width="1.1" stroke-dasharray="3 3"/>')
+        els.append(f'<line x1="{q_ext:.1f}" y1="{qy0 + 8:.1f}" x2="{q_ext:.1f}" y2="{qy0 + qh - 8:.1f}" stroke="{ORANGE}" stroke-width="1.3" stroke-dasharray="4 3"/>')
+        els.append(f'<path d="{"M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in psi_pts)}" fill="none" stroke="{PURPLE}" stroke-width="2.2"/>')
+        els.append(txt(qx0 + 12, qy0 + 20, "振荡物质波 ψ(x)", 10.2, PURPLE, weight="700", halo=True))
+        els.append(txt(q_ext + 8, q_ey - 22, "量子隧穿指数尾", 10.2, GREEN, weight="700", halo=True))
+        els.append(txt(q_ext + 8, q_ey - 7, "exp(−|p|x / ℏ)", 10.0, GREEN, halo=True))
+
+        return figure(
+            466,
+            "哈密顿光学—力学类比通往1926年薛定谔波动力学：三层对偶与量子势垒隧穿实算对比",
+            "上半部分三栏对照几何光学程函方程、哈密顿—雅可比经典力学方程与1926年薛定谔波动力学方程的精确同构；下半部分对比光滑势垒前经典转折点硬反射与实算一维薛定谔波函数的驻波振荡及禁区指数隧穿尾。",
+            els,
+            extra_defs=EXTRA_ARR,
+        )
+
+    # 5. Broom Bridge Quaternions (1843) -> Vector Calculus (nabla) & Gimbal-Lock-Free 3D Rotation
+    def _build_quaternions_and_vectors():
+        def q_mul(a, b):
+            w1, x1, y1, z1 = a
+            w2, x2, y2, z2 = b
+            return (
+                w1 * w2 - x1 * x2 - y1 * y2 - z1 * z2,
+                w1 * x2 + x1 * w2 + y1 * z2 - z1 * y2,
+                w1 * y2 - x1 * z2 + y1 * w2 + z1 * x2,
+                w1 * z2 + x1 * y2 - y1 * x2 + z1 * w2,
+            )
+
+        s3 = 1.0 / math.sqrt(3.0)
+        ang_test = math.radians(120.0)
+        q_rot = (math.cos(ang_test / 2), s3 * math.sin(ang_test / 2), s3 * math.sin(ang_test / 2), s3 * math.sin(ang_test / 2))
+        q_conj = (q_rot[0], -q_rot[1], -q_rot[2], -q_rot[3])
+        v_rot = q_mul(q_mul(q_rot, (0.0, 1.0, 0.0, 0.0)), q_conj)
+        assert abs(v_rot[0]) < 1e-12 and abs(v_rot[1]) < 1e-12 and abs(v_rot[2] - 1.0) < 1e-12 and abs(v_rot[3]) < 1e-12
+
+        els = header(
+            "1843 布鲁姆桥头那一刀：砍掉交换律生出四元数，无心插柳孕育向量分析与三维旋转引擎",
+            "上：i² = j² = k² = ijk = −1 非交换循环与 ∇ 向量算子｜下：欧拉角 90° 万向节死锁 vs 单位四元数无奇点旋转",
+        )
+
+        els.append(card(20, 62, 352, 186))
+        els.append(txt(36, 84, "① 1843.10.16 布鲁姆桥石刻：放弃 ab = ba！", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(36, 102, "实数可除代数仅存 1、2、4 维（无 3 维！）⇒ 升入四维 ℍ", 10.4, MUTED))
+
+        els.append(card(34, 116, 166, 116, rx=8, fill="#f1f5f9", stroke=SLATE, sw=1.5))
+        els.append(txt(117, 136, "都柏林·皇家运河桥头", 10.2, MUTED, "middle", weight="600"))
+        els.append(txt(117, 160, "i² = j² = k²", 13.0, INK, "middle", weight="700", cls="mono"))
+        els.append(txt(117, 180, "= i j k = −1", 13.0, PURPLE, "middle", weight="700", cls="mono"))
+        els.append(txt(117, 203, "顺乘为正：ij = +k", 10.2, GREEN, "middle", weight="700"))
+        els.append(txt(117, 219, "逆乘反号：ji = −k", 10.2, ORANGE, "middle", weight="700"))
+
+        wcx, wcy, wr = 286.0, 174.0, 44.0
+        els.append(f'<circle cx="{wcx:.1f}" cy="{wcy:.1f}" r="{wr:.1f}" fill="none" stroke="{GREEN}" stroke-width="1.8" stroke-dasharray="5 3"/>')
+        nodes = [(90, "i", BLUE, BLUE_SOFT), (-30, "j", ORANGE, ORANGE_SOFT), (210, "k", PURPLE, PURPLE_SOFT)]
+        for ang_deg, sym, fg, bg in nodes:
+            ar = math.radians(ang_deg)
+            nx_p = wcx + wr * math.cos(ar)
+            ny_p = wcy - wr * math.sin(ar)
+            els.append(f'<circle cx="{nx_p:.1f}" cy="{ny_p:.1f}" r="14" fill="{bg}" stroke="{fg}" stroke-width="1.8"/>')
+            els.append(txt(nx_p, ny_p + 4, sym, 12.6, fg, "middle", weight="700", cls="mono"))
+        els.append(txt(wcx + 42, wcy - 28, "顺 +", 10.2, GREEN, weight="700"))
+        els.append(txt(wcx - 64, wcy - 28, "逆 −", 10.2, ORANGE, weight="700"))
+        els.append(txt(wcx, wcy + 5, "非交换环", 9.8, MUTED, "middle"))
+
+        els.append(card(388, 62, 352, 186))
+        els.append(txt(404, 84, "② 拆开四元数乘法：现代向量分析与 ∇ 算子诞生", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(404, 102, "哈密顿亲手造词：标量 Scalar、向量 Vector、张量 Tensor", 10.4, MUTED))
+
+        els.append(card(402, 116, 324, 56, rx=7, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(414, 136, "纯虚四元数相乘： u · v  =  −(u · v)  +  (u × v)", 11.2, INK, weight="700"))
+        els.append(txt(414, 157, "标量部 = 负点积（功/通量） ｜ 向量部 = 叉积（力矩/洛伦兹力）", 10.2, BLUE, weight="600"))
+
+        els.append(card(402, 180, 324, 54, rx=7, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(414, 199, "哈密顿算子 ∇ = i ∂/∂x + j ∂/∂y + k ∂/∂z（形似腓尼基竖琴）", 10.6, GREEN, weight="700"))
+        els.append(txt(414, 220, "梯度 ∇f  ｜  散度 ∇·E = ρ/ε₀  ｜  旋度 ∇×B （麦克斯韦方程组灵魂）", 10.1, BODY))
+
+        els.append(card(20, 260, 352, 202))
+        els.append(txt(36, 282, "③ 欧拉角死穴：俯仰 90° 触发“万向节死锁”", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(36, 300, "外环（偏航 Yaw）与内环（滚转 Roll）共面重合，痛失 1 个自由度！", 10.3, MUTED))
+
+        gcx, gcy = 114.0, 376.0
+        els.append(f'<ellipse cx="{gcx:.1f}" cy="{gcy:.1f}" rx="64" ry="26" fill="none" stroke="{ORANGE}" stroke-width="3.0"/>')
+        els.append(f'<ellipse cx="{gcx:.1f}" cy="{gcy:.1f}" rx="42" ry="17" fill="none" stroke="{ORANGE}" stroke-width="2.4" stroke-dasharray="5 3"/>')
+        els.append(f'<ellipse cx="{gcx:.1f}" cy="{gcy:.1f}" rx="18" ry="52" fill="none" stroke="{SLATE}" stroke-width="1.8"/>')
+        els.append(f'<line x1="{gcx:.1f}" y1="{gcy + 58:.1f}" x2="{gcx:.1f}" y2="{gcy - 60:.1f}" stroke="#dc2626" stroke-width="2.2" marker-end="url(#hm-orange)"/>')
+        els.append(txt(gcx, gcy + 70, "两轴共线锁死！", 10.2, "#dc2626", "middle", weight="700"))
+
+        els.append(txt(196, 334, "• 正常态：三枚环轴两两正交", 10.3, BODY))
+        els.append(txt(196, 355, "• 死锁态（Pitch = ±90°）：", 10.3, ORANGE, weight="700"))
+        els.append(txt(204, 373, "转外环与转内环产生完全相同旋转，", 10.1, BODY))
+        els.append(txt(204, 390, "横向抬头自由度瞬间清零！", 10.1, BODY))
+        els.append(txt(196, 414, "• 阿波罗 11 号与早期动画相机", 10.1, MUTED))
+        els.append(txt(204, 430, "都曾专门防范万向节死锁报警。", 10.1, MUTED))
+
+        els.append(card(388, 260, 352, 202))
+        els.append(txt(404, 282, "④ 王者归来：四元数三明治旋转 v′ = q v q⁻¹", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(404, 300, "q = cos(α/2) + u·sin(α/2)：零死锁、4 数紧凑、球面匀速插值 SLERP", 10.2, MUTED))
+
+        scx, scy, sr = 462.0, 376.0, 50.0
+        els.append(f'<circle cx="{scx:.1f}" cy="{scy:.1f}" r="{sr:.1f}" fill="{BLUE_SOFT}" fill-opacity="0.55" stroke="{BLUE}" stroke-width="1.6"/>')
+        els.append(f'<ellipse cx="{scx:.1f}" cy="{scy:.1f}" rx="{sr:.1f}" ry="16" fill="none" stroke="{BLUE_LINE}" stroke-width="1.1" stroke-dasharray="3 3"/>')
+
+        els.append(f'<line x1="{scx - 22:.1f}" y1="{scy + 34:.1f}" x2="{scx + 24:.1f}" y2="{scy - 44:.1f}" stroke="{GREEN}" stroke-width="2.1" marker-end="url(#hm-green)"/>')
+        els.append(txt(scx + 18, scy - 52, "转轴 u", 10.0, GREEN, "middle", weight="700", halo=True))
+        vx1, vy1 = scx - 40, scy - 8
+        vx2, vy2 = scx + 34, scy + 18
+        els.append(f'<line x1="{scx:.1f}" y1="{scy:.1f}" x2="{vx1:.1f}" y2="{vy1:.1f}" stroke="{SLATE}" stroke-width="1.8" stroke-dasharray="3 2"/>')
+        els.append(f'<line x1="{scx:.1f}" y1="{scy:.1f}" x2="{vx2:.1f}" y2="{vy2:.1f}" stroke="{PURPLE}" stroke-width="2.3" marker-end="url(#hm-purple)"/>')
+        els.append(f'<path d="M {vx1:.1f},{vy1:.1f} Q {scx + 4:.1f},{scy - 34:.1f} {vx2:.1f},{vy2:.1f}" fill="none" stroke="{PURPLE}" stroke-width="2.0" marker-end="url(#hm-purple)"/>')
+        els.append(f'<circle cx="{vx1:.1f}" cy="{vy1:.1f}" r="3.6" fill="{SLATE}"/>')
+        els.append(f'<circle cx="{vx2:.1f}" cy="{vy2:.1f}" r="4.0" fill="{PURPLE}"/>')
+        els.append(txt(vx1 - 4, vy1 - 8, "v", 10.4, SLATE, "end", weight="700"))
+        els.append(txt(vx2 + 6, vy2 + 4, "v′", 10.4, PURPLE, weight="700"))
+        els.append(txt(scx, scy + 68, "SLERP 大圆平滑插值", 10.1, BLUE, "middle", weight="700"))
+
+        els.append(txt(546, 330, "• 为什么乘半角 α/2？", 10.3, INK, weight="700"))
+        els.append(txt(554, 348, "左乘 q、右乘 q⁻¹ 各转 α/2，", 10.0, BODY))
+        els.append(txt(554, 364, "抵消四维分量、净转恰好 α！", 10.0, BODY))
+        els.append(txt(546, 386, "• 飞船姿态、机械臂、Unity/UE", 10.1, GREEN, weight="700"))
+        els.append(txt(554, 402, "三维引擎底层旋转标配。", 10.0, BODY))
+        els.append(card(546, 412, 180, 38, rx=6, fill=PURPLE_SOFT, stroke=PURPLE))
+        els.append(txt(554, 428, "图论彩蛋：1856 二十面体棋", 10.0, PURPLE, weight="700"))
+        els.append(txt(554, 443, "开创“哈密顿回路”遍历难题！", 9.8, BODY))
+
+        return figure(
+            476,
+            "1843年哈密顿布鲁姆桥发明四元数：非交换乘法环、向量分析∇算子与免万向节死锁三维旋转",
+            "左上展示1843年10月16日布鲁姆桥石刻公式与i、j、k顺正逆负的非交换循环；右上说明四元数乘法如何拆出标量点积、向量叉积及哈密顿算子∇；左下与右下对比欧拉角在俯仰90度时的万向节死锁与单位四元数v'=qvq^-1在三维空间无奇点SLERP球面插值旋转及1856年哈密顿回路。",
+            els,
+            extra_defs=EXTRA_ARR,
+        )
+
+    @register("hamilton-optics-physics", "哈密顿光学与数学物理：双轴晶体锥形折射、光程特征函数、相空间刘维尔定理、薛定谔量子桥与四元数旋转", "mechanics_sky")
+    def build_hamilton_optics_physics():
+        write_svg(SUBDIR, "conical-refraction-wave-surface.svg", _build_conical_refraction())
+        write_svg(SUBDIR, "characteristic-function-wavefront-rays.svg", _build_characteristic_function_optics())
+        write_svg(SUBDIR, "phase-space-liouville-flow-anim.svg", _build_phase_space_liouville())
+        write_svg(SUBDIR, "optico-mechanical-schrodinger-bridge.svg", _build_optico_mechanical_quantum())
+        write_svg(SUBDIR, "broom-bridge-quaternions-to-vectors.svg", _build_quaternions_and_vectors())
+
+
+_register_hamilton_optics_physics()
+
+
+# ---------------------------------------------------------------------------
+# Voyager 1 Interstellar Journey: Gravity Slingshot, Grand Tour, RTG, DSN & Oort Scale
+# ---------------------------------------------------------------------------
+def _register_voyager_1_interstellar():
+    SUBDIR = "voyager-1-interstellar"
+
+    EXTRA_ARR = (
+        f'<marker id="vg-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">'
+        f'<path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="{BLUE}"/></marker>'
+        f'<marker id="vg-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">'
+        f'<path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="{ORANGE}"/></marker>'
+        f'<marker id="vg-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">'
+        f'<path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="{GREEN}"/></marker>'
+        f'<marker id="vg-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">'
+        f'<path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="{PURPLE}"/></marker>'
+        f'<marker id="vg-ink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">'
+        f'<path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="{INK}"/></marker>'
+    )
+
+    # Exact physical & NASA NSSDCA (1977-084A) orbital constants
+    C_KMS = 299792.458
+    AU_KM = 149597870.7
+    LIGHT_DAY_KM = C_KMS * 86400.0
+    LIGHT_DAY_AU = LIGHT_DAY_KM / AU_KM
+    assert 25.90e9 < LIGHT_DAY_KM < 25.91e9
+    assert 173.1 < LIGHT_DAY_AU < 173.2
+
+    V_EARTH = 29.7847  # km/s circular heliocentric speed at 1 AU
+    V_ESC_1AU = V_EARTH * math.sqrt(2.0)  # 42.122 km/s
+
+    # Epoch 1 (Earth -> Jupiter, NSSDCA: rp=1.00 AU, ra=8.96 AU, e=0.79778)
+    A1_AU = 0.5 * (1.00 + 8.96)  # 4.98 AU
+    R_JUP = 5.20
+    R_SAT = 9.54
+    V_DEP_1AU = V_EARTH * math.sqrt(2.0 / 1.00 - 1.0 / A1_AU)  # 39.95 km/s < 42.12 km/s!
+    V_IN_JUP = V_EARTH * math.sqrt(2.0 / R_JUP - 1.0 / A1_AU)  # 12.77 km/s
+    V_ESC_JUP = V_ESC_1AU / math.sqrt(R_JUP)                  # 18.47 km/s
+
+    # Epoch 2 (Post-Jupiter hyperbola, NSSDCA: q=5.20 AU, e=2.30274)
+    A2_ABS = R_JUP / (2.30274 - 1.0)  # 3.9916 AU
+    V_OUT_JUP = V_EARTH * math.sqrt(2.0 / R_JUP + 1.0 / A2_ABS)  # 23.74 km/s
+    V_IN_SAT = V_EARTH * math.sqrt(2.0 / R_SAT + 1.0 / A2_ABS)   # 19.38 km/s
+    assert V_DEP_1AU < V_ESC_1AU and V_IN_JUP < V_ESC_JUP < V_OUT_JUP
+
+    # Jupiter flyby hyperbolic eccentricity e_J = 1.31898 -> turning angle delta = 2*asin(1/e_J)
+    E_J_FLYBY = 1.31898
+    TURN_DEG_J = math.degrees(2.0 * math.asin(1.0 / E_J_FLYBY))  # 98.54 deg
+    assert 98.0 < TURN_DEG_J < 99.0
+
+    # 1. Gravity Assist Vector Mechanics & Heliocentric Velocity Jump
+    def _build_gravity_slingshot_mechanics():
+        els = header(
+            "引力弹弓怎么“白嫖”速度？木星系里等速拐弯，太阳系里暴涨 10.9 km/s",
+            "左：行星参考系能量守恒与太阳参考系矢量叠加｜右：NASA 实测对日速度曲线跨越太阳逃逸门槛",
+        )
+
+        # Left Card: Jupiter Frame vs Sun Frame Vector Addition
+        els.append(card(20, 62, 352, 404))
+        els.append(txt(36, 84, "① 为什么“下坡加速、上坡减速”还能净赚速度？", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(36, 102, f"关键：木星不是静止靶，它正以 V_J ≈ 13.1 km/s 绕太阳狂奔！", 10.5, MUTED))
+
+        # Top sub-box: Jupiter rest frame exact hyperbola (e = 1.31898, turn = 98.5 deg)
+        els.append(card(34, 114, 324, 146, rx=8, fill="#f8fafc", stroke=BORDER))
+        els.append(txt(46, 132, f"A. 木星静止参考系：进出速率相等，方向偏转 {TURN_DEG_J:.1f}°", 10.5, BLUE, weight="700"))
+
+        jcx, jcy = 186.0, 198.0
+        # Plot hyperbola r(theta) = p / (1 + e cos theta) rotated so periapsis is at bottom-right behind Jupiter
+        p_px = 30.0
+        rot_ang = math.radians(-42.0)  # periapsis direction
+        hyp_pts = []
+        for k in range(-52, 53):
+            th = math.radians(k * 1.95)
+            r_h = p_px / (1.0 + E_J_FLYBY * math.cos(th))
+            if r_h < 108.0:
+                ang = th + rot_ang
+                hyp_pts.append((jcx + r_h * math.cos(ang), jcy - r_h * math.sin(ang)))
+        d_hyp = "M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in hyp_pts)
+        els.append(f'<path d="{d_hyp}" fill="none" stroke="{BLUE}" stroke-width="2.4" marker-end="url(#vg-blue)"/>')
+
+        # Jupiter globe
+        els.append(f'<circle cx="{jcx:.1f}" cy="{jcy:.1f}" r="16" fill="{ORANGE_SOFT}" stroke="{ORANGE}" stroke-width="2.0"/>')
+        els.append(f'<line x1="{jcx - 14:.1f}" y1="{jcy - 5:.1f}" x2="{jcx + 14:.1f}" y2="{jcy - 5:.1f}" stroke="{ORANGE}" stroke-width="1.4"/>')
+        els.append(f'<line x1="{jcx - 15:.1f}" y1="{jcy + 3:.1f}" x2="{jcx + 15:.1f}" y2="{jcy + 3:.1f}" stroke="{ORANGE}" stroke-width="1.8"/>')
+        els.append(txt(jcx - 22, jcy + 4, "木星", 10.4, ORANGE, "end", weight="700"))
+
+        # Labels on incoming & outgoing branches
+        p_in = hyp_pts[4]
+        p_out = hyp_pts[-4]
+        els.append(txt(p_in[0] - 8, p_in[1] + 13, "驶入 |v_∞| = 10.7", 10.0, BODY, "middle", weight="600", halo=True))
+        els.append(txt(p_out[0] + 10, p_out[1] - 6, "驶出 |v_∞| = 10.7 km/s", 10.0, BLUE, "middle", weight="700", halo=True))
+        els.append(txt(244, 224, "从木星后方绕过", 9.9, PURPLE, weight="700", halo=True))
+        els.append(txt(244, 240, "引力把速度矢量向前掰弯！", 9.8, MUTED, halo=True))
+
+        # Bottom sub-box: Sun frame vector addition + tennis ball train analogy
+        els.append(card(34, 270, 324, 182, rx=8, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(46, 289, "B. 太阳参考系矢量合成：v_日 = V_木星 + v_相对", 10.5, GREEN, weight="700"))
+
+        # Vector diagram Before vs After
+        # Before: V_J pointing up-left/right? Let's draw V_J horizontal right (96 px = 13.06 km/s, scale = 7.2 px per km/s)
+        sc_vec = 5.4
+        # Left mini-diagram: BEFORE flyby (v_in,sun = 12.8 km/s)
+        vx0, vy0 = 54.0, 372.0
+        vj_px = 13.06 * sc_vec  # 70.5 px right
+        v_inf_mag = 10.70
+        cos_in = (V_IN_JUP ** 2 - 13.06 ** 2 - v_inf_mag ** 2) / (2.0 * 13.06 * v_inf_mag)
+        ang_in = math.acos(cos_in)  # ~115.9 deg from +x
+        in_x = vx0 + vj_px + v_inf_mag * sc_vec * math.cos(ang_in)
+        in_y = vy0 - v_inf_mag * sc_vec * math.sin(ang_in)
+        els.append(txt(104, 307, "掠过前：合速度仅 12.8", 10.0, SLATE, "middle", weight="700"))
+        els.append(f'<line x1="{vx0:.1f}" y1="{vy0:.1f}" x2="{vx0 + vj_px:.1f}" y2="{vy0:.1f}" stroke="{ORANGE}" stroke-width="2.2" marker-end="url(#vg-orange)"/>')
+        els.append(f'<line x1="{vx0 + vj_px:.1f}" y1="{vy0:.1f}" x2="{in_x:.1f}" y2="{in_y:.1f}" stroke="{SLATE}" stroke-width="1.9" stroke-dasharray="3 2" marker-end="url(#vg-ink)"/>')
+        els.append(f'<line x1="{vx0:.1f}" y1="{vy0:.1f}" x2="{in_x:.1f}" y2="{in_y:.1f}" stroke="{INK}" stroke-width="2.4" marker-end="url(#vg-ink)"/>')
+        els.append(txt(vx0 + 36, vy0 + 13, "V_木 13.1", 9.6, ORANGE, "middle", weight="700"))
+        els.append(txt(vx0 + 12, vy0 - 28, "12.8", 10.0, INK, "middle", weight="700", halo=True))
+
+        # Right mini-diagram: AFTER flyby (v_out,sun = 23.74 km/s)
+        ox2, oy2 = 188.0, 372.0
+        ang_out = math.radians(17.0)
+        out_x = ox2 + vj_px + v_inf_mag * sc_vec * math.cos(ang_out)
+        out_y = oy2 - v_inf_mag * sc_vec * math.sin(ang_out)
+        els.append(txt(264, 307, "掠过后：转成顺向叠加 23.7！", 10.0, GREEN, "middle", weight="700"))
+        els.append(f'<line x1="{ox2:.1f}" y1="{oy2:.1f}" x2="{ox2 + vj_px:.1f}" y2="{oy2:.1f}" stroke="{ORANGE}" stroke-width="2.2" marker-end="url(#vg-orange)"/>')
+        els.append(f'<line x1="{ox2 + vj_px:.1f}" y1="{oy2:.1f}" x2="{out_x:.1f}" y2="{out_y:.1f}" stroke="{BLUE}" stroke-width="2.0" stroke-dasharray="3 2" marker-end="url(#vg-blue)"/>')
+        els.append(f'<line x1="{ox2:.1f}" y1="{oy2:.1f}" x2="{out_x:.1f}" y2="{out_y:.1f}" stroke="{GREEN}" stroke-width="2.8" marker-end="url(#vg-green)"/>')
+        els.append(txt(ox2 + 36, oy2 + 13, "V_木 13.1", 9.6, ORANGE, "middle", weight="700"))
+        els.append(txt(ox2 + 102, oy2 - 2, "+v_∞ 10.7", 9.6, BLUE, "middle", weight="700"))
+        els.append(txt(ox2 + 64, oy2 - 21, "v_出 ≈ 23.7 km/s", 10.2, GREEN, "middle", weight="700", halo=True))
+
+        # Train tennis analogy note
+        els.append(card(42, 392, 308, 50, rx=6, fill="#ffffff", stroke=HAIRLINE))
+        els.append(txt(196, 410, "网球比喻：30 km/h 网球迎撞 50 km/h 火车，相对车头以 80", 9.5, BODY, "middle"))
+        els.append(txt(196, 427, "弹回，叠加上火车 50 车速 ⇒ 对地飙到 130 km/h（木星慢 10⁻²⁴）", 9.5, GREEN, "middle", weight="700"))
+
+        # Right Card: Exact Heliocentric Speed vs Distance (1 to 32 AU)
+        els.append(card(388, 62, 352, 404))
+        els.append(txt(404, 84, "② 旅行者 1 号对日速度全账本（1 ～ 32 AU 实算曲线）", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(404, 102, "火箭离地时还差 2.2 km/s 才够逃离太阳，全靠木星一脚踹出重围", 10.4, MUTED))
+
+        px0, py0, pw, ph = 436.0, 356.0, 284.0, 224.0
+        r_min, r_max = 1.0, 32.0
+        v_max = 45.0
+
+        def rx_map(rv):
+            return px0 + ((rv - r_min) / (r_max - r_min)) * pw
+
+        def vy_map(vv):
+            return py0 - (vv / v_max) * ph
+
+        # Gridlines
+        for vv in (10, 20, 30, 40):
+            gy = vy_map(vv)
+            els.append(f'<line x1="{px0:.1f}" y1="{gy:.1f}" x2="{px0 + pw:.1f}" y2="{gy:.1f}" stroke="{SLATE_SOFT}" stroke-width="1"/>')
+            els.append(txt(px0 - 6, gy + 3.5, f"{vv}", 10.0, MUTED, "end"))
+        for rv, rlbl in ((1, "1(地球)"), (5.2, "5.2(木)"), (9.5, "9.5(土)"), (20, "20"), (30, "30 AU")):
+            gx = rx_map(rv)
+            els.append(f'<line x1="{gx:.1f}" y1="{py0:.1f}" x2="{gx:.1f}" y2="{py0 + 4:.1f}" stroke="#94a3b8" stroke-width="1.2"/>')
+            els.append(txt(gx, py0 + 16, rlbl, 9.8, MUTED, "middle"))
+        els.append(f'<path d="M{px0:.1f},{py0 - ph:.1f} V{py0:.1f} H{px0 + pw:.1f}" fill="none" stroke="#94a3b8" stroke-width="1.3"/>')
+        els.append(txt(px0 - 6, py0 - ph - 6, "km/s", 10.0, MUTED, "end"))
+
+        # Solar escape curve v_esc(r) = 42.122 / sqrt(r)
+        esc_pts = []
+        for i in range(125):
+            rv = r_min + (r_max - r_min) * i / 124.0
+            esc_pts.append((rx_map(rv), vy_map(V_ESC_1AU / math.sqrt(rv))))
+        # Light orange fill below escape curve
+        poly_trap = [(px0, py0)] + esc_pts + [(px0 + pw, py0)]
+        els.append(f'<polygon points="{" ".join(f"{x:.1f},{y:.1f}" for x, y in poly_trap)}" fill="{ORANGE}" fill-opacity="0.07"/>')
+        els.append(f'<polyline points="{" ".join(f"{x:.1f},{y:.1f}" for x, y in esc_pts)}" fill="none" stroke="{ORANGE}" stroke-width="2.0" stroke-dasharray="5 3"/>')
+        els.append(txt(rx_map(18.5), vy_map(V_ESC_1AU / math.sqrt(18.5)) + 14, "太阳逃逸速度线 √(2GM☉/r)", 9.9, ORANGE, "middle", weight="700", halo=True))
+
+        # Epoch 1: 1.00 -> 5.20 AU (and dashed no-Jupiter stall out to 8.96 AU!)
+        ep1_pts = []
+        for i in range(61):
+            rv = 1.00 + (R_JUP - 1.00) * i / 60.0
+            vv = V_EARTH * math.sqrt(2.0 / rv - 1.0 / A1_AU)
+            ep1_pts.append((rx_map(rv), vy_map(vv)))
+        els.append(f'<polyline points="{" ".join(f"{x:.1f},{y:.1f}" for x, y in ep1_pts)}" fill="none" stroke="{SLATE}" stroke-width="2.3"/>')
+
+        stall_pts = []
+        for i in range(41):
+            rv = R_JUP + (8.94 - R_JUP) * i / 40.0
+            vv = V_EARTH * math.sqrt(max(0.0, 2.0 / rv - 1.0 / A1_AU))
+            stall_pts.append((rx_map(rv), vy_map(vv)))
+        els.append(f'<polyline points="{" ".join(f"{x:.1f},{y:.1f}" for x, y in stall_pts)}" fill="none" stroke="{SLATE}" stroke-width="1.4" stroke-dasharray="3 3"/>')
+        els.append(txt(rx_map(8.9), vy_map(2.2) - 4, "无木星：8.96 AU 掉头", 9.5, SLATE, "start", halo=True))
+
+        # Jupiter vertical jump: 12.77 -> 23.74 km/s at 5.20 AU
+        jx = rx_map(R_JUP)
+        els.append(f'<line x1="{jx:.1f}" y1="{vy_map(V_IN_JUP):.1f}" x2="{jx:.1f}" y2="{vy_map(V_OUT_JUP):.1f}" stroke="{BLUE}" stroke-width="2.8" marker-end="url(#vg-blue)"/>')
+        els.append(f'<circle cx="{jx:.1f}" cy="{vy_map(V_IN_JUP):.1f}" r="3.6" fill="{SLATE}"/>')
+        els.append(f'<circle cx="{jx:.1f}" cy="{vy_map(V_OUT_JUP):.1f}" r="4.0" fill="{BLUE}"/>')
+        els.append(txt(jx + 6, vy_map(28.2), "木星弹弓 +10.9 km/s！", 10.0, BLUE, weight="700", halo=True))
+
+        # Epoch 2: 5.20 -> 9.54 AU
+        ep2_pts = []
+        for i in range(41):
+            rv = R_JUP + (R_SAT - R_JUP) * i / 40.0
+            vv = V_EARTH * math.sqrt(2.0 / rv + 1.0 / A2_ABS)
+            ep2_pts.append((rx_map(rv), vy_map(vv)))
+        els.append(f'<polyline points="{" ".join(f"{x:.1f},{y:.1f}" for x, y in ep2_pts)}" fill="none" stroke="{BLUE}" stroke-width="2.4"/>')
+
+        # Saturn kick (9.54 AU -> post-Saturn barycentric escape ~21.8 km/s tapering to ~17.0 km/s at infinity; a_esc_bary = V_EARTH^2 / 16.6^2 = 3.22 AU -> at 9.54 AU v=21.5, at 32 AU v=18.2, at 173 AU v=16.9!)
+        A3_BARY = (V_EARTH / 16.60) ** 2  # ~3.219 AU so v(173 AU) = 16.91 km/s (~3.57 AU/yr)!
+        v_post_sat = V_EARTH * math.sqrt(2.0 / R_SAT + 1.0 / A3_BARY)
+        sx = rx_map(R_SAT)
+        els.append(f'<line x1="{sx:.1f}" y1="{vy_map(V_IN_SAT):.1f}" x2="{sx:.1f}" y2="{vy_map(v_post_sat):.1f}" stroke="{GREEN}" stroke-width="2.5"/>')
+        els.append(f'<circle cx="{sx:.1f}" cy="{vy_map(v_post_sat):.1f}" r="4.0" fill="{GREEN}"/>')
+
+        ep3_pts = []
+        for i in range(81):
+            rv = R_SAT + (r_max - R_SAT) * i / 80.0
+            vv = V_EARTH * math.sqrt(2.0 / rv + 1.0 / A3_BARY)
+            ep3_pts.append((rx_map(rv), vy_map(vv)))
+        els.append(f'<polyline points="{" ".join(f"{x:.1f},{y:.1f}" for x, y in ep3_pts)}" fill="none" stroke="{GREEN}" stroke-width="2.6"/>')
+        els.append(txt(rx_map(24.0), vy_map(22.5), "土星再推一把 → 永超逃逸线", 9.8, GREEN, "middle", weight="700", halo=True))
+
+        # Summary takeaway card at bottom of Right Card
+        els.append(card(402, 384, 324, 68, rx=8, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(412, 403, "• 1977 离地对日 39.95 km/s < 太阳逃逸 42.12 km/s（封闭椭圆）", 9.5, BODY))
+        els.append(txt(412, 421, "• 1979 木星弹弓跃升至 23.7 km/s > 当地逃逸门槛 18.5 km/s", 9.5, BLUE, weight="700"))
+        els.append(txt(412, 439, "• 此后纯靠真空惯性滑行，2026 年仍保持 ≈17.0 km/s（3.57 AU/年）", 9.5, GREEN, weight="700"))
+
+        return figure(
+            482,
+            "旅行者1号木星与土星引力弹弓加速原理及对日速度跨越太阳逃逸速度实算图",
+            "左图对比木星参考系中等速偏转98.5度与太阳参考系叠加木星公转13.1 km/s后合速度从12.8跃升至23.7 km/s的矢量机制；右图根据NASA NSSDCA轨道根数绘制1至32 AU对日速度曲线，展示无木星时将在8.96 AU掉头，借木星与土星两次引力弹弓后永久高于太阳逃逸速度。",
+            els,
+            extra_defs=EXTRA_ARR,
+        )
+
+    # 2. 175-Year Grand Tour Planetary Alignment & Twin Trajectory Split (Animated)
+    def _build_grand_tour_alignment_anim():
+        # Verify Uranus-Neptune synodic period ~171.4 yr and 4-giant-planet alignment ~175-176 yr
+        t_j, t_s, t_u, t_n = 11.862, 29.457, 84.017, 164.79
+        t_syn_un = 1.0 / (1.0 / t_u - 1.0 / t_n)
+        assert 171.0 < t_syn_un < 172.0  # 9 J orbits = 171.4 / 19.86 -> ~175.6 yr full 4-planet repeat
+
+        anim_css = """
+  .vg-t1 { stroke-dasharray: 460; stroke-dashoffset: 460; animation: vgDraw1 5.6s cubic-bezier(.25,.6,.3,1) 0.3s forwards; }
+  .vg-t2 { stroke-dasharray: 560; stroke-dashoffset: 560; animation: vgDraw2 6.8s cubic-bezier(.25,.6,.3,1) 0.5s forwards; }
+  .vg-tag { opacity: 0.25; animation: vgShow 0.6s ease 4.8s forwards; }
+  @keyframes vgDraw1 { to { stroke-dashoffset: 0; } }
+  @keyframes vgDraw2 { to { stroke-dashoffset: 0; } }
+  @keyframes vgShow { to { opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) {
+    .vg-t1, .vg-t2 { animation: none !important; stroke-dashoffset: 0 !important; }
+    .vg-tag { animation: none !important; opacity: 1 !important; }
+  }"""
+
+        els = header(
+            "175 年一遇的“四巨星连珠”：为什么 1 号晚发 16 天，却偏偏不去天王星？",
+            "左：1977–1989 外太阳系同侧走廊与双子分道航迹（径向压缩示意）｜右：土卫六大气侦察与 35.8° 北折抉择",
+        )
+
+        # Left Card: Top-down Ecliptic Geometric Tour (radially compressed r^0.52 so 1..30 AU are clear)
+        els.append(card(20, 62, 396, 404))
+        els.append(txt(36, 84, "① 175 年同侧几何窗口与双子航迹（径向压缩示意）", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(36, 102, "上次同侧排列还是 1802 年杰斐逊总统任内；错过就要等到 2152 年前后", 10.3, MUTED))
+
+        scx, scy = 148.0, 326.0
+
+        def orb_r(au_val):
+            return 28.0 * (au_val ** 0.56)  # 1->28, 5.2->70.4, 9.54->99.1, 19.2->146.5, 30.1->188.6
+
+        # Semi-circular orbit arcs in upper-right quadrant
+        for au_v, lbl_p, col_p in (
+            (1.0, "地球 1 AU", SLATE),
+            (5.2, "木星 5.2", ORANGE),
+            (9.54, "土星 9.5", BLUE),
+            (19.2, "天王星 19.2", PURPLE),
+            (30.1, "海王星 30.1 AU", GREEN),
+        ):
+            rr = orb_r(au_v)
+            a1, a2 = math.radians(-22.0), math.radians(102.0)
+            x1, y1 = scx + rr * math.cos(a1), scy - rr * math.sin(a1)
+            x2, y2 = scx + rr * math.cos(a2), scy - rr * math.sin(a2)
+            els.append(f'<path d="M {x1:.1f},{y1:.1f} A {rr:.1f},{rr:.1f} 0 0 0 {x2:.1f},{y2:.1f}" fill="none" stroke="{HAIRLINE}" stroke-width="1.15" stroke-dasharray="3 3"/>')
+            lx, ly = scx + rr * math.cos(math.radians(98.0)), scy - rr * math.sin(math.radians(98.0))
+            if au_v >= 5.0:
+                els.append(txt(lx - 4, ly + 4, lbl_p, 9.6, col_p, "end", weight="600", halo=True))
+
+        # Sun
+        els.append(f'<circle cx="{scx:.1f}" cy="{scy:.1f}" r="8.5" fill="#f59e0b" stroke="#b45309" stroke-width="1.4"/>')
+        els.append(txt(scx - 12, scy + 18, "太阳", 10.0, "#b45309", "middle", weight="700"))
+
+        # Planet encounter positions (angular progression matching real counter-clockwise Grand Tour)
+        def pos(au_v, deg_v):
+            rr = orb_r(au_v)
+            rad = math.radians(deg_v)
+            return scx + rr * math.cos(rad), scy - rr * math.sin(rad)
+
+        p_earth = pos(1.0, -8.0)
+        p_jup = pos(5.2, 18.0)
+        p_sat1 = pos(9.54, 41.0)
+        p_sat2 = pos(9.54, 34.0)
+        p_ura = pos(19.2, 54.0)
+        p_nep = pos(30.1, 66.0)
+        p_v1_out = (368.0, 150.0)   # steep northward escape (+35.8 deg out of ecliptic)
+        p_v2_out = (388.0, 128.0)   # post-Neptune escape
+
+        # Faint static guide tracks (always visible per AGENTS.md)
+        d_v1 = (
+            f"M {p_earth[0]:.1f},{p_earth[1]:.1f} "
+            f"Q {scx + 56:.1f},{scy - 2:.1f} {p_jup[0]:.1f},{p_jup[1]:.1f} "
+            f"Q {p_jup[0] + 18:.1f},{p_jup[1] - 28:.1f} {p_sat1[0]:.1f},{p_sat1[1]:.1f} "
+            f"L {p_v1_out[0]:.1f},{p_v1_out[1]:.1f}"
+        )
+        d_v2 = (
+            f"M {p_earth[0]:.1f},{p_earth[1]:.1f} "
+            f"Q {scx + 62:.1f},{scy + 8:.1f} {p_jup[0] + 3:.1f},{p_jup[1] + 5:.1f} "
+            f"Q {p_jup[0] + 28:.1f},{p_jup[1] - 14:.1f} {p_sat2[0]:.1f},{p_sat2[1]:.1f} "
+            f"Q {p_sat2[0] + 34:.1f},{p_sat2[1] - 42:.1f} {p_ura[0]:.1f},{p_ura[1]:.1f} "
+            f"Q {p_ura[0] + 24:.1f},{p_ura[1] - 34:.1f} {p_nep[0]:.1f},{p_nep[1]:.1f} "
+            f"L {p_v2_out[0]:.1f},{p_v2_out[1]:.1f}"
+        )
+
+        els.append(f'<path d="{d_v2}" fill="none" stroke="{PURPLE}" stroke-width="1.4" stroke-opacity="0.26"/>')
+        els.append(f'<path d="{d_v1}" fill="none" stroke="{BLUE}" stroke-width="1.4" stroke-opacity="0.26"/>')
+        els.append(f'<path class="vg-t2" d="{d_v2}" fill="none" stroke="{PURPLE}" stroke-width="2.3" stroke-dasharray="6 3" marker-end="url(#vg-purple)"/>')
+        els.append(f'<path class="vg-t1" d="{d_v1}" fill="none" stroke="{BLUE}" stroke-width="2.7" marker-end="url(#vg-blue)"/>')
+
+        # Planet dots & encounter dates
+        for pt, r_dot, col_d, lbl_d, dx, dy, anc in (
+            (p_earth, 4.2, SLATE, "1977.08/09 发射", 12, 14, "start"),
+            (p_jup, 6.5, ORANGE, "木星 1979", 10, 8, "start"),
+            (p_sat1, 5.8, BLUE, "土星 1980/81", 12, 6, "start"),
+            (p_ura, 5.2, PURPLE, "天王星 1986", 10, 6, "start"),
+            (p_nep, 5.2, GREEN, "海王星 1989", -10, -8, "end"),
+        ):
+            els.append(f'<circle cx="{pt[0]:.1f}" cy="{pt[1]:.1f}" r="{r_dot}" fill="#ffffff" stroke="{col_d}" stroke-width="2.2"/>')
+            els.append(txt(pt[0] + dx, pt[1] + dy, lbl_d, 9.8, col_d, anc, weight="700", halo=True))
+
+        # Trajectory end tags
+        els.append(f'<g class="vg-tag">')
+        els.append(txt(p_v1_out[0] - 4, p_v1_out[1] + 20, "旅行者 1 号（实线）", 10.2, BLUE, "end", weight="700", halo=True))
+        els.append(txt(p_v1_out[0] - 4, p_v1_out[1] + 35, "北折 35.8° 直奔星际（3.57 AU/年）", 9.7, BLUE, "end", halo=True))
+        els.append(txt(p_v2_out[0] - 8, p_v2_out[1] - 6, "旅行者 2 号（虚线）：连访四巨星", 9.9, PURPLE, "end", weight="700", halo=True))
+        els.append(f'</g>')
+
+        # Bottom legend inside Left Card
+        els.append(card(34, 404, 368, 48, rx=6, fill="#f8fafc", stroke=BORDER))
+        els.append(txt(46, 422, "• 省时奇迹：直飞海王星需 ~30 年，旅行者 2 号借三连弹弓仅用 12 年！", 9.9, INK, weight="600"))
+        els.append(txt(46, 439, "• 构想起源：1965 年 JPL 实习生弗兰德罗算出 175 年窗口，促成“壮游计划”", 9.8, MUTED))
+
+        # Right Card: Why Voyager 1 Launched Later Yet Overtook V2, and Sacrificed Uranus for Titan
+        els.append(card(432, 62, 308, 404))
+        els.append(txt(448, 84, "② 三个最容易搞反的任务真相", PANEL_TITLE, INK, weight="700"))
+
+        cards_r = [
+            (
+                "1",
+                BLUE,
+                BLUE_SOFT,
+                "晚发 16 天，凭什么反而叫“1 号”？",
+                "• 2 号先走（1977.08.20），走曲率更缓的慢线；",
+                "• 1 号后发（1977.09.05），走更陡的快线；",
+                "• 1977.12.15 在小行星带超车，提前 4 个月抵木星！",
+            ),
+            (
+                "2",
+                ORANGE,
+                ORANGE_SOFT,
+                "为什么 1 号拍完土星就“脱离主路”？",
+                "• 头号目标：近距穿透土卫六（Titan）氮甲烷浓雾；",
+                "• 必须从土星南极下方斜掠，引力将其向北猛折 35.8°；",
+                "• 翘出黄道面无法再去天王星，却换来最快出逃速度！",
+            ),
+            (
+                "3",
+                GREEN,
+                GREEN_SOFT,
+                "为什么它们都没顺路去拍冥王星？",
+                "• 1 号若改飞冥王星就得放弃土卫六近距飞掠；",
+                "• 2 号若在海王星拐向冥王星，瞄准点要穿进海王星肚子；",
+                "• 冥王星直到 2015 年才由“新视野号”专程造访。",
+            ),
+        ]
+
+        for idx, (num_s, col_c, bg_c, title_c, l1, l2, l3) in enumerate(cards_r):
+            cy_card = 104 + idx * 116
+            els.append(card(446, cy_card, 280, 104, rx=8, fill=bg_c, stroke=col_c))
+            els.append(step_badge(462, cy_card + 20, num_s, fg=col_c, bg="#ffffff", r=10))
+            els.append(txt(478, cy_card + 24, title_c, 10.6, INK, weight="700"))
+            els.append(txt(456, cy_card + 47, l1, 9.9, BODY))
+            els.append(txt(456, cy_card + 66, l2, 9.9, BODY))
+            els.append(txt(456, cy_card + 85, l3, 9.9, col_c, weight="700"))
+
+        return figure(
+            482,
+            "175年一遇外太阳系四巨星连珠窗口与旅行者1号2号分道航迹动画图解",
+            "左图展示1977至1989年木星、土星、天王星、海王星同侧几何走廊（径向压缩示意），动画演示旅行者1号在土星因贴掠土卫六向北偏折35.8度高速奔向星际空间，而旅行者2号连访四颗巨行星；右图解释1号晚发超车、土卫六轨道取舍与未访冥王星的原因。",
+            els,
+            extra_css=anim_css,
+            extra_defs=EXTRA_ARR,
+        )
+
+    # 3. Plutonium-238 MHW-RTG Nuclear Battery & 50-Year Power Triage Curve
+    def _build_rtg_power_survival():
+        # Verify solar inverse-square at 1 light-day (173.15 AU) & Pu-238 decay
+        inv_sq_1ld = LIGHT_DAY_AU ** 2  # ~29,980
+        assert 29900 < inv_sq_1ld < 30100
+        t_half = 87.7
+        pu_rem_2026 = 0.5 ** ((2026.88 - 1977.68) / t_half)  # ~0.678 (67.8% isotope left!)
+        assert 0.67 < pu_rem_2026 < 0.69
+
+        els = header(
+            "阳光只剩三万分之一，靠什么撑满半世纪？钚-238 温差核电池与“断臂求生”账本",
+            "左：3 台串联 MHW-RTG 塞贝克温差发电结构｜右：470 W 跌至 ~213 W 衰减曲线与 +2°C 联氨防冻红线",
+        )
+
+        # Left Card: MHW-RTG Schematic & Inverse-Square Sunlight Collapse
+        els.append(card(20, 62, 352, 412))
+        els.append(txt(36, 84, "① 不是核反应堆！无运动部件的“温差发电保温杯”", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(36, 102, "173 AU 处阳光仅地球 1/30,000（0.045 W/m²），光伏帆板彻底失效", 10.3, MUTED))
+
+        # Cutaway cylinder of an MHW-RTG
+        els.append(card(34, 116, 324, 210, rx=8, fill="#f8fafc", stroke=BORDER))
+        els.append(txt(196, 135, "单台 MHW-RTG 剖面（全船吊杆串联 3 台，总初功率 ~470 W）", 10.2, INK, "middle", weight="700"))
+
+        # Radiator fins top & bottom
+        rcx, rcy = 122.0, 218.0
+        for fy in (152, 272):
+            els.append(f'<polygon points="{rcx - 62},{fy} {rcx + 62},{fy} {rcx + 50},{fy + (12 if fy < 200 else -12)} {rcx - 50},{fy + (12 if fy < 200 else -12)}" fill="{SLATE_SOFT}" stroke="{SLATE}" stroke-width="1.3"/>')
+        # Outer beryllium case
+        els.append(f'<rect x="{rcx - 72:.1f}" y="164" width="144" height="108" rx="10" fill="#e2e8f0" stroke="{SLATE}" stroke-width="1.8"/>')
+        # SiGe thermocouple ring
+        els.append(f'<rect x="{rcx - 58:.1f}" y="178" width="116" height="80" rx="8" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.6" stroke-dasharray="4 2"/>')
+        # Glowing PuO2 ceramic core
+        els.append(f'<rect x="{rcx - 44:.1f}" y="194" width="88" height="48" rx="6" fill="{ORANGE_SOFT}" stroke="{ORANGE}" stroke-width="2.2"/>')
+        els.append(txt(rcx, 214, "²³⁸PuO₂ 陶瓷丸", 9.4, ORANGE, "middle", weight="700"))
+        els.append(txt(rcx, 231, "α 衰变 ~1000°C", 9.2, ORANGE, "middle", weight="600"))
+
+        # Callout arrows to right side of cylinder
+        els.append(f'<line x1="{rcx + 44:.1f}" y1="206" x2="206" y2="176" stroke="{ORANGE}" stroke-width="1.4"/>')
+        els.append(txt(210, 173, "热端：半衰期 87.7 年", 9.6, ORANGE, weight="700"))
+        els.append(txt(210, 188, "α 粒子一张纸即可挡住", 9.4, BODY))
+
+        els.append(f'<line x1="{rcx + 58:.1f}" y1="218" x2="206" y2="218" stroke="{BLUE}" stroke-width="1.4"/>')
+        els.append(txt(210, 215, "312 对硅锗热电偶", 9.6, BLUE, weight="700"))
+        els.append(txt(210, 230, "塞贝克温差直变直流电", 9.4, BODY))
+
+        els.append(f'<line x1="{rcx + 64:.1f}" y1="254" x2="206" y2="258" stroke="{SLATE}" stroke-width="1.4"/>')
+        els.append(txt(210, 255, "冷端：铍壳散热翅片", 9.6, SLATE, weight="700"))
+        els.append(txt(210, 270, "向深空辐射排热造温差", 9.4, BODY))
+
+        els.append(txt(196, 313, "零旋转齿轮、零磨损阀门 ⇒ 连续发电 49 年从不卡壳！", 9.8, GREEN, "middle", weight="700"))
+
+        # Bottom box inside Left Card: Why +2°C Hydrazine Freezing Is the Real Killer
+        els.append(card(34, 338, 324, 122, rx=8, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(44, 358, "极寒生死线：为什么还剩 210 多瓦电，却连关科学仪器？", 9.9, ORANGE, weight="700"))
+        els.append(txt(44, 378, "• 姿态推进剂“联氨（N₂H₄）”冰点高达 +2°C（比水还娇气！）", 9.5, INK, weight="600"))
+        els.append(txt(44, 397, "• 一旦管路冻住，推进器失灵 → 天线偏离地球 0.5° 即失联", 9.5, BODY))
+        els.append(txt(44, 416, "• 如今大半电力全在给油路和电脑“贴暖宝宝”保命；", 9.5, BODY))
+        els.append(txt(44, 435, "• 2026.09 刚完成“Big Bang”三组加热器同步切换降耗！", 9.5, PURPLE, weight="700"))
+
+        # Right Card: Exact Power Decay Curve (1977 - 2036) & Instrument Triage Milestones
+        els.append(card(388, 62, 352, 412))
+        els.append(txt(404, 84, "② 电功率衰减曲线（每年掉 ~4 W）与仪器关机时间表", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(404, 102, "双杀叠加：²³⁸Pu 放射性热源自然衰变 + 硅锗热电偶半世纪老化", 10.3, MUTED))
+
+        gx0, gy0, gw, gh = 438.0, 342.0, 282.0, 206.0
+        y_min_yr, y_max_yr = 1977.0, 2037.0
+        w_max = 500.0
+
+        def tx_map(yr):
+            return gx0 + ((yr - y_min_yr) / (y_max_yr - y_min_yr)) * gw
+
+        def wy_map(wv):
+            return gy0 - (wv / w_max) * gh
+
+        for wv in (100, 200, 300, 400, 500):
+            yy = wy_map(wv)
+            els.append(f'<line x1="{gx0:.1f}" y1="{yy:.1f}" x2="{gx0 + gw:.1f}" y2="{yy:.1f}" stroke="{SLATE_SOFT}" stroke-width="1"/>')
+            els.append(txt(gx0 - 6, yy + 3.5, f"{wv}W", 9.8, MUTED, "end"))
+        for yr in (1977, 1990, 2005, 2020, 2026, 2035):
+            xx = tx_map(yr)
+            els.append(f'<line x1="{xx:.1f}" y1="{gy0:.1f}" x2="{xx:.1f}" y2="{gy0 + 4:.1f}" stroke="#94a3b8" stroke-width="1.2"/>')
+            els.append(txt(xx, gy0 + 16, f"{yr}", 9.8, MUTED, "middle"))
+        els.append(f'<path d="M{gx0:.1f},{gy0 - gh:.1f} V{gy0:.1f} H{gx0 + gw:.1f}" fill="none" stroke="#94a3b8" stroke-width="1.3"/>')
+
+        # Curve 1 (dashed): Pure Pu-238 isotope decay without thermocouple aging: 470 * 0.5^((yr-1977.68)/87.7)
+        iso_pts = []
+        # Curve 2 (solid): Actual electrical power matching NASA points:
+        # P(t) = 470 * 0.5^(dt/87.7) * exp(-0.00495 * dt) -> check dt=19.3 (1997): 470*0.859*0.909 = 367/335;
+        # More exact NASA fit: thermocouple degradation fastest in first 15 yrs then ~4.1 W/yr linear-exponential:
+        def p_elec(yr):
+            dt = max(0.0, yr - 1977.68)
+            p_iso = 470.0 * (0.5 ** (dt / 87.7))
+            eta_rel = 0.895 + 0.105 * math.exp(-dt / 8.0) - 0.00425 * dt
+            return p_iso * eta_rel
+
+        assert 468.0 < p_elec(1977.68) < 471.0
+        assert 330.0 < p_elec(1997.0) < 342.0
+        assert 220.0 < p_elec(2023.5) < 232.0
+        assert 210.0 < p_elec(2026.88) < 220.0
+
+        act_pts = []
+        for i in range(121):
+            yr = y_min_yr + (y_max_yr - y_min_yr) * i / 120.0
+            dt = max(0.0, yr - 1977.68)
+            iso_pts.append((tx_map(yr), wy_map(470.0 * (0.5 ** (dt / 87.7)))))
+            act_pts.append((tx_map(yr), wy_map(p_elec(yr))))
+
+        els.append(f'<polyline points="{" ".join(f"{x:.1f},{y:.1f}" for x, y in iso_pts)}" fill="none" stroke="{SLATE}" stroke-width="1.7" stroke-dasharray="4 3"/>')
+        els.append(txt(tx_map(2016), wy_map(362), "仅算同位素衰变（理论上限）", 9.6, SLATE, "middle", halo=True))
+
+        # Threshold band around ~180-195 W (~2030-2035 telecom + heater floor)
+        y_floor = wy_map(185.0)
+        els.append(f'<rect x="{gx0:.1f}" y="{y_floor:.1f}" width="{gw:.1f}" height="{gy0 - y_floor:.1f}" fill="{ORANGE}" fill-opacity="0.08"/>')
+        els.append(f'<line x1="{gx0:.1f}" y1="{y_floor:.1f}" x2="{gx0 + gw:.1f}" y2="{y_floor:.1f}" stroke="{ORANGE}" stroke-width="1.4" stroke-dasharray="4 3"/>')
+        els.append(txt(gx0 + 8, y_floor + 14, "防冻加热 + 无线电最低维持线（约 2030 年代失联）", 9.5, ORANGE, weight="700", halo=True))
+
+        els.append(f'<polyline points="{" ".join(f"{x:.1f},{y:.1f}" for x, y in act_pts)}" fill="none" stroke="{BLUE}" stroke-width="2.7"/>')
+
+        # Key milestone dots on actual curve
+        for yr_m, lbl_m, col_m, dx_m, dy_m, anc_m in (
+            (1977.7, "1977 发射 470 W", BLUE, 4, -8, "start"),
+            (1990.1, "1990 拍完暗淡蓝点关相机", PURPLE, 6, -10, "start"),
+            (2012.6, "2012 闯入星际", GREEN, -4, -12, "end"),
+            (2026.9, "2026 ~218 W（仅剩 2 台）", ORANGE, 8, -10, "end"),
+        ):
+            mx, my = tx_map(yr_m), wy_map(p_elec(yr_m))
+            els.append(f'<circle cx="{mx:.1f}" cy="{my:.1f}" r="4.0" fill="#ffffff" stroke="{col_m}" stroke-width="2.2"/>')
+            els.append(txt(mx + dx_m, my + dy_m, lbl_m, 9.5, col_m, anc_m, weight="700", halo=True))
+
+        # Bottom summary list of active vs shutoff instruments in Nov 2026
+        els.append(card(402, 372, 324, 88, rx=8, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(412, 391, "截至 2026 年 11 月仪器生死簿（10 台科学仪器关剩 2 台）：", 9.9, INK, weight="700"))
+        els.append(txt(412, 410, "• 仍在坚守（2 台）：磁强计 MAG + 等离子体波子系统 PWS", 9.6, GREEN, weight="700"))
+        els.append(txt(412, 428, "• 近年关停：宇宙射线 CRS（2025.02）｜低能粒子 LECP（2026.04）", 9.4, BODY))
+        els.append(txt(412, 446, "• 早年关停：双相机 ISS（1990）｜红外 IRIS（1998）｜紫外 UVS", 9.4, MUTED))
+
+        return figure(
+            490,
+            "旅行者1号钚238放射性同位素温差核电池原理与1977至2036年电功率衰减关机时间表",
+            "左图展示MHW-RTG利用二氧化钚238自然α衰变热与312对硅锗热电偶塞贝克效应无磨损发电的结构，并解释联氨推进剂+2摄氏度结冰红线；右图绘制总电功率从1977年470瓦以每年约4瓦降至2026年约213瓦的实测曲线及10台科学仪器关停至仅剩MAG和PWS的过程。",
+            els,
+            extra_defs=EXTRA_ARR,
+        )
+
+    # 4. 23-Watt Transmitter Across 1 Light-Day (25.9 Billion km) & 69.63 KB Brain Surgery
+    def _build_dsn_link_and_computer():
+        # Verify X-band 8.4 GHz wavelength, 3.66m HGA beamwidth & received power order of magnitude
+        freq_hz = 8.4e9
+        lam_m = (C_KMS * 1000.0) / freq_hz  # 0.03569 m (~3.57 cm)
+        d_hga = 3.66
+        beam_deg = math.degrees(1.22 * lam_m / d_hga)  # ~0.68 deg!
+        assert 0.60 < beam_deg < 0.75
+        # Friis link budget check at R = 2.59e13 m: Pt = 23 W, Gt ~ eta*(pi*D/lam)^2 (~48 dBi = 6.3e4), Ar_70m ~ 0.65*pi*35^2 = 2500 m^2
+        # Pr = Pt * Gt * Ar / (4 * pi * R^2) = 23 * 6.3e4 * 2500 / (12.566 * (2.59e13)^2) ~ 4.3e-19 to 1e-20 W (including losses)!
+        pr_watts = 23.0 * (0.55 * (math.pi * d_hga / lam_m) ** 2) * (0.62 * math.pi * 35.0 ** 2) / (4.0 * math.pi * (LIGHT_DAY_KM * 1000.0) ** 2)
+        assert 1e-20 < pr_watts < 1e-18
+
+        els = header(
+            "23 瓦“冰箱灯泡”怎样喊穿 259 亿公里？深空网 70 米巨耳与 69 KB 内存奇迹",
+            "上：1 光日（单程 24 小时）X 波段极窄波束链路｜下：69.63 KB 古董电脑远程拆代码与光速延迟尺",
+        )
+
+        # Top Full-Width Card: End-to-End 1-Light-Day Link
+        els.append(card(20, 62, 720, 206))
+        els.append(txt(36, 84, "① 跨越 1 光日（259.02 亿 km）的极限通信账：功率稀释 10²¹ 倍还能听见！", PANEL_TITLE, INK, weight="700"))
+
+        # Left: Voyager 1 HGA + 23 W X-band
+        els.append(card(36, 98, 196, 154, rx=8, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(134, 117, "飞船端：旅行者 1 号", 10.6, BLUE, "middle", weight="700"))
+        # Dish icon facing right
+        els.append(f'<rect x="54" y="148" width="22" height="32" rx="3" fill="{SLATE_SOFT}" stroke="{SLATE}" stroke-width="1.5"/>')
+        els.append(f'<path d="M 86,132 Q 68,164 86,196" fill="none" stroke="{BLUE}" stroke-width="3.0"/>')
+        els.append(f'<line x1="82" y1="164" x2="100" y2="164" stroke="{BLUE}" stroke-width="1.8"/>')
+        els.append(f'<circle cx="102" cy="164" r="3.2" fill="{ORANGE}"/>')
+        els.append(txt(114, 146, "• 3.7 米抛物面天线", 9.9, INK, weight="700"))
+        els.append(txt(114, 164, "• 发射功率仅 23 W", 9.9, ORANGE, weight="700"))
+        els.append(txt(114, 181, f"• 8.4 GHz 波束宽 {beam_deg:.2f}°", 9.8, BODY))
+        els.append(txt(134, 214, "主动降速至 160 bps 攒信噪比", 9.8, BLUE, "middle", weight="600"))
+        els.append(txt(134, 232, "（歪 0.5° 地球就彻底收不到！）", 9.6, MUTED, "middle"))
+
+        # Middle: Narrow radio beam crossing 25.9 billion km (24h one-way)
+        els.append(f'<polygon points="234,158 518,128 518,200 234,170" fill="{ORANGE}" fill-opacity="0.11"/>')
+        els.append(f'<line x1="234" y1="160" x2="514" y2="132" stroke="{ORANGE}" stroke-width="1.6" stroke-dasharray="5 3" marker-end="url(#vg-orange)"/>')
+        els.append(f'<line x1="234" y1="168" x2="514" y2="196" stroke="{ORANGE}" stroke-width="1.6" stroke-dasharray="5 3" marker-end="url(#vg-orange)"/>')
+        els.append(txt(376, 120, "2026.11.18 突破 1 光日 = 259.02 亿 km（173.1 AU）", 10.3, ORANGE, "middle", weight="700", halo=True))
+        els.append(txt(376, 162, "光速飞行单程 24 小时整｜一问一答往返 48 小时！", 10.2, INK, "middle", weight="700", halo=True))
+        els.append(txt(376, 182, "平方反比稀释 1/(4πR²) ⇒ 落地功率仅剩 ~10⁻¹⁹～10⁻²⁰ W", 9.8, PURPLE, "middle", weight="700", halo=True))
+        els.append(txt(376, 224, "（不到电子表电池功率的百亿亿分之一！）", 9.7, MUTED, "middle"))
+
+        # Right: NASA Deep Space Network (3 x 120 deg global 70m dishes)
+        els.append(card(522, 98, 202, 154, rx=8, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(623, 117, "地球端：NASA 深空网 DSN", 10.6, GREEN, "middle", weight="700"))
+        # 70m dish icon + 3 stations around Earth
+        els.append(f'<circle cx="562" cy="166" r="21" fill="#ffffff" stroke="{GREEN}" stroke-width="1.6"/>')
+        for ang_s, st_lbl in ((90, "加州"), (210, "马德里"), (330, "堪培拉")):
+            rx_s = 562 + 21 * math.cos(math.radians(ang_s))
+            ry_s = 166 - 21 * math.sin(math.radians(ang_s))
+            els.append(f'<circle cx="{rx_s:.1f}" cy="{ry_s:.1f}" r="3.8" fill="{GREEN}"/>')
+        els.append(txt(562, 170, "120°", 9.5, GREEN, "middle", weight="700"))
+        els.append(txt(594, 146, "• 70 米巨型抛物面天线", 9.9, INK, weight="700"))
+        els.append(txt(594, 164, "• 液氦超低温放大器", 9.9, GREEN, weight="700"))
+        els.append(txt(594, 181, "• 全球经度隔 120° 三站", 9.8, BODY))
+        els.append(txt(623, 214, "戈德斯通 · 马德里 · 堪培拉", 9.8, GREEN, "middle", weight="600"))
+        els.append(txt(623, 232, "地球自转 24 小时无缝接力盯防", 9.6, MUTED, "middle"))
+
+        # Bottom Left Card: 69.63 KB Computer & 2024 Remote Code Surgery
+        els.append(card(20, 284, 352, 192))
+        els.append(txt(36, 306, "② 69.63 KB 内存上的“星际脑外科手术”", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(36, 324, "全船三台电脑每秒仅算 8,000 次（不及手机百万分之一！）", 9.8, MUTED))
+
+        # Memory block diagram showing broken chip -> code sliced into 3 spare corners
+        els.append(card(36, 338, 320, 74, rx=6, fill="#f8fafc", stroke=BORDER))
+        els.append(card(48, 350, 92, 50, rx=5, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(94, 371, "FDS 损坏芯片", 9.9, ORANGE, "middle", weight="700"))
+        els.append(txt(94, 388, "2023.11 传回乱码", 9.4, BODY, "middle"))
+
+        els.append(f'<line x1="144" y1="375" x2="184" y2="375" stroke="{PURPLE}" stroke-width="2.0" marker-end="url(#vg-purple)"/>')
+        els.append(txt(164, 366, "拆段搬家", 9.3, PURPLE, "middle", weight="700"))
+
+        for k_slot, (sy_slot, sl_lbl) in enumerate(((346, "空闲角 A：工程打包代码"), (368, "空闲角 B：科学打包段 1"), (390, "空闲角 C：科学打包段 2"))):
+            els.append(f'<rect x="190" y="{sy_slot}" width="154" height="17" rx="3" fill="{PURPLE_SOFT}" stroke="{PURPLE}" stroke-width="1.1"/>')
+            els.append(txt(267, sy_slot + 12, sl_lbl, 9.2, PURPLE, "middle", weight="600"))
+
+        els.append(txt(36, 433, "• 无整块空余内存 → 手拆代码塞进多处边角并重写跳转；", 9.5, BODY))
+        els.append(txt(36, 452, "• 2024.04 奇迹复活！2026.11 冲一光日前夕再度远程排障。", 9.5, PURPLE, weight="700"))
+
+        # Bottom Right Card: Cosmic Light-Time Ladder
+        els.append(card(388, 284, 352, 192))
+        els.append(txt(404, 306, "③ 光速延迟阶梯：为什么“1 光日”是史诗级路标？", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(404, 324, "真空光速 c ≈ 30 万 km/s，连光都要跑整整一昼夜", 10.1, MUTED))
+
+        rungs = [
+            ("地球 → 月球（38.4 万 km）", "1.28 光秒", 24, SLATE),
+            ("太阳 → 地球（1 AU = 1.5 亿 km）", "8 分 20 秒", 68, BLUE),
+            ("地球 → 海王星（约 45 亿 km）", "4 小时 10 分", 136, PURPLE),
+            ("地球 → 旅行者 1 号（259 亿 km）", "24 小时（1 光日！）", 216, ORANGE),
+            ("太阳 → 最近恒星比邻星", "4.24 光年（1549 光日）", 316, GREEN),
+        ]
+        for idx_r, (r_name, r_time, bar_w, r_col) in enumerate(rungs):
+            ry = 342 + idx_r * 25
+            els.append(f'<rect x="404" y="{ry}" width="{bar_w}" height="17" rx="4" fill="{r_col}" fill-opacity="0.16" stroke="{r_col}" stroke-width="1.2"/>')
+            els.append(txt(410, ry + 12.5, r_name, 9.5, INK, weight="600"))
+            els.append(txt(726, ry + 12.5, r_time, 9.6, r_col, "end", weight="700", halo=True))
+
+        return figure(
+            492,
+            "旅行者1号23瓦X波段跨越1光日深空网通信链路与69KB计算机远程代码修复图解",
+            "上图展示旅行者1号用3.7米高增益天线和23瓦X波段发射机跨越259.02亿公里（1光日，单程24小时），由全球间隔120度的三座NASA深空网70米天线接收约10^-20瓦微弱信号；左下图图解69.63 KB内存中拆分搬迁FDS损坏芯片代码的过程；右下图对比从地月1.28光秒到1光日与比邻星4.24光年的光行时间阶梯。",
+            els,
+            extra_defs=EXTRA_ARR,
+        )
+
+    # 5. Logarithmic Cosmic Ruler: Heliopause (122 AU) vs 1 Light-Day (173 AU) vs Oort Cloud (50,000 AU)
+    def _build_heliopause_vs_oort_scale():
+        # 10-meter dining table scale check: radius 50,000 AU = 5.0 m (500 cm = 5000 mm)
+        # -> 1 AU = 0.1 mm! Neptune 30 AU = 3.0 mm! Voyager 1 at 173.1 AU = 17.3 mm = 1.73 cm!
+        r_oort_au = 50000.0
+        table_r_cm = 500.0  # 10 m diameter -> 500 cm radius
+        neptune_mm = (30.1 / r_oort_au) * (table_r_cm * 10.0)
+        voyager_cm = (LIGHT_DAY_AU / r_oort_au) * table_r_cm
+        assert 2.9 < neptune_mm < 3.1
+        assert 1.70 < voyager_cm < 1.76
+
+        els = header(
+            "冲进星际空间 ≠ 飞出太阳系！一张对数标尺分清“日球层磁泡”与“奥尔特云”",
+            "上：10⁰ ～ 3×10⁵ AU 对数全景尺｜下：2012 日球层顶粒子反转铁证与 10 米圆桌真实比例尺",
+        )
+
+        # Top Full-Width Logarithmic Scale Card
+        els.append(card(20, 62, 720, 212))
+        els.append(txt(36, 84, "① 太阳系对数坐标全景尺（每向右一格距离放大 10 倍！）", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(36, 102, "按等离子体算，2012 年已进星际空间；按太阳引力疆界算，还要再飞约 3 万年才出奥尔特云", 10.2, MUTED))
+
+        lx0, lx1, ly = 54.0, 706.0, 184.0
+        log_min, log_max = 0.0, 5.50  # 1 AU to ~316,000 AU (Proxima = 268,142 AU)
+
+        def log_x(au_v):
+            return lx0 + ((math.log10(au_v) - log_min) / (log_max - log_min)) * (lx1 - lx0)
+
+        # Colored domain bands along axis
+        x_helio = log_x(122.0)
+        x_oort_in = log_x(1500.0)
+        x_oort_out = log_x(60000.0)
+        els.append(f'<rect x="{lx0:.1f}" y="{ly - 20:.1f}" width="{x_helio - lx0:.1f}" height="40" rx="4" fill="{ORANGE}" fill-opacity="0.12"/>')
+        els.append(f'<rect x="{x_helio:.1f}" y="{ly - 20:.1f}" width="{x_oort_out - x_helio:.1f}" height="40" fill="{BLUE}" fill-opacity="0.10"/>')
+        els.append(f'<rect x="{x_oort_in:.1f}" y="{ly - 12:.1f}" width="{x_oort_out - x_oort_in:.1f}" height="24" rx="4" fill="{PURPLE}" fill-opacity="0.14" stroke="{PURPLE}" stroke-width="1.1" stroke-dasharray="3 2"/>')
+        els.append(f'<rect x="{x_oort_out:.1f}" y="{ly - 20:.1f}" width="{lx1 - x_oort_out:.1f}" height="40" rx="4" fill="{GREEN}" fill-opacity="0.11"/>')
+
+        els.append(txt((lx0 + x_helio) / 2, ly + 40, "太阳风磁泡：日球层内", 9.8, ORANGE, "middle", weight="700"))
+        els.append(txt((x_oort_in + x_oort_out) / 2, ly + 40, "奥尔特彗星云（仍受太阳引力束缚）", 9.8, PURPLE, "middle", weight="700"))
+        els.append(txt((x_oort_out + lx1) / 2, ly + 40, "恒星际自由区", 9.6, GREEN, "middle", weight="700"))
+
+        # Main axis + decade ticks 10^0 .. 10^5
+        els.append(f'<line x1="{lx0:.1f}" y1="{ly:.1f}" x2="{lx1:.1f}" y2="{ly:.1f}" stroke="{INK}" stroke-width="2.0"/>')
+        for p_dec in range(6):
+            tx = log_x(10.0 ** p_dec)
+            els.append(f'<line x1="{tx:.1f}" y1="{ly - 6:.1f}" x2="{tx:.1f}" y2="{ly + 6:.1f}" stroke="{INK}" stroke-width="1.5"/>')
+            els.append(txt(tx, ly + 23, f"10^{p_dec} AU", 9.4, MUTED, "middle", halo=True))
+
+        # Landmark pins alternating above / staggered above so zero overlap!
+        pins = [
+            (1.0, "地球 1", SLATE, -32, "start"),
+            (5.2, "木 5.2", SLATE, -52, "middle"),
+            (30.1, "海王星 30", SLATE, -32, "middle"),
+            (122.0, "日球层顶 122 AU (2012)", BLUE, -62, "middle"),
+            (LIGHT_DAY_AU, "1 光日 173 AU (2026.11) ★", ORANGE, -34, "start"),
+            (1500.0, "奥尔特内缘 (~300年后)", PURPLE, -58, "middle"),
+            (60000.0, "引力边界 (~3万年后)", PURPLE, -34, "middle"),
+            (268142.0, "比邻星 4.24光年", GREEN, -58, "end"),
+        ]
+        for au_p, lbl_p, col_p, dy_p, anc_p in pins:
+            px = log_x(au_p)
+            els.append(f'<line x1="{px:.1f}" y1="{ly:.1f}" x2="{px:.1f}" y2="{ly + dy_p + 6:.1f}" stroke="{col_p}" stroke-width="1.3"/>')
+            els.append(f'<circle cx="{px:.1f}" cy="{ly:.1f}" r="3.8" fill="#ffffff" stroke="{col_p}" stroke-width="2.2"/>')
+            els.append(txt(px, ly + dy_p, lbl_p, 9.6, col_p, anc_p, weight="700", halo=True))
+
+        els.append(txt(36, 256, "注：1 AU（天文单位）≈ 1.496 亿 km；1 光日 ≈ 173.1 AU；1 光年 ≈ 63,241 AU。", 9.7, MUTED))
+
+        # Bottom Left Card: Aug 25, 2012 Heliopause Crossing Evidence
+        els.append(card(20, 290, 352, 196))
+        els.append(txt(36, 312, "② 2012.08.25 闯出日球层顶的“三大实测铁证”", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(36, 330, "没有路牌的漆黑太空，科学家凭什么确认它跨过了 122 AU 边界？", 9.9, MUTED))
+
+        # Mini step-change plot across 2012.65 (121.6 AU)
+        cx0, cy0, cw, ch = 56.0, 430.0, 290.0, 74.0
+        els.append(f'<rect x="{cx0}" y="{cy0 - ch}" width="{cw}" height="{ch}" rx="4" fill="#f8fafc" stroke="{BORDER}"/>')
+        x_hp = cx0 + cw * 0.52
+        els.append(f'<line x1="{x_hp:.1f}" y1="{cy0 - ch}" x2="{x_hp:.1f}" y2="{cy0}" stroke="{INK}" stroke-width="1.5" stroke-dasharray="4 2"/>')
+        els.append(txt(x_hp, cy0 - ch - 5, "2012.08.25 日球层顶", 9.5, INK, "middle", weight="700"))
+
+        # Solar wind particles plummet (orange)
+        els.append(f'<path d="M {cx0 + 6},{cy0 - 58} L {x_hp - 12},{cy0 - 55} L {x_hp + 8},{cy0 - 8} L {cx0 + cw - 6},{cy0 - 7}" fill="none" stroke="{ORANGE}" stroke-width="2.3"/>')
+        els.append(txt(cx0 + 12, cy0 - 61, "太阳风低能粒子 → 骤降至零", 9.4, ORANGE, weight="700", halo=True))
+
+        # Galactic cosmic rays & plasma density jump (blue)
+        els.append(f'<path d="M {cx0 + 6},{cy0 - 16} L {x_hp - 12},{cy0 - 18} L {x_hp + 8},{cy0 - 58} L {cx0 + cw - 6},{cy0 - 60}" fill="none" stroke="{BLUE}" stroke-width="2.3"/>')
+        els.append(txt(x_hp + 12, cy0 - 44, "银河宇宙射线暴涨", 9.4, BLUE, weight="700", halo=True))
+        els.append(txt(x_hp + 12, cy0 - 28, "等离子体密度跃升 ~40 倍！", 9.4, GREEN, weight="700", halo=True))
+
+        els.append(txt(36, 454, "• 等离子体仪早年停机，幸亏 2013 太阳风暴激起电子振荡，", 9.5, BODY))
+        els.append(txt(36, 471, "  PWS 听出“星际琴弦音高”实测密度暴涨 40 倍，一锤定音！", 9.5, BLUE, weight="700"))
+
+        # Bottom Right Card: 10m Dining Table Metaphor & 4.5-Billion-Year Golden Record
+        els.append(card(388, 290, 352, 196))
+        els.append(txt(404, 312, "③ 10 米大圆桌比例尺与“45 亿年镀金漂流瓶”", PANEL_TITLE, INK, weight="700"))
+
+        # Sub-box 1: 10m table
+        els.append(card(402, 326, 324, 68, rx=8, fill=PURPLE_SOFT, stroke=PURPLE))
+        els.append(txt(414, 345, f"若把奥尔特云（半径 5 万 AU）缩成直径 10 米的大圆桌：", 9.8, PURPLE, weight="700"))
+        els.append(txt(414, 364, f"• 八大行星全挤在圆心 {neptune_mm:.1f} 毫米的针尖里；", 9.6, BODY))
+        els.append(txt(414, 382, f"• 狂奔 49 年的旅行者 1 号，才刚爬出圆心 {voyager_cm:.2f} 厘米！", 9.6, INK, weight="700"))
+
+        # Sub-box 2: Golden Record (30 cm gold-plated copper disc + U-238 clock)
+        els.append(card(402, 402, 324, 72, rx=8, fill="#fffbeb", stroke="#d97706"))
+        els.append(f'<circle cx="434" cy="438" r="21" fill="#fde68a" stroke="#b45309" stroke-width="1.8"/>')
+        els.append(f'<circle cx="434" cy="438" r="5" fill="#ffffff" stroke="#b45309" stroke-width="1.3"/>')
+        els.append(txt(464, 421, "关机后永不停航：30 cm 镀金铜唱片", 9.9, "#b45309", weight="700"))
+        els.append(txt(464, 439, "• 护盖镀超纯 ²³⁸U（45.1 亿年核时钟）+ 14 颗脉冲星定位", 9.3, BODY))
+        els.append(txt(464, 457, "• 录 55 种语言问候与古琴《流水》，4 万年后掠过红矮星", 9.3, BODY))
+
+        return figure(
+            502,
+            "太阳系对数坐标全景尺：对比旅行者1号日球层顶122AU、1光日173AU与奥尔特云50000AU引力边界",
+            "上图以对数坐标展示从地球1 AU、海王星30 AU、日球层顶122 AU（2012年进入星际空间）、1光日173.1 AU（2026年11月18日）到奥尔特云外缘约5万至10万AU及比邻星4.24光年的真实尺度；左下图展示2012年8月25日太阳风粒子归零、银河宇宙射线暴涨与等离子体密度跃升40倍的实测证据；右下图给出10米圆桌缩尺比喻与旅行者金唱片45.1亿年铀238时钟。",
+            els,
+            extra_defs=EXTRA_ARR,
+        )
+
+    @register("voyager-1-interstellar", "旅行者1号星际旅行全解密：木星引力弹弓、175年四巨星连珠、钚238核电池、23瓦深空通信与奥尔特云尺度", "mechanics_sky")
+    def build_voyager_1_interstellar():
+        write_svg(SUBDIR, "gravity-slingshot-vector-mechanics.svg", _build_gravity_slingshot_mechanics())
+        write_svg(SUBDIR, "grand-tour-175yr-slingshot-anim.svg", _build_grand_tour_alignment_anim())
+        write_svg(SUBDIR, "rtg-plutonium-power-survival.svg", _build_rtg_power_survival())
+        write_svg(SUBDIR, "dsn-23watt-1lightday-link.svg", _build_dsn_link_and_computer())
+        write_svg(SUBDIR, "heliopause-vs-oort-log-scale.svg", _build_heliopause_vs_oort_scale())
+
+
+_register_voyager_1_interstellar()
+
+

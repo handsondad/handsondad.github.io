@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="492" viewBox="0 0 760 492" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">旅行者1号23瓦X波段跨越1光日深空网通信链路与69KB计算机远程代码修复图解</title>
+<desc id="desc">上图展示旅行者1号用3.7米高增益天线和23瓦X波段发射机跨越259.02亿公里（1光日，单程24小时），由全球间隔120度的三座NASA深空网70米天线接收约10^-20瓦微弱信号；左下图图解69.63 KB内存中拆分搬迁FDS损坏芯片代码的过程；右下图对比从地月1.28光秒到1光日与比邻星4.24光年的光行时间阶梯。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="vg-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#1d6fa5"/></marker><marker id="vg-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#c25014"/></marker><marker id="vg-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#18794e"/></marker><marker id="vg-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#6d28d9"/></marker><marker id="vg-ink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#0f172a"/></marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="491" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">23 瓦“冰箱灯泡”怎样喊穿 259 亿公里？深空网 70 米巨耳与 69 KB 内存奇迹</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">上：1 光日（单程 24 小时）X 波段极窄波束链路｜下：69.63 KB 古董电脑远程拆代码与光速延迟尺</text>
+<rect x="20" y="62" width="720" height="206" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 跨越 1 光日（259.02 亿 km）的极限通信账：功率稀释 10²¹ 倍还能听见！</text>
+<rect x="36" y="98" width="196" height="154" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="134" y="117" font-size="10.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">飞船端：旅行者 1 号</text>
+<rect x="54" y="148" width="22" height="32" rx="3" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+<path d="M 86,132 Q 68,164 86,196" fill="none" stroke="#1d6fa5" stroke-width="3.0"/>
+<line x1="82" y1="164" x2="100" y2="164" stroke="#1d6fa5" stroke-width="1.8"/>
+<circle cx="102" cy="164" r="3.2" fill="#c25014"/>
+<text x="114" y="146" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="700">• 3.7 米抛物面天线</text>
+<text x="114" y="164" font-size="9.9" fill="#c25014" text-anchor="start" font-weight="700">• 发射功率仅 23 W</text>
+<text x="114" y="181" font-size="9.8" fill="#1e293b" text-anchor="start">• 8.4 GHz 波束宽 0.68°</text>
+<text x="134" y="214" font-size="9.8" fill="#1d6fa5" text-anchor="middle" font-weight="600">主动降速至 160 bps 攒信噪比</text>
+<text x="134" y="232" font-size="9.6" fill="#64748b" text-anchor="middle">（歪 0.5° 地球就彻底收不到！）</text>
+<polygon points="234,158 518,128 518,200 234,170" fill="#c25014" fill-opacity="0.11"/>
+<line x1="234" y1="160" x2="514" y2="132" stroke="#c25014" stroke-width="1.6" stroke-dasharray="5 3" marker-end="url(#vg-orange)"/>
+<line x1="234" y1="168" x2="514" y2="196" stroke="#c25014" stroke-width="1.6" stroke-dasharray="5 3" marker-end="url(#vg-orange)"/>
+<text x="376" y="120" font-size="10.3" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">2026.11.18 突破 1 光日 = 259.02 亿 km（173.1 AU）</text>
+<text x="376" y="162" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">光速飞行单程 24 小时整｜一问一答往返 48 小时！</text>
+<text x="376" y="182" font-size="9.8" fill="#6d28d9" text-anchor="middle" font-weight="700" class="halo">平方反比稀释 1/(4πR²) ⇒ 落地功率仅剩 ~10⁻¹⁹～10⁻²⁰ W</text>
+<text x="376" y="224" font-size="9.7" fill="#64748b" text-anchor="middle">（不到电子表电池功率的百亿亿分之一！）</text>
+<rect x="522" y="98" width="202" height="154" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="623" y="117" font-size="10.6" fill="#18794e" text-anchor="middle" font-weight="700">地球端：NASA 深空网 DSN</text>
+<circle cx="562" cy="166" r="21" fill="#ffffff" stroke="#18794e" stroke-width="1.6"/>
+<circle cx="562.0" cy="145.0" r="3.8" fill="#18794e"/>
+<circle cx="543.8" cy="176.5" r="3.8" fill="#18794e"/>
+<circle cx="580.2" cy="176.5" r="3.8" fill="#18794e"/>
+<text x="562" y="170" font-size="9.5" fill="#18794e" text-anchor="middle" font-weight="700">120°</text>
+<text x="594" y="146" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="700">• 70 米巨型抛物面天线</text>
+<text x="594" y="164" font-size="9.9" fill="#18794e" text-anchor="start" font-weight="700">• 液氦超低温放大器</text>
+<text x="594" y="181" font-size="9.8" fill="#1e293b" text-anchor="start">• 全球经度隔 120° 三站</text>
+<text x="623" y="214" font-size="9.8" fill="#18794e" text-anchor="middle" font-weight="600">戈德斯通 · 马德里 · 堪培拉</text>
+<text x="623" y="232" font-size="9.6" fill="#64748b" text-anchor="middle">地球自转 24 小时无缝接力盯防</text>
+<rect x="20" y="284" width="352" height="192" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="306" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 69.63 KB 内存上的“星际脑外科手术”</text>
+<text x="36" y="324" font-size="9.8" fill="#64748b" text-anchor="start">全船三台电脑每秒仅算 8,000 次（不及手机百万分之一！）</text>
+<rect x="36" y="338" width="320" height="74" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="48" y="350" width="92" height="50" rx="5" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="94" y="371" font-size="9.9" fill="#c25014" text-anchor="middle" font-weight="700">FDS 损坏芯片</text>
+<text x="94" y="388" font-size="9.4" fill="#1e293b" text-anchor="middle">2023.11 传回乱码</text>
+<line x1="144" y1="375" x2="184" y2="375" stroke="#6d28d9" stroke-width="2.0" marker-end="url(#vg-purple)"/>
+<text x="164" y="366" font-size="9.3" fill="#6d28d9" text-anchor="middle" font-weight="700">拆段搬家</text>
+<rect x="190" y="346" width="154" height="17" rx="3" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.1"/>
+<text x="267" y="358" font-size="9.2" fill="#6d28d9" text-anchor="middle" font-weight="600">空闲角 A：工程打包代码</text>
+<rect x="190" y="368" width="154" height="17" rx="3" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.1"/>
+<text x="267" y="380" font-size="9.2" fill="#6d28d9" text-anchor="middle" font-weight="600">空闲角 B：科学打包段 1</text>
+<rect x="190" y="390" width="154" height="17" rx="3" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.1"/>
+<text x="267" y="402" font-size="9.2" fill="#6d28d9" text-anchor="middle" font-weight="600">空闲角 C：科学打包段 2</text>
+<text x="36" y="433" font-size="9.5" fill="#1e293b" text-anchor="start">• 无整块空余内存 → 手拆代码塞进多处边角并重写跳转；</text>
+<text x="36" y="452" font-size="9.5" fill="#6d28d9" text-anchor="start" font-weight="700">• 2024.04 奇迹复活！2026.11 冲一光日前夕再度远程排障。</text>
+<rect x="388" y="284" width="352" height="192" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="404" y="306" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">③ 光速延迟阶梯：为什么“1 光日”是史诗级路标？</text>
+<text x="404" y="324" font-size="10.1" fill="#64748b" text-anchor="start">真空光速 c ≈ 30 万 km/s，连光都要跑整整一昼夜</text>
+<rect x="404" y="342" width="24" height="17" rx="4" fill="#475569" fill-opacity="0.16" stroke="#475569" stroke-width="1.2"/>
+<text x="410" y="354.5" font-size="9.5" fill="#0f172a" text-anchor="start" font-weight="600">地球 → 月球（38.4 万 km）</text>
+<text x="726" y="354.5" font-size="9.6" fill="#475569" text-anchor="end" font-weight="700" class="halo">1.28 光秒</text>
+<rect x="404" y="367" width="68" height="17" rx="4" fill="#1d6fa5" fill-opacity="0.16" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="410" y="379.5" font-size="9.5" fill="#0f172a" text-anchor="start" font-weight="600">太阳 → 地球（1 AU = 1.5 亿 km）</text>
+<text x="726" y="379.5" font-size="9.6" fill="#1d6fa5" text-anchor="end" font-weight="700" class="halo">8 分 20 秒</text>
+<rect x="404" y="392" width="136" height="17" rx="4" fill="#6d28d9" fill-opacity="0.16" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="410" y="404.5" font-size="9.5" fill="#0f172a" text-anchor="start" font-weight="600">地球 → 海王星（约 45 亿 km）</text>
+<text x="726" y="404.5" font-size="9.6" fill="#6d28d9" text-anchor="end" font-weight="700" class="halo">4 小时 10 分</text>
+<rect x="404" y="417" width="216" height="17" rx="4" fill="#c25014" fill-opacity="0.16" stroke="#c25014" stroke-width="1.2"/>
+<text x="410" y="429.5" font-size="9.5" fill="#0f172a" text-anchor="start" font-weight="600">地球 → 旅行者 1 号（259 亿 km）</text>
+<text x="726" y="429.5" font-size="9.6" fill="#c25014" text-anchor="end" font-weight="700" class="halo">24 小时（1 光日！）</text>
+<rect x="404" y="442" width="316" height="17" rx="4" fill="#18794e" fill-opacity="0.16" stroke="#18794e" stroke-width="1.2"/>
+<text x="410" y="454.5" font-size="9.5" fill="#0f172a" text-anchor="start" font-weight="600">太阳 → 最近恒星比邻星</text>
+<text x="726" y="454.5" font-size="9.6" fill="#18794e" text-anchor="end" font-weight="700" class="halo">4.24 光年（1549 光日）</text>
+</svg>

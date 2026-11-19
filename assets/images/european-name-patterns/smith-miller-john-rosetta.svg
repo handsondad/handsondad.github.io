@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="494" viewBox="0 0 760 494" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">欧洲八大语区铁匠、磨坊主、约翰教士与外貌特征同源姓氏对照表</title>
+<desc id="desc">横向对齐英语、德语、法语、意大利语、西班牙语、波兰与捷克语、俄语与罗马尼亚语、匈牙利芬兰希腊语在四大造姓源头上的同源词：如Smith、Schmidt、Lefèvre、Ferrari、Herrera、Kowalski、Kuznetsov、Kovács均意为铁匠；Müller、Miller、Meunier、Molinari、Molnár均意为磨坊主。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="493" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">半个欧洲都叫“铁匠、磨坊主、约翰和红头发”：八大语区同源对照表</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">中世纪人口普查与征税造册时，全欧洲村民都在用同四类特征起姓——只是换了不同语言的马甲。</text>
+<rect x="20" y="64" width="720" height="34" rx="8" fill="#163a5f" stroke="none" stroke-width="1"/>
+<text x="28" y="85" font-size="10.6" fill="#fde68a" text-anchor="start" font-weight="700">语种 / 代表区</text>
+<text x="148" y="85" font-size="10.6" fill="#93c5fd" text-anchor="start" font-weight="700">铁匠（打铁铺）</text>
+<text x="296" y="85" font-size="10.6" fill="#fde68a" text-anchor="start" font-weight="700">磨坊主（磨面坊）</text>
+<text x="444" y="85" font-size="10.6" fill="#d8b4fe" text-anchor="start" font-weight="700">约翰 / 神父之子</text>
+<text x="596" y="85" font-size="10.6" fill="#86efac" text-anchor="start" font-weight="700">外貌 / 排行高频姓</text>
+<rect x="20" y="104" width="720" height="36" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="28" y="126" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">英语（英伦）</text>
+<text x="148" y="126" font-size="10.1" fill="#1d6fa5" text-anchor="start" font-weight="700">Smith</text>
+<text x="296" y="126" font-size="10.0" fill="#1e293b" text-anchor="start">Miller</text>
+<text x="444" y="126" font-size="9.9" fill="#6d28d9" text-anchor="start" font-weight="600">Johnson · Jones · Evans</text>
+<text x="596" y="126" font-size="9.8" fill="#1e293b" text-anchor="start">Brown · Reid(红) · Little</text>
+<rect x="20" y="144" width="720" height="36" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="28" y="166" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">德语（德奥瑞）</text>
+<text x="148" y="166" font-size="10.1" fill="#1d6fa5" text-anchor="start" font-weight="700">Schmidt · Schmitt</text>
+<text x="296" y="166" font-size="10.0" fill="#1e293b" text-anchor="start" font-weight="600">Müller（全德第1姓）</text>
+<text x="444" y="166" font-size="9.9" fill="#6d28d9" text-anchor="start" font-weight="600">Jansen · Hans</text>
+<text x="596" y="166" font-size="9.8" fill="#1e293b" text-anchor="start">Klein(小) · Groß · Roth</text>
+<rect x="20" y="184" width="720" height="36" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="28" y="206" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">法语（法/比瓦）</text>
+<text x="148" y="206" font-size="10.1" fill="#1d6fa5" text-anchor="start" font-weight="700">Lefèvre · Faure</text>
+<text x="296" y="206" font-size="10.0" fill="#1e293b" text-anchor="start">Meunier · Moulin</text>
+<text x="444" y="206" font-size="9.9" fill="#6d28d9" text-anchor="start" font-weight="600">Jean · Petitjean</text>
+<text x="596" y="206" font-size="9.8" fill="#1e293b" text-anchor="start">Petit(小) · Legrand · Roux</text>
+<rect x="20" y="224" width="720" height="36" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="1.1"/>
+<text x="28" y="246" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">意大利语</text>
+<text x="148" y="246" font-size="10.1" fill="#c25014" text-anchor="start" font-weight="700">Ferrari（ferrum 铁！）</text>
+<text x="296" y="246" font-size="10.0" fill="#1e293b" text-anchor="start">Molinari</text>
+<text x="444" y="246" font-size="9.9" fill="#6d28d9" text-anchor="start" font-weight="600">Di Giovanni · Gianni</text>
+<text x="596" y="246" font-size="9.8" fill="#18794e" text-anchor="start" font-weight="700">Rossi（红发，全意第1姓）</text>
+<rect x="20" y="264" width="720" height="36" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="28" y="286" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">西班牙语</text>
+<text x="148" y="286" font-size="10.1" fill="#1d6fa5" text-anchor="start" font-weight="700">Herrera · Herrero</text>
+<text x="296" y="286" font-size="10.0" fill="#1e293b" text-anchor="start">Molina · Molinero</text>
+<text x="444" y="286" font-size="9.9" fill="#6d28d9" text-anchor="start" font-weight="600">Ibáñez · Juanes</text>
+<text x="596" y="286" font-size="9.8" fill="#1e293b" text-anchor="start">Delgado(瘦) · Rubio(金)</text>
+<rect x="20" y="304" width="720" height="36" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="28" y="326" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">波兰 / 捷克</text>
+<text x="148" y="326" font-size="10.1" fill="#1d6fa5" text-anchor="start" font-weight="700">Kowalski · Kovář</text>
+<text x="296" y="326" font-size="10.0" fill="#1e293b" text-anchor="start">Młynarski · Mlynář</text>
+<text x="444" y="326" font-size="9.9" fill="#6d28d9" text-anchor="start" font-weight="600">Janowski · Janák</text>
+<text x="596" y="326" font-size="9.8" fill="#1e293b" text-anchor="start">Nowak(新户) · Černý(黑)</text>
+<rect x="20" y="344" width="720" height="36" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="28" y="366" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">俄语 / 罗马尼亚</text>
+<text x="148" y="366" font-size="10.1" fill="#1d6fa5" text-anchor="start" font-weight="700">俄 Kuznetsov</text>
+<text x="296" y="366" font-size="10.0" fill="#1e293b" text-anchor="start">俄 Melnikov</text>
+<text x="444" y="366" font-size="9.9" fill="#6d28d9" text-anchor="start" font-weight="600">俄 Ivanov · 罗 Popescu</text>
+<text x="596" y="366" font-size="9.8" fill="#1e293b" text-anchor="start">Belyaev(白) · Chernov</text>
+<rect x="20" y="384" width="720" height="36" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="28" y="406" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">匈牙利 / 芬 / 希</text>
+<text x="148" y="406" font-size="10.1" fill="#1d6fa5" text-anchor="start" font-weight="700">匈 Kovács · 芬 Seppälä</text>
+<text x="296" y="406" font-size="10.0" fill="#1e293b" text-anchor="start">匈 Molnár</text>
+<text x="444" y="406" font-size="9.9" fill="#6d28d9" text-anchor="start" font-weight="600">希 Papadopoulos</text>
+<text x="596" y="406" font-size="9.8" fill="#18794e" text-anchor="start" font-weight="700">匈 Nagy（大，全匈第1姓）</text>
+<rect x="20" y="430" width="720" height="52" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="380" y="451" font-size="10.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">跨语种破壁彩蛋：超跑法拉利（Ferrari，拉丁语铁匠）、西班牙埃雷拉（Herrera，拉丁语 f→h 音变）、</text>
+<text x="380" y="469" font-size="10.0" fill="#0f172a" text-anchor="middle" font-weight="600">波兰科瓦尔斯基（Kowalski）与匈牙利科瓦奇（Kovács），撕掉翻译滤镜后全都是村头打马掌的“老铁师傅（Smith）”！</text>
+</svg>

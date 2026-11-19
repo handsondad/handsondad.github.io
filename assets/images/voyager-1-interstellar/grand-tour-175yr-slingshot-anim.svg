@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="482" viewBox="0 0 760 482" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">175年一遇外太阳系四巨星连珠窗口与旅行者1号2号分道航迹动画图解</title>
+<desc id="desc">左图展示1977至1989年木星、土星、天王星、海王星同侧几何走廊（径向压缩示意），动画演示旅行者1号在土星因贴掠土卫六向北偏折35.8度高速奔向星际空间，而旅行者2号连访四颗巨行星；右图解释1号晚发超车、土卫六轨道取舍与未访冥王星的原因。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="vg-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#1d6fa5"/></marker><marker id="vg-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#c25014"/></marker><marker id="vg-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#18794e"/></marker><marker id="vg-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#6d28d9"/></marker><marker id="vg-ink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#0f172a"/></marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  .vg-t1 { stroke-dasharray: 460; stroke-dashoffset: 460; animation: vgDraw1 5.6s cubic-bezier(.25,.6,.3,1) 0.3s forwards; }
+  .vg-t2 { stroke-dasharray: 560; stroke-dashoffset: 560; animation: vgDraw2 6.8s cubic-bezier(.25,.6,.3,1) 0.5s forwards; }
+  .vg-tag { opacity: 0.25; animation: vgShow 0.6s ease 4.8s forwards; }
+  @keyframes vgDraw1 { to { stroke-dashoffset: 0; } }
+  @keyframes vgDraw2 { to { stroke-dashoffset: 0; } }
+  @keyframes vgShow { to { opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) {
+    .vg-t1, .vg-t2 { animation: none !important; stroke-dashoffset: 0 !important; }
+    .vg-tag { animation: none !important; opacity: 1 !important; }
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="481" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">175 年一遇的“四巨星连珠”：为什么 1 号晚发 16 天，却偏偏不去天王星？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：1977–1989 外太阳系同侧走廊与双子分道航迹（径向压缩示意）｜右：土卫六大气侦察与 35.8° 北折抉择</text>
+<rect x="20" y="62" width="396" height="404" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 175 年同侧几何窗口与双子航迹（径向压缩示意）</text>
+<text x="36" y="102" font-size="10.3" fill="#64748b" text-anchor="start">上次同侧排列还是 1802 年杰斐逊总统任内；错过就要等到 2152 年前后</text>
+<path d="M 174.0,336.5 A 28.0,28.0 0 0 0 142.2,298.6" fill="none" stroke="#cbd5e1" stroke-width="1.15" stroke-dasharray="3 3"/>
+<path d="M 213.4,352.4 A 70.5,70.5 0 0 0 133.3,257.1" fill="none" stroke="#cbd5e1" stroke-width="1.15" stroke-dasharray="3 3"/>
+<text x="134.2" y="260.2" font-size="9.6" fill="#c25014" text-anchor="end" font-weight="600" class="halo">木星 5.2</text>
+<path d="M 239.8,363.1 A 99.0,99.0 0 0 0 127.4,229.1" fill="none" stroke="#cbd5e1" stroke-width="1.15" stroke-dasharray="3 3"/>
+<text x="130.2" y="231.9" font-size="9.6" fill="#1d6fa5" text-anchor="end" font-weight="600" class="halo">土星 9.5</text>
+<path d="M 283.8,380.9 A 146.5,146.5 0 0 0 117.5,182.7" fill="none" stroke="#cbd5e1" stroke-width="1.15" stroke-dasharray="3 3"/>
+<text x="123.6" y="184.9" font-size="9.6" fill="#6d28d9" text-anchor="end" font-weight="600" class="halo">天王星 19.2</text>
+<path d="M 322.7,396.6 A 188.4,188.4 0 0 0 108.8,141.7" fill="none" stroke="#cbd5e1" stroke-width="1.15" stroke-dasharray="3 3"/>
+<text x="117.8" y="143.4" font-size="9.6" fill="#18794e" text-anchor="end" font-weight="600" class="halo">海王星 30.1 AU</text>
+<circle cx="148.0" cy="326.0" r="8.5" fill="#f59e0b" stroke="#b45309" stroke-width="1.4"/>
+<text x="136.0" y="344.0" font-size="10.0" fill="#b45309" text-anchor="middle" font-weight="700">太阳</text>
+<path d="M 175.7,329.9 Q 210.0,334.0 218.0,309.2 Q 243.0,290.2 230.1,270.6 Q 264.1,228.6 234.1,207.5 Q 258.1,173.5 224.6,153.9 L 388.0,128.0" fill="none" stroke="#6d28d9" stroke-width="1.4" stroke-opacity="0.26"/>
+<path d="M 175.7,329.9 Q 204.0,324.0 215.0,304.2 Q 233.0,276.2 222.7,261.0 L 368.0,150.0" fill="none" stroke="#1d6fa5" stroke-width="1.4" stroke-opacity="0.26"/>
+<path class="vg-t2" d="M 175.7,329.9 Q 210.0,334.0 218.0,309.2 Q 243.0,290.2 230.1,270.6 Q 264.1,228.6 234.1,207.5 Q 258.1,173.5 224.6,153.9 L 388.0,128.0" fill="none" stroke="#6d28d9" stroke-width="2.3" stroke-dasharray="6 3" marker-end="url(#vg-purple)"/>
+<path class="vg-t1" d="M 175.7,329.9 Q 204.0,324.0 215.0,304.2 Q 233.0,276.2 222.7,261.0 L 368.0,150.0" fill="none" stroke="#1d6fa5" stroke-width="2.7" marker-end="url(#vg-blue)"/>
+<circle cx="175.7" cy="329.9" r="4.2" fill="#ffffff" stroke="#475569" stroke-width="2.2"/>
+<text x="187.7" y="343.9" font-size="9.8" fill="#475569" text-anchor="start" font-weight="700" class="halo">1977.08/09 发射</text>
+<circle cx="215.0" cy="304.2" r="6.5" fill="#ffffff" stroke="#c25014" stroke-width="2.2"/>
+<text x="225.0" y="312.2" font-size="9.8" fill="#c25014" text-anchor="start" font-weight="700" class="halo">木星 1979</text>
+<circle cx="222.7" cy="261.0" r="5.8" fill="#ffffff" stroke="#1d6fa5" stroke-width="2.2"/>
+<text x="234.7" y="267.0" font-size="9.8" fill="#1d6fa5" text-anchor="start" font-weight="700" class="halo">土星 1980/81</text>
+<circle cx="234.1" cy="207.5" r="5.2" fill="#ffffff" stroke="#6d28d9" stroke-width="2.2"/>
+<text x="244.1" y="213.5" font-size="9.8" fill="#6d28d9" text-anchor="start" font-weight="700" class="halo">天王星 1986</text>
+<circle cx="224.6" cy="153.9" r="5.2" fill="#ffffff" stroke="#18794e" stroke-width="2.2"/>
+<text x="214.6" y="145.9" font-size="9.8" fill="#18794e" text-anchor="end" font-weight="700" class="halo">海王星 1989</text>
+<g class="vg-tag">
+<text x="364.0" y="170.0" font-size="10.2" fill="#1d6fa5" text-anchor="end" font-weight="700" class="halo">旅行者 1 号（实线）</text>
+<text x="364.0" y="185.0" font-size="9.7" fill="#1d6fa5" text-anchor="end" class="halo">北折 35.8° 直奔星际（3.57 AU/年）</text>
+<text x="380.0" y="122.0" font-size="9.9" fill="#6d28d9" text-anchor="end" font-weight="700" class="halo">旅行者 2 号（虚线）：连访四巨星</text>
+</g>
+<rect x="34" y="404" width="368" height="48" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="46" y="422" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="600">• 省时奇迹：直飞海王星需 ~30 年，旅行者 2 号借三连弹弓仅用 12 年！</text>
+<text x="46" y="439" font-size="9.8" fill="#64748b" text-anchor="start">• 构想起源：1965 年 JPL 实习生弗兰德罗算出 175 年窗口，促成“壮游计划”</text>
+<rect x="432" y="62" width="308" height="404" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="448" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 三个最容易搞反的任务真相</text>
+<rect x="446" y="104" width="280" height="104" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<circle cx="462" cy="124" r="10" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="462" y="128" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="478" y="128" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">晚发 16 天，凭什么反而叫“1 号”？</text>
+<text x="456" y="151" font-size="9.9" fill="#1e293b" text-anchor="start">• 2 号先走（1977.08.20），走曲率更缓的慢线；</text>
+<text x="456" y="170" font-size="9.9" fill="#1e293b" text-anchor="start">• 1 号后发（1977.09.05），走更陡的快线；</text>
+<text x="456" y="189" font-size="9.9" fill="#1d6fa5" text-anchor="start" font-weight="700">• 1977.12.15 在小行星带超车，提前 4 个月抵木星！</text>
+<rect x="446" y="220" width="280" height="104" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<circle cx="462" cy="240" r="10" fill="#ffffff" stroke="#c25014" stroke-width="1.2"/>
+<text x="462" y="244" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="478" y="244" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">为什么 1 号拍完土星就“脱离主路”？</text>
+<text x="456" y="267" font-size="9.9" fill="#1e293b" text-anchor="start">• 头号目标：近距穿透土卫六（Titan）氮甲烷浓雾；</text>
+<text x="456" y="286" font-size="9.9" fill="#1e293b" text-anchor="start">• 必须从土星南极下方斜掠，引力将其向北猛折 35.8°；</text>
+<text x="456" y="305" font-size="9.9" fill="#c25014" text-anchor="start" font-weight="700">• 翘出黄道面无法再去天王星，却换来最快出逃速度！</text>
+<rect x="446" y="336" width="280" height="104" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<circle cx="462" cy="356" r="10" fill="#ffffff" stroke="#18794e" stroke-width="1.2"/>
+<text x="462" y="360" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">3</text>
+<text x="478" y="360" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">为什么它们都没顺路去拍冥王星？</text>
+<text x="456" y="383" font-size="9.9" fill="#1e293b" text-anchor="start">• 1 号若改飞冥王星就得放弃土卫六近距飞掠；</text>
+<text x="456" y="402" font-size="9.9" fill="#1e293b" text-anchor="start">• 2 号若在海王星拐向冥王星，瞄准点要穿进海王星肚子；</text>
+<text x="456" y="421" font-size="9.9" fill="#18794e" text-anchor="start" font-weight="700">• 冥王星直到 2015 年才由“新视野号”专程造访。</text>
+</svg>

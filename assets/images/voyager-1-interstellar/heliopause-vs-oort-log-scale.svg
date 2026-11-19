@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="502" viewBox="0 0 760 502" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">太阳系对数坐标全景尺：对比旅行者1号日球层顶122AU、1光日173AU与奥尔特云50000AU引力边界</title>
+<desc id="desc">上图以对数坐标展示从地球1 AU、海王星30 AU、日球层顶122 AU（2012年进入星际空间）、1光日173.1 AU（2026年11月18日）到奥尔特云外缘约5万至10万AU及比邻星4.24光年的真实尺度；左下图展示2012年8月25日太阳风粒子归零、银河宇宙射线暴涨与等离子体密度跃升40倍的实测证据；右下图给出10米圆桌缩尺比喻与旅行者金唱片45.1亿年铀238时钟。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="vg-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#1d6fa5"/></marker><marker id="vg-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#c25014"/></marker><marker id="vg-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#18794e"/></marker><marker id="vg-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#6d28d9"/></marker><marker id="vg-ink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#0f172a"/></marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="501" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">冲进星际空间 ≠ 飞出太阳系！一张对数标尺分清“日球层磁泡”与“奥尔特云”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">上：10⁰ ～ 3×10⁵ AU 对数全景尺｜下：2012 日球层顶粒子反转铁证与 10 米圆桌真实比例尺</text>
+<rect x="20" y="62" width="720" height="212" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 太阳系对数坐标全景尺（每向右一格距离放大 10 倍！）</text>
+<text x="36" y="102" font-size="10.2" fill="#64748b" text-anchor="start">按等离子体算，2012 年已进星际空间；按太阳引力疆界算，还要再飞约 3 万年才出奥尔特云</text>
+<rect x="54.0" y="164.0" width="247.3" height="40" rx="4" fill="#c25014" fill-opacity="0.12"/>
+<rect x="301.3" y="164.0" width="319.1" height="40" fill="#1d6fa5" fill-opacity="0.10"/>
+<rect x="430.5" y="172.0" width="189.9" height="24" rx="4" fill="#6d28d9" fill-opacity="0.14" stroke="#6d28d9" stroke-width="1.1" stroke-dasharray="3 2"/>
+<rect x="620.4" y="164.0" width="85.6" height="40" rx="4" fill="#18794e" fill-opacity="0.11"/>
+<text x="177.7" y="224.0" font-size="9.8" fill="#c25014" text-anchor="middle" font-weight="700">太阳风磁泡：日球层内</text>
+<text x="525.5" y="224.0" font-size="9.8" fill="#6d28d9" text-anchor="middle" font-weight="700">奥尔特彗星云（仍受太阳引力束缚）</text>
+<text x="663.2" y="224.0" font-size="9.6" fill="#18794e" text-anchor="middle" font-weight="700">恒星际自由区</text>
+<line x1="54.0" y1="184.0" x2="706.0" y2="184.0" stroke="#0f172a" stroke-width="2.0"/>
+<line x1="54.0" y1="178.0" x2="54.0" y2="190.0" stroke="#0f172a" stroke-width="1.5"/>
+<text x="54.0" y="207.0" font-size="9.4" fill="#64748b" text-anchor="middle" class="halo">10^0 AU</text>
+<line x1="172.5" y1="178.0" x2="172.5" y2="190.0" stroke="#0f172a" stroke-width="1.5"/>
+<text x="172.5" y="207.0" font-size="9.4" fill="#64748b" text-anchor="middle" class="halo">10^1 AU</text>
+<line x1="291.1" y1="178.0" x2="291.1" y2="190.0" stroke="#0f172a" stroke-width="1.5"/>
+<text x="291.1" y="207.0" font-size="9.4" fill="#64748b" text-anchor="middle" class="halo">10^2 AU</text>
+<line x1="409.6" y1="178.0" x2="409.6" y2="190.0" stroke="#0f172a" stroke-width="1.5"/>
+<text x="409.6" y="207.0" font-size="9.4" fill="#64748b" text-anchor="middle" class="halo">10^3 AU</text>
+<line x1="528.2" y1="178.0" x2="528.2" y2="190.0" stroke="#0f172a" stroke-width="1.5"/>
+<text x="528.2" y="207.0" font-size="9.4" fill="#64748b" text-anchor="middle" class="halo">10^4 AU</text>
+<line x1="646.7" y1="178.0" x2="646.7" y2="190.0" stroke="#0f172a" stroke-width="1.5"/>
+<text x="646.7" y="207.0" font-size="9.4" fill="#64748b" text-anchor="middle" class="halo">10^5 AU</text>
+<line x1="54.0" y1="184.0" x2="54.0" y2="158.0" stroke="#475569" stroke-width="1.3"/>
+<circle cx="54.0" cy="184.0" r="3.8" fill="#ffffff" stroke="#475569" stroke-width="2.2"/>
+<text x="54.0" y="152.0" font-size="9.6" fill="#475569" text-anchor="start" font-weight="700" class="halo">地球 1</text>
+<line x1="138.9" y1="184.0" x2="138.9" y2="138.0" stroke="#475569" stroke-width="1.3"/>
+<circle cx="138.9" cy="184.0" r="3.8" fill="#ffffff" stroke="#475569" stroke-width="2.2"/>
+<text x="138.9" y="132.0" font-size="9.6" fill="#475569" text-anchor="middle" font-weight="700" class="halo">木 5.2</text>
+<line x1="229.3" y1="184.0" x2="229.3" y2="158.0" stroke="#475569" stroke-width="1.3"/>
+<circle cx="229.3" cy="184.0" r="3.8" fill="#ffffff" stroke="#475569" stroke-width="2.2"/>
+<text x="229.3" y="152.0" font-size="9.6" fill="#475569" text-anchor="middle" font-weight="700" class="halo">海王星 30</text>
+<line x1="301.3" y1="184.0" x2="301.3" y2="128.0" stroke="#1d6fa5" stroke-width="1.3"/>
+<circle cx="301.3" cy="184.0" r="3.8" fill="#ffffff" stroke="#1d6fa5" stroke-width="2.2"/>
+<text x="301.3" y="122.0" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">日球层顶 122 AU (2012)</text>
+<line x1="319.4" y1="184.0" x2="319.4" y2="156.0" stroke="#c25014" stroke-width="1.3"/>
+<circle cx="319.4" cy="184.0" r="3.8" fill="#ffffff" stroke="#c25014" stroke-width="2.2"/>
+<text x="319.4" y="150.0" font-size="9.6" fill="#c25014" text-anchor="start" font-weight="700" class="halo">1 光日 173 AU (2026.11) ★</text>
+<line x1="430.5" y1="184.0" x2="430.5" y2="132.0" stroke="#6d28d9" stroke-width="1.3"/>
+<circle cx="430.5" cy="184.0" r="3.8" fill="#ffffff" stroke="#6d28d9" stroke-width="2.2"/>
+<text x="430.5" y="126.0" font-size="9.6" fill="#6d28d9" text-anchor="middle" font-weight="700" class="halo">奥尔特内缘 (~300年后)</text>
+<line x1="620.4" y1="184.0" x2="620.4" y2="156.0" stroke="#6d28d9" stroke-width="1.3"/>
+<circle cx="620.4" cy="184.0" r="3.8" fill="#ffffff" stroke="#6d28d9" stroke-width="2.2"/>
+<text x="620.4" y="150.0" font-size="9.6" fill="#6d28d9" text-anchor="middle" font-weight="700" class="halo">引力边界 (~3万年后)</text>
+<line x1="697.5" y1="184.0" x2="697.5" y2="132.0" stroke="#18794e" stroke-width="1.3"/>
+<circle cx="697.5" cy="184.0" r="3.8" fill="#ffffff" stroke="#18794e" stroke-width="2.2"/>
+<text x="697.5" y="126.0" font-size="9.6" fill="#18794e" text-anchor="end" font-weight="700" class="halo">比邻星 4.24光年</text>
+<text x="36" y="256" font-size="9.7" fill="#64748b" text-anchor="start">注：1 AU（天文单位）≈ 1.496 亿 km；1 光日 ≈ 173.1 AU；1 光年 ≈ 63,241 AU。</text>
+<rect x="20" y="290" width="352" height="196" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="312" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 2012.08.25 闯出日球层顶的“三大实测铁证”</text>
+<text x="36" y="330" font-size="9.9" fill="#64748b" text-anchor="start">没有路牌的漆黑太空，科学家凭什么确认它跨过了 122 AU 边界？</text>
+<rect x="56.0" y="356.0" width="290.0" height="74.0" rx="4" fill="#f8fafc" stroke="#e2e8f0"/>
+<line x1="206.8" y1="356.0" x2="206.8" y2="430.0" stroke="#0f172a" stroke-width="1.5" stroke-dasharray="4 2"/>
+<text x="206.8" y="351.0" font-size="9.5" fill="#0f172a" text-anchor="middle" font-weight="700">2012.08.25 日球层顶</text>
+<path d="M 62.0,372.0 L 194.8,375.0 L 214.8,422.0 L 340.0,423.0" fill="none" stroke="#c25014" stroke-width="2.3"/>
+<text x="68.0" y="369.0" font-size="9.4" fill="#c25014" text-anchor="start" font-weight="700" class="halo">太阳风低能粒子 → 骤降至零</text>
+<path d="M 62.0,414.0 L 194.8,412.0 L 214.8,372.0 L 340.0,370.0" fill="none" stroke="#1d6fa5" stroke-width="2.3"/>
+<text x="218.8" y="386.0" font-size="9.4" fill="#1d6fa5" text-anchor="start" font-weight="700" class="halo">银河宇宙射线暴涨</text>
+<text x="218.8" y="402.0" font-size="9.4" fill="#18794e" text-anchor="start" font-weight="700" class="halo">等离子体密度跃升 ~40 倍！</text>
+<text x="36" y="454" font-size="9.5" fill="#1e293b" text-anchor="start">• 等离子体仪早年停机，幸亏 2013 太阳风暴激起电子振荡，</text>
+<text x="36" y="471" font-size="9.5" fill="#1d6fa5" text-anchor="start" font-weight="700">  PWS 听出“星际琴弦音高”实测密度暴涨 40 倍，一锤定音！</text>
+<rect x="388" y="290" width="352" height="196" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="404" y="312" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">③ 10 米大圆桌比例尺与“45 亿年镀金漂流瓶”</text>
+<rect x="402" y="326" width="324" height="68" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="414" y="345" font-size="9.8" fill="#6d28d9" text-anchor="start" font-weight="700">若把奥尔特云（半径 5 万 AU）缩成直径 10 米的大圆桌：</text>
+<text x="414" y="364" font-size="9.6" fill="#1e293b" text-anchor="start">• 八大行星全挤在圆心 3.0 毫米的针尖里；</text>
+<text x="414" y="382" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="700">• 狂奔 49 年的旅行者 1 号，才刚爬出圆心 1.73 厘米！</text>
+<rect x="402" y="402" width="324" height="72" rx="8" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
+<circle cx="434" cy="438" r="21" fill="#fde68a" stroke="#b45309" stroke-width="1.8"/>
+<circle cx="434" cy="438" r="5" fill="#ffffff" stroke="#b45309" stroke-width="1.3"/>
+<text x="464" y="421" font-size="9.9" fill="#b45309" text-anchor="start" font-weight="700">关机后永不停航：30 cm 镀金铜唱片</text>
+<text x="464" y="439" font-size="9.3" fill="#1e293b" text-anchor="start">• 护盖镀超纯 ²³⁸U（45.1 亿年核时钟）+ 14 颗脉冲星定位</text>
+<text x="464" y="457" font-size="9.3" fill="#1e293b" text-anchor="start">• 录 55 种语言问候与古琴《流水》，4 万年后掠过红矮星</text>
+</svg>

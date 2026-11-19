@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="464" viewBox="0 0 760 464" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">哈密顿1832年预言双轴晶体锥形折射：菲涅耳波矢曲面圆锥奇点与劳埃德霰石亮环实验</title>
+<desc id="desc">左图展示双轴晶体四次波矢曲面截面在四个光轴方向横截形成的圆锥漏斗奇点，对比菲涅耳误以为的平滑相切与哈密顿发现的无穷多法线圆锥；右图还原1832年12月劳埃德用霰石薄片测得顶角约1度52分的空心光锥与平行空心光柱亮环，并标出沿环旋转360度偏振仅转180度的半角规律。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="hm-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#1d6fa5"/></marker><marker id="hm-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#c25014"/></marker><marker id="hm-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#18794e"/></marker><marker id="hm-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#6d28d9"/></marker><marker id="hm-ink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#0f172a"/></marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="463" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">1832 年纸笔预言“锥形折射”：一束细光射进双轴晶体，为什么炸成空心光环？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：菲涅耳四次波矢曲面截面与四个圆锥漏斗奇点（非真实比例放大示意）｜右：劳埃德霰石实验与半角偏振旋转</text>
+<rect x="20" y="62" width="352" height="386" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 双轴晶体波矢曲面 kx–kz 截面（各向异性放大示意）</text>
+<text x="36" y="102" font-size="10.6" fill="#64748b" text-anchor="start">圆截叶 r = ny 与椭圆截叶 (nx, nz) 横截相交出 4 个圆锥奇点</text>
+<line x1="78.0" y1="212.0" x2="314.0" y2="212.0" stroke="#cbd5e1" stroke-width="1.2"/>
+<line x1="196.0" y1="128.0" x2="196.0" y2="296.0" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="312.0" y="226.0" font-size="10.5" fill="#64748b" text-anchor="end">kx</text>
+<text x="204.0" y="138.0" font-size="10.5" fill="#64748b" text-anchor="start">kz</text>
+<circle cx="196.0" cy="212.0" r="76.0" fill="#1d6fa5" fill-opacity="0.05" stroke="#1d6fa5" stroke-width="2.1"/>
+<ellipse cx="196.0" cy="212.0" rx="93.0" ry="58.0" fill="#c25014" fill-opacity="0.05" stroke="#c25014" stroke-width="2.1"/>
+<circle cx="133.2" cy="254.8" r="5.2" fill="#6d28d9" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="133.2" cy="169.2" r="5.2" fill="#6d28d9" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="258.8" cy="254.8" r="5.2" fill="#6d28d9" stroke="#ffffff" stroke-width="1.5"/>
+<line x1="121.9" y1="262.5" x2="270.1" y2="161.5" stroke="#6d28d9" stroke-width="1.3" stroke-dasharray="4 3"/>
+<line x1="121.9" y1="161.5" x2="270.1" y2="262.5" stroke="#6d28d9" stroke-width="1.3" stroke-dasharray="4 3"/>
+<circle cx="258.8" cy="169.2" r="5.2" fill="#6d28d9" stroke="#ffffff" stroke-width="1.5"/>
+<line x1="241.8" y1="150.9" x2="275.8" y2="182.1" stroke="#18794e" stroke-width="2.2"/>
+<text x="264.0" y="144.0" font-size="10.4" fill="#18794e" text-anchor="start" font-weight="700" class="halo">切平面盖住圆环</text>
+<text x="108.0" y="154.0" font-size="10.3" fill="#6d28d9" text-anchor="start" font-weight="700" class="halo">光轴 I</text>
+<text x="102.0" y="280.0" font-size="10.3" fill="#1d6fa5" text-anchor="start" font-weight="600" class="halo">圆叶 r=ny</text>
+<text x="254.0" y="280.0" font-size="10.3" fill="#c25014" text-anchor="start" font-weight="600" class="halo">椭圆叶</text>
+<rect x="34" y="304" width="154" height="128" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="111" y="322" font-size="10.6" fill="#475569" text-anchor="middle" font-weight="700">菲涅耳误判：平滑相切</text>
+<path d="M 52,374 Q 111,344 170,374" fill="none" stroke="#1d6fa5" stroke-width="1.8"/>
+<path d="M 52,344 Q 111,374 170,344" fill="none" stroke="#c25014" stroke-width="1.8" stroke-dasharray="3 2"/>
+<line x1="62" y1="359" x2="160" y2="359" stroke="#475569" stroke-width="1.4"/>
+<text x="111" y="398" font-size="10.0" fill="#64748b" text-anchor="middle">若仅1条法线 → 只出1束光</text>
+<text x="111" y="415" font-size="10.0" fill="#64748b" text-anchor="middle">（漏掉了三维方向 ky！）</text>
+<rect x="198" y="304" width="160" height="128" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="278" y="322" font-size="10.6" fill="#6d28d9" text-anchor="middle" font-weight="700">哈密顿严算：圆锥漏斗坑</text>
+<ellipse cx="278" cy="350" rx="34" ry="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.6"/>
+<path d="M 244,350 L 278,378 L 312,350" fill="none" stroke="#6d28d9" stroke-width="2.0"/>
+<circle cx="278" cy="378" r="3.8" fill="#6d28d9"/>
+<line x1="278" y1="378" x2="258" y2="334" stroke="#c25014" stroke-width="1.3" marker-end="url(#hm-orange)"/>
+<line x1="278" y1="378" x2="270" y2="334" stroke="#c25014" stroke-width="1.3" marker-end="url(#hm-orange)"/>
+<line x1="278" y1="378" x2="286" y2="334" stroke="#c25014" stroke-width="1.3" marker-end="url(#hm-orange)"/>
+<line x1="278" y1="378" x2="298" y2="334" stroke="#c25014" stroke-width="1.3" marker-end="url(#hm-orange)"/>
+<text x="278" y="398" font-size="10.1" fill="#0f172a" text-anchor="middle" font-weight="600">尖点拥有一整圈无穷多法线</text>
+<text x="278" y="415" font-size="10.1" fill="#6d28d9" text-anchor="middle" font-weight="700">⇒ 单束光炸成一圈空心光锥！</text>
+<rect x="388" y="62" width="352" height="386" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="404" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 劳埃德霰石实验（1832.12）与偏振半角旋转</text>
+<text x="404" y="102" font-size="10.4" fill="#64748b" text-anchor="start">霰石 n=(1.530, 1.682, 1.686) ⇒ 内锥顶角 1.86°（1°52′）</text>
+<rect x="402" y="116" width="324" height="174" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<line x1="414" y1="196" x2="466" y2="196" stroke="#c25014" stroke-width="2.6" marker-end="url(#hm-orange)"/>
+<text x="440" y="182" font-size="10.2" fill="#c25014" text-anchor="middle" font-weight="700">单束入射光</text>
+<line x1="468" y1="150" x2="468" y2="191" stroke="#0f172a" stroke-width="3.2"/>
+<line x1="468" y1="201" x2="468" y2="242" stroke="#0f172a" stroke-width="3.2"/>
+<text x="468" y="256" font-size="10.0" fill="#64748b" text-anchor="middle">针孔光阑</text>
+<rect x="472" y="142" width="96" height="108" rx="4" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.7"/>
+<text x="520" y="159" font-size="10.4" fill="#1d6fa5" text-anchor="middle" font-weight="700">霰石晶体 CaCO₃</text>
+<polygon points="472,196 568,172 568,220" fill="#c25014" fill-opacity="0.14"/>
+<line x1="472" y1="196" x2="568" y2="172" stroke="#c25014" stroke-width="2.1"/>
+<line x1="472" y1="196" x2="568" y2="220" stroke="#c25014" stroke-width="2.1"/>
+<ellipse cx="568" cy="196" rx="6" ry="24" fill="none" stroke="#c25014" stroke-width="1.5" stroke-dasharray="3 2"/>
+<text x="522" y="238" font-size="10.2" fill="#c25014" text-anchor="middle" font-weight="700">空心光锥 ~1°52′</text>
+<rect x="568" y="172" width="88" height="48" fill="#c25014" fill-opacity="0.10"/>
+<line x1="568" y1="172" x2="656" y2="172" stroke="#c25014" stroke-width="2.1" marker-end="url(#hm-orange)"/>
+<line x1="568" y1="220" x2="656" y2="220" stroke="#c25014" stroke-width="2.1" marker-end="url(#hm-orange)"/>
+<text x="612" y="162" font-size="10.2" fill="#18794e" text-anchor="middle" font-weight="700">平行空心光柱</text>
+<text x="612" y="238" font-size="10.0" fill="#18794e" text-anchor="middle" font-weight="600">移远屏幕环径不变！</text>
+<polygon points="660,136 714,126 714,256 660,266" fill="#ffffff" stroke="#475569" stroke-width="1.4"/>
+<ellipse cx="687" cy="196" rx="13" ry="24" fill="none" stroke="#c25014" stroke-width="3.2"/>
+<circle cx="687" cy="196" r="2.2" fill="#f1f5f9"/>
+<text x="687" y="279" font-size="10.3" fill="#0f172a" text-anchor="middle" font-weight="700">银纸亮环</text>
+<rect x="402" y="302" width="324" height="130" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="414" y="322" font-size="10.7" fill="#18794e" text-anchor="start" font-weight="700">意外彩蛋：绕亮环走 360°，偏振片只转 180°！</text>
+<circle cx="452.0" cy="378.0" r="31.0" fill="#ffffff" stroke="#c25014" stroke-width="2.6"/>
+<line x1="452.0" y1="354.5" x2="452.0" y2="339.5" stroke="#0f172a" stroke-width="2.0"/>
+<circle cx="452.0" cy="347.0" r="2.2" fill="#c25014"/>
+<line x1="471.1" y1="363.0" x2="476.8" y2="349.2" stroke="#0f172a" stroke-width="2.0"/>
+<circle cx="473.9" cy="356.1" r="2.2" fill="#c25014"/>
+<line x1="477.7" y1="383.3" x2="488.3" y2="372.7" stroke="#0f172a" stroke-width="2.0"/>
+<circle cx="483.0" cy="378.0" r="2.2" fill="#c25014"/>
+<line x1="467.0" y1="402.8" x2="480.8" y2="397.1" stroke="#0f172a" stroke-width="2.0"/>
+<circle cx="473.9" cy="399.9" r="2.2" fill="#c25014"/>
+<line x1="444.5" y1="409.0" x2="459.5" y2="409.0" stroke="#0f172a" stroke-width="2.0"/>
+<circle cx="452.0" cy="409.0" r="2.2" fill="#c25014"/>
+<line x1="423.2" y1="397.1" x2="437.0" y2="402.8" stroke="#0f172a" stroke-width="2.0"/>
+<circle cx="430.1" cy="399.9" r="2.2" fill="#c25014"/>
+<line x1="415.7" y1="372.7" x2="426.3" y2="383.3" stroke="#0f172a" stroke-width="2.0"/>
+<circle cx="421.0" cy="378.0" r="2.2" fill="#c25014"/>
+<line x1="427.2" y1="349.2" x2="432.9" y2="363.0" stroke="#0f172a" stroke-width="2.0"/>
+<circle cx="430.1" cy="356.1" r="2.2" fill="#c25014"/>
+<text x="500" y="348" font-size="10.3" fill="#1e293b" text-anchor="start">• 环顶（φ=0°）：偏振竖直 ↕</text>
+<text x="500" y="368" font-size="10.3" fill="#1e293b" text-anchor="start">• 环底（φ=180°）：偏振水平 ↔（转 90°）</text>
+<text x="500" y="388" font-size="10.3" fill="#0f172a" text-anchor="start" font-weight="700">• 绕环一周 360° ⇒ 偏振仅转 φ/2 = 180°</text>
+<text x="500" y="408" font-size="10.2" fill="#6d28d9" text-anchor="start" font-weight="600">• 现代物理：拓扑“贝里几何相位 π”先声</text>
+</svg>

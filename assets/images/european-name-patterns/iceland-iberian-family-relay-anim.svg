@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="500" viewBox="0 0 760 500" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">冰岛活态父名母名制与西班牙葡萄牙双姓顺序镜像反转分步对比图</title>
+<desc id="desc">左侧展示冰岛依据1996年《个人姓名法》与2019年《性别自主法》，父亲Jón Einarsson与母亲Sigríður Pálsdóttir的子女分别取Jónsson、Jónsdóttir或Jónsbur，导致一家四口护照末栏各不相同；右侧对比西班牙传统“父姓在前、母姓在后”（如Rafael Nadal Parera主姓Nadal）与葡萄牙“母姓在前、父姓压轴”（如Cristiano Ronaldo dos Santos Aveiro主姓Aveiro）的镜像差异。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="499" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<defs><marker id="en-arr-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 9 5 L 0 9 z" fill="#1d6fa5"/></marker><marker id="en-arr-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 9 5 L 0 9 z" fill="#c25014"/></marker><marker id="en-arr-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 9 5 L 0 9 z" fill="#18794e"/></marker><marker id="en-arr-p" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 9 5 L 0 9 z" fill="#6d28d9"/></marker></defs>
+<style>
+  @keyframes enFlowDraw {
+    0%   { stroke-dashoffset: 140; opacity: 0.25; }
+    100% { stroke-dashoffset: 0; opacity: 1; }
+  }
+  @keyframes enCardPop {
+    0%   { opacity: 0.28; }
+    100% { opacity: 1; }
+  }
+  .en-flow-1 { stroke-dasharray: 140; stroke-dashoffset: 0; animation: enFlowDraw 1.4s ease-out 0.2s 1 both; }
+  .en-flow-2 { stroke-dasharray: 140; stroke-dashoffset: 0; animation: enFlowDraw 1.4s ease-out 1.4s 1 both; }
+  .en-kid-1  { animation: enCardPop 1.0s ease-out 1.1s 1 both; }
+  .en-kid-2  { animation: enCardPop 1.0s ease-out 2.3s 1 both; }
+  @media (prefers-reduced-motion: reduce) {
+    .en-flow-1, .en-flow-2, .en-kid-1, .en-kid-2 {
+      animation: none !important;
+      stroke-dashoffset: 0 !important;
+      opacity: 1 !important;
+    }
+  }
+</style>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">一家四口四个姓 vs 父母双姓大翻转：冰岛与西葡传姓推演图</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左图看冰岛如何每代按父母教名重算尾缀；右图对比西班牙与葡萄牙恰好相反的“父姓 / 母姓”排位。</text>
+<rect x="20" y="64" width="352" height="408" rx="9" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.4"/>
+<rect x="20" y="64" width="352" height="36" rx="9" fill="#1d6fa5" stroke="none" stroke-width="1"/>
+<text x="196.0" y="87" font-size="11.0" fill="#ffffff" text-anchor="middle" font-weight="700">① 冰岛活态父/母名制（第 45/1996 号与 2019 法案）</text>
+<rect x="32" y="112" width="158" height="56" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="40" y="130" font-size="9.6" fill="#1d6fa5" text-anchor="start" font-weight="700">父亲（Einar 之子）</text>
+<text x="40" y="148" font-size="11.0" fill="#0f172a" text-anchor="start" font-weight="700">Jón Einarsson</text>
+<text x="40" y="162" font-size="9.2" fill="#64748b" text-anchor="start">核心教名：Jón → 属格 Jóns-</text>
+<rect x="202" y="112" width="158" height="56" rx="7" fill="#f1f5f9" stroke="#475569" stroke-width="1.0"/>
+<text x="210" y="130" font-size="9.6" fill="#475569" text-anchor="start" font-weight="700">母亲（婚后不改夫姓！）</text>
+<text x="210" y="148" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">Sigríður Pálsdóttir</text>
+<text x="210" y="162" font-size="9.2" fill="#64748b" text-anchor="start">也可取母名属格 Sigríðar-</text>
+<path class="en-flow-1" d="M 111.0 168.0 L 111.0 192.0 L 196.0 192.0 L 196.0 208.0" fill="none" stroke="#1d6fa5" stroke-width="2.0" marker-end="url(#en-arr-b)"/>
+<rect x="44" y="210" width="304" height="28" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.0"/>
+<text x="196.0" y="228" font-size="9.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">拼合公式：孩子教名 + Jóns（父名属格）+ son / dóttir / bur</text>
+<path class="en-flow-2" d="M 196.0 238.0 L 196.0 258.0" fill="none" stroke="#1d6fa5" stroke-width="2.0" marker-end="url(#en-arr-b)"/>
+<g class="en-kid-1"><rect x="34" y="262" width="324" height="38" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.0"/></g>
+<text x="42" y="278" font-size="9.6" fill="#1d6fa5" text-anchor="start" font-weight="700">儿子（男后缀 -son）</text>
+<text x="42" y="293" font-size="9.3" fill="#64748b" text-anchor="start">意为“Jón 的儿子 Ólafur”</text>
+<text x="350" y="286" font-size="10.8" fill="#0f172a" text-anchor="end" font-weight="700">Ólafur Jónsson</text>
+<g class="en-kid-1"><rect x="34" y="306" width="324" height="38" rx="6" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.0"/></g>
+<text x="42" y="322" font-size="9.6" fill="#6d28d9" text-anchor="start" font-weight="700">女儿（女后缀 -dóttir）</text>
+<text x="42" y="337" font-size="9.3" fill="#64748b" text-anchor="start">意为“Jón 的女儿 Helga”</text>
+<text x="350" y="330" font-size="10.8" fill="#0f172a" text-anchor="end" font-weight="700">Helga Jónsdóttir</text>
+<g class="en-kid-1"><rect x="34" y="350" width="324" height="38" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="1.0"/></g>
+<text x="42" y="366" font-size="9.6" fill="#18794e" text-anchor="start" font-weight="700">中性（2019 新增 -bur）</text>
+<text x="42" y="381" font-size="9.3" fill="#64748b" text-anchor="start">性别自主法新增“Jón 之孩”</text>
+<text x="350" y="374" font-size="10.8" fill="#0f172a" text-anchor="end" font-weight="700">Alex Jónsbur</text>
+<rect x="32" y="400" width="328" height="60" rx="7" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="40" y="419" font-size="9.8" fill="#9f1239" text-anchor="start" font-weight="700">名场面：一家四口出国住店，护照末栏拼写 4 个全不同！</text>
+<text x="40" y="437" font-size="9.4" fill="#0f172a" text-anchor="start">• 冰岛人不称“Guðmundsdóttir 女士”，直呼教名 Björk（比约克）</text>
+<text x="40" y="453" font-size="9.4" fill="#0f172a" text-anchor="start">• 全国电话簿与花名册一律按【第一个词（教名）】字母排序</text>
+<rect x="388" y="64" width="352" height="408" rx="9" fill="#ffffff" stroke="#c25014" stroke-width="1.4"/>
+<rect x="388" y="64" width="352" height="36" rx="9" fill="#c25014" stroke="none" stroke-width="1"/>
+<text x="564.0" y="87" font-size="11.0" fill="#ffffff" text-anchor="middle" font-weight="700">② 伊比利亚双姓镜像陷阱（西班牙 vs 葡萄牙）</text>
+<rect x="400" y="110" width="328" height="170" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1.1"/>
+<text x="410" y="129" font-size="10.2" fill="#c25014" text-anchor="start" font-weight="700">西班牙传统顺序：名 + 【父方第1姓】 + 【母方第1姓】</text>
+<text x="410" y="147" font-size="9.6" fill="#0f172a" text-anchor="start">父：Juan Nadal Homar  ＋  母：Ana Parera Femenías</text>
+<path class="en-flow-1" d="M 564.0 153.0 L 564.0 171.0" fill="none" stroke="#c25014" stroke-width="1.8" marker-end="url(#en-arr-o)"/>
+<g class="en-kid-1"><rect x="408" y="174" width="312" height="44" rx="6" fill="#ffffff" stroke="#c25014" stroke-width="1.1"/></g>
+<text x="564.0" y="192" font-size="10.6" fill="#0f172a" text-anchor="middle" font-weight="700">Rafael  ·  Nadal（父姓★）  ·  Parera（母姓）</text>
+<text x="564.0" y="209" font-size="9.6" fill="#c25014" text-anchor="middle" font-weight="700">日常简称看【倒数第 2 词】→ 纳达尔（Nadal）！</text>
+<text x="410" y="236" font-size="9.3" fill="#0f172a" text-anchor="start">• 彩蛋：毕加索全名 Pablo Ruiz Picasso，Ruiz 是父姓，</text>
+<text x="410" y="252" font-size="9.3" fill="#0f172a" text-anchor="start">  他嫌 Ruiz 太普通，才挑母亲的意大利裔姓 Picasso 签名！</text>
+<text x="410" y="269" font-size="9.1" fill="#64748b" text-anchor="start">• 注：2017.6.30 起西《民事登记法》取消父姓自动优先权</text>
+<rect x="400" y="290" width="328" height="170" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.1"/>
+<text x="410" y="309" font-size="10.2" fill="#18794e" text-anchor="start" font-weight="700">葡萄牙 / 巴西顺序：名 + 【母方姓】 + 【父方主姓】</text>
+<text x="410" y="327" font-size="9.6" fill="#0f172a" text-anchor="start">母系姓：dos Santos（排前） ＋ 父系姓：Aveiro（压轴）</text>
+<path class="en-flow-2" d="M 564.0 333.0 L 564.0 351.0" fill="none" stroke="#18794e" stroke-width="1.8" marker-end="url(#en-arr-g)"/>
+<g class="en-kid-2"><rect x="402" y="354" width="324" height="46" rx="6" fill="#ffffff" stroke="#18794e" stroke-width="1.1"/></g>
+<text x="564.0" y="372" font-size="9.2" fill="#0f172a" text-anchor="middle" font-weight="700">Cristiano Ronaldo(双名) · dos Santos(母) · Aveiro(父★)</text>
+<text x="564.0" y="390" font-size="9.6" fill="#18794e" text-anchor="middle" font-weight="700">正式主姓看【最后 1 词】→ 阿维罗（Aveiro）！</text>
+<text x="410" y="418" font-size="9.3" fill="#0f172a" text-anchor="start">• 对比连接词：西语偶尔夹 y（如 Ortega y Gasset），</text>
+<text x="410" y="434" font-size="9.3" fill="#0f172a" text-anchor="start">  葡语常带 de / da / dos / e，且母前父后恰好镜像反转！</text>
+<text x="410" y="451" font-size="9.1" fill="#64748b" text-anchor="start">• C 罗球衣印 Ronaldo 其实是他教名的第二部分，并非姓氏</text>
+<text x="380" y="488" font-size="9.5" fill="#64748b" text-anchor="middle">注：支持动画的浏览器单次演示父/母姓名向下一代拼合的路径并定格于完整终态；开启“减少动态效果”时直接静态呈现。</text>
+</svg>

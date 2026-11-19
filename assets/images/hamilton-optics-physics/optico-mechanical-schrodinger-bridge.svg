@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="466" viewBox="0 0 760 466" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">哈密顿光学—力学类比通往1926年薛定谔波动力学：三层对偶与量子势垒隧穿实算对比</title>
+<desc id="desc">上半部分三栏对照几何光学程函方程、哈密顿—雅可比经典力学方程与1926年薛定谔波动力学方程的精确同构；下半部分对比光滑势垒前经典转折点硬反射与实算一维薛定谔波函数的驻波振荡及禁区指数隧穿尾。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="hm-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#1d6fa5"/></marker><marker id="hm-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#c25014"/></marker><marker id="hm-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#18794e"/></marker><marker id="hm-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#6d28d9"/></marker><marker id="hm-ink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#0f172a"/></marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="465" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">跨越 95 年的神级伏笔：哈密顿“光学—力学类比”怎样直接引出薛定谔方程？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">1831 年哈密顿把质点运动写成等作用量波前；1926 年薛定谔只需补上普朗克常数 ℏ，波动力学应运而生！</text>
+<rect x="20" y="62" width="224" height="174" rx="10" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.5"/>
+<rect x="21" y="63" width="222" height="28" rx="9" fill="#eaf4fb"/>
+<text x="132" y="82" font-size="11.4" fill="#1d6fa5" text-anchor="middle" font-weight="700">① 几何光学（短波极限 λ→0）</text>
+<rect x="28.0" y="98.0" width="58" height="19" rx="9.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="57.0" y="110.9" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="600">变分原理</text>
+<text x="92" y="112" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="400">费马原理 δ∫ n ds = 0</text>
+<rect x="28.0" y="129.0" width="58" height="19" rx="9.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="57.0" y="141.9" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="600">主函数</text>
+<text x="92" y="143" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="400">光程函数 V(r)</text>
+<rect x="28.0" y="160.0" width="58" height="19" rx="9.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="57.0" y="172.9" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="600">波前方程</text>
+<text x="92" y="174" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="600">程函方程 |∇V|² = n²(r)</text>
+<rect x="28.0" y="191.0" width="58" height="19" rx="9.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="57.0" y="203.9" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="600">几何图景</text>
+<text x="92" y="205" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="400">光线 p=∇V ⊥ 等相波前</text>
+<rect x="268" y="62" width="224" height="174" rx="10" fill="#ffffff" stroke="#c25014" stroke-width="1.5"/>
+<rect x="269" y="63" width="222" height="28" rx="9" fill="#fef1e8"/>
+<text x="380" y="82" font-size="11.4" fill="#c25014" text-anchor="middle" font-weight="700">② 哈密顿—雅可比经典力学</text>
+<rect x="276.0" y="98.0" width="58" height="19" rx="9.5" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="305.0" y="110.9" font-size="9.6" fill="#c25014" text-anchor="middle" font-weight="600">变分原理</text>
+<text x="340" y="112" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="400">驻定作用量 δ∫ L dt = 0</text>
+<rect x="276.0" y="129.0" width="58" height="19" rx="9.5" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="305.0" y="141.9" font-size="9.6" fill="#c25014" text-anchor="middle" font-weight="600">主函数</text>
+<text x="340" y="143" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="400">作用量主函数 S(q, t)</text>
+<rect x="276.0" y="160.0" width="58" height="19" rx="9.5" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="305.0" y="172.9" font-size="9.6" fill="#c25014" text-anchor="middle" font-weight="600">波前方程</text>
+<text x="340" y="174" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="600">−∂S/∂t = |∇S|²/(2m) + U</text>
+<rect x="276.0" y="191.0" width="58" height="19" rx="9.5" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="305.0" y="203.9" font-size="9.6" fill="#c25014" text-anchor="middle" font-weight="600">几何图景</text>
+<text x="340" y="205" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="400">轨迹 p=∇S ⊥ 等作用量面</text>
+<rect x="516" y="62" width="224" height="174" rx="10" fill="#ffffff" stroke="#6d28d9" stroke-width="1.5"/>
+<rect x="517" y="63" width="222" height="28" rx="9" fill="#f3e8ff"/>
+<text x="628" y="82" font-size="11.4" fill="#6d28d9" text-anchor="middle" font-weight="700">③ 薛定谔波动力学（1926）</text>
+<rect x="524.0" y="98.0" width="58" height="19" rx="9.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="553.0" y="110.9" font-size="9.6" fill="#6d28d9" text-anchor="middle" font-weight="600">相位钥匙</text>
+<text x="588" y="112" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="400">ψ = A · exp(i S / ℏ)</text>
+<rect x="524.0" y="129.0" width="58" height="19" rx="9.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="553.0" y="141.9" font-size="9.6" fill="#6d28d9" text-anchor="middle" font-weight="600">核心算符</text>
+<text x="588" y="143" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="400">Ĥ = −(ℏ²/2m)∇² + U(q)</text>
+<rect x="524.0" y="160.0" width="58" height="19" rx="9.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="553.0" y="172.9" font-size="9.6" fill="#6d28d9" text-anchor="middle" font-weight="600">波动方程</text>
+<text x="588" y="174" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="600">iℏ ∂ψ/∂t = Ĥ ψ（线性）</text>
+<rect x="524.0" y="191.0" width="58" height="19" rx="9.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="553.0" y="203.9" font-size="9.6" fill="#6d28d9" text-anchor="middle" font-weight="600">经典极限</text>
+<text x="588" y="205" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="400">ℏ→0 退回 ② H–J 方程</text>
+<line x1="246" y1="149" x2="266" y2="149" stroke="#c25014" stroke-width="2.0" marker-end="url(#hm-orange)"/>
+<line x1="494" y1="149" x2="514" y2="149" stroke="#6d28d9" stroke-width="2.0" marker-end="url(#hm-purple)"/>
+<rect x="20" y="250" width="352" height="202" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="272" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">④ 经典极限（ℏ → 0）：势垒前硬折返，禁区绝对为零</text>
+<text x="36" y="290" font-size="10.4" fill="#64748b" text-anchor="start">能量 E &lt; U₀ 时 p = √[2m(E−U)] 变虚数，经典粒子撞上转折点 x_t</text>
+<rect x="38.0" y="304.0" width="316.0" height="132.0" rx="6" fill="#f8fafc" stroke="#e2e8f0"/>
+<path d="M 38.0,430.0 L 38.0,430.0 L 41.2,430.0 L 44.3,430.0 L 47.5,430.0 L 50.6,430.0 L 53.8,430.0 L 57.0,430.0 L 60.1,430.0 L 63.3,430.0 L 66.4,430.0 L 69.6,430.0 L 72.8,430.0 L 75.9,430.0 L 79.1,430.0 L 82.2,430.0 L 85.4,430.0 L 88.6,430.0 L 91.7,430.0 L 94.9,430.0 L 98.0,430.0 L 101.2,430.0 L 104.4,430.0 L 107.5,430.0 L 110.7,430.0 L 113.8,430.0 L 117.0,430.0 L 120.2,430.0 L 123.3,430.0 L 126.5,430.0 L 129.6,429.9 L 132.8,429.9 L 136.0,429.9 L 139.1,429.9 L 142.3,429.9 L 145.4,429.8 L 148.6,429.8 L 151.8,429.7 L 154.9,429.7 L 158.1,429.6 L 161.2,429.5 L 164.4,429.3 L 167.6,429.2 L 170.7,429.0 L 173.9,428.7 L 177.0,428.4 L 180.2,428.0 L 183.4,427.6 L 186.5,427.0 L 189.7,426.3 L 192.8,425.4 L 196.0,424.3 L 199.2,423.0 L 202.3,421.5 L 205.5,419.6 L 208.6,417.4 L 211.8,414.8 L 215.0,411.8 L 218.1,408.4 L 221.3,404.5 L 224.4,400.3 L 227.6,395.9 L 230.8,391.1 L 233.9,386.3 L 237.1,381.5 L 240.2,376.7 L 243.4,372.2 L 246.6,368.1 L 249.7,364.2 L 252.9,360.8 L 256.0,357.8 L 259.2,355.2 L 262.4,353.0 L 265.5,351.1 L 268.7,349.6 L 271.8,348.3 L 275.0,347.2 L 278.2,346.3 L 281.3,345.6 L 284.5,345.0 L 287.6,344.5 L 290.8,344.2 L 294.0,343.9 L 297.1,343.6 L 300.3,343.4 L 303.4,343.2 L 306.6,343.1 L 309.8,343.0 L 312.9,342.9 L 316.1,342.9 L 319.2,342.8 L 322.4,342.8 L 325.6,342.7 L 328.7,342.7 L 331.9,342.7 L 335.0,342.7 L 338.2,342.6 L 341.4,342.6 L 344.5,342.6 L 347.7,342.6 L 350.8,342.6 L 354.0,342.6 L 354.0,430.0 Z" fill="#f1f5f9" stroke="none"/>
+<path d="M 38.0,430.0 L 41.2,430.0 L 44.3,430.0 L 47.5,430.0 L 50.6,430.0 L 53.8,430.0 L 57.0,430.0 L 60.1,430.0 L 63.3,430.0 L 66.4,430.0 L 69.6,430.0 L 72.8,430.0 L 75.9,430.0 L 79.1,430.0 L 82.2,430.0 L 85.4,430.0 L 88.6,430.0 L 91.7,430.0 L 94.9,430.0 L 98.0,430.0 L 101.2,430.0 L 104.4,430.0 L 107.5,430.0 L 110.7,430.0 L 113.8,430.0 L 117.0,430.0 L 120.2,430.0 L 123.3,430.0 L 126.5,430.0 L 129.6,429.9 L 132.8,429.9 L 136.0,429.9 L 139.1,429.9 L 142.3,429.9 L 145.4,429.8 L 148.6,429.8 L 151.8,429.7 L 154.9,429.7 L 158.1,429.6 L 161.2,429.5 L 164.4,429.3 L 167.6,429.2 L 170.7,429.0 L 173.9,428.7 L 177.0,428.4 L 180.2,428.0 L 183.4,427.6 L 186.5,427.0 L 189.7,426.3 L 192.8,425.4 L 196.0,424.3 L 199.2,423.0 L 202.3,421.5 L 205.5,419.6 L 208.6,417.4 L 211.8,414.8 L 215.0,411.8 L 218.1,408.4 L 221.3,404.5 L 224.4,400.3 L 227.6,395.9 L 230.8,391.1 L 233.9,386.3 L 237.1,381.5 L 240.2,376.7 L 243.4,372.2 L 246.6,368.1 L 249.7,364.2 L 252.9,360.8 L 256.0,357.8 L 259.2,355.2 L 262.4,353.0 L 265.5,351.1 L 268.7,349.6 L 271.8,348.3 L 275.0,347.2 L 278.2,346.3 L 281.3,345.6 L 284.5,345.0 L 287.6,344.5 L 290.8,344.2 L 294.0,343.9 L 297.1,343.6 L 300.3,343.4 L 303.4,343.2 L 306.6,343.1 L 309.8,343.0 L 312.9,342.9 L 316.1,342.9 L 319.2,342.8 L 322.4,342.8 L 325.6,342.7 L 328.7,342.7 L 331.9,342.7 L 335.0,342.7 L 338.2,342.6 L 341.4,342.6 L 344.5,342.6 L 347.7,342.6 L 350.8,342.6 L 354.0,342.6" fill="none" stroke="#475569" stroke-width="2.0"/>
+<line x1="44.3" y1="367.1" x2="247.4" y2="367.1" stroke="#c25014" stroke-width="2.4" marker-end="url(#hm-orange)"/>
+<circle cx="247.4" cy="367.1" r="4.6" fill="#c25014" stroke="#ffffff" stroke-width="1.4"/>
+<line x1="51.6" y1="347.1" x2="51.6" y2="387.1" stroke="#1d6fa5" stroke-width="1.6" stroke-dasharray="3 2"/>
+<line x1="73.6" y1="347.1" x2="73.6" y2="387.1" stroke="#1d6fa5" stroke-width="1.6" stroke-dasharray="3 2"/>
+<line x1="94.5" y1="347.1" x2="94.5" y2="387.1" stroke="#1d6fa5" stroke-width="1.6" stroke-dasharray="3 2"/>
+<line x1="116.5" y1="347.1" x2="116.5" y2="387.1" stroke="#1d6fa5" stroke-width="1.6" stroke-dasharray="3 2"/>
+<line x1="138.5" y1="347.1" x2="138.5" y2="387.1" stroke="#1d6fa5" stroke-width="1.6" stroke-dasharray="3 2"/>
+<line x1="159.4" y1="347.1" x2="159.4" y2="387.1" stroke="#1d6fa5" stroke-width="1.6" stroke-dasharray="3 2"/>
+<line x1="181.4" y1="347.1" x2="181.4" y2="387.1" stroke="#1d6fa5" stroke-width="1.6" stroke-dasharray="3 2"/>
+<line x1="203.4" y1="347.1" x2="203.4" y2="387.1" stroke="#1d6fa5" stroke-width="1.6" stroke-dasharray="3 2"/>
+<line x1="230.6" y1="347.1" x2="230.6" y2="387.1" stroke="#1d6fa5" stroke-width="1.6" stroke-dasharray="3 2"/>
+<text x="50.0" y="341.1" font-size="10.1" fill="#1d6fa5" text-anchor="start" font-weight="700">等作用量波前 S = const</text>
+<text x="241.4" y="391.1" font-size="10.1" fill="#c25014" text-anchor="end" font-weight="700">经典转折点 x_t</text>
+<text x="342.0" y="361.1" font-size="10.3" fill="#475569" text-anchor="end" font-weight="700">经典禁区</text>
+<text x="342.0" y="379.1" font-size="10.0" fill="#64748b" text-anchor="end">(概率 = 0)</text>
+<rect x="388" y="250" width="352" height="202" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="404" y="272" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">⑤ 波动真身（有限 ℏ）：驻波干涉 + 指数隧穿尾巴！</text>
+<text x="404" y="290" font-size="10.4" fill="#64748b" text-anchor="start">实算薛定谔本征波函数 ψ(x)：正如光的全反射倏逝波渗入禁区</text>
+<rect x="406.0" y="304.0" width="316.0" height="132.0" rx="6" fill="#f8fafc" stroke="#e2e8f0"/>
+<path d="M 406.0,430.0 L 406.0,430.0 L 409.2,430.0 L 412.3,430.0 L 415.5,430.0 L 418.6,430.0 L 421.8,430.0 L 425.0,430.0 L 428.1,430.0 L 431.3,430.0 L 434.4,430.0 L 437.6,430.0 L 440.8,430.0 L 443.9,430.0 L 447.1,430.0 L 450.2,430.0 L 453.4,430.0 L 456.6,430.0 L 459.7,430.0 L 462.9,430.0 L 466.0,430.0 L 469.2,430.0 L 472.4,430.0 L 475.5,430.0 L 478.7,430.0 L 481.8,430.0 L 485.0,430.0 L 488.2,430.0 L 491.3,430.0 L 494.5,430.0 L 497.6,429.9 L 500.8,429.9 L 504.0,429.9 L 507.1,429.9 L 510.3,429.9 L 513.4,429.8 L 516.6,429.8 L 519.8,429.7 L 522.9,429.7 L 526.1,429.6 L 529.2,429.5 L 532.4,429.3 L 535.6,429.2 L 538.7,429.0 L 541.9,428.7 L 545.0,428.4 L 548.2,428.0 L 551.4,427.6 L 554.5,427.0 L 557.7,426.3 L 560.8,425.4 L 564.0,424.3 L 567.2,423.0 L 570.3,421.5 L 573.5,419.6 L 576.6,417.4 L 579.8,414.8 L 583.0,411.8 L 586.1,408.4 L 589.3,404.5 L 592.4,400.3 L 595.6,395.9 L 598.8,391.1 L 601.9,386.3 L 605.1,381.5 L 608.2,376.7 L 611.4,372.2 L 614.6,368.1 L 617.7,364.2 L 620.9,360.8 L 624.0,357.8 L 627.2,355.2 L 630.4,353.0 L 633.5,351.1 L 636.7,349.6 L 639.8,348.3 L 643.0,347.2 L 646.2,346.3 L 649.3,345.6 L 652.5,345.0 L 655.6,344.5 L 658.8,344.2 L 662.0,343.9 L 665.1,343.6 L 668.3,343.4 L 671.4,343.2 L 674.6,343.1 L 677.8,343.0 L 680.9,342.9 L 684.1,342.9 L 687.2,342.8 L 690.4,342.8 L 693.6,342.7 L 696.7,342.7 L 699.9,342.7 L 703.0,342.7 L 706.2,342.6 L 709.4,342.6 L 712.5,342.6 L 715.7,342.6 L 718.8,342.6 L 722.0,342.6 L 722.0,430.0 Z" fill="#f3e8ff" fill-opacity="0.55" stroke="none"/>
+<path d="M 406.0,430.0 L 409.2,430.0 L 412.3,430.0 L 415.5,430.0 L 418.6,430.0 L 421.8,430.0 L 425.0,430.0 L 428.1,430.0 L 431.3,430.0 L 434.4,430.0 L 437.6,430.0 L 440.8,430.0 L 443.9,430.0 L 447.1,430.0 L 450.2,430.0 L 453.4,430.0 L 456.6,430.0 L 459.7,430.0 L 462.9,430.0 L 466.0,430.0 L 469.2,430.0 L 472.4,430.0 L 475.5,430.0 L 478.7,430.0 L 481.8,430.0 L 485.0,430.0 L 488.2,430.0 L 491.3,430.0 L 494.5,430.0 L 497.6,429.9 L 500.8,429.9 L 504.0,429.9 L 507.1,429.9 L 510.3,429.9 L 513.4,429.8 L 516.6,429.8 L 519.8,429.7 L 522.9,429.7 L 526.1,429.6 L 529.2,429.5 L 532.4,429.3 L 535.6,429.2 L 538.7,429.0 L 541.9,428.7 L 545.0,428.4 L 548.2,428.0 L 551.4,427.6 L 554.5,427.0 L 557.7,426.3 L 560.8,425.4 L 564.0,424.3 L 567.2,423.0 L 570.3,421.5 L 573.5,419.6 L 576.6,417.4 L 579.8,414.8 L 583.0,411.8 L 586.1,408.4 L 589.3,404.5 L 592.4,400.3 L 595.6,395.9 L 598.8,391.1 L 601.9,386.3 L 605.1,381.5 L 608.2,376.7 L 611.4,372.2 L 614.6,368.1 L 617.7,364.2 L 620.9,360.8 L 624.0,357.8 L 627.2,355.2 L 630.4,353.0 L 633.5,351.1 L 636.7,349.6 L 639.8,348.3 L 643.0,347.2 L 646.2,346.3 L 649.3,345.6 L 652.5,345.0 L 655.6,344.5 L 658.8,344.2 L 662.0,343.9 L 665.1,343.6 L 668.3,343.4 L 671.4,343.2 L 674.6,343.1 L 677.8,343.0 L 680.9,342.9 L 684.1,342.9 L 687.2,342.8 L 690.4,342.8 L 693.6,342.7 L 696.7,342.7 L 699.9,342.7 L 703.0,342.7 L 706.2,342.6 L 709.4,342.6 L 712.5,342.6 L 715.7,342.6 L 718.8,342.6 L 722.0,342.6" fill="none" stroke="#475569" stroke-width="1.8"/>
+<line x1="410.0" y1="367.1" x2="718.0" y2="367.1" stroke="#cbd5e1" stroke-width="1.1" stroke-dasharray="3 3"/>
+<line x1="615.4" y1="312.0" x2="615.4" y2="428.0" stroke="#c25014" stroke-width="1.3" stroke-dasharray="4 3"/>
+<path d="M 406.0,345.5 L 407.3,344.2 L 408.5,343.3 L 409.8,342.7 L 411.1,342.6 L 412.3,343.0 L 413.6,343.7 L 414.8,344.8 L 416.1,346.4 L 417.4,348.2 L 418.6,350.4 L 419.9,352.9 L 421.2,355.7 L 422.4,358.6 L 423.7,361.7 L 425.0,364.9 L 426.2,368.1 L 427.5,371.3 L 428.8,374.4 L 430.0,377.4 L 431.3,380.2 L 432.5,382.8 L 433.8,385.1 L 435.1,387.1 L 436.3,388.8 L 437.6,390.1 L 438.9,391.0 L 440.1,391.4 L 441.4,391.5 L 442.7,391.1 L 443.9,390.3 L 445.2,389.2 L 446.4,387.6 L 447.7,385.7 L 449.0,383.4 L 450.2,380.9 L 451.5,378.2 L 452.8,375.2 L 454.0,372.1 L 455.3,368.9 L 456.6,365.7 L 457.8,362.5 L 459.1,359.4 L 460.4,356.4 L 461.6,353.7 L 462.9,351.1 L 464.1,348.8 L 465.4,346.8 L 466.7,345.2 L 467.9,344.0 L 469.2,343.1 L 470.5,342.7 L 471.7,342.7 L 473.0,343.1 L 474.3,343.9 L 475.5,345.1 L 476.8,346.7 L 478.0,348.7 L 479.3,350.9 L 480.6,353.5 L 481.8,356.3 L 483.1,359.2 L 484.4,362.3 L 485.6,365.5 L 486.9,368.7 L 488.2,371.9 L 489.4,375.0 L 490.7,378.0 L 492.0,380.8 L 493.2,383.3 L 494.5,385.6 L 495.7,387.5 L 497.0,389.1 L 498.3,390.3 L 499.5,391.1 L 500.8,391.5 L 502.1,391.5 L 503.3,391.0 L 504.6,390.1 L 505.9,388.9 L 507.1,387.2 L 508.4,385.3 L 509.6,383.0 L 510.9,380.4 L 512.2,377.6 L 513.4,374.6 L 514.7,371.5 L 516.0,368.3 L 517.2,365.1 L 518.5,361.9 L 519.8,358.8 L 521.0,355.9 L 522.3,353.1 L 523.6,350.6 L 524.8,348.4 L 526.1,346.5 L 527.3,344.9 L 528.6,343.7 L 529.9,343.0 L 531.1,342.6 L 532.4,342.6 L 533.7,343.1 L 534.9,344.0 L 536.2,345.3 L 537.5,346.9 L 538.7,348.9 L 540.0,351.2 L 541.2,353.7 L 542.5,356.5 L 543.8,359.5 L 545.0,362.6 L 546.3,365.8 L 547.6,368.9 L 548.8,372.1 L 550.1,375.2 L 551.4,378.1 L 552.6,380.9 L 553.9,383.4 L 555.2,385.7 L 556.4,387.6 L 557.7,389.2 L 558.9,390.5 L 560.2,391.4 L 561.5,391.9 L 562.7,392.0 L 564.0,391.7 L 565.3,391.0 L 566.5,389.9 L 567.8,388.5 L 569.1,386.8 L 570.3,384.7 L 571.6,382.4 L 572.8,379.9 L 574.1,377.2 L 575.4,374.3 L 576.6,371.4 L 577.9,368.4 L 579.2,365.3 L 580.4,362.3 L 581.7,359.4 L 583.0,356.5 L 584.2,353.8 L 585.5,351.2 L 586.8,348.8 L 588.0,346.6 L 589.3,344.7 L 590.5,342.9 L 591.8,341.4 L 593.1,340.2 L 594.3,339.2 L 595.6,338.4 L 596.9,337.8 L 598.1,337.5 L 599.4,337.3 L 600.7,337.4 L 601.9,337.6 L 603.2,338.0 L 604.4,338.5 L 605.7,339.2 L 607.0,339.9 L 608.2,340.7 L 609.5,341.6 L 610.8,342.6 L 612.0,343.6 L 613.3,344.6 L 614.6,345.6 L 615.8,346.6 L 617.1,347.7 L 618.4,348.7 L 619.6,349.7 L 620.9,350.7 L 622.1,351.7 L 623.4,352.6 L 624.7,353.5 L 625.9,354.3 L 627.2,355.2 L 628.5,355.9 L 629.7,356.7 L 631.0,357.4 L 632.3,358.0 L 633.5,358.7 L 634.8,359.3 L 636.0,359.8 L 637.3,360.3 L 638.6,360.8 L 639.8,361.3 L 641.1,361.7 L 642.4,362.1 L 643.6,362.5 L 644.9,362.8 L 646.2,363.1 L 647.4,363.4 L 648.7,363.7 L 650.0,363.9 L 651.2,364.2 L 652.5,364.4 L 653.7,364.6 L 655.0,364.8 L 656.3,365.0 L 657.5,365.1 L 658.8,365.3 L 660.1,365.4 L 661.3,365.5 L 662.6,365.7 L 663.9,365.8 L 665.1,365.9 L 666.4,366.0 L 667.6,366.0 L 668.9,366.1 L 670.2,366.2 L 671.4,366.3 L 672.7,366.3 L 674.0,366.4 L 675.2,366.4 L 676.5,366.5 L 677.8,366.5 L 679.0,366.6 L 680.3,366.6 L 681.6,366.7 L 682.8,366.7 L 684.1,366.7 L 685.3,366.7 L 686.6,366.8 L 687.9,366.8 L 689.1,366.8 L 690.4,366.8 L 691.7,366.9 L 692.9,366.9 L 694.2,366.9 L 695.5,366.9 L 696.7,366.9 L 698.0,366.9 L 699.2,366.9 L 700.5,366.9 L 701.8,367.0 L 703.0,367.0 L 704.3,367.0 L 705.6,367.0 L 706.8,367.0 L 708.1,367.0 L 709.4,367.0 L 710.6,367.0 L 711.9,367.0 L 713.2,367.0 L 714.4,367.0 L 715.7,367.0 L 716.9,367.0 L 718.2,367.0 L 719.5,367.0 L 720.7,367.0 L 722.0,367.0" fill="none" stroke="#6d28d9" stroke-width="2.2"/>
+<text x="418.0" y="324.0" font-size="10.2" fill="#6d28d9" text-anchor="start" font-weight="700" class="halo">振荡物质波 ψ(x)</text>
+<text x="623.4" y="345.1" font-size="10.2" fill="#18794e" text-anchor="start" font-weight="700" class="halo">量子隧穿指数尾</text>
+<text x="623.4" y="360.1" font-size="10.0" fill="#18794e" text-anchor="start" class="halo">exp(−|p|x / ℏ)</text>
+</svg>

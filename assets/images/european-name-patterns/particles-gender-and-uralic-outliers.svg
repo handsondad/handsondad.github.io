@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="508" viewBox="0 0 760 508" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">欧洲姓氏介词大小写区分、立陶宛女姓婚否后缀与乌拉尔语系匈牙利芬兰特例图</title>
+<desc id="desc">左上对比德语贵族von、荷兰平民小写van与比利时常见大写Van/De，并附1818年贝多芬在维也纳贵族法庭承认非贵族的史实；右上解析立陶宛语未婚-aitė、已婚-ienė与2003年新增中性-ė三态女姓及捷克2022年-ová改革；下方展示乌拉尔语系的匈牙利东方姓前名后语序与芬兰超三分之一人口使用的自然地貌后缀-nen。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="507" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">介词大小写、女姓看婚否与“姓在前”孤岛：三个一招制敌的高阶细节</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">为什么贝多芬在维也纳法庭当众尴尬？为什么立陶宛女姓一眼暴露婚否？匈牙利为什么像中文一样姓在前？</text>
+<rect x="20" y="64" width="352" height="232" rx="9" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.4"/>
+<rect x="20" y="64" width="352" height="34" rx="9" fill="#1d6fa5" stroke="none" stroke-width="1"/>
+<text x="196.0" y="86" font-size="10.8" fill="#ffffff" text-anchor="middle" font-weight="700">① 介词玄机：德 von ≠ 荷 van ≠ 比利时大写 Van</text>
+<rect x="30" y="106" width="332" height="33" rx="5" fill="#eaf4fb" stroke="none" stroke-width="1"/>
+<text x="38" y="119" font-size="9.8" fill="#1d6fa5" text-anchor="start" font-weight="700">德国 / 奥地利 von</text>
+<text x="38" y="133" font-size="9.5" fill="#0f172a" text-anchor="start">多为贵族封地头衔：von Bismarck · von Neumann</text>
+<rect x="30" y="144" width="332" height="33" rx="5" fill="#e7f6ee" stroke="none" stroke-width="1"/>
+<text x="38" y="157" font-size="9.8" fill="#18794e" text-anchor="start" font-weight="700">荷兰 tussenvoegsel</text>
+<text x="38" y="171" font-size="9.5" fill="#0f172a" text-anchor="start">纯平民“来自”，连名必小写：Vincent van Gogh</text>
+<rect x="30" y="182" width="332" height="33" rx="5" fill="#fef1e8" stroke="none" stroke-width="1"/>
+<text x="38" y="195" font-size="9.8" fill="#c25014" text-anchor="start" font-weight="700">比利时弗拉芒区</text>
+<text x="38" y="209" font-size="9.5" fill="#0f172a" text-anchor="start">户籍连名常保留大写：Kevin De Bruyne · Van Rompuy</text>
+<rect x="30" y="224" width="332" height="64" rx="6" fill="#fffdf7" stroke="#b45309" stroke-width="1.0"/>
+<text x="38" y="241" font-size="9.7" fill="#b45309" text-anchor="start" font-weight="700">史料现场｜1818.12.11 贝多芬维也纳法庭破防案：</text>
+<text x="38" y="258" font-size="9.3" fill="#0f172a" text-anchor="start">祖籍弗拉芒梅赫伦，van Beethoven 意为“来自甜菜园”；</text>
+<text x="38" y="274" font-size="9.3" fill="#9f1239" text-anchor="start" font-weight="600">因拿不出贵族证书，监护权案被贵族法庭踢回平民市政厅！</text>
+<rect x="388" y="64" width="352" height="232" rx="9" fill="#ffffff" stroke="#9f1239" stroke-width="1.4"/>
+<rect x="388" y="64" width="352" height="34" rx="9" fill="#9f1239" stroke="none" stroke-width="1"/>
+<text x="564.0" y="86" font-size="10.6" fill="#ffffff" text-anchor="middle" font-weight="700">② 词尾变形：立陶宛把“未婚/已婚”焊在姓氏尾巴上</text>
+<text x="402" y="117" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">立陶宛同一家族（父/夫姓 Kazlauskas）的三种女姓：</text>
+<rect x="398" y="125" width="332" height="31" rx="5" fill="#f3e8ff" stroke="none" stroke-width="1"/>
+<text x="406" y="138" font-size="9.6" fill="#6d28d9" text-anchor="start" font-weight="700">未婚女儿 -aitė/-ytė/-ūtė</text>
+<text x="406" y="151" font-size="9.4" fill="#0f172a" text-anchor="start">Kazlauskaitė（一眼看出是女儿身）</text>
+<rect x="398" y="161" width="332" height="31" rx="5" fill="#ffe4e6" stroke="none" stroke-width="1"/>
+<text x="406" y="174" font-size="9.6" fill="#9f1239" text-anchor="start" font-weight="700">已婚妻子 -ienė</text>
+<text x="406" y="187" font-size="9.4" fill="#0f172a" text-anchor="start">Kazlauskienė（传统婚后冠夫姓尾缀）</text>
+<rect x="398" y="197" width="332" height="31" rx="5" fill="#e7f6ee" stroke="none" stroke-width="1"/>
+<text x="406" y="210" font-size="9.6" fill="#18794e" text-anchor="start" font-weight="700">2003 法定中性尾音 -ė</text>
+<text x="406" y="223" font-size="9.4" fill="#0f172a" text-anchor="start">Kazlauskė（国家语委新增，免透露婚否）</text>
+<rect x="398" y="237" width="332" height="51" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="406" y="254" font-size="9.5" fill="#0f172a" text-anchor="start" font-weight="700">斯拉夫女姓对照：俄 Yeltsina · 波兰 Skłodowska</text>
+<text x="406" y="271" font-size="9.3" fill="#64748b" text-anchor="start">捷克曾强制女姓加 -ová（Nováková），2022 修法准许免加</text>
+<rect x="20" y="310" width="720" height="184" rx="9" fill="#ffffff" stroke="#18794e" stroke-width="1.4"/>
+<rect x="20" y="310" width="720" height="34" rx="9" fill="#18794e" stroke="none" stroke-width="1"/>
+<text x="380.0" y="332" font-size="11.0" fill="#ffffff" text-anchor="middle" font-weight="700">③ 印欧语系汪洋里的“乌拉尔语系孤岛”：匈牙利姓在前，芬兰满街 -nen</text>
+<rect x="34" y="354" width="338" height="128" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1.0"/>
+<text x="44" y="373" font-size="10.2" fill="#18794e" text-anchor="start" font-weight="700">匈牙利（Magyar）｜全欧唯一全国“姓在前、名在后”！</text>
+<text x="44" y="392" font-size="9.5" fill="#0f172a" text-anchor="start">• 语法与中文一致，本土证件/报刊一律【家族姓 + 教名】：</text>
+<text x="50" y="410" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="700">Liszt Ferenc（李斯特） · Puskás Ferenc（普斯卡什）</text>
+<text x="50" y="428" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="700">Erdős Pál（埃尔德什） · Karikó Katalin（考里科）</text>
+<text x="44" y="448" font-size="9.2" fill="#64748b" text-anchor="start">• 翻译成英法德文时才倒装成 Ferenc Liszt，切勿认反姓氏！</text>
+<text x="44" y="466" font-size="9.3" fill="#18794e" text-anchor="start" font-weight="600">• 高频姓：Nagy(大) · Kovács(铁匠) · Tóth · Szabó(裁缝)</text>
+<rect x="388" y="354" width="338" height="128" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.0"/>
+<text x="398" y="373" font-size="10.2" fill="#1d6fa5" text-anchor="start" font-weight="700">芬兰（Suomi）｜超 1/3 国民带着大自然的 -nen 尾巴</text>
+<text x="398" y="392" font-size="9.5" fill="#0f172a" text-anchor="start">• 1921《姓氏法》定型，民众纷纷把山水草木加 -nen 入户：</text>
+<text x="404" y="410" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="700">Virtanen（溪流） · Mäkinen（山丘） · Järvinen（湖泊）</text>
+<text x="404" y="428" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="700">Nieminen（半岛） · Korhonen（与 Virtanen 争全国第1）</text>
+<text x="398" y="448" font-size="9.2" fill="#64748b" text-anchor="start">• 西芬兰另常见庄园后缀 -la / -lä：Mäkelä · Mattila</text>
+<text x="398" y="466" font-size="9.3" fill="#1d6fa5" text-anchor="start" font-weight="600">• 民族浪漫期还掀起把瑞典姓改译芬兰词（如 Kivi“岩石”）</text>
+</svg>

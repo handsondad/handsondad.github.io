@@ -1526,5 +1526,551 @@ def _register_poetry_boom_7080s():
         _build_why_poetry_cooled_1990s()
 
 
+def _register_european_name_patterns():
+    SUBDIR = "european-name-patterns"
+
+    def _arrow_defs():
+        return (
+            "<defs>"
+            f'<marker id="en-arr-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">'
+            f'<path d="M 0 1 L 9 5 L 0 9 z" fill="{BLUE}"/></marker>'
+            f'<marker id="en-arr-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">'
+            f'<path d="M 0 1 L 9 5 L 0 9 z" fill="{ORANGE}"/></marker>'
+            f'<marker id="en-arr-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">'
+            f'<path d="M 0 1 L 9 5 L 0 9 z" fill="{GREEN}"/></marker>'
+            f'<marker id="en-arr-p" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">'
+            f'<path d="M 0 1 L 9 5 L 0 9 z" fill="{PURPLE}"/></marker>'
+            "</defs>"
+        )
+
+    def _build_patronymic_atlas():
+        """SVG 1: Four-quadrant European patronymic & regional suffix atlas."""
+        els = []
+        els.extend(
+            header(
+                "全欧洲都在喊“某某家的娃”：四大片区父名与族裔词缀速查图",
+                "把各国拼写“儿子 / 后代”的后缀排成四宫格，九成陌生欧洲姓氏第一眼就能锁定语系与国别。",
+            )
+        )
+
+        quads = [
+            (
+                20,
+                64,
+                352,
+                210,
+                "1",
+                "北欧日耳曼区｜单 s、双 s 与冰岛活化石",
+                BLUE,
+                BLUE_SOFT,
+                [
+                    ("丹麦 / 挪威 -sen", "Eriksen · Sørensen · Ødegaard（配 ø / æ）"),
+                    ("瑞典 -sson（双 s）", "Andersson · Johansson + 自然姓 Lindberg"),
+                    ("冰岛 -son / -dóttir", "Jónsson(儿) · Jónsdóttir(女) · Jónsbur(中)"),
+                    ("关键区分", "冰岛至今不设世袭姓，电话簿按教名排序！"),
+                ],
+            ),
+            (
+                388,
+                64,
+                352,
+                210,
+                "2",
+                "不列颠与凯尔特区｜O'、Mac 与吞音变形",
+                GREEN,
+                GREEN_SOFT,
+                [
+                    ("爱尔兰专属 O'", "O'Brien · O'Connor（古爱尔兰语“某之孙”）"),
+                    ("苏格兰 / 爱尔兰 Mac", "MacDonald · McGregor（Mc 只是 Mac 缩写）"),
+                    ("盎格鲁–诺曼 Fitz-", "Fitzgerald · Fitzroy（古法语 fiz“儿子”）"),
+                    ("威尔士 ap 吞音与 -s", "ap Rhys→Price · ap Richard→Pritchard · Jones"),
+                ],
+            ),
+            (
+                20,
+                288,
+                352,
+                214,
+                "3",
+                "斯拉夫四分天下｜看词尾秒辨东南西北",
+                PURPLE,
+                PURPLE_SOFT,
+                [
+                    ("俄 / 保 -ov / -ev", "Ivanov（女 Ivanova），俄语中间夹 -ovich"),
+                    ("乌克兰 -enko / -uk", "Shevchenko · Mudryk（男女同形，不加 -a）"),
+                    ("波兰 / 捷克西支", "波 -ski/-wicz（女 -ska）；捷克女普加 -ová"),
+                    ("前南斯拉夫 -ić", "Modrić · Đoković（克/塞/波黑高频，男女不变）"),
+                ],
+            ),
+            (
+                388,
+                288,
+                352,
+                214,
+                "4",
+                "罗曼与爱琴海区｜拉丁尾音与“一尾定一岛”",
+                ORANGE,
+                ORANGE_SOFT,
+                [
+                    ("西班牙 -ez vs 葡萄牙 -es", "西 Rodríguez / Pérez ｜ 葡 Rodrigues / Peres"),
+                    ("意大利北 -i 南 -o", "中北部多复数 -i（Rossi）· 南部多 -o（Russo）"),
+                    ("罗马尼亚 -escu / -eanu", "Popescu（神父之子）· Munteanu（山里人）"),
+                    ("希腊半岛岛屿地图", "伯罗奔尼撒 -opoulos · 克里特 -akis · 本都 -idis"),
+                ],
+            ),
+        ]
+        assert len(quads) == 4
+
+        for qx, qy, qw, qh, qnum, qtitle, fg, bg, rows in quads:
+            assert 20 <= qx and qx + qw <= 740
+            els.append(card(qx, qy, qw, qh, rx=9, fill=CARD_BG, stroke=fg, sw=1.4))
+            els.append(card(qx, qy, qw, 36, rx=9, fill=bg, stroke="none"))
+            els.append(step_badge(qx + 18, qy + 18, qnum, fg=fg, bg="#ffffff", r=10))
+            els.append(txt(qx + 35, qy + 23, qtitle, size=11.4, color=fg, weight="700"))
+
+            for idx, (rtag, rdesc) in enumerate(rows):
+                ry = qy + 44 + idx * 40
+                els.append(card(qx + 10, ry, qw - 20, 34, rx=6, fill="#f8fafc" if idx < 3 else bg, stroke=BORDER if idx < 3 else "none", sw=0.8))
+                els.append(txt(qx + 18, ry + 14, rtag, size=10.2, color=fg, weight="700"))
+                els.append(txt(qx + 18, ry + 28, rdesc, size=9.9, color=INK))
+
+        svg = figure(
+            516,
+            "欧洲四大片区父名与族裔姓氏后缀速查图",
+            "分四个象限归纳欧洲最具辨识度的父名与地区后缀：①北欧区的丹麦挪威-sen、瑞典双s的-sson与冰岛活态-son/-dóttir/-bur；②凯尔特与英伦区的爱尔兰O'、苏爱共用的Mac/Mc、诺曼Fitz-及威尔士ap吞音；③斯拉夫四支的俄保-ov、乌克兰-enko、波兰-ski、捷克-ová与前南-ić；④罗曼与希腊区的西-ez葡-es、意北-i南-o、罗马尼亚-escu与希腊岛屿后缀。",
+            els,
+        )
+        write_svg(SUBDIR, "patronymic-atlas-europe.svg", svg)
+
+    def _build_iceland_iberian_family_relay():
+        """SVG 2: Animated 1-shot kinship relay comparing Iceland's per-generation patronymics vs Spain/Portugal mirrored double surnames."""
+        els = [_arrow_defs()]
+        anim_css = """<style>
+  @keyframes enFlowDraw {
+    0%   { stroke-dashoffset: 140; opacity: 0.25; }
+    100% { stroke-dashoffset: 0; opacity: 1; }
+  }
+  @keyframes enCardPop {
+    0%   { opacity: 0.28; }
+    100% { opacity: 1; }
+  }
+  .en-flow-1 { stroke-dasharray: 140; stroke-dashoffset: 0; animation: enFlowDraw 1.4s ease-out 0.2s 1 both; }
+  .en-flow-2 { stroke-dasharray: 140; stroke-dashoffset: 0; animation: enFlowDraw 1.4s ease-out 1.4s 1 both; }
+  .en-kid-1  { animation: enCardPop 1.0s ease-out 1.1s 1 both; }
+  .en-kid-2  { animation: enCardPop 1.0s ease-out 2.3s 1 both; }
+  @media (prefers-reduced-motion: reduce) {
+    .en-flow-1, .en-flow-2, .en-kid-1, .en-kid-2 {
+      animation: none !important;
+      stroke-dashoffset: 0 !important;
+      opacity: 1 !important;
+    }
+  }
+</style>"""
+        els.append(anim_css)
+
+        els.extend(
+            header(
+                "一家四口四个姓 vs 父母双姓大翻转：冰岛与西葡传姓推演图",
+                "左图看冰岛如何每代按父母教名重算尾缀；右图对比西班牙与葡萄牙恰好相反的“父姓 / 母姓”排位。",
+            )
+        )
+
+        # Left Panel: Iceland Personal Names Act No. 45/1996 + 2019 Act No. 80/2019
+        lx, ly, lw, lh = 20, 64, 352, 408
+        els.append(card(lx, ly, lw, lh, rx=9, fill=CARD_BG, stroke=BLUE, sw=1.4))
+        els.append(card(lx, ly, lw, 36, rx=9, fill=BLUE, stroke="none"))
+        els.append(txt(lx + lw / 2, ly + 23, "① 冰岛活态父/母名制（第 45/1996 号与 2019 法案）", size=11.0, color="#ffffff", anchor="middle", weight="700"))
+
+        # Parents boxes
+        els.append(card(lx + 12, ly + 48, 158, 56, rx=7, fill=BLUE_SOFT, stroke=BLUE, sw=1.1))
+        els.append(txt(lx + 20, ly + 66, "父亲（Einar 之子）", size=9.6, color=BLUE, weight="700"))
+        els.append(txt(lx + 20, ly + 84, "Jón Einarsson", size=11.0, color=INK, weight="700"))
+        els.append(txt(lx + 20, ly + 98, "核心教名：Jón → 属格 Jóns-", size=9.2, color=MUTED))
+
+        els.append(card(lx + 182, ly + 48, 158, 56, rx=7, fill=SLATE_SOFT, stroke=SLATE, sw=1.0))
+        els.append(txt(lx + 190, ly + 66, "母亲（婚后不改夫姓！）", size=9.6, color=SLATE, weight="700"))
+        els.append(txt(lx + 190, ly + 84, "Sigríður Pálsdóttir", size=10.6, color=INK, weight="700"))
+        els.append(txt(lx + 190, ly + 98, "也可取母名属格 Sigríðar-", size=9.2, color=MUTED))
+
+        # Animated connector lines from father's given name Jón down to rule pill & children
+        els.append(
+            f'<path class="en-flow-1" d="M {lx + 91:.1f} {ly + 104:.1f} L {lx + 91:.1f} {ly + 128:.1f} L {lx + 176:.1f} {ly + 128:.1f} L {lx + 176:.1f} {ly + 144:.1f}" '
+            f'fill="none" stroke="{BLUE}" stroke-width="2.0" marker-end="url(#en-arr-b)"/>'
+        )
+        els.append(card(lx + 24, ly + 146, lw - 48, 28, rx=6, fill=BLUE_SOFT, stroke=BLUE, sw=1.0))
+        els.append(txt(lx + lw / 2, ly + 164, "拼合公式：孩子教名 + Jóns（父名属格）+ son / dóttir / bur", size=9.8, color=BLUE, anchor="middle", weight="700"))
+
+        els.append(
+            f'<path class="en-flow-2" d="M {lx + 176:.1f} {ly + 174:.1f} L {lx + 176:.1f} {ly + 194:.1f}" '
+            f'fill="none" stroke="{BLUE}" stroke-width="2.0" marker-end="url(#en-arr-b)"/>'
+        )
+
+        # 3 Children outcomes
+        kids = [
+            ("儿子（男后缀 -son）", "Ólafur Jónsson", "意为“Jón 的儿子 Ólafur”", BLUE, BLUE_SOFT),
+            ("女儿（女后缀 -dóttir）", "Helga Jónsdóttir", "意为“Jón 的女儿 Helga”", PURPLE, PURPLE_SOFT),
+            ("中性（2019 新增 -bur）", "Alex Jónsbur", "性别自主法新增“Jón 之孩”", GREEN, GREEN_SOFT),
+        ]
+        for k_i, (krole, kname, kmean, kfg, kbg) in enumerate(kids):
+            ky = ly + 198 + k_i * 44
+            els.append(f'<g class="en-kid-1">' + card(lx + 14, ky, lw - 28, 38, rx=6, fill=kbg, stroke=kfg, sw=1.0) + "</g>")
+            els.append(txt(lx + 22, ky + 16, krole, size=9.6, color=kfg, weight="700"))
+            els.append(txt(lx + 22, ky + 31, kmean, size=9.3, color=MUTED))
+            els.append(txt(lx + lw - 22, ky + 24, kname, size=10.8, color=INK, anchor="end", weight="700"))
+
+        # Bottom Iceland takeaway
+        els.append(card(lx + 12, ly + 336, lw - 24, 60, rx=7, fill="#f8fafc", stroke=BORDER))
+        els.append(txt(lx + 20, ly + 355, "名场面：一家四口出国住店，护照末栏拼写 4 个全不同！", size=9.8, color=CRIMSON, weight="700"))
+        els.append(txt(lx + 20, ly + 373, "• 冰岛人不称“Guðmundsdóttir 女士”，直呼教名 Björk（比约克）", size=9.4, color=INK))
+        els.append(txt(lx + 20, ly + 389, "• 全国电话簿与花名册一律按【第一个词（教名）】字母排序", size=9.4, color=INK))
+
+        # Right Panel: Iberia Mirror Flip (Spain vs Portugal)
+        rx, ry, rw, rh = 388, 64, 352, 408
+        els.append(card(rx, ry, rw, rh, rx=9, fill=CARD_BG, stroke=ORANGE, sw=1.4))
+        els.append(card(rx, ry, rw, 36, rx=9, fill=ORANGE, stroke="none"))
+        els.append(txt(rx + rw / 2, ry + 23, "② 伊比利亚双姓镜像陷阱（西班牙 vs 葡萄牙）", size=11.0, color="#ffffff", anchor="middle", weight="700"))
+
+        # Subcard A: Spain (Father 1st + Mother 1st)
+        els.append(card(rx + 12, ry + 46, rw - 24, 170, rx=8, fill=ORANGE_SOFT, stroke=ORANGE, sw=1.1))
+        els.append(txt(rx + 22, ry + 65, "西班牙传统顺序：名 + 【父方第1姓】 + 【母方第1姓】", size=10.2, color=ORANGE, weight="700"))
+        els.append(txt(rx + 22, ry + 83, "父：Juan Nadal Homar  ＋  母：Ana Parera Femenías", size=9.6, color=INK))
+        els.append(
+            f'<path class="en-flow-1" d="M {rx + 176:.1f} {ry + 89:.1f} L {rx + 176:.1f} {ry + 107:.1f}" '
+            f'fill="none" stroke="{ORANGE}" stroke-width="1.8" marker-end="url(#en-arr-o)"/>'
+        )
+        els.append(f'<g class="en-kid-1">' + card(rx + 20, ry + 110, rw - 40, 44, rx=6, fill="#ffffff", stroke=ORANGE, sw=1.1) + "</g>")
+        els.append(txt(rx + rw / 2, ry + 128, "Rafael  ·  Nadal（父姓★）  ·  Parera（母姓）", size=10.6, color=INK, anchor="middle", weight="700"))
+        els.append(txt(rx + rw / 2, ry + 145, "日常简称看【倒数第 2 词】→ 纳达尔（Nadal）！", size=9.6, color=ORANGE, anchor="middle", weight="700"))
+        els.append(txt(rx + 22, ry + 172, "• 彩蛋：毕加索全名 Pablo Ruiz Picasso，Ruiz 是父姓，", size=9.3, color=INK))
+        els.append(txt(rx + 22, ry + 188, "  他嫌 Ruiz 太普通，才挑母亲的意大利裔姓 Picasso 签名！", size=9.3, color=INK))
+        els.append(txt(rx + 22, ry + 205, "• 注：2017.6.30 起西《民事登记法》取消父姓自动优先权", size=9.1, color=MUTED))
+
+        # Subcard B: Portugal / Brazil (Mother + Father)
+        els.append(card(rx + 12, ry + 226, rw - 24, 170, rx=8, fill=GREEN_SOFT, stroke=GREEN, sw=1.1))
+        els.append(txt(rx + 22, ry + 245, "葡萄牙 / 巴西顺序：名 + 【母方姓】 + 【父方主姓】", size=10.2, color=GREEN, weight="700"))
+        els.append(txt(rx + 22, ry + 263, "母系姓：dos Santos（排前） ＋ 父系姓：Aveiro（压轴）", size=9.6, color=INK))
+        els.append(
+            f'<path class="en-flow-2" d="M {rx + 176:.1f} {ry + 269:.1f} L {rx + 176:.1f} {ry + 287:.1f}" '
+            f'fill="none" stroke="{GREEN}" stroke-width="1.8" marker-end="url(#en-arr-g)"/>'
+        )
+        els.append(f'<g class="en-kid-2">' + card(rx + 14, ry + 290, rw - 28, 46, rx=6, fill="#ffffff", stroke=GREEN, sw=1.1) + "</g>")
+        els.append(txt(rx + rw / 2, ry + 308, "Cristiano Ronaldo(双名) · dos Santos(母) · Aveiro(父★)", size=9.2, color=INK, anchor="middle", weight="700"))
+        els.append(txt(rx + rw / 2, ry + 326, "正式主姓看【最后 1 词】→ 阿维罗（Aveiro）！", size=9.6, color=GREEN, anchor="middle", weight="700"))
+        els.append(txt(rx + 22, ry + 354, "• 对比连接词：西语偶尔夹 y（如 Ortega y Gasset），", size=9.3, color=INK))
+        els.append(txt(rx + 22, ry + 370, "  葡语常带 de / da / dos / e，且母前父后恰好镜像反转！", size=9.3, color=INK))
+        els.append(txt(rx + 22, ry + 387, "• C 罗球衣印 Ronaldo 其实是他教名的第二部分，并非姓氏", size=9.1, color=MUTED))
+
+        els.append(
+            txt(
+                380,
+                488,
+                "注：支持动画的浏览器单次演示父/母姓名向下一代拼合的路径并定格于完整终态；开启“减少动态效果”时直接静态呈现。",
+                size=9.5,
+                color=MUTED,
+                anchor="middle",
+            )
+        )
+
+        svg = figure(
+            500,
+            "冰岛活态父名母名制与西班牙葡萄牙双姓顺序镜像反转分步对比图",
+            "左侧展示冰岛依据1996年《个人姓名法》与2019年《性别自主法》，父亲Jón Einarsson与母亲Sigríður Pálsdóttir的子女分别取Jónsson、Jónsdóttir或Jónsbur，导致一家四口护照末栏各不相同；右侧对比西班牙传统“父姓在前、母姓在后”（如Rafael Nadal Parera主姓Nadal）与葡萄牙“母姓在前、父姓压轴”（如Cristiano Ronaldo dos Santos Aveiro主姓Aveiro）的镜像差异。",
+            els,
+        )
+        write_svg(SUBDIR, "iceland-iberian-family-relay-anim.svg", svg)
+
+    def _build_smith_miller_john_rosetta():
+        """SVG 3: Cross-European etymological Rosetta matrix of Blacksmith, Miller, John/Priest, and Appearance surnames."""
+        els = []
+        els.extend(
+            header(
+                "半个欧洲都叫“铁匠、磨坊主、约翰和红头发”：八大语区同源对照表",
+                "中世纪人口普查与征税造册时，全欧洲村民都在用同四类特征起姓——只是换了不同语言的马甲。",
+            )
+        )
+
+        # Table header bar
+        els.append(card(20, 64, 720, 34, rx=8, fill=PLAQUE_BLUE, stroke="none"))
+        cols = [
+            (28, "语种 / 代表区", PLAQUE_TEXT),
+            (148, "铁匠（打铁铺）", "#93c5fd"),
+            (296, "磨坊主（磨面坊）", "#fde68a"),
+            (444, "约翰 / 神父之子", "#d8b4fe"),
+            (596, "外貌 / 排行高频姓", "#86efac"),
+        ]
+        for cx, ctitle, ccol in cols:
+            els.append(txt(cx, 85, ctitle, size=10.6, color=ccol, weight="700"))
+
+        rows = [
+            ("英语（英伦）", "Smith", "Miller", "Johnson · Jones · Evans", "Brown · Reid(红) · Little"),
+            ("德语（德奥瑞）", "Schmidt · Schmitt", "Müller（全德第1姓）", "Jansen · Hans", "Klein(小) · Groß · Roth"),
+            ("法语（法/比瓦）", "Lefèvre · Faure", "Meunier · Moulin", "Jean · Petitjean", "Petit(小) · Legrand · Roux"),
+            ("意大利语", "Ferrari（ferrum 铁！）", "Molinari", "Di Giovanni · Gianni", "Rossi（红发，全意第1姓）"),
+            ("西班牙语", "Herrera · Herrero", "Molina · Molinero", "Ibáñez · Juanes", "Delgado(瘦) · Rubio(金)"),
+            ("波兰 / 捷克", "Kowalski · Kovář", "Młynarski · Mlynář", "Janowski · Janák", "Nowak(新户) · Černý(黑)"),
+            ("俄语 / 罗马尼亚", "俄 Kuznetsov", "俄 Melnikov", "俄 Ivanov · 罗 Popescu", "Belyaev(白) · Chernov"),
+            ("匈牙利 / 芬 / 希", "匈 Kovács · 芬 Seppälä", "匈 Molnár", "希 Papadopoulos", "匈 Nagy（大，全匈第1姓）"),
+        ]
+        assert len(rows) == 8
+
+        y0 = 104
+        rh = 36
+        for idx, (lang, smith, miller, john, trait) in enumerate(rows):
+            ry = y0 + idx * (rh + 4)
+            bg_row = "#ffffff" if idx % 2 == 0 else "#f8fafc"
+            is_ferrari = idx == 3
+            els.append(card(20, ry, 720, rh, rx=6, fill=ORANGE_SOFT if is_ferrari else bg_row, stroke=ORANGE if is_ferrari else BORDER, sw=1.1 if is_ferrari else 0.8))
+            els.append(txt(28, ry + 22, lang, size=10.2, color=INK, weight="700"))
+            els.append(txt(148, ry + 22, smith, size=10.1, color=ORANGE if is_ferrari else BLUE, weight="700"))
+            els.append(txt(296, ry + 22, miller, size=10.0, color=BODY, weight="600" if "第1" in miller else None))
+            els.append(txt(444, ry + 22, john, size=9.9, color=PURPLE, weight="600"))
+            els.append(txt(596, ry + 22, trait, size=9.8, color=GREEN if "第1" in trait else BODY, weight="700" if "第1" in trait else None))
+
+        # Bottom revelation card
+        by = 430
+        els.append(card(20, by, 720, 52, rx=8, fill=BLUE_SOFT, stroke=BLUE, sw=1.2))
+        els.append(
+            txt(
+                380,
+                by + 21,
+                "跨语种破壁彩蛋：超跑法拉利（Ferrari，拉丁语铁匠）、西班牙埃雷拉（Herrera，拉丁语 f→h 音变）、",
+                size=10.2,
+                color=BLUE,
+                anchor="middle",
+                weight="700",
+            )
+        )
+        els.append(
+            txt(
+                380,
+                by + 39,
+                "波兰科瓦尔斯基（Kowalski）与匈牙利科瓦奇（Kovács），撕掉翻译滤镜后全都是村头打马掌的“老铁师傅（Smith）”！",
+                size=10.0,
+                color=INK,
+                anchor="middle",
+                weight="600",
+            )
+        )
+
+        svg = figure(
+            494,
+            "欧洲八大语区铁匠、磨坊主、约翰教士与外貌特征同源姓氏对照表",
+            "横向对齐英语、德语、法语、意大利语、西班牙语、波兰与捷克语、俄语与罗马尼亚语、匈牙利芬兰希腊语在四大造姓源头上的同源词：如Smith、Schmidt、Lefèvre、Ferrari、Herrera、Kowalski、Kuznetsov、Kovács均意为铁匠；Müller、Miller、Meunier、Molinari、Molnár均意为磨坊主。",
+            els,
+        )
+        write_svg(SUBDIR, "smith-miller-john-rosetta.svg", svg)
+
+    def _build_particles_gender_uralic():
+        """SVG 4: High-precision edge cues — von vs van/Van, Lithuanian 3-state marital suffixes, and Uralic outliers."""
+        els = []
+        els.extend(
+            header(
+                "介词大小写、女姓看婚否与“姓在前”孤岛：三个一招制敌的高阶细节",
+                "为什么贝多芬在维也纳法庭当众尴尬？为什么立陶宛女姓一眼暴露婚否？匈牙利为什么像中文一样姓在前？",
+            )
+        )
+
+        # Top Left Card: von vs van vs Flemish Van/De + Beethoven 1818
+        lx, ly, lw, lh = 20, 64, 352, 232
+        els.append(card(lx, ly, lw, lh, rx=9, fill=CARD_BG, stroke=BLUE, sw=1.4))
+        els.append(card(lx, ly, lw, 34, rx=9, fill=BLUE, stroke="none"))
+        els.append(txt(lx + lw / 2, ly + 22, "① 介词玄机：德 von ≠ 荷 van ≠ 比利时大写 Van", size=10.8, color="#ffffff", anchor="middle", weight="700"))
+
+        p_rows = [
+            ("德国 / 奥地利 von", "多为贵族封地头衔：von Bismarck · von Neumann", BLUE_SOFT, BLUE),
+            ("荷兰 tussenvoegsel", "纯平民“来自”，连名必小写：Vincent van Gogh", GREEN_SOFT, GREEN),
+            ("比利时弗拉芒区", "户籍连名常保留大写：Kevin De Bruyne · Van Rompuy", ORANGE_SOFT, ORANGE),
+        ]
+        for idx, (ptag, ptxt, pbg, pfg) in enumerate(p_rows):
+            py = ly + 42 + idx * 38
+            els.append(card(lx + 10, py, lw - 20, 33, rx=5, fill=pbg, stroke="none"))
+            els.append(txt(lx + 18, py + 13, ptag, size=9.8, color=pfg, weight="700"))
+            els.append(txt(lx + 18, py + 27, ptxt, size=9.5, color=INK))
+
+        els.append(card(lx + 10, ly + 160, lw - 20, 64, rx=6, fill="#fffdf7", stroke=GOLD, sw=1.0))
+        els.append(txt(lx + 18, ly + 177, "史料现场｜1818.12.11 贝多芬维也纳法庭破防案：", size=9.7, color=GOLD, weight="700"))
+        els.append(txt(lx + 18, ly + 194, "祖籍弗拉芒梅赫伦，van Beethoven 意为“来自甜菜园”；", size=9.3, color=INK))
+        els.append(txt(lx + 18, ly + 210, "因拿不出贵族证书，监护权案被贵族法庭踢回平民市政厅！", size=9.3, color=CRIMSON, weight="600"))
+
+        # Top Right Card: Lithuanian 3-state female surnames + Slavic gender endings
+        rx, ry, rw, rh = 388, 64, 352, 232
+        els.append(card(rx, ry, rw, rh, rx=9, fill=CARD_BG, stroke=CRIMSON, sw=1.4))
+        els.append(card(rx, ry, rw, 34, rx=9, fill=CRIMSON, stroke="none"))
+        els.append(txt(rx + rw / 2, ry + 22, "② 词尾变形：立陶宛把“未婚/已婚”焊在姓氏尾巴上", size=10.6, color="#ffffff", anchor="middle", weight="700"))
+
+        els.append(txt(rx + 14, ry + 53, "立陶宛同一家族（父/夫姓 Kazlauskas）的三种女姓：", size=9.8, color=INK, weight="700"))
+        lt_rows = [
+            ("未婚女儿 -aitė/-ytė/-ūtė", "Kazlauskaitė（一眼看出是女儿身）", PURPLE_SOFT, PURPLE),
+            ("已婚妻子 -ienė", "Kazlauskienė（传统婚后冠夫姓尾缀）", CRIMSON_SOFT, CRIMSON),
+            ("2003 法定中性尾音 -ė", "Kazlauskė（国家语委新增，免透露婚否）", GREEN_SOFT, GREEN),
+        ]
+        for idx, (ltag, ltxt, lbg, lfg) in enumerate(lt_rows):
+            ly_r = ry + 61 + idx * 36
+            els.append(card(rx + 10, ly_r, rw - 20, 31, rx=5, fill=lbg, stroke="none"))
+            els.append(txt(rx + 18, ly_r + 13, ltag, size=9.6, color=lfg, weight="700"))
+            els.append(txt(rx + 18, ly_r + 26, ltxt, size=9.4, color=INK))
+
+        els.append(card(rx + 10, ry + 173, rw - 20, 51, rx=6, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(rx + 18, ry + 190, "斯拉夫女姓对照：俄 Yeltsina · 波兰 Skłodowska", size=9.5, color=INK, weight="700"))
+        els.append(txt(rx + 18, ry + 207, "捷克曾强制女姓加 -ová（Nováková），2022 修法准许免加", size=9.3, color=MUTED))
+
+        # Bottom Wide Card: Three Uralic Islands in Indo-European Sea (Hungary, Finland, Estonia)
+        bx, by, bw, bh = 20, 310, 720, 184
+        els.append(card(bx, by, bw, bh, rx=9, fill=CARD_BG, stroke=GREEN, sw=1.4))
+        els.append(card(bx, by, bw, 34, rx=9, fill=GREEN, stroke="none"))
+        els.append(txt(bx + bw / 2, by + 22, "③ 印欧语系汪洋里的“乌拉尔语系孤岛”：匈牙利姓在前，芬兰满街 -nen", size=11.0, color="#ffffff", anchor="middle", weight="700"))
+
+        # Left sub-box: Hungary
+        els.append(card(bx + 14, by + 44, 338, 128, rx=7, fill=GREEN_SOFT, stroke=GREEN, sw=1.0))
+        els.append(txt(bx + 24, by + 63, "匈牙利（Magyar）｜全欧唯一全国“姓在前、名在后”！", size=10.2, color=GREEN, weight="700"))
+        els.append(txt(bx + 24, by + 82, "• 语法与中文一致，本土证件/报刊一律【家族姓 + 教名】：", size=9.5, color=INK))
+        els.append(txt(bx + 30, by + 100, "Liszt Ferenc（李斯特） · Puskás Ferenc（普斯卡什）", size=9.6, color=INK, weight="700"))
+        els.append(txt(bx + 30, by + 118, "Erdős Pál（埃尔德什） · Karikó Katalin（考里科）", size=9.6, color=INK, weight="700"))
+        els.append(txt(bx + 24, by + 138, "• 翻译成英法德文时才倒装成 Ferenc Liszt，切勿认反姓氏！", size=9.2, color=MUTED))
+        els.append(txt(bx + 24, by + 156, "• 高频姓：Nagy(大) · Kovács(铁匠) · Tóth · Szabó(裁缝)", size=9.3, color=GREEN, weight="600"))
+
+        # Right sub-box: Finland
+        els.append(card(bx + 368, by + 44, 338, 128, rx=7, fill=BLUE_SOFT, stroke=BLUE, sw=1.0))
+        els.append(txt(bx + 378, by + 63, "芬兰（Suomi）｜超 1/3 国民带着大自然的 -nen 尾巴", size=10.2, color=BLUE, weight="700"))
+        els.append(txt(bx + 378, by + 82, "• 1921《姓氏法》定型，民众纷纷把山水草木加 -nen 入户：", size=9.5, color=INK))
+        els.append(txt(bx + 384, by + 100, "Virtanen（溪流） · Mäkinen（山丘） · Järvinen（湖泊）", size=9.6, color=INK, weight="700"))
+        els.append(txt(bx + 384, by + 118, "Nieminen（半岛） · Korhonen（与 Virtanen 争全国第1）", size=9.6, color=INK, weight="700"))
+        els.append(txt(bx + 378, by + 138, "• 西芬兰另常见庄园后缀 -la / -lä：Mäkelä · Mattila", size=9.2, color=MUTED))
+        els.append(txt(bx + 378, by + 156, "• 民族浪漫期还掀起把瑞典姓改译芬兰词（如 Kivi“岩石”）", size=9.3, color=BLUE, weight="600"))
+
+        svg = figure(
+            508,
+            "欧洲姓氏介词大小写区分、立陶宛女姓婚否后缀与乌拉尔语系匈牙利芬兰特例图",
+            "左上对比德语贵族von、荷兰平民小写van与比利时常见大写Van/De，并附1818年贝多芬在维也纳贵族法庭承认非贵族的史实；右上解析立陶宛语未婚-aitė、已婚-ienė与2003年新增中性-ė三态女姓及捷克2022年-ová改革；下方展示乌拉尔语系的匈牙利东方姓前名后语序与芬兰超三分之一人口使用的自然地貌后缀-nen。",
+            els,
+        )
+        write_svg(SUBDIR, "particles-gender-and-uralic-outliers.svg", svg)
+
+    def _build_three_second_decoder():
+        """SVG 5: Practical 4-step funnel for decoding a European name in 3 seconds + 3 migration/border counterexamples."""
+        els = [_arrow_defs()]
+        els.extend(
+            header(
+                "实战速查卡：拿到一个陌生欧洲人名，3 秒钟破译出处的四步漏斗",
+                "先抓“一票锁定”的独占特殊字母，再看结构与词尾印章，最后用反例滤镜排除移民与边疆干扰。",
+            )
+        )
+
+        # Step 1: Diacritics & Digraphs (y=64..186)
+        els.append(card(20, 64, 720, 122, rx=9, fill=CARD_BG, stroke=BLUE, sw=1.4))
+        els.append(step_badge(38, 84, "1", fg="#ffffff", bg=BLUE, r=11))
+        els.append(txt(56, 88, "第 1 步｜扫特殊字母与变音符（最快“一剑封喉”，直接缩到 1–2 国）", size=11.4, color=BLUE, weight="700"))
+
+        chips = [
+            (32, 100, "þ · ð", "冰岛（þ 国家级独占）", BLUE, BLUE_SOFT),
+            (208, 100, "ø · æ", "丹麦 / 挪威（Ødegaard）", BLUE, BLUE_SOFT),
+            (384, 100, "ł · ą · ę · ń · ś · ż", "波兰（Świątek）", PURPLE, PURPLE_SOFT),
+            (560, 100, "ř · ů", "捷克（Dvořák 独有 ř）", PURPLE, PURPLE_SOFT),
+            (32, 142, "ő · ű + sz · cs · gy", "匈牙利（双长音符 Erdős）", GREEN, GREEN_SOFT),
+            (208, 142, "ș · ț · ă", "罗马尼亚（Ceaușescu）", ORANGE, ORANGE_SOFT),
+            (384, 142, "ß / å", "ß 德奥 ｜ å 瑞/挪/丹", SLATE, SLATE_SOFT),
+            (560, 142, "ñ / ã · õ / ğ · ı", "ñ 西 ｜ ã 葡 ｜ ğ 土耳其", ORANGE, ORANGE_SOFT),
+        ]
+        for cx, cy, ckey, cval, cfg, cbg in chips:
+            els.append(card(cx, cy, 168, 34, rx=6, fill=cbg, stroke="none"))
+            els.append(txt(cx + 8, cy + 14, ckey, size=10.0, color=cfg, weight="700"))
+            els.append(txt(cx + 8, cy + 28, cval, size=9.2, color=INK))
+
+        # Downward funnel arrows
+        els.append(_line(196, 186, 196, 200, stroke=PURPLE, sw=1.6, marker="en-arr-p"))
+        els.append(_line(564, 186, 564, 200, stroke=GREEN, sw=1.6, marker="en-arr-g"))
+
+        # Step 2 & Step 3 side-by-side (y=202..342)
+        els.append(card(20, 202, 352, 140, rx=9, fill=CARD_BG, stroke=PURPLE, sw=1.3))
+        els.append(step_badge(38, 222, "2", fg="#ffffff", bg=PURPLE, r=11))
+        els.append(txt(56, 226, "第 2 步｜看名字段数、大小写与语序", size=11.2, color=PURPLE, weight="700"))
+        s2 = [
+            "• 三段式含 -ovich / -ovna → 俄罗斯 / 白俄罗斯",
+            "• 双姓【父+母】→ 西班牙；【母+父(常夹dos/da)】→ 葡萄牙",
+            "• 连名小写 van / van der → 荷兰；大写 Van / De → 比利时",
+            "• 本土文本把家族姓放第 1 词 → 匈牙利（如 Liszt Ferenc）",
+        ]
+        for i, line_s in enumerate(s2):
+            els.append(txt(32, 250 + i * 22, line_s, size=9.6, color=INK))
+
+        els.append(card(388, 202, 352, 140, rx=9, fill=CARD_BG, stroke=GREEN, sw=1.3))
+        els.append(step_badge(406, 222, "3", fg="#ffffff", bg=GREEN, r=11))
+        els.append(txt(424, 226, "第 3 步｜对词尾高频“家族印章”", size=11.2, color=GREEN, weight="700"))
+        s3 = [
+            "• -ić / -vić → 克罗地亚/塞尔维亚/波黑 ｜ -escu → 罗马尼亚",
+            "• -nen / -lä → 芬兰 ｜ -sen → 丹/挪 ｜ -sson → 瑞典",
+            "• -as / -is / -aitė / -ienė → 立陶宛 ｜ 词尾全挂 -s → 拉脱维亚",
+            "• -opoulos / -akis / -idis → 希腊 ｜ -ashvili / -adze → 格鲁吉亚",
+        ]
+        for i, line_s in enumerate(s3):
+            els.append(txt(400, 250 + i * 22, line_s, size=9.6, color=INK))
+
+        els.append(_line(380, 342, 380, 356, stroke=ORANGE, sw=1.8, marker="en-arr-o"))
+
+        # Step 4: Counterexamples Warning Box (y=358..506)
+        els.append(card(20, 358, 720, 146, rx=9, fill="#fffaf5", stroke=ORANGE, sw=1.5))
+        els.append(step_badge(38, 378, "4", fg="#ffffff", bg=ORANGE, r=11))
+        els.append(txt(56, 382, "第 4 步｜必做防坑校验：记住“姓氏语言学祖源 ≠ 当事人现持护照”三大反例！", size=11.2, color=ORANGE, weight="700"))
+
+        warns = [
+            (
+                32,
+                "反例 A · 现代移民与球星二代",
+                [
+                    "伊布 Ibrahimović 词尾是典型前南 -ić，",
+                    "但生于马尔默、代表瑞典出战；",
+                    "姆巴佩 Mbappé、齐达内 Zidane",
+                    "则折射出法国多元移民史。",
+                ],
+            ),
+            (
+                268,
+                "反例 B · 千年历史边疆交错带",
+                [
+                    "法国球星格列兹曼 Griezmann",
+                    "来自法德交界的阿尔萨斯；",
+                    "意大利网球名将 Jannik Sinner",
+                    "生于意北德语区南蒂罗尔！",
+                ],
+            ),
+            (
+                504,
+                "反例 C · 跨国联姻与王室改姓",
+                [
+                    "居里夫人 Skłodowska-Curie",
+                    "用连字符拼起波兰娘家与法国夫姓；",
+                    "英国王室 1917 年弃用德国旧姓，",
+                    "直接改姓英伦地名 Windsor（温莎）！",
+                ],
+            ),
+        ]
+        for wx, wtitle, wlines in warns:
+            els.append(card(wx, 396, 224, 96, rx=7, fill="#ffffff", stroke=BORDER))
+            els.append(txt(wx + 10, 415, wtitle, size=9.8, color=CRIMSON, weight="700"))
+            for l_idx, wln in enumerate(wlines):
+                els.append(txt(wx + 10, 434 + l_idx * 15.5, wln, size=9.1, color=INK))
+
+        svg = figure(
+            518,
+            "三秒识别陌生欧洲人名来源国的四步漏斗与三大反例警示图",
+            "按实战顺序分四步拆解欧洲姓名：①扫视þ/ð、ø/æ、ł、ř、ő/ű、ș/ț、ß等国家特征字母；②检查俄罗斯三段父称、西葡双姓镜像顺序、荷比van大小写及匈牙利姓前名后语序；③核对-ić、-escu、-nen、-opoulos、-aitė等词尾印章；④结合现代移民（如伊布）、边疆交错带（如意大利德语区的辛纳）与王室联姻改姓（如温莎王朝）区分语言祖源与现国籍。",
+            els,
+        )
+        write_svg(SUBDIR, "three-second-surname-decoder.svg", svg)
+
+    @register(
+        "european-name-patterns",
+        "欧洲姓名国别密码：四大区父名图谱、冰岛与西葡传姓动画、铁匠磨坊主跨语种同源表、介词女姓乌拉尔特例与三秒破译漏斗",
+        "humanities",
+    )
+    def build_european_name_patterns():
+        _build_patronymic_atlas()
+        _build_iceland_iberian_family_relay()
+        _build_smith_miller_john_rosetta()
+        _build_particles_gender_uralic()
+        _build_three_second_decoder()
+
+
 _register_daguanlou_couplet()
 _register_poetry_boom_7080s()
+_register_european_name_patterns()
