@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="460" viewBox="0 0 760 460" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">横跨一亿倍的动物体重对数光谱与热力学、气囊骨骼、海洋浮力三大物理边界图解</title>
+<desc id="desc">上图在对数坐标轴上精确标定从1.8克小臭鼩、25克家鼠、70千克人类、6吨非洲象、17吨巨犀、60吨泰坦巨龙到180吨蓝鲸的8个数量级跨度；下图三栏分别解释1.8克恒温散热下限、蜥脚类恐龙中空气囊骨骼突破哺乳类20吨上限以及海水阿基米德浮力解除重力约束的机制。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="459" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">横跨 1 亿倍的动物体重光谱：谁锁死了陆地与海洋的最小下限与最大天花板？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">从 1.8 克小臭鼩到 180 吨蓝鲸（log₁₀ M 横跨 8 个数量级），热力学、呼吸骨骼与阿基米德浮力画出了四道铁律边界</text>
+<rect x="18" y="64" width="724" height="210" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="32" y="86" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 恒温与脊椎动物体重对数标尺（log₁₀ 质量，单位 kg）</text>
+<rect x="52.0" y="152.0" width="33.9" height="28" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2"/>
+<rect x="85.9" y="152.0" width="525.2" height="28" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="300.1" y="170.0" font-size="9.4" fill="#18794e" text-anchor="middle" font-weight="700">陆生哺乳动物安全带 (1.8 g – ~20 t)</text>
+<rect x="611.2" y="152.0" width="40.6" height="28" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<rect x="651.7" y="152.0" width="56.3" height="28" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<line x1="66.9" y1="180.0" x2="66.9" y2="186.0" stroke="#475569" stroke-width="1.1"/>
+<text x="66.9" y="199.0" font-size="9.2" fill="#64748b" text-anchor="middle" class="mono">1 g</text>
+<line x1="141.5" y1="180.0" x2="141.5" y2="186.0" stroke="#475569" stroke-width="1.1"/>
+<text x="141.5" y="199.0" font-size="9.2" fill="#64748b" text-anchor="middle" class="mono">10 g</text>
+<line x1="216.0" y1="180.0" x2="216.0" y2="186.0" stroke="#475569" stroke-width="1.1"/>
+<text x="216.0" y="199.0" font-size="9.2" fill="#64748b" text-anchor="middle" class="mono">100 g</text>
+<line x1="290.5" y1="180.0" x2="290.5" y2="186.0" stroke="#475569" stroke-width="1.1"/>
+<text x="290.5" y="199.0" font-size="9.2" fill="#64748b" text-anchor="middle" class="mono">1 kg</text>
+<line x1="365.1" y1="180.0" x2="365.1" y2="186.0" stroke="#475569" stroke-width="1.1"/>
+<text x="365.1" y="199.0" font-size="9.2" fill="#64748b" text-anchor="middle" class="mono">10 kg</text>
+<line x1="439.6" y1="180.0" x2="439.6" y2="186.0" stroke="#475569" stroke-width="1.1"/>
+<text x="439.6" y="199.0" font-size="9.2" fill="#64748b" text-anchor="middle" class="mono">100 kg</text>
+<line x1="514.2" y1="180.0" x2="514.2" y2="186.0" stroke="#475569" stroke-width="1.1"/>
+<text x="514.2" y="199.0" font-size="9.2" fill="#64748b" text-anchor="middle" class="mono">1 t</text>
+<line x1="588.7" y1="180.0" x2="588.7" y2="186.0" stroke="#475569" stroke-width="1.1"/>
+<text x="588.7" y="199.0" font-size="9.2" fill="#64748b" text-anchor="middle" class="mono">10 t</text>
+<line x1="663.3" y1="180.0" x2="663.3" y2="186.0" stroke="#475569" stroke-width="1.1"/>
+<text x="663.3" y="199.0" font-size="9.2" fill="#64748b" text-anchor="middle" class="mono">100 t</text>
+<circle cx="85.9" cy="166.0" r="4.2" fill="#ffffff" stroke="#dc2626" stroke-width="2.0"/>
+<line x1="85.9" y1="161.0" x2="85.9" y2="138.0" stroke="#dc2626" stroke-width="1.3"/>
+<text x="103.9" y="122.0" font-size="10.0" fill="#dc2626" text-anchor="middle" font-weight="700">小臭鼩 1.8 g</text>
+<text x="103.9" y="135.0" font-size="9.1" fill="#64748b" text-anchor="middle">最轻哺乳类·心率1200+</text>
+<circle cx="171.1" cy="166.0" r="4.2" fill="#ffffff" stroke="#475569" stroke-width="2.0"/>
+<line x1="171.1" y1="171.0" x2="171.1" y2="210.0" stroke="#475569" stroke-width="1.3" stroke-dasharray="2 2"/>
+<text x="171.1" y="223.0" font-size="10.0" fill="#475569" text-anchor="middle" font-weight="700">家鼠 25 g</text>
+<text x="171.1" y="236.0" font-size="9.1" fill="#64748b" text-anchor="middle">敏捷曲腿</text>
+<circle cx="428.1" cy="166.0" r="4.2" fill="#ffffff" stroke="#0f172a" stroke-width="2.0"/>
+<line x1="428.1" y1="161.0" x2="428.1" y2="138.0" stroke="#0f172a" stroke-width="1.3"/>
+<text x="428.1" y="122.0" font-size="10.0" fill="#0f172a" text-anchor="middle" font-weight="700">人类 70 kg</text>
+<text x="428.1" y="135.0" font-size="9.1" fill="#64748b" text-anchor="middle">直立双足</text>
+<circle cx="572.2" cy="166.0" r="4.2" fill="#ffffff" stroke="#18794e" stroke-width="2.0"/>
+<line x1="572.2" y1="171.0" x2="572.2" y2="210.0" stroke="#18794e" stroke-width="1.3" stroke-dasharray="2 2"/>
+<text x="548.2" y="223.0" font-size="10.0" fill="#18794e" text-anchor="middle" font-weight="700">非洲象 6 t</text>
+<text x="548.2" y="236.0" font-size="9.1" fill="#64748b" text-anchor="middle">现存陆地最大</text>
+<circle cx="605.9" cy="166.0" r="4.2" fill="#ffffff" stroke="#b45309" stroke-width="2.0"/>
+<line x1="605.9" y1="161.0" x2="605.9" y2="138.0" stroke="#b45309" stroke-width="1.3"/>
+<text x="587.9" y="122.0" font-size="10.0" fill="#b45309" text-anchor="middle" font-weight="700">巨犀 ~17 t</text>
+<text x="587.9" y="135.0" font-size="9.1" fill="#64748b" text-anchor="middle">陆生哺乳极限</text>
+<circle cx="646.7" cy="166.0" r="4.2" fill="#ffffff" stroke="#6d28d9" stroke-width="2.0"/>
+<line x1="646.7" y1="171.0" x2="646.7" y2="210.0" stroke="#6d28d9" stroke-width="1.3" stroke-dasharray="2 2"/>
+<text x="650.7" y="223.0" font-size="10.0" fill="#6d28d9" text-anchor="middle" font-weight="700">泰坦巨龙 ~60 t</text>
+<text x="650.7" y="236.0" font-size="9.1" fill="#64748b" text-anchor="middle">陆地动物极限</text>
+<circle cx="682.3" cy="166.0" r="4.2" fill="#ffffff" stroke="#1d6fa5" stroke-width="2.0"/>
+<line x1="682.3" y1="161.0" x2="682.3" y2="138.0" stroke="#1d6fa5" stroke-width="1.3"/>
+<text x="674.3" y="122.0" font-size="10.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">蓝鲸 ~180 t</text>
+<text x="674.3" y="135.0" font-size="9.1" fill="#64748b" text-anchor="middle">地球史上最重动物!</text>
+<rect x="18" y="286.0" width="232" height="162.0" rx="10" fill="#ffffff" stroke="#dc2626" stroke-width="1.2"/>
+<rect x="30.0" y="298.0" width="208" height="22" rx="11.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="134.0" y="313.0" font-size="10.0" fill="#dc2626" text-anchor="middle" font-weight="600">下限墙 · 1.8 克恒温散热死线</text>
+<text x="30" y="338.0" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="600">• 表面积/体积比 A/V ∝ 1/L：体型越小，</text>
+<text x="30" y="355.0" font-size="9.8" fill="#1e293b" text-anchor="start">  单位体重漏掉热量的速度越快！</text>
+<text x="30" y="375.0" font-size="9.8" fill="#dc2626" text-anchor="start" font-weight="700">• 1.8 g 小臭鼩心率飙到 1200–1500 次/分，</text>
+<text x="30" y="392.0" font-size="9.8" fill="#1e293b" text-anchor="start">  每天必须吞下自身体重 1.5–2 倍的猎物；</text>
+<text x="30" y="412.0" font-size="9.7" fill="#64748b" text-anchor="start">• 再缩小，血液携氧与消化道流速触顶，</text>
+<text x="30" y="429.0" font-size="9.7" fill="#64748b" text-anchor="start">  37°C 恒温炉几小时就会彻底熄火。</text>
+<rect x="264" y="286.0" width="232" height="162.0" rx="10" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+<rect x="276.0" y="298.0" width="208" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="380.0" y="313.0" font-size="9.7" fill="#6d28d9" text-anchor="middle" font-weight="600">陆地墙 · 恐龙凭什么重过哺乳类 3 倍？</text>
+<text x="276" y="338.0" font-size="9.7" fill="#0f172a" text-anchor="start" font-weight="600">• 陆生哺乳类卡在 ~17–20 吨（巨犀/古菱齿象）：</text>
+<text x="276" y="355.0" font-size="9.6" fill="#1e293b" text-anchor="start">  实心骨重 + 大臼齿咀嚼巨颅 + 漫长胎生限制。</text>
+<text x="276" y="375.0" font-size="9.8" fill="#6d28d9" text-anchor="start" font-weight="700">• 蜥脚类恐龙（Sander 2011）三件物理外挂：</text>
+<text x="276" y="393.0" font-size="9.6" fill="#1e293b" text-anchor="start">  1) 鸟式【中空气囊脊椎】，长颈极轻不压垮；</text>
+<text x="276" y="410.0" font-size="9.6" fill="#1e293b" text-anchor="start">  2) 迷你头颅整吞不嚼，省去沉重颌骨肌肉；</text>
+<text x="276" y="427.0" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="600">  3) 下蛋繁殖（卵生），绕开多年怀胎死结！</text>
+<rect x="510" y="286.0" width="232" height="162.0" rx="10" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.2"/>
+<rect x="522.0" y="298.0" width="208" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="626.0" y="313.0" font-size="9.8" fill="#1d6fa5" text-anchor="middle" font-weight="600">海洋外挂 · 阿基米德浮力与搁浅悲剧</text>
+<text x="522" y="338.0" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="600">• 海水密度 (1.025 g/cm³) ≈ 生物体密度：</text>
+<text x="522" y="355.0" font-size="9.8" fill="#1d6fa5" text-anchor="start" font-weight="700">  F_浮 = ρ_水 g V 沿全身每一寸均匀托举！</text>
+<text x="522" y="375.0" font-size="9.6" fill="#1e293b" text-anchor="start">• 摆脱承重骨屈曲枷锁后，蓝鲸靠高密度磷虾</text>
+<text x="522" y="392.0" font-size="9.5" fill="#1e293b" text-anchor="start">  滤食冲上 30 米、180 吨（超最大恐龙近3倍）。</text>
+<text x="522" y="412.0" font-size="9.7" fill="#dc2626" text-anchor="start" font-weight="600">• 反证就在海滩：鲸一旦搁浅失去海水浮力，</text>
+<text x="522" y="429.0" font-size="9.7" fill="#dc2626" text-anchor="start" font-weight="600">  自身百吨重力会直接压瘪肺脏与内脏窒息！</text>
+</svg>

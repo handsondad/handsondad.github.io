@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="468" viewBox="0 0 760 468" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">围棋两千五百年历史演进时间轴与AlphaGo突破10的170次方状态空间图解</title>
+<desc id="desc">上排梳理公元前548年《左传》定名、东汉望都墓17道石盘、北周《敦煌碁经》与隋代张盛墓19道瓷盘、江户废除座子与1933新布局及贴目制、直至2016–2017年AlphaGo与AlphaGo Zero的五次跃迁；左下按对数尺度对比国际象棋(~10^44)、可观测宇宙原子(~10^80)与19路围棋精确合法局面(2.08×10^170)；右下解析策略网络+价值网络+MCTS与著名的五路肩冲第37手。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="467" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">两千五百年棋道演进与 AI 破壁：从 17 道石盘、废除座子到 AlphaGo</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">为什么国际象棋 1997 年就被深蓝攻克，而规则更简单的围棋却让人类顶尖棋手多守了整整 19 年？</text>
+<rect x="16" y="74" width="728" height="186" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="32" cy="92" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="32" y="96" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="48" y="96" font-size="11.2" fill="13.5" text-anchor="start" font-weight="700">围棋形制与规则的五次历史定型（史料与考古实物双重印证）</text>
+<line x1="90.0" y1="134.0" x2="670.0" y2="134.0" stroke="#e2e8f0" stroke-width="2.2"/>
+<rect x="30" y="112" width="134" height="134" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<rect x="42.0" y="118.0" width="110" height="20" rx="10.0" fill="#ffffff" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="97.0" y="131.6" font-size="8.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">公元前548年</text>
+<text x="97" y="154" font-size="9.5" fill="#0f172a" text-anchor="middle" font-weight="700">先秦文献定名</text>
+<text x="97" y="173" font-size="8.5" fill="#1e293b" text-anchor="middle">《左传》襄公二十五年</text>
+<text x="97" y="189" font-size="8.5" fill="#1e293b" text-anchor="middle">首载“弈者举棋不定”；</text>
+<text x="97" y="205" font-size="8.5" fill="#1e293b" text-anchor="middle">《孟子》记国手弈秋，</text>
+<text x="97" y="221" font-size="8.5" fill="#1e293b" text-anchor="middle">早期称“弈”后称围棋。</text>
+<rect x="172" y="112" width="134" height="134" rx="7" fill="#fef3c7" stroke="#b45309" stroke-width="1"/>
+<rect x="184.0" y="118.0" width="110" height="20" rx="10.0" fill="#ffffff" stroke="#b45309" stroke-width="1" stroke-opacity="0.35"/>
+<text x="239.0" y="131.6" font-size="8.5" fill="#b45309" text-anchor="middle" font-weight="600">东汉—魏晋</text>
+<text x="239" y="154" font-size="9.5" fill="#0f172a" text-anchor="middle" font-weight="700">17×17 道石棋盘</text>
+<text x="239" y="173" font-size="8.5" fill="#1e293b" text-anchor="middle">河北望都东汉墓出土</text>
+<text x="239" y="189" font-size="8.5" fill="#1e293b" text-anchor="middle">17道石盘（289点）；</text>
+<text x="239" y="205" font-size="8.5" fill="#1e293b" text-anchor="middle">班固《弈旨》首论棋理，</text>
+<text x="239" y="221" font-size="8.5" fill="#1e293b" text-anchor="middle">《艺经》载纵横十七道。</text>
+<rect x="314" y="112" width="134" height="134" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<rect x="326.0" y="118.0" width="110" height="20" rx="10.0" fill="#ffffff" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="381.0" y="131.6" font-size="8.5" fill="#18794e" text-anchor="middle" font-weight="600">南北朝—隋唐</text>
+<text x="381" y="154" font-size="9.5" fill="#0f172a" text-anchor="middle" font-weight="700">19×19 道与十决</text>
+<text x="381" y="173" font-size="8.5" fill="#1e293b" text-anchor="middle">北周《敦煌碁经》载</text>
+<text x="381" y="189" font-size="8.5" fill="#1e293b" text-anchor="middle">“三百六十一道”；安阳</text>
+<text x="381" y="205" font-size="8.5" fill="#1e293b" text-anchor="middle">隋张盛墓(595)出白瓷盘；</text>
+<text x="381" y="221" font-size="8.5" fill="#1e293b" text-anchor="middle">唐王积薪撰《围棋十决》。</text>
+<rect x="456" y="112" width="134" height="134" rx="7" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<rect x="468.0" y="118.0" width="110" height="20" rx="10.0" fill="#ffffff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="523.0" y="131.6" font-size="8.5" fill="#6d28d9" text-anchor="middle" font-weight="600">17世纪—20世纪</text>
+<text x="523" y="154" font-size="9.5" fill="#0f172a" text-anchor="middle" font-weight="700">废座子·新布局·贴目</text>
+<text x="523" y="173" font-size="8.5" fill="#1e293b" text-anchor="middle">古棋先摆4颗星位座子；</text>
+<text x="523" y="189" font-size="8.5" fill="#1e293b" text-anchor="middle">江户日本改空盘自由下，</text>
+<text x="523" y="205" font-size="8.5" fill="#1e293b" text-anchor="middle">1933吴清源掀起新布局，</text>
+<text x="523" y="221" font-size="8.5" fill="#1e293b" text-anchor="middle">现代确立先行贴目制。</text>
+<rect x="598" y="112" width="134" height="134" rx="7" fill="#ffe4e6" stroke="#9f1239" stroke-width="1"/>
+<rect x="610.0" y="118.0" width="110" height="20" rx="10.0" fill="#ffffff" stroke="#9f1239" stroke-width="1" stroke-opacity="0.35"/>
+<text x="665.0" y="131.6" font-size="8.5" fill="#9f1239" text-anchor="middle" font-weight="600">2016—2017</text>
+<text x="665" y="154" font-size="9.5" fill="#0f172a" text-anchor="middle" font-weight="700">AlphaGo 零知识破壁</text>
+<text x="665" y="173" font-size="8.5" fill="#1e293b" text-anchor="middle">2016 胜李世石(4:1)，</text>
+<text x="665" y="189" font-size="8.5" fill="#1e293b" text-anchor="middle">第37手五路肩冲惊天下；</text>
+<text x="665" y="205" font-size="8.5" fill="#1e293b" text-anchor="middle">2017 Zero 仅凭基本规则</text>
+<text x="665" y="221" font-size="8.5" fill="#1e293b" text-anchor="middle">自博弈 100:0 完胜前代！</text>
+<rect x="16" y="272" width="434" height="182" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="32" cy="290" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="32" y="294" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="48" y="294" font-size="11.0" fill="13.5" text-anchor="start" font-weight="700">计算鸿沟：为什么暴力穷举在围棋面前彻底失效？</text>
+<text x="34" y="316" font-size="9.2" fill="#0f172a" text-anchor="start" font-weight="700">国际象棋合法局面 (~10^44)</text>
+<rect x="34" y="322.0" width="396" height="12" rx="6" fill="#f1f5f9"/>
+<rect x="34" y="322.0" width="95.8" height="12" rx="6" fill="#475569"/>
+<text x="38" y="346" font-size="8.5" fill="#64748b" text-anchor="start">1997“深蓝”靠每秒2亿步α-β剪枝攻克</text>
+<text x="34" y="360" font-size="9.2" fill="#0f172a" text-anchor="start" font-weight="700">可观测宇宙原子总数 (~10^80)</text>
+<rect x="34" y="366.0" width="396" height="12" rx="6" fill="#f1f5f9"/>
+<rect x="34" y="366.0" width="174.2" height="12" rx="6" fill="#1d6fa5"/>
+<text x="38" y="390" font-size="8.5" fill="#64748b" text-anchor="start">全宇宙物质颗粒加起来也才80个零</text>
+<text x="34" y="404" font-size="9.2" fill="#0f172a" text-anchor="start" font-weight="700">19路围棋精确合法局面 (2.08×10^170)</text>
+<rect x="34" y="410.0" width="396" height="12" rx="6" fill="#f1f5f9"/>
+<rect x="34" y="410.0" width="370.9" height="12" rx="6" fill="#9f1239"/>
+<text x="38" y="434" font-size="8.5" fill="#64748b" text-anchor="start">足足171位十进制数！每步约250种选点</text>
+<rect x="462" y="272" width="282" height="182" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="478" cy="290" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="478" y="294" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">3</text>
+<text x="494" y="294" font-size="10.8" fill="13.5" text-anchor="start" font-weight="700">AI 怎么看懂围棋？直觉 + 算路 + 第37手</text>
+<rect x="469.0" y="315.0" width="104.0" height="104.0" rx="6" fill="#f5dfa8" stroke="#85581f" stroke-width="1.4"/>
+<line x1="476.0" y1="322.0" x2="476.0" y2="412.0" stroke="#5c3d14" stroke-width="1.25"/>
+<line x1="476.0" y1="322.0" x2="566.0" y2="322.0" stroke="#5c3d14" stroke-width="1.25"/>
+<line x1="494.0" y1="322.0" x2="494.0" y2="412.0" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="476.0" y1="340.0" x2="566.0" y2="340.0" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="512.0" y1="322.0" x2="512.0" y2="412.0" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="476.0" y1="358.0" x2="566.0" y2="358.0" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="530.0" y1="322.0" x2="530.0" y2="412.0" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="476.0" y1="376.0" x2="566.0" y2="376.0" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="548.0" y1="322.0" x2="548.0" y2="412.0" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="476.0" y1="394.0" x2="566.0" y2="394.0" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="566.0" y1="322.0" x2="566.0" y2="412.0" stroke="#5c3d14" stroke-width="1.25"/>
+<line x1="476.0" y1="412.0" x2="566.0" y2="412.0" stroke="#5c3d14" stroke-width="1.25"/>
+<circle cx="530.0" cy="376.0" r="2.5" fill="#5c3d14"/>
+<g><circle cx="512.0" cy="358.0" r="6.6" fill="#f8fafc" stroke="#475569" stroke-width="1.15"/></g>
+<g><circle cx="530.0" cy="394.0" r="6.6" fill="#f8fafc" stroke="#475569" stroke-width="1.15"/></g>
+<g><circle cx="512.0" cy="322.0" r="6.6" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="510.2" cy="320.2" r="1.5" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="494.0" cy="340.0" r="7.0" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="492.0" cy="338.0" r="1.5" fill="#52525b" opacity="0.65"/><text x="494.0" y="342.4" font-size="8.6" fill="#fde68a" text-anchor="middle" font-weight="700">37</text></g>
+<circle cx="494.0" cy="340.0" r="9.2" fill="none" stroke="#9f1239" stroke-width="1.4" stroke-dasharray="2.5 2"/>
+<text x="588" y="326" font-size="9.3" fill="#18794e" text-anchor="start" font-weight="700">破局三剑客：</text>
+<text x="588" y="344" font-size="8.6" fill="#0f172a" text-anchor="start">1. 策略网络：像人类棋感，</text>
+<text x="588" y="359" font-size="8.6" fill="#0f172a" text-anchor="start">   从250点筛出几步好点；</text>
+<text x="588" y="377" font-size="8.6" fill="#0f172a" text-anchor="start">2. 价值网络：不数子力，直</text>
+<text x="588" y="392" font-size="8.6" fill="#0f172a" text-anchor="start">   接评估整盘胜率厚薄；</text>
+<text x="588" y="410" font-size="8.6" fill="#0f172a" text-anchor="start">3. 树搜索+自博弈：打破</text>
+<text x="588" y="425" font-size="8.6" fill="#0f172a" text-anchor="start">   “布局禁下五路”古训，</text>
+<text x="588" y="440" font-size="8.6" fill="#9f1239" text-anchor="start" font-weight="700">   反哺今天人类职业棋坛！</text>
+</svg>

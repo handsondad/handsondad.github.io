@@ -1,0 +1,228 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="476" viewBox="0 0 760 476" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">围棋两只真眼活棋定理、双活纳什均衡与打劫禁止全局同形四步图解</title>
+<desc id="desc">左上对比两只独立真眼（白落任一处皆因另一眼尚存气而构成禁入点，故黑永生）与断点未补的假眼死棋；右上展示双方共享两口公气、谁先动手谁自毙的双活（Seki）均衡；下排四步拆解虎口打劫（Ko）：黑1提劫后白禁止立即回提造成全局同形死循环，须先在别处寻劫（白2、黑3改变全局）后方能白4回提。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="475" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">从一条“气”规则长出的三大神仙推论：两只真眼永生、双活与打劫</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">规则书根本不用专门规定“两眼活棋”——只要不能自杀、每手只能下一子，两只独立真眼就天然杀不死</text>
+<rect x="16" y="74" width="360" height="192" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="32" cy="92" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="32" y="96" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">1</text>
+<text x="48" y="96" font-size="11.0" fill="13.5" text-anchor="start" font-weight="700">为什么必须“两只真眼”才永生？真眼 vs 假眼</text>
+<rect x="28" y="110" width="162" height="144" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="109" y="126" font-size="9.3" fill="#18794e" text-anchor="middle" font-weight="700">✓ 两只真眼 A、B = 铁活棋</text>
+<rect x="52.0" y="134.0" width="82.0" height="82.0" rx="6" fill="#f5dfa8" stroke="#85581f" stroke-width="1.4"/>
+<line x1="58.0" y1="140.0" x2="58.0" y2="210.0" stroke="#5c3d14" stroke-width="1.25"/>
+<line x1="58.0" y1="140.0" x2="128.0" y2="140.0" stroke="#5c3d14" stroke-width="1.25"/>
+<line x1="75.5" y1="140.0" x2="75.5" y2="210.0" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="58.0" y1="157.5" x2="128.0" y2="157.5" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="93.0" y1="140.0" x2="93.0" y2="210.0" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="58.0" y1="175.0" x2="128.0" y2="175.0" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="110.5" y1="140.0" x2="110.5" y2="210.0" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="58.0" y1="192.5" x2="128.0" y2="192.5" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="128.0" y1="140.0" x2="128.0" y2="210.0" stroke="#5c3d14" stroke-width="1.25"/>
+<line x1="58.0" y1="210.0" x2="128.0" y2="210.0" stroke="#5c3d14" stroke-width="1.25"/>
+<g><circle cx="75.5" cy="140.0" r="6.4" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="73.7" cy="138.2" r="1.4" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="58.0" cy="157.5" r="6.4" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="56.2" cy="155.7" r="1.4" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="75.5" cy="157.5" r="6.4" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="73.7" cy="155.7" r="1.4" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="93.0" cy="157.5" r="6.4" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="91.2" cy="155.7" r="1.4" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="110.5" cy="157.5" r="6.4" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="108.7" cy="155.7" r="1.4" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="110.5" cy="140.0" r="6.4" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="108.7" cy="138.2" r="1.4" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="58.0" cy="175.0" r="6.4" fill="#f8fafc" stroke="#475569" stroke-width="1.15"/></g>
+<g><circle cx="75.5" cy="175.0" r="6.4" fill="#f8fafc" stroke="#475569" stroke-width="1.15"/></g>
+<g><circle cx="93.0" cy="175.0" r="6.4" fill="#f8fafc" stroke="#475569" stroke-width="1.15"/></g>
+<g><circle cx="110.5" cy="175.0" r="6.4" fill="#f8fafc" stroke="#475569" stroke-width="1.15"/></g>
+<g><circle cx="128.0" cy="175.0" r="6.4" fill="#f8fafc" stroke="#475569" stroke-width="1.15"/></g>
+<g><circle cx="128.0" cy="157.5" r="6.4" fill="#f8fafc" stroke="#475569" stroke-width="1.15"/></g>
+<g><circle cx="128.0" cy="140.0" r="6.4" fill="#f8fafc" stroke="#475569" stroke-width="1.15"/></g>
+<circle cx="58.0" cy="140.0" r="5.0" fill="#ffffff" stroke="#18794e" stroke-width="1.6"/>
+<text x="58.0" y="143.0" font-size="8.2" fill="#18794e" text-anchor="middle" font-weight="700">A</text>
+<circle cx="93.0" cy="140.0" r="5.0" fill="#ffffff" stroke="#18794e" stroke-width="1.6"/>
+<text x="93.0" y="143.0" font-size="8.2" fill="#18794e" text-anchor="middle" font-weight="700">B</text>
+<text x="109" y="226" font-size="8.4" fill="#0f172a" text-anchor="middle">白填 A 黑剩 B 气；白填 B 黑剩 A 气</text>
+<text x="109" y="241" font-size="8.5" fill="#18794e" text-anchor="middle" font-weight="700">两处对白皆禁入点 → 永远杀不死！</text>
+<rect x="198" y="110" width="166" height="144" rx="7" fill="#ffe4e6" stroke="#9f1239" stroke-width="1"/>
+<text x="281" y="126" font-size="9.3" fill="#9f1239" text-anchor="middle" font-weight="700">✗ 断点未连 = 假眼必死！</text>
+<rect x="224.0" y="134.0" width="82.0" height="82.0" rx="6" fill="#f5dfa8" stroke="#85581f" stroke-width="1.4"/>
+<line x1="230.0" y1="140.0" x2="230.0" y2="210.0" stroke="#5c3d14" stroke-width="1.25"/>
+<line x1="230.0" y1="140.0" x2="300.0" y2="140.0" stroke="#5c3d14" stroke-width="1.25"/>
+<line x1="247.5" y1="140.0" x2="247.5" y2="210.0" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="230.0" y1="157.5" x2="300.0" y2="157.5" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="265.0" y1="140.0" x2="265.0" y2="210.0" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="230.0" y1="175.0" x2="300.0" y2="175.0" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="282.5" y1="140.0" x2="282.5" y2="210.0" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="230.0" y1="192.5" x2="300.0" y2="192.5" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="300.0" y1="140.0" x2="300.0" y2="210.0" stroke="#5c3d14" stroke-width="1.25"/>
+<line x1="230.0" y1="210.0" x2="300.0" y2="210.0" stroke="#5c3d14" stroke-width="1.25"/>
+<g><circle cx="247.5" cy="140.0" r="6.4" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="245.7" cy="138.2" r="1.4" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="230.0" cy="157.5" r="6.4" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="228.2" cy="155.7" r="1.4" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="247.5" cy="157.5" r="6.4" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="245.7" cy="155.7" r="1.4" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="282.5" cy="140.0" r="6.4" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="280.7" cy="138.2" r="1.4" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="265.0" cy="157.5" r="6.4" fill="#f8fafc" stroke="#475569" stroke-width="1.15"/></g>
+<g><circle cx="282.5" cy="157.5" r="6.4" fill="#f8fafc" stroke="#475569" stroke-width="1.15"/></g>
+<g><circle cx="300.0" cy="140.0" r="6.4" fill="#f8fafc" stroke="#475569" stroke-width="1.15"/></g>
+<g><circle cx="230.0" cy="175.0" r="6.4" fill="#f8fafc" stroke="#475569" stroke-width="1.15"/></g>
+<g><circle cx="247.5" cy="175.0" r="6.4" fill="#f8fafc" stroke="#475569" stroke-width="1.15"/></g>
+<text x="230" y="143.0" font-size="8.0" fill="#18794e" text-anchor="middle" font-weight="700">真</text>
+<circle cx="265.0" cy="140.0" r="5.2" fill="#ffffff" stroke="#9f1239" stroke-width="1.5"/>
+<text x="265.0" y="143.0" font-size="8.0" fill="#9f1239" text-anchor="middle" font-weight="700">假</text>
+<text x="281" y="226" font-size="8.4" fill="#0f172a" text-anchor="middle">右上黑一子被卡住只剩“假”处1气</text>
+<text x="281" y="241" font-size="8.5" fill="#9f1239" text-anchor="middle" font-weight="700">白可直接提掉它 → 黑只剩1眼净死</text>
+<rect x="388" y="74" width="356" height="192" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="404" cy="92" r="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="404" y="96" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">2</text>
+<text x="420" y="96" font-size="11.0" fill="13.5" text-anchor="start" font-weight="700">双活（Seki）：都没两只眼，凭什么谁都不死？</text>
+<rect x="406.0" y="120.0" width="104.0" height="104.0" rx="6" fill="#f5dfa8" stroke="#85581f" stroke-width="1.4"/>
+<line x1="414.0" y1="128.0" x2="414.0" y2="216.0" stroke="#5c3d14" stroke-width="1.25"/>
+<line x1="414.0" y1="128.0" x2="502.0" y2="128.0" stroke="#5c3d14" stroke-width="1.25"/>
+<line x1="436.0" y1="128.0" x2="436.0" y2="216.0" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="414.0" y1="150.0" x2="502.0" y2="150.0" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="458.0" y1="128.0" x2="458.0" y2="216.0" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="414.0" y1="172.0" x2="502.0" y2="172.0" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="480.0" y1="128.0" x2="480.0" y2="216.0" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="414.0" y1="194.0" x2="502.0" y2="194.0" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="502.0" y1="128.0" x2="502.0" y2="216.0" stroke="#5c3d14" stroke-width="1.25"/>
+<line x1="414.0" y1="216.0" x2="502.0" y2="216.0" stroke="#5c3d14" stroke-width="1.25"/>
+<g><circle cx="414.0" cy="128.0" r="7.8" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="411.8" cy="125.8" r="1.7" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="414.0" cy="150.0" r="7.8" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="411.8" cy="147.8" r="1.7" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="436.0" cy="150.0" r="7.8" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="433.8" cy="147.8" r="1.7" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="458.0" cy="128.0" r="7.8" fill="#f8fafc" stroke="#475569" stroke-width="1.15"/></g>
+<g><circle cx="480.0" cy="128.0" r="7.8" fill="#f8fafc" stroke="#475569" stroke-width="1.15"/></g>
+<g><circle cx="480.0" cy="150.0" r="7.8" fill="#f8fafc" stroke="#475569" stroke-width="1.15"/></g>
+<g><circle cx="414.0" cy="172.0" r="7.8" fill="#f8fafc" stroke="#475569" stroke-width="1.15"/></g>
+<g><circle cx="436.0" cy="172.0" r="7.8" fill="#f8fafc" stroke="#475569" stroke-width="1.15"/></g>
+<g><circle cx="414.0" cy="194.0" r="7.8" fill="#f8fafc" stroke="#475569" stroke-width="1.15"/></g>
+<g><circle cx="458.0" cy="172.0" r="7.8" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="455.8" cy="169.8" r="1.7" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="480.0" cy="172.0" r="7.8" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="477.8" cy="169.8" r="1.7" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="502.0" cy="172.0" r="7.8" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="499.8" cy="169.8" r="1.7" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="502.0" cy="150.0" r="7.8" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="499.8" cy="147.8" r="1.7" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="502.0" cy="128.0" r="7.8" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="499.8" cy="125.8" r="1.7" fill="#52525b" opacity="0.65"/></g>
+<circle cx="436.0" cy="128.0" r="6.4" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.6"/>
+<text x="436.0" y="130.8" font-size="7.6" fill="#6d28d9" text-anchor="middle" font-weight="700">公1</text>
+<circle cx="458.0" cy="150.0" r="6.4" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.6"/>
+<text x="458.0" y="152.8" font-size="7.6" fill="#6d28d9" text-anchor="middle" font-weight="700">公2</text>
+<rect x="526" y="114" width="206" height="138" rx="7" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="535" y="133" font-size="9.4" fill="#6d28d9" text-anchor="start" font-weight="700">博弈死锁（纳什均衡）：</text>
+<text x="535" y="152" font-size="8.6" fill="#0f172a" text-anchor="start">• 里圈三黑与三白都无真眼，</text>
+<text x="535" y="169" font-size="8.6" fill="#0f172a" text-anchor="start">  恰好共享两口公气(公1、公2)；</text>
+<text x="535" y="188" font-size="8.6" fill="#0f172a" text-anchor="start">• 若黑贪心落“公1”紧白气，黑</text>
+<text x="535" y="205" font-size="8.6" fill="#9f1239" text-anchor="start" font-weight="700">  瞬间只剩“公2”一气被白反提！</text>
+<text x="535" y="224" font-size="8.6" fill="#0f172a" text-anchor="start">• 白先动手同理自毙 → 谁都不填</text>
+<text x="535" y="241" font-size="8.8" fill="#6d28d9" text-anchor="start" font-weight="700">  停手共存，两块都算活棋！</text>
+<rect x="16" y="278" width="728" height="184" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="32" cy="296" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="32" y="300" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">3</text>
+<text x="48" y="300" font-size="11.0" fill="13.5" text-anchor="start" font-weight="700">打劫（Ko）与“禁止全局同形”：两张虎口互咬时，为什么不许立刻提回来？</text>
+<rect x="32" y="314" width="164" height="136" rx="7" fill="#fafaf9" stroke="#1d6fa5" stroke-width="1"/>
+<text x="114" y="330" font-size="9.3" fill="#1d6fa5" text-anchor="middle" font-weight="700">① 提劫前初始形</text>
+<rect x="75.0" y="338.0" width="76.5" height="76.5" rx="6" fill="#f5dfa8" stroke="#85581f" stroke-width="1.4"/>
+<line x1="81.0" y1="344.0" x2="81.0" y2="408.5" stroke="#5c3d14" stroke-width="1.25"/>
+<line x1="81.0" y1="344.0" x2="145.5" y2="344.0" stroke="#5c3d14" stroke-width="1.25"/>
+<line x1="102.5" y1="344.0" x2="102.5" y2="408.5" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="81.0" y1="365.5" x2="145.5" y2="365.5" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="124.0" y1="344.0" x2="124.0" y2="408.5" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="81.0" y1="387.0" x2="145.5" y2="387.0" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="145.5" y1="344.0" x2="145.5" y2="408.5" stroke="#5c3d14" stroke-width="1.25"/>
+<line x1="81.0" y1="408.5" x2="145.5" y2="408.5" stroke="#5c3d14" stroke-width="1.25"/>
+<g><circle cx="102.5" cy="344.0" r="7.4" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="100.4" cy="341.9" r="1.6" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="81.0" cy="365.5" r="7.4" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="78.9" cy="363.4" r="1.6" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="102.5" cy="387.0" r="7.4" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="100.4" cy="384.9" r="1.6" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="124.0" cy="344.0" r="7.4" fill="#f8fafc" stroke="#475569" stroke-width="1.15"/></g>
+<g><circle cx="145.5" cy="365.5" r="7.4" fill="#f8fafc" stroke="#475569" stroke-width="1.15"/></g>
+<g><circle cx="124.0" cy="387.0" r="7.4" fill="#f8fafc" stroke="#475569" stroke-width="1.15"/></g>
+<g><circle cx="102.5" cy="365.5" r="7.4" fill="#f8fafc" stroke="#475569" stroke-width="1.15"/></g>
+<circle cx="124.0" cy="365.5" r="4.2" fill="none" stroke="#1d6fa5" stroke-width="1.5" stroke-dasharray="2.5 2"/>
+<text x="114" y="439" font-size="8.6" fill="#0f172a" text-anchor="middle">黑瞄准虎口准备提一子</text>
+<rect x="210" y="314" width="164" height="136" rx="7" fill="#fafaf9" stroke="#9f1239" stroke-width="1"/>
+<text x="292" y="330" font-size="9.3" fill="#9f1239" text-anchor="middle" font-weight="700">② 黑 1 提劫！</text>
+<rect x="253.0" y="338.0" width="76.5" height="76.5" rx="6" fill="#f5dfa8" stroke="#85581f" stroke-width="1.4"/>
+<line x1="259.0" y1="344.0" x2="259.0" y2="408.5" stroke="#5c3d14" stroke-width="1.25"/>
+<line x1="259.0" y1="344.0" x2="323.5" y2="344.0" stroke="#5c3d14" stroke-width="1.25"/>
+<line x1="280.5" y1="344.0" x2="280.5" y2="408.5" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="259.0" y1="365.5" x2="323.5" y2="365.5" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="302.0" y1="344.0" x2="302.0" y2="408.5" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="259.0" y1="387.0" x2="323.5" y2="387.0" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="323.5" y1="344.0" x2="323.5" y2="408.5" stroke="#5c3d14" stroke-width="1.25"/>
+<line x1="259.0" y1="408.5" x2="323.5" y2="408.5" stroke="#5c3d14" stroke-width="1.25"/>
+<g><circle cx="280.5" cy="344.0" r="7.4" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="278.4" cy="341.9" r="1.6" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="259.0" cy="365.5" r="7.4" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="256.9" cy="363.4" r="1.6" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="280.5" cy="387.0" r="7.4" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="278.4" cy="384.9" r="1.6" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="302.0" cy="344.0" r="7.4" fill="#f8fafc" stroke="#475569" stroke-width="1.15"/></g>
+<g><circle cx="323.5" cy="365.5" r="7.4" fill="#f8fafc" stroke="#475569" stroke-width="1.15"/></g>
+<g><circle cx="302.0" cy="387.0" r="7.4" fill="#f8fafc" stroke="#475569" stroke-width="1.15"/></g>
+<g><circle cx="302.0" cy="365.5" r="7.4" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="299.9" cy="363.4" r="1.6" fill="#52525b" opacity="0.65"/><text x="302.0" y="368.0" font-size="8.6" fill="#ffffff" text-anchor="middle" font-weight="700">1</text></g>
+<line x1="276.0" y1="361.0" x2="285.0" y2="370.0" stroke="#9f1239" stroke-width="2.2"/>
+<line x1="276.0" y1="370.0" x2="285.0" y2="361.0" stroke="#9f1239" stroke-width="2.2"/>
+<text x="292" y="439" font-size="8.6" fill="#0f172a" text-anchor="middle">白子被提，但白禁立即回提×</text>
+<rect x="388" y="314" width="164" height="136" rx="7" fill="#fafaf9" stroke="#c25014" stroke-width="1"/>
+<text x="470" y="330" font-size="9.3" fill="#c25014" text-anchor="middle" font-weight="700">③ 寻劫与应劫</text>
+<rect x="431.0" y="338.0" width="76.5" height="76.5" rx="6" fill="#f5dfa8" stroke="#85581f" stroke-width="1.4"/>
+<line x1="437.0" y1="344.0" x2="437.0" y2="408.5" stroke="#5c3d14" stroke-width="1.25"/>
+<line x1="437.0" y1="344.0" x2="501.5" y2="344.0" stroke="#5c3d14" stroke-width="1.25"/>
+<line x1="458.5" y1="344.0" x2="458.5" y2="408.5" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="437.0" y1="365.5" x2="501.5" y2="365.5" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="480.0" y1="344.0" x2="480.0" y2="408.5" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="437.0" y1="387.0" x2="501.5" y2="387.0" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="501.5" y1="344.0" x2="501.5" y2="408.5" stroke="#5c3d14" stroke-width="1.25"/>
+<line x1="437.0" y1="408.5" x2="501.5" y2="408.5" stroke="#5c3d14" stroke-width="1.25"/>
+<g><circle cx="458.5" cy="344.0" r="7.4" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="456.4" cy="341.9" r="1.6" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="437.0" cy="365.5" r="7.4" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="434.9" cy="363.4" r="1.6" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="458.5" cy="387.0" r="7.4" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="456.4" cy="384.9" r="1.6" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="480.0" cy="344.0" r="7.4" fill="#f8fafc" stroke="#475569" stroke-width="1.15"/></g>
+<g><circle cx="501.5" cy="365.5" r="7.4" fill="#f8fafc" stroke="#475569" stroke-width="1.15"/></g>
+<g><circle cx="480.0" cy="387.0" r="7.4" fill="#f8fafc" stroke="#475569" stroke-width="1.15"/></g>
+<g><circle cx="480.0" cy="365.5" r="7.4" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="477.9" cy="363.4" r="1.6" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="437.0" cy="408.5" r="7.4" fill="#f8fafc" stroke="#475569" stroke-width="1.15"/><text x="437.0" y="411.0" font-size="8.6" fill="#0f172a" text-anchor="middle" font-weight="700">2</text></g>
+<g><circle cx="501.5" cy="408.5" r="7.4" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="499.4" cy="406.4" r="1.6" fill="#52525b" opacity="0.65"/><text x="501.5" y="411.0" font-size="8.6" fill="#ffffff" text-anchor="middle" font-weight="700">3</text></g>
+<text x="470" y="439" font-size="8.6" fill="#0f172a" text-anchor="middle">白2他处造劫材 → 黑3应一手</text>
+<rect x="566" y="314" width="164" height="136" rx="7" fill="#fafaf9" stroke="#18794e" stroke-width="1"/>
+<text x="648" y="330" font-size="9.3" fill="#18794e" text-anchor="middle" font-weight="700">④ 全局已变：白4回提！</text>
+<rect x="609.0" y="338.0" width="76.5" height="76.5" rx="6" fill="#f5dfa8" stroke="#85581f" stroke-width="1.4"/>
+<line x1="615.0" y1="344.0" x2="615.0" y2="408.5" stroke="#5c3d14" stroke-width="1.25"/>
+<line x1="615.0" y1="344.0" x2="679.5" y2="344.0" stroke="#5c3d14" stroke-width="1.25"/>
+<line x1="636.5" y1="344.0" x2="636.5" y2="408.5" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="615.0" y1="365.5" x2="679.5" y2="365.5" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="658.0" y1="344.0" x2="658.0" y2="408.5" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="615.0" y1="387.0" x2="679.5" y2="387.0" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="679.5" y1="344.0" x2="679.5" y2="408.5" stroke="#5c3d14" stroke-width="1.25"/>
+<line x1="615.0" y1="408.5" x2="679.5" y2="408.5" stroke="#5c3d14" stroke-width="1.25"/>
+<g><circle cx="636.5" cy="344.0" r="7.4" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="634.4" cy="341.9" r="1.6" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="615.0" cy="365.5" r="7.4" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="612.9" cy="363.4" r="1.6" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="636.5" cy="387.0" r="7.4" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="634.4" cy="384.9" r="1.6" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="658.0" cy="344.0" r="7.4" fill="#f8fafc" stroke="#475569" stroke-width="1.15"/></g>
+<g><circle cx="679.5" cy="365.5" r="7.4" fill="#f8fafc" stroke="#475569" stroke-width="1.15"/></g>
+<g><circle cx="658.0" cy="387.0" r="7.4" fill="#f8fafc" stroke="#475569" stroke-width="1.15"/></g>
+<g><circle cx="636.5" cy="365.5" r="7.4" fill="#f8fafc" stroke="#475569" stroke-width="1.15"/><text x="636.5" y="368.0" font-size="8.6" fill="#0f172a" text-anchor="middle" font-weight="700">4</text></g>
+<g><circle cx="615.0" cy="408.5" r="7.4" fill="#f8fafc" stroke="#475569" stroke-width="1.15"/></g>
+<g><circle cx="679.5" cy="408.5" r="7.4" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="677.4" cy="406.4" r="1.6" fill="#52525b" opacity="0.65"/></g>
+<circle cx="658.0" cy="365.5" r="4.2" fill="none" stroke="#18794e" stroke-width="1.5" stroke-dasharray="2.5 2"/>
+<text x="648" y="439" font-size="8.6" fill="#0f172a" text-anchor="middle">盘面多了2、3两子，合法回提</text>
+</svg>

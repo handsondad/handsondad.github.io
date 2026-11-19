@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="456" viewBox="0 0 760 456" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">生成与验证不对称性棘轮机制及KL散度正则化防止奖励黑客曲线图</title>
+<desc id="desc">左图对比数学证明、代码修复与分子设计中生成难而验证快的P与NP式不对称性及其驱动的强化学习自我进化棘轮；右图计算代理奖励、KL正则化目标与真实质量随策略偏离度变化的曲线，标示最优甜点区与奖励黑客崩盘区。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="455" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">强化学习点石成金的两个秘密：生成—验证不对称性，与防崩盘的 KL 拴狗绳</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：裁判不必比选手更会解题，只要“判对错比凑答案容易”；右：没有 KL 散度拉住底座，高分必成作弊</text>
+<rect x="18" y="62" width="354" height="376" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="32" y="85" font-size="12.2" fill="#0f172a" text-anchor="start" font-weight="700">① 为什么不给标准步骤也能变强？（生成难 vs 验证易）</text>
+<text x="32" y="104" font-size="10.2" fill="#64748b" text-anchor="start">呼应计算机科学 P vs NP 直觉：找钥匙难，试钥匙开锁极快！</text>
+<rect x="32" y="118" width="326" height="62" rx="7" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="40.0" y="125.0" width="96" height="19" rx="9.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="88.0" y="137.9" font-size="10.2" fill="#1d6fa5" text-anchor="middle" font-weight="600">竞赛数学证明</text>
+<rect x="282.0" y="125.0" width="68" height="19" rx="9.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="316.0" y="137.9" font-size="9.8" fill="#18794e" text-anchor="middle" font-weight="600">验：毫秒级</text>
+<text x="40" y="158" font-size="10.0" fill="#c25014" text-anchor="start" font-weight="600">生成难：从上万条代数变形分支里凑出巧解</text>
+<text x="40" y="173" font-size="10.0" fill="#18794e" text-anchor="start" font-weight="700">验证易：核对最终数值 / Lean 4 内核逐行验真</text>
+<rect x="32" y="190" width="326" height="62" rx="7" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="40.0" y="197.0" width="96" height="19" rx="9.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="88.0" y="209.9" font-size="10.2" fill="#1d6fa5" text-anchor="middle" font-weight="600">复杂软件补丁</text>
+<rect x="282.0" y="197.0" width="68" height="19" rx="9.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="316.0" y="209.9" font-size="9.8" fill="#18794e" text-anchor="middle" font-weight="600">验：秒级</text>
+<text x="40" y="230" font-size="10.0" fill="#c25014" text-anchor="start" font-weight="600">生成难：跨十几个文件定位并发 Bug 并改对</text>
+<text x="40" y="245" font-size="10.0" fill="#18794e" text-anchor="start" font-weight="700">验证易：跑一遍编译器 + 单元测试套件通过率</text>
+<rect x="32" y="262" width="326" height="62" rx="7" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="40.0" y="269.0" width="96" height="19" rx="9.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="88.0" y="281.9" font-size="10.2" fill="#1d6fa5" text-anchor="middle" font-weight="600">蛋白质/晶体设计</text>
+<rect x="282.0" y="269.0" width="68" height="19" rx="9.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="316.0" y="281.9" font-size="9.8" fill="#18794e" text-anchor="middle" font-weight="600">验：可量化</text>
+<text x="40" y="302" font-size="10.0" fill="#c25014" text-anchor="start" font-weight="600">生成难：在 20^200 序列空间大海捞针找折叠</text>
+<text x="40" y="317" font-size="10.0" fill="#18794e" text-anchor="start" font-weight="700">验证易：物理能量函数 / 分子对接 / 湿实验测 Kd</text>
+<rect x="32" y="338" width="326" height="86" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="44" y="358" font-size="11.0" fill="#18794e" text-anchor="start" font-weight="700">强化学习的“棘轮放大器”效应：</text>
+<text x="44" y="377" font-size="10.1" fill="#1e293b" text-anchor="start">1. 预训练底座靠随机采样偶尔撞出 1 条妙解（哪怕概率仅 5%）；</text>
+<text x="44" y="395" font-size="10.1" fill="#1e293b" text-anchor="start">2. 验证器一秒认出“做对了”，RL 立刻把这条路径权重调高；</text>
+<text x="44" y="413" font-size="10.1" fill="#0f172a" text-anchor="start" font-weight="700">3. 下一轮从更高起点继续探索 → 不靠更聪明的人写范文也能进化！</text>
+<rect x="384" y="62" width="358" height="376" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="398" y="85" font-size="12.2" fill="#0f172a" text-anchor="start" font-weight="700">② 为什么要扣掉 β·D_KL(π_θ ∥ π_ref)？防“奖励黑客”</text>
+<text x="398" y="104" font-size="10.2" fill="#64748b" text-anchor="start">精确函数绘制：J(d) = R_proxy(d) − β·d（最优甜点区 d* ≈ 2.18）</text>
+<rect x="480.4" y="128.0" width="77.3" height="176.0" fill="#e7f6ee" opacity="0.7"/>
+<rect x="611.9" y="128.0" width="112.1" height="176.0" fill="#fef2f2" opacity="0.75"/>
+<line x1="434.0" y1="278.9" x2="724.0" y2="278.9" stroke="#cbd5e1" stroke-width="1.0" stroke-dasharray="3 3"/>
+<line x1="434.0" y1="128.0" x2="434.0" y2="304.0" stroke="#475569" stroke-width="1.3"/>
+<line x1="434.0" y1="304.0" x2="724.0" y2="304.0" stroke="#475569" stroke-width="1.3"/>
+<text x="428.0" y="282.9" font-size="9.8" fill="#64748b" text-anchor="end">0</text>
+<text x="428.0" y="157.1" font-size="9.8" fill="#64748b" text-anchor="end">高分</text>
+<text x="579.0" y="322.0" font-size="10.2" fill="#475569" text-anchor="middle" font-weight="600">偏离预训练底座的距离 d = D_KL(π_θ ∥ π_ref)</text>
+<path d="M 434.00,278.86 L 437.22,269.40 L 440.44,260.59 L 443.67,252.38 L 446.89,244.74 L 450.11,237.61 L 453.33,230.98 L 456.56,224.80 L 459.78,219.04 L 463.00,213.67 L 466.22,208.67 L 469.44,204.02 L 472.67,199.68 L 475.89,195.64 L 479.11,191.87 L 482.33,188.36 L 485.56,185.09 L 488.78,182.05 L 492.00,179.21 L 495.22,176.57 L 498.44,174.11 L 501.67,171.82 L 504.89,169.68 L 508.11,167.69 L 511.33,165.83 L 514.56,164.11 L 517.78,162.50 L 521.00,161.00 L 524.22,159.60 L 527.44,158.30 L 530.67,157.09 L 533.89,155.96 L 537.11,154.91 L 540.33,153.93 L 543.56,153.01 L 546.78,152.16 L 550.00,151.37 L 553.22,150.63 L 556.44,149.94 L 559.67,149.30 L 562.89,148.70 L 566.11,148.15 L 569.33,147.63 L 572.56,147.15 L 575.78,146.70 L 579.00,146.28 L 582.22,145.89 L 585.44,145.53 L 588.67,145.19 L 591.89,144.87 L 595.11,144.58 L 598.33,144.30 L 601.56,144.05 L 604.78,143.81 L 608.00,143.59 L 611.22,143.38 L 614.44,143.19 L 617.67,143.01 L 620.89,142.84 L 624.11,142.69 L 627.33,142.54 L 630.56,142.41 L 633.78,142.28 L 637.00,142.17 L 640.22,142.06 L 643.44,141.96 L 646.67,141.86 L 649.89,141.77 L 653.11,141.69 L 656.33,141.61 L 659.56,141.54 L 662.78,141.48 L 666.00,141.41 L 669.22,141.36 L 672.44,141.30 L 675.67,141.25 L 678.89,141.21 L 682.11,141.16 L 685.33,141.12 L 688.56,141.08 L 691.78,141.05 L 695.00,141.02 L 698.22,140.99 L 701.44,140.96 L 704.67,140.93 L 707.89,140.91 L 711.11,140.88 L 714.33,140.86 L 717.56,140.84 L 720.78,140.82 L 724.00,140.81" fill="none" stroke="#c25014" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 3"/>
+<path d="M 434.00,278.86 L 437.22,269.40 L 440.44,260.59 L 443.67,252.38 L 446.89,244.74 L 450.11,237.61 L 453.33,230.98 L 456.56,224.80 L 459.78,219.04 L 463.00,213.67 L 466.22,208.67 L 469.44,204.02 L 472.67,199.68 L 475.89,195.64 L 479.11,191.87 L 482.33,188.36 L 485.56,185.09 L 488.78,182.05 L 492.00,179.21 L 495.22,176.57 L 498.44,174.14 L 501.67,171.99 L 504.89,170.11 L 508.11,168.49 L 511.33,167.11 L 514.56,165.97 L 517.78,165.05 L 521.00,164.36 L 524.22,163.88 L 527.44,163.61 L 530.67,163.54 L 533.89,163.66 L 537.11,163.96 L 540.33,164.46 L 543.56,165.12 L 546.78,165.96 L 550.00,166.97 L 553.22,168.15 L 556.44,169.48 L 559.67,170.98 L 562.89,172.63 L 566.11,174.43 L 569.33,176.37 L 572.56,178.47 L 575.78,180.70 L 579.00,183.08 L 582.22,185.60 L 585.44,188.26 L 588.67,191.05 L 591.89,193.97 L 595.11,197.03 L 598.33,200.22 L 601.56,203.53 L 604.78,206.98 L 608.00,210.55 L 611.22,214.25 L 614.44,218.07 L 617.67,222.01 L 620.89,226.08 L 624.11,230.27 L 627.33,234.58 L 630.56,239.02 L 633.78,243.57 L 637.00,248.24 L 640.22,253.03 L 643.44,257.94 L 646.67,262.96 L 649.89,268.10 L 653.11,273.36 L 656.33,278.74 L 659.56,284.23 L 662.78,289.84 L 666.00,295.56 L 669.22,297.30 L 672.44,297.30 L 675.67,297.30 L 678.89,297.30 L 682.11,297.30 L 685.33,297.30 L 688.56,297.30 L 691.78,297.30 L 695.00,297.30 L 698.22,297.30 L 701.44,297.30 L 704.67,297.30 L 707.89,297.30 L 711.11,297.30 L 714.33,297.30 L 717.56,297.30 L 720.78,297.30 L 724.00,297.30" fill="none" stroke="#b91c1c" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2 3"/>
+<path d="M 434.00,278.86 L 437.22,270.94 L 440.44,263.66 L 443.67,256.99 L 446.89,250.88 L 450.11,245.30 L 453.33,240.20 L 456.56,235.55 L 459.78,231.33 L 463.00,227.50 L 466.22,224.04 L 469.44,220.92 L 472.67,218.11 L 475.89,215.61 L 479.11,213.38 L 482.33,211.41 L 485.56,209.68 L 488.78,208.17 L 492.00,206.87 L 495.22,205.76 L 498.44,204.84 L 501.67,204.08 L 504.89,203.48 L 508.11,203.03 L 511.33,202.71 L 514.56,202.52 L 517.78,202.45 L 521.00,202.48 L 524.22,202.62 L 527.44,202.86 L 530.67,203.18 L 533.89,203.59 L 537.11,204.07 L 540.33,204.63 L 543.56,205.25 L 546.78,205.94 L 550.00,206.68 L 553.22,207.48 L 556.44,208.33 L 559.67,209.23 L 562.89,210.17 L 566.11,211.15 L 569.33,212.16 L 572.56,213.22 L 575.78,214.30 L 579.00,215.42 L 582.22,216.57 L 585.44,217.74 L 588.67,218.94 L 591.89,220.16 L 595.11,221.40 L 598.33,222.66 L 601.56,223.95 L 604.78,225.24 L 608.00,226.56 L 611.22,227.89 L 614.44,229.23 L 617.67,230.59 L 620.89,231.96 L 624.11,233.34 L 627.33,234.73 L 630.56,236.14 L 633.78,237.55 L 637.00,238.97 L 640.22,240.39 L 643.44,241.83 L 646.67,243.27 L 649.89,244.72 L 653.11,246.17 L 656.33,247.63 L 659.56,249.10 L 662.78,250.57 L 666.00,252.04 L 669.22,253.52 L 672.44,255.00 L 675.67,256.49 L 678.89,257.98 L 682.11,259.47 L 685.33,260.97 L 688.56,262.47 L 691.78,263.97 L 695.00,265.47 L 698.22,266.98 L 701.44,268.49 L 704.67,270.00 L 707.89,271.51 L 711.11,273.02 L 714.33,274.54 L 717.56,276.06 L 720.78,277.57 L 724.00,279.09" fill="none" stroke="#1d6fa5" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="518.3" cy="202.4" r="4.8" fill="#18794e" stroke="#ffffff" stroke-width="1.4"/>
+<text x="518.3" y="192.4" font-size="10.0" fill="#18794e" text-anchor="middle" font-weight="700" class="halo">KL 锁定甜点 d*≈2.2</text>
+<text x="662.1" y="140.4" font-size="9.8" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">裁判表观打分虚高</text>
+<text x="662.1" y="231.9" font-size="9.8" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">带 KL 总目标 J(θ)</text>
+<text x="666.0" y="285.6" font-size="9.8" fill="#b91c1c" text-anchor="middle" font-weight="700" class="halo">真实可用性崩盘!</text>
+<rect x="398" y="338" width="330" height="86" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="410" y="358" font-size="10.8" fill="#c25014" text-anchor="start" font-weight="700">真实翻车案例：奖励黑客（Reward Hacking）</text>
+<text x="410" y="377" font-size="10.0" fill="#1e293b" text-anchor="start">• 大模型不加 KL：疯狂堆砌废话套话、乱码咒语骗奖励模型给满分；</text>
+<text x="410" y="395" font-size="10.0" fill="#1e293b" text-anchor="start">• 分子设计不加先验锚定：拼出化合价爆炸、实验室根本造不出的怪胎；</text>
+<text x="410" y="413" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">→ KL 散度就是“别忘本的拴狗绳”：在语言/物理合法流形内找最优！</text>
+</svg>

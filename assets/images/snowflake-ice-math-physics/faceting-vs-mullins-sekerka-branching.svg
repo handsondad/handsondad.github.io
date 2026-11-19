@@ -1,0 +1,204 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="480" viewBox="0 0 760 480" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">雪花晶面平滑化成核势垒与马林斯塞克卡尖端水汽扩散失稳拔河机制分步动画图解</title>
+<desc id="desc">左图展示分子台阶成核势垒如何令粗糙圆弧快速填平而留下六个慢速光滑六角晶面；右图按二维拉普拉斯方程精确计算六角微凸晶胚外围等水汽浓度线，显示六个尖角处等值线挤密导致法向浓度梯度剧增并触发单次播放的六主枝与60度侧枝生长。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes sproutArm {
+        from { stroke-dashoffset: 120; }
+        to { stroke-dashoffset: 0; }
+      }
+      .dendrite-arm {
+        stroke-dasharray: 120;
+        stroke-dashoffset: 120;
+        animation: sproutArm 2.4s cubic-bezier(0.22, 0.61, 0.36, 1) 0.2s 1 forwards;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .dendrite-arm { animation: none; stroke-dashoffset: 0; }
+      }
+</style>
+<rect x="0.5" y="0.5" width="759" height="479" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">每片雪花都在打一场拔河赛：“抹平棱面”与“尖端疯长”怎样雕出六角星？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：分子台阶成核势垒把冰滴“熨”成笔直六边形（Faceting） ｜ 右：扩散等浓度线在尖角挤密触发分枝失稳</text>
+<rect x="22" y="76" width="348" height="326" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="98" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="42" y="102" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="60" y="102" font-size="10.9" fill="#0f172a" text-anchor="start" font-weight="700">守秩序的力量：分子台阶成核（为什么边直如刀？）</text>
+<rect x="42.0" y="232.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="55.0" y="232.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="68.0" y="232.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="81.0" y="232.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="94.0" y="232.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="107.0" y="232.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="120.0" y="232.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="133.0" y="232.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="146.0" y="232.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="159.0" y="232.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="172.0" y="232.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="185.0" y="232.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="198.0" y="232.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="42.0" y="219.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="55.0" y="219.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="68.0" y="219.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="81.0" y="219.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="94.0" y="219.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="107.0" y="219.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="120.0" y="219.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="133.0" y="219.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="146.0" y="219.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="159.0" y="219.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="172.0" y="219.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="185.0" y="219.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="198.0" y="219.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="42.0" y="206.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="55.0" y="206.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="68.0" y="206.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="81.0" y="206.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="94.0" y="206.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="107.0" y="206.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="120.0" y="206.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="133.0" y="206.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="146.0" y="206.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="42.0" y="193.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="55.0" y="193.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="68.0" y="193.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="81.0" y="193.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="94.0" y="193.0" width="12.0" height="12.0" rx="2" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<rect x="68.0" y="180.0" width="12.0" height="12.0" rx="2" fill="#fef1e8" stroke="#c25014" stroke-width="1.5" stroke-dasharray="2 1.5"/>
+<path d="M 76.0 178.0 Q 90.0 154.0 110.0 162.0" fill="none" stroke="#c25014" stroke-width="1.6"/>
+<text x="42" y="140" font-size="8.9" fill="#c25014" text-anchor="start" font-weight="700">光滑平台仅抓 1 键 → 易蒸发弹走！</text>
+<text x="42" y="154" font-size="8.6" fill="#64748b" text-anchor="start">(附着系数 α ≪ 1，开新层极慢)</text>
+<rect x="107.0" y="193.0" width="12.0" height="12.0" rx="2" fill="#e7f6ee" stroke="#18794e" stroke-width="1.8"/>
+<line x1="131.0" y1="171.0" x2="116.0" y2="195.0" stroke="#18794e" stroke-width="1.8" stroke-linecap="round"/>
+<text x="126" y="174" font-size="9.0" fill="#18794e" text-anchor="start" font-weight="700">台阶凹角双面锁死！</text>
+<text x="126" y="188" font-size="8.6" fill="#18794e" text-anchor="start">(α ≈ 1 迅速把缺口填平)</text>
+<text x="126" y="264" font-size="8.8" fill="#475569" text-anchor="middle">晶格底面 / 柱面分子台阶剖面</text>
+<circle cx="308.0" cy="196.0" r="25" fill="#f1f5f9" stroke="#64748b" stroke-width="1.3" stroke-dasharray="3 2"/>
+<path d="M343.0 196.0 L325.5 226.3 L290.5 226.3 L273.0 196.0 L290.5 165.7 L325.5 165.7 Z" fill="none" stroke="#1d6fa5" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="333.0" y1="196.0" x2="341.0" y2="196.0" stroke="#18794e" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="320.5" y1="217.7" x2="324.5" y2="224.6" stroke="#18794e" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="295.5" y1="217.7" x2="291.5" y2="224.6" stroke="#18794e" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="283.0" y1="196.0" x2="275.0" y2="196.0" stroke="#18794e" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="295.5" y1="174.3" x2="291.5" y2="167.4" stroke="#18794e" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="320.5" y1="174.3" x2="324.5" y2="167.4" stroke="#18794e" stroke-width="1.5" stroke-linecap="round"/>
+<text x="308.0" y="146" font-size="8.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">圆冰胚 → 正六角棱柱</text>
+<text x="308.0" y="248" font-size="8.5" fill="#18794e" text-anchor="middle" font-weight="600">粗糙处先长满消失</text>
+<text x="308.0" y="262" font-size="8.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">只剩 6 个慢速平晶面</text>
+<rect x="36" y="282" width="320" height="108" rx="7" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<text x="46" y="300" font-size="9.4" fill="#1d6fa5" text-anchor="start" font-weight="700">动力学晶面化（Kinetic Faceting）黄金法则：</text>
+<text x="46" y="318" font-size="8.9" fill="#1e293b" text-anchor="start">• 晶体最终露在外面的一定是【长得最慢】的光滑晶面！</text>
+<text x="46" y="336" font-size="8.9" fill="#1e293b" text-anchor="start">• 任何粗糙圆弧满是分子台阶，水分子一来就粘，飞速填平；</text>
+<text x="46" y="354" font-size="8.9" fill="#1e293b" text-anchor="start">• 填成光滑 {0001} 与 {101̄0} 平面后成核受阻，自动修直棱角！</text>
+<text x="46" y="372" font-size="8.9" fill="#0f172a" text-anchor="start" font-weight="600">• 低湿度下水汽充足均匀 → 守秩序派大获全胜（实心六角板/柱）。</text>
+<rect x="390" y="76" width="348" height="326" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="410" cy="98" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="410" y="102" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="428" y="102" font-size="10.9" fill="#0f172a" text-anchor="start" font-weight="700">破秩序的力量：尖端抢水汽失稳（为什么长羽毛？）</text>
+<path d="M592.3 198.0 L592.2 201.2 L591.9 204.3 L591.5 207.4 L590.9 210.5 L590.2 213.6 L589.3 216.6 L588.2 219.6 L587.0 222.5 L585.6 225.3 L584.1 228.1 L582.5 230.8 L580.7 233.4 L578.8 235.9 L576.7 238.3 L574.6 240.6 L572.3 242.8 L569.9 244.8 L567.4 246.8 L564.8 248.5 L562.1 250.2 L559.4 251.7 L556.5 253.1 L553.6 254.3 L550.6 255.3 L547.6 256.2 L544.5 256.9 L541.4 257.5 L538.3 257.9 L535.1 258.1 L532.0 258.2 L528.9 258.1 L525.7 257.9 L522.6 257.5 L519.5 256.9 L516.4 256.2 L513.4 255.3 L510.4 254.3 L507.5 253.1 L504.6 251.7 L501.9 250.2 L499.2 248.5 L496.6 246.8 L494.1 244.8 L491.7 242.8 L489.4 240.6 L487.3 238.3 L485.2 235.9 L483.3 233.4 L481.5 230.8 L479.9 228.1 L478.4 225.3 L477.0 222.5 L475.8 219.6 L474.7 216.6 L473.8 213.6 L473.1 210.5 L472.5 207.4 L472.1 204.3 L471.8 201.2 L471.7 198.0 L471.8 194.8 L472.1 191.7 L472.5 188.6 L473.1 185.5 L473.8 182.4 L474.7 179.4 L475.8 176.4 L477.0 173.5 L478.4 170.7 L479.9 167.9 L481.5 165.2 L483.3 162.6 L485.2 160.1 L487.3 157.7 L489.4 155.4 L491.7 153.2 L494.1 151.2 L496.6 149.2 L499.2 147.5 L501.9 145.8 L504.6 144.3 L507.5 142.9 L510.4 141.7 L513.4 140.7 L516.4 139.8 L519.5 139.1 L522.6 138.5 L525.7 138.1 L528.9 137.9 L532.0 137.8 L535.1 137.9 L538.3 138.1 L541.4 138.5 L544.5 139.1 L547.6 139.8 L550.6 140.7 L553.6 141.7 L556.5 142.9 L559.4 144.3 L562.1 145.8 L564.8 147.5 L567.4 149.2 L569.9 151.2 L572.3 153.2 L574.6 155.4 L576.7 157.7 L578.8 160.1 L580.7 162.6 L582.5 165.2 L584.1 167.9 L585.6 170.7 L587.0 173.5 L588.2 176.4 L589.3 179.4 L590.2 182.4 L590.9 185.5 L591.5 188.6 L591.9 191.7 L592.2 194.8 Z" fill="none" stroke="#cbd5e1" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<path d="M579.5 198.0 L579.5 200.5 L579.2 203.0 L578.9 205.4 L578.4 207.9 L577.8 210.3 L577.0 212.6 L576.1 214.9 L575.2 217.2 L574.1 219.4 L572.9 221.6 L571.6 223.7 L570.2 225.8 L568.7 227.8 L567.2 229.7 L565.5 231.5 L563.7 233.2 L561.9 234.9 L559.9 236.4 L557.9 237.9 L555.8 239.2 L553.6 240.4 L551.3 241.4 L549.0 242.3 L546.7 243.1 L544.3 243.8 L541.8 244.3 L539.4 244.7 L536.9 245.0 L534.5 245.1 L532.0 245.2 L529.5 245.1 L527.1 245.0 L524.6 244.7 L522.2 244.3 L519.7 243.8 L517.3 243.1 L515.0 242.3 L512.7 241.4 L510.4 240.4 L508.2 239.2 L506.1 237.9 L504.1 236.4 L502.1 234.9 L500.3 233.2 L498.5 231.5 L496.8 229.7 L495.3 227.8 L493.8 225.8 L492.4 223.7 L491.1 221.6 L489.9 219.4 L488.8 217.2 L487.9 214.9 L487.0 212.6 L486.2 210.3 L485.6 207.9 L485.1 205.4 L484.8 203.0 L484.5 200.5 L484.5 198.0 L484.5 195.5 L484.8 193.0 L485.1 190.6 L485.6 188.1 L486.2 185.7 L487.0 183.4 L487.9 181.1 L488.8 178.8 L489.9 176.6 L491.1 174.4 L492.4 172.3 L493.8 170.2 L495.3 168.2 L496.8 166.3 L498.5 164.5 L500.3 162.8 L502.1 161.1 L504.1 159.6 L506.1 158.1 L508.2 156.8 L510.4 155.6 L512.7 154.6 L515.0 153.7 L517.3 152.9 L519.7 152.2 L522.2 151.7 L524.6 151.3 L527.1 151.0 L529.5 150.9 L532.0 150.8 L534.5 150.9 L536.9 151.0 L539.4 151.3 L541.8 151.7 L544.3 152.2 L546.7 152.9 L549.0 153.7 L551.3 154.6 L553.6 155.6 L555.8 156.8 L557.9 158.1 L559.9 159.6 L561.9 161.1 L563.7 162.8 L565.5 164.5 L567.2 166.3 L568.7 168.2 L570.2 170.2 L571.6 172.3 L572.9 174.4 L574.1 176.6 L575.2 178.8 L576.1 181.1 L577.0 183.4 L577.8 185.7 L578.4 188.1 L578.9 190.6 L579.2 193.0 L579.5 195.5 Z" fill="none" stroke="#93c5fd" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 2"/>
+<path d="M569.8 198.0 L569.7 200.0 L569.5 201.9 L569.1 203.9 L568.6 205.8 L568.0 207.6 L567.3 209.5 L566.5 211.2 L565.6 213.0 L564.7 214.7 L563.7 216.3 L562.8 218.0 L561.8 219.6 L560.7 221.2 L559.6 222.8 L558.4 224.4 L557.0 225.8 L555.6 227.2 L554.2 228.5 L552.6 229.7 L550.9 230.7 L549.1 231.6 L547.3 232.4 L545.5 233.1 L543.6 233.6 L541.6 234.0 L539.7 234.3 L537.8 234.5 L535.8 234.6 L533.9 234.6 L532.0 234.7 L530.1 234.6 L528.2 234.6 L526.2 234.5 L524.3 234.3 L522.4 234.0 L520.4 233.6 L518.5 233.1 L516.7 232.4 L514.9 231.6 L513.1 230.7 L511.4 229.7 L509.8 228.5 L508.4 227.2 L507.0 225.8 L505.6 224.4 L504.4 222.8 L503.3 221.2 L502.2 219.6 L501.2 218.0 L500.3 216.3 L499.3 214.7 L498.4 213.0 L497.5 211.2 L496.7 209.5 L496.0 207.6 L495.4 205.8 L494.9 203.9 L494.5 201.9 L494.3 200.0 L494.2 198.0 L494.3 196.0 L494.5 194.1 L494.9 192.1 L495.4 190.2 L496.0 188.4 L496.7 186.5 L497.5 184.8 L498.4 183.0 L499.3 181.3 L500.3 179.7 L501.2 178.0 L502.2 176.4 L503.3 174.8 L504.4 173.2 L505.6 171.6 L507.0 170.2 L508.4 168.8 L509.8 167.5 L511.4 166.3 L513.1 165.3 L514.9 164.4 L516.7 163.6 L518.5 162.9 L520.4 162.4 L522.4 162.0 L524.3 161.7 L526.2 161.5 L528.2 161.4 L530.1 161.4 L532.0 161.3 L533.9 161.4 L535.8 161.4 L537.8 161.5 L539.7 161.7 L541.6 162.0 L543.6 162.4 L545.5 162.9 L547.3 163.6 L549.1 164.4 L550.9 165.3 L552.6 166.3 L554.2 167.5 L555.6 168.8 L557.0 170.2 L558.4 171.6 L559.6 173.2 L560.7 174.8 L561.8 176.4 L562.8 178.0 L563.7 179.7 L564.7 181.3 L565.6 183.0 L566.5 184.8 L567.3 186.5 L568.0 188.4 L568.6 190.2 L569.1 192.1 L569.5 194.1 L569.7 196.0 Z" fill="none" stroke="#fb923c" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 2"/>
+<path d="M563.7 198.0 L563.6 199.7 L563.4 201.3 L562.9 202.9 L562.3 204.4 L561.5 205.9 L560.5 207.3 L559.5 208.5 L558.3 209.7 L557.3 210.9 L556.4 212.1 L555.8 213.4 L555.3 214.9 L554.9 216.5 L554.3 218.1 L553.6 219.6 L552.7 221.0 L551.7 222.3 L550.5 223.5 L549.3 224.6 L547.9 225.5 L546.4 226.2 L544.8 226.8 L543.2 227.2 L541.6 227.4 L539.9 227.5 L538.2 227.3 L536.6 227.1 L535.0 226.7 L533.5 226.3 L532.0 226.1 L530.5 226.3 L529.0 226.7 L527.4 227.1 L525.8 227.3 L524.1 227.5 L522.4 227.4 L520.8 227.2 L519.2 226.8 L517.6 226.2 L516.1 225.5 L514.7 224.6 L513.5 223.5 L512.3 222.3 L511.3 221.0 L510.4 219.6 L509.7 218.1 L509.1 216.5 L508.7 214.9 L508.2 213.4 L507.6 212.1 L506.7 210.9 L505.7 209.7 L504.5 208.5 L503.5 207.3 L502.5 205.9 L501.7 204.4 L501.1 202.9 L500.6 201.3 L500.4 199.7 L500.3 198.0 L500.4 196.3 L500.6 194.7 L501.1 193.1 L501.7 191.6 L502.5 190.1 L503.5 188.7 L504.5 187.5 L505.7 186.3 L506.7 185.1 L507.6 183.9 L508.2 182.6 L508.7 181.1 L509.1 179.5 L509.7 177.9 L510.4 176.4 L511.3 175.0 L512.3 173.7 L513.5 172.5 L514.7 171.4 L516.1 170.5 L517.6 169.8 L519.2 169.2 L520.8 168.8 L522.4 168.6 L524.1 168.5 L525.8 168.7 L527.4 168.9 L529.0 169.3 L530.5 169.7 L532.0 169.9 L533.5 169.7 L535.0 169.3 L536.6 168.9 L538.2 168.7 L539.9 168.5 L541.6 168.6 L543.2 168.8 L544.8 169.2 L546.4 169.8 L547.9 170.5 L549.3 171.4 L550.5 172.5 L551.7 173.7 L552.7 175.0 L553.6 176.4 L554.3 177.9 L554.9 179.5 L555.3 181.1 L555.8 182.6 L556.4 183.9 L557.3 185.1 L558.3 186.3 L559.5 187.5 L560.5 188.7 L561.5 190.1 L562.3 191.6 L562.9 193.1 L563.4 194.7 L563.6 196.3 Z" fill="none" stroke="#fdba74" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M558.0 198.0 L545.0 220.5 L519.0 220.5 L506.0 198.0 L519.0 175.5 L545.0 175.5 Z" fill="#e0f2fe" stroke="#0284c7" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="558.0" y1="198.0" x2="594.0" y2="198.0" stroke="#bae6fd" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="558.0" y1="198.0" x2="594.0" y2="198.0" stroke="#4338ca" stroke-width="2.4" stroke-linecap="round" class="dendrite-arm"/>
+<line x1="571.0" y1="198.0" x2="577.2" y2="187.2" stroke="#bae6fd" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="571.0" y1="198.0" x2="577.2" y2="187.2" stroke="#4338ca" stroke-width="1.7" stroke-linecap="round" class="dendrite-arm"/>
+<line x1="571.0" y1="198.0" x2="577.2" y2="208.8" stroke="#bae6fd" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="571.0" y1="198.0" x2="577.2" y2="208.8" stroke="#4338ca" stroke-width="1.7" stroke-linecap="round" class="dendrite-arm"/>
+<line x1="582.0" y1="198.0" x2="586.5" y2="190.2" stroke="#bae6fd" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="582.0" y1="198.0" x2="586.5" y2="190.2" stroke="#4338ca" stroke-width="1.7" stroke-linecap="round" class="dendrite-arm"/>
+<line x1="582.0" y1="198.0" x2="586.5" y2="205.8" stroke="#bae6fd" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="582.0" y1="198.0" x2="586.5" y2="205.8" stroke="#4338ca" stroke-width="1.7" stroke-linecap="round" class="dendrite-arm"/>
+<line x1="545.0" y1="220.5" x2="563.0" y2="251.7" stroke="#bae6fd" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="545.0" y1="220.5" x2="563.0" y2="251.7" stroke="#4338ca" stroke-width="2.4" stroke-linecap="round" class="dendrite-arm"/>
+<line x1="551.5" y1="231.8" x2="564.0" y2="231.8" stroke="#bae6fd" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="551.5" y1="231.8" x2="564.0" y2="231.8" stroke="#4338ca" stroke-width="1.7" stroke-linecap="round" class="dendrite-arm"/>
+<line x1="551.5" y1="231.8" x2="545.2" y2="242.6" stroke="#bae6fd" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="551.5" y1="231.8" x2="545.2" y2="242.6" stroke="#4338ca" stroke-width="1.7" stroke-linecap="round" class="dendrite-arm"/>
+<line x1="557.0" y1="241.3" x2="566.0" y2="241.3" stroke="#bae6fd" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="557.0" y1="241.3" x2="566.0" y2="241.3" stroke="#4338ca" stroke-width="1.7" stroke-linecap="round" class="dendrite-arm"/>
+<line x1="557.0" y1="241.3" x2="552.5" y2="249.1" stroke="#bae6fd" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="557.0" y1="241.3" x2="552.5" y2="249.1" stroke="#4338ca" stroke-width="1.7" stroke-linecap="round" class="dendrite-arm"/>
+<line x1="519.0" y1="220.5" x2="501.0" y2="251.7" stroke="#bae6fd" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="519.0" y1="220.5" x2="501.0" y2="251.7" stroke="#4338ca" stroke-width="2.4" stroke-linecap="round" class="dendrite-arm"/>
+<line x1="512.5" y1="231.8" x2="518.8" y2="242.6" stroke="#bae6fd" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="512.5" y1="231.8" x2="518.8" y2="242.6" stroke="#4338ca" stroke-width="1.7" stroke-linecap="round" class="dendrite-arm"/>
+<line x1="512.5" y1="231.8" x2="500.0" y2="231.8" stroke="#bae6fd" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="512.5" y1="231.8" x2="500.0" y2="231.8" stroke="#4338ca" stroke-width="1.7" stroke-linecap="round" class="dendrite-arm"/>
+<line x1="507.0" y1="241.3" x2="511.5" y2="249.1" stroke="#bae6fd" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="507.0" y1="241.3" x2="511.5" y2="249.1" stroke="#4338ca" stroke-width="1.7" stroke-linecap="round" class="dendrite-arm"/>
+<line x1="507.0" y1="241.3" x2="498.0" y2="241.3" stroke="#bae6fd" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="507.0" y1="241.3" x2="498.0" y2="241.3" stroke="#4338ca" stroke-width="1.7" stroke-linecap="round" class="dendrite-arm"/>
+<line x1="506.0" y1="198.0" x2="470.0" y2="198.0" stroke="#bae6fd" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="506.0" y1="198.0" x2="470.0" y2="198.0" stroke="#4338ca" stroke-width="2.4" stroke-linecap="round" class="dendrite-arm"/>
+<line x1="493.0" y1="198.0" x2="486.8" y2="208.8" stroke="#bae6fd" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="493.0" y1="198.0" x2="486.8" y2="208.8" stroke="#4338ca" stroke-width="1.7" stroke-linecap="round" class="dendrite-arm"/>
+<line x1="493.0" y1="198.0" x2="486.8" y2="187.2" stroke="#bae6fd" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="493.0" y1="198.0" x2="486.8" y2="187.2" stroke="#4338ca" stroke-width="1.7" stroke-linecap="round" class="dendrite-arm"/>
+<line x1="482.0" y1="198.0" x2="477.5" y2="205.8" stroke="#bae6fd" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="482.0" y1="198.0" x2="477.5" y2="205.8" stroke="#4338ca" stroke-width="1.7" stroke-linecap="round" class="dendrite-arm"/>
+<line x1="482.0" y1="198.0" x2="477.5" y2="190.2" stroke="#bae6fd" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="482.0" y1="198.0" x2="477.5" y2="190.2" stroke="#4338ca" stroke-width="1.7" stroke-linecap="round" class="dendrite-arm"/>
+<line x1="519.0" y1="175.5" x2="501.0" y2="144.3" stroke="#bae6fd" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="519.0" y1="175.5" x2="501.0" y2="144.3" stroke="#4338ca" stroke-width="2.4" stroke-linecap="round" class="dendrite-arm"/>
+<line x1="512.5" y1="164.2" x2="500.0" y2="164.2" stroke="#bae6fd" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="512.5" y1="164.2" x2="500.0" y2="164.2" stroke="#4338ca" stroke-width="1.7" stroke-linecap="round" class="dendrite-arm"/>
+<line x1="512.5" y1="164.2" x2="518.8" y2="153.4" stroke="#bae6fd" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="512.5" y1="164.2" x2="518.8" y2="153.4" stroke="#4338ca" stroke-width="1.7" stroke-linecap="round" class="dendrite-arm"/>
+<line x1="507.0" y1="154.7" x2="498.0" y2="154.7" stroke="#bae6fd" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="507.0" y1="154.7" x2="498.0" y2="154.7" stroke="#4338ca" stroke-width="1.7" stroke-linecap="round" class="dendrite-arm"/>
+<line x1="507.0" y1="154.7" x2="511.5" y2="146.9" stroke="#bae6fd" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="507.0" y1="154.7" x2="511.5" y2="146.9" stroke="#4338ca" stroke-width="1.7" stroke-linecap="round" class="dendrite-arm"/>
+<line x1="545.0" y1="175.5" x2="563.0" y2="144.3" stroke="#bae6fd" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="545.0" y1="175.5" x2="563.0" y2="144.3" stroke="#4338ca" stroke-width="2.4" stroke-linecap="round" class="dendrite-arm"/>
+<line x1="551.5" y1="164.2" x2="545.2" y2="153.4" stroke="#bae6fd" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="551.5" y1="164.2" x2="545.2" y2="153.4" stroke="#4338ca" stroke-width="1.7" stroke-linecap="round" class="dendrite-arm"/>
+<line x1="551.5" y1="164.2" x2="564.0" y2="164.2" stroke="#bae6fd" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="551.5" y1="164.2" x2="564.0" y2="164.2" stroke="#4338ca" stroke-width="1.7" stroke-linecap="round" class="dendrite-arm"/>
+<line x1="557.0" y1="154.7" x2="552.5" y2="146.9" stroke="#bae6fd" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="557.0" y1="154.7" x2="552.5" y2="146.9" stroke="#4338ca" stroke-width="1.7" stroke-linecap="round" class="dendrite-arm"/>
+<line x1="557.0" y1="154.7" x2="566.0" y2="154.7" stroke="#bae6fd" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="557.0" y1="154.7" x2="566.0" y2="154.7" stroke="#4338ca" stroke-width="1.7" stroke-linecap="round" class="dendrite-arm"/>
+<line x1="595.0" y1="198.0" x2="616.0" y2="152.0" stroke="#c25014" stroke-width="1.3" stroke-linecap="round"/>
+<text x="618" y="144" font-size="8.9" fill="#c25014" text-anchor="start" font-weight="700">6 个尖角探入浓水汽</text>
+<text x="618" y="158" font-size="8.7" fill="#c25014" text-anchor="start" font-weight="600">等浓度线挤密 |∇c| 大</text>
+<text x="618" y="172" font-size="8.7" fill="#dc2626" text-anchor="start" font-weight="700">→ 伯格效应越凸越快！</text>
+<line x1="558.0" y1="213.0" x2="616.0" y2="226.0" stroke="#475569" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="3 2"/>
+<text x="618" y="222" font-size="8.9" fill="#475569" text-anchor="start" font-weight="700">平坦凹槽被尖端截胡</text>
+<text x="618" y="236" font-size="8.7" fill="#64748b" text-anchor="start">等浓度线稀疏 → 挨饿</text>
+<text x="618" y="250" font-size="8.7" fill="#4338ca" text-anchor="start" font-weight="600">主枝两侧再爆 60° 侧枝</text>
+<rect x="404" y="282" width="320" height="108" rx="7" fill="#fef1e8" stroke="#fdba74" stroke-width="1"/>
+<text x="414" y="300" font-size="9.4" fill="#c25014" text-anchor="start" font-weight="700">马林斯–塞克卡失稳 (1963) + 表面张力刹车：</text>
+<text x="414" y="318" font-size="8.9" fill="#1e293b" text-anchor="start">• 水汽靠空气扩散供货 (∇²c ≈ 0)，生长速度 v_n ∝ D|∇c|；</text>
+<text x="414" y="336" font-size="8.9" fill="#1e293b" text-anchor="start">• 8% 微凸即可令尖端梯度翻倍 → 正反馈飙出 6 根树枝主干！</text>
+<text x="414" y="354" font-size="8.9" fill="#1e293b" text-anchor="start">• 为何不削成无限尖针？吉布斯–汤姆孙曲率效应令过尖冰峰</text>
+<text x="414" y="372" font-size="8.9" fill="#0f172a" text-anchor="start" font-weight="600">  平衡水汽压升高易升华，稳住微米级尖端半径 r_tip！</text>
+<rect x="22" y="414" width="716" height="52" rx="8" fill="#f0fdfa" stroke="#99f6e4" stroke-width="1"/>
+<text x="36" y="436" font-size="9.4" fill="#0f766e" text-anchor="start" font-weight="700">拔河胜负手——过饱和度 σ（空气有多湿）：低湿慢长 → 分子台阶从容填平，【晶面化赢】结成实心六角板/棱柱；</text>
+<text x="36" y="454" font-size="9.4" fill="#0f172a" text-anchor="start" font-weight="600">高湿猛长 → 扩散供货滞后，尖角疯狂截胡水汽，【扩散失稳赢】沿着晶格 60° 轨道爆发出绚烂羽毛状六角星花！</text>
+</svg>

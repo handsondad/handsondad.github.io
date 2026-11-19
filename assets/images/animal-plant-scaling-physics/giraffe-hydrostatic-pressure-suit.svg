@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="468" viewBox="0 0 760 468" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">长颈鹿站立态垂直静水血压梯度与俯身饮水三重防脑充血流体力学机制图解</title>
+<desc id="desc">左图按ΔP=ρgh≈77 mmHg/米精确计算站立长颈鹿从离地2.0米涡轮增压心脏(约225 mmHg)到上方+2.0米大脑(70至95 mmHg)及下方-1.8米脚踝(&gt;360 mmHg，靠紧绷皮肤筋膜抗荷袜防肿)的压力分布；右图拆解俯身饮水时颈静脉单向止回阀、颅底奇网及脑脊液外压缓冲三重保护。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="467" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">陆地最高动物的流体静力学奇迹：5 米长颈鹿为什么抬头不晕、低头喝水不爆血管？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">血柱每升高 1 米压强骤变 ΔP = ρgh ≈ 77 mmHg！长颈鹿天生穿戴“225 mmHg 涡轮心脏 + 小腿抗荷袜 + 颈部止回阀”</text>
+<rect x="18" y="64" width="418" height="392" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="32" y="86" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 站立态血压梯度（若装人类 95 mmHg 心脏会当场晕厥！）</text>
+<line x1="54.0" y1="132.0" x2="54.0" y2="420.0" stroke="#475569" stroke-width="1.4"/>
+<line x1="49.0" y1="420.0" x2="58.0" y2="420.0" stroke="#475569" stroke-width="1.2"/>
+<text x="45" y="423.5" font-size="9.0" fill="#64748b" text-anchor="end" class="mono">0m</text>
+<line x1="49.0" y1="360.0" x2="58.0" y2="360.0" stroke="#475569" stroke-width="1.2"/>
+<text x="45" y="363.5" font-size="9.0" fill="#64748b" text-anchor="end" class="mono">1m</text>
+<line x1="49.0" y1="300.0" x2="58.0" y2="300.0" stroke="#475569" stroke-width="1.2"/>
+<text x="45" y="303.5" font-size="9.0" fill="#64748b" text-anchor="end" class="mono">2m</text>
+<line x1="49.0" y1="240.0" x2="58.0" y2="240.0" stroke="#475569" stroke-width="1.2"/>
+<text x="45" y="243.5" font-size="9.0" fill="#64748b" text-anchor="end" class="mono">3m</text>
+<line x1="49.0" y1="180.0" x2="58.0" y2="180.0" stroke="#475569" stroke-width="1.2"/>
+<text x="45" y="183.5" font-size="9.0" fill="#64748b" text-anchor="end" class="mono">4m</text>
+<line x1="49.0" y1="132.0" x2="58.0" y2="132.0" stroke="#475569" stroke-width="1.2"/>
+<text x="45" y="135.5" font-size="9.0" fill="#64748b" text-anchor="end" class="mono">4.8m</text>
+<rect x="92" y="300.0" width="11" height="120.0" rx="4" fill="#fde68a" stroke="#d97706" stroke-width="1.5"/>
+<rect x="132" y="303.0" width="11" height="117.0" rx="4" fill="#fde68a" stroke="#d97706" stroke-width="1.5"/>
+<rect x="90" y="360.0" width="15" height="51.0" rx="3" fill="none" stroke="#1d6fa5" stroke-width="2.2" stroke-dasharray="3 2"/>
+<rect x="130" y="360.0" width="15" height="51.0" rx="3" fill="none" stroke="#1d6fa5" stroke-width="2.2" stroke-dasharray="3 2"/>
+<polygon points="86,300.0 148,306.0 146,279.0 92,267.0" fill="#fef3c7" stroke="#d97706" stroke-width="1.6"/>
+<polygon points="94,270.0 114,274.8 138,169.2 123,164.4" fill="#fef3c7" stroke="#d97706" stroke-width="1.6"/>
+<polygon points="122,165.6 156,169.2 158,158.4 128,148.8" fill="#fde68a" stroke="#d97706" stroke-width="1.6"/>
+<line x1="128.0" y1="150.0" x2="126.0" y2="139.2" stroke="#92400e" stroke-width="2.2"/>
+<line x1="135.0" y1="151.2" x2="135.0" y2="140.4" stroke="#92400e" stroke-width="2.2"/>
+<path d="M 98.00,408.00 L 108.00,300.00 L 132.00,165.00" fill="none" stroke="#dc2626" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="108" cy="300.0" r="7.5" fill="#dc2626" stroke="#ffffff" stroke-width="1.6"/>
+<circle cx="132" cy="165.0" r="5.0" fill="#18794e" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="98" cy="405.0" r="5.0" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.5"/>
+<line x1="138.0" y1="165.0" x2="172.0" y2="136.0" stroke="#18794e" stroke-width="1.4" stroke-dasharray="3 2"/>
+<rect x="172" y="102" width="250" height="86" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="182" y="121" font-size="10.0" fill="#18794e" text-anchor="start" font-weight="700">大脑（心脏上方 +2.0 m）：~70–95 mmHg</text>
+<text x="182" y="139" font-size="9.5" fill="#1e293b" text-anchor="start">爬升 2 米扣掉 2×77 ≈ 154 mmHg 重力税，</text>
+<text x="182" y="156" font-size="9.5" fill="#0f172a" text-anchor="start" font-weight="600">抵脑恰好剩 ~70–95 mmHg 正常灌注压！</text>
+<text x="182" y="174" font-size="9.2" fill="#dc2626" text-anchor="start" font-weight="600">（若换人类 95 mmHg 心脏 → −60 mmHg 秒晕）</text>
+<line x1="116.0" y1="300.0" x2="172.0" y2="244.0" stroke="#dc2626" stroke-width="1.5"/>
+<rect x="172" y="202" width="250" height="102" rx="7" fill="#fef2f2" stroke="#dc2626" stroke-width="1"/>
+<text x="182" y="221" font-size="10.0" fill="#dc2626" text-anchor="start" font-weight="700">涡轮增压心脏（离地 2.0 m）：~225 mmHg</text>
+<text x="182" y="240" font-size="9.5" fill="#0f172a" text-anchor="start" font-weight="600">• 静息平均动脉压 200–250 mmHg（人类2.3倍，</text>
+<text x="182" y="257" font-size="9.5" fill="#1e293b" text-anchor="start">  陆生哺乳类之冠！）；</text>
+<text x="182" y="275" font-size="9.4" fill="#1e293b" text-anchor="start">• 左心室壁厚达 7–8 cm（拉普拉斯定律：靠加厚</text>
+<text x="182" y="292" font-size="9.4" fill="#64748b" text-anchor="start">  室壁抵消高压，不得人类那种病理心肌肥大！）。</text>
+<line x1="105.0" y1="399.0" x2="172.0" y2="372.0" stroke="#1d6fa5" stroke-width="1.4" stroke-dasharray="3 2"/>
+<rect x="172" y="318" width="250" height="122" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="182" y="337" font-size="10.0" fill="#1d6fa5" text-anchor="start" font-weight="700">小腿脚踝（心脏下方 −1.8 m）：&gt;360 mmHg!</text>
+<text x="182" y="356" font-size="9.5" fill="#1e293b" text-anchor="start">• 心脏高压 + 1.8 米血柱自重叠加，足部动脉压</text>
+<text x="182" y="373" font-size="9.5" fill="#1e293b" text-anchor="start">  飙破 360 mmHg，普通血管早就渗水肿成象腿；</text>
+<text x="182" y="392" font-size="9.5" fill="#1d6fa5" text-anchor="start" font-weight="700">• 演化神装：超厚致密小腿皮肤+紧绷筋膜组成天然</text>
+<text x="182" y="409" font-size="9.5" fill="#0f172a" text-anchor="start" font-weight="600">  【飞行员抗荷袜（G-suit）】+ 动脉壁平滑肌缩窄，</text>
+<text x="182" y="426" font-size="9.4" fill="#1e293b" text-anchor="start">  从外部死死箍住组织间液，滴水不漏！</text>
+<rect x="448" y="64" width="294" height="392" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="462" y="86" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 低头 5 米喝水：为什么不脑充血？</text>
+<rect x="462" y="100" width="266" height="118" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<ellipse cx="672" cy="202" rx="42" ry="9" fill="#bae6fd" stroke="#0284c7" stroke-width="1.2"/>
+<text x="672" y="205" font-size="8.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">水坑</text>
+<line x1="510.0" y1="204.0" x2="526.0" y2="146.0" stroke="#d97706" stroke-width="4.0"/>
+<line x1="564.0" y1="204.0" x2="548.0" y2="142.0" stroke="#d97706" stroke-width="4.0"/>
+<polygon points="504,150 562,136 560,118 508,132" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<polygon points="558,124 562,140 648,196 654,186" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<circle cx="552" cy="134" r="5.5" fill="#dc2626"/>
+<text x="552" y="113" font-size="9.2" fill="#dc2626" text-anchor="middle" font-weight="700">心脏 (高处)</text>
+<circle cx="582" cy="148" r="3.5" fill="#ffffff" stroke="#6d28d9" stroke-width="1.6"/>
+<circle cx="604" cy="162" r="3.5" fill="#ffffff" stroke="#6d28d9" stroke-width="1.6"/>
+<circle cx="626" cy="176" r="3.5" fill="#ffffff" stroke="#6d28d9" stroke-width="1.6"/>
+<text x="628" y="142" font-size="9.4" fill="#c25014" text-anchor="middle" font-weight="700">头低于心脏 ~1.8 m!</text>
+<text x="522" y="198" font-size="9.0" fill="#64748b" text-anchor="middle">劈叉低头险境</text>
+<rect x="462" y="230" width="266" height="62" rx="7" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<circle cx="480" cy="250" r="9.5" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="480" y="254" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">1</text>
+<text x="496" y="254" font-size="10.0" fill="#6d28d9" text-anchor="start" font-weight="700">颈静脉 7 道单向止回阀</text>
+<text x="474" y="272" font-size="9.2" fill="#1e293b" text-anchor="start">低头瞬间阀门关闭，截住颈静脉约 2 升血液，</text>
+<text x="474" y="286" font-size="9.2" fill="#1e293b" text-anchor="start">严防静脉血顺重力倒灌冲击颅内微血管！</text>
+<rect x="462" y="302" width="266" height="62" rx="7" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<circle cx="480" cy="322" r="9.5" fill="#ffffff" stroke="#c25014" stroke-width="1.2"/>
+<text x="480" y="326" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="496" y="326" font-size="10.0" fill="#c25014" text-anchor="start" font-weight="700">颅底奇网 + 脑脊液同步增压</text>
+<text x="474" y="344" font-size="9.2" fill="#1e293b" text-anchor="start">海绵状血管丛缓冲动脉波，椎管静脉丛同步</text>
+<text x="474" y="358" font-size="9.2" fill="#1e293b" text-anchor="start">抬高脑脊液压，从血管外侧等压护住脑组织。</text>
+<rect x="462" y="374" width="266" height="62" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<circle cx="480" cy="394" r="9.5" fill="#ffffff" stroke="#18794e" stroke-width="1.2"/>
+<text x="480" y="398" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">3</text>
+<text x="496" y="398" font-size="10.0" fill="#18794e" text-anchor="start" font-weight="700">猛抬头瞬间的反射稳压器</text>
+<text x="474" y="416" font-size="9.2" fill="#1e293b" text-anchor="start">颈动脉窦感受器毫秒级调配血管阻力与心率，</text>
+<text x="474" y="430" font-size="9.2" fill="#1e293b" text-anchor="start">防止猛抬头躲避狮子时眼前一黑体位性晕厥。</text>
+</svg>

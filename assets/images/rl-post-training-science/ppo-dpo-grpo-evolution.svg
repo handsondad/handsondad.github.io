@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="472" viewBox="0 0 760 472" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">PPO、DPO与GRPO三大强化学习后训练算法架构与优势函数对比图</title>
+<desc id="desc">自上而下对比三代后训练架构：①PPO需同时维护Actor、Ref、RM与同尺寸Critic四模型；②DPO利用隐式奖励闭式映射省去在线采样与Critic；③GRPO对同题采样G=4条轨迹并以组均值0.55和标准差0.46归一化优势函数A_i，配合规则验证器激发长思维链推理。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="471" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">后训练三大核心算法演进：从四模型 PPO、免采样 DPO 到组内赛马 GRPO</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">沿着“砍显存包袱 + 防奖励作弊 + 强推理探索”三条线索，读懂 InstructGPT → DPO → DeepSeek-R1</text>
+<rect x="18" y="60" width="724" height="114" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="82" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="38" y="86" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="86" font-size="12.2" fill="#1d6fa5" text-anchor="start" font-weight="700">PPO 经典人类反馈强化学习（InstructGPT, 2022）：四套大模型同驻显存，稳健但昂贵</text>
+<rect x="34" y="98" width="136" height="62" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.3"/>
+<text x="102" y="121" font-size="10.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">策略 Actor π_θ</text>
+<text x="102" y="143" font-size="9.8" fill="#1e293b" text-anchor="middle">正在训练的主模型</text>
+<rect x="182" y="98" width="136" height="62" rx="7" fill="#f1f5f9" stroke="#475569" stroke-width="1.3"/>
+<text x="250" y="121" font-size="10.6" fill="#475569" text-anchor="middle" font-weight="700">参考 Ref π_ref</text>
+<text x="250" y="143" font-size="9.8" fill="#1e293b" text-anchor="middle">冻结底座(算KL绳)</text>
+<rect x="330" y="98" width="136" height="62" rx="7" fill="#fef1e8" stroke="#c25014" stroke-width="1.3"/>
+<text x="398" y="121" font-size="10.6" fill="#c25014" text-anchor="middle" font-weight="700">奖励模型 RM r_φ</text>
+<text x="398" y="143" font-size="9.8" fill="#1e293b" text-anchor="middle">拟合人类偏好打分</text>
+<rect x="478" y="98" width="136" height="62" rx="7" fill="#fef2f2" stroke="#b91c1c" stroke-width="1.3"/>
+<text x="546" y="121" font-size="10.6" fill="#b91c1c" text-anchor="middle" font-weight="700">价值 Critic V_ψ</text>
+<text x="546" y="143" font-size="9.8" fill="#1e293b" text-anchor="middle">同尺寸网络估基线!</text>
+<rect x="624" y="98" width="104" height="62" rx="7" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="676" y="120" font-size="10.2" fill="#b91c1c" text-anchor="middle" font-weight="700">痛点账单：</text>
+<text x="676" y="138" font-size="10.0" fill="#0f172a" text-anchor="middle" font-weight="700">~4× 显存开销</text>
+<text x="676" y="153" font-size="9.4" fill="#64748b" text-anchor="middle">RM 易被长题钻空</text>
+<rect x="18" y="186" width="724" height="106" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="208" r="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="38" y="212" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">2</text>
+<text x="56" y="212" font-size="12.0" fill="#6d28d9" text-anchor="start" font-weight="700">DPO 直接偏好优化（Rafailov 等, 2023）：数学反解最优策略，把 RL 化简成“赢家 vs 输家”对比</text>
+<rect x="34" y="224" width="208" height="56" rx="7" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.3"/>
+<text x="138" y="246" font-size="10.4" fill="#6d28d9" text-anchor="middle" font-weight="700">只留 Actor π_θ + 冻结 Ref π_ref</text>
+<text x="138" y="266" font-size="9.6" fill="#1e293b" text-anchor="middle">省掉独立 RM 与 Critic（显存减半）</text>
+<line x1="245.0" y1="252.0" x2="265.0" y2="252.0" stroke="#6d28d9" stroke-width="1.8" marker-end="url(#arr-muted)"/>
+<rect x="268" y="224" width="268" height="56" rx="7" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="402" y="246" font-size="9.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">隐式奖励 r = β log[π_θ(y|x)/π_ref(y|x)]</text>
+<text x="402" y="266" font-size="9.6" fill="#1e293b" text-anchor="middle">直接在离线偏好对 (y_w ≻ y_l) 上拉大概率差</text>
+<rect x="546" y="224" width="182" height="56" rx="7" fill="#fffbeb" stroke="#b45309" stroke-width="1"/>
+<text x="637" y="245" font-size="10.0" fill="#b45309" text-anchor="middle" font-weight="700">适用边界：日常语气对齐极香</text>
+<text x="637" y="265" font-size="9.6" fill="#1e293b" text-anchor="middle">但缺在线采样探索，难啃深推理</text>
+<rect x="18" y="304" width="724" height="154" rx="10" fill="#ffffff" stroke="#18794e" stroke-width="1.5"/>
+<circle cx="38" cy="326" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="38" y="330" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">3</text>
+<text x="56" y="330" font-size="12.0" fill="#18794e" text-anchor="start" font-weight="700">GRPO 组相对策略优化 + 可验证奖励 RLVR（DeepSeekMath 2024 / DeepSeek-R1 2025）</text>
+<rect x="34" y="346" width="134" height="98" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="101" y="368" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">同一道题 q</text>
+<text x="101" y="388" font-size="10.0" fill="#1e293b" text-anchor="middle">策略 π_θ_old 在线</text>
+<text x="101" y="405" font-size="10.0" fill="#0f172a" text-anchor="middle" font-weight="700">并行采样 G=4 条</text>
+<text x="101" y="424" font-size="9.8" fill="#18794e" text-anchor="middle" font-weight="700">(彻底砍掉 Critic!)</text>
+<line x1="170.0" y1="395.0" x2="194.0" y2="395.0" stroke="#1d6fa5" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+<rect x="198" y="343" width="344" height="22" rx="5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.0"/>
+<text x="206" y="358" font-size="9.5" fill="#0f172a" text-anchor="start" font-weight="600">o₁: 正推算对 + 格式规范</text>
+<text x="374" y="358" font-size="9.5" fill="#18794e" text-anchor="start" font-weight="700" class="mono">r=1.0</text>
+<text x="422" y="358" font-size="9.5" fill="#18794e" text-anchor="start" font-weight="700" class="mono">A=+0.99</text>
+<text x="535" y="358" font-size="9.4" fill="#18794e" text-anchor="end" font-weight="700">↑ 强力加权</text>
+<rect x="198" y="369" width="344" height="22" rx="5" fill="#fef2f2" stroke="#b91c1c" stroke-width="1.0"/>
+<text x="206" y="384" font-size="9.5" fill="#0f172a" text-anchor="start" font-weight="600">o₂: 中途移项漏负号答错</text>
+<text x="374" y="384" font-size="9.5" fill="#b91c1c" text-anchor="start" font-weight="700" class="mono">r=0.0</text>
+<text x="422" y="384" font-size="9.5" fill="#b91c1c" text-anchor="start" font-weight="700" class="mono">A=-1.21</text>
+<text x="535" y="384" font-size="9.4" fill="#b91c1c" text-anchor="end" font-weight="700">↓ 强力压低</text>
+<rect x="198" y="395" width="344" height="22" rx="5" fill="#fef1e8" stroke="#c25014" stroke-width="1.0"/>
+<text x="206" y="410" font-size="9.5" fill="#0f172a" text-anchor="start" font-weight="600">o₃: 格式对但最终答案错</text>
+<text x="374" y="410" font-size="9.5" fill="#c25014" text-anchor="start" font-weight="700" class="mono">r=0.2</text>
+<text x="422" y="410" font-size="9.5" fill="#c25014" text-anchor="start" font-weight="700" class="mono">A=-0.77</text>
+<text x="535" y="410" font-size="9.4" fill="#c25014" text-anchor="end" font-weight="700">↓ 适度压低</text>
+<rect x="198" y="421" width="344" height="22" rx="5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.0"/>
+<text x="206" y="436" font-size="9.5" fill="#0f172a" text-anchor="start" font-weight="600">o₄: 算错→自检Wait纠正答对!</text>
+<text x="374" y="436" font-size="9.5" fill="#18794e" text-anchor="start" font-weight="700" class="mono">r=1.0</text>
+<text x="422" y="436" font-size="9.5" fill="#18794e" text-anchor="start" font-weight="700" class="mono">A=+0.99</text>
+<text x="535" y="436" font-size="9.4" fill="#18794e" text-anchor="end" font-weight="700">↑ 强力加权</text>
+<line x1="546.0" y1="395.0" x2="568.0" y2="395.0" stroke="#18794e" stroke-width="1.8" marker-end="url(#arr-green)"/>
+<rect x="572" y="346" width="156" height="98" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="650" y="366" font-size="10.6" fill="#18794e" text-anchor="middle" font-weight="700">同题组内自己比：</text>
+<text x="650" y="385" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">A_i = (r_i − μ) / σ</text>
+<text x="650" y="404" font-size="9.6" fill="#475569" text-anchor="middle">均值 μ=0.55, σ=0.46</text>
+<text x="650" y="422" font-size="9.8" fill="#1e293b" text-anchor="middle">零神经奖励模型 =</text>
+<text x="650" y="437" font-size="9.8" fill="#18794e" text-anchor="middle" font-weight="700">堵死长链刷分漏洞！</text>
+</svg>

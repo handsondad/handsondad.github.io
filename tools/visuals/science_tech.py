@@ -15087,3 +15087,2670 @@ def _register_media_formats():
 
 
 _register_media_formats()
+
+
+def _register_rl_post_training_science():
+    import math
+
+    from .core import (
+        BLUE,
+        BLUE_LINE,
+        BLUE_SOFT,
+        BODY,
+        BORDER,
+        CARD_BG,
+        GREEN,
+        GREEN_SOFT,
+        HAIRLINE,
+        INK,
+        MUTED,
+        ORANGE,
+        ORANGE_SOFT,
+        PANEL_TITLE,
+        PURPLE,
+        PURPLE_SOFT,
+        SLATE,
+        SLATE_SOFT,
+        WIDTH,
+        card,
+        figure,
+        header,
+        pill,
+        register,
+        step_badge,
+        txt,
+        write_svg,
+    )
+
+    SUBDIR = "rl-post-training-science"
+    RED = "#b91c1c"
+    RED_SOFT = "#fef2f2"
+    TEAL = "#0f766e"
+    TEAL_SOFT = "#f0fdfa"
+    AMBER = "#b45309"
+    AMBER_SOFT = "#fffbeb"
+
+    def _line(x1, y1, x2, y2, stroke=BORDER, sw=1.3, dash=None, marker=None):
+        attrs = [
+            f'x1="{x1:.1f}"',
+            f'y1="{y1:.1f}"',
+            f'x2="{x2:.1f}"',
+            f'y2="{y2:.1f}"',
+            f'stroke="{stroke}"',
+            f'stroke-width="{sw}"',
+        ]
+        if dash:
+            attrs.append(f'stroke-dasharray="{dash}"')
+        if marker:
+            attrs.append(f'marker-end="url(#{marker})"')
+        return f'<line {" ".join(attrs)}/>'
+
+    def _poly(pts, stroke=BLUE, sw=2.3, fill="none", dash=None, cls=None):
+        d = "M " + " L ".join(f"{x:.2f},{y:.2f}" for x, y in pts)
+        extra = f' stroke-dasharray="{dash}"' if dash else ""
+        c_attr = f' class="{cls}"' if cls else ""
+        return f'<path d="{d}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}" stroke-linecap="round" stroke-linejoin="round"{extra}{c_attr}/>'
+
+    def _build_pretraining_sft_rl_three_stages():
+        """SVG 1: Three stages of LLM training + exposure bias recovery + InstructGPT 1.3B vs 175B."""
+        gpt3_b = 175.0
+        instruct_small_b = 1.3
+        param_ratio = gpt3_b / instruct_small_b
+        assert 134.0 < param_ratio < 135.0
+
+        # Compounding step-error check (Exposure Bias): per-step slip eps=0.02 over T=50 steps
+        eps_step = 0.02
+        survive_50 = (1.0 - eps_step) ** 50
+        assert 0.36 < survive_50 < 0.37
+
+        els = header(
+            "大模型养成的三级台阶：预训练攒底座、SFT 教规矩、强化学习破上限",
+            "同样是拧神经网络的参数旋钮，三个阶段的“反馈信号来源”与“能力天花板”截然不同",
+        )
+
+        # Top 3-column stage cards: x = 18, 266, 514; width = 228 each (514+228=742 <= 760)
+        cols = [
+            (
+                18,
+                "1",
+                "预训练 Pre-training",
+                "博览群书 · 完形填空",
+                BLUE,
+                BLUE_SOFT,
+                "数据：数万亿互联网与书籍词元",
+                "目标：逐词最大似然 -∑ log P(y_t|y_<t)",
+                "收获：压缩世界通识与潜在推理草稿",
+                "短板：照单全收网上的胡扯与坏习惯",
+            ),
+            (
+                266,
+                "2",
+                "监督微调 SFT",
+                "临摹范文 · 行为克隆",
+                PURPLE,
+                PURPLE_SOFT,
+                "数据：数万至百万条人工示范问答",
+                "目标：严格模仿人类写手的标准每个词",
+                "收获：秒懂指令格式、语气与助手礼仪",
+                "短板：上限被示范者锁死，怕一步踩空",
+            ),
+            (
+                514,
+                "3",
+                "强化学习 RL 后训练",
+                "亲自刷题 · 奖优罚劣",
+                GREEN,
+                GREEN_SOFT,
+                "数据：模型自己采样多条完整思路",
+                "目标：最大化整段结果分 R(x,y) - β D_KL",
+                "收获：抑制高概率错路，涌现自检纠错",
+                "突破：只靠裁判哨声即可超越人类示范",
+            ),
+        ]
+
+        cy, cw, ch = 62, 228, 206
+        for cx, num, title_s, sub_s, col, bg, l1, l2, l3, l4 in cols:
+            els.append(card(cx, cy, cw, ch, rx=10, fill=CARD_BG, stroke=col, sw=1.4))
+            els.append(step_badge(cx + 22, cy + 22, num, fg=col, bg=bg))
+            els.append(txt(cx + 38, cy + 26, title_s, 12.8, col, weight="700"))
+            els.append(pill(cx + 14, cy + 40, sub_s, fg=col, bg=bg, w=160, h=20, size=10.6))
+            els.append(txt(cx + 14, cy + 82, f"• {l1}", 10.6, BODY))
+            els.append(txt(cx + 14, cy + 104, f"• {l2}", 10.4, INK, weight="600"))
+            els.append(txt(cx + 14, cy + 128, f"• {l3}", 10.6, GREEN if col == GREEN else BODY))
+            els.append(card(cx + 12, cy + 146, cw - 24, 48, rx=7, fill=bg if col == GREEN else SLATE_SOFT, stroke=col if col == GREEN else BORDER))
+            els.append(txt(cx + 20, cy + 166, l4[:12], 10.4, col if col == GREEN else ORANGE, weight="700"))
+            els.append(txt(cx + 20, cy + 184, l4[12:] if len(l4) > 12 else "", 10.2, BODY))
+
+        # Arrows connecting the 3 stages
+        els.append(_line(247, cy + 102, 264, cy + 102, stroke=SLATE, sw=1.8, marker="arr-muted"))
+        els.append(_line(495, cy + 102, 512, cy + 102, stroke=GREEN, sw=2.0, marker="arr-green"))
+
+        # Wait: make the bottom callout text inside the 3 top cards crisp single-line + detail line!
+        # Let's replace those last 3 elements per column cleanly by building bottom panels cleanly too.
+        els_clean = header(
+            "大模型养成的三级台阶：预训练攒底座、SFT 教规矩、强化学习破上限",
+            "同样是拧神经网络的参数旋钮，三个阶段的“反馈信号来源”与“能力天花板”截然不同",
+        )
+        stage_specs = [
+            (
+                18, "1", "预训练 Pre-training", "博览群书 · 完形填空", BLUE, BLUE_SOFT,
+                "数万亿互联网与教材词元", "-∑ log P(y_t | x, y_<t)",
+                "攒下世界知识与微弱推理火种", "照单全收网上的胡扯、幻觉与敷衍", ORANGE,
+            ),
+            (
+                266, "2", "监督微调 SFT", "临摹范文 · 行为克隆", PURPLE, PURPLE_SOFT,
+                "数万条高水平人工示范问答", "逐词模仿人类写手的标准答案",
+                "学会听懂指令、格式规范与礼貌", "天花板被写手锁死，未练过踩坑自救", ORANGE,
+            ),
+            (
+                514, "3", "强化学习 RL 后训练", "自己刷题 · 奖优罚劣", GREEN, GREEN_SOFT,
+                "模型自主生成多条候选轨迹", "最大化整题得分 R(x,y) - β D_KL",
+                "主动压低顺嘴错路，涌现自检反思", "只要能判对错，表现就能反超示范者", GREEN,
+            ),
+        ]
+        for cx, num, title_s, sub_s, col, bg, d_txt, obj_txt, pro_txt, lim_txt, lim_col in stage_specs:
+            els_clean.append(card(cx, cy, cw, ch, rx=10, fill=CARD_BG, stroke=col, sw=1.4))
+            els_clean.append(step_badge(cx + 22, cy + 22, num, fg=col, bg=bg))
+            els_clean.append(txt(cx + 38, cy + 26, title_s, 12.8, col, weight="700"))
+            els_clean.append(pill(cx + 14, cy + 40, sub_s, fg=col, bg=bg, w=156, h=20, size=10.6))
+            els_clean.append(txt(cx + 14, cy + 80, f"语料：{d_txt}", 10.5, BODY))
+            els_clean.append(txt(cx + 14, cy + 102, f"目标：{obj_txt}", 10.2, INK, weight="600"))
+            els_clean.append(txt(cx + 14, cy + 124, f"收获：{pro_txt}", 10.5, BODY))
+            els_clean.append(card(cx + 12, cy + 140, cw - 24, 54, rx=7, fill=bg if col == GREEN else ORANGE_SOFT, stroke=lim_col))
+            els_clean.append(txt(cx + 20, cy + 160, "核心飞跃：" if col == GREEN else "核心瓶颈：", 10.4, lim_col, weight="700"))
+            els_clean.append(txt(cx + 20, cy + 180, lim_txt, 10.2, INK, weight="600"))
+
+        els_clean.append(_line(247, cy + 102, 264, cy + 102, stroke=SLATE, sw=1.8, marker="arr-muted"))
+        els_clean.append(_line(495, cy + 102, 512, cy + 102, stroke=GREEN, sw=2.0, marker="arr-green"))
+
+        # Bottom Left Panel: Exposure Bias vs On-Policy Recovery (x=18, y=282, w=364, h=156)
+        els_clean.append(card(18, 282, 364, 156))
+        els_clean.append(txt(32, 305, "④ 为什么光靠“抄作业(SFT)”不够？消除曝光偏差", 12.4, INK, weight="700"))
+        # Golden reference rail
+        els_clean.append(_line(42, 344, 358, 344, stroke=BLUE, sw=2.0, dash="5 3"))
+        els_clean.append(txt(42, 333, "标准答案轨道（SFT 训练时每步由老师扶回正轨）", 10.0, BLUE, weight="600"))
+        # SFT off-manifold drift curve
+        els_clean.append('<path d="M 42,344 L 130,344 Q 205,352 268,388 T 350,404" fill="none" stroke="#b91c1c" stroke-width="2.2" marker-end="url(#arr-orange)"/>')
+        els_clean.append(txt(196, 424, "SFT 实战：第5步算歪一点 → 一路雪崩胡编", 10.0, RED, "middle", weight="700"))
+        # RL self-correction curve
+        els_clean.append('<path d="M 130,344 Q 174,372 206,368 Q 236,344 352,344" fill="none" stroke="#18794e" stroke-width="2.4" marker-end="url(#arr-green)"/>')
+        els_clean.append(f'<circle cx="204" cy="368" r="4" fill="{GREEN}"/>')
+        els_clean.append(txt(268, 381, "RL 实战：察觉(“等等!”)自检拉回", 9.8, GREEN, "middle", weight="700", halo=True))
+
+        # Bottom Right Panel: InstructGPT (2022) 1.3B > 175B GPT-3 shockwave (x=394, y=282, w=348, h=156)
+        els_clean.append(card(394, 282, 348, 156))
+        els_clean.append(txt(408, 305, "⑤ 后训练四两拨千斤：InstructGPT (2022) 实测", 12.4, INK, weight="700"))
+        els_clean.append(txt(408, 325, "人类评测员盲测偏好对比（Ouyang 等, NeurIPS 2022）：", 10.2, MUTED))
+
+        # Parameter scale vs Human preference comparison bars
+        els_clean.append(txt(408, 352, "175B 裸 GPT-3", 10.6, SLATE, weight="700"))
+        els_clean.append(f'<rect x="510" y="339" width="208" height="16" rx="4" fill="{SLATE_SOFT}" stroke="{SLATE}"/>')
+        els_clean.append(txt(614, 351, "1,750 亿参数（常答非所问/续写问题）", 9.8, SLATE, "middle", weight="600"))
+
+        els_clean.append(txt(408, 382, "1.3B InstructGPT", 10.6, GREEN, weight="700"))
+        els_clean.append(f'<rect x="510" y="369" width="14" height="16" rx="3" fill="{GREEN}"/>')
+        els_clean.append(txt(532, 381, "仅 13 亿参数（小 135 倍，人类盲测反超！）", 10.1, GREEN, weight="700"))
+
+        els_clean.append(card(408, 396, 320, 32, rx=6, fill=BLUE_SOFT, stroke=BLUE))
+        els_clean.append(txt(568, 416, "启示：预训练决定“脑容量”，RL 后训练决定“怎么动脑子”！", 10.3, BLUE, "middle", weight="700"))
+
+        return figure(
+            452,
+            "大语言模型预训练、监督微调（SFT）与强化学习（RL）三级训练对比图解",
+            "上图对比预训练完形填空、SFT行为克隆与RL在线刷题奖惩的数据、目标函数及能力上限；左下图展示SFT曝光偏差导致的累积误差与RL自检纠偏；右下图展示2022年InstructGPT仅用13亿参数在人类盲测中击败1750亿裸GPT-3。",
+            els_clean,
+        )
+
+    def _build_generation_verification_kl_leash():
+        """SVG 2: Generation-Verification Asymmetry (P vs NP link) + KL-regularized objective curve."""
+        # Mathematical model: proxy reward R_proxy(d) = A*(1 - exp(-k*d)), KL penalty = beta*d
+        # True objective J(d) = A*(1 - exp(-k*d)) - beta*d -> analytic peak at d* = -(1/k)*ln(beta/(A*k))
+        A_val, k_val, beta_val = 1.65, 0.85, 0.22
+        d_star = -math.log(beta_val / (A_val * k_val)) / k_val
+        deriv_at_star = A_val * k_val * math.exp(-k_val * d_star) - beta_val
+        assert abs(deriv_at_star) < 1e-12
+        assert 2.1 < d_star < 2.3
+
+        els = header(
+            "强化学习点石成金的两个秘密：生成—验证不对称性，与防崩盘的 KL 拴狗绳",
+            "左：裁判不必比选手更会解题，只要“判对错比凑答案容易”；右：没有 KL 散度拉住底座，高分必成作弊",
+        )
+
+        # Left Panel: Generation vs Verification Gap (x=18, y=62, w=354, h=376)
+        els.append(card(18, 62, 354, 376))
+        els.append(txt(32, 85, "① 为什么不给标准步骤也能变强？（生成难 vs 验证易）", 12.2, INK, weight="700"))
+        els.append(txt(32, 104, "呼应计算机科学 P vs NP 直觉：找钥匙难，试钥匙开锁极快！", 10.2, MUTED))
+
+        tasks_gv = [
+            ("竞赛数学证明", "从上万条代数变形分支里凑出巧解", "核对最终数值 / Lean 4 内核逐行验真", "毫秒级"),
+            ("复杂软件补丁", "跨十几个文件定位并发 Bug 并改对", "跑一遍编译器 + 单元测试套件通过率", "秒级"),
+            ("蛋白质/晶体设计", "在 20^200 序列空间大海捞针找折叠", "物理能量函数 / 分子对接 / 湿实验测 Kd", "可量化"),
+        ]
+        for idx, (t_name, gen_txt, ver_txt, v_tag) in enumerate(tasks_gv):
+            ry = 118 + idx * 72
+            els.append(card(32, ry, 326, 62, rx=7, fill=SLATE_SOFT, stroke=BORDER))
+            els.append(pill(40, ry + 7, t_name, fg=BLUE, bg=BLUE_SOFT, w=96, h=19, size=10.2))
+            els.append(pill(282, ry + 7, f"验：{v_tag}", fg=GREEN, bg=GREEN_SOFT, w=68, h=19, size=9.8))
+            els.append(txt(40, ry + 40, f"生成难：{gen_txt}", 10.0, ORANGE, weight="600"))
+            els.append(txt(40, ry + 55, f"验证易：{ver_txt}", 10.0, GREEN, weight="700"))
+
+        # Bottom ratchet loop box inside left card
+        els.append(card(32, 338, 326, 86, rx=8, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(44, 358, "强化学习的“棘轮放大器”效应：", 11.0, GREEN, weight="700"))
+        els.append(txt(44, 377, "1. 预训练底座靠随机采样偶尔撞出 1 条妙解（哪怕概率仅 5%）；", 10.1, BODY))
+        els.append(txt(44, 395, "2. 验证器一秒认出“做对了”，RL 立刻把这条路径权重调高；", 10.1, BODY))
+        els.append(txt(44, 413, "3. 下一轮从更高起点继续探索 → 不靠更聪明的人写范文也能进化！", 10.1, INK, weight="700"))
+
+        # Right Panel: Computed Reward vs KL Divergence Tradeoff Curve (x=384, y=62, w=358, h=376)
+        els.append(card(384, 62, 358, 376))
+        els.append(txt(398, 85, "② 为什么要扣掉 β·D_KL(π_θ ∥ π_ref)？防“奖励黑客”", 12.2, INK, weight="700"))
+        els.append(txt(398, 104, "精确函数绘制：J(d) = R_proxy(d) − β·d（最优甜点区 d* ≈ 2.18）", 10.2, MUTED))
+
+        px0, px1 = 434.0, 724.0  # width 290
+        py_top, py_bot = 128.0, 304.0  # y range: [-0.3, 1.8] -> span 2.1
+
+        def gx(d):
+            return px0 + (d / 7.5) * (px1 - px0)
+
+        def gy(val):
+            return py_bot - ((val - (-0.3)) / 2.1) * (py_bot - py_top)
+
+        # Shaded sweet spot [1.2, 3.2] and Reward Hacking danger zone [4.5, 7.5]
+        els.append(f'<rect x="{gx(1.2):.1f}" y="{py_top}" width="{gx(3.2) - gx(1.2):.1f}" height="{py_bot - py_top}" fill="{GREEN_SOFT}" opacity="0.7"/>')
+        els.append(f'<rect x="{gx(4.6):.1f}" y="{py_top}" width="{gx(7.5) - gx(4.6):.1f}" height="{py_bot - py_top}" fill="{RED_SOFT}" opacity="0.75"/>')
+
+        # Zero line & axes
+        y_zero = gy(0.0)
+        els.append(_line(px0, y_zero, px1, y_zero, stroke=HAIRLINE, sw=1.0, dash="3 3"))
+        els.append(_line(px0, py_top, px0, py_bot, stroke=SLATE, sw=1.3))
+        els.append(_line(px0, py_bot, px1, py_bot, stroke=SLATE, sw=1.3))
+        els.append(txt(px0 - 6, y_zero + 4, "0", 9.8, MUTED, "end"))
+        els.append(txt(px0 - 6, gy(1.5) + 4, "高分", 9.8, MUTED, "end"))
+        els.append(txt((px0 + px1) / 2, py_bot + 18, "偏离预训练底座的距离 d = D_KL(π_θ ∥ π_ref)", 10.2, SLATE, "middle", weight="600"))
+
+        pts_proxy = []
+        pts_reg = []
+        pts_true = []
+        for i in range(91):
+            d = 7.5 * i / 90.0
+            r_p = A_val * (1.0 - math.exp(-k_val * d))
+            j_reg = r_p - beta_val * d
+            # True quality drops sharply once model hacks proxy loopholes past d ~ 3.0
+            r_true = r_p - 0.095 * max(0.0, d - 1.6) ** 2
+            pts_proxy.append((gx(d), gy(r_p)))
+            pts_reg.append((gx(d), gy(j_reg)))
+            pts_true.append((gx(d), gy(max(-0.22, r_true))))
+
+        els.append(_poly(pts_proxy, stroke=ORANGE, sw=2.1, dash="5 3"))
+        els.append(_poly(pts_true, stroke=RED, sw=2.0, dash="2 3"))
+        els.append(_poly(pts_reg, stroke=BLUE, sw=2.7))
+
+        # Mark optimum d*
+        j_star = A_val * (1.0 - math.exp(-k_val * d_star)) - beta_val * d_star
+        els.append(f'<circle cx="{gx(d_star):.1f}" cy="{gy(j_star):.1f}" r="4.8" fill="{GREEN}" stroke="#ffffff" stroke-width="1.4"/>')
+        els.append(txt(gx(d_star), gy(j_star) - 10, f"KL 锁定甜点 d*≈{d_star:.1f}", 10.0, GREEN, "middle", weight="700", halo=True))
+        els.append(txt(gx(5.9), gy(1.58) - 6, "裁判表观打分虚高", 9.8, ORANGE, "middle", weight="700", halo=True))
+        els.append(txt(gx(5.9), gy(0.56), "带 KL 总目标 J(θ)", 9.8, BLUE, "middle", weight="700", halo=True))
+        els.append(txt(gx(6.0), gy(-0.08), "真实可用性崩盘!", 9.8, RED, "middle", weight="700", halo=True))
+
+        # Explanation card at bottom right
+        els.append(card(398, 338, 330, 86, rx=8, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(410, 358, "真实翻车案例：奖励黑客（Reward Hacking）", 10.8, ORANGE, weight="700"))
+        els.append(txt(410, 377, "• 大模型不加 KL：疯狂堆砌废话套话、乱码咒语骗奖励模型给满分；", 10.0, BODY))
+        els.append(txt(410, 395, "• 分子设计不加先验锚定：拼出化合价爆炸、实验室根本造不出的怪胎；", 10.0, BODY))
+        els.append(txt(410, 413, "→ KL 散度就是“别忘本的拴狗绳”：在语言/物理合法流形内找最优！", 10.0, INK, weight="700"))
+
+        return figure(
+            456,
+            "生成与验证不对称性棘轮机制及KL散度正则化防止奖励黑客曲线图",
+            "左图对比数学证明、代码修复与分子设计中生成难而验证快的P与NP式不对称性及其驱动的强化学习自我进化棘轮；右图计算代理奖励、KL正则化目标与真实质量随策略偏离度变化的曲线，标示最优甜点区与奖励黑客崩盘区。",
+            els,
+        )
+
+    def _build_ppo_dpo_grpo_evolution():
+        """SVG 3: Architectural evolution from PPO (4 models) -> DPO (2 models) -> GRPO (Group rollout + verifier)."""
+        # Exact GRPO group advantage calculation check for G=4 rollouts:
+        rewards = [1.0, 0.0, 0.2, 1.0]
+        mean_r = sum(rewards) / len(rewards)  # 0.55
+        std_r = math.sqrt(sum((r - mean_r) ** 2 for r in rewards) / len(rewards))  # population std = 0.45552
+        advs = [(r - mean_r) / std_r for r in rewards]
+        assert abs(sum(advs)) < 1e-12
+        assert advs[0] > 0.9 and advs[1] < -1.1 and advs[2] < -0.7 and advs[3] > 0.9
+
+        els = header(
+            "后训练三大核心算法演进：从四模型 PPO、免采样 DPO 到组内赛马 GRPO",
+            "沿着“砍显存包袱 + 防奖励作弊 + 强推理探索”三条线索，读懂 InstructGPT → DPO → DeepSeek-R1",
+        )
+
+        # Band 1: PPO (y=60, h=116)
+        els.append(card(18, 60, 724, 114))
+        els.append(step_badge(38, 82, "1", fg=BLUE, bg=BLUE_SOFT))
+        els.append(txt(56, 86, "PPO 经典人类反馈强化学习（InstructGPT, 2022）：四套大模型同驻显存，稳健但昂贵", 12.2, BLUE, weight="700"))
+
+        ppo_boxes = [
+            (34, "策略 Actor π_θ", "正在训练的主模型", BLUE, BLUE_SOFT),
+            (182, "参考 Ref π_ref", "冻结底座(算KL绳)", SLATE, SLATE_SOFT),
+            (330, "奖励模型 RM r_φ", "拟合人类偏好打分", ORANGE, ORANGE_SOFT),
+            (478, "价值 Critic V_ψ", "同尺寸网络估基线!", RED, RED_SOFT),
+        ]
+        for bx, b_t, b_s, b_c, b_bg in ppo_boxes:
+            els.append(card(bx, 98, 136, 62, rx=7, fill=b_bg, stroke=b_c, sw=1.3))
+            els.append(txt(bx + 68, 121, b_t, 10.6, b_c, "middle", weight="700"))
+            els.append(txt(bx + 68, 143, b_s, 9.8, BODY, "middle"))
+
+        els.append(card(624, 98, 104, 62, rx=7, fill="#f8fafc", stroke=BORDER))
+        els.append(txt(676, 120, "痛点账单：", 10.2, RED, "middle", weight="700"))
+        els.append(txt(676, 138, "~4× 显存开销", 10.0, INK, "middle", weight="700"))
+        els.append(txt(676, 153, "RM 易被长题钻空", 9.4, MUTED, "middle"))
+
+        # Band 2: DPO (y=186, h=106)
+        els.append(card(18, 186, 724, 106))
+        els.append(step_badge(38, 208, "2", fg=PURPLE, bg=PURPLE_SOFT))
+        els.append(txt(56, 212, "DPO 直接偏好优化（Rafailov 等, 2023）：数学反解最优策略，把 RL 化简成“赢家 vs 输家”对比", 12.0, PURPLE, weight="700"))
+
+        els.append(card(34, 224, 208, 56, rx=7, fill=PURPLE_SOFT, stroke=PURPLE, sw=1.3))
+        els.append(txt(138, 246, "只留 Actor π_θ + 冻结 Ref π_ref", 10.4, PURPLE, "middle", weight="700"))
+        els.append(txt(138, 266, "省掉独立 RM 与 Critic（显存减半）", 9.6, BODY, "middle"))
+
+        els.append(_line(245, 252, 265, 252, stroke=PURPLE, sw=1.8, marker="arr-muted"))
+
+        els.append(card(268, 224, 268, 56, rx=7, fill="#f8fafc", stroke=BORDER))
+        els.append(txt(402, 246, "隐式奖励 r = β log[π_θ(y|x)/π_ref(y|x)]", 9.5, INK, "middle", weight="700", cls="mono"))
+        els.append(txt(402, 266, "直接在离线偏好对 (y_w ≻ y_l) 上拉大概率差", 9.6, BODY, "middle"))
+
+        els.append(card(546, 224, 182, 56, rx=7, fill=AMBER_SOFT, stroke=AMBER))
+        els.append(txt(637, 245, "适用边界：日常语气对齐极香", 10.0, AMBER, "middle", weight="700"))
+        els.append(txt(637, 265, "但缺在线采样探索，难啃深推理", 9.6, BODY, "middle"))
+
+        # Band 3: GRPO + RLVR (y=304, h=154)
+        els.append(card(18, 304, 724, 154, stroke=GREEN, sw=1.5))
+        els.append(step_badge(38, 326, "3", fg=GREEN, bg=GREEN_SOFT))
+        els.append(txt(56, 330, "GRPO 组相对策略优化 + 可验证奖励 RLVR（DeepSeekMath 2024 / DeepSeek-R1 2025）", 12.0, GREEN, weight="700"))
+
+        # Left prompt + policy box
+        els.append(card(34, 346, 134, 98, rx=7, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(101, 368, "同一道题 q", 10.8, BLUE, "middle", weight="700"))
+        els.append(txt(101, 388, "策略 π_θ_old 在线", 10.0, BODY, "middle"))
+        els.append(txt(101, 405, "并行采样 G=4 条", 10.0, INK, "middle", weight="700"))
+        els.append(txt(101, 424, "(彻底砍掉 Critic!)", 9.8, GREEN, "middle", weight="700"))
+
+        els.append(_line(170, 395, 194, 395, stroke=BLUE, sw=1.8, marker="arr-blue"))
+
+        # Middle 4 group rollout rows with exact computed advantages!
+        rollouts = [
+            ("o₁: 正推算对 + 格式规范", rewards[0], advs[0], GREEN, GREEN_SOFT, "↑ 强力加权"),
+            ("o₂: 中途移项漏负号答错", rewards[1], advs[1], RED, RED_SOFT, "↓ 强力压低"),
+            ("o₃: 格式对但最终答案错", rewards[2], advs[2], ORANGE, ORANGE_SOFT, "↓ 适度压低"),
+            ("o₄: 算错→自检Wait纠正答对!", rewards[3], advs[3], GREEN, GREEN_SOFT, "↑ 强力加权"),
+        ]
+        for i_r, (r_lbl, r_v, a_v, r_col, r_bg, act_lbl) in enumerate(rollouts):
+            ry = 343 + i_r * 26
+            els.append(card(198, ry, 344, 22, rx=5, fill=r_bg, stroke=r_col, sw=1.0))
+            els.append(txt(206, ry + 15, r_lbl, 9.5, INK, weight="600"))
+            els.append(txt(374, ry + 15, f"r={r_v:.1f}", 9.5, r_col, weight="700", cls="mono"))
+            els.append(txt(422, ry + 15, f"A={a_v:+.2f}", 9.5, r_col, weight="700", cls="mono"))
+            els.append(txt(535, ry + 15, act_lbl, 9.4, r_col, "end", weight="700"))
+
+        els.append(_line(546, 395, 568, 395, stroke=GREEN, sw=1.8, marker="arr-green"))
+
+        # Right summary box of GRPO magic
+        els.append(card(572, 346, 156, 98, rx=7, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(650, 366, "同题组内自己比：", 10.6, GREEN, "middle", weight="700"))
+        els.append(txt(650, 385, "A_i = (r_i − μ) / σ", 10.2, INK, "middle", weight="700", cls="mono"))
+        els.append(txt(650, 404, f"均值 μ={mean_r:.2f}, σ={std_r:.2f}", 9.6, SLATE, "middle"))
+        els.append(txt(650, 422, "零神经奖励模型 =", 9.8, BODY, "middle"))
+        els.append(txt(650, 437, "堵死长链刷分漏洞！", 9.8, GREEN, "middle", weight="700"))
+
+        return figure(
+            472,
+            "PPO、DPO与GRPO三大强化学习后训练算法架构与优势函数对比图",
+            f"自上而下对比三代后训练架构：①PPO需同时维护Actor、Ref、RM与同尺寸Critic四模型；②DPO利用隐式奖励闭式映射省去在线采样与Critic；③GRPO对同题采样G=4条轨迹并以组均值{mean_r:.2f}和标准差{std_r:.2f}归一化优势函数A_i，配合规则验证器激发长思维链推理。",
+            els,
+        )
+
+    def _build_rlvr_sharpening_and_aha_anim():
+        """SVG 4 (Animated): Probability mass sharpening + DeepSeek-R1-Zero AIME jump + Pass@k boundary."""
+        # Exact probability distributions over 6 candidate reasoning patterns (sum == 1.00):
+        p_base = [0.28, 0.24, 0.19, 0.14, 0.09, 0.06]
+        p_rl = [0.05, 0.06, 0.05, 0.06, 0.52, 0.26]
+        assert math.isclose(sum(p_base), 1.0, abs_tol=1e-9)
+        assert math.isclose(sum(p_rl), 1.0, abs_tol=1e-9)
+        pass1_base = p_base[4] + p_base[5]  # 0.15
+        pass1_rl = p_rl[4] + p_rl[5]        # 0.78
+        assert math.isclose(pass1_base, 0.15) and math.isclose(pass1_rl, 0.78)
+
+        # DeepSeek-R1-Zero verified AIME 2024 jump: 15.6% -> 71.0% (86.7% majority vote)
+        aime_start, aime_end, aime_maj = 15.6, 71.0, 86.7
+        assert aime_start < aime_end < aime_maj
+
+        els = header(
+            "强化学习是“无中生有”还是“大浪淘金”？概率锐化动画、顿悟涌现与 Pass@k 边界",
+            "左：把底座里微弱的正确火种浓缩到首选（单次动画）；右：DeepSeek-R1-Zero 实测跃迁与 NeurIPS 2025 边界检验",
+        )
+
+        # Left Panel: Animated Probability Mass Sharpening (x=18, y=62, w=362, h=382)
+        els.append(card(18, 62, 362, 382))
+        els.append(txt(32, 85, "① 同一难题 6 类候选思路的概率重排（总和恒为 100%）", 12.0, INK, weight="700"))
+        els.append(txt(32, 104, "虚线框 = 预训练底座初始概率；实心柱 = RLVR 后训练分布", 10.0, MUTED))
+
+        bx0, by0 = 56.0, 316.0
+        max_h = 176.0  # p = 0.60 maps to 176 px
+
+        for pv in (0.0, 0.2, 0.4, 0.6):
+            yy = by0 - (pv / 0.60) * max_h
+            els.append(_line(bx0, yy, 364, yy, stroke=HAIRLINE if pv > 0 else SLATE, sw=1.0 if pv > 0 else 1.3, dash="3 3" if pv > 0 else None))
+            els.append(txt(bx0 - 6, yy + 4, f"{int(pv * 100)}%", 9.6, MUTED, "end"))
+
+        bar_labels = [
+            ("瞎蒙套公式", False),
+            ("跳步漏分类", False),
+            ("移项算错数", False),
+            ("题干读跑偏", False),
+            ("自检纠错链", True),
+            ("严密正推链", True),
+        ]
+        for idx, ((blbl, is_ok), pb, pr) in enumerate(zip(bar_labels, p_base, p_rl)):
+            cx = bx0 + 26 + idx * 50
+            hb = (pb / 0.60) * max_h
+            hr = (pr / 0.60) * max_h
+            col = GREEN if is_ok else ORANGE
+            # Static dashed pre-trained bar (always visible for static / reduced-motion comparison)
+            els.append(
+                f'<rect x="{cx - 17:.1f}" y="{by0 - hb:.1f}" width="15" height="{hb:.1f}" rx="3" '
+                f'fill="{SLATE_SOFT}" stroke="{SLATE}" stroke-width="1.2" stroke-dasharray="3 2"/>'
+            )
+            # Animated RLVR post-trained bar (origin at bottom baseline)
+            els.append(
+                f'<rect class="rl-bar" x="{cx + 1:.1f}" y="{by0 - hr:.1f}" width="16" height="{hr:.1f}" rx="3" '
+                f'fill="{col}" style="transform-origin: {cx + 9:.1f}px {by0:.1f}px;"/>'
+            )
+            els.append(txt(cx + 9, by0 - hr - 6, f"{int(pr * 100)}%", 9.4, col, "middle", weight="700"))
+            els.append(txt(cx - 9, by0 - hb - 5, f"{int(pb * 100)}%", 8.8, SLATE, "middle"))
+            els.append(txt(cx, by0 + 15, blbl[:3], 9.4, GREEN if is_ok else BODY, "middle", weight="700" if is_ok else "400"))
+            els.append(txt(cx, by0 + 28, blbl[3:], 9.2, GREEN if is_ok else MUTED, "middle", weight="700" if is_ok else "400"))
+
+        els.append(card(32, 356, 334, 74, rx=8, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(44, 376, f"Pass@1（一次答对率）：从底座 15% 飙升至 78%！", 10.8, GREEN, weight="700"))
+        els.append(txt(44, 395, "• 前 4 条顺嘴错路概率被集体抽干（85% → 22%）；", 10.0, BODY))
+        els.append(txt(44, 413, "• 原本仅占 9% 的“算错后喊 Wait 自检重算”跃升为主流习惯(52%)！", 9.9, INK, weight="700"))
+
+        # Right Panel: DeepSeek-R1-Zero AIME 2024 + Yue et al. (2025) Pass@k Crossover (x=392, y=62, w=350, h=382)
+        els.append(card(392, 62, 350, 382))
+        els.append(txt(406, 85, "② 真实实验：顿悟时刻 vs 能力边界（Pass@k）", 12.0, INK, weight="700"))
+
+        # Top right sub-card: DeepSeek-R1-Zero (Nature 2025)
+        els.append(card(406, 98, 322, 134, rx=8, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(418, 118, "DeepSeek-R1-Zero 纯 RL 演化（AIME 2024 竞赛）：", 10.6, BLUE, weight="700"))
+        # Mini horizontal score bars
+        r1_rows = [
+            ("初始底座 Pass@1", 15.6, SLATE),
+            ("纯 RL 后 Pass@1", 71.0, BLUE),
+            ("RL + 多数投票", 86.7, GREEN),
+        ]
+        for idx_a, (albl, aval, acol) in enumerate(r1_rows):
+            ry = 128 + idx_a * 24
+            bw = (aval / 100.0) * 156.0
+            els.append(txt(418, ry + 12, albl, 9.6, INK, weight="600"))
+            els.append(f'<rect x="524" y="{ry + 1}" width="156" height="14" rx="4" fill="#ffffff" stroke="{BORDER}"/>')
+            els.append(f'<rect x="524" y="{ry + 1}" width="{bw:.1f}" height="14" rx="4" fill="{acol}"/>')
+            els.append(txt(686, ry + 12, f"{aval:.1f}%", 9.6, acol, weight="700", cls="mono"))
+        els.append(txt(418, 218, "涌现“Aha Moment”：无任何人工示范，自发拉长思考并复盘验算！", 9.7, INK, weight="700"))
+
+        # Bottom right sub-card: Yue et al. (2025, NeurIPS Oral) Pass@k crossover curve
+        els.append(card(406, 242, 322, 188, rx=8, fill="#ffffff", stroke=BORDER))
+        els.append(txt(418, 262, "科学冷思考：抽 k 次只要对 1 次（Pass@k）谁更强？", 10.5, PURPLE, weight="700"))
+
+        kx0, kx1 = 446.0, 712.0
+        ky_top, ky_bot = 276.0, 372.0
+        els.append(_line(kx0, ky_top, kx0, ky_bot, stroke=SLATE, sw=1.2))
+        els.append(_line(kx0, ky_bot, kx1, ky_bot, stroke=SLATE, sw=1.2))
+
+        # Log2(k) from k=1 (0) to k=128 (7)
+        ks = [0, 1, 2, 3, 4, 5, 6, 7]
+        # Schematic grounded in Yue et al. (arXiv:2504.13837): RLVR higher at small k, Base crosses over at large k
+        y_rl_k = [42, 54, 62, 67, 70, 72, 73.5, 74.5]
+        y_base_k = [16, 28, 41, 53, 64, 72, 78.5, 83.0]
+        assert y_rl_k[0] > y_base_k[0] and y_base_k[-1] > y_rl_k[-1]
+
+        def kpx(lk):
+            return kx0 + (lk / 7.0) * (kx1 - kx0)
+
+        def kpy(pct):
+            return ky_bot - (pct / 100.0) * (ky_bot - ky_top)
+
+        for lk, klbl in ((0, "k=1"), (3, "k=8"), (5, "k=32"), (7, "k=128")):
+            els.append(txt(kpx(lk), ky_bot + 14, klbl, 9.2, MUTED, "middle", cls="mono"))
+
+        els.append(_poly([(kpx(lk), kpy(v)) for lk, v in zip(ks, y_base_k)], stroke=SLATE, sw=2.1, dash="5 3"))
+        els.append(_poly([(kpx(lk), kpy(v)) for lk, v in zip(ks, y_rl_k)], stroke=GREEN, sw=2.5, cls="rl-curve"))
+
+        els.append(txt(kpx(1.6), kpy(63), "RLVR 模型 (k=1 遥遥领先)", 9.4, GREEN, weight="700", halo=True))
+        els.append(txt(kpx(4.3), kpy(44), "预训练底座 (大 k 反超)", 9.4, SLATE, weight="700", halo=True))
+        els.append(txt(418, 405, "Yue 等 (2025)：单轮 RLVR 主打“提纯放大底座潜能”；", 9.6, BODY))
+        els.append(txt(418, 421, "若要突破底座总覆盖率，需叠加【蒸馏 + 多轮环境真实交互】！", 9.6, PURPLE, weight="700"))
+
+        extra_css = """
+  .rl-bar {
+    animation: growBar 1.6s cubic-bezier(0.22, 1, 0.36, 1) 1 both;
+  }
+  .rl-curve {
+    stroke-dasharray: 420;
+    stroke-dashoffset: 0;
+    animation: drawCurve 1.6s ease-out 1 both;
+  }
+  @keyframes growBar {
+    from { transform: scaleY(0.18); opacity: 0.45; }
+    to { transform: scaleY(1); opacity: 1; }
+  }
+  @keyframes drawCurve {
+    from { stroke-dashoffset: 420; }
+    to { stroke-dashoffset: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .rl-bar, .rl-curve { animation: none; transform: none; }
+  }"""
+
+        return figure(
+            458,
+            "RLVR概率分布锐化单次动画与DeepSeek-R1-Zero顿悟涌现及Pass@k边界对比图",
+            "左图通过单次CSS动画演示强化学习如何压低预训练底座中的4条高概率错误捷径（85%降至22%）并将自检纠错与严密推理链从15%浓缩至78%；右图展示DeepSeek-R1-Zero在AIME 2024从15.6%跃升至71.0%及Yue等2025年揭示的大k采样Pass@k交叉边界。",
+            els,
+            extra_css=extra_css,
+        )
+
+    def _build_ai_for_science_rl_loop():
+        """SVG 5: AI for Science closed-loop RL architecture + 3 verified Nature/IMO domain breakthroughs."""
+        # AlphaTensor 4x4 matrix multiplication over F2: 64 naive -> 49 Strassen (1969) -> 47 AlphaTensor (2022)
+        naive_muls, strassen_muls, alphatensor_muls = 64, 49, 47
+        assert alphatensor_muls < strassen_muls < naive_muls
+        # ProtRL (Stocco et al., arXiv:2412.12979): <100 variants tested, 16/22 bound EGFR, Kd = 5.5 nM (~9x better than WT)
+        bind_hits, bind_tested = 16, 22
+        assert 0.72 < (bind_hits / bind_tested) < 0.74
+
+        els = header(
+            "AI for Science 的强化学习增强蓝图：把“人类打分员”换成“大自然第一性原理”",
+            "科学预训练底座负责守住“化学/物理合法流形”，物理模拟器、形式化内核与湿实验闭环负责推向未知极值",
+        )
+
+        # Top Closed-Loop Pipeline Card (x=18, y=60, w=724, h=144)
+        els.append(card(18, 60, 724, 144, fill=CARD_BG, stroke=BLUE, sw=1.4))
+        els.append(txt(34, 83, "① 科学大模型后训练通用闭环（同时防住“违反化合价/物理定律”与“代理模型奖励黑客”）", 12.0, BLUE, weight="700"))
+
+        loop_boxes = [
+            (34, "科学预训练先验底座", "蛋白质 pLM · 分子图 · 晶体扩散", "提供合法语法 + KL 先验锚定", BLUE, BLUE_SOFT, 198),
+            (256, "多目标探索采样", "序列突变 · 晶格弛豫 · 证明树", "跳出训练库平均值搜稀有极值", PURPLE, PURPLE_SOFT, 194),
+            (474, "多保真度科学验证器", "Lean内核 · DFT量子化学 · 湿实验", "R = 目标性质 − λ·不确定度 σ(x)", GREEN, GREEN_SOFT, 252),
+        ]
+        for lx, lt, ls1, ls2, lcol, lbg, lw in loop_boxes:
+            els.append(card(lx, 96, lw, 68, rx=8, fill=lbg, stroke=lcol, sw=1.3))
+            els.append(txt(lx + lw / 2, 117, lt, 10.8, lcol, "middle", weight="700"))
+            els.append(txt(lx + lw / 2, 136, ls1, 9.8, INK, "middle", weight="600"))
+            els.append(txt(lx + lw / 2, 153, ls2, 9.6, BODY, "middle"))
+
+        els.append(_line(234, 130, 254, 130, stroke=BLUE, sw=1.8, marker="arr-blue"))
+        els.append(_line(452, 130, 472, 130, stroke=PURPLE, sw=1.8, marker="arr-muted"))
+        # Feedback arc underneath boxes inside top card
+        els.append('<path d="M 600,166 Q 380,198 134,166" fill="none" stroke="#18794e" stroke-width="1.9" stroke-dasharray="5 3" marker-end="url(#arr-green)"/>')
+        els.append(txt(380, 194, "PPO / GRPO / DPO 反向更新模型权重 + 湿实验数据回流重校准代理模型", 10.0, GREEN, "middle", weight="700", halo=True))
+
+        # Bottom 3 Domain Breakthrough Columns: x = 18, 266, 514; width = 228 each, y = 216, h = 252
+        domains = [
+            (
+                18,
+                "赛道 A · 形式数学与算法",
+                "绝对零误差内核验证器",
+                BLUE,
+                BLUE_SOFT,
+                [
+                    ("AlphaTensor (Nature 2022)", "矩阵乘法化为三维张量分解博弈，"),
+                    ("", "4×4(模2) 乘法由 49 降至 47 次！"),
+                    ("AlphaProof (Nature 2025)", "预训练大模型 + Lean 4 编译器验真，"),
+                    ("", "斩获 IMO 2024 银牌水准 (28/42分)"),
+                    ("FunSearch (Nature 2024)", "大模型写程序 + 自动评测器进化，"),
+                    ("", "刷新困扰数学界数十年的帽集下界"),
+                ],
+                "优势：100% 免幻觉，对就是对！",
+            ),
+            (
+                266,
+                "赛道 B · 生命分子与新材料",
+                "物理计算 + 湿实验主动闭环",
+                GREEN,
+                GREEN_SOFT,
+                [
+                    ("REINVENT 分子从头设计", "SMILES 先验似然防造出非法分子，"),
+                    ("", "RL 定向优化靶点活性命中率 >95%"),
+                    ("ProtRL 蛋白工程 (2025)", "pLM 接湿实验奖励，仅测 <100 变体"),
+                    ("", "即得 Kd=5.5 nM 高亲和 EGFR 结合剂"),
+                    ("MatterGen 晶体生成 (2024)", "在周期表扩散底座上按 DFT 能量与"),
+                    ("", "磁密微调，靶向设计低风险新晶体"),
+                ],
+                "铁律：须扣不确定度防代理模型被骗",
+            ),
+            (
+                514,
+                "赛道 C · 聚变控制与物理仿真",
+                "高维偏微分方程实时闭环",
+                ORANGE,
+                ORANGE_SOFT,
+                [
+                    ("TCV 托卡马克磁控 (Nature 2022)", "DeepMind 联手洛桑联邦理工："),
+                    ("", "在物理仿真器练成 RL 控制器，"),
+                    ("每秒上万次操控 19 组磁线圈", "在上亿度级别的聚变装置标准下，"),
+                    ("", "稳稳捏出雪花形、负三角形截面，"),
+                    ("首创“双水滴”同室悬浮等离子体", "2024 Nature 进一步用深度 RL 提前"),
+                    ("", "预判并规避致命的等离子体撕裂模！"),
+                ],
+                "关键：随机化仿真参数跨越虚实鸿沟",
+            ),
+        ]
+
+        for dx, d_title, d_sub, d_col, d_bg, d_lines, d_foot in domains:
+            els.append(card(dx, 216, 228, 252, rx=10, fill=CARD_BG, stroke=d_col, sw=1.3))
+            els.append(txt(dx + 14, 239, d_title, 12.2, d_col, weight="700"))
+            els.append(pill(dx + 14, 248, d_sub, fg=d_col, bg=d_bg, w=182, h=20, size=10.0))
+            for l_i, (head_s, body_s) in enumerate(d_lines):
+                yy = 286 + l_i * 22
+                if head_s:
+                    els.append(txt(dx + 14, yy, f"• {head_s}", 10.1, INK, weight="700"))
+                else:
+                    els.append(txt(dx + 22, yy, body_s, 9.8, BODY))
+            els.append(card(dx + 12, 424, 204, 32, rx=6, fill=d_bg, stroke=d_col))
+            els.append(txt(dx + 114, 444, d_foot, 9.8, d_col, "middle", weight="700"))
+
+        return figure(
+            482,
+            "AI for Science强化学习增强闭环与形式数学、蛋白质材料设计、托卡马克核聚变控制三大突破图解",
+            "上图展示科学预训练底座结合KL合法性锚定、多目标探索采样及多保真度科学验证器（扣除代理模型不确定度防止奖励黑客）的通用闭环；下图分三栏梳理AlphaTensor/AlphaProof形式验证突破、REINVENT/ProtRL/MatterGen分子材料闭环优化及Nature 2022/2024托卡马克等离子体磁约束控制。",
+            els,
+        )
+
+    @register(
+        "rl-post-training-science",
+        "大模型强化学习后训练与AI4S增强：三级训练台阶、生成验证不对称与KL散度、PPO/DPO/GRPO演进、概率锐化动画与科学闭环",
+        "science_tech",
+    )
+    def build_rl_post_training_science():
+        write_svg(SUBDIR, "pretraining-sft-rl-three-stages.svg", _build_pretraining_sft_rl_three_stages())
+        write_svg(SUBDIR, "generation-verification-kl-leash.svg", _build_generation_verification_kl_leash())
+        write_svg(SUBDIR, "ppo-dpo-grpo-evolution.svg", _build_ppo_dpo_grpo_evolution())
+        write_svg(SUBDIR, "rlvr-sharpening-and-aha-anim.svg", _build_rlvr_sharpening_and_aha_anim())
+        write_svg(SUBDIR, "ai-for-science-rl-loop.svg", _build_ai_for_science_rl_loop())
+
+
+_register_rl_post_training_science()
+
+
+def _register_animal_plant_scaling_physics():
+    import math
+
+    from .core import (
+        BLUE,
+        BLUE_LINE,
+        BLUE_SOFT,
+        BODY,
+        BORDER,
+        CARD_BG,
+        GREEN,
+        GREEN_SOFT,
+        HAIRLINE,
+        INK,
+        MUTED,
+        ORANGE,
+        ORANGE_SOFT,
+        PANEL_TITLE,
+        PURPLE,
+        PURPLE_SOFT,
+        SLATE,
+        SLATE_SOFT,
+        card,
+        figure,
+        header,
+        pill,
+        register,
+        step_badge,
+        txt,
+        write_svg,
+    )
+
+    SUBDIR = "animal-plant-scaling-physics"
+    RED = "#dc2626"
+    RED_SOFT = "#fef2f2"
+    TEAL = "#0f766e"
+    TEAL_SOFT = "#f0fdfa"
+    AMBER = "#b45309"
+    AMBER_SOFT = "#fffbeb"
+
+    def _line(x1, y1, x2, y2, stroke=BORDER, sw=1.2, dash=None, marker=None):
+        attrs = [
+            f'x1="{x1:.1f}"',
+            f'y1="{y1:.1f}"',
+            f'x2="{x2:.1f}"',
+            f'y2="{y2:.1f}"',
+            f'stroke="{stroke}"',
+            f'stroke-width="{sw}"',
+        ]
+        if dash:
+            attrs.append(f'stroke-dasharray="{dash}"')
+        if marker:
+            attrs.append(f'marker-end="url(#{marker})"')
+        return f'<line {" ".join(attrs)}/>'
+
+    def _poly(pts, stroke=BLUE, sw=2.3, fill="none", dash=None, cls=None):
+        d = "M " + " L ".join(f"{x:.2f},{y:.2f}" for x, y in pts)
+        extra = f' stroke-dasharray="{dash}"' if dash else ""
+        cls_attr = f' class="{cls}"' if cls else ""
+        return (
+            f'<path d="{d}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}" '
+            f'stroke-linecap="round" stroke-linejoin="round"{extra}{cls_attr}/>'
+        )
+
+    # ------------------------------------------------------------------
+    # 1. Galileo Square-Cube Law + McMahon Bone Allometry + Biewener Posture
+    # ------------------------------------------------------------------
+    def _build_galileo_square_cube_and_bone_posture():
+        # Exact isometric stress assertions (Galileo 1638; Haldane 1928)
+        scales = [1, 2, 10]
+        areas = [s**2 for s in scales]
+        weights = [s**3 for s in scales]
+        stresses = [w / a for w, a in zip(weights, areas)]
+        assert areas == [1, 4, 100] and weights == [1, 8, 1000] and stresses == [1.0, 2.0, 10.0]
+        # McMahon (1973) elastic similarity exponent check: d ~ M^(3/8), L ~ M^(1/4), M ~ L*d^2 => 1/4 + 2*(3/8) == 1
+        exp_L, exp_d = 0.25, 0.375
+        assert abs((exp_L + 2.0 * exp_d) - 1.0) < 1e-12
+        assert abs(exp_d - (1.0 / 3.0) - (1.0 / 24.0)) < 1e-12
+
+        anim_css = """
+      @keyframes fillFracture {
+        0% { transform: scaleX(0.10); }
+        100% { transform: scaleX(1.00); }
+      }
+      .stress-anim {
+        transform-box: fill-box;
+        transform-origin: left center;
+        animation: fillFracture 1.6s cubic-bezier(0.22, 1, 0.36, 1) 0.15s 1 both;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .stress-anim { animation: none; transform: none; }
+      }"""
+
+        els = []
+        els.extend(
+            header(
+                "平方-立方律与抗压破局：为什么 18 米巨人迈步即断，真大象却稳如泰山？",
+                "左：伽利略等比例放大死局（压强 σ ∝ L 直撞断裂线） · 右：真实动物靠“骨头超比例加粗 + 把腿站直”双重破局",
+            )
+        )
+
+        # ---------------- Left Panel: Isometric Scaling Trap ----------------
+        els.append(card(18, 64, 354, 392))
+        els.append(txt(32, 86, "① 等比例放大死局（伽利略 1638 · 霍尔丹 1928）", PANEL_TITLE, INK, weight="700"))
+
+        # Three scaling stages: 1x, 2x, 10x
+        stages = [
+            (76.0, "1× 正常人", "高 1.8 m", 14.0, "截面 1×", "体重 1×", 0.10, GREEN, GREEN_SOFT, "压强 1× (安全)"),
+            (194.0, "2× 放大两倍", "高 3.6 m", 24.0, "截面 4×", "体重 8×", 0.20, BLUE, BLUE_SOFT, "压强 2× (尚可)"),
+            (312.0, "10× 十八米巨人", "高 18 m", 44.0, "截面 100×", "体重 1000×", 1.00, RED, RED_SOFT, "压强 10× 骨折!"),
+        ]
+        y_floor = 192.0
+        for cx, st_title, st_h, box_s, s_area, s_wt, frac, col, bg, st_res in stages:
+            els.append(txt(cx, 108, st_title, 10.6, col if frac == 1.0 else INK, "middle", weight="700"))
+            els.append(txt(cx, 122, st_h, 9.6, MUTED, "middle"))
+            # Isometric cube silhouette resting on y_floor
+            bx = cx - box_s / 2.0
+            by = y_floor - box_s
+            els.append(
+                f'<rect x="{bx:.1f}" y="{by:.1f}" width="{box_s:.1f}" height="{box_s:.1f}" rx="3" '
+                f'fill="{bg}" stroke="{col}" stroke-width="1.6"/>'
+            )
+            # Supporting bone pillar underneath cube (y_floor .. y_floor+20)
+            pw = max(5.0, box_s * 0.26)
+            els.append(
+                f'<rect x="{cx - pw / 2:.1f}" y="{y_floor:.1f}" width="{pw:.1f}" height="18" rx="2" '
+                f'fill="#ffffff" stroke="{col}" stroke-width="1.5"/>'
+            )
+            if frac == 1.0:
+                # Zigzag fracture crack on 10x bone pillar
+                els.append(_poly([(cx - 7, y_floor + 9), (cx - 2, y_floor + 6), (cx + 3, y_floor + 12), (cx + 8, y_floor + 8)], stroke=RED, sw=1.8))
+            els.append(txt(cx, 226, s_area, 9.8, BODY, "middle", weight="600"))
+            els.append(txt(cx, 242, s_wt, 9.8, col, "middle", weight="700"))
+
+            # Mini stress gauge bar (width 88 px, fracture limit at right end)
+            gx = cx - 44.0
+            gy = 250.0
+            els.append(f'<rect x="{gx:.1f}" y="{gy:.1f}" width="88" height="10" rx="4" fill="{SLATE_SOFT}" stroke="{BORDER}"/>')
+            cls_s = ' class="stress-anim"' if frac == 1.0 else ""
+            els.append(f'<rect x="{gx:.1f}" y="{gy:.1f}" width="{88 * frac:.1f}" height="10" rx="4" fill="{col}"{cls_s}/>')
+            els.append(txt(cx, 274, st_res, 9.8, col, "middle", weight="700"))
+
+        els.append(_line(32, y_floor + 18, 358, y_floor + 18, stroke=SLATE, sw=1.1, dash="3 3"))
+
+        # Formula & ant/giant explanation box
+        els.append(card(32, 286, 326, 156, rx=8, fill="#f8fafc", stroke=BORDER))
+        els.append(pill(44, 296, "核心公式：骨骼压强 σ = 重力 F / 截面积 A ∝ L³ / L² = L", fg=BLUE, bg=BLUE_SOFT, w=302, h=22, size=9.8))
+        els.append(txt(44, 336, "• 人类股骨静态/动态安全余量仅约 10 倍体重：", 10.1, INK, weight="700"))
+        els.append(txt(44, 354, "  霍尔丹算出 18 米巨人（10×）体重涨 1000 倍，大腿骨截", 9.8, BODY))
+        els.append(txt(44, 371, "  面仅涨 100 倍，压强暴增 10 倍，迈出第一步就会骨折！", 9.8, RED, weight="600"))
+        els.append(txt(44, 393, "• 科幻片“放大 100 倍的巨型蚂蚁”更惨：", 10.1, INK, weight="700"))
+        els.append(txt(44, 411, "  体重涨 100 万倍 ÷ 腿截面 1 万倍 = 压强飙升 100 倍，", 9.8, BODY))
+        els.append(txt(44, 428, "  外骨骼当场坍塌，而且气管扩散供氧也会彻底窒息。", 9.8, MUTED))
+
+        # ---------------- Right Panel: Allometry + Limb Posture Breakthrough ----------------
+        els.append(card(386, 64, 356, 392))
+        els.append(txt(400, 86, "② 演化怎么逃出死局？骨头超比例加粗 + 把腿站直！", PANEL_TITLE, INK, weight="700"))
+
+        # Top sub-card: McMahon Elastic Similarity (d ~ M^3/8 vs M^1/3)
+        els.append(card(400, 98, 328, 158, rx=8, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(pill(412, 108, "破局第 1 招 · 麦克马洪弹性相似律 (McMahon 1973)", fg=BLUE, bg="#ffffff", w=282, h=20, size=9.8))
+
+        # Three normalized bone silhouettes at same visual height (56 px) showing shaft diameter jump
+        bones = [
+            (458.0, "小鼠股骨", "细长轻巧", 6.0, GREEN),
+            (564.0, "假想等比象骨", "d ∝ M^(1/3) 必断", 10.0, ORANGE),
+            (672.0, "真实大象股骨", "d ∝ M^(3/8) 石柱!", 22.0, BLUE),
+        ]
+        for bx_c, b_lbl, b_sub, shaft_w, b_col in bones:
+            top_y, bot_y = 140.0, 194.0
+            cap_w = shaft_w + 9.0
+            dash_b = ' stroke-dasharray="3 2"' if b_col == ORANGE else ""
+            els.append(
+                f'<rect x="{bx_c - cap_w / 2:.1f}" y="{top_y:.1f}" width="{cap_w:.1f}" height="10" rx="4" '
+                f'fill="#ffffff" stroke="{b_col}" stroke-width="1.5"{dash_b}/>'
+            )
+            els.append(
+                f'<rect x="{bx_c - shaft_w / 2:.1f}" y="{top_y + 8:.1f}" width="{shaft_w:.1f}" height="38" rx="3" '
+                f'fill="#ffffff" stroke="{b_col}" stroke-width="1.6"{dash_b}/>'
+            )
+            els.append(
+                f'<rect x="{bx_c - cap_w / 2:.1f}" y="{bot_y - 10:.1f}" width="{cap_w:.1f}" height="10" rx="4" '
+                f'fill="#ffffff" stroke="{b_col}" stroke-width="1.5"{dash_b}/>'
+            )
+            els.append(txt(bx_c, 210, b_lbl, 9.8, INK, "middle", weight="700"))
+            els.append(txt(bx_c, 224, b_sub, 9.2, b_col, "middle", weight="600"))
+
+        els.append(txt(564, 245, "实测铁律：体长 L ∝ M^0.25，骨径 d ∝ M^0.375（越重越敦实！）", 9.4, INK, "middle", weight="700"))
+
+        # Bottom sub-card: Biewener (1989) Limb Posture & EMA
+        els.append(card(400, 268, 328, 174, rx=8, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(pill(412, 278, "破局第 2 招 · 毕维纳关节姿态变直律 (Biewener 1989)", fg=GREEN, bg="#ffffff", w=292, h=20, size=9.8))
+
+        # Three stick-limb schematics: Crouched mouse -> Semi-upright horse -> Columnar elephant
+        # Ground reaction force vector straight up (red dashed) vs 3-segment leg (hip-knee-ankle-foot)
+        postures = [
+            (458.0, "猫鼠 (<5 kg)", "蹲伏曲腿", [(454, 314), (436, 336), (464, 356), (452, 374)], 452, "EMA ≈ 0.15", ORANGE),
+            (564.0, "骏马 (400 kg)", "微屈长腿", [(562, 312), (553, 335), (566, 356), (560, 374)], 560, "EMA ≈ 0.6", BLUE),
+            (672.0, "大象 (6,000 kg)", "垂直象柱!", [(672, 310), (671, 334), (672, 355), (672, 374)], 672, "EMA ≈ 0.9", GREEN),
+        ]
+        for px_c, p_name, p_desc, j_pts, grf_x, ema_s, p_col in postures:
+            # Ground reaction force vertical line
+            els.append(_line(grf_x, 374, grf_x, 310, stroke=RED, sw=1.2, dash="3 2"))
+            els.append(_poly(j_pts, stroke=p_col, sw=3.0))
+            for jx, jy in j_pts:
+                els.append(f'<circle cx="{jx}" cy="{jy}" r="3.0" fill="#ffffff" stroke="{p_col}" stroke-width="1.5"/>')
+            els.append(txt(px_c, 390, p_name, 9.7, INK, "middle", weight="700"))
+            els.append(txt(px_c, 404, f"{p_desc} · {ema_s}", 9.1, p_col, "middle", weight="700"))
+
+        els.append(txt(412, 428, "力线贴近关节轴消掉弯矩；代价：>300 kg 巨兽丧失跳跃爆发力！", 9.6, INK, weight="700"))
+
+        return figure(
+            468,
+            "伽利略平方立方律应力暴涨死局与动物骨骼超比例加粗及直立姿态破局图解",
+            "左图对比1倍正常人、2倍放大与10倍18米巨人的截面积(L²)、体重(L³)与股骨相对压强(L)，动画展示10倍放大直抵骨折阈值；右图展示麦克马洪弹性相似律(骨径d∝M^3/8超比例加粗)与毕维纳肢体姿态变直律(从小鼠蹲伏曲腿EMA≈0.15到大象垂直承重柱EMA≈0.9)。",
+            els,
+            extra_css=anim_css,
+        )
+
+    # ------------------------------------------------------------------
+    # 2. 8-Order-of-Magnitude Animal Mass Spectrum (1.8 g Shrew -> 180 t Blue Whale)
+    # ------------------------------------------------------------------
+    def _build_shrew_to_blue_whale_mass_limits():
+        shrew_kg = 0.0018
+        whale_kg = 180000.0
+        span_ratio = whale_kg / shrew_kg
+        assert abs(span_ratio - 1.0e8) < 1.0  # Exact 100,000,000x (1亿倍) span!
+
+        els = []
+        els.extend(
+            header(
+                "横跨 1 亿倍的动物体重光谱：谁锁死了陆地与海洋的最小下限与最大天花板？",
+                "从 1.8 克小臭鼩到 180 吨蓝鲸（log₁₀ M 横跨 8 个数量级），热力学、呼吸骨骼与阿基米德浮力画出了四道铁律边界",
+            )
+        )
+
+        # ---------------- Top Card: Log10 Mass Spectrum ----------------
+        els.append(card(18, 64, 724, 210))
+        els.append(txt(32, 86, "① 恒温与脊椎动物体重对数标尺（log₁₀ 质量，单位 kg）", PANEL_TITLE, INK, weight="700"))
+
+        x0, x1 = 52.0, 708.0
+        lg_min, lg_max = -3.2, 5.6
+
+        def _mx(kg_val):
+            return x0 + ((math.log10(kg_val) - lg_min) / (lg_max - lg_min)) * (x1 - x0)
+
+        y_bar = 166.0
+        # Regime colored bands
+        x_2g = _mx(0.0018)
+        x_20t = _mx(20000.0)
+        x_70t = _mx(70000.0)
+        bands = [
+            (x0, x_2g, RED_SOFT, RED, "失温禁区"),
+            (x_2g, x_20t, GREEN_SOFT, GREEN, "陆生哺乳动物安全带 (1.8 g – ~20 t)"),
+            (x_20t, x_70t, PURPLE_SOFT, PURPLE, "蜥脚恐龙特区"),
+            (x_70t, x1, BLUE_SOFT, BLUE, "海洋浮力区"),
+        ]
+        for bx_a, bx_b, b_fill, b_col, b_txt in bands:
+            els.append(
+                f'<rect x="{bx_a:.1f}" y="{y_bar - 14:.1f}" width="{bx_b - bx_a:.1f}" height="28" '
+                f'fill="{b_fill}" stroke="{b_col}" stroke-width="1.2"/>'
+            )
+            if b_txt.startswith("陆生哺乳"):
+                # Place label in the open span between 25 g mouse and 70 kg human so no dot overlaps text
+                els.append(txt((_mx(0.04) + _mx(45.0)) / 2, y_bar + 4, b_txt, 9.4, b_col, "middle", weight="700"))
+            elif (bx_b - bx_a) > 92:
+                els.append(txt((bx_a + bx_b) / 2, y_bar + 4, b_txt, 9.5, b_col, "middle", weight="700"))
+
+        # Log10 ticks along bottom of spectrum card
+        ticks = [
+            (0.001, "1 g"),
+            (0.01, "10 g"),
+            (0.1, "100 g"),
+            (1.0, "1 kg"),
+            (10.0, "10 kg"),
+            (100.0, "100 kg"),
+            (1000.0, "1 t"),
+            (10000.0, "10 t"),
+            (100000.0, "100 t"),
+        ]
+        for t_kg, t_lbl in ticks:
+            tx = _mx(t_kg)
+            els.append(_line(tx, y_bar + 14, tx, y_bar + 20, stroke=SLATE, sw=1.1))
+            els.append(txt(tx, y_bar + 33, t_lbl, 9.2, MUTED, "middle", cls="mono"))
+
+        # Staggered species callouts (above vs below axis so zero horizontal collision!)
+        species = [
+            (0.0018, "小臭鼩 1.8 g", "最轻哺乳类·心率1200+", RED, True, +18.0),
+            (0.025, "家鼠 25 g", "敏捷曲腿", SLATE, False, 0.0),
+            (70.0, "人类 70 kg", "直立双足", INK, True, 0.0),
+            (6000.0, "非洲象 6 t", "现存陆地最大", GREEN, False, -24.0),
+            (17000.0, "巨犀 ~17 t", "陆生哺乳极限", AMBER, True, -18.0),
+            (60000.0, "泰坦巨龙 ~60 t", "陆地动物极限", PURPLE, False, +4.0),
+            (180000.0, "蓝鲸 ~180 t", "地球史上最重动物!", BLUE, True, -8.0),
+        ]
+        for sp_kg, sp_name, sp_sub, sp_col, is_top, x_shift in species:
+            sx = _mx(sp_kg)
+            els.append(f'<circle cx="{sx:.1f}" cy="{y_bar:.1f}" r="4.2" fill="#ffffff" stroke="{sp_col}" stroke-width="2.0"/>')
+            if is_top:
+                ly_end = y_bar - 28.0
+                els.append(_line(sx, y_bar - 5, sx, ly_end, stroke=sp_col, sw=1.3))
+                els.append(txt(sx + x_shift, ly_end - 16, sp_name, 10.0, sp_col, "middle", weight="700"))
+                els.append(txt(sx + x_shift, ly_end - 3, sp_sub, 9.1, MUTED, "middle"))
+            else:
+                ly_end = y_bar + 44.0
+                els.append(_line(sx, y_bar + 5, sx, ly_end, stroke=sp_col, sw=1.3, dash="2 2"))
+                els.append(txt(sx + x_shift, ly_end + 13, sp_name, 10.0, sp_col, "middle", weight="700"))
+                els.append(txt(sx + x_shift, ly_end + 26, sp_sub, 9.1, MUTED, "middle"))
+
+        # ---------------- Bottom Three Physical Wall Cards ----------------
+        cy_b, ch_b = 286.0, 162.0
+        # Card 1: Thermal lower wall
+        els.append(card(18, cy_b, 232, ch_b, fill=CARD_BG, stroke=RED, sw=1.2))
+        els.append(pill(30, cy_b + 12, "下限墙 · 1.8 克恒温散热死线", fg=RED, bg=RED_SOFT, w=208, h=22, size=10.0))
+        els.append(txt(30, cy_b + 52, "• 表面积/体积比 A/V ∝ 1/L：体型越小，", 9.8, INK, weight="600"))
+        els.append(txt(30, cy_b + 69, "  单位体重漏掉热量的速度越快！", 9.8, BODY))
+        els.append(txt(30, cy_b + 89, "• 1.8 g 小臭鼩心率飙到 1200–1500 次/分，", 9.8, RED, weight="700"))
+        els.append(txt(30, cy_b + 106, "  每天必须吞下自身体重 1.5–2 倍的猎物；", 9.8, BODY))
+        els.append(txt(30, cy_b + 126, "• 再缩小，血液携氧与消化道流速触顶，", 9.7, MUTED))
+        els.append(txt(30, cy_b + 143, "  37°C 恒温炉几小时就会彻底熄火。", 9.7, MUTED))
+
+        # Card 2: Sauropod vs Mammal land ceiling
+        els.append(card(264, cy_b, 232, ch_b, fill=CARD_BG, stroke=PURPLE, sw=1.2))
+        els.append(pill(276, cy_b + 12, "陆地墙 · 恐龙凭什么重过哺乳类 3 倍？", fg=PURPLE, bg=PURPLE_SOFT, w=208, h=22, size=9.7))
+        els.append(txt(276, cy_b + 52, "• 陆生哺乳类卡在 ~17–20 吨（巨犀/古菱齿象）：", 9.7, INK, weight="600"))
+        els.append(txt(276, cy_b + 69, "  实心骨重 + 大臼齿咀嚼巨颅 + 漫长胎生限制。", 9.6, BODY))
+        els.append(txt(276, cy_b + 89, "• 蜥脚类恐龙（Sander 2011）三件物理外挂：", 9.8, PURPLE, weight="700"))
+        els.append(txt(276, cy_b + 107, "  1) 鸟式【中空气囊脊椎】，长颈极轻不压垮；", 9.6, BODY))
+        els.append(txt(276, cy_b + 124, "  2) 迷你头颅整吞不嚼，省去沉重颌骨肌肉；", 9.6, BODY))
+        els.append(txt(276, cy_b + 141, "  3) 下蛋繁殖（卵生），绕开多年怀胎死结！", 9.6, INK, weight="600"))
+
+        # Card 3: Archimedes Ocean Buoyancy
+        els.append(card(510, cy_b, 232, ch_b, fill=CARD_BG, stroke=BLUE, sw=1.2))
+        els.append(pill(522, cy_b + 12, "海洋外挂 · 阿基米德浮力与搁浅悲剧", fg=BLUE, bg=BLUE_SOFT, w=208, h=22, size=9.8))
+        els.append(txt(522, cy_b + 52, "• 海水密度 (1.025 g/cm³) ≈ 生物体密度：", 9.8, INK, weight="600"))
+        els.append(txt(522, cy_b + 69, "  F_浮 = ρ_水 g V 沿全身每一寸均匀托举！", 9.8, BLUE, weight="700"))
+        els.append(txt(522, cy_b + 89, "• 摆脱承重骨屈曲枷锁后，蓝鲸靠高密度磷虾", 9.6, BODY))
+        els.append(txt(522, cy_b + 106, "  滤食冲上 30 米、180 吨（超最大恐龙近3倍）。", 9.5, BODY))
+        els.append(txt(522, cy_b + 126, "• 反证就在海滩：鲸一旦搁浅失去海水浮力，", 9.7, RED, weight="600"))
+        els.append(txt(522, cy_b + 143, "  自身百吨重力会直接压瘪肺脏与内脏窒息！", 9.7, RED, weight="600"))
+
+        return figure(
+            460,
+            "横跨一亿倍的动物体重对数光谱与热力学、气囊骨骼、海洋浮力三大物理边界图解",
+            "上图在对数坐标轴上精确标定从1.8克小臭鼩、25克家鼠、70千克人类、6吨非洲象、17吨巨犀、60吨泰坦巨龙到180吨蓝鲸的8个数量级跨度；下图三栏分别解释1.8克恒温散热下限、蜥脚类恐龙中空气囊骨骼突破哺乳类20吨上限以及海水阿基米德浮力解除重力约束的机制。",
+            els,
+        )
+
+    # ------------------------------------------------------------------
+    # 3. Kleiber's 3/4 Metabolic Law + WBE Fractal Network + 10^9 Heartbeats
+    # ------------------------------------------------------------------
+    def _build_kleiber_3_4_metabolic_fractal_law():
+        # Exact Kleiber B = 3.4 * M^0.75 W vs Surface B = 3.4 * M^(2/3) W anchored at M = 1 kg
+        def b_kleiber(m_kg):
+            return 3.4 * (m_kg**0.75)
+
+        def b_surface(m_kg):
+            return 3.4 * (m_kg ** (2.0 / 3.0))
+
+        assert abs(b_kleiber(1.0) - 3.4) < 1e-9
+        assert abs(b_kleiber(10000.0) - 3400.0) < 1e-6
+        assert b_kleiber(10000.0) / b_surface(10000.0) > 2.15
+        # Specific metabolic rate ratio: 5000 kg elephant vs 0.025 kg mouse => (5000/0.025)^(-0.25) = 200000^(-0.25) ≈ 1 / 21.15
+        spec_ratio = (5000.0 / 0.025) ** (-0.25)
+        assert 0.045 < spec_ratio < 0.050
+
+        trace_css = """
+      @keyframes drawKleiber {
+        from { stroke-dashoffset: 480; }
+        to { stroke-dashoffset: 0; }
+      }
+      .kleiber-line {
+        stroke-dasharray: 480;
+        stroke-dashoffset: 0;
+        animation: drawKleiber 1.6s ease-out 0.1s 1 both;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .kleiber-line { animation: none; }
+      }"""
+
+        els = []
+        els.extend(
+            header(
+                "克莱伯 3/4 次方代谢律：为什么老鼠心跳如鼓活两岁，大象慢悠悠却共享“十亿次心跳”？",
+                "左：双对数实测斜率精准锁定 0.75 而非表面积律 0.67 · 右：WBE 分形血管网络与 1/4 次方生命节拍器",
+            )
+        )
+
+        # ---------------- Left Panel: Log-Log Plot of BMR vs Body Mass ----------------
+        els.append(card(18, 64, 390, 384))
+        els.append(txt(32, 86, "① 哺乳动物基础代谢率双对数图（Kleiber 1932）", PANEL_TITLE, INK, weight="700"))
+
+        px0, px1 = 74.0, 386.0
+        py0, py1 = 342.0, 114.0  # py0 = bottom (-2), py1 = top (+5.2)
+        lgm_min, lgm_max = -3.0, 5.4
+        lgb_min, lgb_max = -2.0, 5.2
+
+        def _pt(lg_m, lg_b):
+            xx = px0 + ((lg_m - lgm_min) / (lgm_max - lgm_min)) * (px1 - px0)
+            yy = py0 - ((lg_b - lgb_min) / (lgb_max - lgb_min)) * (py0 - py1)
+            return xx, yy
+
+        # Gridlines & axes
+        for gy_v, gy_lbl in [(-2, "0.01W"), (0, "1W"), (2, "100W"), (4, "10kW")]:
+            _, yy = _pt(lgm_min, gy_v)
+            els.append(_line(px0, yy, px1, yy, stroke=HAIRLINE, sw=0.9, dash="3 3"))
+            els.append(txt(px0 - 6, yy + 3.5, gy_lbl, 9.2, MUTED, "end", cls="mono"))
+
+        for gx_v, gx_lbl in [(-3, "1g"), (-1, "100g"), (1, "10kg"), (3, "1t"), (5, "100t")]:
+            xx, _ = _pt(gx_v, lgb_min)
+            els.append(_line(xx, py1, xx, py0, stroke=HAIRLINE, sw=0.9, dash="3 3"))
+            els.append(txt(xx, py0 + 15, gx_lbl, 9.2, MUTED, "middle", cls="mono"))
+
+        els.append(_line(px0, py1, px0, py0, stroke=SLATE, sw=1.3))
+        els.append(_line(px0, py0, px1, py0, stroke=SLATE, sw=1.3))
+        els.append(txt((px0 + px1) / 2, py0 + 31, "体重 M（对数刻度）", 9.8, SLATE, "middle", weight="600"))
+        els.append(txt(px0 - 8, py1 - 8, "静息功率 B", 9.6, SLATE, "start", weight="600"))
+
+        # Rubner M^(2/3) dashed curve vs Kleiber M^(3/4) solid curve
+        p_surf_a = _pt(-2.8, math.log10(b_surface(10 ** (-2.8))))
+        p_surf_b = _pt(5.2, math.log10(b_surface(10**5.2)))
+        els.append(_poly([p_surf_a, p_surf_b], stroke=ORANGE, sw=2.0, dash="6 4"))
+
+        p_kl_a = _pt(-2.8, math.log10(b_kleiber(10 ** (-2.8))))
+        p_kl_b = _pt(5.2, math.log10(b_kleiber(10**5.2)))
+        els.append(_poly([p_kl_a, p_kl_b], stroke=BLUE, sw=2.7, cls="kleiber-line"))
+
+        # Legend inside upper-left open area of chart
+        els.append(card(84, 118, 198, 46, rx=6, fill="#ffffff", stroke=BORDER))
+        els.append(_line(92, 132, 116, 132, stroke=BLUE, sw=2.6))
+        els.append(txt(122, 136, "克莱伯实测律 B ∝ M^(3/4) (0.75)", 9.4, BLUE, weight="700"))
+        els.append(_line(92, 150, 116, 150, stroke=ORANGE, sw=2.0, dash="5 3"))
+        els.append(txt(122, 154, "表面积散热律 B ∝ M^(2/3) (0.67)", 9.4, ORANGE, weight="600"))
+
+        # 7 real benchmark points along Kleiber trend (with slight realistic physiological values)
+        pts_data = [
+            (0.002, 0.032, "小臭鼩", 7, 12),
+            (0.030, 0.25, "小鼠", 8, 11),
+            (4.0, 9.6, "家猫", 8, 11),
+            (70.0, 82.0, "人类(~80W灯泡)", 8, 11),
+            (500.0, 360.0, "骏马", -8, -8),
+            (5000.0, 2050.0, "非洲象", -8, -8),
+            (80000.0, 16200.0, "须鲸", -10, -8),
+        ]
+        for m_v, b_v, lbl_s, dx_lbl, dy_lbl in pts_data:
+            cx, cy = _pt(math.log10(m_v), math.log10(b_v))
+            els.append(f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="4.0" fill="{BLUE}" stroke="#ffffff" stroke-width="1.4"/>')
+            anch = "start" if dx_lbl > 0 else "end"
+            els.append(txt(cx + dx_lbl, cy + dy_lbl, lbl_s, 9.4, INK, anch, weight="600", halo=True))
+
+        # Bottom takeaway card inside left panel
+        els.append(card(32, 382, 362, 54, rx=7, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(44, 401, "规模经济：大象比小鼠重 20 万倍，总功率仅约 8,000–9,000 倍！", 9.8, BLUE, weight="700"))
+        els.append(txt(44, 420, "平均每克象肉耗能仅小鼠的 ~1/21（比代谢率 B/M ∝ M^(-1/4)）。", 9.6, BODY))
+
+        # ---------------- Right Panel: WBE Fractal Tree + Quarter-Power Heartbeat Clock ----------------
+        els.append(card(420, 64, 322, 384))
+        els.append(txt(434, 86, "② 分形血管网与“十亿次心跳”生命时钟", PANEL_TITLE, INK, weight="700"))
+
+        # Sub-card A: West-Brown-Enquist (1997) Fractal Transport Network
+        els.append(card(434, 98, 294, 152, rx=8, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(pill(446, 108, "物理根源 · WBE 分形输运网 (Science 1997)", fg=GREEN, bg="#ffffff", w=256, h=20, size=9.6))
+
+        # Draw recursive 4-level branching network on left side of sub-card (x=450..548, y=140..236)
+        def _draw_branch(x_s, y_s, length, angle_deg, depth, sw_b):
+            if depth == 0:
+                els.append(f'<circle cx="{x_s:.1f}" cy="{y_s:.1f}" r="2.3" fill="{RED}"/>')
+                return
+            rad = math.radians(angle_deg)
+            x_e = x_s + length * math.cos(rad)
+            y_e = y_s + length * math.sin(rad)
+            els.append(_line(x_s, y_s, x_e, y_e, stroke=GREEN, sw=sw_b))
+            _draw_branch(x_e, y_e, length * 0.72, angle_deg - 26.0, depth - 1, sw_b * 0.72)
+            _draw_branch(x_e, y_e, length * 0.72, angle_deg + 26.0, depth - 1, sw_b * 0.72)
+
+        _draw_branch(450.0, 188.0, 30.0, 0.0, 4, 3.4)
+
+        els.append(txt(556, 150, "• 动物血管、支气管与植物木质部", 9.5, INK, weight="700"))
+        els.append(txt(556, 167, "  都是填满三维空间的【分形树】；", 9.4, BODY))
+        els.append(txt(556, 186, "• 末端单元（毛细血管/叶片）尺寸", 9.4, BODY))
+        els.append(txt(556, 203, "  不随体型缩放，流体阻力最小化", 9.4, BODY))
+        els.append(txt(556, 221, "  天然导出 3/4 幂律（连树木也服从!）", 9.4, GREEN, weight="700"))
+        els.append(txt(496, 242, "红点：不变尺寸毛细血管", 8.8, RED, "middle", weight="600"))
+
+        # Sub-card B: Quarter-power clock & ~10^9 heartbeats
+        els.append(card(434, 262, 294, 174, rx=8, fill=PURPLE_SOFT, stroke=PURPLE))
+        els.append(pill(446, 272, "惊人推论 · 心率 × 自然寿命 ≈ 常数 (~10亿次)", fg=PURPLE, bg="#ffffff", w=268, h=20, size=9.6))
+        els.append(txt(446, 308, "心率 f ∝ M^(-1/4)  ×  寿命 T ∝ M^(+1/4)  ⇒  f·T ∝ M⁰ !", 9.7, PURPLE, weight="700"))
+
+        # Three clean comparison rows
+        rows_hb = [
+            ("小鼠 (30 g)", "~600 次/分", "~2.5 年", "≈ 8 亿次", BODY),
+            ("大象 (5 t)", "~28 次/分", "~65 年", "≈ 9.6 亿次", GREEN),
+            ("现代人类", "~70 次/分", "~80 年", "≈ 29 亿次 (医学外挂!)", BLUE),
+        ]
+        for idx_h, (sp_h, hr_h, lf_h, tot_h, col_h) in enumerate(rows_hb):
+            ry = 320 + idx_h * 32
+            els.append(card(446, ry, 270, 26, rx=5, fill="#ffffff", stroke=HAIRLINE))
+            els.append(txt(454, ry + 17, sp_h, 9.3, INK, weight="700"))
+            els.append(txt(514, ry + 17, f"{hr_h} × {lf_h}", 9.0, MUTED))
+            els.append(txt(708, ry + 17, tot_h, 9.0, col_h, "end", weight="700"))
+
+        els.append(txt(581, 427, "野生哺乳类多在 8–12 亿次；人类凭脑化与医学翻近三倍！", 8.9, INK, "middle", weight="600"))
+
+        return figure(
+            460,
+            "克莱伯3/4次方基础代谢率双对数曲线与WBE分形血管网络及十亿次心跳守恒图解",
+            "左图在双对数坐标下对比克莱伯实测定律B≈3.4·M^(3/4)瓦特（斜率0.75）与鲁布纳表面积假说M^(2/3)（斜率0.67），标定从小臭鼩到须鲸7个物种；右图展示West-Brown-Enquist分形血管树原理，以及心率M^(-1/4)乘寿命M^(1/4)得出野生哺乳动物一生约10亿次心跳的标度不变量。",
+            els,
+            extra_css=trace_css,
+        )
+
+    # ------------------------------------------------------------------
+    # 4. Giraffe Hydrostatics (Delta P = rho*g*h ≈ 77 mmHg/m)
+    # ------------------------------------------------------------------
+    def _build_giraffe_hydrostatic_pressure_suit():
+        rho_blood = 1050.0  # kg/m^3
+        g_acc = 9.80665
+        pa_per_mmhg = 133.322
+        mmhg_per_m = (rho_blood * g_acc) / pa_per_mmhg
+        assert 77.0 < mmhg_per_m < 77.5
+
+        p_heart = 225.0  # mmHg mean arterial pressure at heart (2.0 m)
+        p_brain = p_heart - 2.0 * mmhg_per_m   # +2.0 m above heart -> ~70.5 mmHg
+        p_ankle = p_heart + 1.8 * mmhg_per_m   # -1.8 m below heart -> ~364.0 mmHg
+        p_human_fail = 95.0 - 2.0 * mmhg_per_m # -59.5 mmHg -> instant faint!
+        assert 68.0 < p_brain < 75.0 and 360.0 < p_ankle < 368.0 and p_human_fail < -55.0
+
+        els = []
+        els.extend(
+            header(
+                "陆地最高动物的流体静力学奇迹：5 米长颈鹿为什么抬头不晕、低头喝水不爆血管？",
+                f"血柱每升高 1 米压强骤变 ΔP = ρgh ≈ {mmhg_per_m:.0f} mmHg！长颈鹿天生穿戴“225 mmHg 涡轮心脏 + 小腿抗荷袜 + 颈部止回阀”",
+            )
+        )
+
+        # ---------------- Left Panel: Standing Hydrostatic Column ----------------
+        els.append(card(18, 64, 418, 392))
+        els.append(txt(32, 86, "① 站立态血压梯度（若装人类 95 mmHg 心脏会当场晕厥！）", PANEL_TITLE, INK, weight="700"))
+
+        # Elevation ruler x=54, y=420 (0 m) to y=114 (5.0 m) => 61.2 px per meter
+        y_gnd = 420.0
+        px_per_m = 60.0
+
+        def _hy(h_m):
+            return y_gnd - h_m * px_per_m
+
+        els.append(_line(54, _hy(4.8), 54, y_gnd, stroke=SLATE, sw=1.4))
+        for hm in (0.0, 1.0, 2.0, 3.0, 4.0, 4.8):
+            yy = _hy(hm)
+            els.append(_line(49, yy, 58, yy, stroke=SLATE, sw=1.2))
+            lbl_m = f"{hm:.0f}m" if hm != 4.8 else "4.8m"
+            els.append(txt(45, yy + 3.5, lbl_m, 9.0, MUTED, "end", cls="mono"))
+
+        # Clean geometric standing giraffe silhouette (x=82..172)
+        # Legs (0 m to 2.0 m), Torso (1.85 m to 2.45 m), Long Neck (2.35 m to 4.25 m), Head (4.15 m to 4.65 m)
+        els.append(f'<rect x="92" y="{_hy(2.0):.1f}" width="11" height="{2.0 * px_per_m:.1f}" rx="4" fill="#fde68a" stroke="#d97706" stroke-width="1.5"/>')
+        els.append(f'<rect x="132" y="{_hy(1.95):.1f}" width="11" height="{1.95 * px_per_m:.1f}" rx="4" fill="#fde68a" stroke="#d97706" stroke-width="1.5"/>')
+        # Tight anti-G fascia stockings highlighted on lower legs (0.1 m .. 1.0 m)
+        els.append(f'<rect x="90" y="{_hy(1.0):.1f}" width="15" height="{0.85 * px_per_m:.1f}" rx="3" fill="none" stroke="{BLUE}" stroke-width="2.2" stroke-dasharray="3 2"/>')
+        els.append(f'<rect x="130" y="{_hy(1.0):.1f}" width="15" height="{0.85 * px_per_m:.1f}" rx="3" fill="none" stroke="{BLUE}" stroke-width="2.2" stroke-dasharray="3 2"/>')
+
+        # Torso polygon
+        els.append(
+            f'<polygon points="86,{_hy(2.0):.1f} 148,{_hy(1.9):.1f} 146,{_hy(2.35):.1f} 92,{_hy(2.55):.1f}" '
+            f'fill="#fef3c7" stroke="#d97706" stroke-width="1.6"/>'
+        )
+        # Neck polygon rising to 4.25 m
+        els.append(
+            f'<polygon points="94,{_hy(2.50):.1f} 114,{_hy(2.42):.1f} 138,{_hy(4.18):.1f} 123,{_hy(4.26):.1f}" '
+            f'fill="#fef3c7" stroke="#d97706" stroke-width="1.6"/>'
+        )
+        # Head + ossicones at 4.25..4.65 m
+        els.append(
+            f'<polygon points="122,{_hy(4.24):.1f} 156,{_hy(4.18):.1f} 158,{_hy(4.36):.1f} 128,{_hy(4.52):.1f}" '
+            f'fill="#fde68a" stroke="#d97706" stroke-width="1.6"/>'
+        )
+        els.append(_line(128, _hy(4.50), 126, _hy(4.68), stroke="#92400e", sw=2.2))
+        els.append(_line(135, _hy(4.48), 135, _hy(4.66), stroke="#92400e", sw=2.2))
+
+        # Continuous arterial column from ankle (0.2 m) -> heart (2.0 m) -> brain (4.2 m)
+        els.append(_poly([(98, _hy(0.2)), (108, _hy(2.0)), (132, _hy(4.25))], stroke=RED, sw=2.6))
+        # Heart marker at (108, _hy(2.0))
+        els.append(f'<circle cx="108" cy="{_hy(2.0):.1f}" r="7.5" fill="{RED}" stroke="#ffffff" stroke-width="1.6"/>')
+        els.append(f'<circle cx="132" cy="{_hy(4.25):.1f}" r="5.0" fill="{GREEN}" stroke="#ffffff" stroke-width="1.5"/>')
+        els.append(f'<circle cx="98" cy="{_hy(0.25):.1f}" r="5.0" fill="{BLUE}" stroke="#ffffff" stroke-width="1.5"/>')
+
+        # Three aligned callout cards on right half of left panel (x=172..422)
+        # 1) Brain (+2.0 m above heart)
+        els.append(_line(138, _hy(4.25), 172, 136, stroke=GREEN, sw=1.4, dash="3 2"))
+        els.append(card(172, 102, 250, 86, rx=7, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(182, 121, "大脑（心脏上方 +2.0 m）：~70–95 mmHg", 10.0, GREEN, weight="700"))
+        els.append(txt(182, 139, "爬升 2 米扣掉 2×77 ≈ 154 mmHg 重力税，", 9.5, BODY))
+        els.append(txt(182, 156, "抵脑恰好剩 ~70–95 mmHg 正常灌注压！", 9.5, INK, weight="600"))
+        els.append(txt(182, 174, "（若换人类 95 mmHg 心脏 → −60 mmHg 秒晕）", 9.2, RED, weight="600"))
+
+        # 2) Heart (2.0 m)
+        els.append(_line(116, _hy(2.0), 172, 244, stroke=RED, sw=1.5))
+        els.append(card(172, 202, 250, 102, rx=7, fill=RED_SOFT, stroke=RED))
+        els.append(txt(182, 221, "涡轮增压心脏（离地 2.0 m）：~225 mmHg", 10.0, RED, weight="700"))
+        els.append(txt(182, 240, "• 静息平均动脉压 200–250 mmHg（人类2.3倍，", 9.5, INK, weight="600"))
+        els.append(txt(182, 257, "  陆生哺乳类之冠！）；", 9.5, BODY))
+        els.append(txt(182, 275, "• 左心室壁厚达 7–8 cm（拉普拉斯定律：靠加厚", 9.4, BODY))
+        els.append(txt(182, 292, "  室壁抵消高压，不得人类那种病理心肌肥大！）。", 9.4, MUTED))
+
+        # 3) Ankles (0.2 m, -1.8 m below heart)
+        els.append(_line(105, _hy(0.35), 172, 372, stroke=BLUE, sw=1.4, dash="3 2"))
+        els.append(card(172, 318, 250, 122, rx=7, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(182, 337, "小腿脚踝（心脏下方 −1.8 m）：>360 mmHg!", 10.0, BLUE, weight="700"))
+        els.append(txt(182, 356, "• 心脏高压 + 1.8 米血柱自重叠加，足部动脉压", 9.5, BODY))
+        els.append(txt(182, 373, "  飙破 360 mmHg，普通血管早就渗水肿成象腿；", 9.5, BODY))
+        els.append(txt(182, 392, "• 演化神装：超厚致密小腿皮肤+紧绷筋膜组成天然", 9.5, BLUE, weight="700"))
+        els.append(txt(182, 409, "  【飞行员抗荷袜（G-suit）】+ 动脉壁平滑肌缩窄，", 9.5, INK, weight="600"))
+        els.append(txt(182, 426, "  从外部死死箍住组织间液，滴水不漏！", 9.4, BODY))
+
+        # ---------------- Right Panel: Bending Down 5 Meters to Drink ----------------
+        els.append(card(448, 64, 294, 392))
+        els.append(txt(462, 86, "② 低头 5 米喝水：为什么不脑充血？", PANEL_TITLE, INK, weight="700"))
+
+        # Schematic of drinking giraffe (head below heart!)
+        els.append(card(462, 100, 266, 118, rx=8, fill="#f8fafc", stroke=BORDER))
+        # Water pond at bottom right of box
+        els.append('<ellipse cx="672" cy="202" rx="42" ry="9" fill="#bae6fd" stroke="#0284c7" stroke-width="1.2"/>')
+        els.append(txt(672, 205, "水坑", 8.8, BLUE, "middle", weight="700"))
+        # Splayed front leg + body + downward neck
+        els.append(_line(510, 204, 526, 146, stroke="#d97706", sw=4.0))
+        els.append(_line(564, 204, 548, 142, stroke="#d97706", sw=4.0))
+        els.append('<polygon points="504,150 562,136 560,118 508,132" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>')
+        els.append('<polygon points="558,124 562,140 648,196 654,186" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>')
+        els.append('<circle cx="552" cy="134" r="5.5" fill="#dc2626"/>')
+        els.append(txt(552, 113, "心脏 (高处)", 9.2, RED, "middle", weight="700"))
+        # Jugular valve ticks along downward neck
+        for vx, vy in [(582, 148), (604, 162), (626, 176)]:
+            els.append(f'<circle cx="{vx}" cy="{vy}" r="3.5" fill="#ffffff" stroke="{PURPLE}" stroke-width="1.6"/>')
+        els.append(txt(628, 142, "头低于心脏 ~1.8 m!", 9.4, ORANGE, "middle", weight="700"))
+        els.append(txt(522, 198, "劈叉低头险境", 9.0, MUTED, "middle"))
+
+        # Three valve/buffer defenses
+        defenses = [
+            (
+                "1",
+                PURPLE,
+                PURPLE_SOFT,
+                "颈静脉 7 道单向止回阀",
+                "低头瞬间阀门关闭，截住颈静脉约 2 升血液，",
+                "严防静脉血顺重力倒灌冲击颅内微血管！",
+            ),
+            (
+                "2",
+                ORANGE,
+                ORANGE_SOFT,
+                "颅底奇网 + 脑脊液同步增压",
+                "海绵状血管丛缓冲动脉波，椎管静脉丛同步",
+                "抬高脑脊液压，从血管外侧等压护住脑组织。",
+            ),
+            (
+                "3",
+                GREEN,
+                GREEN_SOFT,
+                "猛抬头瞬间的反射稳压器",
+                "颈动脉窦感受器毫秒级调配血管阻力与心率，",
+                "防止猛抬头躲避狮子时眼前一黑体位性晕厥。",
+            ),
+        ]
+        for idx_d, (num_s, d_col, d_bg, d_head, d_ln1, d_ln2) in enumerate(defenses):
+            dy = 230 + idx_d * 72
+            els.append(card(462, dy, 266, 62, rx=7, fill=d_bg, stroke=d_col))
+            els.append(step_badge(480, dy + 20, num_s, fg=d_col, bg="#ffffff", r=9.5))
+            els.append(txt(496, dy + 24, d_head, 10.0, d_col, weight="700"))
+            els.append(txt(474, dy + 42, d_ln1, 9.2, BODY))
+            els.append(txt(474, dy + 56, d_ln2, 9.2, BODY))
+
+        return figure(
+            468,
+            "长颈鹿站立态垂直静水血压梯度与俯身饮水三重防脑充血流体力学机制图解",
+            "左图按ΔP=ρgh≈77 mmHg/米精确计算站立长颈鹿从离地2.0米涡轮增压心脏(约225 mmHg)到上方+2.0米大脑(70至95 mmHg)及下方-1.8米脚踝(>360 mmHg，靠紧绷皮肤筋膜抗荷袜防肿)的压力分布；右图拆解俯身饮水时颈静脉单向止回阀、颅底奇网及脑脊液外压缓冲三重保护。",
+            els,
+        )
+
+    # ------------------------------------------------------------------
+    # 5. Plant Extension: Greenhill Buckling (H ~ D^2/3) + Koch 130m Tree Ceiling
+    # ------------------------------------------------------------------
+    def _build_tree_buckling_and_130m_water_limit():
+        # 1) Greenhill (1881) / Niklas & Spatz (2004): H_crit = 79.2 * D^(2/3), real tall trees ~ 26 * D^(2/3)
+        def h_crit(d_m):
+            return 79.2 * (d_m ** (2.0 / 3.0))
+
+        def h_real(d_m):
+            return 26.0 * (d_m ** (2.0 / 3.0))
+
+        assert abs(h_crit(1.0) - 79.2) < 1e-6 and h_crit(4.0) > 195.0
+        assert 3.0 < (h_crit(2.0) / h_real(2.0)) < 3.1
+
+        # 2) Positive 1 atm water limit & Koch et al. (2004 Nature) Hyperion negative pressure
+        h_atm = 101325.0 / (1000.0 * 9.80665)  # 10.332 m
+        grav_mpa_per_m = 0.00980665
+        h_hyperion = 116.2
+        psi_grav_116 = -h_hyperion * grav_mpa_per_m  # -1.14 MPa pure gravity
+        assert 10.30 < h_atm < 10.36 and -1.15 < psi_grav_116 < -1.13
+
+        water_css = """
+      @keyframes pullWater {
+        from { stroke-dashoffset: 280; }
+        to { stroke-dashoffset: 0; }
+      }
+      .xylem-pull {
+        stroke-dasharray: 280;
+        stroke-dashoffset: 0;
+        animation: pullWater 1.8s ease-out 0.15s 1 both;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .xylem-pull { animation: none; }
+      }"""
+
+        els = []
+        els.extend(
+            header(
+                "把物理定律拓展到植物：为什么参天巨树也服从 1/4 幂律，且永远长不过 130 米？",
+                "左：欧拉-格林希尔自重压弯红线 H ∝ D^(2/3) · 右：科赫《Nature》实测红杉 ~19 个大气压负压抽水终极天花板",
+            )
+        )
+
+        # ---------------- Left Panel: Euler-Greenhill Mechanical Buckling ----------------
+        els.append(card(18, 64, 344, 396))
+        els.append(txt(32, 86, "① 第一道墙：格林希尔树干自重失稳定律", PANEL_TITLE, INK, weight="700"))
+
+        gx0, gx1 = 68.0, 344.0
+        gy0, gy1 = 330.0, 114.0  # D: 0..4.2 m, H: 0..210 m
+        d_max, h_max = 4.2, 210.0
+
+        def _gp(d_v, h_v):
+            return gx0 + (d_v / d_max) * (gx1 - gx0), gy0 - (h_v / h_max) * (gy0 - gy1)
+
+        for hv in (0, 50, 100, 150, 200):
+            _, yy = _gp(0, hv)
+            els.append(_line(gx0, yy, gx1, yy, stroke=HAIRLINE, sw=0.9, dash="3 3" if hv > 0 else None))
+            els.append(txt(gx0 - 6, yy + 3.5, f"{hv}m", 9.0, MUTED, "end", cls="mono"))
+
+        for dv in (0, 1, 2, 3, 4):
+            xx, _ = _gp(dv, 0)
+            els.append(_line(xx, gy1, xx, gy0, stroke=HAIRLINE, sw=0.9, dash="3 3" if dv > 0 else None))
+            els.append(txt(xx, gy0 + 15, f"{dv}m", 9.0, MUTED, "middle", cls="mono"))
+
+        els.append(_line(gx0, gy1, gx0, gy0, stroke=SLATE, sw=1.3))
+        els.append(_line(gx0, gy0, gx1, gy0, stroke=SLATE, sw=1.3))
+        els.append(txt((gx0 + gx1) / 2, gy0 + 30, "树干胸径 D（米）", 9.6, SLATE, "middle", weight="600"))
+        els.append(txt(gx0 - 10, gy1 - 8, "树高 H", 9.5, SLATE, "start", weight="600"))
+
+        # Sample Greenhill critical buckling curve & real tree allometric curve
+        crit_pts = [_gp(4.2 * i / 60.0, min(h_max, h_crit(4.2 * i / 60.0))) for i in range(61)]
+        real_pts = [_gp(4.2 * i / 60.0, h_real(4.2 * i / 60.0)) for i in range(61)]
+
+        # Forbidden buckling zone polygon above crit_pts
+        poly_forbid = " ".join(f"{x:.1f},{y:.1f}" for x, y in crit_pts if y >= gy1) + f" {gx0:.1f},{gy1:.1f}"
+        els.append(f'<polygon points="{poly_forbid}" fill="{RED_SOFT}" opacity="0.72"/>')
+
+        els.append(_poly(crit_pts, stroke=RED, sw=2.2, dash="6 4"))
+        els.append(_poly(real_pts, stroke=GREEN, sw=2.6))
+
+        els.append(txt(148, 140, "自重屈曲折断禁区", 9.8, RED, "middle", weight="700", halo=True))
+        els.append(txt(244, 172, "格林希尔极限 H_crit ∝ D^(2/3)", 9.4, RED, "middle", weight="700", halo=True))
+        els.append(txt(254, 278, "真实树木安全线 (~3–4倍余量)", 9.4, GREEN, "middle", weight="700", halo=True))
+
+        # Horizontal ceiling line at 130 m showing why giant trunks flatten out!
+        _, y_130 = _gp(0, 130.0)
+        els.append(_line(gx0, y_130, gx1, y_130, stroke=BLUE, sw=1.6, dash="4 3"))
+        hx_pt, hy_pt = _gp(4.0, 116.2)
+        els.append(f'<circle cx="{hx_pt:.1f}" cy="{hy_pt:.1f}" r="4.5" fill="{BLUE}" stroke="#ffffff" stroke-width="1.5"/>')
+        els.append(txt(hx_pt - 8, hy_pt - 8, "亥伯龙红杉 (116.2 m)", 9.3, BLUE, "end", weight="700", halo=True))
+
+        # Bottom unification takeaway in left panel
+        els.append(card(30, 368, 320, 80, rx=7, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(42, 387, "动植物跨界大一统（Greenhill 1881 = McMahon 1973）：", 9.7, GREEN, weight="700"))
+        els.append(txt(42, 405, "树干质量 M ∝ D²H，代入 H ∝ D^(2/3) 即得 H ∝ M^(1/4)！", 9.5, INK, weight="600"))
+        els.append(txt(42, 423, "悬念：4 米粗红杉力学可撑 ~200 米，为何全卡在 116 米？", 9.4, BLUE, weight="700"))
+        els.append(txt(42, 439, "→ 真正卡脖子的不是树干折断，而是把水拽上天的极限！", 9.3, BODY))
+
+        # ---------------- Right Panel: Koch et al. (2004 Nature) 122–130 m Hydraulic Limit ----------------
+        els.append(card(374, 64, 368, 396))
+        els.append(txt(388, 86, "② 终极天花板：把水拉上 116 米要 ~19 个大气压负压！", PANEL_TITLE, INK, weight="700"))
+
+        # Vertical elevation scale x=424, y=432 (0 m) to y=126 (135 m) => 2.266 px/m
+        ty_bot = 432.0
+        sc_t = 2.22
+
+        def _ty(hm):
+            return ty_bot - hm * sc_t
+
+        # 122-130 m absolute ceiling band at top!
+        els.append(
+            f'<rect x="388" y="{_ty(130):.1f}" width="340" height="{(130 - 122) * sc_t:.1f}" rx="3" '
+            f'fill="{RED_SOFT}" stroke="{RED}" stroke-width="1.2" stroke-dasharray="4 2"/>'
+        )
+        els.append(txt(558, _ty(133), "科赫《Nature》四重指标交汇死线：地球树木上限 122–130 m", 9.5, RED, "middle", weight="700"))
+
+        # Redwood silhouette centered at x=454 (0 m .. 116.2 m)
+        tc_x = 454.0
+        els.append(
+            f'<polygon points="{tc_x - 9},{ty_bot:.1f} {tc_x + 9},{ty_bot:.1f} {tc_x + 3},{_ty(116.2):.1f} {tc_x - 3},{_ty(116.2):.1f}" '
+            f'fill="#92400e" opacity="0.85"/>'
+        )
+        # Crown tiers from 45 m to 116.2 m
+        for ch_base, ch_top, cw in [(42, 72, 26), (66, 94, 21), (88, 110, 15), (104, 116.2, 9)]:
+            els.append(
+                f'<polygon points="{tc_x - cw},{_ty(ch_base):.1f} {tc_x + cw},{_ty(ch_base):.1f} {tc_x},{_ty(ch_top):.1f}" '
+                f'fill="#15803d" opacity="0.82"/>'
+            )
+
+        # Animated xylem negative-pressure water column inside trunk
+        els.append(_poly([(tc_x, ty_bot), (tc_x, _ty(116.2))], stroke="#38bdf8", sw=2.6, cls="xylem-pull"))
+
+        # Clean elevation markers on left of redwood
+        for hm_t, col_t in [
+            (0.0, SLATE),
+            (10.33, ORANGE),
+            (60.0, BODY),
+            (116.2, BLUE),
+        ]:
+            yy_t = _ty(hm_t)
+            els.append(_line(432, yy_t, 484, yy_t, stroke=col_t, sw=1.2, dash="3 2" if hm_t > 0 else None))
+            if hm_t == 10.33:
+                els.append(txt(386, yy_t - 6, "10.3m 正压极限", 8.8, ORANGE, weight="700", halo=True))
+            elif hm_t == 116.2:
+                els.append(txt(386, yy_t - 5, "116.2m 树巅", 8.9, BLUE, weight="700", halo=True))
+                els.append(txt(386, yy_t + 9, "(−1.85 MPa)", 8.6, BLUE, weight="600", halo=True))
+            elif hm_t == 60.0:
+                els.append(txt(386, yy_t + 3, "60m (−1.0)", 8.6, MUTED, halo=True))
+            elif hm_t == 0.0:
+                els.append(txt(386, yy_t + 14, "0m 湿润土壤根系", 8.8, MUTED))
+
+        # Three stacked physics explanation boxes on right of redwood (x=492..730, width=238)
+        boxes_t = [
+            (
+                162,
+                84,
+                BLUE,
+                BLUE_SOFT,
+                "怎么突破 10.3 米？靠“负压拽水”！",
+                [
+                    "大气正压最多推高 10.33 m；巨树靠叶肉纳米",
+                    "孔蒸发，借水分子氢键【内聚力】把整根连续",
+                    "水柱拽入 −1.85 MPa（约 18.5 atm 负压）！",
+                ],
+            ),
+            (
+                256,
+                88,
+                RED,
+                RED_SOFT,
+                "锁死 130 米第 1 把锁：气穴栓塞断流",
+                [
+                    "每升 1 米先扣 0.0098 MPa 重力税；近 −2 MPa",
+                    "时，空气微泡被硬拽进导管瞬间汽化崩断（气",
+                    "穴栓塞），像吸管漏气一样再也抽不上水！",
+                ],
+            ),
+            (
+                354,
+                92,
+                AMBER,
+                AMBER_SOFT,
+                "第 2 & 3 把锁：膨压归零 + 气孔断粮",
+                [
+                    "百米树顶水势极低，新细胞撑不开（红杉顶叶",
+                    "缩成硬鳞片！）；为防断水只能常关气孔，CO₂",
+                    "进不来，光合净收益在 122–130 m 彻底归零！",
+                ],
+            ),
+        ]
+        for by_t, bh_t, b_col, b_bg, b_head, b_lines in boxes_t:
+            els.append(card(492, by_t, 238, bh_t, rx=7, fill=b_bg, stroke=b_col))
+            els.append(txt(502, by_t + 19, b_head, 9.7, b_col, weight="700"))
+            for li, ln_s in enumerate(b_lines):
+                els.append(txt(502, by_t + 38 + li * 16, ln_s, 9.0, BODY))
+
+        return figure(
+            472,
+            "植物格林希尔树干自重屈曲幂律与北美红杉122至130米负压抽水物理天花板图解",
+            "左图绘制欧拉-格林希尔树干临界屈曲曲线H_crit∝D^(2/3)与真实树木3至4倍安全余量轨迹，推导树木同样服从H∝M^(1/4)标度律；右图依据Koch等2004年Nature实测，对比10.33米大气正压极限与116.2米亥伯龙红杉树顶-1.85 MPa内聚力负压拉水，展示气穴栓塞、膨压不足与气孔关闭导致光合归零如何将地球树高锁死在122至130米。",
+            els,
+            extra_css=water_css,
+        )
+
+    @register(
+        "animal-plant-scaling-physics",
+        "动植物身高体重物理标度律：平方立方律与骨骼姿态破局、1亿倍动物质量光谱、克莱伯3/4分形代谢律、长颈鹿静水压抗荷服与树木130米水力极限",
+        "science_tech",
+    )
+    def build_animal_plant_scaling_physics():
+        write_svg(SUBDIR, "galileo-square-cube-and-bone-posture.svg", _build_galileo_square_cube_and_bone_posture())
+        write_svg(SUBDIR, "shrew-to-blue-whale-mass-limits.svg", _build_shrew_to_blue_whale_mass_limits())
+        write_svg(SUBDIR, "kleiber-3-4-metabolic-fractal-law.svg", _build_kleiber_3_4_metabolic_fractal_law())
+        write_svg(SUBDIR, "giraffe-hydrostatic-pressure-suit.svg", _build_giraffe_hydrostatic_pressure_suit())
+        write_svg(SUBDIR, "tree-buckling-and-130m-water-limit.svg", _build_tree_buckling_and_130m_water_limit())
+
+
+_register_animal_plant_scaling_physics()
+
+
+# ===========================================================================
+# Snowflake & Ice-Crystal Mathematical and Physical Principles (5 diagrams)
+# ===========================================================================
+def _register_snowflake_ice_math_physics():
+    import math
+
+    SUBDIR = "snowflake-ice-math-physics"
+    RED = "#dc2626"
+    RED_SOFT = "#fef2f2"
+    CYAN = "#0284c7"
+    CYAN_SOFT = "#e0f2fe"
+    INDIGO = "#4338ca"
+    INDIGO_SOFT = "#eef2ff"
+    AMBER = "#b45309"
+    AMBER_SOFT = "#fffbeb"
+    TEAL = "#0f766e"
+    TEAL_SOFT = "#f0fdfa"
+
+    def _line(x1, y1, x2, y2, stroke=HAIRLINE, sw=1.2, dash=None, cls=None):
+        d_attr = f' stroke-dasharray="{dash}"' if dash else ""
+        c_attr = f' class="{cls}"' if cls else ""
+        return (
+            f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}"'
+            f' stroke="{stroke}" stroke-width="{sw}" stroke-linecap="round"{d_attr}{c_attr}/>'
+        )
+
+    def _poly(pts, stroke, sw=2.0, fill="none", dash=None, cls=None, close=False):
+        d = " ".join(f"{'M' if i == 0 else 'L'}{x:.1f} {y:.1f}" for i, (x, y) in enumerate(pts))
+        if close:
+            d += " Z"
+        d_attr = f' stroke-dasharray="{dash}"' if dash else ""
+        c_attr = f' class="{cls}"' if cls else ""
+        return (
+            f'<path d="{d}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"'
+            f' stroke-linecap="round" stroke-linejoin="round"{d_attr}{c_attr}/>'
+        )
+
+    def _hex_pts(cx, cy, r, rot_deg=0.0):
+        return [
+            (
+                cx + r * math.cos(math.radians(rot_deg + 60.0 * k)),
+                cy + r * math.sin(math.radians(rot_deg + 60.0 * k)),
+            )
+            for k in range(6)
+        ]
+
+    # ------------------------------------------------------------------
+    # 1. Molecular Origin: 104.5 deg H2O -> 109.47 deg Tetrahedron -> 120 deg Ice Ih & D6
+    # ------------------------------------------------------------------
+    def _build_water_tetrahedron_to_hexagonal_ice():
+        # Exact tetrahedral angle arccos(-1/3) = 109.4712 deg
+        tet_deg = math.degrees(math.acos(-1.0 / 3.0))
+        assert 109.47 < tet_deg < 109.48
+        # Chair-form 6-ring: 3D bond length l = 2.76 A with alternate z = +- l/6
+        # Projection onto (0001) has radius R_proj = l * sqrt(8/9) = 2.602 A, interior angle = exact 120 deg!
+        l_oo = 2.76
+        dz_chair = l_oo / 3.0  # height difference between adjacent puckered O atoms = 0.92 A
+        r_proj = math.sqrt(l_oo ** 2 - dz_chair ** 2)
+        a_lat = 2.0 * r_proj * math.cos(math.radians(30.0))  # a = 4.507 ~ 4.52 A!
+        assert 4.49 < a_lat < 4.55
+        # Crystallographic restriction: 2*cos(2*pi/5) = (sqrt(5)-1)/2 ~ 0.618 not integer
+        two_cos_72 = 2.0 * math.cos(2.0 * math.pi / 5.0)
+        assert 0.61 < two_cos_72 < 0.62
+
+        els = []
+        els.extend(
+            header(
+                "水分子明明拐着 104.5° 的弯，凭什么拼出严格 120° 的正六角冰晶？",
+                "单分子 104.5° 键角 → 正四面体 4 氢键（109.47°） → 普通六方冰 Ih 椅式六元环俯视投影与 D₆ 对称群",
+            )
+        )
+
+        # Card 1: Single H2O & Tetrahedral Hydrogen Bonding (x=22, w=228, y=76, h=308)
+        els.append(card(22, 76, 228, 308))
+        els.append(step_badge(42, 98, "1", fg=RED, bg=RED_SOFT))
+        els.append(txt(60, 102, "单分子 104.5° → 四面体 4 只手", 11.2, INK, weight="700"))
+
+        ox, oy = 136.0, 184.0
+        # Two lone-pair H-bond acceptor arms pointing upper-left & upper-right (dashed tetrahedral projection)
+        for ang_lp, lbl_lp, lx_off in [(-126.0, "孤对电子受体", -34), (-54.0, "孤对电子受体", 34)]:
+            tx = ox + 52.0 * math.cos(math.radians(ang_lp))
+            ty = oy + 52.0 * math.sin(math.radians(ang_lp))
+            els.append(_line(ox, oy, tx, ty, stroke=BLUE, sw=2.0, dash="4 3"))
+            els.append(f'<circle cx="{tx:.1f}" cy="{ty:.1f}" r="6.5" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.4"/>')
+            els.append(txt(tx, ty + 3.2, "O", 8.2, BLUE, weight="700", anchor="middle"))
+        els.append(txt(136, 124, "上方接纳 2 条邻近氢键 (O···H)", 8.9, BLUE, weight="600", anchor="middle"))
+
+        # Two covalent H atoms downward separated by exact 104.5 deg (90 - 52.25 = 37.75 deg and 90 + 52.25 = 142.25 deg)
+        a1 = math.radians(90.0 - 52.25)
+        a2 = math.radians(90.0 + 52.25)
+        r_oh = 50.0
+        h1x, h1y = ox + r_oh * math.cos(a1), oy + r_oh * math.sin(a1)
+        h2x, h2y = ox + r_oh * math.cos(a2), oy + r_oh * math.sin(a2)
+        els.append(_line(ox, oy, h1x, h1y, stroke=INK, sw=2.8))
+        els.append(_line(ox, oy, h2x, h2y, stroke=INK, sw=2.8))
+        # Angle arc for 104.5 deg
+        r_arc = 26.0
+        ax1, ay1 = ox + r_arc * math.cos(a2), oy + r_arc * math.sin(a2)
+        ax2, ay2 = ox + r_arc * math.cos(a1), oy + r_arc * math.sin(a1)
+        els.append(
+            f'<path d="M {ax1:.1f} {ay1:.1f} A {r_arc} {r_arc} 0 0 0 {ax2:.1f} {ay2:.1f}"'
+            f' fill="none" stroke="{ORANGE}" stroke-width="1.8"/>'
+        )
+        els.append(txt(ox, oy + 40, "104.5°", 9.6, ORANGE, weight="700", anchor="middle", halo=True))
+
+        # Central Oxygen & two Hydrogens
+        els.append(f'<circle cx="{ox:.1f}" cy="{oy:.1f}" r="14.5" fill="{RED}" stroke="#ffffff" stroke-width="1.6"/>')
+        els.append(txt(ox, oy + 4.5, "O", 11.5, "#ffffff", weight="700", anchor="middle"))
+        for hx, hy in [(h1x, h1y), (h2x, h2y)]:
+            els.append(f'<circle cx="{hx:.1f}" cy="{hy:.1f}" r="9.5" fill="{CYAN_SOFT}" stroke="{CYAN}" stroke-width="1.8"/>')
+            els.append(txt(hx, hy + 3.5, "H⁺", 8.8, CYAN, weight="700", anchor="middle"))
+        els.append(txt(136, 248, "三维四面体夹角 ≈ 109.47°", 9.2, INK, weight="700", anchor="middle"))
+
+        els.append(card(34, 262, 204, 110, rx=7, fill=RED_SOFT, stroke="#fecaca"))
+        els.append(txt(44, 280, "伯纳尔–鲍林冰规则 (1933–35)：", 9.4, RED, weight="700"))
+        els.append(txt(44, 297, "• 水分子不是在平面拿 104.5° 拼图！", 8.9, BODY))
+        els.append(txt(44, 314, "• 氧原子伸出 2 个 H + 2 对孤对电子，", 8.9, BODY))
+        els.append(txt(44, 331, "  与 4 个邻居结成正四面体三维网；", 8.9, BODY))
+        els.append(txt(44, 348, "• 氧间距 O···O ≈ 2.76 Å（二近二远）。", 8.9, BODY))
+
+        # Card 2: Chair-Form 6-Ring Projected onto (0001) = Exact 120 deg Honeycomb! (x=266, w=228, y=76, h=308)
+        els.append(card(266, 76, 228, 308))
+        els.append(step_badge(286, 98, "2", fg=CYAN, bg=CYAN_SOFT))
+        els.append(txt(304, 102, "椅式六元环俯视 = 正 120° 蜂窝", 11.2, INK, weight="700"))
+
+        # Compute 7-hexagon honeycomb centered at (380, 184) with side R_h = 24 px
+        hcx, hcy, rh = 380.0, 182.0, 23.5
+        # Flat-topped or pointy-topped hexagons: let's use pointy-topped (rot=30) so lattice vectors are horizontal!
+        ring_offsets = [(0, 0)]
+        for k in range(6):
+            ang_c = math.radians(60.0 * k)
+            ring_offsets.append((math.sqrt(3.0) * rh * math.cos(ang_c), math.sqrt(3.0) * rh * math.sin(ang_c)))
+
+        # Draw outer 6 hexes softly first
+        for idx_r, (dx_r, dy_r) in enumerate(ring_offsets[1:]):
+            pts_o = _hex_pts(hcx + dx_r, hcy + dy_r, rh, rot_deg=30.0)
+            els.append(_poly(pts_o, "#93c5fd", sw=1.3, fill="#f0f9ff", close=True))
+
+        # Draw central highlighted chair-form 6-ring
+        c_pts = _hex_pts(hcx, hcy, rh, rot_deg=30.0)
+        els.append(_poly(c_pts, CYAN, sw=2.6, fill="#bae6fd", close=True))
+        els.append(txt(hcx, hcy + 4, "120°", 10.0, INK, weight="700", anchor="middle"))
+
+        # Alternate up/down puckered Oxygen atoms on central ring
+        for k, (vx, vy) in enumerate(c_pts):
+            if k % 2 == 0:
+                els.append(f'<circle cx="{vx:.1f}" cy="{vy:.1f}" r="5.4" fill="{INDIGO}" stroke="#ffffff" stroke-width="1.2"/>')
+            else:
+                els.append(f'<circle cx="{vx:.1f}" cy="{vy:.1f}" r="4.6" fill="#38bdf8" stroke="{INK}" stroke-width="1.1"/>')
+
+        els.append(txt(380, 248, "深蓝=高氧  浅蓝=低氧 (a ≈ 4.52 Å)", 8.9, INDIGO, weight="600", anchor="middle"))
+
+        els.append(card(278, 262, 204, 110, rx=7, fill=CYAN_SOFT, stroke="#7dd3fc"))
+        els.append(txt(288, 280, "三维起伏消掉角度差 + 浮冰奇迹：", 9.3, CYAN, weight="700"))
+        els.append(txt(288, 297, "• 6 个氧一高一低折成“椅式环”，", 8.9, BODY))
+        els.append(txt(288, 314, "  俯视投影恰好变成严格 120° 正六角！", 8.9, BODY))
+        els.append(txt(288, 331, "• 中空六角隧道令冰密度仅 0.917 g/cm³", 8.9, BODY))
+        els.append(txt(288, 348, "  比水轻约 9%，冬天浮在水面护生灵！", 8.9, BODY))
+
+        # Card 3: Hexagonal Prism & D6 Symmetry Group vs 5-Fold Restriction (x=510, w=228, y=76, h=308)
+        els.append(card(510, 76, 228, 308))
+        els.append(step_badge(530, 98, "3", fg=PURPLE, bg=PURPLE_SOFT))
+        els.append(txt(548, 102, "六棱晶胚与 D₆ 群 (12 重对称)", 11.2, INK, weight="700"))
+
+        # Left sub-graphic inside Card 3: Isometric hexagonal prism (cx=572, cy=180)
+        pcx, pcy_top, pcy_bot = 568.0, 154.0, 202.0
+        rx_p, ry_p = 32.0, 13.0
+        top_hex = [(pcx + rx_p * math.cos(math.radians(60 * k)), pcy_top + ry_p * math.sin(math.radians(60 * k))) for k in range(6)]
+        bot_hex = [(pcx + rx_p * math.cos(math.radians(60 * k)), pcy_bot + ry_p * math.sin(math.radians(60 * k))) for k in range(6)]
+        # Front 3 vertical prism faces: (0->1), (1->2), (2->3)
+        face_fills = ["#e0e7ff", "#c7d2fe", "#a5b4fc"]
+        for fi, k in enumerate([0, 1, 2]):
+            quad = [top_hex[k], top_hex[k + 1], bot_hex[k + 1], bot_hex[k]]
+            els.append(_poly(quad, INDIGO, sw=1.4, fill=face_fills[fi], close=True))
+        els.append(_poly(top_hex, INDIGO, sw=1.8, fill="#eef2ff", close=True))
+        # c-axis arrow
+        els.append(_line(pcx, pcy_top - 24, pcx, pcy_top + 2, stroke=PURPLE, sw=1.8))
+        els.append(txt(pcx, pcy_top - 28, "主轴 c {0001}", 8.5, PURPLE, weight="700", anchor="middle"))
+        els.append(txt(pcx, 228, "6 个柱面 {101̄0}", 8.6, INDIGO, weight="600", anchor="middle"))
+
+        # Right sub-graphic inside Card 3: D6 mirror lines on hexagon (cx=680, cy=180)
+        dcx, dcy, dr = 682.0, 180.0, 32.0
+        for k in range(6):
+            ang_m = math.radians(30.0 * k)
+            els.append(
+                _line(
+                    dcx - (dr + 7) * math.cos(ang_m),
+                    dcy - (dr + 7) * math.sin(ang_m),
+                    dcx + (dr + 7) * math.cos(ang_m),
+                    dcy + (dr + 7) * math.sin(ang_m),
+                    stroke=PURPLE if k % 2 == 0 else ORANGE,
+                    sw=1.1,
+                    dash="3 2",
+                )
+            )
+        els.append(_poly(_hex_pts(dcx, dcy, dr, rot_deg=0.0), PURPLE, sw=2.0, fill="none", close=True))
+        els.append(txt(dcx, 228, "D₆：6 旋转+6 镜面", 8.6, PURPLE, weight="700", anchor="middle"))
+        els.append(txt(624, 248, "空间群 P6₃/mmc  ｜  |D₆| = 12", 8.9, INK, weight="700", anchor="middle"))
+
+        els.append(card(522, 262, 204, 110, rx=7, fill=PURPLE_SOFT, stroke="#d8b4fe"))
+        els.append(txt(532, 280, "晶体学限制定理（为何绝无五角雪花）", 9.1, PURPLE, weight="700"))
+        els.append(txt(532, 297, "• 周期平移晶格要求 2cos(2π/n) ∈ Z", 8.9, BODY))
+        els.append(txt(532, 314, "• 仅 n = 1, 2, 3, 4, 6 有解！", 8.9, BODY))
+        els.append(txt(532, 331, "• n=5 时 2cos72°≈0.618 非整数被禁；", 8.9, BODY))
+        els.append(txt(532, 348, "• 草木五瓣花靠生长素螺旋，不受此限。", 8.9, BODY))
+
+        # Bottom Historical & Physical Summary Banner
+        els.append(card(22, 396, 716, 56, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(
+            txt(
+                36,
+                418,
+                "千年追问闭环：西汉韩婴《韩诗外传》（约前 135 年）最早点破“凡草木花多五出，雪花独六出”；1611 年开普勒猜想圆球最密六方堆积；",
+                9.5,
+                INK,
+                weight="600",
+            )
+        )
+        els.append(
+            txt(
+                36,
+                438,
+                "1933 年伯纳尔与福勒用 X 射线算出普通冰 Ih 四面体氢键网络——104.5° 水分子正是借三维椅式起伏，在底面投下了永恒的 120° 六角密码！",
+                9.5,
+                BLUE,
+                weight="700",
+            )
+        )
+
+        return figure(
+            466,
+            "水分子104.5度键角经正四面体氢键网络投影生成120度六方冰晶与D6对称群分步图解",
+            "三步拆解雪花六角对称的微观起源：第一步单分子104.5度键角通过两对孤对电子与两个氢原子结成约109.47度正四面体氢键网；第二步六个氧原子一高一低折成椅式六元环，在(0001)底面俯视投影成严格120度正六角蜂窝并形成低密度中空浮冰；第三步导出宏观六棱柱晶胚、D6二面体群12个对称变换及晶体学限制定理排除五重周期晶格。",
+            els,
+        )
+
+    # ------------------------------------------------------------------
+    # 2. Tug-of-War: Kinetic Faceting vs Mullins-Sekerka Diffusion Instability
+    # ------------------------------------------------------------------
+    def _build_faceting_vs_mullins_sekerka_branching():
+        # Verify Berg / harmonic exterior gradient enhancement at protruding corners!
+        # Model crystal boundary r_b(theta) = R0*(1 + eps*cos(6*theta)), exterior harmonic field:
+        # c(r, theta) = c_inf - (c_inf - c_0)*(R0/r) - eps*(c_inf - c_0)*(R0/r)^7 * cos(6*theta)
+        # Wait: in 2D exterior Laplace nabla^2 c = 0, radial decay is ln(r) + sum a_6 r^-6 cos(6*theta):
+        # Let c(r, theta) = ln(r/R0) - eps * (R0/r)^6 * cos(6*theta); at r = R0*(1 + eps*cos(6*theta)),
+        # c(r_b) = eps*cos(6*theta) - eps*cos(6*theta) + O(eps^2) = 0!
+        # Then |dc/dr| at r_b: dc/dr = 1/r + 6*eps*R0^6 / r^7 * cos(6*theta)
+        # At tip (theta=0, r=R0*(1+eps)): dc/dr ~ (1/R0)*(1 - eps + 6*eps) = (1 + 5*eps)/R0!
+        # At trough (theta=30 deg, cos=-1): dc/dr ~ (1 - 5*eps)/R0!
+        eps = 0.08
+        grad_tip = 1.0 + 5.0 * eps
+        grad_flat = 1.0 - 5.0 * eps
+        assert grad_tip / grad_flat > 2.2  # 8% corner bump gives >2.3x vapor flux!
+
+        branch_css = """
+      @keyframes sproutArm {
+        from { stroke-dashoffset: 120; }
+        to { stroke-dashoffset: 0; }
+      }
+      .dendrite-arm {
+        stroke-dasharray: 120;
+        stroke-dashoffset: 120;
+        animation: sproutArm 2.4s cubic-bezier(0.22, 0.61, 0.36, 1) 0.2s 1 forwards;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .dendrite-arm { animation: none; stroke-dashoffset: 0; }
+      }"""
+
+        els = []
+        els.extend(
+            header(
+                "每片雪花都在打一场拔河赛：“抹平棱面”与“尖端疯长”怎样雕出六角星？",
+                "左：分子台阶成核势垒把冰滴“熨”成笔直六边形（Faceting） ｜ 右：扩散等浓度线在尖角挤密触发分枝失稳",
+            )
+        )
+
+        # Left Card: Kinetic Faceting (x=22, w=348, y=76, h=326)
+        els.append(card(22, 76, 348, 326))
+        els.append(step_badge(42, 98, "1", fg=BLUE, bg=BLUE_SOFT))
+        els.append(txt(60, 102, "守秩序的力量：分子台阶成核（为什么边直如刀？）", 10.9, INK, weight="700"))
+
+        # Terrace-Step-Kink lattice diagram (x=40..226, y=132..254)
+        cell_w = 13.0
+        base_x, base_y = 42.0, 232.0
+        # Row counts from bottom to top: 13, 13, 8, 5 (creating steps on the right!)
+        row_counts = [13, 13, 9, 5]
+        for r_idx, n_c in enumerate(row_counts):
+            yy = base_y - r_idx * cell_w
+            for c_idx in range(n_c):
+                xx = base_x + c_idx * cell_w
+                els.append(
+                    f'<rect x="{xx:.1f}" y="{yy:.1f}" width="{cell_w - 1:.1f}" height="{cell_w - 1:.1f}"'
+                    f' rx="2" fill="#bae6fd" stroke="{BLUE}" stroke-width="1.0"/>'
+                )
+
+        # Lone molecule bouncing off smooth top terrace (row 3 top is y = 232 - 3*13 = 193)
+        lone_x, lone_y = base_x + 2.0 * cell_w, 193.0 - cell_w
+        els.append(
+            f'<rect x="{lone_x:.1f}" y="{lone_y:.1f}" width="{cell_w - 1:.1f}" height="{cell_w - 1:.1f}"'
+            f' rx="2" fill="{ORANGE_SOFT}" stroke="{ORANGE}" stroke-width="1.5" stroke-dasharray="2 1.5"/>'
+        )
+        els.append(
+            f'<path d="M {lone_x + 8:.1f} {lone_y - 2:.1f} Q {lone_x + 22:.1f} {lone_y - 26:.1f} {lone_x + 42:.1f} {lone_y - 18:.1f}"'
+            f' fill="none" stroke="{ORANGE}" stroke-width="1.6"/>'
+        )
+        els.append(txt(42, 140, "光滑平台仅抓 1 键 → 易蒸发弹走！", 8.9, ORANGE, weight="700"))
+        els.append(txt(42, 154, "(附着系数 α ≪ 1，开新层极慢)", 8.6, MUTED))
+
+        # Molecule locking into step kink at (c_idx=5, r_idx=3 -> x = 42 + 5*13 = 107, y = 193)
+        kx, ky = base_x + 5.0 * cell_w, 193.0
+        els.append(
+            f'<rect x="{kx:.1f}" y="{ky:.1f}" width="{cell_w - 1:.1f}" height="{cell_w - 1:.1f}"'
+            f' rx="2" fill="{GREEN_SOFT}" stroke="{GREEN}" stroke-width="1.8"/>'
+        )
+        els.append(_line(kx + 24, ky - 22, kx + 9, ky + 2, stroke=GREEN, sw=1.8))
+        els.append(txt(126, 174, "台阶凹角双面锁死！", 9.0, GREEN, weight="700"))
+        els.append(txt(126, 188, "(α ≈ 1 迅速把缺口填平)", 8.6, GREEN))
+        els.append(txt(126, 264, "晶格底面 / 柱面分子台阶剖面", 8.8, SLATE, anchor="middle"))
+
+        # Right mini inset inside Left Card: Round droplet -> Flat Hexagon (cx=308, cy=196)
+        mcx, mcy = 308.0, 196.0
+        els.append(f'<circle cx="{mcx:.1f}" cy="{mcy:.1f}" r="25" fill="#f1f5f9" stroke="{MUTED}" stroke-width="1.3" stroke-dasharray="3 2"/>')
+        els.append(_poly(_hex_pts(mcx, mcy, 35.0, rot_deg=0.0), BLUE, sw=2.3, fill="none", close=True))
+        for k in range(6):
+            ang_k = math.radians(60.0 * k)
+            els.append(
+                _line(
+                    mcx + 25 * math.cos(ang_k),
+                    mcy + 25 * math.sin(ang_k),
+                    mcx + 33 * math.cos(ang_k),
+                    mcy + 33 * math.sin(ang_k),
+                    stroke=GREEN,
+                    sw=1.5,
+                )
+            )
+        els.append(txt(mcx, 146, "圆冰胚 → 正六角棱柱", 8.8, BLUE, weight="700", anchor="middle"))
+        els.append(txt(mcx, 248, "粗糙处先长满消失", 8.5, GREEN, weight="600", anchor="middle"))
+        els.append(txt(mcx, 262, "只剩 6 个慢速平晶面", 8.5, BLUE, weight="600", anchor="middle"))
+
+        els.append(card(36, 282, 320, 108, rx=7, fill=BLUE_SOFT, stroke="#93c5fd"))
+        els.append(txt(46, 300, "动力学晶面化（Kinetic Faceting）黄金法则：", 9.4, BLUE, weight="700"))
+        els.append(txt(46, 318, "• 晶体最终露在外面的一定是【长得最慢】的光滑晶面！", 8.9, BODY))
+        els.append(txt(46, 336, "• 任何粗糙圆弧满是分子台阶，水分子一来就粘，飞速填平；", 8.9, BODY))
+        els.append(txt(46, 354, "• 填成光滑 {0001} 与 {101̄0} 平面后成核受阻，自动修直棱角！", 8.9, BODY))
+        els.append(txt(46, 372, "• 低湿度下水汽充足均匀 → 守秩序派大获全胜（实心六角板/柱）。", 8.9, INK, weight="600"))
+
+        # Right Card: Mullins-Sekerka Diffusion Instability (x=390, w=348, y=76, h=326)
+        els.append(card(390, 76, 348, 326))
+        els.append(step_badge(410, 98, "2", fg=ORANGE, bg=ORANGE_SOFT))
+        els.append(txt(428, 102, "破秩序的力量：尖端抢水汽失稳（为什么长羽毛？）", 10.9, INK, weight="700"))
+
+        # Exact 2D Laplace harmonic isoconcentration contours around 6-cornered crystal!
+        scx, scy = 532.0, 198.0
+        r0 = 26.0
+        eps_c = 0.13
+        # Solve r(theta) for contour levels u_lvl in [0.14, 0.34, 0.58, 0.85] of u(r,theta) = ln(r/r0) - eps_c*(r0/r)^6*cos(6*theta)
+        contour_styles = [
+            (0.16, "#fdba74", 1.5, None),
+            (0.36, "#fb923c", 1.3, "4 2"),
+            (0.60, "#93c5fd", 1.2, "4 2"),
+            (0.84, "#cbd5e1", 1.1, "3 3"),
+        ]
+        for u_lvl, c_col, c_sw, c_dash in reversed(contour_styles):
+            pts_c = []
+            for deg_i in range(0, 360, 3):
+                th = math.radians(deg_i)
+                # Newton iteration for ln(r/r0) - eps_c*(r0/r)^6*cos(6*th) = u_lvl
+                rr = r0 * math.exp(u_lvl)
+                for _ in range(8):
+                    ratio6 = (r0 / rr) ** 6
+                    f_val = math.log(rr / r0) - eps_c * ratio6 * math.cos(6.0 * th) - u_lvl
+                    df_val = (1.0 / rr) + 6.0 * eps_c * ratio6 * math.cos(6.0 * th) / rr
+                    rr -= f_val / df_val
+                pts_c.append((scx + rr * math.cos(th), scy + rr * math.sin(th)))
+            els.append(_poly(pts_c, c_col, sw=c_sw, fill="none", dash=c_dash, close=True))
+
+        # Inner hexagon core
+        els.append(_poly(_hex_pts(scx, scy, r0, rot_deg=0.0), CYAN, sw=2.0, fill=CYAN_SOFT, close=True))
+
+        # Static faint guide + one-shot animated 6 dendritic arms with 60-deg sidebranches
+        for k in range(6):
+            ang_a = math.radians(60.0 * k)
+            x_s, y_s = scx + r0 * math.cos(ang_a), scy + r0 * math.sin(ang_a)
+            x_e, y_e = scx + 62.0 * math.cos(ang_a), scy + 62.0 * math.sin(ang_a)
+            # Static faint guide so non-animated / print readers see exact path too
+            els.append(_line(x_s, y_s, x_e, y_e, stroke="#bae6fd", sw=2.6))
+            els.append(_line(x_s, y_s, x_e, y_e, stroke=INDIGO, sw=2.4, cls="dendrite-arm"))
+            for r_sb, len_sb in [(39.0, 12.5), (50.0, 9.0)]:
+                bx = scx + r_sb * math.cos(ang_a)
+                by = scy + r_sb * math.sin(ang_a)
+                for sgn in (-1.0, 1.0):
+                    ang_sb = ang_a + sgn * math.radians(60.0)
+                    sx_e = bx + len_sb * math.cos(ang_sb)
+                    sy_e = by + len_sb * math.sin(ang_sb)
+                    els.append(_line(bx, by, sx_e, sy_e, stroke="#bae6fd", sw=1.8))
+                    els.append(_line(bx, by, sx_e, sy_e, stroke=INDIGO, sw=1.7, cls="dendrite-arm"))
+
+        # Callouts on Right Side of Right Card (x=612..728)
+        els.append(_line(scx + 63, scy, 616, 152, stroke=ORANGE, sw=1.3))
+        els.append(txt(618, 144, "6 个尖角探入浓水汽", 8.9, ORANGE, weight="700"))
+        els.append(txt(618, 158, "等浓度线挤密 |∇c| 大", 8.7, ORANGE, weight="600"))
+        els.append(txt(618, 172, "→ 伯格效应越凸越快！", 8.7, RED, weight="700"))
+
+        # Trough callout at theta = 30 deg
+        tx_m = scx + 30 * math.cos(math.radians(30))
+        ty_m = scy + 30 * math.sin(math.radians(30))
+        els.append(_line(tx_m, ty_m, 616, 226, stroke=SLATE, sw=1.2, dash="3 2"))
+        els.append(txt(618, 222, "平坦凹槽被尖端截胡", 8.9, SLATE, weight="700"))
+        els.append(txt(618, 236, "等浓度线稀疏 → 挨饿", 8.7, MUTED))
+        els.append(txt(618, 250, "主枝两侧再爆 60° 侧枝", 8.7, INDIGO, weight="600"))
+
+        els.append(card(404, 282, 320, 108, rx=7, fill=ORANGE_SOFT, stroke="#fdba74"))
+        els.append(txt(414, 300, "马林斯–塞克卡失稳 (1963) + 表面张力刹车：", 9.4, ORANGE, weight="700"))
+        els.append(txt(414, 318, "• 水汽靠空气扩散供货 (∇²c ≈ 0)，生长速度 v_n ∝ D|∇c|；", 8.9, BODY))
+        els.append(txt(414, 336, "• 8% 微凸即可令尖端梯度翻倍 → 正反馈飙出 6 根树枝主干！", 8.9, BODY))
+        els.append(txt(414, 354, "• 为何不削成无限尖针？吉布斯–汤姆孙曲率效应令过尖冰峰", 8.9, BODY))
+        els.append(txt(414, 372, "  平衡水汽压升高易升华，稳住微米级尖端半径 r_tip！", 8.9, INK, weight="600"))
+
+        # Bottom Tug-of-War Verdict Bar
+        els.append(card(22, 414, 716, 52, rx=8, fill=TEAL_SOFT, stroke="#99f6e4"))
+        els.append(
+            txt(
+                36,
+                436,
+                "拔河胜负手——过饱和度 σ（空气有多湿）：低湿慢长 → 分子台阶从容填平，【晶面化赢】结成实心六角板/棱柱；",
+                9.4,
+                TEAL,
+                weight="700",
+            )
+        )
+        els.append(
+            txt(
+                36,
+                454,
+                "高湿猛长 → 扩散供货滞后，尖角疯狂截胡水汽，【扩散失稳赢】沿着晶格 60° 轨道爆发出绚烂羽毛状六角星花！",
+                9.4,
+                INK,
+                weight="600",
+            )
+        )
+
+        return figure(
+            480,
+            "雪花晶面平滑化成核势垒与马林斯塞克卡尖端水汽扩散失稳拔河机制分步动画图解",
+            "左图展示分子台阶成核势垒如何令粗糙圆弧快速填平而留下六个慢速光滑六角晶面；右图按二维拉普拉斯方程精确计算六角微凸晶胚外围等水汽浓度线，显示六个尖角处等值线挤密导致法向浓度梯度剧增并触发单次播放的六主枝与60度侧枝生长。",
+            els,
+            extra_css=branch_css,
+        )
+
+    # ------------------------------------------------------------------
+    # 3. Nakaya Morphology Diagram (3 Habit Flips!) & Synchronized Cloud Trajectory
+    # ------------------------------------------------------------------
+    def _build_nakaya_morphology_diagram_and_cloud_journey():
+        # Compute real thermodynamic excess vapor density Delta_rho(T) = rho_sat,water(T) - rho_sat,ice(T) [g/m^3]!
+        # Murphy & Koop (2005) / Buck accurate formulas for T in [-35, 0] degC:
+        # e_w(T) = 611.21 * exp((18.678 - T/234.5)*(T/(257.14 + T))) Pa
+        # e_i(T) = 611.15 * exp((23.036 - T/333.7)*(T/(279.82 + T))) Pa
+        # rho_v = e / (R_v * (T + 273.15)) * 1000 [g/m^3], R_v = 461.5 J/(kg K)
+        def excess_vapor_water_over_ice(t_c):
+            tk = t_c + 273.15
+            ew = 611.21 * math.exp((18.678 - t_c / 234.5) * (t_c / (257.14 + t_c)))
+            ei = 611.15 * math.exp((23.036 - t_c / 333.7) * (t_c / (279.82 + t_c)))
+            return (ew - ei) / (461.5 * tk) * 1000.0
+
+        peak_drho = excess_vapor_water_over_ice(-12.3)
+        drho_m15 = excess_vapor_water_over_ice(-15.0)
+        assert 0.220 < peak_drho < 0.228 and 0.215 < drho_m15 < 0.223
+
+        els = []
+        els.extend(
+            header(
+                "中谷宇吉郎“天书相图”：为什么降温过程中，雪花会在“薄板 ↔ 冰针”间三次反转？",
+                "左：温度 T 与超冰水汽密度决定的雪花形态相图（实算过冷水饱和拱线峰值 0.224 g/m³） ｜ 右：六臂同步年轮",
+            )
+        )
+
+        # Left Panel: Nakaya Morphology Diagram (x=22, w=430, y=76, h=402)
+        els.append(card(22, 76, 430, 402))
+        els.append(step_badge(40, 98, "1", fg=INDIGO, bg=INDIGO_SOFT))
+        els.append(txt(58, 102, "雪花形态相图（Nakaya–Libbrecht）：温度管扁长，湿度管繁简", 10.6, INK, weight="700"))
+
+        # Plot box: T from 0 degC (left, px0=74) to -32 degC (right, px1=434), width=360 px
+        # Y: excess vapor density over ice from 0.00 g/m^3 (py1=390) to 0.34 g/m^3 (py0=132), height=258 px
+        px0, px1 = 74.0, 434.0
+        py0, py1 = 132.0, 390.0
+
+        def _tx(t_c):
+            # t_c in [0, -32] -> 0 maps to px0, -32 maps to px1
+            return px0 + ((-t_c) / 32.0) * (px1 - px0)
+
+        def _ty(drho):
+            return py1 - (drho / 0.34) * (py1 - py0)
+
+        # 4 temperature habit bands with subtle background fills:
+        bands = [
+            (0.0, -4.0, "#eff6ff", "板晶①", BLUE),
+            (-4.0, -10.0, "#fffbeb", "柱/针晶②", AMBER),
+            (-10.0, -22.0, "#eef2ff", "板/星花巅峰③", INDIGO),
+            (-22.0, -32.0, "#f0fdfa", "冷柱/复合④", TEAL),
+        ]
+        for t_hi, t_lo, b_fill, b_lbl, b_col in bands:
+            bx0, bx1 = _tx(t_hi), _tx(t_lo)
+            els.append(
+                f'<rect x="{bx0:.1f}" y="{py0:.1f}" width="{bx1 - bx0:.1f}" height="{py1 - py0:.1f}"'
+                f' fill="{b_fill}" stroke="none"/>'
+            )
+            els.append(txt(0.5 * (bx0 + bx1), py0 + 15, b_lbl, 8.9, b_col, weight="700", anchor="middle"))
+
+        # Horizontal grid lines & Y-axis labels
+        for y_val in [0.0, 0.08, 0.16, 0.24, 0.32]:
+            yy = _ty(y_val)
+            els.append(_line(px0, yy, px1, yy, stroke="#e2e8f0", sw=0.9))
+            els.append(txt(px0 - 6, yy + 3.5, f"{y_val:.2f}", 8.5, MUTED, anchor="end"))
+        els.append(f'<g transform="rotate(-90 34 266)">{txt(34, 266, "超冰水汽密度", 8.6, SLATE, weight="600", anchor="middle")}</g>')
+        els.append(f'<g transform="rotate(-90 47 266)">{txt(47, 266, "(g/m³ · 湿度)", 8.3, MUTED, anchor="middle")}</g>')
+
+        # Vertical crossover dashed lines at -4, -10, -22 degC + -15 degC highlight
+        for t_flip in [-4.0, -10.0, -22.0]:
+            xx = _tx(t_flip)
+            els.append(_line(xx, py0, xx, py1, stroke=RED, sw=1.3, dash="4 3"))
+        xx_15 = _tx(-15.0)
+        els.append(_line(xx_15, py0 + 22, xx_15, py1, stroke=INDIGO, sw=1.0, dash="2 3"))
+
+        # X-axis ticks
+        for t_tick in [0, -4, -10, -15, -22, -32]:
+            xx = _tx(t_tick)
+            els.append(_line(xx, py1, xx, py1 + 5, stroke=SLATE, sw=1.2))
+            t_col = RED if t_tick in (-4, -10, -22) else (INDIGO if t_tick == -15 else SLATE)
+            els.append(txt(xx, py1 + 17, f"{t_tick}°C", 8.8, t_col, weight="700" if t_tick != 0 else "600", anchor="middle"))
+        els.append(txt(0.5 * (px0 + px1), py1 + 33, "云层生长温度 T（三次神秘形态反转线：−4°C、−10°C、−22°C）", 8.9, INK, weight="600", anchor="middle"))
+
+        # Plot border
+        els.append(f'<rect x="{px0:.1f}" y="{py0:.1f}" width="{px1 - px0:.1f}" height="{py1 - py0:.1f}" fill="none" stroke="{SLATE}" stroke-width="1.3"/>')
+
+        # Exact thermodynamic supercooled liquid-water saturation curve!
+        w_pts = [(_tx(-i * 0.5), _ty(excess_vapor_water_over_ice(-i * 0.5))) for i in range(0, 65)]
+        els.append(_poly(w_pts, CYAN, sw=2.2, dash="6 3"))
+        els.append(txt(_tx(-24.5), _ty(excess_vapor_water_over_ice(-24.5)) - 9, "过冷水饱和线", 8.5, CYAN, weight="700", halo=True))
+
+        # Mini crystal vector icons & labels at key (T, drho) spots!
+        # 1) -2C mid: Thin plate (cleanly above initial water-sat rise!)
+        els.append(_poly(_hex_pts(_tx(-2.0), _ty(0.18), 9.0), BLUE, sw=1.6, fill="#dbeafe", close=True))
+        els.append(txt(_tx(-2.0), _ty(0.18) + 20, "薄板", 8.3, BLUE, weight="700", anchor="middle", halo=True))
+
+        # 2) -6.5C high: Slender Needles (冰针)
+        nx_c, ny_c = _tx(-6.8), _ty(0.245)
+        els.append(f'<rect x="{nx_c - 3.5:.1f}" y="{ny_c - 14:.1f}" width="7" height="28" rx="1.5" fill="#fef3c7" stroke="{AMBER}" stroke-width="1.6"/>')
+        els.append(txt(nx_c, ny_c + 25, "冰针(−5°C)", 8.5, AMBER, weight="700", anchor="middle", halo=True))
+
+        # 3) -7C low: Hollow prism column
+        cx_p, cy_p = _tx(-7.0), _ty(0.065)
+        els.append(f'<rect x="{cx_p - 7:.1f}" y="{cy_p - 10:.1f}" width="14" height="20" fill="#fde68a" stroke="{AMBER}" stroke-width="1.5"/>')
+        els.append(txt(cx_p, cy_p + 21, "空心柱", 8.3, AMBER, weight="600", anchor="middle"))
+
+        # 4) -15C high (above water sat!): Giant Stellar Dendrite!
+        sx_d, sy_d = _tx(-15.5), _ty(0.275)
+        for k in range(6):
+            ang_s = math.radians(60.0 * k)
+            els.append(_line(sx_d, sy_d, sx_d + 15 * math.cos(ang_s), sy_d + 15 * math.sin(ang_s), stroke=INDIGO, sw=1.8))
+            for r_b in (8.0, 12.0):
+                bx_s, by_s = sx_d + r_b * math.cos(ang_s), sy_d + r_b * math.sin(ang_s)
+                for sg in (-1, 1):
+                    els.append(
+                        _line(
+                            bx_s,
+                            by_s,
+                            bx_s + 4.8 * math.cos(ang_s + sg * math.radians(60)),
+                            by_s + 4.8 * math.sin(ang_s + sg * math.radians(60)),
+                            stroke=INDIGO,
+                            sw=1.2,
+                        )
+                    )
+        els.append(txt(sx_d, sy_d + 26, "羽毛星晶(−15°C)", 8.8, INDIGO, weight="700", anchor="middle", halo=True))
+
+        # 5) -15.5C low-mid: Sectored solid plate
+        px_s, py_s = _tx(-15.5), _ty(0.085)
+        els.append(_poly(_hex_pts(px_s, py_s, 11.0), INDIGO, sw=1.7, fill="#e0e7ff", close=True))
+        els.append(txt(px_s, py_s + 21, "扇形厚板", 8.5, INDIGO, weight="600", anchor="middle"))
+
+        # 6) -27C mid: Cold prism / bullet rosette
+        bx_c, by_c = _tx(-27.0), _ty(0.095)
+        els.append(f'<rect x="{bx_c - 6:.1f}" y="{by_c - 12:.1f}" width="12" height="24" fill="#ccfbf1" stroke="{TEAL}" stroke-width="1.5"/>')
+        els.append(txt(bx_c, by_c + 24, "冷云棱柱", 8.5, TEAL, weight="700", anchor="middle"))
+
+        # Bottom explanation strip inside Left Panel
+        els.append(card(34, 430, 406, 38, rx=6, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(
+            txt(
+                44,
+                447,
+                "三次反转根源（Libbrecht 表面预融动力学）：冰面纳米准液态层随 T 改变台阶成核势垒，",
+                8.6,
+                BODY,
+            )
+        )
+        els.append(
+            txt(
+                44,
+                461,
+                "令柱面生长率 α_prism 与底面 α_basal 在 −4°C、−10°C、−22°C 三次交替反超！",
+                8.6,
+                INDIGO,
+                weight="700",
+            )
+        )
+
+        # Right Panel: Synchronized 6-Arm Weather Tree-Rings vs Non-Identical Twins (x=464, w=274, y=76, h=402)
+        els.append(card(464, 76, 274, 402))
+        els.append(step_badge(482, 98, "2", fg=PURPLE, bg=PURPLE_SOFT))
+        els.append(txt(500, 102, "六臂同步年轮：为何同朵全同、两朵皆异？", 10.4, INK, weight="700"))
+
+        # Draw a 3-zone "Tree-Ring" composite snowflake centered at (601, 198)
+        tcx, tcy = 601.0, 196.0
+        # Zone 1: Inner hex plate grown at -13C low humidity (r=18)
+        els.append(_poly(_hex_pts(tcx, tcy, 18.0), BLUE, sw=2.0, fill=BLUE_SOFT, close=True))
+        # Zone 2: 6 slender branches grown in -15C high-humidity cloud pocket (r=18..48)
+        for k in range(6):
+            ang_t = math.radians(60.0 * k)
+            x1_t, y1_t = tcx + 18.0 * math.cos(ang_t), tcy + 18.0 * math.sin(ang_t)
+            x2_t, y2_t = tcx + 46.0 * math.cos(ang_t), tcy + 46.0 * math.sin(ang_t)
+            els.append(_line(x1_t, y1_t, x2_t, y2_t, stroke=INDIGO, sw=3.0))
+            # Zone 3: Broad hexagonal sector tips grown in -14C mid-humidity pocket at r=49!
+            tip_cx, tip_cy = tcx + 49.0 * math.cos(ang_t), tcy + 49.0 * math.sin(ang_t)
+            els.append(_poly(_hex_pts(tip_cx, tip_cy, 9.5, rot_deg=60.0 * k), PURPLE, sw=1.6, fill=PURPLE_SOFT, close=True))
+
+        # Labels pointing to the 3 growth rings
+        els.append(_line(tcx + 6, tcy - 14, 480, 136, stroke=BLUE, sw=1.2))
+        els.append(txt(476, 132, "① 内芯：−13°C 低湿成六角板", 8.6, BLUE, weight="700"))
+
+        els.append(_line(tcx - 28, tcy - 16, 480, 248, stroke=INDIGO, sw=1.2))
+        els.append(txt(476, 260, "② 中段：闯入 −15°C 湿云飙 6 枝", 8.6, INDIGO, weight="700"))
+
+        els.append(_line(tcx + 56, tcy, 650, 248, stroke=PURPLE, sw=1.2))
+        els.append(txt(556, 276, "③ 外尖：−14°C 中湿绽开 6 扇叶", 8.6, PURPLE, weight="700"))
+
+        # Two crisp explanation cards at bottom of Right Panel
+        els.append(card(476, 290, 250, 84, rx=7, fill=GREEN_SOFT, stroke="#86efac"))
+        els.append(txt(486, 308, "为什么同一朵雪花 6 根枝条像复刻？", 9.2, GREEN, weight="700"))
+        els.append(txt(486, 325, "整朵雪花仅约 2 mm 宽！穿越云层时，6 个", 8.8, BODY))
+        els.append(txt(486, 341, "尖端在每一秒都泡在完全相同的 (T, σ) 里，", 8.8, BODY))
+        els.append(txt(486, 357, "如同 6 位舞者听同一节拍同步变招！", 8.8, INK, weight="600"))
+
+        els.append(card(476, 382, 250, 84, rx=7, fill=ORANGE_SOFT, stroke="#fdba74"))
+        els.append(txt(486, 400, "为什么两朵复杂雪花绝不撞衫？", 9.2, ORANGE, weight="700"))
+        els.append(txt(486, 417, "相隔数厘米即卷入不同湍流涡旋；且单朵含", 8.8, BODY))
+        els.append(txt(486, 433, "~10¹⁸ 个水分子（每 ~3200 个 H 混 1 个重氢", 8.8, BODY))
+        els.append(txt(486, 449, "D），宏观历史与原子排布双重不可复制！", 8.8, INK, weight="600"))
+
+        return figure(
+            492,
+            "中谷宇吉郎与利布雷希特雪花形态相图三次温度反转及云中六臂同步生长年轮图解",
+            "左图按热力学精确计算过冷水相对冰面的超额水汽密度拱线，标出0至-32摄氏度内-4、-10、-22摄氏度三次板柱形态反转与-15摄氏度羽毛星晶巅峰区；右图拆解单朵雪花穿越不同温湿云团时六臂同步刻录三层年轮的原因，并解释两朵复杂雪花因湍流路径与10的18次方分子排布而绝难重样。",
+            els,
+        )
+
+    # ------------------------------------------------------------------
+    # 4. Pure Math Grows Snowflakes: Exact Reiter (2005) Hex Cellular Automaton vs Koch
+    # ------------------------------------------------------------------
+    def _build_reiter_cellular_automaton_snowflakes():
+        # Run 3 genuine Reiter (2005) hexagonal cellular-automaton simulations!
+        def simulate_reiter(R, schedule):
+            size = 2 * R + 1
+            s = [[schedule[0][1]] * size for _ in range(size)]
+            interior = [
+                (q + R, r + R)
+                for q in range(-R, R + 1)
+                for r in range(max(-R, -q - R), min(R, -q + R) + 1)
+                if max(abs(q), abs(r), abs(q + r)) < R
+            ]
+            s[R][R] = 1.0
+            for n_steps, beta_b, alpha, gamma in schedule:
+                c0, c1 = 1.0 - 0.5 * alpha, alpha / 12.0
+                for _ in range(n_steps):
+                    rec = [[False] * size for _ in range(size)]
+                    for qi, ri in interior:
+                        if (
+                            s[qi][ri] >= 1.0
+                            or s[qi + 1][ri] >= 1.0
+                            or s[qi][ri + 1] >= 1.0
+                            or s[qi - 1][ri + 1] >= 1.0
+                            or s[qi - 1][ri] >= 1.0
+                            or s[qi][ri - 1] >= 1.0
+                            or s[qi + 1][ri - 1] >= 1.0
+                        ):
+                            rec[qi][ri] = True
+                    u = [[0.0 if rec[qi][ri] else s[qi][ri] for ri in range(size)] for qi in range(size)]
+                    sn = [[beta_b] * size for _ in range(size)]
+                    for qi, ri in interior:
+                        us = (
+                            u[qi + 1][ri] + u[qi][ri + 1] + u[qi - 1][ri + 1]
+                            + u[qi - 1][ri] + u[qi][ri - 1] + u[qi + 1][ri - 1]
+                        )
+                        sn[qi][ri] = (s[qi][ri] + gamma + c1 * us) if rec[qi][ri] else (c0 * u[qi][ri] + c1 * us)
+                    s = sn
+            ice = [(qi - R, ri - R, s[qi][ri]) for qi, ri in interior if s[qi][ri] >= 1.0]
+            ice_coords = {(q, r) for q, r, _ in ice}
+            # Strictly assert exact D6 dihedral symmetry of simulated PDE output!
+            for q, r in ice_coords:
+                assert (-r, q + r) in ice_coords, "60-deg rotation symmetry broken"
+                assert (r, q) in ice_coords, "mirror reflection symmetry broken"
+            return ice
+
+        R_grid = 22
+        ice_plate = simulate_reiter(R_grid, [(88, 0.36, 1.0, 0.070)])
+        ice_dendrite = simulate_reiter(R_grid, [(68, 0.70, 1.0, 0.0002)])
+        ice_broad = simulate_reiter(R_grid, [(46, 0.70, 1.0, 0.0002), (24, 0.42, 1.0, 0.048)])
+        assert len(ice_plate) > 250 and len(ice_dendrite) > 300 and len(ice_broad) > 700
+
+        # Exact Koch snowflake iteration k = 0 and k = 4 (3 * 4^4 = 768 segments), D = ln(4)/ln(3)
+        d_koch = math.log(4.0) / math.log(3.0)
+        assert 1.2618 < d_koch < 1.2620
+
+        def koch_pts(cx, cy, rad, iterations):
+            pts = [
+                (cx + rad * math.cos(math.radians(-90 + 120 * k)), cy + rad * math.sin(math.radians(-90 + 120 * k)))
+                for k in range(3)
+            ]
+            # Clockwise outward bumps on screen coords (y down):
+            for _ in range(iterations):
+                nxt = []
+                n = len(pts)
+                for i in range(n):
+                    x1, y1 = pts[i]
+                    x2, y2 = pts[(i + 1) % n]
+                    dx, dy = (x2 - x1) / 3.0, (y2 - y1) / 3.0
+                    ax, ay = x1 + dx, y1 + dy
+                    bx, by = x1 + 2.0 * dx, y1 + 2.0 * dy
+                    # Outward equilateral apex (-60 deg rotation of segment vector in y-down screen coords)
+                    px = ax + dx * 0.5 + dy * (math.sqrt(3.0) / 2.0)
+                    py = ay - dx * (math.sqrt(3.0) / 2.0) + dy * 0.5
+                    nxt.extend([(x1, y1), (ax, ay), (px, py), (bx, by)])
+                pts = nxt
+            return pts
+
+        els = []
+        els.extend(
+            header(
+                "三行局部方程在电脑里“种”出真雪花：六角格元胞自动机 vs 科赫几何分形",
+                "按 Reiter (2005) 离散扩散–冻结模型实算演化三朵严格 D₆ 对称雪花，对比 1904 年科赫分形的理想极限",
+            )
+        )
+
+        # Top Equation & Mechanism Banner (x=22, w=716, y=76, h=82)
+        els.append(card(22, 76, 716, 82, rx=8, fill=INDIGO_SOFT, stroke="#c7d2fe"))
+        steps_ca = [
+            ("1", BLUE, "① 感受态判据 R_t", "s_t ≥ 1 为已结冰格；冰格及其", "6 个紧邻格锁住水汽只进不出"),
+            ("2", INDIGO, "② 离散拉普拉斯扩散 ∇²_hex", "非感受态自由水汽 u 向冰边涌流：", "u' = (1−α/2)u + (α/12)∑u_六邻"),
+            ("3", PURPLE, "③ 冻结推进 s_{t+1} = v_t + u'_t", "感受态累加流入水汽与微补给 +γ，", "一旦跨过阈值 1 即自动长出侧枝！"),
+        ]
+        for idx_s, (num_c, col_c, hd_c, l1_c, l2_c) in enumerate(steps_ca):
+            sx_c = 34 + idx_s * 238
+            els.append(step_badge(sx_c + 12, 98, num_c, fg=col_c, bg="#ffffff", r=9.5))
+            els.append(txt(sx_c + 28, 102, hd_c, 9.8, col_c, weight="700"))
+            els.append(txt(sx_c + 12, 123, l1_c, 8.9, BODY))
+            els.append(txt(sx_c + 12, 140, l2_c, 8.9, INK, weight="600"))
+
+        # Helper to render hex-grid crystal compactly into 3 ice-mass color tiers
+        def render_hex_crystal(cx_p, cy_p, cell_scale, ice_cells):
+            # Axial (q, r) -> pixel: x = scale*(q + 0.5*r)*sqrt(3), y = scale*(1.5*r) (or standard 60-deg basis)
+            # Standard unit vectors at 0 deg and 60 deg: e_q = (1, 0), e_r = (0.5, sqrt(3)/2) -> isotropic D6!
+            tiers = {"thin": [], "mid": [], "thick": []}
+            hr = cell_scale * 0.60
+            h_offs = [
+                (hr * math.cos(math.radians(30 + 60 * k)), hr * math.sin(math.radians(30 + 60 * k)))
+                for k in range(6)
+            ]
+            for q, r, val in ice_cells:
+                px = cx_p + cell_scale * (q + 0.5 * r)
+                py = cy_p + cell_scale * (0.5 * math.sqrt(3.0) * r)
+                sub = "M" + "L".join(f"{px + dx:.1f} {py + dy:.1f}" for dx, dy in h_offs) + "Z"
+                if val < 1.12:
+                    tiers["thin"].append(sub)
+                elif val < 1.45:
+                    tiers["mid"].append(sub)
+                else:
+                    tiers["thick"].append(sub)
+            out = []
+            if tiers["thin"]:
+                out.append(f'<path d="{"".join(tiers["thin"])}" fill="#7dd3fc" stroke="#0284c7" stroke-width="0.25"/>')
+            if tiers["mid"]:
+                out.append(f'<path d="{"".join(tiers["mid"])}" fill="#38bdf8" stroke="#0369a1" stroke-width="0.25"/>')
+            if tiers["thick"]:
+                out.append(f'<path d="{"".join(tiers["thick"])}" fill="#1d4ed8" stroke="#1e3a8a" stroke-width="0.25"/>')
+            return "\n".join(out)
+
+        # 4 Comparison Cards (y=170..470, h=300, widths=170, gap=12 -> x = 22, 204, 386, 568)
+        ca_specs = [
+            (
+                22,
+                "实算 A：扇形六角板晶",
+                "β = 0.36, γ = 0.070",
+                BLUE,
+                BLUE_SOFT,
+                ice_plate,
+                4.35,
+                ["低背景过饱和 + 高均匀补给：", "水汽从容填平凹处，长出棱角", "分明、带内脊纹的六角厚板！"],
+            ),
+            (
+                204,
+                "实算 B：羽毛星形树枝晶",
+                "β = 0.70, γ = 0.0002",
+                INDIGO,
+                INDIGO_SOFT,
+                ice_dendrite,
+                3.15,
+                ["高过饱和激烈抢水汽：", "6 个尖角屏蔽凹槽，自发涌现", "修长主干与对称 60° 羽毛侧枝！"],
+            ),
+            (
+                386,
+                "实算 C：变湿阔叶复合星",
+                "先 β=0.70 → 后 γ=0.048",
+                PURPLE,
+                PURPLE_SOFT,
+                ice_broad,
+                2.85,
+                ["模拟穿云变天：前 46 步高湿长", "出 6 根星枝，后 24 步切回板晶", "区，6 个枝头同步绽开六角扇叶！"],
+            ),
+        ]
+        for x_c, title_c, badge_c, col_c, bg_c, ice_data, sc_c, desc_lines in ca_specs:
+            els.append(card(x_c, 170, 170, 300))
+            els.append(txt(x_c + 85, 192, title_c, 10.2, INK, weight="700", anchor="middle"))
+            els.append(pill(x_c + 17, 201, badge_c, fg=col_c, bg=bg_c, w=136, h=20, size=8.6))
+            # Dark sky circle backdrop so icy crystal pops with crisp contrast!
+            els.append(f'<circle cx="{x_c + 85:.1f}" cy="296.0" r="64" fill="#0f172a" stroke="{BORDER}" stroke-width="1.2"/>')
+            els.append(render_hex_crystal(x_c + 85.0, 296.0, sc_c, ice_data))
+            els.append(card(x_c + 10, 372, 150, 88, rx=6, fill=bg_c, stroke=BORDER))
+            for li, dl in enumerate(desc_lines):
+                els.append(txt(x_c + 17, 392 + li * 20, dl, 8.6, BODY if li < 2 else INK, weight="600" if li == 2 else "400"))
+
+        # Column 4: Koch Geometric Fractal Snowflake (x=568, w=170, y=170, h=300)
+        kx0 = 568
+        els.append(card(kx0, 170, 170, 300))
+        els.append(txt(kx0 + 85, 192, "对照：科赫几何分形", 10.2, INK, weight="700", anchor="middle"))
+        els.append(pill(kx0 + 17, 201, "维数 D = ln4/ln3 ≈ 1.262", fg=ORANGE, bg=ORANGE_SOFT, w=136, h=20, size=8.5))
+        els.append(f'<circle cx="{kx0 + 85:.1f}" cy="296.0" r="64" fill="#fff7ed" stroke="#fed7aa" stroke-width="1.2"/>')
+        k0_tri = koch_pts(kx0 + 85.0, 296.0, 52.0, 0)
+        k4_crv = koch_pts(kx0 + 85.0, 296.0, 52.0, 3)  # k=3 (192 crisp segments at 64px radius!)
+        els.append(_poly(k0_tri, "#fdba74", sw=1.1, dash="3 2", close=True))
+        els.append(_poly(k4_crv, ORANGE, sw=1.5, fill="#ffedd5", close=True))
+        els.append(txt(kx0 + 85, 299, "面积=8/5 A₀", 8.5, AMBER, weight="700", anchor="middle"))
+        els.append(txt(kx0 + 85, 312, "周长 → ∞", 8.5, RED, weight="700", anchor="middle"))
+
+        els.append(card(kx0 + 10, 372, 150, 88, rx=6, fill=ORANGE_SOFT, stroke="#fdba74"))
+        els.append(txt(kx0 + 17, 392, "纯数学可无限自相似缩微；", 8.6, BODY))
+        els.append(txt(kx0 + 17, 412, "真雪花在 ~1 μm 处被表面张", 8.6, BODY))
+        els.append(txt(kx0 + 17, 432, "力截断，属于【物理准分形】！", 8.6, INK, weight="600"))
+
+        return figure(
+            484,
+            "Reiter六角晶格元胞自动机实算演化三类真实雪花与科赫几何分形对比图解",
+            "顶部拆解Reiter离散扩散-冻结元胞自动机三步局部更新方程；下方前三列由Python真实迭代演化出扇形六角板晶、羽毛状星形树枝晶与双阶段变湿阔叶复合星晶（均通过严格D6群对称校验），第四列对比科赫雪花分形维数ln4/ln3≈1.262与真实雪花微米表面张力物理截断的区别。",
+            els,
+        )
+
+    # ------------------------------------------------------------------
+    # 5. Sky Optics & Exotic Twins: 22 deg Halo, Sundogs, Capped Column & 12-Branched Twin
+    # ------------------------------------------------------------------
+    def _build_ice_crystal_halos_sundogs_and_twins():
+        # Exact Snell's law minimum deviation through A = 60 deg alternate prism faces!
+        A_deg = 60.0
+        n_mid = 1.310
+        n_red = 1.306
+        n_blu = 1.317
+        delta_mid = 2.0 * math.degrees(math.asin(n_mid * math.sin(math.radians(A_deg / 2.0)))) - A_deg
+        delta_red = 2.0 * math.degrees(math.asin(n_red * math.sin(math.radians(A_deg / 2.0)))) - A_deg
+        delta_blu = 2.0 * math.degrees(math.asin(n_blu * math.sin(math.radians(A_deg / 2.0)))) - A_deg
+        assert 21.80 < delta_mid < 21.90
+        assert 21.50 < delta_red < 21.60 and 22.30 < delta_blu < 22.42 and delta_red < delta_blu
+
+        els = []
+        els.extend(
+            header(
+                "高空亿万冰晶变身天然三棱镜：22° 日晕、“三日同辉”幻日与十二出双晶奇观",
+                "左：隔面 60° 棱角把折射光精准锁死在 21.84° 极值环 ｜ 右：冠柱晶、30° 旋转孪生十二角雪花与三角板晶",
+            )
+        )
+
+        # Left Card: 22 deg Minimum Deviation Ray Trace & Halo vs Sundogs (x=22, w=368, y=76, h=388)
+        els.append(card(22, 76, 368, 388))
+        els.append(step_badge(40, 98, "1", fg=CYAN, bg=CYAN_SOFT))
+        els.append(txt(58, 102, "六棱冰晶 = 顶角 60° 天然三棱镜（22° 日晕与幻日）", 10.6, INK, weight="700"))
+
+        # Exact geometric ray-trace cross-section centered at (114, 212), radius R_hex = 43
+        rcx, rcy, r_hx = 114.0, 212.0, 43.0
+        hx_pts = _hex_pts(rcx, rcy, r_hx, rot_deg=0.0)
+        apex_x, apex_y = rcx, rcy - r_hx * math.sqrt(3.0)  # exact intersection of the two alternate faces!
+        v3x, v3y = hx_pts[3]
+        v0x, v0y = hx_pts[0]
+        ang_apex = math.degrees(
+            math.acos(
+                ((v3x - apex_x) * (v0x - apex_x) + (v3y - apex_y) * (v0y - apex_y))
+                / (math.hypot(v3x - apex_x, v3y - apex_y) * math.hypot(v0x - apex_x, v0y - apex_y))
+            )
+        )
+        assert abs(ang_apex - 60.0) < 1e-6
+
+        # Dashed extension lines forming the 60-deg virtual prism apex
+        els.append(_line(hx_pts[4][0], hx_pts[4][1], apex_x, apex_y, stroke=SLATE, sw=1.2, dash="3 2"))
+        els.append(_line(hx_pts[5][0], hx_pts[5][1], apex_x, apex_y, stroke=SLATE, sw=1.2, dash="3 2"))
+        els.append(txt(apex_x, apex_y - 6, "隔面顶角 A = 60°", 8.8, INK, weight="700", anchor="middle"))
+
+        # Hexagon body
+        els.append(_poly(hx_pts, CYAN, sw=2.2, fill="#e0f2fe", close=True))
+
+        # Symmetric minimum-deviation ray: inside crystal ray is HORIZONTAL (y = rcy - 19)!
+        y_int = rcy - 19.0
+        x_in = rcx - r_hx + (rcy - y_int) / math.sqrt(3.0)
+        x_out = rcx + r_hx - (rcy - y_int) / math.sqrt(3.0)
+        half_d = math.radians(delta_mid / 2.0)
+        in_x0 = x_in - 50.0 * math.cos(half_d)
+        in_y0 = y_int + 50.0 * math.sin(half_d)
+        ref_x1 = x_in + 108.0 * math.cos(half_d)
+        ref_y1 = y_int - 108.0 * math.sin(half_d)
+        els.append(_line(in_x0, in_y0, x_in, y_int, stroke="#f59e0b", sw=2.5))
+        els.append(txt(in_x0 + 22, in_y0 + 13, "平行阳光", 8.5, AMBER, weight="700", anchor="middle"))
+        els.append(_line(x_in, y_int, ref_x1, ref_y1, stroke=MUTED, sw=1.1, dash="3 3"))
+        els.append(_line(x_in, y_int, x_out, y_int, stroke=CYAN, sw=2.3))
+
+        # Outgoing dispersed rays strictly staying left of x=246
+        ang_out_red = -half_d + math.radians(delta_red - 1.5)
+        ang_out_blu = -half_d + math.radians(delta_blu + 2.8)
+        rx_end, ry_end = x_out + 60.0 * math.cos(ang_out_red), y_int + 60.0 * math.sin(ang_out_red)
+        bx_end, by_end = x_out + 60.0 * math.cos(ang_out_blu), y_int + 60.0 * math.sin(ang_out_blu)
+        els.append(_line(x_out, y_int, rx_end, ry_end, stroke=RED, sw=2.1))
+        els.append(_line(x_out, y_int, bx_end, by_end, stroke=INDIGO, sw=2.1))
+
+        # Deviation angle label & dispersion caption cleanly inside left zone (x < 252)
+        els.append(txt(208, y_int - 8, "δ_min ≈ 21.84°", 8.8, ORANGE, weight="700", anchor="middle", halo=True))
+        els.append(txt(144, 276, "内红 21.5°  ｜  外蓝 22.4°", 8.5, RED, weight="700", anchor="middle"))
+
+        # Subtle vertical divider separating ray-trace (left) and sky-halo view (right)
+        els.append(_line(260, 124, 260, 282, stroke=BORDER, sw=1.0, dash="3 3"))
+
+        # Sky inset on right side of Left Card (cx=324, cy=196, R=48 -> x=276..372)
+        sky_x, sky_y = 324.0, 196.0
+        els.append(f'<circle cx="{sky_x:.1f}" cy="{sky_y:.1f}" r="48" fill="#0f172a" stroke="{BORDER}" stroke-width="1.2"/>')
+        els.append(f'<circle cx="{sky_x:.1f}" cy="{sky_y:.1f}" r="35.0" fill="none" stroke="#60a5fa" stroke-width="2.4"/>')
+        els.append(f'<circle cx="{sky_x:.1f}" cy="{sky_y:.1f}" r="32.8" fill="none" stroke="#f87171" stroke-width="1.7"/>')
+        els.append(f'<circle cx="{sky_x:.1f}" cy="{sky_y:.1f}" r="5.0" fill="#fde047" stroke="#f59e0b" stroke-width="1.2"/>')
+        els.append(_line(sky_x - 44, sky_y, sky_x + 44, sky_y, stroke="#94a3b8", sw=0.8, dash="2 2"))
+        for sgn_sd in (-1, 1):
+            els.append(f'<circle cx="{sky_x + sgn_sd * 34.0:.1f}" cy="{sky_y:.1f}" r="4.8" fill="#fef08a" stroke="#f97316" stroke-width="1.3"/>')
+        els.append(txt(sky_x, sky_y - 38, "22° 日晕", 8.0, "#bfdbfe", weight="700", anchor="middle"))
+        els.append(txt(sky_x, sky_y + 17, "圈内偏暗", 7.6, "#94a3b8", anchor="middle"))
+        els.append(txt(sky_x, 260, "天幕实景：日晕 + 双幻日", 8.4, ORANGE, weight="700", anchor="middle"))
+
+        # Formula & Physics Explanation Box (x=34, y=296, w=344, h=156)
+        els.append(card(34, 296, 344, 156, rx=7, fill=CYAN_SOFT, stroke="#7dd3fc"))
+        els.append(txt(44, 315, "极值聚光公式：δ_min = 2 arcsin(n · sin 30°) − 60° = 21.84°", 9.2, CYAN, weight="700"))
+        els.append(txt(44, 334, "• 为什么亮成锐利圆环？光线无法折进 <21.8°（晕圈内侧天空偏暗），", 8.8, BODY))
+        els.append(txt(44, 352, "  而在极值角 dδ/dθ₁ = 0 处海量光线扎堆汇聚，亮度陡增！", 8.8, BODY))
+        els.append(txt(44, 370, "• 为什么内红外蓝（和彩虹相反）？红光 n=1.306 折得少居内圈！", 8.8, RED, weight="600"))
+        els.append(txt(44, 388, "• 【22° 日晕】= 柱晶空中随机乱翻滚，360° 全方位折出光环；", 8.8, BODY))
+        els.append(txt(44, 406, "• 【双幻日】= 直径 >0.1 mm 六角板晶受空气阻力像落叶水平飘浮，", 8.8, BODY))
+        els.append(txt(44, 424, "  只在太阳同高度左右两侧 ≥22° 处射出两团耀眼“假太阳”！", 8.8, INK, weight="600"))
+
+        # Right Card: 3 Real Exotic Ice Crystals (x=404, w=334, y=76, h=388)
+        els.append(card(404, 76, 334, 388))
+        els.append(step_badge(422, 98, "2", fg=PURPLE, bg=PURPLE_SOFT))
+        els.append(txt(440, 102, "不止平面六角星：三大真实奇异冰晶解密", 10.6, INK, weight="700"))
+
+        # Exotic 1: Capped Column (冠柱晶 / 车轴鼓晶, y=118..224)
+        els.append(card(416, 118, 310, 104, rx=7, fill=BLUE_SOFT, stroke="#93c5fd"))
+        # Draw isometric capped column at (458, 170)
+        ccx = 458.0
+        # Bottom cap plate
+        els.append(
+            _poly(
+                [(ccx + 28 * math.cos(math.radians(60 * k)), 194 + 10 * math.sin(math.radians(60 * k))) for k in range(6)],
+                BLUE,
+                sw=1.6,
+                fill="#bae6fd",
+                close=True,
+            )
+        )
+        # Central hexagonal column shaft
+        els.append(f'<rect x="{ccx - 8:.1f}" y="146.0" width="16" height="48" fill="#dbeafe" stroke="{INDIGO}" stroke-width="1.6"/>')
+        # Top cap plate
+        els.append(
+            _poly(
+                [(ccx + 28 * math.cos(math.radians(60 * k)), 146 + 10 * math.sin(math.radians(60 * k))) for k in range(6)],
+                BLUE,
+                sw=1.8,
+                fill="#e0f2fe",
+                close=True,
+            )
+        )
+        els.append(txt(500, 138, "① 冠柱晶（Capped Column，“工字车轴晶”）", 9.4, BLUE, weight="700"))
+        els.append(txt(500, 157, "先在 −6°C 云层沿 c 轴长成一段六角短木桩；", 8.8, BODY))
+        els.append(txt(500, 175, "随后被气流吹进 −15°C 板晶区，柱子上下两头", 8.8, BODY))
+        els.append(txt(500, 193, "突然横向疯长两片大六角伞盖，立体感十足！", 8.8, INK, weight="600"))
+
+        # Exotic 2: 12-Branched Twinned Snowflake (十二出双晶雪花, y=232..338)
+        els.append(card(416, 232, 310, 104, rx=7, fill=PURPLE_SOFT, stroke="#d8b4fe"))
+        twx, twy = 458.0, 284.0
+        for rot0, col_tw, sw_tw in [(0.0, INDIGO, 2.0), (30.0, PURPLE, 1.8)]:
+            for k in range(6):
+                ang_tw = math.radians(rot0 + 60.0 * k)
+                ax_e, ay_e = twx + 29.0 * math.cos(ang_tw), twy + 29.0 * math.sin(ang_tw)
+                els.append(_line(twx, twy, ax_e, ay_e, stroke=col_tw, sw=sw_tw))
+                bx_t, by_t = twx + 19.0 * math.cos(ang_tw), twy + 19.0 * math.sin(ang_tw)
+                for sg in (-1, 1):
+                    els.append(
+                        _line(
+                            bx_t,
+                            by_t,
+                            bx_t + 7.5 * math.cos(ang_tw + sg * math.radians(60)),
+                            by_t + 7.5 * math.sin(ang_tw + sg * math.radians(60)),
+                            stroke=col_tw,
+                            sw=1.2,
+                        )
+                    )
+        els.append(f'<circle cx="{twx:.1f}" cy="{twy:.1f}" r="5.5" fill="#ffffff" stroke="{PURPLE}" stroke-width="1.5"/>')
+        els.append(txt(500, 252, "② 十二出双晶雪花（1637 笛卡尔首记奇观）", 9.4, PURPLE, weight="700"))
+        els.append(txt(500, 271, "绝非推翻六方晶系！而是两颗微小冰晶胚在成核", 8.8, BODY))
+        els.append(txt(500, 289, "瞬间共轴叠合，且恰好绕 c 轴错开 30° 晶格匹配", 8.8, BODY))
+        els.append(txt(500, 307, "角（旋转孪晶），6 + 6 同步长出 12 根对称枝！", 8.8, INK, weight="600"))
+
+        # Exotic 3: Aerodynamic Truncated Triangular Plate (切角三角板晶, y=346..452)
+        els.append(card(416, 346, 310, 104, rx=7, fill=ORANGE_SOFT, stroke="#fdba74"))
+        # Construct exact 6-sided equiangular (120 deg!) hexagon with alternating long/short sides!
+        # Vertices obtained by intersecting 3 long edges at 0, 120, 240 deg (dist d_long=13) and 3 short edges at 60, 180, 300 deg (dist d_short=25)
+        trx, try_c = 458.0, 401.0
+        tri_hex = []
+        dists = [12.0, 23.0, 12.0, 23.0, 12.0, 23.0]
+        for k in range(6):
+            n1 = math.radians(-90.0 + 60.0 * k)
+            n2 = math.radians(-90.0 + 60.0 * ((k + 1) % 6))
+            d1, d2 = dists[k], dists[(k + 1) % 6]
+            # Solve x*cos(n1)+y*sin(n1)=d1, x*cos(n2)+y*sin(n2)=d2
+            det = math.sin(n2 - n1)
+            vx = (d1 * math.sin(n2) - d2 * math.sin(n1)) / det
+            vy = (d2 * math.cos(n1) - d1 * math.cos(n2)) / det
+            tri_hex.append((trx + vx, try_c + vy))
+        # Verify all 6 interior angles are STILL exact 120 deg!
+        for k in range(6):
+            p_prev = tri_hex[(k - 1) % 6]
+            p_curr = tri_hex[k]
+            p_next = tri_hex[(k + 1) % 6]
+            u1 = (p_prev[0] - p_curr[0], p_prev[1] - p_curr[1])
+            u2 = (p_next[0] - p_curr[0], p_next[1] - p_curr[1])
+            ang_in = math.degrees(
+                math.acos((u1[0] * u2[0] + u1[1] * u2[1]) / (math.hypot(*u1) * math.hypot(*u2)))
+            )
+            assert abs(ang_in - 120.0) < 1e-5
+        els.append(_poly(tri_hex, ORANGE, sw=2.1, fill="#ffedd5", close=True))
+        els.append(txt(trx, try_c + 4, "120°", 8.5, AMBER, weight="700", anchor="middle"))
+
+        els.append(txt(500, 366, "③ “假三角”板晶（内角依然严格 120°！）", 9.4, ORANGE, weight="700"))
+        els.append(txt(500, 385, "近 −2°C 或 −14°C 下落时，迎风尾流让其中相隔的", 8.8, BODY))
+        els.append(txt(500, 403, "3 条边水汽更足并借分子台阶桥接加速推进，把另", 8.8, BODY))
+        els.append(txt(500, 421, "3 条边挤短成切角正三角形——骨子里仍是六方冰！", 8.8, INK, weight="600"))
+
+        return figure(
+            478,
+            "高空六方冰晶60度隔面最小偏向角22度日晕与双幻日折射光路及三大奇异冰晶图解",
+            "左图按斯涅尔定律精确计算平行阳光穿过六方冰晶隔面60度夹角的对称最小偏向角21.84度（红光21.5度居内缘、蓝光22.4度居外缘，色散间距略放大示意），对比乱翻滚柱晶形成的22度日晕圆环与水平飘浮板晶形成的左右双幻日；右图解析冠柱晶、30度旋转孪生十二出雪花及内角仍为120度的空气动力切角三角板晶。",
+            els,
+        )
+
+    @register(
+        "snowflake-ice-math-physics",
+        "雪花与冰晶数学物理原理：104.5度水分子四面体六元环投影、晶面成核与扩散失稳拔河、中谷宇吉郎三次反转相图、Reiter六角元胞自动机实算与22度日晕折射",
+        "science_tech",
+    )
+    def build_snowflake_ice_math_physics():
+        write_svg(SUBDIR, "water-tetrahedron-to-hexagonal-ice.svg", _build_water_tetrahedron_to_hexagonal_ice())
+        write_svg(SUBDIR, "faceting-vs-mullins-sekerka-branching.svg", _build_faceting_vs_mullins_sekerka_branching())
+        write_svg(SUBDIR, "nakaya-morphology-diagram-and-cloud-journey.svg", _build_nakaya_morphology_diagram_and_cloud_journey())
+        write_svg(SUBDIR, "reiter-cellular-automaton-snowflakes.svg", _build_reiter_cellular_automaton_snowflakes())
+        write_svg(SUBDIR, "ice-crystal-halos-sundogs-and-twins.svg", _build_ice_crystal_halos_sundogs_and_twins())
+
+
+_register_snowflake_ice_math_physics()

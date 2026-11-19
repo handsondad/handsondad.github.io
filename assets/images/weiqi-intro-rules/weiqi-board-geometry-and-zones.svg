@@ -1,0 +1,239 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="472" viewBox="0 0 760 472" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">19×19围棋盘361个交叉点坐标与金角银边草肚皮几何效率对比图</title>
+<desc id="desc">左图精确绘制19×19标准围棋盘361个交叉点、九星位与正中天元(10,10)，标出三线实地线与四线外势线；右图用三块7×7局部棋盘严格证明围出同样3×3=9目空时，角部借两条盘边仅需6子（1.50目/子），边部借一条盘边需9子（1.00目/子），中腹四面漏风需12子（0.75目/子）。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="471" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">19×19 棋盘的几何密码：361 个交叉点、九星天元与“金角银边草肚皮”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">棋子不下在格子里而是落在纵横线交叉点上；围同样 9 目空，中腹所需棋子数整整是角上的 2 倍</text>
+<rect x="16" y="74" width="344" height="384" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="32" cy="92" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="32" y="96" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="48" y="96" font-size="11.4" fill="13.5" text-anchor="start" font-weight="700">标准 19 路棋盘：19×19 = 361 点与九星坐标</text>
+<rect x="36.0" y="110.0" width="279.6" height="279.6" rx="6" fill="#f5dfa8" stroke="#85581f" stroke-width="1.4"/>
+<line x1="48.0" y1="122.0" x2="48.0" y2="377.6" stroke="#5c3d14" stroke-width="1.25"/>
+<line x1="48.0" y1="122.0" x2="303.6" y2="122.0" stroke="#5c3d14" stroke-width="1.25"/>
+<line x1="62.2" y1="122.0" x2="62.2" y2="377.6" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="48.0" y1="136.2" x2="303.6" y2="136.2" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="76.4" y1="122.0" x2="76.4" y2="377.6" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="48.0" y1="150.4" x2="303.6" y2="150.4" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="90.6" y1="122.0" x2="90.6" y2="377.6" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="48.0" y1="164.6" x2="303.6" y2="164.6" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="104.8" y1="122.0" x2="104.8" y2="377.6" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="48.0" y1="178.8" x2="303.6" y2="178.8" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="119.0" y1="122.0" x2="119.0" y2="377.6" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="48.0" y1="193.0" x2="303.6" y2="193.0" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="133.2" y1="122.0" x2="133.2" y2="377.6" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="48.0" y1="207.2" x2="303.6" y2="207.2" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="147.4" y1="122.0" x2="147.4" y2="377.6" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="48.0" y1="221.4" x2="303.6" y2="221.4" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="161.6" y1="122.0" x2="161.6" y2="377.6" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="48.0" y1="235.6" x2="303.6" y2="235.6" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="175.8" y1="122.0" x2="175.8" y2="377.6" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="48.0" y1="249.8" x2="303.6" y2="249.8" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="190.0" y1="122.0" x2="190.0" y2="377.6" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="48.0" y1="264.0" x2="303.6" y2="264.0" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="204.2" y1="122.0" x2="204.2" y2="377.6" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="48.0" y1="278.2" x2="303.6" y2="278.2" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="218.4" y1="122.0" x2="218.4" y2="377.6" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="48.0" y1="292.4" x2="303.6" y2="292.4" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="232.6" y1="122.0" x2="232.6" y2="377.6" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="48.0" y1="306.6" x2="303.6" y2="306.6" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="246.8" y1="122.0" x2="246.8" y2="377.6" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="48.0" y1="320.8" x2="303.6" y2="320.8" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="261.0" y1="122.0" x2="261.0" y2="377.6" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="48.0" y1="335.0" x2="303.6" y2="335.0" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="275.2" y1="122.0" x2="275.2" y2="377.6" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="48.0" y1="349.2" x2="303.6" y2="349.2" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="289.4" y1="122.0" x2="289.4" y2="377.6" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="48.0" y1="363.4" x2="303.6" y2="363.4" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="303.6" y1="122.0" x2="303.6" y2="377.6" stroke="#5c3d14" stroke-width="1.25"/>
+<line x1="48.0" y1="377.6" x2="303.6" y2="377.6" stroke="#5c3d14" stroke-width="1.25"/>
+<circle cx="90.6" cy="164.6" r="2.5" fill="#5c3d14"/>
+<circle cx="175.8" cy="164.6" r="2.5" fill="#5c3d14"/>
+<circle cx="261.0" cy="164.6" r="2.5" fill="#5c3d14"/>
+<circle cx="90.6" cy="249.8" r="2.5" fill="#5c3d14"/>
+<circle cx="175.8" cy="249.8" r="2.5" fill="#5c3d14"/>
+<circle cx="261.0" cy="249.8" r="2.5" fill="#5c3d14"/>
+<circle cx="90.6" cy="335.0" r="2.5" fill="#5c3d14"/>
+<circle cx="175.8" cy="335.0" r="2.5" fill="#5c3d14"/>
+<circle cx="261.0" cy="335.0" r="2.5" fill="#5c3d14"/>
+<rect x="76.4" y="150.4" width="198.8" height="198.8" fill="none" stroke="#18794e" stroke-width="1.2" stroke-dasharray="3.5 2.5" opacity="0.85"/>
+<rect x="90.6" y="164.6" width="170.4" height="170.4" fill="none" stroke="#1d6fa5" stroke-width="1.2" stroke-dasharray="4 2.5" opacity="0.85"/>
+<circle cx="175.8" cy="249.8" r="5.2" fill="none" stroke="#9f1239" stroke-width="1.6"/>
+<text x="175.8" y="241.8" font-size="9.2" fill="#9f1239" text-anchor="middle" font-weight="700" class="halo">天元(10,10)</text>
+<circle cx="90.6" cy="164.6" r="4.8" fill="none" stroke="#1d6fa5" stroke-width="1.5"/>
+<text x="97.6" y="176.6" font-size="9.0" fill="#1d6fa5" text-anchor="start" font-weight="700" class="halo">星位(4,4)</text>
+<circle cx="76.4" cy="150.4" r="4.2" fill="#18794e" opacity="0.9"/>
+<text x="72.4" y="143.4" font-size="8.8" fill="#18794e" text-anchor="start" font-weight="700" class="halo">三三(3,3)</text>
+<text x="48.0" y="107" font-size="8.6" fill="#64748b" text-anchor="middle" class="mono">1</text>
+<text x="32" y="125.0" font-size="8.6" fill="#64748b" text-anchor="end" class="mono">1</text>
+<text x="90.6" y="107" font-size="8.6" fill="#64748b" text-anchor="middle" class="mono">4</text>
+<text x="32" y="167.6" font-size="8.6" fill="#64748b" text-anchor="end" class="mono">4</text>
+<text x="175.8" y="107" font-size="8.6" fill="#64748b" text-anchor="middle" class="mono">10</text>
+<text x="32" y="252.8" font-size="8.6" fill="#64748b" text-anchor="end" class="mono">10</text>
+<text x="261.0" y="107" font-size="8.6" fill="#64748b" text-anchor="middle" class="mono">16</text>
+<text x="32" y="338.0" font-size="8.6" fill="#64748b" text-anchor="end" class="mono">16</text>
+<text x="303.6" y="107" font-size="8.6" fill="#64748b" text-anchor="middle" class="mono">19</text>
+<text x="32" y="380.6" font-size="8.6" fill="#64748b" text-anchor="end" class="mono">19</text>
+<text x="32" y="412" font-size="9.4" fill="#18794e" text-anchor="start" font-weight="700">• 绿虚线 = 三线“实地线”（贴地捞空，守角最稳）</text>
+<text x="32" y="430" font-size="9.4" fill="#1d6fa5" text-anchor="start" font-weight="700">• 蓝虚线 = 四线“外势线”（面向中腹辐射全局影响力）</text>
+<text x="32" y="447" font-size="9.2" fill="#64748b" text-anchor="start">• 九星对称排布：四角星 + 四边星 + 正中“天元”</text>
+<rect x="374" y="74" width="370" height="384" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="390" cy="92" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="390" y="96" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="406" y="96" font-size="11.4" fill="13.5" text-anchor="start" font-weight="700">几何铁律：围同样 9 目空，各处要花几颗子？</text>
+<rect x="390" y="112" width="106" height="214" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="443" y="130" font-size="9.6" fill="#18794e" text-anchor="middle" font-weight="700">① 金角：仅需 6 颗子</text>
+<rect x="399.5" y="141.0" width="87.2" height="87.2" rx="6" fill="#f5dfa8" stroke="#85581f" stroke-width="1.4"/>
+<line x1="406.5" y1="148.0" x2="406.5" y2="221.2" stroke="#5c3d14" stroke-width="1.25"/>
+<line x1="406.5" y1="148.0" x2="479.7" y2="148.0" stroke="#5c3d14" stroke-width="1.25"/>
+<line x1="418.7" y1="148.0" x2="418.7" y2="221.2" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="406.5" y1="160.2" x2="479.7" y2="160.2" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="430.9" y1="148.0" x2="430.9" y2="221.2" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="406.5" y1="172.4" x2="479.7" y2="172.4" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="443.1" y1="148.0" x2="443.1" y2="221.2" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="406.5" y1="184.6" x2="479.7" y2="184.6" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="455.3" y1="148.0" x2="455.3" y2="221.2" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="406.5" y1="196.8" x2="479.7" y2="196.8" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="467.5" y1="148.0" x2="467.5" y2="221.2" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="406.5" y1="209.0" x2="479.7" y2="209.0" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="479.7" y1="148.0" x2="479.7" y2="221.2" stroke="#5c3d14" stroke-width="1.25"/>
+<line x1="406.5" y1="221.2" x2="479.7" y2="221.2" stroke="#5c3d14" stroke-width="1.25"/>
+<rect x="403.4" y="144.9" width="6.2" height="6.2" fill="#18794e" opacity="0.88"/>
+<rect x="415.6" y="144.9" width="6.2" height="6.2" fill="#18794e" opacity="0.88"/>
+<rect x="427.8" y="144.9" width="6.2" height="6.2" fill="#18794e" opacity="0.88"/>
+<rect x="403.4" y="157.1" width="6.2" height="6.2" fill="#18794e" opacity="0.88"/>
+<rect x="415.6" y="157.1" width="6.2" height="6.2" fill="#18794e" opacity="0.88"/>
+<rect x="427.8" y="157.1" width="6.2" height="6.2" fill="#18794e" opacity="0.88"/>
+<rect x="403.4" y="169.3" width="6.2" height="6.2" fill="#18794e" opacity="0.88"/>
+<rect x="415.6" y="169.3" width="6.2" height="6.2" fill="#18794e" opacity="0.88"/>
+<rect x="427.8" y="169.3" width="6.2" height="6.2" fill="#18794e" opacity="0.88"/>
+<g><circle cx="406.5" cy="184.6" r="4.9" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="405.1" cy="183.2" r="1.1" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="418.7" cy="184.6" r="4.9" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="417.3" cy="183.2" r="1.1" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="430.9" cy="184.6" r="4.9" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="429.5" cy="183.2" r="1.1" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="443.1" cy="148.0" r="4.9" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="441.7" cy="146.6" r="1.1" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="443.1" cy="160.2" r="4.9" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="441.7" cy="158.8" r="1.1" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="443.1" cy="172.4" r="4.9" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="441.7" cy="171.0" r="1.1" fill="#52525b" opacity="0.65"/></g>
+<text x="443" y="248" font-size="8.9" fill="#0f172a" text-anchor="middle">借 2 条天然盘边</text>
+<rect x="399.0" y="258.0" width="88" height="22" rx="11.0" fill="#ffffff" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="443.0" y="273.0" font-size="8.8" fill="#18794e" text-anchor="middle" font-weight="600">效率 1.50 目/子</text>
+<text x="443" y="297" font-size="9.0" fill="#0f172a" text-anchor="middle" font-weight="700">围 9 空耗 6 子</text>
+<text x="443" y="314" font-size="8.8" fill="#64748b" text-anchor="middle" class="mono">成本比 = 1.0×</text>
+<rect x="508" y="112" width="106" height="214" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="561" y="130" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">② 银边：需要 9 颗子</text>
+<rect x="517.5" y="141.0" width="87.2" height="87.2" rx="6" fill="#f5dfa8" stroke="#85581f" stroke-width="1.4"/>
+<line x1="524.5" y1="148.0" x2="524.5" y2="221.2" stroke="#5c3d14" stroke-width="1.25"/>
+<line x1="524.5" y1="148.0" x2="597.7" y2="148.0" stroke="#5c3d14" stroke-width="1.25"/>
+<line x1="536.7" y1="148.0" x2="536.7" y2="221.2" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="524.5" y1="160.2" x2="597.7" y2="160.2" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="548.9" y1="148.0" x2="548.9" y2="221.2" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="524.5" y1="172.4" x2="597.7" y2="172.4" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="561.1" y1="148.0" x2="561.1" y2="221.2" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="524.5" y1="184.6" x2="597.7" y2="184.6" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="573.3" y1="148.0" x2="573.3" y2="221.2" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="524.5" y1="196.8" x2="597.7" y2="196.8" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="585.5" y1="148.0" x2="585.5" y2="221.2" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="524.5" y1="209.0" x2="597.7" y2="209.0" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="597.7" y1="148.0" x2="597.7" y2="221.2" stroke="#5c3d14" stroke-width="1.25"/>
+<line x1="524.5" y1="221.2" x2="597.7" y2="221.2" stroke="#5c3d14" stroke-width="1.25"/>
+<rect x="545.8" y="144.9" width="6.2" height="6.2" fill="#1d6fa5" opacity="0.88"/>
+<rect x="558.0" y="144.9" width="6.2" height="6.2" fill="#1d6fa5" opacity="0.88"/>
+<rect x="570.2" y="144.9" width="6.2" height="6.2" fill="#1d6fa5" opacity="0.88"/>
+<rect x="545.8" y="157.1" width="6.2" height="6.2" fill="#1d6fa5" opacity="0.88"/>
+<rect x="558.0" y="157.1" width="6.2" height="6.2" fill="#1d6fa5" opacity="0.88"/>
+<rect x="570.2" y="157.1" width="6.2" height="6.2" fill="#1d6fa5" opacity="0.88"/>
+<rect x="545.8" y="169.3" width="6.2" height="6.2" fill="#1d6fa5" opacity="0.88"/>
+<rect x="558.0" y="169.3" width="6.2" height="6.2" fill="#1d6fa5" opacity="0.88"/>
+<rect x="570.2" y="169.3" width="6.2" height="6.2" fill="#1d6fa5" opacity="0.88"/>
+<g><circle cx="536.7" cy="148.0" r="4.9" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="535.3" cy="146.6" r="1.1" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="536.7" cy="160.2" r="4.9" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="535.3" cy="158.8" r="1.1" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="536.7" cy="172.4" r="4.9" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="535.3" cy="171.0" r="1.1" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="548.9" cy="184.6" r="4.9" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="547.5" cy="183.2" r="1.1" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="561.1" cy="184.6" r="4.9" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="559.7" cy="183.2" r="1.1" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="573.3" cy="184.6" r="4.9" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="571.9" cy="183.2" r="1.1" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="585.5" cy="148.0" r="4.9" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="584.1" cy="146.6" r="1.1" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="585.5" cy="160.2" r="4.9" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="584.1" cy="158.8" r="1.1" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="585.5" cy="172.4" r="4.9" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="584.1" cy="171.0" r="1.1" fill="#52525b" opacity="0.65"/></g>
+<text x="561" y="248" font-size="8.9" fill="#0f172a" text-anchor="middle">借 1 条天然盘边</text>
+<rect x="517.0" y="258.0" width="88" height="22" rx="11.0" fill="#ffffff" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="561.0" y="273.0" font-size="8.8" fill="#1d6fa5" text-anchor="middle" font-weight="600">效率 1.00 目/子</text>
+<text x="561" y="297" font-size="9.0" fill="#0f172a" text-anchor="middle" font-weight="700">围 9 空耗 9 子</text>
+<text x="561" y="314" font-size="8.8" fill="#64748b" text-anchor="middle" class="mono">成本比 = 1.5×</text>
+<rect x="626" y="112" width="106" height="214" rx="7" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="679" y="130" font-size="9.6" fill="#c25014" text-anchor="middle" font-weight="700">③ 草肚皮：要 12 颗子</text>
+<rect x="635.5" y="141.0" width="87.2" height="87.2" rx="6" fill="#f5dfa8" stroke="#85581f" stroke-width="1.4"/>
+<line x1="642.5" y1="148.0" x2="642.5" y2="221.2" stroke="#5c3d14" stroke-width="1.25"/>
+<line x1="642.5" y1="148.0" x2="715.7" y2="148.0" stroke="#5c3d14" stroke-width="1.25"/>
+<line x1="654.7" y1="148.0" x2="654.7" y2="221.2" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="642.5" y1="160.2" x2="715.7" y2="160.2" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="666.9" y1="148.0" x2="666.9" y2="221.2" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="642.5" y1="172.4" x2="715.7" y2="172.4" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="679.1" y1="148.0" x2="679.1" y2="221.2" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="642.5" y1="184.6" x2="715.7" y2="184.6" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="691.3" y1="148.0" x2="691.3" y2="221.2" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="642.5" y1="196.8" x2="715.7" y2="196.8" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="703.5" y1="148.0" x2="703.5" y2="221.2" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="642.5" y1="209.0" x2="715.7" y2="209.0" stroke="#5c3d14" stroke-width="0.78"/>
+<line x1="715.7" y1="148.0" x2="715.7" y2="221.2" stroke="#5c3d14" stroke-width="1.25"/>
+<line x1="642.5" y1="221.2" x2="715.7" y2="221.2" stroke="#5c3d14" stroke-width="1.25"/>
+<rect x="663.8" y="169.3" width="6.2" height="6.2" fill="#c25014" opacity="0.88"/>
+<rect x="676.0" y="169.3" width="6.2" height="6.2" fill="#c25014" opacity="0.88"/>
+<rect x="688.2" y="169.3" width="6.2" height="6.2" fill="#c25014" opacity="0.88"/>
+<rect x="663.8" y="181.5" width="6.2" height="6.2" fill="#c25014" opacity="0.88"/>
+<rect x="676.0" y="181.5" width="6.2" height="6.2" fill="#c25014" opacity="0.88"/>
+<rect x="688.2" y="181.5" width="6.2" height="6.2" fill="#c25014" opacity="0.88"/>
+<rect x="663.8" y="193.7" width="6.2" height="6.2" fill="#c25014" opacity="0.88"/>
+<rect x="676.0" y="193.7" width="6.2" height="6.2" fill="#c25014" opacity="0.88"/>
+<rect x="688.2" y="193.7" width="6.2" height="6.2" fill="#c25014" opacity="0.88"/>
+<g><circle cx="666.9" cy="160.2" r="4.9" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="665.5" cy="158.8" r="1.1" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="679.1" cy="160.2" r="4.9" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="677.7" cy="158.8" r="1.1" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="691.3" cy="160.2" r="4.9" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="689.9" cy="158.8" r="1.1" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="666.9" cy="209.0" r="4.9" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="665.5" cy="207.6" r="1.1" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="679.1" cy="209.0" r="4.9" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="677.7" cy="207.6" r="1.1" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="691.3" cy="209.0" r="4.9" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="689.9" cy="207.6" r="1.1" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="654.7" cy="172.4" r="4.9" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="653.3" cy="171.0" r="1.1" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="654.7" cy="184.6" r="4.9" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="653.3" cy="183.2" r="1.1" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="654.7" cy="196.8" r="4.9" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="653.3" cy="195.4" r="1.1" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="703.5" cy="172.4" r="4.9" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="702.1" cy="171.0" r="1.1" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="703.5" cy="184.6" r="4.9" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="702.1" cy="183.2" r="1.1" fill="#52525b" opacity="0.65"/></g>
+<g><circle cx="703.5" cy="196.8" r="4.9" fill="#18181b" stroke="#09090b" stroke-width="1.0"/><circle cx="702.1" cy="195.4" r="1.1" fill="#52525b" opacity="0.65"/></g>
+<text x="679" y="248" font-size="8.9" fill="#0f172a" text-anchor="middle">四面漏风无边可借</text>
+<rect x="635.0" y="258.0" width="88" height="22" rx="11.0" fill="#ffffff" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="679.0" y="273.0" font-size="8.8" fill="#c25014" text-anchor="middle" font-weight="600">效率 0.75 目/子</text>
+<text x="679" y="297" font-size="9.0" fill="#0f172a" text-anchor="middle" font-weight="700">围 9 空耗 12 子</text>
+<text x="679" y="314" font-size="8.8" fill="#64748b" text-anchor="middle" class="mono">成本比 = 2.0×</text>
+<rect x="390" y="338" width="338" height="108" rx="7" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="400" y="358" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">为什么开局总是“先占角 → 再挂守边 → 最后进中腹”？</text>
+<text x="400" y="377" font-size="8.9" fill="#1e293b" text-anchor="start">1. 周长定律：角借两道墙、边借一道墙，中腹围空贵一倍；</text>
+<text x="400" y="395" font-size="8.9" fill="#1e293b" text-anchor="start">2. 做活难度：角部五六子即可做两眼，中腹四面易遭搜根；</text>
+<text x="400" y="413" font-size="8.9" fill="#1e293b" text-anchor="start">3. 组合宇宙：361 点共 3^361 ≈ 1.74×10^172 种涂色，扣去</text>
+<text x="400" y="431" font-size="8.9" fill="#1d6fa5" text-anchor="start" font-weight="700">   无气死形仍有 2.08×10^170 种合法局面（Tromp, 2016）！</text>
+</svg>

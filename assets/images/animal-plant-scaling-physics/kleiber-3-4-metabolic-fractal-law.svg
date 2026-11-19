@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="460" viewBox="0 0 760 460" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">克莱伯3/4次方基础代谢率双对数曲线与WBE分形血管网络及十亿次心跳守恒图解</title>
+<desc id="desc">左图在双对数坐标下对比克莱伯实测定律B≈3.4·M^(3/4)瓦特（斜率0.75）与鲁布纳表面积假说M^(2/3)（斜率0.67），标定从小臭鼩到须鲸7个物种；右图展示West-Brown-Enquist分形血管树原理，以及心率M^(-1/4)乘寿命M^(1/4)得出野生哺乳动物一生约10亿次心跳的标度不变量。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes drawKleiber {
+        from { stroke-dashoffset: 480; }
+        to { stroke-dashoffset: 0; }
+      }
+      .kleiber-line {
+        stroke-dasharray: 480;
+        stroke-dashoffset: 0;
+        animation: drawKleiber 1.6s ease-out 0.1s 1 both;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .kleiber-line { animation: none; }
+      }
+</style>
+<rect x="0.5" y="0.5" width="759" height="459" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">克莱伯 3/4 次方代谢律：为什么老鼠心跳如鼓活两岁，大象慢悠悠却共享“十亿次心跳”？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：双对数实测斜率精准锁定 0.75 而非表面积律 0.67 · 右：WBE 分形血管网络与 1/4 次方生命节拍器</text>
+<rect x="18" y="64" width="390" height="384" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="32" y="86" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 哺乳动物基础代谢率双对数图（Kleiber 1932）</text>
+<line x1="74.0" y1="342.0" x2="386.0" y2="342.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="68.0" y="345.5" font-size="9.2" fill="#64748b" text-anchor="end" class="mono">0.01W</text>
+<line x1="74.0" y1="278.7" x2="386.0" y2="278.7" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="68.0" y="282.2" font-size="9.2" fill="#64748b" text-anchor="end" class="mono">1W</text>
+<line x1="74.0" y1="215.3" x2="386.0" y2="215.3" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="68.0" y="218.8" font-size="9.2" fill="#64748b" text-anchor="end" class="mono">100W</text>
+<line x1="74.0" y1="152.0" x2="386.0" y2="152.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="68.0" y="155.5" font-size="9.2" fill="#64748b" text-anchor="end" class="mono">10kW</text>
+<line x1="74.0" y1="114.0" x2="74.0" y2="342.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="74.0" y="357.0" font-size="9.2" fill="#64748b" text-anchor="middle" class="mono">1g</text>
+<line x1="148.3" y1="114.0" x2="148.3" y2="342.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="148.3" y="357.0" font-size="9.2" fill="#64748b" text-anchor="middle" class="mono">100g</text>
+<line x1="222.6" y1="114.0" x2="222.6" y2="342.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="222.6" y="357.0" font-size="9.2" fill="#64748b" text-anchor="middle" class="mono">10kg</text>
+<line x1="296.9" y1="114.0" x2="296.9" y2="342.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="296.9" y="357.0" font-size="9.2" fill="#64748b" text-anchor="middle" class="mono">1t</text>
+<line x1="371.1" y1="114.0" x2="371.1" y2="342.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="371.1" y="357.0" font-size="9.2" fill="#64748b" text-anchor="middle" class="mono">100t</text>
+<line x1="74.0" y1="114.0" x2="74.0" y2="342.0" stroke="#475569" stroke-width="1.3"/>
+<line x1="74.0" y1="342.0" x2="386.0" y2="342.0" stroke="#475569" stroke-width="1.3"/>
+<text x="230.0" y="373.0" font-size="9.8" fill="#475569" text-anchor="middle" font-weight="600">体重 M（对数刻度）</text>
+<text x="66.0" y="106.0" font-size="9.6" fill="#475569" text-anchor="start" font-weight="600">静息功率 B</text>
+<path d="M 81.43,320.95 L 378.57,152.06" fill="none" stroke="#c25014" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 4"/>
+<path d="M 81.43,328.34 L 378.57,138.34" fill="none" stroke="#1d6fa5" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" class="kleiber-line"/>
+<rect x="84" y="118" width="198" height="46" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<line x1="92.0" y1="132.0" x2="116.0" y2="132.0" stroke="#1d6fa5" stroke-width="2.6"/>
+<text x="122" y="136" font-size="9.4" fill="#1d6fa5" text-anchor="start" font-weight="700">克莱伯实测律 B ∝ M^(3/4) (0.75)</text>
+<line x1="92.0" y1="150.0" x2="116.0" y2="150.0" stroke="#c25014" stroke-width="2.0" stroke-dasharray="5 3"/>
+<text x="122" y="154" font-size="9.4" fill="#c25014" text-anchor="start" font-weight="600">表面积散热律 B ∝ M^(2/3) (0.67)</text>
+<circle cx="85.2" cy="326.0" r="4.0" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.4"/>
+<text x="92.2" y="338.0" font-size="9.4" fill="#0f172a" text-anchor="start" font-weight="600" class="halo">小臭鼩</text>
+<circle cx="128.9" cy="297.7" r="4.0" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.4"/>
+<text x="136.9" y="308.7" font-size="9.4" fill="#0f172a" text-anchor="start" font-weight="600" class="halo">小鼠</text>
+<circle cx="207.8" cy="247.6" r="4.0" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.4"/>
+<text x="215.8" y="258.6" font-size="9.4" fill="#0f172a" text-anchor="start" font-weight="600" class="halo">家猫</text>
+<circle cx="254.0" cy="218.1" r="4.0" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.4"/>
+<text x="262.0" y="229.1" font-size="9.4" fill="#0f172a" text-anchor="start" font-weight="600" class="halo">人类(~80W灯泡)</text>
+<circle cx="285.7" cy="197.7" r="4.0" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.4"/>
+<text x="277.7" y="189.7" font-size="9.4" fill="#0f172a" text-anchor="end" font-weight="600" class="halo">骏马</text>
+<circle cx="322.8" cy="173.8" r="4.0" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.4"/>
+<text x="314.8" y="165.8" font-size="9.4" fill="#0f172a" text-anchor="end" font-weight="600" class="halo">非洲象</text>
+<circle cx="367.5" cy="145.4" r="4.0" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.4"/>
+<text x="357.5" y="137.4" font-size="9.4" fill="#0f172a" text-anchor="end" font-weight="600" class="halo">须鲸</text>
+<rect x="32" y="382" width="362" height="54" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="44" y="401" font-size="9.8" fill="#1d6fa5" text-anchor="start" font-weight="700">规模经济：大象比小鼠重 20 万倍，总功率仅约 8,000–9,000 倍！</text>
+<text x="44" y="420" font-size="9.6" fill="#1e293b" text-anchor="start">平均每克象肉耗能仅小鼠的 ~1/21（比代谢率 B/M ∝ M^(-1/4)）。</text>
+<rect x="420" y="64" width="322" height="384" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="434" y="86" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 分形血管网与“十亿次心跳”生命时钟</text>
+<rect x="434" y="98" width="294" height="152" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<rect x="446.0" y="108.0" width="256" height="20" rx="10.0" fill="#ffffff" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="574.0" y="121.6" font-size="9.6" fill="#18794e" text-anchor="middle" font-weight="600">物理根源 · WBE 分形输运网 (Science 1997)</text>
+<line x1="450.0" y1="188.0" x2="480.0" y2="188.0" stroke="#18794e" stroke-width="3.4"/>
+<line x1="480.0" y1="188.0" x2="499.4" y2="178.5" stroke="#18794e" stroke-width="2.448"/>
+<line x1="499.4" y1="178.5" x2="509.0" y2="166.3" stroke="#18794e" stroke-width="1.76256"/>
+<line x1="509.0" y1="166.3" x2="511.3" y2="155.3" stroke="#18794e" stroke-width="1.2690431999999998"/>
+<circle cx="511.3" cy="155.3" r="2.3" fill="#dc2626"/>
+<circle cx="511.3" cy="155.3" r="2.3" fill="#dc2626"/>
+<line x1="509.0" y1="166.3" x2="519.1" y2="161.4" stroke="#18794e" stroke-width="1.2690431999999998"/>
+<circle cx="519.1" cy="161.4" r="2.3" fill="#dc2626"/>
+<circle cx="519.1" cy="161.4" r="2.3" fill="#dc2626"/>
+<line x1="499.4" y1="178.5" x2="515.0" y2="178.5" stroke="#18794e" stroke-width="1.76256"/>
+<line x1="515.0" y1="178.5" x2="525.0" y2="173.6" stroke="#18794e" stroke-width="1.2690431999999998"/>
+<circle cx="525.0" cy="173.6" r="2.3" fill="#dc2626"/>
+<circle cx="525.0" cy="173.6" r="2.3" fill="#dc2626"/>
+<line x1="515.0" y1="178.5" x2="525.0" y2="183.4" stroke="#18794e" stroke-width="1.2690431999999998"/>
+<circle cx="525.0" cy="183.4" r="2.3" fill="#dc2626"/>
+<circle cx="525.0" cy="183.4" r="2.3" fill="#dc2626"/>
+<line x1="480.0" y1="188.0" x2="499.4" y2="197.5" stroke="#18794e" stroke-width="2.448"/>
+<line x1="499.4" y1="197.5" x2="515.0" y2="197.5" stroke="#18794e" stroke-width="1.76256"/>
+<line x1="515.0" y1="197.5" x2="525.0" y2="192.6" stroke="#18794e" stroke-width="1.2690431999999998"/>
+<circle cx="525.0" cy="192.6" r="2.3" fill="#dc2626"/>
+<circle cx="525.0" cy="192.6" r="2.3" fill="#dc2626"/>
+<line x1="515.0" y1="197.5" x2="525.0" y2="202.4" stroke="#18794e" stroke-width="1.2690431999999998"/>
+<circle cx="525.0" cy="202.4" r="2.3" fill="#dc2626"/>
+<circle cx="525.0" cy="202.4" r="2.3" fill="#dc2626"/>
+<line x1="499.4" y1="197.5" x2="509.0" y2="209.7" stroke="#18794e" stroke-width="1.76256"/>
+<line x1="509.0" y1="209.7" x2="519.1" y2="214.6" stroke="#18794e" stroke-width="1.2690431999999998"/>
+<circle cx="519.1" cy="214.6" r="2.3" fill="#dc2626"/>
+<circle cx="519.1" cy="214.6" r="2.3" fill="#dc2626"/>
+<line x1="509.0" y1="209.7" x2="511.3" y2="220.7" stroke="#18794e" stroke-width="1.2690431999999998"/>
+<circle cx="511.3" cy="220.7" r="2.3" fill="#dc2626"/>
+<circle cx="511.3" cy="220.7" r="2.3" fill="#dc2626"/>
+<text x="556" y="150" font-size="9.5" fill="#0f172a" text-anchor="start" font-weight="700">• 动物血管、支气管与植物木质部</text>
+<text x="556" y="167" font-size="9.4" fill="#1e293b" text-anchor="start">  都是填满三维空间的【分形树】；</text>
+<text x="556" y="186" font-size="9.4" fill="#1e293b" text-anchor="start">• 末端单元（毛细血管/叶片）尺寸</text>
+<text x="556" y="203" font-size="9.4" fill="#1e293b" text-anchor="start">  不随体型缩放，流体阻力最小化</text>
+<text x="556" y="221" font-size="9.4" fill="#18794e" text-anchor="start" font-weight="700">  天然导出 3/4 幂律（连树木也服从!）</text>
+<text x="496" y="242" font-size="8.8" fill="#dc2626" text-anchor="middle" font-weight="600">红点：不变尺寸毛细血管</text>
+<rect x="434" y="262" width="294" height="174" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<rect x="446.0" y="272.0" width="268" height="20" rx="10.0" fill="#ffffff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="580.0" y="285.6" font-size="9.6" fill="#6d28d9" text-anchor="middle" font-weight="600">惊人推论 · 心率 × 自然寿命 ≈ 常数 (~10亿次)</text>
+<text x="446" y="308" font-size="9.7" fill="#6d28d9" text-anchor="start" font-weight="700">心率 f ∝ M^(-1/4)  ×  寿命 T ∝ M^(+1/4)  ⇒  f·T ∝ M⁰ !</text>
+<rect x="446" y="320" width="270" height="26" rx="5" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<text x="454" y="337" font-size="9.3" fill="#0f172a" text-anchor="start" font-weight="700">小鼠 (30 g)</text>
+<text x="514" y="337" font-size="9.0" fill="#64748b" text-anchor="start">~600 次/分 × ~2.5 年</text>
+<text x="708" y="337" font-size="9.0" fill="#1e293b" text-anchor="end" font-weight="700">≈ 8 亿次</text>
+<rect x="446" y="352" width="270" height="26" rx="5" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<text x="454" y="369" font-size="9.3" fill="#0f172a" text-anchor="start" font-weight="700">大象 (5 t)</text>
+<text x="514" y="369" font-size="9.0" fill="#64748b" text-anchor="start">~28 次/分 × ~65 年</text>
+<text x="708" y="369" font-size="9.0" fill="#18794e" text-anchor="end" font-weight="700">≈ 9.6 亿次</text>
+<rect x="446" y="384" width="270" height="26" rx="5" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<text x="454" y="401" font-size="9.3" fill="#0f172a" text-anchor="start" font-weight="700">现代人类</text>
+<text x="514" y="401" font-size="9.0" fill="#64748b" text-anchor="start">~70 次/分 × ~80 年</text>
+<text x="708" y="401" font-size="9.0" fill="#1d6fa5" text-anchor="end" font-weight="700">≈ 29 亿次 (医学外挂!)</text>
+<text x="581" y="427" font-size="8.9" fill="#0f172a" text-anchor="middle" font-weight="600">野生哺乳类多在 8–12 亿次；人类凭脑化与医学翻近三倍！</text>
+</svg>

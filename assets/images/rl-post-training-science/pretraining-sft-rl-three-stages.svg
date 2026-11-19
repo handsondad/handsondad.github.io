@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="452" viewBox="0 0 760 452" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">大语言模型预训练、监督微调（SFT）与强化学习（RL）三级训练对比图解</title>
+<desc id="desc">上图对比预训练完形填空、SFT行为克隆与RL在线刷题奖惩的数据、目标函数及能力上限；左下图展示SFT曝光偏差导致的累积误差与RL自检纠偏；右下图展示2022年InstructGPT仅用13亿参数在人类盲测中击败1750亿裸GPT-3。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="451" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">大模型养成的三级台阶：预训练攒底座、SFT 教规矩、强化学习破上限</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">同样是拧神经网络的参数旋钮，三个阶段的“反馈信号来源”与“能力天花板”截然不同</text>
+<rect x="18" y="62" width="228" height="206" rx="10" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.4"/>
+<circle cx="40" cy="84" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="40" y="88" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="88" font-size="12.8" fill="#1d6fa5" text-anchor="start" font-weight="700">预训练 Pre-training</text>
+<rect x="32.0" y="102.0" width="156" height="20" rx="10.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="110.0" y="115.6" font-size="10.6" fill="#1d6fa5" text-anchor="middle" font-weight="600">博览群书 · 完形填空</text>
+<text x="32" y="142" font-size="10.5" fill="#1e293b" text-anchor="start">语料：数万亿互联网与教材词元</text>
+<text x="32" y="164" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="600">目标：-∑ log P(y_t | x, y_&lt;t)</text>
+<text x="32" y="186" font-size="10.5" fill="#1e293b" text-anchor="start">收获：攒下世界知识与微弱推理火种</text>
+<rect x="30" y="202" width="204" height="54" rx="7" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="38" y="222" font-size="10.4" fill="#c25014" text-anchor="start" font-weight="700">核心瓶颈：</text>
+<text x="38" y="242" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="600">照单全收网上的胡扯、幻觉与敷衍</text>
+<rect x="266" y="62" width="228" height="206" rx="10" fill="#ffffff" stroke="#6d28d9" stroke-width="1.4"/>
+<circle cx="288" cy="84" r="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="288" y="88" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">2</text>
+<text x="304" y="88" font-size="12.8" fill="#6d28d9" text-anchor="start" font-weight="700">监督微调 SFT</text>
+<rect x="280.0" y="102.0" width="156" height="20" rx="10.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="358.0" y="115.6" font-size="10.6" fill="#6d28d9" text-anchor="middle" font-weight="600">临摹范文 · 行为克隆</text>
+<text x="280" y="142" font-size="10.5" fill="#1e293b" text-anchor="start">语料：数万条高水平人工示范问答</text>
+<text x="280" y="164" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="600">目标：逐词模仿人类写手的标准答案</text>
+<text x="280" y="186" font-size="10.5" fill="#1e293b" text-anchor="start">收获：学会听懂指令、格式规范与礼貌</text>
+<rect x="278" y="202" width="204" height="54" rx="7" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="286" y="222" font-size="10.4" fill="#c25014" text-anchor="start" font-weight="700">核心瓶颈：</text>
+<text x="286" y="242" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="600">天花板被写手锁死，未练过踩坑自救</text>
+<rect x="514" y="62" width="228" height="206" rx="10" fill="#ffffff" stroke="#18794e" stroke-width="1.4"/>
+<circle cx="536" cy="84" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="536" y="88" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">3</text>
+<text x="552" y="88" font-size="12.8" fill="#18794e" text-anchor="start" font-weight="700">强化学习 RL 后训练</text>
+<rect x="528.0" y="102.0" width="156" height="20" rx="10.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="606.0" y="115.6" font-size="10.6" fill="#18794e" text-anchor="middle" font-weight="600">自己刷题 · 奖优罚劣</text>
+<text x="528" y="142" font-size="10.5" fill="#1e293b" text-anchor="start">语料：模型自主生成多条候选轨迹</text>
+<text x="528" y="164" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="600">目标：最大化整题得分 R(x,y) - β D_KL</text>
+<text x="528" y="186" font-size="10.5" fill="#1e293b" text-anchor="start">收获：主动压低顺嘴错路，涌现自检反思</text>
+<rect x="526" y="202" width="204" height="54" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="534" y="222" font-size="10.4" fill="#18794e" text-anchor="start" font-weight="700">核心飞跃：</text>
+<text x="534" y="242" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="600">只要能判对错，表现就能反超示范者</text>
+<line x1="247.0" y1="164.0" x2="264.0" y2="164.0" stroke="#475569" stroke-width="1.8" marker-end="url(#arr-muted)"/>
+<line x1="495.0" y1="164.0" x2="512.0" y2="164.0" stroke="#18794e" stroke-width="2.0" marker-end="url(#arr-green)"/>
+<rect x="18" y="282" width="364" height="156" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="32" y="305" font-size="12.4" fill="#0f172a" text-anchor="start" font-weight="700">④ 为什么光靠“抄作业(SFT)”不够？消除曝光偏差</text>
+<line x1="42.0" y1="344.0" x2="358.0" y2="344.0" stroke="#1d6fa5" stroke-width="2.0" stroke-dasharray="5 3"/>
+<text x="42" y="333" font-size="10.0" fill="#1d6fa5" text-anchor="start" font-weight="600">标准答案轨道（SFT 训练时每步由老师扶回正轨）</text>
+<path d="M 42,344 L 130,344 Q 205,352 268,388 T 350,404" fill="none" stroke="#b91c1c" stroke-width="2.2" marker-end="url(#arr-orange)"/>
+<text x="196" y="424" font-size="10.0" fill="#b91c1c" text-anchor="middle" font-weight="700">SFT 实战：第5步算歪一点 → 一路雪崩胡编</text>
+<path d="M 130,344 Q 174,372 206,368 Q 236,344 352,344" fill="none" stroke="#18794e" stroke-width="2.4" marker-end="url(#arr-green)"/>
+<circle cx="204" cy="368" r="4" fill="#18794e"/>
+<text x="268" y="381" font-size="9.8" fill="#18794e" text-anchor="middle" font-weight="700" class="halo">RL 实战：察觉(“等等!”)自检拉回</text>
+<rect x="394" y="282" width="348" height="156" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="408" y="305" font-size="12.4" fill="#0f172a" text-anchor="start" font-weight="700">⑤ 后训练四两拨千斤：InstructGPT (2022) 实测</text>
+<text x="408" y="325" font-size="10.2" fill="#64748b" text-anchor="start">人类评测员盲测偏好对比（Ouyang 等, NeurIPS 2022）：</text>
+<text x="408" y="352" font-size="10.6" fill="#475569" text-anchor="start" font-weight="700">175B 裸 GPT-3</text>
+<rect x="510" y="339" width="208" height="16" rx="4" fill="#f1f5f9" stroke="#475569"/>
+<text x="614" y="351" font-size="9.8" fill="#475569" text-anchor="middle" font-weight="600">1,750 亿参数（常答非所问/续写问题）</text>
+<text x="408" y="382" font-size="10.6" fill="#18794e" text-anchor="start" font-weight="700">1.3B InstructGPT</text>
+<rect x="510" y="369" width="14" height="16" rx="3" fill="#18794e"/>
+<text x="532" y="381" font-size="10.1" fill="#18794e" text-anchor="start" font-weight="700">仅 13 亿参数（小 135 倍，人类盲测反超！）</text>
+<rect x="408" y="396" width="320" height="32" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="568" y="416" font-size="10.3" fill="#1d6fa5" text-anchor="middle" font-weight="700">启示：预训练决定“脑容量”，RL 后训练决定“怎么动脑子”！</text>
+</svg>

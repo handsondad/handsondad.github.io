@@ -2071,6 +2071,870 @@ def _register_european_name_patterns():
         _build_three_second_decoder()
 
 
+def _register_weiqi_intro_rules():
+    SUBDIR = "weiqi-intro-rules"
+    BOARD_WOOD = "#f5dfa8"
+    BOARD_STROKE = "#85581f"
+    GRID_INK = "#5c3d14"
+    BLACK_STONE = "#18181b"
+    WHITE_STONE = "#f8fafc"
+    WHITE_EDGE = "#475569"
+
+    def _draw_go_grid(els, x0, y0, n, step, pad=14, stars=()):
+        span = (n - 1) * step
+        els.append(
+            f'<rect x="{x0 - pad:.1f}" y="{y0 - pad:.1f}" width="{span + 2 * pad:.1f}" '
+            f'height="{span + 2 * pad:.1f}" rx="6" fill="{BOARD_WOOD}" stroke="{BOARD_STROKE}" stroke-width="1.4"/>'
+        )
+        for i in range(n):
+            sw = 1.25 if i in (0, n - 1) else 0.78
+            els.append(_line(x0 + i * step, y0, x0 + i * step, y0 + span, stroke=GRID_INK, sw=sw))
+            els.append(_line(x0, y0 + i * step, x0 + span, y0 + i * step, stroke=GRID_INK, sw=sw))
+        for sr, sc in stars:
+            els.append(f'<circle cx="{x0 + sc * step:.1f}" cy="{y0 + sr * step:.1f}" r="2.5" fill="{GRID_INK}"/>')
+
+    def _stone(cx, cy, r, color, label=None, label_color=None, extra_cls=""):
+        cls_attr = f' class="{extra_cls}"' if extra_cls else ""
+        if color == "B":
+            fill, stroke, sw = BLACK_STONE, "#09090b", 1.0
+            lc = label_color or "#ffffff"
+        else:
+            fill, stroke, sw = WHITE_STONE, WHITE_EDGE, 1.15
+            lc = label_color or INK
+        out = [f'<g{cls_attr}><circle cx="{cx:.1f}" cy="{cy:.1f}" r="{r:.1f}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"/>']
+        if color == "B":
+            out.append(f'<circle cx="{cx - r * 0.28:.1f}" cy="{cy - r * 0.28:.1f}" r="{r * 0.22:.1f}" fill="#52525b" opacity="0.65"/>')
+        if label is not None:
+            out.append(txt(cx, cy + r * 0.34, str(label), size=max(8.6, r * 1.02), color=lc, anchor="middle", weight="700"))
+        out.append("</g>")
+        return "".join(out)
+
+    def _bfs_group_and_liberties(board, n, r0, c0):
+        color = board.get((r0, c0))
+        assert color in ("B", "W")
+        group = set()
+        libs = set()
+        stack = [(r0, c0)]
+        while stack:
+            r, c = stack.pop()
+            if (r, c) in group:
+                continue
+            group.add((r, c))
+            for dr, dc in ((-1, 0), (1, 0), (0, -1), (0, 1)):
+                nr, nc = r + dr, c + dc
+                if 0 <= nr < n and 0 <= nc < n:
+                    st = board.get((nr, nc))
+                    if st is None:
+                        libs.add((nr, nc))
+                    elif st == color and (nr, nc) not in group:
+                        stack.append((nr, nc))
+        return group, libs
+
+    def _build_board_geometry_and_zones():
+        els = []
+        els.extend(
+            header(
+                "19×19 棋盘的几何密码：361 个交叉点、九星天元与“金角银边草肚皮”",
+                "棋子不下在格子里而是落在纵横线交叉点上；围同样 9 目空，中腹所需棋子数整整是角上的 2 倍",
+            )
+        )
+
+        # Left card: Full 19x19 board
+        els.append(card(16, 74, 344, 384))
+        els.append(step_badge(32, 92, 1, BLUE, BLUE_SOFT))
+        els.append(txt(48, 96, "标准 19 路棋盘：19×19 = 361 点与九星坐标", size=11.4, color=PANEL_TITLE, weight="700"))
+
+        bx, by, bstep = 48, 122, 14.2
+        stars_19 = [(r, c) for r in (3, 9, 15) for c in (3, 9, 15)]
+        assert len(stars_19) == 9 and 19 * 19 == 361
+        _draw_go_grid(els, bx, by, 19, bstep, pad=12, stars=stars_19)
+
+        # Highlight 3rd line (territory) and 4th line (influence) dashed rings lightly
+        s3 = 2 * bstep
+        w3 = 14 * bstep
+        els.append(
+            f'<rect x="{bx + s3:.1f}" y="{by + s3:.1f}" width="{w3:.1f}" height="{w3:.1f}" '
+            f'fill="none" stroke="{GREEN}" stroke-width="1.2" stroke-dasharray="3.5 2.5" opacity="0.85"/>'
+        )
+        s4 = 3 * bstep
+        w4 = 12 * bstep
+        els.append(
+            f'<rect x="{bx + s4:.1f}" y="{by + s4:.1f}" width="{w4:.1f}" height="{w4:.1f}" '
+            f'fill="none" stroke="{BLUE}" stroke-width="1.2" stroke-dasharray="4 2.5" opacity="0.85"/>'
+        )
+
+        # Highlight Tianyuan (9,9), San-san (2,2), Hoshi (3,3), Komoku (2,3)
+        tx, ty = bx + 9 * bstep, by + 9 * bstep
+        els.append(f'<circle cx="{tx:.1f}" cy="{ty:.1f}" r="5.2" fill="none" stroke="{CRIMSON}" stroke-width="1.6"/>')
+        els.append(txt(tx, ty - 8, "天元(10,10)", size=9.2, color=CRIMSON, anchor="middle", weight="700", halo=True))
+
+        hx, hy = bx + 3 * bstep, by + 3 * bstep
+        els.append(f'<circle cx="{hx:.1f}" cy="{hy:.1f}" r="4.8" fill="none" stroke="{BLUE}" stroke-width="1.5"/>')
+        els.append(txt(hx + 7, hy + 12, "星位(4,4)", size=9.0, color=BLUE, weight="700", halo=True))
+
+        sx, sy = bx + 2 * bstep, by + 2 * bstep
+        els.append(f'<circle cx="{sx:.1f}" cy="{sy:.1f}" r="4.2" fill="{GREEN}" opacity="0.9"/>')
+        els.append(txt(sx - 4, sy - 7, "三三(3,3)", size=8.8, color=GREEN, weight="700", halo=True))
+
+        # Coordinate ticks along top & left (1, 4, 10, 16, 19)
+        for idx in (0, 3, 9, 15, 18):
+            els.append(txt(bx + idx * bstep, by - 15, str(idx + 1), size=8.6, color=MUTED, anchor="middle", cls="mono"))
+            els.append(txt(bx - 16, by + idx * bstep + 3, str(idx + 1), size=8.6, color=MUTED, anchor="end", cls="mono"))
+
+        els.append(txt(32, 412, "• 绿虚线 = 三线“实地线”（贴地捞空，守角最稳）", size=9.4, color=GREEN, weight="700"))
+        els.append(txt(32, 430, "• 蓝虚线 = 四线“外势线”（面向中腹辐射全局影响力）", size=9.4, color=BLUE, weight="700"))
+        els.append(txt(32, 447, "• 九星对称排布：四角星 + 四边星 + 正中“天元”", size=9.2, color=MUTED))
+
+        # Right card: Corner vs Side vs Center efficiency
+        els.append(card(374, 74, 370, 384))
+        els.append(step_badge(390, 92, 2, ORANGE, ORANGE_SOFT))
+        els.append(txt(406, 96, "几何铁律：围同样 9 目空，各处要花几颗子？", size=11.4, color=PANEL_TITLE, weight="700"))
+
+        # Three 7x7 mini-boards comparing enclosing 3x3 = 9 empty points!
+        cases = [
+            (
+                390,
+                "① 金角：仅需 6 颗子",
+                "借 2 条天然盘边",
+                "效率 1.50 目/子",
+                GREEN,
+                GREEN_SOFT,
+                # 3x3 empty at rows 0..2, cols 0..2 -> stones at (3,0),(3,1),(3,2) and (0,3),(1,3),(2,3) -> 6 stones!
+                [(3, 0), (3, 1), (3, 2), (0, 3), (1, 3), (2, 3)],
+                [(r, c) for r in range(3) for c in range(3)],
+            ),
+            (
+                508,
+                "② 银边：需要 9 颗子",
+                "借 1 条天然盘边",
+                "效率 1.00 目/子",
+                BLUE,
+                BLUE_SOFT,
+                # 3x3 empty at rows 0..2, cols 2..4 -> stones at col 1 (0..2), row 3 (2..4), col 5 (0..2) -> 9 stones!
+                [(0, 1), (1, 1), (2, 1), (3, 2), (3, 3), (3, 4), (0, 5), (1, 5), (2, 5)],
+                [(r, c) for r in range(3) for c in range(2, 5)],
+            ),
+            (
+                626,
+                "③ 草肚皮：要 12 颗子",
+                "四面漏风无边可借",
+                "效率 0.75 目/子",
+                ORANGE,
+                ORANGE_SOFT,
+                # 3x3 empty at rows 2..4, cols 2..4 -> 4 sides * 3 = 12 stones!
+                [(1, 2), (1, 3), (1, 4), (5, 2), (5, 3), (5, 4), (2, 1), (3, 1), (4, 1), (2, 5), (3, 5), (4, 5)],
+                [(r, c) for r in range(2, 5) for c in range(2, 5)],
+            ),
+        ]
+        expected_counts = [6, 9, 12]
+        for idx, (cx0, ctitle, csub, ceff, col, bg, stones, empties) in enumerate(cases):
+            assert len(stones) == expected_counts[idx] and len(empties) == 9
+            # Verify every empty point is strictly enclosed inside the 7x7 grid by stones + board boundary!
+            stone_set = set(stones)
+            empty_set = set(empties)
+            for er, ec in empty_set:
+                for dr, dc in ((-1, 0), (1, 0), (0, -1), (0, 1)):
+                    nr, nc = er + dr, ec + dc
+                    if 0 <= nr < 7 and 0 <= nc < 7:
+                        assert (nr, nc) in empty_set or (nr, nc) in stone_set
+
+            els.append(card(cx0, 112, 106, 214, rx=7, fill=bg, stroke=col))
+            els.append(txt(cx0 + 53, 130, ctitle, size=9.6, color=col, anchor="middle", weight="700"))
+            ms = 12.2
+            mx0 = cx0 + 16.5
+            my0 = 148
+            _draw_go_grid(els, mx0, my0, 7, ms, pad=7)
+            for er, ec in empties:
+                ex, ey = mx0 + ec * ms, my0 + er * ms
+                els.append(f'<rect x="{ex - 3.1:.1f}" y="{ey - 3.1:.1f}" width="6.2" height="6.2" fill="{col}" opacity="0.88"/>')
+            for sr, sc in stones:
+                els.append(_stone(mx0 + sc * ms, my0 + sr * ms, 4.9, "B"))
+            els.append(txt(cx0 + 53, 248, csub, size=8.9, color=INK, anchor="middle"))
+            els.append(pill(cx0 + 9, 258, ceff, fg=col, bg="#ffffff", border=col, w=88, h=22, size=8.8))
+            els.append(txt(cx0 + 53, 297, f"围 9 空耗 {len(stones)} 子", size=9.0, color=INK, anchor="middle", weight="700"))
+            els.append(txt(cx0 + 53, 314, f"成本比 = {len(stones)/6:.1f}×", size=8.8, color=MUTED, anchor="middle", cls="mono"))
+
+        # Bottom summary box on combinatorics & opening order
+        els.append(card(390, 338, 338, 108, rx=7, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(400, 358, "为什么开局总是“先占角 → 再挂守边 → 最后进中腹”？", size=9.8, color=INK, weight="700"))
+        els.append(txt(400, 377, "1. 周长定律：角借两道墙、边借一道墙，中腹围空贵一倍；", size=8.9, color=BODY))
+        els.append(txt(400, 395, "2. 做活难度：角部五六子即可做两眼，中腹四面易遭搜根；", size=8.9, color=BODY))
+        els.append(txt(400, 413, "3. 组合宇宙：361 点共 3^361 ≈ 1.74×10^172 种涂色，扣去", size=8.9, color=BODY))
+        els.append(txt(400, 431, "   无气死形仍有 2.08×10^170 种合法局面（Tromp, 2016）！", size=8.9, color=BLUE, weight="700"))
+
+        svg = figure(
+            472,
+            "19×19围棋盘361个交叉点坐标与金角银边草肚皮几何效率对比图",
+            "左图精确绘制19×19标准围棋盘361个交叉点、九星位与正中天元(10,10)，标出三线实地线与四线外势线；右图用三块7×7局部棋盘严格证明围出同样3×3=9目空时，角部借两条盘边仅需6子（1.50目/子），边部借一条盘边需9子（1.00目/子），中腹四面漏风需12子（0.75目/子）。",
+            els,
+        )
+        write_svg(SUBDIR, "weiqi-board-geometry-and-zones.svg", svg)
+
+    def _build_liberties_capture_and_forbidden_anim():
+        els = []
+        els.extend(
+            header(
+                "围棋唯一的生死法则：“气”、横竖连接、提子动画与“禁入 vs 反杀”",
+                "整部围棋法典地基只有一句话：棋块紧邻的空交叉点叫“气”，气被堵光（0 气）就必须离开棋盘",
+            )
+        )
+
+        # Top card: Liberties & connectivity across 4 mini-grids
+        els.append(card(16, 74, 728, 174))
+        els.append(step_badge(32, 92, 1, BLUE, BLUE_SOFT))
+        els.append(txt(48, 96, "先认准“气（Liberties）”：只看上下左右直线相邻空点，斜角相挨不算气、也不算相连！", size=11.2, color=PANEL_TITLE, weight="700"))
+
+        lib_demos = [
+            (32, "中腹单子 = 4 口气", {(2, 2): "B"}, (2, 2), 4, "四面畅通最难被围"),
+            (208, "边子 3 气 · 角子 2 气", {(0, 0): "B", (0, 3): "W"}, (0, 0), 2, "贴边少1气，缩角天生仅2气"),
+            (384, "横竖相连 = 共享 6 气", {(2, 1): "B", (2, 2): "B"}, (2, 1), 6, "连成一块同生共死，气数大增"),
+            (560, "斜角尖顶 ≠ 连接！", {(1, 1): "B", (2, 2): "B"}, (1, 1), 4, "两子各自独立算气，可被冲断"),
+        ]
+        for lx, ltitle, bdict, anchor_pt, exp_libs, lnote in lib_demos:
+            grp, libs = _bfs_group_and_liberties(bdict, 5, anchor_pt[0], anchor_pt[1])
+            assert len(libs) == exp_libs
+            els.append(card(lx, 108, 168, 128, rx=7, fill="#fafaf9", stroke=BORDER))
+            els.append(txt(lx + 84, 125, ltitle, size=9.6, color=INK, anchor="middle", weight="700"))
+            gx, gy, gs = lx + 48, 138, 17.5
+            _draw_go_grid(els, gx, gy, 5, gs, pad=6)
+            # If demo 2 also show W's 3 liberties in blue!
+            if len(bdict) == 2 and (0, 3) in bdict:
+                _, wlibs = _bfs_group_and_liberties(bdict, 5, 0, 3)
+                assert len(wlibs) == 3
+                for wr, wc in sorted(wlibs):
+                    els.append(f'<circle cx="{gx + wc * gs:.1f}" cy="{gy + wr * gs:.1f}" r="3.7" fill="#ffffff" stroke="{BLUE}" stroke-width="1.5"/>')
+            for idx_l, (lr, lc) in enumerate(sorted(libs), 1):
+                els.append(f'<circle cx="{gx + lc * gs:.1f}" cy="{gy + lr * gs:.1f}" r="4.0" fill="{GREEN_SOFT}" stroke="{GREEN}" stroke-width="1.5"/>')
+                els.append(txt(gx + lc * gs, gy + lr * gs + 2.8, str(idx_l), size=7.8, color=GREEN, anchor="middle", weight="700"))
+            for (sr, sc), scol in bdict.items():
+                els.append(_stone(gx + sc * gs, gy + sr * gs, 6.4, scol))
+            els.append(txt(lx + 84, 226, lnote, size=8.8, color=MUTED, anchor="middle"))
+
+        # Bottom-Left card: One-shot CSS animation of Atari -> Capture
+        els.append(card(16, 260, 356, 194))
+        els.append(step_badge(32, 278, 2, GREEN, GREEN_SOFT))
+        els.append(txt(48, 282, "打吃与提子动画：堵死最后一口气，整块提出棋盘", size=11.0, color=PANEL_TITLE, weight="700"))
+
+        # 5x5 capture board: White at (2,1),(2,2) surrounded by Black at (1,1),(1,2),(3,1),(3,2),(2,0), last liberty at (2,3)
+        cap_board = {
+            (2, 1): "W",
+            (2, 2): "W",
+            (1, 1): "B",
+            (1, 2): "B",
+            (3, 1): "B",
+            (3, 2): "B",
+            (2, 0): "B",
+        }
+        w_grp, w_libs = _bfs_group_and_liberties(cap_board, 5, 2, 1)
+        assert w_grp == {(2, 1), (2, 2)} and w_libs == {(2, 3)}
+        cap_after = dict(cap_board)
+        cap_after[(2, 3)] = "B"
+        _, w_libs_after = _bfs_group_and_liberties(cap_after, 5, 2, 1)
+        assert len(w_libs_after) == 0
+
+        ax, ay, astep = 42, 314, 24.5
+        _draw_go_grid(els, ax, ay, 5, astep, pad=9)
+        # Static ghost ring on (2,1),(2,2) so after capture fade-out, reader still sees which 2 white stones were lifted!
+        for wr, wc in ((2, 1), (2, 2)):
+            els.append(
+                f'<circle cx="{ax + wc * astep:.1f}" cy="{ay + wr * astep:.1f}" r="8.2" '
+                f'fill="none" stroke="{CRIMSON}" stroke-width="1.3" stroke-dasharray="2.5 2"/>'
+            )
+            els.append(txt(ax + wc * astep, ay + wr * astep + 3.0, "提", size=8.4, color=CRIMSON, anchor="middle", weight="700"))
+
+        # Last liberty marker at (2,3) before Black 6 lands
+        lx_last, ly_last = ax + 3 * astep, ay + 2 * astep
+        els.append(f'<circle cx="{lx_last:.1f}" cy="{ly_last:.1f}" r="5.2" fill="{ORANGE_SOFT}" stroke="{ORANGE}" stroke-width="1.5"/>')
+
+        # Existing 5 Black stones
+        for (sr, sc), scol in cap_board.items():
+            if scol == "B":
+                els.append(_stone(ax + sc * astep, ay + sr * astep, 8.8, "B"))
+        # Animated 2 White stones (fade out after Black 6 lands!)
+        for wr, wc in ((2, 1), (2, 2)):
+            els.append(_stone(ax + wc * astep, ay + wr * astep, 8.8, "W", extra_cls="wq-captured"))
+        # Animated Black move 6 landing at (2,3)
+        els.append(_stone(lx_last, ly_last, 8.8, "B", label="6", extra_cls="wq-killer"))
+
+        # Right side of bottom-left card: step explanation + prisoner tray
+        els.append(card(168, 302, 190, 88, rx=7, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(178, 321, "三步看懂提子（单次动画）：", size=9.6, color=GREEN, weight="700"))
+        els.append(txt(178, 339, "① 叫吃(打吃)：两白仅剩右端 1 口气；", size=9.0, color=INK))
+        els.append(txt(178, 356, "② 紧气：黑 6 落下堵死最后一口气；", size=9.0, color=INK))
+        els.append(txt(178, 373, "③ 提子：白棋 0 气立即提走，留 2 空点！", size=9.0, color=INK, weight="700"))
+
+        # Prisoner tray showing captured 2 white stones
+        els.append(card(168, 398, 190, 44, rx=7, fill="#f8fafc", stroke=BORDER))
+        els.append(txt(178, 424, "黑方提子盒（俘虏）：", size=9.2, color=INK, weight="700"))
+        els.append(_stone(306, 420, 7.5, "W", extra_cls="wq-tray"))
+        els.append(_stone(326, 420, 7.5, "W", extra_cls="wq-tray"))
+        els.append(txt(344, 424, "×2", size=9.4, color=CRIMSON, weight="700", cls="mono"))
+
+        # Bottom-Right card: Suicide forbidden vs Capture-first exception
+        els.append(card(386, 260, 358, 194))
+        els.append(step_badge(402, 278, 3, CRIMSON, CRIMSON_SOFT))
+        els.append(txt(418, 282, "铁律辨析：什么叫“禁入点”？为什么有时又能往虎口里下？", size=10.8, color=PANEL_TITLE, weight="700"))
+
+        # Left sub-panel: Illegal suicide
+        els.append(card(400, 298, 162, 144, rx=7, fill=CRIMSON_SOFT, stroke=CRIMSON))
+        els.append(txt(481, 315, "✗ 非法禁入点（禁止自杀）", size=9.4, color=CRIMSON, anchor="middle", weight="700"))
+        sx1, sy1, ss = 445, 328, 18.0
+        _draw_go_grid(els, sx1, sy1, 5, ss, pad=6)
+        # White cross around (2,2): (1,2),(3,2),(2,1),(2,3) — each W has 3 outer liberties!
+        sui_board = {(1, 2): "W", (3, 2): "W", (2, 1): "W", (2, 3): "W"}
+        for wr, wc in sui_board:
+            els.append(_stone(sx1 + wc * ss, sy1 + wr * ss, 6.6, "W"))
+        # Forbidden X at (2,2)
+        fx, fy = sx1 + 2 * ss, sy1 + 2 * ss
+        els.append(_line(fx - 4.5, fy - 4.5, fx + 4.5, fy + 4.5, stroke=CRIMSON, sw=2.2))
+        els.append(_line(fx - 4.5, fy + 4.5, fx + 4.5, fy - 4.5, stroke=CRIMSON, sw=2.2))
+        els.append(txt(481, 418, "白四子外气充足；黑落 × 处", size=8.7, color=INK, anchor="middle"))
+        els.append(txt(481, 433, "既提不掉白、自己又 0 气 → 禁手", size=8.7, color=CRIMSON, anchor="middle", weight="700"))
+
+        # Right sub-panel: Legal capture ("提子优先于自杀检查")
+        els.append(card(570, 298, 162, 144, rx=7, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(651, 315, "✓ 合法反杀（先提对手！）", size=9.4, color=GREEN, anchor="middle", weight="700"))
+        sx2, sy2 = 615, 328
+        _draw_go_grid(els, sx2, sy2, 5, ss, pad=6)
+        # Corner 3x3 region: White at (0,1),(1,1),(1,0) surrounds (0,0), while Black at (0,2),(1,2),(2,1),(2,0) leaves White with ONLY (0,0) as its last liberty!
+        rev_board = {
+            (0, 1): "W",
+            (1, 1): "W",
+            (1, 0): "W",
+            (0, 2): "B",
+            (1, 2): "B",
+            (2, 1): "B",
+            (2, 0): "B",
+        }
+        w_ring, w_ring_libs = _bfs_group_and_liberties(rev_board, 5, 0, 1)
+        assert len(w_ring) == 3 and w_ring_libs == {(0, 0)}
+        for (rr, rc), rcol in rev_board.items():
+            els.append(_stone(sx2 + rc * ss, sy2 + rr * ss, 6.6, rcol))
+        # Star move at (0,0)
+        els.append(f'<circle cx="{sx2:.1f}" cy="{sy2:.1f}" r="5.5" fill="{GREEN}" stroke="#ffffff" stroke-width="1.2"/>')
+        els.append(txt(sx2, sy2 + 3.0, "1", size=8.2, color="#ffffff", anchor="middle", weight="700"))
+        els.append(txt(651, 418, "白三子只剩角上 1 处最后一口气", size=8.7, color=INK, anchor="middle"))
+        els.append(txt(651, 433, "黑落 1 先拔光白三子，瞬间获气！", size=8.7, color=GREEN, anchor="middle", weight="700"))
+
+        anim_css = """
+  .wq-killer {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: wqDrop 3.2s ease-out 1 forwards;
+  }
+  .wq-captured {
+    animation: wqFadeOut 3.2s ease-in-out 1 forwards;
+  }
+  .wq-tray {
+    animation: wqTrayIn 3.2s ease-out 1 forwards;
+  }
+  @keyframes wqDrop {
+    0%, 28% { opacity: 0; transform: scale(1.35); }
+    42%, 100% { opacity: 1; transform: scale(1); }
+  }
+  @keyframes wqFadeOut {
+    0%, 48% { opacity: 1; }
+    68%, 100% { opacity: 0.12; }
+  }
+  @keyframes wqTrayIn {
+    0%, 55% { opacity: 0.18; }
+    75%, 100% { opacity: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .wq-killer, .wq-tray { animation: none !important; opacity: 1 !important; transform: none !important; }
+    .wq-captured { animation: none !important; opacity: 0.15 !important; }
+  }"""
+
+        svg = figure(
+            468,
+            "围棋气与连接定义、打吃提子单次动画及禁入点与反杀特例图解",
+            "上排用四块5×5棋盘展示中腹4气、边3气角2气、横竖相连共享6气以及斜角相挨不算相连；左下通过单次CSS动画展示黑6堵死两颗白子最后一口气并将其提入俘虏盒（兼容减少动态效果）；右下对比外气充足时的自杀禁入点与敌方仅剩最后1口气时的合法提子反杀。",
+            els,
+            extra_css=anim_css,
+        )
+        write_svg(SUBDIR, "liberties-capture-and-forbidden-anim.svg", svg)
+
+    def _build_two_eyes_seki_and_ko_fight():
+        els = []
+        els.extend(
+            header(
+                "从一条“气”规则长出的三大神仙推论：两只真眼永生、双活与打劫",
+                "规则书根本不用专门规定“两眼活棋”——只要不能自杀、每手只能下一子，两只独立真眼就天然杀不死",
+            )
+        )
+
+        # Panel 1 (Top-Left): Two true eyes vs One false eye
+        els.append(card(16, 74, 360, 192))
+        els.append(step_badge(32, 92, 1, GREEN, GREEN_SOFT))
+        els.append(txt(48, 96, "为什么必须“两只真眼”才永生？真眼 vs 假眼", size=11.0, color=PANEL_TITLE, weight="700"))
+
+        # Left 6x5 mini-grid: Corner Black group with TWO separate eyes at (0,0) and (0,2)!
+        # Black stones at: (0,1), (1,0), (1,1), (1,2), (1,3), (0,3) -> encloses (0,0)=A and (0,2)=B!
+        # Surrounded outside by White at (2,0),(2,1),(2,2),(2,3),(2,4),(1,4),(0,4) so Black has ZERO outer liberties!
+        eye_board = {
+            (0, 1): "B",
+            (1, 0): "B",
+            (1, 1): "B",
+            (1, 2): "B",
+            (1, 3): "B",
+            (0, 3): "B",
+            (2, 0): "W",
+            (2, 1): "W",
+            (2, 2): "W",
+            (2, 3): "W",
+            (2, 4): "W",
+            (1, 4): "W",
+            (0, 4): "W",
+        }
+        b_grp, b_libs = _bfs_group_and_liberties(eye_board, 5, 0, 1)
+        assert len(b_grp) == 6 and b_libs == {(0, 0), (0, 2)}
+
+        els.append(card(28, 110, 162, 144, rx=7, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(109, 126, "✓ 两只真眼 A、B = 铁活棋", size=9.3, color=GREEN, anchor="middle", weight="700"))
+        ex1, ey1, es = 58, 140, 17.5
+        _draw_go_grid(els, ex1, ey1, 5, es, pad=6)
+        for (rr, rc), rcol in eye_board.items():
+            els.append(_stone(ex1 + rc * es, ey1 + rr * es, 6.4, rcol))
+        for lbl_e, ec in (("A", 0), ("B", 2)):
+            els.append(f'<circle cx="{ex1 + ec * es:.1f}" cy="{ey1:.1f}" r="5.0" fill="#ffffff" stroke="{GREEN}" stroke-width="1.6"/>')
+            els.append(txt(ex1 + ec * es, ey1 + 3.0, lbl_e, size=8.2, color=GREEN, anchor="middle", weight="700"))
+        els.append(txt(109, 226, "白填 A 黑剩 B 气；白填 B 黑剩 A 气", size=8.4, color=INK, anchor="middle"))
+        els.append(txt(109, 241, "两处对白皆禁入点 → 永远杀不死！", size=8.5, color=GREEN, anchor="middle", weight="700"))
+
+        # Right mini-grid: False eye! Eye at (0,2) has stone (1,2) replaced by White (1,2) & (1,3), leaving Black (0,3) isolated in Atari!
+        false_board = {
+            (0, 1): "B",
+            (1, 0): "B",
+            (1, 1): "B",
+            (0, 3): "B",
+            (1, 2): "W",
+            (1, 3): "W",
+            (0, 4): "W",
+            (2, 0): "W",
+            (2, 1): "W",
+        }
+        _, iso_libs = _bfs_group_and_liberties(false_board, 5, 0, 3)
+        assert iso_libs == {(0, 2)}
+        els.append(card(198, 110, 166, 144, rx=7, fill=CRIMSON_SOFT, stroke=CRIMSON))
+        els.append(txt(281, 126, "✗ 断点未连 = 假眼必死！", size=9.3, color=CRIMSON, anchor="middle", weight="700"))
+        ex2, ey2 = 230, 140
+        _draw_go_grid(els, ex2, ey2, 5, es, pad=6)
+        for (rr, rc), rcol in false_board.items():
+            els.append(_stone(ex2 + rc * es, ey2 + rr * es, 6.4, rcol))
+        els.append(txt(ex2, ey2 + 3.0, "真", size=8.0, color=GREEN, anchor="middle", weight="700"))
+        els.append(f'<circle cx="{ex2 + 2 * es:.1f}" cy="{ey2:.1f}" r="5.2" fill="#ffffff" stroke="{CRIMSON}" stroke-width="1.5"/>')
+        els.append(txt(ex2 + 2 * es, ey2 + 3.0, "假", size=8.0, color=CRIMSON, anchor="middle", weight="700"))
+        els.append(txt(281, 226, "右上黑一子被卡住只剩“假”处1气", size=8.4, color=INK, anchor="middle"))
+        els.append(txt(281, 241, "白可直接提掉它 → 黑只剩1眼净死", size=8.5, color=CRIMSON, anchor="middle", weight="700"))
+
+        # Panel 2 (Top-Right): Seki (Mutual Life / 双活)
+        els.append(card(388, 74, 356, 192))
+        els.append(step_badge(404, 92, 2, PURPLE, PURPLE_SOFT))
+        els.append(txt(420, 96, "双活（Seki）：都没两只眼，凭什么谁都不死？", size=11.0, color=PANEL_TITLE, weight="700"))
+
+        # Exact 5x5 Seki in corner:
+        # Black chain: (0,1),(1,1),(2,0) — wait: (2,0) not orthogonal to (1,1). Let's make 100% connected chains!
+        # Black 3-stone chain: (0,1),(1,1),(1,0)? If (0,0) and (0,2) are empty? Let's construct cleanly:
+        # Row 0..1, Col 0..2 (6 points total inside an outer White/Black wall):
+        # Black chain at (0,0),(1,0),(1,1) -> 3 connected B stones!
+        # White chain at (0,2),(0,3),(1,3) -> 3 connected W stones!
+        # Shared empty points ("公气"): (0,1) and (1,2)!!
+        # Outer wall sealing Black & White from outside liberties:
+        # Row 2: White at (2,0),(2,1) sealing Black from below; Black at (2,2),(2,3),(2,4),(1,4),(0,4) sealing White from right/below!
+        seki_b = {
+            # Inner Black 3-stone chain
+            (0, 0): "B",
+            (1, 0): "B",
+            (1, 1): "B",
+            # Inner White 3-stone chain
+            (0, 2): "W",
+            (0, 3): "W",
+            (1, 3): "W",
+            # Outer White wall below inner Black (has plenty of outer liberties on row 3/4)
+            (2, 0): "W",
+            (2, 1): "W",
+            (3, 0): "W",
+            # Outer Black wall around inner White (has plenty of outer liberties on row 3/4)
+            (2, 2): "B",
+            (2, 3): "B",
+            (2, 4): "B",
+            (1, 4): "B",
+            (0, 4): "B",
+        }
+        in_b_grp, in_b_libs = _bfs_group_and_liberties(seki_b, 5, 0, 0)
+        in_w_grp, in_w_libs = _bfs_group_and_liberties(seki_b, 5, 0, 2)
+        assert in_b_grp == {(0, 0), (1, 0), (1, 1)} and in_b_libs == {(0, 1), (1, 2)}
+        assert in_w_grp == {(0, 2), (0, 3), (1, 3)} and in_w_libs == {(0, 1), (1, 2)}
+
+        kx, ky, ks = 414, 128, 22.0
+        _draw_go_grid(els, kx, ky, 5, ks, pad=8)
+        for (rr, rc), rcol in seki_b.items():
+            els.append(_stone(kx + rc * ks, ky + rr * ks, 7.8, rcol))
+        for pname, (pr, pc) in (("公1", (0, 1)), ("公2", (1, 2))):
+            els.append(f'<circle cx="{kx + pc * ks:.1f}" cy="{ky + pr * ks:.1f}" r="6.4" fill="{PURPLE_SOFT}" stroke="{PURPLE}" stroke-width="1.6"/>')
+            els.append(txt(kx + pc * ks, ky + pr * ks + 2.8, pname, size=7.6, color=PURPLE, anchor="middle", weight="700"))
+
+        els.append(card(526, 114, 206, 138, rx=7, fill=PURPLE_SOFT, stroke=PURPLE))
+        els.append(txt(535, 133, "博弈死锁（纳什均衡）：", size=9.4, color=PURPLE, weight="700"))
+        els.append(txt(535, 152, "• 里圈三黑与三白都无真眼，", size=8.6, color=INK))
+        els.append(txt(535, 169, "  恰好共享两口公气(公1、公2)；", size=8.6, color=INK))
+        els.append(txt(535, 188, "• 若黑贪心落“公1”紧白气，黑", size=8.6, color=INK))
+        els.append(txt(535, 205, "  瞬间只剩“公2”一气被白反提！", size=8.6, color=CRIMSON, weight="700"))
+        els.append(txt(535, 224, "• 白先动手同理自毙 → 谁都不填", size=8.6, color=INK))
+        els.append(txt(535, 241, "  停手共存，两块都算活棋！", size=8.8, color=PURPLE, weight="700"))
+
+        # Panel 3 (Bottom full-width): Ko fight 4-stage strip
+        els.append(card(16, 278, 728, 184))
+        els.append(step_badge(32, 296, 3, ORANGE, ORANGE_SOFT))
+        els.append(txt(48, 300, "打劫（Ko）与“禁止全局同形”：两张虎口互咬时，为什么不许立刻提回来？", size=11.0, color=PANEL_TITLE, weight="700"))
+
+        # Standard 4x4 Ko shape:
+        # Black tiger mouth: (0,1), (1,0), (2,1); White tiger mouth: (0,2), (1,3), (2,2)
+        # Before Black captures: White stone at (1,1), empty at (1,2)!
+        # Move 1: Black plays (1,2), capturing White (1,1)!
+        # Immediate White (1,1) is FORBIDDEN because it recreates exact previous board!
+        ko_base = {
+            (0, 1): "B",
+            (1, 0): "B",
+            (2, 1): "B",
+            (0, 2): "W",
+            (1, 3): "W",
+            (2, 2): "W",
+        }
+        ko_stages = [
+            (32, "① 提劫前初始形", ko_base | {(1, 1): "W"}, (1, 2), "黑瞄准虎口准备提一子", BLUE),
+            (210, "② 黑 1 提劫！", ko_base | {(1, 2): "B"}, (1, 1), "白子被提，但白禁立即回提×", CRIMSON),
+            (388, "③ 寻劫与应劫", ko_base | {(1, 2): "B", (3, 0): "W", (3, 3): "B"}, None, "白2他处造劫材 → 黑3应一手", ORANGE),
+            (566, "④ 全局已变：白4回提！", ko_base | {(1, 1): "W", (3, 0): "W", (3, 3): "B"}, (1, 2), "盘面多了2、3两子，合法回提", GREEN),
+        ]
+        for sx, stitle, sboard, mark_pt, snote, scol in ko_stages:
+            els.append(card(sx, 314, 164, 136, rx=7, fill="#fafaf9", stroke=scol))
+            els.append(txt(sx + 82, 330, stitle, size=9.3, color=scol, anchor="middle", weight="700"))
+            gx, gy, gs = sx + 49, 344, 21.5
+            _draw_go_grid(els, gx, gy, 4, gs, pad=6)
+            for (rr, rc), rcol in sboard.items():
+                lbl = None
+                if stitle.startswith("②") and (rr, rc) == (1, 2):
+                    lbl = "1"
+                elif stitle.startswith("③") and (rr, rc) == (3, 0):
+                    lbl = "2"
+                elif stitle.startswith("③") and (rr, rc) == (3, 3):
+                    lbl = "3"
+                elif stitle.startswith("④") and (rr, rc) == (1, 1):
+                    lbl = "4"
+                els.append(_stone(gx + rc * gs, gy + rr * gs, 7.4, rcol, label=lbl))
+            if mark_pt is not None:
+                mr, mc = mark_pt
+                mx, my = gx + mc * gs, gy + mr * gs
+                if stitle.startswith("②"):
+                    els.append(_line(mx - 4.5, my - 4.5, mx + 4.5, my + 4.5, stroke=CRIMSON, sw=2.2))
+                    els.append(_line(mx - 4.5, my + 4.5, mx + 4.5, my - 4.5, stroke=CRIMSON, sw=2.2))
+                else:
+                    els.append(f'<circle cx="{mx:.1f}" cy="{my:.1f}" r="4.2" fill="none" stroke="{scol}" stroke-width="1.5" stroke-dasharray="2.5 2"/>')
+            els.append(txt(sx + 82, 439, snote, size=8.6, color=INK, anchor="middle"))
+
+        svg = figure(
+            476,
+            "围棋两只真眼活棋定理、双活纳什均衡与打劫禁止全局同形四步图解",
+            "左上对比两只独立真眼（白落任一处皆因另一眼尚存气而构成禁入点，故黑永生）与断点未补的假眼死棋；右上展示双方共享两口公气、谁先动手谁自毙的双活（Seki）均衡；下排四步拆解虎口打劫（Ko）：黑1提劫后白禁止立即回提造成全局同形死循环，须先在别处寻劫（白2、黑3改变全局）后方能白4回提。",
+            els,
+        )
+        write_svg(SUBDIR, "two-eyes-seki-and-ko-fight.svg", svg)
+
+    def _build_chinese_vs_japanese_scoring():
+        els = []
+        els.extend(
+            header(
+                "一盘 7×7 终局手把手算胜负：中国“数子法” vs 日韩“数目法”",
+                "为什么两边数法完全不同，算出来的胜负却严丝合缝？为什么黑贴 3¾ 子恰好等于黑贴 7.5 目？",
+            )
+        )
+
+        # Construct an exact 7x7 finished board (49 points):
+        # Columns 0..1 = Black territory (2*7 = 14? Wait: let's make an organic curvy boundary!)
+        # Let's define each point of 7x7 explicitly and verify every stone's liberties & territory reachability!
+        # Let Black occupy a wall of 14 stones enclosing 12 empty points on the left;
+        # Let White occupy a wall of 13 stones enclosing 10 empty points on the right;
+        # Total = 14 B + 12 B_empty + 13 W + 10 W_empty = 49!
+        # Let's lay out row by row (7 rows, cols 0..6):
+        # Row 0: . . B W . . .  -> 2 B_emp, 1 B, 1 W, 3 W_emp? Wait let's check totals per row:
+        # Suppose B_emp per row (7 rows): [2, 2, 2, 2, 2, 1, 1] -> sum = 12 empty points!
+        # Then first B stone per row is at col: [2, 2, 2, 2, 2, 1, 1] (7 B stones on the frontier!)
+        # Plus 7 extra B stones inside/reinforcing (e.g. connecting step & realistic battle stones):
+        # At row 4 col 2 is B, row 5 col 1 is B -> to connect orthogonally, put B at (5, 2) as well!
+        # Wait if B is at (5,2), then (5,1) and (5,2) are both B! Let's write the exact 7x7 grid string and assert everything in Python!
+        grid_rows = [
+            "..BBW..",  # B_emp:2 (0,1), B:2 (2,3), W:1 (4), W_emp:2 (5,6)
+            "..BWW..",  # B_emp:2 (0,1), B:1 (2),   W:2 (3,4), W_emp:2 (5,6)
+            ".BBW...",  # B_emp:1 (0),   B:2 (1,2), W:1 (3), W_emp:3 (4,5,6) -> wait (2,4) touches (1,4)=W and (3,4)=W!
+            "..BBWW.",  # B_emp:2 (0,1), B:2 (2,3), W:2 (4,5), W_emp:1 (6)
+            "..BBW..",  # B_emp:2 (0,1), B:2 (2,3), W:1 (4), W_emp:2 (5,6)
+            ".BBWW..",  # B_emp:1 (0),   B:2 (1,2), W:2 (3,4), W_emp:2 (5,6) -> wait W_emp so far: 2+2+3+1+2+2 = 12? Let's tune!
+            "..BBWW.",
+        ]
+        # Let's craft the exact 7 rows so:
+        # 1) Every empty '.' region on the left touches ONLY 'B', and its size is 12;
+        # 2) Every empty '.' region on the right touches ONLY 'W', and its size is 10;
+        # 3) Count('B') == 14, Count('W') == 13 (14 + 12 + 13 + 10 == 49!);
+        # 4) Every 'B' group and 'W' group has >= 2 liberties!
+        grid_rows = [
+            "..BBWW.",  # B_e:2, B:2, W:2, W_e:1
+            "..BBW..",  # B_e:2, B:2, W:1, W_e:2
+            "..BBW..",  # B_e:2, B:2, W:1, W_e:2
+            "..BBWW.",  # B_e:2, B:2, W:2, W_e:1
+            ".BBWW..",  # B_e:1, B:2, W:2, W_e:2
+            "..BBWW.",  # B_e:2, B:2, W:2, W_e:1
+            ".BBWWW.",  # B_e:1, B:2, W:3, W_e:1
+        ]
+        # Wait let's check every empty point's orthogonal neighbors in grid_rows!
+        # In row 4 ".BBWW..", (4,5) has neighbor (3,5)='W', (5,5)='W', (4,4)='W', (4,6)='.'!
+        # Wait what about (3,1)='.' above (4,1)='B', and (4,0)='.' left of (4,1)='B' -> only touches B and '.'!
+        # What about (1,5)='.' below (0,5)='W'? Touches W and '.'!
+        # Let's verify programmatically with strict assertions!
+        b_stones = set()
+        w_stones = set()
+        b_dict = {}
+        for r, row in enumerate(grid_rows):
+            assert len(row) == 7
+            for c, ch in enumerate(row):
+                if ch == "B":
+                    b_stones.add((r, c))
+                    b_dict[(r, c)] = "B"
+                elif ch == "W":
+                    w_stones.add((r, c))
+                    b_dict[(r, c)] = "W"
+        assert len(b_stones) == 14 and len(w_stones) == 13
+
+        # Check all stones have liberties >= 2
+        for r, c in b_stones | w_stones:
+            _, libs = _bfs_group_and_liberties(b_dict, 7, r, c)
+            assert len(libs) >= 2
+
+        # Flood-fill empty regions to verify pure territory ownership!
+        b_terr = set()
+        w_terr = set()
+        for r in range(7):
+            for c in range(7):
+                if (r, c) in b_dict:
+                    continue
+                # BFS through empty points to see what stone colors are reached
+                seen_e = set()
+                reached_colors = set()
+                st = [(r, c)]
+                while st:
+                    er, ec = st.pop()
+                    if (er, ec) in seen_e:
+                        continue
+                    seen_e.add((er, ec))
+                    for dr, dc in ((-1, 0), (1, 0), (0, -1), (0, 1)):
+                        nr, nc = er + dr, ec + dc
+                        if 0 <= nr < 7 and 0 <= nc < 7:
+                            if (nr, nc) in b_dict:
+                                reached_colors.add(b_dict[(nr, nc)])
+                            elif (nr, nc) not in seen_e:
+                                st.append((nr, nc))
+                assert len(reached_colors) == 1, f"Neutral point found at {(r, c)}: {reached_colors}"
+                if "B" in reached_colors:
+                    b_terr.add((r, c))
+                else:
+                    w_terr.add((r, c))
+
+        assert len(b_terr) == 12 and len(w_terr) == 10
+        assert len(b_stones) + len(b_terr) + len(w_stones) + len(w_terr) == 49
+        # Game history check: 15 moves each (total 30 moves played, 0 passes in main sequence):
+        # Black played 15 stones, 1 captured by White -> 14 on board!
+        # White played 15 stones, 2 captured by Black -> 13 on board!
+        # Chinese Area Score: Black = 14 + 12 = 26, White = 13 + 10 = 23 -> Black - 24.5 = +1.5 stones (diff = +3)!
+        # Japanese Territory Score: Black = 12 + 2 prisoners = 14, White = 10 + 1 prisoner = 11 -> diff = +3 points!
+        assert (len(b_stones) + len(b_terr)) - (len(w_stones) + len(w_terr)) == 3
+        assert (len(b_terr) + 2) - (len(w_terr) + 1) == 3
+
+        # Left card: 7x7 finished board + prisoners
+        els.append(card(16, 74, 294, 390))
+        els.append(step_badge(32, 92, 1, BLUE, BLUE_SOFT))
+        els.append(txt(48, 96, "终局棋盘实况（7×7 共 49 点，单官已收完）", size=10.8, color=PANEL_TITLE, weight="700"))
+
+        gx, gy, gs = 56, 130, 30.0
+        _draw_go_grid(els, gx, gy, 7, gs, pad=12, stars=[(3, 3)])
+        for idx_e, (er, ec) in enumerate(sorted(b_terr), 1):
+            ex, ey = gx + ec * gs, gy + er * gs
+            els.append(f'<rect x="{ex - 5.2:.1f}" y="{ey - 5.2:.1f}" width="10.4" height="10.4" rx="2" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.3"/>')
+            els.append(txt(ex, ey + 3.0, str(idx_e), size=7.6, color=BLUE, anchor="middle", weight="700", cls="mono"))
+        for idx_w, (er, ec) in enumerate(sorted(w_terr), 1):
+            ex, ey = gx + ec * gs, gy + er * gs
+            els.append(f'<rect x="{ex - 5.2:.1f}" y="{ey - 5.2:.1f}" width="10.4" height="10.4" rx="2" fill="{ORANGE_SOFT}" stroke="{ORANGE}" stroke-width="1.3"/>')
+            els.append(txt(ex, ey + 3.0, str(idx_w), size=7.6, color=ORANGE, anchor="middle", weight="700", cls="mono"))
+        for sr, sc in sorted(b_stones):
+            els.append(_stone(gx + sc * gs, gy + sr * gs, 10.6, "B"))
+        for sr, sc in sorted(w_stones):
+            els.append(_stone(gx + sc * gs, gy + sr * gs, 10.6, "W"))
+
+        # Prisoner trays under 7x7 board
+        els.append(card(32, 362, 262, 88, rx=7, fill="#f8fafc", stroke=BORDER))
+        els.append(txt(44, 382, "对局记录：黑白各下 15 手（盘面无单官）", size=9.2, color=INK, weight="700"))
+        els.append(txt(44, 403, "• 黑方俘虏盒（提掉的白死子）：", size=9.0, color=BODY))
+        els.append(_stone(228, 399, 6.8, "W"))
+        els.append(_stone(246, 399, 6.8, "W"))
+        els.append(txt(262, 403, "2 颗", size=9.0, color=BLUE, weight="700"))
+        els.append(txt(44, 426, "• 白方俘虏盒（提掉的黑死子）：", size=9.0, color=BODY))
+        els.append(_stone(228, 422, 6.8, "B"))
+        els.append(txt(262, 426, "1 颗", size=9.0, color=ORANGE, weight="700"))
+
+        # Right-Top card: Chinese Area Scoring vs Japanese Territory Scoring
+        els.append(card(322, 74, 422, 212))
+        els.append(step_badge(338, 92, 2, GREEN, GREEN_SOFT))
+        els.append(txt(354, 96, "同一盘棋两种数法（先不计贴目）：结果分毫不差！", size=11.0, color=PANEL_TITLE, weight="700"))
+
+        # Sub-card A: Chinese Rules
+        els.append(card(336, 112, 192, 160, rx=7, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(432, 130, "中国规则 · 数子法（算占地总面积）", size=9.5, color=BLUE, anchor="middle", weight="700"))
+        els.append(txt(346, 150, "口诀：活子 + 围空（俘虏死子不用管）", size=8.8, color=INK, weight="700"))
+        els.append(txt(346, 170, "• 黑总子数 = 14 活子 + 12 空 = 26 子", size=8.9, color=BLUE, weight="700"))
+        els.append(txt(346, 188, "• 白总子数 = 13 活子 + 10 空 = 23 子", size=8.9, color=BODY))
+        els.append(txt(346, 206, "• 棋盘半数（归本数）= 49 ÷ 2 = 24.5", size=8.8, color=MUTED))
+        els.append(pill(346, 218, "黑超半数 26-24.5 = +1.5 子", fg=BLUE, bg="#ffffff", border=BLUE, w=172, h=24, size=8.9))
+        els.append(txt(432, 258, "（黑白总地盘差 26 - 23 = +3 点）", size=8.6, color=INK, anchor="middle"))
+
+        # Sub-card B: Japanese/Korean Rules
+        els.append(card(538, 112, 192, 160, rx=7, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(634, 130, "日韩规则 · 数目法（算净围空+俘虏）", size=9.5, color=GREEN, anchor="middle", weight="700"))
+        els.append(txt(548, 150, "口诀：围空 + 提子（或死子回填敌空）", size=8.8, color=INK, weight="700"))
+        els.append(txt(548, 170, "• 黑总目数 = 12 围空 + 2 俘虏 = 14 目", size=8.9, color=GREEN, weight="700"))
+        els.append(txt(548, 188, "• 白总目数 = 10 围空 + 1 俘虏 = 11 目", size=8.9, color=BODY))
+        els.append(txt(548, 206, "• 直接相减比谁净目多：14 vs 11", size=8.8, color=MUTED))
+        els.append(pill(548, 218, "黑净胜 14 - 11 = +3 目！", fg=GREEN, bg="#ffffff", border=GREEN, w=172, h=24, size=8.9))
+        els.append(txt(634, 258, "（1.5 子 × 2 = 3 目，完全等价！）", size=8.6, color=GREEN, anchor="middle", weight="700"))
+
+        # Right-Bottom card: 19x19 Komi formula (3.75 stones == 7.5 points)
+        els.append(card(322, 298, 422, 166))
+        els.append(step_badge(338, 316, 3, ORANGE, ORANGE_SOFT))
+        els.append(txt(354, 320, "秒懂 19 路大赛播报：为什么“黑贴 3¾ 子”就是“黑贴 7.5 目”？", size=10.8, color=PANEL_TITLE, weight="700"))
+        els.append(card(338, 334, 390, 42, rx=6, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(
+            txt(
+                533,
+                352,
+                "恒等式：黑子 + 白子 = 361  ⇒  黑白差 (黑 - 白) = 2 × (黑 - 180.5)",
+                size=9.4,
+                color=ORANGE,
+                anchor="middle",
+                weight="700",
+                cls="mono",
+            )
+        )
+        els.append(txt(533, 369, "数子算“单方超半数 (黑 - 180.5)”；数目算“双方净差 (黑 - 白)”，恰好差 2 倍！", size=8.5, color=INK, anchor="middle"))
+
+        els.append(txt(338, 395, "• 中国规则（2002）：黑贴 3¾ 子（3.75 子），过关线 = 180.5 + 3.75 = 184.25 子：", size=8.7, color=BODY))
+        els.append(txt(348, 414, "— 黑数 185 子：185 - 184.25 = 黑胜 ¾ 子（×2 即黑胜 1.5 目！）", size=8.9, color=GREEN, weight="700"))
+        els.append(txt(348, 432, "— 黑数 184 子：184 - 184.25 = 黑负 ¼ 子，即白胜 ¼ 子（白胜 0.5 目！）", size=8.9, color=CRIMSON, weight="700"))
+        els.append(txt(338, 451, "• 日韩规则：现行黑贴 6.5 目；应氏规则：黑贴 8 点（平点白胜，等效 7.5 目）。", size=8.6, color=MUTED))
+
+        svg = figure(
+            478,
+            "7×7围棋终局数子法与数目法逐点核算及19路黑贴3又4分之3子换算图",
+            "左图构造一盘单官收完的7×7终局（黑14活子围12空提2白子，白13活子围10空提1黑子）；右上严格对比中国数子法（黑26子超半数24.5达+1.5子）与日韩数目法（黑14目减白11目净胜+3目），证明1子差等于2目差；右下推导19路361点黑贴3.75子（185子黑胜、184子白胜）与黑贴7.5目的精确2倍关系。",
+            els,
+        )
+        write_svg(SUBDIR, "chinese-vs-japanese-scoring-7x7.svg", svg)
+
+    def _build_history_and_alphago():
+        els = []
+        els.extend(
+            header(
+                "两千五百年棋道演进与 AI 破壁：从 17 道石盘、废除座子到 AlphaGo",
+                "为什么国际象棋 1997 年就被深蓝攻克，而规则更简单的围棋却让人类顶尖棋手多守了整整 19 年？",
+            )
+        )
+
+        # Top card: 5 historical milestones
+        els.append(card(16, 74, 728, 186))
+        els.append(step_badge(32, 92, 1, BLUE, BLUE_SOFT))
+        els.append(txt(48, 96, "围棋形制与规则的五次历史定型（史料与考古实物双重印证）", size=11.2, color=PANEL_TITLE, weight="700"))
+
+        milestones = [
+            (30, "公元前548年", "先秦文献定名", ["《左传》襄公二十五年", "首载“弈者举棋不定”；", "《孟子》记国手弈秋，", "早期称“弈”后称围棋。"], BLUE, BLUE_SOFT),
+            (172, "东汉—魏晋", "17×17 道石棋盘", ["河北望都东汉墓出土", "17道石盘（289点）；", "班固《弈旨》首论棋理，", "《艺经》载纵横十七道。"], GOLD, GOLD_SOFT),
+            (314, "南北朝—隋唐", "19×19 道与十决", ["北周《敦煌碁经》载", "“三百六十一道”；安阳", "隋张盛墓(595)出白瓷盘；", "唐王积薪撰《围棋十决》。"], GREEN, GREEN_SOFT),
+            (456, "17世纪—20世纪", "废座子·新布局·贴目", ["古棋先摆4颗星位座子；", "江户日本改空盘自由下，", "1933吴清源掀起新布局，", "现代确立先行贴目制。"], PURPLE, PURPLE_SOFT),
+            (598, "2016—2017", "AlphaGo 零知识破壁", ["2016 胜李世石(4:1)，", "第37手五路肩冲惊天下；", "2017 Zero 仅凭基本规则", "自博弈 100:0 完胜前代！"], CRIMSON, CRIMSON_SOFT),
+        ]
+        # Horizontal timeline spine behind cards
+        els.append(_line(90, 134, 670, 134, stroke=BORDER, sw=2.2))
+        for mx, myear, mtitle, mlines, mcol, mbg in milestones:
+            els.append(card(mx, 112, 134, 134, rx=7, fill=mbg, stroke=mcol))
+            els.append(pill(mx + 12, 118, myear, fg=mcol, bg="#ffffff", border=mcol, w=110, h=20, size=8.5))
+            els.append(txt(mx + 67, 154, mtitle, size=9.5, color=INK, anchor="middle", weight="700"))
+            for li, ln in enumerate(mlines):
+                els.append(txt(mx + 67, 173 + li * 16, ln, size=8.5, color=BODY, anchor="middle"))
+
+        # Bottom-Left card: Why Chess fell in 1997 while Go held until 2016
+        els.append(card(16, 272, 434, 182))
+        els.append(step_badge(32, 290, 2, ORANGE, ORANGE_SOFT))
+        els.append(txt(48, 294, "计算鸿沟：为什么暴力穷举在围棋面前彻底失效？", size=11.0, color=PANEL_TITLE, weight="700"))
+
+        # Log10 comparison bars:
+        # Chess legal states ~10^44, Observable Universe Atoms ~10^80, Go legal states 2.08x10^170!
+        bars = [
+            ("国际象棋合法局面 (~10^44)", 44, SLATE, "1997“深蓝”靠每秒2亿步α-β剪枝攻克"),
+            ("可观测宇宙原子总数 (~10^80)", 80, BLUE, "全宇宙物质颗粒加起来也才80个零"),
+            ("19路围棋精确合法局面 (2.08×10^170)", 170.3, CRIMSON, "足足171位十进制数！每步约250种选点"),
+        ]
+        max_log = 180.0
+        for bi, (blabel, blog, bcol, bnote) in enumerate(bars):
+            by0 = 316 + bi * 44
+            els.append(txt(34, by0, blabel, size=9.2, color=INK, weight="700"))
+            bw = (blog / max_log) * 392.0
+            els.append(f'<rect x="34" y="{by0 + 6:.1f}" width="396" height="12" rx="6" fill="{SLATE_SOFT}"/>')
+            els.append(f'<rect x="34" y="{by0 + 6:.1f}" width="{bw:.1f}" height="12" rx="6" fill="{bcol}"/>')
+            els.append(txt(38, by0 + 30, bnote, size=8.5, color=MUTED))
+
+        # Bottom-Right card: AlphaGo's Move 37 & Twin-Network MCTS insight
+        els.append(card(462, 272, 282, 182))
+        els.append(step_badge(478, 290, 3, GREEN, GREEN_SOFT))
+        els.append(txt(494, 294, "AI 怎么看懂围棋？直觉 + 算路 + 第37手", size=10.8, color=PANEL_TITLE, weight="700"))
+
+        # Mini 6x6 right-side slice showing famous fifth-line shoulder hit ("五路肩冲" Move 37 concept)
+        mx0, my0, mstep = 476, 322, 18.0
+        _draw_go_grid(els, mx0, my0, 6, mstep, pad=7, stars=[(3, 3)])
+        # White stone on 4th line (row 3, col 2 from edge -> let's use col 3 as 4th line from right edge col 5: col index 5 is 1st line, col 4 is 2nd, col 3 is 3rd, col 2 is 4th, col 1 is 5th!)
+        # Let's place White at (3, 2) [4th line] and Black Move 37 shoulder hit at (2, 1) [5th line!]
+        els.append(_stone(mx0 + 2 * mstep, my0 + 2 * mstep, 6.6, "W"))
+        els.append(_stone(mx0 + 3 * mstep, my0 + 4 * mstep, 6.6, "W"))
+        els.append(_stone(mx0 + 2 * mstep, my0 + 0 * mstep, 6.6, "B"))
+        els.append(_stone(mx0 + 1 * mstep, my0 + 1 * mstep, 7.0, "B", label="37", label_color="#fde68a"))
+        els.append(f'<circle cx="{mx0 + 1 * mstep:.1f}" cy="{my0 + 1 * mstep:.1f}" r="9.2" fill="none" stroke="{CRIMSON}" stroke-width="1.4" stroke-dasharray="2.5 2"/>')
+
+        els.append(txt(588, 326, "破局三剑客：", size=9.3, color=GREEN, weight="700"))
+        els.append(txt(588, 344, "1. 策略网络：像人类棋感，", size=8.6, color=INK))
+        els.append(txt(588, 359, "   从250点筛出几步好点；", size=8.6, color=INK))
+        els.append(txt(588, 377, "2. 价值网络：不数子力，直", size=8.6, color=INK))
+        els.append(txt(588, 392, "   接评估整盘胜率厚薄；", size=8.6, color=INK))
+        els.append(txt(588, 410, "3. 树搜索+自博弈：打破", size=8.6, color=INK))
+        els.append(txt(588, 425, "   “布局禁下五路”古训，", size=8.6, color=INK))
+        els.append(txt(588, 440, "   反哺今天人类职业棋坛！", size=8.6, color=CRIMSON, weight="700"))
+
+        svg = figure(
+            468,
+            "围棋两千五百年历史演进时间轴与AlphaGo突破10的170次方状态空间图解",
+            "上排梳理公元前548年《左传》定名、东汉望都墓17道石盘、北周《敦煌碁经》与隋代张盛墓19道瓷盘、江户废除座子与1933新布局及贴目制、直至2016–2017年AlphaGo与AlphaGo Zero的五次跃迁；左下按对数尺度对比国际象棋(~10^44)、可观测宇宙原子(~10^80)与19路围棋精确合法局面(2.08×10^170)；右下解析策略网络+价值网络+MCTS与著名的五路肩冲第37手。",
+            els,
+        )
+        write_svg(SUBDIR, "weiqi-2500-years-to-alphago.svg", svg)
+
+    @register(
+        "weiqi-intro-rules",
+        "围棋入门与规则全景：19路棋盘几何效率、气与提子单次动画、两眼双活与打劫推论、7路终局数子vs数目核算及2500年演进与AlphaGo",
+        "humanities",
+    )
+    def build_weiqi_intro_rules():
+        _build_board_geometry_and_zones()
+        _build_liberties_capture_and_forbidden_anim()
+        _build_two_eyes_seki_and_ko_fight()
+        _build_chinese_vs_japanese_scoring()
+        _build_history_and_alphago()
+
+
 _register_daguanlou_couplet()
 _register_poetry_boom_7080s()
 _register_european_name_patterns()
+_register_weiqi_intro_rules()

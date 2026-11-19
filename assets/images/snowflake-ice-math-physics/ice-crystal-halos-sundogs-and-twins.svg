@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="478" viewBox="0 0 760 478" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">高空六方冰晶60度隔面最小偏向角22度日晕与双幻日折射光路及三大奇异冰晶图解</title>
+<desc id="desc">左图按斯涅尔定律精确计算平行阳光穿过六方冰晶隔面60度夹角的对称最小偏向角21.84度（红光21.5度居内缘、蓝光22.4度居外缘，色散间距略放大示意），对比乱翻滚柱晶形成的22度日晕圆环与水平飘浮板晶形成的左右双幻日；右图解析冠柱晶、30度旋转孪生十二出雪花及内角仍为120度的空气动力切角三角板晶。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="477" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">高空亿万冰晶变身天然三棱镜：22° 日晕、“三日同辉”幻日与十二出双晶奇观</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：隔面 60° 棱角把折射光精准锁死在 21.84° 极值环 ｜ 右：冠柱晶、30° 旋转孪生十二角雪花与三角板晶</text>
+<rect x="22" y="76" width="368" height="388" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="40" cy="98" r="10.5" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.2"/>
+<text x="40" y="102" font-size="11.5" fill="#0284c7" text-anchor="middle" font-weight="700">1</text>
+<text x="58" y="102" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">六棱冰晶 = 顶角 60° 天然三棱镜（22° 日晕与幻日）</text>
+<line x1="92.5" y1="174.8" x2="114.0" y2="137.5" stroke="#475569" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="3 2"/>
+<line x1="135.5" y1="174.8" x2="114.0" y2="137.5" stroke="#475569" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="3 2"/>
+<text x="114.0" y="131.5" font-size="8.8" fill="#0f172a" text-anchor="middle" font-weight="700">隔面顶角 A = 60°</text>
+<path d="M157.0 212.0 L135.5 249.2 L92.5 249.2 L71.0 212.0 L92.5 174.8 L135.5 174.8 Z" fill="#e0f2fe" stroke="#0284c7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="32.9" y1="202.5" x2="82.0" y2="193.0" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round"/>
+<text x="54.9" y="215.5" font-size="8.5" fill="#b45309" text-anchor="middle" font-weight="700">平行阳光</text>
+<line x1="82.0" y1="193.0" x2="188.0" y2="172.5" stroke="#64748b" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="3 3"/>
+<line x1="82.0" y1="193.0" x2="146.0" y2="193.0" stroke="#0284c7" stroke-width="2.3" stroke-linecap="round"/>
+<line x1="146.0" y1="193.0" x2="205.3" y2="202.5" stroke="#dc2626" stroke-width="2.1" stroke-linecap="round"/>
+<line x1="146.0" y1="193.0" x2="204.2" y2="207.8" stroke="#4338ca" stroke-width="2.1" stroke-linecap="round"/>
+<text x="208" y="185.0" font-size="8.8" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">δ_min ≈ 21.84°</text>
+<text x="144" y="276" font-size="8.5" fill="#dc2626" text-anchor="middle" font-weight="700">内红 21.5°  ｜  外蓝 22.4°</text>
+<line x1="260.0" y1="124.0" x2="260.0" y2="282.0" stroke="#e2e8f0" stroke-width="1.0" stroke-linecap="round" stroke-dasharray="3 3"/>
+<circle cx="324.0" cy="196.0" r="48" fill="#0f172a" stroke="#e2e8f0" stroke-width="1.2"/>
+<circle cx="324.0" cy="196.0" r="35.0" fill="none" stroke="#60a5fa" stroke-width="2.4"/>
+<circle cx="324.0" cy="196.0" r="32.8" fill="none" stroke="#f87171" stroke-width="1.7"/>
+<circle cx="324.0" cy="196.0" r="5.0" fill="#fde047" stroke="#f59e0b" stroke-width="1.2"/>
+<line x1="280.0" y1="196.0" x2="368.0" y2="196.0" stroke="#94a3b8" stroke-width="0.8" stroke-linecap="round" stroke-dasharray="2 2"/>
+<circle cx="290.0" cy="196.0" r="4.8" fill="#fef08a" stroke="#f97316" stroke-width="1.3"/>
+<circle cx="358.0" cy="196.0" r="4.8" fill="#fef08a" stroke="#f97316" stroke-width="1.3"/>
+<text x="324.0" y="158.0" font-size="8.0" fill="#bfdbfe" text-anchor="middle" font-weight="700">22° 日晕</text>
+<text x="324.0" y="213.0" font-size="7.6" fill="#94a3b8" text-anchor="middle">圈内偏暗</text>
+<text x="324.0" y="260" font-size="8.4" fill="#c25014" text-anchor="middle" font-weight="700">天幕实景：日晕 + 双幻日</text>
+<rect x="34" y="296" width="344" height="156" rx="7" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="1"/>
+<text x="44" y="315" font-size="9.2" fill="#0284c7" text-anchor="start" font-weight="700">极值聚光公式：δ_min = 2 arcsin(n · sin 30°) − 60° = 21.84°</text>
+<text x="44" y="334" font-size="8.8" fill="#1e293b" text-anchor="start">• 为什么亮成锐利圆环？光线无法折进 &lt;21.8°（晕圈内侧天空偏暗），</text>
+<text x="44" y="352" font-size="8.8" fill="#1e293b" text-anchor="start">  而在极值角 dδ/dθ₁ = 0 处海量光线扎堆汇聚，亮度陡增！</text>
+<text x="44" y="370" font-size="8.8" fill="#dc2626" text-anchor="start" font-weight="600">• 为什么内红外蓝（和彩虹相反）？红光 n=1.306 折得少居内圈！</text>
+<text x="44" y="388" font-size="8.8" fill="#1e293b" text-anchor="start">• 【22° 日晕】= 柱晶空中随机乱翻滚，360° 全方位折出光环；</text>
+<text x="44" y="406" font-size="8.8" fill="#1e293b" text-anchor="start">• 【双幻日】= 直径 &gt;0.1 mm 六角板晶受空气阻力像落叶水平飘浮，</text>
+<text x="44" y="424" font-size="8.8" fill="#0f172a" text-anchor="start" font-weight="600">  只在太阳同高度左右两侧 ≥22° 处射出两团耀眼“假太阳”！</text>
+<rect x="404" y="76" width="334" height="388" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="422" cy="98" r="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="422" y="102" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">2</text>
+<text x="440" y="102" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">不止平面六角星：三大真实奇异冰晶解密</text>
+<rect x="416" y="118" width="310" height="104" rx="7" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
+<path d="M486.0 194.0 L472.0 202.7 L444.0 202.7 L430.0 194.0 L444.0 185.3 L472.0 185.3 Z" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="450.0" y="146.0" width="16" height="48" fill="#dbeafe" stroke="#4338ca" stroke-width="1.6"/>
+<path d="M486.0 146.0 L472.0 154.7 L444.0 154.7 L430.0 146.0 L444.0 137.3 L472.0 137.3 Z" fill="#e0f2fe" stroke="#1d6fa5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="500" y="138" font-size="9.4" fill="#1d6fa5" text-anchor="start" font-weight="700">① 冠柱晶（Capped Column，“工字车轴晶”）</text>
+<text x="500" y="157" font-size="8.8" fill="#1e293b" text-anchor="start">先在 −6°C 云层沿 c 轴长成一段六角短木桩；</text>
+<text x="500" y="175" font-size="8.8" fill="#1e293b" text-anchor="start">随后被气流吹进 −15°C 板晶区，柱子上下两头</text>
+<text x="500" y="193" font-size="8.8" fill="#0f172a" text-anchor="start" font-weight="600">突然横向疯长两片大六角伞盖，立体感十足！</text>
+<rect x="416" y="232" width="310" height="104" rx="7" fill="#f3e8ff" stroke="#d8b4fe" stroke-width="1"/>
+<line x1="458.0" y1="284.0" x2="487.0" y2="284.0" stroke="#4338ca" stroke-width="2.0" stroke-linecap="round"/>
+<line x1="477.0" y1="284.0" x2="480.8" y2="277.5" stroke="#4338ca" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="477.0" y1="284.0" x2="480.8" y2="290.5" stroke="#4338ca" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="458.0" y1="284.0" x2="472.5" y2="309.1" stroke="#4338ca" stroke-width="2.0" stroke-linecap="round"/>
+<line x1="467.5" y1="300.5" x2="475.0" y2="300.5" stroke="#4338ca" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="467.5" y1="300.5" x2="463.8" y2="306.9" stroke="#4338ca" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="458.0" y1="284.0" x2="443.5" y2="309.1" stroke="#4338ca" stroke-width="2.0" stroke-linecap="round"/>
+<line x1="448.5" y1="300.5" x2="452.2" y2="306.9" stroke="#4338ca" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="448.5" y1="300.5" x2="441.0" y2="300.5" stroke="#4338ca" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="458.0" y1="284.0" x2="429.0" y2="284.0" stroke="#4338ca" stroke-width="2.0" stroke-linecap="round"/>
+<line x1="439.0" y1="284.0" x2="435.2" y2="290.5" stroke="#4338ca" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="439.0" y1="284.0" x2="435.2" y2="277.5" stroke="#4338ca" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="458.0" y1="284.0" x2="443.5" y2="258.9" stroke="#4338ca" stroke-width="2.0" stroke-linecap="round"/>
+<line x1="448.5" y1="267.5" x2="441.0" y2="267.5" stroke="#4338ca" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="448.5" y1="267.5" x2="452.2" y2="261.1" stroke="#4338ca" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="458.0" y1="284.0" x2="472.5" y2="258.9" stroke="#4338ca" stroke-width="2.0" stroke-linecap="round"/>
+<line x1="467.5" y1="267.5" x2="463.8" y2="261.1" stroke="#4338ca" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="467.5" y1="267.5" x2="475.0" y2="267.5" stroke="#4338ca" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="458.0" y1="284.0" x2="483.1" y2="298.5" stroke="#6d28d9" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="474.5" y1="293.5" x2="480.9" y2="289.8" stroke="#6d28d9" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="474.5" y1="293.5" x2="474.5" y2="301.0" stroke="#6d28d9" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="458.0" y1="284.0" x2="458.0" y2="313.0" stroke="#6d28d9" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="458.0" y1="303.0" x2="464.5" y2="306.8" stroke="#6d28d9" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="458.0" y1="303.0" x2="451.5" y2="306.8" stroke="#6d28d9" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="458.0" y1="284.0" x2="432.9" y2="298.5" stroke="#6d28d9" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="441.5" y1="293.5" x2="441.5" y2="301.0" stroke="#6d28d9" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="441.5" y1="293.5" x2="435.1" y2="289.8" stroke="#6d28d9" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="458.0" y1="284.0" x2="432.9" y2="269.5" stroke="#6d28d9" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="441.5" y1="274.5" x2="435.1" y2="278.2" stroke="#6d28d9" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="441.5" y1="274.5" x2="441.5" y2="267.0" stroke="#6d28d9" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="458.0" y1="284.0" x2="458.0" y2="255.0" stroke="#6d28d9" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="458.0" y1="265.0" x2="451.5" y2="261.2" stroke="#6d28d9" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="458.0" y1="265.0" x2="464.5" y2="261.2" stroke="#6d28d9" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="458.0" y1="284.0" x2="483.1" y2="269.5" stroke="#6d28d9" stroke-width="1.8" stroke-linecap="round"/>
+<line x1="474.5" y1="274.5" x2="474.5" y2="267.0" stroke="#6d28d9" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="474.5" y1="274.5" x2="480.9" y2="278.2" stroke="#6d28d9" stroke-width="1.2" stroke-linecap="round"/>
+<circle cx="458.0" cy="284.0" r="5.5" fill="#ffffff" stroke="#6d28d9" stroke-width="1.5"/>
+<text x="500" y="252" font-size="9.4" fill="#6d28d9" text-anchor="start" font-weight="700">② 十二出双晶雪花（1637 笛卡尔首记奇观）</text>
+<text x="500" y="271" font-size="8.8" fill="#1e293b" text-anchor="start">绝非推翻六方晶系！而是两颗微小冰晶胚在成核</text>
+<text x="500" y="289" font-size="8.8" fill="#1e293b" text-anchor="start">瞬间共轴叠合，且恰好绕 c 轴错开 30° 晶格匹配</text>
+<text x="500" y="307" font-size="8.8" fill="#0f172a" text-anchor="start" font-weight="600">角（旋转孪晶），6 + 6 同步长出 12 根对称枝！</text>
+<rect x="416" y="346" width="310" height="104" rx="7" fill="#fef1e8" stroke="#fdba74" stroke-width="1"/>
+<path d="M477.6 389.0 L478.2 390.0 L458.6 424.0 L457.4 424.0 L437.8 390.0 L438.4 389.0 Z" fill="#ffedd5" stroke="#c25014" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="458.0" y="405.0" font-size="8.5" fill="#b45309" text-anchor="middle" font-weight="700">120°</text>
+<text x="500" y="366" font-size="9.4" fill="#c25014" text-anchor="start" font-weight="700">③ “假三角”板晶（内角依然严格 120°！）</text>
+<text x="500" y="385" font-size="8.8" fill="#1e293b" text-anchor="start">近 −2°C 或 −14°C 下落时，迎风尾流让其中相隔的</text>
+<text x="500" y="403" font-size="8.8" fill="#1e293b" text-anchor="start">3 条边水汽更足并借分子台阶桥接加速推进，把另</text>
+<text x="500" y="421" font-size="8.8" fill="#0f172a" text-anchor="start" font-weight="600">3 条边挤短成切角正三角形——骨子里仍是六方冰！</text>
+</svg>

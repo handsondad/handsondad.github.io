@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="458" viewBox="0 0 760 458" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">RLVR概率分布锐化单次动画与DeepSeek-R1-Zero顿悟涌现及Pass@k边界对比图</title>
+<desc id="desc">左图通过单次CSS动画演示强化学习如何压低预训练底座中的4条高概率错误捷径（85%降至22%）并将自检纠错与严密推理链从15%浓缩至78%；右图展示DeepSeek-R1-Zero在AIME 2024从15.6%跃升至71.0%及Yue等2025年揭示的大k采样Pass@k交叉边界。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  .rl-bar {
+    animation: growBar 1.6s cubic-bezier(0.22, 1, 0.36, 1) 1 both;
+  }
+  .rl-curve {
+    stroke-dasharray: 420;
+    stroke-dashoffset: 0;
+    animation: drawCurve 1.6s ease-out 1 both;
+  }
+  @keyframes growBar {
+    from { transform: scaleY(0.18); opacity: 0.45; }
+    to { transform: scaleY(1); opacity: 1; }
+  }
+  @keyframes drawCurve {
+    from { stroke-dashoffset: 420; }
+    to { stroke-dashoffset: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .rl-bar, .rl-curve { animation: none; transform: none; }
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="457" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">强化学习是“无中生有”还是“大浪淘金”？概率锐化动画、顿悟涌现与 Pass@k 边界</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：把底座里微弱的正确火种浓缩到首选（单次动画）；右：DeepSeek-R1-Zero 实测跃迁与 NeurIPS 2025 边界检验</text>
+<rect x="18" y="62" width="362" height="382" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="32" y="85" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">① 同一难题 6 类候选思路的概率重排（总和恒为 100%）</text>
+<text x="32" y="104" font-size="10.0" fill="#64748b" text-anchor="start">虚线框 = 预训练底座初始概率；实心柱 = RLVR 后训练分布</text>
+<line x1="56.0" y1="316.0" x2="364.0" y2="316.0" stroke="#475569" stroke-width="1.3"/>
+<text x="50.0" y="320.0" font-size="9.6" fill="#64748b" text-anchor="end">0%</text>
+<line x1="56.0" y1="257.3" x2="364.0" y2="257.3" stroke="#cbd5e1" stroke-width="1.0" stroke-dasharray="3 3"/>
+<text x="50.0" y="261.3" font-size="9.6" fill="#64748b" text-anchor="end">20%</text>
+<line x1="56.0" y1="198.7" x2="364.0" y2="198.7" stroke="#cbd5e1" stroke-width="1.0" stroke-dasharray="3 3"/>
+<text x="50.0" y="202.7" font-size="9.6" fill="#64748b" text-anchor="end">40%</text>
+<line x1="56.0" y1="140.0" x2="364.0" y2="140.0" stroke="#cbd5e1" stroke-width="1.0" stroke-dasharray="3 3"/>
+<text x="50.0" y="144.0" font-size="9.6" fill="#64748b" text-anchor="end">60%</text>
+<rect x="65.0" y="233.9" width="15" height="82.1" rx="3" fill="#f1f5f9" stroke="#475569" stroke-width="1.2" stroke-dasharray="3 2"/>
+<rect class="rl-bar" x="83.0" y="301.3" width="16" height="14.7" rx="3" fill="#c25014" style="transform-origin: 91.0px 316.0px;"/>
+<text x="91.0" y="295.3" font-size="9.4" fill="#c25014" text-anchor="middle" font-weight="700">5%</text>
+<text x="73.0" y="228.9" font-size="8.8" fill="#475569" text-anchor="middle">28%</text>
+<text x="82.0" y="331.0" font-size="9.4" fill="#1e293b" text-anchor="middle" font-weight="400">瞎蒙套</text>
+<text x="82.0" y="344.0" font-size="9.2" fill="#64748b" text-anchor="middle" font-weight="400">公式</text>
+<rect x="115.0" y="245.6" width="15" height="70.4" rx="3" fill="#f1f5f9" stroke="#475569" stroke-width="1.2" stroke-dasharray="3 2"/>
+<rect class="rl-bar" x="133.0" y="298.4" width="16" height="17.6" rx="3" fill="#c25014" style="transform-origin: 141.0px 316.0px;"/>
+<text x="141.0" y="292.4" font-size="9.4" fill="#c25014" text-anchor="middle" font-weight="700">6%</text>
+<text x="123.0" y="240.6" font-size="8.8" fill="#475569" text-anchor="middle">24%</text>
+<text x="132.0" y="331.0" font-size="9.4" fill="#1e293b" text-anchor="middle" font-weight="400">跳步漏</text>
+<text x="132.0" y="344.0" font-size="9.2" fill="#64748b" text-anchor="middle" font-weight="400">分类</text>
+<rect x="165.0" y="260.3" width="15" height="55.7" rx="3" fill="#f1f5f9" stroke="#475569" stroke-width="1.2" stroke-dasharray="3 2"/>
+<rect class="rl-bar" x="183.0" y="301.3" width="16" height="14.7" rx="3" fill="#c25014" style="transform-origin: 191.0px 316.0px;"/>
+<text x="191.0" y="295.3" font-size="9.4" fill="#c25014" text-anchor="middle" font-weight="700">5%</text>
+<text x="173.0" y="255.3" font-size="8.8" fill="#475569" text-anchor="middle">19%</text>
+<text x="182.0" y="331.0" font-size="9.4" fill="#1e293b" text-anchor="middle" font-weight="400">移项算</text>
+<text x="182.0" y="344.0" font-size="9.2" fill="#64748b" text-anchor="middle" font-weight="400">错数</text>
+<rect x="215.0" y="274.9" width="15" height="41.1" rx="3" fill="#f1f5f9" stroke="#475569" stroke-width="1.2" stroke-dasharray="3 2"/>
+<rect class="rl-bar" x="233.0" y="298.4" width="16" height="17.6" rx="3" fill="#c25014" style="transform-origin: 241.0px 316.0px;"/>
+<text x="241.0" y="292.4" font-size="9.4" fill="#c25014" text-anchor="middle" font-weight="700">6%</text>
+<text x="223.0" y="269.9" font-size="8.8" fill="#475569" text-anchor="middle">14%</text>
+<text x="232.0" y="331.0" font-size="9.4" fill="#1e293b" text-anchor="middle" font-weight="400">题干读</text>
+<text x="232.0" y="344.0" font-size="9.2" fill="#64748b" text-anchor="middle" font-weight="400">跑偏</text>
+<rect x="265.0" y="289.6" width="15" height="26.4" rx="3" fill="#f1f5f9" stroke="#475569" stroke-width="1.2" stroke-dasharray="3 2"/>
+<rect class="rl-bar" x="283.0" y="163.5" width="16" height="152.5" rx="3" fill="#18794e" style="transform-origin: 291.0px 316.0px;"/>
+<text x="291.0" y="157.5" font-size="9.4" fill="#18794e" text-anchor="middle" font-weight="700">52%</text>
+<text x="273.0" y="284.6" font-size="8.8" fill="#475569" text-anchor="middle">9%</text>
+<text x="282.0" y="331.0" font-size="9.4" fill="#18794e" text-anchor="middle" font-weight="700">自检纠</text>
+<text x="282.0" y="344.0" font-size="9.2" fill="#18794e" text-anchor="middle" font-weight="700">错链</text>
+<rect x="315.0" y="298.4" width="15" height="17.6" rx="3" fill="#f1f5f9" stroke="#475569" stroke-width="1.2" stroke-dasharray="3 2"/>
+<rect class="rl-bar" x="333.0" y="239.7" width="16" height="76.3" rx="3" fill="#18794e" style="transform-origin: 341.0px 316.0px;"/>
+<text x="341.0" y="233.7" font-size="9.4" fill="#18794e" text-anchor="middle" font-weight="700">26%</text>
+<text x="323.0" y="293.4" font-size="8.8" fill="#475569" text-anchor="middle">6%</text>
+<text x="332.0" y="331.0" font-size="9.4" fill="#18794e" text-anchor="middle" font-weight="700">严密正</text>
+<text x="332.0" y="344.0" font-size="9.2" fill="#18794e" text-anchor="middle" font-weight="700">推链</text>
+<rect x="32" y="356" width="334" height="74" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="44" y="376" font-size="10.8" fill="#18794e" text-anchor="start" font-weight="700">Pass@1（一次答对率）：从底座 15% 飙升至 78%！</text>
+<text x="44" y="395" font-size="10.0" fill="#1e293b" text-anchor="start">• 前 4 条顺嘴错路概率被集体抽干（85% → 22%）；</text>
+<text x="44" y="413" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="700">• 原本仅占 9% 的“算错后喊 Wait 自检重算”跃升为主流习惯(52%)！</text>
+<rect x="392" y="62" width="350" height="382" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="406" y="85" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">② 真实实验：顿悟时刻 vs 能力边界（Pass@k）</text>
+<rect x="406" y="98" width="322" height="134" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="418" y="118" font-size="10.6" fill="#1d6fa5" text-anchor="start" font-weight="700">DeepSeek-R1-Zero 纯 RL 演化（AIME 2024 竞赛）：</text>
+<text x="418" y="140" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="600">初始底座 Pass@1</text>
+<rect x="524" y="129" width="156" height="14" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+<rect x="524" y="129" width="24.3" height="14" rx="4" fill="#475569"/>
+<text x="686" y="140" font-size="9.6" fill="#475569" text-anchor="start" font-weight="700" class="mono">15.6%</text>
+<text x="418" y="164" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="600">纯 RL 后 Pass@1</text>
+<rect x="524" y="153" width="156" height="14" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+<rect x="524" y="153" width="110.8" height="14" rx="4" fill="#1d6fa5"/>
+<text x="686" y="164" font-size="9.6" fill="#1d6fa5" text-anchor="start" font-weight="700" class="mono">71.0%</text>
+<text x="418" y="188" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="600">RL + 多数投票</text>
+<rect x="524" y="177" width="156" height="14" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+<rect x="524" y="177" width="135.3" height="14" rx="4" fill="#18794e"/>
+<text x="686" y="188" font-size="9.6" fill="#18794e" text-anchor="start" font-weight="700" class="mono">86.7%</text>
+<text x="418" y="218" font-size="9.7" fill="#0f172a" text-anchor="start" font-weight="700">涌现“Aha Moment”：无任何人工示范，自发拉长思考并复盘验算！</text>
+<rect x="406" y="242" width="322" height="188" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="418" y="262" font-size="10.5" fill="#6d28d9" text-anchor="start" font-weight="700">科学冷思考：抽 k 次只要对 1 次（Pass@k）谁更强？</text>
+<line x1="446.0" y1="276.0" x2="446.0" y2="372.0" stroke="#475569" stroke-width="1.2"/>
+<line x1="446.0" y1="372.0" x2="712.0" y2="372.0" stroke="#475569" stroke-width="1.2"/>
+<text x="446.0" y="386.0" font-size="9.2" fill="#64748b" text-anchor="middle" class="mono">k=1</text>
+<text x="560.0" y="386.0" font-size="9.2" fill="#64748b" text-anchor="middle" class="mono">k=8</text>
+<text x="636.0" y="386.0" font-size="9.2" fill="#64748b" text-anchor="middle" class="mono">k=32</text>
+<text x="712.0" y="386.0" font-size="9.2" fill="#64748b" text-anchor="middle" class="mono">k=128</text>
+<path d="M 446.00,356.64 L 484.00,345.12 L 522.00,332.64 L 560.00,321.12 L 598.00,310.56 L 636.00,302.88 L 674.00,296.64 L 712.00,292.32" fill="none" stroke="#475569" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 3"/>
+<path d="M 446.00,331.68 L 484.00,320.16 L 522.00,312.48 L 560.00,307.68 L 598.00,304.80 L 636.00,302.88 L 674.00,301.44 L 712.00,300.48" fill="none" stroke="#18794e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="rl-curve"/>
+<text x="506.8" y="311.5" font-size="9.4" fill="#18794e" text-anchor="start" font-weight="700" class="halo">RLVR 模型 (k=1 遥遥领先)</text>
+<text x="609.4" y="329.8" font-size="9.4" fill="#475569" text-anchor="start" font-weight="700" class="halo">预训练底座 (大 k 反超)</text>
+<text x="418" y="405" font-size="9.6" fill="#1e293b" text-anchor="start">Yue 等 (2025)：单轮 RLVR 主打“提纯放大底座潜能”；</text>
+<text x="418" y="421" font-size="9.6" fill="#6d28d9" text-anchor="start" font-weight="700">若要突破底座总覆盖率，需叠加【蒸馏 + 多轮环境真实交互】！</text>
+</svg>

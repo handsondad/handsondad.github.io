@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="472" viewBox="0 0 760 472" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">植物格林希尔树干自重屈曲幂律与北美红杉122至130米负压抽水物理天花板图解</title>
+<desc id="desc">左图绘制欧拉-格林希尔树干临界屈曲曲线H_crit∝D^(2/3)与真实树木3至4倍安全余量轨迹，推导树木同样服从H∝M^(1/4)标度律；右图依据Koch等2004年Nature实测，对比10.33米大气正压极限与116.2米亥伯龙红杉树顶-1.85 MPa内聚力负压拉水，展示气穴栓塞、膨压不足与气孔关闭导致光合归零如何将地球树高锁死在122至130米。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes pullWater {
+        from { stroke-dashoffset: 280; }
+        to { stroke-dashoffset: 0; }
+      }
+      .xylem-pull {
+        stroke-dasharray: 280;
+        stroke-dashoffset: 0;
+        animation: pullWater 1.8s ease-out 0.15s 1 both;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .xylem-pull { animation: none; }
+      }
+</style>
+<rect x="0.5" y="0.5" width="759" height="471" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">把物理定律拓展到植物：为什么参天巨树也服从 1/4 幂律，且永远长不过 130 米？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：欧拉-格林希尔自重压弯红线 H ∝ D^(2/3) · 右：科赫《Nature》实测红杉 ~19 个大气压负压抽水终极天花板</text>
+<rect x="18" y="64" width="344" height="396" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="32" y="86" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 第一道墙：格林希尔树干自重失稳定律</text>
+<line x1="68.0" y1="330.0" x2="344.0" y2="330.0" stroke="#cbd5e1" stroke-width="0.9"/>
+<text x="62.0" y="333.5" font-size="9.0" fill="#64748b" text-anchor="end" class="mono">0m</text>
+<line x1="68.0" y1="278.6" x2="344.0" y2="278.6" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="62.0" y="282.1" font-size="9.0" fill="#64748b" text-anchor="end" class="mono">50m</text>
+<line x1="68.0" y1="227.1" x2="344.0" y2="227.1" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="62.0" y="230.6" font-size="9.0" fill="#64748b" text-anchor="end" class="mono">100m</text>
+<line x1="68.0" y1="175.7" x2="344.0" y2="175.7" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="62.0" y="179.2" font-size="9.0" fill="#64748b" text-anchor="end" class="mono">150m</text>
+<line x1="68.0" y1="124.3" x2="344.0" y2="124.3" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="62.0" y="127.8" font-size="9.0" fill="#64748b" text-anchor="end" class="mono">200m</text>
+<line x1="68.0" y1="114.0" x2="68.0" y2="330.0" stroke="#cbd5e1" stroke-width="0.9"/>
+<text x="68.0" y="345.0" font-size="9.0" fill="#64748b" text-anchor="middle" class="mono">0m</text>
+<line x1="133.7" y1="114.0" x2="133.7" y2="330.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="133.7" y="345.0" font-size="9.0" fill="#64748b" text-anchor="middle" class="mono">1m</text>
+<line x1="199.4" y1="114.0" x2="199.4" y2="330.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="199.4" y="345.0" font-size="9.0" fill="#64748b" text-anchor="middle" class="mono">2m</text>
+<line x1="265.1" y1="114.0" x2="265.1" y2="330.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="265.1" y="345.0" font-size="9.0" fill="#64748b" text-anchor="middle" class="mono">3m</text>
+<line x1="330.9" y1="114.0" x2="330.9" y2="330.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="330.9" y="345.0" font-size="9.0" fill="#64748b" text-anchor="middle" class="mono">4m</text>
+<line x1="68.0" y1="114.0" x2="68.0" y2="330.0" stroke="#475569" stroke-width="1.3"/>
+<line x1="68.0" y1="330.0" x2="344.0" y2="330.0" stroke="#475569" stroke-width="1.3"/>
+<text x="206.0" y="360.0" font-size="9.6" fill="#475569" text-anchor="middle" font-weight="600">树干胸径 D（米）</text>
+<text x="58.0" y="106.0" font-size="9.5" fill="#475569" text-anchor="start" font-weight="600">树高 H</text>
+<polygon points="68.0,330.0 72.6,316.2 77.2,308.0 81.8,301.2 86.4,295.1 91.0,289.5 95.6,284.3 100.2,279.4 104.8,274.7 109.4,270.1 114.0,265.8 118.6,261.6 123.2,257.5 127.8,253.5 132.4,249.6 137.0,245.8 141.6,242.1 146.2,238.5 150.8,235.0 155.4,231.5 160.0,228.1 164.6,224.7 169.2,221.4 173.8,218.1 178.4,214.9 183.0,211.7 187.6,208.6 192.2,205.5 196.8,202.4 201.4,199.4 206.0,196.4 210.6,193.5 215.2,190.5 219.8,187.6 224.4,184.8 229.0,182.0 233.6,179.1 238.2,176.4 242.8,173.6 247.4,170.9 252.0,168.2 256.6,165.5 261.2,162.8 265.8,160.2 270.4,157.6 275.0,154.9 279.6,152.4 284.2,149.8 288.8,147.3 293.4,144.7 298.0,142.2 302.6,139.7 307.2,137.2 311.8,134.8 316.4,132.3 321.0,129.9 325.6,127.5 330.2,125.1 334.8,122.7 339.4,120.3 344.0,117.9 68.0,114.0" fill="#fef2f2" opacity="0.72"/>
+<path d="M 68.00,330.00 L 72.60,316.16 L 77.20,308.04 L 81.80,301.22 L 86.40,295.13 L 91.00,289.54 L 95.60,284.31 L 100.20,279.37 L 104.80,274.65 L 109.40,270.13 L 114.00,265.78 L 118.60,261.56 L 123.20,257.48 L 127.80,253.50 L 132.40,249.63 L 137.00,245.84 L 141.60,242.14 L 146.20,238.52 L 150.80,234.97 L 155.40,231.48 L 160.00,228.05 L 164.60,224.68 L 169.20,221.36 L 173.80,218.10 L 178.40,214.88 L 183.00,211.70 L 187.60,208.57 L 192.20,205.47 L 196.80,202.42 L 201.40,199.40 L 206.00,196.41 L 210.60,193.46 L 215.20,190.54 L 219.80,187.65 L 224.40,184.79 L 229.00,181.95 L 233.60,179.14 L 238.20,176.36 L 242.80,173.61 L 247.40,170.88 L 252.00,168.17 L 256.60,165.48 L 261.20,162.82 L 265.80,160.17 L 270.40,157.55 L 275.00,154.95 L 279.60,152.36 L 284.20,149.80 L 288.80,147.25 L 293.40,144.72 L 298.00,142.21 L 302.60,139.71 L 307.20,137.24 L 311.80,134.77 L 316.40,132.32 L 321.00,129.89 L 325.60,127.47 L 330.20,125.07 L 334.80,122.68 L 339.40,120.30 L 344.00,117.94" fill="none" stroke="#dc2626" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 4"/>
+<path d="M 68.00,330.00 L 72.60,325.46 L 77.20,322.79 L 81.80,320.55 L 86.40,318.55 L 91.00,316.72 L 95.60,315.00 L 100.20,313.38 L 104.80,311.83 L 109.40,310.35 L 114.00,308.92 L 118.60,307.53 L 123.20,306.19 L 127.80,304.89 L 132.40,303.61 L 137.00,302.37 L 141.60,301.16 L 146.20,299.97 L 150.80,298.80 L 155.40,297.66 L 160.00,296.53 L 164.60,295.43 L 169.20,294.34 L 173.80,293.26 L 178.40,292.21 L 183.00,291.16 L 187.60,290.14 L 192.20,289.12 L 196.80,288.12 L 201.40,287.12 L 206.00,286.14 L 210.60,285.18 L 215.20,284.22 L 219.80,283.27 L 224.40,282.33 L 229.00,281.40 L 233.60,280.48 L 238.20,279.56 L 242.80,278.66 L 247.40,277.76 L 252.00,276.87 L 256.60,275.99 L 261.20,275.12 L 265.80,274.25 L 270.40,273.39 L 275.00,272.53 L 279.60,271.69 L 284.20,270.84 L 288.80,270.01 L 293.40,269.18 L 298.00,268.35 L 302.60,267.53 L 307.20,266.72 L 311.80,265.91 L 316.40,265.11 L 321.00,264.31 L 325.60,263.51 L 330.20,262.72 L 334.80,261.94 L 339.40,261.16 L 344.00,260.38" fill="none" stroke="#18794e" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="148" y="140" font-size="9.8" fill="#dc2626" text-anchor="middle" font-weight="700" class="halo">自重屈曲折断禁区</text>
+<text x="244" y="172" font-size="9.4" fill="#dc2626" text-anchor="middle" font-weight="700" class="halo">格林希尔极限 H_crit ∝ D^(2/3)</text>
+<text x="254" y="278" font-size="9.4" fill="#18794e" text-anchor="middle" font-weight="700" class="halo">真实树木安全线 (~3–4倍余量)</text>
+<line x1="68.0" y1="196.3" x2="344.0" y2="196.3" stroke="#1d6fa5" stroke-width="1.6" stroke-dasharray="4 3"/>
+<circle cx="330.9" cy="210.5" r="4.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.5"/>
+<text x="322.9" y="202.5" font-size="9.3" fill="#1d6fa5" text-anchor="end" font-weight="700" class="halo">亥伯龙红杉 (116.2 m)</text>
+<rect x="30" y="368" width="320" height="80" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="42" y="387" font-size="9.7" fill="#18794e" text-anchor="start" font-weight="700">动植物跨界大一统（Greenhill 1881 = McMahon 1973）：</text>
+<text x="42" y="405" font-size="9.5" fill="#0f172a" text-anchor="start" font-weight="600">树干质量 M ∝ D²H，代入 H ∝ D^(2/3) 即得 H ∝ M^(1/4)！</text>
+<text x="42" y="423" font-size="9.4" fill="#1d6fa5" text-anchor="start" font-weight="700">悬念：4 米粗红杉力学可撑 ~200 米，为何全卡在 116 米？</text>
+<text x="42" y="439" font-size="9.3" fill="#1e293b" text-anchor="start">→ 真正卡脖子的不是树干折断，而是把水拽上天的极限！</text>
+<rect x="374" y="64" width="368" height="396" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="388" y="86" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 终极天花板：把水拉上 116 米要 ~19 个大气压负压！</text>
+<rect x="388" y="143.4" width="340" height="17.8" rx="3" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="4 2"/>
+<text x="558" y="136.7" font-size="9.5" fill="#dc2626" text-anchor="middle" font-weight="700">科赫《Nature》四重指标交汇死线：地球树木上限 122–130 m</text>
+<polygon points="445.0,432.0 463.0,432.0 457.0,174.0 451.0,174.0" fill="#92400e" opacity="0.85"/>
+<polygon points="428.0,338.8 480.0,338.8 454.0,272.2" fill="#15803d" opacity="0.82"/>
+<polygon points="433.0,285.5 475.0,285.5 454.0,223.3" fill="#15803d" opacity="0.82"/>
+<polygon points="439.0,236.6 469.0,236.6 454.0,187.8" fill="#15803d" opacity="0.82"/>
+<polygon points="445.0,201.1 463.0,201.1 454.0,174.0" fill="#15803d" opacity="0.82"/>
+<path d="M 454.00,432.00 L 454.00,174.04" fill="none" stroke="#38bdf8" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" class="xylem-pull"/>
+<line x1="432.0" y1="432.0" x2="484.0" y2="432.0" stroke="#475569" stroke-width="1.2"/>
+<text x="386" y="446.0" font-size="8.8" fill="#64748b" text-anchor="start">0m 湿润土壤根系</text>
+<line x1="432.0" y1="409.1" x2="484.0" y2="409.1" stroke="#c25014" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="386" y="403.1" font-size="8.8" fill="#c25014" text-anchor="start" font-weight="700" class="halo">10.3m 正压极限</text>
+<line x1="432.0" y1="298.8" x2="484.0" y2="298.8" stroke="#1e293b" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="386" y="301.8" font-size="8.6" fill="#64748b" text-anchor="start" class="halo">60m (−1.0)</text>
+<line x1="432.0" y1="174.0" x2="484.0" y2="174.0" stroke="#1d6fa5" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="386" y="169.0" font-size="8.9" fill="#1d6fa5" text-anchor="start" font-weight="700" class="halo">116.2m 树巅</text>
+<text x="386" y="183.0" font-size="8.6" fill="#1d6fa5" text-anchor="start" font-weight="600" class="halo">(−1.85 MPa)</text>
+<rect x="492" y="162" width="238" height="84" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="502" y="181" font-size="9.7" fill="#1d6fa5" text-anchor="start" font-weight="700">怎么突破 10.3 米？靠“负压拽水”！</text>
+<text x="502" y="200" font-size="9.0" fill="#1e293b" text-anchor="start">大气正压最多推高 10.33 m；巨树靠叶肉纳米</text>
+<text x="502" y="216" font-size="9.0" fill="#1e293b" text-anchor="start">孔蒸发，借水分子氢键【内聚力】把整根连续</text>
+<text x="502" y="232" font-size="9.0" fill="#1e293b" text-anchor="start">水柱拽入 −1.85 MPa（约 18.5 atm 负压）！</text>
+<rect x="492" y="256" width="238" height="88" rx="7" fill="#fef2f2" stroke="#dc2626" stroke-width="1"/>
+<text x="502" y="275" font-size="9.7" fill="#dc2626" text-anchor="start" font-weight="700">锁死 130 米第 1 把锁：气穴栓塞断流</text>
+<text x="502" y="294" font-size="9.0" fill="#1e293b" text-anchor="start">每升 1 米先扣 0.0098 MPa 重力税；近 −2 MPa</text>
+<text x="502" y="310" font-size="9.0" fill="#1e293b" text-anchor="start">时，空气微泡被硬拽进导管瞬间汽化崩断（气</text>
+<text x="502" y="326" font-size="9.0" fill="#1e293b" text-anchor="start">穴栓塞），像吸管漏气一样再也抽不上水！</text>
+<rect x="492" y="354" width="238" height="92" rx="7" fill="#fffbeb" stroke="#b45309" stroke-width="1"/>
+<text x="502" y="373" font-size="9.7" fill="#b45309" text-anchor="start" font-weight="700">第 2 &amp; 3 把锁：膨压归零 + 气孔断粮</text>
+<text x="502" y="392" font-size="9.0" fill="#1e293b" text-anchor="start">百米树顶水势极低，新细胞撑不开（红杉顶叶</text>
+<text x="502" y="408" font-size="9.0" fill="#1e293b" text-anchor="start">缩成硬鳞片！）；为防断水只能常关气孔，CO₂</text>
+<text x="502" y="424" font-size="9.0" fill="#1e293b" text-anchor="start">进不来，光合净收益在 122–130 m 彻底归零！</text>
+</svg>

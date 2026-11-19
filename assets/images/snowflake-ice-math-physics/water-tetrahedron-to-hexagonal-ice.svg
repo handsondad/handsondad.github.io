@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="466" viewBox="0 0 760 466" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">水分子104.5度键角经正四面体氢键网络投影生成120度六方冰晶与D6对称群分步图解</title>
+<desc id="desc">三步拆解雪花六角对称的微观起源：第一步单分子104.5度键角通过两对孤对电子与两个氢原子结成约109.47度正四面体氢键网；第二步六个氧原子一高一低折成椅式六元环，在(0001)底面俯视投影成严格120度正六角蜂窝并形成低密度中空浮冰；第三步导出宏观六棱柱晶胚、D6二面体群12个对称变换及晶体学限制定理排除五重周期晶格。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="465" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">水分子明明拐着 104.5° 的弯，凭什么拼出严格 120° 的正六角冰晶？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">单分子 104.5° 键角 → 正四面体 4 氢键（109.47°） → 普通六方冰 Ih 椅式六元环俯视投影与 D₆ 对称群</text>
+<rect x="22" y="76" width="228" height="308" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="98" r="10.5" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2"/>
+<text x="42" y="102" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">1</text>
+<text x="60" y="102" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">单分子 104.5° → 四面体 4 只手</text>
+<line x1="136.0" y1="184.0" x2="105.4" y2="141.9" stroke="#1d6fa5" stroke-width="2.0" stroke-linecap="round" stroke-dasharray="4 3"/>
+<circle cx="105.4" cy="141.9" r="6.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.4"/>
+<text x="105.4" y="145.1" font-size="8.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">O</text>
+<line x1="136.0" y1="184.0" x2="166.6" y2="141.9" stroke="#1d6fa5" stroke-width="2.0" stroke-linecap="round" stroke-dasharray="4 3"/>
+<circle cx="166.6" cy="141.9" r="6.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.4"/>
+<text x="166.6" y="145.1" font-size="8.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">O</text>
+<text x="136" y="124" font-size="8.9" fill="#1d6fa5" text-anchor="middle" font-weight="600">上方接纳 2 条邻近氢键 (O···H)</text>
+<line x1="136.0" y1="184.0" x2="175.5" y2="214.6" stroke="#0f172a" stroke-width="2.8" stroke-linecap="round"/>
+<line x1="136.0" y1="184.0" x2="96.5" y2="214.6" stroke="#0f172a" stroke-width="2.8" stroke-linecap="round"/>
+<path d="M 115.4 199.9 A 26.0 26.0 0 0 0 156.6 199.9" fill="none" stroke="#c25014" stroke-width="1.8"/>
+<text x="136.0" y="224.0" font-size="9.6" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">104.5°</text>
+<circle cx="136.0" cy="184.0" r="14.5" fill="#dc2626" stroke="#ffffff" stroke-width="1.6"/>
+<text x="136.0" y="188.5" font-size="11.5" fill="#ffffff" text-anchor="middle" font-weight="700">O</text>
+<circle cx="175.5" cy="214.6" r="9.5" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.8"/>
+<text x="175.5" y="218.1" font-size="8.8" fill="#0284c7" text-anchor="middle" font-weight="700">H⁺</text>
+<circle cx="96.5" cy="214.6" r="9.5" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.8"/>
+<text x="96.5" y="218.1" font-size="8.8" fill="#0284c7" text-anchor="middle" font-weight="700">H⁺</text>
+<text x="136" y="248" font-size="9.2" fill="#0f172a" text-anchor="middle" font-weight="700">三维四面体夹角 ≈ 109.47°</text>
+<rect x="34" y="262" width="204" height="110" rx="7" fill="#fef2f2" stroke="#fecaca" stroke-width="1"/>
+<text x="44" y="280" font-size="9.4" fill="#dc2626" text-anchor="start" font-weight="700">伯纳尔–鲍林冰规则 (1933–35)：</text>
+<text x="44" y="297" font-size="8.9" fill="#1e293b" text-anchor="start">• 水分子不是在平面拿 104.5° 拼图！</text>
+<text x="44" y="314" font-size="8.9" fill="#1e293b" text-anchor="start">• 氧原子伸出 2 个 H + 2 对孤对电子，</text>
+<text x="44" y="331" font-size="8.9" fill="#1e293b" text-anchor="start">  与 4 个邻居结成正四面体三维网；</text>
+<text x="44" y="348" font-size="8.9" fill="#1e293b" text-anchor="start">• 氧间距 O···O ≈ 2.76 Å（二近二远）。</text>
+<rect x="266" y="76" width="228" height="308" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="286" cy="98" r="10.5" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.2"/>
+<text x="286" y="102" font-size="11.5" fill="#0284c7" text-anchor="middle" font-weight="700">2</text>
+<text x="304" y="102" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">椅式六元环俯视 = 正 120° 蜂窝</text>
+<path d="M441.1 193.8 L420.7 205.5 L400.4 193.8 L400.4 170.2 L420.7 158.5 L441.1 170.2 Z" fill="#f0f9ff" stroke="#93c5fd" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M420.7 229.0 L400.4 240.8 L380.0 229.0 L380.0 205.5 L400.4 193.8 L420.7 205.5 Z" fill="#f0f9ff" stroke="#93c5fd" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M380.0 229.0 L359.6 240.8 L339.3 229.0 L339.3 205.5 L359.6 193.8 L380.0 205.5 Z" fill="#f0f9ff" stroke="#93c5fd" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M359.6 193.8 L339.3 205.5 L318.9 193.8 L318.9 170.2 L339.3 158.5 L359.6 170.2 Z" fill="#f0f9ff" stroke="#93c5fd" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M380.0 158.5 L359.6 170.2 L339.3 158.5 L339.3 135.0 L359.6 123.2 L380.0 135.0 Z" fill="#f0f9ff" stroke="#93c5fd" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M420.7 158.5 L400.4 170.2 L380.0 158.5 L380.0 135.0 L400.4 123.2 L420.7 135.0 Z" fill="#f0f9ff" stroke="#93c5fd" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M400.4 193.8 L380.0 205.5 L359.6 193.8 L359.6 170.2 L380.0 158.5 L400.4 170.2 Z" fill="#bae6fd" stroke="#0284c7" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="380.0" y="186.0" font-size="10.0" fill="#0f172a" text-anchor="middle" font-weight="700">120°</text>
+<circle cx="400.4" cy="193.8" r="5.4" fill="#4338ca" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="380.0" cy="205.5" r="4.6" fill="#38bdf8" stroke="#0f172a" stroke-width="1.1"/>
+<circle cx="359.6" cy="193.8" r="5.4" fill="#4338ca" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="359.6" cy="170.2" r="4.6" fill="#38bdf8" stroke="#0f172a" stroke-width="1.1"/>
+<circle cx="380.0" cy="158.5" r="5.4" fill="#4338ca" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="400.4" cy="170.2" r="4.6" fill="#38bdf8" stroke="#0f172a" stroke-width="1.1"/>
+<text x="380" y="248" font-size="8.9" fill="#4338ca" text-anchor="middle" font-weight="600">深蓝=高氧  浅蓝=低氧 (a ≈ 4.52 Å)</text>
+<rect x="278" y="262" width="204" height="110" rx="7" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="1"/>
+<text x="288" y="280" font-size="9.3" fill="#0284c7" text-anchor="start" font-weight="700">三维起伏消掉角度差 + 浮冰奇迹：</text>
+<text x="288" y="297" font-size="8.9" fill="#1e293b" text-anchor="start">• 6 个氧一高一低折成“椅式环”，</text>
+<text x="288" y="314" font-size="8.9" fill="#1e293b" text-anchor="start">  俯视投影恰好变成严格 120° 正六角！</text>
+<text x="288" y="331" font-size="8.9" fill="#1e293b" text-anchor="start">• 中空六角隧道令冰密度仅 0.917 g/cm³</text>
+<text x="288" y="348" font-size="8.9" fill="#1e293b" text-anchor="start">  比水轻约 9%，冬天浮在水面护生灵！</text>
+<rect x="510" y="76" width="228" height="308" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="530" cy="98" r="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="530" y="102" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">3</text>
+<text x="548" y="102" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">六棱晶胚与 D₆ 群 (12 重对称)</text>
+<path d="M600.0 154.0 L584.0 165.3 L584.0 213.3 L600.0 202.0 Z" fill="#e0e7ff" stroke="#4338ca" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M584.0 165.3 L552.0 165.3 L552.0 213.3 L584.0 213.3 Z" fill="#c7d2fe" stroke="#4338ca" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M552.0 165.3 L536.0 154.0 L536.0 202.0 L552.0 213.3 Z" fill="#a5b4fc" stroke="#4338ca" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M600.0 154.0 L584.0 165.3 L552.0 165.3 L536.0 154.0 L552.0 142.7 L584.0 142.7 Z" fill="#eef2ff" stroke="#4338ca" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="568.0" y1="130.0" x2="568.0" y2="156.0" stroke="#6d28d9" stroke-width="1.8" stroke-linecap="round"/>
+<text x="568.0" y="126.0" font-size="8.5" fill="#6d28d9" text-anchor="middle" font-weight="700">主轴 c {0001}</text>
+<text x="568.0" y="228" font-size="8.6" fill="#4338ca" text-anchor="middle" font-weight="600">6 个柱面 {101̄0}</text>
+<line x1="643.0" y1="180.0" x2="721.0" y2="180.0" stroke="#6d28d9" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="3 2"/>
+<line x1="648.2" y1="160.5" x2="715.8" y2="199.5" stroke="#c25014" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="3 2"/>
+<line x1="662.5" y1="146.2" x2="701.5" y2="213.8" stroke="#6d28d9" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="3 2"/>
+<line x1="682.0" y1="141.0" x2="682.0" y2="219.0" stroke="#c25014" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="3 2"/>
+<line x1="701.5" y1="146.2" x2="662.5" y2="213.8" stroke="#6d28d9" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="3 2"/>
+<line x1="715.8" y1="160.5" x2="648.2" y2="199.5" stroke="#c25014" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="3 2"/>
+<path d="M714.0 180.0 L698.0 207.7 L666.0 207.7 L650.0 180.0 L666.0 152.3 L698.0 152.3 Z" fill="none" stroke="#6d28d9" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="682.0" y="228" font-size="8.6" fill="#6d28d9" text-anchor="middle" font-weight="700">D₆：6 旋转+6 镜面</text>
+<text x="624" y="248" font-size="8.9" fill="#0f172a" text-anchor="middle" font-weight="700">空间群 P6₃/mmc  ｜  |D₆| = 12</text>
+<rect x="522" y="262" width="204" height="110" rx="7" fill="#f3e8ff" stroke="#d8b4fe" stroke-width="1"/>
+<text x="532" y="280" font-size="9.1" fill="#6d28d9" text-anchor="start" font-weight="700">晶体学限制定理（为何绝无五角雪花）</text>
+<text x="532" y="297" font-size="8.9" fill="#1e293b" text-anchor="start">• 周期平移晶格要求 2cos(2π/n) ∈ Z</text>
+<text x="532" y="314" font-size="8.9" fill="#1e293b" text-anchor="start">• 仅 n = 1, 2, 3, 4, 6 有解！</text>
+<text x="532" y="331" font-size="8.9" fill="#1e293b" text-anchor="start">• n=5 时 2cos72°≈0.618 非整数被禁；</text>
+<text x="532" y="348" font-size="8.9" fill="#1e293b" text-anchor="start">• 草木五瓣花靠生长素螺旋，不受此限。</text>
+<rect x="22" y="396" width="716" height="56" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="418" font-size="9.5" fill="#0f172a" text-anchor="start" font-weight="600">千年追问闭环：西汉韩婴《韩诗外传》（约前 135 年）最早点破“凡草木花多五出，雪花独六出”；1611 年开普勒猜想圆球最密六方堆积；</text>
+<text x="36" y="438" font-size="9.5" fill="#1d6fa5" text-anchor="start" font-weight="700">1933 年伯纳尔与福勒用 X 射线算出普通冰 Ih 四面体氢键网络——104.5° 水分子正是借三维椅式起伏，在底面投下了永恒的 120° 六角密码！</text>
+</svg>
