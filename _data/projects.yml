@@ -1,5 +1,5 @@
 experiences:
-  # 第一组：小念的成长与日常（晾衣绳三姊妹：故事 · 自然 · 回忆）
+  # 第一组：小念的故事、画作与内心（漫画书 · 小画廊 · 认识自己）
   - title: 小念家的漫画书
     url: https://handsondad.github.io/storyverse/
     icon: 📚
@@ -7,6 +7,22 @@ experiences:
     tone: lavender
     description: 翻开漫画书，和小念一起走进故事，让想象力多跑一会儿。
     prompt: 翻开一个故事
+  - title: 小念的画廊
+    url: https://handsondad.github.io/kids-gallery/
+    icon: 🎨
+    kind: 涂鸦与手工
+    tone: butter
+    description: 把小念画的画和做的手工夹在晾衣绳上，点一下还能听小念自己讲。
+    prompt: 逛逛小画廊
+  - title: 小念认识自己
+    url: https://handsondad.github.io/neon-buddy/
+    icon: 🪞
+    kind: 成长心理
+    tone: rose
+    description: 怕黑、发脾气、等不及吃糖……一问一答聊聊「我那时候为什么会这样」。
+    prompt: 听听心里话
+
+  # 第二组：小念的自然、回忆与家门口（自然图鉴 · 时光轴 · 回龙观）
   - title: 小念的自然图鉴
     url: https://handsondad.github.io/nature-dex/
     icon: 🌿
@@ -21,8 +37,15 @@ experiences:
     tone: peach
     description: 按年份夹在晾衣绳上的成长图集，加密珍藏回忆（需密码打开）。
     prompt: 走进时光轴
+  - title: 家住回龙观
+    url: https://handsondad.github.io/huilongguan-living-map/
+    icon: 🎈
+    kind: 身边地图
+    tone: blue
+    description: 点开卡通地图上的泡泡，跟着小念把家门口的路、地铁和老地名聊明白。
+    prompt: 逛逛家门口
 
-  # 第二组：科学小宇宙（身体 · 元素 · 度量衡）
+  # 第三组：生命与物质奇遇（身体 · 生物 · 元素）
   - title: 认识身体的奥秘
     url: https://handsondad.github.io/bodyverse/
     icon: 🫀
@@ -30,6 +53,13 @@ experiences:
     tone: rose
     description: 从认识自己的身体开始，带着好奇心走近这个熟悉又神奇的小宇宙。
     prompt: 发现身体的秘密
+  - title: 生物奇遇记
+    url: https://handsondad.github.io/bioverse/
+    icon: 🧬
+    kind: 生命科学
+    tone: sage
+    description: 从一片叶子到细胞与基因，看互动图解和 3D 实验台，读懂身边的生命。
+    prompt: 探索生命奥秘
   - title: 元素的奇妙世界
     url: https://handsondad.github.io/chemverse/
     icon: 🧪
@@ -37,22 +67,45 @@ experiences:
     tone: butter
     description: 走近元素周期表，认识组成身边万物的那些小小成员。
     prompt: 遇见一个元素
-  - title: 度量衡奇遇记
-    url: https://handsondad.github.io/measure-quest/
-    icon: 📏
-    kind: 生活里的科学
-    tone: blue
-    description: 一米有多长，一秒是谁定的？和小念、爸爸一起寻找测量的答案。
-    prompt: 量一量这个世界
 
-  # 第三组：趣味闯关与数学冒险（小游戏 · 拼波 · 认亲戚）
-  - title: 亲子小游戏
-    url: https://handsondad.github.io/playverse/
-    icon: 🎮
-    kind: 玩中学
+  # 第四组：物理、地球与星空（物理 · 地理 · 宇宙）
+  - title: 物理奇遇记
+    url: https://handsondad.github.io/phyverse/
+    icon: 💡
+    kind: 物理探索
+    tone: blue
+    description: 从声光电热到力与运动，在问答动画和 3D 实验台里看懂身边的物理。
+    prompt: 动手试物理
+  - title: 地理奇遇记
+    url: https://handsondad.github.io/geoverse/
+    icon: 🌍
+    kind: 地球探索
     tone: peach
-    description: 从低龄陪玩到益智闯关，把日常的陪伴变成一场小小的冒险。
-    prompt: 一起玩一会儿
+    description: 从地球仪、板块山脉到季风山河，看 3D 地球与剖面动画读懂地理。
+    prompt: 转动小地球
+  - title: 宇宙奇遇记
+    url: https://handsondad.github.io/universe/
+    icon: 🪐
+    kind: 天文与宇宙
+    tone: lavender
+    description: 从红月亮、太阳系一路聊到黑洞与星系，在 3D 宇宙实验台里仰望星空。
+    prompt: 仰望这片星空
+
+  # 第五组：数学游乐场三部曲（代数 · 几何 · 拼波）
+  - title: 代数游乐场
+    url: https://handsondad.github.io/algebra-playground/
+    icon: ⚖️
+    kind: 互动代数馆
+    tone: sage
+    description: 用挂件天平、代数瓷砖与函数机器，边看问答动画边亲手试懂代数。
+    prompt: 玩转代数天平
+  - title: 几何游乐场
+    url: https://handsondad.github.io/geometry-playground/
+    icon: 📐
+    kind: 互动几何馆
+    tone: butter
+    description: 从尺规作图到莫比乌斯带与超立方体，边看动画边在画板上亲手试。
+    prompt: 玩转几何画板
   - title: 拼波大冒险
     url: https://handsondad.github.io/fourier-puzzle-game/
     icon: 🌊
@@ -60,36 +113,84 @@ experiences:
     tone: blue
     description: 用正弦波和转圈的圆盘拼出方波、爱心和雪花，玩着认识傅里叶。
     prompt: 拼一段波
-  - title: 认亲戚大冒险
-    url: https://handsondad.github.io/family-tree-player/
-    icon: 🌳
-    kind: 家庭称呼
-    tone: sage
-    description: 一大家子该怎么叫？玩着家族树和拜年小游戏，认清每位亲戚。
-    prompt: 认一认亲戚
 
-  # 第四组：语言文化与身边世界（汉字 · 方言 · 家门口）
+  # 第六组：动手实验与趣味闯关（科学实验 · 度量衡 · 亲子小游戏）
+  - title: 科学小游戏大冒险
+    url: https://handsondad.github.io/sci-playground/
+    icon: 🔬
+    kind: 互动科学馆
+    tone: rose
+    description: 搭拱桥、调齿轮、配分子、看日食，九大展馆把科学定律变成实验。
+    prompt: 进馆做实验
+  - title: 度量衡奇遇记
+    url: https://handsondad.github.io/measure-quest/
+    icon: 📏
+    kind: 生活里的科学
+    tone: lavender
+    description: 一米有多长，一秒是谁定的？和小念、爸爸一起寻找测量的答案。
+    prompt: 量一量这个世界
+  - title: 亲子小游戏
+    url: https://handsondad.github.io/playverse/
+    icon: 🎮
+    kind: 玩中学
+    tone: peach
+    description: 从低龄陪玩到益智闯关，把日常的陪伴变成一场小小的冒险。
+    prompt: 一起玩一会儿
+
+  # 第七组：看图听传奇与历史时空（一图一故事 · 人类故事 · 历史地图）
+  - title: 一图一故事
+    url: https://handsondad.github.io/one-frame-one-story/
+    icon: 🖼️
+    kind: 看图听传奇
+    tone: butter
+    description: 从甲骨文、星月夜到黑洞照片，顺着画中细节聊出一段人类传奇。
+    prompt: 点开一张图
+  - title: 人类故事集
+    url: https://handsondad.github.io/historical-lives/
+    icon: 🧭
+    kind: 历史人物
+    tone: sage
+    description: 跨越不同领域、年代与大洲，一问一答走近十六段真实的人生故事。
+    prompt: 走近一段人生
+  - title: 历史地图奇遇记
+    url: https://handsondad.github.io/historical-map-playground/
+    icon: 🗺️
+    kind: 时空探索馆
+    tone: rose
+    description: 从长安城到雅典卫城，看着会动的历史地图，一问一答逛遍中外。
+    prompt: 穿越古今地图
+
+  # 第八组：语言文字与大家庭（汉字 · 方言 · 认亲戚）
   - title: 汉字奇遇记
     url: https://handsondad.github.io/hanverse/
     icon: 📜
     kind: 汉字启蒙
-    tone: butter
+    tone: peach
     description: 看一个字从甲骨文长成今天的样子，弄懂汉字是怎么造出来的。
     prompt: 看一个字长大
   - title: 方言奇遇记
     url: https://handsondad.github.io/cn-dialect-scope/
     icon: 💬
     kind: 语言与文化
-    tone: lavender
+    tone: blue
     description: 同一句话，天南地北怎么说？听见不同的乡音，发现语言的趣味。
     prompt: 听听远方的声音
-  - title: 家住回龙观
-    url: https://handsondad.github.io/huilongguan-living-map/
-    icon: 🎈
-    kind: 身边地图
-    tone: rose
-    description: 点开卡通地图上的泡泡，跟着小念把家门口的路、地铁和老地名聊明白。
-    prompt: 逛逛家门口
+  - title: 认亲戚大冒险
+    url: https://handsondad.github.io/family-tree-player/
+    icon: 🌳
+    kind: 家庭称呼
+    tone: lavender
+    description: 一大家子该怎么叫？玩着家族树和拜年小游戏，认清每位亲戚。
+    prompt: 认一认亲戚
+
+  # 第九组：绿茵运动与陪练（足球奇遇记）
+  - title: 足球奇遇记
+    url: https://handsondad.github.io/football/
+    icon: ⚽
+    kind: 运动与战术
+    tone: sage
+    description: 从越位、香蕉球到阵型与防伤，孩子看故事图解，大人看门道与陪练游戏。
+    prompt: 去球场看看
 
 collections:
   - title: 实践奶爸育儿宝库
@@ -98,6 +199,12 @@ collections:
     tone: sage
     label: HANDS-ON DAD · 育儿收藏
     description: 从儿童发展、家庭教育到 STEAM，收藏育儿路上值得细读、值得动手的好内容。
+  - title: 遇见孩子
+    url: https://handsondad.github.io/meet-the-child/
+    icon: 📖
+    tone: peach
+    label: MEET THE CHILD · 育儿随笔
+    description: 一个爸爸安静写下的随笔集：写长大的孩子，也写在孩子身上看见的自己。
   - title: 未来学习者
     url: https://handsondad.github.io/future-learner/
     icon: 🔭
