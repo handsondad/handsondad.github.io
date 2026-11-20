@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="492" viewBox="0 0 760 492" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">鲜牛乳与成熟母乳及一段婴幼儿配方粉四大母乳化分子改造全景对比图</title>
+<desc id="desc">左上对比鲜牛乳(3.3g/100mL，酪清比80:20)、成熟母乳(1.05g/100mL，40:60)与1段配方粉(1.25g/100mL，借电渗析D70/D90脱盐乳清粉配平40:60且不增肾负荷)；右上对比普通植物油POP产生难溶棕榈酸钙皂与母乳/OPO结构脂(sn-2位棕榈酸直吸，钙皂降46%、硬便降50%)；下表汇总乳糖、第3大固体HMO(2&#x27;-FL/LNnT)、DHA/ARA、铁强化及潜在肾溶质负荷PRSL五大维度量化指标。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="491" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">婴幼儿配方奶粉绝不是“牛奶晒干”！——从伤肾高蛋白、硬酪蛋白凝块到钙皂便秘的四大母乳化手术</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">对照成熟母乳与鲜牛乳分子差异 (PMC12399412 / PMC4222706 / PMC5378003)：降蛋白 · 调乳清 · 换 OPO · 补乳糖与 HMO</text>
+<rect x="20" y="64" width="366" height="206" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="76.0" width="342" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="203.0" y="91.0" font-size="8.8" fill="#1d6fa5" text-anchor="middle" font-weight="600">① 手术一 &amp; 二：砍总蛋白 + D90 脱盐乳清扭转“酪清比”</text>
+<text x="34" y="119" font-size="7.9" fill="#0f172a" text-anchor="start" font-weight="700">鲜牛乳 (小牛快长配方)</text>
+<rect x="34" y="124.0" width="153.9" height="13" rx="2" fill="#b45309"/>
+<rect x="187.9" y="124.0" width="38.5" height="13" rx="2" fill="#0f766e"/>
+<text x="232.3" y="134" font-size="7.6" fill="#dc2626" text-anchor="start" font-weight="700">3.3 g (酪80:清20)</text>
+<text x="34" y="149" font-size="7.4" fill="#1e293b" text-anchor="start">胃内结大硬块 · 灰分0.75g压肾!</text>
+<text x="34" y="165" font-size="7.9" fill="#0f172a" text-anchor="start" font-weight="700">成熟母乳 (人类黄金基准)</text>
+<rect x="34" y="170.0" width="24.5" height="13" rx="2" fill="#b45309"/>
+<rect x="58.5" y="170.0" width="36.7" height="13" rx="2" fill="#0f766e"/>
+<text x="101.2" y="180" font-size="7.6" fill="#18794e" text-anchor="start" font-weight="700">1.05 g (酪40:清60)</text>
+<text x="34" y="195" font-size="7.4" fill="#1e293b" text-anchor="start">30–75nm软絮凝 · 灰分仅0.20g</text>
+<text x="34" y="211" font-size="7.9" fill="#0f172a" text-anchor="start" font-weight="700">1段婴配粉 (母乳化改造)</text>
+<rect x="34" y="216.0" width="29.1" height="13" rx="2" fill="#b45309"/>
+<rect x="63.1" y="216.0" width="43.7" height="13" rx="2" fill="#0f766e"/>
+<text x="112.9" y="226" font-size="7.6" fill="#1d6fa5" text-anchor="start" font-weight="700">1.25 g (酪40:清60)</text>
+<text x="34" y="241" font-size="7.4" fill="#1e293b" text-anchor="start">D70/D90 脱盐乳清粉精准配平</text>
+<rect x="256" y="103" width="10" height="10" rx="2" fill="#b45309"/>
+<text x="270" y="111" font-size="7.4" fill="#0f172a" text-anchor="start" font-weight="600">酪蛋白</text>
+<rect x="314" y="103" width="10" height="10" rx="2" fill="#0f766e"/>
+<text x="328" y="111" font-size="7.4" fill="#0f172a" text-anchor="start" font-weight="600">乳清蛋白</text>
+<text x="34" y="258" font-size="7.4" fill="#1d6fa5" text-anchor="start" font-weight="700">注：电渗析+离子交换脱除 90% 矿物质灰分制成 D90 乳清粉，护住婴儿娇嫩肾脏 (PMC9689407)！</text>
+<rect x="398" y="64" width="342" height="206" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="410.0" y="76.0" width="318" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="569.0" y="91.0" font-size="8.8" fill="#c25014" text-anchor="middle" font-weight="600">② 手术三：OPO 结构脂 (sn-2 棕榈酸) 破解“钙皂硬便”</text>
+<rect x="410" y="108" width="152" height="118" rx="6" fill="#fef2f2" stroke="#dc2626" stroke-width="1.0"/>
+<text x="486" y="124" font-size="7.9" fill="#dc2626" text-anchor="middle" font-weight="700">普通植物油 (POP 构型)</text>
+<text x="486" y="141" font-size="7.3" fill="#0f172a" text-anchor="middle">sn-1: 棕榈酸 P ← 胰脂酶剪断!</text>
+<text x="486" y="156" font-size="7.3" fill="#1e293b" text-anchor="middle">sn-2: 油酸 O (单甘脂吸收)</text>
+<text x="486" y="171" font-size="7.3" fill="#0f172a" text-anchor="middle">sn-3: 棕榈酸 P ← 胰脂酶剪断!</text>
+<line x1="422.0" y1="179.0" x2="550.0" y2="179.0" stroke="#dc2626" stroke-width="0.8" opacity="0.4"/>
+<text x="486" y="195" font-size="7.5" fill="#dc2626" text-anchor="middle" font-weight="700">游离棕榈酸 + 肠内 Ca²⁺</text>
+<text x="486" y="212" font-size="7.4" fill="#dc2626" text-anchor="middle" font-weight="700">⇒ 难溶“钙皂”排出 (丢钙又便秘!)</text>
+<rect x="574" y="108" width="154" height="118" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="1.0"/>
+<text x="651" y="124" font-size="7.9" fill="#18794e" text-anchor="middle" font-weight="700">母乳 / OPO 结构脂</text>
+<text x="651" y="141" font-size="7.3" fill="#1e293b" text-anchor="middle">sn-1: 不饱和油酸 O (好吸收)</text>
+<text x="651" y="156" font-size="7.4" fill="#18794e" text-anchor="middle" font-weight="700">sn-2: 棕榈酸 P (~70% 居中!)</text>
+<text x="651" y="171" font-size="7.3" fill="#1e293b" text-anchor="middle">sn-3: 不饱和油酸 O (好吸收)</text>
+<line x1="586.0" y1="179.0" x2="716.0" y2="179.0" stroke="#18794e" stroke-width="0.8" opacity="0.4"/>
+<text x="651" y="195" font-size="7.5" fill="#18794e" text-anchor="middle" font-weight="700">保留 sn-2 单棕榈酸甘油酯</text>
+<text x="651" y="212" font-size="7.4" fill="#0f172a" text-anchor="middle" font-weight="700">⇒ 穿肠壁直吸，锁住钙与能量!</text>
+<text x="410" y="244" font-size="7.6" fill="#1e293b" text-anchor="start">• 临床随机对照实证 (Yao 2014, PMC4222706)：高 sn-2 棕榈酸配方令</text>
+<text x="410" y="259" font-size="7.6" fill="#c25014" text-anchor="start" font-weight="700">  婴儿粪便棕榈酸钙皂大降 46%，硬便发生率直接减半 (-50%)！</text>
+<rect x="20" y="282" width="720" height="198" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="294.0" width="696" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="380.0" y="309.0" font-size="8.8" fill="#6d28d9" text-anchor="middle" font-weight="600">③ 手术四：全维度营养重构账单——为什么 1 周岁内婴儿绝对不能拿纯牛奶代替母乳或 1–2 段配方粉？</text>
+<rect x="32" y="324" width="696" height="22" rx="4" fill="#f1f5f9"/>
+<text x="40" y="339" font-size="8.0" fill="#0f172a" text-anchor="start" font-weight="700">核心营养与生理维度</text>
+<text x="180" y="339" font-size="8.0" fill="#dc2626" text-anchor="start" font-weight="700">普通鲜牛乳</text>
+<text x="336" y="339" font-size="8.0" fill="#18794e" text-anchor="start" font-weight="700">人类成熟母乳</text>
+<text x="496" y="339" font-size="8.0" fill="#1d6fa5" text-anchor="start" font-weight="700">现代 1 段婴配粉改造方案</text>
+<text x="40" y="363" font-size="7.7" fill="#0f172a" text-anchor="start" font-weight="700">乳糖 (脑髓鞘半乳糖)</text>
+<text x="180" y="363" font-size="7.6" fill="#1e293b" text-anchor="start">约 4.8 g/100mL (偏低)</text>
+<text x="336" y="363" font-size="7.6" fill="#18794e" text-anchor="start" font-weight="600">约 7.0 g/100mL (清甜高乳糖)</text>
+<text x="496" y="363" font-size="7.6" fill="#1d6fa5" text-anchor="start" font-weight="700">补纯乳糖至 ~7.0–7.4 g（1段禁加蔗糖/果糖!）</text>
+<rect x="32" y="371" width="696" height="23" fill="#f8fafc"/>
+<text x="40" y="387" font-size="7.7" fill="#0f172a" text-anchor="start" font-weight="700">母乳低聚糖 HMO</text>
+<text x="180" y="387" font-size="7.6" fill="#1e293b" text-anchor="start">&lt;0.05 g/L (近乎为零)</text>
+<text x="336" y="387" font-size="7.6" fill="#18794e" text-anchor="start" font-weight="600">5–15 g/L（母乳第3大固体!）</text>
+<text x="496" y="387" font-size="7.6" fill="#1d6fa5" text-anchor="start" font-weight="700">生物发酵补 2&#x27;-FL / LNnT，专喂双歧杆菌防感染</text>
+<text x="40" y="411" font-size="7.7" fill="#0f172a" text-anchor="start" font-weight="700">脑视网膜多不饱和脂</text>
+<text x="180" y="411" font-size="7.6" fill="#dc2626" text-anchor="start">高饱和乳脂 · 极缺亚油酸/DHA</text>
+<text x="336" y="411" font-size="7.6" fill="#18794e" text-anchor="start" font-weight="600">富亚油酸/亚麻酸 + 天然 DHA</text>
+<text x="496" y="411" font-size="7.6" fill="#1d6fa5" text-anchor="start" font-weight="700">调配植物油/乳脂 + 微囊化藻油 DHA / ARA</text>
+<rect x="32" y="419" width="696" height="23" fill="#f8fafc"/>
+<text x="40" y="435" font-size="7.7" fill="#0f172a" text-anchor="start" font-weight="700">铁元素（防缺铁贫血）</text>
+<text x="180" y="435" font-size="7.6" fill="#dc2626" text-anchor="start" font-weight="600">仅 0.03–0.05 mg/100mL!</text>
+<text x="336" y="435" font-size="7.6" fill="#18794e" text-anchor="start" font-weight="600">约 0.03–0.05 mg (吸收率极高)</text>
+<text x="496" y="435" font-size="7.6" fill="#1d6fa5" text-anchor="start" font-weight="700">强化铁至 0.5–1.2 mg/100mL + 维生素 C 促吸收</text>
+<text x="40" y="459" font-size="7.7" fill="#0f172a" text-anchor="start" font-weight="700">潜在肾溶质负荷 PRSL</text>
+<text x="180" y="459" font-size="7.6" fill="#dc2626" text-anchor="start" font-weight="600">~280–308 mOsm/L (严重超载!)</text>
+<text x="336" y="459" font-size="7.6" fill="#18794e" text-anchor="start" font-weight="600">~79–93 mOsm/L (精准护肾)</text>
+<text x="496" y="459" font-size="7.6" fill="#1d6fa5" text-anchor="start" font-weight="700">降蛋白 + 脱盐乳清压回 ~85–105 mOsm/L 安全区</text>
+</svg>

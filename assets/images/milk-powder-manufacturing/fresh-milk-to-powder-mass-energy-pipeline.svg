@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="482" viewBox="0 0 760 482" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">鲜奶制取全脂乳粉五步工业产线质量守恒与真空降膜节能及高压均质原理图</title>
+<desc id="desc">上图展示7.76kg生鲜乳(12.5%干物质)经净乳巴氏杀菌、15–25MPa双级均质、20kPa负压48–70°C真空降膜蒸发(先脱除5.82kg即86.1%水分至1.94kg浓奶)、195°C顺流喷雾干燥及流化床速溶制得1.00kg奶粉(含0.97kg干物质)的质量守恒链路；左下对比鲜奶直喷(25.7MJ)与真空浓缩+喷雾(5.43MJ，省热78.9%)；右下用斯托克斯定律解释4μm→0.4μm均质令脂肪上浮减慢100倍及酪蛋白重包膜防氧化机制。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="481" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">近 8 斤鲜奶才能浓缩出 1 斤奶粉！——从真空降膜蒸发到喷雾成粉的质量与能耗总账</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">为什么绝不能把鲜奶直接喷进热风塔？负压低温蒸发先在 48–70 °C 抽走 86.1% 水分（附单次流向动画）</text>
+<style>
+  @keyframes milkPipeOnce {
+    0% { stroke-dashoffset: 220; opacity: 0.35; }
+    25% { opacity: 0.95; }
+    100% { stroke-dashoffset: 0; opacity: 0.9; }
+  }
+  .milk-flow {
+    stroke-dasharray: 8 7;
+    animation: milkPipeOnce 4.2s ease-out 1 forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .milk-flow { animation: none !important; stroke-dashoffset: 0 !important; opacity: 0.9 !important; }
+  }
+</style>
+<rect x="20" y="64" width="720" height="224" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="76.0" width="692" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="380.0" y="91.0" font-size="9.1" fill="#1d6fa5" text-anchor="middle" font-weight="600">① 生产 1.00 kg 全脂乳粉（含 0.97 kg 干物质 + 0.03 kg 结合水）的工业五关接力</text>
+<line x1="95.0" y1="166.0" x2="665.0" y2="166.0" stroke="#bae6fd" stroke-width="5.0"/>
+<line class="milk-flow" x1="95" y1="166" x2="665" y2="166" stroke="#1d6fa5" stroke-width="2.6" stroke-linecap="round"/>
+<rect x="34" y="110" width="124" height="112" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="1.3"/>
+<text x="96.0" y="128" font-size="8.4" fill="#475569" text-anchor="middle" font-weight="700">1. 净乳与杀菌</text>
+<text x="96.0" y="148" font-size="9.0" fill="#0f172a" text-anchor="middle" font-weight="700">7.76 kg 生鲜乳</text>
+<line x1="44.0" y1="157.0" x2="148.0" y2="157.0" stroke="#475569" stroke-width="0.8" opacity="0.35"/>
+<text x="96.0" y="176" font-size="7.6" fill="#1e293b" text-anchor="middle">87.5% 水 · 12.5% 干物质</text>
+<text x="96.0" y="195" font-size="7.6" fill="#475569" text-anchor="middle" font-weight="700">离心除杂 + 72–85°C 杀菌</text>
+<rect x="172" y="110" width="126" height="112" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.3"/>
+<text x="235.0" y="128" font-size="8.4" fill="#6d28d9" text-anchor="middle" font-weight="700">2. 双级高压均质</text>
+<text x="235.0" y="148" font-size="9.0" fill="#0f172a" text-anchor="middle" font-weight="700">7.76 kg 均质乳</text>
+<line x1="182.0" y1="157.0" x2="288.0" y2="157.0" stroke="#6d28d9" stroke-width="0.8" opacity="0.35"/>
+<text x="235.0" y="176" font-size="7.6" fill="#1e293b" text-anchor="middle">15–25 MPa 空化剪切</text>
+<text x="235.0" y="195" font-size="7.6" fill="#6d28d9" text-anchor="middle" font-weight="700">脂肪球 4 μm → 0.4 μm</text>
+<rect x="312" y="110" width="150" height="112" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.3"/>
+<text x="387.0" y="128" font-size="8.4" fill="#1d6fa5" text-anchor="middle" font-weight="700">3. 真空降膜蒸发</text>
+<text x="387.0" y="148" font-size="9.0" fill="#0f172a" text-anchor="middle" font-weight="700">剩 1.94 kg 浓奶</text>
+<line x1="322.0" y1="157.0" x2="452.0" y2="157.0" stroke="#1d6fa5" stroke-width="0.8" opacity="0.35"/>
+<text x="387.0" y="176" font-size="7.6" fill="#1e293b" text-anchor="middle">负压 20 kPa · 48–70°C 沸腾</text>
+<text x="387.0" y="195" font-size="7.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">抽走 5.82 kg 水 (86.1%!)</text>
+<rect x="476" y="110" width="126" height="112" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1.3"/>
+<text x="539.0" y="128" font-size="8.4" fill="#c25014" text-anchor="middle" font-weight="700">4. 顺流喷雾干燥</text>
+<text x="539.0" y="148" font-size="9.0" fill="#0f172a" text-anchor="middle" font-weight="700">剩 1.06 kg 初粉</text>
+<line x1="486.0" y1="157.0" x2="592.0" y2="157.0" stroke="#c25014" stroke-width="0.8" opacity="0.35"/>
+<text x="539.0" y="176" font-size="7.6" fill="#1e293b" text-anchor="middle">195°C 热风 · 湿球 ~48°C</text>
+<text x="539.0" y="195" font-size="7.6" fill="#c25014" text-anchor="middle" font-weight="700">瞬抽 0.88 kg 水 (&lt;10 秒)</text>
+<rect x="616" y="110" width="110" height="112" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.3"/>
+<text x="671.0" y="128" font-size="8.4" fill="#18794e" text-anchor="middle" font-weight="700">5. 流化床速溶</text>
+<text x="671.0" y="148" font-size="9.0" fill="#0f172a" text-anchor="middle" font-weight="700">1.00 kg 成品粉</text>
+<line x1="626.0" y1="157.0" x2="716.0" y2="157.0" stroke="#18794e" stroke-width="0.8" opacity="0.35"/>
+<text x="671.0" y="176" font-size="7.6" fill="#1e293b" text-anchor="middle">再脱 0.06 kg 水 + 卵磷脂</text>
+<text x="671.0" y="195" font-size="7.6" fill="#18794e" text-anchor="middle" font-weight="700">水分 3.0% · 充氮锁鲜</text>
+<rect x="34.0" y="236.0" width="519.0" height="22.0" rx="4" fill="#1d6fa5"/>
+<text x="293.5" y="251.0" font-size="8.0" fill="#ffffff" text-anchor="middle" font-weight="700">真空降膜蒸发脱去 5.82 kg 水（占总脱水 86.1%，占鲜奶重 75.0%）</text>
+<rect x="553.0" y="236.0" width="83.8" height="22.0" fill="#c25014"/>
+<text x="594.9" y="251.0" font-size="7.4" fill="#ffffff" text-anchor="middle" font-weight="700">喷雾脱 0.94kg</text>
+<rect x="636.8" y="236.0" width="89.2" height="22.0" rx="4" fill="#18794e"/>
+<text x="681.4" y="251.0" font-size="7.6" fill="#ffffff" text-anchor="middle" font-weight="700">1.00kg 奶粉</text>
+<text x="380" y="276" font-size="8.0" fill="#64748b" text-anchor="middle">质量守恒核算：7.76 kg × 12.5% 乳固体 = 1.94 kg × 50.0% 浓奶 = 1.00 kg × 97.0% 奶粉干物质 = 0.97 kg</text>
+<rect x="20" y="300" width="366" height="168" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="312.0" width="338" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="203.0" y="327.0" font-size="8.8" fill="#c25014" text-anchor="middle" font-weight="600">② 为什么不能架锅熬干，也不能把鲜奶直接喷进塔？</text>
+<text x="34" y="350" font-size="8.1" fill="#1e293b" text-anchor="start">• 常压大锅 100 °C 久熬：乳清蛋白凝固结皮，乳糖与赖氨酸发生剧烈</text>
+<text x="34" y="367" font-size="8.1" fill="#dc2626" text-anchor="start" font-weight="700">  美拉德褐变（变成焦黄奶皮子），必需氨基酸赖氨酸大量报废且冲不开！</text>
+<text x="34" y="386" font-size="8.1" fill="#1e293b" text-anchor="start">• 真空降膜 + MVR 蒸汽再压缩：抽负压至 ~20 kPa 令牛奶在 48–70 °C</text>
+<text x="34" y="403" font-size="8.1" fill="#0f172a" text-anchor="start" font-weight="700">  低温沸腾，脱 1 kg 水仅耗 ~320 kJ（喷雾热风需 ~3,800 kJ，贵 11 倍!）：</text>
+<text x="34" y="425" font-size="7.9" fill="#dc2626" text-anchor="start" font-weight="700">鲜奶直喷热风</text>
+<rect x="108" y="414" width="188" height="13" rx="3" fill="#dc2626"/>
+<text x="302" y="425" font-size="7.8" fill="#dc2626" text-anchor="start" font-weight="700" class="mono">25.7 MJ/kg粉</text>
+<text x="34" y="446" font-size="7.9" fill="#18794e" text-anchor="start" font-weight="700">真空浓缩+喷雾</text>
+<rect x="108" y="435" width="39.8" height="13" rx="3" fill="#18794e"/>
+<text x="153.8" y="446" font-size="7.8" fill="#18794e" text-anchor="start" font-weight="700">5.43 MJ/kg粉（省热 78.9% · 奶香不焦!）</text>
+<rect x="398" y="300" width="342" height="168" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="412.0" y="312.0" width="314" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="569.0" y="327.0" font-size="8.8" fill="#6d28d9" text-anchor="middle" font-weight="600">③ 15–25 MPa 高压均质：为什么奶粉冲开不飘黄油圈？</text>
+<rect x="412" y="344" width="148" height="76" rx="6" fill="#fffbeb" stroke="#b45309" stroke-width="1.0"/>
+<text x="486" y="360" font-size="8.1" fill="#b45309" text-anchor="middle" font-weight="700">未均质生乳脂肪球</text>
+<circle cx="452" cy="388" r="16" fill="#fde047" stroke="#b45309" stroke-width="1.4"/>
+<text x="452" y="391" font-size="7.4" fill="#0f172a" text-anchor="middle" font-weight="700">4 μm</text>
+<text x="514" y="383" font-size="7.7" fill="#1e293b" text-anchor="middle">浮速快易分层</text>
+<text x="514" y="399" font-size="7.7" fill="#dc2626" text-anchor="middle" font-weight="700">喷干游离脂高</text>
+<rect x="574" y="344" width="152" height="76" rx="6" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.0"/>
+<text x="650" y="360" font-size="8.1" fill="#6d28d9" text-anchor="middle" font-weight="700">均质后微脂滴 (0.4 μm)</text>
+<circle cx="586" cy="382" r="3.4" fill="#fde047" stroke="#6d28d9" stroke-width="1.3"/>
+<circle cx="598" cy="380" r="3.4" fill="#fde047" stroke="#6d28d9" stroke-width="1.3"/>
+<circle cx="610" cy="383" r="3.4" fill="#fde047" stroke="#6d28d9" stroke-width="1.3"/>
+<circle cx="590" cy="394" r="3.4" fill="#fde047" stroke="#6d28d9" stroke-width="1.3"/>
+<circle cx="602" cy="393" r="3.4" fill="#fde047" stroke="#6d28d9" stroke-width="1.3"/>
+<circle cx="614" cy="395" r="3.4" fill="#fde047" stroke="#6d28d9" stroke-width="1.3"/>
+<text x="676" y="383" font-size="7.7" fill="#6d28d9" text-anchor="middle" font-weight="700">酪蛋白重新包膜</text>
+<text x="676" y="399" font-size="7.7" fill="#18794e" text-anchor="middle" font-weight="700">锁住油脂防哈喇</text>
+<text x="412" y="438" font-size="8.0" fill="#0f172a" text-anchor="start" font-weight="700">• 斯托克斯上浮定律 v = d²Δρg/(18μ)：粒径缩 10 倍，上浮慢 100 倍！</text>
+<text x="412" y="455" font-size="8.0" fill="#1e293b" text-anchor="start">• 新生乳蛋白膜严实包裹油滴，把粉粒表面“游离脂肪”压到极低水平。</text>
+</svg>

@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="482" viewBox="0 0 760 482" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">分体式空调蒸汽压缩四步搬热循环与COP能量守恒账本图解</title>
+<desc id="desc">左图展示R32制冷剂在室内27°C与室外38°C之间的四步循环：压缩机升压至3.14MPa将冷凝点抬至50°C向室外顺坡排热292.2kJ/kg，经电子膨胀阀节流回0.95MPa闪蒸降至5°C在室内蒸发器吸热236.4kJ/kg；右图对比电暖器1:1焦耳上限与空调热泵耗功55.8kJ/kg搬运236.4kJ/kg热量的能量守恒账本及卡诺温差铁律。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="481" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">室外 38 °C 酷暑，27 °C 屋里的热凭什么往更烫的室外跑？——“热力学海绵”四步搬热循环</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">靠压缩抬沸点排热、节流降沸点吸热，1 度电功撬动约 4 度相变潜热（附单次流向动画）</text>
+<style>
+  @keyframes acFlowOnce {
+    0% { stroke-dashoffset: 180; opacity: 0.35; }
+    20% { opacity: 0.95; }
+    100% { stroke-dashoffset: 0; opacity: 0.85; }
+  }
+  .ac-pulse {
+    stroke-dasharray: 8 8;
+    animation: acFlowOnce 4.6s ease-out 1 forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ac-pulse { animation: none !important; stroke-dashoffset: 0 !important; opacity: 0.85 !important; }
+  }
+</style>
+<rect x="20" y="64" width="434" height="404" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="76.0" width="410" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="237.0" y="91.0" font-size="9.2" fill="#1d6fa5" text-anchor="middle" font-weight="600">① 分体式空调四大核心器官（以 R32 制冷剂实测工况为例）</text>
+<rect x="32" y="106" width="184" height="286" rx="8" fill="#f0f9ff" stroke="#bae6fd" stroke-width="1.2"/>
+<text x="124" y="124" font-size="9.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">室内挂机（室温 27 °C）</text>
+<rect x="222" y="106" width="18" height="286" rx="3" fill="#e2e8f0" stroke="#475569" stroke-width="1.0"/>
+<text x="231" y="246" font-size="8.2" fill="#64748b" text-anchor="middle" font-weight="700">墙</text>
+<text x="231" y="260" font-size="8.2" fill="#64748b" text-anchor="middle" font-weight="700">体</text>
+<rect x="246" y="106" width="196" height="286" rx="8" fill="#fff7ed" stroke="#fed7aa" stroke-width="1.2"/>
+<text x="344" y="124" font-size="9.0" fill="#c25014" text-anchor="middle" font-weight="700">室外主机（酷暑 38 °C）</text>
+<polyline points="116.0,184.0 116.0,146.0 264.0,146.0" fill="none" stroke="#0284c7" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="126" y="139" font-size="7.7" fill="#1d6fa5" text-anchor="middle" font-weight="700">10°C 低压气 (0.95 MPa)</text>
+<polyline points="410.0,146.0 424.0,146.0 424.0,202.0" fill="none" stroke="#dc2626" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="344.0,304.0 344.0,354.0 298.0,354.0" fill="none" stroke="#c25014" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="388" y="326" font-size="7.8" fill="#c25014" text-anchor="middle" font-weight="700">45°C 过冷液</text>
+<polyline points="174.0,354.0 116.0,354.0 116.0,294.0" fill="none" stroke="#0f766e" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="122" y="372" font-size="7.7" fill="#0f766e" text-anchor="middle" font-weight="700">5°C 冰雾 (25%闪蒸气)</text>
+<path class="ac-pulse" d="M 116,184 L 116,146 L 264,146 M 344,304 L 344,354 L 298,354 M 174,354 L 116,354 L 116,294" fill="none" stroke="#ffffff" stroke-width="2.0"/>
+<rect x="264" y="128" width="148" height="56" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1.6"/>
+<text x="338" y="145" font-size="8.8" fill="#dc2626" text-anchor="middle" font-weight="700">① 压缩机（拧海绵）</text>
+<text x="338" y="161" font-size="7.9" fill="#0f172a" text-anchor="middle" font-weight="600">升压至 3.14 MPa · 排气 82°C</text>
+<text x="338" y="175" font-size="7.8" fill="#dc2626" text-anchor="middle" font-weight="700">冷凝沸点强行抬到 50 °C!</text>
+<rect x="260" y="200" width="168" height="104" rx="8" fill="#ffffff" stroke="#c25014" stroke-width="1.6"/>
+<text x="344" y="218" font-size="8.7" fill="#c25014" text-anchor="middle" font-weight="700">② 室外冷凝器（顺坡放热）</text>
+<text x="344" y="236" font-size="8.2" fill="#0f172a" text-anchor="middle" font-weight="700">管内 50 °C &gt; 室外 38 °C</text>
+<text x="344" y="253" font-size="8.0" fill="#1e293b" text-anchor="middle">热量自发涌向室外热空气！</text>
+<text x="344" y="270" font-size="7.9" fill="#c25014" text-anchor="middle" font-weight="700" class="mono">气变液放热 q_H=292.2 kJ/kg</text>
+<text x="344" y="287" font-size="7.8" fill="#64748b" text-anchor="middle">轴流风扇吹出 ~45 °C 热风 →</text>
+<rect x="174" y="326" width="124" height="54" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="1.6"/>
+<text x="236" y="344" font-size="8.5" fill="#b45309" text-anchor="middle" font-weight="700">③ 电子膨胀阀/毛细管</text>
+<text x="236" y="360" font-size="7.8" fill="#0f172a" text-anchor="middle" font-weight="600">窄缝泄压 3.14→0.95 MPa</text>
+<text x="236" y="374" font-size="7.8" fill="#0f766e" text-anchor="middle" font-weight="700">沸点瞬间跌回 5.0 °C!</text>
+<rect x="42" y="184" width="162" height="110" rx="8" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.6"/>
+<text x="123" y="202" font-size="8.7" fill="#1d6fa5" text-anchor="middle" font-weight="700">④ 室内蒸发器（松海绵）</text>
+<text x="123" y="220" font-size="8.2" fill="#0f172a" text-anchor="middle" font-weight="700">管内 5.0 °C &lt; 室温 27 °C</text>
+<text x="123" y="237" font-size="8.0" fill="#1e293b" text-anchor="middle">屋里热量顺坡涌进冷铜管！</text>
+<text x="123" y="254" font-size="7.9" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono">液变气吸热 q_L=236.4 kJ/kg</text>
+<text x="123" y="271" font-size="7.9" fill="#0f766e" text-anchor="middle" font-weight="700">贯流风扇吹出 ~13°C 凉风</text>
+<text x="123" y="286" font-size="7.7" fill="#64748b" text-anchor="middle">+ 水汽遇冷结露顺水管排走</text>
+<text x="34" y="414" font-size="8.6" fill="#1e293b" text-anchor="start">• 一句话顿悟：热量从没“违背热力学第二定律自己爬坡”！空调是在室内把沸点降</text>
+<text x="34" y="432" font-size="8.6" fill="#0f172a" text-anchor="start" font-weight="700">  到 5 °C 哄屋里热量下坡进管，再到室外把沸点抬到 50 °C 逼热量下坡排进酷暑！</text>
+<text x="34" y="450" font-size="8.5" fill="#64748b" text-anchor="start">  就像室内吸饱冷水的海绵，拿到室外用力一拧挤干，松手变冰再拿回屋里吸水。</text>
+<rect x="466" y="64" width="274" height="404" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="478.0" y="76.0" width="250" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="603.0" y="91.0" font-size="9.1" fill="#18794e" text-anchor="middle" font-weight="600">② 1 度电凭什么搬 4 度热？违背守恒吗？</text>
+<rect x="478" y="108" width="250" height="96" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="490" y="127" font-size="8.9" fill="#0f172a" text-anchor="start" font-weight="700">普通电暖器（焦耳“造热工”）：</text>
+<rect x="490" y="138" width="100" height="18" rx="4" fill="#dc2626"/>
+<text x="540" y="151" font-size="8.0" fill="#ffffff" text-anchor="middle" font-weight="700">输入 1.0 度电</text>
+<text x="600" y="151" font-size="9.5" fill="#475569" text-anchor="middle" font-weight="700">→</text>
+<rect x="614" y="138" width="100" height="18" rx="4" fill="#c25014"/>
+<text x="664" y="151" font-size="8.0" fill="#ffffff" text-anchor="middle" font-weight="700">最多 1.0 度热</text>
+<text x="490" y="176" font-size="8.2" fill="#1e293b" text-anchor="start">电热丝把高品位电能 1:1 降级成热能，</text>
+<text x="490" y="192" font-size="8.2" fill="#64748b" text-anchor="start">效率天花板永远被能量守恒锁死在 100%！</text>
+<rect x="478" y="214" width="250" height="148" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.3"/>
+<text x="490" y="234" font-size="8.9" fill="#18794e" text-anchor="start" font-weight="700">空调/热泵（相变“快递搬运工”）：</text>
+<rect x="490" y="246" width="44.0" height="20" rx="3" fill="#dc2626"/>
+<text x="512.0" y="260" font-size="7.8" fill="#ffffff" text-anchor="middle" font-weight="700">电功 1</text>
+<rect x="534.0" y="246" width="186.0" height="20" rx="3" fill="#1d6fa5"/>
+<text x="627.0" y="260" font-size="8.0" fill="#ffffff" text-anchor="middle" font-weight="700">从空气白搬的热 ~4.2 份!</text>
+<rect x="490" y="274" width="230.0" height="18" rx="3" fill="#c25014"/>
+<text x="605.0" y="287" font-size="7.9" fill="#ffffff" text-anchor="middle" font-weight="700">室外冷凝总排热 = 5.2 份 (严丝合缝守恒!)</text>
+<text x="490" y="311" font-size="8.3" fill="#0f172a" text-anchor="start" font-weight="700" class="mono">• 实算每千克 R32：耗功 w = 55.8 kJ</text>
+<text x="490" y="328" font-size="8.2" fill="#1e293b" text-anchor="start" class="mono">  室内吸热 236.4 + 电功 55.8 = 排热 292.2</text>
+<text x="490" y="346" font-size="8.3" fill="#18794e" text-anchor="start" font-weight="700">• 理论循环 COP = 4.24（扣风机损耗实测 ~3.8）</text>
+<rect x="478" y="372" width="250" height="82" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="490" y="391" font-size="8.8" fill="#1d6fa5" text-anchor="start" font-weight="700">卡诺定律揭示的省电铁律：</text>
+<text x="490" y="409" font-size="8.6" fill="#0f172a" text-anchor="start" font-weight="700" class="mono">COP_max = T_C / (T_H − T_C)</text>
+<text x="490" y="427" font-size="8.2" fill="#1e293b" text-anchor="start">室内外温差 (T_H − T_C) 越小，搬热坡度越缓：</text>
+<text x="490" y="443" font-size="8.3" fill="#1d6fa5" text-anchor="start" font-weight="700">空调调高 1 °C，实测省电约 7%–10%！</text>
+</svg>

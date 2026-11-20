@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="476" viewBox="0 0 760 476" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">四代制冷剂臭氧与温室潜能演进史及R32轻度可燃A2L抽真空安全原理图</title>
+<desc id="desc">左栏对比CFC-12、HCFC-22、HFC-410A、HFC-32与天然丙烷R290的ODP和GWP指标，并列出1995年诺贝尔化学奖Molina-Rowland平流层氯自由基催化破坏10万个臭氧分子的链式反应与2016基加利修正案目标；右栏解析ASHRAE A2L轻度可燃分级(燃烧下限14.4%、火焰速度&lt;10cm/s)及R32空调安装必须抽真空≥15分钟以杜绝混氧燃爆、膨胀阀冰堵和冷冻油水解酸蚀的三大物理化学原因。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="475" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">四代“冷媒血液”百年大换血：从臭氧空洞诺奖警钟，到新空调上的“小火苗 A2L”警告标</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：CFC-12 → R22 → R410A → R32/R290 环保演进 · 右：为什么新装 R32 空调偷懒“不抽真空”会埋雷？</text>
+<rect x="20" y="64" width="392" height="398" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="78.0" width="364" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="216.0" y="93.0" font-size="9.1" fill="#1d6fa5" text-anchor="middle" font-weight="600">① 制冷剂四代更替史：补完臭氧空洞，再砍温室效应</text>
+<rect x="34" y="110" width="364" height="39" rx="6" fill="#fef2f2" stroke="#dc2626" stroke-width="1.1"/>
+<text x="42" y="126" font-size="8.2" fill="#dc2626" text-anchor="start" font-weight="700">第1代 CFC</text>
+<text x="42" y="141" font-size="7.9" fill="#0f172a" text-anchor="start" font-weight="600">R12 氟利昂 (1930)</text>
+<text x="144" y="126" font-size="8.0" fill="#dc2626" text-anchor="start" font-weight="700">ODP = 1.00 (穿臭氧!)</text>
+<text x="144" y="141" font-size="8.0" fill="#1e293b" text-anchor="start" class="mono">GWP = 10,900</text>
+<rect x="282.0" y="117.0" width="104.0" height="10" rx="3" fill="#dc2626"/>
+<text x="282.0" y="141" font-size="7.8" fill="#dc2626" text-anchor="start" font-weight="700">蒙特利尔淘汰</text>
+<rect x="34" y="155" width="364" height="39" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="1.1"/>
+<text x="42" y="171" font-size="8.2" fill="#c25014" text-anchor="start" font-weight="700">第2代 HCFC</text>
+<text x="42" y="186" font-size="7.9" fill="#0f172a" text-anchor="start" font-weight="600">R22 老定频机</text>
+<text x="144" y="171" font-size="8.0" fill="#0f172a" text-anchor="start" font-weight="400">ODP = 0.055</text>
+<text x="144" y="186" font-size="8.0" fill="#1e293b" text-anchor="start" class="mono">GWP = 1,810</text>
+<rect x="282.0" y="162.0" width="35.4" height="10" rx="3" fill="#c25014"/>
+<text x="282.0" y="186" font-size="7.8" fill="#c25014" text-anchor="start" font-weight="700">加速淘汰中</text>
+<rect x="34" y="200" width="364" height="39" rx="6" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.1"/>
+<text x="42" y="216" font-size="8.2" fill="#6d28d9" text-anchor="start" font-weight="700">第3代 HFC</text>
+<text x="42" y="231" font-size="7.9" fill="#0f172a" text-anchor="start" font-weight="600">R410A 混配氟</text>
+<text x="144" y="216" font-size="8.0" fill="#0f172a" text-anchor="start" font-weight="700">ODP = 0 (零氯护臭氧)</text>
+<text x="144" y="231" font-size="8.0" fill="#1e293b" text-anchor="start" class="mono">GWP = 2,088</text>
+<rect x="282.0" y="207.0" width="40.6" height="10" rx="3" fill="#6d28d9"/>
+<text x="282.0" y="231" font-size="7.8" fill="#6d28d9" text-anchor="start" font-weight="700">基加利削减</text>
+<rect x="34" y="245" width="364" height="39" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="42" y="261" font-size="8.2" fill="#1d6fa5" text-anchor="start" font-weight="700">第4代 主流</text>
+<text x="42" y="276" font-size="7.9" fill="#0f172a" text-anchor="start" font-weight="600">R32 (CH₂F₂)</text>
+<text x="144" y="261" font-size="8.0" fill="#0f172a" text-anchor="start" font-weight="400">ODP = 0 · 充注省 30%</text>
+<text x="144" y="276" font-size="8.0" fill="#1e293b" text-anchor="start" class="mono">GWP = 675 (A2L)</text>
+<rect x="282.0" y="252.0" width="16.6" height="10" rx="3" fill="#1d6fa5"/>
+<text x="282.0" y="276" font-size="7.8" fill="#1d6fa5" text-anchor="start" font-weight="700">现行主力</text>
+<rect x="34" y="290" width="364" height="39" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="1.1"/>
+<text x="42" y="306" font-size="8.2" fill="#18794e" text-anchor="start" font-weight="700">天然工质</text>
+<text x="42" y="321" font-size="7.9" fill="#0f172a" text-anchor="start" font-weight="600">R290 丙烷 (C₃H₈)</text>
+<text x="144" y="306" font-size="8.0" fill="#0f172a" text-anchor="start" font-weight="400">ODP = 0 · 纯碳氢</text>
+<text x="144" y="321" font-size="8.0" fill="#1e293b" text-anchor="start" class="mono">GWP = 3 (A3易燃)</text>
+<rect x="282.0" y="297.0" width="4.0" height="10" rx="3" fill="#18794e"/>
+<text x="282.0" y="321" font-size="7.8" fill="#18794e" text-anchor="start" font-weight="700">严控充注量</text>
+<rect x="34" y="340" width="364" height="108" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="46" y="359" font-size="8.6" fill="#0f172a" text-anchor="start" font-weight="700">1995 诺贝尔化学奖警钟（Molina &amp; Rowland, Nature 1974）：</text>
+<text x="46" y="378" font-size="8.2" fill="#1e293b" text-anchor="start">• R12 (CCl₂F₂) 在地面无毒不燃太稳定，飘上 25 km 平流层被紫外线</text>
+<text x="46" y="395" font-size="8.1" fill="#dc2626" text-anchor="start" font-weight="700" class="mono">  打断 C–Cl 键放出氯自由基：Cl· + O₃ → ClO· + O₂；ClO· + O → Cl· + O₂</text>
+<text x="46" y="413" font-size="8.2" fill="#0f172a" text-anchor="start" font-weight="700">• 氯原子全身而退循环作案，1 个氯原子可撕碎多达 10 万个臭氧分子！</text>
+<text x="46" y="431" font-size="8.2" fill="#1d6fa5" text-anchor="start" font-weight="700">• 2016《基加利修正案》再向强温室 HFC 亮剑：2047 年全球削减 80–85%！</text>
+<rect x="424" y="64" width="316" height="398" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="438.0" y="78.0" width="288" height="22" rx="11.0" fill="#fffbeb" stroke="#b45309" stroke-width="1" stroke-opacity="0.35"/>
+<text x="582.0" y="93.0" font-size="9.1" fill="#b45309" text-anchor="middle" font-weight="600">② 新空调外壳上的“小火苗 A2L”与抽真空铁律</text>
+<rect x="438" y="110" width="288" height="134" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="1.2"/>
+<polygon points="462,122 446,150 478,150" fill="#fef08a" stroke="#b45309" stroke-width="1.8"/>
+<text x="462" y="146" font-size="7.3" fill="#b45309" text-anchor="middle" font-weight="700">A2L</text>
+<text x="488" y="132" font-size="8.7" fill="#b45309" text-anchor="start" font-weight="700">为什么 R32 贴着小火苗，家里却很安全？</text>
+<text x="488" y="149" font-size="8.1" fill="#0f172a" text-anchor="start" font-weight="600">ASHRAE 分级：A = 低毒，2L = 极难燃/轻度可燃</text>
+<text x="450" y="170" font-size="8.2" fill="#1e293b" text-anchor="start">• 燃烧下限极高（空气中体积浓度须达 14.4%–29% 才燃），</text>
+<text x="450" y="187" font-size="8.2" fill="#1e293b" text-anchor="start">  火焰传播速度 &lt;10 cm/s；EPA 实验证实烟头、开关电火</text>
+<text x="450" y="204" font-size="8.2" fill="#18794e" text-anchor="start" font-weight="700">  花、电吹风均点不着（Kim 2021），正常家用极难达下限；</text>
+<text x="450" y="222" font-size="8.2" fill="#dc2626" text-anchor="start" font-weight="700">• 真正高危时刻，全出在违规安装与带气动火维修！</text>
+<rect x="438" y="254" width="288" height="194" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2"/>
+<text x="450" y="274" font-size="8.7" fill="#dc2626" text-anchor="start" font-weight="700">装机第一铁律：为什么必须用真空泵抽足 ≥15 分钟？</text>
+<text x="450" y="294" font-size="8.2" fill="#1e293b" text-anchor="start">老式 R22 时代个别师傅偷懒用“排空法”（放一点氟吹走管内</text>
+<text x="450" y="311" font-size="8.2" fill="#0f172a" text-anchor="start" font-weight="700">空气），在 R32 变频机上绝对禁止，否则连踩三颗雷：</text>
+<text x="450" y="332" font-size="8.2" fill="#dc2626" text-anchor="start" font-weight="700">① 安全雷：铜管残留空气(氧气)被吸入压缩机与 R32 高温高</text>
+<text x="450" y="349" font-size="8.2" fill="#1e293b" text-anchor="start">   压混合，一旦拆修吸入大量空气极易引发压缩机燃爆！</text>
+<text x="450" y="369" font-size="8.2" fill="#0f172a" text-anchor="start" font-weight="600">② 冰堵雷：空气里的水蒸气在 5 °C/0 °C 膨胀阀针孔结成冰粒</text>
+<text x="450" y="386" font-size="8.2" fill="#1e293b" text-anchor="start">   堵死管路，空调一会儿凉一会儿不凉，排气超温耗电暴涨；</text>
+<text x="450" y="406" font-size="8.2" fill="#0f172a" text-anchor="start" font-weight="600">③ 酸蚀雷：水分 + 高温酯类冷冻油 + 氟化物水解生成酸性物质，</text>
+<text x="450" y="423" font-size="8.2" fill="#dc2626" text-anchor="start" font-weight="700">   几年内啃穿电机绝缘漆包线！务必盯紧真空表保压 -0.1 MPa！</text>
+</svg>

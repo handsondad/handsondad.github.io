@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="468" viewBox="0 0 760 468" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">美式滴滤咖啡机无水泵气泡热虹吸升水结构与双金属片干烧跳断温控曲线图</title>
+<desc id="desc">左图展示美式滴滤壶如何不用电机水泵：冷水经底部单向球阀进入900W马蹄形铝加热管，局部微沸腾蒸汽膨胀约1600倍推动热水段克服仅0.024 bar的25厘米静水压差升至顶部花洒常压滴滤（含一次性上升动画）；右图绘制铝管温度随时间曲线，有水时被相变锁在约110°C，水干瞬间飙过135°C触发双金属片跳断并转入75至80°C保温循环。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes bubbleLift {
+    0%   { transform: translateY(44px); opacity: 0.25; }
+    20%  { opacity: 1.0; }
+    100% { transform: translateY(0px); opacity: 1.0; }
+  }
+  .slug-train {
+    animation: bubbleLift 3.2s ease-out 1 forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .slug-train {
+      animation: none !important;
+      transform: none !important;
+      opacity: 1.0 !important;
+    }
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="467" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">连水泵和电机都没有，百元美式滴滤壶凭什么把水送上 25 厘米高的头顶？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">靠一颗单向止回球阀 + 1600 倍蒸汽膨胀“气泡塞”向上顶水，再借双金属片干烧升温自动断电转保温</text>
+<rect x="20" y="64" width="392" height="390" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="78.0" width="292" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="180.0" y="93.0" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="600">① 无泵热虹吸气泡升水回路（专利 US4744291A）</text>
+<rect x="34" y="110" width="364" height="248" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="48" y="148" width="68" height="146" rx="6" fill="#ffffff" stroke="#475569" stroke-width="1.6"/>
+<rect x="50" y="184" width="64" height="108" rx="4" fill="#dbeafe"/>
+<text x="82" y="168" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="700">冷水箱</text>
+<text x="82" y="234" font-size="9.2" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono">20 °C</text>
+<text x="82" y="251" font-size="8.6" fill="#1d6fa5" text-anchor="middle" font-weight="600">重力补水↓</text>
+<path d="M 82,294 L 82,318 L 194,318" fill="none" stroke="#475569" stroke-width="10" stroke-linecap="round"/>
+<path d="M 82,294 L 82,318 L 194,318" fill="none" stroke="#bfdbfe" stroke-width="6" stroke-linecap="round"/>
+<rect x="122" y="305" width="32" height="26" rx="5" fill="#fef1e8" stroke="#c25014" stroke-width="1.6"/>
+<circle cx="135" cy="318" r="6.0" fill="#c25014"/>
+<line x1="143.0" y1="318.0" x2="152.0" y2="318.0" stroke="#c25014" stroke-width="1.8"/>
+<text x="138" y="298" font-size="8.7" fill="#c25014" text-anchor="middle" font-weight="700">① 单向止回阀</text>
+<text x="138" y="346" font-size="8.3" fill="#dc2626" text-anchor="middle" font-weight="700">反压死锁防倒退!</text>
+<rect x="192" y="308" width="92" height="22" rx="6" fill="#fef2f2" stroke="#dc2626" stroke-width="1.8"/>
+<text x="238" y="323" font-size="8.6" fill="#dc2626" text-anchor="middle" font-weight="700">② 铝加热管 900W</text>
+<text x="238" y="346" font-size="8.3" fill="#1e293b" text-anchor="middle">局部微沸腾产汽</text>
+<rect x="290" y="310" width="96" height="20" rx="4" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.5"/>
+<text x="338" y="324" font-size="8.4" fill="#6d28d9" text-anchor="middle" font-weight="700">⑤ 双金属温控开关</text>
+<path d="M 204,308 L 204,132 L 308,132 L 308,142" fill="none" stroke="#475569" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 204,308 L 204,132 L 308,132 L 308,142" fill="none" stroke="#e0f2fe" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+<clipPath id="riser-clip"><rect x="199" y="134" width="10" height="172"/></clipPath>
+<g clip-path="url(#riser-clip)"><g class="slug-train">
+<rect x="200" y="142" width="8" height="18" rx="2" fill="#1d6fa5"/>
+<circle cx="204" cy="168" r="3.8" fill="#ffffff" stroke="#c25014" stroke-width="1.5"/>
+<rect x="200" y="177" width="8" height="18" rx="2" fill="#1d6fa5"/>
+<circle cx="204" cy="203" r="3.8" fill="#ffffff" stroke="#c25014" stroke-width="1.5"/>
+<rect x="200" y="212" width="8" height="18" rx="2" fill="#1d6fa5"/>
+<circle cx="204" cy="238" r="3.8" fill="#ffffff" stroke="#c25014" stroke-width="1.5"/>
+<rect x="200" y="247" width="8" height="18" rx="2" fill="#1d6fa5"/>
+<circle cx="204" cy="273" r="3.8" fill="#ffffff" stroke="#c25014" stroke-width="1.5"/>
+<rect x="200" y="282" width="8" height="18" rx="2" fill="#1d6fa5"/>
+<circle cx="204" cy="308" r="3.8" fill="#ffffff" stroke="#c25014" stroke-width="1.5"/>
+</g></g>
+<line x1="188.0" y1="298.0" x2="188.0" y2="140.0" stroke="#1d6fa5" stroke-width="1.3" marker-end="url(#arr-blue)"/>
+<text x="183" y="198" font-size="8.5" fill="#1d6fa5" text-anchor="end" font-weight="700" class="mono">Δh≈25cm</text>
+<text x="183" y="213" font-size="8.2" fill="#64748b" text-anchor="end">仅需压差</text>
+<text x="183" y="227" font-size="8.4" fill="#1d6fa5" text-anchor="end" font-weight="700" class="mono">0.024 bar</text>
+<text x="214" y="154" font-size="8.5" fill="#c25014" text-anchor="start" font-weight="700">③ 汽塞顶水↑</text>
+<rect x="282" y="140" width="52" height="8" rx="3" fill="#475569"/>
+<line x1="292.0" y1="150.0" x2="292.0" y2="162.0" stroke="#c25014" stroke-width="1.5" stroke-dasharray="2,2"/>
+<line x1="300.0" y1="150.0" x2="300.0" y2="162.0" stroke="#c25014" stroke-width="1.5" stroke-dasharray="2,2"/>
+<line x1="308.0" y1="150.0" x2="308.0" y2="162.0" stroke="#c25014" stroke-width="1.5" stroke-dasharray="2,2"/>
+<line x1="316.0" y1="150.0" x2="316.0" y2="162.0" stroke="#c25014" stroke-width="1.5" stroke-dasharray="2,2"/>
+<line x1="324.0" y1="150.0" x2="324.0" y2="162.0" stroke="#c25014" stroke-width="1.5" stroke-dasharray="2,2"/>
+<text x="302" y="122" font-size="8.5" fill="#0f172a" text-anchor="middle" font-weight="700">④ 92–96 °C 喷淋花洒 (1 bar 常压)</text>
+<polygon points="268,164 348,164 324,216 292,216" fill="#fffbeb" stroke="#b45309" stroke-width="1.5"/>
+<polygon points="278,182 338,182 322,214 294,214" fill="#fef3c7" stroke="#78350f" stroke-width="1.1"/>
+<text x="308" y="202" font-size="8.4" fill="#78350f" text-anchor="middle" font-weight="700">中粗咖啡粉</text>
+<line x1="308.0" y1="217.0" x2="308.0" y2="232.0" stroke="#78350f" stroke-width="2.0" stroke-dasharray="3,2"/>
+<rect x="272" y="232" width="72" height="72" rx="10" fill="#ffffff" stroke="#475569" stroke-width="1.6"/>
+<path d="M 344,246 Q 360,246 360,266 Q 360,286 344,286" fill="none" stroke="#475569" stroke-width="2.3"/>
+<rect x="275" y="262" width="66" height="39" rx="7" fill="#78350f" opacity="0.88"/>
+<text x="308" y="286" font-size="8.6" fill="#ffffff" text-anchor="middle" font-weight="700">玻璃分享壶</text>
+<rect x="266" y="304" width="84" height="4" rx="2" fill="#dc2626"/>
+<text x="34" y="380" font-size="9.1" fill="#0f172a" text-anchor="start" font-weight="600">• 流体二极管：水化作蒸汽时体积暴胀约 1,600 倍；因左侧单向球阀堵死</text>
+<text x="34" y="398" font-size="9.1" fill="#1e293b" text-anchor="start">  退路，微蒸汽泡只能像活塞一样推着一段段热水（Slug flow）往头顶爬！</text>
+<text x="34" y="417" font-size="9.0" fill="#1d6fa5" text-anchor="start" font-weight="600">• 为什么花洒出水不是 100 °C 沸水？只有贴管壁极薄水膜沸腾做功，大股水</text>
+<text x="34" y="435" font-size="9.0" fill="#1e293b" text-anchor="start">  流被快速推走混合后，到达滤杯时恰好落在 92–96 °C 黄金滴滤温区。</text>
+<rect x="424" y="64" width="316" height="390" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="438.0" y="78.0" width="286" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="581.0" y="93.0" font-size="9.5" fill="#6d28d9" text-anchor="middle" font-weight="600">② 没有芯片，它怎么知道“水烧干了该停火”？</text>
+<rect x="438.0" y="112.0" width="288.0" height="156.0" rx="7" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<line x1="476.0" y1="244.0" x2="710.0" y2="244.0" stroke="#475569" stroke-width="1.2"/>
+<line x1="476.0" y1="244.0" x2="476.0" y2="134.0" stroke="#475569" stroke-width="1.2"/>
+<line x1="476.0" y1="212.6" x2="710.0" y2="212.6" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3,3"/>
+<text x="471.0" y="216.1" font-size="8.3" fill="#64748b" text-anchor="end" class="mono">60°</text>
+<line x1="476.0" y1="181.1" x2="710.0" y2="181.1" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3,3"/>
+<text x="471.0" y="184.6" font-size="8.3" fill="#64748b" text-anchor="end" class="mono">100°</text>
+<line x1="476.0" y1="153.6" x2="710.0" y2="153.6" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3,3"/>
+<text x="471.0" y="157.1" font-size="8.3" fill="#dc2626" text-anchor="end" class="mono">135°</text>
+<text x="542.9" y="260.0" font-size="8.4" fill="#1d6fa5" text-anchor="middle" font-weight="700">有水冲煮期</text>
+<text x="663.2" y="260.0" font-size="8.4" fill="#6d28d9" text-anchor="middle" font-weight="700">跳断→保温期</text>
+<path d="M 476.0,240.1 L 494.4,174.9 L 536.2,173.3 L 583.0,172.5 L 614.7,171.7 L 628.1,152.9 L 654.8,200.0 L 671.6,192.1 L 691.6,200.0 L 708.3,192.9" fill="none" stroke="#dc2626" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="628.1" cy="152.9" r="4.0" fill="#ffffff" stroke="#dc2626" stroke-width="2.0"/>
+<text x="622.1" y="147.9" font-size="8.3" fill="#dc2626" text-anchor="end" font-weight="700">水干飙过 135°C 咔嗒跳断!</text>
+<text x="549.5" y="188.3" font-size="8.2" fill="#1d6fa5" text-anchor="middle" font-weight="600">相变吸热锁在 ~110°C</text>
+<text x="673.2" y="186.1" font-size="8.2" fill="#6d28d9" text-anchor="middle" font-weight="700">75–80°C 保温</text>
+<rect x="438" y="280" width="288" height="158" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="450" y="300" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="700">纯机械“相变锁温”三步逻辑：</text>
+<text x="450" y="321" font-size="8.8" fill="#1e293b" text-anchor="start">1. 有水时：只要铝管里有水流过，沸腾相变会源源不断</text>
+<text x="450" y="338" font-size="8.8" fill="#1d6fa5" text-anchor="start" font-weight="600">   夺走热量，管壁温度被死死钉在 ~110 °C 附近；</text>
+<text x="450" y="358" font-size="8.8" fill="#1e293b" text-anchor="start">2. 水干瞬间：最后几滴水化作纯蒸汽冲出（就是每次煮</text>
+<text x="450" y="375" font-size="8.8" fill="#c25014" text-anchor="start" font-weight="600">   完必听见的那阵“噗嗤嘶吼”！），铝管失去冷却，几</text>
+<text x="450" y="392" font-size="8.8" fill="#1e293b" text-anchor="start">   秒内直冲 &gt;135 °C；</text>
+<text x="450" y="412" font-size="8.8" fill="#1e293b" text-anchor="start">3. 双金属片反拱：两层膨胀系数不同的合金片受热弯折，</text>
+<text x="450" y="429" font-size="8.8" fill="#6d28d9" text-anchor="start" font-weight="700">   弹开主触点防干烧，改用低占空比给玻璃壶底盘保温！</text>
+</svg>

@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="476" viewBox="0 0 760 476" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">定频锯齿与全直流变频低频高COP巡航对比及开利湿空气显热潜热除湿机理图</title>
+<desc id="desc">左图对比定频空调50Hz频繁启停造成的±1.5°C室温锯齿与全直流变频25Hz贴线±0.3°C巡航，解释低负荷时换热面积富余令蒸发升至11°C、冷凝降至40°C从而推高COP破5的物理机制；右图结合开利1902彩印厂控湿专利US808897A拆解60%显热与40%潜热(凝结1升水耗2450kJ)，对比雪花制冷与水滴超微风低温深除湿模式。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="475" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">定频 vs 变频到底差在哪？为什么“除湿模式”比制冷还冻人？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：变频低频巡航靠“大马拉小车缩小换热温差”把 COP 推过 5.0 · 右：开利湿空气学——凝结 1 升水抽走 2450 kJ</text>
+<rect x="20" y="64" width="362" height="398" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="78.0" width="334" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="201.0" y="93.0" font-size="9.1" fill="#1d6fa5" text-anchor="middle" font-weight="600">① 定频“猛踩急刹” vs 全直流变频“低频贴线巡航”</text>
+<rect x="34.0" y="110.0" width="334.0" height="168.0" rx="7" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<line x1="74.0" y1="198.4" x2="354.0" y2="198.4" stroke="#18794e" stroke-width="1.3" stroke-dasharray="4,3"/>
+<text x="352.0" y="210.4" font-size="7.7" fill="#18794e" text-anchor="end" font-weight="700">设定 26.0°C</text>
+<line x1="74.0" y1="254.0" x2="354.0" y2="254.0" stroke="#475569" stroke-width="1.2"/>
+<line x1="74.0" y1="254.0" x2="74.0" y2="128.0" stroke="#475569" stroke-width="1.2"/>
+<line x1="71.0" y1="235.5" x2="74.0" y2="235.5" stroke="#475569" stroke-width="1.0"/>
+<text x="69.0" y="238.5" font-size="7.9" fill="#64748b" text-anchor="end" class="mono">24°C</text>
+<line x1="71.0" y1="198.4" x2="74.0" y2="198.4" stroke="#475569" stroke-width="1.0"/>
+<text x="69.0" y="201.4" font-size="7.9" fill="#64748b" text-anchor="end" class="mono">26°C</text>
+<line x1="71.0" y1="161.4" x2="74.0" y2="161.4" stroke="#475569" stroke-width="1.0"/>
+<text x="69.0" y="164.4" font-size="7.9" fill="#64748b" text-anchor="end" class="mono">28°C</text>
+<line x1="74.0" y1="254.0" x2="74.0" y2="258.0" stroke="#475569" stroke-width="1.0"/>
+<text x="74.0" y="269.0" font-size="7.9" fill="#64748b" text-anchor="middle" class="mono">0m</text>
+<line x1="144.0" y1="254.0" x2="144.0" y2="258.0" stroke="#475569" stroke-width="1.0"/>
+<text x="144.0" y="269.0" font-size="7.9" fill="#64748b" text-anchor="middle" class="mono">30m</text>
+<line x1="214.0" y1="254.0" x2="214.0" y2="258.0" stroke="#475569" stroke-width="1.0"/>
+<text x="214.0" y="269.0" font-size="7.9" fill="#64748b" text-anchor="middle" class="mono">60m</text>
+<line x1="284.0" y1="254.0" x2="284.0" y2="258.0" stroke="#475569" stroke-width="1.0"/>
+<text x="284.0" y="269.0" font-size="7.9" fill="#64748b" text-anchor="middle" class="mono">90m</text>
+<line x1="354.0" y1="254.0" x2="354.0" y2="258.0" stroke="#475569" stroke-width="1.0"/>
+<text x="354.0" y="269.0" font-size="7.9" fill="#64748b" text-anchor="middle" class="mono">120m</text>
+<polyline points="74.0,139.1 116.0,222.5 162.7,170.6 200.0,222.5 246.7,170.6 284.0,222.5 330.7,170.6 354.0,181.7" fill="none" stroke="#c25014" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5,3"/>
+<polyline points="74.0,139.1 81.0,153.1 88.0,163.6 95.0,171.4 102.0,177.3 109.0,181.8 116.0,185.5 123.0,188.4 130.0,190.9 137.0,193.1 144.0,194.9 151.0,196.5 158.0,197.7 165.0,198.6 172.0,199.2 179.0,199.4 186.0,199.4 193.0,199.1 200.0,198.6 207.0,198.0 214.0,197.3 221.0,196.8 228.0,196.4 235.0,196.1 242.0,196.1 249.0,196.4 256.0,196.8 263.0,197.5 270.0,198.2 277.0,198.9 284.0,199.6 291.0,200.1 298.0,200.5 305.0,200.6 312.0,200.5 319.0,200.1 326.0,199.6 333.0,198.9 340.0,198.2 347.0,197.5 354.0,196.9" fill="none" stroke="#1d6fa5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="232.7" y="151.2" font-size="7.9" fill="#c25014" text-anchor="middle" font-weight="700">定频：50Hz 满转/停机锯齿 (±1.5°C)</text>
+<text x="218.7" y="243.8" font-size="7.9" fill="#1d6fa5" text-anchor="middle" font-weight="700">全直流变频：25Hz 贴线 (±0.3°C)</text>
+<rect x="34" y="288" width="334" height="160" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="46" y="307" font-size="8.8" fill="#0f172a" text-anchor="start" font-weight="700">为什么变频“慢悠悠转”比定频省电 30%–45%？（ORNL 2018）</text>
+<text x="46" y="326" font-size="8.3" fill="#1e293b" text-anchor="start">• 整流逆变链：220V 50Hz → PFC 直流母线 → SVPWM 逆变出</text>
+<text x="46" y="343" font-size="8.3" fill="#1e293b" text-anchor="start">  15–120 Hz 三相电，无级调节稀土永磁转子压缩机转速；</text>
+<text x="46" y="361" font-size="8.3" fill="#1e293b" text-anchor="start">• 热力学红利：室温达标降到 25 Hz 低流量时，两器巨大的铜铝</text>
+<text x="46" y="378" font-size="8.3" fill="#1d6fa5" text-anchor="start" font-weight="700">  翅片面积严重富余 → 蒸发温度从 5°C 升至 11°C，冷凝从 50°C</text>
+<text x="46" y="395" font-size="8.3" fill="#18794e" text-anchor="start" font-weight="700">  降至 40°C！压比大降令部分负荷 COP 飙破 5.0–6.0（APF 国标）！</text>
+<text x="46" y="414" font-size="8.2" fill="#64748b" text-anchor="start">• “一晚一度电”苛刻前提：夜间室外回落 &lt;28°C、高保温小卧室、</text>
+<text x="46" y="431" font-size="8.2" fill="#dc2626" text-anchor="start" font-weight="600">  开 ECO 锁死 20Hz（约 130W × 8h）；若桑拿夜 34°C 绝无可能！</text>
+<rect x="394" y="64" width="346" height="398" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="408.0" y="78.0" width="318" height="22" rx="11.0" fill="#f0fdfa" stroke="#0f766e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="567.0" y="93.0" font-size="9.1" fill="#0f766e" text-anchor="middle" font-weight="600">② 开利 1902 发明真相：空调近四成电费花在“拧水”上！</text>
+<rect x="408" y="110" width="318" height="128" rx="8" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.1"/>
+<text x="420" y="129" font-size="8.8" fill="#0f766e" text-anchor="start" font-weight="700">1902 布鲁克林彩印厂奇案（专利 US808897A）：</text>
+<text x="420" y="148" font-size="8.3" fill="#1e293b" text-anchor="start">• 威利斯·开利造世界第一台现代空调，根本不是给人乘凉，而是</text>
+<text x="420" y="165" font-size="8.3" fill="#0f172a" text-anchor="start" font-weight="700">  梅雨季纸张吸潮伸缩导致四色石印套印错位！</text>
+<text x="420" y="183" font-size="8.3" fill="#1e293b" text-anchor="start">• 梅雨闷热天 (28 °C, 湿度 75%，露点 23.1 °C) 开空调：</text>
+<rect x="420" y="194" width="174" height="18" rx="3" fill="#1d6fa5"/>
+<text x="507" y="207" font-size="7.9" fill="#ffffff" text-anchor="middle" font-weight="700">60% 显热 (把干空气吹凉)</text>
+<rect x="594" y="194" width="118" height="18" rx="3" fill="#0f766e"/>
+<text x="653" y="207" font-size="7.9" fill="#ffffff" text-anchor="middle" font-weight="700">40% 潜热 (拧冷凝水!)</text>
+<text x="420" y="228" font-size="8.1" fill="#0f766e" text-anchor="start" font-weight="700">每在翅片上凝出 1 升滴水，空调就得默默多搬走 2,450 kJ 潜热！</text>
+<rect x="408" y="248" width="318" height="200" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="420" y="268" font-size="8.8" fill="#0f172a" text-anchor="start" font-weight="700">为什么黄梅天开“独立除湿（水滴标）”反而冻得盖棉被？</text>
+<rect x="420" y="280" width="142" height="108" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="491" y="298" font-size="8.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">制冷模式（雪花标）</text>
+<text x="491" y="317" font-size="8.0" fill="#1e293b" text-anchor="middle">• 内机风速：中/高风大循环</text>
+<text x="491" y="334" font-size="8.0" fill="#0f172a" text-anchor="middle" font-weight="600">• 翅片温度：~7–10 °C</text>
+<text x="491" y="351" font-size="8.0" fill="#1e293b" text-anchor="middle">• 显热比 SHR ≈ 0.65–0.75</text>
+<text x="491" y="369" font-size="8.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">快速拉低全屋室温为主</text>
+<rect x="572" y="280" width="142" height="108" rx="6" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.1"/>
+<text x="643" y="298" font-size="8.5" fill="#6d28d9" text-anchor="middle" font-weight="700">除湿模式（水滴标）</text>
+<text x="643" y="317" font-size="8.0" fill="#6d28d9" text-anchor="middle" font-weight="700">• 内机风速：锁死超微风!</text>
+<text x="643" y="334" font-size="8.0" fill="#0f172a" text-anchor="middle" font-weight="700">• 翅片温度：骤降至 ~3–5 °C</text>
+<text x="643" y="351" font-size="8.0" fill="#1e293b" text-anchor="middle">• 压缩机低频间歇抽湿</text>
+<text x="643" y="369" font-size="8.0" fill="#6d28d9" text-anchor="middle" font-weight="700">深跌破露点把水汽拧干!</text>
+<text x="420" y="407" font-size="8.2" fill="#1e293b" text-anchor="start">• 避坑指南：除湿模式靠超低风速把贴片空气冻到 4 °C 挤水，风口</text>
+<text x="420" y="424" font-size="8.2" fill="#1e293b" text-anchor="start">  吹出的是极冷细流；盛夏 35 °C 开除湿既慢又不省电，仅适合 24–</text>
+<text x="420" y="440" font-size="8.2" fill="#0f172a" text-anchor="start" font-weight="700">  27 °C 梅雨闷湿天短开 1–2 小时！（高端机配双排再热除湿不降温）</text>
+</svg>

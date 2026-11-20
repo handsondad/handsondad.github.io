@@ -17754,3 +17754,2233 @@ def _register_snowflake_ice_math_physics():
 
 
 _register_snowflake_ice_math_physics()
+
+
+def _register_coffee_machine_principles():
+    """5 computed 760px SVGs for the Coffee Machine physics & engineering post."""
+    import math
+
+    from .core import (
+        BLUE,
+        BLUE_SOFT,
+        BODY,
+        BORDER,
+        GREEN,
+        GREEN_SOFT,
+        HAIRLINE,
+        INK,
+        MUTED,
+        ORANGE,
+        ORANGE_SOFT,
+        PURPLE,
+        PURPLE_SOFT,
+        SLATE,
+        SLATE_SOFT,
+        card,
+        figure,
+        header,
+        pill,
+        register,
+        txt,
+        write_svg,
+    )
+
+    SUBDIR = "coffee-machine-principles"
+    RED = "#dc2626"
+    RED_SOFT = "#fef2f2"
+    AMBER = "#b45309"
+    AMBER_SOFT = "#fffbeb"
+    BROWN = "#78350f"
+    BROWN_SOFT = "#fef3c7"
+    TEAL = "#0f766e"
+    TEAL_SOFT = "#f0fdfa"
+
+    def _line(x1, y1, x2, y2, stroke=HAIRLINE, sw=1.5, dash=None, marker=None, opacity=None):
+        attrs = [
+            f'x1="{x1:.1f}"',
+            f'y1="{y1:.1f}"',
+            f'x2="{x2:.1f}"',
+            f'y2="{y2:.1f}"',
+            f'stroke="{stroke}"',
+            f'stroke-width="{sw}"',
+        ]
+        if dash:
+            attrs.append(f'stroke-dasharray="{dash}"')
+        if marker:
+            attrs.append(f'marker-end="url(#{marker})"')
+        if opacity is not None:
+            attrs.append(f'opacity="{opacity}"')
+        return f'<line {" ".join(attrs)}/>'
+
+    def _poly(pts, stroke=BLUE, sw=2.2, fill="none", dash=None, cls=None, opacity=None):
+        d = "M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
+        extra = ""
+        if dash:
+            extra += f' stroke-dasharray="{dash}"'
+        if cls:
+            extra += f' class="{cls}"'
+        if opacity is not None:
+            extra += f' opacity="{opacity}"'
+        return f'<path d="{d}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}" stroke-linecap="round" stroke-linejoin="round"{extra}/>'
+
+    def _antoine_psat_bar(temp_c):
+        """NIST/Antoine saturated water vapor pressure in bar for 60..190 C."""
+        if temp_c <= 100.0:
+            a, b, c = 8.07131, 1730.63, 233.426
+        else:
+            a, b, c = 8.14019, 1810.94, 244.485
+        p_mmhg = 10.0 ** (a - b / (c + temp_c))
+        return p_mmhg * 0.00133322368
+
+    def _build_drip_bubble_pump_and_bimetal():
+        """SVG 1: Pump-free drip coffee maker thermosiphon bubble lift + bimetallic dry-boil switch."""
+        rho_hot = 962.0
+        g0 = 9.81
+        dh_m = 0.25
+        dp_pa = rho_hot * g0 * dh_m  # ~ 2359 Pa = 0.0236 bar
+        dp_bar = dp_pa / 1.0e5
+        assert 0.022 < dp_bar < 0.026
+
+        expansion_ratio = 1673.0 / 1.0435
+        assert 1590.0 < expansion_ratio < 1620.0
+
+        extra_css = """
+  @keyframes bubbleLift {
+    0%   { transform: translateY(44px); opacity: 0.25; }
+    20%  { opacity: 1.0; }
+    100% { transform: translateY(0px); opacity: 1.0; }
+  }
+  .slug-train {
+    animation: bubbleLift 3.2s ease-out 1 forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .slug-train {
+      animation: none !important;
+      transform: none !important;
+      opacity: 1.0 !important;
+    }
+  }
+"""
+
+        els = header(
+            "连水泵和电机都没有，百元美式滴滤壶凭什么把水送上 25 厘米高的头顶？",
+            "靠一颗单向止回球阀 + 1600 倍蒸汽膨胀“气泡塞”向上顶水，再借双金属片干烧升温自动断电转保温",
+        )
+
+        # ---------------- Left Panel: Cross-Section Anatomy ----------------
+        els.append(card(20, 64, 392, 390))
+        els.append(pill(34, 78, "① 无泵热虹吸气泡升水回路（专利 US4744291A）", fg=BLUE, bg=BLUE_SOFT, w=292, h=22, size=9.6))
+
+        els.append(card(34, 110, 364, 248, rx=8, fill="#f8fafc", stroke=BORDER))
+
+        # 1) Cold water reservoir on left (x=48..116, y=148..294)
+        els.append(f'<rect x="48" y="148" width="68" height="146" rx="6" fill="#ffffff" stroke="{SLATE}" stroke-width="1.6"/>')
+        els.append(f'<rect x="50" y="184" width="64" height="108" rx="4" fill="#dbeafe"/>')
+        els.append(txt(82, 168, "冷水箱", 9.4, INK, "middle", weight="700"))
+        els.append(txt(82, 234, "20 °C", 9.2, BLUE, "middle", weight="700", cls="mono"))
+        els.append(txt(82, 251, "重力补水↓", 8.6, BLUE, "middle", weight="600"))
+
+        # Bottom horizontal conduit + One-way ball check valve
+        els.append(f'<path d="M 82,294 L 82,318 L 194,318" fill="none" stroke="{SLATE}" stroke-width="10" stroke-linecap="round"/>')
+        els.append(f'<path d="M 82,294 L 82,318 L 194,318" fill="none" stroke="#bfdbfe" stroke-width="6" stroke-linecap="round"/>')
+
+        # Check valve housing at x=138, y=318
+        els.append(f'<rect x="122" y="305" width="32" height="26" rx="5" fill="{ORANGE_SOFT}" stroke="{ORANGE}" stroke-width="1.6"/>')
+        els.append(f'<circle cx="135" cy="318" r="6.0" fill="{ORANGE}"/>')
+        els.append(_line(143, 318, 152, 318, stroke=ORANGE, sw=1.8))
+        els.append(txt(138, 298, "① 单向止回阀", 8.7, ORANGE, "middle", weight="700"))
+        els.append(txt(138, 346, "反压死锁防倒退!", 8.3, RED, "middle", weight="700"))
+
+        # 2) Aluminum horseshoe heater + warming plate under carafe
+        els.append(f'<rect x="192" y="308" width="92" height="22" rx="6" fill="{RED_SOFT}" stroke="{RED}" stroke-width="1.8"/>')
+        els.append(txt(238, 323, "② 铝加热管 900W", 8.6, RED, "middle", weight="700"))
+        els.append(txt(238, 346, "局部微沸腾产汽", 8.3, BODY, "middle"))
+
+        # Bimetallic thermostat attached to heater block
+        els.append(f'<rect x="290" y="310" width="96" height="20" rx="4" fill="{PURPLE_SOFT}" stroke="{PURPLE}" stroke-width="1.5"/>')
+        els.append(txt(338, 324, "⑤ 双金属温控开关", 8.4, PURPLE, "middle", weight="700"))
+
+        # 3) Vertical riser tube (x=204, y=132..308) -> overhead showerhead (x=204..308, y=132)
+        els.append(f'<path d="M 204,308 L 204,132 L 308,132 L 308,142" fill="none" stroke="{SLATE}" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>')
+        els.append(f'<path d="M 204,308 L 204,132 L 308,132 L 308,142" fill="none" stroke="#e0f2fe" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>')
+
+        # Animated alternating vapor bubbles + hot-water slugs inside vertical riser
+        els.append('<clipPath id="riser-clip"><rect x="199" y="134" width="10" height="172"/></clipPath>')
+        els.append('<g clip-path="url(#riser-clip)"><g class="slug-train">')
+        for ky in range(5):
+            sy_base = 142 + ky * 35
+            els.append(f'<rect x="200" y="{sy_base}" width="8" height="18" rx="2" fill="{BLUE}"/>')
+            els.append(f'<circle cx="204" cy="{sy_base + 26}" r="3.8" fill="#ffffff" stroke="{ORANGE}" stroke-width="1.5"/>')
+        els.append("</g></g>")
+
+        # Riser height & pressure annotation (cleanly between reservoir x=116 and riser x=198)
+        els.append(_line(188, 298, 188, 140, stroke=BLUE, sw=1.3, marker="arr-blue"))
+        els.append(txt(183, 198, "Δh≈25cm", 8.5, BLUE, "end", weight="700", cls="mono"))
+        els.append(txt(183, 213, "仅需压差", 8.2, MUTED, "end"))
+        els.append(txt(183, 227, "0.024 bar", 8.4, BLUE, "end", weight="700", cls="mono"))
+        els.append(txt(214, 154, "③ 汽塞顶水↑", 8.5, ORANGE, "start", weight="700"))
+
+        # 4) Overhead showerhead + V-filter cone + Glass carafe on warming plate
+        els.append(f'<rect x="282" y="140" width="52" height="8" rx="3" fill="{SLATE}"/>')
+        for dx_s in (-16, -8, 0, 8, 16):
+            els.append(_line(308 + dx_s, 150, 308 + dx_s, 162, stroke=ORANGE, sw=1.5, dash="2,2"))
+        els.append(txt(302, 122, "④ 92–96 °C 喷淋花洒 (1 bar 常压)", 8.5, INK, "middle", weight="700"))
+
+        # Filter cone (y=164..216)
+        els.append(f'<polygon points="268,164 348,164 324,216 292,216" fill="#fffbeb" stroke="{AMBER}" stroke-width="1.5"/>')
+        els.append(f'<polygon points="278,182 338,182 322,214 294,214" fill="{BROWN_SOFT}" stroke="{BROWN}" stroke-width="1.1"/>')
+        els.append(txt(308, 202, "中粗咖啡粉", 8.4, BROWN, "middle", weight="700"))
+
+        # Dripping coffee into glass carafe (y=230..304)
+        els.append(_line(308, 217, 308, 232, stroke=BROWN, sw=2.0, dash="3,2"))
+        els.append(f'<rect x="272" y="232" width="72" height="72" rx="10" fill="#ffffff" stroke="{SLATE}" stroke-width="1.6"/>')
+        els.append(f'<path d="M 344,246 Q 360,246 360,266 Q 360,286 344,286" fill="none" stroke="{SLATE}" stroke-width="2.3"/>')
+        els.append(f'<rect x="275" y="262" width="66" height="39" rx="7" fill="#78350f" opacity="0.88"/>')
+        els.append(txt(308, 286, "玻璃分享壶", 8.6, "#ffffff", "middle", weight="700"))
+        els.append(f'<rect x="266" y="304" width="84" height="4" rx="2" fill="{RED}"/>')
+
+        # Bottom summary inside left card
+        els.append(txt(34, 380, "• 流体二极管：水化作蒸汽时体积暴胀约 1,600 倍；因左侧单向球阀堵死", 9.1, INK, weight="600"))
+        els.append(txt(34, 398, "  退路，微蒸汽泡只能像活塞一样推着一段段热水（Slug flow）往头顶爬！", 9.1, BODY))
+        els.append(txt(34, 417, "• 为什么花洒出水不是 100 °C 沸水？只有贴管壁极薄水膜沸腾做功，大股水", 9.0, BLUE, weight="600"))
+        els.append(txt(34, 435, "  流被快速推走混合后，到达滤杯时恰好落在 92–96 °C 黄金滴滤温区。", 9.0, BODY))
+
+        # ---------------- Right Panel: Bimetallic Dry-Boil Curve & Logic ----------------
+        els.append(card(424, 64, 316, 390))
+        els.append(pill(438, 78, "② 没有芯片，它怎么知道“水烧干了该停火”？", fg=PURPLE, bg=PURPLE_SOFT, w=286, h=22, size=9.5))
+
+        px0, py0, pw, ph = 438.0, 112.0, 288.0, 156.0
+        els.append(card(px0, py0, pw, ph, rx=7, fill="#ffffff", stroke=BORDER))
+
+        ax_x0, ax_x1 = px0 + 38.0, px0 + pw - 16.0
+        ax_y0, ax_y1 = py0 + ph - 24.0, py0 + 22.0
+
+        def _tx(min_t):
+            return ax_x0 + (min_t / 7.0) * (ax_x1 - ax_x0)
+
+        def _ty(temp_c):
+            return ax_y0 - ((temp_c - 20.0) / 140.0) * (ax_y0 - ax_y1)
+
+        els.append(_line(ax_x0, ax_y0, ax_x1, ax_y0, stroke=SLATE, sw=1.2))
+        els.append(_line(ax_x0, ax_y0, ax_x0, ax_y1, stroke=SLATE, sw=1.2))
+
+        for t_tick in (60, 100, 135):
+            yy = _ty(t_tick)
+            els.append(_line(ax_x0, yy, ax_x1, yy, stroke=HAIRLINE, sw=0.9, dash="3,3"))
+            els.append(txt(ax_x0 - 5, yy + 3.5, f"{t_tick}°", 8.3, RED if t_tick == 135 else MUTED, "end", cls="mono"))
+
+        els.append(txt(_tx(2.0), ax_y0 + 16, "有水冲煮期", 8.4, BLUE, "middle", weight="700"))
+        els.append(txt(_tx(5.6), ax_y0 + 16, "跳断→保温期", 8.4, PURPLE, "middle", weight="700"))
+
+        curve_t_T = [
+            (0.0, 25.0),
+            (0.55, 108.0),
+            (1.8, 110.0),
+            (3.2, 111.0),
+            (4.15, 112.0),
+            (4.55, 136.0),
+            (5.35, 76.0),
+            (5.85, 86.0),
+            (6.45, 76.0),
+            (6.95, 85.0),
+        ]
+        pts_heater = [(_tx(t_m), _ty(tc)) for t_m, tc in curve_t_T]
+        els.append(_poly(pts_heater, stroke=RED, sw=2.3))
+
+        sx_p, sy_p = _tx(4.55), _ty(136.0)
+        els.append(f'<circle cx="{sx_p:.1f}" cy="{sy_p:.1f}" r="4.0" fill="#ffffff" stroke="{RED}" stroke-width="2.0"/>')
+        els.append(txt(sx_p - 6, sy_p - 5, "水干飙过 135°C 咔嗒跳断!", 8.3, RED, "end", weight="700"))
+        els.append(txt(_tx(2.2), _ty(110.0) + 15, "相变吸热锁在 ~110°C", 8.2, BLUE, "middle", weight="600"))
+        els.append(txt(_tx(5.9), _ty(86.0) - 6, "75–80°C 保温", 8.2, PURPLE, "middle", weight="700"))
+
+        els.append(card(438, 280, 288, 158, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(450, 300, "纯机械“相变锁温”三步逻辑：", 9.6, INK, weight="700"))
+        els.append(txt(450, 321, "1. 有水时：只要铝管里有水流过，沸腾相变会源源不断", 8.8, BODY))
+        els.append(txt(450, 338, "   夺走热量，管壁温度被死死钉在 ~110 °C 附近；", 8.8, BLUE, weight="600"))
+        els.append(txt(450, 358, "2. 水干瞬间：最后几滴水化作纯蒸汽冲出（就是每次煮", 8.8, BODY))
+        els.append(txt(450, 375, "   完必听见的那阵“噗嗤嘶吼”！），铝管失去冷却，几", 8.8, ORANGE, weight="600"))
+        els.append(txt(450, 392, "   秒内直冲 >135 °C；", 8.8, BODY))
+        els.append(txt(450, 412, "3. 双金属片反拱：两层膨胀系数不同的合金片受热弯折，", 8.8, BODY))
+        els.append(txt(450, 429, "   弹开主触点防干烧，改用低占空比给玻璃壶底盘保温！", 8.8, PURPLE, weight="700"))
+
+        return figure(
+            468,
+            "美式滴滤咖啡机无水泵气泡热虹吸升水结构与双金属片干烧跳断温控曲线图",
+            "左图展示美式滴滤壶如何不用电机水泵：冷水经底部单向球阀进入900W马蹄形铝加热管，局部微沸腾蒸汽膨胀约1600倍推动热水段克服仅0.024 bar的25厘米静水压差升至顶部花洒常压滴滤（含一次性上升动画）；右图绘制铝管温度随时间曲线，有水时被相变锁在约110°C，水干瞬间飙过135°C触发双金属片跳断并转入75至80°C保温循环。",
+            els,
+            extra_css=extra_css,
+        )
+
+    def _build_steam_pressure_trap_vs_nine_bar_decoupling():
+        """SVG 2: Exact Antoine water P_sat(T) trap vs Gaggia/E61 9-bar 93 C decoupling & Henry's-law Crema."""
+        p_100 = _antoine_psat_bar(100.0)
+        p_120 = _antoine_psat_bar(120.0)
+        p_175 = _antoine_psat_bar(175.4)
+        assert math.isclose(p_100, 1.013, abs_tol=0.02)
+        assert 1.95 < p_120 < 2.05
+        assert 8.85 < p_175 < 9.15
+
+        els = header(
+            "为什么早期蒸汽机煮出的咖啡焦苦难咽？—— 饱和蒸汽死锁与“9 Bar 温压解耦”革命",
+            "靠烧蒸汽凑齐 9 bar 水温必飙到 175.4 °C 把粉烫糊！加吉亚与 E61 用机械活塞和水泵把“高压”与“93 °C”彻底拆开",
+        )
+
+        # ---------------- Left Panel: Exact (T, P) Phase Space of Coffee Machines ----------------
+        els.append(card(20, 64, 404, 394))
+        els.append(pill(34, 78, "① 四大流派在“温度—压力相图”上的真实坐标（Antoine 方程实算）", fg=BLUE, bg=BLUE_SOFT, w=374, h=22, size=9.4))
+
+        px0, py0, pw, ph = 34.0, 110.0, 374.0, 258.0
+        els.append(card(px0, py0, pw, ph, rx=8, fill="#ffffff", stroke=BORDER))
+
+        ax_x0, ax_x1 = px0 + 44.0, px0 + pw - 16.0  # 60 .. 190 C
+        ax_y0, ax_y1 = py0 + ph - 28.0, py0 + 20.0  # 0 .. 11 bar
+
+        def _tx(tc):
+            return ax_x0 + ((tc - 60.0) / 130.0) * (ax_x1 - ax_x0)
+
+        def _ty(pbar):
+            return ax_y0 - (pbar / 11.0) * (ax_y0 - ax_y1)
+
+        # Golden extraction temperature band (88..96 C)
+        gx0, gx1 = _tx(88.0), _tx(96.0)
+        els.append(f'<rect x="{gx0:.1f}" y="{ax_y1:.1f}" width="{gx1 - gx0:.1f}" height="{ax_y0 - ax_y1:.1f}" fill="{GREEN_SOFT}" opacity="0.9"/>')
+        els.append(txt((gx0 + gx1) / 2, ax_y1 + 12, "88–96°C", 8.1, GREEN, "middle", weight="700", cls="mono"))
+
+        # Grid & axes
+        for p_tick in (1, 3, 6, 9):
+            yy = _ty(p_tick)
+            els.append(_line(ax_x0, yy, ax_x1, yy, stroke=HAIRLINE, sw=0.9, dash="3,3"))
+            els.append(txt(ax_x0 - 6, yy + 3.5, f"{p_tick} bar", 8.3, MUTED, "end", cls="mono"))
+
+        for t_tick in (70, 100, 130, 160, 180):
+            xx = _tx(t_tick)
+            els.append(_line(xx, ax_y0, xx, ax_y0 + 4, stroke=SLATE, sw=1.1))
+            els.append(txt(xx, ax_y0 + 15, f"{t_tick}°C", 8.3, MUTED, "middle", cls="mono"))
+
+        els.append(_line(ax_x0, ax_y0, ax_x1, ax_y0, stroke=SLATE, sw=1.3))
+        els.append(_line(ax_x0, ax_y0, ax_x0, ax_y1, stroke=SLATE, sw=1.3))
+
+        # Exact Antoine Saturated Steam Curve P_sat(T) from 65 C to 184 C
+        sat_pts = []
+        for i in range(65):
+            tc = 65.0 + (184.0 - 65.0) * (i / 64.0)
+            pb = _antoine_psat_bar(tc)
+            if pb <= 11.0:
+                sat_pts.append((_tx(tc), _ty(pb)))
+        els.append(_poly(sat_pts, stroke=RED, sw=2.5))
+
+        # Mark 9 bar @ 175.4 C burnt-coffee trap (callout placed cleanly in open white triangle below curve)
+        x_burn, y_burn = _tx(175.4), _ty(p_175)
+        els.append(f'<circle cx="{x_burn:.1f}" cy="{y_burn:.1f}" r="4.6" fill="{RED_SOFT}" stroke="{RED}" stroke-width="2.0"/>')
+        els.append(_line(x_burn, y_burn + 6, x_burn, _ty(4.85), stroke=RED, sw=1.2, dash="2,2"))
+        els.append(txt(_tx(187.0), _ty(4.30), "纯蒸汽若攒到 9 bar：", 8.3, RED, "end", weight="700"))
+        els.append(txt(_tx(187.0), _ty(3.40), "水温必飙至 175.4°C (烫焦!)", 8.2, RED, "end", weight="700"))
+
+        # 1) Drip / Pour-over point (93 C, 1.0 bar)
+        xd, yd = _tx(93.0), _ty(1.0)
+        els.append(f'<circle cx="{xd:.1f}" cy="{yd:.1f}" r="4.8" fill="{BLUE}"/>')
+        els.append(txt(xd + 8, yd + 12, "手冲/滴滤 (1 bar, 93°C)", 8.3, BLUE, "start", weight="700"))
+
+        # 2) Bezzera 1901 early steam machine (118 C, 1.86 bar)
+        xb, yb = _tx(118.0), _ty(_antoine_psat_bar(118.0))
+        els.append(f'<circle cx="{xb:.1f}" cy="{yb:.1f}" r="4.6" fill="{ORANGE}"/>')
+        els.append(txt(xb + 9, yb - 3, "1901 蒸汽机 (1.8bar, 118°C)", 8.3, ORANGE, "start", weight="700"))
+
+        # 3) Moka pot trajectory (starts at 78 C via trapped air at ~1.4 bar, finishes at 108 C)
+        xm0, ym0 = _tx(78.0), _ty(1.45)
+        xm1, ym1 = _tx(108.0), _ty(1.70)
+        els.append(_line(xm0, ym0, xm1, ym1, stroke=AMBER, sw=2.1, dash="4,2", marker="arr-orange"))
+        els.append(f'<circle cx="{xm0:.1f}" cy="{ym0:.1f}" r="4.0" fill="{AMBER}"/>')
+        els.append(txt(xm0 + 2, ym0 - 9, "摩卡壶(空气推水)", 8.1, AMBER, "middle", weight="700"))
+
+        # 4) Modern Espresso (93 C, 9.0 bar) + Decoupling upward arrow from (93 C, 1 bar)
+        xe, ye = _tx(93.0), _ty(9.0)
+        els.append(_line(xd, yd - 7, xe, ye + 8, stroke=GREEN, sw=2.2, dash="4,3", marker="arr-green"))
+        els.append(f'<circle cx="{xe:.1f}" cy="{ye:.1f}" r="5.5" fill="{GREEN}" stroke="#ffffff" stroke-width="1.5"/>')
+        els.append(txt(xe + 9, ye - 2, "现代意式浓缩 (9 bar, 93°C)", 8.6, GREEN, "start", weight="700"))
+        els.append(txt(xe + 9, ye + 12, "弹簧活塞 / 水泵温压解耦!", 8.2, INK, "start", weight="600"))
+
+        # Bottom note in left panel
+        els.append(txt(34, 388, "• 热力学紧箍咒：在密闭单锅里靠烧开水攒气压，压力与沸点必被红色", 9.0, INK, weight="600"))
+        els.append(txt(34, 406, "  饱和蒸汽线 P_sat(T) 死死绑在一起——要压力就得挨高温烫！", 9.0, RED, weight="700"))
+        els.append(txt(34, 425, "• 1947 加吉亚杠杆机与 1961 飞马 E61 电动泵的伟大之处，就是用外部机械功", 9.0, BODY))
+        els.append(txt(34, 443, "  直接给 93 °C 液态水加压到 9 bar，一举脱离蒸汽线进入左上角甜区！", 9.0, GREEN, weight="700"))
+
+        # ---------------- Right Panel: Moka Air Trick & Henry's-Law Crema ----------------
+        els.append(card(436, 64, 304, 394))
+
+        els.append(pill(450, 78, "② 摩卡壶为什么前段不烫粉、尾段不能贪？", fg=AMBER, bg=AMBER_SOFT, w=276, h=22, size=9.3))
+        els.append(card(450, 108, 276, 138, rx=8, fill="#fffbeb", stroke=AMBER, sw=1.1))
+        els.append(txt(462, 128, "摩卡壶下壶顶部的“残留空气垫”立了大功：", 9.2, AMBER, weight="700"))
+        els.append(txt(462, 148, "• 下壶绝不能加满漫过安全阀！留出的那圈空气", 8.8, BODY))
+        els.append(txt(462, 165, "  受热膨胀 + 水汽分压叠加，水温刚到 75–95 °C", 8.8, INK, weight="600"))
+        els.append(txt(462, 182, "  总压就够 ~1.4 bar，温和把液态水顶进粉槽；", 8.8, BODY))
+        els.append(txt(462, 202, "• 一旦下壶水位见底，纯过热蒸汽 (>105 °C) 接管", 8.8, RED, weight="600"))
+        els.append(txt(462, 219, "  狂喷（发出一阵咕噜声），此时必须立刻关火冲", 8.8, BODY))
+        els.append(txt(462, 236, "  凉水——晚关 10 秒就会萃出满嘴焦木苦涩！", 8.8, INK, weight="700"))
+
+        els.append(pill(450, 258, "③ 意式灵魂“黄金油脂 (Crema)”是怎么变出来的？", fg=BROWN, bg=BROWN_SOFT, w=276, h=22, size=9.2))
+        els.append(card(450, 288, 276, 156, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+
+        els.append(card(462, 298, 116, 62, rx=6, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(520, 315, "粉碗内：9 bar 高压", 8.6, BLUE, "middle", weight="700"))
+        els.append(txt(520, 331, "亨利定律 c = k_H·P", 8.2, INK, "middle", cls="mono"))
+        els.append(txt(520, 347, "烘焙 CO₂ 溶解度×9!", 8.3, BLUE, "middle", weight="700"))
+
+        els.append(_line(580, 329, 598, 329, stroke=BROWN, sw=2.0, marker="arr-orange"))
+
+        els.append(card(600, 298, 114, 62, rx=6, fill=BROWN_SOFT, stroke=BROWN))
+        els.append(txt(657, 315, "出滤孔：骤降 1 bar", 8.6, BROWN, "middle", weight="700"))
+        els.append(txt(657, 331, "CO₂ 瞬间过饱和成核", 8.2, INK, "middle"))
+        els.append(txt(657, 347, "油膜裹微泡 = Crema!", 8.3, BROWN, "middle", weight="700"))
+
+        els.append(txt(462, 379, "• 就像猛拧开摇晃过的可乐瓶：烘焙锁在 30–60 μm", 8.7, BODY))
+        els.append(txt(462, 396, "  细胞壁微孔里的 CO₂ 被 9 bar 强压进水里，穿过滤孔", 8.7, BODY))
+        els.append(txt(462, 413, "  泄压瞬间炸出数百万颗微米气泡，再披上高速剪切乳", 8.7, BODY))
+        els.append(txt(462, 430, "  化的咖啡脂质与类黑精外衣，浮成绵密虎斑油脂层！", 8.7, BROWN, weight="700"))
+
+        return figure(
+            472,
+            "水饱和蒸汽压死锁曲线与摩卡壶空气垫、现代意式咖啡机9bar温压解耦及黄金油脂成因图",
+            "左图按Antoine方程精确绘制水的饱和蒸汽压曲线P_sat(T)：若靠纯蒸汽升至9 bar水温必高达175.4°C烫焦咖啡；对比手冲(1 bar, 93°C)、1901蒸汽机(1.8 bar, 118°C)、摩卡壶(靠封存空气在78-108°C推水)及现代意式浓缩(9 bar, 93°C机械解耦)；右图拆解摩卡壶见泡即停铁律与9 bar亨利定律CO2过饱和泄压生成Crema微泡乳液机制。",
+            els,
+        )
+
+    def _build_espresso_pump_opv_threeway_darcy():
+        """SVG 3: Modern espresso machine hydraulic circuit (Ulka 50Hz diode pump, OPV, PID, 3-way valve) + Cameron-Hendon 2020."""
+        def _ey_model(fineness_idx):
+            homogeneous = 11.0 + 11.8 * (1.0 - math.exp(-0.32 * fineness_idx))
+            clog_penalty = 0.0 if fineness_idx <= 6.0 else 1.45 * ((fineness_idx - 6.0) ** 1.65)
+            return homogeneous - clog_penalty
+
+        ey_coarse = _ey_model(1.5)
+        ey_peak = _ey_model(6.0)
+        ey_choked = _ey_model(9.5)
+        assert ey_coarse < 16.0 and 20.5 < ey_peak < 21.5 and ey_choked < 16.5
+
+        els = header(
+            "拆开一台半自动意式咖啡机：水路里藏着哪五大关卡？为什么“20 Bar 大压力”反而是噱头？",
+            "二极管半波电磁泵造压 → OPV 削峰锁死 9 bar → PID 控温 → 三通电磁阀防炸粉；压力过高与磨太细反而引发“虫洞通道”！",
+        )
+
+        # ---------------- Top Card: Full Hydraulic & Thermal Pipeline ----------------
+        els.append(card(20, 64, 720, 186))
+        els.append(pill(34, 76, "① 现代意式咖啡机标准水路五联关（以振动泵 + OPV + 三通阀架构为例）", fg=BLUE, bg=BLUE_SOFT, w=438, h=22, size=9.5))
+
+        els.append(card(34, 116, 96, 66, rx=7, fill="#eff6ff", stroke=BLUE))
+        els.append(txt(82, 137, "净水箱", 9.5, BLUE, "middle", weight="700"))
+        els.append(txt(82, 154, "+ 霍尔叶轮", 8.6, BODY, "middle"))
+        els.append(txt(82, 169, "计量水量 mL", 8.4, MUTED, "middle"))
+
+        els.append(_line(130, 149, 152, 149, stroke=BLUE, sw=2.0, marker="arr-blue"))
+
+        els.append(card(154, 116, 134, 66, rx=7, fill=ORANGE_SOFT, stroke=ORANGE, sw=1.4))
+        els.append(txt(221, 135, "① 电磁振动泵 (Ulka)", 9.2, ORANGE, "middle", weight="700"))
+        els.append(txt(221, 152, "220V 串二极管半波整流", 8.3, INK, "middle", weight="600"))
+        els.append(txt(221, 168, "每秒往复 50 次 · 闷堵 15bar", 8.2, BODY, "middle"))
+
+        els.append(_line(288, 149, 312, 149, stroke=ORANGE, sw=2.0, marker="arr-orange"))
+
+        els.append(card(314, 116, 118, 66, rx=7, fill=GREEN_SOFT, stroke=GREEN, sw=1.5))
+        els.append(txt(373, 135, "② OPV 稳压泄压阀", 9.2, GREEN, "middle", weight="700"))
+        els.append(txt(373, 152, "弹簧顶死 9.0 bar 上限", 8.4, INK, "middle", weight="700"))
+        els.append(txt(373, 168, "多余高压水旁路退回水箱", 8.1, GREEN, "middle", weight="600"))
+
+        els.append(f'<path d="M 373,116 L 373,106 L 82,106 L 82,116" fill="none" stroke="{GREEN}" stroke-width="1.4" stroke-dasharray="4,3" marker-end="url(#arr-green)"/>')
+        els.append(txt(584, 92, "旁路：超 9 bar 水自动退回水箱!", 8.3, GREEN, "middle", weight="700"))
+
+        els.append(_line(432, 149, 456, 149, stroke=GREEN, sw=2.0, marker="arr-green"))
+
+        els.append(card(458, 116, 118, 66, rx=7, fill=RED_SOFT, stroke=RED, sw=1.4))
+        els.append(txt(517, 135, "③ PID 锅炉/厚膜热块", 9.1, RED, "middle", weight="700"))
+        els.append(txt(517, 152, "SSR 脉冲控温 ±0.5°C", 8.3, INK, "middle", weight="600"))
+        els.append(txt(517, 168, "恒定输出 93.0 °C 热水", 8.3, RED, "middle", weight="700"))
+
+        els.append(_line(576, 149, 600, 149, stroke=RED, sw=2.0, marker="arr-orange"))
+
+        els.append(card(602, 116, 124, 66, rx=7, fill=PURPLE_SOFT, stroke=PURPLE, sw=1.5))
+        els.append(txt(664, 135, "④ 三通电磁阀 + 冲煮头", 9.0, PURPLE, "middle", weight="700"))
+        els.append(txt(664, 152, "通电：9 bar 压入 58mm 粉碗", 8.2, INK, "middle", weight="600"))
+        els.append(txt(664, 168, "断电：0.1s 泄残压排入水盘!", 8.2, PURPLE, "middle", weight="700"))
+
+        els.append(card(34, 194, 692, 44, rx=6, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(48, 212, "• 家用振动泵 vs 商用旋转叶片泵：家用电磁泵体积极小、靠前 1–2 秒缓升压自带柔和预浸泡，但每秒 50 次脉动声音响；", 8.7, BODY))
+        els.append(txt(48, 229, "  咖啡馆万元商用机改用电机带动偏心石墨叶片泵（Rotary Pump），瞬间拉满恒定 9 bar、静如耳语且可直连自来水管。", 8.7, INK, weight="600"))
+
+        # ---------------- Bottom Left: Why 3-Way Solenoid Stops "Portafilter Sneeze" ----------------
+        els.append(card(20, 262, 344, 200))
+        els.append(pill(34, 276, "② 停机一秒拧手柄，为什么不会炸咖啡泥？", fg=PURPLE, bg=PURPLE_SOFT, w=276, h=22, size=9.4))
+
+        els.append(card(34, 308, 152, 86, rx=7, fill="#f0fdf4", stroke=GREEN))
+        els.append(txt(110, 326, "冲煮中（线圈通电）", 8.9, GREEN, "middle", weight="700"))
+        els.append(txt(110, 344, "锅炉 → 粉碗【导通】", 8.5, INK, "middle", weight="600"))
+        els.append(txt(110, 361, "排渣口【封死】", 8.5, MUTED, "middle"))
+        els.append(txt(110, 379, "粉饼顶着 9 bar (≈238 kg 力)", 8.1, GREEN, "middle", weight="700"))
+
+        els.append(card(198, 308, 152, 86, rx=7, fill="#faf5ff", stroke=PURPLE))
+        els.append(txt(274, 326, "按键停机（线圈断电）", 8.9, PURPLE, "middle", weight="700"))
+        els.append(txt(274, 344, "锅炉水路【瞬间截断】", 8.5, INK, "middle", weight="600"))
+        els.append(txt(274, 361, "粉碗 → 沥水盘【泄压】", 8.4, PURPLE, "middle", weight="700"))
+        els.append(txt(274, 379, "“噗”一声抽干积水，粉饼干爽!", 8.1, INK, "middle", weight="600"))
+
+        els.append(txt(34, 414, "算笔力气账：58 mm 粉碗面积 A = 26.4 cm²，9 bar 压强相当于", 8.8, BODY))
+        els.append(txt(34, 431, "238 公斤重物压在粉饼上！入门玩具机若省掉三通阀，刚停机就拧", 8.8, BODY))
+        els.append(txt(34, 448, "手柄，残余高压水汽就会把滚烫咖啡渣瞬间喷溅得满台面都是！", 8.8, RED, weight="700"))
+
+        # ---------------- Bottom Right: Cameron-Hendon (2020) Channeling Curve ----------------
+        els.append(card(376, 262, 364, 200))
+        els.append(pill(390, 276, "③ 戳破“20 Bar 智商税”：达西定律与通道效应反转", fg=RED, bg=RED_SOFT, w=322, h=22, size=9.4))
+
+        px0, py0, pw, ph = 390.0, 306.0, 206.0, 142.0
+        els.append(card(px0, py0, pw, ph, rx=7, fill="#ffffff", stroke=BORDER))
+
+        ax_x0, ax_x1 = px0 + 34.0, px0 + pw - 12.0
+        ax_y0, ax_y1 = py0 + ph - 24.0, py0 + 20.0
+
+        def _cx(u):
+            return ax_x0 + (u / 10.0) * (ax_x1 - ax_x0)
+
+        def _cy(ey):
+            return ax_y0 - ((ey - 10.0) / 14.0) * (ax_y0 - ax_y1)
+
+        els.append(_line(ax_x0, ax_y0, ax_x1, ax_y0, stroke=SLATE, sw=1.2))
+        els.append(_line(ax_x0, ax_y0, ax_x0, ax_y1, stroke=SLATE, sw=1.2))
+        els.append(txt(ax_x0 - 4, _cy(20.0) + 3, "20%", 8.1, GREEN, "end", weight="700", cls="mono"))
+        els.append(txt(ax_x0 - 4, _cy(14.0) + 3, "14%", 8.1, MUTED, "end", cls="mono"))
+        els.append(_line(ax_x0, _cy(20.0), ax_x1, _cy(20.0), stroke=GREEN, sw=0.9, dash="3,3"))
+        els.append(txt((ax_x0 + ax_x1) / 2, ax_y0 + 16, "研磨度：粗 → 适中 → 过细死堵", 8.1, INK, "middle", weight="600"))
+
+        naive_pts = [(_cx(i * 0.25), _cy(11.0 + 11.8 * (1.0 - math.exp(-0.32 * i * 0.25)))) for i in range(41)]
+        real_pts = [(_cx(i * 0.25), _cy(_ey_model(i * 0.25))) for i in range(41)]
+        els.append(_poly(naive_pts, stroke=MUTED, sw=1.4, dash="3,3"))
+        els.append(_poly(real_pts[:25], stroke=GREEN, sw=2.4))
+        els.append(_poly(real_pts[24:], stroke=RED, sw=2.4))
+
+        pk_x, pk_y = _cx(6.0), _cy(_ey_model(6.0))
+        els.append(f'<circle cx="{pk_x:.1f}" cy="{pk_y:.1f}" r="4.0" fill="{GREEN}"/>')
+        els.append(txt(pk_x - 6, pk_y - 6, "均匀萃取峰", 8.1, GREEN, "middle", weight="700"))
+        els.append(txt(_cx(7.2), _cy(12.2), "通道击穿↓", 8.1, RED, "end", weight="700"))
+
+        els.append(txt(604, 320, "Matter (2020) 实证：", 8.8, INK, weight="700"))
+        els.append(txt(604, 338, "• 15–20 bar 蛮力会把", 8.4, BODY))
+        els.append(txt(604, 353, "  粉床压实堵死 (k↓)；", 8.4, RED, weight="600"))
+        els.append(txt(604, 370, "• 高压水专挑最薄弱裂", 8.4, BODY))
+        els.append(txt(604, 385, "  缝钻出“虫洞通道”：", 8.4, BODY))
+        els.append(txt(604, 400, "  洞边过萃焦苦、周围", 8.4, RED, weight="700"))
+        els.append(txt(604, 415, "  干粉欠萃尖酸！", 8.4, RED, weight="700"))
+        els.append(txt(604, 434, "• 6–9 bar 反倒更甜稳!", 8.5, GREEN, weight="700"))
+
+        return figure(
+            474,
+            "现代意式咖啡机水路五联关结构、三通电磁阀泄压原理与Cameron-Hendon通道效应曲线图",
+            "上图展示净水箱经霍尔流量计、50Hz半波二极管电磁振动泵(峰值15bar)、OPV稳压阀(削峰锁死9bar并回流水箱)、PID锅炉(93°C)至三通电磁阀与58mm粉碗的完整回路；左下对比三通阀冲煮导通与停机0.1秒泄去238公斤等效残压防止炸粉；右下绘制2020年Matter论文实证曲线：研磨过细或压力虚高会压实粉床诱发局部虫洞通道，令平均萃取率不升反降。",
+            els,
+        )
+
+    def _build_bean_to_cup_capsule_and_microfoam():
+        """SVG 4: Bean-to-cup motorized brew unit + Favre capsule burst + Steam wand latent heat & beta-LG foam window."""
+        m_milk_g = 200.0
+        cp_milk = 3.93
+        q_milk_j = m_milk_g * cp_milk * (62.0 - 5.0)
+        dh_steam_jg = 2451.0
+        m_steam_g = q_milk_j / dh_steam_jg
+        assert 17.5 < m_steam_g < 19.2
+
+        els = header(
+            "一键全自动、胶囊机与蒸汽奶泡棒：机器怎样替掉咖啡师的双手？",
+            "左上：全自动步进冲泡器四连动作 · 左下：铝胶囊“憋够高压再破膜” · 右：18 克蒸汽潜热秒热冰奶与 65 °C 蛋白生死线",
+        )
+
+        # ---------------- Top Left: Fully Automatic Brew Group 4-Step Dance ----------------
+        els.append(card(20, 64, 366, 198))
+        els.append(pill(34, 78, "① 全自动咖啡机（Bean-to-Cup）肚子里的机械手", fg=BLUE, bg=BLUE_SOFT, w=310, h=22, size=9.4))
+
+        steps_auto = [
+            ("1. 定量现磨", "锥刀/平刀磨豆", "落入活动冲泡腔", BLUE, BLUE_SOFT),
+            ("2. 丝杆压粉", "步进电机推活塞", "施 ~200N 力压实", GREEN, GREEN_SOFT),
+            ("3. 预浸+9bar", "先润湿防通道", "再高压穿流萃取", ORANGE, ORANGE_SOFT),
+            ("4. 顶饼扫渣", "活塞上举干粉饼", "刮臂推入废渣盒", PURPLE, PURPLE_SOFT),
+        ]
+        for idx, (st_t, st_1, st_2, sfg, sbg) in enumerate(steps_auto):
+            sx = 32 + idx * 86
+            els.append(card(sx, 110, 80, 96, rx=7, fill=sbg, stroke=sfg, sw=1.2))
+            els.append(txt(sx + 40, 130, st_t, 8.8, sfg, "middle", weight="700"))
+            els.append(txt(sx + 40, 156, st_1, 8.1, INK, "middle", weight="600"))
+            els.append(txt(sx + 40, 173, st_2, 8.0, BODY, "middle"))
+            if idx < 3:
+                els.append(_line(sx + 80, 158, sx + 86, 158, stroke=SLATE, sw=1.5))
+
+        els.append(txt(34, 226, "• 为什么全自动机芯大多建议定期拆洗？塑料活动冲泡腔内有滑轨与", 8.7, BODY))
+        els.append(txt(34, 244, "  O 形密封圈，咖啡油脂残留氧化会串味（商用机配自动药片反冲洗）。", 8.7, MUTED))
+
+        # ---------------- Bottom Left: Favre Aluminum Capsule Mechanics (US4136202A) ----------------
+        els.append(card(20, 274, 366, 190))
+        els.append(pill(34, 288, "② 胶囊机（专利 US4136202A）：仅 5 克粉凭什么萃出厚油脂？", fg=AMBER, bg=AMBER_SOFT, w=338, h=22, size=9.2))
+
+        els.append(card(34, 318, 162, 132, rx=7, fill="#f8fafc", stroke=BORDER))
+        for bx_n in (94, 115, 136):
+            els.append(f'<polygon points="{bx_n - 4},330 {bx_n + 4},330 {bx_n},344" fill="{SLATE}"/>')
+        els.append(txt(115, 326, "顶部三针刺破 (12–16 bar)", 7.9, BLUE, "middle", weight="700"))
+
+        els.append(f'<polygon points="84,342 146,342 160,404 70,404" fill="{BROWN_SOFT}" stroke="{AMBER}" stroke-width="2.0"/>')
+        els.append(txt(115, 370, "充氮保鲜细粉", 8.3, BROWN, "middle", weight="700"))
+        els.append(txt(115, 387, "全密封憋起内压!", 8.1, RED, "middle", weight="700"))
+
+        els.append(f'<path d="M 70,404 Q 115,419 160,404" fill="none" stroke="{RED}" stroke-width="2.2"/>')
+        for px_pyr in range(78, 156, 12):
+            els.append(f'<polygon points="{px_pyr},422 {px_pyr + 8},422 {px_pyr + 4},413" fill="{SLATE}"/>')
+        els.append(txt(115, 439, "薄铝膜鼓胀撞金字塔破膜!", 8.0, INK, "middle", weight="700"))
+
+        els.append(txt(206, 336, "“先憋压、后破膜”两步巧思：", 9.0, INK, weight="700"))
+        els.append(txt(206, 356, "1. 刚注水时底部 40 μm 铝箔完", 8.5, BODY))
+        els.append(txt(206, 373, "   全密封，一滴水也漏不出去，", 8.5, BODY))
+        els.append(txt(206, 390, "   强迫全部粉末 100% 浸润增压；", 8.5, BLUE, weight="600"))
+        els.append(txt(206, 410, "2. 等内压飙到阈值，铝膜向下鼓", 8.5, BODY))
+        els.append(txt(206, 427, "   包抵住金字塔格栅均匀撕裂，", 8.5, ORANGE, weight="600"))
+        els.append(txt(206, 444, "   免去填粉布粉失误，杯杯一致！", 8.5, GREEN, weight="700"))
+
+        # ---------------- Right Panel: Steam Milk Frothing Physics & Protein Window ----------------
+        els.append(card(398, 64, 342, 400))
+        els.append(pill(412, 78, "③ 蒸汽打奶泡：2450 J/g 相变外挂 + 65 °C 蛋白质窗口", fg=TEAL, bg=TEAL_SOFT, w=314, h=22, size=9.2))
+
+        els.append(card(412, 108, 314, 126, rx=8, fill=TEAL_SOFT, stroke=TEAL, sw=1.1))
+        els.append(txt(424, 128, "为什么蒸汽棒十来秒就能烫热一整缸冰牛奶？", 9.2, TEAL, weight="700"))
+        els.append(txt(424, 147, "• 相变潜热外挂：把 200 g 冰奶 (5→62 °C) 加热需 44.8 kJ；", 8.6, BODY))
+        els.append(txt(424, 164, f"  水蒸气凝结成水每克放热 ~2,451 J，仅凝结 {m_steam_g:.1f} g 蒸汽", 8.6, INK, weight="700"))
+        els.append(txt(424, 181, "  （水量仅增 ~9%）就能瞬间灌满热量，远快于灶台隔锅烧！", 8.6, BODY))
+        els.append(txt(424, 200, "• 两段手法：① <37 °C 喷嘴贴液面“嗤嗤撕纸声”文丘里卷吸进气；", 8.5, BLUE, weight="700"))
+        els.append(txt(424, 217, "  ② 随后喷嘴埋入液下造漩涡，把大气泡打碎成 <50 μm 微米丝绒泡！", 8.5, TEAL, weight="700"))
+
+        px0, py0, pw, ph = 412.0, 246.0, 314.0, 146.0
+        els.append(card(px0, py0, pw, ph, rx=7, fill="#ffffff", stroke=BORDER))
+
+        ax_x0, ax_x1 = px0 + 38.0, px0 + pw - 14.0  # 5 .. 85 C
+        ax_y0, ax_y1 = py0 + ph - 24.0, py0 + 20.0
+
+        def _mx(tc):
+            return ax_x0 + ((tc - 5.0) / 80.0) * (ax_x1 - ax_x0)
+
+        def _my(v):
+            return ax_y0 - v * (ax_y0 - ax_y1)
+
+        els.append(f'<rect x="{_mx(55.0):.1f}" y="{ax_y1:.1f}" width="{_mx(65.0) - _mx(55.0):.1f}" height="{ax_y0 - ax_y1:.1f}" fill="{GREEN_SOFT}"/>')
+        els.append(f'<rect x="{_mx(70.0):.1f}" y="{ax_y1:.1f}" width="{_mx(85.0) - _mx(70.0):.1f}" height="{ax_y0 - ax_y1:.1f}" fill="{RED_SOFT}"/>')
+
+        els.append(_line(ax_x0, ax_y0, ax_x1, ax_y0, stroke=SLATE, sw=1.2))
+        els.append(_line(ax_x0, ax_y0, ax_x0, ax_y1, stroke=SLATE, sw=1.2))
+        els.append(txt(ax_x0 - 4, ax_y1 + 8, "奶泡", 8.1, MUTED, "end"))
+        els.append(txt(ax_x0 - 4, ax_y1 + 20, "质量", 8.1, MUTED, "end"))
+
+        for t_tk in (10, 37, 60, 70, 80):
+            xx = _mx(t_tk)
+            els.append(_line(xx, ax_y0, xx, ax_y0 + 4, stroke=SLATE, sw=1.0))
+            els.append(txt(xx, ax_y0 + 15, f"{t_tk}°C", 8.1, RED if t_tk >= 70 else MUTED, "middle", cls="mono"))
+
+        foam_pts = []
+        for i in range(81):
+            tc = 5.0 + i
+            fat_dip = -0.22 * math.exp(-(((tc - 28.0) / 9.0) ** 2))
+            whey_peak = 0.62 * math.exp(-(((tc - 61.0) / 11.5) ** 2))
+            scorch_drop = 0.0 if tc <= 66.0 else -0.68 * (1.0 - math.exp(-((tc - 66.0) / 8.0) ** 1.6))
+            val = max(0.08, min(0.96, 0.36 + fat_dip + whey_peak + scorch_drop))
+            foam_pts.append((_mx(tc), _my(val)))
+        els.append(_poly(foam_pts, stroke=TEAL, sw=2.4))
+
+        els.append(txt(_mx(58.5), ax_y1 - 4, "55–65°C 黄金窗", 8.1, GREEN, "middle", weight="700"))
+        els.append(txt(_mx(77.5), ax_y1 + 28, ">70°C", 8.1, RED, "middle", weight="700"))
+        els.append(txt(_mx(77.5), ax_y1 + 40, "聚沉破泡!", 7.9, RED, "middle", weight="700"))
+
+        els.append(txt(412, 411, "• β-乳球蛋白锁泡术：60 °C 左右乳清蛋白适度展开疏水基团，像救生圈", 8.6, BODY))
+        els.append(txt(412, 428, "  一样牢牢裹住气液界面，且此时舌头对乳糖感知最甜；一旦飙过 70 °C，", 8.6, BODY))
+        els.append(txt(412, 445, "  二硫键不可逆交联聚沉并放出硫化物熟腥味，丝绒奶泡当场塌成粗肥皂泡！", 8.6, RED, weight="700"))
+
+        return figure(
+            476,
+            "全自动咖啡机四步冲泡器、铝胶囊憋压破膜结构与蒸汽棒潜热升温及65度乳清蛋白打发窗口图",
+            "左上展示全自动咖啡机现磨、步进电机200N压粉、预浸泡+9bar萃取与自动刮渣四步循环；左下展示Favre铝胶囊顶部三针注水后靠40微米底膜密封憋压，鼓胀抵住金字塔格栅均匀破膜；右栏计算仅需凝结18.3克蒸汽即可释放44.8kJ潜热将200克冰奶升至62°C，并绘制β-乳球蛋白在55-65°C黄金稳定窗与超70°C聚沉破泡曲线。",
+            els,
+        )
+
+    def _build_extraction_kinetics_and_golden_cup():
+        """SVG 5: Double-porosity 3-wave flavor extraction kinetics + Lockhart (1957) / SCA Brewing Control Chart."""
+        ey_drip = 1.25 * 16.0
+        ey_esp = 10.0 * 2.0
+        assert math.isclose(ey_drip, 20.0, abs_tol=1e-9) and math.isclose(ey_esp, 20.0, abs_tol=1e-9)
+
+        els = header(
+            "万机归一的化学底层：为什么前段酸、中段甜、尾段涩？手冲与浓缩凭什么共用“20% 金杯律”？",
+            "左：极性决定的“果酸咖啡因 → 焦糖脂质 → 多酚苦涩”三波溶出赛跑 · 右：Lockhart / SCA 金杯控制图实算",
+        )
+
+        # ---------------- Left Panel: 3-Wave Molecular Extraction Kinetics ----------------
+        els.append(card(20, 64, 364, 390))
+        els.append(pill(34, 78, "① 一杯意式 30 秒里的“三波风味接力”（双孔隙动力学）", fg=ORANGE, bg=ORANGE_SOFT, w=336, h=22, size=9.3))
+
+        px0, py0, pw, ph = 34.0, 110.0, 336.0, 186.0
+        els.append(card(px0, py0, pw, ph, rx=7, fill="#ffffff", stroke=BORDER))
+
+        ax_x0, ax_x1 = px0 + 38.0, px0 + pw - 14.0  # 0 .. 36 s
+        ax_y0, ax_y1 = py0 + ph - 26.0, py0 + 22.0
+
+        def _kx(sec):
+            return ax_x0 + (sec / 36.0) * (ax_x1 - ax_x0)
+
+        def _ky(val):
+            return ax_y0 - val * (ax_y0 - ax_y1)
+
+        els.append(f'<rect x="{_kx(24.0):.1f}" y="{ax_y1:.1f}" width="{_kx(30.0) - _kx(24.0):.1f}" height="{ax_y0 - ax_y1:.1f}" fill="{GREEN_SOFT}"/>')
+        els.append(txt(_kx(27.0), ax_y1 - 4, "黄金截断窗", 8.0, GREEN, "middle", weight="700"))
+
+        els.append(_line(ax_x0, ax_y0, ax_x1, ax_y0, stroke=SLATE, sw=1.2))
+        els.append(_line(ax_x0, ax_y0, ax_x0, ax_y1, stroke=SLATE, sw=1.2))
+        els.append(txt(ax_x0 - 4, ax_y1 + 10, "溶出", 8.1, MUTED, "end"))
+        els.append(txt(ax_x0 - 4, ax_y1 + 22, "速率", 8.1, MUTED, "end"))
+
+        for s_tk in (0, 8, 16, 24, 32):
+            xx = _kx(s_tk)
+            els.append(_line(xx, ax_y0, xx, ax_y0 + 4, stroke=SLATE, sw=1.0))
+            els.append(txt(xx, ax_y0 + 15, f"{s_tk}s", 8.2, MUTED, "middle", cls="mono"))
+
+        w1_pts, w2_pts, w3_pts = [], [], []
+        for i in range(73):
+            t_s = i * 0.5
+            r1 = 0.94 * ((t_s / 4.2) ** 1.4) * math.exp(1.0 - (t_s / 4.2)) if t_s > 0 else 0.0
+            r2 = 0.70 * math.exp(-(((t_s - 14.5) / 7.2) ** 2))
+            r3 = 0.54 / (1.0 + math.exp(-(t_s - 22.0) / 3.8))
+            w1_pts.append((_kx(t_s), _ky(min(0.98, r1))))
+            w2_pts.append((_kx(t_s), _ky(r2)))
+            w3_pts.append((_kx(t_s), _ky(r3)))
+
+        els.append(_poly(w1_pts, stroke=ORANGE, sw=2.3))
+        els.append(_poly(w2_pts, stroke=GREEN, sw=2.3))
+        els.append(_poly(w3_pts, stroke=PURPLE, sw=2.2, dash="5,3"))
+
+        els.append(txt(_kx(5.8), _ky(0.96), "① 果酸+咖啡因(快!)", 8.2, ORANGE, "start", weight="700"))
+        els.append(txt(_kx(15.5), _ky(0.74), "② 焦糖甜感+油脂", 8.2, GREEN, "middle", weight="700"))
+        els.append(txt(_kx(31.2), _ky(0.58), "③ 多酚涩苦", 8.2, PURPLE, "middle", weight="700"))
+
+        els.append(card(34, 308, 336, 132, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(46, 328, "两个颠覆直觉的萃取真相（Moroney 2016 / Batali 2020）：", 9.0, INK, weight="700"))
+        els.append(txt(46, 348, "• 咖啡因其实是个“急性子”！咖啡因分子带强极性、极易溶", 8.6, BODY))
+        els.append(txt(46, 365, "  于热水，前 8–10 秒就已被冲出大半；提前掐停做短萃 (Ristretto)", 8.6, ORANGE, weight="600"))
+        els.append(txt(46, 382, "  少掉的主要是尾段大分子苦涩物，提神劲头其实没少多少！", 8.6, BODY))
+        els.append(txt(46, 401, "• 为什么会有“尖酸”和“死苦”？太早关机只接了第①波果酸，", 8.6, BODY))
+        els.append(txt(46, 418, "  缺第②波糖类圆场就酸得皱眉；拖太久细胞深孔慢扩散出第", 8.6, BODY))
+        els.append(txt(46, 434, "  ③波苯基茚满与木质多酚，舌面唾液蛋白就会被抓出干涩感！", 8.6, PURPLE, weight="700"))
+
+        # ---------------- Right Panel: Lockhart (1957) / SCA Golden Cup Control Chart ----------------
+        els.append(card(396, 64, 344, 390))
+        els.append(pill(410, 78, "② 金杯控制图：浓度 TDS 差 8 倍，萃取率 EY 竟完全同框！", fg=GREEN, bg=GREEN_SOFT, w=316, h=22, size=9.1))
+
+        px0, py0, pw, ph = 410.0, 110.0, 316.0, 206.0
+        els.append(card(px0, py0, pw, ph, rx=7, fill="#ffffff", stroke=BORDER))
+
+        ax_x0, ax_x1 = px0 + 46.0, px0 + pw - 14.0
+        ax_y0, ax_y1 = py0 + ph - 26.0, py0 + 18.0
+
+        def _gx(ey_pct):
+            return ax_x0 + ((ey_pct - 14.0) / 12.0) * (ax_x1 - ax_x0)
+
+        def _gy(tds_pct):
+            return ax_y0 - ((tds_pct - 0.80) / 0.95) * (ax_y0 - ax_y1)
+
+        els.append(f'<rect x="{_gx(18.0):.1f}" y="{ax_y1:.1f}" width="{_gx(22.0) - _gx(18.0):.1f}" height="{ax_y0 - ax_y1:.1f}" fill="#f0fdf4"/>')
+        els.append(
+            f'<rect x="{_gx(18.0):.1f}" y="{_gy(1.35):.1f}" width="{_gx(22.0) - _gx(18.0):.1f}" '
+            f'height="{_gy(1.15) - _gy(1.35):.1f}" rx="3" fill="{GREEN_SOFT}" stroke="{GREEN}" stroke-width="1.8"/>'
+        )
+        els.append(txt(_gx(20.0), _gy(1.25) + 3, "SCA 金杯靶心", 8.2, GREEN, "middle", weight="700"))
+
+        for b_ratio, r_lbl, r_col, lx_ey, ly_tds in [
+            (14.0, "1:14 浓", ORANGE, 22.8, 1.70),
+            (16.0, "1:16 标准", BLUE, 25.7, 1.65),
+            (18.0, "1:18 清淡", SLATE, 25.7, 1.27),
+        ]:
+            ray_pts = []
+            for ey_v in (14.2, 25.8):
+                tds_v = ey_v / b_ratio
+                if tds_v < 0.80:
+                    ey_v = 0.80 * b_ratio
+                    tds_v = 0.80
+                elif tds_v > 1.75:
+                    ey_v = 1.75 * b_ratio
+                    tds_v = 1.75
+                ray_pts.append((_gx(ey_v), _gy(tds_v)))
+            els.append(_poly(ray_pts, stroke=r_col, sw=1.5, dash="4,3" if b_ratio != 16.0 else None))
+            els.append(txt(_gx(lx_ey), _gy(ly_tds), r_lbl, 7.9, r_col, "end", weight="700"))
+
+        els.append(_line(ax_x0, ax_y0, ax_x1, ax_y0, stroke=SLATE, sw=1.2))
+        els.append(_line(ax_x0, ax_y0, ax_x0, ax_y1, stroke=SLATE, sw=1.2))
+
+        for ey_t in (15, 18, 20, 22, 25):
+            xx = _gx(ey_t)
+            els.append(_line(xx, ax_y0, xx, ax_y0 + 4, stroke=SLATE, sw=1.0))
+            els.append(txt(xx, ax_y0 + 15, f"{ey_t}%", 8.1, GREEN if ey_t in (18, 20, 22) else MUTED, "middle", cls="mono"))
+
+        for tds_t in (0.90, 1.15, 1.35, 1.60):
+            yy = _gy(tds_t)
+            els.append(_line(ax_x0 - 3, yy, ax_x0, yy, stroke=SLATE, sw=1.0))
+            els.append(txt(ax_x0 - 5, yy + 3, f"{tds_t:.2f}%", 7.9, GREEN if tds_t in (1.15, 1.35) else MUTED, "end", cls="mono"))
+
+        els.append(txt(_gx(15.9), _gy(1.62), "浓而尖酸", 8.1, ORANGE, "middle", weight="700"))
+        els.append(txt(_gx(15.9), _gy(1.51), "(欠萃)", 7.7, MUTED, "middle"))
+        els.append(txt(_gx(23.8), _gy(1.07), "过萃苦涩", 8.1, PURPLE, "middle", weight="700"))
+        els.append(txt(_gx(15.9), _gy(0.89), "淡而寡酸", 8.1, MUTED, "middle", weight="600"))
+        els.append(txt(_gx(24.1), _gy(0.89), "淡而干涩", 8.1, MUTED, "middle", weight="600"))
+
+        els.append(card(410, 326, 316, 114, rx=8, fill=BLUE_SOFT, stroke=BLUE, sw=1.1))
+        els.append(txt(422, 346, "守恒铁律：萃取率 EY ≈ 浓度 TDS × (咖啡液重 ÷ 干粉重)", 8.8, BLUE, weight="700"))
+        els.append(txt(422, 367, "• 美式/手冲（液粉比 ~16:1）：TDS = 1.25% × 16 = 20% EY", 8.6, INK, weight="700", cls="mono"))
+        els.append(txt(422, 386, "• 意式浓缩（液粉比  2:1）：TDS = 10.0% ×  2 = 20% EY", 8.6, BROWN, weight="700", cls="mono"))
+        els.append(txt(422, 406, "一句话顿悟：咖啡豆里只有约 30% 物质能溶于水，无论你用几百元", 8.5, BODY))
+        els.append(txt(422, 423, "滴滤壶还是万元意式机，最好喝的甜平衡永远是只搬走其中 18%–22%！", 8.5, GREEN, weight="700"))
+
+        return figure(
+            468,
+            "咖啡三波极性分子溶出动力学曲线与Lockhart及SCA金杯控制图跨机型守恒对比图",
+            "左图绘制意式30秒内三波风味溶出速率：第1波高极性果酸与亲水咖啡因前10秒快速冲出，第2波美拉德糖类与油脂在10-22秒带来甜醇平衡，第3波低极性多酚与苯基茚满在22秒后慢扩散造成干涩苦味；右图实算Lockhart金杯控制图(18%-22%萃取率与1.15%-1.35%滴滤TDS靶心)，并用质量守恒EY=TDS×液粉比揭示1.25%浓度的手冲与10%浓度的意式浓缩共享同一个20%黄金萃取率。",
+            els,
+        )
+
+    @register(
+        "coffee-machine-principles",
+        "咖啡机工作原理全图解：美式滴滤无泵气泡热虹吸与双金属片温控、水饱和蒸汽压死锁与9bar温压解耦及Crema成因、半波电磁泵OPV三通阀与达西通道效应、全自动机芯铝胶囊破膜与蒸汽奶泡蛋白质窗口、三波溶出动力学与金杯控制图",
+        "science_tech",
+    )
+    def build_coffee_machine_principles():
+        write_svg(SUBDIR, "drip-bubble-pump-and-bimetal-switch.svg", _build_drip_bubble_pump_and_bimetal())
+        write_svg(SUBDIR, "steam-pressure-trap-vs-nine-bar-decoupling.svg", _build_steam_pressure_trap_vs_nine_bar_decoupling())
+        write_svg(SUBDIR, "espresso-pump-opv-threeway-and-darcy.svg", _build_espresso_pump_opv_threeway_darcy())
+        write_svg(SUBDIR, "bean-to-cup-capsule-and-steam-microfoam.svg", _build_bean_to_cup_capsule_and_microfoam())
+        write_svg(SUBDIR, "extraction-kinetics-and-golden-cup-chart.svg", _build_extraction_kinetics_and_golden_cup())
+
+
+_register_coffee_machine_principles()
+
+
+def _register_air_conditioner_principles():
+    """5 computed 760px SVGs for the Air Conditioner thermodynamics & engineering post."""
+    import math
+
+    from .core import (
+        BLUE,
+        BLUE_SOFT,
+        BODY,
+        BORDER,
+        GREEN,
+        GREEN_SOFT,
+        HAIRLINE,
+        INK,
+        MUTED,
+        ORANGE,
+        ORANGE_SOFT,
+        PURPLE,
+        PURPLE_SOFT,
+        SLATE,
+        SLATE_SOFT,
+        card,
+        figure,
+        header,
+        pill,
+        register,
+        txt,
+        write_svg,
+    )
+
+    SUBDIR = "air-conditioner-principles"
+    RED = "#dc2626"
+    RED_SOFT = "#fef2f2"
+    AMBER = "#b45309"
+    AMBER_SOFT = "#fffbeb"
+    TEAL = "#0f766e"
+    TEAL_SOFT = "#f0fdfa"
+
+    # Exact NIST Chemistry WebBook saturation properties for R32 (CH2F2, CAS 75-10-5, IIR ref state: h_l(0°C)=200.00 kJ/kg)
+    NIST_R32_SAT = [
+        # (T_C, P_MPa, h_l_kJkg, h_v_kJkg)
+        (-30.0, 0.27344, 149.45, 506.27),
+        (-25.0, 0.33456, 157.66, 508.20),
+        (-20.0, 0.40575, 165.94, 509.97),
+        (-15.0, 0.48807, 174.31, 511.58),
+        (-10.0, 0.58263, 182.76, 513.02),
+        (-5.0, 0.69058, 191.33, 514.26),
+        (0.0, 0.81310, 200.00, 515.30),
+        (5.0, 0.95145, 208.80, 516.11),
+        (10.0, 1.10690, 217.74, 516.66),
+        (15.0, 1.28080, 226.84, 516.93),
+        (20.0, 1.47460, 236.12, 516.90),
+        (25.0, 1.68960, 245.60, 516.51),
+        (30.0, 1.92750, 255.32, 515.72),
+        (35.0, 2.18980, 265.30, 514.48),
+        (40.0, 2.47830, 275.61, 512.71),
+        (45.0, 2.79480, 286.31, 510.29),
+        (50.0, 3.14120, 297.49, 507.10),
+        (55.0, 3.51990, 309.29, 502.93),
+        (60.0, 3.93320, 321.93, 497.44),
+        (68.0, 4.68000, 346.50, 483.20),
+        (74.0, 5.31000, 372.00, 462.00),
+        (78.15, 5.78500, 415.00, 415.00),  # Critical point Tc=351.3 K, Pc=57.85 bar
+    ]
+
+    def _line(x1, y1, x2, y2, stroke=HAIRLINE, sw=1.5, dash=None, opacity=None):
+        attrs = [
+            f'x1="{x1:.1f}"',
+            f'y1="{y1:.1f}"',
+            f'x2="{x2:.1f}"',
+            f'y2="{y2:.1f}"',
+            f'stroke="{stroke}"',
+            f'stroke-width="{sw}"',
+        ]
+        if dash:
+            attrs.append(f'stroke-dasharray="{dash}"')
+        if opacity is not None:
+            attrs.append(f'opacity="{opacity}"')
+        return f'<line {" ".join(attrs)}/>'
+
+    def _poly(pts, stroke, sw=2.0, fill="none", dash=None, opacity=None):
+        pstr = " ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
+        attrs = [
+            f'points="{pstr}"',
+            f'fill="{fill}"',
+            f'stroke="{stroke}"',
+            f'stroke-width="{sw}"',
+            'stroke-linecap="round"',
+            'stroke-linejoin="round"',
+        ]
+        if dash:
+            attrs.append(f'stroke-dasharray="{dash}"')
+        if opacity is not None:
+            attrs.append(f'opacity="{opacity}"')
+        return f'<polyline {" ".join(attrs)}/>'
+
+    def _build_vapor_compression_sponge_loop():
+        """SVG 1: Split-AC 4-organ vapor-compression loop ('thermodynamic sponge') + COP energy ledger."""
+        # Exact NIST R32 cycle energy balance check
+        h1 = 522.7   # 5 °C evap + 5 K superheat (10 °C @ 0.951 MPa)
+        h2 = 578.5   # compressed to 3.141 MPa (~82 °C discharge)
+        h3 = 286.31  # condensed at 50 °C & subcooled 5 K to 45 °C liquid
+        h4 = h3      # isenthalpic throttling to 0.951 MPa (5 °C mist)
+        q_l = h1 - h4
+        w_c = h2 - h1
+        q_h = h2 - h3
+        x_flash = (h4 - 208.80) / (516.11 - 208.80)
+        cop_cycle = q_l / w_c
+        assert math.isclose(q_l + w_c, q_h, abs_tol=1e-6)
+        assert 0.24 < x_flash < 0.26 and 4.1 < cop_cycle < 4.4
+
+        els = header(
+            "室外 38 °C 酷暑，27 °C 屋里的热凭什么往更烫的室外跑？——“热力学海绵”四步搬热循环",
+            "靠压缩抬沸点排热、节流降沸点吸热，1 度电功撬动约 4 度相变潜热（附单次流向动画）",
+        )
+
+        els.append(
+            """<style>
+  @keyframes acFlowOnce {
+    0% { stroke-dashoffset: 180; opacity: 0.35; }
+    20% { opacity: 0.95; }
+    100% { stroke-dashoffset: 0; opacity: 0.85; }
+  }
+  .ac-pulse {
+    stroke-dasharray: 8 8;
+    animation: acFlowOnce 4.6s ease-out 1 forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ac-pulse { animation: none !important; stroke-dashoffset: 0 !important; opacity: 0.85 !important; }
+  }
+</style>"""
+        )
+
+        # ---------------- Left Panel: Split-AC 4-Organ Loop ----------------
+        els.append(card(20, 64, 434, 404))
+        els.append(pill(32, 76, "① 分体式空调四大核心器官（以 R32 制冷剂实测工况为例）", fg=BLUE, bg=BLUE_SOFT, w=410, h=22, size=9.2))
+
+        # Indoor vs Wall vs Outdoor zones
+        els.append(card(32, 106, 184, 286, rx=8, fill="#f0f9ff", stroke="#bae6fd", sw=1.2))
+        els.append(txt(124, 124, "室内挂机（室温 27 °C）", 9.0, BLUE, "middle", weight="700"))
+
+        # Insulated brick wall
+        els.append(f'<rect x="222" y="106" width="18" height="286" rx="3" fill="#e2e8f0" stroke="{SLATE}" stroke-width="1.0"/>')
+        els.append(txt(231, 246, "墙", 8.2, MUTED, "middle", weight="700"))
+        els.append(txt(231, 260, "体", 8.2, MUTED, "middle", weight="700"))
+
+        els.append(card(246, 106, 196, 286, rx=8, fill="#fff7ed", stroke="#fed7aa", sw=1.2))
+        els.append(txt(344, 124, "室外主机（酷暑 38 °C）", 9.0, ORANGE, "middle", weight="700"))
+
+        # Loop pipes connecting the 4 organs clockwise:
+        # Left (Evap) -> Top (Compressor) -> Right (Condenser) -> Bottom (EEV) -> Left (Evap)
+        # Suction pipe: (116, 184) -> (116, 146) -> (264, 146)
+        els.append(_poly([(116, 184), (116, 146), (264, 146)], stroke="#0284c7", sw=4.5))
+        els.append(txt(126, 139, "10°C 低压气 (0.95 MPa)", 7.7, BLUE, "middle", weight="700"))
+        # Discharge + Condenser pipe: (416, 146) -> (426, 146) -> (426, 202)
+        els.append(_poly([(410, 146), (424, 146), (424, 202)], stroke=RED, sw=4.5))
+        # High-P liquid pipe: (344, 304) -> (344, 354) -> (298, 354)
+        els.append(_poly([(344, 304), (344, 354), (298, 354)], stroke=ORANGE, sw=4.2))
+        els.append(txt(388, 326, "45°C 过冷液", 7.8, ORANGE, "middle", weight="700"))
+        # Low-P 2-phase icy mist pipe: (174, 354) -> (116, 354) -> (116, 294)
+        els.append(_poly([(174, 354), (116, 354), (116, 294)], stroke=TEAL, sw=4.2))
+        els.append(txt(122, 372, "5°C 冰雾 (25%闪蒸气)", 7.7, TEAL, "middle", weight="700"))
+
+        # Animated overlay loop pulse (one-shot)
+        els.append(
+            f'<path class="ac-pulse" d="M 116,184 L 116,146 L 264,146 M 344,304 L 344,354 L 298,354 M 174,354 L 116,354 L 116,294" '
+            f'fill="none" stroke="#ffffff" stroke-width="2.0"/>'
+        )
+
+        # Organ 1: Compressor (Top-Right)
+        els.append(card(264, 128, 148, 56, rx=8, fill=RED_SOFT, stroke=RED, sw=1.6))
+        els.append(txt(338, 145, "① 压缩机（拧海绵）", 8.8, RED, "middle", weight="700"))
+        els.append(txt(338, 161, "升压至 3.14 MPa · 排气 82°C", 7.9, INK, "middle", weight="600"))
+        els.append(txt(338, 175, "冷凝沸点强行抬到 50 °C!", 7.8, RED, "middle", weight="700"))
+
+        # Organ 2: Outdoor Condenser (Mid-Right)
+        els.append(card(260, 200, 168, 104, rx=8, fill="#ffffff", stroke=ORANGE, sw=1.6))
+        els.append(txt(344, 218, "② 室外冷凝器（顺坡放热）", 8.7, ORANGE, "middle", weight="700"))
+        els.append(txt(344, 236, "管内 50 °C > 室外 38 °C", 8.2, INK, "middle", weight="700"))
+        els.append(txt(344, 253, "热量自发涌向室外热空气！", 8.0, BODY, "middle"))
+        els.append(txt(344, 270, f"气变液放热 q_H={q_h:.1f} kJ/kg", 7.9, ORANGE, "middle", weight="700", cls="mono"))
+        els.append(txt(344, 287, "轴流风扇吹出 ~45 °C 热风 →", 7.8, MUTED, "middle"))
+
+        # Organ 3: Electronic Expansion Valve (Bottom-Center)
+        els.append(card(174, 326, 124, 54, rx=8, fill=AMBER_SOFT, stroke=AMBER, sw=1.6))
+        els.append(txt(236, 344, "③ 电子膨胀阀/毛细管", 8.5, AMBER, "middle", weight="700"))
+        els.append(txt(236, 360, "窄缝泄压 3.14→0.95 MPa", 7.8, INK, "middle", weight="600"))
+        els.append(txt(236, 374, "沸点瞬间跌回 5.0 °C!", 7.8, TEAL, "middle", weight="700"))
+
+        # Organ 4: Indoor Evaporator (Mid-Left)
+        els.append(card(42, 184, 162, 110, rx=8, fill="#ffffff", stroke=BLUE, sw=1.6))
+        els.append(txt(123, 202, "④ 室内蒸发器（松海绵）", 8.7, BLUE, "middle", weight="700"))
+        els.append(txt(123, 220, "管内 5.0 °C < 室温 27 °C", 8.2, INK, "middle", weight="700"))
+        els.append(txt(123, 237, "屋里热量顺坡涌进冷铜管！", 8.0, BODY, "middle"))
+        els.append(txt(123, 254, f"液变气吸热 q_L={q_l:.1f} kJ/kg", 7.9, BLUE, "middle", weight="700", cls="mono"))
+        els.append(txt(123, 271, "贯流风扇吹出 ~13°C 凉风", 7.9, TEAL, "middle", weight="700"))
+        els.append(txt(123, 286, "+ 水汽遇冷结露顺水管排走", 7.7, MUTED, "middle"))
+
+        els.append(txt(34, 414, "• 一句话顿悟：热量从没“违背热力学第二定律自己爬坡”！空调是在室内把沸点降", 8.6, BODY))
+        els.append(txt(34, 432, "  到 5 °C 哄屋里热量下坡进管，再到室外把沸点抬到 50 °C 逼热量下坡排进酷暑！", 8.6, INK, weight="700"))
+        els.append(txt(34, 450, "  就像室内吸饱冷水的海绵，拿到室外用力一拧挤干，松手变冰再拿回屋里吸水。", 8.5, MUTED))
+
+        # ---------------- Right Panel: COP Energy Ledger vs Joule Heater ----------------
+        els.append(card(466, 64, 274, 404))
+        els.append(pill(478, 76, "② 1 度电凭什么搬 4 度热？违背守恒吗？", fg=GREEN, bg=GREEN_SOFT, w=250, h=22, size=9.1))
+
+        # Box A: Electric resistance heater
+        els.append(card(478, 108, 250, 96, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(490, 127, "普通电暖器（焦耳“造热工”）：", 8.9, INK, weight="700"))
+        els.append(f'<rect x="490" y="138" width="100" height="18" rx="4" fill="{RED}"/>')
+        els.append(txt(540, 151, "输入 1.0 度电", 8.0, "#ffffff", "middle", weight="700"))
+        els.append(txt(600, 151, "→", 9.5, SLATE, "middle", weight="700"))
+        els.append(f'<rect x="614" y="138" width="100" height="18" rx="4" fill="{ORANGE}"/>')
+        els.append(txt(664, 151, "最多 1.0 度热", 8.0, "#ffffff", "middle", weight="700"))
+        els.append(txt(490, 176, "电热丝把高品位电能 1:1 降级成热能，", 8.2, BODY))
+        els.append(txt(490, 192, "效率天花板永远被能量守恒锁死在 100%！", 8.2, MUTED))
+
+        # Box B: Heat Pump / AC Mover
+        els.append(card(478, 214, 250, 148, rx=8, fill=GREEN_SOFT, stroke=GREEN, sw=1.3))
+        els.append(txt(490, 234, "空调/热泵（相变“快递搬运工”）：", 8.9, GREEN, weight="700"))
+
+        # Stacked bar showing w + q_L = q_H
+        w_px = 44.0
+        ql_px = 186.0
+        els.append(f'<rect x="490" y="246" width="{w_px:.1f}" height="20" rx="3" fill="{RED}"/>')
+        els.append(txt(490 + w_px / 2, 260, "电功 1", 7.8, "#ffffff", "middle", weight="700"))
+        els.append(f'<rect x="{490 + w_px:.1f}" y="246" width="{ql_px:.1f}" height="20" rx="3" fill="{BLUE}"/>')
+        els.append(txt(490 + w_px + ql_px / 2, 260, "从空气白搬的热 ~4.2 份!", 8.0, "#ffffff", "middle", weight="700"))
+
+        els.append(f'<rect x="490" y="274" width="{w_px + ql_px:.1f}" height="18" rx="3" fill="{ORANGE}"/>')
+        els.append(txt(490 + (w_px + ql_px) / 2, 287, "室外冷凝总排热 = 5.2 份 (严丝合缝守恒!)", 7.9, "#ffffff", "middle", weight="700"))
+
+        els.append(txt(490, 311, f"• 实算每千克 R32：耗功 w = {w_c:.1f} kJ", 8.3, INK, weight="700", cls="mono"))
+        els.append(txt(490, 328, f"  室内吸热 {q_l:.1f} + 电功 {w_c:.1f} = 排热 {q_h:.1f}", 8.2, BODY, cls="mono"))
+        els.append(txt(490, 346, f"• 理论循环 COP = {cop_cycle:.2f}（扣风机损耗实测 ~3.8）", 8.3, GREEN, weight="700"))
+
+        # Box C: Carnot COP formula note
+        els.append(card(478, 372, 250, 82, rx=8, fill=BLUE_SOFT, stroke=BLUE, sw=1.1))
+        els.append(txt(490, 391, "卡诺定律揭示的省电铁律：", 8.8, BLUE, weight="700"))
+        els.append(txt(490, 409, "COP_max = T_C / (T_H − T_C)", 8.6, INK, weight="700", cls="mono"))
+        els.append(txt(490, 427, "室内外温差 (T_H − T_C) 越小，搬热坡度越缓：", 8.2, BODY))
+        els.append(txt(490, 443, "空调调高 1 °C，实测省电约 7%–10%！", 8.3, BLUE, weight="700"))
+
+        return figure(
+            482,
+            "分体式空调蒸汽压缩四步搬热循环与COP能量守恒账本图解",
+            "左图展示R32制冷剂在室内27°C与室外38°C之间的四步循环：压缩机升压至3.14MPa将冷凝点抬至50°C向室外顺坡排热292.2kJ/kg，经电子膨胀阀节流回0.95MPa闪蒸降至5°C在室内蒸发器吸热236.4kJ/kg；右图对比电暖器1:1焦耳上限与空调热泵耗功55.8kJ/kg搬运236.4kJ/kg热量的能量守恒账本及卡诺温差铁律。",
+            els,
+        )
+
+    def _build_r32_pressure_enthalpy_dome():
+        """SVG 2: Exact NIST R32 log10(P)-h saturation dome & 4-state cycle + superheat/subcooling physics."""
+        els = header(
+            "制冷工程师的“热力学藏宝图”：R32 压焓图（lg P–h）上的四步真实轨迹",
+            "按 NIST 实测物性绘制两相穹顶：看懂 25.2% 闪蒸自牺牲、5 °C 防液击过热与 5 °C 提效过冷",
+        )
+
+        # ---------------- Left Panel: Computed NIST R32 lg P - h Chart ----------------
+        els.append(card(20, 64, 430, 398))
+        els.append(pill(34, 78, "① R32 压焓图实算（NIST IIR 基准：0 °C 饱和液 h=200 kJ/kg）", fg=BLUE, bg=BLUE_SOFT, w=402, h=22, size=9.0))
+
+        px0, py0, pw, ph = 34.0, 110.0, 402.0, 266.0
+        els.append(card(px0, py0, pw, ph, rx=7, fill="#ffffff", stroke=BORDER))
+
+        ax_x0, ax_x1 = px0 + 48.0, px0 + pw - 14.0  # h: 135 .. 655 kJ/kg
+        ax_y0, ax_y1 = py0 + ph - 28.0, py0 + 18.0  # P: 0.25 .. 7.0 MPa (log10 scale)
+
+        log_p_min, log_p_max = math.log10(0.25), math.log10(7.0)
+
+        def _hx(h_val):
+            return ax_x0 + ((h_val - 135.0) / (655.0 - 135.0)) * (ax_x1 - ax_x0)
+
+        def _py(p_mpa):
+            return ax_y0 - ((math.log10(p_mpa) - log_p_min) / (log_p_max - log_p_min)) * (ax_y0 - ax_y1)
+
+        # Grid lines
+        for p_tk in (0.3, 0.5, 0.95, 2.0, 3.14, 5.79):
+            yy = _py(p_tk)
+            is_cycle_p = p_tk in (0.95, 3.14)
+            els.append(_line(ax_x0, yy, ax_x1, yy, stroke="#cbd5e1" if is_cycle_p else "#f1f5f9", sw=1.1 if is_cycle_p else 1.0, dash="3,3" if is_cycle_p else None))
+            els.append(txt(ax_x0 - 5, yy + 3, f"{p_tk:.2f}", 7.8, INK if is_cycle_p else MUTED, "end", weight="700" if is_cycle_p else "400", cls="mono"))
+
+        for h_tk in (200, 300, 400, 500, 600):
+            xx = _hx(h_tk)
+            els.append(_line(xx, ax_y0, xx, ax_y1, stroke="#f1f5f9", sw=1.0))
+            els.append(txt(xx, ax_y0 + 15, f"{h_tk}", 8.0, MUTED, "middle", cls="mono"))
+
+        els.append(_line(ax_x0, ax_y0, ax_x1, ax_y0, stroke=SLATE, sw=1.2))
+        els.append(_line(ax_x0, ax_y0, ax_x0, ax_y1, stroke=SLATE, sw=1.2))
+        els.append(txt(ax_x0 - 6, ax_y1 - 4, "MPa", 7.8, MUTED, "end", weight="600"))
+        els.append(txt((ax_x0 + ax_x1) / 2, ax_y0 + 26, "比焓 h (kJ/kg)", 8.1, MUTED, "middle", weight="600"))
+
+        # Build saturation dome polygon & curves
+        liq_pts = [(_hx(hl), _py(pm)) for _, pm, hl, _ in NIST_R32_SAT]
+        vap_pts = [(_hx(hv), _py(pm)) for _, pm, _, hv in reversed(NIST_R32_SAT)]
+        dome_pts = liq_pts + vap_pts
+        dome_str = " ".join(f"{x:.1f},{y:.1f}" for x, y in dome_pts)
+        els.append(f'<polygon points="{dome_str}" fill="#f8fafc" stroke="none"/>')
+        els.append(_poly(liq_pts, stroke=BLUE, sw=2.2))
+        els.append(_poly(vap_pts, stroke=PURPLE, sw=2.2))
+
+        # Critical point C
+        xc, yc = _hx(415.0), _py(5.785)
+        els.append(f'<circle cx="{xc:.1f}" cy="{yc:.1f}" r="3.6" fill="{INK}"/>')
+        els.append(txt(xc, yc - 7, "临界点 C (78.1°C, 5.79 MPa)", 7.7, INK, "middle", weight="700"))
+        els.append(txt(_hx(365), _py(0.50), "气液两相沸腾区", 8.2, MUTED, "middle", weight="600"))
+
+        # Exact 4-state cycle trapezoid: 4 -> 1 -> 2 -> 3 -> 4
+        p_low, p_high = 0.95145, 3.14120
+        pt4 = (_hx(286.31), _py(p_low))
+        pt1 = (_hx(522.70), _py(p_low))
+        pt2 = (_hx(578.50), _py(p_high))
+        pt3 = (_hx(286.31), _py(p_high))
+
+        # Highlight subcooling segment (297.49 -> 286.31) and superheat segment (516.11 -> 522.70)
+        els.append(_line(pt4[0], pt4[1], pt1[0], pt1[1], stroke=BLUE, sw=3.0))       # 4 -> 1 Evap
+        els.append(_line(pt1[0], pt1[1], pt2[0], pt2[1], stroke=RED, sw=3.0))        # 1 -> 2 Comp
+        els.append(_line(pt2[0], pt2[1], pt3[0], pt3[1], stroke=ORANGE, sw=3.0))     # 2 -> 3 Cond
+        els.append(_line(pt3[0], pt3[1], pt4[0], pt4[1], stroke=AMBER, sw=2.8, dash="5,3"))  # 3 -> 4 Throttle
+
+        for px_i, py_i, lbl_i, col_i, dx_i, dy_i, anc_i in [
+            (pt1[0], pt1[1], "1 (10°C过热气)", BLUE, 6, 13, "start"),
+            (pt2[0], pt2[1], "2 (82°C排气)", RED, 6, -6, "start"),
+            (pt3[0], pt3[1], "3 (45°C过冷液)", ORANGE, -6, -8, "end"),
+            (pt4[0], pt4[1], "4 (5°C, x=25.2%)", TEAL, 6, 13, "start"),
+        ]:
+            els.append(f'<circle cx="{px_i:.1f}" cy="{py_i:.1f}" r="4.2" fill="#ffffff" stroke="{col_i}" stroke-width="2.2"/>')
+            els.append(txt(px_i + dx_i, py_i + dy_i, lbl_i, 7.8, col_i, anc_i, weight="700"))
+
+        els.append(txt((pt4[0] + pt1[0]) / 2, pt4[1] - 7, "④→① 室内吸热 q_L = 236.4", 7.9, BLUE, "middle", weight="700"))
+        els.append(txt((pt3[0] + pt2[0]) / 2, pt3[1] + 14, "②→③ 室外放热 q_H = 292.2", 7.9, ORANGE, "middle", weight="700"))
+        els.append(txt((pt1[0] + pt2[0]) / 2 + 8, (pt1[1] + pt2[1]) / 2 + 4, "w=55.8", 7.8, RED, "start", weight="700", cls="mono"))
+
+        # Bottom summary inside left card
+        els.append(txt(36, 396, "• 横轴跨度就是能量大小：底边吸热段 (236.4) 足足是右侧压缩耗功水平跨度", 8.5, BODY))
+        els.append(txt(36, 414, "  (55.8) 的 4.24 倍！竖直虚线 ③→④ 比焓不变 (h3=h4=286.3)，绝热节流。", 8.5, INK, weight="700"))
+        els.append(txt(36, 432, "• 临界点红线：若室外暴晒令盘管超 78.1 °C，R32 无法液化，制冷立刻崩溃！", 8.4, RED, weight="600"))
+
+        # ---------------- Right Panel: Why Superheat & Subcooling + Flash Sacrifice ----------------
+        els.append(card(462, 64, 278, 398))
+        els.append(pill(476, 78, "② 三个藏在拐角里的生死工程细节", fg=TEAL, bg=TEAL_SOFT, w=250, h=22, size=9.1))
+
+        # Detail 1: 25.2% Flash Evaporation Sacrifice
+        els.append(card(476, 110, 250, 108, rx=8, fill=TEAL_SOFT, stroke=TEAL, sw=1.1))
+        els.append(txt(488, 129, "1. 节流“自牺牲”：45 °C 液体怎么秒变 5 °C？", 8.7, TEAL, weight="700"))
+        els.append(txt(488, 148, "跨过膨胀阀窄缝时压强暴跌，45 °C 高于新沸点", 8.3, BODY))
+        els.append(txt(488, 165, "5 °C：约 25.2% 液体当场闪蒸成气，强行从自", 8.3, INK, weight="700"))
+        els.append(txt(488, 182, "家兄弟身上抽走汽化潜热，把剩下 74.8% 液体", 8.3, BODY))
+        els.append(txt(488, 199, "瞬间冻成 5 °C 冰雾送进室内蒸发器！", 8.3, TEAL, weight="700"))
+
+        # Detail 2: 5 K Superheat against Liquid Slugging
+        els.append(card(476, 228, 250, 108, rx=8, fill=RED_SOFT, stroke=RED, sw=1.1))
+        els.append(txt(488, 247, "2. 吸气“5 °C 过热”：救压缩机一命的防液击线", 8.7, RED, weight="700"))
+        els.append(txt(488, 266, "5 °C 下液态 R32 密度 (1038 kg/m³) 是蒸气的", 8.3, BODY))
+        els.append(txt(488, 283, "40 倍且不可压缩！若没沸腾完的药水滴冲进每", 8.3, BODY))
+        els.append(txt(488, 300, "分钟几千转的气缸，就像铁锤砸水——瞬间打碎", 8.3, INK, weight="700"))
+        els.append(txt(488, 317, "阀片（液击）！故出口必多热 5 °C 确保纯气。", 8.3, RED, weight="700"))
+
+        # Detail 3: 5 K Subcooling
+        els.append(card(476, 346, 250, 102, rx=8, fill=ORANGE_SOFT, stroke=ORANGE, sw=1.1))
+        els.append(txt(488, 365, "3. 冷凝“5 °C 过冷”：白捡的制冷量增益", 8.7, ORANGE, weight="700"))
+        els.append(txt(488, 384, "液化完在 50 °C 不急着出管，再借迎面风多凉到", 8.3, BODY))
+        els.append(txt(488, 401, "45 °C（点 3 左移）：既防止阀前提前冒泡气堵，", 8.3, BODY))
+        els.append(txt(488, 418, "又把节流闪蒸损耗从 28.9% 压低到 25.2%，每千", 8.3, INK, weight="700"))
+        els.append(txt(488, 435, "克工质多腾出 11.2 kJ 净冷量！", 8.3, ORANGE, weight="700"))
+
+        return figure(
+            476,
+            "NIST实测R32制冷剂压焓图两相穹顶四步循环与过冷过热防液击机理图",
+            "左图基于NIST数据库精确绘制R32气液两相穹顶与临界点C(78.1°C, 5.79MPa)，标出1→2压缩耗功55.8kJ/kg、2→3冷凝放热292.2kJ/kg、3→4绝热节流至干度25.2%、4→1蒸发吸热236.4kJ/kg；右栏拆解25.2%液体闪蒸降温、吸气5°C过热防止不可压缩液体击碎压缩机阀片(液击)及冷凝5°C过冷提升冷量的工程原因。",
+            els,
+        )
+
+    def _build_four_way_valve_and_defrost():
+        """SVG 3: Pilot-operated 4-way reversing slide valve (Cooling vs Heating) + winter frosting/defrost & EVI."""
+        els = header(
+            "冬天制热根本不用压缩机倒转！——四通换向滑块阀与“外机停风冒白烟”化霜之谜",
+            "左上/右上：5 W 先导电磁阀借 2 MPa 压差平移 D 形滑块一键冷暖互换 · 下：结霜衰减、逆循环化霜与喷气增焓",
+        )
+
+        def _draw_valve_panel(x0, title_str, pill_fg, pill_bg, is_heating):
+            els.append(card(x0, 64, 354, 224))
+            els.append(pill(x0 + 14, 76, title_str, fg=pill_fg, bg=pill_bg, w=326, h=22, size=9.0))
+
+            cx = x0 + 177.0
+            # Compressor at top-center? No: put Compressor at top (`D` discharge down into valve top) and Suction (`S` center bottom back to compressor)
+            # Valve cylinder body: y=148..190, x=cx-92 .. cx+92
+            vx0, vy0, vw, vh = cx - 90.0, 148.0, 180.0, 42.0
+            els.append(f'<rect x="{vx0:.1f}" y="{vy0:.1f}" width="{vw:.1f}" height="{vh:.1f}" rx="18" fill="#fff1f2" stroke="{RED}" stroke-width="1.8"/>')
+
+            # Top port D (always hot 82C discharge from compressor)
+            els.append(card(cx - 52, 106, 104, 26, rx=6, fill=SLATE_SOFT, stroke=SLATE, sw=1.3))
+            els.append(txt(cx, 123, "压缩机（转向永不变!）", 7.9, INK, "middle", weight="700"))
+            els.append(_line(cx, 132, cx, 148, stroke=RED, sw=4.0))
+            els.append(txt(cx + 8, 143, "D 高压排气", 7.5, RED, "start", weight="700"))
+
+            # Bottom 3 ports: Left = E (Indoor coil), Center = S (Suction back to comp), Right = C (Outdoor coil)
+            px_e, px_s, px_c = cx - 50.0, cx, cx + 50.0
+            # D-shaped slider bridges (E & S) in Cooling [slider on left], or bridges (S & C) in Heating [slider on right]!
+            if not is_heating:
+                # Cooling: D -> C (Outdoor hot condenser); Slider bridges E (Indoor cold evap) -> S (Suction)
+                sx0 = px_e - 16.0
+                els.append(
+                    f'<path d="M {sx0:.1f},190 A 33,22 0 0 1 {px_s + 16:.1f},190 Z" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="2.2"/>'
+                )
+                # Port pipes
+                els.append(_line(px_e, 190, px_e, 214, stroke=BLUE, sw=3.8))
+                els.append(_line(px_s, 190, px_s, 214, stroke="#0284c7", sw=3.8))
+                els.append(_line(px_c, 190, px_c, 214, stroke=RED, sw=3.8))
+                # Coil cards
+                els.append(card(x0 + 16, 214, 112, 46, rx=6, fill=BLUE_SOFT, stroke=BLUE, sw=1.3))
+                els.append(txt(x0 + 72, 232, "室内机 = 蒸发器", 8.2, BLUE, "middle", weight="700"))
+                els.append(txt(x0 + 72, 249, "5 °C 吸热吹凉风", 7.9, INK, "middle", weight="600"))
+
+                els.append(card(x0 + 226, 214, 112, 46, rx=6, fill=ORANGE_SOFT, stroke=ORANGE, sw=1.3))
+                els.append(txt(x0 + 282, 232, "室外机 = 冷凝器", 8.2, ORANGE, "middle", weight="700"))
+                els.append(txt(x0 + 282, 249, "50 °C 向外排热风", 7.9, INK, "middle", weight="600"))
+
+                els.append(txt(cx, 229, "S 吸气口", 7.6, BLUE, "middle", weight="700"))
+                els.append(txt(cx, 243, "(回压缩机)", 7.3, MUTED, "middle"))
+                els.append(txt(cx, 276, "滑块居左：D→室外排热，室内冷气经滑块回 S", 8.1, INK, "middle", weight="700"))
+            else:
+                # Heating: Slider shifts right! D -> E (Indoor becomes 48C radiator!); Slider bridges C (Outdoor -5C evap) -> S
+                sx0 = px_s - 16.0
+                els.append(
+                    f'<path d="M {sx0:.1f},190 A 33,22 0 0 1 {px_c + 16:.1f},190 Z" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="2.2"/>'
+                )
+                els.append(_line(px_e, 190, px_e, 214, stroke=RED, sw=3.8))
+                els.append(_line(px_s, 190, px_s, 214, stroke="#0284c7", sw=3.8))
+                els.append(_line(px_c, 190, px_c, 214, stroke=TEAL, sw=3.8))
+
+                els.append(card(x0 + 16, 214, 112, 46, rx=6, fill=RED_SOFT, stroke=RED, sw=1.3))
+                els.append(txt(x0 + 72, 232, "室内机 = 冷凝器!", 8.2, RED, "middle", weight="700"))
+                els.append(txt(x0 + 72, 249, "48 °C 放热吹暖风", 7.9, INK, "middle", weight="600"))
+
+                els.append(card(x0 + 226, 214, 112, 46, rx=6, fill=TEAL_SOFT, stroke=TEAL, sw=1.3))
+                els.append(txt(x0 + 282, 232, "室外机 = 蒸发器!", 8.2, TEAL, "middle", weight="700"))
+                els.append(txt(x0 + 282, 249, "-5 °C 向寒冬抢热", 7.9, INK, "middle", weight="600"))
+
+                els.append(txt(cx, 229, "S 吸气口", 7.6, BLUE, "middle", weight="700"))
+                els.append(txt(cx, 243, "(回压缩机)", 7.3, MUTED, "middle"))
+                els.append(txt(cx, 276, "滑块右移：82°C 热气直奔室内，外机变冰窖吸寒风热！", 8.1, RED, weight="700", anchor="middle"))
+
+        _draw_valve_panel(20, "① 夏季制冷模式（先导线圈断电 · 滑块罩住左+中口）", BLUE, BLUE_SOFT, False)
+        _draw_valve_panel(386, "② 冬季热泵制热（先导线圈通电 · 借压差推滑块罩中+右口）", RED, RED_SOFT, True)
+
+        # ---------------- Bottom Panel: Frosting, Reverse-Cycle Defrost & EVI ----------------
+        els.append(card(20, 300, 720, 166))
+        els.append(pill(34, 312, "③ 冬季三大灵魂拷问：外机为什么结霜冒“白烟”？电辅热是什么？-25 °C 怎么救？", fg=TEAL, bg=TEAL_SOFT, w=692, h=22, size=9.1))
+
+        cols_winter = [
+            (
+                34,
+                "1. 湿冷结霜与“冒白烟”化霜",
+                "室外 0~5 °C 潮湿天，外机盘管 -6 °C 会",
+                "迅速结满冰霜（60 min 制热量暴跌 45%!",
+                "张龙等 2022）。此时四通阀临时切回制冷",
+                "5–8 分钟（内机停风），把热气打去外机融",
+                "冰——腾起的“白烟”是水汽雾，绝非着火！",
+                BLUE,
+                BLUE_SOFT,
+            ),
+            (
+                272,
+                "2. 遥控器“电辅热”该不该关？",
+                "热泵搬热 1 度电产 3~4 度热，唯独极寒天",
+                "外机吸不到足够热量时，内机风道里的",
+                "PTC 陶瓷电热丝（COP 仅 1.0!）才硬顶。",
+                "南方 5 °C 以上关掉“电辅热”纯靠热泵，",
+                "不仅出风不干燥，电费立省一半以上！",
+                ORANGE,
+                ORANGE_SOFT,
+            ),
+            (
+                510,
+                "3. 严寒黑科技：喷气增焓 (EVI)",
+                "东北 -25 °C 时蒸发压跌破 0.3 MPa，单",
+                "级压缩压比超 10 倍，吸气稀薄且排气过烫。",
+                "EVI 用闪蒸经济器抽一路中压气从气缸半",
+                "途“补气冷却”，把单次爬大坡拆成两级台",
+                "阶，-25 °C 制热能力直接提升 25%–35%！",
+                TEAL,
+                TEAL_SOFT,
+            ),
+        ]
+        for bx, bt, l1, l2, l3, l4, l5, bfg, bbg in cols_winter:
+            els.append(card(bx, 342, 216, 112, rx=7, fill=bbg, stroke=bfg, sw=1.1))
+            els.append(txt(bx + 10, 360, bt, 8.7, bfg, weight="700"))
+            els.append(txt(bx + 10, 377, l1, 8.0, BODY))
+            els.append(txt(bx + 10, 393, l2, 8.0, INK, weight="600"))
+            els.append(txt(bx + 10, 409, l3, 8.0, BODY))
+            els.append(txt(bx + 10, 425, l4, 8.0, BODY))
+            els.append(txt(bx + 10, 441, l5, 8.0, bfg, weight="700"))
+
+        return figure(
+            480,
+            "热泵空调四通换向阀冷暖切换水路与冬季结霜逆循环化霜及喷气增焓原理图",
+            "上半幅对比四通换向阀D形滑块在夏季制冷(高压D口通室外冷凝、室内冷气经滑块回S吸气口)与冬季制热(滑块右移令82°C高压气直通室内散热、室外变-5°C蒸发器吸寒风热量)的切换原理；下半幅解释0-5°C高湿结霜致制热跌45%后的逆循环化霜水雾、PTC电辅热高耗电本质与-25°C喷气增焓(EVI)中压补气增效机制。",
+            els,
+        )
+
+    def _build_inverter_and_dehumidification():
+        """SVG 4: Fixed-speed bang-bang vs Full-DC Inverter part-load COP + Carrier psychrometric sensible/latent split."""
+        els = header(
+            "定频 vs 变频到底差在哪？为什么“除湿模式”比制冷还冻人？",
+            "左：变频低频巡航靠“大马拉小车缩小换热温差”把 COP 推过 5.0 · 右：开利湿空气学——凝结 1 升水抽走 2450 kJ",
+        )
+
+        # ---------------- Left Panel: Fixed-speed Sawtooth vs DC Inverter ----------------
+        els.append(card(20, 64, 362, 398))
+        els.append(pill(34, 78, "① 定频“猛踩急刹” vs 全直流变频“低频贴线巡航”", fg=BLUE, bg=BLUE_SOFT, w=334, h=22, size=9.1))
+
+        px0, py0, pw, ph = 34.0, 110.0, 334.0, 168.0
+        els.append(card(px0, py0, pw, ph, rx=7, fill="#ffffff", stroke=BORDER))
+
+        ax_x0, ax_x1 = px0 + 40.0, px0 + pw - 14.0  # 0 .. 120 min
+        ax_y0, ax_y1 = py0 + ph - 24.0, py0 + 18.0  # 23.0 .. 29.8 C
+
+        def _ix(m_min):
+            return ax_x0 + (m_min / 120.0) * (ax_x1 - ax_x0)
+
+        def _iy(tc):
+            return ax_y0 - ((tc - 23.0) / 6.8) * (ax_y0 - ax_y1)
+
+        # Target 26.0 C line
+        els.append(_line(ax_x0, _iy(26.0), ax_x1, _iy(26.0), stroke=GREEN, sw=1.3, dash="4,3"))
+        els.append(txt(ax_x1 - 2, _iy(26.0) + 12, "设定 26.0°C", 7.7, GREEN, "end", weight="700"))
+
+        els.append(_line(ax_x0, ax_y0, ax_x1, ax_y0, stroke=SLATE, sw=1.2))
+        els.append(_line(ax_x0, ax_y0, ax_x0, ax_y1, stroke=SLATE, sw=1.2))
+        for t_tk in (24, 26, 28):
+            yy = _iy(t_tk)
+            els.append(_line(ax_x0 - 3, yy, ax_x0, yy, stroke=SLATE, sw=1.0))
+            els.append(txt(ax_x0 - 5, yy + 3, f"{t_tk}°C", 7.9, MUTED, "end", cls="mono"))
+        for m_tk in (0, 30, 60, 90, 120):
+            xx = _ix(m_tk)
+            els.append(_line(xx, ax_y0, xx, ax_y0 + 4, stroke=SLATE, sw=1.0))
+            els.append(txt(xx, ax_y0 + 15, f"{m_tk}m", 7.9, MUTED, "middle", cls="mono"))
+
+        # Fixed-speed sawtooth curve
+        fixed_pts = [
+            (_ix(0), _iy(29.2)),
+            (_ix(18), _iy(24.7)),
+            (_ix(38), _iy(27.5)),
+            (_ix(54), _iy(24.7)),
+            (_ix(74), _iy(27.5)),
+            (_ix(90), _iy(24.7)),
+            (_ix(110), _iy(27.5)),
+            (_ix(120), _iy(26.9)),
+        ]
+        els.append(_poly(fixed_pts, stroke=ORANGE, sw=2.0, dash="5,3"))
+
+        # Inverter smooth curve
+        inv_pts = []
+        for m_i in range(0, 121, 3):
+            tc_v = 26.0 + 3.2 * math.exp(-m_i / 11.0) + 0.12 * math.sin(m_i / 9.0) * (1.0 - math.exp(-m_i / 15.0))
+            inv_pts.append((_ix(m_i), _iy(tc_v)))
+        els.append(_poly(inv_pts, stroke=BLUE, sw=2.5))
+
+        els.append(txt(_ix(68), _iy(28.55), "定频：50Hz 满转/停机锯齿 (±1.5°C)", 7.9, ORANGE, "middle", weight="700"))
+        els.append(txt(_ix(62), _iy(23.55), "全直流变频：25Hz 贴线 (±0.3°C)", 7.9, BLUE, "middle", weight="700"))
+
+        els.append(card(34, 288, 334, 160, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(46, 307, "为什么变频“慢悠悠转”比定频省电 30%–45%？（ORNL 2018）", 8.8, INK, weight="700"))
+        els.append(txt(46, 326, "• 整流逆变链：220V 50Hz → PFC 直流母线 → SVPWM 逆变出", 8.3, BODY))
+        els.append(txt(46, 343, "  15–120 Hz 三相电，无级调节稀土永磁转子压缩机转速；", 8.3, BODY))
+        els.append(txt(46, 361, "• 热力学红利：室温达标降到 25 Hz 低流量时，两器巨大的铜铝", 8.3, BODY))
+        els.append(txt(46, 378, "  翅片面积严重富余 → 蒸发温度从 5°C 升至 11°C，冷凝从 50°C", 8.3, BLUE, weight="700"))
+        els.append(txt(46, 395, "  降至 40°C！压比大降令部分负荷 COP 飙破 5.0–6.0（APF 国标）！", 8.3, GREEN, weight="700"))
+        els.append(txt(46, 414, "• “一晚一度电”苛刻前提：夜间室外回落 <28°C、高保温小卧室、", 8.2, MUTED))
+        els.append(txt(46, 431, "  开 ECO 锁死 20Hz（约 130W × 8h）；若桑拿夜 34°C 绝无可能！", 8.2, RED, weight="600"))
+
+        # ---------------- Right Panel: Carrier Psychrometrics & Dry Mode ----------------
+        els.append(card(394, 64, 346, 398))
+        els.append(pill(408, 78, "② 开利 1902 发明真相：空调近四成电费花在“拧水”上！", fg=TEAL, bg=TEAL_SOFT, w=318, h=22, size=9.1))
+
+        els.append(card(408, 110, 318, 128, rx=8, fill=TEAL_SOFT, stroke=TEAL, sw=1.1))
+        els.append(txt(420, 129, "1902 布鲁克林彩印厂奇案（专利 US808897A）：", 8.8, TEAL, weight="700"))
+        els.append(txt(420, 148, "• 威利斯·开利造世界第一台现代空调，根本不是给人乘凉，而是", 8.3, BODY))
+        els.append(txt(420, 165, "  梅雨季纸张吸潮伸缩导致四色石印套印错位！", 8.3, INK, weight="700"))
+        els.append(txt(420, 183, "• 梅雨闷热天 (28 °C, 湿度 75%，露点 23.1 °C) 开空调：", 8.3, BODY))
+        # Sensible 60% vs Latent 40% horizontal bar
+        els.append(f'<rect x="420" y="194" width="174" height="18" rx="3" fill="{BLUE}"/>')
+        els.append(txt(507, 207, "60% 显热 (把干空气吹凉)", 7.9, "#ffffff", "middle", weight="700"))
+        els.append(f'<rect x="594" y="194" width="118" height="18" rx="3" fill="{TEAL}"/>')
+        els.append(txt(653, 207, "40% 潜热 (拧冷凝水!)", 7.9, "#ffffff", "middle", weight="700"))
+        els.append(txt(420, 228, "每在翅片上凝出 1 升滴水，空调就得默默多搬走 2,450 kJ 潜热！", 8.1, TEAL, weight="700"))
+
+        # Cooling vs Dry Mode comparison table/cards
+        els.append(card(408, 248, 318, 200, rx=8, fill="#ffffff", stroke=BORDER))
+        els.append(txt(420, 268, "为什么黄梅天开“独立除湿（水滴标）”反而冻得盖棉被？", 8.8, INK, weight="700"))
+
+        els.append(card(420, 280, 142, 108, rx=6, fill=BLUE_SOFT, stroke=BLUE, sw=1.1))
+        els.append(txt(491, 298, "制冷模式（雪花标）", 8.5, BLUE, "middle", weight="700"))
+        els.append(txt(491, 317, "• 内机风速：中/高风大循环", 8.0, BODY, "middle"))
+        els.append(txt(491, 334, "• 翅片温度：~7–10 °C", 8.0, INK, "middle", weight="600"))
+        els.append(txt(491, 351, "• 显热比 SHR ≈ 0.65–0.75", 8.0, BODY, "middle"))
+        els.append(txt(491, 369, "快速拉低全屋室温为主", 8.0, BLUE, "middle", weight="700"))
+
+        els.append(card(572, 280, 142, 108, rx=6, fill=PURPLE_SOFT, stroke=PURPLE, sw=1.1))
+        els.append(txt(643, 298, "除湿模式（水滴标）", 8.5, PURPLE, "middle", weight="700"))
+        els.append(txt(643, 317, "• 内机风速：锁死超微风!", 8.0, PURPLE, "middle", weight="700"))
+        els.append(txt(643, 334, "• 翅片温度：骤降至 ~3–5 °C", 8.0, INK, "middle", weight="700"))
+        els.append(txt(643, 351, "• 压缩机低频间歇抽湿", 8.0, BODY, "middle"))
+        els.append(txt(643, 369, "深跌破露点把水汽拧干!", 8.0, PURPLE, "middle", weight="700"))
+
+        els.append(txt(420, 407, "• 避坑指南：除湿模式靠超低风速把贴片空气冻到 4 °C 挤水，风口", 8.2, BODY))
+        els.append(txt(420, 424, "  吹出的是极冷细流；盛夏 35 °C 开除湿既慢又不省电，仅适合 24–", 8.2, BODY))
+        els.append(txt(420, 440, "  27 °C 梅雨闷湿天短开 1–2 小时！（高端机配双排再热除湿不降温）", 8.2, INK, weight="700"))
+
+        return figure(
+            476,
+            "定频锯齿与全直流变频低频高COP巡航对比及开利湿空气显热潜热除湿机理图",
+            "左图对比定频空调50Hz频繁启停造成的±1.5°C室温锯齿与全直流变频25Hz贴线±0.3°C巡航，解释低负荷时换热面积富余令蒸发升至11°C、冷凝降至40°C从而推高COP破5的物理机制；右图结合开利1902彩印厂控湿专利US808897A拆解60%显热与40%潜热(凝结1升水耗2450kJ)，对比雪花制冷与水滴超微风低温深除湿模式。",
+            els,
+        )
+
+    def _build_refrigerant_generations_and_a2l():
+        """SVG 5: 4 generations of refrigerants (ODP vs GWP, 1995 Nobel Cl chain) + R32 A2L & 15-min vacuum rule."""
+        els = header(
+            "四代“冷媒血液”百年大换血：从臭氧空洞诺奖警钟，到新空调上的“小火苗 A2L”警告标",
+            "左：CFC-12 → R22 → R410A → R32/R290 环保演进 · 右：为什么新装 R32 空调偷懒“不抽真空”会埋雷？",
+        )
+
+        # ---------------- Left Panel: 4 Generations ODP / GWP & Cl Radical Cycle ----------------
+        els.append(card(20, 64, 392, 398))
+        els.append(pill(34, 78, "① 制冷剂四代更替史：补完臭氧空洞，再砍温室效应", fg=BLUE, bg=BLUE_SOFT, w=364, h=22, size=9.1))
+
+        gens = [
+            ("第1代 CFC", "R12 氟利昂 (1930)", "ODP = 1.00 (穿臭氧!)", "GWP = 10,900", "蒙特利尔淘汰", RED, RED_SOFT, 1.00),
+            ("第2代 HCFC", "R22 老定频机", "ODP = 0.055", "GWP = 1,810", "加速淘汰中", ORANGE, ORANGE_SOFT, 0.34),
+            ("第3代 HFC", "R410A 混配氟", "ODP = 0 (零氯护臭氧)", "GWP = 2,088", "基加利削减", PURPLE, PURPLE_SOFT, 0.39),
+            ("第4代 主流", "R32 (CH₂F₂)", "ODP = 0 · 充注省 30%", "GWP = 675 (A2L)", "现行主力", BLUE, BLUE_SOFT, 0.16),
+            ("天然工质", "R290 丙烷 (C₃H₈)", "ODP = 0 · 纯碳氢", "GWP = 3 (A3易燃)", "严控充注量", GREEN, GREEN_SOFT, 0.03),
+        ]
+
+        for idx, (g_era, g_name, g_odp, g_gwp, g_stat, g_fg, g_bg, bar_frac) in enumerate(gens):
+            ry = 110 + idx * 45
+            els.append(card(34, ry, 364, 39, rx=6, fill=g_bg, stroke=g_fg, sw=1.1))
+            els.append(txt(42, ry + 16, g_era, 8.2, g_fg, weight="700"))
+            els.append(txt(42, ry + 31, g_name, 7.9, INK, weight="600"))
+            els.append(txt(144, ry + 16, g_odp, 8.0, INK if "1.0" not in g_odp else RED, weight="700" if "0 (" in g_odp or "1.0" in g_odp else "400"))
+            els.append(txt(144, ry + 31, g_gwp, 8.0, BODY, cls="mono"))
+            # Mini GWP bar
+            bx0 = 282.0
+            bw_max = 104.0
+            els.append(f'<rect x="{bx0:.1f}" y="{ry + 7:.1f}" width="{max(4.0, bw_max * bar_frac):.1f}" height="10" rx="3" fill="{g_fg}"/>')
+            els.append(txt(bx0, ry + 31, g_stat, 7.8, g_fg, weight="700"))
+
+        # Molina-Rowland 1974 / 1995 Nobel catalytic chain box
+        els.append(card(34, 340, 364, 108, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(46, 359, "1995 诺贝尔化学奖警钟（Molina & Rowland, Nature 1974）：", 8.6, INK, weight="700"))
+        els.append(txt(46, 378, "• R12 (CCl₂F₂) 在地面无毒不燃太稳定，飘上 25 km 平流层被紫外线", 8.2, BODY))
+        els.append(txt(46, 395, "  打断 C–Cl 键放出氯自由基：Cl· + O₃ → ClO· + O₂；ClO· + O → Cl· + O₂", 8.1, RED, weight="700", cls="mono"))
+        els.append(txt(46, 413, "• 氯原子全身而退循环作案，1 个氯原子可撕碎多达 10 万个臭氧分子！", 8.2, INK, weight="700"))
+        els.append(txt(46, 431, "• 2016《基加利修正案》再向强温室 HFC 亮剑：2047 年全球削减 80–85%！", 8.2, BLUE, weight="700"))
+
+        # ---------------- Right Panel: ASHRAE A2L Mild Flammability & 15-Min Vacuum Rule ----------------
+        els.append(card(424, 64, 316, 398))
+        els.append(pill(438, 78, "② 新空调外壳上的“小火苗 A2L”与抽真空铁律", fg=AMBER, bg=AMBER_SOFT, w=288, h=22, size=9.1))
+
+        els.append(card(438, 110, 288, 134, rx=8, fill=AMBER_SOFT, stroke=AMBER, sw=1.2))
+        # Little warning triangle icon
+        els.append(f'<polygon points="462,122 446,150 478,150" fill="#fef08a" stroke="{AMBER}" stroke-width="1.8"/>')
+        els.append(txt(462, 146, "A2L", 7.3, AMBER, "middle", weight="700"))
+        els.append(txt(488, 132, "为什么 R32 贴着小火苗，家里却很安全？", 8.7, AMBER, weight="700"))
+        els.append(txt(488, 149, "ASHRAE 分级：A = 低毒，2L = 极难燃/轻度可燃", 8.1, INK, weight="600"))
+        els.append(txt(450, 170, "• 燃烧下限极高（空气中体积浓度须达 14.4%–29% 才燃），", 8.2, BODY))
+        els.append(txt(450, 187, "  火焰传播速度 <10 cm/s；EPA 实验证实烟头、开关电火", 8.2, BODY))
+        els.append(txt(450, 204, "  花、电吹风均点不着（Kim 2021），正常家用极难达下限；", 8.2, GREEN, weight="700"))
+        els.append(txt(450, 222, "• 真正高危时刻，全出在违规安装与带气动火维修！", 8.2, RED, weight="700"))
+
+        els.append(card(438, 254, 288, 194, rx=8, fill=RED_SOFT, stroke=RED, sw=1.2))
+        els.append(txt(450, 274, "装机第一铁律：为什么必须用真空泵抽足 ≥15 分钟？", 8.7, RED, weight="700"))
+        els.append(txt(450, 294, "老式 R22 时代个别师傅偷懒用“排空法”（放一点氟吹走管内", 8.2, BODY))
+        els.append(txt(450, 311, "空气），在 R32 变频机上绝对禁止，否则连踩三颗雷：", 8.2, INK, weight="700"))
+        els.append(txt(450, 332, "① 安全雷：铜管残留空气(氧气)被吸入压缩机与 R32 高温高", 8.2, RED, weight="700"))
+        els.append(txt(450, 349, "   压混合，一旦拆修吸入大量空气极易引发压缩机燃爆！", 8.2, BODY))
+        els.append(txt(450, 369, "② 冰堵雷：空气里的水蒸气在 5 °C/0 °C 膨胀阀针孔结成冰粒", 8.2, INK, weight="600"))
+        els.append(txt(450, 386, "   堵死管路，空调一会儿凉一会儿不凉，排气超温耗电暴涨；", 8.2, BODY))
+        els.append(txt(450, 406, "③ 酸蚀雷：水分 + 高温酯类冷冻油 + 氟化物水解生成酸性物质，", 8.2, INK, weight="600"))
+        els.append(txt(450, 423, "   几年内啃穿电机绝缘漆包线！务必盯紧真空表保压 -0.1 MPa！", 8.2, RED, weight="700"))
+
+        return figure(
+            476,
+            "四代制冷剂臭氧与温室潜能演进史及R32轻度可燃A2L抽真空安全原理图",
+            "左栏对比CFC-12、HCFC-22、HFC-410A、HFC-32与天然丙烷R290的ODP和GWP指标，并列出1995年诺贝尔化学奖Molina-Rowland平流层氯自由基催化破坏10万个臭氧分子的链式反应与2016基加利修正案目标；右栏解析ASHRAE A2L轻度可燃分级(燃烧下限14.4%、火焰速度<10cm/s)及R32空调安装必须抽真空≥15分钟以杜绝混氧燃爆、膨胀阀冰堵和冷冻油水解酸蚀的三大物理化学原因。",
+            els,
+        )
+
+    @register(
+        "air-conditioner-principles",
+        "空调工作原理全图解：蒸汽压缩四步搬热循环与COP能量账本、NIST实测R32压焓图与过冷过热防液击、四通换向阀冷暖切换与结霜逆循环化霜及EVI、全直流变频低频高COP与开利湿空气显热潜热除湿、四代制冷剂演进与R32抽真空铁律",
+        "science_tech",
+    )
+    def build_air_conditioner_principles():
+        write_svg(SUBDIR, "vapor-compression-sponge-loop.svg", _build_vapor_compression_sponge_loop())
+        write_svg(SUBDIR, "r32-pressure-enthalpy-dome-cycle.svg", _build_r32_pressure_enthalpy_dome())
+        write_svg(SUBDIR, "four-way-reversing-valve-and-defrost.svg", _build_four_way_valve_and_defrost())
+        write_svg(SUBDIR, "inverter-eev-and-psychrometric-dehumidification.svg", _build_inverter_and_dehumidification())
+        write_svg(SUBDIR, "refrigerant-generations-ozone-and-a2l.svg", _build_refrigerant_generations_and_a2l())
+
+
+_register_air_conditioner_principles()
+
+
+# ---------------------------------------------------------------------------
+# Topic: Milk Powder & Infant Formula Manufacturing (milk-powder-manufacturing)
+# ---------------------------------------------------------------------------
+def _register_milk_powder_manufacturing():
+    import math
+    from .core import (
+        BLUE,
+        BLUE_SOFT,
+        BODY,
+        BORDER,
+        GREEN,
+        GREEN_SOFT,
+        HAIRLINE,
+        INK,
+        MUTED,
+        ORANGE,
+        ORANGE_SOFT,
+        PURPLE,
+        PURPLE_SOFT,
+        SLATE,
+        SLATE_SOFT,
+        card,
+        figure,
+        header,
+        pill,
+        register,
+        txt,
+        write_svg,
+    )
+
+    SUBDIR = "milk-powder-manufacturing"
+    RED = "#dc2626"
+    RED_SOFT = "#fef2f2"
+    AMBER = "#b45309"
+    AMBER_SOFT = "#fffbeb"
+    TEAL = "#0f766e"
+    TEAL_SOFT = "#f0fdfa"
+
+    def _line(x1, y1, x2, y2, stroke=HAIRLINE, sw=1.5, dash=None, opacity=None):
+        attrs = [
+            f'x1="{x1:.1f}"',
+            f'y1="{y1:.1f}"',
+            f'x2="{x2:.1f}"',
+            f'y2="{y2:.1f}"',
+            f'stroke="{stroke}"',
+            f'stroke-width="{sw}"',
+        ]
+        if dash:
+            attrs.append(f'stroke-dasharray="{dash}"')
+        if opacity is not None:
+            attrs.append(f'opacity="{opacity}"')
+        return f'<line {" ".join(attrs)}/>'
+
+    def _poly(pts, stroke, sw=2.0, fill="none", dash=None, opacity=None):
+        pstr = " ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
+        attrs = [
+            f'points="{pstr}"',
+            f'fill="{fill}"',
+            f'stroke="{stroke}"',
+            f'stroke-width="{sw}"',
+            'stroke-linecap="round"',
+            'stroke-linejoin="round"',
+        ]
+        if dash:
+            attrs.append(f'stroke-dasharray="{dash}"')
+        if opacity is not None:
+            attrs.append(f'opacity="{opacity}"')
+        return f'<polyline {" ".join(attrs)}/>'
+
+    def _build_mass_energy_pipeline():
+        """SVG 1: 7.76 kg raw milk -> 1.94 kg concentrate -> 1.00 kg powder mass & energy balance + Stokes homogenization."""
+        # Exact solids conservation & thermal energy math
+        solids_powder = 0.970  # kg dry solids in 1.00 kg whole milk powder (3.0% moisture)
+        x_raw = 0.125          # 12.5% total solids in raw whole milk (87.5% water)
+        x_conc = 0.500         # 50.0% total solids after multi-effect/MVR falling-film vacuum evaporation
+        m_raw = solids_powder / x_raw     # 7.76 kg raw milk
+        m_conc = solids_powder / x_conc   # 1.94 kg concentrated milk
+        m_pow = 1.000                     # 1.00 kg finished milk powder
+        w_tot = m_raw - m_pow             # 6.76 kg total water removed
+        w_evap = m_raw - m_conc           # 5.82 kg removed in vacuum evaporator
+        w_spray_bed = m_conc - m_pow      # 0.94 kg removed in spray tower + fluidized bed
+        frac_evap = w_evap / w_tot        # 0.86095 -> 86.1%
+        frac_spray = w_spray_bed / w_tot  # 0.13905 -> 13.9%
+
+        # Specific thermal energy (MVR/multi-effect vacuum evap ~320 kJ/kg H2O vs spray dryer ~3800 kJ/kg H2O)
+        e_direct_mj = (w_tot * 3800.0) / 1000.0
+        e_combo_mj = (w_evap * 320.0 + w_spray_bed * 3800.0) / 1000.0
+        save_frac = 1.0 - e_combo_mj / e_direct_mj
+
+        # Stokes creaming velocity ratio (4.0 um -> 0.40 um)
+        stokes_ratio = (4.0 / 0.40) ** 2
+
+        assert math.isclose(m_raw, 7.76, abs_tol=1e-6)
+        assert math.isclose(m_conc, 1.94, abs_tol=1e-6)
+        assert math.isclose(w_evap + w_spray_bed, w_tot, abs_tol=1e-6)
+        assert 0.86 < frac_evap < 0.865 and 0.78 < save_frac < 0.80
+        assert math.isclose(stokes_ratio, 100.0, abs_tol=1e-6)
+
+        els = header(
+            "近 8 斤鲜奶才能浓缩出 1 斤奶粉！——从真空降膜蒸发到喷雾成粉的质量与能耗总账",
+            "为什么绝不能把鲜奶直接喷进热风塔？负压低温蒸发先在 48–70 °C 抽走 86.1% 水分（附单次流向动画）",
+        )
+
+        els.append(
+            """<style>
+  @keyframes milkPipeOnce {
+    0% { stroke-dashoffset: 220; opacity: 0.35; }
+    25% { opacity: 0.95; }
+    100% { stroke-dashoffset: 0; opacity: 0.9; }
+  }
+  .milk-flow {
+    stroke-dasharray: 8 7;
+    animation: milkPipeOnce 4.2s ease-out 1 forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .milk-flow { animation: none !important; stroke-dashoffset: 0 !important; opacity: 0.9 !important; }
+  }
+</style>"""
+        )
+
+        # ---------------- Top Full-Width Pipeline Card ----------------
+        els.append(card(20, 64, 720, 224))
+        els.append(
+            pill(
+                34,
+                76,
+                "① 生产 1.00 kg 全脂乳粉（含 0.97 kg 干物质 + 0.03 kg 结合水）的工业五关接力",
+                fg=BLUE,
+                bg=BLUE_SOFT,
+                w=692,
+                h=22,
+                size=9.1,
+            )
+        )
+
+        # Animated horizontal flow spine behind the 5 stage cards
+        els.append(_line(95, 166, 665, 166, stroke="#bae6fd", sw=5.0))
+        els.append(
+            f'<line class="milk-flow" x1="95" y1="166" x2="665" y2="166" stroke="{BLUE}" stroke-width="2.6" stroke-linecap="round"/>'
+        )
+
+        stages = [
+            (34, 124, "1. 净乳与杀菌", "7.76 kg 生鲜乳", "87.5% 水 · 12.5% 干物质", "离心除杂 + 72–85°C 杀菌", SLATE, SLATE_SOFT),
+            (172, 126, "2. 双级高压均质", "7.76 kg 均质乳", "15–25 MPa 空化剪切", "脂肪球 4 μm → 0.4 μm", PURPLE, PURPLE_SOFT),
+            (312, 150, "3. 真空降膜蒸发", "剩 1.94 kg 浓奶", "负压 20 kPa · 48–70°C 沸腾", "抽走 5.82 kg 水 (86.1%!)", BLUE, BLUE_SOFT),
+            (476, 126, "4. 顺流喷雾干燥", "剩 1.06 kg 初粉", "195°C 热风 · 湿球 ~48°C", "瞬抽 0.88 kg 水 (<10 秒)", ORANGE, ORANGE_SOFT),
+            (616, 110, "5. 流化床速溶", "1.00 kg 成品粉", "再脱 0.06 kg 水 + 卵磷脂", "水分 3.0% · 充氮锁鲜", GREEN, GREEN_SOFT),
+        ]
+
+        for sx, sw_box, stitle, smass, sline1, sline2, sfg, sbg in stages:
+            els.append(card(sx, 110, sw_box, 112, rx=8, fill=sbg, stroke=sfg, sw=1.3))
+            cx = sx + sw_box / 2.0
+            els.append(txt(cx, 128, stitle, 8.4, sfg, "middle", weight="700"))
+            els.append(txt(cx, 148, smass, 9.0, INK, "middle", weight="700"))
+            els.append(_line(sx + 10, 157, sx + sw_box - 10, 157, stroke=sfg, sw=0.8, opacity=0.35))
+            els.append(txt(cx, 176, sline1, 7.6, BODY, "middle"))
+            els.append(txt(cx, 195, sline2, 7.6, sfg, "middle", weight="700"))
+
+        # Proportional 7.76 kg mass-partition bar at bottom of top card
+        bx0, by0, bw_tot, bh = 34.0, 236.0, 692.0, 22.0
+        w1 = bw_tot * (w_evap / m_raw)       # 75.0% of raw milk mass!
+        w2 = bw_tot * (w_spray_bed / m_raw)  # 12.1% of raw milk mass
+        w3 = bw_tot * (m_pow / m_raw)        # 12.9% of raw milk mass (1.00 kg powder)
+        els.append(f'<rect x="{bx0:.1f}" y="{by0:.1f}" width="{w1:.1f}" height="{bh:.1f}" rx="4" fill="{BLUE}"/>')
+        els.append(
+            txt(bx0 + w1 / 2.0, by0 + 15.0, "真空降膜蒸发脱去 5.82 kg 水（占总脱水 86.1%，占鲜奶重 75.0%）", 8.0, "#ffffff", "middle", weight="700")
+        )
+        els.append(f'<rect x="{bx0 + w1:.1f}" y="{by0:.1f}" width="{w2:.1f}" height="{bh:.1f}" fill="{ORANGE}"/>')
+        els.append(txt(bx0 + w1 + w2 / 2.0, by0 + 15.0, "喷雾脱 0.94kg", 7.4, "#ffffff", "middle", weight="700"))
+        els.append(f'<rect x="{bx0 + w1 + w2:.1f}" y="{by0:.1f}" width="{w3:.1f}" height="{bh:.1f}" rx="4" fill="{GREEN}"/>')
+        els.append(txt(bx0 + w1 + w2 + w3 / 2.0, by0 + 15.0, "1.00kg 奶粉", 7.6, "#ffffff", "middle", weight="700"))
+        els.append(
+            txt(380, 276, "质量守恒核算：7.76 kg × 12.5% 乳固体 = 1.94 kg × 50.0% 浓奶 = 1.00 kg × 97.0% 奶粉干物质 = 0.97 kg", 8.0, MUTED, "middle")
+        )
+
+        # ---------------- Bottom Left Card: Why Not Boil in a Pot or Direct Spray? ----------------
+        els.append(card(20, 300, 366, 168))
+        els.append(pill(34, 312, "② 为什么不能架锅熬干，也不能把鲜奶直接喷进塔？", fg=ORANGE, bg=ORANGE_SOFT, w=338, h=22, size=8.8))
+
+        els.append(txt(34, 350, "• 常压大锅 100 °C 久熬：乳清蛋白凝固结皮，乳糖与赖氨酸发生剧烈", 8.1, BODY))
+        els.append(txt(34, 367, "  美拉德褐变（变成焦黄奶皮子），必需氨基酸赖氨酸大量报废且冲不开！", 8.1, RED, weight="700"))
+        els.append(txt(34, 386, "• 真空降膜 + MVR 蒸汽再压缩：抽负压至 ~20 kPa 令牛奶在 48–70 °C", 8.1, BODY))
+        els.append(txt(34, 403, "  低温沸腾，脱 1 kg 水仅耗 ~320 kJ（喷雾热风需 ~3,800 kJ，贵 11 倍!）：", 8.1, INK, weight="700"))
+
+        # Energy comparison bars
+        els.append(txt(34, 425, "鲜奶直喷热风", 7.9, RED, weight="700"))
+        els.append(f'<rect x="108" y="414" width="188" height="13" rx="3" fill="{RED}"/>')
+        els.append(txt(302, 425, f"{e_direct_mj:.1f} MJ/kg粉", 7.8, RED, weight="700", cls="mono"))
+
+        w_combo_bar = 188.0 * (e_combo_mj / e_direct_mj)
+        els.append(txt(34, 446, "真空浓缩+喷雾", 7.9, GREEN, weight="700"))
+        els.append(f'<rect x="108" y="435" width="{w_combo_bar:.1f}" height="13" rx="3" fill="{GREEN}"/>')
+        els.append(txt(108 + w_combo_bar + 6, 446, f"{e_combo_mj:.2f} MJ/kg粉（省热 78.9% · 奶香不焦!）", 7.8, GREEN, weight="700"))
+
+        # ---------------- Bottom Right Card: Stokes Law Homogenization ----------------
+        els.append(card(398, 300, 342, 168))
+        els.append(pill(412, 312, "③ 15–25 MPa 高压均质：为什么奶粉冲开不飘黄油圈？", fg=PURPLE, bg=PURPLE_SOFT, w=314, h=22, size=8.8))
+
+        # Before vs After fat globule visual
+        els.append(card(412, 344, 148, 76, rx=6, fill=AMBER_SOFT, stroke=AMBER, sw=1.0))
+        els.append(txt(486, 360, "未均质生乳脂肪球", 8.1, AMBER, "middle", weight="700"))
+        els.append(f'<circle cx="452" cy="388" r="16" fill="#fde047" stroke="{AMBER}" stroke-width="1.4"/>')
+        els.append(txt(452, 391, "4 μm", 7.4, INK, "middle", weight="700"))
+        els.append(txt(514, 383, "浮速快易分层", 7.7, BODY, "middle"))
+        els.append(txt(514, 399, "喷干游离脂高", 7.7, RED, "middle", weight="700"))
+
+        els.append(card(574, 344, 152, 76, rx=6, fill=PURPLE_SOFT, stroke=PURPLE, sw=1.0))
+        els.append(txt(650, 360, "均质后微脂滴 (0.4 μm)", 8.1, PURPLE, "middle", weight="700"))
+        for dx, dy in [(-18, -6), (-6, -8), (6, -5), (-14, 6), (-2, 5), (10, 7)]:
+            els.append(f'<circle cx="{604 + dx}" cy="{388 + dy}" r="3.4" fill="#fde047" stroke="{PURPLE}" stroke-width="1.3"/>')
+        els.append(txt(676, 383, "酪蛋白重新包膜", 7.7, PURPLE, "middle", weight="700"))
+        els.append(txt(676, 399, "锁住油脂防哈喇", 7.7, GREEN, "middle", weight="700"))
+
+        els.append(txt(412, 438, "• 斯托克斯上浮定律 v = d²Δρg/(18μ)：粒径缩 10 倍，上浮慢 100 倍！", 8.0, INK, weight="700"))
+        els.append(txt(412, 455, "• 新生乳蛋白膜严实包裹油滴，把粉粒表面“游离脂肪”压到极低水平。", 8.0, BODY))
+
+        return figure(
+            482,
+            "鲜奶制取全脂乳粉五步工业产线质量守恒与真空降膜节能及高压均质原理图",
+            "上图展示7.76kg生鲜乳(12.5%干物质)经净乳巴氏杀菌、15–25MPa双级均质、20kPa负压48–70°C真空降膜蒸发(先脱除5.82kg即86.1%水分至1.94kg浓奶)、195°C顺流喷雾干燥及流化床速溶制得1.00kg奶粉(含0.97kg干物质)的质量守恒链路；左下对比鲜奶直喷(25.7MJ)与真空浓缩+喷雾(5.43MJ，省热78.9%)；右下用斯托克斯定律解释4μm→0.4μm均质令脂肪上浮减慢100倍及酪蛋白重包膜防氧化机制。",
+            els,
+        )
+
+    def _build_spray_tower_wet_bulb():
+        """SVG 2: 25 m co-current 3-stage spray-drying tower + computed wet-bulb temperature shield curve."""
+        # Atomization math: 1 L (1e-3 m^3) concentrate split into d = 80 um droplets
+        vol_m3 = 1.0e-3
+        d_m = 80.0e-6
+        n_drops = 6.0 * vol_m3 / (math.pi * (d_m ** 3))   # 3.728e9 droplets
+        area_m2 = 6.0 * vol_m3 / d_m                      # 75.0 m^2
+        assert 3.7e9 < n_drops < 3.8e9 and math.isclose(area_m2, 75.0, abs_tol=1e-6)
+
+        els = header(
+            "195 °C 滚烫热风当头吹下，奶滴凭什么只有 48 °C？——喷雾干燥塔与“湿球护盾”热力学",
+            "左：25 米顺流式三级喷雾干燥塔剖面 · 右：1 升浓奶裂变 37.3 亿微滴与绝热蒸发“湿球恒温平台”精确曲线",
+        )
+
+        # ---------------- Left Panel: 3-Stage Co-Current Spray Tower Cross-Section ----------------
+        els.append(card(20, 64, 332, 408))
+        els.append(pill(32, 76, "① 顺流式三级喷雾干燥塔（热风与奶雾同向下落）", fg=BLUE, bg=BLUE_SOFT, w=308, h=22, size=8.9))
+
+        # Hot air inlet duct at top
+        els.append(f'<rect x="74" y="108" width="140" height="20" rx="4" fill="{RED_SOFT}" stroke="{RED}" stroke-width="1.3"/>')
+        els.append(txt(144, 122, "洁净热风进塔 195 °C ↓", 8.0, RED, "middle", weight="700"))
+
+        # Main cylindrical + conical spray drying chamber (x=66..222, y=128..356)
+        els.append(
+            f'<path d="M 66,128 L 222,128 L 222,268 L 166,356 L 122,356 L 66,268 Z" '
+            f'fill="#f8fafc" stroke="{SLATE}" stroke-width="1.8"/>'
+        )
+
+        # Rotary atomizer / high-pressure nozzle at top center (144, 140)
+        els.append(f'<rect x="130" y="128" width="28" height="16" rx="3" fill="{BLUE}" stroke="{INK}" stroke-width="1.0"/>')
+        els.append(txt(144, 139, "雾化器", 7.0, "#ffffff", "middle", weight="700"))
+
+        # Spray mist cone + downward co-current droplets
+        els.append('<polygon points="144,144 82,226 206,226" fill="#dbeafe" opacity="0.55"/>')
+        for mx, my, mr, mcol in [
+            (144, 158, 2.8, BLUE), (126, 170, 2.6, BLUE), (162, 170, 2.6, BLUE),
+            (96, 224, 2.4, TEAL), (128, 226, 2.4, TEAL), (160, 226, 2.4, TEAL), (192, 224, 2.4, TEAL),
+            (108, 248, 2.3, ORANGE), (144, 250, 2.3, ORANGE), (180, 248, 2.3, ORANGE),
+            (126, 288, 2.5, AMBER), (144, 294, 2.5, AMBER), (162, 288, 2.5, AMBER),
+        ]:
+            els.append(f'<circle cx="{mx}" cy="{my}" r="{mr}" fill="{mcol}"/>')
+
+        # Zone labels inside tower (placed in clean open bands between droplet rows)
+        els.append(txt(144, 188, "第1级：雾化恒速蒸发区", 8.0, BLUE, "middle", weight="700", halo=True))
+        els.append(txt(144, 206, "奶滴锁在湿球 ~48 °C!", 7.8, TEAL, "middle", weight="700", halo=True))
+        els.append(txt(144, 270, "热风已降温至 ~85 °C", 7.8, ORANGE, "middle", weight="700", halo=True))
+
+        # Stage 2: Integrated static fluidized bed at cone bottom (y=334..358)
+        els.append(f'<rect x="112" y="334" width="64" height="24" rx="4" fill="{ORANGE_SOFT}" stroke="{ORANGE}" stroke-width="1.3"/>')
+        els.append(txt(144, 349, "第2级内流化床", 7.3, ORANGE, "middle", weight="700"))
+
+        # Cyclone separator on right of tower (x=256..320) + fines return loop to atomizer!
+        els.append(_poly([(200, 304), (236, 304), (236, 206), (256, 206)], stroke=SLATE, sw=2.4))
+        els.append(
+            f'<path d="M 256,194 L 320,194 L 320,242 L 296,294 L 280,294 L 256,242 Z" '
+            f'fill="{PURPLE_SOFT}" stroke="{PURPLE}" stroke-width="1.4"/>'
+        )
+        els.append(txt(288, 214, "旋风分离器", 7.8, PURPLE, "middle", weight="700"))
+        els.append(txt(288, 230, "排风 ~80°C", 7.3, BODY, "middle"))
+        els.append(txt(288, 246, "捕集微细粉", 7.3, PURPLE, "middle", weight="700"))
+        # Fines return pipe back up to top atomizer zone (`细粉回喷造粒`)
+        els.append(_poly([(288, 294), (288, 314), (336, 314), (336, 140), (160, 140)], stroke=PURPLE, sw=1.6, dash="4 3"))
+        els.append(txt(284, 156, "细粉回喷造粒", 7.5, PURPLE, "middle", weight="700", halo=True))
+
+        # Stage 3: External vibrating fluidized bed at bottom (x=54..336, y=374..416)
+        els.append(_line(144, 358, 144, 374, stroke=ORANGE, sw=3.0))
+        els.append(card(48, 374, 288, 42, rx=7, fill=GREEN_SOFT, stroke=GREEN, sw=1.4))
+        els.append(txt(192, 391, "第3级：外置振动流化床（55 °C 温和补干 → 28 °C 冷风定型）", 7.9, GREEN, "middle", weight="700"))
+        els.append(txt(192, 408, "喷涂微量卵磷脂 · 筛出覆盆子状速溶颗粒（水分 2.5%–3.2%）", 7.5, INK, "middle"))
+
+        els.append(txt(32, 438, "• 雾化双雄：离心转盘 (14,000–25,000 rpm) 或高压喷嘴 (15–20 MPa)", 7.9, BODY))
+        els.append(txt(32, 455, "• 塔内停留仅数秒至二十余秒，杜绝局部长时间受热焦化 (PMC12670600)", 7.9, INK, weight="700"))
+
+        # ---------------- Right Panel: Computed Temperature Curves & 3.7 Billion Droplet Math ----------------
+        els.append(card(364, 64, 376, 408))
+        els.append(pill(376, 76, "② “湿球护盾”精确曲线：为什么热风与奶滴必须顺流？", fg=TEAL, bg=TEAL_SOFT, w=352, h=22, size=8.9))
+
+        # Coordinate transform: t in [0, 12] s -> x in [414, 718]; T in [20, 210] C -> y in [312, 114]
+        px0, px1 = 414.0, 718.0
+        py0, py1 = 312.0, 114.0
+
+        def map_pt(t_s, temp_c):
+            x = px0 + (t_s / 12.0) * (px1 - px0)
+            y = py0 - ((temp_c - 20.0) / 190.0) * (py0 - py1)
+            return (x, y)
+
+        # Shaded constant-rate evaporation shield band (t = 0.4 .. 4.4 s)
+        sx_a, _ = map_pt(0.4, 48.0)
+        sx_b, _ = map_pt(4.4, 48.0)
+        els.append(f'<rect x="{sx_a:.1f}" y="{py1:.1f}" width="{sx_b - sx_a:.1f}" height="{py0 - py1:.1f}" fill="{TEAL_SOFT}" opacity="0.85"/>')
+
+        # Axes & horizontal gridlines
+        for t_grid in [40, 80, 120, 160, 200]:
+            _, gy = map_pt(0, t_grid)
+            els.append(_line(px0, gy, px1, gy, stroke=BORDER, sw=0.9))
+            els.append(txt(px0 - 6, gy + 3, f"{t_grid}°", 7.5, MUTED, "end", cls="mono"))
+        for s_grid in [0, 2, 4, 6, 8, 10, 12]:
+            gx, _ = map_pt(s_grid, 20)
+            els.append(txt(gx, py0 + 14, f"{s_grid}s", 7.5, MUTED, "middle", cls="mono"))
+        els.append(_line(px0, py1, px0, py0, stroke=SLATE, sw=1.3))
+        els.append(_line(px0, py0, px1, py0, stroke=SLATE, sw=1.3))
+        els.append(txt((px0 + px1) / 2.0, py0 + 28, "顺流塔内干燥时间 t（秒）→ 进流化床冷却", 7.8, MUTED, "middle"))
+
+        # Whey protein severe thermal denaturation threshold line (~74 °C)
+        _, y_denat = map_pt(0, 74.0)
+        els.append(_line(px0, y_denat, px1, y_denat, stroke=RED, sw=1.2, dash="5 4"))
+        els.append(txt(px0 + 8, y_denat - 6, "乳清蛋白剧烈热变性线 (~74 °C)", 7.5, RED, "start", weight="700", halo=True))
+
+        # Computed Air & Droplet curves
+        air_pts = []
+        drop_pts = []
+        max_drop_t = 0.0
+        for i in range(61):
+            ts = 12.0 * i / 60.0
+            t_air = 78.0 + 117.0 * math.exp(-ts / 2.25)
+            if ts <= 0.45:
+                t_drop = 45.0 + (48.2 - 45.0) * (ts / 0.45)
+            elif ts <= 4.4:
+                t_drop = 48.2 + 1.8 * ((ts - 0.45) / 3.95)
+            elif ts <= 8.8:
+                u = (ts - 4.4) / 4.4
+                t_drop = 50.0 + 18.0 * (1.0 - math.exp(-2.4 * u)) / (1.0 - math.exp(-2.4))
+            else:
+                u = (ts - 8.8) / 3.2
+                t_drop = 68.0 - 36.0 * u
+            max_drop_t = max(max_drop_t, t_drop)
+            air_pts.append(map_pt(ts, t_air))
+            drop_pts.append(map_pt(ts, t_drop))
+
+        assert max_drop_t < 74.0
+
+        els.append(_poly(air_pts, stroke=ORANGE, sw=2.6))
+        els.append(_poly(drop_pts, stroke=TEAL, sw=3.0))
+
+        # Direct curve labels placed in clean open zones away from curves
+        ax_lbl, ay_lbl = map_pt(2.0, 174.0)
+        els.append(txt(ax_lbl, ay_lbl, "热风温度 T_air (195°C → 80°C)", 8.0, ORANGE, "start", weight="700", halo=True))
+
+        dx_wb, dy_wb = map_pt(2.4, 49.0)
+        els.append(f'<circle cx="{dx_wb:.1f}" cy="{dy_wb:.1f}" r="3.6" fill="{TEAL}"/>')
+        els.append(txt(dx_wb + 6, dy_wb + 17, "湿球恒温平台 ~48–50 °C", 7.8, TEAL, "middle", weight="700", halo=True))
+
+        dx_pk, dy_pk = map_pt(8.6, 68.0)
+        els.append(f'<circle cx="{dx_pk:.1f}" cy="{dy_pk:.1f}" r="3.4" fill="{BLUE}"/>')
+        els.append(txt(dx_pk - 8, dy_pk + 18, "成壳最高仅 ~68 °C", 7.6, BLUE, "end", weight="700", halo=True))
+
+        # Bottom summary box on right panel
+        els.append(card(376, 350, 352, 110, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(388, 369, "为什么“195 °C 吹不熟蛋白质”？两大物理外挂：", 8.5, INK, weight="700"))
+        els.append(txt(388, 388, "1. 面积暴涨 1500 倍：1 升浓奶裂变成 37.3 亿颗 80 μm 微滴，蒸发", 8.0, BODY))
+        els.append(txt(388, 405, "   总表面积瞬间摊开成 75 m²（约一片羽毛球场!），水分夺路狂奔；", 8.0, TEAL, weight="700"))
+        els.append(txt(388, 424, "2. 顺流匹配护盾：每克水蒸发带走 2,388 J 潜热，把湿奶滴死死钉在", 8.0, BODY))
+        els.append(txt(388, 441, "   48 °C；等奶粒变干没汗了，周围热风也早被吸凉到了 80 °C！", 8.0, INK, weight="700"))
+
+        return figure(
+            486,
+            "顺流式三级喷雾干燥塔剖面与奶滴48度湿球护盾温度轨迹图",
+            "左图展示洁净195°C热风与雾化浓奶同向下落的顺流三级喷雾干燥塔、旋风分离器细粉回喷附聚及外置流化床冷却结构；右图精确绘制热风(195°C降至80°C)与奶滴(恒速蒸发期钉在48–50°C湿球平台、降速成壳期最高仅68°C、始终低于74°C乳清蛋白剧烈变性红线)的温度曲线，并算清1升浓奶雾化为37.3亿颗80μm微滴铺开75m²表面积的传质几何账。",
+            els,
+        )
+
+    def _build_agglomeration_and_lecithin():
+        """SVG 3: Fish-eye lumping of fine powder vs fluidized-bed raspberry agglomeration & soy lecithin bridge."""
+        els = header(
+            "为什么刚喷干的原粉倒进温水必结“鱼眼疙瘩”？——流化床覆盆子造粒与卵磷脂速溶术",
+            "左：<40 μm 微细原粉毛细孔锁死结块 · 中：流化床三步架桥造粒 (PMC9647178) · 右：大豆卵磷脂“两亲船桨”破油膜",
+        )
+
+        # ---------------- Panel 1: Fine Raw Powder -> Fish-Eye Lump ----------------
+        els.append(card(20, 64, 228, 396))
+        els.append(pill(32, 76, "① 未造粒原粉 (<40 μm)：鱼眼结块", fg=RED, bg=RED_SOFT, w=204, h=22, size=8.7))
+
+        # Water cup + floating lump cross-section
+        els.append('<rect x="40" y="168" width="188" height="106" rx="6" fill="#e0f2fe" stroke="#38bdf8" stroke-width="1.2"/>')
+        els.append(_line(40, 168, 228, 168, stroke=BLUE, sw=2.2))
+        els.append(txt(206, 264, "温水", 7.8, BLUE, "middle", weight="700"))
+
+        # Gelatinous outer skin wrapping dry fine core ("fish-eye")
+        els.append(f'<ellipse cx="134" cy="172" rx="64" ry="34" fill="#fde68a" stroke="{RED}" stroke-width="3.2"/>')
+        els.append(f'<ellipse cx="134" cy="170" rx="52" ry="24" fill="#fffbeb" stroke="{AMBER}" stroke-width="1.2" stroke-dasharray="3 2"/>')
+        for fx in range(96, 176, 14):
+            els.append(f'<circle cx="{fx}" cy="178" r="3.0" fill="#f59e0b"/>')
+        els.append(txt(134, 164, "内部干粉 + 死气泡", 7.7, INK, "middle", weight="700", halo=True))
+        els.append(txt(134, 224, "外层遇水瞬变黏稠乳糖蛋白胶壳!", 7.7, RED, "middle", weight="700"))
+        els.append(txt(134, 241, "堵死微缝 (3–5 μm)，水再也进不去", 7.5, BODY, "middle"))
+
+        els.append(card(32, 286, 204, 160, rx=7, fill=RED_SOFT, stroke=RED, sw=1.0))
+        els.append(txt(42, 306, "微细原粉的三大物理痛点：", 8.3, RED, weight="700"))
+        els.append(txt(42, 326, "• 粒径太细 (<40 μm)：颗粒间范德华力", 7.9, BODY))
+        els.append(txt(42, 343, "  远大于重力，像面粉一样发黏不流动；", 7.9, BODY))
+        els.append(txt(42, 362, "• 孔隙极窄：最外圈一沾水立刻溶胀成", 7.9, BODY))
+        els.append(txt(42, 379, "  高黏度胶膜，把干粉芯死死焊在里面；", 7.9, INK, weight="700"))
+        els.append(txt(42, 398, "• 润湿下沉时间 >120 秒（甚至浮在水面", 7.9, RED, weight="700"))
+        els.append(txt(42, 415, "  拿勺子按扁，咬开还是干粉疙瘩!）", 7.9, BODY))
+        els.append(txt(42, 434, "• 堆密度偏高：0.52–0.62 g/cm³", 7.8, MUTED, cls="mono"))
+
+        # ---------------- Panel 2: Fluidized-Bed Raspberry Agglomeration ----------------
+        els.append(card(260, 64, 248, 396))
+        els.append(pill(272, 76, "② 流化床附聚：搭出“覆盆子葡萄串”", fg=GREEN, bg=GREEN_SOFT, w=224, h=22, size=8.7))
+
+        # 3-step mini badges at top
+        els.append(card(272, 108, 68, 38, rx=5, fill=BLUE_SOFT, stroke=BLUE, sw=1.0))
+        els.append(txt(306, 123, "1. 蒸汽微润", 7.6, BLUE, "middle", weight="700"))
+        els.append(txt(306, 138, "玻璃态微黏", 7.1, BODY, "middle"))
+
+        els.append(card(350, 108, 68, 38, rx=5, fill=ORANGE_SOFT, stroke=ORANGE, sw=1.0))
+        els.append(txt(384, 123, "2. 碰撞搭桥", 7.6, ORANGE, "middle", weight="700"))
+        els.append(txt(384, 138, "黏成葡萄串", 7.1, BODY, "middle"))
+
+        els.append(card(428, 108, 68, 38, rx=5, fill=GREEN_SOFT, stroke=GREEN, sw=1.0))
+        els.append(txt(462, 123, "3. 55°C 固桥", 7.6, GREEN, "middle", weight="700"))
+        els.append(txt(462, 138, "锁死大孔道", 7.1, BODY, "middle"))
+
+        # Raspberry porous cluster drawing + water wicking arrows
+        els.append('<rect x="276" y="168" width="216" height="106" rx="6" fill="#e0f2fe" stroke="#38bdf8" stroke-width="1.2"/>')
+        els.append(_line(276, 168, 492, 168, stroke=BLUE, sw=2.2))
+
+        cluster_nodes = [
+            (356, 186, 12), (384, 182, 13), (412, 188, 12),
+            (350, 212, 13), (382, 210, 11), (414, 214, 13),
+            (368, 234, 12), (398, 236, 12),
+        ]
+        bridges = [(0, 1), (1, 2), (0, 3), (1, 4), (2, 5), (3, 6), (4, 6), (4, 7), (5, 7)]
+        for i_a, i_b in bridges:
+            xa, ya, _ = cluster_nodes[i_a]
+            xb, yb, _ = cluster_nodes[i_b]
+            els.append(_line(xa, ya, xb, yb, stroke=AMBER, sw=5.0))
+        for nx, ny, nr in cluster_nodes:
+            els.append(f'<circle cx="{nx}" cy="{ny}" r="{nr}" fill="#fef3c7" stroke="{AMBER}" stroke-width="1.6"/>')
+
+        # Capillary water-wicking blue arrows rushing INTO the open pores
+        els.append(f'<line x1="312" y1="202" x2="338" y2="202" stroke="{BLUE}" stroke-width="2.0" marker-end="url(#arr-blue)"/>')
+        els.append(f'<line x1="456" y1="204" x2="430" y2="204" stroke="{BLUE}" stroke-width="2.0" marker-end="url(#arr-blue)"/>')
+        els.append(txt(384, 265, "30–60 μm 贯通毛细孔道：水秒吸进芯 → 自动崩解!", 7.5, GREEN, "middle", weight="700", halo=True))
+
+        els.append(card(272, 286, 224, 160, rx=7, fill=GREEN_SOFT, stroke=GREEN, sw=1.0))
+        els.append(txt(282, 306, "附聚造粒实测跃迁 (Seo 2022, PMC9647178)：", 8.1, GREEN, weight="700"))
+        els.append(txt(282, 326, "• 团簇粒径放大至 150–250 μm（肉眼看", 7.9, BODY))
+        els.append(txt(282, 343, "  像细沙而非面粉，流动性 Carr 指数 <15）；", 7.9, BODY))
+        els.append(txt(282, 362, "• Washburn 毛细渗透 L² ∝ r_pore·cosθ·t：", 7.9, INK, weight="700"))
+        els.append(txt(282, 379, "  孔径拓宽 10 倍，水抢在结胶前灌满内腔，", 7.9, BODY))
+        els.append(txt(282, 396, "  液桥一溶整串颗粒像覆盆子一样散开；", 7.9, BODY))
+        els.append(txt(282, 415, "• 下沉润湿时间：<15 秒（提升近 10 倍!）", 8.0, GREEN, weight="700"))
+        els.append(txt(282, 434, "• 蓬松堆密度：0.38–0.45 g/cm³（所以罐大!）", 7.8, INK, weight="600"))
+
+        # ---------------- Panel 3: Soy Lecithin Amphiphilic Bridge ----------------
+        els.append(card(520, 64, 220, 396))
+        els.append(pill(532, 76, "③ 全脂粉外挂：0.3% 大豆卵磷脂", fg=PURPLE, bg=PURPLE_SOFT, w=196, h=22, size=8.7))
+
+        # Top sub-card: Without lecithin (hydrophobic fat repels water)
+        els.append(card(532, 108, 196, 78, rx=6, fill=AMBER_SOFT, stroke=AMBER, sw=1.0))
+        els.append(txt(630, 125, "未喷卵磷脂的全脂粉表面", 8.0, AMBER, "middle", weight="700"))
+        els.append(txt(630, 145, "接触角 θ > 95°：冷温水被弹开!", 7.6, RED, "middle", weight="700"))
+        els.append(f'<rect x="546" y="156" width="168" height="20" rx="4" fill="#fde047" stroke="{AMBER}" stroke-width="1.0"/>')
+        els.append(txt(630, 170, "颗粒表面微薄疏水乳脂膜", 7.4, INK, "middle", weight="700"))
+
+        # Middle sub-card: With lecithin amphiphilic monolayer
+        els.append(card(532, 196, 196, 114, rx=6, fill=PURPLE_SOFT, stroke=PURPLE, sw=1.1))
+        els.append(txt(630, 214, "流化床微喷 0.2%–0.5% 大豆卵磷脂", 7.9, PURPLE, "middle", weight="700"))
+        els.append(txt(630, 234, "亲水头朝外抓水 · 疏水双尾扎进油!", 7.6, BLUE, "middle", weight="700"))
+        els.append(f'<rect x="546" y="278" width="168" height="20" rx="4" fill="#fde047" stroke="{AMBER}" stroke-width="1.0"/>')
+        els.append(txt(630, 292, "全脂粉颗粒乳脂表层", 7.4, INK, "middle", weight="700"))
+        for lx in range(560, 708, 20):
+            els.append(_line(lx - 2.5, 256, lx - 3.5, 278, stroke=AMBER, sw=1.6))
+            els.append(_line(lx + 2.5, 256, lx + 3.5, 278, stroke=AMBER, sw=1.6))
+            els.append(f'<circle cx="{lx}" cy="252" r="5.0" fill="{PURPLE}" stroke="#ffffff" stroke-width="1.0"/>')
+
+        # Bottom note box
+        els.append(card(532, 320, 196, 126, rx=7, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(542, 340, "配料表里的“磷脂”不是科技狠活：", 8.0, INK, weight="700"))
+        els.append(txt(542, 359, "• 脱脂奶粉几乎没油，单靠流化床造粒", 7.8, BODY))
+        els.append(txt(542, 376, "  就能冷水速溶；", 7.8, BODY))
+        els.append(txt(542, 395, "• 全脂奶粉含 ~26%–28% 乳脂，必须借", 7.8, BODY))
+        els.append(txt(542, 412, "  天然大豆/向日葵磷脂把接触角压到", 7.8, INK, weight="700"))
+        els.append(txt(542, 429, "  θ < 40°，冷水一冲才瞬间化开！", 7.8, GREEN, weight="700"))
+
+        return figure(
+            474,
+            "奶粉鱼眼结块成因与流化床覆盆子附聚造粒及大豆卵磷脂两亲速溶原理图",
+            "左栏剖析<40μm微细喷雾原粉遇水外层瞬变黏稠乳糖蛋白胶壳、锁死干粉芯(>120秒不沉)的物理原因；中栏展示流化床蒸汽微润、碰撞搭桥与55°C固桥三步造出150–250μm多孔覆盆子颗粒，借30–60μm毛细孔道令润湿缩短至<15秒；右栏解析全脂奶粉喷涂0.2%–0.5%大豆卵磷脂两亲分子桥将疏水油膜接触角从>95°降至<40°实现冷温水速溶的机制。",
+            els,
+        )
+
+    def _build_humanization_architecture():
+        """SVG 4: Bovine milk vs Mature Human Milk vs Stage-1 Infant Formula 4 molecular surgeries."""
+        prot_cow, prot_hm, prot_if = 3.30, 1.05, 1.25
+        cas_cow_frac, cas_hm_frac = 0.80, 0.40
+        soap_reduction_pct = 46  # Yao et al. 2014 JPGN (PMC4222706)
+        assert prot_cow > 2.5 * prot_hm and cas_cow_frac == 2.0 * cas_hm_frac and soap_reduction_pct == 46
+
+        els = header(
+            "婴幼儿配方奶粉绝不是“牛奶晒干”！——从伤肾高蛋白、硬酪蛋白凝块到钙皂便秘的四大母乳化手术",
+            "对照成熟母乳与鲜牛乳分子差异 (PMC12399412 / PMC4222706 / PMC5378003)：降蛋白 · 调乳清 · 换 OPO · 补乳糖与 HMO",
+        )
+
+        # ---------------- Top-Left Card: Protein Reduction + 80:20 -> 40:60 Inversion ----------------
+        els.append(card(20, 64, 366, 206))
+        els.append(pill(32, 76, "① 手术一 & 二：砍总蛋白 + D90 脱盐乳清扭转“酪清比”", fg=BLUE, bg=BLUE_SOFT, w=342, h=22, size=8.8))
+
+        bars = [
+            ("鲜牛乳 (小牛快长配方)", 3.30, 0.80, "3.3 g (酪80:清20)", "胃内结大硬块 · 灰分0.75g压肾!", RED),
+            ("成熟母乳 (人类黄金基准)", 1.05, 0.40, "1.05 g (酪40:清60)", "30–75nm软絮凝 · 灰分仅0.20g", GREEN),
+            ("1段婴配粉 (母乳化改造)", 1.25, 0.40, "1.25 g (酪40:清60)", "D70/D90 脱盐乳清粉精准配平", BLUE),
+        ]
+        max_w = 204.0
+        for idx, (bname, btot, bcas_f, blbl, bnote, bcol) in enumerate(bars):
+            ry = 108 + idx * 46
+            els.append(txt(34, ry + 11, bname, 7.9, INK, weight="700"))
+            w_tot_px = max_w * (btot / 3.50)
+            w_cas = w_tot_px * bcas_f
+            w_whey = w_tot_px * (1.0 - bcas_f)
+            els.append(f'<rect x="34" y="{ry + 16:.1f}" width="{w_cas:.1f}" height="13" rx="2" fill="{AMBER}"/>')
+            els.append(f'<rect x="{34 + w_cas:.1f}" y="{ry + 16:.1f}" width="{w_whey:.1f}" height="13" rx="2" fill="{TEAL}"/>')
+            els.append(txt(34 + w_tot_px + 6, ry + 26, blbl, 7.6, bcol, weight="700"))
+            els.append(txt(34, ry + 41, bnote, 7.4, BODY))
+
+        # Mini legend for Casein vs Whey at top-right of card 1
+        els.append(f'<rect x="256" y="103" width="10" height="10" rx="2" fill="{AMBER}"/>')
+        els.append(txt(270, 111, "酪蛋白", 7.4, INK, weight="600"))
+        els.append(f'<rect x="314" y="103" width="10" height="10" rx="2" fill="{TEAL}"/>')
+        els.append(txt(328, 111, "乳清蛋白", 7.4, INK, weight="600"))
+        els.append(txt(34, 258, "注：电渗析+离子交换脱除 90% 矿物质灰分制成 D90 乳清粉，护住婴儿娇嫩肾脏 (PMC9689407)！", 7.4, BLUE, weight="700"))
+
+        # ---------------- Top-Right Card: sn-2 Palmitate (OPO) vs sn-1,3 Calcium Soaps ----------------
+        els.append(card(398, 64, 342, 206))
+        els.append(pill(410, 76, "② 手术三：OPO 结构脂 (sn-2 棕榈酸) 破解“钙皂硬便”", fg=ORANGE, bg=ORANGE_SOFT, w=318, h=22, size=8.8))
+
+        # Left sub-box: Ordinary vegetable palm oil (POP)
+        els.append(card(410, 108, 152, 118, rx=6, fill=RED_SOFT, stroke=RED, sw=1.0))
+        els.append(txt(486, 124, "普通植物油 (POP 构型)", 7.9, RED, "middle", weight="700"))
+        els.append(txt(486, 141, "sn-1: 棕榈酸 P ← 胰脂酶剪断!", 7.3, INK, "middle"))
+        els.append(txt(486, 156, "sn-2: 油酸 O (单甘脂吸收)", 7.3, BODY, "middle"))
+        els.append(txt(486, 171, "sn-3: 棕榈酸 P ← 胰脂酶剪断!", 7.3, INK, "middle"))
+        els.append(_line(422, 179, 550, 179, stroke=RED, sw=0.8, opacity=0.4))
+        els.append(txt(486, 195, "游离棕榈酸 + 肠内 Ca²⁺", 7.5, RED, "middle", weight="700"))
+        els.append(txt(486, 212, "⇒ 难溶“钙皂”排出 (丢钙又便秘!)", 7.4, RED, "middle", weight="700"))
+
+        # Right sub-box: Human milk / enzymatic OPO (~70% sn-2 palmitate)
+        els.append(card(574, 108, 154, 118, rx=6, fill=GREEN_SOFT, stroke=GREEN, sw=1.0))
+        els.append(txt(651, 124, "母乳 / OPO 结构脂", 7.9, GREEN, "middle", weight="700"))
+        els.append(txt(651, 141, "sn-1: 不饱和油酸 O (好吸收)", 7.3, BODY, "middle"))
+        els.append(txt(651, 156, "sn-2: 棕榈酸 P (~70% 居中!)", 7.4, GREEN, "middle", weight="700"))
+        els.append(txt(651, 171, "sn-3: 不饱和油酸 O (好吸收)", 7.3, BODY, "middle"))
+        els.append(_line(586, 179, 716, 179, stroke=GREEN, sw=0.8, opacity=0.4))
+        els.append(txt(651, 195, "保留 sn-2 单棕榈酸甘油酯", 7.5, GREEN, "middle", weight="700"))
+        els.append(txt(651, 212, "⇒ 穿肠壁直吸，锁住钙与能量!", 7.4, INK, "middle", weight="700"))
+
+        els.append(txt(410, 244, "• 临床随机对照实证 (Yao 2014, PMC4222706)：高 sn-2 棕榈酸配方令", 7.6, BODY))
+        els.append(txt(410, 259, "  婴儿粪便棕榈酸钙皂大降 46%，硬便发生率直接减半 (-50%)！", 7.6, ORANGE, weight="700"))
+
+        # ---------------- Bottom Full-Width Card: 5-Dimension Quantitative Matrix ----------------
+        els.append(card(20, 282, 720, 198))
+        els.append(
+            pill(
+                32,
+                294,
+                "③ 手术四：全维度营养重构账单——为什么 1 周岁内婴儿绝对不能拿纯牛奶代替母乳或 1–2 段配方粉？",
+                fg=PURPLE,
+                bg=PURPLE_SOFT,
+                w=696,
+                h=22,
+                size=8.8,
+            )
+        )
+
+        # Table header
+        els.append(f'<rect x="32" y="324" width="696" height="22" rx="4" fill="{SLATE_SOFT}"/>')
+        cols_x = [40, 180, 336, 496]
+        els.append(txt(cols_x[0], 339, "核心营养与生理维度", 8.0, INK, weight="700"))
+        els.append(txt(cols_x[1], 339, "普通鲜牛乳", 8.0, RED, weight="700"))
+        els.append(txt(cols_x[2], 339, "人类成熟母乳", 8.0, GREEN, weight="700"))
+        els.append(txt(cols_x[3], 339, "现代 1 段婴配粉改造方案", 8.0, BLUE, weight="700"))
+
+        rows = [
+            ("乳糖 (脑髓鞘半乳糖)", "约 4.8 g/100mL (偏低)", "约 7.0 g/100mL (清甜高乳糖)", "补纯乳糖至 ~7.0–7.4 g（1段禁加蔗糖/果糖!）"),
+            ("母乳低聚糖 HMO", "<0.05 g/L (近乎为零)", "5–15 g/L（母乳第3大固体!）", "生物发酵补 2'-FL / LNnT，专喂双歧杆菌防感染"),
+            ("脑视网膜多不饱和脂", "高饱和乳脂 · 极缺亚油酸/DHA", "富亚油酸/亚麻酸 + 天然 DHA", "调配植物油/乳脂 + 微囊化藻油 DHA / ARA"),
+            ("铁元素（防缺铁贫血）", "仅 0.03–0.05 mg/100mL!", "约 0.03–0.05 mg (吸收率极高)", "强化铁至 0.5–1.2 mg/100mL + 维生素 C 促吸收"),
+            ("潜在肾溶质负荷 PRSL", "~280–308 mOsm/L (严重超载!)", "~79–93 mOsm/L (精准护肾)", "降蛋白 + 脱盐乳清压回 ~85–105 mOsm/L 安全区"),
+        ]
+        for r_idx, (c0, c1, c2, c3) in enumerate(rows):
+            ry = 350 + r_idx * 24
+            if r_idx % 2 == 1:
+                els.append(f'<rect x="32" y="{ry - 3}" width="696" height="23" fill="#f8fafc"/>')
+            els.append(txt(cols_x[0], ry + 13, c0, 7.7, INK, weight="700"))
+            els.append(txt(cols_x[1], ry + 13, c1, 7.6, RED if "!" in c1 or "极缺" in c1 else BODY, weight="600" if "!" in c1 else None))
+            els.append(txt(cols_x[2], ry + 13, c2, 7.6, GREEN, weight="600"))
+            els.append(txt(cols_x[3], ry + 13, c3, 7.6, BLUE, weight="700"))
+
+        return figure(
+            492,
+            "鲜牛乳与成熟母乳及一段婴幼儿配方粉四大母乳化分子改造全景对比图",
+            "左上对比鲜牛乳(3.3g/100mL，酪清比80:20)、成熟母乳(1.05g/100mL，40:60)与1段配方粉(1.25g/100mL，借电渗析D70/D90脱盐乳清粉配平40:60且不增肾负荷)；右上对比普通植物油POP产生难溶棕榈酸钙皂与母乳/OPO结构脂(sn-2位棕榈酸直吸，钙皂降46%、硬便降50%)；下表汇总乳糖、第3大固体HMO(2'-FL/LNnT)、DHA/ARA、铁强化及潜在肾溶质负荷PRSL五大维度量化指标。",
+            els,
+        )
+
+    def _build_wet_dry_and_70c_safety():
+        """SVG 5: Wet vs Dry vs Combined process + N2 flushing & WHO >=70 C Cronobacter / water-first rule."""
+        conc_surge = (180.0 / 160.0 - 1.0) * 100.0
+        assert math.isclose(conc_surge, 12.5, abs_tol=1e-6)
+
+        els = header(
+            "为什么高端罐身总写“干湿复合工艺”？冲奶到底该用 40 °C 还是 70 °C 水？",
+            "左：湿法 vs 干法 vs 干湿法复合工艺与充氮锁鲜 · 右：WHO ≥70 °C 杀灭克罗诺杆菌铁律与“先水后粉”体积账",
+        )
+
+        # ---------------- Left Panel: Wet vs Dry vs Combined + Nitrogen Flushing ----------------
+        els.append(card(20, 64, 382, 408))
+        els.append(pill(32, 76, "① 三大工业路线：既要“粒粒均匀”，又要护住娇贵热敏营养", fg=BLUE, bg=BLUE_SOFT, w=358, h=22, size=8.8))
+
+        # Route A: Full Wet-Mix
+        els.append(card(32, 108, 358, 76, rx=7, fill=BLUE_SOFT, stroke=BLUE, sw=1.1))
+        els.append(txt(44, 126, "路线 A：全湿法工艺（鲜奶液态混料 → 杀菌均质 → 浓缩喷干）", 8.1, BLUE, weight="700"))
+        els.append(txt(44, 144, "• 强项：鲜奶冷链直投成粉，每一粒微粉都均匀融合蛋白、脂肪与乳糖；", 7.7, BODY))
+        els.append(txt(44, 161, "• 软肋：85°C 杀菌+高压均质+喷雾塔会损耗维 C/B1、乳铁蛋白，压碎", 7.7, RED, weight="700"))
+        els.append(txt(44, 177, "  DHA 微囊引发鱼腥氧化，活性益生菌更是 100% 全军覆没！", 7.7, RED, weight="700"))
+
+        # Route B: Full Dry-Blend
+        els.append(card(32, 192, 358, 66, rx=7, fill=AMBER_SOFT, stroke=AMBER, sw=1.1))
+        els.append(txt(44, 210, "路线 B：全干法工艺（采购大包基粉 + 营养素在洁净区干混）", 8.1, AMBER, weight="700"))
+        els.append(txt(44, 228, "• 强项：零热损伤，完整保留益生菌、乳铁蛋白、DHA 微囊与热敏维生素；", 7.7, BODY))
+        els.append(txt(44, 245, "• 难点：像“十吨面粉撒一撮盐”（100g 粉仅 ~10μg 维D），考验等量递增预混！", 7.7, INK, weight="600"))
+
+        # Route C: Combined Wet-Dry + Nitrogen Packaging (Modern Gold Standard)
+        els.append(card(32, 266, 358, 192, rx=8, fill=GREEN_SOFT, stroke=GREEN, sw=1.4))
+        els.append(txt(44, 286, "路线 C：现代主流“干湿法复合工艺” + 抽真空充氮锁鲜", 8.4, GREEN, weight="700"))
+
+        els.append(card(44, 298, 158, 66, rx=6, fill="#ffffff", stroke=BLUE, sw=1.1))
+        els.append(txt(123, 315, "前段：湿法造高均一度基粉", 7.8, BLUE, "middle", weight="700"))
+        els.append(txt(123, 332, "生牛乳 + 脱盐乳清 + 乳糖 +", 7.4, BODY, "middle"))
+        els.append(txt(123, 347, "OPO 脂液态杀菌均质喷雾造粒", 7.4, INK, "middle", weight="600"))
+
+        els.append(txt(211, 335, "+", 12.0, GREEN, "middle", weight="700"))
+
+        els.append(card(220, 298, 158, 66, rx=6, fill="#ffffff", stroke=PURPLE, sw=1.1))
+        els.append(txt(299, 315, "后段：洁净区等量递增干混", 7.8, PURPLE, "middle", weight="700"))
+        els.append(txt(299, 332, "无损混入维C、乳铁蛋白、", 7.4, BODY, "middle"))
+        els.append(txt(299, 347, "完整 DHA 微囊、HMO 与益生菌", 7.4, PURPLE, "middle", weight="700"))
+
+        els.append(txt(44, 384, "• 几何等量递增法：微量营养素先与 10 倍乳糖预混 → 再扩 10 倍 → 再入主", 7.7, BODY))
+        els.append(txt(44, 401, "  混机，确保每一平勺 (4.5 g) 里的微克级维生素分毫不差；", 7.7, INK, weight="700"))
+        els.append(txt(44, 420, "• 抽真空充氮封罐 (N₂ / CO₂)：把罐内氧气从空气的 20.9% 抽换压低至", 7.7, BODY))
+        els.append(txt(44, 437, "  残氧量 <2%（严控产线甚至 <1%），斩断不饱和 DHA 油脂氧化哈喇链！", 7.7, GREEN, weight="700"))
+
+        # ---------------- Right Panel: >=70 C Cronobacter Rule & Water-First Math ----------------
+        els.append(card(414, 64, 326, 408))
+        els.append(pill(426, 76, "② 冲奶两大铁律：70 °C 防克罗诺杆菌 & 先水后粉", fg=RED, bg=RED_SOFT, w=302, h=22, size=8.8))
+
+        # Top sub-box: Cronobacter & Temperature Zones
+        els.append(card(426, 108, 302, 206, rx=7, fill=RED_SOFT, stroke=RED, sw=1.2))
+        els.append(txt(438, 127, "关键真相：所有罐装“粉状”婴配粉都不是商业无菌品！", 8.1, RED, weight="700"))
+        els.append(txt(438, 144, "（仅液态超高温灭菌奶 RTF 才无菌，见 WHO / CDC 指南）", 7.5, BODY))
+
+        # Temperature bar: 40-50 C vs >=70 C
+        els.append(f'<rect x="438" y="154" width="136" height="20" rx="4" fill="{AMBER}"/>')
+        els.append(txt(506, 168, "40–50°C 护益生菌区", 7.6, "#ffffff", "middle", weight="700"))
+        els.append(f'<rect x="578" y="154" width="138" height="20" rx="4" fill="{RED}"/>')
+        els.append(txt(647, 168, "≥70°C 灭克罗诺杆菌区!", 7.6, "#ffffff", "middle", weight="700"))
+
+        els.append(txt(438, 192, "• 高危必守 ≥70 °C（<2–3 月龄新生儿、早产/低体重及免疫弱宝）：", 7.7, RED, weight="700"))
+        els.append(txt(438, 209, "  烧开水晾凉 ≤30 分钟（≥70°C）冲调，瞬杀耐干潜伏的阪崎克罗", 7.6, BODY))
+        els.append(txt(438, 225, "  诺杆菌，再冲自来冷水速降至 ~37°C 喂（警惕 85% 恒温冲奶机", 7.6, BODY))
+        els.append(txt(438, 241, "  实测不足 70°C! PMC10750023）；", 7.6, INK, weight="700"))
+        els.append(txt(438, 259, "• 较大健康月龄+含活性益生菌款：按罐身说明用 40–50°C 温开水；", 7.6, TEAL, weight="700"))
+        els.append(txt(438, 276, "• 严禁微波炉热奶（局部沸点烫伤食道!）· 冲好 2h / 开喝 1h 内倒掉", 7.6, RED, weight="700"))
+        els.append(txt(438, 293, "• 左右搓瓶或轻摇，别上下猛晃（乳清蛋白界面活性强易打出一瓶泡!）", 7.5, INK, weight="600"))
+
+        # Bottom sub-box: Water First vs Powder First Volume Math
+        els.append(card(426, 322, 302, 138, rx=7, fill=BLUE_SOFT, stroke=BLUE, sw=1.2))
+        els.append(txt(438, 341, "为什么全世界奶瓶都铁定“先倒 180 mL 水，再放 6 平勺粉”？", 8.0, BLUE, weight="700"))
+        els.append(txt(438, 360, "• 正确（先水后粉）：180 mL 水 + 27 g 奶粉 ≈ 200 mL 奶液", 7.7, GREEN, weight="700"))
+        els.append(txt(438, 376, "  （溶解的乳固体本身占据约 20 mL 排开体积，渗透压精准达标）；", 7.6, BODY))
+        els.append(txt(438, 395, "• 错误（先粉后水兑到 180 刻度）：实际只倒进 ~160 mL 水！", 7.7, RED, weight="700"))
+        els.append(txt(438, 412, "  奶液凭空变浓 +12.5% (180÷160)，长期高渗透压加重宝宝肾脏", 7.6, INK, weight="700"))
+        els.append(txt(438, 429, "  与肠道负担，且瓶底干粉极易被压死结成硬块！", 7.6, BODY))
+        els.append(txt(438, 446, "• 开罐奶粉放阴凉干燥处（勿放冰箱防潮结块!），4 周内吃完。", 7.5, PURPLE, weight="700"))
+
+        return figure(
+            486,
+            "奶粉湿法干法与干湿复合充氮工艺对比及70度防阪崎克罗诺杆菌与先水后粉原理图",
+            "左栏对比全湿法(均一度高但热损维C/乳铁蛋白/DHA微囊并灭活益生菌)、全干法(护热敏但需严控预混)与现代主流干湿法复合工艺(湿法造基粉+洁净区等量递增干混热敏营养+抽真空充氮压低残氧<2%)；右栏根据WHO/FAO与CDC指南解析粉状婴配粉非无菌属性、高危新生儿≥70°C冲调杀灭阪崎克罗诺杆菌、禁微波炉热奶，并算清先粉后水兑至180mL刻度少加20mL水导致奶液偏浓+12.5%的体积排开账。",
+            els,
+        )
+
+    @register(
+        "milk-powder-manufacturing",
+        "奶粉与婴幼儿配方粉制造全图解：7.76kg鲜奶真空降膜蒸发与高压均质总账、顺流喷雾塔48度湿球护盾与37亿微滴传质、流化床覆盆子造粒与卵磷脂速溶、母乳化四大分子手术、干湿复合充氮工艺与WHO70度冲调安全",
+        "science_tech",
+    )
+    def build_milk_powder_manufacturing():
+        write_svg(SUBDIR, "fresh-milk-to-powder-mass-energy-pipeline.svg", _build_mass_energy_pipeline())
+        write_svg(SUBDIR, "spray-drying-tower-wet-bulb-shield.svg", _build_spray_tower_wet_bulb())
+        write_svg(SUBDIR, "fluidized-bed-agglomeration-and-lecithin.svg", _build_agglomeration_and_lecithin())
+        write_svg(SUBDIR, "human-vs-bovine-milk-humanization-architecture.svg", _build_humanization_architecture())
+        write_svg(SUBDIR, "wet-dry-combined-process-and-70c-safety.svg", _build_wet_dry_and_70c_safety())
+
+
+_register_milk_powder_manufacturing()

@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="480" viewBox="0 0 760 480" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">热泵空调四通换向阀冷暖切换水路与冬季结霜逆循环化霜及喷气增焓原理图</title>
+<desc id="desc">上半幅对比四通换向阀D形滑块在夏季制冷(高压D口通室外冷凝、室内冷气经滑块回S吸气口)与冬季制热(滑块右移令82°C高压气直通室内散热、室外变-5°C蒸发器吸寒风热量)的切换原理；下半幅解释0-5°C高湿结霜致制热跌45%后的逆循环化霜水雾、PTC电辅热高耗电本质与-25°C喷气增焓(EVI)中压补气增效机制。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="479" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">冬天制热根本不用压缩机倒转！——四通换向滑块阀与“外机停风冒白烟”化霜之谜</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左上/右上：5 W 先导电磁阀借 2 MPa 压差平移 D 形滑块一键冷暖互换 · 下：结霜衰减、逆循环化霜与喷气增焓</text>
+<rect x="20" y="64" width="354" height="224" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="76.0" width="326" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="197.0" y="91.0" font-size="9.0" fill="#1d6fa5" text-anchor="middle" font-weight="600">① 夏季制冷模式（先导线圈断电 · 滑块罩住左+中口）</text>
+<rect x="107.0" y="148.0" width="180.0" height="42.0" rx="18" fill="#fff1f2" stroke="#dc2626" stroke-width="1.8"/>
+<rect x="145.0" y="106" width="104" height="26" rx="6" fill="#f1f5f9" stroke="#475569" stroke-width="1.3"/>
+<text x="197.0" y="123" font-size="7.9" fill="#0f172a" text-anchor="middle" font-weight="700">压缩机（转向永不变!）</text>
+<line x1="197.0" y1="132.0" x2="197.0" y2="148.0" stroke="#dc2626" stroke-width="4.0"/>
+<text x="205.0" y="143" font-size="7.5" fill="#dc2626" text-anchor="start" font-weight="700">D 高压排气</text>
+<path d="M 131.0,190 A 33,22 0 0 1 213.0,190 Z" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="2.2"/>
+<line x1="147.0" y1="190.0" x2="147.0" y2="214.0" stroke="#1d6fa5" stroke-width="3.8"/>
+<line x1="197.0" y1="190.0" x2="197.0" y2="214.0" stroke="#0284c7" stroke-width="3.8"/>
+<line x1="247.0" y1="190.0" x2="247.0" y2="214.0" stroke="#dc2626" stroke-width="3.8"/>
+<rect x="36" y="214" width="112" height="46" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.3"/>
+<text x="92" y="232" font-size="8.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">室内机 = 蒸发器</text>
+<text x="92" y="249" font-size="7.9" fill="#0f172a" text-anchor="middle" font-weight="600">5 °C 吸热吹凉风</text>
+<rect x="246" y="214" width="112" height="46" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="1.3"/>
+<text x="302" y="232" font-size="8.2" fill="#c25014" text-anchor="middle" font-weight="700">室外机 = 冷凝器</text>
+<text x="302" y="249" font-size="7.9" fill="#0f172a" text-anchor="middle" font-weight="600">50 °C 向外排热风</text>
+<text x="197.0" y="229" font-size="7.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">S 吸气口</text>
+<text x="197.0" y="243" font-size="7.3" fill="#64748b" text-anchor="middle">(回压缩机)</text>
+<text x="197.0" y="276" font-size="8.1" fill="#0f172a" text-anchor="middle" font-weight="700">滑块居左：D→室外排热，室内冷气经滑块回 S</text>
+<rect x="386" y="64" width="354" height="224" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="400.0" y="76.0" width="326" height="22" rx="11.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="563.0" y="91.0" font-size="9.0" fill="#dc2626" text-anchor="middle" font-weight="600">② 冬季热泵制热（先导线圈通电 · 借压差推滑块罩中+右口）</text>
+<rect x="473.0" y="148.0" width="180.0" height="42.0" rx="18" fill="#fff1f2" stroke="#dc2626" stroke-width="1.8"/>
+<rect x="511.0" y="106" width="104" height="26" rx="6" fill="#f1f5f9" stroke="#475569" stroke-width="1.3"/>
+<text x="563.0" y="123" font-size="7.9" fill="#0f172a" text-anchor="middle" font-weight="700">压缩机（转向永不变!）</text>
+<line x1="563.0" y1="132.0" x2="563.0" y2="148.0" stroke="#dc2626" stroke-width="4.0"/>
+<text x="571.0" y="143" font-size="7.5" fill="#dc2626" text-anchor="start" font-weight="700">D 高压排气</text>
+<path d="M 547.0,190 A 33,22 0 0 1 629.0,190 Z" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="2.2"/>
+<line x1="513.0" y1="190.0" x2="513.0" y2="214.0" stroke="#dc2626" stroke-width="3.8"/>
+<line x1="563.0" y1="190.0" x2="563.0" y2="214.0" stroke="#0284c7" stroke-width="3.8"/>
+<line x1="613.0" y1="190.0" x2="613.0" y2="214.0" stroke="#0f766e" stroke-width="3.8"/>
+<rect x="402" y="214" width="112" height="46" rx="6" fill="#fef2f2" stroke="#dc2626" stroke-width="1.3"/>
+<text x="458" y="232" font-size="8.2" fill="#dc2626" text-anchor="middle" font-weight="700">室内机 = 冷凝器!</text>
+<text x="458" y="249" font-size="7.9" fill="#0f172a" text-anchor="middle" font-weight="600">48 °C 放热吹暖风</text>
+<rect x="612" y="214" width="112" height="46" rx="6" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.3"/>
+<text x="668" y="232" font-size="8.2" fill="#0f766e" text-anchor="middle" font-weight="700">室外机 = 蒸发器!</text>
+<text x="668" y="249" font-size="7.9" fill="#0f172a" text-anchor="middle" font-weight="600">-5 °C 向寒冬抢热</text>
+<text x="563.0" y="229" font-size="7.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">S 吸气口</text>
+<text x="563.0" y="243" font-size="7.3" fill="#64748b" text-anchor="middle">(回压缩机)</text>
+<text x="563.0" y="276" font-size="8.1" fill="#dc2626" text-anchor="middle" font-weight="700">滑块右移：82°C 热气直奔室内，外机变冰窖吸寒风热！</text>
+<rect x="20" y="300" width="720" height="166" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="312.0" width="692" height="22" rx="11.0" fill="#f0fdfa" stroke="#0f766e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="380.0" y="327.0" font-size="9.1" fill="#0f766e" text-anchor="middle" font-weight="600">③ 冬季三大灵魂拷问：外机为什么结霜冒“白烟”？电辅热是什么？-25 °C 怎么救？</text>
+<rect x="34" y="342" width="216" height="112" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="44" y="360" font-size="8.7" fill="#1d6fa5" text-anchor="start" font-weight="700">1. 湿冷结霜与“冒白烟”化霜</text>
+<text x="44" y="377" font-size="8.0" fill="#1e293b" text-anchor="start">室外 0~5 °C 潮湿天，外机盘管 -6 °C 会</text>
+<text x="44" y="393" font-size="8.0" fill="#0f172a" text-anchor="start" font-weight="600">迅速结满冰霜（60 min 制热量暴跌 45%!</text>
+<text x="44" y="409" font-size="8.0" fill="#1e293b" text-anchor="start">张龙等 2022）。此时四通阀临时切回制冷</text>
+<text x="44" y="425" font-size="8.0" fill="#1e293b" text-anchor="start">5–8 分钟（内机停风），把热气打去外机融</text>
+<text x="44" y="441" font-size="8.0" fill="#1d6fa5" text-anchor="start" font-weight="700">冰——腾起的“白烟”是水汽雾，绝非着火！</text>
+<rect x="272" y="342" width="216" height="112" rx="7" fill="#fef1e8" stroke="#c25014" stroke-width="1.1"/>
+<text x="282" y="360" font-size="8.7" fill="#c25014" text-anchor="start" font-weight="700">2. 遥控器“电辅热”该不该关？</text>
+<text x="282" y="377" font-size="8.0" fill="#1e293b" text-anchor="start">热泵搬热 1 度电产 3~4 度热，唯独极寒天</text>
+<text x="282" y="393" font-size="8.0" fill="#0f172a" text-anchor="start" font-weight="600">外机吸不到足够热量时，内机风道里的</text>
+<text x="282" y="409" font-size="8.0" fill="#1e293b" text-anchor="start">PTC 陶瓷电热丝（COP 仅 1.0!）才硬顶。</text>
+<text x="282" y="425" font-size="8.0" fill="#1e293b" text-anchor="start">南方 5 °C 以上关掉“电辅热”纯靠热泵，</text>
+<text x="282" y="441" font-size="8.0" fill="#c25014" text-anchor="start" font-weight="700">不仅出风不干燥，电费立省一半以上！</text>
+<rect x="510" y="342" width="216" height="112" rx="7" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.1"/>
+<text x="520" y="360" font-size="8.7" fill="#0f766e" text-anchor="start" font-weight="700">3. 严寒黑科技：喷气增焓 (EVI)</text>
+<text x="520" y="377" font-size="8.0" fill="#1e293b" text-anchor="start">东北 -25 °C 时蒸发压跌破 0.3 MPa，单</text>
+<text x="520" y="393" font-size="8.0" fill="#0f172a" text-anchor="start" font-weight="600">级压缩压比超 10 倍，吸气稀薄且排气过烫。</text>
+<text x="520" y="409" font-size="8.0" fill="#1e293b" text-anchor="start">EVI 用闪蒸经济器抽一路中压气从气缸半</text>
+<text x="520" y="425" font-size="8.0" fill="#1e293b" text-anchor="start">途“补气冷却”，把单次爬大坡拆成两级台</text>
+<text x="520" y="441" font-size="8.0" fill="#0f766e" text-anchor="start" font-weight="700">阶，-25 °C 制热能力直接提升 25%–35%！</text>
+</svg>

@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="486" viewBox="0 0 760 486" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">奶粉湿法干法与干湿复合充氮工艺对比及70度防阪崎克罗诺杆菌与先水后粉原理图</title>
+<desc id="desc">左栏对比全湿法(均一度高但热损维C/乳铁蛋白/DHA微囊并灭活益生菌)、全干法(护热敏但需严控预混)与现代主流干湿法复合工艺(湿法造基粉+洁净区等量递增干混热敏营养+抽真空充氮压低残氧&lt;2%)；右栏根据WHO/FAO与CDC指南解析粉状婴配粉非无菌属性、高危新生儿≥70°C冲调杀灭阪崎克罗诺杆菌、禁微波炉热奶，并算清先粉后水兑至180mL刻度少加20mL水导致奶液偏浓+12.5%的体积排开账。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="485" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">为什么高端罐身总写“干湿复合工艺”？冲奶到底该用 40 °C 还是 70 °C 水？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：湿法 vs 干法 vs 干湿法复合工艺与充氮锁鲜 · 右：WHO ≥70 °C 杀灭克罗诺杆菌铁律与“先水后粉”体积账</text>
+<rect x="20" y="64" width="382" height="408" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="76.0" width="358" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="211.0" y="91.0" font-size="8.8" fill="#1d6fa5" text-anchor="middle" font-weight="600">① 三大工业路线：既要“粒粒均匀”，又要护住娇贵热敏营养</text>
+<rect x="32" y="108" width="358" height="76" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="44" y="126" font-size="8.1" fill="#1d6fa5" text-anchor="start" font-weight="700">路线 A：全湿法工艺（鲜奶液态混料 → 杀菌均质 → 浓缩喷干）</text>
+<text x="44" y="144" font-size="7.7" fill="#1e293b" text-anchor="start">• 强项：鲜奶冷链直投成粉，每一粒微粉都均匀融合蛋白、脂肪与乳糖；</text>
+<text x="44" y="161" font-size="7.7" fill="#dc2626" text-anchor="start" font-weight="700">• 软肋：85°C 杀菌+高压均质+喷雾塔会损耗维 C/B1、乳铁蛋白，压碎</text>
+<text x="44" y="177" font-size="7.7" fill="#dc2626" text-anchor="start" font-weight="700">  DHA 微囊引发鱼腥氧化，活性益生菌更是 100% 全军覆没！</text>
+<rect x="32" y="192" width="358" height="66" rx="7" fill="#fffbeb" stroke="#b45309" stroke-width="1.1"/>
+<text x="44" y="210" font-size="8.1" fill="#b45309" text-anchor="start" font-weight="700">路线 B：全干法工艺（采购大包基粉 + 营养素在洁净区干混）</text>
+<text x="44" y="228" font-size="7.7" fill="#1e293b" text-anchor="start">• 强项：零热损伤，完整保留益生菌、乳铁蛋白、DHA 微囊与热敏维生素；</text>
+<text x="44" y="245" font-size="7.7" fill="#0f172a" text-anchor="start" font-weight="600">• 难点：像“十吨面粉撒一撮盐”（100g 粉仅 ~10μg 维D），考验等量递增预混！</text>
+<rect x="32" y="266" width="358" height="192" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.4"/>
+<text x="44" y="286" font-size="8.4" fill="#18794e" text-anchor="start" font-weight="700">路线 C：现代主流“干湿法复合工艺” + 抽真空充氮锁鲜</text>
+<rect x="44" y="298" width="158" height="66" rx="6" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="123" y="315" font-size="7.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">前段：湿法造高均一度基粉</text>
+<text x="123" y="332" font-size="7.4" fill="#1e293b" text-anchor="middle">生牛乳 + 脱盐乳清 + 乳糖 +</text>
+<text x="123" y="347" font-size="7.4" fill="#0f172a" text-anchor="middle" font-weight="600">OPO 脂液态杀菌均质喷雾造粒</text>
+<text x="211" y="335" font-size="12.0" fill="#18794e" text-anchor="middle" font-weight="700">+</text>
+<rect x="220" y="298" width="158" height="66" rx="6" fill="#ffffff" stroke="#6d28d9" stroke-width="1.1"/>
+<text x="299" y="315" font-size="7.8" fill="#6d28d9" text-anchor="middle" font-weight="700">后段：洁净区等量递增干混</text>
+<text x="299" y="332" font-size="7.4" fill="#1e293b" text-anchor="middle">无损混入维C、乳铁蛋白、</text>
+<text x="299" y="347" font-size="7.4" fill="#6d28d9" text-anchor="middle" font-weight="700">完整 DHA 微囊、HMO 与益生菌</text>
+<text x="44" y="384" font-size="7.7" fill="#1e293b" text-anchor="start">• 几何等量递增法：微量营养素先与 10 倍乳糖预混 → 再扩 10 倍 → 再入主</text>
+<text x="44" y="401" font-size="7.7" fill="#0f172a" text-anchor="start" font-weight="700">  混机，确保每一平勺 (4.5 g) 里的微克级维生素分毫不差；</text>
+<text x="44" y="420" font-size="7.7" fill="#1e293b" text-anchor="start">• 抽真空充氮封罐 (N₂ / CO₂)：把罐内氧气从空气的 20.9% 抽换压低至</text>
+<text x="44" y="437" font-size="7.7" fill="#18794e" text-anchor="start" font-weight="700">  残氧量 &lt;2%（严控产线甚至 &lt;1%），斩断不饱和 DHA 油脂氧化哈喇链！</text>
+<rect x="414" y="64" width="326" height="408" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="426.0" y="76.0" width="302" height="22" rx="11.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="577.0" y="91.0" font-size="8.8" fill="#dc2626" text-anchor="middle" font-weight="600">② 冲奶两大铁律：70 °C 防克罗诺杆菌 &amp; 先水后粉</text>
+<rect x="426" y="108" width="302" height="206" rx="7" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2"/>
+<text x="438" y="127" font-size="8.1" fill="#dc2626" text-anchor="start" font-weight="700">关键真相：所有罐装“粉状”婴配粉都不是商业无菌品！</text>
+<text x="438" y="144" font-size="7.5" fill="#1e293b" text-anchor="start">（仅液态超高温灭菌奶 RTF 才无菌，见 WHO / CDC 指南）</text>
+<rect x="438" y="154" width="136" height="20" rx="4" fill="#b45309"/>
+<text x="506" y="168" font-size="7.6" fill="#ffffff" text-anchor="middle" font-weight="700">40–50°C 护益生菌区</text>
+<rect x="578" y="154" width="138" height="20" rx="4" fill="#dc2626"/>
+<text x="647" y="168" font-size="7.6" fill="#ffffff" text-anchor="middle" font-weight="700">≥70°C 灭克罗诺杆菌区!</text>
+<text x="438" y="192" font-size="7.7" fill="#dc2626" text-anchor="start" font-weight="700">• 高危必守 ≥70 °C（&lt;2–3 月龄新生儿、早产/低体重及免疫弱宝）：</text>
+<text x="438" y="209" font-size="7.6" fill="#1e293b" text-anchor="start">  烧开水晾凉 ≤30 分钟（≥70°C）冲调，瞬杀耐干潜伏的阪崎克罗</text>
+<text x="438" y="225" font-size="7.6" fill="#1e293b" text-anchor="start">  诺杆菌，再冲自来冷水速降至 ~37°C 喂（警惕 85% 恒温冲奶机</text>
+<text x="438" y="241" font-size="7.6" fill="#0f172a" text-anchor="start" font-weight="700">  实测不足 70°C! PMC10750023）；</text>
+<text x="438" y="259" font-size="7.6" fill="#0f766e" text-anchor="start" font-weight="700">• 较大健康月龄+含活性益生菌款：按罐身说明用 40–50°C 温开水；</text>
+<text x="438" y="276" font-size="7.6" fill="#dc2626" text-anchor="start" font-weight="700">• 严禁微波炉热奶（局部沸点烫伤食道!）· 冲好 2h / 开喝 1h 内倒掉</text>
+<text x="438" y="293" font-size="7.5" fill="#0f172a" text-anchor="start" font-weight="600">• 左右搓瓶或轻摇，别上下猛晃（乳清蛋白界面活性强易打出一瓶泡!）</text>
+<rect x="426" y="322" width="302" height="138" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="438" y="341" font-size="8.0" fill="#1d6fa5" text-anchor="start" font-weight="700">为什么全世界奶瓶都铁定“先倒 180 mL 水，再放 6 平勺粉”？</text>
+<text x="438" y="360" font-size="7.7" fill="#18794e" text-anchor="start" font-weight="700">• 正确（先水后粉）：180 mL 水 + 27 g 奶粉 ≈ 200 mL 奶液</text>
+<text x="438" y="376" font-size="7.6" fill="#1e293b" text-anchor="start">  （溶解的乳固体本身占据约 20 mL 排开体积，渗透压精准达标）；</text>
+<text x="438" y="395" font-size="7.7" fill="#dc2626" text-anchor="start" font-weight="700">• 错误（先粉后水兑到 180 刻度）：实际只倒进 ~160 mL 水！</text>
+<text x="438" y="412" font-size="7.6" fill="#0f172a" text-anchor="start" font-weight="700">  奶液凭空变浓 +12.5% (180÷160)，长期高渗透压加重宝宝肾脏</text>
+<text x="438" y="429" font-size="7.6" fill="#1e293b" text-anchor="start">  与肠道负担，且瓶底干粉极易被压死结成硬块！</text>
+<text x="438" y="446" font-size="7.5" fill="#6d28d9" text-anchor="start" font-weight="700">• 开罐奶粉放阴凉干燥处（勿放冰箱防潮结块!），4 周内吃完。</text>
+</svg>

@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="472" viewBox="0 0 760 472" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">水饱和蒸汽压死锁曲线与摩卡壶空气垫、现代意式咖啡机9bar温压解耦及黄金油脂成因图</title>
+<desc id="desc">左图按Antoine方程精确绘制水的饱和蒸汽压曲线P_sat(T)：若靠纯蒸汽升至9 bar水温必高达175.4°C烫焦咖啡；对比手冲(1 bar, 93°C)、1901蒸汽机(1.8 bar, 118°C)、摩卡壶(靠封存空气在78-108°C推水)及现代意式浓缩(9 bar, 93°C机械解耦)；右图拆解摩卡壶见泡即停铁律与9 bar亨利定律CO2过饱和泄压生成Crema微泡乳液机制。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="471" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">为什么早期蒸汽机煮出的咖啡焦苦难咽？—— 饱和蒸汽死锁与“9 Bar 温压解耦”革命</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">靠烧蒸汽凑齐 9 bar 水温必飙到 175.4 °C 把粉烫糊！加吉亚与 E61 用机械活塞和水泵把“高压”与“93 °C”彻底拆开</text>
+<rect x="20" y="64" width="404" height="394" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="78.0" width="374" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="221.0" y="93.0" font-size="9.4" fill="#1d6fa5" text-anchor="middle" font-weight="600">① 四大流派在“温度—压力相图”上的真实坐标（Antoine 方程实算）</text>
+<rect x="34.0" y="110.0" width="374.0" height="258.0" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="145.6" y="130.0" width="19.3" height="210.0" fill="#e7f6ee" opacity="0.9"/>
+<text x="155.3" y="142.0" font-size="8.1" fill="#18794e" text-anchor="middle" font-weight="700" class="mono">88–96°C</text>
+<line x1="78.0" y1="320.9" x2="392.0" y2="320.9" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3,3"/>
+<text x="72.0" y="324.4" font-size="8.3" fill="#64748b" text-anchor="end" class="mono">1 bar</text>
+<line x1="78.0" y1="282.7" x2="392.0" y2="282.7" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3,3"/>
+<text x="72.0" y="286.2" font-size="8.3" fill="#64748b" text-anchor="end" class="mono">3 bar</text>
+<line x1="78.0" y1="225.5" x2="392.0" y2="225.5" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3,3"/>
+<text x="72.0" y="229.0" font-size="8.3" fill="#64748b" text-anchor="end" class="mono">6 bar</text>
+<line x1="78.0" y1="168.2" x2="392.0" y2="168.2" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3,3"/>
+<text x="72.0" y="171.7" font-size="8.3" fill="#64748b" text-anchor="end" class="mono">9 bar</text>
+<line x1="102.2" y1="340.0" x2="102.2" y2="344.0" stroke="#475569" stroke-width="1.1"/>
+<text x="102.2" y="355.0" font-size="8.3" fill="#64748b" text-anchor="middle" class="mono">70°C</text>
+<line x1="174.6" y1="340.0" x2="174.6" y2="344.0" stroke="#475569" stroke-width="1.1"/>
+<text x="174.6" y="355.0" font-size="8.3" fill="#64748b" text-anchor="middle" class="mono">100°C</text>
+<line x1="247.1" y1="340.0" x2="247.1" y2="344.0" stroke="#475569" stroke-width="1.1"/>
+<text x="247.1" y="355.0" font-size="8.3" fill="#64748b" text-anchor="middle" class="mono">130°C</text>
+<line x1="319.5" y1="340.0" x2="319.5" y2="344.0" stroke="#475569" stroke-width="1.1"/>
+<text x="319.5" y="355.0" font-size="8.3" fill="#64748b" text-anchor="middle" class="mono">160°C</text>
+<line x1="367.8" y1="340.0" x2="367.8" y2="344.0" stroke="#475569" stroke-width="1.1"/>
+<text x="367.8" y="355.0" font-size="8.3" fill="#64748b" text-anchor="middle" class="mono">180°C</text>
+<line x1="78.0" y1="340.0" x2="392.0" y2="340.0" stroke="#475569" stroke-width="1.3"/>
+<line x1="78.0" y1="340.0" x2="78.0" y2="130.0" stroke="#475569" stroke-width="1.3"/>
+<path d="M 90.1,335.2 L 94.6,334.8 L 99.1,334.4 L 103.6,333.9 L 108.0,333.4 L 112.5,332.9 L 117.0,332.3 L 121.5,331.7 L 126.0,331.0 L 130.5,330.3 L 135.0,329.6 L 139.5,328.8 L 144.0,327.9 L 148.5,327.0 L 153.0,326.1 L 157.4,325.1 L 161.9,324.0 L 166.4,322.9 L 170.9,321.7 L 175.4,320.3 L 179.9,319.0 L 184.4,317.6 L 188.9,316.1 L 193.4,314.6 L 197.9,313.0 L 202.4,311.3 L 206.8,309.5 L 211.3,307.6 L 215.8,305.6 L 220.3,303.5 L 224.8,301.3 L 229.3,299.0 L 233.8,296.5 L 238.3,294.0 L 242.8,291.4 L 247.3,288.6 L 251.8,285.7 L 256.2,282.6 L 260.7,279.5 L 265.2,276.1 L 269.7,272.7 L 274.2,269.1 L 278.7,265.3 L 283.2,261.3 L 287.7,257.2 L 292.2,253.0 L 296.7,248.5 L 301.2,243.9 L 305.6,239.0 L 310.1,234.0 L 314.6,228.8 L 319.1,223.4 L 323.6,217.7 L 328.1,211.9 L 332.6,205.8 L 337.1,199.5 L 341.6,192.9 L 346.1,186.1 L 350.6,179.1 L 355.1,171.8 L 359.5,164.3 L 364.0,156.4 L 368.5,148.3 L 373.0,140.0 L 377.5,131.3" fill="none" stroke="#dc2626" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="356.7" cy="169.0" r="4.6" fill="#fef2f2" stroke="#dc2626" stroke-width="2.0"/>
+<line x1="356.7" y1="175.0" x2="356.7" y2="247.4" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="2,2"/>
+<text x="384.8" y="257.9" font-size="8.3" fill="#dc2626" text-anchor="end" font-weight="700">纯蒸汽若攒到 9 bar：</text>
+<text x="384.8" y="275.1" font-size="8.2" fill="#dc2626" text-anchor="end" font-weight="700">水温必飙至 175.4°C (烫焦!)</text>
+<circle cx="157.7" cy="320.9" r="4.8" fill="#1d6fa5"/>
+<text x="165.7" y="332.9" font-size="8.3" fill="#1d6fa5" text-anchor="start" font-weight="700">手冲/滴滤 (1 bar, 93°C)</text>
+<circle cx="218.1" cy="304.5" r="4.6" fill="#c25014"/>
+<text x="227.1" y="301.5" font-size="8.3" fill="#c25014" text-anchor="start" font-weight="700">1901 蒸汽机 (1.8bar, 118°C)</text>
+<line x1="121.5" y1="312.3" x2="193.9" y2="307.5" stroke="#b45309" stroke-width="2.1" stroke-dasharray="4,2" marker-end="url(#arr-orange)"/>
+<circle cx="121.5" cy="312.3" r="4.0" fill="#b45309"/>
+<text x="123.5" y="303.3" font-size="8.1" fill="#b45309" text-anchor="middle" font-weight="700">摩卡壶(空气推水)</text>
+<line x1="157.7" y1="313.9" x2="157.7" y2="176.2" stroke="#18794e" stroke-width="2.2" stroke-dasharray="4,3" marker-end="url(#arr-green)"/>
+<circle cx="157.7" cy="168.2" r="5.5" fill="#18794e" stroke="#ffffff" stroke-width="1.5"/>
+<text x="166.7" y="166.2" font-size="8.6" fill="#18794e" text-anchor="start" font-weight="700">现代意式浓缩 (9 bar, 93°C)</text>
+<text x="166.7" y="180.2" font-size="8.2" fill="#0f172a" text-anchor="start" font-weight="600">弹簧活塞 / 水泵温压解耦!</text>
+<text x="34" y="388" font-size="9.0" fill="#0f172a" text-anchor="start" font-weight="600">• 热力学紧箍咒：在密闭单锅里靠烧开水攒气压，压力与沸点必被红色</text>
+<text x="34" y="406" font-size="9.0" fill="#dc2626" text-anchor="start" font-weight="700">  饱和蒸汽线 P_sat(T) 死死绑在一起——要压力就得挨高温烫！</text>
+<text x="34" y="425" font-size="9.0" fill="#1e293b" text-anchor="start">• 1947 加吉亚杠杆机与 1961 飞马 E61 电动泵的伟大之处，就是用外部机械功</text>
+<text x="34" y="443" font-size="9.0" fill="#18794e" text-anchor="start" font-weight="700">  直接给 93 °C 液态水加压到 9 bar，一举脱离蒸汽线进入左上角甜区！</text>
+<rect x="436" y="64" width="304" height="394" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="450.0" y="78.0" width="276" height="22" rx="11.0" fill="#fffbeb" stroke="#b45309" stroke-width="1" stroke-opacity="0.35"/>
+<text x="588.0" y="93.0" font-size="9.3" fill="#b45309" text-anchor="middle" font-weight="600">② 摩卡壶为什么前段不烫粉、尾段不能贪？</text>
+<rect x="450" y="108" width="276" height="138" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="1.1"/>
+<text x="462" y="128" font-size="9.2" fill="#b45309" text-anchor="start" font-weight="700">摩卡壶下壶顶部的“残留空气垫”立了大功：</text>
+<text x="462" y="148" font-size="8.8" fill="#1e293b" text-anchor="start">• 下壶绝不能加满漫过安全阀！留出的那圈空气</text>
+<text x="462" y="165" font-size="8.8" fill="#0f172a" text-anchor="start" font-weight="600">  受热膨胀 + 水汽分压叠加，水温刚到 75–95 °C</text>
+<text x="462" y="182" font-size="8.8" fill="#1e293b" text-anchor="start">  总压就够 ~1.4 bar，温和把液态水顶进粉槽；</text>
+<text x="462" y="202" font-size="8.8" fill="#dc2626" text-anchor="start" font-weight="600">• 一旦下壶水位见底，纯过热蒸汽 (&gt;105 °C) 接管</text>
+<text x="462" y="219" font-size="8.8" fill="#1e293b" text-anchor="start">  狂喷（发出一阵咕噜声），此时必须立刻关火冲</text>
+<text x="462" y="236" font-size="8.8" fill="#0f172a" text-anchor="start" font-weight="700">  凉水——晚关 10 秒就会萃出满嘴焦木苦涩！</text>
+<rect x="450.0" y="258.0" width="276" height="22" rx="11.0" fill="#fef3c7" stroke="#78350f" stroke-width="1" stroke-opacity="0.35"/>
+<text x="588.0" y="273.0" font-size="9.2" fill="#78350f" text-anchor="middle" font-weight="600">③ 意式灵魂“黄金油脂 (Crema)”是怎么变出来的？</text>
+<rect x="450" y="288" width="276" height="156" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="462" y="298" width="116" height="62" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="520" y="315" font-size="8.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">粉碗内：9 bar 高压</text>
+<text x="520" y="331" font-size="8.2" fill="#0f172a" text-anchor="middle" class="mono">亨利定律 c = k_H·P</text>
+<text x="520" y="347" font-size="8.3" fill="#1d6fa5" text-anchor="middle" font-weight="700">烘焙 CO₂ 溶解度×9!</text>
+<line x1="580.0" y1="329.0" x2="598.0" y2="329.0" stroke="#78350f" stroke-width="2.0" marker-end="url(#arr-orange)"/>
+<rect x="600" y="298" width="114" height="62" rx="6" fill="#fef3c7" stroke="#78350f" stroke-width="1"/>
+<text x="657" y="315" font-size="8.6" fill="#78350f" text-anchor="middle" font-weight="700">出滤孔：骤降 1 bar</text>
+<text x="657" y="331" font-size="8.2" fill="#0f172a" text-anchor="middle">CO₂ 瞬间过饱和成核</text>
+<text x="657" y="347" font-size="8.3" fill="#78350f" text-anchor="middle" font-weight="700">油膜裹微泡 = Crema!</text>
+<text x="462" y="379" font-size="8.7" fill="#1e293b" text-anchor="start">• 就像猛拧开摇晃过的可乐瓶：烘焙锁在 30–60 μm</text>
+<text x="462" y="396" font-size="8.7" fill="#1e293b" text-anchor="start">  细胞壁微孔里的 CO₂ 被 9 bar 强压进水里，穿过滤孔</text>
+<text x="462" y="413" font-size="8.7" fill="#1e293b" text-anchor="start">  泄压瞬间炸出数百万颗微米气泡，再披上高速剪切乳</text>
+<text x="462" y="430" font-size="8.7" fill="#78350f" text-anchor="start" font-weight="700">  化的咖啡脂质与类黑精外衣，浮成绵密虎斑油脂层！</text>
+</svg>

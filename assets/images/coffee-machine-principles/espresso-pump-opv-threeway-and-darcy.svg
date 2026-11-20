@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="474" viewBox="0 0 760 474" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">现代意式咖啡机水路五联关结构、三通电磁阀泄压原理与Cameron-Hendon通道效应曲线图</title>
+<desc id="desc">上图展示净水箱经霍尔流量计、50Hz半波二极管电磁振动泵(峰值15bar)、OPV稳压阀(削峰锁死9bar并回流水箱)、PID锅炉(93°C)至三通电磁阀与58mm粉碗的完整回路；左下对比三通阀冲煮导通与停机0.1秒泄去238公斤等效残压防止炸粉；右下绘制2020年Matter论文实证曲线：研磨过细或压力虚高会压实粉床诱发局部虫洞通道，令平均萃取率不升反降。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="473" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">拆开一台半自动意式咖啡机：水路里藏着哪五大关卡？为什么“20 Bar 大压力”反而是噱头？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">二极管半波电磁泵造压 → OPV 削峰锁死 9 bar → PID 控温 → 三通电磁阀防炸粉；压力过高与磨太细反而引发“虫洞通道”！</text>
+<rect x="20" y="64" width="720" height="186" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="76.0" width="438" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="253.0" y="91.0" font-size="9.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">① 现代意式咖啡机标准水路五联关（以振动泵 + OPV + 三通阀架构为例）</text>
+<rect x="34" y="116" width="96" height="66" rx="7" fill="#eff6ff" stroke="#1d6fa5" stroke-width="1"/>
+<text x="82" y="137" font-size="9.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">净水箱</text>
+<text x="82" y="154" font-size="8.6" fill="#1e293b" text-anchor="middle">+ 霍尔叶轮</text>
+<text x="82" y="169" font-size="8.4" fill="#64748b" text-anchor="middle">计量水量 mL</text>
+<line x1="130.0" y1="149.0" x2="152.0" y2="149.0" stroke="#1d6fa5" stroke-width="2.0" marker-end="url(#arr-blue)"/>
+<rect x="154" y="116" width="134" height="66" rx="7" fill="#fef1e8" stroke="#c25014" stroke-width="1.4"/>
+<text x="221" y="135" font-size="9.2" fill="#c25014" text-anchor="middle" font-weight="700">① 电磁振动泵 (Ulka)</text>
+<text x="221" y="152" font-size="8.3" fill="#0f172a" text-anchor="middle" font-weight="600">220V 串二极管半波整流</text>
+<text x="221" y="168" font-size="8.2" fill="#1e293b" text-anchor="middle">每秒往复 50 次 · 闷堵 15bar</text>
+<line x1="288.0" y1="149.0" x2="312.0" y2="149.0" stroke="#c25014" stroke-width="2.0" marker-end="url(#arr-orange)"/>
+<rect x="314" y="116" width="118" height="66" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1.5"/>
+<text x="373" y="135" font-size="9.2" fill="#18794e" text-anchor="middle" font-weight="700">② OPV 稳压泄压阀</text>
+<text x="373" y="152" font-size="8.4" fill="#0f172a" text-anchor="middle" font-weight="700">弹簧顶死 9.0 bar 上限</text>
+<text x="373" y="168" font-size="8.1" fill="#18794e" text-anchor="middle" font-weight="600">多余高压水旁路退回水箱</text>
+<path d="M 373,116 L 373,106 L 82,106 L 82,116" fill="none" stroke="#18794e" stroke-width="1.4" stroke-dasharray="4,3" marker-end="url(#arr-green)"/>
+<text x="584" y="92" font-size="8.3" fill="#18794e" text-anchor="middle" font-weight="700">旁路：超 9 bar 水自动退回水箱!</text>
+<line x1="432.0" y1="149.0" x2="456.0" y2="149.0" stroke="#18794e" stroke-width="2.0" marker-end="url(#arr-green)"/>
+<rect x="458" y="116" width="118" height="66" rx="7" fill="#fef2f2" stroke="#dc2626" stroke-width="1.4"/>
+<text x="517" y="135" font-size="9.1" fill="#dc2626" text-anchor="middle" font-weight="700">③ PID 锅炉/厚膜热块</text>
+<text x="517" y="152" font-size="8.3" fill="#0f172a" text-anchor="middle" font-weight="600">SSR 脉冲控温 ±0.5°C</text>
+<text x="517" y="168" font-size="8.3" fill="#dc2626" text-anchor="middle" font-weight="700">恒定输出 93.0 °C 热水</text>
+<line x1="576.0" y1="149.0" x2="600.0" y2="149.0" stroke="#dc2626" stroke-width="2.0" marker-end="url(#arr-orange)"/>
+<rect x="602" y="116" width="124" height="66" rx="7" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.5"/>
+<text x="664" y="135" font-size="9.0" fill="#6d28d9" text-anchor="middle" font-weight="700">④ 三通电磁阀 + 冲煮头</text>
+<text x="664" y="152" font-size="8.2" fill="#0f172a" text-anchor="middle" font-weight="600">通电：9 bar 压入 58mm 粉碗</text>
+<text x="664" y="168" font-size="8.2" fill="#6d28d9" text-anchor="middle" font-weight="700">断电：0.1s 泄残压排入水盘!</text>
+<rect x="34" y="194" width="692" height="44" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="48" y="212" font-size="8.7" fill="#1e293b" text-anchor="start">• 家用振动泵 vs 商用旋转叶片泵：家用电磁泵体积极小、靠前 1–2 秒缓升压自带柔和预浸泡，但每秒 50 次脉动声音响；</text>
+<text x="48" y="229" font-size="8.7" fill="#0f172a" text-anchor="start" font-weight="600">  咖啡馆万元商用机改用电机带动偏心石墨叶片泵（Rotary Pump），瞬间拉满恒定 9 bar、静如耳语且可直连自来水管。</text>
+<rect x="20" y="262" width="344" height="200" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="276.0" width="276" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="172.0" y="291.0" font-size="9.4" fill="#6d28d9" text-anchor="middle" font-weight="600">② 停机一秒拧手柄，为什么不会炸咖啡泥？</text>
+<rect x="34" y="308" width="152" height="86" rx="7" fill="#f0fdf4" stroke="#18794e" stroke-width="1"/>
+<text x="110" y="326" font-size="8.9" fill="#18794e" text-anchor="middle" font-weight="700">冲煮中（线圈通电）</text>
+<text x="110" y="344" font-size="8.5" fill="#0f172a" text-anchor="middle" font-weight="600">锅炉 → 粉碗【导通】</text>
+<text x="110" y="361" font-size="8.5" fill="#64748b" text-anchor="middle">排渣口【封死】</text>
+<text x="110" y="379" font-size="8.1" fill="#18794e" text-anchor="middle" font-weight="700">粉饼顶着 9 bar (≈238 kg 力)</text>
+<rect x="198" y="308" width="152" height="86" rx="7" fill="#faf5ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="274" y="326" font-size="8.9" fill="#6d28d9" text-anchor="middle" font-weight="700">按键停机（线圈断电）</text>
+<text x="274" y="344" font-size="8.5" fill="#0f172a" text-anchor="middle" font-weight="600">锅炉水路【瞬间截断】</text>
+<text x="274" y="361" font-size="8.4" fill="#6d28d9" text-anchor="middle" font-weight="700">粉碗 → 沥水盘【泄压】</text>
+<text x="274" y="379" font-size="8.1" fill="#0f172a" text-anchor="middle" font-weight="600">“噗”一声抽干积水，粉饼干爽!</text>
+<text x="34" y="414" font-size="8.8" fill="#1e293b" text-anchor="start">算笔力气账：58 mm 粉碗面积 A = 26.4 cm²，9 bar 压强相当于</text>
+<text x="34" y="431" font-size="8.8" fill="#1e293b" text-anchor="start">238 公斤重物压在粉饼上！入门玩具机若省掉三通阀，刚停机就拧</text>
+<text x="34" y="448" font-size="8.8" fill="#dc2626" text-anchor="start" font-weight="700">手柄，残余高压水汽就会把滚烫咖啡渣瞬间喷溅得满台面都是！</text>
+<rect x="376" y="262" width="364" height="200" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="390.0" y="276.0" width="322" height="22" rx="11.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="551.0" y="291.0" font-size="9.4" fill="#dc2626" text-anchor="middle" font-weight="600">③ 戳破“20 Bar 智商税”：达西定律与通道效应反转</text>
+<rect x="390.0" y="306.0" width="206.0" height="142.0" rx="7" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<line x1="424.0" y1="424.0" x2="584.0" y2="424.0" stroke="#475569" stroke-width="1.2"/>
+<line x1="424.0" y1="424.0" x2="424.0" y2="326.0" stroke="#475569" stroke-width="1.2"/>
+<text x="420.0" y="357.0" font-size="8.1" fill="#18794e" text-anchor="end" font-weight="700" class="mono">20%</text>
+<text x="420.0" y="399.0" font-size="8.1" fill="#64748b" text-anchor="end" class="mono">14%</text>
+<line x1="424.0" y1="354.0" x2="584.0" y2="354.0" stroke="#18794e" stroke-width="0.9" stroke-dasharray="3,3"/>
+<text x="504.0" y="440.0" font-size="8.1" fill="#0f172a" text-anchor="middle" font-weight="600">研磨度：粗 → 适中 → 过细死堵</text>
+<path d="M 424.0,417.0 L 428.0,410.6 L 432.0,404.8 L 436.0,399.4 L 440.0,394.4 L 444.0,389.8 L 448.0,385.5 L 452.0,381.6 L 456.0,378.0 L 460.0,374.6 L 464.0,371.5 L 468.0,368.7 L 472.0,366.0 L 476.0,363.6 L 480.0,361.4 L 484.0,359.3 L 488.0,357.4 L 492.0,355.6 L 496.0,354.0 L 500.0,352.5 L 504.0,351.1 L 508.0,349.8 L 512.0,348.6 L 516.0,347.5 L 520.0,346.5 L 524.0,345.6 L 528.0,344.7 L 532.0,343.9 L 536.0,343.2 L 540.0,342.5 L 544.0,341.9 L 548.0,341.3 L 552.0,340.8 L 556.0,340.3 L 560.0,339.8 L 564.0,339.4 L 568.0,339.0 L 572.0,338.7 L 576.0,338.4 L 580.0,338.0 L 584.0,337.8" fill="none" stroke="#64748b" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3,3"/>
+<path d="M 424.0,417.0 L 428.0,410.6 L 432.0,404.8 L 436.0,399.4 L 440.0,394.4 L 444.0,389.8 L 448.0,385.5 L 452.0,381.6 L 456.0,378.0 L 460.0,374.6 L 464.0,371.5 L 468.0,368.7 L 472.0,366.0 L 476.0,363.6 L 480.0,361.4 L 484.0,359.3 L 488.0,357.4 L 492.0,355.6 L 496.0,354.0 L 500.0,352.5 L 504.0,351.1 L 508.0,349.8 L 512.0,348.6 L 516.0,347.5 L 520.0,346.5" fill="none" stroke="#18794e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 520.0,346.5 L 524.0,346.6 L 528.0,348.0 L 532.0,350.2 L 536.0,353.3 L 540.0,357.2 L 544.0,361.7 L 548.0,366.9 L 552.0,372.6 L 556.0,379.0 L 560.0,385.9 L 564.0,393.3 L 568.0,401.2 L 572.0,409.7 L 576.0,418.6 L 580.0,427.9 L 584.0,437.7" fill="none" stroke="#dc2626" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="520.0" cy="346.5" r="4.0" fill="#18794e"/>
+<text x="514.0" y="340.5" font-size="8.1" fill="#18794e" text-anchor="middle" font-weight="700">均匀萃取峰</text>
+<text x="539.2" y="408.6" font-size="8.1" fill="#dc2626" text-anchor="end" font-weight="700">通道击穿↓</text>
+<text x="604" y="320" font-size="8.8" fill="#0f172a" text-anchor="start" font-weight="700">Matter (2020) 实证：</text>
+<text x="604" y="338" font-size="8.4" fill="#1e293b" text-anchor="start">• 15–20 bar 蛮力会把</text>
+<text x="604" y="353" font-size="8.4" fill="#dc2626" text-anchor="start" font-weight="600">  粉床压实堵死 (k↓)；</text>
+<text x="604" y="370" font-size="8.4" fill="#1e293b" text-anchor="start">• 高压水专挑最薄弱裂</text>
+<text x="604" y="385" font-size="8.4" fill="#1e293b" text-anchor="start">  缝钻出“虫洞通道”：</text>
+<text x="604" y="400" font-size="8.4" fill="#dc2626" text-anchor="start" font-weight="700">  洞边过萃焦苦、周围</text>
+<text x="604" y="415" font-size="8.4" fill="#dc2626" text-anchor="start" font-weight="700">  干粉欠萃尖酸！</text>
+<text x="604" y="434" font-size="8.5" fill="#18794e" text-anchor="start" font-weight="700">• 6–9 bar 反倒更甜稳!</text>
+</svg>
