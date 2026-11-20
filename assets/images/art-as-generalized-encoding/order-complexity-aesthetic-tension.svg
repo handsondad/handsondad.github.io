@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="458" viewBox="0 0 760 458" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">秩序与复杂度之间审美张力及伯克霍夫审美度量公式示意</title>
+<desc id="desc">说明伯克霍夫 M=O/C 只是对审美张力的历史性形式化尝试，并提醒文化、时代、身体与个人解释会改变秩序和复杂度的感受。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="457" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">美是不是“秩序 / 复杂度”？这是提示，不是审美判决</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">伯克霍夫把审美度量设为秩序与感知复杂度的平衡；它不能解释所有艺术，也揭示了有趣的张力。</text>
+<rect x="40" y="66" width="488" height="352" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<line x1="64.0" y1="372.0" x2="504.0" y2="372.0" stroke="#475569" stroke-width="1.4"/>
+<line x1="64.0" y1="372.0" x2="64.0" y2="112.0" stroke="#475569" stroke-width="1.4"/>
+<text x="46" y="100" font-size="10.0" fill="#475569" text-anchor="start" font-weight="700">感知收益 / 复杂度</text>
+<text x="496" y="396" font-size="10.0" fill="#475569" text-anchor="end">复杂度 C</text>
+<circle cx="122" cy="336" r="20" fill="#ffffff" stroke="#1d6fa5" stroke-width="2"/>
+<text x="122" y="340" font-size="9.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">太程式</text>
+<text x="122" y="376" font-size="8.8" fill="#64748b" text-anchor="middle">秩序高，惊喜不足</text>
+<circle cx="274" cy="278" r="20" fill="#ffffff" stroke="#6d28d9" stroke-width="2"/>
+<text x="274" y="282" font-size="9.0" fill="#6d28d9" text-anchor="middle" font-weight="700">有张力</text>
+<text x="274" y="318" font-size="8.8" fill="#64748b" text-anchor="middle">秩序与意外形成平衡</text>
+<circle cx="436" cy="202" r="20" fill="#ffffff" stroke="#c25014" stroke-width="2"/>
+<text x="436" y="206" font-size="9.0" fill="#c25014" text-anchor="middle" font-weight="700">太混乱</text>
+<text x="436" y="242" font-size="8.8" fill="#64748b" text-anchor="middle">差异多，结构难抓</text>
+<line x1="142.0" y1="330.0" x2="254.0" y2="278.0" stroke="#6d28d9" stroke-width="2.0" stroke-dasharray="4 3"/>
+<line x1="294.0" y1="278.0" x2="416.0" y2="200.0" stroke="#6d28d9" stroke-width="2.0" stroke-dasharray="4 3"/>
+<rect x="536" y="112" width="200" height="260" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="552" y="138" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">最早的形式化尝试</text>
+<text x="552" y="172" font-size="16.0" fill="#6d28d9" text-anchor="start" font-weight="700">M = O / C</text>
+<text x="552" y="198" font-size="9.5" fill="#0f172a" text-anchor="start" font-weight="600">M：审美度量</text>
+<text x="552" y="220" font-size="9.3" fill="#64748b" text-anchor="start">O：秩序、和谐、对称</text>
+<text x="552" y="242" font-size="9.3" fill="#64748b" text-anchor="start">C：感知复杂度与努力</text>
+<text x="552" y="274" font-size="9.5" fill="#0f172a" text-anchor="start" font-weight="700">美不能只被还原成数字：</text>
+<text x="552" y="296" font-size="9.2" fill="#64748b" text-anchor="start">文化、时代、身体与个人</text>
+<text x="552" y="318" font-size="9.2" fill="#64748b" text-anchor="start">都会改变读者看到的秩序。</text>
+<rect x="24" y="392" width="712" height="54" rx="8" fill="#f3e8ff" stroke="#c4b5fd" stroke-width="1"/>
+<text x="38" y="415" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">更稳妥的读法：艺术在“可读的秩序”和“可被惊讶的变化”之间制造张力。</text>
+</svg>

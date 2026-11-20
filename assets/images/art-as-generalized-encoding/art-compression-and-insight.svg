@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="460" viewBox="0 0 760 460" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">世界经验选择编码和读者重构形成压缩预测与顿悟的编码流程</title>
+<desc id="desc">说明艺术通过选择、压缩和结构编码，改变读者对经验的预测和重构，而顿悟来自旧模型与新结构之间的认知重组。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="459" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">艺术为什么像压缩：保留结构，舍弃冗余，但选择也会改变世界</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">好的画、诗、建筑或音乐，把高维经验压成有限符号；读者再用记忆、模型和情绪重构它。</text>
+<rect x="24" y="78" width="712" height="256" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="48" y="112" width="124" height="168" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<rect x="60.0" y="128.0" width="100" height="24" rx="12.0" fill="#ffffff" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="110.0" y="144.3" font-size="9.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">世界</text>
+<text x="110" y="184" font-size="9.7" fill="#0f172a" text-anchor="middle" font-weight="700">景观、声音、情绪、时间</text>
+<line x1="172.0" y1="196.0" x2="212.0" y2="196.0" stroke="#1d6fa5" stroke-width="2.0" marker-end="url(#arr-blue)"/>
+<rect x="236" y="112" width="124" height="168" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<rect x="248.0" y="128.0" width="100" height="24" rx="12.0" fill="#ffffff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="298.0" y="144.3" font-size="9.5" fill="#6d28d9" text-anchor="middle" font-weight="600">选择</text>
+<text x="298" y="184" font-size="9.7" fill="#0f172a" text-anchor="middle" font-weight="700">画哪一刻？留何处？省什么？</text>
+<line x1="360.0" y1="196.0" x2="400.0" y2="196.0" stroke="#6d28d9" stroke-width="2.0" marker-end="url(#arr-blue)"/>
+<rect x="424" y="112" width="124" height="168" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<rect x="436.0" y="128.0" width="100" height="24" rx="12.0" fill="#ffffff" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="486.0" y="144.3" font-size="9.5" fill="#c25014" text-anchor="middle" font-weight="600">编码</text>
+<text x="486" y="184" font-size="9.7" fill="#0f172a" text-anchor="middle" font-weight="700">笔触、词序、和弦、比例、节奏</text>
+<line x1="548.0" y1="196.0" x2="588.0" y2="196.0" stroke="#c25014" stroke-width="2.0" marker-end="url(#arr-blue)"/>
+<rect x="612" y="112" width="124" height="168" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<rect x="624.0" y="128.0" width="100" height="24" rx="12.0" fill="#ffffff" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="674.0" y="144.3" font-size="9.5" fill="#18794e" text-anchor="middle" font-weight="600">重构</text>
+<text x="674" y="184" font-size="9.7" fill="#0f172a" text-anchor="middle" font-weight="700">读者在脑中补全、比较、顿悟</text>
+<text x="380" y="304" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="700">压缩 ≠ 只删数据；压缩也可以是转述、转化与观点的产生。</text>
+<rect x="24" y="354" width="712" height="92" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="38" y="378" font-size="11.0" fill="#0f172a" text-anchor="start" font-weight="700">为何“同一幅画可以让人顿悟”？</text>
+<text x="38" y="400" font-size="10.1" fill="#64748b" text-anchor="start">读者原有模型尚未解释某段经验；作品保留下来的结构恰好与旧模型碰撞。</text>
+<text x="38" y="422" font-size="10.1" fill="#0f172a" text-anchor="start" font-weight="600">旧模型突然重组，新关系可被一眼看见——这就是审美之中可能发生的认知跃迁。</text>
+</svg>

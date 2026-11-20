@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="474" viewBox="0 0 760 474" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">作品读者文化世界与顿悟形成艺术意义循环的四节点图解</title>
+<desc id="desc">以作品、读者、文化和世界四节点说明艺术意义不是作品中预先固定的内容，而是在解释、惯例、经验和历史之间反复循环。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes insightPulse {
+        0% { r: 18px; opacity: .55; }
+        100% { r: 42px; opacity: 0; }
+      }
+      .insight-ring { animation: insightPulse 2.4s ease-out 1.0s 1 both; }
+      @media (prefers-reduced-motion: reduce) {
+        .insight-ring { animation: none; opacity: 0; }
+      }
+</style>
+<rect x="0.5" y="0.5" width="759" height="473" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">艺术不是一句固定答案，而是“作品—读者—世界”之间的循环</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">作品提供结构，读者带来解释，解释又会改变作品的社会与历史位置。</text>
+<circle cx="380" cy="238" r="78" fill="#f3e8ff" stroke="#6d28d9" stroke-width="2"/>
+<text x="380" y="226" font-size="18.0" fill="#6d28d9" text-anchor="middle" font-weight="700">顿悟</text>
+<text x="380" y="250" font-size="9.8" fill="#0f172a" text-anchor="middle" font-weight="600">旧模型突然重组</text>
+<circle cx="380" cy="238" r="18" fill="none" stroke="#6d28d9" stroke-width="2" class="insight-ring"/>
+<rect x="74" y="70" width="208" height="96" rx="10" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="178" y="100" font-size="12.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">作品</text>
+<text x="178" y="130" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="600">留下差异与结构</text>
+<rect x="478" y="70" width="208" height="96" rx="10" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="582" y="100" font-size="12.0" fill="#c25014" text-anchor="middle" font-weight="700">读者</text>
+<text x="582" y="130" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="600">带入记忆与经验</text>
+<rect x="74" y="310" width="208" height="96" rx="10" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="178" y="340" font-size="12.0" fill="#18794e" text-anchor="middle" font-weight="700">文化</text>
+<text x="178" y="370" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="600">提供共同惯例</text>
+<rect x="478" y="310" width="208" height="96" rx="10" fill="#f1f5f9" stroke="#475569" stroke-width="1"/>
+<text x="582" y="340" font-size="12.0" fill="#475569" text-anchor="middle" font-weight="700">世界</text>
+<text x="582" y="370" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="600">给出反例与历史</text>
+<line x1="264.0" y1="118.0" x2="320.0" y2="194.0" stroke="#1d6fa5" stroke-width="2.0" marker-end="url(#arr-blue)"/>
+<line x1="478.0" y1="194.0" x2="522.0" y2="118.0" stroke="#c25014" stroke-width="2.0" marker-end="url(#arr-blue)"/>
+<line x1="478.0" y1="282.0" x2="522.0" y2="358.0" stroke="#475569" stroke-width="2.0" marker-end="url(#arr-blue)"/>
+<line x1="282.0" y1="358.0" x2="320.0" y2="282.0" stroke="#18794e" stroke-width="2.0" marker-end="url(#arr-blue)"/>
+<rect x="24" y="424" width="712" height="38" rx="8" fill="#f3e8ff" stroke="#c4b5fd" stroke-width="1"/>
+<text x="380" y="448" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700">艺术不是把世界“解码成唯一答案”，而是让一个世界从新的结构里回响。</text>
+</svg>

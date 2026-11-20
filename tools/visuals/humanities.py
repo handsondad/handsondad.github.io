@@ -2938,3 +2938,213 @@ _register_daguanlou_couplet()
 _register_poetry_boom_7080s()
 _register_european_name_patterns()
 _register_weiqi_intro_rules()
+
+
+def _register_art_as_generalized_encoding():
+    SUBDIR = "art-as-generalized-encoding"
+
+    def _build_information_ladder():
+        els = []
+        els.extend(header(
+            "艺术到底是什么？先把一幅画和一段文字放回同一条“编码阶梯”",
+            "符号不止是文字：像素、笔触、旋律、动作、建筑与自然痕迹，都可能携带可被解释的信息。",
+        ))
+        lanes = [
+            (78, "物理痕迹", "墨水、像素、振动、土石、光影", BLUE, BLUE_SOFT),
+            (170, "形式模式", "线、色、节奏、比例、密度、留白", PURPLE, PURPLE_SOFT),
+            (262, "可解释符号", "肖像、地图、隐喻、惯例、情绪暗示", ORANGE, ORANGE_SOFT),
+            (354, "个人与文化解释", "记忆、经验、共同背景、阅读语境", GREEN, GREEN_SOFT),
+        ]
+        for y, title, desc, col, soft in lanes:
+            els.append(card(24, y - 42, 712, 74, rx=8, fill=soft, stroke=col))
+            els.append(pill(40, y - 27, title, fg=col, bg="#ffffff", w=130, h=24, size=10))
+            els.append(txt(188, y - 10, desc, 11.0, INK, weight="700"))
+            if y < 354:
+                els.append(_line(370, y + 32, 370, y + 68, stroke=col, sw=1.6, marker="arr-blue"))
+        els.append(card(24, 402, 712, 58, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(38, 424, "文字只是编码方式的一种；图像也未必更含糊。", 11.0, INK, weight="700"))
+        els.append(txt(38, 444, "关键不是“像不像”，而是哪些差异被保留、哪些差异被选择性压缩，以及谁正在解释。", 10.1, MUTED))
+        return figure(
+            474,
+            "物理痕迹形式模式符号解释和文化解释的广义编码阶梯",
+            "把物理材料、形式模式、符号关系、个人与文化解释放在同一条层级图上，说明文字、图像、音乐和建筑都属于广义编码系统。",
+            els,
+        )
+
+    def _build_three_sign_relations():
+        els = []
+        els.extend(header(
+            "图像为什么既像文字，又不只是文字：看清皮尔士的三种符号关系",
+            "肖像、足迹与姓名不是一类符号；艺术作品也常同时把相似、因果痕迹和文化惯例编在一起。",
+        ))
+        items = [
+            ("图标 / Icon", "因“相似”而指向", "肖像、图示、素描", "#1d6fa5", BLUE_SOFT),
+            ("索引 / Index", "因“因果痕迹”而指向", "烟、足迹、照片光痕", "#c25014", ORANGE_SOFT),
+            ("符号 / Symbol", "因“社会惯例”而指向", "文字、旗帜、数字记号", "#6d28d9", PURPLE_SOFT),
+        ]
+        for i, (name, relation, examples, col, soft) in enumerate(items):
+            x = 24 + i * 238
+            els.append(card(x, 78, 222, 282, rx=10, fill=soft, stroke=col))
+            els.append(pill(x + 20, 96, name, fg=col, bg="#ffffff", w=182, h=28, size=10.5))
+            els.append(txt(x + 111, 158, relation, 12.0, col, weight="700", anchor="middle"))
+            els.append(txt(x + 111, 188, examples, 10.5, INK, weight="600", anchor="middle"))
+            cy = 236
+            cx = x + 111
+            els.append(f'<circle cx="{cx}" cy="{cy}" r="42" fill="#ffffff" stroke="{col}" stroke-width="1.8"/>')
+            if i == 0:
+                els.append(_line(cx - 23, cy + 16, cx + 23, cy - 16, stroke=col, sw=4))
+                els.append(f'<circle cx="{cx}" cy="{cy}" r="9" fill="{col}"/>')
+            elif i == 1:
+                els.append(_line(cx - 28, cy + 24, cx + 28, cy - 24, stroke=col, sw=3))
+                els.append(_line(cx - 18, cy - 8, cx + 18, cy - 8, stroke=col, sw=1.2, dash="3 2"))
+            else:
+                els.append(txt(cx, cy + 8, "约定", 14.0, col, weight="700", anchor="middle"))
+            els.append(txt(x + 111, 318, "三者在真实作品中常常混用", 9.3, MUTED, anchor="middle"))
+
+        els.append(card(24, 382, 714, 70, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(38, 406, "一张照片 = 相似（图标） + 光线物理痕迹（索引） + 关于照片证据的阅读惯例（符号）。", 10.2, INK, weight="700"))
+        els.append(txt(38, 430, "解释不是编码末端的附赠功能：符号只有在解释中才形成可理解的意义。", 10.2, MUTED))
+        return figure(
+            466,
+            "皮尔士图标索引符号三种符号关系与一张照片的混合编码图解",
+            "以相似、因果痕迹和社会惯例区分图标、索引、符号，并说明艺术作品中的意义来自符号与解释共同构成。",
+            els,
+        )
+
+    def _build_order_complexity():
+        els = []
+        els.extend(header(
+            "美是不是“秩序 / 复杂度”？这是提示，不是审美判决",
+            "伯克霍夫把审美度量设为秩序与感知复杂度的平衡；它不能解释所有艺术，也揭示了有趣的张力。",
+        ))
+        chart_x, chart_y, chart_w, chart_h = 64, 112, 440, 260
+        els.append(card(chart_x - 24, chart_y - 46, chart_w + 48, chart_h + 92, rx=10))
+        els.append(_line(chart_x, chart_y + chart_h, chart_x + chart_w, chart_y + chart_h, stroke=SLATE, sw=1.4))
+        els.append(_line(chart_x, chart_y + chart_h, chart_x, chart_y, stroke=SLATE, sw=1.4))
+        els.append(txt(chart_x - 18, chart_y - 12, "感知收益 / 复杂度", 10.0, SLATE, weight="700"))
+        els.append(txt(chart_x + chart_w - 8, chart_y + chart_h + 24, "复杂度 C", 10.0, SLATE, anchor="end"))
+        ys = [chart_y + chart_h - 36, chart_y + chart_h - 94, chart_y + chart_h - 170]
+        xs = [chart_x + 58, chart_x + 210, chart_x + 372]
+        labels = [
+            ("太程式", "秩序高，惊喜不足", BLUE),
+            ("有张力", "秩序与意外形成平衡", PURPLE),
+            ("太混乱", "差异多，结构难抓", ORANGE),
+        ]
+        for (x, y, (lab, desc, col)) in zip(xs, ys, labels):
+            els.append(f'<circle cx="{x}" cy="{y}" r="20" fill="#ffffff" stroke="{col}" stroke-width="2"/>')
+            els.append(txt(x, y + 4, lab, 9.0, col, weight="700", anchor="middle"))
+            els.append(txt(x, y + 40, desc, 8.8, MUTED, anchor="middle"))
+        els.append(_line(xs[0] + 20, ys[0] - 6, xs[1] - 20, ys[1], stroke=PURPLE, sw=2.0, dash="4 3"))
+        els.append(_line(xs[1] + 20, ys[1], xs[2] - 20, ys[2] - 2, stroke=PURPLE, sw=2.0, dash="4 3"))
+
+        els.append(card(536, 112, 200, 260, rx=10, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(552, 138, "最早的形式化尝试", 10.8, INK, weight="700"))
+        els.append(txt(552, 172, "M = O / C", 16.0, PURPLE, weight="700"))
+        els.append(txt(552, 198, "M：审美度量", 9.5, INK, weight="600"))
+        els.append(txt(552, 220, "O：秩序、和谐、对称", 9.3, MUTED))
+        els.append(txt(552, 242, "C：感知复杂度与努力", 9.3, MUTED))
+        els.append(txt(552, 274, "美不能只被还原成数字：", 9.5, INK, weight="700"))
+        els.append(txt(552, 296, "文化、时代、身体与个人", 9.2, MUTED))
+        els.append(txt(552, 318, "都会改变读者看到的秩序。", 9.2, MUTED))
+        els.append(card(24, 392, 712, 54, rx=8, fill=PURPLE_SOFT, stroke="#c4b5fd"))
+        els.append(txt(38, 415, "更稳妥的读法：艺术在“可读的秩序”和“可被惊讶的变化”之间制造张力。", 10.5, INK, weight="700"))
+        return figure(
+            458,
+            "秩序与复杂度之间审美张力及伯克霍夫审美度量公式示意",
+            "说明伯克霍夫 M=O/C 只是对审美张力的历史性形式化尝试，并提醒文化、时代、身体与个人解释会改变秩序和复杂度的感受。",
+            els,
+        )
+
+    def _build_compression_prediction():
+        els = []
+        els.extend(header(
+            "艺术为什么像压缩：保留结构，舍弃冗余，但选择也会改变世界",
+            "好的画、诗、建筑或音乐，把高维经验压成有限符号；读者再用记忆、模型和情绪重构它。",
+        ))
+        els.append(card(24, 78, 712, 256, rx=10))
+        stages = [
+            (48, "世界", "景观、声音、情绪、时间", BLUE, BLUE_SOFT),
+            (236, "选择", "画哪一刻？留何处？省什么？", PURPLE, PURPLE_SOFT),
+            (424, "编码", "笔触、词序、和弦、比例、节奏", ORANGE, ORANGE_SOFT),
+            (612, "重构", "读者在脑中补全、比较、顿悟", GREEN, GREEN_SOFT),
+        ]
+        for i, (x, name, desc, col, soft) in enumerate(stages):
+            els.append(card(x, 112, 124, 168, rx=8, fill=soft, stroke=col))
+            els.append(pill(x + 12, 128, name, fg=col, bg="#ffffff", w=100, h=24, size=9.5))
+            lines = desc
+            els.append(txt(x + 62, 184, lines, 9.7, INK, weight="700", anchor="middle"))
+            if i < 3:
+                els.append(_line(x + 124, 196, x + 164, 196, stroke=col, sw=2.0, marker="arr-blue"))
+        els.append(txt(380, 304, "压缩 ≠ 只删数据；压缩也可以是转述、转化与观点的产生。", 10.2, INK, weight="700", anchor="middle"))
+
+        els.append(card(24, 354, 712, 92, rx=8, fill="#f8fafc", stroke=BORDER))
+        els.append(txt(38, 378, "为何“同一幅画可以让人顿悟”？", 11.0, INK, weight="700"))
+        els.append(txt(38, 400, "读者原有模型尚未解释某段经验；作品保留下来的结构恰好与旧模型碰撞。", 10.1, MUTED))
+        els.append(txt(38, 422, "旧模型突然重组，新关系可被一眼看见——这就是审美之中可能发生的认知跃迁。", 10.1, INK, weight="600"))
+        return figure(
+            460,
+            "世界经验选择编码和读者重构形成压缩预测与顿悟的编码流程",
+            "说明艺术通过选择、压缩和结构编码，改变读者对经验的预测和重构，而顿悟来自旧模型与新结构之间的认知重组。",
+            els,
+        )
+
+    def _build_art_as_insight_loop():
+        css = """
+      @keyframes insightPulse {
+        0% { r: 18px; opacity: .55; }
+        100% { r: 42px; opacity: 0; }
+      }
+      .insight-ring { animation: insightPulse 2.4s ease-out 1.0s 1 both; }
+      @media (prefers-reduced-motion: reduce) {
+        .insight-ring { animation: none; opacity: 0; }
+      }"""
+        els = []
+        els.extend(header(
+            "艺术不是一句固定答案，而是“作品—读者—世界”之间的循环",
+            "作品提供结构，读者带来解释，解释又会改变作品的社会与历史位置。",
+        ))
+        cx, cy = 380, 238
+        els.append(f'<circle cx="{cx}" cy="{cy}" r="78" fill="{PURPLE_SOFT}" stroke="{PURPLE}" stroke-width="2"/>')
+        els.append(txt(cx, cy - 12, "顿悟", 18.0, PURPLE, weight="700", anchor="middle"))
+        els.append(txt(cx, cy + 12, "旧模型突然重组", 9.8, INK, weight="600", anchor="middle"))
+        els.append(f'<circle cx="{cx}" cy="{cy}" r="18" fill="none" stroke="{PURPLE}" stroke-width="2" class="insight-ring"/>')
+
+        nodes = [
+            (178, 118, "作品", "留下差异与结构", BLUE, BLUE_SOFT),
+            (582, 118, "读者", "带入记忆与经验", ORANGE, ORANGE_SOFT),
+            (178, 358, "文化", "提供共同惯例", GREEN, GREEN_SOFT),
+            (582, 358, "世界", "给出反例与历史", SLATE, SLATE_SOFT),
+        ]
+        for x, y, title, desc, col, soft in nodes:
+            els.append(card(x - 104, y - 48, 208, 96, rx=10, fill=soft, stroke=col))
+            els.append(txt(x, y - 18, title, 12.0, col, weight="700", anchor="middle"))
+            els.append(txt(x, y + 12, desc, 9.4, INK, weight="600", anchor="middle"))
+
+        els.append(_line(264, 118, 320, 194, stroke=BLUE, sw=2.0, marker="arr-blue"))
+        els.append(_line(478, 194, 522, 118, stroke=ORANGE, sw=2.0, marker="arr-blue"))
+        els.append(_line(478, 282, 522, 358, stroke=SLATE, sw=2.0, marker="arr-blue"))
+        els.append(_line(282, 358, 320, 282, stroke=GREEN, sw=2.0, marker="arr-blue"))
+        els.append(card(24, 424, 712, 38, rx=8, fill=PURPLE_SOFT, stroke="#c4b5fd"))
+        els.append(txt(380, 448, "艺术不是把世界“解码成唯一答案”，而是让一个世界从新的结构里回响。", 10.5, INK, weight="700", anchor="middle"))
+        return figure(
+            474,
+            "作品读者文化世界与顿悟形成艺术意义循环的四节点图解",
+            "以作品、读者、文化和世界四节点说明艺术意义不是作品中预先固定的内容，而是在解释、惯例、经验和历史之间反复循环。",
+            els,
+            extra_css=css,
+        )
+
+    @register(
+        "art-as-generalized-encoding",
+        "艺术到底是什么：图像、文字、音乐与建筑作为广义编码、符号解释、秩序复杂度压缩和顿悟循环",
+        "humanities",
+    )
+    def build_art_as_generalized_encoding():
+        write_svg(SUBDIR, "information-ladder-and-art.svg", _build_information_ladder())
+        write_svg(SUBDIR, "image-text-icon-index-symbol.svg", _build_three_sign_relations())
+        write_svg(SUBDIR, "order-complexity-aesthetic-tension.svg", _build_order_complexity())
+        write_svg(SUBDIR, "art-compression-and-insight.svg", _build_compression_prediction())
+        write_svg(SUBDIR, "art-meaning-cycle-and-aha.svg", _build_art_as_insight_loop())
+
+
+_register_art_as_generalized_encoding()
