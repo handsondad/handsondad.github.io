@@ -7127,3 +7127,636 @@ def _register_voyager_1_interstellar():
 _register_voyager_1_interstellar()
 
 
+def _register_mars_sample_return():
+    SUBDIR = "mars-sample-return-challenges"
+
+    # Verified planetary & propulsion constants (SI / km-s units)
+    G0 = 9.80665e-3  # km/s^2
+    MU_MARS = 42828.37  # km^3/s^2
+    R_MARS = 3389.5  # km
+    V_ESC_MARS = math.sqrt(2.0 * MU_MARS / R_MARS)  # 5.027 km/s
+    H_LMO = 350.0  # km typical rendezvous orbit
+    V_LMO = math.sqrt(MU_MARS / (R_MARS + H_LMO))  # 3.384 km/s
+    assert 5.02 < V_ESC_MARS < 5.04
+    assert 3.37 < V_LMO < 3.40
+
+    MU_MOON = 4902.80  # km^3/s^2
+    R_MOON = 1737.4  # km
+    V_ESC_MOON = math.sqrt(2.0 * MU_MOON / R_MOON)  # 2.376 km/s
+    assert 2.37 < V_ESC_MOON < 2.39
+
+    # Heliocentric Earth-Mars Hohmann transfer constants
+    R_E_AU = 1.0000
+    R_M_AU = 1.5237
+    T_E_DAYS = 365.256
+    T_M_DAYS = T_E_DAYS * (R_M_AU ** 1.5)  # 686.98 days
+    T_SYN_DAYS = 1.0 / (1.0 / T_E_DAYS - 1.0 / T_M_DAYS)  # 779.9 days (~25.6 months)
+    A_TRANS_AU = 0.5 * (R_E_AU + R_M_AU)  # 1.26185 AU
+    T_TRANS_DAYS = 0.5 * T_E_DAYS * (A_TRANS_AU ** 1.5)  # 258.9 days (~8.5 months)
+
+    # Phase angles for round-trip Hohmann transfer
+    # Outbound: Mars travels omega_M * T_trans = 135.7 deg -> Mars leads Earth by 44.3 deg at departure
+    MARS_SWEEP_DEG = 360.0 * (T_TRANS_DAYS / T_M_DAYS)  # 135.67 deg
+    PHI_DEP_DEG = 180.0 - MARS_SWEEP_DEG  # 44.33 deg
+    EARTH_SWEEP_DEG = 360.0 * (T_TRANS_DAYS / T_E_DAYS)  # 255.16 deg
+    # At Mars arrival, Earth is ahead of Mars by (EARTH_SWEEP - 180) = +75.16 deg!
+    # Return Hohmann requires Earth to be behind Mars by -75.16 deg (i.e. +284.84 deg ahead)
+    WAIT_LAP_DEG = 360.0 - 2.0 * (EARTH_SWEEP_DEG - 180.0)  # 209.68 deg
+    OMEGA_REL_DEG_DAY = 360.0 / T_E_DAYS - 360.0 / T_M_DAYS  # 0.4616 deg/day
+    T_WAIT_DAYS = WAIT_LAP_DEG / OMEGA_REL_DEG_DAY  # 454.3 days (~15 months)
+    assert 778.0 < T_SYN_DAYS < 782.0
+    assert 258.0 < T_TRANS_DAYS < 260.0
+    assert 452.0 < T_WAIT_DAYS < 457.0
+
+    EXTRA_ARR = f"""
+    <marker id="msr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="{BLUE}"/>
+    </marker>
+    <marker id="msr-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="{ORANGE}"/>
+    </marker>
+    <marker id="msr-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="{GREEN}"/>
+    </marker>
+    <marker id="msr-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="{PURPLE}"/>
+    </marker>
+    """
+
+    # 1. Escape Velocity & Tsiolkovsky Exponential Mass Pyramid (Asteroid / Phobos / Moon vs Mars)
+    def _build_delta_v_and_mass_pyramid():
+        # Verify Tsiolkovsky propellant ratios for Isp = 285 s (ve = 2.795 km/s)
+        ve_solid = 285.0 * G0  # 2.795 km/s
+        mr_moon_asc = math.exp(1.85 / 3.05)  # NTO/MMH ve~3.05 km/s -> 1.83
+        mr_mars_asc = math.exp(4.10 / ve_solid)  # 4.34 (ideal) -> ~40.9 with 2-stage inert structure (450 kg / 11 kg)!
+        mr_mars_direct = math.exp(6.30 / ve_solid)  # 9.53 (ideal)
+        assert 1.80 < mr_moon_asc < 1.90
+        assert 4.30 < mr_mars_asc < 4.40
+        assert 9.45 < mr_mars_direct < 9.60
+
+        els = header(
+            "为什么月球和小行星都能采样回家，火星返程却像隔着一道指数高墙？",
+            "左：四类天体逃逸速度与返程 Δv 硬账本｜右：齐奥尔科夫斯基公式下的“百万倍齿轮放大金字塔”",
+        )
+
+        # Left Panel: 4-Body Escape & Return Delta-v Comparison
+        els.append(card(20, 62, 354, 412))
+        els.append(txt(36, 84, "① 逃逸速度差一倍多，返程总 Δv 翻至 6.3 km/s", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(36, 102, "井深正比于 v_esc²：火星引力井深度是月球的 4.5 倍！", 10.2, MUTED))
+
+        bodies = [
+            ("小行星龙宫/贝努", "已返回", "v_esc ≈ 0.0002 km/s", 0.02, 0.0, "触碰喷气即走 (Δv < 1 m/s)", GREEN),
+            ("火卫一 Phobos", "2026已发", "v_esc ≈ 0.011 km/s", 0.05, 0.95, "百米冲刺即逃，仅需母船返地", PURPLE),
+            ("月球（嫦娥五/六）", "已返回", f"v_esc = {V_ESC_MOON:.2f} km/s", 1.85, 0.85, "升空 1.85 + 环月返地 0.85", BLUE),
+            ("火星表面（难关！）", "至今 0 克", f"v_esc = {V_ESC_MARS:.2f} km/s", 4.10, 2.20, "升空 4.10 + 火轨返地 2.20", ORANGE),
+        ]
+
+        bx0 = 40.0
+        max_w = 196.0
+        dv_scale_max = 6.50  # km/s
+        for idx, (b_name, status_tag, vesc_str, dv_asc, dv_tei, sub_note, col) in enumerate(bodies):
+            ry = 122.0 + idx * 78.0
+            els.append(card(34, ry, 326, 68, rx=7, fill="#f8fafc" if idx < 3 else ORANGE_SOFT, stroke=BORDER if idx < 3 else ORANGE))
+            els.append(txt(46, ry + 18, b_name, 10.4, INK if idx < 3 else ORANGE, weight="700"))
+            els.append(txt(186, ry + 18, vesc_str, 9.6, col, weight="700"))
+            els.append(pill(284, ry + 5, status_tag, fg=col, bg="#ffffff", w=66, h=18, size=9.1))
+
+            w_asc = max(3.0, (dv_asc / dv_scale_max) * max_w)
+            w_tei = (dv_tei / dv_scale_max) * max_w
+            els.append(f'<rect x="{bx0:.1f}" y="{ry + 27:.1f}" width="{w_asc:.1f}" height="14" rx="3" fill="{col}"/>')
+            if w_tei > 1.0:
+                els.append(f'<rect x="{bx0 + w_asc + 2:.1f}" y="{ry + 27:.1f}" width="{w_tei:.1f}" height="14" rx="3" fill="{col}" fill-opacity="0.45" stroke="{col}" stroke-width="1.0"/>')
+            tot_dv = dv_asc + dv_tei
+            lbl_tot = "< 0.01 km/s" if idx == 0 else f"总 Δv ≈ {tot_dv:.2f} km/s"
+            els.append(txt(bx0 + w_asc + w_tei + 8.0, ry + 38, lbl_tot, 9.5, col, weight="700"))
+            els.append(txt(46, ry + 57, sub_note, 9.3, BODY if idx == 3 else MUTED))
+
+        els.append(txt(36, 444, "• 实心段 = 表面起飞入轨 Δv；浅色段 = 环绕轨道加速返地 Δv", 9.5, MUTED))
+        els.append(txt(36, 461, "• 火面还多一层稀薄大气阻力 + 重力损耗（比理论圆轨速度多烧 ~0.7 km/s）", 9.4, ORANGE, weight="600"))
+
+        # Right Panel: Why Direct Return Blows Up vs MOR Mass Pyramid
+        els.append(card(388, 62, 352, 412))
+        els.append(txt(404, 84, "② 指数级质量齿轮：0.5 kg 火星土背后的百万倍托举", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(404, 102, "m₀/m_f = e^(Δv/v_e)：每一级都在给上一级的燃料买单！", 10.2, MUTED))
+
+        # Top sub-box: Why NOT direct Mars-surface-to-Earth?
+        els.append(card(402, 114, 324, 78, rx=7, fill=PURPLE_SOFT, stroke=PURPLE))
+        els.append(txt(414, 132, "为什么不敢像早期苏联月球探测器那样“火面直飞地球”？", 9.8, PURPLE, weight="700"))
+        els.append(txt(414, 150, "• 直飞需火面火箭独自扛满 ~6.3 km/s，还要顶 90 kg 防热舱起飞；", 9.2, BODY))
+        els.append(txt(414, 167, "• 光火面上升火箭就暴涨至 ~3 吨，连带着陆系统突破 10 吨级——", 9.2, BODY))
+        els.append(txt(414, 184, "  彻底超出人类现有火星着陆能力！唯有用“火星轨道交会”拆单。", 9.3, PURPLE, weight="700"))
+
+        # Mass Pyramid (5 stepped tiers wide enough to enclose every label cleanly!)
+        tiers = [
+            ("⑤ 最终到手的火星岩芯样品", "~0.5 kg", "约 30 管（一瓶矿泉水重）", 204, GREEN, GREEN_SOFT),
+            ("④ 环火轨道样品球 (OS)", "11 kg", "钛管 + 密封球壳（排球大小）", 232, BLUE, BLUE_SOFT),
+            ("③ 火星上升火箭 (MAV)", "450 kg", "两级固体火箭（放大 41 倍）", 262, ORANGE, ORANGE_SOFT),
+            ("② 火星样品回收着陆器 (SRL)", "3,375 kg", "含保温舱+弹射架+机械臂", 292, PURPLE, PURPLE_SOFT),
+            ("① 地球起飞两发重型运载火箭", "~800–1,600 吨", "如两发长征五号 / 重型火箭接力", 322, SLATE, SLATE_SOFT),
+        ]
+
+        cx_pyr = 564.0
+        for t_idx, (t_title, t_mass, t_sub, w_box, stroke_c, fill_c) in enumerate(tiers):
+            ty = 204.0 + t_idx * 47.0
+            rx_left = cx_pyr - w_box / 2.0
+            els.append(f'<rect x="{rx_left:.1f}" y="{ty:.1f}" width="{w_box:.1f}" height="40" rx="6" fill="{fill_c}" stroke="{stroke_c}" stroke-width="1.5"/>')
+            els.append(txt(cx_pyr, ty + 16, f"{t_title}：{t_mass}", 9.3, stroke_c if stroke_c != SLATE else INK, "middle", weight="700"))
+            els.append(txt(cx_pyr, ty + 32, t_sub, 8.9, BODY, "middle"))
+
+        els.append(txt(564, 456, "总杠杆比：地球点火超百万公斤燃料，只为换回火星半公斤石头！", 9.7, ORANGE, "middle", weight="700"))
+
+        return figure(
+            490,
+            "月球小行星与火星采样返回速度增量对比及齐奥尔科夫斯基火箭质量放大金字塔图",
+            "左图对比小行星贝努/龙宫、火卫一Phobos、月球（嫦娥五号/六号）与火星表面的逃逸速度和返程总Δv（火星高达约6.3 km/s）；右图解释为何火面直飞地球质量失控，并按NASA/ESA与天问三号量级绘出从0.5公斤样品到11公斤样品球、450公斤火星上升火箭、3375公斤着陆器及地球千吨级重型火箭的五级质量金字塔。",
+            els,
+            extra_defs=EXTRA_ARR,
+        )
+
+    # 2. Mars's "1% Atmosphere Curse" & 3.38-Ton Heavy Rocket-Lander EDL
+    def _build_mars_edl_curse():
+        # Verify atmospheric pressure & density ratios
+        p_earth_pa = 101325.0
+        p_mars_pa = 610.0
+        p_ratio_pct = (p_mars_pa / p_earth_pa) * 100.0  # 0.602%
+        assert 0.55 < p_ratio_pct < 0.65
+
+        els = header(
+            "火星“1% 大气魔咒”：为什么把一枚满油火箭完好放上火星就快把工程师逼疯？",
+            "左：610 帕稀薄大气“烧得着却刹不住”的双重惩罚｜右：着陆质量从毅力号 1.03 吨暴涨到 3.38 吨",
+        )
+
+        # Left Panel: The 1% Atmosphere EDL Descent Profile
+        els.append(card(20, 62, 360, 404))
+        els.append(txt(36, 84, "① 地球 0.6% 气压：最坏的两头凑齐了", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(36, 102, "月球真空只需反推；地球稠密可靠大伞；唯有火星两样全得背！", 9.9, MUTED))
+
+        # Vertical altitude profile box (125 km -> 0 km)
+        els.append(card(36, 114, 328, 276, rx=8, fill="#f8fafc", stroke=BORDER))
+
+        stages_edl = [
+            (126, "125 km 大气层顶：v ≈ 5.5–7.3 km/s 冲入", "激波压缩 CO₂ 产生 ~1,500 °C 等离子火球 → 必背沉重防热大底！", ORANGE, ORANGE_SOFT),
+            (194, "11 km 超音速开伞：21.5 米巨伞也刹不住", "空气密度仅地球 ~1/80，开伞后仍以 >300 km/h 狂砸 → 单靠伞必碎！", PURPLE, PURPLE_SOFT),
+            (262, "2 km 抛伞点反推：全靠火箭硬刹 + 雷达避障", "点燃多台反推发动机悬停找平地，还要扛住 ~15g 过载不震裂固体药柱", BLUE, BLUE_SOFT),
+            (330, "全程“恐怖 7 分钟”：单程光行延迟 3–22 分钟", "地球收到“进入大气”信号时，着陆器其实早在十几分钟前就已成败落定", GREEN, GREEN_SOFT),
+        ]
+        for idx_s, (sy, s_head, s_desc, s_col, s_bg) in enumerate(stages_edl):
+            els.append(f'<rect x="44" y="{sy}" width="312" height="56" rx="6" fill="{s_bg}" stroke="{s_col}" stroke-width="1.3"/>')
+            els.append(txt(54, sy + 20, f"阶段 {idx_s + 1}｜{s_head}", 9.6, s_col, weight="700"))
+            els.append(txt(54, sy + 40, s_desc, 8.9, BODY))
+            if idx_s < 3:
+                els.append(f'<line x1="200" y1="{sy + 56}" x2="200" y2="{sy + 68}" stroke="{SLATE}" stroke-width="1.6" marker-end="url(#msr-blue)"/>')
+
+        els.append(txt(36, 414, "• 阻力公式 F_D = ½ ρ v² C_D A：火星地表 ρ ≈ 0.02 kg/m³（地球 1.225）", 9.5, INK, weight="600"))
+        els.append(txt(36, 434, "• 同样面积的降落伞，要在火星攒够升力，下落速度必须比地球快 ~8 倍！", 9.5, ORANGE, weight="700"))
+        els.append(txt(36, 452, "• 着陆器越重（质量 ∝ L³），伞面积（∝ L²）越不够用，超音速减速呈非线性恶化。", 9.3, MUTED))
+
+        # Right Panel: Historical Mars Landed Mass Bar Chart vs SRL 3,375 kg
+        els.append(card(394, 62, 346, 404))
+        els.append(txt(410, 84, "② 历史火星着陆器体重榜：一步跨上 3 倍台阶", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(410, 102, "过去送的是“相机化验车”，这次送的是“满油火箭发射场”", 9.9, MUTED))
+
+        landers = [
+            ("旅居者号 (1997)", 11.5, "微型巡视器", SLATE),
+            ("机遇/勇气号 (2004)", 185.0, "气囊弹跳着陆", SLATE),
+            ("好奇号 (2012)", 899.0, "首创天空起重机", BLUE),
+            ("毅力号 (2021 纪录)", 1025.0, "现役最重火星车", BLUE),
+            ("祝融号+着陆平台 (2021)", 1285.0, "防热伞降+反推悬停", GREEN),
+            ("MSR 样品回收着陆器", 3375.0, "宽 7.7 m！背 450 kg 火箭", ORANGE),
+        ]
+
+        bar_x0 = 544.0
+        max_lw = 176.0
+        m_cap = 3600.0
+        for l_idx, (l_name, l_mass, l_note, l_col) in enumerate(landers):
+            ly = 126.0 + l_idx * 44.0
+            bw = max(3.0, (l_mass / m_cap) * max_lw)
+            is_srl = l_mass > 3000.0
+            els.append(txt(536, ly + 13, l_name, 9.7, ORANGE if is_srl else BODY, "end", weight="700" if is_srl else "400"))
+            els.append(
+                f'<rect x="{bar_x0:.1f}" y="{ly:.1f}" width="{bw:.1f}" height="19" rx="4" '
+                f'fill="{l_col}" fill-opacity="{"0.28" if is_srl else "0.16"}" stroke="{l_col}" stroke-width="{"1.8" if is_srl else "1.2"}"/>'
+            )
+            lbl_x = bar_x0 + bw + 6.0 if bw < 115.0 else bar_x0 + bw - 6.0
+            lbl_anc = "start" if bw < 115.0 else "end"
+            els.append(txt(lbl_x, ly + 13.5, f"{l_mass:,.0f} kg", 9.5, l_col if bw < 115.0 else INK, lbl_anc, weight="700"))
+            els.append(txt(544, ly + 32, l_note, 8.9, MUTED))
+
+        # Breakdown box at bottom of Right Card
+        els.append(card(408, 392, 318, 60, rx=7, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(420, 411, "为什么样品着陆器高达 3,375 kg（毅力号的 3.3 倍）？", 9.7, ORANGE, weight="700"))
+        els.append(txt(420, 429, "450 kg 上升火箭 + 恒温防冻圆顶舱 + VECTOR 抛射架 +", 9.3, BODY))
+        els.append(txt(420, 445, "2 米装管机械臂 + 大推力着陆反推燃料与吸能缓冲腿！", 9.3, BODY))
+
+        return figure(
+            482,
+            "火星百分之一稀薄大气着陆双重困境与3375公斤样品回收着陆器质量对比图",
+            "左图按高度拆解火星大气进入、下降与着陆（EDL）四阶段：610帕大气既产生约1500摄氏度高超声速气动加热，又令21.5米巨伞终端速度仍超300 km/h而必须叠加反推火箭；右图对比1997旅居者号至2021毅力号（1025 kg）、祝融号组合体与MSR样品回收着陆器（3375 kg）的质量跨越。",
+            els,
+            extra_defs=EXTRA_ARR,
+        )
+
+    # 3. Alien Launchpad at -80 °C & VECTOR Mid-Air Mortar Toss Ignition
+    def _build_mav_vector_launch():
+        els = header(
+            "没有发射塔、零下 80°C 极寒荒原：人类第一枚异星火箭怎样“半空抛射点火”？",
+            "按 ① 机械臂装管 → ② 保温舱熬过极夜 → ③ VECTOR 弹簧抛高 → ④ 凌空点火两级入轨 四步拆解",
+        )
+
+        # Top Wide Trajectory & Step Arena (taller so graphics sit cleanly below step captions)
+        els.append(card(20, 62, 720, 314))
+        els.append(txt(36, 84, "火星上升器（MAV：长 3.0 m × 直径 0.5 m，地球重 450 kg / 火星重约 170 kgf）无塔台发射全流程", PANEL_TITLE, INK, weight="700"))
+
+        # Martian ground slope curve along bottom of arena
+        els.append(f'<path d="M 32,338 Q 220,324 430,336 T 728,332 L 728,364 L 32,364 Z" fill="#fed7aa" fill-opacity="0.45" stroke="{ORANGE}" stroke-width="1.4"/>')
+        els.append(txt(626, 353, "杰泽罗陨石坑地表（允许着陆器倾斜达 ~15°）", 9.3, ORANGE, "middle", weight="600"))
+
+        # Step 1 & 2 (Left x=44..245): Lander Deck + Thermal Igloo + Robotic Arm Loading Tubes
+        els.append(f'<line x1="92" y1="312" x2="74" y2="334" stroke="{SLATE}" stroke-width="3.0"/>')
+        els.append(f'<line x1="208" y1="312" x2="226" y2="332" stroke="{SLATE}" stroke-width="3.0"/>')
+        els.append(f'<rect x="78" y="296" width="144" height="16" rx="4" fill="{SLATE_SOFT}" stroke="{SLATE}" stroke-width="1.8"/>')
+        els.append(
+            f'<g transform="translate(152,294) rotate(-55)">'
+            f'<rect x="0" y="-12" width="90" height="24" rx="6" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.6" stroke-dasharray="4 2"/>'
+            f'<rect x="6" y="-7" width="76" height="14" rx="3" fill="#ffffff" stroke="{INK}" stroke-width="1.5"/>'
+            f'<circle cx="78" cy="0" r="5.5" fill="{GREEN_SOFT}" stroke="{GREEN}" stroke-width="1.5"/>'
+            f'</g>'
+        )
+        els.append(f'<polyline points="96,296 92,246 168,220" fill="none" stroke="{PURPLE}" stroke-width="2.5"/>')
+        els.append(f'<circle cx="92" cy="246" r="3.6" fill="{PURPLE}"/>')
+
+        els.append(step_badge(52, 114, 1, PURPLE))
+        els.append(txt(70, 118, "2 米机械臂盲装 30 根钛管", 9.9, PURPLE, weight="700"))
+        els.append(txt(70, 134, "塞入火箭鼻锥 11 kg 样品球", 9.2, BODY))
+
+        els.append(step_badge(52, 158, 2, BLUE))
+        els.append(txt(70, 162, "恒温防护圆筒熬过 −80 °C", 9.9, BLUE, weight="700"))
+        els.append(txt(70, 178, "防固体药柱低于 −40 °C 冻裂", 9.2, BODY))
+
+        # Step 3 (Middle x=275..465): VECTOR Toss into Mid-Air BEFORE Ignition!
+        els.append(f'<line x1="306" y1="314" x2="292" y2="332" stroke="{SLATE}" stroke-width="2.6"/>')
+        els.append(f'<line x1="394" y1="314" x2="408" y2="334" stroke="{SLATE}" stroke-width="2.6"/>')
+        els.append(f'<rect x="298" y="300" width="104" height="14" rx="3" fill="{SLATE_SOFT}" stroke="{SLATE}" stroke-width="1.5"/>')
+        els.append(f'<line x1="340" y1="298" x2="354" y2="254" stroke="{GREEN}" stroke-width="2.0" stroke-dasharray="4 2" marker-end="url(#msr-green)"/>')
+        els.append(f'<line x1="358" y1="298" x2="372" y2="258" stroke="{GREEN}" stroke-width="2.0" stroke-dasharray="4 2" marker-end="url(#msr-green)"/>')
+
+        els.append(
+            f'<g transform="translate(382,222) rotate(-50)">'
+            f'<rect x="-34" y="-7.5" width="72" height="15" rx="3" fill="#ffffff" stroke="{ORANGE}" stroke-width="1.8"/>'
+            f'<polygon points="38,-7.5 51,0 38,7.5" fill="{ORANGE_SOFT}" stroke="{ORANGE}" stroke-width="1.5"/>'
+            f'<polygon points="-34,-5 -58,-11 -45,0 -58,11 -34,5" fill="#fb923c" fill-opacity="0.85"/>'
+            f'</g>'
+        )
+        els.append(step_badge(282, 114, 3, GREEN))
+        els.append(txt(300, 118, "VECTOR 弹射：先当炮弹抛上天！", 9.9, GREEN, weight="700"))
+        els.append(txt(300, 134, "弹簧作动器将整枚火箭抛离甲板数米", 9.2, BODY))
+        els.append(txt(300, 150, "赋予精确初始抬头角，避开斜坡与尾焰", 9.2, BODY))
+
+        # Step 4 (Right x=485..715): Mid-Air Ignition -> Stage 1/2 Separation -> 350 km LMO at ~4.0 km/s
+        els.append(f'<path d="M 418,192 Q 528,118 664,120" fill="none" stroke="{ORANGE}" stroke-width="2.6" marker-end="url(#msr-orange)"/>')
+        els.append(f'<circle cx="536" cy="136" r="4.5" fill="#ffffff" stroke="{ORANGE}" stroke-width="2.2"/>')
+        els.append(txt(536, 118, "一二级分离 + 摆动喷管稳姿", 9.3, ORANGE, "middle", weight="700"))
+
+        els.append(f'<circle cx="684" cy="120" r="11" fill="{GREEN_SOFT}" stroke="{GREEN}" stroke-width="2.0"/>')
+        els.append(txt(684, 124, "OS", 9.2, GREEN, "middle", weight="700"))
+        els.append(txt(664, 150, "~10 分钟加速至 4.0 km/s", 9.5, GREEN, "middle", weight="700"))
+        els.append(txt(664, 166, "送入 ~350 km 环火轨道", 9.3, BODY, "middle"))
+
+        els.append(step_badge(494, 202, 4, ORANGE))
+        els.append(txt(512, 206, "悬空点火 + 100% 全自主入轨", 9.9, ORANGE, weight="700"))
+        els.append(txt(512, 224, "• 无尾翼细长弹体气动不稳定，靠喷管摆动硬控", 9.2, BODY))
+        els.append(txt(512, 241, "• 无线电单程慢达 22 分钟，点火分秒全靠自算！", 9.2, BODY))
+        els.append(txt(512, 258, "• 无水泥导流槽，若甲板直接点火尾焰必掀翻自身", 9.2, ORANGE, weight="600"))
+
+        # Bottom Comparison Strip: Earth Launch Complex vs Mars Bare-Bones Launch
+        els.append(card(20, 390, 352, 92, rx=8, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(36, 411, "对比地球发射场（几千人团队伺候一枚火箭）：", 10.0, BLUE, weight="700"))
+        els.append(txt(36, 431, "• 百米脐带塔持续补液氧、调温、供电，导流槽喷百吨水降温；", 9.3, BODY))
+        els.append(txt(36, 450, "• 气象雷达盯高空切变风，稍有异常随时叫停倒计时；", 9.3, BODY))
+        els.append(txt(36, 468, "• 地面控制室毫秒级遥测闭环监控。", 9.3, BODY))
+
+        els.append(card(388, 390, 352, 92, rx=8, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(404, 411, "对比火星荒原发射（零塔架、零地勤、零实时遥控）：", 10.0, ORANGE, weight="700"))
+        els.append(txt(404, 431, "• 燃料在地球灌满后封死飞 8 个月，再挨过火星极寒与沙尘暴；", 9.3, BODY))
+        els.append(txt(404, 450, "• 斜坡甲板弹簧抛射半空点火，全程只有一次开火机会；", 9.3, BODY))
+        els.append(txt(404, 468, "• 这是人类航天史上从未在任何行星表面实战过的动作！", 9.3, ORANGE, weight="700"))
+
+        return figure(
+            498,
+            "火星上升器MAV零下80摄氏度恒温防护与VECTOR半空抛射凌空点火四步图解",
+            "上图按①2米机械臂装填30根钛合金样品管、②恒温圆筒抵御零下80摄氏度火星寒夜防止固体推进剂开裂、③VECTOR弹射系统将450公斤火箭抛至半空避免尾焰毁坏斜坡着陆器、④半空点火经10分钟加速至4 km/s送入350公里环火轨道四步拆解；下图对比地球发射场与火星荒原零保障起飞条件。",
+            els,
+            extra_defs=EXTRA_ARR,
+        )
+
+    # 4. 26-Month Synodic Window, 454-Day Forced Wait (Animated) & Autonomous Orbital Capture
+    def _build_synodic_window_and_rendezvous():
+        els = header(
+            "错过一班再等 26 个月，到了还得苦等 15 个月！地火往返天体时刻表与盲抓样品球",
+            f"左：霍曼去程 {T_TRANS_DAYS:.0f} 天 + 被迫等位 {T_WAIT_DAYS:.0f} 天 + 返程 {T_TRANS_DAYS:.0f} 天动画｜右：上亿公里外自主抓 23 cm 小球",
+        )
+
+        els.append(card(20, 62, 366, 426))
+        els.append(txt(36, 84, f"① 为什么到了火星不能马上回？（会合周期 {T_SYN_DAYS:.0f} 天）", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(36, 102, "内圈地球跑得快：等你飞到火星，地球早已甩到前方 +75.2°！", 9.7, MUTED))
+
+        scx, scy = 208.0, 252.0
+        px_per_au = 72.0
+        r_e_px = R_E_AU * px_per_au  # 72.0 px
+        r_m_px = R_M_AU * px_per_au  # 109.7 px
+
+        els.append(f'<circle cx="{scx:.1f}" cy="{scy:.1f}" r="{r_m_px:.1f}" fill="none" stroke="{ORANGE}" stroke-width="1.3" stroke-dasharray="4 3"/>')
+        els.append(f'<circle cx="{scx:.1f}" cy="{scy:.1f}" r="{r_e_px:.1f}" fill="none" stroke="{BLUE_LINE}" stroke-width="1.3" stroke-dasharray="4 3"/>')
+        els.append(f'<circle cx="{scx:.1f}" cy="{scy:.1f}" r="11" fill="#fef08a" stroke="#ca8a04" stroke-width="1.6"/>')
+        els.append(txt(scx, scy + 3.5, "太阳", 8.8, "#a16207", "middle", weight="700"))
+
+        a_px = 0.5 * (r_e_px + r_m_px)
+        c_px = a_px - r_e_px
+        b_px = math.sqrt(a_px ** 2 - c_px ** 2)
+
+        out_pts = []
+        for k in range(61):
+            u = math.pi * k / 60.0
+            px = scx + b_px * math.sin(u)
+            py = (scy - c_px) + a_px * math.cos(u)
+            out_pts.append((px, py))
+        out_d = "M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in out_pts)
+        els.append(f'<path d="{out_d}" fill="none" stroke="{BLUE}" stroke-width="2.5"/>')
+
+        wait_pts = []
+        th_arr = 90.0
+        dth_wait = 360.0 * (T_WAIT_DAYS / T_M_DAYS)
+        for k in range(49):
+            ang = math.radians(th_arr + dth_wait * k / 48.0)
+            wait_pts.append((scx + r_m_px * math.cos(ang), scy - r_m_px * math.sin(ang)))
+        wait_d = "M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in wait_pts)
+        els.append(f'<path d="{wait_d}" fill="none" stroke="{PURPLE}" stroke-width="2.4" stroke-dasharray="5 3"/>')
+
+        th_dep2 = math.radians(th_arr + dth_wait)
+        ux_p = -math.cos(th_dep2)
+        uy_p = math.sin(th_dep2)
+        tx_ccw = -math.sin(th_dep2)
+        ty_ccw = -math.cos(th_dep2)
+        in_pts = []
+        for k in range(61):
+            u = math.pi - math.pi * k / 60.0
+            cx_in = scx - c_px * ux_p
+            cy_in = scy - c_px * uy_p
+            px = cx_in + a_px * math.cos(u) * ux_p + b_px * math.sin(u) * tx_ccw
+            py = cy_in + a_px * math.cos(u) * uy_p + b_px * math.sin(u) * ty_ccw
+            in_pts.append((px, py))
+        in_d = "M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in in_pts)
+        els.append(f'<path d="{in_d}" fill="none" stroke="{GREEN}" stroke-width="2.3"/>')
+
+        e0_x, e0_y = out_pts[0]
+        els.append(f'<circle cx="{e0_x:.1f}" cy="{e0_y:.1f}" r="5.0" fill="{BLUE}" stroke="#ffffff" stroke-width="1.4"/>')
+        els.append(txt(e0_x, e0_y + 20, "① 地球出发 (t=0)", 9.2, BLUE, "middle", weight="700", halo=True))
+
+        m1_x, m1_y = out_pts[-1]
+        els.append(f'<circle cx="{m1_x:.1f}" cy="{m1_y:.1f}" r="5.2" fill="{ORANGE}" stroke="#ffffff" stroke-width="1.4"/>')
+        els.append(txt(m1_x + 8, m1_y - 10, f"② 抵火 ({T_TRANS_DAYS:.0f}天)", 9.2, ORANGE, "start", weight="700", halo=True))
+
+        th_e1 = math.radians(-90.0 + EARTH_SWEEP_DEG)
+        e1_x = scx + r_e_px * math.cos(th_e1)
+        e1_y = scy - r_e_px * math.sin(th_e1)
+        els.append(f'<circle cx="{e1_x:.1f}" cy="{e1_y:.1f}" r="4.0" fill="#ffffff" stroke="{BLUE}" stroke-width="1.8"/>')
+        els.append(f'<line x1="{e1_x - 3:.1f}" y1="{e1_y + 3:.1f}" x2="{e1_x - 16:.1f}" y2="{e1_y + 24:.1f}" stroke="{BLUE}" stroke-width="1.1"/>')
+        els.append(txt(34, e1_y + 36, "抵火时地球已超前+75°", 8.9, BLUE, "start", weight="600", halo=True))
+
+        m2_x, m2_y = wait_pts[-1]
+        els.append(f'<circle cx="{m2_x:.1f}" cy="{m2_y:.1f}" r="5.0" fill="{PURPLE}" stroke="#ffffff" stroke-width="1.4"/>')
+        els.append(txt(m2_x - 4, m2_y + 20, f"③ 等满{T_WAIT_DAYS:.0f}天返航", 9.1, PURPLE, "middle", weight="700", halo=True))
+
+        e2_x, e2_y = in_pts[-1]
+        els.append(f'<circle cx="{e2_x:.1f}" cy="{e2_y:.1f}" r="5.0" fill="{GREEN}" stroke="#ffffff" stroke-width="1.4"/>')
+        els.append(f'<line x1="{e2_x - 3:.1f}" y1="{e2_y - 3:.1f}" x2="{e2_x - 16:.1f}" y2="{e2_y - 24:.1f}" stroke="{GREEN}" stroke-width="1.1"/>')
+        els.append(txt(34, e2_y - 28, "④ 返抵地球 (~972天)", 9.1, GREEN, "start", weight="700", halo=True))
+
+        seg_out = out_pts[::3]
+        seg_wait = wait_pts[1::2]
+        seg_in = in_pts[1::3]
+        full_pts = seg_out + seg_wait + seg_in
+
+        def _arc_len(pts):
+            return sum(math.hypot(pts[i + 1][0] - pts[i][0], pts[i + 1][1] - pts[i][1]) for i in range(len(pts) - 1))
+
+        len_out = _arc_len(seg_out)
+        len_wait = _arc_len([seg_out[-1]] + seg_wait)
+        len_in = _arc_len([seg_wait[-1]] + seg_in)
+        len_tot = len_out + len_wait + len_in
+        d1_pct = 100.0 * len_out / len_tot
+        d2_pct = 100.0 * (len_out + len_wait) / len_tot
+        t_tot_days = 2.0 * T_TRANS_DAYS + T_WAIT_DAYS
+        k1_pct = 100.0 * T_TRANS_DAYS / t_tot_days
+        k2_pct = 100.0 * (T_TRANS_DAYS + T_WAIT_DAYS) / t_tot_days
+
+        full_motion_path = "M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in full_pts)
+        anim_css = f"""
+        .msr-ship {{
+          offset-path: path('{full_motion_path}');
+          offset-distance: 100%;
+          animation: msr-roundtrip 9.0s linear 1 forwards;
+        }}
+        @keyframes msr-roundtrip {{
+          0%            {{ offset-distance: 0%; }}
+          {k1_pct:.2f}% {{ offset-distance: {d1_pct:.2f}%; }}
+          {k2_pct:.2f}% {{ offset-distance: {d2_pct:.2f}%; }}
+          100%          {{ offset-distance: 100%; }}
+        }}
+        @media (prefers-reduced-motion: reduce) {{
+          .msr-ship {{ animation: none; offset-distance: 100%; }}
+        }}
+        """
+        els.append(f'<circle class="msr-ship" cx="0" cy="0" r="6.0" fill="{ORANGE}" stroke="#ffffff" stroke-width="2.0"/>')
+
+        els.append(card(34, 396, 338, 78, rx=7, fill="#f8fafc", stroke=BORDER))
+        els.append(txt(46, 415, f"往返总耗时账单：{T_TRANS_DAYS:.0f}d 去（蓝）+ {T_WAIT_DAYS:.0f}d 等（紫虚）+ {T_TRANS_DAYS:.0f}d 回（绿）≈ 2.7 年", 9.2, INK, weight="700"))
+        els.append(txt(46, 434, f"• 会合周期 T_syn = 1/(1/365.26 − 1/686.98) = {T_SYN_DAYS:.0f} 天（约 26 个月才开一扇窗）", 9.0, BODY))
+        els.append(txt(46, 452, "• 任何环节晚半个月赶不上窗口，整套系统就得在太空或地面硬扛两年多！", 9.0, ORANGE, weight="600"))
+
+        els.append(card(398, 62, 342, 426))
+        els.append(txt(414, 84, "② 环火轨道“大海捞针”：盲抓一只 23 cm 排球", PANEL_TITLE, INK, weight="700"))
+        els.append(txt(414, 102, "样品球没发动机也没信标天线，全靠母船光学与激光自寻的！", 9.7, MUTED))
+
+        els.append(card(412, 116, 314, 200, rx=8, fill="#0f172a", stroke=SLATE))
+        els.append(f'<path d="M 412,294 Q 569,254 726,294 L 726,316 L 412,316 Z" fill="#9a3412" fill-opacity="0.75" stroke="#fb923c" stroke-width="1.3"/>')
+        els.append(txt(569, 307, "火星 350 km 低轨道（轨速 ~3.4 km/s，每 ~115 分钟绕一圈）", 8.9, "#fed7aa", "middle", weight="600"))
+
+        els.append(f'<line x1="444" y1="158" x2="444" y2="236" stroke="#60a5fa" stroke-width="5.0"/>')
+        els.append(f'<rect x="434" y="186" width="24" height="22" rx="3" fill="#e2e8f0" stroke="#93c5fd" stroke-width="1.5"/>')
+        els.append(txt(424, 136, "返地轨道器 (7 吨 / 翼展 38 m)", 9.1, "#93c5fd", "start", weight="700"))
+
+        els.append(f'<polygon points="458,197 678,170 678,224" fill="#38bdf8" fill-opacity="0.16" stroke="#38bdf8" stroke-width="1.1" stroke-dasharray="4 3"/>')
+        els.append(f'<line x1="458" y1="197" x2="672" y2="197" stroke="#4ade80" stroke-width="1.8" stroke-dasharray="3 2"/>')
+        els.append(f'<circle cx="682" cy="197" r="7.0" fill="#fde047" stroke="#ffffff" stroke-width="1.6"/>')
+        els.append(txt(682, 160, "样品球 OS", 9.2, "#fde047", "middle", weight="700"))
+        els.append(txt(682, 240, "Ø 23 cm / 11 kg", 8.9, "#f8fafc", "middle"))
+
+        els.append(txt(556, 156, "① >1,000 km 相机搜反光星点", 9.0, "#bae6fd", "middle", weight="600"))
+        els.append(txt(552, 240, "② 近距 LiDAR 锁死相对位姿", 9.0, "#86efac", "middle", weight="600"))
+
+        els.append(card(412, 330, 314, 144, rx=8, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(424, 350, "为什么环火交会比嫦娥五号/六号环月交会还要凶险？", 9.8, BLUE, weight="700"))
+        els.append(txt(424, 370, "• 距离远百倍以上：地月仅 38 万 km（延迟 1.3 秒，地面可兜底）；", 9.1, BODY))
+        els.append(txt(424, 388, "  地火隔 5,500 万～4 亿 km，单程延迟达 22 分钟，零人工介入！", 9.1, ORANGE, weight="700"))
+        els.append(txt(424, 407, "• 被动非合作目标：样品球为省重不带推进器与主动雷达应答机，", 9.1, BODY))
+        els.append(txt(424, 425, "  万一上升器入轨偏差稍大，7 吨母船必须在茫茫火轨自己找回它；", 9.1, BODY))
+        els.append(txt(424, 443, "• 天问三号则兼顾主动微波/激光导引交会，力求压缩捕获风险。", 9.1, GREEN, weight="700"))
+
+        return figure(
+            504,
+            "地火霍曼往返26个月会合窗口与454天被迫等待轨道动画及环火轨道自主捕获23厘米样品球图解",
+            "左图按精确开普勒轨道计算地火去程259天、火星表面或轨道等待454天（因抵达火星时地球已超前75.2度）、返程259天的完整972天往返轨迹并配单次播放动画；右图展示返地轨道器在单程最长达22分钟通信延迟下，用超过1000公里光学相机和激光雷达自主搜寻捕获直径23厘米无动力样品球的过程。",
+            els,
+            extra_css=anim_css,
+            extra_defs=EXTRA_ARR,
+        )
+
+    # 5. COSPAR Category V "Break the Chain", Parachute-Free 12 km/s Earth Entry & Global Status
+    def _build_break_chain_and_roadmap():
+        els = header(
+            "第五道鬼门关：“断链防疫”锁死百万分之一泄漏率、无伞硬砸地球与全球路线大比拼",
+            "上：COSPAR 第 V 类受限返回“切断接触链”与无伞再入｜下：为什么美欧暂缓，中国天问三号 2028 出征？",
+        )
+
+        els.append(card(20, 62, 720, 198))
+        els.append(txt(36, 84, "① 阿波罗 14 号以来最严生物检疫（COSPAR 第 V 类受限返回）：未受控颗粒泄漏率 < 10⁻⁶！", PANEL_TITLE, INK, weight="700"))
+
+        steps_bio = [
+            (
+                36,
+                "① 危险源：外壁沾有火尘",
+                [
+                    "样品球在火面装管时，外壁不可",
+                    "避免沾染火星尘埃；若直接塞进",
+                    "返地舱，火尘可能污染返地舱外",
+                    "表面，带回地球大气层。",
+                ],
+                ORANGE,
+                ORANGE_SOFT,
+            ),
+            (
+                214,
+                "② 太空“套娃断链”钎焊密封",
+                [
+                    "在环火轨道用双层隔离舱吞入样",
+                    "品球，全自动高温钎焊封死洁净",
+                    "内罐并对焊缝灭菌，彻底切断内",
+                    "外接触链（Break the Chain）！",
+                ],
+                PURPLE,
+                PURPLE_SOFT,
+            ),
+            (
+                392,
+                "③ 距地 3 天放舱·母船永不返",
+                [
+                    "确认密封完好后，在距地 3 天处",
+                    "释放 90 kg 再入舱；轨道母船随",
+                    "即点火变轨绕太阳永久飞行，绝",
+                    "不把半粒火尘带进地球圈。",
+                ],
+                BLUE,
+                BLUE_SOFT,
+            ),
+            (
+                570,
+                "④ ~12 km/s 故意不装降落伞",
+                [
+                    "吸取“起源号”不开伞摔裂教训，",
+                    "直接砍掉降落伞故障点！靠碳酚",
+                    "醛防热盾 + 蜂窝吸能材料硬抗着",
+                    "陆冲击，直进 BSL-4 超净室。",
+                ],
+                GREEN,
+                GREEN_SOFT,
+            ),
+        ]
+
+        for s_idx, (sx, s_title, lines, s_col, s_bg) in enumerate(steps_bio):
+            w_card = 158 if s_idx < 3 else 154
+            els.append(card(sx, 98, w_card, 146, rx=7, fill=s_bg, stroke=s_col))
+            els.append(txt(sx + 10, 118, s_title, 9.4, s_col, weight="700"))
+            for l_i, line_str in enumerate(lines):
+                els.append(txt(sx + 10, 142 + l_i * 20, line_str, 9.0, BODY))
+            if s_idx < 3:
+                els.append(f'<line x1="{sx + w_card + 2}" y1="170" x2="{sx + w_card + 16}" y2="170" stroke="{s_col}" stroke-width="1.8" marker-end="url(#msr-blue)"/>')
+
+        # Bottom Full-Width Card: 3 Global Approaches Comparison (as of late 2026)
+        els.append(card(20, 274, 720, 214))
+        els.append(txt(36, 296, "② 现实大结局（截至 2026 年底）：为什么地球有 300 多块火星陨石，人类却还要拼命去挖这半公斤？", PANEL_TITLE, INK, weight="700"))
+
+        cols = [
+            (
+                36,
+                "自然火星陨石（>300 块已捡到）",
+                "免费馈赠 · 但丢了关键证据",
+                SLATE,
+                "#f8fafc",
+                [
+                    "• 小行星猛烈撞击火星溅射来地",
+                    "• 坚硬火成岩幸存，脆弱含水沉积",
+                    "  泥岩（最可能藏古生命）全碎毁",
+                    "• 不知采自火星哪个坑、哪一层",
+                    "• 落地后遭地球微生物与雨水污染",
+                ],
+            ),
+            (
+                272,
+                "美欧 MSR（2026.01 国会停拨）",
+                "科学最精 · 被超长链条拖垮预算",
+                ORANGE,
+                ORANGE_SOFT,
+                [
+                    "• 毅力号已钻存 30 管（含豹纹岩）",
+                    "• “车+3.4吨着陆器+火箭+7吨母船”",
+                    "  多国多中心串联，复杂度失控",
+                    "• 预算飙至 80–110 亿美元、2040 归",
+                    "• 30 根钛管暂留杰泽罗坑等待新方案",
+                ],
+            ),
+            (
+                508,
+                "中国天问三号 & 日本 MMX",
+                "精简闭环冲刺首返（2028 → 2031）",
+                GREEN,
+                GREEN_SOFT,
+                [
+                    "• 日本 MMX（2026.10 升空）：绕开",
+                    "  火星深井，只采微重力火卫一",
+                    "• 中国天问三号：两发长征五号直奔",
+                    "  主题（着上组合体 + 轨返组合体）",
+                    "• 钻取+表取+无人机，2031 带回≥500g",
+                ],
+            ),
+        ]
+
+        for cx_c, c_head, c_tag, c_col, c_bg, bullets in cols:
+            els.append(card(cx_c, 312, 216, 162, rx=8, fill=c_bg, stroke=c_col))
+            els.append(txt(cx_c + 10, 332, c_head, 9.7, c_col if c_col != SLATE else INK, weight="700"))
+            els.append(txt(cx_c + 10, 349, c_tag, 9.0, c_col, weight="600"))
+            els.append(f'<line x1="{cx_c + 10}" y1="357" x2="{cx_c + 206}" y2="357" stroke="{BORDER}" stroke-width="1.0"/>')
+            for b_i, b_line in enumerate(bullets):
+                els.append(txt(cx_c + 10, 375 + b_i * 18, b_line, 9.0, BODY))
+
+        return figure(
+            504,
+            "火星采样返回COSPAR第五类断链生物隔离、无降落伞再入与中美欧日方案进展对比图",
+            "上图按四步展示COSPAR第V类受限地球返回的轨道套娃钎焊断链密封（泄漏概率小于百万分之一）、母船绕日隔离与90公斤再入舱约12 km/s无降落伞抗冲击着陆进入BSL-4超净实验室；下图对比地球现有300余块火星陨石的局限、2026年1月因80至110亿美元预算被美国国会停拨的美欧MSR计划，以及2026年10月采样火卫一的日本MMX和计划2028发射2031带回不少于500克火星样品的中国天问三号。",
+            els,
+            extra_defs=EXTRA_ARR,
+        )
+
+    @register("mars-sample-return-challenges", "火星采样返回与行星际往返五大工程物理难关：逃逸速度金字塔、1%大气着陆、VECTOR半空点火、26个月窗口与断链防疫", "mechanics_sky")
+    def build_mars_sample_return():
+        write_svg(SUBDIR, "moon-asteroid-vs-mars-delta-v-pyramid.svg", _build_delta_v_and_mass_pyramid())
+        write_svg(SUBDIR, "mars-one-percent-atmosphere-heavy-edl.svg", _build_mars_edl_curse())
+        write_svg(SUBDIR, "mav-cold-storage-and-vector-midair-launch.svg", _build_mav_vector_launch())
+        write_svg(SUBDIR, "synodic-window-and-basketball-rendezvous.svg", _build_synodic_window_and_rendezvous())
+        write_svg(SUBDIR, "break-the-chain-cat5-and-global-roadmap.svg", _build_break_chain_and_roadmap())
+
+
+_register_mars_sample_return()
+
+
+

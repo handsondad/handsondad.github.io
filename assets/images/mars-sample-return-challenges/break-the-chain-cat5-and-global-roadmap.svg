@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="504" viewBox="0 0 760 504" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">火星采样返回COSPAR第五类断链生物隔离、无降落伞再入与中美欧日方案进展对比图</title>
+<desc id="desc">上图按四步展示COSPAR第V类受限地球返回的轨道套娃钎焊断链密封（泄漏概率小于百万分之一）、母船绕日隔离与90公斤再入舱约12 km/s无降落伞抗冲击着陆进入BSL-4超净实验室；下图对比地球现有300余块火星陨石的局限、2026年1月因80至110亿美元预算被美国国会停拨的美欧MSR计划，以及2026年10月采样火卫一的日本MMX和计划2028发射2031带回不少于500克火星样品的中国天问三号。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="msr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1d6fa5"/>
+    </marker>
+    <marker id="msr-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#c25014"/>
+    </marker>
+    <marker id="msr-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#18794e"/>
+    </marker>
+    <marker id="msr-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#6d28d9"/>
+    </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="503" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">第五道鬼门关：“断链防疫”锁死百万分之一泄漏率、无伞硬砸地球与全球路线大比拼</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">上：COSPAR 第 V 类受限返回“切断接触链”与无伞再入｜下：为什么美欧暂缓，中国天问三号 2028 出征？</text>
+<rect x="20" y="62" width="720" height="198" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 阿波罗 14 号以来最严生物检疫（COSPAR 第 V 类受限返回）：未受控颗粒泄漏率 &lt; 10⁻⁶！</text>
+<rect x="36" y="98" width="158" height="146" rx="7" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="46" y="118" font-size="9.4" fill="#c25014" text-anchor="start" font-weight="700">① 危险源：外壁沾有火尘</text>
+<text x="46" y="142" font-size="9.0" fill="#1e293b" text-anchor="start">样品球在火面装管时，外壁不可</text>
+<text x="46" y="162" font-size="9.0" fill="#1e293b" text-anchor="start">避免沾染火星尘埃；若直接塞进</text>
+<text x="46" y="182" font-size="9.0" fill="#1e293b" text-anchor="start">返地舱，火尘可能污染返地舱外</text>
+<text x="46" y="202" font-size="9.0" fill="#1e293b" text-anchor="start">表面，带回地球大气层。</text>
+<line x1="196" y1="170" x2="210" y2="170" stroke="#c25014" stroke-width="1.8" marker-end="url(#msr-blue)"/>
+<rect x="214" y="98" width="158" height="146" rx="7" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="224" y="118" font-size="9.4" fill="#6d28d9" text-anchor="start" font-weight="700">② 太空“套娃断链”钎焊密封</text>
+<text x="224" y="142" font-size="9.0" fill="#1e293b" text-anchor="start">在环火轨道用双层隔离舱吞入样</text>
+<text x="224" y="162" font-size="9.0" fill="#1e293b" text-anchor="start">品球，全自动高温钎焊封死洁净</text>
+<text x="224" y="182" font-size="9.0" fill="#1e293b" text-anchor="start">内罐并对焊缝灭菌，彻底切断内</text>
+<text x="224" y="202" font-size="9.0" fill="#1e293b" text-anchor="start">外接触链（Break the Chain）！</text>
+<line x1="374" y1="170" x2="388" y2="170" stroke="#6d28d9" stroke-width="1.8" marker-end="url(#msr-blue)"/>
+<rect x="392" y="98" width="158" height="146" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="402" y="118" font-size="9.4" fill="#1d6fa5" text-anchor="start" font-weight="700">③ 距地 3 天放舱·母船永不返</text>
+<text x="402" y="142" font-size="9.0" fill="#1e293b" text-anchor="start">确认密封完好后，在距地 3 天处</text>
+<text x="402" y="162" font-size="9.0" fill="#1e293b" text-anchor="start">释放 90 kg 再入舱；轨道母船随</text>
+<text x="402" y="182" font-size="9.0" fill="#1e293b" text-anchor="start">即点火变轨绕太阳永久飞行，绝</text>
+<text x="402" y="202" font-size="9.0" fill="#1e293b" text-anchor="start">不把半粒火尘带进地球圈。</text>
+<line x1="552" y1="170" x2="566" y2="170" stroke="#1d6fa5" stroke-width="1.8" marker-end="url(#msr-blue)"/>
+<rect x="570" y="98" width="154" height="146" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="580" y="118" font-size="9.4" fill="#18794e" text-anchor="start" font-weight="700">④ ~12 km/s 故意不装降落伞</text>
+<text x="580" y="142" font-size="9.0" fill="#1e293b" text-anchor="start">吸取“起源号”不开伞摔裂教训，</text>
+<text x="580" y="162" font-size="9.0" fill="#1e293b" text-anchor="start">直接砍掉降落伞故障点！靠碳酚</text>
+<text x="580" y="182" font-size="9.0" fill="#1e293b" text-anchor="start">醛防热盾 + 蜂窝吸能材料硬抗着</text>
+<text x="580" y="202" font-size="9.0" fill="#1e293b" text-anchor="start">陆冲击，直进 BSL-4 超净室。</text>
+<rect x="20" y="274" width="720" height="214" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="296" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 现实大结局（截至 2026 年底）：为什么地球有 300 多块火星陨石，人类却还要拼命去挖这半公斤？</text>
+<rect x="36" y="312" width="216" height="162" rx="8" fill="#f8fafc" stroke="#475569" stroke-width="1"/>
+<text x="46" y="332" font-size="9.7" fill="#0f172a" text-anchor="start" font-weight="700">自然火星陨石（&gt;300 块已捡到）</text>
+<text x="46" y="349" font-size="9.0" fill="#475569" text-anchor="start" font-weight="600">免费馈赠 · 但丢了关键证据</text>
+<line x1="46" y1="357" x2="242" y2="357" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="46" y="375" font-size="9.0" fill="#1e293b" text-anchor="start">• 小行星猛烈撞击火星溅射来地</text>
+<text x="46" y="393" font-size="9.0" fill="#1e293b" text-anchor="start">• 坚硬火成岩幸存，脆弱含水沉积</text>
+<text x="46" y="411" font-size="9.0" fill="#1e293b" text-anchor="start">  泥岩（最可能藏古生命）全碎毁</text>
+<text x="46" y="429" font-size="9.0" fill="#1e293b" text-anchor="start">• 不知采自火星哪个坑、哪一层</text>
+<text x="46" y="447" font-size="9.0" fill="#1e293b" text-anchor="start">• 落地后遭地球微生物与雨水污染</text>
+<rect x="272" y="312" width="216" height="162" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="282" y="332" font-size="9.7" fill="#c25014" text-anchor="start" font-weight="700">美欧 MSR（2026.01 国会停拨）</text>
+<text x="282" y="349" font-size="9.0" fill="#c25014" text-anchor="start" font-weight="600">科学最精 · 被超长链条拖垮预算</text>
+<line x1="282" y1="357" x2="478" y2="357" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="282" y="375" font-size="9.0" fill="#1e293b" text-anchor="start">• 毅力号已钻存 30 管（含豹纹岩）</text>
+<text x="282" y="393" font-size="9.0" fill="#1e293b" text-anchor="start">• “车+3.4吨着陆器+火箭+7吨母船”</text>
+<text x="282" y="411" font-size="9.0" fill="#1e293b" text-anchor="start">  多国多中心串联，复杂度失控</text>
+<text x="282" y="429" font-size="9.0" fill="#1e293b" text-anchor="start">• 预算飙至 80–110 亿美元、2040 归</text>
+<text x="282" y="447" font-size="9.0" fill="#1e293b" text-anchor="start">• 30 根钛管暂留杰泽罗坑等待新方案</text>
+<rect x="508" y="312" width="216" height="162" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="518" y="332" font-size="9.7" fill="#18794e" text-anchor="start" font-weight="700">中国天问三号 &amp; 日本 MMX</text>
+<text x="518" y="349" font-size="9.0" fill="#18794e" text-anchor="start" font-weight="600">精简闭环冲刺首返（2028 → 2031）</text>
+<line x1="518" y1="357" x2="714" y2="357" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="518" y="375" font-size="9.0" fill="#1e293b" text-anchor="start">• 日本 MMX（2026.10 升空）：绕开</text>
+<text x="518" y="393" font-size="9.0" fill="#1e293b" text-anchor="start">  火星深井，只采微重力火卫一</text>
+<text x="518" y="411" font-size="9.0" fill="#1e293b" text-anchor="start">• 中国天问三号：两发长征五号直奔</text>
+<text x="518" y="429" font-size="9.0" fill="#1e293b" text-anchor="start">  主题（着上组合体 + 轨返组合体）</text>
+<text x="518" y="447" font-size="9.0" fill="#1e293b" text-anchor="start">• 钻取+表取+无人机，2031 带回≥500g</text>
+</svg>

@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="760" height="460" viewBox="0 0 760 460" role="img" aria-labelledby="title desc" lang="zh-CN">
-<title id="title">世界经验选择编码和读者重构形成压缩预测与顿悟的编码流程</title>
-<desc id="desc">说明艺术通过选择、压缩和结构编码，改变读者对经验的预测和重构，而顿悟来自旧模型与新结构之间的认知重组。</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="504" viewBox="0 0 760 504" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">艺术四步有损压缩解压流程与顿悟描述长度跃迁对比图解</title>
+<desc id="desc">上排展示高维原始经验经审美取舍、低比特符号载体到观者先验解压的四步流程；下排对比工程像素保真压缩与艺术通过描述长度骤降触发顿悟的机制。</desc>
 <defs>
   <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
     <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
@@ -13,6 +13,9 @@
   </marker>
   <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
     <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#6d28d9"/>
   </marker>
 </defs>
 <style>
@@ -30,32 +33,75 @@
     stroke-linejoin: round;
   }
 </style>
-<rect x="0.5" y="0.5" width="759" height="459" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
-<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">艺术为什么像压缩：保留结构，舍弃冗余，但选择也会改变世界</text>
-<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">好的画、诗、建筑或音乐，把高维经验压成有限符号；读者再用记忆、模型和情绪重构它。</text>
-<rect x="24" y="78" width="712" height="256" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
-<rect x="48" y="112" width="124" height="168" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
-<rect x="60.0" y="128.0" width="100" height="24" rx="12.0" fill="#ffffff" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
-<text x="110.0" y="144.3" font-size="9.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">世界</text>
-<text x="110" y="184" font-size="9.7" fill="#0f172a" text-anchor="middle" font-weight="700">景观、声音、情绪、时间</text>
-<line x1="172.0" y1="196.0" x2="212.0" y2="196.0" stroke="#1d6fa5" stroke-width="2.0" marker-end="url(#arr-blue)"/>
-<rect x="236" y="112" width="124" height="168" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
-<rect x="248.0" y="128.0" width="100" height="24" rx="12.0" fill="#ffffff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
-<text x="298.0" y="144.3" font-size="9.5" fill="#6d28d9" text-anchor="middle" font-weight="600">选择</text>
-<text x="298" y="184" font-size="9.7" fill="#0f172a" text-anchor="middle" font-weight="700">画哪一刻？留何处？省什么？</text>
-<line x1="360.0" y1="196.0" x2="400.0" y2="196.0" stroke="#6d28d9" stroke-width="2.0" marker-end="url(#arr-blue)"/>
-<rect x="424" y="112" width="124" height="168" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
-<rect x="436.0" y="128.0" width="100" height="24" rx="12.0" fill="#ffffff" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
-<text x="486.0" y="144.3" font-size="9.5" fill="#c25014" text-anchor="middle" font-weight="600">编码</text>
-<text x="486" y="184" font-size="9.7" fill="#0f172a" text-anchor="middle" font-weight="700">笔触、词序、和弦、比例、节奏</text>
-<line x1="548.0" y1="196.0" x2="588.0" y2="196.0" stroke="#c25014" stroke-width="2.0" marker-end="url(#arr-blue)"/>
-<rect x="612" y="112" width="124" height="168" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
-<rect x="624.0" y="128.0" width="100" height="24" rx="12.0" fill="#ffffff" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
-<text x="674.0" y="144.3" font-size="9.5" fill="#18794e" text-anchor="middle" font-weight="600">重构</text>
-<text x="674" y="184" font-size="9.7" fill="#0f172a" text-anchor="middle" font-weight="700">读者在脑中补全、比较、顿悟</text>
-<text x="380" y="304" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="700">压缩 ≠ 只删数据；压缩也可以是转述、转化与观点的产生。</text>
-<rect x="24" y="354" width="712" height="92" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
-<text x="38" y="378" font-size="11.0" fill="#0f172a" text-anchor="start" font-weight="700">为何“同一幅画可以让人顿悟”？</text>
-<text x="38" y="400" font-size="10.1" fill="#64748b" text-anchor="start">读者原有模型尚未解释某段经验；作品保留下来的结构恰好与旧模型碰撞。</text>
-<text x="38" y="422" font-size="10.1" fill="#0f172a" text-anchor="start" font-weight="600">旧模型突然重组，新关系可被一眼看见——这就是审美之中可能发生的认知跃迁。</text>
+<rect x="0.5" y="0.5" width="759" height="503" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">艺术为什么是最神奇的压缩？少画十倍细节，反而展开百倍世界</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">上排按 ①→④ 看“有选择的降维编码 + 观者先验解压”，下排对比工程保真压缩与审美顿悟跃迁</text>
+<rect x="24" y="68" width="712" height="190" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="38" y="82" width="152" height="144" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<circle cx="55" cy="101" r="9.5" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="55" y="105" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="70" y="105" font-size="11.2" fill="#1d6fa5" text-anchor="start" font-weight="700">高维原始经验</text>
+<rect x="58.0" y="117.0" width="112" height="20" rx="10.0" fill="#ffffff" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="114.0" y="130.6" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="600">无限细节流</text>
+<text x="114" y="158" font-size="9.7" fill="#0f172a" text-anchor="middle" font-weight="600">山川光影、声响气味</text>
+<text x="114" y="178" font-size="9.7" fill="#0f172a" text-anchor="middle">身体冷暖与时间绵延</text>
+<text x="114" y="198" font-size="9.7" fill="#64748b" text-anchor="middle">（原始维度近乎无穷）</text>
+<line x1="193.0" y1="154.0" x2="210.0" y2="154.0" stroke="#1d6fa5" stroke-width="1.9" marker-end="url(#arr-purple)"/>
+<rect x="214" y="82" width="152" height="144" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<circle cx="231" cy="101" r="9.5" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="231" y="105" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">2</text>
+<text x="246" y="105" font-size="11.2" fill="#6d28d9" text-anchor="start" font-weight="700">审美取舍与留白</text>
+<rect x="234.0" y="117.0" width="112" height="20" rx="10.0" fill="#ffffff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="290.0" y="130.6" font-size="9.6" fill="#6d28d9" text-anchor="middle" font-weight="600">关系蒸馏器</text>
+<text x="290" y="158" font-size="9.7" fill="#0f172a" text-anchor="middle" font-weight="600">主动舍弃冗余枝蔓</text>
+<text x="290" y="178" font-size="9.7" fill="#0f172a" text-anchor="middle">只抓动势、冲突转折</text>
+<text x="290" y="198" font-size="9.7" fill="#64748b" text-anchor="middle">与“计白当黑”的缺口</text>
+<line x1="369.0" y1="154.0" x2="386.0" y2="154.0" stroke="#6d28d9" stroke-width="1.9" marker-end="url(#arr-orange)"/>
+<rect x="390" y="82" width="152" height="144" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<circle cx="407" cy="101" r="9.5" fill="#ffffff" stroke="#c25014" stroke-width="1.2"/>
+<text x="407" y="105" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">3</text>
+<text x="422" y="105" font-size="11.2" fill="#c25014" text-anchor="start" font-weight="700">低比特符号载体</text>
+<rect x="410.0" y="117.0" width="112" height="20" rx="10.0" fill="#ffffff" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="466.0" y="130.6" font-size="9.6" fill="#c25014" text-anchor="middle" font-weight="600">作品编码层</text>
+<text x="466" y="158" font-size="9.7" fill="#0f172a" text-anchor="middle" font-weight="600">寥寥数笔水墨蝌蚪</text>
+<text x="466" y="178" font-size="9.7" fill="#0f172a" text-anchor="middle">二十八字绝句、和弦</text>
+<text x="466" y="198" font-size="9.7" fill="#64748b" text-anchor="middle">车座与车把拼成牛头</text>
+<line x1="545.0" y1="154.0" x2="562.0" y2="154.0" stroke="#c25014" stroke-width="1.9" marker-end="url(#arr-green)"/>
+<rect x="566" y="82" width="152" height="144" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<circle cx="583" cy="101" r="9.5" fill="#ffffff" stroke="#18794e" stroke-width="1.2"/>
+<text x="583" y="105" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">4</text>
+<text x="598" y="105" font-size="11.2" fill="#18794e" text-anchor="start" font-weight="700">观者先验解压</text>
+<rect x="586.0" y="117.0" width="112" height="20" rx="10.0" fill="#ffffff" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="642.0" y="130.6" font-size="9.6" fill="#18794e" text-anchor="middle" font-weight="600">脑内高维重构</text>
+<text x="642" y="158" font-size="9.7" fill="#0f172a" text-anchor="middle" font-weight="600">调动记忆与文化先验</text>
+<text x="642" y="178" font-size="9.7" fill="#0f172a" text-anchor="middle">听见画外“十里蛙声”</text>
+<text x="642" y="198" font-size="9.7" fill="#64748b" text-anchor="middle">展开一整个精神世界</text>
+<text x="380" y="246" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="700">贡布里希“观者的本分”：艺术家故意留出结构缺口，观者用一生经验完成最后一步高倍解码。</text>
+<rect x="24" y="272" width="344" height="220" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="38.0" y="286.0" width="224" height="22" rx="11.0" fill="#ffffff" stroke="#475569" stroke-width="1" stroke-opacity="0.35"/>
+<text x="150.0" y="301.0" font-size="10.0" fill="#475569" text-anchor="middle" font-weight="600">对照 A：工程数据压缩（保真复刻）</text>
+<text x="38" y="326" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">代表：PNG 无损预测 / JPEG 频域余弦量化</text>
+<text x="38" y="348" font-size="9.8" fill="#1e293b" text-anchor="start">• 压缩对象：统计重复像素与人眼不敏感高频分量</text>
+<text x="38" y="369" font-size="9.8" fill="#1e293b" text-anchor="start">• 解码准则：所有设备还原出的画面越一致越成功</text>
+<text x="38" y="390" font-size="9.8" fill="#1e293b" text-anchor="start">• 认知影响：只搬运像素，不要求重构观者的世界模型</text>
+<rect x="38" y="406" width="316" height="72" rx="7" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="196" y="430" font-size="10.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">原图 X (24 MB)  →  码流 (1.2 MB)  →  还原图 X̂</text>
+<text x="196" y="452" font-size="9.6" fill="#0f172a" text-anchor="middle" font-weight="600">优化目标：像素重构误差 d(X, X̂) → 0</text>
+<text x="196" y="470" font-size="9.2" fill="#64748b" text-anchor="middle">（忠实存档，不追求“言外之意”）</text>
+<rect x="382" y="272" width="354" height="220" rx="10" fill="#f3e8ff" stroke="#c4b5fd" stroke-width="1"/>
+<rect x="396.0" y="286.0" width="234" height="22" rx="11.0" fill="#ffffff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="513.0" y="301.0" font-size="10.0" fill="#6d28d9" text-anchor="middle" font-weight="600">对照 B：艺术压缩与“顿悟压缩跃迁”</text>
+<rect x="396" y="316" width="326" height="98" rx="7" fill="#ffffff" stroke="#6d28d9" stroke-width="1"/>
+<line x1="434.0" y1="396.0" x2="706.0" y2="396.0" stroke="#475569" stroke-width="1.3"/>
+<line x1="434.0" y1="396.0" x2="434.0" y2="330.0" stroke="#475569" stroke-width="1.3"/>
+<text x="428" y="340" font-size="8.8" fill="#475569" text-anchor="end">描述</text>
+<text x="428" y="352" font-size="8.8" fill="#475569" text-anchor="end">长度</text>
+<polyline points="442,346 546,346 566,374 696,374" fill="none" stroke="#6d28d9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="578.0" y1="347.0" x2="578.0" y2="371.0" stroke="#18794e" stroke-width="1.8" marker-end="url(#arr-green)"/>
+<text x="494" y="341" font-size="9.0" fill="#c25014" text-anchor="middle" font-weight="700">顿悟前 L_前（线索零散）</text>
+<text x="642" y="357" font-size="9.8" fill="#18794e" text-anchor="middle" font-weight="700">ΔL = L_前 − L_后 &gt; 0</text>
+<text x="642" y="389" font-size="9.0" fill="#6d28d9" text-anchor="middle" font-weight="700">顿悟后 L_后（一通百通）</text>
+<text x="396" y="434" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="600">• 齐白石不画蛙只画溪中蝌蚪；毕加索用旧车座配车把秒变公牛头</text>
+<text x="396" y="455" font-size="9.6" fill="#1e293b" text-anchor="start">• 当零散细节突然被一个新结构统摄，主观描述长度瞬间坍缩 ΔL &gt; 0</text>
+<text x="396" y="476" font-size="9.6" fill="#6d28d9" text-anchor="start" font-weight="700">• 这股“认知压缩率跃升”释放的惊喜与快感，就是审美里的顿悟（Aha!）</text>
 </svg>

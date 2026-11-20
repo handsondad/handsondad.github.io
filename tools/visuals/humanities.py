@@ -2943,195 +2943,586 @@ _register_weiqi_intro_rules()
 def _register_art_as_generalized_encoding():
     SUBDIR = "art-as-generalized-encoding"
 
+    PURPLE_MARKER = f"""<marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="{PURPLE}"/>
+  </marker>"""
+
     def _build_information_ladder():
         els = []
         els.extend(header(
-            "艺术到底是什么？先把一幅画和一段文字放回同一条“编码阶梯”",
-            "符号不止是文字：像素、笔触、旋律、动作、建筑与自然痕迹，都可能携带可被解释的信息。",
+            "图像是更泛化的文字：从“一匹马”看懂四级广义编码阶梯",
+            "左看二维并置图像与一维线性文字的同源对比，右按 ①→④ 看差异痕迹怎样一步步升华为意义",
         ))
+
+        # Left comparison panel: 2D parallel image vs 1D serial text of "a horse"
+        els.append(card(24, 68, 252, 364, rx=10, fill=CARD_BG, stroke=BORDER))
+        els.append(txt(40, 92, "同一匹“马”的两种编码接口", 12.8, INK, weight="700"))
+
+        # Sub-card A: 2D parallel image matrix + dynamic contour
+        els.append(card(38, 106, 224, 134, rx=8, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(pill(48, 115, "二维图像编码（并置场）", fg=BLUE, bg="#ffffff", w=146, h=22, size=10.2))
+        gx, gy, cell = 50, 146, 9
+        horse_pixels = {
+            (7, 0), (8, 0),
+            (6, 1), (7, 1), (8, 1),
+            (2, 2), (3, 2), (4, 2), (5, 2), (6, 2), (7, 2),
+            (1, 3), (2, 3), (3, 3), (4, 3), (5, 3), (6, 3),
+            (0, 4), (2, 4), (6, 4),
+            (2, 5), (5, 5), (7, 5),
+            (1, 6), (5, 6), (8, 6),
+        }
+        els.append(f'<rect x="{gx - 2}" y="{gy - 2}" width="{10 * cell + 4}" height="{7 * cell + 4}" rx="4" fill="#ffffff" stroke="{BORDER}"/>')
+        for r in range(7):
+            for c in range(10):
+                fill = BLUE if (c, r) in horse_pixels else "#f8fafc"
+                els.append(
+                    f'<rect x="{gx + c * cell}" y="{gy + r * cell}" width="{cell - 1}" height="{cell - 1}" fill="{fill}"/>'
+                )
+        els.append(txt(154, 162, "空间同时并置", 10.2, INK, weight="700"))
+        els.append(txt(154, 181, "一眼给出比例", 10.0, BODY))
+        els.append(txt(154, 200, "动势与留白场", 10.0, BODY))
+        els.append(txt(48, 229, "长处：保留连续几何拓扑与整体张力", 9.6, MUTED))
+
+        # Sub-card B: 1D linearized discrete text stream
+        els.append(card(38, 250, 224, 126, rx=8, fill=PURPLE_SOFT, stroke=PURPLE))
+        els.append(pill(48, 259, "一维文字编码（串行流）", fg=PURPLE, bg="#ffffff", w=146, h=22, size=10.2))
+        els.append(card(48, 290, 68, 52, rx=6, fill="#ffffff", stroke=PURPLE))
+        # Stylized early pictograph strokes of 马
+        els.append(
+            f'<path d="M68,296 C78,294 88,299 92,307 C84,311 74,311 66,309 '
+            f'M74,310 L72,325 M82,310 L82,325 M90,308 L95,324 M64,316 L58,324" '
+            f'fill="none" stroke="{PURPLE}" stroke-width="1.8" stroke-linecap="round"/>'
+        )
+        els.append(txt(82, 338, "象形轮廓", 8.8, MUTED, anchor="middle"))
+        els.append(_line(120, 316, 138, 316, stroke=PURPLE, sw=1.6, marker="arr-purple"))
+        els.append(card(144, 290, 106, 52, rx=6, fill="#ffffff", stroke=PURPLE))
+        els.append(txt(197, 314, "「白 马」", 13.0, PURPLE, weight="700", anchor="middle"))
+        els.append(txt(197, 333, "11100111…", 9.2, MUTED, anchor="middle", cls="mono"))
+        els.append(txt(48, 364, "长处：离散符号组合、否定与因果推理", 9.6, MUTED))
+
+        els.append(txt(150, 398, "汉字本身就曾从二维图画线性化而来", 10.0, INK, weight="700", anchor="middle"))
+        els.append(txt(150, 416, "底层相通：都在用有限差异编码世界关系", 9.6, MUTED, anchor="middle"))
+
+        # Right panel: 4-step generalized encoding ladder
         lanes = [
-            (78, "物理痕迹", "墨水、像素、振动、土石、光影", BLUE, BLUE_SOFT),
-            (170, "形式模式", "线、色、节奏、比例、密度、留白", PURPLE, PURPLE_SOFT),
-            (262, "可解释符号", "肖像、地图、隐喻、惯例、情绪暗示", ORANGE, ORANGE_SOFT),
-            (354, "个人与文化解释", "记忆、经验、共同背景、阅读语境", GREEN, GREEN_SOFT),
+            (
+                1,
+                "物理载体与差异痕迹",
+                "可观测差异",
+                "宣纸墨迹、屏幕像素矩阵、空气声压波、石材凿痕",
+                "香农通信层：只要状态有可区分差异，就能充当编码载体",
+                BLUE,
+                BLUE_SOFT,
+                "arr-blue",
+            ),
+            (
+                2,
+                "形式模式与知觉张力",
+                "并置与节律",
+                "边缘轮廓、冷暖对比、疏密比例、留白与运动趋势",
+                "格式塔知觉层：眼睛与耳朵主动把零散刺激组织成“力与形”",
+                PURPLE,
+                PURPLE_SOFT,
+                "arr-purple",
+            ),
+            (
+                3,
+                "符号指向与语法惯例",
+                "编码与约定",
+                "肖像相似、光影因果痕迹、词汇语法、透视与和声法则",
+                "皮尔士符号层：差异不再只指自身，开始跨向外部对象与概念",
+                ORANGE,
+                ORANGE_SOFT,
+                "arr-orange",
+            ),
+            (
+                4,
+                "观者重构与审美顿悟",
+                "意义生成层",
+                "调动个人记忆、身体经验与文化语境，补全画外之音",
+                "艺术发生层：有限符号在解释者心中重新展开为一整个鲜活世界",
+                GREEN,
+                GREEN_SOFT,
+                None,
+            ),
         ]
-        for y, title, desc, col, soft in lanes:
-            els.append(card(24, y - 42, 712, 74, rx=8, fill=soft, stroke=col))
-            els.append(pill(40, y - 27, title, fg=col, bg="#ffffff", w=130, h=24, size=10))
-            els.append(txt(188, y - 10, desc, 11.0, INK, weight="700"))
-            if y < 354:
-                els.append(_line(370, y + 32, 370, y + 68, stroke=col, sw=1.6, marker="arr-blue"))
-        els.append(card(24, 402, 712, 58, rx=8, fill=SLATE_SOFT, stroke=BORDER))
-        els.append(txt(38, 424, "文字只是编码方式的一种；图像也未必更含糊。", 11.0, INK, weight="700"))
-        els.append(txt(38, 444, "关键不是“像不像”，而是哪些差异被保留、哪些差异被选择性压缩，以及谁正在解释。", 10.1, MUTED))
+        for idx, (num, title, tag, line1, line2, col, soft, arr) in enumerate(lanes):
+            cy_top = 68 + idx * 96
+            els.append(card(292, cy_top, 444, 76, rx=9, fill=soft, stroke=col))
+            els.append(step_badge(313, cy_top + 22, num, fg=col, bg="#ffffff", r=10.5))
+            els.append(txt(331, cy_top + 26, title, 12.4, col, weight="700"))
+            els.append(pill(612, cy_top + 11, tag, fg=col, bg="#ffffff", w=110, h=21, size=10.0))
+            els.append(txt(331, cy_top + 48, line1, 10.6, INK, weight="600"))
+            els.append(txt(331, cy_top + 66, line2, 9.8, MUTED))
+            if arr is not None:
+                els.append(_line(514, cy_top + 78, 514, cy_top + 92, stroke=col, sw=1.8, marker=arr))
+
+        els.append(card(24, 444, 712, 50, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(40, 464, "核心结论：文字是高度离散化的图像，图像是保留空间并置的广义文字——整个感知世界都在收发编码。", 10.8, INK, weight="700"))
+        els.append(txt(40, 483, "香农统计熵只度量第 ① 层符号的不确定性消除；艺术的神奇恰恰诞生在 ①→④ 跨层压缩与重构的跃迁里。", 10.0, MUTED))
+
         return figure(
-            474,
-            "物理痕迹形式模式符号解释和文化解释的广义编码阶梯",
-            "把物理材料、形式模式、符号关系、个人与文化解释放在同一条层级图上，说明文字、图像、音乐和建筑都属于广义编码系统。",
+            506,
+            "同一匹马的图像文字编码对比与四级广义编码阶梯图解",
+            "左侧对比二维图像像素场与一维文字串行编码，右侧按 ① 物理痕迹、② 形式模式、③ 符号指向、④ 观者重构展示广义编码阶梯。",
             els,
+            extra_defs=PURPLE_MARKER,
         )
 
     def _build_three_sign_relations():
         els = []
         els.extend(header(
-            "图像为什么既像文字，又不只是文字：看清皮尔士的三种符号关系",
-            "肖像、足迹与姓名不是一类符号；艺术作品也常同时把相似、因果痕迹和文化惯例编在一起。",
+            "图像为什么既像文字又不止于文字？皮尔士符号三角与三重混合编码",
+            "先看左栏 ①“符号—对象—解释项”三元闭环，再看右栏 ②③④ 三种指向关系如何在艺术品中叠合",
         ))
-        items = [
-            ("图标 / Icon", "因“相似”而指向", "肖像、图示、素描", "#1d6fa5", BLUE_SOFT),
-            ("索引 / Index", "因“因果痕迹”而指向", "烟、足迹、照片光痕", "#c25014", ORANGE_SOFT),
-            ("符号 / Symbol", "因“社会惯例”而指向", "文字、旗帜、数字记号", "#6d28d9", PURPLE_SOFT),
-        ]
-        for i, (name, relation, examples, col, soft) in enumerate(items):
-            x = 24 + i * 238
-            els.append(card(x, 78, 222, 282, rx=10, fill=soft, stroke=col))
-            els.append(pill(x + 20, 96, name, fg=col, bg="#ffffff", w=182, h=28, size=10.5))
-            els.append(txt(x + 111, 158, relation, 12.0, col, weight="700", anchor="middle"))
-            els.append(txt(x + 111, 188, examples, 10.5, INK, weight="600", anchor="middle"))
-            cy = 236
-            cx = x + 111
-            els.append(f'<circle cx="{cx}" cy="{cy}" r="42" fill="#ffffff" stroke="{col}" stroke-width="1.8"/>')
-            if i == 0:
-                els.append(_line(cx - 23, cy + 16, cx + 23, cy - 16, stroke=col, sw=4))
-                els.append(f'<circle cx="{cx}" cy="{cy}" r="9" fill="{col}"/>')
-            elif i == 1:
-                els.append(_line(cx - 28, cy + 24, cx + 28, cy - 24, stroke=col, sw=3))
-                els.append(_line(cx - 18, cy - 8, cx + 18, cy - 8, stroke=col, sw=1.2, dash="3 2"))
-            else:
-                els.append(txt(cx, cy + 8, "约定", 14.0, col, weight="700", anchor="middle"))
-            els.append(txt(x + 111, 318, "三者在真实作品中常常混用", 9.3, MUTED, anchor="middle"))
 
-        els.append(card(24, 382, 714, 70, rx=8, fill=SLATE_SOFT, stroke=BORDER))
-        els.append(txt(38, 406, "一张照片 = 相似（图标） + 光线物理痕迹（索引） + 关于照片证据的阅读惯例（符号）。", 10.2, INK, weight="700"))
-        els.append(txt(38, 430, "解释不是编码末端的附赠功能：符号只有在解释中才形成可理解的意义。", 10.2, MUTED))
+        # Left panel: Peirce's triadic sign relation
+        els.append(card(24, 68, 248, 342, rx=10, fill=CARD_BG, stroke=BORDER))
+        els.append(step_badge(43, 90, 1, fg=PURPLE, bg=PURPLE_SOFT, r=10.0))
+        els.append(txt(59, 94, "符号不是死电线：三元闭环", 12.2, INK, weight="700"))
+
+        # Top vertex: Interpretant
+        els.append(card(78, 122, 140, 52, rx=8, fill=PURPLE_SOFT, stroke=PURPLE))
+        els.append(txt(148, 143, "解释项 Interpretant", 10.5, PURPLE, weight="700", anchor="middle"))
+        els.append(txt(148, 162, "观者脑中唤起的理解", 9.6, INK, anchor="middle"))
+
+        # Bottom-left vertex: Representamen
+        els.append(card(34, 252, 98, 52, rx=8, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(83, 273, "符号载体", 10.8, BLUE, weight="700", anchor="middle"))
+        els.append(txt(83, 292, "画痕 / 字词", 9.6, INK, anchor="middle"))
+
+        # Bottom-right vertex: Object
+        els.append(card(164, 252, 98, 52, rx=8, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(213, 273, "所指对象", 10.8, ORANGE, weight="700", anchor="middle"))
+        els.append(txt(213, 292, "事物 / 经验", 9.6, INK, anchor="middle"))
+
+        # Mediated solid arrows + bottom dashed non-automatic link
+        els.append(_line(88, 248, 124, 179, stroke=BLUE, sw=1.8, marker="arr-purple"))
+        els.append(_line(172, 178, 207, 247, stroke=PURPLE, sw=1.8, marker="arr-orange"))
+        els.append(_line(135, 278, 161, 278, stroke=MUTED, sw=1.5, dash="4 3"))
+        els.append(txt(148, 324, "虚线：脱离解释过程，符号无法自动指物", 9.4, MUTED, anchor="middle"))
+
+        els.append(card(36, 338, 224, 60, rx=7, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(148, 357, "皮尔士核心洞见：意义不在颜料里，", 9.8, INK, weight="700", anchor="middle"))
+        els.append(txt(148, 375, "而在“符号→解释项→对象”的动态关联中；", 9.5, BODY, anchor="middle"))
+        els.append(txt(148, 391, "解释项本身还会成为下一轮思考的新符号。", 9.4, MUTED, anchor="middle"))
+
+        # Right 3 columns: Icon, Index, Symbol
+        cols = [
+            (
+                2,
+                "像似符 Icon",
+                "靠“结构相似”指向",
+                "写实肖像、山水轮廓",
+                "几何图示、旋律起伏线",
+                ["保留对象的几何拓扑", "或关系同构；跨语言", "门槛低，一眼可认出", "“画的是远山与流水”"],
+                BLUE,
+                BLUE_SOFT,
+            ),
+            (
+                3,
+                "指示符 Index",
+                "靠“因果痕迹”指向",
+                "狂草飞白、厚涂刀痕",
+                "胶片光痕、古陶匠人指印",
+                ["与物理事件直接相连：", "枯笔记录手腕疾徐，", "银盐记录当时光子，", "自带“在场真实感”"],
+                ORANGE,
+                ORANGE_SOFT,
+            ),
+            (
+                4,
+                "规约符 Symbol",
+                "靠“社会约定”指向",
+                "自然语言文字、数学记号",
+                "岁寒三友、礼制与圣像色标",
+                ["外形与对象无需相似；", "靠文化共同体习得规", "则，可精密表达抽象", "概念、隐喻与反讽"],
+                GREEN,
+                GREEN_SOFT,
+            ),
+        ]
+        for i, (num, title, rel, ex1, ex2, mech_lines, col, soft) in enumerate(cols):
+            x = 286 + i * 154
+            els.append(card(x, 68, 142, 342, rx=10, fill=soft, stroke=col))
+            els.append(step_badge(x + 18, 90, num, fg=col, bg="#ffffff", r=9.5))
+            els.append(txt(x + 33, 94, title, 11.8, col, weight="700"))
+            els.append(txt(x + 71, 118, rel, 10.6, INK, weight="700", anchor="middle"))
+
+            # Mini visual illustration canvas
+            vx, vy, vw, vh = x + 14, 130, 114, 92
+            els.append(card(vx, vy, vw, vh, rx=7, fill="#ffffff", stroke=col))
+            if i == 0:
+                # Mountain contour + sun + water ripples (structural resemblance)
+                els.append(f'<circle cx="{vx + 86}" cy="{vy + 24}" r="9" fill="{ORANGE_SOFT}" stroke="{ORANGE}" stroke-width="1.4"/>')
+                els.append(
+                    f'<path d="M{vx + 10},{vy + 68} L{vx + 38},{vy + 30} L{vx + 58},{vy + 54} '
+                    f'L{vx + 80},{vy + 24} L{vx + 104},{vy + 68} Z" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.8" stroke-linejoin="round"/>'
+                )
+                els.append(_line(vx + 18, vy + 78, vx + 96, vy + 78, stroke=BLUE, sw=1.3, dash="6 3"))
+            elif i == 1:
+                # Dynamic calligraphic brush trace + causal motion arrow
+                els.append(
+                    f'<path d="M{vx + 18},{vy + 70} C{vx + 36},{vy + 26} {vx + 68},{vy + 22} {vx + 96},{vy + 54}" '
+                    f'fill="none" stroke="{ORANGE}" stroke-width="5.5" stroke-linecap="round"/>'
+                )
+                els.append(
+                    f'<path d="M{vx + 62},{vy + 34} C{vx + 78},{vy + 34} {vx + 88},{vy + 43} {vx + 99},{vy + 56}" '
+                    f'fill="none" stroke="#ffffff" stroke-width="1.6" stroke-dasharray="4 2"/>'
+                )
+                els.append(_line(vx + 22, vy + 78, vx + 90, vy + 78, stroke=SLATE, sw=1.3, marker="arr-orange"))
+                els.append(txt(vx + 57, vy + 20, "运笔速度 → 飞白肌理", 8.8, MUTED, anchor="middle"))
+            else:
+                # Conventional tokens: text + cultural metaphor equation
+                els.append(card(vx + 12, vy + 14, 90, 30, rx=5, fill=GREEN_SOFT, stroke=GREEN))
+                els.append(txt(vx + 57, vy + 34, "「梅 / 松 / 竹」", 10.6, GREEN, weight="700", anchor="middle"))
+                els.append(txt(vx + 57, vy + 60, "约定俗成 ↓ 文化隐喻", 8.8, MUTED, anchor="middle"))
+                els.append(txt(vx + 57, vy + 79, "清高 · 坚韧 · 气节", 9.8, INK, weight="700", anchor="middle"))
+
+            els.append(txt(x + 71, 242, ex1, 9.8, INK, weight="600", anchor="middle"))
+            els.append(txt(x + 71, 259, ex2, 9.6, BODY, anchor="middle"))
+
+            els.append(card(x + 10, 274, 122, 124, rx=6, fill="#ffffff", stroke=BORDER))
+            els.append(txt(x + 71, 293, "编码机制", 9.8, col, weight="700", anchor="middle"))
+            for li, ml in enumerate(mech_lines):
+                els.append(txt(x + 71, 314 + li * 19, ml, 9.4, MUTED, anchor="middle"))
+
+        els.append(card(24, 422, 712, 62, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(40, 444, "真实艺术品几乎都是三重叠合——以一幅水墨寒梅或纪实摄影为例：", 10.8, INK, weight="700"))
+        els.append(txt(40, 466, "枝干面容轮廓是像似符（认出物象）＋ 枯笔飞白/快门曝光是指示符（触摸身体与现场）＋ 题诗典故与构图传统是规约符（读出深意）。", 9.9, BODY))
+
         return figure(
-            466,
-            "皮尔士图标索引符号三种符号关系与一张照片的混合编码图解",
-            "以相似、因果痕迹和社会惯例区分图标、索引、符号，并说明艺术作品中的意义来自符号与解释共同构成。",
+            496,
+            "皮尔士符号三角与像似符指示符规约符三重混合编码图解",
+            "左侧展示符号载体、所指对象与解释项构成的三元闭环，右侧对比像似符、指示符、规约符的编码机制及艺术作品中的三重叠合。",
             els,
+            extra_defs=PURPLE_MARKER,
         )
 
     def _build_order_complexity():
         els = []
         els.extend(header(
-            "美是不是“秩序 / 复杂度”？这是提示，不是审美判决",
-            "伯克霍夫把审美度量设为秩序与感知复杂度的平衡；它不能解释所有艺术，也揭示了有趣的张力。",
+            "为什么“绝对整齐”乏味、“雪花白噪”刺眼？秩序、熵与审美张力的倒 U 曲线",
+            "上排对比三种 8×5 编码样本的香农熵与规律度，下排看温特—伯莱恩倒 U 型曲线与伯克霍夫公式的边界",
         ))
-        chart_x, chart_y, chart_w, chart_h = 64, 112, 440, 260
-        els.append(card(chart_x - 24, chart_y - 46, chart_w + 48, chart_h + 92, rx=10))
-        els.append(_line(chart_x, chart_y + chart_h, chart_x + chart_w, chart_y + chart_h, stroke=SLATE, sw=1.4))
-        els.append(_line(chart_x, chart_y + chart_h, chart_x, chart_y, stroke=SLATE, sw=1.4))
-        els.append(txt(chart_x - 18, chart_y - 12, "感知收益 / 复杂度", 10.0, SLATE, weight="700"))
-        els.append(txt(chart_x + chart_w - 8, chart_y + chart_h + 24, "复杂度 C", 10.0, SLATE, anchor="end"))
-        ys = [chart_y + chart_h - 36, chart_y + chart_h - 94, chart_y + chart_h - 170]
-        xs = [chart_x + 58, chart_x + 210, chart_x + 372]
-        labels = [
-            ("太程式", "秩序高，惊喜不足", BLUE),
-            ("有张力", "秩序与意外形成平衡", PURPLE),
-            ("太混乱", "差异多，结构难抓", ORANGE),
-        ]
-        for (x, y, (lab, desc, col)) in zip(xs, ys, labels):
-            els.append(f'<circle cx="{x}" cy="{y}" r="20" fill="#ffffff" stroke="{col}" stroke-width="2"/>')
-            els.append(txt(x, y + 4, lab, 9.0, col, weight="700", anchor="middle"))
-            els.append(txt(x, y + 40, desc, 8.8, MUTED, anchor="middle"))
-        els.append(_line(xs[0] + 20, ys[0] - 6, xs[1] - 20, ys[1], stroke=PURPLE, sw=2.0, dash="4 3"))
-        els.append(_line(xs[1] + 20, ys[1], xs[2] - 20, ys[2] - 2, stroke=PURPLE, sw=2.0, dash="4 3"))
 
-        els.append(card(536, 112, 200, 260, rx=10, fill=SLATE_SOFT, stroke=BORDER))
-        els.append(txt(552, 138, "最早的形式化尝试", 10.8, INK, weight="700"))
-        els.append(txt(552, 172, "M = O / C", 16.0, PURPLE, weight="700"))
-        els.append(txt(552, 198, "M：审美度量", 9.5, INK, weight="600"))
-        els.append(txt(552, 220, "O：秩序、和谐、对称", 9.3, MUTED))
-        els.append(txt(552, 242, "C：感知复杂度与努力", 9.3, MUTED))
-        els.append(txt(552, 274, "美不能只被还原成数字：", 9.5, INK, weight="700"))
-        els.append(txt(552, 296, "文化、时代、身体与个人", 9.2, MUTED))
-        els.append(txt(552, 318, "都会改变读者看到的秩序。", 9.2, MUTED))
-        els.append(card(24, 392, 712, 54, rx=8, fill=PURPLE_SOFT, stroke="#c4b5fd"))
-        els.append(txt(38, 415, "更稳妥的读法：艺术在“可读的秩序”和“可被惊讶的变化”之间制造张力。", 10.5, INK, weight="700"))
+        # Helper to render an 8x5 mini grid pattern
+        def _grid_sample(gx, gy, active_cells, accent_cells, col):
+            out = [f'<rect x="{gx - 2}" y="{gy - 2}" width="76" height="49" rx="4" fill="#ffffff" stroke="{BORDER}"/>']
+            for r in range(5):
+                for c in range(8):
+                    if (c, r) in accent_cells:
+                        fill = ORANGE
+                    elif (c, r) in active_cells:
+                        fill = col
+                    else:
+                        fill = "#f1f5f9"
+                    out.append(f'<rect x="{gx + c * 9}" y="{gy + r * 9}" width="8" height="8" fill="{fill}"/>')
+            return "\n".join(out)
+
+        # Sample 1: Strict periodic stripes (20/40 cells, trivial period-2 rule)
+        s1_cells = {(c, r) for r in range(5) for c in range(8) if c % 2 == 0}
+        # Sample 2: Asymmetric mountain ridge + negative space + single focal sun cell
+        s2_cells = {
+            (1, 4), (2, 4), (3, 4), (4, 4), (5, 4),
+            (1, 3), (2, 3), (3, 3), (4, 3),
+            (2, 2), (3, 2),
+            (2, 1),
+        }
+        s2_accent = {(6, 1)}
+        # Sample 3: Deterministic 50/50 white-noise sample (exact 20/40 = 1.00 bit/cell, low run structure)
+        noise_bits = [
+            1, 0, 1, 1, 0, 0, 1, 0,
+            0, 1, 0, 1, 1, 0, 0, 1,
+            1, 1, 0, 0, 1, 0, 1, 0,
+            0, 0, 1, 0, 1, 1, 0, 1,
+            1, 0, 0, 1, 0, 1, 1, 0,
+        ]
+        assert sum(noise_bits) == 20 and len(noise_bits) == 40
+        s3_cells = {(idx % 8, idx // 8) for idx, bit in enumerate(noise_bits) if bit == 1}
+
+        samples = [
+            (24, 1, "机械重复", s1_cells, set(), BLUE, BLUE_SOFT, "统计熵低", "0 意外", "一眼看穿规则，迅速乏味"),
+            (190, 2, "秩序×破格", s2_cells, s2_accent, PURPLE, PURPLE_SOFT, "熵值适中", "结构丰富", "留白与焦点并存，张力最高"),
+            (356, 3, "随机白噪声", s3_cells, set(), ORANGE, ORANGE_SOFT, "熵 H=1 bit", "有效结构≈0", "差异极多却无规律可抓"),
+        ]
+        for sx, num, name, cells, acc, col, soft, m1, m2, foot in samples:
+            sw = 1.5 if num == 2 else 1.0
+            els.append(card(sx, 68, 152, 112, rx=9, fill=soft, stroke=col, sw=sw))
+            els.append(step_badge(sx + 16, 85, num, fg=col, bg="#ffffff", r=9.0))
+            els.append(txt(sx + 30, 89, name, 11.0, col, weight="700"))
+            els.append(_grid_sample(sx + 12, 100, cells, acc, col))
+            els.append(txt(sx + 94, 116, m1, 9.4, INK, weight="700"))
+            els.append(txt(sx + 94, 136, m2, 9.4, col if num == 2 else MUTED, weight="600"))
+            els.append(txt(sx + 76, 168, foot, 9.2, INK if num == 2 else MUTED, weight="600" if num == 2 else None, anchor="middle"))
+
+        # Main Wundt-Berlyne / Effective Complexity Inverted-U Plot
+        els.append(card(24, 192, 484, 246, rx=10, fill=CARD_BG, stroke=BORDER))
+        px0, py0, pw, ph = 68, 228, 412, 164
+        y_axis = py0 + ph  # 392
+
+        # Sweet-spot shaded zone u in [0.33, 0.67]
+        sx1 = px0 + 0.33 * pw
+        sx2 = px0 + 0.67 * pw
+        els.append(f'<rect x="{sx1:.1f}" y="{py0}" width="{sx2 - sx1:.1f}" height="{ph}" rx="6" fill="{PURPLE_SOFT}" opacity="0.6"/>')
+
+        # Axes
+        els.append(_line(px0, y_axis, px0 + pw, y_axis, stroke=SLATE, sw=1.5))
+        els.append(_line(px0, y_axis, px0, py0 - 6, stroke=SLATE, sw=1.5))
+        els.append(txt(px0 - 6, py0 - 14, "审美张力 / 有效复杂度（可习得规律的丰富度）", 10.2, SLATE, weight="700"))
+
+        # Computed inverted-U curve: v(u) = 0.08 + 0.88 * sin(pi * u)^1.35
+        def _curve_pt(u):
+            v = 0.08 + 0.88 * (math.sin(math.pi * u) ** 1.35)
+            return px0 + u * pw, y_axis - v * 154.0
+
+        pts = [_curve_pt(k / 60.0) for k in range(61)]
+        poly = " ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
+        els.append(f'<polyline points="{poly}" fill="none" stroke="{PURPLE}" stroke-width="2.6" stroke-linecap="round"/>')
+
+        # Three landmark points on the curve
+        p1x, p1y = _curve_pt(0.12)
+        p2x, p2y = _curve_pt(0.50)
+        p3x, p3y = _curve_pt(0.88)
+        for px, py, col in [(p1x, p1y, BLUE), (p2x, p2y, PURPLE), (p3x, p3y, ORANGE)]:
+            els.append(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="6.5" fill="#ffffff" stroke="{col}" stroke-width="2.4"/>')
+
+        els.append(txt(p1x - 28, p1y - 10, "① 太刻板", 10.0, BLUE, weight="700", anchor="middle", halo=True))
+        els.append(txt(p2x, p2y + 26, "② 艺术黄金张力甜区", 10.6, PURPLE, weight="700", anchor="middle", halo=True))
+        els.append(txt(p2x, p2y + 44, "半熟悉·半陌生（可压缩的新奇）", 9.4, INK, weight="600", anchor="middle", halo=True))
+        els.append(txt(p3x + 28, p3y - 10, "③ 太混乱", 10.0, ORANGE, weight="700", anchor="middle", halo=True))
+
+        # X-axis labels cleanly inside card (y_axis=392, card bottom=438)
+        els.append(txt(px0 + 4, y_axis + 17, "低熵（死板对称）", 9.4, MUTED))
+        els.append(txt(px0 + pw / 2, y_axis + 34, "无序度 / 香农统计熵 H（从完全可预测 → 彻底随机）", 9.8, SLATE, weight="700", anchor="middle"))
+        els.append(txt(px0 + pw - 4, y_axis + 17, "高熵（纯白噪声）", 9.4, MUTED, anchor="end"))
+
+        # Right sidebar: Birkhoff M=O/C vs Gell-Mann Effective Complexity + Cultural Shift
+        els.append(card(522, 68, 214, 370, rx=10, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(step_badge(540, 89, 4, fg=PURPLE, bg="#ffffff", r=9.5))
+        els.append(txt(555, 93, "两代数学模型的启发与边界", 11.4, INK, weight="700"))
+
+        els.append(card(534, 108, 190, 102, rx=8, fill="#ffffff", stroke=BORDER))
+        els.append(txt(546, 127, "伯克霍夫审美度量（1933）", 10.0, PURPLE, weight="700"))
+        els.append(txt(629, 153, "M = O / C", 14.5, PURPLE, weight="700", anchor="middle"))
+        els.append(txt(546, 174, "O：对称、重复、比例等秩序", 9.4, INK))
+        els.append(txt(546, 193, "C：感知识别结构所耗的努力", 9.4, MUTED))
+
+        els.append(card(534, 220, 190, 102, rx=8, fill="#ffffff", stroke=BORDER))
+        els.append(txt(546, 239, "盖尔曼有效复杂度（1996）", 10.0, BLUE, weight="700"))
+        els.append(txt(546, 259, "只度量“可提取规律”的丰富度：", 9.4, INK))
+        els.append(txt(546, 278, "雪花噪点虽总熵最大，但规律为", 9.4, MUTED))
+        els.append(txt(546, 297, "零，故有效复杂度与美感俱归零", 9.4, MUTED))
+
+        els.append(card(534, 332, 190, 94, rx=8, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(546, 351, "为什么公式不能当审美裁判？", 9.9, ORANGE, weight="700"))
+        els.append(txt(546, 371, "观者经验会移动横轴位置：初听", 9.3, INK))
+        els.append(txt(546, 389, "复调觉乱（偏 ③），听懂对位法", 9.3, INK))
+        els.append(txt(546, 407, "后便落回 ② 号高张力峰值区", 9.3, INK))
+
+        els.append(card(24, 450, 712, 50, rx=8, fill=PURPLE_SOFT, stroke="#c4b5fd"))
+        els.append(txt(40, 470, "关键区分：香农统计熵衡量“下一格有多难猜”，艺术张力衡量“意外之中藏着多深的秩序”。", 10.8, INK, weight="700"))
+        els.append(txt(40, 489, "好作品既不靠机械套路哄睡感知，也不靠纯随机噪声瘫痪理解，而是在熟悉与陌生交界处搭桥。", 9.9, BODY))
+
         return figure(
-            458,
-            "秩序与复杂度之间审美张力及伯克霍夫审美度量公式示意",
-            "说明伯克霍夫 M=O/C 只是对审美张力的历史性形式化尝试，并提醒文化、时代、身体与个人解释会改变秩序和复杂度的感受。",
+            512,
+            "三种网格样本对比与秩序熵审美张力倒U型曲线图解",
+            "通过机械重复、秩序破格与随机白噪声三种 8×5 样本，配合温特—伯莱恩倒 U 型曲线、伯克霍夫公式与有效复杂度，解释审美张力的来源与个体文化边界。",
             els,
         )
 
     def _build_compression_prediction():
         els = []
         els.extend(header(
-            "艺术为什么像压缩：保留结构，舍弃冗余，但选择也会改变世界",
-            "好的画、诗、建筑或音乐，把高维经验压成有限符号；读者再用记忆、模型和情绪重构它。",
+            "艺术为什么是最神奇的压缩？少画十倍细节，反而展开百倍世界",
+            "上排按 ①→④ 看“有选择的降维编码 + 观者先验解压”，下排对比工程保真压缩与审美顿悟跃迁",
         ))
-        els.append(card(24, 78, 712, 256, rx=10))
-        stages = [
-            (48, "世界", "景观、声音、情绪、时间", BLUE, BLUE_SOFT),
-            (236, "选择", "画哪一刻？留何处？省什么？", PURPLE, PURPLE_SOFT),
-            (424, "编码", "笔触、词序、和弦、比例、节奏", ORANGE, ORANGE_SOFT),
-            (612, "重构", "读者在脑中补全、比较、顿悟", GREEN, GREEN_SOFT),
-        ]
-        for i, (x, name, desc, col, soft) in enumerate(stages):
-            els.append(card(x, 112, 124, 168, rx=8, fill=soft, stroke=col))
-            els.append(pill(x + 12, 128, name, fg=col, bg="#ffffff", w=100, h=24, size=9.5))
-            lines = desc
-            els.append(txt(x + 62, 184, lines, 9.7, INK, weight="700", anchor="middle"))
-            if i < 3:
-                els.append(_line(x + 124, 196, x + 164, 196, stroke=col, sw=2.0, marker="arr-blue"))
-        els.append(txt(380, 304, "压缩 ≠ 只删数据；压缩也可以是转述、转化与观点的产生。", 10.2, INK, weight="700", anchor="middle"))
 
-        els.append(card(24, 354, 712, 92, rx=8, fill="#f8fafc", stroke=BORDER))
-        els.append(txt(38, 378, "为何“同一幅画可以让人顿悟”？", 11.0, INK, weight="700"))
-        els.append(txt(38, 400, "读者原有模型尚未解释某段经验；作品保留下来的结构恰好与旧模型碰撞。", 10.1, MUTED))
-        els.append(txt(38, 422, "旧模型突然重组，新关系可被一眼看见——这就是审美之中可能发生的认知跃迁。", 10.1, INK, weight="600"))
+        # Top 4-stage pipeline container
+        els.append(card(24, 68, 712, 190, rx=10, fill=CARD_BG, stroke=BORDER))
+        stages = [
+            (
+                1,
+                "高维原始经验",
+                "无限细节流",
+                ["山川光影、声响气味", "身体冷暖与时间绵延", "（原始维度近乎无穷）"],
+                BLUE,
+                BLUE_SOFT,
+                "arr-purple",
+            ),
+            (
+                2,
+                "审美取舍与留白",
+                "关系蒸馏器",
+                ["主动舍弃冗余枝蔓", "只抓动势、冲突转折", "与“计白当黑”的缺口"],
+                PURPLE,
+                PURPLE_SOFT,
+                "arr-orange",
+            ),
+            (
+                3,
+                "低比特符号载体",
+                "作品编码层",
+                ["寥寥数笔水墨蝌蚪", "二十八字绝句、和弦", "车座与车把拼成牛头"],
+                ORANGE,
+                ORANGE_SOFT,
+                "arr-green",
+            ),
+            (
+                4,
+                "观者先验解压",
+                "脑内高维重构",
+                ["调动记忆与文化先验", "听见画外“十里蛙声”", "展开一整个精神世界"],
+                GREEN,
+                GREEN_SOFT,
+                None,
+            ),
+        ]
+        for i, (num, title, subtag, lines, col, soft, arr) in enumerate(stages):
+            sx = 38 + i * 176  # width 152, gap 24 -> rightmost 566..718
+            els.append(card(sx, 82, 152, 144, rx=8, fill=soft, stroke=col))
+            els.append(step_badge(sx + 17, 101, num, fg=col, bg="#ffffff", r=9.5))
+            els.append(txt(sx + 32, 105, title, 11.2, col, weight="700"))
+            els.append(pill(sx + 20, 117, subtag, fg=col, bg="#ffffff", w=112, h=20, size=9.6))
+            for li, ln in enumerate(lines):
+                els.append(txt(sx + 76, 158 + li * 20, ln, 9.7, INK if li < 2 else MUTED, weight="600" if li == 0 else None, anchor="middle"))
+            if arr is not None:
+                els.append(_line(sx + 155, 154, sx + 172, 154, stroke=col, sw=1.9, marker=arr))
+
+        els.append(txt(380, 246, "贡布里希“观者的本分”：艺术家故意留出结构缺口，观者用一生经验完成最后一步高倍解码。", 10.2, INK, weight="700", anchor="middle"))
+
+        # Bottom-left: Engineering lossless/perceptual compression
+        els.append(card(24, 272, 344, 220, rx=10, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(pill(38, 286, "对照 A：工程数据压缩（保真复刻）", fg=SLATE, bg="#ffffff", w=224, h=22, size=10.0))
+        els.append(txt(38, 326, "代表：PNG 无损预测 / JPEG 频域余弦量化", 10.5, INK, weight="700"))
+        els.append(txt(38, 348, "• 压缩对象：统计重复像素与人眼不敏感高频分量", 9.8, BODY))
+        els.append(txt(38, 369, "• 解码准则：所有设备还原出的画面越一致越成功", 9.8, BODY))
+        els.append(txt(38, 390, "• 认知影响：只搬运像素，不要求重构观者的世界模型", 9.8, BODY))
+
+        els.append(card(38, 406, 316, 72, rx=7, fill="#ffffff", stroke=BORDER))
+        els.append(txt(196, 430, "原图 X (24 MB)  →  码流 (1.2 MB)  →  还原图 X̂", 10.0, BLUE, weight="700", anchor="middle"))
+        els.append(txt(196, 452, "优化目标：像素重构误差 d(X, X̂) → 0", 9.6, INK, weight="600", anchor="middle"))
+        els.append(txt(196, 470, "（忠实存档，不追求“言外之意”）", 9.2, MUTED, anchor="middle"))
+
+        # Bottom-right: Artistic compression & Schmidhuber compression progress (Aha!)
+        els.append(card(382, 272, 354, 220, rx=10, fill=PURPLE_SOFT, stroke="#c4b5fd"))
+        els.append(pill(396, 286, "对照 B：艺术压缩与“顿悟压缩跃迁”", fg=PURPLE, bg="#ffffff", w=234, h=22, size=10.0))
+
+        # Mini step-drop plot of subjective description length L(x; C_t)
+        els.append(card(396, 316, 326, 98, rx=7, fill="#ffffff", stroke=PURPLE))
+        gx0, gy0, gw, gh = 434, 330, 272, 66
+        els.append(_line(gx0, gy0 + gh, gx0 + gw, gy0 + gh, stroke=SLATE, sw=1.3))
+        els.append(_line(gx0, gy0 + gh, gx0, gy0, stroke=SLATE, sw=1.3))
+        els.append(txt(gx0 - 6, gy0 + 10, "描述", 8.8, SLATE, anchor="end"))
+        els.append(txt(gx0 - 6, gy0 + 22, "长度", 8.8, SLATE, anchor="end"))
+        # Step-drop curve: high plateau L_before -> steep insight drop -> low plateau L_after
+        step_pts = [
+            (gx0 + 8, gy0 + 16),
+            (gx0 + 112, gy0 + 16),
+            (gx0 + 132, gy0 + 44),
+            (gx0 + 262, gy0 + 44),
+        ]
+        sp_str = " ".join(f"{x},{y}" for x, y in step_pts)
+        els.append(f'<polyline points="{sp_str}" fill="none" stroke="{PURPLE}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>')
+        els.append(_line(gx0 + 144, gy0 + 17, gx0 + 144, gy0 + 41, stroke=GREEN, sw=1.8, marker="arr-green"))
+        els.append(txt(gx0 + 60, gy0 + 11, "顿悟前 L_前（线索零散）", 9.0, ORANGE, weight="700", anchor="middle"))
+        els.append(txt(gx0 + 208, gy0 + 27, "ΔL = L_前 − L_后 > 0", 9.8, GREEN, weight="700", anchor="middle"))
+        els.append(txt(gx0 + 208, gy0 + 59, "顿悟后 L_后（一通百通）", 9.0, PURPLE, weight="700", anchor="middle"))
+
+        els.append(txt(396, 434, "• 齐白石不画蛙只画溪中蝌蚪；毕加索用旧车座配车把秒变公牛头", 9.6, INK, weight="600"))
+        els.append(txt(396, 455, "• 当零散细节突然被一个新结构统摄，主观描述长度瞬间坍缩 ΔL > 0", 9.6, BODY))
+        els.append(txt(396, 476, "• 这股“认知压缩率跃升”释放的惊喜与快感，就是审美里的顿悟（Aha!）", 9.6, PURPLE, weight="700"))
+
         return figure(
-            460,
-            "世界经验选择编码和读者重构形成压缩预测与顿悟的编码流程",
-            "说明艺术通过选择、压缩和结构编码，改变读者对经验的预测和重构，而顿悟来自旧模型与新结构之间的认知重组。",
+            504,
+            "艺术四步有损压缩解压流程与顿悟描述长度跃迁对比图解",
+            "上排展示高维原始经验经审美取舍、低比特符号载体到观者先验解压的四步流程；下排对比工程像素保真压缩与艺术通过描述长度骤降触发顿悟的机制。",
             els,
+            extra_defs=PURPLE_MARKER,
         )
 
     def _build_art_as_insight_loop():
         css = """
-      @keyframes insightPulse {
-        0% { r: 18px; opacity: .55; }
-        100% { r: 42px; opacity: 0; }
+      @keyframes stepReveal {
+        0% { opacity: 0.78; }
+        50% { opacity: 1; }
+        100% { opacity: 1; }
       }
-      .insight-ring { animation: insightPulse 2.4s ease-out 1.0s 1 both; }
+      @keyframes ahaHalo {
+        0% { opacity: 0.15; stroke-dashoffset: 28; }
+        60% { opacity: 1; stroke-dashoffset: 0; }
+        100% { opacity: 0.92; stroke-dashoffset: 0; }
+      }
+      .cyc-s1 { animation: stepReveal 0.55s ease-out 0.10s 1 both; }
+      .cyc-s2 { animation: stepReveal 0.55s ease-out 0.55s 1 both; }
+      .cyc-s3 { animation: stepReveal 0.55s ease-out 1.00s 1 both; }
+      .cyc-s4 { animation: stepReveal 0.55s ease-out 1.45s 1 both; }
+      .aha-halo { stroke-dasharray: 6 4; animation: ahaHalo 1.1s ease-out 1.85s 1 both; }
       @media (prefers-reduced-motion: reduce) {
-        .insight-ring { animation: none; opacity: 0; }
+        .cyc-s1, .cyc-s2, .cyc-s3, .cyc-s4, .aha-halo {
+          animation: none !important;
+          opacity: 1 !important;
+          stroke-dashoffset: 0 !important;
+        }
       }"""
         els = []
         els.extend(header(
-            "艺术不是一句固定答案，而是“作品—读者—世界”之间的循环",
-            "作品提供结构，读者带来解释，解释又会改变作品的社会与历史位置。",
+            "艺术到底是什么？“作品—观者—世界—文化”的四元循环与顿悟闭环",
+            "外圈 ①→④ 展示意义如何在四个节点间流转生长，中心展示预测碰撞点亮的顿悟时刻（支持减少动态效果）",
         ))
-        cx, cy = 380, 238
-        els.append(f'<circle cx="{cx}" cy="{cy}" r="78" fill="{PURPLE_SOFT}" stroke="{PURPLE}" stroke-width="2"/>')
-        els.append(txt(cx, cy - 12, "顿悟", 18.0, PURPLE, weight="700", anchor="middle"))
-        els.append(txt(cx, cy + 12, "旧模型突然重组", 9.8, INK, weight="600", anchor="middle"))
-        els.append(f'<circle cx="{cx}" cy="{cy}" r="18" fill="none" stroke="{PURPLE}" stroke-width="2" class="insight-ring"/>')
 
+        cx, cy, r = 380, 244, 72
+        # Outer persistent highlight ring + central hub
+        els.append(f'<circle cx="{cx}" cy="{cy}" r="81" fill="none" stroke="{PURPLE}" stroke-width="2" class="aha-halo"/>')
+        els.append(f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="{PURPLE_SOFT}" stroke="{PURPLE}" stroke-width="2.2"/>')
+        els.append(txt(cx, cy - 18, "顿悟时刻 Aha!", 15.0, PURPLE, weight="700", anchor="middle"))
+        els.append(txt(cx, cy + 5, "旧模型重组 · 误差骤降", 10.0, INK, weight="700", anchor="middle"))
+        els.append(txt(cx, cy + 25, "ΔL = L_前 − L_后 > 0", 9.6, PURPLE, weight="600", anchor="middle"))
+
+        # Four corner node cards (w=192, h=86)
         nodes = [
-            (178, 118, "作品", "留下差异与结构", BLUE, BLUE_SOFT),
-            (582, 118, "读者", "带入记忆与经验", ORANGE, ORANGE_SOFT),
-            (178, 358, "文化", "提供共同惯例", GREEN, GREEN_SOFT),
-            (582, 358, "世界", "给出反例与历史", SLATE, SLATE_SOFT),
+            (36, 82, 1, "作品结构", "凝聚差异、留白与张力", "提供可感知的符号表面", BLUE, BLUE_SOFT, "cyc-s1"),
+            (532, 82, 2, "观者解码", "带入记忆、身体与预期", "主动补全并检验旧假设", ORANGE, ORANGE_SOFT, "cyc-s2"),
+            (532, 320, 3, "真实世界", "自然万物、历史与生活", "不断提供新经验与反例", GREEN, GREEN_SOFT, "cyc-s3"),
+            (36, 320, 4, "文化共同体", "沉淀母语、传统与典故", "划定可共享的解释边界", SLATE, SLATE_SOFT, "cyc-s4"),
         ]
-        for x, y, title, desc, col, soft in nodes:
-            els.append(card(x - 104, y - 48, 208, 96, rx=10, fill=soft, stroke=col))
-            els.append(txt(x, y - 18, title, 12.0, col, weight="700", anchor="middle"))
-            els.append(txt(x, y + 12, desc, 9.4, INK, weight="600", anchor="middle"))
+        for nx, ny, num, title, l1, l2, col, soft, cls in nodes:
+            els.append(f'<g class="{cls}">')
+            els.append(card(nx, ny, 192, 86, rx=10, fill=soft, stroke=col))
+            els.append(step_badge(nx + 18, ny + 21, num, fg=col, bg="#ffffff", r=9.5))
+            els.append(txt(nx + 34, ny + 25, title, 12.0, col, weight="700"))
+            els.append(txt(nx + 16, ny + 50, l1, 10.0, INK, weight="600"))
+            els.append(txt(nx + 16, ny + 70, l2, 9.5, MUTED))
+            els.append("</g>")
 
-        els.append(_line(264, 118, 320, 194, stroke=BLUE, sw=2.0, marker="arr-blue"))
-        els.append(_line(478, 194, 522, 118, stroke=ORANGE, sw=2.0, marker="arr-blue"))
-        els.append(_line(478, 282, 522, 358, stroke=SLATE, sw=2.0, marker="arr-blue"))
-        els.append(_line(282, 358, 320, 282, stroke=GREEN, sw=2.0, marker="arr-blue"))
-        els.append(card(24, 424, 712, 38, rx=8, fill=PURPLE_SOFT, stroke="#c4b5fd"))
-        els.append(txt(380, 448, "艺术不是把世界“解码成唯一答案”，而是让一个世界从新的结构里回响。", 10.5, INK, weight="700", anchor="middle"))
+        # Outer clockwise cycle arrows (strictly outside cards)
+        els.append(_line(234, 114, 524, 114, stroke=BLUE, sw=1.8, marker="arr-orange"))
+        els.append(txt(380, 104, "输出编码线索与意外缺口 →", 9.8, BLUE, weight="600", anchor="middle"))
+
+        els.append(_line(646, 174, 646, 312, stroke=ORANGE, sw=1.8, marker="arr-green"))
+        els.append(txt(656, 248, "刷新观看视角", 9.6, ORANGE, weight="600"))
+
+        els.append(_line(524, 374, 236, 374, stroke=GREEN, sw=1.8, marker="arr-muted"))
+        els.append(txt(380, 394, "← 生活巨变催生新的表达惯例", 9.8, GREEN, weight="600", anchor="middle"))
+
+        els.append(_line(114, 314, 114, 176, stroke=SLATE, sw=1.8, marker="arr-blue"))
+        els.append(txt(124, 248, "提供母题与法则", 9.6, SLATE, weight="600"))
+
+        # Four radial arrows computed precisely from outside card corners to outside r=84
+        els.append(_line(232, 170, 304, 206, stroke=BLUE, sw=1.7, dash="4 3", marker="arr-purple"))
+        els.append(_line(528, 170, 456, 206, stroke=ORANGE, sw=1.7, dash="4 3", marker="arr-purple"))
+        els.append(_line(528, 318, 456, 282, stroke=GREEN, sw=1.7, dash="4 3", marker="arr-purple"))
+        els.append(_line(232, 318, 304, 282, stroke=SLATE, sw=1.7, dash="4 3", marker="arr-purple"))
+
+        els.append(card(24, 426, 712, 62, rx=8, fill=PURPLE_SOFT, stroke="#c4b5fd"))
+        els.append(txt(40, 448, "一句话回答“艺术到底是什么”：艺术不是锁在玻璃柜里的标准答案，而是一套活的跨层编码装置——", 10.8, INK, weight="700"))
+        els.append(txt(40, 470, "它把浩瀚经验压缩成有张力的符号结构，只等某位观者带着人生走来，在解释中轰然展开一整个新世界。", 10.0, BODY))
+
         return figure(
-            474,
-            "作品读者文化世界与顿悟形成艺术意义循环的四节点图解",
-            "以作品、读者、文化和世界四节点说明艺术意义不是作品中预先固定的内容，而是在解释、惯例、经验和历史之间反复循环。",
+            500,
+            "作品观者真实世界与文化共同体围绕顿悟时刻的意义循环图解",
+            "以作品结构、观者解码、真实世界和文化共同体四个节点构成外圈循环，四条径向虚线汇聚到中心顿悟时刻，说明艺术意义在动态解释中生成。",
             els,
             extra_css=css,
+            extra_defs=PURPLE_MARKER,
         )
 
     @register(

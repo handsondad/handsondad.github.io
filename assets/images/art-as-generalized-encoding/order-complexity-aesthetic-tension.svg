@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="760" height="458" viewBox="0 0 760 458" role="img" aria-labelledby="title desc" lang="zh-CN">
-<title id="title">秩序与复杂度之间审美张力及伯克霍夫审美度量公式示意</title>
-<desc id="desc">说明伯克霍夫 M=O/C 只是对审美张力的历史性形式化尝试，并提醒文化、时代、身体与个人解释会改变秩序和复杂度的感受。</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="512" viewBox="0 0 760 512" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">三种网格样本对比与秩序熵审美张力倒U型曲线图解</title>
+<desc id="desc">通过机械重复、秩序破格与随机白噪声三种 8×5 样本，配合温特—伯莱恩倒 U 型曲线、伯克霍夫公式与有效复杂度，解释审美张力的来源与个体文化边界。</desc>
 <defs>
   <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
     <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
@@ -30,34 +30,189 @@
     stroke-linejoin: round;
   }
 </style>
-<rect x="0.5" y="0.5" width="759" height="457" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
-<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">美是不是“秩序 / 复杂度”？这是提示，不是审美判决</text>
-<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">伯克霍夫把审美度量设为秩序与感知复杂度的平衡；它不能解释所有艺术，也揭示了有趣的张力。</text>
-<rect x="40" y="66" width="488" height="352" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
-<line x1="64.0" y1="372.0" x2="504.0" y2="372.0" stroke="#475569" stroke-width="1.4"/>
-<line x1="64.0" y1="372.0" x2="64.0" y2="112.0" stroke="#475569" stroke-width="1.4"/>
-<text x="46" y="100" font-size="10.0" fill="#475569" text-anchor="start" font-weight="700">感知收益 / 复杂度</text>
-<text x="496" y="396" font-size="10.0" fill="#475569" text-anchor="end">复杂度 C</text>
-<circle cx="122" cy="336" r="20" fill="#ffffff" stroke="#1d6fa5" stroke-width="2"/>
-<text x="122" y="340" font-size="9.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">太程式</text>
-<text x="122" y="376" font-size="8.8" fill="#64748b" text-anchor="middle">秩序高，惊喜不足</text>
-<circle cx="274" cy="278" r="20" fill="#ffffff" stroke="#6d28d9" stroke-width="2"/>
-<text x="274" y="282" font-size="9.0" fill="#6d28d9" text-anchor="middle" font-weight="700">有张力</text>
-<text x="274" y="318" font-size="8.8" fill="#64748b" text-anchor="middle">秩序与意外形成平衡</text>
-<circle cx="436" cy="202" r="20" fill="#ffffff" stroke="#c25014" stroke-width="2"/>
-<text x="436" y="206" font-size="9.0" fill="#c25014" text-anchor="middle" font-weight="700">太混乱</text>
-<text x="436" y="242" font-size="8.8" fill="#64748b" text-anchor="middle">差异多，结构难抓</text>
-<line x1="142.0" y1="330.0" x2="254.0" y2="278.0" stroke="#6d28d9" stroke-width="2.0" stroke-dasharray="4 3"/>
-<line x1="294.0" y1="278.0" x2="416.0" y2="200.0" stroke="#6d28d9" stroke-width="2.0" stroke-dasharray="4 3"/>
-<rect x="536" y="112" width="200" height="260" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
-<text x="552" y="138" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">最早的形式化尝试</text>
-<text x="552" y="172" font-size="16.0" fill="#6d28d9" text-anchor="start" font-weight="700">M = O / C</text>
-<text x="552" y="198" font-size="9.5" fill="#0f172a" text-anchor="start" font-weight="600">M：审美度量</text>
-<text x="552" y="220" font-size="9.3" fill="#64748b" text-anchor="start">O：秩序、和谐、对称</text>
-<text x="552" y="242" font-size="9.3" fill="#64748b" text-anchor="start">C：感知复杂度与努力</text>
-<text x="552" y="274" font-size="9.5" fill="#0f172a" text-anchor="start" font-weight="700">美不能只被还原成数字：</text>
-<text x="552" y="296" font-size="9.2" fill="#64748b" text-anchor="start">文化、时代、身体与个人</text>
-<text x="552" y="318" font-size="9.2" fill="#64748b" text-anchor="start">都会改变读者看到的秩序。</text>
-<rect x="24" y="392" width="712" height="54" rx="8" fill="#f3e8ff" stroke="#c4b5fd" stroke-width="1"/>
-<text x="38" y="415" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">更稳妥的读法：艺术在“可读的秩序”和“可被惊讶的变化”之间制造张力。</text>
+<rect x="0.5" y="0.5" width="759" height="511" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">为什么“绝对整齐”乏味、“雪花白噪”刺眼？秩序、熵与审美张力的倒 U 曲线</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">上排对比三种 8×5 编码样本的香农熵与规律度，下排看温特—伯莱恩倒 U 型曲线与伯克霍夫公式的边界</text>
+<rect x="24" y="68" width="152" height="112" rx="9" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.0"/>
+<circle cx="40" cy="85" r="9.0" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="40" y="89" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="54" y="89" font-size="11.0" fill="#1d6fa5" text-anchor="start" font-weight="700">机械重复</text>
+<rect x="34" y="98" width="76" height="49" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+<rect x="36" y="100" width="8" height="8" fill="#1d6fa5"/>
+<rect x="45" y="100" width="8" height="8" fill="#f1f5f9"/>
+<rect x="54" y="100" width="8" height="8" fill="#1d6fa5"/>
+<rect x="63" y="100" width="8" height="8" fill="#f1f5f9"/>
+<rect x="72" y="100" width="8" height="8" fill="#1d6fa5"/>
+<rect x="81" y="100" width="8" height="8" fill="#f1f5f9"/>
+<rect x="90" y="100" width="8" height="8" fill="#1d6fa5"/>
+<rect x="99" y="100" width="8" height="8" fill="#f1f5f9"/>
+<rect x="36" y="109" width="8" height="8" fill="#1d6fa5"/>
+<rect x="45" y="109" width="8" height="8" fill="#f1f5f9"/>
+<rect x="54" y="109" width="8" height="8" fill="#1d6fa5"/>
+<rect x="63" y="109" width="8" height="8" fill="#f1f5f9"/>
+<rect x="72" y="109" width="8" height="8" fill="#1d6fa5"/>
+<rect x="81" y="109" width="8" height="8" fill="#f1f5f9"/>
+<rect x="90" y="109" width="8" height="8" fill="#1d6fa5"/>
+<rect x="99" y="109" width="8" height="8" fill="#f1f5f9"/>
+<rect x="36" y="118" width="8" height="8" fill="#1d6fa5"/>
+<rect x="45" y="118" width="8" height="8" fill="#f1f5f9"/>
+<rect x="54" y="118" width="8" height="8" fill="#1d6fa5"/>
+<rect x="63" y="118" width="8" height="8" fill="#f1f5f9"/>
+<rect x="72" y="118" width="8" height="8" fill="#1d6fa5"/>
+<rect x="81" y="118" width="8" height="8" fill="#f1f5f9"/>
+<rect x="90" y="118" width="8" height="8" fill="#1d6fa5"/>
+<rect x="99" y="118" width="8" height="8" fill="#f1f5f9"/>
+<rect x="36" y="127" width="8" height="8" fill="#1d6fa5"/>
+<rect x="45" y="127" width="8" height="8" fill="#f1f5f9"/>
+<rect x="54" y="127" width="8" height="8" fill="#1d6fa5"/>
+<rect x="63" y="127" width="8" height="8" fill="#f1f5f9"/>
+<rect x="72" y="127" width="8" height="8" fill="#1d6fa5"/>
+<rect x="81" y="127" width="8" height="8" fill="#f1f5f9"/>
+<rect x="90" y="127" width="8" height="8" fill="#1d6fa5"/>
+<rect x="99" y="127" width="8" height="8" fill="#f1f5f9"/>
+<rect x="36" y="136" width="8" height="8" fill="#1d6fa5"/>
+<rect x="45" y="136" width="8" height="8" fill="#f1f5f9"/>
+<rect x="54" y="136" width="8" height="8" fill="#1d6fa5"/>
+<rect x="63" y="136" width="8" height="8" fill="#f1f5f9"/>
+<rect x="72" y="136" width="8" height="8" fill="#1d6fa5"/>
+<rect x="81" y="136" width="8" height="8" fill="#f1f5f9"/>
+<rect x="90" y="136" width="8" height="8" fill="#1d6fa5"/>
+<rect x="99" y="136" width="8" height="8" fill="#f1f5f9"/>
+<text x="118" y="116" font-size="9.4" fill="#0f172a" text-anchor="start" font-weight="700">统计熵低</text>
+<text x="118" y="136" font-size="9.4" fill="#64748b" text-anchor="start" font-weight="600">0 意外</text>
+<text x="100" y="168" font-size="9.2" fill="#64748b" text-anchor="middle">一眼看穿规则，迅速乏味</text>
+<rect x="190" y="68" width="152" height="112" rx="9" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.5"/>
+<circle cx="206" cy="85" r="9.0" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="206" y="89" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">2</text>
+<text x="220" y="89" font-size="11.0" fill="#6d28d9" text-anchor="start" font-weight="700">秩序×破格</text>
+<rect x="200" y="98" width="76" height="49" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+<rect x="202" y="100" width="8" height="8" fill="#f1f5f9"/>
+<rect x="211" y="100" width="8" height="8" fill="#f1f5f9"/>
+<rect x="220" y="100" width="8" height="8" fill="#f1f5f9"/>
+<rect x="229" y="100" width="8" height="8" fill="#f1f5f9"/>
+<rect x="238" y="100" width="8" height="8" fill="#f1f5f9"/>
+<rect x="247" y="100" width="8" height="8" fill="#f1f5f9"/>
+<rect x="256" y="100" width="8" height="8" fill="#f1f5f9"/>
+<rect x="265" y="100" width="8" height="8" fill="#f1f5f9"/>
+<rect x="202" y="109" width="8" height="8" fill="#f1f5f9"/>
+<rect x="211" y="109" width="8" height="8" fill="#f1f5f9"/>
+<rect x="220" y="109" width="8" height="8" fill="#6d28d9"/>
+<rect x="229" y="109" width="8" height="8" fill="#f1f5f9"/>
+<rect x="238" y="109" width="8" height="8" fill="#f1f5f9"/>
+<rect x="247" y="109" width="8" height="8" fill="#f1f5f9"/>
+<rect x="256" y="109" width="8" height="8" fill="#c25014"/>
+<rect x="265" y="109" width="8" height="8" fill="#f1f5f9"/>
+<rect x="202" y="118" width="8" height="8" fill="#f1f5f9"/>
+<rect x="211" y="118" width="8" height="8" fill="#f1f5f9"/>
+<rect x="220" y="118" width="8" height="8" fill="#6d28d9"/>
+<rect x="229" y="118" width="8" height="8" fill="#6d28d9"/>
+<rect x="238" y="118" width="8" height="8" fill="#f1f5f9"/>
+<rect x="247" y="118" width="8" height="8" fill="#f1f5f9"/>
+<rect x="256" y="118" width="8" height="8" fill="#f1f5f9"/>
+<rect x="265" y="118" width="8" height="8" fill="#f1f5f9"/>
+<rect x="202" y="127" width="8" height="8" fill="#f1f5f9"/>
+<rect x="211" y="127" width="8" height="8" fill="#6d28d9"/>
+<rect x="220" y="127" width="8" height="8" fill="#6d28d9"/>
+<rect x="229" y="127" width="8" height="8" fill="#6d28d9"/>
+<rect x="238" y="127" width="8" height="8" fill="#6d28d9"/>
+<rect x="247" y="127" width="8" height="8" fill="#f1f5f9"/>
+<rect x="256" y="127" width="8" height="8" fill="#f1f5f9"/>
+<rect x="265" y="127" width="8" height="8" fill="#f1f5f9"/>
+<rect x="202" y="136" width="8" height="8" fill="#f1f5f9"/>
+<rect x="211" y="136" width="8" height="8" fill="#6d28d9"/>
+<rect x="220" y="136" width="8" height="8" fill="#6d28d9"/>
+<rect x="229" y="136" width="8" height="8" fill="#6d28d9"/>
+<rect x="238" y="136" width="8" height="8" fill="#6d28d9"/>
+<rect x="247" y="136" width="8" height="8" fill="#6d28d9"/>
+<rect x="256" y="136" width="8" height="8" fill="#f1f5f9"/>
+<rect x="265" y="136" width="8" height="8" fill="#f1f5f9"/>
+<text x="284" y="116" font-size="9.4" fill="#0f172a" text-anchor="start" font-weight="700">熵值适中</text>
+<text x="284" y="136" font-size="9.4" fill="#6d28d9" text-anchor="start" font-weight="600">结构丰富</text>
+<text x="266" y="168" font-size="9.2" fill="#0f172a" text-anchor="middle" font-weight="600">留白与焦点并存，张力最高</text>
+<rect x="356" y="68" width="152" height="112" rx="9" fill="#fef1e8" stroke="#c25014" stroke-width="1.0"/>
+<circle cx="372" cy="85" r="9.0" fill="#ffffff" stroke="#c25014" stroke-width="1.2"/>
+<text x="372" y="89" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">3</text>
+<text x="386" y="89" font-size="11.0" fill="#c25014" text-anchor="start" font-weight="700">随机白噪声</text>
+<rect x="366" y="98" width="76" height="49" rx="4" fill="#ffffff" stroke="#e2e8f0"/>
+<rect x="368" y="100" width="8" height="8" fill="#c25014"/>
+<rect x="377" y="100" width="8" height="8" fill="#f1f5f9"/>
+<rect x="386" y="100" width="8" height="8" fill="#c25014"/>
+<rect x="395" y="100" width="8" height="8" fill="#c25014"/>
+<rect x="404" y="100" width="8" height="8" fill="#f1f5f9"/>
+<rect x="413" y="100" width="8" height="8" fill="#f1f5f9"/>
+<rect x="422" y="100" width="8" height="8" fill="#c25014"/>
+<rect x="431" y="100" width="8" height="8" fill="#f1f5f9"/>
+<rect x="368" y="109" width="8" height="8" fill="#f1f5f9"/>
+<rect x="377" y="109" width="8" height="8" fill="#c25014"/>
+<rect x="386" y="109" width="8" height="8" fill="#f1f5f9"/>
+<rect x="395" y="109" width="8" height="8" fill="#c25014"/>
+<rect x="404" y="109" width="8" height="8" fill="#c25014"/>
+<rect x="413" y="109" width="8" height="8" fill="#f1f5f9"/>
+<rect x="422" y="109" width="8" height="8" fill="#f1f5f9"/>
+<rect x="431" y="109" width="8" height="8" fill="#c25014"/>
+<rect x="368" y="118" width="8" height="8" fill="#c25014"/>
+<rect x="377" y="118" width="8" height="8" fill="#c25014"/>
+<rect x="386" y="118" width="8" height="8" fill="#f1f5f9"/>
+<rect x="395" y="118" width="8" height="8" fill="#f1f5f9"/>
+<rect x="404" y="118" width="8" height="8" fill="#c25014"/>
+<rect x="413" y="118" width="8" height="8" fill="#f1f5f9"/>
+<rect x="422" y="118" width="8" height="8" fill="#c25014"/>
+<rect x="431" y="118" width="8" height="8" fill="#f1f5f9"/>
+<rect x="368" y="127" width="8" height="8" fill="#f1f5f9"/>
+<rect x="377" y="127" width="8" height="8" fill="#f1f5f9"/>
+<rect x="386" y="127" width="8" height="8" fill="#c25014"/>
+<rect x="395" y="127" width="8" height="8" fill="#f1f5f9"/>
+<rect x="404" y="127" width="8" height="8" fill="#c25014"/>
+<rect x="413" y="127" width="8" height="8" fill="#c25014"/>
+<rect x="422" y="127" width="8" height="8" fill="#f1f5f9"/>
+<rect x="431" y="127" width="8" height="8" fill="#c25014"/>
+<rect x="368" y="136" width="8" height="8" fill="#c25014"/>
+<rect x="377" y="136" width="8" height="8" fill="#f1f5f9"/>
+<rect x="386" y="136" width="8" height="8" fill="#f1f5f9"/>
+<rect x="395" y="136" width="8" height="8" fill="#c25014"/>
+<rect x="404" y="136" width="8" height="8" fill="#f1f5f9"/>
+<rect x="413" y="136" width="8" height="8" fill="#c25014"/>
+<rect x="422" y="136" width="8" height="8" fill="#c25014"/>
+<rect x="431" y="136" width="8" height="8" fill="#f1f5f9"/>
+<text x="450" y="116" font-size="9.4" fill="#0f172a" text-anchor="start" font-weight="700">熵 H=1 bit</text>
+<text x="450" y="136" font-size="9.4" fill="#64748b" text-anchor="start" font-weight="600">有效结构≈0</text>
+<text x="432" y="168" font-size="9.2" fill="#64748b" text-anchor="middle">差异极多却无规律可抓</text>
+<rect x="24" y="192" width="484" height="246" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="204.0" y="228" width="140.1" height="164" rx="6" fill="#f3e8ff" opacity="0.6"/>
+<line x1="68.0" y1="392.0" x2="480.0" y2="392.0" stroke="#475569" stroke-width="1.5"/>
+<line x1="68.0" y1="392.0" x2="68.0" y2="222.0" stroke="#475569" stroke-width="1.5"/>
+<text x="62" y="214" font-size="10.2" fill="#475569" text-anchor="start" font-weight="700">审美张力 / 有效复杂度（可习得规律的丰富度）</text>
+<polyline points="68.0,379.7 74.9,377.2 81.7,373.3 88.6,368.6 95.5,363.4 102.3,357.8 109.2,351.9 116.1,345.8 122.9,339.4 129.8,333.0 136.7,326.5 143.5,320.0 150.4,313.5 157.3,307.2 164.1,300.9 171.0,294.8 177.9,288.9 184.7,283.3 191.6,277.9 198.5,272.8 205.3,268.1 212.2,263.7 219.1,259.7 225.9,256.2 232.8,253.0 239.7,250.4 246.5,248.1 253.4,246.4 260.3,245.2 267.1,244.4 274.0,244.2 280.9,244.4 287.7,245.2 294.6,246.4 301.5,248.1 308.3,250.4 315.2,253.0 322.1,256.2 328.9,259.7 335.8,263.7 342.7,268.1 349.5,272.8 356.4,277.9 363.3,283.3 370.1,288.9 377.0,294.8 383.9,300.9 390.7,307.2 397.6,313.5 404.5,320.0 411.3,326.5 418.2,333.0 425.1,339.4 431.9,345.8 438.8,351.9 445.7,357.8 452.5,363.4 459.4,368.6 466.3,373.3 473.1,377.2 480.0,379.7" fill="none" stroke="#6d28d9" stroke-width="2.6" stroke-linecap="round"/>
+<circle cx="117.4" cy="344.5" r="6.5" fill="#ffffff" stroke="#1d6fa5" stroke-width="2.4"/>
+<circle cx="274.0" cy="244.2" r="6.5" fill="#ffffff" stroke="#6d28d9" stroke-width="2.4"/>
+<circle cx="430.6" cy="344.5" r="6.5" fill="#ffffff" stroke="#c25014" stroke-width="2.4"/>
+<text x="89.4" y="334.5" font-size="10.0" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">① 太刻板</text>
+<text x="274.0" y="270.2" font-size="10.6" fill="#6d28d9" text-anchor="middle" font-weight="700" class="halo">② 艺术黄金张力甜区</text>
+<text x="274.0" y="288.2" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="600" class="halo">半熟悉·半陌生（可压缩的新奇）</text>
+<text x="458.6" y="334.5" font-size="10.0" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">③ 太混乱</text>
+<text x="72" y="409" font-size="9.4" fill="#64748b" text-anchor="start">低熵（死板对称）</text>
+<text x="274.0" y="426" font-size="9.8" fill="#475569" text-anchor="middle" font-weight="700">无序度 / 香农统计熵 H（从完全可预测 → 彻底随机）</text>
+<text x="476" y="409" font-size="9.4" fill="#64748b" text-anchor="end">高熵（纯白噪声）</text>
+<rect x="522" y="68" width="214" height="370" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="540" cy="89" r="9.5" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="540" y="93" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">4</text>
+<text x="555" y="93" font-size="11.4" fill="#0f172a" text-anchor="start" font-weight="700">两代数学模型的启发与边界</text>
+<rect x="534" y="108" width="190" height="102" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="546" y="127" font-size="10.0" fill="#6d28d9" text-anchor="start" font-weight="700">伯克霍夫审美度量（1933）</text>
+<text x="629" y="153" font-size="14.5" fill="#6d28d9" text-anchor="middle" font-weight="700">M = O / C</text>
+<text x="546" y="174" font-size="9.4" fill="#0f172a" text-anchor="start">O：对称、重复、比例等秩序</text>
+<text x="546" y="193" font-size="9.4" fill="#64748b" text-anchor="start">C：感知识别结构所耗的努力</text>
+<rect x="534" y="220" width="190" height="102" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="546" y="239" font-size="10.0" fill="#1d6fa5" text-anchor="start" font-weight="700">盖尔曼有效复杂度（1996）</text>
+<text x="546" y="259" font-size="9.4" fill="#0f172a" text-anchor="start">只度量“可提取规律”的丰富度：</text>
+<text x="546" y="278" font-size="9.4" fill="#64748b" text-anchor="start">雪花噪点虽总熵最大，但规律为</text>
+<text x="546" y="297" font-size="9.4" fill="#64748b" text-anchor="start">零，故有效复杂度与美感俱归零</text>
+<rect x="534" y="332" width="190" height="94" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="546" y="351" font-size="9.9" fill="#c25014" text-anchor="start" font-weight="700">为什么公式不能当审美裁判？</text>
+<text x="546" y="371" font-size="9.3" fill="#0f172a" text-anchor="start">观者经验会移动横轴位置：初听</text>
+<text x="546" y="389" font-size="9.3" fill="#0f172a" text-anchor="start">复调觉乱（偏 ③），听懂对位法</text>
+<text x="546" y="407" font-size="9.3" fill="#0f172a" text-anchor="start">后便落回 ② 号高张力峰值区</text>
+<rect x="24" y="450" width="712" height="50" rx="8" fill="#f3e8ff" stroke="#c4b5fd" stroke-width="1"/>
+<text x="40" y="470" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">关键区分：香农统计熵衡量“下一格有多难猜”，艺术张力衡量“意外之中藏着多深的秩序”。</text>
+<text x="40" y="489" font-size="9.9" fill="#1e293b" text-anchor="start">好作品既不靠机械套路哄睡感知，也不靠纯随机噪声瘫痪理解，而是在熟悉与陌生交界处搭桥。</text>
 </svg>

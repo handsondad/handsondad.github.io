@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="504" viewBox="0 0 760 504" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">地火霍曼往返26个月会合窗口与454天被迫等待轨道动画及环火轨道自主捕获23厘米样品球图解</title>
+<desc id="desc">左图按精确开普勒轨道计算地火去程259天、火星表面或轨道等待454天（因抵达火星时地球已超前75.2度）、返程259天的完整972天往返轨迹并配单次播放动画；右图展示返地轨道器在单程最长达22分钟通信延迟下，用超过1000公里光学相机和激光雷达自主搜寻捕获直径23厘米无动力样品球的过程。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="msr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1d6fa5"/>
+    </marker>
+    <marker id="msr-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#c25014"/>
+    </marker>
+    <marker id="msr-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#18794e"/>
+    </marker>
+    <marker id="msr-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#6d28d9"/>
+    </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  .msr-ship {
+          offset-path: path('M 208.0,324.0 L 221.9,322.9 L 235.5,319.6 L 248.3,314.1 L 260.2,306.6 L 270.8,297.4 L 279.9,286.5 L 287.2,274.4 L 292.5,261.2 L 295.8,247.4 L 296.9,233.1 L 295.8,218.9 L 292.5,205.1 L 287.2,191.9 L 279.9,179.7 L 270.8,168.9 L 260.2,159.6 L 248.3,152.2 L 235.5,146.7 L 221.9,143.4 L 208.0,142.3 L 198.5,142.7 L 179.8,146.0 L 162.0,152.4 L 145.5,161.8 L 130.9,173.9 L 118.6,188.4 L 109.0,204.7 L 102.3,222.5 L 98.8,241.1 L 98.6,260.1 L 101.6,278.8 L 107.8,296.8 L 117.1,313.4 L 129.0,328.1 L 143.3,340.6 L 159.5,350.4 L 177.2,357.3 L 195.8,361.0 L 214.7,361.5 L 233.5,358.7 L 251.5,352.7 L 268.2,343.7 L 283.1,332.0 L 295.8,317.8 L 303.5,306.0 L 309.2,293.3 L 312.8,279.8 L 314.3,265.8 L 313.5,251.8 L 310.5,238.0 L 305.4,224.9 L 298.3,212.6 L 289.3,201.5 L 278.8,192.0 L 266.9,184.1 L 253.9,178.2 L 240.2,174.3 L 226.1,172.6 L 212.0,173.1 L 198.1,175.8 L 184.9,180.6 L 172.7,187.4 L 161.7,196.0 L 152.2,206.3');
+          offset-distance: 100%;
+          animation: msr-roundtrip 9.0s linear 1 forwards;
+        }
+        @keyframes msr-roundtrip {
+          0%            { offset-distance: 0%; }
+          26.63% { offset-distance: 27.92%; }
+          73.37% { offset-distance: 72.06%; }
+          100%          { offset-distance: 100%; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .msr-ship { animation: none; offset-distance: 100%; }
+        }
+</style>
+<rect x="0.5" y="0.5" width="759" height="503" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">错过一班再等 26 个月，到了还得苦等 15 个月！地火往返天体时刻表与盲抓样品球</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：霍曼去程 259 天 + 被迫等位 454 天 + 返程 259 天动画｜右：上亿公里外自主抓 23 cm 小球</text>
+<rect x="20" y="62" width="366" height="426" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 为什么到了火星不能马上回？（会合周期 780 天）</text>
+<text x="36" y="102" font-size="9.7" fill="#64748b" text-anchor="start">内圈地球跑得快：等你飞到火星，地球早已甩到前方 +75.2°！</text>
+<circle cx="208.0" cy="252.0" r="109.7" fill="none" stroke="#c25014" stroke-width="1.3" stroke-dasharray="4 3"/>
+<circle cx="208.0" cy="252.0" r="72.0" fill="none" stroke="#93c5fd" stroke-width="1.3" stroke-dasharray="4 3"/>
+<circle cx="208.0" cy="252.0" r="11" fill="#fef08a" stroke="#ca8a04" stroke-width="1.6"/>
+<text x="208.0" y="255.5" font-size="8.8" fill="#a16207" text-anchor="middle" font-weight="700">太阳</text>
+<path d="M 208.0,324.0 L 212.7,323.9 L 217.3,323.5 L 221.9,322.9 L 226.5,322.0 L 231.0,320.9 L 235.5,319.6 L 239.9,318.0 L 244.1,316.1 L 248.3,314.1 L 252.4,311.8 L 256.4,309.3 L 260.2,306.6 L 263.9,303.8 L 267.5,300.7 L 270.8,297.4 L 274.0,293.9 L 277.1,290.3 L 279.9,286.5 L 282.5,282.6 L 285.0,278.6 L 287.2,274.4 L 289.2,270.1 L 291.0,265.7 L 292.5,261.2 L 293.8,256.7 L 294.9,252.0 L 295.8,247.4 L 296.4,242.6 L 296.8,237.9 L 296.9,233.1 L 296.8,228.4 L 296.4,223.7 L 295.8,218.9 L 294.9,214.3 L 293.8,209.6 L 292.5,205.1 L 291.0,200.6 L 289.2,196.2 L 287.2,191.9 L 285.0,187.7 L 282.5,183.7 L 279.9,179.7 L 277.1,176.0 L 274.0,172.4 L 270.8,168.9 L 267.5,165.6 L 263.9,162.5 L 260.2,159.6 L 256.4,157.0 L 252.4,154.5 L 248.3,152.2 L 244.1,150.1 L 239.9,148.3 L 235.5,146.7 L 231.0,145.4 L 226.5,144.3 L 221.9,143.4 L 217.3,142.8 L 212.7,142.4 L 208.0,142.3" fill="none" stroke="#1d6fa5" stroke-width="2.5"/>
+<path d="M 208.0,142.3 L 198.5,142.7 L 189.1,143.9 L 179.8,146.0 L 170.8,148.8 L 162.0,152.4 L 153.5,156.8 L 145.5,161.8 L 138.0,167.6 L 130.9,173.9 L 124.5,180.9 L 118.6,188.4 L 113.5,196.4 L 109.0,204.7 L 105.3,213.5 L 102.3,222.5 L 100.2,231.7 L 98.8,241.1 L 98.3,250.6 L 98.6,260.1 L 99.7,269.5 L 101.6,278.8 L 104.3,287.9 L 107.8,296.8 L 112.1,305.3 L 117.1,313.4 L 122.7,321.0 L 129.0,328.1 L 135.9,334.7 L 143.3,340.6 L 151.2,345.8 L 159.5,350.4 L 168.2,354.2 L 177.2,357.3 L 186.4,359.6 L 195.8,361.0 L 205.3,361.7 L 214.7,361.5 L 224.2,360.5 L 233.5,358.7 L 242.6,356.1 L 251.5,352.7 L 260.1,348.6 L 268.2,343.7 L 275.9,338.2 L 283.1,332.0 L 289.7,325.2 L 295.8,317.8 L 301.1,310.0" fill="none" stroke="#6d28d9" stroke-width="2.4" stroke-dasharray="5 3"/>
+<path d="M 301.1,310.0 L 303.5,306.0 L 305.6,301.8 L 307.5,297.6 L 309.2,293.3 L 310.7,288.8 L 311.9,284.3 L 312.8,279.8 L 313.6,275.2 L 314.0,270.5 L 314.3,265.8 L 314.3,261.2 L 314.0,256.5 L 313.5,251.8 L 312.8,247.2 L 311.8,242.6 L 310.5,238.0 L 309.0,233.6 L 307.3,229.2 L 305.4,224.9 L 303.3,220.6 L 300.9,216.6 L 298.3,212.6 L 295.5,208.7 L 292.5,205.1 L 289.3,201.5 L 286.0,198.2 L 282.5,195.0 L 278.8,192.0 L 275.0,189.1 L 271.0,186.5 L 266.9,184.1 L 262.7,181.9 L 258.3,179.9 L 253.9,178.2 L 249.4,176.7 L 244.9,175.4 L 240.2,174.3 L 235.6,173.5 L 230.9,172.9 L 226.1,172.6 L 221.4,172.5 L 216.7,172.7 L 212.0,173.1 L 207.3,173.8 L 202.7,174.7 L 198.1,175.8 L 193.6,177.2 L 189.2,178.8 L 184.9,180.6 L 180.7,182.7 L 176.6,184.9 L 172.7,187.4 L 168.8,190.1 L 165.2,193.0 L 161.7,196.0 L 158.3,199.3 L 155.2,202.7 L 152.2,206.3 L 149.4,210.1 L 146.9,213.9" fill="none" stroke="#18794e" stroke-width="2.3"/>
+<circle cx="208.0" cy="324.0" r="5.0" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.4"/>
+<text x="208.0" y="344.0" font-size="9.2" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">① 地球出发 (t=0)</text>
+<circle cx="208.0" cy="142.3" r="5.2" fill="#c25014" stroke="#ffffff" stroke-width="1.4"/>
+<text x="216.0" y="132.3" font-size="9.2" fill="#c25014" text-anchor="start" font-weight="700" class="halo">② 抵火 (259天)</text>
+<circle cx="138.4" cy="233.5" r="4.0" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.8"/>
+<line x1="135.4" y1="236.5" x2="122.4" y2="257.5" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="34" y="269.5" font-size="8.9" fill="#1d6fa5" text-anchor="start" font-weight="600" class="halo">抵火时地球已超前+75°</text>
+<circle cx="301.1" cy="310.0" r="5.0" fill="#6d28d9" stroke="#ffffff" stroke-width="1.4"/>
+<text x="297.1" y="330.0" font-size="9.1" fill="#6d28d9" text-anchor="middle" font-weight="700" class="halo">③ 等满454天返航</text>
+<circle cx="146.9" cy="213.9" r="5.0" fill="#18794e" stroke="#ffffff" stroke-width="1.4"/>
+<line x1="143.9" y1="210.9" x2="130.9" y2="189.9" stroke="#18794e" stroke-width="1.1"/>
+<text x="34" y="185.9" font-size="9.1" fill="#18794e" text-anchor="start" font-weight="700" class="halo">④ 返抵地球 (~972天)</text>
+<circle class="msr-ship" cx="0" cy="0" r="6.0" fill="#c25014" stroke="#ffffff" stroke-width="2.0"/>
+<rect x="34" y="396" width="338" height="78" rx="7" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="46" y="415" font-size="9.2" fill="#0f172a" text-anchor="start" font-weight="700">往返总耗时账单：259d 去（蓝）+ 454d 等（紫虚）+ 259d 回（绿）≈ 2.7 年</text>
+<text x="46" y="434" font-size="9.0" fill="#1e293b" text-anchor="start">• 会合周期 T_syn = 1/(1/365.26 − 1/686.98) = 780 天（约 26 个月才开一扇窗）</text>
+<text x="46" y="452" font-size="9.0" fill="#c25014" text-anchor="start" font-weight="600">• 任何环节晚半个月赶不上窗口，整套系统就得在太空或地面硬扛两年多！</text>
+<rect x="398" y="62" width="342" height="426" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="414" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 环火轨道“大海捞针”：盲抓一只 23 cm 排球</text>
+<text x="414" y="102" font-size="9.7" fill="#64748b" text-anchor="start">样品球没发动机也没信标天线，全靠母船光学与激光自寻的！</text>
+<rect x="412" y="116" width="314" height="200" rx="8" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+<path d="M 412,294 Q 569,254 726,294 L 726,316 L 412,316 Z" fill="#9a3412" fill-opacity="0.75" stroke="#fb923c" stroke-width="1.3"/>
+<text x="569" y="307" font-size="8.9" fill="#fed7aa" text-anchor="middle" font-weight="600">火星 350 km 低轨道（轨速 ~3.4 km/s，每 ~115 分钟绕一圈）</text>
+<line x1="444" y1="158" x2="444" y2="236" stroke="#60a5fa" stroke-width="5.0"/>
+<rect x="434" y="186" width="24" height="22" rx="3" fill="#e2e8f0" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="424" y="136" font-size="9.1" fill="#93c5fd" text-anchor="start" font-weight="700">返地轨道器 (7 吨 / 翼展 38 m)</text>
+<polygon points="458,197 678,170 678,224" fill="#38bdf8" fill-opacity="0.16" stroke="#38bdf8" stroke-width="1.1" stroke-dasharray="4 3"/>
+<line x1="458" y1="197" x2="672" y2="197" stroke="#4ade80" stroke-width="1.8" stroke-dasharray="3 2"/>
+<circle cx="682" cy="197" r="7.0" fill="#fde047" stroke="#ffffff" stroke-width="1.6"/>
+<text x="682" y="160" font-size="9.2" fill="#fde047" text-anchor="middle" font-weight="700">样品球 OS</text>
+<text x="682" y="240" font-size="8.9" fill="#f8fafc" text-anchor="middle">Ø 23 cm / 11 kg</text>
+<text x="556" y="156" font-size="9.0" fill="#bae6fd" text-anchor="middle" font-weight="600">① &gt;1,000 km 相机搜反光星点</text>
+<text x="552" y="240" font-size="9.0" fill="#86efac" text-anchor="middle" font-weight="600">② 近距 LiDAR 锁死相对位姿</text>
+<rect x="412" y="330" width="314" height="144" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="424" y="350" font-size="9.8" fill="#1d6fa5" text-anchor="start" font-weight="700">为什么环火交会比嫦娥五号/六号环月交会还要凶险？</text>
+<text x="424" y="370" font-size="9.1" fill="#1e293b" text-anchor="start">• 距离远百倍以上：地月仅 38 万 km（延迟 1.3 秒，地面可兜底）；</text>
+<text x="424" y="388" font-size="9.1" fill="#c25014" text-anchor="start" font-weight="700">  地火隔 5,500 万～4 亿 km，单程延迟达 22 分钟，零人工介入！</text>
+<text x="424" y="407" font-size="9.1" fill="#1e293b" text-anchor="start">• 被动非合作目标：样品球为省重不带推进器与主动雷达应答机，</text>
+<text x="424" y="425" font-size="9.1" fill="#1e293b" text-anchor="start">  万一上升器入轨偏差稍大，7 吨母船必须在茫茫火轨自己找回它；</text>
+<text x="424" y="443" font-size="9.1" fill="#18794e" text-anchor="start" font-weight="700">• 天问三号则兼顾主动微波/激光导引交会，力求压缩捕获风险。</text>
+</svg>

@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="760" height="474" viewBox="0 0 760 474" role="img" aria-labelledby="title desc" lang="zh-CN">
-<title id="title">作品读者文化世界与顿悟形成艺术意义循环的四节点图解</title>
-<desc id="desc">以作品、读者、文化和世界四节点说明艺术意义不是作品中预先固定的内容，而是在解释、惯例、经验和历史之间反复循环。</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="500" viewBox="0 0 760 500" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">作品观者真实世界与文化共同体围绕顿悟时刻的意义循环图解</title>
+<desc id="desc">以作品结构、观者解码、真实世界和文化共同体四个节点构成外圈循环，四条径向虚线汇聚到中心顿悟时刻，说明艺术意义在动态解释中生成。</desc>
 <defs>
   <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
     <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
@@ -13,6 +13,9 @@
   </marker>
   <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
     <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#6d28d9"/>
   </marker>
 </defs>
 <style>
@@ -29,38 +32,82 @@
     stroke-width: 3.5px;
     stroke-linejoin: round;
   }
-  @keyframes insightPulse {
-        0% { r: 18px; opacity: .55; }
-        100% { r: 42px; opacity: 0; }
+  @keyframes stepReveal {
+        0% { opacity: 0.78; }
+        50% { opacity: 1; }
+        100% { opacity: 1; }
       }
-      .insight-ring { animation: insightPulse 2.4s ease-out 1.0s 1 both; }
+      @keyframes ahaHalo {
+        0% { opacity: 0.15; stroke-dashoffset: 28; }
+        60% { opacity: 1; stroke-dashoffset: 0; }
+        100% { opacity: 0.92; stroke-dashoffset: 0; }
+      }
+      .cyc-s1 { animation: stepReveal 0.55s ease-out 0.10s 1 both; }
+      .cyc-s2 { animation: stepReveal 0.55s ease-out 0.55s 1 both; }
+      .cyc-s3 { animation: stepReveal 0.55s ease-out 1.00s 1 both; }
+      .cyc-s4 { animation: stepReveal 0.55s ease-out 1.45s 1 both; }
+      .aha-halo { stroke-dasharray: 6 4; animation: ahaHalo 1.1s ease-out 1.85s 1 both; }
       @media (prefers-reduced-motion: reduce) {
-        .insight-ring { animation: none; opacity: 0; }
+        .cyc-s1, .cyc-s2, .cyc-s3, .cyc-s4, .aha-halo {
+          animation: none !important;
+          opacity: 1 !important;
+          stroke-dashoffset: 0 !important;
+        }
       }
 </style>
-<rect x="0.5" y="0.5" width="759" height="473" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
-<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">艺术不是一句固定答案，而是“作品—读者—世界”之间的循环</text>
-<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">作品提供结构，读者带来解释，解释又会改变作品的社会与历史位置。</text>
-<circle cx="380" cy="238" r="78" fill="#f3e8ff" stroke="#6d28d9" stroke-width="2"/>
-<text x="380" y="226" font-size="18.0" fill="#6d28d9" text-anchor="middle" font-weight="700">顿悟</text>
-<text x="380" y="250" font-size="9.8" fill="#0f172a" text-anchor="middle" font-weight="600">旧模型突然重组</text>
-<circle cx="380" cy="238" r="18" fill="none" stroke="#6d28d9" stroke-width="2" class="insight-ring"/>
-<rect x="74" y="70" width="208" height="96" rx="10" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
-<text x="178" y="100" font-size="12.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">作品</text>
-<text x="178" y="130" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="600">留下差异与结构</text>
-<rect x="478" y="70" width="208" height="96" rx="10" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
-<text x="582" y="100" font-size="12.0" fill="#c25014" text-anchor="middle" font-weight="700">读者</text>
-<text x="582" y="130" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="600">带入记忆与经验</text>
-<rect x="74" y="310" width="208" height="96" rx="10" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
-<text x="178" y="340" font-size="12.0" fill="#18794e" text-anchor="middle" font-weight="700">文化</text>
-<text x="178" y="370" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="600">提供共同惯例</text>
-<rect x="478" y="310" width="208" height="96" rx="10" fill="#f1f5f9" stroke="#475569" stroke-width="1"/>
-<text x="582" y="340" font-size="12.0" fill="#475569" text-anchor="middle" font-weight="700">世界</text>
-<text x="582" y="370" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="600">给出反例与历史</text>
-<line x1="264.0" y1="118.0" x2="320.0" y2="194.0" stroke="#1d6fa5" stroke-width="2.0" marker-end="url(#arr-blue)"/>
-<line x1="478.0" y1="194.0" x2="522.0" y2="118.0" stroke="#c25014" stroke-width="2.0" marker-end="url(#arr-blue)"/>
-<line x1="478.0" y1="282.0" x2="522.0" y2="358.0" stroke="#475569" stroke-width="2.0" marker-end="url(#arr-blue)"/>
-<line x1="282.0" y1="358.0" x2="320.0" y2="282.0" stroke="#18794e" stroke-width="2.0" marker-end="url(#arr-blue)"/>
-<rect x="24" y="424" width="712" height="38" rx="8" fill="#f3e8ff" stroke="#c4b5fd" stroke-width="1"/>
-<text x="380" y="448" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700">艺术不是把世界“解码成唯一答案”，而是让一个世界从新的结构里回响。</text>
+<rect x="0.5" y="0.5" width="759" height="499" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">艺术到底是什么？“作品—观者—世界—文化”的四元循环与顿悟闭环</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">外圈 ①→④ 展示意义如何在四个节点间流转生长，中心展示预测碰撞点亮的顿悟时刻（支持减少动态效果）</text>
+<circle cx="380" cy="244" r="81" fill="none" stroke="#6d28d9" stroke-width="2" class="aha-halo"/>
+<circle cx="380" cy="244" r="72" fill="#f3e8ff" stroke="#6d28d9" stroke-width="2.2"/>
+<text x="380" y="226" font-size="15.0" fill="#6d28d9" text-anchor="middle" font-weight="700">顿悟时刻 Aha!</text>
+<text x="380" y="249" font-size="10.0" fill="#0f172a" text-anchor="middle" font-weight="700">旧模型重组 · 误差骤降</text>
+<text x="380" y="269" font-size="9.6" fill="#6d28d9" text-anchor="middle" font-weight="600">ΔL = L_前 − L_后 &gt; 0</text>
+<g class="cyc-s1">
+<rect x="36" y="82" width="192" height="86" rx="10" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<circle cx="54" cy="103" r="9.5" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="54" y="107" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="70" y="107" font-size="12.0" fill="#1d6fa5" text-anchor="start" font-weight="700">作品结构</text>
+<text x="52" y="132" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="600">凝聚差异、留白与张力</text>
+<text x="52" y="152" font-size="9.5" fill="#64748b" text-anchor="start">提供可感知的符号表面</text>
+</g>
+<g class="cyc-s2">
+<rect x="532" y="82" width="192" height="86" rx="10" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<circle cx="550" cy="103" r="9.5" fill="#ffffff" stroke="#c25014" stroke-width="1.2"/>
+<text x="550" y="107" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="566" y="107" font-size="12.0" fill="#c25014" text-anchor="start" font-weight="700">观者解码</text>
+<text x="548" y="132" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="600">带入记忆、身体与预期</text>
+<text x="548" y="152" font-size="9.5" fill="#64748b" text-anchor="start">主动补全并检验旧假设</text>
+</g>
+<g class="cyc-s3">
+<rect x="532" y="320" width="192" height="86" rx="10" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<circle cx="550" cy="341" r="9.5" fill="#ffffff" stroke="#18794e" stroke-width="1.2"/>
+<text x="550" y="345" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">3</text>
+<text x="566" y="345" font-size="12.0" fill="#18794e" text-anchor="start" font-weight="700">真实世界</text>
+<text x="548" y="370" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="600">自然万物、历史与生活</text>
+<text x="548" y="390" font-size="9.5" fill="#64748b" text-anchor="start">不断提供新经验与反例</text>
+</g>
+<g class="cyc-s4">
+<rect x="36" y="320" width="192" height="86" rx="10" fill="#f1f5f9" stroke="#475569" stroke-width="1"/>
+<circle cx="54" cy="341" r="9.5" fill="#ffffff" stroke="#475569" stroke-width="1.2"/>
+<text x="54" y="345" font-size="11.5" fill="#475569" text-anchor="middle" font-weight="700">4</text>
+<text x="70" y="345" font-size="12.0" fill="#475569" text-anchor="start" font-weight="700">文化共同体</text>
+<text x="52" y="370" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="600">沉淀母语、传统与典故</text>
+<text x="52" y="390" font-size="9.5" fill="#64748b" text-anchor="start">划定可共享的解释边界</text>
+</g>
+<line x1="234.0" y1="114.0" x2="524.0" y2="114.0" stroke="#1d6fa5" stroke-width="1.8" marker-end="url(#arr-orange)"/>
+<text x="380" y="104" font-size="9.8" fill="#1d6fa5" text-anchor="middle" font-weight="600">输出编码线索与意外缺口 →</text>
+<line x1="646.0" y1="174.0" x2="646.0" y2="312.0" stroke="#c25014" stroke-width="1.8" marker-end="url(#arr-green)"/>
+<text x="656" y="248" font-size="9.6" fill="#c25014" text-anchor="start" font-weight="600">刷新观看视角</text>
+<line x1="524.0" y1="374.0" x2="236.0" y2="374.0" stroke="#18794e" stroke-width="1.8" marker-end="url(#arr-muted)"/>
+<text x="380" y="394" font-size="9.8" fill="#18794e" text-anchor="middle" font-weight="600">← 生活巨变催生新的表达惯例</text>
+<line x1="114.0" y1="314.0" x2="114.0" y2="176.0" stroke="#475569" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+<text x="124" y="248" font-size="9.6" fill="#475569" text-anchor="start" font-weight="600">提供母题与法则</text>
+<line x1="232.0" y1="170.0" x2="304.0" y2="206.0" stroke="#1d6fa5" stroke-width="1.7" stroke-dasharray="4 3" marker-end="url(#arr-purple)"/>
+<line x1="528.0" y1="170.0" x2="456.0" y2="206.0" stroke="#c25014" stroke-width="1.7" stroke-dasharray="4 3" marker-end="url(#arr-purple)"/>
+<line x1="528.0" y1="318.0" x2="456.0" y2="282.0" stroke="#18794e" stroke-width="1.7" stroke-dasharray="4 3" marker-end="url(#arr-purple)"/>
+<line x1="232.0" y1="318.0" x2="304.0" y2="282.0" stroke="#475569" stroke-width="1.7" stroke-dasharray="4 3" marker-end="url(#arr-purple)"/>
+<rect x="24" y="426" width="712" height="62" rx="8" fill="#f3e8ff" stroke="#c4b5fd" stroke-width="1"/>
+<text x="40" y="448" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">一句话回答“艺术到底是什么”：艺术不是锁在玻璃柜里的标准答案，而是一套活的跨层编码装置——</text>
+<text x="40" y="470" font-size="10.0" fill="#1e293b" text-anchor="start">它把浩瀚经验压缩成有张力的符号结构，只等某位观者带着人生走来，在解释中轰然展开一整个新世界。</text>
 </svg>

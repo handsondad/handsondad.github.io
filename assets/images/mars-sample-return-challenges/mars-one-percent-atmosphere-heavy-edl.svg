@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="482" viewBox="0 0 760 482" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">火星百分之一稀薄大气着陆双重困境与3375公斤样品回收着陆器质量对比图</title>
+<desc id="desc">左图按高度拆解火星大气进入、下降与着陆（EDL）四阶段：610帕大气既产生约1500摄氏度高超声速气动加热，又令21.5米巨伞终端速度仍超300 km/h而必须叠加反推火箭；右图对比1997旅居者号至2021毅力号（1025 kg）、祝融号组合体与MSR样品回收着陆器（3375 kg）的质量跨越。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="msr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1d6fa5"/>
+    </marker>
+    <marker id="msr-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#c25014"/>
+    </marker>
+    <marker id="msr-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#18794e"/>
+    </marker>
+    <marker id="msr-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#6d28d9"/>
+    </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="481" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">火星“1% 大气魔咒”：为什么把一枚满油火箭完好放上火星就快把工程师逼疯？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：610 帕稀薄大气“烧得着却刹不住”的双重惩罚｜右：着陆质量从毅力号 1.03 吨暴涨到 3.38 吨</text>
+<rect x="20" y="62" width="360" height="404" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 地球 0.6% 气压：最坏的两头凑齐了</text>
+<text x="36" y="102" font-size="9.9" fill="#64748b" text-anchor="start">月球真空只需反推；地球稠密可靠大伞；唯有火星两样全得背！</text>
+<rect x="36" y="114" width="328" height="276" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="44" y="126" width="312" height="56" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="1.3"/>
+<text x="54" y="146" font-size="9.6" fill="#c25014" text-anchor="start" font-weight="700">阶段 1｜125 km 大气层顶：v ≈ 5.5–7.3 km/s 冲入</text>
+<text x="54" y="166" font-size="8.9" fill="#1e293b" text-anchor="start">激波压缩 CO₂ 产生 ~1,500 °C 等离子火球 → 必背沉重防热大底！</text>
+<line x1="200" y1="182" x2="200" y2="194" stroke="#475569" stroke-width="1.6" marker-end="url(#msr-blue)"/>
+<rect x="44" y="194" width="312" height="56" rx="6" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.3"/>
+<text x="54" y="214" font-size="9.6" fill="#6d28d9" text-anchor="start" font-weight="700">阶段 2｜11 km 超音速开伞：21.5 米巨伞也刹不住</text>
+<text x="54" y="234" font-size="8.9" fill="#1e293b" text-anchor="start">空气密度仅地球 ~1/80，开伞后仍以 &gt;300 km/h 狂砸 → 单靠伞必碎！</text>
+<line x1="200" y1="250" x2="200" y2="262" stroke="#475569" stroke-width="1.6" marker-end="url(#msr-blue)"/>
+<rect x="44" y="262" width="312" height="56" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.3"/>
+<text x="54" y="282" font-size="9.6" fill="#1d6fa5" text-anchor="start" font-weight="700">阶段 3｜2 km 抛伞点反推：全靠火箭硬刹 + 雷达避障</text>
+<text x="54" y="302" font-size="8.9" fill="#1e293b" text-anchor="start">点燃多台反推发动机悬停找平地，还要扛住 ~15g 过载不震裂固体药柱</text>
+<line x1="200" y1="318" x2="200" y2="330" stroke="#475569" stroke-width="1.6" marker-end="url(#msr-blue)"/>
+<rect x="44" y="330" width="312" height="56" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="1.3"/>
+<text x="54" y="350" font-size="9.6" fill="#18794e" text-anchor="start" font-weight="700">阶段 4｜全程“恐怖 7 分钟”：单程光行延迟 3–22 分钟</text>
+<text x="54" y="370" font-size="8.9" fill="#1e293b" text-anchor="start">地球收到“进入大气”信号时，着陆器其实早在十几分钟前就已成败落定</text>
+<text x="36" y="414" font-size="9.5" fill="#0f172a" text-anchor="start" font-weight="600">• 阻力公式 F_D = ½ ρ v² C_D A：火星地表 ρ ≈ 0.02 kg/m³（地球 1.225）</text>
+<text x="36" y="434" font-size="9.5" fill="#c25014" text-anchor="start" font-weight="700">• 同样面积的降落伞，要在火星攒够升力，下落速度必须比地球快 ~8 倍！</text>
+<text x="36" y="452" font-size="9.3" fill="#64748b" text-anchor="start">• 着陆器越重（质量 ∝ L³），伞面积（∝ L²）越不够用，超音速减速呈非线性恶化。</text>
+<rect x="394" y="62" width="346" height="404" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="410" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② 历史火星着陆器体重榜：一步跨上 3 倍台阶</text>
+<text x="410" y="102" font-size="9.9" fill="#64748b" text-anchor="start">过去送的是“相机化验车”，这次送的是“满油火箭发射场”</text>
+<text x="536" y="139.0" font-size="9.7" fill="#1e293b" text-anchor="end" font-weight="400">旅居者号 (1997)</text>
+<rect x="544.0" y="126.0" width="3.0" height="19" rx="4" fill="#475569" fill-opacity="0.16" stroke="#475569" stroke-width="1.2"/>
+<text x="553.0" y="139.5" font-size="9.5" fill="#475569" text-anchor="start" font-weight="700">12 kg</text>
+<text x="544" y="158.0" font-size="8.9" fill="#64748b" text-anchor="start">微型巡视器</text>
+<text x="536" y="183.0" font-size="9.7" fill="#1e293b" text-anchor="end" font-weight="400">机遇/勇气号 (2004)</text>
+<rect x="544.0" y="170.0" width="9.0" height="19" rx="4" fill="#475569" fill-opacity="0.16" stroke="#475569" stroke-width="1.2"/>
+<text x="559.0" y="183.5" font-size="9.5" fill="#475569" text-anchor="start" font-weight="700">185 kg</text>
+<text x="544" y="202.0" font-size="8.9" fill="#64748b" text-anchor="start">气囊弹跳着陆</text>
+<text x="536" y="227.0" font-size="9.7" fill="#1e293b" text-anchor="end" font-weight="400">好奇号 (2012)</text>
+<rect x="544.0" y="214.0" width="44.0" height="19" rx="4" fill="#1d6fa5" fill-opacity="0.16" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="594.0" y="227.5" font-size="9.5" fill="#1d6fa5" text-anchor="start" font-weight="700">899 kg</text>
+<text x="544" y="246.0" font-size="8.9" fill="#64748b" text-anchor="start">首创天空起重机</text>
+<text x="536" y="271.0" font-size="9.7" fill="#1e293b" text-anchor="end" font-weight="400">毅力号 (2021 纪录)</text>
+<rect x="544.0" y="258.0" width="50.1" height="19" rx="4" fill="#1d6fa5" fill-opacity="0.16" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="600.1" y="271.5" font-size="9.5" fill="#1d6fa5" text-anchor="start" font-weight="700">1,025 kg</text>
+<text x="544" y="290.0" font-size="8.9" fill="#64748b" text-anchor="start">现役最重火星车</text>
+<text x="536" y="315.0" font-size="9.7" fill="#1e293b" text-anchor="end" font-weight="400">祝融号+着陆平台 (2021)</text>
+<rect x="544.0" y="302.0" width="62.8" height="19" rx="4" fill="#18794e" fill-opacity="0.16" stroke="#18794e" stroke-width="1.2"/>
+<text x="612.8" y="315.5" font-size="9.5" fill="#18794e" text-anchor="start" font-weight="700">1,285 kg</text>
+<text x="544" y="334.0" font-size="8.9" fill="#64748b" text-anchor="start">防热伞降+反推悬停</text>
+<text x="536" y="359.0" font-size="9.7" fill="#c25014" text-anchor="end" font-weight="700">MSR 样品回收着陆器</text>
+<rect x="544.0" y="346.0" width="165.0" height="19" rx="4" fill="#c25014" fill-opacity="0.28" stroke="#c25014" stroke-width="1.8"/>
+<text x="703.0" y="359.5" font-size="9.5" fill="#0f172a" text-anchor="end" font-weight="700">3,375 kg</text>
+<text x="544" y="378.0" font-size="8.9" fill="#64748b" text-anchor="start">宽 7.7 m！背 450 kg 火箭</text>
+<rect x="408" y="392" width="318" height="60" rx="7" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="420" y="411" font-size="9.7" fill="#c25014" text-anchor="start" font-weight="700">为什么样品着陆器高达 3,375 kg（毅力号的 3.3 倍）？</text>
+<text x="420" y="429" font-size="9.3" fill="#1e293b" text-anchor="start">450 kg 上升火箭 + 恒温防冻圆顶舱 + VECTOR 抛射架 +</text>
+<text x="420" y="445" font-size="9.3" fill="#1e293b" text-anchor="start">2 米装管机械臂 + 大推力着陆反推燃料与吸能缓冲腿！</text>
+</svg>

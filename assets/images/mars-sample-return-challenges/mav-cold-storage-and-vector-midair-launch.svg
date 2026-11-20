@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="498" viewBox="0 0 760 498" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">火星上升器MAV零下80摄氏度恒温防护与VECTOR半空抛射凌空点火四步图解</title>
+<desc id="desc">上图按①2米机械臂装填30根钛合金样品管、②恒温圆筒抵御零下80摄氏度火星寒夜防止固体推进剂开裂、③VECTOR弹射系统将450公斤火箭抛至半空避免尾焰毁坏斜坡着陆器、④半空点火经10分钟加速至4 km/s送入350公里环火轨道四步拆解；下图对比地球发射场与火星荒原零保障起飞条件。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="msr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1d6fa5"/>
+    </marker>
+    <marker id="msr-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#c25014"/>
+    </marker>
+    <marker id="msr-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#18794e"/>
+    </marker>
+    <marker id="msr-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#6d28d9"/>
+    </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="497" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">没有发射塔、零下 80°C 极寒荒原：人类第一枚异星火箭怎样“半空抛射点火”？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">按 ① 机械臂装管 → ② 保温舱熬过极夜 → ③ VECTOR 弹簧抛高 → ④ 凌空点火两级入轨 四步拆解</text>
+<rect x="20" y="62" width="720" height="314" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">火星上升器（MAV：长 3.0 m × 直径 0.5 m，地球重 450 kg / 火星重约 170 kgf）无塔台发射全流程</text>
+<path d="M 32,338 Q 220,324 430,336 T 728,332 L 728,364 L 32,364 Z" fill="#fed7aa" fill-opacity="0.45" stroke="#c25014" stroke-width="1.4"/>
+<text x="626" y="353" font-size="9.3" fill="#c25014" text-anchor="middle" font-weight="600">杰泽罗陨石坑地表（允许着陆器倾斜达 ~15°）</text>
+<line x1="92" y1="312" x2="74" y2="334" stroke="#475569" stroke-width="3.0"/>
+<line x1="208" y1="312" x2="226" y2="332" stroke="#475569" stroke-width="3.0"/>
+<rect x="78" y="296" width="144" height="16" rx="4" fill="#f1f5f9" stroke="#475569" stroke-width="1.8"/>
+<g transform="translate(152,294) rotate(-55)"><rect x="0" y="-12" width="90" height="24" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.6" stroke-dasharray="4 2"/><rect x="6" y="-7" width="76" height="14" rx="3" fill="#ffffff" stroke="#0f172a" stroke-width="1.5"/><circle cx="78" cy="0" r="5.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.5"/></g>
+<polyline points="96,296 92,246 168,220" fill="none" stroke="#6d28d9" stroke-width="2.5"/>
+<circle cx="92" cy="246" r="3.6" fill="#6d28d9"/>
+<circle cx="52" cy="114" r="10.5" fill="#eaf4fb" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="52" y="118" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">1</text>
+<text x="70" y="118" font-size="9.9" fill="#6d28d9" text-anchor="start" font-weight="700">2 米机械臂盲装 30 根钛管</text>
+<text x="70" y="134" font-size="9.2" fill="#1e293b" text-anchor="start">塞入火箭鼻锥 11 kg 样品球</text>
+<circle cx="52" cy="158" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="52" y="162" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">2</text>
+<text x="70" y="162" font-size="9.9" fill="#1d6fa5" text-anchor="start" font-weight="700">恒温防护圆筒熬过 −80 °C</text>
+<text x="70" y="178" font-size="9.2" fill="#1e293b" text-anchor="start">防固体药柱低于 −40 °C 冻裂</text>
+<line x1="306" y1="314" x2="292" y2="332" stroke="#475569" stroke-width="2.6"/>
+<line x1="394" y1="314" x2="408" y2="334" stroke="#475569" stroke-width="2.6"/>
+<rect x="298" y="300" width="104" height="14" rx="3" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+<line x1="340" y1="298" x2="354" y2="254" stroke="#18794e" stroke-width="2.0" stroke-dasharray="4 2" marker-end="url(#msr-green)"/>
+<line x1="358" y1="298" x2="372" y2="258" stroke="#18794e" stroke-width="2.0" stroke-dasharray="4 2" marker-end="url(#msr-green)"/>
+<g transform="translate(382,222) rotate(-50)"><rect x="-34" y="-7.5" width="72" height="15" rx="3" fill="#ffffff" stroke="#c25014" stroke-width="1.8"/><polygon points="38,-7.5 51,0 38,7.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.5"/><polygon points="-34,-5 -58,-11 -45,0 -58,11 -34,5" fill="#fb923c" fill-opacity="0.85"/></g>
+<circle cx="282" cy="114" r="10.5" fill="#eaf4fb" stroke="#18794e" stroke-width="1.2"/>
+<text x="282" y="118" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">3</text>
+<text x="300" y="118" font-size="9.9" fill="#18794e" text-anchor="start" font-weight="700">VECTOR 弹射：先当炮弹抛上天！</text>
+<text x="300" y="134" font-size="9.2" fill="#1e293b" text-anchor="start">弹簧作动器将整枚火箭抛离甲板数米</text>
+<text x="300" y="150" font-size="9.2" fill="#1e293b" text-anchor="start">赋予精确初始抬头角，避开斜坡与尾焰</text>
+<path d="M 418,192 Q 528,118 664,120" fill="none" stroke="#c25014" stroke-width="2.6" marker-end="url(#msr-orange)"/>
+<circle cx="536" cy="136" r="4.5" fill="#ffffff" stroke="#c25014" stroke-width="2.2"/>
+<text x="536" y="118" font-size="9.3" fill="#c25014" text-anchor="middle" font-weight="700">一二级分离 + 摆动喷管稳姿</text>
+<circle cx="684" cy="120" r="11" fill="#e7f6ee" stroke="#18794e" stroke-width="2.0"/>
+<text x="684" y="124" font-size="9.2" fill="#18794e" text-anchor="middle" font-weight="700">OS</text>
+<text x="664" y="150" font-size="9.5" fill="#18794e" text-anchor="middle" font-weight="700">~10 分钟加速至 4.0 km/s</text>
+<text x="664" y="166" font-size="9.3" fill="#1e293b" text-anchor="middle">送入 ~350 km 环火轨道</text>
+<circle cx="494" cy="202" r="10.5" fill="#eaf4fb" stroke="#c25014" stroke-width="1.2"/>
+<text x="494" y="206" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">4</text>
+<text x="512" y="206" font-size="9.9" fill="#c25014" text-anchor="start" font-weight="700">悬空点火 + 100% 全自主入轨</text>
+<text x="512" y="224" font-size="9.2" fill="#1e293b" text-anchor="start">• 无尾翼细长弹体气动不稳定，靠喷管摆动硬控</text>
+<text x="512" y="241" font-size="9.2" fill="#1e293b" text-anchor="start">• 无线电单程慢达 22 分钟，点火分秒全靠自算！</text>
+<text x="512" y="258" font-size="9.2" fill="#c25014" text-anchor="start" font-weight="600">• 无水泥导流槽，若甲板直接点火尾焰必掀翻自身</text>
+<rect x="20" y="390" width="352" height="92" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="36" y="411" font-size="10.0" fill="#1d6fa5" text-anchor="start" font-weight="700">对比地球发射场（几千人团队伺候一枚火箭）：</text>
+<text x="36" y="431" font-size="9.3" fill="#1e293b" text-anchor="start">• 百米脐带塔持续补液氧、调温、供电，导流槽喷百吨水降温；</text>
+<text x="36" y="450" font-size="9.3" fill="#1e293b" text-anchor="start">• 气象雷达盯高空切变风，稍有异常随时叫停倒计时；</text>
+<text x="36" y="468" font-size="9.3" fill="#1e293b" text-anchor="start">• 地面控制室毫秒级遥测闭环监控。</text>
+<rect x="388" y="390" width="352" height="92" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="404" y="411" font-size="10.0" fill="#c25014" text-anchor="start" font-weight="700">对比火星荒原发射（零塔架、零地勤、零实时遥控）：</text>
+<text x="404" y="431" font-size="9.3" fill="#1e293b" text-anchor="start">• 燃料在地球灌满后封死飞 8 个月，再挨过火星极寒与沙尘暴；</text>
+<text x="404" y="450" font-size="9.3" fill="#1e293b" text-anchor="start">• 斜坡甲板弹簧抛射半空点火，全程只有一次开火机会；</text>
+<text x="404" y="468" font-size="9.3" fill="#c25014" text-anchor="start" font-weight="700">• 这是人类航天史上从未在任何行星表面实战过的动作！</text>
+</svg>
