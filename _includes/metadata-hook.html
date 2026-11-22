@@ -1,3 +1,25 @@
 {% assign build = site.time | date: '%s' %}
-<link rel="stylesheet" href="{{ '/assets/css/jekyll-theme-chirpy.css' | relative_url }}?v={{ build }}">
-<link rel="stylesheet" href="{{ '/assets/css/landing-fonts.css' | relative_url }}?v={{ build }}">
+{% if page.math %}
+<link rel="preload" href="{{ '/assets/lib/mathjax/es5/tex-mml-chtml.min.js' | relative_url }}" as="script" fetchpriority="high">
+<script>
+  window.addEventListener('DOMContentLoaded', function () {
+    var loadLandingFonts = function () {
+      if (document.getElementById('landing-fonts-css')) return;
+      var link = document.createElement('link');
+      link.id = 'landing-fonts-css';
+      link.rel = 'stylesheet';
+      link.href = '{{ "/assets/css/landing-fonts.css" | relative_url }}?v={{ build }}';
+      document.head.appendChild(link);
+    };
+    if (window.MathJax && window.MathJax.startup && window.MathJax.startup.promise) {
+      window.MathJax.startup.promise.then(loadLandingFonts, loadLandingFonts);
+    } else {
+      window.addEventListener('load', loadLandingFonts, { once: true });
+    }
+    setTimeout(loadLandingFonts, 8000);
+  });
+</script>
+{% else %}
+<link rel="stylesheet" href="{{ '/assets/css/landing-fonts.css' | relative_url }}?v={{ build }}" media="print" onload="this.media='all'">
+{% endif %}
+<noscript><link rel="stylesheet" href="{{ '/assets/css/landing-fonts.css' | relative_url }}?v={{ build }}"></noscript>
