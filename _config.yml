@@ -61,11 +61,13 @@ comments:
 
 assets:
   self_host:
-    enabled:
+    enabled: true
     env:
 
 pwa:
   enabled: true
+  cache:
+    enabled: true
 
 paginate: 10
 paginate_path: /blog/page:num/
@@ -91,6 +93,7 @@ defaults:
       type: posts
     values:
       layout: post
+      author: 奶爸-Liang+AI
       comments: true
       toc: true
       permalink: /posts/:title/
