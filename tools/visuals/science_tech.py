@@ -30116,5 +30116,1026 @@ def _register_winter_snow_no_thunder():
 _register_winter_snow_no_thunder()
 
 
+def _register_alchemy_and_gold():
+    SUBDIR = "alchemy-and-gold"
+    RED = "#dc2626"
+    RED_SOFT = "#fef2f2"
+    TEAL = "#0f766e"
+    TEAL_SOFT = "#f0fdfa"
+    GOLD = "#b45309"
+    GOLD_BRIGHT = "#eab308"
+    GOLD_SOFT = "#fef9c3"
+
+    def _line(x1, y1, x2, y2, stroke=INK, sw=1.4, dash=None):
+        ds = f' stroke-dasharray="{dash}"' if dash else ""
+        return f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{stroke}" stroke-width="{sw}"{ds}/>'
+
+    def arrow(x1, y1, x2, y2, stroke=INK, sw=2.0, dash=None):
+        dx, dy = x2 - x1, y2 - y1
+        ln = math.hypot(dx, dy) or 1.0
+        ux, uy = dx / ln, dy / ln
+        px, py = -uy, ux
+        hl, hw = 8.0, 4.2
+        bx, by = x2 - ux * hl, y2 - uy * hl
+        p1x, p1y = bx + px * hw, by + py * hw
+        p2x, p2y = bx - px * hw, by - py * hw
+        seg = _line(x1, y1, bx + ux * 1.5, by + uy * 1.5, stroke=stroke, sw=sw, dash=dash)
+        head = f'<polygon points="{x2:.1f},{y2:.1f} {p1x:.1f},{p1y:.1f} {p2x:.1f},{p2y:.1f}" fill="{stroke}"/>'
+        return seg + "\n" + head
+
+    def _verify_alchemy_gold_assertions():
+        # 1. Furnace thermal energy vs nuclear binding energy (~10^7-10^8 gap)
+        kb_eV = 8.617333262e-5
+        e_furnace = kb_eV * 1300.0  # ~0.112 eV
+        e_nuclear = 8.0e6           # ~8 MeV per nucleon
+        assert 0.10 < e_furnace < 0.13
+        assert e_nuclear / e_furnace > 6.5e7
+
+        # 2. Relativistic 1s electron speed in Au (Z=79) and blue absorption cutoff
+        beta_au = 79.0 / 137.035999
+        gamma_au = 1.0 / math.sqrt(1.0 - beta_au ** 2)
+        lam_nm = 1239.84 / 2.4
+        assert 0.575 < beta_au < 0.578
+        assert 1.22 < gamma_au < 1.23
+        assert 515.0 < lam_nm < 518.0
+
+        # 3. CERN ALICE Run 2 (2015-2018) 86 billion Au nuclei mass (~29 pg) & peak rate time for 1 g
+        m_pg = (8.6e10 / 6.02214076e23) * 203.0 * 1e12
+        atoms_per_g = 6.02214076e23 / 196.96657
+        yrs_peak_1g = (atoms_per_g / 89000.0) / (365.25 * 86400.0)
+        assert 28.5 < m_pg < 29.5
+        assert 1.07e9 < yrs_peak_1g < 1.11e9
+
+        # 4. World Gold Council mined stock (~222,600 tonnes -> ~22.6 m cube)
+        vol_m3 = 222600e3 / 19320.0
+        edge_m = vol_m3 ** (1.0 / 3.0)
+        assert 22.50 < edge_m < 22.65
+
+    def _build_ev_vs_mev_and_relativistic_gold():
+        H = 516
+        els = [
+            *header(
+                "为什么两千年化学炉火造不出一颗金原子？——百万倍能量鸿沟与相对论“金身”",
+                "炉火只能拨动外层电子（~1 eV），改写质子数要砸开 800 万 eV 的原子核；连黄金的黄色都靠爱因斯坦相对论",
+            )
+        ]
+
+        # Left card: Chemical vs Nuclear 10^6-10^7 energy wall
+        els.append(card(20, 68, 352, 428))
+        els.append(pill(32, 80, "A. 化学炼丹炉 vs 原子核金库：差出一百万倍！", fg=ORANGE, bg=ORANGE_SOFT, w=296, h=22, size=11.5))
+
+        els.append(card(34, 112, 324, 224, rx=8, fill="#fffaf5", stroke=BORDER, sw=1.0))
+        # Outer electron cloud schematic
+        acx, acy = 126, 212
+        els.append(f'<circle cx="{acx}" cy="{acy}" r="72" fill="#fef3c7" fill-opacity="0.45" stroke="{ORANGE}" stroke-width="1.3" stroke-dasharray="4 3"/>')
+        els.append(f'<circle cx="{acx}" cy="{acy}" r="44" fill="none" stroke="{MUTED}" stroke-width="1.0" stroke-dasharray="3 3"/>')
+        els.append(f'<circle cx="{acx + 72}" cy="{acy}" r="4.5" fill="{BLUE}"/>')
+        els.append(f'<circle cx="{acx - 44}" cy="{acy}" r="4.5" fill="{BLUE}"/>')
+        els.append(f'<circle cx="{acx}" cy="{acy}" r="11" fill="{RED}" stroke="#fff" stroke-width="1.5"/>')
+        els.append(txt(acx, acy + 4, "79+", 9.8, "#ffffff", "middle", weight="700"))
+        els.append(txt(acx, 304, "原子直径 ~10⁻¹⁰ m（核仅占万分之一！）", 10.2, MUTED, "middle"))
+
+        # Right side of card A: Energy ladder
+        els.append(card(212, 126, 136, 82, rx=6, fill="#ffffff", stroke=ORANGE, sw=1.2))
+        els.append(txt(280, 146, "炭火/强酸（外层电子）", 10.5, ORANGE, "middle", weight="700"))
+        els.append(txt(280, 166, "1300 K 热能 ≈ 0.11 eV", 10.2, BODY, "middle"))
+        els.append(txt(280, 184, "化学键拆装 ≈ 1~5 eV", 10.2, BODY, "middle"))
+        els.append(txt(280, 200, "质子数 82(铅) 纹丝不动", 10.0, RED, "middle", weight="700"))
+
+        els.append(card(212, 220, 136, 90, rx=6, fill=RED_SOFT, stroke=RED, sw=1.3))
+        els.append(txt(280, 240, "核嬗变（拔掉质子）", 10.5, RED, "middle", weight="700"))
+        els.append(txt(280, 260, "强核力锁死 ≈ 8,000,000 eV", 10.0, INK, "middle", weight="700"))
+        els.append(txt(280, 280, "（即 ~8 MeV，高百万倍！）", 10.0, RED, "middle", weight="700"))
+        els.append(txt(280, 298, "铅(82p) - 3p → 金(79p)", 10.2, GOLD, "middle", weight="700"))
+
+        els.append(card(34, 348, 324, 132, rx=8, fill=ORANGE_SOFT, stroke=ORANGE, sw=1.1))
+        els.append(txt(46, 370, "为什么铅和汞看着像“半熟的金子”，却死活炼不过去？", 11.0, ORANGE, weight="700"))
+        els.append(txt(46, 392, "• 铅密度 11.3、汞 13.5、金 19.3 g/cm³，在周期表紧挨着坐：", 10.8, BODY))
+        els.append(txt(46, 414, "  79号金(Au) — 80号汞(Hg) — 81号铊(Tl) — 82号铅(Pb)；", 10.8, INK, weight="700"))
+        els.append(txt(46, 436, "• 但鼓风炉火与王水只够给原子“换外套”（拆装外层电子），", 10.8, BODY))
+        els.append(txt(46, 458, "  就像拿火柴去烧银行十米厚的钛合金金库门，差了七个数量级！", 10.8, RED, weight="700"))
+
+        # Right card: Why gold is yellow & noble (Einstein relativity)
+        els.append(card(388, 68, 352, 428))
+        els.append(pill(400, 80, "B. 黄金凭什么金黄又不朽？爱因斯坦相对论镀金！", fg=GOLD, bg=GOLD_SOFT, w=304, h=22, size=11.5))
+
+        els.append(card(402, 112, 324, 224, rx=8, fill="#ffffff", stroke=BORDER, sw=1.0))
+        els.append(txt(564, 134, "5d → 6s 电子跃迁能隙对比（Pyykkö 相对论量子化学）", 10.5, MUTED, "middle", weight="700"))
+
+        # Column 1: Silver (Ag, Z=47) / Non-relativistic Au
+        els.append(card(418, 148, 134, 172, rx=6, fill="#f8fafc", stroke=SLATE, sw=1.1))
+        els.append(txt(485, 168, "白银 Ag (47p) / 无相对论金", 10.2, SLATE, "middle", weight="700"))
+        els.append(_line(440, 192, 530, 192, stroke=BLUE, sw=2.4))
+        els.append(txt(485, 185, "6s 轨道（未明显收缩）", 9.8, BLUE, "middle"))
+        els.append(_line(440, 274, 530, 274, stroke=SLATE, sw=2.8))
+        els.append(txt(485, 290, "5d 满壳层", 9.8, SLATE, "middle"))
+        els.append(arrow(485, 270, 485, 198, stroke=PURPLE, sw=1.8))
+        els.append(txt(485, 238, "ΔE ≈ 3.7 eV", 10.5, PURPLE, "middle", weight="700", halo=True))
+        els.append(txt(485, 310, "只吸紫外线 → 反射银白光", 10.0, BODY, "middle", weight="700"))
+
+        # Column 2: Real Relativistic Gold (Au, Z=79)
+        els.append(card(574, 148, 138, 172, rx=6, fill="#fefce8", stroke=GOLD, sw=1.3))
+        els.append(txt(643, 168, "真实黄金 Au (79p 相对论)", 10.2, GOLD, "middle", weight="700"))
+        els.append(_line(596, 214, 690, 214, stroke=RED, sw=2.4))
+        els.append(txt(643, 206, "6s 猛缩 14%（能量下沉）", 9.8, RED, "middle", weight="700"))
+        els.append(_line(596, 262, 690, 262, stroke=GOLD, sw=2.8))
+        els.append(txt(643, 280, "5d 受屏蔽外扩上抬", 9.8, GOLD, "middle", weight="700"))
+        els.append(arrow(643, 258, 643, 220, stroke=BLUE, sw=1.8))
+        els.append(txt(643, 244, "ΔE ≈ 2.4 eV", 10.5, BLUE, "middle", weight="700", halo=True))
+        els.append(txt(643, 310, "吃掉蓝紫光 → 闪耀金黄光！", 10.0, GOLD, "middle", weight="700"))
+
+        els.append(card(402, 348, 324, 132, rx=8, fill=GOLD_SOFT, stroke=GOLD, sw=1.1))
+        els.append(txt(414, 370, "79 颗质子拽出 58% 光速：一箭双雕造就黄金传奇", 11.0, GOLD, weight="700"))
+        els.append(txt(414, 392, "① 绝美金黄色：内层 1s 电子飙到 0.58c，相对论增重 22%，", 10.8, BODY))
+        els.append(txt(414, 414, "  连带 6s 轨道收缩 14%，能隙缩至 2.4 eV（吞掉蓝紫光）！", 10.8, BODY))
+        els.append(txt(414, 436, "② 千年不腐惰性：收缩的 6s¹ 孤电子被原子核死死抱在怀里，", 10.8, BODY))
+        els.append(txt(414, 458, "  氧气、硫磺、浓硝酸全抢不走——入土三千年出土仍灿若骄阳！", 10.8, INK, weight="700"))
+
+        return figure(
+            H,
+            "化学反应电子伏特与核嬗变兆电子伏特百万倍能量鸿沟及黄金相对论黄色惰性成因图",
+            "左栏对比直径10的负10次方米电子云上的化学反应（0.1至5电子伏特）与直径万分之一原子核内拔除质子的核嬗变门槛（约800万电子伏特）；右栏对比白银3.7电子伏特紫外能隙与黄金因79号核相对论效应使6s收缩14%、能隙降至2.4电子伏特从而吸收蓝光反射金黄光并锁死外层孤电子。",
+            els,
+        )
+
+    def _build_alchemy_history_four_stages():
+        H = 520
+        els = [
+            *header(
+                "冲着黄金去，却炸开了现代化学大门——跨越两千年的世界炼金术四幕大戏",
+                "从亚历山大港水浴锅、阿拉伯王水、中国丹炉意外炸出火药，到煮 5500 升人尿炼出白磷与牛顿百万字手稿",
+            )
+        ]
+
+        stages = [
+            (
+                20, 68, BLUE, BLUE_SOFT,
+                "① 希腊—埃及源头（公元 1~4 世纪 · 亚历山大港）",
+                "工匠冶金染色术 × 亚里士多德四元素互变论",
+                [
+                    "• 理论错觉：既然万物皆由“土气水火”按冷热干湿调配，那灰暗",
+                    "  的贱金属（铅/铜）只是“没熟透的金子”，催熟即可点石成金！",
+                    "• 硬核遗产：佐西莫斯（Zosimos）与犹太女炼金家玛丽亚发明曲",
+                    "  颈甑蒸馏器与恒温水浴锅（Bain-marie 至今仍在厨房服役）。",
+                ],
+            ),
+            (
+                388, 68, TEAL, TEAL_SOFT,
+                "② 阿拉伯黄金时代（8~10 世纪 · 巴格达与库法）",
+                "贾比尔“硫-汞双亲论”与唯一能吃掉黄金的“王水”",
+                [
+                    "• 强酸突破：贾比尔（Jabir）与拉齐系统分级矿物，高温干馏绿矾",
+                    "  与硝石制出硫酸、硝酸，并用盐酸+硝酸调出“王水”(Aqua Regia)！",
+                    "• 语言烙印：英文 Alchemy（炼金术）、Alcohol（酒精）、Alkali",
+                    "  （碱）、Alembic（蒸馏釜）清一色带着阿拉伯冠词 al- 基因。",
+                ],
+            ),
+            (
+                20, 286, ORANGE, ORANGE_SOFT,
+                "③ 中国道教外丹术（东汉~唐宋 · 葛洪与伏火硝石）",
+                "西方找财富黄金，东方找“食金不朽”长生仙丹",
+                [
+                    "• 最早可逆反应：东晋葛洪《抱朴子》精准记下“丹砂(HgS)烧之成",
+                    "  水银，积变又还成丹砂”；代价是唐朝多位皇帝因重金属丹毒暴毙。",
+                    "• 炸出火药：唐代方士给硫磺、硝石加蜂蜜炭“伏火”，《真元妙道",
+                    "  要略》警告“焰起烧手面及烬屋舍”——意外改写人类军事与工程史！",
+                ],
+            ),
+            (
+                388, 286, PURPLE, PURPLE_SOFT,
+                "④ 欧洲近代转型与终局（1669~1789 · 从尿液白磷到拉瓦锡）",
+                "牛顿百万字炼金手稿、波义耳怀疑论与天平死刑判决",
+                [
+                    "• 1669 荒诞奇迹：汉堡炼金师布兰德熬干 5500 升人尿找贤者之石，",
+                    "  意外提炼出暗夜发光的首个人造单质新元素——白磷（P₄）！",
+                    "• 最后魔法师：波义耳与写下百万字炼金笔记的牛顿皆痴迷嬗变；直",
+                    "  到 1789 拉瓦锡以精密天平确立质量守恒与元素定义，终结化学炼金。",
+                ],
+            ),
+        ]
+
+        for x, y, fg, bg, ttl, sub, lines in stages:
+            els.append(card(x, y, 352, 204))
+            els.append(pill(x + 12, y + 12, ttl, fg=fg, bg=bg, w=328, h=22, size=11.0))
+            els.append(txt(x + 14, y + 54, sub, 11.2, INK, weight="700"))
+            els.append(_line(x + 14, y + 64, x + 338, y + 64, stroke=HAIRLINE, sw=1.0))
+            yy = y + 86
+            for ln in lines:
+                els.append(txt(x + 14, yy, ln, 10.6, BODY))
+                yy += 22
+
+        # Bottom summary ribbon
+        els.append(card(20, 496, 720, 20, rx=4, fill="#f8fafc", stroke="none"))
+        els.append(txt(380, 509, "历史反转：炼金术士两千年没炼出 1 毫克真黄金，却亲手攒齐了烧瓶、强酸、火药、白磷、冶金提纯与定量实验整套现代化学家当！", 10.6, INK, "middle", weight="700"))
+
+        return figure(
+            H,
+            "世界炼金术两千年演进四阶段图解：希腊亚历山大港、阿拉伯王水、中国外丹火药与欧洲近代化学转型",
+            "四宫格按时间与文明脉络展示：公元1至4世纪亚历山大港蒸馏器与水浴锅，8至10世纪阿拉伯贾比尔强酸与王水，东汉至唐宋中国葛洪丹砂水银可逆反应与伏火硝石意外发明黑火药，以及1669年布兰德熬尿发现白磷、牛顿百万字炼金手稿到1789年拉瓦锡终结化学炼金术。",
+            els,
+        )
+
+    def _build_nuclide_chart_gold_island():
+        H = 516
+        els = [
+            *header(
+                "核时代真能改写质子数了，为什么还是造不出好黄金？——核素图上的“孤岛陷阱”",
+                "邻居铂、汞、铅各有 4~7 种稳定同位素；唯独奇数 79 号黄金只有 ¹⁹⁷Au 一根独苗，稍微偏一格就是短命毒金",
+            )
+        ]
+
+        # Left card: Mini Chart of Nuclides (Z=78..82, N=116..126)
+        els.append(card(20, 68, 424, 428))
+        els.append(pill(32, 80, "A. 铂—金—汞—铊—铅局部核素图（深色格=天然稳定核）", fg=BLUE, bg=BLUE_SOFT, w=346, h=22, size=11.2))
+
+        gx0, gy0 = 86, 122
+        cw, ch = 29, 36
+        rows = [
+            (82, "82 铅 Pb", {122, 124, 125, 126}),
+            (81, "81 铊 Tl", {122, 124}),
+            (80, "80 汞 Hg", {116, 118, 119, 120, 121, 122, 124}),
+            (79, "79 金 Au", {118}),
+            (78, "78 铂 Pt", {116, 117, 118, 120}),
+        ]
+        n_vals = list(range(116, 127))  # 11 columns: 116..126
+
+        for r_idx, (z_num, z_lbl, stables) in enumerate(rows):
+            ry = gy0 + r_idx * (ch + 4)
+            lbl_col = GOLD if z_num == 79 else INK
+            els.append(txt(gx0 - 8, ry + 23, z_lbl, 10.5, lbl_col, "end", weight="700"))
+            for c_idx, n_num in enumerate(n_vals):
+                cx = gx0 + c_idx * (cw + 2)
+                a_num = z_num + n_num
+                if n_num in stables:
+                    if z_num == 79 and n_num == 118:
+                        els.append(card(cx, ry, cw, ch, rx=4, fill="#fde047", stroke=GOLD, sw=2.0))
+                        els.append(txt(cx + cw / 2, ry + 15, f"{a_num}", 9.8, INK, "middle", weight="700"))
+                        els.append(txt(cx + cw / 2, ry + 29, "唯一金", 8.8, RED, "middle", weight="700"))
+                    else:
+                        els.append(card(cx, ry, cw, ch, rx=4, fill="#dbeafe", stroke=BLUE, sw=1.2))
+                        els.append(txt(cx + cw / 2, ry + 22, f"{a_num}", 9.6, BLUE, "middle", weight="700"))
+                elif z_num == 79 and n_num in (119, 120):
+                    els.append(card(cx, ry, cw, ch, rx=4, fill=RED_SOFT, stroke=RED, sw=1.2, dash="2 2"))
+                    els.append(txt(cx + cw / 2, ry + 15, f"{a_num}", 9.5, RED, "middle", weight="700"))
+                    els.append(txt(cx + cw / 2, ry + 28, "放射!", 8.6, RED, "middle", weight="700"))
+                elif z_num == 80 and n_num == 117:
+                    els.append(card(cx, ry, cw, ch, rx=4, fill=TEAL_SOFT, stroke=TEAL, sw=1.2, dash="2 2"))
+                    els.append(txt(cx + cw / 2, ry + 15, "197", 9.5, TEAL, "middle", weight="700"))
+                    els.append(txt(cx + cw / 2, ry + 28, "64h", 8.6, TEAL, "middle", weight="700"))
+                else:
+                    els.append(card(cx, ry, cw, ch, rx=4, fill="#f8fafc", stroke=HAIRLINE, sw=0.8))
+                    els.append(txt(cx + cw / 2, ry + 22, f"{a_num}", 9.0, "#94a3b8", "middle"))
+
+        for c_idx, n_num in enumerate(n_vals):
+            if c_idx % 2 == 0:
+                cx = gx0 + c_idx * (cw + 2) + cw / 2
+                els.append(txt(cx, gy0 + 5 * (ch + 4) + 14, f"N={n_num}", 9.5, MUTED, "middle"))
+
+        els.append(card(34, 352, 396, 130, rx=8, fill=GOLD_SOFT, stroke=GOLD, sw=1.1))
+        els.append(txt(46, 374, "为什么黄金在核素图上这么“挑食”？（核子成对能铁律）：", 11.0, GOLD, weight="700"))
+        els.append(txt(46, 396, "• 质子、中子为偶数时两两配对更稳：80号汞坐拥 7 种稳定同位素！", 10.6, BODY))
+        els.append(txt(46, 418, "• 79号金质子数为奇数，全自然界 100% 只有 ¹⁹⁷Au（79p+118n）", 10.6, INK, weight="700"))
+        els.append(txt(46, 440, "  这一种稳定核！多 1 颗中子的 ¹⁹⁸Au 半衰期仅 2.7 天，会发射强伽", 10.6, BODY))
+        els.append(txt(46, 462, "  马射线并 β⁻ 衰变重新变回 ¹⁹⁸Hg 水银——谁戴谁辐射中毒！", 10.6, RED, weight="700"))
+
+        # Right card: Three nuclear traps
+        els.append(card(458, 68, 282, 428))
+        els.append(pill(470, 80, "B. 反应堆/加速器造金的三大死胡同", fg=RED, bg=RED_SOFT, w=258, h=22, size=11.2))
+
+        els.append(card(470, 114, 258, 114, rx=8, fill="#fffaf5", stroke=ORANGE, sw=1.1))
+        els.append(txt(482, 136, "陷阱 ①：快中子轰击天然水银 (1941)", 10.8, ORANGE, weight="700"))
+        els.append(txt(482, 158, "哈佛 Sherr 等首次把汞变金：", 10.5, BODY))
+        els.append(txt(482, 178, "¹⁹⁸Hg + n → ¹⁹⁸Au + p（及 ¹⁹⁹Au）", 10.5, INK, weight="700"))
+        els.append(txt(482, 198, "结果：全是半衰期 2.7~3.1 天的强放射", 10.4, RED, weight="700"))
+        els.append(txt(482, 216, "性同位素，不到两周全衰变回水银！", 10.4, BODY))
+
+        els.append(card(470, 240, 258, 126, rx=8, fill=TEAL_SOFT, stroke=TEAL, sw=1.1))
+        els.append(txt(482, 262, "陷阱 ②：慢中子轰 ¹⁹⁶Hg 产率仅千分之1.5", 10.6, TEAL, weight="700"))
+        els.append(txt(482, 284, "唯一能变稳定 ¹⁹⁷Au 的 ¹⁹⁶Hg 在天然水", 10.4, BODY))
+        els.append(txt(482, 304, "银里仅占 0.15%！其余 99.85% 水银白吃", 10.4, INK, weight="700"))
+        els.append(txt(482, 324, "中子；更惨的是造出的 ¹⁹⁷Au 极爱吸中子", 10.4, BODY))
+        els.append(txt(482, 344, "（98.7 靶恩），转眼又烧回 ¹⁹⁸Hg 水银！", 10.4, RED, weight="700"))
+
+        els.append(card(470, 378, 258, 104, rx=8, fill=PURPLE_SOFT, stroke=PURPLE, sw=1.1))
+        els.append(txt(482, 400, "陷阱 ③：拿铂金 Pt 造黄金 = 倒贴巨款！", 10.6, PURPLE, weight="700"))
+        els.append(txt(482, 422, "¹⁹⁶Pt + n → ¹⁹⁷Pt → ¹⁹⁷Au 虽能得真金，", 10.4, BODY))
+        els.append(txt(482, 442, "但原料铂本身就是贵金属，加上反应堆照", 10.4, BODY))
+        els.append(txt(482, 462, "射与同位素分离费，每克成本高达百万美元！", 10.4, INK, weight="700"))
+
+        return figure(
+            H,
+            "铂金汞铊铅局部核素图唯一稳定金197孤岛与人工核嬗变三大放射性及产率陷阱图解",
+            "左栏绘制78号铂至82号铅在N=116至126区间的核素网格，直观展示80号汞拥有7种稳定核而79号金仅有唯一稳定核197Au，相邻198Au与199Au均为短寿命放射性核；右栏拆解1941快中子轰汞产毒金、慢中子轰0.15%稀有196Hg反烧回汞、以及铂造金倒贴成本三大死胡同。",
+            els,
+        )
+
+    def _build_lhc_alice_2025_lead_to_gold():
+        H = 510
+        anim_css = """
+  @keyframes pbPassTop {
+    0%   { transform: translateX(0px); }
+    45%  { transform: translateX(195px); }
+    100% { transform: translateX(430px); }
+  }
+  @keyframes pbToAuBot {
+    0%   { transform: translateX(0px); }
+    45%  { transform: translateX(0px); }
+    100% { transform: translateX(-235px); }
+  }
+  @keyframes flashPulse {
+    0%, 38% { opacity: 0; }
+    46%     { opacity: 1; }
+    65%, 100% { opacity: 0.25; }
+  }
+  @keyframes ejectProtons {
+    0%, 45% { transform: translate(0px, 0px); opacity: 0; }
+    100%    { transform: translate(-78px, 52px); opacity: 1; }
+  }
+  .pb-top-anim { animation: pbPassTop 4.2s linear 1 forwards; }
+  .flash-anim  { animation: flashPulse 4.2s ease-out 1 forwards; }
+  .eject-anim  { animation: ejectProtons 4.2s ease-out 1 forwards; }
+  @media (prefers-reduced-motion: reduce) {
+    .pb-top-anim, .flash-anim, .eject-anim { animation: none !important; }
+  }
+        """
+        els = [
+            *header(
+                "2025 年 CERN 大型强子对撞机真把“铅变成了黄金”！——超外围擦肩光核嬗变",
+                "两颗 ²⁰⁸Pb 核以 99.999993% 光速擦肩而过，扁平强电场发射高能光子震飞 3 颗质子，4 年攒出 29 皮克金",
+            )
+        ]
+
+        # Top stage: LHC ALICE Ultra-Peripheral Collision schematic
+        els.append(card(20, 68, 720, 246))
+        els.append(pill(32, 80, "A. CERN ALICE (Phys. Rev. C, 2025.05)：不撞碎原子核，靠“隔空电磁巴掌”精准削掉 3 颗质子", fg=PURPLE, bg=PURPLE_SOFT, w=636, h=22, size=11.2))
+
+        els.append(card(34, 112, 692, 188, rx=8, fill="#0f172a", stroke=BORDER, sw=1.0))
+
+        # Beam lines
+        els.append(_line(54, 158, 706, 158, stroke="#334155", sw=1.2, dash="5 4"))
+        els.append(_line(54, 232, 706, 232, stroke="#334155", sw=1.2, dash="5 4"))
+
+        # Top passing Pb-208 ion (left -> right)
+        els.append(
+            f'<g class="pb-top-anim">'
+            f'<ellipse cx="148" cy="158" rx="5" ry="26" fill="#38bdf8" fill-opacity="0.45" stroke="#38bdf8" stroke-width="1.2"/>'
+            f'<circle cx="148" cy="158" r="13" fill="#64748b" stroke="#e2e8f0" stroke-width="1.5"/>'
+            f'{txt(148, 162, "82Pb", 9.5, "#ffffff", "middle", weight="700")}'
+            f'</g>'
+        )
+        els.append(txt(68, 140, "铅核束 ① v = 0.99999993c →", 10.5, "#93c5fd", weight="700"))
+
+        # Center virtual photon pulse
+        els.append(
+            f'<g class="flash-anim">'
+            f'<path d="M 343 172 L 336 186 L 350 194 L 343 214" fill="none" stroke="#facc15" stroke-width="2.8"/>'
+            f'</g>'
+        )
+        els.append(txt(348, 196, "洛伦兹压扁强电场 → 等效高能光子 γ*", 10.5, "#fde047", "start", weight="700"))
+
+        # Bottom Pb-208 at interaction -> turns into Au-203 + 3p + 2n moving left
+        els.append(f'<circle cx="536" cy="232" r="13" fill="#64748b" stroke="#cbd5e1" stroke-width="1.4"/>')
+        els.append(txt(536, 236, "82Pb", 9.5, "#ffffff", "middle", weight="700"))
+        els.append(arrow(516, 232, 366, 232, stroke="#cbd5e1", sw=1.8))
+        els.append(txt(698, 214, "← 反向铅核束 ② (²⁰⁸₈₂Pb)", 10.5, "#cbd5e1", "end", weight="700"))
+
+        # Resulting Au nucleus on bottom-left
+        els.append(f'<circle cx="218" cy="232" r="14" fill="#eab308" stroke="#fef08a" stroke-width="2.0"/>')
+        els.append(txt(218, 236, "79Au", 9.8, "#0f172a", "middle", weight="700"))
+        els.append(arrow(332, 232, 240, 232, stroke="#eab308", sw=2.2))
+        els.append(txt(218, 260, "真金原子核诞生！（微秒后撞管壁碎裂）", 10.2, "#fde047", "middle", weight="700"))
+
+        # Ejected 3 protons + neutrons
+        els.append(
+            f'<g class="eject-anim">'
+            f'<circle cx="330" cy="240" r="4.5" fill="#ef4444"/><circle cx="342" cy="246" r="4.5" fill="#ef4444"/><circle cx="354" cy="240" r="4.5" fill="#ef4444"/>'
+            f'</g>'
+        )
+        els.append(txt(478, 282, "巨偶极共振震飞：3 颗质子(p) + 2~3 颗中子(n) → 82 - 3 = 79 号金！", 10.5, "#fca5a5", "middle", weight="700"))
+
+        # Left detector ZDC box
+        els.append(card(48, 208, 76, 48, rx=4, fill="#1e293b", stroke="#38bdf8", sw=1.3))
+        els.append(txt(86, 229, "ALICE ZDC", 9.8, "#38bdf8", "middle", weight="700"))
+        els.append(txt(86, 245, "零度计点清3p", 9.2, "#e2e8f0", "middle"))
+
+        # Bottom two data cards
+        els.append(card(20, 326, 352, 168))
+        els.append(pill(32, 338, "B. 为什么偏偏要“擦肩而过”不能迎头硬撞？", fg=BLUE, bg=BLUE_SOFT, w=292, h=22, size=11.0))
+        els.append(txt(34, 380, "• 迎头相撞太猛：两颗铅核一旦撞实，瞬间融化成几万亿度", 10.8, BODY))
+        els.append(txt(34, 402, "  的“夸克-胶子汤”，炸出几千颗碎片，金核根本保不住；", 10.8, BODY))
+        els.append(txt(34, 424, "• 擦肩而过（超外围碰撞 UPC）：核子没碰到，但 82 颗质子", 10.8, BODY))
+        els.append(txt(34, 446, "  近光速飞掠的电磁脉冲刚好激发铅核内部振荡，温和甩掉：", 10.8, BODY))
+        els.append(txt(34, 470, "  甩 1p→81铊 · 甩 2p→80汞 · 甩 3p→79黄金（峰值8.9万颗/秒）！", 10.6, BLUE, weight="700"))
+
+        els.append(card(388, 326, 352, 168))
+        els.append(pill(400, 338, "C. 梦想成真却发不了财：4 年只攒出 29 皮克！", fg=GOLD, bg=GOLD_SOFT, w=298, h=22, size=11.0))
+        els.append(txt(402, 380, "• 听着吓人：LHC 第二轮运行（2015~2018）四大实验一共", 10.8, BODY))
+        els.append(txt(402, 402, "  从铅束里造出了约 860 亿颗（8.6×10¹⁰）金原子核！", 10.8, INK, weight="700"))
+        els.append(txt(402, 424, "• 称重傻眼：除以阿伏伽德罗常数 6.02×10²³，总质量仅有：", 10.8, BODY))
+        els.append(txt(402, 446, "  m ≈ 2.9 × 10⁻¹¹ 克（29 皮克，比一粒灰尘还轻三万倍）！", 10.8, RED, weight="700"))
+        els.append(txt(402, 470, "• 哪怕按每秒 8.9 万颗峰值不眠不休猛打，凑 1 克也得 10.9 亿年！", 10.4, GOLD, weight="700"))
+
+        return figure(
+            H,
+            "2025年CERN大型强子对撞机ALICE超外围碰撞将铅208光核解离为金原子核动态示意图",
+            "上方深色束流管道展示两束99.999993%光速的铅208原子核擦肩掠过（单次动画），洛伦兹压扁的强电磁场激发巨偶极共振甩出3颗质子与2至3颗中子变成79号金核并由零度商业量热器ZDC捕获；下方两栏说明为何迎头碰撞会碎成夸克胶子等离子体，以及860亿颗金核仅合29皮克的质量换算。",
+            els,
+            extra_css=anim_css,
+        )
+
+    def _build_cost_and_cosmic_kilonova():
+        H = 516
+        els = [
+            *header(
+                "终极经济账与真命天子：为什么人造 1 克金要花百万亿美元，真黄金全靠中子星相撞？",
+                "人类加速器按颗零售原子核（电费贵过金价万亿倍）；全人类已挖出的 22.4 万吨黄金其实只够叠一栋七层小楼",
+            )
+        ]
+
+        # Left card: Log10 cost comparison per 1 gram of gold
+        els.append(card(20, 68, 352, 428))
+        els.append(pill(32, 80, "A. 获取 1 克黄金的成本对数尺（横跨 12 个数量级！）", fg=RED, bg=RED_SOFT, w=312, h=22, size=11.2))
+
+        els.append(card(34, 112, 324, 232, rx=8, fill="#ffffff", stroke=BORDER, sw=1.0))
+        els.append(txt(46, 134, "每获取 1 g 黄金所需代价（对数刻度 log₁₀ USD）", 10.5, MUTED, weight="700"))
+
+        bars = [
+            ("地球金矿开采提纯", "≈ $90 ~ $150 / 克", 2.1, TEAL, TEAL_SOFT),
+            ("核反应堆照射铂/汞-196", "≈ $10⁶ ~ $10⁸ / 克（贵百万倍）", 7.0, BLUE, BLUE_SOFT),
+            ("1980 西博格加速器轰击铋", "≈ $3×10¹³ / 克（约全球一年GDP！）", 13.5, RED, RED_SOFT),
+            ("LHC 铅束擦肩副产物折算", "峰值连打 10.9 亿年才凑够 1 克！", 14.8, PURPLE, PURPLE_SOFT),
+        ]
+        by = 152
+        for b_ttl, b_val, log_v, col, bg_c in bars:
+            bw = max(18.0, (log_v / 15.0) * 296.0)
+            els.append(txt(46, by, f"{b_ttl}：{b_val}", 10.2, INK, weight="700"))
+            els.append(card(46, by + 7, 296, 12, rx=4, fill="#f1f5f9", stroke=HAIRLINE, sw=0.8))
+            els.append(card(46, by + 7, bw, 12, rx=4, fill=bg_c, stroke=col, sw=1.3))
+            by += 45
+
+        els.append(card(34, 356, 324, 124, rx=8, fill=RED_SOFT, stroke=RED, sw=1.1))
+        els.append(txt(46, 378, "为什么核物理永远打不赢金矿？（阿伏伽德罗常数铁壁）：", 10.8, RED, weight="700"))
+        els.append(txt(46, 400, "• 1 克黄金里有 3.06 × 10²¹ 颗金原子（30 万亿亿颗）！", 10.6, INK, weight="700"))
+        els.append(txt(46, 422, "• 哪怕加速器束流高达 1 毫安（每秒 6×10¹⁵ 粒子）且 100%", 10.6, BODY))
+        els.append(txt(46, 444, "  命中（真实命中率 <10⁻⁴），不眠不休轰击也要 16 年以上，", 10.6, BODY))
+        els.append(txt(46, 466, "  耗电与超导磁体成本永远比黄金本身贵出百亿到万亿倍！", 10.6, RED, weight="700"))
+
+        # Right card: Neutron Star Merger + 22.6m World Gold Cube
+        els.append(card(388, 68, 352, 428))
+        els.append(pill(400, 80, "B. 宇宙免电费炼金炉 vs 全人类 22.6 米黄金魔方", fg=GOLD, bg=GOLD_SOFT, w=306, h=22, size=11.2))
+
+        els.append(card(402, 112, 324, 178, rx=8, fill="#0f172a", stroke=GOLD, sw=1.2))
+        els.append(txt(564, 134, "双中子星并合千新星（2017 GW170817 引力波+光谱实证）", 10.4, "#fde047", "middle", weight="700"))
+        # Two spiraling neutron stars
+        els.append(f'<circle cx="496" cy="186" r="15" fill="#38bdf8" stroke="#e0f2fe" stroke-width="1.6"/>')
+        els.append(f'<circle cx="546" cy="186" r="15" fill="#38bdf8" stroke="#e0f2fe" stroke-width="1.6"/>')
+        els.append(f'<path d="M 472 186 A 48 26 0 1 1 570 186" fill="none" stroke="#facc15" stroke-width="1.6" stroke-dasharray="4 3"/>')
+        els.append(arrow(578, 186, 616, 186, stroke="#facc15", sw=2.0))
+        els.append(card(620, 160, 94, 52, rx=6, fill="#422006", stroke="#eab308", sw=1.3))
+        els.append(txt(667, 181, "快中子暴 r过程", 10.0, "#fde047", "middle", weight="700"))
+        els.append(txt(667, 199, "一撞喷出数个地球金", 9.5, "#ffffff", "middle"))
+
+        els.append(txt(414, 244, "• 1 秒内塞进几十颗中子（>10²² n/cm³），绕开所有质子斥力墙，", 10.4, "#e2e8f0"))
+        els.append(txt(414, 266, "  随后 β⁻ 衰变稳稳停在 ¹⁹⁷Au——太阳系黄金皆是 46 亿年前遗物！", 10.4, "#fde047", weight="700"))
+
+        # Bottom right: 22.6m World Gold Cube
+        els.append(card(402, 302, 324, 178, rx=8, fill=GOLD_SOFT, stroke=GOLD, sw=1.1))
+        # Isometric cube on left
+        els.append(
+            f'<polygon points="454,352 490,334 526,352 490,370" fill="#fde047" stroke="{GOLD}" stroke-width="1.3"/>'
+            f'<polygon points="454,352 490,370 490,414 454,396" fill="#eab308" stroke="{GOLD}" stroke-width="1.3"/>'
+            f'<polygon points="526,352 490,370 490,414 526,396" fill="#ca8a04" stroke="{GOLD}" stroke-width="1.3"/>'
+        )
+        els.append(txt(490, 434, "边长仅 22.6 m！", 10.5, GOLD, "middle", weight="700"))
+        els.append(txt(490, 452, "（约 7 层住宅楼高）", 9.8, BODY, "middle"))
+
+        els.append(txt(542, 334, "世界黄金协会最新盘点：", 10.8, GOLD, weight="700"))
+        els.append(txt(542, 358, "• 人类几千年挖出的全部黄金", 10.4, BODY))
+        els.append(txt(542, 378, "  合计仅约 22.3 万吨；", 10.4, INK, weight="700"))
+        els.append(txt(542, 398, "• 因密度高达 19.32 t/m³，全", 10.4, BODY))
+        els.append(txt(542, 418, "  熔成一块纯金魔方边长仅", 10.4, BODY))
+        els.append(txt(542, 438, "  22.6 米！物以稀为贵 + 永不", 10.4, INK, weight="700"))
+        els.append(txt(542, 458, "  生锈，造就天然终极硬通货。", 10.4, RED, weight="700"))
+
+        return figure(
+            H,
+            "获取1克黄金的四级成本对数对比、双中子星并合快中子捕获炼金与全球22.6米黄金总存量魔方图",
+            "左栏按对数尺度对比金矿开采（百美元级）、反应堆照射（千万美元级）、1980西博格加速器轰击铋（几十万亿美元级）与LHC副产物（凑1克需上亿年）；右栏展示双中子星并合GW170817快中子捕获过程，以及人类历史开采全部约22.3万吨黄金熔铸成边长仅22.6米立方体的真实体积对比。",
+            els,
+        )
+
+    @register(
+        "alchemy-and-gold",
+        "人类为什么造不出黄金与炼金术两千年史五步图解：化学核能百万倍鸿沟与相对论金身、四大文明炼金史、197Au核素孤岛陷阱、2025 CERN铅变金动画、成本账与中子星黄金魔方",
+        "science_tech",
+    )
+    def build_alchemy_and_gold():
+        _verify_alchemy_gold_assertions()
+        write_svg(SUBDIR, "chemical-fire-ev-vs-nuclear-fortress-mev.svg", _build_ev_vs_mev_and_relativistic_gold())
+        write_svg(SUBDIR, "two-thousand-years-alchemy-four-traditions-timeline.svg", _build_alchemy_history_four_stages())
+        write_svg(SUBDIR, "nuclide-chart-single-gold-197-island-and-traps.svg", _build_nuclide_chart_gold_island())
+        write_svg(SUBDIR, "lhc-alice-2025-lead-to-gold-ultraperipheral-anim.svg", _build_lhc_alice_2025_lead_to_gold())
+        write_svg(SUBDIR, "human-accelerator-cost-vs-neutron-star-gold-factory.svg", _build_cost_and_cosmic_kilonova())
+
+
+_register_alchemy_and_gold()
+
+
+def _register_remote_control_principles():
+    SUBDIR = "remote-control"
+    RED = "#dc2626"
+    RED_SOFT = "#fef2f2"
+    TEAL = "#0f766e"
+    TEAL_SOFT = "#f0fdfa"
+    GOLD = "#b45309"
+    GOLD_SOFT = "#fef9c3"
+
+    def _line(x1, y1, x2, y2, stroke=INK, sw=1.4, dash=None):
+        ds = f' stroke-dasharray="{dash}"' if dash else ""
+        return f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{stroke}" stroke-width="{sw}"{ds}/>'
+
+    def arrow(x1, y1, x2, y2, stroke=INK, sw=1.9, dash=None):
+        dx, dy = x2 - x1, y2 - y1
+        ln = math.hypot(dx, dy) or 1.0
+        ux, uy = dx / ln, dy / ln
+        px, py = -uy, ux
+        hl, hw = 8.0, 4.0
+        bx, by = x2 - ux * hl, y2 - uy * hl
+        p1x, p1y = bx + px * hw, by + py * hw
+        p2x, p2y = bx - px * hw, by - py * hw
+        seg = _line(x1, y1, bx + ux * 1.5, by + uy * 1.5, stroke=stroke, sw=sw, dash=dash)
+        head = f'<polygon points="{x2:.1f},{y2:.1f} {p1x:.1f},{p1y:.1f} {p2x:.1f},{p2y:.1f}" fill="{stroke}"/>'
+        return seg + "\n" + head
+
+    def _verify_remote_control_assertions():
+        c_ms = 299792458.0
+        # 1. 940 nm near-IR photon energy (~1.32 eV: between Si 1.12 eV bandgap and human eye 1.77 eV)
+        e_ir_ev = 1239.84198 / 940.0
+        assert 1.12 < e_ir_ev < 1.77
+        assert 1.31 < e_ir_ev < 1.33
+
+        # 2. 38 kHz carrier period & NEC 32-bit standard frame duration
+        t_38k_us = 1e6 / 38000.0
+        nec_ms = 9.0 + 4.5 + 16 * 1.125 + 16 * 2.25 + 0.5625
+        assert 26.30 < t_38k_us < 26.33
+        assert abs(nec_ms - 68.0625) < 1e-6
+
+        # 3. Quarter-wave antenna length: 27.145 MHz (~2.76 m) vs 2.44 GHz (~3.07 cm)
+        q_27m = c_ms / (4.0 * 27.145e6)
+        q_24g_cm = (c_ms / (4.0 * 2.44e9)) * 100.0
+        assert 2.75 < q_27m < 2.77
+        assert 3.05 < q_24g_cm < 3.13
+
+        # 4. UWB speed of light ToF: 20 ns extra RTT -> ~3.0 m extra distance
+        d_extra_m = c_ms * 20e-9 / 2.0
+        assert 2.99 < d_extra_m < 3.01
+
+    def _build_history_and_spectrum_map():
+        H = 520
+        els = [
+            *header(
+                "从“绊脚电线、敲铝棒超声波”到无线万物：百年遥控进化史与四大物理信道",
+                "为什么英文至今把遥控器叫 Clicker（咔哒器）？红外光、超声波与无线电各自统治哪片领地？",
+            )
+        ]
+
+        # Left card: Century evolution timeline
+        els.append(card(20, 68, 354, 432))
+        els.append(pill(32, 80, "A. 遥控器百年进化奇史（从特斯拉遥控船到无电池铝棒）", fg=BLUE, bg=BLUE_SOFT, w=326, h=22, size=11.0))
+
+        milestones = [
+            ("1898 · 特斯拉无线电遥控船", "纽约麦迪逊花园广场首秀（专利 US613809），人类遥控鼻祖。", BLUE, BLUE_SOFT),
+            ("1950 · 泽尼特 Lazy Bones", "首款电视遥控器——拖着一根长电线横穿客厅，天天绊倒全家！", SLATE, "#f1f5f9"),
+            ("1955 · Flash-Matic 手电筒", "首款无线遥控！拿强光手电照电视四角光敏管；太阳一晒乱换台。", ORANGE, ORANGE_SOFT),
+            ("1956 · Space Command 超声波", "免电池！小锤敲 4 根铝棒发 ~40 kHz 超声波（Clicker 由来）。", PURPLE, PURPLE_SOFT),
+            ("1980s~今 · 940nm 红外与射频", "红外 LED 一统家电；2.4 GHz 跳频、蓝牙与 UWB 接管车与航模。", TEAL, TEAL_SOFT),
+        ]
+        my = 114
+        for m_ttl, m_desc, fg, bg in milestones:
+            els.append(card(34, my, 326, 68, rx=7, fill=bg, stroke=fg, sw=1.1))
+            els.append(txt(46, my + 24, m_ttl, 10.8, fg, weight="700"))
+            els.append(txt(46, my + 48, m_desc, 10.2, BODY))
+            my += 76
+
+        # Right card: Four physical channels comparison
+        els.append(card(388, 68, 352, 432))
+        els.append(pill(400, 80, "B. 四大家族分工表：为什么不干脆全用同一种波？", fg=TEAL, bg=TEAL_SOFT, w=312, h=22, size=11.0))
+
+        channels = [
+            (
+                "① 940 nm 近红外光（电视 / 空调 / 机顶盒）",
+                RED, RED_SOFT,
+                "• 波长 <1 微米（光波）：被纸片被子挡死，绝不穿墙误开邻居电视！",
+                "• 成本几毛钱、两节电池用两年；手机摄像头能拍到紫白闪光。",
+            ),
+            (
+                "② Sub-GHz 无线电（27MHz 老玩具 / 433MHz 车钥匙）",
+                ORANGE, ORANGE_SOFT,
+                "• 波长 0.7~11 米：绕射穿墙能力极强，隔着裤兜与墙壁照样收发；",
+                "• 缺点是低频天线长、带宽窄，早期玩具极易“撞频串车”。",
+            ),
+            (
+                "③ 2.4 GHz 射频（现代比例遥控车 / 蓝牙语音遥控 / 无人机）",
+                BLUE, BLUE_SOFT,
+                "• 波长 12.5 厘米：四分之一波长天线仅 3.1 cm，完美藏进外壳！",
+                "• 支持跳频防撞车 + 双向回传电量与麦克风语音流。",
+            ),
+            (
+                "④ 6~8 GHz 超宽带 UWB（新一代数字车钥匙防盗）",
+                PURPLE, PURPLE_SOFT,
+                "• 纳秒级极窄脉冲：不看信号强弱，直接按光速 30 cm/ns 算距离；",
+                "• 彻底粉碎小偷家门口“信号中继放大器”隔空偷车术！",
+            ),
+        ]
+        cy = 114
+        for c_ttl, fg, bg, l1, l2 in channels:
+            els.append(card(402, cy, 324, 86, rx=7, fill="#ffffff", stroke=fg, sw=1.2))
+            els.append(card(402, cy, 324, 24, rx=7, fill=bg, stroke="none"))
+            els.append(txt(412, cy + 17, c_ttl, 10.4, fg, weight="700"))
+            els.append(txt(412, cy + 44, l1, 10.1, BODY))
+            els.append(txt(412, cy + 66, l2, 10.1, INK, weight="700"))
+            cy += 95
+
+        return figure(
+            H,
+            "遥控器百年演进时间线与红外、Sub-GHz射频、2.4GHz跳频蓝牙及UWB超宽带四大物理信道分工图",
+            "左栏梳理1898年特斯拉无线电遥控船、1950年有线Lazy Bones、1955年手电筒光控、1956年无电池敲铝棒超声波Clicker到现代红外与射频演变；右栏对比940纳米近红外不穿墙低功耗优势、低频无线电绕射穿墙、2.4GHz短天线双向跳频与UWB光速测距防盗。",
+            els,
+        )
+
+    def _build_tv_ir_38khz_nec_anim():
+        H = 524
+        anim_css = """
+  @keyframes irPacketMove {
+    0%   { transform: translateX(0px); opacity: 0.2; }
+    15%  { opacity: 1; }
+    80%  { transform: translateX(218px); opacity: 1; }
+    100% { transform: translateX(240px); opacity: 0.95; }
+  }
+  @keyframes outPulseReveal {
+    0%, 55% { opacity: 0.25; }
+    100%    { opacity: 1; }
+  }
+  .ir-burst-anim { animation: irPacketMove 3.8s ease-in-out 1 forwards; }
+  .out-wave-anim { animation: outPulseReveal 3.8s ease-out 1 forwards; }
+  @media (prefers-reduced-motion: reduce) {
+    .ir-burst-anim, .out-wave-anim { animation: none !important; }
+  }
+        """
+        els = [
+            *header(
+                "电视红外遥控双重密码：为什么太阳光晃不晕电视，手机镜头却能抓拍紫光？",
+                "940 nm 不可见光躲开人眼（硅传感器可见）+ 38 kHz 载波暗号滤除阳光 + NEC 脉冲距离编码",
+            )
+        ]
+
+        # Top card: 38 kHz modulation & TSOP38238 bandpass demodulation
+        els.append(card(20, 68, 720, 214))
+        els.append(pill(32, 80, "A. 客厅满屋子都是太阳红外线，电视接收头凭什么只听遥控器的话？（38 kHz 频闪暗号）", fg=RED, bg=RED_SOFT, w=588, h=22, size=11.0))
+
+        # Remote box on left
+        els.append(card(34, 116, 134, 148, rx=8, fill="#1e293b", stroke=SLATE, sw=1.2))
+        els.append(txt(101, 140, "电视遥控器发射端", 10.6, "#f8fafc", "middle", weight="700"))
+        els.append(txt(101, 164, "GaAs 红外 LED", 10.2, "#fca5a5", "middle", weight="700"))
+        els.append(txt(101, 184, "波长 λ = 940 nm", 10.0, "#cbd5e1", "middle"))
+        els.append(txt(101, 206, "• 人眼极限 ~700 nm", 9.8, "#94a3b8", "middle"))
+        els.append(txt(101, 226, "• 手机硅 CMOS 拍出", 9.8, "#e9d5ff", "middle", weight="700"))
+        els.append(txt(101, 244, "  紫白色闪烁亮点！", 9.8, "#e9d5ff", "middle", weight="700"))
+        els.append(f'<circle cx="168" cy="176" r="6" fill="#a855f7" stroke="#f3e8ff" stroke-width="1.5"/>')
+
+        # Air channel with sunlight noise vs 38kHz burst
+        els.append(card(180, 116, 266, 148, rx=8, fill="#fffbeb", stroke=ORANGE, sw=1.0, dash="4 3"))
+        els.append(txt(313, 136, "客厅空气信道（强干扰环境）", 10.4, ORANGE, "middle", weight="700"))
+        els.append(txt(313, 156, "☀ 太阳红外光(0 Hz) + 灯光频闪(100 Hz)", 9.8, MUTED, "middle"))
+        els.append(_line(194, 168, 432, 168, stroke="#f59e0b", sw=1.4, dash="2 3"))
+
+        # Animated 38 kHz burst packet
+        burst_bars = "".join(
+            f'<line x1="{194 + k * 4}" y1="196" x2="{194 + k * 4}" y2="222" stroke="{PURPLE}" stroke-width="2.0"/>'
+            for k in range(11)
+        )
+        els.append(
+            f'<g class="ir-burst-anim">'
+            f'<rect x="188" y="190" width="52" height="38" rx="4" fill="{PURPLE_SOFT}" stroke="{PURPLE}" stroke-width="1.1"/>'
+            f'{burst_bars}'
+            f'</g>'
+        )
+        els.append(txt(313, 248, "遥控暗号：每秒狂闪 38,000 次（周期 26.3 μs）", 10.0, PURPLE, "middle", weight="700"))
+
+        # TV TSOP38238 Receiver block on right
+        els.append(card(458, 116, 268, 148, rx=8, fill="#f8fafc", stroke=BLUE, sw=1.3))
+        els.append(txt(592, 138, "电视红外一体接收头（如 TSOP38238）", 10.6, BLUE, "middle", weight="700"))
+        els.append(card(470, 150, 74, 56, rx=5, fill="#0f172a", stroke=SLATE, sw=1.0))
+        els.append(txt(507, 173, "黑环氧滤光窗", 9.5, "#f8fafc", "middle", weight="700"))
+        els.append(txt(507, 191, "挡可见光", 9.2, "#94a3b8", "middle"))
+        els.append(arrow(546, 178, 564, 178, stroke=BLUE, sw=1.6))
+        els.append(card(566, 150, 82, 56, rx=5, fill=BLUE_SOFT, stroke=BLUE, sw=1.1))
+        els.append(txt(607, 173, "38kHz 带通滤波", 9.5, BLUE, "middle", weight="700"))
+        els.append(txt(607, 191, "阳光0Hz全拒之!", 9.2, RED, "middle", weight="700"))
+        els.append(arrow(650, 178, 668, 178, stroke=TEAL, sw=1.6))
+        els.append(
+            f'<g class="out-wave-anim">'
+            f'<polyline points="670,192 680,192 680,164 696,164 696,192 714,192" fill="none" stroke="{TEAL}" stroke-width="2.2"/>'
+            f'</g>'
+        )
+        els.append(txt(592, 232, "检出 38 kHz 脉冲 → 输出干净 0/1 方波给主板解码！", 10.0, TEAL, "middle", weight="700"))
+        els.append(txt(592, 252, "（白墙漫反射的微弱 38 kHz 闪光也能经 AGC 放大识别）", 9.6, BODY, "middle"))
+
+        # Bottom card: NEC Protocol Waveform
+        els.append(card(20, 294, 720, 212))
+        els.append(pill(32, 306, "B. 经典 NEC 红外协议波形解剖：靠“停顿长短”区分 0 和 1，自带反码防按错！", fg=BLUE, bg=BLUE_SOFT, w=536, h=22, size=11.0))
+
+        # Draw NEC pulse train proportionally schematic
+        els.append(card(34, 340, 692, 96, rx=6, fill="#ffffff", stroke=BORDER, sw=1.0))
+        y_hi, y_lo = 366, 408
+        # Waveform segments: (x0, w_mark, w_space, label, top_note, col)
+        segs = [
+            (52, 92, 48, "引导头 (13.5 ms)", "9ms 载波 + 4.5ms 空闲", RED),
+            (192, 22, 22, "逻辑 0", "562.5μs+562.5μs", BLUE),
+            (236, 22, 52, "逻辑 1", "562.5μs+1687.5μs", PURPLE),
+            (310, 94, 0, "8位地址码 (厂商)", "识别哪台家电", TEAL),
+            (404, 94, 0, "8位地址反码", "逐位取反校验", SLATE),
+            (498, 94, 0, "8位按键指令", "如 0x16 = 音量+", GOLD),
+            (592, 94, 0, "8位指令反码", "防误码总长恒 68ms", RED),
+        ]
+        # Leader + Bit 0 + Bit 1 exact step drawing
+        pts = [
+            (42, y_lo), (52, y_lo), (52, y_hi), (144, y_hi), (144, y_lo), (192, y_lo),
+            (192, y_hi), (214, y_hi), (214, y_lo), (236, y_lo),
+            (236, y_hi), (258, y_hi), (258, y_lo), (310, y_lo),
+        ]
+        poly_str = " ".join(f"{px},{py}" for px, py in pts)
+        els.append(f'<polyline points="{poly_str}" fill="none" stroke="{INK}" stroke-width="2.0"/>')
+        els.append(txt(98, 356, "9 ms 强脉冲", 9.4, RED, "middle", weight="700"))
+        els.append(txt(168, 396, "4.5ms", 9.0, MUTED, "middle"))
+        els.append(txt(118, 426, "引导码 (AGC 唤醒)", 9.6, RED, "middle", weight="700"))
+
+        els.append(txt(214, 356, "0 (1.125ms)", 9.2, BLUE, "middle", weight="700"))
+        els.append(txt(273, 356, "1 (2.25ms)", 9.2, PURPLE, "middle", weight="700"))
+        els.append(txt(250, 426, "脉冲距离编码", 9.6, INK, "middle", weight="700"))
+
+        # Four 8-bit byte blocks
+        byte_blocks = [
+            (316, 92, "8位地址", "如电视=0x04", TEAL, TEAL_SOFT),
+            (412, 92, "8位地址反码", "0xFB 防串机", SLATE, "#f1f5f9"),
+            (508, 92, "8位命令码", "音量+=0x16", GOLD, GOLD_SOFT),
+            (604, 106, "8位命令反码+尾脉冲", "0xE9 校验零差错!", RED, RED_SOFT),
+        ]
+        for bx, bw, b1, b2, fg, bg in byte_blocks:
+            els.append(card(bx, 354, bw, 56, rx=5, fill=bg, stroke=fg, sw=1.2))
+            els.append(txt(bx + bw / 2, 376, b1, 9.6, fg, "middle", weight="700"))
+            els.append(txt(bx + bw / 2, 396, b2, 9.0, BODY, "middle"))
+        els.append(txt(512, 426, "标准 32 位一帧刚好 16 个 0 + 16 个 1 → 总时长恒定 68.06 毫秒！", 9.6, INK, "middle", weight="700"))
+
+        els.append(txt(34, 462, "• 为什么长按“音量+”不会把电耗光？按住不放时，遥控器不再重发 32 位长码，而是每隔 110 ms 只发一串极短“重复码”（9ms+2.25ms）！", 10.3, BODY))
+        els.append(txt(34, 486, "• 为什么电视遥控器按不着空调？不同品牌地址码不同，且空调根本不用这种 32 位短指令——请看下图的“全量快照”玄机！", 10.3, BLUE, weight="700"))
+
+        return figure(
+            H,
+            "电视940纳米红外遥控器38kHz载波抗阳光干扰原理与NEC协议脉冲距离编码波形动态图解",
+            "上栏演示遥控器940纳米红外LED发出38kHz高频闪烁脉冲串穿过客厅太阳光干扰，由TSOP38238黑色滤光窗与38kHz带通滤波器解调为干净方波（含单次动画）；下栏拆解NEC协议9ms+4.5ms引导码、逻辑0(1.125ms)与逻辑1(2.25ms)及32位正反码校验帧。",
+            els,
+            extra_css=anim_css,
+        )
+
+    def _build_tv_vs_ac_stateful():
+        H = 512
+        els = [
+            *header(
+                "同是红外遥控，为什么电视遥控器没屏幕，空调遥控器却非带一块小屏幕不可？",
+                "单向盲发信道下的工程巧思：电视靠人眼闭环发“增量短令”，空调靠遥控器记账发“全家桶快照”",
+            )
+        ]
+
+        # Left card: TV Stateless Command
+        els.append(card(20, 68, 352, 424))
+        els.append(pill(32, 80, "A. 电视遥控器：无状态“增量指令”（32 bit 短包）", fg=BLUE, bg=BLUE_SOFT, w=318, h=22, size=11.0))
+
+        els.append(card(34, 114, 324, 186, rx=8, fill="#f8fafc", stroke=BORDER, sw=1.0))
+        els.append(card(48, 146, 86, 118, rx=10, fill="#1e293b", stroke=SLATE, sw=1.2))
+        els.append(txt(91, 174, "无屏幕!", 10.5, "#93c5fd", "middle", weight="700"))
+        els.append(card(64, 192, 54, 24, rx=4, fill="#334155", stroke="#94a3b8", sw=1.0))
+        els.append(txt(91, 208, "音量 +", 10.0, "#ffffff", "middle", weight="700"))
+        els.append(txt(91, 244, "只管喊 +1", 9.6, "#cbd5e1", "middle"))
+
+        els.append(arrow(142, 196, 218, 196, stroke=BLUE, sw=2.0))
+        els.append(txt(180, 182, "单发 0x16", 9.8, BLUE, "middle", weight="700"))
+        els.append(txt(180, 216, "32 bits", 9.5, MUTED, "middle"))
+
+        els.append(card(224, 138, 120, 96, rx=6, fill="#0f172a", stroke=BLUE, sw=1.5))
+        els.append(txt(284, 168, "客厅大屏电视", 10.4, "#f8fafc", "middle", weight="700"))
+        els.append(txt(284, 194, "🔊 音量：20 → 21", 10.4, "#fde047", "middle", weight="700"))
+        els.append(txt(284, 216, "人眼实时盯着屏幕!", 9.5, "#93c5fd", "middle"))
+        els.append(txt(196, 276, "闭环靠人眼：没按上？看屏幕没动再补按一下就行！", 10.2, BLUE, "middle", weight="700"))
+
+        els.append(card(34, 314, 324, 162, rx=8, fill=BLUE_SOFT, stroke=BLUE, sw=1.1))
+        els.append(txt(46, 338, "为什么电视遥控器不需要记住“现在是几台、音量几”？", 10.8, BLUE, weight="700"))
+        els.append(txt(46, 362, "• 电视本身就是一块大屏幕，音量条、频道号全在眼前；", 10.5, BODY))
+        els.append(txt(46, 386, "• 遥控器内部根本不存状态，每次按键只发“调大 1 格”", 10.5, BODY))
+        els.append(txt(46, 410, "  或“下一台”的相对动作码；", 10.5, BODY))
+        els.append(txt(46, 434, "• 就算拿两个同型号电视遥控器轮流按，也丝毫不打架！", 10.5, INK, weight="700"))
+
+        # Right card: AC Full-State Snapshot Packet
+        els.append(card(388, 68, 352, 424))
+        els.append(pill(400, 80, "B. 空调遥控器：有状态“全家桶快照”（96~224 bit 长包）", fg=TEAL, bg=TEAL_SOFT, w=328, h=22, size=11.0))
+
+        els.append(card(402, 114, 324, 186, rx=8, fill="#ffffff", stroke=BORDER, sw=1.0))
+        els.append(card(414, 134, 98, 136, rx=10, fill="#f8fafc", stroke=TEAL, sw=1.4))
+        els.append(card(424, 146, 78, 48, rx=4, fill="#dcfce7", stroke=TEAL, sw=1.0))
+        els.append(txt(463, 166, "❄ 24°C 制冷", 9.8, TEAL, "middle", weight="700"))
+        els.append(txt(463, 184, "自动风 · 摆风", 9.0, INK, "middle"))
+        els.append(txt(463, 218, "遥控器芯片自己", 9.5, BODY, "middle"))
+        els.append(txt(463, 236, "保存完整账本!", 9.6, TEAL, "middle", weight="700"))
+
+        els.append(arrow(518, 196, 594, 196, stroke=TEAL, sw=2.0))
+        els.append(txt(556, 178, "打包全量状态", 9.5, TEAL, "middle", weight="700"))
+        els.append(txt(556, 216, "6~28 字节长帧", 9.2, RED, "middle", weight="700"))
+
+        els.append(card(598, 144, 116, 84, rx=6, fill=TEAL_SOFT, stroke=TEAL, sw=1.3))
+        els.append(txt(656, 168, "高处壁挂空调", 10.2, TEAL, "middle", weight="700"))
+        els.append(txt(656, 190, "滴！全盘覆盖为：", 9.6, BODY, "middle"))
+        els.append(txt(656, 210, "制冷·24°C·摆风!", 10.0, INK, "middle", weight="700"))
+
+        # Packet anatomy bar inside card B
+        els.append(card(414, 246, 300, 42, rx=5, fill=GOLD_SOFT, stroke=GOLD, sw=1.0))
+        els.append(txt(564, 263, "一次按键发出的红外长包：[厂商头] [开机+制冷] [24°C查表码]", 9.4, INK, "middle", weight="700"))
+        els.append(txt(564, 280, "[风速自动] [上下摆风开] [定时关] [Checksum 校验和]", 9.4, GOLD, "middle", weight="700"))
+
+        els.append(card(402, 314, 324, 162, rx=8, fill=TEAL_SOFT, stroke=TEAL, sw=1.1))
+        els.append(txt(414, 338, "秒懂生活悬案：躲被窝里乱按遥控器，伸出来一按怎么跳变了？", 10.5, TEAL, weight="700"))
+        els.append(txt(414, 362, "• 红外只能单向发信，墙上空调没法回话告诉遥控器当前几度；", 10.4, BODY))
+        els.append(txt(414, 384, "• 若发“降温 1 度”遇到被子挡住漏收一次，屏幕与空调就永远", 10.4, BODY))
+        els.append(txt(414, 406, "  对不上账！所以空调遥控器每次按键都把整块屏幕所有参数", 10.4, INK, weight="700"))
+        els.append(txt(414, 428, "  一次性全打包发过去：被窝里从 26°C 按到 23°C 空调没听见，", 10.4, BODY))
+        els.append(txt(414, 450, "  伸出被窝按一下“+”，空调收到 24°C 全家桶当场一步到位！", 10.4, RED, weight="700"))
+
+        return figure(
+            H,
+            "电视遥控器32位无状态增量指令与空调遥控器自带液晶屏全量状态快照长数据包对比图解",
+            "左栏展示电视遥控器依赖人眼盯屏幕闭环，仅发送音量加1等32位相对短指令；右栏展示空调因单向红外无法回传且多参数耦合，由遥控器本地保存状态并每次发送包含开关、模式、温度、风速、摆风及校验和的6至28字节全量状态包，解释被窝按遥控器伸出后直接跳变的现象。",
+            els,
+        )
+
+    def _build_rc_car_27m_vs_24g_pwm():
+        H = 524
+        els = [
+            *header(
+                "遥控玩具车两代革命：为什么老玩具拖着长铁杆还爱“串车”，新遥控车能丝滑拐弯？",
+                "从 27 MHz 四分之一波长长天线“左打死/右打死”，升级到 2.4 GHz 藏身短天线跳频与 50 Hz 比例舵机",
+            )
+        ]
+
+        # Left card: 27 MHz Toy vs 2.4 GHz FHSS Hobby RC
+        els.append(card(20, 68, 352, 436))
+        els.append(pill(32, 80, "A. 天线长短与撞频之谜：27 MHz 老玩具 vs 2.4 GHz 跳频", fg=ORANGE, bg=ORANGE_SOFT, w=324, h=22, size=11.0))
+
+        # Top subcard: 27 MHz
+        els.append(card(34, 114, 324, 174, rx=8, fill="#fffaf5", stroke=ORANGE, sw=1.2))
+        els.append(txt(46, 136, "① 童年 27 / 49 MHz 玩具车（TX-2B 开关式）", 10.8, ORANGE, weight="700"))
+        els.append(txt(46, 158, "• 为什么非拖一根半米长铁拉杆？电磁波波长 λ = c / f ≈ 11.1 米！", 10.2, BODY))
+        els.append(txt(46, 178, "  1/4 波长谐振要 2.76 米，哪怕底部绕电感缩短也得伸出长铁杆。", 10.2, INK, weight="700"))
+        els.append(txt(46, 200, "• 为什么小区两辆车一碰面就“抢方向盘”？固定死守单一频点，", 10.2, BODY))
+        els.append(txt(46, 220, "  谁信号强听谁的！且电机只有“全通电打死 / 断电回弹”两档，", 10.2, BODY))
+        els.append(txt(46, 240, "  没法走微弧线，一拐弯就猛甩头（Bang-Bang 开关控制）。", 10.2, RED, weight="700"))
+
+        # Bottom subcard: 2.4 GHz FHSS
+        els.append(card(34, 302, 324, 186, rx=8, fill=BLUE_SOFT, stroke=BLUE, sw=1.2))
+        els.append(txt(46, 324, "② 现代 2.4 GHz 遥控车 / 无人机（FHSS 跳频扩频）", 10.8, BLUE, weight="700"))
+        els.append(txt(46, 346, "• 天线去哪了？2.4 GHz 波长仅 12.5 cm → 1/4 波长仅 3.1 厘米！", 10.2, INK, weight="700"))
+        els.append(txt(46, 366, "  比火柴棍还短，直接藏进车壳与手柄塑料里，再也不戳眼睛。", 10.2, BODY))
+        els.append(txt(46, 388, "• 50 辆车同场飙车为何零干扰？对频绑定 32/48 位唯一身份证，", 10.2, BODY))
+        els.append(txt(46, 408, "  并在 2400~2483.5 MHz 几十个信道间每秒按暗号狂跳上百次！", 10.2, BLUE, weight="700"))
+
+        # Mini FHSS hopping grid
+        gx, gy = 48, 424
+        hop_seq = [0, 2, 1, 0, 2, 1, 2, 0, 1, 2]
+        for col_i, hop_row in enumerate(hop_seq):
+            for row_j in range(3):
+                fill_c = BLUE if row_j == hop_row else "#ffffff"
+                els.append(card(gx + col_i * 29, gy + row_j * 16, 25, 13, rx=2, fill=fill_c, stroke=BLUE, sw=0.8))
+        els.append(txt(196, 480, "↑ FHSS 时间—频率跳频示意：同场撞上一格也会在毫秒内跳开", 9.4, MUTED, "middle"))
+
+        # Right card: 50 Hz (20 ms) Proportional Servo & ESC PWM
+        els.append(card(388, 68, 352, 436))
+        els.append(pill(400, 80, "B. 丝滑转向与油门的秘密：50 Hz (20 ms) 比例 PWM 脉宽", fg=TEAL, bg=TEAL_SOFT, w=328, h=22, size=11.0))
+
+        els.append(card(402, 114, 324, 232, rx=8, fill="#ffffff", stroke=BORDER, sw=1.0))
+        els.append(txt(564, 136, "每 20 毫秒（50 Hz）发一帧，高电平宽度精准决定轮胎角度！", 10.2, INK, "middle", weight="700"))
+
+        pwm_cases = [
+            ("1.0 ms 窄脉冲 → 舵机左打满 (0°) / 电调怠速", 28, BLUE, 162),
+            ("1.5 ms 中位脉冲 → 轮胎精准回正 (90° 中立点)", 42, TEAL, 226),
+            ("2.0 ms 宽脉冲 → 舵机右打满 (180°) / 全油门狂飙", 56, RED, 290),
+        ]
+        for lbl, pw_px, col, py in pwm_cases:
+            els.append(txt(414, py - 6, lbl, 9.8, col, weight="700"))
+            # 20 ms frame = 280 px wide -> 1.0 ms = 14 px, exaggerated slightly (labeled schematic) for clear visibility
+            x0 = 414
+            y_b, y_t = py + 30, py + 6
+            pts = f"{x0},{y_b} {x0 + 10},{y_b} {x0 + 10},{y_t} {x0 + 10 + pw_px},{y_t} {x0 + 10 + pw_px},{y_b} {x0 + 260},{y_b}"
+            els.append(f'<polyline points="{pts}" fill="none" stroke="{col}" stroke-width="2.1"/>')
+            els.append(txt(x0 + 272, py + 22, "20ms周期", 8.8, MUTED))
+
+        els.append(txt(564, 336, "（注：为清晰展示脉宽差异，高电平宽度作了横向放大示意）", 9.2, MUTED, "middle"))
+
+        # Closed-loop servo anatomy
+        els.append(card(402, 358, 324, 130, rx=8, fill=TEAL_SOFT, stroke=TEAL, sw=1.1))
+        els.append(txt(414, 380, "舵机（Servo）凭什么拧多少方向盘，前轮就停在几度？", 10.6, TEAL, weight="700"))
+        els.append(txt(414, 404, "• 方向盘连着电位器/霍尔传感器，转至 45° 就发出 1.25 ms 脉宽；", 10.2, BODY))
+        els.append(txt(414, 426, "• 车头舵机肚子里也藏着一颗同轴角度电位器，实时对比“目标脉", 10.2, BODY))
+        els.append(txt(414, 448, "  宽 vs 当前转角”：差一点就驱动电机转，转到位立刻刹车锁死！", 10.2, INK, weight="700"))
+        els.append(txt(414, 470, "• 油门扳机同理，通过电调（ESC）高频斩波平滑调节车速快慢。", 10.2, BLUE, weight="700"))
+
+        return figure(
+            H,
+            "遥控车27MHz长拉杆开关控制与2.4GHz短天线跳频扩频及50Hz舵机比例PWM控制对比图",
+            "左栏对比27MHz老式玩具车因11.1米波长需长拉杆天线且易撞频串车、仅能全打死开关转向，与2.4GHz现代遥控车3.1厘米内置短天线加FHSS跳频防干扰；右栏展示50Hz(20ms周期)下1.0ms、1.5ms、2.0ms脉宽驱动舵机闭环定位与电调无级调速原理。",
+            els,
+        )
+
+    def _build_car_key_rolling_code_and_uwb():
+        H = 520
+        els = [
+            *header(
+                "安全攻防战：为什么十块钱万能遥控能抄走小区道闸，却偷不走你的汽车？",
+                "从固定码重放漏洞、KeeLoq 66 位“用一次废一次”滚动码，到粉碎双人中继盗车的 UWB 光速测距",
+            )
+        ]
+
+        # Left card: Fixed code vs KeeLoq 66-bit Rolling Code
+        els.append(card(20, 68, 352, 432))
+        els.append(pill(32, 80, "A. 抄码器克星：每次按键全换新密码的“滚动码”", fg=GOLD, bg=GOLD_SOFT, w=312, h=22, size=11.0))
+
+        els.append(card(34, 114, 324, 108, rx=8, fill=RED_SOFT, stroke=RED, sw=1.1))
+        els.append(txt(46, 136, "❌ 老式车库门/电动门（433 MHz 固定码芯片）", 10.6, RED, weight="700"))
+        els.append(txt(46, 158, "• 每次按键都在空中裸奔喊同一句口令（如 24 位固定码 #8848）；", 10.2, BODY))
+        els.append(txt(46, 180, "• 路边配钥匙摊拿个几十元“拷贝遥控器”在旁边偷听录音一次，", 10.2, BODY))
+        els.append(txt(46, 202, "  原样重放（Replay Attack）就能随时打开你的大门！", 10.2, RED, weight="700"))
+
+        els.append(card(34, 234, 324, 252, rx=8, fill="#ffffff", stroke=GOLD, sw=1.3))
+        els.append(txt(46, 256, "✅ 传统汽车遥控钥匙（如 Microchip KeeLoq 66 位滚动码）", 10.5, GOLD, weight="700"))
+        els.append(card(46, 270, 300, 44, rx=5, fill=GOLD_SOFT, stroke=GOLD, sw=1.0))
+        els.append(txt(196, 288, "[ 34 位固定序列号+按键 ] + [ 32 位非线性加密跳变码 ]", 9.6, INK, "middle", weight="700"))
+        els.append(txt(196, 305, "↑ 由内部 16 位同步递增计数器（每按 1 次 +1）加密生成！", 9.3, GOLD, "middle", weight="700"))
+
+        els.append(txt(46, 336, "• 第 101 次发 0x9F2A... → 汽车验明通过，当场作废 ≤101 旧码！", 10.1, BODY))
+        els.append(txt(46, 358, "• 小偷录音重播第 101 号码？汽车一看是过期废票，纹丝不动！", 10.1, TEAL, weight="700"))
+        els.append(txt(46, 380, "• 兜里误按 5 次没对着车怎么办？汽车留有“前向滑动窗口”（如", 10.1, BODY))
+        els.append(txt(46, 402, "  接受 +1 ~ +256 内任意新码并自动追平）；但若熊孩子拿钥匙在", 10.1, BODY))
+        els.append(txt(46, 424, "  楼上狂按 500 次超出窗口，钥匙就会暂时失步需重新配对同步！", 10.1, INK, weight="700"))
+        els.append(txt(46, 452, "（顺带解答：电视/空调只开关家电无防盗需求，故用明文固定红外码）", 9.6, MUTED))
+
+        # Right card: Two-thief Relay Attack vs IEEE 802.15.4z UWB Time-of-Flight
+        els.append(card(388, 68, 352, 432))
+        els.append(pill(400, 80, "B. 魔高一尺道高一丈：双人中继盗车 vs UWB 光速尺", fg=PURPLE, bg=PURPLE_SOFT, w=320, h=22, size=11.0))
+
+        els.append(card(402, 114, 324, 152, rx=8, fill="#fffaf5", stroke=ORANGE, sw=1.2))
+        els.append(txt(414, 136, "⚠ 无钥匙进入（PKE）的新软肋：双人中继放大攻击", 10.6, ORANGE, weight="700"))
+        els.append(txt(414, 158, "• 你走近车门不用掏钥匙，靠车发 125 kHz 低频唤醒包里钥匙回应；", 10.1, BODY))
+        els.append(txt(414, 180, "• 小偷根本不破译密码！贼 A 贴着你家玄关门外偷感玄关桌上的车", 10.1, BODY))
+        els.append(txt(414, 202, "  钥匙，把信号无线接力传给楼下车边的贼 B 放大转发——汽车只", 10.1, BODY))
+        els.append(txt(414, 224, "  看信号强度（RSSI）以为你就站在车门边，咔哒一声自动解锁！", 10.1, RED, weight="700"))
+        els.append(txt(414, 248, "  （防盗贴士：老款无 UWB 钥匙回家放金属盒即可屏蔽低频唤醒）", 9.6, INK, weight="700"))
+
+        els.append(card(402, 280, 324, 206, rx=8, fill="#0f172a", stroke=PURPLE, sw=1.4))
+        els.append(txt(414, 304, "🛡 终极防线：UWB 超宽带光速飞行时间（IEEE 802.15.4z）", 10.4, "#e9d5ff", weight="700"))
+        # Car <-> Key ToF schematic
+        els.append(card(418, 320, 74, 42, rx=5, fill="#1e293b", stroke="#38bdf8", sw=1.2))
+        els.append(txt(455, 345, "汽车 UWB", 9.8, "#38bdf8", "middle", weight="700"))
+        els.append(arrow(498, 334, 620, 334, stroke="#facc15", sw=1.8))
+        els.append(arrow(620, 350, 498, 350, stroke="#a855f7", sw=1.8))
+        els.append(txt(559, 326, "加密随机脉冲 STS 往返计时", 9.2, "#fde047", "middle", weight="700"))
+        els.append(card(626, 320, 84, 42, rx=5, fill="#1e293b", stroke="#a855f7", sw=1.2))
+        els.append(txt(668, 345, "手机/车钥匙", 9.8, "#e9d5ff", "middle", weight="700"))
+
+        els.append(txt(414, 388, "• 不看信号强弱，直接卡秒表算往返时间：光速 1 纳秒走 30 cm！", 10.0, "#f8fafc", weight="700"))
+        els.append(txt(414, 412, "• 谁也跑不过光速：小偷的中继设备只要多耽误 20 纳秒转发延迟，", 10.0, "#cbd5e1"))
+        els.append(txt(414, 434, "  汽车算出的距离就凭空多出 3 米以上，立刻识破骗局拒绝开门！", 10.0, "#fde047", weight="700"))
+        els.append(txt(414, 460, "• 加上 STS 加密时间戳序列，黑客连提前伪造抢跑脉冲都绝无可能。", 9.8, "#93c5fd"))
+
+        return figure(
+            H,
+            "车库门固定码重放漏洞、汽车KeeLoq 66位滚动码机制与UWB超宽带光速飞行时间防中继盗车图解",
+            "左栏对比老式433MHz固定码易被拷贝重放，与汽车钥匙KeeLoq 66位滚动码每次按键递增同步计数器生成全新32位密文、用后即废及滑动窗口机制；右栏剖析无钥匙进入双人信号中继放大盗车原理，以及IEEE 802.15.4z超宽带UWB利用每纳秒30厘米光速往返测距和加密STS脉冲彻底防御中继攻击。",
+            els,
+        )
+
+    @register(
+        "remote-control-principles",
+        "电视空调遥控车与车钥匙各类遥控器原理五步图解：百年遥控史与四信道、940nm红外38kHz抗干扰与NEC动画、电视无状态vs空调全量快照、27MHz与2.4GHz比例舵机PWM、滚动码与UWB防盗",
+        "science_tech",
+    )
+    def build_remote_control_principles():
+        _verify_remote_control_assertions()
+        write_svg(SUBDIR, "remote-control-spectrum-and-century-evolution.svg", _build_history_and_spectrum_map())
+        write_svg(SUBDIR, "tv-ir-38khz-carrier-nec-waveform-anim.svg", _build_tv_ir_38khz_nec_anim())
+        write_svg(SUBDIR, "tv-stateless-command-vs-ac-stateful-packet.svg", _build_tv_vs_ac_stateful())
+        write_svg(SUBDIR, "rc-car-27mhz-bangbang-vs-24ghz-fhss-pwm-servo.svg", _build_rc_car_27m_vs_24g_pwm())
+        write_svg(SUBDIR, "car-key-rolling-code-vs-uwb-tof-anti-relay.svg", _build_car_key_rolling_code_and_uwb())
+
+
+_register_remote_control_principles()
+
+
 
 

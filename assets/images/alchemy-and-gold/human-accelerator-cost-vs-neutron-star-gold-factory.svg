@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="516" viewBox="0 0 760 516" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">获取1克黄金的四级成本对数对比、双中子星并合快中子捕获炼金与全球22.6米黄金总存量魔方图</title>
+<desc id="desc">左栏按对数尺度对比金矿开采（百美元级）、反应堆照射（千万美元级）、1980西博格加速器轰击铋（几十万亿美元级）与LHC副产物（凑1克需上亿年）；右栏展示双中子星并合GW170817快中子捕获过程，以及人类历史开采全部约22.3万吨黄金熔铸成边长仅22.6米立方体的真实体积对比。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="515" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">终极经济账与真命天子：为什么人造 1 克金要花百万亿美元，真黄金全靠中子星相撞？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">人类加速器按颗零售原子核（电费贵过金价万亿倍）；全人类已挖出的 22.4 万吨黄金其实只够叠一栋七层小楼</text>
+<rect x="20" y="68" width="352" height="428" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="80.0" width="312" height="22" rx="11.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="188.0" y="95.0" font-size="11.2" fill="#dc2626" text-anchor="middle" font-weight="600">A. 获取 1 克黄金的成本对数尺（横跨 12 个数量级！）</text>
+<rect x="34" y="112" width="324" height="232" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="46" y="134" font-size="10.5" fill="#64748b" text-anchor="start" font-weight="700">每获取 1 g 黄金所需代价（对数刻度 log₁₀ USD）</text>
+<text x="46" y="152" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">地球金矿开采提纯：≈ $90 ~ $150 / 克</text>
+<rect x="46" y="159" width="296" height="12" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.8"/>
+<rect x="46" y="159" width="41.440000000000005" height="12" rx="4" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.3"/>
+<text x="46" y="197" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">核反应堆照射铂/汞-196：≈ $10⁶ ~ $10⁸ / 克（贵百万倍）</text>
+<rect x="46" y="204" width="296" height="12" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.8"/>
+<rect x="46" y="204" width="138.13333333333333" height="12" rx="4" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.3"/>
+<text x="46" y="242" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">1980 西博格加速器轰击铋：≈ $3×10¹³ / 克（约全球一年GDP！）</text>
+<rect x="46" y="249" width="296" height="12" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.8"/>
+<rect x="46" y="249" width="266.40000000000003" height="12" rx="4" fill="#fef2f2" stroke="#dc2626" stroke-width="1.3"/>
+<text x="46" y="287" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">LHC 铅束擦肩副产物折算：峰值连打 10.9 亿年才凑够 1 克！</text>
+<rect x="46" y="294" width="296" height="12" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.8"/>
+<rect x="46" y="294" width="292.05333333333334" height="12" rx="4" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.3"/>
+<rect x="34" y="356" width="324" height="124" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1.1"/>
+<text x="46" y="378" font-size="10.8" fill="#dc2626" text-anchor="start" font-weight="700">为什么核物理永远打不赢金矿？（阿伏伽德罗常数铁壁）：</text>
+<text x="46" y="400" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">• 1 克黄金里有 3.06 × 10²¹ 颗金原子（30 万亿亿颗）！</text>
+<text x="46" y="422" font-size="10.6" fill="#1e293b" text-anchor="start">• 哪怕加速器束流高达 1 毫安（每秒 6×10¹⁵ 粒子）且 100%</text>
+<text x="46" y="444" font-size="10.6" fill="#1e293b" text-anchor="start">  命中（真实命中率 &lt;10⁻⁴），不眠不休轰击也要 16 年以上，</text>
+<text x="46" y="466" font-size="10.6" fill="#dc2626" text-anchor="start" font-weight="700">  耗电与超导磁体成本永远比黄金本身贵出百亿到万亿倍！</text>
+<rect x="388" y="68" width="352" height="428" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="400.0" y="80.0" width="306" height="22" rx="11.0" fill="#fef9c3" stroke="#b45309" stroke-width="1" stroke-opacity="0.35"/>
+<text x="553.0" y="95.0" font-size="11.2" fill="#b45309" text-anchor="middle" font-weight="600">B. 宇宙免电费炼金炉 vs 全人类 22.6 米黄金魔方</text>
+<rect x="402" y="112" width="324" height="178" rx="8" fill="#0f172a" stroke="#b45309" stroke-width="1.2"/>
+<text x="564" y="134" font-size="10.4" fill="#fde047" text-anchor="middle" font-weight="700">双中子星并合千新星（2017 GW170817 引力波+光谱实证）</text>
+<circle cx="496" cy="186" r="15" fill="#38bdf8" stroke="#e0f2fe" stroke-width="1.6"/>
+<circle cx="546" cy="186" r="15" fill="#38bdf8" stroke="#e0f2fe" stroke-width="1.6"/>
+<path d="M 472 186 A 48 26 0 1 1 570 186" fill="none" stroke="#facc15" stroke-width="1.6" stroke-dasharray="4 3"/>
+<line x1="578.0" y1="186.0" x2="609.5" y2="186.0" stroke="#facc15" stroke-width="2.0"/>
+<polygon points="616.0,186.0 608.0,190.2 608.0,181.8" fill="#facc15"/>
+<rect x="620" y="160" width="94" height="52" rx="6" fill="#422006" stroke="#eab308" stroke-width="1.3"/>
+<text x="667" y="181" font-size="10.0" fill="#fde047" text-anchor="middle" font-weight="700">快中子暴 r过程</text>
+<text x="667" y="199" font-size="9.5" fill="#ffffff" text-anchor="middle">一撞喷出数个地球金</text>
+<text x="414" y="244" font-size="10.4" fill="#e2e8f0" text-anchor="start">• 1 秒内塞进几十颗中子（&gt;10²² n/cm³），绕开所有质子斥力墙，</text>
+<text x="414" y="266" font-size="10.4" fill="#fde047" text-anchor="start" font-weight="700">  随后 β⁻ 衰变稳稳停在 ¹⁹⁷Au——太阳系黄金皆是 46 亿年前遗物！</text>
+<rect x="402" y="302" width="324" height="178" rx="8" fill="#fef9c3" stroke="#b45309" stroke-width="1.1"/>
+<polygon points="454,352 490,334 526,352 490,370" fill="#fde047" stroke="#b45309" stroke-width="1.3"/><polygon points="454,352 490,370 490,414 454,396" fill="#eab308" stroke="#b45309" stroke-width="1.3"/><polygon points="526,352 490,370 490,414 526,396" fill="#ca8a04" stroke="#b45309" stroke-width="1.3"/>
+<text x="490" y="434" font-size="10.5" fill="#b45309" text-anchor="middle" font-weight="700">边长仅 22.6 m！</text>
+<text x="490" y="452" font-size="9.8" fill="#1e293b" text-anchor="middle">（约 7 层住宅楼高）</text>
+<text x="542" y="334" font-size="10.8" fill="#b45309" text-anchor="start" font-weight="700">世界黄金协会最新盘点：</text>
+<text x="542" y="358" font-size="10.4" fill="#1e293b" text-anchor="start">• 人类几千年挖出的全部黄金</text>
+<text x="542" y="378" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="700">  合计仅约 22.3 万吨；</text>
+<text x="542" y="398" font-size="10.4" fill="#1e293b" text-anchor="start">• 因密度高达 19.32 t/m³，全</text>
+<text x="542" y="418" font-size="10.4" fill="#1e293b" text-anchor="start">  熔成一块纯金魔方边长仅</text>
+<text x="542" y="438" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="700">  22.6 米！物以稀为贵 + 永不</text>
+<text x="542" y="458" font-size="10.4" fill="#dc2626" text-anchor="start" font-weight="700">  生锈，造就天然终极硬通货。</text>
+</svg>

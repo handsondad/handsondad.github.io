@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">遥控器百年演进时间线与红外、Sub-GHz射频、2.4GHz跳频蓝牙及UWB超宽带四大物理信道分工图</title>
+<desc id="desc">左栏梳理1898年特斯拉无线电遥控船、1950年有线Lazy Bones、1955年手电筒光控、1956年无电池敲铝棒超声波Clicker到现代红外与射频演变；右栏对比940纳米近红外不穿墙低功耗优势、低频无线电绕射穿墙、2.4GHz短天线双向跳频与UWB光速测距防盗。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">从“绊脚电线、敲铝棒超声波”到无线万物：百年遥控进化史与四大物理信道</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">为什么英文至今把遥控器叫 Clicker（咔哒器）？红外光、超声波与无线电各自统治哪片领地？</text>
+<rect x="20" y="68" width="354" height="432" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="80.0" width="326" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="195.0" y="95.0" font-size="11.0" fill="#1d6fa5" text-anchor="middle" font-weight="600">A. 遥控器百年进化奇史（从特斯拉遥控船到无电池铝棒）</text>
+<rect x="34" y="114" width="326" height="68" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="46" y="138" font-size="10.8" fill="#1d6fa5" text-anchor="start" font-weight="700">1898 · 特斯拉无线电遥控船</text>
+<text x="46" y="162" font-size="10.2" fill="#1e293b" text-anchor="start">纽约麦迪逊花园广场首秀（专利 US613809），人类遥控鼻祖。</text>
+<rect x="34" y="190" width="326" height="68" rx="7" fill="#f1f5f9" stroke="#475569" stroke-width="1.1"/>
+<text x="46" y="214" font-size="10.8" fill="#475569" text-anchor="start" font-weight="700">1950 · 泽尼特 Lazy Bones</text>
+<text x="46" y="238" font-size="10.2" fill="#1e293b" text-anchor="start">首款电视遥控器——拖着一根长电线横穿客厅，天天绊倒全家！</text>
+<rect x="34" y="266" width="326" height="68" rx="7" fill="#fef1e8" stroke="#c25014" stroke-width="1.1"/>
+<text x="46" y="290" font-size="10.8" fill="#c25014" text-anchor="start" font-weight="700">1955 · Flash-Matic 手电筒</text>
+<text x="46" y="314" font-size="10.2" fill="#1e293b" text-anchor="start">首款无线遥控！拿强光手电照电视四角光敏管；太阳一晒乱换台。</text>
+<rect x="34" y="342" width="326" height="68" rx="7" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.1"/>
+<text x="46" y="366" font-size="10.8" fill="#6d28d9" text-anchor="start" font-weight="700">1956 · Space Command 超声波</text>
+<text x="46" y="390" font-size="10.2" fill="#1e293b" text-anchor="start">免电池！小锤敲 4 根铝棒发 ~40 kHz 超声波（Clicker 由来）。</text>
+<rect x="34" y="418" width="326" height="68" rx="7" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.1"/>
+<text x="46" y="442" font-size="10.8" fill="#0f766e" text-anchor="start" font-weight="700">1980s~今 · 940nm 红外与射频</text>
+<text x="46" y="466" font-size="10.2" fill="#1e293b" text-anchor="start">红外 LED 一统家电；2.4 GHz 跳频、蓝牙与 UWB 接管车与航模。</text>
+<rect x="388" y="68" width="352" height="432" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="400.0" y="80.0" width="312" height="22" rx="11.0" fill="#f0fdfa" stroke="#0f766e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="556.0" y="95.0" font-size="11.0" fill="#0f766e" text-anchor="middle" font-weight="600">B. 四大家族分工表：为什么不干脆全用同一种波？</text>
+<rect x="402" y="114" width="324" height="86" rx="7" fill="#ffffff" stroke="#dc2626" stroke-width="1.2"/>
+<rect x="402" y="114" width="324" height="24" rx="7" fill="#fef2f2" stroke="none" stroke-width="1"/>
+<text x="412" y="131" font-size="10.4" fill="#dc2626" text-anchor="start" font-weight="700">① 940 nm 近红外光（电视 / 空调 / 机顶盒）</text>
+<text x="412" y="158" font-size="10.1" fill="#1e293b" text-anchor="start">• 波长 &lt;1 微米（光波）：被纸片被子挡死，绝不穿墙误开邻居电视！</text>
+<text x="412" y="180" font-size="10.1" fill="#0f172a" text-anchor="start" font-weight="700">• 成本几毛钱、两节电池用两年；手机摄像头能拍到紫白闪光。</text>
+<rect x="402" y="209" width="324" height="86" rx="7" fill="#ffffff" stroke="#c25014" stroke-width="1.2"/>
+<rect x="402" y="209" width="324" height="24" rx="7" fill="#fef1e8" stroke="none" stroke-width="1"/>
+<text x="412" y="226" font-size="10.4" fill="#c25014" text-anchor="start" font-weight="700">② Sub-GHz 无线电（27MHz 老玩具 / 433MHz 车钥匙）</text>
+<text x="412" y="253" font-size="10.1" fill="#1e293b" text-anchor="start">• 波长 0.7~11 米：绕射穿墙能力极强，隔着裤兜与墙壁照样收发；</text>
+<text x="412" y="275" font-size="10.1" fill="#0f172a" text-anchor="start" font-weight="700">• 缺点是低频天线长、带宽窄，早期玩具极易“撞频串车”。</text>
+<rect x="402" y="304" width="324" height="86" rx="7" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.2"/>
+<rect x="402" y="304" width="324" height="24" rx="7" fill="#eaf4fb" stroke="none" stroke-width="1"/>
+<text x="412" y="321" font-size="10.4" fill="#1d6fa5" text-anchor="start" font-weight="700">③ 2.4 GHz 射频（现代比例遥控车 / 蓝牙语音遥控 / 无人机）</text>
+<text x="412" y="348" font-size="10.1" fill="#1e293b" text-anchor="start">• 波长 12.5 厘米：四分之一波长天线仅 3.1 cm，完美藏进外壳！</text>
+<text x="412" y="370" font-size="10.1" fill="#0f172a" text-anchor="start" font-weight="700">• 支持跳频防撞车 + 双向回传电量与麦克风语音流。</text>
+<rect x="402" y="399" width="324" height="86" rx="7" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+<rect x="402" y="399" width="324" height="24" rx="7" fill="#f3e8ff" stroke="none" stroke-width="1"/>
+<text x="412" y="416" font-size="10.4" fill="#6d28d9" text-anchor="start" font-weight="700">④ 6~8 GHz 超宽带 UWB（新一代数字车钥匙防盗）</text>
+<text x="412" y="443" font-size="10.1" fill="#1e293b" text-anchor="start">• 纳秒级极窄脉冲：不看信号强弱，直接按光速 30 cm/ns 算距离；</text>
+<text x="412" y="465" font-size="10.1" fill="#0f172a" text-anchor="start" font-weight="700">• 彻底粉碎小偷家门口“信号中继放大器”隔空偷车术！</text>
+</svg>

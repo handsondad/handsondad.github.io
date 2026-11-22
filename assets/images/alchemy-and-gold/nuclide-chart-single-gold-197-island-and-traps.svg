@@ -1,0 +1,190 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="516" viewBox="0 0 760 516" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">铂金汞铊铅局部核素图唯一稳定金197孤岛与人工核嬗变三大放射性及产率陷阱图解</title>
+<desc id="desc">左栏绘制78号铂至82号铅在N=116至126区间的核素网格，直观展示80号汞拥有7种稳定核而79号金仅有唯一稳定核197Au，相邻198Au与199Au均为短寿命放射性核；右栏拆解1941快中子轰汞产毒金、慢中子轰0.15%稀有196Hg反烧回汞、以及铂造金倒贴成本三大死胡同。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="515" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">核时代真能改写质子数了，为什么还是造不出好黄金？——核素图上的“孤岛陷阱”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">邻居铂、汞、铅各有 4~7 种稳定同位素；唯独奇数 79 号黄金只有 ¹⁹⁷Au 一根独苗，稍微偏一格就是短命毒金</text>
+<rect x="20" y="68" width="424" height="428" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="80.0" width="346" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="205.0" y="95.0" font-size="11.2" fill="#1d6fa5" text-anchor="middle" font-weight="600">A. 铂—金—汞—铊—铅局部核素图（深色格=天然稳定核）</text>
+<text x="78" y="145" font-size="10.5" fill="#0f172a" text-anchor="end" font-weight="700">82 铅 Pb</text>
+<rect x="86" y="122" width="29" height="36" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="100.5" y="144" font-size="9.0" fill="#94a3b8" text-anchor="middle">198</text>
+<rect x="117" y="122" width="29" height="36" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="131.5" y="144" font-size="9.0" fill="#94a3b8" text-anchor="middle">199</text>
+<rect x="148" y="122" width="29" height="36" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="162.5" y="144" font-size="9.0" fill="#94a3b8" text-anchor="middle">200</text>
+<rect x="179" y="122" width="29" height="36" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="193.5" y="144" font-size="9.0" fill="#94a3b8" text-anchor="middle">201</text>
+<rect x="210" y="122" width="29" height="36" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="224.5" y="144" font-size="9.0" fill="#94a3b8" text-anchor="middle">202</text>
+<rect x="241" y="122" width="29" height="36" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="255.5" y="144" font-size="9.0" fill="#94a3b8" text-anchor="middle">203</text>
+<rect x="272" y="122" width="29" height="36" rx="4" fill="#dbeafe" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="286.5" y="144" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">204</text>
+<rect x="303" y="122" width="29" height="36" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="317.5" y="144" font-size="9.0" fill="#94a3b8" text-anchor="middle">205</text>
+<rect x="334" y="122" width="29" height="36" rx="4" fill="#dbeafe" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="348.5" y="144" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">206</text>
+<rect x="365" y="122" width="29" height="36" rx="4" fill="#dbeafe" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="379.5" y="144" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">207</text>
+<rect x="396" y="122" width="29" height="36" rx="4" fill="#dbeafe" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="410.5" y="144" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">208</text>
+<text x="78" y="185" font-size="10.5" fill="#0f172a" text-anchor="end" font-weight="700">81 铊 Tl</text>
+<rect x="86" y="162" width="29" height="36" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="100.5" y="184" font-size="9.0" fill="#94a3b8" text-anchor="middle">197</text>
+<rect x="117" y="162" width="29" height="36" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="131.5" y="184" font-size="9.0" fill="#94a3b8" text-anchor="middle">198</text>
+<rect x="148" y="162" width="29" height="36" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="162.5" y="184" font-size="9.0" fill="#94a3b8" text-anchor="middle">199</text>
+<rect x="179" y="162" width="29" height="36" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="193.5" y="184" font-size="9.0" fill="#94a3b8" text-anchor="middle">200</text>
+<rect x="210" y="162" width="29" height="36" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="224.5" y="184" font-size="9.0" fill="#94a3b8" text-anchor="middle">201</text>
+<rect x="241" y="162" width="29" height="36" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="255.5" y="184" font-size="9.0" fill="#94a3b8" text-anchor="middle">202</text>
+<rect x="272" y="162" width="29" height="36" rx="4" fill="#dbeafe" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="286.5" y="184" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">203</text>
+<rect x="303" y="162" width="29" height="36" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="317.5" y="184" font-size="9.0" fill="#94a3b8" text-anchor="middle">204</text>
+<rect x="334" y="162" width="29" height="36" rx="4" fill="#dbeafe" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="348.5" y="184" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">205</text>
+<rect x="365" y="162" width="29" height="36" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="379.5" y="184" font-size="9.0" fill="#94a3b8" text-anchor="middle">206</text>
+<rect x="396" y="162" width="29" height="36" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="410.5" y="184" font-size="9.0" fill="#94a3b8" text-anchor="middle">207</text>
+<text x="78" y="225" font-size="10.5" fill="#0f172a" text-anchor="end" font-weight="700">80 汞 Hg</text>
+<rect x="86" y="202" width="29" height="36" rx="4" fill="#dbeafe" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="100.5" y="224" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">196</text>
+<rect x="117" y="202" width="29" height="36" rx="4" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.2" stroke-dasharray="2 2"/>
+<text x="131.5" y="217" font-size="9.5" fill="#0f766e" text-anchor="middle" font-weight="700">197</text>
+<text x="131.5" y="230" font-size="8.6" fill="#0f766e" text-anchor="middle" font-weight="700">64h</text>
+<rect x="148" y="202" width="29" height="36" rx="4" fill="#dbeafe" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="162.5" y="224" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">198</text>
+<rect x="179" y="202" width="29" height="36" rx="4" fill="#dbeafe" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="193.5" y="224" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">199</text>
+<rect x="210" y="202" width="29" height="36" rx="4" fill="#dbeafe" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="224.5" y="224" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">200</text>
+<rect x="241" y="202" width="29" height="36" rx="4" fill="#dbeafe" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="255.5" y="224" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">201</text>
+<rect x="272" y="202" width="29" height="36" rx="4" fill="#dbeafe" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="286.5" y="224" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">202</text>
+<rect x="303" y="202" width="29" height="36" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="317.5" y="224" font-size="9.0" fill="#94a3b8" text-anchor="middle">203</text>
+<rect x="334" y="202" width="29" height="36" rx="4" fill="#dbeafe" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="348.5" y="224" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">204</text>
+<rect x="365" y="202" width="29" height="36" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="379.5" y="224" font-size="9.0" fill="#94a3b8" text-anchor="middle">205</text>
+<rect x="396" y="202" width="29" height="36" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="410.5" y="224" font-size="9.0" fill="#94a3b8" text-anchor="middle">206</text>
+<text x="78" y="265" font-size="10.5" fill="#b45309" text-anchor="end" font-weight="700">79 金 Au</text>
+<rect x="86" y="242" width="29" height="36" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="100.5" y="264" font-size="9.0" fill="#94a3b8" text-anchor="middle">195</text>
+<rect x="117" y="242" width="29" height="36" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="131.5" y="264" font-size="9.0" fill="#94a3b8" text-anchor="middle">196</text>
+<rect x="148" y="242" width="29" height="36" rx="4" fill="#fde047" stroke="#b45309" stroke-width="2.0"/>
+<text x="162.5" y="257" font-size="9.8" fill="#0f172a" text-anchor="middle" font-weight="700">197</text>
+<text x="162.5" y="271" font-size="8.8" fill="#dc2626" text-anchor="middle" font-weight="700">唯一金</text>
+<rect x="179" y="242" width="29" height="36" rx="4" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="2 2"/>
+<text x="193.5" y="257" font-size="9.5" fill="#dc2626" text-anchor="middle" font-weight="700">198</text>
+<text x="193.5" y="270" font-size="8.6" fill="#dc2626" text-anchor="middle" font-weight="700">放射!</text>
+<rect x="210" y="242" width="29" height="36" rx="4" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="2 2"/>
+<text x="224.5" y="257" font-size="9.5" fill="#dc2626" text-anchor="middle" font-weight="700">199</text>
+<text x="224.5" y="270" font-size="8.6" fill="#dc2626" text-anchor="middle" font-weight="700">放射!</text>
+<rect x="241" y="242" width="29" height="36" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="255.5" y="264" font-size="9.0" fill="#94a3b8" text-anchor="middle">200</text>
+<rect x="272" y="242" width="29" height="36" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="286.5" y="264" font-size="9.0" fill="#94a3b8" text-anchor="middle">201</text>
+<rect x="303" y="242" width="29" height="36" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="317.5" y="264" font-size="9.0" fill="#94a3b8" text-anchor="middle">202</text>
+<rect x="334" y="242" width="29" height="36" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="348.5" y="264" font-size="9.0" fill="#94a3b8" text-anchor="middle">203</text>
+<rect x="365" y="242" width="29" height="36" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="379.5" y="264" font-size="9.0" fill="#94a3b8" text-anchor="middle">204</text>
+<rect x="396" y="242" width="29" height="36" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="410.5" y="264" font-size="9.0" fill="#94a3b8" text-anchor="middle">205</text>
+<text x="78" y="305" font-size="10.5" fill="#0f172a" text-anchor="end" font-weight="700">78 铂 Pt</text>
+<rect x="86" y="282" width="29" height="36" rx="4" fill="#dbeafe" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="100.5" y="304" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">194</text>
+<rect x="117" y="282" width="29" height="36" rx="4" fill="#dbeafe" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="131.5" y="304" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">195</text>
+<rect x="148" y="282" width="29" height="36" rx="4" fill="#dbeafe" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="162.5" y="304" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">196</text>
+<rect x="179" y="282" width="29" height="36" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="193.5" y="304" font-size="9.0" fill="#94a3b8" text-anchor="middle">197</text>
+<rect x="210" y="282" width="29" height="36" rx="4" fill="#dbeafe" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="224.5" y="304" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">198</text>
+<rect x="241" y="282" width="29" height="36" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="255.5" y="304" font-size="9.0" fill="#94a3b8" text-anchor="middle">199</text>
+<rect x="272" y="282" width="29" height="36" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="286.5" y="304" font-size="9.0" fill="#94a3b8" text-anchor="middle">200</text>
+<rect x="303" y="282" width="29" height="36" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="317.5" y="304" font-size="9.0" fill="#94a3b8" text-anchor="middle">201</text>
+<rect x="334" y="282" width="29" height="36" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="348.5" y="304" font-size="9.0" fill="#94a3b8" text-anchor="middle">202</text>
+<rect x="365" y="282" width="29" height="36" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="379.5" y="304" font-size="9.0" fill="#94a3b8" text-anchor="middle">203</text>
+<rect x="396" y="282" width="29" height="36" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="410.5" y="304" font-size="9.0" fill="#94a3b8" text-anchor="middle">204</text>
+<text x="100.5" y="336" font-size="9.5" fill="#64748b" text-anchor="middle">N=116</text>
+<text x="162.5" y="336" font-size="9.5" fill="#64748b" text-anchor="middle">N=118</text>
+<text x="224.5" y="336" font-size="9.5" fill="#64748b" text-anchor="middle">N=120</text>
+<text x="286.5" y="336" font-size="9.5" fill="#64748b" text-anchor="middle">N=122</text>
+<text x="348.5" y="336" font-size="9.5" fill="#64748b" text-anchor="middle">N=124</text>
+<text x="410.5" y="336" font-size="9.5" fill="#64748b" text-anchor="middle">N=126</text>
+<rect x="34" y="352" width="396" height="130" rx="8" fill="#fef9c3" stroke="#b45309" stroke-width="1.1"/>
+<text x="46" y="374" font-size="11.0" fill="#b45309" text-anchor="start" font-weight="700">为什么黄金在核素图上这么“挑食”？（核子成对能铁律）：</text>
+<text x="46" y="396" font-size="10.6" fill="#1e293b" text-anchor="start">• 质子、中子为偶数时两两配对更稳：80号汞坐拥 7 种稳定同位素！</text>
+<text x="46" y="418" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">• 79号金质子数为奇数，全自然界 100% 只有 ¹⁹⁷Au（79p+118n）</text>
+<text x="46" y="440" font-size="10.6" fill="#1e293b" text-anchor="start">  这一种稳定核！多 1 颗中子的 ¹⁹⁸Au 半衰期仅 2.7 天，会发射强伽</text>
+<text x="46" y="462" font-size="10.6" fill="#dc2626" text-anchor="start" font-weight="700">  马射线并 β⁻ 衰变重新变回 ¹⁹⁸Hg 水银——谁戴谁辐射中毒！</text>
+<rect x="458" y="68" width="282" height="428" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="470.0" y="80.0" width="258" height="22" rx="11.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="599.0" y="95.0" font-size="11.2" fill="#dc2626" text-anchor="middle" font-weight="600">B. 反应堆/加速器造金的三大死胡同</text>
+<rect x="470" y="114" width="258" height="114" rx="8" fill="#fffaf5" stroke="#c25014" stroke-width="1.1"/>
+<text x="482" y="136" font-size="10.8" fill="#c25014" text-anchor="start" font-weight="700">陷阱 ①：快中子轰击天然水银 (1941)</text>
+<text x="482" y="158" font-size="10.5" fill="#1e293b" text-anchor="start">哈佛 Sherr 等首次把汞变金：</text>
+<text x="482" y="178" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">¹⁹⁸Hg + n → ¹⁹⁸Au + p（及 ¹⁹⁹Au）</text>
+<text x="482" y="198" font-size="10.4" fill="#dc2626" text-anchor="start" font-weight="700">结果：全是半衰期 2.7~3.1 天的强放射</text>
+<text x="482" y="216" font-size="10.4" fill="#1e293b" text-anchor="start">性同位素，不到两周全衰变回水银！</text>
+<rect x="470" y="240" width="258" height="126" rx="8" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.1"/>
+<text x="482" y="262" font-size="10.6" fill="#0f766e" text-anchor="start" font-weight="700">陷阱 ②：慢中子轰 ¹⁹⁶Hg 产率仅千分之1.5</text>
+<text x="482" y="284" font-size="10.4" fill="#1e293b" text-anchor="start">唯一能变稳定 ¹⁹⁷Au 的 ¹⁹⁶Hg 在天然水</text>
+<text x="482" y="304" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="700">银里仅占 0.15%！其余 99.85% 水银白吃</text>
+<text x="482" y="324" font-size="10.4" fill="#1e293b" text-anchor="start">中子；更惨的是造出的 ¹⁹⁷Au 极爱吸中子</text>
+<text x="482" y="344" font-size="10.4" fill="#dc2626" text-anchor="start" font-weight="700">（98.7 靶恩），转眼又烧回 ¹⁹⁸Hg 水银！</text>
+<rect x="470" y="378" width="258" height="104" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.1"/>
+<text x="482" y="400" font-size="10.6" fill="#6d28d9" text-anchor="start" font-weight="700">陷阱 ③：拿铂金 Pt 造黄金 = 倒贴巨款！</text>
+<text x="482" y="422" font-size="10.4" fill="#1e293b" text-anchor="start">¹⁹⁶Pt + n → ¹⁹⁷Pt → ¹⁹⁷Au 虽能得真金，</text>
+<text x="482" y="442" font-size="10.4" fill="#1e293b" text-anchor="start">但原料铂本身就是贵金属，加上反应堆照</text>
+<text x="482" y="462" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="700">射与同位素分离费，每克成本高达百万美元！</text>
+</svg>

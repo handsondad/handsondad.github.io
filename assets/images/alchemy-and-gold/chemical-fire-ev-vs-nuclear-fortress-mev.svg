@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="516" viewBox="0 0 760 516" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">化学反应电子伏特与核嬗变兆电子伏特百万倍能量鸿沟及黄金相对论黄色惰性成因图</title>
+<desc id="desc">左栏对比直径10的负10次方米电子云上的化学反应（0.1至5电子伏特）与直径万分之一原子核内拔除质子的核嬗变门槛（约800万电子伏特）；右栏对比白银3.7电子伏特紫外能隙与黄金因79号核相对论效应使6s收缩14%、能隙降至2.4电子伏特从而吸收蓝光反射金黄光并锁死外层孤电子。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="515" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">为什么两千年化学炉火造不出一颗金原子？——百万倍能量鸿沟与相对论“金身”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">炉火只能拨动外层电子（~1 eV），改写质子数要砸开 800 万 eV 的原子核；连黄金的黄色都靠爱因斯坦相对论</text>
+<rect x="20" y="68" width="352" height="428" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="80.0" width="296" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="180.0" y="95.0" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="600">A. 化学炼丹炉 vs 原子核金库：差出一百万倍！</text>
+<rect x="34" y="112" width="324" height="224" rx="8" fill="#fffaf5" stroke="#e2e8f0" stroke-width="1.0"/>
+<circle cx="126" cy="212" r="72" fill="#fef3c7" fill-opacity="0.45" stroke="#c25014" stroke-width="1.3" stroke-dasharray="4 3"/>
+<circle cx="126" cy="212" r="44" fill="none" stroke="#64748b" stroke-width="1.0" stroke-dasharray="3 3"/>
+<circle cx="198" cy="212" r="4.5" fill="#1d6fa5"/>
+<circle cx="82" cy="212" r="4.5" fill="#1d6fa5"/>
+<circle cx="126" cy="212" r="11" fill="#dc2626" stroke="#fff" stroke-width="1.5"/>
+<text x="126" y="216" font-size="9.8" fill="#ffffff" text-anchor="middle" font-weight="700">79+</text>
+<text x="126" y="304" font-size="10.2" fill="#64748b" text-anchor="middle">原子直径 ~10⁻¹⁰ m（核仅占万分之一！）</text>
+<rect x="212" y="126" width="136" height="82" rx="6" fill="#ffffff" stroke="#c25014" stroke-width="1.2"/>
+<text x="280" y="146" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700">炭火/强酸（外层电子）</text>
+<text x="280" y="166" font-size="10.2" fill="#1e293b" text-anchor="middle">1300 K 热能 ≈ 0.11 eV</text>
+<text x="280" y="184" font-size="10.2" fill="#1e293b" text-anchor="middle">化学键拆装 ≈ 1~5 eV</text>
+<text x="280" y="200" font-size="10.0" fill="#dc2626" text-anchor="middle" font-weight="700">质子数 82(铅) 纹丝不动</text>
+<rect x="212" y="220" width="136" height="90" rx="6" fill="#fef2f2" stroke="#dc2626" stroke-width="1.3"/>
+<text x="280" y="240" font-size="10.5" fill="#dc2626" text-anchor="middle" font-weight="700">核嬗变（拔掉质子）</text>
+<text x="280" y="260" font-size="10.0" fill="#0f172a" text-anchor="middle" font-weight="700">强核力锁死 ≈ 8,000,000 eV</text>
+<text x="280" y="280" font-size="10.0" fill="#dc2626" text-anchor="middle" font-weight="700">（即 ~8 MeV，高百万倍！）</text>
+<text x="280" y="298" font-size="10.2" fill="#b45309" text-anchor="middle" font-weight="700">铅(82p) - 3p → 金(79p)</text>
+<rect x="34" y="348" width="324" height="132" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1.1"/>
+<text x="46" y="370" font-size="11.0" fill="#c25014" text-anchor="start" font-weight="700">为什么铅和汞看着像“半熟的金子”，却死活炼不过去？</text>
+<text x="46" y="392" font-size="10.8" fill="#1e293b" text-anchor="start">• 铅密度 11.3、汞 13.5、金 19.3 g/cm³，在周期表紧挨着坐：</text>
+<text x="46" y="414" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">  79号金(Au) — 80号汞(Hg) — 81号铊(Tl) — 82号铅(Pb)；</text>
+<text x="46" y="436" font-size="10.8" fill="#1e293b" text-anchor="start">• 但鼓风炉火与王水只够给原子“换外套”（拆装外层电子），</text>
+<text x="46" y="458" font-size="10.8" fill="#dc2626" text-anchor="start" font-weight="700">  就像拿火柴去烧银行十米厚的钛合金金库门，差了七个数量级！</text>
+<rect x="388" y="68" width="352" height="428" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="400.0" y="80.0" width="304" height="22" rx="11.0" fill="#fef9c3" stroke="#b45309" stroke-width="1" stroke-opacity="0.35"/>
+<text x="552.0" y="95.0" font-size="11.5" fill="#b45309" text-anchor="middle" font-weight="600">B. 黄金凭什么金黄又不朽？爱因斯坦相对论镀金！</text>
+<rect x="402" y="112" width="324" height="224" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="564" y="134" font-size="10.5" fill="#64748b" text-anchor="middle" font-weight="700">5d → 6s 电子跃迁能隙对比（Pyykkö 相对论量子化学）</text>
+<rect x="418" y="148" width="134" height="172" rx="6" fill="#f8fafc" stroke="#475569" stroke-width="1.1"/>
+<text x="485" y="168" font-size="10.2" fill="#475569" text-anchor="middle" font-weight="700">白银 Ag (47p) / 无相对论金</text>
+<line x1="440.0" y1="192.0" x2="530.0" y2="192.0" stroke="#1d6fa5" stroke-width="2.4"/>
+<text x="485" y="185" font-size="9.8" fill="#1d6fa5" text-anchor="middle">6s 轨道（未明显收缩）</text>
+<line x1="440.0" y1="274.0" x2="530.0" y2="274.0" stroke="#475569" stroke-width="2.8"/>
+<text x="485" y="290" font-size="9.8" fill="#475569" text-anchor="middle">5d 满壳层</text>
+<line x1="485.0" y1="270.0" x2="485.0" y2="204.5" stroke="#6d28d9" stroke-width="1.8"/>
+<polygon points="485.0,198.0 489.2,206.0 480.8,206.0" fill="#6d28d9"/>
+<text x="485" y="238" font-size="10.5" fill="#6d28d9" text-anchor="middle" font-weight="700" class="halo">ΔE ≈ 3.7 eV</text>
+<text x="485" y="310" font-size="10.0" fill="#1e293b" text-anchor="middle" font-weight="700">只吸紫外线 → 反射银白光</text>
+<rect x="574" y="148" width="138" height="172" rx="6" fill="#fefce8" stroke="#b45309" stroke-width="1.3"/>
+<text x="643" y="168" font-size="10.2" fill="#b45309" text-anchor="middle" font-weight="700">真实黄金 Au (79p 相对论)</text>
+<line x1="596.0" y1="214.0" x2="690.0" y2="214.0" stroke="#dc2626" stroke-width="2.4"/>
+<text x="643" y="206" font-size="9.8" fill="#dc2626" text-anchor="middle" font-weight="700">6s 猛缩 14%（能量下沉）</text>
+<line x1="596.0" y1="262.0" x2="690.0" y2="262.0" stroke="#b45309" stroke-width="2.8"/>
+<text x="643" y="280" font-size="9.8" fill="#b45309" text-anchor="middle" font-weight="700">5d 受屏蔽外扩上抬</text>
+<line x1="643.0" y1="258.0" x2="643.0" y2="226.5" stroke="#1d6fa5" stroke-width="1.8"/>
+<polygon points="643.0,220.0 647.2,228.0 638.8,228.0" fill="#1d6fa5"/>
+<text x="643" y="244" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">ΔE ≈ 2.4 eV</text>
+<text x="643" y="310" font-size="10.0" fill="#b45309" text-anchor="middle" font-weight="700">吃掉蓝紫光 → 闪耀金黄光！</text>
+<rect x="402" y="348" width="324" height="132" rx="8" fill="#fef9c3" stroke="#b45309" stroke-width="1.1"/>
+<text x="414" y="370" font-size="11.0" fill="#b45309" text-anchor="start" font-weight="700">79 颗质子拽出 58% 光速：一箭双雕造就黄金传奇</text>
+<text x="414" y="392" font-size="10.8" fill="#1e293b" text-anchor="start">① 绝美金黄色：内层 1s 电子飙到 0.58c，相对论增重 22%，</text>
+<text x="414" y="414" font-size="10.8" fill="#1e293b" text-anchor="start">  连带 6s 轨道收缩 14%，能隙缩至 2.4 eV（吞掉蓝紫光）！</text>
+<text x="414" y="436" font-size="10.8" fill="#1e293b" text-anchor="start">② 千年不腐惰性：收缩的 6s¹ 孤电子被原子核死死抱在怀里，</text>
+<text x="414" y="458" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">  氧气、硫磺、浓硝酸全抢不走——入土三千年出土仍灿若骄阳！</text>
+</svg>

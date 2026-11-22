@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="524" viewBox="0 0 760 524" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">遥控车27MHz长拉杆开关控制与2.4GHz短天线跳频扩频及50Hz舵机比例PWM控制对比图</title>
+<desc id="desc">左栏对比27MHz老式玩具车因11.1米波长需长拉杆天线且易撞频串车、仅能全打死开关转向，与2.4GHz现代遥控车3.1厘米内置短天线加FHSS跳频防干扰；右栏展示50Hz(20ms周期)下1.0ms、1.5ms、2.0ms脉宽驱动舵机闭环定位与电调无级调速原理。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="523" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">遥控玩具车两代革命：为什么老玩具拖着长铁杆还爱“串车”，新遥控车能丝滑拐弯？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">从 27 MHz 四分之一波长长天线“左打死/右打死”，升级到 2.4 GHz 藏身短天线跳频与 50 Hz 比例舵机</text>
+<rect x="20" y="68" width="352" height="436" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="80.0" width="324" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="194.0" y="95.0" font-size="11.0" fill="#c25014" text-anchor="middle" font-weight="600">A. 天线长短与撞频之谜：27 MHz 老玩具 vs 2.4 GHz 跳频</text>
+<rect x="34" y="114" width="324" height="174" rx="8" fill="#fffaf5" stroke="#c25014" stroke-width="1.2"/>
+<text x="46" y="136" font-size="10.8" fill="#c25014" text-anchor="start" font-weight="700">① 童年 27 / 49 MHz 玩具车（TX-2B 开关式）</text>
+<text x="46" y="158" font-size="10.2" fill="#1e293b" text-anchor="start">• 为什么非拖一根半米长铁拉杆？电磁波波长 λ = c / f ≈ 11.1 米！</text>
+<text x="46" y="178" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">  1/4 波长谐振要 2.76 米，哪怕底部绕电感缩短也得伸出长铁杆。</text>
+<text x="46" y="200" font-size="10.2" fill="#1e293b" text-anchor="start">• 为什么小区两辆车一碰面就“抢方向盘”？固定死守单一频点，</text>
+<text x="46" y="220" font-size="10.2" fill="#1e293b" text-anchor="start">  谁信号强听谁的！且电机只有“全通电打死 / 断电回弹”两档，</text>
+<text x="46" y="240" font-size="10.2" fill="#dc2626" text-anchor="start" font-weight="700">  没法走微弧线，一拐弯就猛甩头（Bang-Bang 开关控制）。</text>
+<rect x="34" y="302" width="324" height="186" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="46" y="324" font-size="10.8" fill="#1d6fa5" text-anchor="start" font-weight="700">② 现代 2.4 GHz 遥控车 / 无人机（FHSS 跳频扩频）</text>
+<text x="46" y="346" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">• 天线去哪了？2.4 GHz 波长仅 12.5 cm → 1/4 波长仅 3.1 厘米！</text>
+<text x="46" y="366" font-size="10.2" fill="#1e293b" text-anchor="start">  比火柴棍还短，直接藏进车壳与手柄塑料里，再也不戳眼睛。</text>
+<text x="46" y="388" font-size="10.2" fill="#1e293b" text-anchor="start">• 50 辆车同场飙车为何零干扰？对频绑定 32/48 位唯一身份证，</text>
+<text x="46" y="408" font-size="10.2" fill="#1d6fa5" text-anchor="start" font-weight="700">  并在 2400~2483.5 MHz 几十个信道间每秒按暗号狂跳上百次！</text>
+<rect x="48" y="424" width="25" height="13" rx="2" fill="#1d6fa5" stroke="#1d6fa5" stroke-width="0.8"/>
+<rect x="48" y="440" width="25" height="13" rx="2" fill="#ffffff" stroke="#1d6fa5" stroke-width="0.8"/>
+<rect x="48" y="456" width="25" height="13" rx="2" fill="#ffffff" stroke="#1d6fa5" stroke-width="0.8"/>
+<rect x="77" y="424" width="25" height="13" rx="2" fill="#ffffff" stroke="#1d6fa5" stroke-width="0.8"/>
+<rect x="77" y="440" width="25" height="13" rx="2" fill="#ffffff" stroke="#1d6fa5" stroke-width="0.8"/>
+<rect x="77" y="456" width="25" height="13" rx="2" fill="#1d6fa5" stroke="#1d6fa5" stroke-width="0.8"/>
+<rect x="106" y="424" width="25" height="13" rx="2" fill="#ffffff" stroke="#1d6fa5" stroke-width="0.8"/>
+<rect x="106" y="440" width="25" height="13" rx="2" fill="#1d6fa5" stroke="#1d6fa5" stroke-width="0.8"/>
+<rect x="106" y="456" width="25" height="13" rx="2" fill="#ffffff" stroke="#1d6fa5" stroke-width="0.8"/>
+<rect x="135" y="424" width="25" height="13" rx="2" fill="#1d6fa5" stroke="#1d6fa5" stroke-width="0.8"/>
+<rect x="135" y="440" width="25" height="13" rx="2" fill="#ffffff" stroke="#1d6fa5" stroke-width="0.8"/>
+<rect x="135" y="456" width="25" height="13" rx="2" fill="#ffffff" stroke="#1d6fa5" stroke-width="0.8"/>
+<rect x="164" y="424" width="25" height="13" rx="2" fill="#ffffff" stroke="#1d6fa5" stroke-width="0.8"/>
+<rect x="164" y="440" width="25" height="13" rx="2" fill="#ffffff" stroke="#1d6fa5" stroke-width="0.8"/>
+<rect x="164" y="456" width="25" height="13" rx="2" fill="#1d6fa5" stroke="#1d6fa5" stroke-width="0.8"/>
+<rect x="193" y="424" width="25" height="13" rx="2" fill="#ffffff" stroke="#1d6fa5" stroke-width="0.8"/>
+<rect x="193" y="440" width="25" height="13" rx="2" fill="#1d6fa5" stroke="#1d6fa5" stroke-width="0.8"/>
+<rect x="193" y="456" width="25" height="13" rx="2" fill="#ffffff" stroke="#1d6fa5" stroke-width="0.8"/>
+<rect x="222" y="424" width="25" height="13" rx="2" fill="#ffffff" stroke="#1d6fa5" stroke-width="0.8"/>
+<rect x="222" y="440" width="25" height="13" rx="2" fill="#ffffff" stroke="#1d6fa5" stroke-width="0.8"/>
+<rect x="222" y="456" width="25" height="13" rx="2" fill="#1d6fa5" stroke="#1d6fa5" stroke-width="0.8"/>
+<rect x="251" y="424" width="25" height="13" rx="2" fill="#1d6fa5" stroke="#1d6fa5" stroke-width="0.8"/>
+<rect x="251" y="440" width="25" height="13" rx="2" fill="#ffffff" stroke="#1d6fa5" stroke-width="0.8"/>
+<rect x="251" y="456" width="25" height="13" rx="2" fill="#ffffff" stroke="#1d6fa5" stroke-width="0.8"/>
+<rect x="280" y="424" width="25" height="13" rx="2" fill="#ffffff" stroke="#1d6fa5" stroke-width="0.8"/>
+<rect x="280" y="440" width="25" height="13" rx="2" fill="#1d6fa5" stroke="#1d6fa5" stroke-width="0.8"/>
+<rect x="280" y="456" width="25" height="13" rx="2" fill="#ffffff" stroke="#1d6fa5" stroke-width="0.8"/>
+<rect x="309" y="424" width="25" height="13" rx="2" fill="#ffffff" stroke="#1d6fa5" stroke-width="0.8"/>
+<rect x="309" y="440" width="25" height="13" rx="2" fill="#ffffff" stroke="#1d6fa5" stroke-width="0.8"/>
+<rect x="309" y="456" width="25" height="13" rx="2" fill="#1d6fa5" stroke="#1d6fa5" stroke-width="0.8"/>
+<text x="196" y="480" font-size="9.4" fill="#64748b" text-anchor="middle">↑ FHSS 时间—频率跳频示意：同场撞上一格也会在毫秒内跳开</text>
+<rect x="388" y="68" width="352" height="436" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="400.0" y="80.0" width="328" height="22" rx="11.0" fill="#f0fdfa" stroke="#0f766e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="564.0" y="95.0" font-size="11.0" fill="#0f766e" text-anchor="middle" font-weight="600">B. 丝滑转向与油门的秘密：50 Hz (20 ms) 比例 PWM 脉宽</text>
+<rect x="402" y="114" width="324" height="232" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="564" y="136" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="700">每 20 毫秒（50 Hz）发一帧，高电平宽度精准决定轮胎角度！</text>
+<text x="414" y="156" font-size="9.8" fill="#1d6fa5" text-anchor="start" font-weight="700">1.0 ms 窄脉冲 → 舵机左打满 (0°) / 电调怠速</text>
+<polyline points="414,192 424,192 424,168 452,168 452,192 674,192" fill="none" stroke="#1d6fa5" stroke-width="2.1"/>
+<text x="686" y="184" font-size="8.8" fill="#64748b" text-anchor="start">20ms周期</text>
+<text x="414" y="220" font-size="9.8" fill="#0f766e" text-anchor="start" font-weight="700">1.5 ms 中位脉冲 → 轮胎精准回正 (90° 中立点)</text>
+<polyline points="414,256 424,256 424,232 466,232 466,256 674,256" fill="none" stroke="#0f766e" stroke-width="2.1"/>
+<text x="686" y="248" font-size="8.8" fill="#64748b" text-anchor="start">20ms周期</text>
+<text x="414" y="284" font-size="9.8" fill="#dc2626" text-anchor="start" font-weight="700">2.0 ms 宽脉冲 → 舵机右打满 (180°) / 全油门狂飙</text>
+<polyline points="414,320 424,320 424,296 480,296 480,320 674,320" fill="none" stroke="#dc2626" stroke-width="2.1"/>
+<text x="686" y="312" font-size="8.8" fill="#64748b" text-anchor="start">20ms周期</text>
+<text x="564" y="336" font-size="9.2" fill="#64748b" text-anchor="middle">（注：为清晰展示脉宽差异，高电平宽度作了横向放大示意）</text>
+<rect x="402" y="358" width="324" height="130" rx="8" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.1"/>
+<text x="414" y="380" font-size="10.6" fill="#0f766e" text-anchor="start" font-weight="700">舵机（Servo）凭什么拧多少方向盘，前轮就停在几度？</text>
+<text x="414" y="404" font-size="10.2" fill="#1e293b" text-anchor="start">• 方向盘连着电位器/霍尔传感器，转至 45° 就发出 1.25 ms 脉宽；</text>
+<text x="414" y="426" font-size="10.2" fill="#1e293b" text-anchor="start">• 车头舵机肚子里也藏着一颗同轴角度电位器，实时对比“目标脉</text>
+<text x="414" y="448" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">  宽 vs 当前转角”：差一点就驱动电机转，转到位立刻刹车锁死！</text>
+<text x="414" y="470" font-size="10.2" fill="#1d6fa5" text-anchor="start" font-weight="700">• 油门扳机同理，通过电调（ESC）高频斩波平滑调节车速快慢。</text>
+</svg>

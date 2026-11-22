@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">车库门固定码重放漏洞、汽车KeeLoq 66位滚动码机制与UWB超宽带光速飞行时间防中继盗车图解</title>
+<desc id="desc">左栏对比老式433MHz固定码易被拷贝重放，与汽车钥匙KeeLoq 66位滚动码每次按键递增同步计数器生成全新32位密文、用后即废及滑动窗口机制；右栏剖析无钥匙进入双人信号中继放大盗车原理，以及IEEE 802.15.4z超宽带UWB利用每纳秒30厘米光速往返测距和加密STS脉冲彻底防御中继攻击。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">安全攻防战：为什么十块钱万能遥控能抄走小区道闸，却偷不走你的汽车？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">从固定码重放漏洞、KeeLoq 66 位“用一次废一次”滚动码，到粉碎双人中继盗车的 UWB 光速测距</text>
+<rect x="20" y="68" width="352" height="432" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="80.0" width="312" height="22" rx="11.0" fill="#fef9c3" stroke="#b45309" stroke-width="1" stroke-opacity="0.35"/>
+<text x="188.0" y="95.0" font-size="11.0" fill="#b45309" text-anchor="middle" font-weight="600">A. 抄码器克星：每次按键全换新密码的“滚动码”</text>
+<rect x="34" y="114" width="324" height="108" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1.1"/>
+<text x="46" y="136" font-size="10.6" fill="#dc2626" text-anchor="start" font-weight="700">❌ 老式车库门/电动门（433 MHz 固定码芯片）</text>
+<text x="46" y="158" font-size="10.2" fill="#1e293b" text-anchor="start">• 每次按键都在空中裸奔喊同一句口令（如 24 位固定码 #8848）；</text>
+<text x="46" y="180" font-size="10.2" fill="#1e293b" text-anchor="start">• 路边配钥匙摊拿个几十元“拷贝遥控器”在旁边偷听录音一次，</text>
+<text x="46" y="202" font-size="10.2" fill="#dc2626" text-anchor="start" font-weight="700">  原样重放（Replay Attack）就能随时打开你的大门！</text>
+<rect x="34" y="234" width="324" height="252" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="1.3"/>
+<text x="46" y="256" font-size="10.5" fill="#b45309" text-anchor="start" font-weight="700">✅ 传统汽车遥控钥匙（如 Microchip KeeLoq 66 位滚动码）</text>
+<rect x="46" y="270" width="300" height="44" rx="5" fill="#fef9c3" stroke="#b45309" stroke-width="1.0"/>
+<text x="196" y="288" font-size="9.6" fill="#0f172a" text-anchor="middle" font-weight="700">[ 34 位固定序列号+按键 ] + [ 32 位非线性加密跳变码 ]</text>
+<text x="196" y="305" font-size="9.3" fill="#b45309" text-anchor="middle" font-weight="700">↑ 由内部 16 位同步递增计数器（每按 1 次 +1）加密生成！</text>
+<text x="46" y="336" font-size="10.1" fill="#1e293b" text-anchor="start">• 第 101 次发 0x9F2A... → 汽车验明通过，当场作废 ≤101 旧码！</text>
+<text x="46" y="358" font-size="10.1" fill="#0f766e" text-anchor="start" font-weight="700">• 小偷录音重播第 101 号码？汽车一看是过期废票，纹丝不动！</text>
+<text x="46" y="380" font-size="10.1" fill="#1e293b" text-anchor="start">• 兜里误按 5 次没对着车怎么办？汽车留有“前向滑动窗口”（如</text>
+<text x="46" y="402" font-size="10.1" fill="#1e293b" text-anchor="start">  接受 +1 ~ +256 内任意新码并自动追平）；但若熊孩子拿钥匙在</text>
+<text x="46" y="424" font-size="10.1" fill="#0f172a" text-anchor="start" font-weight="700">  楼上狂按 500 次超出窗口，钥匙就会暂时失步需重新配对同步！</text>
+<text x="46" y="452" font-size="9.6" fill="#64748b" text-anchor="start">（顺带解答：电视/空调只开关家电无防盗需求，故用明文固定红外码）</text>
+<rect x="388" y="68" width="352" height="432" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="400.0" y="80.0" width="320" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="560.0" y="95.0" font-size="11.0" fill="#6d28d9" text-anchor="middle" font-weight="600">B. 魔高一尺道高一丈：双人中继盗车 vs UWB 光速尺</text>
+<rect x="402" y="114" width="324" height="152" rx="8" fill="#fffaf5" stroke="#c25014" stroke-width="1.2"/>
+<text x="414" y="136" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="700">⚠ 无钥匙进入（PKE）的新软肋：双人中继放大攻击</text>
+<text x="414" y="158" font-size="10.1" fill="#1e293b" text-anchor="start">• 你走近车门不用掏钥匙，靠车发 125 kHz 低频唤醒包里钥匙回应；</text>
+<text x="414" y="180" font-size="10.1" fill="#1e293b" text-anchor="start">• 小偷根本不破译密码！贼 A 贴着你家玄关门外偷感玄关桌上的车</text>
+<text x="414" y="202" font-size="10.1" fill="#1e293b" text-anchor="start">  钥匙，把信号无线接力传给楼下车边的贼 B 放大转发——汽车只</text>
+<text x="414" y="224" font-size="10.1" fill="#dc2626" text-anchor="start" font-weight="700">  看信号强度（RSSI）以为你就站在车门边，咔哒一声自动解锁！</text>
+<text x="414" y="248" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="700">  （防盗贴士：老款无 UWB 钥匙回家放金属盒即可屏蔽低频唤醒）</text>
+<rect x="402" y="280" width="324" height="206" rx="8" fill="#0f172a" stroke="#6d28d9" stroke-width="1.4"/>
+<text x="414" y="304" font-size="10.4" fill="#e9d5ff" text-anchor="start" font-weight="700">🛡 终极防线：UWB 超宽带光速飞行时间（IEEE 802.15.4z）</text>
+<rect x="418" y="320" width="74" height="42" rx="5" fill="#1e293b" stroke="#38bdf8" stroke-width="1.2"/>
+<text x="455" y="345" font-size="9.8" fill="#38bdf8" text-anchor="middle" font-weight="700">汽车 UWB</text>
+<line x1="498.0" y1="334.0" x2="613.5" y2="334.0" stroke="#facc15" stroke-width="1.8"/>
+<polygon points="620.0,334.0 612.0,338.0 612.0,330.0" fill="#facc15"/>
+<line x1="620.0" y1="350.0" x2="504.5" y2="350.0" stroke="#a855f7" stroke-width="1.8"/>
+<polygon points="498.0,350.0 506.0,346.0 506.0,354.0" fill="#a855f7"/>
+<text x="559" y="326" font-size="9.2" fill="#fde047" text-anchor="middle" font-weight="700">加密随机脉冲 STS 往返计时</text>
+<rect x="626" y="320" width="84" height="42" rx="5" fill="#1e293b" stroke="#a855f7" stroke-width="1.2"/>
+<text x="668" y="345" font-size="9.8" fill="#e9d5ff" text-anchor="middle" font-weight="700">手机/车钥匙</text>
+<text x="414" y="388" font-size="10.0" fill="#f8fafc" text-anchor="start" font-weight="700">• 不看信号强弱，直接卡秒表算往返时间：光速 1 纳秒走 30 cm！</text>
+<text x="414" y="412" font-size="10.0" fill="#cbd5e1" text-anchor="start">• 谁也跑不过光速：小偷的中继设备只要多耽误 20 纳秒转发延迟，</text>
+<text x="414" y="434" font-size="10.0" fill="#fde047" text-anchor="start" font-weight="700">  汽车算出的距离就凭空多出 3 米以上，立刻识破骗局拒绝开门！</text>
+<text x="414" y="460" font-size="9.8" fill="#93c5fd" text-anchor="start">• 加上 STS 加密时间戳序列，黑客连提前伪造抢跑脉冲都绝无可能。</text>
+</svg>

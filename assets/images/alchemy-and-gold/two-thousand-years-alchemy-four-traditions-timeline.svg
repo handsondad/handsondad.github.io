@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">世界炼金术两千年演进四阶段图解：希腊亚历山大港、阿拉伯王水、中国外丹火药与欧洲近代化学转型</title>
+<desc id="desc">四宫格按时间与文明脉络展示：公元1至4世纪亚历山大港蒸馏器与水浴锅，8至10世纪阿拉伯贾比尔强酸与王水，东汉至唐宋中国葛洪丹砂水银可逆反应与伏火硝石意外发明黑火药，以及1669年布兰德熬尿发现白磷、牛顿百万字炼金手稿到1789年拉瓦锡终结化学炼金术。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">冲着黄金去，却炸开了现代化学大门——跨越两千年的世界炼金术四幕大戏</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">从亚历山大港水浴锅、阿拉伯王水、中国丹炉意外炸出火药，到煮 5500 升人尿炼出白磷与牛顿百万字手稿</text>
+<rect x="20" y="68" width="352" height="204" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="80.0" width="328" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="196.0" y="95.0" font-size="11.0" fill="#1d6fa5" text-anchor="middle" font-weight="600">① 希腊—埃及源头（公元 1~4 世纪 · 亚历山大港）</text>
+<text x="34" y="122" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">工匠冶金染色术 × 亚里士多德四元素互变论</text>
+<line x1="34.0" y1="132.0" x2="358.0" y2="132.0" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="34" y="154" font-size="10.6" fill="#1e293b" text-anchor="start">• 理论错觉：既然万物皆由“土气水火”按冷热干湿调配，那灰暗</text>
+<text x="34" y="176" font-size="10.6" fill="#1e293b" text-anchor="start">  的贱金属（铅/铜）只是“没熟透的金子”，催熟即可点石成金！</text>
+<text x="34" y="198" font-size="10.6" fill="#1e293b" text-anchor="start">• 硬核遗产：佐西莫斯（Zosimos）与犹太女炼金家玛丽亚发明曲</text>
+<text x="34" y="220" font-size="10.6" fill="#1e293b" text-anchor="start">  颈甑蒸馏器与恒温水浴锅（Bain-marie 至今仍在厨房服役）。</text>
+<rect x="388" y="68" width="352" height="204" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="400.0" y="80.0" width="328" height="22" rx="11.0" fill="#f0fdfa" stroke="#0f766e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="564.0" y="95.0" font-size="11.0" fill="#0f766e" text-anchor="middle" font-weight="600">② 阿拉伯黄金时代（8~10 世纪 · 巴格达与库法）</text>
+<text x="402" y="122" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">贾比尔“硫-汞双亲论”与唯一能吃掉黄金的“王水”</text>
+<line x1="402.0" y1="132.0" x2="726.0" y2="132.0" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="402" y="154" font-size="10.6" fill="#1e293b" text-anchor="start">• 强酸突破：贾比尔（Jabir）与拉齐系统分级矿物，高温干馏绿矾</text>
+<text x="402" y="176" font-size="10.6" fill="#1e293b" text-anchor="start">  与硝石制出硫酸、硝酸，并用盐酸+硝酸调出“王水”(Aqua Regia)！</text>
+<text x="402" y="198" font-size="10.6" fill="#1e293b" text-anchor="start">• 语言烙印：英文 Alchemy（炼金术）、Alcohol（酒精）、Alkali</text>
+<text x="402" y="220" font-size="10.6" fill="#1e293b" text-anchor="start">  （碱）、Alembic（蒸馏釜）清一色带着阿拉伯冠词 al- 基因。</text>
+<rect x="20" y="286" width="352" height="204" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="298.0" width="328" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="196.0" y="313.0" font-size="11.0" fill="#c25014" text-anchor="middle" font-weight="600">③ 中国道教外丹术（东汉~唐宋 · 葛洪与伏火硝石）</text>
+<text x="34" y="340" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">西方找财富黄金，东方找“食金不朽”长生仙丹</text>
+<line x1="34.0" y1="350.0" x2="358.0" y2="350.0" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="34" y="372" font-size="10.6" fill="#1e293b" text-anchor="start">• 最早可逆反应：东晋葛洪《抱朴子》精准记下“丹砂(HgS)烧之成</text>
+<text x="34" y="394" font-size="10.6" fill="#1e293b" text-anchor="start">  水银，积变又还成丹砂”；代价是唐朝多位皇帝因重金属丹毒暴毙。</text>
+<text x="34" y="416" font-size="10.6" fill="#1e293b" text-anchor="start">• 炸出火药：唐代方士给硫磺、硝石加蜂蜜炭“伏火”，《真元妙道</text>
+<text x="34" y="438" font-size="10.6" fill="#1e293b" text-anchor="start">  要略》警告“焰起烧手面及烬屋舍”——意外改写人类军事与工程史！</text>
+<rect x="388" y="286" width="352" height="204" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="400.0" y="298.0" width="328" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="564.0" y="313.0" font-size="11.0" fill="#6d28d9" text-anchor="middle" font-weight="600">④ 欧洲近代转型与终局（1669~1789 · 从尿液白磷到拉瓦锡）</text>
+<text x="402" y="340" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">牛顿百万字炼金手稿、波义耳怀疑论与天平死刑判决</text>
+<line x1="402.0" y1="350.0" x2="726.0" y2="350.0" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="402" y="372" font-size="10.6" fill="#1e293b" text-anchor="start">• 1669 荒诞奇迹：汉堡炼金师布兰德熬干 5500 升人尿找贤者之石，</text>
+<text x="402" y="394" font-size="10.6" fill="#1e293b" text-anchor="start">  意外提炼出暗夜发光的首个人造单质新元素——白磷（P₄）！</text>
+<text x="402" y="416" font-size="10.6" fill="#1e293b" text-anchor="start">• 最后魔法师：波义耳与写下百万字炼金笔记的牛顿皆痴迷嬗变；直</text>
+<text x="402" y="438" font-size="10.6" fill="#1e293b" text-anchor="start">  到 1789 拉瓦锡以精密天平确立质量守恒与元素定义，终结化学炼金。</text>
+<rect x="20" y="496" width="720" height="20" rx="4" fill="#f8fafc" stroke="none" stroke-width="1"/>
+<text x="380" y="509" font-size="10.6" fill="#0f172a" text-anchor="middle" font-weight="700">历史反转：炼金术士两千年没炼出 1 毫克真黄金，却亲手攒齐了烧瓶、强酸、火药、白磷、冶金提纯与定量实验整套现代化学家当！</text>
+</svg>

@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="512" viewBox="0 0 760 512" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">电视遥控器32位无状态增量指令与空调遥控器自带液晶屏全量状态快照长数据包对比图解</title>
+<desc id="desc">左栏展示电视遥控器依赖人眼盯屏幕闭环，仅发送音量加1等32位相对短指令；右栏展示空调因单向红外无法回传且多参数耦合，由遥控器本地保存状态并每次发送包含开关、模式、温度、风速、摆风及校验和的6至28字节全量状态包，解释被窝按遥控器伸出后直接跳变的现象。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="511" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">同是红外遥控，为什么电视遥控器没屏幕，空调遥控器却非带一块小屏幕不可？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">单向盲发信道下的工程巧思：电视靠人眼闭环发“增量短令”，空调靠遥控器记账发“全家桶快照”</text>
+<rect x="20" y="68" width="352" height="424" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="80.0" width="318" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="191.0" y="95.0" font-size="11.0" fill="#1d6fa5" text-anchor="middle" font-weight="600">A. 电视遥控器：无状态“增量指令”（32 bit 短包）</text>
+<rect x="34" y="114" width="324" height="186" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.0"/>
+<rect x="48" y="146" width="86" height="118" rx="10" fill="#1e293b" stroke="#475569" stroke-width="1.2"/>
+<text x="91" y="174" font-size="10.5" fill="#93c5fd" text-anchor="middle" font-weight="700">无屏幕!</text>
+<rect x="64" y="192" width="54" height="24" rx="4" fill="#334155" stroke="#94a3b8" stroke-width="1.0"/>
+<text x="91" y="208" font-size="10.0" fill="#ffffff" text-anchor="middle" font-weight="700">音量 +</text>
+<text x="91" y="244" font-size="9.6" fill="#cbd5e1" text-anchor="middle">只管喊 +1</text>
+<line x1="142.0" y1="196.0" x2="211.5" y2="196.0" stroke="#1d6fa5" stroke-width="2.0"/>
+<polygon points="218.0,196.0 210.0,200.0 210.0,192.0" fill="#1d6fa5"/>
+<text x="180" y="182" font-size="9.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">单发 0x16</text>
+<text x="180" y="216" font-size="9.5" fill="#64748b" text-anchor="middle">32 bits</text>
+<rect x="224" y="138" width="120" height="96" rx="6" fill="#0f172a" stroke="#1d6fa5" stroke-width="1.5"/>
+<text x="284" y="168" font-size="10.4" fill="#f8fafc" text-anchor="middle" font-weight="700">客厅大屏电视</text>
+<text x="284" y="194" font-size="10.4" fill="#fde047" text-anchor="middle" font-weight="700">🔊 音量：20 → 21</text>
+<text x="284" y="216" font-size="9.5" fill="#93c5fd" text-anchor="middle">人眼实时盯着屏幕!</text>
+<text x="196" y="276" font-size="10.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">闭环靠人眼：没按上？看屏幕没动再补按一下就行！</text>
+<rect x="34" y="314" width="324" height="162" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="46" y="338" font-size="10.8" fill="#1d6fa5" text-anchor="start" font-weight="700">为什么电视遥控器不需要记住“现在是几台、音量几”？</text>
+<text x="46" y="362" font-size="10.5" fill="#1e293b" text-anchor="start">• 电视本身就是一块大屏幕，音量条、频道号全在眼前；</text>
+<text x="46" y="386" font-size="10.5" fill="#1e293b" text-anchor="start">• 遥控器内部根本不存状态，每次按键只发“调大 1 格”</text>
+<text x="46" y="410" font-size="10.5" fill="#1e293b" text-anchor="start">  或“下一台”的相对动作码；</text>
+<text x="46" y="434" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">• 就算拿两个同型号电视遥控器轮流按，也丝毫不打架！</text>
+<rect x="388" y="68" width="352" height="424" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="400.0" y="80.0" width="328" height="22" rx="11.0" fill="#f0fdfa" stroke="#0f766e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="564.0" y="95.0" font-size="11.0" fill="#0f766e" text-anchor="middle" font-weight="600">B. 空调遥控器：有状态“全家桶快照”（96~224 bit 长包）</text>
+<rect x="402" y="114" width="324" height="186" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.0"/>
+<rect x="414" y="134" width="98" height="136" rx="10" fill="#f8fafc" stroke="#0f766e" stroke-width="1.4"/>
+<rect x="424" y="146" width="78" height="48" rx="4" fill="#dcfce7" stroke="#0f766e" stroke-width="1.0"/>
+<text x="463" y="166" font-size="9.8" fill="#0f766e" text-anchor="middle" font-weight="700">❄ 24°C 制冷</text>
+<text x="463" y="184" font-size="9.0" fill="#0f172a" text-anchor="middle">自动风 · 摆风</text>
+<text x="463" y="218" font-size="9.5" fill="#1e293b" text-anchor="middle">遥控器芯片自己</text>
+<text x="463" y="236" font-size="9.6" fill="#0f766e" text-anchor="middle" font-weight="700">保存完整账本!</text>
+<line x1="518.0" y1="196.0" x2="587.5" y2="196.0" stroke="#0f766e" stroke-width="2.0"/>
+<polygon points="594.0,196.0 586.0,200.0 586.0,192.0" fill="#0f766e"/>
+<text x="556" y="178" font-size="9.5" fill="#0f766e" text-anchor="middle" font-weight="700">打包全量状态</text>
+<text x="556" y="216" font-size="9.2" fill="#dc2626" text-anchor="middle" font-weight="700">6~28 字节长帧</text>
+<rect x="598" y="144" width="116" height="84" rx="6" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.3"/>
+<text x="656" y="168" font-size="10.2" fill="#0f766e" text-anchor="middle" font-weight="700">高处壁挂空调</text>
+<text x="656" y="190" font-size="9.6" fill="#1e293b" text-anchor="middle">滴！全盘覆盖为：</text>
+<text x="656" y="210" font-size="10.0" fill="#0f172a" text-anchor="middle" font-weight="700">制冷·24°C·摆风!</text>
+<rect x="414" y="246" width="300" height="42" rx="5" fill="#fef9c3" stroke="#b45309" stroke-width="1.0"/>
+<text x="564" y="263" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="700">一次按键发出的红外长包：[厂商头] [开机+制冷] [24°C查表码]</text>
+<text x="564" y="280" font-size="9.4" fill="#b45309" text-anchor="middle" font-weight="700">[风速自动] [上下摆风开] [定时关] [Checksum 校验和]</text>
+<rect x="402" y="314" width="324" height="162" rx="8" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.1"/>
+<text x="414" y="338" font-size="10.5" fill="#0f766e" text-anchor="start" font-weight="700">秒懂生活悬案：躲被窝里乱按遥控器，伸出来一按怎么跳变了？</text>
+<text x="414" y="362" font-size="10.4" fill="#1e293b" text-anchor="start">• 红外只能单向发信，墙上空调没法回话告诉遥控器当前几度；</text>
+<text x="414" y="384" font-size="10.4" fill="#1e293b" text-anchor="start">• 若发“降温 1 度”遇到被子挡住漏收一次，屏幕与空调就永远</text>
+<text x="414" y="406" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="700">  对不上账！所以空调遥控器每次按键都把整块屏幕所有参数</text>
+<text x="414" y="428" font-size="10.4" fill="#1e293b" text-anchor="start">  一次性全打包发过去：被窝里从 26°C 按到 23°C 空调没听见，</text>
+<text x="414" y="450" font-size="10.4" fill="#dc2626" text-anchor="start" font-weight="700">  伸出被窝按一下“+”，空调收到 24°C 全家桶当场一步到位！</text>
+</svg>

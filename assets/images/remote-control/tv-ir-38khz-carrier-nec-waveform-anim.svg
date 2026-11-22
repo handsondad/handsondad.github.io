@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="524" viewBox="0 0 760 524" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">电视940纳米红外遥控器38kHz载波抗阳光干扰原理与NEC协议脉冲距离编码波形动态图解</title>
+<desc id="desc">上栏演示遥控器940纳米红外LED发出38kHz高频闪烁脉冲串穿过客厅太阳光干扰，由TSOP38238黑色滤光窗与38kHz带通滤波器解调为干净方波（含单次动画）；下栏拆解NEC协议9ms+4.5ms引导码、逻辑0(1.125ms)与逻辑1(2.25ms)及32位正反码校验帧。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes irPacketMove {
+    0%   { transform: translateX(0px); opacity: 0.2; }
+    15%  { opacity: 1; }
+    80%  { transform: translateX(218px); opacity: 1; }
+    100% { transform: translateX(240px); opacity: 0.95; }
+  }
+  @keyframes outPulseReveal {
+    0%, 55% { opacity: 0.25; }
+    100%    { opacity: 1; }
+  }
+  .ir-burst-anim { animation: irPacketMove 3.8s ease-in-out 1 forwards; }
+  .out-wave-anim { animation: outPulseReveal 3.8s ease-out 1 forwards; }
+  @media (prefers-reduced-motion: reduce) {
+    .ir-burst-anim, .out-wave-anim { animation: none !important; }
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="523" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">电视红外遥控双重密码：为什么太阳光晃不晕电视，手机镜头却能抓拍紫光？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">940 nm 不可见光躲开人眼（硅传感器可见）+ 38 kHz 载波暗号滤除阳光 + NEC 脉冲距离编码</text>
+<rect x="20" y="68" width="720" height="214" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="80.0" width="588" height="22" rx="11.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="326.0" y="95.0" font-size="11.0" fill="#dc2626" text-anchor="middle" font-weight="600">A. 客厅满屋子都是太阳红外线，电视接收头凭什么只听遥控器的话？（38 kHz 频闪暗号）</text>
+<rect x="34" y="116" width="134" height="148" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1.2"/>
+<text x="101" y="140" font-size="10.6" fill="#f8fafc" text-anchor="middle" font-weight="700">电视遥控器发射端</text>
+<text x="101" y="164" font-size="10.2" fill="#fca5a5" text-anchor="middle" font-weight="700">GaAs 红外 LED</text>
+<text x="101" y="184" font-size="10.0" fill="#cbd5e1" text-anchor="middle">波长 λ = 940 nm</text>
+<text x="101" y="206" font-size="9.8" fill="#94a3b8" text-anchor="middle">• 人眼极限 ~700 nm</text>
+<text x="101" y="226" font-size="9.8" fill="#e9d5ff" text-anchor="middle" font-weight="700">• 手机硅 CMOS 拍出</text>
+<text x="101" y="244" font-size="9.8" fill="#e9d5ff" text-anchor="middle" font-weight="700">  紫白色闪烁亮点！</text>
+<circle cx="168" cy="176" r="6" fill="#a855f7" stroke="#f3e8ff" stroke-width="1.5"/>
+<rect x="180" y="116" width="266" height="148" rx="8" fill="#fffbeb" stroke="#c25014" stroke-width="1.0" stroke-dasharray="4 3"/>
+<text x="313" y="136" font-size="10.4" fill="#c25014" text-anchor="middle" font-weight="700">客厅空气信道（强干扰环境）</text>
+<text x="313" y="156" font-size="9.8" fill="#64748b" text-anchor="middle">☀ 太阳红外光(0 Hz) + 灯光频闪(100 Hz)</text>
+<line x1="194.0" y1="168.0" x2="432.0" y2="168.0" stroke="#f59e0b" stroke-width="1.4" stroke-dasharray="2 3"/>
+<g class="ir-burst-anim"><rect x="188" y="190" width="52" height="38" rx="4" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.1"/><line x1="194" y1="196" x2="194" y2="222" stroke="#6d28d9" stroke-width="2.0"/><line x1="198" y1="196" x2="198" y2="222" stroke="#6d28d9" stroke-width="2.0"/><line x1="202" y1="196" x2="202" y2="222" stroke="#6d28d9" stroke-width="2.0"/><line x1="206" y1="196" x2="206" y2="222" stroke="#6d28d9" stroke-width="2.0"/><line x1="210" y1="196" x2="210" y2="222" stroke="#6d28d9" stroke-width="2.0"/><line x1="214" y1="196" x2="214" y2="222" stroke="#6d28d9" stroke-width="2.0"/><line x1="218" y1="196" x2="218" y2="222" stroke="#6d28d9" stroke-width="2.0"/><line x1="222" y1="196" x2="222" y2="222" stroke="#6d28d9" stroke-width="2.0"/><line x1="226" y1="196" x2="226" y2="222" stroke="#6d28d9" stroke-width="2.0"/><line x1="230" y1="196" x2="230" y2="222" stroke="#6d28d9" stroke-width="2.0"/><line x1="234" y1="196" x2="234" y2="222" stroke="#6d28d9" stroke-width="2.0"/></g>
+<text x="313" y="248" font-size="10.0" fill="#6d28d9" text-anchor="middle" font-weight="700">遥控暗号：每秒狂闪 38,000 次（周期 26.3 μs）</text>
+<rect x="458" y="116" width="268" height="148" rx="8" fill="#f8fafc" stroke="#1d6fa5" stroke-width="1.3"/>
+<text x="592" y="138" font-size="10.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">电视红外一体接收头（如 TSOP38238）</text>
+<rect x="470" y="150" width="74" height="56" rx="5" fill="#0f172a" stroke="#475569" stroke-width="1.0"/>
+<text x="507" y="173" font-size="9.5" fill="#f8fafc" text-anchor="middle" font-weight="700">黑环氧滤光窗</text>
+<text x="507" y="191" font-size="9.2" fill="#94a3b8" text-anchor="middle">挡可见光</text>
+<line x1="546.0" y1="178.0" x2="557.5" y2="178.0" stroke="#1d6fa5" stroke-width="1.6"/>
+<polygon points="564.0,178.0 556.0,182.0 556.0,174.0" fill="#1d6fa5"/>
+<rect x="566" y="150" width="82" height="56" rx="5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="607" y="173" font-size="9.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">38kHz 带通滤波</text>
+<text x="607" y="191" font-size="9.2" fill="#dc2626" text-anchor="middle" font-weight="700">阳光0Hz全拒之!</text>
+<line x1="650.0" y1="178.0" x2="661.5" y2="178.0" stroke="#0f766e" stroke-width="1.6"/>
+<polygon points="668.0,178.0 660.0,182.0 660.0,174.0" fill="#0f766e"/>
+<g class="out-wave-anim"><polyline points="670,192 680,192 680,164 696,164 696,192 714,192" fill="none" stroke="#0f766e" stroke-width="2.2"/></g>
+<text x="592" y="232" font-size="10.0" fill="#0f766e" text-anchor="middle" font-weight="700">检出 38 kHz 脉冲 → 输出干净 0/1 方波给主板解码！</text>
+<text x="592" y="252" font-size="9.6" fill="#1e293b" text-anchor="middle">（白墙漫反射的微弱 38 kHz 闪光也能经 AGC 放大识别）</text>
+<rect x="20" y="294" width="720" height="212" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="306.0" width="536" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="300.0" y="321.0" font-size="11.0" fill="#1d6fa5" text-anchor="middle" font-weight="600">B. 经典 NEC 红外协议波形解剖：靠“停顿长短”区分 0 和 1，自带反码防按错！</text>
+<rect x="34" y="340" width="692" height="96" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.0"/>
+<polyline points="42,408 52,408 52,366 144,366 144,408 192,408 192,366 214,366 214,408 236,408 236,366 258,366 258,408 310,408" fill="none" stroke="#0f172a" stroke-width="2.0"/>
+<text x="98" y="356" font-size="9.4" fill="#dc2626" text-anchor="middle" font-weight="700">9 ms 强脉冲</text>
+<text x="168" y="396" font-size="9.0" fill="#64748b" text-anchor="middle">4.5ms</text>
+<text x="118" y="426" font-size="9.6" fill="#dc2626" text-anchor="middle" font-weight="700">引导码 (AGC 唤醒)</text>
+<text x="214" y="356" font-size="9.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">0 (1.125ms)</text>
+<text x="273" y="356" font-size="9.2" fill="#6d28d9" text-anchor="middle" font-weight="700">1 (2.25ms)</text>
+<text x="250" y="426" font-size="9.6" fill="#0f172a" text-anchor="middle" font-weight="700">脉冲距离编码</text>
+<rect x="316" y="354" width="92" height="56" rx="5" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.2"/>
+<text x="362.0" y="376" font-size="9.6" fill="#0f766e" text-anchor="middle" font-weight="700">8位地址</text>
+<text x="362.0" y="396" font-size="9.0" fill="#1e293b" text-anchor="middle">如电视=0x04</text>
+<rect x="412" y="354" width="92" height="56" rx="5" fill="#f1f5f9" stroke="#475569" stroke-width="1.2"/>
+<text x="458.0" y="376" font-size="9.6" fill="#475569" text-anchor="middle" font-weight="700">8位地址反码</text>
+<text x="458.0" y="396" font-size="9.0" fill="#1e293b" text-anchor="middle">0xFB 防串机</text>
+<rect x="508" y="354" width="92" height="56" rx="5" fill="#fef9c3" stroke="#b45309" stroke-width="1.2"/>
+<text x="554.0" y="376" font-size="9.6" fill="#b45309" text-anchor="middle" font-weight="700">8位命令码</text>
+<text x="554.0" y="396" font-size="9.0" fill="#1e293b" text-anchor="middle">音量+=0x16</text>
+<rect x="604" y="354" width="106" height="56" rx="5" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2"/>
+<text x="657.0" y="376" font-size="9.6" fill="#dc2626" text-anchor="middle" font-weight="700">8位命令反码+尾脉冲</text>
+<text x="657.0" y="396" font-size="9.0" fill="#1e293b" text-anchor="middle">0xE9 校验零差错!</text>
+<text x="512" y="426" font-size="9.6" fill="#0f172a" text-anchor="middle" font-weight="700">标准 32 位一帧刚好 16 个 0 + 16 个 1 → 总时长恒定 68.06 毫秒！</text>
+<text x="34" y="462" font-size="10.3" fill="#1e293b" text-anchor="start">• 为什么长按“音量+”不会把电耗光？按住不放时，遥控器不再重发 32 位长码，而是每隔 110 ms 只发一串极短“重复码”（9ms+2.25ms）！</text>
+<text x="34" y="486" font-size="10.3" fill="#1d6fa5" text-anchor="start" font-weight="700">• 为什么电视遥控器按不着空调？不同品牌地址码不同，且空调根本不用这种 32 位短指令——请看下图的“全量快照”玄机！</text>
+</svg>
