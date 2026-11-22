@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="494" viewBox="0 0 760 494" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">荧光灯低压汞蒸气紫外激发与三基色荧光粉斯托克斯位移损耗图解</title>
+<desc id="desc">上栏展示荧光灯内加速电子碰撞汞原子发出253.7纳米（4.89电子伏）紫外光子，再激发管壁荧光粉发出可见光；下栏量化计算一光子换一光子过程中超50%能量因斯托克斯位移化为晶格热，并说明含汞淘汰原因。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="493" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">第二代电灯（荧光灯 / 节能灯）：不用烧烫金属了，为什么还丢掉一半能量？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">跳过热辐射改玩“原子弹球二级跳”：水银蒸汽先发 4.89 eV 紫外线，荧光粉换算成可见光时被迫扣掉一半“汇率手续费”！</text>
+<rect x="20" y="68" width="720" height="224" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="40" cy="90" r="10" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.2"/>
+<text x="40" y="94" font-size="11.5" fill="#0d9488" text-anchor="middle" font-weight="700">1</text>
+<text x="58" y="95" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700">荧光灯管内部两步接力：高速电子撞水银原子 → 253.7 nm 紫外光子 → 管壁三基色荧光粉发白光</text>
+<rect x="48" y="122" width="664" height="118" rx="26" fill="#f0f9ff" stroke="#1d6fa5" stroke-width="3.0"/>
+<rect x="64" y="127" width="632" height="10" rx="4" fill="#fef08a" stroke="#d97706" stroke-width="1"/>
+<rect x="64" y="225" width="632" height="10" rx="4" fill="#fef08a" stroke="#d97706" stroke-width="1"/>
+<text x="380" y="135" font-size="9.0" fill="#92400e" text-anchor="middle" font-weight="700">管壁内侧稀土三基色荧光粉涂层（拦住紫外线，转化为红+绿+蓝白光）</text>
+<circle cx="96" cy="181" r="16" fill="#fef1e8" stroke="#c25014" stroke-width="1.8"/>
+<text x="96" y="185" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700" class="mono">e⁻</text>
+<line x1="116.0" y1="181.0" x2="214.0" y2="181.0" stroke="#c25014" stroke-width="2.2" marker-end="url(#arr-orange)"/>
+<text x="165" y="171" font-size="9.4" fill="#c25014" text-anchor="middle" font-weight="700">镇流器高压加速</text>
+<circle cx="246" cy="181" r="24" fill="#f3e8ff" stroke="#6d28d9" stroke-width="2.2"/>
+<text x="246" y="178" font-size="9.8" fill="#6d28d9" text-anchor="middle" font-weight="700">Hg 汞原子</text>
+<text x="246" y="192" font-size="9.0" fill="#1e293b" text-anchor="middle">跃迁退激</text>
+<path d="M 274,172 Q 330,148 392,136" fill="none" stroke="#6d28d9" stroke-width="2.4" stroke-dasharray="5 3" marker-end="url(#arr-blue)"/>
+<text x="334" y="150" font-size="9.5" fill="#6d28d9" text-anchor="middle" font-weight="700">紫外光子 253.7 nm (4.89 eV)</text>
+<line x1="412.0" y1="122.0" x2="466.0" y2="78.0" stroke="#18794e" stroke-width="2.6" marker-end="url(#arr-green)"/>
+<text x="574" y="170" font-size="9.8" fill="#18794e" text-anchor="middle" font-weight="700">放出 1 颗可见光子 (~2.25 eV，60–100 lm/W)</text>
+<text x="574" y="190" font-size="9.6" fill="#dc2626" text-anchor="middle" font-weight="700">差额 ~2.63 eV (&gt;50%) 变成管壁晶格废热！</text>
+<text x="574" y="210" font-size="9.3" fill="#64748b" text-anchor="middle">（玻璃管壁还能挡住残余短波紫外线护眼）</text>
+<text x="40" y="268" font-size="9.9" fill="#1e293b" text-anchor="start">• 为什么比白炽灯省电 4–5 倍？因为它不再傻傻加热整块固体，而是精准敲击汞原子能级，60% 电能先高效变成了紫外光子！</text>
+<rect x="20" y="308" width="384" height="168" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="36.0" y="322.0" width="328" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="200.0" y="337.0" font-size="10.6" fill="#6d28d9" text-anchor="middle" font-weight="600">斯托克斯位移税（Stokes Shift）：一换一必亏半截！</text>
+<text x="36" y="362" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">• 荧光粉遵守“一光子换一光子”定律（量子产率接近 90%+）：</text>
+<text x="36" y="382" font-size="9.8" fill="#1e293b" text-anchor="start">  吞进 1 颗高能紫外光子（4.89 eV），吐出 1 颗绿黄可见光子（2.25 eV），</text>
+<text x="36" y="400" font-size="9.8" fill="#dc2626" text-anchor="start" font-weight="700">  单光子能量保留率 = 2.25 / 4.89 ≈ 46.1%，天生亏掉 54% 能量！</text>
+<text x="36" y="420" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="700">• 想突破这道天花板，唯一的出路就是：</text>
+<text x="36" y="438" font-size="9.9" fill="#1d6fa5" text-anchor="start" font-weight="700">  别绕道 4.89 eV 高能紫外线了——直接造出能发 2.75 eV 蓝光的半导体！</text>
+<rect x="420" y="308" width="320" height="168" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="436.0" y="322.0" width="196" height="22" rx="11.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="534.0" y="337.0" font-size="10.8" fill="#dc2626" text-anchor="middle" font-weight="600">荧光灯退场的两大软肋</text>
+<text x="436" y="362" font-size="10.0" fill="#dc2626" text-anchor="start" font-weight="700">① 剧毒水银（汞）环保痛点：</text>
+<text x="436" y="380" font-size="9.8" fill="#1e293b" text-anchor="start">   每支节能灯管含数毫克液态/气态汞，一旦摔碎或随意填埋</text>
+<text x="436" y="398" font-size="9.8" fill="#1e293b" text-anchor="start">   会污染土壤水源（《关于汞的水俣公约》已推动全球逐步淘汰）。</text>
+<text x="436" y="419" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">② 怕冻、怕频繁开关与老式频闪：</text>
+<text x="436" y="437" font-size="9.8" fill="#1e293b" text-anchor="start">   天冷汞蒸气压低半天亮不起来；阴极电子粉每次点火溅射损耗。</text>
+</svg>

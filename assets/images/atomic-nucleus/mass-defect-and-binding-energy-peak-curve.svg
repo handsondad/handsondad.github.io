@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="542" viewBox="0 0 760 542" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">氦4原子核质量亏损天平账本与实算核子平均结合能B/A铁镍峰顶曲线图解</title>
+<desc id="desc">左栏对比2质子加2中子散装质量与氦4实测核重之差（28.30兆电子伏结合能），并说明核子自身99%质量源于胶子场；右栏按真实实验数据绘制A=2至238的比结合能曲线，标明氦4幻数尖峰、铁56与镍62最高峰以及轻核聚变与重核裂变双向放能方向。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="541" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">二、1 + 1 为什么小于 2？爱因斯坦质量亏损账本与统领宇宙的“比结合能铁峰”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：氦-4 消失的 0.75% 质量化作 28.3 MeV 枷锁 · 右：实算 B/A 曲线（轻核聚变与重核裂变同奔铁峰）</text>
+<rect x="20" y="66" width="336" height="462" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="78.0" width="312" height="24" rx="12.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="188.0" y="94.3" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="600">A · 核天平奇案：拼成氦核后体重凭空少了！</text>
+<rect x="32" y="114" width="312" height="198" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2"/>
+<text x="44" y="136" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700">单独称重 4 颗散装核子：</text>
+<text x="44" y="158" font-size="11.5" fill="#1e293b" text-anchor="start">  2 质子 (2×1.00728 u) + 2 中子 (2×1.00866 u)</text>
+<text x="44" y="180" font-size="11.6" fill="#1d6fa5" text-anchor="start" font-weight="700">  散装总重 = 4.03188 u</text>
+<line x1="44.0" y1="192.0" x2="332.0" y2="192.0" stroke="#e2e8f0" stroke-width="1.1" stroke-dasharray="4 3"/>
+<text x="44" y="212" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700">吸合锁死成 1 颗 ⁴He 原子核（α 粒子）：</text>
+<text x="44" y="234" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">  实测核重 = 4.00151 u（轻了 Δm = 0.03038 u！）</text>
+<text x="44" y="260" font-size="11.5" fill="#1e293b" text-anchor="start">• 消失的质量按 E_b = Δm c² 化作【结合能】放出：</text>
+<text x="44" y="282" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">  E_b = 28.30 MeV（平均每颗核子锁死 7.07 MeV，</text>
+<text x="44" y="302" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">  是氢原子外层电子 13.6 eV 束缚能的 52 万倍！）</text>
+<rect x="32" y="324" width="312" height="190" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="1.2"/>
+<text x="44" y="346" font-size="11.5" fill="#b45309" text-anchor="start" font-weight="700">再往深挖一层：质子自己 938 MeV 体重哪来的？</text>
+<text x="44" y="370" font-size="11.5" fill="#1e293b" text-anchor="start">• 质子(uud)与中子(udd)肚里各有 3 颗夸克，但希格斯场</text>
+<text x="44" y="392" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">  给这 3 颗轻夸克的静质量加起来仅 ~9 MeV（占 1%）！</text>
+<text x="44" y="416" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">• 剩下 99% 的体重，全是强相互作用【胶子场能量】与</text>
+<text x="44" y="438" font-size="11.5" fill="#1e293b" text-anchor="start">  夸克近光速狂奔的动能（m = E/c² 的终极铁证）！</text>
+<text x="44" y="462" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">• 注意方向别弄反：拼成越稳的核，放出的能量越多，</text>
+<text x="44" y="484" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">  留下的原子核反而【越轻】（负势能深坑越深）！</text>
+<rect x="368" y="66" width="372" height="462" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="380.0" y="78.0" width="348" height="24" rx="12.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="554.0" y="94.3" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">B · 物理学最重要的一张图：比结合能曲线 B/A</text>
+<line x1="414.0" y1="342.0" x2="724.0" y2="342.0" stroke="#475569" stroke-width="1.4"/>
+<line x1="414.0" y1="118.0" x2="414.0" y2="342.0" stroke="#475569" stroke-width="1.4"/>
+<line x1="414.0" y1="295.3" x2="724.0" y2="295.3" stroke="#e2e8f0" stroke-width="1.0" stroke-dasharray="3 3"/>
+<text x="406" y="299.3" font-size="11.5" fill="#64748b" text-anchor="end">2</text>
+<line x1="414.0" y1="248.7" x2="724.0" y2="248.7" stroke="#e2e8f0" stroke-width="1.0" stroke-dasharray="3 3"/>
+<text x="406" y="252.7" font-size="11.5" fill="#64748b" text-anchor="end">4</text>
+<line x1="414.0" y1="202.0" x2="724.0" y2="202.0" stroke="#e2e8f0" stroke-width="1.0" stroke-dasharray="3 3"/>
+<text x="406" y="206.0" font-size="11.5" fill="#64748b" text-anchor="end">6</text>
+<line x1="414.0" y1="155.3" x2="724.0" y2="155.3" stroke="#e2e8f0" stroke-width="1.0" stroke-dasharray="3 3"/>
+<text x="406" y="159.3" font-size="11.5" fill="#64748b" text-anchor="end">8</text>
+<path d="M 416.5,316.1 L 417.8,276.0 L 419.1,177.0 L 421.6,217.6 L 422.9,211.1 L 425.4,191.3 L 429.2,162.8 L 431.7,167.5 L 434.2,155.8 L 444.4,149.3 L 464.6,142.5 L 484.9,136.9 L 492.4,136.8 L 526.6,138.8 L 565.8,143.7 L 591.1,147.2 L 641.8,153.7 L 677.2,158.4 L 711.3,164.9 L 715.1,165.4" fill="none" stroke="#1d6fa5" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="416.5" cy="316.1" r="4.3" fill="#0f766e"/>
+<text x="424.5" y="318.1" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">²H(1.11)</text>
+<circle cx="419.1" cy="177.0" r="4.3" fill="#dc2626"/>
+<text x="433.1" y="191.0" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">⁴He(7.07 尖峰!)</text>
+<circle cx="484.9" cy="136.9" r="4.3" fill="#dc2626"/>
+<text x="480.9" y="126.9" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">⁵⁶Fe/⁶²Ni 铁镍峰顶 (8.79 MeV)</text>
+<circle cx="711.3" cy="164.9" r="4.3" fill="#6d28d9"/>
+<text x="705.3" y="180.9" font-size="11.5" fill="#6d28d9" text-anchor="end" font-weight="700">²³⁵U(7.59)</text>
+<text x="458" y="286" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">↗ 轻核聚变</text>
+<text x="646" y="208" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">↖ 重核裂变</text>
+<text x="568" y="362" font-size="11.5" fill="#64748b" text-anchor="middle">质量数 A（核子总数 2 → 238）· 纵轴：MeV/核子</text>
+<rect x="380" y="376" width="348" height="138" rx="8" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.2"/>
+<text x="392" y="398" font-size="11.6" fill="#0f766e" text-anchor="start" font-weight="700">读懂这一条山峰，就读懂了宇宙全部核能：</text>
+<text x="392" y="422" font-size="11.5" fill="#1e293b" text-anchor="start">• 左侧陡坡（A &lt; 56）：小核表面占比大、邻居没凑齐，</text>
+<text x="392" y="444" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">  融合成大核往铁峰爬（聚变），每核子狂放数 MeV！</text>
+<text x="392" y="466" font-size="11.5" fill="#1e293b" text-anchor="start">• 右侧缓坡（A &gt; 62）：重核质子太多，库仑斥力拖后腿，</text>
+<text x="392" y="488" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">  劈成两半往铁峰爬（裂变），每核子也净赚 ~0.9 MeV！</text>
+<text x="392" y="506" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">• 铁-56 / 镍-62 坐镇最稳死胡同：聚它裂它全得倒贴能量！</text>
+</svg>

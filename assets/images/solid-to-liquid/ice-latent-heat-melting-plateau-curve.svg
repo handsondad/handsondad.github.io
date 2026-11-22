@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="542" viewBox="0 0 760 542" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">1千克冰从零下20度加热到100度的热量温度实算曲线与0度熔化潜热平台动画</title>
+<desc id="desc">上栏按真实比热与熔化焓精确绘制1千克冰升温曲线，单次动画描出消耗333.6千焦热量的0摄氏度固液共存恒温长平台；下栏解析温度只反映平均动能而潜热全部转化为扯断约15%氢键的分子势能，并对比冰块镇饮与冰水定标应用。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="541" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">三、猛火一直烧，为什么冰水混合物死卡在 0 °C 不升温？334 kJ/kg 熔化潜热账本</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">上：1 kg 冰（-20 °C → 100 °C）实算升温曲线与 0 °C 潜热长台阶动画 · 下：动能温度计 vs 势能拆键费</text>
+<style>
+  @keyframes trace-heat-curve {
+    0% { stroke-dashoffset: 680; }
+    100% { stroke-dashoffset: 0; }
+  }
+  .heat-trace-anim {
+    stroke-dasharray: 680;
+    stroke-dashoffset: 0;
+    animation: trace-heat-curve 4.0s ease-in-out 1 both;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .heat-trace-anim {
+      animation: none !important;
+      stroke-dashoffset: 0 !important;
+    }
+  }
+</style>
+<rect x="20" y="66" width="720" height="250" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="78.0" width="696" height="24" rx="12.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="380.0" y="94.3" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">A · 实算 1 kg 冰加热全程：融化 0 °C 冰吞掉的 334 kJ，竟够把 0 °C 液态水直接烧到近 80 °C 烫茶！</text>
+<line x1="76.0" y1="274.0" x2="712.0" y2="274.0" stroke="#475569" stroke-width="1.4"/>
+<line x1="76.0" y1="116.0" x2="76.0" y2="274.0" stroke="#475569" stroke-width="1.4"/>
+<line x1="76.0" y1="243.8" x2="712.0" y2="243.8" stroke="#e2e8f0" stroke-width="1.2" stroke-dasharray="4 4"/>
+<line x1="76.0" y1="127.6" x2="712.0" y2="127.6" stroke="#e2e8f0" stroke-width="1.2" stroke-dasharray="4 4"/>
+<text x="68" y="271.0" font-size="11.5" fill="#1d6fa5" text-anchor="end" font-weight="700">-20°C</text>
+<text x="68" y="247.8" font-size="11.5" fill="#dc2626" text-anchor="end" font-weight="700">0°C</text>
+<text x="68" y="131.6" font-size="11.5" fill="#c25014" text-anchor="end" font-weight="700">100°C</text>
+<rect x="114.42048780487805" y="193.79411764705884" width="246.74783151559905" height="62" rx="6" fill="#fef2f2" stroke="#dc2626" stroke-width="1.1" stroke-dasharray="4 3"/>
+<path d="M 76.0,267.0 L 108.4,243.8 L 367.2,243.8 L 691.7,127.6" fill="none" stroke="#fca5a5" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 3"/>
+<path d="M 76.0,267.0 L 108.4,243.8 L 367.2,243.8 L 691.7,127.6" fill="none" stroke="#dc2626" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" class="heat-trace-anim"/>
+<circle cx="76.0" cy="267.0" r="4.5" fill="#1d6fa5"/>
+<circle cx="108.4" cy="243.8" r="4.5" fill="#dc2626"/>
+<circle cx="367.2" cy="243.8" r="4.5" fill="#dc2626"/>
+<circle cx="691.7" cy="127.6" r="4.5" fill="#c25014"/>
+<text x="237.8" y="213.8" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">② 0 °C 潜热长平台：ΔH_fus = 333.6 kJ/kg</text>
+<text x="237.8" y="233.8" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">冰渐少水渐多，温度死锁 0.0 °C！</text>
+<line x1="92.0" y1="176.0" x2="92.0" y2="250.0" stroke="#1d6fa5" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="84" y="170" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">① 冰升温 (+42 kJ)</text>
+<text x="502" y="168" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">③ 液态水升温 (+418 kJ)</text>
+<text x="380" y="300" font-size="11.5" fill="#64748b" text-anchor="middle">横轴：注入热量 Q（0 → 794 kJ，随后还将迎来 2257 kJ/kg 更长的 100 °C 汽化平台）</text>
+<rect x="20" y="330" width="354" height="198" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="342.0" width="330" height="24" rx="12.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="197.0" y="358.3" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="600">B · 能量去哪了？动能一分没涨，全交了“赎身费”！</text>
+<text x="34" y="382" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">• 温度计只测分子热运动的【平均动能 ⟨E_k⟩】；</text>
+<text x="34" y="406" font-size="11.5" fill="#1e293b" text-anchor="start">• 0 °C 台阶上灌进的 334 kJ/kg 热量一分没给速度，</text>
+<text x="34" y="428" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">  而是 100% 转存进了【分子间势能 ΔU_pot】！</text>
+<text x="34" y="454" font-size="11.5" fill="#1e293b" text-anchor="start">• 拆键账：气化需扯断 100% 氢键（40.7 kJ/mol），</text>
+<text x="34" y="476" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">  而冰化水仅扯断约 13%–15% 刚性氢键（6.01 kJ/mol），</text>
+<text x="34" y="498" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">  刚够让水分子挣脱格点、滑进贴身流动囚笼！</text>
+<rect x="388" y="330" width="352" height="198" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="400.0" y="342.0" width="328" height="24" rx="12.0" fill="#f0fdfa" stroke="#0f766e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="564.0" y="358.3" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="600">C · 生活里的“潜热恒温锚”：冰镇饮料与化雪寒意</text>
+<text x="402" y="382" font-size="11.6" fill="#1d6fa5" text-anchor="start" font-weight="700">① 为什么冰块比 0 °C 冰水镇饮料猛得多？</text>
+<text x="402" y="404" font-size="11.5" fill="#1e293b" text-anchor="start">   0 °C 水升到 10 °C 只吸 42 kJ/kg；而 0 °C 冰光是化成</text>
+<text x="402" y="426" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">   0 °C 水就狂吸 334 kJ/kg——制冷本领足足高出 8 倍！</text>
+<text x="402" y="454" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">② 实验室零成本绝对温标：只要保温杯冰水共存，无须电控</text>
+<text x="402" y="476" font-size="11.5" fill="#1e293b" text-anchor="start">   自动死锁 0.00 °C；融雪天持续吸热熔化叠加湿冷导热，</text>
+<text x="402" y="498" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">   体感才格外刺骨（“下雪凝华放热、化雪熔化吸热”）。</text>
+</svg>

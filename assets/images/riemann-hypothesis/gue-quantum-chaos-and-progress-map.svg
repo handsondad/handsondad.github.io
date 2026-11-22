@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="540" viewBox="0 0 760 540" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">黎曼零点蒙哥马利-戴森GUE量子能级排斥曲线与1859至2026三路攻坚成绩单</title>
+<desc id="desc">左图绘出零点间距对关联函数1-(sin πu/πu)²在u→0时归零的能级排斥现象，对比独立泊松过程并阐明希尔伯特-波利亚自伴算符构想；右图分三路梳理临界线零点占比定理(&gt;5/12)、Rodgers-Tao刀锋常数Λ≥0与2024年Guth-Maynard零点密度破冰，以及Platt-Trudgian超12.36万亿零点严密核验与RSA密码学辟谣。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="539" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">五、当素数撞上量子物理与 167 年战报：能级排斥、刀锋常数与最新破冰</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">1972 普林斯顿下午茶揭开量子随机矩阵之谜；三路战线严格区分“超算核验”与“数学定理”</text>
+<rect x="20" y="64" width="346" height="462" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="76.0" width="318" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="193.0" y="91.0" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="600">A · 蒙哥马利-戴森对关联：零点为何互相排斥？</text>
+<line x1="68" y1="354.0" x2="348" y2="354.0" stroke="#e2e8f0" stroke-width="0.9"/>
+<text x="61" y="358.0" font-size="11.5" fill="#64748b" text-anchor="end" class="mono">0.0</text>
+<line x1="68" y1="269.6" x2="348" y2="269.6" stroke="#e2e8f0" stroke-width="0.9"/>
+<text x="61" y="273.6" font-size="11.5" fill="#64748b" text-anchor="end" class="mono">0.5</text>
+<line x1="68" y1="185.1" x2="348" y2="185.1" stroke="#e2e8f0" stroke-width="0.9"/>
+<text x="61" y="189.1" font-size="11.5" fill="#64748b" text-anchor="end" class="mono">1.0</text>
+<line x1="68.0" y1="126" x2="68.0" y2="354" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="68.0" y="371" font-size="11.5" fill="#64748b" text-anchor="middle" class="mono">0.0</text>
+<line x1="161.3" y1="126" x2="161.3" y2="354" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="161.3" y="371" font-size="11.5" fill="#64748b" text-anchor="middle" class="mono">1.0</text>
+<line x1="254.7" y1="126" x2="254.7" y2="354" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="254.7" y="371" font-size="11.5" fill="#64748b" text-anchor="middle" class="mono">2.0</text>
+<line x1="348.0" y1="126" x2="348.0" y2="354" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="348.0" y="371" font-size="11.5" fill="#64748b" text-anchor="middle" class="mono">3.0</text>
+<line x1="68" y1="126" x2="68" y2="354" stroke="#0f172a" stroke-width="1.3"/>
+<line x1="68" y1="354" x2="348" y2="354" stroke="#0f172a" stroke-width="1.3"/>
+<text x="208.0" y="390" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">归一化零点间距 u（平均间距 = 1）</text>
+<line x1="68" y1="185.1" x2="348" y2="185.1" stroke="#475569" stroke-width="1.7" stroke-dasharray="5 3"/>
+<text x="222.0" y="158.1" font-size="11.5" fill="#475569" text-anchor="middle" font-weight="600">独立撒点 (泊松过程 R₂ = 1)</text>
+<polyline points="68.0,354.0 69.9,353.8 71.7,353.1 73.6,352.0 75.5,350.5 77.3,348.5 79.2,346.1 81.1,343.4 82.9,340.2 84.8,336.7 86.7,332.9 88.5,328.8 90.4,324.3 92.3,319.6 94.1,314.7 96.0,309.6 97.9,304.2 99.7,298.8 101.6,293.2 103.5,287.6 105.3,281.8 107.2,276.1 109.1,270.4 110.9,264.7 112.8,259.1 114.7,253.6 116.5,248.1 118.4,242.9 120.3,237.8 122.1,232.8 124.0,228.1 125.9,223.6 127.7,219.3 129.6,215.3 131.5,211.5 133.3,208.0 135.2,204.7 137.1,201.7 138.9,199.0 140.8,196.5 142.7,194.3 144.5,192.4 146.4,190.7 148.3,189.3 150.1,188.1 152.0,187.1 153.9,186.4 155.7,185.8 157.6,185.4 159.5,185.2 161.3,185.1 163.2,185.2 165.1,185.4 166.9,185.6 168.8,186.0 170.7,186.5 172.5,187.0 174.4,187.5 176.3,188.1 178.1,188.6 180.0,189.2 181.9,189.8 183.7,190.3 185.6,190.8 187.5,191.3 189.3,191.7 191.2,192.1 193.1,192.4 194.9,192.7 196.8,192.9 198.7,193.0 200.5,193.1 202.4,193.1 204.3,193.0 206.1,192.9 208.0,192.7 209.9,192.5 211.7,192.2 213.6,191.9 215.5,191.5 217.3,191.2 219.2,190.7 221.1,190.3 222.9,189.9 224.8,189.4 226.7,189.0 228.5,188.5 230.4,188.1 232.3,187.7 234.1,187.3 236.0,186.9 237.9,186.6 239.7,186.3 241.6,186.0 243.5,185.8 245.3,185.6 247.2,185.4 249.1,185.3 250.9,185.2 252.8,185.1 254.7,185.1 256.5,185.1 258.4,185.2 260.3,185.3 262.1,185.4 264.0,185.5 265.9,185.6 267.7,185.8 269.6,186.0 271.5,186.1 273.3,186.3 275.2,186.5 277.1,186.7 278.9,186.9 280.8,187.1 282.7,187.2 284.5,187.4 286.4,187.5 288.3,187.6 290.1,187.7 292.0,187.8 293.9,187.9 295.7,187.9 297.6,187.9 299.5,187.9 301.3,187.8 303.2,187.8 305.1,187.7 306.9,187.6 308.8,187.5 310.7,187.4 312.5,187.3 314.4,187.1 316.3,187.0 318.1,186.8 320.0,186.6 321.9,186.5 323.7,186.3 325.6,186.2 327.5,186.0 329.3,185.9 331.2,185.7 333.1,185.6 334.9,185.5 336.8,185.4 338.7,185.3 340.5,185.2 342.4,185.2 344.3,185.1 346.1,185.1 348.0,185.1" fill="none" stroke="#6d28d9" stroke-width="2.5"/>
+<circle cx="82.0" cy="341.9" r="3.4" fill="#c25014" stroke="#ffffff" stroke-width="1"/>
+<circle cx="100.7" cy="296.0" r="3.4" fill="#c25014" stroke="#ffffff" stroke-width="1"/>
+<circle cx="119.3" cy="240.3" r="3.4" fill="#c25014" stroke="#ffffff" stroke-width="1"/>
+<circle cx="142.7" cy="194.3" r="3.4" fill="#c25014" stroke="#ffffff" stroke-width="1"/>
+<circle cx="166.0" cy="185.5" r="3.4" fill="#c25014" stroke="#ffffff" stroke-width="1"/>
+<circle cx="194.0" cy="192.6" r="3.4" fill="#c25014" stroke="#ffffff" stroke-width="1"/>
+<circle cx="222.0" cy="190.1" r="3.4" fill="#c25014" stroke="#ffffff" stroke-width="1"/>
+<circle cx="250.0" cy="185.2" r="3.4" fill="#c25014" stroke="#ffffff" stroke-width="1"/>
+<circle cx="282.7" cy="187.2" r="3.4" fill="#c25014" stroke="#ffffff" stroke-width="1"/>
+<circle cx="320.0" cy="186.6" r="3.4" fill="#c25014" stroke="#ffffff" stroke-width="1"/>
+<circle cx="68.0" cy="354.0" r="5.0" fill="#b91c1c" stroke="#ffffff" stroke-width="1.4"/>
+<text x="94.1" y="313.5" font-size="11.5" fill="#b91c1c" text-anchor="start" font-weight="700" class="halo">u→0 概率归零：零点像重原子核</text>
+<text x="94.1" y="338.8" font-size="11.5" fill="#b91c1c" text-anchor="start" class="halo">量子能级一样互相排斥，绝不扎堆！</text>
+<text x="247.2" y="225.6" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700" class="mono">1 − (sin πu / πu)²</text>
+<text x="247.2" y="252.7" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="600">橙点：Odlyzko 第 10²⁰ 零点实测</text>
+<rect x="34" y="404" width="318" height="106" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.1"/>
+<text x="46" y="425" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">希尔伯特-波利亚梦之桥（量子算符路线）：</text>
+<text x="46" y="446" font-size="11.5" fill="#1e293b" text-anchor="start">GUE 正是量子力学厄米随机矩阵 Ĥ 的本征值统计！</text>
+<text x="46" y="466" font-size="11.5" fill="#1e293b" text-anchor="start">若能构造自伴算符 Ĥ 使本征值恰等于 i(1/2 − ρ)，</text>
+<text x="46" y="486" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">因自伴算符本征值必为实数，Re(ρ)=1/2 当场得证！</text>
+<rect x="378" y="64" width="362" height="462" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="392.0" y="76.0" width="334" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="559.0" y="91.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">B · 1859–2026 黎曼猜想三路攻坚成绩单</text>
+<rect x="392" y="110" width="334" height="122" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.1"/>
+<text x="404" y="131" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">战线① 严格定理：至少多少比例零点必在 σ=1/2 上？</text>
+<rect x="404" y="142" width="308" height="18" rx="9" fill="#e2e8f0"/>
+<rect x="404" y="142" width="128.3" height="18" rx="9" fill="#18794e"/>
+<text x="468.2" y="155" font-size="11.5" fill="#ffffff" text-anchor="middle" font-weight="700">&gt; 41.7%</text>
+<text x="704" y="155" font-size="11.5" fill="#475569" text-anchor="end" font-weight="600">目标 100%</text>
+<text x="404" y="181" font-size="11.5" fill="#1e293b" text-anchor="start">• 1914 哈代：无穷多个 → 1942 塞尔伯格：正比例 (&gt;0%)</text>
+<text x="404" y="200" font-size="11.5" fill="#1e293b" text-anchor="start">• 1974 莱文森：&gt;1/3 → 1989 康瑞：&gt;2/5 (40%)</text>
+<text x="404" y="219" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">• 2020 Pratt 等四人合作定理：&gt; 5/12 (约 41.7%)！</text>
+<rect x="392" y="244" width="334" height="134" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="404" y="265" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">战线② 刀锋常数与 2024 零点密度 52 年大破冰</text>
+<text x="404" y="286" font-size="11.5" fill="#1e293b" text-anchor="start">• 德布鲁因-纽曼常数 Λ（黎曼猜想等价于 Λ ≤ 0）：</text>
+<text x="404" y="305" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">  2020 Rodgers &amp; Tao 证 Λ≥0；Polymath 压至 Λ≤0.2</text>
+<text x="404" y="324" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">  → 若猜想为真，它也只是“毫厘不差悬在 Λ=0 刀锋上”！</text>
+<text x="404" y="345" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">• 2024 Guth &amp; Maynard 打破 1972 年以来 52 年纪录：</text>
+<text x="404" y="364" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">  将脱轨零点密度上界压低至 T^(30(1−σ)/13 + o(1))！</text>
+<rect x="392" y="390" width="334" height="120" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="1.1"/>
+<text x="404" y="411" font-size="11.5" fill="#b45309" text-anchor="start" font-weight="700">战线③ 超算严密核验纪录 &amp; “破解银行密码”辟谣</text>
+<text x="404" y="432" font-size="11.5" fill="#1e293b" text-anchor="start">• 2021 Platt &amp; Trudgian 用区间算术严格证明：高度</text>
+<text x="404" y="451" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">  3×10¹² 内前 12,363,153,437,138 个零点 100% 在线上！</text>
+<text x="404" y="472" font-size="11.5" fill="#b91c1c" text-anchor="start" font-weight="700">• 辟谣：证出黎曼猜想绝不会让 RSA 密码瞬间崩溃！</text>
+<text x="404" y="492" font-size="11.5" fill="#1e293b" text-anchor="start">  RSA 安全靠大整数分解难；广义黎曼猜想反而是造锁帮手。</text>
+</svg>

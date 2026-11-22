@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="512" viewBox="0 0 760 512" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">空间磁场能驱动铁钉加速单次动画与保守势能谷底粉碎永动机图解</title>
+<desc id="desc">上栏单次动画展示高磁导率铁钉被磁铁吸近时收拢外部发散磁感线，空间总磁场能U_B下降转化为铁钉动能与撞击声热；下栏绘制磁势能曲线U(x)，说明吸合后系统落入势能谷底，掰开铁钉需人手做功把能量充回磁场。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes nailSnap {
+          0%, 15% { transform: translateX(0px); }
+          55%, 100% { transform: translateX(-118px); }
+        }
+        @keyframes tankDrop {
+          0%, 15% { transform: scaleY(1); }
+          55%, 100% { transform: scaleY(0.56); }
+        }
+        .nail-mover { animation: nailSnap 3.6s cubic-bezier(0.32, 0, 0.15, 1) 1 forwards; }
+        .ub-bar { transform-box: fill-box; transform-origin: bottom; animation: tankDrop 3.6s cubic-bezier(0.32, 0, 0.15, 1) 1 forwards; }
+        @media (prefers-reduced-motion: reduce) {
+          .nail-mover { animation: none !important; transform: translateX(-118px) !important; }
+          .ub-bar { animation: none !important; transform: scaleY(0.56) !important; }
+        }
+</style>
+<rect x="0.5" y="0.5" width="759" height="511" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">磁铁隔空“啪”地把铁钉吸飞过来，这股动能又是从哪儿掏出来的？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">答案藏在磁铁周围看不见的空间里：外部磁场本身就是一座高压储能水库（u_B = B² / 2μ₀）！</text>
+<rect x="20" y="68" width="720" height="224" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="40" cy="90" r="10" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="40" y="94" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="58" y="95" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">第一幕（放手吸合动画）：高磁导率铁钉吸拢磁感线，空间总磁场能 U_B 下降买单！</text>
+<rect x="62" y="148" width="84" height="54" rx="5" fill="#2563eb"/>
+<rect x="146" y="148" width="84" height="54" rx="5" fill="#dc2626"/>
+<text x="104" y="181" font-size="15" fill="#ffffff" text-anchor="middle" font-weight="700">S</text>
+<text x="188" y="181" font-size="15" fill="#ffffff" text-anchor="middle" font-weight="700">N</text>
+<path d="M 230,158 C 296,112 110,104 72,154" fill="none" stroke="#93c5fd" stroke-width="1.6" stroke-dasharray="5 3"/>
+<path d="M 230,192 C 296,238 110,246 72,196" fill="none" stroke="#93c5fd" stroke-width="1.6" stroke-dasharray="5 3"/>
+<rect x="356" y="168" width="66" height="14" rx="3" fill="none" stroke="#64748b" stroke-width="1.3" stroke-dasharray="4 3"/>
+<text x="389" y="161" font-size="9.5" fill="#64748b" text-anchor="middle">铁钉初位置</text>
+<line x1="348.0" y1="175.0" x2="252.0" y2="175.0" stroke="#c25014" stroke-width="2.0" stroke-dasharray="4 3" marker-end="url(#arr-orange)"/>
+<text x="304" y="206" font-size="9.8" fill="#c25014" text-anchor="middle" font-weight="700">磁吸力做正功 W &gt; 0</text>
+<g class="nail-mover">
+<rect x="356" y="167" width="62" height="16" rx="3" fill="#475569" stroke="#0f172a" stroke-width="1.5"/>
+<polygon points="356,163 356,187 348,175" fill="#0f172a"/>
+<text x="387" y="179" font-size="9.2" fill="#ffffff" text-anchor="middle" font-weight="700">Fe 铁钉</text>
+</g>
+<rect x="444" y="114" width="280" height="162" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="458" y="134" font-size="9.8" fill="#1d6fa5" text-anchor="start" font-weight="700">空间磁场能水库（1.2 T 处高达 573 kJ/m³）</text>
+<rect x="464" y="150" width="42" height="92" rx="4" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.3" stroke-dasharray="3 2"/>
+<rect class="ub-bar" x="464" y="150" width="42" height="92" rx="4" fill="#1d6fa5"/>
+<text x="485" y="258" font-size="9.4" fill="#1d6fa5" text-anchor="middle" font-weight="700">磁场能 U_B</text>
+<rect x="528" y="190" width="42" height="52" rx="4" fill="#c25014"/>
+<text x="549" y="258" font-size="9.4" fill="#c25014" text-anchor="middle" font-weight="700">动能→声+热</text>
+<text x="582" y="174" font-size="9.4" fill="#1e293b" text-anchor="start">• 铁磁导率 μ_r 高达上千倍，</text>
+<text x="582" y="191" font-size="9.4" fill="#1e293b" text-anchor="start">  吸近后收拢外部散乱磁感线，</text>
+<text x="582" y="208" font-size="9.4" fill="#1e293b" text-anchor="start">  空间总磁场能立降 -ΔU_B，</text>
+<text x="582" y="225" font-size="9.4" fill="#0f172a" text-anchor="start" font-weight="700">  精准转化为铁钉加速动能！</text>
+<rect x="20" y="308" width="720" height="186" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="40" cy="330" r="10" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2"/>
+<text x="40" y="334" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">2</text>
+<text x="58" y="335" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">第二幕（永动机死刑判决）：吸住一次就躺进势能谷底！想再来一次，你的手必须替磁场“充值”</text>
+<line x1="68.0" y1="462.0" x2="336.0" y2="462.0" stroke="#0f172a" stroke-width="1.4"/>
+<line x1="68.0" y1="462.0" x2="68.0" y2="362.0" stroke="#0f172a" stroke-width="1.4"/>
+<polyline points="86.0,448.0 92.0,447.7 98.1,446.8 104.2,445.2 110.2,443.2 116.2,440.8 122.3,438.0 128.3,435.1 134.4,431.9 140.4,428.7 146.5,425.5 152.6,422.3 158.6,419.2 164.7,416.2 170.7,413.4 176.8,410.8 182.8,408.2 188.8,405.9 194.9,403.7 200.9,401.6 207.0,399.7 213.1,397.9 219.1,396.3 225.1,394.8 231.2,393.4 237.2,392.0 243.3,390.8 249.4,389.7 255.4,388.6 261.4,387.7 267.5,386.8 273.6,385.9 279.6,385.1 285.6,384.4 291.7,383.7 297.8,383.1 303.8,382.5 309.9,381.9 315.9,381.4 321.9,380.9 328.0,380.4" fill="none" stroke="#6d28d9" stroke-width="2.6"/>
+<circle cx="86.0" cy="448.0" r="5.5" fill="#dc2626"/>
+<text x="96.0" y="456.0" font-size="9.6" fill="#dc2626" text-anchor="start" font-weight="700">贴死在 N 极谷底（U_min，再也动不了！）</text>
+<text x="330.0" y="378.0" font-size="9.6" fill="#6d28d9" text-anchor="end" font-weight="700">远处高势能 U_0</text>
+<text x="218.0" y="480.0" font-size="9.5" fill="#64748b" text-anchor="middle">铁钉距磁极距离 x →</text>
+<rect x="356" y="354" width="368" height="124" rx="7" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
+<text x="370" y="375" font-size="10.0" fill="#d97706" text-anchor="start" font-weight="700">🔄 保守场铁律（∮ F_mag · ds = 0，跟弹簧和石头落地一模一样）：</text>
+<text x="370" y="395" font-size="9.6" fill="#1e293b" text-anchor="start">• 石头落地砸出响声是引力势能变热能；掉到底还能自己再砸吗？不能！</text>
+<text x="370" y="414" font-size="9.6" fill="#1e293b" text-anchor="start">• 磁铁吸铁钉是一锤子买卖：贴上磁极后，系统跌入最低势能谷底；</text>
+<text x="370" y="433" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="700">• 想吸第二次，必须你出力气硬把铁钉掰开——你手做的机械功</text>
+<text x="370" y="452" font-size="9.6" fill="#dc2626" text-anchor="start" font-weight="700">  W_手 ≥ +ΔU_B 重新充回空间磁场！网上“磁铁永动机”全藏了电池！</text>
+</svg>

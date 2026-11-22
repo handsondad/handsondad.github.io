@@ -19984,3 +19984,9644 @@ def _register_milk_powder_manufacturing():
 
 
 _register_milk_powder_manufacturing()
+
+
+# ---------------------------------------------------------------------------
+# Topic: Red & Yellow Autumn Leaf Principles (autumn-leaf-colors)
+# ---------------------------------------------------------------------------
+def _register_autumn_leaf_colors():
+    import math
+    from .core import (
+        BLUE,
+        BLUE_SOFT,
+        BODY,
+        BORDER,
+        GREEN,
+        GREEN_SOFT,
+        HAIRLINE,
+        INK,
+        MUTED,
+        ORANGE,
+        ORANGE_SOFT,
+        PURPLE,
+        PURPLE_SOFT,
+        SLATE,
+        SLATE_SOFT,
+        card,
+        figure,
+        header,
+        pill,
+        register,
+        step_badge,
+        txt,
+        write_svg,
+    )
+
+    SUBDIR = "autumn-leaf-colors"
+    RED = "#dc2626"
+    RED_SOFT = "#fef2f2"
+    CRIMSON = "#be123c"
+    CRIMSON_SOFT = "#fff1f2"
+    AMBER = "#b45309"
+    AMBER_SOFT = "#fffbeb"
+    GOLD = "#d97706"
+    BROWN = "#78350f"
+    BROWN_SOFT = "#f7f1ea"
+    TEAL = "#0f766e"
+    TEAL_SOFT = "#f0fdfa"
+
+    def _line(x1, y1, x2, y2, stroke=HAIRLINE, sw=1.6, dash=None, marker=None, cls=None):
+        attrs = [
+            f'x1="{x1:.1f}"',
+            f'y1="{y1:.1f}"',
+            f'x2="{x2:.1f}"',
+            f'y2="{y2:.1f}"',
+            f'stroke="{stroke}"',
+            f'stroke-width="{sw}"',
+        ]
+        if dash:
+            attrs.append(f'stroke-dasharray="{dash}"')
+        if marker:
+            attrs.append(f'marker-end="url(#{marker})"')
+        if cls:
+            attrs.append(f'class="{cls}"')
+        return f'<line {" ".join(attrs)}/>'
+
+    def _poly(pts, stroke, sw=2.5, dash=None, fill="none"):
+        d = "M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
+        extra = f' stroke-dasharray="{dash}"' if dash else ""
+        return f'<path d="{d}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}" stroke-linecap="round" stroke-linejoin="round"{extra}/>'
+
+    # -----------------------------------------------------------------------
+    # SVG 1: Chlorophyll Detoxification vs Protein N Evacuation + 4 Pigments
+    # -----------------------------------------------------------------------
+    def _build_chlorophyll_detox_and_compartments():
+        chloroplast_n_share = 0.775  # 75%-80% of mesophyll N (Ishida et al. 2008, PMC2528122)
+        porphyrin_n_share = 0.018    # <2% N locked in chlorophyll rings (not recycled!)
+        assert 0.75 <= chloroplast_n_share <= 0.80
+        assert porphyrin_n_share < 0.025
+
+        extra_defs = f"""
+        <marker id="arr-red" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+          <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="{RED}"/>
+        </marker>
+        <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+          <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="{PURPLE}"/>
+        </marker>
+        """
+        extra_css = """
+        @keyframes evacFlowOnce {
+          0% { stroke-dashoffset: 120; opacity: 0.35; }
+          100% { stroke-dashoffset: 0; opacity: 1; }
+        }
+        .n-evac-flow {
+          stroke-dasharray: 8 5;
+          stroke-dashoffset: 0;
+          animation: evacFlowOnce 3.8s ease-out 1 forwards;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .n-evac-flow { animation: none !important; stroke-dashoffset: 0 !important; opacity: 1 !important; }
+        }
+        """
+
+        els = header(
+            "大树入秋撤退总账：拆叶绿素不是为了抠那 4 个氮，而是“排雷”救走八成蛋白氮",
+            "左：衰老叶肉细胞内拆弹与抢运双线协同（含单次流向短动画） · 右：决定秋叶四色的四大家族户口簿",
+        )
+
+        # Left Panel: Senescing Mesophyll Cell Two-Track Evacuation
+        els.append(card(20, 66, 392, 466))
+        els.append(pill(32, 78, "① 衰老叶肉细胞：一边拆“光毒炸弹”，一边抢运蛋白氮", fg=GREEN, bg=GREEN_SOFT, w=368, h=24, size=12))
+
+        # Organelle 1: Chloroplast -> Gerontoplast
+        els.append(card(32, 112, 368, 156, rx=9, fill="#f4fbf7", stroke=GREEN, sw=1.3))
+        els.append(txt(216, 132, "叶绿体 → 衰老质体（占叶肉总氮 75%–80%！）", 12.2, GREEN, "middle", weight="700"))
+
+        # Sub-box Left: Protein N Treasure
+        els.append(card(42, 142, 168, 114, rx=7, fill="#ffffff", stroke=GREEN, sw=1.1))
+        els.append(txt(126, 162, "蛋白金库 (Rubisco 等)", 12.0, GREEN, "middle", weight="700"))
+        els.append(txt(126, 184, "自噬小体剪成游离氨基酸", 11.5, BODY, "middle"))
+        els.append(txt(126, 205, "73%–80% 宝贵氮与磷", 11.5, INK, "middle", weight="700"))
+        els.append(txt(126, 226, "装车撤回树干与树根！", 11.5, GREEN, "middle", weight="700"))
+        els.append(txt(126, 246, "（类胡萝卜素留守显黄）", 11.5, AMBER, "middle", weight="600"))
+
+        # Sub-box Right: Free Chlorophyll Phototoxic Bomb
+        els.append(card(220, 142, 168, 114, rx=7, fill="#ffffff", stroke=ORANGE, sw=1.1))
+        els.append(txt(304, 162, "游离叶绿素 = 光毒雷!", 12.0, RED, "middle", weight="700"))
+        els.append(txt(304, 184, "孟德尔基因 SGR 拔出 Mg²⁺", 11.5, INK, "middle", weight="600"))
+        els.append(txt(304, 205, "PAO 酶剪开卟啉环排雷", 11.5, ORANGE, "middle", weight="700"))
+        els.append(txt(304, 226, "解除单线态氧 ¹O₂ 威胁", 11.5, BODY, "middle"))
+        els.append(txt(304, 246, "化成无色链状分子 pFCC", 11.5, PURPLE, "middle", weight="600"))
+
+        # Two Vertical Transport Channels (y=268 -> 322)
+        els.append(_line(126, 268, 126, 318, stroke=GREEN, sw=2.6, marker="arr-green"))
+        els.append(_line(126, 268, 126, 318, stroke="#059669", sw=2.8, cls="n-evac-flow"))
+        els.append(txt(116, 298, "韧皮部抢运", 11.5, GREEN, "end", weight="700"))
+
+        els.append(_line(304, 268, 304, 318, stroke=PURPLE, sw=2.2, dash="5 4", marker="arr-purple"))
+        els.append(txt(314, 298, "ABCC2 泵入", 11.5, PURPLE, "start", weight="700"))
+
+        # Bottom Left Destination: Trunk & Root Overwinter Reserve
+        els.append(card(42, 324, 168, 124, rx=8, fill=GREEN_SOFT, stroke=GREEN, sw=1.2))
+        els.append(txt(126, 346, "树干 / 树根越冬金库", 12.2, GREEN, "middle", weight="700"))
+        els.append(txt(126, 370, "贮藏氮素与碳水化合物", 11.5, BODY, "middle"))
+        els.append(txt(126, 392, "供来年春芽破壳抽叶", 11.5, INK, "middle", weight="600"))
+        els.append(txt(126, 414, "省去冻土吸氮高昂代价", 11.5, BODY, "middle"))
+        els.append(txt(126, 435, "（决定大树次年生长力）", 11.5, GREEN, "middle", weight="700"))
+
+        # Bottom Right Destination: Central Vacuole
+        els.append(card(220, 324, 168, 124, rx=8, fill=PURPLE_SOFT, stroke=PURPLE, sw=1.2))
+        els.append(txt(304, 346, "中央大液泡（水溶仓）", 12.2, PURPLE, "middle", weight="700"))
+        els.append(txt(304, 370, "无色叶绿胆素 NCC/DNCC", 11.5, INK, "middle", weight="700"))
+        els.append(txt(304, 392, "锁着环内 4 个氮 (<2%)", 11.5, RED, "middle", weight="700"))
+        els.append(txt(304, 414, "随枯叶直接丢弃不回收!", 11.5, BODY, "middle"))
+        els.append(txt(304, 435, "红叶树同步泵入花青素", 11.5, CRIMSON, "middle", weight="700"))
+
+        # Bottom Callout Banner in Left Card
+        els.append(card(32, 458, 368, 62, rx=7, fill=ORANGE_SOFT, stroke=ORANGE, sw=1.0))
+        els.append(txt(44, 480, "关键反转 (Kräutler 2016)：叶绿素环里的 4 个氮压根没被回收！", 11.5, ORANGE, weight="700"))
+        els.append(txt(44, 502, "拆绿是为了“防爆护航”——保住细胞不死，才能搬空八成蛋白氮。", 11.5, INK, weight="600"))
+
+        # Right Panel: Four Pigment Families Registry
+        els.append(card(424, 66, 316, 466))
+        els.append(pill(436, 78, "② 秋叶四大家族户口簿（住哪·溶啥·何时来）", fg=BLUE, bg=BLUE_SOFT, w=292, h=24, size=12))
+
+        families = [
+            (
+                "1",
+                "叶绿素 a / b（翠绿霸主）",
+                GREEN,
+                GREEN_SOFT,
+                "住址：叶绿体类囊体膜 · 脂溶性（不溶于水）",
+                "档期：春夏高产遮蔽全场；入秋被拆成无色链",
+            ),
+            (
+                "2",
+                "类胡萝卜素（金黄底牌）",
+                AMBER,
+                AMBER_SOFT,
+                "住址：类囊体 → 质体小球脂滴 · 脂溶性",
+                "档期：春夏一直在场！绿帘撤走后显露金黄",
+            ),
+            (
+                "3",
+                "花青素（丹红新兵）",
+                CRIMSON,
+                CRIMSON_SOFT,
+                "住址：中央大液泡酸液 · 水溶性糖苷",
+                "档期：盛夏几乎为零，入秋耗糖耗能全新赶制！",
+            ),
+            (
+                "4",
+                "单宁与褐变聚合物（棕褐终局）",
+                BROWN,
+                BROWN_SOFT,
+                "住址：细胞壁与死细胞基质 · 耐腐多酚",
+                "档期：红黄褪尽后留守，令万千落叶终归大地褐",
+            ),
+        ]
+        for idx, (num, title_s, fg_c, bg_c, line1, line2) in enumerate(families):
+            cy = 114 + idx * 94
+            els.append(card(436, cy, 292, 84, rx=8, fill=bg_c, stroke=fg_c, sw=1.1))
+            els.append(step_badge(454, cy + 22, num, fg=fg_c, bg="#ffffff", r=10))
+            els.append(txt(470, cy + 26, title_s, 12.2, fg_c, weight="700"))
+            els.append(txt(448, cy + 50, line1, 11.5, INK))
+            els.append(txt(448, cy + 71, line2, 11.5, BODY, weight="600"))
+
+        els.append(txt(436, 504, "厨房验证：开水泡红枫叶水染粉红（水溶花青素），", 11.5, CRIMSON, weight="700"))
+        els.append(txt(436, 523, "开水泡银杏黄叶水却清亮不染黄（脂溶类胡萝卜素）！", 11.5, AMBER, weight="700"))
+
+        return figure(
+            546,
+            "秋季落叶叶绿素排雷解毒与蛋白氮撤离机制及四大色素亚细胞定位图",
+            "左栏展示叶肉细胞衰老时两条并行通路：叶绿体内占全叶75%至80%氮素的Rubisco等蛋白质拆解为氨基酸经韧皮部撤回枝干过冬，而游离叶绿素由孟德尔SGR去镁酶与PAO加氧酶剪开卟啉环排雷解毒，化为无色叶绿胆素(NCC/DNCC)携环内4个氮锁入液泡随叶丢弃；右栏对比叶绿素、类胡萝卜素、花青素与单宁四类色素的亚细胞定位、溶解性与出现时机。",
+            els,
+            extra_css=extra_css,
+            extra_defs=extra_defs,
+        )
+
+    # -----------------------------------------------------------------------
+    # SVG 2: Computed Visible Absorption Spectra & Subtractive Leaf Color Mixing
+    # -----------------------------------------------------------------------
+    def _build_spectra_and_color_mixing():
+        def chl_abs(wl):
+            return min(
+                0.98,
+                0.86 * math.exp(-((wl - 434.0) / 24.0) ** 2)
+                + 0.42 * math.exp(-((wl - 462.0) / 20.0) ** 2)
+                + 0.08 * math.exp(-((wl - 540.0) / 65.0) ** 2)
+                + 0.30 * math.exp(-((wl - 644.0) / 16.0) ** 2)
+                + 0.85 * math.exp(-((wl - 663.0) / 15.5) ** 2),
+            )
+
+        def car_abs(wl):
+            if wl > 545:
+                return 0.0
+            return min(
+                0.92,
+                0.58 * math.exp(-((wl - 424.0) / 16.0) ** 2)
+                + 0.78 * math.exp(-((wl - 450.0) / 15.0) ** 2)
+                + 0.70 * math.exp(-((wl - 478.0) / 14.5) ** 2),
+            )
+
+        def anc_abs(wl):
+            # In vivo cyanidin glycoside peak ~539 nm, bandwidth ~75 nm (Merzlyak et al. 2008, PMC2576631)
+            return min(
+                0.90,
+                0.82 * math.exp(-((wl - 539.0) / 42.0) ** 2)
+                + 0.16 * math.exp(-((wl - 418.0) / 26.0) ** 2),
+            )
+
+        assert chl_abs(434) > 0.90 and chl_abs(550) < 0.16 and chl_abs(663) > 0.84
+        assert car_abs(450) > 0.80 and car_abs(600) < 0.01
+        assert anc_abs(539) > 0.80 and anc_abs(660) < 0.02
+
+        els = header(
+            "人眼看到的叶色全是“挑剩的退货光”：三大色素吸收光谱与减法混色密码",
+            "上：400–700 nm 活体叶片三大色素特征吸收曲线 · 下：盛夏绿、银杏黄、枫叶红的光子去向总账",
+        )
+
+        # Top Chart Card
+        els.append(card(20, 66, 720, 274))
+        els.append(pill(32, 78, "① 活体叶片三大色素归一化吸收光谱（波长 400–700 nm 可见光区）", fg=BLUE, bg=BLUE_SOFT, w=456, h=24, size=12))
+
+        px0, px1 = 78.0, 712.0
+        py0, py1 = 114.0, 276.0
+        pw = px1 - px0
+        ph = py1 - py0
+
+        def x_of(wl):
+            return px0 + (wl - 400.0) / 300.0 * pw
+
+        def y_of(a):
+            return py1 - a * ph
+
+        # Subtle shaded green-yellow window (500-600 nm) where anthocyanin acts as optical filter
+        els.append(f'<rect x="{x_of(500):.1f}" y="{py0:.1f}" width="{x_of(600) - x_of(500):.1f}" height="{ph:.1f}" fill="#fff1f2" opacity="0.65"/>')
+        els.append(txt(x_of(550), py1 - 18, "500–600 nm 绿黄光窗", 11.5, CRIMSON, "middle", weight="600", halo=True))
+
+        # Grid lines & Y-axis ticks
+        for frac, lbl in [(0.0, "0"), (0.5, "0.5"), (1.0, "1.0")]:
+            gy = y_of(frac)
+            els.append(_line(px0, gy, px1, gy, stroke=HAIRLINE, sw=1.0, dash="3 3" if frac > 0 else None))
+            els.append(txt(px0 - 8, gy + 4, lbl, 11.5, MUTED, "end"))
+        els.append(txt(34, (py0 + py1) / 2 + 4, "吸光", 11.5, INK, "middle", weight="700"))
+
+        # Curves
+        wls = [400 + 3 * i for i in range(101)]
+        pts_chl = [(x_of(w), y_of(chl_abs(w))) for w in wls]
+        pts_car = [(x_of(w), y_of(car_abs(w))) for w in wls]
+        pts_anc = [(x_of(w), y_of(anc_abs(w))) for w in wls]
+
+        els.append(_poly(pts_chl, GREEN, sw=2.8))
+        els.append(_poly(pts_car, GOLD, sw=2.6, dash="8 4"))
+        els.append(_poly(pts_anc, CRIMSON, sw=2.7, dash="11 4 2.5 4"))
+
+        # Direct Curve Labels in Clean Non-Overlapping Zones
+        els.append(txt(x_of(434), y_of(0.97) - 6, "叶绿素蓝紫峰 (434 nm)", 11.5, GREEN, "middle", weight="700", halo=True))
+        els.append(txt(x_of(652), y_of(0.88) - 8, "叶绿素红光峰 (663 nm)", 11.5, GREEN, "end", weight="700", halo=True))
+        els.append(txt(x_of(488), 150, "类胡萝卜素三指峰 (虚线)", 11.5, AMBER, "middle", weight="700", halo=True))
+        els.append(txt(x_of(552), y_of(0.82) - 10, "液泡花青素峰 ~539 nm (点划线)", 11.5, CRIMSON, "middle", weight="700", halo=True))
+
+        # Spectrum Rainbow Strip below X-axis
+        bands = [
+            (400, 445, "#6d28d9", "紫蓝"),
+            (445, 495, "#2563eb", "蓝青"),
+            (495, 560, "#16a34a", "绿"),
+            (560, 590, "#eab308", "黄"),
+            (590, 625, "#ea580c", "橙"),
+            (625, 700, "#dc2626", "红"),
+        ]
+        for w0, w1, col, _ in bands:
+            els.append(f'<rect x="{x_of(w0):.1f}" y="{py1 + 4:.1f}" width="{x_of(w1) - x_of(w0):.1f}" height="10" fill="{col}" opacity="0.85"/>')
+
+        for wl in range(400, 701, 50):
+            wx = x_of(wl)
+            els.append(_line(wx, py1, wx, py1 + 4, stroke=INK, sw=1.1))
+            els.append(txt(wx, py1 + 29, f"{wl}", 11.5, INK, "middle"))
+        els.append(txt(px1, py1 + 48, "波长 λ (nm)", 11.5, MUTED, "end", weight="600"))
+        els.append(txt(px0, py1 + 48, "核心光学铁律：叶面颜色 = 白光减去被吸收波段后散射出来的剩余光！", 11.5, INK, "start", weight="600"))
+
+        # Bottom Three Subtractive Color Mixing Cards
+        cards_spec = [
+            (
+                20,
+                "1",
+                "盛夏绿叶：两头通吃剩绿窗",
+                GREEN,
+                GREEN_SOFT,
+                "• 叶绿素吞尽蓝紫光 + 红橙光",
+                "• 类胡萝卜素藏在底下被绿光淹没",
+                "• 仅 500–570 nm 绿光被退货散射",
+                "⇒ 人眼看到：满树翠绿",
+            ),
+            (
+                264,
+                "2",
+                "银杏/白桦黄叶：做减法掀帘",
+                AMBER,
+                AMBER_SOFT,
+                "• 叶绿素拆空，663 nm 红光禁令解除",
+                "• 留守类胡萝卜素只吞 400–500 蓝光",
+                "• 520–700 nm 绿+橙+红光全数退回",
+                "⇒ 视锥细胞合成：透亮金黄！",
+            ),
+            (
+                508,
+                "3",
+                "枫树/黄栌红叶：做加法滤光",
+                CRIMSON,
+                CRIMSON_SOFT,
+                "• 液泡新造花青素封死 500–600 绿窗",
+                "• 蓝紫光(质体)+绿黄光(液泡)全被吞",
+                "• 仅剩 >600 nm 长波红光散射出叶面",
+                "⇒ 人眼看到：炽烈丹红 / 绯红！",
+            ),
+        ]
+        for cx, num, ctitle, fg_c, bg_c, b1, b2, b3, res in cards_spec:
+            els.append(card(cx, 352, 232, 192, rx=9, fill=bg_c, stroke=fg_c, sw=1.2))
+            els.append(step_badge(cx + 20, 375, num, fg=fg_c, bg="#ffffff", r=10))
+            els.append(txt(cx + 36, 379, ctitle, 12.2, fg_c, weight="700"))
+            els.append(txt(cx + 14, 410, b1, 11.5, BODY))
+            els.append(txt(cx + 14, 434, b2, 11.5, BODY))
+            els.append(txt(cx + 14, 458, b3, 11.5, INK, weight="600"))
+            els.append(card(cx + 12, 478, 208, 52, rx=6, fill="#ffffff", stroke=fg_c, sw=1.0))
+            els.append(txt(cx + 116, 509, res, 12.0, fg_c, "middle", weight="700"))
+
+        return figure(
+            558,
+            "叶片叶绿素类胡萝卜素与花青素活体吸收光谱及绿叶黄叶红叶减法混色原理图",
+            "上图绘制400至700纳米可见光区叶绿素a+b(434与663纳米双峰实线)、类胡萝卜素(424至478纳米三指峰虚线)与活体液泡花青素(539纳米宽峰点划线)吸收光谱；下图对比盛夏绿叶反射绿光、秋季黄叶因叶绿素降解解除红光吸收后反射绿橙红混合金黄光、秋季红叶因新合成花青素额外吸收500至600纳米绿黄光而只剩纯红光散射的光学机制。",
+            els,
+        )
+
+    # -----------------------------------------------------------------------
+    # SVG 3: Anthocyanin Optical Sunscreen + Mutant Nitrogen Resorption Proof
+    # -----------------------------------------------------------------------
+    def _build_sunscreen_and_mutant_proof():
+        # Exact experimental values from Hoch, Singsaas & McCown (2003, Plant Physiol., PMC281624, Table I)
+        outdoor_data = [
+            ("红瑞木 C. sericea", 79, 61),
+            ("越橘 V. elliottii", 76, 45),
+            ("荚蒾 V. sargentii", 73, 39),
+        ]
+        for _, wt_v, mut_v in outdoor_data:
+            assert wt_v > mut_v + 15
+
+        els = header(
+            "快丢掉的叶子凭什么花重金染红？液泡“防晒红伞”与护氮撤退的突变体铁证",
+            "左：秋日低温强光下栅栏组织液泡滤光盾与 pH 变色开关 · 右：经典光恢复与缺花青素突变体实测对比",
+        )
+
+        # Left Panel: Leaf Cross-Section Optical Shield + Vacuolar pH Switch
+        els.append(card(20, 66, 352, 478))
+        els.append(pill(32, 78, "① 叶片纵切面：撑在叶绿体头顶的“红色遮阳伞”", fg=CRIMSON, bg=CRIMSON_SOFT, w=328, h=24, size=12))
+
+        # Incoming autumn sunlight arrows (y=110 -> 144)
+        els.append(txt(196, 124, "深秋晴晨刺眼阳光（低温 5 °C 下暗反应酶变慢！）", 11.5, ORANGE, "middle", weight="700"))
+        els.append(_line(112, 130, 112, 156, stroke="#16a34a", sw=2.2))
+        els.append(txt(106, 148, "绿黄强光", 11.5, GREEN, "end", weight="700"))
+        els.append(_line(268, 130, 268, 156, stroke=RED, sw=2.2))
+        els.append(txt(274, 148, "红光散射↑", 11.5, CRIMSON, "start", weight="700"))
+
+        # Upper Epidermis
+        els.append(card(36, 158, 320, 28, rx=5, fill=SLATE_SOFT, stroke=SLATE, sw=1.0))
+        els.append(txt(196, 177, "上表皮 + 角质层（阳光正面入射）", 11.5, INK, "middle", weight="600"))
+
+        # Palisade Vacuole Anthocyanin Shield
+        els.append(card(36, 194, 320, 92, rx=8, fill=CRIMSON_SOFT, stroke=CRIMSON, sw=1.5))
+        els.append(txt(196, 216, "栅栏组织 · 中央大液泡（花青素防晒红盾！）", 12.2, CRIMSON, "middle", weight="700"))
+        els.append(txt(196, 238, "• 矢车菊素-3-葡萄糖苷拦腰吞掉 500–600 nm 光量子", 11.5, INK, "middle"))
+        els.append(txt(196, 259, "• 兼任强效自由基清道夫（清除活性氧达维C/维E 4倍）", 11.5, BODY, "middle"))
+        els.append(txt(196, 278, "⇒ 吸收的热能无害耗散，不再激发底层叶绿素！", 11.5, CRIMSON, "middle", weight="700"))
+
+        # Protected Dismantling Chloroplasts + Phloem Vein
+        els.append(card(36, 294, 320, 88, rx=8, fill=GREEN_SOFT, stroke=GREEN, sw=1.3))
+        els.append(txt(196, 316, "底层海绵组织 · 正在拆解的叶绿体 + 韧皮部筛管", 12.0, GREEN, "middle", weight="700"))
+        els.append(txt(196, 338, "• 躲在红伞阴影下免遭光氧化爆裂，多撑 1–2 周窗口", 11.5, BODY, "middle"))
+        els.append(txt(196, 360, "• 韧皮部活细胞稳稳把 73%–79% 蛋白氮运回枝干！", 11.5, GREEN, "middle", weight="700"))
+
+        # Vacuolar pH Color Switch Box
+        els.append(card(36, 392, 320, 138, rx=8, fill="#ffffff", stroke=PURPLE, sw=1.1))
+        els.append(txt(196, 414, "同一种花青素为何能变出丹红、紫红与蓝紫？(液泡 pH)", 11.8, PURPLE, "middle", weight="700"))
+
+        ph_chips = [
+            (48, "pH ≤ 3.5 强酸", "鲜红阳离子 AH⁺", "#dc2626"),
+            (150, "pH 4.5–5.5 微酸", "深紫红共色络合", "#9333ea"),
+            (252, "pH ≥ 7 中/微碱", "蓝紫醌碱 / 无色", "#2563eb"),
+        ]
+        for bx, p_top, p_bot, p_col in ph_chips:
+            els.append(f'<rect x="{bx}" y="426" width="92" height="54" rx="6" fill="{p_col}" opacity="0.13" stroke="{p_col}" stroke-width="1.1"/>')
+            els.append(txt(bx + 46, 446, p_top, 11.5, p_col, "middle", weight="700"))
+            els.append(txt(bx + 46, 468, p_bot, 11.5, INK, "middle", weight="600"))
+
+        els.append(txt(196, 502, "枫叶/黄栌液泡偏酸显火红；滴白醋更红、滴碱水变蓝绿！", 11.5, BODY, "middle", weight="600"))
+        els.append(txt(196, 521, "（注：至少动用 7 种酶 + Mg-ATP 跨膜泵，绝非免费废料）", 11.5, MUTED, "middle"))
+
+        # Right Panel: Hard Experimental & Genetic Mutant Proofs
+        els.append(card(384, 66, 356, 478))
+        els.append(pill(396, 78, "② 生理与基因突变体实证：不准变红会亏多少氮？", fg=BLUE, bg=BLUE_SOFT, w=332, h=24, size=12))
+
+        # Experiment 1: Feild, Lee & Holbrook (2001) Photoinhibition Recovery
+        els.append(card(396, 112, 332, 118, rx=8, fill=BLUE_SOFT, stroke=BLUE, sw=1.1))
+        els.append(txt(408, 134, "实验一：强光暴晒 30 分钟后光系统恢复力 (Feild 2001)", 11.8, BLUE, weight="700"))
+        els.append(f'<rect x="408" y="146" width="286" height="22" rx="4" fill="{CRIMSON}"/>')
+        els.append(txt(416, 162, "红叶组：暗处 80 分钟 100% 满血恢复！", 11.5, "#ffffff", weight="700"))
+        els.append(f'<rect x="408" y="176" width="221" height="22" rx="4" fill="{AMBER}"/>')
+        els.append(txt(416, 192, "无红素组：歇 6 小时仍受损 -23%", 11.5, "#ffffff", weight="700"))
+        els.append(txt(408, 218, "结论：花青素滤掉蓝绿强光，护住底层叶绿体免受光氧化重创。", 11.5, INK, weight="600"))
+
+        # Experiment 2: Hoch, Singsaas & McCown (2003) Mutant N Resorption Chart
+        els.append(card(396, 240, 332, 290, rx=8, fill="#ffffff", stroke=BORDER, sw=1.1))
+        els.append(txt(408, 262, "实验二：户外秋寒叶片“氮回收率”实测 (Hoch 等 2003)", 11.8, INK, weight="700"))
+        els.append(txt(408, 282, "同种野生红叶株 vs 单基因缺花青素突变株（无法变红）：", 11.5, MUTED))
+
+        bar_x0 = 516.0
+        bar_max_w = 112.0  # 100% -> 112px so right labels fit cleanly inside x <= 720!
+
+        for idx, (sp_name, wt_pct, mut_pct) in enumerate(outdoor_data):
+            ry = 304 + idx * 52
+            els.append(txt(508, ry + 15, sp_name, 11.5, INK, "end", weight="700"))
+            # WT bar
+            w_wt = wt_pct / 100.0 * bar_max_w
+            els.append(f'<rect x="{bar_x0:.1f}" y="{ry:.1f}" width="{w_wt:.1f}" height="17" rx="3" fill="{CRIMSON}"/>')
+            els.append(txt(bar_x0 + w_wt + 6, ry + 13, f"野生红 {wt_pct}%", 11.5, CRIMSON, weight="700"))
+            # Mutant bar
+            w_mut = mut_pct / 100.0 * bar_max_w
+            els.append(f'<rect x="{bar_x0:.1f}" y="{ry + 21:.1f}" width="{w_mut:.1f}" height="17" rx="3" fill="{SLATE}" opacity="0.65"/>')
+            els.append(txt(bar_x0 + w_mut + 6, ry + 34, f"失红株 {mut_pct}%", 11.5, SLATE, weight="700"))
+
+        # Paper birch yellow specialist benchmark
+        ry_birch = 464
+        els.append(_line(408, 456, 716, 456, stroke=HAIRLINE, sw=1.0, dash="4 3"))
+        els.append(txt(508, ry_birch + 15, "对照：美洲白桦", 11.5, AMBER, "end", weight="700"))
+        w_birch = 79 / 100.0 * bar_max_w
+        els.append(f'<rect x="{bar_x0:.1f}" y="{ry_birch:.1f}" width="{w_birch:.1f}" height="18" rx="3" fill="{GOLD}"/>')
+        els.append(txt(bar_x0 + w_birch + 6, ry_birch + 14, "纯黄路线 79%", 11.5, AMBER, weight="700"))
+
+        els.append(txt(408, 504, "• 严酷低温强光组差距更惊人：荚蒾野生 68% vs 突变仅 24%！", 11.5, CRIMSON, weight="700"))
+        els.append(txt(408, 522, "• 白桦与银杏天生走“叶黄素消光+早撤氮”路线，不染红也高效！", 11.5, INK, weight="600"))
+
+        return figure(
+            558,
+            "秋季红叶液泡花青素防晒护盾机制与缺花青素突变体氮素回收率对比图",
+            "左栏展示深秋低温强光下栅栏组织液泡花青素过滤500至600纳米过剩光子并清除活性氧、保护底层叶绿体安全撤离氮素的机制及液泡pH酸红碱蓝变色规律；右栏呈现Feild等(2001)强光恢复实验与Hoch等(2003)三种木本植物野生红叶株(回收73%至79%氮)显著击败缺花青素突变株(仅回收39%至61%氮)及白桦纯黄路线(79%)的实测数据。",
+            els,
+        )
+
+    # -----------------------------------------------------------------------
+    # SVG 4: Global Autumn Biogeography (E. North America / E. Asia vs Europe) & Two Hypotheses
+    # -----------------------------------------------------------------------
+    def _build_biogeography_and_hypotheses():
+        rad_ena, rad_asia, rad_eur = 168.0, 165.0, 114.0
+        drop_pct = (rad_ena - rad_eur) / rad_ena * 100.0
+        assert math.isclose(drop_pct, 32.142857, rel_tol=1e-4)
+
+        els = header(
+            "为什么中国香山与北美枫叶红遍漫山，欧洲秋天却满眼金黄？",
+            "上：北半球三大温带落叶林 9 月太阳辐射与红叶树种比例 · 下：演化生物学两大假说的交锋与互补",
+        )
+
+        # Top Card: Renner & Zohner (2019, New Phytologist) Continental Comparison
+        els.append(card(20, 66, 720, 232))
+        els.append(
+            pill(
+                32,
+                78,
+                "① 711 种落叶木本同园实验 + 卫星辐射账单 (Renner & Zohner 2019, New Phytologist)",
+                fg=BLUE,
+                bg=BLUE_SOFT,
+                w=548,
+                h=24,
+                size=12,
+            )
+        )
+
+        regions = [
+            (
+                32,
+                "北美东部（美东 / 加东）",
+                CRIMSON,
+                CRIMSON_SOFT,
+                168,
+                "9 月森林短波辐射：168 W/m²",
+                "大陆东岸：晴空强光 + 寒潮骤降",
+                "生长期短约 3 周，撤氮窗口极紧",
+                "红叶盛况：新英格兰约 70% 产红素!",
+            ),
+            (
+                268,
+                "东亚（中国 / 日本 / 半岛）",
+                ORANGE,
+                ORANGE_SOFT,
+                165,
+                "9 月森林短波辐射：165 W/m²",
+                "季风东岸：秋高气爽 + 冷空气南下",
+                "南北山脉护佑古老红叶树种渡过冰期",
+                "红叶盛况：同园约 38% 变红 (黄栌/槭)",
+            ),
+            (
+                504,
+                "欧洲西部与北部",
+                AMBER,
+                AMBER_SOFT,
+                114,
+                "9 月辐射：仅 114 W/m² (-32%!)",
+                "大西洋暖流下风向：多云阴雨温和",
+                "光氧化风险低 + 阿尔卑斯横山阻隔",
+                "秋色基调：仅约 20% 变红，满城金黄",
+            ),
+        ]
+        for rx, rtitle, fg_c, bg_c, rad_v, l_rad, l_clim, l_geo, l_res in regions:
+            els.append(card(rx, 112, 224, 174, rx=8, fill=bg_c, stroke=fg_c, sw=1.2))
+            els.append(txt(rx + 112, 133, rtitle, 12.2, fg_c, "middle", weight="700"))
+            # Proportional irradiance bar (max 168 -> 196 px)
+            bw = rad_v / 168.0 * 196.0
+            els.append(f'<rect x="{rx + 14:.1f}" y="143" width="196" height="14" rx="4" fill="#ffffff" stroke="{BORDER}"/>')
+            els.append(f'<rect x="{rx + 14:.1f}" y="143" width="{bw:.1f}" height="14" rx="4" fill="{fg_c}"/>')
+            els.append(txt(rx + 14, 174, l_rad, 11.5, fg_c, weight="700"))
+            els.append(txt(rx + 14, 196, l_clim, 11.5, BODY))
+            els.append(txt(rx + 14, 218, l_geo, 11.5, BODY))
+            els.append(card(rx + 10, 232, 204, 44, rx=6, fill="#ffffff", stroke=fg_c, sw=1.0))
+            els.append(txt(rx + 112, 259, l_res, 11.5, fg_c, "middle", weight="700"))
+
+        # Bottom Two Hypothesis Cards
+        els.append(card(20, 310, 354, 214, rx=10, fill=GREEN_SOFT, stroke=GREEN, sw=1.2))
+        els.append(pill(32, 322, "② 主流机制：光保护“护氮防晒盾”假说", fg=GREEN, bg="#ffffff", w=264, h=24, size=12))
+        els.append(txt(34, 366, "• 核心逻辑：晴朗强光 + 寒潮低温 = 最凶险的光氧化组合；", 11.5, INK, weight="600"))
+        els.append(txt(34, 390, "• 树冠外层向阳叶最红、内层背阴叶偏黄，甚至两片叶上下", 11.5, BODY))
+        els.append(txt(34, 412, "  遮挡就能晒出一枚“黄色树叶剪影”，直接证明花青素是", 11.5, BODY))
+        els.append(txt(34, 434, "  按光照强度现场定制的光学滤镜！", 11.5, GREEN, weight="700"))
+        els.append(txt(34, 460, "• 完美解释为何“强光骤冷”的美东与东亚红叶远多于西欧，", 11.5, BODY))
+        els.append(txt(34, 482, "  且贫瘠缺氮土壤里的枫树往往红得更早、更艳。", 11.5, INK, weight="600"))
+
+        els.append(card(386, 310, 354, 214, rx=10, fill=PURPLE_SOFT, stroke=PURPLE, sw=1.2))
+        els.append(pill(398, 322, "③ 生态争议：防蚜虫“诚实炫富信号”假说", fg=PURPLE, bg="#ffffff", w=276, h=24, size=12))
+        els.append(txt(400, 366, "• 汉密尔顿与阿凯蒂 (2000–2001)：许多专食蚜虫恰在秋天", 11.5, INK, weight="600"))
+        els.append(txt(400, 390, "  飞回树上产越冬卵（次年春天孵化吸汁、传播病毒）；", 11.5, BODY))
+        els.append(txt(400, 414, "• 花重金染红就像羚羊跳高炫耀体能：“我防御强、单宁重，", 11.5, BODY))
+        els.append(txt(400, 436, "  快挑泛黄弱树产卵！”（鸡爪槭实测红株蚜虫更少）", 11.5, PURPLE, weight="700"))
+        els.append(txt(400, 462, "• 学界审慎限定：蚜虫缺专门红光视蛋白（但能辨绿/蓝比），", 11.5, BODY))
+        els.append(txt(400, 484, "  目前视为生理防晒主机制之外的协同演化补充假说。", 11.5, INK, weight="600"))
+
+        return figure(
+            538,
+            "北半球北美东亚与欧洲秋季森林太阳辐射及红叶树种比例对比与两大演化假说图解",
+            "上图依据Renner与Zohner(2019)对比北美东部(9月短波辐射168 W/m²，新英格兰约70%树种产红素)、东亚(165 W/m²，同园约38%变红)与欧洲(仅114 W/m²，低32%，多云温和，仅约20%变红而以黄叶为主)；下图并列解析主流光保护护氮假说(向阳叶红、遮阴剪影与高光低温地理吻合)与汉密尔顿蚜虫诚实警戒信号假说及其视觉受体争议。",
+            els,
+        )
+
+    # -----------------------------------------------------------------------
+    # SVG 5: Petiole Abscission Cork Valve + 4 Autumn Weather Scenarios
+    # -----------------------------------------------------------------------
+    def _build_abscission_and_weather_matrix():
+        night_chill_min, night_chill_max = 2.0, 8.0
+        frost_kill = -2.0
+        assert frost_kill < 0.0 < night_chill_min < night_chill_max
+
+        els = header(
+            "叶柄上的“定时软木塞”与天气密码：为什么昼晴夜冷最红，早霜一来全焦枯？",
+            "左：短日照触发叶柄离层四步无伤断腕手术 · 右：决定当年秋叶颜值的四套天气剧本",
+        )
+
+        # Left Panel: Petiole Abscission Zone Anatomy & 4 Steps
+        els.append(card(20, 66, 354, 480))
+        els.append(pill(32, 78, "① 叶柄基部“离层”四步手术：先焊软木塞，再溶胶水", fg=TEAL, bg=TEAL_SOFT, w=330, h=24, size=12))
+
+        # Anatomical Schematic Box (y=112..308)
+        els.append(card(34, 112, 326, 196, rx=8, fill="#f8fafc", stroke=BORDER, sw=1.1))
+
+        # Left block: Perennial Twig
+        els.append(f'<rect x="46" y="146" width="94" height="122" rx="6" fill="#e7e5e4" stroke="{BROWN}" stroke-width="1.4"/>')
+        els.append(txt(93, 170, "多年生树枝", 12.0, BROWN, "middle", weight="700"))
+        els.append(txt(93, 192, "氮磷入库越冬", 11.5, INK, "middle"))
+        els.append(txt(93, 250, "腋芽静待春风", 11.5, GREEN, "middle", weight="700"))
+
+        # Corky Protective Layer (Suberin + Lignin)
+        els.append(f'<rect x="140" y="146" width="24" height="122" rx="3" fill="#b45309" opacity="0.88"/>')
+        els.append(txt(122, 134, "木栓保护层", 11.5, AMBER, "middle", weight="700"))
+        els.append(_line(134, 137, 150, 146, stroke=AMBER, sw=1.3))
+
+        # Cell-Wall Separation Layer (Pectinase / Cellulase)
+        els.append(f'<rect x="166" y="146" width="20" height="122" rx="3" fill="#fecdd3" stroke="{CRIMSON}" stroke-width="1.2" stroke-dasharray="4 3"/>')
+        els.append(txt(222, 134, "离层溶胶线", 11.5, CRIMSON, "middle", weight="700"))
+        els.append(_line(196, 137, 177, 146, stroke=CRIMSON, sw=1.3))
+
+        # Right block: Petiole & Senescing Leaf Blade
+        els.append(f'<rect x="188" y="156" width="158" height="102" rx="8" fill="{CRIMSON_SOFT}" stroke="{CRIMSON}" stroke-width="1.3"/>')
+        els.append(txt(267, 178, "叶柄与衰老叶片", 12.0, CRIMSON, "middle", weight="700"))
+
+        # Xylem pipe (top) - still open!
+        els.append(_line(84, 202, 330, 202, stroke=BLUE, sw=3.0))
+        els.append(txt(267, 197, "木质部：暂保供水防干死", 11.5, BLUE, "middle", weight="700", halo=True))
+
+        # Phloem pipe (bottom) - throttled at abscission zone, trapping sugars!
+        els.append(_line(84, 234, 162, 234, stroke=ORANGE, sw=2.0, dash="4 3"))
+        els.append(_line(188, 234, 330, 234, stroke=CRIMSON, sw=3.2))
+        els.append(txt(267, 252, "韧皮部收窄：余糖困叶内!", 11.5, CRIMSON, "middle", weight="700", halo=True))
+
+        els.append(txt(197, 294, "↑ 果胶酶溶开胞间层，秋风一吹无痛脱落、树皮留防水疤！", 11.5, TEAL, "middle", weight="700"))
+
+        # 4 Numbered Steps
+        steps_az = [
+            ("1", "天文闹钟启动：秋分后黑夜拉长，光敏色素精准知秋"),
+            ("2", "激素跷跷板翻转：叶片生长素退潮，离层被乙烯唤醒"),
+            ("3", "先封树侧伤口：木栓质(软木成分)焊死创面防病菌"),
+            ("4", "路灯彩蛋：紧贴暖光路灯的那簇枝叶常误判昼长晚落!"),
+        ]
+        for s_idx, (s_num, s_txt) in enumerate(steps_az):
+            sy = 332 + s_idx * 50
+            els.append(card(34, sy - 16, 326, 40, rx=6, fill="#ffffff", stroke=BORDER, sw=1.0))
+            els.append(step_badge(52, sy + 4, s_num, fg=TEAL, bg=TEAL_SOFT, r=10))
+            els.append(txt(68, sy + 8, s_txt, 11.5, INK, weight="600" if s_idx in (0, 3) else None))
+
+        # Right Panel: 4 Weather Scenarios Matrix
+        els.append(card(386, 66, 354, 480))
+        els.append(pill(398, 78, "② 四套秋季天气剧本：为何每年红叶成色大不同？", fg=CRIMSON, bg=CRIMSON_SOFT, w=330, h=24, size=12))
+
+        scenarios = [
+            (
+                "A",
+                "黄金配方：昼晴暖阳 + 夜清冷无霜 (2–8 °C)",
+                CRIMSON,
+                CRIMSON_SOFT,
+                "白天强光催动余留叶绿体造糖并激活花青素合成酶；",
+                "清冷夜叠加收窄离层锁住浓糖 ⇒ 漫山耀眼丹红！",
+            ),
+            (
+                "B",
+                "寡淡剧本：连绵阴雨 + 暖夜偏高 (>12 °C)",
+                AMBER,
+                AMBER_SOFT,
+                "阴天缺光难产糖且缺光信号，暖夜呼吸又耗光余糖；",
+                "花青素产线缺粮停工，仅剩类胡萝卜素 ⇒ 暗淡黄褐。",
+            ),
+            (
+                "C",
+                "翻车剧本：未红先遭初秋严霜 (< -2 °C)",
+                SLATE,
+                SLATE_SOFT,
+                "冰晶一夜刺穿活细胞与液泡膜，造红与撤氮双双暴毙；",
+                "多酚氧化酶接触酚类瞬间褐变 ⇒ 直接冻成焦枯死叶！",
+            ),
+            (
+                "D",
+                "万物终局：落叶归根后的雨淋与光漂白",
+                BROWN,
+                BROWN_SOFT,
+                "水溶花青素随秋雨渗入泥土，类胡萝卜素逐步氧化；",
+                "唯细胞壁里耐腐涩口的单宁留守 ⇒ 终归大地棕褐。",
+            ),
+        ]
+        for w_idx, (badge_ch, w_title, fg_c, bg_c, wl1, wl2) in enumerate(scenarios):
+            wy = 114 + w_idx * 106
+            els.append(card(398, wy, 330, 96, rx=8, fill=bg_c, stroke=fg_c, sw=1.2))
+            els.append(step_badge(416, wy + 22, badge_ch, fg=fg_c, bg="#ffffff", r=10))
+            els.append(txt(432, wy + 26, w_title, 12.0, fg_c, weight="700"))
+            els.append(txt(410, wy + 52, wl1, 11.5, BODY))
+            els.append(txt(410, wy + 75, wl2, 11.5, INK, weight="700"))
+
+        return figure(
+            560,
+            "秋季叶片叶柄离层木栓质封口脱落机制与四类天气条件对红叶黄叶褐叶影响的对比图",
+            "左栏解析短日照引发叶片生长素下降与乙烯激活离层的四步机制：木质部暂保供水、韧皮部收窄截留糖分、树枝侧沉积木栓质防水保护疤、果胶酶溶解胞间层实现无伤落叶；右栏对比昼晴夜冷无霜(2至8摄氏度锁糖催生极品红叶)、阴雨暖夜(缺糖偏黄)、初秋严霜(零下2度以下冰晶破膜直接焦枯褐变)及落叶后单宁留守变棕的四大剧本。",
+            els,
+        )
+
+    @register(
+        "autumn-leaf-colors",
+        "红叶与黄叶形成原理全图解：叶绿素PAO排雷解毒与八成蛋白氮撤离、三大色素活体光谱与减法混色、花青素液泡防晒盾与突变体护氮实证、北美东亚欧洲秋色地理与蚜虫假说、叶柄离层软木塞与秋季天气配方",
+        "science_tech",
+    )
+    def build_autumn_leaf_colors():
+        write_svg(SUBDIR, "chlorophyll-detox-and-pigment-compartment-map.svg", _build_chlorophyll_detox_and_compartments())
+        write_svg(SUBDIR, "pigment-absorption-spectra-and-color-mixing.svg", _build_spectra_and_color_mixing())
+        write_svg(SUBDIR, "anthocyanin-sunscreen-and-nitrogen-rescue-proof.svg", _build_sunscreen_and_mutant_proof())
+        write_svg(SUBDIR, "global-autumn-biogeography-and-two-hypotheses.svg", _build_biogeography_and_hypotheses())
+        write_svg(SUBDIR, "abscission-cork-valve-and-weather-color-matrix.svg", _build_abscission_and_weather_matrix())
+
+
+_register_autumn_leaf_colors()
+
+
+def _register_food_packaging_preservation():
+    SUBDIR = "food-packaging-preservation"
+    RED = "#be123c"
+    RED_SOFT = "#ffe4e6"
+    AMBER = "#b45309"
+    AMBER_SOFT = "#fef3c7"
+    TEAL = "#0f766e"
+    TEAL_SOFT = "#ccfbf1"
+    BROWN = "#78350f"
+    BROWN_SOFT = "#fef3c7"
+
+    def _build_water_activity_and_hurdles():
+        els = []
+        els.extend(
+            header(
+                "一、含水量高未必易坏、烘得太干反而油哈：水分活度 aw 稳定性地图",
+                "决定腐败的不是总含水量而是自由水逃逸压 aw = p / p0：aw < 0.60 锁死一切微生物，但 aw < 0.20 反而加速油脂酸败",
+            )
+        )
+
+        # Top card: Labuza Food Stability Map across aw in [0, 1]
+        els.append(card(20, 64, 720, 298))
+        els.append(pill(34, 74, "A · 水分活度 aw 全局劣变地图", fg=BLUE, bg=BLUE_SOFT))
+
+        px0, px1 = 74, 710
+        pw = px1 - px0
+        py_top, py_bot = 132, 292
+        ph = py_bot - py_top
+
+        def x_aw(aw):
+            return px0 + aw * pw
+
+        def y_rate(r):
+            return py_bot - max(0.0, min(1.0, r)) * ph
+
+        # Mathematical reaction rate models across aw in [0, 1]
+        def gab_sorption(aw):
+            m0, c_g, k_g = 0.145, 14.0, 0.84
+            val = (m0 * c_g * k_g * aw) / ((1.0 - k_g * aw) * (1.0 - k_g * aw + c_g * k_g * aw))
+            return min(0.88, val)
+
+        def lipid_ox(aw):
+            low_branch = 0.56 * math.exp(-aw / 0.11)
+            mid_rise = 0.64 * ((aw / 0.64) ** 3.2) / (1.0 + (aw / 0.64) ** 3.2) * math.exp(-((aw - 0.78) ** 2) / 0.085)
+            return 0.14 + low_branch + mid_rise
+
+        def maillard_rate(aw):
+            if aw <= 0.16:
+                return 0.0
+            bell = math.exp(-((aw - 0.68) ** 2) / 0.036)
+            taper = 1.0 - math.exp(-((aw - 0.16) / 0.18) ** 1.6)
+            return 0.82 * bell * taper
+
+        def mold_yeast_rate(aw):
+            if aw <= 0.61:
+                return 0.0
+            return min(0.93, 0.96 * (((aw - 0.61) / 0.39) ** 1.45))
+
+        def bacteria_rate(aw):
+            if aw <= 0.85:
+                return 0.0
+            return min(0.98, 0.99 * (((aw - 0.85) / 0.15) ** 1.15))
+
+        # Quantitative assertions on Labuza curves
+        assert lipid_ox(0.04) > 2.2 * lipid_ox(0.28), "Over-dried lipid oxidation must exceed monolayer minimum"
+        assert lipid_ox(0.72) > 2.2 * lipid_ox(0.28), "Intermediate-aw lipid oxidation must exceed monolayer minimum"
+        assert maillard_rate(0.68) > 0.75 and maillard_rate(0.95) < 0.38
+        assert mold_yeast_rate(0.60) == 0.0 and bacteria_rate(0.84) == 0.0
+
+        # Shaded functional zones
+        els.append(
+            f'<rect x="{x_aw(0.0):.1f}" y="{py_top}" width="{0.19 * pw:.1f}" height="{ph}" fill="#fff7ed" opacity="0.85"/>'
+        )
+        els.append(
+            f'<rect x="{x_aw(0.20):.1f}" y="{py_top}" width="{0.18 * pw:.1f}" height="{ph}" fill="{GREEN_SOFT}" opacity="0.72"/>'
+        )
+        els.append(
+            f'<rect x="{x_aw(0.61):.1f}" y="{py_top}" width="{0.39 * pw:.1f}" height="{ph}" fill="{RED_SOFT}" opacity="0.26"/>'
+        )
+
+        # Horizontal & vertical gridlines
+        for frac in (0.25, 0.50, 0.75, 1.0):
+            gy = y_rate(frac)
+            els.append(f'<line x1="{px0}" y1="{gy:.1f}" x2="{px1}" y2="{gy:.1f}" stroke="{HAIRLINE}" stroke-width="0.8" stroke-dasharray="3 3"/>')
+
+        for i in range(11):
+            aw_tick = i * 0.1
+            gx = x_aw(aw_tick)
+            els.append(f'<line x1="{gx:.1f}" y1="{py_top}" x2="{gx:.1f}" y2="{py_bot}" stroke="{BORDER}" stroke-width="0.8"/>')
+            els.append(txt(gx, py_bot + 16, f"{aw_tick:.1f}", 11.5, SLATE, anchor="middle"))
+
+        # Axes
+        els.append(f'<line x1="{px0}" y1="{py_top}" x2="{px0}" y2="{py_bot}" stroke="{INK}" stroke-width="1.3"/>')
+        els.append(f'<line x1="{px0}" y1="{py_bot}" x2="{px1}" y2="{py_bot}" stroke="{INK}" stroke-width="1.3"/>')
+        els.append(
+            f'<text x="38" y="{(py_top + py_bot) / 2:.1f}" font-size="11.5" font-weight="700" fill="{SLATE}" '
+            f'text-anchor="middle" transform="rotate(-90 38 {(py_top + py_bot) / 2:.1f})">相对反应速率 / 水分</text>'
+        )
+
+        # Legend row above plot
+        legend_items = [
+            (318, "① 油脂氧化", ORANGE, ""),
+            (408, "② 美拉德褐变", PURPLE, "6 3 2 3"),
+            (516, "③ 霉菌与酵母", TEAL, "5 3"),
+            (622, "④ 细菌繁殖", RED, ""),
+        ]
+        for lx, l_txt, l_col, l_dash in legend_items:
+            dash_attr = f' stroke-dasharray="{l_dash}"' if l_dash else ""
+            els.append(f'<line x1="{lx}" y1="88" x2="{lx + 20}" y2="88" stroke="{l_col}" stroke-width="2.5"{dash_attr}/>')
+            els.append(txt(lx + 25, 92, l_txt, 11.5, l_col, weight="700"))
+
+        # Plot polyline helper
+        aws = [i / 100.0 for i in range(101)]
+
+        def poly(fn, start_i=0):
+            return " ".join(f"{x_aw(aws[i]):.1f},{y_rate(fn(aws[i])):.1f}" for i in range(start_i, len(aws)))
+
+        # GAB isotherm (subtle reference curve)
+        els.append(f'<polyline points="{poly(gab_sorption)}" fill="none" stroke="{SLATE}" stroke-width="1.5" stroke-dasharray="2 3" opacity="0.75"/>')
+        els.append(txt(x_aw(0.44), y_rate(gab_sorption(0.44)) + 16, "吸附水等温线", 11.5, SLATE, anchor="middle"))
+
+        # 4 main deterioration curves
+        els.append(f'<polyline points="{poly(lipid_ox)}" fill="none" stroke="{ORANGE}" stroke-width="2.5"/>')
+        els.append(f'<polyline points="{poly(maillard_rate, 16)}" fill="none" stroke="{PURPLE}" stroke-width="2.3" stroke-dasharray="6 3 2 3"/>')
+        els.append(f'<polyline points="{poly(mold_yeast_rate, 61)}" fill="none" stroke="{TEAL}" stroke-width="2.4" stroke-dasharray="5 3"/>')
+        els.append(f'<polyline points="{poly(bacteria_rate, 85)}" fill="none" stroke="{RED}" stroke-width="2.8"/>')
+
+        # Key vertical cutoff lines & callout labels
+        x_60 = x_aw(0.60)
+        els.append(f'<line x1="{x_60:.1f}" y1="{py_top}" x2="{x_60:.1f}" y2="{py_bot}" stroke="{RED}" stroke-width="1.5" stroke-dasharray="4 3"/>')
+        els.append(txt(x_60 - 6, py_top + 15, "aw = 0.60 微生物停摆线", 11.5, RED, anchor="end", weight="700"))
+
+        # Monolayer sweet spot marker
+        xm, ym = x_aw(0.28), y_rate(lipid_ox(0.28))
+        els.append(f'<circle cx="{xm:.1f}" cy="{ym:.1f}" r="4.5" fill="{GREEN}" stroke="#ffffff" stroke-width="1.5"/>')
+        els.append(txt(x_aw(0.29), py_top + 15, "单分子水膜稳态窗", 11.5, GREEN, anchor="middle", weight="700"))
+        els.append(txt(x_aw(0.29), py_top + 32, "aw ≈ 0.25–0.35", 11.5, GREEN, anchor="middle"))
+
+        els.append(txt(x_aw(0.095), py_top + 32, "过干裸露", 11.5, AMBER, anchor="middle", weight="700"))
+        els.append(txt(x_aw(0.095), py_top + 49, "油哈加速", 11.5, AMBER, anchor="middle"))
+
+        # Food benchmark chips along bottom of Card A
+        food_marks = [
+            (0.11, "薯片 0.1", AMBER),
+            (0.27, "奶粉/饼干 0.25", GREEN),
+            (0.62, "蜂蜜/果脯 0.62", PURPLE),
+            (0.76, "咸鱼 0.75", SLATE),
+            (0.86, "腊肠 0.85", TEAL),
+            (0.97, "鲜肉奶 0.99", RED),
+        ]
+        for f_aw, f_lbl, f_col in food_marks:
+            fx = x_aw(f_aw)
+            els.append(f'<circle cx="{fx:.1f}" cy="{py_bot}" r="3.2" fill="{f_col}"/>')
+            els.append(txt(fx, py_bot + 36, f_lbl, 11.5, f_col, anchor="middle", weight="700"))
+
+        els.append(
+            txt(
+                390,
+                350,
+                "代表性食物基准点：为什么含水约 18% 的蜂蜜千年不腐（糖锁自由水 aw≈0.60），而含水更少的受潮坚果却会发霉？",
+                11.5,
+                BODY,
+                anchor="middle",
+            )
+        )
+
+        # Bottom card: Leistner Hurdle Technology relay
+        els.append(card(20, 374, 720, 162))
+        els.append(pill(34, 384, "B · 栅栏技术四关接力", fg=GREEN, bg=GREEN_SOFT))
+        els.append(
+            txt(
+                36,
+                422,
+                "单一重锤保鲜（把肉彻底晒干或腌成盐块）会毁掉口感；现代食品工程按伽马乘积模型叠加多道温和关卡：",
+                11.5,
+                BODY,
+            )
+        )
+
+        # Multiplicative gamma vitality relay
+        gamma_factors = [1.0, 0.48, 0.40, 0.22, 0.04]
+        cum_vitality = [1.0]
+        for gf in gamma_factors[1:]:
+            cum_vitality.append(cum_vitality[-1] * gf)
+        assert cum_vitality[-1] < 0.003
+
+        hurdles = [
+            ("初始污染菌", "活力 100%", "准备闯关繁殖", RED, RED_SOFT),
+            ("① 轻度巴氏热处理", "剩 48%", "杀灭营养体细胞", ORANGE, ORANGE_SOFT),
+            ("② 糖盐温和控 aw", "剩 19%", "aw≈0.82 耗能抗渗", AMBER, AMBER_SOFT),
+            ("③ 有机酸微调 pH", "剩 4.2%", "pH≈5.2 被迫泵 H+", PURPLE, PURPLE_SOFT),
+            ("④ 高阻隔膜+脱氧剂", "归零停摆！", "残氧<0.01% 封死霉菌", GREEN, GREEN_SOFT),
+        ]
+        for idx, (h_title, h_pct, h_desc, h_fg, h_bg) in enumerate(hurdles):
+            hx = 34 + idx * 139
+            els.append(card(hx, 438, 129, 84, rx=8, fill=h_bg, stroke=h_fg, sw=1.2))
+            els.append(txt(hx + 64.5, 459, h_title, 11.5, h_fg, anchor="middle", weight="700"))
+            els.append(txt(hx + 64.5, 483, h_pct, 12.5, INK, anchor="middle", weight="700"))
+            els.append(txt(hx + 64.5, 506, h_desc, 11.5, BODY, anchor="middle"))
+            if idx < 4:
+                ax = hx + 130
+                els.append(f'<line x1="{ax}" y1="480" x2="{ax + 8}" y2="480" stroke="{SLATE}" stroke-width="1.6"/>')
+
+        return figure(
+            550,
+            "食品水分活度全局稳定性曲线与多因子栅栏保质技术示意图",
+            "上图绘制自由水逃逸压水分活度 aw 从 0 到 1 区间内四类腐败反应速率及吸附等温线：细菌在 0.85 以下受阻，一切微生物在 0.60 以下彻底停摆，但脂质氧化在过干区(aw 小于 0.20)反常回升，使 aw 约 0.25 至 0.35 成为干制品单分子水膜黄金稳态窗；下图展示栅栏技术通过轻度加热、温和控水、微调酸度与脱氧包装四道温和关卡接力耗尽微生物稳态能量。",
+            els,
+        )
+
+    def _build_thermal_crossover():
+        els = []
+        els.extend(
+            header(
+                "二、pH 4.6 生死线与热杀菌剪刀差：为什么 138 °C 闪蒸 4 秒比慢炖更保鲜？",
+                "杀灭芽孢对升温极敏感（z ≈ 10 °C，每升 10 °C 快 10 倍），煮坏营养风味却迟钝（z ≈ 28 °C，仅快 2.3 倍）",
+            )
+        )
+
+        # Left Panel: Semi-log T vs log10(t) crossover diagram
+        els.append(card(20, 64, 430, 470))
+        els.append(pill(34, 74, "A · 无菌线 vs 煮熟线（半对数剪刀差）", fg=BLUE, bg=BLUE_SOFT))
+
+        px0, px1 = 80, 430
+        pw = px1 - px0
+        py_top, py_bot = 122, 372
+        ph = py_bot - py_top  # 5 decades: log10(t_sec) from -1 to +4
+
+        def x_temp(t_c):
+            return px0 + ((t_c - 100.0) / 50.0) * pw
+
+        def y_sec(sec):
+            lg = math.log10(max(0.1, min(10000.0, sec)))
+            return py_bot - ((lg - (-1.0)) / 5.0) * ph
+
+        # Exact thermal death time F0 = 3.0 min = 180 s at 121.1 C, z_spore = 10.0 C
+        def t_kill(t_c):
+            return 180.0 * (10.0 ** (-(t_c - 121.1) / 10.0))
+
+        # Chemical / Maillard / Thiamine 10% loss threshold: 150 s at 121.1 C, z_chem = 28.0 C
+        def t_chem(t_c):
+            return 150.0 * (10.0 ** (-(t_c - 121.1) / 28.0))
+
+        assert abs(t_kill(121.1) - 180.0) < 1e-6
+        assert t_chem(138.0) / t_kill(138.0) > 9.5, "UHT at 138C must give >9.5x quality margin over spore kill"
+
+        # Shaded UHT golden window where t_kill < t < t_chem (T >= 120.2 C to 150 C)
+        win_temps = [120.2 + i * (29.8 / 40.0) for i in range(41)]
+        upper_pts = [f"{x_temp(tc):.1f},{y_sec(t_chem(tc)):.1f}" for tc in win_temps]
+        lower_pts = [f"{x_temp(tc):.1f},{y_sec(t_kill(tc)):.1f}" for tc in reversed(win_temps)]
+        els.append(f'<polygon points="{" ".join(upper_pts + lower_pts)}" fill="{GREEN_SOFT}" opacity="0.82"/>')
+
+        # Gridlines
+        decade_labels = [(-1, "0.1 s"), (0, "1 s"), (1, "10 s"), (2, "100 s"), (3, "10³ s"), (4, "10⁴ s")]
+        for lg_v, lbl in decade_labels:
+            gy = py_bot - ((lg_v + 1.0) / 5.0) * ph
+            els.append(f'<line x1="{px0}" y1="{gy:.1f}" x2="{px1}" y2="{gy:.1f}" stroke="{HAIRLINE}" stroke-width="0.8" stroke-dasharray="3 3"/>')
+            els.append(txt(px0 - 6, gy + 4, lbl, 11.5, SLATE, anchor="end"))
+
+        for tc in (100, 110, 120, 130, 140, 150):
+            gx = x_temp(tc)
+            els.append(f'<line x1="{gx:.1f}" y1="{py_top}" x2="{gx:.1f}" y2="{py_bot}" stroke="{BORDER}" stroke-width="0.8"/>')
+            els.append(txt(gx, py_bot + 17, f"{tc}°C", 11.5, SLATE, anchor="middle"))
+
+        els.append(f'<line x1="{px0}" y1="{py_top}" x2="{px0}" y2="{py_bot}" stroke="{INK}" stroke-width="1.3"/>')
+        els.append(f'<line x1="{px0}" y1="{py_bot}" x2="{px1}" y2="{py_bot}" stroke="{INK}" stroke-width="1.3"/>')
+
+        # Plot t_chem line (100..150 C)
+        chem_pts = " ".join(f"{x_temp(100 + i):.1f},{y_sec(t_chem(100 + i)):.1f}" for i in range(51))
+        els.append(f'<polyline points="{chem_pts}" fill="none" stroke="{AMBER}" stroke-width="2.4" stroke-dasharray="6 3"/>')
+
+        # Plot t_kill line (103.7..150 C so t <= 10^4 s)
+        kill_temps = [103.7 + i * (46.3 / 60.0) for i in range(61)]
+        kill_pts = " ".join(f"{x_temp(tc):.1f},{y_sec(t_kill(tc)):.1f}" for tc in kill_temps)
+        els.append(f'<polyline points="{kill_pts}" fill="none" stroke="{RED}" stroke-width="2.7"/>')
+
+        # Key operating markers: Retort Can (121.1 C, 1800 s real conduction) vs UHT Milk (138 C, 4 s)
+        x_can, y_can = x_temp(121.1), y_sec(1800.0)
+        els.append(f'<line x1="{x_can:.1f}" y1="{y_sec(180.0):.1f}" x2="{x_can:.1f}" y2="{y_can:.1f}" stroke="{AMBER}" stroke-width="1.6" stroke-dasharray="2 2"/>')
+        els.append(f'<circle cx="{x_can:.1f}" cy="{y_can:.1f}" r="4.8" fill="{AMBER}" stroke="#ffffff" stroke-width="1.4"/>')
+        els.append(txt(x_can + 10, y_can - 4, "实心罐头 (121°C×30 min)", 11.5, AMBER, weight="700"))
+        els.append(txt(x_can + 10, y_can + 14, "导热慢，越过褐变线产熟罐味", 11.5, BODY))
+
+        x_uht, y_uht = x_temp(138.0), y_sec(4.0)
+        els.append(f'<circle cx="{x_uht:.1f}" cy="{y_uht:.1f}" r="5.2" fill="{GREEN}" stroke="#ffffff" stroke-width="1.5"/>')
+        els.append(txt(x_uht - 8, y_uht + 22, "★ UHT 超高温奶 (138°C×4 s)", 11.5, GREEN, anchor="end", weight="700"))
+
+        els.append(txt(x_temp(140.0), y_sec(t_chem(140.0)) - 14, "化学煮熟线 (z≈28°C)", 11.5, AMBER, anchor="middle", weight="700"))
+        els.append(txt(136, 136, "12D 杀芽孢线", 11.5, RED, weight="700"))
+        els.append(txt(148, 153, "(z = 10°C)", 11.5, RED))
+
+        # Quantitative math summary box inside Left Panel
+        els.append(card(34, 404, 402, 116, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(48, 426, "算清“高温短时（HTST / UHT）”抢时间的数学账：", 12.0, INK, weight="700"))
+        els.append(txt(48, 450, "• 升温 20 °C (121→141 °C)：芽孢致死提速 10^(20/10) = 100 倍！", 11.5, RED, weight="700"))
+        els.append(txt(48, 473, "• 同一 20 °C 温升：美拉德与维生素破坏仅提速 10^(20/28) ≈ 5.2 倍。", 11.5, AMBER))
+        els.append(txt(48, 496, "• 结果：灭菌时间缩至 1/100，化学热损伤反而锐减约 95%！", 11.5, GREEN, weight="700"))
+
+        # Right Panel: pH 4.6 Regulatory & Biological Divide
+        els.append(card(464, 64, 276, 470))
+        els.append(pill(478, 74, "B · FDA pH = 4.6 酸度分水岭", fg=RED, bg=RED_SOFT))
+
+        # High-acid card
+        els.append(card(478, 110, 248, 134, rx=8, fill=GREEN_SOFT, stroke=GREEN, sw=1.2))
+        els.append(step_badge(496, 131, "1", fg=GREEN, bg="#ffffff", r=10))
+        els.append(txt(512, 135, "高酸食品：pH ≤ 4.6", 12.0, GREEN, weight="700"))
+        els.append(txt(490, 159, "代表：番茄酱、橙汁、果酱、泡菜", 11.5, INK, weight="700"))
+        els.append(txt(490, 181, "高浓度 H+ 锁死肉毒梭菌芽孢萌发；", 11.5, BODY))
+        els.append(txt(490, 203, "无需高压釜，85–95 °C 常压巴氏杀菌", 11.5, BODY))
+        els.append(txt(490, 225, "灭掉霉菌酵母即可常温保质！", 11.5, GREEN, weight="700"))
+
+        # Low-acid card
+        els.append(card(478, 258, 248, 152, rx=8, fill=RED_SOFT, stroke=RED, sw=1.2))
+        els.append(step_badge(496, 279, "2", fg=RED, bg="#ffffff", r=10))
+        els.append(txt(512, 283, "低酸食品：pH > 4.6 · aw > 0.85", 12.0, RED, weight="700"))
+        els.append(txt(490, 307, "代表：纯牛奶、玉米罐头、红烧肉", 11.5, INK, weight="700"))
+        els.append(txt(490, 329, "密封无氧+中性营养=肉毒梭菌温床", 11.5, BODY))
+        els.append(txt(490, 351, "(中性缓冲液中芽孢耐热 D 值高 3 倍)；", 11.5, BODY))
+        els.append(txt(490, 373, "必须用 121 °C 高压釜或 >135 °C UHT", 11.5, RED, weight="700"))
+        els.append(txt(490, 395, "达成 12D 斩草除根（存活率 10⁻¹²）！", 11.5, RED, weight="700"))
+
+        # Why UHT milk needs zero preservative
+        els.append(card(478, 422, 248, 98, rx=8, fill=BLUE_SOFT, stroke=BLUE, sw=1.2))
+        els.append(txt(490, 444, "为什么常温纯牛奶零防腐剂？", 12.0, BLUE, weight="700"))
+        els.append(txt(490, 467, "液态奶流动换热快，闪蒸 4 秒团灭芽孢", 11.5, BODY))
+        els.append(txt(490, 489, "+ 过氧化氢无菌舱灌装 = 零菌封存；", 11.5, BODY))
+        els.append(txt(490, 510, "一旦开盒进空气，须冷藏且尽快喝完。", 11.5, INK, weight="700"))
+
+        return figure(
+            550,
+            "热杀菌12D芽孢致死曲线与美拉德风味损失剪刀差及pH 4.6分水岭图解",
+            "左栏在半对数坐标上精确计算肉毒梭菌芽孢商业无菌线(F0=3分钟，z=10摄氏度)与风味营养化学损失线(z=28摄氏度)的交汇反转：138摄氏度闪蒸4秒落入绿色保鲜窗口，比121摄氏度实心罐头慢速导热减少九成以上化学损伤；右栏对比FDA规定的pH 4.6高酸与低酸罐藏食品杀菌分界及常温奶无防腐剂原理。",
+            els,
+        )
+
+    def _build_six_layer_carton_and_evoh():
+        els = []
+        els.extend(
+            header(
+                "三、薄如发丝却挡住整年阳光氧气：六层无菌纸砖与“怕水阻氧夹心膜”",
+                "没有全能单层塑料：聚烯烃防水漏氧，极性 EVOH 挡氧怕湿；多层复合与 6.3 µm 铝箔各司其职",
+            )
+        )
+
+        # One-shot self-contained barrier animation + reduced-motion override
+        els.append(
+            """<style>
+  .threat-wave {
+    stroke-dasharray: 90;
+    stroke-dashoffset: 90;
+    animation: probeRun 2.8s cubic-bezier(0.22, 0.61, 0.36, 1) 1 forwards;
+  }
+  .stop-ring {
+    opacity: 0;
+    animation: ringPop 0.5s ease-out 2.1s 1 forwards;
+  }
+  @keyframes probeRun {
+    0% { stroke-dashoffset: 90; }
+    100% { stroke-dashoffset: 0; }
+  }
+  @keyframes ringPop {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .threat-wave { animation: none !important; stroke-dashoffset: 0 !important; }
+    .stop-ring { animation: none !important; opacity: 1 !important; }
+  }
+</style>"""
+        )
+
+        # Left Panel: 6-Layer Aseptic Carton Exploded Cross-Section
+        els.append(card(20, 64, 384, 476))
+        els.append(pill(34, 74, "A · 六层无菌纸砖剖面（70%纸+25%PE+5%铝）", fg=BLUE, bg=BLUE_SOFT))
+
+        # 6 vertical strata from x = 94 to x = 204
+        strata = [
+            (94, 13, "#bae6fd", BLUE, "① 外层 PE 膜", "隔绝外部潮气护彩印"),
+            (109, 32, "#fde68a", AMBER, "② 原木纸板 (70%)", "提供挺度抗摔但漏气"),
+            (143, 12, "#dbeafe", SLATE, "③ PE 粘合淋膜", "热熔锚定纸板与铝箔"),
+            (157, 11, "#cbd5e1", INK, "④ 超薄铝箔 (6.3µm)", "100% 遮光 + 锁死氧气"),
+            (170, 12, "#ede9fe", PURPLE, "⑤ 改性粘合树脂", "防酸防油拒绝铝塑脱层"),
+            (184, 20, "#dcfce7", GREEN, "⑥ 内层食品级 PE", "无菌热封焊缝直接触奶"),
+        ]
+        sy0, sh = 118, 328
+        for sx, sw_b, s_fill, s_stroke, _, _ in strata:
+            els.append(f'<rect x="{sx}" y="{sy0}" width="{sw_b}" height="{sh}" rx="3" fill="{s_fill}" stroke="{s_stroke}" stroke-width="1.1"/>')
+
+        # Milk side tint on right of Layer 6
+        els.append(f'<rect x="207" y="{sy0}" width="16" height="{sh}" rx="3" fill="#fffbeb" stroke="{BORDER}" stroke-width="0.9"/>')
+        els.append(
+            f'<text x="218" y="{sy0 + sh / 2:.1f}" font-size="11.5" font-weight="700" fill="{AMBER}" '
+            f'text-anchor="middle" transform="rotate(-90 218 {sy0 + sh / 2:.1f})">无菌纯牛奶侧</text>'
+        )
+
+        # Callout rows on the right of strata (x = 232..392)
+        for idx, (sx, sw_b, _, s_stroke, s_name, s_role) in enumerate(strata):
+            cy = 136 + idx * 54
+            cx_mid = sx + sw_b / 2.0
+            els.append(f'<line x1="{cx_mid:.1f}" y1="{cy}" x2="230" y2="{cy}" stroke="{s_stroke}" stroke-width="1.1" stroke-dasharray="2 2"/>')
+            els.append(f'<circle cx="{cx_mid:.1f}" cy="{cy}" r="2.6" fill="{s_stroke}"/>')
+            els.append(txt(234, cy - 3, s_name, 11.5, s_stroke, weight="700"))
+            els.append(txt(234, cy + 14, s_role, 11.5, BODY))
+
+        # Incoming threat arrows from outside (x = 34..157) with static dashed guide + animated probe
+        # 1) External moisture stopped at Layer 1 PE (x = 94)
+        els.append(f'<line x1="36" y1="168" x2="93" y2="168" stroke="{BLUE}" stroke-width="1.3" stroke-dasharray="3 3" opacity="0.55"/>')
+        els.append(f'<line class="threat-wave" x1="36" y1="168" x2="93" y2="168" stroke="{BLUE}" stroke-width="2.4"/>')
+        els.append(f'<circle cx="93" cy="168" r="5" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.6"/>')
+        els.append(txt(34, 156, "外湿 H2O", 11.5, BLUE, weight="700"))
+        els.append(txt(34, 185, "第①层拦下", 11.5, SLATE))
+
+        # 2) UV light stopped at Layer 4 Al-foil (x = 157)
+        els.append(f'<line x1="36" y1="268" x2="156" y2="268" stroke="{AMBER}" stroke-width="1.3" stroke-dasharray="3 3" opacity="0.55"/>')
+        els.append(f'<line class="threat-wave" x1="36" y1="268" x2="156" y2="268" stroke="{AMBER}" stroke-width="2.4"/>')
+        els.append(f'<circle class="stop-ring" cx="156" cy="268" r="6.5" fill="none" stroke="{RED}" stroke-width="1.8"/>')
+        els.append(f'<circle cx="156" cy="268" r="3.5" fill="{RED}"/>')
+        els.append(txt(34, 256, "紫外/可见光", 11.5, AMBER, weight="700"))
+
+        # 3) Oxygen O2 stopped at Layer 4 Al-foil (x = 157)
+        els.append(f'<line x1="36" y1="358" x2="156" y2="358" stroke="{RED}" stroke-width="1.3" stroke-dasharray="3 3" opacity="0.55"/>')
+        els.append(f'<line class="threat-wave" x1="36" y1="358" x2="156" y2="358" stroke="{RED}" stroke-width="2.4"/>')
+        els.append(f'<circle class="stop-ring" cx="156" cy="358" r="6.5" fill="none" stroke="{RED}" stroke-width="1.8"/>')
+        els.append(f'<circle cx="156" cy="358" r="3.5" fill="{RED}"/>')
+        els.append(txt(34, 346, "空气 O2", 11.5, RED, weight="700"))
+        els.append(txt(34, 375, "第④层铝盾封死", 11.5, RED, weight="700"))
+
+        # Bottom liquid-submerged sealing note
+        els.append(card(34, 460, 356, 66, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(46, 482, "无顶空灌装绝招：纸管经 35% 过氧化氢浴/电子束灭菌后，", 11.5, BODY))
+        els.append(txt(46, 504, "在液面以下带液横向热封切断，盒内连半个空气泡都不留！", 11.5, INK, weight="700"))
+
+        # Right Panel: Polymer barrier comparison & EVOH sandwich
+        els.append(card(418, 64, 322, 476))
+        els.append(pill(432, 74, "B · 实测阻隔寿命对比 & EVOH 怕水之谜", fg=PURPLE, bg=PURPLE_SOFT))
+        els.append(txt(432, 112, "38°C / 90% RH 严苛湿热下布丁粉货架期实测：", 11.5, INK, weight="700"))
+
+        # Exact Turksever et al. (2025) PMC12650960 Table 1 data
+        films = [
+            ("PET / 9µm 铝箔 / LDPE", 0.026, 0.049, 800.3, GREEN),
+            ("PET·AlOx 透明镀氧化铝 / LDPE", 0.130, 0.190, 577.9, BLUE),
+            ("MPET 真空镀铝膜 / LDPE", 0.335, 0.356, 407.6, PURPLE),
+            ("单层 MBOPP 镀铝膜 (易回收)", 12.190, 0.650, 229.3, ORANGE),
+        ]
+        assert films[0][3] > films[1][3] > films[2][3] > films[3][3]
+        assert films[3][1] / films[0][1] > 460.0
+
+        max_days = 850.0
+        for idx, (f_name, otr_v, wvtr_v, days_v, f_col) in enumerate(films):
+            fy = 128 + idx * 52
+            bw = (days_v / max_days) * 214.0
+            els.append(txt(432, fy + 12, f_name, 11.5, INK, weight="700"))
+            els.append(txt(726, fy + 12, f"OTR {otr_v:g}", 11.5, SLATE, anchor="end"))
+            els.append(f'<rect x="432" y="{fy + 19}" width="214" height="16" rx="4" fill="{SLATE_SOFT}"/>')
+            els.append(f'<rect x="432" y="{fy + 19}" width="{bw:.1f}" height="16" rx="4" fill="{f_col}"/>')
+            els.append(txt(652, fy + 31, f"{days_v:.0f} 天", 11.5, f_col, weight="700"))
+
+        # Bottom sub-card: Why EVOH must be sandwiched between PE/PP
+        els.append(card(432, 344, 294, 182, rx=8, fill=PURPLE_SOFT, stroke=PURPLE, sw=1.2))
+        els.append(txt(444, 366, "微波透明包装怎么挡氧？五层三明治：", 12.0, PURPLE, weight="700"))
+
+        # Mini 5-layer horizontal sandwich badge
+        layers_5 = [
+            (442, 66, "疏水 PE", BLUE_SOFT, BLUE),
+            (510, 34, "Tie", "#f8fafc", SLATE),
+            (546, 66, "干 EVOH", "#fde68a", AMBER),
+            (614, 34, "Tie", "#f8fafc", SLATE),
+            (650, 66, "疏水 PP", BLUE_SOFT, BLUE),
+        ]
+        for lx, lw, l_lbl, l_bg, l_fg in layers_5:
+            els.append(f'<rect x="{lx}" y="378" width="{lw}" height="28" rx="4" fill="{l_bg}" stroke="{l_fg}" stroke-width="1.1"/>')
+            els.append(txt(lx + lw / 2.0, 396, l_lbl, 11.5, l_fg, anchor="middle", weight="700"))
+
+        els.append(txt(444, 428, "• 干燥 EVOH 靠密集 –OH 氢键锁网挡死 O2；", 11.5, BODY))
+        els.append(txt(444, 450, "• 一旦受潮，水分子插入抢夺氢键（增塑效应），", 11.5, BODY))
+        els.append(txt(444, 472, "  高分子链自由体积暴涨，阻氧力瞬间崩塌！", 11.5, RED, weight="700"))
+        els.append(txt(444, 496, "• 解法：夹在两层疏水聚烯烃中间“外挡水内挡氧”。", 11.5, INK, weight="700"))
+
+        return figure(
+            555,
+            "利乐六层无菌复合纸砖阻隔剖面动画与多层高分子EVOH三明治阻氧原理图",
+            "左栏剖析由约70%纸板、25%聚乙烯和5%超薄铝箔(约6.3微米)构成的六层无菌纸砖，展示外层聚乙烯拦截水汽、第4层铝箔彻底阻断光线与氧气的分级防线及液面下无顶空热封；右栏依据实测数据对比铝箔复合膜(800天)、透明氧化铝镀膜(578天)、镀铝膜(408天)与单层镀铝聚丙烯(229天)的货架期，并解释极性EVOH因怕水增塑必须夹在疏水PP/PE之间的原因。",
+            els,
+        )
+
+    def _build_map_and_scavengers():
+        els = []
+        els.extend(
+            header(
+                "四、给食物换一口空气：三大反直觉气调配方、真空鱼陷阱与脱氧剂",
+                "薯片充纯氮防碎防酸败，冷鲜红肉反充 80% 高氧保鲜红，冷藏生鱼乱抽真空竟会关掉腐败臭味警报",
+            )
+        )
+
+        # Top row: 3 Modified Atmosphere / ROP scenarios
+        cards_top = [
+            (
+                "1",
+                "薯片袋：>99% 纯氮气垫",
+                BLUE,
+                BLUE_SOFT,
+                "配方：高纯食品级 N2 (残氧 < 1%)",
+                "• 化学防哈：氮三键极稳定，赶走 O2",
+                "  掐断不饱和脂肪自由基氧化链；",
+                "• 物理防碎：N2 难溶于油水不塌袋，",
+                "  撑起防挤压气囊（绝非普通空气）！",
+                "包材：MPET/PE 镀铝复合膜遮光锁气",
+                "若充 CO2 易溶入油脂导致袋子吸瘪",
+            ),
+            (
+                "2",
+                "冷鲜红肉：80% O2 + 20% CO2",
+                GREEN,
+                GREEN_SOFT,
+                "反直觉高氧气调 (HiOx-MAP, 2°C)",
+                "• 为何不抽真空？缺氧呈暗紫褐色；",
+                "  80% 高氧锁住鲜红氧合肌红蛋白！",
+                "• 20% CO2 溶入肉表水膜降 pH，",
+                "  精准抑制好氧假单胞菌腐败。",
+                "代价：高氧促脂氧化，货架期 7–10 天",
+                "批发大块肉仍用真空（拆封后回红）",
+            ),
+            (
+                "3",
+                "冷藏生鱼：盲目真空反招剧毒",
+                RED,
+                RED_SOFT,
+                "FDA 规定：透气膜 OTR ≥ 10,000",
+                "• 海鲜非蛋白水解肉毒梭菌在 ≥3.3°C",
+                "  冷藏室即可厌氧产剧毒且不发臭！",
+                "• 抽真空灭好氧菌 = 拔掉发臭警报；",
+                "• 须用高透气膜故意放好氧菌先发臭",
+                "提醒丢弃，否则真空生鱼须全程冷冻！",
+                "铁律：真空生海鲜严禁仅放冷藏室",
+            ),
+        ]
+        for idx, (b_num, c_title, fg_c, bg_c, sub_tag, l1, l2, l3, l4, l5, l6) in enumerate(cards_top):
+            cx = 20 + idx * 244
+            els.append(card(cx, 66, 232, 266, rx=10, fill="#ffffff", stroke=fg_c, sw=1.4))
+            els.append(f'<rect x="{cx}" y="66" width="232" height="40" rx="10" fill="{bg_c}"/>')
+            els.append(step_badge(cx + 20, 86, b_num, fg=fg_c, bg="#ffffff", r=10))
+            els.append(txt(cx + 36, 90, c_title, 12.0, fg_c, weight="700"))
+            els.append(txt(cx + 12, 128, sub_tag, 11.5, INK, weight="700"))
+            els.append(txt(cx + 12, 154, l1, 11.5, BODY))
+            els.append(txt(cx + 12, 176, l2, 11.5, BODY))
+            els.append(txt(cx + 12, 202, l3, 11.5, BODY))
+            els.append(txt(cx + 12, 224, l4, 11.5, BODY))
+            els.append(f'<line x1="{cx + 12}" y1="242" x2="{cx + 220}" y2="242" stroke="{HAIRLINE}" stroke-width="1"/>')
+            els.append(txt(cx + 12, 264, l5, 11.5, fg_c, weight="700"))
+            els.append(txt(cx + 12, 288, l6, 11.5, RED if idx == 2 else SLATE, weight="700" if idx == 2 else "400"))
+
+        # Bottom row: Active Packaging Sachets — Oxygen Scavenger vs Desiccant
+        els.append(card(20, 346, 354, 198, rx=10, fill="#ffffff", stroke=AMBER, sw=1.3))
+        els.append(pill(34, 358, "主动包装 A · 铁粉脱氧剂（糕点/坚果）", fg=AMBER, bg=AMBER_SOFT))
+        els.append(txt(34, 396, "配方：还原铁粉 Fe + 食盐电解质 + 活性炭", 11.5, INK, weight="700"))
+        els.append(txt(34, 420, "反应：4Fe + 3O2 + 6H2O → 4Fe(OH)3（受控生锈）", 11.5, AMBER, weight="700"))
+        els.append(txt(34, 444, "• 真空抽气常残留 0.5%–2% 缝隙氧，霉菌仍能长；", 11.5, BODY))
+        els.append(txt(34, 466, "• 脱氧剂借食物微湿水汽启动，把残氧吸至 <0.01%", 11.5, BODY))
+        els.append(txt(34, 488, "  (<100 ppm)，并持续吃掉透膜渗入的微量氧！", 11.5, BODY))
+        els.append(txt(34, 514, "鉴别：新品黑灰松散微温；失效后变硬结红锈块。", 11.5, SLATE, weight="700"))
+
+        els.append(card(386, 346, 354, 198, rx=10, fill="#ffffff", stroke=PURPLE, sw=1.3))
+        els.append(pill(400, 358, "主动包装 B · 干燥剂（海苔/脆饼/冻干）", fg=PURPLE, bg=PURPLE_SOFT))
+        els.append(txt(400, 396, "配方：透明硅胶珠（物理毛细吸附）或生石灰 CaO", 11.5, INK, weight="700"))
+        els.append(txt(400, 420, "反应：CaO + H2O → Ca(OH)2（剧烈放热，严禁泡水！）", 11.5, RED, weight="700"))
+        els.append(txt(400, 444, "• 只抓水汽不吸氧气！死守低水分活度 aw < 0.25，", 11.5, BODY))
+        els.append(txt(400, 466, "  维持淀粉/糖玻璃化转变温度 Tg 高于室温防疲软；", 11.5, BODY))
+        els.append(txt(400, 488, "• 若把生石灰误放进湿软蛋糕，会把蛋糕吸成干砖；", 11.5, BODY))
+        els.append(txt(400, 514, "口诀：湿软糕点放脱氧剂防霉，酥脆海苔放干燥剂保脆！", 11.5, PURPLE, weight="700"))
+
+        return figure(
+            558,
+            "气调包装三大气体配方与冷藏真空鱼肉毒毒素风险及脱氧剂干燥剂分工图解",
+            "上排对比三种气调与减氧包装机制：薯片充纯氮防碎防氧化、冷鲜牛排充80%高氧与20%二氧化碳兼顾鲜红肌红蛋白与抑菌、冷藏生鱼因非蛋白水解型肉毒梭菌可在3.3摄氏度无臭产毒而被FDA要求使用OTR不低于10000的高透气膜或冷冻；下排对比铁粉生锈把残氧压至0.01%以下的脱氧剂与硅胶/生石灰锁水保脆的干燥剂。",
+            els,
+        )
+
+    def _build_shelf_life_and_dates():
+        els = []
+        els.extend(
+            header(
+                "五、保质期不是午夜准时变毒药：Q10 加速老化推演、两类日期与胀袋排雷",
+                "新品不用苦等一年才上市：温度每升 10 °C 化学劣变提速 Q10 倍；分清品质赏味期、安全死线与危险鼓包",
+            )
+        )
+
+        # Left Panel: Q10 Accelerated Shelf-Life Testing (ASLT) curve
+        els.append(card(20, 64, 372, 472))
+        els.append(pill(34, 74, "A · Q10 加速寿命试验（40 °C 测 56 天 ≈ 常温 1 年）", fg=BLUE, bg=BLUE_SOFT))
+
+        px0, px1 = 78, 372
+        pw = px1 - px0
+        py_top, py_bot = 122, 362
+        ph = py_bot - py_top  # Shelf life 0..700 days
+
+        def x_t(tc):
+            return px0 + ((tc - 15.0) / 30.0) * pw
+
+        def y_days(d):
+            return py_bot - min(1.0, max(0.0, d / 700.0)) * ph
+
+        def shelf_q10(tc, q10=3.0):
+            return 365.0 * (q10 ** (-(tc - 23.0) / 10.0))
+
+        # Verify Saarniit et al. (2023) PMC10178123 Q10=3 equivalence: 23C 365d <-> 40C 56.4d
+        d_40 = shelf_q10(40.0, 3.0)
+        assert 55.5 < d_40 < 57.0
+
+        for d_tick in (0, 180, 365, 540, 700):
+            gy = y_days(d_tick)
+            els.append(f'<line x1="{px0}" y1="{gy:.1f}" x2="{px1}" y2="{gy:.1f}" stroke="{HAIRLINE}" stroke-width="0.8" stroke-dasharray="3 3"/>')
+            els.append(txt(px0 - 6, gy + 4, f"{d_tick}天", 11.5, SLATE, anchor="end"))
+
+        for tc in (15, 23, 33, 40, 45):
+            gx = x_t(tc)
+            els.append(f'<line x1="{gx:.1f}" y1="{py_top}" x2="{gx:.1f}" y2="{py_bot}" stroke="{BORDER}" stroke-width="0.8"/>')
+            els.append(txt(gx, py_bot + 17, f"{tc}°C", 11.5, SLATE, anchor="middle"))
+
+        els.append(f'<line x1="{px0}" y1="{py_top}" x2="{px0}" y2="{py_bot}" stroke="{INK}" stroke-width="1.3"/>')
+        els.append(f'<line x1="{px0}" y1="{py_bot}" x2="{px1}" y2="{py_bot}" stroke="{INK}" stroke-width="1.3"/>')
+
+        # Curves for Q10 = 2.0 (dashed blue) and Q10 = 3.0 (solid orange, starting at 17.1C where shelf=698d)
+        ts_q2 = [15.0 + i * 0.5 for i in range(61)]
+        ts_q3 = [17.1 + i * ((45.0 - 17.1) / 56.0) for i in range(57)]
+        pts_q2 = " ".join(f"{x_t(t):.1f},{y_days(shelf_q10(t, 2.0)):.1f}" for t in ts_q2)
+        pts_q3 = " ".join(f"{x_t(t):.1f},{y_days(shelf_q10(t, 3.0)):.1f}" for t in ts_q3)
+        els.append(f'<polyline points="{pts_q2}" fill="none" stroke="{BLUE}" stroke-width="2.0" stroke-dasharray="5 3"/>')
+        els.append(f'<polyline points="{pts_q3}" fill="none" stroke="{ORANGE}" stroke-width="2.6"/>')
+
+        els.append(txt(86, 278, "Q10 = 2 (虚线)", 11.5, BLUE, weight="700"))
+        els.append(txt(x_t(20.5) + 8, y_days(shelf_q10(20.5, 3.0)), "典型化学劣变 Q10 = 3", 11.5, ORANGE, weight="700"))
+
+        # Three milestone markers on Q10=3
+        mx23, my23 = x_t(23.0), y_days(365.0)
+        els.append(f'<circle cx="{mx23:.1f}" cy="{my23:.1f}" r="4.6" fill="{GREEN}" stroke="#ffffff" stroke-width="1.4"/>')
+        els.append(txt(mx23 + 10, my23 - 6, "23°C 常温：365 天", 11.5, GREEN, weight="700"))
+
+        mx33, my33 = x_t(33.0), y_days(shelf_q10(33.0, 3.0))
+        els.append(f'<circle cx="{mx33:.1f}" cy="{my33:.1f}" r="4.6" fill="{AMBER}" stroke="#ffffff" stroke-width="1.4"/>')
+        els.append(txt(mx33 - 8, my33 + 18, "33°C 酷暑仓：122 天", 11.5, AMBER, anchor="end", weight="700"))
+
+        mx40, my40 = x_t(40.0), y_days(d_40)
+        els.append(f'<line x1="{mx40:.1f}" y1="{my40 - 5:.1f}" x2="{mx40:.1f}" y2="294" stroke="{RED}" stroke-width="1.2" stroke-dasharray="2 2"/>')
+        els.append(f'<circle cx="{mx40:.1f}" cy="{my40:.1f}" r="4.6" fill="{RED}" stroke="#ffffff" stroke-width="1.4"/>')
+        els.append(txt(368, 289, "★ 40°C 加速箱：56 天", 11.5, RED, anchor="end", weight="700"))
+
+        # Packaging mass-balance box
+        els.append(card(34, 396, 344, 126, rx=8, fill=SLATE_SOFT, stroke=BORDER))
+        els.append(txt(46, 418, "防潮保质期工程公式（为什么大包装比小袋耐放？）：", 11.5, INK, weight="700"))
+        els.append(txt(46, 442, "ts = Ws · (Mc − Mi) / (WVTR · A · Δp / p_std)", 11.5, BLUE, weight="700"))
+        els.append(txt(46, 466, "• 干重 Ws 翻倍而袋面积 A 仅增 1.6 倍 ⇒ 寿命自动拉长；", 11.5, BODY))
+        els.append(txt(46, 488, "• 酷暑盛夏每升温 10 °C 寿命缩水至 1/2–1/3，", 11.5, BODY))
+        els.append(txt(46, 510, "  因此“阴凉避光干燥处”是实打实的动力学参数！", 11.5, ORANGE, weight="700"))
+
+        # Right Panel: Date Labels + Swollen Pack Triage
+        els.append(card(406, 64, 334, 472))
+        els.append(pill(420, 74, "B · 赏味期 vs 安全死线 & 胀袋三秒排雷", fg=GREEN, bg=GREEN_SOFT))
+
+        # Date labels sub-card
+        els.append(card(420, 110, 306, 174, rx=8, fill="#ffffff", stroke=BORDER, sw=1.2))
+        els.append(txt(432, 132, "① 最佳赏味期（Best if Used By · 品质缓坡）", 12.0, GREEN, weight="700"))
+        els.append(txt(432, 154, "饼干/罐头/干面：代表风味酥脆度保持巅峰的期限；", 11.5, BODY))
+        els.append(txt(432, 175, "未破损受潮超期几天并非剧毒（误丢占家庭浪费 20%）。", 11.5, SLATE))
+        els.append(f'<line x1="432" y1="192" x2="714" y2="192" stroke="{HAIRLINE}" stroke-width="1"/>')
+        els.append(txt(432, 214, "② 安全食用期（Use By · 安全悬崖红线！）", 12.0, RED, weight="700"))
+        els.append(txt(432, 236, "冷鲜即食熟肉/鲜切沙拉/婴儿配方粉：嗜冷李斯特菌", 11.5, BODY))
+        els.append(txt(432, 257, "可在 4°C 暗中增殖且不酸臭，超期必须果断丢弃！", 11.5, RED, weight="700"))
+
+        # Swollen package 3-way triage
+        els.append(txt(420, 308, "看到包装鼓包（胀袋/胖听），到底能不能吃？", 12.0, INK, weight="700"))
+        swollen_cases = [
+            (
+                "安全",
+                "高原低压物理鼓包（平地薯片上高原）",
+                GREEN,
+                GREEN_SOFT,
+                "外界气压降低致袋内氮气正常膨胀，回平原即瘪。",
+            ),
+            (
+                "剧危",
+                "生物产气腐败胀袋（常温鼓盖酸奶/肉罐头）",
+                RED,
+                RED_SOFT,
+                "梭菌/酵母产 CO2·H2，可能含肉毒毒素，严禁开尝！",
+            ),
+            (
+                "弃食",
+                "高酸水果铁罐“氢胀”（菠萝/番茄马口铁罐）",
+                AMBER,
+                AMBER_SOFT,
+                "果酸长期腐蚀罐壁溶锡铁析出氢气，金属超标勿食。",
+            ),
+        ]
+        for idx, (tag_s, s_title, fg_c, bg_c, s_desc) in enumerate(swollen_cases):
+            sy = 322 + idx * 68
+            els.append(card(420, sy, 306, 60, rx=8, fill=bg_c, stroke=fg_c, sw=1.2))
+            els.append(pill(430, sy + 8, tag_s, fg="#ffffff", bg=fg_c))
+            els.append(txt(478, sy + 24, s_title, 11.5, fg_c, weight="700"))
+            els.append(txt(432, sy + 47, s_desc, 11.5, BODY))
+
+        return figure(
+            550,
+            "食品Q10加速保质期推算曲线与两类日期标签及三种胀袋安全鉴别图解",
+            "左栏绘制Q10等于2与3时的保质期随温度指数衰减曲线，标示23摄氏度常温365天对应33摄氏度122天及40摄氏度加速老化箱56.4天的动力学换算与防潮传质寿命公式；右栏区分代表品质巅峰的最佳赏味期与代表李斯特菌或婴配营养底线的安全食用期，并给出高原物理鼓包、微生物产气腐败胖听与果酸腐蚀氢胀的三秒鉴别指南。",
+            els,
+        )
+
+    @register(
+        "food-packaging-preservation",
+        "食品包装与保质原理全图解：水分活度aw稳定性地图与栅栏技术、pH 4.6分水岭与138°C UHT热杀菌剪刀差、利乐六层无菌砖与EVOH怕水夹心膜、气调配方与真空生鱼肉毒警报及脱氧剂、Q10加速寿命推演与胀袋鉴别",
+        "science_tech",
+    )
+    def build_food_packaging_preservation():
+        write_svg(SUBDIR, "water-activity-stability-map-and-hurdles.svg", _build_water_activity_and_hurdles())
+        write_svg(SUBDIR, "thermal-12d-vs-uht-z-value-crossover.svg", _build_thermal_crossover())
+        write_svg(SUBDIR, "six-layer-aseptic-carton-and-evoh-barrier.svg", _build_six_layer_carton_and_evoh())
+        write_svg(SUBDIR, "map-gas-recipes-botulism-trap-and-scavengers.svg", _build_map_and_scavengers())
+        write_svg(SUBDIR, "arrhenius-q10-shelf-life-and-date-labels.svg", _build_shelf_life_and_dates())
+
+
+_register_food_packaging_preservation()
+
+
+def _register_space_plants():
+    SUBDIR = "space-plants"
+    RED = "#b91c1c"
+    RED_SOFT = "#fef2f2"
+    AMBER = "#b45309"
+    AMBER_SOFT = "#fffbeb"
+    TEAL = "#0f766e"
+    TEAL_SOFT = "#f0fdfa"
+
+    # Quantitative assertions grounded in primary space-botany literature:
+    # 1. Wolffia exponential biomass model (Romano et al., Plants 2021 / Sci. Rep. 2024):
+    #    Fastest DT in W. microscopica = 29.3 h -> RGR = ln(2)/(29.3/24) = 0.5678 /d;
+    #    10 g starter reaching ~2000 g steady pool in ~20 d corresponds to RGR ~ 0.265 /d
+    #    (well inside measured W. globosa RGR 0.219-0.559 /d), yielding ~600 g/d harvest!
+    dt_fastest_h = 29.3
+    rgr_fastest = math.log(2.0) / (dt_fastest_h / 24.0)
+    assert 0.55 < rgr_fastest < 0.58
+    rgr_pool = math.log(2000.0 / 10.0) / 20.0
+    assert 0.219 < rgr_pool < 0.559
+    daily_surplus_g = 2000.0 * (math.exp(rgr_pool * 1.0) - 1.0)
+    assert 590.0 <= daily_surplus_g <= 620.0
+
+    # 2. Apollo lunar regolith DEGs vs JSC-1A control (Paul, Elardo & Ferl, Commun. Biol. 2022):
+    apollo_degs = {"A17": 113, "A12": 265, "A11": 465}
+    assert apollo_degs["A17"] < apollo_degs["A12"] < apollo_degs["A11"]
+
+    # 3. Syntrichia caninervis gamma LD50 ~ 5000 Gy vs human ~3.5 Gy (>1000x):
+    assert 5000.0 / 3.5 > 1400.0
+
+    def _build_microgravity_paradox_and_veggie():
+        els = []
+        els.extend(
+            header(
+                "一、失重下的水气双悖论：为什么在太空浇水反而会把根“憋死”、把麦穗“熏绝育”？",
+                "微重力抽走浮力对流（停滞气膜积聚乙烯）并放大毛细张力（水壳裹死根毛），迫使太空农业重构供水与通风",
+            )
+        )
+        els.append(
+            """<style>
+  @keyframes sp-stagnant-halo {
+    0% { opacity: 0.25; transform: scale(0.92); }
+    100% { opacity: 0.92; transform: scale(1.04); }
+  }
+  @keyframes sp-fan-flow {
+    0% { stroke-dashoffset: 36; }
+    100% { stroke-dashoffset: 0; }
+  }
+  .sp-halo {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: sp-stagnant-halo 2.6s ease-out 1 forwards;
+  }
+  .sp-stream {
+    stroke-dasharray: 6 4;
+    animation: sp-fan-flow 2.4s linear 1 forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .sp-halo, .sp-stream { animation: none !important; opacity: 0.9 !important; stroke-dashoffset: 0 !important; }
+  }
+</style>"""
+        )
+
+        # Panel A: 1g Earth vs microgravity fluid & boundary-layer trap
+        els.append(card(20, 64, 354, 272))
+        els.append(pill(34, 74, "A · 地球 1 g 顺畅循环 vs 失重 μg 水气死局", fg=RED, bg=RED_SOFT))
+
+        # Left mini-column: 1 g Earth
+        els.append(card(34, 106, 156, 216, rx=8, fill=GREEN_SOFT, stroke=GREEN, sw=1.1))
+        els.append(txt(112, 125, "地球重力场 (1 g)", 12.0, GREEN, anchor="middle", weight="700"))
+        # Simple plant stem + leaves + drained soil pores
+        els.append(f'<line x1="112" y1="145" x2="112" y2="232" stroke="{GREEN}" stroke-width="2.6"/>')
+        els.append(f'<ellipse cx="95" cy="166" rx="16" ry="7" transform="rotate(-22 95 166)" fill="{GREEN}"/>')
+        els.append(f'<ellipse cx="129" cy="166" rx="16" ry="7" transform="rotate(22 129 166)" fill="{GREEN}"/>')
+        # Upward buoyancy arrows
+        els.append(f'<path d="M 66 190 L 66 144" stroke="{BLUE}" stroke-width="1.6"/>')
+        els.append(f'<polygon points="66,139 62.5,146 69.5,146" fill="{BLUE}"/>')
+        els.append(f'<path d="M 158 190 L 158 144" stroke="{BLUE}" stroke-width="1.6"/>')
+        els.append(f'<polygon points="158,139 154.5,146 161.5,146" fill="{BLUE}"/>')
+        els.append(txt(112, 198, "浮力对流吹散停滞层", 11.5, INK, anchor="middle", weight="600"))
+        # Soil line + roots + air/water pores
+        els.append(f'<line x1="44" y1="210" x2="180" y2="210" stroke="{HAIRLINE}" stroke-width="1.2"/>')
+        els.append(f'<path d="M 112 210 L 96 242 M 112 218 L 128 244 M 112 226 L 108 250" stroke="{AMBER}" stroke-width="1.8" fill="none"/>')
+        els.append(txt(112, 272, "重力排走积水", 11.5, GREEN, anchor="middle", weight="700"))
+        els.append(txt(112, 291, "孔隙留足 21% O2", 11.5, BODY, anchor="middle"))
+        els.append(txt(112, 310, "根系自由呼吸不烂根", 11.5, MUTED, anchor="middle"))
+
+        # Right mini-column: microgravity trap
+        els.append(card(204, 106, 156, 216, rx=8, fill=RED_SOFT, stroke=RED, sw=1.2))
+        els.append(txt(282, 125, "轨道微重力 (μg ≈ 0)", 12.0, RED, anchor="middle", weight="700"))
+        # Stagnant gas halo around floret/leaves
+        els.append(
+            f'<ellipse class="sp-halo" cx="282" cy="164" rx="46" ry="24" fill="#fde68a" fill-opacity="0.55" stroke="{ORANGE}" stroke-width="1.3" stroke-dasharray="4 3"/>'
+        )
+        els.append(f'<line x1="282" y1="145" x2="282" y2="232" stroke="#65a30d" stroke-width="2.6"/>')
+        els.append(f'<ellipse cx="266" cy="166" rx="14" ry="6" transform="rotate(-15 266 166)" fill="#65a30d"/>')
+        els.append(f'<ellipse cx="298" cy="166" rx="14" ry="6" transform="rotate(15 298 166)" fill="#65a30d"/>')
+        els.append(txt(282, 198, "无对流：乙烯围困绝育", 11.5, ORANGE, anchor="middle", weight="700"))
+        els.append(f'<line x1="214" y1="210" x2="350" y2="210" stroke="{HAIRLINE}" stroke-width="1.2"/>')
+        # Thick capillary water blob suffocating roots
+        els.append(
+            f'<ellipse class="sp-halo" cx="282" cy="233" rx="34" ry="19" fill="#93c5fd" fill-opacity="0.65" stroke="{BLUE}" stroke-width="1.4"/>'
+        )
+        els.append(f'<path d="M 282 210 L 267 240 M 282 218 L 297 242 M 282 225 L 280 246" stroke="{AMBER}" stroke-width="1.8" fill="none"/>')
+        els.append(txt(282, 272, "毛细水膜死裹根系", 11.5, RED, anchor="middle", weight="700"))
+        els.append(txt(282, 291, "水中 O2 扩散慢万倍", 11.5, BODY, anchor="middle"))
+        els.append(txt(282, 310, "根区缺氧窒息 (Hypoxia)", 11.5, MUTED, anchor="middle"))
+
+        # Panel B: NASA Veggie / APH / Wentian hardware engineering countermeasure
+        els.append(card(386, 64, 354, 272))
+        els.append(pill(400, 74, "B · 空间站培养舱破局解剖（Veggie / 问天）", fg=BLUE, bg=BLUE_SOFT))
+
+        # LED cap at top of chamber
+        els.append(card(398, 108, 160, 34, rx=6, fill="#fdf4ff", stroke=PURPLE, sw=1.3))
+        for lx, lcol in [(416, RED), (438, BLUE), (460, RED), (482, GREEN), (504, RED), (526, BLUE), (544, RED)]:
+            els.append(f'<circle cx="{lx}" cy="125" r="4.3" fill="{lcol}"/>')
+        els.append(txt(570, 121, "① 红蓝绿精准 LED 灯板", 11.5, PURPLE, weight="700"))
+        els.append(txt(570, 138, "红蓝促光合，绿光供巡检", 11.5, BODY))
+
+        # Forced airflow + ethylene scrubber box
+        els.append(card(398, 152, 160, 68, rx=6, fill="#f8fafc", stroke=BLUE_LINE, sw=1.1))
+        els.append(
+            f'<path class="sp-stream" d="M 410 176 C 446 162, 504 162, 546 176" fill="none" stroke="{BLUE}" stroke-width="1.8"/>'
+        )
+        els.append(
+            f'<path class="sp-stream" d="M 410 198 C 446 184, 504 184, 546 198" fill="none" stroke="{TEAL}" stroke-width="1.8"/>'
+        )
+        # Healthy compact plant inside chamber
+        els.append(f'<ellipse cx="465" cy="196" rx="17" ry="7.5" transform="rotate(-18 465 196)" fill="{GREEN}"/>')
+        els.append(f'<ellipse cx="491" cy="196" rx="17" ry="7.5" transform="rotate(18 491 196)" fill="{GREEN}"/>')
+        els.append(f'<line x1="478" y1="184" x2="478" y2="224" stroke="{GREEN}" stroke-width="2.5"/>')
+        els.append(txt(570, 173, "② 强制风扇 + 除乙烯滤芯", 11.5, BLUE, weight="700"))
+        els.append(txt(570, 191, "削薄叶面气膜补足 CO2", 11.5, BODY))
+        els.append(txt(570, 209, "压低乙烯防麦穗空瘪绝育", 11.5, MUTED))
+
+        # Root pillow with calcined clay (Arcillite) + capillary wick + slow-release fertilizer
+        els.append(card(398, 230, 160, 90, rx=8, fill="#fffbeb", stroke=AMBER, sw=1.3))
+        els.append(f'<rect x="465" y="298" width="26" height="18" rx="3" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.2"/>')
+        granules = [
+            (418, 252), (438, 248), (458, 254), (498, 250), (520, 253), (540, 249),
+            (426, 274), (448, 272), (508, 274), (532, 272),
+            (434, 294), (524, 293),
+        ]
+        for gx, gy in granules:
+            els.append(f'<circle cx="{gx}" cy="{gy}" r="5.8" fill="#d97706" fill-opacity="0.35" stroke="{AMBER}" stroke-width="1"/>')
+        els.append(f'<path d="M 478 224 L 462 268 M 478 236 L 495 272 M 478 248 L 478 288" stroke="{GREEN}" stroke-width="1.8" fill="none"/>')
+        els.append(txt(478, 311, "导水芯垫", 11.5, BLUE, anchor="middle", weight="700"))
+        els.append(txt(570, 248, "③ 煅烧黏土植物枕", 11.5, AMBER, weight="700"))
+        els.append(txt(570, 267, "1–2 mm 陶粒 + 控释肥", 11.5, BODY))
+        els.append(txt(570, 286, "靠基质势锁住薄水膜，颗", 11.5, BODY))
+        els.append(txt(570, 305, "粒间隙留出通气供氧通道", 11.5, GREEN, weight="700"))
+
+        # Bottom Strip: 5 Selection Filters for Space Plants
+        els.append(card(20, 348, 720, 172))
+        els.append(pill(34, 358, "C · 太空选种五道硬考题", fg=GREEN, bg=GREEN_SOFT))
+        els.append(txt(206, 374, "为什么果树、高秆玉米在第一轮选拔就会直接出局？", 11.5, MUTED))
+
+        criteria = [
+            ("① 超高收获指数", "HI → 80%–100%", "少长树皮木秆与果壳", "省电又免堆肥耗氧", GREEN, GREEN_SOFT),
+            ("② 极致矮小紧凑", "株高 0.1–45 cm", "多层栽培架立体叠放", "压低宝贵压力舱容积", BLUE, BLUE_SOFT),
+            ("③ 飞速倍增周期", "29 h 至 28–90 d", "快速接力产氧与口粮", "断供故障后迅速恢复", ORANGE, ORANGE_SOFT),
+            ("④ 高密营养护盾", "全蛋白+维C/花青素", "补齐冻干粮降解缺口", "清除宇宙射线自由基", PURPLE, PURPLE_SOFT),
+            ("⑤ 免媒授粉耐逆", "芽殖/扦插/自花", "太空没有蜜蜂与大风", "耐高 CO2 与辐射温差", TEAL, TEAL_SOFT),
+        ]
+        for idx, (c_title, c_num, c_l1, c_l2, c_fg, c_bg) in enumerate(criteria):
+            cx = 34 + idx * 140
+            els.append(card(cx, 392, 132, 114, rx=8, fill=c_bg, stroke=c_fg, sw=1.2))
+            els.append(txt(cx + 66, 413, c_title, 11.5, c_fg, anchor="middle", weight="700"))
+            els.append(txt(cx + 66, 437, c_num, 12.0, INK, anchor="middle", weight="700"))
+            els.append(txt(cx + 66, 463, c_l1, 11.5, BODY, anchor="middle"))
+            els.append(txt(cx + 66, 486, c_l2, 11.5, MUTED, anchor="middle"))
+
+        return figure(
+            536,
+            "微重力下植物根区缺氧与叶面停滞层水气双悖论及空间站培养舱破局与五维选种标准图解",
+            "左上对比地球1g重力排水与浮力自然对流同轨道微重力下毛细水膜裹死根系导致缺氧窒息、无对流停滞层积聚乙烯导致和平号小麦绝育的双重物理陷阱；右上解剖NASA Veggie与问天实验舱采用红蓝绿LED灯板、强制通风除乙烯滤芯及多孔煅烧黏土植物枕水气平衡方案；底部列出高收获指数HI、矮小株高、短周期、高营养护盾与免虫媒耐逆境五道选种门槛。",
+            els,
+        )
+
+    def _build_harvest_index_and_canopy_map():
+        els = []
+        els.extend(
+            header(
+                "二、太空农场的铁算盘：收获指数 HI 与矮化效率如何筛出“天选作物”？",
+                "每一克不可食秸秆都在白烧宝贵的 LED 光子并增加废物处理负担——八种候选作物定量坐标对比",
+            )
+        )
+
+        # Panel A: 2D Quantitative Scatter Plot (HI % vs Canopy Height cm)
+        els.append(card(20, 64, 426, 450))
+        els.append(pill(34, 74, "A · 收获指数 HI vs 株高紧凑度坐标图", fg=BLUE, bg=BLUE_SOFT))
+
+        px0, px1 = 98, 424
+        py_top, py_bot = 128, 438
+
+        # X-axis: Harvest Index HI from 25% to 105%
+        def x_hi(hi_pct):
+            return px0 + (hi_pct - 25.0) / 80.0 * (px1 - px0)
+
+        # Y-axis: Canopy height h_cm from 240 cm (bottom, tall/wasteful) to 0 cm (top, ultra-compact!)
+        def y_ht(h_cm):
+            return py_top + (h_cm / 240.0) * (py_bot - py_top)
+
+        # Highlight golden upper-right space-champion zone (HI >= 50%, height <= 60 cm)
+        gx0, gx1 = x_hi(48), x_hi(104)
+        gy0, gy1 = y_ht(0), y_ht(64)
+        els.append(
+            f'<rect x="{gx0:.1f}" y="{gy0:.1f}" width="{gx1 - gx0:.1f}" height="{gy1 - gy0:.1f}" rx="8" fill="{GREEN_SOFT}" fill-opacity="0.72" stroke="{GREEN}" stroke-width="1.2" stroke-dasharray="5 3"/>'
+        )
+        els.append(txt((gx0 + gx1) / 2, gy0 - 8, "太空优选黄金象限（株高 ≤ 60 cm · HI ≥ 50%）", 11.5, GREEN, anchor="middle", weight="700"))
+
+        # Gridlines & axes
+        for hi_tick in (30, 50, 70, 90, 100):
+            tx = x_hi(hi_tick)
+            els.append(f'<line x1="{tx:.1f}" y1="{py_top}" x2="{tx:.1f}" y2="{py_bot}" stroke="{BORDER}" stroke-width="1"/>')
+            els.append(txt(tx, py_bot + 18, f"{hi_tick}%", 11.5, MUTED, anchor="middle"))
+
+        for h_tick in (0, 50, 100, 150, 200):
+            ty = y_ht(h_tick)
+            els.append(f'<line x1="{px0}" y1="{ty:.1f}" x2="{px1}" y2="{ty:.1f}" stroke="{BORDER}" stroke-width="1"/>')
+            els.append(txt(px0 - 8, ty + 4, f"{h_tick}", 11.5, MUTED, anchor="end"))
+
+        els.append(f'<line x1="{px0}" y1="{py_top}" x2="{px0}" y2="{py_bot}" stroke="{INK}" stroke-width="1.4"/>')
+        els.append(f'<line x1="{px0}" y1="{py_bot}" x2="{px1}" y2="{py_bot}" stroke="{INK}" stroke-width="1.4"/>')
+        els.append(txt((px0 + px1) / 2, 480, "收获指数 HI = 可食干重 / 植株总干重（越靠右垃圾越少）", 11.5, INK, anchor="middle", weight="700"))
+        els.append(txt(28, 250, "株高", 11.5, INK, weight="700"))
+        els.append(txt(28, 267, "(cm)", 11.5, MUTED))
+        els.append(txt(28, 288, "越上", 11.5, GREEN, weight="700"))
+        els.append(txt(28, 305, "越省舱", 11.5, GREEN, weight="700"))
+
+        # 8 representative crops: (hi_pct, height_cm, name, col, dx, dy, anchor)
+        crops = [
+            (100, 1, "微萍 Wolffia (1mm)", GREEN, -9, 10, "end"),
+            (85, 19, "红叶生菜/水菜", TEAL, -9, 5, "end"),
+            (78, 35, "甘薯(根叶兼食)", BLUE, 9, 4, "start"),
+            (52, 46, "超矮小麦 Apogee", PURPLE, 9, 6, "start"),
+            (52, 62, "马铃薯(仅块茎)", ORANGE, 9, 6, "start"),
+            (42, 62, "大豆(蛋白油脂)", AMBER, -42, 22, "start"),
+            (40, 102, "普通高秆小麦", SLATE, 9, 5, "start"),
+            (38, 215, "高秆玉米(2.2m·淘汰)", RED, 9, -6, "start"),
+        ]
+        for hi_v, h_v, cname, ccol, dx, dy, canc in crops:
+            cx, cy = x_hi(hi_v), y_ht(h_v)
+            els.append(f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="5.2" fill="{ccol}" stroke="#ffffff" stroke-width="1.5"/>')
+            els.append(txt(cx + dx, cy + dy, cname, 11.5, ccol, anchor=canc, weight="700"))
+
+        els.append(txt(233, 502, "注：微萍无根茎 100% 可食；甘薯嫩叶可作绿蔬使综合 HI 达 ~78%。", 11.5, MUTED, anchor="middle"))
+
+        # Panel B: Stacked Biomass Bars (Edible vs Inedible Waste)
+        els.append(card(458, 64, 282, 450))
+        els.append(pill(472, 74, "B · 可食营养 vs 不可食废料拆解", fg=ORANGE, bg=ORANGE_SOFT))
+        els.append(txt(472, 112, "同样耗费 100 份光能与养分长出的生物量：", 11.5, BODY))
+
+        bars = [
+            ("微萍 Wolffia（无根无茎无草酸）", 100, "100% 全食", "", GREEN),
+            ("红叶生菜 Outredgeous（即摘即食）", 85, "85% 鲜叶", "15%", TEAL),
+            ("甘薯（块根 55% + 嫩茎叶 23%）", 78, "78% 双食", "22%", BLUE),
+            ("马铃薯（茎叶含龙葵素毒不可食）", 52, "52% 块茎", "48% 毒茎叶", ORANGE),
+            ("高秆玉米（粗秆·苞叶·穗轴占大头）", 38, "38%", "62% 秸秆废料", RED),
+        ]
+        bx0, bw_tot = 472, 252
+        for idx, (b_lbl, ed_pct, ed_txt, in_txt, b_col) in enumerate(bars):
+            by = 132 + idx * 58
+            els.append(txt(bx0, by, b_lbl, 11.5, INK, weight="700"))
+            ed_w = bw_tot * (ed_pct / 100.0)
+            in_w = bw_tot - ed_w
+            els.append(f'<rect x="{bx0}" y="{by + 8}" width="{ed_w:.1f}" height="22" rx="4" fill="{b_col}"/>')
+            if in_w > 1.0:
+                els.append(
+                    f'<rect x="{bx0 + ed_w:.1f}" y="{by + 8}" width="{in_w:.1f}" height="22" rx="4" fill="#e2e8f0" stroke="{HAIRLINE}" stroke-width="1"/>'
+                )
+            els.append(txt(bx0 + ed_w / 2, by + 23, ed_txt, 11.5, "#ffffff", anchor="middle", weight="700"))
+            if in_txt:
+                els.append(txt(bx0 + ed_w + in_w / 2, by + 23, in_txt, 11.5, SLATE, anchor="middle", weight="600"))
+
+        # Bottom callout card inside Panel B: Why Sweet Potato beats White Potato in BLSS
+        els.append(card(472, 420, 254, 84, rx=8, fill=BLUE_SOFT, stroke=BLUE, sw=1.2))
+        els.append(txt(484, 439, "为什么封闭舱常偏爱甘薯胜过土豆？", 11.5, BLUE, weight="700"))
+        els.append(txt(484, 458, "土豆茎叶含龙葵素，降解它还要倒扣宝", 11.5, BODY))
+        els.append(txt(484, 477, "贵氧气；甘薯块根管饱、嫩尖当青菜炒，", 11.5, BODY))
+        els.append(txt(484, 495, "微重力扦插 5 天即可生根（航天飞机实测）", 11.5, INK, weight="700"))
+
+        return figure(
+            528,
+            "太空候选作物收获指数HI与株高紧凑度二维优选图解及生物量废料拆解对比",
+            "左图在收获指数HI与株高坐标系中标定八种作物：1毫米微萍以100%收获指数居首，红叶生菜、茎叶块根兼食的甘薯与45厘米超矮春小麦Apogee落入太空优选黄金象限，而2.2米高秆玉米因62%不可食秸秆出局；右图对比五种作物可食与废料占比，解释马铃薯含龙葵素毒茎叶需耗氧降解而甘薯双食高效的生保账本。",
+            els,
+        )
+
+    def _build_wolffia_protein_factory():
+        els = []
+        els.extend(
+            header(
+                "三、效率总冠军“微萍（Wolffia）”：1 毫米无根开花植物怎样 20 天供足成人蛋白？",
+                "地球最小最快的高等植物：砍掉一切根茎木质素，靠囊袋“套娃芽殖”指数倍增（Romano et al., 2021/2024）",
+            )
+        )
+        els.append(
+            """<style>
+  @keyframes sp-wolffia-grow {
+    0% { stroke-dashoffset: 1800; }
+    100% { stroke-dashoffset: 0; }
+  }
+  .sp-wcurve {
+    stroke-dasharray: 1800;
+    animation: sp-wolffia-grow 2.8s ease-out 1 forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .sp-wcurve { animation: none !important; stroke-dasharray: none !important; stroke-dashoffset: 0 !important; }
+  }
+</style>"""
+        )
+
+        # Panel A: Anatomy of 1 mm Wolffia frond & budding pocket
+        els.append(card(20, 64, 344, 446))
+        els.append(pill(34, 74, "A · 1 毫米“水蛋”解剖与套娃出芽", fg=GREEN, bg=GREEN_SOFT))
+
+        # Scale bar comparison at top
+        els.append(card(34, 108, 316, 44, rx=7, fill="#f8fafc", stroke=BORDER))
+        els.append(f'<rect x="44" y="126" width="60" height="6" rx="3" fill="{SLATE}"/>')
+        els.append(f'<ellipse cx="116" cy="129" rx="6.5" ry="5" fill="{GREEN}"/>')
+        els.append(txt(132, 125, "比例对照：回形针钢丝粗约 1 mm", 11.5, INK, weight="700"))
+        els.append(txt(132, 144, "整株微萍 (0.5–1.2 mm) 比针头还小！", 11.5, GREEN, weight="700"))
+
+        # Cross-section diagram of Mother Frond + Meristem + Daughter + Granddaughter primordium
+        els.append(card(34, 162, 316, 198, rx=8, fill="#f0fdf4", stroke=GREEN, sw=1.2))
+        els.append(txt(48, 184, "气-液界面（顶部通气组织天然浮水）", 11.5, BLUE, weight="600"))
+        els.append(f'<line x1="44" y1="216" x2="340" y2="216" stroke="{BLUE}" stroke-width="1.4" stroke-dasharray="5 3"/>')
+
+        # Mother frond oval body
+        els.append(f'<ellipse cx="144" cy="252" rx="78" ry="42" fill="#86efac" stroke="{GREEN}" stroke-width="2.2"/>')
+        # Aerenchyma air chambers (top half)
+        for ax, ay in [(100, 228), (124, 224), (148, 225), (172, 229)]:
+            els.append(f'<ellipse cx="{ax}" cy="{ay}" rx="8.5" ry="4.8" fill="#ecfeff" stroke="{TEAL}" stroke-width="1"/>')
+        # Reproductive pocket on right side pushing out Daughter Frond + Granddaughter primordium
+        els.append(f'<ellipse cx="196" cy="254" rx="26" ry="20" fill="#bbf7d0" stroke="{GREEN}" stroke-width="1.5" stroke-dasharray="3 2"/>')
+        els.append(f'<circle cx="178" cy="254" r="6.5" fill="{AMBER}" stroke="#ffffff" stroke-width="1.2"/>')
+        els.append(f'<ellipse cx="228" cy="254" rx="30" ry="20" fill="#4ade80" stroke="{GREEN}" stroke-width="2"/>')
+        els.append(f'<circle cx="215" cy="254" r="5.5" fill="#fef08a" stroke="{AMBER}" stroke-width="1.1"/>')
+
+        # Labels inside anatomy card
+        els.append(txt(116, 258, "母叶状体(全食)", 11.5, INK, anchor="middle", weight="700"))
+        els.append(f'<line x1="178" y1="262" x2="196" y2="296" stroke="{AMBER}" stroke-width="1.2"/>')
+        els.append(txt(202, 311, "分生组织", 11.5, AMBER, anchor="middle", weight="700"))
+        els.append(txt(296, 248, "子代新株", 11.5, GREEN, anchor="middle", weight="700"))
+        els.append(txt(296, 266, "(怀孙代原基)", 11.5, BODY, anchor="middle"))
+        # Nutrient uptake arrows from bottom water film (no roots needed!)
+        for ux in (88, 118, 146):
+            els.append(f'<line x1="{ux}" y1="322" x2="{ux}" y2="299" stroke="{BLUE}" stroke-width="1.6"/>')
+            els.append(f'<polygon points="{ux},295 {ux-3.5},301 {ux+3.5},301" fill="{BLUE}"/>')
+        els.append(txt(192, 344, "无根系！下表皮直吸尿液回收铵氮与磷", 11.5, BLUE, anchor="middle", weight="700"))
+
+        # Nutritional highlights list at bottom of Panel A
+        els.append(card(34, 370, 316, 128, rx=8, fill=AMBER_SOFT, stroke=AMBER, sw=1.1))
+        els.append(txt(46, 391, "为什么营养学家称它为“太空浓缩蛋白球”？", 11.5, AMBER, weight="700"))
+        els.append(txt(46, 413, "• 干重含 20%–35% 全谱蛋白，齐备 9 种必需氨基酸", 11.5, BODY))
+        els.append(txt(46, 434, "• 脂肪约 80% 为多不饱和脂肪酸（富护心 ω-3）", 11.5, BODY))
+        els.append(txt(46, 455, "• 唯一不含草酸钙针晶的浮萍属，免肾结石隐患", 11.5, BODY))
+        els.append(txt(46, 476, "• 2024 变重力实验：个体越小的克隆株倍增越快！", 11.5, INK, weight="700"))
+
+        # Panel B: Exponential growth curve 10 g -> 2000 g steady state -> 600 g/day harvest
+        els.append(card(378, 64, 362, 446))
+        els.append(pill(392, 74, "B · 10 克火种 20 天建成“日产 600 克蛋白池”", fg=BLUE, bg=BLUE_SOFT))
+
+        gx0, gx1 = 434, 704
+        gy_top, gy_bot = 122, 372
+
+        def x_day(d):
+            return gx0 + (d / 25.0) * (gx1 - gx0)
+
+        def y_mass(m_g):
+            return gy_bot - (m_g / 2300.0) * (gy_bot - gy_top)
+
+        # Gridlines
+        for m_tick in (0, 500, 1000, 1500, 2000):
+            ty = y_mass(m_tick)
+            els.append(f'<line x1="{gx0}" y1="{ty:.1f}" x2="{gx1}" y2="{ty:.1f}" stroke="{BORDER}" stroke-width="1"/>')
+            els.append(txt(gx0 - 8, ty + 4, f"{m_tick}", 11.5, MUTED, anchor="end"))
+
+        for d_tick in (0, 5, 10, 15, 20, 25):
+            tx = x_day(d_tick)
+            els.append(f'<line x1="{tx:.1f}" y1="{gy_top}" x2="{tx:.1f}" y2="{gy_bot}" stroke="{BORDER}" stroke-width="1"/>')
+            els.append(txt(tx, gy_bot + 18, f"第{d_tick}天", 11.5, MUTED, anchor="middle"))
+
+        els.append(f'<line x1="{gx0}" y1="{gy_top}" x2="{gx0}" y2="{gy_bot}" stroke="{INK}" stroke-width="1.4"/>')
+        els.append(f'<line x1="{gx0}" y1="{gy_bot}" x2="{gx1}" y2="{gy_bot}" stroke="{INK}" stroke-width="1.4"/>')
+        els.append(txt(394, 114, "鲜重 (g)", 11.5, INK, weight="700"))
+
+        # Exponential growth M(t) = 10 * exp(rgr_pool * t) for t in [0..20], then daily sawtooth harvest 2000 -> 1400 -> 2000!
+        pts_exp = []
+        for i in range(81):
+            t_d = i * 0.25
+            m_val = 10.0 * math.exp(rgr_pool * t_d)
+            pts_exp.append(f"{x_day(t_d):.1f},{y_mass(m_val):.1f}")
+        for d_h in range(20, 25):
+            pts_exp.append(f"{x_day(d_h):.1f},{y_mass(1400.0):.1f}")
+            for sub in (0.33, 0.67, 1.0):
+                t_sub = d_h + sub
+                m_sub = 1400.0 * math.exp(rgr_pool * sub)
+                pts_exp.append(f"{x_day(t_sub):.1f},{y_mass(min(m_sub, 2000.0)):.1f}")
+
+        els.append(
+            f'<polyline class="sp-wcurve" points="{" ".join(pts_exp)}" fill="none" stroke="{GREEN}" stroke-width="2.6" stroke-linejoin="round"/>'
+        )
+
+        # Reference dashed curve for fastest W. microscopica (DT = 29.3 h => hits 2000 g in ~9.3 days!)
+        pts_fast = []
+        for i in range(38):
+            t_d = i * 0.25
+            m_val = 10.0 * math.exp(rgr_fastest * t_d)
+            if m_val <= 2200.0:
+                pts_fast.append(f"{x_day(t_d):.1f},{y_mass(m_val):.1f}")
+        els.append(
+            f'<polyline points="{" ".join(pts_fast)}" fill="none" stroke="{PURPLE}" stroke-width="1.7" stroke-dasharray="5 3"/>'
+        )
+        els.append(txt(gx0 + 8, y_mass(1820), "最快 W. microscopica", 11.5, PURPLE, weight="700"))
+        els.append(txt(gx0 + 8, y_mass(1820) + 17, "29.3 h 翻倍(9.3天满)", 11.5, PURPLE))
+
+        # Key milestones
+        els.append(f'<circle cx="{x_day(0):.1f}" cy="{y_mass(10):.1f}" r="4.5" fill="{ORANGE}"/>')
+        els.append(txt(x_day(0.8), y_mass(120), "起点仅需 10 g 火种（免运成袋种子）", 11.5, ORANGE, weight="700"))
+
+        els.append(f'<circle cx="{x_day(20):.1f}" cy="{y_mass(2000):.1f}" r="5" fill="{GREEN}"/>')
+        els.append(txt(x_day(19.5), y_mass(2140), "2,000 g 稳态母本池", 11.5, GREEN, anchor="end", weight="700"))
+        els.append(txt(x_day(22.6), y_mass(1120), "日捞 600 g 鲜品", 11.5, BLUE, anchor="middle", weight="700"))
+        els.append(txt(x_day(22.6), y_mass(950), "次日长回 2000 g", 11.5, BODY, anchor="middle"))
+
+        # Bottom summary formula box in Panel B
+        els.append(card(392, 404, 334, 92, rx=8, fill=GREEN_SOFT, stroke=GREEN, sw=1.2))
+        els.append(txt(406, 426, "克隆 8356 模拟微重力实测推算（Sci. Rep., 2024）：", 11.5, GREEN, weight="700"))
+        els.append(txt(406, 448, "• 每日收获约 600 g 鲜微萍 ≈ 补齐 1 名成人全天蛋白质", 11.5, INK, weight="700"))
+        els.append(txt(406, 469, "  （按欧洲食品安全局 EFSA 0.8 g/kg 体重/天标准）；", 11.5, BODY))
+        els.append(txt(406, 488, "• 同时 7 天可吸除废水中 70%–80% 氮磷，实现水肥闭环！", 11.5, BLUE, weight="700"))
+
+        return figure(
+            524,
+            "世界最小开花植物微萍Wolffia一毫米无根解剖结构与二十天指数增殖蛋白工厂曲线图解",
+            "左图展示仅约1毫米大小的微萍叶状体剖面：无根无茎无草酸钙，靠顶部通气组织浮水、下表皮直接吸收铵氮与磷，并在母体囊袋内套娃式芽殖子代与孙代原基；右图按实测相对生长率绘制从10克起始火种经20天指数增殖建成2000克稳态母本池、此后每日持续采收600克鲜品满足成人全天蛋白质需求的锯齿稳态曲线，并标注最快29.3小时倍增极限线。",
+            els,
+        )
+
+    def _build_blss_closure_and_squad():
+        els = []
+        els.extend(
+            header(
+                "四、从太空沙拉到月球基地：种多少平方米植物，才能养活 1 名宇航员？",
+                "单靠一种神草无法同时凑齐热量、蛋白质、咀嚼幸福感与呼吸商平衡——三级面积门槛与四大主力梯队",
+            )
+        )
+
+        # Top Panel: Metabolic budget + 3-step crop area ladder
+        els.append(card(20, 64, 720, 232))
+        els.append(pill(34, 74, "A · 宇航员生保账单 vs 种植面积三级台阶", fg=BLUE, bg=BLUE_SOFT))
+        els.append(txt(302, 90, "综合 NASA KSC 密闭舱与北航“月宫 365”实测口径", 11.5, MUTED))
+
+        # Left metabolic box
+        els.append(card(34, 108, 214, 174, rx=8, fill="#f8fafc", stroke=BLUE_LINE, sw=1.2))
+        els.append(txt(141, 129, "1 名成人每日生命代谢刚需", 12.0, INK, anchor="middle", weight="700"))
+        els.append(txt(46, 154, "• 吸入纯氧 O2：≈ 0.84 kg / 天", 11.5, BLUE, weight="700"))
+        els.append(txt(46, 176, "• 呼出二氧化碳：≈ 1.00 kg / 天", 11.5, ORANGE, weight="700"))
+        els.append(txt(46, 198, "• 膳食净热量：≈ 2500–2800 kcal", 11.5, GREEN, weight="700"))
+        els.append(txt(46, 220, "• 蛋白质刚需：≈ 55–80 g / 天", 11.5, PURPLE, weight="700"))
+        els.append(txt(46, 244, "同化商 AQ = CO2吸收/O2释放", 11.5, MUTED))
+        els.append(txt(46, 263, "混种主粮+油料可控在 ≈ 0.94", 11.5, INK, weight="600"))
+
+        # Right 3 horizontal progress tiers (0..50 m2 scale)
+        tiers = [
+            (
+                "第 1 阶 · 空间站鲜食维生素补给（0.2–2 m² / 人）",
+                2.0,
+                "现役 ISS Veggie / 天宫菜园：产氧 <5%，专补易流失维 C/K1 与花青素",
+                TEAL,
+                TEAL_SOFT,
+            ),
+            (
+                "第 2 阶 · 100% 氧气与净水自给（12–25 m² / 人）",
+                22.0,
+                "高光强超矮小麦（最低 11 m²）或微萍阵列：足额产氧 0.84 kg/d 并净水",
+                BLUE,
+                BLUE_SOFT,
+            ),
+            (
+                "第 3 阶 · 氧气 + 全天主粮热量 98% 闭环（40–50 m² / 人）",
+                45.0,
+                "NASA 密闭舱与北航“月宫一号”（4 人 120 m² 达 98% 闭合）：氧水粮自给",
+                GREEN,
+                GREEN_SOFT,
+            ),
+        ]
+        tx0, tw_max = 262, 464
+        for idx, (t_title, area_m2, t_desc, t_fg, t_bg) in enumerate(tiers):
+            ty = 108 + idx * 59
+            els.append(card(tx0, ty, tw_max, 52, rx=7, fill=t_bg, stroke=t_fg, sw=1.1))
+            bar_w = max(18.0, (area_m2 / 50.0) * (tw_max - 24))
+            els.append(f'<rect x="{tx0 + 12}" y="{ty + 7}" width="{bar_w:.1f}" height="6" rx="3" fill="{t_fg}" fill-opacity="0.35"/>')
+            els.append(txt(tx0 + 12, ty + 25, t_title, 11.5, t_fg, weight="700"))
+            els.append(txt(tx0 + 12, ty + 43, t_desc, 11.5, BODY))
+
+        # Bottom Panel: 4-Tier Space Plant All-Star Squad Matrix
+        els.append(card(20, 308, 720, 218))
+        els.append(pill(34, 318, "B · 太空植物“四大天团”分工", fg=PURPLE, bg=PURPLE_SOFT))
+        els.append(txt(238, 334, "按任务周期与生保生态位协同编组，没有单打独斗的万能草", 11.5, MUTED))
+
+        squads = [
+            (
+                "① 效率蛋白王",
+                "微萍 Wolffia · 螺旋藻",
+                GREEN,
+                GREEN_SOFT,
+                [
+                    "• 100% 可食，29–48h 倍增",
+                    "• 浓缩全蛋白 + 废水脱氮磷",
+                    "• 短板：缺主食嚼感；微藻",
+                    "  核酸高（防痛风 <15%）",
+                ],
+            ),
+            (
+                "② 在轨鲜食王",
+                "红叶生菜 · 水菜 · 太空辣椒",
+                ORANGE,
+                ORANGE_SOFT,
+                [
+                    "• 免开火即摘即食，零碎屑",
+                    "• 富维 C/K1 与花青素护盾",
+                    "• 辣椒素唤醒微重力迟钝味",
+                    "  觉，缓解长期幽闭焦虑",
+                ],
+            ),
+            (
+                "③ 基地主粮王",
+                "超矮小麦 · 甘薯 · 再生稻",
+                BLUE,
+                BLUE_SOFT,
+                [
+                    "• 45cm 小麦抗乙烯不绝育",
+                    "• 甘薯块根管饱+嫩叶当菜",
+                    "• 问天水稻 120 天结籽，剪",
+                    "  株 20 天再抽二茬再生稻",
+                ],
+            ),
+            (
+                "④ 荒原拓荒王",
+                "齿肋赤藓 · 拟南芥 · 蓝藻",
+                PURPLE,
+                PURPLE_SOFT,
+                [
+                    "• 拟南芥 6 周全周期探基因",
+                    "• 齿肋赤藓失水 98% 秒复活",
+                    "• 扛 −196°C 与 5000Gy 辐射",
+                    "• 火星与月表结皮改造先锋",
+                ],
+            ),
+        ]
+        for idx, (s_role, s_species, s_fg, s_bg, s_lines) in enumerate(squads):
+            sx = 32 + idx * 176
+            els.append(card(sx, 350, 168, 162, rx=8, fill=s_bg, stroke=s_fg, sw=1.2))
+            els.append(txt(sx + 84, 371, s_role, 12.0, s_fg, anchor="middle", weight="700"))
+            els.append(txt(sx + 84, 391, s_species, 11.5, INK, anchor="middle", weight="700"))
+            els.append(f'<line x1="{sx + 10}" y1="401" x2="{sx + 158}" y2="401" stroke="{s_fg}" stroke-opacity="0.35" stroke-width="1"/>')
+            for li, line_s in enumerate(s_lines):
+                els.append(txt(sx + 10, 421 + li * 21, line_s, 11.5, BODY))
+
+        return figure(
+            540,
+            "单名宇航员每日生保收支与光合种植面积三级阶梯及太空植物四大梯队分工矩阵图解",
+            "上图左侧列出成人每日消耗0.84千克氧气、排放1千克二氧化碳及需要约2500至2800千卡热量的生保账本，右侧给出0.2至2平方米鲜食补维生素、12至25平方米实现氧气与净水自给、40至50平方米（对应月宫一号4人120平方米370天98%闭合度）实现氧水粮全闭环的三级台阶；下图归纳微萍效率蛋白王、生菜辣椒在轨鲜食王、矮秆小麦甘薯再生稻基地主粮王与齿肋赤藓荒原拓荒王的互补分工。",
+            els,
+        )
+
+    def _build_regolith_and_mars_moss():
+        els = []
+        els.extend(
+            header(
+                "五、走出水培舱踏上月球与火星：真月壤种菜应激账本与“5000 Gy 不死”先锋藓",
+                "阿波罗月壤纳米铁触发数百个氧化应激基因；新疆齿肋赤藓靠玻璃化脱水硬扛火星低压极寒与强伽马辐射",
+            )
+        )
+
+        # Panel A: Apollo 11 / 12 / 17 Lunar Regolith Arabidopsis DEGs (Paul, Elardo & Ferl, 2022)
+        els.append(card(20, 64, 348, 456))
+        els.append(pill(34, 74, "A · 阿波罗真月壤首种拟南芥（Commun. Biol. 2022）", fg=AMBER, bg=AMBER_SOFT))
+        els.append(txt(34, 111, "发芽率近 100%，但第 6 天起根系受阻、开启强应激基因：", 11.5, BODY))
+
+        regolith_rows = [
+            ("地球火山灰模拟土 JSC-1A", 0, "对照基准（叶片舒展翠绿）", GREEN),
+            ("阿波罗 17 号较年轻月壤 (70051)", 113, "113 个应激基因（受创最轻）", BLUE),
+            ("阿波罗 12 号亚成熟月壤 (12070)", 265, "265 个应激基因（植株矮小）", ORANGE),
+            ("阿波罗 11 号高成熟月壤 (10084)", 465, "465 个应激基因（紫黑僵苗）", RED),
+        ]
+        rx0, rw_max = 36, 296
+        for idx, (r_title, deg_n, r_note, r_col) in enumerate(regolith_rows):
+            ry = 132 + idx * 62
+            els.append(txt(rx0, ry, r_title, 11.5, INK, weight="700"))
+            bw = 14.0 if deg_n == 0 else (deg_n / 500.0) * rw_max
+            els.append(f'<rect x="{rx0}" y="{ry + 8}" width="{rw_max}" height="20" rx="4" fill="#f1f5f9"/>')
+            els.append(f'<rect x="{rx0}" y="{ry + 8}" width="{bw:.1f}" height="20" rx="4" fill="{r_col}"/>')
+            els.append(txt(rx0 + 8, ry + 41, r_note, 11.5, r_col, weight="700"))
+
+        # Why mature lunar regolith & Martian soil hurt roots
+        els.append(card(34, 382, 320, 124, rx=8, fill=RED_SOFT, stroke=RED, sw=1.1))
+        els.append(txt(46, 403, "为什么外星原土“能发芽却难长壮”？", 11.5, RED, weight="700"))
+        els.append(txt(46, 424, "• 月壤：无有机质，亿年微陨石与太阳风轰出尖锐玻璃胶", 11.5, BODY))
+        els.append(txt(46, 444, "  结物与纳米单质铁 (npFe⁰)，71% 差异基因指向盐、重", 11.5, BODY))
+        els.append(txt(46, 464, "  金属与活性氧 (ROS) 毒害（越老的月海风化土越严重）！", 11.5, INK, weight="700"))
+        els.append(txt(46, 486, "• 火壤含 0.5%–1% 高氯酸盐，种菜前须水洗或菌解。", 11.5, AMBER, weight="700"))
+
+        # Panel B: Syntrichia caninervis Extreme Pioneer Moss (Li, Zhang et al., The Innovation 2024)
+        els.append(card(380, 64, 360, 456))
+        els.append(pill(394, 74, "B · 火星拓荒先锋：齿肋赤藓（The Innovation 2024）", fg=PURPLE, bg=PURPLE_SOFT))
+        els.append(txt(394, 111, "伽马射线半致死剂量 LD50 对数标尺比较（单位：Gy）：", 11.5, BODY))
+
+        # Log10 scale from 1 Gy (10^0) to 10,000 Gy (10^4)
+        lx0, lx1 = 406, 686
+        ly_axis = 178
+
+        def x_gy(gy_val):
+            return lx0 + (math.log10(gy_val) / 4.0) * (lx1 - lx0)
+
+        els.append(f'<line x1="{lx0}" y1="{ly_axis}" x2="{lx1}" y2="{ly_axis}" stroke="{INK}" stroke-width="2"/>')
+        for exp_i, lbl_gy in [(0, "1 Gy"), (1, "10 Gy"), (2, "100 Gy"), (3, "1,000"), (4, "10,000")]:
+            gx = lx0 + (exp_i / 4.0) * (lx1 - lx0)
+            els.append(f'<line x1="{gx:.1f}" y1="{ly_axis - 5}" x2="{gx:.1f}" y2="{ly_axis + 5}" stroke="{INK}" stroke-width="1.4"/>')
+            els.append(txt(gx, ly_axis + 20, lbl_gy, 11.5, MUTED, anchor="middle"))
+
+        rad_marks = [
+            (3.5, "人类 ~3.5 Gy", RED, -26, "start"),
+            (1000.0, "普通植物 ≤1000", ORANGE, 38, "end"),
+            (4200.0, "水熊虫 ~4200", BLUE, 38, "start"),
+            (5000.0, "齿肋赤藓 ~5000 Gy!", PURPLE, -26, "end"),
+        ]
+        for gy_v, r_lbl, r_c, dy_lbl, anc in rad_marks:
+            mx = x_gy(gy_v)
+            els.append(f'<circle cx="{mx:.1f}" cy="{ly_axis}" r="5.2" fill="{r_c}" stroke="#ffffff" stroke-width="1.4"/>')
+            if dy_lbl < 0:
+                els.append(f'<line x1="{mx:.1f}" y1="{ly_axis - 6}" x2="{mx:.1f}" y2="{ly_axis + dy_lbl + 4}" stroke="{r_c}" stroke-width="1.2"/>')
+                els.append(txt(mx, ly_axis + dy_lbl, r_lbl, 11.5, r_c, anchor=anc, weight="700"))
+            else:
+                els.append(f'<line x1="{mx:.1f}" y1="{ly_axis + 6}" x2="{mx:.1f}" y2="{ly_axis + dy_lbl - 12}" stroke="{r_c}" stroke-width="1.2"/>')
+                els.append(txt(mx, ly_axis + dy_lbl, r_lbl, 11.5, r_c, anchor=anc, weight="700"))
+
+        # 3 Experimental Survival Cards for Syntrichia caninervis
+        feats = [
+            (
+                "① 极致脱水“假死”与 2 秒复绿",
+                GREEN,
+                GREEN_SOFT,
+                "失水 >98% 叶片蜷缩变黑（蔗糖玻璃化护膜）；遇水 2 秒",
+                "转绿，20 秒展叶，2 分钟内光合效率 Fv/Fm 满血恢复！",
+            ),
+            (
+                "② 液氮 −196 °C 冰封与辐射反促长",
+                BLUE,
+                BLUE_SOFT,
+                "−80 °C 冻存 5 年或 −196 °C 液氮泡 30 天再生率 ≥90%；",
+                "500 Gy 强辐射非但未死，新枝数 (4.08) 反超对照 (3.24)！",
+            ),
+            (
+                "③ 中科院模拟火星舱 7 天极限生还",
+                PURPLE,
+                PURPLE_SOFT,
+                "同时承受 95% CO2、650 Pa 低压、−60~+20 °C 昼夜剧变",
+                "与强紫外辐射 7 天，回温培养 30 天达 100% 再生率！",
+            ),
+        ]
+        for idx, (f_title, f_fg, f_bg, f_l1, f_l2) in enumerate(feats):
+            fy = 232 + idx * 91
+            els.append(card(394, fy, 332, 81, rx=8, fill=f_bg, stroke=f_fg, sw=1.2))
+            els.append(txt(408, fy + 22, f_title, 11.5, f_fg, weight="700"))
+            els.append(txt(408, fy + 45, f_l1, 11.5, BODY))
+            els.append(txt(408, fy + 66, f_l2, 11.5, INK, weight="600"))
+
+        return figure(
+            534,
+            "阿波罗真月壤拟南芥氧化应激基因谱与荒漠齿肋赤藓五千戈瑞抗辐射及模拟火星再生实测图解",
+            "左图展示阿波罗17号、12号与11号真月壤种植拟南芥的差异表达应激基因数分别为113、265与465个，揭示长期太阳风轰击形成的纳米单质铁与无有机质环境引发盐、金属及活性氧毒害；右图在对数坐标轴上对比人类3.5戈瑞、普通植物1000戈瑞、水熊虫4200戈瑞与齿肋赤藓约5000戈瑞的伽马射线半致死剂量，并列出失水98%两秒复绿、负196摄氏度液氮冰封再生及模拟火星舱七天100%再生三组实验证据。",
+            els,
+        )
+
+    @register(
+        "space-plants",
+        "外太空植物选种与生保原理全图解：微重力水气双悖论与植物枕、收获指数HI与矮化坐标、1毫米微萍20天蛋白工厂、宇航员面积闭环与四大梯队、阿波罗真月壤应激与5000Gy火星先锋齿肋赤藓",
+        "science_tech",
+    )
+    def build_space_plants():
+        write_svg(SUBDIR, "microgravity-water-air-paradox-and-veggie-pillow.svg", _build_microgravity_paradox_and_veggie())
+        write_svg(SUBDIR, "harvest-index-and-canopy-efficiency-map.svg", _build_harvest_index_and_canopy_map())
+        write_svg(SUBDIR, "wolffia-exponential-protein-factory.svg", _build_wolffia_protein_factory())
+        write_svg(SUBDIR, "blss-oxygen-calorie-closure-and-crop-matrix.svg", _build_blss_closure_and_squad())
+        write_svg(SUBDIR, "lunar-regolith-stress-and-mars-pioneer-moss.svg", _build_regolith_and_mars_moss())
+
+
+_register_space_plants()
+
+
+def _register_animal_navigation():
+    SUBDIR = "animal-navigation"
+    RED = "#b91c1c"
+    RED_SOFT = "#fef2f2"
+    AMBER = "#b45309"
+    AMBER_SOFT = "#fffbeb"
+    TEAL = "#0f766e"
+    TEAL_SOFT = "#f0fdfa"
+
+    # Verified quantitative data from USGS (2022), Gill et al. (2009), Egevang et al. (2010),
+    # Merlin et al. (2009), Wittlinger et al. (2006), Wiltschko (1972), Xu et al. (2021)
+    GODWIT_B6_KM = 13560.0
+    GODWIT_E7_KM = 11680.0
+    TERN_MEAN_KM = 70900.0
+    TERN_MAX_KM = 81600.0
+    MONARCH_KM = 4000.0
+    ANT_NORM_M = 10.20
+    ANT_STILTS_M = 15.30
+    ANT_STUMPS_M = 5.75
+    assert GODWIT_B6_KM > GODWIT_E7_KM > MONARCH_KM
+    assert round((ANT_STILTS_M - ANT_NORM_M) / ANT_NORM_M, 2) == 0.50
+
+    def _build_records_and_map_compass():
+        els = []
+        els += header(
+            "一、没有地图和卫星，动物凭什么横跨半个地球不迷路？",
+            "左图对比卫星实测迁徙纪录；右图拆解克拉默“地图（我在哪）+ 罗盘（往哪飞）”双步导航架构",
+        )
+
+        # Panel A: Verified Migration Records (log-like / split scale bars with exact labels)
+        els.append(card(20, 64, 368, 456))
+        els.append(pill(34, 74, "A · 实测迁徙极限纪录（无手机、无路标）", fg=BLUE, bg=BLUE_SOFT, w=310))
+
+        champs = [
+            (
+                "北极燕鸥 (1.4g 定位器)",
+                "年均 70,900 km（最高 81,600 km）",
+                "格陵兰↔南极往返；一生超 240 万 km ≈ 往返月球 3 趟",
+                1.00,
+                BLUE,
+                BLUE_SOFT,
+            ),
+            (
+                "斑尾塍鹬 B6 幼鸟 (2022)",
+                "单程不落地 13,560 km / 11 天",
+                "阿拉斯加直飞塔斯马尼亚，11 昼夜不进食不落水休息",
+                0.76,
+                ORANGE,
+                ORANGE_SOFT,
+            ),
+            (
+                "斑尾塍鹬 E7 雌鸟 (2007)",
+                "单程不落地 11,680 km / 8.1 天",
+                "跨太平洋直抵新西兰河口（Gill 等 2009 实测）",
+                0.68,
+                AMBER,
+                AMBER_SOFT,
+            ),
+            (
+                "帝王蝶 (体重仅约 0.5 g)",
+                "跨四代接力 4,000 km",
+                "曾孙代从未去过墨西哥，却精准停回同一片冷杉林",
+                0.44,
+                PURPLE,
+                PURPLE_SOFT,
+            ),
+        ]
+        for idx, (name, metric, note, frac, fg_c, bg_c) in enumerate(champs):
+            cy = 108 + idx * 100
+            els.append(card(34, cy, 340, 88, rx=8, fill=bg_c, stroke=fg_c, sw=1))
+            els.append(txt(46, cy + 21, name, 12, fg_c, weight="700"))
+            bar_w = 314 * frac
+            els.append(f'<rect x="46" y="{cy + 29}" width="314" height="14" rx="7" fill="#ffffff" stroke="{BORDER}" stroke-width="1"/>')
+            els.append(f'<rect x="46" y="{cy + 29}" width="{bar_w:.1f}" height="14" rx="7" fill="{fg_c}" fill-opacity="0.82"/>')
+            els.append(txt(46, cy + 61, metric, 11.5, INK, weight="700"))
+            els.append(txt(46, cy + 80, note, 11, BODY))
+
+        # Panel B: Kramer's Map-and-Compass Two-Step Model
+        els.append(card(400, 64, 340, 456))
+        els.append(pill(414, 74, "B · 克拉默“地图 + 罗盘”真导航两步法", fg=GREEN, bg=GREEN_SOFT, w=312))
+
+        # Step 1: Map
+        els.append(card(414, 108, 312, 134, rx=8, fill=TEAL_SOFT, stroke=TEAL, sw=1.2))
+        els.append(step_badge(432, 128, 1, fg=TEAL, bg="#ffffff"))
+        els.append(txt(450, 132, "第一步：生理“地图”（回答：我现在在哪？）", 12, TEAL, weight="700"))
+        els.append(txt(426, 156, "• 把成年候鸟或海龟装进黑箱，横向搬偏 500 km；", 11.5, BODY))
+        els.append(txt(426, 177, "• 若只有“往南飞”罗盘 → 会平行飞错 500 km！", 11.5, RED, weight="700"))
+        els.append(txt(426, 198, "• 成年个体却能修正航向直奔终点，靠的是：", 11.5, BODY))
+        els.append(txt(426, 219, "  地磁双坐标（倾角+强度）、气味羽流、次声波等", 11.5, INK, weight="700"))
+
+        # Arrow from Step 1 to Step 2
+        els.append(f'<line x1="570" y1="244" x2="570" y2="268" stroke="{GREEN}" stroke-width="2" marker-end="url(#arr-green)"/>')
+
+        # Step 2: Compass
+        els.append(card(414, 272, 312, 134, rx=8, fill=BLUE_SOFT, stroke=BLUE, sw=1.2))
+        els.append(step_badge(432, 292, 2, fg=BLUE, bg="#ffffff"))
+        els.append(txt(450, 296, "第二步：多重“罗盘”（回答：该朝哪边飞？）", 12, BLUE, weight="700"))
+        els.append(txt(426, 320, "• 算出目标方位后，用随身罗盘保持航向不跑偏：", 11.5, BODY))
+        els.append(txt(426, 341, "  ① 白天：太阳罗盘（配合触角/脑生物钟补偿）", 11.5, BODY))
+        els.append(txt(426, 362, "  ② 阴天：天空紫外偏振光条纹（昆虫/鸟类可见）", 11.5, BODY))
+        els.append(txt(426, 383, "  ③ 夜晚/全天候：星空旋转中心 + 视网膜地磁罗盘", 11.5, INK, weight="700"))
+
+        # Crucial juvenile vs adult contrast box
+        els.append(card(414, 418, 312, 88, rx=8, fill="#f8fafc", stroke=SLATE, sw=1))
+        els.append(txt(426, 439, "经典搬家实验铁证（Perdeck 1958 欧椋鸟）：", 11.5, INK, weight="700"))
+        els.append(txt(426, 461, "• 首飞幼鸟只带先天“方向+时间表”（向量导航）→飞偏；", 11.5, BODY))
+        els.append(txt(426, 482, "• 历练过的成鸟已建成“双坐标地图”→拐弯精准归巢！", 11.5, GREEN, weight="700"))
+
+        return figure(
+            536,
+            "动物迁徙极限纪录对比与克拉默地图加罗盘双步导航原理图解",
+            "左图对比北极燕鸥年均70900公里、斑尾塍鹬B6幼鸟13560公里11天不落地跨海飞行、E7雌鸟11680公里及帝王蝶4000公里四代接力纪录；右图拆解定位自身坐标的生理地图与保持航向的太阳、偏振光、星空和地磁多重罗盘。",
+            els,
+        )
+
+    def _build_sun_ant_and_star():
+        els = []
+        els += header(
+            "二、白天看太阳数步子，夜里看星星转圈：三大经典行为实验",
+            "帝王蝶触角时钟拨慢 6 小时偏航 90°；沙漠蚂蚁踩高跷跑过头 50%；靛蓝彩鹀认旋转轴不认星座",
+        )
+
+        # Panel A: Monarch Time-Compensated Sun Compass (Merlin et al. 2009 Science)
+        els.append(card(20, 64, 232, 464))
+        els.append(pill(32, 74, "A · 帝王蝶触角生物钟罗盘", fg=ORANGE, bg=ORANGE_SOFT, w=208))
+
+        # Sun arc diagram
+        els.append('<path d="M44,198 A92,76 0 0,1 228,198" fill="none" stroke="#f59e0b" stroke-width="1.8" stroke-dasharray="5 3"/>')
+        for sx, sy, slbl in [(54, 184, "早 6:00 (东)"), (136, 122, "午 12:00 (南)"), (218, 184, "晚 18:00 (西)")]:
+            els.append(f'<circle cx="{sx}" cy="{sy}" r="8" fill="#fde047" stroke="#d97706" stroke-width="1.2"/>')
+            els.append(txt(sx, sy - 13, slbl, 10.5, AMBER, anchor="middle", weight="600"))
+        els.append(txt(136, 166, "太阳每小时横移 ≈ 15°", 11, INK, anchor="middle", weight="700"))
+        els.append(f'<line x1="136" y1="176" x2="136" y2="226" stroke="{GREEN}" stroke-width="2.2" marker-end="url(#arr-green)"/>')
+        els.append(txt(136, 242, "正常触角时钟 → 始终飞正南", 11, GREEN, anchor="middle", weight="700"))
+
+        els.append(card(32, 258, 208, 254, rx=8, fill=ORANGE_SOFT, stroke=ORANGE, sw=1))
+        els.append(txt(42, 280, "为什么只看太阳会迷路？", 11.5, ORANGE, weight="700"))
+        els.append(txt(42, 301, "早上太阳在东，傍晚在西；若死朝", 11.5, BODY))
+        els.append(txt(42, 320, "太阳飞，一天会画个大弯钩！", 11.5, BODY))
+        els.append(txt(42, 344, "Merlin 等 (2009 Science)：", 11.5, INK, weight="700"))
+        els.append(txt(42, 365, "• 计时器居然装在两根触角里！", 11.5, BODY))
+        els.append(txt(42, 386, "• 把光照生物钟人为推迟 6 小时：", 11.5, BODY))
+        els.append(txt(42, 408, "  6 h × 15°/h ＝ 航向偏转 90°！", 11.5, RED, weight="700"))
+        els.append(txt(42, 432, "• 涂黑触角（阻断触角采光校时）", 11.5, BODY))
+        els.append(txt(42, 451, "  蝴蝶立刻丧失集体定向；涂透明", 11.5, BODY))
+        els.append(txt(42, 470, "  漆对照组则精准向南飞往墨西哥", 11.5, GREEN, weight="700"))
+
+        # Panel B: Desert Ant Stilts & Stumps Pedometer (Wittlinger et al. 2006 Science)
+        els.append(card(264, 64, 232, 464))
+        els.append(pill(276, 74, "B · 沙漠蚂蚁“高跷计步器”", fg=BLUE, bg=BLUE_SOFT, w=208))
+
+        # Exact scale plot: 0 m to 17 m mapped to x = 286 .. 476 (190 px)
+        x0 = 286.0
+        scale = 190.0 / 17.0
+        nest_x = x0 + 10.0 * scale  # 10 m true nest distance from feeder
+        els.append(f'<line x1="{nest_x:.1f}" y1="112" x2="{nest_x:.1f}" y2="246" stroke="{GREEN}" stroke-width="1.6" stroke-dasharray="4 3"/>')
+        els.append(txt(nest_x, 108, "真巢穴 (10.0 m)", 10.5, GREEN, anchor="middle", weight="700"))
+
+        ant_rows = [
+            ("正常腿对照", ANT_NORM_M, GREEN, "10.20 m 停下找家"),
+            ("绑猪鬃高跷", ANT_STILTS_M, ORANGE, "15.30 m (+50% 跑过头!)"),
+            ("剪短小短腿", ANT_STUMPS_M, PURPLE, "5.75 m (−44% 提前找!)"),
+        ]
+        for idx, (r_lbl, dist_m, col_a, val_lbl) in enumerate(ant_rows):
+            ry = 128 + idx * 42
+            bw = dist_m * scale
+            els.append(txt(286, ry - 4, r_lbl, 11, INK, weight="700"))
+            els.append(f'<rect x="{x0:.1f}" y="{ry}" width="{bw:.1f}" height="12" rx="6" fill="{col_a}"/>')
+            els.append(txt(x0 + 4, ry + 24, val_lbl, 10.5, col_a, weight="700"))
+
+        els.append(card(276, 258, 208, 254, rx=8, fill=BLUE_SOFT, stroke=BLUE, sw=1))
+        els.append(txt(286, 280, "撒哈拉银蚁/箭蚁的绝境难题：", 11.5, BLUE, weight="700"))
+        els.append(txt(286, 301, "60°C 沙面烫到留不下信息素气味，", 11.5, BODY))
+        els.append(txt(286, 320, "外出蜿蜒觅食却能走直线秒回巢！", 11.5, BODY))
+        els.append(txt(286, 344, "Wittlinger 等 (2006 Science)：", 11.5, INK, weight="700"))
+        els.append(txt(286, 365, "• 复眼看天空紫外偏振光定方向；", 11.5, BODY))
+        els.append(txt(286, 386, "• 到食物点抓起蚂蚁粘上 1 mm 猪", 11.5, BODY))
+        els.append(txt(286, 405, "  鬃高跷：步数照数，步幅变大，", 11.5, BODY))
+        els.append(txt(286, 424, "  结果精准冲过头 5.1 米才打转！", 11.5, ORANGE, weight="700"))
+        els.append(txt(286, 448, "• 放回巢重走一趟全程穿高跷：", 11.5, BODY))
+        els.append(txt(286, 468, "  去程回程步幅抵消，又精准命中！", 11.5, GREEN, weight="700"))
+
+        # Panel C: Emlen (1970 Science) Planetarium Star Rotation Experiment
+        els.append(card(508, 64, 232, 464))
+        els.append(pill(520, 74, "C · 天象仪反转星空实验", fg=PURPLE, bg=PURPLE_SOFT, w=208))
+
+        # Two mini domes: Normal Polaris vs Fake Betelgeuse axis
+        for dx, pole_lbl, dir_lbl, col_d in [
+            (570, "真转轴：北极星", "向正南跳!", GREEN),
+            (678, "假转轴：参宿四", "背离参宿四跳!", RED),
+        ]:
+            els.append(f'<circle cx="{dx}" cy="166" r="44" fill="#0f172a" stroke="{col_d}" stroke-width="1.5"/>')
+            els.append(f'<circle cx="{dx}" cy="154" r="14" fill="none" stroke="#93c5fd" stroke-width="1" stroke-dasharray="3 2"/>')
+            els.append(f'<circle cx="{dx}" cy="154" r="26" fill="none" stroke="#64748b" stroke-width="1" stroke-dasharray="3 3"/>')
+            els.append(f'<circle cx="{dx}" cy="154" r="3.2" fill="#fde047"/>')
+            els.append(f'<line x1="{dx}" y1="162" x2="{dx}" y2="200" stroke="{col_d}" stroke-width="2.2"/>')
+            els.append(txt(dx, 114, pole_lbl, 10.5, INK, anchor="middle", weight="700"))
+            els.append(txt(dx, 224, dir_lbl, 10.5, col_d, anchor="middle", weight="700"))
+
+        els.append(card(520, 258, 208, 254, rx=8, fill=PURPLE_SOFT, stroke=PURPLE, sw=1))
+        els.append(txt(530, 280, "小鸟基因里写死了北斗七星吗？", 11.5, PURPLE, weight="700"))
+        els.append(txt(530, 301, "地球自转轴每 2.58 万年岁差一圈，", 11.5, BODY))
+        els.append(txt(530, 320, "一万年前北极根本不是北极星！", 11.5, BODY))
+        els.append(txt(530, 344, "Emlen (1970 Science) 漏斗实验：", 11.5, INK, weight="700"))
+        els.append(txt(530, 365, "• 把幼年靛蓝彩鹀养在人工天象仪", 11.5, BODY))
+        els.append(txt(530, 384, "  下，让满天星绕猎户座“参宿四”转", 11.5, BODY))
+        els.append(txt(530, 406, "• 秋季迁徙夜脚印统计：幼鸟把参", 11.5, BODY))
+        els.append(txt(530, 425, "  宿四当成“北方”，集体背着它跳！", 11.5, RED, weight="700"))
+        els.append(txt(530, 449, "• 基因没存星图，只存了一句算法：", 11.5, BODY))
+        els.append(txt(530, 469, "  “盯着夜空不动的圆心，那就是北！”", 11.5, INK, weight="700"))
+
+        return figure(
+            544,
+            "帝王蝶触角生物钟太阳罗盘、撒哈拉沙漠蚂蚁高跷计步器与靛蓝彩鹀天象仪星空旋转轴三大经典实验图解",
+            "左图展示帝王蝶触角生物钟以每小时15度补偿太阳视运动、拨慢6小时导致航向偏转90度；中图按实测数据绘制沙漠蚂蚁正常腿10.20米、高跷腿15.30米与短腿5.75米的步幅积分结果；右图展示天象仪绕参宿四假轴旋转证明夜迁鸣禽通过学习星空旋转中心建立恒星罗盘。",
+            els,
+        )
+
+    def _build_inclination_and_cry4_quantum():
+        els = []
+        els += header(
+            "三、鸟眼里的量子罗盘：不认南北极，只看磁感线钻地的“倾角”",
+            "左图重现 1972 年磁倾角反转实验；右图单次动画演示视网膜隐花色素 ErCRY4 自由基对自旋演化",
+        )
+
+        extra_css = """
+  @keyframes anElectronHop {
+    0%, 10% { transform: translateX(0px); opacity: 1; }
+    45%, 100% { transform: translateX(188px); opacity: 1; }
+  }
+  @keyframes anSpinPulse {
+    0%, 40% { opacity: 0.25; }
+    65%, 100% { opacity: 1; }
+  }
+  .an-ehop { animation: anElectronHop 6.6s cubic-bezier(0.22, 0.72, 0.32, 1) 1 forwards; }
+  .an-spin-end { animation: anSpinPulse 6.6s ease-out 1 forwards; }
+  @media (prefers-reduced-motion: reduce) {
+    .an-ehop { animation: none !important; transform: translateX(188px) !important; opacity: 1 !important; }
+    .an-spin-end { animation: none !important; opacity: 1 !important; }
+  }
+        """
+
+        # Panel A: Wiltschko & Wiltschko (1972 Science) Inclination vs Polarity Test
+        els.append(card(20, 64, 344, 472))
+        els.append(pill(34, 74, "A · 欧亚鸲线圈判决：磁倾角罗盘 ≠ 指南针", fg=BLUE, bg=BLUE_SOFT, w=316))
+
+        cases = [
+            (
+                "① 自然北半球地磁场 (对照)",
+                "水平 Bx 向北，垂直 Bz 向下 → 磁线斜向下钻地",
+                "鸟取磁线与重力 g 夹锐角侧为“向极地” → 飞北!",
+                GREEN,
+                GREEN_SOFT,
+                1,
+                1,
+                "飞向北方 ↑",
+            ),
+            (
+                "② 只反转垂直分量 Bz (或只反 Bx)",
+                "磁感线变成向南斜下钻地（锐角开口掉头！）",
+                "指针磁铁仍指南北，但欧亚鸲当场 180° 掉头飞南!",
+                ORANGE,
+                ORANGE_SOFT,
+                1,
+                -1,
+                "掉头飞南 ↓",
+            ),
+            (
+                "③ 同时反转 Bx 与 Bz（N/S 极性全反！）",
+                "箭头方向全反，但直线斜率与重力锐角丝毫没变",
+                "人类指南针反指 180°，欧亚鸲却照旧飞向北方 ↑!",
+                BLUE,
+                BLUE_SOFT,
+                -1,
+                -1,
+                "照旧飞北 ↑!",
+            ),
+        ]
+        for idx, (c_title, c_l1, c_l2, fg_c, bg_c, sbx, sbz, res_txt) in enumerate(cases):
+            cy = 108 + idx * 136
+            els.append(card(34, cy, 316, 124, rx=8, fill=bg_c, stroke=fg_c, sw=1.1))
+            els.append(txt(46, cy + 20, c_title, 11.5, fg_c, weight="700"))
+            # Mini vector diagram on right of box
+            vx, vy = 294, cy + 54
+            els.append(f'<line x1="{vx}" y1="{vy - 20}" x2="{vx}" y2="{vy + 22}" stroke="{SLATE}" stroke-width="1.3" stroke-dasharray="3 2"/>')
+            els.append(txt(vx + 6, vy + 22, "g", 10, SLATE, weight="700"))
+            dx_b = 26 * sbx
+            dy_b = 20 * sbz
+            els.append(f'<line x1="{vx - dx_b}" y1="{vy - dy_b}" x2="{vx + dx_b}" y2="{vy + dy_b}" stroke="{fg_c}" stroke-width="2.2" marker-end="url(#arr-{"green" if fg_c == GREEN else ("orange" if fg_c == ORANGE else "blue")})"/>')
+            els.append(txt(vx, cy + 112, res_txt, 11, fg_c, anchor="middle", weight="700"))
+            els.append(txt(46, cy + 44, c_l1[:19], 11, BODY))
+            els.append(txt(46, cy + 62, c_l1[19:], 11, BODY))
+            els.append(txt(46, cy + 86, c_l2[:19], 11, INK, weight="600"))
+            els.append(txt(46, cy + 104, c_l2[19:], 11, INK, weight="700"))
+
+        # Panel B: Retinal ErCRY4 Radical-Pair Quantum Mechanism (Ritz 2000; Xu et al. 2021 Nature)
+        els.append(card(376, 64, 364, 472))
+        els.append(pill(390, 74, "B · 视网膜 ErCRY4 量子自由基对（单次动画）", fg=PURPLE, bg=PURPLE_SOFT, w=336))
+
+        # Step 1: Blue photon + 4-Tryptophan electron hop chain
+        els.append(card(390, 108, 336, 146, rx=8, fill="#0f172a", stroke="#334155", sw=1.2))
+        els.append('<text x="404" y="129" font-size="11.5" fill="#bae6fd" font-weight="700">① 蓝光 (450 nm) 激发视锥细胞内隐花色素 ErCRY4</text>')
+        nodes = [
+            (432, "FAD", "#fde047", "#713f12"),
+            (496, "TrpA", "#e0f2fe", "#0c4a6e"),
+            (558, "TrpB", "#e0f2fe", "#0c4a6e"),
+            (620, "TrpC", "#dcfce7", "#14532d"),
+            (682, "TrpD", "#f3e8ff", "#4c1d95"),
+        ]
+        for nx, nlbl, nbg, nfg in nodes:
+            els.append(f'<rect x="{nx - 24}" y="152" width="48" height="28" rx="6" fill="{nbg}"/>')
+            els.append(txt(nx, 170, nlbl, 11, nfg, anchor="middle", weight="700"))
+        for a_x, b_x in [(658, 644), (596, 582), (534, 520), (472, 456)]:
+            els.append(f'<line x1="{a_x}" y1="166" x2="{b_x}" y2="166" stroke="#93c5fd" stroke-width="1.6"/>')
+
+        # Initial ghost + animated electron/hole separation marker
+        els.append('<circle cx="432" cy="196" r="6" fill="none" stroke="#fde047" stroke-width="1.3" stroke-dasharray="2 2"/>')
+        els.append('<g class="an-ehop"><circle cx="432" cy="196" r="6.5" fill="#38bdf8" stroke="#ffffff" stroke-width="1.2"/></g>')
+        els.append('<text x="558" y="220" font-size="11" fill="#e2e8f0" text-anchor="middle">电子沿 4 个色氨酸链级联跃迁 → 生成空间分离的</text>')
+        els.append('<text x="558" y="240" font-size="11.5" fill="#fde08a" text-anchor="middle" font-weight="700">[FAD•− ··· TrpH•+] 自旋关联自由基对（寿命微秒级）</text>')
+
+        # Step 2: Singlet <-> Triplet Quantum Interconversion modulated by tilt angle
+        els.append(card(390, 266, 336, 134, rx=8, fill=PURPLE_SOFT, stroke=PURPLE, sw=1.1))
+        els.append(txt(404, 288, "② 50 μT 微弱地磁场改写单重态/三重态量子产率", 11.5, PURPLE, weight="700"))
+        els.append(card(404, 300, 132, 54, rx=6, fill="#ffffff", stroke=BLUE, sw=1))
+        els.append(txt(470, 321, "单重态 S (↑↓)", 11.5, BLUE, anchor="middle", weight="700"))
+        els.append(txt(470, 342, "可直接复合回基态", 10.5, BODY, anchor="middle"))
+
+        els.append(f'<line x1="540" y1="327" x2="576" y2="327" stroke="{PURPLE}" stroke-width="2"/>')
+        els.append(txt(558, 318, "B 倾角", 10.5, PURPLE, anchor="middle", weight="700"))
+
+        els.append('<g class="an-spin-end">')
+        els.append(card(580, 300, 132, 54, rx=6, fill="#ffffff", stroke=ORANGE, sw=1.2))
+        els.append(txt(646, 321, "三重态 T (↑↑)", 11.5, ORANGE, anchor="middle", weight="700"))
+        els.append(txt(646, 342, "稳定信号态→神经电脉冲", 10.5, BODY, anchor="middle"))
+        els.append('</g>')
+        els.append(txt(404, 376, "• 自旋翻转只取决于磁场轴线夹角 cos²θ，跟正负号无关", 11, BODY))
+        els.append(txt(404, 393, "  ——完美解释左图“只认倾角、不认南北极”的怪脾气！", 11, INK, weight="700"))
+
+        # Step 3: Visual modulation dome + Xu et al. 2021 caveat
+        els.append(card(390, 412, 336, 112, rx=8, fill="#f8fafc", stroke=BORDER, sw=1))
+        els.append(txt(404, 433, "③ 候鸟“看见”的罗盘与科学严谨边界（Xu 等 2021 Nature）：", 11.5, INK, weight="700"))
+        els.append(txt(404, 455, "• 眼球是球面，不同视线处蛋白与地磁夹角不同 → 视野上叠", 11, BODY))
+        els.append(txt(404, 474, "  加出随转头移动的明暗光斑！纯化欧亚鸲 ErCRY4 体外磁", 11, BODY))
+        els.append(txt(404, 493, "  敏感度显著强于留鸟鸡与鸽（活体完整神经通路仍在攻关）。", 11, TEAL, weight="700"))
+
+        return figure(
+            552,
+            "欧亚鸲磁倾角罗盘线圈反转实验与视网膜ErCRY4量子自由基对单重态三重态演化单次动画图解",
+            "左图对比自然地磁场、仅反转垂直分量导致候鸟掉头飞南与同时反转水平垂直分量即极性全反但候鸟仍向北飞的三组实验；右图演示蓝光激发ErCRY4中色氨酸电子跳跃生成自由基对并在50微特斯拉地磁场倾角调控下改变单重态与三重态比例，支持减少动态效果。",
+            els,
+            extra_css=extra_css,
+        )
+
+    def _build_turtle_bicoordinate_map():
+        els = []
+        els += header(
+            "四、大洋里的“生物经纬网”：红海龟怎样靠地磁双坐标横渡大西洋？",
+            "地磁倾角 I 与总磁场强度 F 等值线斜交成网格；外加 2012 年鸽喙磁铁矿“乌龙反转”的科学真话",
+        )
+
+        # Panel A: North Atlantic Gyre Bicoordinate Magnetic Map (Lohmann 2001; Putman 2011)
+        els.append(card(20, 64, 430, 456))
+        els.append(pill(34, 74, "A · 北大西洋环流：倾角 I (纬向) × 强度 F (斜向) = 双坐标", fg=BLUE, bg=BLUE_SOFT, w=402))
+
+        # Ocean map box
+        els.append('<rect x="36" y="108" width="398" height="252" rx="10" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2"/>')
+        # Non-parallel isolines: Inclination I (gentle curves) vs Intensity F (tilted curves!)
+        for iy, ilbl in [(152, "倾角 I = 65°"), (218, "倾角 I = 50°"), (286, "倾角 I = 35°")]:
+            els.append(f'<path d="M44,{iy} Q235,{iy - 14} 426,{iy + 8}" fill="none" stroke="{BLUE}" stroke-width="1.3" stroke-dasharray="6 4"/>')
+            els.append(txt(52, iy - 6, ilbl, 10.5, BLUE, weight="600"))
+        for fx1, fx2, flbl in [(116, 206, "F=48μT"), (214, 316, "F=42μT"), (308, 418, "F=36μT")]:
+            els.append(f'<line x1="{fx1}" y1="114" x2="{fx2}" y2="352" stroke="{PURPLE}" stroke-width="1.3" stroke-dasharray="3 3"/>')
+            els.append(txt(fx1 + 12, 128, flbl, 10.5, PURPLE, weight="600"))
+
+        # Gyre loop + two same-latitude test points (Putman et al. 2011: ~20°N West vs East Atlantic)
+        els.append('<ellipse cx="236" cy="236" rx="138" ry="74" fill="none" stroke="#0f766e" stroke-width="2.6"/>')
+        # West site (Puerto Rico / Florida side) -> swims NE; East site (Cape Verde / Iberia) -> swims SW!
+        els.append(f'<circle cx="106" cy="272" r="7" fill="{ORANGE}" stroke="#ffffff" stroke-width="1.5"/>')
+        els.append(f'<line x1="106" y1="272" x2="132" y2="232" stroke="{ORANGE}" stroke-width="2.4" marker-end="url(#arr-orange)"/>')
+        els.append(txt(116, 294, "西侧 (波多黎各 20°N)", 10.5, ORANGE, weight="700"))
+        els.append(txt(116, 310, "同纬度高强度→游东北", 10.5, INK))
+
+        els.append(f'<circle cx="364" cy="272" r="7" fill="{GREEN}" stroke="#ffffff" stroke-width="1.5"/>')
+        els.append(f'<line x1="364" y1="272" x2="322" y2="302" stroke="{GREEN}" stroke-width="2.4" marker-end="url(#arr-green)"/>')
+        els.append(txt(368, 260, "东侧 (佛得角 20°N)", 10.5, GREEN, anchor="end", weight="700"))
+        els.append(txt(368, 326, "同纬度低强度→游西南!", 10.5, INK, anchor="end", weight="700"))
+
+        els.append(txt(222, 218, "北大西洋暖水环流安全区", 11.5, TEAL, anchor="middle", weight="700"))
+        els.append(txt(222, 236, "（出圈入冷水即冻死！）", 10.5, RED, anchor="middle", weight="600"))
+
+        els.append(card(36, 372, 398, 134, rx=8, fill="#f8fafc", stroke=BORDER))
+        els.append(txt(48, 394, "Putman 与 Lohmann (2011 Current Biology) 水池实证：", 11.5, INK, weight="700"))
+        els.append(txt(48, 415, "• 从未下过海的初生红海龟放进线圈水池，复现同处北纬 20° 的大", 11, BODY))
+        els.append(txt(48, 434, "  西洋东西两岸磁场 → 幼龟竟能分辨“经度”差异，反向转向保命！", 11, BODY))
+        els.append(txt(48, 456, "• 成年母龟回出生地产卵（Brothers & Lohmann 2015）：地磁等值线", 11, BODY))
+        els.append(txt(48, 475, "  漂移聚拢年份，佛罗里达海滩海龟巢密度同步显著升高（磁印记）！", 11, TEAL, weight="700"))
+
+        # Panel B: Magnetite Torque Sensor & Treiber et al. (2012 Nature) Scientific Self-Correction
+        els.append(card(462, 64, 278, 456))
+        els.append(pill(476, 74, "B · 磁铁矿传感器与科学纠错案", fg=ORANGE, bg=ORANGE_SOFT, w=250))
+
+        els.append(card(476, 108, 250, 178, rx=8, fill=AMBER_SOFT, stroke=AMBER, sw=1))
+        els.append(txt(488, 130, "生物源纳米磁铁矿 (Fe3O4) 假说", 11.5, AMBER, weight="700"))
+        # Chain of magnetite crystals pulling ion channel
+        for mx in range(512, 672, 26):
+            els.append(f'<rect x="{mx}" y="148" width="16" height="16" rx="3" fill="#334155" stroke="#0f172a" stroke-width="1"/>')
+        els.append(f'<line x1="504" y1="156" x2="686" y2="156" stroke="{ORANGE}" stroke-width="1.8"/>')
+        els.append(txt(601, 184, "地磁力矩拧动磁晶链 → 拉开机械离子通道", 10.5, INK, anchor="middle", weight="600"))
+        els.append(txt(488, 208, "• 趋磁细菌体内已被电镜直接拍到成串", 11, BODY))
+        els.append(txt(488, 227, "  磁小体；强脉冲磁场能扰乱成年候鸟", 11, BODY))
+        els.append(txt(488, 246, "  与海龟的“磁场强度地图”读数，指向", 11, BODY))
+        els.append(txt(488, 265, "  三叉神经通路参与传递磁场强度信号。", 11, INK, weight="700"))
+
+        els.append(card(476, 298, 250, 208, rx=8, fill=RED_SOFT, stroke=RED, sw=1.1))
+        els.append(txt(488, 320, "写进教科书又被推翻的悬案！", 11.5, RED, weight="700"))
+        els.append(txt(488, 342, "• 2000 年代初，多篇论文宣称在信鸽上", 11, BODY))
+        els.append(txt(488, 361, "  喙皮肤找到了“含铁磁感受神经元”。", 11, BODY))
+        els.append(txt(488, 383, "• Treiber 等 (2012 Nature) 扫描超", 11, INK, weight="700"))
+        els.append(txt(488, 402, "  10 万张切片后震惊反转：那些富铁细", 11, BODY))
+        els.append(txt(488, 421, "  胞压根不是神经元，而是吞噬铁锈的", 11, BODY))
+        els.append(txt(488, 440, "  免疫巨噬细胞！", 11.5, RED, weight="700"))
+        els.append(txt(488, 463, "• 真实现状：脊椎动物磁铁矿感受器的", 11, BODY))
+        els.append(txt(488, 482, "  确切细胞位置至今仍是未解前沿谜题！", 11, INK, weight="700"))
+
+        return figure(
+            534,
+            "北大西洋红海龟地磁倾角与磁场强度双坐标导航图及脊椎动物磁铁矿感受器2012年科学纠错图解",
+            "左图展示地磁倾角I与总磁场强度F非平行等值线交织成双坐标网格，使同处北纬20度东西两岸的初生红海龟朝相反安全方向游动并解释母龟磁印记归巢；右图说明纳米四氧化三铁力矩假说及2012年Nature证实鸽喙富铁细胞实为巨噬细胞的科学纠错。",
+            els,
+        )
+
+    def _build_multimodal_hierarchy():
+        els = []
+        els += header(
+            "五、从一万公里大洋到家门口同一条小溪：多感官“三级接力”总表",
+            "没有一种感官能包打天下——动物靠跨尺度接力归巢，却正面临城市人工白光与电磁噪声的干扰",
+        )
+
+        # Top funnel / 3-tier scale cascade
+        tiers = [
+            (
+                20,
+                "第一级 · 远洋/跨洲粗定位",
+                "尺度：1,000 – 13,000 km",
+                "• 地磁双坐标地图 (I + F)",
+                "• 视网膜量子磁倾角罗盘",
+                "• 太阳生物钟 + 星空旋转轴",
+                "精度：几十至百公里级航区",
+                BLUE,
+                BLUE_SOFT,
+            ),
+            (
+                266,
+                "第二级 · 区域风场与海岸逼近",
+                "尺度：50 – 800 km",
+                "• 大气气味羽流地图（信鸽/海鸟）",
+                "  Gagliardo 2013：切断嗅觉的",
+                "  猛鹱在 800 km 大洋彻底迷航!",
+                "• 海浪拍岸低频次声波 (<20 Hz)",
+                ORANGE,
+                ORANGE_SOFT,
+            ),
+            (
+                512,
+                "第三级 · 最后一公里精准认门",
+                "尺度：0.01 – 50 km",
+                "• 太平洋鲑鱼幼年嗅觉印记：",
+                "  靠母溪独特氨基酸气味逆流寻根",
+                "  (Dittman & Quinn 1996)",
+                "• 视觉地形地标 + 巢穴局部偏振光",
+                GREEN,
+                GREEN_SOFT,
+            ),
+        ]
+        for tx, t_head, t_scale, l1, l2, l3, l4, fg_t, bg_t in tiers:
+            els.append(card(tx, 64, 228, 226, rx=10, fill=bg_t, stroke=fg_t, sw=1.2))
+            els.append(txt(tx + 14, 88, t_head, 12, fg_t, weight="700"))
+            els.append(pill(tx + 14, 98, t_scale, fg=fg_t, bg="#ffffff", w=198, h=20, size=11))
+            els.append(txt(tx + 14, 140, l1, 11, INK, weight="600"))
+            els.append(txt(tx + 14, 162, l2, 11, BODY))
+            els.append(txt(tx + 14, 182, l3, 11, BODY))
+            els.append(txt(tx + 14, 208, l4, 11, fg_t, weight="700"))
+            els.append(txt(tx + 14, 232, "代表物种：" + ("塍鹬/燕鸥/海龟" if tx == 20 else ("猛鹱/信鸽" if tx == 266 else "大麻哈鱼/家燕/银蚁")), 11, SLATE, weight="600"))
+
+        els.append(f'<line x1="248" y1="176" x2="264" y2="176" stroke="{ORANGE}" stroke-width="2" marker-end="url(#arr-orange)"/>')
+        els.append(f'<line x1="494" y1="176" x2="510" y2="176" stroke="{GREEN}" stroke-width="2" marker-end="url(#arr-green)"/>')
+
+        # Bottom: Cue calibration & Anthropogenic disruption warning
+        els.append(card(20, 304, 352, 206, rx=10, fill="#ffffff", stroke=BORDER))
+        els.append(pill(34, 314, "多罗盘打架时听谁的？（交叉校准机制）", fg=PURPLE, bg=PURPLE_SOFT, w=292))
+        els.append(txt(34, 356, "• 磁偏角随地点变化（地理北极 ≠ 地磁北极）：", 11.5, INK, weight="700"))
+        els.append(txt(34, 377, "  鸣禽常在黄昏观察日落偏振光，或夜观星空旋转轴，", 11, BODY))
+        els.append(txt(34, 396, "  重新给体内的“地磁罗盘”做零点校准！", 11, BODY))
+        els.append(txt(34, 420, "• 全阴雨无星无日夜：", 11.5, INK, weight="700"))
+        els.append(txt(34, 441, "  太阳与星盘下线，视网膜地磁罗盘接管兜底，", 11, BODY))
+        els.append(txt(34, 460, "  这套“互为备份”冗余设计让跨洋存活率大幅飙升。", 11, GREEN, weight="700"))
+
+        els.append(card(388, 304, 352, 206, rx=10, fill=RED_SOFT, stroke=RED, sw=1))
+        els.append(pill(402, 314, "人类活动怎样“致盲”亿万年导航仪？", fg=RED, bg="#ffffff", w=282))
+        els.append(txt(402, 356, "① 城市夜间强光污染（摩天楼玻璃幕墙）：", 11.5, RED, weight="700"))
+        els.append(txt(402, 377, "   淹没星空并诱发趋光困死；春秋迁徙季“熄灯护鸟”", 11, BODY))
+        els.append(txt(402, 396, "   关闭高楼景观灯可减少过半撞楼伤亡！", 11, INK, weight="600"))
+        els.append(txt(402, 422, "② 兆赫兹宽频电磁噪声（AM 波段电子设备）：", 11.5, RED, weight="700"))
+        els.append(txt(402, 443, "   实验室发现微弱 MHz 射频噪声能干扰自由基对自旋", 11, BODY))
+        els.append(txt(402, 462, "   共振，给笼装欧亚鸲套上接地铝网屏蔽后定向即恢复！", 11, INK, weight="600"))
+
+        return figure(
+            526,
+            "动物跨洲迁徙至家门归巢三级感官接力体系、罗盘交叉校准与人类光污染电磁干扰图解",
+            "上图按万公里远洋地磁星日定位、百公里气味羽流与次声波逼近到最后一公里母溪氨基酸嗅觉印记与视觉地标展示三级接力；下图说明各罗盘日落星空交叉校准机制及城市夜间光污染与宽频射频噪声的干扰。",
+            els,
+        )
+
+    @register(
+        "animal-navigation",
+        "动物导航与迁徙原理五步图解：极限迁徙纪录与地图罗盘模型、太阳触角时钟高跷蚂蚁与天象仪星盘、磁倾角与ErCRY4量子自由基对动画、海龟地磁双坐标与鸽喙纠错及三级感官接力",
+        "science_tech",
+    )
+    def build_animal_navigation():
+        write_svg(SUBDIR, "migration-records-and-map-compass-model.svg", _build_records_and_map_compass())
+        write_svg(SUBDIR, "sun-clock-ant-pedometer-and-star-rotation.svg", _build_sun_ant_and_star())
+        write_svg(SUBDIR, "inclination-compass-and-cry4-quantum-pair.svg", _build_inclination_and_cry4_quantum())
+        write_svg(SUBDIR, "sea-turtle-bicoordinate-geomagnetic-map.svg", _build_turtle_bicoordinate_map())
+        write_svg(SUBDIR, "multimodal-sensory-switchboard-hierarchy.svg", _build_multimodal_hierarchy())
+
+
+_register_animal_navigation()
+
+
+def _register_how_we_see():
+    SUBDIR = "how-we-see"
+    RED = "#b91c1c"
+    RED_SOFT = "#fef2f2"
+    AMBER = "#b45309"
+    AMBER_SOFT = "#fffbeb"
+    TEAL = "#0f766e"
+    TEAL_SOFT = "#f0fdfa"
+
+    def _build_cornea_lens_accommodation():
+        els = []
+        els += header(
+            "一、眼球光学密码：角膜挑起七成折光大梁，晶状体“越用力越松绳”",
+            "人眼静止总屈光力约 58–60 D（古尔斯特兰德 1911 诺奖模型）：折射主力在角膜，而晶状体负责动态变焦",
+        )
+
+        # Panel A: Eye optical cross-section & upside-down image
+        els.append(card(20, 64, 430, 452))
+        els.append(pill(34, 74, "A · 空气—角膜折射跃迁与眼底倒像（65%–75% 折光在角膜！）", fg=BLUE, bg=BLUE_SOFT, w=396))
+
+        # Object arrow on left (x=58, y=224 -> y=166)
+        els.append(f'<line x1="58" y1="234" x2="58" y2="168" stroke="{GREEN}" stroke-width="3" marker-end="url(#arr-green)"/>')
+        els.append(txt(58, 252, "正立物体", 10.5, GREEN, anchor="middle", weight="700"))
+
+        # Eyeball schematic centered at (284, 200), R=84
+        ecx, ecy, er = 286.0, 202.0, 82.0
+        els.append(f'<circle cx="{ecx:.1f}" cy="{ecy:.1f}" r="{er:.1f}" fill="#f8fafc" stroke="{SLATE}" stroke-width="2.2"/>')
+        # Cornea bulge on left
+        els.append(f'<path d="M {ecx - 72:.1f},{ecy - 42:.1f} Q {ecx - 102:.1f},{ecy:.1f} {ecx - 72:.1f},{ecy + 42:.1f}" fill="#e0f2fe" stroke="{BLUE}" stroke-width="2.6"/>')
+        # Iris / Pupil (2-8 mm aperture)
+        els.append(f'<line x1="{ecx - 64:.1f}" y1="{ecy - 40:.1f}" x2="{ecx - 64:.1f}" y2="{ecy - 14:.1f}" stroke="{INK}" stroke-width="3.2"/>')
+        els.append(f'<line x1="{ecx - 64:.1f}" y1="{ecy + 14:.1f}" x2="{ecx - 64:.1f}" y2="{ecy + 40:.1f}" stroke="{INK}" stroke-width="3.2"/>')
+        # Crystalline lens
+        els.append(f'<ellipse cx="{ecx - 48:.1f}" cy="{ecy:.1f}" rx="10" ry="26" fill="#dbeafe" stroke="{BLUE}" stroke-width="1.8"/>')
+        # Retina inner arc on right
+        els.append(f'<path d="M {ecx + 48:.1f},{ecy - 66:.1f} A {er - 4:.1f},{er - 4:.1f} 0 0,1 {ecx + 48:.1f},{ecy + 66:.1f}" fill="none" stroke="{ORANGE}" stroke-width="3.2"/>')
+
+        # Chief & marginal rays forming inverted image at retina (x ~ 364, y=184..226)
+        els.append(f'<polyline points="58,168 {ecx - 86:.1f},{ecy - 12:.1f} {ecx - 48:.1f},{ecy - 8:.1f} {ecx + 78:.1f},{ecy + 22:.1f}" fill="none" stroke="{AMBER}" stroke-width="1.6"/>')
+        els.append(f'<polyline points="58,234 {ecx - 86:.1f},{ecy + 12:.1f} {ecx - 48:.1f},{ecy + 8:.1f} {ecx + 78:.1f},{ecy - 22:.1f}" fill="none" stroke="{BLUE}" stroke-width="1.6" stroke-dasharray="4 3"/>')
+        # Inverted image arrow on retina
+        els.append(f'<line x1="{ecx + 75:.1f}" y1="{ecy - 20:.1f}" x2="{ecx + 75:.1f}" y2="{ecy + 20:.1f}" stroke="{RED}" stroke-width="2.6" marker-end="url(#arr-orange)"/>')
+
+        els.append(txt(ecx - 92, ecy - 48, "角膜 (~43 D)", 10.8, BLUE, anchor="middle", weight="700"))
+        els.append(txt(ecx - 46, ecy + 44, "晶状体 (~15–20 D)", 10.5, BLUE, anchor="middle", weight="600"))
+        els.append(txt(ecx + 68, ecy - 72, "视网膜倒像", 10.8, RED, anchor="middle", weight="700"))
+        els.append(txt(92, 128, "空气 n=1.000 → 角膜 n≈1.376", 10.0, INK, weight="700"))
+
+        # Explanation card below eye
+        els.append(card(34, 304, 402, 198, rx=8, fill="#f8fafc", stroke=BORDER))
+        els.append(txt(46, 326, "为什么薄薄一层角膜反而是折光主力？", 11.5, BLUE, weight="700"))
+        els.append(txt(46, 347, "• 折射强弱取决于界面两侧的折射率差 Δn：", 11, INK, weight="600"))
+        els.append(txt(46, 367, "  光线从空气 (1.000) 闯入泪膜/角膜 (1.376)，Δn 高达 0.376，", 10.8, BODY))
+        els.append(txt(46, 386, "  一口气贡献约 43 D（占全眼 58–60 D 的 65%–75%）！", 10.8, INK, weight="700"))
+        els.append(txt(46, 408, "• 晶状体虽然更厚 (n≈1.40)，但泡在房水与玻璃体 (1.336) 里，", 10.8, BODY))
+        els.append(txt(46, 427, "  两侧 Δn 很小，主要充当“精细变焦镜头”。", 10.8, BODY))
+        els.append(txt(46, 450, "• 潜水冷知识：在水下睁眼时，水 (1.333) 贴住角膜抹平了 Δn，", 10.8, TEAL, weight="700"))
+        els.append(txt(46, 469, "  角膜瞬间废掉 40 多度折光力（变成超级远视眼），戴泳镜留", 10.8, BODY))
+        els.append(txt(46, 488, "  出一层空气才能瞬间恢复清晰！瞳孔直径 2–8 mm 可调 16 倍光通量。", 10.8, INK, weight="600"))
+
+        # Panel B: Helmholtz Accommodation mechanism
+        els.append(card(464, 64, 276, 452))
+        els.append(pill(478, 74, "B · 亥姆霍兹调焦反转机制", fg=ORANGE, bg=ORANGE_SOFT, w=248))
+
+        # Top subcard: Looking Far
+        els.append(card(478, 108, 248, 186, rx=8, fill=BLUE_SOFT, stroke=BLUE, sw=1))
+        els.append(txt(490, 129, "① 看远方风景（> 6 米）：省力状态", 11.5, BLUE, weight="700"))
+        cx_f, cy_f = 602.0, 182.0
+        els.append(f'<circle cx="{cx_f:.1f}" cy="{cy_f:.1f}" r="38" fill="none" stroke="{SLATE}" stroke-width="3" stroke-dasharray="6 3"/>')
+        for ang_d in range(0, 360, 45):
+            rad = math.radians(ang_d)
+            els.append(f'<line x1="{cx_f + 13 * math.cos(rad):.1f}" y1="{cy_f + 24 * math.sin(rad):.1f}" x2="{cx_f + 36 * math.cos(rad):.1f}" y2="{cy_f + 36 * math.sin(rad):.1f}" stroke="{BLUE}" stroke-width="1.3"/>')
+        els.append(f'<ellipse cx="{cx_f:.1f}" cy="{cy_f:.1f}" rx="12" ry="25" fill="#ffffff" stroke="{BLUE}" stroke-width="2"/>')
+        els.append(txt(490, 240, "• 环形睫状肌放松 → 圈径变大", 10.8, BODY))
+        els.append(txt(490, 259, "• 悬韧带被向四周绷紧 → 把晶状体拉扁", 10.8, INK, weight="700"))
+        els.append(txt(490, 278, "• 折光力低，平行远光刚好聚焦视网膜", 10.8, MUTED))
+
+        # Bottom subcard: Looking Near
+        els.append(card(478, 308, 248, 194, rx=8, fill=ORANGE_SOFT, stroke=ORANGE, sw=1))
+        els.append(txt(490, 329, "② 看手机/读书（近距离）：肌肉收缩！", 11.5, ORANGE, weight="700"))
+        cx_n, cy_n = 602.0, 382.0
+        els.append(f'<circle cx="{cx_n:.1f}" cy="{cy_n:.1f}" r="29" fill="none" stroke="{ORANGE}" stroke-width="4.5"/>')
+        for ang_d in range(0, 360, 45):
+            rad = math.radians(ang_d)
+            els.append(f'<line x1="{cx_n + 18 * math.cos(rad):.1f}" y1="{cy_n + 21 * math.sin(rad):.1f}" x2="{cx_n + 28 * math.cos(rad):.1f}" y2="{cy_n + 28 * math.sin(rad):.1f}" stroke="{ORANGE}" stroke-width="1.2" stroke-dasharray="2 2"/>')
+        els.append(f'<ellipse cx="{cx_n:.1f}" cy="{cy_n:.1f}" rx="18" ry="22" fill="#ffffff" stroke="{ORANGE}" stroke-width="2.2"/>')
+        els.append(txt(490, 438, "• 睫状肌使劲收缩 → 肌肉环向内缩窄", 10.8, BODY))
+        els.append(txt(490, 457, "• 悬韧带反而松弛！弹性晶状体自己鼓起", 10.8, INK, weight="700"))
+        els.append(txt(490, 476, "• 附带“近反射三联征”：变凸+对眼+缩瞳；", 10.6, BODY))
+        els.append(txt(490, 493, "  45岁后晶状体硬化回弹不动 → 老花眼！", 10.6, RED, weight="700"))
+
+        return figure(
+            532,
+            "人眼角膜与晶状体折射分工、视网膜倒像及亥姆霍兹睫状肌调焦机制对比图解",
+            "左图展示空气与角膜折射率差贡献全眼65%至75%屈光力并在视网膜成倒立实像及水下视物模糊原因；右图对比看远睫状肌放松拉扁晶状体与看近睫状肌收缩松开悬韧带使晶状体弹性变凸。",
+            els,
+        )
+
+    def _build_retina_fovea_and_spectra():
+        els = []
+        els += header(
+            "二、“装反了”的视网膜、中央凹超清特区与四条感光光谱曲线",
+            "组织学实测人眼约含 9,200 万视杆与 460 万视锥（Curcio 1990）：夜视靠人海战术，看字认色全靠针尖大的中央凹",
+        )
+
+        # Panel A: Inverted retina architecture + Fovea pit + Nasal 15 deg Optic Disc
+        els.append(card(20, 64, 384, 456))
+        els.append(pill(34, 74, "A · 倒置视网膜、中央凹让路与鼻侧 15° 盲点", fg=PURPLE, bg=PURPLE_SOFT, w=352))
+
+        # Schematic cross-section of retina with foveal pit & optic disc exit
+        els.append(card(34, 108, 356, 206, rx=8, fill="#fffbeb", stroke="#fde68a"))
+        # Incoming light arrows from left/top
+        for lx in [72, 168, 256]:
+            els.append(f'<line x1="{lx}" y1="120" x2="{lx}" y2="162" stroke="{AMBER}" stroke-width="1.8" marker-end="url(#arr-orange)"/>')
+        els.append(txt(168, 118, "入射光线（先穿电线，最后才撞感光层！）", 10.2, AMBER, anchor="middle", weight="700"))
+
+        # Choroid & RPE at bottom of box (y=276..294)
+        els.append('<rect x="44" y="276" width="248" height="16" rx="3" fill="#334155"/>')
+        els.append('<rect x="326" y="276" width="52" height="16" rx="3" fill="#334155"/>')
+        els.append(txt(168, 288, "脉络膜与色素上皮 RPE（吸收杂散光+回收视黄醛）", 9.8, "#f8fafc", anchor="middle"))
+
+        # Photoreceptor layer (y=236..274): rods + cones, pure dense cones at fovea (x=150..202), gap at optic disc (x=292..326)
+        for px in range(52, 288, 10):
+            in_fov = 148 <= px <= 204
+            col_p = RED if (in_fov and px % 20 == 0) else (GREEN if in_fov else SLATE)
+            els.append(f'<rect x="{px}" y="242" width="5" height="32" rx="2" fill="{col_p}"/>')
+        for px in range(332, 376, 10):
+            els.append(f'<rect x="{px}" y="242" width="5" height="32" rx="2" fill="{SLATE}"/>')
+
+        # Inner neuron layers (parting sideways at fovea x=148..204, diving into optic nerve at x=292..326)
+        els.append(f'<path d="M 46,184 L 132,184 Q 152,226 176,228 Q 200,226 220,184 L 296,184 L 308,308" fill="none" stroke="{BLUE}" stroke-width="2.5"/>')
+        els.append(f'<path d="M 378,184 L 322,184 L 314,308" fill="none" stroke="{BLUE}" stroke-width="2.5"/>')
+
+        els.append(txt(92, 178, "神经节/双极层", 10, BLUE, anchor="middle", weight="700"))
+        els.append(txt(176, 212, "中央凹 (0.35 mm)", 10.5, GREEN, anchor="middle", weight="700", halo=True))
+        els.append(txt(176, 226, "神经层向两侧掀开!", 9.8, INK, anchor="middle", halo=True))
+        els.append(txt(310, 174, "视盘穿出点", 10.2, RED, anchor="middle", weight="700"))
+        els.append(txt(310, 304, "→ 视神经束", 10, BLUE, anchor="middle", weight="700"))
+
+        els.append(txt(36, 336, "• 为什么“装反”也有道理？感光细胞紧贴底层色素上皮 (RPE)", 10.8, INK, weight="700"))
+        els.append(txt(36, 355, "  和脉络膜丰富毛细血管，才能极速供氧并每秒翻新感光盘膜！", 10.6, BODY))
+        els.append(txt(36, 378, "• 针尖大的中央凹（直径 ~0.35 mm ≈ 视角 1.25°）：无视杆、无血管，", 10.8, GREEN, weight="700"))
+        els.append(txt(36, 397, "  视锥密度飙到 199,000 个/mm²！你此刻能看清这行字全靠它。", 10.6, BODY))
+        els.append(txt(36, 420, "• 生理盲点在哪？视神经在中央凹鼻侧约 15° 穿出眼球（无感光", 10.8, RED, weight="700"))
+        els.append(txt(36, 439, "  细胞），经晶状体交叉投射，盲点落在每只眼外侧（颞侧）视野", 10.6, BODY))
+        els.append(txt(36, 458, "  约 15° 处！平时察觉不到，是因为双眼互补+大脑自动修图填补。", 10.6, INK, weight="600"))
+        els.append(txt(36, 484, "• 数量澄清（Curcio 1990 金标准）：人眼平均约 9,200 万视杆", 10.6, SLATE, weight="600"))
+        els.append(txt(36, 502, "  + 460 万视锥（约 20 : 1，老教材常引早期估算 1.2 亿与 600 万）。", 10.5, MUTED))
+
+        # Panel B: Bowmaker & Dartnall (1980) 4 spectral curves
+        els.append(card(418, 64, 322, 456))
+        els.append(pill(432, 74, "B · 四种感光细胞归一化光谱（Bowmaker 1980）", fg=BLUE, bg=BLUE_SOFT, w=294))
+
+        gx0, gx1 = 456.0, 718.0
+        gy_top, gy_bot = 122.0, 314.0
+        els.append(f'<rect x="{gx0:.1f}" y="{gy_top:.1f}" width="{gx1 - gx0:.1f}" height="{gy_bot - gy_top:.1f}" fill="#f8fafc" stroke="{BORDER}"/>')
+
+        def map_wl(wl):
+            return gx0 + ((wl - 380.0) / 320.0) * (gx1 - gx0)
+
+        def map_abs(val):
+            return gy_bot - val * (gy_bot - gy_top - 16.0)
+
+        for wl_t in [400, 450, 500, 550, 600, 650]:
+            xw = map_wl(wl_t)
+            els.append(f'<line x1="{xw:.1f}" y1="{gy_top:.1f}" x2="{xw:.1f}" y2="{gy_bot:.1f}" stroke="#eef2f7" stroke-width="1"/>')
+            els.append(txt(xw, gy_bot + 14, f"{wl_t}", 9.8, MUTED, anchor="middle"))
+        els.append(txt((gx0 + gx1) / 2, gy_bot + 30, "光波波长 λ (nm) →", 10.5, SLATE, anchor="middle", weight="600"))
+
+        # Gaussian-asymmetric pigment templates matching peaks 420, 498, 534, 563 nm
+        specs = [
+            (420.3, 34.0, 42.0, "#2563eb", "S 蓝锥 420nm", "none", -6, -6),
+            (497.6, 42.0, 48.0, "#475569", "视杆 498nm", "5 3", -14, -8),
+            (533.8, 46.0, 52.0, "#16a34a", "M 绿锥 534nm", "none", -8, -22),
+            (562.8, 48.0, 56.0, "#dc2626", "L 红锥 563nm", "none", 26, -6),
+        ]
+        for pk, sig_l, sig_r, col_s, lbl_s, dash_s, lx_off, ly_off in specs:
+            pts = []
+            for wl_i in range(380, 701, 4):
+                sig = sig_l if wl_i < pk else sig_r
+                val = math.exp(-0.5 * ((wl_i - pk) / sig) ** 2)
+                pts.append(f"{map_wl(wl_i):.2f},{map_abs(val):.2f}")
+            d_attr = f' stroke-dasharray="{dash_s}"' if dash_s != "none" else ""
+            els.append(f'<polyline points="{" ".join(pts)}" fill="none" stroke="{col_s}" stroke-width="2.3"{d_attr}/>')
+            els.append(f'<circle cx="{map_wl(pk):.1f}" cy="{map_abs(1.0):.1f}" r="3.5" fill="{col_s}"/>')
+            els.append(txt(map_wl(pk) + lx_off, map_abs(1.0) + ly_off, lbl_s, 9.8, col_s, anchor="middle", weight="700", halo=True))
+
+        # Key insights below spectrum
+        els.append(card(432, 354, 294, 152, rx=8, fill="#f8fafc", stroke=BORDER))
+        els.append(txt(444, 375, "三条光谱曲线藏着三个日常谜底：", 11, INK, weight="700"))
+        els.append(txt(444, 396, "① 为什么叫“红锥”其实偏黄绿？L 视锥峰值在 563 nm", 10.5, BODY))
+        els.append(txt(444, 414, "   (黄绿光)，大脑靠 L 与 M (534 nm) 的差值算红绿！", 10.5, BODY))
+        els.append(txt(444, 435, "② 红绿色盲由来：M 与 L 基因紧挨在 X 染色体上且", 10.5, RED, weight="700"))
+        els.append(txt(444, 453, "   仅差 ~30 nm，重组易缺失（男性约 8% 红绿觉异常）。", 10.5, BODY))
+        els.append(txt(444, 474, "③ 浦肯野夜间变色：月夜视锥下班，视杆 (498 nm) 接管，", 10.5, BLUE, weight="700"))
+        els.append(txt(444, 492, "   长波红玫瑰在视杆眼里瞬间漆黑，蓝绿叶子反而发亮！", 10.5, INK, weight="600"))
+
+        return figure(
+            536,
+            "脊椎动物倒置视网膜、中央凹让路与生理盲点及四类感光细胞吸收光谱图解",
+            "左图展示光线穿过内层神经元到达视杆与视锥、0.35毫米中央凹神经层分开以及鼻侧15度视盘产生颞侧视野盲点；右图依据Bowmaker与Dartnall(1980)绘制420、498、534、563纳米四条感光曲线。",
+            els,
+        )
+
+    def _build_phototransduction_dark_off():
+        extra_css = """
+  @keyframes traceDraw {
+    0% { stroke-dashoffset: 320; }
+    100% { stroke-dashoffset: 0; }
+  }
+  @keyframes flashPulse {
+    0%, 15% { opacity: 0.2; transform: scale(0.88); }
+    40% { opacity: 1; transform: scale(1.08); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+  .vm-trace { stroke-dasharray: 320; animation: traceDraw 1.8s ease-out 0.25s 1 both; }
+  .hv-star { transform-box: fill-box; transform-origin: center; animation: flashPulse 1.4s ease-out 0.15s 1 both; }
+  @media (prefers-reduced-motion: reduce) {
+    .vm-trace, .hv-star {
+      animation: none !important;
+      stroke-dashoffset: 0 !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+"""
+        els = []
+        els += header(
+            "三、最反直觉的光电转换：200 飞秒分子扳机，光照反而给细胞“拉闸断电”！",
+            "单次动画演示光致超极化（支持减少动态效果）：黑暗中视杆细胞忙着放电，见光后反而关闭通道停止喊叫",
+        )
+
+        # Panel A: 200 fs retinal isomerization + 3-stage biochemical cascade
+        els.append(card(20, 64, 368, 456))
+        els.append(pill(34, 74, "A · 200 飞秒掰直视黄醛与三级酶促放大链", fg=ORANGE, bg=ORANGE_SOFT, w=328))
+
+        steps = [
+            (
+                108,
+                "第 1 步 · 单光子扳机（200 飞秒 = 2×10⁻¹³ 秒！）",
+                "维生素 A 衍生的 11-顺式视黄醛（弯折态）吸收 1 颗光子，",
+                "在 200 fs 内瞬间弹直成全反式视黄醛，顶开视蛋白构象！",
+                AMBER,
+                AMBER_SOFT,
+            ),
+            (
+                204,
+                "第 2 步 · 第一级放大：激活 ~800 个转导蛋白",
+                "1 个被激活的视紫红质 (R*) 在盘膜上高速碰撞，连续激活",
+                "约 800 个 G 蛋白家族的转导蛋白 (Transducin) 分子。",
+                BLUE,
+                BLUE_SOFT,
+            ),
+            (
+                300,
+                "第 3 步 · 第二级放大：PDE 剪碎数千个 cGMP",
+                "转导蛋白启动磷酸二酯酶 (PDE)，像高速碎纸机一样把约",
+                "4,800 个环磷酸鸟苷 (cGMP) 水解切断，局部浓度骤降！",
+                PURPLE,
+                PURPLE_SOFT,
+            ),
+            (
+                396,
+                "第 4 步 · 关闸输出：约 200 个阳离子通道啪地锁死",
+                "失去了 cGMP 钥匙支撑，外段膜上约 200 个通道（占暗态开",
+                "放通道约 2%）瞬间关闭，产生 ~1 mV 单光子超极化电信号！",
+                GREEN,
+                GREEN_SOFT,
+            ),
+        ]
+        for sy, s_t, l1, l2, fg_s, bg_s in steps:
+            els.append(card(34, sy, 340, 82, rx=8, fill=bg_s, stroke=fg_s, sw=1.1))
+            els.append(txt(46, sy + 22, s_t, 11.2, fg_s, weight="700"))
+            els.append(txt(46, sy + 44, l1, 10.6, BODY))
+            els.append(txt(46, sy + 63, l2, 10.6, INK, weight="600"))
+            if sy < 396:
+                els.append(f'<line x1="204" y1="{sy + 82}" x2="204" y2="{sy + 94}" stroke="{fg_s}" stroke-width="1.8" marker-end="url(#arr-muted)"/>')
+
+        els.append(txt(34, 502, "注：1967 沃尔德因视黄醛获诺奖；1991 Science 飞秒激光测出 200 fs 极限。", 10.2, MUTED))
+
+        # Panel B: Dark Current ON vs Light Hyperpolarization OFF + Single photon proof
+        els.append(card(402, 64, 338, 456))
+        els.append(pill(416, 74, "B · “暗电流”反转与人类单光子极限", fg=BLUE, bg=BLUE_SOFT, w=304))
+
+        # Two side-by-side mini cards: Dark vs Light
+        els.append(card(416, 108, 148, 128, rx=8, fill="#1e293b", stroke="#475569"))
+        els.append('<text x="490" y="128" font-size="11" fill="#fde047" text-anchor="middle" font-weight="700">伸手不见五指（暗）</text>')
+        els.append('<text x="426" y="150" font-size="10.2" fill="#e2e8f0">• cGMP 满载 → 通道全开</text>')
+        els.append('<text x="426" y="170" font-size="10.2" fill="#93c5fd">• Na⁺/Ca²⁺ 涌入(暗电流)</text>')
+        els.append('<text x="426" y="190" font-size="10.5" fill="#fca5a5" font-weight="700">• 电位较高 ≈ −40 mV</text>')
+        els.append('<text x="426" y="212" font-size="10.2" fill="#fef08a" font-weight="700">• 狂喷谷氨酸递质！</text>')
+
+        els.append(card(578, 108, 148, 128, rx=8, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(652, 128, "光子击中瞬间（亮）", 11, GREEN, anchor="middle", weight="700"))
+        els.append(txt(588, 150, "• cGMP 被切碎 → 关门", 10.2, BODY))
+        els.append(txt(588, 170, "• 阳离子进不来（断流）", 10.2, BODY))
+        els.append(txt(588, 190, "• 超极化变负 → −65 mV", 10.5, GREEN, weight="700"))
+        els.append(txt(588, 212, "• 停止喷谷氨酸=报信！", 10.2, INK, weight="700"))
+
+        # Animated Membrane Potential Plot (-40 mV -> dip toward -65 mV -> recovery)
+        els.append(card(416, 248, 310, 140, rx=8, fill="#f8fafc", stroke=BORDER))
+        els.append(txt(428, 268, "视杆细胞膜电位 V_m 实测响应波形（Baylor 等 1979）：", 10.5, INK, weight="700"))
+        els.append(f'<line x1="462" y1="292" x2="710" y2="292" stroke="{RED}" stroke-width="1" stroke-dasharray="3 3"/>')
+        els.append(f'<line x1="462" y1="358" x2="710" y2="358" stroke="{GREEN}" stroke-width="1" stroke-dasharray="3 3"/>')
+        els.append(txt(456, 296, "−40mV", 9.8, RED, anchor="end", weight="700"))
+        els.append(txt(456, 362, "−65mV", 9.8, GREEN, anchor="end", weight="700"))
+
+        # Photon arrival marker at x=514
+        els.append(f'<circle cx="514" cy="284" r="7" fill="#fde047" stroke="{AMBER}" stroke-width="1.4" class="hv-star"/>')
+        els.append(txt(514, 288, "hν", 9, INK, anchor="middle", weight="700"))
+        els.append(f'<line x1="514" y1="292" x2="514" y2="368" stroke="{AMBER}" stroke-width="1.2" stroke-dasharray="2 2"/>')
+
+        wave_pts = ["462,292", "514,292"]
+        for k in range(1, 56):
+            t_s = k * 0.08
+            # Impulse response alpha-like dip: t * exp(-t/tau)
+            dip = (t_s / 0.65) * math.exp(1.0 - t_s / 0.65) if t_s > 0 else 0.0
+            xx = 514.0 + (k / 55.0) * 192.0
+            yy = 292.0 + dip * 58.0
+            wave_pts.append(f"{xx:.1f},{yy:.1f}")
+        els.append(f'<polyline points="{" ".join(wave_pts)}" fill="none" stroke="{BLUE}" stroke-width="2.6" class="vm-trace"/>')
+        els.append(txt(612, 376, "光照后膜电位向下“变负”（超极化拉闸）", 10, BLUE, anchor="middle", weight="700"))
+
+        # Single-photon quantum limit box
+        els.append(card(416, 398, 310, 108, rx=8, fill=AMBER_SOFT, stroke=AMBER))
+        els.append(txt(428, 418, "人眼到底能不能看见“单颗光子”？", 11, AMBER, weight="700"))
+        els.append(txt(428, 438, "• 1942 经典心理物理实验 (Hecht 等)：角膜入射 54–148 颗", 10.4, BODY))
+        els.append(txt(428, 456, "  光子，仅 5–14 颗被不同视杆各自吸收 1 颗，人就看见闪光！", 10.4, INK, weight="600"))
+        els.append(txt(428, 476, "• 2016 量子光学证实 (Tinsley 等 Nature Commun.)：发射严", 10.4, BODY))
+        els.append(txt(428, 494, "  格单光子源，高置信度试次正确率达 60%（显著超越随机猜）！", 10.4, INK, weight="700"))
+
+        return figure(
+            536,
+            "视紫红质200飞秒光异构化三级放大链、暗电流拉闸超极化波形动画与单光子极限图解",
+            "左图展示11-顺式视黄醛200飞秒异构化激活约800个转导蛋白、水解数千cGMP并关闭约200个阳离子通道；右图对比暗态-40毫伏持续放谷氨酸与亮态超极化断流动画及单光子感知实验。",
+            els,
+            extra_css=extra_css,
+        )
+
+    def _build_retinal_compression_edges():
+        els = []
+        els += header(
+            "四、近 1 亿感光细胞怎样塞进 107 万根神经线？视网膜自带“边缘显卡”",
+            "眼球绝不是傻傻上传原始像素的摄像头——信号还没离开视网膜，就已经完成了约 90:1 压缩与局部对比度提取",
+        )
+
+        # Panel A: ~96.6M photoreceptors -> ~1.07M retinal ganglion cells
+        els.append(card(20, 64, 352, 452))
+        els.append(pill(34, 74, "A · 约 90 : 1 漏斗压缩与双轨带宽分配", fg=PURPLE, bg=PURPLE_SOFT, w=320))
+
+        # Funnel diagram
+        els.append(card(34, 110, 324, 54, rx=8, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(196, 132, "输入端：约 9,660 万个感光细胞", 11.5, BLUE, anchor="middle", weight="700"))
+        els.append(txt(196, 152, "（9,200 万视杆 + 460 万视锥 · Curcio 1990）", 10.3, BODY, anchor="middle"))
+
+        els.append(f'<polygon points="62,168 330,168 262,232 130,232" fill="#f1f5f9" stroke="{SLATE}" stroke-width="1.3"/>')
+        els.append(txt(196, 196, "双极细胞 + 水平细胞 + 无长突细胞", 10.8, INK, anchor="middle", weight="700"))
+        els.append(txt(196, 215, "横向相减 · 砍掉均匀背景冗余信息", 10.3, MUTED, anchor="middle"))
+
+        els.append(card(74, 236, 244, 54, rx=8, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(196, 258, "输出端：仅约 107 万根视神经节纤维！", 11.5, GREEN, anchor="middle", weight="700"))
+        els.append(txt(196, 278, "（个体范围 70–150 万 · Curcio & Allen 1990）", 10.3, BODY, anchor="middle"))
+
+        # Two wiring strategies below
+        els.append(card(34, 306, 156, 194, rx=8, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(46, 328, "① 中央凹：1对1 贵宾专线", 11, ORANGE, weight="700"))
+        els.append(txt(46, 350, "• 1 个视锥连 1 个侏儒双极", 10.4, BODY))
+        els.append(txt(46, 369, "  再连 1 个神经节细胞！", 10.4, INK, weight="700"))
+        els.append(txt(46, 391, "• 优点：零信息混叠，成就", 10.4, BODY))
+        els.append(txt(46, 409, "  1 角分超清视力与色觉；", 10.4, BODY))
+        els.append(txt(46, 431, "• 代价：光线暗时单兵信号", 10.4, MUTED))
+        els.append(txt(46, 449, "  太弱，夜里看星星若正眼", 10.4, MUTED))
+        els.append(txt(46, 467, "  直视暗星反而会“消失”！", 10.4, RED, weight="700"))
+
+        els.append(card(202, 306, 156, 194, rx=8, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(214, 328, "② 周边网膜：百人合唱团", 11, BLUE, weight="700"))
+        els.append(txt(214, 350, "• 数十至上百个视杆细胞汇", 10.4, BODY))
+        els.append(txt(214, 369, "  聚到同一根神经节细胞！", 10.4, INK, weight="700"))
+        els.append(txt(214, 391, "• 优点：微光信号叠加放大，", 10.4, BODY))
+        els.append(txt(214, 409, "  擦过一缕幽光就能报警；", 10.4, BODY))
+        els.append(txt(214, 431, "• 观星窍门：用眼角余光偏", 10.4, GREEN, weight="700"))
+        els.append(txt(214, 449, "  离几度“斜视”，暗弱星团", 10.4, BODY))
+        els.append(txt(214, 467, "  立刻在视杆区浮现出来！", 10.4, INK, weight="600"))
+
+        # Panel B: Kuffler (1953) Center-Surround Antagonistic Receptive Fields
+        els.append(card(388, 64, 352, 452))
+        els.append(pill(402, 74, "B · 库夫勒同心圆拮抗感受野（只传边界对比度！）", fg=ORANGE, bg=ORANGE_SOFT, w=324))
+
+        cases = [
+            (
+                112,
+                "情形 ① 全黑无光",
+                "中心(+)与外周(−)均无光照",
+                2,
+                "低频基线自发脉冲",
+                "#334155",
+                "#1e293b",
+            ),
+            (
+                214,
+                "情形 ② 亮斑精准打满中心 (+)",
+                "中心强烈兴奋 · 外周未被抑制！",
+                11,
+                "脉冲狂飙！高喊“这里有亮点！”",
+                "#fef08a",
+                "#1e293b",
+            ),
+            (
+                316,
+                "情形 ③ 整面大白墙铺满中心+外周",
+                "中心兴奋(+) 被 外周水平细胞抑制(−) 抵消！",
+                3,
+                "重归平淡！拒绝浪费带宽传白墙",
+                "#fde047",
+                "#fde047",
+            ),
+        ]
+        for cy_b, c_title, c_sub, n_spikes, sp_note, c_in, c_out in cases:
+            els.append(card(402, cy_b, 324, 90, rx=8, fill="#f8fafc", stroke=BORDER))
+            # Concentric circle icon on left (cx=448, cy=cy_b+45)
+            icx, icy = 446.0, cy_b + 45.0
+            els.append(f'<circle cx="{icx:.1f}" cy="{icy:.1f}" r="28" fill="{c_out}" stroke="{SLATE}" stroke-width="1.5"/>')
+            els.append(f'<circle cx="{icx:.1f}" cy="{icy:.1f}" r="13" fill="{c_in}" stroke="{ORANGE}" stroke-width="1.5"/>')
+            els.append(txt(icx, icy + 4, "+", 12, ORANGE, anchor="middle", weight="700", halo=True))
+            els.append(txt(icx + 20, icy + 4, "−", 11, BLUE, anchor="middle", weight="700", halo=True))
+
+            els.append(txt(486, cy_b + 22, c_title, 11.2, INK, weight="700"))
+            els.append(txt(486, cy_b + 41, c_sub, 10.2, BODY))
+            # Action potential spike train
+            els.append(f'<line x1="486" y1="{cy_b + 72}" x2="606" y2="{cy_b + 72}" stroke="{SLATE}" stroke-width="1.2"/>')
+            for sp_i in range(n_spikes):
+                sx_p = 494.0 + sp_i * (104.0 / max(1, n_spikes))
+                col_sp = RED if n_spikes > 6 else SLATE
+                els.append(f'<line x1="{sx_p:.1f}" y1="{cy_b + 72}" x2="{sx_p:.1f}" y2="{cy_b + 50}" stroke="{col_sp}" stroke-width="2"/>')
+            els.append(txt(612, cy_b + 68, sp_note, 9.8, RED if n_spikes > 6 else MUTED, weight="700" if n_spikes > 6 else "400"))
+
+        els.append(card(402, 418, 324, 84, rx=8, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(414, 439, "一举揭穿日常视觉错觉：", 11, GREEN, weight="700"))
+        els.append(txt(414, 459, "同一块灰色放黑底上显白、放白底上显黑，以及网格交叉口闪现", 10.4, BODY))
+        els.append(txt(414, 478, "幽灵灰点（赫尔曼方格），全因为视网膜天生在算“中心减外周”！", 10.4, INK, weight="700"))
+
+        return figure(
+            532,
+            "视网膜9660万感光细胞至107万视神经节压缩漏斗与库夫勒同心圆拮抗感受野图解",
+            "左图展示9200万视杆与460万视锥经约90比1汇聚为107万视神经节轴突，对比中央凹1对1专线与周边视杆汇聚；右图展示库夫勒给光中心与外周拮抗感受野如何抵消均匀大白墙并放大明暗边缘脉冲。",
+            els,
+        )
+
+    def _build_visual_pathways_streams():
+        els = []
+        els += header(
+            "五、真正“看见”的是大脑：视交叉分流、V1 线条积木与腹背双通道",
+            "从眼球传出的只是一串电脉冲——大脑不仅把倒像扶正、修补盲点，还拆成“认出是什么”和“伸手怎么抓”两条高速路",
+        )
+
+        # Panel A (Left): Optic Chiasm hemifield routing -> LGN -> V1 Hubel & Wiesel orientation columns
+        els.append(card(20, 64, 368, 452))
+        els.append(pill(34, 74, "A · 视交叉“按视野分家”与 V1 方向柱（1981 诺奖）", fg=BLUE, bg=BLUE_SOFT, w=338))
+
+        # Top-down brain hemifield wiring diagram
+        els.append(card(34, 108, 340, 214, rx=8, fill="#f8fafc", stroke=BORDER))
+        # Left visual field (orange) vs Right visual field (blue)
+        els.append(txt(112, 128, "左半侧视野", 11, ORANGE, anchor="middle", weight="700"))
+        els.append(txt(296, 128, "右半侧视野", 11, BLUE, anchor="middle", weight="700"))
+
+        # Two eyes at y=162 (Left eye x=138, Right eye x=270)
+        for ex_eye, lbl_e in [(138, "左眼"), (270, "右眼")]:
+            els.append(f'<circle cx="{ex_eye}" cy="164" r="20" fill="#ffffff" stroke="{INK}" stroke-width="1.8"/>')
+            # Left hemifield hits right half of each retina! Right hemifield hits left half!
+            els.append(f'<path d="M {ex_eye},{184} A 20,20 0 0,0 {ex_eye + 20},{164}" fill="none" stroke="{ORANGE}" stroke-width="3.2"/>')
+            els.append(f'<path d="M {ex_eye - 20},{164} A 20,20 0 0,0 {ex_eye},{184}" fill="none" stroke="{BLUE}" stroke-width="3.2"/>')
+            els.append(txt(ex_eye, 167, lbl_e, 10, INK, anchor="middle", weight="700"))
+
+        # Optic chiasm crossing at (204, 218) -> Left LGN/V1 (x=128, blue) & Right LGN/V1 (x=280, orange)
+        # Blue = right visual field (left side of both retinas -> goes to LEFT brain!)
+        els.append(f'<path d="M 124,180 Q 122,222 132,262" fill="none" stroke="{BLUE}" stroke-width="2.2" marker-end="url(#arr-blue)"/>')
+        els.append(f'<path d="M 256,180 Q 204,218 142,262" fill="none" stroke="{BLUE}" stroke-width="2.2" marker-end="url(#arr-blue)"/>')
+        # Orange = left visual field (right side of both retinas -> goes to RIGHT brain!)
+        els.append(f'<path d="M 152,180 Q 204,218 266,262" fill="none" stroke="{ORANGE}" stroke-width="2.2" marker-end="url(#arr-orange)"/>')
+        els.append(f'<path d="M 284,180 Q 286,222 276,262" fill="none" stroke="{ORANGE}" stroke-width="2.2" marker-end="url(#arr-orange)"/>')
+
+        els.append(txt(204, 212, "视交叉", 10, INK, anchor="middle", weight="700", halo=True))
+        els.append(card(64, 266, 128, 44, rx=6, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(128, 285, "左半球 LGN → V1", 10.5, BLUE, anchor="middle", weight="700"))
+        els.append(txt(128, 302, "汇总双眼“右半视野”", 9.8, BODY, anchor="middle"))
+
+        els.append(card(216, 266, 128, 44, rx=6, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(280, 285, "右半球 LGN → V1", 10.5, ORANGE, anchor="middle", weight="700"))
+        els.append(txt(280, 302, "汇总双眼“左半视野”", 9.8, BODY, anchor="middle"))
+
+        # Hubel & Wiesel V1 explanation
+        els.append(card(34, 334, 340, 168, rx=8, fill=PURPLE_SOFT, stroke=PURPLE))
+        els.append(txt(46, 356, "休伯尔与威泽尔偶然划动玻片发现的秘密（1981 诺奖）：", 11, PURPLE, weight="700"))
+        els.append(txt(46, 377, "• 给猫看圆光点，后脑勺初级视觉皮层 (V1) 毫无反应；", 10.5, BODY))
+        els.append(txt(46, 396, "  直到换玻片时玻璃边缘斜线掠过，神经元瞬间噼啪狂响！", 10.5, INK, weight="700"))
+        els.append(txt(46, 418, "• 原来 V1 把视网膜圆点拼成了“特定倾角的小线段”：", 10.5, BODY))
+        els.append(txt(46, 437, "  0°横线柱、45°斜线柱、90°竖线柱分工明确，还会比对左右", 10.5, BODY))
+        els.append(txt(46, 456, "  眼视差算出 3D 纵深！（幼年先天白内障若错过关键期不", 10.5, BODY))
+        els.append(txt(46, 475, "  做手术，V1 神经领地会被健眼永久瓜分导致弱视！）", 10.5, RED, weight="700"))
+
+        # Panel B (Right): Dorsal "How/Where" vs Ventral "What" Streams + Brain Constructive Prediction
+        els.append(card(402, 64, 338, 452))
+        els.append(pill(416, 74, "B · 皮层双通道与大脑“主动脑补”", fg=GREEN, bg=GREEN_SOFT, w=304))
+
+        # Dorsal stream card
+        els.append(card(416, 108, 310, 134, rx=8, fill=TEAL_SOFT, stroke=TEAL))
+        els.append(txt(428, 130, "① 背侧通路（V1 → 顶叶皮层）：“在哪 / 怎么抓”", 11.2, TEAL, weight="700"))
+        els.append(txt(428, 152, "• 实时高速计算空间坐标、运动轨迹与手部抓握张角；", 10.5, BODY))
+        els.append(txt(428, 172, "• 飞盘扑面而来时，你还没看清上面印了啥字，手已经", 10.5, BODY))
+        els.append(txt(428, 191, "  稳稳抓住了它——这就是顶叶动作通道的功劳！", 10.5, INK, weight="700"))
+        els.append(txt(428, 212, "• 若顶叶受损：明明认得出桌上的水杯，伸手却抓空。", 10.3, MUTED))
+
+        # Ventral stream card
+        els.append(card(416, 254, 310, 144, rx=8, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(428, 276, "② 腹侧通路（V1 → 下颞叶皮层）：“这是什么 / 是谁”", 11.2, ORANGE, weight="700"))
+        els.append(txt(428, 298, "• 层层拼出轮廓、色彩、材质、文字与“梭状回面孔区”；", 10.5, BODY))
+        els.append(txt(428, 318, "• 传奇患者 D.F.（Goodale & Milner 1992）：腹侧受损后", 10.5, INK, weight="700"))
+        els.append(txt(428, 337, "  完全说不出信箱投递口是横是斜，可一旦让她把信塞进", 10.5, BODY))
+        els.append(txt(428, 356, "  去，她的手腕在半空自动转到分毫不差的角度一把投进！", 10.5, INK, weight="600"))
+        els.append(txt(428, 377, "  铁证揭示：“认出形状”与“指导动作”是两套独立系统！", 10.3, RED, weight="700"))
+
+        # Why inverted image isn't upside down + dress color constancy
+        els.append(card(416, 410, 310, 92, rx=8, fill="#f8fafc", stroke=BORDER))
+        els.append(txt(428, 431, "为什么眼底像是倒的，你看到的世界却是正的？", 11, INK, weight="700"))
+        els.append(txt(428, 451, "大脑里根本没有“小人”在看屏幕！大脑把眼底下方像素直接", 10.4, BODY))
+        els.append(txt(428, 470, "绑定到重力“上方”与抬头动作；加上扫视抑制与色彩恒常性", 10.4, BODY))
+        els.append(txt(428, 489, "（蓝黑/白金裙子之争），视觉其实是大脑受控的“主动建模”！", 10.4, PURPLE, weight="700"))
+
+        return figure(
+            532,
+            "视交叉半视野分流、初级视觉皮层V1方向柱与背侧腹侧双视觉通路分工图解",
+            "左图展示双眼左半视野汇聚至右半球V1、右半视野汇聚至左半球V1及休伯尔与威泽尔发现的V1边缘方向柱；右图对比通往顶叶的背侧动作通路与通往下颞叶的腹侧识别通路及患者D.F.双分离证据。",
+            els,
+        )
+
+    @register(
+        "how-we-see",
+        "我们是如何看到的五步图解：角膜折光与亥姆霍兹调焦、倒置视网膜中央凹与四色光谱、200飞秒视黄醛与暗电流拉闸动画、90比1压缩与边缘感受野及视交叉双通道",
+        "science_tech",
+    )
+    def build_how_we_see():
+        write_svg(SUBDIR, "cornea-lens-optics-and-accommodation.svg", _build_cornea_lens_accommodation())
+        write_svg(SUBDIR, "inverted-retina-fovea-and-blind-spot.svg", _build_retina_fovea_and_spectra())
+        write_svg(SUBDIR, "femtosecond-retinal-and-dark-current-off.svg", _build_phototransduction_dark_off())
+        write_svg(SUBDIR, "retinal-compression-and-edge-receptive-fields.svg", _build_retinal_compression_edges())
+        write_svg(SUBDIR, "visual-pathways-v1-columns-and-dual-streams.svg", _build_visual_pathways_streams())
+
+
+_register_how_we_see()
+
+
+def _register_how_we_hear():
+    SUBDIR = "how-we-hear"
+    RED = "#b91c1c"
+    RED_SOFT = "#fef2f2"
+    AMBER = "#b45309"
+    AMBER_SOFT = "#fffbeb"
+    TEAL = "#0f766e"
+    TEAL_SOFT = "#f0fdfa"
+
+    def _build_middle_ear_transformer():
+        els = []
+        els += header(
+            "一、为什么要长全身最小的三块骨头？冲破 99.9% 声反射的阻抗变压器",
+            "空气声波直接撞击水溶液会被弹回 99.89% 能量（−29.5 dB）——中耳靠“大鼓膜推小活塞 + 听骨杠杆”绝地翻盘",
+        )
+
+        # Panel A: Air-to-Fluid Acoustic Impedance Wall
+        els.append(card(20, 64, 344, 452))
+        els.append(pill(34, 74, "A · 空气撞水墙：为什么岸上喊话水底听不见？", fg=RED, bg=RED_SOFT, w=314))
+
+        # Air-water boundary diagram
+        els.append(card(34, 108, 316, 178, rx=8, fill="#f8fafc", stroke=BORDER))
+        els.append('<rect x="202" y="114" width="142" height="166" rx="6" fill="#dbeafe"/>')
+        els.append(f'<line x1="202" y1="114" x2="202" y2="280" stroke="{BLUE}" stroke-width="2.4"/>')
+
+        # Incident strong wave (red/orange) -> huge reflected wave + tiny transmitted wave
+        els.append(f'<line x1="54" y1="176" x2="194" y2="176" stroke="{ORANGE}" stroke-width="4" marker-end="url(#arr-orange)"/>')
+        els.append(f'<line x1="194" y1="216" x2="62" y2="216" stroke="{RED}" stroke-width="3.6" marker-end="url(#arr-muted)"/>')
+        els.append(f'<line x1="206" y1="176" x2="324" y2="176" stroke="{BLUE}" stroke-width="1.3" stroke-dasharray="3 2" marker-end="url(#arr-blue)"/>')
+
+        els.append(txt(122, 164, "入射声波 100%", 11, ORANGE, anchor="middle", weight="700"))
+        els.append(txt(126, 236, "弹回 99.89%！", 11, RED, anchor="middle", weight="700"))
+        els.append(txt(272, 162, "仅透入 0.11%", 10.5, BLUE, anchor="middle", weight="700"))
+        els.append(txt(118, 134, "空气 Z₁ ≈ 415", 10.2, SLATE, anchor="middle", weight="600"))
+        els.append(txt(272, 134, "内耳淋巴液 Z₂", 10.2, BLUE, anchor="middle", weight="700"))
+        els.append(txt(272, 266, "（水 ~1.48×10⁶ Pa·s/m）", 9.6, SLATE, anchor="middle"))
+
+        els.append(txt(36, 310, "• 物理病根：内耳毛细胞必须泡在淋巴液里工作，", 10.8, INK, weight="700"))
+        els.append(txt(36, 330, "  但稀薄空气推不动沉重液体（声阻抗差逾三千倍）！", 10.6, BODY))
+        els.append(txt(36, 353, "• 透射率公式 T = 4 Z₁Z₂ / (Z₁ + Z₂)² ≈ 0.00112，", 10.6, INK, weight="600"))
+        els.append(txt(36, 372, "  直撞水面会白白损失约 29.5 dB（即使按真实耳蜗", 10.6, BODY))
+        els.append(txt(36, 391, "  输入阻抗 ~56 kPa·s/m 计，仍反射约 97% 能量！）。", 10.6, BODY))
+        els.append(txt(36, 416, "• 演化神作：陆生哺乳动物把祖先颌骨关节退役的三块", 10.6, PURPLE, weight="700"))
+        els.append(txt(36, 435, "  小骨头（锤骨、砧骨、镫骨）塞进充满空气的中耳腔，", 10.6, BODY))
+        els.append(txt(36, 454, "  造出了一台精密绝伦的“机械液压增压器”！", 10.6, INK, weight="700"))
+        els.append(txt(36, 482, "  （镫骨高仅 ~3.3 mm，比一粒米还小，是全身最小骨头）", 10.2, MUTED))
+
+        # Panel B: Tympanic membrane + Malleus-Incus-Stapes 2-stage pressure gain
+        els.append(card(378, 64, 362, 452))
+        els.append(pill(392, 74, "B · 鼓膜—听小骨链两级增压账本（实测 +23~27 dB）", fg=BLUE, bg=BLUE_SOFT, w=334))
+
+        # Schematic of Large Tympanic Membrane -> Malleus/Incus lever -> Tiny Stapes footplate
+        els.append(card(392, 108, 334, 178, rx=8, fill="#f8fafc", stroke=BORDER))
+        # Large eardrum on left (x=438, y=132..254)
+        els.append(f'<ellipse cx="438" cy="194" rx="14" ry="56" fill="{ORANGE_SOFT}" stroke="{ORANGE}" stroke-width="2.4"/>')
+        els.append(txt(438, 268, "鼓膜有效区 ~55 mm²", 10, ORANGE, anchor="middle", weight="700"))
+
+        # Malleus + Incus lever pivot at (542, 152)
+        els.append(f'<circle cx="542" cy="148" r="5" fill="{SLATE}"/>')
+        els.append(txt(542, 136, "杠杆支点 (1.3 : 1)", 10, SLATE, anchor="middle", weight="700"))
+        els.append(f'<line x1="448" y1="194" x2="542" y2="148" stroke="{ORANGE}" stroke-width="3.5"/>')
+        els.append(f'<line x1="542" y1="148" x2="602" y2="188" stroke="{BLUE}" stroke-width="3.5"/>')
+
+        # Stapes stirrup pushing oval window (x=654, tiny area ~3.2 mm^2)
+        els.append(f'<path d="M 602,188 L 626,176 L 652,176 M 602,188 L 626,200 L 652,200" fill="none" stroke="{GREEN}" stroke-width="2.6"/>')
+        els.append(f'<ellipse cx="656" cy="188" rx="5" ry="18" fill="{GREEN_SOFT}" stroke="{GREEN}" stroke-width="2.4"/>')
+        els.append('<rect x="662" y="148" width="52" height="80" rx="6" fill="#dbeafe"/>')
+        els.append(txt(652, 226, "镫骨底板 ~3.2 mm²", 10, GREEN, anchor="middle", weight="700"))
+        els.append(txt(688, 192, "耳蜗液", 10, BLUE, anchor="middle", weight="700"))
+
+        # Math & Everyday protection cards
+        els.append(card(392, 298, 334, 106, rx=8, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(404, 320, "两级机械增压总账（好比高跟鞋鞋跟踩地板！）：", 11, GREEN, weight="700"))
+        els.append(txt(404, 341, "① 面积液压比：55 mm² ÷ 3.2 mm² ≈ 17.2 倍；", 10.6, BODY))
+        els.append(txt(404, 360, "② 听骨链杠杆比：锤骨柄 ÷ 砧骨长脚 ≈ 1.3 倍；", 10.6, BODY))
+        els.append(txt(404, 381, "→ 理想增压 ≈ 22 倍 (~27 dB)，人耳实测峰值达 23–26.6 dB！", 10.6, INK, weight="700"))
+
+        els.append(card(392, 414, 334, 90, rx=8, fill=AMBER_SOFT, stroke=AMBER))
+        els.append(txt(404, 434, "两个贴心安全阀：咽鼓管 + 镫骨肌反射", 11, AMBER, weight="700"))
+        els.append(txt(404, 454, "• 飞机下降耳朵闷痛：中耳气压滞后把鼓膜压瘪；吞咽打哈欠", 10.4, BODY))
+        els.append(txt(404, 472, "  拉开咽鼓管“啵”一声放气即平！遇巨响时镫骨肌自动拉紧刹", 10.4, BODY))
+        els.append(txt(404, 490, "  车（但有几十毫秒延迟，防不住鞭炮枪声瞬时冲击！）。", 10.4, INK, weight="600"))
+
+        return figure(
+            532,
+            "空气与内耳淋巴液声阻抗反射壁及中耳鼓膜听小骨链两级增压变压器图解",
+            "左图展示空气至液体声阻抗悬殊导致直接入射99.89%声能反射；右图展示55平方毫米鼓膜至3.2平方毫米镫骨底板约17倍面积比与1.3倍听骨杠杆合成二十余倍声压增益及咽鼓管调压机制。",
+            els,
+        )
+
+    def _build_bekesy_traveling_wave():
+        extra_css = """
+  @keyframes envDraw {
+    0% { stroke-dashoffset: 560; opacity: 0.2; }
+    100% { stroke-dashoffset: 0; opacity: 1; }
+  }
+  .tw-hi { stroke-dasharray: 560; animation: envDraw 1.2s ease-out 0.15s 1 both; }
+  .tw-mid { stroke-dasharray: 560; animation: envDraw 1.4s ease-out 0.45s 1 both; }
+  .tw-lo { stroke-dasharray: 560; animation: envDraw 1.6s ease-out 0.75s 1 both; }
+  @media (prefers-reduced-motion: reduce) {
+    .tw-hi, .tw-mid, .tw-lo {
+      animation: none !important;
+      stroke-dashoffset: 0 !important;
+      opacity: 1 !important;
+    }
+  }
+"""
+        els = []
+        els += header(
+            "二、把蜗牛壳拉直 35 毫米：贝凯希行波与“硬根听高音、软尖听低音”",
+            "单次动画演示三频行波包络（支持减少动态效果）：一条渐变刚度的基底膜，不用芯片就直接完成了机械傅里叶拆频",
+        )
+
+        # Top wide panel: Uncoiled 35 mm Cochlea & Traveling Wave Envelopes
+        els.append(card(20, 64, 720, 276))
+        els.append(pill(34, 74, "展平的 35 mm 耳蜗基底膜频率地图（冯·贝凯希 1961 诺贝尔奖）", fg=BLUE, bg=BLUE_SOFT, w=424))
+
+        x_base, x_apex = 92.0, 696.0
+        yc = 216.0
+        # Trapezoidal basilar membrane width indicator (narrow stiff at base -> wide floppy at apex!)
+        els.append(
+            f'<polygon points="{x_base:.1f},{yc - 6:.1f} {x_apex:.1f},{yc - 24:.1f} '
+            f'{x_apex:.1f},{yc + 24:.1f} {x_base:.1f},{yc + 6:.1f}" '
+            f'fill="#f1f5f9" stroke="{HAIRLINE}" stroke-width="1"/>'
+        )
+        els.append(f'<line x1="{x_base:.1f}" y1="{yc:.1f}" x2="{x_apex:.1f}" y2="{yc:.1f}" stroke="{SLATE}" stroke-width="1.4" stroke-dasharray="4 3"/>')
+
+        # Calculate 3 asymmetric Békésy traveling waves: Peak at x_p, gradual rise from base, steep drop after peak!
+        waves = [
+            (0.22, "8,000 Hz 高音（近蜗底谐振）", BLUE, "tw-hi", 14.0),
+            (0.52, "1,000 Hz 中音（中段谐振）", ORANGE, "tw-mid", 9.5),
+            (0.82, "200 Hz 低音（一路跑到蜗顶！）", GREEN, "tw-lo", 6.0),
+        ]
+        for u_pk, w_lbl, w_col, w_cls, k_freq in waves:
+            pts_w, pts_env_u, pts_env_d = [], [], []
+            for i in range(161):
+                u = i / 160.0
+                xx = x_base + u * (x_apex - x_base)
+                if u <= u_pk:
+                    env = ((u / u_pk) ** 1.35) * math.exp(1.0 - (u / u_pk) ** 1.35) * 1.0
+                    # normalize so u == u_pk gives 1.0: (1^1.35)*exp(0) = 1.0!
+                else:
+                    # Steep cutoff past characteristic place!
+                    env = math.exp(-((u - u_pk) / 0.065) ** 2)
+                amp = env * 62.0
+                carrier = amp * math.sin(2.0 * math.pi * k_freq * u)
+                pts_w.append(f"{xx:.2f},{yc - carrier:.2f}")
+                pts_env_u.append(f"{xx:.2f},{yc - amp:.2f}")
+                pts_env_d.append(f"{xx:.2f},{yc + amp:.2f}")
+
+            els.append(f'<polyline points="{" ".join(pts_env_u)}" fill="none" stroke="{w_col}" stroke-width="1.3" stroke-dasharray="3 3"/>')
+            els.append(f'<polyline points="{" ".join(pts_env_d)}" fill="none" stroke="{w_col}" stroke-width="1.3" stroke-dasharray="3 3"/>')
+            els.append(f'<polyline points="{" ".join(pts_w)}" fill="none" stroke="{w_col}" stroke-width="2.3" class="{w_cls}"/>')
+            pk_x = x_base + u_pk * (x_apex - x_base)
+            els.append(f'<circle cx="{pk_x:.1f}" cy="{yc - 62:.1f}" r="4" fill="{w_col}"/>')
+            els.append(txt(pk_x, yc - 70, w_lbl, 10.5, w_col, anchor="middle", weight="700", halo=True))
+
+        els.append(txt(x_base, 310, "← 蜗底入口（卵圆窗）", 10.8, INK, weight="700"))
+        els.append(txt(x_base, 326, "极窄 (~0.1mm) · 刚度高 100 倍 → 20 kHz", 10.2, BLUE, weight="700"))
+        els.append(txt(x_apex, 310, "蜗顶尽头（蜗孔）→", 10.8, INK, anchor="end", weight="700"))
+        els.append(txt(x_apex, 326, "变宽 (~0.5mm) · 柔软松弛 → 20 Hz", 10.2, GREEN, anchor="end", weight="700"))
+
+        # Bottom two insight cards
+        els.append(card(20, 354, 360, 162, rx=10, fill="#ffffff", stroke=BORDER))
+        els.append(pill(34, 364, "为什么跟竖琴琴弦刚好“反着长”？", fg=PURPLE, bg=PURPLE_SOFT, w=274))
+        els.append(txt(34, 404, "• 很多人看外壳蜗底宽、蜗顶尖，误以为基底膜也是根宽尖窄；", 10.6, BODY))
+        els.append(txt(34, 423, "  解剖打开恰恰相反：基底膜在蜗底最窄最硬，到蜗顶反而宽 5 倍！", 10.6, INK, weight="700"))
+        els.append(txt(34, 445, "• 按物理固有频率 f ∝ √(刚度 k / 质量 m)：又窄又硬的蜗底专", 10.6, BODY))
+        els.append(txt(34, 464, "  抓高频，又宽又软的蜗顶专抓低频——整条膜就是一台纯机械", 10.6, BODY))
+        els.append(txt(34, 483, "  实时傅里叶频谱仪，把和弦拆到不同毫米位置分别按键报警！", 10.6, PURPLE, weight="700"))
+
+        els.append(card(396, 354, 344, 162, rx=10, fill=RED_SOFT, stroke=RED, sw=1))
+        els.append(pill(410, 364, "为什么人老了总是“先听不见蚊子和高音铃声”？", fg=RED, bg="#ffffff", w=312))
+        els.append(txt(410, 404, "• 年轻人听阈跨 20 Hz–20,000 Hz（整整 10 个八度），到中年常", 10.6, BODY))
+        els.append(txt(410, 423, "  悄然退缩到 15–17 kHz（所以有只有青少年听得见的蚊音铃声）。", 10.6, BODY))
+        els.append(txt(410, 445, "• 结构宿命：无论高音、中音还是低音，所有声波从卵圆窗进门", 10.6, INK, weight="700"))
+        els.append(txt(410, 464, "  都必须先冲刷最门口的“蜗底高频区”！门口毛细胞一辈子承受", 10.6, BODY))
+        els.append(txt(410, 483, "  机械冲刷与自由基损耗最重，因此总是最先阵亡。", 10.6, RED, weight="700"))
+
+        return figure(
+            532,
+            "耳蜗35毫米基底膜贝凯希行波单次动画、反向刚度频率地图与高频先衰原理图解",
+            "上图以单次动画展示8000赫兹、1000赫兹与200赫兹行波在35毫米展平基底膜上的谐振包络；下图解释蜗底窄硬听高音、蜗顶宽软听低音的物理原因及门口高频区最先受损机制。",
+            els,
+            extra_css=extra_css,
+        )
+
+    def _build_tip_links_tmc1():
+        els = []
+        els += header(
+            "三、比眨眼和视觉快 1,000 倍：0.1 纳米原子级门槛与 10 微秒机械拉绳",
+            "0 dB 听阈处静纤毛仅晃动 0.1–0.3 纳米（一颗金原子宽！）——靠纳米拉绳硬拽开 TMC1 离子门，零化学延迟！",
+        )
+
+        # Panel A: Stereocilia Tip Links + TMC1 + +80mV Endocochlear Battery
+        els.append(card(20, 64, 412, 456))
+        els.append(pill(34, 74, "A · 静纤毛阶梯“顶端连接拉绳”与双电池驱动", fg=BLUE, bg=BLUE_SOFT, w=346))
+
+        # Stereocilia staircase diagram
+        els.append(card(34, 108, 384, 212, rx=8, fill="#f8fafc", stroke=BORDER))
+        # Endolymph label (+80 mV!)
+        els.append(pill(46, 118, "上方内淋巴液：高钾 K⁺ · 罕见 +80 mV 正电位！", fg=PURPLE, bg=PURPLE_SOFT, w=292, h=20, size=10.2))
+
+        # 3 tilted stereocilia rods (short -> medium -> tall) tilting right!
+        cilia = [
+            (132, 276, 144, 212, 18),
+            (196, 276, 212, 178, 18),
+            (262, 276, 282, 146, 18),
+        ]
+        for x_b, y_b, x_t, y_t, cw in cilia:
+            els.append(f'<line x1="{x_b}" y1="{y_b}" x2="{x_t}" y2="{y_t}" stroke="{SLATE}" stroke-width="{cw}" stroke-linecap="round"/>')
+            els.append(f'<line x1="{x_b}" y1="{y_b}" x2="{x_t}" y2="{y_t}" stroke="#cbd5e1" stroke-width="{cw - 4}" stroke-linecap="round"/>')
+
+        # Tip links (orange spring lines) from tip of shorter to side of taller + TMC1 green gate
+        els.append(f'<line x1="146" y1="208" x2="198" y2="194" stroke="{ORANGE}" stroke-width="2.6"/>')
+        els.append(f'<line x1="214" y1="174" x2="266" y2="160" stroke="{ORANGE}" stroke-width="2.6"/>')
+        els.append(f'<circle cx="146" cy="208" r="5.5" fill="{GREEN}" stroke="#ffffff" stroke-width="1.2"/>')
+        els.append(f'<circle cx="214" cy="174" r="5.5" fill="{GREEN}" stroke="#ffffff" stroke-width="1.2"/>')
+
+        # Force arrow & K+ influx arrows
+        els.append(f'<line x1="74" y1="186" x2="122" y2="186" stroke="{RED}" stroke-width="2.2" marker-end="url(#arr-orange)"/>')
+        els.append(txt(96, 176, "行波推偏", 10.2, RED, anchor="middle", weight="700"))
+        els.append(txt(96, 202, "仅 0.1–0.3 nm!", 9.8, RED, anchor="middle", weight="700"))
+
+        els.append(txt(348, 176, "顶端拉绳 Tip Link", 10.5, ORANGE, anchor="middle", weight="700"))
+        els.append(txt(348, 193, "(PCDH15+CDH23)", 9.8, MUTED, anchor="middle"))
+        els.append(txt(348, 218, "硬拽拉开 TMC1 门", 10.5, GREEN, anchor="middle", weight="700"))
+        els.append(txt(348, 236, "响应仅 10–40 微秒!", 10.2, INK, anchor="middle", weight="700"))
+
+        # Hair cell body base (-45 ~ -60 mV)
+        els.append('<rect x="108" y="276" width="194" height="34" rx="8" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>')
+        els.append(txt(205, 297, "内毛细胞胞体（−45 ~ −60 mV）→ 总压差 ~130 mV！", 10, INK, anchor="middle", weight="700"))
+
+        els.append(txt(36, 342, "• 为什么听觉必须走“纯物理拉绳”，不能学视网膜搞酶促放大？", 10.8, INK, weight="700"))
+        els.append(txt(36, 362, "  因为人耳要听清 20,000 Hz 高音（每 50 微秒就往返震动一次）！", 10.5, BODY))
+        els.append(txt(36, 381, "  视网膜化学级联需要几十毫秒，放进耳朵里高频声波早糊成一锅粥；", 10.5, BODY))
+        els.append(txt(36, 400, "  Tip Link 直接物理拽开 TMC1 通道（2018–2022 最终确证），仅需", 10.5, BODY))
+        els.append(txt(36, 419, "  10–40 微秒，比视觉光电转换快整整 1,000 倍！", 10.6, BLUE, weight="700"))
+        els.append(txt(36, 444, "• 零耗能超级双电池：血管纹把内淋巴充到 +80 mV，叠加细胞内", 10.5, BODY))
+        els.append(txt(36, 463, "  负电位合成逾 125 mV 跨膜压差，门一开 K⁺ 瞬间瀑布般灌入！", 10.5, INK, weight="600"))
+        els.append(txt(36, 488, "• 0 dB SPL 听阈 = 20 微帕声压（仅两百亿分之一个大气压）！", 10.2, MUTED))
+
+        # Panel B: 3,500 IHC vs 12,000 OHC & Non-regeneration warning
+        els.append(card(446, 64, 294, 456))
+        els.append(pill(460, 74, "B · 仅 3,500 颗传信兵与终生不再生铁律", fg=RED, bg=RED_SOFT, w=266))
+
+        els.append(card(460, 108, 266, 184, rx=8, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(472, 130, "耳蜗毛细胞的“悬殊编制”（每侧耳朵）：", 11.2, BLUE, weight="700"))
+        els.append(txt(472, 154, "• 视网膜有近 1 亿感光细胞，而单侧耳蜗里：", 10.5, BODY))
+        els.append(txt(472, 176, "  ① 内毛细胞 (IHC)：仅排 1 排、约 3,500 个！", 10.6, INK, weight="700"))
+        els.append(txt(472, 195, "     却独占了 95% 的 I 型螺旋神经节传入专线，", 10.4, BODY))
+        els.append(txt(472, 214, "     你听见的一切语音旋律全靠这三千多个细胞！", 10.4, BLUE, weight="700"))
+        els.append(txt(472, 238, "  ② 外毛细胞 (OHC)：排成 3 排、约 12,000 个，", 10.6, INK, weight="700"))
+        els.append(txt(472, 257, "     几乎不负责往大脑传信，专职干“机械放大”！", 10.4, BODY))
+        els.append(txt(472, 276, "     （详见下图 4 揭秘）", 10.2, MUTED))
+
+        els.append(card(460, 306, 266, 200, rx=8, fill=RED_SOFT, stroke=RED))
+        els.append(txt(472, 328, "残酷真相：死一颗少一颗，永远长不回来！", 11.2, RED, weight="700"))
+        els.append(txt(472, 350, "• 鸟类和斑马鱼的毛细胞震坏后几周就能再生，", 10.5, BODY))
+        els.append(txt(472, 369, "  但人类等哺乳动物出生时配额就已锁死！", 10.5, INK, weight="700"))
+        els.append(txt(472, 392, "• 安全红线（NIDCD 标准）：", 10.6, RED, weight="700"))
+        els.append(txt(472, 411, "  长期暴露 ≥ 85 dBA（嘈杂地铁开大耳机音量）", 10.4, BODY))
+        els.append(txt(472, 430, "  或 100 dBA 演唱会超 15 分钟，狂暴液流会把", 10.4, BODY))
+        els.append(txt(472, 449, "  Tip Link 扯断、静纤毛连根吹倒融合乃至细胞凋亡！", 10.4, INK, weight="600"))
+        els.append(txt(472, 472, "• 护耳铁律：地铁飞机上请开主动降噪（勿靠拉高", 10.4, GREEN, weight="700"))
+        els.append(txt(472, 491, "  音量硬盖噪音），遵循“60%音量、60分钟”原则。", 10.4, GREEN, weight="700"))
+
+        return figure(
+            536,
+            "耳蜗静纤毛顶端连接TMC1十微秒机械门控、内淋巴正电位电池与3500内毛细胞不可再生图解",
+            "左图展示0.1至0.3纳米偏转拉紧顶端连接在10至40微秒内拽开TMC1通道及+80毫伏内淋巴电池驱动钾离子内流；右图对比3500个内毛细胞与12000个外毛细胞分工及85分贝噪声不可逆损伤警示。",
+            els,
+        )
+
+    def _build_prestin_amplifier_oae():
+        els = []
+        els += header(
+            "四、耳朵里藏着上万台跳舞马达：Prestin 主动放大 50 dB 与耳声发射",
+            "如果只靠被动行波，耳语会被粘滞淋巴液淹没——外毛细胞靠 Prestin 蛋白高速伸缩“推秋千”，甚至让耳朵自己发出声音！",
+        )
+
+        # Panel A: Prestin somatic electromotility & +40-50 dB active cochlear amplifier
+        els.append(card(20, 64, 382, 452))
+        els.append(pill(34, 74, "A · 外毛细胞 Prestin 压电马达：把灵敏度暴拉百倍！", fg=ORANGE, bg=ORANGE_SOFT, w=352))
+
+        # Two states of OHC dancing + Passive vs Active tuning curve
+        els.append(card(34, 108, 354, 152, rx=8, fill="#f8fafc", stroke=BORDER))
+        # Depolarized contracted OHC vs Hyperpolarized elongated OHC
+        els.append('<rect x="64" y="138" width="38" height="92" rx="12" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>')
+        els.append(txt(83, 128, "超极化(伸长)", 9.8, BLUE, anchor="middle", weight="700"))
+        els.append('<rect x="134" y="156" width="46" height="66" rx="12" fill="#ffedd5" stroke="#ea580c" stroke-width="2.2"/>')
+        els.append(txt(157, 146, "去极化(收缩!)", 9.8, ORANGE, anchor="middle", weight="700"))
+        els.append(f'<line x1="110" y1="184" x2="128" y2="184" stroke="{INK}" stroke-width="1.6" marker-end="url(#arr-orange)"/>')
+        els.append(txt(120, 248, "Prestin 膜马达每秒可伸缩数万次！", 10.2, INK, anchor="middle", weight="700"))
+
+        # Mini comparison plot: Passive broad flat wave vs Active sharp +40~50 dB peak!
+        gx0, gx1, gy_b = 222.0, 374.0, 232.0
+        els.append(f'<line x1="{gx0:.1f}" y1="{gy_b:.1f}" x2="{gx1:.1f}" y2="{gy_b:.1f}" stroke="{SLATE}" stroke-width="1.2"/>')
+        pass_pts, act_pts = [], []
+        for i in range(61):
+            u = i / 60.0
+            xx = gx0 + u * (gx1 - gx0)
+            y_p = math.exp(-((u - 0.52) / 0.28) ** 2) * 24.0
+            y_a = y_p + math.exp(-((u - 0.58) / 0.075) ** 2) * 74.0
+            pass_pts.append(f"{xx:.1f},{gy_b - y_p:.1f}")
+            act_pts.append(f"{xx:.1f},{gy_b - y_a:.1f}")
+        els.append(f'<polyline points="{" ".join(pass_pts)}" fill="none" stroke="{SLATE}" stroke-width="1.8" stroke-dasharray="4 3"/>')
+        els.append(f'<polyline points="{" ".join(act_pts)}" fill="none" stroke="{RED}" stroke-width="2.5"/>')
+        els.append(txt(310, 128, "主动放大 +40~50 dB!", 10, RED, anchor="middle", weight="700", halo=True))
+        els.append(txt(268, 224, "死后被动行波", 9.6, SLATE, anchor="middle"))
+
+        els.append(txt(36, 284, "• 粘滞阻尼难题：内耳装满液体，被动行波就像在水里荡秋千，", 10.6, BODY))
+        els.append(txt(36, 303, "  既微弱又扁平——如果只有它，你既听不见耳语，也分不清音高！", 10.6, BODY))
+        els.append(txt(36, 326, "• 2000 年 Nature 揪出真凶——马达蛋白 Prestin（郑景中等）：", 10.7, ORANGE, weight="700"))
+        els.append(txt(36, 345, "  12,000 个外毛细胞侧壁塞满了 Prestin 蛋白，不耗 ATP 就能", 10.5, BODY))
+        els.append(txt(36, 364, "  随跨膜电压直接发生“压电式纵向伸缩”，在每个声波周期精准推", 10.5, BODY))
+        els.append(txt(36, 383, "  一把基底膜，把微弱声波锐利放大 40–50 dB（振幅放大上百倍）！", 10.5, INK, weight="700"))
+        els.append(txt(36, 408, "• 鸡尾酒会烦恼：外毛细胞一旦被噪音或耳毒性药物伤损，人不仅", 10.5, BODY))
+        els.append(txt(36, 427, "  觉得声音小，更因为失去了“尖峰频率锐化”，在嘈杂饭馆里明明", 10.5, BODY))
+        els.append(txt(36, 446, "  听见别人说话嗡嗡响，却怎么也分辨不清吐字！", 10.5, RED, weight="700"))
+        els.append(txt(36, 474, "  （Prestin 命名源自乐谱术语 Presto“急板”，致敬其超高速响应）", 10.1, MUTED))
+
+        # Panel B: Kemp (1978) Otoacoustic Emissions (OAE) & Newborn Hearing Screening
+        els.append(card(416, 64, 324, 452))
+        els.append(pill(430, 74, "B · 会回唱的耳朵：耳声发射与新生儿筛查", fg=GREEN, bg=GREEN_SOFT, w=296))
+
+        # Reverse signal flow diagram
+        els.append(card(430, 108, 296, 162, rx=8, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(578, 130, "大卫·坎普 1978 年惊人发现：耳声发射 (OAE)", 11, GREEN, anchor="middle", weight="700"))
+        els.append(card(444, 150, 114, 52, rx=6, fill="#ffffff", stroke=BLUE))
+        els.append(txt(501, 172, "耳塞微型扬声器", 10.3, BLUE, anchor="middle", weight="700"))
+        els.append(txt(501, 190, "送入轻柔咔哒声 →", 9.8, BODY, anchor="middle"))
+
+        els.append(card(598, 150, 114, 52, rx=6, fill="#ffffff", stroke=ORANGE))
+        els.append(txt(655, 172, "外毛细胞跳舞", 10.3, ORANGE, anchor="middle", weight="700"))
+        els.append(txt(655, 190, "Prestin 主动回推!", 9.8, BODY, anchor="middle"))
+
+        els.append(f'<line x1="558" y1="166" x2="596" y2="166" stroke="{BLUE}" stroke-width="2" marker-end="url(#arr-blue)"/>')
+        els.append(f'<line x1="596" y1="190" x2="558" y2="190" stroke="{GREEN}" stroke-width="2.2" marker-end="url(#arr-green)"/>')
+        els.append(txt(578, 228, "← 几毫秒后，振动倒传经听小骨推响鼓膜，", 10.3, INK, anchor="middle", weight="600"))
+        els.append(txt(578, 247, "被耳道高灵敏麦克风当场录到“耳蜗回声”！", 10.3, GREEN, anchor="middle", weight="700"))
+
+        els.append(card(430, 284, 296, 218, rx=8, fill="#f8fafc", stroke=BORDER))
+        els.append(txt(442, 306, "这项“离经叛道”的发现拯救了无数婴儿：", 11, INK, weight="700"))
+        els.append(txt(442, 328, "① 1978 年坎普刚宣布“健康耳朵会自己往外发声”时，", 10.4, BODY))
+        els.append(txt(442, 347, "   曾被同行怀疑是麦克风故障；结果一验证震惊全球！", 10.4, BODY))
+        els.append(txt(442, 370, "② 新生儿听力筛查神器：出生仅两三天的宝宝不会说话", 10.4, BLUE, weight="700"))
+        els.append(txt(442, 389, "   也不会举手，护士趁宝宝熟睡塞进一枚小探头，几十秒", 10.4, BODY))
+        els.append(txt(442, 408, "   测出耳声发射“通过”，就知道外毛细胞马达运转正常！", 10.4, INK, weight="600"))
+        els.append(txt(442, 432, "③ 甚至有相当比例健康人在绝对安静的暗室里，耳朵会", 10.4, BODY))
+        els.append(txt(442, 451, "   持续发出极微弱的“自发性耳声发射”——因为放大器", 10.4, BODY))
+        els.append(txt(442, 470, "   增益拉到极致时，偶尔会像话筒靠近音箱那样轻微自激！", 10.4, PURPLE, weight="700"))
+
+        return figure(
+            532,
+            "外毛细胞Prestin马达蛋白主动放大50分贝谐振锐化与耳声发射新生儿听力筛查图解",
+            "左图展示外毛细胞Prestin随膜电位伸缩驱动主动耳蜗放大器提供40至50分贝增益与尖锐频率选择性；右图展示坎普发现的耳声发射反向传导机制及其在新生儿无创听力筛查中的应用。",
+            els,
+        )
+
+    def _build_binaural_localization():
+        els = []
+        els += header(
+            "五、闭上眼凭什么抓准蚊子在哪？大脑 10 微秒时间尺、声影与骨传导",
+            "单只耳朵分不出立体方位——脑干靠双耳 10 微秒时间差、高频头颅声影与耳廓褶皱频谱，实时解算出三维声场",
+        )
+
+        # Panel A: Jeffress ITD Coincidence Detector (10 microseconds -> ~1 deg!)
+        els.append(card(20, 64, 376, 452))
+        els.append(pill(34, 74, "A · 双耳时间差 ITD：比神经脉冲还准 100 倍的秒表！", fg=BLUE, bg=BLUE_SOFT, w=346))
+
+        # Top-down head + Jeffress delay line
+        els.append(card(34, 108, 348, 206, rx=8, fill="#f8fafc", stroke=BORDER))
+        # Sound source on left-front (x=78, y=148), Head centered at (228, 174)
+        els.append(f'<circle cx="76" cy="146" r="8" fill="{ORANGE}"/>')
+        els.append(txt(76, 130, "左侧声源", 10, ORANGE, anchor="middle", weight="700"))
+
+        els.append(f'<circle cx="232" cy="174" r="34" fill="#e2e8f0" stroke="{SLATE}" stroke-width="1.8"/>')
+        els.append(txt(232, 178, "头颅", 10.5, INK, anchor="middle", weight="700"))
+        # Left ear (196, 174) & Right ear (268, 174)
+        els.append(f'<ellipse cx="195" cy="174" rx="5" ry="11" fill="{ORANGE_SOFT}" stroke="{ORANGE}" stroke-width="1.8"/>')
+        els.append(f'<ellipse cx="269" cy="174" rx="5" ry="11" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.8"/>')
+
+        els.append(f'<line x1="84" y1="148" x2="188" y2="170" stroke="{ORANGE}" stroke-width="2" marker-end="url(#arr-orange)"/>')
+        els.append(f'<path d="M 84,144 Q 186,108 268,160" fill="none" stroke="{BLUE}" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#arr-blue)"/>')
+        els.append(txt(136, 176, "先到左耳", 9.8, ORANGE, anchor="middle", weight="700"))
+        els.append(txt(206, 126, "绕头晚到右耳 (Δt)", 9.8, BLUE, anchor="middle", weight="700"))
+
+        # Jeffress MSO coincidence array at bottom of subcard (y=252..298)
+        els.append(txt(208, 240, "脑干内侧上橄榄核 (MSO) 延迟线符合检测阵列：", 10, INK, anchor="middle", weight="700"))
+        for ni, nx in enumerate([108, 158, 208, 258, 308]):
+            hit = ni == 3  # Left traveled farther internally to meet delayed Right!
+            col_n = RED if hit else SLATE
+            bg_n = RED_SOFT if hit else "#ffffff"
+            els.append(f'<circle cx="{nx}" cy="272" r="{9 if hit else 7}" fill="{bg_n}" stroke="{col_n}" stroke-width="1.8"/>')
+            els.append(txt(nx, 276, str(ni + 1), 9.5, col_n, anchor="middle", weight="700"))
+        els.append(f'<line x1="92" y1="258" x2="324" y2="258" stroke="{ORANGE}" stroke-width="1.6" marker-end="url(#arr-orange)"/>')
+        els.append(f'<line x1="324" y1="286" x2="92" y2="286" stroke="{BLUE}" stroke-width="1.6" marker-end="url(#arr-blue)"/>')
+        els.append(txt(258, 304, "4号神经元同时收到双耳脉冲→锁定左侧角！", 9.8, RED, anchor="middle", weight="700"))
+
+        els.append(txt(36, 338, "• 惊人的时间精度（Purves 神经科学）：", 10.8, INK, weight="700"))
+        els.append(txt(36, 358, "  正侧面声源绕过脑袋的最大双耳时间差约 700 微秒；而人脑竟", 10.5, BODY))
+        els.append(txt(36, 377, "  能分辨短短 10 微秒（0.00001 秒，声波仅多走 3.4 毫米！）的", 10.5, INK, weight="700"))
+        els.append(txt(36, 396, "  时间差——对应水平方向 1° 定位精度！", 10.5, BLUE, weight="700"))
+        els.append(txt(36, 420, "• 神经学奇迹：单个动作电位本身宽达 ~1,000 微秒，为什么能测", 10.5, BODY))
+        els.append(txt(36, 439, "  出 10 微秒？靠左右轴突一长一短对冲走时，只有双侧脉冲同时撞", 10.5, BODY))
+        els.append(txt(36, 458, "  上的那颗 MSO 符合神经元才会点火！（主攻 <1.5–3 kHz 低频）", 10.5, INK, weight="600"))
+
+        # Panel B: High-freq ILD + Pinna vertical filtering + Why recorded voice sounds weird
+        els.append(card(410, 64, 330, 452))
+        els.append(pill(424, 74, "B · 高频声影、耳廓褶皱与“录音社死之谜”", fg=PURPLE, bg=PURPLE_SOFT, w=298))
+
+        els.append(card(424, 108, 302, 122, rx=8, fill=TEAL_SOFT, stroke=TEAL))
+        els.append(txt(436, 130, "① 高频声强差 (ILD)：外侧上橄榄核 (LSO) 管辖", 10.8, TEAL, weight="700"))
+        els.append(txt(436, 151, "• 频率 > 2 kHz 的高频声波长小于头颅直径，绕不过脑袋，", 10.4, BODY))
+        els.append(txt(436, 170, "  会在背风侧耳朵投下一片“声影区”（响度弱几到十几 dB）；", 10.4, BODY))
+        els.append(txt(436, 189, "• 大脑把“低频时间差 + 高频响度差”双剑合璧（瑞利双工理论），", 10.4, INK, weight="600"))
+        els.append(txt(436, 208, "  横扫全频段水平方位！", 10.4, TEAL, weight="700"))
+
+        els.append(card(424, 242, 302, 130, rx=8, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(436, 264, "② 为什么外耳廓长得皱巴巴？专管“上下与前后”！", 10.8, ORANGE, weight="700"))
+        els.append(txt(436, 285, "• 正前方、正头顶、正后方的声音到两耳距离完全相等（ITD=0,", 10.4, BODY))
+        els.append(txt(436, 304, "  ILD=0），光靠两耳对比根本分不出是在头顶还是脚底！", 10.4, BODY))
+        els.append(txt(436, 323, "• 全靠外耳廓凹凸不平的耳轮与耳甲腔：不同高度射来的声波", 10.4, INK, weight="600"))
+        els.append(txt(436, 342, "  反射干涉，刻出独一无二的频谱缺口；经典实验用硅胶填平耳廓", 10.4, BODY))
+        els.append(txt(436, 360, "  褶皱后，受试者立刻丧失上下仰角定位能力！", 10.4, RED, weight="700"))
+
+        els.append(card(424, 384, 302, 120, rx=8, fill=PURPLE_SOFT, stroke=PURPLE))
+        els.append(txt(436, 406, "③ 彩蛋：为什么听微信语音总觉得“我的声音怎么这么难听”？", 10.6, PURPLE, weight="700"))
+        els.append(txt(436, 427, "• 平时你自己开口说话时，内耳同时收到两路声音：", 10.4, BODY))
+        els.append(txt(436, 446, "  空气传声 + 声带直接震动头骨传进耳蜗的“颅骨传导”！", 10.4, INK, weight="700"))
+        els.append(txt(436, 465, "• 头骨是天然重低音炮，给你的自听声音加了浑厚低频滤镜；而", 10.4, BODY))
+        els.append(txt(436, 484, "  麦克风只录空气传声（那恰恰是全世界别人天天听到的真声）！", 10.4, INK, weight="600"))
+
+        return figure(
+            532,
+            "双耳10微秒时间差杰弗里斯延迟线、高频头影声强差、耳廓上下定位与骨传导图解",
+            "左图展示脑干内侧上橄榄核MSO通过轴突延迟线符合检测分辨10微秒双耳时间差实现1度方位定位；右图解释高频声影差ILD、外耳廓褶皱仰角滤波及录音缺失颅骨传导导致自听声音陌生的原因。",
+            els,
+        )
+
+    @register(
+        "how-we-hear",
+        "我们是如何听到的五步图解：中耳气水阻抗变压器、贝凯希耳蜗行波动画、0.1纳米静纤毛TMC1拉绳与不再生铁律、Prestin跳舞马达与耳声发射及双耳10微秒定位",
+        "science_tech",
+    )
+    def build_how_we_hear():
+        write_svg(SUBDIR, "middle-ear-impedance-transformer.svg", _build_middle_ear_transformer())
+        write_svg(SUBDIR, "bekesy-cochlea-traveling-wave-tonotopy.svg", _build_bekesy_traveling_wave())
+        write_svg(SUBDIR, "tip-links-tmc1-and-atomic-threshold.svg", _build_tip_links_tmc1())
+        write_svg(SUBDIR, "prestin-motor-amplifier-and-oae.svg", _build_prestin_amplifier_oae())
+        write_svg(SUBDIR, "binaural-ten-microsecond-localization.svg", _build_binaural_localization())
+
+
+_register_how_we_hear()
+
+
+def _register_fruit_flesh_seeds():
+    SUBDIR = "fruit-flesh-seeds"
+    RED = "#dc2626"
+    RED_SOFT = "#fef2f2"
+    AMBER = "#d97706"
+    AMBER_SOFT = "#fffbeb"
+    TEAL = "#0d9488"
+    TEAL_SOFT = "#f0fdfa"
+
+    def _build_flower_to_fruit():
+        """SVG 1: Animated floral organ fate — True fruit (ovary wall) vs Accessory fruit (hypanthium/receptacle)."""
+        els = []
+        els.extend(
+            header(
+                "一朵花谢了之后谁在长肉？“真果”与“假果”的器官身世分流动画",
+                "植物学判断标准极度纯粹：只由子房壁发育成的果肉叫“真果”；拉拢花托、花筒或花萼一起长肉的统称“假果（附果）”。",
+            )
+        )
+
+        extra_css = """
+        @keyframes fatePulseA {
+          0%, 15% { opacity: 0.25; transform: translateX(-6px); }
+          55%, 100% { opacity: 1; transform: translateX(0px); }
+        }
+        @keyframes fatePulseB {
+          0%, 35% { opacity: 0.2; transform: translateX(-6px); }
+          80%, 100% { opacity: 1; transform: translateX(0px); }
+        }
+        .fate-true { animation: fatePulseA 4.2s cubic-bezier(0.22, 1, 0.36, 1) 1 forwards; }
+        .fate-acc  { animation: fatePulseB 4.8s cubic-bezier(0.22, 1, 0.36, 1) 1 forwards; }
+        @media (prefers-reduced-motion: reduce) {
+          .fate-true, .fate-acc { animation: none !important; opacity: 1 !important; transform: none !important; }
+        }
+        """
+
+        # Left panel: Generalized pollinated flower anatomy
+        els.append(card(20, 68, 250, 424))
+        els.append(step_badge(40, 90, "1", fg=PURPLE, bg=PURPLE_SOFT, r=11))
+        els.append(txt(58, 95, "受粉后的花朵蓝图", 12.8, INK, weight="700"))
+        els.append(txt(36, 115, "记住这 4 个零件的颜色与名字：", 10.5, MUTED))
+
+        fx, fy = 145, 258
+        # Pedicel & Receptacle / Hypanthium cup (Orange)
+        els.append(f'<rect x="{fx-7}" y="{fy+70}" width="14" height="44" rx="4" fill="#65a30d"/>')
+        els.append(f'<path d="M {fx-56},{fy-6} C {fx-58},{fy+62} {fx+58},{fy+62} {fx+56},{fy-6} L {fx+42},{fy-6} C {fx+42},{fy+44} {fx-42},{fy+44} {fx-42},{fy-6} Z" fill="{ORANGE_SOFT}" stroke="{ORANGE}" stroke-width="2.2"/>')
+        # Sepals (Teal)
+        els.append(f'<path d="M {fx-54},{fy+6} Q {fx-84},{fy-18} {fx-70},{fy-34} Q {fx-50},{fy-18} {fx-44},{fy-4} Z" fill="{TEAL_SOFT}" stroke="{TEAL}" stroke-width="1.6"/>')
+        els.append(f'<path d="M {fx+54},{fy+6} Q {fx+84},{fy-18} {fx+70},{fy-34} Q {fx+50},{fy-18} {fx+44},{fy-4} Z" fill="{TEAL_SOFT}" stroke="{TEAL}" stroke-width="1.6"/>')
+        # Petals (faded pink, wilting)
+        els.append(f'<path d="M {fx-46},{fy-10} Q {fx-88},{fy-66} {fx-38},{fy-84} Q {fx-16},{fy-56} {fx-24},{fy-16}" fill="#fce7f3" stroke="#ec4899" stroke-width="1.3" stroke-dasharray="4 3"/>')
+        els.append(f'<path d="M {fx+46},{fy-10} Q {fx+88},{fy-66} {fx+38},{fy-84} Q {fx+16},{fy-56} {fx+24},{fy-16}" fill="#fce7f3" stroke="#ec4899" stroke-width="1.3" stroke-dasharray="4 3"/>')
+        # Ovary wall (Green) + Style/Stigma
+        els.append(f'<path d="M {fx-7},{fy-36} L {fx-5},{fy-88} Q {fx},{fy-96} {fx+5},{fy-88} L {fx+7},{fy-36} Z" fill="{GREEN_SOFT}" stroke="{GREEN}" stroke-width="1.8"/>')
+        els.append(f'<ellipse cx="{fx}" cy="{fy+8}" rx="34" ry="42" fill="{GREEN_SOFT}" stroke="{GREEN}" stroke-width="2.5"/>')
+        # Placenta & Ovules inside ovary (Blue / Purple)
+        els.append(f'<ellipse cx="{fx}" cy="{fy+10}" rx="17" ry="25" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.5" stroke-dasharray="3 2"/>')
+        els.append(f'<ellipse cx="{fx-6}" cy="{fy+4}" rx="6" ry="9" fill="{PURPLE_SOFT}" stroke="{PURPLE}" stroke-width="1.8"/>')
+        els.append(f'<ellipse cx="{fx+7}" cy="{fy+16}" rx="6" ry="9" fill="{PURPLE_SOFT}" stroke="{PURPLE}" stroke-width="1.8"/>')
+
+        # Legend inside left card
+        legends = [
+            (GREEN, GREEN_SOFT, "① 子房壁 (Ovary wall)", "→ 真果的外/中/内三层果皮"),
+            (BLUE, BLUE_SOFT, "② 胎座与珠柄 (Placenta)", "→ 西瓜瓤、番茄胶、荔枝假种皮"),
+            (PURPLE, PURPLE_SOFT, "③ 胚珠 (Ovule)", "→ 受精发育成种子（种皮+胚乳+胚）"),
+            (ORANGE, ORANGE_SOFT, "④ 花托/花筒 (Receptacle)", "→ 苹果梨果肉、草莓红肉主力！"),
+        ]
+        for idx, (col, bgc, l1, l2) in enumerate(legends):
+            ly = 344 + idx * 35
+            els.append(f'<rect x="34" y="{ly}" width="222" height="30" rx="5" fill="{bgc}" stroke="{col}" stroke-width="1.2"/>')
+            els.append(txt(42, ly + 13, l1, 10.1, col, weight="700"))
+            els.append(txt(42, ly + 25, l2, 9.6, BODY))
+
+        # Right Top: Route A — True Fruit
+        els.append('<g class="fate-true">')
+        els.append(card(292, 68, 448, 200))
+        els.append(pill(308, 82, "路线 A：真果（True Fruit）", fg=GREEN, bg=GREEN_SOFT, w=198, h=22, size=11.2))
+        els.append(txt(518, 97, "代表：桃、樱桃、西红柿、葡萄", 10.6, MUTED, weight="600"))
+
+        # Flow arrow from left panel
+        els.append(f'<path d="M 270,210 Q 282,168 292,168" fill="none" stroke="{GREEN}" stroke-width="2.4"/>')
+        # Peach / True drupe diagram
+        px, py = 368, 174
+        els.append(f'<circle cx="{px}" cy="{py}" r="52" fill="#fed7aa" stroke="{RED}" stroke-width="2.8"/>')
+        els.append(f'<ellipse cx="{px}" cy="{py+4}" rx="20" ry="27" fill="#d97706" stroke="#92400e" stroke-width="2.2"/>')
+        els.append(f'<ellipse cx="{px}" cy="{py+4}" rx="10" ry="15" fill="{PURPLE_SOFT}" stroke="{PURPLE}" stroke-width="1.6"/>')
+        els.append(txt(px, py - 34, "外果皮(薄皮)", 9.8, RED, weight="700", anchor="middle"))
+        els.append(txt(px + 34, py, "中果皮", 10.2, GREEN, weight="700", anchor="middle"))
+        els.append(txt(px, py + 43, "木质内果皮(核壳)", 9.6, "#92400e", weight="700", anchor="middle"))
+
+        els.append(txt(442, 126, "• 严格定义：花瓣、雄蕊纷纷枯萎脱落，唯独", 10.6, BODY))
+        els.append(txt(442, 145, "  绿色的【① 子房壁】膨大分化为三层果皮：", 10.6, GREEN, weight="700"))
+        els.append(txt(442, 166, "  - 外果皮 (Exocarp)：最外层表皮与蜡质保护层", 10.3, BODY))
+        els.append(txt(442, 185, "  - 中果皮 (Mesocarp)：桃子、芒果最肥厚多汁的果肉", 10.3, INK, weight="600"))
+        els.append(txt(442, 204, "  - 内果皮 (Endocarp)：桃核坚硬外壳（不是种皮！）", 10.3, BODY))
+        els.append(txt(442, 226, "• 敲开硬桃核，里面那颗扁扁的“桃仁”才是【③ 种子】！", 10.4, PURPLE, weight="700"))
+        els.append(txt(442, 246, "  （巴旦木其实就是扔掉干瘪桃肉、专吃桃仁的近亲！）", 10.1, MUTED))
+        els.append('</g>')
+
+        # Right Bottom: Route B — Accessory / False Fruit
+        els.append('<g class="fate-acc">')
+        els.append(card(292, 284, 448, 208))
+        els.append(pill(308, 298, "路线 B：假果 / 附果（Accessory Fruit）", fg=ORANGE, bg=ORANGE_SOFT, w=234, h=22, size=11.2))
+        els.append(txt(552, 313, "代表：苹果、梨、草莓、桑葚", 10.6, MUTED, weight="600"))
+
+        els.append(f'<path d="M 270,295 Q 282,380 292,380" fill="none" stroke="{ORANGE}" stroke-width="2.4"/>')
+        # Apple pome diagram
+        ax, ay = 368, 394
+        els.append(f'<circle cx="{ax}" cy="{ay}" r="52" fill="{ORANGE_SOFT}" stroke="{RED}" stroke-width="2.6"/>')
+        els.append(f'<circle cx="{ax}" cy="{ay}" r="22" fill="{GREEN_SOFT}" stroke="{GREEN}" stroke-width="1.8" stroke-dasharray="4 3"/>')
+        for k in range(5):
+            ang = -math.pi / 2 + k * 2 * math.pi / 5
+            sx = ax + 11 * math.cos(ang)
+            sy = ay + 11 * math.sin(ang)
+            els.append(f'<circle cx="{sx:.1f}" cy="{sy:.1f}" r="3.6" fill="{PURPLE}"/>')
+        els.append(txt(ax, ay - 33, "外圈花筒肉(>70%)", 9.8, ORANGE, weight="700", anchor="middle"))
+        els.append(txt(ax, ay + 34, "果心线内=真子房", 9.5, GREEN, weight="700", anchor="middle"))
+
+        els.append(txt(442, 342, "• 植物界的“外包扩建工程”：子房自己不长厚肉，", 10.6, BODY))
+        els.append(txt(442, 361, "  反而发激素召集【④ 花托 / 花筒 / 花萼】疯狂充水储糖！", 10.6, ORANGE, weight="700"))
+        els.append(txt(442, 382, "  - 苹果与梨：你啃掉的脆甜果肉是包在子房外的花筒；", 10.3, INK, weight="600"))
+        els.append(txt(442, 401, "    你嫌硬吐掉的“苹果核”，恰恰才是它真正的整个果实！", 10.3, GREEN, weight="700"))
+        els.append(txt(442, 420, "  - 草莓：红艳果肉全是茎尖花托；表面芝麻粒才是真果实！", 10.3, BODY))
+        els.append(txt(442, 439, "  - 桑葚：一串花序抱团，爆汁果肉竟是变胖的“肉质花萼”！", 10.3, TEAL, weight="700"))
+        els.append(txt(442, 462, "• 注意：“假果”绝不是人造假水果，而是植物学标准术语！", 10.1, MUTED))
+        els.append('</g>')
+
+        return figure(
+            512,
+            "花朵受粉后发育为真果与假果的器官身世分流单次动画图解",
+            "左栏标出受粉花朵的子房壁、胎座珠柄、胚珠与花托花筒四大结构；右栏通过单次动画对比真果（仅子房壁发育为外中内三层果皮，如桃）与假果（花筒或花托参与形成可食果肉，如苹果与草莓）的演化分工。",
+            els,
+            extra_css=extra_css,
+        )
+
+    def _build_tomato_vs_pome():
+        """SVG 2: Tomato (true berry + liquefied placental gel) vs Apple & Pear (pome core line + stone cells)."""
+        els = []
+        els.extend(
+            header(
+                "西红柿 vs 苹果与梨：一个吸溜“胎座胶质”，两个专啃“花筒外衣”！",
+                "横切一刀见真章：西红柿全身内外都姓“子房”；苹果和梨真正的果皮却被封印在果心线以内。",
+            )
+        )
+
+        # Left Card: Tomato
+        els.append(card(20, 68, 352, 444))
+        els.append(pill(36, 82, "西红柿：根正苗红的“真果·浆果”", fg=RED, bg=RED_SOFT, w=224, h=22, size=11.2))
+
+        tx, ty = 196, 198
+        # Outer tomato pericarp ring
+        els.append(f'<circle cx="{tx}" cy="{ty}" r="76" fill="#ef4444" stroke="#991b1b" stroke-width="2.5"/>')
+        els.append(f'<circle cx="{tx}" cy="{ty}" r="63" fill="#fca5a5"/>')
+        # 3 locular chambers filled with translucent amber-red placental gel
+        for k in range(3):
+            a1 = math.radians(k * 120 + 16)
+            a2 = math.radians(k * 120 + 104)
+            am = math.radians(k * 120 + 60)
+            p1x, p1y = tx + 58 * math.cos(a1), ty + 58 * math.sin(a1)
+            p2x, p2y = tx + 58 * math.cos(a2), ty + 58 * math.sin(a2)
+            cx0, cy0 = tx + 10 * math.cos(am), ty + 10 * math.sin(am)
+            els.append(f'<path d="M {cx0:.1f},{cy0:.1f} L {p1x:.1f},{p1y:.1f} A 58,58 0 0,1 {p2x:.1f},{p2y:.1f} Z" fill="#fef08a" fill-opacity="0.72" stroke="#dc2626" stroke-width="1.6"/>')
+            # Central placenta lobe + seeds
+            px0, py0 = tx + 26 * math.cos(am), ty + 26 * math.sin(am)
+            els.append(f'<circle cx="{px0:.1f}" cy="{py0:.1f}" r="11" fill="#f87171"/>')
+            for ds in (-0.32, 0.0, 0.32):
+                sx = tx + 42 * math.cos(am + ds)
+                sy = ty + 42 * math.sin(am + ds)
+                els.append(f'<ellipse cx="{sx:.1f}" cy="{sy:.1f}" rx="4.5" ry="2.8" transform="rotate({math.degrees(am+ds):.1f} {sx:.1f} {sy:.1f})" fill="#f59e0b" stroke="#92400e" stroke-width="1"/>')
+        els.append(f'<circle cx="{tx}" cy="{ty}" r="14" fill="#fca5a5"/>')
+
+        # Callouts on Tomato
+        els.append(f'<line x1="{tx+68}" y1="{ty-28}" x2="312" y2="146" stroke="{RED}" stroke-width="1.4"/>')
+        els.append(txt(315, 142, "果皮肉壁", 10.2, RED, weight="700"))
+        els.append(txt(315, 155, "(中/内果皮)", 9.6, MUTED))
+
+        els.append(f'<line x1="{tx+38}" y1="{ty+26}" x2="306" y2="232" stroke="{AMBER}" stroke-width="1.4"/>')
+        els.append(txt(309, 228, "胎座液化胶", 10.2, AMBER, weight="700"))
+        els.append(txt(309, 241, "(酸甜爆汁源)", 9.6, MUTED))
+
+        els.append(f'<line x1="{tx-52}" y1="{ty-26}" x2="86" y2="142" stroke="{INK}" stroke-width="1.4"/>')
+        els.append(txt(82, 138, "隔膜(Septa)", 10.0, INK, weight="700", anchor="end"))
+        els.append(txt(82, 151, "分出心皮室", 9.5, MUTED, anchor="end"))
+
+        els.append(card(36, 292, 320, 114, rx=7, fill=RED_SOFT, stroke=RED))
+        els.append(txt(48, 313, "• 西红柿咬开后，我们其实同时吃下了两样器官：", 10.5, INK, weight="700"))
+        els.append(txt(48, 332, "  ① 外圈厚实沙瓤与辐射状隔膜 = 子房壁长成的中/内果皮；", 10.2, BODY))
+        els.append(txt(48, 350, "  ② 包裹种子的酸甜果冻汁 = 由 SlMBP3 基因调控液化的", 10.2, BODY))
+        els.append(txt(48, 368, "     【胎座胶质 (Locular Gel)】，富含谷氨酸鲜味与有机酸！", 10.2, RED, weight="700"))
+        els.append(txt(48, 388, "  （种子表面自带抑制发芽物质，随动物消化道排出才萌发）", 9.8, MUTED))
+
+        els.append(card(36, 416, 320, 82, rx=7, fill=SLATE_SOFT, stroke=SLATE))
+        els.append(txt(48, 436, "⚖️ 1893 美国最高法院“西红柿关税案”(Nix v. Hedden)：", 10.3, INK, weight="700"))
+        els.append(txt(48, 454, "• 植物学铁证：100% 是浆果（受精子房发育且含种子）！", 10.0, GREEN, weight="700"))
+        els.append(txt(48, 471, "• 大法官判决：按厨房习惯配正餐吃而非饭后甜点，关税算蔬菜！", 10.0, BODY))
+        els.append(txt(48, 488, "  → 一锤定音区分了“植物学果实”与“餐桌蔬菜”两套词典。", 9.8, MUTED))
+
+        # Right Card: Apple & Pear
+        els.append(card(388, 68, 352, 444))
+        els.append(pill(404, 82, "苹果与梨：穿厚外套的“仁果·假果”", fg=ORANGE, bg=ORANGE_SOFT, w=238, h=22, size=11.2))
+
+        ax, ay = 520, 198
+        # Transverse cut of an apple showing 10 vascular bundles & core line!
+        els.append(f'<circle cx="{ax}" cy="{ay}" r="76" fill="#fef9c3" stroke="#dc2626" stroke-width="2.6"/>')
+        # Core line (dashed green pentagon-ish circle)
+        els.append(f'<circle cx="{ax}" cy="{ay}" r="31" fill="#ecfccb" stroke="{GREEN}" stroke-width="2.0" stroke-dasharray="5 3"/>')
+        # 5 star-shaped carpels (cartilaginous endocarp) + seeds + 10 vascular dots
+        for k in range(5):
+            ang = math.radians(-90 + k * 72)
+            # Carpel petal
+            cx1 = ax + 22 * math.cos(ang)
+            cy1 = ay + 22 * math.sin(ang)
+            els.append(f'<ellipse cx="{cx1*0.55 + ax*0.45:.1f}" cy="{cy1*0.55 + ay*0.45:.1f}" rx="11" ry="5" transform="rotate({-90 + k*72} {cx1*0.55 + ax*0.45:.1f} {cy1*0.55 + ay*0.45:.1f})" fill="#ffffff" stroke="{GREEN}" stroke-width="1.5"/>')
+            sx = ax + 13 * math.cos(ang)
+            sy = ay + 13 * math.sin(ang)
+            els.append(f'<circle cx="{sx:.1f}" cy="{sy:.1f}" r="3.2" fill="#78350f"/>')
+            # Outer 10 vascular bundle dots along core line
+            for off in (-18, 18):
+                va = math.radians(-90 + k * 72 + off)
+                vx, vy = ax + 31 * math.cos(va), ay + 31 * math.sin(va)
+                els.append(f'<circle cx="{vx:.1f}" cy="{vy:.1f}" r="2.0" fill="{GREEN}"/>')
+
+        # Pear stone cell zoom circle on top-right of right card
+        zx, zy = 672, 168
+        els.append(f'<circle cx="{zx}" cy="{zy}" r="42" fill="#fffbeb" stroke="{AMBER}" stroke-width="2.0"/>')
+        for dx, dy, r0 in [(-14, -10, 8), (8, -14, 9), (-4, 8, 10), (16, 10, 7), (-18, 12, 6)]:
+            els.append(f'<circle cx="{zx+dx}" cy="{zy+dy}" r="{r0}" fill="#fde68a" stroke="#b45309" stroke-width="2.2"/>')
+            els.append(f'<circle cx="{zx+dx}" cy="{zy+dy}" r="{max(2, r0-4)}" fill="#92400e" opacity="0.45"/>')
+        els.append(txt(zx, zy + 56, "梨果肉放大：", 10.0, AMBER, weight="700", anchor="middle"))
+        els.append(txt(zx, zy + 69, "木质化石细胞团", 9.8, "#92400e", weight="700", anchor="middle"))
+
+        # Callouts on Apple transverse cut
+        els.append(f'<line x1="{ax-48}" y1="{ay-42}" x2="434" y2="128" stroke="{ORANGE}" stroke-width="1.4"/>')
+        els.append(txt(402, 122, "外圈>70%脆肉", 10.0, ORANGE, weight="700"))
+        els.append(txt(402, 135, "= 花筒(非子房)", 9.5, MUTED))
+
+        els.append(f'<line x1="{ax-22}" y1="{ay+22}" x2="438" y2="258" stroke="{GREEN}" stroke-width="1.4"/>')
+        els.append(txt(402, 255, "果心线以内", 10.0, GREEN, weight="700"))
+        els.append(txt(402, 268, "= 真正果皮！", 9.6, GREEN, weight="700"))
+
+        els.append(card(404, 292, 320, 114, rx=7, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(416, 313, "• 把苹果拦腰横切一刀，你会看到一圈淡绿色虚线环：", 10.4, INK, weight="700"))
+        els.append(txt(416, 332, "  ① 环外 >70% 脆甜果肉：由包被下位子房的【花筒/花托】膨大；", 10.2, BODY))
+        els.append(txt(416, 350, "  ② 环内你啃剩吐掉的“苹果核”：才是真正的子房中果皮，", 10.2, GREEN, weight="700"))
+        els.append(txt(416, 368, "     那五片卡牙缝的硬塑料状薄片则是【革质内果皮】！", 10.2, BODY))
+        els.append(txt(416, 388, "  （苹果底部凹坑里残留的干枯小爪子，正是当年的花萼片！）", 9.8, MUTED))
+
+        els.append(card(404, 416, 320, 82, rx=7, fill=AMBER_SOFT, stroke=AMBER))
+        els.append(txt(416, 436, "🍐 同样是仁果，为什么梨吃起来“沙沙咯牙”，苹果却细腻？", 10.2, AMBER, weight="700"))
+        els.append(txt(416, 454, "• 梨的花筒果肉里散布着成团的【石细胞 (Brachysclereids)】——", 10.0, BODY))
+        els.append(txt(416, 471, "  细胞壁沉积了 25%–30% 木质素（跟坚果壳同款硬质材料！），", 10.0, INK, weight="600"))
+        els.append(txt(416, 488, "  野生梨原本靠它防虫护种，人工选育才让砀山梨石细胞变细少。", 9.8, MUTED))
+
+        return figure(
+            528,
+            "西红柿真果浆果胎座胶质与苹果梨仁果假果果心线及石细胞横切对比图解",
+            "左栏展示西红柿横切面的中内果皮肉壁与包裹种子的SlMBP3液化胎座胶质，并附1893年美国最高法院关税案；右栏展示苹果横切面果心线内外真假果皮分界及梨果肉木质化石细胞团。",
+            els,
+        )
+
+    def _build_banana_triploid():
+        """SVG 3: Wild diploid seeded banana vs Cultivated AAA triploid parthenocarpic banana."""
+        els = []
+        els.extend(
+            header(
+                "香蕉也是浆果？为什么剥掉皮不见果核，只剩三排小黑点？",
+                "野生香蕉满肚子碎牙硬黑籽；超市华蕉（AAA 三倍体）靠“单性结实 + 减数分裂卡壳”把种子全憋没了！",
+            )
+        )
+
+        # Left Card: Wild Diploid Banana (Musa balbisiana)
+        els.append(card(20, 68, 336, 396))
+        els.append(pill(36, 82, "野生祖先芭蕉（二倍体 2n = 2x = 22）", fg=SLATE, bg=SLATE_SOFT, w=266, h=22, size=11.2))
+
+        wx, wy = 188, 198
+        els.append(f'<circle cx="{wx}" cy="{wy}" r="68" fill="#fde047" stroke="#a16207" stroke-width="3.0"/>')
+        els.append(f'<circle cx="{wx}" cy="{wy}" r="58" fill="#fef9c3" stroke="#ca8a04" stroke-width="1.4"/>')
+        # Packed with huge black rock-hard seeds!
+        seed_pts = [
+            (-26, -24), (-4, -32), (22, -22), (-36, 0), (-12, -6),
+            (14, -2), (34, 4), (-24, 24), (2, 22), (24, 26), (-2, 38), (-34, -18), (30, -14)
+        ]
+        for dx, dy in seed_pts:
+            els.append(f'<circle cx="{wx+dx}" cy="{wy+dy}" r="9.5" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>')
+            els.append(f'<circle cx="{wx+dx-3}" cy="{wy+dy-3}" r="2.2" fill="#64748b"/>')
+
+        els.append(txt(188, 286, "果腔几乎被直径 4–6 mm 的黑色硬籽塞满！", 10.6, RED, weight="700", anchor="middle"))
+        els.append(txt(188, 306, "• 东南亚丛林里的野生小果野蕉 (M. acuminata) 与", 10.3, BODY, anchor="middle"))
+        els.append(txt(188, 324, "  野芭蕉 (M. balbisiana) 必须经蝙蝠或鸟类传粉受精", 10.3, BODY, anchor="middle"))
+        els.append(txt(188, 342, "  才能结果；黑籽硬如碎石，果肉只剩薄薄几丝。", 10.3, BODY, anchor="middle"))
+
+        els.append(card(36, 360, 304, 88, rx=7, fill=SLATE_SOFT, stroke=SLATE))
+        els.append(txt(48, 380, "🍌 植物学冷知识：香蕉是如假包换的【下位子房浆果】！", 10.3, INK, weight="700"))
+        els.append(txt(48, 398, "• 因为香蕉花子房长在花萼下方（跟黄瓜、蓝莓一样），", 10.0, BODY))
+        els.append(txt(48, 415, "  你剥掉的黄香蕉皮 = 外层【花筒 + 外果皮】愈合外衣；", 10.0, INK, weight="600"))
+        els.append(txt(48, 432, "  撕皮时粘手的“白筋” = 给果实运糖的韧皮部维管束！", 10.0, MUTED))
+
+        # Right Card: Cultivated Cavendish Banana (AAA Triploid, 2n = 3x = 33)
+        els.append(card(376, 68, 364, 396))
+        els.append(pill(392, 82, "现代栽培香牙蕉（三倍体 2n = 3x = 33）", fg=AMBER, bg=AMBER_SOFT, w=294, h=22, size=11.2))
+
+        cx, cy = 500, 198
+        els.append(f'<circle cx="{cx}" cy="{cy}" r="68" fill="#facc15" stroke="#ca8a04" stroke-width="3.0"/>')
+        els.append(f'<circle cx="{cx}" cy="{cy}" r="57" fill="#fefce8" stroke="#fde047" stroke-width="1.8"/>')
+        # 3 carpel septa lines (Y-shape) + tiny aborted brown ovule specks
+        for k in range(3):
+            ang = math.radians(-90 + k * 120)
+            x2 = cx + 52 * math.cos(ang)
+            y2 = cy + 52 * math.sin(ang)
+            els.append(f'<line x1="{cx}" y1="{cy}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="#eab308" stroke-width="1.6" stroke-dasharray="4 3"/>')
+            # Tiny brown aborted ovules in two delicate arcs near center
+            m_ang = math.radians(-30 + k * 120)
+            for off, rad in [(-0.22, 18), (0.0, 21), (0.22, 18), (-0.12, 12), (0.12, 12)]:
+                ox = cx + rad * math.cos(m_ang + off)
+                oy = cy + rad * math.sin(m_ang + off)
+                els.append(f'<circle cx="{ox:.1f}" cy="{oy:.1f}" r="1.9" fill="#78350f"/>')
+
+        # Callout labels on right cross-section
+        els.append(f'<line x1="{cx+62}" y1="{cy-26}" x2="604" y2="144" stroke="#ca8a04" stroke-width="1.4"/>')
+        els.append(txt(608, 140, "黄皮：花筒+外果皮", 10.1, "#b45309", weight="700"))
+        els.append(txt(608, 154, "(剥掉不吃)", 9.5, MUTED))
+
+        els.append(f'<line x1="{cx+36}" y1="{cy+6}" x2="604" y2="196" stroke="{GREEN}" stroke-width="1.4"/>')
+        els.append(txt(608, 192, "甜糯果肉：内层果皮", 10.1, GREEN, weight="700"))
+        els.append(txt(608, 206, "(淀粉熟化转果糖/蔗糖)", 9.5, MUTED))
+
+        els.append(f'<line x1="{cx+12}" y1="{cy+16}" x2="604" y2="246" stroke="#78350f" stroke-width="1.4"/>')
+        els.append(txt(608, 242, "中心三排小褐点：", 10.1, "#78350f", weight="700"))
+        els.append(txt(608, 256, "退化的未受精胚珠！", 9.8, RED, weight="700"))
+
+        els.append(card(392, 282, 332, 166, rx=7, fill=AMBER_SOFT, stroke=AMBER))
+        els.append(txt(404, 303, "✨ 人类驯化史上的两记绝杀（约 7000 年前东南亚起源）：", 10.4, INK, weight="700"))
+        els.append(txt(404, 323, "① 单性结实突变 (Parthenocarpy)：子房不需要受精就能自己", 10.2, BODY))
+        els.append(txt(404, 341, "   分泌生长素，让内果皮与胎座填满柔滑淀粉果肉；", 10.2, BODY))
+        els.append(txt(404, 360, "② 三倍体卡死减数分裂 (3x = 33)：每组染色体有 3 条，配对", 10.2, INK, weight="600"))
+        els.append(txt(404, 378, "   分家时 2:1 乱成一团，99.99% 胚珠刚起步就发育中止，", 10.2, BODY))
+        els.append(txt(404, 396, "   只留下香蕉正中央那三排人畜无害的小褐点！（无籽西瓜同理）", 10.2, AMBER, weight="700"))
+        els.append(txt(404, 417, "⚠️ 代价：没有种子只能靠地下吸芽无性克隆，全球华蕉基因", 10.0, RED, weight="600"))
+        els.append(txt(404, 434, "   几乎一模一样，面对热带枯萎病 TR4 真菌极其脆弱！", 10.0, BODY))
+
+        return figure(
+            484,
+            "野生二倍体有籽香蕉与现代三倍体单性结实无籽香牙蕉横切结构对比图解",
+            "左图展示野生二倍体芭蕉果腔布满坚硬黑籽；右图展示现代AAA三倍体栽培香蕉的下位子房浆果分层（花筒加外果皮为蕉皮、内层果皮为甜糯果肉、中心三排小褐点为减数分裂受阻退化的胚珠）。",
+            els,
+        )
+
+    def _build_strawberry_mulberry_citrus():
+        """SVG 4: Three everyday botanical plot twists — Strawberry, Mulberry, Citrus."""
+        els = []
+        els.extend(
+            header(
+                "水果界三大“障眼法”：草莓籽其实是果、桑葚吃花萼、橙子果肉竟是“毛”！",
+                "同样酸甜爆汁，植物演化出了截然不同的储糖容器——拿放大镜看一眼全破案。",
+            )
+        )
+
+        col_w, col_h = 232, 398
+        x1, x2, x3 = 20, 264, 508
+        cy = 68
+
+        # Col 1: Strawberry
+        els.append(card(x1, cy, col_w, col_h))
+        els.append(step_badge(x1 + 20, cy + 22, "1", fg=RED, bg=RED_SOFT, r=10))
+        els.append(txt(x1 + 36, cy + 26, "草莓：聚合假果", 12.6, INK, weight="700"))
+        els.append(txt(x1 + 16, cy + 46, "一朵花长出 ~200 颗独立干果！", 10.2, MUTED))
+
+        sx, sy = x1 + 116, cy + 132
+        # Calyx leaves on top
+        els.append(f'<path d="M {sx-34},{sy-46} Q {sx},{sy-34} {sx+34},{sy-46} L {sx},{sy-58} Z" fill="#16a34a"/>')
+        # Red swollen receptacle heart
+        els.append(f'<path d="M {sx},{sy+54} C {sx-56},{sy+20} {sx-52},{sy-42} {sx},{sy-38} C {sx+52},{sy-42} {sx+56},{sy+20} {sx},{sy+54} Z" fill="#ef4444" stroke="#b91c1c" stroke-width="2.2"/>')
+        els.append(f'<path d="M {sx},{sy+34} C {sx-24},{sy+10} {sx-22},{sy-20} {sx},{sy-18} C {sx+22},{sy-20} {sx+24},{sy+10} {sx},{sy+34} Z" fill="#fecaca"/>')
+        # Achenes on surface
+        for dx, dy in [(-28, -18), (-10, -22), (12, -22), (28, -18), (-32, 2), (-12, 0), (12, 0), (32, 2), (-20, 22), (0, 20), (20, 22), (0, 38)]:
+            els.append(f'<ellipse cx="{sx+dx}" cy="{sy+dy}" rx="3.0" ry="4.4" fill="#fde047" stroke="#854d0e" stroke-width="1"/>')
+
+        els.append(card(x1 + 14, cy + 202, col_w - 28, 180, rx=7, fill=RED_SOFT, stroke=RED))
+        els.append(txt(x1 + 24, cy + 222, "• 红艳果肉 = 膨大的【茎尖花托】！", 10.3, RED, weight="700"))
+        els.append(txt(x1 + 24, cy + 241, "• 表面约 200 粒“小芝麻”：", 10.3, INK, weight="700"))
+        els.append(txt(x1 + 24, cy + 259, "  根本不是裸露种子，而是 200 颗", 10.1, BODY))
+        els.append(txt(x1 + 24, cy + 276, "  独立的【瘦果 (Achene)】——每粒", 10.1, GREEN, weight="700"))
+        els.append(txt(x1 + 24, cy + 293, "  硬壳里才装着一颗真正的草莓种子！", 10.1, BODY))
+        els.append(txt(x1 + 24, cy + 314, "• 经典实验（Nitsch 1950）：趁幼果", 10.0, INK, weight="600"))
+        els.append(txt(x1 + 24, cy + 331, "  期用镊子拔光表面瘦果，花托立刻", 10.0, BODY))
+        els.append(txt(x1 + 24, cy + 348, "  停止长大；涂上生长素又重新鼓起！", 10.0, BODY))
+        els.append(txt(x1 + 24, cy + 366, "  证明瘦果是发号施令的“包工头”。", 9.8, MUTED))
+
+        # Col 2: Mulberry
+        els.append(card(x2, cy, col_w, col_h))
+        els.append(step_badge(x2 + 20, cy + 22, "2", fg=PURPLE, bg=PURPLE_SOFT, r=10))
+        els.append(txt(x2 + 36, cy + 26, "桑葚：整串花序聚花果", 12.6, INK, weight="700"))
+        els.append(txt(x2 + 16, cy + 46, "一粒桑葚 = 几十朵小花抱成团！", 10.2, MUTED))
+
+        mx, my = x2 + 116, cy + 132
+        els.append(f'<line x1="{mx}" y1="{my-58}" x2="{mx}" y2="{my+48}" stroke="#65a30d" stroke-width="5" stroke-linecap="round"/>')
+        drupelets = [
+            (-16, -34), (0, -38), (16, -34),
+            (-24, -16), (-8, -18), (8, -18), (24, -16),
+            (-24, 4), (-8, 2), (8, 2), (24, 4),
+            (-20, 22), (-4, 22), (12, 22),
+            (-10, 38), (8, 38),
+        ]
+        for dx, dy in drupelets:
+            els.append(f'<circle cx="{mx+dx}" cy="{my+dy}" r="11.5" fill="#581c87" stroke="#3b0764" stroke-width="1.4"/>')
+            els.append(f'<circle cx="{mx+dx-3}" cy="{my+dy-3}" r="3.2" fill="#c084fc" opacity="0.65"/>')
+
+        els.append(card(x2 + 14, cy + 202, col_w - 28, 180, rx=7, fill=PURPLE_SOFT, stroke=PURPLE))
+        els.append(txt(x2 + 24, cy + 222, "• 别把桑葚和树莓搞混：", 10.3, PURPLE, weight="700"))
+        els.append(txt(x2 + 24, cy + 241, "  树莓是一朵花里许多子房聚成的", 10.1, BODY))
+        els.append(txt(x2 + 24, cy + 258, "  聚合核果；而桑葚是整根花序轴上", 10.1, BODY))
+        els.append(txt(x2 + 24, cy + 275, "  几十朵独立雌花挤成的【聚花果】！", 10.1, INK, weight="700"))
+        els.append(txt(x2 + 24, cy + 296, "• 最让人意外的爆汁真相：", 10.3, PURPLE, weight="700"))
+        els.append(txt(x2 + 24, cy + 314, "  每朵小雌花授粉后，真正的子房只", 10.1, BODY))
+        els.append(txt(x2 + 24, cy + 331, "  结出一粒极小的瘦果；反倒是外围", 10.1, BODY))
+        els.append(txt(x2 + 348 - 324, cy + 348, "  4 片【花萼 (Calyx)】吸饱紫黑花青素", 10.1, INK, weight="700"))
+        els.append(txt(x2 + 24, cy + 365, "  鼓成小水珠！（菠萝、无花果也是聚花果）", 9.8, MUTED))
+
+        # Col 3: Citrus (Hesperidium)
+        els.append(card(x3, cy, col_w, col_h))
+        els.append(step_badge(x3 + 20, cy + 22, "3", fg=ORANGE, bg=ORANGE_SOFT, r=10))
+        els.append(txt(x3 + 36, cy + 26, "柑橘柚子：特化柑果", 12.6, INK, weight="700"))
+        els.append(txt(x3 + 16, cy + 46, "一瓣一瓣的果粒竟是“内果皮长毛”！", 10.2, MUTED))
+
+        ox, oy = x3 + 116, cy + 132
+        # Half-circle orange slice
+        els.append(f'<circle cx="{ox}" cy="{oy}" r="52" fill="#f97316" stroke="#c2410c" stroke-width="2.2"/>')
+        els.append(f'<circle cx="{ox}" cy="{oy}" r="45" fill="#fffbeb" stroke="#fed7aa" stroke-width="1.4"/>')
+        for k in range(8):
+            a1 = math.radians(k * 45 + 5)
+            a2 = math.radians(k * 45 + 40)
+            am = math.radians(k * 45 + 22.5)
+            p1x, p1y = ox + 41 * math.cos(a1), oy + 41 * math.sin(a1)
+            p2x, p2y = ox + 41 * math.cos(a2), oy + 41 * math.sin(a2)
+            cx0, cy0 = ox + 6 * math.cos(am), oy + 6 * math.sin(am)
+            els.append(f'<path d="M {cx0:.1f},{cy0:.1f} L {p1x:.1f},{p1y:.1f} A 41,41 0 0,1 {p2x:.1f},{p2y:.1f} Z" fill="#fb923c" stroke="#ffffff" stroke-width="2.0"/>')
+            # Juice sac teardrops projecting inward from outer arc!
+            for da in (-0.16, 0.0, 0.16):
+                jx1, jy1 = ox + 39 * math.cos(am + da), oy + 39 * math.sin(am + da)
+                jx2, jy2 = ox + 20 * math.cos(am + da), oy + 20 * math.sin(am + da)
+                els.append(f'<line x1="{jx1:.1f}" y1="{jy1:.1f}" x2="{jx2:.1f}" y2="{jy2:.1f}" stroke="#fef08a" stroke-width="2.2" stroke-linecap="round"/>')
+
+        els.append(card(x3 + 14, cy + 202, col_w - 28, 180, rx=7, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(x3 + 24, cy + 222, "• 剥橘子就是逐层拆解三层真果皮：", 10.2, ORANGE, weight="700"))
+        els.append(txt(x3 + 24, cy + 241, "  ① 喷香油胞橙色外皮 = 外果皮；", 10.1, BODY))
+        els.append(txt(x3 + 24, cy + 258, "  ② 白色海绵状“橘络” = 中果皮；", 10.1, BODY))
+        els.append(txt(x3 + 24, cy + 275, "  ③ 包住每一瓣的薄韧衣 = 内果皮！", 10.1, INK, weight="700"))
+        els.append(txt(x3 + 24, cy + 296, "• 那一粒粒水滴状果肉是什么？", 10.2, ORANGE, weight="700"))
+        els.append(txt(x3 + 24, cy + 314, "  是内果皮内壁向腔内长出的巨型多", 10.1, BODY))
+        els.append(txt(x3 + 24, cy + 331, "  细胞表皮毛——【汁胞 (Juice Sacs)】", 10.1, INK, weight="700"))
+        els.append(txt(x3 + 24, cy + 348, "  内部 >90% 体积是装满糖酸的大液泡", 10.1, BODY))
+        els.append(txt(x3 + 24, cy + 365, "  （吃柚子一粒粒剥开的正是这种腺毛）！", 9.8, MUTED))
+
+        return figure(
+            484,
+            "草莓聚合假果花托瘦果、桑葚聚花果肉质花萼与柑橘内果皮汁胞结构图解",
+            "三栏并列拆解三种特化果实：草莓可食部分为茎尖花托而表面小粒为真正瘦果；桑葚由整串花序发育且爆汁部分为肉质花萼；柑橘类一粒粒汁胞是内果皮向内生长的多细胞储水毛状体。",
+            els,
+        )
+
+    def _build_edible_parts_matrix():
+        """SVG 5: Ultimate 6-box cheat sheet — Which exact botanical organ are we eating?"""
+        els = []
+        els.extend(
+            header(
+                "终极吃货解剖图鉴：有的吃果皮、有的吃种皮、有的喝“种子奶粉”！",
+                "把身边最常见的 20 种果实与坚果对号入座——下次端起果盘，一眼看穿你咬的是哪一层器官。",
+            )
+        )
+
+        boxes = [
+            (
+                "1", GREEN, GREEN_SOFT,
+                "吃真果皮（中果皮 / 胎座）",
+                "代表：桃、樱桃、芒果、西瓜、番茄",
+                "• 桃、李、杏、芒果：吃肥厚【中果皮】，硬核壳是内果皮；",
+                "• 西瓜、哈密瓜：最甜的沙瓤中心是极度发达的【胎座】！",
+            ),
+            (
+                "2", ORANGE, ORANGE_SOFT,
+                "吃花托或花筒（假果外衣）",
+                "代表：苹果、梨、枇杷、草莓、无花果",
+                "• 苹果、梨、海棠：吃外圈【花筒】，果心硬核才是真果皮；",
+                "• 草莓吃外翻【花托】；无花果吃内翻【肉质花序托】+小花！",
+            ),
+            (
+                "3", TEAL, TEAL_SOFT,
+                "吃“假种皮”——珠柄送的糖衣",
+                "代表：荔枝、龙眼、红毛丹、榴莲",
+                "• 剥掉荔枝红壳（真果皮），里面白嫩果肉既非果皮也非种皮；",
+                "• 它是种子肚脐【珠柄】长出来包裹种子的【假种皮 (Aril)】！",
+            ),
+            (
+                "4", RED, RED_SOFT,
+                "吃“肉质外种皮”——种子亲穿的水晶袄",
+                "代表：石榴、银杏（白果外臭皮）",
+                "• 辟谣：石榴晶莹红宝石颗粒并无假种皮，而是外珠被发育成的",
+                "  【肉质外种皮 (Sarcotesta)】——你在吃种子自己的外皮！",
+            ),
+            (
+                "5", BLUE, BLUE_SOFT,
+                "吃“胚乳”——给植物宝宝备的奶粉",
+                "代表：椰子（椰肉+椰水）、玉米粒",
+                "• 青椰削掉绿皮硬壳（果皮），插管喝的【椰子水】是液体胚乳，",
+                "  刮下来吃的白嫩【椰子肉】则是沉淀上岸的【固体胚乳】！",
+            ),
+            (
+                "6", PURPLE, PURPLE_SOFT,
+                "吃“种仁（胚与子叶）”——直接吃种子",
+                "代表：葵花籽、巴旦木、核桃、花生、松子",
+                "• 嗑瓜子扔掉的条纹壳是向日葵【果皮】，瓜子仁是【肥厚子叶】；",
+                "• 巴旦木、核桃专吃核内【种子】；松子连果皮都没（裸子植物）！",
+            ),
+        ]
+
+        bw, bh = 352, 126
+        for idx, (num, col, bgc, title, exs, l1, l2) in enumerate(boxes):
+            r, c = divmod(idx, 2)
+            bx = 20 + c * 368
+            by = 68 + r * 138
+            els.append(card(bx, by, bw, bh, rx=8, fill=CARD_BG, stroke=col))
+            els.append(f'<rect x="{bx}" y="{by}" width="{bw}" height="34" rx="8" fill="{bgc}"/>')
+            els.append(step_badge(bx + 18, by + 17, num, fg=col, bg="#ffffff", r=10))
+            els.append(txt(bx + 34, by + 22, title, 11.8, col, weight="700"))
+            els.append(txt(bx + 14, by + 52, exs, 10.3, INK, weight="700"))
+            els.append(txt(bx + 14, by + 73, l1, 10.0, BODY))
+            els.append(txt(bx + 14, by + 91, l2, 10.0, BODY))
+            if idx == 3:
+                els.append(txt(bx + 14, by + 111, "  （对比左栏：荔枝肉能完整剥离种皮，石榴汁却长死在核外！）", 9.6, RED, weight="600"))
+            elif idx == 4:
+                els.append(txt(bx + 14, by + 111, "  （双受精产物 3n 胚乳：动物喝母乳，被子植物胚芽喝胚乳！）", 9.6, BLUE, weight="600"))
+
+        return figure(
+            496,
+            "常见水果与坚果六大可食植物学器官分类对照图鉴",
+            "六宫格对比人类实际食用的六种果实与种子部位：中果皮或胎座（桃、西瓜）、花托或花筒（苹果、草莓）、珠柄假种皮（荔枝、榴莲）、肉质外种皮（石榴）、固体与液体胚乳（椰子）以及种仁子叶（葵花籽、巴旦木、松子）。",
+            els,
+        )
+
+    @register(
+        "fruit-flesh-seeds",
+        "身边水果果肉与种子结构五步图解：真果假果发育动画、西红柿胎座胶质vs苹果梨仁果石细胞、三倍体无籽香蕉、草莓桑葚柑橘伪装术及吃果肉vs吃种子六宫格",
+        "science_tech",
+    )
+    def build_fruit_flesh_seeds():
+        write_svg(SUBDIR, "flower-to-fruit-true-vs-accessory.svg", _build_flower_to_fruit())
+        write_svg(SUBDIR, "tomato-berry-placental-gel-vs-pome.svg", _build_tomato_vs_pome())
+        write_svg(SUBDIR, "banana-triploid-parthenocarpy-anatomy.svg", _build_banana_triploid())
+        write_svg(SUBDIR, "strawberry-mulberry-citrus-disguises.svg", _build_strawberry_mulberry_citrus())
+        write_svg(SUBDIR, "flesh-vs-seed-edible-parts-matrix.svg", _build_edible_parts_matrix())
+
+
+_register_fruit_flesh_seeds()
+
+
+def _register_light_electricity_energy():
+    SUBDIR = "light-electricity-energy"
+    RED = "#dc2626"
+    RED_SOFT = "#fef2f2"
+    AMBER = "#d97706"
+    AMBER_SOFT = "#fffbeb"
+    TEAL = "#0d9488"
+    TEAL_SOFT = "#f0fdfa"
+
+    def _line(x1, y1, x2, y2, stroke=HAIRLINE, sw=1.4, dash=None, marker=None):
+        attrs = [
+            f'x1="{x1:.1f}"',
+            f'y1="{y1:.1f}"',
+            f'x2="{x2:.1f}"',
+            f'y2="{y2:.1f}"',
+            f'stroke="{stroke}"',
+            f'stroke-width="{sw}"',
+        ]
+        if dash:
+            attrs.append(f'stroke-dasharray="{dash}"')
+        if marker:
+            attrs.append(f'marker-end="url(#{marker})"')
+        return f'<line {" ".join(attrs)}/>'
+
+    def _build_snail_electrons_poynting():
+        """SVG 1: Animated Poynting vector energy flow (~c) vs snail electron drift (0.049 mm/s) & AC jiggle."""
+        # Exact copper drift velocity check: I = 1 A, n = 8.47e28 m^-3, e = 1.602176634e-19 C, A = 1.5e-6 m^2
+        n_cu = 8.47e28
+        e_chg = 1.602176634e-19
+        area_m2 = 1.5e-6
+        v_d_mms = (1.0 / (n_cu * e_chg * area_m2)) * 1000.0
+        assert 0.048 < v_d_mms < 0.051
+        # Peak displacement amplitude in 50 Hz AC (I_rms = 1 A -> I_peak = sqrt(2) A): x_max = v_peak / (2*pi*50)
+        x_amp_um = (v_d_mms * math.sqrt(2.0) * 1000.0) / (2.0 * math.pi * 50.0)
+        assert 0.21 < x_amp_um < 0.24
+
+        els = []
+        els.extend(
+            header(
+                "铜线里的电子爬得比蜗牛还慢，为什么墙上开关一按，屋顶电灯瞬间亮了？",
+                "颠覆直觉：电线不是送电子去烧的“煤气管道”！真正以近光速奔向电灯的，是导线外的电磁场坡印廷能流。",
+            )
+        )
+
+        extra_css = """
+        @keyframes poyntingRush {
+          0% { stroke-dashoffset: 520; opacity: 0.35; }
+          65%, 100% { stroke-dashoffset: 0; opacity: 1; }
+        }
+        .poynting-stream { stroke-dasharray: 520; animation: poyntingRush 2.8s cubic-bezier(0.16, 1, 0.3, 1) 1 forwards; }
+        @media (prefers-reduced-motion: reduce) {
+          .poynting-stream { animation: none !important; stroke-dashoffset: 0 !important; opacity: 1 !important; }
+        }
+        """
+
+        # Top Card: Poynting Vector Circuit Diagram (One-shot animation)
+        els.append(card(20, 68, 720, 232))
+        els.append(step_badge(40, 90, "1", fg=BLUE, bg=BLUE_SOFT, r=10))
+        els.append(txt(58, 95, "电磁场能流全景动画：能量沿着导线【外部空间】以近光速（~2亿米/秒）直扑灯泡！", 11.8, INK, weight="700"))
+
+        # Source / Wall Switch on Left (x=88, y=188), Lamp on Right (x=632, y=188)
+        els.append(f'<rect x="52" y="156" width="82" height="68" rx="8" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="2.0"/>')
+        els.append(txt(93, 182, "220V 电源", 10.4, BLUE, weight="700", anchor="middle"))
+        els.append(txt(93, 200, "+ 墙上开关", 9.8, INK, weight="600", anchor="middle"))
+        els.append(txt(93, 216, "(按下合闸)", 9.2, MUTED, anchor="middle"))
+
+        # Top & Bottom Copper Wires
+        els.append(_line(134, 166, 594, 166, stroke="#b45309", sw=4.2))
+        els.append(_line(134, 214, 594, 214, stroke="#b45309", sw=4.2))
+        els.append(txt(364, 156, "上端铜导线（内部自由电子仅缓慢蠕动或原地微颤）", 9.5, "#92400e", weight="700", anchor="middle"))
+        els.append(txt(364, 232, "下端回路铜导线", 9.5, "#92400e", weight="700", anchor="middle"))
+
+        # Static full streamlines (always legible at t=0, reduced-motion, and static renderers)
+        els.append(f'<path d="M 142,180 C 260,178 460,178 586,184" fill="none" stroke="{AMBER}" stroke-width="2.2" stroke-opacity="0.45" marker-end="url(#arr-orange)"/>')
+        els.append(f'<path d="M 142,200 C 260,202 460,202 586,196" fill="none" stroke="{AMBER}" stroke-width="2.2" stroke-opacity="0.45" marker-end="url(#arr-orange)"/>')
+        els.append(f'<path d="M 140,148 C 280,118 470,118 612,154" fill="none" stroke="{ORANGE}" stroke-width="1.8" stroke-dasharray="6 4" stroke-opacity="0.55" marker-end="url(#arr-orange)"/>')
+        els.append(f'<path d="M 140,232 C 280,262 470,262 612,226" fill="none" stroke="{ORANGE}" stroke-width="1.8" stroke-dasharray="6 4" stroke-opacity="0.55" marker-end="url(#arr-orange)"/>')
+        # Animated Poynting Vector S = (1/mu_0)(E x B) surge overlay!
+        els.append(f'<path class="poynting-stream" d="M 142,180 C 260,178 460,178 586,184" fill="none" stroke="{AMBER}" stroke-width="3.0" marker-end="url(#arr-orange)"/>')
+        els.append(f'<path class="poynting-stream" d="M 142,200 C 260,202 460,202 586,196" fill="none" stroke="{AMBER}" stroke-width="3.0" marker-end="url(#arr-orange)"/>')
+        els.append(txt(364, 194, "坡印廷电磁能流 S = (1/μ₀)(E × B) 在导线外空间狂飙！", 10.2, ORANGE, weight="700", anchor="middle", halo=True))
+
+        # Glowing Lamp on Right
+        els.append(f'<circle cx="634" cy="190" r="38" fill="#fef08a" stroke="{AMBER}" stroke-width="2.4"/>')
+        els.append(f'<circle cx="634" cy="190" r="22" fill="#fde047"/>')
+        els.append(txt(634, 188, "电灯发光", 10.4, "#92400e", weight="700", anchor="middle"))
+        els.append(txt(634, 203, "能流汇入！", 9.6, RED, weight="700", anchor="middle"))
+        els.append(txt(634, 246, "5米电线仅需 ~25 纳秒点亮", 9.4, GREEN, weight="700", anchor="middle"))
+
+        els.append(txt(40, 282, "• 导线扮演的真正角色是“电磁场导轨”：表面电荷建立电场 E、电流建立磁场 B，能流 S 从四周空间垂直灌进灯丝/芯片！", 9.9, BODY))
+
+        # Bottom Two Cards: Quantitative Speed Comparison & 50 Hz AC Jiggle
+        els.append(card(20, 314, 352, 168))
+        els.append(pill(36, 328, f"直流漂移实算：每秒仅爬 {v_d_mms:.3f} 毫米！", fg=RED, bg=RED_SOFT, w=282, h=22, size=10.8))
+        els.append(txt(36, 368, "• 家装 1.5 mm² 铜线通 1 A 电流（灯功率 ~220 W）：", 10.0, INK, weight="700"))
+        els.append(txt(36, 387, "  铜自由电子密度 n = 8.47×10²⁸ /m³，代入 v_d = I/(neA)", 9.8, BODY))
+        els.append(txt(36, 405, f"  算得电子平均漂移速度仅 v_d ≈ {v_d_mms:.2f} mm/s（每小时 18 厘米）！", 9.8, RED, weight="700"))
+        els.append(txt(36, 424, "• 如果非要等墙上开关里那颗电子亲自爬完 5 米电线去点灯，", 9.8, BODY))
+        els.append(txt(36, 442, "  你按下开关后得在黑屋子里傻等【整整 28 个小时】！", 9.9, INK, weight="700"))
+        els.append(txt(36, 462, "  （好比拧开水龙头：水管早就满水，水压波瞬间推水喷出！）", 9.5, MUTED))
+
+        els.append(card(388, 314, 352, 168))
+        els.append(pill(404, 328, f"50 Hz 交流电更绝：电子原地微颤 ±{x_amp_um:.2f} 微米！", fg=PURPLE, bg=PURPLE_SOFT, w=318, h=22, size=10.6))
+        els.append(txt(404, 368, "• 家里插座是每秒换向 100 次的 50 Hz 交流电：", 10.0, INK, weight="700"))
+        els.append(txt(404, 387, "  铜线里的电子根本连一毫米门都没出过，一辈子都在原地", 9.8, BODY))
+        els.append(txt(404, 405, f"  左右来回哆嗦，单次摆幅仅 ±{x_amp_um:.2f} μm（头发丝的 1/300）！", 9.8, PURPLE, weight="700"))
+        els.append(txt(404, 424, "• 发电厂从来没有卖给你哪怕一颗电子！电厂只用发电机做功", 9.8, BODY))
+        els.append(txt(404, 442, "  隔着电磁场“推拉摇晃”你家铜线里原有的电子，把能量送进灯里！", 9.8, GREEN, weight="700"))
+        els.append(txt(404, 462, "  （所以电费单买的单位是千瓦时 kWh = 能量，不是库仑电荷！）", 9.5, MUTED))
+
+        return figure(
+            498,
+            "导线外坡印廷电磁能流近光速传播单次动画与铜线电子毫米级漂移对比图解",
+            "上栏单次动画展示合闸瞬间电能沿导线外部空间以坡印廷矢量S=(1/μ0)(E×B)近光速涌入灯泡；下栏定量对比1.5平方毫米铜线1安培直流下电子每秒仅0.05毫米的蜗牛漂移，以及50赫兹交流电下电子原地0.22微米振幅微颤。",
+            els,
+            extra_css=extra_css,
+        )
+
+    def _build_tungsten_blackbody():
+        """SVG 2: Gen 1 Incandescent — exact Planck curve for 2800 K tungsten vs 380-750 nm visible window."""
+        # Verify Wien's displacement law: lambda_max = 2.8977719e6 nm·K / 2800 K ≈ 1034.9 nm
+        lam_peak_2800 = 2.8977719e6 / 2800.0
+        assert 1030.0 < lam_peak_2800 < 1040.0
+
+        els = []
+        els.extend(
+            header(
+                "第一代电灯（白炽灯）：为什么爱迪生和钨丝灯把 95% 的电全烧成了暖气？",
+                "靠“硬把金属烧烫发光”的黑体辐射死胡同：2800 K 钨丝的辐射洪峰全砸在肉眼看不见的红外线里！",
+            )
+        )
+
+        # Left Card: Exact Calculated Planck Blackbody Curves (2800 K vs 5778 K normalized)
+        els.append(card(20, 68, 432, 408))
+        els.append(pill(36, 82, "普朗克黑体辐射光谱实算（2800 K 钨丝 vs 可见光窗）", fg=ORANGE, bg=ORANGE_SOFT, w=348, h=22, size=10.8))
+
+        gx0, gx1 = 66.0, 426.0
+        gy0, gy1 = 326.0, 134.0
+        # Wavelength axis from 200 nm to 3000 nm
+        lam_min, lam_max = 200.0, 3000.0
+        x_vis1 = gx0 + ((380.0 - lam_min) / (lam_max - lam_min)) * (gx1 - gx0)
+        x_vis2 = gx0 + ((750.0 - lam_min) / (lam_max - lam_min)) * (gx1 - gx0)
+
+        # Visible rainbow band [380, 750 nm]
+        els.append(f'<rect x="{x_vis1:.1f}" y="{gy1:.1f}" width="{x_vis2-x_vis1:.1f}" height="{gy0-gy1:.1f}" fill="#fef08a" opacity="0.55"/>')
+        els.append(_line(x_vis1, gy1, x_vis1, gy0, stroke=PURPLE, sw=1.1, dash="3 2"))
+        els.append(_line(x_vis2, gy1, x_vis2, gy0, stroke=RED, sw=1.1, dash="3 2"))
+        els.append(txt((x_vis1 + x_vis2) / 2, gy1 + 14, "人眼可见窗", 9.2, INK, weight="700", anchor="middle"))
+        els.append(txt((x_vis1 + x_vis2) / 2, gy1 + 26, "380–750 nm", 8.8, MUTED, anchor="middle"))
+
+        # Infrared region shading
+        els.append(f'<rect x="{x_vis2:.1f}" y="{gy1:.1f}" width="{gx1-x_vis2:.1f}" height="{gy0-gy1:.1f}" fill="{RED_SOFT}" opacity="0.55"/>')
+        els.append(txt((x_vis2 + gx1) / 2, gy1 + 20, "看不见的红外热辐射海洋 (~94%–95% 能量白白变热！)", 9.5, RED, weight="700", anchor="middle"))
+
+        def planck_rel(lam_nm, temp_k):
+            c2 = 1.438776877e7  # hc/k_B in nm·K
+            val = (lam_nm ** -5) / (math.exp(c2 / (lam_nm * temp_k)) - 1.0)
+            return val
+
+        peak_2800 = planck_rel(lam_peak_2800, 2800.0)
+        peak_5778 = planck_rel(2.8977719e6 / 5778.0, 5778.0)
+
+        pts_2800 = []
+        pts_sun = []
+        for lam in range(220, 3001, 30):
+            px = gx0 + ((lam - lam_min) / (lam_max - lam_min)) * (gx1 - gx0)
+            y_w = gy0 - (planck_rel(lam, 2800.0) / peak_2800) * (gy0 - gy1 - 36)
+            y_s = gy0 - (planck_rel(lam, 5778.0) / peak_5778) * (gy0 - gy1 - 36)
+            pts_2800.append(f"{px:.1f},{y_w:.1f}")
+            pts_sun.append(f"{px:.1f},{y_s:.1f}")
+
+        # Fill under 2800 K curve
+        poly_2800 = f"{gx0:.1f},{gy0:.1f} " + " ".join(pts_2800) + f" {gx1:.1f},{gy0:.1f}"
+        els.append(f'<polygon points="{poly_2800}" fill="{ORANGE}" fill-opacity="0.22"/>')
+        els.append(f'<polyline points="{" ".join(pts_2800)}" fill="none" stroke="{ORANGE}" stroke-width="2.8"/>')
+        els.append(f'<polyline points="{" ".join(pts_sun)}" fill="none" stroke="{BLUE}" stroke-width="1.8" stroke-dasharray="5 3"/>')
+
+        # Peak marker for 2800 K at ~1035 nm
+        px_pk = gx0 + ((lam_peak_2800 - lam_min) / (lam_max - lam_min)) * (gx1 - gx0)
+        py_pk = gy0 - (gy0 - gy1 - 36)
+        els.append(f'<circle cx="{px_pk:.1f}" cy="{py_pk:.1f}" r="4.8" fill="{RED}"/>')
+        els.append(txt(px_pk + 8, py_pk + 4, f"2800 K 钨丝峰值 λ_max ≈ {lam_peak_2800:.0f} nm (近红外！)", 9.5, RED, weight="700"))
+        els.append(txt(162, 266, "5778 K 太阳光谱参考", 9.3, BLUE, weight="700"))
+
+        els.append(_line(gx0, gy0, gx1, gy0, stroke=INK, sw=1.4))
+        els.append(_line(gx0, gy0, gx0, gy1, stroke=INK, sw=1.4))
+        for l_tick in (380, 750, 1500, 2500):
+            tx = gx0 + ((l_tick - lam_min) / (lam_max - lam_min)) * (gx1 - gx0)
+            els.append(_line(tx, gy0, tx, gy0 + 4, stroke=INK, sw=1.2))
+            els.append(txt(tx, gy0 + 16, f"{l_tick}nm", 9.0, MUTED, anchor="middle"))
+
+        els.append(card(36, 356, 400, 104, rx=7, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(48, 376, "🌡️ 维恩位移定律死穴（λ_max = b / T）：为什么不能把钨丝烧到 5800 K？", 9.8, ORANGE, weight="700"))
+        els.append(txt(48, 395, "• 想让热辐射峰值挪进可见光正中央（像太阳表面 5778 K 那样），灯丝得耐受近", 9.5, BODY))
+        els.append(txt(48, 412, "  6000 K 高温！可全周期表最耐烧金属【钨 (W)】熔点也只有 3695 K (3422°C)！", 9.5, INK, weight="700"))
+        els.append(txt(48, 430, "• 为防钨丝几分钟升华烧断，只能压在 ~2800 K 工作（充氩氮或卤素循环），", 9.5, BODY))
+        els.append(txt(48, 447, "  结果 60 W 灯泡 = 57 W 暖气 + 3 W 照明，光效仅 12–16 lm/W，寿命 1000 h！", 9.5, RED, weight="700"))
+
+        # Right Card: Energy & Filament Anatomy
+        els.append(card(468, 68, 272, 408))
+        els.append(pill(484, 82, "60 W 白炽灯能量去向拆解", fg=RED, bg=RED_SOFT, w=216, h=22, size=11.0))
+
+        # Stacked energy bar for 60W bulb
+        bx, by, bw, bh = 504, 128, 56, 200
+        # 5% visible (10px), 83% IR radiation (166px), 12% gas conduction/convection heat (24px)
+        els.append(f'<rect x="{bx}" y="{by}" width="{bw}" height="12" rx="2" fill="#facc15" stroke="{AMBER}"/>')
+        els.append(f'<rect x="{bx}" y="{by+12}" width="{bw}" height="164" fill="{RED}" opacity="0.85"/>')
+        els.append(f'<rect x="{bx}" y="{by+176}" width="{bw}" height="24" rx="2" fill="{SLATE}"/>')
+
+        els.append(txt(572, by + 10, "仅 ~5% 可见光 (~3 W)", 10.2, AMBER, weight="700"))
+        els.append(txt(572, by + 94, "~83% 红外热辐射", 10.2, RED, weight="700"))
+        els.append(txt(572, by + 112, "(烤手烫脸的主力)", 9.5, MUTED))
+        els.append(txt(572, by + 192, "~12% 玻壳传导热", 9.8, SLATE, weight="700"))
+
+        els.append(card(484, 348, 240, 112, rx=7, fill=SLATE_SOFT, stroke=SLATE))
+        els.append(txt(496, 368, "🌀 双螺旋钨丝的精巧挣扎：", 10.1, INK, weight="700"))
+        els.append(txt(496, 387, "• 把半米多长的极细钨丝绕成“螺旋", 9.7, BODY))
+        els.append(txt(496, 404, "  之螺旋”，减少惰性气体带走热量；", 9.7, BODY))
+        els.append(txt(496, 421, "• 关灯开灯瞬间冷态电阻仅热态 1/10，", 9.7, BODY))
+        els.append(txt(496, 438, "  10 倍浪涌电流最易把变细处烧断！", 9.7, RED, weight="700"))
+
+        return figure(
+            494,
+            "2800K钨丝白炽灯普朗克黑体光谱红外浪费与60瓦能量流向图解",
+            "左栏按普朗克定律精确绘制2800K钨丝光谱（峰值约1035纳米深陷红外区）与380至750纳米可见光窗口对比；右栏展示60瓦白炽灯仅约5%电能化为可见光、其余约95%化为红外辐射与传导废热。",
+            els,
+        )
+
+    def _build_fluorescent_stokes():
+        """SVG 3: Gen 2 Fluorescent / CFL — Mercury 253.7 nm UV (4.89 eV) -> Phosphor visible (~2.25 eV) Stokes shift."""
+        e_uv = 1239.84 / 253.7  # 4.887 eV
+        e_vis = 1239.84 / 550.0  # 2.254 eV
+        stokes_keep = (e_vis / e_uv) * 100.0
+        assert 45.0 < stokes_keep < 48.0
+
+        els = []
+        els.extend(
+            header(
+                "第二代电灯（荧光灯 / 节能灯）：不用烧烫金属了，为什么还丢掉一半能量？",
+                "跳过热辐射改玩“原子弹球二级跳”：水银蒸汽先发 4.89 eV 紫外线，荧光粉换算成可见光时被迫扣掉一半“汇率手续费”！",
+            )
+        )
+
+        els.append(card(20, 68, 720, 224))
+        els.append(step_badge(40, 90, "1", fg=TEAL, bg=TEAL_SOFT, r=10))
+        els.append(txt(58, 95, "荧光灯管内部两步接力：高速电子撞水银原子 → 253.7 nm 紫外光子 → 管壁三基色荧光粉发白光", 11.6, INK, weight="700"))
+
+        # Glass tube cross-section diagram
+        tx0, ty0, tw, th = 48, 122, 664, 118
+        els.append(f'<rect x="{tx0}" y="{ty0}" width="{tw}" height="{th}" rx="26" fill="#f0f9ff" stroke="{BLUE}" stroke-width="3.0"/>')
+        # White phosphor inner coating top & bottom
+        els.append(f'<rect x="{tx0+16}" y="{ty0+5}" width="{tw-32}" height="10" rx="4" fill="#fef08a" stroke="{AMBER}" stroke-width="1"/>')
+        els.append(f'<rect x="{tx0+16}" y="{ty0+th-15}" width="{tw-32}" height="10" rx="4" fill="#fef08a" stroke="{AMBER}" stroke-width="1"/>')
+        els.append(txt(380, ty0 + 13, "管壁内侧稀土三基色荧光粉涂层（拦住紫外线，转化为红+绿+蓝白光）", 9.0, "#92400e", weight="700", anchor="middle"))
+
+        # Step A: Cathode emits electron -> hits Hg atom
+        els.append(f'<circle cx="96" cy="181" r="16" fill="{ORANGE_SOFT}" stroke="{ORANGE}" stroke-width="1.8"/>')
+        els.append(txt(96, 185, "e⁻", 11.5, ORANGE, weight="700", anchor="middle", cls="mono"))
+        els.append(_line(116, 181, 214, 181, stroke=ORANGE, sw=2.2, marker="arr-orange"))
+        els.append(txt(165, 171, "镇流器高压加速", 9.4, ORANGE, weight="700", anchor="middle"))
+
+        # Step B: Mercury atom excited -> emits 253.7 nm UV
+        els.append(f'<circle cx="246" cy="181" r="24" fill="{PURPLE_SOFT}" stroke="{PURPLE}" stroke-width="2.2"/>')
+        els.append(txt(246, 178, "Hg 汞原子", 9.8, PURPLE, weight="700", anchor="middle"))
+        els.append(txt(246, 192, "跃迁退激", 9.0, BODY, anchor="middle"))
+
+        els.append(f'<path d="M 274,172 Q 330,148 392,136" fill="none" stroke="{PURPLE}" stroke-width="2.4" stroke-dasharray="5 3" marker-end="url(#arr-blue)"/>')
+        els.append(txt(334, 150, f"紫外光子 253.7 nm ({e_uv:.2f} eV)", 9.5, PURPLE, weight="700", anchor="middle"))
+
+        # Step C: Phosphor emits RGB visible light outward + Stokes phonon heat!
+        els.append(_line(412, 122, 466, 78, stroke=GREEN, sw=2.6, marker="arr-green"))
+        els.append(txt(574, 170, f"放出 1 颗可见光子 (~{e_vis:.2f} eV，60–100 lm/W)", 9.8, GREEN, weight="700", anchor="middle"))
+        els.append(txt(574, 190, f"差额 ~{e_uv-e_vis:.2f} eV (>50%) 变成管壁晶格废热！", 9.6, RED, weight="700", anchor="middle"))
+        els.append(txt(574, 210, "（玻璃管壁还能挡住残余短波紫外线护眼）", 9.3, MUTED, anchor="middle"))
+
+        els.append(txt(40, 268, "• 为什么比白炽灯省电 4–5 倍？因为它不再傻傻加热整块固体，而是精准敲击汞原子能级，60% 电能先高效变成了紫外光子！", 9.9, BODY))
+
+        # Bottom Two Cards: Stokes Shift Quantum Tax & Mercury Hazard
+        els.append(card(20, 308, 384, 168))
+        els.append(pill(36, 322, "斯托克斯位移税（Stokes Shift）：一换一必亏半截！", fg=PURPLE, bg=PURPLE_SOFT, w=328, h=22, size=10.6))
+        els.append(txt(36, 362, "• 荧光粉遵守“一光子换一光子”定律（量子产率接近 90%+）：", 10.0, INK, weight="700"))
+        els.append(txt(36, 382, f"  吞进 1 颗高能紫外光子（{e_uv:.2f} eV），吐出 1 颗绿黄可见光子（{e_vis:.2f} eV），", 9.8, BODY))
+        els.append(txt(36, 400, f"  单光子能量保留率 = {e_vis:.2f} / {e_uv:.2f} ≈ {stokes_keep:.1f}%，天生亏掉 54% 能量！", 9.8, RED, weight="700"))
+        els.append(txt(36, 420, "• 想突破这道天花板，唯一的出路就是：", 9.9, INK, weight="700"))
+        els.append(txt(36, 438, "  别绕道 4.89 eV 高能紫外线了——直接造出能发 2.75 eV 蓝光的半导体！", 9.9, BLUE, weight="700"))
+
+        els.append(card(420, 308, 320, 168))
+        els.append(pill(436, 322, "荧光灯退场的两大软肋", fg=RED, bg=RED_SOFT, w=196, h=22, size=10.8))
+        els.append(txt(436, 362, "① 剧毒水银（汞）环保痛点：", 10.0, RED, weight="700"))
+        els.append(txt(436, 380, "   每支节能灯管含数毫克液态/气态汞，一旦摔碎或随意填埋", 9.8, BODY))
+        els.append(txt(436, 398, "   会污染土壤水源（《关于汞的水俣公约》已推动全球逐步淘汰）。", 9.8, BODY))
+        els.append(txt(436, 419, "② 怕冻、怕频繁开关与老式频闪：", 10.0, INK, weight="700"))
+        els.append(txt(436, 437, "   天冷汞蒸气压低半天亮不起来；阴极电子粉每次点火溅射损耗。", 9.8, BODY))
+
+        return figure(
+            494,
+            "荧光灯低压汞蒸气紫外激发与三基色荧光粉斯托克斯位移损耗图解",
+            "上栏展示荧光灯内加速电子碰撞汞原子发出253.7纳米（4.89电子伏）紫外光子，再激发管壁荧光粉发出可见光；下栏量化计算一光子换一光子过程中超50%能量因斯托克斯位移化为晶格热，并说明含汞淘汰原因。",
+            els,
+        )
+
+    def _build_blue_led_nobel():
+        """SVG 4: Gen 3 White LED — 2014 Nobel InGaN blue quantum well + YAG:Ce phosphor."""
+        els = []
+        els.extend(
+            header(
+                "第三代电灯（白光 LED）：2014 诺贝尔物理学奖怎样用“蓝光芯片”点亮 21 世纪？",
+                "红光与绿光 LED 早在 1960 年代就有了，唯独缺一束“高能蓝光”困住全人类三十年——直到氮化镓横空出世！",
+            )
+        )
+
+        # Left Card: InGaN/GaN p-n Junction Quantum Well Band Diagram
+        els.append(card(20, 68, 376, 412))
+        els.append(pill(36, 82, "半导体量子阱滑梯：电子掉进空穴，直接吐出蓝光子！", fg=BLUE, bg=BLUE_SOFT, w=336, h=22, size=10.6))
+
+        # Energy band diagram (n-GaN -> InGaN Quantum Well -> p-GaN)
+        bx0 = 48
+        # Conduction band E_c
+        els.append(f'<path d="M {bx0},146 L 166,146 L 166,184 L 222,184 L 222,130 L 356,130" fill="none" stroke="{BLUE}" stroke-width="2.6"/>')
+        # Valence band E_v
+        els.append(f'<path d="M {bx0},256 L 166,256 L 166,242 L 222,242 L 222,268 L 356,268" fill="none" stroke="{TEAL}" stroke-width="2.6"/>')
+
+        # Shaded InGaN quantum well in the middle (x=166..222)
+        els.append(f'<rect x="166" y="184" width="56" height="58" fill="{BLUE_SOFT}" opacity="0.8"/>')
+        els.append(txt(194, 174, "InGaN 量子阱", 9.6, PURPLE, weight="700", anchor="middle"))
+
+        # Electron e- rolling from left & Hole h+ from right recombining vertically!
+        els.append(f'<circle cx="112" cy="138" r="7" fill="{BLUE}"/>')
+        els.append(txt(112, 142, "-", 11, "#ffffff", weight="700", anchor="middle"))
+        els.append(_line(124, 138, 184, 178, stroke=BLUE, sw=1.8, marker="arr-blue"))
+
+        els.append(f'<circle cx="282" cy="276" r="7" fill="#ffffff" stroke="{RED}" stroke-width="2"/>')
+        els.append(txt(282, 280, "+", 10, RED, weight="700", anchor="middle"))
+        els.append(_line(270, 276, 204, 246, stroke=RED, sw=1.8, marker="arr-orange"))
+
+        # Vertical radiative recombination arrow inside well + emitted 450 nm blue photon wave!
+        els.append(f'<circle cx="194" cy="192" r="5.5" fill="{BLUE}"/>')
+        els.append(_line(194, 199, 194, 232, stroke=PURPLE, sw=2.4, marker="arr-blue"))
+        els.append(f'<circle cx="194" cy="236" r="5.5" fill="#ffffff" stroke="{RED}" stroke-width="1.8"/>')
+        els.append(f'<path d="M 206,214 Q 230,198 254,214 T 302,214 L 332,214" fill="none" stroke="#2563eb" stroke-width="2.8" marker-end="url(#arr-blue)"/>')
+        els.append(txt(274, 198, "450 nm 蓝光!", 10.2, "#1d4ed8", weight="700"))
+        els.append(txt(264, 232, "hν = ΔE_g ≈ 2.75 eV", 9.2, PURPLE, weight="700", cls="mono"))
+
+        els.append(txt(96, 128, "n 型 GaN (富电子)", 9.6, BLUE, weight="700", anchor="middle"))
+        els.append(txt(302, 120, "p 型 GaN:Mg (富空穴)", 9.6, RED, weight="700", anchor="middle"))
+
+        els.append(card(36, 300, 344, 166, rx=7, fill=SLATE_SOFT, stroke=SLATE))
+        els.append(txt(48, 320, "🏆 为什么赤崎勇、天野浩、中村修二能拿 2014 诺贝尔奖？", 10.2, INK, weight="700"))
+        els.append(txt(48, 340, "• 发光二极管 (LED) 光子能量严格等于半导体禁带宽度 E_g：", 9.8, BODY))
+        els.append(txt(48, 358, "  发红光只需窄带隙 (~1.9 eV)，发蓝光却必须宽带隙【氮化镓 GaN】！", 9.8, BODY))
+        els.append(txt(48, 377, "• 当年全球大厂纷纷放弃 GaN，唯独三人死磕攻克两座天险：", 9.8, INK, weight="600"))
+        els.append(txt(48, 395, "  ① 低温缓冲层在蓝宝石衬底长出无裂纹镜面 GaN 单晶；", 9.8, BLUE, weight="700"))
+        els.append(txt(48, 413, "  ② 破解氢钝化谜团（400°C 退火赶走氢原子），首次激活低阻 p 型", 9.8, BLUE, weight="700"))
+        els.append(txt(48, 431, "     掺镁 GaN，并叠出 InGaN 双异质结量子阱，蓝光效率一飞冲天！", 9.8, BODY))
+        els.append(txt(48, 450, "  （无需烧钨丝、零水银，电能一步到位直接变高纯光子！）", 9.6, GREEN, weight="700"))
+
+        # Right Card: How Blue LED Makes Crisp White Light (Blue + YAG:Ce Yellow)
+        els.append(card(412, 68, 328, 412))
+        els.append(pill(428, 82, "蓝光芯片怎样变出温和白光？(蓝+黄混光术)", fg=AMBER, bg=AMBER_SOFT, w=296, h=22, size=10.6))
+
+        # LED cup cross-section
+        cx, cy = 576, 178
+        els.append(f'<polygon points="{cx-76},{cy+42} {cx+76},{cy+42} {cx+52},{cy+68} {cx-52},{cy+68}" fill="#cbd5e1" stroke="{SLATE}" stroke-width="1.8"/>')
+        # Yellow YAG:Ce phosphor dome
+        els.append(f'<path d="M {cx-68},{cy+42} A 68,62 0 0,1 {cx+68},{cy+42} Z" fill="#fef08a" stroke="{AMBER}" stroke-width="2.2"/>')
+        # Tiny 1 mm^2 InGaN blue die at bottom center
+        els.append(f'<rect x="{cx-18}" y="{cy+44}" width="36" height="14" rx="2" fill="#2563eb"/>')
+        els.append(txt(cx, cy + 54, "InGaN", 8.5, "#ffffff", weight="700", anchor="middle", cls="mono"))
+        els.append(txt(cx, cy + 28, "YAG:Ce 黄色荧光粉胶层", 9.6, "#92400e", weight="700", anchor="middle"))
+
+        # Upward blue ray + converted yellow-red rays -> White!
+        els.append(_line(cx - 10, cy + 40, cx - 28, cy - 36, stroke="#2563eb", sw=2.6, marker="arr-blue"))
+        els.append(_line(cx + 10, cy + 40, cx + 28, cy - 36, stroke=AMBER, sw=2.6, marker="arr-orange"))
+        els.append(txt(cx - 46, cy - 42, "透射蓝光", 9.6, "#2563eb", weight="700", anchor="middle"))
+        els.append(txt(cx + 46, cy - 42, "受激黄红宽谱光", 9.6, AMBER, weight="700", anchor="middle"))
+        els.append(txt(cx, cy - 56, "人眼混合 = 纯净白光！", 10.6, INK, weight="700", anchor="middle"))
+
+        els.append(card(428, 262, 296, 204, rx=7, fill=AMBER_SOFT, stroke=AMBER))
+        els.append(txt(440, 282, "💡 算一算为什么白光 LED 把斯托克斯损耗砍到了极致：", 10.0, AMBER, weight="700"))
+        els.append(txt(440, 302, "• 荧光灯拿 4.89 eV 紫外线转 2.2 eV 黄绿光，每颗光子亏 55%；", 9.7, BODY))
+        els.append(txt(440, 320, "• 白光 LED 拿 2.75 eV 蓝光去激 YAG:Ce 荧光粉发 ~2.15 eV 黄光，", 9.6, BODY))
+        els.append(txt(440, 338, "  能量保留率高达 2.15 / 2.75 ≈ 78%（透射蓝光更 0 损耗）！", 9.6, GREEN, weight="700"))
+        els.append(txt(440, 359, "🎨 冷白光 vs 暖黄光 + 护眼高显色指数 (Ra > 95)：", 10.0, INK, weight="700"))
+        els.append(txt(440, 377, "• 荧光粉涂薄一点→蓝光多→6000 K 清醒冷白光；", 9.6, BODY))
+        els.append(txt(440, 394, "• 荧光粉加红色氮化物粉→压低蓝光峰→2700–3000 K 暖黄光，", 9.6, BODY))
+        els.append(txt(440, 411, "  且全光谱连续饱满分毫不输日光！", 9.6, INK, weight="600"))
+        els.append(txt(440, 431, "• 寿命高达 25,000–50,000 小时（每天亮 5 小时够用 15–27 年），", 9.6, GREEN, weight="700"))
+        els.append(txt(440, 448, "  唯一弱点跟磁铁一样怕闷热（灯罩散热差会加速驱动与光衰）！", 9.4, MUTED))
+
+        return figure(
+            498,
+            "2014诺贝尔奖氮化铟镓蓝光LED量子阱能带发光与荧光粉白光合成图解",
+            "左栏绘制n型与p型氮化镓夹持InGaN量子阱的能带图，电子与空穴直接复合辐射450纳米（2.75电子伏）蓝光；右栏展示蓝光芯片激发YAG:Ce黄色荧光粉混合成低损耗白光及色温显色调控原理。",
+            els,
+        )
+
+    def _build_efficacy_and_pv_symmetry():
+        """SVG 5: Luminous efficacy ladder up to Murphy (2012) white ceiling + LED <-> Solar PV symmetry."""
+        els = []
+        els.extend(
+            header(
+                "人类追光百年成绩单：白光极限在哪？为什么 LED 反过来就是太阳能板？",
+                "左看从蜡烛 0.3 lm/W 到白光理论天花板 ~310 lm/W 的百倍飞跃；右看 p-n 结“电变光”与“光变电”的宇宙对称。",
+            )
+        )
+
+        # Left Card: Quantitative Luminous Efficacy Ladder (lm/W)
+        els.append(card(20, 68, 404, 412))
+        els.append(pill(36, 82, "百年光源发光效率阶梯（流明/瓦 lm/W，同为 800 lm 亮度）", fg=GREEN, bg=GREEN_SOFT, w=368, h=22, size=10.4))
+
+        # Scale up to 683 lm/W SI green monochromatic ceiling
+        l_rows = [
+            ("蜡烛 / 煤油灯", 0.3, "0.3 lm/W", SLATE),
+            ("60 W 钨丝白炽灯 (800 lm)", 14.0, "14 lm/W (耗电 60 W)", RED),
+            ("卤素钨丝灯", 19.0, "19 lm/W (耗电 ~42 W)", ORANGE),
+            ("14 W 紧凑型荧光节能灯", 65.0, "65–90 lm/W (耗电 13 W)", TEAL),
+            ("7 W 家用优质白光 LED 球泡", 120.0, "115–135 lm/W (仅 6.5 W!)", BLUE),
+            ("顶尖商用白光 LED 封装器件", 195.0, "185–210 lm/W (实验室>300)", GREEN),
+            ("100% 能量转换白光理论极限", 310.0, "~310 lm/W (Murphy 2012)", PURPLE),
+            ("555 nm 纯绿单色光 SI 定义极值", 683.0, "683 lm/W (照啥都惨绿！)", AMBER),
+        ]
+        bx0, max_bw = 36, 198.0
+        for idx, (rlabel, val, vstr, col) in enumerate(l_rows):
+            ry = 116 + idx * 36
+            bw = max(4.0, (val / 683.0) * max_bw)
+            els.append(txt(bx0, ry, rlabel, 9.6, INK, weight="700" if idx in (1, 4, 6) else "600"))
+            els.append(f'<rect x="{bx0}" y="{ry+4}" width="{bw:.1f}" height="11" rx="3" fill="{col}"/>')
+            els.append(txt(bx0 + bw + 6, ry + 13, vstr, 9.3, col, weight="700"))
+
+        els.append(card(36, 404, 372, 62, rx=7, fill=PURPLE_SOFT, stroke=PURPLE))
+        els.append(txt(48, 422, "🧐 为什么 100% 完美不发热的白光灯，光效上限也只有 ~310 lm/W 而非 683？", 9.6, PURPLE, weight="700"))
+        els.append(txt(48, 439, "• 因为“流明”是按人眼视锥细胞敏感度打分的！人眼对 555 nm 黄绿光打满分(683)，", 9.4, BODY))
+        els.append(txt(48, 455, "  对两头深红与深蓝打分低；但要还原苹果鲜红就必须发红蓝光（显色税）！", 9.4, INK, weight="600"))
+
+        # Right Card: Ultimate Symmetry — LED vs Solar Photovoltaic Cell
+        els.append(card(440, 68, 300, 412))
+        els.append(pill(456, 82, "完美物理对称：LED 与光伏板是亲兄弟！", fg=BLUE, bg=BLUE_SOFT, w=268, h=22, size=10.6))
+
+        # Top loop box: Solar PV (Photon -> Electricity)
+        els.append(card(456, 120, 268, 126, rx=8, fill=AMBER_SOFT, stroke=AMBER))
+        els.append(txt(468, 142, "☀️ 屋顶太阳能光伏电池（光 → 电）：", 10.4, AMBER, weight="700"))
+        els.append(txt(468, 162, "• 太阳光子 (hν ≥ E_g) 砸进硅 p-n 结，", 9.8, BODY))
+        els.append(txt(468, 180, "  把束缚电子一脚踹上导带（拆出电子+空穴），", 9.8, BODY))
+        els.append(txt(468, 198, "  内建电场立刻把它们往两头推开，输出电流！", 9.8, INK, weight="600"))
+        els.append(txt(468, 222, "  方程：光子 hν  ──▶  e⁻ + h⁺ (电能)", 9.8, AMBER, weight="700", cls="mono"))
+
+        # Reversible arrows between PV and LED
+        els.append(_line(556, 250, 556, 280, stroke=BLUE, sw=2.4, marker="arr-blue"))
+        els.append(_line(624, 280, 624, 250, stroke=AMBER, sw=2.4, marker="arr-orange"))
+        els.append(txt(590, 270, "时间反演", 9.4, PURPLE, weight="700", anchor="middle"))
+
+        # Bottom loop box: LED (Electricity -> Photon)
+        els.append(card(456, 286, 268, 126, rx=8, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(468, 308, "💡 屋里半导体 LED 灯（电 → 光）：", 10.4, BLUE, weight="700"))
+        els.append(txt(468, 328, "• 外接电源把电子与空穴推入 InGaN p-n 结，", 9.8, BODY))
+        els.append(txt(468, 346, "  两者在量子阱重逢落回低能级，精准吐出光子！", 9.8, BODY))
+        els.append(txt(468, 364, "  （拿强手电筒照一颗 LED，用万用表真能测出电压！）", 9.6, GREEN, weight="700"))
+        els.append(txt(468, 388, "  方程：e⁻ + h⁺ (电能)  ──▶  光子 hν", 9.8, BLUE, weight="700", cls="mono"))
+
+        els.append(txt(456, 434, "🌍 全人类用电约 15%–20% 曾花在照明上；", 9.8, INK, weight="700"))
+        els.append(txt(456, 452, "   白光 LED 把照明能耗直接砍掉 80% 以上，", 9.8, GREEN, weight="700"))
+        els.append(txt(456, 469, "   配白天光伏存电、夜晚 LED 点亮，闭环圆满！", 9.8, BODY))
+
+        return figure(
+            498,
+            "百年电光源发光效率阶梯极限与LED对太阳能电池p-n结可逆对称图解",
+            "左栏量化对比蜡烛（0.3 lm/W）、白炽灯（14 lm/W）、荧光灯（65–90 lm/W）、白光LED（120–210 lm/W）、高显色白光理论极限（约310 lm/W）与555纳米绿光极值（683 lm/W）；右栏展示太阳能光伏板（光生伏特）与LED（电致发光）在同一p-n结物理定律下的正反可逆闭环。",
+            els,
+        )
+
+    @register(
+        "light-electricity-energy",
+        "光、电与能量的电灯原理五步图解：蜗牛电子vs近光速坡印廷能流动画、2800K白炽灯红外浪费、荧光灯汞紫外斯托克斯税、2014诺奖蓝光LED量子阱及光效极限与光伏对称",
+        "science_tech",
+    )
+    def build_light_electricity_energy():
+        write_svg(SUBDIR, "snail-electrons-vs-poynting-energy-flow.svg", _build_snail_electrons_poynting())
+        write_svg(SUBDIR, "tungsten-blackbody-infrared-waste.svg", _build_tungsten_blackbody())
+        write_svg(SUBDIR, "fluorescent-mercury-uv-stokes-relay.svg", _build_fluorescent_stokes())
+        write_svg(SUBDIR, "blue-ingan-led-quantum-well-nobel.svg", _build_blue_led_nobel())
+        write_svg(SUBDIR, "lamp-efficacy-ladder-and-pv-symmetry.svg", _build_efficacy_and_pv_symmetry())
+
+
+_register_light_electricity_energy()
+
+
+def _register_petroleum_everyday_products():
+    """5 original diagrams for the petroleum-to-everyday-products processing post."""
+    SUBDIR = "petroleum-everyday-products"
+    RED = "#dc2626"
+    RED_SOFT = "#fef2f2"
+    AMBER = "#d97706"
+    AMBER_SOFT = "#fffbeb"
+    TEAL = "#0d9488"
+    TEAL_SOFT = "#f0fdfa"
+
+    def _line(x1, y1, x2, y2, stroke=HAIRLINE, sw=1.4, dash=None, marker=None):
+        attrs = [
+            f'x1="{x1:.1f}"',
+            f'y1="{y1:.1f}"',
+            f'x2="{x2:.1f}"',
+            f'y2="{y2:.1f}"',
+            f'stroke="{stroke}"',
+            f'stroke-width="{sw}"',
+        ]
+        if dash:
+            attrs.append(f'stroke-dasharray="{dash}"')
+        if marker:
+            attrs.append(f'marker-end="url(#{marker})"')
+        return f'<line {" ".join(attrs)}/>'
+
+    def _build_barrel_and_distillation():
+        """SVG 1: 42->44.65 gal barrel split + animated fractional distillation tower."""
+        # Verify EIA processing gain: 42.0 gal crude -> ~44.65 gal refined products (+6.31%)
+        crude_gal = 42.0
+        refined_gal = 44.65
+        gain_pct = (refined_gal - crude_gal) / crude_gal * 100.0
+        assert 6.0 <= gain_pct <= 6.8, f"Unexpected refinery processing gain: {gain_pct:.2f}%"
+        els = [
+            """<style>
+  @keyframes petroVaporRise {
+    0% { transform: translateY(0px); opacity: 0.95; }
+    85% { transform: translateY(-252px); opacity: 0.95; }
+    100% { transform: translateY(-252px); opacity: 0.85; }
+  }
+  .petro-vapor-pkt {
+    animation: petroVaporRise 5.0s cubic-bezier(0.22, 0.68, 0.32, 1) 1 forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .petro-vapor-pkt {
+      animation: none !important;
+      opacity: 0.9 !important;
+      transform: translateY(-126px) !important;
+    }
+  }
+</style>"""
+        ]
+        els.extend(
+            header(
+                "第一步“物理按沸点分楼层”：一桶油 85% 烧掉，仅 ~13% 变出生活万物",
+                "左看 42 加仑原油裂解膨胀为 44.7 加仑的去向；右看常减压分馏塔：一根化学键不断，按碳链长短分层接油。",
+            )
+        )
+
+        # Left Card: 42-gallon barrel -> 44.65-gallon outputs (EIA) + IEA 12-14% miracle
+        els.append(card(20, 68, 336, 430))
+        els.append(pill(36, 82, "一桶原油（42 美制加仑 ≈ 159 L）去了哪儿？", fg=BLUE, bg=BLUE_SOFT, w=304, h=22, size=10.4))
+
+        bars = [
+            ("车用汽油 (C5–C10)", 19.57, "19.6 加仑 · 点火烧掉", SLATE),
+            ("柴油与取暖油 (C14–C20)", 12.47, "12.5 加仑 · 货车/轮船烧掉", SLATE),
+            ("航空煤油 (C10–C16)", 4.41, "4.4 加仑 · 民航客机烧掉", SLATE),
+            ("炼厂气 / 石油焦 / 重油", 4.45, "4.5 加仑 · 工业热源/电极", MUTED),
+            ("石化母液（石脑油+轻烃）", 2.60, "全球原油 ~12%–14% 变万物！", ORANGE),
+            ("铺路沥青 / 润滑油 / 石蜡", 1.23, "1.2 加仑 · 柏油路/凡士林/蜡", PURPLE),
+        ]
+        max_gal = 20.0
+        for idx, (blabel, gal, note, col) in enumerate(bars):
+            by = 118 + idx * 43
+            bw = max(10.0, (gal / max_gal) * 132.0)
+            is_hi = idx >= 4
+            els.append(txt(36, by, blabel, 9.6, ORANGE if idx == 4 else INK, weight="700" if is_hi else "600"))
+            els.append(f'<rect x="36" y="{by+5}" width="{bw:.1f}" height="12" rx="3" fill="{col}"/>')
+            els.append(txt(36 + bw + 7, by + 15, note, 9.1, col if is_hi else BODY, weight="700" if is_hi else "500"))
+
+        els.append(card(36, 380, 304, 104, rx=8, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(48, 400, "🤯 炼油厂魔术：42 加仑进厂，怎会产出 44.7 加仑？", 9.8, ORANGE, weight="700"))
+        els.append(txt(48, 418, "• 质量严格守恒！但重质大分子被切碎成轻小分子后，", 9.3, BODY))
+        els.append(txt(48, 435, "  液体平均密度变小，总体积净膨胀约 +6.3%（加工增益）！", 9.3, INK, weight="600"))
+        els.append(txt(48, 454, "• IEA 统计：全球仅约 12%–14% 石油作化工原料，", 9.3, GREEN, weight="700"))
+        els.append(txt(48, 471, "  没被一把火烧掉，却撑起了你屋里几乎全部日用品！", 9.3, GREEN, weight="700"))
+
+        # Right Card: Atmospheric & Vacuum Fractional Distillation Column
+        els.append(card(372, 68, 368, 430))
+        els.append(pill(388, 82, "常减压分馏塔：不改分子，只按沸点“分身高”", fg=GREEN, bg=GREEN_SOFT, w=336, h=22, size=10.4))
+
+        # Furnace feed at bottom left of right card
+        els.append(card(384, 418, 42, 48, rx=6, fill="#fee2e2", stroke=RED))
+        els.append(txt(405, 437, "加热炉", 8.8, RED, weight="700", anchor="middle"))
+        els.append(txt(405, 453, "~400°C", 8.6, RED, weight="700", anchor="middle", cls="mono"))
+        els.append(_line(426, 442, 438, 442, stroke=RED, sw=2.2, marker="arr-orange"))
+
+        # Tower body x=440..492, y=118..468
+        els.append(
+            '<defs><linearGradient id="petroTowerGrad" x1="0" y1="0" x2="0" y2="1">'
+            '<stop offset="0%" stop-color="#e0f2fe"/>'
+            '<stop offset="35%" stop-color="#fef3c7"/>'
+            '<stop offset="72%" stop-color="#fed7aa"/>'
+            '<stop offset="100%" stop-color="#fca5a5"/>'
+            '</linearGradient></defs>'
+        )
+        els.append('<rect x="440" y="118" width="52" height="350" rx="22" fill="url(#petroTowerGrad)" stroke="#475569" stroke-width="1.8"/>')
+
+        trays = [
+            (142, "< 20 °C", "C1–C4 石油气", "打火机丁烷 · 燃气 · 裂解气", BLUE, BLUE_SOFT),
+            (198, "30–180 °C", "C5–C10 石脑油", "★日用品第一母液！塑料/衣服起点", ORANGE, ORANGE_SOFT),
+            (254, "150–250 °C", "C10–C16 煤油", "民航喷气燃料 · 清洁溶剂", TEAL, "#ccfbf1"),
+            (310, "250–350 °C", "C14–C20 柴油", "重卡轮船柴油 · 工业轻油", GREEN, GREEN_SOFT),
+            (366, "减压馏分", "C20–C50 蜡与油", "润滑机油 · 凡士林唇膏 · 蜡烛蜡笔", PURPLE, PURPLE_SOFT),
+            (422, "> 500 °C", "C50+ 塔底渣油", "高速公路柏油沥青 · 屋顶防水层", SLATE, SLATE_SOFT),
+        ]
+
+        for idx, (ty, temp_s, frac_s, use_s, col, bgc) in enumerate(trays):
+            if idx < 5:
+                els.append(f'<line x1="444" y1="{ty+18}" x2="488" y2="{ty+18}" stroke="#64748b" stroke-width="1.3" stroke-dasharray="6,4"/>')
+            els.append(_line(492, ty, 508, ty, stroke=col, sw=2.0, marker="arr-blue" if col == BLUE else "arr-orange" if col == ORANGE else None))
+            sw_box = 2.0 if idx == 1 else 1.1
+            els.append(f'<g class="petro-tray-hit"><rect x="510" y="{ty-18}" width="218" height="44" rx="6" fill="{bgc}" stroke="{col}" stroke-width="{sw_box}"/>')
+            els.append(txt(518, ty - 2, f"{temp_s}｜{frac_s}", 9.5, col, weight="700"))
+            els.append(txt(518, ty + 15, use_s, 9.0, INK if idx == 1 else BODY, weight="700" if idx == 1 else "500"))
+            els.append("</g>")
+
+        # Rising animated vapor bubbles inside tower (static track + one-shot rising group)
+        els.append('<line x1="466" y1="442" x2="466" y2="148" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="3,4" opacity="0.55"/>')
+        els.append(
+            '<g class="petro-vapor-pkt">'
+            '<circle cx="458" cy="410" r="4.5" fill="#ea580c" opacity="0.88"/>'
+            '<circle cx="474" cy="424" r="3.8" fill="#f59e0b" opacity="0.88"/>'
+            '<circle cx="465" cy="395" r="3.5" fill="#0284c7" opacity="0.88"/>'
+            '</g>'
+        )
+        els.append(txt(388, 485, "原理：碳链越长，分子间色散力越强 → 沸点越高，越早冷凝落盘！", 9.2, MUTED, weight="600"))
+
+        return figure(
+            516,
+            "一桶42加仑原油产出构成与常减压分馏塔按沸点分层提取日用品原料图解",
+            "左栏据美国能源信息署（EIA）与国际能源署（IEA）数据展示42加仑原油经裂解体积增益产出约44.7加仑成品，其中约12%至14%化工原料衍生出日常万物；右栏含单次上升蒸汽动画，展示约400摄氏度原油在分馏塔内按碳链长度与沸点分离出石油气、石脑油（C5–C10日用品母液）、煤油、柴油、石蜡凡士林及塔底沥青。",
+            els,
+        )
+
+    def _build_steam_cracking_lego():
+        """SVG 2: Why alkanes are lazy + 850 C millisecond steam cracking into 6+1 Lego monomers."""
+        els = []
+        els.extend(
+            header(
+                "第二步“敲断懒汉碳链”：850 °C 毫秒蒸汽裂解，拆出分子乐高积木",
+                "天然烷烃四只手全牵满（饱和单键）没法拼塑料；高温裂解与催化重整打开双键和苯环，变出“三烯三苯”！",
+            )
+        )
+
+        # Top row: 3-stage chemical logic
+        els.append(card(20, 68, 720, 146))
+
+        # Box A: Saturated alkane in naphtha
+        els.append(card(34, 82, 214, 118, rx=8, fill=SLATE_SOFT, stroke=SLATE))
+        els.append(txt(46, 102, "① 原料：石脑油饱和烷烃 CₙH₂ₙ₊₂", 9.8, SLATE, weight="700"))
+        els.append('<rect x="46" y="110" width="190" height="44" rx="5" fill="#ffffff" stroke="#cbd5e1"/>')
+        for c_i in range(5):
+            cx_a = 68 + c_i * 36
+            if c_i < 4:
+                els.append(f'<line x1="{cx_a+7}" y1="133" x2="{cx_a+29}" y2="133" stroke="#334155" stroke-width="1.8"/>')
+            els.append(f'<line x1="{cx_a}" y1="120" x2="{cx_a}" y2="125" stroke="#94a3b8" stroke-width="1.4"/>')
+            els.append(f'<line x1="{cx_a}" y1="140" x2="{cx_a}" y2="146" stroke="#94a3b8" stroke-width="1.4"/>')
+            els.append(txt(cx_a, 137, "C", 9.4, INK, weight="700", anchor="middle", cls="mono"))
+            els.append(txt(cx_a, 119, "H", 7.8, MUTED, weight="700", anchor="middle", cls="mono"))
+        els.append(txt(46, 171, "• 每个碳 4 只手全牵满单键，性质懒散，", 9.2, BODY))
+        els.append(txt(46, 187, "  除了点火烧掉，彼此绝不手拉手拼长链！", 9.2, INK, weight="600"))
+
+        els.append(_line(250, 141, 272, 141, stroke=ORANGE, sw=2.4, marker="arr-orange"))
+
+        # Box B: 850 C Steam Cracker + Catalytic Reformer
+        els.append(card(276, 82, 206, 118, rx=8, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(288, 102, "② 蒸汽裂解炉 + 催化重整塔", 9.8, ORANGE, weight="700"))
+        els.append(txt(288, 122, "• 800–900 °C 无催化剂自由基断键", 9.2, INK, weight="700"))
+        els.append(txt(288, 139, "• 停留仅 0.1–0.5 秒 + 水蒸气防结焦", 9.2, BODY))
+        els.append(txt(288, 156, "• 热力学动力：长链碎成多段小分子，", 9.1, BODY))
+        els.append(txt(288, 172, "  熵增 TΔS° 压倒断键吸热 ΔH° (370 kJ/mol)", 8.9, ORANGE, weight="700"))
+        els.append(txt(288, 188, "• 出炉急冷器瞬间降温，“冻住”双键！", 9.1, GREEN, weight="700"))
+
+        els.append(_line(484, 141, 506, 141, stroke=GREEN, sw=2.4, marker="arr-green"))
+
+        # Box C: Unsaturated C=C monomer ready to snap
+        els.append(card(510, 82, 216, 118, rx=8, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(522, 102, "③ 质变：露出 C=C 双键“乐高卡扣”", 9.8, GREEN, weight="700"))
+        els.append('<rect x="522" y="110" width="192" height="44" rx="5" fill="#ffffff" stroke="#86efac"/>')
+        els.append(txt(618, 130, "H₂C ══ CH₂  +  H₂C ══ CH–CH₃", 9.2, GREEN, weight="700", anchor="middle", cls="mono"))
+        els.append(txt(618, 147, "（乙烯 + 丙烯：带活泼 π 键接口）", 8.6, INK, weight="600", anchor="middle"))
+        els.append(txt(522, 171, "• 双键含 1 根强 σ 键 + 1 根易开 π 键：", 9.2, BODY))
+        els.append(txt(522, 187, "  π 键一打开，就能左右牵手连成万米长链！", 9.2, INK, weight="600"))
+
+        # Bottom Master Card: The "Three Olefins + Three Aromatics" (三烯三苯)
+        els.append(card(20, 228, 720, 260))
+        els.append(pill(36, 242, "现代日用品工业的“六块核心分子积木”：三烯（Olefins）+ 三苯（BTX 芳烃）", fg=PURPLE, bg=PURPLE_SOFT, w=688, h=22, size=10.4))
+
+        bricks = [
+            # Row 1: Three Olefins
+            (36, 276, "乙烯 C₂H₄（三烯之首）", "H₂C═CH₂ · 全球年产 ~2.2 亿吨", "保鲜膜、牛奶瓶、防冻液、PVC 管、", "矿泉水瓶与涤纶的半边原料", BLUE, BLUE_SOFT),
+            (268, 276, "丙烯 C₃H₆（耐热主力）", "H₂C═CH–CH₃ · 年产 ~1.4 亿吨", "微波炉 5 号餐盒、医用口罩熔喷布、", "丙酮溶剂、退烧药异丙苯前体", GREEN, GREEN_SOFT),
+            (500, 276, "1,3-丁二烯 C₄H₆（弹性之王）", "H₂C═CH–CH═CH₂ · 共轭双烯", "汽车轮胎合成橡胶、运动跑鞋大底、", "ABS 乐高积木与抗摔行李箱外壳", ORANGE, ORANGE_SOFT),
+            # Row 2: Three Aromatics (BTX)
+            (36, 376, "苯 C₆H₆（六元芳香环母体）", "⬡ 离域 π 环 · 催化重整提取", "尼龙冲锋衣与牙刷毛、洗衣液表活、", "阿司匹林与对乙酰氨基酚退烧药", PURPLE, PURPLE_SOFT),
+            (268, 376, "甲苯 C₇H₈（海绵与溶剂）", "⬡–CH₃ · 芳烃甲基取代", "慢回弹记忆棉枕头与沙发海绵 (PU)、", "涂料稀释剂、食品抗氧化剂 BHT", TEAL, "#ccfbf1"),
+            (500, 376, "二甲苯 C₈H₁₀（对二甲苯 PX）", "H₃C–⬡–CH₃ · 对位双甲基", "矿泉水瓶 #1 与身上涤纶摇粒绒的", "共同刚性分子脊梁（精对苯二甲酸 PTA）！", RED, "#fee2e2"),
+        ]
+        for bx, by, btitle, bform, buse1, buse2, col, bgc in bricks:
+            els.append(card(bx, by, 224, 88, rx=8, fill=bgc, stroke=col))
+            els.append(txt(bx + 10, by + 20, btitle, 9.7, col, weight="700"))
+            els.append(txt(bx + 10, by + 39, bform, 9.0, INK, weight="700", cls="mono"))
+            els.append(txt(bx + 10, by + 58, buse1, 9.0, BODY))
+            els.append(txt(bx + 10, by + 74, buse2, 9.0, INK if col == RED else BODY, weight="600" if col == RED else "500"))
+
+        els.append(txt(36, 478, "注：第七块基础拼图是由重油/天然气转化来的“合成气（CO + H₂）→ 甲醇 / 合成氨”，支撑胶黏剂、醋酸与农业化肥。", 9.2, MUTED, weight="600"))
+
+        return figure(
+            502,
+            "石脑油850摄氏度毫秒级蒸汽裂解机理与三烯三苯六大石油化工母体分子图解",
+            "上半部分对比石脑油饱和烷烃（全单键、化学惰性）经800至900摄氏度毫秒级蒸汽裂解（熵增驱动断键并急冷）打开碳碳双键的过程；下半部分展示乙烯、丙烯、1,3-丁二烯（三烯）与苯、甲苯、对二甲苯（三苯）六大母体分子及其对应的日常用品。",
+            els,
+        )
+
+    def _build_polymer_zipper():
+        """SVG 3: Chain-growth (LDPE vs HDPE vs PP #5) + Step-growth PET (water bottle = fleece jacket!)."""
+        els = []
+        els.extend(
+            header(
+                "第三步“分子拉链大组装”：为什么矿泉水瓶和摇粒绒竟是同一种分子？",
+                "上半看连锁加聚（诺奖催化剂调控塑料软硬与耐热）；下半看逐步缩聚（同一串 PET 分子吹瓶与抽丝成衣）。",
+            )
+        )
+
+        # Top Card: Addition Polymerization (Chain-Growth)
+        els.append(card(20, 68, 720, 204))
+        els.append(pill(36, 82, "拉链一：连锁加聚（打开 C=C 双键一扣到底，无副产物：n CH₂═CH₂ ──▶ [─CH₂─CH₂─]ₙ）", fg=BLUE, bg=BLUE_SOFT, w=688, h=22, size=10.2))
+
+        add_cards = [
+            (
+                36,
+                "高压自由基乱长支链 → LDPE (#4)",
+                BLUE,
+                BLUE_SOFT,
+                "branch",
+                "• 分子像树杈挤不拢，密度低、柔软透明",
+                "• 变身：超市保鲜膜、塑料袋、软挤压管",
+                "• 弱点：约 110 °C 即软化，忌贴滚油加热",
+            ),
+            (
+                270,
+                "齐格勒-纳塔催化 → HDPE (#2)",
+                GREEN,
+                GREEN_SOFT,
+                "linear",
+                "• 1963 诺奖催化：低压走出笔直无支链长龙",
+                "• 排列紧密结晶硬挺：牛奶桶、洗发水瓶",
+                "• 市政地下自来水管、燃气管道主力材料",
+            ),
+            (
+                504,
+                "丙烯全同立构排列 → PP (#5)",
+                ORANGE,
+                ORANGE_SOFT,
+                "isotactic",
+                "• 甲基侧基 (-CH₃) 整齐朝同一侧卡位结晶",
+                "• 熔点飙至 160–170 °C，100 °C 开水不变形！",
+                "• 变身：微波炉餐盒、无纺布口罩、编织袋",
+            ),
+        ]
+        for cx, ctitle, col, bgc, mode, l1, l2, l3 in add_cards:
+            els.append(card(cx, 114, 220, 146, rx=8, fill=bgc, stroke=col))
+            els.append(txt(cx + 10, 133, ctitle, 9.5, col, weight="700"))
+            # Draw polymer chain visual in y=142..182
+            els.append(f'<rect x="{cx+10}" y="141" width="200" height="42" rx="5" fill="#ffffff" stroke="{BORDER}"/>')
+            if mode == "branch":
+                els.append(f'<path d="M {cx+20} 162 Q {cx+70} 148 {cx+115} 164 T {cx+200} 158" fill="none" stroke="{col}" stroke-width="2.2"/>')
+                els.append(f'<path d="M {cx+66} 156 L {cx+54} 145 M {cx+115} 164 L {cx+128} 177 M {cx+158} 160 L {cx+170} 146" fill="none" stroke="{col}" stroke-width="1.8"/>')
+            elif mode == "linear":
+                for r_y in (151, 162, 173):
+                    els.append(f'<line x1="{cx+20}" y1="{r_y}" x2="{cx+200}" y2="{r_y}" stroke="{col}" stroke-width="2.1"/>')
+            else:
+                els.append(f'<line x1="{cx+20}" y1="168" x2="{cx+200}" y2="168" stroke="{col}" stroke-width="2.3"/>')
+                for mx in range(cx + 32, cx + 196, 26):
+                    els.append(f'<line x1="{mx}" y1="168" x2="{mx}" y2="151" stroke="{col}" stroke-width="1.8"/>')
+                    els.append(f'<circle cx="{mx}" cy="149" r="3.2" fill="{col}"/>')
+            els.append(txt(cx + 10, 199, l1, 8.9, BODY))
+            els.append(txt(cx + 10, 216, l2, 8.9, INK, weight="600"))
+            els.append(txt(cx + 10, 233, l3, 8.9, col if mode == "isotactic" else BODY, weight="700" if mode == "isotactic" else "500"))
+
+        # Bottom Card: Step-Growth Condensation Polymerization -> PET Bottle vs Polyester Clothes + Nylon
+        els.append(card(20, 286, 720, 214))
+        els.append(pill(36, 300, "拉链二：逐步缩聚（两种双官能团单体每牵一次手脱掉 1 个 H₂O，缝出 PET 瓶与满衣柜衣服）", fg=PURPLE, bg=PURPLE_SOFT, w=688, h=22, size=10.1))
+
+        # Monomer -> PET box
+        els.append(card(36, 334, 198, 152, rx=8, fill=PURPLE_SOFT, stroke=PURPLE))
+        els.append(txt(46, 354, "同一种分子：聚酯 PET", 10.0, PURPLE, weight="700"))
+        els.append(txt(46, 374, "• 对二甲苯 → 对苯二甲酸 (PTA)", 9.0, BODY))
+        els.append(txt(46, 391, "• 乙烯 → 乙二醇 (MEG)", 9.0, BODY))
+        els.append(txt(46, 411, "PTA + MEG ──▶ PET + H₂O", 9.2, PURPLE, weight="700", cls="mono"))
+        els.append(txt(46, 432, "• 化学学名完全相同：", 9.0, BODY))
+        els.append(txt(46, 449, "  聚对苯二甲酸乙二醇酯！", 9.3, INK, weight="700"))
+        els.append(txt(46, 468, "  区别仅在成型工艺不同：", 9.0, MUTED, weight="600"))
+
+        # Split arrows
+        els.append(_line(236, 382, 274, 366, stroke=BLUE, sw=2.2, marker="arr-blue"))
+        els.append(_line(236, 426, 274, 444, stroke=ORANGE, sw=2.2, marker="arr-orange"))
+
+        # Branch 1: Blow molding -> #1 Water Bottle
+        els.append(card(278, 334, 218, 70, rx=8, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(288, 353, "🥤 吹塑进模具 → #1 PET 矿泉水瓶", 9.6, BLUE, weight="700"))
+        els.append(txt(288, 371, "• 轻便透明阻气强，薄膜抗拉近钢材", 8.9, BODY))
+        els.append(txt(288, 388, "• 玻璃化转变 ~70 °C：装开水会瘪缩！", 8.9, RED, weight="700"))
+
+        # Branch 2: Melt spinning -> Polyester Fleece
+        els.append(card(278, 414, 218, 72, rx=8, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(288, 433, "🧥 喷丝板微孔抽丝 → 涤纶 (聚酯纤维)", 9.6, ORANGE, weight="700"))
+        els.append(txt(288, 451, "• 占全球衣服纤维产量超 50%！抗皱速干", 8.9, INK, weight="600"))
+        els.append(txt(288, 468, "• 5–10 个回收水瓶就能纺一件摇粒绒衣！", 8.9, GREEN, weight="700"))
+
+        # Side Box: Nylon 66 & Spandex
+        els.append(card(510, 334, 216, 152, rx=8, fill=SLATE_SOFT, stroke=SLATE))
+        els.append(txt(520, 354, "衣柜另外两大“石油神纤维”", 9.8, INK, weight="700"))
+        els.append(txt(520, 375, "① 锦纶 / 尼龙 66 (Nylon)", 9.3, BLUE, weight="700"))
+        els.append(txt(520, 392, "   苯→己二酸+己二胺 (1935 卡罗瑟斯)", 8.8, BODY))
+        els.append(txt(520, 408, "   耐磨冠军：冲锋衣、降落伞、牙刷毛", 8.8, BODY))
+        els.append(txt(520, 431, "② 氨纶 (Spandex / 莱卡)", 9.3, PURPLE, weight="700"))
+        els.append(txt(520, 448, "   甲苯/MDI 聚氨酯软硬嵌段共聚", 8.8, BODY))
+        els.append(txt(520, 464, "   拉长 500% 秒回弹：运动紧身衣袜口", 8.8, BODY))
+
+        return figure(
+            514,
+            "连锁加聚塑料（LDPE、HDPE、PP）与逐步缩聚PET水瓶及涤纶衣物分子机理图解",
+            "上半部分对比自由基支化LDPE保鲜膜、1963年诺贝尔化学奖齐格勒-纳塔线性HDPE硬瓶与全同立构PP微波餐盒（耐热160–170摄氏度）；下半部分揭示对苯二甲酸与乙二醇缩聚生成的同一种PET分子，吹塑即为1号饮料瓶，喷丝板抽丝即为涤纶与摇粒绒面料，并附尼龙66与氨纶原理。",
+            els,
+        )
+
+    def _build_everyday_crossovers():
+        """SVG 4: 4 everyday plot twists — Detergents (LAS), Pharma (Cumene->Phenol->Aspirin/Paracetamol), Tires/Shoes, Cosmetics."""
+        els = []
+        els.extend(
+            header(
+                "第四步“最意外的跨界变身”：洗发水、退烧药、跑鞋与润唇膏的石油家谱",
+                "精细化工绝不是“往药片里掺原油”，而是把石油小分子拆洗重排、结晶提纯成原子级纯净的功能新分子。",
+            )
+        )
+
+        # Card 1 (Top-Left): Bathroom Surfactants (LAS / SLS)
+        els.append(card(20, 68, 352, 206))
+        els.append(pill(36, 82, "🛁 浴室洗衣液与洗发水：两头忙的表面活性剂", fg=BLUE, bg=BLUE_SOFT, w=320, h=22, size=10.1))
+        # Draw amphiphilic molecule schematic
+        els.append('<rect x="36" y="112" width="320" height="58" rx="7" fill="#f8fafc" stroke="#cbd5e1"/>')
+        els.append('<path d="M 52 142 L 70 130 L 88 146 L 106 130 L 124 146 L 142 130 L 160 146 L 178 134" fill="none" stroke="#c25014" stroke-width="2.6"/>')
+        els.append('<polygon points="178,134 190,126 202,134 202,148 190,156 178,148" fill="#fef1e8" stroke="#c25014" stroke-width="2"/>')
+        els.append('<line x1="202" y1="141" x2="222" y2="141" stroke="#1d6fa5" stroke-width="2.4"/>')
+        els.append('<circle cx="238" cy="141" r="15" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="2.2"/>')
+        els.append(txt(238, 145, "SO₃⁻", 8.8, BLUE, weight="700", anchor="middle", cls="mono"))
+        els.append(txt(110, 121, "C12 石油烷基长尾（亲油抓油污）", 8.6, ORANGE, weight="700", anchor="middle"))
+        els.append(txt(304, 136, "磺酸离子头", 8.8, BLUE, weight="700", anchor="middle"))
+        els.append(txt(304, 151, "（亲水被水冲走）", 8.6, BLUE, weight="600", anchor="middle"))
+        els.append(txt(36, 188, "• 代表分子：直链烷基苯磺酸钠 (LAS，煤油正构烷烃 + 苯磺化)", 9.0, INK, weight="600"))
+        els.append(txt(36, 206, "• 包围油滴形成胶束乳化冲走；且遇自来水钙镁离子不结皂垢！", 9.0, BODY))
+        els.append(txt(36, 224, "• 传统肥皂靠动植物油脂，现代洗衣液/洗洁精主力来自石化合成", 9.0, MUTED))
+
+        # Card 2 (Top-Right): Medicine Cabinet (Benzene + Propylene -> Cumene -> Phenol -> Aspirin & Paracetamol)
+        els.append(card(388, 68, 352, 206))
+        els.append(pill(404, 82, "💊 药箱退烧止痛药：阿司匹林与对乙酰氨基酚", fg=GREEN, bg=GREEN_SOFT, w=320, h=22, size=10.1))
+        els.append(card(404, 112, 320, 44, rx=6, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(414, 130, "起点（异丙苯法）：苯 C₆H₆ + 丙烯 C₃H₆ ──▶ 异丙苯", 9.1, GREEN, weight="700"))
+        els.append(txt(414, 147, "空气氧化 + 酸重排 ──▶ 苯酚 (Phenol) + 丙酮（一箭双雕！）", 9.0, INK, weight="600"))
+        els.append(txt(404, 175, "• 路线 A：苯酚 + CO₂ → 水杨酸 → 乙酰化得 阿司匹林", 9.1, BODY))
+        els.append(txt(404, 193, "• 路线 B：苯酚/硝基苯 → 对氨基苯酚 + 乙酸酐 → 对乙酰氨基酚", 9.1, INK, weight="600"))
+        els.append(card(404, 205, 320, 55, rx=6, fill="#fefce8", stroke=AMBER))
+        els.append(txt(414, 223, "✅ 科学辟谣：吃退烧药绝不等于“吃石油”！", 9.2, AMBER, weight="700"))
+        els.append(txt(414, 240, "经多步合成与重结晶提纯，药典级晶体与柳树皮提取分子", 8.8, BODY))
+        els.append(txt(414, 254, "在每一个原子排列上 100% 相同，原油杂质早已清零。", 8.8, INK, weight="600"))
+
+        # Card 3 (Bottom-Left): Tires & Running Shoes
+        els.append(card(20, 288, 352, 206))
+        els.append(pill(36, 302, "👟 轮胎与运动鞋：合成橡胶 + 纳米炭黑 + 发泡中底", fg=ORANGE, bg=ORANGE_SOFT, w=320, h=22, size=10.0))
+        els.append(txt(36, 342, "① 汽车轮胎（约 60%–70% 橡胶来自石油合成）：", 9.4, ORANGE, weight="700"))
+        els.append(txt(36, 360, "   • 丁苯橡胶 (SBR)：1,3-丁二烯 + 苯乙烯共聚，抓地耐磨", 9.0, BODY))
+        els.append(txt(36, 377, "   • 丁基橡胶（异丁烯聚合）：气密性极佳，专做保气内衬层", 9.0, BODY))
+        els.append(txt(36, 394, "   • 轮胎为何全是黑的？掺了 ~30% 石油重油制“炭黑”补强！", 9.0, INK, weight="600"))
+        els.append(txt(36, 420, "② 跑鞋软弹中底（EVA / TPU / PEBA 超临界发泡）：", 9.4, BLUE, weight="700"))
+        els.append(txt(36, 438, "   • 乙烯 + 醋酸乙烯酯共聚发泡出亿万闭孔微气囊，", 9.0, BODY))
+        els.append(txt(36, 455, "     落脚吸能缓震、蹬地高弹回馈；鞋面飞织线则是涤纶！", 9.0, BODY))
+        els.append(txt(36, 476, "   （若全靠砍割热带橡胶树，地球森林早不够全球车轮用！）", 8.8, GREEN, weight="700"))
+
+        # Card 4 (Bottom-Right): Skincare, Lip Balm, Crayons & Food Packaging
+        els.append(card(388, 288, 352, 206))
+        els.append(pill(404, 302, "💄 梳妆台与蜡制品：凡士林、润唇膏与果皮保鲜蜡", fg=PURPLE, bg=PURPLE_SOFT, w=320, h=22, size=10.0))
+        els.append(txt(404, 342, "① 医药级凡士林 (Petrolatum) 与化妆白油：", 9.4, PURPLE, weight="700"))
+        els.append(txt(404, 360, "   • 源自减压高沸点馏分，经高压深度加氢彻底脱除芳烃杂质", 9.0, BODY))
+        els.append(txt(404, 377, "   • 因饱和烷烃极其惰性、不与皮肤蛋白反应，反成皮肤科最", 9.0, BODY))
+        els.append(txt(404, 394, "     安全经典的封闭型锁水保湿剂（润唇膏、婴儿护臀膏基底）", 9.0, INK, weight="600"))
+        els.append(txt(404, 420, "② 石蜡、微晶蜡与水性聚乙二醇 (PEG)：", 9.4, TEAL, weight="700"))
+        els.append(txt(404, 438, "   • 生日蜡烛、孩子手里的彩色蜡笔、口红定型蜡骨架", 9.0, BODY))
+        els.append(txt(404, 455, "   • 牙膏与面霜里的保湿滑顺剂（乙烯环氧乙烷衍生 PEG）", 9.0, BODY))
+        els.append(txt(404, 476, "   • 远途柑橘/苹果微米级食品级果蜡：模拟天然果霜防失水", 8.8, MUTED, weight="600"))
+
+        return figure(
+            510,
+            "石油精细化工衍生表面活性剂洗衣液、异丙苯法退烧药、合成橡胶轮胎与凡士林护肤品家谱图解",
+            "四宫格详解日常精细石化制品：左上展示直链烷基苯磺酸钠（LAS）亲油尾与亲水磺酸头除油且耐硬水机理；右上展示苯与丙烯经异丙苯法制苯酚，再合成阿司匹林与对乙酰氨基酚并澄清纯品安全性；左下展示丁苯橡胶、补强炭黑与EVA跑鞋中底；右下展示医药级深度精制凡士林与石蜡制品。",
+            els,
+        )
+
+    def _build_room_audit_and_future():
+        """SVG 5: Morning 10-min wakeup audit + #1-#7 plastic safety table + biodegradation & circular future."""
+        els = []
+        els.extend(
+            header(
+                "清晨 10 分钟“含油量”体检、塑料底标 1–7 号红线与循环未来",
+                "左看睁眼摸到的日用品与唯一能进微波炉的 5 号餐盒；右看细菌为何啃不动塑料及化学解聚新出路。",
+            )
+        )
+
+        # Left Card: Morning Audit + Resin Codes #1-#7
+        els.append(card(20, 68, 404, 426))
+        els.append(pill(36, 82, "⏰ 起床 10 分钟石化连击 & 塑料底部三角数字安全指南", fg=BLUE, bg=BLUE_SOFT, w=372, h=22, size=10.1))
+
+        els.append(txt(36, 118, "• 07:00 关闹钟（PC/ABS 手机壳 + OLED 发光层）· 抬头离枕（PU 记忆棉）", 8.9, BODY))
+        els.append(txt(36, 135, "• 07:03 戴眼镜（PC 树脂镜片）· 刷牙（PP 柄 + 尼龙刷毛 + 牙膏 PEG）", 8.9, BODY))
+        els.append(txt(36, 152, "• 07:06 洗漱穿衣（LAS 洁面泡沫 + 凡士林护唇 + 涤纶速干衣 + 氨纶袜口）", 8.9, BODY))
+        els.append(txt(36, 169, "• 07:09 开冰箱热早餐（冰箱壁 PU 发泡保温层 + PE 保鲜膜 + #5 餐盒）", 8.9, INK, weight="600"))
+
+        codes = [
+            ("#1 PET", "矿泉水/茶饮瓶", "~65–70 °C", "忌装滚水！高温易变形析出微量锑", RED, "#fee2e2"),
+            ("#2 HDPE", "牛奶桶/洗发水瓶", "~110 °C", "耐酸碱厚实；难彻底洗净不改水杯", BLUE, BLUE_SOFT),
+            ("#3 PVC", "雨衣/水管/桌布", "~60–80 °C", "忌包热油脂食物！谨防增塑剂迁出", RED, "#fee2e2"),
+            ("#4 LDPE", "家用PE保鲜膜", "~110 °C", "热菜留缝透气，勿直接紧贴滚烫肥油", AMBER, "#fef3c7"),
+            ("#5 PP", "微波餐盒/豆浆杯", "160–170 °C", "★唯一可放心进微波炉加热！（揭掉非PP盖）", GREEN, GREEN_SOFT),
+            ("#6 PS", "泡面碗盖/发泡盒", "~70–90 °C", "忌进微波炉、忌装滚油与热柠檬酸饮", ORANGE, ORANGE_SOFT),
+        ]
+        for idx, (ccode, citem, ctemp, crule, col, bgc) in enumerate(codes):
+            cy = 186 + idx * 48
+            sw = 1.9 if idx == 4 else 1.0
+            els.append(f'<rect x="36" y="{cy}" width="372" height="42" rx="6" fill="{bgc}" stroke="{col}" stroke-width="{sw}"/>')
+            els.append(txt(46, cy + 16, f"{ccode}｜{citem}（耐热上限 {ctemp}）", 9.2, col, weight="700"))
+            els.append(txt(46, cy + 33, crule, 8.9, INK if idx == 4 else BODY, weight="700" if idx == 4 else "500"))
+
+        els.append(txt(36, 484, "注：#7 代表其他树脂（如水壶 PC、母婴奶瓶 Tritan/PPSU），须按瓶身标注温区使用。", 8.7, MUTED, weight="600"))
+
+        # Right Card: Why bacteria can't eat PE/PP + Future Circular Economy
+        els.append(card(440, 68, 300, 426))
+        els.append(pill(456, 82, "♻️ 为什么塑料百年不烂？未来靠什么接棒？", fg=GREEN, bg=GREEN_SOFT, w=268, h=22, size=10.1))
+
+        # Box 1: C-C bond vs Ester bond
+        els.append(card(456, 114, 268, 134, rx=8, fill=SLATE_SOFT, stroke=SLATE))
+        els.append(txt(466, 134, "🦠 微生物为什么“啃不动”塑料袋？", 9.6, INK, weight="700"))
+        els.append(txt(466, 153, "• 天然淀粉/蛋白质/手术可吸收线 (PGA/PLA)", 8.9, BODY))
+        els.append(txt(466, 169, "  主链每隔几步就有极性“酯键/肽键弱点”，", 8.9, BODY))
+        els.append(txt(466, 185, "  水分子与细菌水解酶一剪就断（90 天吸收）！", 8.9, GREEN, weight="700"))
+        els.append(txt(466, 204, "• 而 PE/PP 整条主链全是 ~370 kJ/mol 非极性", 8.9, BODY))
+        els.append(txt(466, 220, "  纯 C─C 单键且疏水结晶，自然界酶无处下嘴，", 8.9, RED, weight="700"))
+        els.append(txt(466, 236, "  日晒碎裂只会变成微塑料颗粒！", 8.9, BODY))
+
+        # Box 2: Green transition paradox & Circular solutions
+        els.append(card(456, 260, 268, 220, rx=8, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(466, 280, "🌱 越搞新能源，越要珍惜那 ~13% 碳积木：", 9.5, GREEN, weight="700"))
+        els.append(txt(466, 300, "① 少烧油、留作材料：", 9.2, INK, weight="700"))
+        els.append(txt(466, 317, "   光伏板 EVA 封装膜、风电百米环氧树脂叶片、", 8.8, BODY))
+        els.append(txt(466, 333, "   电动车轻量化外壳与锂电隔膜（PE/PP 微孔膜）", 8.8, BODY))
+        els.append(txt(466, 349, "   全都依赖不燃烧的高性能石化高分子！", 8.8, INK, weight="600"))
+        els.append(txt(466, 371, "② 化学解聚回收（反向拉开拉链）：", 9.2, BLUE, weight="700"))
+        els.append(txt(466, 388, "   用醇解、热裂解或工程PET水解酶把废塑料", 8.8, BODY))
+        els.append(txt(466, 404, "   拆回纯净单体，重聚出食品级新瓶，无限闭环。", 8.8, BODY))
+        els.append(txt(466, 426, "③ 生物基与二氧化碳接棒源头：", 9.2, PURPLE, weight="700"))
+        els.append(txt(466, 443, "   玉米乳酸制 PLA、甘蔗乙醇脱水制生物乙烯、", 8.8, BODY))
+        els.append(txt(466, 459, "   绿氢 + 捕集 CO₂ 制甲醇再变烯烃！", 8.8, INK, weight="600"))
+
+        return figure(
+            510,
+            "清晨起床10分钟石油制品盘点、塑料1至7号耐热安全指南与高分子降解循环未来图解",
+            "左栏盘点清晨接触的手机、记忆棉、眼镜、牙刷、洗护品、衣物及1至7号塑料底标耐热安全边界（标明仅5号PP可安全微波加热）；右栏对比可水解酯键与纯碳碳单键（约370 kJ/mol）解释塑料难降解原因，并展示新能源材料需求、化学解聚回收与生物基二氧化碳制烯烃路线。",
+            els,
+        )
+
+    @register(
+        "petroleum-everyday-products",
+        "石油变成生活物品的五步加工全图解：42加仑桶去向与常减压分馏塔动画、850度毫秒蒸汽裂解三烯三苯、加聚塑料与PET水瓶变摇粒绒、洗衣液退烧药轮胎跨界家谱及1–7号塑料安全与循环未来",
+        "science_tech",
+    )
+    def build_petroleum_everyday_products():
+        write_svg(SUBDIR, "barrel-split-and-distillation-tower.svg", _build_barrel_and_distillation())
+        write_svg(SUBDIR, "steam-cracking-seven-lego-bricks.svg", _build_steam_cracking_lego())
+        write_svg(SUBDIR, "polymer-zipper-plastics-and-clothes.svg", _build_polymer_zipper())
+        write_svg(SUBDIR, "tires-detergents-cosmetics-pharma-tree.svg", _build_everyday_crossovers())
+        write_svg(SUBDIR, "everyday-room-audit-and-circular-future.svg", _build_room_audit_and_future())
+
+
+_register_petroleum_everyday_products()
+
+
+def _register_heart_blood_circulation():
+    """5 original diagrams for the human heart & blood circulation mechanics post."""
+    import math
+
+    SUBDIR = "heart-blood-circulation"
+    RED = "#dc2626"
+    RED_SOFT = "#fef2f2"
+    RED_DARK = "#991b1b"
+    AMBER = "#d97706"
+    AMBER_SOFT = "#fffbeb"
+    TEAL = "#0d9488"
+    TEAL_SOFT = "#f0fdfa"
+
+    def _line(x1, y1, x2, y2, stroke=HAIRLINE, sw=1.4, dash=None, marker=None):
+        attrs = [
+            f'x1="{x1:.1f}"',
+            f'y1="{y1:.1f}"',
+            f'x2="{x2:.1f}"',
+            f'y2="{y2:.1f}"',
+            f'stroke="{stroke}"',
+            f'stroke-width="{sw}"',
+        ]
+        if dash:
+            attrs.append(f'stroke-dasharray="{dash}"')
+        if marker:
+            attrs.append(f'marker-end="url(#{marker})"')
+        return f'<line {" ".join(attrs)}/>'
+
+    def _poly(pts, stroke, sw=2.2, fill="none", dash=None, marker=None):
+        pstr = " ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
+        attrs = [
+            f'points="{pstr}"',
+            f'fill="{fill}"',
+            f'stroke="{stroke}"',
+            f'stroke-width="{sw}"',
+            'stroke-linecap="round"',
+            'stroke-linejoin="round"',
+        ]
+        if dash:
+            attrs.append(f'stroke-dasharray="{dash}"')
+        if marker:
+            attrs.append(f'marker-end="url(#{marker})"')
+        return f'<polyline {" ".join(attrs)}/>'
+
+    def _build_four_chambers_and_valves():
+        """SVG 1: 12-station double-circuit pump + 4 passive check valves + animated RBC parcel."""
+        # Verify left vs right peak systolic pressures (~4.8x ratio: 120 vs 25 mmHg, identical 75 mL SV)
+        lv_sys_mmhg, rv_sys_mmhg = 120.0, 25.0
+        sv_left_ml, sv_right_ml = 75.0, 75.0
+        assert sv_left_ml == sv_right_ml and 4.5 <= lv_sys_mmhg / rv_sys_mmhg <= 5.2
+
+        loop_path = (
+            "M 164,242 L 164,344 C 164,368 216,368 216,328 L 216,162 "
+            "C 216,124 232,118 248,162 L 298,242 "
+            "L 298,344 C 298,368 248,368 248,326 L 248,162 "
+            "C 248,104 388,108 402,192 C 414,268 408,410 342,462 "
+            "C 272,494 146,488 112,428 C 86,376 102,242 164,242 Z"
+        )
+
+        els = [
+            f"""<style>
+  @keyframes heartParcelLap {{
+    0% {{ offset-distance: 0%; opacity: 1; }}
+    92% {{ offset-distance: 100%; opacity: 1; }}
+    100% {{ offset-distance: 100%; opacity: 0.92; }}
+  }}
+  .heart-rbc-parcel {{
+    offset-path: path('{loop_path}');
+    offset-rotate: 0deg;
+    animation: heartParcelLap 9.5s cubic-bezier(0.32, 0.04, 0.25, 1) 1 forwards;
+  }}
+  @media (prefers-reduced-motion: reduce) {{
+    .heart-rbc-parcel {{ animation: none !important; offset-distance: 62%; opacity: 1 !important; }}
+  }}
+</style>""",
+        ]
+        els.extend(
+            header(
+                "一滴血的双泵12站闭环：为什么一颗心脏要劈成左右两半、装四扇纯机械单向门？",
+                "解剖正面视角（图左=右心低压肺泵 25 mmHg，图右=左心高压全身泵 120 mmHg）｜虚线=缺氧血，实线=富氧血",
+            )
+        )
+
+        # Left Panel: 12-station double loop
+        els.append(card(20, 68, 424, 466))
+        els.append(pill(34, 80, "左看路线：右心送肺换气 + 左心送全身（流量严格相等 5.25 L/min）", fg=BLUE, bg=BLUE_SOFT, w=396, h=22, size=10.0))
+
+        # Top Lung Exchange Capillary Box
+        els.append(card(136, 108, 192, 46, rx=10, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(232, 125, "⑥ 肺泡毛细血管网（换气站）", 10.2, INK, weight="700", anchor="middle"))
+        els.append(txt(232, 143, "排 CO₂ · 吸 O₂（低压护住 0.5 μm 肺泡膜）", 8.9, BLUE, weight="600", anchor="middle"))
+
+        # Outflow Semilunar Valve Pills cleanly in the gap y=172..192
+        els.append(pill(138, 174, "⑤ 肺动脉瓣 ↑", fg=BLUE, bg="#ffffff", w=86, h=18, size=8.5))
+        els.append(pill(240, 174, "⑪ 主动脉瓣 ↑", fg=RED, bg="#ffffff", w=86, h=18, size=8.5))
+
+        # Heart Outer Silhouette / Pericardial Box
+        els.append(card(114, 198, 236, 212, rx=16, fill="#fff8f8", stroke=HAIRLINE))
+        # Central outflow & septum corridor (x=212..252) so outflow pipes never cross RA/LA text!
+        els.append(f'<rect x="227" y="290" width="10" height="114" rx="4" fill="#cbd5e1"/>')
+        els.append(txt(232, 422, "▲ 致密室间隔（彻底隔开左右血）", 8.5, "#475569", weight="600", anchor="middle"))
+        els.append(_line(120, 278, 344, 278, stroke="#94a3b8", sw=2.0, dash="4 3"))
+
+        # 4 Chambers flanking the central outflow corridor cleanly
+        # Right Atrium (RA: x=122..206)
+        els.append(card(122, 208, 84, 58, rx=8, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(164, 226, "② 右心房", 10.0, BLUE, weight="700", anchor="middle"))
+        els.append(txt(164, 242, "0–5 mmHg", 8.8, BODY, anchor="middle", cls="mono"))
+        els.append(txt(164, 257, "收全身静脉血", 8.3, MUTED, anchor="middle"))
+
+        # Right Ventricle (RV: x=122..222 - thin wall)
+        els.append(card(122, 294, 100, 98, rx=10, fill="#e0f2fe", stroke=BLUE, sw=2.0))
+        els.append(txt(172, 316, "④ 右心室", 10.2, BLUE, weight="700", anchor="middle"))
+        els.append(txt(172, 333, "25 / 4 mmHg", 8.8, INK, weight="700", anchor="middle", cls="mono"))
+        els.append(txt(172, 350, "薄肌壁 (~4 mm)", 8.6, BODY, anchor="middle"))
+        els.append(txt(172, 366, "温柔推血入肺", 8.5, BLUE, weight="600", anchor="middle"))
+
+        # Left Atrium (LA: x=258..342)
+        els.append(card(258, 208, 84, 58, rx=8, fill=RED_SOFT, stroke=RED))
+        els.append(txt(300, 226, "⑧ 左心房", 10.0, RED, weight="700", anchor="middle"))
+        els.append(txt(300, 242, "5–10 mmHg", 8.8, BODY, anchor="middle", cls="mono"))
+        els.append(txt(300, 257, "接4条肺静脉", 8.3, MUTED, anchor="middle"))
+
+        # Left Ventricle (LV: x=242..342 - 3x thick myocardial wall!)
+        els.append(f'<rect x="242" y="292" width="100" height="100" rx="12" fill="{RED_SOFT}" stroke="{RED}" stroke-width="5.0"/>')
+        els.append(txt(292, 316, "⑩ 左心室", 10.2, RED, weight="700", anchor="middle"))
+        els.append(txt(292, 333, "120 / 8 mmHg", 8.8, INK, weight="700", anchor="middle", cls="mono"))
+        els.append(txt(292, 350, "厚肌壁 (~13 mm)", 8.6, RED_DARK, weight="700", anchor="middle"))
+        els.append(txt(292, 366, "强力泵遍全身！", 8.5, RED, weight="600", anchor="middle"))
+
+        # AV Valve Pills on boundaries
+        els.append(pill(126, 270, "③ 三尖瓣 ↓", fg=BLUE, bg="#ffffff", w=76, h=18, size=8.5))
+        els.append(pill(262, 270, "⑨ 二尖瓣 ↓", fg=RED, bg="#ffffff", w=76, h=18, size=8.5))
+
+        # Systemic Organ Capillary Bed at bottom
+        els.append(card(126, 444, 214, 52, rx=10, fill=AMBER_SOFT, stroke=AMBER))
+        els.append(txt(233, 463, "⑫ 全身器官与冠脉毛细血管网", 10.2, INK, weight="700", anchor="middle"))
+        els.append(txt(233, 481, "送出 O₂ 与养分 · 收走代谢 CO₂", 9.0, AMBER, weight="600", anchor="middle"))
+
+        # Flow connector arrows through central corridor (zero text crossings!)
+        # Venae cavae -> RA (1 -> 2)
+        els.append(_poly([(126, 470), (58, 470), (58, 236), (118, 236)], stroke=BLUE, sw=2.4, dash="6 3", marker="arr-blue"))
+        els.append(txt(63, 352, "① 上/下腔", 8.8, BLUE, weight="700"))
+        els.append(txt(63, 367, "静脉(缺氧)", 8.4, MUTED))
+
+        # RV -> Pulmonary trunk through x=216 -> Lung (4 -> 5 -> 6)
+        els.append(_poly([(216, 294), (216, 158)], stroke=BLUE, sw=2.4, dash="5 3", marker="arr-blue"))
+        els.append(txt(132, 166, "肺动脉(流缺氧血!)", 8.3, BLUE, weight="700", anchor="end"))
+
+        # Lung -> Pulmonary veins -> LA (6 -> 7 -> 8)
+        els.append(_poly([(328, 128), (354, 128), (354, 234), (344, 234)], stroke=RED, sw=2.2, marker="arr-orange"))
+        els.append(txt(360, 126, "⑦肺静脉", 8.3, RED, weight="700"))
+        els.append(txt(360, 140, "(流富氧血!)", 8.1, RED))
+
+        # LV -> Aorta through x=248 -> Arch -> Systemic capillaries (10 -> 11 -> 12)
+        els.append(_poly([(248, 292), (248, 162), (412, 162), (412, 470), (344, 470)], stroke=RED, sw=2.8, marker="arr-orange"))
+        els.append(txt(406, 332, "主动脉干线", 8.8, RED, weight="700", anchor="end"))
+        els.append(txt(406, 347, "120/80", 8.5, RED_DARK, anchor="end", cls="mono"))
+
+        # Animated 1-shot blood parcel (visible static note at bottom)
+        els.append(
+            '<g class="heart-rbc-parcel">'
+            f'<circle cx="0" cy="0" r="7.5" fill="{RED}" stroke="#ffffff" stroke-width="2"/>'
+            '<text x="0" y="3" font-size="8" font-weight="700" fill="#ffffff" text-anchor="middle">O₂</text>'
+            '</g>'
+        )
+        els.append(txt(232, 518, "注：动脉=离心的血管，静脉=回心的血管（按流向定义，绝不按含氧颜色定义！）", 8.8, INK, weight="600", anchor="middle"))
+
+        # Right Panel: Two Passive Valve Mechanisms + Coronary Diastole Secret
+        els.append(card(458, 68, 282, 466))
+        els.append(pill(472, 80, "右看阀门：没有一块肌肉负责开门，全靠压差 ΔP！", fg=ORANGE, bg=ORANGE_SOFT, w=254, h=22, size=9.8))
+
+        # Box A: AV Valves (Parachute + Chordae tendineae + Papillary muscles)
+        els.append(card(472, 112, 254, 152, rx=10, fill="#f8fafc", stroke=BORDER))
+        els.append(txt(484, 131, "A. 房室瓣（三尖瓣/二尖瓣）：防翻伞拉绳", 10.2, BLUE, weight="700"))
+        # Mini schematic of AV valve open vs locked by chordae
+        els.append(txt(532, 150, "充盈期 P房 > P室", 8.8, GREEN, weight="700", anchor="middle"))
+        els.append(_line(502, 158, 522, 184, stroke=INK, sw=2.6))
+        els.append(_line(562, 158, 542, 184, stroke=INK, sw=2.6))
+        els.append(_line(532, 156, 532, 198, stroke=GREEN, sw=2.2, marker="arr-green"))
+        els.append(txt(532, 212, "顺流推开", 8.6, GREEN, weight="600", anchor="middle"))
+
+        els.append(txt(656, 150, "收缩期 P室 ≫ P房", 8.8, RED, weight="700", anchor="middle"))
+        els.append(_line(622, 174, 656, 172, stroke=RED, sw=3.0))
+        els.append(_line(690, 174, 656, 172, stroke=RED, sw=3.0))
+        # Chordae tendineae strings + papillary mounds
+        els.append(_line(642, 173, 634, 202, stroke="#64748b", sw=1.5, dash="2 2"))
+        els.append(_line(652, 173, 638, 202, stroke="#64748b", sw=1.5, dash="2 2"))
+        els.append(_line(660, 173, 674, 202, stroke="#64748b", sw=1.5, dash="2 2"))
+        els.append(_line(670, 173, 678, 202, stroke="#64748b", sw=1.5, dash="2 2"))
+        els.append(f'<path d="M626,212 Q636,192 646,212 Z" fill="{RED}"/>')
+        els.append(f'<path d="M666,212 Q676,192 686,212 Z" fill="{RED}"/>')
+        els.append(txt(656, 224, "乳头肌拽紧腱索！", 8.6, RED_DARK, weight="700", anchor="middle"))
+
+        els.append(txt(484, 243, "• 腱索像降落伞绳拉住瓣叶，扛住 120 mmHg", 8.8, BODY))
+        els.append(txt(484, 257, "  巨压不外翻进心房；关门声即第一心音“咚”！", 8.8, INK, weight="600"))
+
+        # Box B: Semilunar Valves (3 Swallow-Nest Pockets + Coronary Ostia in Diastole!)
+        els.append(card(472, 274, 254, 226, rx=10, fill="#fffbeb", stroke=AMBER))
+        els.append(txt(484, 294, "B. 半月瓣（主动脉/肺动脉瓣）：燕子窝兜袋", 10.2, AMBER, weight="700"))
+        # Mini schematic of pocket cusps catching backflow + coronary arteries filling!
+        els.append(_line(506, 312, 506, 372, stroke=INK, sw=2.2))
+        els.append(_line(566, 312, 566, 372, stroke=INK, sw=2.2))
+        els.append(_line(520, 364, 524, 330, stroke=GREEN, sw=2.6))
+        els.append(_line(552, 364, 548, 330, stroke=GREEN, sw=2.6))
+        els.append(_line(536, 368, 536, 318, stroke=GREEN, sw=2.4, marker="arr-green"))
+        els.append(txt(536, 386, "射血冲开 (P室>P动)", 8.5, GREEN, weight="700", anchor="middle"))
+
+        els.append(_line(622, 312, 622, 372, stroke=INK, sw=2.2))
+        els.append(_line(688, 312, 688, 372, stroke=INK, sw=2.2))
+        # Filled pocket cusps
+        els.append(f'<path d="M622,340 Q638,366 655,346 Q672,366 688,340" fill="#fde68a" stroke="{RED}" stroke-width="2.6"/>')
+        els.append(_line(642, 316, 642, 342, stroke=RED, sw=1.8, marker="arr-orange"))
+        els.append(_line(668, 316, 668, 342, stroke=RED, sw=1.8, marker="arr-orange"))
+        # Side coronary ostia arrows!
+        els.append(_line(622, 332, 598, 332, stroke=RED, sw=2.2, marker="arr-orange"))
+        els.append(_line(688, 332, 712, 332, stroke=RED, sw=2.2, marker="arr-orange"))
+        els.append(txt(655, 386, "倒流灌满兜袋关门+灌入冠脉!", 8.4, RED_DARK, weight="700", anchor="middle"))
+
+        els.append(txt(484, 408, "• 无腱索！心室一舒张，大动脉血刚往回退就灌满", 8.8, BODY))
+        els.append(txt(484, 424, "  三只半月兜袋严密锁门，敲响第二心音“哒”！", 8.8, INK, weight="600"))
+        els.append(txt(484, 444, "💡 反直觉奇观：心脏何时给自己“喂饭”？", 9.2, RED, weight="700"))
+        els.append(txt(484, 461, "• 收缩期心肌剧烈紧绷，把自己深处的血管挤扁；", 8.7, BODY))
+        els.append(txt(484, 477, "• 舒张期主动脉瓣合拢，回弹血正好从瓣兜上方", 8.7, BODY))
+        els.append(txt(484, 492, "  灌进左/右冠状动脉——心脏只在放松时吃饭！", 8.7, RED_DARK, weight="700"))
+
+        return figure(
+            548,
+            "人体心脏四腔双循环12站路线、左右心室壁厚对比与四扇单向瓣膜压差开关原理图解",
+            "左栏按正面解剖视角展示上下腔静脉、右心房、三尖瓣、右心室（25 mmHg薄壁）、肺动脉瓣、肺泡换气、肺静脉、左心房、二尖瓣、左心室（120 mmHg厚壁）、主动脉瓣至全身毛细血管的12站单向闭环；右栏对比腱索乳头肌拉住的房室瓣与三兜袋半月瓣，并揭示冠状动脉在心室舒张期供血的机制。",
+            els,
+        )
+
+    def _build_wiggers_cardiac_cycle():
+        """SVG 2: Quantitative 0.80 s Wiggers pressure & volume diagram (75 bpm)."""
+        # Verify exact stroke volume & ejection fraction
+        edv_ml, esv_ml = 130.0, 55.0
+        sv_ml = edv_ml - esv_ml
+        ef_pct = sv_ml / edv_ml * 100.0
+        co_l_min = sv_ml * 75.0 / 1000.0
+        assert sv_ml == 75.0 and 55.0 <= ef_pct <= 60.0 and abs(co_l_min - 5.625) < 0.01
+
+        # Plot geometry: x from t=0.00 to 0.80s mapped to [92, 716] (width = 624 px)
+        x0, xw = 92.0, 624.0
+        def tx(t):
+            return x0 + (t / 0.80) * xw
+
+        # Top pressure plot: P in [0, 130] mmHg mapped to y in [272, 108] (height = 164 px)
+        py_bot, py_top = 272.0, 108.0
+        def py(p):
+            return py_bot - (p / 130.0) * (py_bot - py_top)
+
+        # Bottom volume plot: V in [40, 145] mL mapped to y in [442, 332] (height = 110 px)
+        vy_bot, vy_top = 442.0, 332.0
+        def vy(v):
+            return vy_bot - ((v - 40.0) / 105.0) * (vy_bot - vy_top)
+
+        # Compute physiological left-heart curves across 161 samples (dt = 0.005 s)
+        lv_pts, ao_pts, la_pts, vol_pts = [], [], [], []
+        for i in range(161):
+            t = i * 0.005
+            # Left Atrial Pressure P_LA(t)
+            if t <= 0.10:
+                p_la = 6.0 + 5.0 * math.sin(math.pi * t / 0.10)  # 'a' wave (atrial kick)
+            elif t <= 0.16:
+                p_la = 6.0 + 3.2 * math.sin(math.pi * (t - 0.10) / 0.06)  # 'c' wave (mitral bulge)
+            elif t <= 0.43:
+                p_la = 5.0 + 5.5 * ((t - 0.16) / 0.27)  # 'v' wave venous filling while mitral shut
+            else:
+                p_la = 10.5 - 4.5 * ((t - 0.43) / 0.37) ** 0.55
+
+            # Left Ventricular Pressure P_LV(t)
+            if t <= 0.10:
+                p_lv = 5.5 + 4.8 * math.sin(math.pi * t / 0.10) + 1.2 * (t / 0.10)
+            elif t <= 0.15:
+                # Isovolumetric contraction: 10 -> 80 mmHg
+                u = (t - 0.10) / 0.05
+                p_lv = 10.0 + 70.0 * (u ** 1.15)
+            elif t <= 0.37:
+                # Ejection arch: 80 -> 120 -> 94 mmHg
+                u = (t - 0.15) / 0.22
+                p_lv = 80.0 + 40.0 * math.sin(math.pi * (u ** 0.78)) + 14.0 * u * (1.0 - 0.3 * u)
+                if u > 0.75:
+                    # Smoothly descend to 94 mmHg at t=0.37
+                    w = (u - 0.75) / 0.25
+                    p_lv = (1.0 - w) * p_lv + w * 94.0
+            elif t <= 0.43:
+                # Isovolumetric relaxation: 94 -> 7 mmHg
+                u = (t - 0.37) / 0.06
+                p_lv = 94.0 * ((1.0 - u) ** 1.35) + 7.0 * u
+            else:
+                # Passive ventricular filling: drops to ~4 mmHg suction then gently rises to 5.5 mmHg
+                u = (t - 0.43) / 0.37
+                p_lv = 4.2 + 2.8 * math.exp(-u * 6.0) + 1.3 * u
+
+            # Aortic Pressure P_Ao(t)
+            if t <= 0.15:
+                p_ao = 84.5 - 4.5 * (t / 0.15)  # End-diastolic Windkessel runoff to 80 mmHg
+            elif t <= 0.37:
+                p_ao = max(p_lv - 1.2, 80.0)
+            elif t <= 0.405:
+                # Dicrotic notch + elastic rebound!
+                u = (t - 0.37) / 0.035
+                p_ao = 94.0 + 4.8 * math.sin(math.pi * u)
+            else:
+                # Smooth Windkessel exponential decay from 96 -> 84.5 mmHg
+                u = (t - 0.405) / 0.395
+                p_ao = 96.0 - 11.5 * (u ** 0.85)
+
+            # Left Ventricular Volume V_LV(t)
+            if t <= 0.10:
+                # Atrial kick adds last 25 mL (105 -> 130 mL)
+                u = t / 0.10
+                v_lv = 105.0 + 25.0 * (0.5 - 0.5 * math.cos(math.pi * u))
+            elif t <= 0.15:
+                # Isovolumetric contraction: flat 130 mL!
+                v_lv = 130.0
+            elif t <= 0.37:
+                # Ejection: 130 -> 55 mL
+                u = (t - 0.15) / 0.22
+                v_lv = 130.0 - 75.0 * (u ** 0.72 * (1.35 - 0.35 * u))
+                v_lv = max(55.0, min(130.0, v_lv))
+                if i == 74:
+                    v_lv = 55.0
+            elif t <= 0.43:
+                # Isovolumetric relaxation: flat 55 mL!
+                v_lv = 55.0
+            else:
+                # Rapid passive filling + diastasis: 55 -> 105 mL (50 mL = 67% of 75 mL SV before atrial kick!)
+                u = (t - 0.43) / 0.37
+                v_lv = 55.0 + 50.0 * (1.0 - math.exp(-4.2 * u)) / (1.0 - math.exp(-4.2))
+
+            lv_pts.append((tx(t), py(p_lv)))
+            ao_pts.append((tx(t), py(p_ao)))
+            la_pts.append((tx(t), py(p_la)))
+            vol_pts.append((tx(t), vy(v_lv)))
+
+        els = []
+        els.extend(
+            header(
+                "0.8 秒一次心跳的精密时序（威格斯图）：血压何时撞开门、心音“咚—哒”从哪来？",
+                "按 75 次/分实算左心数据：压差一反转阀门即刻开关；70%–80% 血液在心房收缩前早已流进心室！",
+            )
+        )
+
+        els.append(card(20, 68, 720, 434))
+
+        # Phase background bands across both plots
+        phases = [
+            (0.00, 0.10, "#eff6ff", "①心房补踢", BLUE),
+            (0.10, 0.15, "#fef2f2", "②等容缩", RED),
+            (0.15, 0.37, "#fff7ed", "③心室射血期 (0.22s)", ORANGE),
+            (0.37, 0.43, "#f5f3ff", "④等容舒", PURPLE),
+            (0.43, 0.80, "#ecfdf5", "⑤心室被动充盈期 (0.37s，吸进约70%血！)", GREEN),
+        ]
+        for t1, t2, bg_c, lbl, fg_c in phases:
+            bx1, bx2 = tx(t1), tx(t2)
+            els.append(f'<rect x="{bx1:.1f}" y="82" width="{bx2 - bx1:.1f}" height="364" fill="{bg_c}" opacity="0.68"/>')
+            els.append(_line(bx1, 82, bx1, 446, stroke="#cbd5e1", sw=1.0, dash="3 3"))
+            els.append(txt((bx1 + bx2) / 2.0, 96, lbl, 8.8, fg_c, weight="700", anchor="middle"))
+        els.append(_line(tx(0.80), 82, tx(0.80), 446, stroke="#cbd5e1", sw=1.0))
+
+        # Top Plot Axes & Grid (Pressure mmHg)
+        for p_tick in (0, 40, 80, 120):
+            yy = py(p_tick)
+            els.append(_line(x0, yy, tx(0.80), yy, stroke="#e2e8f0", sw=1.0))
+            els.append(txt(x0 - 8, yy + 3.5, f"{p_tick}", 9.0, MUTED, anchor="end", cls="mono"))
+        els.append(txt(34, 192, "压力", 9.6, INK, weight="700"))
+        els.append(txt(30, 206, "(mmHg)", 8.6, MUTED, cls="mono"))
+
+        # Plot Top Curves
+        els.append(_poly(ao_pts, stroke=AMBER, sw=2.3, dash="6 3"))
+        els.append(_poly(la_pts, stroke=BLUE, sw=1.9, dash="2 2"))
+        els.append(_poly(lv_pts, stroke=RED, sw=2.6))
+
+        # Valve Switching Dots & Callouts on Pressure Plot
+        # 1. Mitral closes (t=0.10, P~10) -> S1 "咚"
+        mx1, my1 = tx(0.10), py(10.0)
+        els.append(f'<circle cx="{mx1:.1f}" cy="{my1:.1f}" r="4.5" fill="{RED}" stroke="#ffffff" stroke-width="1.5"/>')
+        els.append(pill(mx1 - 44, my1 - 30, "二尖瓣关 · S1“咚”", fg=RED, bg="#ffffff", w=104, h=18, size=8.5))
+
+        # 2. Aortic opens (t=0.15, P=80)
+        ax1, ay1 = tx(0.15), py(80.0)
+        els.append(f'<circle cx="{ax1:.1f}" cy="{ay1:.1f}" r="4.5" fill="{ORANGE}" stroke="#ffffff" stroke-width="1.5"/>')
+        els.append(txt(ax1 + 8, ay1 + 14, "主动脉瓣冲开 (80)", 8.6, ORANGE, weight="700"))
+
+        # Peak LV = 120 mmHg
+        els.append(txt(tx(0.25), py(122.0) - 6, "左心室峰值 120 mmHg", 9.0, RED, weight="700", anchor="middle"))
+        els.append(txt(tx(0.64), py(86.0) + 16, "主动脉弹性回弹维持 ≥80 mmHg（虚线）", 8.6, AMBER, weight="700", anchor="middle"))
+        els.append(txt(tx(0.68), py(7.0) + 13, "左心房压 5–10 mmHg（点线）", 8.4, BLUE, weight="600", anchor="middle"))
+
+        # 3. Aortic closes (t=0.37, P=94) -> S2 "哒" + Dicrotic notch
+        ax2, ay2 = tx(0.37), py(94.0)
+        els.append(f'<circle cx="{ax2:.1f}" cy="{ay2:.1f}" r="4.5" fill="{PURPLE}" stroke="#ffffff" stroke-width="1.5"/>')
+        els.append(pill(ax2 + 8, ay2 - 24, "主动脉瓣关 · S2“哒”(重搏切迹)", fg=PURPLE, bg="#ffffff", w=164, h=18, size=8.4))
+
+        # 4. Mitral opens (t=0.43, P=8)
+        mx2, my2 = tx(0.43), py(8.0)
+        els.append(f'<circle cx="{mx2:.1f}" cy="{my2:.1f}" r="4.5" fill="{GREEN}" stroke="#ffffff" stroke-width="1.5"/>')
+        els.append(txt(mx2 + 8, my2 - 14, "二尖瓣重开（抽吸充盈）", 8.5, GREEN, weight="700"))
+
+        # Divider label for Volume Plot
+        els.append(txt(34, 382, "左室", 9.6, INK, weight="700"))
+        els.append(txt(34, 396, "容积", 9.6, INK, weight="700"))
+        els.append(txt(32, 410, "(mL)", 8.6, MUTED, cls="mono"))
+        for v_tick in (55, 95, 130):
+            yy = vy(v_tick)
+            els.append(_line(x0, yy, tx(0.80), yy, stroke="#e2e8f0", sw=1.0))
+            els.append(txt(x0 - 8, yy + 3.5, f"{v_tick}", 9.0, MUTED, anchor="end", cls="mono"))
+
+        els.append(_poly(vol_pts, stroke=TEAL, sw=2.6))
+        els.append(txt(tx(0.125), vy(130.0) - 7, "EDV = 130 mL (四门全关等容)", 8.6, TEAL, weight="700", anchor="middle"))
+        els.append(txt(tx(0.40), vy(55.0) + 14, "ESV = 55 mL（绝不会挤干到 0！）", 8.6, PURPLE, weight="700", anchor="middle"))
+        # Stroke volume bracket
+        bx_sv = tx(0.27)
+        els.append(_line(bx_sv, vy(130.0) + 4, bx_sv, vy(55.0) - 4, stroke=INK, sw=1.5, dash="3 2"))
+        els.append(pill(bx_sv + 6, (vy(130.0) + vy(55.0)) / 2.0 - 9, "每搏输出 SV = 75 mL (EF ≈ 58%)", fg=INK, bg="#ffffff", w=168, h=18, size=8.4))
+
+        # Time Axis ticks
+        els.append(_line(x0, 446, tx(0.80), 446, stroke=INK, sw=1.3))
+        for t_tick in (0.0, 0.1, 0.15, 0.37, 0.43, 0.6, 0.8):
+            xx = tx(t_tick)
+            els.append(_line(xx, 446, xx, 451, stroke=INK, sw=1.2))
+            els.append(txt(xx, 463, f"{t_tick:.2f}s", 8.6, BODY, anchor="middle", cls="mono"))
+
+        # Bottom Summary Strip
+        els.append(
+            txt(
+                380,
+                486,
+                "💡 听诊器里的“咚—哒—（停顿）”全都是关门声（阀门顺流推开悄无声息）：S1“咚”= 房室瓣关，S2“哒”= 半月瓣关！",
+                9.2,
+                INK,
+                weight="700",
+                anchor="middle",
+            )
+        )
+
+        return figure(
+            514,
+            "0.8秒心动周期左心压力与容积变化曲线（威格斯图）及第一第二心音阀门开关机制图解",
+            "同步展示75次/分心跳下0.80秒内的主动脉压（80–120 mmHg含重搏切迹）、左心室压（0–120 mmHg）、左心房压（5–10 mmHg）与左心室容积（EDV 130 mL至ESV 55 mL，每搏输出75 mL），标出等容收缩期、射血期、等容舒张期、被动充盈期及S1/S2心音对应的瓣膜关闭点。",
+            els,
+        )
+
+    def _build_pacemaker_av_delay_ecg():
+        """SVG 3: SA->AV 100ms delay->His-Purkinje apex-upward squeeze + ECG + 250ms plateau."""
+        # Verify conduction timing budget: 50 ms atrial + 100 ms AV delay + 25 ms His/branches + 50 ms Purkinje = 225 ms
+        t_sa_to_av, t_av_delay, t_his, t_purkinje = 50, 100, 25, 50
+        total_ms = t_sa_to_av + t_av_delay + t_his + t_purkinje
+        assert total_ms == 225 and t_av_delay == 100
+
+        els = []
+        els.extend(
+            header(
+                "自带发电站的五级点火网：房室结为何故意卡壳 0.1 秒？为什么要从心尖往上挤？",
+                "1% 自律导电细胞指挥 99% 心肌细胞同步搏动｜250 ms 超长钙离子平台期从物理上锁死“心脏抽筋”",
+            )
+        )
+
+        # Left Panel: 5-Station Conduction & Bottom-Up Toothpaste Squeeze
+        els.append(card(20, 68, 396, 428))
+        els.append(pill(34, 80, "左看电路：五级接力 + 心尖底部最先点火向上“挤牙膏”", fg=ORANGE, bg=ORANGE_SOFT, w=368, h=22, size=9.8))
+
+        # Heart conduction schematic
+        els.append(card(42, 114, 214, 286, rx=18, fill="#fffdf9", stroke=HAIRLINE))
+        # Fibrous insulating ring!
+        els.append(f'<rect x="50" y="202" width="198" height="10" rx="4" fill="#94a3b8"/>')
+        els.append(txt(52, 196, "纤维绝缘环", 8.2, "#334155", weight="700"))
+        els.append(txt(246, 196, "挡死电流越界", 8.2, "#334155", weight="700", anchor="end"))
+        # Septum
+        els.append(f'<rect x="142" y="212" width="14" height="156" rx="5" fill="#e2e8f0"/>')
+
+        # 1. SA node (upper RA)
+        els.append(f'<circle cx="80" cy="142" r="11" fill="{AMBER}" stroke="#ffffff" stroke-width="2"/>')
+        els.append(txt(80, 146, "①", 9.5, "#ffffff", weight="700", anchor="middle"))
+        els.append(txt(98, 136, "窦房结 (0 ms)", 9.1, AMBER, weight="700"))
+        els.append(txt(98, 150, "总起搏器 75次/分", 8.2, BODY))
+        # Atrial waves to LA & AV node
+        els.append(_poly([(92, 156), (198, 164)], stroke=AMBER, sw=2.0, dash="4 2", marker="arr-orange"))
+        els.append(_poly([(86, 153), (134, 192)], stroke=AMBER, sw=2.2, marker="arr-orange"))
+
+        # 2. AV node (100 ms red-light gate!)
+        els.append(f'<circle cx="149" cy="204" r="12" fill="{RED}" stroke="#ffffff" stroke-width="2"/>')
+        els.append(txt(149, 208, "②", 9.5, "#ffffff", weight="700", anchor="middle"))
+        els.append(pill(62, 220, "房室结红灯停顿 +100 ms!", fg=RED, bg=RED_SOFT, w=174, h=18, size=8.6))
+
+        # 3. Bundle of His & 4. Left/Right Bundle Branches down septum to APEX
+        els.append(_poly([(149, 238), (149, 274)], stroke=PURPLE, sw=3.0))
+        els.append(_poly([(149, 274), (126, 358), (72, 342), (64, 256)], stroke=PURPLE, sw=2.4, marker="arr-blue"))
+        els.append(_poly([(149, 274), (172, 358), (226, 342), (234, 256)], stroke=PURPLE, sw=2.4, marker="arr-blue"))
+        els.append(txt(149, 264, "③希氏束", 8.4, PURPLE, weight="700", anchor="middle", halo=True))
+        els.append(txt(149, 314, "④左右束支", 8.4, PURPLE, weight="700", anchor="middle", halo=True))
+        els.append(pill(86, 366, "⑤ 心尖最先点火 → 向上挤！", fg=GREEN, bg=GREEN_SOFT, w=156, h=18, size=8.5))
+
+        # Upward toothpaste squeeze arrows on outer walls!
+        els.append(_line(54, 348, 54, 246, stroke=GREEN, sw=2.8, marker="arr-green"))
+        els.append(_line(244, 348, 244, 246, stroke=GREEN, sw=2.8, marker="arr-green"))
+
+        # Right side step notes inside Left Panel
+        notes = [
+            (126, "① 窦房结自发漏 Na⁺", "无静息电位，自动爬上阈值", AMBER),
+            (180, "② 为什么停 0.1 秒？", "等心房把血挤完再关门！", RED),
+            (236, "③④ 穿室间隔直插心尖", "节制索提前绷紧右乳头肌", PURPLE),
+            (294, "⑤ 从底部往上挤牙膏", "因为主动脉与肺动脉出口", GREEN),
+            (328, "   全长在心室最顶上！", "若从上往下挤会把血困死", INK),
+        ]
+        for yy, t1, t2, col in notes:
+            els.append(txt(266, yy, t1, 9.2, col, weight="700"))
+            els.append(txt(266, yy + 15, t2, 8.4, BODY))
+
+        # Intercalated disc note at bottom of left panel
+        els.append(card(34, 410, 368, 72, rx=8, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(46, 429, "🔗 闰盘（Intercalated Discs）怎样让亿万心肌细胞像一个人发力？", 9.3, BLUE, weight="700"))
+        els.append(txt(46, 447, "• 桥粒（铆钉）死死扣住相邻细胞防撕裂；缝隙连接（离子隧道）让电信号", 8.7, BODY))
+        els.append(txt(46, 464, "  毫秒级直通全心室，组成“功能合胞体”齐刷刷收缩！", 8.7, INK, weight="600"))
+
+        # Right Panel: 1924 Nobel ECG P-QRS-T + 250 ms Ca2+ Plateau Refractory Lock
+        els.append(card(430, 68, 310, 428))
+        els.append(pill(444, 80, "右看心电图（1924诺奖）与防抽筋保护锁", fg=BLUE, bg=BLUE_SOFT, w=282, h=22, size=9.8))
+
+        # Top Box: Computed ECG Waveform
+        els.append(card(444, 112, 282, 168, rx=10, fill="#f8fafc", stroke=BORDER))
+        els.append(txt(456, 130, "体表心电图（ECG）五段波形对号入座：", 9.6, INK, weight="700"))
+        ecg_pts = [
+            (456, 214), (476, 214),
+            (486, 200), (498, 214),  # P wave
+            (528, 214),              # PR segment (100 ms AV delay!)
+            (536, 222),              # Q
+            (546, 146),              # R spike!
+            (556, 232),              # S
+            (566, 214), (596, 214),  # ST segment (Ca2+ plateau!)
+            (618, 192), (640, 214),  # T wave
+            (712, 214),
+        ]
+        els.append(_line(454, 214, 714, 214, stroke="#e2e8f0", sw=1.0))
+        els.append(_poly(ecg_pts, stroke=RED, sw=2.4))
+        els.append(txt(488, 194, "P波", 9.0, AMBER, weight="700", anchor="middle"))
+        els.append(txt(488, 232, "心房点火", 8.2, MUTED, anchor="middle"))
+        els.append(txt(513, 206, "PR段", 8.4, RED, weight="700", anchor="middle"))
+        els.append(txt(513, 246, "0.1s延迟", 8.2, RED, anchor="middle"))
+        els.append(txt(566, 152, "QRS波群", 9.2, PURPLE, weight="700"))
+        els.append(txt(566, 166, "心室齐射", 8.3, BODY))
+        els.append(txt(622, 186, "T波 (复极化)", 8.8, GREEN, weight="700", anchor="middle"))
+        els.append(txt(456, 266, "• 心梗时 ST 段异常抬高（STEMI），一照便知缺血！", 8.5, INK, weight="600"))
+
+        # Bottom Box: Why Heart Muscle NEVER Cramps (250 ms Ca2+ Plateau)
+        els.append(card(444, 292, 282, 190, rx=10, fill="#f0fdf4", stroke=GREEN))
+        els.append(txt(456, 311, "🛡️ 为什么小腿会抽筋，心脏却绝不能抽筋？", 9.6, GREEN, weight="700"))
+        # Mini AP plot: Skeletal (5 ms spike, dashed) vs Cardiac (250 ms plateau, solid)
+        els.append(_line(466, 404, 708, 404, stroke="#cbd5e1", sw=1.2))
+        els.append(txt(466, 417, "0 ms", 8.2, MUTED, cls="mono"))
+        els.append(txt(626, 417, "250 ms (不应期结束)", 8.2, GREEN, weight="700", anchor="middle", cls="mono"))
+        # Skeletal AP (tiny narrow spike)
+        els.append(_poly([(470, 402), (474, 336), (480, 402)], stroke="#64748b", sw=1.8, dash="3 2"))
+        els.append(txt(484, 333, "骨骼肌 (~5ms)：可叠加抽筋", 8.3, "#475569", halo=True))
+        # Cardiac AP (fast Na+ upstroke + 175 ms Ca2+ plateau + K+ repolarization)
+        els.append(_poly([(470, 402), (475, 332), (492, 342), (592, 348), (632, 402), (702, 402)], stroke=GREEN, sw=2.6))
+        els.append(txt(546, 366, "慢 Ca²⁺ 内流撑起平台期", 8.6, GREEN, weight="700", anchor="middle"))
+        els.append(txt(546, 381, "绝对不应期 ≈ 200–250 ms", 8.5, INK, weight="700", anchor="middle"))
+
+        els.append(txt(456, 437, "• 心脏一旦持续强直收缩（抽筋不放松）= 无法进血", 8.6, BODY))
+        els.append(txt(456, 453, "  立刻停泵致死！超长不应期逼迫心肌“每收缩一次，", 8.6, BODY))
+        els.append(txt(456, 469, "  必须先松开装满血，才准接下一次电令”！", 8.6, INK, weight="700"))
+
+        return figure(
+            512,
+            "心脏电传导系统五级时序、房室结0.1秒延迟、心尖向上挤牙膏机制与ECG及250毫秒防抽筋平台期图解",
+            "左栏展示窦房结（0 ms）经心房至房室结（刻意停顿100 ms等心房排空）、希氏束、左右束支直达心尖并由浦肯野纤维自下而上挤压心室的电路路线与闰盘结构；右栏对应1924诺奖心电图P-QRS-T波形，并对比骨骼肌5 ms脉冲与心肌250 ms钙离子平台不应期为何能防止心脏强直抽筋。",
+            els,
+        )
+
+    def _build_windkessel_and_microvessels():
+        """SVG 4: Aortic Windkessel elastic accumulator + Poiseuille 1/r^4 + Starling capillary exchange."""
+        # Verify Poiseuille 4th-power resistance & Starling net filtration numbers
+        r_half_resistance_factor = (1.0 / 0.5) ** 4
+        nfp_art = 35.0 - 25.0   # +10 mmHg filtration
+        nfp_ven = 18.0 - 25.0   # -7 mmHg reabsorption
+        lymph_l_day = round(24.0 - 20.4, 1)
+        assert r_half_resistance_factor == 16.0 and nfp_art == 10.0 and nfp_ven == -7.0 and lymph_l_day == 3.6
+
+        els = []
+        els.extend(
+            header(
+                "出了心脏后的两套流体神技：主动脉“橡胶蓄压球”与微血管四次方分流、渗出回收",
+                "左：主动脉弹性回弹把间歇喷血抚平为连续水流｜右：微动脉 r⁴ 控压调流 + 毛细血管斯塔灵双力进出账本",
+            )
+        )
+
+        # Left Panel: Windkessel Elastic Accumulator
+        els.append(card(20, 68, 352, 436))
+        els.append(pill(34, 80, "主动脉“风箱效应（Windkessel）”：舒张期凭啥不断流？", fg=RED, bg=RED_SOFT, w=324, h=22, size=9.6))
+
+        # Box 1: Systole (LV ejects 75 mL -> stretches elastic aorta)
+        els.append(card(34, 112, 324, 122, rx=10, fill="#fff8f8", stroke=RED))
+        els.append(txt(46, 131, "① 收缩期（0.22 s）：左心室猛喷 75 mL 血液", 9.8, RED, weight="700"))
+        # Ventricle + bulging elastic aorta pipe
+        els.append(card(48, 148, 62, 44, rx=8, fill=RED_SOFT, stroke=RED, sw=2.4))
+        els.append(txt(79, 168, "左心室", 8.8, RED, weight="700", anchor="middle"))
+        els.append(txt(79, 182, "120 mmHg", 8.2, INK, anchor="middle", cls="mono"))
+        els.append(f'<path d="M112,162 C156,142 226,142 270,162 L334,162 M112,184 C156,204 226,204 270,184 L334,184" fill="#fee2e2" stroke="{RED}" stroke-width="2.4"/>')
+        els.append(_line(116, 173, 328, 173, stroke=RED, sw=2.4, marker="arr-orange"))
+        els.append(txt(206, 144, "弹性纤维撑鼓（存下 ~2/3 能量！）", 8.3, RED_DARK, weight="700", anchor="middle", halo=True))
+        els.append(txt(46, 222, "• 约 1/3 血液当场往前流，2/3 把主动脉撑成储能皮球。", 8.6, BODY))
+
+        # Box 2: Diastole (Valve shuts, LV = 0 mmHg, Aorta recoils at 80 mmHg!)
+        els.append(card(34, 244, 324, 132, rx=10, fill=AMBER_SOFT, stroke=AMBER))
+        els.append(txt(46, 263, "② 舒张期（0.58 s）：左心室跌回 0，主动脉回弹推血！", 9.6, AMBER, weight="700"))
+        els.append(card(48, 280, 62, 44, rx=8, fill="#f1f5f9", stroke="#94a3b8"))
+        els.append(txt(79, 300, "左心室", 8.8, MUTED, weight="700", anchor="middle"))
+        els.append(txt(79, 314, "~5 mmHg", 8.2, MUTED, anchor="middle", cls="mono"))
+        # Closed semilunar gate!
+        els.append(_line(114, 282, 114, 322, stroke=INK, sw=3.2))
+        els.append(txt(120, 279, "瓣膜锁死", 8.2, INK, weight="700"))
+        # Recoiling pipe pushing forward!
+        els.append(f'<path d="M116,292 L334,292 M116,314 L334,314" fill="none" stroke="{AMBER}" stroke-width="2.4"/>')
+        els.append(_line(176, 274, 176, 289, stroke=AMBER, sw=2.0, marker="arr-orange"))
+        els.append(_line(176, 330, 176, 317, stroke=AMBER, sw=2.0, marker="arr-orange"))
+        els.append(_line(130, 303, 328, 303, stroke=AMBER, sw=2.4, marker="arr-orange"))
+        els.append(txt(256, 284, "管壁回弹挤血 ≥80 mmHg", 8.4, AMBER, weight="700", anchor="middle"))
+        els.append(txt(46, 349, "• 就像老式消防车风箱，把一顿一顿的脉动变成全身和", 8.6, BODY))
+        els.append(txt(46, 365, "  冠脉不间断的平稳水流，保住舒张压 80 mmHg！", 8.6, INK, weight="600"))
+
+        # Box 3: Stiffening arteries (Arteriosclerosis)
+        els.append(card(34, 386, 324, 104, rx=10, fill="#f8fafc", stroke=BORDER))
+        els.append(txt(46, 406, "⚠️ 如果主动脉变硬（动脉硬化）会发生什么？", 9.5, INK, weight="700"))
+        els.append(txt(46, 425, "• 收缩期硬管撑不开 → 高压硬生生飙到 160+ mmHg；", 8.7, BODY))
+        els.append(txt(46, 442, "• 舒张期无弹性回弹 → 低压掉到 65 mmHg 以下（冠脉缺血）；", 8.7, BODY))
+        els.append(txt(46, 459, "• 脉压差暴增（如 165/65），左心室每天顶着高阻苦撑肥厚！", 8.7, RED_DARK, weight="700"))
+
+        # Right Panel: Poiseuille R ~ 1/r^4 + Starling Capillary Filtration/Reabsorption
+        els.append(card(386, 68, 354, 436))
+        els.append(pill(400, 80, "微动脉四次方分流阀门 + 毛细血管斯塔灵进出账", fg=BLUE, bg=BLUE_SOFT, w=326, h=22, size=9.6))
+
+        # Box A: Poiseuille's Law & Cross-sectional velocity braking
+        els.append(card(400, 112, 326, 154, rx=10, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(412, 131, "A. 泊肃叶定律：微动脉半径缩一半，流阻暴涨 16 倍！", 9.6, BLUE, weight="700"))
+        els.append(txt(412, 150, "流阻 R = 8ηλ / (π r⁴)  —— 全身血压最大陡降段就在微动脉", 8.7, INK, weight="700", cls="mono"))
+        # Visual radius 2r vs r circles
+        els.append(f'<circle cx="458" cy="188" r="18" fill="#ffffff" stroke="{BLUE}" stroke-width="2.4"/>')
+        els.append(txt(458, 192, "半径 r", 8.6, BLUE, weight="700", anchor="middle"))
+        els.append(txt(458, 219, "正常流阻 1×", 8.4, BODY, anchor="middle"))
+
+        els.append(f'<circle cx="556" cy="188" r="9" fill="#ffffff" stroke="{RED}" stroke-width="2.4"/>')
+        els.append(txt(556, 219, "r/2 → 流阻 16×!", 8.5, RED, weight="700", anchor="middle"))
+
+        els.append(txt(612, 173, "• 内皮释放 NO(98诺奖)", 8.5, GREEN, weight="700"))
+        els.append(txt(612, 189, "  舒张平滑肌精准分流", 8.4, BODY))
+        els.append(txt(612, 205, "• 毛细血管总截面剧增", 8.5, INK, weight="600"))
+        els.append(txt(612, 221, "  流速刹至 0.05 cm/s!", 8.4, BLUE, weight="700"))
+        els.append(txt(412, 252, "跑步时骨骼肌微动脉扩开、胃肠收窄，5 升血永远优先救急！", 8.5, INK, weight="600"))
+
+        # Box B: Starling Capillary Filtration & Reabsorption
+        els.append(card(400, 276, 326, 214, rx=10, fill=TEAL_SOFT, stroke=TEAL))
+        els.append(txt(412, 295, "B. 毛细血管（宽仅 5–10 μm）：水怎么既出管又回管？", 9.6, TEAL, weight="700"))
+        # Capillary horizontal tube from arterial end (left) to venous end (right)
+        els.append(f'<rect x="418" y="336" width="290" height="36" rx="18" fill="#ffffff" stroke="{RED}" stroke-width="2.0" stroke-dasharray="5 3"/>')
+        els.append(txt(454, 326, "动脉端 CHP=35", 8.5, RED, weight="700", anchor="middle"))
+        els.append(txt(563, 326, "中点 CHP=25", 8.4, MUTED, anchor="middle"))
+        els.append(txt(670, 326, "静脉端 CHP=18", 8.5, BLUE, weight="700", anchor="middle"))
+        els.append(txt(563, 358, "血浆白蛋白胶体渗透压 BCOP ≈ 25 mmHg（全程拉水入管）", 8.3, INK, weight="600", anchor="middle"))
+
+        # Outward filtration arrows at arterial end (+10 mmHg)
+        els.append(_line(454, 372, 454, 400, stroke=RED, sw=2.2, marker="arr-orange"))
+        els.append(txt(462, 414, "净滤出 +10 mmHg", 8.5, RED, weight="700", anchor="middle"))
+        els.append(txt(462, 428, "(全天滤出 ~24 L)", 8.2, BODY, anchor="middle"))
+
+        # Inward reabsorption arrows at venous end (-7 mmHg)
+        els.append(_line(666, 400, 666, 374, stroke=BLUE, sw=2.2, marker="arr-blue"))
+        els.append(txt(660, 414, "净重吸收 −7 mmHg", 8.5, BLUE, weight="700", anchor="middle"))
+        els.append(txt(660, 428, "(吸回 ~20.4 L)", 8.2, BODY, anchor="middle"))
+
+        # Lymphatic return bar
+        els.append(card(414, 440, 298, 38, rx=8, fill="#ffffff", stroke=GREEN))
+        els.append(txt(563, 456, "剩余 3.6 L/天 组织液 → 盲端单向淋巴管回收 → 锁骨下静脉归队", 8.5, GREEN, weight="700", anchor="middle"))
+        els.append(txt(563, 471, "（久坐静脉压高 / 营养不良缺白蛋白 / 淋巴受阻 ⇒ 组织水肿！）", 8.2, BODY, anchor="middle"))
+
+        return figure(
+            520,
+            "主动脉风箱弹性回弹蓄压效应、微动脉泊肃叶四次方阻力调控与毛细血管斯塔灵滤过重吸收图解",
+            "左栏对比收缩期主动脉扩张储能与舒张期瓣膜关闭后管壁弹性回弹维持80 mmHg连续血流及动脉硬化脉压增宽机制；右栏展示泊肃叶定律（半径减半阻力增16倍）与毛细血管动脉端净滤出+10 mmHg（24 L/天）、静脉端白蛋白净重吸收-7 mmHg（20.4 L/天）及淋巴管每日回收3.6 L液体的平衡账本。",
+            els,
+        )
+
+    def _build_uphill_venous_return():
+        """SVG 5: Climbing 1.3m against ~95 mmHg hydrostatic column via calf pump + breath pump."""
+        # Hydrostatic column check: rho*g*h for blood (rho=1060 kg/m^3, g=9.81, h=1.30 m) -> ~13,518 Pa -> ~101.4 mmHg
+        rho_blood = 1060.0
+        h_leg_m = 1.25
+        dp_mmhg = (rho_blood * 9.80665 * h_leg_m) / 133.322
+        assert 92.0 <= dp_mmhg <= 102.0
+
+        els = []
+        els.extend(
+            header(
+                "脚底没有心脏，血液凭什么顶着 1.3 米重力爬回胸口？三大“回心梯”联手破局",
+                "体循环静脉常驻全身约 64% 血液｜双叶静脉瓣防倒流 + 小腿“第二心脏”骨骼肌泵 + 胸腹呼吸负压抽水泵",
+            )
+        )
+
+        # Column 1: Hydrostatic Gravity Challenge & 64% Venous Reservoir
+        els.append(card(20, 68, 226, 422))
+        els.append(pill(32, 80, "① 重力难题：97 mmHg 高墙", fg=RED, bg=RED_SOFT, w=202, h=22, size=9.6))
+
+        # Upright figure / column from RA (0 mmHg) down to ankle (+97 mmHg)
+        els.append(_line(74, 128, 74, 326, stroke=BLUE, sw=6.0))
+        els.append(f'<circle cx="74" cy="128" r="10" fill="{RED}"/>')
+        els.append(txt(92, 131, "右心房 ≈ 0–5 mmHg", 9.0, INK, weight="700"))
+        els.append(txt(92, 147, "（全系统最低压终点）", 8.3, MUTED))
+
+        els.append(_line(48, 132, 48, 322, stroke="#64748b", sw=1.3, dash="3 2"))
+        els.append(txt(44, 232, "1.25m", 8.5, BODY, anchor="end", cls="mono"))
+
+        els.append(txt(92, 214, "毛细血管出口仅剩", 8.8, BODY))
+        els.append(txt(92, 230, "约 15–18 mmHg 余压", 8.8, BLUE, weight="700"))
+
+        els.append(f'<circle cx="74" cy="326" r="8" fill="{BLUE}"/>')
+        els.append(txt(92, 322, "直立脚踝静水重力压", 8.8, RED, weight="700"))
+        els.append(txt(92, 338, "ρgh ≈ +97 mmHg!", 9.0, RED_DARK, weight="700", cls="mono"))
+
+        els.append(card(32, 358, 202, 118, rx=8, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(42, 377, "📦 静脉是全身最大“活水库”：", 9.2, BLUE, weight="700"))
+        els.append(txt(42, 395, "• 全身约 64% 血液驻留在薄壁静脉；", 8.5, BODY))
+        els.append(txt(42, 412, "• 若笔直站军姿锁死膝盖不动，血会", 8.5, BODY))
+        els.append(txt(42, 429, "  淤在下肢，回心血骤减致脑缺血晕倒", 8.5, BODY))
+        els.append(txt(42, 446, "  ——必须靠分级阀门把高墙拆矮！", 8.5, INK, weight="700"))
+
+        # Column 2: Calf Skeletal-Muscle Pump ("Second Heart") + Bicuspid Venous Valves
+        els.append(card(258, 68, 244, 422))
+        els.append(pill(270, 80, "② 小腿“第二心脏”：肌肉挤 + 单向瓣锁", fg=GREEN, bg=GREEN_SOFT, w=220, h=22, size=9.5))
+
+        # Left sub-state: Calf contracts (Step / Tiptoe)
+        els.append(txt(322, 120, "迈步/勾脚（收缩）", 9.0, GREEN, weight="700", anchor="middle"))
+        # Vein walls pinched in middle by bulging gastrocnemius muscles
+        els.append(f'<path d="M306,134 L306,182 Q316,222 306,262 L306,316" fill="none" stroke="{BLUE}" stroke-width="2.2"/>')
+        els.append(f'<path d="M338,134 L338,182 Q328,222 338,262 L338,316" fill="none" stroke="{BLUE}" stroke-width="2.2"/>')
+        # Bulging muscles squeezing inward
+        els.append(f'<path d="M286,184 Q306,222 286,260 Z" fill="#fed7aa" stroke="{ORANGE}" stroke-width="1.6"/>')
+        els.append(f'<path d="M358,184 Q338,222 358,260 Z" fill="#fed7aa" stroke="{ORANGE}" stroke-width="1.6"/>')
+        # Upper valve OPEN
+        els.append(_line(306, 168, 315, 152, stroke=GREEN, sw=2.4))
+        els.append(_line(338, 168, 329, 152, stroke=GREEN, sw=2.4))
+        els.append(_line(322, 236, 322, 138, stroke=GREEN, sw=2.4, marker="arr-green"))
+        # Lower valve SHUT!
+        els.append(_line(306, 286, 322, 274, stroke=RED, sw=2.6))
+        els.append(_line(338, 286, 322, 274, stroke=RED, sw=2.6))
+        els.append(txt(322, 332, "上阀冲开 · 下阀锁死", 8.4, INK, weight="700", anchor="middle"))
+
+        # Right sub-state: Calf relaxes (Segmented column held aloft!)
+        els.append(txt(440, 120, "落地放松（接力吸）", 9.0, BLUE, weight="700", anchor="middle"))
+        els.append(_line(422, 134, 422, 316, stroke=BLUE, sw=2.2))
+        els.append(_line(458, 134, 458, 316, stroke=BLUE, sw=2.2))
+        # Upper valve SHUT holding upper blood column!
+        els.append(_line(422, 168, 440, 156, stroke=RED, sw=2.6))
+        els.append(_line(458, 168, 440, 156, stroke=RED, sw=2.6))
+        els.append(txt(440, 148, "上阀托住不掉", 8.2, RED, weight="700", anchor="middle"))
+        # Lower valve OPEN sucking from foot!
+        els.append(_line(422, 286, 432, 268, stroke=GREEN, sw=2.4))
+        els.append(_line(458, 286, 448, 268, stroke=GREEN, sw=2.4))
+        els.append(_line(440, 314, 440, 250, stroke=BLUE, sw=2.2, marker="arr-blue"))
+        els.append(txt(440, 332, "上阀托血 · 下阀进新血", 8.4, BLUE, weight="700", anchor="middle"))
+
+        els.append(card(270, 358, 220, 118, rx=8, fill="#f8fafc", stroke=BORDER))
+        els.append(txt(280, 377, "✈️ 生活保命锦囊：", 9.2, ORANGE, weight="700"))
+        els.append(txt(280, 395, "• 长途飞机/久坐每半小时做“踝泵”（用", 8.5, BODY))
+        els.append(txt(280, 412, "  力勾脚尖+绷脚尖），预防深静脉血栓；", 8.5, BODY))
+        els.append(txt(280, 429, "• 静脉瓣若松弛关不严，血液倒灌撑歪", 8.5, BODY))
+        els.append(txt(280, 446, "  浅静脉，就是蚯蚓状“下肢静脉曲张”！", 8.5, RED_DARK, weight="700"))
+
+        # Column 3: Respiratory Thoracic-Abdominal Suction Pump + Frank-Starling Balance
+        els.append(card(514, 68, 226, 422))
+        els.append(pill(526, 80, "③ 胸腹呼吸泵 + 自动配平", fg=PURPLE, bg=PURPLE_SOFT, w=202, h=22, size=9.6))
+
+        # Thoracic vs Abdominal cavity diagram during Inhalation
+        els.append(card(532, 116, 190, 96, rx=12, fill=PURPLE_SOFT, stroke=PURPLE))
+        els.append(txt(638, 136, "吸气时：胸腔扩容 → 负压！", 9.0, PURPLE, weight="700", anchor="middle"))
+        els.append(txt(638, 154, "胸静脉被“吸开”拉血入右房", 8.3, BODY, anchor="middle"))
+        # Diaphragm dome pressing down
+        els.append(f'<path d="M538,200 Q627,178 716,200" fill="none" stroke="{RED}" stroke-width="3.0"/>')
+        els.append(_line(638, 186, 638, 208, stroke=RED, sw=2.0, marker="arr-orange"))
+        els.append(txt(676, 184, "膈肌下压", 8.2, RED, weight="700"))
+
+        els.append(card(532, 220, 190, 74, rx=12, fill=AMBER_SOFT, stroke=AMBER))
+        els.append(txt(638, 242, "腹腔增压 → 推腹静脉向上！", 8.8, AMBER, weight="700", anchor="middle"))
+        els.append(txt(638, 260, "（下肢静脉瓣挡住不许退）", 8.2, BODY, anchor="middle"))
+        # Central IVC upward flow arrow in dedicated left lane x=546
+        els.append(_line(546, 284, 546, 132, stroke=BLUE, sw=3.2, marker="arr-blue"))
+
+        # Bottom Box: Frank-Starling Law (Why left & right pumps never drift out of sync!)
+        els.append(card(526, 308, 202, 168, rx=8, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(536, 327, "⚖️ 终极追问：左右心室每次哪怕差", 8.9, GREEN, weight="700"))
+        els.append(txt(536, 343, "1 mL，几分钟肺不就被灌爆了吗？", 8.9, GREEN, weight="700"))
+        els.append(txt(536, 363, "靠“弗兰克-斯塔灵定律”自动纠偏：", 8.7, INK, weight="700"))
+        els.append(txt(536, 381, "• 回心血多 1 mL → 把心肌肌节拉得", 8.5, BODY))
+        els.append(txt(536, 398, "  更接近最佳重叠长度（像拉满弹弓）", 8.5, BODY))
+        els.append(txt(536, 415, "  → 下一拍自动收缩更猛，多射出那", 8.5, BODY))
+        els.append(txt(536, 432, "  1 mL！无需大脑算账，纯靠肌纤维", 8.5, BODY))
+        els.append(txt(536, 449, "  物理弹性实时把左右流量锁成1:1！", 8.5, INK, weight="700"))
+
+        return figure(
+            506,
+            "下肢静脉克服1.25米重力回流心脏的三大机制：双叶静脉瓣、小腿骨骼肌泵、胸腹呼吸泵与斯塔灵平衡定律图解",
+            "左栏计算直立时心脏至脚踝约97 mmHg静水重力压挑战与体循环静脉储存64%血量特性；中栏展示小腿肌肉收缩冲开上瓣锁死下瓣、放松时上瓣托住血柱分段提水及预防经济舱血栓与静脉曲张的原理；右栏图解吸气膈肌下降形成上吸下推的呼吸泵及弗兰克-斯塔灵定律自动平衡左右心输出量的机制。",
+            els,
+        )
+
+    @register(
+        "heart-blood-circulation",
+        "心脏血液循环流动原理五步全图解：四腔双泵与四扇压差单向门动画、0.8秒威格斯压力容积与心音、窦房结0.1秒延迟与心尖向上挤牙膏及防抽筋平台期、主动脉风箱回弹与微血管斯塔灵交换及小腿呼吸回心泵",
+        "science_tech",
+    )
+    def build_heart_blood_circulation():
+        write_svg(SUBDIR, "four-chambers-and-four-check-valves.svg", _build_four_chambers_and_valves())
+        write_svg(SUBDIR, "cardiac-cycle-08s-wiggers-pressure.svg", _build_wiggers_cardiac_cycle())
+        write_svg(SUBDIR, "electrical-pacemaker-av-delay-ecg.svg", _build_pacemaker_av_delay_ecg())
+        write_svg(SUBDIR, "windkessel-aorta-and-poiseuille-microvessels.svg", _build_windkessel_and_microvessels())
+        write_svg(SUBDIR, "uphill-venous-return-calf-and-breath-pump.svg", _build_uphill_venous_return())
+
+
+_register_heart_blood_circulation()
+
+
+def _register_human_gestation():
+    SUBDIR = "human-gestation"
+
+    def _build_fertilization_cleavage_hatching():
+        # Numerical assertion: cleavage from 1 -> ~100 cells preserves outer zona diameter (~0.12 mm)
+        zona_diam_mm = [0.12, 0.12, 0.12, 0.12, 0.12]
+        assert max(zona_diam_mm) == min(zona_diam_mm) == 0.12
+
+        els = []
+        els.extend(header(
+            "从两亿选一到破壳着床：双保险防多精锁与“只切蛋糕不长个”的七天漂流",
+            "先看上栏输卵管到子宫的 7 天接力路径与单次漂流微粒，再看左下毫秒/秒级双重锁门与右下破壳分工机制",
+        ))
+
+        # Top wide card: 7-day Fallopian tube -> Uterus journey + cleavage without volume growth
+        els.append(card(16, 66, 728, 224))
+        els.append(txt(30, 88, "第一幕：输卵管壶腹部受精 → 等体积卵裂（外径死守 ~0.12 mm）→ 第 6–7 天破壳着床", 11.4, INK, weight="700"))
+
+        # Stylized ovary -> Fallopian ampulla -> Fallopian isthmus -> Uterine fundus
+        els.append('<ellipse cx="64" cy="232" rx="26" ry="17" fill="#fef3c7" stroke="#d97706" stroke-width="1.6"/>')
+        els.append(txt(64, 235, "卵巢排卵", 8.6, "#92400e", weight="700", anchor="middle"))
+        els.append(
+            '<path d="M 52 206 C 46 144, 118 114, 230 118 C 350 122, 446 128, 534 142" '
+            'fill="none" stroke="#fed7aa" stroke-width="32" stroke-linecap="round"/>'
+        )
+        els.append(
+            '<path d="M 52 206 C 46 144, 118 114, 230 118 C 350 122, 446 128, 534 142" '
+            'fill="none" stroke="#ea580c" stroke-width="1.3" stroke-dasharray="4 3" opacity="0.55"/>'
+        )
+        # Uterine wall / fundus on right
+        els.append(
+            '<path d="M 522 108 L 718 108 C 726 108, 730 114, 730 122 L 730 266 C 730 274, 724 278, 716 278 '
+            'L 544 278 C 532 278, 526 268, 526 254 L 526 168" fill="#fce7f3" stroke="#be185d" stroke-width="1.8"/>'
+        )
+        els.append(
+            '<rect x="544" y="120" width="174" height="146" rx="10" fill="#fbcfe8" stroke="#db2777" stroke-width="1.2" stroke-dasharray="3 2"/>'
+        )
+        els.append(txt(631, 138, "子宫底松软内膜（蜕膜床）", 9.0, "#9d174d", weight="700", anchor="middle"))
+
+        # Stage markers along the path (all conceptus circles stay SAME outer radius r=14.5 until hatching!)
+        stages = [
+            (116, 132, "Day 0", "受精卵(1)", "0.12 mm"),
+            (212, 122, "Day 1.5", "2细胞期", "0.12 mm"),
+            (308, 124, "Day 2.5", "4–8细胞", "0.12 mm"),
+            (404, 130, "Day 4", "桑椹胚(16+)", "0.12 mm"),
+            (498, 140, "Day 5", "囊胚(~100)", "0.12 mm"),
+        ]
+        for idx, (cx, cy, day_lbl, name_lbl, sz_lbl) in enumerate(stages):
+            els.append(f'<circle cx="{cx}" cy="{cy}" r="14.5" fill="#ffffff" stroke="{BLUE}" stroke-width="2.0"/>')
+            if idx == 0:
+                els.append(f'<circle cx="{cx-3}" cy="{cy}" r="4.2" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.2"/>')
+                els.append(f'<circle cx="{cx+4}" cy="{cy}" r="4.2" fill="{ORANGE_SOFT}" stroke="{ORANGE}" stroke-width="1.2"/>')
+            elif idx == 1:
+                els.append(f'<circle cx="{cx-5}" cy="{cy}" r="6.0" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.1"/>')
+                els.append(f'<circle cx="{cx+5}" cy="{cy}" r="6.0" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.1"/>')
+            elif idx == 2:
+                for dx, dy in ((-4.2, -4.2), (4.2, -4.2), (-4.2, 4.2), (4.2, 4.2)):
+                    els.append(f'<circle cx="{cx+dx}" cy="{cy+dy}" r="4.1" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.0"/>')
+            elif idx == 3:
+                for dx, dy in ((-5, -5), (0, -5.5), (5, -5), (-5.5, 0), (0, 0), (5.5, 0), (-4, 5), (4, 5)):
+                    els.append(f'<circle cx="{cx+dx}" cy="{cy+dy}" r="3.0" fill="#dbeafe" stroke="{BLUE}" stroke-width="0.9"/>')
+            else:
+                els.append(f'<circle cx="{cx}" cy="{cy}" r="11.0" fill="#eff6ff" stroke="{PURPLE}" stroke-width="1.2"/>')
+                els.append(f'<circle cx="{cx-3.5}" cy="{cy-2.5}" r="4.5" fill="{ORANGE}" opacity="0.88"/>')
+            els.append(txt(cx, cy + 28, day_lbl, 8.5, ORANGE, weight="700", anchor="middle"))
+            els.append(txt(cx, cy + 43, name_lbl, 8.5, INK, weight="600", anchor="middle"))
+            els.append(txt(cx, cy + 57, sz_lbl, 8.1, MUTED, anchor="middle"))
+
+        # Day 6 Hatching + Day 7-10 Implantation inside uterus
+        els.append('<path d="M 572 167 A 13 13 0 1 0 572 189" fill="none" stroke="#64748b" stroke-width="2" stroke-dasharray="3 2"/>')
+        els.append(f'<circle cx="593" cy="178" r="12.5" fill="#ede9fe" stroke="{PURPLE}" stroke-width="1.8"/>')
+        els.append(f'<circle cx="596" cy="176" r="4.8" fill="{ORANGE}"/>')
+        els.append(txt(586, 208, "Day 6 破壳", 8.4, PURPLE, weight="700", anchor="middle"))
+
+        els.append(f'<circle cx="674" cy="178" r="15" fill="#ddd6fe" stroke="{PURPLE}" stroke-width="2.0"/>')
+        els.append(f'<circle cx="678" cy="178" r="6" fill="{ORANGE}"/>')
+        els.append(txt(674, 208, "Day 7–10 着床", 8.4, "#9d174d", weight="700", anchor="middle"))
+        els.append(txt(631, 248, "分泌 hCG 保住黄体（早孕试纸测它!）", 8.5, "#9d174d", weight="700", anchor="middle"))
+
+        # Bottom note inside top card explaining constant-volume cleavage
+        els.append(card(116, 206, 396, 70, rx=8, fill=BLUE_SOFT, stroke=BLUE_LINE))
+        els.append(txt(128, 225, "🔍 为什么连切 5–6 刀（1 → 100 细胞），外径却一丝不涨？", 9.0, BLUE, weight="700"))
+        els.append(txt(128, 243, "外层坚韧“透明带”像硬蛋壳箍住胚胎：既防途中卡在狭窄输卵管引发宫外孕，", 8.4, BODY))
+        els.append(txt(128, 260, "又省去细胞生长耗时，全靠卵子自带营养库存高速分裂，进宫后再破壳着床！", 8.4, BODY))
+
+        # One-shot accessible animation along cleavage -> implantation path
+        els.append("""<style>
+          @keyframes zygote-journey {
+            0% { offset-distance: 0%; opacity: 0.95; }
+            88% { offset-distance: 100%; opacity: 0.95; }
+            100% { offset-distance: 100%; opacity: 0; }
+          }
+          .zygote-runner {
+            offset-path: path('M 116 132 C 170 122, 260 122, 358 127 C 446 132, 540 154, 674 178');
+            animation: zygote-journey 6.5s ease-in-out 1 forwards;
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .zygote-runner { animation: none; opacity: 0; }
+          }
+        </style>""")
+        els.append('<g class="zygote-runner"><circle cx="0" cy="0" r="6.2" fill="#ea580c" stroke="#ffffff" stroke-width="1.8"/></g>')
+
+        # Bottom-left card: Why first sperm doesn't win + Double Polyspermy Lock
+        els.append(card(16, 304, 356, 198))
+        els.append(txt(30, 326, "第二幕：团队凿墙与“毫秒电锁 + 秒级水泥门”", 11.0, INK, weight="700"))
+
+        els.append('<path d="M 40 426 Q 112 368 184 426" fill="#fef9c3" stroke="#ca8a04" stroke-width="2.2"/>')
+        els.append('<path d="M 34 410 Q 112 348 190 410" fill="none" stroke="#93c5fd" stroke-width="7" opacity="0.65"/>')
+        els.append(txt(112, 402, "外层：透明带铠甲", 8.2, BLUE, weight="700", anchor="middle"))
+        els.append(txt(112, 424, "内层：卵细胞膜(23条)", 8.3, "#854d0e", weight="700", anchor="middle"))
+        els.append(f'<circle cx="112" cy="382" r="4.8" fill="{ORANGE}"/>')
+        els.append(f'<path d="M 112 348 L 112 376" stroke="{ORANGE}" stroke-width="2"/>')
+        els.append(txt(112, 342, "获能融合精子(仅1颗)", 8.4, ORANGE, weight="700", anchor="middle"))
+        for bx, by in ((54, 376), (170, 376)):
+            els.append(f'<circle cx="{bx}" cy="{by}" r="3.8" fill="#94a3b8"/>')
+            els.append(txt(bx, by - 10, "✕弹开", 8.1, "#dc2626", weight="700", anchor="middle"))
+
+        els.append(card(200, 340, 158, 70, rx=7, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(209, 358, "① 快阻断（毫秒级电锁）", 8.7, ORANGE, weight="700"))
+        els.append(txt(209, 375, "融合瞬间 Na+ 涌入使卵膜去", 8.3, BODY))
+        els.append(txt(209, 392, "极化反转电位，守门约 1 分钟", 8.3, BODY))
+
+        els.append(card(200, 418, 158, 72, rx=7, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(209, 436, "② 慢阻断（皮质反应水泥门）", 8.7, GREEN, weight="700"))
+        els.append(txt(209, 453, "Ca2+ 波触发皮质颗粒吐酶，剪", 8.3, BODY))
+        els.append(txt(209, 470, "断全部受体并硬化成受精膜！", 8.3, BODY))
+
+        els.append(txt(30, 446, "• 数百精子顶体酶接力溶穿放射冠", 8.4, BODY))
+        els.append(txt(30, 464, "• 杜绝多精三倍体(69条染色体致死)", 8.4, INK, weight="700"))
+        els.append(txt(30, 482, "• 融合后卵子才排第二极体成合子", 8.4, MUTED))
+
+        # Bottom-right card: Blastocyst division of labor + Twins timing
+        els.append(card(388, 304, 356, 198))
+        els.append(txt(402, 326, "第三幕：囊胚首次分工与双胞胎“分家时刻表”", 11.0, INK, weight="700"))
+
+        els.append(f'<circle cx="456" cy="398" r="42" fill="#eff6ff" stroke="{PURPLE}" stroke-width="3.0"/>')
+        for dx, dy in ((-11, -18), (0, -21), (11, -18), (-5.5, -10), (5.5, -10)):
+            els.append(f'<circle cx="{456+dx}" cy="{398+dy}" r="7.0" fill="{ORANGE}" stroke="#ffffff" stroke-width="1"/>')
+        els.append(txt(456, 410, "囊胚腔(液)", 8.5, BLUE, weight="600", anchor="middle"))
+        els.append(txt(456, 458, "外圈滋养层 → 胎盘", 8.5, PURPLE, weight="700", anchor="middle"))
+        els.append(txt(456, 476, "内细胞团 → 胎儿本体", 8.5, ORANGE, weight="700", anchor="middle"))
+
+        els.append(card(520, 340, 210, 70, rx=7, fill="#f8fafc", stroke=HAIRLINE))
+        els.append(txt(530, 358, "异卵双胞胎（约占排卵周期 1%）", 8.7, BLUE, weight="700"))
+        els.append(txt(530, 375, "同时排 2 颗卵 + 2 颗精子各自受精：", 8.3, BODY))
+        els.append(txt(530, 392, "基因像普通兄妹，各自拥有独立胎盘。", 8.3, BODY))
+
+        els.append(card(520, 418, 210, 72, rx=7, fill=PURPLE_SOFT, stroke=PURPLE))
+        els.append(txt(530, 436, "同卵双胞胎（1 颗受精卵半路分家）", 8.7, PURPLE, weight="700"))
+        els.append(txt(530, 453, "• 2细胞期早分家 → 各自独立双胎盘；", 8.3, BODY))
+        els.append(txt(530, 470, "• 囊胚期分内细胞团 → 共用一个胎盘!", 8.3, INK, weight="700"))
+
+        return figure(
+            518,
+            "人类受精双保险锁、等体积卵裂与囊胚破壳着床七天全过程图解",
+            "上栏展示受精卵从输卵管壶腹部经历2细胞、4-8细胞、桑椹胚到囊胚保持约0.12毫米恒定外径漂流，第6天破透明带孵化并在子宫底内膜着床分泌hCG的过程（含单次运动轨迹）；左下解析获能精子接力顶体反应及钠离子快阻断与钙波皮质慢阻断双重防多精机制；右下展示囊胚内细胞团与滋养层分工及双胞胎分家节点。",
+            els,
+        )
+
+    def _build_gastrulation_and_organogenesis():
+        els = []
+        els.extend(header(
+            "从扁圆盘“折纸”造出人形：三胚层大搬家、28天神经管拉链与凋亡雕五指",
+            "先看上栏第 3 周原肠胚三胚层分化总账，再看下栏第 4–8 周三大形态工程（神经管闭合、22天心跳、手板雕指）",
+        ))
+
+        els.append(card(16, 66, 728, 200))
+        els.append(txt(30, 88, "第 3 周（原肠胚形成）：上胚层细胞顺“原条”向下潜入，叠出决定全身器官命运的三张母板", 11.2, INK, weight="700"))
+
+        els.append(card(30, 102, 256, 150, rx=8, fill="#f8fafc", stroke=HAIRLINE))
+        els.append(txt(158, 120, "原条沟潜入剖面（长仅 ~2 mm）", 8.9, INK, weight="700", anchor="middle"))
+        els.append(
+            f'<path d="M 48 152 L 136 152 Q 158 172 180 152 L 268 152" fill="none" stroke="{BLUE}" stroke-width="6.5" stroke-linecap="round"/>'
+        )
+        els.append(
+            f'<path d="M 52 188 L 138 188 M 178 188 L 264 188" stroke="{ORANGE}" stroke-width="6.5" stroke-linecap="round"/>'
+        )
+        els.append(f'<circle cx="158" cy="188" r="5.8" fill="{ORANGE}"/>')
+        els.append(
+            f'<path d="M 48 216 L 268 216" stroke="{GREEN}" stroke-width="6.5" stroke-linecap="round"/>'
+        )
+        els.append('<path d="M 154 160 Q 142 176 114 182" fill="none" stroke="#c25014" stroke-width="1.6" marker-end="url(#arr-orange)"/>')
+        els.append('<path d="M 162 160 Q 174 176 202 182" fill="none" stroke="#c25014" stroke-width="1.6" marker-end="url(#arr-orange)"/>')
+        els.append(txt(86, 141, "外胚层(留守)", 8.4, BLUE, weight="700", anchor="middle"))
+        els.append(txt(224, 176, "中胚层(铺开)", 8.4, ORANGE, weight="700", anchor="middle"))
+        els.append(txt(158, 238, "内胚层(衬里) · 圆点=脊索诱导器", 8.2, GREEN, weight="700", anchor="middle"))
+
+        rows = [
+            (300, 102, BLUE_SOFT, BLUE, "① 外胚层（最外层“感知与铠甲”）", "向内卷成大脑、脊髓、视网膜与外周神经；向外包成表皮、头发与指甲（脑与皮肤同宗！）"),
+            (300, 152, ORANGE_SOFT, ORANGE, "② 中胚层（中间层“动力与支架”）", "长出最先起跳的心脏、全身血管与血细胞、骨骼、骨骼肌与平滑肌、肾脏及生殖腺支架"),
+            (300, 202, GREEN_SOFT, GREEN, "③ 内胚层（最内层“消化与呼吸内衬”）", "卷成原始肠管内壁，分化出气管支气管与肺泡上皮、胃肠黏膜、肝脏、胆囊与胰腺"),
+        ]
+        for rx, ry, rfill, rstroke, rtitle, rdesc in rows:
+            els.append(card(rx, ry, 428, 44, rx=7, fill=rfill, stroke=rstroke))
+            els.append(txt(rx + 12, ry + 18, rtitle, 9.0, rstroke, weight="700"))
+            els.append(txt(rx + 12, ry + 35, rdesc, 8.3, BODY))
+
+        # Bottom 3 cards
+        els.append(card(16, 282, 234, 224))
+        els.append(txt(28, 304, "① 第 4 周：神经板卷管拉链", 10.4, BLUE, weight="700"))
+        els.append('<path d="M 40 338 L 86 338" stroke="#1d6fa5" stroke-width="5" stroke-linecap="round"/>')
+        els.append(txt(63, 358, "神经板", 8.2, MUTED, anchor="middle"))
+        els.append('<path d="M 112 326 Q 130 354 148 326" fill="none" stroke="#1d6fa5" stroke-width="5" stroke-linecap="round"/>')
+        els.append(txt(130, 358, "神经褶", 8.2, MUTED, anchor="middle"))
+        els.append(f'<circle cx="200" cy="334" r="12" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="4.2"/>')
+        els.append(txt(200, 362, "Day 28闭管", 8.2, BLUE, weight="700", anchor="middle"))
+        els.append('<path d="M 90 336 L 106 336" stroke="#64748b" stroke-width="1.4" marker-end="url(#arr-blue)"/>')
+        els.append('<path d="M 154 336 L 176 336" stroke="#64748b" stroke-width="1.4" marker-end="url(#arr-blue)"/>')
+
+        els.append(card(28, 376, 210, 116, rx=7, fill=BLUE_SOFT, stroke=BLUE_LINE))
+        els.append(txt(38, 395, "⚠️ 为什么备孕前就要补叶酸？", 8.8, BLUE, weight="700"))
+        els.append(txt(38, 413, "• 神经管在受精第 28 天（刚停经约", 8.3, BODY))
+        els.append(txt(38, 430, "  两周）就必须彻底拉上拉链！", 8.3, BODY))
+        els.append(txt(38, 447, "• 此时常刚测出怀孕；若缺维生素B9", 8.3, BODY))
+        els.append(txt(38, 464, "  (叶酸)，拉链卡壳易致脊柱裂。", 8.3, INK, weight="700"))
+
+        els.append(card(263, 282, 234, 224))
+        els.append(txt(275, 304, "② 第 22 天：芝麻大胚胎起跳", 10.4, ORANGE, weight="700"))
+        els.append(
+            '<path d="M 344 320 C 314 320, 304 352, 326 366 C 344 378, 382 376, 398 356 C 406 342, 394 322, 372 324" '
+            'fill="#ffedd5" stroke="#ea580c" stroke-width="2"/>'
+        )
+        els.append('<circle cx="352" cy="348" r="8.5" fill="#ef4444" stroke="#ffffff" stroke-width="1.4"/>')
+        els.append(txt(352, 351, "♥", 9.0, "#ffffff", weight="700", anchor="middle"))
+        els.append(txt(444, 340, "仅 2–3 mm", 8.5, ORANGE, weight="700", anchor="middle"))
+        els.append(txt(444, 357, "双心管融合", 8.3, MUTED, anchor="middle"))
+
+        els.append(card(275, 376, 210, 116, rx=7, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(285, 395, "折纸卷筒 + 最早完工的动力泵", 8.8, ORANGE, weight="700"))
+        els.append(txt(285, 413, "• 扁胚盘向腹侧卷成 C 形圆筒，把", 8.3, BODY))
+        els.append(txt(285, 430, "  内胚层裹在腹中变成原始肠管；", 8.3, BODY))
+        els.append(txt(285, 447, "• 受精第 21–22 天心管自发搏动，", 8.3, BODY))
+        els.append(txt(285, 464, "  第8周末(3cm/8g)齐备全部器官雏形!", 8.2, INK, weight="700"))
+
+        els.append(card(510, 282, 234, 224))
+        els.append(txt(522, 304, "③ 第 6–8 周：“自杀”雕出五指", 10.4, GREEN, weight="700"))
+        els.append('<circle cx="564" cy="342" r="16" fill="#dcfce7" stroke="#16a34a" stroke-width="1.8"/>')
+        els.append(txt(564, 371, "桨状手板", 8.2, MUTED, anchor="middle"))
+        els.append('<path d="M 590 342 L 616 342" stroke="#18794e" stroke-width="1.6" marker-end="url(#arr-green)"/>')
+        els.append('<circle cx="668" cy="348" r="11" fill="#dcfce7" stroke="#16a34a" stroke-width="1.6"/>')
+        for ang_x, ang_y in ((651, 333), (659, 326), (668, 323), (677, 326), (685, 334)):
+            els.append(f'<line x1="668" y1="345" x2="{ang_x}" y2="{ang_y}" stroke="#16a34a" stroke-width="4.0" stroke-linecap="round"/>')
+        for wx, wy in ((655, 331), (663, 326), (673, 326), (681, 331)):
+            els.append(f'<circle cx="{wx}" cy="{wy}" r="1.8" fill="#dc2626"/>')
+        els.append(txt(668, 371, "指蹼凋亡散开", 8.2, GREEN, weight="700", anchor="middle"))
+
+        els.append(card(522, 376, 210, 116, rx=7, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(532, 395, "手指不是像树杈硬往外长出来的", 8.8, GREEN, weight="700"))
+        els.append(txt(532, 413, "• 四肢先长成连成一片的扁平小鸭蹼；", 8.3, BODY))
+        els.append(txt(532, 430, "• 指缝细胞启动“程序性细胞凋亡”", 8.3, BODY))
+        els.append(txt(532, 447, "  主动退场，像玉雕镂空刻出五指", 8.3, BODY))
+        els.append(txt(532, 464, "  （退场不全即形成先天性并指）。", 8.3, INK, weight="700"))
+
+        return figure(
+            522,
+            "人类胚胎第3至8周三胚层分化、神经管闭合、22天原始心跳与细胞凋亡雕出五指图解",
+            "上栏展示第3周原肠胚细胞沿原条潜入形成外胚层、中胚层与内胚层及其对应的全身器官谱系；下栏分三卡展示第4周神经板卷折并在第28天闭合为神经管（解释叶酸窗口期）、第21至22天2-3毫米胚胎原始心管起跳，以及第6至8周手板通过程序性细胞凋亡雕出五根独立手指。",
+            els,
+        )
+
+    def _build_placenta_and_fetal_hemoglobin():
+        els = []
+        els.extend(header(
+            "母婴血液终身不混流，氧气怎么抢过来？绒毛膜隔墙集市与胎儿血红蛋白外挂",
+            "左看胎盘“珊瑚树泡血池”隔膜交换与一静两动脐带；右看实算胎儿 HbF 左移曲线如何在低氧压下跨膜夺氧",
+        ))
+
+        els.append(card(16, 66, 370, 414))
+        els.append(txt(30, 88, "胎盘绒毛间隙：隔着细胞薄墙交换，红细胞绝不过界", 10.6, INK, weight="700"))
+
+        els.append('<rect x="30" y="104" width="76" height="222" rx="8" fill="#fce7f3" stroke="#db2777" stroke-width="1.5"/>')
+        els.append(txt(68, 124, "母体蜕膜层", 8.4, "#9d174d", weight="700", anchor="middle"))
+        els.append('<path d="M 48 152 C 70 146, 84 160, 114 156" fill="none" stroke="#dc2626" stroke-width="3.8" marker-end="url(#arr-orange)"/>')
+        els.append(txt(68, 176, "螺旋动脉喷入", 8.1, "#b91c1c", weight="700", anchor="middle"))
+        els.append(txt(68, 191, "PO2≈35–50", 8.0, "#b91c1c", anchor="middle"))
+        els.append('<path d="M 114 266 L 54 266" fill="none" stroke="#1d6fa5" stroke-width="3.4" marker-end="url(#arr-blue)"/>')
+        els.append(txt(68, 288, "子宫静脉回收", 8.1, BLUE, weight="700", anchor="middle"))
+        els.append(txt(68, 303, "胎儿代谢废物", 8.0, MUTED, anchor="middle"))
+
+        els.append('<rect x="108" y="104" width="150" height="222" rx="10" fill="#fff1f2" stroke="#fda4af" stroke-width="1.5"/>')
+        els.append(txt(183, 122, "绒毛间隙（母血池）", 8.6, "#be123c", weight="700", anchor="middle"))
+
+        els.append('<rect x="252" y="104" width="18" height="222" rx="4" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.4"/>')
+        for vy in (166, 254):
+            els.append(
+                f'<path d="M 252 {vy-21} L 164 {vy-21} A 21 21 0 0 0 164 {vy+21} L 252 {vy+21}" '
+                f'fill="#ffffff" stroke="{PURPLE}" stroke-width="2.8"/>'
+            )
+            els.append(f'<path d="M 252 {vy-8} L 170 {vy-8}" stroke="{BLUE}" stroke-width="2.5"/>')
+            els.append(f'<path d="M 170 {vy-8} A 8 8 0 0 0 170 {vy+8}" fill="none" stroke="#9333ea" stroke-width="2.5"/>')
+            els.append(f'<path d="M 170 {vy+8} L 252 {vy+8}" stroke="#dc2626" stroke-width="2.6"/>')
+        els.append(txt(198, 214, "紫边=绒毛膜细胞屏障", 8.2, PURPLE, weight="700", anchor="middle"))
+
+        els.append('<rect x="272" y="154" width="100" height="122" rx="14" fill="#ecfeff" stroke="#0891b2" stroke-width="1.6"/>')
+        els.append(txt(322, 173, "脐带(华通氏胶)", 8.2, "#0e7490", weight="700", anchor="middle"))
+        els.append('<path d="M 278 202 L 364 202" stroke="#dc2626" stroke-width="4.6" marker-end="url(#arr-orange)"/>')
+        els.append(txt(322, 193, "1条脐静脉(富氧!)", 8.0, "#b91c1c", weight="700", anchor="middle"))
+        els.append('<path d="M 364 236 L 280 236" stroke="#1d6fa5" stroke-width="3.0" marker-end="url(#arr-blue)"/>')
+        els.append('<path d="M 364 250 L 280 250" stroke="#1d6fa5" stroke-width="3.0" marker-end="url(#arr-blue)"/>')
+        els.append(txt(322, 266, "2条脐动脉(缺氧)", 8.0, BLUE, weight="700", anchor="middle"))
+
+        els.append(card(30, 338, 342, 128, rx=8, fill="#f8fafc", stroke=HAIRLINE))
+        els.append(txt(40, 357, "✅ 获准过墙：O2/CO2(扩散)、葡萄糖(易化)、氨基酸/铁/钙", 8.4, GREEN, weight="700"))
+        els.append(txt(40, 374, "   (主动转运!)、母体 IgG 抗体(赠予新生儿半年被动免疫力)", 8.3, BODY))
+        els.append(txt(40, 394, "🛑 严禁过墙：母婴红细胞与母体杀伤性 T 细胞（即使母 A 型", 8.4, BLUE, weight="700"))
+        els.append(txt(40, 411, "   子 B 型也绝不凝集，更阻止母体免疫系统攻击胎儿！）", 8.3, BODY))
+        els.append(txt(40, 431, "⚠️ 危险漏网：酒精、尼古丁、部分脂溶性药物与风疹病毒可穿", 8.3, ORANGE, weight="700"))
+        els.append(txt(40, 448, "   透屏障致畸——胎盘是分子筛关卡，并非绝对防弹衣。", 8.3, BODY))
+
+        # Right card: Computed Hill Oxygen-Hemoglobin Dissociation Curve (HbF vs HbA)
+        els.append(card(400, 66, 344, 414))
+        els.append(txt(414, 88, "实算氧解离曲线：胎儿 HbF 凭什么跨膜“虎口夺氧”？", 10.6, INK, weight="700"))
+        els.append(txt(446, 108, "血氧饱和度 SO2 (%)", 8.4, MUTED, weight="600"))
+
+        px0, px1 = 448.0, 724.0
+        py0, py1 = 296.0, 120.0
+
+        def map_pt(po2, sat):
+            return px0 + (po2 / 100.0) * (px1 - px0), py0 - (sat / 100.0) * (py0 - py1)
+
+        wx0, _ = map_pt(20, 0)
+        wx1, _ = map_pt(42, 0)
+        els.append(f'<rect x="{wx0:.1f}" y="{py1:.1f}" width="{wx1-wx0:.1f}" height="{py0-py1:.1f}" fill="#fef3c7" opacity="0.72"/>')
+        els.append(txt((wx0 + wx1) / 2, py1 + 14, "胎盘工作区", 8.1, "#b45309", weight="700", anchor="middle"))
+
+        for g_s in (0, 25, 50, 75, 100):
+            _, gy = map_pt(0, g_s)
+            els.append(f'<line x1="{px0}" y1="{gy:.1f}" x2="{px1}" y2="{gy:.1f}" stroke="#e2e8f0" stroke-width="1"/>')
+            els.append(txt(px0 - 6, gy + 3, f"{g_s}%", 8.1, MUTED, anchor="end"))
+        for g_p in (0, 20, 40, 60, 80, 100):
+            gx, _ = map_pt(g_p, 0)
+            els.append(f'<line x1="{gx:.1f}" y1="{py1}" x2="{gx:.1f}" y2="{py0}" stroke="#f1f5f9" stroke-width="1"/>')
+            els.append(txt(gx, py0 + 14, str(g_p), 8.1, MUTED, anchor="middle"))
+        els.append(f'<line x1="{px0}" y1="{py0}" x2="{px1}" y2="{py0}" stroke="{INK}" stroke-width="1.3"/>')
+        els.append(f'<line x1="{px0}" y1="{py1}" x2="{px0}" y2="{py0}" stroke="{INK}" stroke-width="1.3"/>')
+        els.append(txt((px0 + px1) / 2, py0 + 29, "氧分压 PO2 (mmHg)", 8.5, INK, weight="700", anchor="middle"))
+
+        def hill_pts(p50, n=2.7):
+            pts = []
+            for p in range(0, 101, 2):
+                s = 0.0 if p == 0 else 100.0 * (p ** n) / ((p ** n) + (p50 ** n))
+                x, y = map_pt(p, s)
+                pts.append(f"{x:.1f},{y:.1f}")
+            return " ".join(pts)
+
+        els.append(f'<polyline points="{hill_pts(26.8)}" fill="none" stroke="{BLUE}" stroke-width="2.6" stroke-dasharray="5 3"/>')
+        els.append(f'<polyline points="{hill_pts(19.0)}" fill="none" stroke="#dc2626" stroke-width="3.0"/>')
+
+        s_adult_30 = 100.0 * (30 ** 2.7) / ((30 ** 2.7) + (26.8 ** 2.7))
+        s_fetal_30 = 100.0 * (30 ** 2.7) / ((30 ** 2.7) + (19.0 ** 2.7))
+        x30, ya30 = map_pt(30, s_adult_30)
+        _, yf30 = map_pt(30, s_fetal_30)
+        els.append(f'<line x1="{x30:.1f}" y1="{ya30:.1f}" x2="{x30:.1f}" y2="{yf30+4:.1f}" stroke="{ORANGE}" stroke-width="2.0" marker-end="url(#arr-orange)"/>')
+        els.append(f'<circle cx="{x30:.1f}" cy="{ya30:.1f}" r="3.8" fill="{BLUE}"/>')
+        els.append(f'<circle cx="{x30:.1f}" cy="{yf30:.1f}" r="4.2" fill="#dc2626"/>')
+
+        # Legend box neatly tucked into empty bottom-right corner of chart (Sat 8%..48%, PO2 48..98)
+        els.append(card(570, 212, 148, 76, rx=6, fill="#ffffff", stroke=HAIRLINE))
+        els.append('<line x1="578" y1="229" x2="596" y2="229" stroke="#dc2626" stroke-width="3"/>')
+        els.append(txt(602, 232, "胎儿 HbF (P50≈19)", 8.2, "#dc2626", weight="700"))
+        els.append(f'<line x1="578" y1="249" x2="596" y2="249" stroke="{BLUE}" stroke-width="2.6" stroke-dasharray="4 2"/>')
+        els.append(txt(602, 252, "母体 HbA (P50≈27)", 8.2, BLUE, weight="700"))
+        els.append(txt(578, 272, "30 mmHg处: 58%→77%!", 8.2, ORANGE, weight="700"))
+
+        els.append(card(414, 338, 316, 128, rx=8, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(424, 357, "🔑 抢氧密码：γ 亚基换装 + “双重玻尔效应”", 8.9, ORANGE, weight="700"))
+        els.append(txt(424, 375, "1. 绒毛血池 PO2 仅 35–50 mmHg（远低于肺泡 100），胎儿", 8.3, BODY))
+        els.append(txt(424, 392, "   把成人 β 链换成 γ 链 (α2γ2)，不再紧绑促卸氧分子", 8.3, BODY))
+        els.append(txt(424, 409, "   2,3-BPG，氧亲和力暴涨，曲线左移把母血里的氧吸过来！", 8.3, INK, weight="700"))
+        els.append(txt(424, 428, "2. 胎儿 CO2 跨膜酸化母血促母血松手放氧，同时胎血变微碱", 8.3, BODY))
+        els.append(txt(424, 445, "   把氧抓得更牢——一推一拉，同氧压净赚近 20% 饱和度！", 8.3, BODY))
+
+        return figure(
+            496,
+            "胎盘绒毛膜母婴血液隔离屏障、一静两动脐带与胎儿血红蛋白HbF氧解离曲线图解",
+            "左栏展示母体螺旋动脉向绒毛间隙注血、胎儿绒毛毛细血管隔膜吸收氧气营养且母婴红细胞与T细胞互不混流，以及1条富氧脐静脉与2条缺氧脐动脉；右栏用Hill方程实算对比成人HbA(P50=26.8 mmHg)与胎儿HbF(P50=19.0 mmHg)氧解离曲线，展示在30 mmHg胎盘低氧压区饱和度由约58%跃升至77%的跨膜夺氧机制。",
+            els,
+        )
+
+    def _build_amniotic_and_fetal_shunts():
+        els = []
+        els.extend(header(
+            "泡在羊水里十个月为什么不呛水？动态吞吐过滤舱与水下“三道短路旁道”",
+            "左看 37°C 羊水每日吞咽-排尿闭环与肺泡表面活性剂；右看胎心绕开未充气双肺的三条专属捷径",
+        ))
+
+        els.append(card(16, 66, 344, 424))
+        els.append(txt(30, 88, "羊水不是一潭死水：胎儿自己喝、自己滤的太空舱", 10.4, INK, weight="700"))
+
+        els.append(txt(188, 112, "羊膜恒温水舱（37°C · 峰值 800–1000 mL）", 8.4, BLUE, weight="700", anchor="middle"))
+        els.append('<ellipse cx="188" cy="206" rx="140" ry="82" fill="#e0f2fe" stroke="#0284c7" stroke-width="2.2"/>')
+
+        els.append('<circle cx="176" cy="186" r="19" fill="#fed7aa" stroke="#ea580c" stroke-width="1.6"/>')
+        els.append(
+            '<path d="M 188 201 C 212 207, 218 235, 196 250 C 176 260, 158 244, 166 225" '
+            'fill="#fed7aa" stroke="#ea580c" stroke-width="1.6"/>'
+        )
+        els.append(txt(176, 189, "胎儿", 8.5, "#9a3412", weight="700", anchor="middle"))
+
+        els.append('<path d="M 124 178 Q 140 170 153 182" fill="none" stroke="#18794e" stroke-width="2.0" marker-end="url(#arr-green)"/>')
+        els.append(txt(104, 166, "① 吞咽羊水", 8.4, GREEN, weight="700", anchor="middle"))
+        els.append(txt(104, 200, "450 mL/天", 8.2, BODY, anchor="middle"))
+        els.append(txt(104, 216, "练肠胃攒胎便", 8.0, MUTED, anchor="middle"))
+
+        els.append('<path d="M 212 238 Q 236 242 248 224" fill="none" stroke="#1d6fa5" stroke-width="2.0" marker-end="url(#arr-blue)"/>')
+        els.append(txt(270, 192, "② 胎肾排尿", 8.4, BLUE, weight="700", anchor="middle"))
+        els.append(txt(270, 208, "第8周起造水", 8.1, BODY, anchor="middle"))
+        els.append(txt(270, 224, "撑开空间育肺", 8.1, INK, weight="700", anchor="middle"))
+
+        els.append(txt(188, 306, "体表涂脂质“胎脂”防水霜 + 浮力缓冲抗外力撞击", 8.3, "#0369a1", weight="700", anchor="middle"))
+
+        els.append(card(30, 322, 316, 154, rx=8, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(40, 342, "🫁 肺里灌满羊水为何不算溺水？早产最怕缺啥？", 8.9, GREEN, weight="700"))
+        els.append(txt(40, 361, "• 胎儿氧气 100% 靠脐带从胎盘直供，完全不靠肺换气；", 8.3, BODY))
+        els.append(txt(40, 378, "  胸廓在子宫里规律吞吐羊水，只是在给呼吸肌“彩排”！", 8.3, BODY))
+        els.append(txt(40, 398, "• 拉普拉斯定律 ΔP = 2T/r：微米级湿肺泡水膜张力 T 极", 8.3, INK, weight="700"))
+        els.append(txt(40, 415, "  大，硬吹像吹湿粘气球！第 24–28 周起分泌“肺表面活", 8.3, BODY))
+        els.append(txt(40, 432, "  性物质”猛降 T，才让出生第一口充气毫不费力（过早", 8.3, BODY))
+        els.append(txt(40, 449, "  早产儿若缺乏该物质，极易发生新生儿呼吸窘迫综合征）。", 8.3, BODY))
+
+        # Right card: Fetal Three-Shunt Underwater Circulation
+        els.append(card(376, 66, 368, 424))
+        els.append(txt(390, 88, "水下心脏三道短路门：既然肺没通气，何必白跑一趟？", 10.4, INK, weight="700"))
+
+        els.append(card(392, 348, 112, 54, rx=8, fill="#ffe4e6", stroke="#e11d48"))
+        els.append(txt(448, 369, "胎盘供氧站", 8.8, "#be123c", weight="700", anchor="middle"))
+        els.append(txt(448, 387, "脐静脉 SO2≈80%", 8.1, "#be123c", anchor="middle"))
+
+        els.append(card(390, 262, 98, 56, rx=8, fill="#fef3c7", stroke="#d97706"))
+        els.append(txt(439, 282, "胎肝(半休工)", 8.3, "#92400e", anchor="middle"))
+        els.append(txt(439, 301, "① 静脉导管绕肝", 8.3, ORANGE, weight="700", anchor="middle"))
+        els.append('<path d="M 448 348 C 510 338, 510 242, 455 226" fill="none" stroke="#dc2626" stroke-width="3.0" marker-end="url(#arr-orange)"/>')
+
+        els.append(card(412, 130, 86, 40, rx=7, fill="#ede9fe", stroke=PURPLE))
+        els.append(txt(455, 154, "右心房 RA", 8.6, PURPLE, weight="700", anchor="middle"))
+        els.append(card(526, 130, 86, 40, rx=7, fill="#ffe4e6", stroke="#e11d48"))
+        els.append(txt(569, 154, "左心房 LA", 8.6, "#be123c", weight="700", anchor="middle"))
+
+        els.append('<path d="M 498 150 L 524 150" stroke="#dc2626" stroke-width="3.4" marker-end="url(#arr-orange)"/>')
+        els.append(txt(511, 120, "② 卵圆孔(单向活门:右→左)", 8.5, "#dc2626", weight="700", anchor="middle"))
+
+        els.append(card(412, 182, 86, 40, rx=7, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(455, 206, "右心室 RV", 8.6, BLUE, weight="700", anchor="middle"))
+        els.append(card(526, 182, 86, 40, rx=7, fill="#ffe4e6", stroke="#e11d48"))
+        els.append(txt(569, 206, "左心室 LV", 8.6, "#be123c", weight="700", anchor="middle"))
+        els.append('<path d="M 569 170 L 569 182" stroke="#dc2626" stroke-width="2.4"/>')
+        els.append('<path d="M 455 170 L 455 182" stroke="#6d28d9" stroke-width="2.4"/>')
+
+        els.append(card(630, 126, 100, 58, rx=7, fill="#f1f5f9", stroke="#64748b"))
+        els.append(txt(680, 145, "未充气双肺", 8.5, INK, weight="700", anchor="middle"))
+        els.append(txt(680, 161, "高流阻! 仅 ~10%", 8.0, MUTED, anchor="middle"))
+        els.append(txt(680, 175, "营养血流进入", 8.0, MUTED, anchor="middle"))
+
+        els.append(card(524, 250, 206, 68, rx=8, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(627, 269, "③ 动脉导管（肺动脉 → 主动脉）", 8.7, ORANGE, weight="700", anchor="middle"))
+        els.append(txt(627, 286, "右心室射血 ~90% 直接拐进降主动脉，", 8.2, BODY, anchor="middle"))
+        els.append(txt(627, 303, "绕开高阻肺血管，经脐动脉回胎盘换氧！", 8.2, BODY, anchor="middle"))
+        els.append('<path d="M 480 222 L 548 250" stroke="#c25014" stroke-width="2.8" marker-end="url(#arr-orange)"/>')
+        els.append('<path d="M 612 202 L 638 202" stroke="#dc2626" stroke-width="2.8" marker-end="url(#arr-orange)"/>')
+        els.append(txt(686, 206, "头等富氧血", 8.3, "#be123c", weight="700", anchor="middle"))
+        els.append(txt(686, 222, "优先供心脑!", 8.3, "#be123c", weight="700", anchor="middle"))
+
+        els.append('<path d="M 596 318 L 506 374" fill="none" stroke="#1d6fa5" stroke-width="2.6" marker-end="url(#arr-blue)"/>')
+        els.append(txt(584, 362, "2条脐动脉回胎盘", 8.2, BLUE, weight="700", anchor="middle"))
+
+        els.append(card(392, 416, 338, 60, rx=7, fill="#f8fafc", stroke=HAIRLINE))
+        els.append(txt(402, 435, "💡 精妙分流：卵圆孔把脐静脉头等高氧血直塞左心，专供狂长神经元的", 8.3, INK, weight="700"))
+        els.append(txt(402, 453, "大脑与冠脉；胎儿期左右心室其实是“并联双泵”，合力推动体循环与胎盘！", 8.3, BODY))
+
+        return figure(
+            506,
+            "羊水每日吞吐过滤循环、肺泡表面活性物质与胎儿心脏三大水下短路旁道图解",
+            "左栏展示37摄氏度羊膜囊内胎儿每日吞咽约450毫升羊水并由胎肾排出无菌稀释尿构成的动态循环，以及第24-28周起分泌肺表面活性物质降低拉普拉斯表面张力的机制；右栏展示静脉导管绕肝、卵圆孔由右心房直通左心房优先供脑，以及动脉导管将约90%右心室血流绕开高阻未充气双肺汇入主动脉的三重旁道。",
+            els,
+        )
+
+    def _build_labor_and_first_breath():
+        els = []
+        els.extend(header(
+            "催产素正反馈风暴与出生 10 秒“一键改道”：第一声啼哭如何关死三道暗门？",
+            "左看罕见打破稳态的弗格森-催产素正反馈开宫口闭环；右看剪脐带与第一口空气触发的心肺瞬间切换",
+        ))
+
+        els.append(card(16, 66, 356, 420))
+        els.append(txt(30, 88, "分娩发动：全身罕见“越推越猛、绝不刹车”的正反馈", 10.4, INK, weight="700"))
+
+        # 4-node circular positive feedback loop with ample clearances inside x=16..372
+        els.append('<path d="M 264 148 Q 296 164 300 194" fill="none" stroke="#c25014" stroke-width="2.0" marker-end="url(#arr-orange)"/>')
+        els.append('<path d="M 300 254 Q 292 288 264 304" fill="none" stroke="#c25014" stroke-width="2.0" marker-end="url(#arr-orange)"/>')
+        els.append('<path d="M 124 304 Q 96 288 88 254" fill="none" stroke="#c25014" stroke-width="2.0" marker-end="url(#arr-orange)"/>')
+        els.append('<path d="M 88 194 Q 96 164 124 148" fill="none" stroke="#c25014" stroke-width="2.0" marker-end="url(#arr-orange)"/>')
+
+        els.append(txt(194, 214, "正反馈雪崩", 9.0, "#b91c1c", weight="700", anchor="middle"))
+        els.append(txt(194, 231, "胎儿娩出后", 8.2, MUTED, anchor="middle"))
+        els.append(txt(194, 247, "刺激归零!", 8.2, GREEN, weight="700", anchor="middle"))
+
+        nodes = [
+            (194, 130, 148, ORANGE_SOFT, ORANGE, "① 胎头下沉顶压宫颈", "孕酮刹车撤除·宫颈被撑薄"),
+            (300, 224, 118, PURPLE_SOFT, PURPLE, "② 神经冲下丘脑", "垂体猛放催产素"),
+            (194, 316, 148, "#ffe4e6", "#e11d48", "③ 子宫平滑肌猛烈收缩", "胎膜放前列腺素狠推胎头"),
+            (88, 224, 118, BLUE_SOFT, BLUE, "④ 宫颈撑得更开", "直至开满 10 cm"),
+        ]
+        for nx, ny, w_box, nfill, nstroke, ntitle, nsub in nodes:
+            els.append(card(nx - w_box / 2, ny - 24, w_box, 48, rx=8, fill=nfill, stroke=nstroke))
+            els.append(txt(nx, ny - 5, ntitle, 8.4, nstroke, weight="700", anchor="middle"))
+            els.append(txt(nx, ny + 12, nsub, 7.9, BODY, anchor="middle"))
+
+        els.append(card(30, 354, 328, 118, rx=8, fill="#f8fafc", stroke=HAIRLINE))
+        els.append(txt(40, 373, "⏱️ 三大产程与宫缩间隙的“救命喘息”：", 8.8, INK, weight="700"))
+        els.append(txt(40, 391, "• 第一产程(开宫口 0→10cm，约6–12h) → 第二产程(娩出胎儿)", 8.2, BODY))
+        els.append(txt(40, 408, "  → 第三产程(娩出胎盘，子宫强力缩复夹闭血管防产后出血)。", 8.2, BODY))
+        els.append(txt(40, 427, "• 为什么阵痛必须一阵一阵停歇？每次宫缩都会暂时夹扁胎盘", 8.2, ORANGE, weight="700"))
+        els.append(txt(40, 444, "  血管断供——两次阵缩间的放松间隙，正是给胎儿喘气的窗口！", 8.2, BODY))
+
+        # Right card: 10-second First Breath Switchover + Brown Fat Thermogenesis
+        els.append(card(388, 66, 356, 420))
+        els.append(txt(402, 88, "出生后 10 秒惊天改道：从“水下并联”秒变“陆地串联”", 10.4, INK, weight="700"))
+
+        els.append(card(402, 104, 328, 62, rx=8, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(412, 122, "0–10 秒 · 第一声啼哭吹开肺泡", 8.8, BLUE, weight="700"))
+        els.append(txt(412, 139, "宫缩与断脐使 CO2 升高唤醒呼吸中枢 → 10秒内猛吸第一口气，", 8.2, BODY))
+        els.append(txt(412, 155, "肺泡充气张开，肺血管流阻瞬间暴跌约 80%，全肺满血开工！", 8.2, INK, weight="700"))
+
+        els.append(card(402, 174, 328, 78, rx=8, fill="#ffe4e6", stroke="#e11d48"))
+        els.append(txt(412, 192, "瞬间机械关门 · 卵圆孔“啪”地反扣锁死", 8.8, "#e11d48", weight="700"))
+        els.append(txt(412, 209, "断脐抬高体循环阻力 + 肺静脉大股富氧血涌入左心房 →", 8.2, BODY))
+        els.append(txt(412, 226, "左房压首次反超右房压 (PLA > PRA)，瞬间把卵圆孔单向瓣反", 8.2, BODY))
+        els.append(txt(412, 243, "扣压死在房间隔上（一年内长牢变成成人心脏里的卵圆窝）！", 8.2, INK, weight="700"))
+
+        els.append(card(402, 260, 328, 78, rx=8, fill=ORANGE_SOFT, stroke=ORANGE))
+        els.append(txt(412, 278, "数小时至数天 · 动脉导管与静脉导管退化闭锁", 8.8, ORANGE, weight="700"))
+        els.append(txt(412, 295, "血氧浓度骤升 + 胎盘扩管前列腺素撤除 → 动脉导管肌壁主", 8.2, BODY))
+        els.append(txt(412, 312, "动收缩封死（化作动脉韧带）；静脉导管同步退化为静脉韧带，", 8.2, BODY))
+        els.append(txt(412, 329, "水下三道旁路全部退役，正式切换为终身双循环串联心脏！", 8.2, INK, weight="700"))
+
+        els.append(card(402, 346, 328, 126, rx=8, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(412, 364, "抗寒外挂 · 肩背“棕色脂肪”不打哆嗦直接烧热", 8.8, GREEN, weight="700"))
+        els.append(txt(412, 381, "• 从 37°C 恒温水舱骤降到产房室温，新生儿体表面积比大、", 8.2, BODY))
+        els.append(txt(412, 398, "  肌肉尚不会打寒战，全靠肩背特配“棕色脂肪”非颤抖产热：", 8.2, BODY))
+        els.append(txt(412, 415, "  线粒体打开质子漏道不产 ATP，直接把脂肪烧成救命热能！", 8.2, INK, weight="700"))
+        els.append(txt(412, 435, "• 出生 1 分钟与 5 分钟阿氏评分（APGAR 满分10分）：快速核查", 8.2, GREEN, weight="700"))
+        els.append(txt(412, 452, "  肤色、心率、刺激反射、肌张力与呼吸，确认生命切换通关！", 8.2, BODY))
+
+        return figure(
+            502,
+            "分娩催产素正反馈循环与新生儿第一声啼哭关闭三大心脏旁道及棕色脂肪产热图解",
+            "左栏展示胎头压迫宫颈经弗格森反射触发下丘脑-垂体后叶释放催产素与胎膜释放前列腺素，形成越缩越猛直至宫口开满10厘米的正反馈闭环及宫缩间隙供氧意义；右栏按时间序列展示出生10秒内第一口气降低肺阻、左心房压反超右心房压机械拍死卵圆孔、高血氧收缩关闭动脉导管，以及棕色脂肪非颤抖产热与APGAR评分。",
+            els,
+        )
+
+    @register(
+        "human-gestation",
+        "生命孕育全过程五步图解：双保险受精锁与等体积卵裂着床动画、三胚层折纸造人与22天心跳、胎盘隔墙集市与胎儿HbF夺氧曲线、羊水循环与水下三旁道、催产素正反馈分娩与出生10秒心肺切换",
+        "science_tech",
+    )
+    def build_human_gestation():
+        write_svg(SUBDIR, "fertilization-locks-and-cleavage-hatching.svg", _build_fertilization_cleavage_hatching())
+        write_svg(SUBDIR, "gastrulation-three-layers-and-organogenesis.svg", _build_gastrulation_and_organogenesis())
+        write_svg(SUBDIR, "placenta-barrier-and-fetal-hemoglobin-curve.svg", _build_placenta_and_fetal_hemoglobin())
+        write_svg(SUBDIR, "amniotic-loop-and-three-fetal-shunts.svg", _build_amniotic_and_fetal_shunts())
+        write_svg(SUBDIR, "oxytocin-labor-and-first-breath-switchover.svg", _build_labor_and_first_breath())
+
+
+_register_human_gestation()
+
+
+# ---------------------------------------------------------------------------
+# Topic: Human Blood Pressure Principles (blood-pressure)
+# ---------------------------------------------------------------------------
+def _register_blood_pressure():
+    import math
+
+    SUBDIR = "blood-pressure"
+
+    RHO_HG = 13595.0
+    RHO_BLOOD = 1060.0
+    H_BLOOD_120 = 0.120 * RHO_HG / RHO_BLOOD  # ~1.539 m
+    H_HALES_M = (8 * 12 + 3) * 0.0254          # 8 ft 3 in = 2.5146 m
+    P_HALES_MMHG = H_HALES_M * RHO_BLOOD / RHO_HG * 1000.0  # ~196.1 mmHg
+    DP_10CM_MMHG = 0.10 * RHO_BLOOD / RHO_HG * 1000.0      # ~7.80 mmHg
+
+    assert 1.53 <= H_BLOOD_120 <= 1.55, H_BLOOD_120
+    assert 194.0 <= P_HALES_MMHG <= 198.0, P_HALES_MMHG
+    assert 7.7 <= DP_10CM_MMHG <= 7.9, DP_10CM_MMHG
+
+    def _arterial_wave(phase, p_dia=80.0, p_sys=120.0, notch_rel=0.45):
+        """Realistic single-beat arterial pressure wave for phase in [0, 1)."""
+        pp = p_sys - p_dia
+        if phase < 0.16:
+            u = phase / 0.16
+            val = math.sin(0.5 * math.pi * u) ** 1.35
+            return p_dia + pp * val
+        if phase < 0.31:
+            u = (phase - 0.16) / 0.15
+            return p_sys - pp * (1.0 - notch_rel) * (u ** 1.5)
+        if phase < 0.37:
+            u = (phase - 0.31) / 0.06
+            bump = 0.11 * math.sin(math.pi * u)
+            base = notch_rel - 0.05 * u
+            return p_dia + pp * (base + bump)
+        u = (phase - 0.37) / 0.63
+        start_rel = notch_rel - 0.05
+        k = 2.55
+        decay = (math.exp(-k * u) - math.exp(-k)) / (1.0 - math.exp(-k))
+        return p_dia + pp * start_rel * decay
+
+    _n_int = 800
+    _map_num = sum(_arterial_wave(i / _n_int, 80.0, 120.0, 0.528) for i in range(_n_int)) / _n_int
+    assert 93.0 <= _map_num <= 93.7, f"Computed MAP={_map_num:.2f} out of physiological 93.3 range"
+
+    # 1. mmHg vs Blood Fountain + Young vs Stiff Pulse Pressure Waveform
+    def _build_mmhg_and_waveform():
+        els = []
+        els.extend(header(
+            "120/80 毫米汞柱究竟有多猛？从 1.54 米血柱喷泉到动脉硬化脉压差",
+            "左：水银密度是血液的 12.8 倍，把 1.54 米血柱微缩成 12 厘米刻度 · 右：双心动周期实算波形与平均动脉压 MAP",
+        ))
+
+        els.append(card(16, 68, 346, 436))
+        els.append(txt(30, 92, "一、为什么全世界的血压至今还在用“毫米汞柱”？", 10.6, INK, weight="700"))
+        els.append(txt(30, 110, "同等的压强 P = ρgh，液体越轻，管子就得竖得越高：", 8.5, MUTED))
+
+        base_y = 368
+        max_h_px = 216
+        scale_m = max_h_px / 2.60
+
+        for hm, label in ((0.0, "0 m"), (0.5, "0.5 m"), (1.0, "1.0 m"), (1.5, "1.5 m"), (2.0, "2.0 m"), (2.5, "2.5 m")):
+            gy = base_y - hm * scale_m
+            els.append(f'<line x1="60" y1="{gy:.1f}" x2="344" y2="{gy:.1f}" stroke="{HAIRLINE}" stroke-width="1" stroke-dasharray="3 3"/>')
+            els.append(txt(54, gy + 3.5, label, 8.0, MUTED, anchor="end"))
+
+        els.append(f'<line x1="58" y1="{base_y}" x2="346" y2="{base_y}" stroke="{BODY}" stroke-width="1.5"/>')
+
+        hg_h = max(10.0, 0.12 * scale_m)
+        els.append(f'<rect x="82" y="{base_y - 95:.1f}" width="32" height="95" rx="4" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.4"/>')
+        els.append(f'<rect x="85" y="{base_y - hg_h:.1f}" width="26" height="{hg_h:.1f}" rx="2" fill="#64748b"/>')
+        els.append(txt(98, base_y - 101, "仅 12 cm!", 8.5, INK, weight="700", anchor="middle"))
+        els.append(txt(98, base_y + 17, "水银柱 (1828)", 8.5, INK, weight="700", anchor="middle"))
+        els.append(txt(98, base_y + 32, "120 mmHg", 8.3, BODY, anchor="middle"))
+        els.append(txt(98, base_y + 46, "ρ=13.6 g/cm³", 8.0, MUTED, anchor="middle"))
+
+        bl_h = H_BLOOD_120 * scale_m
+        els.append(f'<rect x="178" y="{base_y - bl_h - 10:.1f}" width="32" height="{bl_h + 10:.1f}" rx="4" fill="#fff1f2" stroke="#fda4af" stroke-width="1.4"/>')
+        els.append(f'<rect x="181" y="{base_y - bl_h:.1f}" width="26" height="{bl_h:.1f}" rx="2" fill="#e11d48"/>')
+        els.append(txt(194, base_y - bl_h - 16, f"{H_BLOOD_120:.2f} m 高!", 8.7, "#be123c", weight="700", anchor="middle"))
+        els.append(txt(194, base_y + 17, "人体等效血柱", 8.5, "#be123c", weight="700", anchor="middle"))
+        els.append(txt(194, base_y + 32, "同为 120 mmHg", 8.3, BODY, anchor="middle"))
+        els.append(txt(194, base_y + 46, "ρ=1.06 g/cm³", 8.0, MUTED, anchor="middle"))
+
+        hl_h = H_HALES_M * scale_m
+        els.append(f'<rect x="278" y="{base_y - hl_h - 8:.1f}" width="32" height="{hl_h + 8:.1f}" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.4"/>')
+        els.append(f'<rect x="281" y="{base_y - hl_h:.1f}" width="26" height="{hl_h:.1f}" rx="2" fill="{ORANGE}"/>')
+        els.append(txt(294, base_y - hl_h - 13, "2.51 m (8尺3寸)", 8.4, ORANGE, weight="700", anchor="middle"))
+        els.append(txt(294, base_y + 17, "黑尔斯母马实验", 8.5, ORANGE, weight="700", anchor="middle"))
+        els.append(txt(294, base_y + 32, f"1733年(≈{P_HALES_MMHG:.0f}mmHg)", 8.1, BODY, anchor="middle"))
+        els.append(txt(294, base_y + 46, "人类首次测血压", 8.0, MUTED, anchor="middle"))
+
+        els.append(card(28, 424, 322, 68, rx=8, fill=BLUE_SOFT, stroke=BLUE_LINE))
+        els.append(txt(38, 442, "💡 120 mmHg ≈ 16.0 kPa（比外界大气压高约 0.16 个大气压）：", 8.4, BLUE, weight="700"))
+        els.append(txt(38, 459, "若不用水银而插玻璃水管，诊室桌上得立一根一米六高的血柱！", 8.2, BODY))
+        els.append(txt(38, 476, "电子血压计早已无汞，但“mmHg”因百年临床直觉沿用至今。", 8.2, BODY))
+
+        # Right card: Computed Young vs Elderly Arterial Waveforms + MAP
+        els.append(card(378, 68, 366, 436))
+        els.append(txt(392, 92, "二、收缩压、舒张压、平均压与老年“高压高、低压低”", 10.6, INK, weight="700"))
+        els.append(txt(392, 110, "按真实心动周期 T=0.8s 计算：舒张期占 2/3，MAP 绝不是 100！", 8.5, MUTED))
+
+        px0, py0, pw, ph = 428, 134, 298, 212
+        p_min, p_max = 55.0, 175.0
+
+        def map_x(t_s):
+            return px0 + (t_s / 1.6) * pw
+
+        def map_y(p_val):
+            return py0 + ph - ((p_val - p_min) / (p_max - p_min)) * ph
+
+        els.append(f'<rect x="{px0}" y="{py0}" width="{pw}" height="{ph}" fill="#f8fafc" stroke="{BORDER}" stroke-width="1.2"/>')
+        for pv in (60, 80, 100, 120, 140, 160):
+            yy = map_y(pv)
+            els.append(f'<line x1="{px0}" y1="{yy:.1f}" x2="{px0+pw}" y2="{yy:.1f}" stroke="{HAIRLINE}" stroke-width="1" stroke-dasharray="3 3"/>')
+            els.append(txt(px0 - 6, yy + 3.5, str(pv), 8.1, MUTED, anchor="end"))
+        for ts in (0.0, 0.4, 0.8, 1.2, 1.6):
+            xx = map_x(ts)
+            els.append(f'<line x1="{xx:.1f}" y1="{py0}" x2="{xx:.1f}" y2="{py0+ph}" stroke="{HAIRLINE}" stroke-width="0.8" stroke-dasharray="2 3"/>')
+            els.append(txt(xx, py0 + ph + 15, f"{ts:.1f}s", 8.1, MUTED, anchor="middle"))
+
+        y_map = map_y(_map_num)
+        els.append(f'<line x1="{px0}" y1="{y_map:.1f}" x2="{px0+pw}" y2="{y_map:.1f}" stroke="{GREEN}" stroke-width="1.8" stroke-dasharray="6 3"/>')
+
+        pts_stiff = []
+        pts_young = []
+        n_pts = 160
+        for i in range(n_pts + 1):
+            t_s = 1.6 * i / n_pts
+            ph_cyc = (t_s / 0.8) % 1.0
+            if i == n_pts:
+                ph_cyc = 0.999
+            py_stiff = map_y(_arterial_wave(ph_cyc, 70.0, 160.0, 0.36))
+            py_young = map_y(_arterial_wave(ph_cyc, 80.0, 120.0, 0.528))
+            xx = map_x(t_s)
+            pts_stiff.append(f"{xx:.1f},{py_stiff:.1f}")
+            pts_young.append(f"{xx:.1f},{py_young:.1f}")
+
+        els.append(f'<polyline points="{" ".join(pts_stiff)}" fill="none" stroke="{ORANGE}" stroke-width="2.1" stroke-dasharray="6 3"/>')
+        els.append(f'<polyline points="{" ".join(pts_young)}" fill="none" stroke="{BLUE}" stroke-width="2.6"/>')
+
+        els.append(txt(map_x(0.18) + 6, map_y(163), "硬化动脉 160/70 (脉压差 90!)", 8.4, ORANGE, weight="700"))
+        els.append(txt(map_x(0.96) + 8, map_y(124), "年轻弹性动脉 120/80", 8.4, BLUE, weight="700"))
+        els.append(txt(map_x(0.54), map_y(113), "↙ 重搏切迹(瓣膜关)", 8.0, BLUE, anchor="middle"))
+        els.append(f'<rect x="{map_x(1.13):.1f}" y="{y_map - 21:.1f}" width="116" height="16" rx="4" fill="#ffffff" opacity="0.92"/>')
+        els.append(txt(px0 + pw - 5, y_map - 9, f"平均压 MAP ≈ {_map_num:.1f}", 8.2, GREEN, weight="700", anchor="end"))
+        els.append(txt(map_x(0.62), map_y(62), "弹性丧失→舒张跌至 70", 8.1, ORANGE, weight="700", anchor="middle"))
+
+        els.append(card(390, 370, 342, 122, rx=8, fill="#f8fafc", stroke=HAIRLINE))
+        els.append(txt(402, 389, "• 血压总公式（流体欧姆定律）：MAP ≈ 心输出量 CO × 外周阻力 SVR", 8.3, INK, weight="700"))
+        els.append(txt(402, 408, "• 为什么平均压不是 (120+80)/2 = 100？因为舒张期占约 2/3 时间：", 8.2, BODY))
+        els.append(txt(412, 425, "MAP ≈ 舒张压 + 1/3 × 脉压差 = 80 + 40/3 ≈ 93.3 mmHg（供血真推力）", 8.2, GREEN, weight="700"))
+        els.append(txt(402, 444, "• 为什么老人常“高压飙到 160、低压反降到 70”（脉压差拉大）？", 8.2, BODY))
+        els.append(txt(412, 461, "大动脉弹性顺应性 C 退化变硬：射血时撑不开→高压暴冲；", 8.1, ORANGE, weight="700"))
+        els.append(txt(412, 478, "舒张期没回弹蓄力→低压骤跌（顺带连累舒张期吃血的冠状动脉！）", 8.1, BODY))
+
+        return figure(
+            520,
+            "120/80毫米汞柱物理高度换算与年轻弹性动脉对比老年硬化动脉血压波形图解",
+            "左栏按流体静力学P=ρgh对比120 mmHg对应的12厘米水银柱、1.54米人体等效血柱及1733年黑尔斯测得的2.51米母马血柱；右栏按真实心动周期绘制年轻弹性动脉(120/80 mmHg, MAP≈93.3 mmHg)与老年顺应性下降硬化动脉(160/70 mmHg, 脉压差90 mmHg)的双周期压力波形。",
+            els,
+        )
+
+    # 2. Cuff Auscultatory (Korotkoff) + Electronic Oscillometric Envelope (with one-shot animation)
+    def _build_cuff_korotkoff_oscillometric():
+        els = []
+        els.extend(header(
+            "不扎针怎么隔着肉测准血压？听诊器“柯氏音湍流”对比家用机“示波包络”",
+            "上：袖带从 160 放气到 55 mmHg 的三段血流声学开关 · 中：电子血压计无麦克风的振幅包络算法 · 下：袖带高度误差",
+        ))
+
+        els.append(card(16, 68, 728, 240))
+        els.append(txt(30, 90, "一、医生听诊器听什么？（Riva-Rocci 袖带 1896 + Korotkoff 柯氏音 1905）", 10.6, INK, weight="700"))
+
+        gx0, gy0, gw, gh = 68, 106, 656, 170
+        p_lo, p_hi = 50.0, 168.0
+        t_max = 8.0
+
+        def tx(t_s):
+            return gx0 + (t_s / t_max) * gw
+
+        def ty(p_v):
+            return gy0 + gh - ((p_v - p_lo) / (p_hi - p_lo)) * gh
+
+        rate = (160.0 - 55.0) / t_max
+        t_sbp = (160.0 - 120.0) / rate
+        t_map = (160.0 - _map_num) / rate
+        t_dbp = (160.0 - 80.0) / rate
+
+        x_sbp = tx(t_sbp)
+        x_map = tx(t_map)
+        x_dbp = tx(t_dbp)
+
+        els.append(f'<rect x="{gx0}" y="{gy0}" width="{x_sbp - gx0:.1f}" height="{gh}" fill="#f1f5f9"/>')
+        els.append(f'<rect x="{x_sbp:.1f}" y="{gy0}" width="{x_dbp - x_sbp:.1f}" height="{gh}" fill="#fff7ed"/>')
+        els.append(f'<rect x="{x_dbp:.1f}" y="{gy0}" width="{gx0 + gw - x_dbp:.1f}" height="{gh}" fill="#ecfdf5"/>')
+        els.append(f'<rect x="{gx0}" y="{gy0}" width="{gw}" height="{gh}" fill="none" stroke="{BORDER}" stroke-width="1.2"/>')
+
+        els.append(txt((gx0 + x_sbp) / 2, gy0 + 16, "① 袖带压>120：夹死断流·无声", 8.2, MUTED, weight="700", anchor="middle"))
+        els.append(txt((x_sbp + x_dbp) / 2, gy0 + 16, "② 120~80：冲开窄缝·湍流敲响“咚咚”柯氏音!", 8.3, ORANGE, weight="700", anchor="middle"))
+        els.append(txt((x_dbp + gx0 + gw) / 2, gy0 + 16, "③ <80：畅通层流·无声", 8.1, GREEN, weight="700", anchor="middle"))
+
+        for pv in (60, 80, 100, 120, 140, 160):
+            yy = ty(pv)
+            els.append(f'<line x1="{gx0}" y1="{yy:.1f}" x2="{gx0+gw}" y2="{yy:.1f}" stroke="{HAIRLINE}" stroke-width="0.9" stroke-dasharray="3 3"/>')
+            els.append(txt(gx0 - 6, yy + 3.5, str(pv), 8.0, MUTED, anchor="end"))
+
+        els.append(f'<line x1="{x_sbp:.1f}" y1="{gy0 + 24}" x2="{x_sbp:.1f}" y2="{gy0 + gh}" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="4 3"/>')
+        els.append(f'<line x1="{x_map:.1f}" y1="{gy0 + 24}" x2="{x_map:.1f}" y2="{gy0 + gh}" stroke="{PURPLE}" stroke-width="1.4" stroke-dasharray="3 3"/>')
+        els.append(f'<line x1="{x_dbp:.1f}" y1="{gy0 + 24}" x2="{x_dbp:.1f}" y2="{gy0 + gh}" stroke="{GREEN}" stroke-width="1.6" stroke-dasharray="4 3"/>')
+
+        art_pts = []
+        n_samples = 420
+        for i in range(n_samples + 1):
+            ts = t_max * i / n_samples
+            ph = (ts / 0.8) % 1.0
+            if i == n_samples:
+                ph = 0.999
+            pa = _arterial_wave(ph, 80.0, 120.0, 0.528)
+            art_pts.append(f"{tx(ts):.1f},{ty(pa):.1f}")
+        els.append(f'<polyline points="{" ".join(art_pts)}" fill="none" stroke="#93c5fd" stroke-width="2.0"/>')
+
+        y_cuff_start = ty(160.0)
+        y_cuff_end = ty(55.0)
+        els.append(f'<line x1="{gx0}" y1="{y_cuff_start:.1f}" x2="{gx0+gw}" y2="{y_cuff_end:.1f}" stroke="{INK}" stroke-width="2.4"/>')
+
+        els.append(f'<circle cx="{x_sbp:.1f}" cy="{ty(120):.1f}" r="5.2" fill="#dc2626" stroke="#ffffff" stroke-width="1.5"/>')
+        els.append(txt(x_sbp + 8, ty(136), "第1声脆响 = 收缩压 120", 8.4, "#dc2626", weight="700"))
+
+        els.append(f'<circle cx="{x_dbp:.1f}" cy="{ty(80):.1f}" r="5.2" fill="{GREEN}" stroke="#ffffff" stroke-width="1.5"/>')
+        els.append(txt(x_dbp - 8, ty(64), "最后消失音 = 舒张压 80", 8.4, GREEN, weight="700", anchor="end"))
+        els.append(txt(gx0 + 10, ty(64), "↗ 粗黑线：袖带匀速放气(2~3 mmHg/s)", 8.1, INK, weight="700"))
+
+        els.append(f"""<style>
+          @keyframes cuff-deflate-scan {{
+            0% {{ transform: translate({gx0:.1f}px, {y_cuff_start:.1f}px); opacity: 0.95; }}
+            90% {{ transform: translate({gx0+gw:.1f}px, {y_cuff_end:.1f}px); opacity: 0.95; }}
+            100% {{ transform: translate({gx0+gw:.1f}px, {y_cuff_end:.1f}px); opacity: 0; }}
+          }}
+          .cuff-runner {{
+            animation: cuff-deflate-scan 7.2s linear 1 forwards;
+          }}
+          @media (prefers-reduced-motion: reduce) {{
+            .cuff-runner {{ animation: none; opacity: 0; }}
+          }}
+        </style>""")
+        els.append('<g class="cuff-runner"><circle cx="0" cy="0" r="6.5" fill="#ea580c" stroke="#ffffff" stroke-width="2.0"/></g>')
+
+        els.append(txt(gx0 + gw - 6, gy0 + gh + 18, "放气时间轴（0 → 8 秒，共 10 次心跳脉搏）", 8.1, MUTED, anchor="end"))
+
+        # Middle card: Home Electronic Monitor (Oscillometric Method)
+        els.append(card(16, 318, 728, 152))
+        els.append(txt(30, 340, "二、家用电子血压计根本没装麦克风！它靠“示波法（Oscillometry）”抓最大振幅算血压", 10.4, INK, weight="700"))
+
+        ox0, oy0, ow, oh = gx0, 352, gw, 102
+        oy_mid = oy0 + oh / 2
+        els.append(f'<rect x="{ox0}" y="{oy0}" width="{ow}" height="{oh}" fill="#faf5ff" stroke="#e9d5ff" stroke-width="1.2"/>')
+        els.append(f'<line x1="{ox0}" y1="{oy_mid:.1f}" x2="{ox0+ow}" y2="{oy_mid:.1f}" stroke="#d8b4fe" stroke-width="1"/>')
+
+        els.append(f'<line x1="{x_sbp:.1f}" y1="{oy0}" x2="{x_sbp:.1f}" y2="{oy0+oh}" stroke="#dc2626" stroke-width="1.3" stroke-dasharray="4 3"/>')
+        els.append(f'<line x1="{x_map:.1f}" y1="{oy0}" x2="{x_map:.1f}" y2="{oy0+oh}" stroke="{PURPLE}" stroke-width="1.8" stroke-dasharray="4 2"/>')
+        els.append(f'<line x1="{x_dbp:.1f}" y1="{oy0}" x2="{x_dbp:.1f}" y2="{oy0+oh}" stroke="{GREEN}" stroke-width="1.3" stroke-dasharray="4 3"/>')
+
+        def _osc_env(p_cuff):
+            diff = p_cuff - _map_num
+            sigma = 21.0 if diff >= 0 else 12.0
+            return math.exp(-0.5 * (diff / sigma) ** 2)
+
+        osc_pts = []
+        env_top = []
+        env_bot = []
+        amp_px = 36.0
+        for i in range(n_samples + 1):
+            ts = t_max * i / n_samples
+            p_c = 160.0 - rate * ts
+            env = _osc_env(p_c)
+            osc = env * math.sin(2.0 * math.pi * (ts / 0.8))
+            xx = tx(ts)
+            osc_pts.append(f"{xx:.1f},{oy_mid - amp_px * osc:.1f}")
+            env_top.append(f"{xx:.1f},{oy_mid - amp_px * env:.1f}")
+            env_bot.append(f"{xx:.1f},{oy_mid + amp_px * env:.1f}")
+
+        els.append(f'<polyline points="{" ".join(env_top)}" fill="none" stroke="{PURPLE}" stroke-width="1.4" stroke-dasharray="4 3"/>')
+        els.append(f'<polyline points="{" ".join(env_bot)}" fill="none" stroke="{PURPLE}" stroke-width="1.4" stroke-dasharray="4 3"/>')
+        els.append(f'<polyline points="{" ".join(osc_pts)}" fill="none" stroke="{PURPLE}" stroke-width="1.9"/>')
+
+        els.append(txt(ox0 - 6, oy_mid + 3.5, "气囊脉动", 8.0, PURPLE, weight="700", anchor="end"))
+        els.append(txt(ox0 + 10, oy0 + 17, "芯片先定位振幅最高峰 = 平均压 MAP(≈93.3)", 8.3, PURPLE, weight="700"))
+        els.append(txt(ox0 + 10, oy0 + oh - 9, "⚠️ 房颤脉搏忽大忽小或手臂乱动会扰乱包络算错！", 8.1, BODY))
+        els.append(txt(x_dbp + 8, oy0 + 17, "再按左右包络比例", 8.1, INK, weight="700"))
+        els.append(txt(x_dbp + 8, oy0 + 32, "反推 120 / 80!", 8.1, BODY))
+
+        # Bottom card
+        els.append(card(16, 480, 728, 62, rx=8, fill=BLUE_SOFT, stroke=BLUE_LINE))
+        els.append(txt(30, 501, f"📏 居家测压头号物理陷阱：袖带必须与心脏同高！手臂每比心脏垂低 10 cm，重力血柱就平白虚增 +{DP_10CM_MMHG:.1f} mmHg！", 8.8, BLUE, weight="700"))
+        els.append(txt(30, 522, "正确姿势：排空膀胱 → 靠背静坐 5 分钟 → 双脚平放不翘二郎腿 → 裸露上臂平托桌面与胸口齐平 → 全程不说话连测2次（间隔1–2分钟）。", 8.2, BODY))
+
+        return figure(
+            556,
+            "袖带听诊柯氏音三段流体声学原理与家用电子血压计示波法振幅包络同步对比图解",
+            "上图展示袖带从160 mmHg匀速放气至55 mmHg过程中与动脉脉搏波(120/80 mmHg)的交汇关系：高于120断流无声、120至80间歇湍流射流产生柯氏音、低于80恢复层流消音，含单次放气扫描动画；中图严格对齐时间轴展示家用电子血压计通过气囊微小压力振荡包络峰值定位平均压MAP并推算收缩压与舒张压；下图给出袖带高度静水压误差与规范测压要点。",
+            els,
+        )
+
+    # 3. Orthostatic Hydrostatic Shock + 2-Second Baroreceptor Reflex + Endothelial NO
+    def _build_orthostatic_and_baroreflex():
+        els = []
+        els.extend(header(
+            "猛一起床为什么没当场晕倒？2 秒救驾的“压力反射”与内皮一氧化氮",
+            "左：站起瞬间 500 mL 血液坠入下肢静脉池的重力突袭 · 右：Piezo1/2 牵张探头负反馈闭环与 NO 气体扩管刹车",
+        ))
+
+        els.append(card(16, 68, 344, 440))
+        els.append(txt(30, 92, "一、平躺 vs 猛然站起：地球重力的 0.5 秒突袭", 10.6, INK, weight="700"))
+
+        els.append(card(28, 106, 320, 96, rx=8, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(40, 125, "① 平躺睡觉：脑、心、脚处于同一重力水平面 (h ≈ 0)", 8.6, GREEN, weight="700"))
+        els.append(f'<circle cx="72" cy="156" r="12" fill="#ffffff" stroke="{GREEN}" stroke-width="1.8"/>')
+        els.append(txt(72, 160, "脑", 8.2, GREEN, weight="700", anchor="middle"))
+        els.append(f'<rect x="92" y="144" width="136" height="24" rx="10" fill="#ffffff" stroke="{GREEN}" stroke-width="1.8"/>')
+        els.append(txt(160, 160, "♥ 心脏 MAP ≈ 93", 8.3, "#be123c", weight="700", anchor="middle"))
+        els.append(f'<rect x="236" y="147" width="94" height="18" rx="8" fill="#ffffff" stroke="{GREEN}" stroke-width="1.8"/>')
+        els.append(txt(283, 160, "脚 ≈ 90 mmHg", 8.1, GREEN, weight="700", anchor="middle"))
+        els.append(txt(40, 190, "无需对抗重力水柱，大脑平均灌注压轻松维持 ~90 mmHg。", 8.2, BODY))
+
+        els.append(card(28, 214, 320, 280, rx=8, fill="#fff7ed", stroke=ORANGE))
+        els.append(txt(40, 234, "② 猛然站起瞬间：头顶减压 + 下肢静脉池“兜走半升血”", 8.6, ORANGE, weight="700"))
+
+        els.append(f'<circle cx="72" cy="274" r="14" fill="#ffffff" stroke="#dc2626" stroke-width="2"/>')
+        els.append(txt(72, 278, "脑", 8.5, "#dc2626", weight="700", anchor="middle"))
+        els.append(f'<rect x="56" y="294" width="32" height="72" rx="10" fill="#ffffff" stroke="{INK}" stroke-width="1.8"/>')
+        els.append(txt(72, 333, "♥心", 8.5, "#be123c", weight="700", anchor="middle"))
+        els.append(f'<rect x="58" y="372" width="12" height="78" rx="5" fill="#dbeafe" stroke="{BLUE}" stroke-width="1.8"/>')
+        els.append(f'<rect x="74" y="372" width="12" height="78" rx="5" fill="#dbeafe" stroke="{BLUE}" stroke-width="1.8"/>')
+        els.append(txt(72, 466, "双腿静脉池", 8.0, BLUE, weight="700", anchor="middle"))
+
+        els.append(txt(106, 272, "• 头比心脏高 ~35 cm：", 8.4, "#dc2626", weight="700"))
+        els.append(txt(114, 289, "重力直接扣掉 -27 mmHg 静水压！", 8.2, BODY))
+        els.append(txt(106, 314, "• 脚踝比心脏低 ~125 cm：", 8.4, ORANGE, weight="700"))
+        els.append(txt(114, 331, "静水压暴涨 +97，脚踝动脉达 ~190！", 8.2, BODY))
+        els.append(txt(106, 356, "• 静脉顺应性是动脉的 20–30 倍：", 8.4, BLUE, weight="700"))
+        els.append(txt(114, 373, "300–800 mL 血液瞬间坠入下肢与腹腔，", 8.2, BODY))
+        els.append(txt(114, 390, "回心血量骤减 → 心输出量 CO 猛跌！", 8.2, BODY))
+
+        els.append(card(106, 406, 230, 74, rx=6, fill="#ffe4e6", stroke="#e11d48"))
+        els.append(txt(116, 425, "⚠️ 若无神经秒级救驾：", 8.4, "#be123c", weight="700"))
+        els.append(txt(116, 443, "脑部 MAP 将跌破 60 mmHg 缺血红线，", 8.1, BODY))
+        els.append(txt(116, 460, "眼前发黑（直立性低血压）甚至晕厥！", 8.1, INK, weight="700"))
+
+        # Right card
+        els.append(card(376, 68, 368, 440))
+        els.append(txt(390, 92, "二、1–2 次心跳极速稳压：压力反射闭环 + 一氧化氮", 10.6, INK, weight="700"))
+
+        steps = [
+            (106, BLUE_SOFT, BLUE, "① 管壁牵张探头：颈动脉窦 + 主动脉弓（2021 诺奖机制）",
+             "守在进脑咽喉要道的颈动脉窦与主动脉弓管壁内，嵌有机械敏感离子通道",
+             "Piezo1/Piezo2：血压一跌 → 管壁回缩牵张减弱 → 神经脉冲放电频率骤降！"),
+            (188, PURPLE_SOFT, PURPLE, "② 传入专线直通脑干：延髓心血管中枢（毫秒级判读）",
+             "信号沿舌咽神经(IX)与迷走神经(X)直报延髓：中枢立即同步关小“迷走心抑制",
+             "中心”刹车，并拉响“心加速中心 + 血管运动中心”双路交感警报！"),
+            (270, ORANGE_SOFT, ORANGE, "③ 双管齐下 2 秒回血升压：提心率 + 拧紧微动脉与静脉池",
+             "• 心脏端：撤迷走 + 催交感去甲肾上腺素 → 心率与心肌收缩力瞬间跳升(CO↑)",
+             "• 血管端：微动脉收缩(R∝1/r⁴ 阻力猛增) + 静脉网收缩把滞留血挤回心脏！"),
+        ]
+        for sy, sfill, sstroke, stitle, sl1, sl2 in steps:
+            els.append(card(390, sy, 340, 70, rx=8, fill=sfill, stroke=sstroke))
+            els.append(txt(402, sy + 19, stitle, 8.6, sstroke, weight="700"))
+            els.append(txt(402, sy + 38, sl1, 8.1, BODY))
+            els.append(txt(402, sy + 55, sl2, 8.1, INK, weight="600"))
+
+        for ay in (176, 258):
+            els.append(f'<line x1="560" y1="{ay}" x2="560" y2="{ay+10}" stroke="{INK}" stroke-width="1.8" marker-end="url(#arr-blue)"/>')
+
+        els.append(card(390, 354, 340, 140, rx=8, fill=GREEN_SOFT, stroke=GREEN))
+        els.append(txt(402, 374, "④ 血管内皮自带“扩管气体开关”：一氧化氮 NO（1998 诺奖）", 8.7, GREEN, weight="700"))
+        els.append(txt(402, 393, "• 血流冲刷剪切力或乙酰胆碱刺激健康血管内皮细胞 → 当场合成一氧化氮", 8.1, BODY))
+        els.append(txt(402, 410, "  气体（NO，半衰期不足 10 秒）穿膜进入平滑肌，令肌肉松弛扩管降压！", 8.1, INK, weight="700"))
+        els.append(txt(402, 430, "• 百年戏剧反差：诺贝尔造炸药致富的“硝酸甘油”，之所以能救心绞痛与", 8.1, BODY))
+        els.append(txt(402, 447, "  急降血压，正是进体内释放 NO 气体替受损内皮强行松开血管！", 8.1, GREEN, weight="700"))
+        els.append(txt(402, 467, "• 反面险情：严重细菌感染败血症时白细胞狂喷 NO，全身血管瘫软暴跌休克。", 8.0, MUTED))
+
+        return figure(
+            524,
+            "站立重力静水压冲击、颈动脉窦主动脉弓压力感受器反射与血管内皮一氧化氮调节图解",
+            "左栏对比平躺与猛然站立时脑心脚的静水压变化及下肢静脉池滞留300至800毫升血液引发的直立性低血压风险；右栏按四步解析颈动脉窦与主动脉弓Piezo1/2牵张探头经延髓心血管中枢在1至2秒内提升心率、收缩微动脉与静脉的负反馈闭环，以及血管内皮释放一氧化氮NO气体扩管机制。",
+            els,
+        )
+
+    # 4. Kidney RAAS + Salt Volume Mechanism + ABCD Antihypertensive Drug Targets
+    def _build_raas_and_abcd_drugs():
+        els = []
+        els.extend(header(
+            "吃咸为什么升血压？肾脏“RAAS 三级火箭”与 ABCD 四类降压药总图",
+            "上：神经管秒级救急，肾脏靠血容量与激素管全年基准线 · 下：顺着 BP = CO × SVR 看懂四类降压药拆哪颗螺丝",
+        ))
+
+        els.append(card(16, 68, 728, 236))
+        els.append(txt(30, 91, "一、长线控压总司令：肾脏跨四器官“肾素—血管紧张素—醛固酮系统（RAAS）”", 10.6, INK, weight="700"))
+
+        boxes = [
+            (28, "① 肾脏 + 肝脏点火", BLUE_SOFT, BLUE,
+             "肾灌注压↓ 或 钠负荷↓",
+             "肾球旁细胞分泌【肾素】",
+             "切开肝脏【血管紧张素原】",
+             "→ 生成血管紧张素 I"),
+            (206, "② 肺部毛细血管加工", PURPLE_SOFT, PURPLE,
+             "血液流经双肺庞大内皮网",
+             "【血管紧张素转换酶 ACE】",
+             "再剪两颗氨基酸激活它",
+             "→ 变成【血管紧张素 II】!"),
+            (384, "③ 强效缩管（提阻力）", ORANGE_SOFT, ORANGE,
+             "血管紧张素 II 直接出击：",
+             "全身微动脉平滑肌强烈收缩",
+             "利用 R ∝ 1/r⁴ 四次方杠杆",
+             "→ 外周阻力 SVR 迅速拉升!"),
+            (562, "④ 保钠锁水（扩容量）", GREEN_SOFT, GREEN,
+             "催肾上腺皮质放【醛固酮】",
+             "+ 垂体后叶放【抗利尿激素】",
+             "肾小管拼命抓回 Na+ 和水",
+             "→ 血容量与心输出量 CO↑!"),
+        ]
+        for bx, bt, bfill, bstr, l1, l2, l3, l4 in boxes:
+            els.append(card(bx, 104, 168, 112, rx=8, fill=bfill, stroke=bstr))
+            els.append(txt(bx + 10, 123, bt, 8.6, bstr, weight="700"))
+            els.append(txt(bx + 10, 143, l1, 8.1, MUTED))
+            els.append(txt(bx + 10, 161, l2, 8.1, BODY))
+            els.append(txt(bx + 10, 178, l3, 8.1, BODY))
+            els.append(txt(bx + 10, 197, l4, 8.2, INK, weight="700"))
+
+        for ax in (196, 374, 552):
+            els.append(f'<line x1="{ax}" y1="160" x2="{ax+8}" y2="160" stroke="{INK}" stroke-width="1.8" marker-end="url(#arr-blue)"/>')
+
+        els.append(card(28, 228, 704, 62, rx=8, fill="#f8fafc", stroke=HAIRLINE))
+        els.append(txt(40, 248, "🧂 吃太咸升压的真正物理链条（不是把血变稠！）：过量食盐 Na+ 抬高血浆渗透压 → 触发口渴喝水 + 抗利尿激素 ADH 锁水 →", 8.3, INK, weight="700"))
+        els.append(txt(40, 267, "“水永远跟着钠走”使血管总水量（血容量）膨胀 → 回心血量与心输出量双双升高！反之血容量过高时心房分泌【钠尿肽 ANP】促排钠降压。", 8.2, BODY))
+
+        els.append(card(16, 316, 728, 216))
+        els.append(txt(30, 339, "二、不用死记药名！对照公式 MAP = 心输出量 CO × 外周阻力 SVR，秒懂 ABCD 四大类降压药", 10.4, INK, weight="700"))
+
+        drugs = [
+            (28, "A 类：普利 / 沙坦", "#eff6ff", BLUE,
+             "ACEI(××普利) / ARB(××沙坦)",
+             "🎯 靶点：掐断 RAAS 激素链",
+             "普利拦住肺部 ACE 酶不产",
+             "Ang II；沙坦直接堵死受体 →",
+             "微动脉松开(SVR↓)+排钠减水!",
+             "护肾护心主力军"),
+            (206, "B 类：洛尔类(1988诺奖)", "#faf5ff", PURPLE,
+             "β 受体阻滞剂（××洛尔）",
+             "🎯 靶点：给心脏交感踩刹车",
+             "詹姆士·布莱克发明：挡住心",
+             "肌 β1 受体上的肾上腺素 →",
+             "减慢心率与收缩力(CO↓)+抑肾素",
+             "降心肌耗氧功臣"),
+            (384, "C 类：地平类", "#fff7ed", ORANGE,
+             "钙通道阻滞剂 CCB（××地平）",
+             "🎯 靶点：松开微动脉平滑肌",
+             "血管平滑肌必须进 Ca2+ 才能",
+             "收缩！地平挡在钙通道门口 →",
+             "管径 r 微扩，阻力按 1/r⁴ 暴跌!",
+             "对老年硬化血管极灵"),
+            (562, "D 类：利尿剂", "#ecfdf5", GREEN,
+             "噻嗪类等(氢氯噻嗪/吲达帕胺)",
+             "🎯 靶点：给高压水网放水减容",
+             "抑制肾小管重吸收 Na+ 离子 →",
+             "多余的钠带走多余水分排尿 →",
+             "缩减血容量前负荷，源头减压!",
+             "高盐容量型克星"),
+        ]
+        for dx, dtitle, dfill, dstr, sub, t1, t2, t3, t4, badge in drugs:
+            els.append(card(dx, 352, 168, 166, rx=8, fill=dfill, stroke=dstr))
+            els.append(txt(dx + 10, 371, dtitle, 8.7, dstr, weight="700"))
+            els.append(txt(dx + 10, 388, sub, 8.0, MUTED))
+            els.append(txt(dx + 10, 408, t1, 8.2, INK, weight="700"))
+            els.append(txt(dx + 10, 426, t2, 8.1, BODY))
+            els.append(txt(dx + 10, 442, t3, 8.1, BODY))
+            els.append(txt(dx + 10, 458, t4, 8.1, dstr, weight="700"))
+            els.append(f'<rect x="{dx+10}" y="486" width="148" height="22" rx="11" fill="#ffffff" stroke="{dstr}" stroke-width="1"/>')
+            els.append(txt(dx + 84, 501, badge, 8.1, dstr, weight="700", anchor="middle"))
+
+        return figure(
+            546,
+            "高盐升压机制、肾脏RAAS激素接力与ABCD四大类降压药作用靶点对照图解",
+            "上半部分展示肾脏球旁器分泌肾素经肝脏血管紧张素原、肺部ACE酶生成血管紧张素II并激活醛固酮与抗利尿激素的四步升压通路，以及高盐饮食通过渗透压锁水扩充血容量的物理链条；下半部分将ACEI/ARB、β受体阻滞剂、钙通道阻滞剂和利尿剂精准映射到心输出量与外周阻力公式靶点。",
+            els,
+        )
+
+    # 5. Silent Killer (Baroreceptor Resetting + Laplace Wall Stress + 4 Target Organs + Morning Surge & Clinical Staging)
+    def _build_silent_killer_and_staging():
+        els = []
+        els.extend(header(
+            "高压 160 为什么一点不疼却暗毁四器官？拉普拉斯壁应力与晨峰分级尺",
+            "上：探头 48 小时“叛变”消音 + 拉普拉斯壁应力撕裂微血管 · 下：清晨 6–10 点危险晨峰与中外诊断标准对照",
+        ))
+
+        els.append(card(16, 68, 352, 222))
+        els.append(txt(30, 91, "一、为什么全球 44% 患者毫不知情（无痛假象）？", 10.4, INK, weight="700"))
+        els.append(card(28, 104, 328, 78, rx=8, fill="#fff1f2", stroke="#fda4af"))
+        els.append(txt(38, 123, "🔕 警报器“调定点重设（Resetting）”：", 8.6, "#be123c", weight="700"))
+        els.append(txt(38, 141, "血管壁没有“血压痛觉神经”！更糟的是，颈动脉压力探头只抓", 8.1, BODY))
+        els.append(txt(38, 158, "短时波动——若高压持续 1–2 天，探头就会把 160 当成“新常态”", 8.1, BODY))
+        els.append(txt(38, 174, "停止报警（此时若猛降回正常值，身体反倒误以为低血压头晕！）", 8.0, "#be123c", weight="700"))
+
+        els.append(card(28, 192, 328, 86, rx=8, fill=BLUE_SOFT, stroke=BLUE_LINE))
+        els.append(txt(38, 211, "📐 拉普拉斯管壁应力定律：σ = (P × r) / w", 8.7, BLUE, weight="700"))
+        els.append(txt(38, 229, "• 左心室对抗高压 P → 只能拼命增厚室壁 w 自保（向心性肥厚变硬）", 8.1, BODY))
+        els.append(txt(38, 246, "• 脑深部微动脉壁 w 极薄 → 高压 P 直接顶出微动脉瘤甚至撑破出血", 8.1, BODY))
+        els.append(txt(38, 263, "• 高压脉冲撕裂血管内皮 → 胆固醇钻缝筑斑块 → 管径 r 变窄更升压！", 8.1, INK, weight="700"))
+
+        els.append(card(384, 68, 360, 222))
+        els.append(txt(398, 91, "二、无声高压日夜磨损的“四大靶器官”", 10.4, INK, weight="700"))
+
+        organs = [
+            (396, 104, "#ffe4e6", "#e11d48", "♥ 心脏：肥厚 → 冠心病/心衰",
+             "左室长期顶着高压泵血被迫练成",
+             "僵硬厚墙，舒张充盈变差且冠脉",
+             "供血跟不上，终致心梗或心衰。"),
+            (568, 104, "#fff7ed", ORANGE, "🧠 大脑：脑出血与腔隙脑梗",
+             "大脑中动脉直角分出的豆纹动脉",
+             "直迎高压洪峰，极易破裂脑溢血",
+             "或粥样硬化堵死诱发缺血脑卒中。"),
+            (396, 196, "#eff6ff", BLUE, "🫘 肾脏：肾小球高压硬化",
+             "高压冲毁百万个肾小球滤过网 →",
+             "漏出蛋白尿、肾功能衰竭；缺血",
+             "肾又乱放肾素，陷入升压死循环！"),
+            (568, 196, "#ecfdf5", GREEN, "👁️ 眼底：活体微血管观察窗",
+             "视网膜是全身唯一不切皮就能直",
+             "视活体微动脉的窗口：高压会压",
+             "瘪静脉、引发眼底渗出出血视物糊。"),
+        ]
+        for ox, oy, ofill, ostr, ot, ol1, ol2, ol3 in organs:
+            els.append(card(ox, oy, 164, 82, rx=7, fill=ofill, stroke=ostr))
+            els.append(txt(ox + 8, oy + 18, ot, 8.4, ostr, weight="700"))
+            els.append(txt(ox + 8, oy + 36, ol1, 8.0, BODY))
+            els.append(txt(ox + 8, oy + 52, ol2, 8.0, BODY))
+            els.append(txt(ox + 8, oy + 68, ol3, 8.0, BODY))
+
+        els.append(card(16, 302, 728, 224))
+        els.append(txt(30, 325, "三、左：24 小时昼夜“杓型节律”与清晨危险晨峰 · 右：WHO/中国 vs ACC/AHA 血压分级尺", 10.4, INK, weight="700"))
+
+        cx0, cy0, cw, ch = 64, 348, 286, 134
+        els.append(f'<rect x="{cx0}" y="{cy0}" width="{cw}" height="{ch}" fill="#f8fafc" stroke="{BORDER}" stroke-width="1.1"/>')
+        x_m6 = cx0 + (6.0 / 24.0) * cw
+        x_m10 = cx0 + (10.0 / 24.0) * cw
+        els.append(f'<rect x="{x_m6:.1f}" y="{cy0}" width="{x_m10 - x_m6:.1f}" height="{ch}" fill="#fef2f2"/>')
+
+        p24_lo, p24_hi = 90.0, 150.0
+        def c_x(hr):
+            return cx0 + (hr / 24.0) * cw
+        def c_y(pv):
+            return cy0 + ch - ((pv - p24_lo) / (p24_hi - p24_lo)) * ch
+
+        for pv in (100, 120, 140):
+            yy = c_y(pv)
+            els.append(f'<line x1="{cx0}" y1="{yy:.1f}" x2="{cx0+cw}" y2="{yy:.1f}" stroke="{HAIRLINE}" stroke-width="0.9" stroke-dasharray="3 3"/>')
+            els.append(txt(cx0 - 5, yy + 3.5, str(pv), 8.0, MUTED, anchor="end"))
+        for hr, hlab in ((0, "0点"), (6, "6点"), (12, "12点"), (18, "18点"), (24, "24点")):
+            xx = c_x(hr)
+            els.append(txt(xx, cy0 + ch + 14, hlab, 8.0, MUTED, anchor="middle"))
+
+        hrs_key = [
+            (0, 108), (2, 102), (3.5, 100), (5, 104),
+            (6.5, 118), (8.5, 134), (10.5, 128), (13, 123),
+            (15, 126), (17.5, 131), (20, 122), (22, 114), (24, 108),
+        ]
+        c_pts = []
+        for i in range(121):
+            h = 24.0 * i / 120.0
+            for k in range(len(hrs_key) - 1):
+                h0, v0 = hrs_key[k]
+                h1, v1 = hrs_key[k + 1]
+                if h0 <= h <= h1:
+                    u = (h - h0) / (h1 - h0)
+                    w = 0.5 * (1.0 - math.cos(math.pi * u))
+                    val = v0 * (1.0 - w) + v1 * w
+                    break
+            c_pts.append(f"{c_x(h):.1f},{c_y(val):.1f}")
+        els.append(f'<polyline points="{" ".join(c_pts)}" fill="none" stroke="{BLUE}" stroke-width="2.4"/>')
+        els.append(txt(c_x(4.2), c_y(94), "夜间低谷(-10%~20%)", 8.0, BLUE, weight="700", anchor="middle"))
+        els.append(txt(c_x(9.2), c_y(141), "6–10点清晨血压晨峰!", 8.2, "#dc2626", weight="700", anchor="middle"))
+        els.append(txt(cx0 + cw / 2, cy0 + ch + 30, "交感+皮质醇唤醒激增（心梗脑卒中高发窗）", 8.0, BODY, anchor="middle"))
+
+        tiers = [
+            (342, "#ecfdf5", GREEN, "理想正常", "< 120 且 < 80", "心血管负担最小"),
+            (378, "#f0f9ff", BLUE, "正常高值", "120–129（中国至139/89）", "限盐+运动逆转窗"),
+            (414, "#fff7ed", ORANGE, "130/80 分水岭", "ACC/AHA 1级高血压", "高危人群控制目标!"),
+            (450, "#ffe4e6", "#e11d48", "≥140 或 ≥90", "WHO/中国诊室高血压", "非同日达标即确诊"),
+            (486, "#fae8ff", PURPLE, ">180 或 >120", "高血压急症/危象红线", "伴胸痛头痛立急诊!"),
+        ]
+        for ty_row, tfill, tstr, tleft, tmid, tright in tiers:
+            els.append(card(372, ty_row, 358, 30, rx=6, fill=tfill, stroke=tstr))
+            els.append(txt(382, ty_row + 19, tleft, 8.3, tstr, weight="700"))
+            els.append(txt(482, ty_row + 19, tmid, 8.1, INK, weight="600"))
+            els.append(txt(722, ty_row + 19, tright, 8.0, BODY, anchor="end"))
+
+        return figure(
+            540,
+            "高血压无痛调定点重设、拉普拉斯壁应力四大靶器官损伤与昼夜晨峰及临床分级对照图解",
+            "左上解释压力感受器1至2天调定点重设导致的无症状假象与拉普拉斯壁应力公式σ=Pr/w；右上展示心脑肾眼四大靶器官的慢性力学损伤；左下绘制24小时杓型血压曲线与清晨6至10点晨峰；右下对照WHO/中国140/90诊断线、ACC/AHA 130/80阈值及180/120危象红线。",
+            els,
+        )
+
+    @register(
+        "blood-pressure",
+        "人体血压原理五步图解：1.54米血柱喷泉与脉压波形、柯氏音湍流与电子示波包络动画、站立重力与2秒压力反射、肾脏RAAS与ABCD降压药地图、无声杀手拉普拉斯应力与晨峰分级尺",
+        "science_tech",
+    )
+    def build_blood_pressure():
+        write_svg(SUBDIR, "mmhg-fountain-and-pulse-pressure-wave.svg", _build_mmhg_and_waveform())
+        write_svg(SUBDIR, "cuff-korotkoff-and-oscillometric-envelope.svg", _build_cuff_korotkoff_oscillometric())
+        write_svg(SUBDIR, "orthostatic-gravity-and-baroreceptor-reflex.svg", _build_orthostatic_and_baroreflex())
+        write_svg(SUBDIR, "raas-salt-volume-and-abcd-drugs-map.svg", _build_raas_and_abcd_drugs())
+        write_svg(SUBDIR, "silent-killer-laplace-and-clinical-thresholds.svg", _build_silent_killer_and_staging())
+
+
+_register_blood_pressure()
+
+
+def _register_protein_synthesis():
+    import math
+    from .core import (
+        BLUE,
+        BLUE_SOFT,
+        BODY,
+        BORDER,
+        CARD_BG,
+        GREEN,
+        GREEN_SOFT,
+        HAIRLINE,
+        INK,
+        MUTED,
+        ORANGE,
+        ORANGE_SOFT,
+        PURPLE,
+        PURPLE_SOFT,
+        SLATE,
+        SLATE_SOFT,
+        card,
+        figure,
+        header,
+        pill,
+        register,
+        step_badge,
+        txt,
+        write_svg,
+    )
+
+    SUBDIR = "protein-synthesis"
+    RED = "#dc2626"
+    RED_SOFT = "#fef2f2"
+    TEAL = "#0f766e"
+    TEAL_SOFT = "#f0fdfa"
+    AMBER = "#b45309"
+    AMBER_SOFT = "#fffbeb"
+
+    # Quantitative biological & mathematical assertions
+    assert 4**1 == 4 and 4**2 == 16 < 20 and 4**3 == 64 >= 20
+    assert 61 + 3 == 64
+    coding_dna = "ATGGCTTACGAA"
+    dna_comp = {"A": "T", "T": "A", "G": "C", "C": "G"}
+    rna_comp = {"T": "A", "A": "U", "C": "G", "G": "C"}
+    template_dna = "".join(dna_comp[b] for b in coding_dna)
+    mrna_seq = "".join(rna_comp[b] for b in template_dna)
+    assert template_dna == "TACCGAATGCTT"
+    assert mrna_seq == "AUGGCUUACGAA" and mrna_seq == coding_dna.replace("T", "U")
+
+    # E. coli translation speed (OpenStax Biology 2e §15.5): 0.05 s/aa = 20 aa/s => 200 aa in 10 s
+    ecoli_rate_aa_s = 20.0
+    assert math.isclose(200.0 / ecoli_rate_aa_s, 10.0, rel_tol=1e-9)
+
+    # Levinthal's paradox exact order-of-magnitude check: 100 residues -> 99 internal peptide units -> 198 main-chain torsion angles
+    log10_confs = 198 * math.log10(3.0)  # ~94.47 -> ~3.0 x 10^94 conformations
+    log10_years = log10_confs - math.log10(1.0e13 * 365.25 * 86400.0)  # ~73.97 -> ~9.4 x 10^73 years >> 1.38 x 10^10 yr
+    assert 94.0 < log10_confs < 95.0 and 73.5 < log10_years < 74.5
+
+    def _line(x1, y1, x2, y2, stroke=HAIRLINE, sw=1.6, dash=None, marker=None, cls=None):
+        attrs = [
+            f'x1="{x1:.1f}"',
+            f'y1="{y1:.1f}"',
+            f'x2="{x2:.1f}"',
+            f'y2="{y2:.1f}"',
+            f'stroke="{stroke}"',
+            f'stroke-width="{sw}"',
+        ]
+        if dash:
+            attrs.append(f'stroke-dasharray="{dash}"')
+        if marker:
+            attrs.append(f'marker-end="url(#{marker})"')
+        if cls:
+            attrs.append(f'class="{cls}"')
+        return f'<line {" ".join(attrs)}/>'
+
+    def _poly(pts, stroke, sw=2.3, dash=None, fill="none", cls=None):
+        d = "M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
+        extra = f' stroke-dasharray="{dash}"' if dash else ""
+        cls_attr = f' class="{cls}"' if cls else ""
+        return (
+            f'<path d="{d}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}" '
+            f'stroke-linecap="round" stroke-linejoin="round"{extra}{cls_attr}/>'
+        )
+
+    # -----------------------------------------------------------------------
+    # SVG 1: Central Dogma, Amplification Logic & DNA vs RNA Chemistry
+    # -----------------------------------------------------------------------
+    def _build_central_dogma_and_rna_logic():
+        els = header(
+            "一、中心法则与信使逻辑：为什么核糖体不直接读 DNA，非要多印一层 mRNA？",
+            "左：孤本蓝图锁核内护安全 + 千份复印件并联放大产能 · 右：两处原子级差异决定“永久石碑”与“定时便签”",
+        )
+
+        # Panel A: Vault vs Factory + Central Dogma Flow
+        els.append(card(20, 66, 362, 444))
+        els.append(pill(32, 78, "A · 孤本不外借 + 千倍产能放大与中心法则", fg=BLUE, bg=BLUE_SOFT, w=338, h=24, size=12.0))
+
+        # Step 1: Nucleus Vault
+        els.append(card(32, 112, 338, 86, rx=8, fill=BLUE_SOFT, stroke=BLUE, sw=1.3))
+        els.append(step_badge(50, 132, 1, fg=BLUE, bg="#ffffff"))
+        els.append(txt(68, 136, "细胞核保险柜：唯一正本 DNA（绝不出核）", 12.2, BLUE, weight="700"))
+        els.append(txt(44, 160, "• 每个体细胞核里同一基因通常只有 2 份拷贝；", 11.5, BODY))
+        els.append(txt(44, 182, "• 锁在核内避开胞质自由基与剪切力，永久零损存档。", 11.5, INK, weight="600"))
+
+        els.append(_line(201, 198, 201, 220, stroke=BLUE, sw=2.2, marker="arr-blue"))
+        els.append(txt(212, 214, "转录 + 穿核孔出核", 11.5, BLUE, weight="700"))
+
+        # Step 2: Cytoplasm Factory Amplification
+        els.append(card(32, 224, 338, 92, rx=8, fill=GREEN_SOFT, stroke=GREEN, sw=1.3))
+        els.append(step_badge(50, 244, 2, fg=GREEN, bg="#ffffff"))
+        els.append(txt(68, 248, "细胞质车间：成百上千份 mRNA 并联赶工", 12.2, GREEN, weight="700"))
+        els.append(txt(44, 272, "• 1 份基因 → 印 1,000 份 mRNA × 每份译 1,000 次", 11.5, INK, weight="700"))
+        els.append(txt(44, 294, "  ＝ 短时间内爆发出 1,000,000 颗急需蛋白质（如胰岛素）！", 11.5, GREEN, weight="700"))
+
+        # Step 3: Crick's Central Dogma Map (1958 / 1970)
+        els.append(card(32, 328, 338, 168, rx=8, fill="#f8fafc", stroke=SLATE, sw=1.1))
+        els.append(txt(44, 350, "克里克“中心法则”信息流向边界（1958 / 1970）：", 12.0, INK, weight="700"))
+
+        # Three nodes: DNA -> RNA -> Protein
+        nodes = [
+            (46, 376, 82, 38, "DNA", "4字母石碑", BLUE, BLUE_SOFT),
+            (158, 376, 82, 38, "RNA", "4字母便签", ORANGE, ORANGE_SOFT),
+            (272, 376, 84, 38, "蛋白质", "20氨基酸机器", GREEN, GREEN_SOFT),
+        ]
+        for nx, ny, nw, nh, nt, ns, nfg, nbg in nodes:
+            els.append(card(nx, ny, nw, nh, rx=6, fill=nbg, stroke=nfg, sw=1.3))
+            els.append(txt(nx + nw / 2, ny + 16, nt, 12.0, nfg, "middle", weight="700"))
+            els.append(txt(nx + nw / 2, ny + 32, ns, 11.5, BODY, "middle"))
+
+        # Forward arrows + reverse transcription dashed arrow
+        els.append(_line(128, 390, 155, 390, stroke=BLUE, sw=2.0, marker="arr-blue"))
+        els.append(txt(142, 371, "转录", 11.5, BLUE, "middle", weight="700"))
+        els.append(_line(156, 404, 130, 404, stroke=PURPLE, sw=1.5, dash="3 2", marker="arr-muted"))
+        els.append(txt(142, 429, "逆转录(特例)", 11.5, PURPLE, "middle", weight="600"))
+
+        els.append(_line(240, 395, 269, 395, stroke=GREEN, sw=2.0, marker="arr-green"))
+        els.append(txt(255, 371, "翻译", 11.5, GREEN, "middle", weight="700"))
+
+        els.append(txt(44, 456, "• 真正不可逆的铁门：蛋白质 ↛ RNA / DNA！", 11.5, RED, weight="700"))
+        els.append(txt(44, 478, "  序列一旦译成三维蛋白，任何机制都无法倒推回基因。", 11.5, BODY))
+
+        # Panel B: Two Atomic-Level Chemical Contrasts (2'-H vs 2'-OH, T vs U)
+        els.append(card(394, 66, 346, 444))
+        els.append(pill(406, 78, "B · 两处原子级改造：为什么石碑用 DNA、便签用 RNA？", fg=ORANGE, bg=ORANGE_SOFT, w=322, h=24, size=11.8))
+
+        # Contrast 1: 2'-Deoxyribose vs Ribose
+        els.append(card(406, 112, 322, 184, rx=8, fill=ORANGE_SOFT, stroke=ORANGE, sw=1.2))
+        els.append(txt(418, 134, "改造 ① 五碳糖 2' 号位：少 1 个氧原子，寿命差百万倍", 12.0, ORANGE, weight="700"))
+
+        els.append(card(418, 146, 144, 64, rx=6, fill="#ffffff", stroke=BLUE, sw=1.2))
+        els.append(txt(490, 168, "DNA：脱氧核糖 (2'-H)", 11.5, BLUE, "middle", weight="700"))
+        els.append(txt(490, 190, "化学极钝 · 百年不腐", 11.5, INK, "middle", weight="600"))
+        els.append(txt(490, 206, "适合终身与跨代存档", 11.5, MUTED, "middle"))
+
+        els.append(card(572, 146, 144, 64, rx=6, fill="#ffffff", stroke=RED, sw=1.2))
+        els.append(txt(644, 168, "RNA：核糖 (2'-OH)", 11.5, RED, "middle", weight="700"))
+        els.append(txt(644, 190, "自带亲核“自毁扳机”", 11.5, RED, "middle", weight="700"))
+        els.append(txt(644, 206, "用完即拆不留旧指令", 11.5, MUTED, "middle"))
+
+        els.append(txt(418, 234, "• RNA 2'-羟基 (-OH) 易攻击邻近磷酸键自发断链：", 11.5, BODY))
+        els.append(txt(418, 256, "  大肠杆菌 mRNA 仅活 ~5 秒至几分钟，人类约数小时；", 11.5, INK, weight="600"))
+        els.append(txt(418, 278, "  旧订单按时自毁，细胞才能随时叫停旧蛋白、切换新态！", 11.5, ORANGE, weight="700"))
+
+        # Contrast 2: Thymine (T) vs Uracil (U) Proofreading Tag
+        els.append(card(406, 308, 322, 188, rx=8, fill=PURPLE_SOFT, stroke=PURPLE, sw=1.2))
+        els.append(txt(418, 330, "改造 ② 专用字母 T vs U：DNA 为什么多挂个甲基？", 11.8, PURPLE, weight="700"))
+
+        els.append(card(418, 342, 298, 52, rx=6, fill="#ffffff", stroke=PURPLE, sw=1.1))
+        els.append(txt(567, 363, "隐患：胞嘧啶 C 在水中每天自发脱氨 → 变成 U！", 11.5, RED, "middle", weight="700"))
+        els.append(txt(567, 384, "若不修补，下轮复制原本 C-G 就会突变成 T-A", 11.5, BODY, "middle"))
+
+        els.append(txt(418, 418, "• 临时便签 RNA 用尿嘧啶 U：省去甲基化能耗，速印速用；", 11.5, BODY))
+        els.append(txt(418, 440, "• 永久石碑 DNA 全员改用 T（挂了甲基防伪标的 U）：", 11.5, INK, weight="700"))
+        els.append(txt(418, 462, "  巡逻酶在 DNA 里凡撞见无标 U，必判为 C 烂掉变来", 11.5, BODY))
+        els.append(txt(418, 484, "  的错别字，当场精准挖除换回 C！", 11.5, PURPLE, weight="700"))
+
+        return figure(
+            524,
+            "中心法则信息流向、mRNA千倍放大逻辑与DNA脱氧核糖胸腺嘧啶对比RNA核糖尿嘧啶化学机制图",
+            "左图展示细胞核内孤本DNA安全存档、转录为成百上千份mRNA进入细胞质实现百万级蛋白产能放大，以及克里克中心法则中蛋白质序列无法倒推回核酸的单向铁律；右图解析DNA采用2'-H脱氧核糖抗水解与胸腺嘧啶T识别胞嘧啶脱氨错字，而mRNA采用2'-OH核糖定时降解与尿嘧啶U省能速印的化学分工。",
+            els,
+        )
+
+    # -----------------------------------------------------------------------
+    # SVG 2: RNA Pol II Transcription Bubble & Eukaryotic Splicing / Isoforms
+    # -----------------------------------------------------------------------
+    def _build_transcription_and_splicing():
+        els = header(
+            "二、转录与剪接魔术：RNA 聚合酶怎样抄写基因？2 万个基因凭什么造出 10 万种蛋白？",
+            "上：RNA 聚合酶 II 免引物开泡抄写（模板链 vs 编码链） · 下：加帽加尾、剪除九成内含子与可变剪接",
+        )
+
+        # Panel A: Transcription Bubble & Strand Polarity (Kornberg 2006 Nobel)
+        els.append(card(20, 66, 720, 214))
+        els.append(pill(32, 78, "A · 转录现场：RNA 聚合酶 II 局部拉开 ~14–17 bp 转录泡（无需引物，每秒抄 ~40–50 个碱基）", fg=BLUE, bg=BLUE_SOFT, w=646, h=24, size=11.8))
+
+        # Enzyme body background oval/rounded box
+        els.append(card(120, 112, 480, 156, rx=22, fill="#eff6ff", stroke=BLUE, sw=1.6))
+        els.append(txt(360, 132, "RNA 聚合酶 II 复合物（前方解旋 DNA，后方自动拉回双螺旋）", 11.8, BLUE, "middle", weight="700"))
+
+        # Left and right flanking double-stranded DNA segments
+        els.append(_line(32, 162, 120, 162, stroke=SLATE, sw=3.0))
+        els.append(_line(32, 200, 120, 200, stroke=BLUE, sw=3.0))
+        els.append(txt(76, 150, "已复旋双链", 11.5, MUTED, "middle"))
+
+        els.append(_line(600, 162, 728, 162, stroke=SLATE, sw=3.0))
+        els.append(_line(600, 200, 728, 200, stroke=BLUE, sw=3.0))
+        els.append(txt(664, 150, "待解旋下游 →", 11.5, BLUE, "middle", weight="700"))
+        els.append(txt(664, 222, "认 TATA 盒启动", 11.5, MUTED, "middle"))
+
+        # Sequence alignment box inside transcription bubble (exact verified complementarity)
+        els.append(card(134, 142, 452, 116, rx=10, fill="#ffffff", stroke=BORDER, sw=1.2))
+        els.append(txt(150, 164, "编码链(非模板) 5'", 11.5, SLATE, weight="700"))
+        els.append(txt(302, 164, "A T G  G C T  T A C  G A A", 12.2, SLATE, weight="700", cls="mono"))
+        els.append(txt(544, 164, "3'", 11.5, SLATE, weight="700"))
+
+        els.append(txt(150, 195, "模板链(被读取) 3'", 11.5, BLUE, weight="700"))
+        els.append(txt(302, 195, "T A C  C G A  A T G  C T T", 12.2, BLUE, weight="700", cls="mono"))
+        els.append(txt(544, 195, "5'", 11.5, BLUE, weight="700"))
+
+        els.append(_line(302, 203, 520, 203, stroke=ORANGE, sw=1.2, dash="3 3"))
+
+        els.append(txt(150, 226, "新生前体 mRNA  5'", 11.5, ORANGE, weight="700"))
+        els.append(txt(302, 226, "A U G  G C U  U A C  G A A", 12.2, ORANGE, weight="700", cls="mono"))
+        els.append(txt(530, 226, "→3'", 11.5, ORANGE, weight="700"))
+
+        els.append(txt(360, 249, "顿悟：mRNA 与模板链互补配对，恰好把编码链的 T 全换成了 U！", 11.5, INK, "middle", weight="700"))
+
+        # Panel B: Eukaryotic Capping, Poly-A, Splicing & Alternative Splicing (Roberts & Sharp 1993 Nobel)
+        els.append(card(20, 292, 358, 248))
+        els.append(pill(32, 304, "B · 出核精装修：安全帽 + 倒计时尾 + 剪内含子", fg=ORANGE, bg=ORANGE_SOFT, w=334, h=24, size=11.8))
+
+        # Pre-mRNA schematic bar
+        els.append(txt(32, 348, "刚抄完的毛坯前体 pre-mRNA（外显子被大段内含子隔断）：", 11.5, INK, weight="700"))
+        els.append(card(32, 360, 52, 26, rx=5, fill=PURPLE_SOFT, stroke=PURPLE, sw=1.2))
+        els.append(txt(58, 377, "5'帽", 11.5, PURPLE, "middle", weight="700"))
+
+        els.append(card(86, 360, 52, 26, rx=4, fill=GREEN_SOFT, stroke=GREEN, sw=1.3))
+        els.append(txt(112, 377, "外显1", 11.5, GREEN, "middle", weight="700"))
+
+        els.append(card(140, 363, 62, 20, rx=3, fill=RED_SOFT, stroke=RED, sw=1.1))
+        els.append(txt(171, 377, "内含子", 11.5, RED, "middle", weight="600"))
+
+        els.append(card(204, 360, 52, 26, rx=4, fill=BLUE_SOFT, stroke=BLUE, sw=1.3))
+        els.append(txt(230, 377, "外显2", 11.5, BLUE, "middle", weight="700"))
+
+        els.append(card(258, 363, 52, 20, rx=3, fill=RED_SOFT, stroke=RED, sw=1.1))
+        els.append(txt(284, 377, "内含子", 11.5, RED, "middle", weight="600"))
+
+        els.append(card(312, 360, 54, 26, rx=5, fill=AMBER_SOFT, stroke=AMBER, sw=1.2))
+        els.append(txt(339, 377, "PolyA", 11.5, AMBER, "middle", weight="700"))
+
+        els.append(txt(32, 412, "• 5' 端反接 m⁷G 安全帽：防核酸外切酶啃咬，做核糖体路标；", 11.5, BODY))
+        els.append(txt(32, 434, "• 3' 端挂 ~200 个 A 尾巴：护航出核并充当寿命倒计时沙漏；", 11.5, BODY))
+        els.append(txt(32, 456, "• 剪接体 (snRNP) 认准 GU…AG 边界把内含子拧成套索剪除：", 11.5, INK, weight="700"))
+        els.append(txt(32, 478, "  人类编码外显子仅占全基因组 ~1.5%！哪怕剪偏 1 个碱基，", 11.5, RED, weight="700"))
+        els.append(txt(32, 500, "  下游全部移码报废，因此必须做到“单核苷酸零误差”缝合。", 11.5, BODY))
+
+        # Panel C: Alternative Splicing (20,000 genes -> 100,000+ isoforms)
+        els.append(card(390, 292, 350, 248))
+        els.append(pill(402, 304, "C · 可变剪接：1 份基因草稿，拼出多种专属蛋白", fg=PURPLE, bg=PURPLE_SOFT, w=326, h=24, size=11.8))
+
+        els.append(txt(402, 348, "同一基因含 4 段外显子（保持 5'→3' 先后顺序选拼）：", 11.5, INK, weight="700"))
+        ex_colors = [(GREEN, GREEN_SOFT, "E1"), (BLUE, BLUE_SOFT, "E2"), (ORANGE, ORANGE_SOFT, "E3"), (PURPLE, PURPLE_SOFT, "E4")]
+        for idx, (ec, ebg, elbl) in enumerate(ex_colors):
+            ex_x = 414 + idx * 78
+            els.append(card(ex_x, 360, 56, 26, rx=5, fill=ebg, stroke=ec, sw=1.3))
+            els.append(txt(ex_x + 28, 377, elbl, 11.8, ec, "middle", weight="700"))
+            if idx < 3:
+                els.append(_line(ex_x + 56, 373, ex_x + 78, 373, stroke=SLATE, sw=1.4, dash="3 2"))
+
+        # Two spliced mature mRNA isoforms
+        els.append(card(402, 400, 326, 40, rx=7, fill=GREEN_SOFT, stroke=GREEN, sw=1.1))
+        els.append(txt(414, 425, "骨骼肌路线：拼 [E1–E2–E4] → 收缩快肌型蛋白 A", 11.5, GREEN, weight="700"))
+
+        els.append(card(402, 448, 326, 40, rx=7, fill=BLUE_SOFT, stroke=BLUE, sw=1.1))
+        els.append(txt(414, 473, "平滑肌路线：拼 [E1–E3–E4] → 持久慢肌型蛋白 B", 11.5, BLUE, weight="700"))
+
+        els.append(txt(402, 512, "破案：人类仅 ~20,000 个蛋白编码基因，靠 70%–95% 基因", 11.5, INK, weight="700"))
+        els.append(txt(402, 531, "可变剪接，轻松组合出 >100,000 种结构功能各异的蛋白质！", 11.5, PURPLE, weight="700"))
+
+        return figure(
+            552,
+            "RNA聚合酶II转录泡模板链与编码链配对关系及真核前体mRNA加帽加尾剪接与可变剪接图解",
+            "上图展示RNA聚合酶II解开14至17碱基对转录泡，以3'→5'模板链合成5'→3'前体mRNA（序列与编码链将T换U一致）；左下解析5'端m7G帽、3'端约200个A尾巴与剪接体单碱基精度切除内含子；右下展示可变剪接如何按组织需求选拼外显子，让约2万个人类编码基因产生超10万种蛋白质。",
+            els,
+        )
+
+    # -----------------------------------------------------------------------
+    # SVG 3: Triplet Codon Combinatorics, Frameshift & aaRS-tRNA Adaptor
+    # -----------------------------------------------------------------------
+    def _build_triplet_codon_and_trna():
+        els = header(
+            "三、破译 64 格生命密码：为什么偏偏是“三字母一词”？谁才是真正的双语翻译官？",
+            "左：伽莫夫组合数学铁律、克里克移码实验与简并护城河 · 右：氨酰-tRNA 合成酶验真充能与 tRNA 转接头",
+        )
+
+        # Panel A: Combinatorics + Frameshift + Wobble
+        els.append(card(20, 66, 366, 466))
+        els.append(pill(32, 78, "A · 组合数学必答题：4 种碱基怎样拼够 20 种氨基酸？", fg=BLUE, bg=BLUE_SOFT, w=342, h=24, size=11.8))
+
+        comb_rows = [
+            ("1 字母一词：4¹ = 4 种", 4, RED, RED_SOFT, "差 16 种，远不够 ❌"),
+            ("2 字母一词：4² = 16 种", 16, ORANGE, ORANGE_SOFT, "还差 4 种，仍不够 ❌"),
+            ("3 字母一词：4³ = 64 种", 64, GREEN, GREEN_SOFT, "61 有义 + 3 终止 ✅"),
+        ]
+        for idx, (c_lbl, c_n, c_fg, c_bg, c_res) in enumerate(comb_rows):
+            ry = 114 + idx * 54
+            els.append(card(32, ry, 342, 46, rx=7, fill=c_bg, stroke=c_fg, sw=1.1))
+            els.append(txt(44, ry + 20, c_lbl, 11.8, INK, weight="700"))
+            bw = (c_n / 64.0) * 140.0
+            els.append(f'<rect x="44" y="{ry + 28}" width="140" height="10" rx="5" fill="#ffffff" stroke="{BORDER}"/>')
+            els.append(f'<rect x="44" y="{ry + 28}" width="{bw:.1f}" height="10" rx="5" fill="{c_fg}"/>')
+            els.append(txt(362, ry + 28, c_res, 11.5, c_fg, "end", weight="700"))
+
+        # Crick & Brenner 1961 Frameshift Proof
+        els.append(card(32, 282, 342, 136, rx=8, fill="#f8fafc", stroke=SLATE, sw=1.1))
+        els.append(txt(44, 304, "克里克与布伦纳 1961 移码实验（无标点读框）：", 11.8, INK, weight="700"))
+        els.append(txt(44, 328, "原句：AUG | CAU | GGC | UUA → 正常四肽 ✅", 11.5, GREEN, weight="700"))
+        els.append(txt(44, 352, "+1字：AUG | CCA | UGG | CUU → 后文全乱码 ❌", 11.5, RED, weight="700"))
+        els.append(txt(44, 376, "+3字：AUG | CCC | CAU | GGC → 多1词后复原 ✅", 11.5, BLUE, weight="700"))
+        els.append(txt(44, 402, "铁证：密码必须 3 字一读，由起始 AUG 锁定起跑线！", 11.5, BODY))
+
+        # Degeneracy / Wobble moat
+        els.append(card(32, 428, 342, 92, rx=8, fill=TEAL_SOFT, stroke=TEAL, sw=1.1))
+        els.append(txt(44, 450, "多出的 44 格没浪费：第三位“摆动简并”护城河", 11.6, TEAL, weight="700"))
+        els.append(txt(44, 474, "• 例：GCU / GCC / GCA / GCG 全译为【丙氨酸】；", 11.5, INK, weight="600"))
+        els.append(txt(44, 496, "• 尾字母突变常不改氨基酸，近义词也对应相似侧链！", 11.5, BODY))
+
+        # Panel B: Aminoacyl-tRNA Synthetase (The True Bilingual Enzyme) + tRNA Adaptor
+        els.append(card(398, 66, 342, 466))
+        els.append(pill(410, 78, "B · 真正的双语词典：合成酶充能 + tRNA 转接头", fg=PURPLE, bg=PURPLE_SOFT, w=318, h=24, size=11.8))
+
+        # Step 1: aaRS Enzyme Charging Box
+        els.append(card(410, 114, 318, 166, rx=8, fill=PURPLE_SOFT, stroke=PURPLE, sw=1.3))
+        els.append(step_badge(428, 134, 1, fg=PURPLE, bg="#ffffff"))
+        els.append(txt(446, 138, "氨酰-tRNA 合成酶（20 类幕后真翻译官！）", 12.0, PURPLE, weight="700"))
+        els.append(txt(422, 162, "• 核糖体只查密码配对，不查 tRNA 背上驮的啥；", 11.5, BODY))
+        els.append(txt(422, 184, "• 唯有合成酶兼备【氨基酸口袋 + tRNA 识别槽】", 11.5, INK, weight="700"))
+        els.append(txt(422, 206, "  及【编校纠错剪刀】（装错近亲当场切，错率 ~10⁻⁴）；", 11.5, BODY))
+        els.append(txt(422, 230, "• 耗 1 分子 ATP 把高能酯键压进 tRNA 3'-CCA 端，", 11.5, ORANGE, weight="700"))
+        els.append(txt(422, 252, "  提前存好一会儿核糖体“焊接肽键”的化学能！", 11.5, INK, weight="600"))
+
+        # Step 2: Charged tRNA Adaptor Diagram pairing with mRNA Codon
+        els.append(card(410, 292, 318, 228, rx=8, fill="#ffffff", stroke=BORDER, sw=1.2))
+        els.append(step_badge(428, 312, 2, fg=BLUE, bg=BLUE_SOFT))
+        els.append(txt(446, 316, "充能完毕的 tRNA 转接头（约 76 nt 倒 L 构型）", 11.6, BLUE, weight="700"))
+
+        # Visual schematic of tRNA adaptor in center-left of subcard + callouts on right
+        tx_c = 484.0
+        # Top Amino Acid badge
+        els.append(card(tx_c - 48, 332, 96, 28, rx=14, fill=ORANGE_SOFT, stroke=ORANGE, sw=1.5))
+        els.append(txt(tx_c, 350, "苯丙氨酸 Phe", 11.5, ORANGE, "middle", weight="700"))
+        # 3'-CCA stem
+        els.append(_line(tx_c, 360, tx_c, 382, stroke=ORANGE, sw=2.6))
+        # Cloverleaf / L-body box (wide enough for 3'-AAG-5' cleanly inside!)
+        els.append(card(tx_c - 58, 382, 116, 56, rx=10, fill=BLUE_SOFT, stroke=BLUE, sw=1.6))
+        els.append(txt(tx_c, 404, "tRNA 倒 L 骨架", 11.5, BLUE, "middle", weight="700"))
+        els.append(txt(tx_c, 426, "反密码 3'-AAG-5'", 11.5, INK, "middle", weight="700"))
+        # 3 Hydrogen-bond ticks to mRNA codon
+        for dx_h in (-18, 0, 18):
+            els.append(_line(tx_c + dx_h, 438, tx_c + dx_h, 456, stroke=GREEN, sw=2.0, dash="2 2"))
+        # mRNA Codon bar underneath
+        els.append(card(tx_c - 58, 456, 116, 30, rx=6, fill=GREEN_SOFT, stroke=GREEN, sw=1.5))
+        els.append(txt(tx_c, 476, "mRNA 5'-UUC-3'", 11.5, GREEN, "middle", weight="700"))
+
+        # Right side callouts inside subcard (x=554..718, clear of tx_c+58=542!)
+        els.append(txt(554, 350, "← 3'-CCA 挂载臂", 11.5, ORANGE, weight="700"))
+        els.append(txt(554, 370, "   蓄有高能酯键", 11.5, BODY))
+        els.append(txt(554, 408, "← 刚性倒 L 支架", 11.5, BLUE, weight="700"))
+        els.append(txt(554, 428, "   跨距约 7 纳米", 11.5, BODY))
+        els.append(txt(554, 466, "← 反密码子对暗号", 11.5, GREEN, weight="700"))
+        els.append(txt(554, 486, "   反向平行配对", 11.5, BODY))
+        els.append(txt(422, 509, "1961 尼伦伯格用多聚 U 译出苯丙氨酸链，破译首词！", 11.5, INK, weight="700"))
+
+        return figure(
+            544,
+            "三联体密码子组合数学、克里克移码突变实验与氨酰-tRNA合成酶及tRNA转接头配对机制图",
+            "左图对比4种碱基按1、2、3位组合得到4、16、64种密码子，结合1961年克里克与布伦纳+1移码全乱与+3复原实验及第三位摆动简并容错机制；右图拆解20类氨酰-tRNA合成酶消耗ATP验真充能与tRNA一端挂载苯丙氨酸、另一端以3'-AAG-5'反密码子配对mRNA 5'-UUC-3'密码子的双语转接原理。",
+            els,
+        )
+
+    # -----------------------------------------------------------------------
+    # SVG 4: Animated Ribosome A-P-E Assembly Line, Polysome & rRNA Ribozyme
+    # -----------------------------------------------------------------------
+    def _build_ribosome_ape_and_ribozyme():
+        # Verify exact Euclidean length of emerging polypeptide path for CSS stroke-dasharray
+        pep_pts = [(356.0, 166.0), (356.0, 134.0), (338.0, 114.0), (308.0, 108.0), (274.0, 114.0)]
+        pep_len = sum(
+            math.hypot(pep_pts[i + 1][0] - pep_pts[i][0], pep_pts[i + 1][1] - pep_pts[i][1])
+            for i in range(len(pep_pts) - 1)
+        )
+        assert pep_len < 135.0
+
+        transfer_pts = [(368.0, 178.0), (422.0, 156.0), (476.0, 178.0)]
+        transfer_len = sum(
+            math.hypot(transfer_pts[i + 1][0] - transfer_pts[i][0], transfer_pts[i + 1][1] - transfer_pts[i][1])
+            for i in range(len(transfer_pts) - 1)
+        )
+        assert transfer_len < 130.0
+
+        extra_css = """
+        @keyframes trnaArriveOnce {
+          0% { transform: translate(24px, -12px); opacity: 0.35; }
+          65% { transform: translate(0px, 0px); opacity: 1; }
+          100% { transform: translate(0px, 0px); opacity: 1; }
+        }
+        @keyframes weldArcOnce {
+          0%, 35% { stroke-dashoffset: 140; opacity: 0.2; }
+          100% { stroke-dashoffset: 0; opacity: 1; }
+        }
+        @keyframes growChainOnce {
+          0% { stroke-dashoffset: 145; opacity: 0.35; }
+          100% { stroke-dashoffset: 0; opacity: 1; }
+        }
+        .a-trna-anim {
+          animation: trnaArriveOnce 2.2s cubic-bezier(0.22, 1, 0.36, 1) 1 both;
+        }
+        .weld-arc-anim {
+          stroke-dasharray: 140;
+          stroke-dashoffset: 0;
+          animation: weldArcOnce 2.4s ease-out 1 both;
+        }
+        .pep-chain-anim {
+          stroke-dasharray: 145;
+          stroke-dashoffset: 0;
+          animation: growChainOnce 2.2s ease-out 1 both;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .a-trna-anim, .weld-arc-anim, .pep-chain-anim {
+            animation: none !important;
+            transform: none !important;
+            stroke-dashoffset: 0 !important;
+            opacity: 1 !important;
+          }
+        }
+        """
+
+        els = header(
+            "四、核糖体 A-P-E 纳米流水线：每秒焊 20 颗氨基酸，操刀手竟不是蛋白质！",
+            "上：大小亚基三工位循环与肽链嫁接（含单次进站焊接动画） · 下：多聚核糖体并联量产与 2009 诺奖“核酶”真相",
+        )
+
+        # Panel A: Ribosome A-P-E Assembly Line
+        els.append(card(20, 66, 720, 276))
+        els.append(pill(32, 78, "A · 核糖体三工位接力（真核 40S+60S=80S；细菌 30S+50S=70S，沉降系数按流体阻力不按简单加法）", fg=BLUE, bg=BLUE_SOFT, w=696, h=24, size=11.5))
+
+        # Large Ribosomal Subunit Dome (x=156..568, y=114..266)
+        els.append(card(156, 114, 412, 152, rx=26, fill="#eff6ff", stroke=BLUE, sw=1.8))
+        els.append(txt(172, 136, "大亚基 (60S / 50S)", 12.0, BLUE, weight="700"))
+        els.append(txt(552, 136, "肽酰转移酶中心 (rRNA!)", 11.5, RED, "end", weight="700"))
+
+        # Emerging N-terminal polypeptide chain out of top-left tunnel (cleanly left of 156!)
+        els.append(_poly(pep_pts, stroke=GREEN, sw=3.2, cls="pep-chain-anim"))
+        for bx_p, by_p in [(274, 114), (296, 110), (318, 110), (340, 116)]:
+            els.append(f'<circle cx="{bx_p}" cy="{by_p}" r="6.2" fill="{GREEN_SOFT}" stroke="{GREEN}" stroke-width="1.6"/>')
+        els.append(txt(32, 122, "N 端最先伸出", 11.5, GREEN, weight="700"))
+        els.append(txt(32, 144, "(N→C 端合成)", 11.5, BODY))
+
+        # Three Ribosomal Slots: E-site (x=176..286), P-site (x=304..414), A-site (x=432..542)
+        # 1. E-site
+        els.append(card(176, 150, 110, 108, rx=10, fill="#ffffff", stroke=SLATE, sw=1.4))
+        els.append(txt(231, 168, "E 位（退场口）", 11.8, SLATE, "middle", weight="700"))
+        els.append(card(188, 188, 86, 42, rx=7, fill=SLATE_SOFT, stroke=SLATE, sw=1.2))
+        els.append(txt(231, 206, "空载 tRNA", 11.5, SLATE, "middle", weight="600"))
+        els.append(txt(231, 224, "↖ 弹射离场", 11.5, MUTED, "middle"))
+        els.append(txt(231, 249, "回胞质重装复用", 11.5, MUTED, "middle"))
+
+        # 2. P-site
+        els.append(card(304, 150, 110, 108, rx=10, fill="#ffffff", stroke=GREEN, sw=1.6))
+        els.append(txt(359, 168, "P 位（持链位）", 11.8, GREEN, "middle", weight="700"))
+        els.append(card(316, 188, 86, 42, rx=7, fill=GREEN_SOFT, stroke=GREEN, sw=1.3))
+        els.append(txt(359, 206, "旧肽链挂此", 11.5, GREEN, "middle", weight="700"))
+        els.append(txt(359, 224, "3'-UAC-5'", 11.5, INK, "middle", weight="700", cls="mono"))
+        els.append(txt(359, 249, "整条链嫁接向右!", 11.5, RED, "middle", weight="700"))
+
+        # 3. A-site (with one-shot arrival group)
+        els.append(card(432, 150, 110, 108, rx=10, fill="#ffffff", stroke=ORANGE, sw=1.6))
+        els.append(txt(487, 168, "A 位（进站位）", 11.8, ORANGE, "middle", weight="700"))
+        els.append('<g class="a-trna-anim">')
+        els.append(card(444, 188, 86, 42, rx=7, fill=ORANGE_SOFT, stroke=ORANGE, sw=1.4))
+        els.append(txt(487, 206, "新氨基酸", 11.5, ORANGE, "middle", weight="700"))
+        els.append(txt(487, 224, "3'-CGA-5'", 11.5, INK, "middle", weight="700", cls="mono"))
+        els.append("</g>")
+        els.append(txt(487, 249, "对准密码才放行", 11.5, ORANGE, "middle", weight="700"))
+
+        # Peptide-bond transfer arc cleanly between P-tRNA right edge and A-tRNA left edge (below slot titles!)
+        els.append(
+            f'<path d="M 398,194 Q 423,174 446,194" fill="none" stroke="{RED}" '
+            'stroke-width="2.4" marker-end="url(#arr-orange)" class="weld-arc-anim"/>'
+        )
+
+        # Small Ribosomal Subunit + mRNA Conveyor Track underneath (y=270..328)
+        els.append(card(156, 270, 412, 44, rx=14, fill=GREEN_SOFT, stroke=GREEN, sw=1.5))
+        els.append(txt(170, 297, "小亚基读带：", 11.5, GREEN, weight="700"))
+        els.append(txt(254, 297, "5'… GCU | AUG | GCU | UAC | UAA …3'", 12.0, INK, weight="700", cls="mono"))
+        els.append(txt(380, 331, "每焊完 1 个肽键，核糖体耗 GTP 向 3' 端横移 3 个碱基；遇终止密码子由释放因子加水剪断放行！", 11.5, INK, "middle", weight="600"))
+
+        # Right-side 4-step summary inside Panel A (x=580..728, y=114..314)
+        els.append(card(580, 114, 148, 200, rx=10, fill="#f8fafc", stroke=BORDER, sw=1.2))
+        els.append(txt(592, 136, "四步循环口诀：", 11.8, INK, weight="700"))
+        els.append(txt(592, 162, "① A 位对暗号进站", 11.5, ORANGE, weight="700"))
+        els.append(txt(592, 188, "② 旧链嫁接新氨头", 11.5, RED, weight="700"))
+        els.append(txt(592, 208, "   (脱水缩合肽键)", 11.5, BODY))
+        els.append(txt(592, 234, "③ 整体移位 3 碱基", 11.5, BLUE, weight="700"))
+        els.append(txt(592, 254, "   (A→P, P→E退场)", 11.5, BODY))
+        els.append(txt(592, 280, "④ 遇 UAA/UAG/UGA", 11.5, PURPLE, weight="700"))
+        els.append(txt(592, 300, "   加水剪断完工！", 11.5, PURPLE, weight="700"))
+
+        # Panel B Left: Polysome Parallel Production & Speed
+        els.append(card(20, 354, 348, 192))
+        els.append(pill(32, 366, "B · 多聚核糖体：一条 mRNA 挂十几台机器同印", fg=GREEN, bg=GREEN_SOFT, w=324, h=24, size=11.6))
+
+        # mRNA horizontal line with 4 ribosomes and progressively longer green chains
+        els.append(_line(44, 434, 346, 434, stroke=ORANGE, sw=3.0))
+        els.append(txt(40, 452, "5'帽", 11.5, PURPLE, weight="700"))
+        els.append(txt(350, 452, "3'尾", 11.5, AMBER, "end", weight="700"))
+        for idx_r, rx_c in enumerate([92, 158, 224, 290]):
+            els.append(f'<ellipse cx="{rx_c}" cy="428" rx="18" ry="12" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.5"/>')
+            els.append(f'<ellipse cx="{rx_c}" cy="441" rx="15" ry="7" fill="{GREEN_SOFT}" stroke="{GREEN}" stroke-width="1.3"/>')
+            chain_h = 10 + idx_r * 8
+            els.append(_line(rx_c, 416, rx_c + 8, 416 - chain_h, stroke=GREEN, sw=2.6))
+
+        els.append(txt(32, 478, "• 大肠杆菌每秒焊 ~20 个氨基酸（0.05 秒/个），织完一条", 11.5, BODY))
+        els.append(txt(32, 500, "  200 氨基酸的蛋白仅需 10 秒！真核每秒约 5–6 个，但靠", 11.5, INK, weight="600"))
+        els.append(txt(32, 522, "  多台核糖体首尾相接流水作业，每秒照样吐出成批成品。", 11.5, GREEN, weight="700"))
+
+        # Panel B Right: 2009 Nobel Chemistry Ribozyme & Antibiotic Target
+        els.append(card(380, 354, 360, 192))
+        els.append(pill(392, 366, "C · 2009 诺奖惊天反转：核糖体竟然是一台“核酶”！", fg=RED, bg=RED_SOFT, w=336, h=24, size=11.6))
+
+        els.append(txt(392, 408, "• X 射线拍清数十万原子坐标后学界震惊：", 11.5, INK, weight="700"))
+        els.append(txt(392, 430, "  焊接肽键核心周围 18 Å 内，没有任何蛋白质侧链——", 11.5, RED, weight="700"))
+        els.append(txt(392, 452, "  真正催化肽键的是大亚基 rRNA（蛋白只在外圈当脚手架）！", 11.5, INK, weight="700"))
+        els.append(txt(392, 478, "• 两大意义：① 铁证远古“RNA 世界”兼备遗传与催化，", 11.5, BODY))
+        els.append(txt(392, 500, "  破除“先有酶还是先有基因”悖论；② 四环素堵细菌 70S", 11.5, BODY))
+        els.append(txt(392, 522, "  A 位、氯霉素卡肽键，专杀细菌不伤人类 80S 核糖体！", 11.5, BLUE, weight="700"))
+
+        return figure(
+            558,
+            "核糖体A-P-E三工位翻译循环单次动画、多聚核糖体并联流水线与2009诺奖rRNA核酶催化机制图",
+            "上图展示核糖体大小亚基在mRNA上沿5'→3'推进，通过A位验票进站、P位将整条生长肽链嫁接到新氨基酸氨基上形成肽键、E位空载tRNA退场完成每次3碱基移位（含一次性进站焊接动画）；左下展示多聚核糖体并联高效翻译（细菌每秒20个氨基酸）；右下解析2009年诺贝尔化学奖证实肽酰转移酶中心18埃内全为rRNA核酶及抗生素靶向细菌70S核糖体原理。",
+            els,
+            extra_css=extra_css,
+        )
+
+    # -----------------------------------------------------------------------
+    # SVG 5: Levinthal Folding Funnel + Signal Peptide ZIP Sorting & Post-Mod
+    # -----------------------------------------------------------------------
+    def _build_folding_funnel_and_sorting():
+        els = header(
+            "五、从一维珠串到三维活机器：10⁷⁴ 年折叠悖论怎样秒破？造好的蛋白怎么寄对地址？",
+            "左：莱文塔尔悖论 vs 自由能折叠漏斗、分子伴侣与 AI 预测 · 右：信号肽“邮政编码”分拣与剪切激活",
+        )
+
+        # Panel A: Levinthal's Paradox vs Free-Energy Folding Funnel + Chaperones + 2024 Nobel
+        els.append(card(20, 66, 364, 468))
+        els.append(pill(32, 78, "A · 莱文塔尔悖论 vs 疏水塌缩“自由能漏斗”", fg=BLUE, bg=BLUE_SOFT, w=340, h=24, size=11.8))
+
+        # Paradox calculation box
+        els.append(card(32, 112, 340, 82, rx=8, fill=RED_SOFT, stroke=RED, sw=1.1))
+        els.append(txt(44, 134, "如果靠盲目穷举试错（Levinthal 1969）：", 11.8, RED, weight="700"))
+        els.append(txt(44, 156, "100 氨基酸约 198 个主链转角 → 3¹⁹⁸ ≈ 3×10⁹⁴ 种折法；", 11.5, INK, weight="600"))
+        els.append(txt(44, 178, "哪怕每秒试 10¹³ 次，也要 ~9×10⁷³ 年（远超宇宙年龄）！", 11.5, RED, weight="700"))
+
+        # Plotted Rugged Free-Energy Funnel (x=44..360, y=206..396)
+        els.append(card(32, 204, 340, 198, rx=8, fill="#ffffff", stroke=BORDER, sw=1.2))
+        els.append(txt(202, 224, "真实物理破局：顺着自由能漏斗毫秒级滑向谷底！", 11.6, GREEN, "middle", weight="700"))
+
+        # Funnel left & right walls with a small misfolding trap on right wall
+        funnel_left = [(56, 244), (92, 272), (122, 310), (154, 346), (178, 384)]
+        funnel_right = [(348, 244), (314, 280), (294, 268), (266, 314), (222, 352), (178, 384)]
+        els.append(_poly(funnel_left, stroke=BLUE, sw=2.6))
+        els.append(_poly(funnel_right, stroke=BLUE, sw=2.6))
+        # Downhill trajectory arrow inside funnel
+        els.append(_poly([(96, 250), (144, 294), (178, 372)], stroke=GREEN, sw=2.2, dash="5 3"))
+        els.append(f'<circle cx="178" cy="384" r="6.0" fill="{GREEN}"/>')
+
+        els.append(txt(56, 240, "高能无规珠串", 11.5, SLATE, weight="700"))
+        els.append(txt(178, 397, "唯一天然活性态 (能量最低谷)", 11.5, GREEN, "middle", weight="700"))
+        els.append(txt(304, 262, "错折陷阱!", 11.5, RED, "middle", weight="700"))
+        els.append(txt(302, 332, "← 分子伴侣桶", 11.5, ORANGE, "middle", weight="700"))
+        els.append(txt(302, 352, "防粘连救回正轨", 11.5, BODY, "middle"))
+
+        # Bottom summary + 2024 Nobel AlphaFold2 / Rosetta
+        els.append(card(32, 412, 340, 108, rx=8, fill=GREEN_SOFT, stroke=GREEN, sw=1.1))
+        els.append(txt(44, 434, "• 驱动力：怕水的疏水侧链瞬间往球心抱团塌缩，", 11.5, BODY))
+        els.append(txt(44, 456, "  氢键顺势扣紧 α-螺旋与 β-折叠，毫秒级滑入谷底；", 11.5, INK, weight="600"))
+        els.append(txt(44, 480, "• 2024 诺贝尔化学奖：AlphaFold2 攻克“序列预测结构”", 11.5, BLUE, weight="700"))
+        els.append(txt(44, 502, "  50 年难题，Baker 更从头定制自然界未有的新蛋白！", 11.5, GREEN, weight="700"))
+
+        # Panel B: Blobel's Signal Peptide Postal Sorting (1999 Nobel) & Post-Translational Processing
+        els.append(card(396, 66, 344, 468))
+        els.append(pill(408, 78, "B · 邮政分拣与精加工：全城几万种蛋白凭什么不送错？", fg=PURPLE, bg=PURPLE_SOFT, w=320, h=24, size=11.6))
+
+        # Route 1: Cytosolic Free Ribosomes
+        els.append(card(408, 114, 320, 108, rx=8, fill=BLUE_SOFT, stroke=BLUE, sw=1.2))
+        els.append(step_badge(426, 134, 1, fg=BLUE, bg="#ffffff"))
+        els.append(txt(444, 138, "路线 ① 游离核糖体：无外派车票 → 留守胞内", 11.8, BLUE, weight="700"))
+        els.append(txt(420, 162, "• 全程在胞质溶胶里完工（如血红蛋白、骨架蛋白）；", 11.5, BODY))
+        els.append(txt(420, 184, "• 若带核定位或线粒体“门禁卡”，完工后再专送", 11.5, BODY))
+        els.append(txt(420, 206, "  细胞核、线粒体、叶绿体或过氧化物酶体。", 11.5, INK, weight="600"))
+
+        # Route 2: Signal Peptide -> SRP -> Rough ER -> Golgi -> Secretion / Membrane
+        els.append(card(408, 234, 320, 174, rx=8, fill=PURPLE_SOFT, stroke=PURPLE, sw=1.3))
+        els.append(step_badge(426, 254, 2, fg=PURPLE, bg="#ffffff"))
+        els.append(txt(444, 258, "路线 ② N 端信号肽“邮政编码”（1999 诺奖）", 11.8, PURPLE, weight="700"))
+        els.append(txt(420, 282, "• 头十几颗疏水氨基酸刚冒头，SRP 颗粒当场踩停", 11.5, INK, weight="700"))
+        els.append(txt(420, 304, "  核糖体，押送至【粗面内质网】通道边织边塞入腔！", 11.5, PURPLE, weight="700"))
+        els.append(txt(420, 328, "• 内质网腔内：切掉信号肽车票 + 扣紧二硫键 (-S-S-)；", 11.5, BODY))
+        els.append(txt(420, 350, "• 囊泡运往【高尔基体】：贴糖链标签 → 镶嵌细胞膜", 11.5, BODY))
+        els.append(txt(420, 372, "  做受体通道，或分泌出胞（抗体、消化酶、激素）！", 11.5, INK, weight="600"))
+        els.append(txt(420, 394, "  （粗面内质网满身颗粒，正是停靠赶工的核糖体）", 11.5, MUTED))
+
+        # Step 3: Post-translational activation (Insulin C-peptide & Phosphorylation)
+        els.append(card(408, 420, 320, 100, rx=8, fill=AMBER_SOFT, stroke=AMBER, sw=1.2))
+        els.append(step_badge(426, 440, 3, fg=AMBER, bg="#ffffff"))
+        els.append(txt(444, 444, "翻译后剪裁激活：刚下线的未必能直接上岗！", 11.8, AMBER, weight="700"))
+        els.append(txt(420, 468, "• 胰岛素原须剪掉中间 C 肽，A/B 链才具降糖活性；", 11.5, INK, weight="600"))
+        els.append(txt(420, 490, "• 消化酶原到肠腔才拆封（防消化自家胰腺！），配", 11.5, BODY))
+        els.append(txt(420, 510, "  合磷酸化等开关，完成从死字符到活机器的一跃。", 11.5, AMBER, weight="700"))
+
+        return figure(
+            546,
+            "莱文塔尔折叠悖论与自由能折叠漏斗、分子伴侣及信号肽粗面内质网高尔基体分拣加工图解",
+            "左图算清100氨基酸蛋白3^198≈3×10^94种构象盲试需约9×10^73年的莱文塔尔悖论，展示疏水塌缩沿自由能漏斗毫秒级滑入唯一天然活性态、分子伴侣隔离防聚集及2024年诺贝尔化学奖AI结构预测；右图解析游离核糖体胞内路线与1999年诺奖信号肽-SRP引导粗面内质网跨膜、二硫键折叠、高尔基体糖基化分拣及胰岛素原切除C肽激活全流程。",
+            els,
+        )
+
+    @register(
+        "protein-synthesis",
+        "从DNA到蛋白质合成五步图解：中心法则与DNA/RNA原子级分工、RNA聚合酶II转录泡与可变剪接、三联体密码组合数学与合成酶tRNA双语转接、核糖体A-P-E流水线动画与rRNA核酶、自由能折叠漏斗与信号肽邮政分拣",
+        "science_tech",
+    )
+    def build_protein_synthesis():
+        write_svg(SUBDIR, "central-dogma-and-rna-messenger-logic.svg", _build_central_dogma_and_rna_logic())
+        write_svg(SUBDIR, "transcription-bubble-and-alternative-splicing.svg", _build_transcription_and_splicing())
+        write_svg(SUBDIR, "triplet-codon-combinatorics-and-trna-adaptor.svg", _build_triplet_codon_and_trna())
+        write_svg(SUBDIR, "ribosome-ape-assembly-line-and-ribozyme.svg", _build_ribosome_ape_and_ribozyme())
+        write_svg(SUBDIR, "protein-folding-funnel-and-postal-sorting.svg", _build_folding_funnel_and_sorting())
+
+
+_register_protein_synthesis()
+
+
+def _register_solid_to_liquid():
+    from .core import step_badge, txt, write_svg
+
+    SUBDIR = "solid-to-liquid"
+    RED = "#dc2626"
+    RED_SOFT = "#fef2f2"
+    AMBER = "#b45309"
+    AMBER_SOFT = "#fffbeb"
+    TEAL = "#0f766e"
+    TEAL_SOFT = "#f0fdfa"
+
+    # Quantitative assertions for solid-to-liquid thermodynamics & physics:
+    # 1. Heating 1 kg (55.508 mol) of H2O from -20 C ice -> 0 C ice -> 0 C water -> 100 C water:
+    mol_1kg = 1000.0 / 18.01528
+    q_ice_20 = 1.0 * 2.09 * 20.0          # 41.80 kJ
+    q_fus_1kg = mol_1kg * 6.01            # 333.61 kJ
+    q_wat_100 = 1.0 * 4.184 * 100.0       # 418.40 kJ
+    eq_temp_rise = q_fus_1kg / 4.184      # 79.73 C!
+    assert 41.5 < q_ice_20 < 42.1
+    assert 333.0 < q_fus_1kg < 334.5
+    assert 79.5 < eq_temp_rise < 80.0
+
+    # 2. Clausius-Clapeyron slope for Ice Ih -> Water at T_m = 273.15 K:
+    # rho_ice = 916.7 kg/m^3, rho_water = 999.84 kg/m^3, L_f = 333.6e3 J/kg
+    dv_ice_wat = (1.0 / 999.84) - (1.0 / 916.7)  # -9.070e-5 m^3/kg
+    dtdp_k_per_mpa = (273.15 * dv_ice_wat / 333600.0) * 1e6  # -0.07427 K/MPa
+    assert -0.076 < dtdp_k_per_mpa < -0.072
+
+    def _line(x1, y1, x2, y2, stroke=HAIRLINE, sw=1.6, dash=None, marker=None, cls=None):
+        attrs = [
+            f'x1="{x1:.1f}"',
+            f'y1="{y1:.1f}"',
+            f'x2="{x2:.1f}"',
+            f'y2="{y2:.1f}"',
+            f'stroke="{stroke}"',
+            f'stroke-width="{sw}"',
+        ]
+        if dash:
+            attrs.append(f'stroke-dasharray="{dash}"')
+        if marker:
+            attrs.append(f'marker-end="url(#{marker})"')
+        if cls:
+            attrs.append(f'class="{cls}"')
+        return f'<line {" ".join(attrs)}/>'
+
+    def _poly(pts, stroke, sw=2.2, dash=None, fill="none", cls=None):
+        d = "M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
+        extra = f' stroke-dasharray="{dash}"' if dash else ""
+        cls_attr = f' class="{cls}"' if cls else ""
+        return (
+            f'<path d="{d}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}" '
+            f'stroke-linecap="round" stroke-linejoin="round"{extra}{cls_attr}/>'
+        )
+
+    # -----------------------------------------------------------------------
+    # SVG 1: Microscopic Nature of Liquids, g(r) & Triple-Point Rarity
+    # -----------------------------------------------------------------------
+    def _build_liquid_short_range_order():
+        els = header(
+            "一、液体的真实面目：既非散沙也非死板方阵，而是“短程有序、长程无序”的皮秒集体舞",
+            "左：晶格死锁 vs 液态暂态囚笼（~1 ps 换舞伴）vs 气体 · 右：径向分布函数 g(r) 实算与三相点生存门槛",
+        )
+
+        # Panel A: Three States Microscopic Comparison + Surface Tension
+        els.append(card(20, 66, 354, 464))
+        els.append(pill(32, 78, "A · 微观排布真相：液体的拥挤度其实跟固体几乎一样！", fg=BLUE, bg=BLUE_SOFT, w=330, h=24, size=11.5))
+
+        # Sub-row 1: Crystal
+        els.append(card(32, 112, 330, 88, rx=8, fill="#f8fafc", stroke=BORDER, sw=1.2))
+        for r_i in range(3):
+            for c_i in range(4):
+                cx_d = 54 + c_i * 22
+                cy_d = 132 + r_i * 22
+                els.append(f'<circle cx="{cx_d}" cy="{cy_d}" r="6.2" fill="{BLUE}" opacity="0.88"/>')
+        els.append(txt(144, 134, "① 晶体固体（长程有序）", 11.8, BLUE, weight="700"))
+        els.append(txt(144, 156, "• 原子锁死在周期格点原地震动", 11.5, BODY))
+        els.append(txt(144, 178, "• 抗剪切 G>0，保持固定外形", 11.5, INK, weight="600"))
+
+        # Sub-row 2: Liquid (crowded disordered cage!)
+        els.append(card(32, 210, 330, 108, rx=8, fill=TEAL_SOFT, stroke=TEAL, sw=1.4))
+        liq_pts = [
+            (54, 240), (76, 236), (97, 243), (118, 237),
+            (62, 261), (85, 264), (108, 263), (52, 284),
+            (75, 287), (98, 285), (120, 280),
+        ]
+        for idx_p, (cx_d, cy_d) in enumerate(liq_pts):
+            col_p = ORANGE if idx_p == 5 else TEAL
+            els.append(f'<circle cx="{cx_d}" cy="{cy_d}" r="6.2" fill="{col_p}"/>')
+        els.append(f'<circle cx="85" cy="264" r="19" fill="none" stroke="{ORANGE}" stroke-width="1.4" stroke-dasharray="3 2"/>')
+        els.append(txt(144, 232, "② 液体（短程有序 · 长程无序）", 11.8, TEAL, weight="700"))
+        els.append(txt(144, 254, "• 密度与固体仅差 5–10%，肩并肩紧挨！", 11.5, INK, weight="700"))
+        els.append(txt(144, 276, "• 贴身第一圈仍有 ~4–12 个暂态邻居，", 11.5, BODY))
+        els.append(txt(144, 298, "  但每 ~1–2 皮秒就挤破囚笼换新舞伴！", 11.5, ORANGE, weight="700"))
+
+        # Sub-row 3: Gas
+        els.append(card(32, 328, 330, 78, rx=8, fill="#fff7ed", stroke=ORANGE, sw=1.1))
+        for cx_d, cy_d in [(54, 350), (112, 346), (78, 384), (122, 388)]:
+            els.append(f'<circle cx="{cx_d}" cy="{cy_d}" r="5.5" fill="{ORANGE}"/>')
+        els.append(txt(144, 352, "③ 气体（长短程皆无序）", 11.8, ORANGE, weight="700"))
+        els.append(txt(144, 374, "• 间距拉开 ~10 倍，密度骤降上千倍，", 11.5, BODY))
+        els.append(txt(144, 394, "  动能彻底碾压引力（k_B T ≫ U₀）。", 11.5, INK, weight="600"))
+
+        # Surface tension & viscosity box
+        els.append(card(32, 418, 330, 98, rx=8, fill=BLUE_SOFT, stroke=BLUE, sw=1.2))
+        els.append(txt(44, 440, "液态三大宏观绝活（全靠“贴身却能换位”）：", 11.6, BLUE, weight="700"))
+        els.append(txt(44, 462, "• 难压缩却可流动（黏度 η 度量换笼阻力）；", 11.5, BODY))
+        els.append(txt(44, 484, "• 表面张力：表层少一半邻居被向内拽 → 水滴缩球；", 11.5, INK, weight="600"))
+        els.append(txt(44, 504, "• 毛细现象：附着力 > 内聚力 → 顺细管逆重力爬升。", 11.5, TEAL, weight="700"))
+
+        # Panel B: Computed Radial Distribution Function g(r) + Cosmic Rarity
+        els.append(card(388, 66, 352, 464))
+        els.append(pill(400, 78, "B · 一眼分清三态：径向分布函数 g(r) 与宇宙稀缺性", fg=PURPLE, bg=PURPLE_SOFT, w=328, h=24, size=11.5))
+
+        # Plot g(r) for r/sigma in [0.5 .. 3.6] -> x in [436..722], g in [0 .. 3.2] -> y in [120..294]
+        gx0, gx1, gy0, gy1 = 436.0, 722.0, 120.0, 294.0
+        els.append(_line(gx0, gy1, gx1, gy1, stroke=SLATE, sw=1.4))
+        els.append(_line(gx0, gy0, gx0, gy1, stroke=SLATE, sw=1.4))
+
+        def rx_px(rs):
+            return gx0 + ((rs - 0.5) / 3.1) * (gx1 - gx0)
+
+        def gy_px(gv):
+            return gy1 - (min(gv, 3.2) / 3.2) * (gy1 - gy0)
+
+        # g = 1 baseline
+        y_one = gy_px(1.0)
+        els.append(_line(gx0, y_one, gx1, y_one, stroke=ORANGE, sw=1.5, dash="5 3"))
+        els.append(txt(428, y_one + 4, "1", 11.5, ORANGE, "end", weight="700"))
+        els.append(txt(428, gy1 + 4, "0", 11.5, MUTED, "end"))
+
+        # Crystal discrete peaks (light blue spikes)
+        cryst_pts = []
+        for i in range(156):
+            rs = 0.5 + i * 0.02
+            gv = 0.0
+            for pk_r, pk_h in [(1.02, 3.05), (1.44, 1.55), (1.76, 1.85), (2.04, 2.25), (2.68, 1.75), (3.12, 1.60)]:
+                gv += pk_h * math.exp(-((rs - pk_r) / 0.042) ** 2)
+            cryst_pts.append((rx_px(rs), gy_px(gv)))
+        els.append(_poly(cryst_pts, stroke="#93c5fd", sw=1.8))
+
+        # Liquid damped oscillatory g(r) (bold teal curve)
+        liq_curve = []
+        for i in range(156):
+            rs = 0.5 + i * 0.02
+            if rs < 0.86:
+                gv = 0.0
+            else:
+                core = 1.0 - math.exp(-((rs - 0.86) / 0.08) ** 2)
+                osc = 1.72 * math.exp(-1.05 * (rs - 1.02)) * math.cos(2.0 * math.pi * (rs - 1.04) / 0.96)
+                gv = max(0.0, core * (1.0 + osc))
+            liq_curve.append((rx_px(rs), gy_px(gv)))
+        els.append(_poly(liq_curve, stroke=TEAL, sw=2.6))
+
+        els.append(txt(rx_px(1.04) + 8, gy_px(2.82), "液体第1邻居峰", 11.5, TEAL, weight="700"))
+        els.append(txt(720, 146, "浅蓝尖峰：晶体长程序", 11.5, BLUE, "end", weight="600"))
+        els.append(txt(720, 168, "橙色虚线：理想气体 g(r)→1", 11.5, ORANGE, "end", weight="700"))
+        els.append(txt(564, 314, "距离 r / σ（>3σ 后液体起伏抹平→1）", 11.5, MUTED, "middle"))
+
+        # Cosmic rarity / Triple Point card
+        els.append(card(400, 330, 328, 186, rx=8, fill=PURPLE_SOFT, stroke=PURPLE, sw=1.2))
+        els.append(txt(412, 352, "宇宙真相：液体是三态里最娇贵的“灰姑娘”！", 11.6, PURPLE, weight="700"))
+        els.append(txt(412, 376, "• 气体铺满星际，冰岩遍布彗星；唯独液体被死死", 11.5, BODY))
+        els.append(txt(412, 398, "  夹在【三相点压强 P_t】与【临界点】窄缝里！", 11.5, INK, weight="700"))
+        els.append(txt(412, 422, "• 一旦环境气压 P < P_t，液态在任何温度都不存在：", 11.5, RED, weight="700"))
+        els.append(txt(412, 444, "  ① 二氧化碳 P_t=5.11 atm → 常压干冰只升华；", 11.5, BODY))
+        els.append(txt(412, 466, "  ② 水 P_t=611.7 Pa → 太空与月球冰受热直奔水汽，", 11.5, BODY))
+        els.append(txt(412, 488, "     唯有地球大气压稳稳托住了浩瀚液态海洋！", 11.5, TEAL, weight="700"))
+
+        return figure(
+            544,
+            "固液气三态微观囚笼排布、径向分布函数g(r)实算与三相点气压门槛图解",
+            "左栏对比晶体格点锁死、液体肩并肩暂态囚笼皮秒换位与气体稀疏乱飞，并归纳液体表面张力与毛细现象；右栏实算绘制晶体、液体与理想气体的径向分布函数g(r)，并说明低于三相点压强时液态无法存在的相图铁律。",
+            els,
+        )
+
+    # -----------------------------------------------------------------------
+    # SVG 2: Lindemann 10% Vibration Melting Criterion & Gibbs Free Energy G(T)
+    # -----------------------------------------------------------------------
+    def _build_lindemann_and_gibbs():
+        els = header(
+            "二、坚硬固体凭什么在某一刻突然松手？林德曼 10% 振幅红线与自由能夺权",
+            "左：热振动冲破晶格间距 10% 触发剪切崩塌 · 右：吉布斯自由能 G = H - TS 交叉线与过冷液体",
+        )
+
+        # Panel A: Lindemann Criterion (1910)
+        els.append(card(20, 66, 354, 456))
+        els.append(pill(32, 78, "A · 动力学扳机：林德曼熔化判据（振幅 ≈ 10% 间距）", fg=ORANGE, bg=ORANGE_SOFT, w=330, h=24, size=11.5))
+
+        # Cold lattice vs Melting lattice
+        els.append(card(32, 114, 330, 112, rx=8, fill="#f8fafc", stroke=BORDER, sw=1.2))
+        els.append(txt(44, 134, "低温固态 (T ≪ T_m)：热抖动仅 ~3% 间距 a", 11.6, BLUE, weight="700"))
+        for idx_c in range(4):
+            cx_a = 68 + idx_c * 72
+            els.append(f'<circle cx="{cx_a}" cy="176" r="11" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.2" stroke-dasharray="2 2"/>')
+            els.append(f'<circle cx="{cx_a}" cy="176" r="5.5" fill="{BLUE}"/>')
+        els.append(txt(44, 212, "相邻势阱互不侵犯，剪切模量 G_c 坚挺，晶格稳固。", 11.5, BODY))
+
+        els.append(card(32, 238, 330, 132, rx=8, fill=RED_SOFT, stroke=RED, sw=1.4))
+        els.append(txt(44, 258, "抵达熔点 (T = T_m)：均方根振幅冲破 ~10% a！", 11.6, RED, weight="700"))
+        for idx_c in range(4):
+            cx_a = 68 + idx_c * 72
+            els.append(f'<circle cx="{cx_a}" cy="302" r="24" fill="#fee2e2" stroke="{RED}" stroke-width="1.5" stroke-dasharray="3 2"/>')
+            els.append(f'<circle cx="{cx_a + (4 if idx_c % 2 == 0 else -4)}" cy="302" r="5.8" fill="{RED}"/>')
+        els.append(txt(44, 344, "1910 林德曼普适铁律：√⟨u²⟩ / a ≈ 0.10–0.13", 11.5, INK, weight="700"))
+        els.append(txt(44, 362, "邻居撞肩产生 ~10% 临界剪切应变，囚笼瞬间松动！", 11.5, RED, weight="600"))
+
+        # Bond strength -> T_m spectrum
+        els.append(card(32, 382, 330, 126, rx=8, fill=AMBER_SOFT, stroke=AMBER, sw=1.2))
+        els.append(txt(44, 404, "弹簧越硬，把振幅晃到 10% 所需的熔点越高：", 11.5, AMBER, weight="700"))
+        els.append(txt(44, 428, "• 弱色散力：固态氩 -189 °C（轻轻一热就晃散架）", 11.5, BODY))
+        els.append(txt(44, 450, "• 氢键网络：冰 0 °C · 离子键：食盐 NaCl 801 °C", 11.5, INK, weight="600"))
+        els.append(txt(44, 472, "• 强金属/共价键：铁 1538 °C · 钨高达 3422 °C！", 11.5, RED, weight="700"))
+        els.append(txt(44, 494, "（唯一零压不冻：液氦零点量子抖动已超 10%！）", 11.5, PURPLE, weight="700"))
+
+        # Panel B: Thermodynamic Tug-of-War G = H - T*S
+        els.append(card(388, 66, 352, 456))
+        els.append(pill(400, 78, "B · 热力学终审裁判：焓 H（省能量）vs 熵 S（要自由）", fg=BLUE, bg=BLUE_SOFT, w=328, h=24, size=11.5))
+
+        # Plot G(T): x in [436..720] (T), y in [122..320] (G)
+        gx0, gx1, gy0, gy1 = 436.0, 720.0, 122.0, 320.0
+        els.append(_line(gx0, gy1, gx1, gy1, stroke=SLATE, sw=1.4))
+        els.append(_line(gx0, gy0, gx0, gy1, stroke=SLATE, sw=1.4))
+        els.append(txt(428, 134, "G", 12.0, INK, "end", weight="700"))
+        els.append(txt(718, gy1 + 18, "温度 T →", 11.5, INK, "end", weight="700"))
+
+        xm_px, ym_px = 561.2, 208.5
+        els.append(_line(436, 162, xm_px, ym_px, stroke=BLUE, sw=2.8))
+        els.append(_line(xm_px, ym_px, 716, 266, stroke=BLUE, sw=1.6, dash="4 3"))
+        els.append(_line(436, 128, xm_px, ym_px, stroke=TEAL, sw=1.8, dash="5 3"))
+        els.append(_line(xm_px, ym_px, 716, 308, stroke=TEAL, sw=2.8))
+
+        els.append(_line(xm_px, ym_px, xm_px, gy1, stroke=RED, sw=1.6, dash="3 3"))
+        els.append(f'<circle cx="{xm_px:.1f}" cy="{ym_px:.1f}" r="5.0" fill="{RED}"/>')
+        els.append(txt(xm_px, gy1 + 18, "熔点 T_m", 11.8, RED, "middle", weight="700"))
+
+        els.append(txt(442, 216, "固态 G_固 (斜率缓)", 11.5, BLUE, weight="700"))
+        els.append(txt(478, 132, "过冷液体(亚稳)", 11.5, TEAL, weight="700"))
+        els.append(txt(628, 308, "液态 G_液 (斜率陡!)", 11.5, TEAL, "middle", weight="700"))
+
+        # Explanation card under plot
+        els.append(card(400, 350, 328, 158, rx=8, fill=TEAL_SOFT, stroke=TEAL, sw=1.2))
+        els.append(txt(412, 372, "为什么加热到 T_m 会发生“政权交接”？", 11.8, TEAL, weight="700"))
+        els.append(txt(412, 396, "• 自然界自动滚向【吉布斯自由能 G = H - TS 最低】态：", 11.5, INK, weight="600"))
+        els.append(txt(412, 418, "• T < T_m：温度低，晶体靠成键深、低焓 H 稳坐江山；", 11.5, BODY))
+        els.append(txt(412, 440, "• T > T_m：T 放大熵项 -TS！液体构型多（S_液>S_固），", 11.5, BODY))
+        els.append(txt(412, 462, "  G_液 跌破 G_固，精确交界 T_m = ΔH_fus / ΔS_fus！", 11.5, RED, weight="700"))
+        els.append(txt(412, 486, "• 缺晶核时纯水可沿虚线滑入 -10 °C【过冷水】秒冻态！", 11.5, PURPLE, weight="700"))
+
+        return figure(
+            536,
+            "林德曼10%晶格热振幅熔化判据与吉布斯自由能G(T)固液交叉相变图解",
+            "左栏展示低温微幅振动与熔点处均方根振幅达到原子间距约10%引发晶格剪切松动，对比不同化学键熔点跨度；右栏绘制固态与液态吉布斯自由能随温度变化的斜率交叉，标明熔点T_m与亚稳态过冷液体。",
+            els,
+        )
+
+    # -----------------------------------------------------------------------
+    # SVG 3: 1 kg H2O Heating Curve & 0 °C Latent Heat Plateau (One-Shot Anim)
+    # -----------------------------------------------------------------------
+    def _build_latent_heat_plateau():
+        els = header(
+            "三、猛火一直烧，为什么冰水混合物死卡在 0 °C 不升温？334 kJ/kg 熔化潜热账本",
+            "上：1 kg 冰（-20 °C → 100 °C）实算升温曲线与 0 °C 潜热长台阶动画 · 下：动能温度计 vs 势能拆键费",
+        )
+
+        els.append(
+            """<style>
+  @keyframes trace-heat-curve {
+    0% { stroke-dashoffset: 680; }
+    100% { stroke-dashoffset: 0; }
+  }
+  .heat-trace-anim {
+    stroke-dasharray: 680;
+    stroke-dashoffset: 0;
+    animation: trace-heat-curve 4.0s ease-in-out 1 both;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .heat-trace-anim {
+      animation: none !important;
+      stroke-dashoffset: 0 !important;
+    }
+  }
+</style>"""
+        )
+
+        # Panel A (Top full-width): Exact Quantitative Heating Curve of 1 kg H2O (Q = 0 .. 820 kJ, T = -25 .. 105 C)
+        els.append(card(20, 66, 720, 250))
+        els.append(
+            pill(
+                32,
+                78,
+                "A · 实算 1 kg 冰加热全程：融化 0 °C 冰吞掉的 334 kJ，竟够把 0 °C 液态水直接烧到近 80 °C 烫茶！",
+                fg=BLUE,
+                bg=BLUE_SOFT,
+                w=696,
+                h=24,
+                size=11.5,
+            )
+        )
+
+        gx0, gx1, gy0, gy1 = 76.0, 712.0, 116.0, 274.0
+        els.append(_line(gx0, gy1, gx1, gy1, stroke=SLATE, sw=1.4))
+        els.append(_line(gx0, gy0, gx0, gy1, stroke=SLATE, sw=1.4))
+
+        def q_to_x(q_kj):
+            return gx0 + (q_kj / 820.0) * (gx1 - gx0)
+
+        def t_to_y(tc):
+            return gy1 - ((tc + 26.0) / 136.0) * (gy1 - gy0)
+
+        y_0c = t_to_y(0.0)
+        y_100c = t_to_y(100.0)
+        els.append(_line(gx0, y_0c, gx1, y_0c, stroke=BORDER, sw=1.2, dash="4 4"))
+        els.append(_line(gx0, y_100c, gx1, y_100c, stroke=BORDER, sw=1.2, dash="4 4"))
+        els.append(txt(68, t_to_y(-20.0) + 4, "-20°C", 11.5, BLUE, "end", weight="700"))
+        els.append(txt(68, y_0c + 4, "0°C", 11.5, RED, "end", weight="700"))
+        els.append(txt(68, y_100c + 4, "100°C", 11.5, ORANGE, "end", weight="700"))
+
+        x_q1 = q_to_x(q_ice_20)
+        x_q2 = q_to_x(q_ice_20 + q_fus_1kg)
+        x_q3 = q_to_x(q_ice_20 + q_fus_1kg + q_wat_100)
+        els.append(card(x_q1 + 6, y_0c - 50, x_q2 - x_q1 - 12, 62, rx=6, fill=RED_SOFT, stroke=RED, sw=1.1, dash="4 3"))
+
+        pts_heat = [
+            (q_to_x(0.0), t_to_y(-20.0)),
+            (x_q1, y_0c),
+            (x_q2, y_0c),
+            (x_q3, y_100c),
+        ]
+        # Static guide curve so initial state (t=0) and non-animated viewers always see the full path
+        els.append(_poly(pts_heat, stroke="#fca5a5", sw=2.0, dash="5 3"))
+        els.append(_poly(pts_heat, stroke=RED, sw=3.2, cls="heat-trace-anim"))
+        for px_d, py_d, col_d in [
+            (q_to_x(0.0), t_to_y(-20.0), BLUE),
+            (x_q1, y_0c, RED),
+            (x_q2, y_0c, RED),
+            (x_q3, y_100c, ORANGE),
+        ]:
+            els.append(f'<circle cx="{px_d:.1f}" cy="{py_d:.1f}" r="4.5" fill="{col_d}"/>')
+
+        els.append(txt(0.5 * (x_q1 + x_q2), y_0c - 30, "② 0 °C 潜热长平台：ΔH_fus = 333.6 kJ/kg", 11.5, RED, "middle", weight="700"))
+        els.append(txt(0.5 * (x_q1 + x_q2), y_0c - 10, "冰渐少水渐多，温度死锁 0.0 °C！", 11.5, INK, "middle", weight="600"))
+        els.append(_line(92, 176, 92, 250, stroke=BLUE, sw=1.2, dash="3 2"))
+        els.append(txt(84, 170, "① 冰升温 (+42 kJ)", 11.5, BLUE, weight="700"))
+        els.append(txt(502, 168, "③ 液态水升温 (+418 kJ)", 11.5, TEAL, "middle", weight="700"))
+        els.append(txt(380, 300, "横轴：注入热量 Q（0 → 794 kJ，随后还将迎来 2257 kJ/kg 更长的 100 °C 汽化平台）", 11.5, MUTED, "middle"))
+
+        # Panel B (Bottom Left): Kinetic vs Potential Energy Accounting
+        els.append(card(20, 330, 354, 198))
+        els.append(pill(32, 342, "B · 能量去哪了？动能一分没涨，全交了“赎身费”！", fg=RED, bg=RED_SOFT, w=330, h=24, size=11.5))
+        els.append(txt(34, 382, "• 温度计只测分子热运动的【平均动能 ⟨E_k⟩】；", 11.5, INK, weight="700"))
+        els.append(txt(34, 406, "• 0 °C 台阶上灌进的 334 kJ/kg 热量一分没给速度，", 11.5, BODY))
+        els.append(txt(34, 428, "  而是 100% 转存进了【分子间势能 ΔU_pot】！", 11.5, RED, weight="700"))
+        els.append(txt(34, 454, "• 拆键账：气化需扯断 100% 氢键（40.7 kJ/mol），", 11.5, BODY))
+        els.append(txt(34, 476, "  而冰化水仅扯断约 13%–15% 刚性氢键（6.01 kJ/mol），", 11.5, TEAL, weight="700"))
+        els.append(txt(34, 498, "  刚够让水分子挣脱格点、滑进贴身流动囚笼！", 11.5, INK, weight="600"))
+
+        # Panel C (Bottom Right): Everyday Power of Latent Heat
+        els.append(card(388, 330, 352, 198))
+        els.append(pill(400, 342, "C · 生活里的“潜热恒温锚”：冰镇饮料与化雪寒意", fg=TEAL, bg=TEAL_SOFT, w=328, h=24, size=11.5))
+        els.append(txt(402, 382, "① 为什么冰块比 0 °C 冰水镇饮料猛得多？", 11.6, BLUE, weight="700"))
+        els.append(txt(402, 404, "   0 °C 水升到 10 °C 只吸 42 kJ/kg；而 0 °C 冰光是化成", 11.5, BODY))
+        els.append(txt(402, 426, "   0 °C 水就狂吸 334 kJ/kg——制冷本领足足高出 8 倍！", 11.5, RED, weight="700"))
+        els.append(txt(402, 454, "② 实验室零成本绝对温标：只要保温杯冰水共存，无须电控", 11.5, TEAL, weight="700"))
+        els.append(txt(402, 476, "   自动死锁 0.00 °C；融雪天持续吸热熔化叠加湿冷导热，", 11.5, BODY))
+        els.append(txt(402, 498, "   体感才格外刺骨（“下雪凝华放热、化雪熔化吸热”）。", 11.5, INK, weight="600"))
+
+        return figure(
+            542,
+            "1千克冰从零下20度加热到100度的热量温度实算曲线与0度熔化潜热平台动画",
+            "上栏按真实比热与熔化焓精确绘制1千克冰升温曲线，单次动画描出消耗333.6千焦热量的0摄氏度固液共存恒温长平台；下栏解析温度只反映平均动能而潜热全部转化为扯断约15%氢键的分子势能，并对比冰块镇饮与冰水定标应用。",
+            els,
+        )
+
+    # -----------------------------------------------------------------------
+    # SVG 4: Water Density Collapse Anomaly & Why Ice Is Really Slippery
+    # -----------------------------------------------------------------------
+    def _build_water_anomaly_and_skating():
+        els = header(
+            "四、水的叛逆与百年滑冰冤案：冰为什么反常浮在水面？冰刀真能把冰压化吗？",
+            "左：六角空心笼坍缩致融化体积缩 ~8.3% 与 4 °C 密度峰 · 右：冰刀压强实算打脸与法拉第表面预熔层",
+        )
+
+        # Panel A: Water Density Jump on Melting + 4 C Peak
+        els.append(card(20, 66, 354, 462))
+        els.append(pill(32, 78, "A · 99% 固体融化膨胀，唯独冰融化反而“缩水”变重！", fg=BLUE, bg=BLUE_SOFT, w=330, h=24, size=11.5))
+
+        gx0, gx1, gy0, gy1 = 86.0, 344.0, 120.0, 266.0
+        els.append(_line(gx0, gy1, gx1, gy1, stroke=SLATE, sw=1.4))
+        els.append(_line(gx0, gy0, gx0, gy1, stroke=SLATE, sw=1.4))
+
+        def tx_px(tc):
+            return gx0 + ((tc + 12.0) / 47.0) * (gx1 - gx0)
+
+        def ry_px(rho):
+            return gy1 - ((rho - 910.0) / 96.0) * (gy1 - gy0)
+
+        x_0 = tx_px(0.0)
+        els.append(_line(tx_px(-12.0), ry_px(918.6), x_0, ry_px(916.7), stroke=BLUE, sw=2.8))
+        els.append(_line(x_0, ry_px(916.7), x_0, ry_px(999.84), stroke=RED, sw=2.0, dash="4 3"))
+        wat_pts = []
+        for tc in range(0, 36, 2):
+            rho_v = 999.972 - 0.0075 * ((tc - 3.98) ** 1.85) if tc >= 4 else 999.84 + 0.033 * tc
+            wat_pts.append((tx_px(tc), ry_px(rho_v)))
+        els.append(_poly(wat_pts, stroke=TEAL, sw=2.8))
+
+        els.append(f'<circle cx="{x_0:.1f}" cy="{ry_px(916.7):.1f}" r="4.2" fill="{BLUE}"/>')
+        els.append(f'<circle cx="{tx_px(4.0):.1f}" cy="{ry_px(999.97):.1f}" r="4.5" fill="{TEAL}"/>')
+        els.append(txt(80, ry_px(916.7) + 4, "917", 11.5, BLUE, "end", weight="700"))
+        els.append(txt(80, ry_px(1000.0) + 4, "1000", 11.5, TEAL, "end", weight="700"))
+        els.append(txt(x_0 + 8, ry_px(954.0), "0 °C 坍缩暴涨 +9%!", 11.5, RED, weight="700"))
+        els.append(txt(tx_px(4.0) + 8, ry_px(1000.0) + 18, "4 °C 密度峰(999.97)", 11.5, TEAL, weight="700"))
+        els.append(txt(206, 286, "温度 T (-12 → 35 °C) · 纵轴：密度 kg/m³", 11.5, MUTED, "middle"))
+
+        # Mechanism & lake survival card
+        els.append(card(32, 300, 330, 214, rx=8, fill=BLUE_SOFT, stroke=BLUE, sw=1.2))
+        els.append(txt(44, 322, "为什么冰化成水反而变密？（铋、镓、硅亦如此）", 11.5, BLUE, weight="700"))
+        els.append(txt(44, 346, "• 冰 Ih 被四面体氢键支成空旷六角笼，肚里全是空洞；", 11.5, BODY))
+        els.append(txt(44, 368, "• 0 °C 融化拆掉 ~15% 氢键，笼架局部坍塌，游离分子", 11.5, INK, weight="600"))
+        els.append(txt(44, 390, "  趁机钻进空洞挤得更紧 → 体积骤缩 ~8.3%！", 11.5, RED, weight="700"))
+        els.append(txt(44, 416, "• 地球生命的护身符：若冰像铁一样沉底，寒冬湖海将从", 11.5, TEAL, weight="700"))
+        els.append(txt(44, 438, "  底往上冻成死冰坨；幸亏冰浮水面当棉被，4 °C 最重的", 11.5, BODY))
+        els.append(txt(44, 460, "  水沉在湖底，鱼虾才得以安度严冬！", 11.5, INK, weight="600"))
+        els.append(txt(44, 486, "• 推论：加压偏爱小体积 → 冰受压熔点微降(-0.074°C/MPa)", 11.5, PURPLE, weight="700"))
+
+        # Panel B: Why Ice Is REALLY Slippery (Physics Today 2005)
+        els.append(card(388, 66, 352, 462))
+        els.append(pill(400, 78, "B · 百年教科书破案：滑冰真靠冰刀把冰“压化”吗？", fg=RED, bg=RED_SOFT, w=328, h=24, size=11.5))
+
+        els.append(card(400, 114, 328, 178, rx=8, fill=RED_SOFT, stroke=RED, sw=1.2))
+        els.append(step_badge(418, 134, 1, fg=RED, bg="#ffffff"))
+        els.append(txt(436, 138, "先拿克劳修斯—克拉佩龙方程算笔硬账 ❌", 11.6, RED, weight="700"))
+        els.append(txt(412, 164, "• 每加压 1 MPa (~10 atm)，冰熔点仅降 0.074 °C！", 11.5, INK, weight="700"))
+        els.append(txt(412, 186, "• 70 kg 选手踩冰刀压强 ~20–47 MPa → 熔点最多降到", 11.5, BODY))
+        els.append(txt(412, 208, "  -1.5 ~ -3.5 °C！可冰球馆标准冰温是 -9 °C，极地", 11.5, RED, weight="700"))
+        els.append(txt(412, 230, "  -30 °C 照样滑雪！（且 <-22 °C 高压只压出固态冰III，", 11.5, BODY))
+        els.append(txt(412, 252, "  压不出半滴水！）单纯压融说彻底破产！", 11.5, INK, weight="700"))
+        els.append(txt(412, 276, "  （注：万吨冰川底部接近 0 °C 时压融润滑依然有效）", 11.5, MUTED))
+
+        els.append(card(400, 304, 328, 210, rx=8, fill=TEAL_SOFT, stroke=TEAL, sw=1.3))
+        els.append(step_badge(418, 324, 2, fg=TEAL, bg="#ffffff"))
+        els.append(txt(436, 328, "真正主角：法拉第“表面预熔水膜”+ 摩擦生热 ✅", 11.5, TEAL, weight="700"))
+
+        els.append(card(414, 344, 300, 26, rx=5, fill="#bae6fd", stroke=BLUE, sw=1.3, dash="4 2"))
+        els.append(txt(564, 361, "表面预熔准液态膜（~1–70 nm，-35 °C 仍未冻死!）", 11.5, BLUE, "middle", weight="700"))
+        els.append(card(414, 370, 300, 28, rx=4, fill="#e2e8f0", stroke=SLATE, sw=1.2))
+        els.append(txt(564, 388, "内部完整六角冰晶格（四面体满配锁死）", 11.5, SLATE, "middle", weight="700"))
+
+        els.append(txt(412, 420, "• 1850 法拉第洞见：冰最表层分子头顶悬空缺一半氢键，", 11.5, BODY))
+        els.append(txt(412, 442, "  早在 -35 °C 就提前松绑成纳米级“准液态润滑膜”", 11.5, INK, weight="700"))
+        els.append(txt(412, 464, "  （所以站在冰上不动也打滑，两块冰轻碰会冻粘）；", 11.5, BODY))
+        els.append(txt(412, 486, "• 滑行起来后，冰刀高速【摩擦生热】进一步把水膜加厚，", 11.5, ORANGE, weight="700"))
+        els.append(txt(412, 504, "  双剑合璧造就了冰面极低摩擦系数！", 11.5, TEAL, weight="700"))
+
+        return figure(
+            542,
+            "冰融化密度骤增9%与4摄氏度反常膨胀曲线及冰面滑行法拉第表面预熔层真相图解",
+            "左栏绘制冰在0摄氏度融化时密度从916.7跃升至999.8千克每立方米并在4摄氏度达峰的定量曲线，解释六角氢键空笼坍缩与湖底生命庇护；右栏用克拉佩龙实算证伪单纯冰刀压融说，展示法拉第表面预熔准液态层与摩擦生热双机制。",
+            els,
+        )
+
+    # -----------------------------------------------------------------------
+    # SVG 5: Crystalline Sharp Melting T_m vs Amorphous Glass Transition T_g
+    # -----------------------------------------------------------------------
+    def _build_crystal_vs_amorphous_glass():
+        els = header(
+            "五、为什么冰块和食盐“定温咔嚓化开”，玻璃、沥青与塑料却“越烤越稀没熔点”？",
+            "左：晶体一阶相变陡崖 T_m vs 非晶玻璃化转变 T_g 实算图 · 右：巧克力调温与“教堂彩窗流淌”辟谣",
+        )
+
+        # Panel A: Specific Volume / Enthalpy vs Temperature (Crystal vs Glass)
+        els.append(card(20, 66, 366, 456))
+        els.append(pill(32, 78, "A · 一张图看懂“真固体晶体”与“冻僵的过冷液体”", fg=BLUE, bg=BLUE_SOFT, w=342, h=24, size=11.5))
+
+        gx0, gx1, gy0, gy1 = 74.0, 364.0, 118.0, 326.0
+        els.append(_line(gx0, gy1, gx1, gy1, stroke=SLATE, sw=1.4))
+        els.append(_line(gx0, gy0, gx0, gy1, stroke=SLATE, sw=1.4))
+        els.append(txt(66, 134, "体积V", 11.5, INK, "end", weight="700"))
+        els.append(txt(66, 152, "/焓H", 11.5, MUTED, "end"))
+
+        els.append(_line(84, 308, 236, 265, stroke=BLUE, sw=2.8))
+        els.append(_line(236, 265, 236, 198, stroke=RED, sw=2.6))
+        els.append(_line(236, 198, 356, 128, stroke=TEAL, sw=2.8))
+
+        els.append(_line(236, 198, 154, 246, stroke=ORANGE, sw=2.4, dash="5 3"))
+        els.append(_line(84, 266, 154, 246, stroke=PURPLE, sw=2.8))
+
+        els.append(_line(154, 246, 154, gy1, stroke=PURPLE, sw=1.3, dash="3 3"))
+        els.append(_line(236, 265, 236, gy1, stroke=RED, sw=1.3, dash="3 3"))
+        els.append(txt(144, gy1 + 17, "玻璃化 T_g", 11.5, PURPLE, "middle", weight="700"))
+        els.append(txt(244, gy1 + 17, "晶体熔点 T_m", 11.5, RED, "middle", weight="700"))
+
+        els.append(txt(84, 242, "非晶玻璃态", 11.5, PURPLE, weight="700"))
+        els.append(txt(162, 206, "过冷液体", 11.5, ORANGE, weight="700"))
+        els.append(txt(248, 138, "平衡液态", 11.5, TEAL, weight="700"))
+        els.append(txt(116, 312, "晶态固体", 11.5, BLUE, weight="700"))
+        els.append(txt(244, 238, "潜热陡崖!", 11.5, RED, weight="700"))
+
+        # Summary below chart
+        els.append(card(32, 354, 342, 154, rx=8, fill=PURPLE_SOFT, stroke=PURPLE, sw=1.2))
+        els.append(txt(44, 376, "• 晶体（石英、冰、盐）：键强一致，到 T_m 集体齐断，", 11.5, INK, weight="600"))
+        els.append(txt(44, 398, "  体积与焓发生垂直跳变（一阶相变，温度死卡不动）；", 11.5, BLUE, weight="700"))
+        els.append(txt(44, 422, "• 非晶玻璃体（窗玻璃、塑料、麦芽糖）：急冷不及排队列，", 11.5, BODY))
+        els.append(txt(44, 444, "  黏度暴涨 10¹⁵ 倍将无序液体冻僵（T_g ≈ 2/3 T_m）！", 11.5, PURPLE, weight="700"))
+        els.append(txt(44, 466, "  加热时松键先软、紧键后软，只见连续变稀、无潜热台！", 11.5, RED, weight="700"))
+        els.append(txt(44, 488, "  （同是 SiO₂：水晶 1713 °C 定温化，石英玻璃千度渐软）", 11.5, MUTED))
+
+        # Panel B: Chocolate Polymorphs, Pitch Drop & Cathedral Window Myth
+        els.append(card(398, 66, 342, 456))
+        els.append(pill(410, 78, "B · 三个最容易搞混的生活追问：巧克力、沥青与古窗", fg=AMBER, bg=AMBER_SOFT, w=318, h=24, size=11.5))
+
+        els.append(card(410, 114, 318, 122, rx=8, fill=AMBER_SOFT, stroke=AMBER, sw=1.2))
+        els.append(step_badge(428, 134, 1, fg=AMBER, bg="#ffffff"))
+        els.append(txt(446, 138, "黄油和巧克力为啥也是“慢慢化”？", 11.8, AMBER, weight="700"))
+        els.append(txt(422, 162, "• 黄油并非玻璃，而是多种甘油三酯晶体的【混合物】，", 11.5, BODY))
+        els.append(txt(422, 184, "  各自熔点从 -4 °C 横跨 38 °C，接力融化才显软绵；", 11.5, INK, weight="600"))
+        els.append(txt(422, 206, "• 好巧克力靠调温锁定可可脂 V 型晶（熔点 33.8 °C）：", 11.5, AMBER, weight="700"))
+        els.append(txt(422, 226, "  手拿 (32 °C) 脆响不化，进嘴 (37 °C) 瞬间雪崩化开！", 11.5, RED, weight="700"))
+
+        els.append(card(410, 248, 318, 116, rx=8, fill=TEAL_SOFT, stroke=TEAL, sw=1.2))
+        els.append(step_badge(428, 268, 2, fg=TEAL, bg="#ffffff"))
+        els.append(txt(446, 272, "百年滴九滴的“沥青滴漏实验”（1927 至今）", 11.6, TEAL, weight="700"))
+        els.append(txt(422, 298, "• 昆士兰大学的黑沥青看似能拿锤子敲碎的脆块，实则是", 11.5, BODY))
+        els.append(txt(422, 320, "  黏度达水 2300 亿倍（2.3×10⁸ Pa·s）的超黏液体——", 11.5, INK, weight="700"))
+        els.append(txt(422, 342, "  每约 8–13 年才被重力拽落一滴！", 11.5, TEAL, weight="700"))
+
+        els.append(card(410, 376, 318, 132, rx=8, fill=RED_SOFT, stroke=RED, sw=1.2))
+        els.append(step_badge(428, 396, 3, fg=RED, bg="#ffffff"))
+        els.append(txt(446, 400, "辟谣：“教堂彩窗下厚上薄是玻璃流了八百年” ❌", 11.5, RED, weight="700"))
+        els.append(txt(422, 426, "• 室温远低于硅酸盐玻璃 T_g（~550 °C）！实算室温下", 11.5, BODY))
+        els.append(txt(422, 448, "  窗玻璃流淌 1 纳米所需时间比【宇宙年龄】还长得多", 11.5, INK, weight="700"))
+        els.append(txt(422, 470, "  （>10²⁰ 年）！古窗下厚纯粹是中世纪手工吹制圆盘", 11.5, BODY))
+        els.append(txt(422, 492, "  玻璃天生厚薄不均，工匠顺手把厚边朝下装稳而已！", 11.5, RED, weight="700"))
+
+        return figure(
+            536,
+            "晶体一阶相变熔点陡崖与非晶态玻璃化转变曲线及巧克力沥青教堂玻璃辟谣图解",
+            "左栏绘制体积与焓随温度变化曲线，对比晶体在熔点T_m处的垂直潜热陡崖与过冷液体在T_g处冻结为非晶玻璃体的连续拐折；右栏辨析黄油混合物与可可脂V型晶体调温、昆士兰沥青滴漏实验，并定量辟谣中世纪教堂窗玻璃室温流动传说。",
+            els,
+        )
+
+    @register(
+        "solid-to-liquid-phase",
+        "液体形式与固液熔化全过程五步图解：短程有序皮秒囚笼与径向分布函数g(r)、林德曼10%振幅判据与吉布斯自由能交叉、1千克冰升温实算与0度熔化潜热动画、水反常缩水浮冰与法拉第表面预熔层、晶体熔点陡崖与非晶玻璃化转变",
+        "science_tech",
+    )
+    def build_solid_to_liquid_phase():
+        write_svg(SUBDIR, "liquid-short-range-order-and-gr-curve.svg", _build_liquid_short_range_order())
+        write_svg(SUBDIR, "lindemann-vibration-and-free-energy-crossover.svg", _build_lindemann_and_gibbs())
+        write_svg(SUBDIR, "ice-latent-heat-melting-plateau-curve.svg", _build_latent_heat_plateau())
+        write_svg(SUBDIR, "water-density-anomaly-and-ice-skating-truth.svg", _build_water_anomaly_and_skating())
+        write_svg(SUBDIR, "crystal-melting-cliff-vs-amorphous-glass-transition.svg", _build_crystal_vs_amorphous_glass())
+
+
+_register_solid_to_liquid()
+
+
+def _register_atomic_nucleus():
+    from .core import step_badge, txt, write_svg
+
+    SUBDIR = "atomic-nucleus"
+    RED = "#dc2626"
+    RED_SOFT = "#fef2f2"
+    AMBER = "#b45309"
+    AMBER_SOFT = "#fffbeb"
+    TEAL = "#0f766e"
+    TEAL_SOFT = "#f0fdfa"
+
+    # Quantitative assertions for nuclear physics:
+    # 1. Fe-56 radius & nuclear density:
+    r_fe56 = 1.2 * (56.0 ** (1.0 / 3.0))  # 4.590 fm
+    rho_nuc = (56.0 * 1.660539e-27) / ((4.0 / 3.0) * math.pi * ((r_fe56 * 1e-15) ** 3))
+    assert 4.55 < r_fe56 < 4.65
+    assert 2.2e17 < rho_nuc < 2.4e17
+
+    # 2. Coulomb force between two protons at r = 1.8 fm:
+    f_coul_1p8 = 8.98755e9 * ((1.6021766e-19) ** 2) / ((1.8e-15) ** 2)  # 71.2 N!
+    assert 70.0 < f_coul_1p8 < 73.0
+
+    # 3. He-4 mass defect & binding energy per nucleon (nuclear masses):
+    # 2*m_p + 2*m_n - m_alpha = 2*1.00727647 + 2*1.00866492 - 4.00150618 = 0.0303766 u
+    dm_he4 = 2 * 1.00727647 + 2 * 1.00866492 - 4.00150618
+    be_he4 = dm_he4 * 931.494  # 28.296 MeV -> 7.074 MeV/nucleon
+    assert 28.25 < be_he4 < 28.35
+    assert 7.06 < be_he4 / 4.0 < 7.09
+
+    def _line(x1, y1, x2, y2, stroke=HAIRLINE, sw=1.6, dash=None, cls=None):
+        attrs = [
+            f'x1="{x1:.1f}"',
+            f'y1="{y1:.1f}"',
+            f'x2="{x2:.1f}"',
+            f'y2="{y2:.1f}"',
+            f'stroke="{stroke}"',
+            f'stroke-width="{sw}"',
+        ]
+        if dash:
+            attrs.append(f'stroke-dasharray="{dash}"')
+        if cls:
+            attrs.append(f'class="{cls}"')
+        return f'<line {" ".join(attrs)}/>'
+
+    def _poly(pts, stroke, sw=2.2, dash=None, fill="none", cls=None):
+        d = "M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
+        extra = f' stroke-dasharray="{dash}"' if dash else ""
+        cls_attr = f' class="{cls}"' if cls else ""
+        return (
+            f'<path d="{d}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}" '
+            f'stroke-linecap="round" stroke-linejoin="round"{extra}{cls_attr}/>'
+        )
+
+    # -----------------------------------------------------------------------
+    # SVG 1: Nuclear Scale, Strong Force Potential V(r) & Valley of Stability
+    # -----------------------------------------------------------------------
+    def _build_scale_strong_force_and_valley():
+        els = header(
+            "一、几十颗正电荷质子挤在几飞米里，凭什么没炸飞？强核力手铐与中子稳定谷",
+            "左：核子势能 V(r) 实算（0.5 fm 硬核排斥 + 1 fm 汤川强吸引） · 右：核素稳定谷 N/Z 弯曲之谜",
+        )
+
+        # Panel A: Strong Force Potential V(r) + Nuclear Density Scale
+        els.append(card(20, 66, 354, 464))
+        els.append(pill(32, 78, "A · 距离决定生死：强核力只管贴身 2 飞米！", fg=BLUE, bg=BLUE_SOFT, w=330, h=24, size=11.5))
+
+        # Plot V(r) for r in [0.35 .. 3.4 fm] -> x in [76..348], V in [-60 .. +70 MeV] -> y in [120..294]
+        gx0, gx1, gy0, gy1 = 76.0, 348.0, 120.0, 294.0
+        els.append(_line(gx0, gy1, gx1, gy1, stroke=SLATE, sw=1.3))
+        els.append(_line(gx0, gy0, gx0, gy1, stroke=SLATE, sw=1.4))
+
+        def rx_px(rfm):
+            return gx0 + ((rfm - 0.3) / 3.1) * (gx1 - gx0)
+
+        def vy_px(vmev):
+            v_clamp = max(-60.0, min(70.0, vmev))
+            return gy1 - ((v_clamp + 60.0) / 130.0) * (gy1 - gy0)
+
+        y_zero = vy_px(0.0)
+        els.append(_line(gx0, y_zero, gx1, y_zero, stroke=SLATE, sw=1.3, dash="4 3"))
+        els.append(txt(68, vy_px(55.0) + 4, "+斥", 11.5, RED, "end", weight="700"))
+        els.append(txt(68, y_zero + 4, "0", 11.5, MUTED, "end"))
+        els.append(txt(68, vy_px(-48.0) + 4, "-吸", 11.5, TEAL, "end", weight="700"))
+
+        # Coulomb repulsion 1.44 / r (multiplied x10 visually? Better plot realistic pp Coulomb ~1-3 MeV as dashed orange, or note scale!)
+        coul_pts = [(rx_px(0.35 + i * 0.03), vy_px(18.0 / (0.35 + i * 0.03))) for i in range(101)]
+        els.append(_poly(coul_pts, stroke=ORANGE, sw=1.8, dash="5 3"))
+
+        # Reid-like nucleon-nucleon strong potential V_NN(r) with smooth minimum ~ -48 MeV around r = 1.0 fm
+        nn_pts = []
+        for i in range(102):
+            rf = 0.48 + i * 0.0285
+            x_sh = (rf - 0.98)
+            if rf < 0.98:
+                v_val = -48.0 + 115.0 * ((0.98 - rf) / 0.48) ** 2.4
+            else:
+                v_val = -48.0 * math.exp(-((rf - 0.98) / 0.68) ** 1.55)
+            nn_pts.append((rx_px(rf), vy_px(v_val)))
+        els.append(_poly(nn_pts, stroke=TEAL, sw=2.8))
+
+        els.append(txt(rx_px(0.60) + 8, 138, "<0.6 fm 硬核死顶", 11.5, RED, weight="700"))
+        els.append(txt(rx_px(1.12) + 8, vy_px(-48.0) - 6, "~1 fm 强力深阱 (-50 MeV)", 11.5, TEAL, weight="700"))
+        els.append(txt(344, vy_px(24.0), "橙虚线：库仑长程斥力(示意放大)", 11.5, ORANGE, "end", weight="600"))
+        els.append(txt(212, 312, "核子间距 r（0.4 → 3.4 fm，>2.5 fm 强力归零！）", 11.5, MUTED, "middle"))
+
+        # Scale & Force facts card
+        els.append(card(32, 326, 330, 190, rx=8, fill=BLUE_SOFT, stroke=BLUE, sw=1.2))
+        els.append(txt(44, 348, "原子核的三个极端尺度真相：", 11.6, BLUE, weight="700"))
+        els.append(txt(44, 370, "• 体育场里的一颗棒球：核半径仅原子 1/10 万，却装走", 11.5, BODY))
+        els.append(txt(44, 392, "  99.97% 质量！R = 1.2 A¹/³ fm（铁核约 4.6 fm）；", 11.5, INK, weight="700"))
+        els.append(txt(44, 416, "• 密度恒定 2.3×10¹⁷ kg/m³：因 <0.6 fm 排斥硬核死顶，", 11.5, BODY))
+        els.append(txt(44, 438, "  核子没法再压扁，1 立方厘米核物质重达 2.3 亿吨！", 11.5, RED, weight="700"))
+        els.append(txt(44, 462, "• 1935 汤川秀树破案：核子靠交换有质量的 π 介子拉手，", 11.5, BODY))
+        els.append(txt(44, 484, "  力程锁死在 ħ/(m_π c) ≈ 1.4 fm，强度压倒电磁百倍，", 11.5, TEAL, weight="700"))
+        els.append(txt(44, 504, "  且对质子、中子一视同仁（电荷无关性）！", 11.5, INK, weight="600"))
+
+        # Panel B: Valley of Stability (N vs Z)
+        els.append(card(388, 66, 352, 464))
+        els.append(pill(400, 78, "B · 为什么大原子核里“中子必须比质子多一大截”？", fg=PURPLE, bg=PURPLE_SOFT, w=328, h=24, size=11.5))
+
+        # Plot N (0..140) vs Z (0..96): x in [442..720] (Z), y in [120..308] (N)
+        zx0, zx1, ny0, ny1 = 442.0, 720.0, 120.0, 308.0
+        els.append(_line(zx0, ny1, zx1, ny1, stroke=SLATE, sw=1.4))
+        els.append(_line(zx0, ny0, zx0, ny1, stroke=SLATE, sw=1.4))
+
+        def zx_px(zv):
+            return zx0 + (zv / 96.0) * (zx1 - zx0)
+
+        def ny_px(nv):
+            return ny1 - (nv / 162.0) * (ny1 - ny0)
+
+        # N = Z diagonal line
+        els.append(_line(zx_px(0), ny_px(0), zx_px(92), ny_px(92), stroke=RED, sw=1.6, dash="5 3"))
+        els.append(txt(718, 258, "红虚线 N = Z", 11.5, RED, "end", weight="700"))
+
+        # Valley of stability curve
+        val_pts = []
+        for zv in range(2, 84, 2):
+            nv = zv + 0.0062 * ((2.2 * zv) ** 1.66)
+            val_pts.append((zx_px(zv), ny_px(nv)))
+        els.append(_poly(val_pts, stroke=BLUE, sw=4.6))
+
+        # Key nuclides on valley
+        for zv, nv, lbl_n, dx_l, dy_l, anc_n, col_n in [
+            (20, 20, "⁴⁰Ca(20,20)", 0, -14, "middle", TEAL),
+            (26, 30, "⁵⁶Fe(26,30)", 16, 20, "start", BLUE),
+            (82, 126, "²⁰⁸Pb(82p,126n)", -10, 4, "end", PURPLE),
+            (92, 146, "²³⁸U(92,146 不稳定)", -10, -4, "end", ORANGE),
+        ]:
+            px_n, py_n = zx_px(zv), ny_px(nv)
+            els.append(f'<circle cx="{px_n:.1f}" cy="{py_n:.1f}" r="4.2" fill="{col_n}"/>')
+            els.append(txt(px_n + dx_l, py_n + dy_l, lbl_n, 11.5, col_n, anc_n, weight="700"))
+
+        els.append(txt(434, 134, "中子N", 11.5, INK, "end", weight="700"))
+        els.append(txt(580, 326, "质子数 Z（0 → 92，Z>82 后全部具放射性）", 11.5, MUTED, "middle"))
+
+        # Explanation card
+        els.append(card(400, 340, 328, 176, rx=8, fill=PURPLE_SOFT, stroke=PURPLE, sw=1.2))
+        els.append(txt(412, 362, "中子的神级职责：“只出强力胶水、不添静电火药”！", 11.5, PURPLE, weight="700"))
+        els.append(txt(412, 386, "• 轻核 (Z≤20)：核直径小，质子与中子 1:1 对称最省能；", 11.5, BODY))
+        els.append(txt(412, 408, "• 重核危机：强核力只拉贴身邻居（~A），而库仑斥力横跨", 11.5, INK, weight="600"))
+        els.append(txt(412, 430, "  全核，每对质子都互推，斥力按 Z(Z-1)/2 平方暴涨！", 11.5, RED, weight="700"))
+        els.append(txt(412, 454, "• 破局：必须多塞不带电的中子隔开质子、补强核力（铅-208", 11.5, BODY))
+        els.append(txt(412, 476, "  高达 N/Z = 1.54）；一旦 Z > 82（铅/铋之上），再多", 11.5, TEAL, weight="700"))
+        els.append(txt(412, 498, "  中子也箍不住静电炸药桶，原子核必然衰变或裂变！", 11.5, INK, weight="700"))
+
+        return figure(
+            544,
+            "核子间强核力与库仑力势能实算曲线及核素图稳定谷N/Z向上弯曲机制图解",
+            "左栏绘制核子间距0.4至3.4飞米内的排斥硬核与1飞米汤川强吸引深势阱，解释原子核恒定2.3亿吨每立方厘米超高密度；右栏绘制核素稳定谷N对Z曲线，展示Z大于20后长程库仑斥力迫使稳定核招募额外中子直至铅208极限。",
+            els,
+        )
+
+    # -----------------------------------------------------------------------
+    # SVG 2: Mass Defect Δm c² & Exact Binding Energy per Nucleon Curve B/A
+    # -----------------------------------------------------------------------
+    def _build_mass_defect_and_binding_curve():
+        els = header(
+            "二、1 + 1 为什么小于 2？爱因斯坦质量亏损账本与统领宇宙的“比结合能铁峰”",
+            "左：氦-4 消失的 0.75% 质量化作 28.3 MeV 枷锁 · 右：实算 B/A 曲线（轻核聚变与重核裂变同奔铁峰）",
+        )
+
+        # Panel A: Mass Defect Scale of He-4 + Nucleon QCD Mass Origin
+        els.append(card(20, 66, 336, 462))
+        els.append(pill(32, 78, "A · 核天平奇案：拼成氦核后体重凭空少了！", fg=RED, bg=RED_SOFT, w=312, h=24, size=11.5))
+
+        els.append(card(32, 114, 312, 198, rx=8, fill=RED_SOFT, stroke=RED, sw=1.2))
+        els.append(txt(44, 136, "单独称重 4 颗散装核子：", 11.6, INK, weight="700"))
+        els.append(txt(44, 158, "  2 质子 (2×1.00728 u) + 2 中子 (2×1.00866 u)", 11.5, BODY))
+        els.append(txt(44, 180, "  散装总重 = 4.03188 u", 11.6, BLUE, weight="700"))
+        els.append(_line(44, 192, 332, 192, stroke=BORDER, sw=1.1, dash="4 3"))
+        els.append(txt(44, 212, "吸合锁死成 1 颗 ⁴He 原子核（α 粒子）：", 11.6, INK, weight="700"))
+        els.append(txt(44, 234, "  实测核重 = 4.00151 u（轻了 Δm = 0.03038 u！）", 11.5, TEAL, weight="700"))
+        els.append(txt(44, 260, "• 消失的质量按 E_b = Δm c² 化作【结合能】放出：", 11.5, BODY))
+        els.append(txt(44, 282, "  E_b = 28.30 MeV（平均每颗核子锁死 7.07 MeV，", 11.5, RED, weight="700"))
+        els.append(txt(44, 302, "  是氢原子外层电子 13.6 eV 束缚能的 52 万倍！）", 11.5, INK, weight="700"))
+
+        els.append(card(32, 324, 312, 190, rx=8, fill=AMBER_SOFT, stroke=AMBER, sw=1.2))
+        els.append(txt(44, 346, "再往深挖一层：质子自己 938 MeV 体重哪来的？", 11.5, AMBER, weight="700"))
+        els.append(txt(44, 370, "• 质子(uud)与中子(udd)肚里各有 3 颗夸克，但希格斯场", 11.5, BODY))
+        els.append(txt(44, 392, "  给这 3 颗轻夸克的静质量加起来仅 ~9 MeV（占 1%）！", 11.5, INK, weight="700"))
+        els.append(txt(44, 416, "• 剩下 99% 的体重，全是强相互作用【胶子场能量】与", 11.5, RED, weight="700"))
+        els.append(txt(44, 438, "  夸克近光速狂奔的动能（m = E/c² 的终极铁证）！", 11.5, BODY))
+        els.append(txt(44, 462, "• 注意方向别弄反：拼成越稳的核，放出的能量越多，", 11.5, TEAL, weight="700"))
+        els.append(txt(44, 484, "  留下的原子核反而【越轻】（负势能深坑越深）！", 11.5, INK, weight="700"))
+
+        # Panel B: Exact Binding Energy per Nucleon B/A vs Mass Number A
+        els.append(card(368, 66, 372, 462))
+        els.append(pill(380, 78, "B · 物理学最重要的一张图：比结合能曲线 B/A", fg=BLUE, bg=BLUE_SOFT, w=348, h=24, size=11.5))
+
+        # Plot A in [0..245] -> x in [414..724], B/A in [0..9.6 MeV] -> y in [118..342]
+        ax0, ax1, by0, by1 = 414.0, 724.0, 118.0, 342.0
+        els.append(_line(ax0, by1, ax1, by1, stroke=SLATE, sw=1.4))
+        els.append(_line(ax0, by0, ax0, by1, stroke=SLATE, sw=1.4))
+
+        def ax_px(av):
+            return ax0 + (av / 245.0) * (ax1 - ax0)
+
+        def by_px(bv):
+            return by1 - (bv / 9.6) * (by1 - by0)
+
+        for b_tick in [2, 4, 6, 8]:
+            yt = by_px(b_tick)
+            els.append(_line(ax0, yt, ax1, yt, stroke=BORDER, sw=1.0, dash="3 3"))
+            els.append(txt(406, yt + 4, str(b_tick), 11.5, MUTED, "end"))
+
+        # Real experimental B/A data points (A, B/A in MeV)
+        ba_data = [
+            (2, 1.11), (3, 2.83), (4, 7.07), (6, 5.33), (7, 5.61),
+            (9, 6.46), (12, 7.68), (14, 7.48), (16, 7.98), (24, 8.26),
+            (40, 8.55), (56, 8.790), (62, 8.795), (89, 8.71), (120, 8.50),
+            (140, 8.35), (180, 8.07), (208, 7.87), (235, 7.59), (238, 7.57),
+        ]
+        ba_pts = [(ax_px(a), by_px(b)) for a, b in ba_data]
+        els.append(_poly(ba_pts, stroke=BLUE, sw=2.6))
+
+        # Highlight key benchmarks
+        for av, bv, lbl_b, dx_b, dy_b, col_b in [
+            (2, 1.11, "²H(1.11)", 8, 2, TEAL),
+            (4, 7.07, "⁴He(7.07 尖峰!)", 14, 14, RED),
+            (56, 8.79, "⁵⁶Fe/⁶²Ni 铁镍峰顶 (8.79 MeV)", -4, -10, RED),
+            (235, 7.59, "²³⁵U(7.59)", -6, 16, PURPLE),
+        ]:
+            px_b, py_b = ax_px(av), by_px(bv)
+            els.append(f'<circle cx="{px_b:.1f}" cy="{py_b:.1f}" r="4.3" fill="{col_b}"/>')
+            anc_b = "end" if av > 150 else ("start" if av < 20 else "start")
+            els.append(txt(px_b + dx_b, py_b + dy_b, lbl_b, 11.5, col_b, anc_b, weight="700"))
+
+        # Fusion arrow (left -> peak) & Fission arrow (right -> peak)
+        els.append(txt(458, 286, "↗ 轻核聚变", 11.5, TEAL, weight="700"))
+        els.append(txt(646, 208, "↖ 重核裂变", 11.5, PURPLE, "middle", weight="700"))
+        els.append(txt(568, 362, "质量数 A（核子总数 2 → 238）· 纵轴：MeV/核子", 11.5, MUTED, "middle"))
+
+        # Summary card
+        els.append(card(380, 376, 348, 138, rx=8, fill=TEAL_SOFT, stroke=TEAL, sw=1.2))
+        els.append(txt(392, 398, "读懂这一条山峰，就读懂了宇宙全部核能：", 11.6, TEAL, weight="700"))
+        els.append(txt(392, 422, "• 左侧陡坡（A < 56）：小核表面占比大、邻居没凑齐，", 11.5, BODY))
+        els.append(txt(392, 444, "  融合成大核往铁峰爬（聚变），每核子狂放数 MeV！", 11.5, TEAL, weight="700"))
+        els.append(txt(392, 466, "• 右侧缓坡（A > 62）：重核质子太多，库仑斥力拖后腿，", 11.5, BODY))
+        els.append(txt(392, 488, "  劈成两半往铁峰爬（裂变），每核子也净赚 ~0.9 MeV！", 11.5, PURPLE, weight="700"))
+        els.append(txt(392, 506, "• 铁-56 / 镍-62 坐镇最稳死胡同：聚它裂它全得倒贴能量！", 11.5, RED, weight="700"))
+
+        return figure(
+            542,
+            "氦4原子核质量亏损天平账本与实算核子平均结合能B/A铁镍峰顶曲线图解",
+            "左栏对比2质子加2中子散装质量与氦4实测核重之差（28.30兆电子伏结合能），并说明核子自身99%质量源于胶子场；右栏按真实实验数据绘制A=2至238的比结合能曲线，标明氦4幻数尖峰、铁56与镍62最高峰以及轻核聚变与重核裂变双向放能方向。",
+            els,
+        )
+
+    # -----------------------------------------------------------------------
+    # SVG 3: Two Complementary Models — Liquid Drop vs Shell Magic Numbers
+    # -----------------------------------------------------------------------
+    def _build_liquid_drop_vs_shell():
+        els = header(
+            "三、原子核到底像“一滴水珠”还是“量子洋葱”？两大诺奖模型各管一半江山",
+            "左：魏茨泽克—玻尔液滴模型五笔能量账 · 右：迈耶—延森壳层自旋轨道耦合与七大幻数堡垒",
+        )
+
+        # Panel A: Liquid-Drop Model (5 physical terms)
+        els.append(card(20, 66, 354, 460))
+        els.append(pill(32, 78, "A · 集体视角：液滴模型（算准宏观结合能与裂变）", fg=BLUE, bg=BLUE_SOFT, w=330, h=24, size=11.5))
+
+        terms = [
+            ("1", "体积项 +a_V A（强力饱和吸引）", "每颗核子只拉贴身一圈邻居，总吸力正比于 A", TEAL, TEAL_SOFT),
+            ("2", "表面项 -a_S A²/³（表面张力扣分）", "最外层核子头顶悬空少一半拉手，像水滴缩成球", BLUE, BLUE_SOFT),
+            ("3", "库仑项 -a_C Z(Z-1)/A¹/³（静电拆台）", "全核质子两两互推，重核越胖被扣分越惨重", RED, RED_SOFT),
+            ("4", "不对称项 -a_A (N-Z)²/A（泡利排队费）", "中子塞太多被迫爬更高费米能级，限制 N/Z 无度失衡", AMBER, AMBER_SOFT),
+            ("5", "对能项 ±δ（成双成对奖励！）", "质子与质子、中子与中子自旋反平行配对最稳！", PURPLE, PURPLE_SOFT),
+        ]
+        for idx_t, (num_s, t_head, t_desc, fg_c, bg_c) in enumerate(terms):
+            cy_t = 112 + idx_t * 68
+            els.append(card(32, cy_t, 330, 60, rx=7, fill=bg_c, stroke=fg_c, sw=1.1))
+            els.append(step_badge(48, cy_t + 20, int(num_s), fg=fg_c, bg="#ffffff"))
+            els.append(txt(66, cy_t + 24, t_head, 11.5, fg_c, weight="700"))
+            els.append(txt(44, cy_t + 47, t_desc, 11.5, INK))
+
+        els.append(card(32, 456, 330, 58, rx=7, fill="#f8fafc", stroke=SLATE, sw=1.1))
+        els.append(txt(44, 478, "铁证：地球 ~252 种稳定核素里，偶质-偶中占 ~159 种，", 11.5, INK, weight="700"))
+        els.append(txt(44, 500, "奇质-奇中仅剩 ²H、⁶Li、¹⁰B、¹⁴N 区区 4 颗轻核！", 11.5, RED, weight="700"))
+
+        # Panel B: Nuclear Shell Model & 7 Magic Numbers (1963 Nobel)
+        els.append(card(388, 66, 352, 460))
+        els.append(pill(400, 78, "B · 单粒子视角：核壳层模型与七大“幻数”铜墙铁壁", fg=PURPLE, bg=PURPLE_SOFT, w=328, h=24, size=11.5))
+
+        # Shell ladder diagram from bottom to top: 2, 8, 20, 28, 50, 82, 126
+        els.append(card(400, 112, 328, 246, rx=8, fill="#faf5ff", stroke=PURPLE, sw=1.2))
+        els.append(txt(412, 134, "质子与中子各自独立填满量子壳层（类比稀有气体）：", 11.5, PURPLE, weight="700"))
+
+        magic_rows = [
+            (126, "126（仅中子达标：²⁰⁸Pb 终极重核堡垒）", RED),
+            (82, "82 （铅 Z=82：放射性大门前的最后守卫）", PURPLE),
+            (50, "50 （锡 Z=50：坐拥创纪录 10 种稳定同位素！）", BLUE),
+            (28, "28 （镍 Z=28：自旋—轨道耦合 L·S 首创裂口！）", ORANGE),
+            (20, "20 （钙 ⁴⁰Ca / ⁴⁸Ca：罕见一门双双幻数核）", TEAL),
+            (8, "8  （氧 ¹⁶O：恒星核合成超稳驿站）", TEAL),
+            (2, "2  （氦 ⁴He：2p+2n 紧锁成 α 粒子金刚钻）", RED),
+        ]
+        for idx_m, (m_num, m_txt, m_col) in enumerate(magic_rows):
+            ym = 158 + idx_m * 28
+            els.append(_line(412, ym - 4, 438, ym - 4, stroke=m_col, sw=2.6))
+            els.append(txt(446, ym, m_txt, 11.5, m_col, weight="700"))
+
+        # Mayer-Jensen spin-orbit insight box
+        els.append(card(400, 370, 328, 144, rx=8, fill=TEAL_SOFT, stroke=TEAL, sw=1.2))
+        els.append(txt(412, 392, "1949 迈耶与延森破案（1963 诺贝尔物理奖）：", 11.6, TEAL, weight="700"))
+        els.append(txt(412, 416, "• 昔日困惑：核内既无中心大核又极拥挤，怎会有壳层？", 11.5, BODY))
+        els.append(txt(412, 438, "• 答案：① 泡利不相容封死了绝大部分碰撞散射通道；", 11.5, INK, weight="600"))
+        els.append(txt(412, 460, "  ② 核子在平均势阱中存在极强的【自旋—轨道耦合 L·S】！", 11.5, RED, weight="700"))
+        els.append(txt(412, 482, "  自旋与公转同向的 j=l+1/2 能级大幅下沉，精准劈出", 11.5, BODY))
+        els.append(txt(412, 502, "  28、50、82、126 四道大鸿沟，催生出“双幻数”不死核！", 11.5, PURPLE, weight="700"))
+
+        return figure(
+            540,
+            "原子核液滴模型五项能量账本与核壳层模型自旋轨道耦合七大幻数图解",
+            "左栏拆解魏茨泽克液滴模型的体积吸引、表面张力、库仑排斥、泡利不对称与成对奖励五项，解释偶偶核占优；右栏按能级排列2、8、20、28、50、82、126七大幻数及双幻数核，说明泡利阻塞与强自旋轨道耦合机制。",
+            els,
+        )
+
+    # -----------------------------------------------------------------------
+    # SVG 4: Three Radioactive Safety Valves (α Tunneling Anim, β Weak, γ)
+    # -----------------------------------------------------------------------
+    def _build_three_decays_and_tunneling():
+        els = header(
+            "四、挤不下或偏科的原子核如何自救？α 量子穿墙术、β 夸克变身与 γ 泄压",
+            "上：伽莫夫 α 粒子量子隧穿 26 MeV 静电高墙动画 · 下：弱力夸克翻转 β 衰变与三射线穿透力对比",
+        )
+
+        els.append(
+            """<style>
+  @keyframes alpha-tunnel-move {
+    0%, 15% { transform: translate(0px, 0px); opacity: 1; }
+    45% { transform: translate(62px, 0px); opacity: 0.35; }
+    75%, 100% { transform: translate(198px, 0px); opacity: 1; }
+  }
+  .alpha-tunnel-dot {
+    animation: alpha-tunnel-move 3.8s ease-in-out 1 both;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .alpha-tunnel-dot {
+      animation: none !important;
+      transform: translate(198px, 0px) !important;
+      opacity: 1 !important;
+    }
+  }
+</style>"""
+        )
+
+        # Panel A (Top full-width): Gamow Quantum Tunneling for Alpha Decay (1928)
+        els.append(card(20, 66, 720, 236))
+        els.append(
+            pill(
+                32,
+                78,
+                "A · α 衰变惊天悖论：铀-238 里的 α 粒子只有 4.27 MeV，凭什么翻过 26 MeV 库仑绝壁？（1928 伽莫夫量子隧穿）",
+                fg=RED,
+                bg=RED_SOFT,
+                w=696,
+                h=24,
+                size=11.5,
+            )
+        )
+
+        # Potential well + Coulomb barrier diagram on left half [54..430], explanation on right [444..726]
+        wx0, wx_wall, wx1, wy_top, wy_zero, wy_bot = 62.0, 142.0, 416.0, 118.0, 242.0, 282.0
+        els.append(_line(wx0, wy_zero, wx1, wy_zero, stroke=SLATE, sw=1.3, dash="4 3"))
+        els.append(_line(wx0, wy_top, wx0, wy_bot, stroke=SLATE, sw=1.4))
+
+        # Nuclear well + Coulomb barrier 1/r curve
+        well_pts = [(wx0, wy_bot - 6), (wx_wall, wy_bot - 6), (wx_wall, 126.0)]
+        for i in range(46):
+            rx_c = wx_wall + i * 6.0
+            vy_c = wy_zero - (116.0 * 38.0 / (38.0 + (rx_c - wx_wall)))
+            well_pts.append((rx_c, vy_c))
+        els.append(_poly(well_pts, stroke=BLUE, sw=2.6))
+
+        # Energy level E_alpha = 4.27 MeV line at y = 212
+        y_ea = 212.0
+        x_exit = wx_wall + 38.0 * (116.0 / (wy_zero - y_ea) - 1.0)  # exact barrier exit!
+        els.append(_line(wx0 + 4, y_ea, wx1 - 10, y_ea, stroke=RED, sw=1.5, dash="5 3"))
+
+        # Static wave packet inside -> exponentially decaying inside barrier -> small oscillating wave outside!
+        wave_pts = []
+        for xw in range(int(wx0 + 8), int(wx1 - 14), 3):
+            if xw < wx_wall:
+                amp = 14.0 * math.sin(0.28 * (xw - wx0))
+            elif xw <= x_exit:
+                frac = (xw - wx_wall) / max(1.0, (x_exit - wx_wall))
+                amp = 12.0 * math.exp(-2.6 * frac)
+            else:
+                amp = 3.5 * math.sin(0.32 * (xw - x_exit))
+            wave_pts.append((float(xw), y_ea - amp))
+        els.append(_poly(wave_pts, stroke="#fca5a5", sw=1.8))
+
+        # Static initial & escaped ghosts + animated escaping alpha particle
+        els.append(f'<circle cx="102" cy="{y_ea:.1f}" r="6.0" fill="{RED_SOFT}" stroke="{RED}" stroke-width="1.5" stroke-dasharray="2 2"/>')
+        els.append(f'<circle cx="300" cy="{y_ea:.1f}" r="6.0" fill="{TEAL_SOFT}" stroke="{TEAL}" stroke-width="1.5" stroke-dasharray="2 2"/>')
+        els.append(f'<g class="alpha-tunnel-dot"><circle cx="102" cy="{y_ea:.1f}" r="6.5" fill="{RED}"/></g>')
+
+        els.append(txt(wx_wall + 6, 132, "库仑高墙 ~26 MeV", 11.5, BLUE, weight="700"))
+        els.append(txt(206, 188, "经典禁区：波函数指数衰减穿墙", 11.5, RED, weight="700"))
+        els.append(txt(312, 266, "穿墙逃逸 α (4.27 MeV) →", 11.5, TEAL, "middle", weight="700"))
+        els.append(txt(102, 274, "核内势阱", 11.5, BLUE, "middle", weight="700"))
+
+        # Right side quantitative explanation inside Panel A
+        els.append(card(424, 114, 302, 174, rx=8, fill="#fff7ed", stroke=ORANGE, sw=1.2))
+        els.append(txt(436, 136, "为什么半衰期能差出 27 个数量级？", 11.6, ORANGE, weight="700"))
+        els.append(txt(436, 158, "• α 团簇每秒撞墙 10²¹ 次！穿墙率对能量极敏感：", 11.5, BODY))
+        els.append(txt(436, 180, "• 钋-212 (8.95 MeV)：墙薄，半衰期仅 0.3 微秒！", 11.5, RED, weight="700"))
+        els.append(txt(436, 202, "• 铀-238 (4.27 MeV)：撞 10³⁸ 次才穿出 1 次，", 11.5, INK, weight="600"))
+        els.append(txt(436, 224, "  半衰期长达 44.7 亿年（恰好与地球同寿供地热）！", 11.5, TEAL, weight="700"))
+        els.append(txt(436, 248, "• 铁律 N=N₀(1/2)^(t/T₁/₂)：单核何时穿完全随机，", 11.5, BODY))
+        els.append(txt(436, 270, "  万亿核总体却准如碳-14 考古原子钟！", 11.5, PURPLE, weight="700"))
+
+        # Panel B (Bottom Left): Beta Weak Force Quark Flip
+        els.append(card(20, 316, 366, 214))
+        els.append(pill(32, 328, "B · β 衰变：原子核里根本没藏电子！是弱力现场造的", fg=PURPLE, bg=PURPLE_SOFT, w=342, h=24, size=11.5))
+        els.append(txt(34, 368, "• 海森堡铁证：若把电子硬关进 10 fm 核里，不确定性动量", 11.5, BODY))
+        els.append(txt(34, 390, "  要求动能 >12,000 MeV（实测仅 ~1 MeV）→ 核内绝无电子！", 11.5, RED, weight="700"))
+        els.append(txt(34, 416, "• 真相（弱核力夸克手术）：当核内中子偏多（如 ¹⁴C），", 11.5, INK, weight="700"))
+        els.append(txt(34, 438, "  中子内 1 颗下夸克 d 吐出虚 W⁻ 玻色子翻转为上夸克 u：", 11.5, BODY))
+        els.append(txt(34, 462, "  n(udd) → p(uud) + e⁻(β⁻) + ν̄_e（质子数 Z+1 回归稳定谷！）", 11.5, PURPLE, weight="700"))
+        els.append(txt(34, 486, "• 反之质子偏多时发生 β⁺ 衰变：p → n + e⁺ + ν_e（医院 PET", 11.5, TEAL, weight="700"))
+        els.append(txt(34, 508, "  正电子显像原理）；γ 衰变则是核壳层高能级跃迁吐光子！", 11.5, INK, weight="600"))
+
+        # Panel C (Bottom Right): Penetration & Shielding Comparison
+        els.append(card(398, 316, 342, 214))
+        els.append(pill(410, 328, "C · α、β、γ 三大射线脾气与防护盾牌实测对比", fg=TEAL, bg=TEAL_SOFT, w=318, h=24, size=11.5))
+
+        # Shield walls at x = 550 (paper), 618 (3mm Al), 694 (thick Pb)
+        els.append(card(548, 364, 12, 118, rx=2, fill="#fef3c7", stroke=AMBER, sw=1.2))
+        els.append(card(616, 364, 16, 118, rx=2, fill="#e2e8f0", stroke=SLATE, sw=1.2))
+        els.append(card(686, 364, 28, 118, rx=3, fill="#cbd5e1", stroke=INK, sw=1.4))
+        els.append(txt(554, 498, "一张纸/皮肤", 11.5, AMBER, "middle", weight="700"))
+        els.append(txt(624, 498, "3mm 铝板", 11.5, SLATE, "middle", weight="700"))
+        els.append(txt(700, 498, "几厘米铅墙", 11.5, INK, "middle", weight="700"))
+
+        # Three rays
+        els.append(txt(412, 388, "α (⁴He²⁺ 重炮)", 11.5, RED, weight="700"))
+        els.append(_line(506, 384, 546, 384, stroke=RED, sw=3.2))
+        els.append(txt(412, 428, "β (高速 e⁻/e⁺)", 11.5, PURPLE, weight="700"))
+        els.append(_line(506, 424, 614, 424, stroke=PURPLE, sw=2.4))
+        els.append(txt(412, 468, "γ (MeV 光子)", 11.5, TEAL, weight="700"))
+        els.append(_line(506, 464, 698, 464, stroke=TEAL, sw=2.2, dash="5 3"))
+
+        els.append(txt(570, 518, "注：α 外照一张纸即挡，但吸入体内近距电离杀伤极强！", 11.5, RED, "middle", weight="600"))
+
+        return figure(
+            544,
+            "铀238阿尔法粒子伽莫夫量子隧穿势垒动画与贝塔弱力夸克变身及三射线穿透力对比图解",
+            "上栏绘制核内深势阱与26兆电子伏库仑势垒，单次动画配合静态穿透波展示4.27兆电子伏阿尔法粒子量子隧穿逃逸；左下栏用不确定性原理排除核内预存电子，展示弱核力d变u夸克贝塔衰变；右下栏对比纸张、铝板与铅墙对α、β、γ射线的阻挡能力。",
+            els,
+        )
+
+    # -----------------------------------------------------------------------
+    # SVG 5: Controlled Fission Chain Reaction vs D-T Fusion
+    # -----------------------------------------------------------------------
+    def _build_fission_vs_fusion():
+        els = header(
+            "五、向原子核借百万倍能量：慢中子驯服铀-235 链式裂变与上亿度氘氚聚变",
+            "左：慢化剂放大截面 500 倍 + 控制棒死守 k = 1.000 · 右：氘氚跨越库仑墙合体释放 17.6 MeV",
+        )
+
+        # Panel A: U-235 Fission & Reactor k = 1 Control
+        els.append(card(20, 66, 366, 462))
+        els.append(pill(32, 78, "A · 核电站心脏：重核裂变与“慢化剂 + 控制棒”油门刹车", fg=PURPLE, bg=PURPLE_SOFT, w=342, h=24, size=11.5))
+
+        # Visual schematic of n + U-235 -> U-236* -> Ba-141 + Kr-92 + 3n + 200 MeV
+        els.append(card(32, 114, 342, 134, rx=8, fill=PURPLE_SOFT, stroke=PURPLE, sw=1.2))
+        els.append(f'<circle cx="62" cy="176" r="6" fill="{BLUE}"/>')
+        els.append(txt(62, 158, "慢中子", 11.5, BLUE, "middle", weight="700"))
+        els.append(_line(70, 176, 108, 176, stroke=BLUE, sw=2.0))
+        els.append(f'<circle cx="136" cy="176" r="24" fill="#ddd6fe" stroke="{PURPLE}" stroke-width="1.8"/>')
+        els.append(txt(136, 180, "²³⁵U", 11.8, PURPLE, "middle", weight="700"))
+
+        els.append(_line(164, 166, 214, 144, stroke=RED, sw=2.0))
+        els.append(_line(164, 186, 214, 208, stroke=RED, sw=2.0))
+        els.append(f'<circle cx="234" cy="140" r="16" fill="{RED_SOFT}" stroke="{RED}" stroke-width="1.5"/>')
+        els.append(txt(234, 144, "¹⁴¹Ba", 11.5, RED, "middle", weight="700"))
+        els.append(f'<circle cx="234" cy="212" r="13" fill="{TEAL_SOFT}" stroke="{TEAL}" stroke-width="1.5"/>')
+        els.append(txt(234, 216, "⁹²Kr", 11.5, TEAL, "middle", weight="700"))
+
+        els.append(txt(264, 156, "+ 2~3 颗快中子", 11.5, BLUE, weight="700"))
+        els.append(txt(264, 180, "+ ~200 MeV！", 11.8, RED, weight="700"))
+        els.append(txt(264, 204, "(单核放能是化学", 11.5, BODY))
+        els.append(txt(264, 224, " 燃烧的 5000 万倍)", 11.5, INK, weight="700"))
+
+        # Reactor physics box
+        els.append(card(32, 260, 342, 254, rx=8, fill="#f8fafc", stroke=BORDER, sw=1.2))
+        els.append(txt(44, 282, "核反应堆凭什么既不熄火、也绝变不成原子弹？", 11.6, PURPLE, weight="700"))
+        els.append(txt(44, 306, "① 低丰度门槛：天然铀仅含 0.72% ²³⁵U；核电站燃料棒仅", 11.5, BODY))
+        els.append(txt(44, 328, "   浓缩至 3%–5%（武器级需 >90%），物理上不可能核爆！", 11.5, INK, weight="700"))
+        els.append(txt(44, 354, "② 慢化剂（水/重水/石墨）：刚蹦出的 2 MeV 快中子太滑，", 11.5, BODY))
+        els.append(txt(44, 376, "   撞水分子减速成 0.025 eV 热中子后，德布罗意波长变长，", 11.5, BLUE, weight="700"))
+        els.append(txt(44, 398, "   被 ²³⁵U 捕获裂变的概率（截面）暴涨近 500 倍！", 11.5, RED, weight="700"))
+        els.append(txt(44, 424, "③ 镉/碳化硼控制棒 + 0.65% 缓发中子：精准吞掉多余中子，", 11.5, BODY))
+        els.append(txt(44, 446, "   把增殖系数死锁在 k = 1.000（1 换 1 稳态烧开水推汽轮）；", 11.5, TEAL, weight="700"))
+        els.append(txt(44, 468, "   水温过高膨胀变稀时，慢化减弱会自动降功率（负反馈）！", 11.5, INK, weight="600"))
+        els.append(txt(44, 494, "   （1 克 ²³⁵U 完全裂变 ≈ 燃烧 2.7 吨优质标准煤！）", 11.5, AMBER, weight="700"))
+
+        # Panel B: D-T Nuclear Fusion & Stellar vs Tokamak Conditions
+        els.append(card(398, 66, 342, 462))
+        els.append(pill(410, 78, "B · 终极清洁能源：轻核聚变（把小太阳装进磁笼子）", fg=TEAL, bg=TEAL_SOFT, w=318, h=24, size=11.5))
+
+        # Visual schematic of D + T -> He-4 (3.5 MeV) + n (14.1 MeV)
+        els.append(card(410, 114, 318, 134, rx=8, fill=TEAL_SOFT, stroke=TEAL, sw=1.2))
+        els.append(f'<circle cx="448" cy="152" r="21" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="1.5"/>')
+        els.append(txt(448, 156, "²H(氘)", 11.5, BLUE, "middle", weight="700"))
+        els.append(f'<circle cx="448" cy="206" r="21" fill="{ORANGE_SOFT}" stroke="{ORANGE}" stroke-width="1.5"/>')
+        els.append(txt(448, 210, "³H(氚)", 11.5, ORANGE, "middle", weight="700"))
+
+        els.append(_line(471, 158, 518, 176, stroke=TEAL, sw=2.0))
+        els.append(_line(471, 200, 518, 182, stroke=TEAL, sw=2.0))
+        els.append(txt(506, 138, "1.5 亿度硬闯", 11.5, RED, "middle", weight="700"))
+
+        els.append(f'<circle cx="542" cy="179" r="18" fill="{RED_SOFT}" stroke="{RED}" stroke-width="1.8"/>')
+        els.append(txt(542, 183, "⁴He", 11.8, RED, "middle", weight="700"))
+        els.append(_line(562, 168, 600, 150, stroke=BLUE, sw=2.0))
+        els.append(f'<circle cx="612" cy="146" r="6.5" fill="{BLUE}"/>')
+        els.append(txt(624, 150, "n (14.1 MeV)", 11.5, BLUE, weight="700"))
+        els.append(txt(570, 208, "+ ⁴He (3.5 MeV)", 11.5, RED, weight="700"))
+        els.append(txt(570, 230, "共放能 17.6 MeV！", 11.6, TEAL, weight="700"))
+
+        # Fusion challenges & intrinsic safety box
+        els.append(card(410, 260, 318, 254, rx=8, fill=AMBER_SOFT, stroke=AMBER, sw=1.2))
+        els.append(txt(422, 282, "为什么聚变比裂变难一万倍，却又绝对安全？", 11.6, AMBER, weight="700"))
+        els.append(txt(422, 306, "① 迎面硬闯静电墙：中子不带电，溜达进铀核毫不费力；", 11.5, BODY))
+        els.append(txt(422, 328, "   而氘核与氚核都带正电！必须靠 1~1.5 亿摄氏度超高温", 11.5, RED, weight="700"))
+        els.append(txt(422, 350, "   （叠加量子隧穿）把相撞距离硬怼进 2 fm 强核力圈！", 11.5, INK, weight="700"))
+        els.append(txt(422, 376, "② 劳森门槛：无容器能耐一亿度，只能靠强磁场悬空", 11.5, BODY))
+        els.append(txt(422, 398, "   箍住等离子体（托卡马克）或激光内爆（惯性约束）。", 11.5, TEAL, weight="700"))
+        els.append(txt(422, 424, "③ 天生不熔毁：炉内燃料仅几克稀薄气体，稍有扰动", 11.5, BODY))
+        els.append(txt(422, 446, "   碰壁瞬间降温熄火；海水提氘取之不尽，无长寿锕系废料！", 11.5, BLUE, weight="700"))
+        els.append(txt(422, 472, "   （按每克算：1 克氘氚聚变放能 ≈ 燃烧 8 吨石油，", 11.5, INK, weight="600"))
+        els.append(txt(422, 494, "    单位质量能量密度比铀裂变再翻近 4 倍！）", 11.5, RED, weight="700"))
+
+        return figure(
+            542,
+            "铀235热中子链式裂变反应堆控制机制与氘氚1.5亿度可控核聚变对比图解",
+            "左栏展示慢中子触发铀235裂变为钡与氪并释放约200兆电子伏能量，解析慢化剂放大截面500倍与控制棒锁定k=1.000安全机制；右栏展示氘氚聚变释放17.6兆电子伏能量，对比库仑势垒挑战、磁约束与固有熄火安全性。",
+            els,
+        )
+
+    @register(
+        "atomic-nucleus-physics",
+        "原子核运作原理五步图解：强核力势阱与核素稳定谷N/Z、质量亏损与比结合能铁峰实算、液滴模型与核壳层七大幻数、伽莫夫α量子隧穿动画与β弱力夸克变身、铀裂变链式控制与氘氚聚变",
+        "science_tech",
+    )
+    def build_atomic_nucleus_physics():
+        write_svg(SUBDIR, "nuclear-scale-strong-force-and-stability-valley.svg", _build_scale_strong_force_and_valley())
+        write_svg(SUBDIR, "mass-defect-and-binding-energy-peak-curve.svg", _build_mass_defect_and_binding_curve())
+        write_svg(SUBDIR, "liquid-drop-vs-shell-magic-numbers.svg", _build_liquid_drop_vs_shell())
+        write_svg(SUBDIR, "alpha-tunneling-beta-weak-and-gamma-decays.svg", _build_three_decays_and_tunneling())
+        write_svg(SUBDIR, "fission-chain-moderator-and-dt-fusion.svg", _build_fission_vs_fusion())
+
+
+_register_atomic_nucleus()
+
+
+def _register_musical_instruments():
+    from .core import txt, write_svg
+
+    SUBDIR = "musical-instruments"
+    RED = "#dc2626"
+    RED_SOFT = "#fef2f2"
+    AMBER = "#b45309"
+    AMBER_SOFT = "#fffbeb"
+    TEAL = "#0f766e"
+    TEAL_SOFT = "#f0fdfa"
+
+    # Quantitative acoustic assertions:
+    # 1. 12-TET fretboard spacing: 5th fret = 1 - 2^(-5/12) ≈ 0.2508 (~1/4), 7th = 0.3326 (~1/3), 12th = 0.5000 (exact 1/2)
+    assert abs((1.0 - 2.0 ** (-5.0 / 12.0)) - 0.25085) < 1e-3
+    assert abs((1.0 - 2.0 ** (-7.0 / 12.0)) - 0.33258) < 1e-3
+    assert abs((1.0 - 2.0 ** (-12.0 / 12.0)) - 0.50000) < 1e-9
+
+    # 2. Open-open vs Closed-open cylindrical pipe of L = 0.60 m at v = 343 m/s:
+    f_open_06 = 343.0 / (2.0 * 0.60)    # 285.83 Hz
+    f_closed_06 = 343.0 / (4.0 * 0.60)  # 142.92 Hz (exact octave lower!)
+    assert abs(f_open_06 / f_closed_06 - 2.0) < 1e-9
+    assert 285.0 < f_open_06 < 286.5
+
+    # 3. Brass 3-valve tube length extensions (2^(k/12) - 1):
+    v2_ext = (2.0 ** (1.0 / 12.0) - 1.0) * 100.0  # 5.946%
+    v1_ext = (2.0 ** (2.0 / 12.0) - 1.0) * 100.0  # 12.246%
+    v3_ext = (2.0 ** (3.0 / 12.0) - 1.0) * 100.0  # 18.921%
+    assert 5.90 < v2_ext < 6.00 and 12.20 < v1_ext < 12.30 and 18.85 < v3_ext < 19.00
+
+    # 4. Piano 7th harmonic dissonance vs 12-TET minor seventh (1000 cents):
+    cents_7th = 1200.0 * math.log2(7.0 / 4.0) - 1000.0  # -31.174 cents flat!
+    assert -31.5 < cents_7th < -30.8
+
+    # 5. Circular membrane Bessel roots J_m(alpha_mn) = 0 ratios:
+    a01, a11, a21, a02 = 2.40482556, 3.83170597, 5.13562230, 5.52007811
+    assert abs(a11 / a01 - 1.59334) < 1e-4
+    assert abs(a21 / a01 - 2.13555) < 1e-4
+    assert abs(a02 / a01 - 2.29542) < 1e-4
+
+    def _line(x1, y1, x2, y2, stroke=INK, sw=1.4, dash=None):
+        ds = f' stroke-dasharray="{dash}"' if dash else ""
+        return f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{stroke}" stroke-width="{sw}"{ds}/>'
+
+    def polyline(pts, stroke=INK, sw=1.8, dash=None):
+        ds = f' stroke-dasharray="{dash}"' if dash else ""
+        pstr = " ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
+        return f'<polyline points="{pstr}" fill="none" stroke="{stroke}" stroke-width="{sw}" stroke-linecap="round" stroke-linejoin="round"{ds}/>'
+
+    def path_d(d, stroke=INK, sw=1.8, dash=None, fill="none"):
+        ds = f' stroke-dasharray="{dash}"' if dash else ""
+        return f'<path d="{d}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}" stroke-linecap="round"{ds}/>'
+
+    def _build_engine_and_timbre_spectrum() -> str:
+        W, H = 760, 536
+        els = [
+            card(0, 0, W, H, rx=14, fill=BG, stroke=BORDER),
+            txt(24, 30, "图 1 · 所有乐器共享的三级发声引擎，与“同弹 440 Hz 凭什么一秒听出是谁”的泛音密码", 15.0, INK, weight="700"),
+            txt(24, 50, "音高由每秒重复次数（基频 f₁）拍板；音色则由整数倍泛音（2f₁, 3f₁, 4f₁…）的强弱配方与起音包络共同雕刻", 11.8, MUTED),
+        ]
+
+        # Top banner: 3-stage acoustic engine
+        els.append(card(20, 64, 720, 108, rx=10, fill="#ffffff", stroke=BORDER))
+        els.append(pill(32, 74, "A · 跨家族通用物理骨架：任何声学乐器 = 激励器 × 驻波选频器 × 辐射阻抗匹配器", fg=BLUE, bg=BLUE_SOFT, w=536, h=22, size=11.5))
+
+        # Box 1
+        els.append(card(32, 104, 216, 58, rx=8, fill=ORANGE_SOFT, stroke=ORANGE, sw=1.2))
+        els.append(txt(42, 123, "① 激励源（把直流力变高频振荡）", 11.5, ORANGE, weight="700"))
+        els.append(txt(42, 143, "拨弦/锤击 · 弓毛粘滑 · 气簧/簧片阀门", 11.5, BODY))
+        els.append(_line(248, 133, 270, 133, stroke=INK, sw=1.8))
+        els.append(f'<polygon points="274,133 266,128 266,138" fill="{INK}"/>')
+
+        # Box 2
+        els.append(card(276, 104, 218, 58, rx=8, fill=BLUE_SOFT, stroke=BLUE, sw=1.2))
+        els.append(txt(286, 123, "② 驻波选频器（筛出本征谐振频率）", 11.5, BLUE, weight="700"))
+        els.append(txt(286, 143, "绷紧弦 2L/n · 开闭空气管 · 自由簧/鼓皮", 11.5, BODY))
+        els.append(_line(494, 133, 516, 133, stroke=INK, sw=1.8))
+        els.append(f'<polygon points="520,133 512,128 512,138" fill="{INK}"/>')
+
+        # Box 3
+        els.append(card(522, 104, 206, 58, rx=8, fill=TEAL_SOFT, stroke=TEAL, sw=1.2))
+        els.append(txt(532, 123, "③ 辐射匹配器（推动大片空气）", 11.5, TEAL, weight="700"))
+        els.append(txt(532, 143, "云杉面板 · 铜管喇叭口 · 钢琴音板", 11.5, BODY))
+
+        # Left Panel: Waveforms at A4 = 440 Hz (2 periods = 4.545 ms)
+        els.append(card(20, 184, 352, 336))
+        els.append(pill(32, 194, "B · 同奏标准音 A4 = 440 Hz（两周期 4.55 ms 真实波形）", fg=PURPLE, bg=PURPLE_SOFT, w=328, h=22, size=11.5))
+
+        waves = [
+            ("① 音叉（纯基频 n=1）", BLUE, [(1, 1.0)], "光滑正弦波：纯净空灵但略显单薄"),
+            ("② 竹笛/长笛（开管+笛膜高频）", TEAL, [(1, 1.0), (2, 0.48), (3, 0.30), (4, 0.22), (5, 0.16)], "奇偶泛音齐备，波峰带明亮细纹"),
+            ("③ 小提琴（弓弦粘滑锯齿波）", RED, [(1, 1.0), (2, -0.50), (3, 0.33), (4, -0.25), (5, 0.20), (6, -0.17)], "陡峭折角锯齿：高次泛音极丰满"),
+            ("④ 单簧管（闭管仅奇次泛音）", AMBER, [(1, 1.0), (3, 0.42), (5, 0.22), (7, 0.12)], "偶次缺席呈对称方波肩：醇厚空灵"),
+        ]
+        x0, x1 = 40, 352
+        for idx, (label, col, harms, note) in enumerate(waves):
+            cy = 252 + idx * 68
+            els.append(_line(x0, cy, x1, cy, stroke="#cbd5e1", sw=1.0, dash="3 3"))
+            els.append(txt(x0, cy - 18, label, 11.5, col, weight="700"))
+            els.append(txt(x1, cy + 25, note, 11.5, MUTED, "end"))
+            pts = []
+            raw_vals = []
+            for k in range(121):
+                phase = 4.0 * math.pi * (k / 120.0)
+                v = sum(amp * math.sin(n * phase) for n, amp in harms)
+                raw_vals.append(v)
+            peak = max(abs(v) for v in raw_vals) or 1.0
+            for k, v in enumerate(raw_vals):
+                px = x0 + (x1 - x0) * (k / 120.0)
+                py = cy - (v / peak) * 14.5
+                pts.append((px, py))
+            els.append(polyline(pts, stroke=col, sw=2.0))
+
+        # Right Panel: Fourier Harmonic Spectrum Bars (n = 1..6)
+        els.append(card(386, 184, 354, 336))
+        els.append(pill(398, 194, "C · 傅里叶拆解：同一基频 440 Hz 下的泛音柱状配方", fg=RED, bg=RED_SOFT, w=330, h=22, size=11.5))
+
+        gx0, gy0, gw, gh = 446, 418, 276, 162
+        els.append(_line(gx0, gy0 - gh, gx0, gy0, stroke=INK, sw=1.3))
+        els.append(_line(gx0, gy0, gx0 + gw, gy0, stroke=INK, sw=1.3))
+        els.append(txt(396, 330, "相对", 11.5, MUTED))
+        els.append(txt(396, 346, "振幅", 11.5, MUTED))
+
+        for yfrac, ylab in [(0.5, "0.5"), (1.0, "1.0")]:
+            yy = gy0 - yfrac * (gh - 14)
+            els.append(_line(gx0 - 4, yy, gx0 + gw, yy, stroke="#e2e8f0", sw=1.0, dash="3 3"))
+            els.append(txt(gx0 - 7, yy + 4, ylab, 11.5, MUTED, "end"))
+
+        # Legend inside top-right of chart
+        els.append(f'<rect x="524" y="232" width="10" height="10" rx="2" fill="{TEAL}"/>')
+        els.append(txt(538, 241, "笛子", 11.5, TEAL, weight="700"))
+        els.append(f'<rect x="584" y="232" width="10" height="10" rx="2" fill="{RED}"/>')
+        els.append(txt(598, 241, "小提琴", 11.5, RED, weight="700"))
+        els.append(f'<rect x="656" y="232" width="10" height="10" rx="2" fill="{AMBER}"/>')
+        els.append(txt(670, 241, "黑管", 11.5, AMBER, weight="700"))
+
+        spec_flute = [1.00, 0.48, 0.30, 0.22, 0.16, 0.11]
+        spec_violin = [1.00, 0.50, 0.33, 0.25, 0.20, 0.17]
+        spec_clar = [1.00, 0.03, 0.42, 0.03, 0.22, 0.02]
+
+        for idx in range(6):
+            n = idx + 1
+            cx = gx0 + 24 + idx * 44
+            vals = [(spec_flute[idx], TEAL, -10), (spec_violin[idx], RED, 0), (spec_clar[idx], AMBER, 10)]
+            for amp, col, dx in vals:
+                bh = max(2.0, amp * (gh - 18))
+                els.append(f'<rect x="{cx + dx - 4:.1f}" y="{gy0 - bh:.1f}" width="8" height="{bh:.1f}" rx="1.5" fill="{col}"/>')
+            els.append(txt(cx, gy0 + 16, f"{n}f₁", 11.5, INK, "middle", weight="700"))
+            els.append(txt(cx, gy0 + 31, f"{440*n}", 11.5, MUTED, "middle"))
+
+        # Callout pointing to missing n=2, 4, 6 of clarinet
+        els.append(txt(544, 334, "← 黑管偶次泛音(2f₁,4f₁)", 11.5, AMBER, weight="700"))
+        els.append(txt(556, 352, "几乎为零（闭管铁律）", 11.5, AMBER, weight="700"))
+
+        els.append(card(398, 458, 330, 50, rx=8, fill=BLUE_SOFT, stroke=BLUE, sw=1.1))
+        els.append(txt(410, 478, "核心铁律：谐波全锁在 n·440 Hz（总周期仍 2.27 ms），", 11.5, INK, weight="700"))
+        els.append(txt(410, 498, "所以耳朵听到同一个 A4，却凭泛音比例瞬间认出乐器！", 11.5, BLUE, weight="700"))
+
+        return figure(
+            H,
+            "乐器通用三级发声引擎与440赫兹标准音下音叉竹笛小提琴单簧管傅里叶泛音谱对比图",
+            "顶部展示激励源、驻波选频器与辐射阻抗匹配器三级声学链路；左下绘制音叉、竹笛、小提琴与单簧管在440赫兹下的真实合成波形；右下柱状图对比前六阶整数倍泛音振幅，揭示基频决定音高、泛音配方决定音色。",
+            els,
+        )
+
+    def _build_guitar_vs_violin() -> str:
+        W, H = 760, 544
+        els = [
+            card(0, 0, W, H, rx=14, fill=BG, stroke=BORDER),
+            txt(24, 30, "图 2 · 弦乐双雄：吉他拨弦的梅森定律与十二平均律品丝 vs 小提琴松香“粘—滑”锯齿波", 14.8, INK, weight="700"),
+            txt(24, 50, "一根裸钢丝挥空气几乎没声；全靠琴码把横振传给轻薄云杉面板与音孔空气腔，辐射效率才暴涨上百倍", 11.8, MUTED),
+        ]
+
+        # Left Panel: Guitar Plucked String, 12-TET Frets & Soundboard Helmholtz Cavity
+        els.append(card(20, 64, 354, 464))
+        els.append(pill(32, 74, "A · 吉他（拨弦）：梅森三定律 + 品丝几何 + 音孔亥姆霍兹腔", fg=BLUE, bg=BLUE_SOFT, w=330, h=22, size=11.5))
+
+        # 12-TET fretboard geometry (exact 2^(-k/12))
+        sx0, sx1 = 48, 348
+        sL = sx1 - sx0
+        fy = 122
+        els.append(txt(38, 108, "指板品丝 x_k = L(1−2^(−k/12))：越往高音品距越密！", 11.5, INK, weight="700"))
+        els.append(f'<rect x="{sx0}" y="{fy}" width="{sL}" height="18" rx="3" fill="#fef3c7" stroke="{AMBER}" stroke-width="1.2"/>')
+        for k in range(13):
+            xk = sx0 + sL * (1.0 - 2.0 ** (-k / 12.0))
+            sw = 2.2 if k in (0, 7, 12) else 1.1
+            col = RED if k == 12 else (BLUE if k == 7 else "#64748b")
+            els.append(_line(xk, fy, xk, fy + 18, stroke=col, sw=sw))
+            if k in (0, 7, 12):
+                lbl = {0: "空弦0", 7: "7品(L/3)", 12: "12品(L/2)"}[k]
+                anch = "start" if k == 0 else "middle"
+                els.append(txt(xk, fy + 33, lbl, 11.5, col, anch, weight="700"))
+        els.append(txt(sx1, fy + 33, "琴码", 11.5, INK, "end", weight="700"))
+
+        # First 3 standing wave modes on length L
+        modes = [
+            (1, "基音 n=1 (λ=2L, f₁)", BLUE, 188),
+            (2, "二倍频 n=2 (λ=L, 2f₁ 高八度)", TEAL, 230),
+            (3, "三倍频 n=3 (λ=2L/3, 3f₁ 十二度)", PURPLE, 272),
+        ]
+        for n, mlabel, mcol, my in modes:
+            els.append(txt(42, my - 13, mlabel, 11.5, mcol, weight="700"))
+            pts_up, pts_dn = [], []
+            for i in range(91):
+                u = i / 90.0
+                px = sx0 + sL * u
+                amp = 8.5 * math.sin(n * math.pi * u)
+                pts_up.append((px, my - amp))
+                pts_dn.append((px, my + amp))
+            els.append(polyline(pts_up, stroke=mcol, sw=1.9))
+            els.append(polyline(pts_dn, stroke=mcol, sw=1.2, dash="3 3"))
+            for node_i in range(n + 1):
+                nx = sx0 + sL * (node_i / n)
+                els.append(f'<circle cx="{nx:.1f}" cy="{my}" r="3.2" fill="{RED if 0 < node_i < n else INK}"/>')
+
+        # Mersenne law & guitar body impedance matching box
+        els.append(card(32, 294, 330, 220, rx=8, fill="#f8fafc", stroke=BORDER, sw=1.2))
+        els.append(txt(44, 314, "梅森弦振公式：f₁ = (1 / 2L) · √(F_T / μ)", 12.0, BLUE, weight="700"))
+        els.append(txt(44, 337, "• 按品缩弦长 L → 升调（12 品 L 减半，频率翻倍高八度）", 11.5, BODY))
+        els.append(txt(44, 359, "• 拧弦钮拉紧张力 F_T → 升调（频率翻倍需张力涨 4 倍！）", 11.5, BODY))
+        els.append(txt(44, 381, "• 低音弦缠铜丝增大线密度 μ → 不加长琴颈照样出浑厚低音", 11.5, INK, weight="600"))
+        els.append(_line(44, 394, 350, 394, stroke="#cbd5e1", sw=1.0))
+        els.append(txt(44, 415, "为什么不插电的电吉他像蚊子哼，木吉他却响满屋？", 11.5, RED, weight="700"))
+        els.append(txt(44, 437, "• 细钢丝推不动空气（气流绕弦短路，声阻抗严重失配）；", 11.5, BODY))
+        els.append(txt(44, 459, "• 木吉他靠琴码带动 2.5 mm 云杉面板大面积活塞鼓风，", 11.5, TEAL, weight="700"))
+        els.append(txt(44, 481, "• 叠加音孔“吹空瓶”亥姆霍兹空气腔共振（约 100 Hz），", 11.5, INK, weight="700"))
+        els.append(txt(44, 502, "  不凭空造能量，却把拨弦声辐射效率放大上百倍！", 11.5, BLUE, weight="700"))
+
+        # Right Panel: Violin Helmholtz Stick-Slip Motion & Asymmetric Soundpost Bridge
+        els.append(card(386, 64, 354, 464))
+        els.append(pill(398, 74, "B · 小提琴（拉弦）：亥姆霍兹折角波 + 音柱不对称杠杆", fg=RED, bg=RED_SOFT, w=330, h=22, size=11.5))
+
+        # Parabolic envelope & corner kink diagram
+        vx0, vx1, vy = 412, 716, 148
+        vL = vx1 - vx0
+        els.append(txt(400, 108, "1862 亥姆霍兹发现：弓拉琴弦并非正弦弯，而是折角巡回！", 11.5, INK, weight="700"))
+        env_up, env_dn = [], []
+        for i in range(81):
+            u = i / 80.0
+            px = vx0 + vL * u
+            ey = 20.0 * 4.0 * u * (1.0 - u)
+            env_up.append((px, vy - ey))
+            env_dn.append((px, vy + ey))
+        els.append(polyline(env_up, stroke="#94a3b8", sw=1.3, dash="4 3"))
+        els.append(polyline(env_dn, stroke="#94a3b8", sw=1.3, dash="4 3"))
+        uk = 0.30
+        kx = vx0 + vL * uk
+        ky = vy - 20.0 * 4.0 * uk * (1.0 - uk)
+        els.append(polyline([(vx0, vy), (kx, ky), (vx1, vy)], stroke=RED, sw=2.4))
+        els.append(f'<circle cx="{kx:.1f}" cy="{ky:.1f}" r="4.0" fill="{RED}"/>')
+        els.append(txt(kx + 12, ky - 5, "锐利折角沿包络高速跑", 11.5, RED, weight="700"))
+        bx = vx0 + vL * 0.86
+        els.append(_line(bx, vy - 24, bx, vy + 24, stroke=AMBER, sw=3.2))
+        els.append(txt(bx - 6, vy + 31, "涂松香马尾弓↑", 11.5, AMBER, "end", weight="700"))
+
+        # Stick-slip sawtooth time graph
+        els.append(card(398, 188, 330, 118, rx=8, fill=RED_SOFT, stroke=RED, sw=1.1))
+        els.append(txt(410, 208, "松香“大静摩擦、小动摩擦”：切出每秒 440 次粘—滑", 11.5, RED, weight="700"))
+        tx0, ty0 = 420, 266
+        saw_pts = []
+        for cyc in range(3):
+            cx_s = tx0 + cyc * 94
+            saw_pts.extend([(cx_s, ty0 + 16), (cx_s + 80, ty0 - 20), (cx_s + 94, ty0 + 16)])
+        els.append(_line(tx0, ty0, tx0 + 286, ty0, stroke="#cbd5e1", sw=1.0))
+        els.append(polyline(saw_pts, stroke=RED, sw=2.1))
+        els.append(txt(462, 236, "① 粘连拖拽 (Stick)", 11.5, INK, "middle", weight="700"))
+        els.append(txt(524, 294, "② 折角撞弓崩脱滑回 (Slip)", 11.5, BLUE, "middle", weight="700"))
+        els.append(txt(656, 236, "持续补能不衰减！", 11.5, TEAL, "middle", weight="700"))
+
+        # Violin bridge + soundpost + bass bar cross section
+        els.append(card(398, 318, 330, 196, rx=8, fill="#f8fafc", stroke=BORDER, sw=1.2))
+        els.append(txt(410, 338, "琴箱截面：为什么左右横拉琴弦，面板却能上下鼓风？", 11.5, PURPLE, weight="700"))
+
+        els.append(path_d("M 426 392 Q 560 366 698 392", stroke=AMBER, sw=3.2))
+        els.append(path_d("M 426 440 Q 560 460 698 440", stroke="#78350f", sw=3.2))
+        els.append(_line(426, 392, 426, 440, stroke="#78350f", sw=2.6))
+        els.append(_line(698, 392, 698, 440, stroke="#78350f", sw=2.6))
+        els.append(f'<polygon points="524,380 588,380 578,352 534,352" fill="#fde68a" stroke="{AMBER}" stroke-width="1.5"/>')
+        els.append(txt(556, 370, "琴码", 11.5, INK, "middle", weight="700"))
+        els.append(f'<rect x="520" y="381" width="16" height="9" rx="2" fill="{BLUE}"/>')
+        els.append(txt(438, 412, "低音梁(传振)", 11.5, BLUE, weight="700"))
+        els.append(txt(438, 428, "↕左脚大幅踩踏", 11.5, BLUE, weight="700"))
+        els.append(f'<rect x="577" y="381" width="8" height="65" fill="{RED}"/>')
+        els.append(txt(591, 412, "音柱(顶死背板)", 11.5, RED, weight="700"))
+        els.append(txt(591, 428, "右脚锁作支点", 11.5, RED, weight="700"))
+
+        els.append(txt(410, 476, "• 提琴音柱被称作“灵魂之柱”：挪动 1 毫米音色立变；", 11.5, BODY))
+        els.append(txt(410, 498, "• 二胡无木面板，改靠琴码压蟒皮圆膜直接推空气发声！", 11.5, TEAL, weight="700"))
+
+        return figure(
+            H,
+            "吉他拨弦梅森定律与十二平均律品丝几何及小提琴松香粘滑亥姆霍兹折角波与音柱杠杆对比图解",
+            "左栏按真实2的负k/12次方比例绘制吉他指板品丝与前三阶弦驻波，结合梅森公式与云杉面板加音孔亥姆霍兹腔解释声阻抗匹配；右栏展示小提琴亥姆霍兹抛物线折角波、松香粘滑锯齿波以及音柱与低音梁将横向拉弓转为竖向面板辐射的杠杆机制。",
+            els,
+        )
+
+    def _build_flute_dizi_vs_clarinet() -> str:
+        W, H = 760, 546
+        els = [
+            card(0, 0, W, H, rx=14, fill=BG, stroke=BORDER),
+            txt(24, 30, "图 3 · 木管玄机：为什么同长黑管比长笛低整整八度？开管全泛音、闭管奇泛音与中国笛膜", 14.6, INK, weight="700"),
+            txt(24, 50, "管乐器音高由管内空气柱驻波拍板；两端全通还是吹口封死，直接改写波长倍数、泛音奇偶与超吹音程", 11.8, MUTED),
+        ]
+
+        # Left Panel: Open-Open Pipe (Flute & Chinese Dizi with Dimo)
+        els.append(card(20, 64, 354, 466))
+        els.append(pill(32, 74, "A · 双开管（长笛 & 中国竹笛）：L = n·λ/2，奇偶泛音全齐", fg=TEAL, bg=TEAL_SOFT, w=330, h=22, size=11.5))
+
+        px0, px1, py = 46, 346, 128
+        pL = px1 - px0
+        els.append(f'<rect x="{px0}" y="{py - 11}" width="{pL}" height="22" rx="4" fill="#ecfdf5" stroke="{TEAL}" stroke-width="1.6"/>')
+        els.append(f'<ellipse cx="{px0 + 28}" cy="{py - 11}" rx="7" ry="3.5" fill="#ffffff" stroke="{TEAL}" stroke-width="1.5"/>')
+        els.append(txt(px0 + 28, py - 19, "吹孔(通大气=开端)", 11.5, TEAL, "middle", weight="700"))
+        els.append(f'<ellipse cx="{px0 + 96}" cy="{py - 11}" rx="8" ry="4" fill="#fef08a" stroke="{RED}" stroke-width="1.6"/>')
+        els.append(txt(px0 + 114, py - 19, "★笛膜孔(微皱芦苇膜)", 11.5, RED, weight="700"))
+        for hi in range(5):
+            hx = px0 + 166 + hi * 28
+            is_open = hi >= 3
+            fill_c = "#ffffff" if is_open else INK
+            els.append(f'<circle cx="{hx}" cy="{py - 11}" r="4.2" fill="{fill_c}" stroke="{INK}" stroke-width="1.2"/>')
+        els.append(txt(px0 + 150, py + 25, "抬指开孔 = 声压提前泄压截短有效管长 L_eff！", 11.5, BLUE, "middle", weight="700"))
+
+        for n, mtitle, cy in [
+            (1, "基音 n=1：L = λ₁/2 → f₁ = v/(2L) ≈ 286 Hz (0.6m管)", 196),
+            (2, "超吹 n=2：L = λ₂   → f₂ = 2f₁ ≈ 572 Hz (直跳高八度！)", 256),
+            (3, "三倍 n=3：L = 3λ₃/2 → f₃ = 3f₁ ≈ 858 Hz (奇偶全有)", 316),
+        ]:
+            els.append(txt(38, cy - 18, mtitle, 11.5, INK if n > 1 else TEAL, weight="700"))
+            els.append(f'<rect x="{px0}" y="{cy - 12}" width="{pL}" height="24" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0"/>')
+            pts_a, pts_b = [], []
+            for i in range(91):
+                u = i / 90.0
+                xx = px0 + pL * u
+                dp = 10.5 * math.sin(n * math.pi * u)
+                pts_a.append((xx, cy - dp))
+                pts_b.append((xx, cy + dp))
+            els.append(polyline(pts_a, stroke=TEAL, sw=2.0))
+            els.append(polyline(pts_b, stroke=TEAL, sw=1.2, dash="3 3"))
+        els.append(txt(38, 344, "注：实线为管内声压振幅 Δp（两敞口通大气恒为声压波节 0）", 11.5, MUTED))
+
+        els.append(card(32, 358, 330, 158, rx=8, fill=TEAL_SOFT, stroke=TEAL, sw=1.2))
+        els.append(txt(44, 380, "中国竹笛独步天下的秘密：一张微皱“笛膜”做了什么？", 11.5, RED, weight="700"))
+        els.append(txt(44, 402, "• 西洋长笛无膜，轻吹波形接近纯正弦，音色圆润温婉；", 11.5, BODY))
+        els.append(txt(44, 424, "• 竹笛贴上微皱芦苇内膜（固有频率约 2–3 kHz）：", 11.5, INK, weight="600"))
+        els.append(txt(44, 446, "  声压推膜到峰谷时触发立方非线性（Duffing）急抖，", 11.5, TEAL, weight="700"))
+        els.append(txt(44, 468, "  激发出 4–7 kHz 密集高频泛音群——清脆穿云裂石！", 11.5, RED, weight="700"))
+        els.append(txt(44, 492, "  若贴太紧如死皮或破孔漏气，竹笛立刻哑暗失去灵魂。", 11.5, BODY))
+
+        # Right Panel: Closed-Open Cylindrical Clarinet vs Conical Sax/Oboe/Suona
+        els.append(card(386, 64, 354, 466))
+        els.append(pill(398, 74, "B · 闭圆柱管（黑管）vs 闭圆锥管（萨克斯/双簧管/唢呐）", fg=AMBER, bg=AMBER_SOFT, w=330, h=22, size=11.5))
+
+        cx0, cx1, cpy = 414, 714, 128
+        cL = cx1 - cx0
+        els.append(f'<rect x="{cx0}" y="{cpy - 11}" width="{cL - 18}" height="22" fill="#fffbeb" stroke="{AMBER}" stroke-width="1.6"/>')
+        els.append(f'<polygon points="{cx1-18},{cpy-11} {cx1},{cpy-17} {cx1},{cpy+17} {cx1-18},{cpy+11}" fill="#fffbeb" stroke="{AMBER}" stroke-width="1.6"/>')
+        els.append(f'<rect x="{cx0 - 6}" y="{cpy - 13}" width="10" height="26" rx="2" fill="{RED}"/>')
+        els.append(txt(cx0 + 54, cpy - 19, "单簧片拍击封口(声压波腹!)", 11.5, RED, "middle", weight="700"))
+        els.append(txt(cx1 - 12, cpy - 19, "喇叭敞口(声压0)", 11.5, AMBER, "end", weight="700"))
+
+        for n, mtitle, cy, valid in [
+            (1, "基音 n=1：L = λ₁/4 → f₁ = v/(4L) ≈ 143 Hz (低八度!)", 196, True),
+            (2, "禁戒 n=2：若塞半波长，敞口变波腹违反大气边界 → 抹杀！", 256, False),
+            (3, "超吹 n=3：L = 3λ₃/4 → f₃ = 3f₁ ≈ 429 Hz (跳十二度!)", 316, True),
+        ]:
+            col = AMBER if valid else "#94a3b8"
+            els.append(txt(404, cy - 18, mtitle, 11.5, RED if n == 1 else col, weight="700"))
+            els.append(f'<rect x="{cx0}" y="{cy - 12}" width="{cL}" height="24" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.0"/>')
+            els.append(_line(cx0, cy - 12, cx0, cy + 12, stroke=RED, sw=2.6))
+            pts_a, pts_b = [], []
+            for i in range(91):
+                u = i / 90.0
+                xx = cx0 + cL * u
+                if valid:
+                    dp = 10.5 * math.cos(n * math.pi * u / 2.0)
+                else:
+                    dp = 10.5 * math.cos(math.pi * u)
+                pts_a.append((xx, cy - dp))
+                pts_b.append((xx, cy + dp))
+            els.append(polyline(pts_a, stroke=col, sw=2.0, dash="4 3" if not valid else None))
+            els.append(polyline(pts_b, stroke=col, sw=1.2, dash="3 3"))
+            if not valid:
+                els.append(txt(cx1 - 8, cy + 4, "✗边界冲突", 11.5, RED, "end", weight="700"))
+
+        els.append(card(398, 358, 330, 158, rx=8, fill=PURPLE_SOFT, stroke=PURPLE, sw=1.2))
+        els.append(txt(410, 380, "神反转：萨克斯与唢呐也封吹口，凭啥找回偶次泛音？", 11.5, PURPLE, weight="700"))
+        els.append(txt(410, 404, "• 黑管是等粗圆柱管（平面波），被锁在奇次泛音 1,3,5…；", 11.5, BODY))
+        els.append(txt(410, 426, "• 萨克斯/双簧管/唢呐呈由细到粗的【圆锥管】（球面波）！", 11.5, INK, weight="700"))
+        els.append(txt(410, 448, "• 球面波声压 Δp(r) ∝ sin(kr)/r：锥顶 r→0 处天然形成", 11.5, PURPLE, weight="700"))
+        els.append(txt(410, 470, "  声压极大值（波腹），同时严格满足 L = n·λ/2！", 11.5, BLUE, weight="700"))
+        els.append(txt(410, 494, "• 结果：兼得簧片强爆发力 + 开管完整 1,2,3… 八度超吹！", 11.5, RED, weight="700"))
+
+        return figure(
+            H,
+            "长笛与中国竹笛双开管全泛音及笛膜非线性机制对比单簧管闭圆柱管奇泛音与萨克斯唢呐圆锥管图解",
+            "左栏展示两端通大气的长笛与竹笛满足L=nλ/2、奇偶泛音齐全，并解析竹笛芦苇笛膜2至3千赫兹立方非线性激发出4至7千赫兹清脆高频泛音；右栏展示单簧管吹口封死构成L=λ/4闭管（同管长低八度且仅存1,3,5奇次泛音），以及萨克斯与唢呐利用圆锥管球面波1/r因子找回完整全泛音列。",
+            els,
+        )
+
+    def _build_harmonica_and_brass() -> str:
+        W, H = 760, 546
+        els = [
+            card(0, 0, W, H, rx=14, fill=BG, stroke=BORDER),
+            txt(24, 30, "图 4 · 口琴自由簧与铜管唇簧：一吹一吸双簧门动态图解、蓝调压音与小号三活塞算术", 14.6, INK, weight="700"),
+            txt(24, 50, "口琴音高不由气道长短拍板，全看毫米级黄铜悬臂梁的质量与刚度；铜管则靠嘴唇当簧片撬动泛音梯", 11.8, MUTED),
+        ]
+
+        els.append("""<style>
+@keyframes reed-flex-once {
+  0%   { transform: rotate(0deg); }
+  20%  { transform: rotate(4.2deg); }
+  40%  { transform: rotate(-3.2deg); }
+  60%  { transform: rotate(3.6deg); }
+  80%  { transform: rotate(-2.4deg); }
+  100% { transform: rotate(2.6deg); }
+}
+@keyframes air-pulse-once {
+  0%   { stroke-dashoffset: 36; opacity: 0.45; }
+  50%  { stroke-dashoffset: 12; opacity: 1.0; }
+  100% { stroke-dashoffset: 0;  opacity: 0.95; }
+}
+.blow-reed-anim {
+  transform-origin: 120px 155px;
+  animation: reed-flex-once 4.6s ease-in-out 1 forwards;
+}
+.blow-air-anim {
+  stroke-dasharray: 6 4;
+  animation: air-pulse-once 4.6s linear 1 forwards;
+}
+@media (prefers-reduced-motion: reduce) {
+  .blow-reed-anim, .blow-air-anim { animation: none !important; }
+}
+</style>""")
+
+        # Left Panel: Harmonica Free-Reed Aeroelastic Valve
+        els.append(card(20, 64, 354, 466))
+        els.append(pill(32, 74, "A · 口琴/手风琴/笙（自由簧）：一格双簧，吹吸各司其职", fg=BLUE, bg=BLUE_SOFT, w=330, h=22, size=11.5))
+
+        els.append(card(32, 106, 330, 178, rx=8, fill="#f8fafc", stroke=BORDER, sw=1.2))
+        els.append(txt(44, 123, "十孔口琴单格剖面（动态演示：吹气压闭上簧片自激斩波）", 11.5, INK, weight="700"))
+
+        els.append('<rect x="84" y="148" width="38" height="8" fill="#d97706"/>')
+        els.append('<rect x="248" y="148" width="92" height="8" fill="#d97706"/>')
+        els.append('<rect x="328" y="156" width="12" height="60" fill="#92400e"/>')
+        els.append('<rect x="84" y="216" width="38" height="8" fill="#d97706"/>')
+        els.append('<rect x="248" y="216" width="92" height="8" fill="#d97706"/>')
+
+        els.append(f'<circle cx="116" cy="154" r="3.5" fill="{INK}"/>')
+        els.append(_line(120, 157, 244, 144, stroke=BLUE, sw=1.2, dash="3 3"))
+        els.append(_line(120, 157, 244, 167, stroke=BLUE, sw=1.2, dash="3 3"))
+        els.append(f'<g class="blow-reed-anim"><rect x="118" y="155" width="126" height="4.2" rx="1.5" fill="{BLUE}"/></g>')
+        els.append(txt(214, 140, "吹音簧(正压推入窄槽斩波)", 11.5, BLUE, "middle", weight="700"))
+
+        els.append(f'<path class="blow-air-anim" d="M 44 178 L 170 178 Q 208 178 218 145" fill="none" stroke="{BLUE}" stroke-width="2.2"/>')
+        els.append(txt(44, 172, "吹气 →", 11.5, BLUE, weight="700"))
+
+        els.append(f'<circle cx="116" cy="222" r="3.5" fill="{INK}"/>')
+        els.append(f'<rect x="118" y="224" width="126" height="4.2" rx="1.5" fill="{TEAL}"/>')
+        els.append(_line(120, 225, 244, 213, stroke=TEAL, sw=1.2, dash="3 3"))
+        els.append(txt(44, 204, "← 吸气", 11.5, TEAL, weight="700"))
+        els.append(path_d("M 224 238 Q 198 202 88 202", stroke=TEAL, sw=1.6, dash="4 3"))
+        els.append(txt(196, 252, "吸音簧(装外侧：负压吸进槽口激振)", 11.5, TEAL, "middle", weight="700"))
+        els.append(txt(44, 274, "• 自由簧穿槽而过不撞框（异于黑管拍击簧），音色清亮", 11.5, MUTED))
+
+        # Cantilever tuning & Blues Bending box
+        els.append(card(32, 294, 330, 222, rx=8, fill=BLUE_SOFT, stroke=BLUE, sw=1.2))
+        els.append(txt(44, 316, "口琴三大反直觉物理真相：", 11.8, INK, weight="700"))
+        els.append(txt(44, 340, "① 音高与琴格长短无关！悬臂梁 f₁ ∝ (h/L²)√(E/ρ)：", 11.5, BLUE, weight="700"))
+        els.append(txt(44, 362, "   低音簧片长且簧尖加厚配重；高音簧片极短极轻。", 11.5, BODY))
+        els.append(txt(44, 386, "② 调音锉刀口诀：锉薄【簧尖】减轻质量 → 音高上升；", 11.5, RED, weight="700"))
+        els.append(txt(44, 408, "   锉薄【簧根】削弱弯曲刚度（弹簧变软）→ 音高下降！", 11.5, INK, weight="700"))
+        els.append(txt(44, 434, "③ 蓝调“压音（Bending）”怎么凭空弯出半音哭腔？", 11.5, PURPLE, weight="700"))
+        els.append(txt(44, 456, "   压低舌根把口腔调成特定亥姆霍兹腔（声阻抗耦合），", 11.5, BODY))
+        els.append(txt(44, 478, "   吸气不仅拽低吸音簧，更唤醒同孔吹音簧“开簧”接力，", 11.5, TEAL, weight="700"))
+        els.append(txt(44, 500, "   让音高在两簧之间丝滑下潜！（JASA 1998 实测）", 11.5, INK, weight="600"))
+
+        # Right Panel: Brass Lip-Reed Family (Trumpet, Horn, Trombone)
+        els.append(card(386, 64, 354, 466))
+        els.append(pill(398, 74, "B · 铜管家族（小号/圆号/长号）：嘴唇当簧 + 三活塞算术", fg=AMBER, bg=AMBER_SOFT, w=330, h=22, size=11.5))
+
+        els.append(card(398, 106, 330, 190, rx=8, fill="#fffbeb", stroke=AMBER, sw=1.2))
+        els.append(txt(410, 126, "不按任何键！绷紧嘴唇改变“唇簧”频率即可撬动泛音梯：", 11.5, AMBER, weight="700"))
+
+        harms_brass = [
+            (2, "2f₁", "C4 (Do)", 152, BLUE),
+            (3, "3f₁", "G4 (Sol, 纯五度)", 126, TEAL),
+            (4, "4f₁", "C5 (高音Do)", 104, PURPLE),
+            (5, "5f₁", "E5 (Mi, 大三度)", 84, AMBER),
+            (6, "6f₁", "G5 (高音Sol)", 64, RED),
+            (8, "8f₁", "C6 (倍高Do)", 46, INK),
+        ]
+        for idx, (n, ratio_s, note_s, bar_w, col) in enumerate(harms_brass):
+            ly = 270 - idx * 22
+            els.append(f'<rect x="414" y="{ly - 11}" width="{bar_w}" height="15" rx="3" fill="{col}" opacity="0.85"/>')
+            els.append(txt(420, ly, ratio_s, 11.5, "#ffffff", weight="700"))
+            els.append(txt(414 + bar_w + 8, ly, f"n={n} · {note_s}", 11.5, col, weight="700"))
+        els.append(txt(410, 289, "↑ 军号没有按键，冲锋号全由这串自然泛音列吹成！", 11.5, MUTED))
+
+        els.append(card(398, 308, 330, 208, rx=8, fill="#f8fafc", stroke=BORDER, sw=1.2))
+        els.append(txt(410, 328, "泛音列中间缺音怎么办？三颗活塞键拼出全部半音阶！", 11.5, RED, weight="700"))
+
+        valves = [
+            ("2号键", "+5.9% 管长", "降 1 个半音", BLUE, 410),
+            ("1号键", "+12.2% 管长", "降 2 个半音", TEAL, 516),
+            ("3号键", "+18.9% 管长", "降 3 个半音", PURPLE, 622),
+        ]
+        for vtitle, vlen, vdrop, vcol, vx in valves:
+            els.append(card(vx, 340, 98, 66, rx=6, fill="#ffffff", stroke=vcol, sw=1.3))
+            els.append(txt(vx + 49, 358, vtitle, 11.5, vcol, "middle", weight="700"))
+            els.append(txt(vx + 49, 377, vlen, 11.5, INK, "middle", weight="600"))
+            els.append(txt(vx + 49, 395, vdrop, 11.5, MUTED, "middle"))
+
+        els.append(txt(410, 428, "• 2³ 组合算术：单按或叠按三键，可把主管加长 1~6 半音，", 11.5, BODY))
+        els.append(txt(410, 450, "  刚好把 n=2 与 n=3 之间 6 个半音空缺无缝填满！", 11.5, INK, weight="700"))
+        els.append(txt(410, 474, "• 长号更直接：用 U 形无级伸缩拉管（7 把位）连续变 L；", 11.5, TEAL, weight="700"))
+        els.append(txt(410, 496, "• 强吹铜管窄管高声压触发激波（Hirschberg），金石裂帛！", 11.5, RED, weight="700"))
+
+        return figure(
+            H,
+            "十孔口琴吹吸双自由簧片气动阀门动态图解与蓝调压音及小号自然泛音列三活塞变管长算术图",
+            "左栏剖面带单次动画展示口琴吹音簧与吸音簧分别在内侧与外侧受正负压推入窄槽自激斩波，解析悬臂梁调音锉法与口腔阻抗耦合蓝调压音；右栏展示铜管唇簧撬动2至8阶自然泛音列，以及三颗活塞键分别延长5.9%、12.2%、18.9%管长填满全部半音阶的机制。",
+            els,
+        )
+
+    def _build_piano_and_drums() -> str:
+        W, H = 760, 544
+        els = [
+            card(0, 0, W, H, rx=14, fill=BG, stroke=BORDER),
+            txt(24, 30, "图 5 · 击弦与膜鸣：钢琴毛毡槌专敲 1/7 处的除杂算计，与圆鼓皮贝塞尔非整数模态", 14.8, INK, weight="700"),
+            txt(24, 50, "一维理想弦泛音严格成整数倍 1:2:3…；二维圆膜天生是贝塞尔函数无理数比 1 : 1.593 : 2.136…", 11.8, MUTED),
+        ]
+
+        # Left Panel: Grand Piano
+        els.append(card(20, 64, 354, 464))
+        els.append(pill(32, 74, "A · 钢琴（击弦乐器之王）：专敲 1/7 弦长抹杀刺耳七次泛音", fg=PURPLE, bg=PURPLE_SOFT, w=330, h=22, size=11.5))
+
+        px0, px1, py = 46, 350, 152
+        pL = px1 - px0
+        els.append(txt(38, 114, "第 7 泛音 (7f₁) 为何讨嫌？比平均律小七度偏低 31 音分！", 11.5, RED, weight="700"))
+        els.append(_line(px0, py, px1, py, stroke="#94a3b8", sw=1.2))
+        pts7_a, pts7_b = [], []
+        for i in range(141):
+            u = i / 140.0
+            xx = px0 + pL * u
+            yy = 16.0 * math.sin(7.0 * math.pi * u)
+            pts7_a.append((xx, py - yy))
+            pts7_b.append((xx, py + yy))
+        els.append(polyline(pts7_a, stroke=PURPLE, sw=1.8))
+        els.append(polyline(pts7_b, stroke=PURPLE, sw=1.1, dash="3 3"))
+        for k in range(8):
+            nx = px0 + pL * (k / 7.0)
+            els.append(f'<circle cx="{nx:.1f}" cy="{py}" r="3.2" fill="{RED if k == 1 else INK}"/>')
+
+        hx = px0 + pL / 7.0
+        els.append(f'<path d="M {hx-10:.1f} {py+38} L {hx+10:.1f} {py+38} Q {hx+8:.1f} {py+14} {hx:.1f} {py+8} Q {hx-8:.1f} {py+14} {hx-10:.1f} {py+38} Z" fill="{AMBER}" stroke="#b45309" stroke-width="1.4"/>')
+        els.append(_line(hx, py + 38, hx, py + 58, stroke="#78350f", sw=2.6))
+        els.append(txt(hx + 16, py + 34, "↑ 毛毡槌精准敲在 L/7 波节处：", 11.5, RED, weight="700"))
+        els.append(txt(hx + 16, py + 52, "把不协和的 7f₁ 胎死腹中！", 11.5, INK, weight="700"))
+
+        els.append(card(32, 224, 330, 288, rx=8, fill="#f8fafc", stroke=BORDER, sw=1.2))
+        els.append(txt(44, 246, "一架三角钢琴里藏着多少暴力与精巧？", 11.8, PURPLE, weight="700"))
+        els.append(txt(44, 270, "① 88 键跨 7 个多八度：27.5 Hz (A0) 至 4186 Hz (C8)，", 11.5, BODY))
+        els.append(txt(44, 292, "   若光靠加长弦，最低音得 15 米！工程师给低音钢丝", 11.5, BODY))
+        els.append(txt(44, 314, "   密缠紫铜丝增重 μ，把整琴塞进 2~2.7 米琴身。", 11.5, INK, weight="700"))
+        els.append(txt(44, 340, "② 20~30 吨恐怖总拉力：约 230 根钢弦足以拉塌木框，", 11.5, RED, weight="700"))
+        els.append(txt(44, 362, "   1820 年代引入一体铸铁钢骨，现代钢琴方才定型。", 11.5, BODY))
+        els.append(txt(44, 388, "③ 中高音一键敲【同音三弦】：三弦微失谐（<1 音分）", 11.5, TEAL, weight="700"))
+        els.append(txt(44, 410, "   使初段宏亮爆发、尾段反相慢衰，唱出悠长余韵；", 11.5, BODY))
+        els.append(txt(44, 432, "   左踏板（Una corda）横移击弦机少敲一弦柔化音色。", 11.5, INK, weight="600"))
+        els.append(txt(44, 458, "④ 拉伸调律（Railsback）：粗钢丝刚度使高次泛音偏高，", 11.5, BLUE, weight="700"))
+        els.append(txt(44, 480, "   调音师把低音略调低、高音略调高 ±30 音分对齐谐波！", 11.5, BODY))
+
+        # Right Panel: 2D Circular Membrane Bessel Modes
+        els.append(card(386, 64, 354, 464))
+        els.append(pill(398, 74, "B · 膜鸣打击乐：军鼓节奏噪点 vs 交响定音鼓准音", fg=TEAL, bg=TEAL_SOFT, w=330, h=22, size=11.5))
+
+        bessel_cards = [
+            ("(0,1) 基模", "1.000 f₀₁", 436, 146, "0径 · 1圆边"),
+            ("(1,1) 主音模", "1.593 f₀₁", 520, 146, "1条节直径"),
+            ("(2,1) 四瓣模", "2.136 f₀₁", 604, 146, "2条节直径"),
+            ("(0,2) 双环模", "2.295 f₀₁", 688, 146, "内圈节圆!"),
+        ]
+        for idx, (mname, mrat, cx, cy, mdesc) in enumerate(bessel_cards):
+            r = 29
+            fill_base = BLUE_SOFT if idx == 0 else "#ffffff"
+            els.append(f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="{fill_base}" stroke="{INK}" stroke-width="1.6"/>')
+            if idx == 0:
+                els.append(txt(cx, cy + 4, "+", 14.0, BLUE, "middle", weight="700"))
+            elif idx == 1:
+                els.append(f'<path d="M {cx} {cy-r} A {r} {r} 0 0 0 {cx} {cy+r} Z" fill="{BLUE_SOFT}"/>')
+                els.append(f'<path d="M {cx} {cy-r} A {r} {r} 0 0 1 {cx} {cy+r} Z" fill="{RED_SOFT}"/>')
+                els.append(f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="none" stroke="{INK}" stroke-width="1.6"/>')
+                els.append(_line(cx, cy - r, cx, cy + r, stroke=INK, sw=1.5, dash="3 2"))
+                els.append(txt(cx - 12, cy + 4, "+", 12.5, BLUE, "middle", weight="700"))
+                els.append(txt(cx + 12, cy + 4, "−", 12.5, RED, "middle", weight="700"))
+            elif idx == 2:
+                els.append(_line(cx - r, cy, cx + r, cy, stroke=INK, sw=1.4, dash="3 2"))
+                els.append(_line(cx, cy - r, cx, cy + r, stroke=INK, sw=1.4, dash="3 2"))
+                els.append(txt(cx - 11, cy - 7, "+", 11.5, BLUE, "middle", weight="700"))
+                els.append(txt(cx + 11, cy + 14, "+", 11.5, BLUE, "middle", weight="700"))
+                els.append(txt(cx + 11, cy - 7, "−", 11.5, RED, "middle", weight="700"))
+                els.append(txt(cx - 11, cy + 14, "−", 11.5, RED, "middle", weight="700"))
+            elif idx == 3:
+                ri = r * 0.44
+                els.append(f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="{RED_SOFT}" stroke="{INK}" stroke-width="1.6"/>')
+                els.append(f'<circle cx="{cx}" cy="{cy}" r="{ri:.1f}" fill="{BLUE_SOFT}" stroke="{INK}" stroke-width="1.4" stroke-dasharray="3 2"/>')
+                els.append(txt(cx, cy + 4, "+", 11.5, BLUE, "middle", weight="700"))
+            els.append(txt(cx, cy - 35, mname, 11.5, INK, "middle", weight="700"))
+            els.append(txt(cx, cy + 44, mrat, 11.5, RED if idx > 0 else BLUE, "middle", weight="700"))
+            els.append(txt(cx, cy + 60, mdesc, 11.5, MUTED, "middle"))
+
+        els.append(card(398, 224, 330, 288, rx=8, fill=TEAL_SOFT, stroke=TEAL, sw=1.2))
+        els.append(txt(410, 246, "贝塞尔零点全是无理数，定音鼓怎么“逆天改命”唱准音？", 11.5, TEAL, weight="700"))
+        els.append(txt(410, 270, "• 军鼓/大鼓（无确定音高）：敲击鼓心，专激起圆对称模", 11.5, BODY))
+        els.append(txt(410, 292, "  (0,1) : (0,2) : (0,3) = 1 : 2.30 : 3.60（乱序非整数倍！），", 11.5, RED, weight="700"))
+        els.append(txt(410, 314, "  叠加底皮金属响弦拍击，产生短促爆裂的节奏冲击感。", 11.5, BODY))
+        els.append(_line(410, 328, 716, 328, stroke=TEAL, sw=1.0))
+        els.append(txt(410, 348, "• 交响定音鼓三招驯服无理数（Benade 实测）：", 11.5, INK, weight="700"))
+        els.append(txt(410, 370, "  ① 专敲距鼓边 1/4 半径处 → 避开沉闷 (0,1)，重点激发", 11.5, BLUE, weight="700"))
+        els.append(txt(410, 392, "     (1,1)、(2,1)、(3,1) 扇形模（裸膜比 1 : 1.34 : 1.67）；", 11.5, BODY))
+        els.append(txt(410, 416, "  ② 密封铜锅内空气质量负载给低阶模强力“挂铅减速”，", 11.5, PURPLE, weight="700"))
+        els.append(txt(410, 438, "     精准把频率比掰成 1.00 : 1.504 : 2.00（纯五度+八度！）", 11.5, RED, weight="700"))
+        els.append(txt(410, 462, "  ③ 踩动脚踏板实时拉紧鼓皮张力 T，定音鼓手就能在", 11.5, BODY))
+        els.append(txt(410, 484, "     乐队里像低音提琴一样准确奏出 C-G-C 定音旋律！", 11.5, INK, weight="700"))
+
+        return figure(
+            H,
+            "三角钢琴毛毡槌1/7弦长击弦点消除第七泛音机制与圆鼓皮二维贝塞尔模态及定音鼓铜锅空气调谐图解",
+            "左栏绘制钢琴弦第7阶泛音驻波及毛毡槌敲在1/7波节处抑制不协和7次泛音的原理，并总结88键缠铜增重、20至30吨铸铁架、同音三弦与拉伸调律；右栏展示圆鼓皮(0,1)、(1,1)、(2,1)、(0,2)四种贝塞尔模态及1:1.593:2.136非整数频率比，对比军鼓无音高重击与定音鼓铜锅空气负载驯服出1:1.5:2纯正音高。",
+            els,
+        )
+
+    @register(
+        "musical-instruments-acoustics",
+        "主要乐器发声原理五步图解：三级声学引擎与440Hz傅里叶泛音谱、吉他梅森定律与小提琴松香粘滑折角波、竹笛笛膜开管与单簧管闭管奇泛音、口琴自由簧动态阀门与小号三活塞、钢琴1/7击弦点与圆鼓贝塞尔模态",
+        "science_tech",
+    )
+    def build_musical_instruments_acoustics():
+        write_svg(SUBDIR, "instrument-engine-and-fourier-timbre-spectrum.svg", _build_engine_and_timbre_spectrum())
+        write_svg(SUBDIR, "guitar-plucked-mersenne-vs-violin-helmholtz-bowing.svg", _build_guitar_vs_violin())
+        write_svg(SUBDIR, "flute-dizi-open-pipe-vs-clarinet-odd-harmonics.svg", _build_flute_dizi_vs_clarinet())
+        write_svg(SUBDIR, "harmonica-free-reed-valve-and-brass-lip-harmonics.svg", _build_harmonica_and_brass())
+        write_svg(SUBDIR, "piano-struck-seventh-node-and-drum-bessel-modes.svg", _build_piano_and_drums())
+
+
+_register_musical_instruments()
+
+
+
+

@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="534" viewBox="0 0 760 534" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">北大西洋红海龟地磁倾角与磁场强度双坐标导航图及脊椎动物磁铁矿感受器2012年科学纠错图解</title>
+<desc id="desc">左图展示地磁倾角I与总磁场强度F非平行等值线交织成双坐标网格，使同处北纬20度东西两岸的初生红海龟朝相反安全方向游动并解释母龟磁印记归巢；右图说明纳米四氧化三铁力矩假说及2012年Nature证实鸽喙富铁细胞实为巨噬细胞的科学纠错。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="533" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">四、大洋里的“生物经纬网”：红海龟怎样靠地磁双坐标横渡大西洋？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">地磁倾角 I 与总磁场强度 F 等值线斜交成网格；外加 2012 年鸽喙磁铁矿“乌龙反转”的科学真话</text>
+<rect x="20" y="64" width="430" height="456" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="74.0" width="402" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="235.0" y="89.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">A · 北大西洋环流：倾角 I (纬向) × 强度 F (斜向) = 双坐标</text>
+<rect x="36" y="108" width="398" height="252" rx="10" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2"/>
+<path d="M44,152 Q235,138 426,160" fill="none" stroke="#1d6fa5" stroke-width="1.3" stroke-dasharray="6 4"/>
+<text x="52" y="146" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="600">倾角 I = 65°</text>
+<path d="M44,218 Q235,204 426,226" fill="none" stroke="#1d6fa5" stroke-width="1.3" stroke-dasharray="6 4"/>
+<text x="52" y="212" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="600">倾角 I = 50°</text>
+<path d="M44,286 Q235,272 426,294" fill="none" stroke="#1d6fa5" stroke-width="1.3" stroke-dasharray="6 4"/>
+<text x="52" y="280" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="600">倾角 I = 35°</text>
+<line x1="116" y1="114" x2="206" y2="352" stroke="#6d28d9" stroke-width="1.3" stroke-dasharray="3 3"/>
+<text x="128" y="128" font-size="10.5" fill="#6d28d9" text-anchor="start" font-weight="600">F=48μT</text>
+<line x1="214" y1="114" x2="316" y2="352" stroke="#6d28d9" stroke-width="1.3" stroke-dasharray="3 3"/>
+<text x="226" y="128" font-size="10.5" fill="#6d28d9" text-anchor="start" font-weight="600">F=42μT</text>
+<line x1="308" y1="114" x2="418" y2="352" stroke="#6d28d9" stroke-width="1.3" stroke-dasharray="3 3"/>
+<text x="320" y="128" font-size="10.5" fill="#6d28d9" text-anchor="start" font-weight="600">F=36μT</text>
+<ellipse cx="236" cy="236" rx="138" ry="74" fill="none" stroke="#0f766e" stroke-width="2.6"/>
+<circle cx="106" cy="272" r="7" fill="#c25014" stroke="#ffffff" stroke-width="1.5"/>
+<line x1="106" y1="272" x2="132" y2="232" stroke="#c25014" stroke-width="2.4" marker-end="url(#arr-orange)"/>
+<text x="116" y="294" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="700">西侧 (波多黎各 20°N)</text>
+<text x="116" y="310" font-size="10.5" fill="#0f172a" text-anchor="start">同纬度高强度→游东北</text>
+<circle cx="364" cy="272" r="7" fill="#18794e" stroke="#ffffff" stroke-width="1.5"/>
+<line x1="364" y1="272" x2="322" y2="302" stroke="#18794e" stroke-width="2.4" marker-end="url(#arr-green)"/>
+<text x="368" y="260" font-size="10.5" fill="#18794e" text-anchor="end" font-weight="700">东侧 (佛得角 20°N)</text>
+<text x="368" y="326" font-size="10.5" fill="#0f172a" text-anchor="end" font-weight="700">同纬度低强度→游西南!</text>
+<text x="222" y="218" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">北大西洋暖水环流安全区</text>
+<text x="222" y="236" font-size="10.5" fill="#b91c1c" text-anchor="middle" font-weight="600">（出圈入冷水即冻死！）</text>
+<rect x="36" y="372" width="398" height="134" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="48" y="394" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">Putman 与 Lohmann (2011 Current Biology) 水池实证：</text>
+<text x="48" y="415" font-size="11" fill="#1e293b" text-anchor="start">• 从未下过海的初生红海龟放进线圈水池，复现同处北纬 20° 的大</text>
+<text x="48" y="434" font-size="11" fill="#1e293b" text-anchor="start">  西洋东西两岸磁场 → 幼龟竟能分辨“经度”差异，反向转向保命！</text>
+<text x="48" y="456" font-size="11" fill="#1e293b" text-anchor="start">• 成年母龟回出生地产卵（Brothers &amp; Lohmann 2015）：地磁等值线</text>
+<text x="48" y="475" font-size="11" fill="#0f766e" text-anchor="start" font-weight="700">  漂移聚拢年份，佛罗里达海滩海龟巢密度同步显著升高（磁印记）！</text>
+<rect x="462" y="64" width="278" height="456" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="476.0" y="74.0" width="250" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="601.0" y="89.0" font-size="12" fill="#c25014" text-anchor="middle" font-weight="600">B · 磁铁矿传感器与科学纠错案</text>
+<rect x="476" y="108" width="250" height="178" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="1"/>
+<text x="488" y="130" font-size="11.5" fill="#b45309" text-anchor="start" font-weight="700">生物源纳米磁铁矿 (Fe3O4) 假说</text>
+<rect x="512" y="148" width="16" height="16" rx="3" fill="#334155" stroke="#0f172a" stroke-width="1"/>
+<rect x="538" y="148" width="16" height="16" rx="3" fill="#334155" stroke="#0f172a" stroke-width="1"/>
+<rect x="564" y="148" width="16" height="16" rx="3" fill="#334155" stroke="#0f172a" stroke-width="1"/>
+<rect x="590" y="148" width="16" height="16" rx="3" fill="#334155" stroke="#0f172a" stroke-width="1"/>
+<rect x="616" y="148" width="16" height="16" rx="3" fill="#334155" stroke="#0f172a" stroke-width="1"/>
+<rect x="642" y="148" width="16" height="16" rx="3" fill="#334155" stroke="#0f172a" stroke-width="1"/>
+<rect x="668" y="148" width="16" height="16" rx="3" fill="#334155" stroke="#0f172a" stroke-width="1"/>
+<line x1="504" y1="156" x2="686" y2="156" stroke="#c25014" stroke-width="1.8"/>
+<text x="601" y="184" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600">地磁力矩拧动磁晶链 → 拉开机械离子通道</text>
+<text x="488" y="208" font-size="11" fill="#1e293b" text-anchor="start">• 趋磁细菌体内已被电镜直接拍到成串</text>
+<text x="488" y="227" font-size="11" fill="#1e293b" text-anchor="start">  磁小体；强脉冲磁场能扰乱成年候鸟</text>
+<text x="488" y="246" font-size="11" fill="#1e293b" text-anchor="start">  与海龟的“磁场强度地图”读数，指向</text>
+<text x="488" y="265" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">  三叉神经通路参与传递磁场强度信号。</text>
+<rect x="476" y="298" width="250" height="208" rx="8" fill="#fef2f2" stroke="#b91c1c" stroke-width="1.1"/>
+<text x="488" y="320" font-size="11.5" fill="#b91c1c" text-anchor="start" font-weight="700">写进教科书又被推翻的悬案！</text>
+<text x="488" y="342" font-size="11" fill="#1e293b" text-anchor="start">• 2000 年代初，多篇论文宣称在信鸽上</text>
+<text x="488" y="361" font-size="11" fill="#1e293b" text-anchor="start">  喙皮肤找到了“含铁磁感受神经元”。</text>
+<text x="488" y="383" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">• Treiber 等 (2012 Nature) 扫描超</text>
+<text x="488" y="402" font-size="11" fill="#1e293b" text-anchor="start">  10 万张切片后震惊反转：那些富铁细</text>
+<text x="488" y="421" font-size="11" fill="#1e293b" text-anchor="start">  胞压根不是神经元，而是吞噬铁锈的</text>
+<text x="488" y="440" font-size="11.5" fill="#b91c1c" text-anchor="start" font-weight="700">  免疫巨噬细胞！</text>
+<text x="488" y="463" font-size="11" fill="#1e293b" text-anchor="start">• 真实现状：脊椎动物磁铁矿感受器的</text>
+<text x="488" y="482" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">  确切细胞位置至今仍是未解前沿谜题！</text>
+</svg>

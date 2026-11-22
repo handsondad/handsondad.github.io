@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="542" viewBox="0 0 760 542" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">车窗画框参考系速度变换、邓克尔诱导运动与大脑光流拆解错觉及3个乘车验证实验图解</title>
+<desc id="desc">左图对比地面参考系与车厢参考系的速度变换；右图解释1929年邓克尔诱导运动与2009年大脑光流拆解机制如何把零角速度感知为主动前冲；底部给出玻璃准星、遮挡前景与双眼视差三个乘客小实验。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="541" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">三、“不往后退”为什么变成“追着车跑”？——参考系锚定与诱导运动错觉</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">几何学只让月亮停在原角度；真正给月亮加上“+100 km/h 同行感”的，是大脑的三重视觉加工</text>
+<rect x="20" y="64" width="354" height="294" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="74.0" width="326" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="197.0" y="89.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">A · 第一重：车窗画框锚定（伴行车效应）</text>
+<rect x="34" y="108" width="326" height="98" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="46" y="128" font-size="12" fill="#475569" text-anchor="start" font-weight="700">① 地面参考系（站在路边看真相）</text>
+<text x="46" y="151" font-size="11.5" fill="#1e293b" text-anchor="start">• 汽车与你：</text>
+<line x1="132" y1="147" x2="232" y2="147" stroke="#1d6fa5" stroke-width="2.2" marker-end="url(#arr-blue)"/>
+<text x="240" y="151" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">+100 km/h</text>
+<text x="46" y="173" font-size="11.5" fill="#1e293b" text-anchor="start">• 行道树：v = 0（扎根路边不动）</text>
+<text x="46" y="194" font-size="11.5" fill="#1e293b" text-anchor="start">• 月　亮：视线方向近似恒定不变</text>
+<rect x="34" y="218" width="326" height="126" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="46" y="239" font-size="12" fill="#1d6fa5" text-anchor="start" font-weight="700">② 车厢参考系（大脑默认座椅与窗框静止！）</text>
+<text x="46" y="263" font-size="11.5" fill="#1e293b" text-anchor="start">• 窗框准星：v′ = 0（你和玻璃相对静止）</text>
+<text x="46" y="285" font-size="11.5" fill="#1e293b" text-anchor="start">• 行道树：</text>
+<line x1="212" y1="281" x2="122" y2="281" stroke="#c25014" stroke-width="2.2" marker-end="url(#arr-orange)"/>
+<text x="220" y="285" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">−100 km/h 狂退</text>
+<text x="46" y="308" font-size="11.5" fill="#1e293b" text-anchor="start">• 月亮一直贴在窗框同一点 ＝ 隔壁车道</text>
+<text x="46" y="329" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">  同速飙车的伴行车 → 大脑判为 +100 km/h 同行！</text>
+<rect x="386" y="64" width="354" height="294" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="400.0" y="74.0" width="326" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="563.0" y="89.0" font-size="12" fill="#c25014" text-anchor="middle" font-weight="600">B · 第二、三重：诱导运动与光流拆解错配</text>
+<rect x="400" y="108" width="326" height="106" rx="8" fill="#1e293b"/>
+<circle cx="576" cy="148" r="15" fill="#fde047"/>
+<polygon points="432,214 454,152 476,214" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+<polygon points="514,214 536,152 558,214" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+<polygon points="614,214 636,152 658,214" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+<line x1="696" y1="196" x2="432" y2="196" stroke="#93c5fd" stroke-width="1.8" stroke-dasharray="5 3"/>
+<polygon points="424,196 434,191.5 434,200.5" fill="#93c5fd"/>
+<text x="563" y="209" font-size="11" fill="#bae6fd" text-anchor="middle">前景树梢/电线杆向后形成强烈光流 (−ω)</text>
+<line x1="596" y1="142" x2="664" y2="142" stroke="#fde047" stroke-width="2.2"/>
+<polygon points="672,142 662,137.5 662,146.5" fill="#fde047"/>
+<text x="634" y="131" font-size="11" fill="#fef08a" text-anchor="middle" font-weight="700">诱导出前冲感 (+ω)!</text>
+<rect x="400" y="224" width="326" height="120" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="412" y="244" font-size="11.5" fill="#1e293b" text-anchor="start">• 邓克尔诱导运动 (1929)：大面积树影后掠，</text>
+<text x="412" y="263" font-size="11.5" fill="#1e293b" text-anchor="start">  反向诱导出静止月亮“穿林前冲”（同月穿浮云）；</text>
+<text x="412" y="285" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">• 遮挡 + 光流拆解 (Warren &amp; Rushton 2009)：</text>
+<text x="412" y="305" font-size="11.5" fill="#1e293b" text-anchor="start">  树挡住月亮→大脑低估距离，预期它也该后退；</text>
+<text x="412" y="325" font-size="11.5" fill="#b91c1c" text-anchor="start" font-weight="700">  实测后退为 0 − 预期后退 (−ω) ＝ 主动前冲 (+ω)！</text>
+<rect x="20" y="370" width="720" height="156" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="380.0" width="586" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="327.0" y="395.0" font-size="12" fill="#18794e" text-anchor="middle" font-weight="600">C · 坐车时 30 秒就能亲手验证的 3 个“破除错觉”小实验（乘客专享，司机专心看路！）</text>
+<rect x="34" y="412" width="224" height="102" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="46" y="433" font-size="12" fill="#1d6fa5" text-anchor="start" font-weight="700">① 玻璃便签准星实验</text>
+<text x="46" y="455" font-size="11.5" fill="#1e293b" text-anchor="start">头靠稳头枕，在侧窗边缘贴小纸角</text>
+<text x="46" y="475" font-size="11.5" fill="#1e293b" text-anchor="start">对准月亮。直行 1 km 月亮始终钉</text>
+<text x="46" y="495" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">在纸尖——根本没有“忽快忽慢”！</text>
+<rect x="268" y="412" width="224" height="102" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="280" y="433" font-size="12" fill="#c25014" text-anchor="start" font-weight="700">② 手掌遮挡前景实验</text>
+<text x="280" y="455" font-size="11.5" fill="#1e293b" text-anchor="start">用手掌挡住窗外下半截飞退的树梢</text>
+<text x="280" y="475" font-size="11.5" fill="#1e293b" text-anchor="start">和房屋，只留上方干净夜空：月亮</text>
+<text x="280" y="495" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">“往前猛跑”的冲刺感立刻消失大半！</text>
+<rect x="502" y="412" width="224" height="102" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="514" y="433" font-size="12" fill="#18794e" text-anchor="start" font-weight="700">③ 左右眼交替眨眼 (6.5cm)</text>
+<text x="514" y="455" font-size="11.5" fill="#1e293b" text-anchor="start">伸直手臂竖起大拇指遮住月亮，左</text>
+<text x="514" y="475" font-size="11.5" fill="#1e293b" text-anchor="start">右眼轮流睁闭：拇指跳开约 6°（12</text>
+<text x="514" y="495" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">个满月宽），月亮在背景里纹丝不动！</text>
+</svg>

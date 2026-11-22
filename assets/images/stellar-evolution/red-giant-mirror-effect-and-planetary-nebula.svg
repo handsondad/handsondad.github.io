@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="558" viewBox="0 0 760 558" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">类太阳恒星红巨星核缩壳胀镜像效应、1亿度简并氦闪、行星状星云与太阳全寿命时间轴图解</title>
+<desc id="desc">上半部分三步剖解惰性氦核收缩烤热氢壳导致外包层膨胀百倍的镜像效应、1亿度简并氦核3α失控氦闪及抛射外层形成行星状星云与碳氧白矮星；下半部列出太阳从46亿岁壮年到红巨星极盛、氦聚变、AGB二次膨胀及白矮星结晶的定量演化节点。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="557" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">三、核心燃料烧光了，恒星为什么不缩小反而暴涨成百倍大的红巨星？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">核壳“跷跷板镜像效应”、1 亿度简并氦闪与行星状星云谢幕（类太阳恒星 0.8–8 M⊙ 晚年机制）</text>
+<rect x="20" y="64" width="720" height="266" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="74.0" width="486" height="22" rx="11.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="277.0" y="89.0" font-size="12" fill="#dc2626" text-anchor="middle" font-weight="600">A · 类太阳恒星晚年三部曲：核缩壳胀镜像 → 1 亿度氦闪 → 吹散行星状星云</text>
+<rect x="34" y="106" width="220" height="210" rx="8" fill="#fff7ed" stroke="#fdba74" stroke-width="1.3"/>
+<text x="144" y="125" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="700">① 核缩壳胀“镜像效应”</text>
+<circle cx="144" cy="186" r="46" fill="#fecaca" fill-opacity="0.55" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="4 2"/>
+<circle cx="144" cy="186" r="18" fill="#fde047" stroke="#ca8a04" stroke-width="2.0"/>
+<circle cx="144" cy="186" r="9" fill="#94a3b8" stroke="#334155" stroke-width="1.5"/>
+<line x1="164.8" y1="195.7" x2="182.1" y2="203.7" stroke="#dc2626" stroke-width="1.6"/>
+<line x1="123.2" y1="195.7" x2="105.9" y2="203.7" stroke="#dc2626" stroke-width="1.6"/>
+<line x1="123.2" y1="176.3" x2="105.9" y2="168.3" stroke="#dc2626" stroke-width="1.6"/>
+<line x1="164.8" y1="176.3" x2="182.1" y2="168.3" stroke="#dc2626" stroke-width="1.6"/>
+<text x="144" y="189" font-size="9.8" fill="#ffffff" text-anchor="middle" font-weight="700">He</text>
+<text x="44" y="250" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="600">• 中心氦灰停火 → 引力压迫氦核急缩升温</text>
+<text x="44" y="267" font-size="9.8" fill="#dc2626" text-anchor="start" font-weight="700">• 紧贴核外的薄氢壳被烤烫，聚变功率飙升</text>
+<text x="44" y="284" font-size="9.8" fill="#1e293b" text-anchor="start">  上千倍，巨量辐射把外包层吹胀百余倍！</text>
+<text x="44" y="301" font-size="9.8" fill="#64748b" text-anchor="start">• 表面积暴增摊凉至 ~3,100 K，发红变巨星</text>
+<rect x="268" y="106" width="222" height="210" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.3"/>
+<text x="379" y="125" font-size="10.8" fill="#dc2626" text-anchor="middle" font-weight="700">② 1 亿度“氦闪”与双壳层 AGB</text>
+<circle cx="379" cy="186" r="46" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<circle cx="379" cy="186" r="25" fill="#fef08a" stroke="#d97706" stroke-width="1.6"/>
+<circle cx="379" cy="186" r="14" fill="#ef4444" stroke="#ffffff" stroke-width="1.5"/>
+<text x="379" y="190" font-size="9.8" fill="#ffffff" text-anchor="middle" font-weight="700">3α!</text>
+<text x="278" y="250" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="600">• 简并氦核压到 10⁸ K 点燃 3⁴He → ¹²C</text>
+<text x="278" y="267" font-size="9.8" fill="#dc2626" text-anchor="start" font-weight="700">• 简并压与温度无关 → 升温不膨胀降压，</text>
+<text x="278" y="284" font-size="9.8" fill="#1e293b" text-anchor="start">  几分钟热失控“氦闪”（被厚外层闷住不炸）</text>
+<text x="278" y="301" font-size="9.8" fill="#64748b" text-anchor="start">• 随后稳烧氦1亿年，再入双壳层AGB二次巨胀</text>
+<rect x="504" y="106" width="222" height="210" rx="8" fill="#f0fdfa" stroke="#5eead4" stroke-width="1.3"/>
+<text x="615" y="125" font-size="10.8" fill="#0d9488" text-anchor="middle" font-weight="700">③ 行星状星云与碳氧白矮星</text>
+<ellipse cx="615" cy="186" rx="46" ry="34" fill="#ccfbf1" stroke="#0d9488" stroke-width="2.0"/>
+<ellipse cx="615" cy="186" rx="30" ry="21" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+<circle cx="615" cy="186" r="5.5" fill="#ffffff" stroke="#1d6fa5" stroke-width="2.0"/>
+<text x="514" y="250" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="600">• 逃逸速度骤降，热脉动以 20–30 km/s</text>
+<text x="514" y="267" font-size="9.8" fill="#0d9488" text-anchor="start" font-weight="700">  抛掉 40%–80% 质量（与行星毫无关系！）</text>
+<text x="514" y="284" font-size="9.8" fill="#1e293b" text-anchor="start">• 裸露超10万K炽热C-O核紫外电离气壳发光</text>
+<text x="514" y="301" font-size="9.8" fill="#64748b" text-anchor="start">• 几万年后星云散尽，留下地球大小白矮星</text>
+<rect x="20" y="344" width="720" height="200" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="354.0" width="538" height="22" rx="11.0" fill="#fffbeb" stroke="#d97706" stroke-width="1" stroke-opacity="0.35"/>
+<text x="303.0" y="369.0" font-size="12" fill="#d97706" text-anchor="middle" font-weight="600">B · 太阳（1 M⊙）全生命周期时间账本（非线性阶段刻度 · 数据据 OpenStax Table 22.4）</text>
+<line x1="46" y1="426.0" x2="716" y2="426.0" stroke="#cbd5e1" stroke-width="4" stroke-linecap="round"/>
+<circle cx="46.0" cy="426.0" r="5.5" fill="#f59e0b" stroke="#ffffff" stroke-width="1.4"/>
+<line x1="46.0" y1="420.0" x2="46.0" y2="406.0" stroke="#f59e0b" stroke-width="1.4"/>
+<text x="46" y="392.0" font-size="10.2" fill="#f59e0b" text-anchor="start" font-weight="700">今日太阳</text>
+<text x="46" y="405.0" font-size="9.8" fill="#1e293b" text-anchor="start">46 亿岁 (1 L⊙ · 1 D⊙)</text>
+<line x1="174" y1="426.0" x2="304" y2="426.0" stroke="#d97706" stroke-width="5"/>
+<circle cx="239.0" cy="426.0" r="5.5" fill="#d97706" stroke="#ffffff" stroke-width="1.4"/>
+<line x1="239.0" y1="432.0" x2="239.0" y2="446.0" stroke="#d97706" stroke-width="1.4"/>
+<text x="239.0" y="460.0" font-size="10.2" fill="#d97706" text-anchor="middle" font-weight="700">主序星终点</text>
+<text x="239.0" y="475.0" font-size="9.8" fill="#1e293b" text-anchor="middle">~100–110 亿岁 (核心氢耗尽)</text>
+<line x1="304" y1="426.0" x2="434" y2="426.0" stroke="#dc2626" stroke-width="5"/>
+<circle cx="369.0" cy="426.0" r="5.5" fill="#dc2626" stroke="#ffffff" stroke-width="1.4"/>
+<line x1="369.0" y1="420.0" x2="369.0" y2="406.0" stroke="#dc2626" stroke-width="1.4"/>
+<text x="369.0" y="392.0" font-size="10.2" fill="#dc2626" text-anchor="middle" font-weight="700">红巨星极盛</text>
+<text x="369.0" y="405.0" font-size="9.8" fill="#1e293b" text-anchor="middle">+13 亿年 (2300 L⊙ · 165 D⊙)</text>
+<line x1="434" y1="426.0" x2="548" y2="426.0" stroke="#ea580c" stroke-width="5"/>
+<circle cx="491.0" cy="426.0" r="5.5" fill="#ea580c" stroke="#ffffff" stroke-width="1.4"/>
+<line x1="491.0" y1="432.0" x2="491.0" y2="446.0" stroke="#ea580c" stroke-width="1.4"/>
+<text x="491.0" y="460.0" font-size="10.2" fill="#ea580c" text-anchor="middle" font-weight="700">氦核聚变</text>
+<text x="491.0" y="475.0" font-size="9.8" fill="#1e293b" text-anchor="middle">+1 亿年 (50 L⊙ · 10 D⊙)</text>
+<line x1="548" y1="426.0" x2="654" y2="426.0" stroke="#7c3aed" stroke-width="5"/>
+<circle cx="601.0" cy="426.0" r="5.5" fill="#7c3aed" stroke="#ffffff" stroke-width="1.4"/>
+<line x1="601.0" y1="420.0" x2="601.0" y2="406.0" stroke="#7c3aed" stroke-width="1.4"/>
+<text x="601.0" y="392.0" font-size="10.2" fill="#7c3aed" text-anchor="middle" font-weight="700">AGB 二次巨星</text>
+<text x="601.0" y="405.0" font-size="9.8" fill="#1e293b" text-anchor="middle">+2,000 万年 (5200 L⊙ · 180 D⊙)</text>
+<line x1="654" y1="426.0" x2="716" y2="426.0" stroke="#0284c7" stroke-width="5"/>
+<circle cx="685.0" cy="426.0" r="5.5" fill="#0284c7" stroke="#ffffff" stroke-width="1.4"/>
+<line x1="685.0" y1="432.0" x2="685.0" y2="446.0" stroke="#0284c7" stroke-width="1.4"/>
+<text x="724" y="460.0" font-size="10.2" fill="#0284c7" text-anchor="end" font-weight="700">白矮星余生</text>
+<text x="724" y="475.0" font-size="9.8" fill="#1e293b" text-anchor="end">数十亿年结晶 (~0.54 M⊙ 固态核)</text>
+<text x="34" y="528" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="600">地球命运节点：180 倍太阳直径（≈ 0.84 AU，叠加潮汐拖拽）将吞没水星与金星，地球表面早已化作岩浆洋。</text>
+</svg>

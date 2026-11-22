@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="546" viewBox="0 0 760 546" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">秋季落叶叶绿素排雷解毒与蛋白氮撤离机制及四大色素亚细胞定位图</title>
+<desc id="desc">左栏展示叶肉细胞衰老时两条并行通路：叶绿体内占全叶75%至80%氮素的Rubisco等蛋白质拆解为氨基酸经韧皮部撤回枝干过冬，而游离叶绿素由孟德尔SGR去镁酶与PAO加氧酶剪开卟啉环排雷解毒，化为无色叶绿胆素(NCC/DNCC)携环内4个氮锁入液泡随叶丢弃；右栏对比叶绿素、类胡萝卜素、花青素与单宁四类色素的亚细胞定位、溶解性与出现时机。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-red" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+          <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#dc2626"/>
+        </marker>
+        <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+          <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#6d28d9"/>
+        </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes evacFlowOnce {
+          0% { stroke-dashoffset: 120; opacity: 0.35; }
+          100% { stroke-dashoffset: 0; opacity: 1; }
+        }
+        .n-evac-flow {
+          stroke-dasharray: 8 5;
+          stroke-dashoffset: 0;
+          animation: evacFlowOnce 3.8s ease-out 1 forwards;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .n-evac-flow { animation: none !important; stroke-dashoffset: 0 !important; opacity: 1 !important; }
+        }
+</style>
+<rect x="0.5" y="0.5" width="759" height="545" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">大树入秋撤退总账：拆叶绿素不是为了抠那 4 个氮，而是“排雷”救走八成蛋白氮</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：衰老叶肉细胞内拆弹与抢运双线协同（含单次流向短动画） · 右：决定秋叶四色的四大家族户口簿</text>
+<rect x="20" y="66" width="392" height="466" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="78.0" width="368" height="24" rx="12.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="216.0" y="94.3" font-size="12" fill="#18794e" text-anchor="middle" font-weight="600">① 衰老叶肉细胞：一边拆“光毒炸弹”，一边抢运蛋白氮</text>
+<rect x="32" y="112" width="368" height="156" rx="9" fill="#f4fbf7" stroke="#18794e" stroke-width="1.3"/>
+<text x="216" y="132" font-size="12.2" fill="#18794e" text-anchor="middle" font-weight="700">叶绿体 → 衰老质体（占叶肉总氮 75%–80%！）</text>
+<rect x="42" y="142" width="168" height="114" rx="7" fill="#ffffff" stroke="#18794e" stroke-width="1.1"/>
+<text x="126" y="162" font-size="12.0" fill="#18794e" text-anchor="middle" font-weight="700">蛋白金库 (Rubisco 等)</text>
+<text x="126" y="184" font-size="11.5" fill="#1e293b" text-anchor="middle">自噬小体剪成游离氨基酸</text>
+<text x="126" y="205" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">73%–80% 宝贵氮与磷</text>
+<text x="126" y="226" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">装车撤回树干与树根！</text>
+<text x="126" y="246" font-size="11.5" fill="#b45309" text-anchor="middle" font-weight="600">（类胡萝卜素留守显黄）</text>
+<rect x="220" y="142" width="168" height="114" rx="7" fill="#ffffff" stroke="#c25014" stroke-width="1.1"/>
+<text x="304" y="162" font-size="12.0" fill="#dc2626" text-anchor="middle" font-weight="700">游离叶绿素 = 光毒雷!</text>
+<text x="304" y="184" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">孟德尔基因 SGR 拔出 Mg²⁺</text>
+<text x="304" y="205" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">PAO 酶剪开卟啉环排雷</text>
+<text x="304" y="226" font-size="11.5" fill="#1e293b" text-anchor="middle">解除单线态氧 ¹O₂ 威胁</text>
+<text x="304" y="246" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="600">化成无色链状分子 pFCC</text>
+<line x1="126.0" y1="268.0" x2="126.0" y2="318.0" stroke="#18794e" stroke-width="2.6" marker-end="url(#arr-green)"/>
+<line x1="126.0" y1="268.0" x2="126.0" y2="318.0" stroke="#059669" stroke-width="2.8" class="n-evac-flow"/>
+<text x="116" y="298" font-size="11.5" fill="#18794e" text-anchor="end" font-weight="700">韧皮部抢运</text>
+<line x1="304.0" y1="268.0" x2="304.0" y2="318.0" stroke="#6d28d9" stroke-width="2.2" stroke-dasharray="5 4" marker-end="url(#arr-purple)"/>
+<text x="314" y="298" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">ABCC2 泵入</text>
+<rect x="42" y="324" width="168" height="124" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="126" y="346" font-size="12.2" fill="#18794e" text-anchor="middle" font-weight="700">树干 / 树根越冬金库</text>
+<text x="126" y="370" font-size="11.5" fill="#1e293b" text-anchor="middle">贮藏氮素与碳水化合物</text>
+<text x="126" y="392" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">供来年春芽破壳抽叶</text>
+<text x="126" y="414" font-size="11.5" fill="#1e293b" text-anchor="middle">省去冻土吸氮高昂代价</text>
+<text x="126" y="435" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">（决定大树次年生长力）</text>
+<rect x="220" y="324" width="168" height="124" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="304" y="346" font-size="12.2" fill="#6d28d9" text-anchor="middle" font-weight="700">中央大液泡（水溶仓）</text>
+<text x="304" y="370" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">无色叶绿胆素 NCC/DNCC</text>
+<text x="304" y="392" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">锁着环内 4 个氮 (&lt;2%)</text>
+<text x="304" y="414" font-size="11.5" fill="#1e293b" text-anchor="middle">随枯叶直接丢弃不回收!</text>
+<text x="304" y="435" font-size="11.5" fill="#be123c" text-anchor="middle" font-weight="700">红叶树同步泵入花青素</text>
+<rect x="32" y="458" width="368" height="62" rx="7" fill="#fef1e8" stroke="#c25014" stroke-width="1.0"/>
+<text x="44" y="480" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">关键反转 (Kräutler 2016)：叶绿素环里的 4 个氮压根没被回收！</text>
+<text x="44" y="502" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">拆绿是为了“防爆护航”——保住细胞不死，才能搬空八成蛋白氮。</text>
+<rect x="424" y="66" width="316" height="466" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="436.0" y="78.0" width="292" height="24" rx="12.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="582.0" y="94.3" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">② 秋叶四大家族户口簿（住哪·溶啥·何时来）</text>
+<rect x="436" y="114" width="292" height="84" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.1"/>
+<circle cx="454" cy="136" r="10" fill="#ffffff" stroke="#18794e" stroke-width="1.2"/>
+<text x="454" y="140" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">1</text>
+<text x="470" y="140" font-size="12.2" fill="#18794e" text-anchor="start" font-weight="700">叶绿素 a / b（翠绿霸主）</text>
+<text x="448" y="164" font-size="11.5" fill="#0f172a" text-anchor="start">住址：叶绿体类囊体膜 · 脂溶性（不溶于水）</text>
+<text x="448" y="185" font-size="11.5" fill="#1e293b" text-anchor="start" font-weight="600">档期：春夏高产遮蔽全场；入秋被拆成无色链</text>
+<rect x="436" y="208" width="292" height="84" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="1.1"/>
+<circle cx="454" cy="230" r="10" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+<text x="454" y="234" font-size="11.5" fill="#b45309" text-anchor="middle" font-weight="700">2</text>
+<text x="470" y="234" font-size="12.2" fill="#b45309" text-anchor="start" font-weight="700">类胡萝卜素（金黄底牌）</text>
+<text x="448" y="258" font-size="11.5" fill="#0f172a" text-anchor="start">住址：类囊体 → 质体小球脂滴 · 脂溶性</text>
+<text x="448" y="279" font-size="11.5" fill="#1e293b" text-anchor="start" font-weight="600">档期：春夏一直在场！绿帘撤走后显露金黄</text>
+<rect x="436" y="302" width="292" height="84" rx="8" fill="#fff1f2" stroke="#be123c" stroke-width="1.1"/>
+<circle cx="454" cy="324" r="10" fill="#ffffff" stroke="#be123c" stroke-width="1.2"/>
+<text x="454" y="328" font-size="11.5" fill="#be123c" text-anchor="middle" font-weight="700">3</text>
+<text x="470" y="328" font-size="12.2" fill="#be123c" text-anchor="start" font-weight="700">花青素（丹红新兵）</text>
+<text x="448" y="352" font-size="11.5" fill="#0f172a" text-anchor="start">住址：中央大液泡酸液 · 水溶性糖苷</text>
+<text x="448" y="373" font-size="11.5" fill="#1e293b" text-anchor="start" font-weight="600">档期：盛夏几乎为零，入秋耗糖耗能全新赶制！</text>
+<rect x="436" y="396" width="292" height="84" rx="8" fill="#f7f1ea" stroke="#78350f" stroke-width="1.1"/>
+<circle cx="454" cy="418" r="10" fill="#ffffff" stroke="#78350f" stroke-width="1.2"/>
+<text x="454" y="422" font-size="11.5" fill="#78350f" text-anchor="middle" font-weight="700">4</text>
+<text x="470" y="422" font-size="12.2" fill="#78350f" text-anchor="start" font-weight="700">单宁与褐变聚合物（棕褐终局）</text>
+<text x="448" y="446" font-size="11.5" fill="#0f172a" text-anchor="start">住址：细胞壁与死细胞基质 · 耐腐多酚</text>
+<text x="448" y="467" font-size="11.5" fill="#1e293b" text-anchor="start" font-weight="600">档期：红黄褪尽后留守，令万千落叶终归大地褐</text>
+<text x="436" y="504" font-size="11.5" fill="#be123c" text-anchor="start" font-weight="700">厨房验证：开水泡红枫叶水染粉红（水溶花青素），</text>
+<text x="436" y="523" font-size="11.5" fill="#b45309" text-anchor="start" font-weight="700">开水泡银杏黄叶水却清亮不染黄（脂溶类胡萝卜素）！</text>
+</svg>

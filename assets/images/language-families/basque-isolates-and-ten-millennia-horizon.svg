@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="484" viewBox="0 0 760 484" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">巴斯克语等孤立语活化石与历史比较语言学一万年词汇磨损极限图解</title>
+<desc id="desc">左栏介绍无任何已知亲属语言的孤立语代表巴斯克语、苏美尔语与阿伊努语；右栏按指数词替模型绘制单支保留率与双支共享同源词衰减曲线，解释8000至10000年以上的远古母语为何因跌破随机巧合阈值而无法可靠重构。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="483" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">没有一个亲戚的“孤立语”活化石，与一万年词汇磨损天花板</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">巴斯克语凭什么躲过印欧铁蹄？为什么严谨的语言学家拒绝瞎编“十万年前人类第一句母语”？</text>
+<rect x="20" y="68" width="344" height="398" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="36.0" y="82.0" width="282" height="22" rx="11.0" fill="#f0fdfa" stroke="#0d9488" stroke-width="1" stroke-opacity="0.35"/>
+<text x="177.0" y="97.0" font-size="11.0" fill="#0d9488" text-anchor="middle" font-weight="600">孤立语活化石：比利牛斯山里的巴斯克语</text>
+<text x="36" y="122" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">• 全球共有 183 门【孤立语 (Language Isolates)】——它们不是</text>
+<text x="36" y="140" font-size="10.1" fill="#0d9488" text-anchor="start" font-weight="700">  某个语系的分支，而是自己一门语言就独占一个完整语系！</text>
+<rect x="36" y="154" width="312" height="134" rx="7" fill="#f0fdfa" stroke="#0d9488" stroke-width="1"/>
+<text x="48" y="174" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="700">🏔️ 西欧最后的史前幸存者：巴斯克语 (Euskara)</text>
+<text x="48" y="194" font-size="9.9" fill="#1e293b" text-anchor="start">• 四周被西班牙语、法语（印欧罗曼语支）铁桶合围，词根却像</text>
+<text x="48" y="211" font-size="9.9" fill="#9f1239" text-anchor="start" font-weight="700">  来自另一个星球：水=ur，火=su，一二三=bat, bi, hiru！</text>
+<text x="48" y="229" font-size="9.9" fill="#1e293b" text-anchor="start">• 语法采用罕见的【作格-通格】体系；古 DNA 证实巴斯克人是欧洲</text>
+<text x="48" y="247" font-size="9.9" fill="#1e293b" text-anchor="start">  早期新石器农夫与狩猎采集者后裔，靠险峻山地挡住了 5000 年前</text>
+<text x="48" y="265" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="600">  印欧草原浪潮与古罗马同化，守住了老欧洲失落语系的最后火种！</text>
+<rect x="36" y="298" width="312" height="152" rx="7" fill="#f1f5f9" stroke="#475569" stroke-width="1"/>
+<text x="48" y="318" font-size="10.3" fill="#0f172a" text-anchor="start" font-weight="700">🗿 其他著名孤立语“独苗家族”：</text>
+<text x="48" y="338" font-size="9.8" fill="#1e293b" text-anchor="start">• 苏美尔语（人类最早楔形文字载体，比阿卡德闪语更古老的孤立语）</text>
+<text x="48" y="357" font-size="9.8" fill="#1e293b" text-anchor="start">• 阿伊努语（日本北海道原住民语言，与日语毫无亲缘关系）</text>
+<text x="48" y="376" font-size="9.8" fill="#1e293b" text-anchor="start">• 布鲁夏斯基语（喀喇昆仑山深谷奇语，四邻印欧/汉藏/突厥皆不通）</text>
+<text x="48" y="398" font-size="9.8" fill="#475569" text-anchor="start" font-weight="700">💡 真相：孤立语并不是从石头缝蹦出来的，而是它当年的姐妹语言</text>
+<text x="48" y="416" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="600">   在几千年历史长河里全都灭绝了，只剩它孤身一人活到了今天！</text>
+<rect x="380" y="68" width="360" height="398" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="396.0" y="82.0" width="312" height="22" rx="11.0" fill="#ffe4e6" stroke="#9f1239" stroke-width="1" stroke-opacity="0.35"/>
+<text x="552.0" y="97.0" font-size="10.8" fill="#9f1239" text-anchor="middle" font-weight="600">词汇磨损指数曲线：~8000–10000 年重构极限</text>
+<line x1="432.0" y1="278.0" x2="712.0" y2="278.0" stroke="#0f172a" stroke-width="1.4"/>
+<line x1="432.0" y1="278.0" x2="432.0" y2="132.0" stroke="#0f172a" stroke-width="1.4"/>
+<rect x="432.0" y="267.8" width="280.0" height="10.2" fill="#ffe4e6" opacity="0.85"/>
+<line x1="432.0" y1="267.8" x2="712.0" y2="267.8" stroke="#9f1239" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="708.0" y="262.8" font-size="9.2" fill="#9f1239" text-anchor="end" font-weight="700">随机巧合噪音底线 (~5%–7%，信号彻底淹没！)</text>
+<polyline points="432.0,132.0 443.7,146.6 455.3,159.7 467.0,171.6 478.7,182.2 490.3,191.8 502.0,200.4 513.7,208.2 525.3,215.2 537.0,221.4 548.7,227.1 560.3,232.2 572.0,236.8 583.7,240.9 595.3,244.6 607.0,247.9 618.7,250.9 630.3,253.7 642.0,256.1 653.7,258.3 665.3,260.2 677.0,262.0 688.7,263.6 700.3,265.1 712.0,266.4" fill="none" stroke="#1d6fa5" stroke-width="2.0" stroke-dasharray="5 3"/>
+<polyline points="432.0,132.0 443.7,159.7 455.3,182.2 467.0,200.4 478.7,215.2 490.3,227.1 502.0,236.8 513.7,244.6 525.3,250.9 537.0,256.1 548.7,260.2 560.3,263.6 572.0,266.4 583.7,268.6 595.3,270.4 607.0,271.8 618.7,273.0 630.3,273.9 642.0,274.7 653.7,275.3 665.3,275.8 677.0,276.3 688.7,276.6 700.3,276.9 712.0,277.1" fill="none" stroke="#6d28d9" stroke-width="2.6"/>
+<line x1="432.0" y1="278.0" x2="432.0" y2="282.0" stroke="#0f172a" stroke-width="1.2"/>
+<text x="432.0" y="294.0" font-size="9.2" fill="#64748b" text-anchor="middle">0千年</text>
+<line x1="502.0" y1="278.0" x2="502.0" y2="282.0" stroke="#0f172a" stroke-width="1.2"/>
+<text x="502.0" y="294.0" font-size="9.2" fill="#64748b" text-anchor="middle">3千年</text>
+<line x1="572.0" y1="278.0" x2="572.0" y2="282.0" stroke="#0f172a" stroke-width="1.2"/>
+<text x="572.0" y="294.0" font-size="9.2" fill="#64748b" text-anchor="middle">6千年</text>
+<line x1="642.0" y1="278.0" x2="642.0" y2="282.0" stroke="#0f172a" stroke-width="1.2"/>
+<text x="642.0" y="294.0" font-size="9.2" fill="#64748b" text-anchor="middle">9千年</text>
+<line x1="712.0" y1="278.0" x2="712.0" y2="282.0" stroke="#0f172a" stroke-width="1.2"/>
+<text x="712.0" y="294.0" font-size="9.2" fill="#64748b" text-anchor="middle">12千年</text>
+<text x="426.0" y="281.0" font-size="9.2" fill="#64748b" text-anchor="end">0%</text>
+<text x="426.0" y="208.0" font-size="9.2" fill="#64748b" text-anchor="end">50%</text>
+<text x="426.0" y="135.0" font-size="9.2" fill="#64748b" text-anchor="end">100%</text>
+<text x="556" y="152" font-size="9.5" fill="#1d6fa5" text-anchor="start" font-weight="700">单支保留祖语词比例 r^t</text>
+<text x="486" y="222" font-size="9.6" fill="#6d28d9" text-anchor="start" font-weight="700">两门后代共享同源词 r^(2t)</text>
+<rect x="396" y="306" width="328" height="144" rx="7" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="408" y="326" font-size="10.0" fill="#6d28d9" text-anchor="start" font-weight="700">⏳ 为什么我们不知道全人类语言是“单一起源”还是“多地起源”？</text>
+<text x="408" y="345" font-size="9.8" fill="#1e293b" text-anchor="start">• 智人开口说话至少已有 10 万–20 万年；但每过一千年，哪怕最稳固</text>
+<text x="408" y="362" font-size="9.8" fill="#1e293b" text-anchor="start">  的核心词也会换掉约 19%！分家 9000 年后，两门后代共同保留的</text>
+<text x="408" y="379" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">  同源词跌破 3%，彻底淹没在随机撞音噪音里（历史语言学视界）！</text>
+<text x="408" y="398" font-size="9.7" fill="#1e293b" text-anchor="start">• 有趣探索：Pagel 等(2013 PNAS) 统计发现极高频代词与数词（我、你、</text>
+<text x="408" y="415" font-size="9.7" fill="#64748b" text-anchor="start">  谁、二、母亲）半衰期长达上万年，但仍远触不到十万年前的人类初语。</text>
+</svg>

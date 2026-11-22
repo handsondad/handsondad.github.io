@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="522" viewBox="0 0 760 522" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">超重助推器7分钟发射热分离返航与机械哥斯拉筷子捕获全流程动画图解</title>
+<desc id="desc">左图按时间顺序演示超重助推器33机升空、T+2分41秒保留中心3机的级间热分离、13机返航点火、栅格翼超音速滑翔、外海自动弃捕安全分支以及1公里高度13变3机平移挂入146米发射塔筷子的单次动画；右图展示底部33台猛禽外20中10内3三环布局及双承力销坐落液压缓冲轨的机械细节。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="ss-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="ss-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="ss-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="ss-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#6d28d9"/>
+  </marker>
+  <marker id="ss-red" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#dc2626"/>
+  </marker>
+  <marker id="ss-slate" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#475569"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  .sh-path {
+    stroke-dasharray: 760;
+    stroke-dashoffset: 760;
+    animation: shTrace 6.6s cubic-bezier(.25,.6,.25,1) 0.35s 1 forwards;
+  }
+  .sh-lock {
+    opacity: 0.25;
+    animation: shLock 0.6s ease 6.4s 1 forwards;
+  }
+  @keyframes shTrace { to { stroke-dashoffset: 0; } }
+  @keyframes shLock  { to { opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) {
+    .sh-path { animation: none !important; stroke-dashoffset: 0 !important; }
+    .sh-lock { animation: none !important; opacity: 1 !important; }
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="521" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">超重助推器 7 分钟闭环：热分离、栅格翼滑翔与“机械哥斯拉”半空夹筷子</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：升空至返航捕获全航迹与外海自动弃捕安全门（单次动画）｜右：33 机三环分工与挂销缓冲结构</text>
+<rect x="20" y="62" width="452" height="446" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 升空 → 热分离 → 返航 → 13 变 3 平移入筷（T+00:00 ～ 06:56）</text>
+<text x="36" y="102" font-size="10.1" fill="#64748b" text-anchor="start">惯性弹道默认指向外海；千项塔箭自检全绿灯才在最后数秒横移进塔臂</text>
+<line x1="56.0" y1="412.0" x2="452.0" y2="412.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="51.0" y="415.5" font-size="9.4" fill="#64748b" text-anchor="end">0</text>
+<line x1="56.0" y1="336.7" x2="452.0" y2="336.7" stroke="#f1f5f9" stroke-width="1"/>
+<text x="51.0" y="340.2" font-size="9.4" fill="#64748b" text-anchor="end">20</text>
+<line x1="56.0" y1="261.5" x2="452.0" y2="261.5" stroke="#f1f5f9" stroke-width="1"/>
+<text x="51.0" y="265.0" font-size="9.4" fill="#64748b" text-anchor="end">40</text>
+<line x1="56.0" y1="186.2" x2="452.0" y2="186.2" stroke="#f1f5f9" stroke-width="1"/>
+<text x="51.0" y="189.7" font-size="9.4" fill="#64748b" text-anchor="end">60km</text>
+<rect x="56.0" y="412.0" width="93.8" height="10" rx="2" fill="#dcfce7"/>
+<rect x="149.8" y="412.0" width="302.2" height="10" rx="2" fill="#dbeafe"/>
+<text x="102.9" y="435.0" font-size="9.6" fill="#18794e" text-anchor="middle" font-weight="700">星港陆地</text>
+<text x="300.9" y="435.0" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="600">墨西哥湾外海（安全缓冲海面）</text>
+<rect x="84.3" y="376.0" width="6" height="36" fill="#475569"/>
+<line x1="90.3" y1="386.0" x2="104.3" y2="386.0" stroke="#18794e" stroke-width="2.8"/>
+<path d="M 316.5,188.1 Q 358.5,156.1 433.2,133.5" fill="none" stroke="#6d28d9" stroke-width="2.2" stroke-dasharray="5 3" marker-end="url(#ss-purple)"/>
+<text x="429.2" y="127.5" font-size="9.5" fill="#6d28d9" text-anchor="end" font-weight="700" class="halo">二级 6 机点火入轨 →</text>
+<path d="M 227.9,276.5 Q 188.0,371.1 214.4,410.5" fill="none" stroke="#c25014" stroke-width="1.9" stroke-dasharray="4 3" marker-end="url(#ss-orange)"/>
+<text x="222.4" y="399.5" font-size="9.4" fill="#c25014" text-anchor="start" font-weight="700" class="halo">未过检自动弃捕落海</text>
+<text x="222.4" y="413.5" font-size="9.1" fill="#64748b" text-anchor="start" class="halo">(如 F6 塔损 / F15 B22)</text>
+<path d="M 97.3,410.0 C 127.3,285.0 238.5,224.1 316.5,188.1 C 340.5,168.1 376.6,144.5 356.6,150.5 C 310.6,168.5 249.9,240.5 227.9,276.5 C 203.9,314.5 172.0,337.1 156.0,363.1 Q 132.0,387.1 99.3,386.0" fill="none" stroke="#1d6fa5" stroke-width="1.6" stroke-opacity="0.24"/>
+<path class="sh-path" d="M 97.3,410.0 C 127.3,285.0 238.5,224.1 316.5,188.1 C 340.5,168.1 376.6,144.5 356.6,150.5 C 310.6,168.5 249.9,240.5 227.9,276.5 C 203.9,314.5 172.0,337.1 156.0,363.1 Q 132.0,387.1 99.3,386.0" fill="none" stroke="#1d6fa5" stroke-width="2.7" marker-end="url(#ss-green)"/>
+<circle cx="149.78947368421052" cy="302.86842105263156" r="9.5" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="149.8" y="306.9" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="136.8" y="298.9" font-size="9.6" fill="#1d6fa5" text-anchor="end" font-weight="700" class="halo">① 33 机齐射升空</text>
+<text x="136.8" y="311.9" font-size="9.2" fill="#1e293b" text-anchor="end" class="halo">推力 75–82 MN</text>
+<circle cx="316.5263157894737" cy="188.0921052631579" r="9.5" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="316.5" y="192.1" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">2</text>
+<text x="303.5" y="184.1" font-size="9.6" fill="#6d28d9" text-anchor="end" font-weight="700" class="halo">② T+2:41 热分离</text>
+<text x="303.5" y="197.1" font-size="9.2" fill="#1e293b" text-anchor="end" class="halo">留 3 机顶住液面</text>
+<circle cx="356.63157894736844" cy="150.46052631578948" r="9.5" fill="#ffffff" stroke="#c25014" stroke-width="1.2"/>
+<text x="356.6" y="154.5" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">3</text>
+<text x="369.6" y="152.5" font-size="9.6" fill="#c25014" text-anchor="start" font-weight="700" class="halo">③ 13 机返航点火</text>
+<text x="369.6" y="165.5" font-size="9.2" fill="#1e293b" text-anchor="start" class="halo">最高 ~70 km 调头</text>
+<circle cx="227.94736842105263" cy="276.5263157894737" r="9.5" fill="#ffffff" stroke="#475569" stroke-width="1.2"/>
+<text x="227.9" y="280.5" font-size="11.5" fill="#475569" text-anchor="middle" font-weight="700">4</text>
+<text x="241.9" y="274.5" font-size="9.6" fill="#475569" text-anchor="start" font-weight="700" class="halo">④ 栅格翼超音速滑翔</text>
+<text x="241.9" y="287.5" font-size="9.2" fill="#1e293b" text-anchor="start" class="halo">气动吃掉 ~80% 残速</text>
+<circle cx="156.0421052631579" cy="363.07894736842104" r="9.5" fill="#ffffff" stroke="#18794e" stroke-width="1.2"/>
+<text x="156.0" y="367.1" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">5</text>
+<text x="170.0" y="359.1" font-size="9.6" fill="#18794e" text-anchor="start" font-weight="700" class="halo">⑤ ~1 km 着陆点火</text>
+<text x="170.0" y="372.1" font-size="9.2" fill="#1e293b" text-anchor="start" class="halo">13 机急刹 → 3 机横移</text>
+<g class="sh-lock">
+<line x1="97.3" y1="360.0" x2="97.3" y2="382.0" stroke="#18794e" stroke-width="1.4" stroke-dasharray="2 2"/>
+<rect x="38.0" y="340.0" width="116" height="20" rx="10.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="96.0" y="353.6" font-size="9.4" fill="#18794e" text-anchor="middle" font-weight="600">⑥ T+6:56 挂销落轨！</text>
+</g>
+<rect x="34" y="442" width="424" height="54" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="46" y="461" font-size="9.6" fill="#1e293b" text-anchor="start">为什么要“热分离”？传统冷分离一旦全关机失重，几百吨液氧甲烷会飘离箱底；</text>
+<text x="46" y="480" font-size="9.6" fill="#1d6fa5" text-anchor="start" font-weight="700">超重助推器保留中心 3 台猛禽节流推顶，二级贴脸点火直接让入轨运力暴涨约 10%！</text>
+<rect x="486" y="62" width="254" height="446" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="500" y="84" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="700">② 底部仰视：33 台猛禽三环分工</text>
+<circle cx="613.0" cy="168.0" r="60" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1.4"/>
+<circle cx="663.0" cy="168.0" r="3.8" fill="#475569"/>
+<circle cx="660.6" cy="183.5" r="3.8" fill="#475569"/>
+<circle cx="653.5" cy="197.4" r="3.8" fill="#475569"/>
+<circle cx="642.4" cy="208.5" r="3.8" fill="#475569"/>
+<circle cx="628.5" cy="215.6" r="3.8" fill="#475569"/>
+<circle cx="613.0" cy="218.0" r="3.8" fill="#475569"/>
+<circle cx="597.5" cy="215.6" r="3.8" fill="#475569"/>
+<circle cx="583.6" cy="208.5" r="3.8" fill="#475569"/>
+<circle cx="572.5" cy="197.4" r="3.8" fill="#475569"/>
+<circle cx="565.4" cy="183.5" r="3.8" fill="#475569"/>
+<circle cx="563.0" cy="168.0" r="3.8" fill="#475569"/>
+<circle cx="565.4" cy="152.5" r="3.8" fill="#475569"/>
+<circle cx="572.5" cy="138.6" r="3.8" fill="#475569"/>
+<circle cx="583.6" cy="127.5" r="3.8" fill="#475569"/>
+<circle cx="597.5" cy="120.4" r="3.8" fill="#475569"/>
+<circle cx="613.0" cy="118.0" r="3.8" fill="#475569"/>
+<circle cx="628.5" cy="120.4" r="3.8" fill="#475569"/>
+<circle cx="642.4" cy="127.5" r="3.8" fill="#475569"/>
+<circle cx="653.5" cy="138.6" r="3.8" fill="#475569"/>
+<circle cx="660.6" cy="152.5" r="3.8" fill="#475569"/>
+<circle cx="642.7" cy="172.5" r="4.5" fill="#c25014" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="634.4" cy="189.1" r="4.5" fill="#c25014" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="617.9" cy="197.6" r="4.5" fill="#c25014" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="599.6" cy="194.8" r="4.5" fill="#c25014" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="586.4" cy="181.8" r="4.5" fill="#c25014" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="583.3" cy="163.5" r="4.5" fill="#c25014" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="591.6" cy="146.9" r="4.5" fill="#c25014" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="608.1" cy="138.4" r="4.5" fill="#c25014" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="626.4" cy="141.2" r="4.5" fill="#c25014" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="639.6" cy="154.2" r="4.5" fill="#c25014" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="613.0" cy="156.5" r="5.2" fill="#18794e" stroke="#ffffff" stroke-width="1.1"/>
+<circle cx="623.0" cy="173.8" r="5.2" fill="#18794e" stroke="#ffffff" stroke-width="1.1"/>
+<circle cx="603.0" cy="173.8" r="5.2" fill="#18794e" stroke="#ffffff" stroke-width="1.1"/>
+<text x="500" y="244" font-size="9.5" fill="#475569" text-anchor="start" font-weight="600">• 外环 20 台（灰）：固定喷管，仅起飞出死力</text>
+<text x="500" y="261" font-size="9.5" fill="#c25014" text-anchor="start" font-weight="600">• 中环 10 台（橙）：可摆动重燃，返航+初段急刹</text>
+<text x="500" y="278" font-size="9.5" fill="#18794e" text-anchor="start" font-weight="700">• 中心 3 台（绿）：±15° 电驱摆动，悬停入筷</text>
+<line x1="500" y1="291" x2="726" y2="291" stroke="#e2e8f0" stroke-width="1"/>
+<text x="500" y="312" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="700">③ 筷子到底怎样“夹”住 9 米薄壳？</text>
+<rect x="531.0" y="356" width="42" height="14" rx="3" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+<rect x="653.0" y="356" width="42" height="14" rx="3" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+<rect x="549.0" y="347" width="24" height="9" rx="2" fill="#e7f6ee" stroke="#18794e" stroke-width="1.4"/>
+<rect x="653.0" y="347" width="24" height="9" rx="2" fill="#e7f6ee" stroke="#18794e" stroke-width="1.4"/>
+<line x1="513.0" y1="363" x2="528.0" y2="363" stroke="#1d6fa5" stroke-width="1.8" marker-end="url(#ss-blue)"/>
+<line x1="713.0" y1="363" x2="698.0" y2="363" stroke="#1d6fa5" stroke-width="1.8" marker-end="url(#ss-blue)"/>
+<rect x="577.0" y="324" width="72" height="92" rx="5" fill="#ffffff" stroke="#0f172a" stroke-width="1.7"/>
+<text x="613.0" y="374" font-size="10.0" fill="#0f172a" text-anchor="middle" font-weight="700">9 m 箭体</text>
+<text x="613.0" y="390" font-size="8.8" fill="#64748b" text-anchor="middle">3.97mm 钢壳</text>
+<rect x="561.0" y="341" width="16" height="6" rx="2" fill="#c25014"/>
+<rect x="649.0" y="341" width="16" height="6" rx="2" fill="#c25014"/>
+<text x="557.0" y="335" font-size="9.4" fill="#c25014" text-anchor="end" font-weight="700">承力挂销</text>
+<text x="669.0" y="335" font-size="9.4" fill="#18794e" text-anchor="start" font-weight="700">液压缓冲轨</text>
+<text x="500" y="436" font-size="9.5" fill="#1e293b" text-anchor="start">• 绝非拿铁臂硬挤薄壁！双臂合拢至窄缝后，</text>
+<text x="500" y="453" font-size="9.5" fill="#18794e" text-anchor="start" font-weight="700">  箭体两侧锻造承力销稳稳坐上顶部液压吸能轨</text>
+<text x="500" y="471" font-size="9.5" fill="#1e293b" text-anchor="start">• Block 3 改为 3 片电驱栅格翼（90°/90°/180°）</text>
+<text x="500" y="488" font-size="9.5" fill="#1d6fa5" text-anchor="start" font-weight="600">  直接把承力挂点融进左右对称的两片翼根！</text>
+</svg>

@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="530" viewBox="0 0 760 530" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">冷云贝吉龙冰晶夺水蒸汽压差实算曲线、暖云碰并增长与NASA雨滴真实汉堡包形状演化图解</title>
+<desc id="desc">左图按Buck饱和蒸汽压方程绘出0至-40°C水面与冰面蒸汽压差曲线，在-12.3°C达峰值26.9帕，解释冰晶吸干过冷水滴化雪成雨的机制；右图展示百万云滴暖云碰并，并给出小于1毫米圆球、2至3毫米汉堡包形、4.5毫米凹陷伞形及超5毫米空中解体的真实雨滴形态。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="529" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">二、体积暴涨一百万倍才能下雨：冷云“冰晶夺水”与雨滴真实的汉堡包形状</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">单靠水汽扩散长成雨滴要熬十几个小时；大自然靠 −12 °C 冰晶抢水汽与暖云碰并走高速捷径</text>
+<rect x="20" y="64" width="370" height="452" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="76.0" width="342" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="205.0" y="91.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">A · 贝吉龙机制：−12 °C 冰晶怎样吸干过冷水滴</text>
+<line x1="68" y1="306.0" x2="368" y2="306.0" stroke="#e2e8f0" stroke-width="0.9"/>
+<text x="62" y="310.0" font-size="11.5" fill="#64748b" text-anchor="end" class="mono">0</text>
+<line x1="68" y1="248.5" x2="368" y2="248.5" stroke="#e2e8f0" stroke-width="0.9"/>
+<text x="62" y="252.5" font-size="11.5" fill="#64748b" text-anchor="end" class="mono">10</text>
+<line x1="68" y1="191.0" x2="368" y2="191.0" stroke="#e2e8f0" stroke-width="0.9"/>
+<text x="62" y="195.0" font-size="11.5" fill="#64748b" text-anchor="end" class="mono">20</text>
+<line x1="68" y1="133.5" x2="368" y2="133.5" stroke="#e2e8f0" stroke-width="0.9"/>
+<text x="62" y="137.5" font-size="11.5" fill="#64748b" text-anchor="end" class="mono">30</text>
+<line x1="68.0" y1="122" x2="68.0" y2="306" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="68.0" y="322" font-size="11.5" fill="#64748b" text-anchor="middle" class="mono">-40°C</text>
+<line x1="143.0" y1="122" x2="143.0" y2="306" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="143.0" y="322" font-size="11.5" fill="#64748b" text-anchor="middle" class="mono">-30°C</text>
+<line x1="218.0" y1="122" x2="218.0" y2="306" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="218.0" y="322" font-size="11.5" fill="#64748b" text-anchor="middle" class="mono">-20°C</text>
+<line x1="278.0" y1="122" x2="278.0" y2="306" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="278.0" y="322" font-size="11.5" fill="#64748b" text-anchor="middle" class="mono">-12°C</text>
+<line x1="368.0" y1="122" x2="368.0" y2="306" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="368.0" y="322" font-size="11.5" fill="#64748b" text-anchor="middle" class="mono">0°C</text>
+<line x1="68" y1="122" x2="68" y2="306" stroke="#0f172a" stroke-width="1.3"/>
+<line x1="68" y1="306" x2="368" y2="306" stroke="#0f172a" stroke-width="1.3"/>
+<text x="218.0" y="341" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">水面对冰面饱和蒸汽压差 Δe_s (Pa)</text>
+<polygon points="68.0,306.0 68.0,270.7 71.8,269.3 75.5,267.7 79.2,266.1 83.0,264.5 86.8,262.8 90.5,261.0 94.2,259.3 98.0,257.4 101.8,255.5 105.5,253.6 109.2,251.6 113.0,249.6 116.8,247.5 120.5,245.3 124.2,243.1 128.0,240.9 131.8,238.6 135.5,236.3 139.2,233.9 143.0,231.5 146.8,229.0 150.5,226.5 154.2,223.9 158.0,221.3 161.8,218.7 165.5,216.1 169.2,213.4 173.0,210.7 176.8,207.9 180.5,205.2 184.2,202.4 188.0,199.6 191.8,196.9 195.5,194.1 199.2,191.3 203.0,188.6 206.8,185.8 210.5,183.1 214.2,180.4 218.0,177.8 221.8,175.2 225.5,172.7 229.2,170.2 233.0,167.9 236.8,165.6 240.5,163.4 244.2,161.4 248.0,159.5 251.8,157.7 255.5,156.1 259.2,154.6 263.0,153.4 266.8,152.4 270.5,151.6 274.2,151.1 278.0,150.8 281.8,150.8 285.5,151.2 289.2,151.9 293.0,153.0 296.8,154.4 300.5,156.3 304.2,158.7 308.0,161.5 311.8,164.9 315.5,168.8 319.2,173.3 323.0,178.4 326.8,184.3 330.5,190.8 334.2,198.0 338.0,206.1 341.8,215.0 345.5,224.9 349.2,235.6 353.0,247.4 356.8,260.2 360.5,274.2 364.2,289.3 368.0,305.7 368.0,306.0" fill="#eaf4fb" fill-opacity="0.75"/>
+<polyline points="68.0,270.7 71.8,269.3 75.5,267.7 79.2,266.1 83.0,264.5 86.8,262.8 90.5,261.0 94.2,259.3 98.0,257.4 101.8,255.5 105.5,253.6 109.2,251.6 113.0,249.6 116.8,247.5 120.5,245.3 124.2,243.1 128.0,240.9 131.8,238.6 135.5,236.3 139.2,233.9 143.0,231.5 146.8,229.0 150.5,226.5 154.2,223.9 158.0,221.3 161.8,218.7 165.5,216.1 169.2,213.4 173.0,210.7 176.8,207.9 180.5,205.2 184.2,202.4 188.0,199.6 191.8,196.9 195.5,194.1 199.2,191.3 203.0,188.6 206.8,185.8 210.5,183.1 214.2,180.4 218.0,177.8 221.8,175.2 225.5,172.7 229.2,170.2 233.0,167.9 236.8,165.6 240.5,163.4 244.2,161.4 248.0,159.5 251.8,157.7 255.5,156.1 259.2,154.6 263.0,153.4 266.8,152.4 270.5,151.6 274.2,151.1 278.0,150.8 281.8,150.8 285.5,151.2 289.2,151.9 293.0,153.0 296.8,154.4 300.5,156.3 304.2,158.7 308.0,161.5 311.8,164.9 315.5,168.8 319.2,173.3 323.0,178.4 326.8,184.3 330.5,190.8 334.2,198.0 338.0,206.1 341.8,215.0 345.5,224.9 349.2,235.6 353.0,247.4 356.8,260.2 360.5,274.2 364.2,289.3 368.0,305.7" fill="none" stroke="#1d6fa5" stroke-width="2.6"/>
+<circle cx="278.0" cy="150.8" r="4.8" fill="#c25014" stroke="#ffffff" stroke-width="1.4"/>
+<text x="260.0" y="140.8" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">黄金造雨温区 -12.0°C (27.0 Pa)</text>
+<rect x="34" y="356" width="342" height="146" rx="8" fill="#f8fafc" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="46" y="377" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">中纬度大部分降雨，半空出生时其实是雪花！</text>
+<text x="46" y="398" font-size="11.5" fill="#1e293b" text-anchor="start">① 0 至 −38°C 云层里，大量过冷水滴与少量冰晶共存；</text>
+<text x="46" y="419" font-size="11.5" fill="#1e293b" text-anchor="start">② 冰面锁水更紧（蒸汽压低 13%），空气对水滴刚饱和，</text>
+<text x="46" y="440" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">   对冰晶却严重过饱和 → 水汽从水滴蒸发直奔冰晶疯长；</text>
+<text x="46" y="461" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">③ 冰晶粘连成雪片坠落，穿过 0°C 融化层化作大雨滴！</text>
+<text x="46" y="482" font-size="11.5" fill="#64748b" text-anchor="start">   （碘化银人工增雨正是撒入仿冰晶格的“催化火种”）</text>
+<rect x="404" y="64" width="336" height="452" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="418.0" y="76.0" width="308" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="572.0" y="91.0" font-size="12" fill="#c25014" text-anchor="middle" font-weight="600">B · 百万合一暖云碰并 &amp; 雨滴真实形状</text>
+<rect x="418" y="110" width="308" height="132" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="1.1"/>
+<text x="430" y="131" font-size="11.5" fill="#b45309" text-anchor="start" font-weight="700">热带暖云（全在 0°C 以上）靠什么 20 分钟下雨？</text>
+<text x="430" y="152" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">• 体积鸿沟：(1 mm / 10 μm)³ = 1,000,000 颗云滴！</text>
+<text x="430" y="173" font-size="11.5" fill="#1e293b" text-anchor="start">• 大海盐核先造出少量 &gt;25 μm“领跑大水滴”，</text>
+<text x="430" y="194" font-size="11.5" fill="#1e293b" text-anchor="start">  下落更快 → 像滚雪球一路追尾吞并下方小云滴，</text>
+<text x="430" y="215" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">  越撞越大、越重越快，指数级加速冲破上升气流！</text>
+<rect x="418" y="254" width="308" height="248" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="430" y="275" font-size="11.5" fill="#b91c1c" text-anchor="start" font-weight="700">NASA GPM 实测：雨滴绝不是绘本里的“泪滴形”！</text>
+<rect x="428" y="290" width="138" height="94" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="497" cy="324" r="13" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="2"/>
+<text x="497" y="356" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">① &lt; 1 mm 小雨滴</text>
+<text x="497" y="374" font-size="11.5" fill="#1d6fa5" text-anchor="middle">表面张力主导：正圆球</text>
+<rect x="578" y="290" width="138" height="94" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<path d="M 625,332 C 625,308 669,308 669,332 Z" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="2"/>
+<text x="647" y="356" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">② 2–3 mm 中大雨滴</text>
+<text x="647" y="374" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">底面风压顶平：汉堡包</text>
+<rect x="428" y="394" width="138" height="96" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<path d="M 471,438 C 471,408 523,408 523,438 Q 497,426 471,438 Z" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="2"/>
+<text x="497" y="460" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">③ ~4.5 mm 巨型雨滴</text>
+<text x="497" y="478" font-size="11.5" fill="#b45309" text-anchor="middle">底面凹陷成蚕豆伞状</text>
+<rect x="578" y="394" width="138" height="96" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="630" cy="424" r="6" fill="#eaf4fb" stroke="#b91c1c" stroke-width="1.7"/>
+<circle cx="650" cy="418" r="5" fill="#eaf4fb" stroke="#b91c1c" stroke-width="1.7"/>
+<circle cx="664" cy="428" r="7" fill="#eaf4fb" stroke="#b91c1c" stroke-width="1.7"/>
+<circle cx="642" cy="434" r="5" fill="#eaf4fb" stroke="#b91c1c" stroke-width="1.7"/>
+<text x="647" y="460" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">④ &gt; 5 mm 气动极限</text>
+<text x="647" y="478" font-size="11.5" fill="#b91c1c" text-anchor="middle" font-weight="700">张力兜不住：空中解体!</text>
+</svg>

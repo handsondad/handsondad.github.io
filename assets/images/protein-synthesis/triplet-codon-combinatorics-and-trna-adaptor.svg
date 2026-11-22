@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="544" viewBox="0 0 760 544" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">三联体密码子组合数学、克里克移码突变实验与氨酰-tRNA合成酶及tRNA转接头配对机制图</title>
+<desc id="desc">左图对比4种碱基按1、2、3位组合得到4、16、64种密码子，结合1961年克里克与布伦纳+1移码全乱与+3复原实验及第三位摆动简并容错机制；右图拆解20类氨酰-tRNA合成酶消耗ATP验真充能与tRNA一端挂载苯丙氨酸、另一端以3&#x27;-AAG-5&#x27;反密码子配对mRNA 5&#x27;-UUC-3&#x27;密码子的双语转接原理。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="543" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">三、破译 64 格生命密码：为什么偏偏是“三字母一词”？谁才是真正的双语翻译官？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：伽莫夫组合数学铁律、克里克移码实验与简并护城河 · 右：氨酰-tRNA 合成酶验真充能与 tRNA 转接头</text>
+<rect x="20" y="66" width="366" height="466" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="78.0" width="342" height="24" rx="12.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="203.0" y="94.3" font-size="11.8" fill="#1d6fa5" text-anchor="middle" font-weight="600">A · 组合数学必答题：4 种碱基怎样拼够 20 种氨基酸？</text>
+<rect x="32" y="114" width="342" height="46" rx="7" fill="#fef2f2" stroke="#dc2626" stroke-width="1.1"/>
+<text x="44" y="134" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">1 字母一词：4¹ = 4 种</text>
+<rect x="44" y="142" width="140" height="10" rx="5" fill="#ffffff" stroke="#e2e8f0"/>
+<rect x="44" y="142" width="8.8" height="10" rx="5" fill="#dc2626"/>
+<text x="362" y="142" font-size="11.5" fill="#dc2626" text-anchor="end" font-weight="700">差 16 种，远不够 ❌</text>
+<rect x="32" y="168" width="342" height="46" rx="7" fill="#fef1e8" stroke="#c25014" stroke-width="1.1"/>
+<text x="44" y="188" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">2 字母一词：4² = 16 种</text>
+<rect x="44" y="196" width="140" height="10" rx="5" fill="#ffffff" stroke="#e2e8f0"/>
+<rect x="44" y="196" width="35.0" height="10" rx="5" fill="#c25014"/>
+<text x="362" y="196" font-size="11.5" fill="#c25014" text-anchor="end" font-weight="700">还差 4 种，仍不够 ❌</text>
+<rect x="32" y="222" width="342" height="46" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1.1"/>
+<text x="44" y="242" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">3 字母一词：4³ = 64 种</text>
+<rect x="44" y="250" width="140" height="10" rx="5" fill="#ffffff" stroke="#e2e8f0"/>
+<rect x="44" y="250" width="140.0" height="10" rx="5" fill="#18794e"/>
+<text x="362" y="250" font-size="11.5" fill="#18794e" text-anchor="end" font-weight="700">61 有义 + 3 终止 ✅</text>
+<rect x="32" y="282" width="342" height="136" rx="8" fill="#f8fafc" stroke="#475569" stroke-width="1.1"/>
+<text x="44" y="304" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">克里克与布伦纳 1961 移码实验（无标点读框）：</text>
+<text x="44" y="328" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">原句：AUG | CAU | GGC | UUA → 正常四肽 ✅</text>
+<text x="44" y="352" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">+1字：AUG | CCA | UGG | CUU → 后文全乱码 ❌</text>
+<text x="44" y="376" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">+3字：AUG | CCC | CAU | GGC → 多1词后复原 ✅</text>
+<text x="44" y="402" font-size="11.5" fill="#1e293b" text-anchor="start">铁证：密码必须 3 字一读，由起始 AUG 锁定起跑线！</text>
+<rect x="32" y="428" width="342" height="92" rx="8" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.1"/>
+<text x="44" y="450" font-size="11.6" fill="#0f766e" text-anchor="start" font-weight="700">多出的 44 格没浪费：第三位“摆动简并”护城河</text>
+<text x="44" y="474" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">• 例：GCU / GCC / GCA / GCG 全译为【丙氨酸】；</text>
+<text x="44" y="496" font-size="11.5" fill="#1e293b" text-anchor="start">• 尾字母突变常不改氨基酸，近义词也对应相似侧链！</text>
+<rect x="398" y="66" width="342" height="466" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="410.0" y="78.0" width="318" height="24" rx="12.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="569.0" y="94.3" font-size="11.8" fill="#6d28d9" text-anchor="middle" font-weight="600">B · 真正的双语词典：合成酶充能 + tRNA 转接头</text>
+<rect x="410" y="114" width="318" height="166" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.3"/>
+<circle cx="428" cy="134" r="10.5" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="428" y="138" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">1</text>
+<text x="446" y="138" font-size="12.0" fill="#6d28d9" text-anchor="start" font-weight="700">氨酰-tRNA 合成酶（20 类幕后真翻译官！）</text>
+<text x="422" y="162" font-size="11.5" fill="#1e293b" text-anchor="start">• 核糖体只查密码配对，不查 tRNA 背上驮的啥；</text>
+<text x="422" y="184" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">• 唯有合成酶兼备【氨基酸口袋 + tRNA 识别槽】</text>
+<text x="422" y="206" font-size="11.5" fill="#1e293b" text-anchor="start">  及【编校纠错剪刀】（装错近亲当场切，错率 ~10⁻⁴）；</text>
+<text x="422" y="230" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">• 耗 1 分子 ATP 把高能酯键压进 tRNA 3&#x27;-CCA 端，</text>
+<text x="422" y="252" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">  提前存好一会儿核糖体“焊接肽键”的化学能！</text>
+<rect x="410" y="292" width="318" height="228" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.2"/>
+<circle cx="428" cy="312" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="428" y="316" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">2</text>
+<text x="446" y="316" font-size="11.6" fill="#1d6fa5" text-anchor="start" font-weight="700">充能完毕的 tRNA 转接头（约 76 nt 倒 L 构型）</text>
+<rect x="436.0" y="332" width="96" height="28" rx="14" fill="#fef1e8" stroke="#c25014" stroke-width="1.5"/>
+<text x="484.0" y="350" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">苯丙氨酸 Phe</text>
+<line x1="484.0" y1="360.0" x2="484.0" y2="382.0" stroke="#c25014" stroke-width="2.6"/>
+<rect x="426.0" y="382" width="116" height="56" rx="10" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.6"/>
+<text x="484.0" y="404" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">tRNA 倒 L 骨架</text>
+<text x="484.0" y="426" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">反密码 3&#x27;-AAG-5&#x27;</text>
+<line x1="466.0" y1="438.0" x2="466.0" y2="456.0" stroke="#18794e" stroke-width="2.0" stroke-dasharray="2 2"/>
+<line x1="484.0" y1="438.0" x2="484.0" y2="456.0" stroke="#18794e" stroke-width="2.0" stroke-dasharray="2 2"/>
+<line x1="502.0" y1="438.0" x2="502.0" y2="456.0" stroke="#18794e" stroke-width="2.0" stroke-dasharray="2 2"/>
+<rect x="426.0" y="456" width="116" height="30" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="1.5"/>
+<text x="484.0" y="476" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">mRNA 5&#x27;-UUC-3&#x27;</text>
+<text x="554" y="350" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">← 3&#x27;-CCA 挂载臂</text>
+<text x="554" y="370" font-size="11.5" fill="#1e293b" text-anchor="start">   蓄有高能酯键</text>
+<text x="554" y="408" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">← 刚性倒 L 支架</text>
+<text x="554" y="428" font-size="11.5" fill="#1e293b" text-anchor="start">   跨距约 7 纳米</text>
+<text x="554" y="466" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">← 反密码子对暗号</text>
+<text x="554" y="486" font-size="11.5" fill="#1e293b" text-anchor="start">   反向平行配对</text>
+<text x="422" y="509" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">1961 尼伦伯格用多聚 U 译出苯丙氨酸链，破译首词！</text>
+</svg>

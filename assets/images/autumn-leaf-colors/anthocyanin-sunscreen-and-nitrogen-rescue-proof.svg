@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="558" viewBox="0 0 760 558" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">秋季红叶液泡花青素防晒护盾机制与缺花青素突变体氮素回收率对比图</title>
+<desc id="desc">左栏展示深秋低温强光下栅栏组织液泡花青素过滤500至600纳米过剩光子并清除活性氧、保护底层叶绿体安全撤离氮素的机制及液泡pH酸红碱蓝变色规律；右栏呈现Feild等(2001)强光恢复实验与Hoch等(2003)三种木本植物野生红叶株(回收73%至79%氮)显著击败缺花青素突变株(仅回收39%至61%氮)及白桦纯黄路线(79%)的实测数据。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="557" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">快丢掉的叶子凭什么花重金染红？液泡“防晒红伞”与护氮撤退的突变体铁证</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：秋日低温强光下栅栏组织液泡滤光盾与 pH 变色开关 · 右：经典光恢复与缺花青素突变体实测对比</text>
+<rect x="20" y="66" width="352" height="478" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="78.0" width="328" height="24" rx="12.0" fill="#fff1f2" stroke="#be123c" stroke-width="1" stroke-opacity="0.35"/>
+<text x="196.0" y="94.3" font-size="12" fill="#be123c" text-anchor="middle" font-weight="600">① 叶片纵切面：撑在叶绿体头顶的“红色遮阳伞”</text>
+<text x="196" y="124" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">深秋晴晨刺眼阳光（低温 5 °C 下暗反应酶变慢！）</text>
+<line x1="112.0" y1="130.0" x2="112.0" y2="156.0" stroke="#16a34a" stroke-width="2.2"/>
+<text x="106" y="148" font-size="11.5" fill="#18794e" text-anchor="end" font-weight="700">绿黄强光</text>
+<line x1="268.0" y1="130.0" x2="268.0" y2="156.0" stroke="#dc2626" stroke-width="2.2"/>
+<text x="274" y="148" font-size="11.5" fill="#be123c" text-anchor="start" font-weight="700">红光散射↑</text>
+<rect x="36" y="158" width="320" height="28" rx="5" fill="#f1f5f9" stroke="#475569" stroke-width="1.0"/>
+<text x="196" y="177" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">上表皮 + 角质层（阳光正面入射）</text>
+<rect x="36" y="194" width="320" height="92" rx="8" fill="#fff1f2" stroke="#be123c" stroke-width="1.5"/>
+<text x="196" y="216" font-size="12.2" fill="#be123c" text-anchor="middle" font-weight="700">栅栏组织 · 中央大液泡（花青素防晒红盾！）</text>
+<text x="196" y="238" font-size="11.5" fill="#0f172a" text-anchor="middle">• 矢车菊素-3-葡萄糖苷拦腰吞掉 500–600 nm 光量子</text>
+<text x="196" y="259" font-size="11.5" fill="#1e293b" text-anchor="middle">• 兼任强效自由基清道夫（清除活性氧达维C/维E 4倍）</text>
+<text x="196" y="278" font-size="11.5" fill="#be123c" text-anchor="middle" font-weight="700">⇒ 吸收的热能无害耗散，不再激发底层叶绿素！</text>
+<rect x="36" y="294" width="320" height="88" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.3"/>
+<text x="196" y="316" font-size="12.0" fill="#18794e" text-anchor="middle" font-weight="700">底层海绵组织 · 正在拆解的叶绿体 + 韧皮部筛管</text>
+<text x="196" y="338" font-size="11.5" fill="#1e293b" text-anchor="middle">• 躲在红伞阴影下免遭光氧化爆裂，多撑 1–2 周窗口</text>
+<text x="196" y="360" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">• 韧皮部活细胞稳稳把 73%–79% 蛋白氮运回枝干！</text>
+<rect x="36" y="392" width="320" height="138" rx="8" fill="#ffffff" stroke="#6d28d9" stroke-width="1.1"/>
+<text x="196" y="414" font-size="11.8" fill="#6d28d9" text-anchor="middle" font-weight="700">同一种花青素为何能变出丹红、紫红与蓝紫？(液泡 pH)</text>
+<rect x="48" y="426" width="92" height="54" rx="6" fill="#dc2626" opacity="0.13" stroke="#dc2626" stroke-width="1.1"/>
+<text x="94" y="446" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">pH ≤ 3.5 强酸</text>
+<text x="94" y="468" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">鲜红阳离子 AH⁺</text>
+<rect x="150" y="426" width="92" height="54" rx="6" fill="#9333ea" opacity="0.13" stroke="#9333ea" stroke-width="1.1"/>
+<text x="196" y="446" font-size="11.5" fill="#9333ea" text-anchor="middle" font-weight="700">pH 4.5–5.5 微酸</text>
+<text x="196" y="468" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">深紫红共色络合</text>
+<rect x="252" y="426" width="92" height="54" rx="6" fill="#2563eb" opacity="0.13" stroke="#2563eb" stroke-width="1.1"/>
+<text x="298" y="446" font-size="11.5" fill="#2563eb" text-anchor="middle" font-weight="700">pH ≥ 7 中/微碱</text>
+<text x="298" y="468" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">蓝紫醌碱 / 无色</text>
+<text x="196" y="502" font-size="11.5" fill="#1e293b" text-anchor="middle" font-weight="600">枫叶/黄栌液泡偏酸显火红；滴白醋更红、滴碱水变蓝绿！</text>
+<text x="196" y="521" font-size="11.5" fill="#64748b" text-anchor="middle">（注：至少动用 7 种酶 + Mg-ATP 跨膜泵，绝非免费废料）</text>
+<rect x="384" y="66" width="356" height="478" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="396.0" y="78.0" width="332" height="24" rx="12.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="562.0" y="94.3" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">② 生理与基因突变体实证：不准变红会亏多少氮？</text>
+<rect x="396" y="112" width="332" height="118" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="408" y="134" font-size="11.8" fill="#1d6fa5" text-anchor="start" font-weight="700">实验一：强光暴晒 30 分钟后光系统恢复力 (Feild 2001)</text>
+<rect x="408" y="146" width="286" height="22" rx="4" fill="#be123c"/>
+<text x="416" y="162" font-size="11.5" fill="#ffffff" text-anchor="start" font-weight="700">红叶组：暗处 80 分钟 100% 满血恢复！</text>
+<rect x="408" y="176" width="221" height="22" rx="4" fill="#b45309"/>
+<text x="416" y="192" font-size="11.5" fill="#ffffff" text-anchor="start" font-weight="700">无红素组：歇 6 小时仍受损 -23%</text>
+<text x="408" y="218" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">结论：花青素滤掉蓝绿强光，护住底层叶绿体免受光氧化重创。</text>
+<rect x="396" y="240" width="332" height="290" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.1"/>
+<text x="408" y="262" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">实验二：户外秋寒叶片“氮回收率”实测 (Hoch 等 2003)</text>
+<text x="408" y="282" font-size="11.5" fill="#64748b" text-anchor="start">同种野生红叶株 vs 单基因缺花青素突变株（无法变红）：</text>
+<text x="508" y="319" font-size="11.5" fill="#0f172a" text-anchor="end" font-weight="700">红瑞木 C. sericea</text>
+<rect x="516.0" y="304.0" width="88.5" height="17" rx="3" fill="#be123c"/>
+<text x="610.5" y="317" font-size="11.5" fill="#be123c" text-anchor="start" font-weight="700">野生红 79%</text>
+<rect x="516.0" y="325.0" width="68.3" height="17" rx="3" fill="#475569" opacity="0.65"/>
+<text x="590.3" y="338" font-size="11.5" fill="#475569" text-anchor="start" font-weight="700">失红株 61%</text>
+<text x="508" y="371" font-size="11.5" fill="#0f172a" text-anchor="end" font-weight="700">越橘 V. elliottii</text>
+<rect x="516.0" y="356.0" width="85.1" height="17" rx="3" fill="#be123c"/>
+<text x="607.1" y="369" font-size="11.5" fill="#be123c" text-anchor="start" font-weight="700">野生红 76%</text>
+<rect x="516.0" y="377.0" width="50.4" height="17" rx="3" fill="#475569" opacity="0.65"/>
+<text x="572.4" y="390" font-size="11.5" fill="#475569" text-anchor="start" font-weight="700">失红株 45%</text>
+<text x="508" y="423" font-size="11.5" fill="#0f172a" text-anchor="end" font-weight="700">荚蒾 V. sargentii</text>
+<rect x="516.0" y="408.0" width="81.8" height="17" rx="3" fill="#be123c"/>
+<text x="603.8" y="421" font-size="11.5" fill="#be123c" text-anchor="start" font-weight="700">野生红 73%</text>
+<rect x="516.0" y="429.0" width="43.7" height="17" rx="3" fill="#475569" opacity="0.65"/>
+<text x="565.7" y="442" font-size="11.5" fill="#475569" text-anchor="start" font-weight="700">失红株 39%</text>
+<line x1="408.0" y1="456.0" x2="716.0" y2="456.0" stroke="#cbd5e1" stroke-width="1.0" stroke-dasharray="4 3"/>
+<text x="508" y="479" font-size="11.5" fill="#b45309" text-anchor="end" font-weight="700">对照：美洲白桦</text>
+<rect x="516.0" y="464.0" width="88.5" height="18" rx="3" fill="#d97706"/>
+<text x="610.5" y="478" font-size="11.5" fill="#b45309" text-anchor="start" font-weight="700">纯黄路线 79%</text>
+<text x="408" y="504" font-size="11.5" fill="#be123c" text-anchor="start" font-weight="700">• 严酷低温强光组差距更惊人：荚蒾野生 68% vs 突变仅 24%！</text>
+<text x="408" y="522" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">• 白桦与银杏天生走“叶黄素消光+早撤氮”路线，不染红也高效！</text>
+</svg>

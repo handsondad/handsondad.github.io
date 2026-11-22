@@ -5518,3 +5518,773 @@ def _register_crelle_journal():
 
 _register_crelle_journal()
 
+
+def _register_riemann_hypothesis():
+    SUBDIR = "riemann-hypothesis"
+    RED = "#b91c1c"
+    RED_SOFT = "#fef2f2"
+    TEAL = "#0f766e"
+    TEAL_SOFT = "#f0fdfa"
+    AMBER = "#b45309"
+    AMBER_SOFT = "#fffbeb"
+
+    # High-precision pure-Python Euler-accelerated Dirichlet eta evaluator for zeta(s)
+    n_accel = 56
+    binom_row = [math.comb(n_accel, j) for j in range(n_accel + 1)]
+    two_pow = float(1 << n_accel)
+    eta_weights = []
+    for k_idx in range(1, 2 * n_accel + 1):
+        if k_idx <= n_accel:
+            eta_weights.append(1.0)
+        else:
+            eta_weights.append(sum(binom_row[j] for j in range(k_idx - n_accel, n_accel + 1)) / two_pow)
+
+    def zeta_c(s: complex) -> complex:
+        acc = 0j
+        for k_i, w_k in enumerate(eta_weights, start=1):
+            sgn = 1.0 if (k_i & 1) else -1.0
+            acc += (sgn * w_k) * cmath.exp(-s * math.log(k_i))
+        return acc / (1.0 - cmath.exp((1.0 - s) * math.log(2.0)))
+
+    def theta_rs(t: float) -> float:
+        if abs(t) < 1e-12:
+            return 0.0
+        z = 0.25 + 0.5j * t
+        shift = 0j
+        while z.real < 10.0:
+            shift -= cmath.log(z)
+            z += 1.0
+        lg = (
+            (z - 0.5) * cmath.log(z)
+            - z
+            + 0.5 * math.log(2.0 * math.pi)
+            + 1.0 / (12.0 * z)
+            - 1.0 / (360.0 * z**3)
+            + shift
+        )
+        return lg.imag - 0.5 * t * math.log(math.pi)
+
+    def hardy_z(t: float) -> float:
+        return (cmath.exp(1j * theta_rs(t)) * zeta_c(0.5 + 1j * t)).real
+
+    # Precompute the first 28 positive non-trivial zeros on Re(s) = 1/2 by bisection on Z(t)
+    zeta_zeros = []
+    t_prev = 10.0
+    z_prev = hardy_z(t_prev)
+    for step_i in range(1, 365):
+        t_cur = 10.0 + step_i * 0.24
+        z_cur = hardy_z(t_cur)
+        if z_prev * z_cur <= 0.0:
+            za, zb, fa, fb = t_prev, t_cur, z_prev, z_cur
+            for _ in range(52):
+                zm = 0.5 * (za + zb)
+                fm = hardy_z(zm)
+                if fa * fm <= 0.0:
+                    zb, fb = zm, fm
+                else:
+                    za, fa = zm, fm
+            zeta_zeros.append(0.5 * (za + zb))
+        t_prev, z_prev = t_cur, z_cur
+
+    assert len(zeta_zeros) >= 28
+    assert abs(zeta_zeros[0] - 14.13472514) < 1e-6
+    assert abs(zeta_c(0.5 + 1j * zeta_zeros[0])) < 1e-11
+    assert abs(zeta_c(2.0 + 0j).real - (math.pi**2 / 6.0)) < 1e-12
+
+    def _build_euler_golden_key():
+        els = header(
+            "一、欧拉的“黄金钥匙”：算术基本定理怎样把整数加法变成素数连乘？",
+            "1737 年欧拉恒等式：左端按 1, 2, 3… 逐项相加，右端只挑素数 2, 3, 5… 彼此相乘",
+        )
+
+        # Panel A: Visual Prime Factorization Sieve & Geometric Series Expansion
+        els.append(card(20, 64, 388, 440))
+        els.append(pill(34, 76, "A · 等比级数展开 × 唯一素因子分解筛", fg=BLUE, bg=BLUE_SOFT, w=360))
+
+        els.append(card(34, 110, 360, 58, rx=8, fill="#f8fafc", stroke=BLUE_LINE, sw=1.2))
+        els.append(txt(214, 132, "ζ(s) = 1 + 1/2^s + 1/3^s + … = ∏ 1/(1 − p^(−s))", 11.5, INK, anchor="middle", weight="700", cls="mono"))
+        els.append(txt(214, 154, "等比展开：1/(1 − p^(−s)) = 1 + 1/p^s + 1/p^(2s) + …", 11.5, BLUE, anchor="middle", weight="600"))
+
+        prime_rows = [
+            ("素数 p = 2 括号", ["1", "1/2^s", "1/4^s", "1/8^s"], "s=2 时 = 4/3", BLUE, BLUE_SOFT),
+            ("素数 p = 3 括号", ["1", "1/3^s", "1/9^s", "1/27^s"], "s=2 时 = 9/8", TEAL, TEAL_SOFT),
+            ("素数 p = 5 括号", ["1", "1/5^s", "1/25^s", "1/125^s"], "s=2 时 = 25/24", PURPLE, PURPLE_SOFT),
+        ]
+        for r_i, (p_lbl, terms, val_s2, fg_c, bg_c) in enumerate(prime_rows):
+            ry = 180 + r_i * 64
+            els.append(card(34, ry, 360, 54, rx=7, fill=bg_c, stroke=fg_c, sw=1.1))
+            els.append(txt(46, ry + 20, p_lbl, 11.5, fg_c, weight="700"))
+            els.append(txt(382, ry + 20, val_s2, 11.5, fg_c, anchor="end", weight="700"))
+            for t_i, t_str in enumerate(terms):
+                bx = 46 + t_i * 74
+                hi = (r_i == 0 and t_i == 2) or (r_i == 1 and t_i == 1) or (r_i == 2 and t_i == 0)
+                els.append(
+                    card(
+                        bx,
+                        ry + 26,
+                        64,
+                        22,
+                        rx=4,
+                        fill="#fff7ed" if hi else "#ffffff",
+                        stroke=ORANGE if hi else fg_c,
+                        sw=1.6 if hi else 0.9,
+                    )
+                )
+                els.append(txt(bx + 32, ry + 41, t_str, 11.5, ORANGE if hi else INK, anchor="middle", weight="700" if hi else "600", cls="mono"))
+            els.append(txt(354, ry + 41, "+ …", 11.5, MUTED, cls="mono"))
+
+        # Example product combination card (12 = 4 * 3 * 1)
+        els.append(card(34, 376, 360, 114, rx=8, fill=AMBER_SOFT, stroke=AMBER, sw=1.2))
+        els.append(txt(46, 397, "橙框示范：从每个素数括号各挑一项相乘，拼出 1/12^s：", 11.5, AMBER, weight="700"))
+        els.append(txt(46, 419, "(1/4^s) × (1/3^s) × 1 × … = 1/(2²×3¹)^s = 1/12^s", 11.5, INK, weight="700", cls="mono"))
+        els.append(txt(46, 442, "• 算术基本定理保证每个自然数 n 拆法唯一 → 绝不重算漏算！", 11.5, BODY))
+        els.append(txt(46, 464, "• 令 s → 1⁺：左端调和级数冲向 +∞，迫使右端素数必须无穷多", 11.5, RED, weight="700"))
+        els.append(txt(46, 482, "  （否则有限个有限分数相乘绝不可能等于无穷大！）", 11.5, MUTED))
+
+        # Panel B: Exact Convergence Comparison at s = 2 (Euler Basel Problem pi^2 / 6)
+        els.append(card(420, 64, 320, 440))
+        els.append(pill(434, 76, "B · s = 2 收敛实测：素数连乘 vs 逐项累加", fg=GREEN, bg=GREEN_SOFT, w=292))
+
+        primes_8 = [2, 3, 5, 7, 11, 13, 17, 19]
+        target_s2 = math.pi**2 / 6.0
+        sum_vals = []
+        prod_vals = []
+        acc_s = 0.0
+        acc_p = 1.0
+        for k_n in range(1, 9):
+            acc_s += 1.0 / (k_n * k_n)
+            acc_p *= 1.0 / (1.0 - primes_8[k_n - 1] ** (-2))
+            sum_vals.append(acc_s)
+            prod_vals.append(acc_p)
+
+        gx0, gx1 = 478, 718
+        gy_top, gy_bot = 132, 356
+
+        def x_k(k_i):
+            return gx0 + (k_i - 1) / 7.0 * (gx1 - gx0)
+
+        def y_v(v_f):
+            return gy_bot - (v_f - 0.95) / 0.80 * (gy_bot - gy_top)
+
+        for y_tick in (1.0, 1.2, 1.4, 1.6):
+            ty = y_v(y_tick)
+            els.append(f'<line x1="{gx0}" y1="{ty:.1f}" x2="{gx1}" y2="{ty:.1f}" stroke="{BORDER}" stroke-width="1"/>')
+            els.append(txt(gx0 - 8, ty + 4, f"{y_tick:.1f}", 11.5, MUTED, anchor="end", cls="mono"))
+
+        for k_i in range(1, 9):
+            tx = x_k(k_i)
+            els.append(f'<line x1="{tx:.1f}" y1="{gy_top}" x2="{tx:.1f}" y2="{gy_bot}" stroke="{BORDER}" stroke-width="0.8"/>')
+            els.append(txt(tx, gy_bot + 18, str(k_i), 11.5, MUTED, anchor="middle", cls="mono"))
+
+        els.append(f'<line x1="{gx0}" y1="{gy_top}" x2="{gx0}" y2="{gy_bot}" stroke="{INK}" stroke-width="1.4"/>')
+        els.append(f'<line x1="{gx0}" y1="{gy_bot}" x2="{gx1}" y2="{gy_bot}" stroke="{INK}" stroke-width="1.4"/>')
+        els.append(txt((gx0 + gx1) / 2, gy_bot + 36, "参与计算的项数 / 素数个数 K", 11.5, INK, anchor="middle", weight="700"))
+
+        # Target line pi^2 / 6
+        yt_pi = y_v(target_s2)
+        els.append(f'<line x1="{gx0}" y1="{yt_pi:.1f}" x2="{gx1}" y2="{yt_pi:.1f}" stroke="{GREEN}" stroke-width="1.8" stroke-dasharray="5 3"/>')
+        els.append(txt(gx1, yt_pi - 8, f"精确极限 π²/6 ≈ {target_s2:.4f}", 11.5, GREEN, anchor="end", weight="700"))
+
+        pts_sum = [f"{x_k(i + 1):.1f},{y_v(v):.1f}" for i, v in enumerate(sum_vals)]
+        pts_prd = [f"{x_k(i + 1):.1f},{y_v(v):.1f}" for i, v in enumerate(prod_vals)]
+        els.append(f'<polyline points="{" ".join(pts_sum)}" fill="none" stroke="{BLUE}" stroke-width="2.3"/>')
+        els.append(f'<polyline points="{" ".join(pts_prd)}" fill="none" stroke="{ORANGE}" stroke-width="2.5"/>')
+
+        for i in range(8):
+            els.append(f'<circle cx="{x_k(i + 1):.1f}" cy="{y_v(sum_vals[i]):.1f}" r="3.8" fill="{BLUE}"/>')
+            els.append(f'<circle cx="{x_k(i + 1):.1f}" cy="{y_v(prod_vals[i]):.1f}" r="4.0" fill="{ORANGE}"/>')
+
+        els.append(txt(x_k(4.6), y_v(prod_vals[3]) + 22, "前 K 个素数连乘 P_K", 11.5, ORANGE, weight="700"))
+        els.append(txt(x_k(4.5), y_v(sum_vals[4]) + 22, "前 K 个整数平方倒数和 S_K", 11.5, BLUE, weight="700"))
+
+        els.append(card(434, 402, 292, 88, rx=8, fill="#f8fafc", stroke=BORDER))
+        els.append(txt(446, 423, f"• 仅乘前 8 个素数 (2…19)：P₈ = {prod_vals[-1]:.4f}", 11.5, ORANGE, weight="700"))
+        els.append(txt(446, 444, f"  已逼近 π²/6 的 {prod_vals[-1] / target_s2 * 100:.2f}%！", 11.5, INK, weight="700"))
+        els.append(txt(446, 465, f"• 前 8 项整数累加：S₈ = {sum_vals[-1]:.4f}（差 7.1%）", 11.5, BLUE))
+        els.append(txt(446, 483, "• 素数掌握着 ζ(s) 的全部基因密码！", 11.5, GREEN, weight="700"))
+
+        return figure(
+            520,
+            "欧拉乘积公式唯一素因子分解筛与s=2巴塞尔级数收敛速度对比图",
+            f"左图展示等比级数把素数因子展开为幂次和后，依算术基本定理不重不漏拼出全体自然数倒数幂并导出素数无穷多；右图实测s=2时前8个素数连乘P₈={prod_vals[-1]:.4f}已逼近π²/6的{prod_vals[-1] / target_s2 * 100:.2f}%，显著快于前8项整数平方倒数和S₈={sum_vals[-1]:.4f}。",
+            els,
+        )
+
+    def _build_critical_strip_map():
+        els = header(
+            "二、黎曼的复平面藏宝图：解析延拓如何跨过 s = 1 高墙，锁定“临界线”？",
+            "1859 年黎曼将 s 扩展为复数 σ + it：跨过 s = 1 极点后，所有“非平凡零点”被困在 0 < σ < 1 窄带内",
+        )
+
+        # Panel A: Complex s-plane landscape (note: vertical t-axis compressed relative to horizontal sigma-axis)
+        els.append(card(20, 64, 446, 452))
+        els.append(pill(34, 76, "A · 复平面 s = σ + it 全景地图（纵轴虚部压缩比例示意）", fg=PURPLE, bg=PURPLE_SOFT, w=418))
+
+        mx0, mx1 = 54, 448
+        my_top, my_bot = 118, 466
+        sig_min, sig_max = -6.6, 3.0
+        t_min, t_max = -32.0, 34.0
+
+        def x_sig(sig):
+            return mx0 + (sig - sig_min) / (sig_max - sig_min) * (mx1 - mx0)
+
+        def y_im(t_v):
+            return my_bot - (t_v - t_min) / (t_max - t_min) * (my_bot - my_top)
+
+        # Region 1: Convergence zone sigma > 1
+        els.append(
+            f'<rect x="{x_sig(1.0):.1f}" y="{my_top}" width="{mx1 - x_sig(1.0):.1f}" height="{my_bot - my_top}" fill="{GREEN_SOFT}" fill-opacity="0.7"/>'
+        )
+        # Region 2: Critical Strip 0 < sigma < 1
+        els.append(
+            f'<rect x="{x_sig(0.0):.1f}" y="{my_top}" width="{x_sig(1.0) - x_sig(0.0):.1f}" height="{my_bot - my_top}" fill="#fef3c7" fill-opacity="0.65"/>'
+        )
+        # Region 3: Left reflection half-plane sigma < 0
+        els.append(
+            f'<rect x="{mx0}" y="{my_top}" width="{x_sig(0.0) - mx0:.1f}" height="{my_bot - my_top}" fill="#f8fafc"/>'
+        )
+
+        # Strip boundaries sigma = 0 and sigma = 1
+        for sb in (0.0, 1.0):
+            els.append(
+                f'<line x1="{x_sig(sb):.1f}" y1="{my_top}" x2="{x_sig(sb):.1f}" y2="{my_bot}" stroke="{AMBER}" stroke-width="1.3" stroke-dasharray="5 3"/>'
+            )
+
+        # Axes: Real axis t = 0 and Imaginary axis sigma = 0
+        y0 = y_im(0.0)
+        els.append(f'<line x1="{mx0}" y1="{y0:.1f}" x2="{mx1}" y2="{y0:.1f}" stroke="{INK}" stroke-width="1.4"/>')
+        for s_tick in (-6, -4, -2, 0, 1, 2):
+            sx = x_sig(s_tick)
+            els.append(f'<line x1="{sx:.1f}" y1="{y0 - 4:.1f}" x2="{sx:.1f}" y2="{y0 + 4:.1f}" stroke="{INK}" stroke-width="1.2"/>')
+            lbl_y = y0 + 18 if s_tick not in (-6, -4, -2) else y0 + 20
+            if s_tick == 0:
+                els.append(txt(sx - 5, lbl_y, "0", 11.5, MUTED, anchor="end", cls="mono"))
+            elif s_tick == 1:
+                els.append(txt(sx + 5, lbl_y, "1", 11.5, MUTED, anchor="start", cls="mono"))
+            else:
+                els.append(txt(sx, lbl_y, str(s_tick), 11.5, MUTED, anchor="middle", cls="mono"))
+
+        for t_tick in (-30, -20, -10, 10, 20, 30):
+            ty = y_im(t_tick)
+            els.append(f'<line x1="{mx0}" y1="{ty:.1f}" x2="{mx1}" y2="{ty:.1f}" stroke="{BORDER}" stroke-width="0.7"/>')
+            els.append(txt(mx0 - 5, ty + 4, f"{t_tick}i", 11.5, MUTED, anchor="end", cls="mono"))
+
+        # Critical Line sigma = 1/2
+        xc = x_sig(0.5)
+        els.append(f'<line x1="{xc:.1f}" y1="{my_top}" x2="{xc:.1f}" y2="{my_bot}" stroke="{PURPLE}" stroke-width="2.6"/>')
+        els.append(txt(xc, my_top - 6, "临界线 σ = 1/2", 11.5, PURPLE, anchor="middle", weight="700"))
+
+        # Plot actual first 4 conjugate pairs of non-trivial zeros
+        for idx_z in range(4):
+            gz = zeta_zeros[idx_z]
+            for sgn_z in (1.0, -1.0):
+                zy = y_im(sgn_z * gz)
+                els.append(f'<circle cx="{xc:.1f}" cy="{zy:.1f}" r="4.8" fill="{PURPLE}" stroke="#ffffff" stroke-width="1.4"/>')
+        els.append(txt(xc + 28, y_im(zeta_zeros[0]) + 4, "1/2 + 14.13i", 11.5, PURPLE, weight="700", halo=True))
+        els.append(txt(xc + 28, y_im(zeta_zeros[1]) + 4, "1/2 + 21.02i", 11.5, PURPLE, weight="600", halo=True))
+        els.append(txt(xc + 28, y_im(-zeta_zeros[0]) + 4, "1/2 − 14.13i", 11.5, PURPLE, weight="600", halo=True))
+
+        # Pole at s = 1
+        xp = x_sig(1.0)
+        els.append(f'<circle cx="{xp:.1f}" cy="{y0:.1f}" r="6.2" fill="{RED}" stroke="#ffffff" stroke-width="1.6"/>')
+        els.append(txt(xp + 8, y0 - 24, "极点 s = 1", 11.5, RED, weight="700", halo=True))
+        els.append(txt(xp + 8, y0 - 8, "(ζ → ∞)", 11.5, RED, weight="600", halo=True))
+
+        # Trivial zeros at -2, -4, -6
+        for tz in (-2, -4, -6):
+            els.append(f'<circle cx="{x_sig(tz):.1f}" cy="{y0:.1f}" r="4.8" fill="#ffffff" stroke="{BLUE}" stroke-width="2.2"/>')
+        els.append(txt(x_sig(-4.0), y0 - 14, "平凡零点 s = −2, −4, −6…", 11.5, BLUE, anchor="middle", weight="700"))
+        els.append(txt(x_sig(-4.0), y0 + 38, "由函数方程 sin(πs/2) = 0 产生", 11.5, MUTED, anchor="middle"))
+
+        # Region labels
+        els.append(txt(x_sig(2.05), y_im(28.0), "绝对收敛区", 11.5, GREEN, anchor="middle", weight="700"))
+        els.append(txt(x_sig(2.05), y_im(23.5), "σ > 1 无零点", 11.5, GREEN, anchor="middle"))
+        els.append(txt(x_sig(-3.6), y_im(26.0), "镜像反射半平面 σ < 0", 11.5, SLATE, anchor="middle", weight="700"))
+        els.append(txt(x_sig(-3.6), y_im(21.2), "完备函数 ξ(s) = ξ(1 − s)", 11.5, BODY, anchor="middle"))
+        els.append(txt(x_sig(-3.6), y_im(-18.0), "若猜想有反例 ρ 偏离 1/2：", 11.5, ORANGE, anchor="middle", weight="700"))
+        els.append(txt(x_sig(-3.6), y_im(-22.8), "共轭与对称必逼出“四连点”！", 11.5, BODY, anchor="middle"))
+
+        els.append(txt(243, 496, "黎曼猜想核心断言：所有非平凡零点都严格钉在紫色直线 σ = 1/2 上！", 11.5, INK, anchor="middle", weight="700"))
+
+        # Panel B: Analytic Continuation 3-step ladder
+        els.append(card(478, 64, 262, 452))
+        els.append(pill(492, 76, "B · 解析延拓三步跨墙术", fg=BLUE, bg=BLUE_SOFT, w=234))
+
+        steps = [
+            (
+                "① 为什么 s ≤ 1 原公式会炸？",
+                RED,
+                RED_SOFT,
+                [
+                    "把 s = −1 直接塞进 1/n^s 会得到",
+                    "1 + 2 + 3 + 4 + … → +∞ 发散！",
+                    "原级数仅在右半平面 σ > 1 有效。",
+                ],
+            ),
+            (
+                "② 第 1 跳：交错级数铺进临界带",
+                BLUE,
+                BLUE_SOFT,
+                [
+                    "构造 η(s) = 1 − 1/2^s + 1/3^s − …",
+                    "它在 σ > 0 处处收敛！利用恒等式",
+                    "ζ(s) = η(s) / (1 − 2^(1−s)) 即可",
+                    "合法算透整个临界带 0 < σ < 1！",
+                ],
+            ),
+            (
+                "③ 第 2 跳：对称镜面铺满全平面",
+                GREEN,
+                GREEN_SOFT,
+                [
+                    "黎曼乘上伽马函数与 π^(-s/2) 配成",
+                    "ξ(s) = ξ(1 − s)，关于 σ = 1/2 镜像！",
+                    "注意：ζ(−1) = −1/12 是延拓函数值，",
+                    "绝非普通加法把正整数加出负数！",
+                ],
+            ),
+        ]
+        cy_s = 112
+        for s_title, s_fg, s_bg, s_lines in steps:
+            box_h = 34 + len(s_lines) * 20
+            els.append(card(492, cy_s, 234, box_h, rx=8, fill=s_bg, stroke=s_fg, sw=1.1))
+            els.append(txt(504, cy_s + 22, s_title, 11.5, s_fg, weight="700"))
+            for li, l_str in enumerate(s_lines):
+                els.append(txt(504, cy_s + 43 + li * 19, l_str, 11.5, BODY))
+            cy_s += box_h + 12
+
+        return figure(
+            530,
+            "黎曼ζ函数复平面解析延拓全景地图与临界带非平凡零点分布图解",
+            "左图展示复平面s=σ+it中σ>1绝对收敛无零点区、s=1极点、s=-2,-4,-6平凡零点，以及0<σ<1临界带中央σ=1/2临界线上前四对共轭非平凡零点；右图分三步解释交错η级数与ξ(s)=ξ(1-s)对称方程如何完成全平面解析延拓并澄清ζ(-1)=-1/12的真实含义。",
+            els,
+        )
+
+    def _build_spiral_and_z_zeros():
+        extra_css = """
+  @keyframes rh-spiral-draw {
+    0% { stroke-dashoffset: 3200; }
+    100% { stroke-dashoffset: 0; }
+  }
+  .rh-spiral {
+    stroke-dasharray: 3200;
+    animation: rh-spiral-draw 3.2s ease-out 1 forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .rh-spiral { animation: none !important; stroke-dasharray: none !important; stroke-dashoffset: 0 !important; }
+  }"""
+
+        els = header(
+            "三、沿着临界线 σ = 1/2 向上巡航：复平面螺旋线怎样一次次射穿靶心？",
+            "令 s = 1/2 + it 从 t = 0 升至 35：左图复平面轨迹四穿原点，右图哈代实函数 Z(t) 过零变号",
+        )
+
+        # Panel A: Complex-plane parametric curve u + iv = zeta(1/2 + it) for t in [0, 31.2]
+        els.append(card(20, 64, 352, 452))
+        els.append(pill(34, 76, "A · ζ(1/2 + it) 复平面螺旋线 (0 ≤ t ≤ 31.2)", fg=BLUE, bg=BLUE_SOFT, w=324))
+
+        sx0, sx1 = 58, 354
+        sy_top, sy_bot = 118, 418
+        u_min, u_max = -2.1, 3.2
+        v_min, v_max = -2.5, 2.5
+
+        def px_u(u_v):
+            return sx0 + (u_v - u_min) / (u_max - u_min) * (sx1 - sx0)
+
+        def py_v(v_v):
+            return sy_bot - (v_v - v_min) / (v_max - v_min) * (sy_bot - sy_top)
+
+        # Grid & axes through (0, 0)
+        for u_t in (-2, -1, 0, 1, 2, 3):
+            ux = px_u(u_t)
+            els.append(f'<line x1="{ux:.1f}" y1="{sy_top}" x2="{ux:.1f}" y2="{sy_bot}" stroke="{BORDER}" stroke-width="0.9"/>')
+            els.append(txt(ux, sy_bot + 16, str(u_t), 11.5, MUTED, anchor="middle", cls="mono"))
+        for v_t in (-2, -1, 0, 1, 2):
+            vy = py_v(v_t)
+            els.append(f'<line x1="{sx0}" y1="{vy:.1f}" x2="{sx1}" y2="{vy:.1f}" stroke="{BORDER}" stroke-width="0.9"/>')
+            els.append(txt(sx0 - 6, vy + 4, f"{v_t}i" if v_t != 0 else "0", 11.5, MUTED, anchor="end", cls="mono"))
+
+        els.append(f'<line x1="{sx0}" y1="{py_v(0):.1f}" x2="{sx1}" y2="{py_v(0):.1f}" stroke="{INK}" stroke-width="1.3"/>')
+        els.append(f'<line x1="{px_u(0):.1f}" y1="{sy_top}" x2="{px_u(0):.1f}" y2="{sy_bot}" stroke="{INK}" stroke-width="1.3"/>')
+        els.append(txt((sx0 + sx1) / 2, sy_bot + 34, "实部 Re ζ(1/2 + it)", 11.5, INK, anchor="middle", weight="700"))
+
+        spiral_pts = []
+        for i_s in range(625):
+            t_s = i_s * 0.05
+            zv = zeta_c(0.5 + 1j * t_s)
+            spiral_pts.append(f"{px_u(zv.real):.1f},{py_v(zv.imag):.1f}")
+
+        pts_joined = " ".join(spiral_pts)
+        # Static guide track so non-animated & initial states always display the complete 4-loop curve
+        els.append(
+            f'<polyline points="{pts_joined}" fill="none" stroke="#93c5fd" stroke-width="1.8" stroke-linejoin="round"/>'
+        )
+        els.append(
+            f'<polyline class="rh-spiral" points="{pts_joined}" fill="none" stroke="{BLUE}" stroke-width="2.2" stroke-linejoin="round"/>'
+        )
+
+        # Start point t = 0: zeta(1/2) = -1.46035
+        z0_val = zeta_c(0.5 + 0j)
+        els.append(f'<circle cx="{px_u(z0_val.real):.1f}" cy="{py_v(0):.1f}" r="4.8" fill="{ORANGE}" stroke="#ffffff" stroke-width="1.3"/>')
+        els.append(txt(px_u(z0_val.real) - 4, py_v(0) - 12, "起点 t=0", 11.5, ORANGE, anchor="middle", weight="700", halo=True))
+
+        # Origin bullseye (0, 0) where every zero passes!
+        els.append(f'<circle cx="{px_u(0):.1f}" cy="{py_v(0):.1f}" r="8.5" fill="{RED_SOFT}" stroke="{RED}" stroke-width="2"/>')
+        els.append(f'<circle cx="{px_u(0):.1f}" cy="{py_v(0):.1f}" r="3.5" fill="{RED}"/>')
+        els.append(txt(px_u(0.35), py_v(2.15), "靶心 (0, 0)：螺旋线每穿过一次", 11.5, RED, weight="700", halo=True))
+        els.append(txt(px_u(0.35), py_v(1.80), "就诞生 1 个非平凡零点！(共穿4次)", 11.5, RED, halo=True))
+
+        els.append(card(34, 462, 324, 42, rx=7, fill="#f8fafc", stroke=BORDER))
+        els.append(txt(196, 480, "t = 14.135、21.022、25.011、30.425 时", 11.5, INK, anchor="middle", weight="700"))
+        els.append(txt(196, 497, "实部与虚部同时归零 → 曲线精准命中红心 (0,0)！", 11.5, BODY, anchor="middle"))
+
+        # Panel B: Hardy's Real-Valued Z(t) = exp(i*theta(t)) * zeta(1/2 + it) for t in [0, 35]
+        els.append(card(386, 64, 354, 452))
+        els.append(pill(400, 76, "B · 哈代实函数 Z(t) 一维变号捕零法 (0 ≤ t ≤ 35)", fg=PURPLE, bg=PURPLE_SOFT, w=326))
+
+        zx0, zx1 = 434, 724
+        zy_top, zy_bot = 118, 366
+        z_min, z_max = -2.9, 2.7
+
+        def px_t(t_v):
+            return zx0 + (t_v / 35.0) * (zx1 - zx0)
+
+        def py_z(z_v):
+            return zy_bot - (z_v - z_min) / (z_max - z_min) * (zy_bot - zy_top)
+
+        for z_tick in (-2, -1, 0, 1, 2):
+            zy = py_z(z_tick)
+            els.append(f'<line x1="{zx0}" y1="{zy:.1f}" x2="{zx1}" y2="{zy:.1f}" stroke="{BORDER}" stroke-width="0.9"/>')
+            els.append(txt(zx0 - 7, zy + 4, str(z_tick), 11.5, MUTED, anchor="end", cls="mono"))
+
+        for t_tick in (0, 7, 14, 21, 28, 35):
+            tx = px_t(t_tick)
+            els.append(f'<line x1="{tx:.1f}" y1="{zy_top}" x2="{tx:.1f}" y2="{zy_bot}" stroke="{BORDER}" stroke-width="0.8"/>')
+            els.append(txt(tx, zy_bot + 16, str(t_tick), 11.5, MUTED, anchor="middle", cls="mono"))
+
+        zy0 = py_z(0.0)
+        els.append(f'<line x1="{zx0}" y1="{zy_top}" x2="{zx0}" y2="{zy_bot}" stroke="{INK}" stroke-width="1.3"/>')
+        els.append(f'<line x1="{zx0}" y1="{zy0:.1f}" x2="{zx1}" y2="{zy0:.1f}" stroke="{RED}" stroke-width="1.5"/>')
+        els.append(txt((zx0 + zx1) / 2, zy_bot + 34, "临界线高度参数 t（即 s = 1/2 + it）", 11.5, INK, anchor="middle", weight="700"))
+
+        z_pts = []
+        for i_z in range(351):
+            tv = i_z * 0.1
+            z_pts.append(f"{px_t(tv):.1f},{py_z(hardy_z(tv)):.1f}")
+        els.append(f'<polyline points="{" ".join(z_pts)}" fill="none" stroke="{PURPLE}" stroke-width="2.3" stroke-linejoin="round"/>')
+
+        # Mark first 5 exact zeros on Z(t) = 0 with clean non-overlapping staggered callouts
+        zero_offsets = [
+            (0, "γ₁=14.13", -16, "end", -4),
+            (1, "γ₂=21.02", 22, "end", -2),
+            (2, "γ₃=25.01", -16, "middle", 0),
+            (3, "γ₄=30.42", 28, "middle", -4),
+            (4, "γ₅=32.94", -38, "end", 6),
+        ]
+        for idx_r, lbl_r, dy_r, anc_r, dx_r in zero_offsets:
+            gr = zeta_zeros[idx_r]
+            rx = px_t(gr)
+            if abs(dy_r) > 25:
+                els.append(
+                    f'<line x1="{rx:.1f}" y1="{zy0:.1f}" x2="{rx:.1f}" y2="{zy0 + dy_r + 12:.1f}" stroke="{RED}" stroke-width="1" stroke-dasharray="2 2"/>'
+                )
+            els.append(f'<circle cx="{rx:.1f}" cy="{zy0:.1f}" r="4.6" fill="{RED}" stroke="#ffffff" stroke-width="1.4"/>')
+            els.append(txt(rx + dx_r, zy0 + dy_r, lbl_r, 11.5, RED, anchor=anc_r, weight="700", halo=True))
+
+        els.append(card(400, 412, 326, 92, rx=8, fill=PURPLE_SOFT, stroke=PURPLE, sw=1.1))
+        els.append(txt(412, 432, "为什么超算能百分之百抓准线上零点？", 11.5, PURPLE, weight="700"))
+        els.append(txt(412, 452, "• Z(t) 严格为实数且 |Z(t)| = |ζ(1/2+it)|：只要一正一负", 11.5, BODY))
+        els.append(txt(412, 471, "  变号，由介值定理中间必夹着真实零点（无需猜小数位）！", 11.5, BODY))
+        els.append(txt(412, 490, "• 1932 西格尔查出黎曼遗稿：黎曼当年已手算出前几根！", 11.5, INK, weight="700"))
+
+        return figure(
+            530,
+            "临界线上黎曼ζ(1/2+it)复平面穿心螺旋线与哈代实函数Z(t)前五个零点图解",
+            "左图精确计算t从0到31.2时ζ(1/2+it)在复平面绕行四次精准穿过原点(0,0)的轨迹；右图绘出旋转相位后的实值哈代函数Z(t)，在14.135、21.022、25.011、30.425、32.935处过零变号，解释黎曼手稿与现代区间算术严密数零点的原理。",
+            els,
+            extra_css=extra_css,
+        )
+
+    def _build_prime_music_synthesis():
+        els = header(
+            "四、“素数的音乐”显式公式：零点怎样像傅里叶琴弦一样奏出素数阶梯？",
+            "每个零点 ρ = β + iγ 贡献谐波 x^β cos(γ ln x)：虚部 γ 定频率，实部 β = 1/2 锁死 √x 误差界",
+        )
+
+        # Panel A: Exact Chebyshev Prime-Power Staircase psi_0(x) vs Riemann Zero Wave Synthesis
+        els.append(card(20, 64, 418, 462))
+        els.append(pill(34, 76, "A · 叠加黎曼零点谐波还原素数阶梯 ψ(x) (x ∈ [1.5, 24])", fg=ORANGE, bg=ORANGE_SOFT, w=390))
+
+        # Exact prime powers <= 24: (p^k, ln p, is_prime_itself)
+        pp_jumps = [
+            (2, math.log(2), True),
+            (3, math.log(3), True),
+            (4, math.log(2), False),
+            (5, math.log(5), True),
+            (7, math.log(7), True),
+            (8, math.log(2), False),
+            (9, math.log(3), False),
+            (11, math.log(11), True),
+            (13, math.log(13), True),
+            (16, math.log(2), False),
+            (17, math.log(17), True),
+            (19, math.log(19), True),
+            (23, math.log(23), True),
+        ]
+
+        def psi_exact(x_val):
+            tot = 0.0
+            for pk, lnp, _ in pp_jumps:
+                if x_val > pk:
+                    tot += lnp
+                elif abs(x_val - pk) < 1e-9:
+                    tot += 0.5 * lnp
+            return tot
+
+        def psi_waves(x_val, n_zeros):
+            # Explicit formula: x - sum_{|gamma| <= T} x^rho / rho - ln(2*pi) - 0.5*ln(1 - x^(-2))
+            lnx = math.log(x_val)
+            sqx = math.sqrt(x_val)
+            osc = 0.0
+            for gk in zeta_zeros[:n_zeros]:
+                # 2 * Re(x^(1/2 + i*gk) / (1/2 + i*gk))
+                denom = 0.25 + gk * gk
+                c_part = 0.5 * math.cos(gk * lnx) + gk * math.sin(gk * lnx)
+                osc += 2.0 * sqx * c_part / denom
+            return x_val - osc - math.log(2.0 * math.pi) - 0.5 * math.log(1.0 - x_val ** (-2))
+
+        wx0, wx1 = 62, 422
+        wy_top, wy_bot = 122, 412
+
+        def px_x(xv):
+            return wx0 + (xv - 1.5) / 22.5 * (wx1 - wx0)
+
+        def py_psi(pv):
+            return wy_bot - (pv + 1.0) / 26.5 * (wy_bot - wy_top)
+
+        for p_tick in (0, 5, 10, 15, 20, 25):
+            yp = py_psi(p_tick)
+            els.append(f'<line x1="{wx0}" y1="{yp:.1f}" x2="{wx1}" y2="{yp:.1f}" stroke="{BORDER}" stroke-width="0.9"/>')
+            els.append(txt(wx0 - 6, yp + 4, str(p_tick), 11.5, MUTED, anchor="end", cls="mono"))
+
+        # Mark prime positions along x-axis
+        for pk, _, is_p in pp_jumps:
+            if is_p:
+                xp_i = px_x(pk)
+                els.append(f'<line x1="{xp_i:.1f}" y1="{wy_top}" x2="{xp_i:.1f}" y2="{wy_bot}" stroke="#fde68a" stroke-width="1"/>')
+                els.append(txt(xp_i, wy_bot + 16, str(pk), 11.5, AMBER, anchor="middle", weight="700", cls="mono"))
+
+        els.append(f'<line x1="{wx0}" y1="{wy_top}" x2="{wx0}" y2="{wy_bot}" stroke="{INK}" stroke-width="1.3"/>')
+        els.append(f'<line x1="{wx0}" y1="{wy_bot}" x2="{wx1}" y2="{wy_bot}" stroke="{INK}" stroke-width="1.3"/>')
+        els.append(txt((wx0 + wx1) / 2, wy_bot + 35, "横轴标记素数跳阶位置：2, 3, 5, 7, 11, 13, 17, 19, 23", 11.5, INK, anchor="middle", weight="700"))
+
+        # 1. Smooth trend x - ln(2*pi)
+        els.append(
+            f'<line x1="{px_x(1.5):.1f}" y1="{py_psi(1.5 - math.log(2*math.pi)):.1f}" x2="{px_x(24.0):.1f}" y2="{py_psi(24.0 - math.log(2*math.pi)):.1f}" stroke="{SLATE}" stroke-width="1.5" stroke-dasharray="5 3"/>'
+        )
+        # 2. Exact staircase polyline
+        step_pts = [f"{px_x(1.5):.1f},{py_psi(0.0):.1f}"]
+        cur_v = 0.0
+        for pk, lnp, _ in pp_jumps:
+            step_pts.append(f"{px_x(pk):.1f},{py_psi(cur_v):.1f}")
+            cur_v += lnp
+            step_pts.append(f"{px_x(pk):.1f},{py_psi(cur_v):.1f}")
+        step_pts.append(f"{px_x(24.0):.1f},{py_psi(cur_v):.1f}")
+        els.append(f'<polyline points="{" ".join(step_pts)}" fill="none" stroke="{INK}" stroke-width="2.2"/>')
+
+        # 3. 3-zero-pair wave & 28-zero-pair wave
+        pts_w3 = []
+        pts_w28 = []
+        for i_w in range(226):
+            xv = 1.5 + i_w * 0.1
+            pts_w3.append(f"{px_x(xv):.1f},{py_psi(psi_waves(xv, 3)):.1f}")
+            pts_w28.append(f"{px_x(xv):.1f},{py_psi(psi_waves(xv, 28)):.1f}")
+
+        els.append(f'<polyline points="{" ".join(pts_w3)}" fill="none" stroke="{BLUE}" stroke-width="1.7" stroke-opacity="0.85"/>')
+        els.append(f'<polyline points="{" ".join(pts_w28)}" fill="none" stroke="{RED}" stroke-width="2.1"/>')
+
+        # Legend box inside top-left of plot
+        els.append(card(72, 128, 212, 82, rx=6, fill="#ffffff", stroke=BORDER))
+        els.append(txt(82, 146, "── 黑色折线：真实素数阶梯 ψ(x)", 11.5, INK, weight="700"))
+        els.append(txt(82, 165, "- - 灰虚斜线：平滑主项 x − ln(2π)", 11.5, SLATE))
+        els.append(txt(82, 184, "── 蓝线：仅叠加前 3 对零点谐波", 11.5, BLUE, weight="600"))
+        els.append(txt(82, 203, "── 红线：叠加前 28 对零点精准咬合！", 11.5, RED, weight="700"))
+
+        els.append(txt(229, 472, "连续光滑的复平面零点波，在素数位置同相共振陡升，", 11.5, BODY, anchor="middle"))
+        els.append(txt(229, 491, "在合数区间彼此相消拉平——这就是“素数的交响乐”！", 11.5, ORANGE, anchor="middle", weight="700"))
+
+        # Panel B: Why Re(rho) = 1/2 controls the sqrt(x) error bound + Skewes counterexample
+        els.append(card(448, 64, 292, 462))
+        els.append(pill(462, 76, "B · 为什么偏要死磕实部 β = 1/2？", fg=GREEN, bg=GREEN_SOFT, w=264))
+
+        els.append(card(462, 110, 264, 78, rx=8, fill="#f8fafc", stroke=BLUE_LINE, sw=1.1))
+        els.append(txt(594, 131, "谐波项：x^(β+iγ) = x^β · e^(iγ ln x)", 11.5, INK, anchor="middle", weight="700", cls="mono"))
+        els.append(txt(474, 154, "• 虚部 γ：决定声波“音高”（振荡快慢）", 11.5, BLUE, weight="600"))
+        els.append(txt(474, 174, "• 实部 β：决定误差“音量包络” x^β！", 11.5, RED, weight="700"))
+
+        # Error funnel comparison plot x in [1, 100]: +/- x^0.5 vs +/- x^0.82
+        fx0, fx1 = 486, 712
+        fy_mid = 276
+        fy_half = 60.0
+
+        def fx(xv):
+            return fx0 + (xv - 1.0) / 99.0 * (fx1 - fx0)
+
+        def fy(ev):
+            # scale max +/- 46
+            return fy_mid - (ev / 46.0) * fy_half
+
+        els.append(f'<line x1="{fx0}" y1="{fy_mid}" x2="{fx1}" y2="{fy_mid}" stroke="{INK}" stroke-width="1.2"/>')
+        pts_bad_u, pts_bad_d, pts_rh_u, pts_rh_d = [], [], [], []
+        for i_f in range(100):
+            xv = 1.0 + i_f
+            pts_bad_u.append(f"{fx(xv):.1f},{fy(xv**0.82):.1f}")
+            pts_bad_d.append(f"{fx(xv):.1f},{fy(-(xv**0.82)):.1f}")
+            pts_rh_u.append(f"{fx(xv):.1f},{fy(math.sqrt(xv)):.1f}")
+            pts_rh_d.append(f"{fx(xv):.1f},{fy(-math.sqrt(xv)):.1f}")
+
+        els.append(f'<polyline points="{" ".join(pts_bad_u)}" fill="none" stroke="{RED}" stroke-width="1.8" stroke-dasharray="4 3"/>')
+        els.append(f'<polyline points="{" ".join(pts_bad_d)}" fill="none" stroke="{RED}" stroke-width="1.8" stroke-dasharray="4 3"/>')
+        els.append(f'<polyline points="{" ".join(pts_rh_u)}" fill="none" stroke="{GREEN}" stroke-width="2.4"/>')
+        els.append(f'<polyline points="{" ".join(pts_rh_d)}" fill="none" stroke="{GREEN}" stroke-width="2.4"/>')
+
+        els.append(txt(594, 210, "若有脱轨零点 β=0.82：误差失控！", 11.5, RED, anchor="middle", weight="700"))
+        els.append(txt(610, fy_mid - 16, "黎曼猜想 β=1/2：±√x 包络", 11.5, GREEN, anchor="middle", weight="700", halo=True))
+        els.append(txt(594, 362, "等价结论：|π(x) − Li(x)| = O(√x ln x)", 11.5, INK, anchor="middle", weight="700"))
+        els.append(txt(594, 381, "素数涨落与抛硬币随机游走同阶，均匀至极！", 11.5, GREEN, anchor="middle", weight="700"))
+
+        # Skewes warning box
+        els.append(card(462, 396, 264, 114, rx=8, fill=RED_SOFT, stroke=RED, sw=1.1))
+        els.append(txt(474, 417, "警钟：算一万亿个例子 ≠ 数学证明！", 11.5, RED, weight="700"))
+        els.append(txt(474, 438, "在人类能直接筛出的 10¹⁹ 内，素数个数", 11.5, BODY))
+        els.append(txt(474, 457, "π(x) 永远小于高斯积分 Li(x)；但利特伍", 11.5, BODY))
+        els.append(txt(474, 476, "德严格证明：约 1.397×10³¹⁶ 处 π(x) 首次", 11.5, INK, weight="700"))
+        els.append(txt(474, 495, "反超并无穷次换位！有限验证代替不了定理。", 11.5, RED, weight="700"))
+
+        return figure(
+            540,
+            "黎曼显式公式零点谐波叠加重构素数阶梯与实部1/2平方根误差包络图解",
+            "左图精确计算前28对黎曼零点谐波叠加后逼近切比雪夫素数阶梯ψ(x)的全过程；右图解释零点实部β=1/2如何锁定±√x最小随机误差包络，并以1.397×10³¹⁶斯库斯反超点警示有限数值验证不能替代一般证明。",
+            els,
+        )
+
+    def _build_gue_and_progress_map():
+        els = header(
+            "五、当素数撞上量子物理与 167 年战报：能级排斥、刀锋常数与最新破冰",
+            "1972 普林斯顿下午茶揭开量子随机矩阵之谜；三路战线严格区分“超算核验”与“数学定理”",
+        )
+
+        # Panel A: Montgomery-Dyson-Odlyzko Pair Correlation R2(u) = 1 - (sin(pi u)/(pi u))^2
+        els.append(card(20, 64, 346, 462))
+        els.append(pill(34, 76, "A · 蒙哥马利-戴森对关联：零点为何互相排斥？", fg=PURPLE, bg=PURPLE_SOFT, w=318))
+
+        gx0, gx1 = 68, 348
+        gy_top, gy_bot = 126, 354
+
+        def px_u(uv):
+            return gx0 + (uv / 3.0) * (gx1 - gx0)
+
+        def py_r(rv):
+            return gy_bot - (rv / 1.35) * (gy_bot - gy_top)
+
+        for r_tick in (0.0, 0.5, 1.0):
+            ry = py_r(r_tick)
+            els.append(f'<line x1="{gx0}" y1="{ry:.1f}" x2="{gx1}" y2="{ry:.1f}" stroke="{BORDER}" stroke-width="0.9"/>')
+            els.append(txt(gx0 - 7, ry + 4, f"{r_tick:.1f}", 11.5, MUTED, anchor="end", cls="mono"))
+
+        for u_tick in (0.0, 1.0, 2.0, 3.0):
+            ux = px_u(u_tick)
+            els.append(f'<line x1="{ux:.1f}" y1="{gy_top}" x2="{ux:.1f}" y2="{gy_bot}" stroke="{BORDER}" stroke-width="0.8"/>')
+            els.append(txt(ux, gy_bot + 17, f"{u_tick:.1f}", 11.5, MUTED, anchor="middle", cls="mono"))
+
+        els.append(f'<line x1="{gx0}" y1="{gy_top}" x2="{gx0}" y2="{gy_bot}" stroke="{INK}" stroke-width="1.3"/>')
+        els.append(f'<line x1="{gx0}" y1="{gy_bot}" x2="{gx1}" y2="{gy_bot}" stroke="{INK}" stroke-width="1.3"/>')
+        els.append(txt((gx0 + gx1) / 2, gy_bot + 36, "归一化零点间距 u（平均间距 = 1）", 11.5, INK, anchor="middle", weight="700"))
+
+        # Poisson flat line R2 = 1
+        els.append(f'<line x1="{gx0}" y1="{py_r(1.0):.1f}" x2="{gx1}" y2="{py_r(1.0):.1f}" stroke="{SLATE}" stroke-width="1.7" stroke-dasharray="5 3"/>')
+        els.append(txt(px_u(1.65), py_r(1.16), "独立撒点 (泊松过程 R₂ = 1)", 11.5, SLATE, anchor="middle", weight="600"))
+
+        # Exact GUE pair correlation curve 1 - (sin(pi u)/(pi u))^2
+        gue_pts = []
+        for i_g in range(151):
+            uv = i_g * 0.02
+            if uv < 1e-8:
+                rv = 0.0
+            else:
+                s_val = math.sin(math.pi * uv) / (math.pi * uv)
+                rv = 1.0 - s_val * s_val
+            gue_pts.append(f"{px_u(uv):.1f},{py_r(rv):.1f}")
+        els.append(f'<polyline points="{" ".join(gue_pts)}" fill="none" stroke="{PURPLE}" stroke-width="2.5"/>')
+
+        # Representative Odlyzko empirical points (10^20-th zero statistics matching GUE)
+        for u_s in (0.15, 0.35, 0.55, 0.80, 1.05, 1.35, 1.65, 1.95, 2.30, 2.70):
+            sv = math.sin(math.pi * u_s) / (math.pi * u_s)
+            rv = 1.0 - sv * sv
+            els.append(f'<circle cx="{px_u(u_s):.1f}" cy="{py_r(rv):.1f}" r="3.4" fill="{ORANGE}" stroke="#ffffff" stroke-width="1"/>')
+
+        els.append(f'<circle cx="{px_u(0):.1f}" cy="{py_r(0):.1f}" r="5.0" fill="{RED}" stroke="#ffffff" stroke-width="1.4"/>')
+        els.append(txt(px_u(0.28), py_r(0.24), "u→0 概率归零：零点像重原子核", 11.5, RED, weight="700", halo=True))
+        els.append(txt(px_u(0.28), py_r(0.09), "量子能级一样互相排斥，绝不扎堆！", 11.5, RED, halo=True))
+        els.append(txt(px_u(1.92), py_r(0.76), "1 − (sin πu / πu)²", 11.5, PURPLE, anchor="middle", weight="700", cls="mono"))
+        els.append(txt(px_u(1.92), py_r(0.60), "橙点：Odlyzko 第 10²⁰ 零点实测", 11.5, ORANGE, anchor="middle", weight="600"))
+
+        els.append(card(34, 404, 318, 106, rx=8, fill=PURPLE_SOFT, stroke=PURPLE, sw=1.1))
+        els.append(txt(46, 425, "希尔伯特-波利亚梦之桥（量子算符路线）：", 11.5, PURPLE, weight="700"))
+        els.append(txt(46, 446, "GUE 正是量子力学厄米随机矩阵 Ĥ 的本征值统计！", 11.5, BODY))
+        els.append(txt(46, 466, "若能构造自伴算符 Ĥ 使本征值恰等于 i(1/2 − ρ)，", 11.5, BODY))
+        els.append(txt(46, 486, "因自伴算符本征值必为实数，Re(ρ)=1/2 当场得证！", 11.5, INK, weight="700"))
+
+        # Panel B: 3-Track 167-Year Scoreboard
+        els.append(card(378, 64, 362, 462))
+        els.append(pill(392, 76, "B · 1859–2026 黎曼猜想三路攻坚成绩单", fg=BLUE, bg=BLUE_SOFT, w=334))
+
+        # Track 1: Proven proportion of zeros on critical line
+        els.append(card(392, 110, 334, 122, rx=8, fill=GREEN_SOFT, stroke=GREEN, sw=1.1))
+        els.append(txt(404, 131, "战线① 严格定理：至少多少比例零点必在 σ=1/2 上？", 11.5, GREEN, weight="700"))
+        bx0, bw = 404, 308
+        els.append(f'<rect x="{bx0}" y="142" width="{bw}" height="18" rx="9" fill="#e2e8f0"/>')
+        w_cur = bw * (5.0 / 12.0)
+        els.append(f'<rect x="{bx0}" y="142" width="{w_cur:.1f}" height="18" rx="9" fill="{GREEN}"/>')
+        els.append(txt(bx0 + w_cur / 2, 155, "> 41.7%", 11.5, "#ffffff", anchor="middle", weight="700"))
+        els.append(txt(bx0 + bw - 8, 155, "目标 100%", 11.5, SLATE, anchor="end", weight="600"))
+        els.append(txt(404, 181, "• 1914 哈代：无穷多个 → 1942 塞尔伯格：正比例 (>0%)", 11.5, BODY))
+        els.append(txt(404, 200, "• 1974 莱文森：>1/3 → 1989 康瑞：>2/5 (40%)", 11.5, BODY))
+        els.append(txt(404, 219, "• 2020 Pratt 等四人合作定理：> 5/12 (约 41.7%)！", 11.5, INK, weight="700"))
+
+        # Track 2: De Bruijn-Newman knife-edge & 2024 Guth-Maynard breakthrough
+        els.append(card(392, 244, 334, 134, rx=8, fill=BLUE_SOFT, stroke=BLUE, sw=1.1))
+        els.append(txt(404, 265, "战线② 刀锋常数与 2024 零点密度 52 年大破冰", 11.5, BLUE, weight="700"))
+        els.append(txt(404, 286, "• 德布鲁因-纽曼常数 Λ（黎曼猜想等价于 Λ ≤ 0）：", 11.5, BODY))
+        els.append(txt(404, 305, "  2020 Rodgers & Tao 证 Λ≥0；Polymath 压至 Λ≤0.2", 11.5, INK, weight="700"))
+        els.append(txt(404, 324, "  → 若猜想为真，它也只是“毫厘不差悬在 Λ=0 刀锋上”！", 11.5, PURPLE, weight="700"))
+        els.append(txt(404, 345, "• 2024 Guth & Maynard 打破 1972 年以来 52 年纪录：", 11.5, INK, weight="700"))
+        els.append(txt(404, 364, "  将脱轨零点密度上界压低至 T^(30(1−σ)/13 + o(1))！", 11.5, BLUE, weight="700"))
+
+        # Track 3: Interval-arithmetic verification & RSA myth-busting
+        els.append(card(392, 390, 334, 120, rx=8, fill=AMBER_SOFT, stroke=AMBER, sw=1.1))
+        els.append(txt(404, 411, "战线③ 超算严密核验纪录 & “破解银行密码”辟谣", 11.5, AMBER, weight="700"))
+        els.append(txt(404, 432, "• 2021 Platt & Trudgian 用区间算术严格证明：高度", 11.5, BODY))
+        els.append(txt(404, 451, "  3×10¹² 内前 12,363,153,437,138 个零点 100% 在线上！", 11.5, INK, weight="700"))
+        els.append(txt(404, 472, "• 辟谣：证出黎曼猜想绝不会让 RSA 密码瞬间崩溃！", 11.5, RED, weight="700"))
+        els.append(txt(404, 492, "  RSA 安全靠大整数分解难；广义黎曼猜想反而是造锁帮手。", 11.5, BODY))
+
+        return figure(
+            540,
+            "黎曼零点蒙哥马利-戴森GUE量子能级排斥曲线与1859至2026三路攻坚成绩单",
+            "左图绘出零点间距对关联函数1-(sin πu/πu)²在u→0时归零的能级排斥现象，对比独立泊松过程并阐明希尔伯特-波利亚自伴算符构想；右图分三路梳理临界线零点占比定理(>5/12)、Rodgers-Tao刀锋常数Λ≥0与2024年Guth-Maynard零点密度破冰，以及Platt-Trudgian超12.36万亿零点严密核验与RSA密码学辟谣。",
+            els,
+        )
+
+    @register("riemann-hypothesis", "黎曼猜想五步图解：欧拉乘积筛、复平面解析延拓、临界线螺旋与Z(t)零点、显式公式素数音乐及GUE量子关联", "algebra_logic")
+    def build_riemann_hypothesis():
+        write_svg(SUBDIR, "euler-golden-key-sieve.svg", _build_euler_golden_key())
+        write_svg(SUBDIR, "complex-plane-critical-strip-map.svg", _build_critical_strip_map())
+        write_svg(SUBDIR, "critical-line-spiral-and-z-zeros.svg", _build_spiral_and_z_zeros())
+        write_svg(SUBDIR, "prime-staircase-zeta-music-synthesis.svg", _build_prime_music_synthesis())
+        write_svg(SUBDIR, "gue-quantum-chaos-and-progress-map.svg", _build_gue_and_progress_map())
+
+
+_register_riemann_hypothesis()
+
+

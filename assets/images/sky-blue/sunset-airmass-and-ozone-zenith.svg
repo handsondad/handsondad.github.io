@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="530" viewBox="0 0 760 530" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">日落38倍球壳大气质量透射光谱与胡尔伯特1953年臭氧查普伊吸收带守护黄昏天顶蓝图解</title>
+<desc id="desc">左图精确计算AM=1、6、38时瑞利直射透射率，展示日落擦地斜穿38倍大气滤尽蓝光留下红霞；右图据Hulburt(1953)绘出臭氧500至700纳米查普伊吸收峰(600纳米处极值)，阐明日落与暮光时正头顶深蓝色有三分之二乃至全部归功于平流层臭氧吸收橙黄光。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="529" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">四、日落的双重魔法：38 倍大气筛出火烧云，臭氧层悄悄救回头顶“暮光蓝”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">地平线晚霞靠长路径散尽蓝光；但黄昏头顶的深邃宝蓝，竟有三分之二归功于平流层臭氧！</text>
+<rect x="20" y="64" width="370" height="452" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="76.0" width="342" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="205.0" y="91.0" font-size="12" fill="#c25014" text-anchor="middle" font-weight="600">A · 球壳几何 38 倍闯关：蓝光散尽只剩红霞</text>
+<rect x="34" y="110" width="342" height="134" rx="8" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+<path d="M 52,232 Q 190,186 356,232" fill="#1e3a8a" stroke="#60a5fa" stroke-width="1.8"/>
+<path d="M 44,202 Q 190,148 364,202" fill="none" stroke="#93c5fd" stroke-width="1.3" stroke-dasharray="4 3"/>
+<circle cx="228.0" cy="207.0" r="4.5" fill="#ffffff"/>
+<line x1="228.0" y1="122" x2="228.0" y2="202.0" stroke="#fde047" stroke-width="2.6"/>
+<text x="236.0" y="138" font-size="11.5" fill="#fde047" text-anchor="start" font-weight="700">正午垂直 AM = 1×</text>
+<text x="236.0" y="155" font-size="11.5" fill="#e2e8f0" text-anchor="start">(蓝光透83%, 红光透95%)</text>
+<line x1="48" y1="205.0" x2="222.0" y2="205.0" stroke="#f97316" stroke-width="2.8"/>
+<text x="48" y="144" font-size="11.5" fill="#fb923c" text-anchor="start" font-weight="700">日落擦地斜穿 AM ≈ 38×！</text>
+<text x="48" y="162" font-size="11.5" fill="#fed7aa" text-anchor="start">蓝光剩&lt;0.1%，红橙成霞</text>
+<line x1="70" y1="460.0" x2="360" y2="460.0" stroke="#e2e8f0" stroke-width="0.9"/>
+<text x="64" y="464.0" font-size="11.5" fill="#64748b" text-anchor="end" class="mono">0%</text>
+<line x1="70" y1="370.5" x2="360" y2="370.5" stroke="#e2e8f0" stroke-width="0.9"/>
+<text x="64" y="374.5" font-size="11.5" fill="#64748b" text-anchor="end" class="mono">50%</text>
+<line x1="70" y1="281.0" x2="360" y2="281.0" stroke="#e2e8f0" stroke-width="0.9"/>
+<text x="64" y="285.0" font-size="11.5" fill="#64748b" text-anchor="end" class="mono">100%</text>
+<line x1="70.0" y1="272" x2="70.0" y2="460" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="70.0" y="476" font-size="11.5" fill="#64748b" text-anchor="middle" class="mono">400</text>
+<line x1="166.7" y1="272" x2="166.7" y2="460" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="166.7" y="476" font-size="11.5" fill="#64748b" text-anchor="middle" class="mono">500</text>
+<line x1="263.3" y1="272" x2="263.3" y2="460" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="263.3" y="476" font-size="11.5" fill="#64748b" text-anchor="middle" class="mono">600</text>
+<line x1="360.0" y1="272" x2="360.0" y2="460" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="360.0" y="476" font-size="11.5" fill="#64748b" text-anchor="middle" class="mono">700</text>
+<line x1="70" y1="272" x2="70" y2="460" stroke="#0f172a" stroke-width="1.3"/>
+<line x1="70" y1="460" x2="360" y2="460" stroke="#0f172a" stroke-width="1.3"/>
+<text x="215.0" y="496" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">阳光直射透射率 vs 波长 λ (nm)</text>
+<polyline points="70.0,335.1 74.8,332.8 79.7,330.6 84.5,328.6 89.3,326.6 94.2,324.7 99.0,322.9 103.8,321.2 108.7,319.5 113.5,318.0 118.3,316.5 123.2,315.1 128.0,313.7 132.8,312.4 137.7,311.2 142.5,310.0 147.3,308.9 152.2,307.8 157.0,306.8 161.8,305.8 166.7,304.9 171.5,304.0 176.3,303.2 181.2,302.3 186.0,301.6 190.8,300.8 195.7,300.1 200.5,299.4 205.3,298.8 210.2,298.1 215.0,297.5 219.8,297.0 224.7,296.4 229.5,295.9 234.3,295.4 239.2,294.9 244.0,294.4 248.8,294.0 253.7,293.6 258.5,293.2 263.3,292.8 268.2,292.4 273.0,292.0 277.8,291.7 282.7,291.3 287.5,291.0 292.3,290.7 297.2,290.4 302.0,290.1 306.8,289.8 311.7,289.6 316.5,289.3 321.3,289.1 326.2,288.8 331.0,288.6 335.8,288.4 340.7,288.2 345.5,288.0 350.3,287.8 355.2,287.6 360.0,287.4" fill="none" stroke="#1d6fa5" stroke-width="2.4"/>
+<text x="161.8" y="297.8" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">正午 AM=1</text>
+<polyline points="70.0,439.4 74.8,437.0 79.7,434.5 84.5,432.0 89.3,429.4 94.2,426.7 99.0,423.9 103.8,421.1 108.7,418.3 113.5,415.4 118.3,412.5 123.2,409.7 128.0,406.8 132.8,403.9 137.7,401.0 142.5,398.2 147.3,395.3 152.2,392.5 157.0,389.8 161.8,387.0 166.7,384.3 171.5,381.7 176.3,379.1 181.2,376.5 186.0,374.0 190.8,371.6 195.7,369.2 200.5,366.8 205.3,364.5 210.2,362.3 215.0,360.1 219.8,358.0 224.7,355.9 229.5,353.9 234.3,351.9 239.2,350.0 244.0,348.1 248.8,346.3 253.7,344.5 258.5,342.8 263.3,341.1 268.2,339.5 273.0,337.9 277.8,336.4 282.7,334.9 287.5,333.4 292.3,332.0 297.2,330.7 302.0,329.4 306.8,328.1 311.7,326.8 316.5,325.6 321.3,324.4 326.2,323.3 331.0,322.2 335.8,321.1 340.7,320.1 345.5,319.1 350.3,318.1 355.2,317.1 360.0,316.2" fill="none" stroke="#b45309" stroke-width="2.4"/>
+<text x="205.3" y="356.5" font-size="11.5" fill="#b45309" text-anchor="middle" font-weight="700" class="halo">低空10° AM=6</text>
+<polyline points="70.0,460.0 74.8,460.0 79.7,460.0 84.5,460.0 89.3,460.0 94.2,460.0 99.0,460.0 103.8,460.0 108.7,460.0 113.5,460.0 118.3,460.0 123.2,459.9 128.0,459.9 132.8,459.9 137.7,459.8 142.5,459.8 147.3,459.7 152.2,459.6 157.0,459.5 161.8,459.4 166.7,459.2 171.5,459.0 176.3,458.8 181.2,458.6 186.0,458.3 190.8,457.9 195.7,457.6 200.5,457.1 205.3,456.7 210.2,456.1 215.0,455.6 219.8,454.9 224.7,454.2 229.5,453.5 234.3,452.7 239.2,451.8 244.0,450.9 248.8,449.9 253.7,448.9 258.5,447.8 263.3,446.6 268.2,445.4 273.0,444.2 277.8,442.9 282.7,441.5 287.5,440.1 292.3,438.7 297.2,437.2 302.0,435.7 306.8,434.1 311.7,432.5 316.5,430.9 321.3,429.3 326.2,427.6 331.0,425.9 335.8,424.2 340.7,422.4 345.5,420.7 350.3,418.9 355.2,417.1 360.0,415.3" fill="none" stroke="#b91c1c" stroke-width="2.4"/>
+<text x="268.2" y="427.4" font-size="11.5" fill="#b91c1c" text-anchor="middle" font-weight="700" class="halo">地平线日落 AM=38</text>
+<rect x="404" y="64" width="336" height="452" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="418.0" y="76.0" width="308" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="572.0" y="91.0" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="600">B · 胡尔伯特 (1953)：臭氧查普伊带守护暮光蓝</text>
+<rect x="418" y="110" width="308" height="66" rx="8" fill="#fef2f2" stroke="#b91c1c" stroke-width="1.1"/>
+<text x="430" y="131" font-size="11.5" fill="#b91c1c" text-anchor="start" font-weight="700">鲜为人知的反常：如果大气里只有氮气和氧气，</text>
+<text x="430" y="151" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">日落时正头顶本来会变成灰黄绿色，绝不会是深蓝！</text>
+<text x="430" y="168" font-size="11.5" fill="#1e293b" text-anchor="start">是谁吃掉了头顶的橙黄红光？答案：平流层臭氧 O₃！</text>
+<line x1="458" y1="362.0" x2="714" y2="362.0" stroke="#e2e8f0" stroke-width="0.9"/>
+<text x="452" y="366.0" font-size="11.5" fill="#64748b" text-anchor="end" class="mono">0.0</text>
+<line x1="458" y1="283.0" x2="714" y2="283.0" stroke="#e2e8f0" stroke-width="0.9"/>
+<text x="452" y="287.0" font-size="11.5" fill="#64748b" text-anchor="end" class="mono">0.1</text>
+<line x1="458" y1="204.0" x2="714" y2="204.0" stroke="#e2e8f0" stroke-width="0.9"/>
+<text x="452" y="208.0" font-size="11.5" fill="#64748b" text-anchor="end" class="mono">0.2</text>
+<line x1="458.0" y1="204" x2="458.0" y2="362" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="458.0" y="378" font-size="11.5" fill="#64748b" text-anchor="middle" class="mono">400</text>
+<line x1="543.3" y1="204" x2="543.3" y2="362" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="543.3" y="378" font-size="11.5" fill="#64748b" text-anchor="middle" class="mono">500</text>
+<line x1="628.7" y1="204" x2="628.7" y2="362" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="628.7" y="378" font-size="11.5" fill="#64748b" text-anchor="middle" class="mono">600</text>
+<line x1="714.0" y1="204" x2="714.0" y2="362" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="714.0" y="378" font-size="11.5" fill="#64748b" text-anchor="middle" class="mono">700</text>
+<line x1="458" y1="204" x2="458" y2="362" stroke="#0f172a" stroke-width="1.3"/>
+<line x1="458" y1="362" x2="714" y2="362" stroke="#0f172a" stroke-width="1.3"/>
+<text x="586.0" y="396" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">臭氧查普伊带可见光吸收系数 (cm⁻¹)</text>
+<polygon points="458.0,362.0 458.0,362.0 483.6,361.2 500.7,359.3 526.3,344.6 543.3,320.1 568.9,286.9 586.0,267.2 607.3,239.6 628.7,223.8 650.0,257.7 671.3,295.6 696.9,325.7 714.0,338.3 714.0,362.0" fill="#f3e8ff" fill-opacity="0.8"/>
+<polyline points="458.0,362.0 483.6,361.2 500.7,359.3 526.3,344.6 543.3,320.1 568.9,286.9 586.0,267.2 607.3,239.6 628.7,223.8 650.0,257.7 671.3,295.6 696.9,325.7 714.0,338.3" fill="none" stroke="#6d28d9" stroke-width="2.6"/>
+<circle cx="628.7" cy="223.8" r="4.8" fill="#6d28d9" stroke="#ffffff" stroke-width="1.4"/>
+<text x="615.9" y="215.1" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700" class="halo">600 nm 橙黄光吸收洪峰！</text>
+<rect x="418" y="408" width="308" height="94" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.1"/>
+<text x="430" y="429" font-size="11.5" fill="#1e293b" text-anchor="start">• 正午竖穿臭氧层 (~3 mm STP)：仅吸 ~4%，无感；</text>
+<text x="430" y="449" font-size="11.5" fill="#1e293b" text-anchor="start">• 日落阳光擦过 25 km 平流层切线，路径暴增数十倍，</text>
+<text x="430" y="469" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">  臭氧精准吞光 550–650 nm 橙黄光 → 日落天顶蓝</text>
+<text x="430" y="488" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">  有 2/3 靠臭氧，日落后“蓝调时刻”几乎全靠臭氧！</text>
+</svg>

@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="540" viewBox="0 0 760 540" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">云地闪电四阶段毫秒级过程（梯级先导、迎面先导、自下而上三分之一光速回击与直窜闪烁）图解</title>
+<desc id="desc">上图按0至200毫秒顺序拆解梯级先导50米步长下探、30至100米击距触发地面上行迎面先导、回击以三分之一光速自地面冲向云底（含无障碍单次闪光动画）及3至5次直窜先导闪烁；下图对比2至3厘米通道直径、30000K高温与总电能账单。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes return-flash {
+    0% { stroke-dashoffset: 260; opacity: 0.35; }
+    35% { stroke-dashoffset: 0; opacity: 1.0; }
+    100% { stroke-dashoffset: 0; opacity: 1.0; }
+  }
+  .rs-bolt {
+    stroke-dasharray: 260;
+    stroke-dashoffset: 0;
+    animation: return-flash 2.6s ease-out 1 forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .rs-bolt { animation: none !important; stroke-dashoffset: 0 !important; opacity: 1 !important; }
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="539" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">四、慢放一万倍看闪电：肉眼以为从天往下劈，最亮那一下其实从地面往上蹿！</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">20 毫秒暗弱梯级先导下探 → 地面尖端迎面先导升空 → 100 微秒 1/3 光速回击引爆 30,000 K 闪光</text>
+<rect x="20" y="64" width="171" height="304" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="30.0" y="76.0" width="151" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="105.5" y="91.0" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">① 0–19 ms · 梯级先导</text>
+<rect x="32" y="108" width="147" height="168" rx="6" fill="#0f172a"/>
+<rect x="40" y="114" width="131" height="18" rx="6" fill="#334155"/>
+<text x="105.5" y="127" font-size="11.5" fill="#93c5fd" text-anchor="middle" font-weight="700">− − − 云底 − − −</text>
+<rect x="32" y="260" width="147" height="16" rx="2" fill="#14532d"/>
+<line x1="118" y1="260" x2="118" y2="238" stroke="#cbd5e1" stroke-width="2.2"/>
+<polyline points="100,132 88,158 106,182 94,208" fill="none" stroke="#60a5fa" stroke-width="2.0" stroke-dasharray="5 3"/>
+<polyline points="106,182 128,204" fill="none" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="105.5" y="232" font-size="11.5" fill="#93c5fd" text-anchor="middle">↓ 分叉暗弱下探</text>
+<text x="105.5" y="298" font-size="11.5" fill="#1e293b" text-anchor="middle" font-weight="400">每步 ~50 m 停顿 30 μs</text>
+<text x="105.5" y="319" font-size="11.5" fill="#1e293b" text-anchor="middle" font-weight="400">折线分叉往下试探低阻路</text>
+<text x="105.5" y="340" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">均速 ~2×10⁵ m/s 极暗弱</text>
+<rect x="203" y="64" width="171" height="304" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="213.0" y="76.0" width="151" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="288.5" y="91.0" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="600">② 19.9 ms · 迎面先导</text>
+<rect x="215" y="108" width="147" height="168" rx="6" fill="#0f172a"/>
+<rect x="223" y="114" width="131" height="18" rx="6" fill="#334155"/>
+<text x="288.5" y="127" font-size="11.5" fill="#93c5fd" text-anchor="middle" font-weight="700">− − − 云底 − − −</text>
+<rect x="215" y="260" width="147" height="16" rx="2" fill="#14532d"/>
+<line x1="301" y1="260" x2="301" y2="238" stroke="#cbd5e1" stroke-width="2.2"/>
+<polyline points="283,132 271,158 289,182 281,206 295,218" fill="none" stroke="#60a5fa" stroke-width="2.1"/>
+<polyline points="271,158 249,194" fill="none" stroke="#60a5fa" stroke-width="1.4" opacity="0.6"/>
+<line x1="301" y1="238" x2="297" y2="221" stroke="#fb923c" stroke-width="2.8"/>
+<text x="257" y="248" font-size="11.5" fill="#fdba74" text-anchor="middle" font-weight="700">↑ 迎面先导!</text>
+<text x="288.5" y="298" font-size="11.5" fill="#1e293b" text-anchor="middle" font-weight="400">先导逼近地面 30–100 m</text>
+<text x="288.5" y="319" font-size="11.5" fill="#1e293b" text-anchor="middle" font-weight="400">树尖/避雷针电场急剧畸变</text>
+<text x="288.5" y="340" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">向上射出正电迎面火花！</text>
+<rect x="386" y="64" width="171" height="304" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="396.0" y="76.0" width="151" height="22" rx="11.0" fill="#fef2f2" stroke="#b91c1c" stroke-width="1" stroke-opacity="0.35"/>
+<text x="471.5" y="91.0" font-size="11.5" fill="#b91c1c" text-anchor="middle" font-weight="600">③ 20.0 ms · 耀眼回击!</text>
+<rect x="398" y="108" width="147" height="168" rx="6" fill="#0f172a"/>
+<rect x="406" y="114" width="131" height="18" rx="6" fill="#334155"/>
+<text x="471.5" y="127" font-size="11.5" fill="#93c5fd" text-anchor="middle" font-weight="700">− − − 云底 − − −</text>
+<rect x="398" y="260" width="147" height="16" rx="2" fill="#14532d"/>
+<line x1="484" y1="260" x2="484" y2="238" stroke="#cbd5e1" stroke-width="2.2"/>
+<polyline points="484,238 478,218 464,206 472,182 454,158 466,132" fill="none" stroke="#fde047" stroke-width="8.0" stroke-opacity="0.45"/>
+<polyline points="484,238 478,218 464,206 472,182 454,158 466,132" fill="none" stroke="#fef9c3" stroke-width="3.6" stroke-opacity="0.85"/>
+<polyline class="rs-bolt" points="484,238 478,218 464,206 472,182 454,158 466,132" fill="none" stroke="#ffffff" stroke-width="3.2"/>
+<text x="434" y="198" font-size="11.5" fill="#fde047" text-anchor="middle" font-weight="700">↑ 1/3光速</text>
+<text x="434" y="215" font-size="11.5" fill="#ffffff" text-anchor="middle" font-weight="700">自下往上!</text>
+<text x="471.5" y="298" font-size="11.5" fill="#1e293b" text-anchor="middle" font-weight="400">天地接通瞬间短路导通！</text>
+<text x="471.5" y="319" font-size="11.5" fill="#1e293b" text-anchor="middle" font-weight="400">强光以 1/3 光速自下而上</text>
+<text x="471.5" y="340" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">狂飙回云端（肉眼所见）!</text>
+<rect x="569" y="64" width="171" height="304" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="579.0" y="76.0" width="151" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="654.5" y="91.0" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="600">④ 60–200 ms · 直窜闪烁</text>
+<rect x="581" y="108" width="147" height="168" rx="6" fill="#0f172a"/>
+<rect x="589" y="114" width="131" height="18" rx="6" fill="#334155"/>
+<text x="654.5" y="127" font-size="11.5" fill="#93c5fd" text-anchor="middle" font-weight="700">− − − 云底 − − −</text>
+<rect x="581" y="260" width="147" height="16" rx="2" fill="#14532d"/>
+<line x1="667" y1="260" x2="667" y2="238" stroke="#cbd5e1" stroke-width="2.2"/>
+<polyline points="635,132 625,174 641,212 647,246" fill="none" stroke="#e9d5ff" stroke-width="2.2" stroke-opacity="0.45"/>
+<polyline points="645,132 635,174 651,212 657,246" fill="none" stroke="#e9d5ff" stroke-width="2.2" stroke-opacity="0.75"/>
+<polyline points="655,132 645,174 661,212 667,246" fill="none" stroke="#e9d5ff" stroke-width="2.2" stroke-opacity="1.0"/>
+<text x="654.5" y="254" font-size="11.5" fill="#f3e8ff" text-anchor="middle" font-weight="700">×3–5 次连击闪烁</text>
+<text x="654.5" y="298" font-size="11.5" fill="#1e293b" text-anchor="middle" font-weight="400">每隔 ~40 ms 残余热通道</text>
+<text x="654.5" y="319" font-size="11.5" fill="#1e293b" text-anchor="middle" font-weight="400">滑下直窜先导再触发回击</text>
+<text x="654.5" y="340" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">连闪 3–5 次造就肉眼闪烁</text>
+<rect x="20" y="380" width="720" height="146" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="392.0" width="330" height="22" rx="11.0" fill="#f1f5f9" stroke="#0f172a" stroke-width="1" stroke-opacity="0.35"/>
+<text x="199.0" y="407.0" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="600">C · 一道典型云地闪电的三大反直觉物理账单</text>
+<rect x="34" y="424" width="216" height="90" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="44" y="444" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">真实直径：仅 2–3 厘米！</text>
+<text x="44" y="464" font-size="11.5" fill="#1e293b" text-anchor="start" font-weight="400">核心等离子体仅大拇指粗；</text>
+<text x="44" y="483" font-size="11.5" fill="#1e293b" text-anchor="start" font-weight="400">照片里几米宽的光柱全是镜</text>
+<text x="44" y="502" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">头强光过曝晕轮。</text>
+<rect x="272" y="424" width="216" height="90" rx="8" fill="#fef2f2" stroke="#b91c1c" stroke-width="1.1"/>
+<text x="282" y="444" font-size="11.5" fill="#b91c1c" text-anchor="start" font-weight="700">峰值温度：~30,000 K（太阳 5 倍）</text>
+<text x="282" y="464" font-size="11.5" fill="#1e293b" text-anchor="start" font-weight="400">30 kA 巨流微秒灌入指粗通</text>
+<text x="282" y="483" font-size="11.5" fill="#1e293b" text-anchor="start" font-weight="400">道，瞬间烧至约 3 万开尔文，</text>
+<text x="282" y="502" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">达太阳表面 5772 K 的 5.2 倍！</text>
+<rect x="510" y="424" width="216" height="90" rx="8" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.1"/>
+<text x="520" y="444" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">为什么不能靠抓闪电开电厂？</text>
+<text x="520" y="464" font-size="11.5" fill="#1e293b" text-anchor="start" font-weight="400">瞬时功率虽达万亿瓦，却仅</text>
+<text x="520" y="483" font-size="11.5" fill="#1e293b" text-anchor="start" font-weight="400">亮百微秒！单次可捕电能仅</text>
+<text x="520" y="502" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">几百千瓦时，电费约几百元。</text>
+</svg>

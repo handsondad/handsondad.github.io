@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="498" viewBox="0 0 760 498" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">全球人类语言语系人口规模与语种多样性对比图解</title>
+<desc id="desc">左栏对比全球主要语系的使用人口占比（印欧约42%、汉藏约18%，合计占全球六成）；右栏结合Glottolog 5.4与Ethnologue数据展示全球245个语系与183门孤立语的语种分布及新几内亚多样性热点。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="497" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">全人类 7000 多种语言的家谱全景：谁人口最多？谁分支最密？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">按母语人口算，印欧+汉藏两大语系占去全球六成；按语种数量算，非洲与太平洋岛屿才是多样性宝库。</text>
+<rect x="20" y="68" width="376" height="412" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="36.0" y="82.0" width="304" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="188.0" y="97.0" font-size="11.0" fill="#1d6fa5" text-anchor="middle" font-weight="600">按使用者规模排行（印欧+汉藏 ≈ 全球 60%）</text>
+<text x="38" y="118" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">印欧语系 (英/西/印地/俄/法/德等)</text>
+<rect x="38" y="123" width="206.0" height="13" rx="3.5" fill="#1d6fa5" opacity="0.88"/>
+<text x="252.0" y="133" font-size="9.9" fill="#1d6fa5" text-anchor="start" font-weight="700">~32 亿人 (42%)</text>
+<text x="38" y="162" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">汉藏语系 (汉语各支/藏/缅/彝等)</text>
+<rect x="38" y="167" width="88.3" height="13" rx="3.5" fill="#9f1239" opacity="0.88"/>
+<text x="134.3" y="177" font-size="9.9" fill="#9f1239" text-anchor="start" font-weight="700">~14 亿人 (18%)</text>
+<text x="38" y="206" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">尼日尔-刚果语系 (斯瓦希里/约鲁巴等)</text>
+<rect x="38" y="211" width="38.3" height="13" rx="3.5" fill="#18794e" opacity="0.88"/>
+<text x="84.3" y="221" font-size="9.9" fill="#18794e" text-anchor="start" font-weight="700">~6.0 亿人</text>
+<text x="38" y="250" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">亚非/闪含语系 (阿拉伯/希伯来/豪萨等)</text>
+<rect x="38" y="255" width="34.3" height="13" rx="3.5" fill="#b45309" opacity="0.88"/>
+<text x="80.3" y="265" font-size="9.9" fill="#b45309" text-anchor="start" font-weight="700">~5.5 亿人</text>
+<text x="38" y="294" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">南岛语系 (印尼/马来/他加禄/毛利等)</text>
+<rect x="38" y="299" width="24.0" height="13" rx="3.5" fill="#0d9488" opacity="0.88"/>
+<text x="70.0" y="309" font-size="9.9" fill="#0d9488" text-anchor="start" font-weight="700">~3.8 亿人</text>
+<text x="38" y="338" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">达罗毗荼语系 (泰米尔/泰卢固等)</text>
+<rect x="38" y="343" width="15.7" height="13" rx="3.5" fill="#6d28d9" opacity="0.88"/>
+<text x="61.7" y="353" font-size="9.9" fill="#6d28d9" text-anchor="start" font-weight="700">~2.5 亿人</text>
+<text x="38" y="382" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">突厥语系 (土耳其/维吾尔/哈萨克等)</text>
+<rect x="38" y="387" width="12.8" height="13" rx="3.5" fill="#c25014" opacity="0.88"/>
+<text x="58.8" y="397" font-size="9.9" fill="#c25014" text-anchor="start" font-weight="700">~2.0 亿人</text>
+<text x="38" y="426" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">其余 238 个语系 + 183 门孤立语合计</text>
+<rect x="38" y="431" width="71.1" height="13" rx="3.5" fill="#475569" opacity="0.88"/>
+<text x="117.1" y="441" font-size="9.9" fill="#475569" text-anchor="start" font-weight="700">日语/韩语/越语/泰语等</text>
+<rect x="412" y="68" width="328" height="412" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="428.0" y="82.0" width="232" height="22" rx="11.0" fill="#f0fdfa" stroke="#0d9488" stroke-width="1" stroke-opacity="0.35"/>
+<text x="544.0" y="97.0" font-size="11.0" fill="#0d9488" text-anchor="middle" font-weight="600">按语种数量与独立谱系普查</text>
+<rect x="428" y="114" width="296" height="108" rx="7" fill="#f0fdfa" stroke="#0d9488" stroke-width="1"/>
+<text x="440" y="134" font-size="10.6" fill="#0d9488" text-anchor="start" font-weight="700">🌍 权威语言学数据库最新盘点：</text>
+<text x="440" y="153" font-size="10.1" fill="#1e293b" text-anchor="start">• Glottolog 5.4：记录 7,685 门第一语言口语，</text>
+<text x="440" y="171" font-size="10.1" fill="#0f172a" text-anchor="start" font-weight="700">  归入 245 个独立语系 + 183 门孤立语（共 428 支）！</text>
+<text x="440" y="189" font-size="10.1" fill="#1e293b" text-anchor="start">• Ethnologue：现存 7,170 门活语言，其中约 44%</text>
+<text x="440" y="207" font-size="10.0" fill="#9f1239" text-anchor="start" font-weight="600">  处于濒危状态；前 20 大语言仅占语种 0.3% 却超 37 亿人。</text>
+<text x="428" y="244" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">语种数量最多的四大超级语系：</text>
+<text x="428" y="275" font-size="10.0" fill="#1e293b" text-anchor="start" font-weight="600">尼日尔-刚果语系</text>
+<rect x="536" y="264" width="145.0" height="13" rx="3" fill="#18794e"/>
+<text x="687.0" y="275" font-size="9.8" fill="#18794e" text-anchor="start" font-weight="700">~1,550 种</text>
+<text x="428" y="307" font-size="10.0" fill="#1e293b" text-anchor="start" font-weight="600">南岛语系</text>
+<rect x="536" y="296" width="116.9" height="13" rx="3" fill="#0d9488"/>
+<text x="658.9" y="307" font-size="9.8" fill="#0d9488" text-anchor="start" font-weight="700">~1,250 种</text>
+<text x="428" y="339" font-size="10.0" fill="#1e293b" text-anchor="start" font-weight="600">跨新几内亚语系</text>
+<rect x="536" y="328" width="44.9" height="13" rx="3" fill="#6d28d9"/>
+<text x="586.9" y="339" font-size="9.8" fill="#6d28d9" text-anchor="start" font-weight="700">~480 种</text>
+<text x="428" y="371" font-size="10.0" fill="#1e293b" text-anchor="start" font-weight="600">汉藏语系 / 印欧语系</text>
+<rect x="536" y="360" width="43.0" height="13" rx="3" fill="#9f1239"/>
+<text x="585.0" y="371" font-size="9.8" fill="#9f1239" text-anchor="start" font-weight="700">各约 450–500 种</text>
+<rect x="428" y="396" width="296" height="70" rx="7" fill="#fef3c7" stroke="#b45309" stroke-width="1"/>
+<text x="440" y="415" font-size="10.2" fill="#b45309" text-anchor="start" font-weight="700">🏝️ 为什么巴布亚新几内亚一岛就有 840+ 种语言？</text>
+<text x="440" y="433" font-size="9.9" fill="#1e293b" text-anchor="start">• 高山深谷阻隔 + 热带雨林自给自足农业持续数万年，</text>
+<text x="440" y="450" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="600">  每个山谷独立演化几千年，语言分化比整个欧洲还密十倍！</text>
+</svg>

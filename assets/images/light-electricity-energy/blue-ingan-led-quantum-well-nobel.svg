@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="498" viewBox="0 0 760 498" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">2014诺贝尔奖氮化铟镓蓝光LED量子阱能带发光与荧光粉白光合成图解</title>
+<desc id="desc">左栏绘制n型与p型氮化镓夹持InGaN量子阱的能带图，电子与空穴直接复合辐射450纳米（2.75电子伏）蓝光；右栏展示蓝光芯片激发YAG:Ce黄色荧光粉混合成低损耗白光及色温显色调控原理。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="497" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">第三代电灯（白光 LED）：2014 诺贝尔物理学奖怎样用“蓝光芯片”点亮 21 世纪？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">红光与绿光 LED 早在 1960 年代就有了，唯独缺一束“高能蓝光”困住全人类三十年——直到氮化镓横空出世！</text>
+<rect x="20" y="68" width="376" height="412" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="36.0" y="82.0" width="336" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="204.0" y="97.0" font-size="10.6" fill="#1d6fa5" text-anchor="middle" font-weight="600">半导体量子阱滑梯：电子掉进空穴，直接吐出蓝光子！</text>
+<path d="M 48,146 L 166,146 L 166,184 L 222,184 L 222,130 L 356,130" fill="none" stroke="#1d6fa5" stroke-width="2.6"/>
+<path d="M 48,256 L 166,256 L 166,242 L 222,242 L 222,268 L 356,268" fill="none" stroke="#0d9488" stroke-width="2.6"/>
+<rect x="166" y="184" width="56" height="58" fill="#eaf4fb" opacity="0.8"/>
+<text x="194" y="174" font-size="9.6" fill="#6d28d9" text-anchor="middle" font-weight="700">InGaN 量子阱</text>
+<circle cx="112" cy="138" r="7" fill="#1d6fa5"/>
+<text x="112" y="142" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="700">-</text>
+<line x1="124.0" y1="138.0" x2="184.0" y2="178.0" stroke="#1d6fa5" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+<circle cx="282" cy="276" r="7" fill="#ffffff" stroke="#dc2626" stroke-width="2"/>
+<text x="282" y="280" font-size="10" fill="#dc2626" text-anchor="middle" font-weight="700">+</text>
+<line x1="270.0" y1="276.0" x2="204.0" y2="246.0" stroke="#dc2626" stroke-width="1.8" marker-end="url(#arr-orange)"/>
+<circle cx="194" cy="192" r="5.5" fill="#1d6fa5"/>
+<line x1="194.0" y1="199.0" x2="194.0" y2="232.0" stroke="#6d28d9" stroke-width="2.4" marker-end="url(#arr-blue)"/>
+<circle cx="194" cy="236" r="5.5" fill="#ffffff" stroke="#dc2626" stroke-width="1.8"/>
+<path d="M 206,214 Q 230,198 254,214 T 302,214 L 332,214" fill="none" stroke="#2563eb" stroke-width="2.8" marker-end="url(#arr-blue)"/>
+<text x="274" y="198" font-size="10.2" fill="#1d4ed8" text-anchor="start" font-weight="700">450 nm 蓝光!</text>
+<text x="264" y="232" font-size="9.2" fill="#6d28d9" text-anchor="start" font-weight="700" class="mono">hν = ΔE_g ≈ 2.75 eV</text>
+<text x="96" y="128" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">n 型 GaN (富电子)</text>
+<text x="302" y="120" font-size="9.6" fill="#dc2626" text-anchor="middle" font-weight="700">p 型 GaN:Mg (富空穴)</text>
+<rect x="36" y="300" width="344" height="166" rx="7" fill="#f1f5f9" stroke="#475569" stroke-width="1"/>
+<text x="48" y="320" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">🏆 为什么赤崎勇、天野浩、中村修二能拿 2014 诺贝尔奖？</text>
+<text x="48" y="340" font-size="9.8" fill="#1e293b" text-anchor="start">• 发光二极管 (LED) 光子能量严格等于半导体禁带宽度 E_g：</text>
+<text x="48" y="358" font-size="9.8" fill="#1e293b" text-anchor="start">  发红光只需窄带隙 (~1.9 eV)，发蓝光却必须宽带隙【氮化镓 GaN】！</text>
+<text x="48" y="377" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="600">• 当年全球大厂纷纷放弃 GaN，唯独三人死磕攻克两座天险：</text>
+<text x="48" y="395" font-size="9.8" fill="#1d6fa5" text-anchor="start" font-weight="700">  ① 低温缓冲层在蓝宝石衬底长出无裂纹镜面 GaN 单晶；</text>
+<text x="48" y="413" font-size="9.8" fill="#1d6fa5" text-anchor="start" font-weight="700">  ② 破解氢钝化谜团（400°C 退火赶走氢原子），首次激活低阻 p 型</text>
+<text x="48" y="431" font-size="9.8" fill="#1e293b" text-anchor="start">     掺镁 GaN，并叠出 InGaN 双异质结量子阱，蓝光效率一飞冲天！</text>
+<text x="48" y="450" font-size="9.6" fill="#18794e" text-anchor="start" font-weight="700">  （无需烧钨丝、零水银，电能一步到位直接变高纯光子！）</text>
+<rect x="412" y="68" width="328" height="412" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="428.0" y="82.0" width="296" height="22" rx="11.0" fill="#fffbeb" stroke="#d97706" stroke-width="1" stroke-opacity="0.35"/>
+<text x="576.0" y="97.0" font-size="10.6" fill="#d97706" text-anchor="middle" font-weight="600">蓝光芯片怎样变出温和白光？(蓝+黄混光术)</text>
+<polygon points="500,220 652,220 628,246 524,246" fill="#cbd5e1" stroke="#475569" stroke-width="1.8"/>
+<path d="M 508,220 A 68,62 0 0,1 644,220 Z" fill="#fef08a" stroke="#d97706" stroke-width="2.2"/>
+<rect x="558" y="222" width="36" height="14" rx="2" fill="#2563eb"/>
+<text x="576" y="232" font-size="8.5" fill="#ffffff" text-anchor="middle" font-weight="700" class="mono">InGaN</text>
+<text x="576" y="206" font-size="9.6" fill="#92400e" text-anchor="middle" font-weight="700">YAG:Ce 黄色荧光粉胶层</text>
+<line x1="566.0" y1="218.0" x2="548.0" y2="142.0" stroke="#2563eb" stroke-width="2.6" marker-end="url(#arr-blue)"/>
+<line x1="586.0" y1="218.0" x2="604.0" y2="142.0" stroke="#d97706" stroke-width="2.6" marker-end="url(#arr-orange)"/>
+<text x="530" y="136" font-size="9.6" fill="#2563eb" text-anchor="middle" font-weight="700">透射蓝光</text>
+<text x="622" y="136" font-size="9.6" fill="#d97706" text-anchor="middle" font-weight="700">受激黄红宽谱光</text>
+<text x="576" y="122" font-size="10.6" fill="#0f172a" text-anchor="middle" font-weight="700">人眼混合 = 纯净白光！</text>
+<rect x="428" y="262" width="296" height="204" rx="7" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
+<text x="440" y="282" font-size="10.0" fill="#d97706" text-anchor="start" font-weight="700">💡 算一算为什么白光 LED 把斯托克斯损耗砍到了极致：</text>
+<text x="440" y="302" font-size="9.7" fill="#1e293b" text-anchor="start">• 荧光灯拿 4.89 eV 紫外线转 2.2 eV 黄绿光，每颗光子亏 55%；</text>
+<text x="440" y="320" font-size="9.6" fill="#1e293b" text-anchor="start">• 白光 LED 拿 2.75 eV 蓝光去激 YAG:Ce 荧光粉发 ~2.15 eV 黄光，</text>
+<text x="440" y="338" font-size="9.6" fill="#18794e" text-anchor="start" font-weight="700">  能量保留率高达 2.15 / 2.75 ≈ 78%（透射蓝光更 0 损耗）！</text>
+<text x="440" y="359" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">🎨 冷白光 vs 暖黄光 + 护眼高显色指数 (Ra &gt; 95)：</text>
+<text x="440" y="377" font-size="9.6" fill="#1e293b" text-anchor="start">• 荧光粉涂薄一点→蓝光多→6000 K 清醒冷白光；</text>
+<text x="440" y="394" font-size="9.6" fill="#1e293b" text-anchor="start">• 荧光粉加红色氮化物粉→压低蓝光峰→2700–3000 K 暖黄光，</text>
+<text x="440" y="411" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="600">  且全光谱连续饱满分毫不输日光！</text>
+<text x="440" y="431" font-size="9.6" fill="#18794e" text-anchor="start" font-weight="700">• 寿命高达 25,000–50,000 小时（每天亮 5 小时够用 15–27 年），</text>
+<text x="440" y="448" font-size="9.4" fill="#64748b" text-anchor="start">  唯一弱点跟磁铁一样怕闷热（灯罩散热差会加速驱动与光衰）！</text>
+</svg>

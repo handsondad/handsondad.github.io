@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="524" viewBox="0 0 760 524" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">平面镜前后z轴反转与大脑绕竖轴转身造成左右颠倒错觉的几何图解</title>
+<desc id="desc">左栏俯视图展示真实观察者面向北照镜时东西手与头脚均不互换，唯独垂直镜面的前后z轴反号；右栏对比镜像变换与绕竖轴180度旋转的坐标差异，结合纸片翻面实验与行列式负一的手性反转阐明左右错觉根源。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="523" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">一、镜子根本没分左右！它真正反转的唯一坐标轴是“前后深度 z”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：东还是东、上还是上，唯独垂直镜面的 z 轴反号 · 右：大脑绕竖轴转身错觉与手性反转（det = -1）</text>
+<rect x="20" y="66" width="360" height="444" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="78.0" width="336" height="24" rx="12.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="200.0" y="94.3" font-size="11.8" fill="#1d6fa5" text-anchor="middle" font-weight="600">A · 光学真相：东仍是东、上仍是上，只翻了前后！</text>
+<rect x="32" y="112" width="336" height="224" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.2"/>
+<line x1="52.0" y1="222.0" x2="348.0" y2="222.0" stroke="#1d6fa5" stroke-width="4.0"/>
+<line x1="60.0" y1="222.0" x2="52.0" y2="212.0" stroke="#93c5fd" stroke-width="1.3"/>
+<line x1="78.0" y1="222.0" x2="70.0" y2="212.0" stroke="#93c5fd" stroke-width="1.3"/>
+<line x1="96.0" y1="222.0" x2="88.0" y2="212.0" stroke="#93c5fd" stroke-width="1.3"/>
+<line x1="114.0" y1="222.0" x2="106.0" y2="212.0" stroke="#93c5fd" stroke-width="1.3"/>
+<line x1="132.0" y1="222.0" x2="124.0" y2="212.0" stroke="#93c5fd" stroke-width="1.3"/>
+<line x1="150.0" y1="222.0" x2="142.0" y2="212.0" stroke="#93c5fd" stroke-width="1.3"/>
+<line x1="168.0" y1="222.0" x2="160.0" y2="212.0" stroke="#93c5fd" stroke-width="1.3"/>
+<line x1="186.0" y1="222.0" x2="178.0" y2="212.0" stroke="#93c5fd" stroke-width="1.3"/>
+<line x1="204.0" y1="222.0" x2="196.0" y2="212.0" stroke="#93c5fd" stroke-width="1.3"/>
+<line x1="222.0" y1="222.0" x2="214.0" y2="212.0" stroke="#93c5fd" stroke-width="1.3"/>
+<line x1="240.0" y1="222.0" x2="232.0" y2="212.0" stroke="#93c5fd" stroke-width="1.3"/>
+<line x1="258.0" y1="222.0" x2="250.0" y2="212.0" stroke="#93c5fd" stroke-width="1.3"/>
+<line x1="276.0" y1="222.0" x2="268.0" y2="212.0" stroke="#93c5fd" stroke-width="1.3"/>
+<line x1="294.0" y1="222.0" x2="286.0" y2="212.0" stroke="#93c5fd" stroke-width="1.3"/>
+<line x1="312.0" y1="222.0" x2="304.0" y2="212.0" stroke="#93c5fd" stroke-width="1.3"/>
+<line x1="330.0" y1="222.0" x2="322.0" y2="212.0" stroke="#93c5fd" stroke-width="1.3"/>
+<text x="200" y="206" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">平面镜 xy 镜面（z = 0）</text>
+<rect x="138" y="124" width="116" height="36" rx="18" fill="#fef1e8" stroke="#c25014" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="196" y="146" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">镜中虚像 (x, y, -z)</text>
+<line x1="196.0" y1="160.0" x2="196.0" y2="192.0" stroke="#dc2626" stroke-width="2.4" marker-end="url(#arr-orange)"/>
+<text x="208" y="182" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">鼻尖朝南(-z)</text>
+<text x="82" y="146" font-size="11.5" fill="#475569" text-anchor="middle" font-weight="600">西侧手(-x)</text>
+<text x="320" y="146" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">东侧手(+x)</text>
+<line x1="320.0" y1="156.0" x2="320.0" y2="290.0" stroke="#18794e" stroke-width="1.5" stroke-dasharray="3 3"/>
+<rect x="138" y="286" width="116" height="36" rx="18" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.6"/>
+<text x="196" y="308" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">真实的你 (x, y, +z)</text>
+<line x1="196.0" y1="286.0" x2="196.0" y2="250.0" stroke="#1d6fa5" stroke-width="2.4" marker-end="url(#arr-blue)"/>
+<text x="208" y="268" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">鼻尖朝北(+z)</text>
+<text x="82" y="308" font-size="11.5" fill="#475569" text-anchor="middle" font-weight="600">左手在西(-x)</text>
+<text x="320" y="308" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">右手在东(+x)</text>
+<rect x="32" y="348" width="336" height="148" rx="8" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.2"/>
+<text x="44" y="370" font-size="12.0" fill="#0f766e" text-anchor="start" font-weight="700">费曼一招戳破假象：横躺着照镜子会怎样？</text>
+<text x="44" y="394" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">• 你侧躺在地板上照墙镜：头在左，镜里头仍在左；</text>
+<text x="44" y="416" font-size="11.5" fill="#1e293b" text-anchor="start">  右脸朝天花板，镜里右脸依然朝天花板！</text>
+<text x="44" y="440" font-size="11.5" fill="#1e293b" text-anchor="start">• 再站到地板镜上低头看：头在最高处，镜里头反倒</text>
+<text x="44" y="462" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">  钻进最深地底——这下居然变成“上下颠倒”了！</text>
+<text x="44" y="484" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">铁律：镜子永远只翻转垂直镜面的法向轴！</text>
+<rect x="394" y="66" width="346" height="444" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="406.0" y="78.0" width="322" height="24" rx="12.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="567.0" y="94.3" font-size="11.8" fill="#6d28d9" text-anchor="middle" font-weight="600">B · 破案：为什么人类偏偏怪它“左右颠倒”？</text>
+<rect x="406" y="112" width="322" height="184" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<circle cx="424" cy="132" r="10.5" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="424" y="136" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">1</text>
+<text x="442" y="136" font-size="12.0" fill="#6d28d9" text-anchor="start" font-weight="700">大脑的“绕竖轴转身”默认习惯</text>
+<text x="418" y="160" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">• 镜子真实干的事：只翻前后 (x, y, z) → (x, y, -z)</text>
+<text x="418" y="182" font-size="11.5" fill="#1e293b" text-anchor="start">• 大脑拿谁去比对？你默认想象自己绕到镜后，</text>
+<text x="418" y="204" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">  【绕头脚竖轴 y 转身 180°】：(x, y, z) → (-x, y, -z)</text>
+<text x="418" y="226" font-size="11.5" fill="#64748b" text-anchor="start">  （绝没人想象自己倒立翻跟头绕腰轴转 180°！）</text>
+<text x="418" y="250" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">• 两者一减：(x, y, -z) 对比 (-x, y, -z) → 只剩 x 反号！</text>
+<text x="418" y="272" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">• 加之人脸左右对称，大脑便把前后反号栽赃给左右！</text>
+<rect x="406" y="308" width="322" height="188" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<circle cx="424" cy="328" r="10.5" fill="#ffffff" stroke="#c25014" stroke-width="1.2"/>
+<text x="424" y="332" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="442" y="332" font-size="12.0" fill="#c25014" text-anchor="start" font-weight="700">纸片翻面实验 + 右手变左手的拓扑死结</text>
+<text x="418" y="356" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">• 拿张写字的纸先冲自己，再翻过去照镜子：</text>
+<text x="418" y="378" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">  绕竖边翻过去 → 字左右反；绕横边翻 → 字上下反！</text>
+<text x="418" y="400" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">  在透明塑料片上写字直接照，根本不用翻，一分不反！</text>
+<text x="418" y="426" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">• 数学本质：镜像矩阵 det(M) = -1（空间手性反转），</text>
+<text x="418" y="448" font-size="11.5" fill="#1e293b" text-anchor="start">  任何三维刚体旋转 det(R) = +1 都转不回去——</text>
+<text x="418" y="470" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">  就像右手套唯有“由里往外翻面”才能变成左手套！</text>
+</svg>

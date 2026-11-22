@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="532" viewBox="0 0 760 532" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">广义与狭义相对论地球轨道时钟频移曲线、GPS每天38微秒修正及33厘米与1毫米光钟实测图解</title>
+<desc id="desc">左图精确绘制圆轨道卫星广义相对论快钟、狭义相对论慢钟与净频移曲线，标出3170公里抵消高度与20200公里GPS轨道净快38微秒每天；右图汇总太空星座、2010年33厘米铝离子钟与2022年1毫米锶光晶格钟三级实测。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="531" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">三、引力把时间拽慢：从手机 GPS 每天快 38 微秒到 1 毫米原子钟</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">广义相对论揭示：越靠近大质量天体（引力势越深）时间走得越慢；轨道卫星同时受“引力快钟”与“高速慢钟”拉锯</text>
+<rect x="20" y="64" width="440" height="452" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="74.0" width="392" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="230.0" y="89.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">A · 地球圆轨道时钟日频移曲线（精确代入 GM_E 与 c² 计算）</text>
+<rect x="76.0" y="122.0" width="358.0" height="246.0" fill="#f8fafc" stroke="#e2e8f0"/>
+<line x1="76.0" y1="340.7" x2="434.0" y2="340.7" stroke="#e2e8f0" stroke-width="1"/>
+<text x="70.0" y="344.7" font-size="10" fill="#64748b" text-anchor="end">-20</text>
+<line x1="76.0" y1="286.0" x2="434.0" y2="286.0" stroke="#475569" stroke-width="1.4"/>
+<text x="70.0" y="290.0" font-size="10" fill="#64748b" text-anchor="end">0</text>
+<line x1="76.0" y1="231.3" x2="434.0" y2="231.3" stroke="#e2e8f0" stroke-width="1"/>
+<text x="70.0" y="235.3" font-size="10" fill="#64748b" text-anchor="end">+20</text>
+<line x1="76.0" y1="176.7" x2="434.0" y2="176.7" stroke="#e2e8f0" stroke-width="1"/>
+<text x="70.0" y="180.7" font-size="10" fill="#64748b" text-anchor="end">+40</text>
+<line x1="76.0" y1="122.0" x2="434.0" y2="122.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="70.0" y="126.0" font-size="10" fill="#64748b" text-anchor="end">+60</text>
+<line x1="76.0" y1="122.0" x2="76.0" y2="368.0" stroke="#eef2f7" stroke-width="1"/>
+<text x="76.0" y="383.0" font-size="10" fill="#64748b" text-anchor="middle">0km</text>
+<line x1="150.6" y1="122.0" x2="150.6" y2="368.0" stroke="#eef2f7" stroke-width="1"/>
+<text x="150.6" y="383.0" font-size="10" fill="#64748b" text-anchor="middle">5000km</text>
+<line x1="225.2" y1="122.0" x2="225.2" y2="368.0" stroke="#eef2f7" stroke-width="1"/>
+<text x="225.2" y="383.0" font-size="10" fill="#64748b" text-anchor="middle">10万km</text>
+<line x1="299.8" y1="122.0" x2="299.8" y2="368.0" stroke="#eef2f7" stroke-width="1"/>
+<text x="299.8" y="383.0" font-size="10" fill="#64748b" text-anchor="middle">15万km</text>
+<line x1="374.3" y1="122.0" x2="374.3" y2="368.0" stroke="#eef2f7" stroke-width="1"/>
+<text x="374.3" y="383.0" font-size="10" fill="#64748b" text-anchor="middle">20万km</text>
+<text x="255.0" y="400.0" font-size="11" fill="#475569" text-anchor="middle" font-weight="600">卫星离地轨道高度 h →</text>
+<text x="82.0" y="136.0" font-size="10.5" fill="#475569" text-anchor="start" font-weight="600">相对地面时钟：微秒/天 (μs/d)</text>
+<polyline points="79.73,279.81 83.46,274.06 87.19,268.72 90.92,263.74 94.65,259.09 98.38,254.73 102.10,250.64 105.83,246.80 109.56,243.18 113.29,239.76 117.02,236.53 120.75,233.47 124.48,230.57 128.21,227.82 131.94,225.20 135.67,222.71 139.40,220.33 143.12,218.07 146.85,215.91 150.58,213.84 154.31,211.86 158.04,209.96 161.77,208.15 165.50,206.40 169.23,204.73 172.96,203.12 176.69,201.57 180.42,200.08 184.15,198.64 187.88,197.26 191.60,195.92 195.33,194.63 199.06,193.39 202.79,192.18 206.52,191.02 210.25,189.89 213.98,188.81 217.71,187.75 221.44,186.73 225.17,185.74 228.90,184.77 232.62,183.84 236.35,182.94 240.08,182.06 243.81,181.20 247.54,180.37 251.27,179.56 255.00,178.78 258.73,178.01 262.46,177.27 266.19,176.54 269.92,175.84 273.65,175.15 277.38,174.48 281.10,173.82 284.83,173.18 288.56,172.56 292.29,171.95 296.02,171.36 299.75,170.78 303.48,170.21 307.21,169.66 310.94,169.12 314.67,168.59 318.40,168.07 322.12,167.57 325.85,167.07 329.58,166.59 333.31,166.11 337.04,165.65 340.77,165.20 344.50,164.75 348.23,164.31 351.96,163.89 355.69,163.47 359.42,163.06 363.15,162.65 366.88,162.26 370.60,161.87 374.33,161.49 378.06,161.12 381.79,160.75 385.52,160.39 389.25,160.04 392.98,159.70 396.71,159.36 400.44,159.02 404.17,158.69 407.90,158.37 411.62,158.06 415.35,157.74 419.08,157.44 422.81,157.14 426.54,156.84 430.27,156.55 434.00,156.26" fill="none" stroke="#18794e" stroke-width="2" stroke-dasharray="5 3"/>
+<polyline points="79.73,365.01 83.46,362.14 87.19,359.47 90.92,356.98 94.65,354.65 98.38,352.47 102.10,350.43 105.83,348.51 109.56,346.70 113.29,344.99 117.02,343.37 120.75,341.84 124.48,340.39 128.21,339.01 131.94,337.71 135.67,336.46 139.40,335.27 143.12,334.14 146.85,333.06 150.58,332.03 154.31,331.04 158.04,330.09 161.77,329.18 165.50,328.31 169.23,327.47 172.96,326.66 176.69,325.89 180.42,325.15 184.15,324.43 187.88,323.73 191.60,323.07 195.33,322.42 199.06,321.80 202.79,321.20 206.52,320.62 210.25,320.05 213.98,319.51 217.71,318.98 221.44,318.47 225.17,317.97 228.90,317.49 232.62,317.03 236.35,316.57 240.08,316.13 243.81,315.71 247.54,315.29 251.27,314.89 255.00,314.50 258.73,314.11 262.46,313.74 266.19,313.38 269.92,313.02 273.65,312.68 277.38,312.34 281.10,312.02 284.83,311.70 288.56,311.39 292.29,311.08 296.02,310.79 299.75,310.50 303.48,310.21 307.21,309.94 310.94,309.67 314.67,309.40 318.40,309.14 322.12,308.89 325.85,308.64 329.58,308.40 333.31,308.16 337.04,307.93 340.77,307.70 344.50,307.48 348.23,307.26 351.96,307.05 355.69,306.84 359.42,306.64 363.15,306.43 366.88,306.24 370.60,306.04 374.33,305.85 378.06,305.67 381.79,305.48 385.52,305.30 389.25,305.13 392.98,304.95 396.71,304.78 400.44,304.62 404.17,304.45 407.90,304.29 411.62,304.13 415.35,303.98 419.08,303.83 422.81,303.68 426.54,303.53 430.27,303.38 434.00,303.24" fill="none" stroke="#b91c1c" stroke-width="2" stroke-dasharray="4 3"/>
+<polyline points="79.73,358.82 83.46,350.20 87.19,342.19 90.92,334.72 94.65,327.74 98.38,321.21 102.10,315.07 105.83,309.31 109.56,303.87 113.29,298.75 117.02,293.90 120.75,289.31 124.48,284.96 128.21,280.83 131.94,276.91 135.67,273.17 139.40,269.61 143.12,266.21 146.85,262.97 150.58,259.86 154.31,256.90 158.04,254.05 161.77,251.33 165.50,248.71 169.23,246.20 172.96,243.78 176.69,241.46 180.42,239.22 184.15,237.07 187.88,234.99 191.60,232.99 195.33,231.05 199.06,229.19 202.79,227.38 206.52,225.64 210.25,223.95 213.98,222.31 217.71,220.73 221.44,219.20 225.17,217.71 228.90,216.27 232.62,214.87 236.35,213.51 240.08,212.19 243.81,210.91 247.54,209.66 251.27,208.45 255.00,207.27 258.73,206.12 262.46,205.01 266.19,203.92 269.92,202.86 273.65,201.83 277.38,200.82 281.10,199.84 284.83,198.88 288.56,197.95 292.29,197.04 296.02,196.15 299.75,195.28 303.48,194.43 307.21,193.60 310.94,192.78 314.67,191.99 318.40,191.22 322.12,190.46 325.85,189.72 329.58,188.99 333.31,188.28 337.04,187.58 340.77,186.90 344.50,186.23 348.23,185.58 351.96,184.94 355.69,184.31 359.42,183.69 363.15,183.09 366.88,182.50 370.60,181.92 374.33,181.35 378.06,180.79 381.79,180.24 385.52,179.70 389.25,179.17 392.98,178.65 396.71,178.14 400.44,177.64 404.17,177.15 407.90,176.66 411.62,176.19 415.35,175.72 419.08,175.26 422.81,174.81 426.54,174.37 430.27,173.93 434.00,173.50" fill="none" stroke="#1d6fa5" stroke-width="2.8"/>
+<circle cx="123.6" cy="286.0" r="4.5" fill="#6d28d9"/>
+<text x="129.6" y="301.0" font-size="10" fill="#6d28d9" text-anchor="start" font-weight="700" class="halo">抵消高度 h ≈ 3,170 km (净差=0)</text>
+<line x1="377.3" y1="122.0" x2="377.3" y2="368.0" stroke="#c25014" stroke-width="1.2" stroke-dasharray="3 3"/>
+<circle cx="377.3" cy="161.4" r="4" fill="#18794e"/>
+<circle cx="377.3" cy="305.7" r="4" fill="#b91c1c"/>
+<circle cx="377.3" cy="181.0" r="5" fill="#1d6fa5"/>
+<text x="245" y="160.5" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="700" class="halo">广义相对论（高处引力弱）：约 +45 μs/天</text>
+<text x="250" y="327.3" font-size="10.5" fill="#b91c1c" text-anchor="start" font-weight="700" class="halo">狭义相对论（3.9 km/s 高速）：约 −7 μs/天</text>
+<text x="369.3" y="196.0" font-size="11" fill="#1d6fa5" text-anchor="end" font-weight="700" class="halo">GPS 净快 ≈ +38 μs/天</text>
+<rect x="34" y="412" width="412" height="90" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="46" y="433" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">为什么手机地图没导航进河里？（NASA / Ashby 2003）</text>
+<text x="46" y="454" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">• 每天快 38 微秒 × 光速 c ≈ 每天累积约 11.4 公里的测距狂漂！</text>
+<text x="46" y="474" font-size="10.8" fill="#1e293b" text-anchor="start">• 工程师在卫星发射前，故意把星载 10.23 MHz 原子钟基准调慢</text>
+<text x="46" y="492" font-size="10.8" fill="#1e293b" text-anchor="start">  至 10.22999999543 MHz，上天入轨后刚好与地面分毫不差！</text>
+<rect x="474" y="64" width="266" height="452" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="488.0" y="74.0" width="238" height="22" rx="11.0" fill="#f0fdfa" stroke="#0f766e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="607.0" y="89.0" font-size="12" fill="#0f766e" text-anchor="middle" font-weight="600">B · 从太空到 1 毫米：实测三级跳</text>
+<rect x="488" y="108" width="238" height="120" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="500" y="129" font-size="11.8" fill="#1d6fa5" text-anchor="start" font-weight="700">第 1 级 · 太空导航星座</text>
+<text x="500" y="148" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">高度差 Δh ≈ 20,200 km</text>
+<text x="500" y="170" font-size="10.8" fill="#1e293b" text-anchor="start">国际空间站 (h≈400 km) 因飞得</text>
+<text x="500" y="189" font-size="10.8" fill="#1e293b" text-anchor="start">太快，宇航员反而比地面略年轻；</text>
+<text x="500" y="208" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="600">GPS 高轨引力更弱，净快 38 μs/天。</text>
+<rect x="488" y="240" width="238" height="120" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="500" y="261" font-size="11.8" fill="#c25014" text-anchor="start" font-weight="700">第 2 级 · 桌面抬高一级台阶</text>
+<text x="500" y="280" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">高度差 Δh = 33 厘米 (NIST 2010)</text>
+<text x="500" y="302" font-size="10.8" fill="#1e293b" text-anchor="start">Chou 等用两台单铝离子 (Al⁺) 光钟</text>
+<text x="500" y="321" font-size="10.8" fill="#1e293b" text-anchor="start">实测：把上面那台仅垫高 33 cm，</text>
+<text x="500" y="340" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="600">走时立刻变快（79年快约 90 纳秒）！</text>
+<rect x="488" y="372" width="238" height="120" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="500" y="393" font-size="11.8" fill="#18794e" text-anchor="start" font-weight="700">第 3 级 · 一团原子云的上下两端</text>
+<text x="500" y="412" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">高度差 Δh = 1 毫米 (JILA 2022)</text>
+<text x="500" y="434" font-size="10.8" fill="#1e293b" text-anchor="start">叶军团队在 Nature 发表：在 1 mm</text>
+<text x="500" y="453" font-size="10.8" fill="#1e293b" text-anchor="start">超冷锶原子晶格内部，直接测出顶部</text>
+<text x="500" y="472" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="600">比底部走得快的引力红移 (10⁻²¹)！</text>
+</svg>

@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="536" viewBox="0 0 760 536" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">脊椎动物倒置视网膜、中央凹让路与生理盲点及四类感光细胞吸收光谱图解</title>
+<desc id="desc">左图展示光线穿过内层神经元到达视杆与视锥、0.35毫米中央凹神经层分开以及鼻侧15度视盘产生颞侧视野盲点；右图依据Bowmaker与Dartnall(1980)绘制420、498、534、563纳米四条感光曲线。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="535" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">二、“装反了”的视网膜、中央凹超清特区与四条感光光谱曲线</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">组织学实测人眼约含 9,200 万视杆与 460 万视锥（Curcio 1990）：夜视靠人海战术，看字认色全靠针尖大的中央凹</text>
+<rect x="20" y="64" width="384" height="456" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="74.0" width="352" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="210.0" y="89.0" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="600">A · 倒置视网膜、中央凹让路与鼻侧 15° 盲点</text>
+<rect x="34" y="108" width="356" height="206" rx="8" fill="#fffbeb" stroke="#fde68a" stroke-width="1"/>
+<line x1="72" y1="120" x2="72" y2="162" stroke="#b45309" stroke-width="1.8" marker-end="url(#arr-orange)"/>
+<line x1="168" y1="120" x2="168" y2="162" stroke="#b45309" stroke-width="1.8" marker-end="url(#arr-orange)"/>
+<line x1="256" y1="120" x2="256" y2="162" stroke="#b45309" stroke-width="1.8" marker-end="url(#arr-orange)"/>
+<text x="168" y="118" font-size="10.2" fill="#b45309" text-anchor="middle" font-weight="700">入射光线（先穿电线，最后才撞感光层！）</text>
+<rect x="44" y="276" width="248" height="16" rx="3" fill="#334155"/>
+<rect x="326" y="276" width="52" height="16" rx="3" fill="#334155"/>
+<text x="168" y="288" font-size="9.8" fill="#f8fafc" text-anchor="middle">脉络膜与色素上皮 RPE（吸收杂散光+回收视黄醛）</text>
+<rect x="52" y="242" width="5" height="32" rx="2" fill="#475569"/>
+<rect x="62" y="242" width="5" height="32" rx="2" fill="#475569"/>
+<rect x="72" y="242" width="5" height="32" rx="2" fill="#475569"/>
+<rect x="82" y="242" width="5" height="32" rx="2" fill="#475569"/>
+<rect x="92" y="242" width="5" height="32" rx="2" fill="#475569"/>
+<rect x="102" y="242" width="5" height="32" rx="2" fill="#475569"/>
+<rect x="112" y="242" width="5" height="32" rx="2" fill="#475569"/>
+<rect x="122" y="242" width="5" height="32" rx="2" fill="#475569"/>
+<rect x="132" y="242" width="5" height="32" rx="2" fill="#475569"/>
+<rect x="142" y="242" width="5" height="32" rx="2" fill="#475569"/>
+<rect x="152" y="242" width="5" height="32" rx="2" fill="#18794e"/>
+<rect x="162" y="242" width="5" height="32" rx="2" fill="#18794e"/>
+<rect x="172" y="242" width="5" height="32" rx="2" fill="#18794e"/>
+<rect x="182" y="242" width="5" height="32" rx="2" fill="#18794e"/>
+<rect x="192" y="242" width="5" height="32" rx="2" fill="#18794e"/>
+<rect x="202" y="242" width="5" height="32" rx="2" fill="#18794e"/>
+<rect x="212" y="242" width="5" height="32" rx="2" fill="#475569"/>
+<rect x="222" y="242" width="5" height="32" rx="2" fill="#475569"/>
+<rect x="232" y="242" width="5" height="32" rx="2" fill="#475569"/>
+<rect x="242" y="242" width="5" height="32" rx="2" fill="#475569"/>
+<rect x="252" y="242" width="5" height="32" rx="2" fill="#475569"/>
+<rect x="262" y="242" width="5" height="32" rx="2" fill="#475569"/>
+<rect x="272" y="242" width="5" height="32" rx="2" fill="#475569"/>
+<rect x="282" y="242" width="5" height="32" rx="2" fill="#475569"/>
+<rect x="332" y="242" width="5" height="32" rx="2" fill="#475569"/>
+<rect x="342" y="242" width="5" height="32" rx="2" fill="#475569"/>
+<rect x="352" y="242" width="5" height="32" rx="2" fill="#475569"/>
+<rect x="362" y="242" width="5" height="32" rx="2" fill="#475569"/>
+<rect x="372" y="242" width="5" height="32" rx="2" fill="#475569"/>
+<path d="M 46,184 L 132,184 Q 152,226 176,228 Q 200,226 220,184 L 296,184 L 308,308" fill="none" stroke="#1d6fa5" stroke-width="2.5"/>
+<path d="M 378,184 L 322,184 L 314,308" fill="none" stroke="#1d6fa5" stroke-width="2.5"/>
+<text x="92" y="178" font-size="10" fill="#1d6fa5" text-anchor="middle" font-weight="700">神经节/双极层</text>
+<text x="176" y="212" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="700" class="halo">中央凹 (0.35 mm)</text>
+<text x="176" y="226" font-size="9.8" fill="#0f172a" text-anchor="middle" class="halo">神经层向两侧掀开!</text>
+<text x="310" y="174" font-size="10.2" fill="#b91c1c" text-anchor="middle" font-weight="700">视盘穿出点</text>
+<text x="310" y="304" font-size="10" fill="#1d6fa5" text-anchor="middle" font-weight="700">→ 视神经束</text>
+<text x="36" y="336" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">• 为什么“装反”也有道理？感光细胞紧贴底层色素上皮 (RPE)</text>
+<text x="36" y="355" font-size="10.6" fill="#1e293b" text-anchor="start">  和脉络膜丰富毛细血管，才能极速供氧并每秒翻新感光盘膜！</text>
+<text x="36" y="378" font-size="10.8" fill="#18794e" text-anchor="start" font-weight="700">• 针尖大的中央凹（直径 ~0.35 mm ≈ 视角 1.25°）：无视杆、无血管，</text>
+<text x="36" y="397" font-size="10.6" fill="#1e293b" text-anchor="start">  视锥密度飙到 199,000 个/mm²！你此刻能看清这行字全靠它。</text>
+<text x="36" y="420" font-size="10.8" fill="#b91c1c" text-anchor="start" font-weight="700">• 生理盲点在哪？视神经在中央凹鼻侧约 15° 穿出眼球（无感光</text>
+<text x="36" y="439" font-size="10.6" fill="#1e293b" text-anchor="start">  细胞），经晶状体交叉投射，盲点落在每只眼外侧（颞侧）视野</text>
+<text x="36" y="458" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="600">  约 15° 处！平时察觉不到，是因为双眼互补+大脑自动修图填补。</text>
+<text x="36" y="484" font-size="10.6" fill="#475569" text-anchor="start" font-weight="600">• 数量澄清（Curcio 1990 金标准）：人眼平均约 9,200 万视杆</text>
+<text x="36" y="502" font-size="10.5" fill="#64748b" text-anchor="start">  + 460 万视锥（约 20 : 1，老教材常引早期估算 1.2 亿与 600 万）。</text>
+<rect x="418" y="64" width="322" height="456" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="432.0" y="74.0" width="294" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="579.0" y="89.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">B · 四种感光细胞归一化光谱（Bowmaker 1980）</text>
+<rect x="456.0" y="122.0" width="262.0" height="192.0" fill="#f8fafc" stroke="#e2e8f0"/>
+<line x1="472.4" y1="122.0" x2="472.4" y2="314.0" stroke="#eef2f7" stroke-width="1"/>
+<text x="472.4" y="328.0" font-size="9.8" fill="#64748b" text-anchor="middle">400</text>
+<line x1="513.3" y1="122.0" x2="513.3" y2="314.0" stroke="#eef2f7" stroke-width="1"/>
+<text x="513.3" y="328.0" font-size="9.8" fill="#64748b" text-anchor="middle">450</text>
+<line x1="554.2" y1="122.0" x2="554.2" y2="314.0" stroke="#eef2f7" stroke-width="1"/>
+<text x="554.2" y="328.0" font-size="9.8" fill="#64748b" text-anchor="middle">500</text>
+<line x1="595.2" y1="122.0" x2="595.2" y2="314.0" stroke="#eef2f7" stroke-width="1"/>
+<text x="595.2" y="328.0" font-size="9.8" fill="#64748b" text-anchor="middle">550</text>
+<line x1="636.1" y1="122.0" x2="636.1" y2="314.0" stroke="#eef2f7" stroke-width="1"/>
+<text x="636.1" y="328.0" font-size="9.8" fill="#64748b" text-anchor="middle">600</text>
+<line x1="677.1" y1="122.0" x2="677.1" y2="314.0" stroke="#eef2f7" stroke-width="1"/>
+<text x="677.1" y="328.0" font-size="9.8" fill="#64748b" text-anchor="middle">650</text>
+<text x="587.0" y="344.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">光波波长 λ (nm) →</text>
+<polyline points="456.00,226.82 459.27,214.46 462.55,201.92 465.82,189.53 469.10,177.67 472.38,166.73 475.65,157.11 478.93,149.15 482.20,143.17 485.48,139.40 488.75,138.01 492.02,138.68 495.30,140.93 498.57,144.70 501.85,149.88 505.12,156.33 508.40,163.90 511.68,172.40 514.95,181.62 518.23,191.36 521.50,201.41 524.77,211.57 528.05,221.65 531.33,231.49 534.60,240.95 537.88,249.91 541.15,258.28 544.42,265.99 547.70,273.01 550.98,279.32 554.25,284.92 557.52,289.84 560.80,294.11 564.08,297.77 567.35,300.87 570.62,303.48 573.90,305.65 577.17,307.43 580.45,308.88 583.73,310.04 587.00,310.97 590.27,311.70 593.55,312.27 596.83,312.71 600.10,313.05 603.38,313.30 606.65,313.49 609.92,313.64 613.20,313.74 616.48,313.82 619.75,313.87 623.02,313.91 626.30,313.94 629.58,313.96 632.85,313.97 636.12,313.98 639.40,313.99 642.67,313.99 645.95,313.99 649.23,314.00 652.50,314.00 655.77,314.00 659.05,314.00 662.33,314.00 665.60,314.00 668.88,314.00 672.15,314.00 675.42,314.00 678.70,314.00 681.98,314.00 685.25,314.00 688.52,314.00 691.80,314.00 695.08,314.00 698.35,314.00 701.62,314.00 704.90,314.00 708.17,314.00 711.45,314.00 714.73,314.00 718.00,314.00" fill="none" stroke="#2563eb" stroke-width="2.3"/>
+<circle cx="489.0" cy="138.0" r="3.5" fill="#2563eb"/>
+<text x="483.0" y="132.0" font-size="9.8" fill="#2563eb" text-anchor="middle" font-weight="700" class="halo">S 蓝锥 420nm</text>
+<polyline points="456.00,310.51 459.27,309.46 462.55,308.15 465.82,306.54 469.10,304.56 472.38,302.17 475.65,299.31 478.93,295.92 482.20,291.94 485.48,287.34 488.75,282.07 492.02,276.10 495.30,269.41 498.57,262.03 501.85,253.96 505.12,245.28 508.40,236.04 511.68,226.37 514.95,216.38 518.23,206.23 521.50,196.11 524.77,186.20 528.05,176.70 531.33,167.84 534.60,159.80 537.88,152.79 541.15,146.99 544.42,142.54 547.70,139.56 550.98,138.13 554.25,138.22 557.52,139.56 560.80,142.08 564.08,145.74 567.35,150.47 570.62,156.16 573.90,162.70 577.17,169.98 580.45,177.86 583.73,186.20 587.00,194.85 590.27,203.69 593.55,212.58 596.83,221.40 600.10,230.04 603.38,238.40 606.65,246.40 609.92,253.96 613.20,261.06 616.48,267.63 619.75,273.67 623.02,279.17 626.30,284.13 629.58,288.55 632.85,292.47 636.12,295.92 639.40,298.92 642.67,301.50 645.95,303.72 649.23,305.60 652.50,307.18 655.77,308.51 659.05,309.61 662.33,310.51 665.60,311.24 668.88,311.84 672.15,312.32 675.42,312.70 678.70,313.00 681.98,313.24 685.25,313.42 688.52,313.57 691.80,313.68 695.08,313.76 698.35,313.82 701.62,313.87 704.90,313.91 708.17,313.93 711.45,313.95 714.73,313.97 718.00,313.98" fill="none" stroke="#475569" stroke-width="2.3" stroke-dasharray="5 3"/>
+<circle cx="552.3" cy="138.0" r="3.5" fill="#475569"/>
+<text x="538.3" y="130.0" font-size="9.8" fill="#475569" text-anchor="middle" font-weight="700" class="halo">视杆 498nm</text>
+<polyline points="456.00,313.34 459.27,313.12 462.55,312.84 465.82,312.48 469.10,312.02 472.38,311.44 475.65,310.71 478.93,309.82 482.20,308.71 485.48,307.37 488.75,305.75 492.02,303.81 495.30,301.50 498.57,298.79 501.85,295.64 505.12,291.99 508.40,287.82 511.68,283.09 514.95,277.79 518.23,271.89 521.50,265.41 524.77,258.34 528.05,250.73 531.33,242.62 534.60,234.08 537.88,225.19 541.15,216.05 544.42,206.79 547.70,197.53 550.98,188.43 554.25,179.64 557.52,171.31 560.80,163.62 564.08,156.69 567.35,150.70 570.62,145.74 573.90,141.95 577.17,139.39 580.45,138.13 583.73,138.16 587.00,139.25 590.27,141.35 593.55,144.44 596.83,148.46 600.10,153.33 603.38,158.98 606.65,165.31 609.92,172.23 613.20,179.62 616.48,187.38 619.75,195.39 623.02,203.56 626.30,211.76 629.58,219.92 632.85,227.94 636.12,235.73 639.40,243.24 642.67,250.41 645.95,257.19 649.23,263.55 652.50,269.45 655.77,274.90 659.05,279.89 662.33,284.41 665.60,288.49 668.88,292.13 672.15,295.37 675.42,298.22 678.70,300.71 681.98,302.87 685.25,304.74 688.52,306.34 691.80,307.70 695.08,308.85 698.35,309.82 701.62,310.62 704.90,311.28 708.17,311.83 711.45,312.28 714.73,312.64 718.00,312.94" fill="none" stroke="#16a34a" stroke-width="2.3"/>
+<circle cx="581.9" cy="138.0" r="3.5" fill="#16a34a"/>
+<text x="573.9" y="116.0" font-size="9.8" fill="#16a34a" text-anchor="middle" font-weight="700" class="halo">M 绿锥 534nm</text>
+<polyline points="456.00,313.88 459.27,313.83 462.55,313.77 465.82,313.69 469.10,313.58 472.38,313.44 475.65,313.26 478.93,313.03 482.20,312.73 485.48,312.36 488.75,311.89 492.02,311.31 495.30,310.59 498.57,309.70 501.85,308.63 505.12,307.33 508.40,305.77 511.68,303.92 514.95,301.74 518.23,299.19 521.50,296.24 524.77,292.84 528.05,288.97 531.33,284.59 534.60,279.69 537.88,274.25 541.15,268.26 544.42,261.74 547.70,254.70 550.98,247.17 554.25,239.22 557.52,230.89 560.80,222.28 564.08,213.47 567.35,204.58 570.62,195.73 573.90,187.05 577.17,178.68 580.45,170.75 583.73,163.40 587.00,156.78 590.27,150.99 593.55,146.17 596.83,142.40 600.10,139.76 603.38,138.30 606.65,138.04 609.92,138.76 613.20,140.36 616.48,142.82 619.75,146.11 623.02,150.17 626.30,154.95 629.58,160.37 632.85,166.36 636.12,172.85 639.40,179.73 642.67,186.93 645.95,194.35 649.23,201.92 652.50,209.54 655.77,217.14 659.05,224.64 662.33,231.98 665.60,239.10 668.88,245.95 672.15,252.49 675.42,258.68 678.70,264.50 681.98,269.94 685.25,274.98 688.52,279.62 691.80,283.86 695.08,287.71 698.35,291.19 701.62,294.30 704.90,297.08 708.17,299.54 711.45,301.71 714.73,303.60 718.00,305.25" fill="none" stroke="#dc2626" stroke-width="2.3"/>
+<circle cx="605.7" cy="138.0" r="3.5" fill="#dc2626"/>
+<text x="631.7" y="132.0" font-size="9.8" fill="#dc2626" text-anchor="middle" font-weight="700" class="halo">L 红锥 563nm</text>
+<rect x="432" y="354" width="294" height="152" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="444" y="375" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">三条光谱曲线藏着三个日常谜底：</text>
+<text x="444" y="396" font-size="10.5" fill="#1e293b" text-anchor="start">① 为什么叫“红锥”其实偏黄绿？L 视锥峰值在 563 nm</text>
+<text x="444" y="414" font-size="10.5" fill="#1e293b" text-anchor="start">   (黄绿光)，大脑靠 L 与 M (534 nm) 的差值算红绿！</text>
+<text x="444" y="435" font-size="10.5" fill="#b91c1c" text-anchor="start" font-weight="700">② 红绿色盲由来：M 与 L 基因紧挨在 X 染色体上且</text>
+<text x="444" y="453" font-size="10.5" fill="#1e293b" text-anchor="start">   仅差 ~30 nm，重组易缺失（男性约 8% 红绿觉异常）。</text>
+<text x="444" y="474" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="700">③ 浦肯野夜间变色：月夜视锥下班，视杆 (498 nm) 接管，</text>
+<text x="444" y="492" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600">   长波红玫瑰在视杆眼里瞬间漆黑，蓝绿叶子反而发亮！</text>
+</svg>

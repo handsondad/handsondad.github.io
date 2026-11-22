@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">欧拉乘积公式唯一素因子分解筛与s=2巴塞尔级数收敛速度对比图</title>
+<desc id="desc">左图展示等比级数把素数因子展开为幂次和后，依算术基本定理不重不漏拼出全体自然数倒数幂并导出素数无穷多；右图实测s=2时前8个素数连乘P₈=1.6280已逼近π²/6的98.97%，显著快于前8项整数平方倒数和S₈=1.5274。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">一、欧拉的“黄金钥匙”：算术基本定理怎样把整数加法变成素数连乘？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">1737 年欧拉恒等式：左端按 1, 2, 3… 逐项相加，右端只挑素数 2, 3, 5… 彼此相乘</text>
+<rect x="20" y="64" width="388" height="440" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="76.0" width="360" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="214.0" y="91.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">A · 等比级数展开 × 唯一素因子分解筛</text>
+<rect x="34" y="110" width="360" height="58" rx="8" fill="#f8fafc" stroke="#93c5fd" stroke-width="1.2"/>
+<text x="214" y="132" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">ζ(s) = 1 + 1/2^s + 1/3^s + … = ∏ 1/(1 − p^(−s))</text>
+<text x="214" y="154" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">等比展开：1/(1 − p^(−s)) = 1 + 1/p^s + 1/p^(2s) + …</text>
+<rect x="34" y="180" width="360" height="54" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="46" y="200" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">素数 p = 2 括号</text>
+<text x="382" y="200" font-size="11.5" fill="#1d6fa5" text-anchor="end" font-weight="700">s=2 时 = 4/3</text>
+<rect x="46" y="206" width="64" height="22" rx="4" fill="#ffffff" stroke="#1d6fa5" stroke-width="0.9"/>
+<text x="78" y="221" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600" class="mono">1</text>
+<rect x="120" y="206" width="64" height="22" rx="4" fill="#ffffff" stroke="#1d6fa5" stroke-width="0.9"/>
+<text x="152" y="221" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600" class="mono">1/2^s</text>
+<rect x="194" y="206" width="64" height="22" rx="4" fill="#fff7ed" stroke="#c25014" stroke-width="1.6"/>
+<text x="226" y="221" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700" class="mono">1/4^s</text>
+<rect x="268" y="206" width="64" height="22" rx="4" fill="#ffffff" stroke="#1d6fa5" stroke-width="0.9"/>
+<text x="300" y="221" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600" class="mono">1/8^s</text>
+<text x="354" y="221" font-size="11.5" fill="#64748b" text-anchor="start" class="mono">+ …</text>
+<rect x="34" y="244" width="360" height="54" rx="7" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.1"/>
+<text x="46" y="264" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">素数 p = 3 括号</text>
+<text x="382" y="264" font-size="11.5" fill="#0f766e" text-anchor="end" font-weight="700">s=2 时 = 9/8</text>
+<rect x="46" y="270" width="64" height="22" rx="4" fill="#ffffff" stroke="#0f766e" stroke-width="0.9"/>
+<text x="78" y="285" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600" class="mono">1</text>
+<rect x="120" y="270" width="64" height="22" rx="4" fill="#fff7ed" stroke="#c25014" stroke-width="1.6"/>
+<text x="152" y="285" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700" class="mono">1/3^s</text>
+<rect x="194" y="270" width="64" height="22" rx="4" fill="#ffffff" stroke="#0f766e" stroke-width="0.9"/>
+<text x="226" y="285" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600" class="mono">1/9^s</text>
+<rect x="268" y="270" width="64" height="22" rx="4" fill="#ffffff" stroke="#0f766e" stroke-width="0.9"/>
+<text x="300" y="285" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600" class="mono">1/27^s</text>
+<text x="354" y="285" font-size="11.5" fill="#64748b" text-anchor="start" class="mono">+ …</text>
+<rect x="34" y="308" width="360" height="54" rx="7" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.1"/>
+<text x="46" y="328" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">素数 p = 5 括号</text>
+<text x="382" y="328" font-size="11.5" fill="#6d28d9" text-anchor="end" font-weight="700">s=2 时 = 25/24</text>
+<rect x="46" y="334" width="64" height="22" rx="4" fill="#fff7ed" stroke="#c25014" stroke-width="1.6"/>
+<text x="78" y="349" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700" class="mono">1</text>
+<rect x="120" y="334" width="64" height="22" rx="4" fill="#ffffff" stroke="#6d28d9" stroke-width="0.9"/>
+<text x="152" y="349" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600" class="mono">1/5^s</text>
+<rect x="194" y="334" width="64" height="22" rx="4" fill="#ffffff" stroke="#6d28d9" stroke-width="0.9"/>
+<text x="226" y="349" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600" class="mono">1/25^s</text>
+<rect x="268" y="334" width="64" height="22" rx="4" fill="#ffffff" stroke="#6d28d9" stroke-width="0.9"/>
+<text x="300" y="349" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600" class="mono">1/125^s</text>
+<text x="354" y="349" font-size="11.5" fill="#64748b" text-anchor="start" class="mono">+ …</text>
+<rect x="34" y="376" width="360" height="114" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="1.2"/>
+<text x="46" y="397" font-size="11.5" fill="#b45309" text-anchor="start" font-weight="700">橙框示范：从每个素数括号各挑一项相乘，拼出 1/12^s：</text>
+<text x="46" y="419" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700" class="mono">(1/4^s) × (1/3^s) × 1 × … = 1/(2²×3¹)^s = 1/12^s</text>
+<text x="46" y="442" font-size="11.5" fill="#1e293b" text-anchor="start">• 算术基本定理保证每个自然数 n 拆法唯一 → 绝不重算漏算！</text>
+<text x="46" y="464" font-size="11.5" fill="#b91c1c" text-anchor="start" font-weight="700">• 令 s → 1⁺：左端调和级数冲向 +∞，迫使右端素数必须无穷多</text>
+<text x="46" y="482" font-size="11.5" fill="#64748b" text-anchor="start">  （否则有限个有限分数相乘绝不可能等于无穷大！）</text>
+<rect x="420" y="64" width="320" height="440" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="434.0" y="76.0" width="292" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="580.0" y="91.0" font-size="12" fill="#18794e" text-anchor="middle" font-weight="600">B · s = 2 收敛实测：素数连乘 vs 逐项累加</text>
+<line x1="478" y1="342.0" x2="718" y2="342.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="470" y="346.0" font-size="11.5" fill="#64748b" text-anchor="end" class="mono">1.0</text>
+<line x1="478" y1="286.0" x2="718" y2="286.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="470" y="290.0" font-size="11.5" fill="#64748b" text-anchor="end" class="mono">1.2</text>
+<line x1="478" y1="230.0" x2="718" y2="230.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="470" y="234.0" font-size="11.5" fill="#64748b" text-anchor="end" class="mono">1.4</text>
+<line x1="478" y1="174.0" x2="718" y2="174.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="470" y="178.0" font-size="11.5" fill="#64748b" text-anchor="end" class="mono">1.6</text>
+<line x1="478.0" y1="132" x2="478.0" y2="356" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="478.0" y="374" font-size="11.5" fill="#64748b" text-anchor="middle" class="mono">1</text>
+<line x1="512.3" y1="132" x2="512.3" y2="356" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="512.3" y="374" font-size="11.5" fill="#64748b" text-anchor="middle" class="mono">2</text>
+<line x1="546.6" y1="132" x2="546.6" y2="356" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="546.6" y="374" font-size="11.5" fill="#64748b" text-anchor="middle" class="mono">3</text>
+<line x1="580.9" y1="132" x2="580.9" y2="356" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="580.9" y="374" font-size="11.5" fill="#64748b" text-anchor="middle" class="mono">4</text>
+<line x1="615.1" y1="132" x2="615.1" y2="356" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="615.1" y="374" font-size="11.5" fill="#64748b" text-anchor="middle" class="mono">5</text>
+<line x1="649.4" y1="132" x2="649.4" y2="356" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="649.4" y="374" font-size="11.5" fill="#64748b" text-anchor="middle" class="mono">6</text>
+<line x1="683.7" y1="132" x2="683.7" y2="356" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="683.7" y="374" font-size="11.5" fill="#64748b" text-anchor="middle" class="mono">7</text>
+<line x1="718.0" y1="132" x2="718.0" y2="356" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="718.0" y="374" font-size="11.5" fill="#64748b" text-anchor="middle" class="mono">8</text>
+<line x1="478" y1="132" x2="478" y2="356" stroke="#0f172a" stroke-width="1.4"/>
+<line x1="478" y1="356" x2="718" y2="356" stroke="#0f172a" stroke-width="1.4"/>
+<text x="598.0" y="392" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">参与计算的项数 / 素数个数 K</text>
+<line x1="478" y1="161.4" x2="718" y2="161.4" stroke="#18794e" stroke-width="1.8" stroke-dasharray="5 3"/>
+<text x="718" y="153.4" font-size="11.5" fill="#18794e" text-anchor="end" font-weight="700">精确极限 π²/6 ≈ 1.6449</text>
+<polyline points="478.0,342.0 512.3,272.0 546.6,240.9 580.9,223.4 615.1,212.2 649.4,204.4 683.7,198.7 718.0,194.3" fill="none" stroke="#1d6fa5" stroke-width="2.3"/>
+<polyline points="478.0,248.7 512.3,202.0 546.6,184.5 580.9,175.4 615.1,171.7 649.4,169.0 683.7,167.4 718.0,166.1" fill="none" stroke="#c25014" stroke-width="2.5"/>
+<circle cx="478.0" cy="342.0" r="3.8" fill="#1d6fa5"/>
+<circle cx="478.0" cy="248.7" r="4.0" fill="#c25014"/>
+<circle cx="512.3" cy="272.0" r="3.8" fill="#1d6fa5"/>
+<circle cx="512.3" cy="202.0" r="4.0" fill="#c25014"/>
+<circle cx="546.6" cy="240.9" r="3.8" fill="#1d6fa5"/>
+<circle cx="546.6" cy="184.5" r="4.0" fill="#c25014"/>
+<circle cx="580.9" cy="223.4" r="3.8" fill="#1d6fa5"/>
+<circle cx="580.9" cy="175.4" r="4.0" fill="#c25014"/>
+<circle cx="615.1" cy="212.2" r="3.8" fill="#1d6fa5"/>
+<circle cx="615.1" cy="171.7" r="4.0" fill="#c25014"/>
+<circle cx="649.4" cy="204.4" r="3.8" fill="#1d6fa5"/>
+<circle cx="649.4" cy="169.0" r="4.0" fill="#c25014"/>
+<circle cx="683.7" cy="198.7" r="3.8" fill="#1d6fa5"/>
+<circle cx="683.7" cy="167.4" r="4.0" fill="#c25014"/>
+<circle cx="718.0" cy="194.3" r="3.8" fill="#1d6fa5"/>
+<circle cx="718.0" cy="166.1" r="4.0" fill="#c25014"/>
+<text x="601.4" y="197.4" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">前 K 个素数连乘 P_K</text>
+<text x="598.0" y="234.2" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">前 K 个整数平方倒数和 S_K</text>
+<rect x="434" y="402" width="292" height="88" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="446" y="423" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">• 仅乘前 8 个素数 (2…19)：P₈ = 1.6280</text>
+<text x="446" y="444" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">  已逼近 π²/6 的 98.97%！</text>
+<text x="446" y="465" font-size="11.5" fill="#1d6fa5" text-anchor="start">• 前 8 项整数累加：S₈ = 1.5274（差 7.1%）</text>
+<text x="446" y="483" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">• 素数掌握着 ζ(s) 的全部基因密码！</text>
+</svg>

@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="548" viewBox="0 0 760 548" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">人体心脏四腔双循环12站路线、左右心室壁厚对比与四扇单向瓣膜压差开关原理图解</title>
+<desc id="desc">左栏按正面解剖视角展示上下腔静脉、右心房、三尖瓣、右心室（25 mmHg薄壁）、肺动脉瓣、肺泡换气、肺静脉、左心房、二尖瓣、左心室（120 mmHg厚壁）、主动脉瓣至全身毛细血管的12站单向闭环；右栏对比腱索乳头肌拉住的房室瓣与三兜袋半月瓣，并揭示冠状动脉在心室舒张期供血的机制。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="547" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<style>
+  @keyframes heartParcelLap {
+    0% { offset-distance: 0%; opacity: 1; }
+    92% { offset-distance: 100%; opacity: 1; }
+    100% { offset-distance: 100%; opacity: 0.92; }
+  }
+  .heart-rbc-parcel {
+    offset-path: path('M 164,242 L 164,344 C 164,368 216,368 216,328 L 216,162 C 216,124 232,118 248,162 L 298,242 L 298,344 C 298,368 248,368 248,326 L 248,162 C 248,104 388,108 402,192 C 414,268 408,410 342,462 C 272,494 146,488 112,428 C 86,376 102,242 164,242 Z');
+    offset-rotate: 0deg;
+    animation: heartParcelLap 9.5s cubic-bezier(0.32, 0.04, 0.25, 1) 1 forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .heart-rbc-parcel { animation: none !important; offset-distance: 62%; opacity: 1 !important; }
+  }
+</style>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">一滴血的双泵12站闭环：为什么一颗心脏要劈成左右两半、装四扇纯机械单向门？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">解剖正面视角（图左=右心低压肺泵 25 mmHg，图右=左心高压全身泵 120 mmHg）｜虚线=缺氧血，实线=富氧血</text>
+<rect x="20" y="68" width="424" height="466" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="80.0" width="396" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="232.0" y="95.0" font-size="10.0" fill="#1d6fa5" text-anchor="middle" font-weight="600">左看路线：右心送肺换气 + 左心送全身（流量严格相等 5.25 L/min）</text>
+<rect x="136" y="108" width="192" height="46" rx="10" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="232" y="125" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="700">⑥ 肺泡毛细血管网（换气站）</text>
+<text x="232" y="143" font-size="8.9" fill="#1d6fa5" text-anchor="middle" font-weight="600">排 CO₂ · 吸 O₂（低压护住 0.5 μm 肺泡膜）</text>
+<rect x="138.0" y="174.0" width="86" height="18" rx="9.0" fill="#ffffff" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="181.0" y="186.2" font-size="8.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">⑤ 肺动脉瓣 ↑</text>
+<rect x="240.0" y="174.0" width="86" height="18" rx="9.0" fill="#ffffff" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="283.0" y="186.2" font-size="8.5" fill="#dc2626" text-anchor="middle" font-weight="600">⑪ 主动脉瓣 ↑</text>
+<rect x="114" y="198" width="236" height="212" rx="16" fill="#fff8f8" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="227" y="290" width="10" height="114" rx="4" fill="#cbd5e1"/>
+<text x="232" y="422" font-size="8.5" fill="#475569" text-anchor="middle" font-weight="600">▲ 致密室间隔（彻底隔开左右血）</text>
+<line x1="120.0" y1="278.0" x2="344.0" y2="278.0" stroke="#94a3b8" stroke-width="2.0" stroke-dasharray="4 3"/>
+<rect x="122" y="208" width="84" height="58" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="164" y="226" font-size="10.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">② 右心房</text>
+<text x="164" y="242" font-size="8.8" fill="#1e293b" text-anchor="middle" class="mono">0–5 mmHg</text>
+<text x="164" y="257" font-size="8.3" fill="#64748b" text-anchor="middle">收全身静脉血</text>
+<rect x="122" y="294" width="100" height="98" rx="10" fill="#e0f2fe" stroke="#1d6fa5" stroke-width="2.0"/>
+<text x="172" y="316" font-size="10.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">④ 右心室</text>
+<text x="172" y="333" font-size="8.8" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">25 / 4 mmHg</text>
+<text x="172" y="350" font-size="8.6" fill="#1e293b" text-anchor="middle">薄肌壁 (~4 mm)</text>
+<text x="172" y="366" font-size="8.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">温柔推血入肺</text>
+<rect x="258" y="208" width="84" height="58" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1"/>
+<text x="300" y="226" font-size="10.0" fill="#dc2626" text-anchor="middle" font-weight="700">⑧ 左心房</text>
+<text x="300" y="242" font-size="8.8" fill="#1e293b" text-anchor="middle" class="mono">5–10 mmHg</text>
+<text x="300" y="257" font-size="8.3" fill="#64748b" text-anchor="middle">接4条肺静脉</text>
+<rect x="242" y="292" width="100" height="100" rx="12" fill="#fef2f2" stroke="#dc2626" stroke-width="5.0"/>
+<text x="292" y="316" font-size="10.2" fill="#dc2626" text-anchor="middle" font-weight="700">⑩ 左心室</text>
+<text x="292" y="333" font-size="8.8" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">120 / 8 mmHg</text>
+<text x="292" y="350" font-size="8.6" fill="#991b1b" text-anchor="middle" font-weight="700">厚肌壁 (~13 mm)</text>
+<text x="292" y="366" font-size="8.5" fill="#dc2626" text-anchor="middle" font-weight="600">强力泵遍全身！</text>
+<rect x="126.0" y="270.0" width="76" height="18" rx="9.0" fill="#ffffff" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="164.0" y="282.2" font-size="8.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">③ 三尖瓣 ↓</text>
+<rect x="262.0" y="270.0" width="76" height="18" rx="9.0" fill="#ffffff" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="300.0" y="282.2" font-size="8.5" fill="#dc2626" text-anchor="middle" font-weight="600">⑨ 二尖瓣 ↓</text>
+<rect x="126" y="444" width="214" height="52" rx="10" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
+<text x="233" y="463" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="700">⑫ 全身器官与冠脉毛细血管网</text>
+<text x="233" y="481" font-size="9.0" fill="#d97706" text-anchor="middle" font-weight="600">送出 O₂ 与养分 · 收走代谢 CO₂</text>
+<polyline points="126.0,470.0 58.0,470.0 58.0,236.0 118.0,236.0" fill="none" stroke="#1d6fa5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 3" marker-end="url(#arr-blue)"/>
+<text x="63" y="352" font-size="8.8" fill="#1d6fa5" text-anchor="start" font-weight="700">① 上/下腔</text>
+<text x="63" y="367" font-size="8.4" fill="#64748b" text-anchor="start">静脉(缺氧)</text>
+<polyline points="216.0,294.0 216.0,158.0" fill="none" stroke="#1d6fa5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 3" marker-end="url(#arr-blue)"/>
+<text x="132" y="166" font-size="8.3" fill="#1d6fa5" text-anchor="end" font-weight="700">肺动脉(流缺氧血!)</text>
+<polyline points="328.0,128.0 354.0,128.0 354.0,234.0 344.0,234.0" fill="none" stroke="#dc2626" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-orange)"/>
+<text x="360" y="126" font-size="8.3" fill="#dc2626" text-anchor="start" font-weight="700">⑦肺静脉</text>
+<text x="360" y="140" font-size="8.1" fill="#dc2626" text-anchor="start">(流富氧血!)</text>
+<polyline points="248.0,292.0 248.0,162.0 412.0,162.0 412.0,470.0 344.0,470.0" fill="none" stroke="#dc2626" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-orange)"/>
+<text x="406" y="332" font-size="8.8" fill="#dc2626" text-anchor="end" font-weight="700">主动脉干线</text>
+<text x="406" y="347" font-size="8.5" fill="#991b1b" text-anchor="end" class="mono">120/80</text>
+<g class="heart-rbc-parcel"><circle cx="0" cy="0" r="7.5" fill="#dc2626" stroke="#ffffff" stroke-width="2"/><text x="0" y="3" font-size="8" font-weight="700" fill="#ffffff" text-anchor="middle">O₂</text></g>
+<text x="232" y="518" font-size="8.8" fill="#0f172a" text-anchor="middle" font-weight="600">注：动脉=离心的血管，静脉=回心的血管（按流向定义，绝不按含氧颜色定义！）</text>
+<rect x="458" y="68" width="282" height="466" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="472.0" y="80.0" width="254" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="599.0" y="95.0" font-size="9.8" fill="#c25014" text-anchor="middle" font-weight="600">右看阀门：没有一块肌肉负责开门，全靠压差 ΔP！</text>
+<rect x="472" y="112" width="254" height="152" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="484" y="131" font-size="10.2" fill="#1d6fa5" text-anchor="start" font-weight="700">A. 房室瓣（三尖瓣/二尖瓣）：防翻伞拉绳</text>
+<text x="532" y="150" font-size="8.8" fill="#18794e" text-anchor="middle" font-weight="700">充盈期 P房 &gt; P室</text>
+<line x1="502.0" y1="158.0" x2="522.0" y2="184.0" stroke="#0f172a" stroke-width="2.6"/>
+<line x1="562.0" y1="158.0" x2="542.0" y2="184.0" stroke="#0f172a" stroke-width="2.6"/>
+<line x1="532.0" y1="156.0" x2="532.0" y2="198.0" stroke="#18794e" stroke-width="2.2" marker-end="url(#arr-green)"/>
+<text x="532" y="212" font-size="8.6" fill="#18794e" text-anchor="middle" font-weight="600">顺流推开</text>
+<text x="656" y="150" font-size="8.8" fill="#dc2626" text-anchor="middle" font-weight="700">收缩期 P室 ≫ P房</text>
+<line x1="622.0" y1="174.0" x2="656.0" y2="172.0" stroke="#dc2626" stroke-width="3.0"/>
+<line x1="690.0" y1="174.0" x2="656.0" y2="172.0" stroke="#dc2626" stroke-width="3.0"/>
+<line x1="642.0" y1="173.0" x2="634.0" y2="202.0" stroke="#64748b" stroke-width="1.5" stroke-dasharray="2 2"/>
+<line x1="652.0" y1="173.0" x2="638.0" y2="202.0" stroke="#64748b" stroke-width="1.5" stroke-dasharray="2 2"/>
+<line x1="660.0" y1="173.0" x2="674.0" y2="202.0" stroke="#64748b" stroke-width="1.5" stroke-dasharray="2 2"/>
+<line x1="670.0" y1="173.0" x2="678.0" y2="202.0" stroke="#64748b" stroke-width="1.5" stroke-dasharray="2 2"/>
+<path d="M626,212 Q636,192 646,212 Z" fill="#dc2626"/>
+<path d="M666,212 Q676,192 686,212 Z" fill="#dc2626"/>
+<text x="656" y="224" font-size="8.6" fill="#991b1b" text-anchor="middle" font-weight="700">乳头肌拽紧腱索！</text>
+<text x="484" y="243" font-size="8.8" fill="#1e293b" text-anchor="start">• 腱索像降落伞绳拉住瓣叶，扛住 120 mmHg</text>
+<text x="484" y="257" font-size="8.8" fill="#0f172a" text-anchor="start" font-weight="600">  巨压不外翻进心房；关门声即第一心音“咚”！</text>
+<rect x="472" y="274" width="254" height="226" rx="10" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
+<text x="484" y="294" font-size="10.2" fill="#d97706" text-anchor="start" font-weight="700">B. 半月瓣（主动脉/肺动脉瓣）：燕子窝兜袋</text>
+<line x1="506.0" y1="312.0" x2="506.0" y2="372.0" stroke="#0f172a" stroke-width="2.2"/>
+<line x1="566.0" y1="312.0" x2="566.0" y2="372.0" stroke="#0f172a" stroke-width="2.2"/>
+<line x1="520.0" y1="364.0" x2="524.0" y2="330.0" stroke="#18794e" stroke-width="2.6"/>
+<line x1="552.0" y1="364.0" x2="548.0" y2="330.0" stroke="#18794e" stroke-width="2.6"/>
+<line x1="536.0" y1="368.0" x2="536.0" y2="318.0" stroke="#18794e" stroke-width="2.4" marker-end="url(#arr-green)"/>
+<text x="536" y="386" font-size="8.5" fill="#18794e" text-anchor="middle" font-weight="700">射血冲开 (P室&gt;P动)</text>
+<line x1="622.0" y1="312.0" x2="622.0" y2="372.0" stroke="#0f172a" stroke-width="2.2"/>
+<line x1="688.0" y1="312.0" x2="688.0" y2="372.0" stroke="#0f172a" stroke-width="2.2"/>
+<path d="M622,340 Q638,366 655,346 Q672,366 688,340" fill="#fde68a" stroke="#dc2626" stroke-width="2.6"/>
+<line x1="642.0" y1="316.0" x2="642.0" y2="342.0" stroke="#dc2626" stroke-width="1.8" marker-end="url(#arr-orange)"/>
+<line x1="668.0" y1="316.0" x2="668.0" y2="342.0" stroke="#dc2626" stroke-width="1.8" marker-end="url(#arr-orange)"/>
+<line x1="622.0" y1="332.0" x2="598.0" y2="332.0" stroke="#dc2626" stroke-width="2.2" marker-end="url(#arr-orange)"/>
+<line x1="688.0" y1="332.0" x2="712.0" y2="332.0" stroke="#dc2626" stroke-width="2.2" marker-end="url(#arr-orange)"/>
+<text x="655" y="386" font-size="8.4" fill="#991b1b" text-anchor="middle" font-weight="700">倒流灌满兜袋关门+灌入冠脉!</text>
+<text x="484" y="408" font-size="8.8" fill="#1e293b" text-anchor="start">• 无腱索！心室一舒张，大动脉血刚往回退就灌满</text>
+<text x="484" y="424" font-size="8.8" fill="#0f172a" text-anchor="start" font-weight="600">  三只半月兜袋严密锁门，敲响第二心音“哒”！</text>
+<text x="484" y="444" font-size="9.2" fill="#dc2626" text-anchor="start" font-weight="700">💡 反直觉奇观：心脏何时给自己“喂饭”？</text>
+<text x="484" y="461" font-size="8.7" fill="#1e293b" text-anchor="start">• 收缩期心肌剧烈紧绷，把自己深处的血管挤扁；</text>
+<text x="484" y="477" font-size="8.7" fill="#1e293b" text-anchor="start">• 舒张期主动脉瓣合拢，回弹血正好从瓣兜上方</text>
+<text x="484" y="492" font-size="8.7" fill="#991b1b" text-anchor="start" font-weight="700">  灌进左/右冠状动脉——心脏只在放松时吃饭！</text>
+</svg>

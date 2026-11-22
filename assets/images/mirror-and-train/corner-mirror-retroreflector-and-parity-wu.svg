@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="528" viewBox="0 0 760 528" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">90度正交双镜真容镜、三维角反射器与吴健雄钴60宇称不守恒实验图解</title>
+<desc id="desc">左栏精确追踪光线经90度正交双平面镜二次反射消除手性反转，并说明三维角反射器在阿波罗月球测距与隐身战机中的应用；右栏展示吴健雄1956年极低温钴60弱相互作用β衰变实验如何区分真实世界与镜像世界。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="527" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">二、两面 90° 镜还原别人眼中的真容、阿波罗角反射器与宇宙镜像破缺</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：二次反射 (-1)²=+1 消除左右反像与三面角反射器原路回射 · 右：吴健雄钴-60 实验证伪宇称守恒</text>
+<rect x="20" y="66" width="360" height="448" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="78.0" width="336" height="24" rx="12.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="200.0" y="94.3" font-size="11.6" fill="#1d6fa5" text-anchor="middle" font-weight="600">A · 负负得正：90° 双镜“真容镜”与月球角反射器</text>
+<rect x="32" y="112" width="336" height="198" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.2"/>
+<line x1="200.0" y1="126.0" x2="114.0" y2="212.0" stroke="#1d6fa5" stroke-width="3.6"/>
+<line x1="200.0" y1="126.0" x2="286.0" y2="212.0" stroke="#1d6fa5" stroke-width="3.6"/>
+<path d="M 192.0,134.0 L 200.0,142.0 L 208.0,134.0" fill="none" stroke="#475569" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="200" y="120" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">90° 正交双平面镜</text>
+<line x1="242.0" y1="242.0" x2="242.0" y2="168.0" stroke="#c25014" stroke-width="2.2"/>
+<line x1="242.0" y1="168.0" x2="158.0" y2="168.0" stroke="#c25014" stroke-width="2.2"/>
+<line x1="158.0" y1="168.0" x2="158.0" y2="238.0" stroke="#18794e" stroke-width="2.2" marker-end="url(#arr-green)"/>
+<text x="250" y="234" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">① 眨右眼光线 ↑</text>
+<text x="150" y="234" font-size="11.5" fill="#18794e" text-anchor="end" font-weight="700">↓ ② 对侧回射!</text>
+<text x="200" y="266" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">连翻两次：det = (-1)×(-1) = +1 ≡ 绕竖轴转 180°</text>
+<text x="200" y="290" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">看到的正是不反字的衣服与别人眼中真实的你！</text>
+<rect x="32" y="322" width="336" height="178" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="44" y="344" font-size="11.6" fill="#1d6fa5" text-anchor="start" font-weight="700">再加第 3 面垂直镜 → 三维角反射器 (x,y,z)→(-x,-y,-z)</text>
+<text x="44" y="368" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">• 无论激光从哪个刁钻角度射入，连弹三次必分毫不差</text>
+<text x="44" y="390" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">  沿原路平行射回光源（v_out = -v_in）！</text>
+<text x="44" y="414" font-size="11.5" fill="#1e293b" text-anchor="start">• 三大硬核应用：① 自行车尾灯与高速路牌夜间反光；</text>
+<text x="44" y="436" font-size="11.5" fill="#1e293b" text-anchor="start">  ② 阿波罗登月留置角反射器，测出月球每年退行 3.8 cm；</text>
+<text x="44" y="458" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">  ③ 反面教材：隐身战机严禁出现 90° 机身夹角，</text>
+<text x="44" y="480" font-size="11.5" fill="#1e293b" text-anchor="start">     否则会把敌方雷达波原路高亮奉还！</text>
+<rect x="394" y="66" width="346" height="448" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="406.0" y="78.0" width="322" height="24" rx="12.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="567.0" y="94.3" font-size="11.6" fill="#dc2626" text-anchor="middle" font-weight="600">B · 终极追问：物理定律自己分得清镜里和镜外吗？</text>
+<rect x="406" y="112" width="322" height="86" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.1"/>
+<text x="418" y="134" font-size="11.8" fill="#18794e" text-anchor="start" font-weight="700">三大基本力完全“左右盲”（宇称守恒）：</text>
+<text x="418" y="158" font-size="11.5" fill="#1e293b" text-anchor="start">引力、电磁力与强核力在镜中世界完全合法——</text>
+<text x="418" y="180" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">把钟表、行星或电路拍进镜子，造出的机器照常运转。</text>
+<rect x="406" y="210" width="322" height="196" rx="8" fill="#ffffff" stroke="#dc2626" stroke-width="1.4"/>
+<text x="567" y="232" font-size="11.8" fill="#dc2626" text-anchor="middle" font-weight="700">1956 圣诞夜惊雷：吴健雄钴-60 极低温实验</text>
+<line x1="567.0" y1="256.0" x2="567.0" y2="362.0" stroke="#1d6fa5" stroke-width="2.4" stroke-dasharray="4 3"/>
+<text x="567" y="251" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">镜像面</text>
+<rect x="424" y="260" width="120" height="46" rx="10" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.4"/>
+<text x="484" y="279" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">真实 ⁶⁰Co 核</text>
+<text x="484" y="297" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">电流环 ↺ 逆时针</text>
+<line x1="484.0" y1="306.0" x2="484.0" y2="346.0" stroke="#dc2626" stroke-width="2.6" marker-end="url(#arr-orange)"/>
+<text x="484" y="366" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">β⁻ 电子大多朝下!</text>
+<rect x="590" y="260" width="120" height="46" rx="10" fill="#fef1e8" stroke="#c25014" stroke-width="1.4" stroke-dasharray="4 3"/>
+<text x="650" y="279" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">镜中 ⁶⁰Co 核</text>
+<text x="650" y="297" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">电流环 ↻ 顺时针</text>
+<line x1="650.0" y1="306.0" x2="650.0" y2="346.0" stroke="#dc2626" stroke-width="2.6" marker-end="url(#arr-orange)"/>
+<text x="650" y="366" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">电子仍朝下(违背!)</text>
+<text x="567" y="394" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">旋向反了、电子朝向却不反 ⇒ 镜像世界不存在！</text>
+<rect x="406" y="418" width="322" height="82" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1.1"/>
+<text x="418" y="440" font-size="11.5" fill="#1e293b" text-anchor="start">• 李政道、杨振宁提出猜想（获 1957 诺奖），吴健雄</text>
+<text x="418" y="462" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">  在 &lt;0.01 K 下铁证：【弱核力】天生偏爱“左旋”！</text>
+<text x="418" y="484" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">  凭此实验，人类终于能通过纯文字教外星人分清左右。</text>
+</svg>

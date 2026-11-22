@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">弯道内外轨弧长差、汽车差速器与火车实心轮对两大误区对比图解</title>
+<desc id="desc">左栏推导任意半径弯道上外轨比内轨多走2b0乘转角的几何铁律与汽车齿轮差速原理；右栏剖析实心圆柱轮打滑灾难，并澄清火车轮缘位于钢轨内侧且仅作紧急安全护栏的工程事实。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">三、从镜面对称到弯道破缺：没有汽车差速器，焊死在一根铁轴上的火车轮怎么拐弯？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：90° 弯道内外轨必差 2.36 米与汽车齿轮差速器 · 右：圆柱死轴打滑灾难与“轮缘其实在内侧”真相</text>
+<rect x="20" y="66" width="360" height="440" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="78.0" width="336" height="24" rx="12.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="200.0" y="94.3" font-size="11.8" fill="#1d6fa5" text-anchor="middle" font-weight="600">A · 弯道几何铁律：外轮永远比内轮多跑一截！</text>
+<path d="M 164.0,286.0 L 163.6,277.1 L 162.5,268.3 L 160.5,259.6 L 157.8,251.1 L 154.4,242.9 L 150.3,235.0 L 145.6,227.5 L 140.1,220.4 L 134.1,213.9 L 127.6,207.9 L 120.5,202.4 L 113.0,197.7 L 105.1,193.6 L 96.9,190.2 L 88.4,187.5 L 79.7,185.5 L 70.9,184.4 L 62.0,184.0" fill="none" stroke="#0f766e" stroke-width="3.0" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 190.0,286.0 L 189.5,274.8 L 188.1,263.8 L 185.6,252.9 L 182.3,242.2 L 178.0,231.9 L 172.9,222.0 L 166.9,212.6 L 160.1,203.7 L 152.5,195.5 L 144.3,187.9 L 135.4,181.1 L 126.0,175.1 L 116.1,170.0 L 105.8,165.7 L 95.1,162.4 L 84.2,159.9 L 73.2,158.5 L 62.0,158.0" fill="none" stroke="#64748b" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 4"/>
+<path d="M 216.0,286.0 L 215.4,272.6 L 213.7,259.3 L 210.8,246.1 L 206.7,233.3 L 201.6,220.9 L 195.4,209.0 L 188.1,197.7 L 180.0,187.0 L 170.9,177.1 L 161.0,168.0 L 150.3,159.9 L 139.0,152.6 L 127.1,146.4 L 114.7,141.3 L 101.9,137.2 L 88.7,134.3 L 75.4,132.6 L 62.0,132.0" fill="none" stroke="#c25014" stroke-width="3.0" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="74" y="282" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">弯心 O</text>
+<line x1="62.0" y1="286.0" x2="180.0" y2="187.0" stroke="#475569" stroke-width="1.4"/>
+<text x="106" y="232" font-size="11.5" fill="#475569" text-anchor="start" font-weight="700">R±b₀</text>
+<text x="238" y="152" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">外轨 S_外 = (R+b₀)θ</text>
+<text x="238" y="176" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">内轨 S_内 = (R-b₀)θ</text>
+<text x="238" y="204" font-size="12.0" fill="#dc2626" text-anchor="start" font-weight="700">路程差 ΔS = 2b₀θ</text>
+<text x="238" y="226" font-size="11.5" fill="#1e293b" text-anchor="start">（与弯道半径 R 无关！）</text>
+<text x="238" y="252" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">标准轨距拐 90° 弯：</text>
+<text x="238" y="274" font-size="11.8" fill="#dc2626" text-anchor="start" font-weight="700">外轮必多走 2.36 米！</text>
+<rect x="32" y="312" width="336" height="178" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="44" y="334" font-size="11.8" fill="#1d6fa5" text-anchor="start" font-weight="700">汽车的解法：把车轴从中间锯断 + 装齿轮差速器</text>
+<text x="44" y="358" font-size="11.5" fill="#1e293b" text-anchor="start">• 汽车左右轮胎是等直径圆柱（r_左 = r_右）；</text>
+<text x="44" y="380" font-size="11.5" fill="#1e293b" text-anchor="start">• 唯有靠底盘中央一包精密行星锥齿轮（差速器），允许</text>
+<text x="44" y="402" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">  转弯时【外轮转速 ω_外 &gt; 内轮转速 ω_内】才不磨胎。</text>
+<text x="44" y="428" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">• 但火车一节重载车厢轴重超 20 吨！若锯断车轴塞齿轮：</text>
+<text x="44" y="450" font-size="11.5" fill="#1e293b" text-anchor="start">  不仅笨重易碎，还会丧失自动导向能力！</text>
+<text x="44" y="474" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">  因此两百年来火车左右轮始终焊死在同一根实心钢轴上！</text>
+<rect x="394" y="66" width="346" height="440" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="406.0" y="78.0" width="322" height="24" rx="12.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="567.0" y="94.3" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="600">B · 先拆掉两个常见误区：不是圆柱轮，更不靠轮缘硬掰！</text>
+<rect x="406" y="114" width="322" height="168" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2"/>
+<circle cx="424" cy="134" r="10.5" fill="#ffffff" stroke="#dc2626" stroke-width="1.2"/>
+<text x="424" y="138" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">1</text>
+<text x="442" y="138" font-size="11.8" fill="#dc2626" text-anchor="start" font-weight="700">误区 ①：若把实心轴做成“平直圆柱轮” ❌</text>
+<line x1="456.0" y1="170.0" x2="678.0" y2="170.0" stroke="#475569" stroke-width="5.0"/>
+<rect x="444" y="150" width="20" height="40" rx="3" fill="#cbd5e1" stroke="#475569" stroke-width="1.5"/>
+<rect x="670" y="150" width="20" height="40" rx="3" fill="#cbd5e1" stroke="#475569" stroke-width="1.5"/>
+<text x="567" y="162" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">实心钢轴 ω_左 ≡ ω_右</text>
+<text x="567" y="208" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">r_左 = r_右 ⇒ 两轮每圈滚过距离死死相等！</text>
+<text x="418" y="230" font-size="11.5" fill="#1e293b" text-anchor="start">• 每拐一个 90° 弯，钢轮就得在钢轨上生生硬搓打滑</text>
+<text x="418" y="252" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">  2.36 米！火花四溅、啃毁钢轨，甚至直接爬轨脱线。</text>
+<text x="418" y="274" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">• 更糟的是直轨稍一偏歪，毫无回正力，一路撞向路基！</text>
+<rect x="406" y="296" width="322" height="194" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="1.2"/>
+<circle cx="424" cy="316" r="10.5" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+<text x="424" y="320" font-size="11.5" fill="#b45309" text-anchor="middle" font-weight="700">2</text>
+<text x="442" y="320" font-size="11.8" fill="#b45309" text-anchor="start" font-weight="700">误区 ②：“靠轮缘卡住钢轨硬拐弯？” ❌</text>
+<text x="418" y="346" font-size="11.5" fill="#1e293b" text-anchor="start">• 先看位置：火车轮突起的那圈轮缘（Flange）长在</text>
+<text x="418" y="368" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">  两根钢轨的【内侧】（绝非外侧！），平时与轨头内侧</text>
+<text x="418" y="390" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">  留有约 7–10 毫米游隙，正常跑车根本不碰钢轨！</text>
+<text x="418" y="416" font-size="11.5" fill="#b45309" text-anchor="start" font-weight="700">• 费曼提醒：轮缘只是防脱轨的“最后救命护栏”——</text>
+<text x="418" y="438" font-size="11.5" fill="#1e293b" text-anchor="start">  一旦轮缘真贴上去硬蹭（如地铁急弯），就会发出</text>
+<text x="418" y="460" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">  刺耳欲聋的金属尖啸！日常高速过弯全靠【锥形踏面】</text>
+<text x="418" y="480" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">  在零齿轮条件下自动变径过弯！</text>
+</svg>

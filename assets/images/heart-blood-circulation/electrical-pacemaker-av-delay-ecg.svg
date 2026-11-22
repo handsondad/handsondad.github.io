@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="512" viewBox="0 0 760 512" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">心脏电传导系统五级时序、房室结0.1秒延迟、心尖向上挤牙膏机制与ECG及250毫秒防抽筋平台期图解</title>
+<desc id="desc">左栏展示窦房结（0 ms）经心房至房室结（刻意停顿100 ms等心房排空）、希氏束、左右束支直达心尖并由浦肯野纤维自下而上挤压心室的电路路线与闰盘结构；右栏对应1924诺奖心电图P-QRS-T波形，并对比骨骼肌5 ms脉冲与心肌250 ms钙离子平台不应期为何能防止心脏强直抽筋。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="511" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">自带发电站的五级点火网：房室结为何故意卡壳 0.1 秒？为什么要从心尖往上挤？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">1% 自律导电细胞指挥 99% 心肌细胞同步搏动｜250 ms 超长钙离子平台期从物理上锁死“心脏抽筋”</text>
+<rect x="20" y="68" width="396" height="428" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="80.0" width="368" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="218.0" y="95.0" font-size="9.8" fill="#c25014" text-anchor="middle" font-weight="600">左看电路：五级接力 + 心尖底部最先点火向上“挤牙膏”</text>
+<rect x="42" y="114" width="214" height="286" rx="18" fill="#fffdf9" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="50" y="202" width="198" height="10" rx="4" fill="#94a3b8"/>
+<text x="52" y="196" font-size="8.2" fill="#334155" text-anchor="start" font-weight="700">纤维绝缘环</text>
+<text x="246" y="196" font-size="8.2" fill="#334155" text-anchor="end" font-weight="700">挡死电流越界</text>
+<rect x="142" y="212" width="14" height="156" rx="5" fill="#e2e8f0"/>
+<circle cx="80" cy="142" r="11" fill="#d97706" stroke="#ffffff" stroke-width="2"/>
+<text x="80" y="146" font-size="9.5" fill="#ffffff" text-anchor="middle" font-weight="700">①</text>
+<text x="98" y="136" font-size="9.1" fill="#d97706" text-anchor="start" font-weight="700">窦房结 (0 ms)</text>
+<text x="98" y="150" font-size="8.2" fill="#1e293b" text-anchor="start">总起搏器 75次/分</text>
+<polyline points="92.0,156.0 198.0,164.0" fill="none" stroke="#d97706" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 2" marker-end="url(#arr-orange)"/>
+<polyline points="86.0,153.0 134.0,192.0" fill="none" stroke="#d97706" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-orange)"/>
+<circle cx="149" cy="204" r="12" fill="#dc2626" stroke="#ffffff" stroke-width="2"/>
+<text x="149" y="208" font-size="9.5" fill="#ffffff" text-anchor="middle" font-weight="700">②</text>
+<rect x="62.0" y="220.0" width="174" height="18" rx="9.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="149.0" y="232.2" font-size="8.6" fill="#dc2626" text-anchor="middle" font-weight="600">房室结红灯停顿 +100 ms!</text>
+<polyline points="149.0,238.0 149.0,274.0" fill="none" stroke="#6d28d9" stroke-width="3.0" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="149.0,274.0 126.0,358.0 72.0,342.0 64.0,256.0" fill="none" stroke="#6d28d9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-blue)"/>
+<polyline points="149.0,274.0 172.0,358.0 226.0,342.0 234.0,256.0" fill="none" stroke="#6d28d9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-blue)"/>
+<text x="149" y="264" font-size="8.4" fill="#6d28d9" text-anchor="middle" font-weight="700" class="halo">③希氏束</text>
+<text x="149" y="314" font-size="8.4" fill="#6d28d9" text-anchor="middle" font-weight="700" class="halo">④左右束支</text>
+<rect x="86.0" y="366.0" width="156" height="18" rx="9.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="164.0" y="378.2" font-size="8.5" fill="#18794e" text-anchor="middle" font-weight="600">⑤ 心尖最先点火 → 向上挤！</text>
+<line x1="54.0" y1="348.0" x2="54.0" y2="246.0" stroke="#18794e" stroke-width="2.8" marker-end="url(#arr-green)"/>
+<line x1="244.0" y1="348.0" x2="244.0" y2="246.0" stroke="#18794e" stroke-width="2.8" marker-end="url(#arr-green)"/>
+<text x="266" y="126" font-size="9.2" fill="#d97706" text-anchor="start" font-weight="700">① 窦房结自发漏 Na⁺</text>
+<text x="266" y="141" font-size="8.4" fill="#1e293b" text-anchor="start">无静息电位，自动爬上阈值</text>
+<text x="266" y="180" font-size="9.2" fill="#dc2626" text-anchor="start" font-weight="700">② 为什么停 0.1 秒？</text>
+<text x="266" y="195" font-size="8.4" fill="#1e293b" text-anchor="start">等心房把血挤完再关门！</text>
+<text x="266" y="236" font-size="9.2" fill="#6d28d9" text-anchor="start" font-weight="700">③④ 穿室间隔直插心尖</text>
+<text x="266" y="251" font-size="8.4" fill="#1e293b" text-anchor="start">节制索提前绷紧右乳头肌</text>
+<text x="266" y="294" font-size="9.2" fill="#18794e" text-anchor="start" font-weight="700">⑤ 从底部往上挤牙膏</text>
+<text x="266" y="309" font-size="8.4" fill="#1e293b" text-anchor="start">因为主动脉与肺动脉出口</text>
+<text x="266" y="328" font-size="9.2" fill="#0f172a" text-anchor="start" font-weight="700">   全长在心室最顶上！</text>
+<text x="266" y="343" font-size="8.4" fill="#1e293b" text-anchor="start">若从上往下挤会把血困死</text>
+<rect x="34" y="410" width="368" height="72" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="46" y="429" font-size="9.3" fill="#1d6fa5" text-anchor="start" font-weight="700">🔗 闰盘（Intercalated Discs）怎样让亿万心肌细胞像一个人发力？</text>
+<text x="46" y="447" font-size="8.7" fill="#1e293b" text-anchor="start">• 桥粒（铆钉）死死扣住相邻细胞防撕裂；缝隙连接（离子隧道）让电信号</text>
+<text x="46" y="464" font-size="8.7" fill="#0f172a" text-anchor="start" font-weight="600">  毫秒级直通全心室，组成“功能合胞体”齐刷刷收缩！</text>
+<rect x="430" y="68" width="310" height="428" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="444.0" y="80.0" width="282" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="585.0" y="95.0" font-size="9.8" fill="#1d6fa5" text-anchor="middle" font-weight="600">右看心电图（1924诺奖）与防抽筋保护锁</text>
+<rect x="444" y="112" width="282" height="168" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="456" y="130" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="700">体表心电图（ECG）五段波形对号入座：</text>
+<line x1="454.0" y1="214.0" x2="714.0" y2="214.0" stroke="#e2e8f0" stroke-width="1.0"/>
+<polyline points="456.0,214.0 476.0,214.0 486.0,200.0 498.0,214.0 528.0,214.0 536.0,222.0 546.0,146.0 556.0,232.0 566.0,214.0 596.0,214.0 618.0,192.0 640.0,214.0 712.0,214.0" fill="none" stroke="#dc2626" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="488" y="194" font-size="9.0" fill="#d97706" text-anchor="middle" font-weight="700">P波</text>
+<text x="488" y="232" font-size="8.2" fill="#64748b" text-anchor="middle">心房点火</text>
+<text x="513" y="206" font-size="8.4" fill="#dc2626" text-anchor="middle" font-weight="700">PR段</text>
+<text x="513" y="246" font-size="8.2" fill="#dc2626" text-anchor="middle">0.1s延迟</text>
+<text x="566" y="152" font-size="9.2" fill="#6d28d9" text-anchor="start" font-weight="700">QRS波群</text>
+<text x="566" y="166" font-size="8.3" fill="#1e293b" text-anchor="start">心室齐射</text>
+<text x="622" y="186" font-size="8.8" fill="#18794e" text-anchor="middle" font-weight="700">T波 (复极化)</text>
+<text x="456" y="266" font-size="8.5" fill="#0f172a" text-anchor="start" font-weight="600">• 心梗时 ST 段异常抬高（STEMI），一照便知缺血！</text>
+<rect x="444" y="292" width="282" height="190" rx="10" fill="#f0fdf4" stroke="#18794e" stroke-width="1"/>
+<text x="456" y="311" font-size="9.6" fill="#18794e" text-anchor="start" font-weight="700">🛡️ 为什么小腿会抽筋，心脏却绝不能抽筋？</text>
+<line x1="466.0" y1="404.0" x2="708.0" y2="404.0" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="466" y="417" font-size="8.2" fill="#64748b" text-anchor="start" class="mono">0 ms</text>
+<text x="626" y="417" font-size="8.2" fill="#18794e" text-anchor="middle" font-weight="700" class="mono">250 ms (不应期结束)</text>
+<polyline points="470.0,402.0 474.0,336.0 480.0,402.0" fill="none" stroke="#64748b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 2"/>
+<text x="484" y="333" font-size="8.3" fill="#475569" text-anchor="start" class="halo">骨骼肌 (~5ms)：可叠加抽筋</text>
+<polyline points="470.0,402.0 475.0,332.0 492.0,342.0 592.0,348.0 632.0,402.0 702.0,402.0" fill="none" stroke="#18794e" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="546" y="366" font-size="8.6" fill="#18794e" text-anchor="middle" font-weight="700">慢 Ca²⁺ 内流撑起平台期</text>
+<text x="546" y="381" font-size="8.5" fill="#0f172a" text-anchor="middle" font-weight="700">绝对不应期 ≈ 200–250 ms</text>
+<text x="456" y="437" font-size="8.6" fill="#1e293b" text-anchor="start">• 心脏一旦持续强直收缩（抽筋不放松）= 无法进血</text>
+<text x="456" y="453" font-size="8.6" fill="#1e293b" text-anchor="start">  立刻停泵致死！超长不应期逼迫心肌“每收缩一次，</text>
+<text x="456" y="469" font-size="8.6" fill="#0f172a" text-anchor="start" font-weight="700">  必须先松开装满血，才准接下一次电令”！</text>
+</svg>

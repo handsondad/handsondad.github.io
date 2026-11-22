@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="584" viewBox="0 0 760 584" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">大质量恒星七层洋葱核结构、聚变加速倒计时与铁核坍缩II型超新星中微子爆发机制图解</title>
+<desc id="desc">上半部左侧剖解大质量恒星临终前氢、氦、碳、氖、氧、硅包裹地球大小铁核的七层洋葱结构，右侧按SN 1987A实测模型对比从氢聚变800万年到硅聚变仅数天、铁核坍缩仅0.25秒的极端加速；下半部分四步图解铁核电子俘获、四分之一光速坍缩核密度反弹、10的46次方瓦中微子洪流重启激波与SN 1987A实证。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="583" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">四、大质量恒星（&gt;8 M⊙）的死亡冲刺：硅只烧几天，铁核 0.25 秒自由落体！</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">七层“洋葱核”聚变加速倒计时、铁峰吸能陷阱与 10⁴⁶ W 中微子暴吹散整颗超巨星（II 型超新星）</text>
+<rect x="20" y="64" width="720" height="274" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="74.0" width="552" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="310.0" y="89.0" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="600">A · 临终前的七层“洋葱壳”与 ~20 M⊙ 恒星聚变倒计时（据 SN 1987A / OpenStax Table 23.2）</text>
+<circle cx="158.0" cy="214.0" r="102" fill="#dbeafe" stroke="#2563eb" stroke-width="1.3"/>
+<circle cx="158.0" cy="214.0" r="85" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.3"/>
+<circle cx="158.0" cy="214.0" r="69" fill="#dcfce7" stroke="#16a34a" stroke-width="1.3"/>
+<circle cx="158.0" cy="214.0" r="54" fill="#fef9c3" stroke="#ca8a04" stroke-width="1.3"/>
+<circle cx="158.0" cy="214.0" r="40" fill="#ffedd5" stroke="#ea580c" stroke-width="1.3"/>
+<circle cx="158.0" cy="214.0" r="26" fill="#fee2e2" stroke="#dc2626" stroke-width="1.3"/>
+<circle cx="158.0" cy="214.0" r="13" fill="#334155" stroke="#0f172a" stroke-width="1.3"/>
+<text x="158.0" y="218.0" font-size="9.8" fill="#ffffff" text-anchor="middle" font-weight="700">Fe</text>
+<text x="158.0" y="126.0" font-size="9.8" fill="#0f172a" text-anchor="middle" font-weight="700">H</text>
+<text x="158.0" y="142.0" font-size="9.8" fill="#0f172a" text-anchor="middle" font-weight="700">He</text>
+<text x="158.0" y="157.0" font-size="9.8" fill="#0f172a" text-anchor="middle" font-weight="700">C</text>
+<text x="158.0" y="172.0" font-size="9.8" fill="#0f172a" text-anchor="middle" font-weight="700">Ne</text>
+<text x="158.0" y="186.0" font-size="9.8" fill="#0f172a" text-anchor="middle" font-weight="700">O</text>
+<text x="158.0" y="199.0" font-size="9.8" fill="#0f172a" text-anchor="middle" font-weight="700">Si</text>
+<text x="158.0" y="326" font-size="9.8" fill="#64748b" text-anchor="middle">非真实比例剖面：中心铁核仅地球大小！</text>
+<text x="282" y="123.0" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">氢聚变 H → He</text>
+<rect x="430.0" y="112.0" width="188.4" height="14" rx="3" fill="#2563eb"/>
+<text x="625.4" y="123.0" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="500">800 万年 (4,000 万 K)</text>
+<text x="282" y="154.0" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">氦聚变 3He → C, O</text>
+<rect x="430.0" y="143.0" width="177.3" height="14" rx="3" fill="#0284c7"/>
+<text x="614.3" y="154.0" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="500">100 万年 (1.9 亿 K)</text>
+<text x="282" y="185.0" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">碳聚变 C → Ne, Mg</text>
+<rect x="430.0" y="174.0" width="144.3" height="14" rx="3" fill="#16a34a"/>
+<text x="581.3" y="185.0" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="500">2,000 年 (8.7 亿 K)</text>
+<text x="282" y="216.0" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">氖聚变（光致蜕变）</text>
+<rect x="430.0" y="205.0" width="100.3" height="14" rx="3" fill="#ca8a04"/>
+<text x="537.3" y="216.0" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="500">6 个月 (16 亿 K)</text>
+<text x="282" y="247.0" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">氧聚变 O → Si, S</text>
+<rect x="430.0" y="236.0" width="103.9" height="14" rx="3" fill="#ea580c"/>
+<text x="540.9" y="247.0" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="500">1 年 (20 亿 K)</text>
+<text x="282" y="278.0" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">硅聚变 Si → Fe 族</text>
+<rect x="430.0" y="267.0" width="78.4" height="14" rx="3" fill="#dc2626"/>
+<text x="515.4" y="278.0" font-size="9.8" fill="#dc2626" text-anchor="start" font-weight="700">仅数天！ (33 亿 K)</text>
+<text x="282" y="309.0" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">铁核灾难坍缩</text>
+<rect x="430.0" y="298.0" width="6.0" height="14" rx="3" fill="#7f1d1d"/>
+<text x="443.0" y="309.0" font-size="9.8" fill="#7f1d1d" text-anchor="start" font-weight="700">仅 0.25 秒！ (飙至 2,000 亿 K)</text>
+<rect x="20" y="352" width="720" height="218" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="362.0" width="554" height="22" rx="11.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="311.0" y="377.0" font-size="12" fill="#dc2626" text-anchor="middle" font-weight="600">B · 为什么最稳定的铁核反而引爆宇宙最猛烈灾难？0.25 秒坍缩与 SN 1987A 中微子实证</text>
+<rect x="34" y="396" width="168" height="160" rx="7" fill="#fef2f2" stroke="#dc2626" stroke-width="1.3"/>
+<text x="118" y="415" font-size="10.2" fill="#dc2626" text-anchor="middle" font-weight="700">① 铁核吸能抽底 (0 s)</text>
+<text x="43" y="437" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">⁵⁶Fe 处于比结合能峰顶，</text>
+<text x="43" y="458" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">再聚变不放热反而吸热！</text>
+<text x="43" y="479" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">高温光子敲碎铁核，高压</text>
+<text x="43" y="500" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">把电子压进质子 p+e⁻→n+ν_e</text>
+<text x="43" y="521" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">简并支架瞬间抽空！</text>
+<rect x="208" y="396" width="168" height="160" rx="7" fill="#fff7ed" stroke="#c25014" stroke-width="1.3"/>
+<text x="292" y="415" font-size="10.2" fill="#c25014" text-anchor="middle" font-weight="700">② 0.25c 撞上核硬墙</text>
+<text x="217" y="437" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">地球大铁核在 ~0.25 秒内</text>
+<text x="217" y="458" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">以 7万km/s (0.25c) 砸成</text>
+<text x="217" y="479" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">&lt;20 km 原中子星！密度达</text>
+<text x="217" y="500" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">2–4×10¹⁴ g/cm³（方糖重</text>
+<text x="217" y="521" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">4亿吨），强核力猛烈反弹！</text>
+<rect x="382" y="396" width="168" height="160" rx="7" fill="#faf5ff" stroke="#6d28d9" stroke-width="1.3"/>
+<text x="466" y="415" font-size="10.2" fill="#6d28d9" text-anchor="middle" font-weight="700">③ 10⁴⁶ W 中微子重启</text>
+<text x="391" y="437" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">反弹激波原本在半途卡壳，</text>
+<text x="391" y="458" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">但核心涌出 10⁵⁸ 颗中微子</text>
+<text x="391" y="479" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">携 99% 引力能（功率超</text>
+<text x="391" y="500" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">10亿个星系总星光！）只需</text>
+<text x="391" y="521" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">吸收 ~1% 即炸碎整颗巨星！</text>
+<rect x="556" y="396" width="168" height="160" rx="7" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.3"/>
+<text x="640" y="415" font-size="10.2" fill="#0d9488" text-anchor="middle" font-weight="700">④ SN 1987A 提前报信</text>
+<text x="565" y="437" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">中微子秒穿恒星，激波几</text>
+<text x="565" y="458" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">小时后才冲破星表发光：</text>
+<text x="565" y="479" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">1987年地下探测器提前数</text>
+<text x="565" y="500" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">小时截获19+颗中微子；2024</text>
+<text x="565" y="521" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">韦布望远镜揪出中心中子星！</text>
+</svg>

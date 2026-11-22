@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="532" viewBox="0 0 760 532" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">视网膜9660万感光细胞至107万视神经节压缩漏斗与库夫勒同心圆拮抗感受野图解</title>
+<desc id="desc">左图展示9200万视杆与460万视锥经约90比1汇聚为107万视神经节轴突，对比中央凹1对1专线与周边视杆汇聚；右图展示库夫勒给光中心与外周拮抗感受野如何抵消均匀大白墙并放大明暗边缘脉冲。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="531" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">四、近 1 亿感光细胞怎样塞进 107 万根神经线？视网膜自带“边缘显卡”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">眼球绝不是傻傻上传原始像素的摄像头——信号还没离开视网膜，就已经完成了约 90:1 压缩与局部对比度提取</text>
+<rect x="20" y="64" width="352" height="452" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="74.0" width="320" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="194.0" y="89.0" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="600">A · 约 90 : 1 漏斗压缩与双轨带宽分配</text>
+<rect x="34" y="110" width="324" height="54" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="196" y="132" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">输入端：约 9,660 万个感光细胞</text>
+<text x="196" y="152" font-size="10.3" fill="#1e293b" text-anchor="middle">（9,200 万视杆 + 460 万视锥 · Curcio 1990）</text>
+<polygon points="62,168 330,168 262,232 130,232" fill="#f1f5f9" stroke="#475569" stroke-width="1.3"/>
+<text x="196" y="196" font-size="10.8" fill="#0f172a" text-anchor="middle" font-weight="700">双极细胞 + 水平细胞 + 无长突细胞</text>
+<text x="196" y="215" font-size="10.3" fill="#64748b" text-anchor="middle">横向相减 · 砍掉均匀背景冗余信息</text>
+<rect x="74" y="236" width="244" height="54" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="196" y="258" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">输出端：仅约 107 万根视神经节纤维！</text>
+<text x="196" y="278" font-size="10.3" fill="#1e293b" text-anchor="middle">（个体范围 70–150 万 · Curcio &amp; Allen 1990）</text>
+<rect x="34" y="306" width="156" height="194" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="46" y="328" font-size="11" fill="#c25014" text-anchor="start" font-weight="700">① 中央凹：1对1 贵宾专线</text>
+<text x="46" y="350" font-size="10.4" fill="#1e293b" text-anchor="start">• 1 个视锥连 1 个侏儒双极</text>
+<text x="46" y="369" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="700">  再连 1 个神经节细胞！</text>
+<text x="46" y="391" font-size="10.4" fill="#1e293b" text-anchor="start">• 优点：零信息混叠，成就</text>
+<text x="46" y="409" font-size="10.4" fill="#1e293b" text-anchor="start">  1 角分超清视力与色觉；</text>
+<text x="46" y="431" font-size="10.4" fill="#64748b" text-anchor="start">• 代价：光线暗时单兵信号</text>
+<text x="46" y="449" font-size="10.4" fill="#64748b" text-anchor="start">  太弱，夜里看星星若正眼</text>
+<text x="46" y="467" font-size="10.4" fill="#b91c1c" text-anchor="start" font-weight="700">  直视暗星反而会“消失”！</text>
+<rect x="202" y="306" width="156" height="194" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="214" y="328" font-size="11" fill="#1d6fa5" text-anchor="start" font-weight="700">② 周边网膜：百人合唱团</text>
+<text x="214" y="350" font-size="10.4" fill="#1e293b" text-anchor="start">• 数十至上百个视杆细胞汇</text>
+<text x="214" y="369" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="700">  聚到同一根神经节细胞！</text>
+<text x="214" y="391" font-size="10.4" fill="#1e293b" text-anchor="start">• 优点：微光信号叠加放大，</text>
+<text x="214" y="409" font-size="10.4" fill="#1e293b" text-anchor="start">  擦过一缕幽光就能报警；</text>
+<text x="214" y="431" font-size="10.4" fill="#18794e" text-anchor="start" font-weight="700">• 观星窍门：用眼角余光偏</text>
+<text x="214" y="449" font-size="10.4" fill="#1e293b" text-anchor="start">  离几度“斜视”，暗弱星团</text>
+<text x="214" y="467" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="600">  立刻在视杆区浮现出来！</text>
+<rect x="388" y="64" width="352" height="452" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="402.0" y="74.0" width="324" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="564.0" y="89.0" font-size="12" fill="#c25014" text-anchor="middle" font-weight="600">B · 库夫勒同心圆拮抗感受野（只传边界对比度！）</text>
+<rect x="402" y="112" width="324" height="90" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="446.0" cy="157.0" r="28" fill="#1e293b" stroke="#475569" stroke-width="1.5"/>
+<circle cx="446.0" cy="157.0" r="13" fill="#334155" stroke="#c25014" stroke-width="1.5"/>
+<text x="446.0" y="161.0" font-size="12" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">+</text>
+<text x="466.0" y="161.0" font-size="11" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">−</text>
+<text x="486" y="134" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">情形 ① 全黑无光</text>
+<text x="486" y="153" font-size="10.2" fill="#1e293b" text-anchor="start">中心(+)与外周(−)均无光照</text>
+<line x1="486" y1="184" x2="606" y2="184" stroke="#475569" stroke-width="1.2"/>
+<line x1="494.0" y1="184" x2="494.0" y2="162" stroke="#475569" stroke-width="2"/>
+<line x1="546.0" y1="184" x2="546.0" y2="162" stroke="#475569" stroke-width="2"/>
+<text x="612" y="180" font-size="9.8" fill="#64748b" text-anchor="start" font-weight="400">低频基线自发脉冲</text>
+<rect x="402" y="214" width="324" height="90" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="446.0" cy="259.0" r="28" fill="#1e293b" stroke="#475569" stroke-width="1.5"/>
+<circle cx="446.0" cy="259.0" r="13" fill="#fef08a" stroke="#c25014" stroke-width="1.5"/>
+<text x="446.0" y="263.0" font-size="12" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">+</text>
+<text x="466.0" y="263.0" font-size="11" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">−</text>
+<text x="486" y="236" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">情形 ② 亮斑精准打满中心 (+)</text>
+<text x="486" y="255" font-size="10.2" fill="#1e293b" text-anchor="start">中心强烈兴奋 · 外周未被抑制！</text>
+<line x1="486" y1="286" x2="606" y2="286" stroke="#475569" stroke-width="1.2"/>
+<line x1="494.0" y1="286" x2="494.0" y2="264" stroke="#b91c1c" stroke-width="2"/>
+<line x1="503.5" y1="286" x2="503.5" y2="264" stroke="#b91c1c" stroke-width="2"/>
+<line x1="512.9" y1="286" x2="512.9" y2="264" stroke="#b91c1c" stroke-width="2"/>
+<line x1="522.4" y1="286" x2="522.4" y2="264" stroke="#b91c1c" stroke-width="2"/>
+<line x1="531.8" y1="286" x2="531.8" y2="264" stroke="#b91c1c" stroke-width="2"/>
+<line x1="541.3" y1="286" x2="541.3" y2="264" stroke="#b91c1c" stroke-width="2"/>
+<line x1="550.7" y1="286" x2="550.7" y2="264" stroke="#b91c1c" stroke-width="2"/>
+<line x1="560.2" y1="286" x2="560.2" y2="264" stroke="#b91c1c" stroke-width="2"/>
+<line x1="569.6" y1="286" x2="569.6" y2="264" stroke="#b91c1c" stroke-width="2"/>
+<line x1="579.1" y1="286" x2="579.1" y2="264" stroke="#b91c1c" stroke-width="2"/>
+<line x1="588.5" y1="286" x2="588.5" y2="264" stroke="#b91c1c" stroke-width="2"/>
+<text x="612" y="282" font-size="9.8" fill="#b91c1c" text-anchor="start" font-weight="700">脉冲狂飙！高喊“这里有亮点！”</text>
+<rect x="402" y="316" width="324" height="90" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="446.0" cy="361.0" r="28" fill="#fde047" stroke="#475569" stroke-width="1.5"/>
+<circle cx="446.0" cy="361.0" r="13" fill="#fde047" stroke="#c25014" stroke-width="1.5"/>
+<text x="446.0" y="365.0" font-size="12" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">+</text>
+<text x="466.0" y="365.0" font-size="11" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">−</text>
+<text x="486" y="338" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">情形 ③ 整面大白墙铺满中心+外周</text>
+<text x="486" y="357" font-size="10.2" fill="#1e293b" text-anchor="start">中心兴奋(+) 被 外周水平细胞抑制(−) 抵消！</text>
+<line x1="486" y1="388" x2="606" y2="388" stroke="#475569" stroke-width="1.2"/>
+<line x1="494.0" y1="388" x2="494.0" y2="366" stroke="#475569" stroke-width="2"/>
+<line x1="528.7" y1="388" x2="528.7" y2="366" stroke="#475569" stroke-width="2"/>
+<line x1="563.3" y1="388" x2="563.3" y2="366" stroke="#475569" stroke-width="2"/>
+<text x="612" y="384" font-size="9.8" fill="#64748b" text-anchor="start" font-weight="400">重归平淡！拒绝浪费带宽传白墙</text>
+<rect x="402" y="418" width="324" height="84" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="414" y="439" font-size="11" fill="#18794e" text-anchor="start" font-weight="700">一举揭穿日常视觉错觉：</text>
+<text x="414" y="459" font-size="10.4" fill="#1e293b" text-anchor="start">同一块灰色放黑底上显白、放白底上显黑，以及网格交叉口闪现</text>
+<text x="414" y="478" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="700">幽灵灰点（赫尔曼方格），全因为视网膜天生在算“中心减外周”！</text>
+</svg>

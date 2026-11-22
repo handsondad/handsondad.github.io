@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="510" viewBox="0 0 760 510" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">石油精细化工衍生表面活性剂洗衣液、异丙苯法退烧药、合成橡胶轮胎与凡士林护肤品家谱图解</title>
+<desc id="desc">四宫格详解日常精细石化制品：左上展示直链烷基苯磺酸钠（LAS）亲油尾与亲水磺酸头除油且耐硬水机理；右上展示苯与丙烯经异丙苯法制苯酚，再合成阿司匹林与对乙酰氨基酚并澄清纯品安全性；左下展示丁苯橡胶、补强炭黑与EVA跑鞋中底；右下展示医药级深度精制凡士林与石蜡制品。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="509" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">第四步“最意外的跨界变身”：洗发水、退烧药、跑鞋与润唇膏的石油家谱</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">精细化工绝不是“往药片里掺原油”，而是把石油小分子拆洗重排、结晶提纯成原子级纯净的功能新分子。</text>
+<rect x="20" y="68" width="352" height="206" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="36.0" y="82.0" width="320" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="196.0" y="97.0" font-size="10.1" fill="#1d6fa5" text-anchor="middle" font-weight="600">🛁 浴室洗衣液与洗发水：两头忙的表面活性剂</text>
+<rect x="36" y="112" width="320" height="58" rx="7" fill="#f8fafc" stroke="#cbd5e1"/>
+<path d="M 52 142 L 70 130 L 88 146 L 106 130 L 124 146 L 142 130 L 160 146 L 178 134" fill="none" stroke="#c25014" stroke-width="2.6"/>
+<polygon points="178,134 190,126 202,134 202,148 190,156 178,148" fill="#fef1e8" stroke="#c25014" stroke-width="2"/>
+<line x1="202" y1="141" x2="222" y2="141" stroke="#1d6fa5" stroke-width="2.4"/>
+<circle cx="238" cy="141" r="15" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="2.2"/>
+<text x="238" y="145" font-size="8.8" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="mono">SO₃⁻</text>
+<text x="110" y="121" font-size="8.6" fill="#c25014" text-anchor="middle" font-weight="700">C12 石油烷基长尾（亲油抓油污）</text>
+<text x="304" y="136" font-size="8.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">磺酸离子头</text>
+<text x="304" y="151" font-size="8.6" fill="#1d6fa5" text-anchor="middle" font-weight="600">（亲水被水冲走）</text>
+<text x="36" y="188" font-size="9.0" fill="#0f172a" text-anchor="start" font-weight="600">• 代表分子：直链烷基苯磺酸钠 (LAS，煤油正构烷烃 + 苯磺化)</text>
+<text x="36" y="206" font-size="9.0" fill="#1e293b" text-anchor="start">• 包围油滴形成胶束乳化冲走；且遇自来水钙镁离子不结皂垢！</text>
+<text x="36" y="224" font-size="9.0" fill="#64748b" text-anchor="start">• 传统肥皂靠动植物油脂，现代洗衣液/洗洁精主力来自石化合成</text>
+<rect x="388" y="68" width="352" height="206" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="404.0" y="82.0" width="320" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="564.0" y="97.0" font-size="10.1" fill="#18794e" text-anchor="middle" font-weight="600">💊 药箱退烧止痛药：阿司匹林与对乙酰氨基酚</text>
+<rect x="404" y="112" width="320" height="44" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="414" y="130" font-size="9.1" fill="#18794e" text-anchor="start" font-weight="700">起点（异丙苯法）：苯 C₆H₆ + 丙烯 C₃H₆ ──▶ 异丙苯</text>
+<text x="414" y="147" font-size="9.0" fill="#0f172a" text-anchor="start" font-weight="600">空气氧化 + 酸重排 ──▶ 苯酚 (Phenol) + 丙酮（一箭双雕！）</text>
+<text x="404" y="175" font-size="9.1" fill="#1e293b" text-anchor="start">• 路线 A：苯酚 + CO₂ → 水杨酸 → 乙酰化得 阿司匹林</text>
+<text x="404" y="193" font-size="9.1" fill="#0f172a" text-anchor="start" font-weight="600">• 路线 B：苯酚/硝基苯 → 对氨基苯酚 + 乙酸酐 → 对乙酰氨基酚</text>
+<rect x="404" y="205" width="320" height="55" rx="6" fill="#fefce8" stroke="#d97706" stroke-width="1"/>
+<text x="414" y="223" font-size="9.2" fill="#d97706" text-anchor="start" font-weight="700">✅ 科学辟谣：吃退烧药绝不等于“吃石油”！</text>
+<text x="414" y="240" font-size="8.8" fill="#1e293b" text-anchor="start">经多步合成与重结晶提纯，药典级晶体与柳树皮提取分子</text>
+<text x="414" y="254" font-size="8.8" fill="#0f172a" text-anchor="start" font-weight="600">在每一个原子排列上 100% 相同，原油杂质早已清零。</text>
+<rect x="20" y="288" width="352" height="206" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="36.0" y="302.0" width="320" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="196.0" y="317.0" font-size="10.0" fill="#c25014" text-anchor="middle" font-weight="600">👟 轮胎与运动鞋：合成橡胶 + 纳米炭黑 + 发泡中底</text>
+<text x="36" y="342" font-size="9.4" fill="#c25014" text-anchor="start" font-weight="700">① 汽车轮胎（约 60%–70% 橡胶来自石油合成）：</text>
+<text x="36" y="360" font-size="9.0" fill="#1e293b" text-anchor="start">   • 丁苯橡胶 (SBR)：1,3-丁二烯 + 苯乙烯共聚，抓地耐磨</text>
+<text x="36" y="377" font-size="9.0" fill="#1e293b" text-anchor="start">   • 丁基橡胶（异丁烯聚合）：气密性极佳，专做保气内衬层</text>
+<text x="36" y="394" font-size="9.0" fill="#0f172a" text-anchor="start" font-weight="600">   • 轮胎为何全是黑的？掺了 ~30% 石油重油制“炭黑”补强！</text>
+<text x="36" y="420" font-size="9.4" fill="#1d6fa5" text-anchor="start" font-weight="700">② 跑鞋软弹中底（EVA / TPU / PEBA 超临界发泡）：</text>
+<text x="36" y="438" font-size="9.0" fill="#1e293b" text-anchor="start">   • 乙烯 + 醋酸乙烯酯共聚发泡出亿万闭孔微气囊，</text>
+<text x="36" y="455" font-size="9.0" fill="#1e293b" text-anchor="start">     落脚吸能缓震、蹬地高弹回馈；鞋面飞织线则是涤纶！</text>
+<text x="36" y="476" font-size="8.8" fill="#18794e" text-anchor="start" font-weight="700">   （若全靠砍割热带橡胶树，地球森林早不够全球车轮用！）</text>
+<rect x="388" y="288" width="352" height="206" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="404.0" y="302.0" width="320" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="564.0" y="317.0" font-size="10.0" fill="#6d28d9" text-anchor="middle" font-weight="600">💄 梳妆台与蜡制品：凡士林、润唇膏与果皮保鲜蜡</text>
+<text x="404" y="342" font-size="9.4" fill="#6d28d9" text-anchor="start" font-weight="700">① 医药级凡士林 (Petrolatum) 与化妆白油：</text>
+<text x="404" y="360" font-size="9.0" fill="#1e293b" text-anchor="start">   • 源自减压高沸点馏分，经高压深度加氢彻底脱除芳烃杂质</text>
+<text x="404" y="377" font-size="9.0" fill="#1e293b" text-anchor="start">   • 因饱和烷烃极其惰性、不与皮肤蛋白反应，反成皮肤科最</text>
+<text x="404" y="394" font-size="9.0" fill="#0f172a" text-anchor="start" font-weight="600">     安全经典的封闭型锁水保湿剂（润唇膏、婴儿护臀膏基底）</text>
+<text x="404" y="420" font-size="9.4" fill="#0d9488" text-anchor="start" font-weight="700">② 石蜡、微晶蜡与水性聚乙二醇 (PEG)：</text>
+<text x="404" y="438" font-size="9.0" fill="#1e293b" text-anchor="start">   • 生日蜡烛、孩子手里的彩色蜡笔、口红定型蜡骨架</text>
+<text x="404" y="455" font-size="9.0" fill="#1e293b" text-anchor="start">   • 牙膏与面霜里的保湿滑顺剂（乙烯环氧乙烷衍生 PEG）</text>
+<text x="404" y="476" font-size="8.8" fill="#64748b" text-anchor="start" font-weight="600">   • 远途柑橘/苹果微米级食品级果蜡：模拟天然果霜防失水</text>
+</svg>

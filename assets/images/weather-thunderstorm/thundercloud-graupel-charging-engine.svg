@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="530" viewBox="0 0 760 530" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">积雨云12公里三极电荷分布、三类闪电路径与高桥1978霰冰非感应碰撞起电机制图解</title>
+<desc id="desc">左图展示积雨云顶部8至12公里主正电荷区、中部4至7公里主负电荷饼、云底小正电袋以及云内闪、常规负地闪和云砧正地闪路径；右图图解霰粒下坠与冰晶上升碰撞分离电荷的微观机制及GRAPES-3实测13亿伏特电势与宇宙线雪崩击穿。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="529" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">三、云里既没铜线也没磁铁，凭什么攒出十亿伏高压？——霰冰碰撞起电引擎</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">上升气流托着微冰晶往上跑，重霰粒往下砸：−15 °C 之上每次碰撞搬运约 33 飞库仑电荷</text>
+<rect x="20" y="64" width="372" height="452" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="76.0" width="344" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="206.0" y="91.0" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="600">A · 积雨云 12 公里垂直“起电传送带”与三类闪电</text>
+<line x1="68.0" y1="128.0" x2="68.0" y2="468.0" stroke="#475569" stroke-width="1.3"/>
+<line x1="64.0" y1="468.0" x2="366" y2="468.0" stroke="#e2e8f0" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="62.0" y="472.0" font-size="11.5" fill="#64748b" text-anchor="end" class="mono">0</text>
+<line x1="64.0" y1="354.7" x2="366" y2="354.7" stroke="#e2e8f0" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="62.0" y="358.7" font-size="11.5" fill="#64748b" text-anchor="end" class="mono">4</text>
+<line x1="64.0" y1="283.8" x2="366" y2="283.8" stroke="#e2e8f0" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="62.0" y="287.8" font-size="11.5" fill="#64748b" text-anchor="end" class="mono">6.5</text>
+<line x1="64.0" y1="156.3" x2="366" y2="156.3" stroke="#e2e8f0" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="62.0" y="160.3" font-size="11.5" fill="#64748b" text-anchor="end" class="mono">11</text>
+<rect x="74" y="468" width="298" height="22" rx="3" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+<text x="223" y="483" font-size="11.5" fill="#b91c1c" text-anchor="middle" font-weight="700">地面感应正电荷影区 ＋ ＋ ＋ ＋ ＋</text>
+<path d="M 118,408 Q 98,340 118,260 Q 112,188 86,154 Q 82,126 150,124 L 336,124 Q 372,128 352,162 Q 312,182 304,254 Q 322,340 296,408 Z" fill="#f1f5f9" stroke="#475569" stroke-width="1.8"/>
+<rect x="126" y="136" width="184" height="52" rx="14" fill="#fef2f2" stroke="#b91c1c" stroke-width="1.3"/>
+<text x="218" y="157" font-size="11.5" fill="#b91c1c" text-anchor="middle" font-weight="700">云砧顶部主正电荷区 (+40 C)</text>
+<text x="218" y="176" font-size="11.5" fill="#1e293b" text-anchor="middle">轻盈冰晶被上升气流吹上云顶</text>
+<rect x="122" y="246" width="180" height="56" rx="14" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.4"/>
+<text x="212" y="268" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">中部主负电荷饼 (−40 C)</text>
+<text x="212" y="288" font-size="11.5" fill="#1e293b" text-anchor="middle">−10~−25°C 重霰粒悬停富集</text>
+<rect x="146" y="354" width="132" height="34" rx="10" fill="#fef1e8" stroke="#c25014" stroke-width="1.1"/>
+<text x="212" y="376" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">云底小正电袋 (+5 C)</text>
+<polyline points="172,188 186,214 168,226 184,246" fill="none" stroke="#6d28d9" stroke-width="2.4"/>
+<text x="192" y="222" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700" class="halo">云内闪 IC (占75%–80%)</text>
+<polyline points="146,302 132,356 144,398 126,436 136,468" fill="none" stroke="#1d6fa5" stroke-width="2.6"/>
+<text x="82" y="434" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700" class="halo">常规负地闪</text>
+<polyline points="310,162 346,238 334,316 354,394 340,468" fill="none" stroke="#b91c1c" stroke-width="2.6"/>
+<text x="348" y="344" font-size="11.5" fill="#b91c1c" text-anchor="end" font-weight="700" class="halo">正地闪!</text>
+<text x="348" y="362" font-size="11.5" fill="#b91c1c" text-anchor="end" class="halo">(晴天霹雳)</text>
+<rect x="406" y="64" width="334" height="452" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="420.0" y="76.0" width="306" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="573.0" y="91.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">B · 高桥 (1978) 霰冰碰撞起电 &amp; 13 亿伏实测</text>
+<rect x="420" y="110" width="306" height="224" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="432" y="131" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">绝不是“两朵云摩擦起电”！真实微观三主角：</text>
+<circle cx="548.0" cy="208.0" r="38" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="2.2"/>
+<text x="548.0" y="204.0" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">重霰粒</text>
+<text x="548.0" y="222.0" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">(~2mm, −)</text>
+<line x1="494" y1="168" x2="494" y2="246" stroke="#1d6fa5" stroke-width="2.2"/>
+<polygon points="489,242 499,242 494,251" fill="#1d6fa5"/>
+<text x="486" y="212" font-size="11.5" fill="#1d6fa5" text-anchor="end" font-weight="700">重力下坠</text>
+<polygon points="622.0,168.0 636.0,176.0 636.0,192.0 622.0,200.0 608.0,192.0 608.0,176.0" fill="#fef2f2" stroke="#b91c1c" stroke-width="2.0"/>
+<text x="622.0" y="188.0" font-size="12.5" fill="#b91c1c" text-anchor="middle" font-weight="700">＋</text>
+<line x1="648" y1="234" x2="648" y2="156" stroke="#b91c1c" stroke-width="2.2"/>
+<polygon points="643,160 653,160 648,151" fill="#b91c1c"/>
+<text x="656" y="194" font-size="11.5" fill="#b91c1c" text-anchor="start" font-weight="700">气流托升</text>
+<text x="656" y="212" font-size="11.5" fill="#b91c1c" text-anchor="start" font-weight="700">冰晶 (+)</text>
+<text x="432" y="280" font-size="11.5" fill="#1e293b" text-anchor="start">• T &lt; −15°C 时：霰粒冻结过冷水放热表面略暖，</text>
+<text x="432" y="300" font-size="11.5" fill="#1e293b" text-anchor="start">  擦撞冷冰晶瞬间转移质子/电荷（每次约 33 fC）；</text>
+<text x="432" y="320" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">• 重力与上升气流分道扬镳，拉开数公里巨型电容！</text>
+<rect x="420" y="346" width="306" height="156" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.1"/>
+<text x="432" y="368" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">GRAPES-3 宇宙线缪子透视 (PRL, 2019)：</text>
+<text x="432" y="389" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">• 实测雷暴云总电势高达 1.3 GV（13 亿伏特）！</text>
+<text x="432" y="409" font-size="11.5" fill="#b91c1c" text-anchor="start" font-weight="700">• 充电功率 ≥ 2 GW（堪比两台核电机组满发）！</text>
+<text x="432" y="431" font-size="11.5" fill="#1e293b" text-anchor="start">• 击穿之谜：云内宏观电场 (~200 kV/m) 远低于干</text>
+<text x="432" y="451" font-size="11.5" fill="#1e293b" text-anchor="start">  空气击穿阈值 (3,000 kV/m)，全靠冰晶尖端增场</text>
+<text x="432" y="471" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">  ＋ 宇宙线相对论逃逸电子雪崩（RREA）点火！</text>
+</svg>

@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="526" viewBox="0 0 760 526" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">动物跨洲迁徙至家门归巢三级感官接力体系、罗盘交叉校准与人类光污染电磁干扰图解</title>
+<desc id="desc">上图按万公里远洋地磁星日定位、百公里气味羽流与次声波逼近到最后一公里母溪氨基酸嗅觉印记与视觉地标展示三级接力；下图说明各罗盘日落星空交叉校准机制及城市夜间光污染与宽频射频噪声的干扰。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="525" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">五、从一万公里大洋到家门口同一条小溪：多感官“三级接力”总表</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">没有一种感官能包打天下——动物靠跨尺度接力归巢，却正面临城市人工白光与电磁噪声的干扰</text>
+<rect x="20" y="64" width="228" height="226" rx="10" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="34" y="88" font-size="12" fill="#1d6fa5" text-anchor="start" font-weight="700">第一级 · 远洋/跨洲粗定位</text>
+<rect x="34.0" y="98.0" width="198" height="20" rx="10.0" fill="#ffffff" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="133.0" y="111.6" font-size="11" fill="#1d6fa5" text-anchor="middle" font-weight="600">尺度：1,000 – 13,000 km</text>
+<text x="34" y="140" font-size="11" fill="#0f172a" text-anchor="start" font-weight="600">• 地磁双坐标地图 (I + F)</text>
+<text x="34" y="162" font-size="11" fill="#1e293b" text-anchor="start">• 视网膜量子磁倾角罗盘</text>
+<text x="34" y="182" font-size="11" fill="#1e293b" text-anchor="start">• 太阳生物钟 + 星空旋转轴</text>
+<text x="34" y="208" font-size="11" fill="#1d6fa5" text-anchor="start" font-weight="700">精度：几十至百公里级航区</text>
+<text x="34" y="232" font-size="11" fill="#475569" text-anchor="start" font-weight="600">代表物种：塍鹬/燕鸥/海龟</text>
+<rect x="266" y="64" width="228" height="226" rx="10" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="280" y="88" font-size="12" fill="#c25014" text-anchor="start" font-weight="700">第二级 · 区域风场与海岸逼近</text>
+<rect x="280.0" y="98.0" width="198" height="20" rx="10.0" fill="#ffffff" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="379.0" y="111.6" font-size="11" fill="#c25014" text-anchor="middle" font-weight="600">尺度：50 – 800 km</text>
+<text x="280" y="140" font-size="11" fill="#0f172a" text-anchor="start" font-weight="600">• 大气气味羽流地图（信鸽/海鸟）</text>
+<text x="280" y="162" font-size="11" fill="#1e293b" text-anchor="start">  Gagliardo 2013：切断嗅觉的</text>
+<text x="280" y="182" font-size="11" fill="#1e293b" text-anchor="start">  猛鹱在 800 km 大洋彻底迷航!</text>
+<text x="280" y="208" font-size="11" fill="#c25014" text-anchor="start" font-weight="700">• 海浪拍岸低频次声波 (&lt;20 Hz)</text>
+<text x="280" y="232" font-size="11" fill="#475569" text-anchor="start" font-weight="600">代表物种：猛鹱/信鸽</text>
+<rect x="512" y="64" width="228" height="226" rx="10" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="526" y="88" font-size="12" fill="#18794e" text-anchor="start" font-weight="700">第三级 · 最后一公里精准认门</text>
+<rect x="526.0" y="98.0" width="198" height="20" rx="10.0" fill="#ffffff" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="625.0" y="111.6" font-size="11" fill="#18794e" text-anchor="middle" font-weight="600">尺度：0.01 – 50 km</text>
+<text x="526" y="140" font-size="11" fill="#0f172a" text-anchor="start" font-weight="600">• 太平洋鲑鱼幼年嗅觉印记：</text>
+<text x="526" y="162" font-size="11" fill="#1e293b" text-anchor="start">  靠母溪独特氨基酸气味逆流寻根</text>
+<text x="526" y="182" font-size="11" fill="#1e293b" text-anchor="start">  (Dittman &amp; Quinn 1996)</text>
+<text x="526" y="208" font-size="11" fill="#18794e" text-anchor="start" font-weight="700">• 视觉地形地标 + 巢穴局部偏振光</text>
+<text x="526" y="232" font-size="11" fill="#475569" text-anchor="start" font-weight="600">代表物种：大麻哈鱼/家燕/银蚁</text>
+<line x1="248" y1="176" x2="264" y2="176" stroke="#c25014" stroke-width="2" marker-end="url(#arr-orange)"/>
+<line x1="494" y1="176" x2="510" y2="176" stroke="#18794e" stroke-width="2" marker-end="url(#arr-green)"/>
+<rect x="20" y="304" width="352" height="206" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="314.0" width="292" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="180.0" y="329.0" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="600">多罗盘打架时听谁的？（交叉校准机制）</text>
+<text x="34" y="356" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">• 磁偏角随地点变化（地理北极 ≠ 地磁北极）：</text>
+<text x="34" y="377" font-size="11" fill="#1e293b" text-anchor="start">  鸣禽常在黄昏观察日落偏振光，或夜观星空旋转轴，</text>
+<text x="34" y="396" font-size="11" fill="#1e293b" text-anchor="start">  重新给体内的“地磁罗盘”做零点校准！</text>
+<text x="34" y="420" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">• 全阴雨无星无日夜：</text>
+<text x="34" y="441" font-size="11" fill="#1e293b" text-anchor="start">  太阳与星盘下线，视网膜地磁罗盘接管兜底，</text>
+<text x="34" y="460" font-size="11" fill="#18794e" text-anchor="start" font-weight="700">  这套“互为备份”冗余设计让跨洋存活率大幅飙升。</text>
+<rect x="388" y="304" width="352" height="206" rx="10" fill="#fef2f2" stroke="#b91c1c" stroke-width="1"/>
+<rect x="402.0" y="314.0" width="282" height="22" rx="11.0" fill="#ffffff" stroke="#b91c1c" stroke-width="1" stroke-opacity="0.35"/>
+<text x="543.0" y="329.0" font-size="12" fill="#b91c1c" text-anchor="middle" font-weight="600">人类活动怎样“致盲”亿万年导航仪？</text>
+<text x="402" y="356" font-size="11.5" fill="#b91c1c" text-anchor="start" font-weight="700">① 城市夜间强光污染（摩天楼玻璃幕墙）：</text>
+<text x="402" y="377" font-size="11" fill="#1e293b" text-anchor="start">   淹没星空并诱发趋光困死；春秋迁徙季“熄灯护鸟”</text>
+<text x="402" y="396" font-size="11" fill="#0f172a" text-anchor="start" font-weight="600">   关闭高楼景观灯可减少过半撞楼伤亡！</text>
+<text x="402" y="422" font-size="11.5" fill="#b91c1c" text-anchor="start" font-weight="700">② 兆赫兹宽频电磁噪声（AM 波段电子设备）：</text>
+<text x="402" y="443" font-size="11" fill="#1e293b" text-anchor="start">   实验室发现微弱 MHz 射频噪声能干扰自由基对自旋</text>
+<text x="402" y="462" font-size="11" fill="#0f172a" text-anchor="start" font-weight="600">   共振，给笼装欧亚鸲套上接地铝网屏蔽后定向即恢复！</text>
+</svg>

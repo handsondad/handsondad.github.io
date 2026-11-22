@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="496" viewBox="0 0 760 496" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">常见水果与坚果六大可食植物学器官分类对照图鉴</title>
+<desc id="desc">六宫格对比人类实际食用的六种果实与种子部位：中果皮或胎座（桃、西瓜）、花托或花筒（苹果、草莓）、珠柄假种皮（荔枝、榴莲）、肉质外种皮（石榴）、固体与液体胚乳（椰子）以及种仁子叶（葵花籽、巴旦木、松子）。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="495" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">终极吃货解剖图鉴：有的吃果皮、有的吃种皮、有的喝“种子奶粉”！</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">把身边最常见的 20 种果实与坚果对号入座——下次端起果盘，一眼看穿你咬的是哪一层器官。</text>
+<rect x="20" y="68" width="352" height="126" rx="8" fill="#ffffff" stroke="#18794e" stroke-width="1"/>
+<rect x="20" y="68" width="352" height="34" rx="8" fill="#e7f6ee"/>
+<circle cx="38" cy="85" r="10" fill="#ffffff" stroke="#18794e" stroke-width="1.2"/>
+<text x="38" y="89" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">1</text>
+<text x="54" y="90" font-size="11.8" fill="#18794e" text-anchor="start" font-weight="700">吃真果皮（中果皮 / 胎座）</text>
+<text x="34" y="120" font-size="10.3" fill="#0f172a" text-anchor="start" font-weight="700">代表：桃、樱桃、芒果、西瓜、番茄</text>
+<text x="34" y="141" font-size="10.0" fill="#1e293b" text-anchor="start">• 桃、李、杏、芒果：吃肥厚【中果皮】，硬核壳是内果皮；</text>
+<text x="34" y="159" font-size="10.0" fill="#1e293b" text-anchor="start">• 西瓜、哈密瓜：最甜的沙瓤中心是极度发达的【胎座】！</text>
+<rect x="388" y="68" width="352" height="126" rx="8" fill="#ffffff" stroke="#c25014" stroke-width="1"/>
+<rect x="388" y="68" width="352" height="34" rx="8" fill="#fef1e8"/>
+<circle cx="406" cy="85" r="10" fill="#ffffff" stroke="#c25014" stroke-width="1.2"/>
+<text x="406" y="89" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="422" y="90" font-size="11.8" fill="#c25014" text-anchor="start" font-weight="700">吃花托或花筒（假果外衣）</text>
+<text x="402" y="120" font-size="10.3" fill="#0f172a" text-anchor="start" font-weight="700">代表：苹果、梨、枇杷、草莓、无花果</text>
+<text x="402" y="141" font-size="10.0" fill="#1e293b" text-anchor="start">• 苹果、梨、海棠：吃外圈【花筒】，果心硬核才是真果皮；</text>
+<text x="402" y="159" font-size="10.0" fill="#1e293b" text-anchor="start">• 草莓吃外翻【花托】；无花果吃内翻【肉质花序托】+小花！</text>
+<rect x="20" y="206" width="352" height="126" rx="8" fill="#ffffff" stroke="#0d9488" stroke-width="1"/>
+<rect x="20" y="206" width="352" height="34" rx="8" fill="#f0fdfa"/>
+<circle cx="38" cy="223" r="10" fill="#ffffff" stroke="#0d9488" stroke-width="1.2"/>
+<text x="38" y="227" font-size="11.5" fill="#0d9488" text-anchor="middle" font-weight="700">3</text>
+<text x="54" y="228" font-size="11.8" fill="#0d9488" text-anchor="start" font-weight="700">吃“假种皮”——珠柄送的糖衣</text>
+<text x="34" y="258" font-size="10.3" fill="#0f172a" text-anchor="start" font-weight="700">代表：荔枝、龙眼、红毛丹、榴莲</text>
+<text x="34" y="279" font-size="10.0" fill="#1e293b" text-anchor="start">• 剥掉荔枝红壳（真果皮），里面白嫩果肉既非果皮也非种皮；</text>
+<text x="34" y="297" font-size="10.0" fill="#1e293b" text-anchor="start">• 它是种子肚脐【珠柄】长出来包裹种子的【假种皮 (Aril)】！</text>
+<rect x="388" y="206" width="352" height="126" rx="8" fill="#ffffff" stroke="#dc2626" stroke-width="1"/>
+<rect x="388" y="206" width="352" height="34" rx="8" fill="#fef2f2"/>
+<circle cx="406" cy="223" r="10" fill="#ffffff" stroke="#dc2626" stroke-width="1.2"/>
+<text x="406" y="227" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">4</text>
+<text x="422" y="228" font-size="11.8" fill="#dc2626" text-anchor="start" font-weight="700">吃“肉质外种皮”——种子亲穿的水晶袄</text>
+<text x="402" y="258" font-size="10.3" fill="#0f172a" text-anchor="start" font-weight="700">代表：石榴、银杏（白果外臭皮）</text>
+<text x="402" y="279" font-size="10.0" fill="#1e293b" text-anchor="start">• 辟谣：石榴晶莹红宝石颗粒并无假种皮，而是外珠被发育成的</text>
+<text x="402" y="297" font-size="10.0" fill="#1e293b" text-anchor="start">  【肉质外种皮 (Sarcotesta)】——你在吃种子自己的外皮！</text>
+<text x="402" y="317" font-size="9.6" fill="#dc2626" text-anchor="start" font-weight="600">  （对比左栏：荔枝肉能完整剥离种皮，石榴汁却长死在核外！）</text>
+<rect x="20" y="344" width="352" height="126" rx="8" fill="#ffffff" stroke="#1d6fa5" stroke-width="1"/>
+<rect x="20" y="344" width="352" height="34" rx="8" fill="#eaf4fb"/>
+<circle cx="38" cy="361" r="10" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="38" y="365" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">5</text>
+<text x="54" y="366" font-size="11.8" fill="#1d6fa5" text-anchor="start" font-weight="700">吃“胚乳”——给植物宝宝备的奶粉</text>
+<text x="34" y="396" font-size="10.3" fill="#0f172a" text-anchor="start" font-weight="700">代表：椰子（椰肉+椰水）、玉米粒</text>
+<text x="34" y="417" font-size="10.0" fill="#1e293b" text-anchor="start">• 青椰削掉绿皮硬壳（果皮），插管喝的【椰子水】是液体胚乳，</text>
+<text x="34" y="435" font-size="10.0" fill="#1e293b" text-anchor="start">  刮下来吃的白嫩【椰子肉】则是沉淀上岸的【固体胚乳】！</text>
+<text x="34" y="455" font-size="9.6" fill="#1d6fa5" text-anchor="start" font-weight="600">  （双受精产物 3n 胚乳：动物喝母乳，被子植物胚芽喝胚乳！）</text>
+<rect x="388" y="344" width="352" height="126" rx="8" fill="#ffffff" stroke="#6d28d9" stroke-width="1"/>
+<rect x="388" y="344" width="352" height="34" rx="8" fill="#f3e8ff"/>
+<circle cx="406" cy="361" r="10" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="406" y="365" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">6</text>
+<text x="422" y="366" font-size="11.8" fill="#6d28d9" text-anchor="start" font-weight="700">吃“种仁（胚与子叶）”——直接吃种子</text>
+<text x="402" y="396" font-size="10.3" fill="#0f172a" text-anchor="start" font-weight="700">代表：葵花籽、巴旦木、核桃、花生、松子</text>
+<text x="402" y="417" font-size="10.0" fill="#1e293b" text-anchor="start">• 嗑瓜子扔掉的条纹壳是向日葵【果皮】，瓜子仁是【肥厚子叶】；</text>
+<text x="402" y="435" font-size="10.0" fill="#1e293b" text-anchor="start">• 巴旦木、核桃专吃核内【种子】；松子连果皮都没（裸子植物）！</text>
+</svg>

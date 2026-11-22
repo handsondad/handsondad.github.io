@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="550" viewBox="0 0 760 550" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">食品Q10加速保质期推算曲线与两类日期标签及三种胀袋安全鉴别图解</title>
+<desc id="desc">左栏绘制Q10等于2与3时的保质期随温度指数衰减曲线，标示23摄氏度常温365天对应33摄氏度122天及40摄氏度加速老化箱56.4天的动力学换算与防潮传质寿命公式；右栏区分代表品质巅峰的最佳赏味期与代表李斯特菌或婴配营养底线的安全食用期，并给出高原物理鼓包、微生物产气腐败胖听与果酸腐蚀氢胀的三秒鉴别指南。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="549" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">五、保质期不是午夜准时变毒药：Q10 加速老化推演、两类日期与胀袋排雷</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">新品不用苦等一年才上市：温度每升 10 °C 化学劣变提速 Q10 倍；分清品质赏味期、安全死线与危险鼓包</text>
+<rect x="20" y="64" width="372" height="472" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="74.0" width="332" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="200.0" y="89.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">A · Q10 加速寿命试验（40 °C 测 56 天 ≈ 常温 1 年）</text>
+<line x1="78" y1="362.0" x2="372" y2="362.0" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="3 3"/>
+<text x="72" y="366.0" font-size="11.5" fill="#475569" text-anchor="end">0天</text>
+<line x1="78" y1="300.3" x2="372" y2="300.3" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="3 3"/>
+<text x="72" y="304.3" font-size="11.5" fill="#475569" text-anchor="end">180天</text>
+<line x1="78" y1="236.9" x2="372" y2="236.9" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="3 3"/>
+<text x="72" y="240.9" font-size="11.5" fill="#475569" text-anchor="end">365天</text>
+<line x1="78" y1="176.9" x2="372" y2="176.9" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="3 3"/>
+<text x="72" y="180.9" font-size="11.5" fill="#475569" text-anchor="end">540天</text>
+<line x1="78" y1="122.0" x2="372" y2="122.0" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="3 3"/>
+<text x="72" y="126.0" font-size="11.5" fill="#475569" text-anchor="end">700天</text>
+<line x1="78.0" y1="122" x2="78.0" y2="362" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="78.0" y="379" font-size="11.5" fill="#475569" text-anchor="middle">15°C</text>
+<line x1="156.4" y1="122" x2="156.4" y2="362" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="156.4" y="379" font-size="11.5" fill="#475569" text-anchor="middle">23°C</text>
+<line x1="254.4" y1="122" x2="254.4" y2="362" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="254.4" y="379" font-size="11.5" fill="#475569" text-anchor="middle">33°C</text>
+<line x1="323.0" y1="122" x2="323.0" y2="362" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="323.0" y="379" font-size="11.5" fill="#475569" text-anchor="middle">40°C</text>
+<line x1="372.0" y1="122" x2="372.0" y2="362" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="372.0" y="379" font-size="11.5" fill="#475569" text-anchor="middle">45°C</text>
+<line x1="78" y1="122" x2="78" y2="362" stroke="#0f172a" stroke-width="1.3"/>
+<line x1="78" y1="362" x2="372" y2="362" stroke="#0f172a" stroke-width="1.3"/>
+<polyline points="78.0,144.1 82.9,151.5 87.8,158.7 92.7,165.6 97.6,172.3 102.5,178.8 107.4,185.0 112.3,191.0 117.2,196.9 122.1,202.5 127.0,207.9 131.9,213.2 136.8,218.2 141.7,223.1 146.6,227.9 151.5,232.4 156.4,236.9 161.3,241.1 166.2,245.2 171.1,249.2 176.0,253.1 180.9,256.8 185.8,260.4 190.7,263.8 195.6,267.2 200.5,270.4 205.4,273.5 210.3,276.5 215.2,279.4 220.1,282.2 225.0,285.0 229.9,287.6 234.8,290.1 239.7,292.6 244.6,294.9 249.5,297.2 254.4,299.4 259.3,301.6 264.2,303.6 269.1,305.6 274.0,307.5 278.9,309.4 283.8,311.2 288.7,312.9 293.6,314.6 298.5,316.2 303.4,317.8 308.3,319.3 313.2,320.7 318.1,322.1 323.0,323.5 327.9,324.8 332.8,326.1 337.7,327.3 342.6,328.5 347.5,329.6 352.4,330.7 357.3,331.8 362.2,332.8 367.1,333.8 372.0,334.8" fill="none" stroke="#1d6fa5" stroke-width="2.0" stroke-dasharray="5 3"/>
+<polyline points="98.6,122.7 103.5,135.5 108.3,147.5 113.2,159.0 118.1,169.8 123.0,180.0 127.9,189.7 132.8,198.9 137.6,207.6 142.5,215.8 147.4,223.6 152.3,231.0 157.2,237.9 162.1,244.5 166.9,250.8 171.8,256.7 176.7,262.3 181.6,267.6 186.5,272.7 191.3,277.4 196.2,281.9 201.1,286.2 206.0,290.2 210.9,294.1 215.8,297.7 220.6,301.1 225.5,304.3 230.4,307.4 235.3,310.3 240.2,313.1 245.1,315.7 249.9,318.1 254.8,320.5 259.7,322.7 264.6,324.8 269.5,326.8 274.4,328.6 279.2,330.4 284.1,332.1 289.0,333.7 293.9,335.2 298.8,336.6 303.6,338.0 308.5,339.3 313.4,340.5 318.3,341.6 323.2,342.7 328.1,343.7 332.9,344.7 337.8,345.6 342.7,346.5 347.6,347.3 352.5,348.1 357.4,348.8 362.2,349.5 367.1,350.2 372.0,350.8" fill="none" stroke="#c25014" stroke-width="2.6"/>
+<text x="86" y="278" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">Q10 = 2 (虚线)</text>
+<text x="139.9" y="197.3" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">典型化学劣变 Q10 = 3</text>
+<circle cx="156.4" cy="236.9" r="4.6" fill="#18794e" stroke="#ffffff" stroke-width="1.4"/>
+<text x="166.4" y="230.9" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">23°C 常温：365 天</text>
+<circle cx="254.4" cy="320.3" r="4.6" fill="#b45309" stroke="#ffffff" stroke-width="1.4"/>
+<text x="246.4" y="338.3" font-size="11.5" fill="#b45309" text-anchor="end" font-weight="700">33°C 酷暑仓：122 天</text>
+<line x1="323.0" y1="337.7" x2="323.0" y2="294" stroke="#be123c" stroke-width="1.2" stroke-dasharray="2 2"/>
+<circle cx="323.0" cy="342.7" r="4.6" fill="#be123c" stroke="#ffffff" stroke-width="1.4"/>
+<text x="368" y="289" font-size="11.5" fill="#be123c" text-anchor="end" font-weight="700">★ 40°C 加速箱：56 天</text>
+<rect x="34" y="396" width="344" height="126" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="46" y="418" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">防潮保质期工程公式（为什么大包装比小袋耐放？）：</text>
+<text x="46" y="442" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">ts = Ws · (Mc − Mi) / (WVTR · A · Δp / p_std)</text>
+<text x="46" y="466" font-size="11.5" fill="#1e293b" text-anchor="start">• 干重 Ws 翻倍而袋面积 A 仅增 1.6 倍 ⇒ 寿命自动拉长；</text>
+<text x="46" y="488" font-size="11.5" fill="#1e293b" text-anchor="start">• 酷暑盛夏每升温 10 °C 寿命缩水至 1/2–1/3，</text>
+<text x="46" y="510" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">  因此“阴凉避光干燥处”是实打实的动力学参数！</text>
+<rect x="406" y="64" width="334" height="472" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="420.0" y="74.0" width="222" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="531.0" y="89.0" font-size="12" fill="#18794e" text-anchor="middle" font-weight="600">B · 赏味期 vs 安全死线 &amp; 胀袋三秒排雷</text>
+<rect x="420" y="110" width="306" height="174" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="432" y="132" font-size="12.0" fill="#18794e" text-anchor="start" font-weight="700">① 最佳赏味期（Best if Used By · 品质缓坡）</text>
+<text x="432" y="154" font-size="11.5" fill="#1e293b" text-anchor="start">饼干/罐头/干面：代表风味酥脆度保持巅峰的期限；</text>
+<text x="432" y="175" font-size="11.5" fill="#475569" text-anchor="start">未破损受潮超期几天并非剧毒（误丢占家庭浪费 20%）。</text>
+<line x1="432" y1="192" x2="714" y2="192" stroke="#cbd5e1" stroke-width="1"/>
+<text x="432" y="214" font-size="12.0" fill="#be123c" text-anchor="start" font-weight="700">② 安全食用期（Use By · 安全悬崖红线！）</text>
+<text x="432" y="236" font-size="11.5" fill="#1e293b" text-anchor="start">冷鲜即食熟肉/鲜切沙拉/婴儿配方粉：嗜冷李斯特菌</text>
+<text x="432" y="257" font-size="11.5" fill="#be123c" text-anchor="start" font-weight="700">可在 4°C 暗中增殖且不酸臭，超期必须果断丢弃！</text>
+<text x="420" y="308" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">看到包装鼓包（胀袋/胖听），到底能不能吃？</text>
+<rect x="420" y="322" width="306" height="60" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<rect x="430.0" y="330.0" width="42" height="22" rx="11.0" fill="#18794e" stroke="#ffffff" stroke-width="1" stroke-opacity="0.35"/>
+<text x="451.0" y="345.0" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="600">安全</text>
+<text x="478" y="346" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">高原低压物理鼓包（平地薯片上高原）</text>
+<text x="432" y="369" font-size="11.5" fill="#1e293b" text-anchor="start">外界气压降低致袋内氮气正常膨胀，回平原即瘪。</text>
+<rect x="420" y="390" width="306" height="60" rx="8" fill="#ffe4e6" stroke="#be123c" stroke-width="1.2"/>
+<rect x="430.0" y="398.0" width="42" height="22" rx="11.0" fill="#be123c" stroke="#ffffff" stroke-width="1" stroke-opacity="0.35"/>
+<text x="451.0" y="413.0" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="600">剧危</text>
+<text x="478" y="414" font-size="11.5" fill="#be123c" text-anchor="start" font-weight="700">生物产气腐败胀袋（常温鼓盖酸奶/肉罐头）</text>
+<text x="432" y="437" font-size="11.5" fill="#1e293b" text-anchor="start">梭菌/酵母产 CO2·H2，可能含肉毒毒素，严禁开尝！</text>
+<rect x="420" y="458" width="306" height="60" rx="8" fill="#fef3c7" stroke="#b45309" stroke-width="1.2"/>
+<rect x="430.0" y="466.0" width="42" height="22" rx="11.0" fill="#b45309" stroke="#ffffff" stroke-width="1" stroke-opacity="0.35"/>
+<text x="451.0" y="481.0" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="600">弃食</text>
+<text x="478" y="482" font-size="11.5" fill="#b45309" text-anchor="start" font-weight="700">高酸水果铁罐“氢胀”（菠萝/番茄马口铁罐）</text>
+<text x="432" y="505" font-size="11.5" fill="#1e293b" text-anchor="start">果酸长期腐蚀罐壁溶锡铁析出氢气，金属超标勿食。</text>
+</svg>

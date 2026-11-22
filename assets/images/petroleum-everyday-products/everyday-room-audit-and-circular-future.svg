@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="510" viewBox="0 0 760 510" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">清晨起床10分钟石油制品盘点、塑料1至7号耐热安全指南与高分子降解循环未来图解</title>
+<desc id="desc">左栏盘点清晨接触的手机、记忆棉、眼镜、牙刷、洗护品、衣物及1至7号塑料底标耐热安全边界（标明仅5号PP可安全微波加热）；右栏对比可水解酯键与纯碳碳单键（约370 kJ/mol）解释塑料难降解原因，并展示新能源材料需求、化学解聚回收与生物基二氧化碳制烯烃路线。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="509" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">清晨 10 分钟“含油量”体检、塑料底标 1–7 号红线与循环未来</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左看睁眼摸到的日用品与唯一能进微波炉的 5 号餐盒；右看细菌为何啃不动塑料及化学解聚新出路。</text>
+<rect x="20" y="68" width="404" height="426" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="36.0" y="82.0" width="372" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="222.0" y="97.0" font-size="10.1" fill="#1d6fa5" text-anchor="middle" font-weight="600">⏰ 起床 10 分钟石化连击 &amp; 塑料底部三角数字安全指南</text>
+<text x="36" y="118" font-size="8.9" fill="#1e293b" text-anchor="start">• 07:00 关闹钟（PC/ABS 手机壳 + OLED 发光层）· 抬头离枕（PU 记忆棉）</text>
+<text x="36" y="135" font-size="8.9" fill="#1e293b" text-anchor="start">• 07:03 戴眼镜（PC 树脂镜片）· 刷牙（PP 柄 + 尼龙刷毛 + 牙膏 PEG）</text>
+<text x="36" y="152" font-size="8.9" fill="#1e293b" text-anchor="start">• 07:06 洗漱穿衣（LAS 洁面泡沫 + 凡士林护唇 + 涤纶速干衣 + 氨纶袜口）</text>
+<text x="36" y="169" font-size="8.9" fill="#0f172a" text-anchor="start" font-weight="600">• 07:09 开冰箱热早餐（冰箱壁 PU 发泡保温层 + PE 保鲜膜 + #5 餐盒）</text>
+<rect x="36" y="186" width="372" height="42" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="1.0"/>
+<text x="46" y="202" font-size="9.2" fill="#dc2626" text-anchor="start" font-weight="700">#1 PET｜矿泉水/茶饮瓶（耐热上限 ~65–70 °C）</text>
+<text x="46" y="219" font-size="8.9" fill="#1e293b" text-anchor="start" font-weight="500">忌装滚水！高温易变形析出微量锑</text>
+<rect x="36" y="234" width="372" height="42" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.0"/>
+<text x="46" y="250" font-size="9.2" fill="#1d6fa5" text-anchor="start" font-weight="700">#2 HDPE｜牛奶桶/洗发水瓶（耐热上限 ~110 °C）</text>
+<text x="46" y="267" font-size="8.9" fill="#1e293b" text-anchor="start" font-weight="500">耐酸碱厚实；难彻底洗净不改水杯</text>
+<rect x="36" y="282" width="372" height="42" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="1.0"/>
+<text x="46" y="298" font-size="9.2" fill="#dc2626" text-anchor="start" font-weight="700">#3 PVC｜雨衣/水管/桌布（耐热上限 ~60–80 °C）</text>
+<text x="46" y="315" font-size="8.9" fill="#1e293b" text-anchor="start" font-weight="500">忌包热油脂食物！谨防增塑剂迁出</text>
+<rect x="36" y="330" width="372" height="42" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.0"/>
+<text x="46" y="346" font-size="9.2" fill="#d97706" text-anchor="start" font-weight="700">#4 LDPE｜家用PE保鲜膜（耐热上限 ~110 °C）</text>
+<text x="46" y="363" font-size="8.9" fill="#1e293b" text-anchor="start" font-weight="500">热菜留缝透气，勿直接紧贴滚烫肥油</text>
+<rect x="36" y="378" width="372" height="42" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="1.9"/>
+<text x="46" y="394" font-size="9.2" fill="#18794e" text-anchor="start" font-weight="700">#5 PP｜微波餐盒/豆浆杯（耐热上限 160–170 °C）</text>
+<text x="46" y="411" font-size="8.9" fill="#0f172a" text-anchor="start" font-weight="700">★唯一可放心进微波炉加热！（揭掉非PP盖）</text>
+<rect x="36" y="426" width="372" height="42" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="1.0"/>
+<text x="46" y="442" font-size="9.2" fill="#c25014" text-anchor="start" font-weight="700">#6 PS｜泡面碗盖/发泡盒（耐热上限 ~70–90 °C）</text>
+<text x="46" y="459" font-size="8.9" fill="#1e293b" text-anchor="start" font-weight="500">忌进微波炉、忌装滚油与热柠檬酸饮</text>
+<text x="36" y="484" font-size="8.7" fill="#64748b" text-anchor="start" font-weight="600">注：#7 代表其他树脂（如水壶 PC、母婴奶瓶 Tritan/PPSU），须按瓶身标注温区使用。</text>
+<rect x="440" y="68" width="300" height="426" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="456.0" y="82.0" width="268" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="590.0" y="97.0" font-size="10.1" fill="#18794e" text-anchor="middle" font-weight="600">♻️ 为什么塑料百年不烂？未来靠什么接棒？</text>
+<rect x="456" y="114" width="268" height="134" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="1"/>
+<text x="466" y="134" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="700">🦠 微生物为什么“啃不动”塑料袋？</text>
+<text x="466" y="153" font-size="8.9" fill="#1e293b" text-anchor="start">• 天然淀粉/蛋白质/手术可吸收线 (PGA/PLA)</text>
+<text x="466" y="169" font-size="8.9" fill="#1e293b" text-anchor="start">  主链每隔几步就有极性“酯键/肽键弱点”，</text>
+<text x="466" y="185" font-size="8.9" fill="#18794e" text-anchor="start" font-weight="700">  水分子与细菌水解酶一剪就断（90 天吸收）！</text>
+<text x="466" y="204" font-size="8.9" fill="#1e293b" text-anchor="start">• 而 PE/PP 整条主链全是 ~370 kJ/mol 非极性</text>
+<text x="466" y="220" font-size="8.9" fill="#dc2626" text-anchor="start" font-weight="700">  纯 C─C 单键且疏水结晶，自然界酶无处下嘴，</text>
+<text x="466" y="236" font-size="8.9" fill="#1e293b" text-anchor="start">  日晒碎裂只会变成微塑料颗粒！</text>
+<rect x="456" y="260" width="268" height="220" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="466" y="280" font-size="9.5" fill="#18794e" text-anchor="start" font-weight="700">🌱 越搞新能源，越要珍惜那 ~13% 碳积木：</text>
+<text x="466" y="300" font-size="9.2" fill="#0f172a" text-anchor="start" font-weight="700">① 少烧油、留作材料：</text>
+<text x="466" y="317" font-size="8.8" fill="#1e293b" text-anchor="start">   光伏板 EVA 封装膜、风电百米环氧树脂叶片、</text>
+<text x="466" y="333" font-size="8.8" fill="#1e293b" text-anchor="start">   电动车轻量化外壳与锂电隔膜（PE/PP 微孔膜）</text>
+<text x="466" y="349" font-size="8.8" fill="#0f172a" text-anchor="start" font-weight="600">   全都依赖不燃烧的高性能石化高分子！</text>
+<text x="466" y="371" font-size="9.2" fill="#1d6fa5" text-anchor="start" font-weight="700">② 化学解聚回收（反向拉开拉链）：</text>
+<text x="466" y="388" font-size="8.8" fill="#1e293b" text-anchor="start">   用醇解、热裂解或工程PET水解酶把废塑料</text>
+<text x="466" y="404" font-size="8.8" fill="#1e293b" text-anchor="start">   拆回纯净单体，重聚出食品级新瓶，无限闭环。</text>
+<text x="466" y="426" font-size="9.2" fill="#6d28d9" text-anchor="start" font-weight="700">③ 生物基与二氧化碳接棒源头：</text>
+<text x="466" y="443" font-size="8.8" fill="#1e293b" text-anchor="start">   玉米乳酸制 PLA、甘蔗乙醇脱水制生物乙烯、</text>
+<text x="466" y="459" font-size="8.8" fill="#0f172a" text-anchor="start" font-weight="600">   绿氢 + 捕集 CO₂ 制甲醇再变烯烃！</text>
+</svg>

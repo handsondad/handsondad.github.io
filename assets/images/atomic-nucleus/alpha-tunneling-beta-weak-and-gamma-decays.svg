@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="544" viewBox="0 0 760 544" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">铀238阿尔法粒子伽莫夫量子隧穿势垒动画与贝塔弱力夸克变身及三射线穿透力对比图解</title>
+<desc id="desc">上栏绘制核内深势阱与26兆电子伏库仑势垒，单次动画配合静态穿透波展示4.27兆电子伏阿尔法粒子量子隧穿逃逸；左下栏用不确定性原理排除核内预存电子，展示弱核力d变u夸克贝塔衰变；右下栏对比纸张、铝板与铅墙对α、β、γ射线的阻挡能力。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="543" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">四、挤不下或偏科的原子核如何自救？α 量子穿墙术、β 夸克变身与 γ 泄压</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">上：伽莫夫 α 粒子量子隧穿 26 MeV 静电高墙动画 · 下：弱力夸克翻转 β 衰变与三射线穿透力对比</text>
+<style>
+  @keyframes alpha-tunnel-move {
+    0%, 15% { transform: translate(0px, 0px); opacity: 1; }
+    45% { transform: translate(62px, 0px); opacity: 0.35; }
+    75%, 100% { transform: translate(198px, 0px); opacity: 1; }
+  }
+  .alpha-tunnel-dot {
+    animation: alpha-tunnel-move 3.8s ease-in-out 1 both;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .alpha-tunnel-dot {
+      animation: none !important;
+      transform: translate(198px, 0px) !important;
+      opacity: 1 !important;
+    }
+  }
+</style>
+<rect x="20" y="66" width="720" height="236" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="78.0" width="696" height="24" rx="12.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="380.0" y="94.3" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="600">A · α 衰变惊天悖论：铀-238 里的 α 粒子只有 4.27 MeV，凭什么翻过 26 MeV 库仑绝壁？（1928 伽莫夫量子隧穿）</text>
+<line x1="62.0" y1="242.0" x2="416.0" y2="242.0" stroke="#475569" stroke-width="1.3" stroke-dasharray="4 3"/>
+<line x1="62.0" y1="118.0" x2="62.0" y2="282.0" stroke="#475569" stroke-width="1.4"/>
+<path d="M 62.0,276.0 L 142.0,276.0 L 142.0,126.0 L 142.0,126.0 L 148.0,141.8 L 154.0,153.8 L 160.0,163.3 L 166.0,170.9 L 172.0,177.2 L 178.0,182.4 L 184.0,186.9 L 190.0,190.7 L 196.0,194.1 L 202.0,197.0 L 208.0,199.6 L 214.0,201.9 L 220.0,204.0 L 226.0,205.9 L 232.0,207.6 L 238.0,209.1 L 244.0,210.5 L 250.0,211.8 L 256.0,213.0 L 262.0,214.1 L 268.0,215.1 L 274.0,216.1 L 280.0,217.0 L 286.0,217.8 L 292.0,218.6 L 298.0,219.3 L 304.0,220.0 L 310.0,220.6 L 316.0,221.2 L 322.0,221.8 L 328.0,222.3 L 334.0,222.8 L 340.0,223.3 L 346.0,223.8 L 352.0,224.2 L 358.0,224.6 L 364.0,225.0 L 370.0,225.4 L 376.0,225.8 L 382.0,226.1 L 388.0,226.5 L 394.0,226.8 L 400.0,227.1 L 406.0,227.4 L 412.0,227.7" fill="none" stroke="#1d6fa5" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="66.0" y1="212.0" x2="406.0" y2="212.0" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5 3"/>
+<path d="M 70.0,201.0 L 73.0,211.1 L 76.0,221.8 L 79.0,226.0 L 82.0,220.8 L 85.0,209.8 L 88.0,200.2 L 91.0,198.5 L 94.0,205.7 L 97.0,217.1 L 100.0,225.1 L 103.0,224.4 L 106.0,215.4 L 109.0,204.2 L 112.0,198.1 L 115.0,201.3 L 118.0,211.6 L 121.0,222.2 L 124.0,226.0 L 127.0,220.5 L 130.0,209.3 L 133.0,200.0 L 136.0,198.6 L 139.0,206.1 L 142.0,200.0 L 145.0,200.8 L 148.0,201.6 L 151.0,202.3 L 154.0,203.0 L 157.0,203.6 L 160.0,204.2 L 163.0,204.7 L 166.0,205.2 L 169.0,205.7 L 172.0,206.1 L 175.0,206.5 L 178.0,206.9 L 181.0,207.3 L 184.0,207.6 L 187.0,207.9 L 190.0,208.2 L 193.0,208.4 L 196.0,208.7 L 199.0,208.9 L 202.0,209.1 L 205.0,209.3 L 208.0,209.5 L 211.0,209.7 L 214.0,209.8 L 217.0,210.0 L 220.0,210.1 L 223.0,210.3 L 226.0,210.4 L 229.0,210.5 L 232.0,210.6 L 235.0,210.7 L 238.0,210.8 L 241.0,210.9 L 244.0,210.9 L 247.0,211.0 L 250.0,211.1 L 253.0,209.9 L 256.0,208.5 L 259.0,210.1 L 262.0,213.4 L 265.0,215.4 L 268.0,214.6 L 271.0,211.5 L 274.0,208.9 L 277.0,208.9 L 280.0,211.6 L 283.0,214.6 L 286.0,215.4 L 289.0,213.3 L 292.0,210.1 L 295.0,208.5 L 298.0,209.9 L 301.0,213.1 L 304.0,215.3 L 307.0,214.8 L 310.0,211.8 L 313.0,209.0 L 316.0,208.8 L 319.0,211.3 L 322.0,214.4 L 325.0,215.5 L 328.0,213.6 L 331.0,210.4 L 334.0,208.5 L 337.0,209.7 L 340.0,212.8 L 343.0,215.2 L 346.0,214.9 L 349.0,212.1 L 352.0,209.2 L 355.0,208.7 L 358.0,211.0 L 361.0,214.2 L 364.0,215.5 L 367.0,213.9 L 370.0,210.6 L 373.0,208.6 L 376.0,209.4 L 379.0,212.5 L 382.0,215.1 L 385.0,215.1 L 388.0,212.4 L 391.0,209.4 L 394.0,208.6 L 397.0,210.7 L 400.0,213.9" fill="none" stroke="#fca5a5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="102" cy="212.0" r="6.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="2 2"/>
+<circle cx="300" cy="212.0" r="6.0" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.5" stroke-dasharray="2 2"/>
+<g class="alpha-tunnel-dot"><circle cx="102" cy="212.0" r="6.5" fill="#dc2626"/></g>
+<text x="148.0" y="132" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">库仑高墙 ~26 MeV</text>
+<text x="206" y="188" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">经典禁区：波函数指数衰减穿墙</text>
+<text x="312" y="266" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">穿墙逃逸 α (4.27 MeV) →</text>
+<text x="102" y="274" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">核内势阱</text>
+<rect x="424" y="114" width="302" height="174" rx="8" fill="#fff7ed" stroke="#c25014" stroke-width="1.2"/>
+<text x="436" y="136" font-size="11.6" fill="#c25014" text-anchor="start" font-weight="700">为什么半衰期能差出 27 个数量级？</text>
+<text x="436" y="158" font-size="11.5" fill="#1e293b" text-anchor="start">• α 团簇每秒撞墙 10²¹ 次！穿墙率对能量极敏感：</text>
+<text x="436" y="180" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">• 钋-212 (8.95 MeV)：墙薄，半衰期仅 0.3 微秒！</text>
+<text x="436" y="202" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">• 铀-238 (4.27 MeV)：撞 10³⁸ 次才穿出 1 次，</text>
+<text x="436" y="224" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">  半衰期长达 44.7 亿年（恰好与地球同寿供地热）！</text>
+<text x="436" y="248" font-size="11.5" fill="#1e293b" text-anchor="start">• 铁律 N=N₀(1/2)^(t/T₁/₂)：单核何时穿完全随机，</text>
+<text x="436" y="270" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">  万亿核总体却准如碳-14 考古原子钟！</text>
+<rect x="20" y="316" width="366" height="214" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="328.0" width="342" height="24" rx="12.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="203.0" y="344.3" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="600">B · β 衰变：原子核里根本没藏电子！是弱力现场造的</text>
+<text x="34" y="368" font-size="11.5" fill="#1e293b" text-anchor="start">• 海森堡铁证：若把电子硬关进 10 fm 核里，不确定性动量</text>
+<text x="34" y="390" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">  要求动能 &gt;12,000 MeV（实测仅 ~1 MeV）→ 核内绝无电子！</text>
+<text x="34" y="416" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">• 真相（弱核力夸克手术）：当核内中子偏多（如 ¹⁴C），</text>
+<text x="34" y="438" font-size="11.5" fill="#1e293b" text-anchor="start">  中子内 1 颗下夸克 d 吐出虚 W⁻ 玻色子翻转为上夸克 u：</text>
+<text x="34" y="462" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">  n(udd) → p(uud) + e⁻(β⁻) + ν̄_e（质子数 Z+1 回归稳定谷！）</text>
+<text x="34" y="486" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">• 反之质子偏多时发生 β⁺ 衰变：p → n + e⁺ + ν_e（医院 PET</text>
+<text x="34" y="508" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">  正电子显像原理）；γ 衰变则是核壳层高能级跃迁吐光子！</text>
+<rect x="398" y="316" width="342" height="214" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="410.0" y="328.0" width="318" height="24" rx="12.0" fill="#f0fdfa" stroke="#0f766e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="569.0" y="344.3" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="600">C · α、β、γ 三大射线脾气与防护盾牌实测对比</text>
+<rect x="548" y="364" width="12" height="118" rx="2" fill="#fef3c7" stroke="#b45309" stroke-width="1.2"/>
+<rect x="616" y="364" width="16" height="118" rx="2" fill="#e2e8f0" stroke="#475569" stroke-width="1.2"/>
+<rect x="686" y="364" width="28" height="118" rx="3" fill="#cbd5e1" stroke="#0f172a" stroke-width="1.4"/>
+<text x="554" y="498" font-size="11.5" fill="#b45309" text-anchor="middle" font-weight="700">一张纸/皮肤</text>
+<text x="624" y="498" font-size="11.5" fill="#475569" text-anchor="middle" font-weight="700">3mm 铝板</text>
+<text x="700" y="498" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">几厘米铅墙</text>
+<text x="412" y="388" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">α (⁴He²⁺ 重炮)</text>
+<line x1="506.0" y1="384.0" x2="546.0" y2="384.0" stroke="#dc2626" stroke-width="3.2"/>
+<text x="412" y="428" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">β (高速 e⁻/e⁺)</text>
+<line x1="506.0" y1="424.0" x2="614.0" y2="424.0" stroke="#6d28d9" stroke-width="2.4"/>
+<text x="412" y="468" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">γ (MeV 光子)</text>
+<line x1="506.0" y1="464.0" x2="698.0" y2="464.0" stroke="#0f766e" stroke-width="2.2" stroke-dasharray="5 3"/>
+<text x="570" y="518" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="600">注：α 外照一张纸即挡，但吸入体内近距电离杀伤极强！</text>
+</svg>

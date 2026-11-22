@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="544" viewBox="0 0 760 544" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">核子间强核力与库仑力势能实算曲线及核素图稳定谷N/Z向上弯曲机制图解</title>
+<desc id="desc">左栏绘制核子间距0.4至3.4飞米内的排斥硬核与1飞米汤川强吸引深势阱，解释原子核恒定2.3亿吨每立方厘米超高密度；右栏绘制核素稳定谷N对Z曲线，展示Z大于20后长程库仑斥力迫使稳定核招募额外中子直至铅208极限。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="543" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">一、几十颗正电荷质子挤在几飞米里，凭什么没炸飞？强核力手铐与中子稳定谷</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：核子势能 V(r) 实算（0.5 fm 硬核排斥 + 1 fm 汤川强吸引） · 右：核素稳定谷 N/Z 弯曲之谜</text>
+<rect x="20" y="66" width="354" height="464" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="78.0" width="330" height="24" rx="12.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="197.0" y="94.3" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">A · 距离决定生死：强核力只管贴身 2 飞米！</text>
+<line x1="76.0" y1="294.0" x2="348.0" y2="294.0" stroke="#475569" stroke-width="1.3"/>
+<line x1="76.0" y1="120.0" x2="76.0" y2="294.0" stroke="#475569" stroke-width="1.4"/>
+<line x1="76.0" y1="213.7" x2="348.0" y2="213.7" stroke="#475569" stroke-width="1.3" stroke-dasharray="4 3"/>
+<text x="68" y="144.1" font-size="11.5" fill="#dc2626" text-anchor="end" font-weight="700">+斥</text>
+<text x="68" y="217.7" font-size="11.5" fill="#64748b" text-anchor="end">0</text>
+<text x="68" y="281.9" font-size="11.5" fill="#0f766e" text-anchor="end" font-weight="700">-吸</text>
+<path d="M 80.4,144.9 L 83.0,150.3 L 85.7,154.9 L 88.3,158.9 L 90.9,162.4 L 93.5,165.5 L 96.2,168.2 L 98.8,170.7 L 101.4,172.9 L 104.1,174.8 L 106.7,176.6 L 109.3,178.3 L 112.0,179.8 L 114.6,181.1 L 117.2,182.4 L 119.9,183.6 L 122.5,184.7 L 125.1,185.7 L 127.8,186.6 L 130.4,187.5 L 133.0,188.3 L 135.7,189.1 L 138.3,189.8 L 140.9,190.5 L 143.6,191.2 L 146.2,191.8 L 148.8,192.4 L 151.5,192.9 L 154.1,193.4 L 156.7,193.9 L 159.4,194.4 L 162.0,194.9 L 164.6,195.3 L 167.3,195.7 L 169.9,196.1 L 172.5,196.5 L 175.1,196.8 L 177.8,197.2 L 180.4,197.5 L 183.0,197.8 L 185.7,198.1 L 188.3,198.4 L 190.9,198.7 L 193.6,199.0 L 196.2,199.3 L 198.8,199.5 L 201.5,199.8 L 204.1,200.0 L 206.7,200.2 L 209.4,200.5 L 212.0,200.7 L 214.6,200.9 L 217.3,201.1 L 219.9,201.3 L 222.5,201.5 L 225.2,201.6 L 227.8,201.8 L 230.4,202.0 L 233.1,202.2 L 235.7,202.3 L 238.3,202.5 L 241.0,202.6 L 243.6,202.8 L 246.2,202.9 L 248.9,203.1 L 251.5,203.2 L 254.1,203.4 L 256.7,203.5 L 259.4,203.6 L 262.0,203.7 L 264.6,203.9 L 267.3,204.0 L 269.9,204.1 L 272.5,204.2 L 275.2,204.3 L 277.8,204.4 L 280.4,204.5 L 283.1,204.6 L 285.7,204.7 L 288.3,204.8 L 291.0,204.9 L 293.6,205.0 L 296.2,205.1 L 298.9,205.2 L 301.5,205.3 L 304.1,205.4 L 306.8,205.5 L 309.4,205.6 L 312.0,205.6 L 314.7,205.7 L 317.3,205.8 L 319.9,205.9 L 322.6,205.9 L 325.2,206.0 L 327.8,206.1 L 330.5,206.2 L 333.1,206.2 L 335.7,206.3 L 338.3,206.4 L 341.0,206.4 L 343.6,206.5" fill="none" stroke="#c25014" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 3"/>
+<path d="M 91.8,120.0 L 94.3,130.5 L 96.8,151.0 L 99.3,169.7 L 101.8,186.7 L 104.3,202.0 L 106.8,215.8 L 109.3,227.9 L 111.8,238.6 L 114.3,247.7 L 116.8,255.5 L 119.3,262.0 L 121.8,267.2 L 124.3,271.3 L 126.8,274.3 L 129.3,276.3 L 131.8,277.4 L 134.3,277.9 L 136.8,277.8 L 139.3,277.1 L 141.8,276.1 L 144.3,274.8 L 146.8,273.3 L 149.3,271.7 L 151.8,270.0 L 154.3,268.2 L 156.8,266.3 L 159.3,264.3 L 161.8,262.3 L 164.3,260.3 L 166.8,258.3 L 169.3,256.3 L 171.8,254.3 L 174.3,252.3 L 176.8,250.3 L 179.3,248.4 L 181.8,246.5 L 184.3,244.7 L 186.8,242.9 L 189.3,241.2 L 191.8,239.5 L 194.3,238.0 L 196.8,236.4 L 199.3,235.0 L 201.8,233.6 L 204.3,232.2 L 206.8,231.0 L 209.3,229.8 L 211.8,228.6 L 214.3,227.5 L 216.8,226.5 L 219.3,225.6 L 221.8,224.7 L 224.3,223.8 L 226.8,223.0 L 229.3,222.3 L 231.8,221.6 L 234.3,220.9 L 236.8,220.3 L 239.3,219.8 L 241.8,219.3 L 244.3,218.8 L 246.8,218.4 L 249.3,217.9 L 251.8,217.6 L 254.3,217.2 L 256.8,216.9 L 259.3,216.6 L 261.8,216.3 L 264.3,216.1 L 266.8,215.9 L 269.3,215.6 L 271.8,215.5 L 274.3,215.3 L 276.8,215.1 L 279.3,215.0 L 281.8,214.9 L 284.3,214.7 L 286.8,214.6 L 289.3,214.5 L 291.8,214.4 L 294.3,214.4 L 296.8,214.3 L 299.3,214.2 L 301.8,214.2 L 304.3,214.1 L 306.8,214.1 L 309.3,214.0 L 311.9,214.0 L 314.4,214.0 L 316.9,213.9 L 319.4,213.9 L 321.9,213.9 L 324.4,213.9 L 326.9,213.8 L 329.4,213.8 L 331.9,213.8 L 334.4,213.8 L 336.9,213.8 L 339.4,213.8 L 341.9,213.8 L 344.4,213.8" fill="none" stroke="#0f766e" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="110.3" y="138" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">&lt;0.6 fm 硬核死顶</text>
+<text x="155.9" y="271.9" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">~1 fm 强力深阱 (-50 MeV)</text>
+<text x="344" y="181.6" font-size="11.5" fill="#c25014" text-anchor="end" font-weight="600">橙虚线：库仑长程斥力(示意放大)</text>
+<text x="212" y="312" font-size="11.5" fill="#64748b" text-anchor="middle">核子间距 r（0.4 → 3.4 fm，&gt;2.5 fm 强力归零！）</text>
+<rect x="32" y="326" width="330" height="190" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="44" y="348" font-size="11.6" fill="#1d6fa5" text-anchor="start" font-weight="700">原子核的三个极端尺度真相：</text>
+<text x="44" y="370" font-size="11.5" fill="#1e293b" text-anchor="start">• 体育场里的一颗棒球：核半径仅原子 1/10 万，却装走</text>
+<text x="44" y="392" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">  99.97% 质量！R = 1.2 A¹/³ fm（铁核约 4.6 fm）；</text>
+<text x="44" y="416" font-size="11.5" fill="#1e293b" text-anchor="start">• 密度恒定 2.3×10¹⁷ kg/m³：因 &lt;0.6 fm 排斥硬核死顶，</text>
+<text x="44" y="438" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">  核子没法再压扁，1 立方厘米核物质重达 2.3 亿吨！</text>
+<text x="44" y="462" font-size="11.5" fill="#1e293b" text-anchor="start">• 1935 汤川秀树破案：核子靠交换有质量的 π 介子拉手，</text>
+<text x="44" y="484" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">  力程锁死在 ħ/(m_π c) ≈ 1.4 fm，强度压倒电磁百倍，</text>
+<text x="44" y="504" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">  且对质子、中子一视同仁（电荷无关性）！</text>
+<rect x="388" y="66" width="352" height="464" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="400.0" y="78.0" width="328" height="24" rx="12.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="564.0" y="94.3" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="600">B · 为什么大原子核里“中子必须比质子多一大截”？</text>
+<line x1="442.0" y1="308.0" x2="720.0" y2="308.0" stroke="#475569" stroke-width="1.4"/>
+<line x1="442.0" y1="120.0" x2="442.0" y2="308.0" stroke="#475569" stroke-width="1.4"/>
+<line x1="442.0" y1="308.0" x2="708.4" y2="201.2" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="5 3"/>
+<text x="718" y="258" font-size="11.5" fill="#dc2626" text-anchor="end" font-weight="700">红虚线 N = Z</text>
+<path d="M 447.8,305.6 L 453.6,303.1 L 459.4,300.5 L 465.2,297.9 L 471.0,295.2 L 476.8,292.4 L 482.5,289.6 L 488.3,286.8 L 494.1,283.9 L 499.9,280.9 L 505.7,278.0 L 511.5,274.9 L 517.3,271.9 L 523.1,268.8 L 528.9,265.6 L 534.7,262.5 L 540.5,259.3 L 546.2,256.0 L 552.0,252.7 L 557.8,249.4 L 563.6,246.1 L 569.4,242.7 L 575.2,239.3 L 581.0,235.8 L 586.8,232.4 L 592.6,228.9 L 598.4,225.3 L 604.2,221.8 L 610.0,218.2 L 615.8,214.5 L 621.5,210.9 L 627.3,207.2 L 633.1,203.5 L 638.9,199.7 L 644.7,196.0 L 650.5,192.2 L 656.3,188.4 L 662.1,184.5 L 667.9,180.6 L 673.7,176.7 L 679.5,172.8" fill="none" stroke="#1d6fa5" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="499.9" cy="284.8" r="4.2" fill="#0f766e"/>
+<text x="499.9" y="270.8" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">⁴⁰Ca(20,20)</text>
+<circle cx="517.3" cy="273.2" r="4.2" fill="#1d6fa5"/>
+<text x="533.3" y="293.2" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">⁵⁶Fe(26,30)</text>
+<circle cx="679.5" cy="161.8" r="4.2" fill="#6d28d9"/>
+<text x="669.5" y="165.8" font-size="11.5" fill="#6d28d9" text-anchor="end" font-weight="700">²⁰⁸Pb(82p,126n)</text>
+<circle cx="708.4" cy="138.6" r="4.2" fill="#c25014"/>
+<text x="698.4" y="134.6" font-size="11.5" fill="#c25014" text-anchor="end" font-weight="700">²³⁸U(92,146 不稳定)</text>
+<text x="434" y="134" font-size="11.5" fill="#0f172a" text-anchor="end" font-weight="700">中子N</text>
+<text x="580" y="326" font-size="11.5" fill="#64748b" text-anchor="middle">质子数 Z（0 → 92，Z&gt;82 后全部具放射性）</text>
+<rect x="400" y="340" width="328" height="176" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="412" y="362" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">中子的神级职责：“只出强力胶水、不添静电火药”！</text>
+<text x="412" y="386" font-size="11.5" fill="#1e293b" text-anchor="start">• 轻核 (Z≤20)：核直径小，质子与中子 1:1 对称最省能；</text>
+<text x="412" y="408" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">• 重核危机：强核力只拉贴身邻居（~A），而库仑斥力横跨</text>
+<text x="412" y="430" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">  全核，每对质子都互推，斥力按 Z(Z-1)/2 平方暴涨！</text>
+<text x="412" y="454" font-size="11.5" fill="#1e293b" text-anchor="start">• 破局：必须多塞不带电的中子隔开质子、补强核力（铅-208</text>
+<text x="412" y="476" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">  高达 N/Z = 1.54）；一旦 Z &gt; 82（铅/铋之上），再多</text>
+<text x="412" y="498" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">  中子也箍不住静电炸药桶，原子核必然衰变或裂变！</text>
+</svg>

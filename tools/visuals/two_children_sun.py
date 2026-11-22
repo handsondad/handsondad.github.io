@@ -124,22 +124,14 @@ def build_distance_paradox_rotation_vs_orbit() -> str:
         0%   { transform: rotate(-90deg); }
         100% { transform: rotate(0deg); }
       }
-      @keyframes barReveal {
-        0%   { opacity: 0.25; }
-        100% { opacity: 1; }
-      }
       .anim-obs {
         transform-origin: 146px 226px;
         animation: rot6h 3.2s cubic-bezier(0.22, 1, 0.36, 1) 1 forwards;
       }
-      .anim-verdict {
-        animation: barReveal 2.6s ease-out 1 forwards;
-      }
       @media (prefers-reduced-motion: reduce) {
-        .anim-obs, .anim-verdict {
+        .anim-obs {
           animation: none !important;
           transform: none !important;
-          opacity: 1 !important;
         }
       }
     </style>
@@ -174,9 +166,9 @@ def build_distance_paradox_rotation_vs_orbit() -> str:
     # Sunlight parallel arrows from right
     for sy in [172, 226, 280]:
         els.append(_line(348, sy, 252, sy, stroke=AMBER, sw=1.8, marker="arr-orange"))
-    els.append(txt(302, 154, "平行阳光（距日 1.5 亿 km）", size=10.0, color=AMBER, anchor="middle", weight="700"))
+    els.append(txt(300, 154, "平行阳光（距日 1.5 亿 km）", size=10.0, color=AMBER, anchor="middle", weight="700"))
 
-    # Static 6:00 sunrise dot at top (terminator) & animated dot rotating to 12:00 right
+    # Static 6:00 sunrise dot at top (terminator) & static ghost target + animated dot rotating to 12:00 right
     els.append(f'<circle cx="{ex}" cy="{ey - er}" r="5" fill="#94a3b8" stroke="#fff" stroke-width="1.2"/>')
     els.append(txt(ex, 126, "① 清晨 06:00 日出（晨昏线）", size=10.2, color=INK, anchor="middle", weight="600"))
 
@@ -187,23 +179,24 @@ def build_distance_paradox_rotation_vs_orbit() -> str:
         f'fill="none" stroke="{RED}" stroke-width="1.6" stroke-dasharray="4,3" marker-end="url(#arr-red)"/>'
     )
 
-    # Final/animated 12:00 dot at right
+    # Static dashed outline at 12:00 so initial frame still shows endpoint clearly
+    els.append(f'<circle cx="{ex + er}" cy="{ey}" r="6.2" fill="none" stroke="{RED}" stroke-width="1.2" stroke-dasharray="2,2"/>')
     els.append(
         f'<g class="anim-obs">'
         f'<circle cx="{ex + er}" cy="{ey}" r="6.2" fill="{RED}" stroke="#fff" stroke-width="1.5"/>'
         f'</g>'
     )
-    els.append(txt(ex + er + 8, ey + 18, "② 正午 12:00", size=10.5, color=RED, weight="700"))
+    els.append(txt(ex + er + 10, ey + 18, "② 正午 12:00", size=10.5, color=RED, weight="700"))
 
     # Horizontal bracket showing R_lat ≈ 5186 km (at Qufu 35.6°N)
-    by = 324
+    by = 322
     els.append(_line(ex, ey, ex, by + 4, stroke=SLATE, sw=1.0, dash="3,3"))
     els.append(_line(ex + er, ey, ex + er, by + 4, stroke=RED, sw=1.0, dash="3,3"))
     els.append(_line(ex, by, ex + er, by, stroke=RED, sw=1.8, marker="arr-red"))
-    els.append(txt(ex + er / 2, by + 17, "自转拉近 ≈ 5186 km", size=10.5, color=RED, anchor="middle", weight="700"))
-    els.append(txt(36, 365, "• 以孔子故里曲阜（北纬 35.6°）春分为例：赤道半径 6378 km，", size=10.2, color=BODY))
-    els.append(txt(36, 383, "  自转 6 小时把人朝太阳方向端近了 R·cos35.6° ≈ 5186 km。", size=10.2, color=BODY))
-    els.append(txt(36, 397, "  （注：左图地球尺寸为看清几何刻意放大，非真实日地比例）", size=9.8, color=MUTED))
+    els.append(txt(ex + er / 2, by + 16, "自转拉近 ≈ 5186 km", size=10.5, color=RED, anchor="middle", weight="700"))
+    els.append(txt(36, 362, "• 以孔子故里曲阜（北纬 35.6°）春分为例：赤道半径 6378 km，", size=10.0, color=BODY))
+    els.append(txt(36, 380, "  自转 6 小时把人朝太阳方向端近了 R·cos35.6° ≈ 5186 km。", size=10.0, color=BODY))
+    els.append(txt(36, 395, "  （注：左图地球尺寸为看清几何刻意放大，非真实日地比例）", size=9.6, color=MUTED))
 
     # Right Card: Elliptical Orbit 6-Hour Radial Motion (The Big Seasonal Twist!)
     els.append(card(384, 62, 356, 340))
@@ -211,35 +204,32 @@ def build_distance_paradox_rotation_vs_orbit() -> str:
     els.append(txt(420, 88, "账本 B：椭圆公转 6 小时（比地球半径大一倍！）", size=12.4, color=INK, weight="700"))
 
     els.append(card(400, 106, 324, 92, rx=8, fill=AMBER_SOFT, stroke="#fcd34d", sw=1.1))
-    els.append(txt(412, 126, "1 月初近日点 1.471 亿 km（隆冬） ↔ 7 月初远日点 1.521 亿 km", size=10.3, color=INK, weight="700"))
-    els.append(txt(412, 145, "半年进出 500 万公里！春／秋分前后径向速度高达 ±1790 km/h：", size=10.2, color=BODY))
-    els.append(txt(412, 164, "• 06:00 → 12:00 仅 6 小时，公转改变日地距离 ±10750 km！", size=10.4, color=ORANGE, weight="700"))
-    els.append(txt(412, 183, "• 公转 6 小时位移竟是自转拉近量（5186 km）的 2.07 倍！", size=10.2, color=RED, weight="700"))
+    els.append(txt(412, 126, "1 月初近日点 1.471 亿 km（隆冬）↔ 7 月初远日点 1.521 亿 km", size=10.0, color=INK, weight="700"))
+    els.append(txt(412, 145, "半年进出 500 万公里！春／秋分前后径向速度高达 ±1791 km/h：", size=10.0, color=BODY))
+    els.append(txt(412, 164, "• 06:00 → 12:00 仅 6 小时，公转改变日地距离 ±10750 km！", size=10.2, color=ORANGE, weight="700"))
+    els.append(txt(412, 183, "• 公转 6 小时位移竟是自转拉近量（5186 km）的 2.07 倍！", size=10.1, color=RED, weight="700"))
 
-    # Two horizontal comparison bars (Autumn vs Spring)
-    els.append('<g class="anim-verdict">')
-    # Case 1: Autumn morning (approaching Jan perihelion)
+    # Case 1: Autumn morning (approaching Jan perihelion) — fully opaque in all frames
     els.append(card(400, 210, 324, 82, rx=8, fill=RED_SOFT, stroke="#fca5a5", sw=1.1))
-    els.append(txt(412, 230, "🍂 秋季早晨（10 月初，地球正加速扑向近日点）：", size=10.8, color=RED, weight="700"))
-    els.append(txt(412, 249, "公转拉近 10750 km ＋ 自转拉近 5186 km", size=10.2, color=BODY))
-    els.append(txt(412, 269, "⇒ 正午比日出【近约 15900 km】！（体感派小儿险胜）", size=10.6, color=RED, weight="700"))
+    els.append(txt(412, 230, "秋季早晨（9 月底至 10 月初，加速扑向近日点）：", size=10.6, color=RED, weight="700"))
+    els.append(txt(412, 249, "公转拉近 10750 km ＋ 自转拉近 5186 km", size=10.1, color=BODY))
+    els.append(txt(412, 269, "⇒ 正午比日出【近约 15900 km】！（体感派小儿胜）", size=10.4, color=RED, weight="700"))
 
     # Case 2: Spring morning (receding toward Jul aphelion)
     els.append(card(400, 302, 324, 86, rx=8, fill=BLUE_SOFT, stroke=BLUE_LINE, sw=1.1))
-    els.append(txt(412, 322, "🌱 春季早晨（4 月初，地球正远离太阳奔向远日点）：", size=10.8, color=BLUE, weight="700"))
-    els.append(txt(412, 341, "公转推远 10750 km － 自转拉近 5186 km", size=10.2, color=BODY))
-    els.append(txt(412, 361, "⇒ 日出反而比正午【近约 5560 km】！（视觉派小儿翻盘）", size=10.6, color=BLUE, weight="700"))
-    els.append("</g>")
+    els.append(txt(412, 322, "春季早晨（3 月底至 4 月初，远离太阳奔向远日点）：", size=10.6, color=BLUE, weight="700"))
+    els.append(txt(412, 341, "公转推远 10750 km － 自转拉近 5186 km", size=10.1, color=BODY))
+    els.append(txt(412, 361, "⇒ 日出反而比正午【近约 5560 km】！（视觉派小儿翻盘）", size=10.4, color=BLUE, weight="700"))
 
     # Bottom Full-Width Verdict Banner
     els.append(card(20, 414, 720, 86, rx=10, fill=TEAL_SOFT, stroke="#5eead4", sw=1.2))
-    els.append(pill(36, 426, "终极比例尺裁决：两小儿的推理前提双双落空！", fg=TEAL, bg="#ccfbf1"))
+    els.append(pill(36, 424, "终极比例尺裁决：两小儿的推理前提双双落空！", fg=TEAL, bg="#ccfbf1", w=292, size=11.2))
     els.append(
         txt(
             36,
             466,
             "无论 5186 km 还是 15900 km，除以日地平均距离 1.496 亿 km，相对变化率都不到【万分之一（0.004%–0.011%）】！",
-            size=10.8,
+            size=10.6,
             color=INK,
             weight="700",
         )
@@ -249,7 +239,7 @@ def build_distance_paradox_rotation_vs_orbit() -> str:
             36,
             486,
             "这就好比你站在 10 米外烤篝火，身体只往前探了 0.4 毫米——既不可能让太阳看起来变大，也不可能把清凉变滚烫！",
-            size=10.4,
+            size=10.2,
             color=BODY,
         )
     )
@@ -260,6 +250,177 @@ def build_distance_paradox_rotation_vs_orbit() -> str:
         "左卡演示地球6小时自转将北纬35.6度观测者向太阳拉近约5186公里；右卡揭示地球椭圆轨道在春秋两季6小时内产生正负10750公里的径向距离变化，使秋季正午更近而春季日出更近；底部指出两者均不足日地距离的万分之一。",
         els,
         extra_defs=anim_defs,
+    )
+
+
+# ---------------------------------------------------------------------------
+# 1B. Full 365-Day Qufu Sunrise-vs-Noon Competition Curve & 500 BCE Precession
+# ---------------------------------------------------------------------------
+def build_annual_morning_vs_noon_crossover_curve() -> str:
+    phi = math.radians(35.6)  # Qufu latitude
+    r_qufu = 6370.93          # Geocentric radius at 35.6°N (WGS-84)
+    au_km = 149_597_870.7
+    e_orb = 0.0167086
+    eps = math.radians(23.4393)
+    p_sec = 365.25636 * 86400.0
+    n_rad_s = 2.0 * math.pi / p_sec
+
+    def calc_curve(varpi_deg: float):
+        varpi = math.radians(varpi_deg)
+        out = []
+        for doy in range(1, 366):
+            lam = 2.0 * math.pi * (doy - 79.5) / 365.2422
+            delta = math.asin(math.sin(eps) * math.sin(lam))
+            h0 = math.acos(-math.tan(phi) * math.tan(delta))
+            dt_sec = (math.degrees(h0) / 15.0) * 3600.0
+            rot_closer = r_qufu * math.cos(phi - delta)  # exact 3D sunrise(0) -> noon projection!
+            nu = lam - varpi
+            vr = (n_rad_s * au_km * e_orb * math.sin(nu)) / math.sqrt(1.0 - e_orb**2)
+            orb_change = vr * dt_sec
+            net_km = orb_change - rot_closer  # d(noon) - d(sunrise): >0 means sunrise is closer!
+            out.append((doy, net_km))
+        return out
+
+    c_now = calc_curve(283.4)   # 2026 epoch (perihelion ~ Jan 3)
+    c_500bc = calc_curve(240.0) # ~500 BCE Confucius era (perihelion ~ Nov 21, precessed ~43.4°)
+
+    days_rise_now = sum(1 for _, v in c_now if v > 0.0)
+    days_rise_bc = sum(1 for _, v in c_500bc if v > 0.0)
+    assert 126 <= days_rise_now <= 132   # 129 days in 2026!
+    assert 127 <= days_rise_bc <= 133    # 130 days in 500 BCE!
+
+    doy_peak_rise, val_peak_rise = max(c_now, key=lambda x: x[1])
+    doy_peak_noon, val_peak_noon = min(c_now, key=lambda x: x[1])
+    assert 5500.0 < val_peak_rise < 5900.0     # +5,727 km around Apr 7 (DOY 97)
+    assert -16000.0 < val_peak_noon < -15300.0 # -15,670 km around Sep 15 (DOY 258)
+
+    # Zero crossings in 2026: DOY ~26.4 (Jan 26) and DOY ~155.0 (Jun 4)
+    crossings = []
+    for i in range(len(c_now) - 1):
+        d1, v1 = c_now[i]
+        d2, v2 = c_now[i + 1]
+        if v1 * v2 <= 0.0:
+            frac = d1 + (0.0 - v1) / (v2 - v1)
+            crossings.append(frac)
+    assert len(crossings) == 2 and 25.0 < crossings[0] < 28.0 and 153.5 < crossings[1] < 156.5
+
+    els = []
+    els.extend(
+        header(
+            "全年 365 天逐日精确裁决：一年有 129 天日出更近、两天绝对平局！",
+            "耦合曲阜昼长伸缩、太阳赤纬与椭圆轨道速度，对比当代（实线）与公元前 500 年孔子时代（虚线）",
+        )
+    )
+
+    # Left Card: 365-day plot
+    els.append(card(20, 62, 466, 424))
+    els.append(step_badge(38, 84, 1, fg=BLUE, bg=BLUE_SOFT))
+    els.append(txt(56, 88, "曲阜（35.6°N）正午减日出日地距离差 Δd ＝ d(正午) － d(日出)", size=11.8, color=INK, weight="700"))
+
+    gx0, gx1 = 78.0, 468.0
+    gy_top, gy_bot = 118.0, 422.0
+    v_min, v_max = -21000.0, 9200.0
+
+    def dx(doy_f: float) -> float:
+        return gx0 + ((doy_f - 1.0) / 364.0) * (gx1 - gx0)
+
+    def dy(val_km: float) -> float:
+        return gy_bot - ((val_km - v_min) / (v_max - v_min)) * (gy_bot - gy_top)
+
+    y_zero = dy(0.0)
+
+    # Background shaded bands above/below zero
+    els.append(
+        f'<rect x="{gx0:.1f}" y="{gy_top:.1f}" width="{gx1 - gx0:.1f}" height="{y_zero - gy_top:.1f}" '
+        f'fill="#eff6ff" fill-opacity="0.7"/>'
+    )
+    els.append(
+        f'<rect x="{gx0:.1f}" y="{y_zero:.1f}" width="{gx1 - gx0:.1f}" height="{gy_bot - y_zero:.1f}" '
+        f'fill="#fff1f2" fill-opacity="0.55"/>'
+    )
+
+    for tick_km in [-15000, -10000, -5000, 0, 5000]:
+        yy = dy(float(tick_km))
+        st_col = INK if tick_km == 0 else "#e2e8f0"
+        st_w = 1.5 if tick_km == 0 else 1.0
+        els.append(_line(gx0, yy, gx1, yy, stroke=st_col, sw=st_w))
+        lbl = "0" if tick_km == 0 else f"{tick_km // 1000:+d}k"
+        els.append(txt(gx0 - 6, yy + 3.5, lbl, size=9.6, color=INK if tick_km == 0 else MUTED, anchor="end", cls="mono"))
+
+    els.append(txt(gx0 + 6, gy_top + 13, "↑ Δd>0：日出更近（车盖派胜）", size=9.8, color=BLUE, weight="700"))
+    els.append(txt(gx0 + 6, gy_bot - 8, "↓ Δd<0：正午更近（探汤派胜）", size=9.8, color=RED, weight="700"))
+
+    # Fill positive lobe of 2026 curve (Jan 26 -> Jun 4)
+    pos_pts = [f"{dx(crossings[0]):.1f},{y_zero:.1f}"]
+    for d_i, v_i in c_now:
+        if v_i > 0:
+            pos_pts.append(f"{dx(float(d_i)):.1f},{dy(v_i):.1f}")
+    pos_pts.append(f"{dx(crossings[1]):.1f},{y_zero:.1f}")
+    els.append(f'<polygon points="{" ".join(pos_pts)}" fill="#93c5fd" fill-opacity="0.42"/>')
+
+    # 500 BCE Confucius-era curve (purple dashed)
+    poly_bc = " ".join(f"{dx(float(d_i)):.1f},{dy(v_i):.1f}" for d_i, v_i in c_500bc[::3])
+    els.append(f'<polyline points="{poly_bc}" fill="none" stroke="{PURPLE}" stroke-width="1.8" stroke-dasharray="5,4"/>')
+
+    # 2026 curve (two-tone or bold blue/red polyline)
+    poly_now = " ".join(f"{dx(float(d_i)):.1f},{dy(v_i):.1f}" for d_i, v_i in c_now[::2])
+    els.append(f'<polyline points="{poly_now}" fill="none" stroke="{BLUE}" stroke-width="2.5"/>')
+
+    # Highlight key markers on 2026 curve: 2 zero crossings + spring peak + autumn trough
+    for cx_doy in crossings:
+        els.append(f'<circle cx="{dx(cx_doy):.1f}" cy="{y_zero:.1f}" r="5.0" fill="{GREEN}" stroke="#fff" stroke-width="1.4"/>')
+    els.append(f'<circle cx="{dx(float(doy_peak_rise)):.1f}" cy="{dy(val_peak_rise):.1f}" r="5.0" fill="{BLUE}" stroke="#fff" stroke-width="1.4"/>')
+    els.append(f'<circle cx="{dx(float(doy_peak_noon)):.1f}" cy="{dy(val_peak_noon):.1f}" r="5.0" fill="{RED}" stroke="#fff" stroke-width="1.4"/>')
+
+    els.append(txt(dx(float(doy_peak_rise)) + 6, dy(val_peak_rise) - 7, f"4月7日峰值 +{val_peak_rise:.0f} km", size=9.6, color=BLUE, weight="700"))
+    els.append(txt(dx(crossings[0]) + 5, y_zero + 15, "1月26日平局", size=9.4, color=GREEN, weight="700"))
+    els.append(txt(dx(crossings[1]) + 6, y_zero - 7, "6月4日平局", size=9.4, color=GREEN, weight="700"))
+    els.append(txt(dx(float(doy_peak_noon)) + 16, dy(val_peak_noon) + 17, f"9月15日谷底 {val_peak_noon:.0f} km", size=9.5, color=RED, anchor="middle", weight="700"))
+    els.append(_line(304, gy_top + 15, 326, gy_top + 15, stroke=PURPLE, sw=2.0, dash="5,4"))
+    els.append(txt(331, gy_top + 19, "前500年孔子时代", size=9.4, color=PURPLE, weight="700"))
+
+    # Month ticks along x-axis
+    month_doys = [(1, "1月"), (60, "3月"), (121, "5月"), (182, "7月"), (244, "9月"), (305, "11月"), (365, "12月底")]
+    els.append(_line(gx0, gy_top, gx0, gy_bot, stroke=SLATE, sw=1.2))
+    els.append(_line(gx0, gy_bot, gx1, gy_bot, stroke=SLATE, sw=1.2))
+    for md, mlbl in month_doys:
+        xx = dx(float(md))
+        els.append(_line(xx, gy_bot, xx, gy_bot + 5, stroke=SLATE, sw=1.1))
+        els.append(txt(xx, gy_bot + 17, mlbl, size=9.5, color=MUTED, anchor="middle"))
+    els.append(txt((gx0 + gx1) / 2, gy_bot + 38, "公历日期（单位 km：正值代表日出更近，负值代表正午更近）", size=9.8, color=MUTED, anchor="middle"))
+
+    # Right Card: 3 Key Insights
+    els.append(card(498, 62, 242, 424))
+    els.append(step_badge(516, 84, 2, fg=PURPLE, bg=PURPLE_SOFT))
+    els.append(txt(534, 88, "看懂这条曲线的三把钥匙", size=11.8, color=INK, weight="700"))
+
+    els.append(card(512, 106, 214, 118, rx=8, fill=BLUE_SOFT, stroke=BLUE_LINE))
+    els.append(txt(522, 125, f"① 当代每年 {days_rise_now} 天“早晨更近”", size=10.3, color=BLUE, weight="700"))
+    els.append(txt(522, 144, "几何日出瞬间，观测者地心半径永远", size=9.8, color=BODY))
+    els.append(txt(522, 161, "垂直于阳光（投影恒为 0）；正午拉", size=9.8, color=BODY))
+    els.append(txt(522, 178, "近量随季节在冬至 3278 km 至夏至", size=9.8, color=BODY))
+    els.append(txt(522, 195, "6228 km 间变化，1月底公转即反超！", size=9.8, color=INK, weight="600"))
+
+    els.append(card(512, 234, 214, 110, rx=8, fill=GREEN_SOFT, stroke="#86efac"))
+    els.append(txt(522, 253, "② 一年两次“绝对平局日”", size=10.3, color=GREEN, weight="700"))
+    els.append(txt(522, 272, "每年 1 月 26 日与 6 月 4 日前后，", size=9.8, color=BODY))
+    els.append(txt(522, 289, "半日椭圆轨道退行量恰好等于曲阜自", size=9.8, color=BODY))
+    els.append(txt(522, 306, "转拉近量（Δd＝0），早晨和中午距", size=9.8, color=BODY))
+    els.append(txt(522, 323, "太阳一公里不差——两小儿战成平手！", size=9.8, color=INK, weight="600"))
+
+    els.append(card(512, 354, 214, 118, rx=8, fill=PURPLE_SOFT, stroke="#d8b4fe"))
+    els.append(txt(522, 373, "③ 回到 2500 年前孔子时代", size=10.3, color=PURPLE, weight="700"))
+    els.append(txt(522, 392, "地球椭圆近日点约 2.1 万年进动一圈", size=9.8, color=BODY))
+    els.append(txt(522, 409, "（每 58 年推迟 1 天）。前 500 年近", size=9.8, color=BODY))
+    els.append(txt(522, 426, "日点在 11 月下旬，12月中旬至 4月20", size=9.8, color=BODY))
+    els.append(txt(522, 443, f"日共 {days_rise_bc} 天日出更近，暮春照样翻盘！", size=9.8, color=INK, weight="600"))
+
+    return figure(
+        502,
+        "曲阜全年365天日出与正午日地距离差逐日曲线及孔子时代岁差对比图",
+        f"左卡精确计算北纬35.6度全年每日正午减日出距离差Δd：当代1月26日至6月4日共{days_rise_now}天日出更近（4月7日峰值+5727公里），其余236天正午更近（9月15日谷底-15670公里），两交点为平局日；紫色虚线展示公元前500年近日点进动后的{days_rise_bc}天反转窗口。",
+        els,
+        extra_defs=_markers(),
     )
 
 
@@ -290,42 +451,42 @@ def build_atmospheric_refraction_squashed_sun() -> str:
     els.append(txt(56, 88, "大气差异折射：为什么下缘抬升 34.5′、上缘只抬 29.0′？", size=12.2, color=INK, weight="700"))
 
     # Concentric atmospheric shells + Earth horizon
-    els.append('<path d="M 38 308 Q 210 278 398 326 L 398 352 L 38 352 Z" fill="#cbd5e1"/>')
-    els.append('<path d="M 38 256 Q 210 226 398 274" fill="none" stroke="#93c5fd" stroke-width="1.2" stroke-dasharray="5,4"/>')
-    els.append('<path d="M 38 206 Q 210 176 398 224" fill="none" stroke="#bfdbfe" stroke-width="1.2" stroke-dasharray="5,4"/>')
-    els.append(txt(92, 232, "高层稀薄空气 n ≈ 1.00005", size=10.0, color=MUTED))
-    els.append(txt(92, 282, "近地稠密空气 n ≈ 1.00029", size=10.0, color=BLUE, weight="600"))
+    els.append('<path d="M 38 308 Q 210 278 398 326 L 398 354 L 38 354 Z" fill="#cbd5e1"/>')
+    els.append('<path d="M 38 242 Q 210 212 398 260" fill="none" stroke="#93c5fd" stroke-width="1.2" stroke-dasharray="5,4"/>')
+    els.append('<path d="M 38 182 Q 210 152 398 200" fill="none" stroke="#bfdbfe" stroke-width="1.2" stroke-dasharray="5,4"/>')
+    els.append(txt(52, 162, "高层稀薄空气 n ≈ 1.00005", size=9.8, color=MUTED))
+    els.append(txt(52, 220, "近地稠密空气 n ≈ 1.00029（光线向地面弯折）", size=9.8, color=BLUE, weight="600"))
 
     # Observer at left-center on ground
-    ox, oy = 84, 294
+    ox, oy = 72, 294
     els.append(f'<circle cx="{ox}" cy="{oy}" r="5.5" fill="{INK}"/>')
-    els.append(txt(ox, oy + 22, "观测者", size=10.5, color=INK, anchor="middle", weight="700"))
+    els.append(txt(ox, oy + 20, "观测者", size=10.2, color=INK, anchor="middle", weight="700"))
 
     # True Sun below geometric horizon line on the right!
-    els.append(_line(ox, oy, 396, 294, stroke=SLATE, sw=1.3, dash="6,4"))
-    els.append(txt(245, 310, "几何真地平线（无大气时此刻根本看不见太阳！）", size=10.0, color=SLATE, anchor="middle"))
+    els.append(_line(ox, oy, 398, 294, stroke=SLATE, sw=1.3, dash="6,4"))
+    els.append(txt(162, 315, "几何真地平线（天顶距 90°）", size=9.6, color=SLATE, anchor="middle"))
 
-    # True Sun (dashed circle below horizon)
-    tsx, tsy, tsr = 366, 322, 20
-    els.append(f'<circle cx="{tsx}" cy="{tsy}" r="{tsr}" fill="#fde68a" fill-opacity="0.45" stroke="{AMBER}" stroke-width="1.4" stroke-dasharray="4,3"/>')
-    els.append(txt(306, 342, "真实太阳位置", size=10.2, color=AMBER, anchor="end", weight="700"))
+    # True Sun (dashed circle completely below horizon!)
+    tsx, tsy, tsr = 370, 326, 18
+    els.append(f'<circle cx="{tsx}" cy="{tsy}" r="{tsr}" fill="#fde68a" fill-opacity="0.48" stroke="{AMBER}" stroke-width="1.4" stroke-dasharray="4,3"/>')
+    els.append(txt(244, 344, "真实太阳（整轮藏在地平线下！）", size=9.8, color=AMBER, anchor="middle", weight="700"))
 
     # Apparent Sun (lifted above horizon AND vertically flattened!)
-    asx, asy = 366, 266
-    els.append(f'<ellipse cx="{asx}" cy="{asy}" rx="20" ry="16.5" fill="#fb923c" fill-opacity="0.88" stroke="{RED}" stroke-width="1.6"/>')
-    els.append(txt(338, 250, "视太阳虚像（已露出地平线）", size=10.4, color=RED, anchor="end", weight="700"))
+    asx, asy = 370, 256
+    els.append(f'<ellipse cx="{asx}" cy="{asy}" rx="18" ry="14.9" fill="#fb923c" fill-opacity="0.88" stroke="{RED}" stroke-width="1.6"/>')
+    els.append(txt(342, 240, "视太阳虚像（被整轮拎出地面）", size=10.0, color=RED, anchor="end", weight="700"))
 
     # Curved real rays from true limbs to observer + straight apparent sightlines
-    els.append(f'<path d="M {tsx} {tsy - tsr} Q 230 264 {ox} {oy}" fill="none" stroke="{ORANGE}" stroke-width="1.8"/>')
-    els.append(f'<path d="M {tsx} {tsy + tsr} Q 230 284 {ox} {oy}" fill="none" stroke="{RED}" stroke-width="1.8"/>')
-    els.append(_line(ox, oy, asx, asy - 16.5, stroke=ORANGE, sw=1.2, dash="3,3"))
-    els.append(_line(ox, oy, asx, asy + 16.5, stroke=RED, sw=1.2, dash="3,3"))
+    els.append(f'<path d="M {tsx} {tsy - tsr} Q 230 264 {ox} {oy}" fill="none" stroke="{ORANGE}" stroke-width="1.7"/>')
+    els.append(f'<path d="M {tsx} {tsy + tsr} Q 230 284 {ox} {oy}" fill="none" stroke="{RED}" stroke-width="1.7"/>')
+    els.append(_line(ox, oy, asx, asy - 14.9, stroke=ORANGE, sw=1.2, dash="3,3"))
+    els.append(_line(ox, oy, asx, asy + 14.9, stroke=RED, sw=1.2, dash="3,3"))
 
-    els.append(card(36, 364, 368, 94, rx=8, fill=BLUE_SOFT, stroke=BLUE_LINE, sw=1.0))
-    els.append(txt(48, 384, "戳破流传最广的伪科普：“清晨水汽像凸透镜放大了太阳”", size=10.8, color=INK, weight="700"))
-    els.append(txt(48, 403, "• 空气密度下密上疏，光线向地面弯曲，人眼逆着切线看去像被抬高；", size=10.1, color=BODY))
-    els.append(txt(48, 421, "• 太阳下缘贴近最稠密空气层，向上抬升 34.5 角分；上缘仅抬升 29.0 角分；", size=10.1, color=BODY))
-    els.append(txt(48, 439, "• 下巴往上挤了 5.5 角分，结果大气折射非但没放大，反而把太阳压扁了！", size=10.1, color=RED, weight="600"))
+    els.append(card(36, 364, 368, 96, rx=8, fill=BLUE_SOFT, stroke=BLUE_LINE, sw=1.0))
+    els.append(txt(48, 383, "戳破伪科普：“清晨水汽像凸透镜放大了太阳”", size=10.5, color=INK, weight="700"))
+    els.append(txt(48, 402, "• 大气下密上疏把阳光向下弯折，USNO 日出标准天顶距达 90°50′；", size=9.8, color=BODY))
+    els.append(txt(48, 420, "• 下缘贴近稠密底层抬升 34.5′，上缘仅抬升 29.0′（差值 5.5′）；", size=9.8, color=BODY))
+    els.append(txt(48, 438, "• 下巴往上挤了 5.5 角分，大气折射非但没放大，反而把太阳压扁了！", size=9.8, color=RED, weight="600"))
 
     # Right Card: Fixed-Focal-Length Solar-Filter Camera Pixel Comparison
     els.append(card(434, 62, 306, 410))
@@ -334,36 +495,35 @@ def build_atmospheric_refraction_squashed_sun() -> str:
 
     # Camera viewfinder dark box
     els.append(card(452, 106, 270, 232, rx=10, fill=DARK_NAVY, stroke="#334155", sw=1.2))
-    # Pixel measurement grid lines (same horizontal width x = 587 +- 56)
+    # Pixel measurement grid lines (same horizontal width x = 587 +- 54)
     cx = 587
-    rx_px = 54.0
-    ry_noon = 54.0
-    ry_hor = ry_noon * (d_vert_apparent / d_true_arcmin)  # 44.7 px (exact 26.5/32 ratio!)
+    rx_px = 52.0
+    ry_noon = 52.0
+    ry_hor = ry_noon * (d_vert_apparent / d_true_arcmin)  # 43.1 px (exact 26.5/32 ratio!)
 
-    els.append(_line(cx - rx_px, 120, cx - rx_px, 326, stroke="#475569", sw=1.1, dash="4,3"))
-    els.append(_line(cx + rx_px, 120, cx + rx_px, 326, stroke="#475569", sw=1.1, dash="4,3"))
+    els.append(_line(cx - rx_px, 134, cx - rx_px, 326, stroke="#475569", sw=1.1, dash="4,3"))
+    els.append(_line(cx + rx_px, 134, cx + rx_px, 326, stroke="#475569", sw=1.1, dash="4,3"))
+    els.append(txt(cx, 125, "← 水平宽度完全相等 (32.0′) →", size=9.6, color="#93c5fd", anchor="middle"))
 
     # Top disc: Noon Sun (32.0' x 32.0' exact circle)
-    y_noon = 176
+    y_noon = 186
     els.append(f'<circle cx="{cx}" cy="{y_noon}" r="{rx_px:.1f}" fill="#fef08a" stroke="#facc15" stroke-width="1.8"/>')
-    els.append(txt(cx, y_noon - 4, "正午日中", size=11.0, color=INK, anchor="middle", weight="700"))
-    els.append(txt(cx, y_noon + 14, "32.0′ × 32.0′", size=10.2, color=BODY, anchor="middle", cls="mono"))
+    els.append(txt(cx, y_noon - 4, "正午日中", size=10.8, color=INK, anchor="middle", weight="700"))
+    els.append(txt(cx, y_noon + 14, "32.0′ × 32.0′", size=9.8, color=BODY, anchor="middle", cls="mono"))
 
     # Bottom disc: Horizon Sunrise Sun (32.0' wide x 26.5' tall exact ellipse!)
-    y_hor = 280
+    y_hor = 284
     els.append(f'<ellipse cx="{cx}" cy="{y_hor}" rx="{rx_px:.1f}" ry="{ry_hor:.1f}" fill="#f97316" stroke="#fb923c" stroke-width="1.8"/>')
-    els.append(txt(cx, y_hor - 4, "清晨日出", size=11.0, color="#fff", anchor="middle", weight="700"))
-    els.append(txt(cx, y_hor + 14, f"宽 32.0′ × 高 {d_vert_apparent:.1f}′", size=10.0, color="#ffedd5", anchor="middle", cls="mono"))
+    els.append(txt(cx, y_hor - 4, "清晨日出", size=10.8, color="#fff", anchor="middle", weight="700"))
+    els.append(txt(cx, y_hor + 13, f"32.0′ × {d_vert_apparent:.1f}′", size=9.8, color="#ffedd5", anchor="middle", cls="mono"))
+    els.append(txt(648, 287, f"压扁 {squash_pct:.0f}%", size=9.8, color="#fca5a5", weight="700"))
 
-    els.append(txt(464, 134, "← 水平宽度完全相等 →", size=10.0, color="#93c5fd"))
-    els.append(txt(652, 284, f"压扁 {squash_pct:.0f}%", size=10.2, color="#fca5a5", weight="700"))
-
-    els.append(card(452, 350, 270, 108, rx=8, fill=AMBER_SOFT, stroke="#fcd34d", sw=1.0))
-    els.append(txt(464, 370, "像素尺量出来的真相：", size=10.8, color=INK, weight="700"))
-    els.append(txt(464, 390, "1. 横向直径：早中晚恒为约 32 角分（0.53°），", size=10.1, color=BODY))
-    els.append(txt(464, 408, "   连小拇指指甲盖的一半宽度都不到；", size=10.1, color=BODY))
-    els.append(txt(464, 426, "2. 纵向直径：日出时反而缩水约 1/6！", size=10.1, color=RED, weight="700"))
-    els.append(txt(464, 444, "⇒ “大如车盖”100% 发生在眼球之后的大脑里！", size=10.1, color=INK, weight="700"))
+    els.append(card(452, 350, 270, 110, rx=8, fill=AMBER_SOFT, stroke="#fcd34d", sw=1.0))
+    els.append(txt(464, 370, "像素尺量出来的真相：", size=10.6, color=INK, weight="700"))
+    els.append(txt(464, 389, "1. 横向直径：早中晚恒为约 32 角分（0.53°），", size=9.8, color=BODY))
+    els.append(txt(464, 407, "   连伸直手臂小拇指指甲盖的一半宽都不到；", size=9.8, color=BODY))
+    els.append(txt(464, 425, "2. 纵向直径：日出时反而被压扁缩水约 1/6！", size=9.8, color=RED, weight="700"))
+    els.append(txt(464, 443, "⇒ “大如车盖”100% 发生在眼球之后的大脑里！", size=9.8, color=INK, weight="700"))
 
     return figure(
         490,
@@ -408,43 +568,43 @@ def build_horizon_illusion_ponzo_and_v1() -> str:
     els.append(txt(248, 320, "树木 → 房屋 → 远山层云（丰富地面透视线索把地平线推得很远）", size=9.9, color=SLATE, anchor="middle"))
 
     # True equal-distance hemisphere arc (dashed slate) vs Perceived flattened dome (purple)
-    # True hemisphere radius r = 140 around (96, 302): zenith at (96, 162), horizon at (236, 302)
+    # True hemisphere radius r = 136 around (96, 302): zenith at (96, 166), horizon at (232, 302)
     els.append(
-        f'<path d="M {ox} {oy - 140} A 140 140 0 0 1 {ox + 140} {oy}" '
+        f'<path d="M {ox} {oy - 136} A 136 136 0 0 1 {ox + 136} {oy}" '
         f'fill="none" stroke="{SLATE}" stroke-width="1.3" stroke-dasharray="4,4"/>'
     )
-    els.append(txt(214, 214, "真实等距轨迹", size=9.9, color=SLATE))
+    els.append(txt(208, 206, "真实等距轨迹", size=9.6, color=SLATE))
 
-    # Perceived flattened sky bowl: zenith low at (96, 196), horizon far at (368, 302)!
+    # Perceived flattened sky bowl: zenith low at (96, 204), horizon far at (368, 302)!
     els.append(
-        f'<path d="M 52 200 Q 210 190 368 {oy}" '
+        f'<path d="M 52 208 Q 210 198 368 {oy}" '
         f'fill="none" stroke="{PURPLE}" stroke-width="2.4"/>'
     )
-    els.append(txt(216, 124, "大脑感知的“扁平覆碗天穹”（四边远、头顶矮）", size=10.3, color=PURPLE, anchor="middle", weight="700"))
+    els.append(txt(216, 122, "大脑感知的“扁平覆碗天穹”（四边远、头顶矮）", size=10.2, color=PURPLE, anchor="middle", weight="700"))
 
     # Observer eye
     els.append(f'<circle cx="{ox}" cy="{oy}" r="5.5" fill="{INK}"/>')
 
-    # Zenith sightlines & small perceived "盘盂" disc at (96, 196)
-    els.append(_line(ox, oy, ox - 8, 196, stroke=BLUE, sw=1.2, dash="3,3"))
-    els.append(_line(ox, oy, ox + 8, 196, stroke=BLUE, sw=1.2, dash="3,3"))
-    els.append(f'<circle cx="{ox}" cy="196" r="9" fill="#fef08a" stroke="{AMBER}" stroke-width="1.6"/>')
-    els.append(txt(ox + 14, 152, "头顶无参照物 → 感知近", size=10.0, color=BLUE, weight="600"))
-    els.append(txt(ox + 14, 170, "大脑判定：“小如盘盂”", size=10.2, color=INK, weight="700"))
+    # Zenith sightlines & small perceived "盘盂" disc at (96, 204)
+    els.append(_line(ox, oy, ox - 8, 204, stroke=BLUE, sw=1.2, dash="3,3"))
+    els.append(_line(ox, oy, ox + 8, 204, stroke=BLUE, sw=1.2, dash="3,3"))
+    els.append(f'<circle cx="{ox}" cy="204" r="9" fill="#fef08a" stroke="{AMBER}" stroke-width="1.6"/>')
+    els.append(txt(ox + 12, 146, "头顶无参照物 → 感知近", size=9.8, color=BLUE, weight="600"))
+    els.append(txt(ox + 12, 163, "大脑判定：“小如盘盂”", size=9.9, color=INK, weight="700"))
 
-    # Horizon sightlines (SAME cone angle!) & large perceived "车盖" disc at (368, 286)
+    # Horizon sightlines (SAME cone angle!) & large perceived "车盖" disc at (368, 283)
     els.append(_line(ox, oy, 368, 266, stroke=ORANGE, sw=1.2, dash="3,3"))
     els.append(_line(ox, oy, 368, 300, stroke=ORANGE, sw=1.2, dash="3,3"))
-    els.append('<circle cx="368" cy="283" r="21" fill="#fb923c" fill-opacity="0.88" stroke="#dc2626" stroke-width="1.8"/>')
-    els.append(txt(354, 248, "感知距离远 2.5–3 倍 →“大如车盖”！", size=10.3, color=RED, anchor="end", weight="700"))
+    els.append('<circle cx="368" cy="283" r="20" fill="#fb923c" fill-opacity="0.88" stroke="#dc2626" stroke-width="1.8"/>')
+    els.append(txt(394, 232, "感知远 2.5–3 倍 →“大如车盖”！", size=9.8, color=RED, anchor="end", weight="700"))
 
     els.append(card(36, 336, 360, 134, rx=8, fill=PURPLE_SOFT, stroke="#d8b4fe", sw=1.0))
-    els.append(txt(48, 356, "为什么王充《论衡》猜错了方向，考夫曼（1962）找到了主因？", size=10.7, color=PURPLE, weight="700"))
-    els.append(txt(48, 376, "• 东汉王充猜“暗处看火显得大”，但实测刺眼强光才会有微弱辐照膨胀，", size=10.0, color=BODY))
-    els.append(txt(48, 394, "  而日出光芒柔和可直视、正午刺眼眩光只剩一团模糊白点；", size=10.0, color=BODY))
-    els.append(txt(48, 412, "• Kaufman & Rock (1962, Science) 用人工月亮证实：一旦遮住地面远景，", size=10.0, color=BODY))
-    els.append(txt(48, 430, "  “车盖巨日／巨月”当场缩回原形！加上平视与仰头 90° 的眼球辐辏差异，", size=10.0, color=BODY))
-    els.append(txt(48, 448, "  大脑把完全相同的 0.16 mm 视网膜像强行脑补成了两三倍大的巨轮。", size=10.0, color=INK, weight="600"))
+    els.append(txt(48, 356, "为什么王充《论衡》猜反了亮度，考夫曼（1962）抓到了主因？", size=10.3, color=PURPLE, weight="700"))
+    els.append(txt(48, 376, "• 东汉王充猜“暗处看火显得大”，但实测刺眼强光才会有辐照膨胀，", size=9.8, color=BODY))
+    els.append(txt(48, 394, "  只是日出经 38 倍空气消光柔和可看清轮廓，正午眩光刺眼难直视；", size=9.8, color=BODY))
+    els.append(txt(48, 412, "• Kaufman & Rock (1962, Science) 人工月亮证实：遮住地面远景后，", size=9.8, color=BODY))
+    els.append(txt(48, 430, "  “车盖巨日／巨月”当场缩回原形！加上平视与仰头 90° 的辐辏差异，", size=9.8, color=BODY))
+    els.append(txt(48, 448, "  大脑把完全相同的 0.16 mm 视网膜像强行放大成了两三倍巨轮。", size=9.8, color=INK, weight="600"))
 
     # Right Card: 2006 Nature Neuroscience V1 fMRI + 3 Instant De-illusion Experiments
     els.append(card(426, 62, 314, 422))
@@ -453,8 +613,8 @@ def build_horizon_illusion_ponzo_and_v1() -> str:
 
     # V1 cortex retinotopic activation comparison box
     els.append(card(442, 106, 282, 152, rx=8, fill="#f8fafc", stroke=BORDER, sw=1.1))
-    els.append(txt(454, 126, "Murray 等 (2006, Nature Neuroscience) fMRI 发现：", size=10.4, color=INK, weight="700"))
-    els.append(txt(454, 144, "视网膜光斑完全相等（0.53°），但初级视觉皮层 V1 里：", size=10.0, color=BODY))
+    els.append(txt(454, 126, "Murray 等 (2006, Nat. Neurosci.) fMRI 发现：", size=10.0, color=INK, weight="700"))
+    els.append(txt(454, 144, "视网膜光斑完全相等（0.53°），但初级视觉皮层 V1 里：", size=9.8, color=BODY))
 
     # Two brain/V1 patch badges
     els.append(card(456, 158, 120, 86, rx=8, fill=BLUE_SOFT, stroke=BLUE_LINE))
@@ -548,19 +708,19 @@ def build_cosine_projection_and_air_mass() -> str:
     els.append(txt(252, 183, "（夏至仅 1.02 m²，火力全开！）", size=10.0, color=BODY, anchor="middle"))
     els.append(txt(140, 225, "1.23 m²", size=10.0, color=RED, anchor="middle", weight="700", cls="mono"))
 
-    # Bottom sub-diagram: Morning grazing beam (5 deg -> 11.5 m^2!)
+    # Bottom sub-diagram: Morning grazing beam (5 deg -> 11.5 m^2!) — non-crossing cyclic polygon!
     els.append(card(36, 242, 328, 130, rx=8, fill=BLUE_SOFT, stroke=BLUE_LINE))
-    els.append(txt(48, 262, "🌅 日出低斜（刚出山 α＝5°）", size=10.6, color=BLUE, weight="700"))
-    els.append('<polygon points="344,274 344,294 64,344 268,344" fill="#93c5fd" fill-opacity="0.48" stroke="#3b82f6" stroke-width="1.2"/>')
-    els.append(_line(48, 344, 350, 344, stroke=INK, sw=2.2))
-    els.append(_line(64, 352, 268, 352, stroke=BLUE, sw=2.4))
-    els.append(txt(166, 366, f"同一束光被拉长摊薄在 {area_5:.1f} m² 大地上！（先打 0.87 折）", size=10.0, color=BLUE, anchor="middle", weight="700"))
+    els.append(txt(48, 262, "🌅 日出低斜（刚出山 α＝5°）", size=10.5, color=BLUE, weight="700"))
+    els.append('<polygon points="348,274 348,292 268,342 64,342" fill="#93c5fd" fill-opacity="0.48" stroke="#3b82f6" stroke-width="1.2"/>')
+    els.append(_line(48, 342, 352, 342, stroke=INK, sw=2.2))
+    els.append(_line(64, 349, 268, 349, stroke=BLUE, sw=2.4))
+    els.append(txt(200, 365, f"同一束光摊薄在 {area_5:.1f} m² 大地上（密度仅剩 8.7%）", size=9.7, color=BLUE, anchor="middle", weight="700"))
 
     els.append(card(36, 382, 328, 92, rx=8, fill="#f8fafc", stroke=BORDER))
-    els.append(txt(48, 402, "手电筒直照 vs 斜擦桌面实验：", size=10.6, color=INK, weight="700"))
-    els.append(txt(48, 421, "大气层顶太阳常数恒为 S₀＝1361 W/m²（IAU 2015 标准）。", size=10.0, color=BODY))
-    els.append(txt(48, 439, "单靠几何投影 E ＝ I·sin α，5° 低阳比春分正午就已被摊薄了", size=10.0, color=BODY))
-    els.append(txt(48, 457, f"sin 54.4° ÷ sin 5° ≈ {area_5 / area_noon:.1f} 倍！这还只是第一刀。", size=10.1, color=RED, weight="700"))
+    els.append(txt(48, 402, "手电筒直照 vs 斜擦桌面实验：", size=10.5, color=INK, weight="700"))
+    els.append(txt(48, 421, "大气层顶太阳常数恒为 S₀＝1361 W/m²（IAU 2015 标准）。", size=9.8, color=BODY))
+    els.append(txt(48, 439, "单靠几何投影 E ＝ I·sin α，5° 低阳比春分正午就已被摊薄了", size=9.8, color=BODY))
+    els.append(txt(48, 457, f"sin 54.4° ÷ sin 5° ≈ {area_5 / area_noon:.1f} 倍！这还只是第一刀。", size=10.0, color=RED, weight="700"))
 
     # Right Card: Kasten-Young Air Mass & Ground Horizontal Irradiance Curve
     els.append(card(394, 62, 346, 426))
@@ -598,14 +758,14 @@ def build_cosine_projection_and_air_mass() -> str:
     els.append(f'<polygon points="{area_poly}" fill="#fed7aa" fill-opacity="0.48"/>')
     els.append(f'<polyline points="{poly}" fill="none" stroke="{RED}" stroke-width="2.6"/>')
 
-    # Key annotated points: 0° (38 AM), 5° (~23 W/m²), 54.4° (~757 W/m²), 77.8° (~935 W/m²)
+    # Key annotated points: 5° (~23 W/m²), 54.4° (~757 W/m²), 77.8° (~935 W/m²)
     for el_p, v_p, col_p in [(5.0, eh_5, BLUE), (54.4, eh_noon, ORANGE), (77.8, eh_summer, RED)]:
         els.append(f'<circle cx="{px(el_p):.1f}" cy="{py_irr(v_p):.1f}" r="4.8" fill="{col_p}" stroke="#fff" stroke-width="1.3"/>')
 
-    els.append(txt(px(5.0) + 6, py_irr(eh_5) - 10, f"α=5°: 仅 {eh_5:.0f} W/m² (10.4 AM)", size=10.0, color=BLUE, weight="700"))
-    els.append(txt(px(54.4) - 8, py_irr(eh_noon) + 18, f"春分正午 {eh_noon:.0f} W/m² (1.23 AM)", size=10.0, color=ORANGE, anchor="end", weight="700"))
-    els.append(txt(px(77.8) - 8, py_irr(eh_summer) - 6, f"夏至正午 {eh_summer:.0f} W/m²", size=10.0, color=RED, anchor="end", weight="700"))
-    els.append(txt(gx0 + 6, gy_top + 14, "晴空地面直射火力 (W/m²)", size=10.2, color=RED, weight="700"))
+    els.append(txt(px(14.0), py_irr(eh_5) - 4, f"α=5°: 仅 {eh_5:.0f} W/m² (10.4 AM)", size=9.6, color=BLUE, weight="700"))
+    els.append(txt(px(54.4) - 8, py_irr(eh_noon) - 9, f"春分正午 {eh_noon:.0f} W/m² (1.23 AM)", size=9.6, color=ORANGE, anchor="end", weight="700"))
+    els.append(txt(px(77.8) - 8, py_irr(eh_summer) - 7, f"夏至正午 {eh_summer:.0f} W/m²", size=9.6, color=RED, anchor="end", weight="700"))
+    els.append(txt(gx0 + 6, gy_top + 14, "晴空地面直射火力 (W/m²)", size=10.0, color=RED, weight="700"))
 
     els.append(card(410, 360, 314, 114, rx=8, fill=RED_SOFT, stroke="#fca5a5", sw=1.0))
     els.append(txt(422, 380, f"日出切线光学质量高达 {am_0:.0f} 倍大气厚度（38 AM）！", size=10.7, color=RED, weight="700"))
@@ -701,7 +861,7 @@ def build_diurnal_heat_budget_lag() -> str:
         return fy_bot - (q / 720.0) * (fy_bot - fy_top)
 
     def ty(temp_c: float) -> float:
-        return ty_bot - ((temp_c - (t_min - 2.0)) / ((t_max + 2.5) - (t_min - 2.0))) * (ty_bot - ty_top)
+        return ty_bot - ((temp_c - (t_min - 5.2)) / ((t_max + 3.2) - (t_min - 5.2))) * (ty_bot - ty_top)
 
     # Vertical guide lines at 06:00, 12:00, hr_max (~14.4h), 18:00
     for h_guide, col_g in [(hr_min, BLUE), (12.0, AMBER), (hr_max, RED)]:
@@ -743,8 +903,9 @@ def build_diurnal_heat_budget_lag() -> str:
     els.append(f'<circle cx="{hx(12.0):.1f}" cy="{ty(temps[120]):.1f}" r="4.5" fill="{AMBER}" stroke="#fff" stroke-width="1.2"/>')
     els.append(f'<circle cx="{hx(hr_max):.1f}" cy="{ty(t_max):.1f}" r="5.5" fill="{RED}" stroke="#fff" stroke-width="1.4"/>')
 
-    els.append(txt(hx(hr_min) + 6, ty(t_min) + 14, f"{hm_min_str} 谷底“沧沧凉凉”({t_min:.0f}°C)", size=9.9, color=BLUE, weight="700"))
-    els.append(txt(hx(hr_max) + 6, ty(t_max) - 8, f"{hm_max_str} 峰值“如探汤”({t_max:.0f}°C)", size=10.0, color=RED, weight="700"))
+    els.append(txt(hx(hr_min) + 7, ty(t_min) + 12, f"{hm_min_str} 谷底“沧沧凉凉”({t_min:.0f}°C)", size=9.6, color=BLUE, weight="700"))
+    els.append(txt(hx(hr_max) + 7, ty(t_max) - 7, f"{hm_max_str} 气温峰值 ({t_max:.0f}°C)", size=9.8, color=RED, weight="700"))
+    els.append(txt(hx(12.0) - 6, ty(temps[120]) - 8, "12:00 直射体感烫", size=9.4, color=AMBER, anchor="end", weight="700"))
 
     for h_tick in [0, 6, 12, 15, 18, 24]:
         xx = hx(float(h_tick))
@@ -765,11 +926,11 @@ def build_diurnal_heat_budget_lag() -> str:
     els.append(txt(516, 202, "彻底赔光，跌入全天最冷谷底！", size=10.0, color=INK, weight="600"))
 
     els.append(card(504, 228, 222, 122, rx=8, fill=RED_SOFT, stroke="#fca5a5"))
-    els.append(txt(516, 248, "② 为什么下午两点半比正午更热？", size=10.5, color=RED, weight="700"))
-    els.append(txt(516, 268, "12 点只是“每秒存钱最快”；但 12 点", size=10.0, color=BODY))
-    els.append(txt(516, 286, f"到 {hm_max_str} 之间，阳光进账依然大于地", size=10.0, color=BODY))
-    els.append(txt(516, 304, "表散热支出，银行总余额（气温）当", size=10.0, color=BODY))
-    els.append(txt(516, 322, "然继续往上飙，直到收支打平才见顶！", size=10.0, color=INK, weight="600"))
+    els.append(txt(516, 248, "② 正午晒皮烫 vs 午后空气热", size=10.3, color=RED, weight="700"))
+    els.append(txt(516, 267, "12 点阳光直射皮肤火力最强（体感如", size=9.8, color=BODY))
+    els.append(txt(516, 285, f"探汤）；而背阴气温因 12 点至 {hm_max_str}", size=9.8, color=BODY))
+    els.append(txt(516, 303, "进账仍大于支出，继续涨到午后才见", size=9.8, color=BODY))
+    els.append(txt(516, 321, "顶！两者叠加，早晨自然最凉。", size=9.8, color=INK, weight="600"))
 
     els.append(card(504, 360, 222, 100, rx=8, fill=AMBER_SOFT, stroke="#fcd34d"))
     els.append(txt(516, 380, "③ 年度放大版：“夏至不热三伏热”", size=10.4, color=AMBER, weight="700"))
@@ -786,10 +947,11 @@ def build_diurnal_heat_budget_lag() -> str:
     )
 
 
-@register(TOPIC, "physics", "两小儿辩日的现代原理（5张760px原创SVG图解）")
+@register(TOPIC, "两小儿辩日的现代原理（6张760px原创SVG图解）", "mechanics_sky")
 def build_all() -> None:
     builders = [
         ("distance-paradox-rotation-vs-orbit.svg", build_distance_paradox_rotation_vs_orbit),
+        ("annual-morning-vs-noon-crossover-curve.svg", build_annual_morning_vs_noon_crossover_curve),
         ("atmospheric-refraction-squashed-sun.svg", build_atmospheric_refraction_squashed_sun),
         ("horizon-illusion-ponzo-and-v1-cortex.svg", build_horizon_illusion_ponzo_and_v1),
         ("cosine-projection-and-38x-air-mass.svg", build_cosine_projection_and_air_mass),

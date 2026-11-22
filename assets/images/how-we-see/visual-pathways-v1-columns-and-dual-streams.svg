@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="532" viewBox="0 0 760 532" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">视交叉半视野分流、初级视觉皮层V1方向柱与背侧腹侧双视觉通路分工图解</title>
+<desc id="desc">左图展示双眼左半视野汇聚至右半球V1、右半视野汇聚至左半球V1及休伯尔与威泽尔发现的V1边缘方向柱；右图对比通往顶叶的背侧动作通路与通往下颞叶的腹侧识别通路及患者D.F.双分离证据。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="531" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">五、真正“看见”的是大脑：视交叉分流、V1 线条积木与腹背双通道</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">从眼球传出的只是一串电脉冲——大脑不仅把倒像扶正、修补盲点，还拆成“认出是什么”和“伸手怎么抓”两条高速路</text>
+<rect x="20" y="64" width="368" height="452" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="74.0" width="338" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="203.0" y="89.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">A · 视交叉“按视野分家”与 V1 方向柱（1981 诺奖）</text>
+<rect x="34" y="108" width="340" height="214" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="112" y="128" font-size="11" fill="#c25014" text-anchor="middle" font-weight="700">左半侧视野</text>
+<text x="296" y="128" font-size="11" fill="#1d6fa5" text-anchor="middle" font-weight="700">右半侧视野</text>
+<circle cx="138" cy="164" r="20" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<path d="M 138,184 A 20,20 0 0,0 158,164" fill="none" stroke="#c25014" stroke-width="3.2"/>
+<path d="M 118,164 A 20,20 0 0,0 138,184" fill="none" stroke="#1d6fa5" stroke-width="3.2"/>
+<text x="138" y="167" font-size="10" fill="#0f172a" text-anchor="middle" font-weight="700">左眼</text>
+<circle cx="270" cy="164" r="20" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
+<path d="M 270,184 A 20,20 0 0,0 290,164" fill="none" stroke="#c25014" stroke-width="3.2"/>
+<path d="M 250,164 A 20,20 0 0,0 270,184" fill="none" stroke="#1d6fa5" stroke-width="3.2"/>
+<text x="270" y="167" font-size="10" fill="#0f172a" text-anchor="middle" font-weight="700">右眼</text>
+<path d="M 124,180 Q 122,222 132,262" fill="none" stroke="#1d6fa5" stroke-width="2.2" marker-end="url(#arr-blue)"/>
+<path d="M 256,180 Q 204,218 142,262" fill="none" stroke="#1d6fa5" stroke-width="2.2" marker-end="url(#arr-blue)"/>
+<path d="M 152,180 Q 204,218 266,262" fill="none" stroke="#c25014" stroke-width="2.2" marker-end="url(#arr-orange)"/>
+<path d="M 284,180 Q 286,222 276,262" fill="none" stroke="#c25014" stroke-width="2.2" marker-end="url(#arr-orange)"/>
+<text x="204" y="212" font-size="10" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">视交叉</text>
+<rect x="64" y="266" width="128" height="44" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="128" y="285" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">左半球 LGN → V1</text>
+<text x="128" y="302" font-size="9.8" fill="#1e293b" text-anchor="middle">汇总双眼“右半视野”</text>
+<rect x="216" y="266" width="128" height="44" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="280" y="285" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700">右半球 LGN → V1</text>
+<text x="280" y="302" font-size="9.8" fill="#1e293b" text-anchor="middle">汇总双眼“左半视野”</text>
+<rect x="34" y="334" width="340" height="168" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="46" y="356" font-size="11" fill="#6d28d9" text-anchor="start" font-weight="700">休伯尔与威泽尔偶然划动玻片发现的秘密（1981 诺奖）：</text>
+<text x="46" y="377" font-size="10.5" fill="#1e293b" text-anchor="start">• 给猫看圆光点，后脑勺初级视觉皮层 (V1) 毫无反应；</text>
+<text x="46" y="396" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">  直到换玻片时玻璃边缘斜线掠过，神经元瞬间噼啪狂响！</text>
+<text x="46" y="418" font-size="10.5" fill="#1e293b" text-anchor="start">• 原来 V1 把视网膜圆点拼成了“特定倾角的小线段”：</text>
+<text x="46" y="437" font-size="10.5" fill="#1e293b" text-anchor="start">  0°横线柱、45°斜线柱、90°竖线柱分工明确，还会比对左右</text>
+<text x="46" y="456" font-size="10.5" fill="#1e293b" text-anchor="start">  眼视差算出 3D 纵深！（幼年先天白内障若错过关键期不</text>
+<text x="46" y="475" font-size="10.5" fill="#b91c1c" text-anchor="start" font-weight="700">  做手术，V1 神经领地会被健眼永久瓜分导致弱视！）</text>
+<rect x="402" y="64" width="338" height="452" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="416.0" y="74.0" width="304" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="568.0" y="89.0" font-size="12" fill="#18794e" text-anchor="middle" font-weight="600">B · 皮层双通道与大脑“主动脑补”</text>
+<rect x="416" y="108" width="310" height="134" rx="8" fill="#f0fdfa" stroke="#0f766e" stroke-width="1"/>
+<text x="428" y="130" font-size="11.2" fill="#0f766e" text-anchor="start" font-weight="700">① 背侧通路（V1 → 顶叶皮层）：“在哪 / 怎么抓”</text>
+<text x="428" y="152" font-size="10.5" fill="#1e293b" text-anchor="start">• 实时高速计算空间坐标、运动轨迹与手部抓握张角；</text>
+<text x="428" y="172" font-size="10.5" fill="#1e293b" text-anchor="start">• 飞盘扑面而来时，你还没看清上面印了啥字，手已经</text>
+<text x="428" y="191" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">  稳稳抓住了它——这就是顶叶动作通道的功劳！</text>
+<text x="428" y="212" font-size="10.3" fill="#64748b" text-anchor="start">• 若顶叶受损：明明认得出桌上的水杯，伸手却抓空。</text>
+<rect x="416" y="254" width="310" height="144" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="428" y="276" font-size="11.2" fill="#c25014" text-anchor="start" font-weight="700">② 腹侧通路（V1 → 下颞叶皮层）：“这是什么 / 是谁”</text>
+<text x="428" y="298" font-size="10.5" fill="#1e293b" text-anchor="start">• 层层拼出轮廓、色彩、材质、文字与“梭状回面孔区”；</text>
+<text x="428" y="318" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">• 传奇患者 D.F.（Goodale &amp; Milner 1992）：腹侧受损后</text>
+<text x="428" y="337" font-size="10.5" fill="#1e293b" text-anchor="start">  完全说不出信箱投递口是横是斜，可一旦让她把信塞进</text>
+<text x="428" y="356" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600">  去，她的手腕在半空自动转到分毫不差的角度一把投进！</text>
+<text x="428" y="377" font-size="10.3" fill="#b91c1c" text-anchor="start" font-weight="700">  铁证揭示：“认出形状”与“指导动作”是两套独立系统！</text>
+<rect x="416" y="410" width="310" height="92" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="428" y="431" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">为什么眼底像是倒的，你看到的世界却是正的？</text>
+<text x="428" y="451" font-size="10.4" fill="#1e293b" text-anchor="start">大脑里根本没有“小人”在看屏幕！大脑把眼底下方像素直接</text>
+<text x="428" y="470" font-size="10.4" fill="#1e293b" text-anchor="start">绑定到重力“上方”与抬头动作；加上扫视抑制与色彩恒常性</text>
+<text x="428" y="489" font-size="10.4" fill="#6d28d9" text-anchor="start" font-weight="700">（蓝黑/白金裙子之争），视觉其实是大脑受控的“主动建模”！</text>
+</svg>

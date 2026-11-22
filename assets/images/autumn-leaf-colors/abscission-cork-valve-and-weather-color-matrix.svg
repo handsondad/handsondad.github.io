@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="560" viewBox="0 0 760 560" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">秋季叶片叶柄离层木栓质封口脱落机制与四类天气条件对红叶黄叶褐叶影响的对比图</title>
+<desc id="desc">左栏解析短日照引发叶片生长素下降与乙烯激活离层的四步机制：木质部暂保供水、韧皮部收窄截留糖分、树枝侧沉积木栓质防水保护疤、果胶酶溶解胞间层实现无伤落叶；右栏对比昼晴夜冷无霜(2至8摄氏度锁糖催生极品红叶)、阴雨暖夜(缺糖偏黄)、初秋严霜(零下2度以下冰晶破膜直接焦枯褐变)及落叶后单宁留守变棕的四大剧本。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="559" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">叶柄上的“定时软木塞”与天气密码：为什么昼晴夜冷最红，早霜一来全焦枯？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：短日照触发叶柄离层四步无伤断腕手术 · 右：决定当年秋叶颜值的四套天气剧本</text>
+<rect x="20" y="66" width="354" height="480" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="78.0" width="330" height="24" rx="12.0" fill="#f0fdfa" stroke="#0f766e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="197.0" y="94.3" font-size="12" fill="#0f766e" text-anchor="middle" font-weight="600">① 叶柄基部“离层”四步手术：先焊软木塞，再溶胶水</text>
+<rect x="34" y="112" width="326" height="196" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.1"/>
+<rect x="46" y="146" width="94" height="122" rx="6" fill="#e7e5e4" stroke="#78350f" stroke-width="1.4"/>
+<text x="93" y="170" font-size="12.0" fill="#78350f" text-anchor="middle" font-weight="700">多年生树枝</text>
+<text x="93" y="192" font-size="11.5" fill="#0f172a" text-anchor="middle">氮磷入库越冬</text>
+<text x="93" y="250" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">腋芽静待春风</text>
+<rect x="140" y="146" width="24" height="122" rx="3" fill="#b45309" opacity="0.88"/>
+<text x="122" y="134" font-size="11.5" fill="#b45309" text-anchor="middle" font-weight="700">木栓保护层</text>
+<line x1="134.0" y1="137.0" x2="150.0" y2="146.0" stroke="#b45309" stroke-width="1.3"/>
+<rect x="166" y="146" width="20" height="122" rx="3" fill="#fecdd3" stroke="#be123c" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="222" y="134" font-size="11.5" fill="#be123c" text-anchor="middle" font-weight="700">离层溶胶线</text>
+<line x1="196.0" y1="137.0" x2="177.0" y2="146.0" stroke="#be123c" stroke-width="1.3"/>
+<rect x="188" y="156" width="158" height="102" rx="8" fill="#fff1f2" stroke="#be123c" stroke-width="1.3"/>
+<text x="267" y="178" font-size="12.0" fill="#be123c" text-anchor="middle" font-weight="700">叶柄与衰老叶片</text>
+<line x1="84.0" y1="202.0" x2="330.0" y2="202.0" stroke="#1d6fa5" stroke-width="3.0"/>
+<text x="267" y="197" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">木质部：暂保供水防干死</text>
+<line x1="84.0" y1="234.0" x2="162.0" y2="234.0" stroke="#c25014" stroke-width="2.0" stroke-dasharray="4 3"/>
+<line x1="188.0" y1="234.0" x2="330.0" y2="234.0" stroke="#be123c" stroke-width="3.2"/>
+<text x="267" y="252" font-size="11.5" fill="#be123c" text-anchor="middle" font-weight="700" class="halo">韧皮部收窄：余糖困叶内!</text>
+<text x="197" y="294" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">↑ 果胶酶溶开胞间层，秋风一吹无痛脱落、树皮留防水疤！</text>
+<rect x="34" y="316" width="326" height="40" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.0"/>
+<circle cx="52" cy="336" r="10" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.2"/>
+<text x="52" y="340" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">1</text>
+<text x="68" y="340" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">天文闹钟启动：秋分后黑夜拉长，光敏色素精准知秋</text>
+<rect x="34" y="366" width="326" height="40" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.0"/>
+<circle cx="52" cy="386" r="10" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.2"/>
+<text x="52" y="390" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">2</text>
+<text x="68" y="390" font-size="11.5" fill="#0f172a" text-anchor="start">激素跷跷板翻转：叶片生长素退潮，离层被乙烯唤醒</text>
+<rect x="34" y="416" width="326" height="40" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.0"/>
+<circle cx="52" cy="436" r="10" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.2"/>
+<text x="52" y="440" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">3</text>
+<text x="68" y="440" font-size="11.5" fill="#0f172a" text-anchor="start">先封树侧伤口：木栓质(软木成分)焊死创面防病菌</text>
+<rect x="34" y="466" width="326" height="40" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.0"/>
+<circle cx="52" cy="486" r="10" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.2"/>
+<text x="52" y="490" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">4</text>
+<text x="68" y="490" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">路灯彩蛋：紧贴暖光路灯的那簇枝叶常误判昼长晚落!</text>
+<rect x="386" y="66" width="354" height="480" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="398.0" y="78.0" width="330" height="24" rx="12.0" fill="#fff1f2" stroke="#be123c" stroke-width="1" stroke-opacity="0.35"/>
+<text x="563.0" y="94.3" font-size="12" fill="#be123c" text-anchor="middle" font-weight="600">② 四套秋季天气剧本：为何每年红叶成色大不同？</text>
+<rect x="398" y="114" width="330" height="96" rx="8" fill="#fff1f2" stroke="#be123c" stroke-width="1.2"/>
+<circle cx="416" cy="136" r="10" fill="#ffffff" stroke="#be123c" stroke-width="1.2"/>
+<text x="416" y="140" font-size="11.5" fill="#be123c" text-anchor="middle" font-weight="700">A</text>
+<text x="432" y="140" font-size="12.0" fill="#be123c" text-anchor="start" font-weight="700">黄金配方：昼晴暖阳 + 夜清冷无霜 (2–8 °C)</text>
+<text x="410" y="166" font-size="11.5" fill="#1e293b" text-anchor="start">白天强光催动余留叶绿体造糖并激活花青素合成酶；</text>
+<text x="410" y="189" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">清冷夜叠加收窄离层锁住浓糖 ⇒ 漫山耀眼丹红！</text>
+<rect x="398" y="220" width="330" height="96" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="1.2"/>
+<circle cx="416" cy="242" r="10" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+<text x="416" y="246" font-size="11.5" fill="#b45309" text-anchor="middle" font-weight="700">B</text>
+<text x="432" y="246" font-size="12.0" fill="#b45309" text-anchor="start" font-weight="700">寡淡剧本：连绵阴雨 + 暖夜偏高 (&gt;12 °C)</text>
+<text x="410" y="272" font-size="11.5" fill="#1e293b" text-anchor="start">阴天缺光难产糖且缺光信号，暖夜呼吸又耗光余糖；</text>
+<text x="410" y="295" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">花青素产线缺粮停工，仅剩类胡萝卜素 ⇒ 暗淡黄褐。</text>
+<rect x="398" y="326" width="330" height="96" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="1.2"/>
+<circle cx="416" cy="348" r="10" fill="#ffffff" stroke="#475569" stroke-width="1.2"/>
+<text x="416" y="352" font-size="11.5" fill="#475569" text-anchor="middle" font-weight="700">C</text>
+<text x="432" y="352" font-size="12.0" fill="#475569" text-anchor="start" font-weight="700">翻车剧本：未红先遭初秋严霜 (&lt; -2 °C)</text>
+<text x="410" y="378" font-size="11.5" fill="#1e293b" text-anchor="start">冰晶一夜刺穿活细胞与液泡膜，造红与撤氮双双暴毙；</text>
+<text x="410" y="401" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">多酚氧化酶接触酚类瞬间褐变 ⇒ 直接冻成焦枯死叶！</text>
+<rect x="398" y="432" width="330" height="96" rx="8" fill="#f7f1ea" stroke="#78350f" stroke-width="1.2"/>
+<circle cx="416" cy="454" r="10" fill="#ffffff" stroke="#78350f" stroke-width="1.2"/>
+<text x="416" y="458" font-size="11.5" fill="#78350f" text-anchor="middle" font-weight="700">D</text>
+<text x="432" y="458" font-size="12.0" fill="#78350f" text-anchor="start" font-weight="700">万物终局：落叶归根后的雨淋与光漂白</text>
+<text x="410" y="484" font-size="11.5" fill="#1e293b" text-anchor="start">水溶花青素随秋雨渗入泥土，类胡萝卜素逐步氧化；</text>
+<text x="410" y="507" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">唯细胞壁里耐腐涩口的单宁留守 ⇒ 终归大地棕褐。</text>
+</svg>

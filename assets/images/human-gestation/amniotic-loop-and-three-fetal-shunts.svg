@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="506" viewBox="0 0 760 506" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">羊水每日吞吐过滤循环、肺泡表面活性物质与胎儿心脏三大水下短路旁道图解</title>
+<desc id="desc">左栏展示37摄氏度羊膜囊内胎儿每日吞咽约450毫升羊水并由胎肾排出无菌稀释尿构成的动态循环，以及第24-28周起分泌肺表面活性物质降低拉普拉斯表面张力的机制；右栏展示静脉导管绕肝、卵圆孔由右心房直通左心房优先供脑，以及动脉导管将约90%右心室血流绕开高阻未充气双肺汇入主动脉的三重旁道。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="505" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">泡在羊水里十个月为什么不呛水？动态吞吐过滤舱与水下“三道短路旁道”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左看 37°C 羊水每日吞咽-排尿闭环与肺泡表面活性剂；右看胎心绕开未充气双肺的三条专属捷径</text>
+<rect x="16" y="66" width="344" height="424" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="30" y="88" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="700">羊水不是一潭死水：胎儿自己喝、自己滤的太空舱</text>
+<text x="188" y="112" font-size="8.4" fill="#1d6fa5" text-anchor="middle" font-weight="700">羊膜恒温水舱（37°C · 峰值 800–1000 mL）</text>
+<ellipse cx="188" cy="206" rx="140" ry="82" fill="#e0f2fe" stroke="#0284c7" stroke-width="2.2"/>
+<circle cx="176" cy="186" r="19" fill="#fed7aa" stroke="#ea580c" stroke-width="1.6"/>
+<path d="M 188 201 C 212 207, 218 235, 196 250 C 176 260, 158 244, 166 225" fill="#fed7aa" stroke="#ea580c" stroke-width="1.6"/>
+<text x="176" y="189" font-size="8.5" fill="#9a3412" text-anchor="middle" font-weight="700">胎儿</text>
+<path d="M 124 178 Q 140 170 153 182" fill="none" stroke="#18794e" stroke-width="2.0" marker-end="url(#arr-green)"/>
+<text x="104" y="166" font-size="8.4" fill="#18794e" text-anchor="middle" font-weight="700">① 吞咽羊水</text>
+<text x="104" y="200" font-size="8.2" fill="#1e293b" text-anchor="middle">450 mL/天</text>
+<text x="104" y="216" font-size="8.0" fill="#64748b" text-anchor="middle">练肠胃攒胎便</text>
+<path d="M 212 238 Q 236 242 248 224" fill="none" stroke="#1d6fa5" stroke-width="2.0" marker-end="url(#arr-blue)"/>
+<text x="270" y="192" font-size="8.4" fill="#1d6fa5" text-anchor="middle" font-weight="700">② 胎肾排尿</text>
+<text x="270" y="208" font-size="8.1" fill="#1e293b" text-anchor="middle">第8周起造水</text>
+<text x="270" y="224" font-size="8.1" fill="#0f172a" text-anchor="middle" font-weight="700">撑开空间育肺</text>
+<text x="188" y="306" font-size="8.3" fill="#0369a1" text-anchor="middle" font-weight="700">体表涂脂质“胎脂”防水霜 + 浮力缓冲抗外力撞击</text>
+<rect x="30" y="322" width="316" height="154" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="40" y="342" font-size="8.9" fill="#18794e" text-anchor="start" font-weight="700">🫁 肺里灌满羊水为何不算溺水？早产最怕缺啥？</text>
+<text x="40" y="361" font-size="8.3" fill="#1e293b" text-anchor="start">• 胎儿氧气 100% 靠脐带从胎盘直供，完全不靠肺换气；</text>
+<text x="40" y="378" font-size="8.3" fill="#1e293b" text-anchor="start">  胸廓在子宫里规律吞吐羊水，只是在给呼吸肌“彩排”！</text>
+<text x="40" y="398" font-size="8.3" fill="#0f172a" text-anchor="start" font-weight="700">• 拉普拉斯定律 ΔP = 2T/r：微米级湿肺泡水膜张力 T 极</text>
+<text x="40" y="415" font-size="8.3" fill="#1e293b" text-anchor="start">  大，硬吹像吹湿粘气球！第 24–28 周起分泌“肺表面活</text>
+<text x="40" y="432" font-size="8.3" fill="#1e293b" text-anchor="start">  性物质”猛降 T，才让出生第一口充气毫不费力（过早</text>
+<text x="40" y="449" font-size="8.3" fill="#1e293b" text-anchor="start">  早产儿若缺乏该物质，极易发生新生儿呼吸窘迫综合征）。</text>
+<rect x="376" y="66" width="368" height="424" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="390" y="88" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="700">水下心脏三道短路门：既然肺没通气，何必白跑一趟？</text>
+<rect x="392" y="348" width="112" height="54" rx="8" fill="#ffe4e6" stroke="#e11d48" stroke-width="1"/>
+<text x="448" y="369" font-size="8.8" fill="#be123c" text-anchor="middle" font-weight="700">胎盘供氧站</text>
+<text x="448" y="387" font-size="8.1" fill="#be123c" text-anchor="middle">脐静脉 SO2≈80%</text>
+<rect x="390" y="262" width="98" height="56" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+<text x="439" y="282" font-size="8.3" fill="#92400e" text-anchor="middle">胎肝(半休工)</text>
+<text x="439" y="301" font-size="8.3" fill="#c25014" text-anchor="middle" font-weight="700">① 静脉导管绕肝</text>
+<path d="M 448 348 C 510 338, 510 242, 455 226" fill="none" stroke="#dc2626" stroke-width="3.0" marker-end="url(#arr-orange)"/>
+<rect x="412" y="130" width="86" height="40" rx="7" fill="#ede9fe" stroke="#6d28d9" stroke-width="1"/>
+<text x="455" y="154" font-size="8.6" fill="#6d28d9" text-anchor="middle" font-weight="700">右心房 RA</text>
+<rect x="526" y="130" width="86" height="40" rx="7" fill="#ffe4e6" stroke="#e11d48" stroke-width="1"/>
+<text x="569" y="154" font-size="8.6" fill="#be123c" text-anchor="middle" font-weight="700">左心房 LA</text>
+<path d="M 498 150 L 524 150" stroke="#dc2626" stroke-width="3.4" marker-end="url(#arr-orange)"/>
+<text x="511" y="120" font-size="8.5" fill="#dc2626" text-anchor="middle" font-weight="700">② 卵圆孔(单向活门:右→左)</text>
+<rect x="412" y="182" width="86" height="40" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="455" y="206" font-size="8.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">右心室 RV</text>
+<rect x="526" y="182" width="86" height="40" rx="7" fill="#ffe4e6" stroke="#e11d48" stroke-width="1"/>
+<text x="569" y="206" font-size="8.6" fill="#be123c" text-anchor="middle" font-weight="700">左心室 LV</text>
+<path d="M 569 170 L 569 182" stroke="#dc2626" stroke-width="2.4"/>
+<path d="M 455 170 L 455 182" stroke="#6d28d9" stroke-width="2.4"/>
+<rect x="630" y="126" width="100" height="58" rx="7" fill="#f1f5f9" stroke="#64748b" stroke-width="1"/>
+<text x="680" y="145" font-size="8.5" fill="#0f172a" text-anchor="middle" font-weight="700">未充气双肺</text>
+<text x="680" y="161" font-size="8.0" fill="#64748b" text-anchor="middle">高流阻! 仅 ~10%</text>
+<text x="680" y="175" font-size="8.0" fill="#64748b" text-anchor="middle">营养血流进入</text>
+<rect x="524" y="250" width="206" height="68" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="627" y="269" font-size="8.7" fill="#c25014" text-anchor="middle" font-weight="700">③ 动脉导管（肺动脉 → 主动脉）</text>
+<text x="627" y="286" font-size="8.2" fill="#1e293b" text-anchor="middle">右心室射血 ~90% 直接拐进降主动脉，</text>
+<text x="627" y="303" font-size="8.2" fill="#1e293b" text-anchor="middle">绕开高阻肺血管，经脐动脉回胎盘换氧！</text>
+<path d="M 480 222 L 548 250" stroke="#c25014" stroke-width="2.8" marker-end="url(#arr-orange)"/>
+<path d="M 612 202 L 638 202" stroke="#dc2626" stroke-width="2.8" marker-end="url(#arr-orange)"/>
+<text x="686" y="206" font-size="8.3" fill="#be123c" text-anchor="middle" font-weight="700">头等富氧血</text>
+<text x="686" y="222" font-size="8.3" fill="#be123c" text-anchor="middle" font-weight="700">优先供心脑!</text>
+<path d="M 596 318 L 506 374" fill="none" stroke="#1d6fa5" stroke-width="2.6" marker-end="url(#arr-blue)"/>
+<text x="584" y="362" font-size="8.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">2条脐动脉回胎盘</text>
+<rect x="392" y="416" width="338" height="60" rx="7" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<text x="402" y="435" font-size="8.3" fill="#0f172a" text-anchor="start" font-weight="700">💡 精妙分流：卵圆孔把脐静脉头等高氧血直塞左心，专供狂长神经元的</text>
+<text x="402" y="453" font-size="8.3" fill="#1e293b" text-anchor="start">大脑与冠脉；胎儿期左右心室其实是“并联双泵”，合力推动体循环与胎盘！</text>
+</svg>

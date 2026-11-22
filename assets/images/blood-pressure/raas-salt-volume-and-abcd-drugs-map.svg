@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="546" viewBox="0 0 760 546" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">高盐升压机制、肾脏RAAS激素接力与ABCD四大类降压药作用靶点对照图解</title>
+<desc id="desc">上半部分展示肾脏球旁器分泌肾素经肝脏血管紧张素原、肺部ACE酶生成血管紧张素II并激活醛固酮与抗利尿激素的四步升压通路，以及高盐饮食通过渗透压锁水扩充血容量的物理链条；下半部分将ACEI/ARB、β受体阻滞剂、钙通道阻滞剂和利尿剂精准映射到心输出量与外周阻力公式靶点。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="545" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">吃咸为什么升血压？肾脏“RAAS 三级火箭”与 ABCD 四类降压药总图</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">上：神经管秒级救急，肾脏靠血容量与激素管全年基准线 · 下：顺着 BP = CO × SVR 看懂四类降压药拆哪颗螺丝</text>
+<rect x="16" y="68" width="728" height="236" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="30" y="91" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">一、长线控压总司令：肾脏跨四器官“肾素—血管紧张素—醛固酮系统（RAAS）”</text>
+<rect x="28" y="104" width="168" height="112" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="38" y="123" font-size="8.6" fill="#1d6fa5" text-anchor="start" font-weight="700">① 肾脏 + 肝脏点火</text>
+<text x="38" y="143" font-size="8.1" fill="#64748b" text-anchor="start">肾灌注压↓ 或 钠负荷↓</text>
+<text x="38" y="161" font-size="8.1" fill="#1e293b" text-anchor="start">肾球旁细胞分泌【肾素】</text>
+<text x="38" y="178" font-size="8.1" fill="#1e293b" text-anchor="start">切开肝脏【血管紧张素原】</text>
+<text x="38" y="197" font-size="8.2" fill="#0f172a" text-anchor="start" font-weight="700">→ 生成血管紧张素 I</text>
+<rect x="206" y="104" width="168" height="112" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="216" y="123" font-size="8.6" fill="#6d28d9" text-anchor="start" font-weight="700">② 肺部毛细血管加工</text>
+<text x="216" y="143" font-size="8.1" fill="#64748b" text-anchor="start">血液流经双肺庞大内皮网</text>
+<text x="216" y="161" font-size="8.1" fill="#1e293b" text-anchor="start">【血管紧张素转换酶 ACE】</text>
+<text x="216" y="178" font-size="8.1" fill="#1e293b" text-anchor="start">再剪两颗氨基酸激活它</text>
+<text x="216" y="197" font-size="8.2" fill="#0f172a" text-anchor="start" font-weight="700">→ 变成【血管紧张素 II】!</text>
+<rect x="384" y="104" width="168" height="112" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="394" y="123" font-size="8.6" fill="#c25014" text-anchor="start" font-weight="700">③ 强效缩管（提阻力）</text>
+<text x="394" y="143" font-size="8.1" fill="#64748b" text-anchor="start">血管紧张素 II 直接出击：</text>
+<text x="394" y="161" font-size="8.1" fill="#1e293b" text-anchor="start">全身微动脉平滑肌强烈收缩</text>
+<text x="394" y="178" font-size="8.1" fill="#1e293b" text-anchor="start">利用 R ∝ 1/r⁴ 四次方杠杆</text>
+<text x="394" y="197" font-size="8.2" fill="#0f172a" text-anchor="start" font-weight="700">→ 外周阻力 SVR 迅速拉升!</text>
+<rect x="562" y="104" width="168" height="112" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="572" y="123" font-size="8.6" fill="#18794e" text-anchor="start" font-weight="700">④ 保钠锁水（扩容量）</text>
+<text x="572" y="143" font-size="8.1" fill="#64748b" text-anchor="start">催肾上腺皮质放【醛固酮】</text>
+<text x="572" y="161" font-size="8.1" fill="#1e293b" text-anchor="start">+ 垂体后叶放【抗利尿激素】</text>
+<text x="572" y="178" font-size="8.1" fill="#1e293b" text-anchor="start">肾小管拼命抓回 Na+ 和水</text>
+<text x="572" y="197" font-size="8.2" fill="#0f172a" text-anchor="start" font-weight="700">→ 血容量与心输出量 CO↑!</text>
+<line x1="196" y1="160" x2="204" y2="160" stroke="#0f172a" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+<line x1="374" y1="160" x2="382" y2="160" stroke="#0f172a" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+<line x1="552" y1="160" x2="560" y2="160" stroke="#0f172a" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+<rect x="28" y="228" width="704" height="62" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<text x="40" y="248" font-size="8.3" fill="#0f172a" text-anchor="start" font-weight="700">🧂 吃太咸升压的真正物理链条（不是把血变稠！）：过量食盐 Na+ 抬高血浆渗透压 → 触发口渴喝水 + 抗利尿激素 ADH 锁水 →</text>
+<text x="40" y="267" font-size="8.2" fill="#1e293b" text-anchor="start">“水永远跟着钠走”使血管总水量（血容量）膨胀 → 回心血量与心输出量双双升高！反之血容量过高时心房分泌【钠尿肽 ANP】促排钠降压。</text>
+<rect x="16" y="316" width="728" height="216" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="30" y="339" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="700">二、不用死记药名！对照公式 MAP = 心输出量 CO × 外周阻力 SVR，秒懂 ABCD 四大类降压药</text>
+<rect x="28" y="352" width="168" height="166" rx="8" fill="#eff6ff" stroke="#1d6fa5" stroke-width="1"/>
+<text x="38" y="371" font-size="8.7" fill="#1d6fa5" text-anchor="start" font-weight="700">A 类：普利 / 沙坦</text>
+<text x="38" y="388" font-size="8.0" fill="#64748b" text-anchor="start">ACEI(××普利) / ARB(××沙坦)</text>
+<text x="38" y="408" font-size="8.2" fill="#0f172a" text-anchor="start" font-weight="700">🎯 靶点：掐断 RAAS 激素链</text>
+<text x="38" y="426" font-size="8.1" fill="#1e293b" text-anchor="start">普利拦住肺部 ACE 酶不产</text>
+<text x="38" y="442" font-size="8.1" fill="#1e293b" text-anchor="start">Ang II；沙坦直接堵死受体 →</text>
+<text x="38" y="458" font-size="8.1" fill="#1d6fa5" text-anchor="start" font-weight="700">微动脉松开(SVR↓)+排钠减水!</text>
+<rect x="38" y="486" width="148" height="22" rx="11" fill="#ffffff" stroke="#1d6fa5" stroke-width="1"/>
+<text x="112" y="501" font-size="8.1" fill="#1d6fa5" text-anchor="middle" font-weight="700">护肾护心主力军</text>
+<rect x="206" y="352" width="168" height="166" rx="8" fill="#faf5ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="216" y="371" font-size="8.7" fill="#6d28d9" text-anchor="start" font-weight="700">B 类：洛尔类(1988诺奖)</text>
+<text x="216" y="388" font-size="8.0" fill="#64748b" text-anchor="start">β 受体阻滞剂（××洛尔）</text>
+<text x="216" y="408" font-size="8.2" fill="#0f172a" text-anchor="start" font-weight="700">🎯 靶点：给心脏交感踩刹车</text>
+<text x="216" y="426" font-size="8.1" fill="#1e293b" text-anchor="start">詹姆士·布莱克发明：挡住心</text>
+<text x="216" y="442" font-size="8.1" fill="#1e293b" text-anchor="start">肌 β1 受体上的肾上腺素 →</text>
+<text x="216" y="458" font-size="8.1" fill="#6d28d9" text-anchor="start" font-weight="700">减慢心率与收缩力(CO↓)+抑肾素</text>
+<rect x="216" y="486" width="148" height="22" rx="11" fill="#ffffff" stroke="#6d28d9" stroke-width="1"/>
+<text x="290" y="501" font-size="8.1" fill="#6d28d9" text-anchor="middle" font-weight="700">降心肌耗氧功臣</text>
+<rect x="384" y="352" width="168" height="166" rx="8" fill="#fff7ed" stroke="#c25014" stroke-width="1"/>
+<text x="394" y="371" font-size="8.7" fill="#c25014" text-anchor="start" font-weight="700">C 类：地平类</text>
+<text x="394" y="388" font-size="8.0" fill="#64748b" text-anchor="start">钙通道阻滞剂 CCB（××地平）</text>
+<text x="394" y="408" font-size="8.2" fill="#0f172a" text-anchor="start" font-weight="700">🎯 靶点：松开微动脉平滑肌</text>
+<text x="394" y="426" font-size="8.1" fill="#1e293b" text-anchor="start">血管平滑肌必须进 Ca2+ 才能</text>
+<text x="394" y="442" font-size="8.1" fill="#1e293b" text-anchor="start">收缩！地平挡在钙通道门口 →</text>
+<text x="394" y="458" font-size="8.1" fill="#c25014" text-anchor="start" font-weight="700">管径 r 微扩，阻力按 1/r⁴ 暴跌!</text>
+<rect x="394" y="486" width="148" height="22" rx="11" fill="#ffffff" stroke="#c25014" stroke-width="1"/>
+<text x="468" y="501" font-size="8.1" fill="#c25014" text-anchor="middle" font-weight="700">对老年硬化血管极灵</text>
+<rect x="562" y="352" width="168" height="166" rx="8" fill="#ecfdf5" stroke="#18794e" stroke-width="1"/>
+<text x="572" y="371" font-size="8.7" fill="#18794e" text-anchor="start" font-weight="700">D 类：利尿剂</text>
+<text x="572" y="388" font-size="8.0" fill="#64748b" text-anchor="start">噻嗪类等(氢氯噻嗪/吲达帕胺)</text>
+<text x="572" y="408" font-size="8.2" fill="#0f172a" text-anchor="start" font-weight="700">🎯 靶点：给高压水网放水减容</text>
+<text x="572" y="426" font-size="8.1" fill="#1e293b" text-anchor="start">抑制肾小管重吸收 Na+ 离子 →</text>
+<text x="572" y="442" font-size="8.1" fill="#1e293b" text-anchor="start">多余的钠带走多余水分排尿 →</text>
+<text x="572" y="458" font-size="8.1" fill="#18794e" text-anchor="start" font-weight="700">缩减血容量前负荷，源头减压!</text>
+<rect x="572" y="486" width="148" height="22" rx="11" fill="#ffffff" stroke="#18794e" stroke-width="1"/>
+<text x="646" y="501" font-size="8.1" fill="#18794e" text-anchor="middle" font-weight="700">高盐容量型克星</text>
+</svg>

@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="536" viewBox="0 0 760 536" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">视紫红质200飞秒光异构化三级放大链、暗电流拉闸超极化波形动画与单光子极限图解</title>
+<desc id="desc">左图展示11-顺式视黄醛200飞秒异构化激活约800个转导蛋白、水解数千cGMP并关闭约200个阳离子通道；右图对比暗态-40毫伏持续放谷氨酸与亮态超极化断流动画及单光子感知实验。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes traceDraw {
+    0% { stroke-dashoffset: 320; }
+    100% { stroke-dashoffset: 0; }
+  }
+  @keyframes flashPulse {
+    0%, 15% { opacity: 0.2; transform: scale(0.88); }
+    40% { opacity: 1; transform: scale(1.08); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+  .vm-trace { stroke-dasharray: 320; animation: traceDraw 1.8s ease-out 0.25s 1 both; }
+  .hv-star { transform-box: fill-box; transform-origin: center; animation: flashPulse 1.4s ease-out 0.15s 1 both; }
+  @media (prefers-reduced-motion: reduce) {
+    .vm-trace, .hv-star {
+      animation: none !important;
+      stroke-dashoffset: 0 !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="535" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">三、最反直觉的光电转换：200 飞秒分子扳机，光照反而给细胞“拉闸断电”！</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">单次动画演示光致超极化（支持减少动态效果）：黑暗中视杆细胞忙着放电，见光后反而关闭通道停止喊叫</text>
+<rect x="20" y="64" width="368" height="456" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="74.0" width="328" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="198.0" y="89.0" font-size="12" fill="#c25014" text-anchor="middle" font-weight="600">A · 200 飞秒掰直视黄醛与三级酶促放大链</text>
+<rect x="34" y="108" width="340" height="82" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="1.1"/>
+<text x="46" y="130" font-size="11.2" fill="#b45309" text-anchor="start" font-weight="700">第 1 步 · 单光子扳机（200 飞秒 = 2×10⁻¹³ 秒！）</text>
+<text x="46" y="152" font-size="10.6" fill="#1e293b" text-anchor="start">维生素 A 衍生的 11-顺式视黄醛（弯折态）吸收 1 颗光子，</text>
+<text x="46" y="171" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="600">在 200 fs 内瞬间弹直成全反式视黄醛，顶开视蛋白构象！</text>
+<line x1="204" y1="190" x2="204" y2="202" stroke="#b45309" stroke-width="1.8" marker-end="url(#arr-muted)"/>
+<rect x="34" y="204" width="340" height="82" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="46" y="226" font-size="11.2" fill="#1d6fa5" text-anchor="start" font-weight="700">第 2 步 · 第一级放大：激活 ~800 个转导蛋白</text>
+<text x="46" y="248" font-size="10.6" fill="#1e293b" text-anchor="start">1 个被激活的视紫红质 (R*) 在盘膜上高速碰撞，连续激活</text>
+<text x="46" y="267" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="600">约 800 个 G 蛋白家族的转导蛋白 (Transducin) 分子。</text>
+<line x1="204" y1="286" x2="204" y2="298" stroke="#1d6fa5" stroke-width="1.8" marker-end="url(#arr-muted)"/>
+<rect x="34" y="300" width="340" height="82" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.1"/>
+<text x="46" y="322" font-size="11.2" fill="#6d28d9" text-anchor="start" font-weight="700">第 3 步 · 第二级放大：PDE 剪碎数千个 cGMP</text>
+<text x="46" y="344" font-size="10.6" fill="#1e293b" text-anchor="start">转导蛋白启动磷酸二酯酶 (PDE)，像高速碎纸机一样把约</text>
+<text x="46" y="363" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="600">4,800 个环磷酸鸟苷 (cGMP) 水解切断，局部浓度骤降！</text>
+<line x1="204" y1="382" x2="204" y2="394" stroke="#6d28d9" stroke-width="1.8" marker-end="url(#arr-muted)"/>
+<rect x="34" y="396" width="340" height="82" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.1"/>
+<text x="46" y="418" font-size="11.2" fill="#18794e" text-anchor="start" font-weight="700">第 4 步 · 关闸输出：约 200 个阳离子通道啪地锁死</text>
+<text x="46" y="440" font-size="10.6" fill="#1e293b" text-anchor="start">失去了 cGMP 钥匙支撑，外段膜上约 200 个通道（占暗态开</text>
+<text x="46" y="459" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="600">放通道约 2%）瞬间关闭，产生 ~1 mV 单光子超极化电信号！</text>
+<text x="34" y="502" font-size="10.2" fill="#64748b" text-anchor="start">注：1967 沃尔德因视黄醛获诺奖；1991 Science 飞秒激光测出 200 fs 极限。</text>
+<rect x="402" y="64" width="338" height="456" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="416.0" y="74.0" width="304" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="568.0" y="89.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">B · “暗电流”反转与人类单光子极限</text>
+<rect x="416" y="108" width="148" height="128" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+<text x="490" y="128" font-size="11" fill="#fde047" text-anchor="middle" font-weight="700">伸手不见五指（暗）</text>
+<text x="426" y="150" font-size="10.2" fill="#e2e8f0">• cGMP 满载 → 通道全开</text>
+<text x="426" y="170" font-size="10.2" fill="#93c5fd">• Na⁺/Ca²⁺ 涌入(暗电流)</text>
+<text x="426" y="190" font-size="10.5" fill="#fca5a5" font-weight="700">• 电位较高 ≈ −40 mV</text>
+<text x="426" y="212" font-size="10.2" fill="#fef08a" font-weight="700">• 狂喷谷氨酸递质！</text>
+<rect x="578" y="108" width="148" height="128" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="652" y="128" font-size="11" fill="#18794e" text-anchor="middle" font-weight="700">光子击中瞬间（亮）</text>
+<text x="588" y="150" font-size="10.2" fill="#1e293b" text-anchor="start">• cGMP 被切碎 → 关门</text>
+<text x="588" y="170" font-size="10.2" fill="#1e293b" text-anchor="start">• 阳离子进不来（断流）</text>
+<text x="588" y="190" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="700">• 超极化变负 → −65 mV</text>
+<text x="588" y="212" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">• 停止喷谷氨酸=报信！</text>
+<rect x="416" y="248" width="310" height="140" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="428" y="268" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">视杆细胞膜电位 V_m 实测响应波形（Baylor 等 1979）：</text>
+<line x1="462" y1="292" x2="710" y2="292" stroke="#b91c1c" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="462" y1="358" x2="710" y2="358" stroke="#18794e" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="456" y="296" font-size="9.8" fill="#b91c1c" text-anchor="end" font-weight="700">−40mV</text>
+<text x="456" y="362" font-size="9.8" fill="#18794e" text-anchor="end" font-weight="700">−65mV</text>
+<circle cx="514" cy="284" r="7" fill="#fde047" stroke="#b45309" stroke-width="1.4" class="hv-star"/>
+<text x="514" y="288" font-size="9" fill="#0f172a" text-anchor="middle" font-weight="700">hν</text>
+<line x1="514" y1="292" x2="514" y2="368" stroke="#b45309" stroke-width="1.2" stroke-dasharray="2 2"/>
+<polyline points="462,292 514,292 517.5,309.2 521.0,322.3 524.5,332.2 528.0,339.4 531.5,344.4 534.9,347.6 538.4,349.4 541.9,350.0 545.4,349.7 548.9,348.7 552.4,347.1 555.9,345.2 559.4,342.9 562.9,340.5 566.4,337.9 569.9,335.3 573.3,332.7 576.8,330.1 580.3,327.6 583.8,325.1 587.3,322.7 590.8,320.5 594.3,318.3 597.8,316.3 601.3,314.4 604.8,312.6 608.3,310.9 611.7,309.3 615.2,307.9 618.7,306.5 622.2,305.3 625.7,304.1 629.2,303.0 632.7,302.0 636.2,301.1 639.7,300.3 643.2,299.6 646.7,298.9 650.1,298.2 653.6,297.6 657.1,297.1 660.6,296.6 664.1,296.2 667.6,295.8 671.1,295.4 674.6,295.1 678.1,294.8 681.6,294.5 685.1,294.3 688.5,294.1 692.0,293.9 695.5,293.7 699.0,293.5 702.5,293.4 706.0,293.2" fill="none" stroke="#1d6fa5" stroke-width="2.6" class="vm-trace"/>
+<text x="612" y="376" font-size="10" fill="#1d6fa5" text-anchor="middle" font-weight="700">光照后膜电位向下“变负”（超极化拉闸）</text>
+<rect x="416" y="398" width="310" height="108" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="1"/>
+<text x="428" y="418" font-size="11" fill="#b45309" text-anchor="start" font-weight="700">人眼到底能不能看见“单颗光子”？</text>
+<text x="428" y="438" font-size="10.4" fill="#1e293b" text-anchor="start">• 1942 经典心理物理实验 (Hecht 等)：角膜入射 54–148 颗</text>
+<text x="428" y="456" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="600">  光子，仅 5–14 颗被不同视杆各自吸收 1 颗，人就看见闪光！</text>
+<text x="428" y="476" font-size="10.4" fill="#1e293b" text-anchor="start">• 2016 量子光学证实 (Tinsley 等 Nature Commun.)：发射严</text>
+<text x="428" y="494" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="700">  格单光子源，高置信度试次正确率达 60%（显著超越随机猜）！</text>
+</svg>

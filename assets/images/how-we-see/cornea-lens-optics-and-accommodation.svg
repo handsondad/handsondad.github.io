@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="532" viewBox="0 0 760 532" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">人眼角膜与晶状体折射分工、视网膜倒像及亥姆霍兹睫状肌调焦机制对比图解</title>
+<desc id="desc">左图展示空气与角膜折射率差贡献全眼65%至75%屈光力并在视网膜成倒立实像及水下视物模糊原因；右图对比看远睫状肌放松拉扁晶状体与看近睫状肌收缩松开悬韧带使晶状体弹性变凸。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="531" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">一、眼球光学密码：角膜挑起七成折光大梁，晶状体“越用力越松绳”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">人眼静止总屈光力约 58–60 D（古尔斯特兰德 1911 诺奖模型）：折射主力在角膜，而晶状体负责动态变焦</text>
+<rect x="20" y="64" width="430" height="452" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="74.0" width="396" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="232.0" y="89.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">A · 空气—角膜折射跃迁与眼底倒像（65%–75% 折光在角膜！）</text>
+<line x1="58" y1="234" x2="58" y2="168" stroke="#18794e" stroke-width="3" marker-end="url(#arr-green)"/>
+<text x="58" y="252" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="700">正立物体</text>
+<circle cx="286.0" cy="202.0" r="82.0" fill="#f8fafc" stroke="#475569" stroke-width="2.2"/>
+<path d="M 214.0,160.0 Q 184.0,202.0 214.0,244.0" fill="#e0f2fe" stroke="#1d6fa5" stroke-width="2.6"/>
+<line x1="222.0" y1="162.0" x2="222.0" y2="188.0" stroke="#0f172a" stroke-width="3.2"/>
+<line x1="222.0" y1="216.0" x2="222.0" y2="242.0" stroke="#0f172a" stroke-width="3.2"/>
+<ellipse cx="238.0" cy="202.0" rx="10" ry="26" fill="#dbeafe" stroke="#1d6fa5" stroke-width="1.8"/>
+<path d="M 334.0,136.0 A 78.0,78.0 0 0,1 334.0,268.0" fill="none" stroke="#c25014" stroke-width="3.2"/>
+<polyline points="58,168 200.0,190.0 238.0,194.0 364.0,224.0" fill="none" stroke="#b45309" stroke-width="1.6"/>
+<polyline points="58,234 200.0,214.0 238.0,210.0 364.0,180.0" fill="none" stroke="#1d6fa5" stroke-width="1.6" stroke-dasharray="4 3"/>
+<line x1="361.0" y1="182.0" x2="361.0" y2="222.0" stroke="#b91c1c" stroke-width="2.6" marker-end="url(#arr-orange)"/>
+<text x="194.0" y="154.0" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">角膜 (~43 D)</text>
+<text x="240.0" y="246.0" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">晶状体 (~15–20 D)</text>
+<text x="354.0" y="130.0" font-size="10.8" fill="#b91c1c" text-anchor="middle" font-weight="700">视网膜倒像</text>
+<text x="92" y="128" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">空气 n=1.000 → 角膜 n≈1.376</text>
+<rect x="34" y="304" width="402" height="198" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="46" y="326" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">为什么薄薄一层角膜反而是折光主力？</text>
+<text x="46" y="347" font-size="11" fill="#0f172a" text-anchor="start" font-weight="600">• 折射强弱取决于界面两侧的折射率差 Δn：</text>
+<text x="46" y="367" font-size="10.8" fill="#1e293b" text-anchor="start">  光线从空气 (1.000) 闯入泪膜/角膜 (1.376)，Δn 高达 0.376，</text>
+<text x="46" y="386" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">  一口气贡献约 43 D（占全眼 58–60 D 的 65%–75%）！</text>
+<text x="46" y="408" font-size="10.8" fill="#1e293b" text-anchor="start">• 晶状体虽然更厚 (n≈1.40)，但泡在房水与玻璃体 (1.336) 里，</text>
+<text x="46" y="427" font-size="10.8" fill="#1e293b" text-anchor="start">  两侧 Δn 很小，主要充当“精细变焦镜头”。</text>
+<text x="46" y="450" font-size="10.8" fill="#0f766e" text-anchor="start" font-weight="700">• 潜水冷知识：在水下睁眼时，水 (1.333) 贴住角膜抹平了 Δn，</text>
+<text x="46" y="469" font-size="10.8" fill="#1e293b" text-anchor="start">  角膜瞬间废掉 40 多度折光力（变成超级远视眼），戴泳镜留</text>
+<text x="46" y="488" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="600">  出一层空气才能瞬间恢复清晰！瞳孔直径 2–8 mm 可调 16 倍光通量。</text>
+<rect x="464" y="64" width="276" height="452" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="478.0" y="74.0" width="248" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="602.0" y="89.0" font-size="12" fill="#c25014" text-anchor="middle" font-weight="600">B · 亥姆霍兹调焦反转机制</text>
+<rect x="478" y="108" width="248" height="186" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="490" y="129" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">① 看远方风景（&gt; 6 米）：省力状态</text>
+<circle cx="602.0" cy="182.0" r="38" fill="none" stroke="#475569" stroke-width="3" stroke-dasharray="6 3"/>
+<line x1="615.0" y1="182.0" x2="638.0" y2="182.0" stroke="#1d6fa5" stroke-width="1.3"/>
+<line x1="611.2" y1="199.0" x2="627.5" y2="207.5" stroke="#1d6fa5" stroke-width="1.3"/>
+<line x1="602.0" y1="206.0" x2="602.0" y2="218.0" stroke="#1d6fa5" stroke-width="1.3"/>
+<line x1="592.8" y1="199.0" x2="576.5" y2="207.5" stroke="#1d6fa5" stroke-width="1.3"/>
+<line x1="589.0" y1="182.0" x2="566.0" y2="182.0" stroke="#1d6fa5" stroke-width="1.3"/>
+<line x1="592.8" y1="165.0" x2="576.5" y2="156.5" stroke="#1d6fa5" stroke-width="1.3"/>
+<line x1="602.0" y1="158.0" x2="602.0" y2="146.0" stroke="#1d6fa5" stroke-width="1.3"/>
+<line x1="611.2" y1="165.0" x2="627.5" y2="156.5" stroke="#1d6fa5" stroke-width="1.3"/>
+<ellipse cx="602.0" cy="182.0" rx="12" ry="25" fill="#ffffff" stroke="#1d6fa5" stroke-width="2"/>
+<text x="490" y="240" font-size="10.8" fill="#1e293b" text-anchor="start">• 环形睫状肌放松 → 圈径变大</text>
+<text x="490" y="259" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">• 悬韧带被向四周绷紧 → 把晶状体拉扁</text>
+<text x="490" y="278" font-size="10.8" fill="#64748b" text-anchor="start">• 折光力低，平行远光刚好聚焦视网膜</text>
+<rect x="478" y="308" width="248" height="194" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="490" y="329" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">② 看手机/读书（近距离）：肌肉收缩！</text>
+<circle cx="602.0" cy="382.0" r="29" fill="none" stroke="#c25014" stroke-width="4.5"/>
+<line x1="620.0" y1="382.0" x2="630.0" y2="382.0" stroke="#c25014" stroke-width="1.2" stroke-dasharray="2 2"/>
+<line x1="614.7" y1="396.8" x2="621.8" y2="401.8" stroke="#c25014" stroke-width="1.2" stroke-dasharray="2 2"/>
+<line x1="602.0" y1="403.0" x2="602.0" y2="410.0" stroke="#c25014" stroke-width="1.2" stroke-dasharray="2 2"/>
+<line x1="589.3" y1="396.8" x2="582.2" y2="401.8" stroke="#c25014" stroke-width="1.2" stroke-dasharray="2 2"/>
+<line x1="584.0" y1="382.0" x2="574.0" y2="382.0" stroke="#c25014" stroke-width="1.2" stroke-dasharray="2 2"/>
+<line x1="589.3" y1="367.2" x2="582.2" y2="362.2" stroke="#c25014" stroke-width="1.2" stroke-dasharray="2 2"/>
+<line x1="602.0" y1="361.0" x2="602.0" y2="354.0" stroke="#c25014" stroke-width="1.2" stroke-dasharray="2 2"/>
+<line x1="614.7" y1="367.2" x2="621.8" y2="362.2" stroke="#c25014" stroke-width="1.2" stroke-dasharray="2 2"/>
+<ellipse cx="602.0" cy="382.0" rx="18" ry="22" fill="#ffffff" stroke="#c25014" stroke-width="2.2"/>
+<text x="490" y="438" font-size="10.8" fill="#1e293b" text-anchor="start">• 睫状肌使劲收缩 → 肌肉环向内缩窄</text>
+<text x="490" y="457" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">• 悬韧带反而松弛！弹性晶状体自己鼓起</text>
+<text x="490" y="476" font-size="10.6" fill="#1e293b" text-anchor="start">• 附带“近反射三联征”：变凸+对眼+缩瞳；</text>
+<text x="490" y="493" font-size="10.6" fill="#b91c1c" text-anchor="start" font-weight="700">  45岁后晶状体硬化回弹不动 → 老花眼！</text>
+</svg>

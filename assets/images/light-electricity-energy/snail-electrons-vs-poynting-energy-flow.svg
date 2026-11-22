@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="498" viewBox="0 0 760 498" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">导线外坡印廷电磁能流近光速传播单次动画与铜线电子毫米级漂移对比图解</title>
+<desc id="desc">上栏单次动画展示合闸瞬间电能沿导线外部空间以坡印廷矢量S=(1/μ0)(E×B)近光速涌入灯泡；下栏定量对比1.5平方毫米铜线1安培直流下电子每秒仅0.05毫米的蜗牛漂移，以及50赫兹交流电下电子原地0.22微米振幅微颤。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes poyntingRush {
+          0% { stroke-dashoffset: 520; opacity: 0.35; }
+          65%, 100% { stroke-dashoffset: 0; opacity: 1; }
+        }
+        .poynting-stream { stroke-dasharray: 520; animation: poyntingRush 2.8s cubic-bezier(0.16, 1, 0.3, 1) 1 forwards; }
+        @media (prefers-reduced-motion: reduce) {
+          .poynting-stream { animation: none !important; stroke-dashoffset: 0 !important; opacity: 1 !important; }
+        }
+</style>
+<rect x="0.5" y="0.5" width="759" height="497" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">铜线里的电子爬得比蜗牛还慢，为什么墙上开关一按，屋顶电灯瞬间亮了？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">颠覆直觉：电线不是送电子去烧的“煤气管道”！真正以近光速奔向电灯的，是导线外的电磁场坡印廷能流。</text>
+<rect x="20" y="68" width="720" height="232" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="40" cy="90" r="10" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="40" y="94" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="58" y="95" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">电磁场能流全景动画：能量沿着导线【外部空间】以近光速（~2亿米/秒）直扑灯泡！</text>
+<rect x="52" y="156" width="82" height="68" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="2.0"/>
+<text x="93" y="182" font-size="10.4" fill="#1d6fa5" text-anchor="middle" font-weight="700">220V 电源</text>
+<text x="93" y="200" font-size="9.8" fill="#0f172a" text-anchor="middle" font-weight="600">+ 墙上开关</text>
+<text x="93" y="216" font-size="9.2" fill="#64748b" text-anchor="middle">(按下合闸)</text>
+<line x1="134.0" y1="166.0" x2="594.0" y2="166.0" stroke="#b45309" stroke-width="4.2"/>
+<line x1="134.0" y1="214.0" x2="594.0" y2="214.0" stroke="#b45309" stroke-width="4.2"/>
+<text x="364" y="156" font-size="9.5" fill="#92400e" text-anchor="middle" font-weight="700">上端铜导线（内部自由电子仅缓慢蠕动或原地微颤）</text>
+<text x="364" y="232" font-size="9.5" fill="#92400e" text-anchor="middle" font-weight="700">下端回路铜导线</text>
+<path d="M 142,180 C 260,178 460,178 586,184" fill="none" stroke="#d97706" stroke-width="2.2" stroke-opacity="0.45" marker-end="url(#arr-orange)"/>
+<path d="M 142,200 C 260,202 460,202 586,196" fill="none" stroke="#d97706" stroke-width="2.2" stroke-opacity="0.45" marker-end="url(#arr-orange)"/>
+<path d="M 140,148 C 280,118 470,118 612,154" fill="none" stroke="#c25014" stroke-width="1.8" stroke-dasharray="6 4" stroke-opacity="0.55" marker-end="url(#arr-orange)"/>
+<path d="M 140,232 C 280,262 470,262 612,226" fill="none" stroke="#c25014" stroke-width="1.8" stroke-dasharray="6 4" stroke-opacity="0.55" marker-end="url(#arr-orange)"/>
+<path class="poynting-stream" d="M 142,180 C 260,178 460,178 586,184" fill="none" stroke="#d97706" stroke-width="3.0" marker-end="url(#arr-orange)"/>
+<path class="poynting-stream" d="M 142,200 C 260,202 460,202 586,196" fill="none" stroke="#d97706" stroke-width="3.0" marker-end="url(#arr-orange)"/>
+<text x="364" y="194" font-size="10.2" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">坡印廷电磁能流 S = (1/μ₀)(E × B) 在导线外空间狂飙！</text>
+<circle cx="634" cy="190" r="38" fill="#fef08a" stroke="#d97706" stroke-width="2.4"/>
+<circle cx="634" cy="190" r="22" fill="#fde047"/>
+<text x="634" y="188" font-size="10.4" fill="#92400e" text-anchor="middle" font-weight="700">电灯发光</text>
+<text x="634" y="203" font-size="9.6" fill="#dc2626" text-anchor="middle" font-weight="700">能流汇入！</text>
+<text x="634" y="246" font-size="9.4" fill="#18794e" text-anchor="middle" font-weight="700">5米电线仅需 ~25 纳秒点亮</text>
+<text x="40" y="282" font-size="9.9" fill="#1e293b" text-anchor="start">• 导线扮演的真正角色是“电磁场导轨”：表面电荷建立电场 E、电流建立磁场 B，能流 S 从四周空间垂直灌进灯丝/芯片！</text>
+<rect x="20" y="314" width="352" height="168" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="36.0" y="328.0" width="282" height="22" rx="11.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="177.0" y="343.0" font-size="10.8" fill="#dc2626" text-anchor="middle" font-weight="600">直流漂移实算：每秒仅爬 0.049 毫米！</text>
+<text x="36" y="368" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">• 家装 1.5 mm² 铜线通 1 A 电流（灯功率 ~220 W）：</text>
+<text x="36" y="387" font-size="9.8" fill="#1e293b" text-anchor="start">  铜自由电子密度 n = 8.47×10²⁸ /m³，代入 v_d = I/(neA)</text>
+<text x="36" y="405" font-size="9.8" fill="#dc2626" text-anchor="start" font-weight="700">  算得电子平均漂移速度仅 v_d ≈ 0.05 mm/s（每小时 18 厘米）！</text>
+<text x="36" y="424" font-size="9.8" fill="#1e293b" text-anchor="start">• 如果非要等墙上开关里那颗电子亲自爬完 5 米电线去点灯，</text>
+<text x="36" y="442" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="700">  你按下开关后得在黑屋子里傻等【整整 28 个小时】！</text>
+<text x="36" y="462" font-size="9.5" fill="#64748b" text-anchor="start">  （好比拧开水龙头：水管早就满水，水压波瞬间推水喷出！）</text>
+<rect x="388" y="314" width="352" height="168" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="404.0" y="328.0" width="318" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="563.0" y="343.0" font-size="10.6" fill="#6d28d9" text-anchor="middle" font-weight="600">50 Hz 交流电更绝：电子原地微颤 ±0.22 微米！</text>
+<text x="404" y="368" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">• 家里插座是每秒换向 100 次的 50 Hz 交流电：</text>
+<text x="404" y="387" font-size="9.8" fill="#1e293b" text-anchor="start">  铜线里的电子根本连一毫米门都没出过，一辈子都在原地</text>
+<text x="404" y="405" font-size="9.8" fill="#6d28d9" text-anchor="start" font-weight="700">  左右来回哆嗦，单次摆幅仅 ±0.22 μm（头发丝的 1/300）！</text>
+<text x="404" y="424" font-size="9.8" fill="#1e293b" text-anchor="start">• 发电厂从来没有卖给你哪怕一颗电子！电厂只用发电机做功</text>
+<text x="404" y="442" font-size="9.8" fill="#18794e" text-anchor="start" font-weight="700">  隔着电磁场“推拉摇晃”你家铜线里原有的电子，把能量送进灯里！</text>
+<text x="404" y="462" font-size="9.5" fill="#64748b" text-anchor="start">  （所以电费单买的单位是千瓦时 kWh = 能量，不是库仑电荷！）</text>
+</svg>

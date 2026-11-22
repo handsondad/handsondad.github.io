@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="542" viewBox="0 0 760 542" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">冰融化密度骤增9%与4摄氏度反常膨胀曲线及冰面滑行法拉第表面预熔层真相图解</title>
+<desc id="desc">左栏绘制冰在0摄氏度融化时密度从916.7跃升至999.8千克每立方米并在4摄氏度达峰的定量曲线，解释六角氢键空笼坍缩与湖底生命庇护；右栏用克拉佩龙实算证伪单纯冰刀压融说，展示法拉第表面预熔准液态层与摩擦生热双机制。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="541" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">四、水的叛逆与百年滑冰冤案：冰为什么反常浮在水面？冰刀真能把冰压化吗？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：六角空心笼坍缩致融化体积缩 ~8.3% 与 4 °C 密度峰 · 右：冰刀压强实算打脸与法拉第表面预熔层</text>
+<rect x="20" y="66" width="354" height="462" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="78.0" width="330" height="24" rx="12.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="197.0" y="94.3" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">A · 99% 固体融化膨胀，唯独冰融化反而“缩水”变重！</text>
+<line x1="86.0" y1="266.0" x2="344.0" y2="266.0" stroke="#475569" stroke-width="1.4"/>
+<line x1="86.0" y1="120.0" x2="86.0" y2="266.0" stroke="#475569" stroke-width="1.4"/>
+<line x1="86.0" y1="252.9" x2="151.9" y2="255.8" stroke="#1d6fa5" stroke-width="2.8"/>
+<line x1="151.9" y1="255.8" x2="151.9" y2="129.4" stroke="#dc2626" stroke-width="2.0" stroke-dasharray="4 3"/>
+<path d="M 151.9,129.4 L 162.9,129.3 L 173.8,129.2 L 184.8,129.2 L 195.8,129.3 L 206.8,129.5 L 217.7,129.7 L 228.7,130.0 L 239.7,130.3 L 250.7,130.7 L 261.7,131.1 L 272.6,131.6 L 283.6,132.1 L 294.6,132.6 L 305.6,133.3 L 316.6,133.9 L 327.5,134.6 L 338.5,135.3" fill="none" stroke="#0f766e" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="151.9" cy="255.8" r="4.2" fill="#1d6fa5"/>
+<circle cx="173.8" cy="129.2" r="4.5" fill="#0f766e"/>
+<text x="80" y="259.8" font-size="11.5" fill="#1d6fa5" text-anchor="end" font-weight="700">917</text>
+<text x="80" y="133.1" font-size="11.5" fill="#0f766e" text-anchor="end" font-weight="700">1000</text>
+<text x="159.9" y="199.1" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">0 °C 坍缩暴涨 +9%!</text>
+<text x="181.8" y="147.1" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">4 °C 密度峰(999.97)</text>
+<text x="206" y="286" font-size="11.5" fill="#64748b" text-anchor="middle">温度 T (-12 → 35 °C) · 纵轴：密度 kg/m³</text>
+<rect x="32" y="300" width="330" height="214" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="44" y="322" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">为什么冰化成水反而变密？（铋、镓、硅亦如此）</text>
+<text x="44" y="346" font-size="11.5" fill="#1e293b" text-anchor="start">• 冰 Ih 被四面体氢键支成空旷六角笼，肚里全是空洞；</text>
+<text x="44" y="368" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">• 0 °C 融化拆掉 ~15% 氢键，笼架局部坍塌，游离分子</text>
+<text x="44" y="390" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">  趁机钻进空洞挤得更紧 → 体积骤缩 ~8.3%！</text>
+<text x="44" y="416" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">• 地球生命的护身符：若冰像铁一样沉底，寒冬湖海将从</text>
+<text x="44" y="438" font-size="11.5" fill="#1e293b" text-anchor="start">  底往上冻成死冰坨；幸亏冰浮水面当棉被，4 °C 最重的</text>
+<text x="44" y="460" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">  水沉在湖底，鱼虾才得以安度严冬！</text>
+<text x="44" y="486" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">• 推论：加压偏爱小体积 → 冰受压熔点微降(-0.074°C/MPa)</text>
+<rect x="388" y="66" width="352" height="462" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="400.0" y="78.0" width="328" height="24" rx="12.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="564.0" y="94.3" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="600">B · 百年教科书破案：滑冰真靠冰刀把冰“压化”吗？</text>
+<rect x="400" y="114" width="328" height="178" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2"/>
+<circle cx="418" cy="134" r="10.5" fill="#ffffff" stroke="#dc2626" stroke-width="1.2"/>
+<text x="418" y="138" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">1</text>
+<text x="436" y="138" font-size="11.6" fill="#dc2626" text-anchor="start" font-weight="700">先拿克劳修斯—克拉佩龙方程算笔硬账 ❌</text>
+<text x="412" y="164" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">• 每加压 1 MPa (~10 atm)，冰熔点仅降 0.074 °C！</text>
+<text x="412" y="186" font-size="11.5" fill="#1e293b" text-anchor="start">• 70 kg 选手踩冰刀压强 ~20–47 MPa → 熔点最多降到</text>
+<text x="412" y="208" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">  -1.5 ~ -3.5 °C！可冰球馆标准冰温是 -9 °C，极地</text>
+<text x="412" y="230" font-size="11.5" fill="#1e293b" text-anchor="start">  -30 °C 照样滑雪！（且 &lt;-22 °C 高压只压出固态冰III，</text>
+<text x="412" y="252" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">  压不出半滴水！）单纯压融说彻底破产！</text>
+<text x="412" y="276" font-size="11.5" fill="#64748b" text-anchor="start">  （注：万吨冰川底部接近 0 °C 时压融润滑依然有效）</text>
+<rect x="400" y="304" width="328" height="210" rx="8" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.3"/>
+<circle cx="418" cy="324" r="10.5" fill="#ffffff" stroke="#0f766e" stroke-width="1.2"/>
+<text x="418" y="328" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">2</text>
+<text x="436" y="328" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">真正主角：法拉第“表面预熔水膜”+ 摩擦生热 ✅</text>
+<rect x="414" y="344" width="300" height="26" rx="5" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.3" stroke-dasharray="4 2"/>
+<text x="564" y="361" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">表面预熔准液态膜（~1–70 nm，-35 °C 仍未冻死!）</text>
+<rect x="414" y="370" width="300" height="28" rx="4" fill="#e2e8f0" stroke="#475569" stroke-width="1.2"/>
+<text x="564" y="388" font-size="11.5" fill="#475569" text-anchor="middle" font-weight="700">内部完整六角冰晶格（四面体满配锁死）</text>
+<text x="412" y="420" font-size="11.5" fill="#1e293b" text-anchor="start">• 1850 法拉第洞见：冰最表层分子头顶悬空缺一半氢键，</text>
+<text x="412" y="442" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">  早在 -35 °C 就提前松绑成纳米级“准液态润滑膜”</text>
+<text x="412" y="464" font-size="11.5" fill="#1e293b" text-anchor="start">  （所以站在冰上不动也打滑，两块冰轻碰会冻粘）；</text>
+<text x="412" y="486" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">• 滑行起来后，冰刀高速【摩擦生热】进一步把水膜加厚，</text>
+<text x="412" y="504" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">  双剑合璧造就了冰面极低摩擦系数！</text>
+</svg>

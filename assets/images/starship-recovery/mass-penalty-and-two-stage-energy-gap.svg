@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="506" viewBox="0 0 760 506" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">星舰一二级28倍比动能差距与砍掉着陆腿改用发射塔捕获的物理账单图</title>
+<desc id="desc">左图按比动能公式e=1/2v^2计算超重助推器1.48 km/s（1.10 MJ/kg）与星舰二级7.80 km/s（30.42 MJ/kg，相差27.8倍）的减速账单，证明二级若纯靠真空猛禽反推需8.11倍质量比，必须靠大气耗散99.99%动能；右图对比猎鹰9号四条折叠腿与星舰无腿承力销方案，说明二级1:1运力惩罚、隔热瓦不开舱门与地面塔臂快周转三大原因。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="ss-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="ss-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="ss-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="ss-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#6d28d9"/>
+  </marker>
+  <marker id="ss-red" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#dc2626"/>
+  </marker>
+  <marker id="ss-slate" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#475569"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="505" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">为什么要砍掉着陆腿？一级与二级差出 28 倍的“刹车账单”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：比动能 e = ½v² 决定一二级截然不同的减速路线｜右：把缓冲腿搬回地面发射塔的重量账</text>
+<rect x="20" y="62" width="352" height="430" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">① 速度差 5.3 倍，单位质量动能差 27.8 倍！</text>
+<text x="36" y="102" font-size="10.3" fill="#64748b" text-anchor="start">一级刚出稠密大气便折返；二级必须从第一宇宙速度全身刹停</text>
+<line x1="128.0" y1="122" x2="342.0" y2="122" stroke="#cbd5e1" stroke-width="1"/>
+<line x1="128.0" y1="118" x2="128.0" y2="125" stroke="#cbd5e1" stroke-width="1"/>
+<text x="128.0" y="115" font-size="9.4" fill="#64748b" text-anchor="middle">0</text>
+<line x1="194.9" y1="118" x2="194.9" y2="125" stroke="#cbd5e1" stroke-width="1"/>
+<text x="194.9" y="115" font-size="9.4" fill="#64748b" text-anchor="middle">10</text>
+<line x1="261.8" y1="118" x2="261.8" y2="125" stroke="#cbd5e1" stroke-width="1"/>
+<text x="261.8" y="115" font-size="9.4" fill="#64748b" text-anchor="middle">20</text>
+<line x1="328.6" y1="118" x2="328.6" y2="125" stroke="#cbd5e1" stroke-width="1"/>
+<text x="328.6" y="115" font-size="9.4" fill="#64748b" text-anchor="middle">30 MJ/kg</text>
+<text x="36" y="145" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">一级超重助推</text>
+<text x="36" y="160" font-size="9.6" fill="#64748b" text-anchor="start">v ≈ 1.48 km/s</text>
+<rect x="128.0" y="133" width="7.3" height="24" rx="4" fill="#1d6fa5"/>
+<text x="143.3" y="149" font-size="10.4" fill="#1d6fa5" text-anchor="start" font-weight="700">1.10 MJ/kg（1× 基准）</text>
+<text x="36" y="196" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">二级星舰飞船</text>
+<text x="36" y="211" font-size="9.6" fill="#64748b" text-anchor="start">v ≈ 7.80 km/s</text>
+<rect x="128.0" y="182" width="203.4" height="28" rx="4" fill="#c25014"/>
+<rect x="327.4" y="182" width="4.0" height="28" rx="1.5" fill="#18794e"/>
+<text x="136.0" y="200" font-size="10.3" fill="#ffffff" text-anchor="start" font-weight="700">30.42 MJ/kg（一级 27.8 倍！）</text>
+<text x="36" y="228" font-size="9.6" fill="#c25014" text-anchor="start" font-weight="600">↑ 大气弓形激波与拍肚皮吃掉 99.99% 动能（刹至 ~80 m/s）</text>
+<rect x="34" y="242" width="324" height="118" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="46" y="262" font-size="10.8" fill="#c25014" text-anchor="start" font-weight="700">为什么二级不能像一级那样靠发动机硬刹？</text>
+<text x="46" y="282" font-size="9.9" fill="#1e293b" text-anchor="start">• 真空猛禽 Isp = 380 s（排气速度 ve = 3,727 m/s）</text>
+<text x="46" y="300" font-size="9.9" fill="#1e293b" text-anchor="start">• 若纯靠反推刹停 7.8 km/s：m0/mf = exp(7800/3727) = 8.11</text>
+<text x="46" y="318" font-size="9.9" fill="#1e293b" text-anchor="start">• 意味着 120 吨空船要背 &gt;850 吨“刹车油”上太空，</text>
+<text x="46" y="336" font-size="9.9" fill="#c25014" text-anchor="start" font-weight="700">  有效载荷直接归零倒贴！必须向大气“借阻力”免费刹车。</text>
+<rect x="34" y="370" width="324" height="108" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="46" y="390" font-size="10.8" fill="#1d6fa5" text-anchor="start" font-weight="700">两级分道扬镳的回收物理配方：</text>
+<text x="46" y="410" font-size="9.8" fill="#1e293b" text-anchor="start">• 一级（亚轨道 ~68 km）：反推调头 + 栅格翼减速 + 304L 裸钢</text>
+<text x="46" y="428" font-size="9.8" fill="#1e293b" text-anchor="start">  硬抗短暂气动热 + 13→3 台猛禽精准悬停入筷（无隔热瓦）</text>
+<text x="46" y="448" font-size="9.8" fill="#1e293b" text-anchor="start">• 二级（入轨再入）：1.8 万片陶瓷瓦扛 &gt;1,400°C 等离子火海 +</text>
+<text x="46" y="466" font-size="9.8" fill="#18794e" text-anchor="start" font-weight="700">  横躺拍肚皮跳伞 + 最后 550 米三机点火“神龙摆尾”挂入塔臂！</text>
+<rect x="388" y="62" width="352" height="430" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="404" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">② “最好的零件就是没有零件”：砍掉着陆腿</text>
+<text x="404" y="102" font-size="10.3" fill="#64748b" text-anchor="start">把几十吨起落架与缓冲器剥离箭体，交给地面 146 米集成塔</text>
+<rect x="402" y="116" width="156" height="168" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="480" y="134" font-size="10.4" fill="#475569" text-anchor="middle" font-weight="700">猎鹰 9 号：自带 4 条腿</text>
+<line x1="418" y1="226" x2="542" y2="226" stroke="#475569" stroke-width="2.2"/>
+<rect x="469" y="148" width="22" height="62" rx="3" fill="#ffffff" stroke="#475569" stroke-width="1.6"/>
+<path d="M469,196 L442,225 M469,206 L448,225 M491,196 L518,225 M491,206 L512,225" stroke="#475569" stroke-width="2.0"/>
+<polygon points="476,210 484,210 487,223 473,223" fill="#c25014" fill-opacity="0.7"/>
+<text x="480" y="244" font-size="9.5" fill="#1e293b" text-anchor="middle">碳纤维腿+一次性压溃铝芯</text>
+<text x="480" y="260" font-size="9.5" fill="#64748b" text-anchor="middle">驳船拖回港口需数天吊装</text>
+<text x="480" y="276" font-size="9.5" fill="#c25014" text-anchor="middle" font-weight="600">二级仍作一次性抛弃</text>
+<rect x="570" y="116" width="156" height="168" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="648" y="134" font-size="10.4" fill="#18794e" text-anchor="middle" font-weight="700">星舰一二级：零着陆腿！</text>
+<rect x="586" y="144" width="12" height="86" rx="2" fill="#cbd5e1" stroke="#475569" stroke-width="1.3"/>
+<line x1="598" y1="168" x2="692" y2="168" stroke="#18794e" stroke-width="3.2"/>
+<rect x="636" y="152" width="28" height="72" rx="4" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
+<line x1="630" y1="165" x2="636" y2="165" stroke="#c25014" stroke-width="3.0"/>
+<line x1="664" y1="165" x2="670" y2="165" stroke="#c25014" stroke-width="3.0"/>
+<text x="648" y="244" font-size="9.5" fill="#1e293b" text-anchor="middle">箭体仅留 2 根 ~30cm 承力销</text>
+<text x="648" y="260" font-size="9.5" fill="#18794e" text-anchor="middle" font-weight="700">液压吸能缓冲全留在地面塔臂</text>
+<text x="648" y="276" font-size="9.5" fill="#18794e" text-anchor="middle" font-weight="600">接住即可移回发射台复飞</text>
+<rect x="402" y="294" width="324" height="184" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="414" y="314" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">若硬给星舰装上重型着陆腿，要吃哪三重苦头？</text>
+<circle cx="418" cy="340" r="9.5" fill="#ffffff" stroke="#c25014" stroke-width="1.2"/>
+<text x="418" y="344" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">1</text>
+<text x="434" y="338" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">二级 1:1 吞噬运力：二级每多背 1 吨腿入轨，有效</text>
+<text x="434" y="354" font-size="9.6" fill="#1e293b" text-anchor="start">载荷就直降 1 吨；省下 ~10 吨起落架等于白赚 10 吨卫星运力！</text>
+<circle cx="418" cy="388" r="9.5" fill="#ffffff" stroke="#dc2626" stroke-width="1.2"/>
+<text x="418" y="392" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">2</text>
+<text x="434" y="386" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">隔热罩严禁乱开缝：起落架舱门若切开迎风面隔热瓦，</text>
+<text x="434" y="402" font-size="9.6" fill="#1e293b" text-anchor="start">&gt;1,400°C 等离子流极易顺缝钻入（哥伦比亚号惨痛教训）。</text>
+<circle cx="418" cy="436" r="9.5" fill="#ffffff" stroke="#18794e" stroke-width="1.2"/>
+<text x="418" y="440" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">3</text>
+<text x="434" y="434" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">避开地面激波与吊装：200–275 吨空箭悬在半空</text>
+<text x="434" y="450" font-size="9.6" fill="#1e293b" text-anchor="start">挂上筷子，既免遭尾焰砸地反弹，又能原地叠回发射台快周转。</text>
+</svg>

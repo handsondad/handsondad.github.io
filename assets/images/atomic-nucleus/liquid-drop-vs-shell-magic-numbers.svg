@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="540" viewBox="0 0 760 540" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">原子核液滴模型五项能量账本与核壳层模型自旋轨道耦合七大幻数图解</title>
+<desc id="desc">左栏拆解魏茨泽克液滴模型的体积吸引、表面张力、库仑排斥、泡利不对称与成对奖励五项，解释偶偶核占优；右栏按能级排列2、8、20、28、50、82、126七大幻数及双幻数核，说明泡利阻塞与强自旋轨道耦合机制。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="539" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">三、原子核到底像“一滴水珠”还是“量子洋葱”？两大诺奖模型各管一半江山</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：魏茨泽克—玻尔液滴模型五笔能量账 · 右：迈耶—延森壳层自旋轨道耦合与七大幻数堡垒</text>
+<rect x="20" y="66" width="354" height="460" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="78.0" width="330" height="24" rx="12.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="197.0" y="94.3" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">A · 集体视角：液滴模型（算准宏观结合能与裂变）</text>
+<rect x="32" y="112" width="330" height="60" rx="7" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.1"/>
+<circle cx="48" cy="132" r="10.5" fill="#ffffff" stroke="#0f766e" stroke-width="1.2"/>
+<text x="48" y="136" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">1</text>
+<text x="66" y="136" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">体积项 +a_V A（强力饱和吸引）</text>
+<text x="44" y="159" font-size="11.5" fill="#0f172a" text-anchor="start">每颗核子只拉贴身一圈邻居，总吸力正比于 A</text>
+<rect x="32" y="180" width="330" height="60" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<circle cx="48" cy="200" r="10.5" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="48" y="204" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">2</text>
+<text x="66" y="204" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">表面项 -a_S A²/³（表面张力扣分）</text>
+<text x="44" y="227" font-size="11.5" fill="#0f172a" text-anchor="start">最外层核子头顶悬空少一半拉手，像水滴缩成球</text>
+<rect x="32" y="248" width="330" height="60" rx="7" fill="#fef2f2" stroke="#dc2626" stroke-width="1.1"/>
+<circle cx="48" cy="268" r="10.5" fill="#ffffff" stroke="#dc2626" stroke-width="1.2"/>
+<text x="48" y="272" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">3</text>
+<text x="66" y="272" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">库仑项 -a_C Z(Z-1)/A¹/³（静电拆台）</text>
+<text x="44" y="295" font-size="11.5" fill="#0f172a" text-anchor="start">全核质子两两互推，重核越胖被扣分越惨重</text>
+<rect x="32" y="316" width="330" height="60" rx="7" fill="#fffbeb" stroke="#b45309" stroke-width="1.1"/>
+<circle cx="48" cy="336" r="10.5" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+<text x="48" y="340" font-size="11.5" fill="#b45309" text-anchor="middle" font-weight="700">4</text>
+<text x="66" y="340" font-size="11.5" fill="#b45309" text-anchor="start" font-weight="700">不对称项 -a_A (N-Z)²/A（泡利排队费）</text>
+<text x="44" y="363" font-size="11.5" fill="#0f172a" text-anchor="start">中子塞太多被迫爬更高费米能级，限制 N/Z 无度失衡</text>
+<rect x="32" y="384" width="330" height="60" rx="7" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.1"/>
+<circle cx="48" cy="404" r="10.5" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="48" y="408" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">5</text>
+<text x="66" y="408" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">对能项 ±δ（成双成对奖励！）</text>
+<text x="44" y="431" font-size="11.5" fill="#0f172a" text-anchor="start">质子与质子、中子与中子自旋反平行配对最稳！</text>
+<rect x="32" y="456" width="330" height="58" rx="7" fill="#f8fafc" stroke="#475569" stroke-width="1.1"/>
+<text x="44" y="478" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">铁证：地球 ~252 种稳定核素里，偶质-偶中占 ~159 种，</text>
+<text x="44" y="500" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">奇质-奇中仅剩 ²H、⁶Li、¹⁰B、¹⁴N 区区 4 颗轻核！</text>
+<rect x="388" y="66" width="352" height="460" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="400.0" y="78.0" width="328" height="24" rx="12.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="564.0" y="94.3" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="600">B · 单粒子视角：核壳层模型与七大“幻数”铜墙铁壁</text>
+<rect x="400" y="112" width="328" height="246" rx="8" fill="#faf5ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="412" y="134" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">质子与中子各自独立填满量子壳层（类比稀有气体）：</text>
+<line x1="412.0" y1="154.0" x2="438.0" y2="154.0" stroke="#dc2626" stroke-width="2.6"/>
+<text x="446" y="158" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">126（仅中子达标：²⁰⁸Pb 终极重核堡垒）</text>
+<line x1="412.0" y1="182.0" x2="438.0" y2="182.0" stroke="#6d28d9" stroke-width="2.6"/>
+<text x="446" y="186" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">82 （铅 Z=82：放射性大门前的最后守卫）</text>
+<line x1="412.0" y1="210.0" x2="438.0" y2="210.0" stroke="#1d6fa5" stroke-width="2.6"/>
+<text x="446" y="214" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">50 （锡 Z=50：坐拥创纪录 10 种稳定同位素！）</text>
+<line x1="412.0" y1="238.0" x2="438.0" y2="238.0" stroke="#c25014" stroke-width="2.6"/>
+<text x="446" y="242" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">28 （镍 Z=28：自旋—轨道耦合 L·S 首创裂口！）</text>
+<line x1="412.0" y1="266.0" x2="438.0" y2="266.0" stroke="#0f766e" stroke-width="2.6"/>
+<text x="446" y="270" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">20 （钙 ⁴⁰Ca / ⁴⁸Ca：罕见一门双双幻数核）</text>
+<line x1="412.0" y1="294.0" x2="438.0" y2="294.0" stroke="#0f766e" stroke-width="2.6"/>
+<text x="446" y="298" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">8  （氧 ¹⁶O：恒星核合成超稳驿站）</text>
+<line x1="412.0" y1="322.0" x2="438.0" y2="322.0" stroke="#dc2626" stroke-width="2.6"/>
+<text x="446" y="326" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">2  （氦 ⁴He：2p+2n 紧锁成 α 粒子金刚钻）</text>
+<rect x="400" y="370" width="328" height="144" rx="8" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.2"/>
+<text x="412" y="392" font-size="11.6" fill="#0f766e" text-anchor="start" font-weight="700">1949 迈耶与延森破案（1963 诺贝尔物理奖）：</text>
+<text x="412" y="416" font-size="11.5" fill="#1e293b" text-anchor="start">• 昔日困惑：核内既无中心大核又极拥挤，怎会有壳层？</text>
+<text x="412" y="438" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">• 答案：① 泡利不相容封死了绝大部分碰撞散射通道；</text>
+<text x="412" y="460" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">  ② 核子在平均势阱中存在极强的【自旋—轨道耦合 L·S】！</text>
+<text x="412" y="482" font-size="11.5" fill="#1e293b" text-anchor="start">  自旋与公转同向的 j=l+1/2 能级大幅下沉，精准劈出</text>
+<text x="412" y="502" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">  28、50、82、126 四道大鸿沟，催生出“双幻数”不死核！</text>
+</svg>

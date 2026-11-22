@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="552" viewBox="0 0 760 552" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">欧亚鸲磁倾角罗盘线圈反转实验与视网膜ErCRY4量子自由基对单重态三重态演化单次动画图解</title>
+<desc id="desc">左图对比自然地磁场、仅反转垂直分量导致候鸟掉头飞南与同时反转水平垂直分量即极性全反但候鸟仍向北飞的三组实验；右图演示蓝光激发ErCRY4中色氨酸电子跳跃生成自由基对并在50微特斯拉地磁场倾角调控下改变单重态与三重态比例，支持减少动态效果。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes anElectronHop {
+    0%, 10% { transform: translateX(0px); opacity: 1; }
+    45%, 100% { transform: translateX(188px); opacity: 1; }
+  }
+  @keyframes anSpinPulse {
+    0%, 40% { opacity: 0.25; }
+    65%, 100% { opacity: 1; }
+  }
+  .an-ehop { animation: anElectronHop 6.6s cubic-bezier(0.22, 0.72, 0.32, 1) 1 forwards; }
+  .an-spin-end { animation: anSpinPulse 6.6s ease-out 1 forwards; }
+  @media (prefers-reduced-motion: reduce) {
+    .an-ehop { animation: none !important; transform: translateX(188px) !important; opacity: 1 !important; }
+    .an-spin-end { animation: none !important; opacity: 1 !important; }
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="551" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">三、鸟眼里的量子罗盘：不认南北极，只看磁感线钻地的“倾角”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左图重现 1972 年磁倾角反转实验；右图单次动画演示视网膜隐花色素 ErCRY4 自由基对自旋演化</text>
+<rect x="20" y="64" width="344" height="472" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="74.0" width="316" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="192.0" y="89.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">A · 欧亚鸲线圈判决：磁倾角罗盘 ≠ 指南针</text>
+<rect x="34" y="108" width="316" height="124" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.1"/>
+<text x="46" y="128" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">① 自然北半球地磁场 (对照)</text>
+<line x1="294" y1="142" x2="294" y2="184" stroke="#475569" stroke-width="1.3" stroke-dasharray="3 2"/>
+<text x="300" y="184" font-size="10" fill="#475569" text-anchor="start" font-weight="700">g</text>
+<line x1="268" y1="142" x2="320" y2="182" stroke="#18794e" stroke-width="2.2" marker-end="url(#arr-green)"/>
+<text x="294" y="220" font-size="11" fill="#18794e" text-anchor="middle" font-weight="700">飞向北方 ↑</text>
+<text x="46" y="152" font-size="11" fill="#1e293b" text-anchor="start">水平 Bx 向北，垂直 Bz 向下 →</text>
+<text x="46" y="170" font-size="11" fill="#1e293b" text-anchor="start"> 磁线斜向下钻地</text>
+<text x="46" y="194" font-size="11" fill="#0f172a" text-anchor="start" font-weight="600">鸟取磁线与重力 g 夹锐角侧为“向极地</text>
+<text x="46" y="212" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">” → 飞北!</text>
+<rect x="34" y="244" width="316" height="124" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1.1"/>
+<text x="46" y="264" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">② 只反转垂直分量 Bz (或只反 Bx)</text>
+<line x1="294" y1="278" x2="294" y2="320" stroke="#475569" stroke-width="1.3" stroke-dasharray="3 2"/>
+<text x="300" y="320" font-size="10" fill="#475569" text-anchor="start" font-weight="700">g</text>
+<line x1="268" y1="318" x2="320" y2="278" stroke="#c25014" stroke-width="2.2" marker-end="url(#arr-orange)"/>
+<text x="294" y="356" font-size="11" fill="#c25014" text-anchor="middle" font-weight="700">掉头飞南 ↓</text>
+<text x="46" y="288" font-size="11" fill="#1e293b" text-anchor="start">磁感线变成向南斜下钻地（锐角开口掉头！</text>
+<text x="46" y="306" font-size="11" fill="#1e293b" text-anchor="start">）</text>
+<text x="46" y="330" font-size="11" fill="#0f172a" text-anchor="start" font-weight="600">指针磁铁仍指南北，但欧亚鸲当场 180</text>
+<text x="46" y="348" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">° 掉头飞南!</text>
+<rect x="34" y="380" width="316" height="124" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="46" y="400" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">③ 同时反转 Bx 与 Bz（N/S 极性全反！）</text>
+<line x1="294" y1="414" x2="294" y2="456" stroke="#475569" stroke-width="1.3" stroke-dasharray="3 2"/>
+<text x="300" y="456" font-size="10" fill="#475569" text-anchor="start" font-weight="700">g</text>
+<line x1="320" y1="454" x2="268" y2="414" stroke="#1d6fa5" stroke-width="2.2" marker-end="url(#arr-blue)"/>
+<text x="294" y="492" font-size="11" fill="#1d6fa5" text-anchor="middle" font-weight="700">照旧飞北 ↑!</text>
+<text x="46" y="424" font-size="11" fill="#1e293b" text-anchor="start">箭头方向全反，但直线斜率与重力锐角丝毫</text>
+<text x="46" y="442" font-size="11" fill="#1e293b" text-anchor="start">没变</text>
+<text x="46" y="466" font-size="11" fill="#0f172a" text-anchor="start" font-weight="600">人类指南针反指 180°，欧亚鸲却照旧</text>
+<text x="46" y="484" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">飞向北方 ↑!</text>
+<rect x="376" y="64" width="364" height="472" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="390.0" y="74.0" width="336" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="558.0" y="89.0" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="600">B · 视网膜 ErCRY4 量子自由基对（单次动画）</text>
+<rect x="390" y="108" width="336" height="146" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1.2"/>
+<text x="404" y="129" font-size="11.5" fill="#bae6fd" font-weight="700">① 蓝光 (450 nm) 激发视锥细胞内隐花色素 ErCRY4</text>
+<rect x="408" y="152" width="48" height="28" rx="6" fill="#fde047"/>
+<text x="432" y="170" font-size="11" fill="#713f12" text-anchor="middle" font-weight="700">FAD</text>
+<rect x="472" y="152" width="48" height="28" rx="6" fill="#e0f2fe"/>
+<text x="496" y="170" font-size="11" fill="#0c4a6e" text-anchor="middle" font-weight="700">TrpA</text>
+<rect x="534" y="152" width="48" height="28" rx="6" fill="#e0f2fe"/>
+<text x="558" y="170" font-size="11" fill="#0c4a6e" text-anchor="middle" font-weight="700">TrpB</text>
+<rect x="596" y="152" width="48" height="28" rx="6" fill="#dcfce7"/>
+<text x="620" y="170" font-size="11" fill="#14532d" text-anchor="middle" font-weight="700">TrpC</text>
+<rect x="658" y="152" width="48" height="28" rx="6" fill="#f3e8ff"/>
+<text x="682" y="170" font-size="11" fill="#4c1d95" text-anchor="middle" font-weight="700">TrpD</text>
+<line x1="658" y1="166" x2="644" y2="166" stroke="#93c5fd" stroke-width="1.6"/>
+<line x1="596" y1="166" x2="582" y2="166" stroke="#93c5fd" stroke-width="1.6"/>
+<line x1="534" y1="166" x2="520" y2="166" stroke="#93c5fd" stroke-width="1.6"/>
+<line x1="472" y1="166" x2="456" y2="166" stroke="#93c5fd" stroke-width="1.6"/>
+<circle cx="432" cy="196" r="6" fill="none" stroke="#fde047" stroke-width="1.3" stroke-dasharray="2 2"/>
+<g class="an-ehop"><circle cx="432" cy="196" r="6.5" fill="#38bdf8" stroke="#ffffff" stroke-width="1.2"/></g>
+<text x="558" y="220" font-size="11" fill="#e2e8f0" text-anchor="middle">电子沿 4 个色氨酸链级联跃迁 → 生成空间分离的</text>
+<text x="558" y="240" font-size="11.5" fill="#fde08a" text-anchor="middle" font-weight="700">[FAD•− ··· TrpH•+] 自旋关联自由基对（寿命微秒级）</text>
+<rect x="390" y="266" width="336" height="134" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.1"/>
+<text x="404" y="288" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">② 50 μT 微弱地磁场改写单重态/三重态量子产率</text>
+<rect x="404" y="300" width="132" height="54" rx="6" fill="#ffffff" stroke="#1d6fa5" stroke-width="1"/>
+<text x="470" y="321" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">单重态 S (↑↓)</text>
+<text x="470" y="342" font-size="10.5" fill="#1e293b" text-anchor="middle">可直接复合回基态</text>
+<line x1="540" y1="327" x2="576" y2="327" stroke="#6d28d9" stroke-width="2"/>
+<text x="558" y="318" font-size="10.5" fill="#6d28d9" text-anchor="middle" font-weight="700">B 倾角</text>
+<g class="an-spin-end">
+<rect x="580" y="300" width="132" height="54" rx="6" fill="#ffffff" stroke="#c25014" stroke-width="1.2"/>
+<text x="646" y="321" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">三重态 T (↑↑)</text>
+<text x="646" y="342" font-size="10.5" fill="#1e293b" text-anchor="middle">稳定信号态→神经电脉冲</text>
+</g>
+<text x="404" y="376" font-size="11" fill="#1e293b" text-anchor="start">• 自旋翻转只取决于磁场轴线夹角 cos²θ，跟正负号无关</text>
+<text x="404" y="393" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">  ——完美解释左图“只认倾角、不认南北极”的怪脾气！</text>
+<rect x="390" y="412" width="336" height="112" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="404" y="433" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">③ 候鸟“看见”的罗盘与科学严谨边界（Xu 等 2021 Nature）：</text>
+<text x="404" y="455" font-size="11" fill="#1e293b" text-anchor="start">• 眼球是球面，不同视线处蛋白与地磁夹角不同 → 视野上叠</text>
+<text x="404" y="474" font-size="11" fill="#1e293b" text-anchor="start">  加出随转头移动的明暗光斑！纯化欧亚鸲 ErCRY4 体外磁</text>
+<text x="404" y="493" font-size="11" fill="#0f766e" text-anchor="start" font-weight="700">  敏感度显著强于留鸟鸡与鸽（活体完整神经通路仍在攻关）。</text>
+</svg>

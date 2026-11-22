@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="540" viewBox="0 0 760 540" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">单名宇航员每日生保收支与光合种植面积三级阶梯及太空植物四大梯队分工矩阵图解</title>
+<desc id="desc">上图左侧列出成人每日消耗0.84千克氧气、排放1千克二氧化碳及需要约2500至2800千卡热量的生保账本，右侧给出0.2至2平方米鲜食补维生素、12至25平方米实现氧气与净水自给、40至50平方米（对应月宫一号4人120平方米370天98%闭合度）实现氧水粮全闭环的三级台阶；下图归纳微萍效率蛋白王、生菜辣椒在轨鲜食王、矮秆小麦甘薯再生稻基地主粮王与齿肋赤藓荒原拓荒王的互补分工。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="539" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">四、从太空沙拉到月球基地：种多少平方米植物，才能养活 1 名宇航员？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">单靠一种神草无法同时凑齐热量、蛋白质、咀嚼幸福感与呼吸商平衡——三级面积门槛与四大主力梯队</text>
+<rect x="20" y="64" width="720" height="232" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="74.0" width="213" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="140.5" y="89.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">A · 宇航员生保账单 vs 种植面积三级台阶</text>
+<text x="302" y="90" font-size="11.5" fill="#64748b" text-anchor="start">综合 NASA KSC 密闭舱与北航“月宫 365”实测口径</text>
+<rect x="34" y="108" width="214" height="174" rx="8" fill="#f8fafc" stroke="#93c5fd" stroke-width="1.2"/>
+<text x="141" y="129" font-size="12.0" fill="#0f172a" text-anchor="middle" font-weight="700">1 名成人每日生命代谢刚需</text>
+<text x="46" y="154" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">• 吸入纯氧 O2：≈ 0.84 kg / 天</text>
+<text x="46" y="176" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">• 呼出二氧化碳：≈ 1.00 kg / 天</text>
+<text x="46" y="198" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">• 膳食净热量：≈ 2500–2800 kcal</text>
+<text x="46" y="220" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">• 蛋白质刚需：≈ 55–80 g / 天</text>
+<text x="46" y="244" font-size="11.5" fill="#64748b" text-anchor="start">同化商 AQ = CO2吸收/O2释放</text>
+<text x="46" y="263" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">混种主粮+油料可控在 ≈ 0.94</text>
+<rect x="262" y="108" width="464" height="52" rx="7" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.1"/>
+<rect x="274" y="115" width="18.0" height="6" rx="3" fill="#0f766e" fill-opacity="0.35"/>
+<text x="274" y="133" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">第 1 阶 · 空间站鲜食维生素补给（0.2–2 m² / 人）</text>
+<text x="274" y="151" font-size="11.5" fill="#1e293b" text-anchor="start">现役 ISS Veggie / 天宫菜园：产氧 &lt;5%，专补易流失维 C/K1 与花青素</text>
+<rect x="262" y="167" width="464" height="52" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<rect x="274" y="174" width="193.6" height="6" rx="3" fill="#1d6fa5" fill-opacity="0.35"/>
+<text x="274" y="192" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">第 2 阶 · 100% 氧气与净水自给（12–25 m² / 人）</text>
+<text x="274" y="210" font-size="11.5" fill="#1e293b" text-anchor="start">高光强超矮小麦（最低 11 m²）或微萍阵列：足额产氧 0.84 kg/d 并净水</text>
+<rect x="262" y="226" width="464" height="52" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1.1"/>
+<rect x="274" y="233" width="396.0" height="6" rx="3" fill="#18794e" fill-opacity="0.35"/>
+<text x="274" y="251" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">第 3 阶 · 氧气 + 全天主粮热量 98% 闭环（40–50 m² / 人）</text>
+<text x="274" y="269" font-size="11.5" fill="#1e293b" text-anchor="start">NASA 密闭舱与北航“月宫一号”（4 人 120 m² 达 98% 闭合）：氧水粮自给</text>
+<rect x="20" y="308" width="720" height="218" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="318.0" width="154" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="111.0" y="333.0" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="600">B · 太空植物“四大天团”分工</text>
+<text x="238" y="334" font-size="11.5" fill="#64748b" text-anchor="start">按任务周期与生保生态位协同编组，没有单打独斗的万能草</text>
+<rect x="32" y="350" width="168" height="162" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="116" y="371" font-size="12.0" fill="#18794e" text-anchor="middle" font-weight="700">① 效率蛋白王</text>
+<text x="116" y="391" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">微萍 Wolffia · 螺旋藻</text>
+<line x1="42" y1="401" x2="190" y2="401" stroke="#18794e" stroke-opacity="0.35" stroke-width="1"/>
+<text x="42" y="421" font-size="11.5" fill="#1e293b" text-anchor="start">• 100% 可食，29–48h 倍增</text>
+<text x="42" y="442" font-size="11.5" fill="#1e293b" text-anchor="start">• 浓缩全蛋白 + 废水脱氮磷</text>
+<text x="42" y="463" font-size="11.5" fill="#1e293b" text-anchor="start">• 短板：缺主食嚼感；微藻</text>
+<text x="42" y="484" font-size="11.5" fill="#1e293b" text-anchor="start">  核酸高（防痛风 &lt;15%）</text>
+<rect x="208" y="350" width="168" height="162" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="292" y="371" font-size="12.0" fill="#c25014" text-anchor="middle" font-weight="700">② 在轨鲜食王</text>
+<text x="292" y="391" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">红叶生菜 · 水菜 · 太空辣椒</text>
+<line x1="218" y1="401" x2="366" y2="401" stroke="#c25014" stroke-opacity="0.35" stroke-width="1"/>
+<text x="218" y="421" font-size="11.5" fill="#1e293b" text-anchor="start">• 免开火即摘即食，零碎屑</text>
+<text x="218" y="442" font-size="11.5" fill="#1e293b" text-anchor="start">• 富维 C/K1 与花青素护盾</text>
+<text x="218" y="463" font-size="11.5" fill="#1e293b" text-anchor="start">• 辣椒素唤醒微重力迟钝味</text>
+<text x="218" y="484" font-size="11.5" fill="#1e293b" text-anchor="start">  觉，缓解长期幽闭焦虑</text>
+<rect x="384" y="350" width="168" height="162" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="468" y="371" font-size="12.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">③ 基地主粮王</text>
+<text x="468" y="391" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">超矮小麦 · 甘薯 · 再生稻</text>
+<line x1="394" y1="401" x2="542" y2="401" stroke="#1d6fa5" stroke-opacity="0.35" stroke-width="1"/>
+<text x="394" y="421" font-size="11.5" fill="#1e293b" text-anchor="start">• 45cm 小麦抗乙烯不绝育</text>
+<text x="394" y="442" font-size="11.5" fill="#1e293b" text-anchor="start">• 甘薯块根管饱+嫩叶当菜</text>
+<text x="394" y="463" font-size="11.5" fill="#1e293b" text-anchor="start">• 问天水稻 120 天结籽，剪</text>
+<text x="394" y="484" font-size="11.5" fill="#1e293b" text-anchor="start">  株 20 天再抽二茬再生稻</text>
+<rect x="560" y="350" width="168" height="162" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="644" y="371" font-size="12.0" fill="#6d28d9" text-anchor="middle" font-weight="700">④ 荒原拓荒王</text>
+<text x="644" y="391" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">齿肋赤藓 · 拟南芥 · 蓝藻</text>
+<line x1="570" y1="401" x2="718" y2="401" stroke="#6d28d9" stroke-opacity="0.35" stroke-width="1"/>
+<text x="570" y="421" font-size="11.5" fill="#1e293b" text-anchor="start">• 拟南芥 6 周全周期探基因</text>
+<text x="570" y="442" font-size="11.5" fill="#1e293b" text-anchor="start">• 齿肋赤藓失水 98% 秒复活</text>
+<text x="570" y="463" font-size="11.5" fill="#1e293b" text-anchor="start">• 扛 −196°C 与 5000Gy 辐射</text>
+<text x="570" y="484" font-size="11.5" fill="#1e293b" text-anchor="start">• 火星与月表结皮改造先锋</text>
+</svg>

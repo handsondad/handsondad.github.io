@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="514" viewBox="0 0 760 514" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">连锁加聚塑料（LDPE、HDPE、PP）与逐步缩聚PET水瓶及涤纶衣物分子机理图解</title>
+<desc id="desc">上半部分对比自由基支化LDPE保鲜膜、1963年诺贝尔化学奖齐格勒-纳塔线性HDPE硬瓶与全同立构PP微波餐盒（耐热160–170摄氏度）；下半部分揭示对苯二甲酸与乙二醇缩聚生成的同一种PET分子，吹塑即为1号饮料瓶，喷丝板抽丝即为涤纶与摇粒绒面料，并附尼龙66与氨纶原理。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="513" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">第三步“分子拉链大组装”：为什么矿泉水瓶和摇粒绒竟是同一种分子？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">上半看连锁加聚（诺奖催化剂调控塑料软硬与耐热）；下半看逐步缩聚（同一串 PET 分子吹瓶与抽丝成衣）。</text>
+<rect x="20" y="68" width="720" height="204" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="36.0" y="82.0" width="688" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="380.0" y="97.0" font-size="10.2" fill="#1d6fa5" text-anchor="middle" font-weight="600">拉链一：连锁加聚（打开 C=C 双键一扣到底，无副产物：n CH₂═CH₂ ──▶ [─CH₂─CH₂─]ₙ）</text>
+<rect x="36" y="114" width="220" height="146" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="46" y="133" font-size="9.5" fill="#1d6fa5" text-anchor="start" font-weight="700">高压自由基乱长支链 → LDPE (#4)</text>
+<rect x="46" y="141" width="200" height="42" rx="5" fill="#ffffff" stroke="#e2e8f0"/>
+<path d="M 56 162 Q 106 148 151 164 T 236 158" fill="none" stroke="#1d6fa5" stroke-width="2.2"/>
+<path d="M 102 156 L 90 145 M 151 164 L 164 177 M 194 160 L 206 146" fill="none" stroke="#1d6fa5" stroke-width="1.8"/>
+<text x="46" y="199" font-size="8.9" fill="#1e293b" text-anchor="start">• 分子像树杈挤不拢，密度低、柔软透明</text>
+<text x="46" y="216" font-size="8.9" fill="#0f172a" text-anchor="start" font-weight="600">• 变身：超市保鲜膜、塑料袋、软挤压管</text>
+<text x="46" y="233" font-size="8.9" fill="#1e293b" text-anchor="start" font-weight="500">• 弱点：约 110 °C 即软化，忌贴滚油加热</text>
+<rect x="270" y="114" width="220" height="146" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="280" y="133" font-size="9.5" fill="#18794e" text-anchor="start" font-weight="700">齐格勒-纳塔催化 → HDPE (#2)</text>
+<rect x="280" y="141" width="200" height="42" rx="5" fill="#ffffff" stroke="#e2e8f0"/>
+<line x1="290" y1="151" x2="470" y2="151" stroke="#18794e" stroke-width="2.1"/>
+<line x1="290" y1="162" x2="470" y2="162" stroke="#18794e" stroke-width="2.1"/>
+<line x1="290" y1="173" x2="470" y2="173" stroke="#18794e" stroke-width="2.1"/>
+<text x="280" y="199" font-size="8.9" fill="#1e293b" text-anchor="start">• 1963 诺奖催化：低压走出笔直无支链长龙</text>
+<text x="280" y="216" font-size="8.9" fill="#0f172a" text-anchor="start" font-weight="600">• 排列紧密结晶硬挺：牛奶桶、洗发水瓶</text>
+<text x="280" y="233" font-size="8.9" fill="#1e293b" text-anchor="start" font-weight="500">• 市政地下自来水管、燃气管道主力材料</text>
+<rect x="504" y="114" width="220" height="146" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="514" y="133" font-size="9.5" fill="#c25014" text-anchor="start" font-weight="700">丙烯全同立构排列 → PP (#5)</text>
+<rect x="514" y="141" width="200" height="42" rx="5" fill="#ffffff" stroke="#e2e8f0"/>
+<line x1="524" y1="168" x2="704" y2="168" stroke="#c25014" stroke-width="2.3"/>
+<line x1="536" y1="168" x2="536" y2="151" stroke="#c25014" stroke-width="1.8"/>
+<circle cx="536" cy="149" r="3.2" fill="#c25014"/>
+<line x1="562" y1="168" x2="562" y2="151" stroke="#c25014" stroke-width="1.8"/>
+<circle cx="562" cy="149" r="3.2" fill="#c25014"/>
+<line x1="588" y1="168" x2="588" y2="151" stroke="#c25014" stroke-width="1.8"/>
+<circle cx="588" cy="149" r="3.2" fill="#c25014"/>
+<line x1="614" y1="168" x2="614" y2="151" stroke="#c25014" stroke-width="1.8"/>
+<circle cx="614" cy="149" r="3.2" fill="#c25014"/>
+<line x1="640" y1="168" x2="640" y2="151" stroke="#c25014" stroke-width="1.8"/>
+<circle cx="640" cy="149" r="3.2" fill="#c25014"/>
+<line x1="666" y1="168" x2="666" y2="151" stroke="#c25014" stroke-width="1.8"/>
+<circle cx="666" cy="149" r="3.2" fill="#c25014"/>
+<line x1="692" y1="168" x2="692" y2="151" stroke="#c25014" stroke-width="1.8"/>
+<circle cx="692" cy="149" r="3.2" fill="#c25014"/>
+<text x="514" y="199" font-size="8.9" fill="#1e293b" text-anchor="start">• 甲基侧基 (-CH₃) 整齐朝同一侧卡位结晶</text>
+<text x="514" y="216" font-size="8.9" fill="#0f172a" text-anchor="start" font-weight="600">• 熔点飙至 160–170 °C，100 °C 开水不变形！</text>
+<text x="514" y="233" font-size="8.9" fill="#c25014" text-anchor="start" font-weight="700">• 变身：微波炉餐盒、无纺布口罩、编织袋</text>
+<rect x="20" y="286" width="720" height="214" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="36.0" y="300.0" width="688" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="380.0" y="315.0" font-size="10.1" fill="#6d28d9" text-anchor="middle" font-weight="600">拉链二：逐步缩聚（两种双官能团单体每牵一次手脱掉 1 个 H₂O，缝出 PET 瓶与满衣柜衣服）</text>
+<rect x="36" y="334" width="198" height="152" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="46" y="354" font-size="10.0" fill="#6d28d9" text-anchor="start" font-weight="700">同一种分子：聚酯 PET</text>
+<text x="46" y="374" font-size="9.0" fill="#1e293b" text-anchor="start">• 对二甲苯 → 对苯二甲酸 (PTA)</text>
+<text x="46" y="391" font-size="9.0" fill="#1e293b" text-anchor="start">• 乙烯 → 乙二醇 (MEG)</text>
+<text x="46" y="411" font-size="9.2" fill="#6d28d9" text-anchor="start" font-weight="700" class="mono">PTA + MEG ──▶ PET + H₂O</text>
+<text x="46" y="432" font-size="9.0" fill="#1e293b" text-anchor="start">• 化学学名完全相同：</text>
+<text x="46" y="449" font-size="9.3" fill="#0f172a" text-anchor="start" font-weight="700">  聚对苯二甲酸乙二醇酯！</text>
+<text x="46" y="468" font-size="9.0" fill="#64748b" text-anchor="start" font-weight="600">  区别仅在成型工艺不同：</text>
+<line x1="236.0" y1="382.0" x2="274.0" y2="366.0" stroke="#1d6fa5" stroke-width="2.2" marker-end="url(#arr-blue)"/>
+<line x1="236.0" y1="426.0" x2="274.0" y2="444.0" stroke="#c25014" stroke-width="2.2" marker-end="url(#arr-orange)"/>
+<rect x="278" y="334" width="218" height="70" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="288" y="353" font-size="9.6" fill="#1d6fa5" text-anchor="start" font-weight="700">🥤 吹塑进模具 → #1 PET 矿泉水瓶</text>
+<text x="288" y="371" font-size="8.9" fill="#1e293b" text-anchor="start">• 轻便透明阻气强，薄膜抗拉近钢材</text>
+<text x="288" y="388" font-size="8.9" fill="#dc2626" text-anchor="start" font-weight="700">• 玻璃化转变 ~70 °C：装开水会瘪缩！</text>
+<rect x="278" y="414" width="218" height="72" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="288" y="433" font-size="9.6" fill="#c25014" text-anchor="start" font-weight="700">🧥 喷丝板微孔抽丝 → 涤纶 (聚酯纤维)</text>
+<text x="288" y="451" font-size="8.9" fill="#0f172a" text-anchor="start" font-weight="600">• 占全球衣服纤维产量超 50%！抗皱速干</text>
+<text x="288" y="468" font-size="8.9" fill="#18794e" text-anchor="start" font-weight="700">• 5–10 个回收水瓶就能纺一件摇粒绒衣！</text>
+<rect x="510" y="334" width="216" height="152" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="1"/>
+<text x="520" y="354" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">衣柜另外两大“石油神纤维”</text>
+<text x="520" y="375" font-size="9.3" fill="#1d6fa5" text-anchor="start" font-weight="700">① 锦纶 / 尼龙 66 (Nylon)</text>
+<text x="520" y="392" font-size="8.8" fill="#1e293b" text-anchor="start">   苯→己二酸+己二胺 (1935 卡罗瑟斯)</text>
+<text x="520" y="408" font-size="8.8" fill="#1e293b" text-anchor="start">   耐磨冠军：冲锋衣、降落伞、牙刷毛</text>
+<text x="520" y="431" font-size="9.3" fill="#6d28d9" text-anchor="start" font-weight="700">② 氨纶 (Spandex / 莱卡)</text>
+<text x="520" y="448" font-size="8.8" fill="#1e293b" text-anchor="start">   甲苯/MDI 聚氨酯软硬嵌段共聚</text>
+<text x="520" y="464" font-size="8.8" fill="#1e293b" text-anchor="start">   拉长 500% 秒回弹：运动紧身衣袜口</text>
+</svg>

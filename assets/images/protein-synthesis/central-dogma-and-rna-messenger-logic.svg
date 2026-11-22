@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="524" viewBox="0 0 760 524" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">中心法则信息流向、mRNA千倍放大逻辑与DNA脱氧核糖胸腺嘧啶对比RNA核糖尿嘧啶化学机制图</title>
+<desc id="desc">左图展示细胞核内孤本DNA安全存档、转录为成百上千份mRNA进入细胞质实现百万级蛋白产能放大，以及克里克中心法则中蛋白质序列无法倒推回核酸的单向铁律；右图解析DNA采用2&#x27;-H脱氧核糖抗水解与胸腺嘧啶T识别胞嘧啶脱氨错字，而mRNA采用2&#x27;-OH核糖定时降解与尿嘧啶U省能速印的化学分工。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="523" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">一、中心法则与信使逻辑：为什么核糖体不直接读 DNA，非要多印一层 mRNA？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：孤本蓝图锁核内护安全 + 千份复印件并联放大产能 · 右：两处原子级差异决定“永久石碑”与“定时便签”</text>
+<rect x="20" y="66" width="362" height="444" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="78.0" width="338" height="24" rx="12.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="201.0" y="94.3" font-size="12.0" fill="#1d6fa5" text-anchor="middle" font-weight="600">A · 孤本不外借 + 千倍产能放大与中心法则</text>
+<rect x="32" y="112" width="338" height="86" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.3"/>
+<circle cx="50" cy="132" r="10.5" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="50" y="136" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="68" y="136" font-size="12.2" fill="#1d6fa5" text-anchor="start" font-weight="700">细胞核保险柜：唯一正本 DNA（绝不出核）</text>
+<text x="44" y="160" font-size="11.5" fill="#1e293b" text-anchor="start">• 每个体细胞核里同一基因通常只有 2 份拷贝；</text>
+<text x="44" y="182" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">• 锁在核内避开胞质自由基与剪切力，永久零损存档。</text>
+<line x1="201.0" y1="198.0" x2="201.0" y2="220.0" stroke="#1d6fa5" stroke-width="2.2" marker-end="url(#arr-blue)"/>
+<text x="212" y="214" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">转录 + 穿核孔出核</text>
+<rect x="32" y="224" width="338" height="92" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.3"/>
+<circle cx="50" cy="244" r="10.5" fill="#ffffff" stroke="#18794e" stroke-width="1.2"/>
+<text x="50" y="248" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">2</text>
+<text x="68" y="248" font-size="12.2" fill="#18794e" text-anchor="start" font-weight="700">细胞质车间：成百上千份 mRNA 并联赶工</text>
+<text x="44" y="272" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">• 1 份基因 → 印 1,000 份 mRNA × 每份译 1,000 次</text>
+<text x="44" y="294" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">  ＝ 短时间内爆发出 1,000,000 颗急需蛋白质（如胰岛素）！</text>
+<rect x="32" y="328" width="338" height="168" rx="8" fill="#f8fafc" stroke="#475569" stroke-width="1.1"/>
+<text x="44" y="350" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">克里克“中心法则”信息流向边界（1958 / 1970）：</text>
+<rect x="46" y="376" width="82" height="38" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.3"/>
+<text x="87.0" y="392" font-size="12.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">DNA</text>
+<text x="87.0" y="408" font-size="11.5" fill="#1e293b" text-anchor="middle">4字母石碑</text>
+<rect x="158" y="376" width="82" height="38" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="1.3"/>
+<text x="199.0" y="392" font-size="12.0" fill="#c25014" text-anchor="middle" font-weight="700">RNA</text>
+<text x="199.0" y="408" font-size="11.5" fill="#1e293b" text-anchor="middle">4字母便签</text>
+<rect x="272" y="376" width="84" height="38" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="1.3"/>
+<text x="314.0" y="392" font-size="12.0" fill="#18794e" text-anchor="middle" font-weight="700">蛋白质</text>
+<text x="314.0" y="408" font-size="11.5" fill="#1e293b" text-anchor="middle">20氨基酸机器</text>
+<line x1="128.0" y1="390.0" x2="155.0" y2="390.0" stroke="#1d6fa5" stroke-width="2.0" marker-end="url(#arr-blue)"/>
+<text x="142" y="371" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">转录</text>
+<line x1="156.0" y1="404.0" x2="130.0" y2="404.0" stroke="#6d28d9" stroke-width="1.5" stroke-dasharray="3 2" marker-end="url(#arr-muted)"/>
+<text x="142" y="429" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="600">逆转录(特例)</text>
+<line x1="240.0" y1="395.0" x2="269.0" y2="395.0" stroke="#18794e" stroke-width="2.0" marker-end="url(#arr-green)"/>
+<text x="255" y="371" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">翻译</text>
+<text x="44" y="456" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">• 真正不可逆的铁门：蛋白质 ↛ RNA / DNA！</text>
+<text x="44" y="478" font-size="11.5" fill="#1e293b" text-anchor="start">  序列一旦译成三维蛋白，任何机制都无法倒推回基因。</text>
+<rect x="394" y="66" width="346" height="444" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="406.0" y="78.0" width="322" height="24" rx="12.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="567.0" y="94.3" font-size="11.8" fill="#c25014" text-anchor="middle" font-weight="600">B · 两处原子级改造：为什么石碑用 DNA、便签用 RNA？</text>
+<rect x="406" y="112" width="322" height="184" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="418" y="134" font-size="12.0" fill="#c25014" text-anchor="start" font-weight="700">改造 ① 五碳糖 2&#x27; 号位：少 1 个氧原子，寿命差百万倍</text>
+<rect x="418" y="146" width="144" height="64" rx="6" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="490" y="168" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">DNA：脱氧核糖 (2&#x27;-H)</text>
+<text x="490" y="190" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">化学极钝 · 百年不腐</text>
+<text x="490" y="206" font-size="11.5" fill="#64748b" text-anchor="middle">适合终身与跨代存档</text>
+<rect x="572" y="146" width="144" height="64" rx="6" fill="#ffffff" stroke="#dc2626" stroke-width="1.2"/>
+<text x="644" y="168" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">RNA：核糖 (2&#x27;-OH)</text>
+<text x="644" y="190" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">自带亲核“自毁扳机”</text>
+<text x="644" y="206" font-size="11.5" fill="#64748b" text-anchor="middle">用完即拆不留旧指令</text>
+<text x="418" y="234" font-size="11.5" fill="#1e293b" text-anchor="start">• RNA 2&#x27;-羟基 (-OH) 易攻击邻近磷酸键自发断链：</text>
+<text x="418" y="256" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">  大肠杆菌 mRNA 仅活 ~5 秒至几分钟，人类约数小时；</text>
+<text x="418" y="278" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">  旧订单按时自毁，细胞才能随时叫停旧蛋白、切换新态！</text>
+<rect x="406" y="308" width="322" height="188" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="418" y="330" font-size="11.8" fill="#6d28d9" text-anchor="start" font-weight="700">改造 ② 专用字母 T vs U：DNA 为什么多挂个甲基？</text>
+<rect x="418" y="342" width="298" height="52" rx="6" fill="#ffffff" stroke="#6d28d9" stroke-width="1.1"/>
+<text x="567" y="363" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">隐患：胞嘧啶 C 在水中每天自发脱氨 → 变成 U！</text>
+<text x="567" y="384" font-size="11.5" fill="#1e293b" text-anchor="middle">若不修补，下轮复制原本 C-G 就会突变成 T-A</text>
+<text x="418" y="418" font-size="11.5" fill="#1e293b" text-anchor="start">• 临时便签 RNA 用尿嘧啶 U：省去甲基化能耗，速印速用；</text>
+<text x="418" y="440" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">• 永久石碑 DNA 全员改用 T（挂了甲基防伪标的 U）：</text>
+<text x="418" y="462" font-size="11.5" fill="#1e293b" text-anchor="start">  巡逻酶在 DNA 里凡撞见无标 U，必判为 C 烂掉变来</text>
+<text x="418" y="484" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">  的错别字，当场精准挖除换回 C！</text>
+</svg>

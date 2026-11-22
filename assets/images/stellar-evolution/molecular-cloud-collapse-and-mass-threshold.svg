@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="560" viewBox="0 0 760 560" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">巨分子云低温坍缩、维里定理负热容升温机制与恒星0.075太阳质量点火红线图解</title>
+<desc id="desc">上半部展示10至20K巨分子云经金斯不稳定性坍缩为原恒星盘与两极喷流，并按维里定理拆解引力势能50%辐射逃逸、50%加热核心的负热容机制；下半部在对数质量轴上标出13倍木星质量氘聚变褐矮星门槛、0.075太阳质量氢聚变恒星红线与100至200太阳质量辐射压上限。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="559" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">一、恒星为什么偏要在 -260℃ 冰云里诞生？负热容升温与 0.075 M⊙ 点火红线</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">巨分子云密度暴涨近 10²⁰ 倍：辐射丢掉一半引力能反而越缩越烫，出生质量一锤定下三类天体命运</text>
+<rect x="20" y="64" width="720" height="232" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="74.0" width="452" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="260.0" y="89.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">A · 越冷越易坍缩，越丢热量反而越烫：金斯判据与维里定理“负热容”</text>
+<ellipse cx="86" cy="176" rx="44" ry="34" fill="#dbeafe" stroke="#2563eb" stroke-width="1.6" stroke-dasharray="4 3"/>
+<ellipse cx="94" cy="172" rx="26" ry="18" fill="#bfdbfe" opacity="0.8"/>
+<text x="86" y="175" font-size="10.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">10–20 K</text>
+<text x="86" y="190" font-size="9.8" fill="#1e293b" text-anchor="middle">(-258℃)</text>
+<text x="86" y="226" font-size="10.6" fill="#0f172a" text-anchor="middle" font-weight="700">① 巨分子云</text>
+<text x="86" y="242" font-size="9.8" fill="#64748b" text-anchor="middle">跨度几十光年</text>
+<text x="86" y="256" font-size="9.8" fill="#1d6fa5" text-anchor="middle" font-weight="600">热气压极弱</text>
+<line x1="136" y1="176" x2="162" y2="176" stroke="#475569" stroke-width="1.8"/>
+<polygon points="166,176 158,171 158,181" fill="#475569"/>
+<circle cx="206" cy="176" r="28" fill="#fef3c7" stroke="#d97706" stroke-width="1.8"/>
+<circle cx="206" cy="176" r="12" fill="#fbbf24"/>
+<line x1="226.5" y1="190.3" x2="217.5" y2="184.0" stroke="#b45309" stroke-width="1.5"/>
+<line x1="185.5" y1="190.3" x2="194.5" y2="184.0" stroke="#b45309" stroke-width="1.5"/>
+<line x1="185.5" y1="161.7" x2="194.5" y2="168.0" stroke="#b45309" stroke-width="1.5"/>
+<line x1="226.5" y1="161.7" x2="217.5" y2="168.0" stroke="#b45309" stroke-width="1.5"/>
+<text x="206" y="226" font-size="10.6" fill="#0f172a" text-anchor="middle" font-weight="700">② 致密云核坍缩</text>
+<text x="206" y="242" font-size="9.8" fill="#d97706" text-anchor="middle" font-weight="600">M &gt; 金斯质量 M_J</text>
+<text x="206" y="256" font-size="9.8" fill="#64748b" text-anchor="middle">红外光透明散热</text>
+<line x1="240" y1="176" x2="266" y2="176" stroke="#475569" stroke-width="1.8"/>
+<polygon points="270,176 262,171 262,181" fill="#475569"/>
+<polygon points="315,168 306,130 338,130 329,168" fill="#bfdbfe" opacity="0.65"/>
+<polygon points="315,184 306,222 338,222 329,184" fill="#bfdbfe" opacity="0.65"/>
+<line x1="322" y1="166" x2="322" y2="128" stroke="#1d6fa5" stroke-width="2"/>
+<line x1="322" y1="186" x2="322" y2="224" stroke="#1d6fa5" stroke-width="2"/>
+<ellipse cx="322" cy="176" rx="38" ry="9" fill="#fde68a" stroke="#c25014" stroke-width="1.6"/>
+<circle cx="322" cy="176" r="8" fill="#ef4444" stroke="#ffffff" stroke-width="1.2"/>
+<text x="322" y="232" font-size="10.6" fill="#0f172a" text-anchor="middle" font-weight="700">③ 原恒星盘与两极喷流</text>
+<text x="322" y="248" font-size="9.8" fill="#dc2626" text-anchor="middle" font-weight="700">密度暴涨近 10²⁰ 倍</text>
+<text x="322" y="262" font-size="9.8" fill="#64748b" text-anchor="middle">核心冲向千万度</text>
+<line x1="390" y1="108" x2="390" y2="282" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="404" y="122" font-size="11.0" fill="#0f172a" text-anchor="start" font-weight="700">维里定理账本（2K + U = 0）：引力释放势能去哪了？</text>
+<rect x="404" y="134" width="316" height="22" rx="4" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.2"/>
+<text x="562" y="149" font-size="10.4" fill="#0f172a" text-anchor="middle" font-weight="700">引力收缩释放势能  |ΔU| = 100%</text>
+<rect x="404" y="166" width="154" height="36" rx="5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.5"/>
+<text x="481" y="181" font-size="10.3" fill="#1d6fa5" text-anchor="middle" font-weight="700">50% 辐射逃向太空</text>
+<text x="481" y="196" font-size="9.8" fill="#1e293b" text-anchor="middle">总能量 ΔE = -|ΔU|/2 &lt; 0</text>
+<rect x="566" y="166" width="154" height="36" rx="5" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="643" y="181" font-size="10.3" fill="#dc2626" text-anchor="middle" font-weight="700">50% 留作热动能！</text>
+<text x="643" y="196" font-size="9.8" fill="#1e293b" text-anchor="middle">ΔK = +|ΔU|/2 &gt; 0 升温</text>
+<rect x="404" y="214" width="316" height="66" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.3"/>
+<text x="416" y="233" font-size="10.1" fill="#0f172a" text-anchor="start" font-weight="600">• 负热容奇观：水壶丢掉热量会变凉，自引力气团丢掉</text>
+<text x="416" y="250" font-size="10.1" fill="#c25014" text-anchor="start" font-weight="700">  辐射能却迫使引力进一步深缩，核心反而越缩越烫！</text>
+<text x="416" y="268" font-size="10.0" fill="#1e293b" text-anchor="start">• 直到量子简并压刹住收缩，或氢聚变稳稳点火才停下。</text>
+<rect x="20" y="310" width="720" height="236" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="320.0" width="504" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="286.0" y="335.0" font-size="12" fill="#c25014" text-anchor="middle" font-weight="600">B · 出生质量定终身（对数坐标）：为什么木星和褐矮星点不着真正的“恒星之火”？</text>
+<rect x="52.0" y="414.0" width="149.7" height="30.0" rx="4" fill="#cbd5e1" stroke="#64748b" stroke-width="1.3"/>
+<rect x="201.7" y="414.0" width="94.0" height="30.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.5"/>
+<rect x="295.8" y="414.0" width="397.3" height="30.0" fill="#fef3c7" stroke="#c25014" stroke-width="1.6"/>
+<rect x="693.1" y="414.0" width="14.9" height="30.0" rx="3" fill="#fee2e2" stroke="#dc2626" stroke-width="1.3" stroke-dasharray="3 2"/>
+<text x="126.9" y="433.0" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="700">行星 (&lt;13 M_J)</text>
+<text x="248.7" y="433.0" font-size="10.3" fill="#6d28d9" text-anchor="middle" font-weight="700">褐矮星</text>
+<text x="494.4" y="433.0" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="700">真正的恒星（核心持续氢核聚变：0.075 – ~150 M⊙）</text>
+<line x1="67.6" y1="414.0" x2="67.6" y2="386" stroke="#475569" stroke-width="1.5"/>
+<circle cx="67.6" cy="414.0" r="4" fill="#475569"/>
+<text x="48" y="368" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">木星 1 M_J</text>
+<text x="48" y="382" font-size="9.8" fill="#64748b" text-anchor="start">(0.00095 M⊙)</text>
+<line x1="295.8" y1="410.0" x2="295.8" y2="450.0" stroke="#dc2626" stroke-width="2.4"/>
+<line x1="295.8" y1="410.0" x2="295.8" y2="384" stroke="#dc2626" stroke-width="1.8"/>
+<text x="295.8" y="366" font-size="10.5" fill="#dc2626" text-anchor="middle" font-weight="700">★ 氢点火红线 0.075 M⊙ (≈79 M_J)</text>
+<text x="295.8" y="381" font-size="9.8" fill="#1e293b" text-anchor="middle">核心达 ~1,200万 K 稳烧质子链</text>
+<line x1="624.0" y1="414.0" x2="624.0" y2="386" stroke="#2563eb" stroke-width="1.6"/>
+<circle cx="624.0" cy="414.0" r="4.2" fill="#2563eb"/>
+<text x="624.0" y="368" font-size="10.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">O型蓝巨星 40 M⊙</text>
+<text x="624.0" y="382" font-size="9.8" fill="#64748b" text-anchor="middle">光度 ~30万 L⊙</text>
+<line x1="201.7" y1="444.0" x2="201.7" y2="466" stroke="#6d28d9" stroke-width="1.8"/>
+<text x="201.7" y="481" font-size="10.3" fill="#6d28d9" text-anchor="middle" font-weight="700">氘聚变门槛 13 M_J (0.012 M⊙)</text>
+<text x="201.7" y="496" font-size="9.8" fill="#1e293b" text-anchor="middle">褐矮星短暂烧重氢，简并压提前刹住收缩</text>
+<line x1="431.2" y1="444.0" x2="431.2" y2="466" stroke="#d97706" stroke-width="1.8"/>
+<circle cx="431.2" cy="444.0" r="4.5" fill="#d97706"/>
+<text x="431.2" y="481" font-size="10.4" fill="#c25014" text-anchor="middle" font-weight="700">太阳 1.0 M⊙ (G2V)</text>
+<text x="431.2" y="496" font-size="9.8" fill="#1e293b" text-anchor="middle">核心 1,570 万 K</text>
+<line x1="693.1" y1="444.0" x2="693.1" y2="466" stroke="#dc2626" stroke-width="1.8"/>
+<text x="724" y="481" font-size="10.3" fill="#dc2626" text-anchor="end" font-weight="700">质量上限 ~100–200 M⊙</text>
+<text x="724" y="496" font-size="9.8" fill="#1e293b" text-anchor="end">猛烈辐射压直接吹飞吸积气体</text>
+<text x="34" y="530" font-size="10.0" fill="#64748b" text-anchor="start">注：无论 15 M_J 还是 70 M_J 的褐矮星，在电子简并压支撑下体积几乎都与木星相当，终生缓慢变暗（光谱 L → T → Y）。</text>
+</svg>

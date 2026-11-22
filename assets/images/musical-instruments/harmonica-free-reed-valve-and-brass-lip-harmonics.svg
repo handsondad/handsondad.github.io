@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="546" viewBox="0 0 760 546" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">十孔口琴吹吸双自由簧片气动阀门动态图解与蓝调压音及小号自然泛音列三活塞变管长算术图</title>
+<desc id="desc">左栏剖面带单次动画展示口琴吹音簧与吸音簧分别在内侧与外侧受正负压推入窄槽自激斩波，解析悬臂梁调音锉法与口腔阻抗耦合蓝调压音；右栏展示铜管唇簧撬动2至8阶自然泛音列，以及三颗活塞键分别延长5.9%、12.2%、18.9%管长填满全部半音阶的机制。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="545" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="0" y="0" width="760" height="546" rx="14" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="30" font-size="14.6" fill="#0f172a" text-anchor="start" font-weight="700">图 4 · 口琴自由簧与铜管唇簧：一吹一吸双簧门动态图解、蓝调压音与小号三活塞算术</text>
+<text x="24" y="50" font-size="11.8" fill="#64748b" text-anchor="start">口琴音高不由气道长短拍板，全看毫米级黄铜悬臂梁的质量与刚度；铜管则靠嘴唇当簧片撬动泛音梯</text>
+<style>
+@keyframes reed-flex-once {
+  0%   { transform: rotate(0deg); }
+  20%  { transform: rotate(4.2deg); }
+  40%  { transform: rotate(-3.2deg); }
+  60%  { transform: rotate(3.6deg); }
+  80%  { transform: rotate(-2.4deg); }
+  100% { transform: rotate(2.6deg); }
+}
+@keyframes air-pulse-once {
+  0%   { stroke-dashoffset: 36; opacity: 0.45; }
+  50%  { stroke-dashoffset: 12; opacity: 1.0; }
+  100% { stroke-dashoffset: 0;  opacity: 0.95; }
+}
+.blow-reed-anim {
+  transform-origin: 120px 155px;
+  animation: reed-flex-once 4.6s ease-in-out 1 forwards;
+}
+.blow-air-anim {
+  stroke-dasharray: 6 4;
+  animation: air-pulse-once 4.6s linear 1 forwards;
+}
+@media (prefers-reduced-motion: reduce) {
+  .blow-reed-anim, .blow-air-anim { animation: none !important; }
+}
+</style>
+<rect x="20" y="64" width="354" height="466" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="74.0" width="330" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="197.0" y="89.0" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">A · 口琴/手风琴/笙（自由簧）：一格双簧，吹吸各司其职</text>
+<rect x="32" y="106" width="330" height="178" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="44" y="123" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">十孔口琴单格剖面（动态演示：吹气压闭上簧片自激斩波）</text>
+<rect x="84" y="148" width="38" height="8" fill="#d97706"/>
+<rect x="248" y="148" width="92" height="8" fill="#d97706"/>
+<rect x="328" y="156" width="12" height="60" fill="#92400e"/>
+<rect x="84" y="216" width="38" height="8" fill="#d97706"/>
+<rect x="248" y="216" width="92" height="8" fill="#d97706"/>
+<circle cx="116" cy="154" r="3.5" fill="#0f172a"/>
+<line x1="120.0" y1="157.0" x2="244.0" y2="144.0" stroke="#1d6fa5" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="120.0" y1="157.0" x2="244.0" y2="167.0" stroke="#1d6fa5" stroke-width="1.2" stroke-dasharray="3 3"/>
+<g class="blow-reed-anim"><rect x="118" y="155" width="126" height="4.2" rx="1.5" fill="#1d6fa5"/></g>
+<text x="214" y="140" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">吹音簧(正压推入窄槽斩波)</text>
+<path class="blow-air-anim" d="M 44 178 L 170 178 Q 208 178 218 145" fill="none" stroke="#1d6fa5" stroke-width="2.2"/>
+<text x="44" y="172" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">吹气 →</text>
+<circle cx="116" cy="222" r="3.5" fill="#0f172a"/>
+<rect x="118" y="224" width="126" height="4.2" rx="1.5" fill="#0f766e"/>
+<line x1="120.0" y1="225.0" x2="244.0" y2="213.0" stroke="#0f766e" stroke-width="1.2" stroke-dasharray="3 3"/>
+<text x="44" y="204" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">← 吸气</text>
+<path d="M 224 238 Q 198 202 88 202" fill="none" stroke="#0f766e" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="4 3"/>
+<text x="196" y="252" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">吸音簧(装外侧：负压吸进槽口激振)</text>
+<text x="44" y="274" font-size="11.5" fill="#64748b" text-anchor="start">• 自由簧穿槽而过不撞框（异于黑管拍击簧），音色清亮</text>
+<rect x="32" y="294" width="330" height="222" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="44" y="316" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">口琴三大反直觉物理真相：</text>
+<text x="44" y="340" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">① 音高与琴格长短无关！悬臂梁 f₁ ∝ (h/L²)√(E/ρ)：</text>
+<text x="44" y="362" font-size="11.5" fill="#1e293b" text-anchor="start">   低音簧片长且簧尖加厚配重；高音簧片极短极轻。</text>
+<text x="44" y="386" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">② 调音锉刀口诀：锉薄【簧尖】减轻质量 → 音高上升；</text>
+<text x="44" y="408" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">   锉薄【簧根】削弱弯曲刚度（弹簧变软）→ 音高下降！</text>
+<text x="44" y="434" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">③ 蓝调“压音（Bending）”怎么凭空弯出半音哭腔？</text>
+<text x="44" y="456" font-size="11.5" fill="#1e293b" text-anchor="start">   压低舌根把口腔调成特定亥姆霍兹腔（声阻抗耦合），</text>
+<text x="44" y="478" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">   吸气不仅拽低吸音簧，更唤醒同孔吹音簧“开簧”接力，</text>
+<text x="44" y="500" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">   让音高在两簧之间丝滑下潜！（JASA 1998 实测）</text>
+<rect x="386" y="64" width="354" height="466" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="398.0" y="74.0" width="330" height="22" rx="11.0" fill="#fffbeb" stroke="#b45309" stroke-width="1" stroke-opacity="0.35"/>
+<text x="563.0" y="89.0" font-size="11.5" fill="#b45309" text-anchor="middle" font-weight="600">B · 铜管家族（小号/圆号/长号）：嘴唇当簧 + 三活塞算术</text>
+<rect x="398" y="106" width="330" height="190" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="1.2"/>
+<text x="410" y="126" font-size="11.5" fill="#b45309" text-anchor="start" font-weight="700">不按任何键！绷紧嘴唇改变“唇簧”频率即可撬动泛音梯：</text>
+<rect x="414" y="259" width="152" height="15" rx="3" fill="#1d6fa5" opacity="0.85"/>
+<text x="420" y="270" font-size="11.5" fill="#ffffff" text-anchor="start" font-weight="700">2f₁</text>
+<text x="574" y="270" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">n=2 · C4 (Do)</text>
+<rect x="414" y="237" width="126" height="15" rx="3" fill="#0f766e" opacity="0.85"/>
+<text x="420" y="248" font-size="11.5" fill="#ffffff" text-anchor="start" font-weight="700">3f₁</text>
+<text x="548" y="248" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">n=3 · G4 (Sol, 纯五度)</text>
+<rect x="414" y="215" width="104" height="15" rx="3" fill="#6d28d9" opacity="0.85"/>
+<text x="420" y="226" font-size="11.5" fill="#ffffff" text-anchor="start" font-weight="700">4f₁</text>
+<text x="526" y="226" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">n=4 · C5 (高音Do)</text>
+<rect x="414" y="193" width="84" height="15" rx="3" fill="#b45309" opacity="0.85"/>
+<text x="420" y="204" font-size="11.5" fill="#ffffff" text-anchor="start" font-weight="700">5f₁</text>
+<text x="506" y="204" font-size="11.5" fill="#b45309" text-anchor="start" font-weight="700">n=5 · E5 (Mi, 大三度)</text>
+<rect x="414" y="171" width="64" height="15" rx="3" fill="#dc2626" opacity="0.85"/>
+<text x="420" y="182" font-size="11.5" fill="#ffffff" text-anchor="start" font-weight="700">6f₁</text>
+<text x="486" y="182" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">n=6 · G5 (高音Sol)</text>
+<rect x="414" y="149" width="46" height="15" rx="3" fill="#0f172a" opacity="0.85"/>
+<text x="420" y="160" font-size="11.5" fill="#ffffff" text-anchor="start" font-weight="700">8f₁</text>
+<text x="468" y="160" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">n=8 · C6 (倍高Do)</text>
+<text x="410" y="289" font-size="11.5" fill="#64748b" text-anchor="start">↑ 军号没有按键，冲锋号全由这串自然泛音列吹成！</text>
+<rect x="398" y="308" width="330" height="208" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="410" y="328" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">泛音列中间缺音怎么办？三颗活塞键拼出全部半音阶！</text>
+<rect x="410" y="340" width="98" height="66" rx="6" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.3"/>
+<text x="459" y="358" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">2号键</text>
+<text x="459" y="377" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">+5.9% 管长</text>
+<text x="459" y="395" font-size="11.5" fill="#64748b" text-anchor="middle">降 1 个半音</text>
+<rect x="516" y="340" width="98" height="66" rx="6" fill="#ffffff" stroke="#0f766e" stroke-width="1.3"/>
+<text x="565" y="358" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">1号键</text>
+<text x="565" y="377" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">+12.2% 管长</text>
+<text x="565" y="395" font-size="11.5" fill="#64748b" text-anchor="middle">降 2 个半音</text>
+<rect x="622" y="340" width="98" height="66" rx="6" fill="#ffffff" stroke="#6d28d9" stroke-width="1.3"/>
+<text x="671" y="358" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">3号键</text>
+<text x="671" y="377" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">+18.9% 管长</text>
+<text x="671" y="395" font-size="11.5" fill="#64748b" text-anchor="middle">降 3 个半音</text>
+<text x="410" y="428" font-size="11.5" fill="#1e293b" text-anchor="start">• 2³ 组合算术：单按或叠按三键，可把主管加长 1~6 半音，</text>
+<text x="410" y="450" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">  刚好把 n=2 与 n=3 之间 6 个半音空缺无缝填满！</text>
+<text x="410" y="474" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">• 长号更直接：用 U 形无级伸缩拉管（7 把位）连续变 L；</text>
+<text x="410" y="496" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">• 强吹铜管窄管高声压触发激波（Hirschberg），金石裂帛！</text>
+</svg>

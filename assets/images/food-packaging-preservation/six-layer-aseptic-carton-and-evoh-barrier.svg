@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="555" viewBox="0 0 760 555" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">利乐六层无菌复合纸砖阻隔剖面动画与多层高分子EVOH三明治阻氧原理图</title>
+<desc id="desc">左栏剖析由约70%纸板、25%聚乙烯和5%超薄铝箔(约6.3微米)构成的六层无菌纸砖，展示外层聚乙烯拦截水汽、第4层铝箔彻底阻断光线与氧气的分级防线及液面下无顶空热封；右栏依据实测数据对比铝箔复合膜(800天)、透明氧化铝镀膜(578天)、镀铝膜(408天)与单层镀铝聚丙烯(229天)的货架期，并解释极性EVOH因怕水增塑必须夹在疏水PP/PE之间的原因。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="554" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">三、薄如发丝却挡住整年阳光氧气：六层无菌纸砖与“怕水阻氧夹心膜”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">没有全能单层塑料：聚烯烃防水漏氧，极性 EVOH 挡氧怕湿；多层复合与 6.3 µm 铝箔各司其职</text>
+<style>
+  .threat-wave {
+    stroke-dasharray: 90;
+    stroke-dashoffset: 90;
+    animation: probeRun 2.8s cubic-bezier(0.22, 0.61, 0.36, 1) 1 forwards;
+  }
+  .stop-ring {
+    opacity: 0;
+    animation: ringPop 0.5s ease-out 2.1s 1 forwards;
+  }
+  @keyframes probeRun {
+    0% { stroke-dashoffset: 90; }
+    100% { stroke-dashoffset: 0; }
+  }
+  @keyframes ringPop {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .threat-wave { animation: none !important; stroke-dashoffset: 0 !important; }
+    .stop-ring { animation: none !important; opacity: 1 !important; }
+  }
+</style>
+<rect x="20" y="64" width="384" height="476" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="74.0" width="256" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="162.0" y="89.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">A · 六层无菌纸砖剖面（70%纸+25%PE+5%铝）</text>
+<rect x="94" y="118" width="13" height="328" rx="3" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.1"/>
+<rect x="109" y="118" width="32" height="328" rx="3" fill="#fde68a" stroke="#b45309" stroke-width="1.1"/>
+<rect x="143" y="118" width="12" height="328" rx="3" fill="#dbeafe" stroke="#475569" stroke-width="1.1"/>
+<rect x="157" y="118" width="11" height="328" rx="3" fill="#cbd5e1" stroke="#0f172a" stroke-width="1.1"/>
+<rect x="170" y="118" width="12" height="328" rx="3" fill="#ede9fe" stroke="#6d28d9" stroke-width="1.1"/>
+<rect x="184" y="118" width="20" height="328" rx="3" fill="#dcfce7" stroke="#18794e" stroke-width="1.1"/>
+<rect x="207" y="118" width="16" height="328" rx="3" fill="#fffbeb" stroke="#e2e8f0" stroke-width="0.9"/>
+<text x="218" y="282.0" font-size="11.5" font-weight="700" fill="#b45309" text-anchor="middle" transform="rotate(-90 218 282.0)">无菌纯牛奶侧</text>
+<line x1="100.5" y1="136" x2="230" y2="136" stroke="#1d6fa5" stroke-width="1.1" stroke-dasharray="2 2"/>
+<circle cx="100.5" cy="136" r="2.6" fill="#1d6fa5"/>
+<text x="234" y="133" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">① 外层 PE 膜</text>
+<text x="234" y="150" font-size="11.5" fill="#1e293b" text-anchor="start">隔绝外部潮气护彩印</text>
+<line x1="125.0" y1="190" x2="230" y2="190" stroke="#b45309" stroke-width="1.1" stroke-dasharray="2 2"/>
+<circle cx="125.0" cy="190" r="2.6" fill="#b45309"/>
+<text x="234" y="187" font-size="11.5" fill="#b45309" text-anchor="start" font-weight="700">② 原木纸板 (70%)</text>
+<text x="234" y="204" font-size="11.5" fill="#1e293b" text-anchor="start">提供挺度抗摔但漏气</text>
+<line x1="149.0" y1="244" x2="230" y2="244" stroke="#475569" stroke-width="1.1" stroke-dasharray="2 2"/>
+<circle cx="149.0" cy="244" r="2.6" fill="#475569"/>
+<text x="234" y="241" font-size="11.5" fill="#475569" text-anchor="start" font-weight="700">③ PE 粘合淋膜</text>
+<text x="234" y="258" font-size="11.5" fill="#1e293b" text-anchor="start">热熔锚定纸板与铝箔</text>
+<line x1="162.5" y1="298" x2="230" y2="298" stroke="#0f172a" stroke-width="1.1" stroke-dasharray="2 2"/>
+<circle cx="162.5" cy="298" r="2.6" fill="#0f172a"/>
+<text x="234" y="295" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">④ 超薄铝箔 (6.3µm)</text>
+<text x="234" y="312" font-size="11.5" fill="#1e293b" text-anchor="start">100% 遮光 + 锁死氧气</text>
+<line x1="176.0" y1="352" x2="230" y2="352" stroke="#6d28d9" stroke-width="1.1" stroke-dasharray="2 2"/>
+<circle cx="176.0" cy="352" r="2.6" fill="#6d28d9"/>
+<text x="234" y="349" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">⑤ 改性粘合树脂</text>
+<text x="234" y="366" font-size="11.5" fill="#1e293b" text-anchor="start">防酸防油拒绝铝塑脱层</text>
+<line x1="194.0" y1="406" x2="230" y2="406" stroke="#18794e" stroke-width="1.1" stroke-dasharray="2 2"/>
+<circle cx="194.0" cy="406" r="2.6" fill="#18794e"/>
+<text x="234" y="403" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">⑥ 内层食品级 PE</text>
+<text x="234" y="420" font-size="11.5" fill="#1e293b" text-anchor="start">无菌热封焊缝直接触奶</text>
+<line x1="36" y1="168" x2="93" y2="168" stroke="#1d6fa5" stroke-width="1.3" stroke-dasharray="3 3" opacity="0.55"/>
+<line class="threat-wave" x1="36" y1="168" x2="93" y2="168" stroke="#1d6fa5" stroke-width="2.4"/>
+<circle cx="93" cy="168" r="5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.6"/>
+<text x="34" y="156" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">外湿 H2O</text>
+<text x="34" y="185" font-size="11.5" fill="#475569" text-anchor="start">第①层拦下</text>
+<line x1="36" y1="268" x2="156" y2="268" stroke="#b45309" stroke-width="1.3" stroke-dasharray="3 3" opacity="0.55"/>
+<line class="threat-wave" x1="36" y1="268" x2="156" y2="268" stroke="#b45309" stroke-width="2.4"/>
+<circle class="stop-ring" cx="156" cy="268" r="6.5" fill="none" stroke="#be123c" stroke-width="1.8"/>
+<circle cx="156" cy="268" r="3.5" fill="#be123c"/>
+<text x="34" y="256" font-size="11.5" fill="#b45309" text-anchor="start" font-weight="700">紫外/可见光</text>
+<line x1="36" y1="358" x2="156" y2="358" stroke="#be123c" stroke-width="1.3" stroke-dasharray="3 3" opacity="0.55"/>
+<line class="threat-wave" x1="36" y1="358" x2="156" y2="358" stroke="#be123c" stroke-width="2.4"/>
+<circle class="stop-ring" cx="156" cy="358" r="6.5" fill="none" stroke="#be123c" stroke-width="1.8"/>
+<circle cx="156" cy="358" r="3.5" fill="#be123c"/>
+<text x="34" y="346" font-size="11.5" fill="#be123c" text-anchor="start" font-weight="700">空气 O2</text>
+<text x="34" y="375" font-size="11.5" fill="#be123c" text-anchor="start" font-weight="700">第④层铝盾封死</text>
+<rect x="34" y="460" width="356" height="66" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="46" y="482" font-size="11.5" fill="#1e293b" text-anchor="start">无顶空灌装绝招：纸管经 35% 过氧化氢浴/电子束灭菌后，</text>
+<text x="46" y="504" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">在液面以下带液横向热封切断，盒内连半个空气泡都不留！</text>
+<rect x="418" y="64" width="322" height="476" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="432.0" y="74.0" width="222" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="543.0" y="89.0" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="600">B · 实测阻隔寿命对比 &amp; EVOH 怕水之谜</text>
+<text x="432" y="112" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">38°C / 90% RH 严苛湿热下布丁粉货架期实测：</text>
+<text x="432" y="140" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">PET / 9µm 铝箔 / LDPE</text>
+<text x="726" y="140" font-size="11.5" fill="#475569" text-anchor="end">OTR 0.026</text>
+<rect x="432" y="147" width="214" height="16" rx="4" fill="#f1f5f9"/>
+<rect x="432" y="147" width="201.5" height="16" rx="4" fill="#18794e"/>
+<text x="652" y="159" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">800 天</text>
+<text x="432" y="192" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">PET·AlOx 透明镀氧化铝 / LDPE</text>
+<text x="726" y="192" font-size="11.5" fill="#475569" text-anchor="end">OTR 0.13</text>
+<rect x="432" y="199" width="214" height="16" rx="4" fill="#f1f5f9"/>
+<rect x="432" y="199" width="145.5" height="16" rx="4" fill="#1d6fa5"/>
+<text x="652" y="211" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">578 天</text>
+<text x="432" y="244" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">MPET 真空镀铝膜 / LDPE</text>
+<text x="726" y="244" font-size="11.5" fill="#475569" text-anchor="end">OTR 0.335</text>
+<rect x="432" y="251" width="214" height="16" rx="4" fill="#f1f5f9"/>
+<rect x="432" y="251" width="102.6" height="16" rx="4" fill="#6d28d9"/>
+<text x="652" y="263" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">408 天</text>
+<text x="432" y="296" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">单层 MBOPP 镀铝膜 (易回收)</text>
+<text x="726" y="296" font-size="11.5" fill="#475569" text-anchor="end">OTR 12.19</text>
+<rect x="432" y="303" width="214" height="16" rx="4" fill="#f1f5f9"/>
+<rect x="432" y="303" width="57.7" height="16" rx="4" fill="#c25014"/>
+<text x="652" y="315" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">229 天</text>
+<rect x="432" y="344" width="294" height="182" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="444" y="366" font-size="12.0" fill="#6d28d9" text-anchor="start" font-weight="700">微波透明包装怎么挡氧？五层三明治：</text>
+<rect x="442" y="378" width="66" height="28" rx="4" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="475.0" y="396" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">疏水 PE</text>
+<rect x="510" y="378" width="34" height="28" rx="4" fill="#f8fafc" stroke="#475569" stroke-width="1.1"/>
+<text x="527.0" y="396" font-size="11.5" fill="#475569" text-anchor="middle" font-weight="700">Tie</text>
+<rect x="546" y="378" width="66" height="28" rx="4" fill="#fde68a" stroke="#b45309" stroke-width="1.1"/>
+<text x="579.0" y="396" font-size="11.5" fill="#b45309" text-anchor="middle" font-weight="700">干 EVOH</text>
+<rect x="614" y="378" width="34" height="28" rx="4" fill="#f8fafc" stroke="#475569" stroke-width="1.1"/>
+<text x="631.0" y="396" font-size="11.5" fill="#475569" text-anchor="middle" font-weight="700">Tie</text>
+<rect x="650" y="378" width="66" height="28" rx="4" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="683.0" y="396" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">疏水 PP</text>
+<text x="444" y="428" font-size="11.5" fill="#1e293b" text-anchor="start">• 干燥 EVOH 靠密集 –OH 氢键锁网挡死 O2；</text>
+<text x="444" y="450" font-size="11.5" fill="#1e293b" text-anchor="start">• 一旦受潮，水分子插入抢夺氢键（增塑效应），</text>
+<text x="444" y="472" font-size="11.5" fill="#be123c" text-anchor="start" font-weight="700">  高分子链自由体积暴涨，阻氧力瞬间崩塌！</text>
+<text x="444" y="496" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">• 解法：夹在两层疏水聚烯烃中间“外挡水内挡氧”。</text>
+</svg>

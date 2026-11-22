@@ -3539,3 +3539,448 @@ def _register_art_as_generalized_encoding():
 
 
 _register_art_as_generalized_encoding()
+
+
+def _register_language_families():
+    SUBDIR = "language-families"
+    TEAL = "#0d9488"
+    TEAL_SOFT = "#f0fdfa"
+
+    def _build_global_distribution():
+        """SVG 1: Speaker share vs language-count richness across world language families."""
+        # Verify speaker percentages sum sensibly
+        shares = [42.0, 18.0, 7.8, 7.0, 4.9, 3.2, 2.6, 14.5]
+        assert abs(sum(shares) - 100.0) < 1e-6
+
+        els = []
+        els.extend(
+            header(
+                "全人类 7000 多种语言的家谱全景：谁人口最多？谁分支最密？",
+                "按母语人口算，印欧+汉藏两大语系占去全球六成；按语种数量算，非洲与太平洋岛屿才是多样性宝库。",
+            )
+        )
+
+        # Left Card: Speaker Population Share (~8B total)
+        els.append(card(20, 68, 376, 412))
+        els.append(pill(36, 82, "按使用者规模排行（印欧+汉藏 ≈ 全球 60%）", fg=BLUE, bg=BLUE_SOFT, w=304, h=22, size=11.0))
+
+        fam_rows = [
+            ("印欧语系 (英/西/印地/俄/法/德等)", 42.0, "~32 亿人 (42%)", BLUE),
+            ("汉藏语系 (汉语各支/藏/缅/彝等)", 18.0, "~14 亿人 (18%)", CRIMSON),
+            ("尼日尔-刚果语系 (斯瓦希里/约鲁巴等)", 7.8, "~6.0 亿人", GREEN),
+            ("亚非/闪含语系 (阿拉伯/希伯来/豪萨等)", 7.0, "~5.5 亿人", GOLD),
+            ("南岛语系 (印尼/马来/他加禄/毛利等)", 4.9, "~3.8 亿人", TEAL),
+            ("达罗毗荼语系 (泰米尔/泰卢固等)", 3.2, "~2.5 亿人", PURPLE),
+            ("突厥语系 (土耳其/维吾尔/哈萨克等)", 2.6, "~2.0 亿人", ORANGE),
+            ("其余 238 个语系 + 183 门孤立语合计", 14.5, "日语/韩语/越语/泰语等", SLATE),
+        ]
+
+        bx0, max_w = 38, 206.0
+        for idx, (fname, pct, note_str, col) in enumerate(fam_rows):
+            ry = 118 + idx * 44
+            bw = max(8.0, (pct / 42.0) * max_w)
+            els.append(txt(bx0, ry, fname, 10.2, INK, weight="700"))
+            els.append(f'<rect x="{bx0}" y="{ry+5}" width="{bw:.1f}" height="13" rx="3.5" fill="{col}" opacity="0.88"/>')
+            els.append(txt(bx0 + bw + 8, ry + 15, note_str, 9.9, col, weight="700"))
+
+        # Right Card: Language Count & Glottolog / Ethnologue Census
+        els.append(card(412, 68, 328, 412))
+        els.append(pill(428, 82, "按语种数量与独立谱系普查", fg=TEAL, bg=TEAL_SOFT, w=232, h=22, size=11.0))
+
+        els.append(card(428, 114, 296, 108, rx=7, fill=TEAL_SOFT, stroke=TEAL))
+        els.append(txt(440, 134, "🌍 权威语言学数据库最新盘点：", 10.6, TEAL, weight="700"))
+        els.append(txt(440, 153, "• Glottolog 5.4：记录 7,685 门第一语言口语，", 10.1, BODY))
+        els.append(txt(440, 171, "  归入 245 个独立语系 + 183 门孤立语（共 428 支）！", 10.1, INK, weight="700"))
+        els.append(txt(440, 189, "• Ethnologue：现存 7,170 门活语言，其中约 44%", 10.1, BODY))
+        els.append(txt(440, 207, "  处于濒危状态；前 20 大语言仅占语种 0.3% 却超 37 亿人。", 10.0, CRIMSON, weight="600"))
+
+        els.append(txt(428, 244, "语种数量最多的四大超级语系：", 10.6, INK, weight="700"))
+        rich_rows = [
+            ("尼日尔-刚果语系", 1550, "~1,550 种", GREEN),
+            ("南岛语系", 1250, "~1,250 种", TEAL),
+            ("跨新几内亚语系", 480, "~480 种", PURPLE),
+            ("汉藏语系 / 印欧语系", 460, "各约 450–500 种", CRIMSON),
+        ]
+        for idx, (rname, cnt, cstr, col) in enumerate(rich_rows):
+            ry = 264 + idx * 32
+            rw = (cnt / 1550.0) * 145.0
+            els.append(txt(428, ry + 11, rname, 10.0, BODY, weight="600"))
+            els.append(f'<rect x="536" y="{ry}" width="{rw:.1f}" height="13" rx="3" fill="{col}"/>')
+            els.append(txt(536 + rw + 6, ry + 11, cstr, 9.8, col, weight="700"))
+
+        els.append(card(428, 396, 296, 70, rx=7, fill=GOLD_SOFT, stroke=GOLD))
+        els.append(txt(440, 415, "🏝️ 为什么巴布亚新几内亚一岛就有 840+ 种语言？", 10.2, GOLD, weight="700"))
+        els.append(txt(440, 433, "• 高山深谷阻隔 + 热带雨林自给自足农业持续数万年，", 9.9, BODY))
+        els.append(txt(440, 450, "  每个山谷独立演化几千年，语言分化比整个欧洲还密十倍！", 9.9, INK, weight="600"))
+
+        return figure(
+            498,
+            "全球人类语言语系人口规模与语种多样性对比图解",
+            "左栏对比全球主要语系的使用人口占比（印欧约42%、汉藏约18%，合计占全球六成）；右栏结合Glottolog 5.4与Ethnologue数据展示全球245个语系与183门孤立语的语种分布及新几内亚多样性热点。",
+            els,
+        )
+
+    def _build_comparative_grimms_law():
+        """SVG 2: 1786 Jones cognate matrix + animated Grimm's Law & Verner's Law wheel."""
+        els = []
+        els.extend(
+            header(
+                "没有录音机的远古时代，怎么铁证英语和印度梵语是亲兄弟？",
+                "靠的不是“听着像”的巧合，而是像密码本一样整排平移、连例外都有铁律的“规则语音对应”！",
+            )
+        )
+
+        extra_css = """
+        @keyframes grimmSpin {
+          0%, 15% { stroke-dashoffset: 180; opacity: 0.35; }
+          75%, 100% { stroke-dashoffset: 0; opacity: 1; }
+        }
+        .grimm-arc { stroke-dasharray: 180; animation: grimmSpin 3.8s ease-out 1 forwards; }
+        @media (prefers-reduced-motion: reduce) {
+          .grimm-arc { animation: none !important; stroke-dashoffset: 0 !important; opacity: 1 !important; }
+        }
+        """
+
+        # Left Card: William Jones 1786 Cognate Table + False Cognate Warning
+        els.append(card(20, 68, 376, 424))
+        els.append(pill(36, 82, "1786 威廉·琼斯爵士震惊欧洲的同源词矩阵", fg=BLUE, bg=BLUE_SOFT, w=302, h=22, size=11.0))
+
+        headers = ["词义", "梵语", "古希腊语", "拉丁语", "英语(日耳曼)", "拟构原始印欧语"]
+        col_xs = [36, 76, 134, 200, 260, 326]
+        for hx, hstr in zip(col_xs, headers):
+            els.append(txt(hx, 120, hstr, 9.6, SLATE, weight="700"))
+        els.append(_line(34, 126, 382, 126, stroke=BORDER, sw=1.2))
+
+        cognates = [
+            ("父亲", "pitár-", "patḗr", "pater", "father", "*ph₂tḗr"),
+            ("母亲", "mātár-", "mḗtēr", "māter", "mother", "*méh₂tēr"),
+            ("兄弟", "bhrā́tar-", "phrā́tēr", "frāter", "brother", "*bʰréh₂tēr"),
+            ("三", "tráyas", "treîs", "trēs", "three", "*tréyes"),
+            ("八", "aṣṭā́", "oktṓ", "octō", "eight", "*oḱtṓw"),
+            ("夜晚", "nákt-", "núx", "nox/noct-", "night", "*nókwts"),
+        ]
+        for idx, row in enumerate(cognates):
+            ry = 146 + idx * 27
+            if idx % 2 == 1:
+                els.append(f'<rect x="32" y="{ry-14}" width="352" height="24" rx="4" fill="{SLATE_SOFT}"/>')
+            els.append(txt(col_xs[0], ry, row[0], 9.9, INK, weight="700"))
+            els.append(txt(col_xs[1], ry, row[1], 9.8, BODY, cls="mono"))
+            els.append(txt(col_xs[2], ry, row[2], 9.8, BODY, cls="mono"))
+            els.append(txt(col_xs[3], ry, row[3], 9.8, BLUE, weight="600", cls="mono"))
+            els.append(txt(col_xs[4], ry, row[4], 9.9, CRIMSON, weight="700", cls="mono"))
+            els.append(txt(col_xs[5], ry, row[5], 9.6, PURPLE, weight="700", cls="mono"))
+
+        els.append(card(34, 306, 348, 82, rx=7, fill=CRIMSON_SOFT, stroke=CRIMSON))
+        els.append(txt(46, 325, "⚠️ 语言学家防骗第一课：发音像 ≠ 亲戚（伪同源词陷阱）！", 10.2, CRIMSON, weight="700"))
+        els.append(txt(46, 343, "• 英语 much 与西班牙语 mucho 意思一样、读音神似，却是纯巧合：", 9.9, BODY))
+        els.append(txt(46, 360, "  much 来自古英语 micel (< *meǵh₂-)；mucho 来自拉丁语 multus！", 9.8, INK, weight="600"))
+        els.append(txt(46, 377, "• 反过来：英语 wheel 与梵语 cakra(轮) 毫不相像，却同源自 *kʷékʷlos！", 9.8, PURPLE, weight="700"))
+
+        els.append(card(34, 398, 348, 80, rx=7, fill=BLUE_SOFT, stroke=BLUE))
+        els.append(txt(46, 417, "🔍 怎么排除借词？专挑最难借用的“斯瓦迪士核心词”：", 10.2, BLUE, weight="700"))
+        els.append(txt(46, 435, "• 手机、咖啡、沙发随时跨语系互借；但“我、你、水、火、眼睛、", 9.9, BODY))
+        els.append(txt(46, 452, "  一二三”加动词曲折形态一旦呈现出系统音变，必定同出一脉祖语！", 9.9, INK, weight="600"))
+
+        # Right Card: Grimm's Law (1822) + Verner's Law (1875)
+        els.append(card(412, 68, 328, 424))
+        els.append(pill(428, 82, "1822 格林定律链式音变轮（单次动画）", fg=PURPLE, bg=PURPLE_SOFT, w=268, h=22, size=11.0))
+
+        cx, cy = 576, 208
+        r_ring = 68
+        # Three nodes around triangle wheel
+        nodes = [
+            (cx, cy - r_ring, "送气浊塞音", "*bʰ  *dʰ  *gʰ", PURPLE, PURPLE_SOFT),
+            (cx + r_ring * 0.88, cy + r_ring * 0.52, "不送气浊塞音", "*b   *d   *g", GREEN, GREEN_SOFT),
+            (cx - r_ring * 0.88, cy + r_ring * 0.52, "清塞音 → 清擦音", "*p/*t/*k → f/þ/h", CRIMSON, CRIMSON_SOFT),
+        ]
+        # Animated arcs connecting 0->1, 1->2, 2->0
+        els.append(f'<path class="grimm-arc" d="M {cx+34},{cy-58} Q {cx+84},{cy-16} {cx+62},{cy+18}" fill="none" stroke="{PURPLE}" stroke-width="2.6" marker-end="url(#arr-blue)"/>')
+        els.append(f'<path class="grimm-arc" d="M {cx+24},{cy+54} Q {cx},{cy+78} {cx-24},{cy+54}" fill="none" stroke="{GREEN}" stroke-width="2.6" marker-end="url(#arr-green)"/>')
+        els.append(f'<path class="grimm-arc" d="M {cx-62},{cy+18} Q {cx-84},{cy-16} {cx-34},{cy-58}" fill="none" stroke="{CRIMSON}" stroke-width="2.6" marker-end="url(#arr-orange)"/>')
+
+        for nx, ny, n1, n2, ncol, nbg in nodes:
+            els.append(f'<rect x="{nx-58:.1f}" y="{ny-20:.1f}" width="116" height="40" rx="7" fill="{nbg}" stroke="{ncol}" stroke-width="1.6"/>')
+            els.append(txt(nx, ny - 4, n1, 9.8, ncol, weight="700", anchor="middle"))
+            els.append(txt(nx, ny + 12, n2, 9.6, INK, weight="700", anchor="middle", cls="mono"))
+
+        els.append(card(428, 290, 296, 188, rx=7, fill=GOLD_SOFT, stroke=GOLD))
+        els.append(txt(440, 310, "✨ 童话作家雅各布·格林发现的“整排骨牌推移”：", 10.3, GOLD, weight="700"))
+        els.append(txt(440, 329, "• 凡是拉丁/希腊保留 *p, *t, *k 的词，进日耳曼语全变 f, th, h：", 9.9, BODY))
+        els.append(txt(440, 347, "  pater→father, piscis→fish, tres→three, noct-→night！", 9.8, CRIMSON, weight="700", cls="mono"))
+        els.append(txt(440, 366, "• 凡是原本读 *d, *g 的词，全填补空缺变成清音 t, k：", 9.9, BODY))
+        els.append(txt(440, 384, "  拉丁 decem(十)→ten，duo(二)→two，dent-(牙)→tooth！", 9.8, GREEN, weight="700", cls="mono"))
+        els.append(txt(440, 405, "🎯 1875 维尔纳定律连“唯一破绽”都破案了：", 10.2, PURPLE, weight="700"))
+        els.append(txt(440, 423, "• 为什么 *bʰréh₂tēr 变成清音 brother(þ)，而 *ph₂tḗr 在古日耳", 9.8, BODY))
+        els.append(txt(440, 440, "  曼语却浊化成 *faðēr？因为原始印欧语重音一个在 t 前、一个", 9.8, BODY))
+        els.append(txt(440, 457, "  在 t 后！证明“音变铁律无例外”，历史语言学晋升硬核科学！", 9.8, INK, weight="700"))
+
+        return figure(
+            510,
+            "历史比较语言学同源词矩阵与格林定律链式音变单次动画图解",
+            "左栏展示1786年威廉·琼斯对比的梵语、古希腊语、拉丁语、英语与原始印欧语基础词汇对应及伪同源词陷阱；右栏以单次动画展示1822年格林定律三步塞音擦音链移与1875年维尔纳重音定律。",
+            els,
+            extra_css=extra_css,
+        )
+
+    def _build_four_expansions():
+        """SVG 3: Four material engines of macro-family expansion (Steppe, Millet, Canoe, Iron/Yam)."""
+        els = []
+        els.extend(
+            header(
+                "一个小部落的方言，凭什么铺满半个地球？四大语系扩张的物质引擎",
+                "语言不会无缘无故跑赢邻居——每一次超级语系大爆发背后，都是一场粮食驯化或交通技术的降维打击！",
+            )
+        )
+
+        panels = [
+            (
+                "1", BLUE, BLUE_SOFT,
+                "印欧语系：草原马车 + 乳糖耐受（~8120→5000 年前）",
+                "从爱尔兰、俄罗斯一直铺到印度恒河平原",
+                "• 2015 古耳骨 DNA + 2023《Science》混合起源模型联合破案：",
+                "  印欧祖语约 8120 年前萌生于高加索以南新月沃地北缘；一支北上",
+                "  黑海-里海草原演化出【颜那亚牧民 (Yamnaya)】；",
+                "• 约 5000 年前凭【牛拉四轮木车 + 驯化马匹 + 成年喝奶基因】，",
+                "  短短几百年横扫欧洲（绳纹陶文化 75% 血统换血）并东进南亚！",
+            ),
+            (
+                "2", CRIMSON, CRIMSON_SOFT,
+                "汉藏语系：黄河流域小米农耕人口爆发（~7200–5900 年前）",
+                "从黄河中上游辐射华北、华南、青藏高原与缅甸",
+                "• 2019《PNAS》与《Nature》两项独立贝叶斯谱系年代学锁定同源：",
+                "  汉藏祖语并非诞生于西南丛林，而是源于中国北方黄河流域新石器",
+                "  晚期【磁山晚期—仰韶早期】种粟（小米）与黍（黄米）的农夫！",
+                "• 耐旱高产的小米养活了远超狩猎采集十倍的人口密度：西支南下",
+                "  高原河谷分化为藏缅语族，东支留在中原演化为上古汉语！",
+            ),
+            (
+                "3", TEAL, TEAL_SOFT,
+                "南岛语系：台湾岛出发的舷外浮木舟奇迹（~5230 年前）",
+                "横跨 2.6 万公里：从非洲马达加斯加直到复活节岛！",
+                "• 惊人铁证：整个南岛语系 10 个一级分支中，足足 9 个全都只分布在",
+                "  【中国台湾岛高山族原住民语言】里，剩下 1 支（马来-波利尼西亚）",
+                "  包揽了菲律宾、印尼、马来西亚、夏威夷、新西兰毛利与马达加斯加！",
+                "• 2009《Science》测年确认：约 5230 年前自台湾扬帆，靠【双体/舷外",
+                "  浮杆独木舟 + 观星测浪术】创下工业革命前地理跨度第一纪录！",
+            ),
+            (
+                "4", GREEN, GREEN_SOFT,
+                "尼日尔-刚果（班图大扩张）：薯蓣农业 + 冶铁（~5000 年前）",
+                "重塑整个撒哈拉以南非洲的语言版图",
+                "• 2015《PNAS》重建迁徙路线：约 5000 年前起源于喀麦隆—尼日利亚",
+                "  交界高地（高产薯蓣与油棕农业驱动人口增长）；",
+                "• 约 4000 年前趁中非刚果雨林气候变干裂开“稀树草原走廊”南下，",
+                "• 后期叠加【冶铁农具与铁矛】技术优势，将五百多种亲属班图语",
+                "  一路推至东非大裂谷与南非好望角！",
+            ),
+        ]
+
+        pw, ph = 352, 198
+        for idx, (num, col, bgc, ptitle, psub, l1, l2, l3, l4, l5) in enumerate(panels):
+            r, c = divmod(idx, 2)
+            px = 20 + c * 368
+            py = 68 + r * 212
+            els.append(card(px, py, pw, ph, rx=8, fill=CARD_BG, stroke=col))
+            els.append(f'<rect x="{px}" y="{py}" width="{pw}" height="46" rx="8" fill="{bgc}"/>')
+            els.append(step_badge(px + 18, py + 23, num, fg=col, bg="#ffffff", r=10))
+            els.append(txt(px + 34, py + 20, ptitle, 10.9, col, weight="700"))
+            els.append(txt(px + 34, py + 37, psub, 9.7, SLATE, weight="600"))
+
+            els.append(txt(px + 14, py + 66, l1, 10.0, INK, weight="700"))
+            els.append(txt(px + 14, py + 85, l2, 9.9, BODY))
+            els.append(txt(px + 14, py + 103, l3, 9.9, BODY))
+            els.append(txt(px + 14, py + 124, l4, 9.9, INK, weight="600"))
+            els.append(txt(px + 14, py + 142, l5, 9.9, BODY))
+            if idx == 0:
+                els.append(txt(px + 14, py + 168, "🔗 证据链：词汇重构(*kʷékʷlos 车轮) + 颜那亚古DNA + 考古车辙三合一", 9.5, BLUE, weight="700"))
+            elif idx == 1:
+                els.append(txt(px + 14, py + 168, "🔗 证据链：古汉藏同源农作物词（粟、黍、稻、猪、犬）与仰韶遗址吻合", 9.5, CRIMSON, weight="700"))
+            elif idx == 2:
+                els.append(txt(px + 14, py + 168, "🔗 规律：“多样性中心即故乡”——越靠近发源地，一级老分支越密集！", 9.5, TEAL, weight="700"))
+            elif idx == 3:
+                els.append(txt(px + 14, py + 168, "🔗 幸存：南部非洲科伊桑猎人保留了古老独特的“搭嘴音 (Clicks)”谱系", 9.5, GREEN, weight="700"))
+
+        return figure(
+            504,
+            "印欧、汉藏、南岛与班图四大语系史前扩张引擎与路线对比图解",
+            "四宫格汇总语言学、考古学与古DNA联合重建的四大语系扩张机制：印欧语系的草原车马与乳牧、汉藏语系的黄河粟黍农耕、南岛语系自台湾出发的舷外浮木舟远航，以及非洲班图语族的薯蓣农业与铁器扩张。",
+            els,
+        )
+
+    def _build_tonogenesis_and_sprachbund():
+        """SVG 4: Haudricourt (1954) tonogenesis + Altaic Sprachbund & Sino-Xenic loanword trap."""
+        els = []
+        els.extend(
+            header(
+                "上古汉语原本没有声调？为什么日语韩语借了半本汉字也不属汉藏语系？",
+                "左看奥德里库尔“辅音尾巴掉光换声调”定律；右看语言接触造成的“语盟”假象。",
+            )
+        )
+
+        # Left Card: Haudricourt (1954) Tonogenesis
+        els.append(card(20, 68, 360, 424))
+        els.append(pill(36, 82, "声调诞生记（Tonogenesis, Haudricourt 1954）", fg=CRIMSON, bg=CRIMSON_SOFT, w=304, h=22, size=10.8))
+
+        els.append(txt(36, 122, "《诗经》时代的上古汉语、古藏语、古越南语原本都【没有声调】！", 10.2, INK, weight="700"))
+        els.append(txt(36, 140, "靠词尾不同辅音区分词义；魏晋南北朝词尾脱落，音高替补上位：", 9.9, BODY))
+
+        tone_steps = [
+            ("舒声韵尾 (*-m/-n/-ŋ/元音)", "声带平稳振动", "→ 中古【平声】(Level)", BLUE, BLUE_SOFT),
+            ("喉塞音韵尾 (*-ʔ 急收声门)", "声带骤紧拉高音调，-ʔ 脱落", "→ 中古【上声】(Rising)", GREEN, GREEN_SOFT),
+            ("擦音韵尾 (*-s → *-h 漏气)", "声带松弛拉低音调，-h 脱落", "→ 中古【去声】(Falling)", ORANGE, ORANGE_SOFT),
+            ("塞音韵尾 (*-p / *-t / *-k)", "短促闭口堵死气流", "→ 中古【入声】(粤/闽/客保留)", PURPLE, PURPLE_SOFT),
+        ]
+        for idx, (c_tail, mech, res, col, bgc) in enumerate(tone_steps):
+            sy = 156 + idx * 54
+            els.append(card(36, sy, 328, 46, rx=6, fill=bgc, stroke=col))
+            els.append(txt(46, sy + 18, c_tail, 10.0, INK, weight="700"))
+            els.append(txt(46, sy + 35, f"{mech}  {res}", 9.6, col, weight="700"))
+
+        els.append(card(36, 378, 328, 100, rx=7, fill=SLATE_SOFT, stroke=SLATE))
+        els.append(txt(48, 398, "🔥 第二幕：词头清浊再劈一刀（四声八调）与活化石实证：", 10.1, INK, weight="700"))
+        els.append(txt(48, 416, "• 唐宋以后词头浊辅音清化，清声母变高调(阴)、浊声母变低调(阳)，", 9.8, BODY))
+        els.append(txt(48, 433, "  4 声裂变为粤语等南方的八九个声调；普通话则“入派三声”合为 4 调。", 9.8, BODY))
+        els.append(txt(48, 451, "• 现行铁证：安多藏语至今保留古复辅音而无声调，拉萨藏语脱落辅音", 9.8, CRIMSON, weight="700"))
+        els.append(txt(48, 468, "  正演化出高低声调——人类亲眼抓拍到了声调诞生的慢镜头！", 9.8, INK, weight="600"))
+
+        # Right Card: Loanwords vs Kinship + Altaic Sprachbund
+        els.append(card(396, 68, 344, 424))
+        els.append(pill(412, 82, "借词 ≠ 血缘：日韩越归属与“阿尔泰语盟”之争", fg=PURPLE, bg=PURPLE_SOFT, w=304, h=22, size=10.8))
+
+        els.append(card(412, 118, 312, 174, rx=7, fill=PURPLE_SOFT, stroke=PURPLE))
+        els.append(txt(424, 138, "① 为什么日语、韩语、越南语不算汉藏语系？", 10.4, PURPLE, weight="700"))
+        els.append(txt(424, 157, "• 没错，日/韩/越词典里高达 60% 词汇是唐宋借去的汉字词！", 9.9, BODY))
+        els.append(txt(424, 175, "  但正如英语借了 70% 法语和拉丁语词汇，依然姓“日耳曼”不姓", 9.9, BODY))
+        els.append(txt(424, 193, "  “罗曼”——认亲只看底层核心词与语法骨架：", 9.9, INK, weight="700"))
+        els.append(txt(424, 213, "  - 越南语：底层核心词属【南亚语系】（与柬埔寨高棉语同宗），", 9.8, TEAL, weight="700"))
+        els.append(txt(424, 230, "    后在汉字文化圈区域接触中独立演化出 6 个声调；", 9.8, BODY))
+        els.append(txt(424, 248, "  - 日语-琉球语系 & 朝鲜语系：主宾谓 SOV 黏着语，原生数词", 9.8, INK, weight="600"))
+        els.append(txt(424, 265, "    (hitotsu/futatsu vs hana/dul) 与汉语毫无同源对应，各自独立成系！", 9.7, BODY))
+
+        els.append(card(412, 304, 312, 174, rx=7, fill=GOLD_SOFT, stroke=GOLD))
+        els.append(txt(424, 324, "② 为什么旧课本里的“阿尔泰语系”被主流语言学拆散了？", 10.3, GOLD, weight="700"))
+        els.append(txt(424, 343, "• 突厥语系、蒙古语系、通古斯语系都有元音和谐与黏着词尾，", 9.9, BODY))
+        els.append(txt(424, 361, "  19 世纪学者曾把它们（甚至拉上日韩）合称“阿尔泰语系”。", 9.9, BODY))
+        els.append(txt(424, 380, "• 拆散原因：越往远古追溯，三者的最核心基础词反而越不像！", 9.9, CRIMSON, weight="700"))
+        els.append(txt(424, 398, "  相似词大多是草原游牧帝国几千年混居互借的结果——主流学界", 9.9, BODY))
+        els.append(txt(424, 416, "  现定性为【语言联盟 / 语盟 (Sprachbund)：邻居越长越像，并非同胞】", 9.8, INK, weight="700"))
+        els.append(txt(424, 435, "  （注：2021《Nature》Robbeets 提出辽河黍农“泛欧亚语系”假说，", 9.5, MUTED))
+        els.append(txt(424, 451, "   但因核心同源词证据争议较大，目前仍属少数派探讨假说。）", 9.5, MUTED))
+
+        return figure(
+            510,
+            "汉藏与东南亚声调起源机制及汉字圈借词与阿尔泰语盟辨析图解",
+            "左栏展示1954年奥德里库尔声调起源定律：上古无声调语言因词尾喉塞音与擦音脱落及清浊声母分化衍生出四声八调；右栏解释日韩越大量汉语借词不改变谱系归属，以及阿尔泰语系为何被主流学界重新界定为草原语言联盟。",
+            els,
+        )
+
+    def _build_isolates_and_ceiling():
+        """SVG 5: Basque language isolate + exponential lexical erosion (~8,000–10,000 yr horizon)."""
+        # Verify exponential Swadesh retention math: R(t) = r^t, shared between 2 daughter branches = r^(2t)
+        r_mill = 0.81
+        shared_10k = (r_mill ** 20) * 100.0  # ~1.48% shared cognates after 10,000 years!
+        assert 1.0 < shared_10k < 3.0
+
+        els = []
+        els.extend(
+            header(
+                "没有一个亲戚的“孤立语”活化石，与一万年词汇磨损天花板",
+                "巴斯克语凭什么躲过印欧铁蹄？为什么严谨的语言学家拒绝瞎编“十万年前人类第一句母语”？",
+            )
+        )
+
+        # Left Card: Language Isolates (Basque)
+        els.append(card(20, 68, 344, 398))
+        els.append(pill(36, 82, "孤立语活化石：比利牛斯山里的巴斯克语", fg=TEAL, bg=TEAL_SOFT, w=282, h=22, size=11.0))
+
+        els.append(txt(36, 122, "• 全球共有 183 门【孤立语 (Language Isolates)】——它们不是", 10.2, INK, weight="700"))
+        els.append(txt(36, 140, "  某个语系的分支，而是自己一门语言就独占一个完整语系！", 10.1, TEAL, weight="700"))
+
+        els.append(card(36, 154, 312, 134, rx=7, fill=TEAL_SOFT, stroke=TEAL))
+        els.append(txt(48, 174, "🏔️ 西欧最后的史前幸存者：巴斯克语 (Euskara)", 10.4, INK, weight="700"))
+        els.append(txt(48, 194, "• 四周被西班牙语、法语（印欧罗曼语支）铁桶合围，词根却像", 9.9, BODY))
+        els.append(txt(48, 211, "  来自另一个星球：水=ur，火=su，一二三=bat, bi, hiru！", 9.9, CRIMSON, weight="700"))
+        els.append(txt(48, 229, "• 语法采用罕见的【作格-通格】体系；古 DNA 证实巴斯克人是欧洲", 9.9, BODY))
+        els.append(txt(48, 247, "  早期新石器农夫与狩猎采集者后裔，靠险峻山地挡住了 5000 年前", 9.9, BODY))
+        els.append(txt(48, 265, "  印欧草原浪潮与古罗马同化，守住了老欧洲失落语系的最后火种！", 9.9, INK, weight="600"))
+
+        els.append(card(36, 298, 312, 152, rx=7, fill=SLATE_SOFT, stroke=SLATE))
+        els.append(txt(48, 318, "🗿 其他著名孤立语“独苗家族”：", 10.3, INK, weight="700"))
+        els.append(txt(48, 338, "• 苏美尔语（人类最早楔形文字载体，比阿卡德闪语更古老的孤立语）", 9.8, BODY))
+        els.append(txt(48, 357, "• 阿伊努语（日本北海道原住民语言，与日语毫无亲缘关系）", 9.8, BODY))
+        els.append(txt(48, 376, "• 布鲁夏斯基语（喀喇昆仑山深谷奇语，四邻印欧/汉藏/突厥皆不通）", 9.8, BODY))
+        els.append(txt(48, 398, "💡 真相：孤立语并不是从石头缝蹦出来的，而是它当年的姐妹语言", 9.8, SLATE, weight="700"))
+        els.append(txt(48, 416, "   在几千年历史长河里全都灭绝了，只剩它孤身一人活到了今天！", 9.8, INK, weight="600"))
+
+        # Right Card: Quantitative Decay Curve (Why Comparative Method hits wall at ~8k-10k BP)
+        els.append(card(380, 68, 360, 398))
+        els.append(pill(396, 82, "词汇磨损指数曲线：~8000–10000 年重构极限", fg=CRIMSON, bg=CRIMSON_SOFT, w=312, h=22, size=10.8))
+
+        # Plot axes: x from 0 to 12,000 years BP -> [428, 712], y from 0% to 100% -> [278, 132]
+        gx0, gx1 = 432.0, 712.0
+        gy0, gy1 = 278.0, 132.0
+        els.append(_line(gx0, gy0, gx1, gy0, stroke=INK, sw=1.4))
+        els.append(_line(gx0, gy0, gx0, gy1, stroke=INK, sw=1.4))
+
+        # Random noise floor band (<7% chance similarity)
+        noise_y = gy0 - 0.07 * (gy0 - gy1)
+        els.append(f'<rect x="{gx0}" y="{noise_y:.1f}" width="{gx1-gx0:.1f}" height="{gy0-noise_y:.1f}" fill="{CRIMSON_SOFT}" opacity="0.85"/>')
+        els.append(_line(gx0, noise_y, gx1, noise_y, stroke=CRIMSON, sw=1.2, dash="4 3"))
+        els.append(txt(gx1 - 4, noise_y - 5, "随机巧合噪音底线 (~5%–7%，信号彻底淹没！)", 9.2, CRIMSON, weight="700", anchor="end"))
+
+        # Two curves: Single branch retention r^t vs Two-daughter shared cognates r^(2t)
+        pts_single = []
+        pts_shared = []
+        for yr in range(0, 12500, 500):
+            t_k = yr / 1000.0
+            px = gx0 + (yr / 12000.0) * (gx1 - gx0)
+            y_s1 = gy0 - (r_mill ** t_k) * (gy0 - gy1)
+            y_s2 = gy0 - (r_mill ** (2.0 * t_k)) * (gy0 - gy1)
+            pts_single.append(f"{px:.1f},{y_s1:.1f}")
+            pts_shared.append(f"{px:.1f},{y_s2:.1f}")
+
+        els.append(f'<polyline points="{" ".join(pts_single)}" fill="none" stroke="{BLUE}" stroke-width="2.0" stroke-dasharray="5 3"/>')
+        els.append(f'<polyline points="{" ".join(pts_shared)}" fill="none" stroke="{PURPLE}" stroke-width="2.6"/>')
+
+        # Axis ticks
+        for yr in (0, 3000, 6000, 9000, 12000):
+            tx = gx0 + (yr / 12000.0) * (gx1 - gx0)
+            els.append(_line(tx, gy0, tx, gy0 + 4, stroke=INK, sw=1.2))
+            els.append(txt(tx, gy0 + 16, f"{yr//1000}千年", 9.2, MUTED, anchor="middle"))
+        for pct in (0, 50, 100):
+            ty = gy0 - (pct / 100.0) * (gy0 - gy1)
+            els.append(txt(gx0 - 6, ty + 3, f"{pct}%", 9.2, MUTED, anchor="end"))
+
+        els.append(txt(556, 152, "单支保留祖语词比例 r^t", 9.5, BLUE, weight="700"))
+        els.append(txt(486, 222, "两门后代共享同源词 r^(2t)", 9.6, PURPLE, weight="700"))
+
+        els.append(card(396, 306, 328, 144, rx=7, fill=PURPLE_SOFT, stroke=PURPLE))
+        els.append(txt(408, 326, "⏳ 为什么我们不知道全人类语言是“单一起源”还是“多地起源”？", 10.0, PURPLE, weight="700"))
+        els.append(txt(408, 345, "• 智人开口说话至少已有 10 万–20 万年；但每过一千年，哪怕最稳固", 9.8, BODY))
+        els.append(txt(408, 362, "  的核心词也会换掉约 19%！分家 9000 年后，两门后代共同保留的", 9.8, BODY))
+        els.append(txt(408, 379, "  同源词跌破 3%，彻底淹没在随机撞音噪音里（历史语言学视界）！", 9.8, INK, weight="700"))
+        els.append(txt(408, 398, "• 有趣探索：Pagel 等(2013 PNAS) 统计发现极高频代词与数词（我、你、", 9.7, BODY))
+        els.append(txt(408, 415, "  谁、二、母亲）半衰期长达上万年，但仍远触不到十万年前的人类初语。", 9.7, MUTED))
+
+        return figure(
+            484,
+            "巴斯克语等孤立语活化石与历史比较语言学一万年词汇磨损极限图解",
+            "左栏介绍无任何已知亲属语言的孤立语代表巴斯克语、苏美尔语与阿伊努语；右栏按指数词替模型绘制单支保留率与双支共享同源词衰减曲线，解释8000至10000年以上的远古母语为何因跌破随机巧合阈值而无法可靠重构。",
+            els,
+        )
+
+    @register(
+        "language-families",
+        "人类语言语系形成五步图解：全球245语系普查、1786同源词与格林定律动画、四大语系农牧航海扩张、上古汉语声调起源与阿尔泰语盟及孤立语一万年视界",
+        "humanities",
+    )
+    def build_language_families():
+        write_svg(SUBDIR, "global-language-families-distribution.svg", _build_global_distribution())
+        write_svg(SUBDIR, "comparative-method-and-grimms-law.svg", _build_comparative_grimms_law())
+        write_svg(SUBDIR, "farming-steppe-canoe-four-expansions.svg", _build_four_expansions())
+        write_svg(SUBDIR, "tonogenesis-and-sprachbund-traps.svg", _build_tonogenesis_and_sprachbund())
+        write_svg(SUBDIR, "basque-isolates-and-ten-millennia-horizon.svg", _build_isolates_and_ceiling())
+
+
+_register_language_families()
+

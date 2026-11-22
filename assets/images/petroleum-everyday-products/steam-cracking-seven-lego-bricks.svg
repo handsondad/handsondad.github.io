@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="502" viewBox="0 0 760 502" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">石脑油850摄氏度毫秒级蒸汽裂解机理与三烯三苯六大石油化工母体分子图解</title>
+<desc id="desc">上半部分对比石脑油饱和烷烃（全单键、化学惰性）经800至900摄氏度毫秒级蒸汽裂解（熵增驱动断键并急冷）打开碳碳双键的过程；下半部分展示乙烯、丙烯、1,3-丁二烯（三烯）与苯、甲苯、对二甲苯（三苯）六大母体分子及其对应的日常用品。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="501" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">第二步“敲断懒汉碳链”：850 °C 毫秒蒸汽裂解，拆出分子乐高积木</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">天然烷烃四只手全牵满（饱和单键）没法拼塑料；高温裂解与催化重整打开双键和苯环，变出“三烯三苯”！</text>
+<rect x="20" y="68" width="720" height="146" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34" y="82" width="214" height="118" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="1"/>
+<text x="46" y="102" font-size="9.8" fill="#475569" text-anchor="start" font-weight="700">① 原料：石脑油饱和烷烃 CₙH₂ₙ₊₂</text>
+<rect x="46" y="110" width="190" height="44" rx="5" fill="#ffffff" stroke="#cbd5e1"/>
+<line x1="75" y1="133" x2="97" y2="133" stroke="#334155" stroke-width="1.8"/>
+<line x1="68" y1="120" x2="68" y2="125" stroke="#94a3b8" stroke-width="1.4"/>
+<line x1="68" y1="140" x2="68" y2="146" stroke="#94a3b8" stroke-width="1.4"/>
+<text x="68" y="137" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">C</text>
+<text x="68" y="119" font-size="7.8" fill="#64748b" text-anchor="middle" font-weight="700" class="mono">H</text>
+<line x1="111" y1="133" x2="133" y2="133" stroke="#334155" stroke-width="1.8"/>
+<line x1="104" y1="120" x2="104" y2="125" stroke="#94a3b8" stroke-width="1.4"/>
+<line x1="104" y1="140" x2="104" y2="146" stroke="#94a3b8" stroke-width="1.4"/>
+<text x="104" y="137" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">C</text>
+<text x="104" y="119" font-size="7.8" fill="#64748b" text-anchor="middle" font-weight="700" class="mono">H</text>
+<line x1="147" y1="133" x2="169" y2="133" stroke="#334155" stroke-width="1.8"/>
+<line x1="140" y1="120" x2="140" y2="125" stroke="#94a3b8" stroke-width="1.4"/>
+<line x1="140" y1="140" x2="140" y2="146" stroke="#94a3b8" stroke-width="1.4"/>
+<text x="140" y="137" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">C</text>
+<text x="140" y="119" font-size="7.8" fill="#64748b" text-anchor="middle" font-weight="700" class="mono">H</text>
+<line x1="183" y1="133" x2="205" y2="133" stroke="#334155" stroke-width="1.8"/>
+<line x1="176" y1="120" x2="176" y2="125" stroke="#94a3b8" stroke-width="1.4"/>
+<line x1="176" y1="140" x2="176" y2="146" stroke="#94a3b8" stroke-width="1.4"/>
+<text x="176" y="137" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">C</text>
+<text x="176" y="119" font-size="7.8" fill="#64748b" text-anchor="middle" font-weight="700" class="mono">H</text>
+<line x1="212" y1="120" x2="212" y2="125" stroke="#94a3b8" stroke-width="1.4"/>
+<line x1="212" y1="140" x2="212" y2="146" stroke="#94a3b8" stroke-width="1.4"/>
+<text x="212" y="137" font-size="9.4" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">C</text>
+<text x="212" y="119" font-size="7.8" fill="#64748b" text-anchor="middle" font-weight="700" class="mono">H</text>
+<text x="46" y="171" font-size="9.2" fill="#1e293b" text-anchor="start">• 每个碳 4 只手全牵满单键，性质懒散，</text>
+<text x="46" y="187" font-size="9.2" fill="#0f172a" text-anchor="start" font-weight="600">  除了点火烧掉，彼此绝不手拉手拼长链！</text>
+<line x1="250.0" y1="141.0" x2="272.0" y2="141.0" stroke="#c25014" stroke-width="2.4" marker-end="url(#arr-orange)"/>
+<rect x="276" y="82" width="206" height="118" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="288" y="102" font-size="9.8" fill="#c25014" text-anchor="start" font-weight="700">② 蒸汽裂解炉 + 催化重整塔</text>
+<text x="288" y="122" font-size="9.2" fill="#0f172a" text-anchor="start" font-weight="700">• 800–900 °C 无催化剂自由基断键</text>
+<text x="288" y="139" font-size="9.2" fill="#1e293b" text-anchor="start">• 停留仅 0.1–0.5 秒 + 水蒸气防结焦</text>
+<text x="288" y="156" font-size="9.1" fill="#1e293b" text-anchor="start">• 热力学动力：长链碎成多段小分子，</text>
+<text x="288" y="172" font-size="8.9" fill="#c25014" text-anchor="start" font-weight="700">  熵增 TΔS° 压倒断键吸热 ΔH° (370 kJ/mol)</text>
+<text x="288" y="188" font-size="9.1" fill="#18794e" text-anchor="start" font-weight="700">• 出炉急冷器瞬间降温，“冻住”双键！</text>
+<line x1="484.0" y1="141.0" x2="506.0" y2="141.0" stroke="#18794e" stroke-width="2.4" marker-end="url(#arr-green)"/>
+<rect x="510" y="82" width="216" height="118" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="522" y="102" font-size="9.8" fill="#18794e" text-anchor="start" font-weight="700">③ 质变：露出 C=C 双键“乐高卡扣”</text>
+<rect x="522" y="110" width="192" height="44" rx="5" fill="#ffffff" stroke="#86efac"/>
+<text x="618" y="130" font-size="9.2" fill="#18794e" text-anchor="middle" font-weight="700" class="mono">H₂C ══ CH₂  +  H₂C ══ CH–CH₃</text>
+<text x="618" y="147" font-size="8.6" fill="#0f172a" text-anchor="middle" font-weight="600">（乙烯 + 丙烯：带活泼 π 键接口）</text>
+<text x="522" y="171" font-size="9.2" fill="#1e293b" text-anchor="start">• 双键含 1 根强 σ 键 + 1 根易开 π 键：</text>
+<text x="522" y="187" font-size="9.2" fill="#0f172a" text-anchor="start" font-weight="600">  π 键一打开，就能左右牵手连成万米长链！</text>
+<rect x="20" y="228" width="720" height="260" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="36.0" y="242.0" width="688" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="380.0" y="257.0" font-size="10.4" fill="#6d28d9" text-anchor="middle" font-weight="600">现代日用品工业的“六块核心分子积木”：三烯（Olefins）+ 三苯（BTX 芳烃）</text>
+<rect x="36" y="276" width="224" height="88" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="46" y="296" font-size="9.7" fill="#1d6fa5" text-anchor="start" font-weight="700">乙烯 C₂H₄（三烯之首）</text>
+<text x="46" y="315" font-size="9.0" fill="#0f172a" text-anchor="start" font-weight="700" class="mono">H₂C═CH₂ · 全球年产 ~2.2 亿吨</text>
+<text x="46" y="334" font-size="9.0" fill="#1e293b" text-anchor="start">保鲜膜、牛奶瓶、防冻液、PVC 管、</text>
+<text x="46" y="350" font-size="9.0" fill="#1e293b" text-anchor="start" font-weight="500">矿泉水瓶与涤纶的半边原料</text>
+<rect x="268" y="276" width="224" height="88" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="278" y="296" font-size="9.7" fill="#18794e" text-anchor="start" font-weight="700">丙烯 C₃H₆（耐热主力）</text>
+<text x="278" y="315" font-size="9.0" fill="#0f172a" text-anchor="start" font-weight="700" class="mono">H₂C═CH–CH₃ · 年产 ~1.4 亿吨</text>
+<text x="278" y="334" font-size="9.0" fill="#1e293b" text-anchor="start">微波炉 5 号餐盒、医用口罩熔喷布、</text>
+<text x="278" y="350" font-size="9.0" fill="#1e293b" text-anchor="start" font-weight="500">丙酮溶剂、退烧药异丙苯前体</text>
+<rect x="500" y="276" width="224" height="88" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="510" y="296" font-size="9.7" fill="#c25014" text-anchor="start" font-weight="700">1,3-丁二烯 C₄H₆（弹性之王）</text>
+<text x="510" y="315" font-size="9.0" fill="#0f172a" text-anchor="start" font-weight="700" class="mono">H₂C═CH–CH═CH₂ · 共轭双烯</text>
+<text x="510" y="334" font-size="9.0" fill="#1e293b" text-anchor="start">汽车轮胎合成橡胶、运动跑鞋大底、</text>
+<text x="510" y="350" font-size="9.0" fill="#1e293b" text-anchor="start" font-weight="500">ABS 乐高积木与抗摔行李箱外壳</text>
+<rect x="36" y="376" width="224" height="88" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="46" y="396" font-size="9.7" fill="#6d28d9" text-anchor="start" font-weight="700">苯 C₆H₆（六元芳香环母体）</text>
+<text x="46" y="415" font-size="9.0" fill="#0f172a" text-anchor="start" font-weight="700" class="mono">⬡ 离域 π 环 · 催化重整提取</text>
+<text x="46" y="434" font-size="9.0" fill="#1e293b" text-anchor="start">尼龙冲锋衣与牙刷毛、洗衣液表活、</text>
+<text x="46" y="450" font-size="9.0" fill="#1e293b" text-anchor="start" font-weight="500">阿司匹林与对乙酰氨基酚退烧药</text>
+<rect x="268" y="376" width="224" height="88" rx="8" fill="#ccfbf1" stroke="#0d9488" stroke-width="1"/>
+<text x="278" y="396" font-size="9.7" fill="#0d9488" text-anchor="start" font-weight="700">甲苯 C₇H₈（海绵与溶剂）</text>
+<text x="278" y="415" font-size="9.0" fill="#0f172a" text-anchor="start" font-weight="700" class="mono">⬡–CH₃ · 芳烃甲基取代</text>
+<text x="278" y="434" font-size="9.0" fill="#1e293b" text-anchor="start">慢回弹记忆棉枕头与沙发海绵 (PU)、</text>
+<text x="278" y="450" font-size="9.0" fill="#1e293b" text-anchor="start" font-weight="500">涂料稀释剂、食品抗氧化剂 BHT</text>
+<rect x="500" y="376" width="224" height="88" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="1"/>
+<text x="510" y="396" font-size="9.7" fill="#dc2626" text-anchor="start" font-weight="700">二甲苯 C₈H₁₀（对二甲苯 PX）</text>
+<text x="510" y="415" font-size="9.0" fill="#0f172a" text-anchor="start" font-weight="700" class="mono">H₃C–⬡–CH₃ · 对位双甲基</text>
+<text x="510" y="434" font-size="9.0" fill="#1e293b" text-anchor="start">矿泉水瓶 #1 与身上涤纶摇粒绒的</text>
+<text x="510" y="450" font-size="9.0" fill="#0f172a" text-anchor="start" font-weight="600">共同刚性分子脊梁（精对苯二甲酸 PTA）！</text>
+<text x="36" y="478" font-size="9.2" fill="#64748b" text-anchor="start" font-weight="600">注：第七块基础拼图是由重油/天然气转化来的“合成气（CO + H₂）→ 甲醇 / 合成氨”，支撑胶黏剂、醋酸与农业化肥。</text>
+</svg>

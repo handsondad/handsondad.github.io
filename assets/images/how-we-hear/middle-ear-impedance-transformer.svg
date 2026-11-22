@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="532" viewBox="0 0 760 532" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">空气与内耳淋巴液声阻抗反射壁及中耳鼓膜听小骨链两级增压变压器图解</title>
+<desc id="desc">左图展示空气至液体声阻抗悬殊导致直接入射99.89%声能反射；右图展示55平方毫米鼓膜至3.2平方毫米镫骨底板约17倍面积比与1.3倍听骨杠杆合成二十余倍声压增益及咽鼓管调压机制。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="531" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">一、为什么要长全身最小的三块骨头？冲破 99.9% 声反射的阻抗变压器</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">空气声波直接撞击水溶液会被弹回 99.89% 能量（−29.5 dB）——中耳靠“大鼓膜推小活塞 + 听骨杠杆”绝地翻盘</text>
+<rect x="20" y="64" width="344" height="452" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="74.0" width="314" height="22" rx="11.0" fill="#fef2f2" stroke="#b91c1c" stroke-width="1" stroke-opacity="0.35"/>
+<text x="191.0" y="89.0" font-size="12" fill="#b91c1c" text-anchor="middle" font-weight="600">A · 空气撞水墙：为什么岸上喊话水底听不见？</text>
+<rect x="34" y="108" width="316" height="178" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="202" y="114" width="142" height="166" rx="6" fill="#dbeafe"/>
+<line x1="202" y1="114" x2="202" y2="280" stroke="#1d6fa5" stroke-width="2.4"/>
+<line x1="54" y1="176" x2="194" y2="176" stroke="#c25014" stroke-width="4" marker-end="url(#arr-orange)"/>
+<line x1="194" y1="216" x2="62" y2="216" stroke="#b91c1c" stroke-width="3.6" marker-end="url(#arr-muted)"/>
+<line x1="206" y1="176" x2="324" y2="176" stroke="#1d6fa5" stroke-width="1.3" stroke-dasharray="3 2" marker-end="url(#arr-blue)"/>
+<text x="122" y="164" font-size="11" fill="#c25014" text-anchor="middle" font-weight="700">入射声波 100%</text>
+<text x="126" y="236" font-size="11" fill="#b91c1c" text-anchor="middle" font-weight="700">弹回 99.89%！</text>
+<text x="272" y="162" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">仅透入 0.11%</text>
+<text x="118" y="134" font-size="10.2" fill="#475569" text-anchor="middle" font-weight="600">空气 Z₁ ≈ 415</text>
+<text x="272" y="134" font-size="10.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">内耳淋巴液 Z₂</text>
+<text x="272" y="266" font-size="9.6" fill="#475569" text-anchor="middle">（水 ~1.48×10⁶ Pa·s/m）</text>
+<text x="36" y="310" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">• 物理病根：内耳毛细胞必须泡在淋巴液里工作，</text>
+<text x="36" y="330" font-size="10.6" fill="#1e293b" text-anchor="start">  但稀薄空气推不动沉重液体（声阻抗差逾三千倍）！</text>
+<text x="36" y="353" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="600">• 透射率公式 T = 4 Z₁Z₂ / (Z₁ + Z₂)² ≈ 0.00112，</text>
+<text x="36" y="372" font-size="10.6" fill="#1e293b" text-anchor="start">  直撞水面会白白损失约 29.5 dB（即使按真实耳蜗</text>
+<text x="36" y="391" font-size="10.6" fill="#1e293b" text-anchor="start">  输入阻抗 ~56 kPa·s/m 计，仍反射约 97% 能量！）。</text>
+<text x="36" y="416" font-size="10.6" fill="#6d28d9" text-anchor="start" font-weight="700">• 演化神作：陆生哺乳动物把祖先颌骨关节退役的三块</text>
+<text x="36" y="435" font-size="10.6" fill="#1e293b" text-anchor="start">  小骨头（锤骨、砧骨、镫骨）塞进充满空气的中耳腔，</text>
+<text x="36" y="454" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">  造出了一台精密绝伦的“机械液压增压器”！</text>
+<text x="36" y="482" font-size="10.2" fill="#64748b" text-anchor="start">  （镫骨高仅 ~3.3 mm，比一粒米还小，是全身最小骨头）</text>
+<rect x="378" y="64" width="362" height="452" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="392.0" y="74.0" width="334" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="559.0" y="89.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">B · 鼓膜—听小骨链两级增压账本（实测 +23~27 dB）</text>
+<rect x="392" y="108" width="334" height="178" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<ellipse cx="438" cy="194" rx="14" ry="56" fill="#fef1e8" stroke="#c25014" stroke-width="2.4"/>
+<text x="438" y="268" font-size="10" fill="#c25014" text-anchor="middle" font-weight="700">鼓膜有效区 ~55 mm²</text>
+<circle cx="542" cy="148" r="5" fill="#475569"/>
+<text x="542" y="136" font-size="10" fill="#475569" text-anchor="middle" font-weight="700">杠杆支点 (1.3 : 1)</text>
+<line x1="448" y1="194" x2="542" y2="148" stroke="#c25014" stroke-width="3.5"/>
+<line x1="542" y1="148" x2="602" y2="188" stroke="#1d6fa5" stroke-width="3.5"/>
+<path d="M 602,188 L 626,176 L 652,176 M 602,188 L 626,200 L 652,200" fill="none" stroke="#18794e" stroke-width="2.6"/>
+<ellipse cx="656" cy="188" rx="5" ry="18" fill="#e7f6ee" stroke="#18794e" stroke-width="2.4"/>
+<rect x="662" y="148" width="52" height="80" rx="6" fill="#dbeafe"/>
+<text x="652" y="226" font-size="10" fill="#18794e" text-anchor="middle" font-weight="700">镫骨底板 ~3.2 mm²</text>
+<text x="688" y="192" font-size="10" fill="#1d6fa5" text-anchor="middle" font-weight="700">耳蜗液</text>
+<rect x="392" y="298" width="334" height="106" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="404" y="320" font-size="11" fill="#18794e" text-anchor="start" font-weight="700">两级机械增压总账（好比高跟鞋鞋跟踩地板！）：</text>
+<text x="404" y="341" font-size="10.6" fill="#1e293b" text-anchor="start">① 面积液压比：55 mm² ÷ 3.2 mm² ≈ 17.2 倍；</text>
+<text x="404" y="360" font-size="10.6" fill="#1e293b" text-anchor="start">② 听骨链杠杆比：锤骨柄 ÷ 砧骨长脚 ≈ 1.3 倍；</text>
+<text x="404" y="381" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">→ 理想增压 ≈ 22 倍 (~27 dB)，人耳实测峰值达 23–26.6 dB！</text>
+<rect x="392" y="414" width="334" height="90" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="1"/>
+<text x="404" y="434" font-size="11" fill="#b45309" text-anchor="start" font-weight="700">两个贴心安全阀：咽鼓管 + 镫骨肌反射</text>
+<text x="404" y="454" font-size="10.4" fill="#1e293b" text-anchor="start">• 飞机下降耳朵闷痛：中耳气压滞后把鼓膜压瘪；吞咽打哈欠</text>
+<text x="404" y="472" font-size="10.4" fill="#1e293b" text-anchor="start">  拉开咽鼓管“啵”一声放气即平！遇巨响时镫骨肌自动拉紧刹</text>
+<text x="404" y="490" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="600">  车（但有几十毫秒延迟，防不住鞭炮枪声瞬时冲击！）。</text>
+</svg>

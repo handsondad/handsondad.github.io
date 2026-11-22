@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="484" viewBox="0 0 760 484" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">野生二倍体有籽香蕉与现代三倍体单性结实无籽香牙蕉横切结构对比图解</title>
+<desc id="desc">左图展示野生二倍体芭蕉果腔布满坚硬黑籽；右图展示现代AAA三倍体栽培香蕉的下位子房浆果分层（花筒加外果皮为蕉皮、内层果皮为甜糯果肉、中心三排小褐点为减数分裂受阻退化的胚珠）。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="483" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">香蕉也是浆果？为什么剥掉皮不见果核，只剩三排小黑点？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">野生香蕉满肚子碎牙硬黑籽；超市华蕉（AAA 三倍体）靠“单性结实 + 减数分裂卡壳”把种子全憋没了！</text>
+<rect x="20" y="68" width="336" height="396" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="36.0" y="82.0" width="266" height="22" rx="11.0" fill="#f1f5f9" stroke="#475569" stroke-width="1" stroke-opacity="0.35"/>
+<text x="169.0" y="97.0" font-size="11.2" fill="#475569" text-anchor="middle" font-weight="600">野生祖先芭蕉（二倍体 2n = 2x = 22）</text>
+<circle cx="188" cy="198" r="68" fill="#fde047" stroke="#a16207" stroke-width="3.0"/>
+<circle cx="188" cy="198" r="58" fill="#fef9c3" stroke="#ca8a04" stroke-width="1.4"/>
+<circle cx="162" cy="174" r="9.5" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
+<circle cx="159" cy="171" r="2.2" fill="#64748b"/>
+<circle cx="184" cy="166" r="9.5" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
+<circle cx="181" cy="163" r="2.2" fill="#64748b"/>
+<circle cx="210" cy="176" r="9.5" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
+<circle cx="207" cy="173" r="2.2" fill="#64748b"/>
+<circle cx="152" cy="198" r="9.5" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
+<circle cx="149" cy="195" r="2.2" fill="#64748b"/>
+<circle cx="176" cy="192" r="9.5" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
+<circle cx="173" cy="189" r="2.2" fill="#64748b"/>
+<circle cx="202" cy="196" r="9.5" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
+<circle cx="199" cy="193" r="2.2" fill="#64748b"/>
+<circle cx="222" cy="202" r="9.5" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
+<circle cx="219" cy="199" r="2.2" fill="#64748b"/>
+<circle cx="164" cy="222" r="9.5" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
+<circle cx="161" cy="219" r="2.2" fill="#64748b"/>
+<circle cx="190" cy="220" r="9.5" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
+<circle cx="187" cy="217" r="2.2" fill="#64748b"/>
+<circle cx="212" cy="224" r="9.5" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
+<circle cx="209" cy="221" r="2.2" fill="#64748b"/>
+<circle cx="186" cy="236" r="9.5" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
+<circle cx="183" cy="233" r="2.2" fill="#64748b"/>
+<circle cx="154" cy="180" r="9.5" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
+<circle cx="151" cy="177" r="2.2" fill="#64748b"/>
+<circle cx="218" cy="184" r="9.5" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>
+<circle cx="215" cy="181" r="2.2" fill="#64748b"/>
+<text x="188" y="286" font-size="10.6" fill="#dc2626" text-anchor="middle" font-weight="700">果腔几乎被直径 4–6 mm 的黑色硬籽塞满！</text>
+<text x="188" y="306" font-size="10.3" fill="#1e293b" text-anchor="middle">• 东南亚丛林里的野生小果野蕉 (M. acuminata) 与</text>
+<text x="188" y="324" font-size="10.3" fill="#1e293b" text-anchor="middle">  野芭蕉 (M. balbisiana) 必须经蝙蝠或鸟类传粉受精</text>
+<text x="188" y="342" font-size="10.3" fill="#1e293b" text-anchor="middle">  才能结果；黑籽硬如碎石，果肉只剩薄薄几丝。</text>
+<rect x="36" y="360" width="304" height="88" rx="7" fill="#f1f5f9" stroke="#475569" stroke-width="1"/>
+<text x="48" y="380" font-size="10.3" fill="#0f172a" text-anchor="start" font-weight="700">🍌 植物学冷知识：香蕉是如假包换的【下位子房浆果】！</text>
+<text x="48" y="398" font-size="10.0" fill="#1e293b" text-anchor="start">• 因为香蕉花子房长在花萼下方（跟黄瓜、蓝莓一样），</text>
+<text x="48" y="415" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="600">  你剥掉的黄香蕉皮 = 外层【花筒 + 外果皮】愈合外衣；</text>
+<text x="48" y="432" font-size="10.0" fill="#64748b" text-anchor="start">  撕皮时粘手的“白筋” = 给果实运糖的韧皮部维管束！</text>
+<rect x="376" y="68" width="364" height="396" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="392.0" y="82.0" width="294" height="22" rx="11.0" fill="#fffbeb" stroke="#d97706" stroke-width="1" stroke-opacity="0.35"/>
+<text x="539.0" y="97.0" font-size="11.2" fill="#d97706" text-anchor="middle" font-weight="600">现代栽培香牙蕉（三倍体 2n = 3x = 33）</text>
+<circle cx="500" cy="198" r="68" fill="#facc15" stroke="#ca8a04" stroke-width="3.0"/>
+<circle cx="500" cy="198" r="57" fill="#fefce8" stroke="#fde047" stroke-width="1.8"/>
+<line x1="500" y1="198" x2="500.0" y2="146.0" stroke="#eab308" stroke-width="1.6" stroke-dasharray="4 3"/>
+<circle cx="513.2" cy="185.8" r="1.9" fill="#78350f"/>
+<circle cx="518.2" cy="187.5" r="1.9" fill="#78350f"/>
+<circle cx="517.2" cy="192.6" r="1.9" fill="#78350f"/>
+<circle cx="509.6" cy="190.8" r="1.9" fill="#78350f"/>
+<circle cx="511.0" cy="193.3" r="1.9" fill="#78350f"/>
+<line x1="500" y1="198" x2="545.0" y2="224.0" stroke="#eab308" stroke-width="1.6" stroke-dasharray="4 3"/>
+<circle cx="503.9" cy="215.6" r="1.9" fill="#78350f"/>
+<circle cx="500.0" cy="219.0" r="1.9" fill="#78350f"/>
+<circle cx="496.1" cy="215.6" r="1.9" fill="#78350f"/>
+<circle cx="501.4" cy="209.9" r="1.9" fill="#78350f"/>
+<circle cx="498.6" cy="209.9" r="1.9" fill="#78350f"/>
+<line x1="500" y1="198" x2="455.0" y2="224.0" stroke="#eab308" stroke-width="1.6" stroke-dasharray="4 3"/>
+<circle cx="482.8" cy="192.6" r="1.9" fill="#78350f"/>
+<circle cx="481.8" cy="187.5" r="1.9" fill="#78350f"/>
+<circle cx="486.8" cy="185.8" r="1.9" fill="#78350f"/>
+<circle cx="489.0" cy="193.3" r="1.9" fill="#78350f"/>
+<circle cx="490.4" cy="190.8" r="1.9" fill="#78350f"/>
+<line x1="562" y1="172" x2="604" y2="144" stroke="#ca8a04" stroke-width="1.4"/>
+<text x="608" y="140" font-size="10.1" fill="#b45309" text-anchor="start" font-weight="700">黄皮：花筒+外果皮</text>
+<text x="608" y="154" font-size="9.5" fill="#64748b" text-anchor="start">(剥掉不吃)</text>
+<line x1="536" y1="204" x2="604" y2="196" stroke="#18794e" stroke-width="1.4"/>
+<text x="608" y="192" font-size="10.1" fill="#18794e" text-anchor="start" font-weight="700">甜糯果肉：内层果皮</text>
+<text x="608" y="206" font-size="9.5" fill="#64748b" text-anchor="start">(淀粉熟化转果糖/蔗糖)</text>
+<line x1="512" y1="214" x2="604" y2="246" stroke="#78350f" stroke-width="1.4"/>
+<text x="608" y="242" font-size="10.1" fill="#78350f" text-anchor="start" font-weight="700">中心三排小褐点：</text>
+<text x="608" y="256" font-size="9.8" fill="#dc2626" text-anchor="start" font-weight="700">退化的未受精胚珠！</text>
+<rect x="392" y="282" width="332" height="166" rx="7" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
+<text x="404" y="303" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="700">✨ 人类驯化史上的两记绝杀（约 7000 年前东南亚起源）：</text>
+<text x="404" y="323" font-size="10.2" fill="#1e293b" text-anchor="start">① 单性结实突变 (Parthenocarpy)：子房不需要受精就能自己</text>
+<text x="404" y="341" font-size="10.2" fill="#1e293b" text-anchor="start">   分泌生长素，让内果皮与胎座填满柔滑淀粉果肉；</text>
+<text x="404" y="360" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="600">② 三倍体卡死减数分裂 (3x = 33)：每组染色体有 3 条，配对</text>
+<text x="404" y="378" font-size="10.2" fill="#1e293b" text-anchor="start">   分家时 2:1 乱成一团，99.99% 胚珠刚起步就发育中止，</text>
+<text x="404" y="396" font-size="10.2" fill="#d97706" text-anchor="start" font-weight="700">   只留下香蕉正中央那三排人畜无害的小褐点！（无籽西瓜同理）</text>
+<text x="404" y="417" font-size="10.0" fill="#dc2626" text-anchor="start" font-weight="600">⚠️ 代价：没有种子只能靠地下吸芽无性克隆，全球华蕉基因</text>
+<text x="404" y="434" font-size="10.0" fill="#1e293b" text-anchor="start">   几乎一模一样，面对热带枯萎病 TR4 真菌极其脆弱！</text>
+</svg>

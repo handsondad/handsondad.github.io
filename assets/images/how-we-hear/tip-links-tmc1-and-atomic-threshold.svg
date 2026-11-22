@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="536" viewBox="0 0 760 536" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">耳蜗静纤毛顶端连接TMC1十微秒机械门控、内淋巴正电位电池与3500内毛细胞不可再生图解</title>
+<desc id="desc">左图展示0.1至0.3纳米偏转拉紧顶端连接在10至40微秒内拽开TMC1通道及+80毫伏内淋巴电池驱动钾离子内流；右图对比3500个内毛细胞与12000个外毛细胞分工及85分贝噪声不可逆损伤警示。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="535" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">三、比眨眼和视觉快 1,000 倍：0.1 纳米原子级门槛与 10 微秒机械拉绳</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">0 dB 听阈处静纤毛仅晃动 0.1–0.3 纳米（一颗金原子宽！）——靠纳米拉绳硬拽开 TMC1 离子门，零化学延迟！</text>
+<rect x="20" y="64" width="412" height="456" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="74.0" width="346" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="207.0" y="89.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">A · 静纤毛阶梯“顶端连接拉绳”与双电池驱动</text>
+<rect x="34" y="108" width="384" height="212" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="46.0" y="118.0" width="292" height="20" rx="10.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="192.0" y="131.6" font-size="10.2" fill="#6d28d9" text-anchor="middle" font-weight="600">上方内淋巴液：高钾 K⁺ · 罕见 +80 mV 正电位！</text>
+<line x1="132" y1="276" x2="144" y2="212" stroke="#475569" stroke-width="18" stroke-linecap="round"/>
+<line x1="132" y1="276" x2="144" y2="212" stroke="#cbd5e1" stroke-width="14" stroke-linecap="round"/>
+<line x1="196" y1="276" x2="212" y2="178" stroke="#475569" stroke-width="18" stroke-linecap="round"/>
+<line x1="196" y1="276" x2="212" y2="178" stroke="#cbd5e1" stroke-width="14" stroke-linecap="round"/>
+<line x1="262" y1="276" x2="282" y2="146" stroke="#475569" stroke-width="18" stroke-linecap="round"/>
+<line x1="262" y1="276" x2="282" y2="146" stroke="#cbd5e1" stroke-width="14" stroke-linecap="round"/>
+<line x1="146" y1="208" x2="198" y2="194" stroke="#c25014" stroke-width="2.6"/>
+<line x1="214" y1="174" x2="266" y2="160" stroke="#c25014" stroke-width="2.6"/>
+<circle cx="146" cy="208" r="5.5" fill="#18794e" stroke="#ffffff" stroke-width="1.2"/>
+<circle cx="214" cy="174" r="5.5" fill="#18794e" stroke="#ffffff" stroke-width="1.2"/>
+<line x1="74" y1="186" x2="122" y2="186" stroke="#b91c1c" stroke-width="2.2" marker-end="url(#arr-orange)"/>
+<text x="96" y="176" font-size="10.2" fill="#b91c1c" text-anchor="middle" font-weight="700">行波推偏</text>
+<text x="96" y="202" font-size="9.8" fill="#b91c1c" text-anchor="middle" font-weight="700">仅 0.1–0.3 nm!</text>
+<text x="348" y="176" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700">顶端拉绳 Tip Link</text>
+<text x="348" y="193" font-size="9.8" fill="#64748b" text-anchor="middle">(PCDH15+CDH23)</text>
+<text x="348" y="218" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="700">硬拽拉开 TMC1 门</text>
+<text x="348" y="236" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="700">响应仅 10–40 微秒!</text>
+<rect x="108" y="276" width="194" height="34" rx="8" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+<text x="205" y="297" font-size="10" fill="#0f172a" text-anchor="middle" font-weight="700">内毛细胞胞体（−45 ~ −60 mV）→ 总压差 ~130 mV！</text>
+<text x="36" y="342" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">• 为什么听觉必须走“纯物理拉绳”，不能学视网膜搞酶促放大？</text>
+<text x="36" y="362" font-size="10.5" fill="#1e293b" text-anchor="start">  因为人耳要听清 20,000 Hz 高音（每 50 微秒就往返震动一次）！</text>
+<text x="36" y="381" font-size="10.5" fill="#1e293b" text-anchor="start">  视网膜化学级联需要几十毫秒，放进耳朵里高频声波早糊成一锅粥；</text>
+<text x="36" y="400" font-size="10.5" fill="#1e293b" text-anchor="start">  Tip Link 直接物理拽开 TMC1 通道（2018–2022 最终确证），仅需</text>
+<text x="36" y="419" font-size="10.6" fill="#1d6fa5" text-anchor="start" font-weight="700">  10–40 微秒，比视觉光电转换快整整 1,000 倍！</text>
+<text x="36" y="444" font-size="10.5" fill="#1e293b" text-anchor="start">• 零耗能超级双电池：血管纹把内淋巴充到 +80 mV，叠加细胞内</text>
+<text x="36" y="463" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600">  负电位合成逾 125 mV 跨膜压差，门一开 K⁺ 瞬间瀑布般灌入！</text>
+<text x="36" y="488" font-size="10.2" fill="#64748b" text-anchor="start">• 0 dB SPL 听阈 = 20 微帕声压（仅两百亿分之一个大气压）！</text>
+<rect x="446" y="64" width="294" height="456" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="460.0" y="74.0" width="266" height="22" rx="11.0" fill="#fef2f2" stroke="#b91c1c" stroke-width="1" stroke-opacity="0.35"/>
+<text x="593.0" y="89.0" font-size="12" fill="#b91c1c" text-anchor="middle" font-weight="600">B · 仅 3,500 颗传信兵与终生不再生铁律</text>
+<rect x="460" y="108" width="266" height="184" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="472" y="130" font-size="11.2" fill="#1d6fa5" text-anchor="start" font-weight="700">耳蜗毛细胞的“悬殊编制”（每侧耳朵）：</text>
+<text x="472" y="154" font-size="10.5" fill="#1e293b" text-anchor="start">• 视网膜有近 1 亿感光细胞，而单侧耳蜗里：</text>
+<text x="472" y="176" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">  ① 内毛细胞 (IHC)：仅排 1 排、约 3,500 个！</text>
+<text x="472" y="195" font-size="10.4" fill="#1e293b" text-anchor="start">     却独占了 95% 的 I 型螺旋神经节传入专线，</text>
+<text x="472" y="214" font-size="10.4" fill="#1d6fa5" text-anchor="start" font-weight="700">     你听见的一切语音旋律全靠这三千多个细胞！</text>
+<text x="472" y="238" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">  ② 外毛细胞 (OHC)：排成 3 排、约 12,000 个，</text>
+<text x="472" y="257" font-size="10.4" fill="#1e293b" text-anchor="start">     几乎不负责往大脑传信，专职干“机械放大”！</text>
+<text x="472" y="276" font-size="10.2" fill="#64748b" text-anchor="start">     （详见下图 4 揭秘）</text>
+<rect x="460" y="306" width="266" height="200" rx="8" fill="#fef2f2" stroke="#b91c1c" stroke-width="1"/>
+<text x="472" y="328" font-size="11.2" fill="#b91c1c" text-anchor="start" font-weight="700">残酷真相：死一颗少一颗，永远长不回来！</text>
+<text x="472" y="350" font-size="10.5" fill="#1e293b" text-anchor="start">• 鸟类和斑马鱼的毛细胞震坏后几周就能再生，</text>
+<text x="472" y="369" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">  但人类等哺乳动物出生时配额就已锁死！</text>
+<text x="472" y="392" font-size="10.6" fill="#b91c1c" text-anchor="start" font-weight="700">• 安全红线（NIDCD 标准）：</text>
+<text x="472" y="411" font-size="10.4" fill="#1e293b" text-anchor="start">  长期暴露 ≥ 85 dBA（嘈杂地铁开大耳机音量）</text>
+<text x="472" y="430" font-size="10.4" fill="#1e293b" text-anchor="start">  或 100 dBA 演唱会超 15 分钟，狂暴液流会把</text>
+<text x="472" y="449" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="600">  Tip Link 扯断、静纤毛连根吹倒融合乃至细胞凋亡！</text>
+<text x="472" y="472" font-size="10.4" fill="#18794e" text-anchor="start" font-weight="700">• 护耳铁律：地铁飞机上请开主动降噪（勿靠拉高</text>
+<text x="472" y="491" font-size="10.4" fill="#18794e" text-anchor="start" font-weight="700">  音量硬盖噪音），遵循“60%音量、60分钟”原则。</text>
+</svg>

@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="510" viewBox="0 0 760 510" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">历史比较语言学同源词矩阵与格林定律链式音变单次动画图解</title>
+<desc id="desc">左栏展示1786年威廉·琼斯对比的梵语、古希腊语、拉丁语、英语与原始印欧语基础词汇对应及伪同源词陷阱；右栏以单次动画展示1822年格林定律三步塞音擦音链移与1875年维尔纳重音定律。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes grimmSpin {
+          0%, 15% { stroke-dashoffset: 180; opacity: 0.35; }
+          75%, 100% { stroke-dashoffset: 0; opacity: 1; }
+        }
+        .grimm-arc { stroke-dasharray: 180; animation: grimmSpin 3.8s ease-out 1 forwards; }
+        @media (prefers-reduced-motion: reduce) {
+          .grimm-arc { animation: none !important; stroke-dashoffset: 0 !important; opacity: 1 !important; }
+        }
+</style>
+<rect x="0.5" y="0.5" width="759" height="509" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">没有录音机的远古时代，怎么铁证英语和印度梵语是亲兄弟？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">靠的不是“听着像”的巧合，而是像密码本一样整排平移、连例外都有铁律的“规则语音对应”！</text>
+<rect x="20" y="68" width="376" height="424" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="36.0" y="82.0" width="302" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="187.0" y="97.0" font-size="11.0" fill="#1d6fa5" text-anchor="middle" font-weight="600">1786 威廉·琼斯爵士震惊欧洲的同源词矩阵</text>
+<text x="36" y="120" font-size="9.6" fill="#475569" text-anchor="start" font-weight="700">词义</text>
+<text x="76" y="120" font-size="9.6" fill="#475569" text-anchor="start" font-weight="700">梵语</text>
+<text x="134" y="120" font-size="9.6" fill="#475569" text-anchor="start" font-weight="700">古希腊语</text>
+<text x="200" y="120" font-size="9.6" fill="#475569" text-anchor="start" font-weight="700">拉丁语</text>
+<text x="260" y="120" font-size="9.6" fill="#475569" text-anchor="start" font-weight="700">英语(日耳曼)</text>
+<text x="326" y="120" font-size="9.6" fill="#475569" text-anchor="start" font-weight="700">拟构原始印欧语</text>
+<line x1="34.0" y1="126.0" x2="382.0" y2="126.0" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="36" y="146" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="700">父亲</text>
+<text x="76" y="146" font-size="9.8" fill="#1e293b" text-anchor="start" class="mono">pitár-</text>
+<text x="134" y="146" font-size="9.8" fill="#1e293b" text-anchor="start" class="mono">patḗr</text>
+<text x="200" y="146" font-size="9.8" fill="#1d6fa5" text-anchor="start" font-weight="600" class="mono">pater</text>
+<text x="260" y="146" font-size="9.9" fill="#9f1239" text-anchor="start" font-weight="700" class="mono">father</text>
+<text x="326" y="146" font-size="9.6" fill="#6d28d9" text-anchor="start" font-weight="700" class="mono">*ph₂tḗr</text>
+<rect x="32" y="159" width="352" height="24" rx="4" fill="#f1f5f9"/>
+<text x="36" y="173" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="700">母亲</text>
+<text x="76" y="173" font-size="9.8" fill="#1e293b" text-anchor="start" class="mono">mātár-</text>
+<text x="134" y="173" font-size="9.8" fill="#1e293b" text-anchor="start" class="mono">mḗtēr</text>
+<text x="200" y="173" font-size="9.8" fill="#1d6fa5" text-anchor="start" font-weight="600" class="mono">māter</text>
+<text x="260" y="173" font-size="9.9" fill="#9f1239" text-anchor="start" font-weight="700" class="mono">mother</text>
+<text x="326" y="173" font-size="9.6" fill="#6d28d9" text-anchor="start" font-weight="700" class="mono">*méh₂tēr</text>
+<text x="36" y="200" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="700">兄弟</text>
+<text x="76" y="200" font-size="9.8" fill="#1e293b" text-anchor="start" class="mono">bhrā́tar-</text>
+<text x="134" y="200" font-size="9.8" fill="#1e293b" text-anchor="start" class="mono">phrā́tēr</text>
+<text x="200" y="200" font-size="9.8" fill="#1d6fa5" text-anchor="start" font-weight="600" class="mono">frāter</text>
+<text x="260" y="200" font-size="9.9" fill="#9f1239" text-anchor="start" font-weight="700" class="mono">brother</text>
+<text x="326" y="200" font-size="9.6" fill="#6d28d9" text-anchor="start" font-weight="700" class="mono">*bʰréh₂tēr</text>
+<rect x="32" y="213" width="352" height="24" rx="4" fill="#f1f5f9"/>
+<text x="36" y="227" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="700">三</text>
+<text x="76" y="227" font-size="9.8" fill="#1e293b" text-anchor="start" class="mono">tráyas</text>
+<text x="134" y="227" font-size="9.8" fill="#1e293b" text-anchor="start" class="mono">treîs</text>
+<text x="200" y="227" font-size="9.8" fill="#1d6fa5" text-anchor="start" font-weight="600" class="mono">trēs</text>
+<text x="260" y="227" font-size="9.9" fill="#9f1239" text-anchor="start" font-weight="700" class="mono">three</text>
+<text x="326" y="227" font-size="9.6" fill="#6d28d9" text-anchor="start" font-weight="700" class="mono">*tréyes</text>
+<text x="36" y="254" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="700">八</text>
+<text x="76" y="254" font-size="9.8" fill="#1e293b" text-anchor="start" class="mono">aṣṭā́</text>
+<text x="134" y="254" font-size="9.8" fill="#1e293b" text-anchor="start" class="mono">oktṓ</text>
+<text x="200" y="254" font-size="9.8" fill="#1d6fa5" text-anchor="start" font-weight="600" class="mono">octō</text>
+<text x="260" y="254" font-size="9.9" fill="#9f1239" text-anchor="start" font-weight="700" class="mono">eight</text>
+<text x="326" y="254" font-size="9.6" fill="#6d28d9" text-anchor="start" font-weight="700" class="mono">*oḱtṓw</text>
+<rect x="32" y="267" width="352" height="24" rx="4" fill="#f1f5f9"/>
+<text x="36" y="281" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="700">夜晚</text>
+<text x="76" y="281" font-size="9.8" fill="#1e293b" text-anchor="start" class="mono">nákt-</text>
+<text x="134" y="281" font-size="9.8" fill="#1e293b" text-anchor="start" class="mono">núx</text>
+<text x="200" y="281" font-size="9.8" fill="#1d6fa5" text-anchor="start" font-weight="600" class="mono">nox/noct-</text>
+<text x="260" y="281" font-size="9.9" fill="#9f1239" text-anchor="start" font-weight="700" class="mono">night</text>
+<text x="326" y="281" font-size="9.6" fill="#6d28d9" text-anchor="start" font-weight="700" class="mono">*nókwts</text>
+<rect x="34" y="306" width="348" height="82" rx="7" fill="#ffe4e6" stroke="#9f1239" stroke-width="1"/>
+<text x="46" y="325" font-size="10.2" fill="#9f1239" text-anchor="start" font-weight="700">⚠️ 语言学家防骗第一课：发音像 ≠ 亲戚（伪同源词陷阱）！</text>
+<text x="46" y="343" font-size="9.9" fill="#1e293b" text-anchor="start">• 英语 much 与西班牙语 mucho 意思一样、读音神似，却是纯巧合：</text>
+<text x="46" y="360" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="600">  much 来自古英语 micel (&lt; *meǵh₂-)；mucho 来自拉丁语 multus！</text>
+<text x="46" y="377" font-size="9.8" fill="#6d28d9" text-anchor="start" font-weight="700">• 反过来：英语 wheel 与梵语 cakra(轮) 毫不相像，却同源自 *kʷékʷlos！</text>
+<rect x="34" y="398" width="348" height="80" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="46" y="417" font-size="10.2" fill="#1d6fa5" text-anchor="start" font-weight="700">🔍 怎么排除借词？专挑最难借用的“斯瓦迪士核心词”：</text>
+<text x="46" y="435" font-size="9.9" fill="#1e293b" text-anchor="start">• 手机、咖啡、沙发随时跨语系互借；但“我、你、水、火、眼睛、</text>
+<text x="46" y="452" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="600">  一二三”加动词曲折形态一旦呈现出系统音变，必定同出一脉祖语！</text>
+<rect x="412" y="68" width="328" height="424" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="428.0" y="82.0" width="268" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="562.0" y="97.0" font-size="11.0" fill="#6d28d9" text-anchor="middle" font-weight="600">1822 格林定律链式音变轮（单次动画）</text>
+<path class="grimm-arc" d="M 610,150 Q 660,192 638,226" fill="none" stroke="#6d28d9" stroke-width="2.6" marker-end="url(#arr-blue)"/>
+<path class="grimm-arc" d="M 600,262 Q 576,286 552,262" fill="none" stroke="#18794e" stroke-width="2.6" marker-end="url(#arr-green)"/>
+<path class="grimm-arc" d="M 514,226 Q 492,192 542,150" fill="none" stroke="#9f1239" stroke-width="2.6" marker-end="url(#arr-orange)"/>
+<rect x="518.0" y="120.0" width="116" height="40" rx="7" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.6"/>
+<text x="576" y="136" font-size="9.8" fill="#6d28d9" text-anchor="middle" font-weight="700">送气浊塞音</text>
+<text x="576" y="152" font-size="9.6" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">*bʰ  *dʰ  *gʰ</text>
+<rect x="577.8" y="223.4" width="116" height="40" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1.6"/>
+<text x="635.8" y="239.4" font-size="9.8" fill="#18794e" text-anchor="middle" font-weight="700">不送气浊塞音</text>
+<text x="635.8" y="255.4" font-size="9.6" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">*b   *d   *g</text>
+<rect x="458.2" y="223.4" width="116" height="40" rx="7" fill="#ffe4e6" stroke="#9f1239" stroke-width="1.6"/>
+<text x="516.2" y="239.4" font-size="9.8" fill="#9f1239" text-anchor="middle" font-weight="700">清塞音 → 清擦音</text>
+<text x="516.2" y="255.4" font-size="9.6" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">*p/*t/*k → f/þ/h</text>
+<rect x="428" y="290" width="296" height="188" rx="7" fill="#fef3c7" stroke="#b45309" stroke-width="1"/>
+<text x="440" y="310" font-size="10.3" fill="#b45309" text-anchor="start" font-weight="700">✨ 童话作家雅各布·格林发现的“整排骨牌推移”：</text>
+<text x="440" y="329" font-size="9.9" fill="#1e293b" text-anchor="start">• 凡是拉丁/希腊保留 *p, *t, *k 的词，进日耳曼语全变 f, th, h：</text>
+<text x="440" y="347" font-size="9.8" fill="#9f1239" text-anchor="start" font-weight="700" class="mono">  pater→father, piscis→fish, tres→three, noct-→night！</text>
+<text x="440" y="366" font-size="9.9" fill="#1e293b" text-anchor="start">• 凡是原本读 *d, *g 的词，全填补空缺变成清音 t, k：</text>
+<text x="440" y="384" font-size="9.8" fill="#18794e" text-anchor="start" font-weight="700" class="mono">  拉丁 decem(十)→ten，duo(二)→two，dent-(牙)→tooth！</text>
+<text x="440" y="405" font-size="10.2" fill="#6d28d9" text-anchor="start" font-weight="700">🎯 1875 维尔纳定律连“唯一破绽”都破案了：</text>
+<text x="440" y="423" font-size="9.8" fill="#1e293b" text-anchor="start">• 为什么 *bʰréh₂tēr 变成清音 brother(þ)，而 *ph₂tḗr 在古日耳</text>
+<text x="440" y="440" font-size="9.8" fill="#1e293b" text-anchor="start">  曼语却浊化成 *faðēr？因为原始印欧语重音一个在 t 前、一个</text>
+<text x="440" y="457" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">  在 t 后！证明“音变铁律无例外”，历史语言学晋升硬核科学！</text>
+</svg>

@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="554" viewBox="0 0 760 554" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">汽车直行100米时的俯视几何视差光路与右侧车窗五层景物角位移阶梯单次动画图解</title>
+<desc id="desc">上图对比20米近树视线偏转136.4度与38.4万公里月球视线仅偏0.054角秒的平行光几何；下图按真实角位移比例展示车窗视野内护栏、近树、高楼、远山与月亮的后退幅度，支持减少动态效果。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <clipPath id="mfc-win-clip"><rect x="36.0" y="348.0" width="440.0" height="174.0" rx="8"/></clipPath>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes mfcCarTop {
+    0% { transform: translateX(-260px); }
+    100% { transform: translateX(0px); }
+  }
+  @keyframes mfcMtnSlide {
+    0% { transform: translateX(4.6px); }
+    100% { transform: translateX(0px); }
+  }
+  @keyframes mfcBldgSlide {
+    0% { transform: translateX(113.3px); }
+    100% { transform: translateX(0px); }
+  }
+  @keyframes mfcTreeSweep {
+    0% { transform: translateX(380px); }
+    100% { transform: translateX(0px); }
+  }
+  .mfc-car-top { animation: mfcCarTop 7.2s linear 1 forwards; }
+  .mfc-mtn { animation: mfcMtnSlide 7.2s linear 1 forwards; }
+  .mfc-bldg { animation: mfcBldgSlide 7.2s linear 1 forwards; }
+  .mfc-tree { animation: mfcTreeSweep 7.2s cubic-bezier(0.22, 0.68, 0.35, 0.96) 1 forwards; }
+  @media (prefers-reduced-motion: reduce) {
+    .mfc-car-top, .mfc-mtn, .mfc-bldg, .mfc-tree {
+      animation: none !important;
+      transform: none !important;
+    }
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="553" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">一、车窗外的速度阶梯：近树狂退、远山慢移、月亮“钉”在原处</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">汽车 100 km/h 直行 3.6 秒前进 100 米（单次动画按真实时间放慢 2 倍为 7.2 秒，停在终态）</text>
+<rect x="20" y="64" width="720" height="228" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="74.0" width="548" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="308.0" y="89.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">A · 俯视几何光路（纵深压缩示意）：近处视线大角度偏转 vs 38.4 万公里平行月光</text>
+<text x="726" y="90" font-size="11.5" fill="#64748b" text-anchor="end">注：纵深非等比</text>
+<rect x="196" y="244" width="360" height="28" rx="5" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1"/>
+<line x1="204" y1="258" x2="548" y2="258" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="8 6"/>
+<rect x="206" y="106" width="340" height="24" rx="12" fill="#fefce8" stroke="#fde047" stroke-width="1"/>
+<circle cx="376" cy="118" r="8.5" fill="#eab308" stroke="#b45309" stroke-width="1"/>
+<text x="392" y="122" font-size="11.5" fill="#b45309" text-anchor="start" font-weight="700">月球 (38.4万km)</text>
+<line x1="246.0" y1="130" x2="246.0" y2="242" stroke="#b45309" stroke-width="1.8" stroke-dasharray="5 3"/>
+<line x1="506.0" y1="130" x2="506.0" y2="242" stroke="#b45309" stroke-width="1.8" stroke-dasharray="5 3"/>
+<polygon points="358,170 376,148 394,170" fill="#cbd5e1" stroke="#475569" stroke-width="1.2"/>
+<line x1="246.0" y1="246" x2="376" y2="166" stroke="#0f766e" stroke-width="1.3" stroke-dasharray="3 3"/>
+<line x1="506.0" y1="246" x2="376" y2="166" stroke="#0f766e" stroke-width="1.3" stroke-dasharray="3 3"/>
+<line x1="246.0" y1="246" x2="376" y2="208" stroke="#18794e" stroke-width="2.0"/>
+<line x1="506.0" y1="246" x2="376" y2="208" stroke="#18794e" stroke-width="2.0"/>
+<circle cx="376" cy="204" r="9" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
+<text x="376" y="208" font-size="11" fill="#18794e" text-anchor="middle" font-weight="700">树</text>
+<rect x="228.0" y="249.0" width="36" height="18" rx="5" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.4" stroke-dasharray="3 2"/>
+<text x="246.0" y="262.0" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">A(0s)</text>
+<g class="mfc-car-top"><rect x="486.0" y="248.5" width="40" height="19" rx="5" fill="#1d6fa5" stroke="#0f172a" stroke-width="1.2"/><text x="506.0" y="262.0" font-size="10.5" fill="#ffffff" text-anchor="middle" font-weight="700">B(3.6s)</text></g>
+<line x1="246.0" y1="281" x2="314" y2="281" stroke="#1d6fa5" stroke-width="1.5"/>
+<line x1="438" y1="281" x2="506.0" y2="281" stroke="#1d6fa5" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+<text x="376" y="285" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">直行基线 L = 100 m</text>
+<rect x="34" y="114" width="152" height="156" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="44" y="136" font-size="12" fill="#18794e" text-anchor="start" font-weight="700">近树 (D = 20 m)</text>
+<text x="44" y="157" font-size="11.5" fill="#1e293b" text-anchor="start">A 处：右前方 +68.2°</text>
+<text x="44" y="177" font-size="11.5" fill="#1e293b" text-anchor="start">B 处：右后方 −68.2°</text>
+<text x="44" y="199" font-size="12" fill="#18794e" text-anchor="start" font-weight="700">总转角 Δθ = 136.4°</text>
+<text x="44" y="221" font-size="11.5" fill="#1e293b" text-anchor="start">视线猛烈向后甩，</text>
+<text x="44" y="240" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">树影瞬间飞掠车窗！</text>
+<rect x="564" y="114" width="162" height="156" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="1"/>
+<text x="574" y="136" font-size="12" fill="#b45309" text-anchor="start" font-weight="700">月球 (38.4万km)</text>
+<text x="574" y="157" font-size="11.5" fill="#1e293b" text-anchor="start">两条月光夹角仅：</text>
+<text x="574" y="178" font-size="12" fill="#b91c1c" text-anchor="start" font-weight="700">Δθ = 0.054″ (角秒)</text>
+<text x="574" y="200" font-size="11.5" fill="#1e293b" text-anchor="start">≈ 0.000015° ≈ 平行光</text>
+<text x="574" y="222" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">远山 (5km)：偏 1.15°</text>
+<text x="574" y="242" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">月亮方向几乎零变化！</text>
+<rect x="20" y="304" width="720" height="236" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="314.0" width="516" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="292.0" y="329.0" font-size="12" fill="#c25014" text-anchor="middle" font-weight="600">B · 乘客右侧车窗视野（横向约 110°）：按真实角位移比例映射 3.6 秒横移</text>
+<rect x="34.0" y="346.0" width="444.0" height="178.0" rx="10" fill="#1e293b" stroke="#334155" stroke-width="3"/>
+<g clip-path="url(#mfc-win-clip)">
+<rect x="34.0" y="484.0" width="444.0" height="40" fill="#0f172a"/>
+<circle cx="390" cy="384" r="19" fill="#fef08a" fill-opacity="0.18"/>
+<circle cx="390" cy="384" r="12.5" fill="#fde047" stroke="#facc15" stroke-width="1.2"/>
+<text x="366" y="380" font-size="11.5" fill="#fef08a" text-anchor="end" font-weight="700">月亮：位移 0.054″</text>
+<text x="366" y="397" font-size="11.5" fill="#fde68a" text-anchor="end">(钉在窗上不动！)</text>
+<polygon points="74,484 128,448 184,484" fill="none" stroke="#64748b" stroke-width="1" stroke-dasharray="3 2"/>
+<g class="mfc-mtn"><polygon points="69.4,484 123.4,448 179.4,484" fill="#475569" stroke="#94a3b8" stroke-width="1.2"/></g>
+<text x="126" y="440" font-size="11.5" fill="#cbd5e1" text-anchor="middle">远山：仅退 1.15°</text>
+<rect x="344.0" y="432" width="32" height="52" rx="2" fill="none" stroke="#93c5fd" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="360.0" y="425" font-size="10.5" fill="#93c5fd" text-anchor="middle">0s</text>
+<g class="mfc-bldg"><rect x="230.7" y="432" width="32" height="52" rx="2" fill="#3b82f6" stroke="#bfdbfe" stroke-width="1.2"/></g>
+<line x1="341.0" y1="458" x2="266.7" y2="458" stroke="#93c5fd" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arr-blue)"/>
+<text x="303.3" y="451" font-size="11.5" fill="#bae6fd" text-anchor="middle" font-weight="700">楼房退 28.1°</text>
+<circle cx="446" cy="466" r="13" fill="none" stroke="#86efac" stroke-width="1.2" stroke-dasharray="3 2"/>
+<g class="mfc-tree"><rect x="64" y="474" width="6" height="16" fill="#92400e"/><circle cx="67" cy="464" r="14" fill="#16a34a" stroke="#bbf7d0" stroke-width="1.2"/></g>
+<line x1="428" y1="504" x2="90" y2="504" stroke="#86efac" stroke-width="1.6" stroke-dasharray="5 3"/>
+<polygon points="84,504 93,499.5 93,508.5" fill="#86efac"/>
+<text x="258" y="518" font-size="11.5" fill="#bbf7d0" text-anchor="middle" font-weight="700">近树 (20m) 飞掠 136.4° · 护栏 (2.5m) 闪掠 174.3°</text>
+</g>
+<rect x="490" y="346" width="236" height="178" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="502" y="367" font-size="11.5" fill="#64748b" text-anchor="start" font-weight="700">目标 (距离 D)</text>
+<text x="714" y="367" font-size="11.5" fill="#64748b" text-anchor="end" font-weight="700">100m 视角差</text>
+<line x1="500" y1="375" x2="716" y2="375" stroke="#cbd5e1" stroke-width="1"/>
+<text x="502" y="396" font-size="11.5" fill="#1e293b" text-anchor="start">护栏 (2.5 m)</text>
+<text x="714" y="396" font-size="11.5" fill="#475569" text-anchor="end" font-weight="700">174.3° 闪掠</text>
+<text x="502" y="421" font-size="11.5" fill="#1e293b" text-anchor="start">近树 (20 m)</text>
+<text x="714" y="421" font-size="11.5" fill="#18794e" text-anchor="end" font-weight="700">136.4° 飞退</text>
+<text x="502" y="446" font-size="11.5" fill="#1e293b" text-anchor="start">高楼 (200 m)</text>
+<text x="714" y="446" font-size="11.5" fill="#1d6fa5" text-anchor="end" font-weight="700">28.1° 后移</text>
+<text x="502" y="471" font-size="11.5" fill="#1e293b" text-anchor="start">远山 (5 km)</text>
+<text x="714" y="471" font-size="11.5" fill="#0f766e" text-anchor="end" font-weight="700">1.15° 慢滑</text>
+<text x="502" y="496" font-size="11.5" fill="#1e293b" text-anchor="start" font-weight="600">月球 (38.4万km)</text>
+<text x="714" y="496" font-size="11.5" fill="#b91c1c" text-anchor="end" font-weight="700">0.054″ 钉住!</text>
+</svg>

@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="552" viewBox="0 0 760 552" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">RNA聚合酶II转录泡模板链与编码链配对关系及真核前体mRNA加帽加尾剪接与可变剪接图解</title>
+<desc id="desc">上图展示RNA聚合酶II解开14至17碱基对转录泡，以3&#x27;→5&#x27;模板链合成5&#x27;→3&#x27;前体mRNA（序列与编码链将T换U一致）；左下解析5&#x27;端m7G帽、3&#x27;端约200个A尾巴与剪接体单碱基精度切除内含子；右下展示可变剪接如何按组织需求选拼外显子，让约2万个人类编码基因产生超10万种蛋白质。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="551" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">二、转录与剪接魔术：RNA 聚合酶怎样抄写基因？2 万个基因凭什么造出 10 万种蛋白？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">上：RNA 聚合酶 II 免引物开泡抄写（模板链 vs 编码链） · 下：加帽加尾、剪除九成内含子与可变剪接</text>
+<rect x="20" y="66" width="720" height="214" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="78.0" width="646" height="24" rx="12.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="355.0" y="94.3" font-size="11.8" fill="#1d6fa5" text-anchor="middle" font-weight="600">A · 转录现场：RNA 聚合酶 II 局部拉开 ~14–17 bp 转录泡（无需引物，每秒抄 ~40–50 个碱基）</text>
+<rect x="120" y="112" width="480" height="156" rx="22" fill="#eff6ff" stroke="#1d6fa5" stroke-width="1.6"/>
+<text x="360" y="132" font-size="11.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">RNA 聚合酶 II 复合物（前方解旋 DNA，后方自动拉回双螺旋）</text>
+<line x1="32.0" y1="162.0" x2="120.0" y2="162.0" stroke="#475569" stroke-width="3.0"/>
+<line x1="32.0" y1="200.0" x2="120.0" y2="200.0" stroke="#1d6fa5" stroke-width="3.0"/>
+<text x="76" y="150" font-size="11.5" fill="#64748b" text-anchor="middle">已复旋双链</text>
+<line x1="600.0" y1="162.0" x2="728.0" y2="162.0" stroke="#475569" stroke-width="3.0"/>
+<line x1="600.0" y1="200.0" x2="728.0" y2="200.0" stroke="#1d6fa5" stroke-width="3.0"/>
+<text x="664" y="150" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">待解旋下游 →</text>
+<text x="664" y="222" font-size="11.5" fill="#64748b" text-anchor="middle">认 TATA 盒启动</text>
+<rect x="134" y="142" width="452" height="116" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="150" y="164" font-size="11.5" fill="#475569" text-anchor="start" font-weight="700">编码链(非模板) 5&#x27;</text>
+<text x="302" y="164" font-size="12.2" fill="#475569" text-anchor="start" font-weight="700" class="mono">A T G  G C T  T A C  G A A</text>
+<text x="544" y="164" font-size="11.5" fill="#475569" text-anchor="start" font-weight="700">3&#x27;</text>
+<text x="150" y="195" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">模板链(被读取) 3&#x27;</text>
+<text x="302" y="195" font-size="12.2" fill="#1d6fa5" text-anchor="start" font-weight="700" class="mono">T A C  C G A  A T G  C T T</text>
+<text x="544" y="195" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">5&#x27;</text>
+<line x1="302.0" y1="203.0" x2="520.0" y2="203.0" stroke="#c25014" stroke-width="1.2" stroke-dasharray="3 3"/>
+<text x="150" y="226" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">新生前体 mRNA  5&#x27;</text>
+<text x="302" y="226" font-size="12.2" fill="#c25014" text-anchor="start" font-weight="700" class="mono">A U G  G C U  U A C  G A A</text>
+<text x="530" y="226" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">→3&#x27;</text>
+<text x="360" y="249" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">顿悟：mRNA 与模板链互补配对，恰好把编码链的 T 全换成了 U！</text>
+<rect x="20" y="292" width="358" height="248" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="304.0" width="334" height="24" rx="12.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="199.0" y="320.3" font-size="11.8" fill="#c25014" text-anchor="middle" font-weight="600">B · 出核精装修：安全帽 + 倒计时尾 + 剪内含子</text>
+<text x="32" y="348" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">刚抄完的毛坯前体 pre-mRNA（外显子被大段内含子隔断）：</text>
+<rect x="32" y="360" width="52" height="26" rx="5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="58" y="377" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">5&#x27;帽</text>
+<rect x="86" y="360" width="52" height="26" rx="4" fill="#e7f6ee" stroke="#18794e" stroke-width="1.3"/>
+<text x="112" y="377" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">外显1</text>
+<rect x="140" y="363" width="62" height="20" rx="3" fill="#fef2f2" stroke="#dc2626" stroke-width="1.1"/>
+<text x="171" y="377" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="600">内含子</text>
+<rect x="204" y="360" width="52" height="26" rx="4" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.3"/>
+<text x="230" y="377" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">外显2</text>
+<rect x="258" y="363" width="52" height="20" rx="3" fill="#fef2f2" stroke="#dc2626" stroke-width="1.1"/>
+<text x="284" y="377" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="600">内含子</text>
+<rect x="312" y="360" width="54" height="26" rx="5" fill="#fffbeb" stroke="#b45309" stroke-width="1.2"/>
+<text x="339" y="377" font-size="11.5" fill="#b45309" text-anchor="middle" font-weight="700">PolyA</text>
+<text x="32" y="412" font-size="11.5" fill="#1e293b" text-anchor="start">• 5&#x27; 端反接 m⁷G 安全帽：防核酸外切酶啃咬，做核糖体路标；</text>
+<text x="32" y="434" font-size="11.5" fill="#1e293b" text-anchor="start">• 3&#x27; 端挂 ~200 个 A 尾巴：护航出核并充当寿命倒计时沙漏；</text>
+<text x="32" y="456" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">• 剪接体 (snRNP) 认准 GU…AG 边界把内含子拧成套索剪除：</text>
+<text x="32" y="478" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">  人类编码外显子仅占全基因组 ~1.5%！哪怕剪偏 1 个碱基，</text>
+<text x="32" y="500" font-size="11.5" fill="#1e293b" text-anchor="start">  下游全部移码报废，因此必须做到“单核苷酸零误差”缝合。</text>
+<rect x="390" y="292" width="350" height="248" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="402.0" y="304.0" width="326" height="24" rx="12.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="565.0" y="320.3" font-size="11.8" fill="#6d28d9" text-anchor="middle" font-weight="600">C · 可变剪接：1 份基因草稿，拼出多种专属蛋白</text>
+<text x="402" y="348" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">同一基因含 4 段外显子（保持 5&#x27;→3&#x27; 先后顺序选拼）：</text>
+<rect x="414" y="360" width="56" height="26" rx="5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.3"/>
+<text x="442" y="377" font-size="11.8" fill="#18794e" text-anchor="middle" font-weight="700">E1</text>
+<line x1="470.0" y1="373.0" x2="492.0" y2="373.0" stroke="#475569" stroke-width="1.4" stroke-dasharray="3 2"/>
+<rect x="492" y="360" width="56" height="26" rx="5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.3"/>
+<text x="520" y="377" font-size="11.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">E2</text>
+<line x1="548.0" y1="373.0" x2="570.0" y2="373.0" stroke="#475569" stroke-width="1.4" stroke-dasharray="3 2"/>
+<rect x="570" y="360" width="56" height="26" rx="5" fill="#fef1e8" stroke="#c25014" stroke-width="1.3"/>
+<text x="598" y="377" font-size="11.8" fill="#c25014" text-anchor="middle" font-weight="700">E3</text>
+<line x1="626.0" y1="373.0" x2="648.0" y2="373.0" stroke="#475569" stroke-width="1.4" stroke-dasharray="3 2"/>
+<rect x="648" y="360" width="56" height="26" rx="5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.3"/>
+<text x="676" y="377" font-size="11.8" fill="#6d28d9" text-anchor="middle" font-weight="700">E4</text>
+<rect x="402" y="400" width="326" height="40" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1.1"/>
+<text x="414" y="425" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">骨骼肌路线：拼 [E1–E2–E4] → 收缩快肌型蛋白 A</text>
+<rect x="402" y="448" width="326" height="40" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="414" y="473" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">平滑肌路线：拼 [E1–E3–E4] → 持久慢肌型蛋白 B</text>
+<text x="402" y="512" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">破案：人类仅 ~20,000 个蛋白编码基因，靠 70%–95% 基因</text>
+<text x="402" y="531" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">可变剪接，轻松组合出 &gt;100,000 种结构功能各异的蛋白质！</text>
+</svg>

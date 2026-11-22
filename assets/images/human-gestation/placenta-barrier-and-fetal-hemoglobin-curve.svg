@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="496" viewBox="0 0 760 496" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">胎盘绒毛膜母婴血液隔离屏障、一静两动脐带与胎儿血红蛋白HbF氧解离曲线图解</title>
+<desc id="desc">左栏展示母体螺旋动脉向绒毛间隙注血、胎儿绒毛毛细血管隔膜吸收氧气营养且母婴红细胞与T细胞互不混流，以及1条富氧脐静脉与2条缺氧脐动脉；右栏用Hill方程实算对比成人HbA(P50=26.8 mmHg)与胎儿HbF(P50=19.0 mmHg)氧解离曲线，展示在30 mmHg胎盘低氧压区饱和度由约58%跃升至77%的跨膜夺氧机制。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="495" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">母婴血液终身不混流，氧气怎么抢过来？绒毛膜隔墙集市与胎儿血红蛋白外挂</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左看胎盘“珊瑚树泡血池”隔膜交换与一静两动脐带；右看实算胎儿 HbF 左移曲线如何在低氧压下跨膜夺氧</text>
+<rect x="16" y="66" width="370" height="414" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="30" y="88" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">胎盘绒毛间隙：隔着细胞薄墙交换，红细胞绝不过界</text>
+<rect x="30" y="104" width="76" height="222" rx="8" fill="#fce7f3" stroke="#db2777" stroke-width="1.5"/>
+<text x="68" y="124" font-size="8.4" fill="#9d174d" text-anchor="middle" font-weight="700">母体蜕膜层</text>
+<path d="M 48 152 C 70 146, 84 160, 114 156" fill="none" stroke="#dc2626" stroke-width="3.8" marker-end="url(#arr-orange)"/>
+<text x="68" y="176" font-size="8.1" fill="#b91c1c" text-anchor="middle" font-weight="700">螺旋动脉喷入</text>
+<text x="68" y="191" font-size="8.0" fill="#b91c1c" text-anchor="middle">PO2≈35–50</text>
+<path d="M 114 266 L 54 266" fill="none" stroke="#1d6fa5" stroke-width="3.4" marker-end="url(#arr-blue)"/>
+<text x="68" y="288" font-size="8.1" fill="#1d6fa5" text-anchor="middle" font-weight="700">子宫静脉回收</text>
+<text x="68" y="303" font-size="8.0" fill="#64748b" text-anchor="middle">胎儿代谢废物</text>
+<rect x="108" y="104" width="150" height="222" rx="10" fill="#fff1f2" stroke="#fda4af" stroke-width="1.5"/>
+<text x="183" y="122" font-size="8.6" fill="#be123c" text-anchor="middle" font-weight="700">绒毛间隙（母血池）</text>
+<rect x="252" y="104" width="18" height="222" rx="4" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.4"/>
+<path d="M 252 145 L 164 145 A 21 21 0 0 0 164 187 L 252 187" fill="#ffffff" stroke="#6d28d9" stroke-width="2.8"/>
+<path d="M 252 158 L 170 158" stroke="#1d6fa5" stroke-width="2.5"/>
+<path d="M 170 158 A 8 8 0 0 0 170 174" fill="none" stroke="#9333ea" stroke-width="2.5"/>
+<path d="M 170 174 L 252 174" stroke="#dc2626" stroke-width="2.6"/>
+<path d="M 252 233 L 164 233 A 21 21 0 0 0 164 275 L 252 275" fill="#ffffff" stroke="#6d28d9" stroke-width="2.8"/>
+<path d="M 252 246 L 170 246" stroke="#1d6fa5" stroke-width="2.5"/>
+<path d="M 170 246 A 8 8 0 0 0 170 262" fill="none" stroke="#9333ea" stroke-width="2.5"/>
+<path d="M 170 262 L 252 262" stroke="#dc2626" stroke-width="2.6"/>
+<text x="198" y="214" font-size="8.2" fill="#6d28d9" text-anchor="middle" font-weight="700">紫边=绒毛膜细胞屏障</text>
+<rect x="272" y="154" width="100" height="122" rx="14" fill="#ecfeff" stroke="#0891b2" stroke-width="1.6"/>
+<text x="322" y="173" font-size="8.2" fill="#0e7490" text-anchor="middle" font-weight="700">脐带(华通氏胶)</text>
+<path d="M 278 202 L 364 202" stroke="#dc2626" stroke-width="4.6" marker-end="url(#arr-orange)"/>
+<text x="322" y="193" font-size="8.0" fill="#b91c1c" text-anchor="middle" font-weight="700">1条脐静脉(富氧!)</text>
+<path d="M 364 236 L 280 236" stroke="#1d6fa5" stroke-width="3.0" marker-end="url(#arr-blue)"/>
+<path d="M 364 250 L 280 250" stroke="#1d6fa5" stroke-width="3.0" marker-end="url(#arr-blue)"/>
+<text x="322" y="266" font-size="8.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">2条脐动脉(缺氧)</text>
+<rect x="30" y="338" width="342" height="128" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<text x="40" y="357" font-size="8.4" fill="#18794e" text-anchor="start" font-weight="700">✅ 获准过墙：O2/CO2(扩散)、葡萄糖(易化)、氨基酸/铁/钙</text>
+<text x="40" y="374" font-size="8.3" fill="#1e293b" text-anchor="start">   (主动转运!)、母体 IgG 抗体(赠予新生儿半年被动免疫力)</text>
+<text x="40" y="394" font-size="8.4" fill="#1d6fa5" text-anchor="start" font-weight="700">🛑 严禁过墙：母婴红细胞与母体杀伤性 T 细胞（即使母 A 型</text>
+<text x="40" y="411" font-size="8.3" fill="#1e293b" text-anchor="start">   子 B 型也绝不凝集，更阻止母体免疫系统攻击胎儿！）</text>
+<text x="40" y="431" font-size="8.3" fill="#c25014" text-anchor="start" font-weight="700">⚠️ 危险漏网：酒精、尼古丁、部分脂溶性药物与风疹病毒可穿</text>
+<text x="40" y="448" font-size="8.3" fill="#1e293b" text-anchor="start">   透屏障致畸——胎盘是分子筛关卡，并非绝对防弹衣。</text>
+<rect x="400" y="66" width="344" height="414" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="414" y="88" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">实算氧解离曲线：胎儿 HbF 凭什么跨膜“虎口夺氧”？</text>
+<text x="446" y="108" font-size="8.4" fill="#64748b" text-anchor="start" font-weight="600">血氧饱和度 SO2 (%)</text>
+<rect x="503.2" y="120.0" width="60.7" height="176.0" fill="#fef3c7" opacity="0.72"/>
+<text x="533.6" y="134.0" font-size="8.1" fill="#b45309" text-anchor="middle" font-weight="700">胎盘工作区</text>
+<line x1="448.0" y1="296.0" x2="724.0" y2="296.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="442.0" y="299.0" font-size="8.1" fill="#64748b" text-anchor="end">0%</text>
+<line x1="448.0" y1="252.0" x2="724.0" y2="252.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="442.0" y="255.0" font-size="8.1" fill="#64748b" text-anchor="end">25%</text>
+<line x1="448.0" y1="208.0" x2="724.0" y2="208.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="442.0" y="211.0" font-size="8.1" fill="#64748b" text-anchor="end">50%</text>
+<line x1="448.0" y1="164.0" x2="724.0" y2="164.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="442.0" y="167.0" font-size="8.1" fill="#64748b" text-anchor="end">75%</text>
+<line x1="448.0" y1="120.0" x2="724.0" y2="120.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="442.0" y="123.0" font-size="8.1" fill="#64748b" text-anchor="end">100%</text>
+<line x1="448.0" y1="120.0" x2="448.0" y2="296.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="448.0" y="310.0" font-size="8.1" fill="#64748b" text-anchor="middle">0</text>
+<line x1="503.2" y1="120.0" x2="503.2" y2="296.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="503.2" y="310.0" font-size="8.1" fill="#64748b" text-anchor="middle">20</text>
+<line x1="558.4" y1="120.0" x2="558.4" y2="296.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="558.4" y="310.0" font-size="8.1" fill="#64748b" text-anchor="middle">40</text>
+<line x1="613.6" y1="120.0" x2="613.6" y2="296.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="613.6" y="310.0" font-size="8.1" fill="#64748b" text-anchor="middle">60</text>
+<line x1="668.8" y1="120.0" x2="668.8" y2="296.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="668.8" y="310.0" font-size="8.1" fill="#64748b" text-anchor="middle">80</text>
+<line x1="724.0" y1="120.0" x2="724.0" y2="296.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="724.0" y="310.0" font-size="8.1" fill="#64748b" text-anchor="middle">100</text>
+<line x1="448.0" y1="296.0" x2="724.0" y2="296.0" stroke="#0f172a" stroke-width="1.3"/>
+<line x1="448.0" y1="120.0" x2="448.0" y2="296.0" stroke="#0f172a" stroke-width="1.3"/>
+<text x="586.0" y="325.0" font-size="8.5" fill="#0f172a" text-anchor="middle" font-weight="700">氧分压 PO2 (mmHg)</text>
+<polyline points="448.0,296.0 453.5,295.8 459.0,295.0 464.6,293.0 470.1,289.5 475.6,284.5 481.1,278.0 486.6,270.0 492.2,261.0 497.7,251.2 503.2,241.1 508.7,230.9 514.2,221.0 519.8,211.6 525.3,202.8 530.8,194.7 536.3,187.3 541.8,180.7 547.4,174.7 552.9,169.3 558.4,164.6 563.9,160.3 569.4,156.6 575.0,153.2 580.5,150.2 586.0,147.6 591.5,145.2 597.0,143.1 602.6,141.2 608.1,139.5 613.6,137.9 619.1,136.6 624.6,135.3 630.2,134.2 635.7,133.2 641.2,132.3 646.7,131.4 652.2,130.7 657.8,130.0 663.3,129.3 668.8,128.7 674.3,128.2 679.8,127.7 685.4,127.2 690.9,126.8 696.4,126.4 701.9,126.1 707.4,125.7 713.0,125.4 718.5,125.2 724.0,124.9" fill="none" stroke="#1d6fa5" stroke-width="2.6" stroke-dasharray="5 3"/>
+<polyline points="448.0,296.0 453.5,295.6 459.0,293.4 464.6,288.5 470.1,280.5 475.6,269.6 481.1,256.5 486.6,242.4 492.2,228.1 497.7,214.4 503.2,201.9 508.7,190.8 514.2,181.1 519.8,172.8 525.3,165.7 530.8,159.7 536.3,154.6 541.8,150.3 547.4,146.6 552.9,143.5 558.4,140.8 563.9,138.5 569.4,136.5 575.0,134.8 580.5,133.3 586.0,132.0 591.5,130.9 597.0,129.9 602.6,129.0 608.1,128.2 613.6,127.6 619.1,126.9 624.6,126.4 630.2,125.9 635.7,125.5 641.2,125.1 646.7,124.7 652.2,124.4 657.8,124.1 663.3,123.8 668.8,123.6 674.3,123.3 679.8,123.1 685.4,122.9 690.9,122.8 696.4,122.6 701.9,122.5 707.4,122.3 713.0,122.2 718.5,122.1 724.0,122.0" fill="none" stroke="#dc2626" stroke-width="3.0"/>
+<line x1="530.8" y1="194.7" x2="530.8" y2="163.7" stroke="#c25014" stroke-width="2.0" marker-end="url(#arr-orange)"/>
+<circle cx="530.8" cy="194.7" r="3.8" fill="#1d6fa5"/>
+<circle cx="530.8" cy="159.7" r="4.2" fill="#dc2626"/>
+<rect x="570" y="212" width="148" height="76" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<line x1="578" y1="229" x2="596" y2="229" stroke="#dc2626" stroke-width="3"/>
+<text x="602" y="232" font-size="8.2" fill="#dc2626" text-anchor="start" font-weight="700">胎儿 HbF (P50≈19)</text>
+<line x1="578" y1="249" x2="596" y2="249" stroke="#1d6fa5" stroke-width="2.6" stroke-dasharray="4 2"/>
+<text x="602" y="252" font-size="8.2" fill="#1d6fa5" text-anchor="start" font-weight="700">母体 HbA (P50≈27)</text>
+<text x="578" y="272" font-size="8.2" fill="#c25014" text-anchor="start" font-weight="700">30 mmHg处: 58%→77%!</text>
+<rect x="414" y="338" width="316" height="128" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="424" y="357" font-size="8.9" fill="#c25014" text-anchor="start" font-weight="700">🔑 抢氧密码：γ 亚基换装 + “双重玻尔效应”</text>
+<text x="424" y="375" font-size="8.3" fill="#1e293b" text-anchor="start">1. 绒毛血池 PO2 仅 35–50 mmHg（远低于肺泡 100），胎儿</text>
+<text x="424" y="392" font-size="8.3" fill="#1e293b" text-anchor="start">   把成人 β 链换成 γ 链 (α2γ2)，不再紧绑促卸氧分子</text>
+<text x="424" y="409" font-size="8.3" fill="#0f172a" text-anchor="start" font-weight="700">   2,3-BPG，氧亲和力暴涨，曲线左移把母血里的氧吸过来！</text>
+<text x="424" y="428" font-size="8.3" fill="#1e293b" text-anchor="start">2. 胎儿 CO2 跨膜酸化母血促母血松手放氧，同时胎血变微碱</text>
+<text x="424" y="445" font-size="8.3" fill="#1e293b" text-anchor="start">   把氧抓得更牢——一推一拉，同氧压净赚近 20% 饱和度！</text>
+</svg>

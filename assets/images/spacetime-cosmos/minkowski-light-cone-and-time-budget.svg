@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="536" viewBox="0 0 760 536" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">闵可夫斯基四维光锥世界线动画与时间膨胀圆弧及大气μ子寿命实测图解</title>
+<desc id="desc">左图以单次动画展示静止观测者、0.6c飞船与光子在四维光锥中的世界线及类空因果绝缘区；右图精确绘制dτ/dt四分之一圆弧并给出1963年宇宙线μ子钟慢8.8倍穿透大气层的判决实验。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes wlDraw {
+    0% { stroke-dashoffset: 240; opacity: 0.25; }
+    100% { stroke-dashoffset: 0; opacity: 1; }
+  }
+  @keyframes badgeFade {
+    0%, 45% { opacity: 0.15; }
+    100% { opacity: 1; }
+  }
+  .wl-rest { stroke-dasharray: 240; animation: wlDraw 1.5s ease-out 0.15s 1 both; }
+  .wl-fast { stroke-dasharray: 240; animation: wlDraw 1.5s ease-out 0.45s 1 both; }
+  .wl-phot { stroke-dasharray: 240; animation: wlDraw 1.5s ease-out 0.75s 1 both; }
+  .wl-tag { animation: badgeFade 1.8s ease-out 0.2s 1 both; }
+  @media (prefers-reduced-motion: reduce) {
+    .wl-rest, .wl-fast, .wl-phot, .wl-tag {
+      animation: none !important;
+      stroke-dashoffset: 0 !important;
+      opacity: 1 !important;
+    }
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="535" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">二、闵可夫斯基四维光锥与“总速度预算”：跑得快为什么时间变慢？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">单次动画演示三条世界线（支持减少动态效果）：空间与时间单独看只是影子，唯有 ds² = c²dt² − dx² 人人相等</text>
+<rect x="20" y="64" width="388" height="456" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="74.0" width="346" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="207.0" y="89.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">A · 四维时空光锥与因果边界（1908 闵可夫斯基）</text>
+<polygon points="214.0,294.0 62.0,142.0 366.0,142.0" fill="#eaf4fb" stroke="none"/>
+<polygon points="214.0,294.0 92.0,416.0 336.0,416.0" fill="#f1f5f9" stroke="none"/>
+<ellipse cx="214.0" cy="142.0" rx="152.0" ry="16" fill="#dbeafe" fill-opacity="0.55" stroke="#1d6fa5" stroke-width="1" stroke-dasharray="4 3"/>
+<ellipse cx="214.0" cy="416.0" rx="122.0" ry="13" fill="#e2e8f0" fill-opacity="0.55" stroke="#475569" stroke-width="1" stroke-dasharray="4 3"/>
+<line x1="42" y1="294.0" x2="386" y2="294.0" stroke="#475569" stroke-width="1.3" marker-end="url(#arr-muted)"/>
+<line x1="214.0" y1="432" x2="214.0" y2="114" stroke="#475569" stroke-width="1.3" marker-end="url(#arr-muted)"/>
+<text x="384" y="310.0" font-size="11" fill="#475569" text-anchor="end" font-weight="700">空间 x</text>
+<text x="222.0" y="122" font-size="11" fill="#475569" text-anchor="start" font-weight="700">时间 ct</text>
+<line x1="92.0" y1="416.0" x2="366.0" y2="142.0" stroke="#b45309" stroke-width="2" class="wl-phot"/>
+<line x1="336.0" y1="416.0" x2="62.0" y2="142.0" stroke="#b45309" stroke-width="1.6" stroke-dasharray="5 3"/>
+<line x1="214.0" y1="294.0" x2="214.0" y2="154.0" stroke="#18794e" stroke-width="2.8" marker-end="url(#arr-green)" class="wl-rest"/>
+<line x1="214.0" y1="294.0" x2="298.0" y2="154.0" stroke="#c25014" stroke-width="2.8" marker-end="url(#arr-orange)" class="wl-fast"/>
+<circle cx="214.0" cy="294.0" r="5" fill="#0f172a"/>
+<text x="208.0" y="208.0" font-size="11" fill="#18794e" text-anchor="end" font-weight="700" class="halo wl-tag">① 静止者 A (v=0)</text>
+<text x="208.0" y="224.0" font-size="10.5" fill="#18794e" text-anchor="end" class="halo wl-tag">时间全速流逝</text>
+<text x="272.0" y="192.0" font-size="11" fill="#c25014" text-anchor="start" font-weight="700" class="halo wl-tag">② 飞船 B (0.6c)</text>
+<text x="272.0" y="208.0" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="600" class="halo wl-tag">dτ = 0.8 dt</text>
+<text x="322.0" y="238.0" font-size="11" fill="#b45309" text-anchor="start" font-weight="700" class="halo wl-tag">③ 光线 (v=c)</text>
+<text x="322.0" y="254.0" font-size="10.5" fill="#b45309" text-anchor="start" class="halo wl-tag">ds² = 0, dτ = 0</text>
+<text x="214.0" y="160.0" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">绝对未来 (ds² &gt; 0 · 因果可达)</text>
+<text x="214.0" y="390.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="700" class="halo">绝对过去 (曾发信号影响此刻 O)</text>
+<text x="88" y="276.0" font-size="11" fill="#b91c1c" text-anchor="middle" font-weight="700">类空区</text>
+<text x="88" y="291.0" font-size="10.5" fill="#b91c1c" text-anchor="middle">ds² &lt; 0</text>
+<text x="88" y="307.0" font-size="10.5" fill="#64748b" text-anchor="middle">因果绝缘</text>
+<text x="214" y="310.0" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">事件 O（此时此地）</text>
+<rect x="34" y="444" width="360" height="62" rx="7" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="46" y="464" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">光锥铁律：任何有质量物体只能走光锥内部 (v &lt; c)；</text>
+<text x="46" y="482" font-size="10.5" fill="#1e293b" text-anchor="start">光锥外的“类空事件”连光都来不及赶到，绝不可能互为因果！</text>
+<rect x="422" y="64" width="318" height="456" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="436.0" y="74.0" width="274" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="573.0" y="89.0" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="600">B · 时间膨胀圆弧与大气 μ 子铁证</text>
+<line x1="472.0" y1="266.0" x2="636.0" y2="266.0" stroke="#475569" stroke-width="1.2" marker-end="url(#arr-muted)"/>
+<line x1="472.0" y1="266.0" x2="472.0" y2="104.0" stroke="#475569" stroke-width="1.2" marker-end="url(#arr-muted)"/>
+<text x="466.0" y="124.0" font-size="10" fill="#64748b" text-anchor="end">1.0</text>
+<text x="466.0" y="270.0" font-size="10" fill="#64748b" text-anchor="end">0</text>
+<text x="618.0" y="280.0" font-size="10" fill="#64748b" text-anchor="middle">1.0 c</text>
+<text x="545.0" y="281.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">空间速度 v / c →</text>
+<text x="480.0" y="106.0" font-size="10.5" fill="#6d28d9" text-anchor="start" font-weight="700">自身时间流速 dτ/dt</text>
+<polyline points="472.00,120.00 474.43,120.02 476.87,120.08 479.30,120.18 481.73,120.32 484.17,120.51 486.60,120.73 489.03,121.00 491.47,121.30 493.90,121.65 496.33,122.04 498.77,122.47 501.20,122.95 503.63,123.47 506.07,124.03 508.50,124.64 510.93,125.29 513.37,125.98 515.80,126.72 518.23,127.51 520.67,128.35 523.10,129.23 525.53,130.17 527.97,131.15 530.40,132.19 532.83,133.28 535.27,134.42 537.70,135.62 540.13,136.87 542.57,138.19 545.00,139.56 547.43,141.00 549.87,142.50 552.30,144.07 554.73,145.70 557.17,147.41 559.60,149.20 562.03,151.07 564.47,153.01 566.90,155.05 569.33,157.18 571.77,159.40 574.20,161.74 576.63,164.18 579.07,166.74 581.50,169.43 583.93,172.26 586.37,175.25 588.80,178.40 591.23,181.74 593.67,185.30 596.10,189.09 598.53,193.16 600.97,197.56 603.40,202.36 605.83,207.65 608.27,213.58 610.70,220.41 613.13,228.62 615.57,239.46 618.00,266.00" fill="none" stroke="#6d28d9" stroke-width="2.5"/>
+<circle cx="472.0" cy="120.0" r="4" fill="#18794e"/>
+<text x="480.0" y="133.0" font-size="10" fill="#18794e" text-anchor="start" font-weight="700">静止 (100%)</text>
+<circle cx="559.6" cy="149.2" r="4" fill="#c25014"/>
+<text x="567.6" y="145.2" font-size="10" fill="#c25014" text-anchor="start" font-weight="700">0.6c → 80%</text>
+<circle cx="598.4" cy="193.0" r="4" fill="#1d6fa5"/>
+<text x="606.4" y="191.0" font-size="10" fill="#1d6fa5" text-anchor="start" font-weight="700">0.87c → 50%</text>
+<circle cx="617.4" cy="252.5" r="4" fill="#b91c1c"/>
+<text x="625.4" y="246.5" font-size="10" fill="#b91c1c" text-anchor="start" font-weight="700">μ子 0.9957c → 11%</text>
+<rect x="436" y="296" width="290" height="210" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="448" y="318" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">大自然每天上演的铁证：高空宇宙线 μ 子</text>
+<text x="448" y="340" font-size="11" fill="#0f172a" text-anchor="start" font-weight="600">• 静止固有寿命 τ₀ = 2.197 微秒 (MuLan)</text>
+<text x="448" y="360" font-size="11" fill="#1e293b" text-anchor="start">  若无相对论：哪怕以光速飞，一辈子也只</text>
+<text x="448" y="379" font-size="11" fill="#1e293b" text-anchor="start">  能走 c·τ₀ ≈ 659 米，绝难从高山落到海面！</text>
+<text x="448" y="403" font-size="11" fill="#1d6fa5" text-anchor="start" font-weight="700">• 1963 华盛顿山实测 (Frisch &amp; Smith)：</text>
+<text x="448" y="423" font-size="11" fill="#1e293b" text-anchor="start">  速度 0.9954c–0.9960c 的 μ 子，地面测得</text>
+<text x="448" y="442" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">  寿命拉长 8.8 ± 0.8 倍，大批活到海平面！</text>
+<text x="448" y="466" font-size="10.8" fill="#18794e" text-anchor="start" font-weight="700">• 换到 μ 子视角：自己只活 2.2 微秒，但整座</text>
+<text x="448" y="485" font-size="10.8" fill="#18794e" text-anchor="start" font-weight="600">  1,907 米高山被“尺缩效应”压扁成 ~217 米！</text>
+</svg>

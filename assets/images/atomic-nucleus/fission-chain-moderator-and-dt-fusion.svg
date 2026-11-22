@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="542" viewBox="0 0 760 542" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">铀235热中子链式裂变反应堆控制机制与氘氚1.5亿度可控核聚变对比图解</title>
+<desc id="desc">左栏展示慢中子触发铀235裂变为钡与氪并释放约200兆电子伏能量，解析慢化剂放大截面500倍与控制棒锁定k=1.000安全机制；右栏展示氘氚聚变释放17.6兆电子伏能量，对比库仑势垒挑战、磁约束与固有熄火安全性。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="541" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">五、向原子核借百万倍能量：慢中子驯服铀-235 链式裂变与上亿度氘氚聚变</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：慢化剂放大截面 500 倍 + 控制棒死守 k = 1.000 · 右：氘氚跨越库仑墙合体释放 17.6 MeV</text>
+<rect x="20" y="66" width="366" height="462" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="78.0" width="342" height="24" rx="12.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="203.0" y="94.3" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="600">A · 核电站心脏：重核裂变与“慢化剂 + 控制棒”油门刹车</text>
+<rect x="32" y="114" width="342" height="134" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<circle cx="62" cy="176" r="6" fill="#1d6fa5"/>
+<text x="62" y="158" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">慢中子</text>
+<line x1="70.0" y1="176.0" x2="108.0" y2="176.0" stroke="#1d6fa5" stroke-width="2.0"/>
+<circle cx="136" cy="176" r="24" fill="#ddd6fe" stroke="#6d28d9" stroke-width="1.8"/>
+<text x="136" y="180" font-size="11.8" fill="#6d28d9" text-anchor="middle" font-weight="700">²³⁵U</text>
+<line x1="164.0" y1="166.0" x2="214.0" y2="144.0" stroke="#dc2626" stroke-width="2.0"/>
+<line x1="164.0" y1="186.0" x2="214.0" y2="208.0" stroke="#dc2626" stroke-width="2.0"/>
+<circle cx="234" cy="140" r="16" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="234" y="144" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">¹⁴¹Ba</text>
+<circle cx="234" cy="212" r="13" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.5"/>
+<text x="234" y="216" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">⁹²Kr</text>
+<text x="264" y="156" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">+ 2~3 颗快中子</text>
+<text x="264" y="180" font-size="11.8" fill="#dc2626" text-anchor="start" font-weight="700">+ ~200 MeV！</text>
+<text x="264" y="204" font-size="11.5" fill="#1e293b" text-anchor="start">(单核放能是化学</text>
+<text x="264" y="224" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700"> 燃烧的 5000 万倍)</text>
+<rect x="32" y="260" width="342" height="254" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="44" y="282" font-size="11.6" fill="#6d28d9" text-anchor="start" font-weight="700">核反应堆凭什么既不熄火、也绝变不成原子弹？</text>
+<text x="44" y="306" font-size="11.5" fill="#1e293b" text-anchor="start">① 低丰度门槛：天然铀仅含 0.72% ²³⁵U；核电站燃料棒仅</text>
+<text x="44" y="328" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">   浓缩至 3%–5%（武器级需 &gt;90%），物理上不可能核爆！</text>
+<text x="44" y="354" font-size="11.5" fill="#1e293b" text-anchor="start">② 慢化剂（水/重水/石墨）：刚蹦出的 2 MeV 快中子太滑，</text>
+<text x="44" y="376" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">   撞水分子减速成 0.025 eV 热中子后，德布罗意波长变长，</text>
+<text x="44" y="398" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">   被 ²³⁵U 捕获裂变的概率（截面）暴涨近 500 倍！</text>
+<text x="44" y="424" font-size="11.5" fill="#1e293b" text-anchor="start">③ 镉/碳化硼控制棒 + 0.65% 缓发中子：精准吞掉多余中子，</text>
+<text x="44" y="446" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">   把增殖系数死锁在 k = 1.000（1 换 1 稳态烧开水推汽轮）；</text>
+<text x="44" y="468" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">   水温过高膨胀变稀时，慢化减弱会自动降功率（负反馈）！</text>
+<text x="44" y="494" font-size="11.5" fill="#b45309" text-anchor="start" font-weight="700">   （1 克 ²³⁵U 完全裂变 ≈ 燃烧 2.7 吨优质标准煤！）</text>
+<rect x="398" y="66" width="342" height="462" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="410.0" y="78.0" width="318" height="24" rx="12.0" fill="#f0fdfa" stroke="#0f766e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="569.0" y="94.3" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="600">B · 终极清洁能源：轻核聚变（把小太阳装进磁笼子）</text>
+<rect x="410" y="114" width="318" height="134" rx="8" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.2"/>
+<circle cx="448" cy="152" r="21" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.5"/>
+<text x="448" y="156" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">²H(氘)</text>
+<circle cx="448" cy="206" r="21" fill="#fef1e8" stroke="#c25014" stroke-width="1.5"/>
+<text x="448" y="210" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">³H(氚)</text>
+<line x1="471.0" y1="158.0" x2="518.0" y2="176.0" stroke="#0f766e" stroke-width="2.0"/>
+<line x1="471.0" y1="200.0" x2="518.0" y2="182.0" stroke="#0f766e" stroke-width="2.0"/>
+<text x="506" y="138" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">1.5 亿度硬闯</text>
+<circle cx="542" cy="179" r="18" fill="#fef2f2" stroke="#dc2626" stroke-width="1.8"/>
+<text x="542" y="183" font-size="11.8" fill="#dc2626" text-anchor="middle" font-weight="700">⁴He</text>
+<line x1="562.0" y1="168.0" x2="600.0" y2="150.0" stroke="#1d6fa5" stroke-width="2.0"/>
+<circle cx="612" cy="146" r="6.5" fill="#1d6fa5"/>
+<text x="624" y="150" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">n (14.1 MeV)</text>
+<text x="570" y="208" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">+ ⁴He (3.5 MeV)</text>
+<text x="570" y="230" font-size="11.6" fill="#0f766e" text-anchor="start" font-weight="700">共放能 17.6 MeV！</text>
+<rect x="410" y="260" width="318" height="254" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="1.2"/>
+<text x="422" y="282" font-size="11.6" fill="#b45309" text-anchor="start" font-weight="700">为什么聚变比裂变难一万倍，却又绝对安全？</text>
+<text x="422" y="306" font-size="11.5" fill="#1e293b" text-anchor="start">① 迎面硬闯静电墙：中子不带电，溜达进铀核毫不费力；</text>
+<text x="422" y="328" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">   而氘核与氚核都带正电！必须靠 1~1.5 亿摄氏度超高温</text>
+<text x="422" y="350" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">   （叠加量子隧穿）把相撞距离硬怼进 2 fm 强核力圈！</text>
+<text x="422" y="376" font-size="11.5" fill="#1e293b" text-anchor="start">② 劳森门槛：无容器能耐一亿度，只能靠强磁场悬空</text>
+<text x="422" y="398" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">   箍住等离子体（托卡马克）或激光内爆（惯性约束）。</text>
+<text x="422" y="424" font-size="11.5" fill="#1e293b" text-anchor="start">③ 天生不熔毁：炉内燃料仅几克稀薄气体，稍有扰动</text>
+<text x="422" y="446" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">   碰壁瞬间降温熄火；海水提氘取之不尽，无长寿锕系废料！</text>
+<text x="422" y="472" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">   （按每克算：1 克氘氚聚变放能 ≈ 燃烧 8 吨石油，</text>
+<text x="422" y="494" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">    单位质量能量密度比铀裂变再翻近 4 倍！）</text>
+</svg>

@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="564" viewBox="0 0 760 564" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">恒星三类死亡遗骸对比与钱德拉塞卡白矮星相对论质量半径反比曲线实算图解</title>
+<desc id="desc">上半部展示初始主序质量通向白矮星、中子星、恒星级黑洞与正负电子对不稳定全毁灭的四条分支，并对比三类致密遗骸的尺寸、密度与量子支撑力；下半部实算白矮星相对论质径曲线，解释非相对论段半径随质量负三分之一次方缩小与1.44倍太阳质量钱德拉塞卡极限归零机制。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="563" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">五、恒星死后的三具终极遗骸：1.44 与 ~2.2 M⊙ 两道不可逾越的质量极限</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">白矮星、中子星与黑洞的量子防线对决，以及“越重反而越小”的钱德拉塞卡相对论质径曲线</text>
+<rect x="20" y="64" width="720" height="250" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="74.0" width="478" height="22" rx="11.0" fill="#f0fdfa" stroke="#0d9488" stroke-width="1" stroke-opacity="0.35"/>
+<text x="273.0" y="89.0" font-size="12" fill="#0d9488" text-anchor="middle" font-weight="600">A · 初始主序质量（单星近太阳金属丰度）→ 残骸核心质量的三岔路口</text>
+<rect x="34" y="104" width="238" height="26" rx="4" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.3"/>
+<rect x="276" y="104" width="166" height="26" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.3"/>
+<rect x="446" y="104" width="150" height="26" rx="4" fill="#ede9fe" stroke="#6d28d9" stroke-width="1.3"/>
+<rect x="600" y="104" width="126" height="26" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="1.3"/>
+<text x="153" y="121" font-size="9.9" fill="#1d6fa5" text-anchor="middle" font-weight="700">初始 0.08–8 M⊙ (~97%恒星) → 白矮星</text>
+<text x="359" y="121" font-size="9.9" fill="#c25014" text-anchor="middle" font-weight="700">8–20 M⊙ → 中子星</text>
+<text x="521" y="121" font-size="9.9" fill="#6d28d9" text-anchor="middle" font-weight="700">20–140 M⊙ → 黑洞</text>
+<text x="663" y="121" font-size="9.8" fill="#dc2626" text-anchor="middle" font-weight="700">140–260 M⊙ 炸无残骸</text>
+<rect x="34" y="140" width="224" height="162" rx="8" fill="#f0f9ff" stroke="#1d6fa5" stroke-width="1.4"/>
+<text x="146" y="160" font-size="10.4" fill="#1d6fa5" text-anchor="middle" font-weight="700">① 白矮星（残核 &lt; 1.44 M⊙）</text>
+<text x="44" y="182" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">• 尺寸：≈ 地球（R ~ 5,000–12,000 km）</text>
+<text x="44" y="204" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">• 密度：~10⁶ g/cm³（1 cm³ ≈ 1 吨）</text>
+<text x="44" y="226" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">• 支撑力：泡利不相容·电子简并压</text>
+<text x="44" y="248" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">• 结局：数十亿年结晶成固态碳氧晶球；</text>
+<text x="44" y="270" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">  双星吸积越 1.44 M⊙ → Ia型超新星全碎！</text>
+<rect x="268" y="140" width="224" height="162" rx="8" fill="#fffbeb" stroke="#c25014" stroke-width="1.4"/>
+<text x="380" y="160" font-size="10.4" fill="#c25014" text-anchor="middle" font-weight="700">② 中子星（1.44 ~ 2.17 M⊙）</text>
+<text x="278" y="182" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">• 尺寸：≈ 城市（半径仅 ~11–12 km）</text>
+<text x="278" y="204" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">• 密度：~4×10¹⁴ g/cm³（方糖重4亿吨）</text>
+<text x="278" y="226" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">• 支撑力：中子简并压 + 强核力排斥</text>
+<text x="278" y="248" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">• 特征：守恒缩转成毫秒脉冲星与磁星；</text>
+<text x="278" y="270" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">  双中子星并合炼出宇宙黄金与铂金！</text>
+<rect x="502" y="140" width="224" height="162" rx="8" fill="#faf5ff" stroke="#6d28d9" stroke-width="1.4"/>
+<text x="614" y="160" font-size="10.4" fill="#6d28d9" text-anchor="middle" font-weight="700">③ 恒星级黑洞（&gt; ~2.2 M⊙）</text>
+<text x="512" y="182" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">• 视界：R_s = 2GM/c² ≈ 3 km × (M/M⊙)</text>
+<text x="512" y="204" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">  （10 M⊙ 黑洞视界半径仅 ~30 km！）</text>
+<text x="512" y="226" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">• 支撑力：彻底归零！强核力也被压垮</text>
+<text x="512" y="248" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">• 本质：引力把时空曲率弯成单向陷阱，</text>
+<text x="512" y="270" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="400">  事件视界内逃逸速度 &gt; 光速 c。</text>
+<rect x="20" y="328" width="720" height="226" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="338.0" width="532" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="300.0" y="353.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">B · 钱德拉塞卡质径曲线实算：为什么白矮星“越重反而越小”，直到 1.44 M⊙ 归零？</text>
+<rect x="84.0" y="378.0" width="362.0" height="140.0" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.2"/>
+<line x1="84.0" y1="518.0" x2="446.0" y2="518.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="78.0" y="522.0" font-size="9.8" fill="#64748b" text-anchor="end">0</text>
+<line x1="84.0" y1="483.0" x2="446.0" y2="483.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="78.0" y="487.0" font-size="9.8" fill="#64748b" text-anchor="end">4,000</text>
+<line x1="84.0" y1="448.0" x2="446.0" y2="448.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="78.0" y="452.0" font-size="9.8" fill="#64748b" text-anchor="end">8,000</text>
+<line x1="84.0" y1="413.0" x2="446.0" y2="413.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="78.0" y="417.0" font-size="9.8" fill="#64748b" text-anchor="end">12,000</text>
+<line x1="84.0" y1="378.0" x2="446.0" y2="378.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="78.0" y="382.0" font-size="9.8" fill="#64748b" text-anchor="end">16,000</text>
+<line x1="129.2" y1="378.0" x2="129.2" y2="518.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="129.2" y="533.0" font-size="9.8" fill="#64748b" text-anchor="middle" font-weight="400">0.2 M⊙</text>
+<line x1="219.7" y1="378.0" x2="219.7" y2="518.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="219.7" y="533.0" font-size="9.8" fill="#64748b" text-anchor="middle" font-weight="400">0.6 M⊙</text>
+<line x1="310.2" y1="378.0" x2="310.2" y2="518.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="310.2" y="533.0" font-size="9.8" fill="#64748b" text-anchor="middle" font-weight="400">1 M⊙</text>
+<line x1="409.8" y1="378.0" x2="409.8" y2="518.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="409.8" y="533.0" font-size="9.8" fill="#dc2626" text-anchor="middle" font-weight="700">1.44 M⊙</text>
+<line x1="84.0" y1="462.3" x2="446.0" y2="462.3" stroke="#18794e" stroke-width="1.3" stroke-dasharray="5 3"/>
+<text x="92.0" y="457.3" font-size="9.8" fill="#18794e" text-anchor="start" font-weight="700">地球半径 6,371 km</text>
+<line x1="409.8" y1="378.0" x2="409.8" y2="518.0" stroke="#dc2626" stroke-width="2.0" stroke-dasharray="4 2"/>
+<text x="403.8" y="393.0" font-size="10.0" fill="#dc2626" text-anchor="end" font-weight="700">钱德拉塞卡极限 1.44 M⊙</text>
+<polyline points="133.8,395.2 138.3,399.4 142.8,403.2 147.4,406.6 151.9,409.8 156.4,412.8 160.9,415.6 165.4,418.2 170.0,420.7 174.5,423.0 179.0,425.3 183.5,427.4 188.1,429.4 192.6,431.4 197.1,433.3 201.7,435.1 206.2,436.9 210.7,438.6 215.2,440.3 219.7,441.9 224.3,443.5 228.8,445.1 233.3,446.6 237.8,448.1 242.4,449.5 246.9,451.0 251.4,452.4 255.9,453.8 260.5,455.2 265.0,456.6 269.5,458.0 274.0,459.3 278.6,460.7 283.1,462.0 287.6,463.3 292.1,464.7 296.7,466.0 301.2,467.3 305.7,468.7 310.2,470.0 314.8,471.4 319.3,472.7 323.8,474.1 328.4,475.5 332.9,476.9 337.4,478.3 341.9,479.7 346.4,481.2 351.0,482.7 355.5,484.2 360.0,485.8 364.5,487.4 369.1,489.1 373.6,490.8 378.1,492.7 382.6,494.7 387.2,496.8 391.7,499.1 396.2,501.7 400.7,504.7 405.3,508.6 409.8,518.0" fill="none" stroke="#1d6fa5" stroke-width="2.6"/>
+<circle cx="219.7" cy="441.9" r="4.2" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.2"/>
+<text x="227.7" y="434.9" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="600">太阳残骸 ~0.54–0.6 M⊙</text>
+<circle cx="310.2" cy="470.0" r="4.2" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.2"/>
+<text x="300.2" y="484.0" font-size="9.8" fill="#0f172a" text-anchor="end" font-weight="600">天狼星B ~1.0 M⊙</text>
+<circle cx="389.4" cy="497.9" r="4.2" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.2"/>
+<text x="377.4" y="510.9" font-size="9.8" fill="#0f172a" text-anchor="end" font-weight="600">1.35 M⊙ (近月球大)</text>
+<text x="265.0" y="546" font-size="10.0" fill="#0f172a" text-anchor="middle" font-weight="700">白矮星质量 M / M⊙</text>
+<text x="34" y="448.0" font-size="10.0" font-weight="700" fill="#0f172a" text-anchor="middle" transform="rotate(-90 34 448.0)">半径 R (km)</text>
+<rect x="462" y="378" width="264" height="162" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.3"/>
+<text x="474" y="398" font-size="10.4" fill="#c25014" text-anchor="start" font-weight="700">19岁船舱里的惊天推导（1930）：</text>
+<text x="474" y="419" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="600">1. 低速段：P_简并 ∝ ρ^(5/3) 抗衡引力</text>
+<text x="474" y="437" font-size="9.8" fill="#1e293b" text-anchor="start">   ⇒ R ∝ M^(-1/3)：加质量必须把电子</text>
+<text x="474" y="454" font-size="9.8" fill="#1d6fa5" text-anchor="start" font-weight="700">   挤进更小空间抬高动量，越重反而越小！</text>
+<text x="474" y="475" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="600">2. 相对论危机：电子逼近光速 c 无法再加速，</text>
+<text x="474" y="493" font-size="9.8" fill="#1e293b" text-anchor="start">   压强软化为 P ∝ ρ^(4/3)，与引力同阶抵消</text>
+<text x="474" y="511" font-size="9.9" fill="#dc2626" text-anchor="start" font-weight="700">   ⇒ 一过 1.44 M⊙，再怎么缩也撑不住！</text>
+<text x="474" y="530" font-size="9.8" fill="#64748b" text-anchor="start">3. 中子星越过 ~2.17 M⊙（TOV极限）同理坍成黑洞。</text>
+</svg>

@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="528" viewBox="0 0 760 528" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">西红柿真果浆果胎座胶质与苹果梨仁果假果果心线及石细胞横切对比图解</title>
+<desc id="desc">左栏展示西红柿横切面的中内果皮肉壁与包裹种子的SlMBP3液化胎座胶质，并附1893年美国最高法院关税案；右栏展示苹果横切面果心线内外真假果皮分界及梨果肉木质化石细胞团。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="527" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">西红柿 vs 苹果与梨：一个吸溜“胎座胶质”，两个专啃“花筒外衣”！</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">横切一刀见真章：西红柿全身内外都姓“子房”；苹果和梨真正的果皮却被封印在果心线以内。</text>
+<rect x="20" y="68" width="352" height="444" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="36.0" y="82.0" width="224" height="22" rx="11.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="148.0" y="97.0" font-size="11.2" fill="#dc2626" text-anchor="middle" font-weight="600">西红柿：根正苗红的“真果·浆果”</text>
+<circle cx="196" cy="198" r="76" fill="#ef4444" stroke="#991b1b" stroke-width="2.5"/>
+<circle cx="196" cy="198" r="63" fill="#fca5a5"/>
+<path d="M 201.0,206.7 L 251.8,214.0 A 58,58 0 0,1 182.0,254.3 Z" fill="#fef08a" fill-opacity="0.72" stroke="#dc2626" stroke-width="1.6"/>
+<circle cx="209.0" cy="220.5" r="11" fill="#f87171"/>
+<ellipse cx="227.4" cy="225.9" rx="4.5" ry="2.8" transform="rotate(41.7 227.4 225.9)" fill="#f59e0b" stroke="#92400e" stroke-width="1"/>
+<ellipse cx="217.0" cy="234.4" rx="4.5" ry="2.8" transform="rotate(60.0 217.0 234.4)" fill="#f59e0b" stroke="#92400e" stroke-width="1"/>
+<ellipse cx="204.5" cy="239.1" rx="4.5" ry="2.8" transform="rotate(78.3 204.5 239.1)" fill="#f59e0b" stroke="#92400e" stroke-width="1"/>
+<path d="M 186.0,198.0 L 154.3,238.3 A 58,58 0 0,1 154.3,157.7 Z" fill="#fef08a" fill-opacity="0.72" stroke="#dc2626" stroke-width="1.6"/>
+<circle cx="170.0" cy="198.0" r="11" fill="#f87171"/>
+<ellipse cx="156.1" cy="211.2" rx="4.5" ry="2.8" transform="rotate(161.7 156.1 211.2)" fill="#f59e0b" stroke="#92400e" stroke-width="1"/>
+<ellipse cx="154.0" cy="198.0" rx="4.5" ry="2.8" transform="rotate(180.0 154.0 198.0)" fill="#f59e0b" stroke="#92400e" stroke-width="1"/>
+<ellipse cx="156.1" cy="184.8" rx="4.5" ry="2.8" transform="rotate(198.3 156.1 184.8)" fill="#f59e0b" stroke="#92400e" stroke-width="1"/>
+<path d="M 201.0,189.3 L 182.0,141.7 A 58,58 0 0,1 251.8,182.0 Z" fill="#fef08a" fill-opacity="0.72" stroke="#dc2626" stroke-width="1.6"/>
+<circle cx="209.0" cy="175.5" r="11" fill="#f87171"/>
+<ellipse cx="204.5" cy="156.9" rx="4.5" ry="2.8" transform="rotate(281.7 204.5 156.9)" fill="#f59e0b" stroke="#92400e" stroke-width="1"/>
+<ellipse cx="217.0" cy="161.6" rx="4.5" ry="2.8" transform="rotate(300.0 217.0 161.6)" fill="#f59e0b" stroke="#92400e" stroke-width="1"/>
+<ellipse cx="227.4" cy="170.1" rx="4.5" ry="2.8" transform="rotate(318.3 227.4 170.1)" fill="#f59e0b" stroke="#92400e" stroke-width="1"/>
+<circle cx="196" cy="198" r="14" fill="#fca5a5"/>
+<line x1="264" y1="170" x2="312" y2="146" stroke="#dc2626" stroke-width="1.4"/>
+<text x="315" y="142" font-size="10.2" fill="#dc2626" text-anchor="start" font-weight="700">果皮肉壁</text>
+<text x="315" y="155" font-size="9.6" fill="#64748b" text-anchor="start">(中/内果皮)</text>
+<line x1="234" y1="224" x2="306" y2="232" stroke="#d97706" stroke-width="1.4"/>
+<text x="309" y="228" font-size="10.2" fill="#d97706" text-anchor="start" font-weight="700">胎座液化胶</text>
+<text x="309" y="241" font-size="9.6" fill="#64748b" text-anchor="start">(酸甜爆汁源)</text>
+<line x1="144" y1="172" x2="86" y2="142" stroke="#0f172a" stroke-width="1.4"/>
+<text x="82" y="138" font-size="10.0" fill="#0f172a" text-anchor="end" font-weight="700">隔膜(Septa)</text>
+<text x="82" y="151" font-size="9.5" fill="#64748b" text-anchor="end">分出心皮室</text>
+<rect x="36" y="292" width="320" height="114" rx="7" fill="#fef2f2" stroke="#dc2626" stroke-width="1"/>
+<text x="48" y="313" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">• 西红柿咬开后，我们其实同时吃下了两样器官：</text>
+<text x="48" y="332" font-size="10.2" fill="#1e293b" text-anchor="start">  ① 外圈厚实沙瓤与辐射状隔膜 = 子房壁长成的中/内果皮；</text>
+<text x="48" y="350" font-size="10.2" fill="#1e293b" text-anchor="start">  ② 包裹种子的酸甜果冻汁 = 由 SlMBP3 基因调控液化的</text>
+<text x="48" y="368" font-size="10.2" fill="#dc2626" text-anchor="start" font-weight="700">     【胎座胶质 (Locular Gel)】，富含谷氨酸鲜味与有机酸！</text>
+<text x="48" y="388" font-size="9.8" fill="#64748b" text-anchor="start">  （种子表面自带抑制发芽物质，随动物消化道排出才萌发）</text>
+<rect x="36" y="416" width="320" height="82" rx="7" fill="#f1f5f9" stroke="#475569" stroke-width="1"/>
+<text x="48" y="436" font-size="10.3" fill="#0f172a" text-anchor="start" font-weight="700">⚖️ 1893 美国最高法院“西红柿关税案”(Nix v. Hedden)：</text>
+<text x="48" y="454" font-size="10.0" fill="#18794e" text-anchor="start" font-weight="700">• 植物学铁证：100% 是浆果（受精子房发育且含种子）！</text>
+<text x="48" y="471" font-size="10.0" fill="#1e293b" text-anchor="start">• 大法官判决：按厨房习惯配正餐吃而非饭后甜点，关税算蔬菜！</text>
+<text x="48" y="488" font-size="9.8" fill="#64748b" text-anchor="start">  → 一锤定音区分了“植物学果实”与“餐桌蔬菜”两套词典。</text>
+<rect x="388" y="68" width="352" height="444" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="404.0" y="82.0" width="238" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="523.0" y="97.0" font-size="11.2" fill="#c25014" text-anchor="middle" font-weight="600">苹果与梨：穿厚外套的“仁果·假果”</text>
+<circle cx="520" cy="198" r="76" fill="#fef9c3" stroke="#dc2626" stroke-width="2.6"/>
+<circle cx="520" cy="198" r="31" fill="#ecfccb" stroke="#18794e" stroke-width="2.0" stroke-dasharray="5 3"/>
+<ellipse cx="520.0" cy="185.9" rx="11" ry="5" transform="rotate(-90 520.0 185.9)" fill="#ffffff" stroke="#18794e" stroke-width="1.5"/>
+<circle cx="520.0" cy="185.0" r="3.2" fill="#78350f"/>
+<circle cx="510.4" cy="168.5" r="2.0" fill="#18794e"/>
+<circle cx="529.6" cy="168.5" r="2.0" fill="#18794e"/>
+<ellipse cx="531.5" cy="194.3" rx="11" ry="5" transform="rotate(-18 531.5 194.3)" fill="#ffffff" stroke="#18794e" stroke-width="1.5"/>
+<circle cx="532.4" cy="194.0" r="3.2" fill="#78350f"/>
+<circle cx="545.1" cy="179.8" r="2.0" fill="#18794e"/>
+<circle cx="551.0" cy="198.0" r="2.0" fill="#18794e"/>
+<ellipse cx="527.1" cy="207.8" rx="11" ry="5" transform="rotate(54 527.1 207.8)" fill="#ffffff" stroke="#18794e" stroke-width="1.5"/>
+<circle cx="527.6" cy="208.5" r="3.2" fill="#78350f"/>
+<circle cx="545.1" cy="216.2" r="2.0" fill="#18794e"/>
+<circle cx="529.6" cy="227.5" r="2.0" fill="#18794e"/>
+<ellipse cx="512.9" cy="207.8" rx="11" ry="5" transform="rotate(126 512.9 207.8)" fill="#ffffff" stroke="#18794e" stroke-width="1.5"/>
+<circle cx="512.4" cy="208.5" r="3.2" fill="#78350f"/>
+<circle cx="510.4" cy="227.5" r="2.0" fill="#18794e"/>
+<circle cx="494.9" cy="216.2" r="2.0" fill="#18794e"/>
+<ellipse cx="508.5" cy="194.3" rx="11" ry="5" transform="rotate(198 508.5 194.3)" fill="#ffffff" stroke="#18794e" stroke-width="1.5"/>
+<circle cx="507.6" cy="194.0" r="3.2" fill="#78350f"/>
+<circle cx="489.0" cy="198.0" r="2.0" fill="#18794e"/>
+<circle cx="494.9" cy="179.8" r="2.0" fill="#18794e"/>
+<circle cx="672" cy="168" r="42" fill="#fffbeb" stroke="#d97706" stroke-width="2.0"/>
+<circle cx="658" cy="158" r="8" fill="#fde68a" stroke="#b45309" stroke-width="2.2"/>
+<circle cx="658" cy="158" r="4" fill="#92400e" opacity="0.45"/>
+<circle cx="680" cy="154" r="9" fill="#fde68a" stroke="#b45309" stroke-width="2.2"/>
+<circle cx="680" cy="154" r="5" fill="#92400e" opacity="0.45"/>
+<circle cx="668" cy="176" r="10" fill="#fde68a" stroke="#b45309" stroke-width="2.2"/>
+<circle cx="668" cy="176" r="6" fill="#92400e" opacity="0.45"/>
+<circle cx="688" cy="178" r="7" fill="#fde68a" stroke="#b45309" stroke-width="2.2"/>
+<circle cx="688" cy="178" r="3" fill="#92400e" opacity="0.45"/>
+<circle cx="654" cy="180" r="6" fill="#fde68a" stroke="#b45309" stroke-width="2.2"/>
+<circle cx="654" cy="180" r="2" fill="#92400e" opacity="0.45"/>
+<text x="672" y="224" font-size="10.0" fill="#d97706" text-anchor="middle" font-weight="700">梨果肉放大：</text>
+<text x="672" y="237" font-size="9.8" fill="#92400e" text-anchor="middle" font-weight="700">木质化石细胞团</text>
+<line x1="472" y1="156" x2="434" y2="128" stroke="#c25014" stroke-width="1.4"/>
+<text x="402" y="122" font-size="10.0" fill="#c25014" text-anchor="start" font-weight="700">外圈&gt;70%脆肉</text>
+<text x="402" y="135" font-size="9.5" fill="#64748b" text-anchor="start">= 花筒(非子房)</text>
+<line x1="498" y1="220" x2="438" y2="258" stroke="#18794e" stroke-width="1.4"/>
+<text x="402" y="255" font-size="10.0" fill="#18794e" text-anchor="start" font-weight="700">果心线以内</text>
+<text x="402" y="268" font-size="9.6" fill="#18794e" text-anchor="start" font-weight="700">= 真正果皮！</text>
+<rect x="404" y="292" width="320" height="114" rx="7" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="416" y="313" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="700">• 把苹果拦腰横切一刀，你会看到一圈淡绿色虚线环：</text>
+<text x="416" y="332" font-size="10.2" fill="#1e293b" text-anchor="start">  ① 环外 &gt;70% 脆甜果肉：由包被下位子房的【花筒/花托】膨大；</text>
+<text x="416" y="350" font-size="10.2" fill="#18794e" text-anchor="start" font-weight="700">  ② 环内你啃剩吐掉的“苹果核”：才是真正的子房中果皮，</text>
+<text x="416" y="368" font-size="10.2" fill="#1e293b" text-anchor="start">     那五片卡牙缝的硬塑料状薄片则是【革质内果皮】！</text>
+<text x="416" y="388" font-size="9.8" fill="#64748b" text-anchor="start">  （苹果底部凹坑里残留的干枯小爪子，正是当年的花萼片！）</text>
+<rect x="404" y="416" width="320" height="82" rx="7" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
+<text x="416" y="436" font-size="10.2" fill="#d97706" text-anchor="start" font-weight="700">🍐 同样是仁果，为什么梨吃起来“沙沙咯牙”，苹果却细腻？</text>
+<text x="416" y="454" font-size="10.0" fill="#1e293b" text-anchor="start">• 梨的花筒果肉里散布着成团的【石细胞 (Brachysclereids)】——</text>
+<text x="416" y="471" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="600">  细胞壁沉积了 25%–30% 木质素（跟坚果壳同款硬质材料！），</text>
+<text x="416" y="488" font-size="9.8" fill="#64748b" text-anchor="start">  野生梨原本靠它防虫护种，人工选育才让砀山梨石细胞变细少。</text>
+</svg>

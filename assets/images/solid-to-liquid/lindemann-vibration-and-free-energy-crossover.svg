@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="536" viewBox="0 0 760 536" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">林德曼10%晶格热振幅熔化判据与吉布斯自由能G(T)固液交叉相变图解</title>
+<desc id="desc">左栏展示低温微幅振动与熔点处均方根振幅达到原子间距约10%引发晶格剪切松动，对比不同化学键熔点跨度；右栏绘制固态与液态吉布斯自由能随温度变化的斜率交叉，标明熔点T_m与亚稳态过冷液体。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="535" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">二、坚硬固体凭什么在某一刻突然松手？林德曼 10% 振幅红线与自由能夺权</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：热振动冲破晶格间距 10% 触发剪切崩塌 · 右：吉布斯自由能 G = H - TS 交叉线与过冷液体</text>
+<rect x="20" y="66" width="354" height="456" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="78.0" width="330" height="24" rx="12.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="197.0" y="94.3" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="600">A · 动力学扳机：林德曼熔化判据（振幅 ≈ 10% 间距）</text>
+<rect x="32" y="114" width="330" height="112" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="44" y="134" font-size="11.6" fill="#1d6fa5" text-anchor="start" font-weight="700">低温固态 (T ≪ T_m)：热抖动仅 ~3% 间距 a</text>
+<circle cx="68" cy="176" r="11" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2" stroke-dasharray="2 2"/>
+<circle cx="68" cy="176" r="5.5" fill="#1d6fa5"/>
+<circle cx="140" cy="176" r="11" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2" stroke-dasharray="2 2"/>
+<circle cx="140" cy="176" r="5.5" fill="#1d6fa5"/>
+<circle cx="212" cy="176" r="11" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2" stroke-dasharray="2 2"/>
+<circle cx="212" cy="176" r="5.5" fill="#1d6fa5"/>
+<circle cx="284" cy="176" r="11" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2" stroke-dasharray="2 2"/>
+<circle cx="284" cy="176" r="5.5" fill="#1d6fa5"/>
+<text x="44" y="212" font-size="11.5" fill="#1e293b" text-anchor="start">相邻势阱互不侵犯，剪切模量 G_c 坚挺，晶格稳固。</text>
+<rect x="32" y="238" width="330" height="132" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1.4"/>
+<text x="44" y="258" font-size="11.6" fill="#dc2626" text-anchor="start" font-weight="700">抵达熔点 (T = T_m)：均方根振幅冲破 ~10% a！</text>
+<circle cx="68" cy="302" r="24" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="3 2"/>
+<circle cx="72" cy="302" r="5.8" fill="#dc2626"/>
+<circle cx="140" cy="302" r="24" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="3 2"/>
+<circle cx="136" cy="302" r="5.8" fill="#dc2626"/>
+<circle cx="212" cy="302" r="24" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="3 2"/>
+<circle cx="216" cy="302" r="5.8" fill="#dc2626"/>
+<circle cx="284" cy="302" r="24" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="3 2"/>
+<circle cx="280" cy="302" r="5.8" fill="#dc2626"/>
+<text x="44" y="344" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">1910 林德曼普适铁律：√⟨u²⟩ / a ≈ 0.10–0.13</text>
+<text x="44" y="362" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="600">邻居撞肩产生 ~10% 临界剪切应变，囚笼瞬间松动！</text>
+<rect x="32" y="382" width="330" height="126" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="1.2"/>
+<text x="44" y="404" font-size="11.5" fill="#b45309" text-anchor="start" font-weight="700">弹簧越硬，把振幅晃到 10% 所需的熔点越高：</text>
+<text x="44" y="428" font-size="11.5" fill="#1e293b" text-anchor="start">• 弱色散力：固态氩 -189 °C（轻轻一热就晃散架）</text>
+<text x="44" y="450" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">• 氢键网络：冰 0 °C · 离子键：食盐 NaCl 801 °C</text>
+<text x="44" y="472" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">• 强金属/共价键：铁 1538 °C · 钨高达 3422 °C！</text>
+<text x="44" y="494" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">（唯一零压不冻：液氦零点量子抖动已超 10%！）</text>
+<rect x="388" y="66" width="352" height="456" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="400.0" y="78.0" width="328" height="24" rx="12.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="564.0" y="94.3" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">B · 热力学终审裁判：焓 H（省能量）vs 熵 S（要自由）</text>
+<line x1="436.0" y1="320.0" x2="720.0" y2="320.0" stroke="#475569" stroke-width="1.4"/>
+<line x1="436.0" y1="122.0" x2="436.0" y2="320.0" stroke="#475569" stroke-width="1.4"/>
+<text x="428" y="134" font-size="12.0" fill="#0f172a" text-anchor="end" font-weight="700">G</text>
+<text x="718" y="338.0" font-size="11.5" fill="#0f172a" text-anchor="end" font-weight="700">温度 T →</text>
+<line x1="436.0" y1="162.0" x2="561.2" y2="208.5" stroke="#1d6fa5" stroke-width="2.8"/>
+<line x1="561.2" y1="208.5" x2="716.0" y2="266.0" stroke="#1d6fa5" stroke-width="1.6" stroke-dasharray="4 3"/>
+<line x1="436.0" y1="128.0" x2="561.2" y2="208.5" stroke="#0f766e" stroke-width="1.8" stroke-dasharray="5 3"/>
+<line x1="561.2" y1="208.5" x2="716.0" y2="308.0" stroke="#0f766e" stroke-width="2.8"/>
+<line x1="561.2" y1="208.5" x2="561.2" y2="320.0" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="3 3"/>
+<circle cx="561.2" cy="208.5" r="5.0" fill="#dc2626"/>
+<text x="561.2" y="338.0" font-size="11.8" fill="#dc2626" text-anchor="middle" font-weight="700">熔点 T_m</text>
+<text x="442" y="216" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">固态 G_固 (斜率缓)</text>
+<text x="478" y="132" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">过冷液体(亚稳)</text>
+<text x="628" y="308" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">液态 G_液 (斜率陡!)</text>
+<rect x="400" y="350" width="328" height="158" rx="8" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.2"/>
+<text x="412" y="372" font-size="11.8" fill="#0f766e" text-anchor="start" font-weight="700">为什么加热到 T_m 会发生“政权交接”？</text>
+<text x="412" y="396" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">• 自然界自动滚向【吉布斯自由能 G = H - TS 最低】态：</text>
+<text x="412" y="418" font-size="11.5" fill="#1e293b" text-anchor="start">• T &lt; T_m：温度低，晶体靠成键深、低焓 H 稳坐江山；</text>
+<text x="412" y="440" font-size="11.5" fill="#1e293b" text-anchor="start">• T &gt; T_m：T 放大熵项 -TS！液体构型多（S_液&gt;S_固），</text>
+<text x="412" y="462" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">  G_液 跌破 G_固，精确交界 T_m = ΔH_fus / ΔS_fus！</text>
+<text x="412" y="486" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">• 缺晶核时纯水可沿虚线滑入 -10 °C【过冷水】秒冻态！</text>
+</svg>

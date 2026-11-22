@@ -52,47 +52,47 @@
 <circle cx="38" cy="84" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
 <text x="38" y="88" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
 <text x="56" y="88" font-size="12.2" fill="#0f172a" text-anchor="start" font-weight="700">大气差异折射：为什么下缘抬升 34.5′、上缘只抬 29.0′？</text>
-<path d="M 38 308 Q 210 278 398 326 L 398 352 L 38 352 Z" fill="#cbd5e1"/>
-<path d="M 38 256 Q 210 226 398 274" fill="none" stroke="#93c5fd" stroke-width="1.2" stroke-dasharray="5,4"/>
-<path d="M 38 206 Q 210 176 398 224" fill="none" stroke="#bfdbfe" stroke-width="1.2" stroke-dasharray="5,4"/>
-<text x="92" y="232" font-size="10.0" fill="#64748b" text-anchor="start">高层稀薄空气 n ≈ 1.00005</text>
-<text x="92" y="282" font-size="10.0" fill="#1d6fa5" text-anchor="start" font-weight="600">近地稠密空气 n ≈ 1.00029</text>
-<circle cx="84" cy="294" r="5.5" fill="#0f172a"/>
-<text x="84" y="316" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700">观测者</text>
-<line x1="84.0" y1="294.0" x2="396.0" y2="294.0" stroke="#475569" stroke-width="1.3" stroke-linecap="round" stroke-dasharray="6,4"/>
-<text x="245" y="310" font-size="10.0" fill="#475569" text-anchor="middle">几何真地平线（无大气时此刻根本看不见太阳！）</text>
-<circle cx="366" cy="322" r="20" fill="#fde68a" fill-opacity="0.45" stroke="#d97706" stroke-width="1.4" stroke-dasharray="4,3"/>
-<text x="306" y="342" font-size="10.2" fill="#d97706" text-anchor="end" font-weight="700">真实太阳位置</text>
-<ellipse cx="366" cy="266" rx="20" ry="16.5" fill="#fb923c" fill-opacity="0.88" stroke="#dc2626" stroke-width="1.6"/>
-<text x="338" y="250" font-size="10.4" fill="#dc2626" text-anchor="end" font-weight="700">视太阳虚像（已露出地平线）</text>
-<path d="M 366 302 Q 230 264 84 294" fill="none" stroke="#c25014" stroke-width="1.8"/>
-<path d="M 366 342 Q 230 284 84 294" fill="none" stroke="#dc2626" stroke-width="1.8"/>
-<line x1="84.0" y1="294.0" x2="366.0" y2="249.5" stroke="#c25014" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="3,3"/>
-<line x1="84.0" y1="294.0" x2="366.0" y2="282.5" stroke="#dc2626" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="3,3"/>
-<rect x="36" y="364" width="368" height="94" rx="8" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1.0"/>
-<text x="48" y="384" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">戳破流传最广的伪科普：“清晨水汽像凸透镜放大了太阳”</text>
-<text x="48" y="403" font-size="10.1" fill="#1e293b" text-anchor="start">• 空气密度下密上疏，光线向地面弯曲，人眼逆着切线看去像被抬高；</text>
-<text x="48" y="421" font-size="10.1" fill="#1e293b" text-anchor="start">• 太阳下缘贴近最稠密空气层，向上抬升 34.5 角分；上缘仅抬升 29.0 角分；</text>
-<text x="48" y="439" font-size="10.1" fill="#dc2626" text-anchor="start" font-weight="600">• 下巴往上挤了 5.5 角分，结果大气折射非但没放大，反而把太阳压扁了！</text>
+<path d="M 38 308 Q 210 278 398 326 L 398 354 L 38 354 Z" fill="#cbd5e1"/>
+<path d="M 38 242 Q 210 212 398 260" fill="none" stroke="#93c5fd" stroke-width="1.2" stroke-dasharray="5,4"/>
+<path d="M 38 182 Q 210 152 398 200" fill="none" stroke="#bfdbfe" stroke-width="1.2" stroke-dasharray="5,4"/>
+<text x="52" y="162" font-size="9.8" fill="#64748b" text-anchor="start">高层稀薄空气 n ≈ 1.00005</text>
+<text x="52" y="220" font-size="9.8" fill="#1d6fa5" text-anchor="start" font-weight="600">近地稠密空气 n ≈ 1.00029（光线向地面弯折）</text>
+<circle cx="72" cy="294" r="5.5" fill="#0f172a"/>
+<text x="72" y="314" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="700">观测者</text>
+<line x1="72.0" y1="294.0" x2="398.0" y2="294.0" stroke="#475569" stroke-width="1.3" stroke-linecap="round" stroke-dasharray="6,4"/>
+<text x="162" y="315" font-size="9.6" fill="#475569" text-anchor="middle">几何真地平线（天顶距 90°）</text>
+<circle cx="370" cy="326" r="18" fill="#fde68a" fill-opacity="0.48" stroke="#d97706" stroke-width="1.4" stroke-dasharray="4,3"/>
+<text x="244" y="344" font-size="9.8" fill="#d97706" text-anchor="middle" font-weight="700">真实太阳（整轮藏在地平线下！）</text>
+<ellipse cx="370" cy="256" rx="18" ry="14.9" fill="#fb923c" fill-opacity="0.88" stroke="#dc2626" stroke-width="1.6"/>
+<text x="342" y="240" font-size="10.0" fill="#dc2626" text-anchor="end" font-weight="700">视太阳虚像（被整轮拎出地面）</text>
+<path d="M 370 308 Q 230 264 72 294" fill="none" stroke="#c25014" stroke-width="1.7"/>
+<path d="M 370 344 Q 230 284 72 294" fill="none" stroke="#dc2626" stroke-width="1.7"/>
+<line x1="72.0" y1="294.0" x2="370.0" y2="241.1" stroke="#c25014" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="3,3"/>
+<line x1="72.0" y1="294.0" x2="370.0" y2="270.9" stroke="#dc2626" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="3,3"/>
+<rect x="36" y="364" width="368" height="96" rx="8" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1.0"/>
+<text x="48" y="383" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">戳破伪科普：“清晨水汽像凸透镜放大了太阳”</text>
+<text x="48" y="402" font-size="9.8" fill="#1e293b" text-anchor="start">• 大气下密上疏把阳光向下弯折，USNO 日出标准天顶距达 90°50′；</text>
+<text x="48" y="420" font-size="9.8" fill="#1e293b" text-anchor="start">• 下缘贴近稠密底层抬升 34.5′，上缘仅抬升 29.0′（差值 5.5′）；</text>
+<text x="48" y="438" font-size="9.8" fill="#dc2626" text-anchor="start" font-weight="600">• 下巴往上挤了 5.5 角分，大气折射非但没放大，反而把太阳压扁了！</text>
 <rect x="434" y="62" width="306" height="410" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
 <circle cx="452" cy="84" r="10.5" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2"/>
 <text x="452" y="88" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">2</text>
 <text x="470" y="88" font-size="12.2" fill="#0f172a" text-anchor="start" font-weight="700">铁证：同焦距减光相机实拍叠图</text>
 <rect x="452" y="106" width="270" height="232" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1.2"/>
-<line x1="533.0" y1="120.0" x2="533.0" y2="326.0" stroke="#475569" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="4,3"/>
-<line x1="641.0" y1="120.0" x2="641.0" y2="326.0" stroke="#475569" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="4,3"/>
-<circle cx="587" cy="176" r="54.0" fill="#fef08a" stroke="#facc15" stroke-width="1.8"/>
-<text x="587" y="172" font-size="11.0" fill="#0f172a" text-anchor="middle" font-weight="700">正午日中</text>
-<text x="587" y="190" font-size="10.2" fill="#1e293b" text-anchor="middle" class="mono">32.0′ × 32.0′</text>
-<ellipse cx="587" cy="280" rx="54.0" ry="44.7" fill="#f97316" stroke="#fb923c" stroke-width="1.8"/>
-<text x="587" y="276" font-size="11.0" fill="#fff" text-anchor="middle" font-weight="700">清晨日出</text>
-<text x="587" y="294" font-size="10.0" fill="#ffedd5" text-anchor="middle" class="mono">宽 32.0′ × 高 26.5′</text>
-<text x="464" y="134" font-size="10.0" fill="#93c5fd" text-anchor="start">← 水平宽度完全相等 →</text>
-<text x="652" y="284" font-size="10.2" fill="#fca5a5" text-anchor="start" font-weight="700">压扁 17%</text>
-<rect x="452" y="350" width="270" height="108" rx="8" fill="#fffbeb" stroke="#fcd34d" stroke-width="1.0"/>
-<text x="464" y="370" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">像素尺量出来的真相：</text>
-<text x="464" y="390" font-size="10.1" fill="#1e293b" text-anchor="start">1. 横向直径：早中晚恒为约 32 角分（0.53°），</text>
-<text x="464" y="408" font-size="10.1" fill="#1e293b" text-anchor="start">   连小拇指指甲盖的一半宽度都不到；</text>
-<text x="464" y="426" font-size="10.1" fill="#dc2626" text-anchor="start" font-weight="700">2. 纵向直径：日出时反而缩水约 1/6！</text>
-<text x="464" y="444" font-size="10.1" fill="#0f172a" text-anchor="start" font-weight="700">⇒ “大如车盖”100% 发生在眼球之后的大脑里！</text>
+<line x1="535.0" y1="134.0" x2="535.0" y2="326.0" stroke="#475569" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="4,3"/>
+<line x1="639.0" y1="134.0" x2="639.0" y2="326.0" stroke="#475569" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="4,3"/>
+<text x="587" y="125" font-size="9.6" fill="#93c5fd" text-anchor="middle">← 水平宽度完全相等 (32.0′) →</text>
+<circle cx="587" cy="186" r="52.0" fill="#fef08a" stroke="#facc15" stroke-width="1.8"/>
+<text x="587" y="182" font-size="10.8" fill="#0f172a" text-anchor="middle" font-weight="700">正午日中</text>
+<text x="587" y="200" font-size="9.8" fill="#1e293b" text-anchor="middle" class="mono">32.0′ × 32.0′</text>
+<ellipse cx="587" cy="284" rx="52.0" ry="43.1" fill="#f97316" stroke="#fb923c" stroke-width="1.8"/>
+<text x="587" y="280" font-size="10.8" fill="#fff" text-anchor="middle" font-weight="700">清晨日出</text>
+<text x="587" y="297" font-size="9.8" fill="#ffedd5" text-anchor="middle" class="mono">32.0′ × 26.5′</text>
+<text x="648" y="287" font-size="9.8" fill="#fca5a5" text-anchor="start" font-weight="700">压扁 17%</text>
+<rect x="452" y="350" width="270" height="110" rx="8" fill="#fffbeb" stroke="#fcd34d" stroke-width="1.0"/>
+<text x="464" y="370" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">像素尺量出来的真相：</text>
+<text x="464" y="389" font-size="9.8" fill="#1e293b" text-anchor="start">1. 横向直径：早中晚恒为约 32 角分（0.53°），</text>
+<text x="464" y="407" font-size="9.8" fill="#1e293b" text-anchor="start">   连伸直手臂小拇指指甲盖的一半宽都不到；</text>
+<text x="464" y="425" font-size="9.8" fill="#dc2626" text-anchor="start" font-weight="700">2. 纵向直径：日出时反而被压扁缩水约 1/6！</text>
+<text x="464" y="443" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">⇒ “大如车盖”100% 发生在眼球之后的大脑里！</text>
 </svg>

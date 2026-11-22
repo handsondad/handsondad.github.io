@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="498" viewBox="0 0 760 498" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">百年电光源发光效率阶梯极限与LED对太阳能电池p-n结可逆对称图解</title>
+<desc id="desc">左栏量化对比蜡烛（0.3 lm/W）、白炽灯（14 lm/W）、荧光灯（65–90 lm/W）、白光LED（120–210 lm/W）、高显色白光理论极限（约310 lm/W）与555纳米绿光极值（683 lm/W）；右栏展示太阳能光伏板（光生伏特）与LED（电致发光）在同一p-n结物理定律下的正反可逆闭环。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="497" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">人类追光百年成绩单：白光极限在哪？为什么 LED 反过来就是太阳能板？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左看从蜡烛 0.3 lm/W 到白光理论天花板 ~310 lm/W 的百倍飞跃；右看 p-n 结“电变光”与“光变电”的宇宙对称。</text>
+<rect x="20" y="68" width="404" height="412" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="36.0" y="82.0" width="368" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="220.0" y="97.0" font-size="10.4" fill="#18794e" text-anchor="middle" font-weight="600">百年光源发光效率阶梯（流明/瓦 lm/W，同为 800 lm 亮度）</text>
+<text x="36" y="116" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="600">蜡烛 / 煤油灯</text>
+<rect x="36" y="120" width="4.0" height="11" rx="3" fill="#475569"/>
+<text x="46.0" y="129" font-size="9.3" fill="#475569" text-anchor="start" font-weight="700">0.3 lm/W</text>
+<text x="36" y="152" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="700">60 W 钨丝白炽灯 (800 lm)</text>
+<rect x="36" y="156" width="4.1" height="11" rx="3" fill="#dc2626"/>
+<text x="46.1" y="165" font-size="9.3" fill="#dc2626" text-anchor="start" font-weight="700">14 lm/W (耗电 60 W)</text>
+<text x="36" y="188" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="600">卤素钨丝灯</text>
+<rect x="36" y="192" width="5.5" height="11" rx="3" fill="#c25014"/>
+<text x="47.5" y="201" font-size="9.3" fill="#c25014" text-anchor="start" font-weight="700">19 lm/W (耗电 ~42 W)</text>
+<text x="36" y="224" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="600">14 W 紧凑型荧光节能灯</text>
+<rect x="36" y="228" width="18.8" height="11" rx="3" fill="#0d9488"/>
+<text x="60.8" y="237" font-size="9.3" fill="#0d9488" text-anchor="start" font-weight="700">65–90 lm/W (耗电 13 W)</text>
+<text x="36" y="260" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="700">7 W 家用优质白光 LED 球泡</text>
+<rect x="36" y="264" width="34.8" height="11" rx="3" fill="#1d6fa5"/>
+<text x="76.8" y="273" font-size="9.3" fill="#1d6fa5" text-anchor="start" font-weight="700">115–135 lm/W (仅 6.5 W!)</text>
+<text x="36" y="296" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="600">顶尖商用白光 LED 封装器件</text>
+<rect x="36" y="300" width="56.5" height="11" rx="3" fill="#18794e"/>
+<text x="98.5" y="309" font-size="9.3" fill="#18794e" text-anchor="start" font-weight="700">185–210 lm/W (实验室&gt;300)</text>
+<text x="36" y="332" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="700">100% 能量转换白光理论极限</text>
+<rect x="36" y="336" width="89.9" height="11" rx="3" fill="#6d28d9"/>
+<text x="131.9" y="345" font-size="9.3" fill="#6d28d9" text-anchor="start" font-weight="700">~310 lm/W (Murphy 2012)</text>
+<text x="36" y="368" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="600">555 nm 纯绿单色光 SI 定义极值</text>
+<rect x="36" y="372" width="198.0" height="11" rx="3" fill="#d97706"/>
+<text x="240.0" y="381" font-size="9.3" fill="#d97706" text-anchor="start" font-weight="700">683 lm/W (照啥都惨绿！)</text>
+<rect x="36" y="404" width="372" height="62" rx="7" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="48" y="422" font-size="9.6" fill="#6d28d9" text-anchor="start" font-weight="700">🧐 为什么 100% 完美不发热的白光灯，光效上限也只有 ~310 lm/W 而非 683？</text>
+<text x="48" y="439" font-size="9.4" fill="#1e293b" text-anchor="start">• 因为“流明”是按人眼视锥细胞敏感度打分的！人眼对 555 nm 黄绿光打满分(683)，</text>
+<text x="48" y="455" font-size="9.4" fill="#0f172a" text-anchor="start" font-weight="600">  对两头深红与深蓝打分低；但要还原苹果鲜红就必须发红蓝光（显色税）！</text>
+<rect x="440" y="68" width="300" height="412" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="456.0" y="82.0" width="268" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="590.0" y="97.0" font-size="10.6" fill="#1d6fa5" text-anchor="middle" font-weight="600">完美物理对称：LED 与光伏板是亲兄弟！</text>
+<rect x="456" y="120" width="268" height="126" rx="8" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
+<text x="468" y="142" font-size="10.4" fill="#d97706" text-anchor="start" font-weight="700">☀️ 屋顶太阳能光伏电池（光 → 电）：</text>
+<text x="468" y="162" font-size="9.8" fill="#1e293b" text-anchor="start">• 太阳光子 (hν ≥ E_g) 砸进硅 p-n 结，</text>
+<text x="468" y="180" font-size="9.8" fill="#1e293b" text-anchor="start">  把束缚电子一脚踹上导带（拆出电子+空穴），</text>
+<text x="468" y="198" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="600">  内建电场立刻把它们往两头推开，输出电流！</text>
+<text x="468" y="222" font-size="9.8" fill="#d97706" text-anchor="start" font-weight="700" class="mono">  方程：光子 hν  ──▶  e⁻ + h⁺ (电能)</text>
+<line x1="556.0" y1="250.0" x2="556.0" y2="280.0" stroke="#1d6fa5" stroke-width="2.4" marker-end="url(#arr-blue)"/>
+<line x1="624.0" y1="280.0" x2="624.0" y2="250.0" stroke="#d97706" stroke-width="2.4" marker-end="url(#arr-orange)"/>
+<text x="590" y="270" font-size="9.4" fill="#6d28d9" text-anchor="middle" font-weight="700">时间反演</text>
+<rect x="456" y="286" width="268" height="126" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="468" y="308" font-size="10.4" fill="#1d6fa5" text-anchor="start" font-weight="700">💡 屋里半导体 LED 灯（电 → 光）：</text>
+<text x="468" y="328" font-size="9.8" fill="#1e293b" text-anchor="start">• 外接电源把电子与空穴推入 InGaN p-n 结，</text>
+<text x="468" y="346" font-size="9.8" fill="#1e293b" text-anchor="start">  两者在量子阱重逢落回低能级，精准吐出光子！</text>
+<text x="468" y="364" font-size="9.6" fill="#18794e" text-anchor="start" font-weight="700">  （拿强手电筒照一颗 LED，用万用表真能测出电压！）</text>
+<text x="468" y="388" font-size="9.8" fill="#1d6fa5" text-anchor="start" font-weight="700" class="mono">  方程：e⁻ + h⁺ (电能)  ──▶  光子 hν</text>
+<text x="456" y="434" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">🌍 全人类用电约 15%–20% 曾花在照明上；</text>
+<text x="456" y="452" font-size="9.8" fill="#18794e" text-anchor="start" font-weight="700">   白光 LED 把照明能耗直接砍掉 80% 以上，</text>
+<text x="456" y="469" font-size="9.8" fill="#1e293b" text-anchor="start">   配白天光伏存电、夜晚 LED 点亮，闭环圆满！</text>
+</svg>

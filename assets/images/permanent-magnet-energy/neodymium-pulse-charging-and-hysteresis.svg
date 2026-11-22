@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="494" viewBox="0 0 760 494" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">高压电容脉冲充磁机原理与钕铁硼硬磁对纯铁软磁磁滞回线对比图解</title>
+<desc id="desc">左栏展示烧结钕铁硼毛坯经高压电容脉冲螺线管施加2至3特斯拉强磁场一次性充磁并注入外部磁场能；右栏精确绘制宽胖的钕铁硼硬磁磁滞回线（高剩磁Br与高矫顽力HcJ）与纤细的纯铁软磁回线对比。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="493" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">磁铁那口“原始磁场能”是谁充进去的？钕铁硼凭什么当上现代磁王？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">出厂前经历一次毫秒级“雷霆脉冲充磁”，再靠极高矫顽力晶格高墙把磁畴死死钉在岗位上！</text>
+<rect x="20" y="68" width="344" height="408" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="36.0" y="82.0" width="268" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="170.0" y="97.0" font-size="11.0" fill="#c25014" text-anchor="middle" font-weight="600">出厂关键工序：高压电容脉冲充磁机</text>
+<rect x="44" y="126" width="88" height="72" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="1.8"/>
+<text x="88" y="152" font-size="10.2" fill="#c25014" text-anchor="middle" font-weight="700">高压电容组</text>
+<text x="88" y="170" font-size="9.8" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">2000–3000 V</text>
+<text x="88" y="187" font-size="9.4" fill="#64748b" text-anchor="middle">储存数万焦耳</text>
+<line x1="132.0" y1="162.0" x2="198.0" y2="162.0" stroke="#dc2626" stroke-width="2.4" marker-end="url(#arr-orange)"/>
+<text x="165" y="152" font-size="9.4" fill="#dc2626" text-anchor="middle" font-weight="700">万安培脉冲</text>
+<text x="165" y="178" font-size="9.2" fill="#64748b" text-anchor="middle">(几毫秒放电)</text>
+<rect x="204" y="122" width="136" height="80" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.8"/>
+<rect x="232" y="144" width="80" height="36" rx="4" fill="#6d28d9" stroke="#0f172a" stroke-width="1.5"/>
+<text x="272" y="166" font-size="10.0" fill="#ffffff" text-anchor="middle" font-weight="700" class="mono">Nd₂Fe₁₄B</text>
+<path d="M 218,122 Q 224,162 218,202" fill="none" stroke="#c25014" stroke-width="2.0"/>
+<path d="M 236,122 Q 242,162 236,202" fill="none" stroke="#c25014" stroke-width="2.0"/>
+<path d="M 254,122 Q 260,162 254,202" fill="none" stroke="#c25014" stroke-width="2.0"/>
+<path d="M 272,122 Q 278,162 272,202" fill="none" stroke="#c25014" stroke-width="2.0"/>
+<path d="M 290,122 Q 296,162 290,202" fill="none" stroke="#c25014" stroke-width="2.0"/>
+<path d="M 308,122 Q 314,162 308,202" fill="none" stroke="#c25014" stroke-width="2.0"/>
+<path d="M 326,122 Q 332,162 326,202" fill="none" stroke="#c25014" stroke-width="2.0"/>
+<text x="272" y="218" font-size="9.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">螺线管瞬间爆发 2–3 特斯拉强磁场！</text>
+<rect x="36" y="236" width="312" height="222" rx="7" fill="#f1f5f9" stroke="#475569" stroke-width="1"/>
+<text x="48" y="258" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="700">⚡ 算清磁铁一辈子的能量总账：</text>
+<text x="48" y="279" font-size="9.9" fill="#1e293b" text-anchor="start">① 刚从烧结炉出来的钕铁硼毛坯其实是【完全没磁性】的！</text>
+<text x="48" y="298" font-size="9.9" fill="#1e293b" text-anchor="start">② 脉冲充磁机电网耗电充进电容，毫秒间轰出 &gt;2.5 T 巨浪，</text>
+<text x="48" y="316" font-size="9.9" fill="#1e293b" text-anchor="start">   强行推平磁畴壁、把所有电子自旋拧向同一个易磁化轴，</text>
+<text x="48" y="334" font-size="9.9" fill="#c25014" text-anchor="start" font-weight="700">   同时替这块磁铁在周围空间建起了那座【外部磁场储能水库】！</text>
+<text x="48" y="356" font-size="10.2" fill="#6d28d9" text-anchor="start" font-weight="700">🏆 1984 佐川真人发现“现代磁王”钕铁硼 (Nd₂Fe₁₄B)：</text>
+<text x="48" y="375" font-size="9.8" fill="#1e293b" text-anchor="start">• 稀土钕原子(Nd)提供极陡的磁晶各向异性势垒（防退磁高墙），</text>
+<text x="48" y="392" font-size="9.8" fill="#1e293b" text-anchor="start">  14 颗铁原子(Fe)提供超高饱和磁矩，硼原子(B)锁紧四方晶格；</text>
+<text x="48" y="410" font-size="9.8" fill="#18794e" text-anchor="start" font-weight="700">• 最大磁能积 (BH)_max 实验室纪录高达 474 kJ/m³ (59.5 MGOe)，</text>
+<text x="48" y="428" font-size="9.8" fill="#1e293b" text-anchor="start">  指甲盖大一块就能轻松吊起自身重量几百倍的大铁砣，直接促成</text>
+<text x="48" y="445" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="600">  新能源汽车驱动电机、风力发电机、耳机与硬盘音圈小型化革命！</text>
+<rect x="380" y="68" width="360" height="408" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="396.0" y="82.0" width="316" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="554.0" y="97.0" font-size="10.8" fill="#6d28d9" text-anchor="middle" font-weight="600">硬磁 vs 软磁：一张“磁滞回线”看懂为何不退磁</text>
+<line x1="408.0" y1="224.0" x2="712.0" y2="224.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#arr-muted)"/>
+<line x1="560.0" y1="336.0" x2="560.0" y2="118.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#arr-muted)"/>
+<text x="712" y="218.0" font-size="9.6" fill="#0f172a" text-anchor="end" font-weight="700">外磁场 H</text>
+<text x="568.0" y="126" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="700">磁化强度 J</text>
+<polygon points="436.0,301.4 442.2,298.1 448.4,293.4 454.6,286.7 460.8,277.7 467.0,265.8 473.2,251.2 479.4,234.5 485.6,217.0 491.8,200.0 498.0,184.9 504.2,172.5 510.4,162.9 516.6,155.8 522.8,150.7 529.0,147.2 535.2,144.8 541.4,143.2 547.6,142.1 553.8,141.4 560.0,140.9 566.2,140.6 572.4,140.4 578.6,140.3 584.8,140.2 591.0,140.1 597.2,140.1 603.4,140.0 609.6,140.0 615.8,140.0 622.0,140.0 628.2,140.0 634.4,140.0 640.6,140.0 646.8,140.0 653.0,140.0 659.2,140.0 665.4,140.0 671.6,140.0 677.8,140.0 684.0,140.0 684.0,146.6 677.8,149.9 671.6,154.6 665.4,161.3 659.2,170.3 653.0,182.2 646.8,196.8 640.6,213.5 634.4,231.0 628.2,248.0 622.0,263.1 615.8,275.5 609.6,285.1 603.4,292.2 597.2,297.3 591.0,300.8 584.8,303.2 578.6,304.8 572.4,305.9 566.2,306.6 560.0,307.1 553.8,307.4 547.6,307.6 541.4,307.7 535.2,307.8 529.0,307.9 522.8,307.9 516.6,308.0 510.4,308.0 504.2,308.0 498.0,308.0 491.8,308.0 485.6,308.0 479.4,308.0 473.2,308.0 467.0,308.0 460.8,308.0 454.6,308.0 448.4,308.0 442.2,308.0 436.0,308.0" fill="#f3e8ff" fill-opacity="0.55" stroke="#6d28d9" stroke-width="2.5"/>
+<polygon points="436.0,312.0 442.2,312.0 448.4,312.0 454.6,312.0 460.8,312.0 467.0,312.0 473.2,312.0 479.4,312.0 485.6,312.0 491.8,312.0 498.0,312.0 504.2,312.0 510.4,312.0 516.6,312.0 522.8,311.9 529.0,311.4 535.2,309.7 541.4,303.2 547.6,280.9 553.8,230.1 560.0,174.9 566.2,147.5 572.4,139.0 578.6,136.7 584.8,136.2 591.0,136.0 597.2,136.0 603.4,136.0 609.6,136.0 615.8,136.0 622.0,136.0 628.2,136.0 634.4,136.0 640.6,136.0 646.8,136.0 653.0,136.0 659.2,136.0 665.4,136.0 671.6,136.0 677.8,136.0 684.0,136.0 684.0,136.0 677.8,136.0 671.6,136.0 665.4,136.0 659.2,136.0 653.0,136.0 646.8,136.0 640.6,136.0 634.4,136.0 628.2,136.0 622.0,136.0 615.8,136.0 609.6,136.0 603.4,136.0 597.2,136.1 591.0,136.6 584.8,138.3 578.6,144.8 572.4,167.1 566.2,217.9 560.0,273.1 553.8,300.5 547.6,309.0 541.4,311.3 535.2,311.8 529.0,312.0 522.8,312.0 516.6,312.0 510.4,312.0 504.2,312.0 498.0,312.0 491.8,312.0 485.6,312.0 479.4,312.0 473.2,312.0 467.0,312.0 460.8,312.0 454.6,312.0 448.4,312.0 442.2,312.0 436.0,312.0" fill="none" stroke="#0d9488" stroke-width="2.0" stroke-dasharray="5 3"/>
+<circle cx="560.0" cy="140.9" r="4.8" fill="#6d28d9"/>
+<text x="568.0" y="136.9" font-size="9.5" fill="#6d28d9" text-anchor="start" font-weight="700">剩磁 B_r (~1.4 T，撤掉外场依然满格！)</text>
+<circle cx="483.1" cy="224.0" r="4.8" fill="#dc2626"/>
+<text x="479.1" y="242.0" font-size="9.5" fill="#dc2626" text-anchor="middle" font-weight="700">-H_cJ 矫顽力</text>
+<text x="646" y="176" font-size="9.6" fill="#6d28d9" text-anchor="start" font-weight="700">紫宽框：钕铁硼硬磁</text>
+<text x="638" y="286" font-size="9.6" fill="#0d9488" text-anchor="start" font-weight="700">绿窄虚线：纯铁软磁</text>
+<rect x="396" y="348" width="328" height="112" rx="7" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="408" y="369" font-size="9.8" fill="#1e293b" text-anchor="start">• 软磁（纯铁钉/硅钢片）：磁滞回线窄如细针，矫顽力极小——外场</text>
+<text x="408" y="387" font-size="9.8" fill="#0d9488" text-anchor="start" font-weight="700">  一撤磁畴立刻散架归零（最适合做电磁铁与变压器铁芯）！</text>
+<text x="408" y="406" font-size="9.8" fill="#1e293b" text-anchor="start">• 硬磁 / 永磁（钕铁硼/钐钴/铁氧体）：回线宽胖如堡垒！撤去充磁</text>
+<text x="408" y="424" font-size="9.8" fill="#1e293b" text-anchor="start">  外场 (H=0) 后稳坐高剩磁 B_r，除非遭遇超强反向磁场 (-H_cJ) 或</text>
+<text x="408" y="442" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">  高温，否则被势垒牢牢锁在亚稳态里几十年不掉电！</text>
+</svg>

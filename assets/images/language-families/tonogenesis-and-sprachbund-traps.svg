@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="510" viewBox="0 0 760 510" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">汉藏与东南亚声调起源机制及汉字圈借词与阿尔泰语盟辨析图解</title>
+<desc id="desc">左栏展示1954年奥德里库尔声调起源定律：上古无声调语言因词尾喉塞音与擦音脱落及清浊声母分化衍生出四声八调；右栏解释日韩越大量汉语借词不改变谱系归属，以及阿尔泰语系为何被主流学界重新界定为草原语言联盟。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="509" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">上古汉语原本没有声调？为什么日语韩语借了半本汉字也不属汉藏语系？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左看奥德里库尔“辅音尾巴掉光换声调”定律；右看语言接触造成的“语盟”假象。</text>
+<rect x="20" y="68" width="360" height="424" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="36.0" y="82.0" width="304" height="22" rx="11.0" fill="#ffe4e6" stroke="#9f1239" stroke-width="1" stroke-opacity="0.35"/>
+<text x="188.0" y="97.0" font-size="10.8" fill="#9f1239" text-anchor="middle" font-weight="600">声调诞生记（Tonogenesis, Haudricourt 1954）</text>
+<text x="36" y="122" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">《诗经》时代的上古汉语、古藏语、古越南语原本都【没有声调】！</text>
+<text x="36" y="140" font-size="9.9" fill="#1e293b" text-anchor="start">靠词尾不同辅音区分词义；魏晋南北朝词尾脱落，音高替补上位：</text>
+<rect x="36" y="156" width="328" height="46" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="46" y="174" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">舒声韵尾 (*-m/-n/-ŋ/元音)</text>
+<text x="46" y="191" font-size="9.6" fill="#1d6fa5" text-anchor="start" font-weight="700">声带平稳振动  → 中古【平声】(Level)</text>
+<rect x="36" y="210" width="328" height="46" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="46" y="228" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">喉塞音韵尾 (*-ʔ 急收声门)</text>
+<text x="46" y="245" font-size="9.6" fill="#18794e" text-anchor="start" font-weight="700">声带骤紧拉高音调，-ʔ 脱落  → 中古【上声】(Rising)</text>
+<rect x="36" y="264" width="328" height="46" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="46" y="282" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">擦音韵尾 (*-s → *-h 漏气)</text>
+<text x="46" y="299" font-size="9.6" fill="#c25014" text-anchor="start" font-weight="700">声带松弛拉低音调，-h 脱落  → 中古【去声】(Falling)</text>
+<rect x="36" y="318" width="328" height="46" rx="6" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="46" y="336" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">塞音韵尾 (*-p / *-t / *-k)</text>
+<text x="46" y="353" font-size="9.6" fill="#6d28d9" text-anchor="start" font-weight="700">短促闭口堵死气流  → 中古【入声】(粤/闽/客保留)</text>
+<rect x="36" y="378" width="328" height="100" rx="7" fill="#f1f5f9" stroke="#475569" stroke-width="1"/>
+<text x="48" y="398" font-size="10.1" fill="#0f172a" text-anchor="start" font-weight="700">🔥 第二幕：词头清浊再劈一刀（四声八调）与活化石实证：</text>
+<text x="48" y="416" font-size="9.8" fill="#1e293b" text-anchor="start">• 唐宋以后词头浊辅音清化，清声母变高调(阴)、浊声母变低调(阳)，</text>
+<text x="48" y="433" font-size="9.8" fill="#1e293b" text-anchor="start">  4 声裂变为粤语等南方的八九个声调；普通话则“入派三声”合为 4 调。</text>
+<text x="48" y="451" font-size="9.8" fill="#9f1239" text-anchor="start" font-weight="700">• 现行铁证：安多藏语至今保留古复辅音而无声调，拉萨藏语脱落辅音</text>
+<text x="48" y="468" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="600">  正演化出高低声调——人类亲眼抓拍到了声调诞生的慢镜头！</text>
+<rect x="396" y="68" width="344" height="424" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="412.0" y="82.0" width="304" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="564.0" y="97.0" font-size="10.8" fill="#6d28d9" text-anchor="middle" font-weight="600">借词 ≠ 血缘：日韩越归属与“阿尔泰语盟”之争</text>
+<rect x="412" y="118" width="312" height="174" rx="7" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="424" y="138" font-size="10.4" fill="#6d28d9" text-anchor="start" font-weight="700">① 为什么日语、韩语、越南语不算汉藏语系？</text>
+<text x="424" y="157" font-size="9.9" fill="#1e293b" text-anchor="start">• 没错，日/韩/越词典里高达 60% 词汇是唐宋借去的汉字词！</text>
+<text x="424" y="175" font-size="9.9" fill="#1e293b" text-anchor="start">  但正如英语借了 70% 法语和拉丁语词汇，依然姓“日耳曼”不姓</text>
+<text x="424" y="193" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="700">  “罗曼”——认亲只看底层核心词与语法骨架：</text>
+<text x="424" y="213" font-size="9.8" fill="#0d9488" text-anchor="start" font-weight="700">  - 越南语：底层核心词属【南亚语系】（与柬埔寨高棉语同宗），</text>
+<text x="424" y="230" font-size="9.8" fill="#1e293b" text-anchor="start">    后在汉字文化圈区域接触中独立演化出 6 个声调；</text>
+<text x="424" y="248" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="600">  - 日语-琉球语系 &amp; 朝鲜语系：主宾谓 SOV 黏着语，原生数词</text>
+<text x="424" y="265" font-size="9.7" fill="#1e293b" text-anchor="start">    (hitotsu/futatsu vs hana/dul) 与汉语毫无同源对应，各自独立成系！</text>
+<rect x="412" y="304" width="312" height="174" rx="7" fill="#fef3c7" stroke="#b45309" stroke-width="1"/>
+<text x="424" y="324" font-size="10.3" fill="#b45309" text-anchor="start" font-weight="700">② 为什么旧课本里的“阿尔泰语系”被主流语言学拆散了？</text>
+<text x="424" y="343" font-size="9.9" fill="#1e293b" text-anchor="start">• 突厥语系、蒙古语系、通古斯语系都有元音和谐与黏着词尾，</text>
+<text x="424" y="361" font-size="9.9" fill="#1e293b" text-anchor="start">  19 世纪学者曾把它们（甚至拉上日韩）合称“阿尔泰语系”。</text>
+<text x="424" y="380" font-size="9.9" fill="#9f1239" text-anchor="start" font-weight="700">• 拆散原因：越往远古追溯，三者的最核心基础词反而越不像！</text>
+<text x="424" y="398" font-size="9.9" fill="#1e293b" text-anchor="start">  相似词大多是草原游牧帝国几千年混居互借的结果——主流学界</text>
+<text x="424" y="416" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">  现定性为【语言联盟 / 语盟 (Sprachbund)：邻居越长越像，并非同胞】</text>
+<text x="424" y="435" font-size="9.5" fill="#64748b" text-anchor="start">  （注：2021《Nature》Robbeets 提出辽河黍农“泛欧亚语系”假说，</text>
+<text x="424" y="451" font-size="9.5" fill="#64748b" text-anchor="start">   但因核心同源词证据争议较大，目前仍属少数派探讨假说。）</text>
+</svg>

@@ -58,34 +58,34 @@
 <polygon points="203,282 215,270 227,282" fill="#64748b"/>
 <path d="M 252 302 L 278 276 L 304 302 L 328 284 L 352 302 Z" fill="#cbd5e1"/>
 <text x="248" y="320" font-size="9.9" fill="#475569" text-anchor="middle">树木 → 房屋 → 远山层云（丰富地面透视线索把地平线推得很远）</text>
-<path d="M 96 162 A 140 140 0 0 1 236 302" fill="none" stroke="#475569" stroke-width="1.3" stroke-dasharray="4,4"/>
-<text x="214" y="214" font-size="9.9" fill="#475569" text-anchor="start">真实等距轨迹</text>
-<path d="M 52 200 Q 210 190 368 302" fill="none" stroke="#6d28d9" stroke-width="2.4"/>
-<text x="216" y="124" font-size="10.3" fill="#6d28d9" text-anchor="middle" font-weight="700">大脑感知的“扁平覆碗天穹”（四边远、头顶矮）</text>
+<path d="M 96 166 A 136 136 0 0 1 232 302" fill="none" stroke="#475569" stroke-width="1.3" stroke-dasharray="4,4"/>
+<text x="208" y="206" font-size="9.6" fill="#475569" text-anchor="start">真实等距轨迹</text>
+<path d="M 52 208 Q 210 198 368 302" fill="none" stroke="#6d28d9" stroke-width="2.4"/>
+<text x="216" y="122" font-size="10.2" fill="#6d28d9" text-anchor="middle" font-weight="700">大脑感知的“扁平覆碗天穹”（四边远、头顶矮）</text>
 <circle cx="96" cy="302" r="5.5" fill="#0f172a"/>
-<line x1="96.0" y1="302.0" x2="88.0" y2="196.0" stroke="#1d6fa5" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="3,3"/>
-<line x1="96.0" y1="302.0" x2="104.0" y2="196.0" stroke="#1d6fa5" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="3,3"/>
-<circle cx="96" cy="196" r="9" fill="#fef08a" stroke="#d97706" stroke-width="1.6"/>
-<text x="110" y="152" font-size="10.0" fill="#1d6fa5" text-anchor="start" font-weight="600">头顶无参照物 → 感知近</text>
-<text x="110" y="170" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">大脑判定：“小如盘盂”</text>
+<line x1="96.0" y1="302.0" x2="88.0" y2="204.0" stroke="#1d6fa5" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="3,3"/>
+<line x1="96.0" y1="302.0" x2="104.0" y2="204.0" stroke="#1d6fa5" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="3,3"/>
+<circle cx="96" cy="204" r="9" fill="#fef08a" stroke="#d97706" stroke-width="1.6"/>
+<text x="108" y="146" font-size="9.8" fill="#1d6fa5" text-anchor="start" font-weight="600">头顶无参照物 → 感知近</text>
+<text x="108" y="163" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="700">大脑判定：“小如盘盂”</text>
 <line x1="96.0" y1="302.0" x2="368.0" y2="266.0" stroke="#c25014" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="3,3"/>
 <line x1="96.0" y1="302.0" x2="368.0" y2="300.0" stroke="#c25014" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="3,3"/>
-<circle cx="368" cy="283" r="21" fill="#fb923c" fill-opacity="0.88" stroke="#dc2626" stroke-width="1.8"/>
-<text x="354" y="248" font-size="10.3" fill="#dc2626" text-anchor="end" font-weight="700">感知距离远 2.5–3 倍 →“大如车盖”！</text>
+<circle cx="368" cy="283" r="20" fill="#fb923c" fill-opacity="0.88" stroke="#dc2626" stroke-width="1.8"/>
+<text x="394" y="232" font-size="9.8" fill="#dc2626" text-anchor="end" font-weight="700">感知远 2.5–3 倍 →“大如车盖”！</text>
 <rect x="36" y="336" width="360" height="134" rx="8" fill="#f3e8ff" stroke="#d8b4fe" stroke-width="1.0"/>
-<text x="48" y="356" font-size="10.7" fill="#6d28d9" text-anchor="start" font-weight="700">为什么王充《论衡》猜错了方向，考夫曼（1962）找到了主因？</text>
-<text x="48" y="376" font-size="10.0" fill="#1e293b" text-anchor="start">• 东汉王充猜“暗处看火显得大”，但实测刺眼强光才会有微弱辐照膨胀，</text>
-<text x="48" y="394" font-size="10.0" fill="#1e293b" text-anchor="start">  而日出光芒柔和可直视、正午刺眼眩光只剩一团模糊白点；</text>
-<text x="48" y="412" font-size="10.0" fill="#1e293b" text-anchor="start">• Kaufman &amp; Rock (1962, Science) 用人工月亮证实：一旦遮住地面远景，</text>
-<text x="48" y="430" font-size="10.0" fill="#1e293b" text-anchor="start">  “车盖巨日／巨月”当场缩回原形！加上平视与仰头 90° 的眼球辐辏差异，</text>
-<text x="48" y="448" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="600">  大脑把完全相同的 0.16 mm 视网膜像强行脑补成了两三倍大的巨轮。</text>
+<text x="48" y="356" font-size="10.3" fill="#6d28d9" text-anchor="start" font-weight="700">为什么王充《论衡》猜反了亮度，考夫曼（1962）抓到了主因？</text>
+<text x="48" y="376" font-size="9.8" fill="#1e293b" text-anchor="start">• 东汉王充猜“暗处看火显得大”，但实测刺眼强光才会有辐照膨胀，</text>
+<text x="48" y="394" font-size="9.8" fill="#1e293b" text-anchor="start">  只是日出经 38 倍空气消光柔和可看清轮廓，正午眩光刺眼难直视；</text>
+<text x="48" y="412" font-size="9.8" fill="#1e293b" text-anchor="start">• Kaufman &amp; Rock (1962, Science) 人工月亮证实：遮住地面远景后，</text>
+<text x="48" y="430" font-size="9.8" fill="#1e293b" text-anchor="start">  “车盖巨日／巨月”当场缩回原形！加上平视与仰头 90° 的辐辏差异，</text>
+<text x="48" y="448" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="600">  大脑把完全相同的 0.16 mm 视网膜像强行放大成了两三倍巨轮。</text>
 <rect x="426" y="62" width="314" height="422" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
 <circle cx="444" cy="84" r="10.5" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.2"/>
 <text x="444" y="88" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">2</text>
 <text x="462" y="88" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">fMRI 脑扫描实锤 ＋ 三招一秒破除魔法</text>
 <rect x="442" y="106" width="282" height="152" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.1"/>
-<text x="454" y="126" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="700">Murray 等 (2006, Nature Neuroscience) fMRI 发现：</text>
-<text x="454" y="144" font-size="10.0" fill="#1e293b" text-anchor="start">视网膜光斑完全相等（0.53°），但初级视觉皮层 V1 里：</text>
+<text x="454" y="126" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">Murray 等 (2006, Nat. Neurosci.) fMRI 发现：</text>
+<text x="454" y="144" font-size="9.8" fill="#1e293b" text-anchor="start">视网膜光斑完全相等（0.53°），但初级视觉皮层 V1 里：</text>
 <rect x="456" y="158" width="120" height="86" rx="8" fill="#eaf4fb" stroke="#93c5fd" stroke-width="1"/>
 <circle cx="516" cy="192" r="12" fill="#3b82f6" fill-opacity="0.8"/>
 <text x="516" y="222" font-size="10.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">头顶近处目标</text>

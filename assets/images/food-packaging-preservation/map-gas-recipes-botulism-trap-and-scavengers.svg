@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="558" viewBox="0 0 760 558" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">气调包装三大气体配方与冷藏真空鱼肉毒毒素风险及脱氧剂干燥剂分工图解</title>
+<desc id="desc">上排对比三种气调与减氧包装机制：薯片充纯氮防碎防氧化、冷鲜牛排充80%高氧与20%二氧化碳兼顾鲜红肌红蛋白与抑菌、冷藏生鱼因非蛋白水解型肉毒梭菌可在3.3摄氏度无臭产毒而被FDA要求使用OTR不低于10000的高透气膜或冷冻；下排对比铁粉生锈把残氧压至0.01%以下的脱氧剂与硅胶/生石灰锁水保脆的干燥剂。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="557" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">四、给食物换一口空气：三大反直觉气调配方、真空鱼陷阱与脱氧剂</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">薯片充纯氮防碎防酸败，冷鲜红肉反充 80% 高氧保鲜红，冷藏生鱼乱抽真空竟会关掉腐败臭味警报</text>
+<rect x="20" y="66" width="232" height="266" rx="10" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.4"/>
+<rect x="20" y="66" width="232" height="40" rx="10" fill="#eaf4fb"/>
+<circle cx="40" cy="86" r="10" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="40" y="90" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="90" font-size="12.0" fill="#1d6fa5" text-anchor="start" font-weight="700">薯片袋：&gt;99% 纯氮气垫</text>
+<text x="32" y="128" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">配方：高纯食品级 N2 (残氧 &lt; 1%)</text>
+<text x="32" y="154" font-size="11.5" fill="#1e293b" text-anchor="start">• 化学防哈：氮三键极稳定，赶走 O2</text>
+<text x="32" y="176" font-size="11.5" fill="#1e293b" text-anchor="start">  掐断不饱和脂肪自由基氧化链；</text>
+<text x="32" y="202" font-size="11.5" fill="#1e293b" text-anchor="start">• 物理防碎：N2 难溶于油水不塌袋，</text>
+<text x="32" y="224" font-size="11.5" fill="#1e293b" text-anchor="start">  撑起防挤压气囊（绝非普通空气）！</text>
+<line x1="32" y1="242" x2="240" y2="242" stroke="#cbd5e1" stroke-width="1"/>
+<text x="32" y="264" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">包材：MPET/PE 镀铝复合膜遮光锁气</text>
+<text x="32" y="288" font-size="11.5" fill="#475569" text-anchor="start" font-weight="400">若充 CO2 易溶入油脂导致袋子吸瘪</text>
+<rect x="264" y="66" width="232" height="266" rx="10" fill="#ffffff" stroke="#18794e" stroke-width="1.4"/>
+<rect x="264" y="66" width="232" height="40" rx="10" fill="#e7f6ee"/>
+<circle cx="284" cy="86" r="10" fill="#ffffff" stroke="#18794e" stroke-width="1.2"/>
+<text x="284" y="90" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">2</text>
+<text x="300" y="90" font-size="12.0" fill="#18794e" text-anchor="start" font-weight="700">冷鲜红肉：80% O2 + 20% CO2</text>
+<text x="276" y="128" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">反直觉高氧气调 (HiOx-MAP, 2°C)</text>
+<text x="276" y="154" font-size="11.5" fill="#1e293b" text-anchor="start">• 为何不抽真空？缺氧呈暗紫褐色；</text>
+<text x="276" y="176" font-size="11.5" fill="#1e293b" text-anchor="start">  80% 高氧锁住鲜红氧合肌红蛋白！</text>
+<text x="276" y="202" font-size="11.5" fill="#1e293b" text-anchor="start">• 20% CO2 溶入肉表水膜降 pH，</text>
+<text x="276" y="224" font-size="11.5" fill="#1e293b" text-anchor="start">  精准抑制好氧假单胞菌腐败。</text>
+<line x1="276" y1="242" x2="484" y2="242" stroke="#cbd5e1" stroke-width="1"/>
+<text x="276" y="264" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">代价：高氧促脂氧化，货架期 7–10 天</text>
+<text x="276" y="288" font-size="11.5" fill="#475569" text-anchor="start" font-weight="400">批发大块肉仍用真空（拆封后回红）</text>
+<rect x="508" y="66" width="232" height="266" rx="10" fill="#ffffff" stroke="#be123c" stroke-width="1.4"/>
+<rect x="508" y="66" width="232" height="40" rx="10" fill="#ffe4e6"/>
+<circle cx="528" cy="86" r="10" fill="#ffffff" stroke="#be123c" stroke-width="1.2"/>
+<text x="528" y="90" font-size="11.5" fill="#be123c" text-anchor="middle" font-weight="700">3</text>
+<text x="544" y="90" font-size="12.0" fill="#be123c" text-anchor="start" font-weight="700">冷藏生鱼：盲目真空反招剧毒</text>
+<text x="520" y="128" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">FDA 规定：透气膜 OTR ≥ 10,000</text>
+<text x="520" y="154" font-size="11.5" fill="#1e293b" text-anchor="start">• 海鲜非蛋白水解肉毒梭菌在 ≥3.3°C</text>
+<text x="520" y="176" font-size="11.5" fill="#1e293b" text-anchor="start">  冷藏室即可厌氧产剧毒且不发臭！</text>
+<text x="520" y="202" font-size="11.5" fill="#1e293b" text-anchor="start">• 抽真空灭好氧菌 = 拔掉发臭警报；</text>
+<text x="520" y="224" font-size="11.5" fill="#1e293b" text-anchor="start">• 须用高透气膜故意放好氧菌先发臭</text>
+<line x1="520" y1="242" x2="728" y2="242" stroke="#cbd5e1" stroke-width="1"/>
+<text x="520" y="264" font-size="11.5" fill="#be123c" text-anchor="start" font-weight="700">提醒丢弃，否则真空生鱼须全程冷冻！</text>
+<text x="520" y="288" font-size="11.5" fill="#be123c" text-anchor="start" font-weight="700">铁律：真空生海鲜严禁仅放冷藏室</text>
+<rect x="20" y="346" width="354" height="198" rx="10" fill="#ffffff" stroke="#b45309" stroke-width="1.3"/>
+<rect x="34.0" y="358.0" width="196" height="22" rx="11.0" fill="#fef3c7" stroke="#b45309" stroke-width="1" stroke-opacity="0.35"/>
+<text x="132.0" y="373.0" font-size="12" fill="#b45309" text-anchor="middle" font-weight="600">主动包装 A · 铁粉脱氧剂（糕点/坚果）</text>
+<text x="34" y="396" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">配方：还原铁粉 Fe + 食盐电解质 + 活性炭</text>
+<text x="34" y="420" font-size="11.5" fill="#b45309" text-anchor="start" font-weight="700">反应：4Fe + 3O2 + 6H2O → 4Fe(OH)3（受控生锈）</text>
+<text x="34" y="444" font-size="11.5" fill="#1e293b" text-anchor="start">• 真空抽气常残留 0.5%–2% 缝隙氧，霉菌仍能长；</text>
+<text x="34" y="466" font-size="11.5" fill="#1e293b" text-anchor="start">• 脱氧剂借食物微湿水汽启动，把残氧吸至 &lt;0.01%</text>
+<text x="34" y="488" font-size="11.5" fill="#1e293b" text-anchor="start">  (&lt;100 ppm)，并持续吃掉透膜渗入的微量氧！</text>
+<text x="34" y="514" font-size="11.5" fill="#475569" text-anchor="start" font-weight="700">鉴别：新品黑灰松散微温；失效后变硬结红锈块。</text>
+<rect x="386" y="346" width="354" height="198" rx="10" fill="#ffffff" stroke="#6d28d9" stroke-width="1.3"/>
+<rect x="400.0" y="358.0" width="205" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="502.5" y="373.0" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="600">主动包装 B · 干燥剂（海苔/脆饼/冻干）</text>
+<text x="400" y="396" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">配方：透明硅胶珠（物理毛细吸附）或生石灰 CaO</text>
+<text x="400" y="420" font-size="11.5" fill="#be123c" text-anchor="start" font-weight="700">反应：CaO + H2O → Ca(OH)2（剧烈放热，严禁泡水！）</text>
+<text x="400" y="444" font-size="11.5" fill="#1e293b" text-anchor="start">• 只抓水汽不吸氧气！死守低水分活度 aw &lt; 0.25，</text>
+<text x="400" y="466" font-size="11.5" fill="#1e293b" text-anchor="start">  维持淀粉/糖玻璃化转变温度 Tg 高于室温防疲软；</text>
+<text x="400" y="488" font-size="11.5" fill="#1e293b" text-anchor="start">• 若把生石灰误放进湿软蛋糕，会把蛋糕吸成干砖；</text>
+<text x="400" y="514" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">口诀：湿软糕点放脱氧剂防霉，酥脆海苔放干燥剂保脆！</text>
+</svg>

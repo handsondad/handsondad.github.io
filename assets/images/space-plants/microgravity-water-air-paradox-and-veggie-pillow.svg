@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="536" viewBox="0 0 760 536" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">微重力下植物根区缺氧与叶面停滞层水气双悖论及空间站培养舱破局与五维选种标准图解</title>
+<desc id="desc">左上对比地球1g重力排水与浮力自然对流同轨道微重力下毛细水膜裹死根系导致缺氧窒息、无对流停滞层积聚乙烯导致和平号小麦绝育的双重物理陷阱；右上解剖NASA Veggie与问天实验舱采用红蓝绿LED灯板、强制通风除乙烯滤芯及多孔煅烧黏土植物枕水气平衡方案；底部列出高收获指数HI、矮小株高、短周期、高营养护盾与免虫媒耐逆境五道选种门槛。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="535" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">一、失重下的水气双悖论：为什么在太空浇水反而会把根“憋死”、把麦穗“熏绝育”？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">微重力抽走浮力对流（停滞气膜积聚乙烯）并放大毛细张力（水壳裹死根毛），迫使太空农业重构供水与通风</text>
+<style>
+  @keyframes sp-stagnant-halo {
+    0% { opacity: 0.25; transform: scale(0.92); }
+    100% { opacity: 0.92; transform: scale(1.04); }
+  }
+  @keyframes sp-fan-flow {
+    0% { stroke-dashoffset: 36; }
+    100% { stroke-dashoffset: 0; }
+  }
+  .sp-halo {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: sp-stagnant-halo 2.6s ease-out 1 forwards;
+  }
+  .sp-stream {
+    stroke-dasharray: 6 4;
+    animation: sp-fan-flow 2.4s linear 1 forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .sp-halo, .sp-stream { animation: none !important; opacity: 0.9 !important; stroke-dashoffset: 0 !important; }
+  }
+</style>
+<rect x="20" y="64" width="354" height="272" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="74.0" width="264" height="22" rx="11.0" fill="#fef2f2" stroke="#b91c1c" stroke-width="1" stroke-opacity="0.35"/>
+<text x="166.0" y="89.0" font-size="12" fill="#b91c1c" text-anchor="middle" font-weight="600">A · 地球 1 g 顺畅循环 vs 失重 μg 水气死局</text>
+<rect x="34" y="106" width="156" height="216" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.1"/>
+<text x="112" y="125" font-size="12.0" fill="#18794e" text-anchor="middle" font-weight="700">地球重力场 (1 g)</text>
+<line x1="112" y1="145" x2="112" y2="232" stroke="#18794e" stroke-width="2.6"/>
+<ellipse cx="95" cy="166" rx="16" ry="7" transform="rotate(-22 95 166)" fill="#18794e"/>
+<ellipse cx="129" cy="166" rx="16" ry="7" transform="rotate(22 129 166)" fill="#18794e"/>
+<path d="M 66 190 L 66 144" stroke="#1d6fa5" stroke-width="1.6"/>
+<polygon points="66,139 62.5,146 69.5,146" fill="#1d6fa5"/>
+<path d="M 158 190 L 158 144" stroke="#1d6fa5" stroke-width="1.6"/>
+<polygon points="158,139 154.5,146 161.5,146" fill="#1d6fa5"/>
+<text x="112" y="198" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">浮力对流吹散停滞层</text>
+<line x1="44" y1="210" x2="180" y2="210" stroke="#cbd5e1" stroke-width="1.2"/>
+<path d="M 112 210 L 96 242 M 112 218 L 128 244 M 112 226 L 108 250" stroke="#b45309" stroke-width="1.8" fill="none"/>
+<text x="112" y="272" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">重力排走积水</text>
+<text x="112" y="291" font-size="11.5" fill="#1e293b" text-anchor="middle">孔隙留足 21% O2</text>
+<text x="112" y="310" font-size="11.5" fill="#64748b" text-anchor="middle">根系自由呼吸不烂根</text>
+<rect x="204" y="106" width="156" height="216" rx="8" fill="#fef2f2" stroke="#b91c1c" stroke-width="1.2"/>
+<text x="282" y="125" font-size="12.0" fill="#b91c1c" text-anchor="middle" font-weight="700">轨道微重力 (μg ≈ 0)</text>
+<ellipse class="sp-halo" cx="282" cy="164" rx="46" ry="24" fill="#fde68a" fill-opacity="0.55" stroke="#c25014" stroke-width="1.3" stroke-dasharray="4 3"/>
+<line x1="282" y1="145" x2="282" y2="232" stroke="#65a30d" stroke-width="2.6"/>
+<ellipse cx="266" cy="166" rx="14" ry="6" transform="rotate(-15 266 166)" fill="#65a30d"/>
+<ellipse cx="298" cy="166" rx="14" ry="6" transform="rotate(15 298 166)" fill="#65a30d"/>
+<text x="282" y="198" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">无对流：乙烯围困绝育</text>
+<line x1="214" y1="210" x2="350" y2="210" stroke="#cbd5e1" stroke-width="1.2"/>
+<ellipse class="sp-halo" cx="282" cy="233" rx="34" ry="19" fill="#93c5fd" fill-opacity="0.65" stroke="#1d6fa5" stroke-width="1.4"/>
+<path d="M 282 210 L 267 240 M 282 218 L 297 242 M 282 225 L 280 246" stroke="#b45309" stroke-width="1.8" fill="none"/>
+<text x="282" y="272" font-size="11.5" fill="#b91c1c" text-anchor="middle" font-weight="700">毛细水膜死裹根系</text>
+<text x="282" y="291" font-size="11.5" fill="#1e293b" text-anchor="middle">水中 O2 扩散慢万倍</text>
+<text x="282" y="310" font-size="11.5" fill="#64748b" text-anchor="middle">根区缺氧窒息 (Hypoxia)</text>
+<rect x="386" y="64" width="354" height="272" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="400.0" y="74.0" width="247" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="523.5" y="89.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">B · 空间站培养舱破局解剖（Veggie / 问天）</text>
+<rect x="398" y="108" width="160" height="34" rx="6" fill="#fdf4ff" stroke="#6d28d9" stroke-width="1.3"/>
+<circle cx="416" cy="125" r="4.3" fill="#b91c1c"/>
+<circle cx="438" cy="125" r="4.3" fill="#1d6fa5"/>
+<circle cx="460" cy="125" r="4.3" fill="#b91c1c"/>
+<circle cx="482" cy="125" r="4.3" fill="#18794e"/>
+<circle cx="504" cy="125" r="4.3" fill="#b91c1c"/>
+<circle cx="526" cy="125" r="4.3" fill="#1d6fa5"/>
+<circle cx="544" cy="125" r="4.3" fill="#b91c1c"/>
+<text x="570" y="121" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">① 红蓝绿精准 LED 灯板</text>
+<text x="570" y="138" font-size="11.5" fill="#1e293b" text-anchor="start">红蓝促光合，绿光供巡检</text>
+<rect x="398" y="152" width="160" height="68" rx="6" fill="#f8fafc" stroke="#93c5fd" stroke-width="1.1"/>
+<path class="sp-stream" d="M 410 176 C 446 162, 504 162, 546 176" fill="none" stroke="#1d6fa5" stroke-width="1.8"/>
+<path class="sp-stream" d="M 410 198 C 446 184, 504 184, 546 198" fill="none" stroke="#0f766e" stroke-width="1.8"/>
+<ellipse cx="465" cy="196" rx="17" ry="7.5" transform="rotate(-18 465 196)" fill="#18794e"/>
+<ellipse cx="491" cy="196" rx="17" ry="7.5" transform="rotate(18 491 196)" fill="#18794e"/>
+<line x1="478" y1="184" x2="478" y2="224" stroke="#18794e" stroke-width="2.5"/>
+<text x="570" y="173" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">② 强制风扇 + 除乙烯滤芯</text>
+<text x="570" y="191" font-size="11.5" fill="#1e293b" text-anchor="start">削薄叶面气膜补足 CO2</text>
+<text x="570" y="209" font-size="11.5" fill="#64748b" text-anchor="start">压低乙烯防麦穗空瘪绝育</text>
+<rect x="398" y="230" width="160" height="90" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="1.3"/>
+<rect x="465" y="298" width="26" height="18" rx="3" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<circle cx="418" cy="252" r="5.8" fill="#d97706" fill-opacity="0.35" stroke="#b45309" stroke-width="1"/>
+<circle cx="438" cy="248" r="5.8" fill="#d97706" fill-opacity="0.35" stroke="#b45309" stroke-width="1"/>
+<circle cx="458" cy="254" r="5.8" fill="#d97706" fill-opacity="0.35" stroke="#b45309" stroke-width="1"/>
+<circle cx="498" cy="250" r="5.8" fill="#d97706" fill-opacity="0.35" stroke="#b45309" stroke-width="1"/>
+<circle cx="520" cy="253" r="5.8" fill="#d97706" fill-opacity="0.35" stroke="#b45309" stroke-width="1"/>
+<circle cx="540" cy="249" r="5.8" fill="#d97706" fill-opacity="0.35" stroke="#b45309" stroke-width="1"/>
+<circle cx="426" cy="274" r="5.8" fill="#d97706" fill-opacity="0.35" stroke="#b45309" stroke-width="1"/>
+<circle cx="448" cy="272" r="5.8" fill="#d97706" fill-opacity="0.35" stroke="#b45309" stroke-width="1"/>
+<circle cx="508" cy="274" r="5.8" fill="#d97706" fill-opacity="0.35" stroke="#b45309" stroke-width="1"/>
+<circle cx="532" cy="272" r="5.8" fill="#d97706" fill-opacity="0.35" stroke="#b45309" stroke-width="1"/>
+<circle cx="434" cy="294" r="5.8" fill="#d97706" fill-opacity="0.35" stroke="#b45309" stroke-width="1"/>
+<circle cx="524" cy="293" r="5.8" fill="#d97706" fill-opacity="0.35" stroke="#b45309" stroke-width="1"/>
+<path d="M 478 224 L 462 268 M 478 236 L 495 272 M 478 248 L 478 288" stroke="#18794e" stroke-width="1.8" fill="none"/>
+<text x="478" y="311" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">导水芯垫</text>
+<text x="570" y="248" font-size="11.5" fill="#b45309" text-anchor="start" font-weight="700">③ 煅烧黏土植物枕</text>
+<text x="570" y="267" font-size="11.5" fill="#1e293b" text-anchor="start">1–2 mm 陶粒 + 控释肥</text>
+<text x="570" y="286" font-size="11.5" fill="#1e293b" text-anchor="start">靠基质势锁住薄水膜，颗</text>
+<text x="570" y="305" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">粒间隙留出通气供氧通道</text>
+<rect x="20" y="348" width="720" height="172" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="358.0" width="128" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="98.0" y="373.0" font-size="12" fill="#18794e" text-anchor="middle" font-weight="600">C · 太空选种五道硬考题</text>
+<text x="206" y="374" font-size="11.5" fill="#64748b" text-anchor="start">为什么果树、高秆玉米在第一轮选拔就会直接出局？</text>
+<rect x="34" y="392" width="132" height="114" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="100" y="413" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">① 超高收获指数</text>
+<text x="100" y="437" font-size="12.0" fill="#0f172a" text-anchor="middle" font-weight="700">HI → 80%–100%</text>
+<text x="100" y="463" font-size="11.5" fill="#1e293b" text-anchor="middle">少长树皮木秆与果壳</text>
+<text x="100" y="486" font-size="11.5" fill="#64748b" text-anchor="middle">省电又免堆肥耗氧</text>
+<rect x="174" y="392" width="132" height="114" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="240" y="413" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">② 极致矮小紧凑</text>
+<text x="240" y="437" font-size="12.0" fill="#0f172a" text-anchor="middle" font-weight="700">株高 0.1–45 cm</text>
+<text x="240" y="463" font-size="11.5" fill="#1e293b" text-anchor="middle">多层栽培架立体叠放</text>
+<text x="240" y="486" font-size="11.5" fill="#64748b" text-anchor="middle">压低宝贵压力舱容积</text>
+<rect x="314" y="392" width="132" height="114" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="380" y="413" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">③ 飞速倍增周期</text>
+<text x="380" y="437" font-size="12.0" fill="#0f172a" text-anchor="middle" font-weight="700">29 h 至 28–90 d</text>
+<text x="380" y="463" font-size="11.5" fill="#1e293b" text-anchor="middle">快速接力产氧与口粮</text>
+<text x="380" y="486" font-size="11.5" fill="#64748b" text-anchor="middle">断供故障后迅速恢复</text>
+<rect x="454" y="392" width="132" height="114" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="520" y="413" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">④ 高密营养护盾</text>
+<text x="520" y="437" font-size="12.0" fill="#0f172a" text-anchor="middle" font-weight="700">全蛋白+维C/花青素</text>
+<text x="520" y="463" font-size="11.5" fill="#1e293b" text-anchor="middle">补齐冻干粮降解缺口</text>
+<text x="520" y="486" font-size="11.5" fill="#64748b" text-anchor="middle">清除宇宙射线自由基</text>
+<rect x="594" y="392" width="132" height="114" rx="8" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.2"/>
+<text x="660" y="413" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">⑤ 免媒授粉耐逆</text>
+<text x="660" y="437" font-size="12.0" fill="#0f172a" text-anchor="middle" font-weight="700">芽殖/扦插/自花</text>
+<text x="660" y="463" font-size="11.5" fill="#1e293b" text-anchor="middle">太空没有蜜蜂与大风</text>
+<text x="660" y="486" font-size="11.5" fill="#64748b" text-anchor="middle">耐高 CO2 与辐射温差</text>
+</svg>

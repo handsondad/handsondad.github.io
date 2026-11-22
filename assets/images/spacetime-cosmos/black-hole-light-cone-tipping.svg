@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="528" viewBox="0 0 760 528" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">黑洞史瓦西视界内外未来光锥倾倒、时间与空间角色互换及EHT双黑洞实测参数图解</title>
+<desc id="desc">上图展示从远处平直时空、强引力区、事件视界r=r_s到视界内部r&lt;r_s未来光锥逐步向内倾倒直至完全指向奇点r=0；下图解释度规符号翻转导致r变为时间方向，并列出Sgr A*与M87*实测质量与史瓦西半径。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="527" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">四、黑洞视界内外的终极反转：为什么掉进视界后“奇点”变成了你的未来？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">越逼近史瓦西半径 r_s = 2GM/c²，未来光锥越向内倾倒；一旦跨过 r &lt; r_s，空间径向 r 与时间 t 彻底互换角色</text>
+<rect x="20" y="64" width="720" height="272" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+<text x="36" y="88" font-size="12" fill="#f8fafc" font-weight="700">径向时空剖面（爱丁顿—芬克尔斯坦无奇异视角：观察未来光锥如何一步步向内倾倒）</text>
+<rect x="36" y="102" width="306.0" height="218" rx="6" fill="#1e1b4b" fill-opacity="0.55"/>
+<path d="M 92,106 L 97,114 L 87,124 L 97,134 L 87,144 L 97,154 L 87,164 L 97,174 L 87,184 L 97,194 L 87,204 L 97,214 L 87,224 L 97,234 L 87,244 L 97,254 L 87,264 L 97,274 L 87,284 L 97,294 L 87,304 L 97,314" fill="none" stroke="#f87171" stroke-width="2.6"/>
+<text x="80" y="122" font-size="11" fill="#fca5a5" text-anchor="end" font-weight="700">中心奇点</text>
+<text x="80" y="138" font-size="10.5" fill="#fca5a5" text-anchor="end">r = 0</text>
+<line x1="342.0" y1="102" x2="342.0" y2="320" stroke="#facc15" stroke-width="2.2" stroke-dasharray="6 4"/>
+<text x="342.0" y="118" font-size="11" fill="#fde047" text-anchor="middle" font-weight="700">事件视界 r = r_s = 2GM/c²</text>
+<line x1="92" y1="304" x2="716" y2="304" stroke="#64748b" stroke-width="1.3" marker-end="url(#arr-muted)"/>
+<text x="712" y="320" font-size="10.5" fill="#cbd5e1" text-anchor="end">远离黑洞径向距离 r →</text>
+<polygon points="646,238 604,180 688,180" fill="#38bdf8" fill-opacity="0.28" stroke="#38bdf8" stroke-width="1.8"/>
+<ellipse cx="646.0" cy="180.0" rx="42.0" ry="6" fill="#38bdf8" fill-opacity="0.35" stroke="#38bdf8" stroke-width="1.2"/>
+<circle cx="646" cy="238" r="4" fill="#ffffff"/>
+<text x="646" y="264" font-size="10.8" fill="#bae6fd" text-anchor="middle" font-weight="700">① 远处平直时空</text>
+<text x="646" y="281" font-size="10" fill="#cbd5e1" text-anchor="middle">光锥竖直 · 来去自由</text>
+<polygon points="496,238 442,182 518,180" fill="#60a5fa" fill-opacity="0.28" stroke="#60a5fa" stroke-width="1.8"/>
+<ellipse cx="480.0" cy="181.0" rx="38.0" ry="6" fill="#60a5fa" fill-opacity="0.35" stroke="#60a5fa" stroke-width="1.2"/>
+<circle cx="496" cy="238" r="4" fill="#ffffff"/>
+<text x="496" y="264" font-size="10.8" fill="#bfdbfe" text-anchor="middle" font-weight="700">② 强引力区 (1.6 r_s)</text>
+<text x="496" y="281" font-size="10" fill="#cbd5e1" text-anchor="middle">光锥内倾 · 逃逸变难</text>
+<polygon points="342,238 280,184 342,174" fill="#facc15" fill-opacity="0.28" stroke="#facc15" stroke-width="1.8"/>
+<ellipse cx="311.0" cy="179.0" rx="31.0" ry="6" fill="#facc15" fill-opacity="0.35" stroke="#facc15" stroke-width="1.2"/>
+<circle cx="342" cy="238" r="4" fill="#ffffff"/>
+<text x="342" y="264" font-size="10.8" fill="#fef08a" text-anchor="middle" font-weight="700">③ 事件视界 (r = r_s)</text>
+<text x="342" y="281" font-size="10" fill="#cbd5e1" text-anchor="middle">外射光原地冻结！</text>
+<polygon points="216,238 148,194 196,176" fill="#f87171" fill-opacity="0.28" stroke="#f87171" stroke-width="1.8"/>
+<ellipse cx="172.0" cy="185.0" rx="24.0" ry="6" fill="#f87171" fill-opacity="0.35" stroke="#f87171" stroke-width="1.2"/>
+<circle cx="216" cy="238" r="4" fill="#ffffff"/>
+<text x="216" y="264" font-size="10.8" fill="#fecaca" text-anchor="middle" font-weight="700">④ 视界内部 (r &lt; r_s)</text>
+<text x="216" y="281" font-size="10" fill="#cbd5e1" text-anchor="middle">整个未来全指向 r=0！</text>
+<rect x="20" y="350" width="362" height="164" rx="10" fill="#fef2f2" stroke="#b91c1c" stroke-width="1"/>
+<rect x="34.0" y="360.0" width="334" height="22" rx="11.0" fill="#ffffff" stroke="#b91c1c" stroke-width="1" stroke-opacity="0.35"/>
+<text x="201.0" y="375.0" font-size="12" fill="#b91c1c" text-anchor="middle" font-weight="600">为什么跨过视界就绝无可能回头？（Carroll 广义相对论）</text>
+<text x="34" y="400" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">• 史瓦西度规中 (1 − r_s/r) 在 r &lt; r_s 时正负号翻转：</text>
+<text x="34" y="421" font-size="11" fill="#b91c1c" text-anchor="start" font-weight="700">  原本是空间的径向 r 变成了“类时方向”！</text>
+<text x="34" y="443" font-size="11" fill="#1e293b" text-anchor="start">• 这意味着：视界内的中心奇点 r = 0 根本不是“前方</text>
+<text x="34" y="462" font-size="11" fill="#0f172a" text-anchor="start" font-weight="600">  房间里的一堵墙”，而是你时间轴上的“下周一”！</text>
+<text x="34" y="484" font-size="10.8" fill="#1e293b" text-anchor="start">• 就像没人能阻止自己变老，视界内开火箭乱挣扎，</text>
+<text x="34" y="502" font-size="10.8" fill="#475569" text-anchor="start" font-weight="600">  反而会因时间膨胀缩短你抵达奇点的剩余固有寿命。</text>
+<rect x="398" y="350" width="342" height="164" rx="10" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<rect x="412.0" y="360.0" width="308" height="22" rx="11.0" fill="#ffffff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="566.0" y="375.0" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="600">人类亲眼拍到的两座真实视界（EHT 合作组）</text>
+<text x="412" y="400" font-size="11" fill="#6d28d9" text-anchor="start" font-weight="700">① 银河系中心人马座 A* (Sgr A*, 2022 公布)：</text>
+<text x="412" y="420" font-size="10.8" fill="#1e293b" text-anchor="start">   质量 ≈ 400 万倍太阳，r_s ≈ 1,180 万 km，</text>
+<text x="412" y="439" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="600">   光环角直径 51.8 ± 2.3 微角秒。</text>
+<text x="412" y="463" font-size="11" fill="#6d28d9" text-anchor="start" font-weight="700">② 室女座巨星系 M87* (2019 首张黑洞照片)：</text>
+<text x="412" y="483" font-size="10.8" fill="#1e293b" text-anchor="start">   质量 (65 ± 7) 亿倍太阳，r_s ≈ 192 亿 km</text>
+<text x="412" y="502" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">   (≈ 128 AU，足可吞下整个太阳系冥王星轨道！)</text>
+</svg>

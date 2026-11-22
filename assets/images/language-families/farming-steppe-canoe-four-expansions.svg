@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="504" viewBox="0 0 760 504" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">印欧、汉藏、南岛与班图四大语系史前扩张引擎与路线对比图解</title>
+<desc id="desc">四宫格汇总语言学、考古学与古DNA联合重建的四大语系扩张机制：印欧语系的草原车马与乳牧、汉藏语系的黄河粟黍农耕、南岛语系自台湾出发的舷外浮木舟远航，以及非洲班图语族的薯蓣农业与铁器扩张。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="503" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">一个小部落的方言，凭什么铺满半个地球？四大语系扩张的物质引擎</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">语言不会无缘无故跑赢邻居——每一次超级语系大爆发背后，都是一场粮食驯化或交通技术的降维打击！</text>
+<rect x="20" y="68" width="352" height="198" rx="8" fill="#ffffff" stroke="#1d6fa5" stroke-width="1"/>
+<rect x="20" y="68" width="352" height="46" rx="8" fill="#eaf4fb"/>
+<circle cx="38" cy="91" r="10" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="38" y="95" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="54" y="88" font-size="10.9" fill="#1d6fa5" text-anchor="start" font-weight="700">印欧语系：草原马车 + 乳糖耐受（~8120→5000 年前）</text>
+<text x="54" y="105" font-size="9.7" fill="#475569" text-anchor="start" font-weight="600">从爱尔兰、俄罗斯一直铺到印度恒河平原</text>
+<text x="34" y="134" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">• 2015 古耳骨 DNA + 2023《Science》混合起源模型联合破案：</text>
+<text x="34" y="153" font-size="9.9" fill="#1e293b" text-anchor="start">  印欧祖语约 8120 年前萌生于高加索以南新月沃地北缘；一支北上</text>
+<text x="34" y="171" font-size="9.9" fill="#1e293b" text-anchor="start">  黑海-里海草原演化出【颜那亚牧民 (Yamnaya)】；</text>
+<text x="34" y="192" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="600">• 约 5000 年前凭【牛拉四轮木车 + 驯化马匹 + 成年喝奶基因】，</text>
+<text x="34" y="210" font-size="9.9" fill="#1e293b" text-anchor="start">  短短几百年横扫欧洲（绳纹陶文化 75% 血统换血）并东进南亚！</text>
+<text x="34" y="236" font-size="9.5" fill="#1d6fa5" text-anchor="start" font-weight="700">🔗 证据链：词汇重构(*kʷékʷlos 车轮) + 颜那亚古DNA + 考古车辙三合一</text>
+<rect x="388" y="68" width="352" height="198" rx="8" fill="#ffffff" stroke="#9f1239" stroke-width="1"/>
+<rect x="388" y="68" width="352" height="46" rx="8" fill="#ffe4e6"/>
+<circle cx="406" cy="91" r="10" fill="#ffffff" stroke="#9f1239" stroke-width="1.2"/>
+<text x="406" y="95" font-size="11.5" fill="#9f1239" text-anchor="middle" font-weight="700">2</text>
+<text x="422" y="88" font-size="10.9" fill="#9f1239" text-anchor="start" font-weight="700">汉藏语系：黄河流域小米农耕人口爆发（~7200–5900 年前）</text>
+<text x="422" y="105" font-size="9.7" fill="#475569" text-anchor="start" font-weight="600">从黄河中上游辐射华北、华南、青藏高原与缅甸</text>
+<text x="402" y="134" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">• 2019《PNAS》与《Nature》两项独立贝叶斯谱系年代学锁定同源：</text>
+<text x="402" y="153" font-size="9.9" fill="#1e293b" text-anchor="start">  汉藏祖语并非诞生于西南丛林，而是源于中国北方黄河流域新石器</text>
+<text x="402" y="171" font-size="9.9" fill="#1e293b" text-anchor="start">  晚期【磁山晚期—仰韶早期】种粟（小米）与黍（黄米）的农夫！</text>
+<text x="402" y="192" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="600">• 耐旱高产的小米养活了远超狩猎采集十倍的人口密度：西支南下</text>
+<text x="402" y="210" font-size="9.9" fill="#1e293b" text-anchor="start">  高原河谷分化为藏缅语族，东支留在中原演化为上古汉语！</text>
+<text x="402" y="236" font-size="9.5" fill="#9f1239" text-anchor="start" font-weight="700">🔗 证据链：古汉藏同源农作物词（粟、黍、稻、猪、犬）与仰韶遗址吻合</text>
+<rect x="20" y="280" width="352" height="198" rx="8" fill="#ffffff" stroke="#0d9488" stroke-width="1"/>
+<rect x="20" y="280" width="352" height="46" rx="8" fill="#f0fdfa"/>
+<circle cx="38" cy="303" r="10" fill="#ffffff" stroke="#0d9488" stroke-width="1.2"/>
+<text x="38" y="307" font-size="11.5" fill="#0d9488" text-anchor="middle" font-weight="700">3</text>
+<text x="54" y="300" font-size="10.9" fill="#0d9488" text-anchor="start" font-weight="700">南岛语系：台湾岛出发的舷外浮木舟奇迹（~5230 年前）</text>
+<text x="54" y="317" font-size="9.7" fill="#475569" text-anchor="start" font-weight="600">横跨 2.6 万公里：从非洲马达加斯加直到复活节岛！</text>
+<text x="34" y="346" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">• 惊人铁证：整个南岛语系 10 个一级分支中，足足 9 个全都只分布在</text>
+<text x="34" y="365" font-size="9.9" fill="#1e293b" text-anchor="start">  【中国台湾岛高山族原住民语言】里，剩下 1 支（马来-波利尼西亚）</text>
+<text x="34" y="383" font-size="9.9" fill="#1e293b" text-anchor="start">  包揽了菲律宾、印尼、马来西亚、夏威夷、新西兰毛利与马达加斯加！</text>
+<text x="34" y="404" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="600">• 2009《Science》测年确认：约 5230 年前自台湾扬帆，靠【双体/舷外</text>
+<text x="34" y="422" font-size="9.9" fill="#1e293b" text-anchor="start">  浮杆独木舟 + 观星测浪术】创下工业革命前地理跨度第一纪录！</text>
+<text x="34" y="448" font-size="9.5" fill="#0d9488" text-anchor="start" font-weight="700">🔗 规律：“多样性中心即故乡”——越靠近发源地，一级老分支越密集！</text>
+<rect x="388" y="280" width="352" height="198" rx="8" fill="#ffffff" stroke="#18794e" stroke-width="1"/>
+<rect x="388" y="280" width="352" height="46" rx="8" fill="#e7f6ee"/>
+<circle cx="406" cy="303" r="10" fill="#ffffff" stroke="#18794e" stroke-width="1.2"/>
+<text x="406" y="307" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">4</text>
+<text x="422" y="300" font-size="10.9" fill="#18794e" text-anchor="start" font-weight="700">尼日尔-刚果（班图大扩张）：薯蓣农业 + 冶铁（~5000 年前）</text>
+<text x="422" y="317" font-size="9.7" fill="#475569" text-anchor="start" font-weight="600">重塑整个撒哈拉以南非洲的语言版图</text>
+<text x="402" y="346" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">• 2015《PNAS》重建迁徙路线：约 5000 年前起源于喀麦隆—尼日利亚</text>
+<text x="402" y="365" font-size="9.9" fill="#1e293b" text-anchor="start">  交界高地（高产薯蓣与油棕农业驱动人口增长）；</text>
+<text x="402" y="383" font-size="9.9" fill="#1e293b" text-anchor="start">• 约 4000 年前趁中非刚果雨林气候变干裂开“稀树草原走廊”南下，</text>
+<text x="402" y="404" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="600">• 后期叠加【冶铁农具与铁矛】技术优势，将五百多种亲属班图语</text>
+<text x="402" y="422" font-size="9.9" fill="#1e293b" text-anchor="start">  一路推至东非大裂谷与南非好望角！</text>
+<text x="402" y="448" font-size="9.5" fill="#18794e" text-anchor="start" font-weight="700">🔗 幸存：南部非洲科伊桑猎人保留了古老独特的“搭嘴音 (Clicks)”谱系</text>
+</svg>

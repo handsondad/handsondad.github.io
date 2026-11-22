@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="596" viewBox="0 0 760 596" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">赫罗图恒星半径等值线、太阳一生演化动画与大质量恒星寿命挥霍悖论对比图</title>
+<desc id="desc">左侧赫罗图按斯特藩-玻尔兹曼定律精确绘出0.01至1000倍太阳半径斜线、主序星带、25倍太阳质量超巨星轨迹，并以单次CSS动画演示1倍太阳质量从主序星经红巨星氦闪、水平支、渐近巨星支与行星状星云裸核最终冷却为白矮星；右侧列出40倍至0.4倍太阳质量的主序寿命反差。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="595" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">二、赫罗图（H–R 图）一生轨迹：为什么越庞大的恒星反而越“短命”？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">横轴向左升温、纵轴向上增亮：太阳 120 亿年演化动画，对比大质量恒星“挥霍无度”的百万年闪击战</text>
+<style>
+  .hr-sun-anim {
+    stroke-dasharray: 1400;
+    stroke-dashoffset: 1400;
+    animation: hrDrawTrack 8.5s cubic-bezier(0.32, 0.04, 0.24, 1) 0.4s forwards;
+  }
+  .hr-wd-pulse {
+    opacity: 0;
+    animation: hrShowEnd 0.8s ease-out 8.6s forwards;
+  }
+  @keyframes hrDrawTrack {
+    0% { stroke-dashoffset: 1400; }
+    100% { stroke-dashoffset: 0; }
+  }
+  @keyframes hrShowEnd {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hr-sun-anim { animation: none !important; stroke-dashoffset: 0 !important; }
+    .hr-wd-pulse { animation: none !important; opacity: 1 !important; }
+  }
+</style>
+<rect x="20" y="64" width="488" height="518" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="74.0" width="386" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="227.0" y="89.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">A · 赫罗图（左热右冷 · 上亮下暗）与太阳一生轨迹动画</text>
+<rect x="76.0" y="114.0" width="412.0" height="408.0" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.2"/>
+<line x1="76.0" y1="503.1" x2="488.0" y2="503.1" stroke="#e2e8f0" stroke-width="1"/>
+<text x="70.0" y="507.1" font-size="9.8" fill="#64748b" text-anchor="end">10^-4</text>
+<line x1="76.0" y1="427.6" x2="488.0" y2="427.6" stroke="#e2e8f0" stroke-width="1"/>
+<text x="70.0" y="431.6" font-size="9.8" fill="#64748b" text-anchor="end">10^-2</text>
+<line x1="76.0" y1="352.0" x2="488.0" y2="352.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="70.0" y="356.0" font-size="9.8" fill="#64748b" text-anchor="end">1</text>
+<line x1="76.0" y1="276.4" x2="488.0" y2="276.4" stroke="#e2e8f0" stroke-width="1"/>
+<text x="70.0" y="280.4" font-size="9.8" fill="#64748b" text-anchor="end">10^2</text>
+<line x1="76.0" y1="200.9" x2="488.0" y2="200.9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="70.0" y="204.9" font-size="9.8" fill="#64748b" text-anchor="end">10^4</text>
+<line x1="76.0" y1="125.3" x2="488.0" y2="125.3" stroke="#e2e8f0" stroke-width="1"/>
+<text x="70.0" y="129.3" font-size="9.8" fill="#64748b" text-anchor="end">10^6</text>
+<line x1="92.6" y1="114.0" x2="92.6" y2="522.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="92.6" y="537.0" font-size="9.8" fill="#64748b" text-anchor="middle">40,000</text>
+<line x1="190.0" y1="114.0" x2="190.0" y2="522.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="190.0" y="537.0" font-size="9.8" fill="#64748b" text-anchor="middle">20,000</text>
+<line x1="287.4" y1="114.0" x2="287.4" y2="522.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="287.4" y="537.0" font-size="9.8" fill="#64748b" text-anchor="middle">10,000</text>
+<line x1="364.7" y1="114.0" x2="364.7" y2="522.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="364.7" y="537.0" font-size="9.8" fill="#64748b" text-anchor="middle">5,772</text>
+<line x1="456.6" y1="114.0" x2="456.6" y2="522.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="456.6" y="537.0" font-size="9.8" fill="#64748b" text-anchor="middle">3,000</text>
+<text x="107.4" y="109.0" font-size="10.2" fill="#2563eb" text-anchor="middle" font-weight="700">O</text>
+<text x="204.8" y="109.0" font-size="10.2" fill="#3b82f6" text-anchor="middle" font-weight="700">B</text>
+<text x="305.4" y="109.0" font-size="10.2" fill="#0ea5e9" text-anchor="middle" font-weight="700">A</text>
+<text x="343.7" y="109.0" font-size="10.2" fill="#0d9488" text-anchor="middle" font-weight="700">F</text>
+<text x="368.9" y="109.0" font-size="10.2" fill="#d97706" text-anchor="middle" font-weight="700">G</text>
+<text x="402.8" y="109.0" font-size="10.2" fill="#ea580c" text-anchor="middle" font-weight="700">K</text>
+<text x="459.0" y="109.0" font-size="10.2" fill="#dc2626" text-anchor="middle" font-weight="700">M</text>
+<polyline points="400.5,519.8 395.3,517.4 390.1,515.0 385.0,512.6 379.8,510.2 374.7,507.8 369.6,505.4 364.4,503.0 359.3,500.6 354.1,498.2 348.9,495.8 343.8,493.4 338.6,491.0 333.5,488.6 328.4,486.2 323.2,483.8 318.1,481.4 312.9,478.9 307.7,476.5 302.6,474.1 297.4,471.7 292.3,469.3 287.1,466.9 282.0,464.5 276.9,462.1 271.7,459.7 266.6,457.3 261.4,454.9 256.2,452.5 251.1,450.1 246.0,447.7 240.8,445.3 235.7,442.9 230.5,440.5 225.4,438.1 220.2,435.7 215.1,433.3 209.9,430.9 204.7,428.5 199.6,426.0 194.4,423.6 189.3,421.2 184.2,418.8 179.0,416.4 173.8,414.0 168.7,411.6 163.6,409.2 158.4,406.8 153.2,404.4 148.1,402.0 142.9,399.6 137.8,397.2 132.7,394.8 127.5,392.4 122.3,390.0 117.2,387.6 112.1,385.2 106.9,382.8 101.8,380.4 96.6,378.0 91.4,375.6 86.3,373.1 81.2,370.7 76.0,368.3" fill="none" stroke="#cbd5e1" stroke-width="1.1" stroke-dasharray="4 3"/>
+<text x="147.8" y="397.9" font-size="9.8" fill="#64748b" text-anchor="middle">0.01 R⊙</text>
+<polyline points="488.0,485.1 482.8,482.7 477.7,480.3 472.5,477.9 467.4,475.5 462.2,473.1 457.1,470.7 452.0,468.3 446.8,465.9 441.6,463.5 436.5,461.1 431.3,458.7 426.2,456.3 421.1,453.9 415.9,451.5 410.8,449.1 405.6,446.7 400.5,444.3 395.3,441.9 390.1,439.5 385.0,437.1 379.8,434.7 374.7,432.2 369.6,429.8 364.4,427.4 359.3,425.0 354.1,422.6 348.9,420.2 343.8,417.8 338.6,415.4 333.5,413.0 328.4,410.6 323.2,408.2 318.1,405.8 312.9,403.4 307.7,401.0 302.6,398.6 297.4,396.2 292.3,393.8 287.1,391.4 282.0,389.0 276.9,386.6 271.7,384.2 266.6,381.8 261.4,379.3 256.2,376.9 251.1,374.5 246.0,372.1 240.8,369.7 235.7,367.3 230.5,364.9 225.4,362.5 220.2,360.1 215.1,357.7 209.9,355.3 204.7,352.9 199.6,350.5 194.4,348.1 189.3,345.7 184.2,343.3 179.0,340.9 173.8,338.5 168.7,336.1 163.6,333.7 158.4,331.3 153.2,328.9 148.1,326.4 142.9,324.0 137.8,321.6 132.7,319.2 127.5,316.8 122.3,314.4 117.2,312.0 112.1,309.6 106.9,307.2 101.8,304.8 96.6,302.4 91.4,300.0 86.3,297.6 81.2,295.2 76.0,292.8" fill="none" stroke="#cbd5e1" stroke-width="1.1" stroke-dasharray="4 3"/>
+<text x="142.7" y="319.9" font-size="9.8" fill="#64748b" text-anchor="middle">0.1 R⊙</text>
+<polyline points="488.0,409.6 482.8,407.2 477.7,404.8 472.5,402.4 467.4,400.0 462.2,397.6 457.1,395.2 452.0,392.8 446.8,390.4 441.6,387.9 436.5,385.5 431.3,383.1 426.2,380.7 421.1,378.3 415.9,375.9 410.8,373.5 405.6,371.1 400.5,368.7 395.3,366.3 390.1,363.9 385.0,361.5 379.8,359.1 374.7,356.7 369.6,354.3 364.4,351.9 359.3,349.5 354.1,347.1 348.9,344.7 343.8,342.3 338.6,339.9 333.5,337.5 328.4,335.0 323.2,332.6 318.1,330.2 312.9,327.8 307.7,325.4 302.6,323.0 297.4,320.6 292.3,318.2 287.1,315.8 282.0,313.4 276.9,311.0 271.7,308.6 266.6,306.2 261.4,303.8 256.2,301.4 251.1,299.0 246.0,296.6 240.8,294.2 235.7,291.8 230.5,289.4 225.4,287.0 220.2,284.6 215.1,282.1 209.9,279.7 204.7,277.3 199.6,274.9 194.4,272.5 189.3,270.1 184.2,267.7 179.0,265.3 173.8,262.9 168.7,260.5 163.6,258.1 158.4,255.7 153.2,253.3 148.1,250.9 142.9,248.5 137.8,246.1 132.7,243.7 127.5,241.3 122.3,238.9 117.2,236.5 112.1,234.1 106.9,231.7 101.8,229.2 96.6,226.8 91.4,224.4 86.3,222.0 81.2,219.6 76.0,217.2" fill="none" stroke="#cbd5e1" stroke-width="1.1" stroke-dasharray="4 3"/>
+<text x="176.6" y="260.2" font-size="9.8" fill="#64748b" text-anchor="middle">1 R⊙</text>
+<polyline points="488.0,334.0 482.8,331.6 477.7,329.2 472.5,326.8 467.4,324.4 462.2,322.0 457.1,319.6 452.0,317.2 446.8,314.8 441.6,312.4 436.5,310.0 431.3,307.6 426.2,305.2 421.1,302.8 415.9,300.4 410.8,298.0 405.6,295.6 400.5,293.2 395.3,290.8 390.1,288.3 385.0,285.9 379.8,283.5 374.7,281.1 369.6,278.7 364.4,276.3 359.3,273.9 354.1,271.5 348.9,269.1 343.8,266.7 338.6,264.3 333.5,261.9 328.4,259.5 323.2,257.1 318.1,254.7 312.9,252.3 307.7,249.9 302.6,247.5 297.4,245.1 292.3,242.7 287.1,240.3 282.0,237.9 276.9,235.4 271.7,233.0 266.6,230.6 261.4,228.2 256.2,225.8 251.1,223.4 246.0,221.0 240.8,218.6 235.7,216.2 230.5,213.8 225.4,211.4 220.2,209.0 215.1,206.6 209.9,204.2 204.7,201.8 199.6,199.4 194.4,197.0 189.3,194.6 184.2,192.2 179.0,189.8 173.8,187.4 168.7,185.0 163.6,182.5 158.4,180.1 153.2,177.7 148.1,175.3 142.9,172.9 137.8,170.5 132.7,168.1 127.5,165.7 122.3,163.3 117.2,160.9 112.1,158.5 106.9,156.1 101.8,153.7 96.6,151.3 91.4,148.9 86.3,146.5 81.2,144.1 76.0,141.7" fill="none" stroke="#cbd5e1" stroke-width="1.1" stroke-dasharray="4 3"/>
+<text x="274.0" y="230.1" font-size="9.8" fill="#64748b" text-anchor="middle">10 R⊙</text>
+<polyline points="488.0,258.5 482.8,256.1 477.7,253.7 472.5,251.3 467.4,248.9 462.2,246.5 457.1,244.1 452.0,241.6 446.8,239.2 441.6,236.8 436.5,234.4 431.3,232.0 426.2,229.6 421.1,227.2 415.9,224.8 410.8,222.4 405.6,220.0 400.5,217.6 395.3,215.2 390.1,212.8 385.0,210.4 379.8,208.0 374.7,205.6 369.6,203.2 364.4,200.8 359.3,198.4 354.1,196.0 348.9,193.6 343.8,191.2 338.6,188.7 333.5,186.3 328.4,183.9 323.2,181.5 318.1,179.1 312.9,176.7 307.7,174.3 302.6,171.9 297.4,169.5 292.3,167.1 287.1,164.7 282.0,162.3 276.9,159.9 271.7,157.5 266.6,155.1 261.4,152.7 256.2,150.3 251.1,147.9 246.0,145.5 240.8,143.1 235.7,140.7 230.5,138.3 225.4,135.8 220.2,133.4 215.1,131.0 209.9,128.6 204.7,126.2 199.6,123.8 194.4,121.4 189.3,119.0 184.2,116.6 179.0,114.2" fill="none" stroke="#cbd5e1" stroke-width="1.1" stroke-dasharray="4 3"/>
+<text x="341.6" y="186.1" font-size="9.8" fill="#64748b" text-anchor="middle">100 R⊙</text>
+<polyline points="488.0,182.9 482.8,180.5 477.7,178.1 472.5,175.7 467.4,173.3 462.2,170.9 457.1,168.5 452.0,166.1 446.8,163.7 441.6,161.3 436.5,158.9 431.3,156.5 426.2,154.1 421.1,151.7 415.9,149.3 410.8,146.9 405.6,144.5 400.5,142.0 395.3,139.6 390.1,137.2 385.0,134.8 379.8,132.4 374.7,130.0 369.6,127.6 364.4,125.2 359.3,122.8 354.1,120.4 348.9,118.0 343.8,115.6" fill="none" stroke="#cbd5e1" stroke-width="1.1" stroke-dasharray="4 3"/>
+<text x="364.0" y="121.0" font-size="9.8" fill="#64748b" text-anchor="middle">1000 R⊙</text>
+<polyline points="85.7,146.1 133.0,183.9 221.3,244.3 294.6,293.4 337.5,327.4 364.7,352.0 396.6,372.8 431.0,406.8 466.3,463.4" fill="none" stroke="#fde68a" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" opacity="0.65"/>
+<polyline points="85.7,146.1 133.0,183.9 221.3,244.3 294.6,293.4 337.5,327.4 364.7,352.0 396.6,372.8 431.0,406.8 466.3,463.4" fill="none" stroke="#eab308" stroke-width="2.0" stroke-dasharray="3 3" opacity="0.85"/>
+<text x="243.8" y="296.6" font-size="10.4" fill="#b45309" text-anchor="middle" font-weight="700">主序星带</text>
+<polyline points="103.5,161.2 176.6,153.7 310.3,152.5 429.1,151.8" fill="none" stroke="#1d6fa5" stroke-width="2.2" stroke-dasharray="6 3"/>
+<circle cx="103.5" cy="161.2" r="4.2" fill="#1d6fa5"/>
+<polygon points="429.1,145.8 435.1,156.8 423.1,156.8" fill="#dc2626"/>
+<text x="240.1" y="143.8" font-size="9.9" fill="#1d6fa5" text-anchor="middle" font-weight="700">25 M⊙ 超巨星快车道（&lt; 800 万年 → 超新星爆发）</text>
+<path d="M 364.7,352.0 L 380.7,338.8 L 396.6,316.1 L 452.0,225.1 L 390.6,287.8 L 452.0,211.5 L 99.8,217.9 L 89.1,270.8 L 176.6,401.1 L 333.6,478.6" fill="none" stroke="#fdba74" stroke-width="2.0" stroke-dasharray="3 3"/>
+<path d="M 364.7,352.0 L 380.7,338.8 L 396.6,316.1 L 452.0,225.1 L 390.6,287.8 L 452.0,211.5 L 99.8,217.9 L 89.1,270.8 L 176.6,401.1 L 333.6,478.6" class="hr-sun-anim" fill="none" stroke="#c25014" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="364.7" cy="352.0" r="5" fill="#f59e0b" stroke="#ffffff" stroke-width="1.3"/>
+<text x="354.7" y="368.0" font-size="10.0" fill="#0f172a" text-anchor="end" font-weight="700">① 太阳主序 (100亿年)</text>
+<circle cx="452.0" cy="225.1" r="4.5" fill="#dc2626" stroke="#ffffff" stroke-width="1.2"/>
+<text x="424.0" y="229.1" font-size="9.9" fill="#dc2626" text-anchor="end" font-weight="700">② 红巨星顶·氦闪 →</text>
+<circle cx="390.6" cy="287.8" r="4.2" fill="#d97706" stroke="#ffffff" stroke-width="1.2"/>
+<text x="382.6" y="291.8" font-size="9.8" fill="#d97706" text-anchor="end" font-weight="700">③ 稳烧氦核 (1亿年)</text>
+<circle cx="452.0" cy="211.5" r="4.5" fill="#6d28d9" stroke="#ffffff" stroke-width="1.2"/>
+<text x="444.0" y="204.5" font-size="9.9" fill="#6d28d9" text-anchor="end" font-weight="700">④ 渐近巨星支 AGB</text>
+<circle cx="99.8" cy="217.9" r="4.5" fill="#0d9488" stroke="#ffffff" stroke-width="1.2"/>
+<text x="107.8" y="207.9" font-size="9.9" fill="#0d9488" text-anchor="start" font-weight="700">⑤ 行星状星云裸核</text>
+<circle cx="333.6" cy="478.6" r="5.5" class="hr-wd-pulse" fill="none" stroke="#1d6fa5" stroke-width="2"/>
+<circle cx="333.6" cy="478.6" r="4.0" fill="#1d6fa5" stroke="#ffffff" stroke-width="1.2"/>
+<text x="325.6" y="494.6" font-size="10.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">⑥ 白矮星冷却弧 (~地球大)</text>
+<text x="282.0" y="558" font-size="10.4" fill="#0f172a" text-anchor="middle" font-weight="700">← 表面有效温度 T_eff (K) 向左升高（蓝热 · 红冷）</text>
+<text x="34" y="318.0" font-size="10.4" font-weight="700" fill="#0f172a" text-anchor="middle" transform="rotate(-90 34 318.0)">光度 L / L⊙（对数刻度）</text>
+<rect x="520" y="64" width="220" height="518" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="532.0" y="74.0" width="196" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="630.0" y="89.0" font-size="12" fill="#c25014" text-anchor="middle" font-weight="600">B · 恒星寿命“挥霍悖论”</text>
+<rect x="532" y="108" width="196" height="74" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.3"/>
+<text x="630" y="127" font-size="10.6" fill="#c25014" text-anchor="middle" font-weight="700">主序星质光关系：L ∝ M^3.5</text>
+<text x="630" y="146" font-size="10.0" fill="#1e293b" text-anchor="middle">寿命 τ ∝ 燃料 M / 消耗率 L</text>
+<text x="630" y="166" font-size="10.4" fill="#dc2626" text-anchor="middle" font-weight="700">⇒ τ_主序 ≈ 100亿年 × M^(-2.5)</text>
+<rect x="532" y="198" width="196" height="62" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.1"/>
+<text x="540" y="215" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">O5 蓝巨星 · 40 M⊙</text>
+<text x="720" y="215" font-size="10.1" fill="#2563eb" text-anchor="end" font-weight="700">仅 ~100 万年！</text>
+<rect x="540" y="223" width="25.2" height="8" rx="4" fill="#2563eb"/>
+<text x="540" y="248" font-size="9.8" fill="#64748b" text-anchor="start">燃料多40倍，挥霍快30万倍</text>
+<rect x="532" y="268" width="196" height="62" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.1"/>
+<text x="540" y="285" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">B0 蓝白星 · 16 M⊙</text>
+<text x="720" y="285" font-size="10.1" fill="#0284c7" text-anchor="end" font-weight="700">~1,000 万年</text>
+<rect x="540" y="293" width="54.0" height="8" rx="4" fill="#0284c7"/>
+<text x="540" y="318" font-size="9.8" fill="#64748b" text-anchor="start">恐龙灭绝至今足够死6轮</text>
+<rect x="532" y="338" width="196" height="62" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.1"/>
+<text x="540" y="355" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">A0 白星 · 3.3 M⊙</text>
+<text x="720" y="355" font-size="10.1" fill="#0d9488" text-anchor="end" font-weight="700">~5 亿年</text>
+<rect x="540" y="363" width="93.6" height="8" rx="4" fill="#0d9488"/>
+<text x="540" y="388" font-size="9.8" fill="#64748b" text-anchor="start">如天狼星、织女星近亲</text>
+<rect x="532" y="408" width="196" height="62" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.1"/>
+<text x="540" y="425" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">G2 太阳 · 1.0 M⊙</text>
+<text x="720" y="425" font-size="10.1" fill="#d97706" text-anchor="end" font-weight="700">~100 亿年</text>
+<rect x="540" y="433" width="133.2" height="8" rx="4" fill="#d97706"/>
+<text x="540" y="458" font-size="9.8" fill="#64748b" text-anchor="start">已稳烧46亿年，正值壮年</text>
+<rect x="532" y="478" width="196" height="62" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.1"/>
+<text x="540" y="495" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">M 红矮星 · 0.4 M⊙</text>
+<text x="720" y="495" font-size="10.1" fill="#dc2626" text-anchor="end" font-weight="700">~2,000 亿年+</text>
+<rect x="540" y="503" width="180.0" height="8" rx="4" fill="#dc2626"/>
+<text x="540" y="528" font-size="9.8" fill="#64748b" text-anchor="start">0.1 M⊙更超万亿年，全对流省油</text>
+<text x="532" y="562" font-size="9.8" fill="#dc2626" text-anchor="start" font-weight="700">奇观：宇宙才138亿岁，红矮星至今零自然死亡！</text>
+</svg>

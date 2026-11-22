@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="502" viewBox="0 0 760 502" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">分娩催产素正反馈循环与新生儿第一声啼哭关闭三大心脏旁道及棕色脂肪产热图解</title>
+<desc id="desc">左栏展示胎头压迫宫颈经弗格森反射触发下丘脑-垂体后叶释放催产素与胎膜释放前列腺素，形成越缩越猛直至宫口开满10厘米的正反馈闭环及宫缩间隙供氧意义；右栏按时间序列展示出生10秒内第一口气降低肺阻、左心房压反超右心房压机械拍死卵圆孔、高血氧收缩关闭动脉导管，以及棕色脂肪非颤抖产热与APGAR评分。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="501" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">催产素正反馈风暴与出生 10 秒“一键改道”：第一声啼哭如何关死三道暗门？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左看罕见打破稳态的弗格森-催产素正反馈开宫口闭环；右看剪脐带与第一口空气触发的心肺瞬间切换</text>
+<rect x="16" y="66" width="356" height="420" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="30" y="88" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="700">分娩发动：全身罕见“越推越猛、绝不刹车”的正反馈</text>
+<path d="M 264 148 Q 296 164 300 194" fill="none" stroke="#c25014" stroke-width="2.0" marker-end="url(#arr-orange)"/>
+<path d="M 300 254 Q 292 288 264 304" fill="none" stroke="#c25014" stroke-width="2.0" marker-end="url(#arr-orange)"/>
+<path d="M 124 304 Q 96 288 88 254" fill="none" stroke="#c25014" stroke-width="2.0" marker-end="url(#arr-orange)"/>
+<path d="M 88 194 Q 96 164 124 148" fill="none" stroke="#c25014" stroke-width="2.0" marker-end="url(#arr-orange)"/>
+<text x="194" y="214" font-size="9.0" fill="#b91c1c" text-anchor="middle" font-weight="700">正反馈雪崩</text>
+<text x="194" y="231" font-size="8.2" fill="#64748b" text-anchor="middle">胎儿娩出后</text>
+<text x="194" y="247" font-size="8.2" fill="#18794e" text-anchor="middle" font-weight="700">刺激归零!</text>
+<rect x="120.0" y="106" width="148" height="48" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="194" y="125" font-size="8.4" fill="#c25014" text-anchor="middle" font-weight="700">① 胎头下沉顶压宫颈</text>
+<text x="194" y="142" font-size="7.9" fill="#1e293b" text-anchor="middle">孕酮刹车撤除·宫颈被撑薄</text>
+<rect x="241.0" y="200" width="118" height="48" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="300" y="219" font-size="8.4" fill="#6d28d9" text-anchor="middle" font-weight="700">② 神经冲下丘脑</text>
+<text x="300" y="236" font-size="7.9" fill="#1e293b" text-anchor="middle">垂体猛放催产素</text>
+<rect x="120.0" y="292" width="148" height="48" rx="8" fill="#ffe4e6" stroke="#e11d48" stroke-width="1"/>
+<text x="194" y="311" font-size="8.4" fill="#e11d48" text-anchor="middle" font-weight="700">③ 子宫平滑肌猛烈收缩</text>
+<text x="194" y="328" font-size="7.9" fill="#1e293b" text-anchor="middle">胎膜放前列腺素狠推胎头</text>
+<rect x="29.0" y="200" width="118" height="48" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="88" y="219" font-size="8.4" fill="#1d6fa5" text-anchor="middle" font-weight="700">④ 宫颈撑得更开</text>
+<text x="88" y="236" font-size="7.9" fill="#1e293b" text-anchor="middle">直至开满 10 cm</text>
+<rect x="30" y="354" width="328" height="118" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+<text x="40" y="373" font-size="8.8" fill="#0f172a" text-anchor="start" font-weight="700">⏱️ 三大产程与宫缩间隙的“救命喘息”：</text>
+<text x="40" y="391" font-size="8.2" fill="#1e293b" text-anchor="start">• 第一产程(开宫口 0→10cm，约6–12h) → 第二产程(娩出胎儿)</text>
+<text x="40" y="408" font-size="8.2" fill="#1e293b" text-anchor="start">  → 第三产程(娩出胎盘，子宫强力缩复夹闭血管防产后出血)。</text>
+<text x="40" y="427" font-size="8.2" fill="#c25014" text-anchor="start" font-weight="700">• 为什么阵痛必须一阵一阵停歇？每次宫缩都会暂时夹扁胎盘</text>
+<text x="40" y="444" font-size="8.2" fill="#1e293b" text-anchor="start">  血管断供——两次阵缩间的放松间隙，正是给胎儿喘气的窗口！</text>
+<rect x="388" y="66" width="356" height="420" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="402" y="88" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="700">出生后 10 秒惊天改道：从“水下并联”秒变“陆地串联”</text>
+<rect x="402" y="104" width="328" height="62" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="412" y="122" font-size="8.8" fill="#1d6fa5" text-anchor="start" font-weight="700">0–10 秒 · 第一声啼哭吹开肺泡</text>
+<text x="412" y="139" font-size="8.2" fill="#1e293b" text-anchor="start">宫缩与断脐使 CO2 升高唤醒呼吸中枢 → 10秒内猛吸第一口气，</text>
+<text x="412" y="155" font-size="8.2" fill="#0f172a" text-anchor="start" font-weight="700">肺泡充气张开，肺血管流阻瞬间暴跌约 80%，全肺满血开工！</text>
+<rect x="402" y="174" width="328" height="78" rx="8" fill="#ffe4e6" stroke="#e11d48" stroke-width="1"/>
+<text x="412" y="192" font-size="8.8" fill="#e11d48" text-anchor="start" font-weight="700">瞬间机械关门 · 卵圆孔“啪”地反扣锁死</text>
+<text x="412" y="209" font-size="8.2" fill="#1e293b" text-anchor="start">断脐抬高体循环阻力 + 肺静脉大股富氧血涌入左心房 →</text>
+<text x="412" y="226" font-size="8.2" fill="#1e293b" text-anchor="start">左房压首次反超右房压 (PLA &gt; PRA)，瞬间把卵圆孔单向瓣反</text>
+<text x="412" y="243" font-size="8.2" fill="#0f172a" text-anchor="start" font-weight="700">扣压死在房间隔上（一年内长牢变成成人心脏里的卵圆窝）！</text>
+<rect x="402" y="260" width="328" height="78" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="412" y="278" font-size="8.8" fill="#c25014" text-anchor="start" font-weight="700">数小时至数天 · 动脉导管与静脉导管退化闭锁</text>
+<text x="412" y="295" font-size="8.2" fill="#1e293b" text-anchor="start">血氧浓度骤升 + 胎盘扩管前列腺素撤除 → 动脉导管肌壁主</text>
+<text x="412" y="312" font-size="8.2" fill="#1e293b" text-anchor="start">动收缩封死（化作动脉韧带）；静脉导管同步退化为静脉韧带，</text>
+<text x="412" y="329" font-size="8.2" fill="#0f172a" text-anchor="start" font-weight="700">水下三道旁路全部退役，正式切换为终身双循环串联心脏！</text>
+<rect x="402" y="346" width="328" height="126" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="412" y="364" font-size="8.8" fill="#18794e" text-anchor="start" font-weight="700">抗寒外挂 · 肩背“棕色脂肪”不打哆嗦直接烧热</text>
+<text x="412" y="381" font-size="8.2" fill="#1e293b" text-anchor="start">• 从 37°C 恒温水舱骤降到产房室温，新生儿体表面积比大、</text>
+<text x="412" y="398" font-size="8.2" fill="#1e293b" text-anchor="start">  肌肉尚不会打寒战，全靠肩背特配“棕色脂肪”非颤抖产热：</text>
+<text x="412" y="415" font-size="8.2" fill="#0f172a" text-anchor="start" font-weight="700">  线粒体打开质子漏道不产 ATP，直接把脂肪烧成救命热能！</text>
+<text x="412" y="435" font-size="8.2" fill="#18794e" text-anchor="start" font-weight="700">• 出生 1 分钟与 5 分钟阿氏评分（APGAR 满分10分）：快速核查</text>
+<text x="412" y="452" font-size="8.2" fill="#1e293b" text-anchor="start">  肤色、心率、刺激反射、肌张力与呼吸，确认生命切换通关！</text>
+</svg>

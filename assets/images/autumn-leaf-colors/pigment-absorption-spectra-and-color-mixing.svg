@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="558" viewBox="0 0 760 558" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">叶片叶绿素类胡萝卜素与花青素活体吸收光谱及绿叶黄叶红叶减法混色原理图</title>
+<desc id="desc">上图绘制400至700纳米可见光区叶绿素a+b(434与663纳米双峰实线)、类胡萝卜素(424至478纳米三指峰虚线)与活体液泡花青素(539纳米宽峰点划线)吸收光谱；下图对比盛夏绿叶反射绿光、秋季黄叶因叶绿素降解解除红光吸收后反射绿橙红混合金黄光、秋季红叶因新合成花青素额外吸收500至600纳米绿黄光而只剩纯红光散射的光学机制。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="557" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">人眼看到的叶色全是“挑剩的退货光”：三大色素吸收光谱与减法混色密码</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">上：400–700 nm 活体叶片三大色素特征吸收曲线 · 下：盛夏绿、银杏黄、枫叶红的光子去向总账</text>
+<rect x="20" y="66" width="720" height="274" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="78.0" width="456" height="24" rx="12.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="260.0" y="94.3" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">① 活体叶片三大色素归一化吸收光谱（波长 400–700 nm 可见光区）</text>
+<rect x="289.3" y="114.0" width="211.3" height="162.0" fill="#fff1f2" opacity="0.65"/>
+<text x="395.0" y="258.0" font-size="11.5" fill="#be123c" text-anchor="middle" font-weight="600" class="halo">500–600 nm 绿黄光窗</text>
+<line x1="78.0" y1="276.0" x2="712.0" y2="276.0" stroke="#cbd5e1" stroke-width="1.0"/>
+<text x="70.0" y="280.0" font-size="11.5" fill="#64748b" text-anchor="end">0</text>
+<line x1="78.0" y1="195.0" x2="712.0" y2="195.0" stroke="#cbd5e1" stroke-width="1.0" stroke-dasharray="3 3"/>
+<text x="70.0" y="199.0" font-size="11.5" fill="#64748b" text-anchor="end">0.5</text>
+<line x1="78.0" y1="114.0" x2="712.0" y2="114.0" stroke="#cbd5e1" stroke-width="1.0" stroke-dasharray="3 3"/>
+<text x="70.0" y="118.0" font-size="11.5" fill="#64748b" text-anchor="end">1.0</text>
+<text x="34" y="199.0" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">吸光</text>
+<path d="M 78.0,257.1 L 84.3,249.6 L 90.7,240.1 L 97.0,228.6 L 103.4,215.5 L 109.7,201.0 L 116.0,185.8 L 122.4,170.6 L 128.7,156.5 L 135.1,144.2 L 141.4,134.5 L 147.7,127.7 L 154.1,124.1 L 160.4,123.3 L 166.8,125.0 L 173.1,128.5 L 179.4,133.4 L 185.8,139.4 L 192.1,146.2 L 198.5,153.9 L 204.8,162.7 L 211.1,172.6 L 217.5,183.5 L 223.8,195.3 L 230.2,207.3 L 236.5,219.1 L 242.8,230.1 L 249.2,239.7 L 255.5,247.7 L 261.9,254.0 L 268.2,258.6 L 274.5,261.8 L 280.9,263.8 L 287.2,265.0 L 293.6,265.5 L 299.9,265.6 L 306.2,265.5 L 312.6,265.2 L 318.9,264.9 L 325.3,264.5 L 331.6,264.2 L 337.9,263.9 L 344.3,263.6 L 350.6,263.4 L 357.0,263.2 L 363.3,263.1 L 369.6,263.1 L 376.0,263.0 L 382.3,263.1 L 388.7,263.2 L 395.0,263.3 L 401.3,263.5 L 407.7,263.8 L 414.0,264.1 L 420.4,264.4 L 426.7,264.8 L 433.0,265.2 L 439.4,265.7 L 445.7,266.1 L 452.1,266.6 L 458.4,267.1 L 464.7,267.6 L 471.1,268.1 L 477.4,268.7 L 483.8,269.2 L 490.1,269.7 L 496.4,270.1 L 502.8,270.6 L 509.1,271.0 L 515.5,271.3 L 521.8,271.4 L 528.1,271.2 L 534.5,270.4 L 540.8,268.8 L 547.2,265.9 L 553.5,261.5 L 559.8,255.2 L 566.2,247.1 L 572.5,237.4 L 578.9,226.2 L 585.2,213.9 L 591.5,200.5 L 597.9,185.9 L 604.2,170.2 L 610.6,154.3 L 616.9,139.6 L 623.2,128.8 L 629.6,124.5 L 635.9,128.3 L 642.3,140.7 L 648.6,160.0 L 654.9,183.2 L 661.3,206.8 L 667.6,228.0 L 674.0,245.1 L 680.3,257.5 L 686.6,265.7 L 693.0,270.7 L 699.3,273.4 L 705.7,274.8 L 712.0,275.5" fill="none" stroke="#18794e" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 78.0,266.1 L 84.3,259.2 L 90.7,249.5 L 97.0,236.9 L 103.4,222.3 L 109.7,207.0 L 116.0,193.0 L 122.4,182.3 L 128.7,175.8 L 135.1,173.2 L 141.4,173.0 L 147.7,172.5 L 154.1,169.6 L 160.4,163.1 L 166.8,154.2 L 173.1,145.5 L 179.4,140.4 L 185.8,141.2 L 192.1,148.2 L 198.5,159.1 L 204.8,170.1 L 211.1,177.2 L 217.5,178.2 L 223.8,173.4 L 230.2,165.7 L 236.5,159.5 L 242.8,158.7 L 249.2,165.6 L 255.5,179.7 L 261.9,198.6 L 268.2,218.7 L 274.5,237.1 L 280.9,251.7 L 287.2,262.1 L 293.6,268.7 L 299.9,272.5 L 306.2,274.4 L 312.6,275.4 L 318.9,275.8 L 325.3,275.9 L 331.6,276.0 L 337.9,276.0 L 344.3,276.0 L 350.6,276.0 L 357.0,276.0 L 363.3,276.0 L 369.6,276.0 L 376.0,276.0 L 382.3,276.0 L 388.7,276.0 L 395.0,276.0 L 401.3,276.0 L 407.7,276.0 L 414.0,276.0 L 420.4,276.0 L 426.7,276.0 L 433.0,276.0 L 439.4,276.0 L 445.7,276.0 L 452.1,276.0 L 458.4,276.0 L 464.7,276.0 L 471.1,276.0 L 477.4,276.0 L 483.8,276.0 L 490.1,276.0 L 496.4,276.0 L 502.8,276.0 L 509.1,276.0 L 515.5,276.0 L 521.8,276.0 L 528.1,276.0 L 534.5,276.0 L 540.8,276.0 L 547.2,276.0 L 553.5,276.0 L 559.8,276.0 L 566.2,276.0 L 572.5,276.0 L 578.9,276.0 L 585.2,276.0 L 591.5,276.0 L 597.9,276.0 L 604.2,276.0 L 610.6,276.0 L 616.9,276.0 L 623.2,276.0 L 629.6,276.0 L 635.9,276.0 L 642.3,276.0 L 648.6,276.0 L 654.9,276.0 L 661.3,276.0 L 667.6,276.0 L 674.0,276.0 L 680.3,276.0 L 686.6,276.0 L 693.0,276.0 L 699.3,276.0 L 705.7,276.0 L 712.0,276.0" fill="none" stroke="#d97706" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="8 4"/>
+<path d="M 78.0,259.9 L 84.3,257.4 L 90.7,255.0 L 97.0,253.0 L 103.4,251.4 L 109.7,250.4 L 116.0,250.0 L 122.4,250.4 L 128.7,251.4 L 135.1,252.9 L 141.4,254.9 L 147.7,257.2 L 154.1,259.6 L 160.4,262.0 L 166.8,264.3 L 173.1,266.3 L 179.4,267.9 L 185.8,269.2 L 192.1,270.0 L 198.5,270.3 L 204.8,270.2 L 211.1,269.7 L 217.5,268.7 L 223.8,267.2 L 230.2,265.2 L 236.5,262.8 L 242.8,259.8 L 249.2,256.2 L 255.5,252.0 L 261.9,247.3 L 268.2,241.9 L 274.5,236.0 L 280.9,229.4 L 287.2,222.4 L 293.6,214.9 L 299.9,207.0 L 306.2,199.0 L 312.6,190.8 L 318.9,182.8 L 325.3,175.0 L 331.6,167.7 L 337.9,161.1 L 344.3,155.3 L 350.6,150.5 L 357.0,146.8 L 363.3,144.4 L 369.6,143.2 L 376.0,143.5 L 382.3,145.0 L 388.7,147.9 L 395.0,152.0 L 401.3,157.1 L 407.7,163.2 L 414.0,170.1 L 420.4,177.6 L 426.7,185.4 L 433.0,193.5 L 439.4,201.7 L 445.7,209.7 L 452.1,217.4 L 458.4,224.8 L 464.7,231.7 L 471.1,238.0 L 477.4,243.8 L 483.8,249.0 L 490.1,253.5 L 496.4,257.5 L 502.8,261.0 L 509.1,263.9 L 515.5,266.3 L 521.8,268.4 L 528.1,270.0 L 534.5,271.4 L 540.8,272.5 L 547.2,273.3 L 553.5,274.0 L 559.8,274.5 L 566.2,274.9 L 572.5,275.2 L 578.9,275.4 L 585.2,275.6 L 591.5,275.7 L 597.9,275.8 L 604.2,275.9 L 610.6,275.9 L 616.9,275.9 L 623.2,276.0 L 629.6,276.0 L 635.9,276.0 L 642.3,276.0 L 648.6,276.0 L 654.9,276.0 L 661.3,276.0 L 667.6,276.0 L 674.0,276.0 L 680.3,276.0 L 686.6,276.0 L 693.0,276.0 L 699.3,276.0 L 705.7,276.0 L 712.0,276.0" fill="none" stroke="#be123c" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="11 4 2.5 4"/>
+<text x="149.9" y="112.9" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700" class="halo">叶绿素蓝紫峰 (434 nm)</text>
+<text x="610.6" y="125.4" font-size="11.5" fill="#18794e" text-anchor="end" font-weight="700" class="halo">叶绿素红光峰 (663 nm)</text>
+<text x="264.0" y="150" font-size="11.5" fill="#b45309" text-anchor="middle" font-weight="700" class="halo">类胡萝卜素三指峰 (虚线)</text>
+<text x="399.2" y="133.2" font-size="11.5" fill="#be123c" text-anchor="middle" font-weight="700" class="halo">液泡花青素峰 ~539 nm (点划线)</text>
+<rect x="78.0" y="280.0" width="95.1" height="10" fill="#6d28d9" opacity="0.85"/>
+<rect x="173.1" y="280.0" width="105.7" height="10" fill="#2563eb" opacity="0.85"/>
+<rect x="278.8" y="280.0" width="137.4" height="10" fill="#16a34a" opacity="0.85"/>
+<rect x="416.1" y="280.0" width="63.4" height="10" fill="#eab308" opacity="0.85"/>
+<rect x="479.5" y="280.0" width="74.0" height="10" fill="#ea580c" opacity="0.85"/>
+<rect x="553.5" y="280.0" width="158.5" height="10" fill="#dc2626" opacity="0.85"/>
+<line x1="78.0" y1="276.0" x2="78.0" y2="280.0" stroke="#0f172a" stroke-width="1.1"/>
+<text x="78.0" y="305.0" font-size="11.5" fill="#0f172a" text-anchor="middle">400</text>
+<line x1="183.7" y1="276.0" x2="183.7" y2="280.0" stroke="#0f172a" stroke-width="1.1"/>
+<text x="183.7" y="305.0" font-size="11.5" fill="#0f172a" text-anchor="middle">450</text>
+<line x1="289.3" y1="276.0" x2="289.3" y2="280.0" stroke="#0f172a" stroke-width="1.1"/>
+<text x="289.3" y="305.0" font-size="11.5" fill="#0f172a" text-anchor="middle">500</text>
+<line x1="395.0" y1="276.0" x2="395.0" y2="280.0" stroke="#0f172a" stroke-width="1.1"/>
+<text x="395.0" y="305.0" font-size="11.5" fill="#0f172a" text-anchor="middle">550</text>
+<line x1="500.7" y1="276.0" x2="500.7" y2="280.0" stroke="#0f172a" stroke-width="1.1"/>
+<text x="500.7" y="305.0" font-size="11.5" fill="#0f172a" text-anchor="middle">600</text>
+<line x1="606.3" y1="276.0" x2="606.3" y2="280.0" stroke="#0f172a" stroke-width="1.1"/>
+<text x="606.3" y="305.0" font-size="11.5" fill="#0f172a" text-anchor="middle">650</text>
+<line x1="712.0" y1="276.0" x2="712.0" y2="280.0" stroke="#0f172a" stroke-width="1.1"/>
+<text x="712.0" y="305.0" font-size="11.5" fill="#0f172a" text-anchor="middle">700</text>
+<text x="712.0" y="324.0" font-size="11.5" fill="#64748b" text-anchor="end" font-weight="600">波长 λ (nm)</text>
+<text x="78.0" y="324.0" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">核心光学铁律：叶面颜色 = 白光减去被吸收波段后散射出来的剩余光！</text>
+<rect x="20" y="352" width="232" height="192" rx="9" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<circle cx="40" cy="375" r="10" fill="#ffffff" stroke="#18794e" stroke-width="1.2"/>
+<text x="40" y="379" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="379" font-size="12.2" fill="#18794e" text-anchor="start" font-weight="700">盛夏绿叶：两头通吃剩绿窗</text>
+<text x="34" y="410" font-size="11.5" fill="#1e293b" text-anchor="start">• 叶绿素吞尽蓝紫光 + 红橙光</text>
+<text x="34" y="434" font-size="11.5" fill="#1e293b" text-anchor="start">• 类胡萝卜素藏在底下被绿光淹没</text>
+<text x="34" y="458" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">• 仅 500–570 nm 绿光被退货散射</text>
+<rect x="32" y="478" width="208" height="52" rx="6" fill="#ffffff" stroke="#18794e" stroke-width="1.0"/>
+<text x="136" y="509" font-size="12.0" fill="#18794e" text-anchor="middle" font-weight="700">⇒ 人眼看到：满树翠绿</text>
+<rect x="264" y="352" width="232" height="192" rx="9" fill="#fffbeb" stroke="#b45309" stroke-width="1.2"/>
+<circle cx="284" cy="375" r="10" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+<text x="284" y="379" font-size="11.5" fill="#b45309" text-anchor="middle" font-weight="700">2</text>
+<text x="300" y="379" font-size="12.2" fill="#b45309" text-anchor="start" font-weight="700">银杏/白桦黄叶：做减法掀帘</text>
+<text x="278" y="410" font-size="11.5" fill="#1e293b" text-anchor="start">• 叶绿素拆空，663 nm 红光禁令解除</text>
+<text x="278" y="434" font-size="11.5" fill="#1e293b" text-anchor="start">• 留守类胡萝卜素只吞 400–500 蓝光</text>
+<text x="278" y="458" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">• 520–700 nm 绿+橙+红光全数退回</text>
+<rect x="276" y="478" width="208" height="52" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.0"/>
+<text x="380" y="509" font-size="12.0" fill="#b45309" text-anchor="middle" font-weight="700">⇒ 视锥细胞合成：透亮金黄！</text>
+<rect x="508" y="352" width="232" height="192" rx="9" fill="#fff1f2" stroke="#be123c" stroke-width="1.2"/>
+<circle cx="528" cy="375" r="10" fill="#ffffff" stroke="#be123c" stroke-width="1.2"/>
+<text x="528" y="379" font-size="11.5" fill="#be123c" text-anchor="middle" font-weight="700">3</text>
+<text x="544" y="379" font-size="12.2" fill="#be123c" text-anchor="start" font-weight="700">枫树/黄栌红叶：做加法滤光</text>
+<text x="522" y="410" font-size="11.5" fill="#1e293b" text-anchor="start">• 液泡新造花青素封死 500–600 绿窗</text>
+<text x="522" y="434" font-size="11.5" fill="#1e293b" text-anchor="start">• 蓝紫光(质体)+绿黄光(液泡)全被吞</text>
+<text x="522" y="458" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">• 仅剩 &gt;600 nm 长波红光散射出叶面</text>
+<rect x="520" y="478" width="208" height="52" rx="6" fill="#ffffff" stroke="#be123c" stroke-width="1.0"/>
+<text x="624" y="509" font-size="12.0" fill="#be123c" text-anchor="middle" font-weight="700">⇒ 人眼看到：炽烈丹红 / 绯红！</text>
+</svg>

@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="494" viewBox="0 0 760 494" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">静态力零做功物理定律与人类骨骼肌横桥耗能假象对比图解</title>
+<desc id="desc">左栏展示木桌托书、螺栓夹紧、地球引力与永磁冰箱贴在位移为零时做功严格为零；右栏剖析人类骨骼肌因缺乏机械锁扣，需每秒数十次循环水解ATP维持张力并全部转化为内热，辅以贝类闭壳锁扣肌反例。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="493" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">手臂举哑铃累得冒汗，为什么冰箱贴吸在铁门十年却“零耗能”？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">物理学第一铁律：有“力”不等于“做功”（W = F · Δs）！真正骗了你直觉的，是人类骨骼肌的特殊设计。</text>
+<rect x="20" y="68" width="360" height="408" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="36.0" y="82.0" width="302" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="187.0" y="97.0" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="600">物理真相：位移 Δs = 0 → 做功 W = 0 焦耳！</text>
+<rect x="36" y="118" width="328" height="62" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="48" y="137" font-size="10.4" fill="#1d6fa5" text-anchor="start" font-weight="700">① 木桌托住 5 kg 大词典</text>
+<text x="48" y="155" font-size="9.8" fill="#1e293b" text-anchor="start">桌面弹性形变产生向上支持力 F = 49 N</text>
+<text x="48" y="171" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">词典高度不变 (Δs = 0)，木桌一百年耗能 = 0 J！</text>
+<rect x="36" y="190" width="328" height="62" rx="7" fill="#f0fdfa" stroke="#0d9488" stroke-width="1"/>
+<text x="48" y="209" font-size="10.4" fill="#0d9488" text-anchor="start" font-weight="700">② 钢螺栓夹紧两块钢板</text>
+<text x="48" y="227" font-size="9.8" fill="#1e293b" text-anchor="start">螺杆预紧拉力高达数吨，死死咬合不松口</text>
+<text x="48" y="243" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">无相对滑动 (Δs = 0)，钢螺栓无需装电池供电！</text>
+<rect x="36" y="262" width="328" height="62" rx="7" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="48" y="281" font-size="10.4" fill="#6d28d9" text-anchor="start" font-weight="700">③ 地球引力拉住整片海洋</text>
+<text x="48" y="299" font-size="9.8" fill="#1e293b" text-anchor="start">万有引力时刻把海水拽向地心</text>
+<text x="48" y="315" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">海面不继续下落 (Δs = 0)，地球引力场不掉质量！</text>
+<rect x="36" y="334" width="328" height="62" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="48" y="353" font-size="10.4" fill="#18794e" text-anchor="start" font-weight="700">④ 永磁冰箱贴吸住铁门</text>
+<text x="48" y="371" font-size="9.8" fill="#1e293b" text-anchor="start">水平磁吸力 F_mag 引发最大静摩擦力 ≥ mg</text>
+<text x="48" y="387" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">静止悬停 (Δs = 0)，磁场势能一分钱都不用掏！</text>
+<text x="36" y="424" font-size="10.1" fill="#0f172a" text-anchor="start" font-weight="700">💡 费曼一语点醒：把“维持静态力”误当成“消耗能量”，</text>
+<text x="36" y="442" font-size="10.0" fill="#1e293b" text-anchor="start">   是人类拿自己的胳膊去揣测无生命世界闹出的最大误会！</text>
+<text x="36" y="460" font-size="9.6" fill="#64748b" text-anchor="start">   （见《费曼物理学讲义》第 1 卷第 14 章 §14-1）</text>
+<rect x="396" y="68" width="344" height="408" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="412.0" y="82.0" width="312" height="22" rx="11.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="568.0" y="97.0" font-size="10.6" fill="#dc2626" text-anchor="middle" font-weight="600">生理破案：为什么你的胳膊平举重物会酸痛发烫？</text>
+<rect x="416" y="120" width="304" height="108" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1.3"/>
+<line x1="432" y1="146" x2="704" y2="146" stroke="#1d6fa5" stroke-width="4" stroke-linecap="round"/>
+<line x1="432" y1="204" x2="704" y2="204" stroke="#1d6fa5" stroke-width="4" stroke-linecap="round"/>
+<rect x="466" y="169" width="204" height="12" rx="5" fill="#dc2626"/>
+<path d="M 488,169 Q 496,154 502,148" fill="none" stroke="#dc2626" stroke-width="2.6"/>
+<circle cx="502" cy="148" r="3.5" fill="#d97706"/>
+<path d="M 488,181 Q 496,196 502,202" fill="none" stroke="#dc2626" stroke-width="2.6"/>
+<circle cx="502" cy="202" r="3.5" fill="#d97706"/>
+<path d="M 528,169 Q 536,154 542,148" fill="none" stroke="#dc2626" stroke-width="2.6"/>
+<circle cx="542" cy="148" r="3.5" fill="#d97706"/>
+<path d="M 528,181 Q 536,196 542,202" fill="none" stroke="#dc2626" stroke-width="2.6"/>
+<circle cx="542" cy="202" r="3.5" fill="#d97706"/>
+<path d="M 568,169 Q 576,154 582,148" fill="none" stroke="#dc2626" stroke-width="2.6"/>
+<circle cx="582" cy="148" r="3.5" fill="#d97706"/>
+<path d="M 568,181 Q 576,196 582,202" fill="none" stroke="#dc2626" stroke-width="2.6"/>
+<circle cx="582" cy="202" r="3.5" fill="#d97706"/>
+<path d="M 608,169 Q 616,154 622,148" fill="none" stroke="#dc2626" stroke-width="2.6"/>
+<circle cx="622" cy="148" r="3.5" fill="#d97706"/>
+<path d="M 608,181 Q 616,196 622,202" fill="none" stroke="#dc2626" stroke-width="2.6"/>
+<circle cx="622" cy="202" r="3.5" fill="#d97706"/>
+<path d="M 648,169 Q 656,154 662,148" fill="none" stroke="#dc2626" stroke-width="2.6"/>
+<circle cx="662" cy="148" r="3.5" fill="#d97706"/>
+<path d="M 648,181 Q 656,196 662,202" fill="none" stroke="#dc2626" stroke-width="2.6"/>
+<circle cx="662" cy="202" r="3.5" fill="#d97706"/>
+<text x="568" y="137" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">肌动蛋白细丝 (Actin) —— 无机械卡扣棘轮！</text>
+<text x="568" y="163" font-size="9.4" fill="#dc2626" text-anchor="middle" font-weight="700">肌球蛋白横桥每秒几十次：抓紧→烧ATP松开→再抓紧→全变废热 Q！</text>
+<text x="414" y="250" font-size="10.1" fill="#1e293b" text-anchor="start">• 人类骨骼肌为了换取“毫秒级收放自如”的敏捷身手，</text>
+<text x="414" y="269" font-size="10.1" fill="#dc2626" text-anchor="start" font-weight="700">  演化时放弃了机械锁死卡扣！</text>
+<text x="414" y="289" font-size="10.0" fill="#1e293b" text-anchor="start">• 当你平举哑铃纹丝不动时，成百上千亿个肌球蛋白小爪子</text>
+<text x="414" y="307" font-size="10.0" fill="#1e293b" text-anchor="start">  像拔河队员在冰面上小碎步倒手一样，每秒反复【结合—</text>
+<text x="414" y="325" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">  水解 ATP—脱开—再结合】数十次！</text>
+<text x="414" y="344" font-size="10.0" fill="#1e293b" text-anchor="start">• 注意能量账本：哑铃高度没变，你对哑铃做的机械功依然</text>
+<text x="414" y="362" font-size="10.0" fill="#18794e" text-anchor="start" font-weight="700">  严格等于 0 J；你烧掉的 ATP 100% 变成了肌肉内热 Q！</text>
+<rect x="412" y="378" width="312" height="84" rx="7" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
+<text x="424" y="398" font-size="10.0" fill="#d97706" text-anchor="start" font-weight="700">🦪 大自然反例：蛤蜊与扇贝的“闭壳平滑肌 (Catch Muscle)”！</text>
+<text x="424" y="416" font-size="9.8" fill="#1e293b" text-anchor="start">• 你拿刀撬生蚝或蛤蜊为什么那么费劲？因为贝类演化出了</text>
+<text x="424" y="433" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="600">  twitchin 蛋白分子插销——合拢后直接把横桥“机械上锁”，</text>
+<text x="424" y="450" font-size="9.8" fill="#1e293b" text-anchor="start">  几乎不烧 ATP 就能死死夹紧好几天，跟磁铁和螺栓一模一样！</text>
+</svg>

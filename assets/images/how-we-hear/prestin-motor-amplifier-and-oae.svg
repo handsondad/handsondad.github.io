@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="532" viewBox="0 0 760 532" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">外毛细胞Prestin马达蛋白主动放大50分贝谐振锐化与耳声发射新生儿听力筛查图解</title>
+<desc id="desc">左图展示外毛细胞Prestin随膜电位伸缩驱动主动耳蜗放大器提供40至50分贝增益与尖锐频率选择性；右图展示坎普发现的耳声发射反向传导机制及其在新生儿无创听力筛查中的应用。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="531" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">四、耳朵里藏着上万台跳舞马达：Prestin 主动放大 50 dB 与耳声发射</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">如果只靠被动行波，耳语会被粘滞淋巴液淹没——外毛细胞靠 Prestin 蛋白高速伸缩“推秋千”，甚至让耳朵自己发出声音！</text>
+<rect x="20" y="64" width="382" height="452" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="74.0" width="352" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="210.0" y="89.0" font-size="12" fill="#c25014" text-anchor="middle" font-weight="600">A · 外毛细胞 Prestin 压电马达：把灵敏度暴拉百倍！</text>
+<rect x="34" y="108" width="354" height="152" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="64" y="138" width="38" height="92" rx="12" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="83" y="128" font-size="9.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">超极化(伸长)</text>
+<rect x="134" y="156" width="46" height="66" rx="12" fill="#ffedd5" stroke="#ea580c" stroke-width="2.2"/>
+<text x="157" y="146" font-size="9.8" fill="#c25014" text-anchor="middle" font-weight="700">去极化(收缩!)</text>
+<line x1="110" y1="184" x2="128" y2="184" stroke="#0f172a" stroke-width="1.6" marker-end="url(#arr-orange)"/>
+<text x="120" y="248" font-size="10.2" fill="#0f172a" text-anchor="middle" font-weight="700">Prestin 膜马达每秒可伸缩数万次！</text>
+<line x1="222.0" y1="232.0" x2="374.0" y2="232.0" stroke="#475569" stroke-width="1.2"/>
+<polyline points="222.0,231.2 224.5,231.1 227.1,230.8 229.6,230.6 232.1,230.3 234.7,229.9 237.2,229.5 239.7,229.0 242.3,228.4 244.8,227.8 247.3,227.1 249.9,226.3 252.4,225.5 254.9,224.6 257.5,223.6 260.0,222.5 262.5,221.4 265.1,220.3 267.6,219.1 270.1,217.8 272.7,216.6 275.2,215.4 277.7,214.2 280.3,213.1 282.8,212.0 285.3,211.1 287.9,210.2 290.4,209.5 292.9,208.9 295.5,208.4 298.0,208.1 300.5,208.0 303.1,208.1 305.6,208.3 308.1,208.7 310.7,209.2 313.2,209.9 315.7,210.7 318.3,211.6 320.8,212.7 323.3,213.8 325.9,214.9 328.4,216.1 330.9,217.3 333.5,218.6 336.0,219.8 338.5,221.0 341.1,222.1 343.6,223.2 346.1,224.2 348.7,225.1 351.2,226.0 353.7,226.8 356.3,227.5 358.8,228.2 361.3,228.8 363.9,229.3 366.4,229.7 368.9,230.1 371.5,230.4 374.0,230.7" fill="none" stroke="#475569" stroke-width="1.8" stroke-dasharray="4 3"/>
+<polyline points="222.0,231.2 224.5,231.1 227.1,230.8 229.6,230.6 232.1,230.3 234.7,229.9 237.2,229.5 239.7,229.0 242.3,228.4 244.8,227.8 247.3,227.1 249.9,226.3 252.4,225.5 254.9,224.6 257.5,223.6 260.0,222.5 262.5,221.4 265.1,220.3 267.6,219.1 270.1,217.8 272.7,216.6 275.2,215.4 277.7,214.2 280.3,213.0 282.8,211.8 285.3,210.4 287.9,208.6 290.4,205.8 292.9,201.3 295.5,194.4 298.0,184.4 300.5,171.7 303.1,157.8 305.6,145.2 308.1,137.0 310.7,135.3 313.2,141.0 315.7,152.4 318.3,167.0 320.8,181.7 323.3,194.3 325.9,203.8 328.4,210.4 330.9,214.7 333.5,217.4 336.0,219.3 338.5,220.8 341.1,222.0 343.6,223.2 346.1,224.2 348.7,225.1 351.2,226.0 353.7,226.8 356.3,227.5 358.8,228.2 361.3,228.8 363.9,229.3 366.4,229.7 368.9,230.1 371.5,230.4 374.0,230.7" fill="none" stroke="#b91c1c" stroke-width="2.5"/>
+<text x="310" y="128" font-size="10" fill="#b91c1c" text-anchor="middle" font-weight="700" class="halo">主动放大 +40~50 dB!</text>
+<text x="268" y="224" font-size="9.6" fill="#475569" text-anchor="middle">死后被动行波</text>
+<text x="36" y="284" font-size="10.6" fill="#1e293b" text-anchor="start">• 粘滞阻尼难题：内耳装满液体，被动行波就像在水里荡秋千，</text>
+<text x="36" y="303" font-size="10.6" fill="#1e293b" text-anchor="start">  既微弱又扁平——如果只有它，你既听不见耳语，也分不清音高！</text>
+<text x="36" y="326" font-size="10.7" fill="#c25014" text-anchor="start" font-weight="700">• 2000 年 Nature 揪出真凶——马达蛋白 Prestin（郑景中等）：</text>
+<text x="36" y="345" font-size="10.5" fill="#1e293b" text-anchor="start">  12,000 个外毛细胞侧壁塞满了 Prestin 蛋白，不耗 ATP 就能</text>
+<text x="36" y="364" font-size="10.5" fill="#1e293b" text-anchor="start">  随跨膜电压直接发生“压电式纵向伸缩”，在每个声波周期精准推</text>
+<text x="36" y="383" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">  一把基底膜，把微弱声波锐利放大 40–50 dB（振幅放大上百倍）！</text>
+<text x="36" y="408" font-size="10.5" fill="#1e293b" text-anchor="start">• 鸡尾酒会烦恼：外毛细胞一旦被噪音或耳毒性药物伤损，人不仅</text>
+<text x="36" y="427" font-size="10.5" fill="#1e293b" text-anchor="start">  觉得声音小，更因为失去了“尖峰频率锐化”，在嘈杂饭馆里明明</text>
+<text x="36" y="446" font-size="10.5" fill="#b91c1c" text-anchor="start" font-weight="700">  听见别人说话嗡嗡响，却怎么也分辨不清吐字！</text>
+<text x="36" y="474" font-size="10.1" fill="#64748b" text-anchor="start">  （Prestin 命名源自乐谱术语 Presto“急板”，致敬其超高速响应）</text>
+<rect x="416" y="64" width="324" height="452" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="430.0" y="74.0" width="296" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="578.0" y="89.0" font-size="12" fill="#18794e" text-anchor="middle" font-weight="600">B · 会回唱的耳朵：耳声发射与新生儿筛查</text>
+<rect x="430" y="108" width="296" height="162" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="578" y="130" font-size="11" fill="#18794e" text-anchor="middle" font-weight="700">大卫·坎普 1978 年惊人发现：耳声发射 (OAE)</text>
+<rect x="444" y="150" width="114" height="52" rx="6" fill="#ffffff" stroke="#1d6fa5" stroke-width="1"/>
+<text x="501" y="172" font-size="10.3" fill="#1d6fa5" text-anchor="middle" font-weight="700">耳塞微型扬声器</text>
+<text x="501" y="190" font-size="9.8" fill="#1e293b" text-anchor="middle">送入轻柔咔哒声 →</text>
+<rect x="598" y="150" width="114" height="52" rx="6" fill="#ffffff" stroke="#c25014" stroke-width="1"/>
+<text x="655" y="172" font-size="10.3" fill="#c25014" text-anchor="middle" font-weight="700">外毛细胞跳舞</text>
+<text x="655" y="190" font-size="9.8" fill="#1e293b" text-anchor="middle">Prestin 主动回推!</text>
+<line x1="558" y1="166" x2="596" y2="166" stroke="#1d6fa5" stroke-width="2" marker-end="url(#arr-blue)"/>
+<line x1="596" y1="190" x2="558" y2="190" stroke="#18794e" stroke-width="2.2" marker-end="url(#arr-green)"/>
+<text x="578" y="228" font-size="10.3" fill="#0f172a" text-anchor="middle" font-weight="600">← 几毫秒后，振动倒传经听小骨推响鼓膜，</text>
+<text x="578" y="247" font-size="10.3" fill="#18794e" text-anchor="middle" font-weight="700">被耳道高灵敏麦克风当场录到“耳蜗回声”！</text>
+<rect x="430" y="284" width="296" height="218" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="442" y="306" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">这项“离经叛道”的发现拯救了无数婴儿：</text>
+<text x="442" y="328" font-size="10.4" fill="#1e293b" text-anchor="start">① 1978 年坎普刚宣布“健康耳朵会自己往外发声”时，</text>
+<text x="442" y="347" font-size="10.4" fill="#1e293b" text-anchor="start">   曾被同行怀疑是麦克风故障；结果一验证震惊全球！</text>
+<text x="442" y="370" font-size="10.4" fill="#1d6fa5" text-anchor="start" font-weight="700">② 新生儿听力筛查神器：出生仅两三天的宝宝不会说话</text>
+<text x="442" y="389" font-size="10.4" fill="#1e293b" text-anchor="start">   也不会举手，护士趁宝宝熟睡塞进一枚小探头，几十秒</text>
+<text x="442" y="408" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="600">   测出耳声发射“通过”，就知道外毛细胞马达运转正常！</text>
+<text x="442" y="432" font-size="10.4" fill="#1e293b" text-anchor="start">③ 甚至有相当比例健康人在绝对安静的暗室里，耳朵会</text>
+<text x="442" y="451" font-size="10.4" fill="#1e293b" text-anchor="start">   持续发出极微弱的“自发性耳声发射”——因为放大器</text>
+<text x="442" y="470" font-size="10.4" fill="#6d28d9" text-anchor="start" font-weight="700">   增益拉到极致时，偶尔会像话筒靠近音箱那样轻微自激！</text>
+</svg>

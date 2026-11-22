@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="496" viewBox="0 0 760 496" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">可观测宇宙465亿光年视界与165亿光年事件视界对比、普朗克CMB大三角空间曲率检验及宇宙组分图解</title>
+<desc id="desc">左上对比地球与遥远外星人各自直径930亿光年的重叠可观测视界球及内部半径165亿光年的未来事件视界；右上图解正曲率、零曲率与负曲率空间大三角内角和及普朗克Ω_k=0.0007±0.0019实测；下方展示68.5%暗能量、26.6%暗物质、4.9%普通原子占比与闭合体积超251倍下限。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="495" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">五、直径 930 亿光年之外是什么？——视界不等于尽头，给整个宇宙量曲率</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">可观测宇宙只是光速来得及跑进我们眼睛的“海平线圆圈”；普朗克卫星测得空间平直到千分之二以内</text>
+<rect x="20" y="64" width="366" height="286" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="74.0" width="338" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="203.0" y="89.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">A · 两个视界：465 亿光年过去 vs 167 亿光年未来</text>
+<rect x="34" y="108" width="338" height="178" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+<line x1="54" y1="112" x2="54" y2="282" stroke="#1e293b" stroke-width="0.9"/>
+<line x1="92" y1="112" x2="92" y2="282" stroke="#1e293b" stroke-width="0.9"/>
+<line x1="130" y1="112" x2="130" y2="282" stroke="#1e293b" stroke-width="0.9"/>
+<line x1="168" y1="112" x2="168" y2="282" stroke="#1e293b" stroke-width="0.9"/>
+<line x1="206" y1="112" x2="206" y2="282" stroke="#1e293b" stroke-width="0.9"/>
+<line x1="244" y1="112" x2="244" y2="282" stroke="#1e293b" stroke-width="0.9"/>
+<line x1="282" y1="112" x2="282" y2="282" stroke="#1e293b" stroke-width="0.9"/>
+<line x1="320" y1="112" x2="320" y2="282" stroke="#1e293b" stroke-width="0.9"/>
+<line x1="358" y1="112" x2="358" y2="282" stroke="#1e293b" stroke-width="0.9"/>
+<line x1="38" y1="126" x2="368" y2="126" stroke="#1e293b" stroke-width="0.9"/>
+<line x1="38" y1="162" x2="368" y2="162" stroke="#1e293b" stroke-width="0.9"/>
+<line x1="38" y1="198" x2="368" y2="198" stroke="#1e293b" stroke-width="0.9"/>
+<line x1="38" y1="234" x2="368" y2="234" stroke="#1e293b" stroke-width="0.9"/>
+<line x1="38" y1="270" x2="368" y2="270" stroke="#1e293b" stroke-width="0.9"/>
+<circle cx="252" cy="196" r="66" fill="#a855f7" fill-opacity="0.14" stroke="#c084fc" stroke-width="1.5" stroke-dasharray="5 3"/>
+<circle cx="252" cy="196" r="3.5" fill="#e879f9"/>
+<text x="260" y="199" font-size="9.6" fill="#f5d0fe" font-weight="700">外星观测者</text>
+<text x="282" y="124" font-size="9.5" fill="#e9d5ff" text-anchor="middle">他的930亿ly视界</text>
+<circle cx="144" cy="196" r="66.0" fill="#1d4ed8" fill-opacity="0.22" stroke="#38bdf8" stroke-width="2.0"/>
+<circle cx="144" cy="196" r="23.7" fill="#f59e0b" fill-opacity="0.22" stroke="#fbbf24" stroke-width="1.6"/>
+<circle cx="144" cy="196" r="3.8" fill="#ffffff"/>
+<text x="144" y="211" font-size="9.6" fill="#ffffff" text-anchor="middle" font-weight="700">地球</text>
+<text x="132" y="124" font-size="9.6" fill="#7dd3fc" text-anchor="middle" font-weight="700">可观测视界 R≈465亿ly</text>
+<text x="144" y="236" font-size="9.5" fill="#fde047" text-anchor="middle" font-weight="700">事件视界≈167亿ly</text>
+<text x="203" y="278" font-size="9.5" fill="#94a3b8" text-anchor="middle">← 视界之外并非悬崖，而是光尚未跑到的同类星海 →</text>
+<text x="34" y="306" font-size="10.0" fill="#1e293b" text-anchor="start">• 过去视界（R≈465亿ly）：大爆炸至今光能到的最大范围；</text>
+<text x="34" y="326" font-size="10.0" fill="#dc2626" text-anchor="start" font-weight="700">• 未来事件视界（R≈167亿ly，z≈1.87）：圈外星系今天</text>
+<text x="34" y="343" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="600">  发出的光再也追不上暗能量加速膨胀，永远到不了地球！</text>
+<rect x="398" y="64" width="342" height="286" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="412.0" y="74.0" width="314" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="569.0" y="89.0" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="600">B · 普朗克卫星“宇宙大三角”测整体空间曲率</text>
+<rect x="412" y="112" width="314" height="62" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1.1"/>
+<path d="M 450,124 Q 432.4,143.0 426,162 Q 450,168.3 474,162 Q 467.6,143.0 450,124" fill="#ffffff" fill-opacity="0.7" stroke="#c25014" stroke-width="1.8"/>
+<text x="488" y="133" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="700">① 正曲率闭合 (Ω_k &lt; 0)</text>
+<text x="488" y="151" font-size="9.9" fill="#1e293b" text-anchor="start">三维超球面 · 有限但无边缘</text>
+<text x="488" y="167" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="700">大三角内角和 &gt; 180°</text>
+<rect x="412" y="184" width="314" height="62" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.1"/>
+<path d="M 450,196 Q 438.0,215.0 426,234 Q 450,234.0 474,234 Q 462.0,215.0 450,196" fill="#ffffff" fill-opacity="0.7" stroke="#18794e" stroke-width="1.8"/>
+<text x="488" y="205" font-size="10.6" fill="#18794e" text-anchor="start" font-weight="700">② 零曲率平直 (Ω_k = 0)</text>
+<text x="488" y="223" font-size="9.9" fill="#1e293b" text-anchor="start">欧氏平直空间 · 可无限延伸</text>
+<text x="488" y="239" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="700">大三角内角和 = 180°（实测吻合！）</text>
+<rect x="412" y="256" width="314" height="62" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<path d="M 450,268 Q 442.8,287.0 426,306 Q 450,300.6 474,306 Q 457.2,287.0 450,268" fill="#ffffff" fill-opacity="0.7" stroke="#1d6fa5" stroke-width="1.8"/>
+<text x="488" y="277" font-size="10.6" fill="#1d6fa5" text-anchor="start" font-weight="700">③ 负曲率开放 (Ω_k &gt; 0)</text>
+<text x="488" y="295" font-size="9.9" fill="#1e293b" text-anchor="start">三维马鞍面 · 空间无限延伸</text>
+<text x="488" y="311" font-size="9.9" fill="#0f172a" text-anchor="start" font-weight="700">大三角内角和 &lt; 180°</text>
+<text x="412" y="338" font-size="10.6" fill="#6d28d9" text-anchor="start" font-weight="700">Planck 2018 + BAO 实测：Ω_k = 0.0007 ± 0.0019</text>
+<rect x="20" y="362" width="720" height="120" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="372.0" width="486" height="22" rx="11.0" fill="#f0fdfa" stroke="#0d9488" stroke-width="1" stroke-opacity="0.35"/>
+<text x="277.0" y="387.0" font-size="12" fill="#0d9488" text-anchor="middle" font-weight="600">C · 终极尺度账本：整个宇宙至少有多大？930 亿光年里到底装了什么？</text>
+<rect x="34.0" y="406.0" width="274.0" height="26" rx="4" fill="#6d28d9"/>
+<rect x="308.0" y="406.0" width="106.4" height="26" fill="#2563eb"/>
+<rect x="414.4" y="406.0" width="19.6" height="26" rx="3" fill="#f59e0b"/>
+<text x="171.0" y="423.0" font-size="10.4" fill="#ffffff" text-anchor="middle" font-weight="700">暗能量 68.5%</text>
+<text x="361.2" y="423.0" font-size="10.0" fill="#ffffff" text-anchor="middle" font-weight="700">暗物质 26.6%</text>
+<text x="442.0" y="423.0" font-size="10.2" fill="#d97706" text-anchor="start" font-weight="700">普通原子仅 4.9%！</text>
+<text x="34" y="452" font-size="10.1" fill="#1e293b" text-anchor="start">• 极致空旷：临界密度 ≈ 5.1 质子能量/m³；普通物质平均每 4 立方米才摊到 1 颗氢原子！</text>
+<text x="34" y="471" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="600">• 整体下限：即便宇宙闭合，总体积也 &gt; 251 倍可观测体积（Vardanyan 等 2011；暴胀模型更远超 10⁷⁸ 倍）。</text>
+</svg>

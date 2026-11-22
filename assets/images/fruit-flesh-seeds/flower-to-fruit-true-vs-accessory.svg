@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="512" viewBox="0 0 760 512" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">花朵受粉后发育为真果与假果的器官身世分流单次动画图解</title>
+<desc id="desc">左栏标出受粉花朵的子房壁、胎座珠柄、胚珠与花托花筒四大结构；右栏通过单次动画对比真果（仅子房壁发育为外中内三层果皮，如桃）与假果（花筒或花托参与形成可食果肉，如苹果与草莓）的演化分工。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes fatePulseA {
+          0%, 15% { opacity: 0.25; transform: translateX(-6px); }
+          55%, 100% { opacity: 1; transform: translateX(0px); }
+        }
+        @keyframes fatePulseB {
+          0%, 35% { opacity: 0.2; transform: translateX(-6px); }
+          80%, 100% { opacity: 1; transform: translateX(0px); }
+        }
+        .fate-true { animation: fatePulseA 4.2s cubic-bezier(0.22, 1, 0.36, 1) 1 forwards; }
+        .fate-acc  { animation: fatePulseB 4.8s cubic-bezier(0.22, 1, 0.36, 1) 1 forwards; }
+        @media (prefers-reduced-motion: reduce) {
+          .fate-true, .fate-acc { animation: none !important; opacity: 1 !important; transform: none !important; }
+        }
+</style>
+<rect x="0.5" y="0.5" width="759" height="511" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">一朵花谢了之后谁在长肉？“真果”与“假果”的器官身世分流动画</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">植物学判断标准极度纯粹：只由子房壁发育成的果肉叫“真果”；拉拢花托、花筒或花萼一起长肉的统称“假果（附果）”。</text>
+<rect x="20" y="68" width="250" height="424" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="40" cy="90" r="11" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="40" y="94" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">1</text>
+<text x="58" y="95" font-size="12.8" fill="#0f172a" text-anchor="start" font-weight="700">受粉后的花朵蓝图</text>
+<text x="36" y="115" font-size="10.5" fill="#64748b" text-anchor="start">记住这 4 个零件的颜色与名字：</text>
+<rect x="138" y="328" width="14" height="44" rx="4" fill="#65a30d"/>
+<path d="M 89,252 C 87,320 203,320 201,252 L 187,252 C 187,302 103,302 103,252 Z" fill="#fef1e8" stroke="#c25014" stroke-width="2.2"/>
+<path d="M 91,264 Q 61,240 75,224 Q 95,240 101,254 Z" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.6"/>
+<path d="M 199,264 Q 229,240 215,224 Q 195,240 189,254 Z" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.6"/>
+<path d="M 99,248 Q 57,192 107,174 Q 129,202 121,242" fill="#fce7f3" stroke="#ec4899" stroke-width="1.3" stroke-dasharray="4 3"/>
+<path d="M 191,248 Q 233,192 183,174 Q 161,202 169,242" fill="#fce7f3" stroke="#ec4899" stroke-width="1.3" stroke-dasharray="4 3"/>
+<path d="M 138,222 L 140,170 Q 145,162 150,170 L 152,222 Z" fill="#e7f6ee" stroke="#18794e" stroke-width="1.8"/>
+<ellipse cx="145" cy="266" rx="34" ry="42" fill="#e7f6ee" stroke="#18794e" stroke-width="2.5"/>
+<ellipse cx="145" cy="268" rx="17" ry="25" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.5" stroke-dasharray="3 2"/>
+<ellipse cx="139" cy="262" rx="6" ry="9" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.8"/>
+<ellipse cx="152" cy="274" rx="6" ry="9" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.8"/>
+<rect x="34" y="344" width="222" height="30" rx="5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="42" y="357" font-size="10.1" fill="#18794e" text-anchor="start" font-weight="700">① 子房壁 (Ovary wall)</text>
+<text x="42" y="369" font-size="9.6" fill="#1e293b" text-anchor="start">→ 真果的外/中/内三层果皮</text>
+<rect x="34" y="379" width="222" height="30" rx="5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="42" y="392" font-size="10.1" fill="#1d6fa5" text-anchor="start" font-weight="700">② 胎座与珠柄 (Placenta)</text>
+<text x="42" y="404" font-size="9.6" fill="#1e293b" text-anchor="start">→ 西瓜瓤、番茄胶、荔枝假种皮</text>
+<rect x="34" y="414" width="222" height="30" rx="5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="42" y="427" font-size="10.1" fill="#6d28d9" text-anchor="start" font-weight="700">③ 胚珠 (Ovule)</text>
+<text x="42" y="439" font-size="9.6" fill="#1e293b" text-anchor="start">→ 受精发育成种子（种皮+胚乳+胚）</text>
+<rect x="34" y="449" width="222" height="30" rx="5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="42" y="462" font-size="10.1" fill="#c25014" text-anchor="start" font-weight="700">④ 花托/花筒 (Receptacle)</text>
+<text x="42" y="474" font-size="9.6" fill="#1e293b" text-anchor="start">→ 苹果梨果肉、草莓红肉主力！</text>
+<g class="fate-true">
+<rect x="292" y="68" width="448" height="200" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="308.0" y="82.0" width="198" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="407.0" y="97.0" font-size="11.2" fill="#18794e" text-anchor="middle" font-weight="600">路线 A：真果（True Fruit）</text>
+<text x="518" y="97" font-size="10.6" fill="#64748b" text-anchor="start" font-weight="600">代表：桃、樱桃、西红柿、葡萄</text>
+<path d="M 270,210 Q 282,168 292,168" fill="none" stroke="#18794e" stroke-width="2.4"/>
+<circle cx="368" cy="174" r="52" fill="#fed7aa" stroke="#dc2626" stroke-width="2.8"/>
+<ellipse cx="368" cy="178" rx="20" ry="27" fill="#d97706" stroke="#92400e" stroke-width="2.2"/>
+<ellipse cx="368" cy="178" rx="10" ry="15" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.6"/>
+<text x="368" y="140" font-size="9.8" fill="#dc2626" text-anchor="middle" font-weight="700">外果皮(薄皮)</text>
+<text x="402" y="174" font-size="10.2" fill="#18794e" text-anchor="middle" font-weight="700">中果皮</text>
+<text x="368" y="217" font-size="9.6" fill="#92400e" text-anchor="middle" font-weight="700">木质内果皮(核壳)</text>
+<text x="442" y="126" font-size="10.6" fill="#1e293b" text-anchor="start">• 严格定义：花瓣、雄蕊纷纷枯萎脱落，唯独</text>
+<text x="442" y="145" font-size="10.6" fill="#18794e" text-anchor="start" font-weight="700">  绿色的【① 子房壁】膨大分化为三层果皮：</text>
+<text x="442" y="166" font-size="10.3" fill="#1e293b" text-anchor="start">  - 外果皮 (Exocarp)：最外层表皮与蜡质保护层</text>
+<text x="442" y="185" font-size="10.3" fill="#0f172a" text-anchor="start" font-weight="600">  - 中果皮 (Mesocarp)：桃子、芒果最肥厚多汁的果肉</text>
+<text x="442" y="204" font-size="10.3" fill="#1e293b" text-anchor="start">  - 内果皮 (Endocarp)：桃核坚硬外壳（不是种皮！）</text>
+<text x="442" y="226" font-size="10.4" fill="#6d28d9" text-anchor="start" font-weight="700">• 敲开硬桃核，里面那颗扁扁的“桃仁”才是【③ 种子】！</text>
+<text x="442" y="246" font-size="10.1" fill="#64748b" text-anchor="start">  （巴旦木其实就是扔掉干瘪桃肉、专吃桃仁的近亲！）</text>
+</g>
+<g class="fate-acc">
+<rect x="292" y="284" width="448" height="208" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="308.0" y="298.0" width="234" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="425.0" y="313.0" font-size="11.2" fill="#c25014" text-anchor="middle" font-weight="600">路线 B：假果 / 附果（Accessory Fruit）</text>
+<text x="552" y="313" font-size="10.6" fill="#64748b" text-anchor="start" font-weight="600">代表：苹果、梨、草莓、桑葚</text>
+<path d="M 270,295 Q 282,380 292,380" fill="none" stroke="#c25014" stroke-width="2.4"/>
+<circle cx="368" cy="394" r="52" fill="#fef1e8" stroke="#dc2626" stroke-width="2.6"/>
+<circle cx="368" cy="394" r="22" fill="#e7f6ee" stroke="#18794e" stroke-width="1.8" stroke-dasharray="4 3"/>
+<circle cx="368.0" cy="383.0" r="3.6" fill="#6d28d9"/>
+<circle cx="378.5" cy="390.6" r="3.6" fill="#6d28d9"/>
+<circle cx="374.5" cy="402.9" r="3.6" fill="#6d28d9"/>
+<circle cx="361.5" cy="402.9" r="3.6" fill="#6d28d9"/>
+<circle cx="357.5" cy="390.6" r="3.6" fill="#6d28d9"/>
+<text x="368" y="361" font-size="9.8" fill="#c25014" text-anchor="middle" font-weight="700">外圈花筒肉(&gt;70%)</text>
+<text x="368" y="428" font-size="9.5" fill="#18794e" text-anchor="middle" font-weight="700">果心线内=真子房</text>
+<text x="442" y="342" font-size="10.6" fill="#1e293b" text-anchor="start">• 植物界的“外包扩建工程”：子房自己不长厚肉，</text>
+<text x="442" y="361" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="700">  反而发激素召集【④ 花托 / 花筒 / 花萼】疯狂充水储糖！</text>
+<text x="442" y="382" font-size="10.3" fill="#0f172a" text-anchor="start" font-weight="600">  - 苹果与梨：你啃掉的脆甜果肉是包在子房外的花筒；</text>
+<text x="442" y="401" font-size="10.3" fill="#18794e" text-anchor="start" font-weight="700">    你嫌硬吐掉的“苹果核”，恰恰才是它真正的整个果实！</text>
+<text x="442" y="420" font-size="10.3" fill="#1e293b" text-anchor="start">  - 草莓：红艳果肉全是茎尖花托；表面芝麻粒才是真果实！</text>
+<text x="442" y="439" font-size="10.3" fill="#0d9488" text-anchor="start" font-weight="700">  - 桑葚：一串花序抱团，爆汁果肉竟是变胖的“肉质花萼”！</text>
+<text x="442" y="462" font-size="10.1" fill="#64748b" text-anchor="start">• 注意：“假果”绝不是人造假水果，而是植物学标准术语！</text>
+</g>
+</svg>

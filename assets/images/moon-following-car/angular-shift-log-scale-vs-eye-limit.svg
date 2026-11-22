@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="532" viewBox="0 0 760 532" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">双对数坐标下8类物体运动视差角与人眼60角秒分辨极限对比及直行与90度转弯差异图解</title>
+<desc id="desc">左图按精确三角公式绘制行驶100米与10公里的视差角双对数曲线，标出月球0.054角秒比人眼60角秒极限小1118倍；右图对比直行平移与路口90度转弯时车窗方位角的变化。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="531" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">二、差了 1100 倍的视觉门槛：双对数视差曲线与“直行 vs 转弯”判决</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左图实算 8 类距离目标的 Δθ 并对照人眼 60″ 分辨极限；右图解释为什么一拐弯月亮就换车窗</text>
+<rect x="20" y="64" width="442" height="452" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="74.0" width="388" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="228.0" y="89.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">A · 双对数实算：开 100 m 与开 10 km 的视角变化 Δθ</text>
+<rect x="84.0" y="118.0" width="358.0" height="126.5" fill="#ecfdf5"/>
+<rect x="84.0" y="244.5" width="358.0" height="181.5" fill="#fff1f2"/>
+<rect x="84.0" y="118.0" width="358.0" height="308.0" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+<line x1="84.0" y1="118.0" x2="84.0" y2="426.0" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="2 3"/>
+<text x="84.0" y="442.0" font-size="10.5" fill="#64748b" text-anchor="middle">1m</text>
+<line x1="173.5" y1="118.0" x2="173.5" y2="426.0" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="2 3"/>
+<text x="173.5" y="442.0" font-size="10.5" fill="#64748b" text-anchor="middle">1km</text>
+<line x1="263.0" y1="118.0" x2="263.0" y2="426.0" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="2 3"/>
+<text x="263.0" y="442.0" font-size="10.5" fill="#64748b" text-anchor="middle">10³km</text>
+<line x1="352.5" y1="118.0" x2="352.5" y2="426.0" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="2 3"/>
+<text x="352.5" y="442.0" font-size="10.5" fill="#64748b" text-anchor="middle">10⁶km</text>
+<line x1="442.0" y1="118.0" x2="442.0" y2="426.0" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="2 3"/>
+<text x="442.0" y="442.0" font-size="10.5" fill="#64748b" text-anchor="middle">10⁹km</text>
+<text x="263.0" y="460.0" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">物体垂直距离 D（对数坐标）</text>
+<line x1="84.0" y1="399.2" x2="442.0" y2="399.2" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="2 3"/>
+<text x="78.0" y="403.2" font-size="10.5" fill="#64748b" text-anchor="end">10⁻⁴″</text>
+<line x1="84.0" y1="345.7" x2="442.0" y2="345.7" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="2 3"/>
+<text x="78.0" y="349.7" font-size="10.5" fill="#64748b" text-anchor="end">0.01″</text>
+<line x1="84.0" y1="292.1" x2="442.0" y2="292.1" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="2 3"/>
+<text x="78.0" y="296.1" font-size="10.5" fill="#64748b" text-anchor="end">1″</text>
+<line x1="84.0" y1="238.5" x2="442.0" y2="238.5" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="2 3"/>
+<text x="78.0" y="242.5" font-size="10.5" fill="#64748b" text-anchor="end">100″</text>
+<line x1="84.0" y1="185.0" x2="442.0" y2="185.0" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="2 3"/>
+<text x="78.0" y="189.0" font-size="10.5" fill="#64748b" text-anchor="end">2.8°</text>
+<line x1="84.0" y1="131.4" x2="442.0" y2="131.4" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="2 3"/>
+<text x="78.0" y="135.4" font-size="10.5" fill="#64748b" text-anchor="end">278°</text>
+<line x1="84.0" y1="244.5" x2="442.0" y2="244.5" stroke="#b91c1c" stroke-width="1.8" stroke-dasharray="6 3"/>
+<text x="436.0" y="237.5" font-size="11" fill="#b91c1c" text-anchor="end" font-weight="700" class="halo">人眼分辨极限 1′ = 60″ (视力 1.0)</text>
+<text x="92.0" y="416.0" font-size="11" fill="#b91c1c" text-anchor="start" font-weight="600" class="halo">↓ 视网膜盲区：移动不足 1 像素，肉眼看作静止</text>
+<polyline points="84.0,136.4 87.0,136.4 90.0,136.4 93.0,136.4 95.9,136.4 98.9,136.4 101.9,136.4 104.9,136.4 107.9,136.4 110.8,136.4 113.8,136.5 116.8,136.5 119.8,136.5 122.8,136.5 125.8,136.5 128.8,136.5 131.7,136.5 134.7,136.5 137.7,136.5 140.7,136.6 143.7,136.6 146.7,136.6 149.6,136.7 152.6,136.7 155.6,136.8 158.6,136.9 161.6,137.0 164.6,137.2 167.5,137.4 170.5,137.7 173.5,138.0 176.5,138.4 179.5,139.0 182.4,139.7 185.4,140.5 188.4,141.6 191.4,142.9 194.4,144.5 197.4,146.3 200.4,148.4 203.3,150.6 206.3,153.0 209.3,155.5 212.3,158.0 215.3,160.6 218.2,163.2 221.2,165.9 224.2,168.5 227.2,171.2 230.2,173.9 233.2,176.5 236.2,179.2 239.1,181.9 242.1,184.6 245.1,187.2 248.1,189.9 251.1,192.6 254.1,195.3 257.0,198.0 260.0,200.6 263.0,203.3 266.0,206.0 269.0,208.7 272.0,211.4 274.9,214.0 277.9,216.7 280.9,219.4 283.9,222.1 286.9,224.7 289.9,227.4 292.8,230.1 295.8,232.8 298.8,235.5 301.8,238.1 304.8,240.8 307.8,243.5 310.7,246.2 313.7,248.8 316.7,251.5 319.7,254.2 322.7,256.9 325.6,259.6 328.6,262.2 331.6,264.9 334.6,267.6 337.6,270.3 340.6,273.0 343.6,275.6 346.5,278.3 349.5,281.0 352.5,283.7 355.5,286.3 358.5,289.0 361.4,291.7 364.4,294.4 367.4,297.1 370.4,299.7 373.4,302.4 376.4,305.1 379.4,307.8 382.3,310.4 385.3,313.1 388.3,315.8 391.3,318.5 394.3,321.2 397.2,323.8 400.2,326.5 403.2,329.2 406.2,331.9 409.2,334.6 412.2,337.2 415.2,339.9 418.1,342.6 421.1,345.3 424.1,347.9 427.1,350.6 430.1,353.3 433.1,356.0 436.0,358.7 439.0,361.3 442.0,364.0" fill="none" stroke="#0f766e" stroke-width="1.8" stroke-dasharray="5 3"/>
+<polyline points="84.0,136.6 87.0,136.6 90.0,136.7 93.0,136.7 95.9,136.8 98.9,136.9 101.9,137.0 104.9,137.2 107.9,137.4 110.8,137.7 113.8,138.0 116.8,138.4 119.8,139.0 122.8,139.7 125.8,140.5 128.8,141.6 131.7,142.9 134.7,144.5 137.7,146.3 140.7,148.4 143.7,150.6 146.7,153.0 149.6,155.5 152.6,158.0 155.6,160.6 158.6,163.2 161.6,165.9 164.6,168.5 167.5,171.2 170.5,173.9 173.5,176.5 176.5,179.2 179.5,181.9 182.4,184.6 185.4,187.2 188.4,189.9 191.4,192.6 194.4,195.3 197.4,198.0 200.4,200.6 203.3,203.3 206.3,206.0 209.3,208.7 212.3,211.4 215.3,214.0 218.2,216.7 221.2,219.4 224.2,222.1 227.2,224.7 230.2,227.4 233.2,230.1 236.2,232.8 239.1,235.5 242.1,238.1 245.1,240.8 248.1,243.5 251.1,246.2 254.1,248.8 257.0,251.5 260.0,254.2 263.0,256.9 266.0,259.6 269.0,262.2 272.0,264.9 274.9,267.6 277.9,270.3 280.9,273.0 283.9,275.6 286.9,278.3 289.9,281.0 292.8,283.7 295.8,286.3 298.8,289.0 301.8,291.7 304.8,294.4 307.8,297.1 310.7,299.7 313.7,302.4 316.7,305.1 319.7,307.8 322.7,310.4 325.6,313.1 328.6,315.8 331.6,318.5 334.6,321.2 337.6,323.8 340.6,326.5 343.6,329.2 346.5,331.9 349.5,334.6 352.5,337.2 355.5,339.9 358.5,342.6 361.4,345.3 364.4,347.9 367.4,350.6 370.4,353.3 373.4,356.0 376.4,358.7 379.4,361.3 382.3,364.0 385.3,366.7 388.3,369.4 391.3,372.0 394.3,374.7 397.2,377.4 400.2,380.1 403.2,382.8 406.2,385.4 409.2,388.1 412.2,390.8 415.2,393.5 418.1,396.2 421.1,398.8 424.1,401.5 427.1,404.2 430.1,406.9 433.1,409.5 436.0,412.2 439.0,414.9 442.0,417.6" fill="none" stroke="#1d6fa5" stroke-width="2.3"/>
+<text x="342" y="142" font-size="11" fill="#0f766e" text-anchor="start" font-weight="700" class="halo">虚线: 狂开10km</text>
+<text x="342" y="160" font-size="11" fill="#1d6fa5" text-anchor="start" font-weight="700" class="halo">实线: 直行100m</text>
+<line x1="95.9" y1="141.8" x2="95.9" y2="154.8" stroke="#1d6fa5" stroke-width="1.1"/>
+<circle cx="95.9" cy="136.8" r="4.0" fill="#1d6fa5" stroke="#ffffff" stroke-width="1"/>
+<text x="89.9" y="166.8" font-size="11" fill="#1d6fa5" text-anchor="start" font-weight="700" class="halo">护栏 174°</text>
+<circle cx="122.8" cy="139.7" r="4.0" fill="#18794e" stroke="#ffffff" stroke-width="1"/>
+<text x="130.8" y="134.7" font-size="11" fill="#18794e" text-anchor="start" font-weight="700" class="halo">近树 136°</text>
+<circle cx="152.6" cy="158.1" r="4.0" fill="#1d6fa5" stroke="#ffffff" stroke-width="1"/>
+<text x="161.6" y="162.1" font-size="11" fill="#1d6fa5" text-anchor="start" font-weight="700" class="halo">高楼 28.1°</text>
+<circle cx="194.4" cy="195.3" r="4.0" fill="#0f766e" stroke="#ffffff" stroke-width="1"/>
+<text x="202.4" y="193.3" font-size="11" fill="#0f766e" text-anchor="start" font-weight="700" class="halo">远山 1.15°</text>
+<circle cx="203.3" cy="203.3" r="4.0" fill="#475569" stroke="#ffffff" stroke-width="1"/>
+<text x="195.3" y="216.3" font-size="11" fill="#475569" text-anchor="end" font-weight="700" class="halo">高云 0.57°</text>
+<circle cx="340.1" cy="326.1" r="4.0" fill="#b91c1c" stroke="#ffffff" stroke-width="1"/>
+<text x="331.1" y="340.1" font-size="11" fill="#b91c1c" text-anchor="end" font-weight="700" class="halo">月球(100m) 0.054″</text>
+<circle cx="417.4" cy="395.5" r="4.0" fill="#c25014" stroke="#ffffff" stroke-width="1"/>
+<text x="409.4" y="387.5" font-size="11" fill="#c25014" text-anchor="end" font-weight="700" class="halo">太阳 0.00014″</text>
+<circle cx="340.1" cy="272.5" r="4.0" fill="#0f766e" stroke="#ffffff" stroke-width="1"/>
+<text x="331.1" y="276.5" font-size="11" fill="#0f766e" text-anchor="end" font-weight="700" class="halo">月球(10km) 5.37″</text>
+<line x1="348.1" y1="246.5" x2="348.1" y2="324.1" stroke="#b91c1c" stroke-width="1.5"/>
+<text x="354.1" y="289.3" font-size="11" fill="#b91c1c" text-anchor="start" font-weight="700" class="halo">差1118倍!</text>
+<text x="34" y="486" font-size="11.5" fill="#1e293b" text-anchor="start">• 哪怕在笔直高速连开 10 km，月球视差 5.37″ 仍不足人眼极限的 1/11；</text>
+<text x="34" y="505" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">• 想靠纯平移让月亮退后 1°（两个满月宽），需一口气直开 6,709 km！</text>
+<rect x="474" y="64" width="266" height="452" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="488.0" y="74.0" width="238" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="607.0" y="89.0" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="600">B · 直行平移 vs 路口 90° 转弯</text>
+<rect x="488" y="108" width="238" height="186" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="500" y="129" font-size="12" fill="#1d6fa5" text-anchor="start" font-weight="700">① 直行平移：车头朝向角 ψ 不变</text>
+<line x1="510" y1="202" x2="704" y2="202" stroke="#94a3b8" stroke-width="6" stroke-linecap="round"/>
+<rect x="528" y="193" width="34" height="18" rx="4" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.4" stroke-dasharray="3 2"/>
+<rect x="642" y="193" width="34" height="18" rx="4" fill="#1d6fa5"/>
+<circle cx="607" cy="148" r="8" fill="#eab308" stroke="#b45309" stroke-width="1"/>
+<line x1="545" y1="193" x2="545" y2="152" stroke="#b45309" stroke-width="1.6" stroke-dasharray="4 3"/>
+<line x1="659" y1="193" x2="659" y2="152" stroke="#b45309" stroke-width="1.6" stroke-dasharray="4 3"/>
+<text x="607" y="234" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">窗内方位 φ_窗 = θ_月 − ψ</text>
+<text x="607" y="255" font-size="11.5" fill="#1e293b" text-anchor="middle">ψ = 0° 不变，θ_月 仅变 0.054″</text>
+<text x="607" y="276" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">→ 月亮死死钉在同一扇侧窗！</text>
+<rect x="488" y="308" width="238" height="194" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1.1"/>
+<text x="500" y="329" font-size="12" fill="#c25014" text-anchor="start" font-weight="700">② 路口右转：车窗整体转 Δψ = 90°</text>
+<path d="M542,418 L542,374 Q542,360 556,360 L632,360" fill="none" stroke="#94a3b8" stroke-width="10" stroke-linecap="round"/>
+<rect x="533" y="394" width="18" height="30" rx="4" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.4"/>
+<rect x="594" y="351" width="30" height="18" rx="4" fill="#c25014"/>
+<circle cx="542" cy="342" r="7.5" fill="#eab308" stroke="#b45309" stroke-width="1"/>
+<text x="644" y="365" font-size="11.5" fill="#b45309" text-anchor="start" font-weight="700">北↑月亮</text>
+<text x="644" y="386" font-size="11" fill="#1e293b" text-anchor="start">转弯前: 前挡风</text>
+<text x="644" y="405" font-size="11" fill="#b91c1c" text-anchor="start" font-weight="700">右转后: 左车窗!</text>
+<text x="607" y="444" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">转动效应 Δφ_窗 = −Δψ 与距离无关！</text>
+<text x="607" y="465" font-size="11.5" fill="#1e293b" text-anchor="middle">不管天体在 38 万公里还是无穷远，</text>
+<text x="607" y="486" font-size="11.5" fill="#b91c1c" text-anchor="middle" font-weight="700">车头转 90°，月亮立刻横扫 90° 换窗！</text>
+</svg>

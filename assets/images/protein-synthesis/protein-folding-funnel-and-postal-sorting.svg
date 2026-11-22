@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="546" viewBox="0 0 760 546" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">莱文塔尔折叠悖论与自由能折叠漏斗、分子伴侣及信号肽粗面内质网高尔基体分拣加工图解</title>
+<desc id="desc">左图算清100氨基酸蛋白3^198≈3×10^94种构象盲试需约9×10^73年的莱文塔尔悖论，展示疏水塌缩沿自由能漏斗毫秒级滑入唯一天然活性态、分子伴侣隔离防聚集及2024年诺贝尔化学奖AI结构预测；右图解析游离核糖体胞内路线与1999年诺奖信号肽-SRP引导粗面内质网跨膜、二硫键折叠、高尔基体糖基化分拣及胰岛素原切除C肽激活全流程。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="545" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">五、从一维珠串到三维活机器：10⁷⁴ 年折叠悖论怎样秒破？造好的蛋白怎么寄对地址？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：莱文塔尔悖论 vs 自由能折叠漏斗、分子伴侣与 AI 预测 · 右：信号肽“邮政编码”分拣与剪切激活</text>
+<rect x="20" y="66" width="364" height="468" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="78.0" width="340" height="24" rx="12.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="202.0" y="94.3" font-size="11.8" fill="#1d6fa5" text-anchor="middle" font-weight="600">A · 莱文塔尔悖论 vs 疏水塌缩“自由能漏斗”</text>
+<rect x="32" y="112" width="340" height="82" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1.1"/>
+<text x="44" y="134" font-size="11.8" fill="#dc2626" text-anchor="start" font-weight="700">如果靠盲目穷举试错（Levinthal 1969）：</text>
+<text x="44" y="156" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">100 氨基酸约 198 个主链转角 → 3¹⁹⁸ ≈ 3×10⁹⁴ 种折法；</text>
+<text x="44" y="178" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">哪怕每秒试 10¹³ 次，也要 ~9×10⁷³ 年（远超宇宙年龄）！</text>
+<rect x="32" y="204" width="340" height="198" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="202" y="224" font-size="11.6" fill="#18794e" text-anchor="middle" font-weight="700">真实物理破局：顺着自由能漏斗毫秒级滑向谷底！</text>
+<path d="M 56.0,244.0 L 92.0,272.0 L 122.0,310.0 L 154.0,346.0 L 178.0,384.0" fill="none" stroke="#1d6fa5" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 348.0,244.0 L 314.0,280.0 L 294.0,268.0 L 266.0,314.0 L 222.0,352.0 L 178.0,384.0" fill="none" stroke="#1d6fa5" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 96.0,250.0 L 144.0,294.0 L 178.0,372.0" fill="none" stroke="#18794e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 3"/>
+<circle cx="178" cy="384" r="6.0" fill="#18794e"/>
+<text x="56" y="240" font-size="11.5" fill="#475569" text-anchor="start" font-weight="700">高能无规珠串</text>
+<text x="178" y="397" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">唯一天然活性态 (能量最低谷)</text>
+<text x="304" y="262" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">错折陷阱!</text>
+<text x="302" y="332" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">← 分子伴侣桶</text>
+<text x="302" y="352" font-size="11.5" fill="#1e293b" text-anchor="middle">防粘连救回正轨</text>
+<rect x="32" y="412" width="340" height="108" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.1"/>
+<text x="44" y="434" font-size="11.5" fill="#1e293b" text-anchor="start">• 驱动力：怕水的疏水侧链瞬间往球心抱团塌缩，</text>
+<text x="44" y="456" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">  氢键顺势扣紧 α-螺旋与 β-折叠，毫秒级滑入谷底；</text>
+<text x="44" y="480" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">• 2024 诺贝尔化学奖：AlphaFold2 攻克“序列预测结构”</text>
+<text x="44" y="502" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">  50 年难题，Baker 更从头定制自然界未有的新蛋白！</text>
+<rect x="396" y="66" width="344" height="468" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="408.0" y="78.0" width="320" height="24" rx="12.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="568.0" y="94.3" font-size="11.6" fill="#6d28d9" text-anchor="middle" font-weight="600">B · 邮政分拣与精加工：全城几万种蛋白凭什么不送错？</text>
+<rect x="408" y="114" width="320" height="108" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<circle cx="426" cy="134" r="10.5" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="426" y="138" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="444" y="138" font-size="11.8" fill="#1d6fa5" text-anchor="start" font-weight="700">路线 ① 游离核糖体：无外派车票 → 留守胞内</text>
+<text x="420" y="162" font-size="11.5" fill="#1e293b" text-anchor="start">• 全程在胞质溶胶里完工（如血红蛋白、骨架蛋白）；</text>
+<text x="420" y="184" font-size="11.5" fill="#1e293b" text-anchor="start">• 若带核定位或线粒体“门禁卡”，完工后再专送</text>
+<text x="420" y="206" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">  细胞核、线粒体、叶绿体或过氧化物酶体。</text>
+<rect x="408" y="234" width="320" height="174" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.3"/>
+<circle cx="426" cy="254" r="10.5" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="426" y="258" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">2</text>
+<text x="444" y="258" font-size="11.8" fill="#6d28d9" text-anchor="start" font-weight="700">路线 ② N 端信号肽“邮政编码”（1999 诺奖）</text>
+<text x="420" y="282" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">• 头十几颗疏水氨基酸刚冒头，SRP 颗粒当场踩停</text>
+<text x="420" y="304" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">  核糖体，押送至【粗面内质网】通道边织边塞入腔！</text>
+<text x="420" y="328" font-size="11.5" fill="#1e293b" text-anchor="start">• 内质网腔内：切掉信号肽车票 + 扣紧二硫键 (-S-S-)；</text>
+<text x="420" y="350" font-size="11.5" fill="#1e293b" text-anchor="start">• 囊泡运往【高尔基体】：贴糖链标签 → 镶嵌细胞膜</text>
+<text x="420" y="372" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">  做受体通道，或分泌出胞（抗体、消化酶、激素）！</text>
+<text x="420" y="394" font-size="11.5" fill="#64748b" text-anchor="start">  （粗面内质网满身颗粒，正是停靠赶工的核糖体）</text>
+<rect x="408" y="420" width="320" height="100" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="1.2"/>
+<circle cx="426" cy="440" r="10.5" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+<text x="426" y="444" font-size="11.5" fill="#b45309" text-anchor="middle" font-weight="700">3</text>
+<text x="444" y="444" font-size="11.8" fill="#b45309" text-anchor="start" font-weight="700">翻译后剪裁激活：刚下线的未必能直接上岗！</text>
+<text x="420" y="468" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">• 胰岛素原须剪掉中间 C 肽，A/B 链才具降糖活性；</text>
+<text x="420" y="490" font-size="11.5" fill="#1e293b" text-anchor="start">• 消化酶原到肠腔才拆封（防消化自家胰腺！），配</text>
+<text x="420" y="510" font-size="11.5" fill="#b45309" text-anchor="start" font-weight="700">  合磷酸化等开关，完成从死字符到活机器的一跃。</text>
+</svg>

@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="484" viewBox="0 0 760 484" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">草莓聚合假果花托瘦果、桑葚聚花果肉质花萼与柑橘内果皮汁胞结构图解</title>
+<desc id="desc">三栏并列拆解三种特化果实：草莓可食部分为茎尖花托而表面小粒为真正瘦果；桑葚由整串花序发育且爆汁部分为肉质花萼；柑橘类一粒粒汁胞是内果皮向内生长的多细胞储水毛状体。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="483" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">水果界三大“障眼法”：草莓籽其实是果、桑葚吃花萼、橙子果肉竟是“毛”！</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">同样酸甜爆汁，植物演化出了截然不同的储糖容器——拿放大镜看一眼全破案。</text>
+<rect x="20" y="68" width="232" height="398" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="40" cy="90" r="10" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2"/>
+<text x="40" y="94" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="94" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="700">草莓：聚合假果</text>
+<text x="36" y="114" font-size="10.2" fill="#64748b" text-anchor="start">一朵花长出 ~200 颗独立干果！</text>
+<path d="M 102,154 Q 136,166 170,154 L 136,142 Z" fill="#16a34a"/>
+<path d="M 136,254 C 80,220 84,158 136,162 C 188,158 192,220 136,254 Z" fill="#ef4444" stroke="#b91c1c" stroke-width="2.2"/>
+<path d="M 136,234 C 112,210 114,180 136,182 C 158,180 160,210 136,234 Z" fill="#fecaca"/>
+<ellipse cx="108" cy="182" rx="3.0" ry="4.4" fill="#fde047" stroke="#854d0e" stroke-width="1"/>
+<ellipse cx="126" cy="178" rx="3.0" ry="4.4" fill="#fde047" stroke="#854d0e" stroke-width="1"/>
+<ellipse cx="148" cy="178" rx="3.0" ry="4.4" fill="#fde047" stroke="#854d0e" stroke-width="1"/>
+<ellipse cx="164" cy="182" rx="3.0" ry="4.4" fill="#fde047" stroke="#854d0e" stroke-width="1"/>
+<ellipse cx="104" cy="202" rx="3.0" ry="4.4" fill="#fde047" stroke="#854d0e" stroke-width="1"/>
+<ellipse cx="124" cy="200" rx="3.0" ry="4.4" fill="#fde047" stroke="#854d0e" stroke-width="1"/>
+<ellipse cx="148" cy="200" rx="3.0" ry="4.4" fill="#fde047" stroke="#854d0e" stroke-width="1"/>
+<ellipse cx="168" cy="202" rx="3.0" ry="4.4" fill="#fde047" stroke="#854d0e" stroke-width="1"/>
+<ellipse cx="116" cy="222" rx="3.0" ry="4.4" fill="#fde047" stroke="#854d0e" stroke-width="1"/>
+<ellipse cx="136" cy="220" rx="3.0" ry="4.4" fill="#fde047" stroke="#854d0e" stroke-width="1"/>
+<ellipse cx="156" cy="222" rx="3.0" ry="4.4" fill="#fde047" stroke="#854d0e" stroke-width="1"/>
+<ellipse cx="136" cy="238" rx="3.0" ry="4.4" fill="#fde047" stroke="#854d0e" stroke-width="1"/>
+<rect x="34" y="270" width="204" height="180" rx="7" fill="#fef2f2" stroke="#dc2626" stroke-width="1"/>
+<text x="44" y="290" font-size="10.3" fill="#dc2626" text-anchor="start" font-weight="700">• 红艳果肉 = 膨大的【茎尖花托】！</text>
+<text x="44" y="309" font-size="10.3" fill="#0f172a" text-anchor="start" font-weight="700">• 表面约 200 粒“小芝麻”：</text>
+<text x="44" y="327" font-size="10.1" fill="#1e293b" text-anchor="start">  根本不是裸露种子，而是 200 颗</text>
+<text x="44" y="344" font-size="10.1" fill="#18794e" text-anchor="start" font-weight="700">  独立的【瘦果 (Achene)】——每粒</text>
+<text x="44" y="361" font-size="10.1" fill="#1e293b" text-anchor="start">  硬壳里才装着一颗真正的草莓种子！</text>
+<text x="44" y="382" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="600">• 经典实验（Nitsch 1950）：趁幼果</text>
+<text x="44" y="399" font-size="10.0" fill="#1e293b" text-anchor="start">  期用镊子拔光表面瘦果，花托立刻</text>
+<text x="44" y="416" font-size="10.0" fill="#1e293b" text-anchor="start">  停止长大；涂上生长素又重新鼓起！</text>
+<text x="44" y="434" font-size="9.8" fill="#64748b" text-anchor="start">  证明瘦果是发号施令的“包工头”。</text>
+<rect x="264" y="68" width="232" height="398" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="284" cy="90" r="10" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="284" y="94" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">2</text>
+<text x="300" y="94" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="700">桑葚：整串花序聚花果</text>
+<text x="280" y="114" font-size="10.2" fill="#64748b" text-anchor="start">一粒桑葚 = 几十朵小花抱成团！</text>
+<line x1="380" y1="142" x2="380" y2="248" stroke="#65a30d" stroke-width="5" stroke-linecap="round"/>
+<circle cx="364" cy="166" r="11.5" fill="#581c87" stroke="#3b0764" stroke-width="1.4"/>
+<circle cx="361" cy="163" r="3.2" fill="#c084fc" opacity="0.65"/>
+<circle cx="380" cy="162" r="11.5" fill="#581c87" stroke="#3b0764" stroke-width="1.4"/>
+<circle cx="377" cy="159" r="3.2" fill="#c084fc" opacity="0.65"/>
+<circle cx="396" cy="166" r="11.5" fill="#581c87" stroke="#3b0764" stroke-width="1.4"/>
+<circle cx="393" cy="163" r="3.2" fill="#c084fc" opacity="0.65"/>
+<circle cx="356" cy="184" r="11.5" fill="#581c87" stroke="#3b0764" stroke-width="1.4"/>
+<circle cx="353" cy="181" r="3.2" fill="#c084fc" opacity="0.65"/>
+<circle cx="372" cy="182" r="11.5" fill="#581c87" stroke="#3b0764" stroke-width="1.4"/>
+<circle cx="369" cy="179" r="3.2" fill="#c084fc" opacity="0.65"/>
+<circle cx="388" cy="182" r="11.5" fill="#581c87" stroke="#3b0764" stroke-width="1.4"/>
+<circle cx="385" cy="179" r="3.2" fill="#c084fc" opacity="0.65"/>
+<circle cx="404" cy="184" r="11.5" fill="#581c87" stroke="#3b0764" stroke-width="1.4"/>
+<circle cx="401" cy="181" r="3.2" fill="#c084fc" opacity="0.65"/>
+<circle cx="356" cy="204" r="11.5" fill="#581c87" stroke="#3b0764" stroke-width="1.4"/>
+<circle cx="353" cy="201" r="3.2" fill="#c084fc" opacity="0.65"/>
+<circle cx="372" cy="202" r="11.5" fill="#581c87" stroke="#3b0764" stroke-width="1.4"/>
+<circle cx="369" cy="199" r="3.2" fill="#c084fc" opacity="0.65"/>
+<circle cx="388" cy="202" r="11.5" fill="#581c87" stroke="#3b0764" stroke-width="1.4"/>
+<circle cx="385" cy="199" r="3.2" fill="#c084fc" opacity="0.65"/>
+<circle cx="404" cy="204" r="11.5" fill="#581c87" stroke="#3b0764" stroke-width="1.4"/>
+<circle cx="401" cy="201" r="3.2" fill="#c084fc" opacity="0.65"/>
+<circle cx="360" cy="222" r="11.5" fill="#581c87" stroke="#3b0764" stroke-width="1.4"/>
+<circle cx="357" cy="219" r="3.2" fill="#c084fc" opacity="0.65"/>
+<circle cx="376" cy="222" r="11.5" fill="#581c87" stroke="#3b0764" stroke-width="1.4"/>
+<circle cx="373" cy="219" r="3.2" fill="#c084fc" opacity="0.65"/>
+<circle cx="392" cy="222" r="11.5" fill="#581c87" stroke="#3b0764" stroke-width="1.4"/>
+<circle cx="389" cy="219" r="3.2" fill="#c084fc" opacity="0.65"/>
+<circle cx="370" cy="238" r="11.5" fill="#581c87" stroke="#3b0764" stroke-width="1.4"/>
+<circle cx="367" cy="235" r="3.2" fill="#c084fc" opacity="0.65"/>
+<circle cx="388" cy="238" r="11.5" fill="#581c87" stroke="#3b0764" stroke-width="1.4"/>
+<circle cx="385" cy="235" r="3.2" fill="#c084fc" opacity="0.65"/>
+<rect x="278" y="270" width="204" height="180" rx="7" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="288" y="290" font-size="10.3" fill="#6d28d9" text-anchor="start" font-weight="700">• 别把桑葚和树莓搞混：</text>
+<text x="288" y="309" font-size="10.1" fill="#1e293b" text-anchor="start">  树莓是一朵花里许多子房聚成的</text>
+<text x="288" y="326" font-size="10.1" fill="#1e293b" text-anchor="start">  聚合核果；而桑葚是整根花序轴上</text>
+<text x="288" y="343" font-size="10.1" fill="#0f172a" text-anchor="start" font-weight="700">  几十朵独立雌花挤成的【聚花果】！</text>
+<text x="288" y="364" font-size="10.3" fill="#6d28d9" text-anchor="start" font-weight="700">• 最让人意外的爆汁真相：</text>
+<text x="288" y="382" font-size="10.1" fill="#1e293b" text-anchor="start">  每朵小雌花授粉后，真正的子房只</text>
+<text x="288" y="399" font-size="10.1" fill="#1e293b" text-anchor="start">  结出一粒极小的瘦果；反倒是外围</text>
+<text x="288" y="416" font-size="10.1" fill="#0f172a" text-anchor="start" font-weight="700">  4 片【花萼 (Calyx)】吸饱紫黑花青素</text>
+<text x="288" y="433" font-size="9.8" fill="#64748b" text-anchor="start">  鼓成小水珠！（菠萝、无花果也是聚花果）</text>
+<rect x="508" y="68" width="232" height="398" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="528" cy="90" r="10" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="528" y="94" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">3</text>
+<text x="544" y="94" font-size="12.6" fill="#0f172a" text-anchor="start" font-weight="700">柑橘柚子：特化柑果</text>
+<text x="524" y="114" font-size="10.2" fill="#64748b" text-anchor="start">一瓣一瓣的果粒竟是“内果皮长毛”！</text>
+<circle cx="624" cy="200" r="52" fill="#f97316" stroke="#c2410c" stroke-width="2.2"/>
+<circle cx="624" cy="200" r="45" fill="#fffbeb" stroke="#fed7aa" stroke-width="1.4"/>
+<path d="M 629.5,202.3 L 664.8,203.6 A 41,41 0 0,1 655.4,226.4 Z" fill="#fb923c" stroke="#ffffff" stroke-width="2.0"/>
+<line x1="661.9" y1="209.0" x2="643.5" y2="204.6" stroke="#fef08a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="660.0" y1="214.9" x2="642.5" y2="207.7" stroke="#fef08a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="657.2" y1="220.5" x2="641.0" y2="210.5" stroke="#fef08a" stroke-width="2.2" stroke-linecap="round"/>
+<path d="M 626.3,205.5 L 650.4,231.4 A 41,41 0 0,1 627.6,240.8 Z" fill="#fb923c" stroke="#ffffff" stroke-width="2.0"/>
+<line x1="644.5" y1="233.2" x2="634.5" y2="217.0" stroke="#fef08a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="638.9" y1="236.0" x2="631.7" y2="218.5" stroke="#fef08a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="633.0" y1="237.9" x2="628.6" y2="219.5" stroke="#fef08a" stroke-width="2.2" stroke-linecap="round"/>
+<path d="M 621.7,205.5 L 620.4,240.8 A 41,41 0 0,1 597.6,231.4 Z" fill="#fb923c" stroke="#ffffff" stroke-width="2.0"/>
+<line x1="615.0" y1="237.9" x2="619.4" y2="219.5" stroke="#fef08a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="609.1" y1="236.0" x2="616.3" y2="218.5" stroke="#fef08a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="603.5" y1="233.2" x2="613.5" y2="217.0" stroke="#fef08a" stroke-width="2.2" stroke-linecap="round"/>
+<path d="M 618.5,202.3 L 592.6,226.4 A 41,41 0 0,1 583.2,203.6 Z" fill="#fb923c" stroke="#ffffff" stroke-width="2.0"/>
+<line x1="590.8" y1="220.5" x2="607.0" y2="210.5" stroke="#fef08a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="588.0" y1="214.9" x2="605.5" y2="207.7" stroke="#fef08a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="586.1" y1="209.0" x2="604.5" y2="204.6" stroke="#fef08a" stroke-width="2.2" stroke-linecap="round"/>
+<path d="M 618.5,197.7 L 583.2,196.4 A 41,41 0 0,1 592.6,173.6 Z" fill="#fb923c" stroke="#ffffff" stroke-width="2.0"/>
+<line x1="586.1" y1="191.0" x2="604.5" y2="195.4" stroke="#fef08a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="588.0" y1="185.1" x2="605.5" y2="192.3" stroke="#fef08a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="590.8" y1="179.5" x2="607.0" y2="189.5" stroke="#fef08a" stroke-width="2.2" stroke-linecap="round"/>
+<path d="M 621.7,194.5 L 597.6,168.6 A 41,41 0 0,1 620.4,159.2 Z" fill="#fb923c" stroke="#ffffff" stroke-width="2.0"/>
+<line x1="603.5" y1="166.8" x2="613.5" y2="183.0" stroke="#fef08a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="609.1" y1="164.0" x2="616.3" y2="181.5" stroke="#fef08a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="615.0" y1="162.1" x2="619.4" y2="180.5" stroke="#fef08a" stroke-width="2.2" stroke-linecap="round"/>
+<path d="M 626.3,194.5 L 627.6,159.2 A 41,41 0 0,1 650.4,168.6 Z" fill="#fb923c" stroke="#ffffff" stroke-width="2.0"/>
+<line x1="633.0" y1="162.1" x2="628.6" y2="180.5" stroke="#fef08a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="638.9" y1="164.0" x2="631.7" y2="181.5" stroke="#fef08a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="644.5" y1="166.8" x2="634.5" y2="183.0" stroke="#fef08a" stroke-width="2.2" stroke-linecap="round"/>
+<path d="M 629.5,197.7 L 655.4,173.6 A 41,41 0 0,1 664.8,196.4 Z" fill="#fb923c" stroke="#ffffff" stroke-width="2.0"/>
+<line x1="657.2" y1="179.5" x2="641.0" y2="189.5" stroke="#fef08a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="660.0" y1="185.1" x2="642.5" y2="192.3" stroke="#fef08a" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="661.9" y1="191.0" x2="643.5" y2="195.4" stroke="#fef08a" stroke-width="2.2" stroke-linecap="round"/>
+<rect x="522" y="270" width="204" height="180" rx="7" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="532" y="290" font-size="10.2" fill="#c25014" text-anchor="start" font-weight="700">• 剥橘子就是逐层拆解三层真果皮：</text>
+<text x="532" y="309" font-size="10.1" fill="#1e293b" text-anchor="start">  ① 喷香油胞橙色外皮 = 外果皮；</text>
+<text x="532" y="326" font-size="10.1" fill="#1e293b" text-anchor="start">  ② 白色海绵状“橘络” = 中果皮；</text>
+<text x="532" y="343" font-size="10.1" fill="#0f172a" text-anchor="start" font-weight="700">  ③ 包住每一瓣的薄韧衣 = 内果皮！</text>
+<text x="532" y="364" font-size="10.2" fill="#c25014" text-anchor="start" font-weight="700">• 那一粒粒水滴状果肉是什么？</text>
+<text x="532" y="382" font-size="10.1" fill="#1e293b" text-anchor="start">  是内果皮内壁向腔内长出的巨型多</text>
+<text x="532" y="399" font-size="10.1" fill="#0f172a" text-anchor="start" font-weight="700">  细胞表皮毛——【汁胞 (Juice Sacs)】</text>
+<text x="532" y="416" font-size="10.1" fill="#1e293b" text-anchor="start">  内部 &gt;90% 体积是装满糖酸的大液泡</text>
+<text x="532" y="433" font-size="9.8" fill="#64748b" text-anchor="start">  （吃柚子一粒粒剥开的正是这种腺毛）！</text>
+</svg>

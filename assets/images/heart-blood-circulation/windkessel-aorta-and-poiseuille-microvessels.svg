@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">主动脉风箱弹性回弹蓄压效应、微动脉泊肃叶四次方阻力调控与毛细血管斯塔灵滤过重吸收图解</title>
+<desc id="desc">左栏对比收缩期主动脉扩张储能与舒张期瓣膜关闭后管壁弹性回弹维持80 mmHg连续血流及动脉硬化脉压增宽机制；右栏展示泊肃叶定律（半径减半阻力增16倍）与毛细血管动脉端净滤出+10 mmHg（24 L/天）、静脉端白蛋白净重吸收-7 mmHg（20.4 L/天）及淋巴管每日回收3.6 L液体的平衡账本。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="519" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">出了心脏后的两套流体神技：主动脉“橡胶蓄压球”与微血管四次方分流、渗出回收</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：主动脉弹性回弹把间歇喷血抚平为连续水流｜右：微动脉 r⁴ 控压调流 + 毛细血管斯塔灵双力进出账本</text>
+<rect x="20" y="68" width="352" height="436" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="80.0" width="324" height="22" rx="11.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="196.0" y="95.0" font-size="9.6" fill="#dc2626" text-anchor="middle" font-weight="600">主动脉“风箱效应（Windkessel）”：舒张期凭啥不断流？</text>
+<rect x="34" y="112" width="324" height="122" rx="10" fill="#fff8f8" stroke="#dc2626" stroke-width="1"/>
+<text x="46" y="131" font-size="9.8" fill="#dc2626" text-anchor="start" font-weight="700">① 收缩期（0.22 s）：左心室猛喷 75 mL 血液</text>
+<rect x="48" y="148" width="62" height="44" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="2.4"/>
+<text x="79" y="168" font-size="8.8" fill="#dc2626" text-anchor="middle" font-weight="700">左心室</text>
+<text x="79" y="182" font-size="8.2" fill="#0f172a" text-anchor="middle" class="mono">120 mmHg</text>
+<path d="M112,162 C156,142 226,142 270,162 L334,162 M112,184 C156,204 226,204 270,184 L334,184" fill="#fee2e2" stroke="#dc2626" stroke-width="2.4"/>
+<line x1="116.0" y1="173.0" x2="328.0" y2="173.0" stroke="#dc2626" stroke-width="2.4" marker-end="url(#arr-orange)"/>
+<text x="206" y="144" font-size="8.3" fill="#991b1b" text-anchor="middle" font-weight="700" class="halo">弹性纤维撑鼓（存下 ~2/3 能量！）</text>
+<text x="46" y="222" font-size="8.6" fill="#1e293b" text-anchor="start">• 约 1/3 血液当场往前流，2/3 把主动脉撑成储能皮球。</text>
+<rect x="34" y="244" width="324" height="132" rx="10" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
+<text x="46" y="263" font-size="9.6" fill="#d97706" text-anchor="start" font-weight="700">② 舒张期（0.58 s）：左心室跌回 0，主动脉回弹推血！</text>
+<rect x="48" y="280" width="62" height="44" rx="8" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+<text x="79" y="300" font-size="8.8" fill="#64748b" text-anchor="middle" font-weight="700">左心室</text>
+<text x="79" y="314" font-size="8.2" fill="#64748b" text-anchor="middle" class="mono">~5 mmHg</text>
+<line x1="114.0" y1="282.0" x2="114.0" y2="322.0" stroke="#0f172a" stroke-width="3.2"/>
+<text x="120" y="279" font-size="8.2" fill="#0f172a" text-anchor="start" font-weight="700">瓣膜锁死</text>
+<path d="M116,292 L334,292 M116,314 L334,314" fill="none" stroke="#d97706" stroke-width="2.4"/>
+<line x1="176.0" y1="274.0" x2="176.0" y2="289.0" stroke="#d97706" stroke-width="2.0" marker-end="url(#arr-orange)"/>
+<line x1="176.0" y1="330.0" x2="176.0" y2="317.0" stroke="#d97706" stroke-width="2.0" marker-end="url(#arr-orange)"/>
+<line x1="130.0" y1="303.0" x2="328.0" y2="303.0" stroke="#d97706" stroke-width="2.4" marker-end="url(#arr-orange)"/>
+<text x="256" y="284" font-size="8.4" fill="#d97706" text-anchor="middle" font-weight="700">管壁回弹挤血 ≥80 mmHg</text>
+<text x="46" y="349" font-size="8.6" fill="#1e293b" text-anchor="start">• 就像老式消防车风箱，把一顿一顿的脉动变成全身和</text>
+<text x="46" y="365" font-size="8.6" fill="#0f172a" text-anchor="start" font-weight="600">  冠脉不间断的平稳水流，保住舒张压 80 mmHg！</text>
+<rect x="34" y="386" width="324" height="104" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="46" y="406" font-size="9.5" fill="#0f172a" text-anchor="start" font-weight="700">⚠️ 如果主动脉变硬（动脉硬化）会发生什么？</text>
+<text x="46" y="425" font-size="8.7" fill="#1e293b" text-anchor="start">• 收缩期硬管撑不开 → 高压硬生生飙到 160+ mmHg；</text>
+<text x="46" y="442" font-size="8.7" fill="#1e293b" text-anchor="start">• 舒张期无弹性回弹 → 低压掉到 65 mmHg 以下（冠脉缺血）；</text>
+<text x="46" y="459" font-size="8.7" fill="#991b1b" text-anchor="start" font-weight="700">• 脉压差暴增（如 165/65），左心室每天顶着高阻苦撑肥厚！</text>
+<rect x="386" y="68" width="354" height="436" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="400.0" y="80.0" width="326" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="563.0" y="95.0" font-size="9.6" fill="#1d6fa5" text-anchor="middle" font-weight="600">微动脉四次方分流阀门 + 毛细血管斯塔灵进出账</text>
+<rect x="400" y="112" width="326" height="154" rx="10" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="412" y="131" font-size="9.6" fill="#1d6fa5" text-anchor="start" font-weight="700">A. 泊肃叶定律：微动脉半径缩一半，流阻暴涨 16 倍！</text>
+<text x="412" y="150" font-size="8.7" fill="#0f172a" text-anchor="start" font-weight="700" class="mono">流阻 R = 8ηλ / (π r⁴)  —— 全身血压最大陡降段就在微动脉</text>
+<circle cx="458" cy="188" r="18" fill="#ffffff" stroke="#1d6fa5" stroke-width="2.4"/>
+<text x="458" y="192" font-size="8.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">半径 r</text>
+<text x="458" y="219" font-size="8.4" fill="#1e293b" text-anchor="middle">正常流阻 1×</text>
+<circle cx="556" cy="188" r="9" fill="#ffffff" stroke="#dc2626" stroke-width="2.4"/>
+<text x="556" y="219" font-size="8.5" fill="#dc2626" text-anchor="middle" font-weight="700">r/2 → 流阻 16×!</text>
+<text x="612" y="173" font-size="8.5" fill="#18794e" text-anchor="start" font-weight="700">• 内皮释放 NO(98诺奖)</text>
+<text x="612" y="189" font-size="8.4" fill="#1e293b" text-anchor="start">  舒张平滑肌精准分流</text>
+<text x="612" y="205" font-size="8.5" fill="#0f172a" text-anchor="start" font-weight="600">• 毛细血管总截面剧增</text>
+<text x="612" y="221" font-size="8.4" fill="#1d6fa5" text-anchor="start" font-weight="700">  流速刹至 0.05 cm/s!</text>
+<text x="412" y="252" font-size="8.5" fill="#0f172a" text-anchor="start" font-weight="600">跑步时骨骼肌微动脉扩开、胃肠收窄，5 升血永远优先救急！</text>
+<rect x="400" y="276" width="326" height="214" rx="10" fill="#f0fdfa" stroke="#0d9488" stroke-width="1"/>
+<text x="412" y="295" font-size="9.6" fill="#0d9488" text-anchor="start" font-weight="700">B. 毛细血管（宽仅 5–10 μm）：水怎么既出管又回管？</text>
+<rect x="418" y="336" width="290" height="36" rx="18" fill="#ffffff" stroke="#dc2626" stroke-width="2.0" stroke-dasharray="5 3"/>
+<text x="454" y="326" font-size="8.5" fill="#dc2626" text-anchor="middle" font-weight="700">动脉端 CHP=35</text>
+<text x="563" y="326" font-size="8.4" fill="#64748b" text-anchor="middle">中点 CHP=25</text>
+<text x="670" y="326" font-size="8.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">静脉端 CHP=18</text>
+<text x="563" y="358" font-size="8.3" fill="#0f172a" text-anchor="middle" font-weight="600">血浆白蛋白胶体渗透压 BCOP ≈ 25 mmHg（全程拉水入管）</text>
+<line x1="454.0" y1="372.0" x2="454.0" y2="400.0" stroke="#dc2626" stroke-width="2.2" marker-end="url(#arr-orange)"/>
+<text x="462" y="414" font-size="8.5" fill="#dc2626" text-anchor="middle" font-weight="700">净滤出 +10 mmHg</text>
+<text x="462" y="428" font-size="8.2" fill="#1e293b" text-anchor="middle">(全天滤出 ~24 L)</text>
+<line x1="666.0" y1="400.0" x2="666.0" y2="374.0" stroke="#1d6fa5" stroke-width="2.2" marker-end="url(#arr-blue)"/>
+<text x="660" y="414" font-size="8.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">净重吸收 −7 mmHg</text>
+<text x="660" y="428" font-size="8.2" fill="#1e293b" text-anchor="middle">(吸回 ~20.4 L)</text>
+<rect x="414" y="440" width="298" height="38" rx="8" fill="#ffffff" stroke="#18794e" stroke-width="1"/>
+<text x="563" y="456" font-size="8.5" fill="#18794e" text-anchor="middle" font-weight="700">剩余 3.6 L/天 组织液 → 盲端单向淋巴管回收 → 锁骨下静脉归队</text>
+<text x="563" y="471" font-size="8.2" fill="#1e293b" text-anchor="middle">（久坐静脉压高 / 营养不良缺白蛋白 / 淋巴受阻 ⇒ 组织水肿！）</text>
+</svg>

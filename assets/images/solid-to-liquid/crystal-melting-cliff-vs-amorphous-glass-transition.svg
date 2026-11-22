@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="536" viewBox="0 0 760 536" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">晶体一阶相变熔点陡崖与非晶态玻璃化转变曲线及巧克力沥青教堂玻璃辟谣图解</title>
+<desc id="desc">左栏绘制体积与焓随温度变化曲线，对比晶体在熔点T_m处的垂直潜热陡崖与过冷液体在T_g处冻结为非晶玻璃体的连续拐折；右栏辨析黄油混合物与可可脂V型晶体调温、昆士兰沥青滴漏实验，并定量辟谣中世纪教堂窗玻璃室温流动传说。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="535" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">五、为什么冰块和食盐“定温咔嚓化开”，玻璃、沥青与塑料却“越烤越稀没熔点”？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：晶体一阶相变陡崖 T_m vs 非晶玻璃化转变 T_g 实算图 · 右：巧克力调温与“教堂彩窗流淌”辟谣</text>
+<rect x="20" y="66" width="366" height="456" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="78.0" width="342" height="24" rx="12.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="203.0" y="94.3" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">A · 一张图看懂“真固体晶体”与“冻僵的过冷液体”</text>
+<line x1="74.0" y1="326.0" x2="364.0" y2="326.0" stroke="#475569" stroke-width="1.4"/>
+<line x1="74.0" y1="118.0" x2="74.0" y2="326.0" stroke="#475569" stroke-width="1.4"/>
+<text x="66" y="134" font-size="11.5" fill="#0f172a" text-anchor="end" font-weight="700">体积V</text>
+<text x="66" y="152" font-size="11.5" fill="#64748b" text-anchor="end">/焓H</text>
+<line x1="84.0" y1="308.0" x2="236.0" y2="265.0" stroke="#1d6fa5" stroke-width="2.8"/>
+<line x1="236.0" y1="265.0" x2="236.0" y2="198.0" stroke="#dc2626" stroke-width="2.6"/>
+<line x1="236.0" y1="198.0" x2="356.0" y2="128.0" stroke="#0f766e" stroke-width="2.8"/>
+<line x1="236.0" y1="198.0" x2="154.0" y2="246.0" stroke="#c25014" stroke-width="2.4" stroke-dasharray="5 3"/>
+<line x1="84.0" y1="266.0" x2="154.0" y2="246.0" stroke="#6d28d9" stroke-width="2.8"/>
+<line x1="154.0" y1="246.0" x2="154.0" y2="326.0" stroke="#6d28d9" stroke-width="1.3" stroke-dasharray="3 3"/>
+<line x1="236.0" y1="265.0" x2="236.0" y2="326.0" stroke="#dc2626" stroke-width="1.3" stroke-dasharray="3 3"/>
+<text x="144" y="343.0" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">玻璃化 T_g</text>
+<text x="244" y="343.0" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">晶体熔点 T_m</text>
+<text x="84" y="242" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">非晶玻璃态</text>
+<text x="162" y="206" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">过冷液体</text>
+<text x="248" y="138" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">平衡液态</text>
+<text x="116" y="312" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">晶态固体</text>
+<text x="244" y="238" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">潜热陡崖!</text>
+<rect x="32" y="354" width="342" height="154" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="44" y="376" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">• 晶体（石英、冰、盐）：键强一致，到 T_m 集体齐断，</text>
+<text x="44" y="398" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">  体积与焓发生垂直跳变（一阶相变，温度死卡不动）；</text>
+<text x="44" y="422" font-size="11.5" fill="#1e293b" text-anchor="start">• 非晶玻璃体（窗玻璃、塑料、麦芽糖）：急冷不及排队列，</text>
+<text x="44" y="444" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">  黏度暴涨 10¹⁵ 倍将无序液体冻僵（T_g ≈ 2/3 T_m）！</text>
+<text x="44" y="466" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">  加热时松键先软、紧键后软，只见连续变稀、无潜热台！</text>
+<text x="44" y="488" font-size="11.5" fill="#64748b" text-anchor="start">  （同是 SiO₂：水晶 1713 °C 定温化，石英玻璃千度渐软）</text>
+<rect x="398" y="66" width="342" height="456" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="410.0" y="78.0" width="318" height="24" rx="12.0" fill="#fffbeb" stroke="#b45309" stroke-width="1" stroke-opacity="0.35"/>
+<text x="569.0" y="94.3" font-size="11.5" fill="#b45309" text-anchor="middle" font-weight="600">B · 三个最容易搞混的生活追问：巧克力、沥青与古窗</text>
+<rect x="410" y="114" width="318" height="122" rx="8" fill="#fffbeb" stroke="#b45309" stroke-width="1.2"/>
+<circle cx="428" cy="134" r="10.5" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+<text x="428" y="138" font-size="11.5" fill="#b45309" text-anchor="middle" font-weight="700">1</text>
+<text x="446" y="138" font-size="11.8" fill="#b45309" text-anchor="start" font-weight="700">黄油和巧克力为啥也是“慢慢化”？</text>
+<text x="422" y="162" font-size="11.5" fill="#1e293b" text-anchor="start">• 黄油并非玻璃，而是多种甘油三酯晶体的【混合物】，</text>
+<text x="422" y="184" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">  各自熔点从 -4 °C 横跨 38 °C，接力融化才显软绵；</text>
+<text x="422" y="206" font-size="11.5" fill="#b45309" text-anchor="start" font-weight="700">• 好巧克力靠调温锁定可可脂 V 型晶（熔点 33.8 °C）：</text>
+<text x="422" y="226" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">  手拿 (32 °C) 脆响不化，进嘴 (37 °C) 瞬间雪崩化开！</text>
+<rect x="410" y="248" width="318" height="116" rx="8" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.2"/>
+<circle cx="428" cy="268" r="10.5" fill="#ffffff" stroke="#0f766e" stroke-width="1.2"/>
+<text x="428" y="272" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">2</text>
+<text x="446" y="272" font-size="11.6" fill="#0f766e" text-anchor="start" font-weight="700">百年滴九滴的“沥青滴漏实验”（1927 至今）</text>
+<text x="422" y="298" font-size="11.5" fill="#1e293b" text-anchor="start">• 昆士兰大学的黑沥青看似能拿锤子敲碎的脆块，实则是</text>
+<text x="422" y="320" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">  黏度达水 2300 亿倍（2.3×10⁸ Pa·s）的超黏液体——</text>
+<text x="422" y="342" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">  每约 8–13 年才被重力拽落一滴！</text>
+<rect x="410" y="376" width="318" height="132" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2"/>
+<circle cx="428" cy="396" r="10.5" fill="#ffffff" stroke="#dc2626" stroke-width="1.2"/>
+<text x="428" y="400" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">3</text>
+<text x="446" y="400" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">辟谣：“教堂彩窗下厚上薄是玻璃流了八百年” ❌</text>
+<text x="422" y="426" font-size="11.5" fill="#1e293b" text-anchor="start">• 室温远低于硅酸盐玻璃 T_g（~550 °C）！实算室温下</text>
+<text x="422" y="448" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">  窗玻璃流淌 1 纳米所需时间比【宇宙年龄】还长得多</text>
+<text x="422" y="470" font-size="11.5" fill="#1e293b" text-anchor="start">  （&gt;10²⁰ 年）！古窗下厚纯粹是中世纪手工吹制圆盘</text>
+<text x="422" y="492" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">  玻璃天生厚薄不均，工匠顺手把厚边朝下装稳而已！</text>
+</svg>

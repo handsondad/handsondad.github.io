@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="516" viewBox="0 0 760 516" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">一桶42加仑原油产出构成与常减压分馏塔按沸点分层提取日用品原料图解</title>
+<desc id="desc">左栏据美国能源信息署（EIA）与国际能源署（IEA）数据展示42加仑原油经裂解体积增益产出约44.7加仑成品，其中约12%至14%化工原料衍生出日常万物；右栏含单次上升蒸汽动画，展示约400摄氏度原油在分馏塔内按碳链长度与沸点分离出石油气、石脑油（C5–C10日用品母液）、煤油、柴油、石蜡凡士林及塔底沥青。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="515" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<style>
+  @keyframes petroVaporRise {
+    0% { transform: translateY(0px); opacity: 0.95; }
+    85% { transform: translateY(-252px); opacity: 0.95; }
+    100% { transform: translateY(-252px); opacity: 0.85; }
+  }
+  .petro-vapor-pkt {
+    animation: petroVaporRise 5.0s cubic-bezier(0.22, 0.68, 0.32, 1) 1 forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .petro-vapor-pkt {
+      animation: none !important;
+      opacity: 0.9 !important;
+      transform: translateY(-126px) !important;
+    }
+  }
+</style>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">第一步“物理按沸点分楼层”：一桶油 85% 烧掉，仅 ~13% 变出生活万物</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左看 42 加仑原油裂解膨胀为 44.7 加仑的去向；右看常减压分馏塔：一根化学键不断，按碳链长短分层接油。</text>
+<rect x="20" y="68" width="336" height="430" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="36.0" y="82.0" width="304" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="188.0" y="97.0" font-size="10.4" fill="#1d6fa5" text-anchor="middle" font-weight="600">一桶原油（42 美制加仑 ≈ 159 L）去了哪儿？</text>
+<text x="36" y="118" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="600">车用汽油 (C5–C10)</text>
+<rect x="36" y="123" width="129.2" height="12" rx="3" fill="#475569"/>
+<text x="172.2" y="133" font-size="9.1" fill="#1e293b" text-anchor="start" font-weight="500">19.6 加仑 · 点火烧掉</text>
+<text x="36" y="161" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="600">柴油与取暖油 (C14–C20)</text>
+<rect x="36" y="166" width="82.3" height="12" rx="3" fill="#475569"/>
+<text x="125.3" y="176" font-size="9.1" fill="#1e293b" text-anchor="start" font-weight="500">12.5 加仑 · 货车/轮船烧掉</text>
+<text x="36" y="204" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="600">航空煤油 (C10–C16)</text>
+<rect x="36" y="209" width="29.1" height="12" rx="3" fill="#475569"/>
+<text x="72.1" y="219" font-size="9.1" fill="#1e293b" text-anchor="start" font-weight="500">4.4 加仑 · 民航客机烧掉</text>
+<text x="36" y="247" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="600">炼厂气 / 石油焦 / 重油</text>
+<rect x="36" y="252" width="29.4" height="12" rx="3" fill="#64748b"/>
+<text x="72.4" y="262" font-size="9.1" fill="#1e293b" text-anchor="start" font-weight="500">4.5 加仑 · 工业热源/电极</text>
+<text x="36" y="290" font-size="9.6" fill="#c25014" text-anchor="start" font-weight="700">石化母液（石脑油+轻烃）</text>
+<rect x="36" y="295" width="17.2" height="12" rx="3" fill="#c25014"/>
+<text x="60.2" y="305" font-size="9.1" fill="#c25014" text-anchor="start" font-weight="700">全球原油 ~12%–14% 变万物！</text>
+<text x="36" y="333" font-size="9.6" fill="#0f172a" text-anchor="start" font-weight="700">铺路沥青 / 润滑油 / 石蜡</text>
+<rect x="36" y="338" width="10.0" height="12" rx="3" fill="#6d28d9"/>
+<text x="53.0" y="348" font-size="9.1" fill="#6d28d9" text-anchor="start" font-weight="700">1.2 加仑 · 柏油路/凡士林/蜡</text>
+<rect x="36" y="380" width="304" height="104" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="48" y="400" font-size="9.8" fill="#c25014" text-anchor="start" font-weight="700">🤯 炼油厂魔术：42 加仑进厂，怎会产出 44.7 加仑？</text>
+<text x="48" y="418" font-size="9.3" fill="#1e293b" text-anchor="start">• 质量严格守恒！但重质大分子被切碎成轻小分子后，</text>
+<text x="48" y="435" font-size="9.3" fill="#0f172a" text-anchor="start" font-weight="600">  液体平均密度变小，总体积净膨胀约 +6.3%（加工增益）！</text>
+<text x="48" y="454" font-size="9.3" fill="#18794e" text-anchor="start" font-weight="700">• IEA 统计：全球仅约 12%–14% 石油作化工原料，</text>
+<text x="48" y="471" font-size="9.3" fill="#18794e" text-anchor="start" font-weight="700">  没被一把火烧掉，却撑起了你屋里几乎全部日用品！</text>
+<rect x="372" y="68" width="368" height="430" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="388.0" y="82.0" width="336" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="556.0" y="97.0" font-size="10.4" fill="#18794e" text-anchor="middle" font-weight="600">常减压分馏塔：不改分子，只按沸点“分身高”</text>
+<rect x="384" y="418" width="42" height="48" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="1"/>
+<text x="405" y="437" font-size="8.8" fill="#dc2626" text-anchor="middle" font-weight="700">加热炉</text>
+<text x="405" y="453" font-size="8.6" fill="#dc2626" text-anchor="middle" font-weight="700" class="mono">~400°C</text>
+<line x1="426.0" y1="442.0" x2="438.0" y2="442.0" stroke="#dc2626" stroke-width="2.2" marker-end="url(#arr-orange)"/>
+<defs><linearGradient id="petroTowerGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#e0f2fe"/><stop offset="35%" stop-color="#fef3c7"/><stop offset="72%" stop-color="#fed7aa"/><stop offset="100%" stop-color="#fca5a5"/></linearGradient></defs>
+<rect x="440" y="118" width="52" height="350" rx="22" fill="url(#petroTowerGrad)" stroke="#475569" stroke-width="1.8"/>
+<line x1="444" y1="160" x2="488" y2="160" stroke="#64748b" stroke-width="1.3" stroke-dasharray="6,4"/>
+<line x1="492.0" y1="142.0" x2="508.0" y2="142.0" stroke="#1d6fa5" stroke-width="2.0" marker-end="url(#arr-blue)"/>
+<g class="petro-tray-hit"><rect x="510" y="124" width="218" height="44" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="518" y="140" font-size="9.5" fill="#1d6fa5" text-anchor="start" font-weight="700">&lt; 20 °C｜C1–C4 石油气</text>
+<text x="518" y="157" font-size="9.0" fill="#1e293b" text-anchor="start" font-weight="500">打火机丁烷 · 燃气 · 裂解气</text>
+</g>
+<line x1="444" y1="216" x2="488" y2="216" stroke="#64748b" stroke-width="1.3" stroke-dasharray="6,4"/>
+<line x1="492.0" y1="198.0" x2="508.0" y2="198.0" stroke="#c25014" stroke-width="2.0" marker-end="url(#arr-orange)"/>
+<g class="petro-tray-hit"><rect x="510" y="180" width="218" height="44" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="2.0"/>
+<text x="518" y="196" font-size="9.5" fill="#c25014" text-anchor="start" font-weight="700">30–180 °C｜C5–C10 石脑油</text>
+<text x="518" y="213" font-size="9.0" fill="#0f172a" text-anchor="start" font-weight="700">★日用品第一母液！塑料/衣服起点</text>
+</g>
+<line x1="444" y1="272" x2="488" y2="272" stroke="#64748b" stroke-width="1.3" stroke-dasharray="6,4"/>
+<line x1="492.0" y1="254.0" x2="508.0" y2="254.0" stroke="#0d9488" stroke-width="2.0"/>
+<g class="petro-tray-hit"><rect x="510" y="236" width="218" height="44" rx="6" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.1"/>
+<text x="518" y="252" font-size="9.5" fill="#0d9488" text-anchor="start" font-weight="700">150–250 °C｜C10–C16 煤油</text>
+<text x="518" y="269" font-size="9.0" fill="#1e293b" text-anchor="start" font-weight="500">民航喷气燃料 · 清洁溶剂</text>
+</g>
+<line x1="444" y1="328" x2="488" y2="328" stroke="#64748b" stroke-width="1.3" stroke-dasharray="6,4"/>
+<line x1="492.0" y1="310.0" x2="508.0" y2="310.0" stroke="#18794e" stroke-width="2.0"/>
+<g class="petro-tray-hit"><rect x="510" y="292" width="218" height="44" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="1.1"/>
+<text x="518" y="308" font-size="9.5" fill="#18794e" text-anchor="start" font-weight="700">250–350 °C｜C14–C20 柴油</text>
+<text x="518" y="325" font-size="9.0" fill="#1e293b" text-anchor="start" font-weight="500">重卡轮船柴油 · 工业轻油</text>
+</g>
+<line x1="444" y1="384" x2="488" y2="384" stroke="#64748b" stroke-width="1.3" stroke-dasharray="6,4"/>
+<line x1="492.0" y1="366.0" x2="508.0" y2="366.0" stroke="#6d28d9" stroke-width="2.0"/>
+<g class="petro-tray-hit"><rect x="510" y="348" width="218" height="44" rx="6" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.1"/>
+<text x="518" y="364" font-size="9.5" fill="#6d28d9" text-anchor="start" font-weight="700">减压馏分｜C20–C50 蜡与油</text>
+<text x="518" y="381" font-size="9.0" fill="#1e293b" text-anchor="start" font-weight="500">润滑机油 · 凡士林唇膏 · 蜡烛蜡笔</text>
+</g>
+<line x1="492.0" y1="422.0" x2="508.0" y2="422.0" stroke="#475569" stroke-width="2.0"/>
+<g class="petro-tray-hit"><rect x="510" y="404" width="218" height="44" rx="6" fill="#f1f5f9" stroke="#475569" stroke-width="1.1"/>
+<text x="518" y="420" font-size="9.5" fill="#475569" text-anchor="start" font-weight="700">&gt; 500 °C｜C50+ 塔底渣油</text>
+<text x="518" y="437" font-size="9.0" fill="#1e293b" text-anchor="start" font-weight="500">高速公路柏油沥青 · 屋顶防水层</text>
+</g>
+<line x1="466" y1="442" x2="466" y2="148" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="3,4" opacity="0.55"/>
+<g class="petro-vapor-pkt"><circle cx="458" cy="410" r="4.5" fill="#ea580c" opacity="0.88"/><circle cx="474" cy="424" r="3.8" fill="#f59e0b" opacity="0.88"/><circle cx="465" cy="395" r="3.5" fill="#0284c7" opacity="0.88"/></g>
+<text x="388" y="485" font-size="9.2" fill="#64748b" text-anchor="start" font-weight="600">原理：碳链越长，分子间色散力越强 → 沸点越高，越早冷凝落盘！</text>
+</svg>

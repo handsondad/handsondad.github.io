@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="548" viewBox="0 0 760 548" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">火车锥形踏面外移变径自动差速截面动画与弯道半径游隙极限实算图</title>
+<desc id="desc">上栏截面精确绘制轮缘位于轨距内侧的内厚外薄1比20锥形轮对，单次动画演示向左转弯时轮对外移使外轮接触大半径、内轮接触小半径；下栏推导纯滚动横移公式并实算弯道半径与10毫米游隙上限的交界。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="547" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">四、锥形踏面“无齿轮自动变速”：往外横移 15 毫米，死轴瞬间跑出内外差速！</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">上：内厚外薄 1:20 锥形踏面横移变径截面（含单次横移动画）· 下：纯滚动公式实算与无轮缘过弯极限</text>
+<style>
+  @keyframes wheelset-shift {
+    0%, 16% { transform: translateX(-18px); }
+    62%, 100% { transform: translateX(0px); }
+  }
+  @keyframes radius-callout {
+    0%, 35% { opacity: 0.82; }
+    68%, 100% { opacity: 1; }
+  }
+  .ws-shift-anim {
+    animation: wheelset-shift 4.2s cubic-bezier(0.22, 0.8, 0.25, 1) 1 forwards;
+  }
+  .rad-note-anim {
+    animation: radius-callout 4.2s ease-out 1 forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ws-shift-anim, .rad-note-anim {
+      animation: none !important;
+      transform: none !important;
+      opacity: 1 !important;
+    }
+  }
+</style>
+<rect x="20" y="66" width="720" height="260" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="78.0" width="696" height="24" rx="12.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="380.0" y="94.3" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">A · 迎弯自动变径截面：向左拐弯 → 惯性把轮对往右（外轨）轻推 y_R → 外轮踩粗端、内轮踩细端！</text>
+<rect x="196" y="232" width="32" height="14" rx="4" fill="#64748b" stroke="#475569" stroke-width="1.4"/>
+<rect x="207" y="246" width="10" height="22" rx="1" fill="#94a3b8" stroke="#475569" stroke-width="1.2"/>
+<rect x="188" y="268" width="48" height="10" rx="2" fill="#64748b" stroke="#475569" stroke-width="1.4"/>
+<text x="212" y="296" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">左轨（弯道内轨）</text>
+<rect x="532" y="232" width="32" height="14" rx="4" fill="#64748b" stroke="#475569" stroke-width="1.4"/>
+<rect x="543" y="246" width="10" height="22" rx="1" fill="#94a3b8" stroke="#475569" stroke-width="1.2"/>
+<rect x="524" y="268" width="48" height="10" rx="2" fill="#64748b" stroke="#475569" stroke-width="1.4"/>
+<text x="548" y="296" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">右轨（弯道外轨）</text>
+<text x="92" y="178" font-size="12.0" fill="#0f766e" text-anchor="middle" font-weight="700">⇐ 弯心在左侧</text>
+<text x="92" y="200" font-size="11.5" fill="#64748b" text-anchor="middle">(列车向纸内开)</text>
+<text x="666" y="178" font-size="12.0" fill="#c25014" text-anchor="middle" font-weight="700">离心惯性外推 ⇒</text>
+<text x="666" y="200" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">横移量 y_R (mm)</text>
+<g class="ws-shift-anim">
+<rect x="184" y="168" width="428" height="12" rx="4" fill="#94a3b8" stroke="#475569" stroke-width="1.5"/>
+<text x="398" y="158" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">同一根实心钢轴（ω_左 = ω_右）</text>
+<text x="398" y="198" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">整体向右（外轨）横移 y_R →</text>
+<polygon points="196,120 264,108 264,240 196,228" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.8"/>
+<rect x="264" y="98" width="10" height="152" rx="4" fill="#bfdbfe" stroke="#1d6fa5" stroke-width="1.6"/>
+<rect x="522" y="98" width="10" height="152" rx="4" fill="#fed7aa" stroke="#c25014" stroke-width="1.6"/>
+<polygon points="532,108 600,120 600,228 532,240" fill="#fef1e8" stroke="#c25014" stroke-width="1.8"/>
+<text x="398" y="126" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">← 两轮缘均在轨内侧（留游隙）→</text>
+</g>
+<g class="rad-note-anim">
+<circle cx="212" cy="231" r="5.2" fill="#0f766e" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="548" cy="237" r="5.8" fill="#dc2626" stroke="#ffffff" stroke-width="1.5"/>
+<text x="212" y="315" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">踩外侧细端：r_内 = r₀ - λy_R（一步短）</text>
+<text x="548" y="315" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">踩内侧粗端：r_外 = r₀ + λy_R（一步长！）</text>
+</g>
+<rect x="20" y="340" width="356" height="194" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="352.0" width="332" height="24" rx="12.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="198.0" y="368.3" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="600">B · 纯滚动精确公式与实算：只需横移 15 毫米！</text>
+<text x="34" y="392" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">• 不打滑条件：(r₀ + λy_R) / (r₀ - λy_R) = (R + b₀) / (R - b₀)</text>
+<text x="34" y="416" font-size="11.8" fill="#1d6fa5" text-anchor="start" font-weight="700">• 化简得黄金公式：所需横移 y_R = (b₀ · r₀) / (λ · R)</text>
+<text x="34" y="442" font-size="11.5" fill="#1e293b" text-anchor="start">• 代入真实列车参数（b₀=0.75 m，r₀=0.50 m，锥度 λ=1/20）：</text>
+<text x="34" y="466" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">  过 R=500 m 弯道：y_R = 0.375/25 = 0.015 m = 15 mm！</text>
+<text x="34" y="490" font-size="11.5" fill="#1e293b" text-anchor="start">• 两轮半径仅差 2λy_R = 1.5 mm，同转一圈就精准补齐弧长差，</text>
+<text x="34" y="512" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">  全程零齿轮、零打滑、零轮缘摩擦，丝滑自动拐过弯去！</text>
+<rect x="390" y="340" width="350" height="194" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="402.0" y="352.0" width="326" height="24" rx="12.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="565.0" y="368.3" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="600">C · 为什么干线悄无声息，地铁急弯却尖叫？</text>
+<line x1="438.0" y1="474.0" x2="720.0" y2="474.0" stroke="#475569" stroke-width="1.4"/>
+<line x1="438.0" y1="388.0" x2="438.0" y2="474.0" stroke="#475569" stroke-width="1.4"/>
+<line x1="438.0" y1="447.1" x2="720.0" y2="447.1" stroke="#dc2626" stroke-width="1.4" stroke-dasharray="4 3"/>
+<text x="718" y="441.1" font-size="11.5" fill="#dc2626" text-anchor="end" font-weight="700">轮缘游隙上限 ~10 mm</text>
+<path d="M 438.0,393.4 L 443.6,403.3 L 449.3,411.0 L 454.9,417.2 L 460.6,422.3 L 466.2,426.6 L 471.8,430.2 L 477.5,433.3 L 483.1,436.0 L 488.8,438.3 L 494.4,440.4 L 500.0,442.3 L 505.7,443.9 L 511.3,445.4 L 517.0,446.8 L 522.6,448.0 L 528.2,449.1 L 533.9,450.1 L 539.5,451.1 L 545.2,452.0 L 550.8,452.8 L 556.4,453.5 L 562.1,454.2 L 567.7,454.9 L 573.4,455.5 L 579.0,456.1 L 584.6,456.6 L 590.3,457.1 L 595.9,457.6 L 601.6,458.1 L 607.2,458.5 L 612.8,458.9 L 618.5,459.3 L 624.1,459.7 L 629.8,460.0 L 635.4,460.3 L 641.0,460.7 L 646.7,461.0 L 652.3,461.2 L 658.0,461.5 L 663.6,461.8 L 669.2,462.0 L 674.9,462.3 L 680.5,462.5 L 686.2,462.7 L 691.8,463.0 L 697.4,463.2 L 703.1,463.4 L 708.7,463.6 L 714.4,463.7 L 720.0,463.9" fill="none" stroke="#1d6fa5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="446.1" cy="406.8" r="4.2" fill="#dc2626"/>
+<text x="454.1" y="410.8" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">地铁急弯 R=300m (需25mm→撞轮缘尖叫!)</text>
+<circle cx="558.9" cy="453.8" r="4.5" fill="#18794e"/>
+<text x="438" y="495" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">● 绿点：干线 R≥1000 m（横移 ≤7.5 mm，纯锥静音）</text>
+<text x="406" y="517" font-size="11.5" fill="#64748b" text-anchor="start">横轴：弯道半径 R (250→2000 m) · 纵轴：所需横移 y_R</text>
+</svg>

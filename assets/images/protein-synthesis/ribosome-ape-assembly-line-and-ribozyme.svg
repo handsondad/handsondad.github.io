@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="558" viewBox="0 0 760 558" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">核糖体A-P-E三工位翻译循环单次动画、多聚核糖体并联流水线与2009诺奖rRNA核酶催化机制图</title>
+<desc id="desc">上图展示核糖体大小亚基在mRNA上沿5&#x27;→3&#x27;推进，通过A位验票进站、P位将整条生长肽链嫁接到新氨基酸氨基上形成肽键、E位空载tRNA退场完成每次3碱基移位（含一次性进站焊接动画）；左下展示多聚核糖体并联高效翻译（细菌每秒20个氨基酸）；右下解析2009年诺贝尔化学奖证实肽酰转移酶中心18埃内全为rRNA核酶及抗生素靶向细菌70S核糖体原理。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes trnaArriveOnce {
+          0% { transform: translate(24px, -12px); opacity: 0.35; }
+          65% { transform: translate(0px, 0px); opacity: 1; }
+          100% { transform: translate(0px, 0px); opacity: 1; }
+        }
+        @keyframes weldArcOnce {
+          0%, 35% { stroke-dashoffset: 140; opacity: 0.2; }
+          100% { stroke-dashoffset: 0; opacity: 1; }
+        }
+        @keyframes growChainOnce {
+          0% { stroke-dashoffset: 145; opacity: 0.35; }
+          100% { stroke-dashoffset: 0; opacity: 1; }
+        }
+        .a-trna-anim {
+          animation: trnaArriveOnce 2.2s cubic-bezier(0.22, 1, 0.36, 1) 1 both;
+        }
+        .weld-arc-anim {
+          stroke-dasharray: 140;
+          stroke-dashoffset: 0;
+          animation: weldArcOnce 2.4s ease-out 1 both;
+        }
+        .pep-chain-anim {
+          stroke-dasharray: 145;
+          stroke-dashoffset: 0;
+          animation: growChainOnce 2.2s ease-out 1 both;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .a-trna-anim, .weld-arc-anim, .pep-chain-anim {
+            animation: none !important;
+            transform: none !important;
+            stroke-dashoffset: 0 !important;
+            opacity: 1 !important;
+          }
+        }
+</style>
+<rect x="0.5" y="0.5" width="759" height="557" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">四、核糖体 A-P-E 纳米流水线：每秒焊 20 颗氨基酸，操刀手竟不是蛋白质！</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">上：大小亚基三工位循环与肽链嫁接（含单次进站焊接动画） · 下：多聚核糖体并联量产与 2009 诺奖“核酶”真相</text>
+<rect x="20" y="66" width="720" height="276" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="78.0" width="696" height="24" rx="12.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="380.0" y="94.3" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">A · 核糖体三工位接力（真核 40S+60S=80S；细菌 30S+50S=70S，沉降系数按流体阻力不按简单加法）</text>
+<rect x="156" y="114" width="412" height="152" rx="26" fill="#eff6ff" stroke="#1d6fa5" stroke-width="1.8"/>
+<text x="172" y="136" font-size="12.0" fill="#1d6fa5" text-anchor="start" font-weight="700">大亚基 (60S / 50S)</text>
+<text x="552" y="136" font-size="11.5" fill="#dc2626" text-anchor="end" font-weight="700">肽酰转移酶中心 (rRNA!)</text>
+<path d="M 356.0,166.0 L 356.0,134.0 L 338.0,114.0 L 308.0,108.0 L 274.0,114.0" fill="none" stroke="#18794e" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" class="pep-chain-anim"/>
+<circle cx="274" cy="114" r="6.2" fill="#e7f6ee" stroke="#18794e" stroke-width="1.6"/>
+<circle cx="296" cy="110" r="6.2" fill="#e7f6ee" stroke="#18794e" stroke-width="1.6"/>
+<circle cx="318" cy="110" r="6.2" fill="#e7f6ee" stroke="#18794e" stroke-width="1.6"/>
+<circle cx="340" cy="116" r="6.2" fill="#e7f6ee" stroke="#18794e" stroke-width="1.6"/>
+<text x="32" y="122" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">N 端最先伸出</text>
+<text x="32" y="144" font-size="11.5" fill="#1e293b" text-anchor="start">(N→C 端合成)</text>
+<rect x="176" y="150" width="110" height="108" rx="10" fill="#ffffff" stroke="#475569" stroke-width="1.4"/>
+<text x="231" y="168" font-size="11.8" fill="#475569" text-anchor="middle" font-weight="700">E 位（退场口）</text>
+<rect x="188" y="188" width="86" height="42" rx="7" fill="#f1f5f9" stroke="#475569" stroke-width="1.2"/>
+<text x="231" y="206" font-size="11.5" fill="#475569" text-anchor="middle" font-weight="600">空载 tRNA</text>
+<text x="231" y="224" font-size="11.5" fill="#64748b" text-anchor="middle">↖ 弹射离场</text>
+<text x="231" y="249" font-size="11.5" fill="#64748b" text-anchor="middle">回胞质重装复用</text>
+<rect x="304" y="150" width="110" height="108" rx="10" fill="#ffffff" stroke="#18794e" stroke-width="1.6"/>
+<text x="359" y="168" font-size="11.8" fill="#18794e" text-anchor="middle" font-weight="700">P 位（持链位）</text>
+<rect x="316" y="188" width="86" height="42" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1.3"/>
+<text x="359" y="206" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">旧肽链挂此</text>
+<text x="359" y="224" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">3&#x27;-UAC-5&#x27;</text>
+<text x="359" y="249" font-size="11.5" fill="#dc2626" text-anchor="middle" font-weight="700">整条链嫁接向右!</text>
+<rect x="432" y="150" width="110" height="108" rx="10" fill="#ffffff" stroke="#c25014" stroke-width="1.6"/>
+<text x="487" y="168" font-size="11.8" fill="#c25014" text-anchor="middle" font-weight="700">A 位（进站位）</text>
+<g class="a-trna-anim">
+<rect x="444" y="188" width="86" height="42" rx="7" fill="#fef1e8" stroke="#c25014" stroke-width="1.4"/>
+<text x="487" y="206" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">新氨基酸</text>
+<text x="487" y="224" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">3&#x27;-CGA-5&#x27;</text>
+</g>
+<text x="487" y="249" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">对准密码才放行</text>
+<path d="M 398,194 Q 423,174 446,194" fill="none" stroke="#dc2626" stroke-width="2.4" marker-end="url(#arr-orange)" class="weld-arc-anim"/>
+<rect x="156" y="270" width="412" height="44" rx="14" fill="#e7f6ee" stroke="#18794e" stroke-width="1.5"/>
+<text x="170" y="297" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">小亚基读带：</text>
+<text x="254" y="297" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700" class="mono">5&#x27;… GCU | AUG | GCU | UAC | UAA …3&#x27;</text>
+<text x="380" y="331" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">每焊完 1 个肽键，核糖体耗 GTP 向 3&#x27; 端横移 3 个碱基；遇终止密码子由释放因子加水剪断放行！</text>
+<rect x="580" y="114" width="148" height="200" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.2"/>
+<text x="592" y="136" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">四步循环口诀：</text>
+<text x="592" y="162" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">① A 位对暗号进站</text>
+<text x="592" y="188" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">② 旧链嫁接新氨头</text>
+<text x="592" y="208" font-size="11.5" fill="#1e293b" text-anchor="start">   (脱水缩合肽键)</text>
+<text x="592" y="234" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">③ 整体移位 3 碱基</text>
+<text x="592" y="254" font-size="11.5" fill="#1e293b" text-anchor="start">   (A→P, P→E退场)</text>
+<text x="592" y="280" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">④ 遇 UAA/UAG/UGA</text>
+<text x="592" y="300" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">   加水剪断完工！</text>
+<rect x="20" y="354" width="348" height="192" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="366.0" width="324" height="24" rx="12.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="194.0" y="382.3" font-size="11.6" fill="#18794e" text-anchor="middle" font-weight="600">B · 多聚核糖体：一条 mRNA 挂十几台机器同印</text>
+<line x1="44.0" y1="434.0" x2="346.0" y2="434.0" stroke="#c25014" stroke-width="3.0"/>
+<text x="40" y="452" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">5&#x27;帽</text>
+<text x="350" y="452" font-size="11.5" fill="#b45309" text-anchor="end" font-weight="700">3&#x27;尾</text>
+<ellipse cx="92" cy="428" rx="18" ry="12" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.5"/>
+<ellipse cx="92" cy="441" rx="15" ry="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1.3"/>
+<line x1="92.0" y1="416.0" x2="100.0" y2="406.0" stroke="#18794e" stroke-width="2.6"/>
+<ellipse cx="158" cy="428" rx="18" ry="12" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.5"/>
+<ellipse cx="158" cy="441" rx="15" ry="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1.3"/>
+<line x1="158.0" y1="416.0" x2="166.0" y2="398.0" stroke="#18794e" stroke-width="2.6"/>
+<ellipse cx="224" cy="428" rx="18" ry="12" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.5"/>
+<ellipse cx="224" cy="441" rx="15" ry="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1.3"/>
+<line x1="224.0" y1="416.0" x2="232.0" y2="390.0" stroke="#18794e" stroke-width="2.6"/>
+<ellipse cx="290" cy="428" rx="18" ry="12" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.5"/>
+<ellipse cx="290" cy="441" rx="15" ry="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1.3"/>
+<line x1="290.0" y1="416.0" x2="298.0" y2="382.0" stroke="#18794e" stroke-width="2.6"/>
+<text x="32" y="478" font-size="11.5" fill="#1e293b" text-anchor="start">• 大肠杆菌每秒焊 ~20 个氨基酸（0.05 秒/个），织完一条</text>
+<text x="32" y="500" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">  200 氨基酸的蛋白仅需 10 秒！真核每秒约 5–6 个，但靠</text>
+<text x="32" y="522" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">  多台核糖体首尾相接流水作业，每秒照样吐出成批成品。</text>
+<rect x="380" y="354" width="360" height="192" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="392.0" y="366.0" width="336" height="24" rx="12.0" fill="#fef2f2" stroke="#dc2626" stroke-width="1" stroke-opacity="0.35"/>
+<text x="560.0" y="382.3" font-size="11.6" fill="#dc2626" text-anchor="middle" font-weight="600">C · 2009 诺奖惊天反转：核糖体竟然是一台“核酶”！</text>
+<text x="392" y="408" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">• X 射线拍清数十万原子坐标后学界震惊：</text>
+<text x="392" y="430" font-size="11.5" fill="#dc2626" text-anchor="start" font-weight="700">  焊接肽键核心周围 18 Å 内，没有任何蛋白质侧链——</text>
+<text x="392" y="452" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">  真正催化肽键的是大亚基 rRNA（蛋白只在外圈当脚手架）！</text>
+<text x="392" y="478" font-size="11.5" fill="#1e293b" text-anchor="start">• 两大意义：① 铁证远古“RNA 世界”兼备遗传与催化，</text>
+<text x="392" y="500" font-size="11.5" fill="#1e293b" text-anchor="start">  破除“先有酶还是先有基因”悖论；② 四环素堵细菌 70S</text>
+<text x="392" y="522" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">  A 位、氯霉素卡肽键，专杀细菌不伤人类 80S 核糖体！</text>
+</svg>

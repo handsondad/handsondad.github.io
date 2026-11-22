@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="530" viewBox="0 0 760 530" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">闪电30000K超音速柱状激波生雷、蜿蜒通道声程差滚雷与大气声速梯度向上折射声影盲区图解</title>
+<desc id="desc">左图解释微秒级等容暴热产生10至100大气压激波化为雷声，并按343米每秒声速计算1.5至6.2公里通道各段制造13.7秒滚雷；右图给出读秒除以3测距口诀及对流层上冷下暖导致声线向上折射、在约20公里外形成有闪无雷声影区的实算轨迹。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="529" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">五、闪电只亮一瞬间，雷声凭什么轰隆十几秒？——超音速激波、声程差与消音盲区</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">微秒等容暴热炸出几十大气压柱状激波；蜿蜒通道拉出十几秒声程差，高空冷层把雷声往上掰弯</text>
+<rect x="20" y="64" width="366" height="452" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="76.0" width="338" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="203.0" y="91.0" font-size="12" fill="#c25014" text-anchor="middle" font-weight="600">A · 柱状激波化声 &amp; 为什么雷声“轰隆隆”拖十几秒</text>
+<rect x="34" y="110" width="338" height="86" rx="8" fill="#fef2f2" stroke="#b91c1c" stroke-width="1.1"/>
+<text x="46" y="131" font-size="11.5" fill="#b91c1c" text-anchor="start" font-weight="700">打雷绝不是“两朵云撞响”，而是空气热爆炸：</text>
+<text x="46" y="152" font-size="11.5" fill="#1e293b" text-anchor="start">• 2 cm 空气在几微秒烧至 30,000 K，来不及膨胀，</text>
+<text x="46" y="172" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">  压强飙至 10–100 atm → 超音速激波在数米外化为巨响！</text>
+<rect x="34" y="208" width="338" height="294" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="46" y="229" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">同一瞬间的闪电，不同高度雷声排队进耳朵：</text>
+<line x1="50" y1="434.0" x2="356" y2="434.0" stroke="#16a34a" stroke-width="2.0"/>
+<polyline points="82,252 108,296 78,338 106,382 94,434" fill="none" stroke="#c25014" stroke-width="3.0"/>
+<circle cx="306" cy="414" r="6" fill="#1d6fa5"/>
+<line x1="306" y1="420" x2="306" y2="434" stroke="#1d6fa5" stroke-width="2.4"/>
+<text x="358" y="452" font-size="11.5" fill="#1d6fa5" text-anchor="end" font-weight="700">观测者 (距雷 1.5km)</text>
+<line x1="94" y1="424" x2="300" y2="416" stroke="#b91c1c" stroke-width="1.5" stroke-dasharray="4 3"/>
+<circle cx="94" cy="424" r="4.2" fill="#b91c1c"/>
+<line x1="84" y1="338" x2="300" y2="416" stroke="#c25014" stroke-width="1.5" stroke-dasharray="4 3"/>
+<circle cx="84" cy="338" r="4.2" fill="#c25014"/>
+<line x1="82" y1="256" x2="300" y2="416" stroke="#6d28d9" stroke-width="1.5" stroke-dasharray="4 3"/>
+<circle cx="82" cy="256" r="4.2" fill="#6d28d9"/>
+<text x="120" y="268" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700" class="halo">③ 6.2km → 18.1s 低沉隆隆</text>
+<text x="122" y="344" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700" class="halo">② 3.5km → 10.2s 轰——!</text>
+<text x="116" y="412" font-size="11.5" fill="#b91c1c" text-anchor="start" font-weight="700" class="halo">① 1.5km → 4.4s 炸裂咔嚓!</text>
+<text x="203" y="484" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">→ 0.1 秒的闪电，拉出 18.1−4.4 = 13.7 秒滚雷！</text>
+<rect x="400" y="64" width="340" height="452" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="414.0" y="76.0" width="312" height="22" rx="11.0" fill="#f0fdfa" stroke="#0f766e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="570.0" y="91.0" font-size="12" fill="#0f766e" text-anchor="middle" font-weight="600">B · 读秒测距公式 &amp; 20 公里外“有闪无雷”盲区</text>
+<rect x="414" y="110" width="312" height="92" rx="8" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.1"/>
+<text x="426" y="131" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">实用救命口诀：看见闪电默数秒数 ÷ 3 ≈ 公里数</text>
+<text x="426" y="152" font-size="11.5" fill="#1e293b" text-anchor="start">• 光速瞬间到眼；声速 343m/s 约 3 秒跑 1 公里；</text>
+<text x="426" y="173" font-size="11.5" fill="#b91c1c" text-anchor="start" font-weight="700">• 30 秒法则：闪雷间隔 &lt; 30 秒（距你 &lt; 10 km），</text>
+<text x="426" y="191" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">  正地闪随时可能劈到头顶，立刻进屋或躲进汽车！</text>
+<polygon points="629.1,418.0 718.0,418.0 718.0,358.5" fill="#f1f5f9"/>
+<line x1="446" y1="418.0" x2="718" y2="418.0" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="440" y="422.0" font-size="11.5" fill="#64748b" text-anchor="end" class="mono">0km</text>
+<line x1="446" y1="348.0" x2="718" y2="348.0" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="440" y="352.0" font-size="11.5" fill="#64748b" text-anchor="end" class="mono">2km</text>
+<line x1="446" y1="278.0" x2="718" y2="278.0" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="440" y="282.0" font-size="11.5" fill="#64748b" text-anchor="end" class="mono">4km</text>
+<text x="446.0" y="434" font-size="11.5" fill="#64748b" text-anchor="middle" class="mono">0</text>
+<text x="550.6" y="434" font-size="11.5" fill="#64748b" text-anchor="middle" class="mono">10</text>
+<text x="655.2" y="434" font-size="11.5" fill="#64748b" text-anchor="middle" class="mono">20</text>
+<text x="718.0" y="434" font-size="11.5" fill="#64748b" text-anchor="middle" class="mono">26km</text>
+<line x1="446" y1="236" x2="446" y2="418" stroke="#0f172a" stroke-width="1.3"/>
+<line x1="446" y1="418" x2="718" y2="418" stroke="#16a34a" stroke-width="2.0"/>
+<circle cx="451.2" cy="348.0" r="5.0" fill="#c25014"/>
+<text x="458.6" y="258.8" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700" class="halo">高空冷(声速慢) ← 地面暖(声速快)</text>
+<polyline points="451.2,348.0 456.4,353.4 461.5,358.8 466.6,364.0 471.7,369.1 476.9,374.1 482.0,379.0 487.1,383.7 492.2,388.4 497.4,393.0 502.5,397.4 507.6,401.8 512.7,406.0 517.9,410.1 523.0,414.1" fill="none" stroke="#0f766e" stroke-width="2.1"/>
+<polyline points="451.2,348.0 456.4,351.8 461.5,355.5 466.6,359.1 471.7,362.6 476.9,366.0 482.0,369.3 487.1,372.5 492.2,375.5 497.4,378.5 502.5,381.3 507.6,384.0 512.7,386.6 517.9,389.2 523.0,391.6 528.1,393.8 533.2,396.0 538.4,398.1 543.5,400.1 548.6,401.9 553.8,403.7 558.9,405.3 564.0,406.8 569.1,408.3 574.3,409.6 579.4,410.8 584.5,411.8 589.6,412.8 594.8,413.7 599.9,414.5 605.0,415.1 610.1,415.7 615.3,416.1 620.4,416.4 625.5,416.6 630.6,416.7 635.8,416.7 640.9,416.6 646.0,416.4 651.2,416.1 656.3,415.6 661.4,415.1 666.5,414.4 671.7,413.7 676.8,412.8 681.9,411.8 687.0,410.7 692.2,409.5 697.3,408.2 702.4,406.8 707.5,405.2 712.7,403.6 717.8,401.8" fill="none" stroke="#1d6fa5" stroke-width="2.1"/>
+<polyline points="451.2,348.0 456.4,350.3 461.5,352.6 466.6,354.7 471.7,356.7 476.9,358.6 482.0,360.4 487.1,362.1 492.2,363.7 497.4,365.2 502.5,366.5 507.6,367.8 512.7,368.9 517.9,370.0 523.0,370.9 528.1,371.7 533.2,372.4 538.4,373.0 543.5,373.5 548.6,373.9 553.8,374.2 558.9,374.3 564.0,374.4 569.1,374.3 574.3,374.2 579.4,373.9 584.5,373.5 589.6,373.0 594.8,372.4 599.9,371.7 605.0,370.9 610.1,369.9 615.3,368.9 620.4,367.7 625.5,366.5 630.6,365.1 635.8,363.6 640.9,362.1 646.0,360.4 651.2,358.6 656.3,356.6 661.4,354.6 666.5,352.5 671.7,350.2 676.8,347.9 681.9,345.4 687.0,342.9 692.2,340.2 697.3,337.4 702.4,334.5 707.5,331.5 712.7,328.4 717.8,325.2" fill="none" stroke="#6d28d9" stroke-width="2.1"/>
+<text x="674.1" y="402.2" font-size="11.5" fill="#b91c1c" text-anchor="middle" font-weight="700" class="halo">声影盲区!</text>
+<rect x="414" y="444" width="312" height="60" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<text x="426" y="465" font-size="11.5" fill="#1e293b" text-anchor="start">• 对流层越往高处越冷，声速 c ∝ √T 上慢下快；</text>
+<text x="426" y="486" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">• 声波向高空弯折翘起 → 20 km 外“只见闪电不闻雷”</text>
+</svg>
