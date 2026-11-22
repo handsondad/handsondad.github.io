@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="510" viewBox="0 0 760 510" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">罕见雷打雪的两大成因（暖海冷流与气旋高架对流）及雷声可听半径按比例缩水对比图</title>
+<desc id="desc">左栏展示冬季破例打雷的两种极端场景：西伯利亚寒潮掠过不冻暖海触发低顶对流与高塔上行正闪，以及温带气旋逆温层上方暖湿急流高架对流；右栏按1比4真实比例画出夏日雷声16千米可听圆与冬雪3至5千米可听圆，可听面积缩水超过九成。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="509" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">冬天真的一道闪电都没有吗？——罕见“雷打雪”的破例密码与 3 公里消音圈</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">全美 30 年观测每冬仅约 6.3 次纯雷打雪；就算劈在几公里外，漫天飞雪也会把雷声吞没</text>
+<rect x="20" y="68" width="352" height="422" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="80.0" width="288" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="176.0" y="95.0" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="600">A. 破例触发“冬雷/雷打雪”的两大特种机关</text>
+<rect x="34" y="112" width="324" height="174" rx="8" fill="#faf7ff" stroke="#6d28d9" stroke-width="1.1"/>
+<text x="44" y="134" font-size="10.8" fill="#6d28d9" text-anchor="start" font-weight="700">① 寒潮扫过不冻暖海/大湖（日本海 / 烟台威海 / 五大湖）</text>
+<rect x="46" y="244" width="180" height="26" rx="4" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.0"/>
+<text x="136" y="261" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">+10°C 不冻暖洋流 / 湖面</text>
+<rect x="232" y="234" width="114" height="36" rx="4" fill="#e2e8f0" stroke="#64748b" stroke-width="1.0"/>
+<text x="289" y="257" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700">迎风海岸/山坡</text>
+<line x1="48.0" y1="204.0" x2="113.5" y2="204.0" stroke="#1d6fa5" stroke-width="2.2"/>
+<polygon points="120.0,204.0 112.0,208.2 112.0,199.8" fill="#1d6fa5"/>
+<text x="48" y="192" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="700">-20°C 寒潮</text>
+<line x1="152.0" y1="240.0" x2="167.9" y2="194.1" stroke="#dc2626" stroke-width="2.0"/>
+<polygon points="170.0,188.0 171.4,196.9 163.4,194.2" fill="#dc2626"/>
+<path d="M 140 184 Q 138 148 190 144 L 316 144 Q 342 152 334 184 Z" fill="#ede9fe" stroke="#6d28d9" stroke-width="1.4"/>
+<text x="238" y="169" font-size="10.5" fill="#6d28d9" text-anchor="middle" font-weight="700">低矮起电层仅距地 1.5~3 km！</text>
+<line x1="316.0" y1="234.0" x2="316.0" y2="202.0" stroke="#0f172a" stroke-width="2.2"/>
+<path d="M 316 202 L 306 192 L 320 188 L 310 178" fill="none" stroke="#dc2626" stroke-width="2.2"/>
+<text x="232" y="222" font-size="10.5" fill="#dc2626" text-anchor="middle" font-weight="700">高塔易触发上行超强正闪！</text>
+<rect x="34" y="298" width="324" height="178" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="44" y="320" font-size="10.8" fill="#1d6fa5" text-anchor="start" font-weight="700">② 温带气旋西北侧“高架对流”（Market 30 年统计主力）</text>
+<text x="44" y="344" font-size="10.8" fill="#1e293b" text-anchor="start">• 地面明明是 -1~-3°C 冰冷北风，逆温层把地面死死封住；</text>
+<text x="44" y="366" font-size="10.8" fill="#1e293b" text-anchor="start">• 但在 2 km 逆温盖子上方，丰沛暖湿急流猛烈爬坡，</text>
+<text x="44" y="388" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">  在“半空楼阁”掀翻对流，造出霰粒闪电与鹅毛暴雪！</text>
+<text x="44" y="414" font-size="10.8" fill="#6d28d9" text-anchor="start" font-weight="700">• 概率极低：全美 204 站 30 年仅录得年均 6.3 场纯雷打雪；</text>
+<text x="44" y="436" font-size="10.8" fill="#dc2626" text-anchor="start" font-weight="700">• 一旦听见冬雷，往往意味着每小时 3~5 cm 特大暴雪核心</text>
+<text x="44" y="458" font-size="10.8" fill="#1e293b" text-anchor="start">  就在头顶正上方（常位于气旋中心西北约 400 km 处）！</text>
+<rect x="388" y="68" width="352" height="422" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="400.0" y="80.0" width="292" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="546.0" y="95.0" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="600">B. 就算打雷也传不远：雷声可听半径缩水 4 倍</text>
+<rect x="402" y="112" width="324" height="240" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.0"/>
+<text x="564" y="131" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="700">夏日雷声可听圈：半径 ≈ 16 km（覆盖约 800 km²）</text>
+<circle cx="564" cy="224" r="82" fill="#fef1e8" stroke="#c25014" stroke-width="1.6" stroke-dasharray="5 3"/>
+<circle cx="564" cy="224" r="20.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="2.2"/>
+<text x="564" y="229" font-size="14.0" fill="#dc2626" text-anchor="middle">⚡</text>
+<text x="564" y="262" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">冬雪可听圈：3~5 km</text>
+<text x="564" y="280" font-size="10.2" fill="#1e293b" text-anchor="middle" class="halo">（仅约 50 km²）</text>
+<text x="564" y="332" font-size="10.8" fill="#dc2626" text-anchor="middle" font-weight="700">覆盖面积暴跌 93.7%，隔两条街就听不见！</text>
+<rect x="402" y="362" width="324" height="114" rx="8" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.1"/>
+<text x="414" y="384" font-size="11.2" fill="#0f766e" text-anchor="start" font-weight="700">为什么“雷打雪”的雷声总像闷在厚棉被里？</text>
+<text x="414" y="408" font-size="10.8" fill="#1e293b" text-anchor="start">① 空中漫天蓬松雪片沿途散射、黏滞阻尼声波高频能量；</text>
+<text x="414" y="430" font-size="10.8" fill="#1e293b" text-anchor="start">② 地面松软积雪把掠地声波吞噬殆尽（无硬地反射助威）；</text>
+<text x="414" y="452" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">③ 5 km 外的居民只见天边蓝白一闪，耳边却一片死寂！</text>
+</svg>

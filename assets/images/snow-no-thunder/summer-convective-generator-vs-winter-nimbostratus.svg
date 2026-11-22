@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="510" viewBox="0 0 760 510" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">夏日积雨云强对流霰晶碰撞起电与冬日雨层云逆温静稳凝华降雪对比图解</title>
+<desc id="desc">左栏展示8至15千米高的夏日积雨云：地面30摄氏度湿热空气以10至20米每秒猛烈上升，在零下15至零下25摄氏度混合区促成过冷水、冰晶与霰粒剧烈碰撞起电并劈出闪电；右栏展示3至5千米厚的冬日雨层云：受近地面冷空气垫与逆温层压制，气流仅以0.05至0.2米每秒缓慢斜爬，冰晶纯靠水汽凝华长大，无霰粒碰撞起电，雪花静默飘落。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="509" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">为什么夏雨电闪雷鸣，冬雪却安安静静？——两座云工厂的动力与相态解剖</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">闪电靠“强上升气流 + 过冷水 + 冰晶 + 软雹(霰)”剧烈碰撞起电；冬日平缓雨层云四样缺三样</text>
+<rect x="20" y="68" width="352" height="422" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="80.0" width="282" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="173.0" y="95.0" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="600">A. 夏日积雨云（高 8~15 km 沸腾起电塔）</text>
+<rect x="34" y="112" width="324" height="232" rx="8" fill="#fffaf5" stroke="#e2e8f0" stroke-width="1.0"/>
+<line x1="74.0" y1="124.0" x2="74.0" y2="322.0" stroke="#64748b" stroke-width="1.1"/>
+<line x1="70.0" y1="132.0" x2="344.0" y2="132.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="67" y="136" font-size="10.5" fill="#64748b" text-anchor="end">12km</text>
+<line x1="70.0" y1="194.0" x2="344.0" y2="194.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="67" y="198" font-size="10.5" fill="#64748b" text-anchor="end">6km</text>
+<line x1="70.0" y1="248.0" x2="344.0" y2="248.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="67" y="252" font-size="10.5" fill="#64748b" text-anchor="end">4km</text>
+<line x1="70.0" y1="316.0" x2="344.0" y2="316.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="67" y="320" font-size="10.5" fill="#64748b" text-anchor="end">地面</text>
+<path d="M 118 298 Q 96 268 112 232 Q 102 184 130 152 Q 118 126 172 122 L 284 122 Q 314 126 298 150 Q 276 168 272 212 Q 280 244 252 298 Z" fill="#fde8d7" stroke="#c25014" stroke-width="1.6"/>
+<text x="198" y="145" font-size="11.2" fill="#dc2626" text-anchor="middle" font-weight="700">＋ ＋ ＋ 冰晶带正电上浮</text>
+<rect x="122" y="166" width="146" height="54" rx="6" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="195" y="185" font-size="11.0" fill="#6d28d9" text-anchor="middle" font-weight="700">-15~-25°C 混合起电区</text>
+<text x="195" y="205" font-size="10.8" fill="#1e293b" text-anchor="middle">过冷水 + 冰晶↑ + 霰粒↓</text>
+<text x="195" y="238" font-size="11.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">－ － － 重霰粒带负电下沉</text>
+<line x1="92.0" y1="310.0" x2="92.0" y2="160.5" stroke="#dc2626" stroke-width="2.4"/>
+<polygon points="92.0,154.0 96.2,162.0 87.8,162.0" fill="#dc2626"/>
+<text x="196" y="335" font-size="11.0" fill="#dc2626" text-anchor="middle" font-weight="700">猛烈热对流 w≈10~20 m/s（地面 +30°C）</text>
+<path d="M 206 246 L 190 274 L 206 274 L 184 310" fill="none" stroke="#eab308" stroke-width="3.0" stroke-linejoin="round"/>
+<text x="306" y="276" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="700" class="halo">10⁸ V 击穿</text>
+<text x="306" y="296" font-size="10.8" fill="#dc2626" text-anchor="middle" font-weight="700" class="halo">30000 K 炸雷</text>
+<rect x="34" y="354" width="324" height="122" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1.1"/>
+<text x="46" y="376" font-size="11.2" fill="#c25014" text-anchor="start" font-weight="700">夏日凑齐“起电四件套”（NOAA 雷暴起电模型）：</text>
+<text x="46" y="398" font-size="11.0" fill="#1e293b" text-anchor="start">① 地面暴晒闷湿（30°C 饱和水汽达 30.4 g/m³）；</text>
+<text x="46" y="420" font-size="11.0" fill="#1e293b" text-anchor="start">② 10~20 m/s 狂暴上升流把液态水顶进 -20°C 高空；</text>
+<text x="46" y="442" font-size="11.0" fill="#1e293b" text-anchor="start">③ 过冷水冻出重霰粒，与轻冰晶每秒亿万次撞击换电；</text>
+<text x="46" y="464" font-size="11.0" fill="#dc2626" text-anchor="start" font-weight="700">④ 风力分选拉出千米级正负电荷层 → 劈出闪电炸雷！</text>
+<rect x="388" y="68" width="352" height="422" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="400.0" y="80.0" width="282" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="541.0" y="95.0" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">B. 冬日雨层云（厚 3~5 km 平缓滑升雪厂）</text>
+<rect x="402" y="112" width="324" height="232" rx="8" fill="#f4f9fd" stroke="#e2e8f0" stroke-width="1.0"/>
+<line x1="446.0" y1="124.0" x2="446.0" y2="322.0" stroke="#64748b" stroke-width="1.1"/>
+<line x1="442.0" y1="152.0" x2="712.0" y2="152.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="438" y="156" font-size="10.5" fill="#64748b" text-anchor="end">5km</text>
+<line x1="442.0" y1="214.0" x2="712.0" y2="214.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="438" y="218" font-size="10.5" fill="#64748b" text-anchor="end">2.5km</text>
+<line x1="442.0" y1="264.0" x2="712.0" y2="264.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="438" y="268" font-size="10.5" fill="#64748b" text-anchor="end">逆温</text>
+<line x1="442.0" y1="316.0" x2="712.0" y2="316.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 3"/>
+<text x="438" y="320" font-size="10.5" fill="#64748b" text-anchor="end">地面</text>
+<rect x="452" y="252" width="258" height="22" rx="3" fill="#fef2f2" stroke="#dc2626" stroke-width="1.0"/>
+<text x="581" y="267" font-size="10.5" fill="#dc2626" text-anchor="middle" font-weight="700">近地面冷垫 + 逆温层盖子（上暖下冷锁死对流）</text>
+<path d="M 456 240 Q 450 190 488 178 L 682 170 Q 710 180 704 224 Q 698 244 668 242 Z" fill="#dbeafe" stroke="#1d6fa5" stroke-width="1.5"/>
+<line x1="460.0" y1="244.0" x2="542.9" y2="178.0" stroke="#0f766e" stroke-width="2.0"/>
+<polygon points="548.0,174.0 544.4,182.3 539.1,175.7" fill="#0f766e"/>
+<text x="590" y="202" font-size="11.0" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">全冰相水汽凝华：六角冰晶温和长大</text>
+<text x="590" y="224" font-size="11.0" fill="#0f172a" text-anchor="middle" font-weight="700" class="halo">缺过冷水、缺重霰粒 → 零电荷分离！</text>
+<text x="582" y="156" font-size="10.8" fill="#0f766e" text-anchor="middle" font-weight="700">暖锋面缓慢斜爬 w≈0.05~0.2 m/s（慢 100 倍！）</text>
+<text x="488" y="294" font-size="13.0" fill="#1d6fa5" text-anchor="middle">❄</text>
+<text x="536" y="304" font-size="13.0" fill="#1d6fa5" text-anchor="middle">❄</text>
+<text x="588" y="290" font-size="13.0" fill="#1d6fa5" text-anchor="middle">❄</text>
+<text x="638" y="306" font-size="13.0" fill="#1d6fa5" text-anchor="middle">❄</text>
+<text x="680" y="294" font-size="13.0" fill="#1d6fa5" text-anchor="middle">❄</text>
+<text x="582" y="335" font-size="11.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">地面 -5°C（干冷沉重，雪花静静飘落）</text>
+<rect x="402" y="354" width="324" height="122" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="414" y="376" font-size="11.2" fill="#1d6fa5" text-anchor="start" font-weight="700">冬雪为什么直接拔掉了起电发动机插头？</text>
+<text x="414" y="398" font-size="11.0" fill="#1e293b" text-anchor="start">① 地面冰冷（上暖下冷极稳定），垂直热对流直接熄火；</text>
+<text x="414" y="420" font-size="11.0" fill="#1e293b" text-anchor="start">② 斜爬流速仅每秒几厘米，托不住重粒，也顶不出高塔；</text>
+<text x="414" y="442" font-size="11.0" fill="#1e293b" text-anchor="start">③ 水汽仅夏日 1/9，冰晶纯靠水汽凝华粘连成蓬松雪花；</text>
+<text x="414" y="464" font-size="11.0" fill="#0f172a" text-anchor="start" font-weight="700">④ 缺过冷水与软雹碰撞 → 云内电位差远不够击穿空气！</text>
+</svg>

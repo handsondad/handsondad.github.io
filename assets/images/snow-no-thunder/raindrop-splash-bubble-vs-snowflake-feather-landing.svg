@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="510" viewBox="0 0 760 510" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">同等质量雨滴高速撞击气泡发声与蓬松雪片低速静默软着陆对比动态图解</title>
+<desc id="desc">左栏展示14毫克雨滴以8米每秒高速砸入水面，产生448微焦冲击动能并卷入微气泡激发3至15千赫兹鸣响；右栏展示同为14毫克的10毫米鹅毛雪片因迎风面积大，终端速度仅0.8米每秒，冲击动能骤降至4.48微焦（仅雨滴百分之一），单次动画演示两者悬殊下落与无声软着陆。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes rainPlunge {
+    0% { transform: translateY(0px); opacity: 1; }
+    35% { transform: translateY(118px); opacity: 1; }
+    42% { transform: translateY(118px); opacity: 0; }
+    100% { transform: translateY(118px); opacity: 0; }
+  }
+  @keyframes snowFloat {
+    0% { transform: translate(0px, 0px); }
+    50% { transform: translate(5px, 59px); }
+    100% { transform: translate(0px, 118px); }
+  }
+  .rain-anim {
+    animation: rainPlunge 2.6s linear 1 forwards;
+  }
+  .snow-anim {
+    animation: snowFloat 4.2s ease-in-out 1 forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .rain-anim, .snow-anim { animation: none !important; }
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="509" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">为什么下雨“噼里啪啦”，下雪却“默默无声”？（第一重消音：慢 10 倍 + 零气泡）</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">同样 14 毫克降水：雨滴以 8 m/s 砸水激起千赫兹气泡鸣叫；雪片撑开降落伞以 0.8 m/s 轻放，动能小 100 倍</text>
+<rect x="20" y="68" width="352" height="422" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="80.0" width="282" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="173.0" y="95.0" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="600">A. 夏雨落地：高速重锤 + 水下微气泡共振</text>
+<rect x="34" y="112" width="324" height="214" rx="8" fill="#fffaf5" stroke="#e2e8f0" stroke-width="1.0"/>
+<line x1="92.0" y1="136.0" x2="92.0" y2="266.0" stroke="#c25014" stroke-width="1.4" stroke-dasharray="4 3"/>
+<line x1="114.0" y1="144.0" x2="114.0" y2="239.5" stroke="#dc2626" stroke-width="2.0"/>
+<polygon points="114.0,246.0 109.8,238.0 118.2,238.0" fill="#dc2626"/>
+<text x="128" y="172" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">直径 3 mm 雨滴 (14 mg)</text>
+<text x="128" y="196" font-size="11.2" fill="#dc2626" text-anchor="start" font-weight="700">终端速度 v ≈ 8.0 m/s</text>
+<text x="128" y="220" font-size="11.2" fill="#c25014" text-anchor="start" font-weight="700">撞击动能 E = 448 μJ</text>
+<rect x="48" y="272" width="296" height="42" rx="4" fill="#bae6fd" stroke="#1d6fa5" stroke-width="1.2"/>
+<g class="rain-anim"><path d="M 92 132 C 86 142 85 150 92 150 C 99 150 98 142 92 132 Z" fill="#1d6fa5" stroke="#0f172a" stroke-width="1.0"/></g>
+<path d="M 72 272 Q 82 256 92 276 Q 102 256 112 272" fill="none" stroke="#1d6fa5" stroke-width="1.8"/>
+<circle cx="92" cy="292" r="6.5" fill="#ffffff" stroke="#dc2626" stroke-width="1.8"/>
+<text x="222" y="289" font-size="10.5" fill="#dc2626" text-anchor="middle" font-weight="700">← 卷入微气泡震荡 3~15 kHz</text>
+<text x="222" y="307" font-size="10.5" fill="#0f172a" text-anchor="middle">（“淅淅沥沥”水声真凶！）</text>
+<rect x="34" y="338" width="324" height="138" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1.1"/>
+<text x="46" y="360" font-size="11.0" fill="#c25014" text-anchor="start" font-weight="700">雨声吵闹的双重声源（Gunn &amp; Kinzer / Minnaert）：</text>
+<text x="46" y="384" font-size="10.8" fill="#1e293b" text-anchor="start">① 固体硬敲击：雨滴紧实圆滑、风阻极小，8 m/s（时速</text>
+<text x="46" y="406" font-size="10.8" fill="#1e293b" text-anchor="start">  29 km）猛抽雨伞、铁皮、树叶，激发清脆宽频脉冲；</text>
+<text x="46" y="428" font-size="10.8" fill="#1e293b" text-anchor="start">② 液体“气泡钟声”：砸进水膜瞬间卷入微米级小气泡，气泡</text>
+<text x="46" y="450" font-size="10.8" fill="#dc2626" text-anchor="start" font-weight="700">  被水压反复挤压弹回，唱出清脆的高频雨声！</text>
+<rect x="388" y="68" width="352" height="422" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="400.0" y="80.0" width="282" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="541.0" y="95.0" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">B. 冬雪落地：空气降落伞 + 软着陆零撞击</text>
+<rect x="402" y="112" width="324" height="214" rx="8" fill="#f4f9fd" stroke="#e2e8f0" stroke-width="1.0"/>
+<line x1="454.0" y1="138.0" x2="454.0" y2="264.0" stroke="#1d6fa5" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="476.0" y1="166.0" x2="476.0" y2="203.5" stroke="#1d6fa5" stroke-width="1.8"/>
+<polygon points="476.0,210.0 471.8,202.0 480.2,202.0" fill="#1d6fa5"/>
+<text x="490" y="172" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">同为 14 mg 鹅毛雪片 (~10 mm)</text>
+<text x="490" y="196" font-size="10.8" fill="#1d6fa5" text-anchor="start" font-weight="700">迎风面积大 15 倍，飘速仅 0.8 m/s</text>
+<text x="490" y="220" font-size="10.8" fill="#0f766e" text-anchor="start" font-weight="700">落地动能 4.48 μJ（小 100 倍！）</text>
+<path d="M 416 278 Q 470 268 530 276 Q 600 284 660 272 Q 694 268 712 278 L 712 314 L 416 314 Z" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.4"/>
+<text x="564" y="300" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">松软新雪缓冲垫（无水花飞溅 · 零气泡震荡）</text>
+<g class="snow-anim"><text x="454" y="150" font-size="15.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">❄</text></g>
+<text x="430" y="272" font-size="13.5" fill="#93c5fd" text-anchor="middle">❄</text>
+<rect x="402" y="338" width="324" height="138" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="414" y="360" font-size="11.0" fill="#1d6fa5" text-anchor="start" font-weight="700">雪花天生自带“静音降落伞”（Locatelli &amp; Hobbs 1974）：</text>
+<text x="414" y="384" font-size="10.8" fill="#1e293b" text-anchor="start">① 六角枝状冰晶内部九成是空气，迎风阻力截面积暴增，</text>
+<text x="414" y="406" font-size="10.8" fill="#1e293b" text-anchor="start">  单晶飘速仅 0.3~0.6 m/s，大雪团也不过 0.5~1.4 m/s；</text>
+<text x="414" y="428" font-size="10.8" fill="#0f766e" text-anchor="start" font-weight="700">② 动能按速度平方缩水：速度慢 10 倍 → 冲击能量剩 1%！</text>
+<text x="414" y="450" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">③ 固态枝杈轻搭地面，既敲不响树叶，也憋不出半颗气泡。</text>
+</svg>

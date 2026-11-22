@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="500" viewBox="0 0 760 500" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">克劳修斯-克拉佩龙饱和水汽断崖曲线与上升流速乘过冷水含量起电相图</title>
+<desc id="desc">左栏精确绘制零下20至零上35摄氏度的饱和水汽密度曲线，标出冬日零下5摄氏度仅3.4克每立方米、不足夏日30摄氏度30.4克每立方米的九分之一；右栏展示上升速度与过冷水含量的二维起电门槛，说明普通冬雪落在左下角全冰相静默区，唯独强冷流与气旋高架对流偶入中部雷打雪窄窗。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="499" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">冬季断电的两道硬数学门槛：水汽暴跌近 90% 与“流速 × 过冷水”起电禁区</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">温度每降 10°C 空气锁水能力腰斩；进不了右上角混合碰撞窗口，云层就是绝缘雪花车间</text>
+<rect x="20" y="68" width="352" height="412" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="80.0" width="282" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="173.0" y="95.0" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">A. 克劳修斯-克拉佩龙饱和水汽断崖曲线</text>
+<rect x="34" y="112" width="324" height="248" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.0"/>
+<line x1="72.0" y1="136.0" x2="72.0" y2="326.0" stroke="#0f172a" stroke-width="1.2"/>
+<line x1="72.0" y1="326.0" x2="340.0" y2="326.0" stroke="#0f172a" stroke-width="1.2"/>
+<line x1="68.0" y1="326.0" x2="340.0" y2="326.0" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="3 3"/>
+<text x="64" y="330.0" font-size="10.5" fill="#64748b" text-anchor="end">0</text>
+<line x1="68.0" y1="278.5" x2="340.0" y2="278.5" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="3 3"/>
+<text x="64" y="282.5" font-size="10.5" fill="#64748b" text-anchor="end">10</text>
+<line x1="68.0" y1="231.0" x2="340.0" y2="231.0" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="3 3"/>
+<text x="64" y="235.0" font-size="10.5" fill="#64748b" text-anchor="end">20</text>
+<line x1="68.0" y1="183.5" x2="340.0" y2="183.5" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="3 3"/>
+<text x="64" y="187.5" font-size="10.5" fill="#64748b" text-anchor="end">30</text>
+<line x1="68.0" y1="136.0" x2="340.0" y2="136.0" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="3 3"/>
+<text x="64" y="140.0" font-size="10.5" fill="#64748b" text-anchor="end">40</text>
+<text x="46" y="126" font-size="10.8" fill="#64748b" text-anchor="start">饱和水汽密度 (g/m³)</text>
+<line x1="72.0" y1="326.0" x2="72.0" y2="330.0" stroke="#0f172a" stroke-width="1.1"/>
+<text x="72.0" y="344" font-size="10.5" fill="#1e293b" text-anchor="middle">-20°C</text>
+<line x1="120.7" y1="326.0" x2="120.7" y2="330.0" stroke="#0f172a" stroke-width="1.1"/>
+<text x="120.7" y="344" font-size="10.5" fill="#1e293b" text-anchor="middle">-10°C</text>
+<line x1="169.5" y1="326.0" x2="169.5" y2="330.0" stroke="#0f172a" stroke-width="1.1"/>
+<text x="169.5" y="344" font-size="10.5" fill="#1e293b" text-anchor="middle">0°C</text>
+<line x1="218.2" y1="326.0" x2="218.2" y2="330.0" stroke="#0f172a" stroke-width="1.1"/>
+<text x="218.2" y="344" font-size="10.5" fill="#1e293b" text-anchor="middle">10°C</text>
+<line x1="266.9" y1="326.0" x2="266.9" y2="330.0" stroke="#0f172a" stroke-width="1.1"/>
+<text x="266.9" y="344" font-size="10.5" fill="#1e293b" text-anchor="middle">20°C</text>
+<line x1="315.6" y1="326.0" x2="315.6" y2="330.0" stroke="#0f172a" stroke-width="1.1"/>
+<text x="315.6" y="344" font-size="10.5" fill="#1e293b" text-anchor="middle">30°C</text>
+<polyline points="72.0,320.9 76.9,320.5 81.7,320.0 86.6,319.5 91.5,318.9 96.4,318.4 101.2,317.7 106.1,317.1 111.0,316.4 115.9,315.6 120.7,314.8 125.6,313.9 130.5,313.0 135.3,312.0 140.2,310.9 145.1,309.8 150.0,308.6 154.8,307.3 159.7,306.0 164.6,304.5 169.5,303.0 174.3,301.3 179.2,299.6 184.1,297.8 188.9,295.8 193.8,293.7 198.7,291.6 203.6,289.2 208.4,286.8 213.3,284.2 218.2,281.4 223.1,278.5 227.9,275.5 232.8,272.2 237.7,268.8 242.5,265.2 247.4,261.4 252.3,257.4 257.2,253.2 262.0,248.7 266.9,244.1 271.8,239.2 276.7,234.0 281.5,228.6 286.4,222.8 291.3,216.9 296.1,210.6 301.0,204.0 305.9,197.0 310.8,189.8 315.6,182.2 320.5,174.2 325.4,165.8 330.3,157.1 335.1,147.9 340.0,138.4" fill="none" stroke="#1d6fa5" stroke-width="2.6"/>
+<circle cx="145.1" cy="309.8" r="4.8" fill="#1d6fa5" stroke="#fff" stroke-width="1.4"/>
+<line x1="145.1" y1="304.8" x2="145.1" y2="285.8" stroke="#1d6fa5" stroke-width="1.1" stroke-dasharray="2 2"/>
+<text x="133.1" y="281.8" font-size="11.0" fill="#1d6fa5" text-anchor="start" font-weight="700" class="halo">冬日 -5°C：仅 3.4 g/m³</text>
+<circle cx="315.6" cy="182.2" r="4.8" fill="#dc2626" stroke="#fff" stroke-width="1.4"/>
+<text x="305.6" y="188.2" font-size="11.0" fill="#dc2626" text-anchor="end" font-weight="700">夏日 +30°C：30.4 g/m³</text>
+<rect x="34" y="370" width="324" height="96" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="46" y="392" font-size="11.0" fill="#0f172a" text-anchor="start" font-weight="700">• 潜热燃料断供：水汽凝结释放潜热才是雷暴上升的汽油！</text>
+<text x="46" y="416" font-size="11.0" fill="#1e293b" text-anchor="start">• 气温每降 1°C，饱和水汽缩水约 7%；-5°C 冬空气含水</text>
+<text x="46" y="438" font-size="11.0" fill="#1d6fa5" text-anchor="start" font-weight="700">  还不到 30°C 夏空气的 1/9，云层根本烧不起冲天火炉。</text>
+<rect x="388" y="68" width="352" height="412" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="400.0" y="80.0" width="292" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="546.0" y="95.0" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="600">B. 云内非感应起电相图（上升速度 × 过冷水）</text>
+<rect x="402" y="112" width="324" height="248" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.0"/>
+<rect x="456" y="252" width="128" height="70" rx="6" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="520" y="275" font-size="11.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">普通冬雪静默区</text>
+<text x="520" y="294" font-size="10.8" fill="#1e293b" text-anchor="middle">w &lt; 0.3 m/s</text>
+<text x="520" y="312" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">全冰相 · 零闪电</text>
+<rect x="554" y="198" width="150" height="48" rx="6" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="629" y="219" font-size="11.2" fill="#6d28d9" text-anchor="middle" font-weight="700">罕见“雷打雪”窄窗</text>
+<text x="629" y="237" font-size="10.5" fill="#1e293b" text-anchor="middle">w ≈ 3~8 m/s（冷流/气旋）</text>
+<rect x="568" y="142" width="138" height="50" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="1.3"/>
+<text x="637" y="163" font-size="11.2" fill="#c25014" text-anchor="middle" font-weight="700">盛夏强雷暴主区</text>
+<text x="637" y="182" font-size="10.5" fill="#dc2626" text-anchor="middle" font-weight="700">w ≈ 10~25 m/s 霰晶狂撞</text>
+<line x1="452.0" y1="136.0" x2="452.0" y2="326.0" stroke="#0f172a" stroke-width="1.2"/>
+<line x1="452.0" y1="326.0" x2="710.0" y2="326.0" stroke="#0f172a" stroke-width="1.2"/>
+<text x="412" y="126" font-size="10.8" fill="#64748b" text-anchor="start">过冷水含量 LWC (g/m³)</text>
+<text x="581.0" y="346" font-size="10.8" fill="#1e293b" text-anchor="middle">上升气流速度 w（对数尺度：0.05 → 25 m/s）</text>
+<text x="444" y="330" font-size="10.5" fill="#64748b" text-anchor="end">0</text>
+<text x="444" y="256" font-size="10.5" fill="#64748b" text-anchor="end">0.2</text>
+<text x="444" y="184" font-size="10.5" fill="#64748b" text-anchor="end">1.0+</text>
+<rect x="402" y="370" width="324" height="96" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.1"/>
+<text x="414" y="392" font-size="11.0" fill="#6d28d9" text-anchor="start" font-weight="700">• 高桥劭（Takahashi 1978）冰晶—霰粒碰撞实验证明：</text>
+<text x="414" y="416" font-size="11.0" fill="#1e293b" text-anchor="start">• 没有足够上升流速 w 持续补给过冷水滴，冰晶就不会结霜</text>
+<text x="414" y="438" font-size="11.0" fill="#0f172a" text-anchor="start" font-weight="700">  长成重霰粒；雪花撞雪花材质对称，净转移电荷 ≈ 0！</text>
+</svg>

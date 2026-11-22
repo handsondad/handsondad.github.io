@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="510" viewBox="0 0 760 510" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">新雪90%连通孔隙微米冰针黏滞吸声机理与新雪陈雪硬冰壳吸声系数频率曲线对比图</title>
+<desc id="desc">左栏根据CRREL显微CT数据绘制新雪89%至93%连通孔隙与0.08毫米冰针迷宫，展示入射声波反射不足1%、在孔隙内摩擦耗散为微热；右栏对比125赫兹至4千赫兹范围内蓬松新雪（吸声系数达0.7至0.9）、烧结陈雪与融冻硬冰壳（低于0.08）的吸声曲线。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="509" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">为什么下雪后连远处的马路都像被按了静音键？（第二重消音：90% 开孔吸音毯）</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">刚落下的新雪九成体积是连通空气迷宫，声波反射不足 1%；一旦融化结冰壳，街道瞬间恢复嘈杂</text>
+<rect x="20" y="68" width="352" height="422" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="80.0" width="286" height="22" rx="11.0" fill="#f0fdfa" stroke="#0f766e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="175.0" y="95.0" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="600">A. 新雪微观剖面：铺满全城的录音棚吸音棉</text>
+<rect x="34" y="112" width="324" height="214" rx="8" fill="#f2fbf9" stroke="#0f766e" stroke-width="1.1"/>
+<text x="46" y="134" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">外界噪声波入射（车流 / 脚步 / 人声 500~4000 Hz）</text>
+<line x1="92.0" y1="146.0" x2="131.5" y2="187.3" stroke="#dc2626" stroke-width="2.4"/>
+<polygon points="136.0,192.0 127.4,189.1 133.5,183.3" fill="#dc2626"/>
+<text x="46" y="174" font-size="10.5" fill="#dc2626" text-anchor="start" font-weight="700">100% 入射</text>
+<line x1="144.0" y1="192.0" x2="177.5" y2="156.7" stroke="#64748b" stroke-width="1.2" stroke-dasharray="3 2"/>
+<polygon points="182.0,152.0 179.5,160.7 173.4,154.9" fill="#64748b"/>
+<text x="262" y="168" font-size="10.5" fill="#64748b" text-anchor="middle" font-weight="700">反射声能 &lt; 1% (|r| &lt; 0.1)</text>
+<rect x="46" y="198" width="300" height="114" rx="6" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.3"/>
+<line x1="58.0" y1="214.0" x2="104.0" y2="238.0" stroke="#93c5fd" stroke-width="2.2"/>
+<line x1="88.0" y1="210.0" x2="68.0" y2="252.0" stroke="#93c5fd" stroke-width="2.2"/>
+<line x1="114.0" y1="216.0" x2="162.0" y2="234.0" stroke="#93c5fd" stroke-width="2.2"/>
+<line x1="148.0" y1="208.0" x2="130.0" y2="256.0" stroke="#93c5fd" stroke-width="2.2"/>
+<line x1="68.0" y1="262.0" x2="124.0" y2="286.0" stroke="#93c5fd" stroke-width="2.2"/>
+<line x1="122.0" y1="260.0" x2="100.0" y2="298.0" stroke="#93c5fd" stroke-width="2.2"/>
+<path d="M 136 198 C 152 220 122 238 150 256 C 172 272 148 292 174 302" fill="none" stroke="#dc2626" stroke-width="2.0" stroke-dasharray="4 2"/>
+<text x="260" y="236" font-size="11.0" fill="#0f766e" text-anchor="middle" font-weight="700">孔隙率 φ ≈ 89%~93%！</text>
+<text x="260" y="258" font-size="10.5" fill="#1e293b" text-anchor="middle">0.08 mm 冰针迷宫黏滞摩擦</text>
+<text x="260" y="280" font-size="10.5" fill="#dc2626" text-anchor="middle" font-weight="700">声波 → 耗散为微弱热能</text>
+<rect x="34" y="338" width="324" height="138" rx="8" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.1"/>
+<text x="46" y="360" font-size="11.0" fill="#0f766e" text-anchor="start" font-weight="700">美国陆军寒区实验室（CRREL μCT 扫描与外场实测）：</text>
+<text x="46" y="384" font-size="10.8" fill="#1e293b" text-anchor="start">• 刚落新雪超 90% 体积全是彼此连通的微米级空气通道，</text>
+<text x="46" y="406" font-size="10.8" fill="#1e293b" text-anchor="start">  比表面积达 64 mm⁻¹（每 cm³ 藏着 640 cm² 摩擦壁）；</text>
+<text x="46" y="428" font-size="10.8" fill="#1e293b" text-anchor="start">• 地面铺 25 cm 新雪后，声幅按距离 -1.6 次方陡降（夏地</text>
+<text x="46" y="450" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">  仅 -1.2 次方），传出 100 m 后声压峰值直接缩水约 10 倍！</text>
+<rect x="388" y="68" width="352" height="422" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="400.0" y="80.0" width="294" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="547.0" y="95.0" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">B. 吸声系数 α 曲线：新雪 vs 隔夜陈雪 vs 硬冰壳</text>
+<rect x="402" y="112" width="324" height="232" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.0"/>
+<line x1="452.0" y1="138.0" x2="452.0" y2="316.0" stroke="#0f172a" stroke-width="1.2"/>
+<line x1="452.0" y1="316.0" x2="708.0" y2="316.0" stroke="#0f172a" stroke-width="1.2"/>
+<line x1="448.0" y1="316.0" x2="708.0" y2="316.0" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="3 3"/>
+<text x="444" y="320.0" font-size="10.5" fill="#64748b" text-anchor="end">0.0</text>
+<line x1="448.0" y1="280.4" x2="708.0" y2="280.4" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="3 3"/>
+<text x="444" y="284.4" font-size="10.5" fill="#64748b" text-anchor="end">0.2</text>
+<line x1="448.0" y1="244.8" x2="708.0" y2="244.8" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="3 3"/>
+<text x="444" y="248.8" font-size="10.5" fill="#64748b" text-anchor="end">0.4</text>
+<line x1="448.0" y1="209.2" x2="708.0" y2="209.2" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="3 3"/>
+<text x="444" y="213.2" font-size="10.5" fill="#64748b" text-anchor="end">0.6</text>
+<line x1="448.0" y1="173.6" x2="708.0" y2="173.6" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="3 3"/>
+<text x="444" y="177.6" font-size="10.5" fill="#64748b" text-anchor="end">0.8</text>
+<line x1="448.0" y1="138.0" x2="708.0" y2="138.0" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="3 3"/>
+<text x="444" y="142.0" font-size="10.5" fill="#64748b" text-anchor="end">1.0</text>
+<text x="412" y="128" font-size="10.8" fill="#64748b" text-anchor="start">吸声系数 α（1.0=全吸）</text>
+<line x1="452.0" y1="316.0" x2="452.0" y2="320.0" stroke="#0f172a" stroke-width="1.1"/>
+<text x="452.0" y="334" font-size="10.2" fill="#1e293b" text-anchor="middle">125Hz</text>
+<line x1="516.0" y1="316.0" x2="516.0" y2="320.0" stroke="#0f172a" stroke-width="1.1"/>
+<text x="516.0" y="334" font-size="10.2" fill="#1e293b" text-anchor="middle">250</text>
+<line x1="580.0" y1="316.0" x2="580.0" y2="320.0" stroke="#0f172a" stroke-width="1.1"/>
+<text x="580.0" y="334" font-size="10.2" fill="#1e293b" text-anchor="middle">500</text>
+<line x1="644.0" y1="316.0" x2="644.0" y2="320.0" stroke="#0f172a" stroke-width="1.1"/>
+<text x="644.0" y="334" font-size="10.2" fill="#1e293b" text-anchor="middle">1kHz</text>
+<line x1="708.0" y1="316.0" x2="708.0" y2="320.0" stroke="#0f172a" stroke-width="1.1"/>
+<text x="708.0" y="334" font-size="10.2" fill="#1e293b" text-anchor="middle">2~4kHz</text>
+<polyline points="452.0,284.0 516.0,248.4 580.0,195.0 644.0,164.7 708.0,155.8" fill="none" stroke="#0f766e" stroke-width="2.5"/>
+<text x="704" y="148.8" font-size="10.2" fill="#0f766e" text-anchor="end" font-weight="700">刚落蓬松新雪 (φ≈90%, α≈0.7~0.9)</text>
+<polyline points="452.0,298.2 516.0,276.8 580.0,248.4 644.0,228.8 708.0,219.9" fill="none" stroke="#1d6fa5" stroke-width="2.5" stroke-dasharray="5 3"/>
+<text x="704" y="212.9" font-size="10.2" fill="#1d6fa5" text-anchor="end" font-weight="700">烧结压实陈雪 (φ≈70%)</text>
+<polyline points="452.0,310.7 516.0,308.9 580.0,307.1 644.0,305.3 708.0,303.5" fill="none" stroke="#dc2626" stroke-width="2.5"/>
+<text x="704" y="293.8" font-size="10.2" fill="#dc2626" text-anchor="end" font-weight="700">融冻硬冰壳 / 水泥地 (α&lt;0.08 全反射)</text>
+<rect x="402" y="354" width="324" height="122" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="414" y="376" font-size="11.2" fill="#1d6fa5" text-anchor="start" font-weight="700">为什么下雪第一晚万籁俱寂，两天后又变吵了？</text>
+<text x="414" y="400" font-size="10.8" fill="#1e293b" text-anchor="start">• 初雪夜：5~10 cm 新雪对人耳最敏感的 500~4000 Hz 噪</text>
+<text x="414" y="422" font-size="10.8" fill="#0f766e" text-anchor="start" font-weight="700">  声吸收率达 70%~90%，堪比给整座城市铺满专业吸音棉！</text>
+<text x="414" y="444" font-size="10.8" fill="#1e293b" text-anchor="start">• 隔天烧结/融冻：冰晶颈部焊合变粗、表层化水结成闭孔冰</text>
+<text x="414" y="466" font-size="10.8" fill="#dc2626" text-anchor="start" font-weight="700">  壳，声波钻不进去直接弹回空中，清冷的回声瞬间归来。</text>
+</svg>

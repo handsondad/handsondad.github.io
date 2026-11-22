@@ -29623,5 +29623,498 @@ def _register_musical_instruments():
 _register_musical_instruments()
 
 
+def _register_winter_snow_no_thunder():
+    SUBDIR = "snow-no-thunder"
+    RED = "#dc2626"
+    RED_SOFT = "#fef2f2"
+    TEAL = "#0f766e"
+    TEAL_SOFT = "#f0fdfa"
+
+    def _line(x1, y1, x2, y2, stroke=INK, sw=1.4, dash=None):
+        ds = f' stroke-dasharray="{dash}"' if dash else ""
+        return f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{stroke}" stroke-width="{sw}"{ds}/>'
+
+    def arrow(x1, y1, x2, y2, stroke=INK, sw=2.0, dash=None):
+        dx, dy = x2 - x1, y2 - y1
+        ln = math.hypot(dx, dy) or 1.0
+        ux, uy = dx / ln, dy / ln
+        px, py = -uy, ux
+        hl, hw = 8.0, 4.2
+        bx, by = x2 - ux * hl, y2 - uy * hl
+        p1x, p1y = bx + px * hw, by + py * hw
+        p2x, p2y = bx - px * hw, by - py * hw
+        seg = _line(x1, y1, bx + ux * 1.5, by + uy * 1.5, stroke=stroke, sw=sw, dash=dash)
+        head = f'<polygon points="{x2:.1f},{y2:.1f} {p1x:.1f},{p1y:.1f} {p2x:.1f},{p2y:.1f}" fill="{stroke}"/>'
+        return seg + "\n" + head
+
+    def _sat_vapor_density_gm3(temp_c):
+        es_pa = 610.94 * math.exp(17.625 * temp_c / (temp_c + 243.04))
+        rv = 461.5
+        return (es_pa / (rv * (temp_c + 273.15))) * 1000.0
+
+    def _verify_winter_snow_assertions():
+        rho_30 = _sat_vapor_density_gm3(30.0)
+        rho_m5 = _sat_vapor_density_gm3(-5.0)
+        assert 29.5 < rho_30 < 31.2 and 3.0 < rho_m5 < 3.6
+        assert rho_30 / rho_m5 > 8.5
+        m_kg = 14e-6
+        ek_rain_uj = 0.5 * m_kg * (8.0 ** 2) * 1e6
+        ek_snow_uj = 0.5 * m_kg * (0.8 ** 2) * 1e6
+        assert abs(ek_rain_uj / ek_snow_uj - 100.0) < 1e-6
+        area_ratio = (4.0 / 16.0) ** 2
+        assert abs(area_ratio - 0.0625) < 1e-6
+        r_amp = 0.08
+        assert (1.0 - r_amp ** 2) > 0.99
+
+    def _build_summer_vs_winter_clouds():
+        H = 510
+        els = [
+            *header(
+                "为什么夏雨电闪雷鸣，冬雪却安安静静？——两座云工厂的动力与相态解剖",
+                "闪电靠“强上升气流 + 过冷水 + 冰晶 + 软雹(霰)”剧烈碰撞起电；冬日平缓雨层云四样缺三样",
+            )
+        ]
+
+        # Left card: Summer Cumulonimbus
+        els.append(card(20, 68, 352, 422))
+        els.append(pill(32, 80, "A. 夏日积雨云（高 8~15 km 沸腾起电塔）", fg=ORANGE, bg=ORANGE_SOFT, w=282, h=22, size=11.5))
+
+        els.append(card(34, 112, 324, 232, rx=8, fill="#fffaf5", stroke=BORDER, sw=1.0))
+        els.append(_line(74, 124, 74, 322, stroke=MUTED, sw=1.1))
+        for y_alt, lbl_alt in [(132, "12km"), (194, "6km"), (248, "4km"), (316, "地面")]:
+            els.append(_line(70, y_alt, 344, y_alt, stroke=HAIRLINE, sw=0.9, dash="3 3"))
+            els.append(txt(67, y_alt + 4, lbl_alt, 10.5, MUTED, "end"))
+
+        els.append(
+            f'<path d="M 118 298 Q 96 268 112 232 Q 102 184 130 152 Q 118 126 172 122 L 284 122 Q 314 126 298 150 Q 276 168 272 212 Q 280 244 252 298 Z" '
+            f'fill="#fde8d7" stroke="{ORANGE}" stroke-width="1.6"/>'
+        )
+        els.append(txt(198, 145, "＋ ＋ ＋ 冰晶带正电上浮", 11.2, RED, "middle", weight="700"))
+        els.append(card(122, 166, 146, 54, rx=6, fill="#ffffff", stroke=PURPLE, sw=1.2))
+        els.append(txt(195, 185, "-15~-25°C 混合起电区", 11.0, PURPLE, "middle", weight="700"))
+        els.append(txt(195, 205, "过冷水 + 冰晶↑ + 霰粒↓", 10.8, BODY, "middle"))
+        els.append(txt(195, 238, "－ － － 重霰粒带负电下沉", 11.0, BLUE, "middle", weight="700"))
+
+        els.append(arrow(92, 310, 92, 154, stroke=RED, sw=2.4))
+        els.append(txt(196, 335, "猛烈热对流 w≈10~20 m/s（地面 +30°C）", 11.0, RED, "middle", weight="700"))
+
+        els.append(
+            f'<path d="M 206 246 L 190 274 L 206 274 L 184 310" fill="none" stroke="#eab308" stroke-width="3.0" stroke-linejoin="round"/>'
+        )
+        els.append(txt(306, 276, "10⁸ V 击穿", 10.8, ORANGE, "middle", weight="700", halo=True))
+        els.append(txt(306, 296, "30000 K 炸雷", 10.8, RED, "middle", weight="700", halo=True))
+
+        els.append(card(34, 354, 324, 122, rx=8, fill=ORANGE_SOFT, stroke=ORANGE, sw=1.1))
+        els.append(txt(46, 376, "夏日凑齐“起电四件套”（NOAA 雷暴起电模型）：", 11.2, ORANGE, weight="700"))
+        els.append(txt(46, 398, "① 地面暴晒闷湿（30°C 饱和水汽达 30.4 g/m³）；", 11.0, BODY))
+        els.append(txt(46, 420, "② 10~20 m/s 狂暴上升流把液态水顶进 -20°C 高空；", 11.0, BODY))
+        els.append(txt(46, 442, "③ 过冷水冻出重霰粒，与轻冰晶每秒亿万次撞击换电；", 11.0, BODY))
+        els.append(txt(46, 464, "④ 风力分选拉出千米级正负电荷层 → 劈出闪电炸雷！", 11.0, RED, weight="700"))
+
+        # Right card: Winter Nimbostratus
+        els.append(card(388, 68, 352, 422))
+        els.append(pill(400, 80, "B. 冬日雨层云（厚 3~5 km 平缓滑升雪厂）", fg=BLUE, bg=BLUE_SOFT, w=282, h=22, size=11.5))
+
+        els.append(card(402, 112, 324, 232, rx=8, fill="#f4f9fd", stroke=BORDER, sw=1.0))
+        els.append(_line(446, 124, 446, 322, stroke=MUTED, sw=1.1))
+        for y_alt, lbl_alt in [(152, "5km"), (214, "2.5km"), (264, "逆温"), (316, "地面")]:
+            els.append(_line(442, y_alt, 712, y_alt, stroke=HAIRLINE, sw=0.9, dash="3 3"))
+            els.append(txt(438, y_alt + 4, lbl_alt, 10.5, MUTED, "end"))
+
+        els.append(card(452, 252, 258, 22, rx=3, fill=RED_SOFT, stroke=RED, sw=1.0))
+        els.append(txt(581, 267, "近地面冷垫 + 逆温层盖子（上暖下冷锁死对流）", 10.5, RED, "middle", weight="700"))
+
+        els.append(
+            f'<path d="M 456 240 Q 450 190 488 178 L 682 170 Q 710 180 704 224 Q 698 244 668 242 Z" '
+            f'fill="#dbeafe" stroke="{BLUE}" stroke-width="1.5"/>'
+        )
+        els.append(arrow(460, 244, 548, 174, stroke=TEAL, sw=2.0))
+        els.append(txt(590, 202, "全冰相水汽凝华：六角冰晶温和长大", 11.0, BLUE, "middle", weight="700", halo=True))
+        els.append(txt(590, 224, "缺过冷水、缺重霰粒 → 零电荷分离！", 11.0, INK, "middle", weight="700", halo=True))
+        els.append(txt(582, 156, "暖锋面缓慢斜爬 w≈0.05~0.2 m/s（慢 100 倍！）", 10.8, TEAL, "middle", weight="700"))
+
+        for sx, sy in [(488, 294), (536, 304), (588, 290), (638, 306), (680, 294)]:
+            els.append(txt(sx, sy, "❄", 13.0, BLUE, "middle"))
+        els.append(txt(582, 335, "地面 -5°C（干冷沉重，雪花静静飘落）", 11.0, BLUE, "middle", weight="700"))
+
+        els.append(card(402, 354, 324, 122, rx=8, fill=BLUE_SOFT, stroke=BLUE, sw=1.1))
+        els.append(txt(414, 376, "冬雪为什么直接拔掉了起电发动机插头？", 11.2, BLUE, weight="700"))
+        els.append(txt(414, 398, "① 地面冰冷（上暖下冷极稳定），垂直热对流直接熄火；", 11.0, BODY))
+        els.append(txt(414, 420, "② 斜爬流速仅每秒几厘米，托不住重粒，也顶不出高塔；", 11.0, BODY))
+        els.append(txt(414, 442, "③ 水汽仅夏日 1/9，冰晶纯靠水汽凝华粘连成蓬松雪花；", 11.0, BODY))
+        els.append(txt(414, 464, "④ 缺过冷水与软雹碰撞 → 云内电位差远不够击穿空气！", 11.0, INK, weight="700"))
+
+        return figure(
+            H,
+            "夏日积雨云强对流霰晶碰撞起电与冬日雨层云逆温静稳凝华降雪对比图解",
+            "左栏展示8至15千米高的夏日积雨云：地面30摄氏度湿热空气以10至20米每秒猛烈上升，在零下15至零下25摄氏度混合区促成过冷水、冰晶与霰粒剧烈碰撞起电并劈出闪电；右栏展示3至5千米厚的冬日雨层云：受近地面冷空气垫与逆温层压制，气流仅以0.05至0.2米每秒缓慢斜爬，冰晶纯靠水汽凝华长大，无霰粒碰撞起电，雪花静默飘落。",
+            els,
+        )
+
+    def _build_moisture_and_charging_map():
+        H = 500
+        els = [
+            *header(
+                "冬季断电的两道硬数学门槛：水汽暴跌近 90% 与“流速 × 过冷水”起电禁区",
+                "温度每降 10°C 空气锁水能力腰斩；进不了右上角混合碰撞窗口，云层就是绝缘雪花车间",
+            )
+        ]
+
+        els.append(card(20, 68, 352, 412))
+        els.append(pill(32, 80, "A. 克劳修斯-克拉佩龙饱和水汽断崖曲线", fg=BLUE, bg=BLUE_SOFT, w=282, h=22, size=11.5))
+
+        px0, py0, pw, ph = 72, 136, 268, 190
+        els.append(card(34, 112, 324, 248, rx=8, fill="#ffffff", stroke=BORDER, sw=1.0))
+        els.append(_line(px0, py0, px0, py0 + ph, stroke=INK, sw=1.2))
+        els.append(_line(px0, py0 + ph, px0 + pw, py0 + ph, stroke=INK, sw=1.2))
+
+        for val_y in [0, 10, 20, 30, 40]:
+            yy = py0 + ph - (val_y / 40.0) * ph
+            els.append(_line(px0 - 4, yy, px0 + pw, yy, stroke=HAIRLINE, sw=0.8, dash="3 3"))
+            els.append(txt(px0 - 8, yy + 4, f"{val_y}", 10.5, MUTED, "end"))
+        els.append(txt(46, py0 - 10, "饱和水汽密度 (g/m³)", 10.8, MUTED))
+
+        for tc in [-20, -10, 0, 10, 20, 30]:
+            xx = px0 + ((tc + 20.0) / 55.0) * pw
+            els.append(_line(xx, py0 + ph, xx, py0 + ph + 4, stroke=INK, sw=1.1))
+            els.append(txt(xx, py0 + ph + 18, f"{tc}°C", 10.5, BODY, "middle"))
+
+        pts = []
+        for i in range(56):
+            tc = -20.0 + i
+            rv = _sat_vapor_density_gm3(tc)
+            xx = px0 + ((tc + 20.0) / 55.0) * pw
+            yy = py0 + ph - (rv / 40.0) * ph
+            pts.append(f"{xx:.1f},{yy:.1f}")
+        els.append(f'<polyline points="{" ".join(pts)}" fill="none" stroke="{BLUE}" stroke-width="2.6"/>')
+
+        rv_m5 = _sat_vapor_density_gm3(-5.0)
+        xx_m5 = px0 + ((-5.0 + 20.0) / 55.0) * pw
+        yy_m5 = py0 + ph - (rv_m5 / 40.0) * ph
+        els.append(f'<circle cx="{xx_m5:.1f}" cy="{yy_m5:.1f}" r="4.8" fill="{BLUE}" stroke="#fff" stroke-width="1.4"/>')
+        els.append(_line(xx_m5, yy_m5 - 5, xx_m5, yy_m5 - 24, stroke=BLUE, sw=1.1, dash="2 2"))
+        els.append(txt(xx_m5 - 12, yy_m5 - 28, "冬日 -5°C：仅 3.4 g/m³", 11.0, BLUE, "start", weight="700", halo=True))
+
+        rv_30 = _sat_vapor_density_gm3(30.0)
+        xx_30 = px0 + ((30.0 + 20.0) / 55.0) * pw
+        yy_30 = py0 + ph - (rv_30 / 40.0) * ph
+        els.append(f'<circle cx="{xx_30:.1f}" cy="{yy_30:.1f}" r="4.8" fill="{RED}" stroke="#fff" stroke-width="1.4"/>')
+        els.append(txt(xx_30 - 10, yy_30 + 6, "夏日 +30°C：30.4 g/m³", 11.0, RED, "end", weight="700"))
+
+        els.append(card(34, 370, 324, 96, rx=8, fill=BLUE_SOFT, stroke=BLUE, sw=1.1))
+        els.append(txt(46, 392, "• 潜热燃料断供：水汽凝结释放潜热才是雷暴上升的汽油！", 11.0, INK, weight="700"))
+        els.append(txt(46, 416, "• 气温每降 1°C，饱和水汽缩水约 7%；-5°C 冬空气含水", 11.0, BODY))
+        els.append(txt(46, 438, "  还不到 30°C 夏空气的 1/9，云层根本烧不起冲天火炉。", 11.0, BLUE, weight="700"))
+
+        # Right card: 2D regime map
+        els.append(card(388, 68, 352, 412))
+        els.append(pill(400, 80, "B. 云内非感应起电相图（上升速度 × 过冷水）", fg=PURPLE, bg=PURPLE_SOFT, w=292, h=22, size=11.5))
+
+        rx0, ry0, rw, rh = 452, 136, 258, 190
+        els.append(card(402, 112, 324, 248, rx=8, fill="#ffffff", stroke=BORDER, sw=1.0))
+
+        els.append(card(rx0 + 4, ry0 + 116, 128, 70, rx=6, fill=BLUE_SOFT, stroke=BLUE, sw=1.2))
+        els.append(txt(rx0 + 68, ry0 + 139, "普通冬雪静默区", 11.2, BLUE, "middle", weight="700"))
+        els.append(txt(rx0 + 68, ry0 + 158, "w < 0.3 m/s", 10.8, BODY, "middle"))
+        els.append(txt(rx0 + 68, ry0 + 176, "全冰相 · 零闪电", 10.8, BLUE, "middle", weight="700"))
+
+        els.append(card(rx0 + 102, ry0 + 62, 150, 48, rx=6, fill=PURPLE_SOFT, stroke=PURPLE, sw=1.2))
+        els.append(txt(rx0 + 177, ry0 + 83, "罕见“雷打雪”窄窗", 11.2, PURPLE, "middle", weight="700"))
+        els.append(txt(rx0 + 177, ry0 + 101, "w ≈ 3~8 m/s（冷流/气旋）", 10.5, BODY, "middle"))
+
+        els.append(card(rx0 + 116, ry0 + 6, 138, 50, rx=6, fill=ORANGE_SOFT, stroke=ORANGE, sw=1.3))
+        els.append(txt(rx0 + 185, ry0 + 27, "盛夏强雷暴主区", 11.2, ORANGE, "middle", weight="700"))
+        els.append(txt(rx0 + 185, ry0 + 46, "w ≈ 10~25 m/s 霰晶狂撞", 10.5, RED, "middle", weight="700"))
+
+        els.append(_line(rx0, ry0, rx0, ry0 + rh, stroke=INK, sw=1.2))
+        els.append(_line(rx0, ry0 + rh, rx0 + rw, ry0 + rh, stroke=INK, sw=1.2))
+        els.append(txt(412, ry0 - 10, "过冷水含量 LWC (g/m³)", 10.8, MUTED))
+        els.append(txt(rx0 + rw / 2, ry0 + rh + 20, "上升气流速度 w（对数尺度：0.05 → 25 m/s）", 10.8, BODY, "middle"))
+
+        for yy, lb in [(ry0 + rh, "0"), (ry0 + 116, "0.2"), (ry0 + 44, "1.0+")]:
+            els.append(txt(rx0 - 8, yy + 4, lb, 10.5, MUTED, "end"))
+
+        els.append(card(402, 370, 324, 96, rx=8, fill=PURPLE_SOFT, stroke=PURPLE, sw=1.1))
+        els.append(txt(414, 392, "• 高桥劭（Takahashi 1978）冰晶—霰粒碰撞实验证明：", 11.0, PURPLE, weight="700"))
+        els.append(txt(414, 416, "• 没有足够上升流速 w 持续补给过冷水滴，冰晶就不会结霜", 11.0, BODY))
+        els.append(txt(414, 438, "  长成重霰粒；雪花撞雪花材质对称，净转移电荷 ≈ 0！", 11.0, INK, weight="700"))
+
+        return figure(
+            H,
+            "克劳修斯-克拉佩龙饱和水汽断崖曲线与上升流速乘过冷水含量起电相图",
+            "左栏精确绘制零下20至零上35摄氏度的饱和水汽密度曲线，标出冬日零下5摄氏度仅3.4克每立方米、不足夏日30摄氏度30.4克每立方米的九分之一；右栏展示上升速度与过冷水含量的二维起电门槛，说明普通冬雪落在左下角全冰相静默区，唯独强冷流与气旋高架对流偶入中部雷打雪窄窗。",
+            els,
+        )
+
+    def _build_thundersnow_and_audible_ring():
+        H = 510
+        els = [
+            *header(
+                "冬天真的一道闪电都没有吗？——罕见“雷打雪”的破例密码与 3 公里消音圈",
+                "全美 30 年观测每冬仅约 6.3 次纯雷打雪；就算劈在几公里外，漫天飞雪也会把雷声吞没",
+            )
+        ]
+
+        els.append(card(20, 68, 352, 422))
+        els.append(pill(32, 80, "A. 破例触发“冬雷/雷打雪”的两大特种机关", fg=PURPLE, bg=PURPLE_SOFT, w=288, h=22, size=11.5))
+
+        els.append(card(34, 112, 324, 174, rx=8, fill="#faf7ff", stroke=PURPLE, sw=1.1))
+        els.append(txt(44, 134, "① 寒潮扫过不冻暖海/大湖（日本海 / 烟台威海 / 五大湖）", 10.8, PURPLE, weight="700"))
+        els.append(card(46, 244, 180, 26, rx=4, fill="#bae6fd", stroke=BLUE, sw=1.0))
+        els.append(txt(136, 261, "+10°C 不冻暖洋流 / 湖面", 10.5, BLUE, "middle", weight="700"))
+        els.append(card(232, 234, 114, 36, rx=4, fill="#e2e8f0", stroke=MUTED, sw=1.0))
+        els.append(txt(289, 257, "迎风海岸/山坡", 10.5, INK, "middle", weight="700"))
+
+        els.append(arrow(48, 204, 120, 204, stroke=BLUE, sw=2.2))
+        els.append(txt(48, 192, "-20°C 寒潮", 10.5, BLUE, weight="700"))
+        els.append(arrow(152, 240, 170, 188, stroke=RED, sw=2.0))
+        els.append(
+            f'<path d="M 140 184 Q 138 148 190 144 L 316 144 Q 342 152 334 184 Z" fill="#ede9fe" stroke="{PURPLE}" stroke-width="1.4"/>'
+        )
+        els.append(txt(238, 169, "低矮起电层仅距地 1.5~3 km！", 10.5, PURPLE, "middle", weight="700"))
+        els.append(_line(316, 234, 316, 202, stroke=INK, sw=2.2))
+        els.append(
+            f'<path d="M 316 202 L 306 192 L 320 188 L 310 178" fill="none" stroke="#dc2626" stroke-width="2.2"/>'
+        )
+        els.append(txt(232, 222, "高塔易触发上行超强正闪！", 10.5, RED, "middle", weight="700"))
+
+        els.append(card(34, 298, 324, 178, rx=8, fill=BLUE_SOFT, stroke=BLUE, sw=1.1))
+        els.append(txt(44, 320, "② 温带气旋西北侧“高架对流”（Market 30 年统计主力）", 10.8, BLUE, weight="700"))
+        els.append(txt(44, 344, "• 地面明明是 -1~-3°C 冰冷北风，逆温层把地面死死封住；", 10.8, BODY))
+        els.append(txt(44, 366, "• 但在 2 km 逆温盖子上方，丰沛暖湿急流猛烈爬坡，", 10.8, BODY))
+        els.append(txt(44, 388, "  在“半空楼阁”掀翻对流，造出霰粒闪电与鹅毛暴雪！", 10.8, INK, weight="700"))
+        els.append(txt(44, 414, "• 概率极低：全美 204 站 30 年仅录得年均 6.3 场纯雷打雪；", 10.8, PURPLE, weight="700"))
+        els.append(txt(44, 436, "• 一旦听见冬雷，往往意味着每小时 3~5 cm 特大暴雪核心", 10.8, RED, weight="700"))
+        els.append(txt(44, 458, "  就在头顶正上方（常位于气旋中心西北约 400 km 处）！", 10.8, BODY))
+
+        # Right card: Audible range comparison
+        els.append(card(388, 68, 352, 422))
+        els.append(pill(400, 80, "B. 就算打雷也传不远：雷声可听半径缩水 4 倍", fg=ORANGE, bg=ORANGE_SOFT, w=292, h=22, size=11.5))
+
+        cx, cy = 564, 224
+        els.append(card(402, 112, 324, 240, rx=8, fill="#ffffff", stroke=BORDER, sw=1.0))
+        els.append(txt(cx, 131, "夏日雷声可听圈：半径 ≈ 16 km（覆盖约 800 km²）", 10.8, ORANGE, "middle", weight="700"))
+        els.append(f'<circle cx="{cx}" cy="{cy}" r="82" fill="{ORANGE_SOFT}" stroke="{ORANGE}" stroke-width="1.6" stroke-dasharray="5 3"/>')
+
+        els.append(f'<circle cx="{cx}" cy="{cy}" r="20.5" fill="{BLUE_SOFT}" stroke="{BLUE}" stroke-width="2.2"/>')
+        els.append(txt(cx, cy + 5, "⚡", 14.0, RED, "middle"))
+        els.append(txt(cx, cy + 38, "冬雪可听圈：3~5 km", 10.8, BLUE, "middle", weight="700", halo=True))
+        els.append(txt(cx, cy + 56, "（仅约 50 km²）", 10.2, BODY, "middle", halo=True))
+        els.append(txt(cx, 332, "覆盖面积暴跌 93.7%，隔两条街就听不见！", 10.8, RED, "middle", weight="700"))
+
+        els.append(card(402, 362, 324, 114, rx=8, fill=TEAL_SOFT, stroke=TEAL, sw=1.1))
+        els.append(txt(414, 384, "为什么“雷打雪”的雷声总像闷在厚棉被里？", 11.2, TEAL, weight="700"))
+        els.append(txt(414, 408, "① 空中漫天蓬松雪片沿途散射、黏滞阻尼声波高频能量；", 10.8, BODY))
+        els.append(txt(414, 430, "② 地面松软积雪把掠地声波吞噬殆尽（无硬地反射助威）；", 10.8, BODY))
+        els.append(txt(414, 452, "③ 5 km 外的居民只见天边蓝白一闪，耳边却一片死寂！", 10.8, INK, weight="700"))
+
+        return figure(
+            H,
+            "罕见雷打雪的两大成因（暖海冷流与气旋高架对流）及雷声可听半径按比例缩水对比图",
+            "左栏展示冬季破例打雷的两种极端场景：西伯利亚寒潮掠过不冻暖海触发低顶对流与高塔上行正闪，以及温带气旋逆温层上方暖湿急流高架对流；右栏按1比4真实比例画出夏日雷声16千米可听圆与冬雪3至5千米可听圆，可听面积缩水超过九成。",
+            els,
+        )
+
+    def _build_raindrop_vs_snowflake_impact():
+        H = 510
+        anim_css = """
+  @keyframes rainPlunge {
+    0% { transform: translateY(0px); opacity: 1; }
+    35% { transform: translateY(118px); opacity: 1; }
+    42% { transform: translateY(118px); opacity: 0; }
+    100% { transform: translateY(118px); opacity: 0; }
+  }
+  @keyframes snowFloat {
+    0% { transform: translate(0px, 0px); }
+    50% { transform: translate(5px, 59px); }
+    100% { transform: translate(0px, 118px); }
+  }
+  .rain-anim {
+    animation: rainPlunge 2.6s linear 1 forwards;
+  }
+  .snow-anim {
+    animation: snowFloat 4.2s ease-in-out 1 forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .rain-anim, .snow-anim { animation: none !important; }
+  }
+        """
+        els = [
+            *header(
+                "为什么下雨“噼里啪啦”，下雪却“默默无声”？（第一重消音：慢 10 倍 + 零气泡）",
+                "同样 14 毫克降水：雨滴以 8 m/s 砸水激起千赫兹气泡鸣叫；雪片撑开降落伞以 0.8 m/s 轻放，动能小 100 倍",
+            ),
+        ]
+
+        els.append(card(20, 68, 352, 422))
+        els.append(pill(32, 80, "A. 夏雨落地：高速重锤 + 水下微气泡共振", fg=ORANGE, bg=ORANGE_SOFT, w=282, h=22, size=11.5))
+
+        els.append(card(34, 112, 324, 214, rx=8, fill="#fffaf5", stroke=BORDER, sw=1.0))
+        els.append(_line(92, 136, 92, 266, stroke=ORANGE, sw=1.4, dash="4 3"))
+        els.append(arrow(114, 144, 114, 246, stroke=RED, sw=2.0))
+        els.append(txt(128, 172, "直径 3 mm 雨滴 (14 mg)", 11.2, INK, weight="700"))
+        els.append(txt(128, 196, "终端速度 v ≈ 8.0 m/s", 11.2, RED, weight="700"))
+        els.append(txt(128, 220, "撞击动能 E = 448 μJ", 11.2, ORANGE, weight="700"))
+
+        els.append(card(48, 272, 296, 42, rx=4, fill="#bae6fd", stroke=BLUE, sw=1.2))
+        els.append(
+            f'<g class="rain-anim"><path d="M 92 132 C 86 142 85 150 92 150 C 99 150 98 142 92 132 Z" fill="{BLUE}" stroke="{INK}" stroke-width="1.0"/></g>'
+        )
+        els.append(f'<path d="M 72 272 Q 82 256 92 276 Q 102 256 112 272" fill="none" stroke="{BLUE}" stroke-width="1.8"/>')
+        els.append(f'<circle cx="92" cy="292" r="6.5" fill="#ffffff" stroke="{RED}" stroke-width="1.8"/>')
+        els.append(txt(222, 289, "← 卷入微气泡震荡 3~15 kHz", 10.5, RED, "middle", weight="700"))
+        els.append(txt(222, 307, "（“淅淅沥沥”水声真凶！）", 10.5, INK, "middle"))
+
+        els.append(card(34, 338, 324, 138, rx=8, fill=ORANGE_SOFT, stroke=ORANGE, sw=1.1))
+        els.append(txt(46, 360, "雨声吵闹的双重声源（Gunn & Kinzer / Minnaert）：", 11.0, ORANGE, weight="700"))
+        els.append(txt(46, 384, "① 固体硬敲击：雨滴紧实圆滑、风阻极小，8 m/s（时速", 10.8, BODY))
+        els.append(txt(46, 406, "  29 km）猛抽雨伞、铁皮、树叶，激发清脆宽频脉冲；", 10.8, BODY))
+        els.append(txt(46, 428, "② 液体“气泡钟声”：砸进水膜瞬间卷入微米级小气泡，气泡", 10.8, BODY))
+        els.append(txt(46, 450, "  被水压反复挤压弹回，唱出清脆的高频雨声！", 10.8, RED, weight="700"))
+
+        els.append(card(388, 68, 352, 422))
+        els.append(pill(400, 80, "B. 冬雪落地：空气降落伞 + 软着陆零撞击", fg=BLUE, bg=BLUE_SOFT, w=282, h=22, size=11.5))
+
+        els.append(card(402, 112, 324, 214, rx=8, fill="#f4f9fd", stroke=BORDER, sw=1.0))
+        els.append(_line(454, 138, 454, 264, stroke=BLUE, sw=1.2, dash="3 3"))
+        els.append(arrow(476, 166, 476, 210, stroke=BLUE, sw=1.8))
+        els.append(txt(490, 172, "同为 14 mg 鹅毛雪片 (~10 mm)", 10.8, INK, weight="700"))
+        els.append(txt(490, 196, "迎风面积大 15 倍，飘速仅 0.8 m/s", 10.8, BLUE, weight="700"))
+        els.append(txt(490, 220, "落地动能 4.48 μJ（小 100 倍！）", 10.8, TEAL, weight="700"))
+
+        els.append(
+            f'<path d="M 416 278 Q 470 268 530 276 Q 600 284 660 272 Q 694 268 712 278 L 712 314 L 416 314 Z" '
+            f'fill="#ffffff" stroke="{BLUE}" stroke-width="1.4"/>'
+        )
+        els.append(txt(564, 300, "松软新雪缓冲垫（无水花飞溅 · 零气泡震荡）", 10.8, BLUE, "middle", weight="700"))
+
+        els.append(f'<g class="snow-anim">{txt(454, 150, "❄", 15.5, BLUE, "middle", weight="700")}</g>')
+        els.append(txt(430, 272, "❄", 13.5, BLUE_LINE, "middle"))
+
+        els.append(card(402, 338, 324, 138, rx=8, fill=BLUE_SOFT, stroke=BLUE, sw=1.1))
+        els.append(txt(414, 360, "雪花天生自带“静音降落伞”（Locatelli & Hobbs 1974）：", 11.0, BLUE, weight="700"))
+        els.append(txt(414, 384, "① 六角枝状冰晶内部九成是空气，迎风阻力截面积暴增，", 10.8, BODY))
+        els.append(txt(414, 406, "  单晶飘速仅 0.3~0.6 m/s，大雪团也不过 0.5~1.4 m/s；", 10.8, BODY))
+        els.append(txt(414, 428, "② 动能按速度平方缩水：速度慢 10 倍 → 冲击能量剩 1%！", 10.8, TEAL, weight="700"))
+        els.append(txt(414, 450, "③ 固态枝杈轻搭地面，既敲不响树叶，也憋不出半颗气泡。", 10.8, INK, weight="700"))
+
+        return figure(
+            H,
+            "同等质量雨滴高速撞击气泡发声与蓬松雪片低速静默软着陆对比动态图解",
+            "左栏展示14毫克雨滴以8米每秒高速砸入水面，产生448微焦冲击动能并卷入微气泡激发3至15千赫兹鸣响；右栏展示同为14毫克的10毫米鹅毛雪片因迎风面积大，终端速度仅0.8米每秒，冲击动能骤降至4.48微焦（仅雨滴百分之一），单次动画演示两者悬殊下落与无声软着陆。",
+            els,
+            extra_css=anim_css,
+        )
+
+    def _build_snow_porous_absorber():
+        H = 510
+        els = [
+            *header(
+                "为什么下雪后连远处的马路都像被按了静音键？（第二重消音：90% 开孔吸音毯）",
+                "刚落下的新雪九成体积是连通空气迷宫，声波反射不足 1%；一旦融化结冰壳，街道瞬间恢复嘈杂",
+            )
+        ]
+
+        els.append(card(20, 68, 352, 422))
+        els.append(pill(32, 80, "A. 新雪微观剖面：铺满全城的录音棚吸音棉", fg=TEAL, bg=TEAL_SOFT, w=286, h=22, size=11.5))
+
+        els.append(card(34, 112, 324, 214, rx=8, fill="#f2fbf9", stroke=TEAL, sw=1.1))
+        els.append(txt(46, 134, "外界噪声波入射（车流 / 脚步 / 人声 500~4000 Hz）", 10.8, INK, weight="700"))
+        els.append(arrow(92, 146, 136, 192, stroke=RED, sw=2.4))
+        els.append(txt(46, 174, "100% 入射", 10.5, RED, weight="700"))
+        els.append(arrow(144, 192, 182, 152, stroke=MUTED, sw=1.2, dash="3 2"))
+        els.append(txt(262, 168, "反射声能 < 1% (|r| < 0.1)", 10.5, MUTED, "middle", weight="700"))
+
+        els.append(card(46, 198, 300, 114, rx=6, fill="#ffffff", stroke=BLUE, sw=1.3))
+        needles = [
+            (58, 214, 104, 238), (88, 210, 68, 252), (114, 216, 162, 234),
+            (148, 208, 130, 256), (68, 262, 124, 286), (122, 260, 100, 298),
+        ]
+        for x1, y1, x2, y2 in needles:
+            els.append(_line(x1, y1, x2, y2, stroke="#93c5fd", sw=2.2))
+
+        els.append(
+            f'<path d="M 136 198 C 152 220 122 238 150 256 C 172 272 148 292 174 302" '
+            f'fill="none" stroke="{RED}" stroke-width="2.0" stroke-dasharray="4 2"/>'
+        )
+        els.append(txt(260, 236, "孔隙率 φ ≈ 89%~93%！", 11.0, TEAL, "middle", weight="700"))
+        els.append(txt(260, 258, "0.08 mm 冰针迷宫黏滞摩擦", 10.5, BODY, "middle"))
+        els.append(txt(260, 280, "声波 → 耗散为微弱热能", 10.5, RED, "middle", weight="700"))
+
+        els.append(card(34, 338, 324, 138, rx=8, fill=TEAL_SOFT, stroke=TEAL, sw=1.1))
+        els.append(txt(46, 360, "美国陆军寒区实验室（CRREL μCT 扫描与外场实测）：", 11.0, TEAL, weight="700"))
+        els.append(txt(46, 384, "• 刚落新雪超 90% 体积全是彼此连通的微米级空气通道，", 10.8, BODY))
+        els.append(txt(46, 406, "  比表面积达 64 mm⁻¹（每 cm³ 藏着 640 cm² 摩擦壁）；", 10.8, BODY))
+        els.append(txt(46, 428, "• 地面铺 25 cm 新雪后，声幅按距离 -1.6 次方陡降（夏地", 10.8, BODY))
+        els.append(txt(46, 450, "  仅 -1.2 次方），传出 100 m 后声压峰值直接缩水约 10 倍！", 10.8, INK, weight="700"))
+
+        els.append(card(388, 68, 352, 422))
+        els.append(pill(400, 80, "B. 吸声系数 α 曲线：新雪 vs 隔夜陈雪 vs 硬冰壳", fg=BLUE, bg=BLUE_SOFT, w=294, h=22, size=11.5))
+
+        gx0, gy0, gw, gh = 452, 138, 256, 178
+        els.append(card(402, 112, 324, 232, rx=8, fill="#ffffff", stroke=BORDER, sw=1.0))
+        els.append(_line(gx0, gy0, gx0, gy0 + gh, stroke=INK, sw=1.2))
+        els.append(_line(gx0, gy0 + gh, gx0 + gw, gy0 + gh, stroke=INK, sw=1.2))
+
+        for a_val in [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]:
+            yy = gy0 + gh - a_val * gh
+            els.append(_line(gx0 - 4, yy, gx0 + gw, yy, stroke=HAIRLINE, sw=0.8, dash="3 3"))
+            els.append(txt(gx0 - 8, yy + 4, f"{a_val:.1f}", 10.5, MUTED, "end"))
+        els.append(txt(412, gy0 - 10, "吸声系数 α（1.0=全吸）", 10.8, MUTED))
+
+        freqs = [(0.0, "125Hz"), (0.25, "250"), (0.50, "500"), (0.75, "1kHz"), (1.0, "2~4kHz")]
+        for fx, flbl in freqs:
+            xx = gx0 + fx * gw
+            els.append(_line(xx, gy0 + gh, xx, gy0 + gh + 4, stroke=INK, sw=1.1))
+            els.append(txt(xx, gy0 + gh + 18, flbl, 10.2, BODY, "middle"))
+
+        def _poly(vals, col, dash=None):
+            p_str = " ".join(
+                f"{gx0 + (i / (len(vals) - 1)) * gw:.1f},{gy0 + gh - v * gh:.1f}"
+                for i, v in enumerate(vals)
+            )
+            d_attr = f' stroke-dasharray="{dash}"' if dash else ""
+            return f'<polyline points="{p_str}" fill="none" stroke="{col}" stroke-width="2.5"{d_attr}/>'
+
+        els.append(_poly([0.18, 0.38, 0.68, 0.85, 0.90], TEAL))
+        els.append(txt(gx0 + gw - 4, gy0 + gh - 0.90 * gh - 7, "刚落蓬松新雪 (φ≈90%, α≈0.7~0.9)", 10.2, TEAL, "end", weight="700"))
+
+        els.append(_poly([0.10, 0.22, 0.38, 0.49, 0.54], BLUE, dash="5 3"))
+        els.append(txt(gx0 + gw - 4, gy0 + gh - 0.54 * gh - 7, "烧结压实陈雪 (φ≈70%)", 10.2, BLUE, "end", weight="700"))
+
+        els.append(_poly([0.03, 0.04, 0.05, 0.06, 0.07], RED))
+        els.append(txt(gx0 + gw - 4, gy0 + gh - 0.08 * gh - 8, "融冻硬冰壳 / 水泥地 (α<0.08 全反射)", 10.2, RED, "end", weight="700"))
+
+        els.append(card(402, 354, 324, 122, rx=8, fill=BLUE_SOFT, stroke=BLUE, sw=1.1))
+        els.append(txt(414, 376, "为什么下雪第一晚万籁俱寂，两天后又变吵了？", 11.2, BLUE, weight="700"))
+        els.append(txt(414, 400, "• 初雪夜：5~10 cm 新雪对人耳最敏感的 500~4000 Hz 噪", 10.8, BODY))
+        els.append(txt(414, 422, "  声吸收率达 70%~90%，堪比给整座城市铺满专业吸音棉！", 10.8, TEAL, weight="700"))
+        els.append(txt(414, 444, "• 隔天烧结/融冻：冰晶颈部焊合变粗、表层化水结成闭孔冰", 10.8, BODY))
+        els.append(txt(414, 466, "  壳，声波钻不进去直接弹回空中，清冷的回声瞬间归来。", 10.8, RED, weight="700"))
+
+        return figure(
+            H,
+            "新雪90%连通孔隙微米冰针黏滞吸声机理与新雪陈雪硬冰壳吸声系数频率曲线对比图",
+            "左栏根据CRREL显微CT数据绘制新雪89%至93%连通孔隙与0.08毫米冰针迷宫，展示入射声波反射不足1%、在孔隙内摩擦耗散为微热；右栏对比125赫兹至4千赫兹范围内蓬松新雪（吸声系数达0.7至0.9）、烧结陈雪与融冻硬冰壳（低于0.08）的吸声曲线。",
+            els,
+        )
+
+    @register(
+        "winter-snow-no-thunder",
+        "冬雪无雷与雪夜寂静五步图解：夏冬云动力对比、水汽断崖与起电相图、罕见雷打雪与3公里消音圈、雨雪落地动能与气泡对比动画、新雪90%孔隙吸声曲线",
+        "science_tech",
+    )
+    def build_winter_snow_no_thunder():
+        _verify_winter_snow_assertions()
+        write_svg(SUBDIR, "summer-convective-generator-vs-winter-nimbostratus.svg", _build_summer_vs_winter_clouds())
+        write_svg(SUBDIR, "clausius-clapeyron-moisture-and-graupel-charging-threshold.svg", _build_moisture_and_charging_map())
+        write_svg(SUBDIR, "thundersnow-three-exceptions-and-muffled-audible-ring.svg", _build_thundersnow_and_audible_ring())
+        write_svg(SUBDIR, "raindrop-splash-bubble-vs-snowflake-feather-landing.svg", _build_raindrop_vs_snowflake_impact())
+        write_svg(SUBDIR, "fresh-snow-porous-acoustic-absorber-and-aging.svg", _build_snow_porous_absorber())
+
+
+_register_winter_snow_no_thunder()
+
+
 
 
