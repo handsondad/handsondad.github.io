@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="496" viewBox="0 0 760 496" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">二次型椭圆在标准轴、30度旋转轴与等面积错切斜轴下的系数与不变量对比</title>
+<desc id="desc">三幅面板绘出完全相同的物理椭圆5x²+y²=1在标准正交网格、逆时针旋转30度正交网格与det M=1水平错切斜网格下的真实坐标线，底部核对表证明迹A+C仅在旋转下守住6而在错切下破功为11，判别式B²-4AC在全部等面积线性变换下恒等于-20。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="495" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">二次型不变量实测：同一个椭圆换三套坐标尺，谁破功了、谁纹丝不动？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">椭圆 5x² + y² = 1 实体毫发未动；旋转坐标轴保住 A+C 与 B²−4AC，等面积错切击碎 A+C 却撼不动判别式 −20</text>
+<clipPath id="clip-rot0"><rect x="30" y="102" width="208" height="192" rx="6"/></clipPath>
+<rect x="20" y="66" width="228" height="286" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="30.0" y="75.0" width="208" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="134.0" y="90.0" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">① 原始正交坐标 (x, y)</text>
+<g clip-path="url(#clip-rot0)">
+<rect x="30" y="102" width="208" height="192" fill="#f8fafc"/>
+<line x1="32.0" y1="100" x2="32.0" y2="296" stroke="#cbd5e1" stroke-width="0.8"/>
+<line x1="28" y1="300.0" x2="240" y2="300.0" stroke="#cbd5e1" stroke-width="0.8"/>
+<line x1="66.0" y1="100" x2="66.0" y2="296" stroke="#cbd5e1" stroke-width="0.8"/>
+<line x1="28" y1="266.0" x2="240" y2="266.0" stroke="#cbd5e1" stroke-width="0.8"/>
+<line x1="100.0" y1="100" x2="100.0" y2="296" stroke="#cbd5e1" stroke-width="0.8"/>
+<line x1="28" y1="232.0" x2="240" y2="232.0" stroke="#cbd5e1" stroke-width="0.8"/>
+<line x1="134.0" y1="100" x2="134.0" y2="296" stroke="#1d6fa5" stroke-width="1.5"/>
+<line x1="28" y1="198.0" x2="240" y2="198.0" stroke="#1d6fa5" stroke-width="1.5"/>
+<line x1="168.0" y1="100" x2="168.0" y2="296" stroke="#cbd5e1" stroke-width="0.8"/>
+<line x1="28" y1="164.0" x2="240" y2="164.0" stroke="#cbd5e1" stroke-width="0.8"/>
+<line x1="202.0" y1="100" x2="202.0" y2="296" stroke="#cbd5e1" stroke-width="0.8"/>
+<line x1="28" y1="130.0" x2="240" y2="130.0" stroke="#cbd5e1" stroke-width="0.8"/>
+<line x1="236.0" y1="100" x2="236.0" y2="296" stroke="#cbd5e1" stroke-width="0.8"/>
+<line x1="28" y1="96.0" x2="240" y2="96.0" stroke="#cbd5e1" stroke-width="0.8"/>
+<line x1="134.0" y1="198.0" x2="212.2" y2="198.0" stroke="#1d6fa5" stroke-width="2" marker-end="url(#arr-blue)"/>
+<line x1="134.0" y1="198.0" x2="134.0" y2="119.8" stroke="#1d6fa5" stroke-width="2" marker-end="url(#arr-blue)"/>
+<polygon points="164.4,198.0 164.3,192.1 163.9,186.2 163.4,180.4 162.6,174.7 161.6,169.3 160.3,164.0 158.9,159.0 157.3,154.3 155.5,149.9 153.5,145.9 151.4,142.3 149.2,139.1 146.9,136.4 144.4,134.1 141.9,132.3 139.3,131.0 136.7,130.3 134.0,130.0 131.3,130.3 128.7,131.0 126.1,132.3 123.6,134.1 121.1,136.4 118.8,139.1 116.6,142.3 114.5,145.9 112.5,149.9 110.7,154.3 109.1,159.0 107.7,164.0 106.4,169.3 105.4,174.7 104.6,180.4 104.1,186.2 103.7,192.1 103.6,198.0 103.7,203.9 104.1,209.8 104.6,215.6 105.4,221.3 106.4,226.7 107.7,232.0 109.1,237.0 110.7,241.7 112.5,246.1 114.5,250.1 116.6,253.7 118.8,256.9 121.1,259.6 123.6,261.9 126.1,263.7 128.7,265.0 131.3,265.7 134.0,266.0 136.7,265.7 139.3,265.0 141.9,263.7 144.4,261.9 146.9,259.6 149.2,256.9 151.4,253.7 153.5,250.1 155.5,246.1 157.3,241.7 158.9,237.0 160.3,232.0 161.6,226.7 162.6,221.3 163.4,215.6 163.9,209.8 164.3,203.9 164.4,198.0" fill="#1d6fa5" fill-opacity="0.14" stroke="#0f172a" stroke-width="2.3"/>
+<text x="218.2" y="202.0" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700" class="halo">x</text>
+<text x="140.0" y="121.8" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700" class="halo">y</text>
+</g>
+<text x="134.0" y="314" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">5x² + y² = 1</text>
+<text x="134.0" y="336" font-size="11.5" fill="#64748b" text-anchor="middle">系数 (A, B, C) = (5, 0, 1)</text>
+<clipPath id="clip-rot30"><rect x="276" y="102" width="208" height="192" rx="6"/></clipPath>
+<rect x="266" y="66" width="228" height="286" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="276.0" y="75.0" width="208" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="380.0" y="90.0" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="600">② 逆时针转 30° 轴 (x′, y′)</text>
+<g clip-path="url(#clip-rot30)">
+<rect x="276" y="102" width="208" height="192" fill="#f8fafc"/>
+<line x1="366.5" y1="378.6" x2="216.9" y2="119.4" stroke="#cbd5e1" stroke-width="0.85"/>
+<line x1="301.4" y1="361.1" x2="560.6" y2="211.5" stroke="#cbd5e1" stroke-width="0.85"/>
+<line x1="395.9" y1="361.6" x2="246.3" y2="102.4" stroke="#cbd5e1" stroke-width="0.85"/>
+<line x1="284.4" y1="331.7" x2="543.6" y2="182.1" stroke="#cbd5e1" stroke-width="0.85"/>
+<line x1="425.4" y1="344.6" x2="275.8" y2="85.4" stroke="#cbd5e1" stroke-width="0.85"/>
+<line x1="267.4" y1="302.2" x2="526.6" y2="152.6" stroke="#cbd5e1" stroke-width="0.85"/>
+<line x1="454.8" y1="327.6" x2="305.2" y2="68.4" stroke="#18794e" stroke-width="1.6"/>
+<line x1="250.4" y1="272.8" x2="509.6" y2="123.2" stroke="#18794e" stroke-width="1.6"/>
+<line x1="484.2" y1="310.6" x2="334.6" y2="51.4" stroke="#cbd5e1" stroke-width="0.85"/>
+<line x1="233.4" y1="243.4" x2="492.6" y2="93.8" stroke="#cbd5e1" stroke-width="0.85"/>
+<line x1="513.7" y1="293.6" x2="364.1" y2="34.4" stroke="#cbd5e1" stroke-width="0.85"/>
+<line x1="216.4" y1="213.9" x2="475.6" y2="64.3" stroke="#cbd5e1" stroke-width="0.85"/>
+<line x1="543.1" y1="276.6" x2="393.5" y2="17.4" stroke="#cbd5e1" stroke-width="0.85"/>
+<line x1="199.4" y1="184.5" x2="458.6" y2="34.9" stroke="#cbd5e1" stroke-width="0.85"/>
+<line x1="380.0" y1="198.0" x2="447.7" y2="158.9" stroke="#18794e" stroke-width="2" marker-end="url(#arr-green)"/>
+<line x1="380.0" y1="198.0" x2="340.9" y2="130.3" stroke="#18794e" stroke-width="2" marker-end="url(#arr-green)"/>
+<polygon points="410.4,198.0 410.3,192.1 409.9,186.2 409.4,180.4 408.6,174.7 407.6,169.3 406.3,164.0 404.9,159.0 403.3,154.3 401.5,149.9 399.5,145.9 397.4,142.3 395.2,139.1 392.9,136.4 390.4,134.1 387.9,132.3 385.3,131.0 382.7,130.3 380.0,130.0 377.3,130.3 374.7,131.0 372.1,132.3 369.6,134.1 367.1,136.4 364.8,139.1 362.6,142.3 360.5,145.9 358.5,149.9 356.7,154.3 355.1,159.0 353.7,164.0 352.4,169.3 351.4,174.7 350.6,180.4 350.1,186.2 349.7,192.1 349.6,198.0 349.7,203.9 350.1,209.8 350.6,215.6 351.4,221.3 352.4,226.7 353.7,232.0 355.1,237.0 356.7,241.7 358.5,246.1 360.5,250.1 362.6,253.7 364.8,256.9 367.1,259.6 369.6,261.9 372.1,263.7 374.7,265.0 377.3,265.7 380.0,266.0 382.7,265.7 385.3,265.0 387.9,263.7 390.4,261.9 392.9,259.6 395.2,256.9 397.4,253.7 399.5,250.1 401.5,246.1 403.3,241.7 404.9,237.0 406.3,232.0 407.6,226.7 408.6,221.3 409.4,215.6 409.9,209.8 410.3,203.9 410.4,198.0" fill="#1d6fa5" fill-opacity="0.14" stroke="#0f172a" stroke-width="2.3"/>
+<text x="453.7" y="162.9" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700" class="halo">x′</text>
+<text x="346.9" y="132.3" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700" class="halo">y′</text>
+</g>
+<text x="380.0" y="314" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">4x′² − 2√3x′y′ + 2y′² = 1</text>
+<text x="380.0" y="336" font-size="11.5" fill="#64748b" text-anchor="middle">系数 (A, B, C) = (4, −3.46, 2)</text>
+<clipPath id="clip-shear"><rect x="522" y="102" width="208" height="192" rx="6"/></clipPath>
+<rect x="512" y="66" width="228" height="286" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="522.0" y="75.0" width="208" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="626.0" y="90.0" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="600">③ 等面积错切斜轴 (x″, y″)</text>
+<g clip-path="url(#clip-shear)">
+<rect x="522" y="102" width="208" height="192" fill="#f8fafc"/>
+<line x1="374.4" y1="347.6" x2="673.6" y2="48.4" stroke="#cbd5e1" stroke-width="0.85"/>
+<line x1="520" y1="300.0" x2="732" y2="300.0" stroke="#cbd5e1" stroke-width="0.85"/>
+<line x1="408.4" y1="347.6" x2="707.6" y2="48.4" stroke="#cbd5e1" stroke-width="0.85"/>
+<line x1="520" y1="266.0" x2="732" y2="266.0" stroke="#cbd5e1" stroke-width="0.85"/>
+<line x1="442.4" y1="347.6" x2="741.6" y2="48.4" stroke="#cbd5e1" stroke-width="0.85"/>
+<line x1="520" y1="232.0" x2="732" y2="232.0" stroke="#cbd5e1" stroke-width="0.85"/>
+<line x1="476.4" y1="347.6" x2="775.6" y2="48.4" stroke="#c25014" stroke-width="1.6"/>
+<line x1="520" y1="198.0" x2="732" y2="198.0" stroke="#c25014" stroke-width="1.6"/>
+<line x1="510.4" y1="347.6" x2="809.6" y2="48.4" stroke="#cbd5e1" stroke-width="0.85"/>
+<line x1="520" y1="164.0" x2="732" y2="164.0" stroke="#cbd5e1" stroke-width="0.85"/>
+<line x1="544.4" y1="347.6" x2="843.6" y2="48.4" stroke="#cbd5e1" stroke-width="0.85"/>
+<line x1="520" y1="130.0" x2="732" y2="130.0" stroke="#cbd5e1" stroke-width="0.85"/>
+<line x1="578.4" y1="347.6" x2="877.6" y2="48.4" stroke="#cbd5e1" stroke-width="0.85"/>
+<line x1="520" y1="96.0" x2="732" y2="96.0" stroke="#cbd5e1" stroke-width="0.85"/>
+<line x1="626.0" y1="198.0" x2="704.2" y2="198.0" stroke="#c25014" stroke-width="2" marker-end="url(#arr-orange)"/>
+<line x1="626.0" y1="198.0" x2="683.8" y2="140.2" stroke="#c25014" stroke-width="2" marker-end="url(#arr-orange)"/>
+<polygon points="656.4,198.0 656.3,192.1 655.9,186.2 655.4,180.4 654.6,174.7 653.6,169.3 652.3,164.0 650.9,159.0 649.3,154.3 647.5,149.9 645.5,145.9 643.4,142.3 641.2,139.1 638.9,136.4 636.4,134.1 633.9,132.3 631.3,131.0 628.7,130.3 626.0,130.0 623.3,130.3 620.7,131.0 618.1,132.3 615.6,134.1 613.1,136.4 610.8,139.1 608.6,142.3 606.5,145.9 604.5,149.9 602.7,154.3 601.1,159.0 599.7,164.0 598.4,169.3 597.4,174.7 596.6,180.4 596.1,186.2 595.7,192.1 595.6,198.0 595.7,203.9 596.1,209.8 596.6,215.6 597.4,221.3 598.4,226.7 599.7,232.0 601.1,237.0 602.7,241.7 604.5,246.1 606.5,250.1 608.6,253.7 610.8,256.9 613.1,259.6 615.6,261.9 618.1,263.7 620.7,265.0 623.3,265.7 626.0,266.0 628.7,265.7 631.3,265.0 633.9,263.7 636.4,261.9 638.9,259.6 641.2,256.9 643.4,253.7 645.5,250.1 647.5,246.1 649.3,241.7 650.9,237.0 652.3,232.0 653.6,226.7 654.6,221.3 655.4,215.6 655.9,209.8 656.3,203.9 656.4,198.0" fill="#1d6fa5" fill-opacity="0.14" stroke="#0f172a" stroke-width="2.3"/>
+<text x="710.2" y="202.0" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700" class="halo">x″</text>
+<text x="689.8" y="142.2" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700" class="halo">y″</text>
+</g>
+<text x="626.0" y="314" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">5x″² + 10x″y″ + 6y″² = 1</text>
+<text x="626.0" y="336" font-size="11.5" fill="#64748b" text-anchor="middle">系数 (A, B, C) = (5, 10, 6)</text>
+<rect x="20" y="364" width="720" height="120" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="20" y="364" width="720" height="28" rx="8" fill="#f1f5f9"/>
+<text x="36" y="383" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700">候选代数表达式</text>
+<text x="245" y="383" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="700">① 标准坐标</text>
+<text x="425" y="383" font-size="12" fill="#18794e" text-anchor="middle" font-weight="700">② 正交旋转 SO(2)</text>
+<text x="615" y="383" font-size="12" fill="#c25014" text-anchor="middle" font-weight="700">③ 等面积错切 SL(2)</text>
+<line x1="28" y1="426" x2="732" y2="426" stroke="#cbd5e1" stroke-width="0.9"/>
+<text x="36" y="414" font-size="12" fill="#1e293b" text-anchor="start" font-weight="600">迹 A + C（头尾系数和）</text>
+<text x="245" y="414" font-size="12" fill="#0f172a" text-anchor="middle" class="mono">5 + 1 = 6</text>
+<text x="425" y="414" font-size="12" fill="#18794e" text-anchor="middle" font-weight="700">4 + 2 = 6  ✓ 守恒</text>
+<text x="615" y="414" font-size="12" fill="#b91c1c" text-anchor="middle" font-weight="700">5 + 6 = 11  ✗ 破功!</text>
+<text x="36" y="450" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700">判别式 Δ = B² − 4AC</text>
+<text x="245" y="450" font-size="12" fill="#0f172a" text-anchor="middle" class="mono">0 − 20 = −20</text>
+<text x="425" y="450" font-size="12" fill="#18794e" text-anchor="middle" font-weight="700">12 − 32 = −20  ✓ 守恒</text>
+<text x="615" y="450" font-size="12" fill="#18794e" text-anchor="middle" font-weight="700">100 − 120 = −20  ✓ 锁死!</text>
+<text x="380" y="474" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="600">通则：任意线性变换 x = Mx′ 下 Δ′ = (det M)²·Δ（权重 w = 2 的相对不变量；det M = ±1 时绝对不变）</text>
+</svg>

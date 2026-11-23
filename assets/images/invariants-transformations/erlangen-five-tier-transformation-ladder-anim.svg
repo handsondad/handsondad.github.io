@@ -1,0 +1,184 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="554" viewBox="0 0 760 554" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">克莱因爱尔朗根纲领五级几何变换群阶梯与不变量幸存核对矩阵</title>
+<desc id="desc">上方依次展示同一个带圆孔及底边四共线点的正方形在欧氏刚体群、相似群、仿射群、射影群与拓扑同胚群下的真实几何变形；下方五乘五核对矩阵展示距离、角度、平行与中点、四点交比CR=2及洞数g=1如何随变换群扩大逐层淘汰并留下最深层不变量。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes stagePulse {
+    0%, 100% { stroke-width: 1.2px; }
+    8%, 18% { stroke-width: 2.6px; }
+  }
+  .st-1 { animation: stagePulse 9s ease-in-out 0.0s 1 forwards; }
+  .st-2 { animation: stagePulse 9s ease-in-out 1.6s 1 forwards; }
+  .st-3 { animation: stagePulse 9s ease-in-out 3.2s 1 forwards; }
+  .st-4 { animation: stagePulse 9s ease-in-out 4.8s 1 forwards; }
+  .st-5 { animation: stagePulse 9s ease-in-out 6.4s 1 forwards; }
+  @media (prefers-reduced-motion: reduce) {
+    .st-1, .st-2, .st-3, .st-4, .st-5 { animation: none !important; }
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="553" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">克莱因《爱尔朗根纲领》（1872）：五级变换群大筛子，层层淘汰后还剩什么？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">变换群越扩越大（允许折腾得越狠），幸存的不变量就越少、越触及空间最底层的骨架</text>
+<rect x="20" y="66" width="136" height="222" rx="10" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.2" class="st-1"/>
+<rect x="26.0" y="74.0" width="124" height="21" rx="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="88.0" y="88.3" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">① 欧氏刚体 E(2)</text>
+<text x="88.0" y="111" font-size="11.5" fill="#64748b" text-anchor="middle">平移 + 旋转 + 反射</text>
+<polygon points="65.5,230.1 68.9,229.0 72.2,227.9 75.5,226.9 78.8,225.8 82.2,224.7 85.5,223.6 88.8,222.5 92.2,221.5 95.5,220.4 98.8,219.3 102.1,218.2 105.5,217.1 108.8,216.0 112.1,215.0 115.5,213.9 118.8,212.8 122.1,211.7 125.4,210.6 128.8,209.6 132.1,208.5 131.0,205.1 129.9,201.8 128.9,198.5 127.8,195.2 126.7,191.8 125.6,188.5 124.5,185.2 123.5,181.8 122.4,178.5 121.3,175.2 120.2,171.9 119.1,168.5 118.0,165.2 117.0,161.9 115.9,158.5 114.8,155.2 113.7,151.9 112.6,148.6 111.6,145.2 110.5,141.9 107.1,143.0 103.8,144.1 100.5,145.1 97.2,146.2 93.8,147.3 90.5,148.4 87.2,149.5 83.8,150.5 80.5,151.6 77.2,152.7 73.9,153.8 70.5,154.9 67.2,156.0 63.9,157.0 60.5,158.1 57.2,159.2 53.9,160.3 50.6,161.4 47.2,162.4 43.9,163.5 45.0,166.9 46.1,170.2 47.1,173.5 48.2,176.8 49.3,180.2 50.4,183.5 51.5,186.8 52.5,190.2 53.6,193.5 54.7,196.8 55.8,200.1 56.9,203.5 58.0,206.8 59.0,210.1 60.1,213.5 61.2,216.8 62.3,220.1 63.4,223.4 64.4,226.8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.9"/>
+<polygon points="102.6,181.2 101.9,179.4 100.9,177.6 99.7,176.0 98.3,174.6 96.7,173.3 95.0,172.3 93.1,171.5 91.2,170.9 89.2,170.6 87.2,170.6 85.2,170.9 83.2,171.4 81.4,172.1 79.6,173.1 78.0,174.3 76.6,175.7 75.3,177.3 74.3,179.0 73.5,180.9 72.9,182.8 72.6,184.8 72.6,186.8 72.9,188.8 73.4,190.8 74.1,192.6 75.1,194.4 76.3,196.0 77.7,197.4 79.3,198.7 81.0,199.7 82.9,200.5 84.8,201.1 86.8,201.4 88.8,201.4 90.8,201.1 92.8,200.6 94.6,199.9 96.4,198.9 98.0,197.7 99.4,196.3 100.7,194.7 101.7,193.0 102.5,191.1 103.1,189.2 103.4,187.2 103.4,185.2 103.1,183.2 102.6,181.2" fill="#ffffff" stroke="#0f172a" stroke-width="1.5"/>
+<circle cx="65.5" cy="230.1" r="2.6" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="87.7" cy="222.9" r="2.6" fill="#1d6fa5" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="98.8" cy="219.3" r="3.3" fill="#b91c1c" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="132.1" cy="208.5" r="2.6" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+<text x="88.0" y="258" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">保长 · 保角 · 保圆</text>
+<text x="88.0" y="276" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">CR = 2, 洞 g = 1</text>
+<circle cx="161" cy="178" r="7.5" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.9"/>
+<text x="161" y="182" font-size="11.5" fill="#475569" text-anchor="middle" font-weight="700">⊂</text>
+<rect x="166" y="66" width="136" height="222" rx="10" fill="#ffffff" stroke="#0f766e" stroke-width="1.2" class="st-2"/>
+<rect x="172.0" y="74.0" width="124" height="21" rx="10.5" fill="#f0fdfa" stroke="#0f766e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="234.0" y="88.3" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="600">② 相似群 Sim(2)</text>
+<text x="234.0" y="111" font-size="11.5" fill="#64748b" text-anchor="middle">+ 均匀放大缩小</text>
+<polygon points="204.9,202.8 207.1,203.4 209.4,204.1 211.7,204.7 214.0,205.3 216.3,205.9 218.6,206.5 220.9,207.1 223.2,207.8 225.5,208.4 227.8,209.0 230.1,209.6 232.4,210.2 234.7,210.8 237.0,211.5 239.3,212.1 241.6,212.7 243.9,213.3 246.2,213.9 248.5,214.5 250.8,215.1 251.4,212.9 252.1,210.6 252.7,208.3 253.3,206.0 253.9,203.7 254.5,201.4 255.1,199.1 255.8,196.8 256.4,194.5 257.0,192.2 257.6,189.9 258.2,187.6 258.8,185.3 259.5,183.0 260.1,180.7 260.7,178.4 261.3,176.1 261.9,173.8 262.5,171.5 263.1,169.2 260.9,168.6 258.6,167.9 256.3,167.3 254.0,166.7 251.7,166.1 249.4,165.5 247.1,164.9 244.8,164.2 242.5,163.6 240.2,163.0 237.9,162.4 235.6,161.8 233.3,161.2 231.0,160.5 228.7,159.9 226.4,159.3 224.1,158.7 221.8,158.1 219.5,157.5 217.2,156.9 216.6,159.1 215.9,161.4 215.3,163.7 214.7,166.0 214.1,168.3 213.5,170.6 212.9,172.9 212.2,175.2 211.6,177.5 211.0,179.8 210.4,182.1 209.8,184.4 209.2,186.7 208.5,189.0 207.9,191.3 207.3,193.6 206.7,195.9 206.1,198.2 205.5,200.5" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.9"/>
+<polygon points="244.1,188.7 244.4,187.4 244.5,186.0 244.4,184.6 244.1,183.3 243.7,182.0 243.1,180.8 242.3,179.6 241.4,178.6 240.4,177.7 239.2,176.9 238.0,176.3 236.7,175.9 235.4,175.6 234.0,175.5 232.6,175.6 231.3,175.9 230.0,176.3 228.8,176.9 227.6,177.7 226.6,178.6 225.7,179.6 224.9,180.8 224.3,182.0 223.9,183.3 223.6,184.6 223.5,186.0 223.6,187.4 223.9,188.7 224.3,190.0 224.9,191.2 225.7,192.4 226.6,193.4 227.6,194.3 228.8,195.1 230.0,195.7 231.3,196.1 232.6,196.4 234.0,196.5 235.4,196.4 236.7,196.1 238.0,195.7 239.2,195.1 240.4,194.3 241.4,193.4 242.3,192.4 243.1,191.2 243.7,190.0 244.1,188.7" fill="#ffffff" stroke="#0f172a" stroke-width="1.5"/>
+<circle cx="204.9" cy="202.8" r="2.6" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="220.2" cy="206.9" r="2.6" fill="#1d6fa5" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="227.8" cy="209.0" r="3.3" fill="#b91c1c" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="250.8" cy="215.1" r="2.6" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+<text x="234.0" y="258" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">长度变 · 保角保形</text>
+<text x="234.0" y="276" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">CR = 2, 洞 g = 1</text>
+<circle cx="307" cy="178" r="7.5" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.9"/>
+<text x="307" y="182" font-size="11.5" fill="#475569" text-anchor="middle" font-weight="700">⊂</text>
+<rect x="312" y="66" width="136" height="222" rx="10" fill="#ffffff" stroke="#18794e" stroke-width="1.2" class="st-3"/>
+<rect x="318.0" y="74.0" width="124" height="21" rx="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="380.0" y="88.3" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="600">③ 仿射群 Aff(2)</text>
+<text x="380.0" y="111" font-size="11.5" fill="#64748b" text-anchor="middle">+ 拉伸与平行错切</text>
+<polygon points="338.7,211.2 341.5,211.2 344.3,211.2 347.1,211.2 349.9,211.2 352.7,211.2 355.5,211.2 358.3,211.2 361.1,211.2 363.9,211.2 366.7,211.2 369.5,211.2 372.3,211.2 375.1,211.2 377.9,211.2 380.7,211.2 383.5,211.2 386.3,211.2 389.1,211.2 391.9,211.2 394.7,211.2 396.0,208.7 397.4,206.2 398.7,203.6 400.0,201.1 401.4,198.6 402.7,196.1 404.0,193.6 405.3,191.0 406.7,188.5 408.0,186.0 409.3,183.5 410.7,181.0 412.0,178.4 413.3,175.9 414.6,173.4 416.0,170.9 417.3,168.4 418.6,165.8 420.0,163.3 421.3,160.8 418.5,160.8 415.7,160.8 412.9,160.8 410.1,160.8 407.3,160.8 404.5,160.8 401.7,160.8 398.9,160.8 396.1,160.8 393.3,160.8 390.5,160.8 387.7,160.8 384.9,160.8 382.1,160.8 379.3,160.8 376.5,160.8 373.7,160.8 370.9,160.8 368.1,160.8 365.3,160.8 364.0,163.3 362.6,165.8 361.3,168.4 360.0,170.9 358.6,173.4 357.3,175.9 356.0,178.4 354.7,181.0 353.3,183.5 352.0,186.0 350.7,188.5 349.3,191.0 348.0,193.6 346.7,196.1 345.4,198.6 344.0,201.1 342.7,203.6 341.4,206.2 340.0,208.7" fill="#e7f6ee" stroke="#18794e" stroke-width="1.9"/>
+<polygon points="392.3,186.0 393.0,184.6 393.4,183.1 393.6,181.8 393.6,180.5 393.3,179.3 392.8,178.2 392.1,177.2 391.2,176.4 390.1,175.8 388.8,175.3 387.4,175.0 385.9,174.9 384.2,175.0 382.5,175.3 380.7,175.8 378.9,176.4 377.1,177.2 375.4,178.2 373.8,179.3 372.3,180.5 370.9,181.8 369.6,183.1 368.5,184.6 367.7,186.0 367.0,187.4 366.6,188.9 366.4,190.2 366.4,191.5 366.7,192.7 367.2,193.8 367.9,194.8 368.8,195.6 369.9,196.2 371.2,196.7 372.6,197.0 374.1,197.1 375.8,197.0 377.5,196.7 379.3,196.2 381.1,195.6 382.9,194.8 384.6,193.8 386.2,192.7 387.7,191.5 389.1,190.2 390.4,188.9 391.5,187.4 392.3,186.0" fill="#ffffff" stroke="#0f172a" stroke-width="1.5"/>
+<circle cx="338.7" cy="211.2" r="2.6" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="357.4" cy="211.2" r="2.6" fill="#1d6fa5" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="366.7" cy="211.2" r="3.3" fill="#b91c1c" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="394.7" cy="211.2" r="2.6" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+<text x="380.0" y="258" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">圆变椭圆 · 保中点</text>
+<text x="380.0" y="276" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">CR = 2, 洞 g = 1</text>
+<circle cx="453" cy="178" r="7.5" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.9"/>
+<text x="453" y="182" font-size="11.5" fill="#475569" text-anchor="middle" font-weight="700">⊂</text>
+<rect x="458" y="66" width="136" height="222" rx="10" fill="#ffffff" stroke="#c25014" stroke-width="1.2" class="st-4"/>
+<rect x="464.0" y="74.0" width="124" height="21" rx="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="526.0" y="88.3" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="600">④ 射影群 PGL(3)</text>
+<text x="526.0" y="111" font-size="11.5" fill="#64748b" text-anchor="middle">+ 中心透视投影</text>
+<polygon points="482.1,227.9 487.2,227.1 492.2,226.3 497.0,225.5 501.6,224.8 506.0,224.1 510.3,223.5 514.4,222.8 518.4,222.2 522.3,221.6 526.0,221.0 529.6,220.4 533.1,219.9 536.5,219.4 539.8,218.8 543.0,218.3 546.1,217.9 549.1,217.4 552.0,216.9 554.8,216.5 557.5,216.1 556.7,212.3 555.9,208.8 555.1,205.4 554.4,202.2 553.7,199.2 553.0,196.3 552.4,193.5 551.7,190.9 551.2,188.4 550.6,186.0 550.1,183.7 549.6,181.5 549.1,179.4 548.6,177.4 548.2,175.4 547.7,173.6 547.3,171.8 546.9,170.0 546.6,168.4 546.2,166.8 544.3,166.6 542.4,166.4 540.5,166.2 538.6,166.0 536.6,165.9 534.5,165.7 532.5,165.5 530.3,165.3 528.2,165.1 526.0,164.9 523.8,164.7 521.5,164.4 519.1,164.2 516.8,164.0 514.3,163.8 511.9,163.5 509.3,163.3 506.7,163.0 504.1,162.8 501.4,162.5 500.8,164.4 500.3,166.4 499.6,168.4 499.0,170.6 498.3,172.8 497.6,175.2 496.9,177.7 496.1,180.3 495.3,183.1 494.5,186.0 493.5,189.1 492.6,192.4 491.5,195.9 490.4,199.6 489.3,203.5 488.0,207.7 486.7,212.2 485.3,217.1 483.7,222.3" fill="#fef1e8" stroke="#c25014" stroke-width="1.9"/>
+<polygon points="537.5,186.0 537.3,184.6 536.9,183.2 536.3,181.9 535.6,180.7 534.7,179.6 533.7,178.6 532.6,177.8 531.4,177.0 530.2,176.4 528.8,176.0 527.4,175.7 526.0,175.5 524.6,175.6 523.1,175.7 521.7,176.1 520.3,176.6 519.0,177.3 517.7,178.1 516.6,179.1 515.5,180.2 514.7,181.5 514.0,182.9 513.4,184.4 513.1,186.0 513.1,187.6 513.2,189.3 513.6,190.9 514.3,192.5 515.2,193.9 516.3,195.3 517.6,196.4 519.1,197.4 520.7,198.2 522.4,198.7 524.2,199.0 526.0,199.0 527.8,198.8 529.5,198.3 531.1,197.6 532.5,196.8 533.8,195.7 534.9,194.5 535.9,193.2 536.6,191.8 537.1,190.4 537.5,188.9 537.6,187.5 537.5,186.0" fill="#ffffff" stroke="#0f172a" stroke-width="1.5"/>
+<circle cx="482.1" cy="227.9" r="2.6" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="513.1" cy="223.0" r="2.6" fill="#1d6fa5" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="526.0" cy="221.0" r="3.3" fill="#b91c1c" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="557.5" cy="216.1" r="2.6" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+<text x="526.0" y="258" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">中点偏 · 保交比!</text>
+<text x="526.0" y="276" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">CR = 2, 洞 g = 1</text>
+<circle cx="599" cy="178" r="7.5" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.9"/>
+<text x="599" y="182" font-size="11.5" fill="#475569" text-anchor="middle" font-weight="700">⊂</text>
+<rect x="604" y="66" width="136" height="222" rx="10" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2" class="st-5"/>
+<rect x="610.0" y="74.0" width="124" height="21" rx="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="672.0" y="88.3" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="600">⑤ 拓扑同胚 Homeo</text>
+<text x="672.0" y="111" font-size="11.5" fill="#64748b" text-anchor="middle">+ 橡皮泥连续揉捏</text>
+<polygon points="635.3,215.6 638.3,214.3 641.3,213.1 644.3,211.9 647.3,210.7 650.3,209.6 653.3,208.7 656.3,208.0 659.4,207.4 662.4,207.1 665.4,207.0 668.4,207.1 671.4,207.4 674.4,208.0 677.4,208.7 680.4,209.6 683.4,210.7 686.4,211.9 689.5,213.1 692.5,214.3 695.5,215.6 695.2,212.8 695.1,210.0 695.3,207.2 695.7,204.4 696.4,201.6 697.3,198.8 698.3,196.0 699.5,193.2 700.8,190.4 702.1,187.6 703.4,184.8 704.7,182.0 705.9,179.2 706.9,176.4 707.8,173.6 708.5,170.8 708.9,168.0 709.1,165.2 709.0,162.4 708.7,159.6 705.7,158.3 702.7,157.1 699.7,155.9 696.7,154.7 693.7,153.6 690.7,152.7 687.7,152.0 684.6,151.4 681.6,151.1 678.6,151.0 675.6,151.1 672.6,151.4 669.6,152.0 666.6,152.7 663.6,153.6 660.6,154.7 657.6,155.9 654.5,157.1 651.5,158.3 648.5,159.6 648.8,162.4 648.9,165.2 648.7,168.0 648.3,170.8 647.6,173.6 646.7,176.4 645.7,179.2 644.5,182.0 643.2,184.8 641.9,187.6 640.6,190.4 639.3,193.2 638.1,196.0 637.1,198.8 636.2,201.6 635.5,204.4 635.1,207.2 634.9,210.0 635.0,212.8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.9"/>
+<polygon points="685.2,181.1 685.9,179.4 686.3,177.8 686.4,176.1 686.3,174.4 685.9,172.8 685.3,171.4 684.4,170.0 683.3,168.9 682.0,167.9 680.5,167.2 678.9,166.8 677.2,166.7 675.4,166.8 673.6,167.2 671.8,167.9 670.0,168.9 668.2,170.0 666.5,171.4 664.9,172.8 663.4,174.4 662.0,176.1 660.7,177.8 659.6,179.4 658.8,181.1 658.1,182.7 657.7,184.1 657.6,185.5 657.7,186.7 658.1,187.8 658.7,188.8 659.6,189.6 660.7,190.2 662.0,190.7 663.5,191.0 665.1,191.3 666.8,191.3 668.6,191.3 670.4,191.0 672.2,190.7 674.0,190.2 675.8,189.6 677.5,188.8 679.1,187.8 680.6,186.7 682.0,185.5 683.3,184.1 684.4,182.7 685.2,181.1" fill="#ffffff" stroke="#0f172a" stroke-width="1.5"/>
+<circle cx="635.3" cy="215.6" r="2.6" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="655.3" cy="208.2" r="2.6" fill="#1d6fa5" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="665.4" cy="207.0" r="3.3" fill="#b91c1c" stroke="#ffffff" stroke-width="0.9"/>
+<circle cx="695.5" cy="215.6" r="2.6" fill="#0f172a" stroke="#ffffff" stroke-width="0.9"/>
+<text x="672.0" y="258" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">直线弯 · 唯保洞数</text>
+<text x="672.0" y="276" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">连通, 洞 g = 1</text>
+<rect x="20" y="300" width="720" height="242" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="20" y="300" width="720" height="30" rx="8" fill="#f1f5f9"/>
+<text x="32" y="320" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700">候选不变量（几何性质）</text>
+<text x="250" y="320" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">① 欧氏 E(2)</text>
+<text x="360" y="320" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">② 相似 Sim</text>
+<text x="470" y="320" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">③ 仿射 Aff</text>
+<text x="580" y="320" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">④ 射影 PGL</text>
+<text x="688" y="320" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">⑤ 拓扑同胚</text>
+<text x="32" y="354" font-size="12" fill="#1e293b" text-anchor="start" font-weight="600">距离 d 与面积 S</text>
+<rect x="212" y="339" width="76" height="22" rx="11" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="250" y="354" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">✓ 幸存</text>
+<rect x="322" y="339" width="76" height="22" rx="11" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 2"/>
+<text x="360" y="354" font-size="11.5" fill="#64748b" text-anchor="middle">✗ 打破</text>
+<rect x="432" y="339" width="76" height="22" rx="11" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 2"/>
+<text x="470" y="354" font-size="11.5" fill="#64748b" text-anchor="middle">✗ 打破</text>
+<rect x="542" y="339" width="76" height="22" rx="11" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 2"/>
+<text x="580" y="354" font-size="11.5" fill="#64748b" text-anchor="middle">✗ 打破</text>
+<rect x="650" y="339" width="76" height="22" rx="11" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 2"/>
+<text x="688" y="354" font-size="11.5" fill="#64748b" text-anchor="middle">✗ 打破</text>
+<line x1="28" y1="370" x2="732" y2="370" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="32" y="392" font-size="12" fill="#1e293b" text-anchor="start" font-weight="600">夹角 θ 与圆形状</text>
+<rect x="212" y="377" width="76" height="22" rx="11" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="250" y="392" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">✓ 幸存</text>
+<rect x="322" y="377" width="76" height="22" rx="11" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="360" y="392" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">✓ 幸存</text>
+<rect x="432" y="377" width="76" height="22" rx="11" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 2"/>
+<text x="470" y="392" font-size="11.5" fill="#64748b" text-anchor="middle">✗ 打破</text>
+<rect x="542" y="377" width="76" height="22" rx="11" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 2"/>
+<text x="580" y="392" font-size="11.5" fill="#64748b" text-anchor="middle">✗ 打破</text>
+<rect x="650" y="377" width="76" height="22" rx="11" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 2"/>
+<text x="688" y="392" font-size="11.5" fill="#64748b" text-anchor="middle">✗ 打破</text>
+<line x1="28" y1="408" x2="732" y2="408" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="32" y="430" font-size="12" fill="#1e293b" text-anchor="start" font-weight="600">平行性与中点分比</text>
+<rect x="212" y="415" width="76" height="22" rx="11" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="250" y="430" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">✓ 幸存</text>
+<rect x="322" y="415" width="76" height="22" rx="11" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="360" y="430" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">✓ 幸存</text>
+<rect x="432" y="415" width="76" height="22" rx="11" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="470" y="430" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">✓ 幸存</text>
+<rect x="542" y="415" width="76" height="22" rx="11" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 2"/>
+<text x="580" y="430" font-size="11.5" fill="#64748b" text-anchor="middle">✗ 打破</text>
+<rect x="650" y="415" width="76" height="22" rx="11" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 2"/>
+<text x="688" y="430" font-size="11.5" fill="#64748b" text-anchor="middle">✗ 打破</text>
+<line x1="28" y1="446" x2="732" y2="446" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="32" y="468" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700">共线性与四点交比 CR=2</text>
+<rect x="212" y="453" width="76" height="22" rx="11" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="250" y="468" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">✓ 幸存</text>
+<rect x="322" y="453" width="76" height="22" rx="11" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="360" y="468" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">✓ 幸存</text>
+<rect x="432" y="453" width="76" height="22" rx="11" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="470" y="468" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">✓ 幸存</text>
+<rect x="542" y="453" width="76" height="22" rx="11" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="580" y="468" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">✓ 幸存</text>
+<rect x="650" y="453" width="76" height="22" rx="11" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 2"/>
+<text x="688" y="468" font-size="11.5" fill="#64748b" text-anchor="middle">✗ 打破</text>
+<line x1="28" y1="484" x2="732" y2="484" stroke="#cbd5e1" stroke-width="0.8"/>
+<text x="32" y="506" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700">连通性与洞数 g=1 (χ)</text>
+<rect x="212" y="491" width="76" height="22" rx="11" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="250" y="506" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">✓ 幸存</text>
+<rect x="322" y="491" width="76" height="22" rx="11" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="360" y="506" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">✓ 幸存</text>
+<rect x="432" y="491" width="76" height="22" rx="11" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="470" y="506" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">✓ 幸存</text>
+<rect x="542" y="491" width="76" height="22" rx="11" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="580" y="506" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">✓ 幸存</text>
+<rect x="650" y="491" width="76" height="22" rx="11" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="688" y="506" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">✓ 幸存</text>
+<text x="380" y="532" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">红点标出底边原始中点 C：仿射错切后仍是中点；射影透视下中点偏离，但四点交比 CR(A,B;C,D) 精确锁在 2！</text>
+</svg>

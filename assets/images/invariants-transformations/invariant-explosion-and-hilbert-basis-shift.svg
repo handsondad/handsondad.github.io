@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="502" viewBox="0 0 760 502" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">代数不变量组合爆炸实测数据与希尔伯特有限基定理抽象范式革命对比</title>
+<desc id="desc">左图展示一元二至六次方程判别式项数从2项暴增至246项及诺特手算三元四次型331个协变量的历史瓶颈；右图对比戈尔丹符号构造路线与希尔伯特1888至1893年通过多项式理想、基定理和群平均算子完成有限生成性证明并催生现代交换代数的三步逻辑。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="501" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">从“20 页纯公式地狱”到“这是神学！”：希尔伯特怎样终结手算危机（1868–1893）</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左看多项式判别式与协变量的组合爆炸；右看希尔伯特基定理如何跳过逐个淘金、直接创立现代抽象代数</text>
+<rect x="20" y="66" width="350" height="424" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="78.0" width="326" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="195.0" y="93.0" font-size="12" fill="#c25014" text-anchor="middle" font-weight="600">A · 19 世纪手算危机：恐怖的组合爆炸</text>
+<text x="34" y="118" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700">一元 n 次方程判别式 Δₙ 展开后的单项式个数：</text>
+<text x="34" y="144" font-size="11.5" fill="#1e293b" text-anchor="start" font-weight="600">n = 2 (二次)</text>
+<rect x="122" y="132" width="10.3" height="15" rx="4" fill="#1d6fa5"/>
+<text x="138.3" y="144" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">2 项</text>
+<text x="356" y="144" font-size="11.5" fill="#64748b" text-anchor="end">b² − 4ac</text>
+<text x="34" y="176" font-size="11.5" fill="#1e293b" text-anchor="start" font-weight="600">n = 3 (三次)</text>
+<rect x="122" y="164" width="16.3" height="15" rx="4" fill="#1d6fa5"/>
+<text x="144.3" y="176" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">5 项</text>
+<text x="34" y="208" font-size="11.5" fill="#1e293b" text-anchor="start" font-weight="600">n = 4 (四次)</text>
+<rect x="122" y="196" width="29.1" height="15" rx="4" fill="#1d6fa5"/>
+<text x="157.1" y="208" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">16 项</text>
+<text x="34" y="240" font-size="11.5" fill="#1e293b" text-anchor="start" font-weight="600">n = 5 (五次)</text>
+<rect x="122" y="228" width="55.8" height="15" rx="4" fill="#c25014"/>
+<text x="183.8" y="240" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">59 项</text>
+<text x="34" y="272" font-size="11.5" fill="#1e293b" text-anchor="start" font-weight="600">n = 6 (六次)</text>
+<rect x="122" y="260" width="114.0" height="15" rx="4" fill="#c25014"/>
+<text x="242.0" y="272" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">246 项（暴涨!）</text>
+<text x="34" y="298" font-size="11.5" fill="#64748b" text-anchor="start">注：横条长度按 √项数 比例绘制以兼顾 2 项与 246 项可读性</text>
+<rect x="32" y="312" width="326" height="164" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1.1"/>
+<text x="44" y="334" font-size="12" fill="#c25014" text-anchor="start" font-weight="700">完整基本协变量（含不变量）生成元数量：</text>
+<text x="44" y="356" font-size="11.5" fill="#1e293b" text-anchor="start">• 二元二次 / 三次 / 四次型：2 个 → 4 个 → 5 个</text>
+<text x="44" y="377" font-size="11.5" fill="#1e293b" text-anchor="start">• 二元五次型（1868 戈尔丹攻克）：猛增至 23 个！</text>
+<text x="44" y="398" font-size="11.5" fill="#1e293b" text-anchor="start">• 二元八次型：69 个；仅限 2 个变量 (x, y) 有解</text>
+<text x="44" y="421" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">• 三元四次型（多加 1 个变量 z）：1907 年诺特</text>
+<text x="44" y="442" font-size="11.5" fill="#b91c1c" text-anchor="start" font-weight="700">  博士论文手算列出 331 个协变量仍只是冰山一角！</text>
+<text x="44" y="463" font-size="11.5" fill="#64748b" text-anchor="start">  （诺特后来戏称这段岁月为“公式荆棘丛”）</text>
+<rect x="386" y="66" width="354" height="424" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="398.0" y="78.0" width="330" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="563.0" y="93.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">B · 1888–1893 希尔伯特抽象结构降维打击</text>
+<rect x="398" y="112" width="330" height="96" rx="8" fill="#fff7ed" stroke="#b45309" stroke-width="1.1"/>
+<text x="410" y="133" font-size="12" fill="#b45309" text-anchor="start" font-weight="700">旧路线 ·“不变量之王”戈尔丹构造派（1868）</text>
+<text x="410" y="154" font-size="11.5" fill="#1e293b" text-anchor="start">靠符号法与跨乘算子逐个把基元算出来；二元成功，</text>
+<text x="410" y="173" font-size="11.5" fill="#1e293b" text-anchor="start">但三元以上全人类苦算 20 年寸步难行。</text>
+<text x="410" y="194" font-size="11.5" fill="#b91c1c" text-anchor="start" font-weight="700">审稿惊呼：“这不是数学，这是神学！”（口述史名言）</text>
+<line x1="422" y1="212" x2="422" y2="234" stroke="#1d6fa5" stroke-width="2.2" marker-end="url(#arr-blue)"/>
+<text x="436" y="228" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">转换视角：不先捞金子，先证金矿必有底！</text>
+<rect x="398" y="240" width="330" height="236" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<circle cx="416" cy="263" r="10.5" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="416" y="267" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="432" y="267" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">装进“理想（Ideal）”：所有正次不变量在全多项式</text>
+<text x="432" y="286" font-size="11.5" fill="#1e293b" text-anchor="start">环 k[a₀,…,aₙ] 中生成的理想记作 ℐ。</text>
+<circle cx="416" cy="314" r="10.5" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="416" y="318" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">2</text>
+<text x="432" y="318" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">希尔伯特基定理（1888/1890）：反证法证明任意多</text>
+<text x="432" y="337" font-size="11.5" fill="#1e293b" text-anchor="start">变量多项式环中每个理想必有有限生成元 I₁,…,Iₘ：</text>
+<text x="563" y="358" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700" class="mono">任意不变量 F = A₁I₁ + A₂I₂ + … + AₘIₘ</text>
+<circle cx="416" cy="384" r="10.5" fill="#ffffff" stroke="#18794e" stroke-width="1.2"/>
+<text x="416" y="388" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">3</text>
+<text x="432" y="388" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">群平均算子投影（Ω / Reynolds 算子）：两边同时对</text>
+<text x="432" y="407" font-size="11.5" fill="#1e293b" text-anchor="start">变换群取不变平均，杂项系数 Aₖ 化为更低次不变量，</text>
+<text x="432" y="426" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">对次数归纳即证：F 必是 I₁,…,Iₘ 的多项式！</text>
+<line x1="410" y1="442" x2="716" y2="442" stroke="#93c5fd" stroke-width="1"/>
+<text x="563" y="462" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">1893 续篇补齐构造上界与零点定理 → 现代交换代数诞生！</text>
+</svg>

@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="522" viewBox="0 0 760 522" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">狭义相对论闵可夫斯基时空间隔不变量与埃米·诺特1918年对称守恒律双定理图解</title>
+<desc id="desc">左图绘制光锥与不变双曲线c²Δt²-Δx²=16，验证v=0.6c飞船系(0,4)与地面系(3,5)具有完全相等的时空间隔；右图梳理诺特第一定理将时间平移、空间平移、空间旋转与相位变换一一映射至能量、动量、角动量与电荷守恒，以及第二定理如何以微分恒等式解决广义相对论局部能量守恒问题。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="521" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">从数学纸面闯入真实宇宙：闵可夫斯基时空间隔与诺特守恒律双定理（1908–1918）</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左看高速飞船下打不碎的时空间隔 Δs²；右看埃米·诺特如何揭示“每一条守恒律背后都藏着一种连续变换不变性”</text>
+<rect x="20" y="66" width="336" height="444" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="78.0" width="312" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="188.0" y="93.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">A · 狭义相对论（1908）：洛伦兹不变量</text>
+<rect x="34" y="112" width="308" height="248" rx="8" fill="#f8fafc" stroke="#e2e8f0"/>
+<line x1="68.0" y1="116" x2="68.0" y2="352" stroke="#e2e8f0" stroke-width="0.8"/>
+<line x1="128.0" y1="116" x2="128.0" y2="352" stroke="#e2e8f0" stroke-width="0.8"/>
+<line x1="248.0" y1="116" x2="248.0" y2="352" stroke="#e2e8f0" stroke-width="0.8"/>
+<line x1="308.0" y1="116" x2="308.0" y2="352" stroke="#e2e8f0" stroke-width="0.8"/>
+<line x1="38" y1="276.0" x2="338" y2="276.0" stroke="#e2e8f0" stroke-width="0.8"/>
+<line x1="38" y1="208.0" x2="338" y2="208.0" stroke="#e2e8f0" stroke-width="0.8"/>
+<line x1="38" y1="140.0" x2="338" y2="140.0" stroke="#e2e8f0" stroke-width="0.8"/>
+<line x1="188.0" y1="344.0" x2="317.0" y2="197.8" stroke="#b45309" stroke-width="1.3" stroke-dasharray="5 4"/>
+<line x1="188.0" y1="344.0" x2="59.0" y2="197.8" stroke="#b45309" stroke-width="1.3" stroke-dasharray="5 4"/>
+<text x="80.0" y="210.0" font-size="11.5" fill="#b45309" text-anchor="start" font-weight="600" class="halo">光锥 ct = |x|</text>
+<line x1="42" y1="344.0" x2="334" y2="344.0" stroke="#475569" stroke-width="1.5" marker-end="url(#arr-muted)"/>
+<line x1="188.0" y1="354" x2="188.0" y2="118" stroke="#475569" stroke-width="1.5" marker-end="url(#arr-muted)"/>
+<text x="328" y="359.0" font-size="11.5" fill="#475569" text-anchor="end" font-weight="600">Δx (光秒)</text>
+<text x="196.0" y="127" font-size="11.5" fill="#475569" text-anchor="start" font-weight="700">cΔt</text>
+<polyline points="62.0,146.8 66.2,150.2 70.4,153.6 74.6,156.9 78.8,160.1 83.0,163.3 87.2,166.4 91.4,169.4 95.6,172.4 99.8,175.2 104.0,178.0 108.2,180.7 112.4,183.3 116.6,185.7 120.8,188.1 125.0,190.4 129.2,192.6 133.4,194.6 137.6,196.5 141.8,198.3 146.0,199.9 150.2,201.4 154.4,202.8 158.6,204.0 162.8,205.0 167.0,205.9 171.2,206.7 175.4,207.3 179.6,207.7 183.8,207.9 188.0,208.0 192.2,207.9 196.4,207.7 200.6,207.3 204.8,206.7 209.0,205.9 213.2,205.0 217.4,204.0 221.6,202.8 225.8,201.4 230.0,199.9 234.2,198.3 238.4,196.5 242.6,194.6 246.8,192.6 251.0,190.4 255.2,188.1 259.4,185.7 263.6,183.3 267.8,180.7 272.0,178.0 276.2,175.2 280.4,172.4 284.6,169.4 288.8,166.4 293.0,163.3 297.2,160.1 301.4,156.9 305.6,153.6 309.8,150.2 314.0,146.8" fill="none" stroke="#1d6fa5" stroke-width="2.5"/>
+<text x="118.0" y="148.0" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700" class="halo">不变双曲线 Δs² = 16</text>
+<line x1="188.0" y1="344.0" x2="278.0" y2="174.0" stroke="#c25014" stroke-width="1.8" stroke-dasharray="4 3"/>
+<circle cx="188.0" cy="208.0" r="4.5" fill="#18794e" stroke="#ffffff" stroke-width="1.3"/>
+<circle cx="278.0" cy="174.0" r="4.5" fill="#c25014" stroke="#ffffff" stroke-width="1.3"/>
+<text x="196.0" y="223.0" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700" class="halo">飞船系 (0, 4)</text>
+<text x="272.0" y="165.0" font-size="11.5" fill="#c25014" text-anchor="end" font-weight="700" class="halo">地面系 (3, 5)</text>
+<rect x="34" y="370" width="308" height="126" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.0"/>
+<text x="46" y="391" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">高速飞船 v = 0.6c 同一闪光事件：</text>
+<text x="46" y="412" font-size="11.5" fill="#1e293b" text-anchor="start">• 地面测：Δt = 5 秒, Δx = 3 光秒 → 5² − 3² = 16</text>
+<text x="46" y="432" font-size="11.5" fill="#1e293b" text-anchor="start">• 飞船测：Δt′ = 4 秒, Δx′ = 0 光秒 → 4² − 0² = 16</text>
+<text x="46" y="454" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">钟慢尺缩各自可变，但 Δs² = c²Δt² − Δx² 锁死不变！</text>
+<text x="46" y="474" font-size="11.5" fill="#64748b" text-anchor="start">（同理动量能量满足 E² − p²c² = m²c⁴，静质量 m 不变）</text>
+<rect x="372" y="66" width="368" height="444" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="384.0" y="78.0" width="344" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="556.0" y="93.0" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="600">B · 埃米·诺特《不变变分问题》（1918）双定理</text>
+<rect x="384" y="112" width="344" height="52" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.1"/>
+<text x="556" y="133" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">核心引擎：连续对称变换不改变作用量 ΔS = Δ∫L dt = 0</text>
+<text x="556" y="153" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">⟹ 欧拉-拉格朗日变分边界项自动给出守恒律 dQ/dt = 0！</text>
+<text x="386" y="184" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700">诺特第一定理（有限参数连续李群 ⟺ 严格物理守恒量）：</text>
+<rect x="384" y="196" width="168" height="38" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.0"/>
+<text x="468" y="213" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">时间平移  t → t + ε</text>
+<text x="468" y="228" font-size="11.5" fill="#64748b" text-anchor="middle">今天明天的定律相同</text>
+<line x1="556" y1="215" x2="588" y2="215" stroke="#1d6fa5" stroke-width="1.8" marker-end="url(#arr-muted)"/>
+<rect x="594" y="196" width="134" height="38" rx="7" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="661" y="220" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700">能量 E 守恒</text>
+<rect x="384" y="242" width="168" height="38" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1.0"/>
+<text x="468" y="259" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">空间平移  r → r + ε</text>
+<text x="468" y="274" font-size="11.5" fill="#64748b" text-anchor="middle">宇宙处处均匀平权</text>
+<line x1="556" y1="261" x2="588" y2="261" stroke="#18794e" stroke-width="1.8" marker-end="url(#arr-muted)"/>
+<rect x="594" y="242" width="134" height="38" rx="7" fill="#ffffff" stroke="#18794e" stroke-width="1.2"/>
+<text x="661" y="266" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700">动量 p 守恒</text>
+<rect x="384" y="288" width="168" height="38" rx="7" fill="#fef1e8" stroke="#c25014" stroke-width="1.0"/>
+<text x="468" y="305" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">空间旋转  r → R·r</text>
+<text x="468" y="320" font-size="11.5" fill="#64748b" text-anchor="middle">宇宙各方向各向同性</text>
+<line x1="556" y1="307" x2="588" y2="307" stroke="#c25014" stroke-width="1.8" marker-end="url(#arr-muted)"/>
+<rect x="594" y="288" width="134" height="38" rx="7" fill="#ffffff" stroke="#c25014" stroke-width="1.2"/>
+<text x="661" y="312" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700">角动量 L 守恒</text>
+<rect x="384" y="334" width="168" height="38" rx="7" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.0"/>
+<text x="468" y="351" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">相位旋转  ψ → e^(iα)ψ</text>
+<text x="468" y="366" font-size="11.5" fill="#64748b" text-anchor="middle">量子 U(1) 规范不变</text>
+<line x1="556" y1="353" x2="588" y2="353" stroke="#6d28d9" stroke-width="1.8" marker-end="url(#arr-muted)"/>
+<rect x="594" y="334" width="134" height="38" rx="7" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="661" y="358" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="700">电荷 q 守恒</text>
+<rect x="384" y="386" width="344" height="110" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="396" y="407" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">诺特第二定理（含任意函数 p(x) 的无穷维局域变换群）：</text>
+<text x="396" y="428" font-size="11.5" fill="#1e293b" text-anchor="start">• 广义相对论允许逐点任意弯曲坐标变换（微分同胚群），</text>
+<text x="396" y="447" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">  必然导出场方程间的比安基恒等式 ∇μG^μν ≡ 0！</text>
+<text x="396" y="467" font-size="11.5" fill="#1e293b" text-anchor="start">• 一举解开 1915 年爱因斯坦与希尔伯特的“能量守恒危机”，</text>
+<text x="396" y="486" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="600">  并成为现代粒子物理杨-米尔斯规范场论的数学基石。</text>
+</svg>
