@@ -6288,3 +6288,622 @@ def _register_riemann_hypothesis():
 _register_riemann_hypothesis()
 
 
+# ---------------------------------------------------------------------------
+# Topic: From Algebraic Invariants to Transformation Hierarchies (1773–2026)
+# ---------------------------------------------------------------------------
+def _register_invariants_and_transformations():
+    import math
+    SUBDIR = "invariants-transformations"
+    RED = "#b91c1c"
+    RED_SOFT = "#fef2f2"
+    AMBER = "#b45309"
+    AMBER_SOFT = "#fffbeb"
+    TEAL = "#0f766e"
+    TEAL_SOFT = "#f0fdfa"
+
+    # 1. Exact verification of quadratic form invariants under SO(2) vs SL(2) shear
+    A0, B0, C0 = 5.0, 0.0, 1.0
+    th = math.radians(30.0)
+    ct, st = math.cos(th), math.sin(th)
+    # x = ct*x' - st*y', y = st*x' + ct*y'
+    A1 = A0 * ct * ct + B0 * ct * st + C0 * st * st
+    B1 = A0 * (-2 * ct * st) + B0 * (ct * ct - st * st) + C0 * (2 * st * ct)
+    C1 = A0 * st * st - B0 * st * ct + C0 * ct * ct
+    assert abs(A1 - 4.0) < 1e-12 and abs(C1 - 2.0) < 1e-12
+    assert abs(B1 - (-2.0 * math.sqrt(3.0))) < 1e-12
+    assert abs((A1 + C1) - (A0 + C0)) < 1e-12
+    assert abs((B1 * B1 - 4 * A1 * C1) - (B0 * B0 - 4 * A0 * C0)) < 1e-12
+
+    # Shear x = x'' + y'', y = y'' (det = 1)
+    A2, B2, C2 = 5.0, 10.0, 6.0
+    assert abs((A2 + C2) - 11.0) < 1e-12  # Trace breaks (11 != 6)
+    assert abs((B2 * B2 - 4 * A2 * C2) - (-20.0)) < 1e-12  # Discriminant survives!
+
+    # 2. Exact verification of projective cross-ratio CR(A,B;C,D) = 2
+    xA, xB, xC, xD = 0.0, 1.0 / 3.0, 0.5, 1.0
+    cr_orig = ((xC - xA) * (xD - xB)) / ((xC - xB) * (xD - xA))
+    proj_fn = lambda u: (2.0 * u) / (u + 1.0)
+    uA, uB, uC, uD = proj_fn(xA), proj_fn(xB), proj_fn(xC), proj_fn(xD)
+    cr_proj = ((uC - uA) * (uD - uB)) / ((uC - uB) * (uD - uA))
+    assert abs(cr_orig - 2.0) < 1e-12 and abs(cr_proj - 2.0) < 1e-12
+    assert abs(uC - 0.5 * (uA + uD)) > 0.16  # Midpoint breaks under projection
+
+    # 3. Exact Minkowski spacetime interval check (v = 0.6c)
+    assert (5 * 5 - 3 * 3) == (4 * 4 - 0 * 0) == 16
+
+    def _build_quadratic_invariants():
+        els = []
+        els.extend(
+            header(
+                "二次型不变量实测：同一个椭圆换三套坐标尺，谁破功了、谁纹丝不动？",
+                "椭圆 5x² + y² = 1 实体毫发未动；旋转坐标轴保住 A+C 与 B²−4AC，等面积错切击碎 A+C 却撼不动判别式 −20",
+            )
+        )
+
+        panels = [
+            (20, "① 原始正交坐标 (x, y)", BLUE, BLUE_SOFT, "5x² + y² = 1", "(5, 0, 1)", "rot0"),
+            (266, "② 逆时针转 30° 轴 (x′, y′)", GREEN, GREEN_SOFT, "4x′² − 2√3x′y′ + 2y′² = 1", "(4, −3.46, 2)", "rot30"),
+            (512, "③ 等面积错切斜轴 (x″, y″)", ORANGE, ORANGE_SOFT, "5x″² + 10x″y″ + 6y″² = 1", "(5, 10, 6)", "shear"),
+        ]
+
+        scale = 68.0
+        for px0, ptitle, col, bg_soft, eq_txt, coef_txt, mode in panels:
+            pw, ph = 228, 286
+            cx, cy = px0 + pw / 2, 198.0
+            clip_id = f"clip-{mode}"
+            els.append(f'<clipPath id="{clip_id}"><rect x="{px0 + 10}" y="102" width="{pw - 20}" height="192" rx="6"/></clipPath>')
+            els.append(card(px0, 66, pw, ph))
+            els.append(pill(px0 + 10, 75, ptitle, fg=col, bg=bg_soft, w=pw - 20, h=22, size=11.5))
+
+            # Clipped coordinate grid in (x, y) physical plane
+            grid_lines = [f'<g clip-path="url(#{clip_id})">']
+            grid_lines.append(f'<rect x="{px0 + 10}" y="102" width="{pw - 20}" height="192" fill="#f8fafc"/>')
+            for k in (-3, -2, -1, 0, 1, 2, 3):
+                step_u = k * 0.5
+                if mode == "rot0":
+                    x_s = cx + step_u * scale
+                    y_s = cy - step_u * scale
+                    sw = "1.5" if k == 0 else "0.8"
+                    sc = col if k == 0 else "#cbd5e1"
+                    grid_lines.append(f'<line x1="{x_s:.1f}" y1="100" x2="{x_s:.1f}" y2="296" stroke="{sc}" stroke-width="{sw}"/>')
+                    grid_lines.append(f'<line x1="{px0 + 8}" y1="{y_s:.1f}" x2="{px0 + pw - 8}" y2="{y_s:.1f}" stroke="{sc}" stroke-width="{sw}"/>')
+                elif mode == "rot30":
+                    sw = "1.6" if k == 0 else "0.85"
+                    sc = col if k == 0 else "#cbd5e1"
+                    for is_x_const in (True, False):
+                        if is_x_const:
+                            p1x, p1y = step_u * ct - (-2.2) * st, step_u * st + (-2.2) * ct
+                            p2x, p2y = step_u * ct - (2.2) * st, step_u * st + (2.2) * ct
+                        else:
+                            p1x, p1y = (-2.2) * ct - step_u * st, (-2.2) * st + step_u * ct
+                            p2x, p2y = (2.2) * ct - step_u * st, (2.2) * st + step_u * ct
+                        grid_lines.append(
+                            f'<line x1="{cx + p1x * scale:.1f}" y1="{cy - p1y * scale:.1f}" '
+                            f'x2="{cx + p2x * scale:.1f}" y2="{cy - p2y * scale:.1f}" stroke="{sc}" stroke-width="{sw}"/>'
+                        )
+                else:
+                    sw = "1.6" if k == 0 else "0.85"
+                    sc = col if k == 0 else "#cbd5e1"
+                    p1x, p1y = step_u + (-2.2), -2.2
+                    p2x, p2y = step_u + 2.2, 2.2
+                    grid_lines.append(
+                        f'<line x1="{cx + p1x * scale:.1f}" y1="{cy - p1y * scale:.1f}" '
+                        f'x2="{cx + p2x * scale:.1f}" y2="{cy - p2y * scale:.1f}" stroke="{sc}" stroke-width="{sw}"/>'
+                    )
+                    y_s = cy - step_u * scale
+                    grid_lines.append(
+                        f'<line x1="{px0 + 8}" y1="{y_s:.1f}" x2="{px0 + pw - 8}" y2="{y_s:.1f}" stroke="{sc}" stroke-width="{sw}"/>'
+                    )
+
+            arr_mk = {"rot0": "arr-blue", "rot30": "arr-green", "shear": "arr-orange"}[mode]
+            if mode == "rot0":
+                e1, e2 = (1.15, 0.0), (0.0, 1.15)
+                lbl1, lbl2 = "x", "y"
+            elif mode == "rot30":
+                e1, e2 = (1.15 * ct, 1.15 * st), (-1.15 * st, 1.15 * ct)
+                lbl1, lbl2 = "x′", "y′"
+            else:
+                e1, e2 = (1.15, 0.0), (0.85, 0.85)
+                lbl1, lbl2 = "x″", "y″"
+            grid_lines.append(
+                f'<line x1="{cx:.1f}" y1="{cy:.1f}" x2="{cx + e1[0] * scale:.1f}" y2="{cy - e1[1] * scale:.1f}" '
+                f'stroke="{col}" stroke-width="2" marker-end="url(#{arr_mk})"/>'
+            )
+            grid_lines.append(
+                f'<line x1="{cx:.1f}" y1="{cy:.1f}" x2="{cx + e2[0] * scale:.1f}" y2="{cy - e2[1] * scale:.1f}" '
+                f'stroke="{col}" stroke-width="2" marker-end="url(#{arr_mk})"/>'
+            )
+
+            e_pts = []
+            a_semi = 1.0 / math.sqrt(5.0)
+            b_semi = 1.0
+            for idx in range(73):
+                ang = 2.0 * math.pi * idx / 72.0
+                ex = cx + a_semi * math.cos(ang) * scale
+                ey = cy - b_semi * math.sin(ang) * scale
+                e_pts.append(f"{ex:.1f},{ey:.1f}")
+            grid_lines.append(
+                f'<polygon points="{" ".join(e_pts)}" fill="{BLUE}" fill-opacity="0.14" '
+                f'stroke="{INK}" stroke-width="2.3"/>'
+            )
+            grid_lines.append(
+                txt(cx + e1[0] * scale + 6, cy - e1[1] * scale + 4, lbl1, 11.5, col, weight="700", halo=True)
+            )
+            grid_lines.append(
+                txt(cx + e2[0] * scale + 6, cy - e2[1] * scale + 2, lbl2, 11.5, col, weight="700", halo=True)
+            )
+            grid_lines.append("</g>")
+            els.extend(grid_lines)
+
+            els.append(txt(cx, 314, eq_txt, 12, INK, anchor="middle", weight="700", cls="mono"))
+            els.append(txt(cx, 336, f"系数 (A, B, C) = {coef_txt}", 11.5, MUTED, anchor="middle"))
+
+        els.append(card(20, 364, 720, 120, fill="#ffffff", stroke=BORDER))
+        els.append(f'<rect x="20" y="364" width="720" height="28" rx="8" fill="{SLATE_SOFT}"/>')
+        els.append(txt(36, 383, "候选代数表达式", 12, INK, weight="700"))
+        els.append(txt(245, 383, "① 标准坐标", 12, BLUE, anchor="middle", weight="700"))
+        els.append(txt(425, 383, "② 正交旋转 SO(2)", 12, GREEN, anchor="middle", weight="700"))
+        els.append(txt(615, 383, "③ 等面积错切 SL(2)", 12, ORANGE, anchor="middle", weight="700"))
+
+        els.append(f'<line x1="28" y1="426" x2="732" y2="426" stroke="{HAIRLINE}" stroke-width="0.9"/>')
+        els.append(txt(36, 414, "迹 A + C（头尾系数和）", 12, BODY, weight="600"))
+        els.append(txt(245, 414, "5 + 1 = 6", 12, INK, anchor="middle", cls="mono"))
+        els.append(txt(425, 414, "4 + 2 = 6  ✓ 守恒", 12, GREEN, anchor="middle", weight="700"))
+        els.append(txt(615, 414, "5 + 6 = 11  ✗ 破功!", 12, RED, anchor="middle", weight="700"))
+
+        els.append(txt(36, 450, "判别式 Δ = B² − 4AC", 12, INK, weight="700"))
+        els.append(txt(245, 450, "0 − 20 = −20", 12, INK, anchor="middle", cls="mono"))
+        els.append(txt(425, 450, "12 − 32 = −20  ✓ 守恒", 12, GREEN, anchor="middle", weight="700"))
+        els.append(txt(615, 450, "100 − 120 = −20  ✓ 锁死!", 12, GREEN, anchor="middle", weight="700"))
+
+        els.append(
+            txt(
+                380,
+                474,
+                "通则：任意线性变换 x = Mx′ 下 Δ′ = (det M)²·Δ（权重 w = 2 的相对不变量；det M = ±1 时绝对不变）",
+                11.5,
+                PURPLE,
+                anchor="middle",
+                weight="600",
+            )
+        )
+
+        return figure(
+            496,
+            "二次型椭圆在标准轴、30度旋转轴与等面积错切斜轴下的系数与不变量对比",
+            "三幅面板绘出完全相同的物理椭圆5x²+y²=1在标准正交网格、逆时针旋转30度正交网格与det M=1水平错切斜网格下的真实坐标线，底部核对表证明迹A+C仅在旋转下守住6而在错切下破功为11，判别式B²-4AC在全部等面积线性变换下恒等于-20。",
+            els,
+        )
+
+    def _build_erlangen_ladder():
+        els = []
+        els.extend(
+            header(
+                "克莱因《爱尔朗根纲领》（1872）：五级变换群大筛子，层层淘汰后还剩什么？",
+                "变换群越扩越大（允许折腾得越狠），幸存的不变量就越少、越触及空间最底层的骨架",
+            )
+        )
+
+        extra_css = """
+  @keyframes stagePulse {
+    0%, 100% { stroke-width: 1.2px; }
+    8%, 18% { stroke-width: 2.6px; }
+  }
+  .st-1 { animation: stagePulse 9s ease-in-out 0.0s 1 forwards; }
+  .st-2 { animation: stagePulse 9s ease-in-out 1.6s 1 forwards; }
+  .st-3 { animation: stagePulse 9s ease-in-out 3.2s 1 forwards; }
+  .st-4 { animation: stagePulse 9s ease-in-out 4.8s 1 forwards; }
+  .st-5 { animation: stagePulse 9s ease-in-out 6.4s 1 forwards; }
+  @media (prefers-reduced-motion: reduce) {
+    .st-1, .st-2, .st-3, .st-4, .st-5 { animation: none !important; }
+  }
+"""
+
+        stages = [
+            ("① 欧氏刚体 E(2)", "平移 + 旋转 + 反射", BLUE, BLUE_SOFT, "st-1"),
+            ("② 相似群 Sim(2)", "+ 均匀放大缩小", TEAL, TEAL_SOFT, "st-2"),
+            ("③ 仿射群 Aff(2)", "+ 拉伸与平行错切", GREEN, GREEN_SOFT, "st-3"),
+            ("④ 射影群 PGL(3)", "+ 中心透视投影", ORANGE, ORANGE_SOFT, "st-4"),
+            ("⑤ 拓扑同胚 Homeo", "+ 橡皮泥连续揉捏", PURPLE, PURPLE_SOFT, "st-5"),
+        ]
+
+        for idx, (st_title, st_sub, col, bg_soft, anim_cls) in enumerate(stages):
+            x0 = 20 + idx * 146
+            cw = 136
+            cx, cy = x0 + cw / 2, 186.0
+            els.append(
+                f'<rect x="{x0}" y="66" width="{cw}" height="222" rx="10" fill="#ffffff" '
+                f'stroke="{col}" stroke-width="1.2" class="{anim_cls}"/>'
+            )
+            els.append(pill(x0 + 6, 74, st_title, fg=col, bg=bg_soft, w=cw - 12, h=21, size=11.5))
+            els.append(txt(cx, 111, st_sub, 11.5, MUTED, anchor="middle"))
+
+            def map_uv(u, v, mode=idx, cx=cx, cy=cy):
+                if mode == 0:
+                    ca, sa = math.cos(math.radians(18)), math.sin(math.radians(18))
+                    ru, rv = u * ca - v * sa, u * sa + v * ca
+                    return cx + ru * 35.0, cy - rv * 35.0
+                if mode == 1:
+                    ca, sa = math.cos(math.radians(-15)), math.sin(math.radians(-15))
+                    ru, rv = (u * ca - v * sa) * 0.68, (u * sa + v * ca) * 0.68
+                    return cx + ru * 35.0, cy - rv * 35.0
+                if mode == 2:
+                    ru, rv = 0.80 * u + 0.38 * v, 0.72 * v
+                    return cx + ru * 35.0, cy - rv * 35.0
+                if mode == 3:
+                    denom = 1.62 + 0.40 * v + 0.20 * u
+                    ru = (1.28 * u) / denom
+                    rv = (1.22 * v) / denom
+                    return cx + ru * 35.0, cy - rv * 35.0
+                ru = 0.86 * u + 0.20 * math.sin(1.9 * v)
+                rv = 0.80 * v + 0.20 * math.cos(1.8 * u)
+                return cx + ru * 35.0, cy - rv * 35.0
+
+            edge_uv = []
+            for s in range(21):
+                t = -1.0 + 2.0 * s / 20.0
+                edge_uv.append((t, -1.0))
+            for s in range(1, 21):
+                t = -1.0 + 2.0 * s / 20.0
+                edge_uv.append((1.0, t))
+            for s in range(1, 21):
+                t = 1.0 - 2.0 * s / 20.0
+                edge_uv.append((t, 1.0))
+            for s in range(1, 20):
+                t = 1.0 - 2.0 * s / 20.0
+                edge_uv.append((-1.0, t))
+            poly_pts = " ".join(f"{map_uv(u, v)[0]:.1f},{map_uv(u, v)[1]:.1f}" for u, v in edge_uv)
+            els.append(f'<polygon points="{poly_pts}" fill="{bg_soft}" stroke="{col}" stroke-width="1.9"/>')
+
+            hole_pts = []
+            for s in range(49):
+                ang = 2.0 * math.pi * s / 48.0
+                hu, hv = 0.44 * math.cos(ang), 0.44 * math.sin(ang)
+                hx, hy = map_uv(hu, hv)
+                hole_pts.append(f"{hx:.1f},{hy:.1f}")
+            els.append(f'<polygon points="{" ".join(hole_pts)}" fill="#ffffff" stroke="{INK}" stroke-width="1.5"/>')
+
+            for t_val, pt_col in ((0.0, INK), (1.0 / 3.0, BLUE), (0.5, RED), (1.0, INK)):
+                ux = -1.0 + 2.0 * t_val
+                px_pt, py_pt = map_uv(ux, -1.0)
+                r_pt = 3.3 if t_val == 0.5 else 2.6
+                els.append(f'<circle cx="{px_pt:.1f}" cy="{py_pt:.1f}" r="{r_pt}" fill="{pt_col}" stroke="#ffffff" stroke-width="0.9"/>')
+
+            stage_notes = [
+                ("保长 · 保角 · 保圆", "CR = 2, 洞 g = 1"),
+                ("长度变 · 保角保形", "CR = 2, 洞 g = 1"),
+                ("圆变椭圆 · 保中点", "CR = 2, 洞 g = 1"),
+                ("中点偏 · 保交比!", "CR = 2, 洞 g = 1"),
+                ("直线弯 · 唯保洞数", "连通, 洞 g = 1"),
+            ]
+            els.append(txt(cx, 258, stage_notes[idx][0], 11.5, INK, anchor="middle", weight="600"))
+            els.append(txt(cx, 276, stage_notes[idx][1], 11.5, col, anchor="middle", weight="700"))
+
+            if idx < 4:
+                els.append(f'<circle cx="{x0 + cw + 5}" cy="178" r="7.5" fill="#ffffff" stroke="{BORDER}" stroke-width="0.9"/>')
+                els.append(txt(x0 + cw + 5, 182, "⊂", 11.5, SLATE, anchor="middle", weight="700"))
+
+        els.append(card(20, 300, 720, 242, fill="#ffffff", stroke=BORDER))
+        els.append(f'<rect x="20" y="300" width="720" height="30" rx="8" fill="{SLATE_SOFT}"/>')
+        els.append(txt(32, 320, "候选不变量（几何性质）", 12, INK, weight="700"))
+        col_centers = [250, 360, 470, 580, 688]
+        col_short = ["① 欧氏 E(2)", "② 相似 Sim", "③ 仿射 Aff", "④ 射影 PGL", "⑤ 拓扑同胚"]
+        for c_x, c_lbl in zip(col_centers, col_short):
+            els.append(txt(c_x, 320, c_lbl, 11.5, INK, anchor="middle", weight="700"))
+
+        rows = [
+            ("距离 d 与面积 S", [True, False, False, False, False]),
+            ("夹角 θ 与圆形状", [True, True, False, False, False]),
+            ("平行性与中点分比", [True, True, True, False, False]),
+            ("共线性与四点交比 CR=2", [True, True, True, True, False]),
+            ("连通性与洞数 g=1 (χ)", [True, True, True, True, True]),
+        ]
+        for r_idx, (r_name, flags) in enumerate(rows):
+            ry = 354 + r_idx * 38
+            if r_idx > 0:
+                els.append(f'<line x1="28" y1="{ry - 22}" x2="732" y2="{ry - 22}" stroke="{HAIRLINE}" stroke-width="0.8"/>')
+            els.append(txt(32, ry, r_name, 12, INK if r_idx >= 3 else BODY, weight="700" if r_idx >= 3 else "600"))
+            for c_idx, ok in enumerate(flags):
+                cx_cell = col_centers[c_idx]
+                if ok:
+                    els.append(
+                        f'<rect x="{cx_cell - 38}" y="{ry - 15}" width="76" height="22" rx="11" '
+                        f'fill="{GREEN_SOFT}" stroke="{GREEN}" stroke-width="1"/>'
+                    )
+                    els.append(txt(cx_cell, ry, "✓ 幸存", 11.5, GREEN, anchor="middle", weight="700"))
+                else:
+                    els.append(
+                        f'<rect x="{cx_cell - 38}" y="{ry - 15}" width="76" height="22" rx="11" '
+                        f'fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3 2"/>'
+                    )
+                    els.append(txt(cx_cell, ry, "✗ 打破", 11.5, MUTED, anchor="middle"))
+
+        els.append(
+            txt(
+                380,
+                532,
+                "红点标出底边原始中点 C：仿射错切后仍是中点；射影透视下中点偏离，但四点交比 CR(A,B;C,D) 精确锁在 2！",
+                11.5,
+                BLUE,
+                anchor="middle",
+                weight="600",
+            )
+        )
+
+        return figure(
+            554,
+            "克莱因爱尔朗根纲领五级几何变换群阶梯与不变量幸存核对矩阵",
+            "上方依次展示同一个带圆孔及底边四共线点的正方形在欧氏刚体群、相似群、仿射群、射影群与拓扑同胚群下的真实几何变形；下方五乘五核对矩阵展示距离、角度、平行与中点、四点交比CR=2及洞数g=1如何随变换群扩大逐层淘汰并留下最深层不变量。",
+            els,
+            extra_css=extra_css,
+        )
+
+    def _build_hilbert_basis_shift():
+        els = []
+        els.extend(
+            header(
+                "从“20 页纯公式地狱”到“这是神学！”：希尔伯特怎样终结手算危机（1868–1893）",
+                "左看多项式判别式与协变量的组合爆炸；右看希尔伯特基定理如何跳过逐个淘金、直接创立现代抽象代数",
+            )
+        )
+
+        els.append(card(20, 66, 350, 424))
+        els.append(pill(32, 78, "A · 19 世纪手算危机：恐怖的组合爆炸", fg=ORANGE, bg=ORANGE_SOFT, w=326))
+
+        els.append(txt(34, 118, "一元 n 次方程判别式 Δₙ 展开后的单项式个数：", 12, INK, weight="700"))
+        disc_data = [
+            ("n = 2 (二次)", 2, "b² − 4ac"),
+            ("n = 3 (三次)", 5, "b²c² − 4ac³ − …"),
+            ("n = 4 (四次)", 16, "16 项六次齐次式"),
+            ("n = 5 (五次)", 59, "59 项八次齐次式"),
+            ("n = 6 (六次)", 246, "暴涨至 246 项！"),
+        ]
+        for idx, (lbl, count, note) in enumerate(disc_data):
+            ry = 144 + idx * 32
+            els.append(txt(34, ry, lbl, 11.5, BODY, weight="600"))
+            bar_x = 122
+            max_w = 114.0
+            bw = max(8.0, max_w * math.sqrt(count / 246.0))
+            bcol = ORANGE if count >= 59 else BLUE
+            els.append(f'<rect x="{bar_x}" y="{ry - 12}" width="{bw:.1f}" height="15" rx="4" fill="{bcol}"/>')
+            lbl_cnt = f"{count} 项（暴涨!）" if count == 246 else f"{count} 项"
+            els.append(txt(bar_x + bw + 6, ry, lbl_cnt, 11.5, INK, weight="700"))
+            if count == 2:
+                els.append(txt(356, ry, note, 11.5, MUTED, anchor="end"))
+
+        els.append(txt(34, 298, "注：横条长度按 √项数 比例绘制以兼顾 2 项与 246 项可读性", 11.5, MUTED))
+
+        els.append(card(32, 312, 326, 164, rx=8, fill=ORANGE_SOFT, stroke=ORANGE, sw=1.1))
+        els.append(txt(44, 334, "完整基本协变量（含不变量）生成元数量：", 12, ORANGE, weight="700"))
+        els.append(txt(44, 356, "• 二元二次 / 三次 / 四次型：2 个 → 4 个 → 5 个", 11.5, BODY))
+        els.append(txt(44, 377, "• 二元五次型（1868 戈尔丹攻克）：猛增至 23 个！", 11.5, BODY))
+        els.append(txt(44, 398, "• 二元八次型：69 个；仅限 2 个变量 (x, y) 有解", 11.5, BODY))
+        els.append(txt(44, 421, "• 三元四次型（多加 1 个变量 z）：1907 年诺特", 11.5, INK, weight="700"))
+        els.append(txt(44, 442, "  博士论文手算列出 331 个协变量仍只是冰山一角！", 11.5, RED, weight="700"))
+        els.append(txt(44, 463, "  （诺特后来戏称这段岁月为“公式荆棘丛”）", 11.5, MUTED))
+
+        els.append(card(386, 66, 354, 424))
+        els.append(pill(398, 78, "B · 1888–1893 希尔伯特抽象结构降维打击", fg=BLUE, bg=BLUE_SOFT, w=330))
+
+        els.append(card(398, 112, 330, 96, rx=8, fill="#fff7ed", stroke=AMBER, sw=1.1))
+        els.append(txt(410, 133, "旧路线 ·“不变量之王”戈尔丹构造派（1868）", 12, AMBER, weight="700"))
+        els.append(txt(410, 154, "靠符号法与跨乘算子逐个把基元算出来；二元成功，", 11.5, BODY))
+        els.append(txt(410, 173, "但三元以上全人类苦算 20 年寸步难行。", 11.5, BODY))
+        els.append(txt(410, 194, "审稿惊呼：“这不是数学，这是神学！”（口述史名言）", 11.5, RED, weight="700"))
+
+        els.append(f'<line x1="422" y1="212" x2="422" y2="234" stroke="{BLUE}" stroke-width="2.2" marker-end="url(#arr-blue)"/>')
+        els.append(txt(436, 228, "转换视角：不先捞金子，先证金矿必有底！", 11.5, BLUE, weight="700"))
+
+        els.append(card(398, 240, 330, 236, rx=8, fill=BLUE_SOFT, stroke=BLUE, sw=1.2))
+        els.append(step_badge(416, 263, 1, fg=BLUE, bg="#ffffff"))
+        els.append(txt(432, 267, "装进“理想（Ideal）”：所有正次不变量在全多项式", 11.5, INK, weight="700"))
+        els.append(txt(432, 286, "环 k[a₀,…,aₙ] 中生成的理想记作 ℐ。", 11.5, BODY))
+
+        els.append(step_badge(416, 314, 2, fg=BLUE, bg="#ffffff"))
+        els.append(txt(432, 318, "希尔伯特基定理（1888/1890）：反证法证明任意多", 11.5, INK, weight="700"))
+        els.append(txt(432, 337, "变量多项式环中每个理想必有有限生成元 I₁,…,Iₘ：", 11.5, BODY))
+        els.append(txt(563, 358, "任意不变量 F = A₁I₁ + A₂I₂ + … + AₘIₘ", 11.5, PURPLE, anchor="middle", weight="700", cls="mono"))
+
+        els.append(step_badge(416, 384, 3, fg=GREEN, bg="#ffffff"))
+        els.append(txt(432, 388, "群平均算子投影（Ω / Reynolds 算子）：两边同时对", 11.5, INK, weight="700"))
+        els.append(txt(432, 407, "变换群取不变平均，杂项系数 Aₖ 化为更低次不变量，", 11.5, BODY))
+        els.append(txt(432, 426, "对次数归纳即证：F 必是 I₁,…,Iₘ 的多项式！", 11.5, GREEN, weight="700"))
+
+        els.append(f'<line x1="410" y1="442" x2="716" y2="442" stroke="{BLUE_LINE}" stroke-width="1"/>')
+        els.append(txt(563, 462, "1893 续篇补齐构造上界与零点定理 → 现代交换代数诞生！", 11.5, INK, anchor="middle", weight="700"))
+
+        return figure(
+            502,
+            "代数不变量组合爆炸实测数据与希尔伯特有限基定理抽象范式革命对比",
+            "左图展示一元二至六次方程判别式项数从2项暴增至246项及诺特手算三元四次型331个协变量的历史瓶颈；右图对比戈尔丹符号构造路线与希尔伯特1888至1893年通过多项式理想、基定理和群平均算子完成有限生成性证明并催生现代交换代数的三步逻辑。",
+            els,
+        )
+
+    def _build_noether_bridge():
+        els = []
+        els.extend(
+            header(
+                "从数学纸面闯入真实宇宙：闵可夫斯基时空间隔与诺特守恒律双定理（1908–1918）",
+                "左看高速飞船下打不碎的时空间隔 Δs²；右看埃米·诺特如何揭示“每一条守恒律背后都藏着一种连续变换不变性”",
+            )
+        )
+
+        els.append(card(20, 66, 336, 444))
+        els.append(pill(32, 78, "A · 狭义相对论（1908）：洛伦兹不变量", fg=BLUE, bg=BLUE_SOFT, w=312))
+
+        ox, oy = 188.0, 344.0
+        sx_u, sy_u = 30.0, 34.0
+        els.append(f'<rect x="34" y="112" width="308" height="248" rx="8" fill="#f8fafc" stroke="{BORDER}"/>')
+
+        for gx in (-4, -2, 2, 4):
+            els.append(f'<line x1="{ox + gx * sx_u:.1f}" y1="116" x2="{ox + gx * sx_u:.1f}" y2="352" stroke="#e2e8f0" stroke-width="0.8"/>')
+        for gt in (2, 4, 6):
+            els.append(f'<line x1="38" y1="{oy - gt * sy_u:.1f}" x2="338" y2="{oy - gt * sy_u:.1f}" stroke="#e2e8f0" stroke-width="0.8"/>')
+
+        els.append(
+            f'<line x1="{ox:.1f}" y1="{oy:.1f}" x2="{ox + 4.3 * sx_u:.1f}" y2="{oy - 4.3 * sy_u:.1f}" '
+            f'stroke="{AMBER}" stroke-width="1.3" stroke-dasharray="5 4"/>'
+        )
+        els.append(
+            f'<line x1="{ox:.1f}" y1="{oy:.1f}" x2="{ox - 4.3 * sx_u:.1f}" y2="{oy - 4.3 * sy_u:.1f}" '
+            f'stroke="{AMBER}" stroke-width="1.3" stroke-dasharray="5 4"/>'
+        )
+        els.append(txt(ox - 108, oy - 134, "光锥 ct = |x|", 11.5, AMBER, weight="600", halo=True))
+
+        els.append(f'<line x1="42" y1="{oy:.1f}" x2="334" y2="{oy:.1f}" stroke="{SLATE}" stroke-width="1.5" marker-end="url(#arr-muted)"/>')
+        els.append(f'<line x1="{ox:.1f}" y1="354" x2="{ox:.1f}" y2="118" stroke="{SLATE}" stroke-width="1.5" marker-end="url(#arr-muted)"/>')
+        els.append(txt(328, oy + 15, "Δx (光秒)", 11.5, SLATE, anchor="end", weight="600"))
+        els.append(txt(ox + 8, 127, "cΔt", 11.5, SLATE, weight="700"))
+
+        hyp_pts = []
+        for idx in range(61):
+            xv = -4.2 + 8.4 * idx / 60.0
+            tv = math.sqrt(16.0 + xv * xv)
+            hyp_pts.append(f"{ox + xv * sx_u:.1f},{oy - tv * sy_u:.1f}")
+        els.append(f'<polyline points="{" ".join(hyp_pts)}" fill="none" stroke="{BLUE}" stroke-width="2.5"/>')
+        els.append(txt(ox - 70, oy - 196, "不变双曲线 Δs² = 16", 11.5, BLUE, anchor="middle", weight="700", halo=True))
+
+        p_ship = (ox, oy - 4.0 * sy_u)
+        p_ground = (ox + 3.0 * sx_u, oy - 5.0 * sy_u)
+        els.append(f'<line x1="{ox:.1f}" y1="{oy:.1f}" x2="{p_ground[0]:.1f}" y2="{p_ground[1]:.1f}" stroke="{ORANGE}" stroke-width="1.8" stroke-dasharray="4 3"/>')
+        els.append(f'<circle cx="{p_ship[0]:.1f}" cy="{p_ship[1]:.1f}" r="4.5" fill="{GREEN}" stroke="#ffffff" stroke-width="1.3"/>')
+        els.append(f'<circle cx="{p_ground[0]:.1f}" cy="{p_ground[1]:.1f}" r="4.5" fill="{ORANGE}" stroke="#ffffff" stroke-width="1.3"/>')
+        els.append(txt(p_ship[0] + 8, p_ship[1] + 15, "飞船系 (0, 4)", 11.5, GREEN, weight="700", halo=True))
+        els.append(txt(p_ground[0] - 6, p_ground[1] - 9, "地面系 (3, 5)", 11.5, ORANGE, anchor="end", weight="700", halo=True))
+
+        els.append(card(34, 370, 308, 126, rx=8, fill=BLUE_SOFT, stroke=BLUE, sw=1.0))
+        els.append(txt(46, 391, "高速飞船 v = 0.6c 同一闪光事件：", 11.5, INK, weight="700"))
+        els.append(txt(46, 412, "• 地面测：Δt = 5 秒, Δx = 3 光秒 → 5² − 3² = 16", 11.5, BODY))
+        els.append(txt(46, 432, "• 飞船测：Δt′ = 4 秒, Δx′ = 0 光秒 → 4² − 0² = 16", 11.5, BODY))
+        els.append(txt(46, 454, "钟慢尺缩各自可变，但 Δs² = c²Δt² − Δx² 锁死不变！", 11.5, BLUE, weight="700"))
+        els.append(txt(46, 474, "（同理动量能量满足 E² − p²c² = m²c⁴，静质量 m 不变）", 11.5, MUTED))
+
+        els.append(card(372, 66, 368, 444))
+        els.append(pill(384, 78, "B · 埃米·诺特《不变变分问题》（1918）双定理", fg=PURPLE, bg=PURPLE_SOFT, w=344))
+
+        els.append(card(384, 112, 344, 52, rx=8, fill=GREEN_SOFT, stroke=GREEN, sw=1.1))
+        els.append(txt(556, 133, "核心引擎：连续对称变换不改变作用量 ΔS = Δ∫L dt = 0", 11.5, GREEN, anchor="middle", weight="700"))
+        els.append(txt(556, 153, "⟹ 欧拉-拉格朗日变分边界项自动给出守恒律 dQ/dt = 0！", 11.5, INK, anchor="middle", weight="600"))
+
+        els.append(txt(386, 184, "诺特第一定理（有限参数连续李群 ⟺ 严格物理守恒量）：", 12, INK, weight="700"))
+        bridges = [
+            ("时间平移  t → t + ε", "能量 E 守恒", "今天明天的定律相同", BLUE, BLUE_SOFT),
+            ("空间平移  r → r + ε", "动量 p 守恒", "宇宙处处均匀平权", GREEN, GREEN_SOFT),
+            ("空间旋转  r → R·r", "角动量 L 守恒", "宇宙各方向各向同性", ORANGE, ORANGE_SOFT),
+            ("相位旋转  ψ → e^(iα)ψ", "电荷 q 守恒", "量子 U(1) 规范不变", PURPLE, PURPLE_SOFT),
+        ]
+        for b_idx, (sym_s, cons_s, sub_s, b_col, b_bg) in enumerate(bridges):
+            by = 196 + b_idx * 46
+            els.append(card(384, by, 168, 38, rx=7, fill=b_bg, stroke=b_col, sw=1.0))
+            els.append(txt(468, by + 17, sym_s, 11.5, b_col, anchor="middle", weight="700"))
+            els.append(txt(468, by + 32, sub_s, 11.5, MUTED, anchor="middle"))
+
+            els.append(f'<line x1="556" y1="{by + 19}" x2="588" y2="{by + 19}" stroke="{b_col}" stroke-width="1.8" marker-end="url(#arr-muted)"/>')
+
+            els.append(card(594, by, 134, 38, rx=7, fill="#ffffff", stroke=b_col, sw=1.2))
+            els.append(txt(661, by + 24, cons_s, 12, INK, anchor="middle", weight="700"))
+
+        els.append(card(384, 386, 344, 110, rx=8, fill=PURPLE_SOFT, stroke=PURPLE, sw=1.2))
+        els.append(txt(396, 407, "诺特第二定理（含任意函数 p(x) 的无穷维局域变换群）：", 11.5, PURPLE, weight="700"))
+        els.append(txt(396, 428, "• 广义相对论允许逐点任意弯曲坐标变换（微分同胚群），", 11.5, BODY))
+        els.append(txt(396, 447, "  必然导出场方程间的比安基恒等式 ∇μG^μν ≡ 0！", 11.5, INK, weight="700"))
+        els.append(txt(396, 467, "• 一举解开 1915 年爱因斯坦与希尔伯特的“能量守恒危机”，", 11.5, BODY))
+        els.append(txt(396, 486, "  并成为现代粒子物理杨-米尔斯规范场论的数学基石。", 11.5, PURPLE, weight="600"))
+
+        return figure(
+            522,
+            "狭义相对论闵可夫斯基时空间隔不变量与埃米·诺特1918年对称守恒律双定理图解",
+            "左图绘制光锥与不变双曲线c²Δt²-Δx²=16，验证v=0.6c飞船系(0,4)与地面系(3,5)具有完全相等的时空间隔；右图梳理诺特第一定理将时间平移、空间平移、空间旋转与相位变换一一映射至能量、动量、角动量与电荷守恒，以及第二定理如何以微分恒等式解决广义相对论局部能量守恒问题。",
+            els,
+        )
+
+    def _build_modern_ai_and_timeline():
+        els = []
+        els.extend(
+            header(
+                "253 年大回响：从《爱尔朗根纲领》到今日 AI 几何深度学习（1773–2026）",
+                "上半部拆解现代神经网络的“不变性 vs 等变性”；下半部串起代数不变量与变换群跨越两个半世纪的演化主线",
+            )
+        )
+
+        els.append(card(20, 66, 352, 224))
+        els.append(pill(32, 78, "A · 现代 AI 双翼：不变性 vs 等变性（协变）", fg=BLUE, bg=BLUE_SOFT, w=328))
+
+        els.append(card(32, 110, 328, 80, rx=8, fill=BLUE_SOFT, stroke=BLUE, sw=1.0))
+        els.append(txt(44, 131, "① 不变性 Invariance：f(g · x) = f(x)", 12, BLUE, weight="700"))
+        els.append(txt(44, 152, "输入图片平移 / 蛋白质整体旋转 g，网络输出的", 11.5, BODY))
+        els.append(txt(44, 172, "“猫咪类别”或“分子总能量 E”绝对不能变！", 11.5, INK, weight="700"))
+
+        els.append(card(32, 198, 328, 80, rx=8, fill=GREEN_SOFT, stroke=GREEN, sw=1.0))
+        els.append(txt(44, 219, "② 等变性 Equivariance：f(g · x) = g · f(x)", 12, GREEN, weight="700"))
+        els.append(txt(44, 240, "1851 西尔维斯特“协变量”的现代重生！输入平移或", 11.5, BODY))
+        els.append(txt(44, 260, "旋转 g，特征热力图与原子受力向量 F 同步跟着变！", 11.5, INK, weight="700"))
+
+        els.append(card(388, 66, 352, 224))
+        els.append(pill(400, 78, "B · 几何深度学习：变换群决定网络骨架", fg=PURPLE, bg=PURPLE_SOFT, w=328))
+
+        ai_rows = [
+            ("像素网格 + 平移群 ℤ²", "卷积网络 CNN", "卷积核权重全场共享", BLUE),
+            ("社交/分子图 + 置换群 Sₙ", "图神经网络 GNN", "打乱节点编号结果不变", GREEN),
+            ("三维原子云 + 刚体群 SE(3)", "AlphaFold / 分子场", "无视空间旋转与平移", ORANGE),
+            ("球面/流形 + 局部规范群", "几何与规范网络", "地球气象与弯曲曲面推理", PURPLE),
+        ]
+        for idx, (dom_s, arch_s, why_s, rcol) in enumerate(ai_rows):
+            ry = 114 + idx * 42
+            els.append(card(400, ry, 328, 35, rx=6, fill="#f8fafc", stroke=BORDER))
+            els.append(f'<rect x="400" y="{ry}" width="5" height="35" rx="2.5" fill="{rcol}"/>')
+            els.append(txt(412, ry + 15, dom_s, 11.5, INK, weight="700"))
+            els.append(txt(412, ry + 30, why_s, 11.5, MUTED))
+            els.append(txt(718, ry + 22, arch_s, 11.5, rcol, anchor="end", weight="700"))
+
+        els.append(card(20, 302, 720, 232))
+        els.append(pill(32, 314, "C · 1773–2026“代数不变量 × 变换群”253 年双螺旋里程碑", fg=INK, bg=SLATE_SOFT, w=430))
+
+        els.append(f'<line x1="56" y1="366" x2="704" y2="366" stroke="{BLUE}" stroke-width="2.4"/>')
+        milestones = [
+            (82, "1773 / 1801", "拉格朗日 · 高斯", "二次型判别式", "B²−4AC 保号不变", BLUE),
+            (201, "1841–1858", "布尔 · 凯莱 · 西氏", "命名“不变量”", "创立矩阵代数", TEAL),
+            (320, "1872", "克莱因 · 索福斯·李", "爱尔朗根纲领", "变换群统摄众几何", GREEN),
+            (439, "1888–1893", "戈尔丹 → 希尔伯特", "有限基与零点定理", "抽象交换代数诞生", ORANGE),
+            (558, "1908 / 1918", "闵氏 · 埃米·诺特", "洛伦兹时空间隔", "对称 ⟺ 守恒律", PURPLE),
+            (677, "1954–2026", "规范场 · 几何 AI", "杨-米尔斯 / GIT", "CNN·GNN·分子场", RED),
+        ]
+        for mx, yr_s, who_s, what1, what2, mcol in milestones:
+            els.append(f'<circle cx="{mx}" cy="366" r="6.5" fill="{mcol}" stroke="#ffffff" stroke-width="2"/>')
+            els.append(txt(mx, 353, yr_s, 11.5, mcol, anchor="middle", weight="700", cls="mono"))
+            els.append(card(mx - 55, 380, 110, 96, rx=7, fill="#f8fafc", stroke=mcol, sw=1.0))
+            els.append(txt(mx, 400, who_s, 11.5, INK, anchor="middle", weight="700"))
+            els.append(txt(mx, 424, what1, 11.5, mcol, anchor="middle", weight="700"))
+            els.append(txt(mx, 444, what2, 11.5, BODY, anchor="middle"))
+
+        els.append(
+            txt(
+                380,
+                514,
+                "一条主线贯通 253 年：每当人类放宽允许的“变换”，旧表象纷纷碎裂，留下的“不变量”就揭开更深一层的自然法则。",
+                11.5,
+                INK,
+                anchor="middle",
+                weight="700",
+            )
+        )
+
+        return figure(
+            546,
+            "现代几何深度学习不变性与等变性原理及1773至2026年代数不变量与变换发展史时间轴",
+            "上半部分对比不变性f(g·x)=f(x)与等变性f(g·x)=g·f(x)，并列出平移群CNN、置换群GNN、三维刚体群AlphaFold与流形规范网络的群论对应；下半部分以六个关键节点串联1773年二次型判别式、1851年不变量命名与矩阵创立、1872年爱尔朗根纲领、1890年希尔伯特基定理、1918年诺特守恒律定理至2026年几何AI的完整历史。",
+            els,
+        )
+
+    @register("invariants-transformations", "从代数不变量到变换群发展史五步图解：二次型旋转错切、爱尔朗根五级阶梯、希尔伯特基定理、诺特守恒律与几何深度学习", "algebra_logic")
+    def build_invariants_and_transformations():
+        write_svg(SUBDIR, "quadratic-form-rotation-shear-invariants.svg", _build_quadratic_invariants())
+        write_svg(SUBDIR, "erlangen-five-tier-transformation-ladder-anim.svg", _build_erlangen_ladder())
+        write_svg(SUBDIR, "invariant-explosion-and-hilbert-basis-shift.svg", _build_hilbert_basis_shift())
+        write_svg(SUBDIR, "noether-symmetry-to-conservation-bridge.svg", _build_noether_bridge())
+        write_svg(SUBDIR, "modern-ai-equivariance-and-250yr-timeline.svg", _build_modern_ai_and_timeline())
+
+
+_register_invariants_and_transformations()
+
+
