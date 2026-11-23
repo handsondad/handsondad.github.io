@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="342" viewBox="0 0 760 342" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">两段弹簧有限元加载过程动画：位移增长与内力校核</title>
+<desc id="desc">左端固定的两段串联弹簧在1000牛拉力下从虚线所示的加载前位置伸长：软段（100牛每毫米）伸长10毫米，硬段（200牛每毫米）伸长5毫米，节点2位移10毫米、节点3位移15毫米；两段内力都等于1000牛。动画播放一次停在终态；开启减少动态效果时直接呈现完整终态。位移按1毫米=6像素教学放大。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes femS1 { from { transform: scaleX(0.7500000000); } to { transform: scaleX(1); } }
+  @keyframes femS2 { from { transform: scaleX(0.8571428571); } to { transform: scaleX(1); } }
+  @keyframes femN2 { from { transform: translateX(-60.0px); } to { transform: translateX(0); } }
+  @keyframes femN3 { from { transform: translateX(-30.0px); } to { transform: translateX(0); } }
+  @keyframes femFade { from { opacity: 0; } to { opacity: 1; } }
+  .a-s1 { transform-box: fill-box; transform-origin: left center;
+           animation: femS1 2.2s cubic-bezier(0.4,0,0.2,1) 0.8s 1 backwards; }
+  .a-s2 { transform-box: fill-box; transform-origin: left center;
+           animation: femS2 2.2s cubic-bezier(0.4,0,0.2,1) 0.8s 1 backwards; }
+  .a-n2 { animation: femN2 2.2s cubic-bezier(0.4,0,0.2,1) 0.8s 1 backwards; }
+  .a-n3 { animation: femN3 2.2s cubic-bezier(0.4,0,0.2,1) 0.8s 1 backwards; }
+  .a-force { animation: femFade 0.6s ease-out 0.2s 1 backwards; }
+  .a-read { animation: femFade 0.5s ease-out 3.2s 1 backwards; }
+  @media (prefers-reduced-motion: reduce) {
+    .a-s1, .a-s2, .a-n2, .a-n3, .a-force, .a-read { animation: none !important; }
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="341" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">图 4 · 加载全过程：串联两段传同一个力，软的伸得多、硬的伸得少</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">动画约 3.7 秒，播放一次即停在终态；虚线为加载前位置。位移按 1 mm = 6 px 教学放大绘制</text>
+<line x1="80" y1="96" x2="80" y2="148" stroke="#475569" stroke-width="3"/>
+<line x1="70" y1="104" x2="80" y2="96" stroke="#cbd5e1" stroke-width="1.2"/>
+<line x1="70" y1="120" x2="80" y2="112" stroke="#cbd5e1" stroke-width="1.2"/>
+<line x1="70" y1="136" x2="80" y2="128" stroke="#cbd5e1" stroke-width="1.2"/>
+<circle cx="80" cy="130.0" r="4.5" fill="#475569"/>
+<text x="80.0" y="166" font-size="12" fill="#0f172a" text-anchor="middle">u₁ = 0</text>
+<g fill="none" stroke="#64748b" stroke-width="1.4" stroke-dasharray="4 3" opacity="0.75"><polyline points="80.00,130.00 92.00,130.00 107.60,118.00 123.20,142.00 138.80,118.00 154.40,142.00 170.00,118.00 185.60,142.00 201.20,118.00 216.80,142.00 232.40,118.00 248.00,130.00 260.00,130.00"/><polyline points="260.00,130.00 272.00,130.00 287.60,118.00 303.20,142.00 318.80,118.00 334.40,142.00 350.00,118.00 365.60,142.00 381.20,118.00 396.80,142.00 412.40,118.00 428.00,130.00 440.00,130.00"/></g>
+<circle cx="260" cy="130.0" r="4" fill="#fbfcfd" stroke="#64748b" stroke-width="1.4"/>
+<circle cx="440" cy="130.0" r="4" fill="#fbfcfd" stroke="#64748b" stroke-width="1.4"/>
+<text x="448.0" y="156.0" font-size="11.5" fill="#64748b" text-anchor="start">虚线 = 加载前</text>
+<g class="a-s1"><polyline points="80.00,130.00 92.00,130.00 113.60,118.00 135.20,142.00 156.80,118.00 178.40,142.00 200.00,118.00 221.60,142.00 243.20,118.00 264.80,142.00 286.40,118.00 308.00,130.00 320.00,130.00" fill="none" stroke="#1d6fa5" stroke-width="2" vector-effect="non-scaling-stroke"/></g>
+<g class="a-n2">
+<circle cx="320" cy="130.0" r="4.5" fill="#1d6fa5"/>
+<g class="a-s2"><polyline points="320.00,130.00 332.00,130.00 350.60,118.00 369.20,142.00 387.80,118.00 406.40,142.00 425.00,118.00 443.60,142.00 462.20,118.00 480.80,142.00 499.40,118.00 518.00,130.00 530.00,130.00" fill="none" stroke="#c25014" stroke-width="2" vector-effect="non-scaling-stroke"/></g>
+<g class="a-n3">
+<circle cx="530" cy="130.0" r="4.5" fill="#c25014"/>
+<g class="a-force"><path d="M538 130.0 L618 130.0" stroke="#18794e" stroke-width="2.5" marker-end="url(#arr-green)"/><text x="578.0" y="118.0" font-size="12" fill="#18794e" text-anchor="middle" font-weight="600">F = 1000 N</text></g>
+</g>
+</g>
+<g class="a-read">
+<path d="M260 190 L260 198 L320 198 L320 190" fill="none" stroke="#1d6fa5" stroke-width="1.4"/>
+<text x="290.0" y="214" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="700">u₂ = 10 mm</text>
+<path d="M440 190 L440 198 L530 198 L530 190" fill="none" stroke="#c25014" stroke-width="1.4"/>
+<text x="485.0" y="214" font-size="12" fill="#c25014" text-anchor="middle" font-weight="700">u₃ = 15 mm</text>
+</g>
+<g class="a-read">
+<rect x="16" y="232" width="728" height="96" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+<text x="30" y="254" font-size="12" fill="#1d6fa5" text-anchor="start" font-weight="600">第一段（软 k₁ = 100 N/mm）：伸长 10 mm → 内力 100×10 = 1000 N</text>
+<text x="30" y="276" font-size="12" fill="#c25014" text-anchor="start" font-weight="600">第二段（硬 k₂ = 200 N/mm）：伸长 5 mm → 内力 200×5 = 1000 N</text>
+<text x="30" y="298" font-size="12" fill="#18794e" text-anchor="start" font-weight="700">串联传力处处相等；谁软谁伸得多。节点位移与图 3 的手算结果完全一致 ✓</text>
+</g>
+</svg>

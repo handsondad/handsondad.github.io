@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="336" viewBox="0 0 760 336" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">从坐标点到可计算实体：CAD 几何建模四步与两种实体表示</title>
+<desc id="desc">四张卡片依次展示点、线框、曲面、实体：只有填满内部的实体才能算出体积与质量（例：6立方厘米钢块约47.1克）；底部对比CSG布尔运算与B-rep边界表示两种实体构造方法。立方体为教学示意，比例不代表真实工程尺度。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="335" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">图 1 · 形状怎样进入电脑：从坐标点到可计算的实体</text>
+<rect x="16" y="44" width="158" height="176" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="95" y="68" font-size="13.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">① 点：三个数定位</text>
+<rect x="206" y="44" width="158" height="176" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="285" y="68" font-size="13.5" fill="#c25014" text-anchor="middle" font-weight="700">② 线框：连成骨架</text>
+<rect x="396" y="44" width="158" height="176" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="475" y="68" font-size="13.5" fill="#18794e" text-anchor="middle" font-weight="700">③ 曲面：蒙上一层皮</text>
+<rect x="586" y="44" width="158" height="176" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="665" y="68" font-size="13.5" fill="#6d28d9" text-anchor="middle" font-weight="700">④ 实体：填满内部</text>
+<circle cx="62" cy="110" r="3.5" fill="#1d6fa5"/>
+<text x="72" y="114" font-size="11.5" fill="#1e293b" text-anchor="start">(0, 0, 0)</text>
+<circle cx="62" cy="135" r="3.5" fill="#1d6fa5"/>
+<text x="72" y="139" font-size="11.5" fill="#1e293b" text-anchor="start">(1, 0, 0)</text>
+<circle cx="62" cy="160" r="3.5" fill="#1d6fa5"/>
+<text x="72" y="164" font-size="11.5" fill="#1e293b" text-anchor="start">(1, 1, 0)</text>
+<text x="95" y="196" font-size="11.5" fill="#64748b" text-anchor="middle">一堆带坐标的点</text>
+<g stroke="#c25014" stroke-width="1.6" fill="none"><path d="M261 104 L301 104 L301 144 L261 144 Z"/><path d="M275 90 L315 90 L315 130 L275 130 Z"/><path d="M261 104 L275 90 M301 104 L315 90 M301 144 L315 130 M261 144 L275 130"/></g>
+<text x="285" y="196" font-size="11.5" fill="#64748b" text-anchor="middle">只有线，不知里外</text>
+<g stroke="#18794e" stroke-width="1.4" stroke-linejoin="round"><path d="M451 104 L491 104 L491 144 L451 144 Z" fill="#e7f6ee"/><path d="M465 90 L505 90 L505 130 L465 130 Z" fill="#eaf4fb"/><path d="M451 104 L465 90 M491 104 L505 90 M491 144 L505 130 M451 144 L465 130" fill="none"/><path d="M491 104 L505 90 L505 130 L491 144 Z" fill="#fef1e8"/></g>
+<text x="475" y="196" font-size="11.5" fill="#64748b" text-anchor="middle">看着光滑，仍然空心</text>
+<path d="M641 104 L681 104 L681 144 L641 144 Z" fill="#6d28d9" fill-opacity="0.55" stroke="#6d28d9" stroke-width="1.4"/><path d="M655 90 L695 90 L695 130 L655 130 Z" fill="#6d28d9" fill-opacity="0.18" stroke="#6d28d9" stroke-width="1.4"/><path d="M641 104 L655 90 M681 104 L695 90 M681 144 L695 130 M641 144 L655 130" stroke="#6d28d9" stroke-width="1.4" fill="none"/>
+<text x="665" y="176" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="600">V = a × b × h</text>
+<text x="665" y="192" font-size="11.5" fill="#6d28d9" text-anchor="middle">例：6 cm³ 钢块 ≈ 47.1 g</text>
+<text x="665" y="208" font-size="11.5" fill="#64748b" text-anchor="middle">有体积，能算重量</text>
+<path d="M178 132 L200 132" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-muted)"/>
+<path d="M368 132 L390 132" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-muted)"/>
+<path d="M558 132 L580 132" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-muted)"/>
+<rect x="16" y="238" width="354" height="84" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+<text x="30" y="259" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">CSG｜像玩橡皮泥：拼上去、挖掉</text>
+<rect x="32" y="270" width="30" height="30" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.3"/>
+<circle cx="47" cy="285" r="9" fill="#fbfcfd" stroke="#c25014" stroke-width="1.3" stroke-dasharray="3 2"/>
+<text x="72" y="282" font-size="12" fill="#1e293b" text-anchor="start">长方体 − 圆柱</text>
+<text x="72" y="299" font-size="12" fill="#1e293b" text-anchor="start">= 带孔实体（布尔差集）</text>
+<rect x="390" y="238" width="354" height="84" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+<text x="404" y="259" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">B-rep｜像包礼物：精确记录每张面</text>
+<text x="404" y="280" font-size="12" fill="#1e293b" text-anchor="start">面 6 张 ｜ 边 12 条 ｜ 顶点 8 个</text>
+<text x="404" y="299" font-size="12" fill="#1e293b" text-anchor="start">还要记清它们怎样拼接成封闭边界</text>
+</svg>

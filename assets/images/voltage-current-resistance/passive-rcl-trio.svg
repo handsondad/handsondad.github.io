@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="386" viewBox="0 0 760 386" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">无源电子元器件三兄弟对比：电阻耗能分压、电容电场储能稳压、电感磁场储能稳流</title>
+<desc id="desc">三栏并列展示电阻R（V=IR，焦耳热耗能，阻抗与频率无关）、电容C（I=C dV/dt，极板电场储能，电压不能突变，容抗随频率升高而减小）与电感L（V=L dI/dt，线圈磁场储能，电流不能突变，感抗随频率升高而增大）。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="385" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">图 3 · 电路板上的“无源三兄弟”：一个耗能分压，两个一快一慢吞吐能量</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">它们不需要额外供电就能工作，靠完全不同的脾气把粗糙电流驯服成干净信号</text>
+<rect x="20" y="62" width="228" height="252" rx="10" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.3"/>
+<rect x="20" y="62" width="228" height="30" rx="10" fill="#eaf4fb"/>
+<rect x="20" y="82" width="228" height="10" fill="#eaf4fb"/>
+<text x="134" y="82" font-size="12.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">电阻 R · 节流阀与分压尺</text>
+<rect x="36" y="102" width="196" height="66" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+<line x1="54" y1="135.0" x2="90" y2="135.0" stroke="#475569" stroke-width="1.8"/>
+<polyline points="90.0,135.0 98.0,135.0 105.2,126.0 112.4,144.0 119.6,126.0 126.8,144.0 134.0,126.0 141.2,144.0 148.4,126.0 155.6,144.0 162.8,126.0 170.0,135.0 178.0,135.0" fill="none" stroke="#1d6fa5" stroke-width="2.2"/>
+<line x1="178" y1="135.0" x2="214" y2="135.0" stroke="#475569" stroke-width="1.8"/>
+<text x="134" y="190" font-size="13.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">V = I · R</text>
+<text x="36" y="218" font-size="11.5" fill="#1e293b" text-anchor="start">能量脾气：只耗能、不储能（变焦耳热）</text>
+<text x="36" y="242" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">对频率态度：直流交流一视同仁</text>
+<text x="36" y="266" font-size="11.5" fill="#1e293b" text-anchor="start">拿手活：限流护灯、串联分压、采样电流</text>
+<text x="36" y="294" font-size="11" fill="#64748b" text-anchor="start">阻抗 Z_R = R（与频率无关）</text>
+<rect x="266" y="62" width="228" height="252" rx="10" fill="#ffffff" stroke="#18794e" stroke-width="1.3"/>
+<rect x="266" y="62" width="228" height="30" rx="10" fill="#e7f6ee"/>
+<rect x="266" y="82" width="228" height="10" fill="#e7f6ee"/>
+<text x="380" y="82" font-size="12.5" fill="#18794e" text-anchor="middle" font-weight="700">电容 C · 极板蓄水池</text>
+<rect x="282" y="102" width="196" height="66" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+<line x1="300" y1="135.0" x2="372" y2="135.0" stroke="#475569" stroke-width="1.8"/>
+<line x1="372" y1="117.0" x2="372" y2="153.0" stroke="#18794e" stroke-width="3"/>
+<line x1="388" y1="117.0" x2="388" y2="153.0" stroke="#18794e" stroke-width="3"/>
+<line x1="388" y1="135.0" x2="460" y2="135.0" stroke="#475569" stroke-width="1.8"/>
+<text x="362" y="125.0" font-size="12" fill="#18794e" text-anchor="end" font-weight="700">+</text>
+<text x="398" y="125.0" font-size="12" fill="#18794e" text-anchor="start" font-weight="700">−</text>
+<text x="380" y="190" font-size="13.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">I = C · dV/dt</text>
+<text x="282" y="218" font-size="11.5" fill="#1e293b" text-anchor="start">能量脾气：电场储能 E = ½ C V²</text>
+<text x="282" y="242" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">核心铁律：两端电压 V 不能瞬间突变</text>
+<text x="282" y="266" font-size="11.5" fill="#1e293b" text-anchor="start">拿手活：隔直通交、滤除电源电压纹波</text>
+<text x="282" y="294" font-size="11" fill="#64748b" text-anchor="start">容抗 X_C = 1/(2πfC)（高频易过）</text>
+<rect x="512" y="62" width="228" height="252" rx="10" fill="#ffffff" stroke="#6d28d9" stroke-width="1.3"/>
+<rect x="512" y="62" width="228" height="30" rx="10" fill="#f3e8ff"/>
+<rect x="512" y="82" width="228" height="10" fill="#f3e8ff"/>
+<text x="626" y="82" font-size="12.5" fill="#6d28d9" text-anchor="middle" font-weight="700">电感 L · 电流大飞轮</text>
+<rect x="528" y="102" width="196" height="66" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+<line x1="546" y1="141.0" x2="578" y2="141.0" stroke="#475569" stroke-width="1.8"/>
+<path d="M578,141.0 A12,14 0 0,1 602,141.0 A12,14 0 0,1 626,141.0 A12,14 0 0,1 650,141.0 A12,14 0 0,1 674,141.0" fill="none" stroke="#6d28d9" stroke-width="2.2"/>
+<line x1="674" y1="141.0" x2="706" y2="141.0" stroke="#475569" stroke-width="1.8"/>
+<text x="626" y="190" font-size="13.5" fill="#0f172a" text-anchor="middle" font-weight="700" class="mono">V = L · dI/dt</text>
+<text x="528" y="218" font-size="11.5" fill="#1e293b" text-anchor="start">能量脾气：磁场储能 E = ½ L I²</text>
+<text x="528" y="242" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">核心铁律：流过电流 I 不能瞬间突变</text>
+<text x="528" y="266" font-size="11.5" fill="#1e293b" text-anchor="start">拿手活：通直阻交、开关电源升降压储能</text>
+<text x="528" y="294" font-size="11" fill="#64748b" text-anchor="start">感抗 X_L = 2πfL（高频难过）</text>
+<rect x="20" y="328" width="720" height="44" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+<text x="36" y="355" font-size="12" fill="#0f172a" text-anchor="start" font-weight="600">一句话记牢：电阻把多余能量变热散掉；电容像水库“削峰填谷”稳住电压；电感像重飞轮“拒快迎慢”稳住电流。</text>
+</svg>

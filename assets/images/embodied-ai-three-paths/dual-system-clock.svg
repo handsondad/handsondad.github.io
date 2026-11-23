@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="394" viewBox="0 0 760 394" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">快慢双系统架构与世界时钟：10.2秒思考与1米落体对比</title>
+<desc id="desc">大模型作为System2负责慢规划，VLA作为System1快执行，底层System0做毫秒级运动控制；右侧按真实自由落体时间绘制：1米高杯子约0.45秒落地，而GPT-6.2 Astra平均思考约10.2秒，期间杯子可落地约22次。动画播放一次停在地面终态，减少动态效果时直接静态呈现。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes clockBar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  @keyframes cupDrop { from { transform: translateY(-100px); } to { transform: translateY(0); } }
+  @keyframes revealText { from { opacity: 0; } to { opacity: 1; } }
+  .a-bar { transform-box: fill-box; transform-origin: left center;
+            animation: clockBar 3.2s linear 0.8s 1 backwards; }
+  .a-cup { animation: cupDrop 0.142s ease-in 0.8s 1 backwards; }
+  .a-land { animation: revealText 0.2s ease-out 0.942s 1 backwards; }
+  .a-txt { animation: revealText 0.5s ease-out 4.00s 1 backwards; }
+  @media (prefers-reduced-motion: reduce) {
+    .a-bar, .a-cup, .a-land, .a-txt { animation: none !important; }
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="393" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">图 5 · 世界时钟：模型想 10.2 秒，1 米高的杯子早落地约 22 次</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">按真实自由落体 t=√(2h/g)：1 米约 0.45 秒；动画按同一时间比压缩，播放一次停在终态</text>
+<rect x="20" y="64" width="300" height="268" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="88" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">快慢双系统分工</text>
+<rect x="32" y="100" width="276" height="54" rx="10" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="44" y="120" font-size="12" fill="#6d28d9" text-anchor="start" font-weight="700">System 2 · 大模型（慢脑）</text>
+<text x="44" y="140" font-size="11.5" fill="#1e293b" text-anchor="start">看全局、拆计划、纠错（约 10 秒级）</text>
+<rect x="32" y="162" width="276" height="54" rx="10" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="44" y="182" font-size="12" fill="#c25014" text-anchor="start" font-weight="700">System 1 · VLA（如 π0.5）</text>
+<text x="44" y="202" font-size="11.5" fill="#1e293b" text-anchor="start">视觉-语言-动作，快执行与局部闭环</text>
+<rect x="32" y="224" width="276" height="54" rx="10" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="44" y="244" font-size="12" fill="#18794e" text-anchor="start" font-weight="700">System 0 · 底层运动控制</text>
+<text x="44" y="264" font-size="11.5" fill="#1e293b" text-anchor="start">关节力矩/速度闭环，毫秒级稳定</text>
+<text x="170" y="298" font-size="11.5" fill="#64748b" text-anchor="middle">真机验证：G1 上操作 2/3、行走 3/3 可行，</text>
+<text x="170" y="316" font-size="11.5" fill="#64748b" text-anchor="middle">但约 90% 耗时花在思考，非实时运动控制</text>
+<rect x="336" y="64" width="404" height="268" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="352" y="88" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">模型思考进度条 vs 杯子自由落体</text>
+<text x="352" y="111" font-size="11.5" fill="#64748b" text-anchor="start">释放高度 h = 1.0 m（虚线为 t = 0 s 初态）</text>
+<line x1="356" y1="118" x2="720" y2="118" stroke="#cbd5e1" stroke-width="1.4" stroke-dasharray="4 3"/>
+<rect x="521" y="118" width="34" height="26" rx="4" fill="#fbfcfd" stroke="#1d6fa5" stroke-width="1.3" stroke-dasharray="3 2"/>
+<text x="564" y="135" font-size="11.5" fill="#64748b" text-anchor="start">t = 0 s 脱手</text>
+<line x1="356" y1="244" x2="720" y2="244" stroke="#475569" stroke-width="2"/>
+<text x="356" y="261" font-size="11.5" fill="#64748b" text-anchor="start">地面（h = 0 m）</text>
+<g class="a-cup">
+<rect x="521" y="218" width="34" height="26" rx="4" fill="#1d6fa5"/>
+<text x="538" y="235" font-size="11.5" fill="#ffffff" text-anchor="middle">杯</text>
+</g>
+<g class="a-land">
+<text x="564" y="236" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="600">t ≈ 0.45 s 已落地</text>
+</g>
+<rect x="356" y="280" width="364" height="14" rx="7" fill="#f1f5f9"/>
+<g class="a-bar">
+<rect x="356" y="280" width="364" height="14" rx="7" fill="#6d28d9"/>
+</g>
+<text x="356" y="314" font-size="11.5" fill="#64748b" text-anchor="start">0 s</text>
+<text x="538" y="314" font-size="11.5" fill="#6d28d9" text-anchor="middle">单步思考耗时进度</text>
+<text x="720" y="314" font-size="11.5" fill="#6d28d9" text-anchor="end" font-weight="700">10.2 s</text>
+<g class="a-txt">
+<rect x="336" y="64" width="404" height="268" rx="10" fill="none" stroke="#6d28d9" stroke-width="2"/>
+<text x="538" y="182" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="700" class="halo">思考 10.2 s ÷ 落地 0.45 s ≈ 22 次</text>
+</g>
+<text x="20" y="356" font-size="11.5" fill="#1e293b" text-anchor="start">SenseNova 世界时钟公寓原型实测：模型正确判断该关火，但思考耗时让关火晚了约 90 秒，鸡蛋已焦。</text>
+<text x="20" y="376" font-size="11.5" fill="#1e293b" text-anchor="start">传统仿真基准会暂停时钟等模型想完；真实世界不会停。这是 41.2% 背后最朴素的一道物理限制。</text>
+</svg>

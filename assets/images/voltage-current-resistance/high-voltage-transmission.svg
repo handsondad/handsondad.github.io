@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="398" viewBox="0 0 760 398" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">高压输电减损原理：10千伏与500千伏输送10兆瓦功率的线损对比及电网五级变压阶梯</title>
+<desc id="desc">对比输送10兆瓦功率经过10欧导线：10千伏需1000安电流，线损高达10兆瓦；升压50倍至500千伏仅需20安电流，线损降至4千瓦（0.04%，缩小2500倍）。底部列出从发电机10至20千伏、特高压220至1100千伏、城市10千伏、入户220伏到充电头5至20伏的五级阶梯。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="397" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">图 2 · 为什么高压线非要升到 500 kV 甚至 1100 kV？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">输送同样 10 MW 功率、走同样 R = 10 Ω 的长导线：电压抬高 50 倍，发热损耗骤降 2500 倍</text>
+<rect x="20" y="62" width="720" height="108" rx="10" fill="#fef2f2" stroke="#b91c1c" stroke-width="1.2"/>
+<rect x="34.0" y="74.0" width="244" height="22" rx="11.0" fill="#ffffff" stroke="#b91c1c" stroke-width="1" stroke-opacity="0.35"/>
+<text x="156.0" y="89.0" font-size="12" fill="#b91c1c" text-anchor="middle" font-weight="600">反例：只用 10 kV 低压硬送 10 MW</text>
+<text x="292" y="90" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700">所需电流 I = P ÷ V = 10,000,000 W ÷ 10,000 V = 1000 A</text>
+<text x="36" y="120" font-size="11.5" fill="#1e293b" text-anchor="start" font-weight="600">导线发热 I²R：</text>
+<rect x="132" y="106" width="420" height="20" rx="6" fill="#b91c1c"/>
+<text x="342" y="121" font-size="11.5" fill="#ffffff" text-anchor="middle" font-weight="700">1000² × 10 Ω = 10 MW（100% 功率全把铁塔电线烧成电炉！）</text>
+<text x="564" y="121" font-size="12" fill="#b91c1c" text-anchor="start" font-weight="700">到站可用：0 MW</text>
+<text x="36" y="152" font-size="11.5" fill="#64748b" text-anchor="start">误区拆解：不能直接套 V²/R 算线损！长导线两端的“压降 ΔV = I·R”远小于电网对地电压 V。</text>
+<rect x="20" y="184" width="720" height="112" rx="10" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<rect x="34.0" y="196.0" width="264" height="22" rx="11.0" fill="#ffffff" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="166.0" y="211.0" font-size="12" fill="#18794e" text-anchor="middle" font-weight="600">正解：升压 50 倍到 500 kV 再送 10 MW</text>
+<text x="312" y="212" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700">所需电流 I = 10,000,000 W ÷ 500,000 V = 20 A（缩小到 1/50）</text>
+<text x="36" y="244" font-size="11.5" fill="#1e293b" text-anchor="start" font-weight="600">功率去向对比：</text>
+<rect x="132" y="230" width="420" height="20" rx="6" fill="#18794e"/>
+<rect x="132" y="230" width="4" height="20" fill="#c25014"/>
+<text x="342" y="245" font-size="11.5" fill="#ffffff" text-anchor="middle" font-weight="700">99.96% 功率（9.996 MW）稳稳送到远方城市</text>
+<text x="564" y="245" font-size="12" fill="#18794e" text-anchor="start" font-weight="700">线损仅 4 kW (0.04%)</text>
+<text x="36" y="278" font-size="11.5" fill="#1e293b" text-anchor="start">核对：I²R = 20² × 10 Ω = 4,000 W = 4 kW；电压升 k 倍 → 电流降为 1/k → 导线损耗降为 1/k²（50² = 2500 倍）。</text>
+<rect x="20" y="310" width="720" height="74" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32" y="322" width="122" height="50" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="93.0" y="342" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">发电机出口</text>
+<text x="93.0" y="361" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">10–20 kV</text>
+<rect x="174" y="322" width="134" height="50" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="241.0" y="342" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">升压变电站</text>
+<text x="241.0" y="361" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">220–1100 kV</text>
+<rect x="328" y="322" width="126" height="50" rx="8" fill="#f0fdfa" stroke="#0f766e" stroke-width="1"/>
+<text x="391.0" y="342" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">城市降压站</text>
+<text x="391.0" y="361" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">110 / 10 kV</text>
+<rect x="474" y="322" width="122" height="50" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="535.0" y="342" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">小区配电箱</text>
+<text x="535.0" y="361" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">380 / 220 V</text>
+<rect x="616" y="322" width="112" height="50" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="672.0" y="342" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">手机充电头</text>
+<text x="672.0" y="361" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">5–20 V DC</text>
+<path d="M156 347 L171 347" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-muted)"/>
+<path d="M310 347 L325 347" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-muted)"/>
+<path d="M456 347 L471 347" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-muted)"/>
+<path d="M598 347 L613 347" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-muted)"/>
+</svg>

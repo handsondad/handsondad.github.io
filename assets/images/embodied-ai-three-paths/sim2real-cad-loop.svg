@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="314" viewBox="0 0 760 314" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">CAD到真机的仿真训练闭环：与三维物理建模工程闭环同构</title>
+<desc id="desc">CAD或URDF几何转成USD场景，加上材质、重力、接触、布料等物理，生成合成数据训练机器人策略，部署真机后传感器实测数据回流修正模型；这一闭环与三维物理建模的数字孪生闭环结构相同。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#6d28d9"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="313" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">图 3 · 上一篇的 CAD/CAE 流水线，在这里成了机器人的“训练场”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">Isaac Sim 可把 CAD/URDF 转成 USD，赋材质、开物理、配传感器，再生成合成数据训练策略</text>
+<rect x="16" y="60" width="132" height="100" rx="10" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="82.0" y="82" font-size="12.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">① 几何</text>
+<text x="82.0" y="106" font-size="11.5" fill="#1e293b" text-anchor="middle">CAD / URDF</text>
+<text x="82.0" y="126" font-size="11.5" fill="#1e293b" text-anchor="middle">→ USD 场景</text>
+<rect x="164" y="60" width="132" height="100" rx="10" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="230.0" y="82" font-size="12.5" fill="#18794e" text-anchor="middle" font-weight="700">② 物理</text>
+<text x="230.0" y="106" font-size="11.5" fill="#1e293b" text-anchor="middle">材质·重力</text>
+<text x="230.0" y="126" font-size="11.5" fill="#1e293b" text-anchor="middle">接触·布料</text>
+<rect x="312" y="60" width="132" height="100" rx="10" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="378.0" y="82" font-size="12.5" fill="#c25014" text-anchor="middle" font-weight="700">③ 训练</text>
+<text x="378.0" y="106" font-size="11.5" fill="#1e293b" text-anchor="middle">合成数据</text>
+<text x="378.0" y="126" font-size="11.5" fill="#1e293b" text-anchor="middle">强化学习</text>
+<rect x="460" y="60" width="132" height="100" rx="10" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="526.0" y="82" font-size="12.5" fill="#6d28d9" text-anchor="middle" font-weight="700">④ 真机</text>
+<text x="526.0" y="106" font-size="11.5" fill="#1e293b" text-anchor="middle">部署到机器人</text>
+<text x="526.0" y="126" font-size="11.5" fill="#1e293b" text-anchor="middle">传感器实测</text>
+<rect x="608" y="60" width="136" height="100" rx="10" fill="#f1f5f9" stroke="#475569" stroke-width="1"/>
+<text x="676.0" y="82" font-size="12.5" fill="#475569" text-anchor="middle" font-weight="700">⑤ 回流</text>
+<text x="676.0" y="106" font-size="11.5" fill="#1e293b" text-anchor="middle">数字孪生</text>
+<text x="676.0" y="126" font-size="11.5" fill="#1e293b" text-anchor="middle">实测修正模型</text>
+<path d="M150 110 L162 110" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-muted)"/>
+<path d="M298 110 L310 110" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-muted)"/>
+<path d="M446 110 L458 110" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-muted)"/>
+<path d="M594 110 L606 110" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-muted)"/>
+<path d="M676 162 L676 204 Q676 216 664 216 L94 216 Q82 216 82 204 L82 164" fill="none" stroke="#6d28d9" stroke-width="1.7" stroke-dasharray="5 3" marker-end="url(#arr-purple)"/>
+<rect x="270" y="203" width="220" height="26" rx="13" fill="#fbfcfd"/>
+<text x="380" y="221" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">← 真实数据回流修正仿真模型</text>
+<text x="20" y="254" font-size="12" fill="#1e293b" text-anchor="start">呼应上一篇《在电脑里捏出一座桥》：点线面体 → 实体 → 受力 → 数字孪生，</text>
+<text x="20" y="276" font-size="12" fill="#1e293b" text-anchor="start">在机器人这里变成：几何 → 物理 → 策略 → 真机 → 回流。模型不是在背有限元公式，</text>
+<text x="20" y="298" font-size="12" fill="#1e293b" text-anchor="start">而是学会了“调用这套工具链”；显式求解器仍负责给出可信的数值。</text>
+</svg>

@@ -2,7 +2,6 @@
 ---
 
 @use 'abstracts/variables' with (
-  $theme: '{{ site.theme_mode }}',
   $font-family-heading: ('Comic Neue', 'Ma Shan Zheng', 'KaiTi', 'STKaiti', 'Microsoft YaHei', cursive),
   $radius-lg: 16px
 );

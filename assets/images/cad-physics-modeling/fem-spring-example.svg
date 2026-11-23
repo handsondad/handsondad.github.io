@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="350" viewBox="0 0 760 350" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">两段弹簧串联的有限元算例：位移、内力与平衡校核</title>
+<desc id="desc">左端固定，两段刚度分别为100与200牛每毫米的弹簧串联，右端受1000牛拉力；由整体刚度方程解出中间节点位移10毫米、右端位移15毫米，两段内力都等于1000牛。教学玩具模型，非真实结构测量。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="349" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">图 3 · 化整为零：把一根杆切成两段，方程立刻能手算</text>
+<line x1="92" y1="86" x2="92" y2="138" stroke="#475569" stroke-width="3"/>
+<line x1="82" y1="94" x2="92" y2="86" stroke="#cbd5e1" stroke-width="1.2"/>
+<line x1="82" y1="110" x2="92" y2="102" stroke="#cbd5e1" stroke-width="1.2"/>
+<line x1="82" y1="126" x2="92" y2="118" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="92" y="176" font-size="11.5" fill="#64748b" text-anchor="middle">固定端</text>
+<polyline points="92.00,120.00 104.00,120.00 115.00,108.00 126.00,132.00 137.00,108.00 148.00,132.00 159.00,108.00 170.00,132.00 181.00,108.00 192.00,132.00 203.00,108.00 214.00,120.00 226.00,120.00" fill="none" stroke="#1d6fa5" stroke-width="2"/>
+<circle cx="92" cy="120" r="4" fill="#1d6fa5"/>
+<circle cx="226" cy="120" r="4" fill="#1d6fa5"/>
+<text x="163" y="94" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">k₁ = 100 N/mm</text>
+<polyline points="226.00,120.00 238.00,120.00 248.60,108.00 259.20,132.00 269.80,108.00 280.40,132.00 291.00,108.00 301.60,132.00 312.20,108.00 322.80,132.00 333.40,108.00 344.00,120.00 356.00,120.00" fill="none" stroke="#c25014" stroke-width="2"/>
+<circle cx="356" cy="120" r="4" fill="#c25014"/>
+<text x="295" y="94" font-size="12" fill="#c25014" text-anchor="middle" font-weight="600">k₂ = 200 N/mm</text>
+<path d="M364 120 L444 120" stroke="#18794e" stroke-width="2.5" marker-end="url(#arr-green)"/>
+<text x="404" y="108" font-size="12" fill="#18794e" text-anchor="middle" font-weight="600">F = 1000 N</text>
+<text x="92" y="156" font-size="12" fill="#0f172a" text-anchor="middle">u₁ = 0</text>
+<text x="226" y="156" font-size="12" fill="#0f172a" text-anchor="middle">u₂ = 10 mm</text>
+<text x="356" y="156" font-size="12" fill="#0f172a" text-anchor="middle">u₃ = 15 mm</text>
+<rect x="472" y="62" width="272" height="130" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="486" y="84" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">怎么算出来的？</text>
+<text x="486" y="106" font-size="11.5" fill="#1e293b" text-anchor="start">① 每段弹簧：k = EA / L，先算刚度</text>
+<text x="486" y="126" font-size="11.5" fill="#1e293b" text-anchor="start">② 在节点写平衡式，拼成整体矩阵</text>
+<text x="486" y="146" font-size="11.5" fill="#1e293b" text-anchor="start">③ 解线性方程，得到所有节点位移</text>
+<text x="486" y="170" font-size="11.5" fill="#64748b" text-anchor="start">位移 × 刚度 = 内力，再校核平衡</text>
+<rect x="16" y="204" width="728" height="130" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+<text x="30" y="226" font-size="13.5" fill="#0f172a" text-anchor="start" font-weight="700">整体方程（固定端 u₁ = 0，只剩两个未知数）：</text>
+<text x="30" y="250" font-size="12.5" fill="#1e293b" text-anchor="start" class="mono">[ 300   −200 ] · [ u₂ ]    [    0 ]</text>
+<text x="30" y="270" font-size="12.5" fill="#1e293b" text-anchor="start" class="mono">[ −200   200 ]   [ u₃ ]  = [ 1000 ]</text>
+<text x="30" y="296" font-size="12.5" fill="#18794e" text-anchor="start" font-weight="700">解得：u₂ = 10 mm，u₃ = 15 mm</text>
+<text x="30" y="318" font-size="11.5" fill="#64748b" text-anchor="start">校核：100×10 = 1000 N；200×(15−10) = 1000 N，两段内力都与外力相等 ✓</text>
+</svg>

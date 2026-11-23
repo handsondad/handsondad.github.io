@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="348" viewBox="0 0 760 348" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">Ember-0 真机成绩单与 SenseNova 真机分组成功率</title>
+<desc id="desc">XDOF Ember-0 总成功率从GPT-6 Astra（2026年10月）的19.6%提升到GPT-6.2 Astra（2026年11月）的41.2%；SenseNova对GPT-6-Astra在八种真机平台实测中刚性抓取17/18、柔性2/4、长程移动9/23、精确插接0/11；早期五模型宣称done时任务真完成仅57%，展平T恤前五模型0/143而6.2仅1/30。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="347" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">图 2 · 真机成绩单：翻倍是真的，但“多数任务仍失败”也是真的</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左：XDOF Ember-0 双臂真机 16 任务均值（2026-11）；右：SenseNova 对 GPT-6-Astra 的 8 平台实测（2026-10）</text>
+<rect x="20" y="60" width="300" height="226" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="84" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">Ember-0 总成功率（16 任务均值）</text>
+<rect x="74" y="183.6" width="64" height="46.4" rx="6" fill="#475569"/>
+<text x="106" y="175.6" font-size="13.5" fill="#475569" text-anchor="middle" font-weight="700">19.6%</text>
+<text x="106" y="246" font-size="11.5" fill="#64748b" text-anchor="middle">GPT-6 Astra</text>
+<text x="106" y="261" font-size="11.5" fill="#64748b" text-anchor="middle">2026-10</text>
+<rect x="198" y="132.7" width="64" height="97.3" rx="6" fill="#18794e"/>
+<text x="230" y="124.7" font-size="13.5" fill="#18794e" text-anchor="middle" font-weight="700">41.2%</text>
+<text x="230" y="246" font-size="11.5" fill="#64748b" text-anchor="middle">GPT-6.2 Astra</text>
+<text x="230" y="261" font-size="11.5" fill="#64748b" text-anchor="middle">2026-11</text>
+<text x="170" y="274" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="600">约翻倍：19.6% → 41.2%</text>
+<rect x="336" y="60" width="404" height="226" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="352" y="84" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">SenseNova 真机分组（GPT-6-Astra）</text>
+<text x="352" y="117" font-size="12" fill="#1e293b" text-anchor="start" font-weight="600">刚性抓取</text>
+<rect x="434" y="104" width="192" height="18" rx="9.0" fill="#f1f5f9"/>
+<rect x="434" y="104" width="181.3" height="18" rx="9.0" fill="#1d6fa5"/>
+<text x="638" y="117" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">17/18（94%）</text>
+<text x="352" y="159" font-size="12" fill="#1e293b" text-anchor="start" font-weight="600">柔性物体</text>
+<rect x="434" y="146" width="192" height="18" rx="9.0" fill="#f1f5f9"/>
+<rect x="434" y="146" width="96.0" height="18" rx="9.0" fill="#c25014"/>
+<text x="638" y="159" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">2/4（50%）</text>
+<text x="352" y="201" font-size="12" fill="#1e293b" text-anchor="start" font-weight="600">长程移动</text>
+<rect x="434" y="188" width="192" height="18" rx="9.0" fill="#f1f5f9"/>
+<rect x="434" y="188" width="75.1" height="18" rx="9.0" fill="#6d28d9"/>
+<text x="638" y="201" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">9/23（39%）</text>
+<text x="352" y="243" font-size="12" fill="#1e293b" text-anchor="start" font-weight="600">精确插接</text>
+<rect x="434" y="230" width="192" height="18" rx="9.0" fill="#f1f5f9"/>
+<text x="638" y="243" font-size="11.5" fill="#b34039" text-anchor="start" font-weight="700">0/11（0%）</text>
+<text x="352" y="274" font-size="11.5" fill="#64748b" text-anchor="start">刚性抓取稳；柔性、长程与毫米级插接仍是硬骨头</text>
+<rect x="20" y="300" width="232" height="34" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+<text x="136" y="322" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">自报 done 真完成仅 57%</text>
+<rect x="264" y="300" width="232" height="34" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+<text x="380" y="322" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">展平 T 恤：前五模型 0/143，6.2 仅 1/30</text>
+<rect x="508" y="300" width="232" height="34" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+<text x="624" y="322" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">思考 10.2 秒 ≈ 杯子落地 22 次</text>
+</svg>

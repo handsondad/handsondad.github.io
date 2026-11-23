@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="368" viewBox="0 0 760 368" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">手机开关电源充电器五级电路合奏：从220伏交流电到稳定5伏直流电的波形演变与元器件分工</title>
+<desc id="desc">五张卡片依次展示：①二极管整流桥将220V正弦交流变为100Hz单向脉动波；②高压电容与MOSFET滤波并高频斩波成百千赫兹脉冲；③高频变压器磁耦合隔离降压；④次级肖特基管与电容整流抹平纹波；⑤采样电阻与光耦把输出误差反馈给MOSFET调节占空比，输出纯净5.0V直流。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-teal" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#0f766e"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="367" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">图 6 · 终极合奏：拆开手机充电器，看五大元器件怎样接力驯服 220 V 交流电</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">跟着底部的电压波形一路向右看：正弦波 → 馒头脉动波 → 高频方波 → 低压小纹波 → 5.00 V 直线</text>
+<rect x="16" y="62" width="136" height="212" rx="10" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.3"/>
+<rect x="16" y="62" width="136" height="28" rx="10" fill="#eaf4fb"/>
+<rect x="16" y="80" width="136" height="10" fill="#eaf4fb"/>
+<text x="84.0" y="81" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="700">① 整流桥</text>
+<text x="84.0" y="108" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">4 颗二极管</text>
+<text x="84.0" y="130" font-size="11" fill="#1e293b" text-anchor="middle">把正负交替的</text>
+<text x="84.0" y="148" font-size="11" fill="#1e293b" text-anchor="middle">220 V 掰成单向</text>
+<rect x="28" y="174" width="112" height="68" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+<line x1="34" y1="213.4" x2="134" y2="213.4" stroke="#cbd5e1" stroke-width="1"/>
+<polyline points="36.0,230.0 38.0,223.0 40.0,216.2 42.0,210.0 44.0,204.5 46.0,200.1 48.0,196.7 50.0,194.7 52.0,194.0 54.0,194.7 56.0,196.7 58.0,200.1 60.0,204.5 62.0,210.0 64.0,216.2 66.0,223.0 68.0,230.0 70.0,223.0 72.0,216.2 74.0,210.0 76.0,204.5 78.0,200.1 80.0,196.7 82.0,194.7 84.0,194.0 86.0,194.7 88.0,196.7 90.0,200.1 92.0,204.5 94.0,210.0 96.0,216.2 98.0,223.0 100.0,230.0 102.0,223.0 104.0,216.2 106.0,210.0 108.0,204.5 110.0,200.1 112.0,196.7 114.0,194.7 116.0,194.0 118.0,194.7 120.0,196.7 122.0,200.1 124.0,204.5 126.0,210.0 128.0,216.2 130.0,223.0 132.0,230.0" fill="none" stroke="#1d6fa5" stroke-width="2"/>
+<text x="84.0" y="260" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">100 Hz 单向馒头波</text>
+<rect x="164" y="62" width="136" height="212" rx="10" fill="#ffffff" stroke="#6d28d9" stroke-width="1.3"/>
+<rect x="164" y="62" width="136" height="28" rx="10" fill="#f3e8ff"/>
+<rect x="164" y="80" width="136" height="10" fill="#f3e8ff"/>
+<text x="232.0" y="81" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="700">② 高压滤波 + 斩波</text>
+<text x="232.0" y="108" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">大电容 + MOSFET</text>
+<text x="232.0" y="130" font-size="11" fill="#1e293b" text-anchor="middle">先滤成约 311 V DC</text>
+<text x="232.0" y="148" font-size="11" fill="#1e293b" text-anchor="middle">再高频切碎成方波</text>
+<rect x="176" y="174" width="112" height="68" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+<line x1="182" y1="213.4" x2="282" y2="213.4" stroke="#cbd5e1" stroke-width="1"/>
+<path d="M186.0,230 L186.0,188 L195.6,188 L195.6,230 L204.4,230 M204.4,230 L204.4,188 L214.0,188 L214.0,230 L222.8,230 M222.8,230 L222.8,188 L232.4,188 L232.4,230 L241.2,230 M241.2,230 L241.2,188 L250.8,188 L250.8,230 L259.6,230 M259.6,230 L259.6,188 L269.2,188 L269.2,230 L278.0,230" fill="none" stroke="#6d28d9" stroke-width="1.7"/>
+<text x="232.0" y="260" font-size="10.5" fill="#6d28d9" text-anchor="middle" font-weight="600">百 kHz 级高频脉冲</text>
+<rect x="312" y="62" width="136" height="212" rx="10" fill="#ffffff" stroke="#c25014" stroke-width="1.3"/>
+<rect x="312" y="62" width="136" height="28" rx="10" fill="#fef1e8"/>
+<rect x="312" y="80" width="136" height="10" fill="#fef1e8"/>
+<text x="380.0" y="81" font-size="12" fill="#c25014" text-anchor="middle" font-weight="700">③ 高频变压器</text>
+<text x="380.0" y="108" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">磁芯耦合电感</text>
+<text x="380.0" y="130" font-size="11" fill="#1e293b" text-anchor="middle">高频磁通隔空传能</text>
+<text x="380.0" y="148" font-size="11" fill="#1e293b" text-anchor="middle">安全隔离并降压</text>
+<rect x="324" y="174" width="112" height="68" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+<line x1="330" y1="213.4" x2="430" y2="213.4" stroke="#cbd5e1" stroke-width="1"/>
+<path d="M334.0,230 L334.0,208 L343.6,208 L343.6,230 L352.4,230 M352.4,230 L352.4,208 L362.0,208 L362.0,230 L370.8,230 M370.8,230 L370.8,208 L380.4,208 L380.4,230 L389.2,230 M389.2,230 L389.2,208 L398.8,208 L398.8,230 L407.6,230 M407.6,230 L407.6,208 L417.2,208 L417.2,230 L426.0,230" fill="none" stroke="#c25014" stroke-width="1.8"/>
+<text x="380.0" y="260" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="600">低压隔离脉冲</text>
+<rect x="460" y="62" width="136" height="212" rx="10" fill="#ffffff" stroke="#18794e" stroke-width="1.3"/>
+<rect x="460" y="62" width="136" height="28" rx="10" fill="#e7f6ee"/>
+<rect x="460" y="80" width="136" height="10" fill="#e7f6ee"/>
+<text x="528.0" y="81" font-size="12" fill="#18794e" text-anchor="middle" font-weight="700">④ 次级整流滤波</text>
+<text x="528.0" y="108" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">肖特基管 + 电容</text>
+<text x="528.0" y="130" font-size="11" fill="#1e293b" text-anchor="middle">再次单向整流</text>
+<text x="528.0" y="148" font-size="11" fill="#1e293b" text-anchor="middle">电容填平电压坑洼</text>
+<rect x="472" y="174" width="112" height="68" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+<line x1="478" y1="213.4" x2="578" y2="213.4" stroke="#cbd5e1" stroke-width="1"/>
+<polyline points="480.0,198.0 482.4,198.5 484.8,199.0 487.2,199.5 489.6,200.0 492.0,200.5 494.4,201.0 496.8,201.5 499.2,198.0 501.6,198.5 504.0,199.0 506.4,199.5 508.8,200.0 511.2,200.5 513.6,201.0 516.0,201.5 518.4,198.0 520.8,198.5 523.2,199.0 525.6,199.5 528.0,200.0 530.4,200.5 532.8,201.0 535.2,201.5 537.6,198.0 540.0,198.5 542.4,199.0 544.8,199.5 547.2,200.0 549.6,200.5 552.0,201.0 554.4,201.5 556.8,198.0 559.2,198.5 561.6,199.0 564.0,199.5 566.4,200.0 568.8,200.5 571.2,201.0 573.6,201.5 576.0,198.0" fill="none" stroke="#18794e" stroke-width="2.1"/>
+<text x="528.0" y="260" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="600">纹波被电容抹平</text>
+<rect x="608" y="62" width="136" height="212" rx="10" fill="#ffffff" stroke="#0f766e" stroke-width="1.3"/>
+<rect x="608" y="62" width="136" height="28" rx="10" fill="#f0fdfa"/>
+<rect x="608" y="80" width="136" height="10" fill="#f0fdfa"/>
+<text x="676.0" y="81" font-size="12" fill="#0f766e" text-anchor="middle" font-weight="700">⑤ 反馈稳压保护</text>
+<text x="676.0" y="108" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="700">采样电阻 + 光耦</text>
+<text x="676.0" y="130" font-size="11" fill="#1e293b" text-anchor="middle">实时盯死输出电压</text>
+<text x="676.0" y="148" font-size="11" fill="#1e293b" text-anchor="middle">锁定纯净 5.0 V DC</text>
+<rect x="620" y="174" width="112" height="68" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+<line x1="626" y1="213.4" x2="726" y2="213.4" stroke="#cbd5e1" stroke-width="1"/>
+<line x1="628" y1="199" x2="724" y2="199" stroke="#0f766e" stroke-width="2.8"/>
+<text x="676.0" y="260" font-size="10.5" fill="#0f766e" text-anchor="middle" font-weight="700">稳定 5.0 V 直流</text>
+<path d="M153 168 L162 168" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-muted)"/>
+<path d="M301 168 L310 168" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-muted)"/>
+<path d="M449 168 L458 168" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-muted)"/>
+<path d="M597 168 L606 168" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-muted)"/>
+<path d="M676 276 L676 306 Q676 316 664 316 L244 316 Q232 316 232 306 L232 278" fill="none" stroke="#0f766e" stroke-width="1.7" stroke-dasharray="5 3" marker-end="url(#arr-teal)"/>
+<rect x="330" y="303" width="256" height="24" rx="12" fill="#fbfcfd"/>
+<text x="458" y="319" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">← 光耦隔离反馈：动态调节 MOSFET 开关占空比</text>
+<text x="20" y="350" font-size="11.5" fill="#64748b" text-anchor="start">为什么氮化镓（GaN）充电头能缩成饼干大小？因为它把 ② 里的开关频率推高到数百 kHz 至 MHz，③ 里的变压器磁芯就能大幅缩小。</text>
+</svg>
