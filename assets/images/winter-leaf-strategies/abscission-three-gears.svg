@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="402" viewBox="0 0 760 402" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">叶柄离层三档变速箱：银杏闪电暴落、垂柳分批缓落与橡树枯而不落解剖对比</title>
+<desc id="desc">对比银杏全冠同步预装离层加初霜冰晶劈裂、垂柳散孔材与路灯微气候渐次落叶、橡树山毛榉离层酶冻停保留宿存枯叶护冬芽三种机制。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="401" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">同样长着叶柄“离层剪刀”，为什么银杏一夜秃、垂柳慢慢掉、橡树枯一冬？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">秘密全在叶柄根部几层细胞厚的离层区（AZ）：激素退潮节奏、果胶酶进度与霜冻物理劈裂的三档组合</text>
+<rect x="20" y="64" width="224" height="320" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="30.0" y="74.0" width="204" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="132.0" y="89.0" font-size="11" fill="#c25014" text-anchor="middle" font-weight="600">快档：全冠预装 + 初霜冰劈</text>
+<text x="32" y="111" font-size="10.0" fill="#64748b" text-anchor="start" font-weight="600">代表：银杏、白蜡树（环孔大导管/复叶）</text>
+<rect x="268" y="64" width="224" height="320" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="278.0" y="74.0" width="204" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="380.0" y="89.0" font-size="11" fill="#6d28d9" text-anchor="middle" font-weight="600">慢档：由内向外分批拉闸</text>
+<text x="280" y="111" font-size="10.0" fill="#64748b" text-anchor="start" font-weight="600">代表：垂柳、槭树 + 城市路灯“钉子枝”</text>
+<rect x="516" y="64" width="224" height="320" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="526.0" y="74.0" width="204" height="22" rx="11.0" fill="#fef3c7" stroke="#78350f" stroke-width="1" stroke-opacity="0.35"/>
+<text x="628.0" y="89.0" font-size="11" fill="#78350f" text-anchor="middle" font-weight="600">卡档：低温锁死酶 + 维管硬拽</text>
+<text x="528" y="111" font-size="10.0" fill="#64748b" text-anchor="start" font-weight="600">代表：栎树（橡树）、山毛榉、鹅耳枥</text>
+<rect x="32" y="122" width="200" height="120" rx="8" fill="#fffdf7" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="44" y="132" width="22" height="100" rx="4" fill="#92400e"/>
+<text x="55" y="224" font-size="9.8" fill="#ffffff" text-anchor="middle" font-weight="700">枝干</text>
+<rect x="66" y="156" width="8" height="24" rx="2" fill="#78350f"/>
+<rect x="75" y="154" width="10" height="28" rx="2" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2" stroke-dasharray="2,2"/>
+<polygon points="80,152 84,168 80,184 76,168" fill="#60a5fa" stroke="#1d6fa5" stroke-width="1"/>
+<path d="M 88 168 L 128 166 C 148 140, 188 136, 198 158 L 182 168 L 198 180 C 186 200, 148 196, 128 172 Z" fill="#facc15" stroke="#ca8a04" stroke-width="1.5"/>
+<text x="79" y="145" font-size="9.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">冰晶撑裂离层</text>
+<text x="154" y="212" font-size="9.8" fill="#c25014" text-anchor="middle" font-weight="700">日出融冰 → 全树齐落</text>
+<text x="32" y="260" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="600">① 全树同步待命：短日照让全冠叶柄同时</text>
+<text x="32" y="282" font-size="9.8" fill="#1e293b" text-anchor="start">焊好软木疤、果胶酶半溶中胶层；</text>
+<text x="32" y="304" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="600">② 暂留黄叶收氮：无霜时靠细维管挂住叶；</text>
+<text x="32" y="326" font-size="9.8" fill="#c25014" text-anchor="start" font-weight="700">③ 初霜总开关：夜冻让离层水结冰胀 9%，</text>
+<text x="32" y="348" font-size="9.8" fill="#c25014" text-anchor="start">日出冰化，24–48h 哗啦掉光！</text>
+<rect x="280" y="122" width="200" height="120" rx="8" fill="#faf8ff" stroke="#e2e8f0" stroke-width="1"/>
+<line x1="305" y1="228" x2="305" y2="146" stroke="#78350f" stroke-width="5" stroke-linecap="round"/>
+<line x1="305" y1="176" x2="365" y2="148" stroke="#78350f" stroke-width="3"/>
+<line x1="305" y1="190" x2="392" y2="184" stroke="#78350f" stroke-width="3"/>
+<ellipse cx="322" cy="198" rx="10" ry="5" fill="#fbbf24" stroke="#d97706" stroke-width="1"/>
+<text x="326" y="216" font-size="9.6" fill="#b45309" text-anchor="middle" font-weight="700">内膛老叶先掉</text>
+<ellipse cx="386" cy="182" rx="12" ry="5.5" fill="#4ade80" stroke="#18794e" stroke-width="1.2"/>
+<ellipse cx="364" cy="148" rx="12" ry="5.5" fill="#22c55e" stroke="#18794e" stroke-width="1.2"/>
+<line x1="446" y1="230" x2="446" y2="140" stroke="#475569" stroke-width="3"/>
+<path d="M 446 140 L 424 140" stroke="#475569" stroke-width="3"/>
+<polygon points="424,142 382,196 458,196" fill="#fef08a" opacity="0.45"/>
+<circle cx="424" cy="142" r="5" fill="#f59e0b"/>
+<text x="422" y="214" font-size="9.6" fill="#6d28d9" text-anchor="middle" font-weight="700">路灯骗过光敏色素</text>
+<text x="280" y="260" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="600">① 散孔细管耐寒：垂柳导管细（30–50 μm）</text>
+<text x="280" y="282" font-size="9.8" fill="#1e293b" text-anchor="start">不怕轻霜，水足可贪恋晚秋阳光；</text>
+<text x="280" y="304" font-size="9.8" fill="#1e293b" text-anchor="start" font-weight="600">② 树冠分批撤退：遮阴内膛老叶先跌先掉，</text>
+<text x="280" y="326" font-size="9.8" fill="#1e293b" text-anchor="start">向阳外梢叶多赚几周糖分再退；</text>
+<text x="280" y="348" font-size="9.8" fill="#6d28d9" text-anchor="start" font-weight="700">③ 路灯“熬夜枝”：夜光谎报长日照拒落叶！</text>
+<rect x="528" y="122" width="200" height="120" rx="8" fill="#fffbeb" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="542" y="132" width="20" height="100" rx="4" fill="#57534e"/>
+<path d="M 562 162 C 574 146, 584 148, 578 166 Z" fill="#16a34a" stroke="#18794e" stroke-width="1.3"/>
+<text x="596" y="146" font-size="9.6" fill="#18794e" text-anchor="start" font-weight="700">越冬嫩芽（受护）</text>
+<rect x="562" y="172" width="18" height="8" rx="2" fill="#fef2f2" stroke="#b91c1c" stroke-width="1.3"/>
+<line x1="560" y1="176" x2="584" y2="176" stroke="#78350f" stroke-width="2.6"/>
+<path d="M 582 176 C 598 160, 616 168, 630 160 C 646 156, 662 168, 682 164 C 700 168, 704 186, 684 190 C 664 196, 646 188, 630 194 C 612 190, 598 192, 582 176 Z" fill="#b45309" fill-opacity="0.82" stroke="#78350f" stroke-width="1.5"/>
+<text x="640" y="180" font-size="9.6" fill="#ffffff" text-anchor="middle" font-weight="700">苦涩单宁干枯叶</text>
+<text x="628" y="214" font-size="9.6" fill="#b91c1c" text-anchor="middle" font-weight="700">离层酶冻停，纤维死拽不放！</text>
+<text x="528" y="260" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="600">① 离层半途急冻：深秋降温快，果胶酶未溶</text>
+<text x="528" y="282" font-size="9.8" fill="#1e293b" text-anchor="start">完分离层就冻停，纤维硬拽着；</text>
+<text x="528" y="304" font-size="9.8" fill="#78350f" text-anchor="start" font-weight="700">② 防鹿啃芽盾牌：多见于幼树与 1–2 m 低枝，</text>
+<text x="528" y="326" font-size="9.8" fill="#1e293b" text-anchor="start">苦涩干叶劝退鹿和狍子啃冬芽；</text>
+<text x="528" y="348" font-size="9.8" fill="#18794e" text-anchor="start" font-weight="700">③ 春芽顶落化泥：4 月新芽膨大顶落旧叶肥土！</text>
+</svg>

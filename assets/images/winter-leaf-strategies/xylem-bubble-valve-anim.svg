@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="412" viewBox="0 0 760 412" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">阔叶树宽导管冻融气泡栓塞与松柏细管胞及纹孔塞安全阀单次动画对比</title>
+<desc id="desc">单次播放5.6秒冻融过程：左栏120微米宽导管结冰析出大气泡并在融冰负压下膨胀成气栓断流；右栏18微米细管胞微气泡自动消融，且具缘纹孔塞平移封死进气管胞。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes ice-freeze {
+      0%, 12% { opacity: 0; }
+      24%, 52% { opacity: 0.88; }
+      66%, 100% { opacity: 0; }
+    }
+    @keyframes big-embolism {
+      0%, 20% { transform: scale(0.18); opacity: 0; }
+      35%, 55% { transform: scale(0.45); opacity: 0.95; }
+      74%, 100% { transform: scale(1); opacity: 0.96; }
+    }
+    @keyframes tiny-bubble-vanish {
+      0%, 20% { opacity: 0; }
+      35%, 56% { opacity: 0.95; }
+      74%, 100% { opacity: 0.08; }
+    }
+    @keyframes torus-slam {
+      0%, 54% { transform: translateX(0px); }
+      72%, 100% { transform: translateX(13px); }
+    }
+    .ice-sheath {
+      animation: ice-freeze 5.6s ease-in-out 1 backwards;
+    }
+    .embolism-lock {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: big-embolism 5.6s ease-out 1 backwards;
+    }
+    .micro-bubble {
+      animation: tiny-bubble-vanish 5.6s ease-in-out 1 backwards;
+    }
+    .torus-disc {
+      animation: torus-slam 5.6s cubic-bezier(0.22, 1, 0.36, 1) 1 backwards;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .ice-sheath { animation: none !important; opacity: 0 !important; }
+      .embolism-lock { animation: none !important; transform: scale(1) !important; opacity: 0.96 !important; }
+      .micro-bubble { animation: none !important; opacity: 0.08 !important; }
+      .torus-disc { animation: none !important; transform: translateX(13px) !important; }
+    }
+</style>
+<rect x="0.5" y="0.5" width="759" height="411" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">为什么阔叶树冬天硬撑不掉叶会死？35–44 微米“冻融气栓生死线”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">水结冰会挤出溶解空气！宽导管融冰时气泡在负压下炸成“气锁断流”，松柏细管胞却能把微气泡压回水里</text>
+<rect x="20" y="64" width="352" height="330" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="74.0" width="328" height="22" rx="11.0" fill="#fef2f2" stroke="#b91c1c" stroke-width="1" stroke-opacity="0.35"/>
+<text x="196.0" y="89.0" font-size="10.8" fill="#b91c1c" text-anchor="middle" font-weight="600">阔叶树宽导管（内径 60–250 μm）：夏天飙车，冬天爆管！</text>
+<rect x="34" y="106" width="324" height="162" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="96" y="118" width="160" height="138" rx="6" fill="#dbeafe" stroke="#334155" stroke-width="4"/>
+<rect class="ice-sheath" x="100" y="122" width="38" height="130" fill="#bae6fd"/>
+<rect class="ice-sheath" x="214" y="122" width="38" height="130" fill="#bae6fd"/>
+<rect class="embolism-lock" x="104" y="128" width="144" height="118" rx="22" fill="#fef2f2" stroke="#b91c1c" stroke-width="2.4" stroke-dasharray="6,3"/>
+<text x="176" y="174" font-size="11.5" fill="#b91c1c" text-anchor="middle" font-weight="700">致命大气泡栓塞！</text>
+<text x="176" y="194" font-size="10.2" fill="#b91c1c" text-anchor="middle" font-weight="600">气泡 &gt; 0.58 μm 临界值（拉普拉斯）</text>
+<text x="176" y="214" font-size="10.0" fill="#1e293b" text-anchor="middle">融冰遇 -0.5 MPa 拉力</text>
+<text x="176" y="232" font-size="10.2" fill="#b91c1c" text-anchor="middle" font-weight="700">水柱当场崩断 = 0% 输水</text>
+<text x="42" y="145" font-size="10.2" fill="#0f172a" text-anchor="start" font-weight="700">宽导管</text>
+<text x="42" y="162" font-size="10.5" fill="#b91c1c" text-anchor="start" font-weight="700">120 μm</text>
+<text x="42" y="180" font-size="9.8" fill="#64748b" text-anchor="start">(&gt;44 μm</text>
+<text x="42" y="194" font-size="9.8" fill="#64748b" text-anchor="start">生死线)</text>
+<text x="260" y="152" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="700">若冬天不扔阔叶：</text>
+<text x="260" y="170" font-size="9.5" fill="#1e293b" text-anchor="start">• 叶面抽水拉高负压</text>
+<text x="260" y="187" font-size="9.5" fill="#1e293b" text-anchor="start">• 夜冻+日晒融冰</text>
+<text x="260" y="204" font-size="9.5" fill="#b91c1c" text-anchor="start" font-weight="700">  血管气锁渴死！</text>
+<text x="260" y="224" font-size="9.5" fill="#1e293b" text-anchor="start">• 湿雪挂叶压断树枝</text>
+<rect x="34" y="278" width="324" height="104" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="46" y="298" font-size="10.0" fill="#c25014" text-anchor="start" font-weight="700">既然宽管怕冻，干嘛不造细管？—— 四次方流量暴利！</text>
+<text x="46" y="319" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="600">• 哈根–泊肃叶定律：单管输水流量 Q ∝ 管径 D⁴</text>
+<text x="46" y="338" font-size="10.0" fill="#b91c1c" text-anchor="start" font-weight="700">• 管径扩宽 5 倍 (20→100 μm)，流量暴涨 5⁴ = 625 倍！</text>
+<text x="46" y="357" font-size="9.8" fill="#1e293b" text-anchor="start">• 春夏靠宽管飙车疯长，入冬扔光薄叶“弃车保帅”最赚</text>
+<text x="46" y="374" font-size="9.5" fill="#b45309" text-anchor="start" font-weight="700">• 反证：落羽杉虽是针叶，管胞宽达 40 μm → 秋天照样掉叶</text>
+<rect x="388" y="64" width="352" height="330" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="400.0" y="74.0" width="328" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="564.0" y="89.0" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="600">松柏细管胞（内径 10–30 μm）+ 纹孔塞自动止回阀</text>
+<rect x="402" y="106" width="324" height="120" rx="8" fill="#f0fdf4" stroke="#18794e" stroke-width="1"/>
+<rect x="424" y="118" width="28" height="96" rx="5" fill="#dcfce7" stroke="#18794e" stroke-width="2.4"/>
+<line x1="438" y1="206" x2="438" y2="128" stroke="#1d6fa5" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+<circle class="micro-bubble" cx="438" cy="166" r="4.5" fill="#ffffff" stroke="#b91c1c" stroke-width="1.3"/>
+<rect x="464" y="118" width="28" height="96" rx="5" fill="#dcfce7" stroke="#18794e" stroke-width="2.4"/>
+<line x1="478" y1="206" x2="478" y2="128" stroke="#1d6fa5" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+<circle class="micro-bubble" cx="478" cy="166" r="4.5" fill="#ffffff" stroke="#b91c1c" stroke-width="1.3"/>
+<rect x="504" y="118" width="28" height="96" rx="5" fill="#dcfce7" stroke="#18794e" stroke-width="2.4"/>
+<line x1="518" y1="206" x2="518" y2="128" stroke="#1d6fa5" stroke-width="1.8" marker-end="url(#arr-blue)"/>
+<circle class="micro-bubble" cx="518" cy="166" r="4.5" fill="#ffffff" stroke="#b91c1c" stroke-width="1.3"/>
+<text x="546" y="132" font-size="9.8" fill="#18794e" text-anchor="start" font-weight="700">① 管径极细（松≤30 / 柏≤20 μm）</text>
+<text x="546" y="151" font-size="9.6" fill="#1e293b" text-anchor="start">单根冰量少，析出微气泡极小；</text>
+<text x="546" y="170" font-size="9.8" fill="#1d6fa5" text-anchor="start" font-weight="700">② 表面张力自愈（P = 4σ/D_b）：</text>
+<text x="546" y="189" font-size="9.6" fill="#1e293b" text-anchor="start">气泡越小内部表面张力越强，</text>
+<text x="546" y="207" font-size="9.6" fill="#18794e" text-anchor="start" font-weight="700">冰一化直接把空气挤溶回水里！</text>
+<rect x="402" y="236" width="324" height="146" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="414" y="256" font-size="10.3" fill="#1d6fa5" text-anchor="start" font-weight="700">双保险：万一单根管胞进气，具缘纹孔塞（Torus）秒封死！</text>
+<rect x="414" y="268" width="138" height="102" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.2"/>
+<rect x="418" y="272" width="52" height="94" rx="4" fill="#fef2f2"/>
+<text x="444" y="300" font-size="9.5" fill="#b91c1c" text-anchor="middle" font-weight="700">进气废管</text>
+<text x="444" y="316" font-size="9.2" fill="#b91c1c" text-anchor="middle">(0 MPa)</text>
+<rect x="496" y="272" width="52" height="94" rx="4" fill="#dbeafe"/>
+<text x="522" y="300" font-size="9.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">健康水管</text>
+<text x="522" y="316" font-size="9.2" fill="#1d6fa5" text-anchor="middle">(-2 MPa)</text>
+<path d="M 470 272 L 470 308 L 494 308 L 494 272 Z" fill="#475569"/>
+<path d="M 470 366 L 470 330 L 494 330 L 494 366 Z" fill="#475569"/>
+<g class="torus-disc">
+<line x1="482" y1="276" x2="482" y2="362" stroke="#b45309" stroke-width="1.5" stroke-dasharray="3,2"/>
+<ellipse cx="482" cy="319" rx="4.5" ry="15" fill="#c25014" stroke="#7c2d12" stroke-width="1.4"/>
+</g>
+<text x="483" y="358" font-size="9.2" fill="#c25014" text-anchor="middle" font-weight="700">纹孔塞封门→</text>
+<text x="562" y="286" font-size="9.8" fill="#1e293b" text-anchor="start">• 平时居中：水流穿过网状纹孔缘</text>
+<text x="562" y="306" font-size="9.8" fill="#1e293b" text-anchor="start">• 一旦隔壁进气：两侧瞬间产生</text>
+<text x="562" y="324" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="600">  巨大压差，把实心圆盘“纹孔塞”</text>
+<text x="562" y="342" font-size="9.8" fill="#c25014" text-anchor="start" font-weight="700">  啪地吸过去死死堵住孔口！</text>
+<text x="562" y="363" font-size="9.8" fill="#18794e" text-anchor="start" font-weight="700">• 气泡被永久关禁闭，绝不连累全树</text>
+</svg>

@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="398" viewBox="0 0 760 398" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">全球植物叶经济谱与松柏错峰轮休换叶机制图解</title>
+<desc id="desc">左栏展示比叶重LMA建造成本与叶片寿命正相关规律，右栏图解松枝1至4年生针叶分批退伍以及香樟暮春换叶、落叶松水杉秋落原因。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="397" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">终极算账：为什么阔叶树偏爱“半年抛快消叶”，松柏却造“三年耐用品”？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">全球植物叶经济谱（Wright 等 Nature）：比叶重（造价）越高，单日回本越慢，就越必须跨冬连用好几年！</text>
+<rect x="20" y="64" width="412" height="316" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="74.0" width="320" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="194.0" y="89.0" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="600">叶片单平米干重造价（LMA）vs 叶片服役寿命</text>
+<line x1="84.0" y1="314.0" x2="406.0" y2="314.0" stroke="#475569" stroke-width="1.4"/>
+<line x1="84.0" y1="314.0" x2="84.0" y2="116.0" stroke="#475569" stroke-width="1.4"/>
+<line x1="84.0" y1="314.0" x2="84.0" y2="319.0" stroke="#475569" stroke-width="1.1"/>
+<line x1="84.0" y1="314.0" x2="84.0" y2="116.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3,3"/>
+<text x="84.0" y="332.0" font-size="10.0" fill="#64748b" text-anchor="middle">0</text>
+<line x1="164.5" y1="314.0" x2="164.5" y2="319.0" stroke="#475569" stroke-width="1.1"/>
+<line x1="164.5" y1="314.0" x2="164.5" y2="116.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3,3"/>
+<text x="164.5" y="332.0" font-size="10.0" fill="#64748b" text-anchor="middle">90</text>
+<line x1="245.0" y1="314.0" x2="245.0" y2="319.0" stroke="#475569" stroke-width="1.1"/>
+<line x1="245.0" y1="314.0" x2="245.0" y2="116.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3,3"/>
+<text x="245.0" y="332.0" font-size="10.0" fill="#64748b" text-anchor="middle">180</text>
+<line x1="325.5" y1="314.0" x2="325.5" y2="319.0" stroke="#475569" stroke-width="1.1"/>
+<line x1="325.5" y1="314.0" x2="325.5" y2="116.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3,3"/>
+<text x="325.5" y="332.0" font-size="10.0" fill="#64748b" text-anchor="middle">270</text>
+<line x1="406.0" y1="314.0" x2="406.0" y2="319.0" stroke="#475569" stroke-width="1.1"/>
+<line x1="406.0" y1="314.0" x2="406.0" y2="116.0" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3,3"/>
+<text x="406.0" y="332.0" font-size="10.0" fill="#64748b" text-anchor="middle">360</text>
+<text x="245.0" y="350.0" font-size="10.0" fill="#0f172a" text-anchor="middle" font-weight="600">叶片建造成本：比叶重 LMA（g 干重 / m² 叶面积）→ 越右越厚重昂贵</text>
+<line x1="80.0" y1="292" x2="406.0" y2="292" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3,3"/>
+<text x="76.0" y="296" font-size="9.8" fill="#64748b" text-anchor="end">5–7个月</text>
+<line x1="80.0" y1="242" x2="406.0" y2="242" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3,3"/>
+<text x="76.0" y="246" font-size="9.8" fill="#64748b" text-anchor="end">1–1.5年</text>
+<line x1="80.0" y1="184" x2="406.0" y2="184" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3,3"/>
+<text x="76.0" y="188" font-size="9.8" fill="#64748b" text-anchor="end">2–5年</text>
+<line x1="80.0" y1="132" x2="406.0" y2="132" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="3,3"/>
+<text x="76.0" y="136" font-size="9.8" fill="#64748b" text-anchor="end">10–45年</text>
+<text x="34" y="112" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="700">↑ 叶片寿命</text>
+<polygon points="104,302 156,302 396,146 340,126" fill="#eaf4fb" opacity="0.65"/>
+<circle cx="138" cy="288" r="13" fill="#c25014" fill-opacity="0.22" stroke="#c25014" stroke-width="2.2"/>
+<circle cx="138" cy="288" r="3.5" fill="#c25014"/>
+<circle cx="178" cy="282" r="10" fill="#b45309" fill-opacity="0.22" stroke="#b45309" stroke-width="2.2"/>
+<circle cx="178" cy="282" r="3.5" fill="#b45309"/>
+<circle cx="206" cy="238" r="12" fill="#0f766e" fill-opacity="0.22" stroke="#0f766e" stroke-width="2.2"/>
+<circle cx="206" cy="238" r="3.5" fill="#0f766e"/>
+<circle cx="296" cy="180" r="14" fill="#18794e" fill-opacity="0.22" stroke="#18794e" stroke-width="2.2"/>
+<circle cx="296" cy="180" r="3.5" fill="#18794e"/>
+<circle cx="366" cy="134" r="10" fill="#6d28d9" fill-opacity="0.22" stroke="#6d28d9" stroke-width="2.2"/>
+<circle cx="366" cy="134" r="3.5" fill="#6d28d9"/>
+<text x="154" y="266" font-size="9.8" fill="#c25014" text-anchor="start" font-weight="700" class="halo">① 落叶阔叶（薄叶高光合，单季回本）</text>
+<text x="192" y="298" font-size="9.5" fill="#b45309" text-anchor="start" font-weight="700" class="halo">★叛逆彩蛋：落叶松/水杉（薄针叶秋落）</text>
+<text x="222" y="234" font-size="9.8" fill="#0f766e" text-anchor="start" font-weight="700" class="halo">② 香樟/冬青（1年1换）</text>
+<text x="234" y="162" font-size="9.8" fill="#18794e" text-anchor="start" font-weight="700" class="halo">③ 松树/柏树（厚针叶连用2–5年回本）</text>
+<text x="244" y="132" font-size="9.6" fill="#6d28d9" text-anchor="start" font-weight="700" class="halo">④ 狐尾松（极寒贫瘠，寿命30–45年）</text>
+<text x="36" y="369" font-size="9.6" fill="#64748b" text-anchor="start">规律：暖湿肥沃区 → 薄叶快赚快扔占优；干冷贫瘠区 → 厚针叶跨冬连用占优。</text>
+<rect x="444" y="64" width="296" height="316" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="456.0" y="74.0" width="272" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="592.0" y="89.0" font-size="10.6" fill="#18794e" text-anchor="middle" font-weight="600">破除误区：常绿树不是不掉叶，是“错峰轮休”！</text>
+<rect x="456" y="104" width="272" height="102" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<line x1="472" y1="158" x2="706" y2="158" stroke="#78350f" stroke-width="5" stroke-linecap="round"/>
+<line x1="550" y1="146" x2="550" y2="170" stroke="#475569" stroke-width="2"/>
+<line x1="630" y1="146" x2="630" y2="170" stroke="#475569" stroke-width="2"/>
+<line x1="484" y1="156" x2="476" y2="126" stroke="#eab308" stroke-width="2"/>
+<line x1="484" y1="160" x2="478" y2="188" stroke="#ca8a04" stroke-width="2" stroke-dasharray="4,2"/>
+<line x1="502" y1="156" x2="494" y2="126" stroke="#eab308" stroke-width="2"/>
+<line x1="502" y1="160" x2="496" y2="188" stroke="#ca8a04" stroke-width="2" stroke-dasharray="4,2"/>
+<line x1="520" y1="156" x2="512" y2="126" stroke="#eab308" stroke-width="2"/>
+<line x1="520" y1="160" x2="514" y2="188" stroke="#ca8a04" stroke-width="2" stroke-dasharray="4,2"/>
+<line x1="536" y1="156" x2="528" y2="126" stroke="#eab308" stroke-width="2"/>
+<line x1="536" y1="160" x2="530" y2="188" stroke="#ca8a04" stroke-width="2" stroke-dasharray="4,2"/>
+<text x="506" y="120" font-size="9.2" fill="#b45309" text-anchor="middle" font-weight="700">3–4岁老针(秋落)</text>
+<line x1="564" y1="156" x2="568" y2="124" stroke="#18794e" stroke-width="2.2"/>
+<line x1="564" y1="160" x2="568" y2="188" stroke="#18794e" stroke-width="2.2"/>
+<line x1="582" y1="156" x2="586" y2="124" stroke="#18794e" stroke-width="2.2"/>
+<line x1="582" y1="160" x2="586" y2="188" stroke="#18794e" stroke-width="2.2"/>
+<line x1="600" y1="156" x2="604" y2="124" stroke="#18794e" stroke-width="2.2"/>
+<line x1="600" y1="160" x2="604" y2="188" stroke="#18794e" stroke-width="2.2"/>
+<line x1="616" y1="156" x2="620" y2="124" stroke="#18794e" stroke-width="2.2"/>
+<line x1="616" y1="160" x2="620" y2="188" stroke="#18794e" stroke-width="2.2"/>
+<text x="590" y="120" font-size="9.2" fill="#18794e" text-anchor="middle" font-weight="700">2岁壮年针(留守)</text>
+<line x1="644" y1="156" x2="654" y2="126" stroke="#16a34a" stroke-width="2.2"/>
+<line x1="644" y1="160" x2="654" y2="188" stroke="#16a34a" stroke-width="2.2"/>
+<line x1="662" y1="156" x2="672" y2="126" stroke="#16a34a" stroke-width="2.2"/>
+<line x1="662" y1="160" x2="672" y2="188" stroke="#16a34a" stroke-width="2.2"/>
+<line x1="680" y1="156" x2="690" y2="126" stroke="#16a34a" stroke-width="2.2"/>
+<line x1="680" y1="160" x2="690" y2="188" stroke="#16a34a" stroke-width="2.2"/>
+<line x1="696" y1="156" x2="706" y2="126" stroke="#16a34a" stroke-width="2.2"/>
+<line x1="696" y1="160" x2="706" y2="188" stroke="#16a34a" stroke-width="2.2"/>
+<text x="676" y="120" font-size="9.2" fill="#15803d" text-anchor="middle" font-weight="700">1岁新针(主力)</text>
+<text x="592" y="200" font-size="9.5" fill="#1e293b" text-anchor="middle" font-weight="600">松林地上厚厚一层松针毯，就是每年退休的老员工！</text>
+<text x="456" y="229" font-size="9.8" fill="#0f766e" text-anchor="start" font-weight="700">问1：香樟树冬天绿油油，怎么4月满地掉红黄叶？</text>
+<text x="456" y="246" font-size="9.5" fill="#1e293b" text-anchor="start">答：亚热带常绿阔叶树选在暮春“新叶上岗日”集中换旧衣</text>
+<text x="456" y="260" font-size="9.5" fill="#1e293b" text-anchor="start">！</text>
+<text x="456" y="281" font-size="9.8" fill="#b45309" text-anchor="start" font-weight="700">问2：水杉、池杉、落叶松也是针叶，怎么秋天全秃？</text>
+<text x="456" y="298" font-size="9.5" fill="#1e293b" text-anchor="start">答：水杉/池杉管胞较宽怕冻栓；落叶松在-50℃极寒区</text>
+<text x="456" y="312" font-size="9.5" fill="#1e293b" text-anchor="start">干脆造薄针一年一扔！</text>
+<text x="456" y="339" font-size="9.8" fill="#18794e" text-anchor="start" font-weight="700">问3：松柏冬天还在做光合作用吗？</text>
+<text x="456" y="356" font-size="9.5" fill="#1e293b" text-anchor="start">答：0℃以上晴午仍可微弱补碳；严寒冰封期则锁死气孔专</text>
+<text x="456" y="370" font-size="9.5" fill="#1e293b" text-anchor="start">心散热保命。</text>
+</svg>

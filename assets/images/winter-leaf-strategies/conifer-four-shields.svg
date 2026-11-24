@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="404" viewBox="0 0 760 404" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">松树与柏树严冬不落叶的四重抗冻生理装甲解剖图</title>
+<desc id="desc">展示松针横截面蜡质层与下陷气孔、细管胞防冻栓水路、细胞内可溶性糖玻璃化防冰晶刺穿以及冬季叶绿体类囊体拆垛直接能量转移热耗散。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="403" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">零下 30 ℃ 寒风刺骨，松树和柏树凭什么敢挂着绿叶硬扛整个冬天？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">从蜡质微缩针叶、防爆管胞、细胞“糖液玻璃化”到类囊体拆垛散热——缺一不可的四重越冬装甲</text>
+<rect x="236" y="64" width="288" height="322" rx="10" fill="#f8fafc" stroke="#18794e" stroke-width="1.4"/>
+<rect x="260.0" y="74.0" width="240" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="380.0" y="89.0" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="600">松针横截面显微装甲（半圆扇形结构示意）</text>
+<path d="M 272 246 C 272 132, 488 132, 488 246 Z" fill="#dcfce7" stroke="#18794e" stroke-width="5"/>
+<path d="M 267 249 C 267 125, 493 125, 493 249 Z" fill="none" stroke="#eab308" stroke-width="2.5" stroke-dasharray="5,3"/>
+<circle cx="298" cy="180" r="7" fill="#ffffff" stroke="#0f766e" stroke-width="1.8"/>
+<circle cx="298" cy="180" r="2.8" fill="#eab308"/>
+<circle cx="380" cy="150" r="7" fill="#ffffff" stroke="#0f766e" stroke-width="1.8"/>
+<circle cx="380" cy="150" r="2.8" fill="#eab308"/>
+<circle cx="462" cy="180" r="7" fill="#ffffff" stroke="#0f766e" stroke-width="1.8"/>
+<circle cx="462" cy="180" r="2.8" fill="#eab308"/>
+<circle cx="312" cy="218" r="11" fill="#fffbeb" stroke="#b45309" stroke-width="1.6"/>
+<text x="312" y="222" font-size="8.8" fill="#b45309" text-anchor="middle" font-weight="700">树脂</text>
+<circle cx="448" cy="218" r="11" fill="#fffbeb" stroke="#b45309" stroke-width="1.6"/>
+<text x="448" y="222" font-size="8.8" fill="#b45309" text-anchor="middle" font-weight="700">树脂</text>
+<ellipse cx="380" cy="218" rx="42" ry="26" fill="#ffffff" stroke="#1d6fa5" stroke-width="2"/>
+<rect x="358" y="205" width="44" height="12" rx="3" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<rect x="358" y="220" width="44" height="11" rx="3" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="380" y="214" font-size="8.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">细管胞水路</text>
+<text x="380" y="229" font-size="8.8" fill="#c25014" text-anchor="middle" font-weight="700">韧皮部糖路</text>
+<text x="380" y="128" font-size="9.8" fill="#b45309" text-anchor="middle" font-weight="700">黄色虚线：超厚疏水角质蜡质层 + 下陷气孔窝</text>
+<text x="380" y="272" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700">为什么圆滑细针不怕暴雪压枝？</text>
+<text x="380" y="291" font-size="9.8" fill="#1e293b" text-anchor="middle">• 针叶窄滑柔韧，积雪到一定重量自动滑落；</text>
+<text x="380" y="309" font-size="9.8" fill="#1e293b" text-anchor="middle">• 柏树则把叶片缩成紧贴枝条的细小“鳞叶”，</text>
+<text x="380" y="327" font-size="9.8" fill="#18794e" text-anchor="middle" font-weight="700">  迎风面积与失水率比阔叶再降一个数量级！</text>
+<rect x="250" y="340" width="260" height="36" rx="6" fill="#fffbeb" stroke="#b45309" stroke-width="1"/>
+<text x="380" y="362" font-size="9.6" fill="#b45309" text-anchor="middle" font-weight="700">冷知识：侧柏冬天变紫褐色不是死，是防晒护目镜！</text>
+<rect x="20" y="64" width="204" height="154" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="30.0" y="74.0" width="184" height="22" rx="11.0" fill="#f0fdfa" stroke="#0f766e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="122.0" y="89.0" font-size="10.8" fill="#0f766e" text-anchor="middle" font-weight="600">① 针叶/鳞叶锁水装甲</text>
+<text x="30" y="114" font-size="9.8" fill="#1e293b" text-anchor="start">• 表面积/体积比极小，大幅压缩</text>
+<text x="30" y="131" font-size="9.8" fill="#1e293b" text-anchor="start">  冬季干冷寒风的蒸发窗口；</text>
+<text x="30" y="148" font-size="9.8" fill="#1e293b" text-anchor="start">• 表皮外覆厚蜡质角质层，气孔</text>
+<text x="30" y="165" font-size="9.8" fill="#1e293b" text-anchor="start">  深藏在凹窝里并塞满蜡丝；</text>
+<text x="30" y="182" font-size="9.8" fill="#1e293b" text-anchor="start">• 冬季气孔紧闭，蒸腾失水率仅</text>
+<text x="30" y="199" font-size="9.8" fill="#18794e" text-anchor="start" font-weight="700">  为同面积阔叶的几十分之一！</text>
+<rect x="20" y="232" width="204" height="154" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="30.0" y="242.0" width="184" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="122.0" y="257.0" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="600">② 微米级防冻爆管胞</text>
+<text x="30" y="282" font-size="9.8" fill="#1e293b" text-anchor="start">• 放弃高流量宽导管，全树采用</text>
+<text x="30" y="299" font-size="9.8" fill="#1e293b" text-anchor="start">  内径 10–30 μm 短细管胞；</text>
+<text x="30" y="316" font-size="9.8" fill="#1d6fa5" text-anchor="start" font-weight="700">• 严守 &lt;35 μm 冻融气栓红线，</text>
+<text x="30" y="333" font-size="9.8" fill="#1e293b" text-anchor="start">  反复结冰融化水柱也不断流；</text>
+<text x="30" y="350" font-size="9.8" fill="#1e293b" text-anchor="start">• 具缘纹孔塞充当百万个微型</text>
+<text x="30" y="367" font-size="9.8" fill="#1e293b" text-anchor="start">  止回阀，把局部气泡锁死隔离。</text>
+<rect x="536" y="64" width="204" height="154" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="546.0" y="74.0" width="184" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="638.0" y="89.0" font-size="10.8" fill="#6d28d9" text-anchor="middle" font-weight="600">③ 细胞“糖液玻璃化”防冻</text>
+<text x="546" y="114" font-size="9.8" fill="#1e293b" text-anchor="start">• 入秋淀粉酶把淀粉拆成高浓度</text>
+<text x="546" y="131" font-size="9.8" fill="#1e293b" text-anchor="start">  蔗糖、棉子糖与脯氨酸；</text>
+<text x="546" y="148" font-size="9.8" fill="#1e293b" text-anchor="start">• 严寒时主动把水排到细胞间隙</text>
+<text x="546" y="165" font-size="9.8" fill="#1e293b" text-anchor="start">  结冰，胞内浓缩成黏稠“玻璃态”；</text>
+<text x="546" y="182" font-size="9.8" fill="#1e293b" text-anchor="start">• 绝不结出刺破细胞膜的锋利冰晶，</text>
+<text x="546" y="199" font-size="9.8" fill="#6d28d9" text-anchor="start" font-weight="700">  针叶耐寒极限达 -28 至 -60 ℃！</text>
+<rect x="536" y="232" width="204" height="154" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="546.0" y="242.0" width="184" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="638.0" y="257.0" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="600">④ 叶绿体“拆垛短路散热”</text>
+<text x="546" y="282" font-size="9.8" fill="#1e293b" text-anchor="start">• 冬日大晴天最凶险：叶绿素照常</text>
+<text x="546" y="299" font-size="9.8" fill="#1e293b" text-anchor="start">  吸光，但暗反应酶冻僵停工！</text>
+<text x="546" y="316" font-size="9.8" fill="#1e293b" text-anchor="start">• 松针把类囊体基粒“拆垛”混排，</text>
+<text x="546" y="333" font-size="9.8" fill="#c25014" text-anchor="start" font-weight="700">  让 PSII 把过剩光能直接导给 PSI；</text>
+<text x="546" y="350" font-size="9.8" fill="#c25014" text-anchor="start" font-weight="700">• 配合玉米黄质把光能安全化成热</text>
+<text x="546" y="367" font-size="9.8" fill="#1e293b" text-anchor="start">  散掉（Nat. Commun. 2020 实测）！</text>
+</svg>

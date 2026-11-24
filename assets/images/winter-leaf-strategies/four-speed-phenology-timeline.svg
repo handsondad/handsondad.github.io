@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="410" viewBox="0 0 760 410" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">秋冬到次年春季四类树木挂叶比例时间曲线与代表树种</title>
+<desc id="desc">对比银杏白蜡初霜后24至48小时同步暴落、垂柳数周渐次缓落、栎树山毛榉枯而不落宿存整冬以及松柏常绿轮休四条曲线。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="409" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">同吹一场秋风，四类大树完全不同的“脱衣时刻表”（9月 → 次年5月）</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">典型趋势示意（非逐树实测数据）：闪电暴落派、磨蹭缓落派、枯而不落钉子户与“暗中轮休”的松柏常青派</text>
+<rect x="20" y="62" width="504" height="326" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="73.0" width="392" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="230.0" y="88.0" font-size="11" fill="#1d6fa5" text-anchor="middle" font-weight="600">树冠挂叶比例随月份变化曲线（示意图，以华北/温带物候为基准）</text>
+<line x1="74.0" y1="312.0" x2="498.0" y2="312.0" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="66" y="316.0" font-size="10.5" fill="#64748b" text-anchor="end">0%</text>
+<line x1="74.0" y1="262.0" x2="498.0" y2="262.0" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="66" y="266.0" font-size="10.5" fill="#64748b" text-anchor="end">25%</text>
+<line x1="74.0" y1="212.0" x2="498.0" y2="212.0" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="66" y="216.0" font-size="10.5" fill="#64748b" text-anchor="end">50%</text>
+<line x1="74.0" y1="162.0" x2="498.0" y2="162.0" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="66" y="166.0" font-size="10.5" fill="#64748b" text-anchor="end">75%</text>
+<line x1="74.0" y1="112.0" x2="498.0" y2="112.0" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3,3"/>
+<text x="66" y="116.0" font-size="10.5" fill="#64748b" text-anchor="end">100%</text>
+<rect x="181.2" y="108.0" width="24" height="208.0" fill="#eaf4fb" opacity="0.85"/>
+<line x1="193.2" y1="108.0" x2="193.2" y2="312.0" stroke="#1d6fa5" stroke-width="1.3" stroke-dasharray="4,3"/>
+<text x="193.2" y="104.0" font-size="10.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">初霜寒潮 (-3°C)</text>
+<line x1="445.0" y1="108.0" x2="445.0" y2="312.0" stroke="#18794e" stroke-width="1.2" stroke-dasharray="3,3"/>
+<text x="445.0" y="104.0" font-size="10.0" fill="#18794e" text-anchor="middle" font-weight="700">春芽顶落宿叶</text>
+<line x1="74.0" y1="312.0" x2="498.0" y2="312.0" stroke="#475569" stroke-width="1.4"/>
+<line x1="74.0" y1="312.0" x2="74.0" y2="317.0" stroke="#475569" stroke-width="1.2"/>
+<text x="74.0" y="331.0" font-size="10.2" fill="#1e293b" text-anchor="middle">9月</text>
+<line x1="127.0" y1="312.0" x2="127.0" y2="317.0" stroke="#475569" stroke-width="1.2"/>
+<text x="127.0" y="331.0" font-size="10.2" fill="#1e293b" text-anchor="middle">10月</text>
+<line x1="180.0" y1="312.0" x2="180.0" y2="317.0" stroke="#475569" stroke-width="1.2"/>
+<text x="180.0" y="331.0" font-size="10.2" fill="#1e293b" text-anchor="middle">11月初</text>
+<line x1="233.0" y1="312.0" x2="233.0" y2="317.0" stroke="#475569" stroke-width="1.2"/>
+<text x="233.0" y="331.0" font-size="10.2" fill="#1e293b" text-anchor="middle">11月末</text>
+<line x1="286.0" y1="312.0" x2="286.0" y2="317.0" stroke="#475569" stroke-width="1.2"/>
+<text x="286.0" y="331.0" font-size="10.2" fill="#1e293b" text-anchor="middle">12月</text>
+<line x1="339.0" y1="312.0" x2="339.0" y2="317.0" stroke="#475569" stroke-width="1.2"/>
+<text x="339.0" y="331.0" font-size="10.2" fill="#1e293b" text-anchor="middle">1月</text>
+<line x1="392.0" y1="312.0" x2="392.0" y2="317.0" stroke="#475569" stroke-width="1.2"/>
+<text x="392.0" y="331.0" font-size="10.2" fill="#1e293b" text-anchor="middle">2–3月</text>
+<line x1="445.0" y1="312.0" x2="445.0" y2="317.0" stroke="#475569" stroke-width="1.2"/>
+<text x="445.0" y="331.0" font-size="10.2" fill="#1e293b" text-anchor="middle">4月</text>
+<line x1="498.0" y1="312.0" x2="498.0" y2="317.0" stroke="#475569" stroke-width="1.2"/>
+<text x="498.0" y="331.0" font-size="10.2" fill="#1e293b" text-anchor="middle">5月</text>
+<polyline points="74.0,112.0 127.0,122.0 180.0,148.0 233.0,152.0 286.0,152.0 339.0,152.0 392.0,152.0 445.0,132.0 498.0,112.0" fill="none" stroke="#18794e" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="74.0,112.0 127.0,120.0 180.0,136.0" fill="none" stroke="#78350f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="180.0,136.0 233.0,148.0 286.0,156.0 339.0,160.0 392.0,168.0 445.0,284.0" fill="none" stroke="#78350f" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6,4"/>
+<polyline points="445.0,284.0 498.0,128.0" fill="none" stroke="#78350f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="74.0,112.0 127.0,124.0 180.0,160.0 233.0,216.0 286.0,282.0 339.0,308.0 392.0,312.0 445.0,208.0 498.0,120.0" fill="none" stroke="#6d28d9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2,4"/>
+<polyline points="74.0,112.0 127.0,116.0 187.9,128.0 203.9,306.0 233.0,312.0 286.0,312.0 339.0,312.0 392.0,312.0 445.0,240.0 498.0,124.0" fill="none" stroke="#c25014" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="312" y="143" font-size="10.2" fill="#18794e" text-anchor="middle" font-weight="700" class="halo">④ 松树/柏树（保绿约80%，仅退老针）</text>
+<text x="332" y="176" font-size="10.2" fill="#78350f" text-anchor="middle" font-weight="700" class="halo">③ 栎树/山毛榉（枯叶宿存挂满整冬）</text>
+<text x="264" y="244" font-size="10.2" fill="#6d28d9" text-anchor="start" font-weight="700" class="halo">② 垂柳/法桐（拖延2个月）</text>
+<text x="162" y="286" font-size="10.2" fill="#c25014" text-anchor="start" font-weight="700" class="halo">① 银杏/白蜡（霜后48h清零！）</text>
+<text x="36" y="360" font-size="10.0" fill="#64748b" text-anchor="start">注：虚线段（③ 栎树 11–4 月）表示叶片已枯黄死亡停止光合，但叶柄未断裂仍挂在枝头；</text>
+<text x="36" y="376" font-size="10.0" fill="#64748b" text-anchor="start">南方常绿阔叶树（如香樟）则在 4–5 月新叶展齐时集中换掉旧叶，出现短暂“暮春落叶雨”。</text>
+<rect x="536" y="62" width="204" height="326" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="548" y="84" font-size="12.5" fill="#0f172a" text-anchor="start" font-weight="700">四大门派代表树种</text>
+<rect x="546" y="96" width="184" height="65" rx="7" fill="#fef1e8" stroke="#c25014" stroke-width="1.1"/>
+<text x="554" y="112" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="700">① 闪电清仓派（1–2天）</text>
+<text x="554" y="127" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="600">银杏、白蜡、核桃、楸树</text>
+<text x="554" y="142" font-size="9.6" fill="#1e293b" text-anchor="start">全树同步备好离层，等初霜冰晶一</text>
+<text x="554" y="155" font-size="9.6" fill="#1e293b" text-anchor="start">劈，24–48h 下起黄金叶雨</text>
+<rect x="546" y="167" width="184" height="65" rx="7" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.1"/>
+<text x="554" y="183" font-size="10.5" fill="#6d28d9" text-anchor="start" font-weight="700">② 慢性拖延派（1–3个月）</text>
+<text x="554" y="198" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="600">垂柳、枫香、法桐、女贞</text>
+<text x="554" y="213" font-size="9.6" fill="#1e293b" text-anchor="start">散孔细管耐轻霜，由内向外分批退</text>
+<text x="554" y="226" font-size="9.6" fill="#1e293b" text-anchor="start">场；路灯下还会“熬夜留绿”</text>
+<rect x="546" y="238" width="184" height="65" rx="7" fill="#fef3c7" stroke="#78350f" stroke-width="1.1"/>
+<text x="554" y="254" font-size="10.5" fill="#78350f" text-anchor="start" font-weight="700">③ 枯而不落派（宿存整冬）</text>
+<text x="554" y="269" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="600">蒙古栎/橡树、山毛榉、鹅耳枥</text>
+<text x="554" y="284" font-size="9.6" fill="#1e293b" text-anchor="start">严寒提前冻停离层酶，留满树干叶</text>
+<text x="554" y="297" font-size="9.6" fill="#1e293b" text-anchor="start">当“防鹿啃芽盾”，开春才掉</text>
+<rect x="546" y="309" width="184" height="65" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1.1"/>
+<text x="554" y="325" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="700">④ 四季铁甲派（2–5年轮换）</text>
+<text x="554" y="340" font-size="10.0" fill="#0f172a" text-anchor="start" font-weight="600">油松、红松、侧柏、圆柏</text>
+<text x="554" y="355" font-size="9.6" fill="#1e293b" text-anchor="start">细管胞防冻栓 + 蜡质针叶，并</text>
+<text x="554" y="368" font-size="9.6" fill="#1e293b" text-anchor="start">非不掉叶，而是3–5岁老叶错峰退伍</text>
+</svg>
