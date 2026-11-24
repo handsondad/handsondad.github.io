@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="400" viewBox="0 0 760 400" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">真实马匹与人类的短时爆发功率和长时间持续功率对比图</title>
+<desc id="desc">按0至16马力线性比例对比：挽马5秒极限爆发高达14.9马力（11.1千瓦），奥运车手5秒冲刺约2.7马力，瓦特1马力标准为1.00马力（745.7瓦），普通挽马8小时持续工作约0.67至1.0马力，环法车手1小时约0.54马力，普通成人日常持续约0.13马力。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="399" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">图 2 · 一匹真马到底有几马力？5 秒极限爆发与 8 小时轮班差出十几倍</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">数据核查：1925 爱荷华州博览会测功车实测（Nature, 1993）对比人类运动生理学输出</text>
+<rect x="20" y="64" width="720" height="276" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<line x1="254.0" y1="88" x2="254.0" y2="306" stroke="#6d28d9" stroke-width="1.4" stroke-dasharray="4,3"/>
+<text x="260.0" y="86" font-size="11" fill="#6d28d9" text-anchor="start" font-weight="700">瓦特 1 hp 基准线 (745.7 W)</text>
+<text x="216" y="115" font-size="12" fill="#1e293b" text-anchor="end" font-weight="600">挽马 · 5 秒极限爆发</text>
+<rect x="228.0" y="100" width="416.0" height="20" rx="5" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="0.8"/>
+<rect x="228.0" y="100" width="387.4" height="20" rx="5" fill="#c25014"/>
+<text x="605.4" y="115" font-size="11.5" fill="#ffffff" text-anchor="end" font-weight="700">14.9 hp (≈11.1 kW)</text>
+<text x="216" y="149" font-size="12" fill="#1e293b" text-anchor="end" font-weight="600">奥运车手 · 5 秒冲刺</text>
+<rect x="228.0" y="134" width="416.0" height="20" rx="5" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="0.8"/>
+<rect x="228.0" y="134" width="70.2" height="20" rx="5" fill="#b45309"/>
+<text x="308.2" y="149" font-size="11.5" fill="#b45309" text-anchor="start" font-weight="700">≈2.7 hp (≈2.0 kW)</text>
+<text x="216" y="183" font-size="12" fill="#1e293b" text-anchor="end" font-weight="600">瓦特标准 · 1 英制马力</text>
+<rect x="228.0" y="168" width="416.0" height="20" rx="5" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="0.8"/>
+<rect x="228.0" y="168" width="26.0" height="20" rx="5" fill="#6d28d9"/>
+<text x="264.0" y="183" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">1.00 hp (745.7 W)</text>
+<text x="216" y="217" font-size="12" fill="#1e293b" text-anchor="end" font-weight="600">普通挽马 · 8 小时轮班</text>
+<rect x="228.0" y="202" width="416.0" height="20" rx="5" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="0.8"/>
+<rect x="228.0" y="202" width="26.0" height="20" rx="5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<rect x="228.0" y="202" width="17.4" height="20" rx="5" fill="#1d6fa5"/>
+<text x="264.0" y="217" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">0.67–1.0 hp (500–746 W)</text>
+<text x="216" y="251" font-size="12" fill="#1e293b" text-anchor="end" font-weight="600">环法车手 · 1 小时骑行</text>
+<rect x="228.0" y="236" width="416.0" height="20" rx="5" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="0.8"/>
+<rect x="228.0" y="236" width="14.0" height="20" rx="5" fill="#18794e"/>
+<text x="252.0" y="251" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">≈0.54 hp (≈400 W)</text>
+<text x="216" y="285" font-size="12" fill="#1e293b" text-anchor="end" font-weight="600">普通成人 · 日常持续劳作</text>
+<rect x="228.0" y="270" width="416.0" height="20" rx="5" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="0.8"/>
+<rect x="228.0" y="270" width="4.0" height="20" rx="5" fill="#475569"/>
+<text x="242.0" y="285" font-size="11.5" fill="#475569" text-anchor="start" font-weight="700">≈0.13 hp (≈100 W)</text>
+<line x1="228.0" y1="312" x2="644.0" y2="312" stroke="#475569" stroke-width="1"/>
+<line x1="228.0" y1="312" x2="228.0" y2="317" stroke="#475569" stroke-width="1"/>
+<text x="228.0" y="331" font-size="10.5" fill="#64748b" text-anchor="middle">0 hp</text>
+<line x1="280.0" y1="312" x2="280.0" y2="317" stroke="#475569" stroke-width="1"/>
+<text x="280.0" y="331" font-size="10.5" fill="#64748b" text-anchor="middle">2 hp</text>
+<line x1="332.0" y1="312" x2="332.0" y2="317" stroke="#475569" stroke-width="1"/>
+<text x="332.0" y="331" font-size="10.5" fill="#64748b" text-anchor="middle">4 hp</text>
+<line x1="384.0" y1="312" x2="384.0" y2="317" stroke="#475569" stroke-width="1"/>
+<text x="384.0" y="331" font-size="10.5" fill="#64748b" text-anchor="middle">6 hp</text>
+<line x1="436.0" y1="312" x2="436.0" y2="317" stroke="#475569" stroke-width="1"/>
+<text x="436.0" y="331" font-size="10.5" fill="#64748b" text-anchor="middle">8 hp</text>
+<line x1="488.0" y1="312" x2="488.0" y2="317" stroke="#475569" stroke-width="1"/>
+<text x="488.0" y="331" font-size="10.5" fill="#64748b" text-anchor="middle">10 hp</text>
+<line x1="540.0" y1="312" x2="540.0" y2="317" stroke="#475569" stroke-width="1"/>
+<text x="540.0" y="331" font-size="10.5" fill="#64748b" text-anchor="middle">12 hp</text>
+<line x1="592.0" y1="312" x2="592.0" y2="317" stroke="#475569" stroke-width="1"/>
+<text x="592.0" y="331" font-size="10.5" fill="#64748b" text-anchor="middle">14 hp</text>
+<line x1="644.0" y1="312" x2="644.0" y2="317" stroke="#475569" stroke-width="1"/>
+<text x="644.0" y="331" font-size="10.5" fill="#64748b" text-anchor="middle">16 hp</text>
+<rect x="20" y="348" width="720" height="40" rx="10" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="36" y="373" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">生理分水岭：5 秒爆发烧肌肉现存磷酸肌酸与无氧糖酵解；8 小时轮班受心肺供氧限制，只能靠有氧呼吸稳态供能。</text>
+</svg>

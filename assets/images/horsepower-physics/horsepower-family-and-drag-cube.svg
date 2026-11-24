@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="398" viewBox="0 0 760 398" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">四种常见马力换算对照与汽车克服空气阻力功率随车速三次方暴涨曲线</title>
+<desc id="desc">左栏对比英制1hp=745.7瓦、公制1PS=735.5瓦、电机马力746瓦及空调1匹（输入约735瓦、制冷量约2500瓦）；右栏展示轿车维持100、200、300、400千米每小时分别需约19、116、365、842公制马力。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="397" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">图 5 · 马力家族换算账本与极速“三次方高墙”：马力翻倍为何极速远不能翻倍？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左看英制 hp、公制 PS 与空调“1 匹”的差别；右看高速风阻功率 P_drag ∝ v³ 的陡峭代价</text>
+<rect x="20" y="64" width="344" height="272" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="76.0" width="232" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="148.0" y="91.0" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="600">① 日常最易混的 4 种“马力 / 匹”</text>
+<rect x="32" y="108" width="320" height="46" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="44" y="127" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700">英制马力 1 hp</text>
+<text x="340" y="127" font-size="12" fill="#1d6fa5" text-anchor="end" font-weight="700">745.7 W</text>
+<text x="44" y="145" font-size="10.5" fill="#1e293b" text-anchor="start">英美传统机械定义 (550 ft·lbf/s)</text>
+<rect x="32" y="163" width="320" height="46" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="44" y="182" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700">公制马力 1 PS</text>
+<text x="340" y="182" font-size="12" fill="#18794e" text-anchor="end" font-weight="700">735.5 W</text>
+<text x="44" y="200" font-size="10.5" fill="#1e293b" text-anchor="start">德/日/国内常说“多少匹” (75 kgf·m/s)</text>
+<rect x="32" y="218" width="320" height="46" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="44" y="237" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700">电机马力 1 hp(E)</text>
+<text x="340" y="237" font-size="12" fill="#6d28d9" text-anchor="end" font-weight="700">746.0 W</text>
+<text x="44" y="255" font-size="10.5" fill="#1e293b" text-anchor="start">工业电动机铭牌采用的精确整瓦值</text>
+<rect x="32" y="273" width="320" height="46" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="44" y="292" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700">家用空调“1 匹”</text>
+<text x="340" y="292" font-size="12" fill="#c25014" text-anchor="end" font-weight="700">制冷 ≈2500 W</text>
+<text x="44" y="310" font-size="10.5" fill="#1e293b" text-anchor="start">压缩机耗电 ≈735 W × 能效比 COP≈3.4</text>
+<rect x="380" y="64" width="360" height="272" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="392.0" y="76.0" width="268" height="22" rx="11.0" fill="#fef2f2" stroke="#b91c1c" stroke-width="1" stroke-opacity="0.35"/>
+<text x="526.0" y="91.0" font-size="12" fill="#b91c1c" text-anchor="middle" font-weight="600">② 冲击极速所需的马力陡坡 (P_drag ∝ v³)</text>
+<line x1="434.0" y1="292.0" x2="716.0" y2="292.0" stroke="#e2e8f0" stroke-width="0.9"/>
+<text x="428.0" y="296.0" font-size="10.5" fill="#64748b" text-anchor="end">0</text>
+<line x1="434.0" y1="234.0" x2="716.0" y2="234.0" stroke="#e2e8f0" stroke-width="0.9"/>
+<text x="428.0" y="238.0" font-size="10.5" fill="#64748b" text-anchor="end">300</text>
+<line x1="434.0" y1="176.0" x2="716.0" y2="176.0" stroke="#e2e8f0" stroke-width="0.9"/>
+<text x="428.0" y="180.0" font-size="10.5" fill="#64748b" text-anchor="end">600</text>
+<line x1="434.0" y1="118.0" x2="716.0" y2="118.0" stroke="#e2e8f0" stroke-width="0.9"/>
+<text x="428.0" y="122.0" font-size="10.5" fill="#64748b" text-anchor="end">900</text>
+<text x="430.0" y="108" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700">需马力 PS</text>
+<line x1="434.0" y1="292.0" x2="434.0" y2="296.0" stroke="#475569" stroke-width="1"/>
+<text x="434.0" y="309.0" font-size="10.5" fill="#64748b" text-anchor="middle">0</text>
+<line x1="504.5" y1="292.0" x2="504.5" y2="296.0" stroke="#475569" stroke-width="1"/>
+<text x="504.5" y="309.0" font-size="10.5" fill="#64748b" text-anchor="middle">100</text>
+<line x1="575.0" y1="292.0" x2="575.0" y2="296.0" stroke="#475569" stroke-width="1"/>
+<text x="575.0" y="309.0" font-size="10.5" fill="#64748b" text-anchor="middle">200</text>
+<line x1="645.5" y1="292.0" x2="645.5" y2="296.0" stroke="#475569" stroke-width="1"/>
+<text x="645.5" y="309.0" font-size="10.5" fill="#64748b" text-anchor="middle">300</text>
+<line x1="716.0" y1="292.0" x2="716.0" y2="296.0" stroke="#475569" stroke-width="1"/>
+<text x="716.0" y="309.0" font-size="10.5" fill="#64748b" text-anchor="middle">400</text>
+<text x="575.0" y="326.0" font-size="10.5" fill="#1e293b" text-anchor="middle" font-weight="600">巡航极速 v (km/h，轿车 Cd=0.28)</text>
+<polyline points="434.00,292.00 436.82,291.94 439.64,291.87 442.46,291.81 445.28,291.74 448.10,291.67 450.92,291.59 453.74,291.51 456.56,291.42 459.38,291.32 462.20,291.22 465.02,291.11 467.84,290.98 470.66,290.85 473.48,290.70 476.30,290.54 479.12,290.37 481.94,290.18 484.76,289.97 487.58,289.75 490.40,289.51 493.22,289.26 496.04,288.98 498.86,288.68 501.68,288.36 504.50,288.02 507.32,287.66 510.14,287.27 512.96,286.86 515.78,286.42 518.60,285.95 521.42,285.46 524.24,284.93 527.06,284.38 529.88,283.80 532.70,283.18 535.52,282.54 538.34,281.86 541.16,281.14 543.98,280.39 546.80,279.61 549.62,278.78 552.44,277.92 555.26,277.02 558.08,276.08 560.90,275.10 563.72,274.08 566.54,273.01 569.36,271.90 572.18,270.75 575.00,269.55 577.82,268.31 580.64,267.01 583.46,265.67 586.28,264.28 589.10,262.84 591.92,261.35 594.74,259.81 597.56,258.21 600.38,256.56 603.20,254.86 606.02,253.10 608.84,251.28 611.66,249.41 614.48,247.47 617.30,245.48 620.12,243.43 622.94,241.32 625.76,239.14 628.58,236.90 631.40,234.60 634.22,232.23 637.04,229.80 639.86,227.30 642.68,224.73 645.50,222.09 648.32,219.39 651.14,216.61 653.96,213.76 656.78,210.84 659.60,207.85 662.42,204.78 665.24,201.64 668.06,198.42 670.88,195.12 673.70,191.75 676.52,188.29 679.34,184.76 682.16,181.15 684.98,177.45 687.80,173.67 690.62,169.81 693.44,165.87 696.26,161.84 699.08,157.72 701.90,153.52 704.72,149.22 707.54,144.84 710.36,140.37 713.18,135.81 716.00,131.15" fill="none" stroke="#b91c1c" stroke-width="2.5"/>
+<circle cx="504.5" cy="288.0" r="4.2" fill="#b91c1c" stroke="#ffffff" stroke-width="1.4"/>
+<text x="498.5" y="278.0" font-size="10.5" fill="#b91c1c" text-anchor="start" font-weight="700" class="halo">100 km/h: 约 19 PS</text>
+<circle cx="575.0" cy="269.6" r="4.2" fill="#b91c1c" stroke="#ffffff" stroke-width="1.4"/>
+<text x="567.0" y="259.6" font-size="10.5" fill="#b91c1c" text-anchor="end" font-weight="700" class="halo">200 km/h: 约 116 PS</text>
+<circle cx="645.5" cy="222.1" r="4.2" fill="#b91c1c" stroke="#ffffff" stroke-width="1.4"/>
+<text x="635.5" y="214.1" font-size="10.5" fill="#b91c1c" text-anchor="end" font-weight="700" class="halo">300 km/h: 约 365 PS</text>
+<circle cx="716.0" cy="131.2" r="4.2" fill="#b91c1c" stroke="#ffffff" stroke-width="1.4"/>
+<text x="706.0" y="135.2" font-size="10.5" fill="#b91c1c" text-anchor="end" font-weight="700" class="halo">400 km/h: 约 842 PS!</text>
+<rect x="20" y="348" width="720" height="38" rx="10" fill="#fef2f2" stroke="#b91c1c" stroke-width="1"/>
+<text x="36" y="372" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="600">三次方高墙：风阻 F_D ∝ v²、功率 P_drag ∝ v³——车速从 100 翻到 400 km/h（×4），克服风阻功率要暴涨 64 倍！</text>
+</svg>

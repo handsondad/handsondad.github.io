@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="516" viewBox="0 0 760 516" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">HS 编码六位层级与中国八位十位扩展图</title>
+<desc id="desc">HS编码前两位是章、三四位是目、五六位是子目，例如851762；我国1992年起采用HS，在6位国际编码基础上增设本国子目形成8位税则号列，实际申报再用10位商品编号；WCO称HS含5000多个商品组，覆盖全球98%以上货物贸易。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="515" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">HS 编码：前 6 位全球通用，后面才轮到各国</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">同一台智能手机，在 200 多个经济体报关时写下的前 6 位完全一样。</text>
+<rect x="20" y="66" width="352" height="388" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="88" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="38" y="92" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="92" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">六位数字，三层含义</text>
+<rect x="38" y="108" width="64" height="58" rx="7" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.4"/>
+<text x="70" y="147" font-size="20" fill="#1d6fa5" text-anchor="middle" font-weight="700">85</text>
+<text x="116" y="132" font-size="11.4" fill="#0f172a" text-anchor="start" font-weight="700">章（Chapter）</text>
+<text x="116" y="153" font-size="9.8" fill="#475569" text-anchor="start">电机、电气设备及其零件</text>
+<rect x="38" y="186" width="64" height="58" rx="7" fill="#fef1e8" stroke="#c25014" stroke-width="1.4"/>
+<text x="70" y="225" font-size="20" fill="#c25014" text-anchor="middle" font-weight="700">17</text>
+<text x="116" y="210" font-size="11.4" fill="#0f172a" text-anchor="start" font-weight="700">目（Heading）</text>
+<text x="116" y="231" font-size="9.8" fill="#475569" text-anchor="start">电话机、数据传输设备</text>
+<rect x="38" y="264" width="64" height="58" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1.4"/>
+<text x="70" y="303" font-size="20" fill="#18794e" text-anchor="middle" font-weight="700">62</text>
+<text x="116" y="288" font-size="11.4" fill="#0f172a" text-anchor="start" font-weight="700">子目（Subheading）</text>
+<text x="116" y="309" font-size="9.8" fill="#475569" text-anchor="start">接收、转换与传输数据的设备</text>
+<text x="40" y="348" font-size="13.0" fill="#0f172a" text-anchor="start" font-weight="700">合起来：8517.62</text>
+<text x="40" y="375" font-size="10.4" fill="#1e293b" text-anchor="start">HS 按材料与功能分类，不按品牌分类。</text>
+<text x="40" y="400" font-size="10.0" fill="#64748b" text-anchor="start">第 77 章在国际目录中留空备用。</text>
+<rect x="388" y="66" width="352" height="388" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="88" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="406" y="92" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="424" y="92" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">中国的 6 → 8 → 10 位扩展</text>
+<rect x="404" y="120" width="90" height="34" rx="5" fill="#eaf4fb" stroke="#1d6fa5"/>
+<text x="449" y="143" font-size="12.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">851762</text>
+<text x="506" y="143" font-size="10.6" fill="#475569" text-anchor="start">国际统一 6 位</text>
+<rect x="404" y="172" width="126" height="34" rx="5" fill="#fef1e8" stroke="#c25014"/>
+<text x="467" y="195" font-size="12.0" fill="#c25014" text-anchor="middle" font-weight="700">851762XX</text>
+<text x="542" y="195" font-size="10.6" fill="#475569" text-anchor="start">8 位税则号列</text>
+<rect x="404" y="224" width="166" height="34" rx="5" fill="#e7f6ee" stroke="#18794e"/>
+<text x="487" y="247" font-size="12.0" fill="#18794e" text-anchor="middle" font-weight="700">851762XXXX</text>
+<text x="582" y="247" font-size="10.6" fill="#475569" text-anchor="start">10 位商品编号</text>
+<line x1="404.0" y1="282.0" x2="724.0" y2="282.0" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
+<text x="404" y="308" font-size="10.4" fill="#1e293b" text-anchor="start">• 第 7、8 位：我国自主编制的本国子目</text>
+<text x="404" y="332" font-size="10.4" fill="#1e293b" text-anchor="start">• 第 9、10 位：监管与统计进一步拆分</text>
+<text x="404" y="360" font-size="10.4" fill="#1e293b" text-anchor="start">• 我国 1992 年起全面采用 HS</text>
+<text x="404" y="388" font-size="10.2" fill="#475569" text-anchor="start">• WCO 每 4–6 年修订一次（HS 2022 为现行版本）</text>
+<text x="404" y="420" font-size="10.8" fill="#c25014" text-anchor="start" font-weight="700">全球 21 类 97 章，5000 多个商品组。</text>
+<rect x="20" y="470" width="720" height="36" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="494" font-size="10.6" fill="#475569" text-anchor="start">国际贸易中超过 98% 的货物按 HS 归类；它决定关税、监管条件与贸易统计口径。</text>
+</svg>

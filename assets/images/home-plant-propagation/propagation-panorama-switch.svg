@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="398" viewBox="0 0 760 398" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">家庭养花四大繁殖方式与植物细胞全能性及激素比值调控开关图解</title>
+<desc id="desc">左栏归纳扦插、水插、播种与嫁接四条繁殖路线及其无性克隆与有性重组归属；右栏展示1957年斯库格与米勒发现的生长素与细胞分裂素比值决定生根、愈伤组织或长芽的定量机制。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="397" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">图 1 · 阳台花草的“分身术”总账：为什么切一截枝叶就能重造整株植物？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左看家庭养花四大繁殖路线；右看斯库格—米勒（1957）揭开的“生根 vs 长芽”定量激素天平</text>
+<rect x="20" y="64" width="368" height="272" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="75.0" width="224" height="22" rx="11.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="146.0" y="90.0" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="600">阳台四大繁殖奇观（两条底层大路）</text>
+<rect x="34" y="108" width="164" height="80" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="44" y="130" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">① 插土成活（扦插）</text>
+<text x="44" y="151" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600">月季插枝、多肉掰叶</text>
+<text x="44" y="171" font-size="9.5" fill="#1e293b" text-anchor="start">带茎节/叶基分生细胞 → 诱发不定根</text>
+<rect x="208" y="108" width="164" height="80" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="218" y="130" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">② 丢水生根（水插）</text>
+<text x="218" y="151" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600">绿萝、富贵竹、龟背竹</text>
+<text x="218" y="171" font-size="9.5" fill="#1e293b" text-anchor="start">低氧刺激长出带通气孔道的白水根</text>
+<rect x="34" y="200" width="164" height="80" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="44" y="222" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">③ 埋籽发芽（有性）</text>
+<text x="44" y="243" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600">向日葵、矮牵牛、香草</text>
+<text x="44" y="263" font-size="9.5" fill="#1e293b" text-anchor="start">花粉受精基因重洗，抗寒休眠越冬</text>
+<rect x="208" y="200" width="164" height="80" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="218" y="222" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">④ 换头合体（嫁接）</text>
+<text x="218" y="243" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600">蟹爪兰接仙人掌、果树</text>
+<text x="218" y="263" font-size="9.5" fill="#1e293b" text-anchor="start">好果接穗 + 强根砧木，形成层焊通</text>
+<text x="34" y="304" font-size="10" fill="#0f172a" text-anchor="start" font-weight="600">• 无性克隆阵营（①②④）：有丝分裂原样复制，100% 锁死母株花色与甜度</text>
+<text x="34" y="323" font-size="10" fill="#1e293b" text-anchor="start">• 有性洗牌阵营（③）：减数分裂 + 授粉重组，适合一年生草花与选育新品种</text>
+<rect x="404" y="64" width="336" height="272" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="418.0" y="75.0" width="272" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="554.0" y="90.0" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">底层总开关：细胞全能性 + 激素配比天平</text>
+<text x="418" y="114" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">植物活细胞保留全套基因组（全能性 Totipotency）：</text>
+<text x="418" y="132" font-size="10" fill="#1e293b" text-anchor="start">受伤后可“脱分化”退回愈伤组织，再按激素比值重造器官！</text>
+<rect x="418" y="150" width="308" height="46" rx="7" fill="#ecfdf5" stroke="#0f766e" stroke-width="1"/>
+<text x="428" y="169" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">生长素 IAA 高  &gt;  细胞分裂素 低</text>
+<text x="428" y="187" font-size="10" fill="#0f766e" text-anchor="start" font-weight="700">→ 专心往下【生根】（扦插蘸生根粉原理）</text>
+<rect x="418" y="206" width="308" height="46" rx="7" fill="#fffbeb" stroke="#b45309" stroke-width="1"/>
+<text x="428" y="225" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">生长素 IAA  ≈  细胞分裂素 均衡</text>
+<text x="428" y="243" font-size="10" fill="#b45309" text-anchor="start" font-weight="700">→ 增殖【愈伤组织】（嫁接切口填缝架桥）</text>
+<rect x="418" y="262" width="308" height="46" rx="7" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="428" y="281" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">生长素 IAA 低  &lt;  细胞分裂素 高</text>
+<text x="428" y="299" font-size="10" fill="#6d28d9" text-anchor="start" font-weight="700">→ 唤醒往上【长芽】（叶插冒芽/分枝促芽）</text>
+<text x="418" y="325" font-size="9.5" fill="#64748b" text-anchor="start">出处：Skoog &amp; Miller (1957) 经典烟草茎段再生定量实验</text>
+<rect x="20" y="348" width="720" height="38" rx="10" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="36" y="372" font-size="11" fill="#0f172a" text-anchor="start" font-weight="600">动物细胞分化后大多锁死命运；植物不能跑路躲天敌，演化出了遍布茎节的分生组织与“切碎也能重开一局”的再生超能力！</text>
+</svg>

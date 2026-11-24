@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="524" viewBox="0 0 760 524" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">VIN 结构、校验位算例与常见编码对象对照图</title>
+<desc id="desc">VIN共17位，前3位世界制造厂识别，4至8位车辆特征，第9位是校验位，10至17位含车型年份、工厂与生产序号；按NHTSA权重8到2计算，示例中加权和351除以11余10故校验位写作X；图右对照集装箱号、HS、GTIN、ISBN与VIN各自识别的对象。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="523" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">VIN：17 位里藏着出生年份，第 9 位也在防手滑</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">一辆车、一只箱、一件商品各有各的码：认准“识别对象”才不会串线。</text>
+<rect x="20" y="66" width="720" height="176" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="40" y="94" font-size="12.2" fill="#0f172a" text-anchor="start" font-weight="700">VIN 示例：1M8GDM9AXKP042788</text>
+<rect x="40" y="112" width="34" height="34" rx="4" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="57" y="136" font-size="12.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="57" y="160" font-size="8.6" fill="#64748b" text-anchor="middle">1</text>
+<rect x="79" y="112" width="34" height="34" rx="4" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="96" y="136" font-size="12.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">M</text>
+<text x="96" y="160" font-size="8.6" fill="#64748b" text-anchor="middle">2</text>
+<rect x="118" y="112" width="34" height="34" rx="4" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.1"/>
+<text x="135" y="136" font-size="12.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">8</text>
+<text x="135" y="160" font-size="8.6" fill="#64748b" text-anchor="middle">3</text>
+<rect x="157" y="112" width="34" height="34" rx="4" fill="#fef1e8" stroke="#c25014" stroke-width="1.1"/>
+<text x="174" y="136" font-size="12.0" fill="#c25014" text-anchor="middle" font-weight="700">G</text>
+<text x="174" y="160" font-size="8.6" fill="#64748b" text-anchor="middle">4</text>
+<rect x="196" y="112" width="34" height="34" rx="4" fill="#fef1e8" stroke="#c25014" stroke-width="1.1"/>
+<text x="213" y="136" font-size="12.0" fill="#c25014" text-anchor="middle" font-weight="700">D</text>
+<text x="213" y="160" font-size="8.6" fill="#64748b" text-anchor="middle">5</text>
+<rect x="235" y="112" width="34" height="34" rx="4" fill="#fef1e8" stroke="#c25014" stroke-width="1.1"/>
+<text x="252" y="136" font-size="12.0" fill="#c25014" text-anchor="middle" font-weight="700">M</text>
+<text x="252" y="160" font-size="8.6" fill="#64748b" text-anchor="middle">6</text>
+<rect x="274" y="112" width="34" height="34" rx="4" fill="#fef1e8" stroke="#c25014" stroke-width="1.1"/>
+<text x="291" y="136" font-size="12.0" fill="#c25014" text-anchor="middle" font-weight="700">9</text>
+<text x="291" y="160" font-size="8.6" fill="#64748b" text-anchor="middle">7</text>
+<rect x="313" y="112" width="34" height="34" rx="4" fill="#fef1e8" stroke="#c25014" stroke-width="1.1"/>
+<text x="330" y="136" font-size="12.0" fill="#c25014" text-anchor="middle" font-weight="700">A</text>
+<text x="330" y="160" font-size="8.6" fill="#64748b" text-anchor="middle">8</text>
+<rect x="352" y="112" width="34" height="34" rx="4" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.1"/>
+<text x="369" y="136" font-size="12.0" fill="#6d28d9" text-anchor="middle" font-weight="700">X</text>
+<text x="369" y="160" font-size="8.6" fill="#64748b" text-anchor="middle">9</text>
+<rect x="391" y="112" width="34" height="34" rx="4" fill="#e7f6ee" stroke="#18794e" stroke-width="1.1"/>
+<text x="408" y="136" font-size="12.0" fill="#18794e" text-anchor="middle" font-weight="700">K</text>
+<text x="408" y="160" font-size="8.6" fill="#64748b" text-anchor="middle">10</text>
+<rect x="430" y="112" width="34" height="34" rx="4" fill="#e7f6ee" stroke="#18794e" stroke-width="1.1"/>
+<text x="447" y="136" font-size="12.0" fill="#18794e" text-anchor="middle" font-weight="700">P</text>
+<text x="447" y="160" font-size="8.6" fill="#64748b" text-anchor="middle">11</text>
+<rect x="469" y="112" width="34" height="34" rx="4" fill="#e7f6ee" stroke="#18794e" stroke-width="1.1"/>
+<text x="486" y="136" font-size="12.0" fill="#18794e" text-anchor="middle" font-weight="700">0</text>
+<text x="486" y="160" font-size="8.6" fill="#64748b" text-anchor="middle">12</text>
+<rect x="508" y="112" width="34" height="34" rx="4" fill="#e7f6ee" stroke="#18794e" stroke-width="1.1"/>
+<text x="525" y="136" font-size="12.0" fill="#18794e" text-anchor="middle" font-weight="700">4</text>
+<text x="525" y="160" font-size="8.6" fill="#64748b" text-anchor="middle">13</text>
+<rect x="547" y="112" width="34" height="34" rx="4" fill="#e7f6ee" stroke="#18794e" stroke-width="1.1"/>
+<text x="564" y="136" font-size="12.0" fill="#18794e" text-anchor="middle" font-weight="700">2</text>
+<text x="564" y="160" font-size="8.6" fill="#64748b" text-anchor="middle">14</text>
+<rect x="586" y="112" width="34" height="34" rx="4" fill="#e7f6ee" stroke="#18794e" stroke-width="1.1"/>
+<text x="603" y="136" font-size="12.0" fill="#18794e" text-anchor="middle" font-weight="700">7</text>
+<text x="603" y="160" font-size="8.6" fill="#64748b" text-anchor="middle">15</text>
+<rect x="625" y="112" width="34" height="34" rx="4" fill="#e7f6ee" stroke="#18794e" stroke-width="1.1"/>
+<text x="642" y="136" font-size="12.0" fill="#18794e" text-anchor="middle" font-weight="700">8</text>
+<text x="642" y="160" font-size="8.6" fill="#64748b" text-anchor="middle">16</text>
+<rect x="664" y="112" width="34" height="34" rx="4" fill="#e7f6ee" stroke="#18794e" stroke-width="1.1"/>
+<text x="681" y="136" font-size="12.0" fill="#18794e" text-anchor="middle" font-weight="700">8</text>
+<text x="681" y="160" font-size="8.6" fill="#64748b" text-anchor="middle">17</text>
+<text x="40" y="192" font-size="10.6" fill="#475569" text-anchor="start">第 10 位 = 车型年份；第 11 位 = 装配工厂；第 12–17 位 = 生产序号</text>
+<text x="40" y="222" font-size="10.6" fill="#1e293b" text-anchor="start">VIN 中不准出现字母 I、O、Q，避免与数字 1、0 混淆。</text>
+<rect x="20" y="258" width="352" height="206" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="280" r="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="38" y="284" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="284" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">第 9 位 X 是怎么算出来的？</text>
+<text x="38" y="314" font-size="10.6" fill="#6d28d9" text-anchor="start" font-weight="600">权重：8 7 6 5 4 3 2 10 | 0 | 9 8 7 6 5 4 3 2</text>
+<text x="38" y="342" font-size="10.2" fill="#475569" text-anchor="start">字母换算：A=1 … H=8，J=1，K=2，L=3，M=4 …</text>
+<text x="38" y="370" font-size="10.4" fill="#1e293b" text-anchor="start">把除第 9 位外的 16 个字符按位加权求和：</text>
+<text x="38" y="398" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">Σ = 351；351 ÷ 11 = 31 余 10</text>
+<text x="38" y="426" font-size="11.0" fill="#6d28d9" text-anchor="start" font-weight="700">余 10 写作 X ⇒ 校验位 X（NHTSA 官方算例）</text>
+<rect x="388" y="258" width="352" height="206" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="280" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="406" y="284" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">2</text>
+<text x="424" y="284" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">一物多码：各管各的一段路</text>
+<text x="404" y="310" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">集装箱号</text>
+<text x="500" y="310" font-size="10.2" fill="#1e293b" text-anchor="start">识别一只箱子</text>
+<text x="650" y="310" font-size="9.8" fill="#64748b" text-anchor="start">ISO 6346 / BIC</text>
+<line x1="404.0" y1="316.0" x2="724.0" y2="316.0" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
+<text x="404" y="338" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">HS 编码</text>
+<text x="500" y="338" font-size="10.2" fill="#1e293b" text-anchor="start">识别商品类别</text>
+<text x="650" y="338" font-size="9.8" fill="#64748b" text-anchor="start">WCO / 各国海关</text>
+<line x1="404.0" y1="344.0" x2="724.0" y2="344.0" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
+<text x="404" y="366" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">GTIN 条码</text>
+<text x="500" y="366" font-size="10.2" fill="#1e293b" text-anchor="start">识别一个贸易项目</text>
+<text x="650" y="366" font-size="9.8" fill="#64748b" text-anchor="start">GS1 / 各国编码组织</text>
+<line x1="404.0" y1="372.0" x2="724.0" y2="372.0" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
+<text x="404" y="394" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">ISBN</text>
+<text x="500" y="394" font-size="10.2" fill="#1e293b" text-anchor="start">识别一种出版物</text>
+<text x="650" y="394" font-size="9.8" fill="#64748b" text-anchor="start">国际 ISBN 机构</text>
+<line x1="404.0" y1="400.0" x2="724.0" y2="400.0" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
+<text x="404" y="422" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="700">VIN</text>
+<text x="500" y="422" font-size="10.2" fill="#1e293b" text-anchor="start">识别一辆车</text>
+<text x="650" y="422" font-size="9.8" fill="#64748b" text-anchor="start">ISO 3779 / 各国监管</text>
+<line x1="404.0" y1="428.0" x2="724.0" y2="428.0" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
+<text x="404" y="454" font-size="10.6" fill="#18794e" text-anchor="start" font-weight="700">编码的对象不同，校验算法也不能互换。</text>
+<rect x="20" y="478" width="720" height="36" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="502" font-size="10.6" fill="#475569" text-anchor="start">从左到右：箱子是谁的、货是什么、商品是哪一款、书是哪一版、车是哪一台。</text>
+</svg>

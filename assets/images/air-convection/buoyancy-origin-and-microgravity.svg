@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="516" viewBox="0 0 760 516" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">空气对流的浮力起源与微重力反证图</title>
+<desc id="desc">20摄氏度环境密度1.205千克每立方米，30摄氏度热团密度约1.165，密度差3.3%，每立方米净浮力约0.39牛，加速度约0.33米每二次方秒。图示地球烛焰因热气上升冷空气补位而呈尖形，国际空间站微重力下浮力环流消失呈球形。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  <style>
+  @keyframes riseAir {0% { transform: translateY(12px); opacity: 0.3; } 100% { transform: translateY(0px); opacity: 1; }}
+  @keyframes inflowAir {0% { transform: translateX(-8px); opacity: 0.35; } 100% { transform: translateX(0px); opacity: 1; }}
+  .anim-rise { animation: anim-rise 2.8s ease-out 1 forwards; }
+  .anim-inflow { animation: anim-inflow 2.8s cubic-bezier(0.22, 0.61, 0.36, 1) 1 forwards; }
+  @media (prefers-reduced-motion: reduce) {
+    .anim-rise, .anim-inflow {
+      animation: none !important; transform: none !important;
+      stroke-dashoffset: 0 !important; opacity: 1 !important;
+    }
+  }
+</style>
+</style>
+<rect x="0.5" y="0.5" width="759" height="515" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">热空气为什么会上升？真正的发动机是重力，不是“热”本身</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">温差先造出密度差，重力再把它变成净浮力；抽掉重力，自然对流就熄火。</text>
+<rect x="20" y="66" width="352" height="390" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="88" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="38" y="92" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="92" font-size="12.2" fill="#0f172a" text-anchor="start" font-weight="700">浮力账本：1 m³ 的 30°C 热团泡在 20°C 空气里</text>
+<rect x="36" y="106" width="320" height="150" rx="8" fill="#f3f8fc" stroke="#d7e6f2"/>
+<text x="48" y="126" font-size="10.6" fill="#1d6fa5" text-anchor="start" font-weight="600">环境空气 20°C</text>
+<text x="48" y="144" font-size="10.2" fill="#475569" text-anchor="start">ρ冷 = 1.205 kg/m³</text>
+<line x1="56.0" y1="170.0" x2="56.0" y2="230.0" stroke="#1d6fa5" stroke-width="1.5" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<line x1="56.0" y1="170.0" x2="56.0" y2="122.0" stroke="#1d6fa5" stroke-width="1.5" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<text x="38" y="268" font-size="10.0" fill="#1d6fa5" text-anchor="start">蓝色箭头：冷空气在重力下建立“下高上低”的气压梯度</text>
+<g class="anim-rise">
+<ellipse cx="228" cy="172" rx="72" ry="38" fill="#fde4d0" stroke="#e59a6a" stroke-width="1.5"/>
+<text x="228" y="166" font-size="11.6" fill="#c25014" text-anchor="middle" font-weight="700">热团 30°C</text>
+<text x="228" y="184" font-size="10.2" fill="#c25014" text-anchor="middle">ρ热 ≈ 1.165 kg/m³</text>
+<line x1="228.0" y1="130.0" x2="228.0" y2="112.0" stroke="#c25014" stroke-width="2.4" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+</g>
+<text x="228" y="242" font-size="10.4" fill="#c25014" text-anchor="middle" font-weight="600">F浮 = (ρ冷−ρ热)gV</text>
+<text x="38" y="298" font-size="10.5" fill="#1e293b" text-anchor="start">• 理想气体 ρ ∝ 1/T：密度只差 3.3%（约 3.3%）</text>
+<text x="38" y="321" font-size="10.5" fill="#1e293b" text-anchor="start">• 每 1 m³ 净浮力 = 0.040 × 9.81 ≈ 0.39 N</text>
+<text x="38" y="344" font-size="10.5" fill="#1e293b" text-anchor="start">• 加速度 a = F/m ≈ 0.33 m/s² ≈ 3.4% g</text>
+<text x="38" y="372" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="600">别把“热”当成推力：真正推它上升的，是周围</text>
+<text x="38" y="391" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="600">更重的冷空气通过压力场挤上来的那一下。</text>
+<text x="38" y="428" font-size="10.4" fill="#64748b" text-anchor="start">没有温差 ⇒ 没有密度差 ⇒ 没有浮力 ⇒ 空气静止</text>
+<rect x="388" y="66" width="352" height="390" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="88" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="406" y="92" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">2</text>
+<text x="424" y="92" font-size="12.2" fill="#0f172a" text-anchor="start" font-weight="700">反证实验：把重力拿走会怎样？</text>
+<text x="420" y="108" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="700">地球：重力场里的烛焰</text>
+<path d="M 420 210 Q 404 180 420 142 Q 436 180 420 210 Z" fill="#fca5a5" stroke="#c25014" stroke-width="1.4"/>
+<path d="M 420 200 Q 413 183 420 160 Q 427 183 420 200 Z" fill="#fde68a"/>
+<g class="anim-rise">
+<line x1="420.0" y1="138.0" x2="420.0" y2="120.0" stroke="#c25014" stroke-width="2" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+</g>
+<g class="anim-inflow">
+<line x1="388.0" y1="222.0" x2="408.0" y2="210.0" stroke="#1d6fa5" stroke-width="1.7" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<line x1="452.0" y1="222.0" x2="432.0" y2="210.0" stroke="#1d6fa5" stroke-width="1.7" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+</g>
+<text x="420" y="240" font-size="9.8" fill="#475569" text-anchor="middle">热气上升，冷空气从下方补位</text>
+<line x1="570.0" y1="112.0" x2="570.0" y2="240.0" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round" stroke-dasharray="4 4"/>
+<text x="670" y="126" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">国际空间站：微重力</text>
+<circle cx="670" cy="180" r="30" fill="#fde4d0" stroke="#c25014" stroke-width="1.6"/>
+<circle cx="670" cy="180" r="15" fill="#fde68a" fill-opacity="0.85"/>
+<text x="670" y="240" font-size="9.8" fill="#475569" text-anchor="middle">浮力环流消失 → 球形火焰</text>
+<text x="404" y="278" font-size="10.4" fill="#1e293b" text-anchor="start">NASA 的原话很直白：地球上的烛焰之所以尖，是因为</text>
+<text x="404" y="299" font-size="10.4" fill="#1e293b" text-anchor="start">较轻的热气上升、较重的环境空气从下方补位；</text>
+<text x="404" y="320" font-size="10.4" fill="#1e293b" text-anchor="start">在微重力里“that circulation effect does not happen”。</text>
+<text x="404" y="352" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="600">热传导、热辐射不靠重力；风扇驱动的强迫对流也不靠。</text>
+<text x="404" y="381" font-size="10.6" fill="#1d6fa5" text-anchor="start" font-weight="700">靠浮力吃饭的“自然对流”，才是重力的孩子。</text>
+<text x="404" y="420" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">一句话：自然对流 = 温差 × 重力 × 可流动的流体</text>
+<rect x="20" y="468" width="720" height="38" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="493" font-size="10.6" fill="#475569" text-anchor="start">图解只标出力的来源与数量级；真实热团上升时会被周围空气卷吸、拉伸，速度远小于理想加速度。</text>
+</svg>

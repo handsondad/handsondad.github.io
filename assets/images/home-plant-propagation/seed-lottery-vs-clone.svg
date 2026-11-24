@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="398" viewBox="0 0 760 398" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">有性繁殖种子基因杂合重组盲盒与无性克隆100%复刻性状及童期对比图</title>
+<desc id="desc">左栏定量展示高度杂合的苹果经异花授粉与减数分裂重组后，仅5对杂合位点保住原组合概率就低至3.12%，实生苗需熬6至10年童期且果味退化；右栏展示扦插与嫁接通过有丝分裂100%锁死优良风味并跳过童期在2至3年挂果。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="397" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">图 3 · 吃完红富士吐籽种下去，为什么结不出红富士？（有性基因洗牌 vs 无性克隆）</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">果树与名贵花卉高度“杂合”，减数分裂会把好基因拆散重洗；想原样复刻必须靠扦插或嫁接克隆</text>
+<rect x="20" y="64" width="360" height="272" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="75.0" width="258" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="163.0" y="90.0" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="600">有性繁殖（播种）：基因洗牌开盲盒</text>
+<rect x="34" y="108" width="332" height="62" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="46" y="128" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="700">母本：红富士苹果树（基因高度杂合 AaBbCcDdEe…）</text>
+<text x="46" y="147" font-size="10" fill="#0f172a" text-anchor="start" font-weight="600">+ 苹果具 S 位点“自交不亲和”，必须借另一品种花粉异花授粉！</text>
+<text x="46" y="163" font-size="9.5" fill="#1e293b" text-anchor="start">↓ 减数分裂配子重组：甜度、脆度、果个、抗病等位基因彻底打乱</text>
+<rect x="34" y="180" width="332" height="86" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="46" y="200" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">就算只盯 5 对独立杂合优良基因（AaBbCcDdEe）：</text>
+<rect x="46" y="209" width="56" height="22" rx="5" fill="#fffbeb" stroke="#b45309" stroke-width="1"/>
+<text x="74" y="224" font-size="9.5" fill="#b45309" text-anchor="middle" font-weight="700">甜 Aa</text>
+<rect x="108" y="209" width="56" height="22" rx="5" fill="#fffbeb" stroke="#b45309" stroke-width="1"/>
+<text x="136" y="224" font-size="9.5" fill="#b45309" text-anchor="middle" font-weight="700">脆 Bb</text>
+<rect x="170" y="209" width="56" height="22" rx="5" fill="#fffbeb" stroke="#b45309" stroke-width="1"/>
+<text x="198" y="224" font-size="9.5" fill="#b45309" text-anchor="middle" font-weight="700">大 Cc</text>
+<rect x="232" y="209" width="56" height="22" rx="5" fill="#fffbeb" stroke="#b45309" stroke-width="1"/>
+<text x="260" y="224" font-size="9.5" fill="#b45309" text-anchor="middle" font-weight="700">红 Dd</text>
+<rect x="294" y="209" width="56" height="22" rx="5" fill="#fffbeb" stroke="#b45309" stroke-width="1"/>
+<text x="322" y="224" font-size="9.5" fill="#b45309" text-anchor="middle" font-weight="700">香 Ee</text>
+<text x="46" y="252" font-size="10" fill="#b91c1c" text-anchor="start" font-weight="700">• 5 对全保住原杂合组合概率：(1/2)⁵ = 3.12%（32 棵里才 1 棵）</text>
+<text x="34" y="286" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="600">• 真实苹果有数万基因位点：实生苗结同款好果概率几乎为 0（八成酸涩小果）</text>
+<text x="34" y="305" font-size="9.8" fill="#1e293b" text-anchor="start">• 还要苦熬 6～10 年“童期”才开花；F₁ 杂交草花自留种 F₂ 也会花色退化</text>
+<text x="34" y="324" font-size="9.8" fill="#18794e" text-anchor="start" font-weight="700">★ 种子真正强项：选育全新超级品种 + 挡住多数母本病毒 + 干籽抗寒越冬！</text>
+<rect x="396" y="64" width="344" height="272" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="410.0" y="75.0" width="258" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="539.0" y="90.0" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">无性繁殖（扦插/分株/嫁接）：100% 基因锁死</text>
+<rect x="410" y="108" width="316" height="62" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="422" y="128" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="700">全世界所有“红富士”苹果、所有“阳光玫瑰”葡萄：</text>
+<text x="422" y="147" font-size="10" fill="#0f172a" text-anchor="start" font-weight="600">本质上都是最初那 1 棵传奇母树剪枝嫁接出来的“克隆分身”！</text>
+<text x="422" y="163" font-size="9.5" fill="#1e293b" text-anchor="start">只走有丝分裂（不经减数分裂洗牌），DNA 与果味 100% 原样复刻</text>
+<rect x="410" y="180" width="316" height="86" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="422" y="200" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">挂果等待时间对比（为什么果农绝不拿种子种果园）：</text>
+<text x="422" y="222" font-size="9.5" fill="#c25014" text-anchor="start" font-weight="700">苹果籽实生苗</text>
+<rect x="502" y="212" width="176" height="12" rx="3" fill="#c25014"/>
+<text x="684" y="222" font-size="9.5" fill="#c25014" text-anchor="start" font-weight="700">6～10 年</text>
+<text x="422" y="246" font-size="9.5" fill="#18794e" text-anchor="start" font-weight="700">成年枝条嫁接</text>
+<rect x="502" y="236" width="55" height="12" rx="3" fill="#18794e"/>
+<text x="564" y="246" font-size="9.5" fill="#18794e" text-anchor="start" font-weight="700">2～3 年挂果（跳过童期！）</text>
+<text x="410" y="286" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="600">• 成熟枝条早已度过“生理童期”，接活后直接延续成年开花记忆</text>
+<text x="410" y="305" font-size="9.8" fill="#1e293b" text-anchor="start">• 三倍体无籽西瓜、华盛顿脐橙、香蕉连饱满种子都没有，全靠克隆传代</text>
+<text x="410" y="324" font-size="9.5" fill="#b91c1c" text-anchor="start" font-weight="600">⚠ 软肋：基因完全一致，遇新型病害易同批中招（如香蕉枯萎病）</text>
+<rect x="20" y="348" width="720" height="38" rx="10" fill="#ecfdf5" stroke="#0f766e" stroke-width="1"/>
+<text x="36" y="372" font-size="11" fill="#0f172a" text-anchor="start" font-weight="600">一句话总结：想“开盲盒创奇迹、一年一播省心越冬”播种子；想“原封不动留住神仙颜值与甜脆口感”必须走扦插或嫁接！</text>
+</svg>

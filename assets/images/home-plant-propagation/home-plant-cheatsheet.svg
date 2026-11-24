@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="390" viewBox="0 0 760 390" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">阳台16种常见花卉蔬果四大繁殖方式对号入座与新手避坑速查图</title>
+<desc id="desc">四列卡片分别列出适合剪枝水插或土插、掰叶叶插或分株、春播秋播育苗、以及同科换头嫁接的16种家庭常见花果代表、操作要点与头号避坑口诀。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="389" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">图 5 · 阳台实战速查卡：家里养的 16 种花草果木，选哪招繁殖成功率最高？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">按植物器官构造对号入座，避开“月季插单叶、水根太长下土、金边虎皮兰叶插”三大新手坑</text>
+<rect x="20" y="64" width="172" height="314" rx="10" fill="#ffffff" stroke="#18794e" stroke-width="1.3"/>
+<rect x="26" y="70" width="160" height="42" rx="7" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="106.0" y="88" font-size="11" fill="#18794e" text-anchor="middle" font-weight="700">剪段枝条·水插/土插</text>
+<text x="106.0" y="104" font-size="9.2" fill="#1e293b" text-anchor="middle">自带茎节与潜伏根原基</text>
+<line x1="30" y1="120" x2="182" y2="120" stroke="#cbd5e1" stroke-width="1"/>
+<text x="30" y="137" font-size="10" fill="#0f172a" text-anchor="start" font-weight="700">• 绿萝 / 龟背竹</text>
+<text x="34" y="153" font-size="9.2" fill="#1e293b" text-anchor="start">带气生根茎节剪下，泡水或插蛭</text>
+<text x="34" y="166" font-size="9.2" fill="#1e293b" text-anchor="start">石 7 天冒白根</text>
+<line x1="30" y1="174" x2="182" y2="174" stroke="#cbd5e1" stroke-width="1"/>
+<text x="30" y="191" font-size="10" fill="#0f172a" text-anchor="start" font-weight="700">• 吊兰 / 草莓</text>
+<text x="34" y="207" font-size="9.2" fill="#1e293b" text-anchor="start">直接剪走茎“小吊兰”（自带气</text>
+<text x="34" y="220" font-size="9.2" fill="#1e293b" text-anchor="start">根），沾土即活</text>
+<line x1="30" y1="228" x2="182" y2="228" stroke="#cbd5e1" stroke-width="1"/>
+<text x="30" y="245" font-size="10" fill="#0f172a" text-anchor="start" font-weight="700">• 月季 / 绣球</text>
+<text x="34" y="261" font-size="9.2" fill="#1e293b" text-anchor="start">选半木质化枝留 2 节+2 </text>
+<text x="34" y="274" font-size="9.2" fill="#1e293b" text-anchor="start">半叶，蛭石保湿生根</text>
+<line x1="30" y1="282" x2="182" y2="282" stroke="#cbd5e1" stroke-width="1"/>
+<text x="30" y="299" font-size="10" fill="#0f172a" text-anchor="start" font-weight="700">• 茉莉 / 栀子</text>
+<text x="34" y="315" font-size="9.2" fill="#1e293b" text-anchor="start">梅雨季剪当年壮枝，水插露半根</text>
+<text x="34" y="328" font-size="9.2" fill="#1e293b" text-anchor="start">或沙插最稳</text>
+<rect x="26" y="342" width="160" height="28" rx="6" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="106.0" y="360" font-size="9.2" fill="#18794e" text-anchor="middle" font-weight="700">避坑：必须留“节”且顺向正插！</text>
+<rect x="202" y="64" width="172" height="314" rx="10" fill="#ffffff" stroke="#0f766e" stroke-width="1.3"/>
+<rect x="208" y="70" width="160" height="42" rx="7" fill="#ecfdf5" stroke="#0f766e" stroke-width="1"/>
+<text x="288.0" y="88" font-size="11" fill="#0f766e" text-anchor="middle" font-weight="700">掰片叶子·叶插/分株</text>
+<text x="288.0" y="104" font-size="9.2" fill="#1e293b" text-anchor="middle">叶基/叶脉具双器官再生力</text>
+<line x1="212" y1="120" x2="364" y2="120" stroke="#cbd5e1" stroke-width="1"/>
+<text x="212" y="137" font-size="10" fill="#0f172a" text-anchor="start" font-weight="700">• 景天多肉(玉露/桃蛋)</text>
+<text x="216" y="153" font-size="9.2" fill="#1e293b" text-anchor="start">左右轻晃掰下完整叶片（保住生</text>
+<text x="216" y="166" font-size="9.2" fill="#1e293b" text-anchor="start">长点），晾干平放</text>
+<line x1="212" y1="174" x2="364" y2="174" stroke="#cbd5e1" stroke-width="1"/>
+<text x="212" y="191" font-size="10" fill="#0f172a" text-anchor="start" font-weight="700">• 落地生根(不死鸟)</text>
+<text x="216" y="207" font-size="9.2" fill="#1e293b" text-anchor="start">叶缘锯齿直接长满带根小苗，落</text>
+<text x="216" y="220" font-size="9.2" fill="#1e293b" text-anchor="start">地就成一片</text>
+<line x1="212" y1="228" x2="364" y2="228" stroke="#cbd5e1" stroke-width="1"/>
+<text x="212" y="245" font-size="10" fill="#0f172a" text-anchor="start" font-weight="700">• 非洲堇 / 大岩桐</text>
+<text x="216" y="261" font-size="9.2" fill="#1e293b" text-anchor="start">带叶柄插进珍珠岩或浅水，叶基</text>
+<text x="216" y="274" font-size="9.2" fill="#1e293b" text-anchor="start">同时冒根冒芽</text>
+<line x1="212" y1="282" x2="364" y2="282" stroke="#cbd5e1" stroke-width="1"/>
+<text x="212" y="299" font-size="10" fill="#0f172a" text-anchor="start" font-weight="700">• 虎皮兰 / 秋海棠</text>
+<text x="216" y="315" font-size="9.2" fill="#1e293b" text-anchor="start">纯绿虎皮兰可切叶插；金边虎皮</text>
+<text x="216" y="328" font-size="9.2" fill="#1e293b" text-anchor="start">兰必须【分株】！</text>
+<rect x="208" y="342" width="160" height="28" rx="6" fill="#ecfdf5" stroke="#0f766e" stroke-width="1"/>
+<text x="288.0" y="360" font-size="9.2" fill="#0f766e" text-anchor="middle" font-weight="700">避坑：多肉叶插未出根前别浇水！</text>
+<rect x="384" y="64" width="172" height="314" rx="10" fill="#ffffff" stroke="#c25014" stroke-width="1.3"/>
+<rect x="390" y="70" width="160" height="42" rx="7" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="470.0" y="88" font-size="11" fill="#c25014" text-anchor="middle" font-weight="700">春播秋播·种子育苗</text>
+<text x="470.0" y="104" font-size="9.2" fill="#1e293b" text-anchor="middle">一年生草花与快手阳台菜</text>
+<line x1="394" y1="120" x2="546" y2="120" stroke="#cbd5e1" stroke-width="1"/>
+<text x="394" y="137" font-size="10" fill="#0f172a" text-anchor="start" font-weight="700">• 向日葵 / 百日草</text>
+<text x="398" y="153" font-size="9.2" fill="#1e293b" text-anchor="start">大粒种子温水浸种点播，向阳猛</text>
+<text x="398" y="166" font-size="9.2" fill="#1e293b" text-anchor="start">晒 60 天开花</text>
+<line x1="394" y1="174" x2="546" y2="174" stroke="#cbd5e1" stroke-width="1"/>
+<text x="394" y="191" font-size="10" fill="#0f172a" text-anchor="start" font-weight="700">• 矮牵牛 / 三色堇</text>
+<text x="398" y="207" font-size="9.2" fill="#1e293b" text-anchor="start">细小好光种子撒土表别埋深！喷</text>
+<text x="398" y="220" font-size="9.2" fill="#1e293b" text-anchor="start">雾保湿发芽</text>
+<line x1="394" y1="228" x2="546" y2="228" stroke="#cbd5e1" stroke-width="1"/>
+<text x="394" y="245" font-size="10" fill="#0f172a" text-anchor="start" font-weight="700">• 罗勒 / 薄荷 / 香菜</text>
+<text x="398" y="261" font-size="9.2" fill="#1e293b" text-anchor="start">香草播种无病毒活力旺（薄荷长</text>
+<text x="398" y="274" font-size="9.2" fill="#1e293b" text-anchor="start">大后可无限水插）</text>
+<line x1="394" y1="282" x2="546" y2="282" stroke="#cbd5e1" stroke-width="1"/>
+<text x="394" y="299" font-size="10" fill="#0f172a" text-anchor="start" font-weight="700">• 樱桃萝卜 / 小白菜</text>
+<text x="398" y="315" font-size="9.2" fill="#1e293b" text-anchor="start">十字花科 3 天破土，最适合</text>
+<text x="398" y="328" font-size="9.2" fill="#1e293b" text-anchor="start">带娃观察子叶真叶</text>
+<rect x="390" y="342" width="160" height="28" rx="6" fill="#fef1e8" stroke="#c25014" stroke-width="1"/>
+<text x="470.0" y="360" font-size="9.2" fill="#c25014" text-anchor="middle" font-weight="700">避坑：F₁杂交名花别自留二代籽！</text>
+<rect x="566" y="64" width="172" height="314" rx="10" fill="#ffffff" stroke="#6d28d9" stroke-width="1.3"/>
+<rect x="572" y="70" width="160" height="42" rx="7" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="652.0" y="88" font-size="11" fill="#6d28d9" text-anchor="middle" font-weight="700">强强联手·换头嫁接</text>
+<text x="652.0" y="104" font-size="9.2" fill="#1e293b" text-anchor="middle">同科近亲形成层贴合锁紧</text>
+<line x1="576" y1="120" x2="728" y2="120" stroke="#cbd5e1" stroke-width="1"/>
+<text x="576" y="137" font-size="10" fill="#0f172a" text-anchor="start" font-weight="700">• 蟹爪兰 → 仙人掌</text>
+<text x="580" y="153" font-size="9.2" fill="#1e293b" text-anchor="start">同属仙人掌科！削去表皮插进仙</text>
+<text x="580" y="166" font-size="9.2" fill="#1e293b" text-anchor="start">人掌肉质茎防烂根</text>
+<line x1="576" y1="174" x2="728" y2="174" stroke="#cbd5e1" stroke-width="1"/>
+<text x="576" y="191" font-size="10" fill="#0f172a" text-anchor="start" font-weight="700">• 苹果 → 矮化海棠</text>
+<text x="580" y="207" font-size="9.2" fill="#1e293b" text-anchor="start">海棠抗寒矮化控树高，接富士枝</text>
+<text x="580" y="220" font-size="9.2" fill="#1e293b" text-anchor="start"> 2～3 年阳台挂果</text>
+<line x1="576" y1="228" x2="728" y2="228" stroke="#cbd5e1" stroke-width="1"/>
+<text x="576" y="245" font-size="10" fill="#0f172a" text-anchor="start" font-weight="700">• 名品月季 → 野蔷薇</text>
+<text x="580" y="261" font-size="9.2" fill="#1e293b" text-anchor="start">野蔷薇根系狂野，高位芽接养成</text>
+<text x="580" y="274" font-size="9.2" fill="#1e293b" text-anchor="start">“棒棒糖树状月季”</text>
+<line x1="576" y1="282" x2="728" y2="282" stroke="#cbd5e1" stroke-width="1"/>
+<text x="576" y="299" font-size="10" fill="#0f172a" text-anchor="start" font-weight="700">• 西瓜 → 南瓜砧木</text>
+<text x="580" y="315" font-size="9.2" fill="#1e293b" text-anchor="start">葫芦科换根绝招：彻底防住重茬</text>
+<text x="580" y="328" font-size="9.2" fill="#1e293b" text-anchor="start">枯萎病且耐寒高产</text>
+<rect x="572" y="342" width="160" height="28" rx="6" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="652.0" y="360" font-size="9.2" fill="#6d28d9" text-anchor="middle" font-weight="700">避坑：包严保湿度 + 抹掉砧木野芽！</text>
+</svg>

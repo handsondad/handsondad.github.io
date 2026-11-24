@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="394" viewBox="0 0 760 394" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">果树嫁接维管形成层对齐铁律与韧皮部木质部7天分步重连动画图解</title>
+<desc id="desc">左栏对比砧粗穗细时居中错位必死与偏靠一侧形成层贴合成活，并指出单子叶植物维管束散生缺乏形成层环；右栏依据Melnyk等2015年实测时序单次动画演示第1至2天黏附、第2至3天愈伤架桥、第3至4天韧皮部率先接通运糖、第6至7天木质部导管贯通供水。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  @keyframes callusGrow {
+    0%   { transform: scale(0.08); opacity: 0.15; }
+    20%  { transform: scale(0.35); opacity: 0.55; }
+    43%  { transform: scale(1.00); opacity: 1.00; }
+    100% { transform: scale(1.00); opacity: 1.00; }
+  }
+  @keyframes phloemBridge {
+    0%, 38%  { stroke-dashoffset: 68; opacity: 0.15; }
+    57%      { stroke-dashoffset: 0;  opacity: 1.00; }
+    100%     { stroke-dashoffset: 0;  opacity: 1.00; }
+  }
+  @keyframes xylemBridge {
+    0%, 78%  { stroke-dashoffset: 68; opacity: 0.15; }
+    100%     { stroke-dashoffset: 0;  opacity: 1.00; }
+  }
+  @keyframes progressCursor {
+    0%   { transform: translateX(-276px); }
+    100% { transform: translateX(0px); }
+  }
+  .callus-anim {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: callusGrow 5.25s linear 0.4s 1 backwards;
+  }
+  .phloem-anim {
+    stroke-dasharray: 68;
+    stroke-dashoffset: 0;
+    animation: phloemBridge 5.25s linear 0.4s 1 backwards;
+  }
+  .xylem-anim {
+    stroke-dasharray: 68;
+    stroke-dashoffset: 0;
+    animation: xylemBridge 5.25s linear 0.4s 1 backwards;
+  }
+  .cursor-anim {
+    animation: progressCursor 5.25s linear 0.4s 1 backwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .callus-anim, .phloem-anim, .xylem-anim, .cursor-anim { animation: none !important; }
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="393" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">图 4 · 果树嫁接的“一线生死”与血管重连动画：为什么先通韧皮部、后通木质部？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">左看横切面“维管形成层对齐”铁律与单子叶死穴；右按 Melnyk (2015) 实测 7 天时序单次演示愈合</text>
+<rect x="20" y="64" width="344" height="316" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="75.0" width="256" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="162.0" y="90.0" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="600">刀口成败只在 0.1 毫米：维管形成层对齐</text>
+<rect x="34" y="108" width="152" height="138" rx="8" fill="#fef2f2" stroke="#b91c1c" stroke-width="1"/>
+<text x="110" y="126" font-size="10" fill="#b91c1c" text-anchor="middle" font-weight="700">✗ 贪图居中（形成层错位）</text>
+<circle cx="110" cy="176" r="36" fill="#fde68a" stroke="#92400e" stroke-width="3.0"/>
+<circle cx="110" cy="176" r="29" fill="#fef9c3" stroke="#18794e" stroke-width="2.4" stroke-dasharray="4,2"/>
+<circle cx="110" cy="176" r="16" fill="#ffffff" stroke="#92400e" stroke-width="2.0"/>
+<circle cx="110" cy="176" r="12" fill="#eff6ff" stroke="#18794e" stroke-width="2.0"/>
+<text x="110" y="226" font-size="9.5" fill="#b91c1c" text-anchor="middle" font-weight="700">细穗插在死木芯里</text>
+<text x="110" y="240" font-size="9.5" fill="#1e293b" text-anchor="middle">绿圈互不接触 → 必死！</text>
+<rect x="198" y="108" width="152" height="138" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1"/>
+<text x="274" y="126" font-size="10" fill="#18794e" text-anchor="middle" font-weight="700">✓ 偏靠一侧（形成层吻合）</text>
+<circle cx="274" cy="176" r="36" fill="#fde68a" stroke="#92400e" stroke-width="3.0"/>
+<circle cx="274" cy="176" r="29" fill="#fef9c3" stroke="#18794e" stroke-width="2.4" stroke-dasharray="4,2"/>
+<circle cx="291" cy="176" r="16" fill="#ffffff" stroke="#92400e" stroke-width="2.0"/>
+<circle cx="291" cy="176" r="12" fill="#eff6ff" stroke="#18794e" stroke-width="2.2"/>
+<circle cx="303" cy="176" r="4.5" fill="#18794e"/>
+<text x="274" y="226" font-size="9.5" fill="#18794e" text-anchor="middle" font-weight="700">至少一侧绿圈贴紧</text>
+<text x="274" y="240" font-size="9.5" fill="#1e293b" text-anchor="middle">分裂愈伤 → 100% 能活！</text>
+<rect x="34" y="256" width="316" height="112" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="1"/>
+<text x="46" y="276" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">为什么竹子、玉米、百合不能拿刀随便劈接？</text>
+<circle cx="72" cy="316" r="24" fill="#ffffff" stroke="#475569" stroke-width="1.8"/>
+<circle cx="64" cy="306" r="2.6" fill="#c25014"/>
+<circle cx="78" cy="304" r="2.6" fill="#c25014"/>
+<circle cx="60" cy="318" r="2.6" fill="#c25014"/>
+<circle cx="73" cy="316" r="2.6" fill="#c25014"/>
+<circle cx="84" cy="319" r="2.6" fill="#c25014"/>
+<circle cx="66" cy="329" r="2.6" fill="#c25014"/>
+<circle cx="79" cy="328" r="2.6" fill="#c25014"/>
+<text x="106" y="302" font-size="9.8" fill="#18794e" text-anchor="start" font-weight="700">• 双子叶（果树/月季/番茄）：形成层连成整圈环</text>
+<text x="106" y="321" font-size="9.8" fill="#0f172a" text-anchor="start">• 单子叶（竹/玉米/棕榈）：维管束满天星散生，</text>
+<text x="106" y="338" font-size="9.8" fill="#b91c1c" text-anchor="start" font-weight="700">  成年茎干无形成层环，常规枝接无法愈合！</text>
+<text x="106" y="356" font-size="9.2" fill="#64748b" text-anchor="start">  （仅种子萌发胚胎期可显微嫁接，Nature 2021）</text>
+<rect x="380" y="64" width="360" height="316" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="394.0" y="75.0" width="294" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="541.0" y="90.0" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">接口愈合 4 步曲（先通运糖管，再通抽水管！）</text>
+<rect x="394" y="108" width="162" height="180" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="440" y="118" width="70" height="68" rx="4" fill="#dcfce7" stroke="#18794e" stroke-width="1.6"/>
+<text x="475" y="134" font-size="9.5" fill="#18794e" text-anchor="middle" font-weight="700">接穗 (好果枝)</text>
+<rect x="440" y="208" width="70" height="68" rx="4" fill="#fef3c7" stroke="#b45309" stroke-width="1.6"/>
+<text x="475" y="266" font-size="9.5" fill="#b45309" text-anchor="middle" font-weight="700">砧木 (强根系)</text>
+<line x1="452" y1="142" x2="452" y2="184" stroke="#c25014" stroke-width="3.0"/>
+<line x1="452" y1="210" x2="452" y2="250" stroke="#c25014" stroke-width="3.0"/>
+<line x1="498" y1="142" x2="498" y2="184" stroke="#c25014" stroke-width="3.0"/>
+<line x1="498" y1="210" x2="498" y2="250" stroke="#c25014" stroke-width="3.0"/>
+<line x1="469" y1="142" x2="469" y2="184" stroke="#1d6fa5" stroke-width="3.2"/>
+<line x1="469" y1="210" x2="469" y2="250" stroke="#1d6fa5" stroke-width="3.2"/>
+<line x1="481" y1="142" x2="481" y2="184" stroke="#1d6fa5" stroke-width="3.2"/>
+<line x1="481" y1="210" x2="481" y2="250" stroke="#1d6fa5" stroke-width="3.2"/>
+<ellipse class="callus-anim" cx="475" cy="197" rx="40" ry="15" fill="#fbcfe8" stroke="#db2777" stroke-width="1.4"/>
+<path class="phloem-anim" d="M 452 182 C 446 192, 446 202, 452 212" fill="none" stroke="#c25014" stroke-width="3.2"/>
+<path class="phloem-anim" d="M 498 182 C 504 192, 504 202, 498 212" fill="none" stroke="#c25014" stroke-width="3.2"/>
+<path class="xylem-anim" d="M 469 182 C 467 194, 467 200, 469 212" fill="none" stroke="#1d6fa5" stroke-width="3.4"/>
+<path class="xylem-anim" d="M 481 182 C 483 194, 483 200, 481 212" fill="none" stroke="#1d6fa5" stroke-width="3.4"/>
+<text x="475" y="201" font-size="9.0" fill="#9d174d" text-anchor="middle" font-weight="700">愈伤桥</text>
+<text x="566" y="125" font-size="10" fill="#475569" text-anchor="start" font-weight="700">① 第1–2天：果胶黏附</text>
+<text x="566" y="141" font-size="9.5" fill="#1e293b" text-anchor="start">切口细胞膨胀粘连固定</text>
+<text x="566" y="169" font-size="10" fill="#be185d" text-anchor="start" font-weight="700">② 第2–3天：愈伤架桥</text>
+<text x="566" y="185" font-size="9.5" fill="#1e293b" text-anchor="start">形成层分裂填满接口缝隙</text>
+<text x="566" y="213" font-size="10" fill="#c25014" text-anchor="start" font-weight="700">③ 第3–4天：韧皮部先通</text>
+<text x="566" y="229" font-size="9.5" fill="#1e293b" text-anchor="start">接穗往下运糖与生长素！</text>
+<text x="566" y="257" font-size="10" fill="#1d6fa5" text-anchor="start" font-weight="700">④ 第6–7天：木质部焊通</text>
+<text x="566" y="273" font-size="9.5" fill="#1e293b" text-anchor="start">根系往上抽水，恢复抗旱！</text>
+<rect x="394" y="298" width="332" height="70" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1"/>
+<text x="408" y="316" font-size="9.5" fill="#0f172a" text-anchor="start" font-weight="700">实测生理进度轴（拟南芥天 / 木本果树同序放大为 2～4 周）：</text>
+<line x1="422" y1="336" x2="698" y2="336" stroke="#475569" stroke-width="2.2"/>
+<circle cx="422.0" cy="336" r="3.5" fill="#64748b"/>
+<text x="422.0" y="355" font-size="9.2" fill="#64748b" text-anchor="middle" font-weight="700">0d 切接</text>
+<circle cx="500.9" cy="336" r="3.5" fill="#be185d"/>
+<text x="500.9" y="355" font-size="9.2" fill="#be185d" text-anchor="middle" font-weight="700">2d 愈伤</text>
+<circle cx="560.0" cy="336" r="3.5" fill="#c25014"/>
+<text x="560.0" y="355" font-size="9.2" fill="#c25014" text-anchor="middle" font-weight="700">3.5d 韧皮通</text>
+<circle cx="678.3" cy="336" r="3.5" fill="#1d6fa5"/>
+<text x="678.3" y="355" font-size="9.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">6.5d 木质通</text>
+<g class="cursor-anim"><circle cx="698" cy="336" r="5.5" fill="#18794e" stroke="#ffffff" stroke-width="1.5"/></g>
+</svg>

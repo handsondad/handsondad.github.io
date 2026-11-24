@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="392" viewBox="0 0 760 392" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">机翼黏性起始涡建立环流机制与上下表面压强分布及A380翼载压差图解</title>
+<desc id="desc">上方三步对比无黏理想流体后缘倒卷零升力、真实黏性起步脱落逆时针起始涡建立顺时针环流满足库塔条件、以及上表面气流远早于下表面冲过尾缘；下方展示上表面低压吸力贡献约三分之二至四分之三升力，A380平均翼面压差仅6673帕即0.066个大气压。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+  <marker id="arr-red" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#b91c1c"/>
+  </marker>
+  <marker id="arr-teal" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#0f766e"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="391" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">图 2 · 空气没约好“后缘重逢”！黏性、起始涡与环流怎样造出 575 吨压差？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">从无黏零升力悖论 → 跑道起步脱落起始涡建立环流 Γ → 翼背吸力占七成、平均压差仅 0.066 个大气压</text>
+<rect x="20" y="64" width="232" height="128" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32.0" y="74.0" width="208" height="22" rx="11.0" fill="#f1f5f9" stroke="#475569" stroke-width="1" stroke-opacity="0.35"/>
+<text x="136.0" y="89.0" font-size="11.5" fill="#475569" text-anchor="middle" font-weight="600">① 假想“零黏性”理想空气</text>
+<rect x="264" y="64" width="232" height="128" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="276.0" y="74.0" width="208" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="380.0" y="89.0" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="600">② 真实黏性起步：脱落起始涡</text>
+<rect x="508" y="64" width="232" height="128" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="520.0" y="74.0" width="208" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="624.0" y="89.0" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">③ 稳态飞行：环流 + 来流叠加</text>
+<path d="M 58 134 C 82 118, 134 122, 182 142 C 142 143, 88 141, 58 134 Z" fill="#f1f5f9" stroke="#64748b" stroke-width="1.8"/>
+<path d="M 34 124 Q 112 106 186 132" fill="none" stroke="#475569" stroke-width="1.5" marker-end="url(#arr-muted)"/>
+<path d="M 34 146 Q 124 156 184 144 Q 194 138 170 128" fill="none" stroke="#b91c1c" stroke-width="1.6" marker-end="url(#arr-red)"/>
+<text x="136" y="170" font-size="10.5" fill="#b91c1c" text-anchor="middle" font-weight="600">下表面气流绕尖后缘倒卷</text>
+<text x="136" y="184" font-size="10.5" fill="#1e293b" text-anchor="middle" font-weight="700">环流 Γ = 0 → 升力严格为 0！</text>
+<path d="M 290 134 C 312 118, 356 122, 398 142 C 362 143, 316 141, 290 134 Z" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.8"/>
+<path d="M 304 116 Q 350 102 392 122" fill="none" stroke="#6d28d9" stroke-width="1.7" marker-end="url(#arr-blue)"/>
+<path d="M 384 150 Q 342 158 302 146" fill="none" stroke="#6d28d9" stroke-width="1.7"/>
+<text x="344" y="110" font-size="10" fill="#6d28d9" text-anchor="middle" font-weight="700">附着环流 +Γ (顺时针)</text>
+<path d="M 446 138 m -14 0 a 14 14 0 1 0 28 0 a 14 14 0 1 0 -28 0" fill="none" stroke="#c25014" stroke-width="1.6" stroke-dasharray="4,2"/>
+<text x="446" y="142" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700">-Γ</text>
+<text x="380" y="170" font-size="10.5" fill="#6d28d9" text-anchor="middle" font-weight="600">黏性边界层甩出逆时针起始涡</text>
+<text x="380" y="184" font-size="10.5" fill="#1e293b" text-anchor="middle" font-weight="700">库塔条件：气流从后缘平顺离开</text>
+<path d="M 544 134 C 568 118, 620 122, 668 142 C 628 143, 574 141, 544 134 Z" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.8"/>
+<path d="M 522 122 Q 604 98 698 134" fill="none" stroke="#1d6fa5" stroke-width="2.0" marker-end="url(#arr-blue)"/>
+<path d="M 522 146 Q 596 154 654 148" fill="none" stroke="#c25014" stroke-width="1.6" marker-end="url(#arr-orange)"/>
+<circle cx="688" cy="131" r="4" fill="#1d6fa5"/>
+<circle cx="634" cy="149" r="4" fill="#c25014"/>
+<text x="624" y="110" font-size="10" fill="#1d6fa5" text-anchor="middle" font-weight="700">上表面同向叠加：高速低压</text>
+<text x="624" y="170" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">上方气团远早于下方冲过尾缘！</text>
+<text x="624" y="184" font-size="10.5" fill="#64748b" text-anchor="middle" font-weight="600">绝非“路远赶时间同时到达”</text>
+<rect x="20" y="204" width="720" height="176" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34.0" y="216.0" width="268" height="22" rx="11.0" fill="#ecfdf5" stroke="#0f766e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="168.0" y="231.0" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="600">压强账本：谁在用力？每平方米要多大压差？</text>
+<path d="M 96 312 C 128 282, 228 286, 336 324 C 262 325, 148 322, 96 312 Z" fill="#ffffff" stroke="#0f172a" stroke-width="2.2"/>
+<line x1="124" y1="295" x2="124" y2="249" stroke="#1d6fa5" stroke-width="2.2" marker-end="url(#arr-blue)"/>
+<line x1="152" y1="289" x2="152" y2="239" stroke="#1d6fa5" stroke-width="2.2" marker-end="url(#arr-blue)"/>
+<line x1="184" y1="289" x2="184" y2="247" stroke="#1d6fa5" stroke-width="2.2" marker-end="url(#arr-blue)"/>
+<line x1="218" y1="293" x2="218" y2="261" stroke="#1d6fa5" stroke-width="2.2" marker-end="url(#arr-blue)"/>
+<line x1="254" y1="300" x2="254" y2="278" stroke="#1d6fa5" stroke-width="2.2" marker-end="url(#arr-blue)"/>
+<line x1="290" y1="309" x2="290" y2="296" stroke="#1d6fa5" stroke-width="2.2" marker-end="url(#arr-blue)"/>
+<line x1="132" y1="344" x2="132" y2="324" stroke="#c25014" stroke-width="2.0" marker-end="url(#arr-orange)"/>
+<line x1="172" y1="344" x2="172" y2="326" stroke="#c25014" stroke-width="2.0" marker-end="url(#arr-orange)"/>
+<line x1="214" y1="344" x2="214" y2="328" stroke="#c25014" stroke-width="2.0" marker-end="url(#arr-orange)"/>
+<line x1="258" y1="342" x2="258" y2="329" stroke="#c25014" stroke-width="2.0" marker-end="url(#arr-orange)"/>
+<line x1="300" y1="339" x2="300" y2="329" stroke="#c25014" stroke-width="2.0" marker-end="url(#arr-orange)"/>
+<text x="208" y="256" font-size="11" fill="#1d6fa5" text-anchor="middle" font-weight="700">上表面低压“向上吸”（p_上 &lt; p_0）：贡献约 2/3～3/4 升力！</text>
+<text x="214" y="366" font-size="11" fill="#c25014" text-anchor="middle" font-weight="700">下表面高压“向上托”（p_下 &gt; p_0）：贡献约 1/4～1/3 升力</text>
+<rect x="406" y="218" width="318" height="148" rx="10" fill="#ecfdf5" stroke="#0f766e" stroke-width="1"/>
+<text x="422" y="240" font-size="12" fill="#0f766e" text-anchor="start" font-weight="700">空客 A380 机翼压差实算（反直觉真相）：</text>
+<text x="422" y="263" font-size="11" fill="#0f172a" text-anchor="start" font-weight="600">• 满载总重量：W = 575 t = 5,638,824 N</text>
+<text x="422" y="284" font-size="11" fill="#0f172a" text-anchor="start" font-weight="600">• 机翼总面积：S = 845 m²（约两座篮球场！）</text>
+<text x="422" y="306" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">• 平均上下压强差：Δp = W / S ≈ 6,673 Pa</text>
+<text x="422" y="327" font-size="11" fill="#c25014" text-anchor="start" font-weight="700">  仅为海平面大气压（101,325 Pa）的 6.6%！</text>
+<text x="422" y="349" font-size="10.5" fill="#1e293b" text-anchor="start" font-weight="600">• 折合指甲盖 1 cm² 上仅差 0.68 N（约 1 颗鸡蛋重）</text>
+</svg>

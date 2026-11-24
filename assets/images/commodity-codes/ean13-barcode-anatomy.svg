@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="512" viewBox="0 0 760 512" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">EAN-13 商品条码结构、校验位与 ISBN 关系图</title>
+<desc id="desc">以6901234567892为例，条码按EAN-13的L/G/R编码表生成95个模块；前12位交替乘1和3得128，补到130得校验位2；前缀690只是GS1分配给中国的国家代码，与商品成分无关，ISBN-13以978或979开头沿用同一校验算法。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+  <style>
+  @keyframes scanSweep { 0% { transform: translateX(0); opacity: 0.25; } 100% { transform: translateX(202px); opacity: 1; } }
+  .scan-line { animation: scanSweep 2.6s ease-in-out 1 forwards; }
+  @media (prefers-reduced-motion: reduce) { .scan-line { animation: none !important; transform: none !important; opacity: 1 !important; } }
+</style>
+</style>
+<rect x="0.5" y="0.5" width="759" height="511" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">EAN-13 条码：前缀 690 不是“成分密码”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">扫码器读的是条空宽度，数字只是给人看的；前缀只说明在哪里申请。</text>
+<rect x="20" y="66" width="352" height="386" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="88" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="38" y="92" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="92" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700">按 EAN-13 规则逐模块画出的真实条码</text>
+<rect x="42" y="126.0" width="2" height="104" fill="#0f172a"/>
+<rect x="46" y="126.0" width="2" height="104" fill="#0f172a"/>
+<rect x="54" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="58" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="60" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="64" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="70" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="72" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="74" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="78" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="80" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="86" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="88" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="94" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="96" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="100" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="102" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="106" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="108" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="110" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="112" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="116" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="120" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="128" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="130" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="134" y="126.0" width="2" height="104" fill="#0f172a"/>
+<rect x="138" y="126.0" width="2" height="104" fill="#0f172a"/>
+<rect x="142" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="148" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="150" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="152" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="156" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="160" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="170" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="178" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="184" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="190" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="198" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="200" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="202" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="206" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="212" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="214" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="218" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="220" y="132.0" width="2" height="92" fill="#0f172a"/>
+<rect x="226" y="126.0" width="2" height="104" fill="#0f172a"/>
+<rect x="230" y="126.0" width="2" height="104" fill="#0f172a"/>
+<g class="scan-line">
+<line x1="42.0" y1="122.0" x2="42.0" y2="246.0" stroke="#c25014" stroke-width="2" stroke-linecap="round"/>
+</g>
+<text x="142" y="262" font-size="15.0" fill="#0f172a" text-anchor="middle" font-weight="700">6901234567892</text>
+<text x="142" y="288" font-size="10.4" fill="#475569" text-anchor="middle">95 个模块 · 左右各 10 个静区</text>
+<text x="38" y="326" font-size="10.4" fill="#1d6fa5" text-anchor="start" font-weight="600">前 3 位 690：GS1 分配给中国的国家前缀</text>
+<text x="38" y="351" font-size="10.2" fill="#475569" text-anchor="start">中间厂商代码 + 商品项目代码由编码组织与厂商分配</text>
+<text x="38" y="380" font-size="10.4" fill="#c25014" text-anchor="start" font-weight="700">“690 表示含激素、691 含铅汞”是谣言：</text>
+<text x="38" y="404" font-size="10.2" fill="#1e293b" text-anchor="start">前缀只表示条码申请地，与成分、产地无必然关系。</text>
+<text x="38" y="434" font-size="10.4" fill="#6d28d9" text-anchor="start" font-weight="600">ISBN-13 以 978/979 开头，沿用同一套 GTIN 校验算法。</text>
+<rect x="388" y="66" width="352" height="386" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="88" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="406" y="92" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">2</text>
+<text x="424" y="92" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">校验位：把加权和补到整十</text>
+<text x="436" y="132" font-size="10.8" fill="#0f172a" text-anchor="middle" font-weight="700">6</text>
+<text x="461" y="132" font-size="10.8" fill="#0f172a" text-anchor="middle" font-weight="700">9</text>
+<text x="486" y="132" font-size="10.8" fill="#0f172a" text-anchor="middle" font-weight="700">0</text>
+<text x="511" y="132" font-size="10.8" fill="#0f172a" text-anchor="middle" font-weight="700">1</text>
+<text x="536" y="132" font-size="10.8" fill="#0f172a" text-anchor="middle" font-weight="700">2</text>
+<text x="561" y="132" font-size="10.8" fill="#0f172a" text-anchor="middle" font-weight="700">3</text>
+<text x="586" y="132" font-size="10.8" fill="#0f172a" text-anchor="middle" font-weight="700">4</text>
+<text x="611" y="132" font-size="10.8" fill="#0f172a" text-anchor="middle" font-weight="700">5</text>
+<text x="636" y="132" font-size="10.8" fill="#0f172a" text-anchor="middle" font-weight="700">6</text>
+<text x="661" y="132" font-size="10.8" fill="#0f172a" text-anchor="middle" font-weight="700">7</text>
+<text x="686" y="132" font-size="10.8" fill="#0f172a" text-anchor="middle" font-weight="700">8</text>
+<text x="711" y="132" font-size="10.8" fill="#0f172a" text-anchor="middle" font-weight="700">9</text>
+<text x="436" y="164" font-size="10.8" fill="#1d6fa5" text-anchor="middle">1</text>
+<text x="461" y="164" font-size="10.8" fill="#1d6fa5" text-anchor="middle">3</text>
+<text x="486" y="164" font-size="10.8" fill="#1d6fa5" text-anchor="middle">1</text>
+<text x="511" y="164" font-size="10.8" fill="#1d6fa5" text-anchor="middle">3</text>
+<text x="536" y="164" font-size="10.8" fill="#1d6fa5" text-anchor="middle">1</text>
+<text x="561" y="164" font-size="10.8" fill="#1d6fa5" text-anchor="middle">3</text>
+<text x="586" y="164" font-size="10.8" fill="#1d6fa5" text-anchor="middle">1</text>
+<text x="611" y="164" font-size="10.8" fill="#1d6fa5" text-anchor="middle">3</text>
+<text x="636" y="164" font-size="10.8" fill="#1d6fa5" text-anchor="middle">1</text>
+<text x="661" y="164" font-size="10.8" fill="#1d6fa5" text-anchor="middle">3</text>
+<text x="686" y="164" font-size="10.8" fill="#1d6fa5" text-anchor="middle">1</text>
+<text x="711" y="164" font-size="10.8" fill="#1d6fa5" text-anchor="middle">3</text>
+<text x="436" y="196" font-size="9.8" fill="#18794e" text-anchor="middle">6</text>
+<text x="461" y="196" font-size="9.8" fill="#18794e" text-anchor="middle">27</text>
+<text x="486" y="196" font-size="9.8" fill="#18794e" text-anchor="middle">0</text>
+<text x="511" y="196" font-size="9.8" fill="#18794e" text-anchor="middle">3</text>
+<text x="536" y="196" font-size="9.8" fill="#18794e" text-anchor="middle">2</text>
+<text x="561" y="196" font-size="9.8" fill="#18794e" text-anchor="middle">9</text>
+<text x="586" y="196" font-size="9.8" fill="#18794e" text-anchor="middle">4</text>
+<text x="611" y="196" font-size="9.8" fill="#18794e" text-anchor="middle">15</text>
+<text x="636" y="196" font-size="9.8" fill="#18794e" text-anchor="middle">6</text>
+<text x="661" y="196" font-size="9.8" fill="#18794e" text-anchor="middle">21</text>
+<text x="686" y="196" font-size="9.8" fill="#18794e" text-anchor="middle">8</text>
+<text x="711" y="196" font-size="9.8" fill="#18794e" text-anchor="middle">27</text>
+<text x="400" y="132" font-size="9.8" fill="#64748b" text-anchor="start">数字</text>
+<text x="400" y="164" font-size="9.8" fill="#64748b" text-anchor="start">权重</text>
+<text x="400" y="196" font-size="9.8" fill="#64748b" text-anchor="start">乘积</text>
+<line x1="400.0" y1="262.0" x2="724.0" y2="262.0" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
+<text x="404" y="286" font-size="10.2" fill="#475569" text-anchor="start">从左往右权重 1、3、1、3……</text>
+<text x="404" y="314" font-size="10.2" fill="#475569" text-anchor="start">校验位 = 10 − (Σ mod 10)，若整除则写 0</text>
+<text x="404" y="354" font-size="11.0" fill="#18794e" text-anchor="start" font-weight="700">加权和 = 128 ⇒ 下一个整十是 130</text>
+<text x="404" y="382" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700">校验位 = 130 − 128 = 2</text>
+<line x1="404.0" y1="398.0" x2="724.0" y2="398.0" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
+<text x="404" y="424" font-size="11.4" fill="#6d28d9" text-anchor="start" font-weight="700">完整 GTIN-13：6901234567892</text>
+<text x="404" y="448" font-size="10.2" fill="#475569" text-anchor="start">ISBN-13、EAN-13、GTIN-13 是同一族编码。</text>
+<rect x="20" y="466" width="720" height="36" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="490" font-size="10.6" fill="#475569" text-anchor="start">图中条码按 EAN-13 的 L/G/R 编码表逐模块计算生成，非示意图；扫描线动画只播放一次。</text>
+</svg>

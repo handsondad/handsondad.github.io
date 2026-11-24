@@ -34,3 +34,7 @@ _site
 # Python bytecode
 __pycache__/
 *.py[cod]
+
+# Playwright
+playwright-tmp/
+.playwright-cli
