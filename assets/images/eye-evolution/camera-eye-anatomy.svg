@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="538" viewBox="0 0 760 538" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">人眼相机式结构光路与视杆视锥细胞原创重绘图</title>
+<desc id="desc">原创重绘的人眼横截面标出角膜、虹膜、晶状体、玻璃体、视网膜、黄斑中央凹、盲点和视神经；光线经角膜与晶状体两次折射在视网膜形成倒像；右栏对比视杆细胞负责弱光、视锥细胞负责颜色，感光始于11-顺视黄醛的光异构化。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="537" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">把相机眼拆开：光走过的是一条精心安排的路</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">角膜、虹膜、晶状体、玻璃体、视网膜、黄斑与盲点，各管一段。</text>
+<rect x="20" y="66" width="470" height="410" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<ellipse cx="258" cy="248" rx="166" ry="152" fill="#fff8f1" stroke="#d9a06b" stroke-width="2"/>
+<path d="M 99 200 A 166 152 0 0 1 417 200" fill="none" stroke="#9fc7e8" stroke-width="9"/>
+<path d="M 99 200 A 166 152 0 0 1 417 200" fill="none" stroke="#dbeafe" stroke-width="4"/>
+<path d="M 118 178 Q 258 150 398 178" fill="none" stroke="#c25014" stroke-width="4"/>
+<path d="M 124 184 Q 258 158 392 184" fill="none" stroke="#e0a269" stroke-width="3"/>
+<ellipse cx="258" cy="180" rx="46" ry="26" fill="#efe3ff" stroke="#7c3aed" stroke-width="2"/>
+<path d="M 258 154 L 258 206" stroke="#7c3aed" stroke-width="1"/>
+<ellipse cx="258" cy="268" rx="120" ry="104" fill="#fde9da" fill-opacity="0.55"/>
+<path d="M 112 280 A 166 152 0 0 0 404 280" fill="none" stroke="#e7b27d" stroke-width="12"/>
+<path d="M 112 280 A 166 152 0 0 0 404 280" fill="none" stroke="#c25014" stroke-width="2"/>
+<line x1="178.0" y1="104.0" x2="258.0" y2="300.0" stroke="#c25014" stroke-width="1.2" stroke-linecap="round" marker-end="url(#arr-orange)" stroke-opacity="0.75"/>
+<line x1="220.0" y1="104.0" x2="258.0" y2="300.0" stroke="#c25014" stroke-width="1.2" stroke-linecap="round" marker-end="url(#arr-orange)" stroke-opacity="0.75"/>
+<line x1="296.0" y1="104.0" x2="258.0" y2="300.0" stroke="#c25014" stroke-width="1.2" stroke-linecap="round" marker-end="url(#arr-orange)" stroke-opacity="0.75"/>
+<line x1="338.0" y1="104.0" x2="258.0" y2="300.0" stroke="#c25014" stroke-width="1.2" stroke-linecap="round" marker-end="url(#arr-orange)" stroke-opacity="0.75"/>
+<circle cx="258" cy="302" r="7" fill="#e4572e" stroke="white" stroke-width="1.5"/>
+<path d="M 92 336 L 130 330 L 152 420 L 118 424 Z" fill="#f9d7b5" stroke="#c25014" stroke-width="1.6"/>
+<line x1="130.0" y1="344.0" x2="146.0" y2="410.0" stroke="#c25014" stroke-width="1.4" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<circle cx="170" cy="318" r="5" fill="none" stroke="#7c3aed" stroke-width="2"/>
+<text x="32" y="96" font-size="10.2" fill="#1d6fa5" text-anchor="start" font-weight="600">角膜：先折射</text>
+<text x="32" y="124" font-size="10.2" fill="#c25014" text-anchor="start" font-weight="600">虹膜：调光</text>
+<text x="32" y="152" font-size="10.2" fill="#6d28d9" text-anchor="start" font-weight="600">晶状体：聚焦</text>
+<text x="32" y="180" font-size="10.2" fill="#18794e" text-anchor="start" font-weight="600">玻璃体：透明填充</text>
+<text x="32" y="350" font-size="10.2" fill="#c25014" text-anchor="start" font-weight="600">视网膜：感光</text>
+<text x="32" y="378" font-size="10.2" fill="#18794e" text-anchor="start" font-weight="600">中央凹：最清晰</text>
+<text x="32" y="406" font-size="10.2" fill="#6d28d9" text-anchor="start" font-weight="600">盲点：神经出口</text>
+<text x="32" y="434" font-size="10.2" fill="#475569" text-anchor="start" font-weight="600">视神经：送脑</text>
+<text x="352" y="246" font-size="10.6" fill="#c25014" text-anchor="middle" font-weight="700">倒像</text>
+<text x="352" y="266" font-size="9.8" fill="#64748b" text-anchor="middle">由大脑翻正</text>
+<rect x="506" y="66" width="234" height="410" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="524" cy="88" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="524" y="92" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">1</text>
+<text x="542" y="92" font-size="11.4" fill="#0f172a" text-anchor="start" font-weight="700">视网膜上的两种感光细胞</text>
+<rect x="522" y="116" width="202" height="112" rx="7" fill="#f4f8fc" stroke="#cfe0ed"/>
+<path d="M 546 200 L 546 146 L 554 138 L 562 146 L 562 200 Z" fill="#bcd7ef" stroke="#1d6fa5" stroke-width="1.2"/>
+<path d="M 566 200 L 566 142 L 584 130 L 602 142 L 602 200 Z" fill="#f9d7b5" stroke="#c25014" stroke-width="1.2"/>
+<path d="M 612 200 L 612 146 L 620 138 L 628 146 L 628 200 Z" fill="#bcd7ef" stroke="#1d6fa5" stroke-width="1.2"/>
+<path d="M 638 200 L 638 142 L 656 130 L 674 142 L 674 200 Z" fill="#f9d7b5" stroke="#c25014" stroke-width="1.2"/>
+<text x="554" y="216" font-size="9.8" fill="#1d6fa5" text-anchor="middle">视杆：弱光</text>
+<text x="584" y="216" font-size="9.8" fill="#c25014" text-anchor="middle">视锥：颜色</text>
+<text x="628" y="216" font-size="9.8" fill="#1d6fa5" text-anchor="middle">视杆</text>
+<text x="656" y="216" font-size="9.8" fill="#c25014" text-anchor="middle">视锥</text>
+<line x1="522.0" y1="228.0" x2="724.0" y2="228.0" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
+<text x="522" y="256" font-size="11.2" fill="#1d6fa5" text-anchor="start" font-weight="700">视杆细胞</text>
+<text x="522" y="278" font-size="10.2" fill="#1e293b" text-anchor="start">灵敏度高，暗处工作；</text>
+<text x="522" y="298" font-size="10.2" fill="#1e293b" text-anchor="start">不能分辨颜色。</text>
+<text x="522" y="332" font-size="11.2" fill="#c25014" text-anchor="start" font-weight="700">视锥细胞</text>
+<text x="522" y="354" font-size="10.2" fill="#1e293b" text-anchor="start">强光下工作，负责色觉；</text>
+<text x="522" y="374" font-size="10.2" fill="#1e293b" text-anchor="start">中央凹处最密集。</text>
+<text x="522" y="414" font-size="10.4" fill="#6d28d9" text-anchor="start" font-weight="700">光子 → 11-顺视黄醛异构化</text>
+<text x="522" y="438" font-size="10.4" fill="#6d28d9" text-anchor="start" font-weight="700">→ 电信号 → 视神经</text>
+<rect x="20" y="490" width="720" height="38" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="515" font-size="10.6" fill="#475569" text-anchor="start">本图根据用户提供的人眼解剖示意重新绘制，仅保留结构关系与光线路径，不直接使用原图。</text>
+</svg>

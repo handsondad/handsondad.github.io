@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="542" viewBox="0 0 760 542" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">眼睛演化的地质时间线与独立起源统计图</title>
+<desc id="desc">时间线标出埃迪卡拉纪开始650百万年前、最早已知三叶虫眼化石600至550百万年前、寒武纪543至505百万年前；统计显示约36个动物门中约7个有眼、4个能成像，其中软体节肢脊索三门占约96%物种，眼睛至少独立演化约40次。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="541" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">眼睛在生命史上被“发明”了多少次？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">化石给下限，现生动物给上限；答案不是一个整数，而是一段范围。</text>
+<rect x="20" y="66" width="720" height="174" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="88" r="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="38" y="92" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="92" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">地质时间线上的眼睛</text>
+<line x1="70.0" y1="160.0" x2="690.0" y2="160.0" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+<line x1="70.0" y1="154.0" x2="70.0" y2="168.0" stroke="#1d6fa5" stroke-width="2" stroke-linecap="round"/>
+<text x="70.0" y="188" font-size="9.4" fill="#1d6fa5" text-anchor="middle">埃迪卡拉纪开始</text>
+<text x="70.0" y="206" font-size="9.2" fill="#64748b" text-anchor="middle">650 Ma</text>
+<line x1="283.8" y1="154.0" x2="283.8" y2="168.0" stroke="#c25014" stroke-width="2" stroke-linecap="round"/>
+<text x="283.8" y="188" font-size="9.4" fill="#c25014" text-anchor="middle">最早化石眼</text>
+<text x="283.8" y="206" font-size="9.2" fill="#64748b" text-anchor="middle">600 Ma</text>
+<line x1="527.5" y1="154.0" x2="527.5" y2="168.0" stroke="#6d28d9" stroke-width="2" stroke-linecap="round"/>
+<text x="527.5" y="188" font-size="9.4" fill="#6d28d9" text-anchor="middle">寒武纪开始</text>
+<text x="527.5" y="206" font-size="9.2" fill="#64748b" text-anchor="middle">543 Ma</text>
+<line x1="690.0" y1="154.0" x2="690.0" y2="168.0" stroke="#18794e" stroke-width="2" stroke-linecap="round"/>
+<text x="690.0" y="188" font-size="9.4" fill="#18794e" text-anchor="middle">大爆发末</text>
+<text x="690.0" y="206" font-size="9.2" fill="#64748b" text-anchor="middle">505 Ma</text>
+<text x="40" y="226" font-size="10.4" fill="#475569" text-anchor="start">Ma = 百万年前；最早已知眼化石是三叶虫 Olenellus fowleri，约 6 亿–5.5 亿年前。</text>
+<rect x="20" y="256" width="352" height="224" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="278" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="38" y="282" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">2</text>
+<text x="56" y="282" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700">现存动物门：不是每个门都有眼</text>
+<text x="40" y="314" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="600">约 36 个动物门</text>
+<rect x="40" y="322" width="300" height="12" rx="6" fill="#eef2f7"/>
+<rect x="40" y="322" width="300.0" height="12" rx="6" fill="#1d6fa5"/>
+<text x="40" y="358" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="600">约 7 个门有眼</text>
+<rect x="40" y="366" width="300" height="12" rx="6" fill="#eef2f7"/>
+<rect x="40" y="366" width="58.3" height="12" rx="6" fill="#c25014"/>
+<text x="40" y="402" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="600">4 个门能成像</text>
+<rect x="40" y="410" width="300" height="12" rx="6" fill="#eef2f7"/>
+<rect x="40" y="410" width="33.3" height="12" rx="6" fill="#6d28d9"/>
+<text x="40" y="456" font-size="10.4" fill="#1e293b" text-anchor="start">能成像的 4 个门中，软体、节肢、脊索 3 个门占了约 96% 的物种。</text>
+<rect x="388" y="256" width="352" height="224" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="278" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="406" y="282" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">3</text>
+<text x="424" y="282" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700">眼睛至少被独立发明约 40 次</text>
+<text x="404" y="316" font-size="10.4" fill="#1e293b" text-anchor="start">· 脊椎动物与头足类：各自造出相机眼</text>
+<text x="404" y="344" font-size="10.4" fill="#1e293b" text-anchor="start">· 节肢动物：复眼，成千上万小眼并行采样</text>
+<text x="404" y="372" font-size="10.4" fill="#1e293b" text-anchor="start">· 鹦鹉螺：针孔眼；涡虫：色素杯眼点</text>
+<text x="404" y="400" font-size="10.4" fill="#1e293b" text-anchor="start">· 洞穴鱼与鼹鼠：眼睛还可以再次退化</text>
+<line x1="404.0" y1="416.0" x2="724.0" y2="416.0" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
+<text x="404" y="446" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="700">共同祖先只给“工具箱”，图纸由各支自己画。</text>
+<rect x="20" y="494" width="720" height="38" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="519" font-size="10.6" fill="#475569" text-anchor="start">不同资料对动物门总数与有眼门数统计略有差异（如 39/6 与 36/7），源于分类口径不同；结论不变。</text>
+</svg>

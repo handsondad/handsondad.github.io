@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="510" viewBox="0 0 760 510" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">氧化还原电子账本：氧化剂被还原、还原剂被氧化图解</title>
+<desc id="desc">左侧显示还原剂锌失电子生成锌离子，氧化数0升到+2，角色是还原剂；右侧显示氧化剂铜离子得电子生成铜，氧化数+2降到0，角色是氧化剂；底部纠正氧化剂加电子应标注还原、还原剂失电子应标注氧化。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="509" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">氧化还原的第一张图：电子从谁手里，交到谁手里</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">氧化剂被还原、还原剂被氧化——这两个“被”字最容易写反。</text>
+<rect x="20" y="66" width="352" height="330" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="88" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="38" y="92" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="92" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">氧化：失电子（还原剂做的事）</text>
+<rect x="40" y="116" width="312" height="84" rx="8" fill="#fff8f2" stroke="#f0d5bc"/>
+<text x="60" y="146" font-size="12.0" fill="#c25014" text-anchor="start" font-weight="700">还原剂</text>
+<text x="60" y="176" font-size="13.0" fill="#0f172a" text-anchor="start" font-weight="700">Zn → Zn²⁺ + 2e⁻</text>
+<line x1="196.0" y1="142.0" x2="294.0" y2="142.0" stroke="#c25014" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<text x="246" y="132" font-size="9.8" fill="#c25014" text-anchor="middle">交出电子</text>
+<text x="196" y="230" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="600">氧化数：0 → +2（升高）</text>
+<text x="40" y="262" font-size="10.6" fill="#1e293b" text-anchor="start">失去电子 = 被氧化 = 充当还原剂</text>
+<text x="40" y="292" font-size="10.4" fill="#475569" text-anchor="start">还原剂把自己氧化，好把电子送出去。</text>
+<text x="40" y="340" font-size="10.4" fill="#c25014" text-anchor="start" font-weight="700">口诀：OIL — Oxidation Is Loss（氧化即失）</text>
+<rect x="388" y="66" width="352" height="330" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="88" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="406" y="92" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">2</text>
+<text x="424" y="92" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">还原：得电子（氧化剂做的事）</text>
+<rect x="408" y="116" width="312" height="84" rx="8" fill="#f4f8fc" stroke="#cfe0ed"/>
+<text x="428" y="146" font-size="12.0" fill="#1d6fa5" text-anchor="start" font-weight="700">氧化剂</text>
+<text x="428" y="176" font-size="13.0" fill="#0f172a" text-anchor="start" font-weight="700">Cu²⁺ + 2e⁻ → Cu</text>
+<line x1="564.0" y1="142.0" x2="662.0" y2="142.0" stroke="#1d6fa5" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<text x="614" y="132" font-size="9.8" fill="#1d6fa5" text-anchor="middle">收下电子</text>
+<text x="564" y="230" font-size="10.6" fill="#1d6fa5" text-anchor="start" font-weight="600">氧化数：+2 → 0（降低）</text>
+<text x="408" y="262" font-size="10.6" fill="#1e293b" text-anchor="start">得到电子 = 被还原 = 充当氧化剂</text>
+<text x="408" y="292" font-size="10.4" fill="#475569" text-anchor="start">氧化剂把自己还原，换来对方的电子。</text>
+<text x="408" y="340" font-size="10.4" fill="#1d6fa5" text-anchor="start" font-weight="700">口诀：RIG — Reduction Is Gain（还原即得）</text>
+<line x1="372.0" y1="180.0" x2="388.0" y2="180.0" stroke="#6d28d9" stroke-width="2.4" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<text x="380" y="168" font-size="10.0" fill="#6d28d9" text-anchor="middle" font-weight="700">e⁻</text>
+<rect x="20" y="412" width="720" height="88" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="40" y="442" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">你给的两行示例里，电子箭头方向是对的，但括号标签刚好写反了：</text>
+<text x="40" y="468" font-size="10.8" fill="#1e293b" text-anchor="start">氧化剂 + e⁻ → 还原产物（这是“还原”，不是氧化）；还原剂 → 氧化产物 + e⁻（这是“氧化”，不是还原）。</text>
+<text x="40" y="492" font-size="10.2" fill="#64748b" text-anchor="start">记法：谁“被”氧化/还原，看它自己发生了什么；它扮演的角色，正好是相反的那一面。</text>
+</svg>

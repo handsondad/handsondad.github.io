@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="576" viewBox="0 0 760 576" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">氨基酸通用骨架肽键连接与蛋白质折叠示意图</title>
+<desc id="desc">左图画氨基酸的α碳连接氨基羧基氢原子与侧链R，说明二十种标准氨基酸人体额外使用硒半胱氨酸九种必需且侧链性格决定折叠；右图画七个氨基酸经肽键连成链并折叠成球蛋白，标注n个氨基酸形成n减一个肽键、成熟胰岛素五十一个氨基酸五十个肽键，以及细菌每秒约二十个而人体每秒约五到六个氨基酸的翻译速度。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="575" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">氨基酸只有 20 种，为什么能拼出十万种蛋白？</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">关键在于侧链 R 的化学性格，以及排列顺序带来的折叠方式。</text>
+<rect x="20" y="66" width="352" height="438" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="89" r="10.5" fill="#ffe9ee" stroke="#be123c" stroke-width="1.2"/>
+<text x="38" y="93" font-size="11.5" fill="#be123c" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="93" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">一个氨基酸的通用骨架</text>
+<line x1="196.0" y1="178.0" x2="196.0" y2="144.0" stroke="#475569" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="196.0" y1="226.0" x2="196.0" y2="260.0" stroke="#475569" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="172.0" y1="202.0" x2="124.0" y2="202.0" stroke="#475569" stroke-width="1.4" stroke-linecap="round"/>
+<line x1="220.0" y1="202.0" x2="268.0" y2="202.0" stroke="#475569" stroke-width="1.4" stroke-linecap="round"/>
+<circle cx="196" cy="202" r="24" fill="#ffffff" stroke="#be123c" stroke-width="1.6"/>
+<text x="196" y="207" font-size="11.4" fill="#be123c" text-anchor="middle" font-weight="700">Cα</text>
+<text x="196" y="136" font-size="10.2" fill="#1d6fa5" text-anchor="middle" font-weight="600">氨基 —NH₂</text>
+<text x="196" y="278" font-size="10.2" fill="#c25014" text-anchor="middle" font-weight="600">羧基 —COOH</text>
+<text x="114" y="206" font-size="10.2" fill="#64748b" text-anchor="middle">H</text>
+<text x="280" y="206" font-size="10.2" fill="#be123c" text-anchor="middle" font-weight="700">R 侧链</text>
+<line x1="38.0" y1="306.0" x2="352.0" y2="306.0" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
+<text x="38" y="332" font-size="10.3" fill="#0f172a" text-anchor="start" font-weight="600">20 种标准氨基酸：共同骨架相同，只有 R 不同。</text>
+<text x="38" y="360" font-size="10.2" fill="#1e293b" text-anchor="start">人体还会用第 21 种：硒半胱氨酸。</text>
+<text x="38" y="388" font-size="10.2" fill="#1e293b" text-anchor="start">其中 9 种人体不能自己合成，必须从食物来。</text>
+<text x="38" y="420" font-size="10.2" fill="#475569" text-anchor="start">R 有带电极性、疏水、含硫等性格，决定折叠。</text>
+<text x="38" y="452" font-size="10.0" fill="#64748b" text-anchor="start">单个氨基酸直径量级：约 0.8 nm。</text>
+<rect x="388" y="66" width="352" height="438" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="89" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="406" y="93" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">2</text>
+<text x="424" y="93" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700">肽键：一颗一颗焊成链，再折成形状</text>
+<text x="406" y="128" font-size="10.4" fill="#18794e" text-anchor="start" font-weight="600">羧基 + 氨基 → 肽键 + 一分子水</text>
+<circle cx="414" cy="164" r="13" fill="#fde68a" stroke="#475569" stroke-width="1"/>
+<text x="414" y="168" font-size="9.2" fill="#475569" text-anchor="middle">R</text>
+<line x1="428.0" y1="164.0" x2="440.0" y2="164.0" stroke="#be123c" stroke-width="1.8" stroke-linecap="round"/>
+<circle cx="454" cy="164" r="13" fill="#bfdbfe" stroke="#475569" stroke-width="1"/>
+<text x="454" y="168" font-size="9.2" fill="#475569" text-anchor="middle">R</text>
+<line x1="468.0" y1="164.0" x2="480.0" y2="164.0" stroke="#be123c" stroke-width="1.8" stroke-linecap="round"/>
+<circle cx="494" cy="164" r="13" fill="#fecaca" stroke="#475569" stroke-width="1"/>
+<text x="494" y="168" font-size="9.2" fill="#475569" text-anchor="middle">R</text>
+<line x1="508.0" y1="164.0" x2="520.0" y2="164.0" stroke="#be123c" stroke-width="1.8" stroke-linecap="round"/>
+<circle cx="534" cy="164" r="13" fill="#bbf7d0" stroke="#475569" stroke-width="1"/>
+<text x="534" y="168" font-size="9.2" fill="#475569" text-anchor="middle">R</text>
+<line x1="548.0" y1="164.0" x2="560.0" y2="164.0" stroke="#be123c" stroke-width="1.8" stroke-linecap="round"/>
+<circle cx="574" cy="164" r="13" fill="#ddd6fe" stroke="#475569" stroke-width="1"/>
+<text x="574" y="168" font-size="9.2" fill="#475569" text-anchor="middle">R</text>
+<line x1="588.0" y1="164.0" x2="600.0" y2="164.0" stroke="#be123c" stroke-width="1.8" stroke-linecap="round"/>
+<circle cx="614" cy="164" r="13" fill="#fde68a" stroke="#475569" stroke-width="1"/>
+<text x="614" y="168" font-size="9.2" fill="#475569" text-anchor="middle">R</text>
+<line x1="628.0" y1="164.0" x2="640.0" y2="164.0" stroke="#be123c" stroke-width="1.8" stroke-linecap="round"/>
+<circle cx="654" cy="164" r="13" fill="#bfdbfe" stroke="#475569" stroke-width="1"/>
+<text x="654" y="168" font-size="9.2" fill="#475569" text-anchor="middle">R</text>
+<text x="534" y="194" font-size="10.4" fill="#0f172a" text-anchor="middle" font-weight="700">n 个氨基酸 → n−1 个肽键</text>
+<line x1="406.0" y1="216.0" x2="724.0" y2="216.0" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
+<circle cx="556" cy="298" r="56" fill="#e7f6ee" stroke="#18794e" stroke-width="1.6"/>
+<circle cx="556" cy="298" r="40" fill="#ffffff" stroke="#18794e" stroke-width="0.9" stroke-dasharray="4 3"/>
+<text x="556" y="302" font-size="10.6" fill="#18794e" text-anchor="middle" font-weight="700">折叠后的
+蛋白质</text>
+<line x1="470.0" y1="240.0" x2="516.0" y2="266.0" stroke="#18794e" stroke-width="1.4" stroke-linecap="round" marker-end="url(#arr-green)"/>
+<text x="406" y="384" font-size="10.4" fill="#1e293b" text-anchor="start">成熟胰岛素＝51 个氨基酸，50 个肽键。</text>
+<text x="406" y="412" font-size="10.0" fill="#1e293b" text-anchor="start">细菌核糖体约 20 个/秒；人体细胞约 5～6 个/秒。</text>
+<text x="406" y="440" font-size="10.0" fill="#475569" text-anchor="start">一条 200 氨基酸的链：细菌约 10 秒，人体约 36 秒。</text>
+<text x="406" y="470" font-size="10.0" fill="#64748b" text-anchor="start">顺序 → 折叠 → 形状 → 功能，一步错可能全盘错。</text>
+<rect x="20" y="518" width="720" height="44" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="546" font-size="10.6" fill="#475569" text-anchor="start">20 种字母不是 20 种蛋白：组合数是天文数字，细胞再用折叠、剪接与修饰把可能性收束到可用的少数。</text>
+</svg>

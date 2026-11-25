@@ -6,7 +6,7 @@ Usage from CLI:
     python tools/visuals.py audit
 """
 
-from . import acid_base_causes, algebra_logic, ancient_dna_preservation, air_convection, angular_momentum, atomic_physics, bacteria_vs_virus, breath_hot_cold, brocade_embroidery, cad_physics_modeling, celestial_spin, charts, chemical_bonds, commodity_codes, embodied_ai, circulatory_systems, core, cosmic_elements, earth_climate, einstein_light_bending, fire_physics, fresh_salt_fish, fuel_tank_gasoline, genetic_variation, geometry_analysis, gong_si_characters, greek_tragedy, heavy_aircraft_flight, hetu_luoshu, home_plant_propagation, hongxing_erguotou, horsepower_physics, humanities, infant_adult_brain, jade_relics, kepler_three_laws, lcd_display_tech, light_speed, lotus_browning, mechanics_sky, methanol_ethanol, multistage_rocket, quartz_computer_clock, rocket_rotation, satellite_flight, science_tech, siphon_phenomenon, solar_fusion, spring_flower_energy, swearing_gender, thermo_mechanics_energy, topological_materials, two_children_sun, voltage_current_resistance, weighing_earth, winter_leaf_strategies, zeno_paradox
+from . import acid_base_causes, algebra_logic, ancient_dna_preservation, air_convection, angular_momentum, atomic_physics, bacteria_vs_virus, bio_hierarchy, breath_hot_cold, brocade_embroidery, cad_physics_modeling, celestial_spin, charts, chemical_bonds, commodity_codes, embodied_ai, circulatory_systems, core, cosmic_elements, earth_climate, einstein_light_bending, energy_concept, eye_evolution, fire_physics, fresh_salt_fish, fuel_tank_gasoline, genetic_variation, geometry_analysis, gong_si_characters, greek_tragedy, heavy_aircraft_flight, hetu_luoshu, home_plant_propagation, hongxing_erguotou, horsepower_physics, humanities, infant_adult_brain, jade_relics, kepler_three_laws, lcd_display_tech, light_speed, lotus_browning, mechanics_sky, methanol_ethanol, multistage_rocket, quartz_computer_clock, redox_reactions, rocket_rotation, satellite_flight, science_tech, siphon_phenomenon, solar_fusion, spring_flower_energy, swearing_gender, thermo_mechanics_energy, topological_materials, two_children_sun, voltage_current_resistance, weighing_earth, winter_leaf_strategies, zeno_paradox
 from .core import TOPICS, audit_all_svgs
 
 __all__ = [
@@ -19,6 +19,7 @@ __all__ = [
     "angular_momentum",
     "atomic_physics",
     "bacteria_vs_virus",
+    "bio_hierarchy",
     "breath_hot_cold",
     "brocade_embroidery",
     "cad_physics_modeling",
@@ -32,6 +33,8 @@ __all__ = [
     "earth_climate",
     "embodied_ai",
     "einstein_light_bending",
+    "energy_concept",
+    "eye_evolution",
     "fire_physics",
     "fresh_salt_fish",
     "fuel_tank_gasoline",
@@ -55,6 +58,7 @@ __all__ = [
     "methanol_ethanol",
     "multistage_rocket",
     "quartz_computer_clock",
+    "redox_reactions",
     "rocket_rotation",
     "satellite_flight",
     "science_tech",

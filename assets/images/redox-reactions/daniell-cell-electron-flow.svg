@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="510" viewBox="0 0 760 510" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">丹尼尔电池锌铜半电池电子流与电动势计算图</title>
+<desc id="desc">左槽锌阳极发生氧化反应Zn生成锌离子加两电子，右槽铜离子阴极发生还原反应生成铜；电子经外电路从锌流向铜，盐桥离子迁移维持电中性；标准电动势等于阴极电势加0.34伏减去阳极电势负0.7618伏约1.10伏，对应自由能变化约负213千焦每摩尔。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="509" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">把氧化还原拆成两半：电子被迫绕外电路走一趟</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">丹尼尔电池里，锌被氧化、铜离子被还原，钱变成了电。</text>
+<rect x="20" y="66" width="720" height="372" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="60" y="152" width="200" height="180" rx="8" fill="#f4f8fc" stroke="#9fc7e8" stroke-width="1.6"/>
+<rect x="62" y="194" width="196" height="136" rx="4" fill="#dbeafe" fill-opacity="0.8"/>
+<rect x="132" y="106" width="22" height="150" rx="3" fill="#b8c0c9" stroke="#64748b" stroke-width="1.4"/>
+<text x="160" y="200" font-size="11.2" fill="#c25014" text-anchor="start" font-weight="700">Zn 电极（−）</text>
+<text x="160" y="226" font-size="10.6" fill="#1e293b" text-anchor="start">阳极：Zn → Zn²⁺ + 2e⁻</text>
+<text x="160" y="252" font-size="10.4" fill="#475569" text-anchor="start">E°(Zn²⁺/Zn) = −0.76 V</text>
+<rect x="460" y="152" width="200" height="180" rx="8" fill="#f6f3fc" stroke="#c4b5fd" stroke-width="1.6"/>
+<rect x="462" y="194" width="196" height="136" rx="4" fill="#e8e0ff" fill-opacity="0.8"/>
+<rect x="538" y="106" width="22" height="150" rx="3" fill="#c9895a" stroke="#9a5b2e" stroke-width="1.4"/>
+<text x="568" y="200" font-size="11.2" fill="#1d6fa5" text-anchor="start" font-weight="700">Cu 电极（+）</text>
+<text x="568" y="226" font-size="10.6" fill="#1e293b" text-anchor="start">阴极：Cu²⁺ + 2e⁻ → Cu</text>
+<text x="568" y="252" font-size="10.4" fill="#475569" text-anchor="start">E°(Cu²⁺/Cu) = +0.34 V</text>
+<line x1="143.0" y1="106.0" x2="143.0" y2="78.0" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+<line x1="143.0" y1="78.0" x2="549.0" y2="78.0" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+<line x1="549.0" y1="78.0" x2="549.0" y2="106.0" stroke="#475569" stroke-width="2" stroke-linecap="round"/>
+<line x1="210.0" y1="78.0" x2="470.0" y2="78.0" stroke="#c25014" stroke-width="2.6" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<text x="340" y="66" font-size="10.6" fill="#c25014" text-anchor="middle" font-weight="700">电子 e⁻ 从锌流向铜</text>
+<rect x="274.0" y="88.0" width="112" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="330.0" y="103.0" font-size="10.2" fill="#6d28d9" text-anchor="middle" font-weight="600">电流计 / 负载</text>
+<path d="M 260 210 C 320 176, 400 176, 460 210" fill="none" stroke="#94a3b8" stroke-width="14" stroke-linecap="round"/>
+<path d="M 260 210 C 320 176, 400 176, 460 210" fill="none" stroke="#e2e8f0" stroke-width="9" stroke-linecap="round"/>
+<line x1="300.0" y1="190.0" x2="342.0" y2="184.0" stroke="#1d6fa5" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<line x1="420.0" y1="184.0" x2="378.0" y2="190.0" stroke="#c25014" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<text x="360" y="154" font-size="10.2" fill="#475569" text-anchor="middle">盐桥：离子迁移维持电中性</text>
+<text x="50" y="360" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">总反应：Zn(s) + Cu²⁺(aq) → Zn²⁺(aq) + Cu(s)</text>
+<text x="50" y="396" font-size="11.0" fill="#c25014" text-anchor="start" font-weight="700">E°cell = E°阴极 − E°阳极 = 0.34 − (−0.7618) = +1.1018 V ≈ +1.10 V</text>
+<text x="50" y="422" font-size="10.6" fill="#1d6fa5" text-anchor="start">n = 2，ΔG° = −nFE° ≈ -213 kJ/mol（F = 96 485 C/mol）</text>
+<rect x="20" y="452" width="720" height="48" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="480" font-size="10.8" fill="#475569" text-anchor="start">电池不创造新反应，只是把自发的氧化还原拆开，让电子经过外部电路去做功。</text>
+</svg>

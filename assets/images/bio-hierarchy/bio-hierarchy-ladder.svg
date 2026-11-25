@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="642" viewBox="0 0 760 642" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">系统器官组织细胞蛋白质氨基酸DNA七级生物层级总览图</title>
+<desc id="desc">七行阶梯以心脏为例逐层下钻：系统循环系统约一米、器官心脏约十二厘米、组织心肌组织毫米至厘米、细胞心肌细胞十到二十微米、蛋白质肌球蛋白约五纳米、氨基酸约零点八纳米、DNA双螺旋直径两纳米；右列逐层列出新出现的能力，底栏解释涌现。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="641" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">从系统到 DNA：七层台阶，每下一层都更小、更多、更基础</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">以“心脏—肌球蛋白”为一条线走到底；右边一列是该层才冒出来的新性质。</text>
+<text x="36" y="64" font-size="10.2" fill="#64748b" text-anchor="start" font-weight="600">层级</text>
+<text x="152" y="64" font-size="10.2" fill="#64748b" text-anchor="start" font-weight="600">顺着心脏往下看</text>
+<text x="438" y="64" font-size="10.2" fill="#64748b" text-anchor="start" font-weight="600">典型尺度</text>
+<text x="548" y="64" font-size="10.2" fill="#64748b" text-anchor="start" font-weight="600">这一层才有的能力</text>
+<rect x="20" y="72" width="720" height="66" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="20" y="72" width="6" height="66" rx="3" fill="#1d6fa5"/>
+<rect x="36.0" y="90.0" width="92" height="26" rx="13.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="82.0" y="107.7" font-size="11.4" fill="#1d6fa5" text-anchor="middle" font-weight="600">系统</text>
+<text x="152" y="108" font-size="10.9" fill="#0f172a" text-anchor="start" font-weight="600">循环系统＝心脏＋血管＋血液</text>
+<text x="438" y="108" font-size="10.2" fill="#1d6fa5" text-anchor="start" font-weight="700">≈ 1 m</text>
+<text x="548" y="108" font-size="10.4" fill="#1e293b" text-anchor="start">把氧和养分送到全身</text>
+<line x1="82.0" y1="138.0" x2="82.0" y2="144.0" stroke="#1d6fa5" stroke-width="1.4" stroke-linecap="round" marker-end="url(#arr-muted)"/>
+<rect x="20" y="144" width="720" height="66" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="20" y="144" width="6" height="66" rx="3" fill="#c25014"/>
+<rect x="36.0" y="162.0" width="92" height="26" rx="13.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="82.0" y="179.7" font-size="11.4" fill="#c25014" text-anchor="middle" font-weight="600">器官</text>
+<text x="152" y="180" font-size="10.9" fill="#0f172a" text-anchor="start" font-weight="600">心脏：由至少两类组织搭成</text>
+<text x="438" y="180" font-size="10.2" fill="#c25014" text-anchor="start" font-weight="700">≈ 12 cm</text>
+<text x="548" y="180" font-size="10.4" fill="#1e293b" text-anchor="start">有外形，能独立泵血</text>
+<line x1="82.0" y1="210.0" x2="82.0" y2="216.0" stroke="#c25014" stroke-width="1.4" stroke-linecap="round" marker-end="url(#arr-muted)"/>
+<rect x="20" y="216" width="720" height="66" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="20" y="216" width="6" height="66" rx="3" fill="#18794e"/>
+<rect x="36.0" y="234.0" width="92" height="26" rx="13.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="82.0" y="251.7" font-size="11.4" fill="#18794e" text-anchor="middle" font-weight="600">组织</text>
+<text x="152" y="252" font-size="10.9" fill="#0f172a" text-anchor="start" font-weight="600">心肌组织：许多心肌细胞协同</text>
+<text x="438" y="252" font-size="10.2" fill="#18794e" text-anchor="start" font-weight="700">mm～cm</text>
+<text x="548" y="252" font-size="10.4" fill="#1e293b" text-anchor="start">同步收缩形成合力</text>
+<line x1="82.0" y1="282.0" x2="82.0" y2="288.0" stroke="#18794e" stroke-width="1.4" stroke-linecap="round" marker-end="url(#arr-muted)"/>
+<rect x="20" y="288" width="720" height="66" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="20" y="288" width="6" height="66" rx="3" fill="#6d28d9"/>
+<rect x="36.0" y="306.0" width="92" height="26" rx="13.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="82.0" y="323.7" font-size="11.4" fill="#6d28d9" text-anchor="middle" font-weight="600">细胞</text>
+<text x="152" y="324" font-size="10.9" fill="#0f172a" text-anchor="start" font-weight="600">一个心肌细胞</text>
+<text x="438" y="324" font-size="10.2" fill="#6d28d9" text-anchor="start" font-weight="700">10～20 µm</text>
+<text x="548" y="324" font-size="10.4" fill="#1e293b" text-anchor="start">自己代谢、自己兴奋</text>
+<line x1="82.0" y1="354.0" x2="82.0" y2="360.0" stroke="#6d28d9" stroke-width="1.4" stroke-linecap="round" marker-end="url(#arr-muted)"/>
+<rect x="20" y="360" width="720" height="66" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="20" y="360" width="6" height="66" rx="3" fill="#b45309"/>
+<rect x="36.0" y="378.0" width="92" height="26" rx="13.0" fill="#fdf1d8" stroke="#b45309" stroke-width="1" stroke-opacity="0.35"/>
+<text x="82.0" y="395.7" font-size="11.4" fill="#b45309" text-anchor="middle" font-weight="600">蛋白质</text>
+<text x="152" y="396" font-size="10.9" fill="#0f172a" text-anchor="start" font-weight="600">肌球蛋白：把 ATP 变成推力</text>
+<text x="438" y="396" font-size="10.2" fill="#b45309" text-anchor="start" font-weight="700">≈ 5 nm</text>
+<text x="548" y="396" font-size="10.4" fill="#1e293b" text-anchor="start">分子机器输出机械功</text>
+<line x1="82.0" y1="426.0" x2="82.0" y2="432.0" stroke="#b45309" stroke-width="1.4" stroke-linecap="round" marker-end="url(#arr-muted)"/>
+<rect x="20" y="432" width="720" height="66" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="20" y="432" width="6" height="66" rx="3" fill="#be123c"/>
+<rect x="36.0" y="450.0" width="92" height="26" rx="13.0" fill="#ffe9ee" stroke="#be123c" stroke-width="1" stroke-opacity="0.35"/>
+<text x="82.0" y="467.7" font-size="11.4" fill="#be123c" text-anchor="middle" font-weight="600">氨基酸</text>
+<text x="152" y="468" font-size="10.9" fill="#0f172a" text-anchor="start" font-weight="600">亮氨酸、谷氨酸等 20 种</text>
+<text x="438" y="468" font-size="10.2" fill="#be123c" text-anchor="start" font-weight="700">≈ 0.8 nm</text>
+<text x="548" y="468" font-size="10.4" fill="#1e293b" text-anchor="start">排列顺序决定折叠</text>
+<line x1="82.0" y1="498.0" x2="82.0" y2="504.0" stroke="#be123c" stroke-width="1.4" stroke-linecap="round" marker-end="url(#arr-muted)"/>
+<rect x="20" y="504" width="720" height="66" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="20" y="504" width="6" height="66" rx="3" fill="#0f766e"/>
+<rect x="36.0" y="522.0" width="92" height="26" rx="13.0" fill="#e6f5f2" stroke="#0f766e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="82.0" y="539.7" font-size="11.4" fill="#0f766e" text-anchor="middle" font-weight="600">DNA</text>
+<text x="152" y="540" font-size="10.9" fill="#0f172a" text-anchor="start" font-weight="600">肌球蛋白基因写在基因组里</text>
+<text x="438" y="540" font-size="10.2" fill="#0f766e" text-anchor="start" font-weight="700">双螺旋 2 nm</text>
+<text x="548" y="540" font-size="10.4" fill="#1e293b" text-anchor="start">可复制，能传给后代</text>
+<rect x="20" y="584" width="720" height="44" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="612" font-size="10.6" fill="#475569" text-anchor="start">“涌现”：下层零件本身没有泵血功能，按层级组织起来才出现；往上走看功能，往下走看机制。</text>
+</svg>

@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="608" viewBox="0 0 760 608" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">DNA双螺旋到蛋白质翻译的信息流与反馈循环图</title>
+<desc id="desc">顶部画出DNA双螺旋直径约两纳米、单个细胞DNA拉直约两米，列出人类基因组约三十亿对碱基、两万到两万五千个蛋白编码基因、编码序列约百分之一点五、每个基因平均约三种蛋白；中部展示DNA转录成mRNA剪接后由核糖体翻译成蛋白质的五站流程与六十四密码子六十一有义三个终止；底部强调DNA与蛋白质互为因果并受环境影响。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="607" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">DNA 写的是字母，细胞读的是三字母一个词</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">30 亿对碱基里挑出约 2 万个基因，先抄成 mRNA，再翻译成氨基酸链。</text>
+<rect x="20" y="66" width="720" height="196" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="89" r="10.5" fill="#e6f5f2" stroke="#0f766e" stroke-width="1.2"/>
+<text x="38" y="93" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="93" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700">DNA：双螺旋直径约 2 nm，一个细胞里拉直约 2 m</text>
+<path d="M42.0,196.0 L58.0,214.7 L74.0,222.0 L90.0,213.6 L106.0,194.5 L122.0,176.3 L138.0,170.1 L154.0,179.6 L170.0,199.0 L186.0,216.6 L202.0,221.7 L218.0,211.2 L234.0,191.5 L250.0,174.5 L266.0,170.5 L282.0,182.0 L298.0,202.0 L314.0,218.3 L330.0,221.1" fill="none" stroke="#0f766e" stroke-width="2"/>
+<path d="M42.0,196.0 L58.0,177.3 L74.0,170.0 L90.0,178.4 L106.0,197.5 L122.0,215.7 L138.0,221.9 L154.0,212.4 L170.0,193.0 L186.0,175.4 L202.0,170.3 L218.0,180.8 L234.0,200.5 L250.0,217.5 L266.0,221.5 L282.0,210.0 L298.0,190.0 L314.0,173.7 L330.0,170.9" fill="none" stroke="#1d6fa5" stroke-width="2"/>
+<line x1="42.0" y1="196.0" x2="42.0" y2="196.0" stroke="#475569" stroke-width="1.1" stroke-linecap="round"/>
+<line x1="74.0" y1="222.0" x2="74.0" y2="170.0" stroke="#475569" stroke-width="1.1" stroke-linecap="round"/>
+<line x1="106.0" y1="194.5" x2="106.0" y2="197.5" stroke="#475569" stroke-width="1.1" stroke-linecap="round"/>
+<line x1="138.0" y1="170.1" x2="138.0" y2="221.9" stroke="#475569" stroke-width="1.1" stroke-linecap="round"/>
+<line x1="170.0" y1="199.0" x2="170.0" y2="193.0" stroke="#475569" stroke-width="1.1" stroke-linecap="round"/>
+<line x1="202.0" y1="221.7" x2="202.0" y2="170.3" stroke="#475569" stroke-width="1.1" stroke-linecap="round"/>
+<line x1="234.0" y1="191.5" x2="234.0" y2="200.5" stroke="#475569" stroke-width="1.1" stroke-linecap="round"/>
+<line x1="266.0" y1="170.5" x2="266.0" y2="221.5" stroke="#475569" stroke-width="1.1" stroke-linecap="round"/>
+<line x1="298.0" y1="202.0" x2="298.0" y2="190.0" stroke="#475569" stroke-width="1.1" stroke-linecap="round"/>
+<line x1="330.0" y1="221.1" x2="330.0" y2="170.9" stroke="#475569" stroke-width="1.1" stroke-linecap="round"/>
+<text x="196" y="250" font-size="9.6" fill="#475569" text-anchor="middle">A—T 两个氢键，G—C 三个氢键</text>
+<line x1="390.0" y1="124.0" x2="390.0" y2="244.0" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
+<text x="408" y="140" font-size="10.2" fill="#64748b" text-anchor="start">全人类基因组</text>
+<text x="556" y="140" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="700">约 30 亿对碱基</text>
+<text x="408" y="168" font-size="10.2" fill="#64748b" text-anchor="start">蛋白编码基因</text>
+<text x="556" y="168" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="700">约 2 万～2.5 万个</text>
+<text x="408" y="196" font-size="10.2" fill="#64748b" text-anchor="start">编码序列占比</text>
+<text x="556" y="196" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="700">约 1.5%</text>
+<text x="408" y="224" font-size="10.2" fill="#64748b" text-anchor="start">每个基因平均</text>
+<text x="556" y="224" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="700">约 3 种蛋白</text>
+<text x="408" y="252" font-size="9.8" fill="#0f766e" text-anchor="start">同一套 DNA，不同细胞只读其中一小部分。</text>
+<rect x="20" y="278" width="720" height="148" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="301" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="38" y="305" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">2</text>
+<text x="56" y="305" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700">信息流：DNA → RNA → 蛋白质</text>
+<rect x="40" y="326" width="120" height="72" rx="8" fill="#f8fafc" stroke="#0f766e" stroke-width="1.4"/>
+<text x="100" y="352" font-size="11.0" fill="#0f766e" text-anchor="middle" font-weight="700">DNA</text>
+<text x="100" y="376" font-size="9.6" fill="#1e293b" text-anchor="middle">基因片段</text>
+<line x1="162.0" y1="362.0" x2="212.0" y2="362.0" stroke="#0f766e" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<rect x="176" y="326" width="120" height="72" rx="8" fill="#f8fafc" stroke="#1d6fa5" stroke-width="1.4"/>
+<text x="236" y="352" font-size="11.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">转录</text>
+<text x="236" y="376" font-size="9.6" fill="#1e293b" text-anchor="middle">RNA 聚合酶抄写</text>
+<line x1="298.0" y1="362.0" x2="348.0" y2="362.0" stroke="#1d6fa5" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<rect x="312" y="326" width="120" height="72" rx="8" fill="#f8fafc" stroke="#6d28d9" stroke-width="1.4"/>
+<text x="372" y="352" font-size="11.0" fill="#6d28d9" text-anchor="middle" font-weight="700">mRNA</text>
+<text x="372" y="376" font-size="9.6" fill="#1e293b" text-anchor="middle">剪掉内含子</text>
+<line x1="434.0" y1="362.0" x2="484.0" y2="362.0" stroke="#6d28d9" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<rect x="448" y="326" width="120" height="72" rx="8" fill="#f8fafc" stroke="#c25014" stroke-width="1.4"/>
+<text x="508" y="352" font-size="11.0" fill="#c25014" text-anchor="middle" font-weight="700">翻译</text>
+<text x="508" y="376" font-size="9.6" fill="#1e293b" text-anchor="middle">核糖体读密码子</text>
+<line x1="570.0" y1="362.0" x2="620.0" y2="362.0" stroke="#c25014" stroke-width="1.8" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<rect x="584" y="326" width="120" height="72" rx="8" fill="#f8fafc" stroke="#18794e" stroke-width="1.4"/>
+<text x="644" y="352" font-size="11.0" fill="#18794e" text-anchor="middle" font-weight="700">蛋白质</text>
+<text x="644" y="376" font-size="9.6" fill="#1e293b" text-anchor="middle">折叠后上岗</text>
+<text x="40" y="416" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="600">4 种碱基 × 3 个字母 = 64 个密码子：61 个指定氨基酸，3 个是“停”。</text>
+<rect x="20" y="442" width="720" height="92" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="464" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="38" y="468" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">3</text>
+<text x="56" y="468" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700">这不是单向命令，而是一场循环</text>
+<text x="40" y="496" font-size="10.4" fill="#1e293b" text-anchor="start">DNA 决定氨基酸顺序；读 DNA、复制 DNA、剪接 mRNA 的酶本身也是蛋白质。</text>
+<text x="40" y="522" font-size="10.2" fill="#475569" text-anchor="start">环境、饮食、信号与表观修饰都会改变哪些基因被读、读多少——基因给的是剧本，不是定稿。</text>
+<rect x="20" y="550" width="720" height="44" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="578" font-size="10.6" fill="#475569" text-anchor="start">层级不是一条单行道：往上追功能，往下追机制，再往回看 DNA 与蛋白质的互相成就。</text>
+</svg>
