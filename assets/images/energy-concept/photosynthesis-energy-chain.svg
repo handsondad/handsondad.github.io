@@ -39,45 +39,45 @@
 <text x="56" y="92" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">从光子到糖：五站接力</text>
 <rect x="40" y="128" width="120" height="82" rx="8" fill="#f8fafc" stroke="#18794e" stroke-width="1.4"/>
 <text x="100" y="154" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="700">① 捕光</text>
-<text x="100" y="180" font-size="9.6" fill="#1e293b" text-anchor="middle">叶绿素吸光子</text>
-<text x="100" y="198" font-size="9.2" fill="#64748b" text-anchor="middle">能量 ↓</text>
+<text x="100" y="180" font-size="10.5" fill="#1e293b" text-anchor="middle">叶绿素吸光子</text>
+<text x="100" y="198" font-size="10.5" fill="#64748b" text-anchor="middle">能量 ↓</text>
 <line x1="162.0" y1="168.0" x2="212.0" y2="168.0" stroke="#18794e" stroke-width="2" stroke-linecap="round" marker-end="url(#arr-orange)"/>
 <rect x="176" y="128" width="120" height="82" rx="8" fill="#f8fafc" stroke="#c25014" stroke-width="1.4"/>
 <text x="236" y="154" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="700">② PSII</text>
-<text x="236" y="180" font-size="9.6" fill="#1e293b" text-anchor="middle">水裂解放 O₂</text>
-<text x="236" y="198" font-size="9.2" fill="#64748b" text-anchor="middle">能量 ↓</text>
+<text x="236" y="180" font-size="10.5" fill="#1e293b" text-anchor="middle">水裂解放 O₂</text>
+<text x="236" y="198" font-size="10.5" fill="#64748b" text-anchor="middle">能量 ↓</text>
 <line x1="298.0" y1="168.0" x2="348.0" y2="168.0" stroke="#c25014" stroke-width="2" stroke-linecap="round" marker-end="url(#arr-orange)"/>
 <rect x="312" y="128" width="120" height="82" rx="8" fill="#f8fafc" stroke="#1d6fa5" stroke-width="1.4"/>
 <text x="372" y="154" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">③ 电子链</text>
-<text x="372" y="180" font-size="9.6" fill="#1e293b" text-anchor="middle">泵 H⁺ 建梯度</text>
-<text x="372" y="198" font-size="9.2" fill="#64748b" text-anchor="middle">能量 ↓</text>
+<text x="372" y="180" font-size="10.5" fill="#1e293b" text-anchor="middle">泵 H⁺ 建梯度</text>
+<text x="372" y="198" font-size="10.5" fill="#64748b" text-anchor="middle">能量 ↓</text>
 <line x1="434.0" y1="168.0" x2="484.0" y2="168.0" stroke="#1d6fa5" stroke-width="2" stroke-linecap="round" marker-end="url(#arr-orange)"/>
 <rect x="448" y="128" width="120" height="82" rx="8" fill="#f8fafc" stroke="#6d28d9" stroke-width="1.4"/>
 <text x="508" y="154" font-size="10.8" fill="#6d28d9" text-anchor="middle" font-weight="700">④ ATP/NADPH</text>
-<text x="508" y="180" font-size="9.6" fill="#1e293b" text-anchor="middle">能量货币与还原力</text>
-<text x="508" y="198" font-size="9.2" fill="#64748b" text-anchor="middle">能量 ↓</text>
+<text x="508" y="180" font-size="10.5" fill="#1e293b" text-anchor="middle">能量货币与还原力</text>
+<text x="508" y="198" font-size="10.5" fill="#64748b" text-anchor="middle">能量 ↓</text>
 <line x1="570.0" y1="168.0" x2="620.0" y2="168.0" stroke="#6d28d9" stroke-width="2" stroke-linecap="round" marker-end="url(#arr-orange)"/>
 <rect x="584" y="128" width="120" height="82" rx="8" fill="#f8fafc" stroke="#18794e" stroke-width="1.4"/>
 <text x="644" y="154" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="700">⑤ Calvin 循环</text>
-<text x="644" y="180" font-size="9.6" fill="#1e293b" text-anchor="middle">CO₂ 固定成糖</text>
-<text x="644" y="198" font-size="9.2" fill="#64748b" text-anchor="middle">能量 ↓</text>
+<text x="644" y="180" font-size="10.5" fill="#1e293b" text-anchor="middle">CO₂ 固定成糖</text>
+<text x="644" y="198" font-size="10.5" fill="#64748b" text-anchor="middle">能量 ↓</text>
 <text x="40" y="250" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="600">每放出 1 个 O₂ 至少需 8 个红光光子；合成 1 个葡萄糖约需 48 个。</text>
-<text x="40" y="276" font-size="10.2" fill="#475569" text-anchor="start">短波光子多出的能量先在内转换中变成热，真正用于水裂解与固碳的只有“红光那份”。</text>
+<text x="40" y="276" font-size="10.5" fill="#475569" text-anchor="start">短波光子多出的能量先在内转换中变成热，真正用于水裂解与固碳的只有“红光那份”。</text>
 <rect x="20" y="306" width="352" height="182" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
 <circle cx="38" cy="328" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
 <text x="38" y="332" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
 <text x="56" y="332" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700">一个红光光子有多少钱？</text>
 <text x="38" y="366" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">E = hc / λ，λ = 680 nm</text>
-<text x="38" y="394" font-size="11.0" fill="#c25014" text-anchor="start" font-weight="700">≈ 1.82 eV ≈ 2.92e-19 J</text>
-<text x="38" y="428" font-size="10.4" fill="#1e293b" text-anchor="start">不是“热”，而是精确的能量包：</text>
-<text x="38" y="456" font-size="10.4" fill="#1e293b" text-anchor="start">被色素吸收后把电子抬升到激发态。</text>
+<text x="38" y="394" font-size="11" fill="#c25014" text-anchor="start" font-weight="700">≈ 1.82 eV ≈ 2.92e-19 J</text>
+<text x="38" y="428" font-size="10.5" fill="#1e293b" text-anchor="start">不是“热”，而是精确的能量包：</text>
+<text x="38" y="456" font-size="10.5" fill="#1e293b" text-anchor="start">被色素吸收后把电子抬升到激发态。</text>
 <rect x="388" y="306" width="352" height="182" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
 <circle cx="406" cy="328" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
 <text x="406" y="332" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">3</text>
 <text x="424" y="332" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700">效率为什么不高？</text>
-<text x="404" y="366" font-size="10.4" fill="#1e293b" text-anchor="start">理论上限约 30%（按 48 个红光光子算）</text>
-<text x="404" y="394" font-size="10.4" fill="#1e293b" text-anchor="start">全光谱与实际生理成本折算后约 4.5%</text>
-<text x="404" y="422" font-size="10.4" fill="#1e293b" text-anchor="start">全球尺度常年低于 1%（常见估计 0.2% 左右）</text>
+<text x="404" y="366" font-size="10.5" fill="#1e293b" text-anchor="start">理论上限约 30%（按 48 个红光光子算）</text>
+<text x="404" y="394" font-size="10.5" fill="#1e293b" text-anchor="start">全光谱与实际生理成本折算后约 4.5%</text>
+<text x="404" y="422" font-size="10.5" fill="#1e293b" text-anchor="start">全球尺度常年低于 1%（常见估计 0.2% 左右）</text>
 <text x="404" y="456" font-size="10.6" fill="#1d6fa5" text-anchor="start" font-weight="700">能量没丢：大多变成热散回环境。</text>
 <rect x="20" y="504" width="720" height="44" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
 <text x="36" y="532" font-size="10.8" fill="#475569" text-anchor="start">光合作用不是把光“加热”成化学能，而是用光子的能量重排电子，最终存进糖的化学键。</text>

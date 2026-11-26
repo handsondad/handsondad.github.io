@@ -87,9 +87,9 @@
 <circle cx="605" cy="178" r="8.5" fill="#ffffff" stroke="#b91c1c" stroke-width="1.6"/>
 <circle cx="685" cy="178" r="8.5" fill="#ffffff" stroke="#b91c1c" stroke-width="1.6"/>
 <circle cx="645" cy="178" r="9.5" fill="#475569"/>
-<text x="645" y="182" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="700">C</text>
-<text x="605" y="181.5" font-size="9.5" fill="#b91c1c" text-anchor="middle" font-weight="700">O</text>
-<text x="685" y="181.5" font-size="9.5" fill="#b91c1c" text-anchor="middle" font-weight="700">O</text>
+<text x="645" y="182" font-size="10.5" fill="#ffffff" text-anchor="middle" font-weight="700">C</text>
+<text x="605" y="181.5" font-size="10.5" fill="#b91c1c" text-anchor="middle" font-weight="700">O</text>
+<text x="685" y="181.5" font-size="10.5" fill="#b91c1c" text-anchor="middle" font-weight="700">O</text>
 <text x="645" y="221" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700">键角 180.0°（sp 杂化双键直线）</text>
 <text x="645" y="241" font-size="10.5" fill="#1e293b" text-anchor="middle">偶极对消｜非极性</text>
 <rect x="20" y="284" width="348" height="202" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
@@ -100,17 +100,17 @@
 <text x="46" y="344" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">C–C 单键 (1σ)</text>
 <text x="46" y="360" font-size="10.5" fill="#1e293b" text-anchor="start">键长 154 pm ｜ 键能 345 kJ/mol</text>
 <rect x="224" y="335" width="48" height="10" rx="4" fill="#1d6fa5"/>
-<text x="224" y="360" font-size="10" fill="#475569" text-anchor="start" font-weight="600">头碰头自由旋转</text>
+<text x="224" y="360" font-size="10.5" fill="#475569" text-anchor="start" font-weight="600">头碰头自由旋转</text>
 <rect x="36" y="376" width="316" height="42" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
 <text x="46" y="394" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">C=C 双键 (1σ + 1π)</text>
 <text x="46" y="410" font-size="10.5" fill="#1e293b" text-anchor="start">键长 134 pm ｜ 键能 611 kJ/mol</text>
 <rect x="224" y="385" width="85" height="10" rx="4" fill="#6d28d9"/>
-<text x="224" y="410" font-size="10" fill="#475569" text-anchor="start" font-weight="600">肩并肩锁死平面</text>
+<text x="224" y="410" font-size="10.5" fill="#475569" text-anchor="start" font-weight="600">肩并肩锁死平面</text>
 <rect x="36" y="426" width="316" height="42" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
 <text x="46" y="444" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">C≡C 三键 (1σ + 2π)</text>
 <text x="46" y="460" font-size="10.5" fill="#1e293b" text-anchor="start">键长 120 pm ｜ 键能 837 kJ/mol</text>
 <rect x="224" y="435" width="116" height="10" rx="4" fill="#c25014"/>
-<text x="224" y="460" font-size="10" fill="#475569" text-anchor="start" font-weight="600">短而刚硬高键能</text>
+<text x="224" y="460" font-size="10.5" fill="#475569" text-anchor="start" font-weight="600">短而刚硬高键能</text>
 <rect x="384" y="284" width="356" height="202" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
 <circle cx="404" cy="306" r="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
 <text x="404" y="310" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">3</text>
@@ -127,17 +127,17 @@
 <circle cx="504" cy="400" r="5.5" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.8"/>
 <circle cx="470" cy="412" r="5.5" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.8"/>
 <text x="478" y="434" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600">全为 154 pm 强 σ 键</text>
-<text x="478" y="451" font-size="10" fill="#1e293b" text-anchor="middle">无自由电子 → 绝缘</text>
-<text x="478" y="465" font-size="10" fill="#1d6fa5" text-anchor="middle" font-weight="700">天然界硬度之王</text>
+<text x="478" y="451" font-size="10.5" fill="#1e293b" text-anchor="middle">无自由电子 → 绝缘</text>
+<text x="478" y="465" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">天然界硬度之王</text>
 <rect x="568" y="326" width="156" height="144" rx="10" fill="#f3e8ff" stroke="#6d28d9"/>
 <text x="646" y="345" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">石墨（sp² 层状蜂窝）</text>
 <polyline points="606.0,374.0 626.0,368.0 654.0,368.0 674.0,374.0 654.0,380.0 626.0,380.0 606.0,374.0" fill="none" stroke="#6d28d9" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
 <polyline points="606.0,408.0 626.0,402.0 654.0,402.0 674.0,408.0 654.0,414.0 626.0,414.0 606.0,408.0" fill="none" stroke="#6d28d9" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
 <line x1="626.0" y1="380.0" x2="626.0" y2="402.0" stroke="#64748b" stroke-width="1.3" stroke-dasharray="3 3"/>
 <line x1="654.0" y1="380.0" x2="654.0" y2="402.0" stroke="#64748b" stroke-width="1.3" stroke-dasharray="3 3"/>
-<text x="695" y="395" font-size="9.5" fill="#64748b" text-anchor="middle">335pm</text>
+<text x="695" y="395" font-size="10.5" fill="#64748b" text-anchor="middle">335pm</text>
 <text x="646" y="434" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600">层内 142 pm + 大 π 电子海</text>
-<text x="646" y="451" font-size="10" fill="#1e293b" text-anchor="middle">层间仅范德华力 → 一划就掉</text>
-<text x="646" y="465" font-size="10" fill="#6d28d9" text-anchor="middle" font-weight="700">既软滑又能良导电！</text>
+<text x="646" y="451" font-size="10.5" fill="#1e293b" text-anchor="middle">层间仅范德华力 → 一划就掉</text>
+<text x="646" y="465" font-size="10.5" fill="#6d28d9" text-anchor="middle" font-weight="700">既软滑又能良导电！</text>
 <text x="380" y="505" font-size="11" fill="#64748b" text-anchor="middle">数据来源：OpenStax Chemistry 2e 7.5、7.6、8.2、8.3 与 10.5 节</text>
 </svg>

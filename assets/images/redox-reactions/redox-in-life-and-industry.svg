@@ -38,37 +38,37 @@
 <text x="38" y="92" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">1</text>
 <text x="56" y="92" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">① 燃烧</text>
 <rect x="40" y="114" width="312" height="38" rx="6" fill="#fef1e8" stroke="#c25014"/>
-<text x="196" y="139" font-size="11.0" fill="#0f172a" text-anchor="middle" font-weight="700">CH₄ + 2O₂ → CO₂ + 2H₂O</text>
-<text x="40" y="178" font-size="10.4" fill="#1e293b" text-anchor="start">C：−4 → +4，被氧化；</text>
-<text x="40" y="206" font-size="10.4" fill="#1e293b" text-anchor="start">O：0 → −2，被还原。</text>
-<text x="40" y="236" font-size="10.2" fill="#c25014" text-anchor="start" font-weight="600">燃料是还原剂，氧气是氧化剂。</text>
+<text x="196" y="139" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="700">CH₄ + 2O₂ → CO₂ + 2H₂O</text>
+<text x="40" y="178" font-size="10.5" fill="#1e293b" text-anchor="start">C：−4 → +4，被氧化；</text>
+<text x="40" y="206" font-size="10.5" fill="#1e293b" text-anchor="start">O：0 → −2，被还原。</text>
+<text x="40" y="236" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="600">燃料是还原剂，氧气是氧化剂。</text>
 <rect x="388" y="66" width="352" height="196" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
 <circle cx="406" cy="88" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
 <text x="406" y="92" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
 <text x="424" y="92" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">② 腐蚀</text>
 <rect x="408" y="114" width="312" height="38" rx="6" fill="#eaf4fb" stroke="#1d6fa5"/>
-<text x="564" y="139" font-size="11.0" fill="#0f172a" text-anchor="middle" font-weight="700">Fe → Fe²⁺ + 2e⁻</text>
-<text x="408" y="178" font-size="10.4" fill="#1e293b" text-anchor="start">O₂ + 2H₂O + 4e⁻ → 4OH⁻</text>
-<text x="408" y="206" font-size="10.4" fill="#1e293b" text-anchor="start">铁被氧化，氧气被还原；</text>
-<text x="408" y="236" font-size="10.2" fill="#1d6fa5" text-anchor="start" font-weight="600">铁锈疏松，腐蚀会继续向内吃。</text>
+<text x="564" y="139" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="700">Fe → Fe²⁺ + 2e⁻</text>
+<text x="408" y="178" font-size="10.5" fill="#1e293b" text-anchor="start">O₂ + 2H₂O + 4e⁻ → 4OH⁻</text>
+<text x="408" y="206" font-size="10.5" fill="#1e293b" text-anchor="start">铁被氧化，氧气被还原；</text>
+<text x="408" y="236" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="600">铁锈疏松，腐蚀会继续向内吃。</text>
 <rect x="20" y="286" width="352" height="196" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
 <circle cx="38" cy="308" r="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
 <text x="38" y="312" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">2</text>
 <text x="56" y="312" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">③ 电池</text>
 <rect x="40" y="334" width="312" height="38" rx="6" fill="#f3e8ff" stroke="#6d28d9"/>
-<text x="196" y="359" font-size="11.0" fill="#0f172a" text-anchor="middle" font-weight="700">Zn → Zn²⁺ + 2e⁻</text>
-<text x="40" y="398" font-size="10.4" fill="#1e293b" text-anchor="start">Cu²⁺ + 2e⁻ → Cu</text>
-<text x="40" y="426" font-size="10.4" fill="#1e293b" text-anchor="start">把两半反应分开，</text>
-<text x="40" y="456" font-size="10.2" fill="#6d28d9" text-anchor="start" font-weight="600">逼电子经过外电路做功。</text>
+<text x="196" y="359" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="700">Zn → Zn²⁺ + 2e⁻</text>
+<text x="40" y="398" font-size="10.5" fill="#1e293b" text-anchor="start">Cu²⁺ + 2e⁻ → Cu</text>
+<text x="40" y="426" font-size="10.5" fill="#1e293b" text-anchor="start">把两半反应分开，</text>
+<text x="40" y="456" font-size="10.5" fill="#6d28d9" text-anchor="start" font-weight="600">逼电子经过外电路做功。</text>
 <rect x="388" y="286" width="352" height="196" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
 <circle cx="406" cy="308" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
 <text x="406" y="312" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">2</text>
 <text x="424" y="312" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">④ 代谢</text>
 <rect x="408" y="334" width="312" height="38" rx="6" fill="#e7f6ee" stroke="#18794e"/>
-<text x="564" y="359" font-size="11.0" fill="#0f172a" text-anchor="middle" font-weight="700">NAD⁺ + 2e⁻ + H⁺ ⇌ NADH</text>
-<text x="408" y="398" font-size="10.4" fill="#1e293b" text-anchor="start">NAD⁺ 接电子变 NADH；</text>
-<text x="408" y="426" font-size="10.4" fill="#1e293b" text-anchor="start">NADH 再把电子交给电子传递链，</text>
-<text x="408" y="456" font-size="10.2" fill="#18794e" text-anchor="start" font-weight="600">释放的能量用于合成 ATP。</text>
+<text x="564" y="359" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="700">NAD⁺ + 2e⁻ + H⁺ ⇌ NADH</text>
+<text x="408" y="398" font-size="10.5" fill="#1e293b" text-anchor="start">NAD⁺ 接电子变 NADH；</text>
+<text x="408" y="426" font-size="10.5" fill="#1e293b" text-anchor="start">NADH 再把电子交给电子传递链，</text>
+<text x="408" y="456" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="600">释放的能量用于合成 ATP。</text>
 <rect x="20" y="498" width="720" height="42" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
 <text x="36" y="526" font-size="10.8" fill="#475569" text-anchor="start">共同规律：还原剂失去的电子数 = 氧化剂得到的电子数；配平方程式就是在守这条账。</text>
 </svg>

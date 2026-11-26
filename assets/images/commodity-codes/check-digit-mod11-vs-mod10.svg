@@ -37,53 +37,53 @@
 <circle cx="38" cy="88" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
 <text x="38" y="92" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">1</text>
 <text x="56" y="92" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">集装箱：BICU 123456 → 5</text>
-<text x="80" y="124" font-size="10.0" fill="#0f172a" text-anchor="middle" font-weight="700">B</text>
-<text x="108" y="124" font-size="10.0" fill="#0f172a" text-anchor="middle" font-weight="700">I</text>
-<text x="136" y="124" font-size="10.0" fill="#0f172a" text-anchor="middle" font-weight="700">C</text>
-<text x="164" y="124" font-size="10.0" fill="#0f172a" text-anchor="middle" font-weight="700">U</text>
-<text x="192" y="124" font-size="10.0" fill="#0f172a" text-anchor="middle" font-weight="700">1</text>
-<text x="220" y="124" font-size="10.0" fill="#0f172a" text-anchor="middle" font-weight="700">2</text>
-<text x="248" y="124" font-size="10.0" fill="#0f172a" text-anchor="middle" font-weight="700">3</text>
-<text x="276" y="124" font-size="10.0" fill="#0f172a" text-anchor="middle" font-weight="700">4</text>
-<text x="304" y="124" font-size="10.0" fill="#0f172a" text-anchor="middle" font-weight="700">5</text>
-<text x="332" y="124" font-size="10.0" fill="#0f172a" text-anchor="middle" font-weight="700">6</text>
-<text x="80" y="154" font-size="10.0" fill="#1d6fa5" text-anchor="middle">12</text>
-<text x="108" y="154" font-size="10.0" fill="#1d6fa5" text-anchor="middle">19</text>
-<text x="136" y="154" font-size="10.0" fill="#1d6fa5" text-anchor="middle">13</text>
-<text x="164" y="154" font-size="10.0" fill="#1d6fa5" text-anchor="middle">32</text>
-<text x="192" y="154" font-size="10.0" fill="#1d6fa5" text-anchor="middle">1</text>
-<text x="220" y="154" font-size="10.0" fill="#1d6fa5" text-anchor="middle">2</text>
-<text x="248" y="154" font-size="10.0" fill="#1d6fa5" text-anchor="middle">3</text>
-<text x="276" y="154" font-size="10.0" fill="#1d6fa5" text-anchor="middle">4</text>
-<text x="304" y="154" font-size="10.0" fill="#1d6fa5" text-anchor="middle">5</text>
-<text x="332" y="154" font-size="10.0" fill="#1d6fa5" text-anchor="middle">6</text>
-<text x="80" y="184" font-size="10.0" fill="#475569" text-anchor="middle">1</text>
-<text x="108" y="184" font-size="10.0" fill="#475569" text-anchor="middle">2</text>
-<text x="136" y="184" font-size="10.0" fill="#475569" text-anchor="middle">4</text>
-<text x="164" y="184" font-size="10.0" fill="#475569" text-anchor="middle">8</text>
-<text x="192" y="184" font-size="10.0" fill="#475569" text-anchor="middle">16</text>
-<text x="220" y="184" font-size="10.0" fill="#475569" text-anchor="middle">32</text>
-<text x="248" y="184" font-size="10.0" fill="#475569" text-anchor="middle">64</text>
-<text x="276" y="184" font-size="10.0" fill="#475569" text-anchor="middle">128</text>
-<text x="304" y="184" font-size="10.0" fill="#475569" text-anchor="middle">256</text>
-<text x="332" y="184" font-size="10.0" fill="#475569" text-anchor="middle">512</text>
-<text x="80" y="214" font-size="9.0" fill="#c25014" text-anchor="middle" font-weight="700">12</text>
-<text x="108" y="214" font-size="9.0" fill="#c25014" text-anchor="middle" font-weight="700">38</text>
-<text x="136" y="214" font-size="9.0" fill="#c25014" text-anchor="middle" font-weight="700">52</text>
-<text x="164" y="214" font-size="9.0" fill="#c25014" text-anchor="middle" font-weight="700">256</text>
-<text x="192" y="214" font-size="9.0" fill="#c25014" text-anchor="middle" font-weight="700">16</text>
-<text x="220" y="214" font-size="9.0" fill="#c25014" text-anchor="middle" font-weight="700">64</text>
-<text x="248" y="214" font-size="9.0" fill="#c25014" text-anchor="middle" font-weight="700">192</text>
-<text x="276" y="214" font-size="9.0" fill="#c25014" text-anchor="middle" font-weight="700">512</text>
-<text x="304" y="214" font-size="9.0" fill="#c25014" text-anchor="middle" font-weight="700">1280</text>
-<text x="332" y="214" font-size="9.0" fill="#c25014" text-anchor="middle" font-weight="700">3072</text>
-<text x="40" y="124" font-size="9.8" fill="#64748b" text-anchor="start">字符</text>
-<text x="40" y="154" font-size="9.8" fill="#64748b" text-anchor="start">数值</text>
-<text x="40" y="184" font-size="9.8" fill="#64748b" text-anchor="start">权重</text>
-<text x="40" y="214" font-size="9.8" fill="#64748b" text-anchor="start">乘积</text>
+<text x="80" y="124" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700">B</text>
+<text x="108" y="124" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700">I</text>
+<text x="136" y="124" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700">C</text>
+<text x="164" y="124" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700">U</text>
+<text x="192" y="124" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700">1</text>
+<text x="220" y="124" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700">2</text>
+<text x="248" y="124" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700">3</text>
+<text x="276" y="124" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700">4</text>
+<text x="304" y="124" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700">5</text>
+<text x="332" y="124" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700">6</text>
+<text x="80" y="154" font-size="10.5" fill="#1d6fa5" text-anchor="middle">12</text>
+<text x="108" y="154" font-size="10.5" fill="#1d6fa5" text-anchor="middle">19</text>
+<text x="136" y="154" font-size="10.5" fill="#1d6fa5" text-anchor="middle">13</text>
+<text x="164" y="154" font-size="10.5" fill="#1d6fa5" text-anchor="middle">32</text>
+<text x="192" y="154" font-size="10.5" fill="#1d6fa5" text-anchor="middle">1</text>
+<text x="220" y="154" font-size="10.5" fill="#1d6fa5" text-anchor="middle">2</text>
+<text x="248" y="154" font-size="10.5" fill="#1d6fa5" text-anchor="middle">3</text>
+<text x="276" y="154" font-size="10.5" fill="#1d6fa5" text-anchor="middle">4</text>
+<text x="304" y="154" font-size="10.5" fill="#1d6fa5" text-anchor="middle">5</text>
+<text x="332" y="154" font-size="10.5" fill="#1d6fa5" text-anchor="middle">6</text>
+<text x="80" y="184" font-size="10.5" fill="#475569" text-anchor="middle">1</text>
+<text x="108" y="184" font-size="10.5" fill="#475569" text-anchor="middle">2</text>
+<text x="136" y="184" font-size="10.5" fill="#475569" text-anchor="middle">4</text>
+<text x="164" y="184" font-size="10.5" fill="#475569" text-anchor="middle">8</text>
+<text x="192" y="184" font-size="10.5" fill="#475569" text-anchor="middle">16</text>
+<text x="220" y="184" font-size="10.5" fill="#475569" text-anchor="middle">32</text>
+<text x="248" y="184" font-size="10.5" fill="#475569" text-anchor="middle">64</text>
+<text x="276" y="184" font-size="10.5" fill="#475569" text-anchor="middle">128</text>
+<text x="304" y="184" font-size="10.5" fill="#475569" text-anchor="middle">256</text>
+<text x="332" y="184" font-size="10.5" fill="#475569" text-anchor="middle">512</text>
+<text x="80" y="214" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700">12</text>
+<text x="108" y="214" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700">38</text>
+<text x="136" y="214" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700">52</text>
+<text x="164" y="214" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700">256</text>
+<text x="192" y="214" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700">16</text>
+<text x="220" y="214" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700">64</text>
+<text x="248" y="214" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700">192</text>
+<text x="276" y="214" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700">512</text>
+<text x="304" y="214" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700">1280</text>
+<text x="332" y="214" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700">3072</text>
+<text x="40" y="124" font-size="10.5" fill="#64748b" text-anchor="start">字符</text>
+<text x="40" y="154" font-size="10.5" fill="#64748b" text-anchor="start">数值</text>
+<text x="40" y="184" font-size="10.5" fill="#64748b" text-anchor="start">权重</text>
+<text x="40" y="214" font-size="10.5" fill="#64748b" text-anchor="start">乘积</text>
 <line x1="36.0" y1="260.0" x2="356.0" y2="260.0" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
-<text x="40" y="300" font-size="10.0" fill="#475569" text-anchor="start">字母值从 A=10 起算，跳过 11 的倍数</text>
-<text x="40" y="330" font-size="10.0" fill="#475569" text-anchor="start">权重依次是 1、2、4、…、512（2 的幂）</text>
+<text x="40" y="300" font-size="10.5" fill="#475569" text-anchor="start">字母值从 A=10 起算，跳过 11 的倍数</text>
+<text x="40" y="330" font-size="10.5" fill="#475569" text-anchor="start">权重依次是 1、2、4、…、512（2 的幂）</text>
 <text x="40" y="374" font-size="11.6" fill="#c25014" text-anchor="start" font-weight="700">Σ = 5494；5494 mod 11 = 5</text>
 <rect x="388" y="66" width="352" height="326" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
 <circle cx="406" cy="88" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
@@ -113,30 +113,30 @@
 <text x="661" y="164" font-size="10.6" fill="#1d6fa5" text-anchor="middle">3</text>
 <text x="686" y="164" font-size="10.6" fill="#1d6fa5" text-anchor="middle">1</text>
 <text x="711" y="164" font-size="10.6" fill="#1d6fa5" text-anchor="middle">3</text>
-<text x="436" y="196" font-size="9.8" fill="#18794e" text-anchor="middle">9</text>
-<text x="461" y="196" font-size="9.8" fill="#18794e" text-anchor="middle">9</text>
-<text x="486" y="196" font-size="9.8" fill="#18794e" text-anchor="middle">0</text>
-<text x="511" y="196" font-size="9.8" fill="#18794e" text-anchor="middle">3</text>
-<text x="536" y="196" font-size="9.8" fill="#18794e" text-anchor="middle">2</text>
-<text x="561" y="196" font-size="9.8" fill="#18794e" text-anchor="middle">9</text>
-<text x="586" y="196" font-size="9.8" fill="#18794e" text-anchor="middle">4</text>
-<text x="611" y="196" font-size="9.8" fill="#18794e" text-anchor="middle">15</text>
-<text x="636" y="196" font-size="9.8" fill="#18794e" text-anchor="middle">6</text>
-<text x="661" y="196" font-size="9.8" fill="#18794e" text-anchor="middle">21</text>
-<text x="686" y="196" font-size="9.8" fill="#18794e" text-anchor="middle">8</text>
-<text x="711" y="196" font-size="9.8" fill="#18794e" text-anchor="middle">27</text>
-<text x="400" y="132" font-size="9.8" fill="#64748b" text-anchor="start">数字</text>
-<text x="400" y="164" font-size="9.8" fill="#64748b" text-anchor="start">权重</text>
-<text x="400" y="196" font-size="9.8" fill="#64748b" text-anchor="start">乘积</text>
+<text x="436" y="196" font-size="10.5" fill="#18794e" text-anchor="middle">9</text>
+<text x="461" y="196" font-size="10.5" fill="#18794e" text-anchor="middle">9</text>
+<text x="486" y="196" font-size="10.5" fill="#18794e" text-anchor="middle">0</text>
+<text x="511" y="196" font-size="10.5" fill="#18794e" text-anchor="middle">3</text>
+<text x="536" y="196" font-size="10.5" fill="#18794e" text-anchor="middle">2</text>
+<text x="561" y="196" font-size="10.5" fill="#18794e" text-anchor="middle">9</text>
+<text x="586" y="196" font-size="10.5" fill="#18794e" text-anchor="middle">4</text>
+<text x="611" y="196" font-size="10.5" fill="#18794e" text-anchor="middle">15</text>
+<text x="636" y="196" font-size="10.5" fill="#18794e" text-anchor="middle">6</text>
+<text x="661" y="196" font-size="10.5" fill="#18794e" text-anchor="middle">21</text>
+<text x="686" y="196" font-size="10.5" fill="#18794e" text-anchor="middle">8</text>
+<text x="711" y="196" font-size="10.5" fill="#18794e" text-anchor="middle">27</text>
+<text x="400" y="132" font-size="10.5" fill="#64748b" text-anchor="start">数字</text>
+<text x="400" y="164" font-size="10.5" fill="#64748b" text-anchor="start">权重</text>
+<text x="400" y="196" font-size="10.5" fill="#64748b" text-anchor="start">乘积</text>
 <line x1="400.0" y1="262.0" x2="724.0" y2="262.0" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
-<text x="404" y="300" font-size="10.0" fill="#475569" text-anchor="start">从左往右权重 1、3 交替，正好是模 10 的简便写法</text>
-<text x="404" y="330" font-size="10.0" fill="#475569" text-anchor="start">校验位把加权和补到下一个整十</text>
+<text x="404" y="300" font-size="10.5" fill="#475569" text-anchor="start">从左往右权重 1、3 交替，正好是模 10 的简便写法</text>
+<text x="404" y="330" font-size="10.5" fill="#475569" text-anchor="start">校验位把加权和补到下一个整十</text>
 <text x="404" y="374" font-size="11.2" fill="#1d6fa5" text-anchor="start" font-weight="700">Σ = 113；下个整十是 120 ⇒ 校验位 7</text>
 <rect x="20" y="408" width="720" height="118" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
-<text x="40" y="434" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">防错能力：为什么一个用素数 11，一个用十进制？</text>
+<text x="40" y="434" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700">防错能力：为什么一个用素数 11，一个用十进制？</text>
 <text x="40" y="462" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="600">ISO 6346：2 的幂与 11 互素，单位错与相邻换位必被抓住；</text>
-<text x="40" y="484" font-size="10.4" fill="#475569" text-anchor="start">但字母值 A=10 与 K=21 相差 11，单字母替换可能漏网；余数 10 又被写成 0。</text>
+<text x="40" y="484" font-size="10.5" fill="#475569" text-anchor="start">但字母值 A=10 与 K=21 相差 11，单字母替换可能漏网；余数 10 又被写成 0。</text>
 <text x="400" y="462" font-size="10.6" fill="#1d6fa5" text-anchor="start" font-weight="600">GTIN：1/3 权重抓所有单位错，但漏掉约 11% 的相邻换位</text>
-<text x="400" y="484" font-size="10.4" fill="#475569" text-anchor="start">（两数相差 5 时 2×5≡0 mod 10），性价比高、适合人工抄写。</text>
-<text x="40" y="510" font-size="10.4" fill="#6d28d9" text-anchor="start" font-weight="700">校验位只能发现“号码内部不一致”，不能证明货物、车辆或箱子真实存在。</text>
+<text x="400" y="484" font-size="10.5" fill="#475569" text-anchor="start">（两数相差 5 时 2×5≡0 mod 10），性价比高、适合人工抄写。</text>
+<text x="40" y="510" font-size="10.5" fill="#6d28d9" text-anchor="start" font-weight="700">校验位只能发现“号码内部不一致”，不能证明货物、车辆或箱子真实存在。</text>
 </svg>

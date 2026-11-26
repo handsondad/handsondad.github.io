@@ -79,6 +79,9 @@ def txt(
     halo=False,
     cls=None,
 ):
+    # 正文栏约 760px；低于 10.5px 的标注缩放后难以辨认，统一抬到可读下限。
+    size = max(float(size), 10.5)
+    size = int(size) if size == int(size) else round(size, 1)
     attrs = [
         f'x="{x:.1f}"' if isinstance(x, float) else f'x="{x}"',
         f'y="{y:.1f}"' if isinstance(y, float) else f'y="{y}"',

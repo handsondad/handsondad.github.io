@@ -37,43 +37,43 @@
 <circle cx="38" cy="88" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
 <text x="38" y="92" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
 <text x="56" y="92" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">标准还原电势阶梯（25 °C）</text>
-<text x="40" y="126" font-size="10.0" fill="#0f172a" text-anchor="start">F₂ + 2e⁻ → 2F⁻</text>
+<text x="40" y="126" font-size="10.5" fill="#0f172a" text-anchor="start">F₂ + 2e⁻ → 2F⁻</text>
 <rect x="236" y="114" width="76" height="17" rx="4" fill="#fef1e8"/>
-<text x="274" y="127" font-size="10.0" fill="#c25014" text-anchor="middle" font-weight="700">+2.87 V</text>
-<text x="40" y="169" font-size="10.0" fill="#0f172a" text-anchor="start">O₂ + 4H⁺ + 4e⁻ → 2H₂O</text>
+<text x="274" y="127" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700">+2.87 V</text>
+<text x="40" y="169" font-size="10.5" fill="#0f172a" text-anchor="start">O₂ + 4H⁺ + 4e⁻ → 2H₂O</text>
 <rect x="236" y="157" width="76" height="17" rx="4" fill="#fef1e8"/>
-<text x="274" y="170" font-size="10.0" fill="#c25014" text-anchor="middle" font-weight="700">+1.23 V</text>
-<text x="40" y="212" font-size="10.0" fill="#0f172a" text-anchor="start">Ag⁺ + e⁻ → Ag</text>
+<text x="274" y="170" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700">+1.23 V</text>
+<text x="40" y="212" font-size="10.5" fill="#0f172a" text-anchor="start">Ag⁺ + e⁻ → Ag</text>
 <rect x="236" y="200" width="76" height="17" rx="4" fill="#fef1e8"/>
-<text x="274" y="213" font-size="10.0" fill="#c25014" text-anchor="middle" font-weight="700">+0.80 V</text>
-<text x="40" y="255" font-size="10.0" fill="#0f172a" text-anchor="start">Cu²⁺ + 2e⁻ → Cu</text>
+<text x="274" y="213" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700">+0.80 V</text>
+<text x="40" y="255" font-size="10.5" fill="#0f172a" text-anchor="start">Cu²⁺ + 2e⁻ → Cu</text>
 <rect x="236" y="243" width="76" height="17" rx="4" fill="#fef1e8"/>
-<text x="274" y="256" font-size="10.0" fill="#c25014" text-anchor="middle" font-weight="700">+0.34 V</text>
-<text x="40" y="298" font-size="10.0" fill="#0f172a" text-anchor="start">Fe²⁺ + 2e⁻ → Fe</text>
+<text x="274" y="256" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700">+0.34 V</text>
+<text x="40" y="298" font-size="10.5" fill="#0f172a" text-anchor="start">Fe²⁺ + 2e⁻ → Fe</text>
 <rect x="236" y="286" width="76" height="17" rx="4" fill="#eaf4fb"/>
-<text x="274" y="299" font-size="10.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">-0.44 V</text>
-<text x="40" y="341" font-size="10.0" fill="#0f172a" text-anchor="start">Zn²⁺ + 2e⁻ → Zn</text>
+<text x="274" y="299" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">-0.44 V</text>
+<text x="40" y="341" font-size="10.5" fill="#0f172a" text-anchor="start">Zn²⁺ + 2e⁻ → Zn</text>
 <rect x="236" y="329" width="76" height="17" rx="4" fill="#eaf4fb"/>
-<text x="274" y="342" font-size="10.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">-0.76 V</text>
-<text x="40" y="384" font-size="10.0" fill="#0f172a" text-anchor="start">Li⁺ + e⁻ → Li</text>
+<text x="274" y="342" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">-0.76 V</text>
+<text x="40" y="384" font-size="10.5" fill="#0f172a" text-anchor="start">Li⁺ + e⁻ → Li</text>
 <rect x="236" y="372" width="76" height="17" rx="4" fill="#eaf4fb"/>
-<text x="274" y="385" font-size="10.0" fill="#1d6fa5" text-anchor="middle" font-weight="700">-3.04 V</text>
-<text x="40" y="444" font-size="10.2" fill="#475569" text-anchor="start">越靠上越容易得电子（强氧化剂）；越靠下越容易失电子（强还原剂）。</text>
+<text x="274" y="385" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">-3.04 V</text>
+<text x="40" y="444" font-size="10.5" fill="#475569" text-anchor="start">越靠上越容易得电子（强氧化剂）；越靠下越容易失电子（强还原剂）。</text>
 <rect x="388" y="66" width="352" height="400" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
 <circle cx="406" cy="88" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
 <text x="406" y="92" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
 <text x="424" y="92" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">能斯特方程：把浓度算进来</text>
-<text x="404" y="130" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">E = E° − (RT / nF)·ln Q</text>
+<text x="404" y="130" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700">E = E° − (RT / nF)·ln Q</text>
 <text x="404" y="158" font-size="11.4" fill="#1d6fa5" text-anchor="start" font-weight="700">25 °C：E = E° − (0.0592 / n)·log Q</text>
-<text x="404" y="186" font-size="10.0" fill="#475569" text-anchor="start">n = 转移电子数；Q = 反应商；F = 96 485 C/mol</text>
+<text x="404" y="186" font-size="10.5" fill="#475569" text-anchor="start">n = 转移电子数；Q = 反应商；F = 96 485 C/mol</text>
 <line x1="404.0" y1="204.0" x2="724.0" y2="204.0" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
-<text x="404" y="234" font-size="11.0" fill="#c25014" text-anchor="start" font-weight="700">算一算：锌铜电池，铜离子稀释 100 倍</text>
+<text x="404" y="234" font-size="11" fill="#c25014" text-anchor="start" font-weight="700">算一算：锌铜电池，铜离子稀释 100 倍</text>
 <text x="404" y="264" font-size="10.6" fill="#1e293b" text-anchor="start">[Zn²⁺] = 1 M，[Cu²⁺] = 0.01 M</text>
 <text x="404" y="292" font-size="10.6" fill="#1e293b" text-anchor="start">Q = [Zn²⁺] / [Cu²⁺] = 100</text>
 <text x="404" y="320" font-size="10.6" fill="#1e293b" text-anchor="start">log Q = 2，n = 2</text>
 <text x="404" y="356" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">E = 1.10 − (0.0592/2)×2</text>
-<text x="404" y="388" font-size="12.0" fill="#c25014" text-anchor="start" font-weight="700">≈ 1.04 V（比标准状态低）</text>
-<text x="404" y="430" font-size="10.4" fill="#475569" text-anchor="start">浓度改变 → Q 改变 → 电压改变。</text>
+<text x="404" y="388" font-size="12" fill="#c25014" text-anchor="start" font-weight="700">≈ 1.04 V（比标准状态低）</text>
+<text x="404" y="430" font-size="10.5" fill="#475569" text-anchor="start">浓度改变 → Q 改变 → 电压改变。</text>
 <rect x="20" y="482" width="720" height="42" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
 <text x="36" y="510" font-size="10.8" fill="#475569" text-anchor="start">E° &gt; 0 表示标准状态下自发；但“自发”说的是热力学，不代表反应一定快。</text>
 </svg>

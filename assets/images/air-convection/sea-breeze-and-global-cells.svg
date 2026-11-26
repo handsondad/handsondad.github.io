@@ -39,48 +39,48 @@
 <text x="56" y="92" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">白天：海风（海洋 → 陆地）</text>
 <rect x="60" y="124" width="110" height="26" rx="3" fill="#f3d5ae" stroke="#d3a267"/>
 <rect x="210" y="124" width="110" height="26" rx="3" fill="#cfe4f5" stroke="#78a9d2"/>
-<text x="115" y="142" font-size="10.2" fill="#c25014" text-anchor="middle" font-weight="700">陆地</text>
-<text x="265" y="142" font-size="10.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">海洋</text>
+<text x="115" y="142" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700">陆地</text>
+<text x="265" y="142" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">海洋</text>
 <line x1="115.0" y1="120.0" x2="115.0" y2="96.0" stroke="#c25014" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arr-orange)"/>
 <line x1="127.0" y1="98.0" x2="253.0" y2="98.0" stroke="#c25014" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arr-orange)"/>
 <line x1="265.0" y1="116.0" x2="265.0" y2="152.0" stroke="#1d6fa5" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arr-blue)"/>
 <line x1="283.0" y1="164.0" x2="97.0" y2="164.0" stroke="#1d6fa5" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arr-blue)"/>
-<text x="196" y="188" font-size="10.0" fill="#475569" text-anchor="middle">陆地升温快 → 空气上升 → 海面冷湿空气登陆</text>
-<text x="196" y="222" font-size="10.4" fill="#0f172a" text-anchor="middle" font-weight="700">近地面风来自：海洋（海风）</text>
+<text x="196" y="188" font-size="10.5" fill="#475569" text-anchor="middle">陆地升温快 → 空气上升 → 海面冷湿空气登陆</text>
+<text x="196" y="222" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700">近地面风来自：海洋（海风）</text>
 <rect x="388" y="66" width="352" height="190" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
 <circle cx="406" cy="88" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
 <text x="406" y="92" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">2</text>
 <text x="424" y="92" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">夜晚：陆风（陆地 → 海洋）</text>
 <rect x="428" y="124" width="110" height="26" rx="3" fill="#f3d5ae" stroke="#d3a267"/>
 <rect x="578" y="124" width="110" height="26" rx="3" fill="#cfe4f5" stroke="#78a9d2"/>
-<text x="483" y="142" font-size="10.2" fill="#c25014" text-anchor="middle" font-weight="700">陆地</text>
-<text x="633" y="142" font-size="10.2" fill="#1d6fa5" text-anchor="middle" font-weight="700">海洋</text>
+<text x="483" y="142" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700">陆地</text>
+<text x="633" y="142" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">海洋</text>
 <line x1="633.0" y1="120.0" x2="633.0" y2="96.0" stroke="#c25014" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arr-orange)"/>
 <line x1="621.0" y1="98.0" x2="495.0" y2="98.0" stroke="#c25014" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arr-orange)"/>
 <line x1="483.0" y1="116.0" x2="483.0" y2="152.0" stroke="#1d6fa5" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arr-blue)"/>
 <line x1="465.0" y1="164.0" x2="651.0" y2="164.0" stroke="#1d6fa5" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arr-blue)"/>
-<text x="564" y="188" font-size="10.0" fill="#475569" text-anchor="middle">陆地降温快 → 海洋相对暖 → 空气从陆地吹向海面</text>
-<text x="564" y="222" font-size="10.4" fill="#0f172a" text-anchor="middle" font-weight="700">近地面风来自：陆地（陆风）</text>
+<text x="564" y="188" font-size="10.5" fill="#475569" text-anchor="middle">陆地降温快 → 海洋相对暖 → 空气从陆地吹向海面</text>
+<text x="564" y="222" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="700">近地面风来自：陆地（陆风）</text>
 <rect x="20" y="272" width="720" height="216" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
 <circle cx="38" cy="294" r="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
 <text x="38" y="298" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">3</text>
 <text x="56" y="298" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">行星尺度：无自转时每半球一个环流圈；真实地球被科里奥利效应拆成三圈</text>
 <line x1="70.0" y1="346.0" x2="690.0" y2="346.0" stroke="#475569" stroke-width="1.6" stroke-linecap="round"/>
 <line x1="70.0" y1="342.0" x2="70.0" y2="352.0" stroke="#475569" stroke-width="1" stroke-linecap="round"/>
-<text x="70.0" y="366" font-size="9.8" fill="#64748b" text-anchor="middle">-90°</text>
+<text x="70.0" y="366" font-size="10.5" fill="#64748b" text-anchor="middle">-90°</text>
 <line x1="173.3" y1="342.0" x2="173.3" y2="352.0" stroke="#475569" stroke-width="1" stroke-linecap="round"/>
-<text x="173.3" y="366" font-size="9.8" fill="#64748b" text-anchor="middle">-60°</text>
+<text x="173.3" y="366" font-size="10.5" fill="#64748b" text-anchor="middle">-60°</text>
 <line x1="276.7" y1="342.0" x2="276.7" y2="352.0" stroke="#475569" stroke-width="1" stroke-linecap="round"/>
-<text x="276.7" y="366" font-size="9.8" fill="#64748b" text-anchor="middle">-30°</text>
+<text x="276.7" y="366" font-size="10.5" fill="#64748b" text-anchor="middle">-30°</text>
 <line x1="380.0" y1="342.0" x2="380.0" y2="352.0" stroke="#475569" stroke-width="1" stroke-linecap="round"/>
-<text x="380.0" y="366" font-size="9.8" fill="#64748b" text-anchor="middle">0°</text>
+<text x="380.0" y="366" font-size="10.5" fill="#64748b" text-anchor="middle">0°</text>
 <line x1="483.3" y1="342.0" x2="483.3" y2="352.0" stroke="#475569" stroke-width="1" stroke-linecap="round"/>
-<text x="483.3" y="366" font-size="9.8" fill="#64748b" text-anchor="middle">30°</text>
+<text x="483.3" y="366" font-size="10.5" fill="#64748b" text-anchor="middle">30°</text>
 <line x1="586.7" y1="342.0" x2="586.7" y2="352.0" stroke="#475569" stroke-width="1" stroke-linecap="round"/>
-<text x="586.7" y="366" font-size="9.8" fill="#64748b" text-anchor="middle">60°</text>
+<text x="586.7" y="366" font-size="10.5" fill="#64748b" text-anchor="middle">60°</text>
 <line x1="690.0" y1="342.0" x2="690.0" y2="352.0" stroke="#475569" stroke-width="1" stroke-linecap="round"/>
-<text x="690.0" y="366" font-size="9.8" fill="#64748b" text-anchor="middle">90°</text>
-<text x="380.0" y="386" font-size="10.4" fill="#c25014" text-anchor="middle" font-weight="600">赤道：受热最强，空气上升 → 低压多雨</text>
+<text x="690.0" y="366" font-size="10.5" fill="#64748b" text-anchor="middle">90°</text>
+<text x="380.0" y="386" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="600">赤道：受热最强，空气上升 → 低压多雨</text>
 <line x1="276.7" y1="334.0" x2="380.0" y2="334.0" stroke="#c25014" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arr-orange)"/>
 <line x1="380.0" y1="334.0" x2="483.3" y2="334.0" stroke="#c25014" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arr-orange)"/>
 <line x1="483.3" y1="334.0" x2="586.7" y2="334.0" stroke="#1d6fa5" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arr-blue)"/>
@@ -88,14 +88,14 @@
 <line x1="173.3" y1="334.0" x2="276.7" y2="334.0" stroke="#1d6fa5" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arr-blue)"/>
 <line x1="70.0" y1="334.0" x2="173.3" y2="334.0" stroke="#1d6fa5" stroke-width="2.0" stroke-linecap="round" marker-end="url(#arr-blue)"/>
 <line x1="380.0" y1="346.0" x2="380.0" y2="326.0" stroke="#c25014" stroke-width="2.4" stroke-linecap="round" marker-end="url(#arr-orange)"/>
-<text x="380.0" y="320" font-size="10.0" fill="#c25014" text-anchor="middle" font-weight="700">赤道上升</text>
+<text x="380.0" y="320" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700">赤道上升</text>
 <line x1="483.3" y1="324.0" x2="483.3" y2="346.0" stroke="#1d6fa5" stroke-width="2.4" stroke-linecap="round" marker-end="url(#arr-blue)"/>
-<text x="483.3" y="320" font-size="9.8" fill="#1d6fa5" text-anchor="middle" font-weight="600">30° 下沉 → 干燥带</text>
+<text x="483.3" y="320" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">30° 下沉 → 干燥带</text>
 <line x1="586.7" y1="346.0" x2="586.7" y2="326.0" stroke="#c25014" stroke-width="2.4" stroke-linecap="round" marker-end="url(#arr-orange)"/>
-<text x="586.7" y="320" font-size="9.8" fill="#c25014" text-anchor="middle" font-weight="600">60° 上升</text>
-<text x="40" y="410" font-size="10.4" fill="#c25014" text-anchor="start" font-weight="700">哈德利圈（低纬）</text>
-<text x="214" y="410" font-size="10.4" fill="#1d6fa5" text-anchor="start" font-weight="700">费雷尔圈（中纬）</text>
-<text x="392" y="410" font-size="10.4" fill="#6d28d9" text-anchor="start" font-weight="700">极地圈（高纬）</text>
-<text x="560" y="410" font-size="9.8" fill="#64748b" text-anchor="start">示意图：垂直尺度夸大，不代表真实比例</text>
-<text x="40" y="470" font-size="10.4" fill="#1e293b" text-anchor="start">NOAA：若无地球自转与海陆差异，每半球只需一个简单环流圈就能把热量从赤道搬到极地。</text>
+<text x="586.7" y="320" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="600">60° 上升</text>
+<text x="40" y="410" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="700">哈德利圈（低纬）</text>
+<text x="214" y="410" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="700">费雷尔圈（中纬）</text>
+<text x="392" y="410" font-size="10.5" fill="#6d28d9" text-anchor="start" font-weight="700">极地圈（高纬）</text>
+<text x="560" y="410" font-size="10.5" fill="#64748b" text-anchor="start">示意图：垂直尺度夸大，不代表真实比例</text>
+<text x="40" y="470" font-size="10.5" fill="#1e293b" text-anchor="start">NOAA：若无地球自转与海陆差异，每半球只需一个简单环流圈就能把热量从赤道搬到极地。</text>
 </svg>

@@ -39,15 +39,15 @@
 <text x="56" y="92" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">1 kg 小球从 5 m 高处由静止落下</text>
 <line x1="80.0" y1="152.0" x2="400.0" y2="152.0" stroke="#475569" stroke-width="1.4" stroke-linecap="round"/>
 <line x1="80.0" y1="148.0" x2="80.0" y2="158.0" stroke="#475569" stroke-width="1" stroke-linecap="round"/>
-<text x="80" y="176" font-size="9.8" fill="#64748b" text-anchor="middle">0 m</text>
+<text x="80" y="176" font-size="10.5" fill="#64748b" text-anchor="middle">0 m</text>
 <line x1="240.0" y1="148.0" x2="240.0" y2="158.0" stroke="#475569" stroke-width="1" stroke-linecap="round"/>
-<text x="240" y="176" font-size="9.8" fill="#64748b" text-anchor="middle">2.5 m</text>
+<text x="240" y="176" font-size="10.5" fill="#64748b" text-anchor="middle">2.5 m</text>
 <line x1="400.0" y1="148.0" x2="400.0" y2="158.0" stroke="#475569" stroke-width="1" stroke-linecap="round"/>
-<text x="400" y="176" font-size="9.8" fill="#64748b" text-anchor="middle">5 m</text>
+<text x="400" y="176" font-size="10.5" fill="#64748b" text-anchor="middle">5 m</text>
 <circle cx="80" cy="140" r="12" fill="#dbeafe" stroke="#1d6fa5" stroke-width="1.6"/>
 <circle cx="240" cy="140" r="12" fill="#fde4d0" stroke="#c25014" stroke-width="1.6"/>
 <circle cx="400" cy="140" r="12" fill="#f9d7b5" stroke="#c25014" stroke-width="1.6"/>
-<text x="400" y="122" font-size="10.2" fill="#c25014" text-anchor="end">起点：全部是势能</text>
+<text x="400" y="122" font-size="10.5" fill="#c25014" text-anchor="end">起点：全部是势能</text>
 <line x1="390.0" y1="132.0" x2="330.0" y2="132.0" stroke="#c25014" stroke-width="1.5" stroke-linecap="round" marker-end="url(#arr-orange)"/>
 <text x="48" y="216" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="700">高度 5 m：</text>
 <text x="48" y="242" font-size="11.4" fill="#0f172a" text-anchor="start" font-weight="700">Eₚ = mgh = 1×9.8×5 = 49 J；Eₖ = 0</text>
@@ -56,7 +56,7 @@
 <line x1="44.0" y1="324.0" x2="428.0" y2="324.0" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
 <text x="48" y="354" font-size="10.6" fill="#1e293b" text-anchor="start">总机械能一直是 49 J——势能少了多少，动能就多多少。</text>
 <text x="48" y="388" font-size="10.6" fill="#6d28d9" text-anchor="start" font-weight="600">撞地后动能耗散为热与声：能量没消失，只是变得“不好再用”。</text>
-<text x="48" y="430" font-size="10.4" fill="#475569" text-anchor="start">效率 η = 有用输出 / 总输入；守恒不等于全部可用。</text>
+<text x="48" y="430" font-size="10.5" fill="#475569" text-anchor="start">效率 η = 有用输出 / 总输入；守恒不等于全部可用。</text>
 <rect x="466" y="66" width="274" height="400" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
 <circle cx="484" cy="88" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
 <text x="484" y="92" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">2</text>
@@ -64,16 +64,16 @@
 <text x="484" y="130" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="600">起点</text>
 <rect x="484" y="142" width="190.0" height="18" rx="4" fill="#f2b880"/>
 <rect x="674.0" y="142" width="0.0" height="18" rx="4" fill="#9fc7e8"/>
-<text x="484" y="178" font-size="9.8" fill="#475569" text-anchor="start">Eₚ 49 J   Eₖ 0 J   总 49 J</text>
+<text x="484" y="178" font-size="10.5" fill="#475569" text-anchor="start">Eₚ 49 J   Eₖ 0 J   总 49 J</text>
 <text x="484" y="232" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="600">半程</text>
 <rect x="484" y="244" width="95.0" height="18" rx="4" fill="#f2b880"/>
 <rect x="579.0" y="244" width="95.0" height="18" rx="4" fill="#9fc7e8"/>
-<text x="484" y="280" font-size="9.8" fill="#475569" text-anchor="start">Eₚ 24 J   Eₖ 24 J   总 49 J</text>
+<text x="484" y="280" font-size="10.5" fill="#475569" text-anchor="start">Eₚ 24 J   Eₖ 24 J   总 49 J</text>
 <text x="484" y="334" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="600">落地前</text>
 <rect x="484" y="346" width="0.0" height="18" rx="4" fill="#f2b880"/>
 <rect x="484.0" y="346" width="190.0" height="18" rx="4" fill="#9fc7e8"/>
-<text x="484" y="382" font-size="9.8" fill="#475569" text-anchor="start">Eₚ 0 J   Eₖ 49 J   总 49 J</text>
-<text x="484" y="440" font-size="9.8" fill="#64748b" text-anchor="start">橙色＝势能，蓝色＝动能；总长度不变。</text>
+<text x="484" y="382" font-size="10.5" fill="#475569" text-anchor="start">Eₚ 0 J   Eₖ 49 J   总 49 J</text>
+<text x="484" y="440" font-size="10.5" fill="#64748b" text-anchor="start">橙色＝势能，蓝色＝动能；总长度不变。</text>
 <rect x="20" y="482" width="720" height="46" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
 <text x="36" y="511" font-size="10.8" fill="#475569" text-anchor="start">能量守恒定律：能量只能转移或转化，总量不变；效率掌管“有多少还能拿来干活”。</text>
 </svg>

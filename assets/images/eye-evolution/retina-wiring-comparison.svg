@@ -49,11 +49,11 @@
 <line x1="242.0" y1="112.0" x2="242.0" y2="194.0" stroke="#1d6fa5" stroke-width="2" stroke-linecap="round" marker-end="url(#arr-blue)"/>
 <line x1="288.0" y1="116.0" x2="288.0" y2="182.0" stroke="#1d6fa5" stroke-width="2" stroke-linecap="round" marker-end="url(#arr-blue)"/>
 <text x="194" y="132" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="600">神经纤维先挡一层</text>
-<text x="194" y="166" font-size="10.4" fill="#c25014" text-anchor="middle">感光细胞在后</text>
+<text x="194" y="166" font-size="10.5" fill="#c25014" text-anchor="middle">感光细胞在后</text>
 <path d="M 186 258 L 210 258 L 226 344 L 196 344 Z" fill="#f9d7b5" stroke="#c25014" stroke-width="1.5"/>
 <line x1="204.0" y1="270.0" x2="214.0" y2="334.0" stroke="#c25014" stroke-width="1.4" stroke-linecap="round" marker-end="url(#arr-orange)"/>
-<text x="52" y="292" font-size="10.4" fill="#6d28d9" text-anchor="start" font-weight="700">视神经穿出视网膜 → 盲点</text>
-<text x="52" y="324" font-size="10.2" fill="#475569" text-anchor="start">大脑靠插值“补”出空洞</text>
+<text x="52" y="292" font-size="10.5" fill="#6d28d9" text-anchor="start" font-weight="700">视神经穿出视网膜 → 盲点</text>
+<text x="52" y="324" font-size="10.5" fill="#475569" text-anchor="start">大脑靠插值“补”出空洞</text>
 <text x="52" y="384" font-size="10.6" fill="#1d6fa5" text-anchor="start" font-weight="600">路径依赖：从旧结构改造，不是重新画图</text>
 <path d="M 420 150 A 142 120 0 0 0 704 150" fill="none" stroke="#e7b27d" stroke-width="18"/>
 <path d="M 420 150 A 142 120 0 0 0 704 150" fill="none" stroke="#c25014" stroke-width="2"/>
@@ -63,13 +63,13 @@
 <line x1="610.0" y1="110.0" x2="610.0" y2="194.0" stroke="#c25014" stroke-width="2" stroke-linecap="round" marker-end="url(#arr-orange)"/>
 <line x1="656.0" y1="112.0" x2="656.0" y2="182.0" stroke="#c25014" stroke-width="2" stroke-linecap="round" marker-end="url(#arr-orange)"/>
 <text x="562" y="132" font-size="10.8" fill="#c25014" text-anchor="middle" font-weight="600">光先到感光细胞</text>
-<text x="562" y="166" font-size="10.4" fill="#1d6fa5" text-anchor="middle">神经纤维走后方</text>
+<text x="562" y="166" font-size="10.5" fill="#1d6fa5" text-anchor="middle">神经纤维走后方</text>
 <path d="M 554 258 L 578 258 L 594 344 L 564 344 Z" fill="#f9d7b5" stroke="#c25014" stroke-width="1.5"/>
 <line x1="572.0" y1="270.0" x2="582.0" y2="334.0" stroke="#c25014" stroke-width="1.4" stroke-linecap="round" marker-end="url(#arr-orange)"/>
-<text x="420" y="292" font-size="10.4" fill="#18794e" text-anchor="start" font-weight="700">神经从感光层后方出线 → 无盲点</text>
-<text x="420" y="324" font-size="10.2" fill="#475569" text-anchor="start">光路更直接，散射更少</text>
+<text x="420" y="292" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="700">神经从感光层后方出线 → 无盲点</text>
+<text x="420" y="324" font-size="10.5" fill="#475569" text-anchor="start">光路更直接，散射更少</text>
 <text x="420" y="384" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="600">独立演化出的“另一种图纸”</text>
 <rect x="20" y="432" width="720" height="56" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
 <text x="40" y="458" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">两套相机眼是趋同演化的经典例子：零件相似，来源不同；都没有被“推倒重来”。</text>
-<text x="40" y="480" font-size="10.4" fill="#1e293b" text-anchor="start">所谓“设计缺陷”恰恰是演化历史的指纹——它修旧房子，不画新图纸。</text>
+<text x="40" y="480" font-size="10.5" fill="#1e293b" text-anchor="start">所谓“设计缺陷”恰恰是演化历史的指纹——它修旧房子，不画新图纸。</text>
 </svg>

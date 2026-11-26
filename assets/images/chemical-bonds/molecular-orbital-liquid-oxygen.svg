@@ -73,16 +73,16 @@
 <line x1="686.0" y1="248.0" x2="704.0" y2="248.0" stroke="#475569" stroke-width="2.6"/><text x="695.0" y="244" font-size="14" fill="#475569" text-anchor="middle" font-weight="700">↑</text>
 <text x="672" y="266" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">右 O (2p⁴)</text>
 <line x1="542.0" y1="148.0" x2="574.0" y2="148.0" stroke="#64748b" stroke-width="2.6"/>
-<text x="558" y="164" font-size="10" fill="#64748b" text-anchor="middle">σ*₂ₚ（反键空）</text>
+<text x="558" y="164" font-size="10.5" fill="#64748b" text-anchor="middle">σ*₂ₚ（反键空）</text>
 <rect x="506" y="176" width="104" height="44" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1.6"/>
 <line x1="518.0" y1="204.0" x2="550.0" y2="204.0" stroke="#c25014" stroke-width="2.6"/><text x="534.0" y="200" font-size="14" fill="#c25014" text-anchor="middle" font-weight="700">↑</text>
 <line x1="566.0" y1="204.0" x2="598.0" y2="204.0" stroke="#c25014" stroke-width="2.6"/><text x="582.0" y="200" font-size="14" fill="#c25014" text-anchor="middle" font-weight="700">↑</text>
 <text x="558" y="233" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="700">π*₂ₚ（2 颗单身同自旋！）</text>
 <line x1="518.0" y1="292.0" x2="550.0" y2="292.0" stroke="#1d6fa5" stroke-width="2.6"/><text x="529.0" y="288" font-size="13" fill="#1d6fa5" text-anchor="middle" font-weight="700">↑</text><text x="539.0" y="288" font-size="13" fill="#1d6fa5" text-anchor="middle" font-weight="700">↓</text>
 <line x1="566.0" y1="292.0" x2="598.0" y2="292.0" stroke="#1d6fa5" stroke-width="2.6"/><text x="577.0" y="288" font-size="13" fill="#1d6fa5" text-anchor="middle" font-weight="700">↑</text><text x="587.0" y="288" font-size="13" fill="#1d6fa5" text-anchor="middle" font-weight="700">↓</text>
-<text x="558" y="309" font-size="10" fill="#1d6fa5" text-anchor="middle" font-weight="600">π₂ₚ（成键 4e⁻）</text>
+<text x="558" y="309" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">π₂ₚ（成键 4e⁻）</text>
 <line x1="542.0" y1="344.0" x2="574.0" y2="344.0" stroke="#18794e" stroke-width="2.6"/><text x="553.0" y="340" font-size="13" fill="#18794e" text-anchor="middle" font-weight="700">↑</text><text x="563.0" y="340" font-size="13" fill="#18794e" text-anchor="middle" font-weight="700">↓</text>
-<text x="558" y="361" font-size="10" fill="#18794e" text-anchor="middle" font-weight="600">σ₂ₚ（成键 2e⁻）</text>
+<text x="558" y="361" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="600">σ₂ₚ（成键 2e⁻）</text>
 <line x1="478.0" y1="248.0" x2="540.0" y2="148.0" stroke="#cbd5e1" stroke-width="1.1" stroke-dasharray="3 3"/>
 <line x1="638.0" y1="248.0" x2="576.0" y2="148.0" stroke="#cbd5e1" stroke-width="1.1" stroke-dasharray="3 3"/>
 <line x1="478.0" y1="248.0" x2="514.0" y2="204.0" stroke="#cbd5e1" stroke-width="1.1" stroke-dasharray="3 3"/>

@@ -38,11 +38,11 @@
 <text x="38" y="92" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
 <text x="56" y="92" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">模型怎么搭：一层三明治，随机微调</text>
 <rect x="48" y="116" width="296" height="24" rx="4" fill="#e8f1fb" stroke="#7aa6ce"/>
-<text x="196" y="132" font-size="10.2" fill="#1d6fa5" text-anchor="middle">半透明细胞：可改变厚度与折射率</text>
+<text x="196" y="132" font-size="10.5" fill="#1d6fa5" text-anchor="middle">半透明细胞：可改变厚度与折射率</text>
 <rect x="48" y="144" width="296" height="24" rx="4" fill="#fde4d0" stroke="#e0a269"/>
-<text x="196" y="160" font-size="10.2" fill="#c25014" text-anchor="middle">感光细胞：记录成像的清晰程度</text>
+<text x="196" y="160" font-size="10.5" fill="#c25014" text-anchor="middle">感光细胞：记录成像的清晰程度</text>
 <rect x="48" y="172" width="296" height="24" rx="4" fill="#e8f5ec" stroke="#6fae86"/>
-<text x="196" y="188" font-size="10.2" fill="#18794e" text-anchor="middle">色素细胞：吸收杂散光</text>
+<text x="196" y="188" font-size="10.5" fill="#18794e" text-anchor="middle">色素细胞：吸收杂散光</text>
 <line x1="86.0" y1="104.0" x2="86.0" y2="116.0" stroke="#c25014" stroke-width="1.4" stroke-linecap="round" marker-end="url(#arr-orange)"/>
 <line x1="132.0" y1="104.0" x2="132.0" y2="116.0" stroke="#c25014" stroke-width="1.4" stroke-linecap="round" marker-end="url(#arr-orange)"/>
 <line x1="178.0" y1="104.0" x2="178.0" y2="116.0" stroke="#c25014" stroke-width="1.4" stroke-linecap="round" marker-end="url(#arr-orange)"/>
@@ -50,11 +50,11 @@
 <line x1="270.0" y1="104.0" x2="270.0" y2="116.0" stroke="#c25014" stroke-width="1.4" stroke-linecap="round" marker-end="url(#arr-orange)"/>
 <line x1="316.0" y1="104.0" x2="316.0" y2="116.0" stroke="#c25014" stroke-width="1.4" stroke-linecap="round" marker-end="url(#arr-orange)"/>
 <line x1="40.0" y1="212.0" x2="348.0" y2="212.0" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
-<text x="44" y="240" font-size="10.4" fill="#1e293b" text-anchor="start">① 每一轮随机变异：形状、厚度、折射率各变约 1%</text>
-<text x="44" y="268" font-size="10.4" fill="#1e293b" text-anchor="start">② 只保留让空间信息更多的那一轮</text>
-<text x="44" y="296" font-size="10.4" fill="#1e293b" text-anchor="start">③ 重复：平斑 → 凹陷 → 小孔 → 晶状体</text>
+<text x="44" y="240" font-size="10.5" fill="#1e293b" text-anchor="start">① 每一轮随机变异：形状、厚度、折射率各变约 1%</text>
+<text x="44" y="268" font-size="10.5" fill="#1e293b" text-anchor="start">② 只保留让空间信息更多的那一轮</text>
+<text x="44" y="296" font-size="10.5" fill="#1e293b" text-anchor="start">③ 重复：平斑 → 凹陷 → 小孔 → 晶状体</text>
 <text x="44" y="330" font-size="10.8" fill="#1d6fa5" text-anchor="start" font-weight="700">关键：没有目标，没有蓝图，只有逐轮筛选。</text>
-<text x="44" y="366" font-size="10.4" fill="#475569" text-anchor="start">“不完善”的眼点，也比完全没有感光有用。</text>
+<text x="44" y="366" font-size="10.5" fill="#475569" text-anchor="start">“不完善”的眼点，也比完全没有感光有用。</text>
 <rect x="388" y="66" width="352" height="334" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
 <circle cx="406" cy="88" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
 <text x="406" y="92" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
@@ -62,15 +62,15 @@
 <rect x="404" y="116" width="316" height="64" rx="8" fill="#fff8f2" stroke="#f0d5bc"/>
 <text x="423" y="144" font-size="20" fill="#c25014" text-anchor="start" font-weight="700">约 36.4 万代</text>
 <text x="553" y="146" font-size="10.6" fill="#475569" text-anchor="start">从感光平斑到相机眼</text>
-<text x="423" y="169" font-size="9.8" fill="#64748b" text-anchor="start">论文故意取“悲观”参数，因此是上限式估算</text>
+<text x="423" y="169" font-size="10.5" fill="#64748b" text-anchor="start">论文故意取“悲观”参数，因此是上限式估算</text>
 <rect x="404" y="194" width="316" height="64" rx="8" fill="#f4f8fc" stroke="#cfe0ed"/>
 <text x="423" y="222" font-size="20" fill="#1d6fa5" text-anchor="start" font-weight="700">约 50 万年</text>
 <text x="553" y="224" font-size="10.6" fill="#475569" text-anchor="start">按小动物世代长度折算</text>
-<text x="423" y="247" font-size="9.8" fill="#64748b" text-anchor="start">在地质年代里只是一眨眼的尺度</text>
+<text x="423" y="247" font-size="10.5" fill="#64748b" text-anchor="start">在地质年代里只是一眨眼的尺度</text>
 <line x1="404.0" y1="278.0" x2="720.0" y2="278.0" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
-<text x="404" y="304" font-size="10.2" fill="#1e293b" text-anchor="start">另一项综述把“眼点→色素杯”单独估为约 3.5 万代。</text>
-<text x="404" y="330" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="600">不同假设给出不同数字，但共同结论是：足够快。</text>
-<text x="404" y="366" font-size="10.4" fill="#6d28d9" text-anchor="start" font-weight="700">模型是思想实验，不是真实物种的演化年表。</text>
+<text x="404" y="304" font-size="10.5" fill="#1e293b" text-anchor="start">另一项综述把“眼点→色素杯”单独估为约 3.5 万代。</text>
+<text x="404" y="330" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600">不同假设给出不同数字，但共同结论是：足够快。</text>
+<text x="404" y="366" font-size="10.5" fill="#6d28d9" text-anchor="start" font-weight="700">模型是思想实验，不是真实物种的演化年表。</text>
 <rect x="20" y="416" width="720" height="76" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
 <text x="40" y="444" font-size="10.8" fill="#1e293b" text-anchor="start">达尔文在《物种起源》第六章承认：一想到眼睛的精巧构造，确实“荒谬到最高程度”；</text>
 <text x="40" y="470" font-size="10.8" fill="#0f172a" text-anchor="start" font-weight="700">但他紧接着写出整条渐进路径——自然选择完全可以从简单感光斑造出眼睛。</text>

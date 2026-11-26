@@ -39,46 +39,46 @@
 <text x="56" y="93" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">开环评估为什么不够，闭环怎么补</text>
 <text x="40" y="132" font-size="10.6" fill="#be123c" text-anchor="start" font-weight="700">开环（open-loop）</text>
 <rect x="40" y="142" width="120" height="42" rx="7" fill="#ffe9ee" stroke="#be123c"/>
-<text x="100" y="168" font-size="10" fill="#be123c" text-anchor="middle">历史视频</text>
+<text x="100" y="168" font-size="10.5" fill="#be123c" text-anchor="middle">历史视频</text>
 <path d="M162 163 L206 163" stroke="#be123c" stroke-width="1.6" fill="none" marker-end="url(#arr-blue)"/>
 <rect x="208" y="142" width="130" height="42" rx="7" fill="#ffe9ee" stroke="#be123c"/>
-<text x="273" y="168" font-size="10" fill="#be123c" text-anchor="middle">模型预测动作</text>
-<text x="348" y="166" font-size="9.6" fill="#1e293b" text-anchor="start">预测与真实比较，但模型“改了路线”后画面无法跟着变</text>
+<text x="273" y="168" font-size="10.5" fill="#be123c" text-anchor="middle">模型预测动作</text>
+<text x="348" y="166" font-size="10.5" fill="#1e293b" text-anchor="start">预测与真实比较，但模型“改了路线”后画面无法跟着变</text>
 <line x1="40.0" y1="202.0" x2="716.0" y2="202.0" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
 <text x="40" y="228" font-size="10.6" fill="#0f766e" text-anchor="start" font-weight="700">闭环（closed-loop）</text>
 <rect x="40" y="238" width="110" height="46" rx="7" fill="#e6f5f2" stroke="#0f766e"/>
-<text x="95" y="266" font-size="10" fill="#0f766e" text-anchor="middle">当前场景</text>
+<text x="95" y="266" font-size="10.5" fill="#0f766e" text-anchor="middle">当前场景</text>
 <path d="M152 261 L190 261" stroke="#0f766e" stroke-width="1.6" fill="none" marker-end="url(#arr-green)"/>
 <rect x="192" y="238" width="120" height="46" rx="7" fill="#eaf4fb" stroke="#1d6fa5"/>
-<text x="252" y="258" font-size="10" fill="#1d6fa5" text-anchor="middle">驾驶策略模型</text>
-<text x="252" y="276" font-size="8.8" fill="#64748b" text-anchor="middle">输出动作</text>
+<text x="252" y="258" font-size="10.5" fill="#1d6fa5" text-anchor="middle">驾驶策略模型</text>
+<text x="252" y="276" font-size="10.5" fill="#64748b" text-anchor="middle">输出动作</text>
 <path d="M314 261 L352 261" stroke="#1d6fa5" stroke-width="1.6" fill="none" marker-end="url(#arr-blue)"/>
 <rect x="354" y="238" width="130" height="46" rx="7" fill="#e6f5f2" stroke="#0f766e"/>
-<text x="419" y="258" font-size="10" fill="#0f766e" text-anchor="middle">神经世界模拟器</text>
-<text x="419" y="276" font-size="8.8" fill="#64748b" text-anchor="middle">合成下一刻场景</text>
+<text x="419" y="258" font-size="10.5" fill="#0f766e" text-anchor="middle">神经世界模拟器</text>
+<text x="419" y="276" font-size="10.5" fill="#64748b" text-anchor="middle">合成下一刻场景</text>
 <path d="M486 261 Q560 300 560 230 Q560 208 420 208 L160 208 Q100 208 100 238" stroke="#0f766e" stroke-width="1.4" fill="none" stroke-dasharray="5 4" marker-end="url(#arr-green)"/>
-<text x="600" y="250" font-size="9.6" fill="#0f766e" text-anchor="start" font-weight="600">动作→场景→新动作</text>
-<text x="600" y="274" font-size="9.6" fill="#0f766e" text-anchor="start">持续循环</text>
+<text x="600" y="250" font-size="10.5" fill="#0f766e" text-anchor="start" font-weight="600">动作→场景→新动作</text>
+<text x="600" y="274" font-size="10.5" fill="#0f766e" text-anchor="start">持续循环</text>
 <rect x="20" y="332" width="352" height="220" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
 <circle cx="38" cy="355" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
 <text x="38" y="359" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">2</text>
 <text x="56" y="359" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700">模拟器的硬指标</text>
-<text x="40" y="392" font-size="10" fill="#64748b" text-anchor="start">摄像头视角</text>
-<text x="348" y="392" font-size="10.2" fill="#18794e" text-anchor="end" font-weight="700">8 路同时生成</text>
-<text x="40" y="430" font-size="10" fill="#64748b" text-anchor="start">帧率</text>
-<text x="348" y="430" font-size="10.2" fill="#18794e" text-anchor="end" font-weight="700">24 fps / 路</text>
-<text x="40" y="468" font-size="10" fill="#64748b" text-anchor="start">单次连续时长</text>
-<text x="348" y="468" font-size="10.2" fill="#18794e" text-anchor="end" font-weight="700">可达 6 分钟</text>
-<text x="40" y="506" font-size="10" fill="#64748b" text-anchor="start">总帧数</text>
-<text x="348" y="506" font-size="10.2" fill="#18794e" text-anchor="end" font-weight="700">8×24×360 = 69120 帧</text>
+<text x="40" y="392" font-size="10.5" fill="#64748b" text-anchor="start">摄像头视角</text>
+<text x="348" y="392" font-size="10.5" fill="#18794e" text-anchor="end" font-weight="700">8 路同时生成</text>
+<text x="40" y="430" font-size="10.5" fill="#64748b" text-anchor="start">帧率</text>
+<text x="348" y="430" font-size="10.5" fill="#18794e" text-anchor="end" font-weight="700">24 fps / 路</text>
+<text x="40" y="468" font-size="10.5" fill="#64748b" text-anchor="start">单次连续时长</text>
+<text x="348" y="468" font-size="10.5" fill="#18794e" text-anchor="end" font-weight="700">可达 6 分钟</text>
+<text x="40" y="506" font-size="10.5" fill="#64748b" text-anchor="start">总帧数</text>
+<text x="348" y="506" font-size="10.5" fill="#18794e" text-anchor="end" font-weight="700">8×24×360 = 69120 帧</text>
 <rect x="388" y="332" width="352" height="220" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
 <circle cx="406" cy="355" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
 <text x="406" y="359" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">3</text>
 <text x="424" y="359" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700">这有什么用</text>
-<text x="406" y="394" font-size="10.2" fill="#1e293b" text-anchor="start">• 闭环验证新版本，不拿真实道路试错</text>
-<text x="406" y="424" font-size="10.0" fill="#1e293b" text-anchor="start">• 历史场景反事实回放：“当时变道会怎样”</text>
-<text x="406" y="454" font-size="10.2" fill="#1e293b" text-anchor="start">• 生成对抗性极端场景，专测长尾</text>
-<text x="406" y="490" font-size="9.8" fill="#c25014" text-anchor="start" font-weight="600">• 支撑大规模强化学习，一天“开”出人类几百年的经验量级</text>
+<text x="406" y="394" font-size="10.5" fill="#1e293b" text-anchor="start">• 闭环验证新版本，不拿真实道路试错</text>
+<text x="406" y="424" font-size="10.5" fill="#1e293b" text-anchor="start">• 历史场景反事实回放：“当时变道会怎样”</text>
+<text x="406" y="454" font-size="10.5" fill="#1e293b" text-anchor="start">• 生成对抗性极端场景，专测长尾</text>
+<text x="406" y="490" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="600">• 支撑大规模强化学习，一天“开”出人类几百年的经验量级</text>
 <rect x="20" y="566" width="720" height="40" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
-<text x="36" y="592" font-size="10.4" fill="#475569" text-anchor="start">云端模拟器造“无限道路”训练 AI，车端蒸馏版造“看得见的街景”给驾驶员——同一个世界模型，两种尺寸。</text>
+<text x="36" y="592" font-size="10.5" fill="#475569" text-anchor="start">云端模拟器造“无限道路”训练 AI，车端蒸馏版造“看得见的街景”给驾驶员——同一个世界模型，两种尺寸。</text>
 </svg>

@@ -92,17 +92,17 @@
 <g class="scan-line">
 <line x1="42.0" y1="122.0" x2="42.0" y2="246.0" stroke="#c25014" stroke-width="2" stroke-linecap="round"/>
 </g>
-<text x="142" y="262" font-size="15.0" fill="#0f172a" text-anchor="middle" font-weight="700">6901234567892</text>
-<text x="142" y="288" font-size="10.4" fill="#475569" text-anchor="middle">95 个模块 · 左右各 10 个静区</text>
-<text x="38" y="326" font-size="10.4" fill="#1d6fa5" text-anchor="start" font-weight="600">前 3 位 690：GS1 分配给中国的国家前缀</text>
-<text x="38" y="351" font-size="10.2" fill="#475569" text-anchor="start">中间厂商代码 + 商品项目代码由编码组织与厂商分配</text>
-<text x="38" y="380" font-size="10.4" fill="#c25014" text-anchor="start" font-weight="700">“690 表示含激素、691 含铅汞”是谣言：</text>
-<text x="38" y="404" font-size="10.2" fill="#1e293b" text-anchor="start">前缀只表示条码申请地，与成分、产地无必然关系。</text>
-<text x="38" y="434" font-size="10.4" fill="#6d28d9" text-anchor="start" font-weight="600">ISBN-13 以 978/979 开头，沿用同一套 GTIN 校验算法。</text>
+<text x="142" y="262" font-size="15" fill="#0f172a" text-anchor="middle" font-weight="700">6901234567892</text>
+<text x="142" y="288" font-size="10.5" fill="#475569" text-anchor="middle">95 个模块 · 左右各 10 个静区</text>
+<text x="38" y="326" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="600">前 3 位 690：GS1 分配给中国的国家前缀</text>
+<text x="38" y="351" font-size="10.5" fill="#475569" text-anchor="start">中间厂商代码 + 商品项目代码由编码组织与厂商分配</text>
+<text x="38" y="380" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="700">“690 表示含激素、691 含铅汞”是谣言：</text>
+<text x="38" y="404" font-size="10.5" fill="#1e293b" text-anchor="start">前缀只表示条码申请地，与成分、产地无必然关系。</text>
+<text x="38" y="434" font-size="10.5" fill="#6d28d9" text-anchor="start" font-weight="600">ISBN-13 以 978/979 开头，沿用同一套 GTIN 校验算法。</text>
 <rect x="388" y="66" width="352" height="386" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
 <circle cx="406" cy="88" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
 <text x="406" y="92" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">2</text>
-<text x="424" y="92" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">校验位：把加权和补到整十</text>
+<text x="424" y="92" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700">校验位：把加权和补到整十</text>
 <text x="436" y="132" font-size="10.8" fill="#0f172a" text-anchor="middle" font-weight="700">6</text>
 <text x="461" y="132" font-size="10.8" fill="#0f172a" text-anchor="middle" font-weight="700">9</text>
 <text x="486" y="132" font-size="10.8" fill="#0f172a" text-anchor="middle" font-weight="700">0</text>
@@ -127,29 +127,29 @@
 <text x="661" y="164" font-size="10.8" fill="#1d6fa5" text-anchor="middle">3</text>
 <text x="686" y="164" font-size="10.8" fill="#1d6fa5" text-anchor="middle">1</text>
 <text x="711" y="164" font-size="10.8" fill="#1d6fa5" text-anchor="middle">3</text>
-<text x="436" y="196" font-size="9.8" fill="#18794e" text-anchor="middle">6</text>
-<text x="461" y="196" font-size="9.8" fill="#18794e" text-anchor="middle">27</text>
-<text x="486" y="196" font-size="9.8" fill="#18794e" text-anchor="middle">0</text>
-<text x="511" y="196" font-size="9.8" fill="#18794e" text-anchor="middle">3</text>
-<text x="536" y="196" font-size="9.8" fill="#18794e" text-anchor="middle">2</text>
-<text x="561" y="196" font-size="9.8" fill="#18794e" text-anchor="middle">9</text>
-<text x="586" y="196" font-size="9.8" fill="#18794e" text-anchor="middle">4</text>
-<text x="611" y="196" font-size="9.8" fill="#18794e" text-anchor="middle">15</text>
-<text x="636" y="196" font-size="9.8" fill="#18794e" text-anchor="middle">6</text>
-<text x="661" y="196" font-size="9.8" fill="#18794e" text-anchor="middle">21</text>
-<text x="686" y="196" font-size="9.8" fill="#18794e" text-anchor="middle">8</text>
-<text x="711" y="196" font-size="9.8" fill="#18794e" text-anchor="middle">27</text>
-<text x="400" y="132" font-size="9.8" fill="#64748b" text-anchor="start">数字</text>
-<text x="400" y="164" font-size="9.8" fill="#64748b" text-anchor="start">权重</text>
-<text x="400" y="196" font-size="9.8" fill="#64748b" text-anchor="start">乘积</text>
+<text x="436" y="196" font-size="10.5" fill="#18794e" text-anchor="middle">6</text>
+<text x="461" y="196" font-size="10.5" fill="#18794e" text-anchor="middle">27</text>
+<text x="486" y="196" font-size="10.5" fill="#18794e" text-anchor="middle">0</text>
+<text x="511" y="196" font-size="10.5" fill="#18794e" text-anchor="middle">3</text>
+<text x="536" y="196" font-size="10.5" fill="#18794e" text-anchor="middle">2</text>
+<text x="561" y="196" font-size="10.5" fill="#18794e" text-anchor="middle">9</text>
+<text x="586" y="196" font-size="10.5" fill="#18794e" text-anchor="middle">4</text>
+<text x="611" y="196" font-size="10.5" fill="#18794e" text-anchor="middle">15</text>
+<text x="636" y="196" font-size="10.5" fill="#18794e" text-anchor="middle">6</text>
+<text x="661" y="196" font-size="10.5" fill="#18794e" text-anchor="middle">21</text>
+<text x="686" y="196" font-size="10.5" fill="#18794e" text-anchor="middle">8</text>
+<text x="711" y="196" font-size="10.5" fill="#18794e" text-anchor="middle">27</text>
+<text x="400" y="132" font-size="10.5" fill="#64748b" text-anchor="start">数字</text>
+<text x="400" y="164" font-size="10.5" fill="#64748b" text-anchor="start">权重</text>
+<text x="400" y="196" font-size="10.5" fill="#64748b" text-anchor="start">乘积</text>
 <line x1="400.0" y1="262.0" x2="724.0" y2="262.0" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
-<text x="404" y="286" font-size="10.2" fill="#475569" text-anchor="start">从左往右权重 1、3、1、3……</text>
-<text x="404" y="314" font-size="10.2" fill="#475569" text-anchor="start">校验位 = 10 − (Σ mod 10)，若整除则写 0</text>
-<text x="404" y="354" font-size="11.0" fill="#18794e" text-anchor="start" font-weight="700">加权和 = 128 ⇒ 下一个整十是 130</text>
+<text x="404" y="286" font-size="10.5" fill="#475569" text-anchor="start">从左往右权重 1、3、1、3……</text>
+<text x="404" y="314" font-size="10.5" fill="#475569" text-anchor="start">校验位 = 10 − (Σ mod 10)，若整除则写 0</text>
+<text x="404" y="354" font-size="11" fill="#18794e" text-anchor="start" font-weight="700">加权和 = 128 ⇒ 下一个整十是 130</text>
 <text x="404" y="382" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700">校验位 = 130 − 128 = 2</text>
 <line x1="404.0" y1="398.0" x2="724.0" y2="398.0" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
 <text x="404" y="424" font-size="11.4" fill="#6d28d9" text-anchor="start" font-weight="700">完整 GTIN-13：6901234567892</text>
-<text x="404" y="448" font-size="10.2" fill="#475569" text-anchor="start">ISBN-13、EAN-13、GTIN-13 是同一族编码。</text>
+<text x="404" y="448" font-size="10.5" fill="#475569" text-anchor="start">ISBN-13、EAN-13、GTIN-13 是同一族编码。</text>
 <rect x="20" y="466" width="720" height="36" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
 <text x="36" y="490" font-size="10.6" fill="#475569" text-anchor="start">图中条码按 EAN-13 的 L/G/R 编码表逐模块计算生成，非示意图；扫描线动画只播放一次。</text>
 </svg>

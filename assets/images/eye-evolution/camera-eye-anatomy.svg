@@ -52,16 +52,16 @@
 <path d="M 92 336 L 130 330 L 152 420 L 118 424 Z" fill="#f9d7b5" stroke="#c25014" stroke-width="1.6"/>
 <line x1="130.0" y1="344.0" x2="146.0" y2="410.0" stroke="#c25014" stroke-width="1.4" stroke-linecap="round" marker-end="url(#arr-orange)"/>
 <circle cx="170" cy="318" r="5" fill="none" stroke="#7c3aed" stroke-width="2"/>
-<text x="32" y="96" font-size="10.2" fill="#1d6fa5" text-anchor="start" font-weight="600">角膜：先折射</text>
-<text x="32" y="124" font-size="10.2" fill="#c25014" text-anchor="start" font-weight="600">虹膜：调光</text>
-<text x="32" y="152" font-size="10.2" fill="#6d28d9" text-anchor="start" font-weight="600">晶状体：聚焦</text>
-<text x="32" y="180" font-size="10.2" fill="#18794e" text-anchor="start" font-weight="600">玻璃体：透明填充</text>
-<text x="32" y="350" font-size="10.2" fill="#c25014" text-anchor="start" font-weight="600">视网膜：感光</text>
-<text x="32" y="378" font-size="10.2" fill="#18794e" text-anchor="start" font-weight="600">中央凹：最清晰</text>
-<text x="32" y="406" font-size="10.2" fill="#6d28d9" text-anchor="start" font-weight="600">盲点：神经出口</text>
-<text x="32" y="434" font-size="10.2" fill="#475569" text-anchor="start" font-weight="600">视神经：送脑</text>
+<text x="32" y="96" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="600">角膜：先折射</text>
+<text x="32" y="124" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="600">虹膜：调光</text>
+<text x="32" y="152" font-size="10.5" fill="#6d28d9" text-anchor="start" font-weight="600">晶状体：聚焦</text>
+<text x="32" y="180" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="600">玻璃体：透明填充</text>
+<text x="32" y="350" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="600">视网膜：感光</text>
+<text x="32" y="378" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="600">中央凹：最清晰</text>
+<text x="32" y="406" font-size="10.5" fill="#6d28d9" text-anchor="start" font-weight="600">盲点：神经出口</text>
+<text x="32" y="434" font-size="10.5" fill="#475569" text-anchor="start" font-weight="600">视神经：送脑</text>
 <text x="352" y="246" font-size="10.6" fill="#c25014" text-anchor="middle" font-weight="700">倒像</text>
-<text x="352" y="266" font-size="9.8" fill="#64748b" text-anchor="middle">由大脑翻正</text>
+<text x="352" y="266" font-size="10.5" fill="#64748b" text-anchor="middle">由大脑翻正</text>
 <rect x="506" y="66" width="234" height="410" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
 <circle cx="524" cy="88" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
 <text x="524" y="92" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">1</text>
@@ -71,19 +71,19 @@
 <path d="M 566 200 L 566 142 L 584 130 L 602 142 L 602 200 Z" fill="#f9d7b5" stroke="#c25014" stroke-width="1.2"/>
 <path d="M 612 200 L 612 146 L 620 138 L 628 146 L 628 200 Z" fill="#bcd7ef" stroke="#1d6fa5" stroke-width="1.2"/>
 <path d="M 638 200 L 638 142 L 656 130 L 674 142 L 674 200 Z" fill="#f9d7b5" stroke="#c25014" stroke-width="1.2"/>
-<text x="554" y="216" font-size="9.8" fill="#1d6fa5" text-anchor="middle">视杆：弱光</text>
-<text x="584" y="216" font-size="9.8" fill="#c25014" text-anchor="middle">视锥：颜色</text>
-<text x="628" y="216" font-size="9.8" fill="#1d6fa5" text-anchor="middle">视杆</text>
-<text x="656" y="216" font-size="9.8" fill="#c25014" text-anchor="middle">视锥</text>
+<text x="554" y="216" font-size="10.5" fill="#1d6fa5" text-anchor="middle">视杆：弱光</text>
+<text x="584" y="216" font-size="10.5" fill="#c25014" text-anchor="middle">视锥：颜色</text>
+<text x="628" y="216" font-size="10.5" fill="#1d6fa5" text-anchor="middle">视杆</text>
+<text x="656" y="216" font-size="10.5" fill="#c25014" text-anchor="middle">视锥</text>
 <line x1="522.0" y1="228.0" x2="724.0" y2="228.0" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
 <text x="522" y="256" font-size="11.2" fill="#1d6fa5" text-anchor="start" font-weight="700">视杆细胞</text>
-<text x="522" y="278" font-size="10.2" fill="#1e293b" text-anchor="start">灵敏度高，暗处工作；</text>
-<text x="522" y="298" font-size="10.2" fill="#1e293b" text-anchor="start">不能分辨颜色。</text>
+<text x="522" y="278" font-size="10.5" fill="#1e293b" text-anchor="start">灵敏度高，暗处工作；</text>
+<text x="522" y="298" font-size="10.5" fill="#1e293b" text-anchor="start">不能分辨颜色。</text>
 <text x="522" y="332" font-size="11.2" fill="#c25014" text-anchor="start" font-weight="700">视锥细胞</text>
-<text x="522" y="354" font-size="10.2" fill="#1e293b" text-anchor="start">强光下工作，负责色觉；</text>
-<text x="522" y="374" font-size="10.2" fill="#1e293b" text-anchor="start">中央凹处最密集。</text>
-<text x="522" y="414" font-size="10.4" fill="#6d28d9" text-anchor="start" font-weight="700">光子 → 11-顺视黄醛异构化</text>
-<text x="522" y="438" font-size="10.4" fill="#6d28d9" text-anchor="start" font-weight="700">→ 电信号 → 视神经</text>
+<text x="522" y="354" font-size="10.5" fill="#1e293b" text-anchor="start">强光下工作，负责色觉；</text>
+<text x="522" y="374" font-size="10.5" fill="#1e293b" text-anchor="start">中央凹处最密集。</text>
+<text x="522" y="414" font-size="10.5" fill="#6d28d9" text-anchor="start" font-weight="700">光子 → 11-顺视黄醛异构化</text>
+<text x="522" y="438" font-size="10.5" fill="#6d28d9" text-anchor="start" font-weight="700">→ 电信号 → 视神经</text>
 <rect x="20" y="490" width="720" height="38" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
 <text x="36" y="515" font-size="10.6" fill="#475569" text-anchor="start">本图根据用户提供的人眼解剖示意重新绘制，仅保留结构关系与光线路径，不直接使用原图。</text>
 </svg>

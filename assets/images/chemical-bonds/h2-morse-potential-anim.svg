@@ -73,7 +73,7 @@
 <text x="75" y="348.2" font-size="10.5" fill="#64748b" text-anchor="end">−200</text>
 <text x="75" y="411.0" font-size="11" fill="#1d6fa5" text-anchor="end" font-weight="700">−436</text>
 <text x="34" y="250" font-size="11" fill="#475569" text-anchor="start" font-weight="700">势能</text>
-<text x="32" y="266" font-size="10" fill="#64748b" text-anchor="start">kJ/mol</text>
+<text x="32" y="266" font-size="10.5" fill="#64748b" text-anchor="start">kJ/mol</text>
 <line x1="99.3" y1="424.0" x2="99.3" y2="429.0" stroke="#475569" stroke-width="1.3"/>
 <text x="99.3" y="443.0" font-size="10.5" fill="#64748b" text-anchor="middle" font-weight="400">38</text>
 <line x1="151.2" y1="424.0" x2="151.2" y2="429.0" stroke="#475569" stroke-width="1.3"/>

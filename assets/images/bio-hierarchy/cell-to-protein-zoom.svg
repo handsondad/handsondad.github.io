@@ -42,14 +42,14 @@
 <ellipse cx="182" cy="242" rx="56" ry="44" fill="#ffffff" stroke="#1d6fa5" stroke-width="1.6"/>
 <text x="182" y="246" font-size="10.6" fill="#1d6fa5" text-anchor="middle" font-weight="700">细胞核</text>
 <circle cx="262" cy="202" r="15" fill="#fdf1d8" stroke="#b45309" stroke-width="1.2"/>
-<text x="282" y="206" font-size="9.6" fill="#b45309" text-anchor="start">线粒体</text>
+<text x="282" y="206" font-size="10.5" fill="#b45309" text-anchor="start">线粒体</text>
 <circle cx="258" cy="292" r="15" fill="#fdf1d8" stroke="#b45309" stroke-width="1.2"/>
-<text x="278" y="296" font-size="9.6" fill="#b45309" text-anchor="start">核糖体</text>
+<text x="278" y="296" font-size="10.5" fill="#b45309" text-anchor="start">核糖体</text>
 <circle cx="112" cy="316" r="15" fill="#fdf1d8" stroke="#b45309" stroke-width="1.2"/>
-<text x="132" y="320" font-size="9.6" fill="#b45309" text-anchor="start">细胞骨架</text>
-<text x="38" y="128" font-size="10.2" fill="#1e293b" text-anchor="start">膜把内外分开；细胞器分工；ATP 供能。</text>
-<text x="38" y="396" font-size="10.2" fill="#475569" text-anchor="start">全成人约 30 万亿个细胞、约 200 种类型。</text>
-<text x="38" y="424" font-size="10.0" fill="#64748b" text-anchor="start">红细胞是特例：成熟后没有细胞核。</text>
+<text x="132" y="320" font-size="10.5" fill="#b45309" text-anchor="start">细胞骨架</text>
+<text x="38" y="128" font-size="10.5" fill="#1e293b" text-anchor="start">膜把内外分开；细胞器分工；ATP 供能。</text>
+<text x="38" y="396" font-size="10.5" fill="#475569" text-anchor="start">全成人约 30 万亿个细胞、约 200 种类型。</text>
+<text x="38" y="424" font-size="10.5" fill="#64748b" text-anchor="start">红细胞是特例：成熟后没有细胞核。</text>
 <rect x="388" y="66" width="352" height="428" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
 <circle cx="406" cy="89" r="10.5" fill="#fdf1d8" stroke="#b45309" stroke-width="1.2"/>
 <text x="406" y="93" font-size="11.5" fill="#b45309" text-anchor="middle" font-weight="700">2</text>
@@ -69,22 +69,22 @@
 <circle cx="490" cy="196" r="4.5" fill="#ffffff" stroke="#be123c" stroke-width="1.3"/>
 <circle cx="462" cy="220" r="4.5" fill="#ffffff" stroke="#be123c" stroke-width="1.3"/>
 <circle cx="436" cy="200" r="4.5" fill="#ffffff" stroke="#be123c" stroke-width="1.3"/>
-<text x="512" y="244" font-size="9.8" fill="#1e293b" text-anchor="middle">一条氨基酸链折叠成有形状的蛋白</text>
+<text x="512" y="244" font-size="10.5" fill="#1e293b" text-anchor="middle">一条氨基酸链折叠成有形状的蛋白</text>
 <line x1="388.0" y1="264.0" x2="740.0" y2="264.0" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
 <rect x="406.0" y="280.0" width="56" height="22" rx="11.0" fill="#fdf1d8" stroke="#b45309" stroke-width="1" stroke-opacity="0.35"/>
-<text x="434.0" y="295.0" font-size="10.4" fill="#b45309" text-anchor="middle" font-weight="600">运输</text>
-<text x="474" y="296" font-size="10.2" fill="#1e293b" text-anchor="start">血红蛋白运氧</text>
+<text x="434.0" y="295.0" font-size="10.5" fill="#b45309" text-anchor="middle" font-weight="600">运输</text>
+<text x="474" y="296" font-size="10.5" fill="#1e293b" text-anchor="start">血红蛋白运氧</text>
 <rect x="406.0" y="311.0" width="56" height="22" rx="11.0" fill="#fdf1d8" stroke="#b45309" stroke-width="1" stroke-opacity="0.35"/>
-<text x="434.0" y="326.0" font-size="10.4" fill="#b45309" text-anchor="middle" font-weight="600">催化</text>
-<text x="474" y="327" font-size="10.2" fill="#1e293b" text-anchor="start">酶降低反应门槛</text>
+<text x="434.0" y="326.0" font-size="10.5" fill="#b45309" text-anchor="middle" font-weight="600">催化</text>
+<text x="474" y="327" font-size="10.5" fill="#1e293b" text-anchor="start">酶降低反应门槛</text>
 <rect x="406.0" y="342.0" width="56" height="22" rx="11.0" fill="#fdf1d8" stroke="#b45309" stroke-width="1" stroke-opacity="0.35"/>
-<text x="434.0" y="357.0" font-size="10.4" fill="#b45309" text-anchor="middle" font-weight="600">运动</text>
-<text x="474" y="358" font-size="10.2" fill="#1e293b" text-anchor="start">肌球蛋白把 ATP 变推力</text>
+<text x="434.0" y="357.0" font-size="10.5" fill="#b45309" text-anchor="middle" font-weight="600">运动</text>
+<text x="474" y="358" font-size="10.5" fill="#1e293b" text-anchor="start">肌球蛋白把 ATP 变推力</text>
 <rect x="406.0" y="373.0" width="56" height="22" rx="11.0" fill="#fdf1d8" stroke="#b45309" stroke-width="1" stroke-opacity="0.35"/>
-<text x="434.0" y="388.0" font-size="10.4" fill="#b45309" text-anchor="middle" font-weight="600">防御</text>
-<text x="474" y="389" font-size="10.2" fill="#1e293b" text-anchor="start">抗体识别外来物</text>
-<text x="406" y="414" font-size="10.0" fill="#475569" text-anchor="start">人体蛋白中位长度约 415 个氨基酸。</text>
-<text x="406" y="442" font-size="10.0" fill="#64748b" text-anchor="start">直径量级：细胞 10 µm → 蛋白 5 nm。</text>
+<text x="434.0" y="388.0" font-size="10.5" fill="#b45309" text-anchor="middle" font-weight="600">防御</text>
+<text x="474" y="389" font-size="10.5" fill="#1e293b" text-anchor="start">抗体识别外来物</text>
+<text x="406" y="414" font-size="10.5" fill="#475569" text-anchor="start">人体蛋白中位长度约 415 个氨基酸。</text>
+<text x="406" y="442" font-size="10.5" fill="#64748b" text-anchor="start">直径量级：细胞 10 µm → 蛋白 5 nm。</text>
 <rect x="20" y="508" width="720" height="44" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
 <text x="36" y="536" font-size="10.6" fill="#475569" text-anchor="start">看细胞要显微镜，看蛋白质要靠 X 射线晶体学、冷冻电镜或结构预测；尺度差约一千倍。</text>
 </svg>

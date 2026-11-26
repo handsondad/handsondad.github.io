@@ -46,7 +46,7 @@
 <rect x="20" y="66" width="352" height="396" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
 <circle cx="38" cy="88" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
 <text x="38" y="92" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
-<text x="56" y="92" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">同一层空气，两种截然不同的传热状态</text>
+<text x="56" y="92" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700">同一层空气，两种截然不同的传热状态</text>
 <rect x="38" y="108" width="316" height="120" rx="7" fill="#f5f9fc" stroke="#d7e6f2"/>
 <rect x="44" y="112" width="304" height="10" rx="3" fill="#f2b880"/>
 <rect x="44" y="214" width="304" height="10" rx="3" fill="#9fc7e8"/>
@@ -54,7 +54,7 @@
 <line x1="46.0" y1="158.0" x2="346.0" y2="158.0" stroke="#93c5fd" stroke-width="1.1" stroke-linecap="round"/>
 <line x1="46.0" y1="178.0" x2="346.0" y2="178.0" stroke="#93c5fd" stroke-width="1.1" stroke-linecap="round"/>
 <line x1="46.0" y1="198.0" x2="346.0" y2="198.0" stroke="#93c5fd" stroke-width="1.1" stroke-linecap="round"/>
-<text x="52" y="236" font-size="9.9" fill="#1d6fa5" text-anchor="start" font-weight="600">下热上冷，但 Ra &lt; 1708：空气静止，热量只靠传导穿过</text>
+<text x="52" y="236" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="600">下热上冷，但 Ra &lt; 1708：空气静止，热量只靠传导穿过</text>
 <rect x="38" y="242" width="316" height="130" rx="7" fill="#fff8f2" stroke="#f0d5bc"/>
 <rect x="44" y="246" width="304" height="10" rx="3" fill="#f2b880"/>
 <rect x="44" y="360" width="304" height="10" rx="3" fill="#9fc7e8"/>
@@ -66,43 +66,43 @@
 <path d="M 256 336 C 244 286, 336 286, 324 336" fill="none" stroke="#c25014" stroke-width="2.2" stroke-dasharray="8 6" marker-end="url(#arr-orange)"/>
 <path d="M 324 270 C 336 316, 244 316, 256 270" fill="none" stroke="#1d6fa5" stroke-width="2.2" stroke-dasharray="8 6" marker-end="url(#arr-blue)"/>
 </g>
-<text x="52" y="378" font-size="9.9" fill="#c25014" text-anchor="start" font-weight="600">Ra &gt; 1708：浮力压过阻尼，自发卷成规则对流胞（六角／条带）</text>
-<text x="38" y="406" font-size="10.4" fill="#1e293b" text-anchor="start">控制变量只有三个：温差 ΔT、层厚 d、流体物性（ν、α、β）。</text>
-<text x="38" y="428" font-size="10.4" fill="#0f172a" text-anchor="start" font-weight="600">加大温差或层厚 ⇒ Ra 暴涨；黏性、热扩散是稳定器。</text>
+<text x="52" y="378" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="600">Ra &gt; 1708：浮力压过阻尼，自发卷成规则对流胞（六角／条带）</text>
+<text x="38" y="406" font-size="10.5" fill="#1e293b" text-anchor="start">控制变量只有三个：温差 ΔT、层厚 d、流体物性（ν、α、β）。</text>
+<text x="38" y="428" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="600">加大温差或层厚 ⇒ Ra 暴涨；黏性、热扩散是稳定器。</text>
 <rect x="388" y="66" width="352" height="396" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
 <circle cx="406" cy="88" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
 <text x="406" y="92" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
-<text x="424" y="92" font-size="12.0" fill="#0f172a" text-anchor="start" font-weight="700">瑞利数：浮力与阻尼的“拔河比分”</text>
+<text x="424" y="92" font-size="12" fill="#0f172a" text-anchor="start" font-weight="700">瑞利数：浮力与阻尼的“拔河比分”</text>
 <text x="404" y="124" font-size="12.4" fill="#0f172a" text-anchor="start" font-weight="700">Ra = gβ·ΔT·d³ / (ν·α)</text>
-<text x="404" y="146" font-size="10.2" fill="#475569" text-anchor="start">分子＝浮力驱动力；分母＝黏性阻尼 × 热抹平速度</text>
+<text x="404" y="146" font-size="10.5" fill="#475569" text-anchor="start">分子＝浮力驱动力；分母＝黏性阻尼 × 热抹平速度</text>
 <text x="404" y="170" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="600">注意 d³：层厚翻倍，浮力效应涨 8 倍！</text>
 <line x1="404.0" y1="184.0" x2="724.0" y2="184.0" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
-<text x="404" y="208" font-size="11.0" fill="#1d6fa5" text-anchor="start" font-weight="700">临界值（上下恒温平板，下热上冷）</text>
+<text x="404" y="208" font-size="11" fill="#1d6fa5" text-anchor="start" font-weight="700">临界值（上下恒温平板，下热上冷）</text>
 <text x="404" y="232" font-size="10.8" fill="#0f172a" text-anchor="start">上下刚壁、无滑移：Ra_c ≈ 1708</text>
 <text x="404" y="253" font-size="10.8" fill="#0f172a" text-anchor="start">上下自由滑移：Ra_c = 27π⁴/4 ≈ 657.5</text>
-<text x="404" y="276" font-size="10.0" fill="#475569" text-anchor="start">刚壁摩擦更强，门槛更高；上下都加热反而更稳。</text>
+<text x="404" y="276" font-size="10.5" fill="#475569" text-anchor="start">刚壁摩擦更强，门槛更高；上下都加热反而更稳。</text>
 <line x1="404.0" y1="290.0" x2="724.0" y2="290.0" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
-<text x="404" y="314" font-size="11.0" fill="#6d28d9" text-anchor="start" font-weight="700">实战：中空玻璃的空气层能有多厚？</text>
-<text x="404" y="335" font-size="10.0" fill="#475569" text-anchor="start">取 ΔT=10 K、平均 10°C；</text>
-<text x="404" y="352" font-size="10.0" fill="#475569" text-anchor="start">ν≈1.43×10⁻⁵，α≈2.0×10⁻⁵ m²/s</text>
+<text x="404" y="314" font-size="11" fill="#6d28d9" text-anchor="start" font-weight="700">实战：中空玻璃的空气层能有多厚？</text>
+<text x="404" y="335" font-size="10.5" fill="#475569" text-anchor="start">取 ΔT=10 K、平均 10°C；</text>
+<text x="404" y="352" font-size="10.5" fill="#475569" text-anchor="start">ν≈1.43×10⁻⁵，α≈2.0×10⁻⁵ m²/s</text>
 <text x="404" y="374" font-size="10.6" fill="#18794e" text-anchor="start" font-weight="600">间隙 8 mm ⇒ Ra ≈ 620 &lt; 1708：近似纯传导</text>
 <text x="404" y="395" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="600">间隙 12 mm ⇒ Ra ≈ 2093 ＞ 1708：对流启动</text>
 <text x="404" y="416" font-size="10.6" fill="#c25014" text-anchor="start" font-weight="600">间隙 20 mm ⇒ Ra ≈ 9691：对流更强，隔热反变差</text>
 <text x="404" y="444" font-size="10.6" fill="#6d28d9" text-anchor="start" font-weight="700">所以空气层不是越厚越保温：越过临界值就“漏热”。</text>
 <rect x="20" y="474" width="720" height="40" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
 <line x1="100.0" y1="492.0" x2="100.0" y2="500.0" stroke="#475569" stroke-width="1" stroke-linecap="round"/>
-<text x="100" y="512" font-size="9.6" fill="#64748b" text-anchor="middle">10²</text>
+<text x="100" y="512" font-size="10.5" fill="#64748b" text-anchor="middle">10²</text>
 <line x1="250.0" y1="492.0" x2="250.0" y2="500.0" stroke="#475569" stroke-width="1" stroke-linecap="round"/>
-<text x="250" y="512" font-size="9.6" fill="#64748b" text-anchor="middle">10³</text>
+<text x="250" y="512" font-size="10.5" fill="#64748b" text-anchor="middle">10³</text>
 <line x1="400.0" y1="492.0" x2="400.0" y2="500.0" stroke="#475569" stroke-width="1" stroke-linecap="round"/>
-<text x="400" y="512" font-size="9.6" fill="#64748b" text-anchor="middle">10⁴</text>
+<text x="400" y="512" font-size="10.5" fill="#64748b" text-anchor="middle">10⁴</text>
 <line x1="550.0" y1="492.0" x2="550.0" y2="500.0" stroke="#475569" stroke-width="1" stroke-linecap="round"/>
-<text x="550" y="512" font-size="9.6" fill="#64748b" text-anchor="middle">10⁵</text>
+<text x="550" y="512" font-size="10.5" fill="#64748b" text-anchor="middle">10⁵</text>
 <line x1="700.0" y1="492.0" x2="700.0" y2="500.0" stroke="#475569" stroke-width="1" stroke-linecap="round"/>
-<text x="700" y="512" font-size="9.6" fill="#64748b" text-anchor="middle">10⁶</text>
+<text x="700" y="512" font-size="10.5" fill="#64748b" text-anchor="middle">10⁶</text>
 <line x1="100.0" y1="496.0" x2="700.0" y2="496.0" stroke="#475569" stroke-width="1.6" stroke-linecap="round"/>
 <line x1="284.9" y1="486.0" x2="284.9" y2="506.0" stroke="#c25014" stroke-width="2" stroke-linecap="round"/>
-<text x="290.9" y="488" font-size="10.0" fill="#c25014" text-anchor="start" font-weight="700">Ra_c≈1708：传导 → 对流</text>
-<text x="108" y="486" font-size="10.0" fill="#1d6fa5" text-anchor="start" font-weight="600">稳定传导区</text>
-<text x="520" y="486" font-size="10.0" fill="#c25014" text-anchor="start" font-weight="600">对流／湍流区</text>
+<text x="290.9" y="488" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="700">Ra_c≈1708：传导 → 对流</text>
+<text x="108" y="486" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="600">稳定传导区</text>
+<text x="520" y="486" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="600">对流／湍流区</text>
 </svg>

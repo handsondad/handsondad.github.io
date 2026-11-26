@@ -38,43 +38,43 @@
 <text x="94" y="105" font-size="11.4" fill="#1d6fa5" text-anchor="middle" font-weight="700">动能</text>
 <text x="40" y="142" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="600">运动着的物体</text>
 <text x="40" y="172" font-size="11.6" fill="#1d6fa5" text-anchor="start" font-weight="700">Eₖ = ½mv²</text>
-<text x="40" y="206" font-size="10.2" fill="#1e293b" text-anchor="start">例：风、流水、飞驰的车</text>
-<text x="40" y="232" font-size="9.8" fill="#64748b" text-anchor="start">单位：焦耳（J）</text>
+<text x="40" y="206" font-size="10.5" fill="#1e293b" text-anchor="start">例：风、流水、飞驰的车</text>
+<text x="40" y="232" font-size="10.5" fill="#64748b" text-anchor="start">单位：焦耳（J）</text>
 <rect x="388" y="66" width="352" height="180" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
 <rect x="406" y="84" width="112" height="30" rx="8" fill="#fef1e8" stroke="#c25014"/>
 <text x="462" y="105" font-size="11.4" fill="#c25014" text-anchor="middle" font-weight="700">势能</text>
 <text x="408" y="142" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="600">位置或状态储存</text>
 <text x="408" y="172" font-size="11.6" fill="#c25014" text-anchor="start" font-weight="700">Eₚ = mgh / ½kx²</text>
-<text x="408" y="206" font-size="10.2" fill="#1e293b" text-anchor="start">例：水库、拉开的弓、化学键</text>
-<text x="408" y="232" font-size="9.8" fill="#64748b" text-anchor="start">单位：焦耳（J）</text>
+<text x="408" y="206" font-size="10.5" fill="#1e293b" text-anchor="start">例：水库、拉开的弓、化学键</text>
+<text x="408" y="232" font-size="10.5" fill="#64748b" text-anchor="start">单位：焦耳（J）</text>
 <rect x="20" y="268" width="352" height="180" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
 <rect x="38" y="286" width="112" height="30" rx="8" fill="#e7f6ee" stroke="#18794e"/>
 <text x="94" y="307" font-size="11.4" fill="#18794e" text-anchor="middle" font-weight="700">热能</text>
 <text x="40" y="344" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="600">微观粒子无规则运动</text>
 <text x="40" y="374" font-size="11.6" fill="#18794e" text-anchor="start" font-weight="700">与温度和物质量都有关</text>
-<text x="40" y="408" font-size="10.2" fill="#1e293b" text-anchor="start">例：热水、地热、人体</text>
-<text x="40" y="434" font-size="9.8" fill="#64748b" text-anchor="start">单位：焦耳（J）</text>
+<text x="40" y="408" font-size="10.5" fill="#1e293b" text-anchor="start">例：热水、地热、人体</text>
+<text x="40" y="434" font-size="10.5" fill="#64748b" text-anchor="start">单位：焦耳（J）</text>
 <rect x="388" y="268" width="352" height="180" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
 <rect x="406" y="286" width="112" height="30" rx="8" fill="#f3e8ff" stroke="#6d28d9"/>
 <text x="462" y="307" font-size="11.4" fill="#6d28d9" text-anchor="middle" font-weight="700">电能</text>
 <text x="408" y="344" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="600">电荷与电势差</text>
 <text x="408" y="374" font-size="11.6" fill="#6d28d9" text-anchor="start" font-weight="700">E = qV</text>
-<text x="408" y="408" font-size="10.2" fill="#1e293b" text-anchor="start">例：电池、电网、静电</text>
-<text x="408" y="434" font-size="9.8" fill="#64748b" text-anchor="start">单位：焦耳（J）</text>
+<text x="408" y="408" font-size="10.5" fill="#1e293b" text-anchor="start">例：电池、电网、静电</text>
+<text x="408" y="434" font-size="10.5" fill="#64748b" text-anchor="start">单位：焦耳（J）</text>
 <rect x="20" y="470" width="352" height="180" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
 <rect x="38" y="488" width="112" height="30" rx="8" fill="#fef3c7" stroke="#b45309"/>
 <text x="94" y="509" font-size="11.4" fill="#b45309" text-anchor="middle" font-weight="700">光能（辐射能）</text>
 <text x="40" y="546" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="600">电磁波的能量</text>
 <text x="40" y="576" font-size="11.6" fill="#b45309" text-anchor="start" font-weight="700">E = hν = hc/λ</text>
-<text x="40" y="610" font-size="10.2" fill="#1e293b" text-anchor="start">例：阳光、红外、微波</text>
-<text x="40" y="636" font-size="9.8" fill="#64748b" text-anchor="start">单位：焦耳（J）</text>
+<text x="40" y="610" font-size="10.5" fill="#1e293b" text-anchor="start">例：阳光、红外、微波</text>
+<text x="40" y="636" font-size="10.5" fill="#64748b" text-anchor="start">单位：焦耳（J）</text>
 <rect x="388" y="470" width="352" height="180" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
 <rect x="406" y="488" width="112" height="30" rx="8" fill="#ffe4e6" stroke="#be123c"/>
 <text x="462" y="509" font-size="11.4" fill="#be123c" text-anchor="middle" font-weight="700">核能</text>
 <text x="408" y="546" font-size="10.6" fill="#0f172a" text-anchor="start" font-weight="600">原子核结合能</text>
 <text x="408" y="576" font-size="11.6" fill="#be123c" text-anchor="start" font-weight="700">ΔE = Δm·c²</text>
-<text x="408" y="610" font-size="10.2" fill="#1e293b" text-anchor="start">例：太阳、核电站、放射性</text>
-<text x="408" y="636" font-size="9.8" fill="#64748b" text-anchor="start">单位：焦耳（J）</text>
+<text x="408" y="610" font-size="10.5" fill="#1e293b" text-anchor="start">例：太阳、核电站、放射性</text>
+<text x="408" y="636" font-size="10.5" fill="#64748b" text-anchor="start">单位：焦耳（J）</text>
 <rect x="20" y="662" width="720" height="40" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
 <text x="36" y="688" font-size="10.8" fill="#475569" text-anchor="start">分类是方便记账，不是物理壁垒：电池里是化学势能，灯泡把它变成光与热。</text>
 </svg>

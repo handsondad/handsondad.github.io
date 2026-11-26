@@ -42,37 +42,37 @@
 <line x1="380.0" y1="150.0" x2="126.0" y2="190.0" stroke="#e2e8f0" stroke-width="1.2" stroke-linecap="round"/>
 <rect x="60" y="190" width="132" height="66" rx="8" fill="#ffe9ee" stroke="#be123c" stroke-width="1.4"/>
 <text x="126" y="216" font-size="11.4" fill="#be123c" text-anchor="middle" font-weight="700">腰果</text>
-<text x="126" y="240" font-size="9.2" fill="#1e293b" text-anchor="middle">壳油 · 腰果酸</text>
+<text x="126" y="240" font-size="10.5" fill="#1e293b" text-anchor="middle">壳油 · 腰果酸</text>
 <line x1="380.0" y1="150.0" x2="280.0" y2="190.0" stroke="#e2e8f0" stroke-width="1.2" stroke-linecap="round"/>
 <rect x="214" y="190" width="132" height="66" rx="8" fill="#ffe9ee" stroke="#be123c" stroke-width="1.4"/>
 <text x="280" y="216" font-size="11.4" fill="#be123c" text-anchor="middle" font-weight="700">毒藤</text>
-<text x="280" y="240" font-size="9.2" fill="#1e293b" text-anchor="middle">漆酚 · urushiol</text>
+<text x="280" y="240" font-size="10.5" fill="#1e293b" text-anchor="middle">漆酚 · urushiol</text>
 <line x1="380.0" y1="150.0" x2="434.0" y2="190.0" stroke="#e2e8f0" stroke-width="1.2" stroke-linecap="round"/>
 <rect x="368" y="190" width="132" height="66" rx="8" fill="#fef1e8" stroke="#c25014" stroke-width="1.4"/>
 <text x="434" y="216" font-size="11.4" fill="#c25014" text-anchor="middle" font-weight="700">芒果</text>
-<text x="434" y="240" font-size="9.2" fill="#1e293b" text-anchor="middle">果皮 · 漆酚类</text>
+<text x="434" y="240" font-size="10.5" fill="#1e293b" text-anchor="middle">果皮 · 漆酚类</text>
 <line x1="380.0" y1="150.0" x2="588.0" y2="190.0" stroke="#e2e8f0" stroke-width="1.2" stroke-linecap="round"/>
 <rect x="522" y="190" width="132" height="66" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.4"/>
 <text x="588" y="216" font-size="11.4" fill="#18794e" text-anchor="middle" font-weight="700">开心果</text>
-<text x="588" y="240" font-size="9.2" fill="#1e293b" text-anchor="middle">同科 · 也可过敏</text>
+<text x="588" y="240" font-size="10.5" fill="#1e293b" text-anchor="middle">同科 · 也可过敏</text>
 <rect x="20" y="296" width="352" height="232" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
 <circle cx="38" cy="319" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
 <text x="38" y="323" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">2</text>
 <text x="56" y="323" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700">为什么亲戚会有毒？</text>
-<text x="38" y="356" font-size="10.4" fill="#1e293b" text-anchor="start">同一科植物共用一套生化工具箱：</text>
-<text x="38" y="386" font-size="10.4" fill="#1e293b" text-anchor="start">把带长侧链的酚类树脂涂在表面，</text>
-<text x="38" y="416" font-size="10.4" fill="#1e293b" text-anchor="start">谁啃我，谁就沾一身疹子。</text>
-<text x="38" y="452" font-size="9.8" fill="#475569" text-anchor="start">这不是巧合，是共同祖先传下来的防御策略。</text>
-<text x="38" y="484" font-size="10.2" fill="#18794e" text-anchor="start" font-weight="600">果仁把这套武器封在壳的油箱里。</text>
+<text x="38" y="356" font-size="10.5" fill="#1e293b" text-anchor="start">同一科植物共用一套生化工具箱：</text>
+<text x="38" y="386" font-size="10.5" fill="#1e293b" text-anchor="start">把带长侧链的酚类树脂涂在表面，</text>
+<text x="38" y="416" font-size="10.5" fill="#1e293b" text-anchor="start">谁啃我，谁就沾一身疹子。</text>
+<text x="38" y="452" font-size="10.5" fill="#475569" text-anchor="start">这不是巧合，是共同祖先传下来的防御策略。</text>
+<text x="38" y="484" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="600">果仁把这套武器封在壳的油箱里。</text>
 <rect x="388" y="296" width="352" height="232" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
 <circle cx="406" cy="319" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
 <text x="406" y="323" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">3</text>
 <text x="424" y="323" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700">毒性只在外面，不在果仁</text>
-<text x="406" y="356" font-size="10.2" fill="#1e293b" text-anchor="start">腰果仁本身不含腰果酸，正常食用安全。</text>
-<text x="406" y="386" font-size="10.2" fill="#1e293b" text-anchor="start">危险发生在剥壳：毒油沾到皮肤和果仁。</text>
-<text x="406" y="416" font-size="10.2" fill="#be123c" text-anchor="start">症状：灼痛、红肿、水疱，类似毒藤。</text>
-<text x="406" y="452" font-size="9.8" fill="#475569" text-anchor="start">误食浓 CNSL 可致消化道灼伤与化学性肺炎。</text>
-<text x="406" y="484" font-size="10.2" fill="#c25014" text-anchor="start" font-weight="600">所以工业剥壳必须高温＋防护。</text>
+<text x="406" y="356" font-size="10.5" fill="#1e293b" text-anchor="start">腰果仁本身不含腰果酸，正常食用安全。</text>
+<text x="406" y="386" font-size="10.5" fill="#1e293b" text-anchor="start">危险发生在剥壳：毒油沾到皮肤和果仁。</text>
+<text x="406" y="416" font-size="10.5" fill="#be123c" text-anchor="start">症状：灼痛、红肿、水疱，类似毒藤。</text>
+<text x="406" y="452" font-size="10.5" fill="#475569" text-anchor="start">误食浓 CNSL 可致消化道灼伤与化学性肺炎。</text>
+<text x="406" y="484" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="600">所以工业剥壳必须高温＋防护。</text>
 <rect x="20" y="542" width="720" height="40" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
-<text x="36" y="568" font-size="10.4" fill="#475569" text-anchor="start">“同科有毒”不等于“果仁有毒”：防御化学品被封在壳里，果仁只是被保护的种子。</text>
+<text x="36" y="568" font-size="10.5" fill="#475569" text-anchor="start">“同科有毒”不等于“果仁有毒”：防御化学品被封在壳里，果仁只是被保护的种子。</text>
 </svg>
