@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="568" viewBox="0 0 760 568" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">腰果仁营养成分与Ana过敏蛋白对照图</title>
+<desc id="desc">左表列出每100克腰果仁热量553千卡脂肪43.8克蛋白质18.2克碳水30.2克镁约260毫克铜约1.66毫克并注一小把28克约155千卡，右表列出Ana o 1七S球蛋白Ana o 2十一S球蛋白Ana o 3二S白蛋白及IgE介导过敏症状与开心果交叉反应，底栏区分毒壳外毒与果仁内敏。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="567" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">果仁很营养，但也是“顶级过敏原”：营养密度与免疫风险并存</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">每 100 g 约 553 kcal，铜、镁突出；Ana o 1/2/3 可致严重过敏。</text>
+<rect x="20" y="66" width="352" height="430" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="89" r="10.5" fill="#fdf1d8" stroke="#b45309" stroke-width="1.2"/>
+<text x="38" y="93" font-size="11.5" fill="#b45309" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="93" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700">每 100 g 腰果仁的营养账</text>
+<rect x="38" y="120" width="316" height="48" rx="6" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="50" y="140" font-size="10.2" fill="#64748b" text-anchor="start" font-weight="600">热量</text>
+<text x="50" y="159" font-size="9.2" fill="#1e293b" text-anchor="start">一小把 28 g ≈ 155 kcal</text>
+<text x="342" y="148" font-size="10.4" fill="#b45309" text-anchor="end" font-weight="700">553 kcal</text>
+<rect x="38" y="175" width="316" height="48" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+<text x="50" y="195" font-size="10.2" fill="#64748b" text-anchor="start" font-weight="600">脂肪</text>
+<text x="50" y="214" font-size="9.2" fill="#1e293b" text-anchor="start">以不饱和脂肪酸为主</text>
+<text x="342" y="203" font-size="10.4" fill="#b45309" text-anchor="end" font-weight="700">43.8 g</text>
+<rect x="38" y="230" width="316" height="48" rx="6" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="50" y="250" font-size="10.2" fill="#64748b" text-anchor="start" font-weight="600">蛋白质</text>
+<text x="50" y="269" font-size="9.2" fill="#1e293b" text-anchor="start">植物蛋白补充</text>
+<text x="342" y="258" font-size="10.4" fill="#b45309" text-anchor="end" font-weight="700">18.2 g</text>
+<rect x="38" y="285" width="316" height="48" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+<text x="50" y="305" font-size="10.2" fill="#64748b" text-anchor="start" font-weight="600">碳水化合物</text>
+<text x="50" y="324" font-size="9.2" fill="#1e293b" text-anchor="start">坚果中偏高</text>
+<text x="342" y="313" font-size="10.4" fill="#b45309" text-anchor="end" font-weight="700">30.2 g</text>
+<rect x="38" y="340" width="316" height="48" rx="6" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="50" y="360" font-size="10.2" fill="#64748b" text-anchor="start" font-weight="600">镁</text>
+<text x="50" y="379" font-size="9.2" fill="#1e293b" text-anchor="start">能量代谢与神经肌肉</text>
+<text x="342" y="368" font-size="10.4" fill="#b45309" text-anchor="end" font-weight="700">约 260 mg</text>
+<rect x="38" y="395" width="316" height="48" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+<text x="50" y="415" font-size="10.2" fill="#64748b" text-anchor="start" font-weight="600">铜</text>
+<text x="50" y="434" font-size="9.2" fill="#1e293b" text-anchor="start">远超多数坚果</text>
+<text x="342" y="423" font-size="10.4" fill="#b45309" text-anchor="end" font-weight="700">约 1.66 mg</text>
+<text x="38" y="460" font-size="9.4" fill="#64748b" text-anchor="start">数据：USDA FoodData Central（ID 170566）。</text>
+<rect x="388" y="66" width="352" height="430" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="89" r="10.5" fill="#ffe9ee" stroke="#be123c" stroke-width="1.2"/>
+<text x="406" y="93" font-size="11.5" fill="#be123c" text-anchor="middle" font-weight="700">2</text>
+<text x="424" y="93" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700">三种主要过敏蛋白</text>
+<rect x="406" y="122" width="318" height="66" rx="8" fill="#ffe9ee" stroke="#be123c" stroke-width="1.2"/>
+<text x="420" y="144" font-size="11.4" fill="#be123c" text-anchor="start" font-weight="700">Ana o 1</text>
+<text x="420" y="166" font-size="9.8" fill="#1e293b" text-anchor="start">7S 球蛋白（vicilin 类）</text>
+<text x="420" y="182" font-size="9.2" fill="#64748b" text-anchor="start">种子储存蛋白</text>
+<rect x="406" y="200" width="318" height="66" rx="8" fill="#ffe9ee" stroke="#be123c" stroke-width="1.2"/>
+<text x="420" y="222" font-size="11.4" fill="#be123c" text-anchor="start" font-weight="700">Ana o 2</text>
+<text x="420" y="244" font-size="9.8" fill="#1e293b" text-anchor="start">11S 球蛋白（legumin 类）</text>
+<text x="420" y="260" font-size="9.2" fill="#64748b" text-anchor="start">与豆类交叉反应</text>
+<rect x="406" y="278" width="318" height="66" rx="8" fill="#ffe9ee" stroke="#be123c" stroke-width="1.2"/>
+<text x="420" y="300" font-size="11.4" fill="#be123c" text-anchor="start" font-weight="700">Ana o 3</text>
+<text x="420" y="322" font-size="9.8" fill="#1e293b" text-anchor="start">2S 白蛋白</text>
+<text x="420" y="338" font-size="9.2" fill="#64748b" text-anchor="start">与严重过敏反应相关</text>
+<line x1="406.0" y1="362.0" x2="724.0" y2="362.0" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
+<text x="406" y="390" font-size="9.8" fill="#1e293b" text-anchor="start">机制：IgE 介导的 I 型超敏反应，症状可迅速加重。</text>
+<text x="406" y="418" font-size="9.8" fill="#be123c" text-anchor="start">从口腔瘙痒、荨麻疹到喉头水肿、过敏性休克。</text>
+<text x="406" y="448" font-size="10.0" fill="#475569" text-anchor="start">与开心果交叉反应高，两者需一同规避。</text>
+<text x="406" y="476" font-size="9.8" fill="#0f172a" text-anchor="start" font-weight="600">对坚果过敏者，彻底避免比“少量试试”安全得多。</text>
+<rect x="20" y="510" width="720" height="44" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="538" font-size="10.6" fill="#475569" text-anchor="start">毒壳的“外毒”与果仁的“内敏”是两回事：前者高温可解，后者只能靠规避。</text>
+</svg>

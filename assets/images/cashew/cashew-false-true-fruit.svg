@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="568" viewBox="0 0 760 568" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">腰果假果花梗与真果核果结构及营养对比图</title>
+<desc id="desc">左图画腰果枝条上膨大成梨形的花梗假果即腰果苹果与挂在末端的肾形真果坚果，右表比较谁膨大植物学身份能否食用维生素C约二百一十九对零点五毫克与热量约四十八对五百五十三千卡，底栏说明两者身份完全不同。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="567" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">你吃的腰果，其实是挂在“苹果”底下的种子</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">膨大的是花梗，不是子房；真正的果实是那颗肾形坚果。</text>
+<rect x="20" y="66" width="352" height="430" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="89" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="38" y="93" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="93" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">整根枝条上长着什么</text>
+<line x1="60.0" y1="290.0" x2="330.0" y2="290.0" stroke="#18794e" stroke-width="4" stroke-linecap="round"/>
+<text x="60" y="280" font-size="10" fill="#18794e" text-anchor="start" font-weight="600">枝条</text>
+<path d="M150 288 Q130 220 170 176 Q205 148 230 176 Q262 220 236 288 Z" fill="#fef1e8" stroke="#c25014" stroke-width="2"/>
+<text x="194" y="226" font-size="12" fill="#c25014" text-anchor="middle" font-weight="700">假果</text>
+<text x="194" y="246" font-size="10" fill="#1e293b" text-anchor="middle">腰果苹果</text>
+<path d="M170 300 Q160 272 190 268 Q220 264 226 288 Q232 312 204 316 Q178 320 170 300 Z" fill="#fdf1d8" stroke="#b45309" stroke-width="2"/>
+<text x="198" y="300" font-size="10" fill="#b45309" text-anchor="middle" font-weight="700">真果</text>
+<circle cx="280" cy="190" r="7" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<circle cx="300" cy="170" r="7" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<circle cx="310" cy="205" r="7" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1"/>
+<text x="268" y="236" font-size="9.8" fill="#6d28d9" text-anchor="start">花</text>
+<text x="38" y="374" font-size="10.2" fill="#1e293b" text-anchor="start">花梗先长胖成梨形“苹果”，坚果挂在它末端。</text>
+<text x="38" y="404" font-size="10.2" fill="#475569" text-anchor="start">两者是同一条枝上的相邻结构，不是“果里有果”。</text>
+<text x="38" y="436" font-size="9.8" fill="#64748b" text-anchor="start">英文：cashew apple（假果） / cashew nut（真果）。</text>
+<rect x="388" y="66" width="352" height="430" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="89" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="406" y="93" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">2</text>
+<text x="424" y="93" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">两个器官，身份完全不同</text>
+<text x="406" y="128" font-size="10" fill="#64748b" text-anchor="start" font-weight="600">比较项</text>
+<text x="520" y="128" font-size="10" fill="#c25014" text-anchor="start" font-weight="700">腰果苹果</text>
+<text x="646" y="128" font-size="10" fill="#b45309" text-anchor="start" font-weight="700">腰果仁</text>
+<rect x="404" y="146" width="330" height="40" rx="6" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="414" y="171" font-size="9.6" fill="#64748b" text-anchor="start" font-weight="600">谁膨大</text>
+<text x="506" y="171" font-size="9.6" fill="#1d6fa5" text-anchor="start" font-weight="600">花梗／花托</text>
+<text x="636" y="171" font-size="9.6" fill="#1d6fa5" text-anchor="start" font-weight="600">子房</text>
+<rect x="404" y="192" width="330" height="40" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+<text x="414" y="217" font-size="9.6" fill="#64748b" text-anchor="start" font-weight="600">植物学</text>
+<text x="506" y="217" font-size="9.6" fill="#18794e" text-anchor="start" font-weight="600">附属果（假果）</text>
+<text x="636" y="217" font-size="9.6" fill="#18794e" text-anchor="start" font-weight="600">核果（真果）</text>
+<rect x="404" y="238" width="330" height="40" rx="6" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="414" y="263" font-size="9.6" fill="#64748b" text-anchor="start" font-weight="600">能不能吃</text>
+<text x="506" y="263" font-size="9.6" fill="#c25014" text-anchor="start" font-weight="600">能，多汁但极易腐</text>
+<text x="636" y="263" font-size="9.6" fill="#c25014" text-anchor="start" font-weight="600">果仁能，带毒壳不能</text>
+<rect x="404" y="284" width="330" height="40" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+<text x="414" y="309" font-size="9.6" fill="#64748b" text-anchor="start" font-weight="600">维生素 C</text>
+<text x="506" y="309" font-size="9.6" fill="#be123c" text-anchor="start" font-weight="600">约 219 mg/100g</text>
+<text x="636" y="309" font-size="9.6" fill="#be123c" text-anchor="start" font-weight="600">约 0.5 mg/100g</text>
+<rect x="404" y="330" width="330" height="40" rx="6" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="414" y="355" font-size="9.6" fill="#64748b" text-anchor="start" font-weight="600">热量</text>
+<text x="506" y="355" font-size="9.6" fill="#b45309" text-anchor="start" font-weight="600">约 48 kcal/100g</text>
+<text x="636" y="355" font-size="9.6" fill="#b45309" text-anchor="start" font-weight="600">约 553 kcal/100g</text>
+<text x="406" y="426" font-size="10.0" fill="#475569" text-anchor="start">维 C 差 400 多倍：一个补维生素，一个补脂肪热量。</text>
+<rect x="20" y="510" width="720" height="44" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="538" font-size="10.6" fill="#475569" text-anchor="start">所以“腰果是什么果”要看你指哪一个：甜蜜多汁的那个是假果，硬壳月牙才是植物学意义上的真果。</text>
+</svg>

@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="568" viewBox="0 0 760 568" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">腰果壳蜂窝夹层与腰果壳油CNSL成分结构图</title>
+<desc id="desc">左图剖开腰果壳显示外壳蜂窝夹层与内壳三层结构，夹层灌满占壳重百分之十五到三十的腰果壳油并包着果仁；右图列出腰果酸约百分之六十到七十、腰果酚约百分之十到二十与腰果二酚少量，说明烷基酚穿透皮肤引发接触性皮炎且与漆酚同源加热脱羧变腰果酚。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="567" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">腰果壳不是“硬壳”，而是一灌满腐蚀油的蜂窝夹层</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">果壳液 CNSL 占壳重 15%–30%，主成分是腰果酸。</text>
+<rect x="20" y="66" width="352" height="430" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="89" r="10.5" fill="#ffe9ee" stroke="#be123c" stroke-width="1.2"/>
+<text x="38" y="93" font-size="11.5" fill="#be123c" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="93" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">剖开一层壳看夹层</text>
+<rect x="60" y="150" width="270" height="22" rx="6" fill="#475569" stroke="#0f172a" stroke-width="1"/>
+<text x="74" y="166" font-size="9.8" fill="#ffffff" text-anchor="start" font-weight="600">坚硬外壳</text>
+<rect x="60" y="172" width="270" height="84" fill="#ffe9ee" stroke="#be123c" stroke-width="1.4"/>
+<circle cx="78" cy="194" r="14" fill="#ffffff" stroke="#be123c" stroke-width="1.2"/>
+<circle cx="115" cy="194" r="14" fill="#ffffff" stroke="#be123c" stroke-width="1.2"/>
+<circle cx="152" cy="194" r="14" fill="#ffffff" stroke="#be123c" stroke-width="1.2"/>
+<circle cx="189" cy="194" r="14" fill="#ffffff" stroke="#be123c" stroke-width="1.2"/>
+<circle cx="226" cy="194" r="14" fill="#ffffff" stroke="#be123c" stroke-width="1.2"/>
+<circle cx="263" cy="194" r="14" fill="#ffffff" stroke="#be123c" stroke-width="1.2"/>
+<circle cx="300" cy="194" r="14" fill="#ffffff" stroke="#be123c" stroke-width="1.2"/>
+<circle cx="96" cy="234" r="14" fill="#ffffff" stroke="#be123c" stroke-width="1.2"/>
+<circle cx="133" cy="234" r="14" fill="#ffffff" stroke="#be123c" stroke-width="1.2"/>
+<circle cx="170" cy="234" r="14" fill="#ffffff" stroke="#be123c" stroke-width="1.2"/>
+<circle cx="207" cy="234" r="14" fill="#ffffff" stroke="#be123c" stroke-width="1.2"/>
+<circle cx="244" cy="234" r="14" fill="#ffffff" stroke="#be123c" stroke-width="1.2"/>
+<circle cx="281" cy="234" r="14" fill="#ffffff" stroke="#be123c" stroke-width="1.2"/>
+<circle cx="318" cy="234" r="14" fill="#ffffff" stroke="#be123c" stroke-width="1.2"/>
+<text x="196" y="278" font-size="10.6" fill="#be123c" text-anchor="middle" font-weight="700">蜂窝夹层：灌满 CNSL 毒油</text>
+<rect x="60" y="288" width="270" height="18" rx="5" fill="#475569" stroke="#0f172a" stroke-width="1"/>
+<path d="M110 342 Q100 312 140 308 Q186 304 196 330 Q206 356 166 362 Q122 368 110 342 Z" fill="#fdf1d8" stroke="#b45309" stroke-width="2"/>
+<text x="152" y="340" font-size="11" fill="#b45309" text-anchor="middle" font-weight="700">果仁</text>
+<text x="38" y="394" font-size="10.2" fill="#1e293b" text-anchor="start">夹层在两层硬壳之间：压碎壳，毒油立刻渗到手和果仁上。</text>
+<text x="38" y="424" font-size="10.4" fill="#be123c" text-anchor="start" font-weight="600">这就是腰果从不带壳卖的原因。</text>
+<text x="38" y="454" font-size="9.6" fill="#64748b" text-anchor="start">示意图按结构层次绘制，比例非真实尺寸。</text>
+<rect x="388" y="66" width="352" height="430" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="89" r="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="406" y="93" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">2</text>
+<text x="424" y="93" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">CNSL 里到底有什么</text>
+<text x="406" y="136" font-size="10.2" fill="#be123c" text-anchor="start" font-weight="600">腰果酸 anacardic acid</text>
+<rect x="406" y="144" width="300" height="16" rx="8" fill="#f1f5f9"/>
+<rect x="406" y="144" width="195.0" height="16" rx="8" fill="#be123c"/>
+<text x="718" y="136" font-size="9.8" fill="#be123c" text-anchor="end" font-weight="700">约 60%–70%</text>
+<text x="406" y="198" font-size="10.2" fill="#c25014" text-anchor="start" font-weight="600">腰果酚 cardanol</text>
+<rect x="406" y="206" width="300" height="16" rx="8" fill="#f1f5f9"/>
+<rect x="406" y="206" width="45.0" height="16" rx="8" fill="#c25014"/>
+<text x="718" y="198" font-size="9.8" fill="#c25014" text-anchor="end" font-weight="700">约 10%–20%</text>
+<text x="406" y="260" font-size="10.2" fill="#6d28d9" text-anchor="start" font-weight="600">腰果二酚 cardol</text>
+<rect x="406" y="268" width="300" height="16" rx="8" fill="#f1f5f9"/>
+<rect x="406" y="268" width="24.0" height="16" rx="8" fill="#6d28d9"/>
+<text x="718" y="260" font-size="9.8" fill="#6d28d9" text-anchor="end" font-weight="700">少量</text>
+<line x1="406.0" y1="318.0" x2="724.0" y2="318.0" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
+<text x="406" y="344" font-size="10.2" fill="#1e293b" text-anchor="start">关键机制：长侧链烷基酚能穿透皮肤，引发接触性皮炎。</text>
+<text x="406" y="372" font-size="10.2" fill="#be123c" text-anchor="start" font-weight="600">它是漆酚（urushiol）的酸式近亲——毒藤的同源物。</text>
+<text x="406" y="402" font-size="10.0" fill="#475569" text-anchor="start">加热后腰果酸脱羧变成腰果酚，毒性大减，还成了工业原料。</text>
+<text x="406" y="432" font-size="10.4" fill="#0f766e" text-anchor="start" font-weight="700">一份毒油，既是危害也是资源。</text>
+<rect x="20" y="510" width="720" height="44" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="538" font-size="10.6" fill="#475569" text-anchor="start">记住结构就好懂了：壳是油箱，果仁是被油箱包着的食品——只要油不漏进来，果仁本身是安全的。</text>
+</svg>

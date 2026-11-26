@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="590" viewBox="0 0 760 590" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">FSD v15扩散模型从噪声生成街景画面流程图</title>
+<desc id="desc">顶部四环节从上一帧画面加噪声UVE条件去噪到当前帧画面并配点阵小图示，左下算八帧除以三十六帧每秒约零点二二秒的更新时长及马斯克承认延迟并提穿插注入降约百分之三十五，右下写生成分支只占AI4一半TRIP加速器INT8量化二十八步模拟softmax且比3D渲染省算力但画面偶尔变形，底栏总结生成替代渲染换来了延迟与幻觉。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="589" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">Reality View 怎么“画”出一帧：从上一帧出发，加噪声再去噪</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">条件均值流模型逐段更新，每段输出 8 帧、36 fps 的视频。</text>
+<rect x="20" y="66" width="720" height="200" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="89" r="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="38" y="93" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="93" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">一次生成的四个环节</text>
+<rect x="36" y="132" width="150" height="84" rx="8" fill="#f1f5f9" stroke="#6d28d9" stroke-width="1.6"/>
+<text x="111" y="160" font-size="10.8" fill="#6d28d9" text-anchor="middle" font-weight="700">上一帧画面</text>
+<text x="111" y="184" font-size="8.8" fill="#1e293b" text-anchor="middle">已有的 reality-view 输出</text>
+<circle cx="114" cy="200" r="2.2" fill="#6d28d9" fill-opacity="1"/>
+<circle cx="114" cy="204" r="2.2" fill="#6d28d9" fill-opacity="1"/>
+<circle cx="114" cy="208" r="2.2" fill="#6d28d9" fill-opacity="1"/>
+<circle cx="124" cy="200" r="2.2" fill="#6d28d9" fill-opacity="1"/>
+<circle cx="124" cy="204" r="2.2" fill="#6d28d9" fill-opacity="1"/>
+<circle cx="124" cy="208" r="2.2" fill="#6d28d9" fill-opacity="1"/>
+<circle cx="134" cy="200" r="2.2" fill="#6d28d9" fill-opacity="1"/>
+<circle cx="134" cy="204" r="2.2" fill="#6d28d9" fill-opacity="1"/>
+<circle cx="134" cy="208" r="2.2" fill="#6d28d9" fill-opacity="1"/>
+<circle cx="144" cy="200" r="2.2" fill="#6d28d9" fill-opacity="1"/>
+<circle cx="144" cy="204" r="2.2" fill="#6d28d9" fill-opacity="1"/>
+<circle cx="144" cy="208" r="2.2" fill="#6d28d9" fill-opacity="1"/>
+<path d="M188 174 L238 174" stroke="#475569" stroke-width="1.6" fill="none" marker-end="url(#arr-blue)"/>
+<rect x="206" y="132" width="150" height="84" rx="8" fill="#f1f5f9" stroke="#be123c" stroke-width="1.6"/>
+<text x="281" y="160" font-size="10.8" fill="#be123c" text-anchor="middle" font-weight="700">加入噪声</text>
+<text x="281" y="184" font-size="8.8" fill="#1e293b" text-anchor="middle">把画面打散成随机点</text>
+<circle cx="284" cy="200" r="2.2" fill="#475569" fill-opacity="0.3"/>
+<circle cx="284" cy="204" r="2.2" fill="#475569" fill-opacity="0.3"/>
+<circle cx="284" cy="208" r="2.2" fill="#475569" fill-opacity="0.3"/>
+<circle cx="294" cy="200" r="2.2" fill="#475569" fill-opacity="0.3"/>
+<circle cx="294" cy="204" r="2.2" fill="#475569" fill-opacity="0.3"/>
+<circle cx="294" cy="208" r="2.2" fill="#475569" fill-opacity="0.3"/>
+<circle cx="304" cy="200" r="2.2" fill="#475569" fill-opacity="0.3"/>
+<circle cx="304" cy="204" r="2.2" fill="#475569" fill-opacity="0.3"/>
+<circle cx="304" cy="208" r="2.2" fill="#475569" fill-opacity="0.3"/>
+<circle cx="314" cy="200" r="2.2" fill="#475569" fill-opacity="0.3"/>
+<circle cx="314" cy="204" r="2.2" fill="#475569" fill-opacity="0.3"/>
+<circle cx="314" cy="208" r="2.2" fill="#475569" fill-opacity="0.3"/>
+<path d="M358 174 L408 174" stroke="#475569" stroke-width="1.6" fill="none" marker-end="url(#arr-blue)"/>
+<rect x="376" y="132" width="150" height="84" rx="8" fill="#f1f5f9" stroke="#1d6fa5" stroke-width="1.6"/>
+<text x="451" y="160" font-size="10.8" fill="#1d6fa5" text-anchor="middle" font-weight="700">UVE 条件去噪</text>
+<text x="451" y="184" font-size="8.8" fill="#1e293b" text-anchor="middle">特征引导一步步还原</text>
+<circle cx="454" cy="200" r="2.2" fill="#475569" fill-opacity="0.6"/>
+<circle cx="454" cy="204" r="2.2" fill="#475569" fill-opacity="0.6"/>
+<circle cx="454" cy="208" r="2.2" fill="#475569" fill-opacity="0.6"/>
+<circle cx="464" cy="200" r="2.2" fill="#475569" fill-opacity="0.6"/>
+<circle cx="464" cy="204" r="2.2" fill="#475569" fill-opacity="0.6"/>
+<circle cx="464" cy="208" r="2.2" fill="#475569" fill-opacity="0.6"/>
+<circle cx="474" cy="200" r="2.2" fill="#475569" fill-opacity="0.6"/>
+<circle cx="474" cy="204" r="2.2" fill="#475569" fill-opacity="0.6"/>
+<circle cx="474" cy="208" r="2.2" fill="#475569" fill-opacity="0.6"/>
+<circle cx="484" cy="200" r="2.2" fill="#475569" fill-opacity="0.6"/>
+<circle cx="484" cy="204" r="2.2" fill="#475569" fill-opacity="0.6"/>
+<circle cx="484" cy="208" r="2.2" fill="#475569" fill-opacity="0.6"/>
+<path d="M528 174 L578 174" stroke="#475569" stroke-width="1.6" fill="none" marker-end="url(#arr-blue)"/>
+<rect x="546" y="132" width="150" height="84" rx="8" fill="#f1f5f9" stroke="#18794e" stroke-width="1.6"/>
+<text x="621" y="160" font-size="10.8" fill="#18794e" text-anchor="middle" font-weight="700">当前帧画面</text>
+<text x="621" y="184" font-size="8.8" fill="#1e293b" text-anchor="middle">更新后的街景</text>
+<circle cx="624" cy="200" r="2.2" fill="#18794e" fill-opacity="1"/>
+<circle cx="624" cy="204" r="2.2" fill="#18794e" fill-opacity="1"/>
+<circle cx="624" cy="208" r="2.2" fill="#18794e" fill-opacity="1"/>
+<circle cx="634" cy="200" r="2.2" fill="#18794e" fill-opacity="1"/>
+<circle cx="634" cy="204" r="2.2" fill="#18794e" fill-opacity="1"/>
+<circle cx="634" cy="208" r="2.2" fill="#18794e" fill-opacity="1"/>
+<circle cx="644" cy="200" r="2.2" fill="#18794e" fill-opacity="1"/>
+<circle cx="644" cy="204" r="2.2" fill="#18794e" fill-opacity="1"/>
+<circle cx="644" cy="208" r="2.2" fill="#18794e" fill-opacity="1"/>
+<circle cx="654" cy="200" r="2.2" fill="#18794e" fill-opacity="1"/>
+<circle cx="654" cy="204" r="2.2" fill="#18794e" fill-opacity="1"/>
+<circle cx="654" cy="208" r="2.2" fill="#18794e" fill-opacity="1"/>
+<rect x="20" y="282" width="352" height="240" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="305" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="38" y="309" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">2</text>
+<text x="56" y="309" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700">一笔“帧率账”</text>
+<text x="38" y="344" font-size="10.4" fill="#1e293b" text-anchor="start">每次生成 8 帧视频，帧率 36 fps：</text>
+<text x="38" y="380" font-size="11" fill="#1d6fa5" text-anchor="start" font-weight="700">一段时长 = 8 ÷ 36 ≈ 0.22 秒</text>
+<text x="38" y="414" font-size="10.2" fill="#1e293b" text-anchor="start">也就是说，屏幕画面每 0.22 秒更新一小段。</text>
+<text x="38" y="450" font-size="10.0" fill="#be123c" text-anchor="start">马斯克 11 月 24 日承认画面延迟，</text>
+<text x="38" y="478" font-size="10.0" fill="#be123c" text-anchor="start" font-weight="600">提出穿插注入 UVE 特征可降约 35%。</text>
+<rect x="388" y="282" width="352" height="240" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="305" r="10.5" fill="#fdf1d8" stroke="#b45309" stroke-width="1.2"/>
+<text x="406" y="309" font-size="11.5" fill="#b45309" text-anchor="middle" font-weight="700">3</text>
+<text x="424" y="309" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700">一笔“算力账”</text>
+<text x="406" y="344" font-size="10.2" fill="#1e293b" text-anchor="start">生成分支只占 AI4 上SoC 的一半 TRIP 加速器。</text>
+<text x="406" y="378" font-size="10.2" fill="#1e293b" text-anchor="start">用 INT8 量化、28 步模拟 softmax。</text>
+<text x="406" y="414" font-size="10.2" fill="#b45309" text-anchor="start">特斯拉称比原来的 3D 渲染方案更省算力。</text>
+<text x="406" y="450" font-size="10.0" fill="#be123c" text-anchor="start">代价是“画的”不等于“真的”：</text>
+<text x="406" y="478" font-size="10.0" fill="#be123c" text-anchor="start" font-weight="600">已有车主发现画面偶尔变形或多出物体。</text>
+<rect x="20" y="536" width="720" height="40" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="562" font-size="10.4" fill="#475569" text-anchor="start">把扩散模型放进车机，本质上是用“生成”替代“渲染”：省算力、能补遮挡，但换来延迟和“幻觉”。</text>
+</svg>

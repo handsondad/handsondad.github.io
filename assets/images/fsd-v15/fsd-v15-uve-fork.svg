@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="592" viewBox="0 0 760 592" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">FSD v15通用视觉编码器UVE双支路架构图</title>
+<desc id="desc">顶部流程从八路摄像头进入UVE通用视觉编码器再分叉到约三十亿参数驾驶网络输出转向加减速换挡与约十亿参数扩散模型输出中控屏街景，左下解释复用UVE省掉前端编码开销且画面与决策同源，右下解释屏幕不是摄像头直显而是生成模型补出遮挡叠加意图但存在画错与约零点二二秒延迟的代价。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="591" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">同一份视觉特征，两条支路：3B 管开车，1B 管画画</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">UVE 以约 18 Hz 向两条下游支路供给特征，屏幕画面与驾驶决策同源。</text>
+<rect x="20" y="66" width="720" height="218" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="89" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="38" y="93" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="93" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">从摄像头到两条支路</text>
+<rect x="40" y="150" width="100" height="60" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="1.4"/>
+<text x="90" y="176" font-size="10.6" fill="#475569" text-anchor="middle" font-weight="700">8 路摄像头</text>
+<text x="90" y="196" font-size="9.2" fill="#64748b" text-anchor="middle">纯视觉输入</text>
+<path d="M142 180 L188 180" stroke="#475569" stroke-width="1.6" fill="none" marker-end="url(#arr-blue)"/>
+<rect x="190" y="146" width="136" height="68" rx="8" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.6"/>
+<text x="258" y="172" font-size="12" fill="#1d6fa5" text-anchor="middle" font-weight="700">UVE</text>
+<text x="258" y="194" font-size="9.4" fill="#1e293b" text-anchor="middle">通用视觉编码器</text>
+<path d="M328 180 Q360 180 360 140 L390 140" stroke="#18794e" stroke-width="1.8" fill="none" marker-end="url(#arr-green)"/>
+<path d="M328 180 Q360 180 360 228 L390 228" stroke="#6d28d9" stroke-width="1.8" fill="none" marker-end="url(#arr-blue)"/>
+<text x="352" y="128" font-size="9.2" fill="#64748b" text-anchor="start">特征分叉</text>
+<rect x="392" y="112" width="150" height="60" rx="8" fill="#e7f6ee" stroke="#18794e" stroke-width="1.6"/>
+<text x="467" y="136" font-size="10.6" fill="#18794e" text-anchor="middle" font-weight="700">驾驶网络 · 3B</text>
+<text x="467" y="156" font-size="9.0" fill="#1e293b" text-anchor="middle">转向 / 加减速 / 换挡</text>
+<path d="M544 142 L588 142" stroke="#18794e" stroke-width="1.6" fill="none" marker-end="url(#arr-green)"/>
+<text x="636" y="146" font-size="10.4" fill="#18794e" text-anchor="start" font-weight="700">开动汽车</text>
+<rect x="392" y="200" width="150" height="60" rx="8" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.6"/>
+<text x="467" y="224" font-size="10.6" fill="#6d28d9" text-anchor="middle" font-weight="700">扩散模型 · 1B</text>
+<text x="467" y="244" font-size="9.0" fill="#1e293b" text-anchor="middle">条件均值流 / 去噪</text>
+<path d="M544 230 L588 230" stroke="#6d28d9" stroke-width="1.6" fill="none" marker-end="url(#arr-blue)"/>
+<text x="636" y="234" font-size="10.4" fill="#6d28d9" text-anchor="start" font-weight="700">屏幕上街景</text>
+<rect x="20" y="300" width="352" height="224" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="323" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="38" y="327" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">2</text>
+<text x="56" y="327" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700">为什么要复用 UVE</text>
+<text x="38" y="360" font-size="10.2" fill="#1e293b" text-anchor="start">编码多路高清视频本来就是最吃算力的活。</text>
+<text x="38" y="390" font-size="10.2" fill="#1e293b" text-anchor="start">Reality View 直接接在 UVE 输出端，</text>
+<text x="38" y="420" font-size="10.2" fill="#1e293b" text-anchor="start">省掉整套前端编码开销。</text>
+<text x="38" y="456" font-size="10.0" fill="#18794e" text-anchor="start">画面与决策同源：屏幕上的坑洼和障碍，</text>
+<text x="38" y="484" font-size="10.0" fill="#18794e" text-anchor="start" font-weight="600">正是驾驶网络当下识别到的东西。</text>
+<rect x="388" y="300" width="352" height="224" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="323" r="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="406" y="327" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">3</text>
+<text x="424" y="327" font-size="11.6" fill="#0f172a" text-anchor="start" font-weight="700">为什么屏幕不是摄像头直显</text>
+<text x="406" y="360" font-size="10.2" fill="#1e293b" text-anchor="start">• 摄像头没有“车顶上方”这个视角</text>
+<text x="406" y="390" font-size="10.2" fill="#1e293b" text-anchor="start">• 生成模型能补出被遮挡的合理场景</text>
+<text x="406" y="420" font-size="10.2" fill="#1e293b" text-anchor="start">• 可叠加路径箭头、目标车位等意图</text>
+<text x="406" y="456" font-size="10.0" fill="#be123c" text-anchor="start">代价：画面是“模型相信的世界”，</text>
+<text x="406" y="484" font-size="10.0" fill="#be123c" text-anchor="start" font-weight="600">可能画错，也有约 0.22 秒延迟。</text>
+<rect x="20" y="538" width="720" height="40" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="564" font-size="10.4" fill="#475569" text-anchor="start">关键洞察：v15 没有造一个新模型来画画，而是从现成的驾驶感知流水线上“分叉”出画面——这是它能塞进车机的根本。</text>
+</svg>
