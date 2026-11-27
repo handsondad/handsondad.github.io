@@ -70,7 +70,7 @@ description: 和孩子一起玩游戏、读故事、探索身体与科学，也�
         <div class="post-grid">
           {% assign recent_posts = site.posts | where_exp: 'post', 'post.hidden != true' %}
           {% assign post_tones = 'peach,blue,sage,lavender,butter,rose,peach,blue' | split: ',' %}
-          {% for post in recent_posts limit: 8 %}
+          {% for post in recent_posts limit: 3 %}
           <a class="post-card tone-{{ post_tones[forloop.index0] }}" href="{{ post.url | relative_url }}">
             <time datetime="{{ post.date | date_to_xmlschema }}">📝 {{ post.date | date: '%Y.%m.%d' }}</time>
             <h3>{{ post.title | escape }}</h3>

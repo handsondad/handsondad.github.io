@@ -33,7 +33,7 @@
 <rect x="0.5" y="0.5" width="759" height="627" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
 <text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">反证法四步：假设 ω &lt; 9/4，去重网络会被压得太便宜</text>
 <text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">同一批张量网络，一边被压到 O(w^η)，另一边必须有 Ω(w^σ)；取 η &lt; σ 即矛盾。</text>
-<rect x="300.0" y="68.0" width="160" height="28" rx="14.0" fill="#fee9e7" stroke="#b42318" stroke-width="1" stroke-opacity="0.35"/>
+<rect x="240.0" y="68.0" width="280" height="28" rx="14.0" fill="#fee9e7" stroke="#b42318" stroke-width="1" stroke-opacity="0.35"/>
 <text x="380.0" y="87.0" font-size="11.5" fill="#b42318" text-anchor="middle" font-weight="600">假设：存在有限域 k 使 ω_k &lt; 9/4</text>
 <rect x="20" y="116" width="352" height="90" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
 <circle cx="42" cy="144" r="12" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>

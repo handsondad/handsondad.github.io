@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="592" viewBox="0 0 760 592" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">2016年姆潘巴效应对照实验与一厘米测量误差图</title>
+<desc id="desc">顶部给出三组原文实验数据初温21.8度57.3度84.7度对应降到0度时间6397秒9504秒10812秒中部用条形比较84.7度与21.8度的平均散热率比2.30和需要移走热量比3.89说明未反超底部指出探头位置差1厘米即可造成假阳性并说明结冰潜热约等于从80度冷到0度。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="591" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">2016 年那盆水：把“热水更快”变成了一个测量问题</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">下面三组数字来自 Burridge &amp; Linden 的原文实验；判据也是他们给出的。</text>
+<rect x="20" y="66" width="720" height="168" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="38" y="92" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">同一冰柜、同样 400 g 水、煮沸后放置到三个初温；降到 0°C 的时间：</text>
+<rect x="66" y="110" width="180" height="104" rx="8" fill="#f1f5f9" stroke="#e2e8f0"/>
+<rect x="124" y="126" width="64" height="52" rx="4" fill="#1d6fa5" fill-opacity="0.22" stroke="#1d6fa5"/>
+<text x="156" y="158" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">21.8°C</text>
+<text x="156" y="196" font-size="10.5" fill="#1e293b" text-anchor="middle">t₀ = 106.6 分钟</text>
+<text x="156" y="212" font-size="10.5" fill="#64748b" text-anchor="middle">（6397 秒）</text>
+<rect x="292" y="110" width="180" height="104" rx="8" fill="#f1f5f9" stroke="#e2e8f0"/>
+<rect x="350" y="126" width="64" height="52" rx="4" fill="#6d28d9" fill-opacity="0.22" stroke="#6d28d9"/>
+<text x="382" y="158" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">57.3°C</text>
+<text x="382" y="196" font-size="10.5" fill="#1e293b" text-anchor="middle">t₀ = 158.4 分钟</text>
+<text x="382" y="212" font-size="10.5" fill="#64748b" text-anchor="middle">（9504 秒）</text>
+<rect x="518" y="110" width="180" height="104" rx="8" fill="#f1f5f9" stroke="#e2e8f0"/>
+<rect x="576" y="126" width="64" height="52" rx="4" fill="#c25014" fill-opacity="0.22" stroke="#c25014"/>
+<text x="608" y="158" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">84.7°C</text>
+<text x="608" y="196" font-size="10.5" fill="#1e293b" text-anchor="middle">t₀ = 180.2 分钟</text>
+<text x="608" y="212" font-size="10.5" fill="#64748b" text-anchor="middle">（10812 秒）</text>
+<rect x="20" y="248" width="720" height="208" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="38" y="274" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">判据：热水平均散热率之比 &gt; 需要移走的热量之比，才算看到效应</text>
+<text x="38" y="312" font-size="10.5" fill="#1d6fa5" text-anchor="start">实际散热率比 Q热/Q冷</text>
+<rect x="250" y="300" width="208.0" height="18" rx="5" fill="#1d6fa5"/>
+<text x="466.0" y="313" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="700">2.30</text>
+<text x="38" y="350" font-size="10.5" fill="#c25014" text-anchor="start">需要移走的热量比 ΔT热/ΔT冷</text>
+<rect x="250" y="338" width="351.5" height="18" rx="5" fill="#c25014"/>
+<text x="609.5" y="351" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="700">3.89</text>
+<line x1="250.0" y1="372.0" x2="630.0" y2="372.0" stroke="#cbd5e1" stroke-width="1" stroke-linecap="round"/>
+<text x="38" y="404" font-size="10.5" fill="#475569" text-anchor="start">2.30 &lt; 3.89：热水没有反超；热水初温越高，到 0°C 的时间反而越长。</text>
+<text x="38" y="432" font-size="10.5" fill="#64748b" text-anchor="start">这正是论文标题的意思：“热水并不比冷水冷却得更快”。</text>
+<rect x="20" y="470" width="720" height="108" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="38" y="496" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">最容易被忽略的一行：探头位置差 1 cm，数据点就会落到“姆潘巴线”上方。</text>
+<text x="38" y="524" font-size="10.5" fill="#1e293b" text-anchor="start">把结冰过程也算进去也不救命：0°C 的水结成冰，潜热约等于把同样多的水从 80°C 冷到 0°C。</text>
+<text x="38" y="552" font-size="10.5" fill="#64748b" text-anchor="start">成核又极度依赖微小杂质与容器缺陷，重复出的差异常与测量波动同量级。</text>
+</svg>

@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="590" viewBox="0 0 760 590" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">2025至2026年姆潘巴效应研究三条新战线图</title>
+<desc id="desc">三栏分别总结2025年冰核剂受控冻结实验发现热水冻得更深但结晶更晚2025年热主序理论给出不依赖距离度量的严格判据以及2025到2026年离子阱单量子比特与玻璃材料中的量子和类姆潘巴效应底栏强调热水先结冰不等于离平衡更远更快弛豫也不等于强姆潘巴效应。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="589" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">2025—2026：争论没有结束，但战场已经换了</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">水杯、热力学判据、量子系统、玻璃材料——四条线各自回答不同的问题。</text>
+<rect x="20" y="66" width="226" height="412" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34" y="82" width="198" height="34" rx="7" fill="#fef1e8"/>
+<text x="43" y="105" font-size="10.5" fill="#c25014" text-anchor="start" font-weight="700">① 受控冻结实验（2025）</text>
+<circle cx="42" cy="136" r="2.5" fill="#c25014"/>
+<text x="54" y="140" font-size="10.5" fill="#1e293b" text-anchor="start">冰核剂饱和冰柜，</text>
+<circle cx="42" cy="184" r="2.5" fill="#c25014"/>
+<text x="54" y="188" font-size="10.5" fill="#1e293b" text-anchor="start">消除随机过冷；</text>
+<circle cx="42" cy="232" r="2.5" fill="#c25014"/>
+<text x="54" y="236" font-size="10.5" fill="#1e293b" text-anchor="start">热水冻得更快更深，</text>
+<circle cx="42" cy="280" r="2.5" fill="#c25014"/>
+<text x="54" y="284" font-size="10.5" fill="#1e293b" text-anchor="start">但开始结晶更晚。</text>
+<circle cx="42" cy="328" r="2.5" fill="#c25014"/>
+<text x="54" y="332" font-size="10.5" fill="#1e293b" text-anchor="start">解释回到牛顿传热：</text>
+<circle cx="42" cy="376" r="2.5" fill="#c25014"/>
+<text x="54" y="380" font-size="10.5" fill="#1e293b" text-anchor="start">温差大 → 热流大。</text>
+<rect x="256" y="66" width="226" height="412" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="270" y="82" width="198" height="34" rx="7" fill="#eaf4fb"/>
+<text x="279" y="105" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="700">② 严格判据（2025）</text>
+<circle cx="278" cy="136" r="2.5" fill="#1d6fa5"/>
+<text x="290" y="140" font-size="10.5" fill="#1e293b" text-anchor="start">热主序 thermomajorization，</text>
+<circle cx="278" cy="184" r="2.5" fill="#1d6fa5"/>
+<text x="290" y="188" font-size="10.5" fill="#1e293b" text-anchor="start">不再挑一个距离度量；</text>
+<circle cx="278" cy="232" r="2.5" fill="#1d6fa5"/>
+<text x="290" y="236" font-size="10.5" fill="#1e293b" text-anchor="start">统一所有单调度量；</text>
+<circle cx="278" cy="280" r="2.5" fill="#1d6fa5"/>
+<text x="290" y="284" font-size="10.5" fill="#1e293b" text-anchor="start">在马尔可夫动力学中，</text>
+<circle cx="278" cy="328" r="2.5" fill="#1d6fa5"/>
+<text x="290" y="332" font-size="10.5" fill="#1e293b" text-anchor="start">任意温度区间都可能</text>
+<circle cx="278" cy="376" r="2.5" fill="#1d6fa5"/>
+<text x="290" y="380" font-size="10.5" fill="#1e293b" text-anchor="start">出现该效应。</text>
+<rect x="492" y="66" width="226" height="412" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="506" y="82" width="198" height="34" rx="7" fill="#f3e8ff"/>
+<text x="515" y="105" font-size="10.5" fill="#6d28d9" text-anchor="start" font-weight="700">③ 量子与材料（2025—26）</text>
+<circle cx="514" cy="136" r="2.5" fill="#6d28d9"/>
+<text x="526" y="140" font-size="10.5" fill="#1e293b" text-anchor="start">离子阱 qutrit 观测</text>
+<circle cx="514" cy="184" r="2.5" fill="#6d28d9"/>
+<text x="526" y="188" font-size="10.5" fill="#1e293b" text-anchor="start">量子强姆潘巴效应；</text>
+<circle cx="514" cy="232" r="2.5" fill="#6d28d9"/>
+<text x="526" y="236" font-size="10.5" fill="#1e293b" text-anchor="start">单量子比特用消相干</text>
+<circle cx="514" cy="280" r="2.5" fill="#6d28d9"/>
+<text x="526" y="284" font-size="10.5" fill="#1e293b" text-anchor="start">切断最慢衰减模；</text>
+<circle cx="514" cy="328" r="2.5" fill="#6d28d9"/>
+<text x="526" y="332" font-size="10.5" fill="#1e293b" text-anchor="start">玻璃中经 β 弛豫</text>
+<circle cx="514" cy="376" r="2.5" fill="#6d28d9"/>
+<text x="526" y="380" font-size="10.5" fill="#1e293b" text-anchor="start">发现类姆潘巴老化。</text>
+<rect x="20" y="492" width="720" height="86" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="38" y="518" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">不能画等号：热水先结冰 ≠ 离平衡更远却更快弛豫 ≠ 强姆潘巴效应。</text>
+<text x="38" y="546" font-size="10.5" fill="#475569" text-anchor="start">“强”有严格含义：让初态与最慢衰减模的重叠为零，之后的指数衰减率由次慢模决定。</text>
+<text x="38" y="570" font-size="10.5" fill="#64748b" text-anchor="start">前面三张图讲的是一杯水；这一张讲的是同一个名字下的推广与重新定义。</text>
+</svg>

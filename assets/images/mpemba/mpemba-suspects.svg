@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="590" viewBox="0 0 760 590" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">姆潘巴效应四种经典解释及其边界图</title>
+<desc id="desc">四张卡片分别列出蒸发自然对流溶解气体与过冷的作用机制和各自边界其中过冷卡片指出2025年受控实验中热水更晚开始结晶却冻得更深底栏强调杯底霜容器探头高度等实验变量并指出探头差1厘米足以造成假阳性。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="589" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">四个最常被点名的“嫌疑人”，以及各自的边界</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">它们确实都会改变冷却或结冰；难点在于，单独拿出哪一个都难以稳定解释全部实验。</text>
+<rect x="20" y="66" width="352" height="200" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="36" y="82" width="316" height="30" rx="7" fill="#fef1e8"/>
+<text x="50" y="103" font-size="11.8" fill="#c25014" text-anchor="start" font-weight="700">① 蒸发</text>
+<text x="50" y="142" font-size="10.5" fill="#1e293b" text-anchor="start">热水蒸发更快：水量变少，</text>
+<text x="50" y="164" font-size="10.5" fill="#1e293b" text-anchor="start">汽化潜热也直接带走能量。</text>
+<line x1="50.0" y1="192.0" x2="342.0" y2="192.0" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
+<text x="50" y="216" font-size="10.5" fill="#64748b" text-anchor="start">但密闭容器会堵住这条通道；</text>
+<text x="50" y="238" font-size="10.5" fill="#64748b" text-anchor="start">失水量通常不足以解释大幅反超。</text>
+<rect x="388" y="66" width="352" height="200" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="404" y="82" width="316" height="30" rx="7" fill="#eaf4fb"/>
+<text x="418" y="103" font-size="11.8" fill="#1d6fa5" text-anchor="start" font-weight="700">② 自然对流</text>
+<text x="418" y="142" font-size="10.5" fill="#1e293b" text-anchor="start">温差越大，浮力驱动越强，</text>
+<text x="418" y="164" font-size="10.5" fill="#1e293b" text-anchor="start">杯内翻滚把热量送到杯壁。</text>
+<line x1="418.0" y1="192.0" x2="710.0" y2="192.0" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
+<text x="418" y="216" font-size="10.5" fill="#64748b" text-anchor="start">但对流标度分析显示：在同一</text>
+<text x="418" y="238" font-size="10.5" fill="#64748b" text-anchor="start">标度下，热水到 0°C 仍更慢。</text>
+<rect x="20" y="286" width="352" height="200" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="36" y="302" width="316" height="30" rx="7" fill="#f3e8ff"/>
+<text x="50" y="323" font-size="11.8" fill="#6d28d9" text-anchor="start" font-weight="700">③ 溶解气体</text>
+<text x="50" y="362" font-size="10.5" fill="#1e293b" text-anchor="start">加热赶走溶解空气，改变</text>
+<text x="50" y="384" font-size="10.5" fill="#1e293b" text-anchor="start">成核条件与局部导热。</text>
+<line x1="50.0" y1="412.0" x2="342.0" y2="412.0" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
+<text x="50" y="436" font-size="10.5" fill="#64748b" text-anchor="start">主要影响“什么时候开始结冰”，</text>
+<text x="50" y="458" font-size="10.5" fill="#64748b" text-anchor="start">不等于“谁先降到 0°C”。</text>
+<rect x="388" y="286" width="352" height="200" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="404" y="302" width="316" height="30" rx="7" fill="#e7f6ee"/>
+<text x="418" y="323" font-size="11.8" fill="#18794e" text-anchor="start" font-weight="700">④ 过冷</text>
+<text x="418" y="362" font-size="10.5" fill="#1e293b" text-anchor="start">水可低于 0°C 仍不结冰；</text>
+<text x="418" y="384" font-size="10.5" fill="#1e293b" text-anchor="start">谁先成核高度依赖杂质。</text>
+<line x1="418.0" y1="412.0" x2="710.0" y2="412.0" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
+<text x="418" y="436" font-size="10.5" fill="#64748b" text-anchor="start">2025 年受控实验里，热水反而</text>
+<text x="418" y="458" font-size="10.5" fill="#64748b" text-anchor="start">更晚开始结晶，却冻得更深。</text>
+<rect x="20" y="500" width="720" height="78" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="38" y="526" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">别忘了第五类变量：杯底霜层、容器材质、探头高度、开关门次数。</text>
+<text x="38" y="554" font-size="10.5" fill="#475569" text-anchor="start">2016 年的实验证明：温度探头位置哪怕差 1 cm，就足以把“没效应”读成“有效应”。</text>
+</svg>

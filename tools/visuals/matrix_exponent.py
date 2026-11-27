@@ -265,8 +265,8 @@ def build_tensor_triangle() -> str:
     els.append(txt(406, 356, "秩 r 分解：三点各自做线性映射，", size=10.5, color=BODY))
     els.append(txt(406, 380, "只看同一个标签 ℓ ∈ [r]。", size=10.5, color=BODY))
     els.append(f'<rect x="406" y="398" width="316" height="62" rx="7" fill="{RED_SOFT}" stroke="{RED}"/>')
-    els.append(txt(418, 423, "周长 × log₂n  ≤  D × log₂r", size=11.5, color=RED, anchor="middle", weight="700"))
-    els.append(txt(418, 448, "⇒ 指数 ≥ 三角形周长 ÷ 标签率 D", size=10.5, color=BODY, anchor="middle"))
+    els.append(txt(564, 423, "周长 × log₂n  ≤  D × log₂r", size=11.5, color=RED, anchor="middle", weight="700"))
+    els.append(txt(564, 448, "⇒ 指数 ≥ 三角形周长 ÷ 标签率 D", size=10.5, color=BODY, anchor="middle"))
 
     els.append(card(20, 500, 720, 72, fill=SLATE_SOFT, stroke=BORDER))
     els.append(txt(38, 526, "这就是“尺子”：把张量下标摆进一个有距离概念的空间，指数就变成几何比值。", size=11.2, color=INK, weight="700"))
@@ -349,7 +349,7 @@ def build_contradiction() -> str:
         )
     )
 
-    els.append(pill(300, 68, "假设：存在有限域 k 使 ω_k < 9/4", fg=RED, bg=RED_SOFT, w=160, h=28, size=11.5))
+    els.append(pill(240, 68, "假设：存在有限域 k 使 ω_k < 9/4", fg=RED, bg=RED_SOFT, w=280, h=28, size=11.5))
 
     parts = [
         (20, 116, "Ⅰ", "稳定排序 + 批量查表", "把 2w 个词排好，相邻比较判断是否全不同。", BLUE, BLUE_SOFT),

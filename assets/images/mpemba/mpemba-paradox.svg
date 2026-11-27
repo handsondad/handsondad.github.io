@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="590" viewBox="0 0 760 590" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">姆潘巴效应为什么需要额外机制的解释图</title>
+<desc id="desc">左栏用同一指数冷却模型示意90度热水与20度冷水降到0度的时间分别约17.9分与7.5分热水不可能反超右栏画出曲线交叉并要求蒸发对流或成核时间等额外机制底栏强调必须先定义降到0度出现第一粒冰还是完全冻结。两栏曲线均为示意非实验数据。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="589" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">问题的核心：热水必须“追上并超过”冷水，才可能先结冰</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">下面两条曲线是同一冷却模型的示意，不是实验数据；先看哪里需要额外机制。</text>
+<rect x="20" y="66" width="352" height="420" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="89" r="10.5" fill="#f1f5f9" stroke="#475569" stroke-width="1.2"/>
+<text x="38" y="93" font-size="11.5" fill="#475569" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="93" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">常识模型：同一条降温规律</text>
+<rect x="44" y="118" width="300" height="226" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+<line x1="44.0" y1="344.0" x2="344.0" y2="344.0" stroke="#cbd5e1" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="44.0" y1="118.0" x2="44.0" y2="344.0" stroke="#cbd5e1" stroke-width="1.2" stroke-linecap="round"/>
+<text x="344" y="360" font-size="10.5" fill="#64748b" text-anchor="end">时间</text>
+<text x="40" y="112" font-size="10.5" fill="#64748b" text-anchor="end">温度</text>
+<line x1="44.0" y1="306.3" x2="344.0" y2="306.3" stroke="#c25014" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="5 4"/>
+<text x="342" y="301.3" font-size="10.5" fill="#c25014" text-anchor="end">0°C</text>
+<path d="M44.0,136.8 L47.8,141.9 L51.5,146.8 L55.2,151.5 L59.0,156.2 L62.8,160.7 L66.5,165.2 L70.2,169.5 L74.0,173.7 L77.8,177.8 L81.5,181.8 L85.2,185.7 L89.0,189.6 L92.8,193.3 L96.5,196.9 L100.2,200.4 L104.0,203.9 L107.8,207.3 L111.5,210.5 L115.2,213.7 L119.0,216.9 L122.8,219.9 L126.5,222.9 L130.2,225.8 L134.0,228.6 L137.8,231.4 L141.5,234.0 L145.2,236.7 L149.0,239.2 L152.8,241.7 L156.5,244.2 L160.2,246.5 L164.0,248.8 L167.8,251.1 L171.5,253.3 L175.2,255.4 L179.0,257.5 L182.8,259.6 L186.5,261.6 L190.2,263.5 L194.0,265.4 L197.8,267.3 L201.5,269.1 L205.2,270.8 L209.0,272.5 L212.8,274.2 L216.5,275.8 L220.2,277.4 L224.0,279.0 L227.8,280.5 L231.5,282.0 L235.2,283.4 L239.0,284.8 L242.8,286.2 L246.5,287.5 L250.2,288.8 L254.0,290.1 L257.8,291.3 L261.5,292.5 L265.2,293.7 L269.0,294.8 L272.8,296.0 L276.5,297.1 L280.2,298.1 L284.0,299.2 L287.8,300.2 L291.5,301.2 L295.2,302.1 L299.0,303.1 L302.8,304.0 L306.5,304.9 L310.2,305.8 L314.0,306.6 L317.8,307.4 L321.5,308.3 L325.2,309.0 L329.0,309.8 L332.8,310.6 L336.5,311.3 L340.2,312.0 L344.0,312.7" fill="none" stroke="#c25014" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M44.0,268.7 L47.8,270.4 L51.5,272.2 L55.2,273.8 L59.0,275.5 L62.8,277.1 L66.5,278.6 L70.2,280.2 L74.0,281.6 L77.8,283.1 L81.5,284.5 L85.2,285.9 L89.0,287.2 L92.8,288.5 L96.5,289.8 L100.2,291.0 L104.0,292.3 L107.8,293.4 L111.5,294.6 L115.2,295.7 L119.0,296.8 L122.8,297.9 L126.5,298.9 L130.2,300.0 L134.0,301.0 L137.8,301.9 L141.5,302.9 L145.2,303.8 L149.0,304.7 L152.8,305.6 L156.5,306.4 L160.2,307.3 L164.0,308.1 L167.8,308.9 L171.5,309.6 L175.2,310.4 L179.0,311.1 L182.8,311.9 L186.5,312.6 L190.2,313.2 L194.0,313.9 L197.8,314.6 L201.5,315.2 L205.2,315.8 L209.0,316.4 L212.8,317.0 L216.5,317.6 L220.2,318.1 L224.0,318.7 L227.8,319.2 L231.5,319.7 L235.2,320.2 L239.0,320.7 L242.8,321.2 L246.5,321.7 L250.2,322.1 L254.0,322.6 L257.8,323.0 L261.5,323.4 L265.2,323.9 L269.0,324.3 L272.8,324.7 L276.5,325.0 L280.2,325.4 L284.0,325.8 L287.8,326.1 L291.5,326.5 L295.2,326.8 L299.0,327.2 L302.8,327.5 L306.5,327.8 L310.2,328.1 L314.0,328.4 L317.8,328.7 L321.5,329.0 L325.2,329.3 L329.0,329.5 L332.8,329.8 L336.5,330.1 L340.2,330.3 L344.0,330.5" fill="none" stroke="#1d6fa5" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="156.1" cy="306.3" r="3.5" fill="#1d6fa5" stroke="#ffffff" stroke-width="1"/>
+<circle cx="312.8" cy="306.3" r="3.5" fill="#c25014" stroke="#ffffff" stroke-width="1"/>
+<text x="152.1" y="324.3" font-size="10.5" fill="#1d6fa5" text-anchor="end">冷 7.5 分</text>
+<text x="316.8" y="300.3" font-size="10.5" fill="#c25014" text-anchor="start">热 17.9 分</text>
+<text x="40" y="366" font-size="10.5" fill="#475569" text-anchor="start">同一条曲线 → 热水永远落在冷水后面</text>
+<text x="40" y="388" font-size="10.5" fill="#64748b" text-anchor="start">这不是热力学第一定律被推翻，而是提示缺少机制。</text>
+<rect x="388" y="66" width="352" height="420" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="89" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="406" y="93" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="424" y="93" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">姆潘巴说法：曲线必须交叉</text>
+<rect x="412" y="118" width="300" height="226" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+<line x1="412.0" y1="344.0" x2="712.0" y2="344.0" stroke="#cbd5e1" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="412.0" y1="118.0" x2="412.0" y2="344.0" stroke="#cbd5e1" stroke-width="1.2" stroke-linecap="round"/>
+<text x="712" y="360" font-size="10.5" fill="#64748b" text-anchor="end">时间</text>
+<text x="408" y="112" font-size="10.5" fill="#64748b" text-anchor="end">温度</text>
+<line x1="412.0" y1="306.3" x2="712.0" y2="306.3" stroke="#c25014" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="5 4"/>
+<path d="M412.0,136.8 L415.8,150.5 L419.5,163.2 L423.2,175.1 L427.0,186.2 L430.8,196.5 L434.5,206.1 L438.2,215.1 L442.0,223.5 L445.8,231.4 L449.5,238.7 L453.2,245.5 L457.0,251.8 L460.8,257.8 L464.5,263.3 L468.2,268.5 L472.0,273.3 L475.8,277.8 L479.5,282.0 L483.2,285.9 L487.0,289.5 L490.8,292.9 L494.5,296.1 L498.2,299.1 L502.0,301.8 L505.8,304.4 L509.5,306.8 L513.2,309.0 L517.0,311.1 L520.8,313.1 L524.5,314.9 L528.2,316.6 L532.0,318.2 L535.8,319.7 L539.5,321.0 L543.2,322.3 L547.0,323.5 L550.8,324.7 L554.5,325.7 L558.2,326.7 L562.0,327.6 L565.8,328.4 L569.5,329.2 L573.2,330.0 L577.0,330.7 L580.8,331.3 L584.5,331.9 L588.2,332.5 L592.0,333.0 L595.8,333.5 L599.5,333.9 L603.2,334.3 L607.0,334.7 L610.8,335.1 L614.5,335.4 L618.2,335.8 L622.0,336.1 L625.8,336.3 L629.5,336.6 L633.2,336.9 L637.0,337.1 L640.8,337.3 L644.5,337.5 L648.2,337.7 L652.0,337.8 L655.8,338.0 L659.5,338.2 L663.2,338.3 L667.0,338.4 L670.8,338.5 L674.5,338.7 L678.2,338.8 L682.0,338.9 L685.8,339.0 L689.5,339.0 L693.2,339.1 L697.0,339.2 L700.8,339.3 L704.5,339.3 L708.2,339.4 L712.0,339.4" fill="none" stroke="#c25014" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M412.0,268.7 L415.8,270.4 L419.5,272.2 L423.2,273.8 L427.0,275.5 L430.8,277.1 L434.5,278.6 L438.2,280.2 L442.0,281.6 L445.8,283.1 L449.5,284.5 L453.2,285.9 L457.0,287.2 L460.8,288.5 L464.5,289.8 L468.2,291.0 L472.0,292.3 L475.8,293.4 L479.5,294.6 L483.2,295.7 L487.0,296.8 L490.8,297.9 L494.5,298.9 L498.2,300.0 L502.0,301.0 L505.8,301.9 L509.5,302.9 L513.2,303.8 L517.0,304.7 L520.8,305.6 L524.5,306.4 L528.2,307.3 L532.0,308.1 L535.8,308.9 L539.5,309.6 L543.2,310.4 L547.0,311.1 L550.8,311.9 L554.5,312.6 L558.2,313.2 L562.0,313.9 L565.8,314.6 L569.5,315.2 L573.2,315.8 L577.0,316.4 L580.8,317.0 L584.5,317.6 L588.2,318.1 L592.0,318.7 L595.8,319.2 L599.5,319.7 L603.2,320.2 L607.0,320.7 L610.8,321.2 L614.5,321.7 L618.2,322.1 L622.0,322.6 L625.8,323.0 L629.5,323.4 L633.2,323.9 L637.0,324.3 L640.8,324.7 L644.5,325.0 L648.2,325.4 L652.0,325.8 L655.8,326.1 L659.5,326.5 L663.2,326.8 L667.0,327.2 L670.8,327.5 L674.5,327.8 L678.2,328.1 L682.0,328.4 L685.8,328.7 L689.5,329.0 L693.2,329.3 L697.0,329.5 L700.8,329.8 L704.5,330.1 L708.2,330.3 L712.0,330.5" fill="none" stroke="#1d6fa5" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="500.1" cy="262.0" r="4.5" fill="#b42318" stroke="#ffffff" stroke-width="1"/>
+<text x="506.1" y="254.0" font-size="10.5" fill="#b42318" text-anchor="start" font-weight="700">交叉点</text>
+<text x="408" y="366" font-size="10.5" fill="#475569" text-anchor="start">要交叉，热水必须多一条散热通道：</text>
+<rect x="408.0" y="380.0" width="150" height="22" rx="11.0" fill="#fef1e8" stroke="#c25014" stroke-width="1" stroke-opacity="0.35"/>
+<text x="483.0" y="395.0" font-size="10.5" fill="#c25014" text-anchor="middle" font-weight="600">蒸发带走质量与热量</text>
+<rect x="408.0" y="408.0" width="132" height="22" rx="11.0" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1" stroke-opacity="0.35"/>
+<text x="474.0" y="423.0" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="600">对流改变传热路径</text>
+<rect x="408.0" y="436.0" width="132" height="22" rx="11.0" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1" stroke-opacity="0.35"/>
+<text x="474.0" y="451.0" font-size="10.5" fill="#6d28d9" text-anchor="middle" font-weight="600">成核时间被改写</text>
+<rect x="20" y="500" width="720" height="78" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="38" y="526" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">先定义再争论：是“先降到 0°C”，还是“先出现第一粒冰”，还是“完全冻成冰块”？</text>
+<text x="38" y="554" font-size="10.5" fill="#475569" text-anchor="start">2016 年的综述指出，文献里这三件事经常混用——相当一部分争吵其实不在同一个赛道上。</text>
+</svg>
