@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="586" viewBox="0 0 760 586" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">程序员向AI硬件工程转型的三层技能栈与90天路线图</title>
+<desc id="desc">左栏三层技能栈依次为Python脚本化EDA与模型agent评测以及RTL PCB DFM PPA领域判据并标注纯应用层最易替代，右栏给出90天四阶段动作清单从KiCad脚本到RISC-V复现再到设计验证闭环与垂直场景，底栏强调把会写代码升级为能定义机器可检验的问题。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="585" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">程序员怎么转：别去抢画图，去占“可验证的边界”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">从 OpenAI 与 Anthropic 的报告看，人和 EDA 工具守的是验证、评测、采纳和生产决策。</text>
+<rect x="20" y="66" width="352" height="420" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="89" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="38" y="93" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="93" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">三层技能栈</text>
+<rect x="40" y="124" width="312" height="92" rx="7" fill="#eaf4fb" stroke="#1d6fa5"/>
+<text x="56" y="152" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">① 数据层</text>
+<text x="56" y="180" font-size="10.5" fill="#1e293b" text-anchor="start">Python 脚本化 EDA：KiCad / Yosys /</text>
+<text x="56" y="202" font-size="10.5" fill="#1e293b" text-anchor="start">Verilator / Synopsys 接口</text>
+<rect x="40" y="236" width="312" height="92" rx="7" fill="#f3e8ff" stroke="#6d28d9"/>
+<text x="56" y="264" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">② 模型层</text>
+<text x="56" y="292" font-size="10.5" fill="#1e293b" text-anchor="start">Agent 工具调用、上下文工程、</text>
+<text x="56" y="314" font-size="10.5" fill="#1e293b" text-anchor="start">评测集与回归测试</text>
+<rect x="40" y="348" width="312" height="92" rx="7" fill="#e6f5f2" stroke="#0f766e"/>
+<text x="56" y="376" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">③ 领域层</text>
+<text x="56" y="404" font-size="10.5" fill="#1e293b" text-anchor="start">RTL / PCB / DFM / PPA /</text>
+<text x="56" y="426" font-size="10.5" fill="#1e293b" text-anchor="start">热与认证的判据</text>
+<rect x="388" y="66" width="352" height="420" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="89" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="406" y="93" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">2</text>
+<text x="424" y="93" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">一个 90 天动作清单</text>
+<rect x="406" y="124" width="316" height="70" rx="7" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="420" y="150" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="700">第 1–2 周</text>
+<text x="420" y="174" font-size="10.5" fill="#1e293b" text-anchor="start">用 Python 脚本生成一块简单 KiCad</text>
+<text x="420" y="192" font-size="10.5" fill="#1e293b" text-anchor="start">板，跑通 DRC</text>
+<rect x="406" y="208" width="316" height="70" rx="7" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="420" y="234" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="700">第 3–6 周</text>
+<text x="420" y="258" font-size="10.5" fill="#1e293b" text-anchor="start">复现 OpenAI 的 RISC-V 思路：让模型</text>
+<text x="420" y="276" font-size="10.5" fill="#1e293b" text-anchor="start">改 RTL，用 Yosys/仿真判分</text>
+<rect x="406" y="292" width="316" height="70" rx="7" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="420" y="318" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="700">第 7–10 周</text>
+<text x="420" y="342" font-size="10.5" fill="#1e293b" text-anchor="start">搭一个小型“设计—验证”闭环：</text>
+<text x="420" y="360" font-size="10.5" fill="#1e293b" text-anchor="start">改 → 测 → 打分 → 回滚</text>
+<rect x="406" y="376" width="316" height="70" rx="7" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="420" y="402" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="700">第 11–13 周</text>
+<text x="420" y="426" font-size="10.5" fill="#1e293b" text-anchor="start">选一个垂直场景做到可演示：</text>
+<text x="420" y="444" font-size="10.5" fill="#1e293b" text-anchor="start">电源板 / 传感器板 / 加速器子模块</text>
+<rect x="20" y="500" width="720" height="72" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="38" y="526" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">一句话：把“我会写代码”升级成“我能定义一个机器可检验的问题，并让模型反复求解”。</text>
+<text x="38" y="554" font-size="10.5" fill="#475569" text-anchor="start">OpenAI 用 9,881 次计分测试做的事，本质上就是这个能力的高配版。</text>
+</svg>

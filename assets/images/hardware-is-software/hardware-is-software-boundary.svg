@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="586" viewBox="0 0 760 586" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">硬件软件化事实与推测三档对照图</title>
+<desc id="desc">左栏列出四条已发生可核查事实包括模型改写RTL进入流片三块电路板工作新芯片适配压到三天等，右栏列出四条作者推测包括整链降本65到75%蓝领2到5年自动化转型1到4年或5到20年以及英伟达护城河消失，底栏用Anthropic三设备未做验证认证说明能跑与能量产的距离。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="585" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">事实、已实现、仍属推测：把原文拆成三档</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">作者最有价值的判断是方向；最需要打折的是时间表和成本幅度。</text>
+<rect x="20" y="66" width="352" height="420" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="89" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="38" y="93" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="93" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">已经发生（可核查）</text>
+<rect x="40" y="126" width="312" height="72" rx="7" fill="#e7f6ee" stroke="#18794e"/>
+<text x="56" y="154" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="700">✓ 模型改写量产级 RTL，进入送</text>
+<text x="56" y="178" font-size="10.5" fill="#1e293b" text-anchor="start">厂设计</text>
+<rect x="40" y="210" width="312" height="72" rx="7" fill="#e7f6ee" stroke="#18794e"/>
+<text x="56" y="238" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="700">✓ 三块电路板按 AI 文件直接制</text>
+<text x="56" y="262" font-size="10.5" fill="#1e293b" text-anchor="start">出并工作</text>
+<rect x="40" y="294" width="312" height="72" rx="7" fill="#e7f6ee" stroke="#18794e"/>
+<text x="56" y="322" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="700">✓ 新芯片适配周期从数月压到约 3</text>
+<text x="56" y="346" font-size="10.5" fill="#1e293b" text-anchor="start"> 天</text>
+<rect x="40" y="378" width="312" height="72" rx="7" fill="#e7f6ee" stroke="#18794e"/>
+<text x="56" y="406" font-size="10.5" fill="#18794e" text-anchor="start" font-weight="700">✓ 设计过程开始具备代码式版本与测</text>
+<text x="56" y="430" font-size="10.5" fill="#1e293b" text-anchor="start">试</text>
+<rect x="388" y="66" width="352" height="420" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="89" r="10.5" fill="#fee9e7" stroke="#b42318" stroke-width="1.2"/>
+<text x="406" y="93" font-size="11.5" fill="#b42318" text-anchor="middle" font-weight="700">2</text>
+<text x="424" y="93" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">仍是作者的推测</text>
+<rect x="406" y="126" width="316" height="72" rx="7" fill="#fee9e7" stroke="#b42318"/>
+<text x="420" y="154" font-size="10.5" fill="#b42318" text-anchor="start" font-weight="700">整链降本 65–75%</text>
+<text x="420" y="178" font-size="10.5" fill="#1e293b" text-anchor="start">自己建模，不是行业数据</text>
+<rect x="406" y="210" width="316" height="72" rx="7" fill="#fee9e7" stroke="#b42318"/>
+<text x="420" y="238" font-size="10.5" fill="#b42318" text-anchor="start" font-weight="700">蓝领 2–5 年大幅自动化</text>
+<text x="420" y="262" font-size="10.5" fill="#1e293b" text-anchor="start">取决于人形机器人成熟度</text>
+<rect x="406" y="294" width="316" height="72" rx="7" fill="#fee9e7" stroke="#b42318"/>
+<text x="420" y="322" font-size="10.5" fill="#b42318" text-anchor="start" font-weight="700">转型 1–4 年或 5–20 年</text>
+<text x="420" y="346" font-size="10.5" fill="#1e293b" text-anchor="start">作者自己给了两个差 5 倍的区间</text>
+<rect x="406" y="378" width="316" height="72" rx="7" fill="#fee9e7" stroke="#b42318"/>
+<text x="420" y="406" font-size="10.5" fill="#b42318" text-anchor="start" font-weight="700">英伟达护城河消失</text>
+<text x="420" y="430" font-size="10.5" fill="#1e293b" text-anchor="start">原文是“may have collapsed”</text>
+<rect x="20" y="500" width="720" height="72" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="38" y="526" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">一个很能说明边界的细节：Anthropic 的三个设备没做过电气验证、天线调校、热测试和认证。</text>
+<text x="38" y="554" font-size="10.5" fill="#475569" text-anchor="start">“做出来能跑”和“能安全量产”之间，隔着的正是工程师最不可替代的那段。</text>
+</svg>

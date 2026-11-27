@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="628" viewBox="0 0 760 628" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">矩阵乘法指数下界反证法四步与矛盾链条图</title>
+<desc id="desc">顶部假设某有限域上指数小于四分之九，中间四步依次为稳定排序批量查表关联位集中张量幂压缩与独立列表下界相撞，下方左卡定理2点1给出每轮按h的负伽马缩小得到xJ等于O括号w的eta次方，右卡定理2点2给出去重网络体积大于t乘nw乘w的sigma次方，底部说明eta小于sigma导致矛盾并由双线性化推广到任意域同时注明Lean只形式化无除法电路且未同行评议。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="627" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">反证法四步：假设 ω &lt; 9/4，去重网络会被压得太便宜</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">同一批张量网络，一边被压到 O(w^η)，另一边必须有 Ω(w^σ)；取 η &lt; σ 即矛盾。</text>
+<rect x="300.0" y="68.0" width="160" height="28" rx="14.0" fill="#fee9e7" stroke="#b42318" stroke-width="1" stroke-opacity="0.35"/>
+<text x="380.0" y="87.0" font-size="11.5" fill="#b42318" text-anchor="middle" font-weight="600">假设：存在有限域 k 使 ω_k &lt; 9/4</text>
+<rect x="20" y="116" width="352" height="90" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="144" r="12" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="42" y="148" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">Ⅰ</text>
+<text x="64" y="148" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">稳定排序 + 批量查表</text>
+<text x="42" y="180" font-size="10.5" fill="#1e293b" text-anchor="start">把 2w 个词排好，相邻比较判断是否全不同。</text>
+<rect x="388" y="116" width="352" height="90" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="410" cy="144" r="12" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="410" y="148" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">Ⅱ</text>
+<text x="432" y="148" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">关联位集中</text>
+<text x="410" y="180" font-size="10.5" fill="#1e293b" text-anchor="start">球面张量的关联不等式，让记录沿网点集中。</text>
+<rect x="20" y="222" width="352" height="90" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="250" r="12" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="42" y="254" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">Ⅲ</text>
+<text x="64" y="254" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">张量幂压缩</text>
+<text x="42" y="286" font-size="10.5" fill="#1e293b" text-anchor="start">把一次网络复制 d 次，每份分摊更少的顶点。</text>
+<rect x="388" y="222" width="352" height="90" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="410" cy="250" r="12" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="410" y="254" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">Ⅳ</text>
+<text x="432" y="254" font-size="11.5" fill="#c25014" text-anchor="start" font-weight="700">与独立列表下界相撞</text>
+<text x="410" y="286" font-size="10.5" fill="#1e293b" text-anchor="start">网络同时测 t 张独立列表，体积却有硬下界。</text>
+<rect x="20" y="332" width="352" height="158" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="38" y="358" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">定理 2.1：压缩上界</text>
+<text x="38" y="388" font-size="12" fill="#1e293b" text-anchor="start">xⱼ₊₁ ≤ h⁻ᵞ xⱼ + h^η</text>
+<text x="38" y="420" font-size="10.5" fill="#1e293b" text-anchor="start">h = ⌈log₂n⌉；每轮顶点数按 h⁻ᵞ 缩小，</text>
+<text x="38" y="444" font-size="10.5" fill="#1e293b" text-anchor="start">每个外部位只收 h^η 的小税。</text>
+<rect x="38" y="456" width="316" height="26" rx="5" fill="#eaf4fb"/>
+<text x="48" y="474" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="700">重复固定 J 轮后：x_J = O(w^η)</text>
+<rect x="388" y="332" width="352" height="158" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="406" y="358" font-size="11.5" fill="#b42318" text-anchor="start" font-weight="700">定理 2.2：去重下界</text>
+<text x="406" y="388" font-size="11.5" fill="#1e293b" text-anchor="start">vol_k(D_w^⊗t) &gt; t · n_w · w^σ</text>
+<text x="406" y="420" font-size="10.5" fill="#1e293b" text-anchor="start">D_w 判定 2w 个词是否两两不同；</text>
+<text x="406" y="444" font-size="10.5" fill="#1e293b" text-anchor="start">即使 t 张列表可跨网连线，每位仍要 w^σ。</text>
+<rect x="406" y="456" width="316" height="26" rx="5" fill="#fee9e7"/>
+<text x="416" y="474" font-size="10.5" fill="#b42318" text-anchor="start" font-weight="700">对所有 1 ≤ t ≤ 2w 一致成立</text>
+<rect x="20" y="504" width="720" height="48" rx="10" fill="#fee9e7" stroke="#b42318" stroke-width="1"/>
+<text x="36" y="534" font-size="10.5" fill="#b42318" text-anchor="start" font-weight="700">η &lt; σ ⇒ O(w^η) &lt; Ω(w^σ)：同一个网络的体积被同时压低和托高，矛盾。故有限域上 ω_k ≥ 9/4。</text>
+<rect x="20" y="566" width="720" height="48" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="596" font-size="10.5" fill="#475569" text-anchor="start">再由双线性化与有限化推广到任意域 F。边界：Lean 只形式化了无除法电路版本，预印本尚未同行评议。</text>
+</svg>

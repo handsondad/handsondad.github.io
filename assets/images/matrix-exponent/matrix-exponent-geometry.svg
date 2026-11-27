@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="586" viewBox="0 0 760 586" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">三脚架几何与九四分之四比值推导图</title>
+<desc id="desc">左栏画中心O到三个尖端P1P2P3的三条单位臂并说明这是树状度量两尖距离为1加1等于2周长为6，右栏用分子分母两条说明三角形半周长6除以共享标签率三分之八等于四分之九并说明若指数小于九四分之四这种三脚架不能出现，底栏提醒欧氏平面里单位臂尖端距离只有根号三比值只到二。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="585" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">9/4 的几何来源：三脚架的两倍距离与 8/3 的标签率</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">伴随论文：两点共享一个比特，价格是欧氏距离；三点共享，价格是凸包平均宽度——三角形就是半周长。</text>
+<rect x="20" y="66" width="352" height="420" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="89" r="10.5" fill="#e6f5f2" stroke="#0f766e" stroke-width="1.2"/>
+<text x="38" y="93" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="93" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">关键形状：三条单位臂的三脚架</text>
+<line x1="196.0" y1="226.0" x2="196.0" y2="126.0" stroke="#0f766e" stroke-width="2.4" stroke-linecap="round"/>
+<line x1="196.0" y1="226.0" x2="104.0" y2="292.0" stroke="#0f766e" stroke-width="2.4" stroke-linecap="round"/>
+<line x1="196.0" y1="226.0" x2="288.0" y2="292.0" stroke="#0f766e" stroke-width="2.4" stroke-linecap="round"/>
+<circle cx="196.0" cy="226.0" r="17" fill="#e6f5f2" stroke="#0f766e" stroke-width="1.6"/>
+<text x="196" y="231" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">O</text>
+<circle cx="196.0" cy="126.0" r="19" fill="#fdf1d8" stroke="#b45309" stroke-width="1.6"/>
+<text x="196" y="131" font-size="10.5" fill="#b45309" text-anchor="middle" font-weight="700">P₁</text>
+<circle cx="104.0" cy="292.0" r="19" fill="#fdf1d8" stroke="#b45309" stroke-width="1.6"/>
+<text x="104" y="297" font-size="10.5" fill="#b45309" text-anchor="middle" font-weight="700">P₂</text>
+<circle cx="288.0" cy="292.0" r="19" fill="#fdf1d8" stroke="#b45309" stroke-width="1.6"/>
+<text x="288" y="297" font-size="10.5" fill="#b45309" text-anchor="middle" font-weight="700">P₃</text>
+<text x="228" y="178" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">1</text>
+<text x="134" y="268" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">1</text>
+<text x="258" y="268" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">1</text>
+<line x1="196.0" y1="226.0" x2="196.0" y2="126.0" stroke="#b45309" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="5 4"/>
+<line x1="196.0" y1="226.0" x2="104.0" y2="292.0" stroke="#b45309" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="5 4"/>
+<line x1="196.0" y1="226.0" x2="288.0" y2="292.0" stroke="#b45309" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="5 4"/>
+<text x="40" y="342" font-size="10.5" fill="#1e293b" text-anchor="start">树状度量：两尖之间必须走</text>
+<text x="40" y="366" font-size="10.5" fill="#1e293b" text-anchor="start">1 + 1 = 2，不是欧氏直线距离。</text>
+<rect x="40" y="386" width="312" height="70" rx="7" fill="#e6f5f2" stroke="#0f766e"/>
+<text x="56" y="412" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">三条尖端距离：2 + 2 + 2 = 6</text>
+<text x="56" y="440" font-size="10.5" fill="#1e293b" text-anchor="start">周长 6 就是三点共享比特的价格。</text>
+<rect x="388" y="66" width="352" height="420" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="89" r="10.5" fill="#fee9e7" stroke="#b42318" stroke-width="1.2"/>
+<text x="406" y="93" font-size="11.5" fill="#b42318" text-anchor="middle" font-weight="700">2</text>
+<text x="424" y="93" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">比值算出来：6 ÷ (8/3) = 9/4</text>
+<rect x="406" y="124" width="316" height="52" rx="7" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="418" y="157" font-size="10.5" fill="#1e293b" text-anchor="start">分子：三角形半周长 = 6</text>
+<rect x="406" y="188" width="316" height="52" rx="7" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="418" y="221" font-size="10.5" fill="#1e293b" text-anchor="start">分母：共享标签率 = 8/3</text>
+<text x="564" y="310" font-size="21" fill="#b42318" text-anchor="middle" font-weight="700">6 ÷ 8/3 = 9/4</text>
+<text x="406" y="348" font-size="10.5" fill="#1e293b" text-anchor="start">若 ω &lt; 9/4，这种三脚架在价格空间</text>
+<text x="406" y="372" font-size="10.5" fill="#1e293b" text-anchor="start">里不能出现；排除它，就能给一整族</text>
+<text x="406" y="396" font-size="10.5" fill="#1e293b" text-anchor="start">张量统一定价，进而压缩网络。</text>
+<text x="406" y="434" font-size="10.5" fill="#64748b" text-anchor="start">这是全文最反直觉的一步：几何上</text>
+<text x="406" y="458" font-size="10.5" fill="#64748b" text-anchor="start">的“不可能”变成了算法上的“不可能”。</text>
+<rect x="20" y="500" width="720" height="72" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="38" y="526" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">别把它画成欧氏三角形：三条单位臂在平面里的尖端距离只有 √3 ≈ 1.732，比值只到 2。</text>
+<text x="38" y="554" font-size="10.5" fill="#475569" text-anchor="start">9/4 来自树状／非正曲率的度量；这正是论文必须引入新几何的原因。</text>
+</svg>

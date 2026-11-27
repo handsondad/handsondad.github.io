@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="556" viewBox="0 0 760 556" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">AI对齐三层问题规范优化与控制图</title>
+<desc id="desc">三栏依次为规范层问我们到底想要什么优化层问训练出来的目标对不对控制层问部署后是否管得住并列出各层典型失败，中部引用阿伦森课程评论中新手问aligned to what而老手问how do you align to anything whatsoever，底部解释三层拆分的必要性。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="555" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">对齐问题有三层：想清楚 → 学到位 → 管得住</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">新手常问“对齐谁”；老手问的是“怎么才能对齐到任何东西”——这是两个完全不同层次的问题。</text>
+<rect x="20" y="84" width="228" height="214" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34" y="98" width="200" height="30" rx="6" fill="#eaf4fb"/>
+<text x="44" y="119" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">① 规范层  Specification</text>
+<text x="36" y="160" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">我们到底想要什么？</text>
+<text x="36" y="192" font-size="10.5" fill="#1e293b" text-anchor="start">谁的偏好、如何聚合、怎么写进</text>
+<text x="36" y="216" font-size="10.5" fill="#1e293b" text-anchor="start">目标</text>
+<rect x="266" y="84" width="228" height="214" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="280" y="98" width="200" height="30" rx="6" fill="#f3e8ff"/>
+<text x="290" y="119" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">② 优化层  Optimization</text>
+<text x="282" y="160" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">训练出来的目标对不对？</text>
+<text x="282" y="192" font-size="10.5" fill="#1e293b" text-anchor="start">代理指标会不会被钻空子、内部</text>
+<text x="282" y="216" font-size="10.5" fill="#1e293b" text-anchor="start">目标会不会跑偏</text>
+<rect x="512" y="84" width="228" height="214" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="526" y="98" width="200" height="30" rx="6" fill="#fee9e7"/>
+<text x="536" y="119" font-size="11.5" fill="#b42318" text-anchor="start" font-weight="700">③ 控制层  Control</text>
+<text x="528" y="160" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">部署后还管得住吗？</text>
+<text x="528" y="192" font-size="10.5" fill="#1e293b" text-anchor="start">可否纠正、可否关闭、会不会争</text>
+<text x="528" y="216" font-size="10.5" fill="#1e293b" text-anchor="start">夺权力</text>
+<rect x="20" y="316" width="720" height="118" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="38" y="342" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">阿伦森在课程评论里的原话（2026-10-23）</text>
+<rect x="38" y="356" width="684" height="34" rx="6" fill="#eaf4fb"/>
+<text x="52" y="379" font-size="10.5" fill="#1d6fa5" text-anchor="start" font-weight="700">新手：aligned to what?（对齐到什么？）</text>
+<rect x="38" y="396" width="684" height="34" rx="6" fill="#fee9e7"/>
+<text x="52" y="419" font-size="10.5" fill="#b42318" text-anchor="start" font-weight="700">老手：forget about aligned to what, how do you align to anything whatsoever?</text>
+<rect x="20" y="450" width="720" height="92" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="38" y="476" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">为什么按这三层拆</text>
+<text x="38" y="504" font-size="10.5" fill="#1e293b" text-anchor="start">第一层答错了，后面做得再好也是“精确地做错事”；第二层答错了，模型学会的是钻空子而不是目标本身。</text>
+<text x="38" y="530" font-size="10.5" fill="#1e293b" text-anchor="start">第三层最难：即便前两层都对了，一个有能力、可长期运行的系统仍可能抗拒被关闭。</text>
+</svg>

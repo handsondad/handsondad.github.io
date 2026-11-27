@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="506" viewBox="0 0 760 506" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">AI安全五类具体问题按病因三分类图</title>
+<desc id="desc">三栏按病因分类列出Amodei等人2016年提出的五类问题：目标写错包括副作用与奖励黑客目标太贵对应可扩展监督学习过程出事包括安全探索与分布偏移，底部说明此文把失控争论改写为可研究的工程问题。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="505" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">2016 年那篇论文，把“AI 出事”拆成五个可研究的问题</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">Amodei 等人按病因分三类：目标写错了、目标太贵没法经常评估、学习过程本身出问题。</text>
+<rect x="20" y="84" width="224" height="306" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="34" y="98" width="196" height="32" rx="6" fill="#eaf4fb"/>
+<text x="44" y="120" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">A 目标写错了</text>
+<rect x="34" y="154" width="196" height="96" rx="7" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="46" y="182" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">避免副作用</text>
+<text x="46" y="208" font-size="10.5" fill="#1e293b" text-anchor="start">agent 达成目标时顺手</text>
+<text x="46" y="232" font-size="10.5" fill="#1e293b" text-anchor="start">破坏环境</text>
+<rect x="34" y="264" width="196" height="96" rx="7" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="46" y="292" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">避免奖励黑客</text>
+<text x="46" y="318" font-size="10.5" fill="#1e293b" text-anchor="start">钻目标函数的空子拿高分</text>
+<text x="46" y="342" font-size="10.5" fill="#1e293b" text-anchor="start"></text>
+<rect x="268" y="84" width="224" height="306" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="282" y="98" width="196" height="32" rx="6" fill="#f3e8ff"/>
+<text x="292" y="120" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">B 目标太贵</text>
+<rect x="282" y="154" width="196" height="96" rx="7" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="294" y="182" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">可扩展监督</text>
+<text x="294" y="208" font-size="10.5" fill="#1e293b" text-anchor="start">人类没法频繁、正确地评估复</text>
+<text x="294" y="232" font-size="10.5" fill="#1e293b" text-anchor="start">杂输出</text>
+<rect x="516" y="84" width="224" height="306" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="530" y="98" width="196" height="32" rx="6" fill="#fee9e7"/>
+<text x="540" y="120" font-size="11.5" fill="#b42318" text-anchor="start" font-weight="700">C 学习过程出事</text>
+<rect x="530" y="154" width="196" height="96" rx="7" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="542" y="182" font-size="11.5" fill="#b42318" text-anchor="start" font-weight="700">安全探索</text>
+<text x="542" y="208" font-size="10.5" fill="#1e293b" text-anchor="start">学习阶段就做出危险动作</text>
+<text x="542" y="232" font-size="10.5" fill="#1e293b" text-anchor="start"></text>
+<rect x="530" y="264" width="196" height="96" rx="7" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="542" y="292" font-size="11.5" fill="#b42318" text-anchor="start" font-weight="700">分布偏移</text>
+<text x="542" y="318" font-size="10.5" fill="#1e293b" text-anchor="start">部署后遇到训练时没见过的情</text>
+<text x="542" y="342" font-size="10.5" fill="#1e293b" text-anchor="start">形</text>
+<rect x="20" y="404" width="720" height="88" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="38" y="430" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">为什么这篇文章重要</text>
+<text x="38" y="456" font-size="10.5" fill="#1e293b" text-anchor="start">它把“AI 会不会失控”从哲学争论，改写成机器学习研究者可以动手做的工程问题。</text>
+<text x="38" y="480" font-size="10.5" fill="#475569" text-anchor="start">课程把 2016 年的“古代文献”和 2026 年的“上周新论文”放在同一张桌上讨论。</text>
+</svg>

@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="586" viewBox="0 0 760 586" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">矩阵乘法张量三角形与共享标签价格不等式图</title>
+<desc id="desc">左栏画三个站点A B C组成三角形三条边分别标下标j k i说明A看ijB看jkC看ki每条线代表一次共享，右栏画中心标签ell同时连到三点说明秩r分解的共享标签率D并给出周长乘log二n小于等于D乘log二r的不等式，底栏说明欧氏几何只能给比值二要得到九四分之四必须换几何。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="585" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">张量图里的三角形：三个下标，三条边</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">T_n = Σ e_ij ⊗ e_jk ⊗ e_ki；i、j、k 各出现两次，于是 A、B、C 三点被三条线连成三角形。</text>
+<rect x="20" y="66" width="352" height="420" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="89" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="38" y="93" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="93" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">三条线：每个下标共享一次</text>
+<line x1="196.0" y1="154.0" x2="72.0" y2="322.0" stroke="#1d6fa5" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="72.0" y1="322.0" x2="320.0" y2="322.0" stroke="#18794e" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="320.0" y1="322.0" x2="196.0" y2="154.0" stroke="#6d28d9" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="196.0" cy="154.0" r="22" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.6"/>
+<circle cx="72.0" cy="322.0" r="22" fill="#e7f6ee" stroke="#18794e" stroke-width="1.6"/>
+<circle cx="320.0" cy="322.0" r="22" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.6"/>
+<text x="196" y="159" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">A</text>
+<text x="72" y="327" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">B</text>
+<text x="320" y="327" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">C</text>
+<text x="128" y="220" font-size="12.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">j</text>
+<text x="196" y="344" font-size="12.5" fill="#18794e" text-anchor="middle" font-weight="700">k</text>
+<text x="264" y="220" font-size="12.5" fill="#6d28d9" text-anchor="middle" font-weight="700">i</text>
+<text x="40" y="378" font-size="10.5" fill="#1e293b" text-anchor="start">A 看 (i,j)，B 看 (j,k)，C 看 (k,i)。</text>
+<text x="40" y="404" font-size="10.5" fill="#1e293b" text-anchor="start">下标 j 在 A、B 之间共享，k 在 B、C 之间，i 在 C、A 之间。</text>
+<text x="40" y="432" font-size="10.5" fill="#475569" text-anchor="start">三条线长度之和 × log₂n = 这个张量的价格。</text>
+<rect x="388" y="66" width="352" height="420" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="89" r="10.5" fill="#fee9e7" stroke="#b42318" stroke-width="1.2"/>
+<text x="406" y="93" font-size="11.5" fill="#b42318" text-anchor="middle" font-weight="700">2</text>
+<text x="424" y="93" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">一个标签：r 种取值同时喂给三点</text>
+<line x1="564.0" y1="184.0" x2="452.0" y2="276.0" stroke="#475569" stroke-width="1.5" stroke-linecap="round" marker-end="url(#arr-muted)"/>
+<circle cx="452.0" cy="300.0" r="21" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.6"/>
+<text x="452" y="305" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">A</text>
+<line x1="564.0" y1="184.0" x2="564.0" y2="296.0" stroke="#475569" stroke-width="1.5" stroke-linecap="round" marker-end="url(#arr-muted)"/>
+<circle cx="564.0" cy="320.0" r="21" fill="#e7f6ee" stroke="#18794e" stroke-width="1.6"/>
+<text x="564" y="325" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">B</text>
+<line x1="564.0" y1="184.0" x2="676.0" y2="276.0" stroke="#475569" stroke-width="1.5" stroke-linecap="round" marker-end="url(#arr-muted)"/>
+<circle cx="676.0" cy="300.0" r="21" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.6"/>
+<text x="676" y="305" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">C</text>
+<circle cx="564.0" cy="160.0" r="26" fill="#fee9e7" stroke="#b42318" stroke-width="1.8"/>
+<text x="564" y="165" font-size="13" fill="#b42318" text-anchor="middle" font-weight="700">ℓ</text>
+<text x="406" y="356" font-size="10.5" fill="#1e293b" text-anchor="start">秩 r 分解：三点各自做线性映射，</text>
+<text x="406" y="380" font-size="10.5" fill="#1e293b" text-anchor="start">只看同一个标签 ℓ ∈ [r]。</text>
+<rect x="406" y="398" width="316" height="62" rx="7" fill="#fee9e7" stroke="#b42318"/>
+<text x="418" y="423" font-size="11.5" fill="#b42318" text-anchor="middle" font-weight="700">周长 × log₂n  ≤  D × log₂r</text>
+<text x="418" y="448" font-size="10.5" fill="#1e293b" text-anchor="middle">⇒ 指数 ≥ 三角形周长 ÷ 标签率 D</text>
+<rect x="20" y="500" width="720" height="72" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="38" y="526" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">这就是“尺子”：把张量下标摆进一个有距离概念的空间，指数就变成几何比值。</text>
+<text x="38" y="554" font-size="10.5" fill="#475569" text-anchor="start">欧几里得平面给出的比值只有 2 —— 正好是老下界；要得到 9/4，必须换一套几何。</text>
+</svg>

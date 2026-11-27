@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="586" viewBox="0 0 760 586" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">制造业成本结构与供应链降本复利估算图</title>
+<desc id="desc">左栏用条形列出作者估算的零部件62%人力26%机械3%能源1.8%等成本拆分并标注非行业统计，右栏四步展示单公司降37%供应商再降37%整链累计74%最后剩原材料能源与部分人力，底栏区分方向合理与精度不可信。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="585" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">原文最激进的推演：成本沿供应链复利下降</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">65–75% 这个数字是作者自己建模的估算，不是任何机构的研究结论。</text>
+<rect x="20" y="66" width="352" height="420" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="89" r="10.5" fill="#fdf1d8" stroke="#b45309" stroke-width="1.2"/>
+<text x="38" y="93" font-size="11.5" fill="#b45309" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="93" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">作者的成本拆分</text>
+<text x="44" y="126" font-size="10.5" fill="#1e293b" text-anchor="start">零部件 / 物料 / 包装</text>
+<text x="336" y="126" font-size="10.5" fill="#1d6fa5" text-anchor="end" font-weight="700">62%</text>
+<rect x="44" y="134" width="278.5" height="9" rx="4" fill="#1d6fa5"/>
+<text x="44" y="184" font-size="10.5" fill="#1e293b" text-anchor="start">人力（蓝领 + 白领）</text>
+<text x="336" y="184" font-size="10.5" fill="#c25014" text-anchor="end" font-weight="700">26%</text>
+<rect x="44" y="192" width="116.8" height="9" rx="4" fill="#c25014"/>
+<text x="44" y="242" font-size="10.5" fill="#1e293b" text-anchor="start">机械</text>
+<text x="336" y="242" font-size="10.5" fill="#475569" text-anchor="end" font-weight="700">3%</text>
+<rect x="44" y="250" width="13.5" height="9" rx="4" fill="#475569"/>
+<text x="44" y="300" font-size="10.5" fill="#1e293b" text-anchor="start">能源</text>
+<text x="336" y="300" font-size="10.5" fill="#18794e" text-anchor="end" font-weight="700">1.8%</text>
+<rect x="44" y="308" width="8.1" height="9" rx="4" fill="#18794e"/>
+<text x="44" y="358" font-size="10.5" fill="#1e293b" text-anchor="start">维护 / 维修 / 废料</text>
+<text x="336" y="358" font-size="10.5" fill="#475569" text-anchor="end" font-weight="700">1.5%</text>
+<rect x="44" y="366" width="6.7" height="9" rx="4" fill="#475569"/>
+<text x="44" y="416" font-size="10.5" fill="#1e293b" text-anchor="start">土地 / 建筑</text>
+<text x="336" y="416" font-size="10.5" fill="#475569" text-anchor="end" font-weight="700">1.4%</text>
+<rect x="44" y="424" width="6.3" height="9" rx="4" fill="#475569"/>
+<text x="40" y="452" font-size="10.5" fill="#64748b" text-anchor="start">注意：这些比例来自原文作者，</text>
+<text x="40" y="472" font-size="10.5" fill="#64748b" text-anchor="start">不是行业统计口径。</text>
+<rect x="388" y="66" width="352" height="420" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="89" r="10.5" fill="#fee9e7" stroke="#b42318" stroke-width="1.2"/>
+<text x="406" y="93" font-size="11.5" fill="#b42318" text-anchor="middle" font-weight="700">2</text>
+<text x="424" y="93" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">复利到哪里停</text>
+<rect x="406" y="124" width="316" height="72" rx="7" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="420" y="149" font-size="10.5" fill="#64748b" text-anchor="start">第 0 步</text>
+<text x="420" y="172" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">一家公司降本约 37%</text>
+<text x="420" y="191" font-size="10.5" fill="#1e293b" text-anchor="start">人力砍 20–25% + 物料降 12 个点</text>
+<rect x="406" y="206" width="316" height="72" rx="7" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="420" y="231" font-size="10.5" fill="#64748b" text-anchor="start">第 1 步</text>
+<text x="420" y="254" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">供应商同样降 37%</text>
+<text x="420" y="273" font-size="10.5" fill="#1e293b" text-anchor="start">采购价继续下探</text>
+<rect x="406" y="288" width="316" height="72" rx="7" fill="#fee9e7" stroke="#e2e8f0"/>
+<text x="420" y="313" font-size="10.5" fill="#b42318" text-anchor="start">第 2 步</text>
+<text x="420" y="336" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">整条链累计约 74%</text>
+<text x="420" y="355" font-size="10.5" fill="#1e293b" text-anchor="start">作者估算，非实测</text>
+<rect x="406" y="370" width="316" height="72" rx="7" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="420" y="395" font-size="10.5" fill="#64748b" text-anchor="start">最后剩下</text>
+<text x="420" y="418" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">原材料、能源、部分人力</text>
+<text x="420" y="437" font-size="10.5" fill="#1e293b" text-anchor="start">约 25%</text>
+<text x="406" y="460" font-size="10.5" fill="#64748b" text-anchor="start">算式为 1 − 0.63² ≈ 0.60，</text>
+<text x="406" y="478" font-size="10.5" fill="#64748b" text-anchor="start">原文按更多层级推到 74%。</text>
+<rect x="20" y="500" width="720" height="72" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="38" y="526" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">该信哪一半：方向有道理——设计人力占比越高，被自动化后成本结构越向原材料和能源倾斜。</text>
+<text x="38" y="554" font-size="10.5" fill="#475569" text-anchor="start">不该信的是精度：供应链有合同、库存、产能、认证、物流，不会按一个统一比例同步下降。</text>
+</svg>

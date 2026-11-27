@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="586" viewBox="0 0 760 586" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">硬件工程软件化前后对比图</title>
+<desc id="desc">左栏列出传统硬件工程的Excel表格邮件交接无版本控制迭代昂贵四桩现状，右栏对应设计即代码实时反馈自动再设计分工反转四项软件化改造，底栏强调核心是把设计过程变成可计算可回放可复用的对象。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="585" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">文章的核心断言：很多“硬件工程”，其实是没被当软件对待的软件</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">Blake Scholl：不要设计硬件，要设计“设计硬件的算法”。这是全文最值得记住的一句话。</text>
+<rect x="20" y="66" width="352" height="420" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="89" r="10.5" fill="#f1f5f9" stroke="#475569" stroke-width="1.2"/>
+<text x="38" y="93" font-size="11.5" fill="#475569" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="93" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">传统硬件工程现场</text>
+<rect x="40" y="124" width="312" height="74" rx="7" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="56" y="152" font-size="11.2" fill="#475569" text-anchor="start" font-weight="700">Excel 表格</text>
+<text x="56" y="178" font-size="10.5" fill="#1e293b" text-anchor="start">复杂公式 + VBScript，散</text>
+<text x="56" y="196" font-size="10.5" fill="#1e293b" text-anchor="start">落在工程师电脑里</text>
+<rect x="40" y="210" width="312" height="74" rx="7" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="56" y="238" font-size="11.2" fill="#475569" text-anchor="start" font-weight="700">邮件交接</text>
+<text x="56" y="264" font-size="10.5" fill="#1e293b" text-anchor="start">气动工程师把表格发给结构工程师</text>
+<text x="56" y="282" font-size="10.5" fill="#1e293b" text-anchor="start"></text>
+<rect x="40" y="296" width="312" height="74" rx="7" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="56" y="324" font-size="11.2" fill="#475569" text-anchor="start" font-weight="700">没有版本控制</text>
+<text x="56" y="350" font-size="10.5" fill="#1e293b" text-anchor="start">没有自动化测试，改一处要重算一大片</text>
+<text x="56" y="368" font-size="10.5" fill="#1e293b" text-anchor="start"></text>
+<rect x="40" y="382" width="312" height="74" rx="7" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="56" y="410" font-size="11.2" fill="#475569" text-anchor="start" font-weight="700">迭代很贵</text>
+<text x="56" y="436" font-size="10.5" fill="#1e293b" text-anchor="start">改一次几何，等几小时甚至几天才知道</text>
+<text x="56" y="454" font-size="10.5" fill="#1e293b" text-anchor="start">结果</text>
+<rect x="388" y="66" width="352" height="420" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="89" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="406" y="93" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">2</text>
+<text x="424" y="93" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">软件化之后</text>
+<rect x="408" y="124" width="312" height="74" rx="7" fill="#eaf4fb" stroke="#1d6fa5"/>
+<text x="424" y="152" font-size="11.2" fill="#1d6fa5" text-anchor="start" font-weight="700">设计即代码</text>
+<text x="424" y="178" font-size="10.5" fill="#1e293b" text-anchor="start">需求、约束、仿真、文档进入同一套可</text>
+<text x="424" y="196" font-size="10.5" fill="#1e293b" text-anchor="start">版本化系统</text>
+<rect x="408" y="210" width="312" height="74" rx="7" fill="#eaf4fb" stroke="#1d6fa5"/>
+<text x="424" y="238" font-size="11.2" fill="#1d6fa5" text-anchor="start" font-weight="700">实时反馈</text>
+<text x="424" y="264" font-size="10.5" fill="#1e293b" text-anchor="start">改几何，秒级看到结构与气动结果</text>
+<text x="424" y="282" font-size="10.5" fill="#1e293b" text-anchor="start"></text>
+<rect x="408" y="296" width="312" height="74" rx="7" fill="#eaf4fb" stroke="#1d6fa5"/>
+<text x="424" y="324" font-size="11.2" fill="#1d6fa5" text-anchor="start" font-weight="700">自动再设计</text>
+<text x="424" y="350" font-size="10.5" fill="#1e293b" text-anchor="start">今天条件变了，明天重新生成一版</text>
+<text x="424" y="368" font-size="10.5" fill="#1e293b" text-anchor="start"></text>
+<rect x="408" y="382" width="312" height="74" rx="7" fill="#eaf4fb" stroke="#1d6fa5"/>
+<text x="424" y="410" font-size="11.2" fill="#1d6fa5" text-anchor="start" font-weight="700">分工反转</text>
+<text x="424" y="436" font-size="10.5" fill="#1e293b" text-anchor="start">软件工程师搭架构，领域工程师写自己</text>
+<text x="424" y="454" font-size="10.5" fill="#1e293b" text-anchor="start">的模块</text>
+<rect x="20" y="500" width="720" height="72" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="38" y="526" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">关键不是“AI 会画图”，而是把设计过程变成可计算、可回放、可复用的对象。</text>
+<text x="38" y="554" font-size="10.5" fill="#475569" text-anchor="start">这一步一旦完成，AI 才有下手的地方；否则它面对的是一堆没人能读懂的邮件附件。</text>
+</svg>

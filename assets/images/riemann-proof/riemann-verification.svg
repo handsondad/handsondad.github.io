@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="594" viewBox="0 0 760 594" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">Lean社区验证黎曼猜想证明的四道关卡图</title>
+<desc id="desc">顶部标注Lean FRO与Mathlib Initiative十一月二十一日联合声明，中间四关依次为命题是否正确代码能否编译是否偷偷用额外公理三条标准公理以及证明项是否被多个内核接受，下方列出惰性导出可靠性证明与非确定性细节，底部红框强调内核接受不等于人类读懂。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="593" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">1700 万行代码凭什么算“证明了”？Lean 社区的四道关</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">2026-11-21 联合声明：命题对、编译过、证的是同一句话、导出证明被多个内核接受。</text>
+<rect x="286.0" y="68.0" width="188" height="28" rx="14.0" fill="#e7f6ee" stroke="#18794e" stroke-width="1" stroke-opacity="0.35"/>
+<text x="380.0" y="87.0" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="600">Lean FRO + Mathlib Initiative · 2026-11-21</text>
+<rect x="20" y="116" width="352" height="108" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="144" r="12" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="42" y="148" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">Ⅰ</text>
+<text x="64" y="148" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">命题是否正确</text>
+<text x="42" y="178" font-size="10.5" fill="#1e293b" text-anchor="start">Mathlib 的 RiemannHypothesis 定义经专家审定；</text>
+<text x="42" y="197" font-size="10.5" fill="#1e293b" text-anchor="start">社区另建隔离文件，用 comparator 与</text>
+<text x="42" y="216" font-size="10.5" fill="#1e293b" text-anchor="start">con-leche --compare 两套工具比对，确认证的是同一句。</text>
+<rect x="388" y="116" width="352" height="108" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="410" cy="144" r="12" fill="#e6f5f2" stroke="#0f766e" stroke-width="1.2"/>
+<text x="410" y="148" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">Ⅱ</text>
+<text x="432" y="148" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">代码能否编译</text>
+<text x="410" y="178" font-size="10.5" fill="#1e293b" text-anchor="start">175,187 个模块全部编译成功，零错误；</text>
+<text x="410" y="197" font-size="10.5" fill="#1e293b" text-anchor="start">数十人独立复现同一份原始导出文件。</text>
+<rect x="20" y="236" width="352" height="108" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="42" cy="264" r="12" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="42" y="268" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">Ⅲ</text>
+<text x="64" y="268" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">是否偷偷用额外公理</text>
+<text x="42" y="298" font-size="10.5" fill="#1e293b" text-anchor="start">#print axioms 只报三条：propext、</text>
+<text x="42" y="317" font-size="10.5" fill="#1e293b" text-anchor="start">Classical.choice、Quot.sound；环境里 15 条</text>
+<text x="42" y="336" font-size="10.5" fill="#1e293b" text-anchor="start">公理全在 Init，没有新加的。</text>
+<rect x="388" y="236" width="352" height="108" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="410" cy="264" r="12" fill="#fee9e7" stroke="#b42318" stroke-width="1.2"/>
+<text x="410" y="268" font-size="11.5" fill="#b42318" text-anchor="middle" font-weight="700">Ⅳ</text>
+<text x="432" y="268" font-size="11.5" fill="#b42318" text-anchor="start" font-weight="700">证明项本身是否有效</text>
+<text x="410" y="298" font-size="10.5" fill="#1e293b" text-anchor="start">61.6 GB 导出被 Lean 官方内核、paranoid 内核、</text>
+<text x="410" y="317" font-size="10.5" fill="#1e293b" text-anchor="start">nanoda、con-leche、con-ron 与第三方内核接受；</text>
+<text x="410" y="336" font-size="10.5" fill="#1e293b" text-anchor="start">沙箱重建逐字节一致。</text>
+<rect x="20" y="360" width="720" height="118" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="38" y="386" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">几个让人安心的细节</text>
+<text x="38" y="414" font-size="10.5" fill="#1e293b" text-anchor="start">• 检查在“惰性导出”上跑，源码里就算藏了恶意代码也碰不到验证过程。</text>
+<text x="38" y="440" font-size="10.5" fill="#1e293b" text-anchor="start">• con-leche / con-ron 自带相对集合论的可靠性证明：它们不可能接受假证明。</text>
+<text x="38" y="466" font-size="10.5" fill="#1e293b" text-anchor="start">• 唯一一处非确定性只影响一个绑定变量名（38 字节），不在五个定理的依赖路径上。</text>
+<rect x="20" y="492" width="720" height="88" rx="10" fill="#fee9e7" stroke="#b42318" stroke-width="1"/>
+<text x="38" y="518" font-size="11.5" fill="#b42318" text-anchor="start" font-weight="700">但“内核接受”不等于“人类读懂”</text>
+<text x="38" y="546" font-size="10.5" fill="#1e293b" text-anchor="start">验证的是：在 Mathlib 的定义下，这套推导从三条标准公理出发能走到那句话。</text>
+<text x="38" y="570" font-size="10.5" fill="#1e293b" text-anchor="start">它没有告诉你推导为什么这么走，也没有给出可发表的简短论证——这部分仍然缺失。</text>
+</svg>

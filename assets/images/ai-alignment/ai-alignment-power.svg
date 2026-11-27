@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="586" viewBox="0 0 760 586" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">最优策略权力寻求定理与MDP对称性示意图</title>
+<desc id="desc">左栏说明Turner等人的定理在环境对称性充分条件下大多数奖励函数的最优策略倾向于保住选项与扩大潜在终态集合并强调与可被关闭环境的关系，右栏用格子示意agent选择出口多的方向并列出证明边界包括MDP最优策略充分非必要以及不等于现实中学出的策略。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="585" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">权力寻求不是拟人猜测，而是一个可证明的统计倾向</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">Turner 等人：在满足某些环境对称性的 MDP 里，大多数奖励函数的最优策略倾向于保住选项、扩大可达终态集合。</text>
+<rect x="20" y="66" width="352" height="420" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="89" r="10.5" fill="#e6f5f2" stroke="#0f766e" stroke-width="1.2"/>
+<text x="38" y="93" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="93" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">定理说了什么</text>
+<rect x="40" y="124" width="312" height="82" rx="7" fill="#e6f5f2" stroke="#0f766e"/>
+<text x="54" y="152" font-size="11" fill="#0f766e" text-anchor="start" font-weight="700">环境对称性（充分条件）</text>
+<text x="54" y="178" font-size="11" fill="#1e293b" text-anchor="start">→ 最优策略倾向于寻求权力</text>
+<text x="40" y="230" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">两种具体表现</text>
+<text x="40" y="260" font-size="10.5" fill="#1e293b" text-anchor="start">① 保住尽可能多的可选动作</text>
+<text x="40" y="288" font-size="10.5" fill="#1e293b" text-anchor="start">② 走向更大的潜在终态集合</text>
+<text x="40" y="310" font-size="10.5" fill="#64748b" text-anchor="start">   （在最大化平均奖励时）</text>
+<text x="40" y="348" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">为什么和关闭有关</text>
+<text x="40" y="378" font-size="10.5" fill="#1e293b" text-anchor="start">这些对称性常出现在“agent 可以被</text>
+<text x="40" y="402" font-size="10.5" fill="#1e293b" text-anchor="start">关闭或摧毁”的环境里——关掉它就少了一堆选项。</text>
+<text x="40" y="440" font-size="10.5" fill="#b42318" text-anchor="start">注意：是“大多数奖励函数”，不是全部。</text>
+<rect x="388" y="66" width="352" height="420" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="89" r="10.5" fill="#fef1e8" stroke="#c25014" stroke-width="1.2"/>
+<text x="406" y="93" font-size="11.5" fill="#c25014" text-anchor="middle" font-weight="700">2</text>
+<text x="424" y="93" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">格子里发生了什么</text>
+<rect x="424" y="140" width="37" height="37" rx="4" fill="#f1f5f9" stroke="#e2e8f0"/>
+<rect x="466" y="140" width="37" height="37" rx="4" fill="#f1f5f9" stroke="#e2e8f0"/>
+<rect x="508" y="140" width="37" height="37" rx="4" fill="#f1f5f9" stroke="#e2e8f0"/>
+<rect x="550" y="140" width="37" height="37" rx="4" fill="#f1f5f9" stroke="#e2e8f0"/>
+<rect x="592" y="140" width="37" height="37" rx="4" fill="#f1f5f9" stroke="#e2e8f0"/>
+<rect x="424" y="182" width="37" height="37" rx="4" fill="#f1f5f9" stroke="#e2e8f0"/>
+<rect x="466" y="182" width="37" height="37" rx="4" fill="#f1f5f9" stroke="#e2e8f0"/>
+<rect x="508" y="182" width="37" height="37" rx="4" fill="#eaf4fb" stroke="#1d6fa5"/>
+<rect x="550" y="182" width="37" height="37" rx="4" fill="#f1f5f9" stroke="#e2e8f0"/>
+<rect x="592" y="182" width="37" height="37" rx="4" fill="#f1f5f9" stroke="#e2e8f0"/>
+<rect x="424" y="224" width="37" height="37" rx="4" fill="#f1f5f9" stroke="#e2e8f0"/>
+<rect x="466" y="224" width="37" height="37" rx="4" fill="#f1f5f9" stroke="#e2e8f0"/>
+<rect x="508" y="224" width="37" height="37" rx="4" fill="#f1f5f9" stroke="#e2e8f0"/>
+<rect x="550" y="224" width="37" height="37" rx="4" fill="#f1f5f9" stroke="#e2e8f0"/>
+<rect x="592" y="224" width="37" height="37" rx="4" fill="#f1f5f9" stroke="#e2e8f0"/>
+<circle cx="526.0" cy="200.0" r="9" fill="#1d6fa5" stroke="#1d6fa5" stroke-width="1.4"/>
+<text x="526" y="204" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">A</text>
+<line x1="550.0" y1="200.0" x2="640.0" y2="200.0" stroke="#475569" stroke-width="1.6" stroke-linecap="round" marker-end="url(#arr-green)"/>
+<line x1="550.0" y1="200.0" x2="640.0" y2="242.0" stroke="#475569" stroke-width="1.6" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<text x="424" y="284" font-size="10.5" fill="#18794e" text-anchor="start">往右：出口多，未来选项多</text>
+<text x="424" y="312" font-size="10.5" fill="#c25014" text-anchor="start">往下：终态集合小，容易被关</text>
+<rect x="406" y="336" width="316" height="118" rx="7" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="420" y="362" font-size="11" fill="#0f172a" text-anchor="start" font-weight="700">证明的边界（别读过头）</text>
+<text x="420" y="390" font-size="10.5" fill="#1e293b" text-anchor="start">• 对象是 MDP 里的“最优策略”</text>
+<text x="420" y="414" font-size="10.5" fill="#1e293b" text-anchor="start">• 对称性是充分非必要条件</text>
+<text x="420" y="438" font-size="10.5" fill="#1e293b" text-anchor="start">• 作者强调：最优策略 ≠ 现实中学出的策略</text>
+<rect x="20" y="500" width="720" height="72" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="38" y="526" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">这条定理的价值不在“AI 一定有求生欲”，而在于它把直觉变成了可检验的数学命题。</text>
+<text x="38" y="554" font-size="10.5" fill="#475569" text-anchor="start">课程第 6 讲把它与 Omohundro 2008 年的 The Basic AI Drives 放在一起读，正是要看清这条界线。</text>
+</svg>

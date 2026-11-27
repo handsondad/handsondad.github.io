@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="634" viewBox="0 0 760 634" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">黎曼猜想证明从起步到验证的六周时间线图</title>
+<desc id="desc">上方六个节点依次是十月六日Stepanov行列式十月十九日qn等于mk加r分解十一月十五日链式theta提升取m约根号x十一月十六日GRH完成十一月二十日公开四页说明与Lean代码十一月二十一日Lean与Mathlib联合声明，下方左栏讲同日Vakil公布的Masullo九百四十页纯人工草稿八小时后被AI辅助发现问题，右栏列出编译声明数与内核核验时间并估算人类阅读需一百六十年。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="633" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">六周出结果，一天完成验证：这次的时间线</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">2026-10-06 第一步 Stepanov 行列式 → 11-16 得到 GRH → 11-21 Lean 社区联合声明。</text>
+<rect x="20" y="66" width="720" height="292" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="44" y="100" width="218" height="106" rx="8" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="58" y="126" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">10/06</text>
+<text x="58" y="152" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">Stepanov 行列式起步</text>
+<text x="58" y="176" font-size="10.5" fill="#1e293b" text-anchor="start">从函数域上带重数的经典论证出发</text>
+<text x="58" y="196" font-size="10.5" fill="#64748b" text-anchor="start">节点 1 / 6</text>
+<rect x="274" y="100" width="218" height="106" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+<text x="288" y="126" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">10/19</text>
+<text x="288" y="152" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">qN = Mᵏ + R 分解</text>
+<text x="288" y="176" font-size="10.5" fill="#1e293b" text-anchor="start">在整数上寻找“自然自守”的替代品</text>
+<text x="288" y="196" font-size="10.5" fill="#64748b" text-anchor="start">节点 2 / 6</text>
+<rect x="504" y="100" width="218" height="106" rx="8" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="518" y="126" font-size="11.5" fill="#6d28d9" text-anchor="start" font-weight="700">11/15</text>
+<text x="518" y="152" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">链式 θ lift，取 m ≈ √X</text>
+<text x="518" y="176" font-size="10.5" fill="#1e293b" text-anchor="start">用迭代提升累计重数，补上整数缺失的乘法性</text>
+<text x="518" y="196" font-size="10.5" fill="#64748b" text-anchor="start">节点 3 / 6</text>
+<rect x="44" y="222" width="218" height="106" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+<text x="58" y="248" font-size="11.5" fill="#b42318" text-anchor="start" font-weight="700">11/16</text>
+<text x="58" y="274" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">GRH 完成</text>
+<text x="58" y="298" font-size="10.5" fill="#1e293b" text-anchor="start">四页 remark 里时间线的终点</text>
+<text x="58" y="318" font-size="10.5" fill="#64748b" text-anchor="start">节点 4 / 6</text>
+<rect x="274" y="222" width="218" height="106" rx="8" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="288" y="248" font-size="11.5" fill="#b45309" text-anchor="start" font-weight="700">11/20</text>
+<text x="288" y="274" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">公开 4 页说明 + Lean 代码</text>
+<text x="288" y="298" font-size="10.5" fill="#1e293b" text-anchor="start">14 个分卷、约 1700 万行；同时 Vakil 公布纯人工草稿</text>
+<text x="288" y="318" font-size="10.5" fill="#64748b" text-anchor="start">节点 5 / 6</text>
+<rect x="504" y="222" width="218" height="106" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+<text x="518" y="248" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">11/21</text>
+<text x="518" y="274" font-size="10.5" fill="#0f172a" text-anchor="start" font-weight="700">Lean / Mathlib 联合声明</text>
+<text x="518" y="298" font-size="10.5" fill="#1e293b" text-anchor="start">认证命题与证明均正确，四条标准全满足</text>
+<text x="518" y="318" font-size="10.5" fill="#64748b" text-anchor="start">节点 6 / 6</text>
+<rect x="20" y="374" width="352" height="198" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="397" r="10.5" fill="#fdf1d8" stroke="#b45309" stroke-width="1.2"/>
+<text x="38" y="401" font-size="11.5" fill="#b45309" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="401" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">同一天的另一份证明</text>
+<text x="40" y="434" font-size="10.5" fill="#1e293b" text-anchor="start">11 月 20 日，AMS 主席 Vakil 紧急发文，</text>
+<text x="40" y="458" font-size="10.5" fill="#1e293b" text-anchor="start">公布 Masullo 的 940 页 GRH 草稿：</text>
+<text x="40" y="482" font-size="10.5" fill="#1e293b" text-anchor="start">纯人工、历时约 12 年。</text>
+<rect x="40" y="498" width="312" height="58" rx="7" fill="#fee9e7" stroke="#b42318"/>
+<text x="54" y="522" font-size="10.5" fill="#b42318" text-anchor="start" font-weight="700">约 8 小时后，多人借不同 AI 模型</text>
+<text x="54" y="544" font-size="10.5" fill="#1e293b" text-anchor="start">报告了草稿中的问题；尚未定论。</text>
+<rect x="388" y="374" width="352" height="198" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="397" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="406" y="401" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">2</text>
+<text x="424" y="401" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">机器核验跑得有多快</text>
+<text x="406" y="434" font-size="10.5" fill="#1e293b" text-anchor="start">11/20 16:43 UTC：175,187 个模块全部编译通过。</text>
+<text x="406" y="458" font-size="10.5" fill="#1e293b" text-anchor="start">11/20 夜：con-leche 接受 1,468,418 条声明。</text>
+<text x="406" y="482" font-size="10.5" fill="#1e293b" text-anchor="start">11/21：沙箱重建导出文件与原始导出逐字节一致。</text>
+<text x="406" y="506" font-size="10.5" fill="#1e293b" text-anchor="start">11/22 起：Lean 官方内核跑完 61.6 GB 导出。</text>
+<text x="406" y="542" font-size="10.5" fill="#18794e" text-anchor="start">对比：人类读 1700 万行，按每分钟 200 行算要 160 年。</text>
+<rect x="20" y="586" width="720" height="34" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="608" font-size="10.5" fill="#475569" text-anchor="start">提醒：日期按原文与核查页；10/06 到 11/16 是 41 天，不是“一夜之间”。</text>
+</svg>

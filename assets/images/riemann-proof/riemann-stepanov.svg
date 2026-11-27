@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="586" viewBox="0 0 760 586" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">Stepanov重数难题与链式theta提升路线图</title>
+<desc id="desc">左栏说明函数域上Stepanov论证靠带重数的除子而整数上重数相当于给整数求导没有定义并附Alpog remark原文引句，右栏画U0到U1到U2的迭代theta提升链并说明Claude建议对长度X的von Mangoldt和取链长根号X以累计重数m，底栏说明人机分工与Alpoge的原话。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="585" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">核心难点：整数上找不到“重数”，Claude 用 θ 提升链造了一个</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">函数域上的 Stepanov 论证靠带重数的除子；整数上重数相当于“给整数求导”，没有现成东西。</text>
+<rect x="20" y="66" width="352" height="420" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="89" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="38" y="93" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="93" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">函数域：有重数，能证明 RH</text>
+<rect x="40" y="124" width="312" height="86" rx="7" fill="#eaf4fb" stroke="#1d6fa5"/>
+<text x="56" y="152" font-size="11.5" fill="#1d6fa5" text-anchor="start" font-weight="700">Stepanov 论证</text>
+<text x="56" y="180" font-size="10.5" fill="#1e293b" text-anchor="start">除子带重数 → 同一零点被数多次</text>
+<text x="56" y="202" font-size="10.5" fill="#1e293b" text-anchor="start">→ 用次数上限反证零点不能乱跑</text>
+<text x="40" y="244" font-size="11.5" fill="#b42318" text-anchor="start" font-weight="700">整数域：没有这个“重数”杠杆</text>
+<text x="40" y="274" font-size="10.5" fill="#1e293b" text-anchor="start">在整数世界里做类似的事，</text>
+<text x="40" y="298" font-size="10.5" fill="#1e293b" text-anchor="start">等价于给整数求导——没有定义。</text>
+<text x="40" y="334" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">Alpöge 的原话</text>
+<rect x="40" y="350" width="312" height="108" rx="7" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="54" y="378" font-size="10.5" fill="#1e293b" text-anchor="start">“multiplicity is hard to find over</text>
+<text x="54" y="400" font-size="10.5" fill="#1e293b" text-anchor="start">the integers, corresponding to something</text>
+<text x="54" y="422" font-size="10.5" fill="#1e293b" text-anchor="start">like differentiating whole numbers.”</text>
+<text x="54" y="448" font-size="10.5" fill="#64748b" text-anchor="start">—— 4 页 remark，第 1 页</text>
+<rect x="388" y="66" width="352" height="420" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="89" r="10.5" fill="#fee9e7" stroke="#b42318" stroke-width="1.2"/>
+<text x="406" y="93" font-size="11.5" fill="#b42318" text-anchor="middle" font-weight="700">2</text>
+<text x="424" y="93" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">解法：迭代 θ 提升，把重数攒出来</text>
+<circle cx="440.0" cy="154.0" r="13" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.4"/>
+<text x="440" y="158" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">U₀</text>
+<line x1="456.0" y1="154.0" x2="520.0" y2="154.0" stroke="#475569" stroke-width="1.6" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<circle cx="536.0" cy="154.0" r="13" fill="#e6f5f2" stroke="#0f766e" stroke-width="1.4"/>
+<text x="536" y="158" font-size="10.5" fill="#0f766e" text-anchor="middle" font-weight="700">U₁</text>
+<line x1="552.0" y1="154.0" x2="616.0" y2="154.0" stroke="#475569" stroke-width="1.6" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<circle cx="632.0" cy="154.0" r="13" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.4"/>
+<text x="632" y="158" font-size="10.5" fill="#6d28d9" text-anchor="middle" font-weight="700">U₂</text>
+<line x1="648.0" y1="154.0" x2="702.0" y2="154.0" stroke="#475569" stroke-width="1.6" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<text x="700" y="158" font-size="12" fill="#64748b" text-anchor="middle">…</text>
+<text x="406" y="194" font-size="10.5" fill="#1e293b" text-anchor="start">每次 π → π ⊞ μⱼ[t] 就是一次 θ 提升，累计重数 m。</text>
+<rect x="406" y="214" width="316" height="88" rx="7" fill="#fee9e7" stroke="#b42318"/>
+<text x="420" y="244" font-size="11.2" fill="#b42318" text-anchor="start" font-weight="700">Claude 给的关键一行</text>
+<text x="420" y="272" font-size="11" fill="#b42318" text-anchor="start" font-weight="700">length X 的 von Mangoldt 和，链长取 √X</text>
+<text x="420" y="294" font-size="10.5" fill="#1e293b" text-anchor="start">≈ 每次提升模拟一份重数，取到 m ≈ √X。</text>
+<text x="406" y="334" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">为什么是 √X？</text>
+<text x="406" y="364" font-size="10.5" fill="#1e293b" text-anchor="start">太短：重数不够，压不住零点。</text>
+<text x="406" y="390" font-size="10.5" fill="#1e293b" text-anchor="start">太长：每次提升都有代价，累积起来超过预算。</text>
+<text x="406" y="422" font-size="10.5" fill="#1e293b" text-anchor="start">√X 正好在两端之间——Alpöge 说“还能是什么”。</text>
+<text x="406" y="458" font-size="10.5" fill="#64748b" text-anchor="start">注意：这只是他从 remark 里转述的路线草图。</text>
+<rect x="20" y="500" width="720" height="72" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="38" y="526" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">这一步最能说明“人机分工”：人负责把问题摆成哪个类比，模型负责在巨大空间里找出那条链长。</text>
+<text x="38" y="554" font-size="10.5" fill="#475569" text-anchor="start">Alpöge 自己在 remark 里写：终点附近“Claude flew, and danced, and sparkled”。</text>
+</svg>

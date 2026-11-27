@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="602" viewBox="0 0 760 602" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">黎曼猜想形式化证明的覆盖范围与未覆盖范围图</title>
+<desc id="desc">左栏列出已覆盖的Riemann zeta的RH全部模数与特征的Dirichlet L函数以及分圆域上的Robin与Lagarias不等式，右栏列出未覆盖的Dedekind zeta函数Hecke L函数一般自守L函数与Extended RH，底栏区分机器核验通过人类读懂并写出短证明Clay规则下期刊发表加两年检验三档状态。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="601" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">到底证明了多少：一张边界图</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">RH 已证，Dirichlet L-函数的 GRH 已证；更广的 Hecke／自守 L-函数不在这次的范围内。</text>
+<rect x="20" y="66" width="352" height="420" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="89" r="10.5" fill="#e7f6ee" stroke="#18794e" stroke-width="1.2"/>
+<text x="38" y="93" font-size="11.5" fill="#18794e" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="93" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">覆盖到哪一步</text>
+<rect x="40" y="124" width="312" height="84" rx="7" fill="#e7f6ee" stroke="#18794e"/>
+<text x="56" y="150" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">Riemann ζ</text>
+<text x="56" y="174" font-size="10.5" fill="#1e293b" text-anchor="start">RH：非平凡零点实部 = 1/2</text>
+<text x="56" y="196" font-size="10.5" fill="#18794e" text-anchor="start">状态：已证</text>
+<rect x="40" y="224" width="312" height="84" rx="7" fill="#e7f6ee" stroke="#18794e"/>
+<text x="56" y="250" font-size="11.5" fill="#18794e" text-anchor="start" font-weight="700">Dirichlet L</text>
+<text x="56" y="274" font-size="10.5" fill="#1e293b" text-anchor="start">全部模数、全部特征；s=1 极点除外</text>
+<text x="56" y="296" font-size="10.5" fill="#18794e" text-anchor="start">状态：已证</text>
+<rect x="40" y="324" width="312" height="84" rx="7" fill="#e6f5f2" stroke="#0f766e"/>
+<text x="56" y="350" font-size="11.5" fill="#0f766e" text-anchor="start" font-weight="700">分圆域整数环</text>
+<text x="56" y="374" font-size="10.5" fill="#1e293b" text-anchor="start">Robin / Lagarias 型不等式</text>
+<text x="56" y="396" font-size="10.5" fill="#0f766e" text-anchor="start">状态：已推出</text>
+<text x="40" y="442" font-size="10.5" fill="#64748b" text-anchor="start">注：三条算术结论还需 Robin1984 那份形式化。</text>
+<rect x="388" y="66" width="352" height="420" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="89" r="10.5" fill="#fee9e7" stroke="#b42318" stroke-width="1.2"/>
+<text x="406" y="93" font-size="11.5" fill="#b42318" text-anchor="middle" font-weight="700">2</text>
+<text x="424" y="93" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">没覆盖到哪一步</text>
+<rect x="406" y="124" width="316" height="70" rx="7" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="420" y="150" font-size="11" fill="#b42318" text-anchor="start" font-weight="700">Dedekind ζ 函数</text>
+<text x="420" y="174" font-size="10.5" fill="#1e293b" text-anchor="start">数域上的推广</text>
+<rect x="406" y="208" width="316" height="70" rx="7" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="420" y="234" font-size="11" fill="#b42318" text-anchor="start" font-weight="700">Hecke L 函数</text>
+<text x="420" y="258" font-size="10.5" fill="#1e293b" text-anchor="start">更一般的数域 L 函数</text>
+<rect x="406" y="292" width="316" height="70" rx="7" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="420" y="318" font-size="11" fill="#b42318" text-anchor="start" font-weight="700">一般自守 L 函数</text>
+<text x="420" y="342" font-size="10.5" fill="#1e293b" text-anchor="start">朗兰兹纲领那一层</text>
+<rect x="406" y="376" width="316" height="70" rx="7" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="420" y="402" font-size="11" fill="#b42318" text-anchor="start" font-weight="700">Extended RH</text>
+<text x="420" y="426" font-size="10.5" fill="#1e293b" text-anchor="start">Alpöge 说自己预期能拿到，尚未交付</text>
+<rect x="406" y="466" width="316" height="0" fill="none"/>
+<text x="406" y="468" font-size="10.5" fill="#64748b" text-anchor="start">“GRH”在核查页里被严格限定为 Dirichlet L 函数。</text>
+<rect x="20" y="500" width="720" height="88" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="38" y="526" font-size="11.5" fill="#0f172a" text-anchor="start" font-weight="700">三档状态，别混成一档：</text>
+<text x="38" y="552" font-size="10.5" fill="#1e293b" text-anchor="start">① 机器核验通过（已发生）  ② 人类读懂并写出短证明（尚未）  ③ Clay 规则下的期刊发表 + 两年检验（尚未）</text>
+<text x="38" y="576" font-size="10.5" fill="#475569" text-anchor="start">所以：技术上可以说“已被证明”，制度上还不能说“已获千禧年大奖认证”。</text>
+</svg>

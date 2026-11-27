@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="600" viewBox="0 0 760 600" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">硬件软件化三条一手证据对照图</title>
+<desc id="desc">三张卡片分别列Boom的一人实时设计对百人六个月与65%自动生成OpenAI与AMD的14% PPA提升和9881次计分测试以及Anthropic与Diode的三款设备端到端设计与69%基准分数，每张卡片下方标注数字口径与局限底栏按证据强度排序并强调三条都不是量产。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="599" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">三条最硬的证据：飞机、电路板、芯片内核</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">分别来自 Boom 创始人、OpenAI 官方技术报告和 Anthropic 官方研究页——不是媒体转述。</text>
+<rect x="20" y="66" width="720" height="148" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="89" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="38" y="93" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="93" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">Boom Supersonic：把飞机设计变成软件</text>
+<text x="40" y="128" font-size="12" fill="#1d6fa5" text-anchor="start" font-weight="700">1 名工程师实时改叶片几何  ≈  过去 100 人做 6 个月</text>
+<text x="40" y="158" font-size="10.5" fill="#1e293b" text-anchor="start">整机结构 65% 自动生成；50 人造出 XB-1 超音速验证机，150 人造出全尺寸超音速涡轮。</text>
+<text x="40" y="188" font-size="10.5" fill="#64748b" text-anchor="start">来源：创始人 Blake Scholl 的公开叙述；数字为其自述，不是独立审计结果。</text>
+<rect x="20" y="228" width="720" height="148" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="251" r="10.5" fill="#e6f5f2" stroke="#0f766e" stroke-width="1.2"/>
+<text x="38" y="255" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">2</text>
+<text x="56" y="255" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">OpenAI × AMD：模型改写 RTL，已进流片设计</text>
+<text x="40" y="290" font-size="11" fill="#0f766e" text-anchor="start" font-weight="700">旗舰 GPU IP 最高 14% PPA 提升；Jalapeño 向量单元面积 −13%，矩阵单元 −10%</text>
+<text x="40" y="320" font-size="10.5" fill="#1e293b" text-anchor="start">9,881 次计分测试；用 Synopsys 工具验证行为等价；AMD 已把部分改动纳入送厂设计。</text>
+<text x="40" y="350" font-size="10.5" fill="#64748b" text-anchor="start">官方原话：不到 5 个月完成约一年的进展。但 14% 是最高值，不是平均值。</text>
+<rect x="20" y="390" width="720" height="148" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="413" r="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="38" y="417" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">3</text>
+<text x="56" y="417" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">Anthropic × Diode：一句话到可工作原型</text>
+<text x="40" y="452" font-size="11" fill="#6d28d9" text-anchor="start" font-weight="700">三款设备从提示词到规格、原理图、PCB、外壳、固件，工厂按文件直接做出来</text>
+<text x="40" y="482" font-size="10.5" fill="#1e293b" text-anchor="start">Diode PCB Gym：69%（前代 25%）；BenchCAD 2.1：83.5%。</text>
+<text x="40" y="512" font-size="10.5" fill="#64748b" text-anchor="start">但官方明确写：仍是原型，未做电气验证、天线调校、热测试与认证。</text>
+<rect x="20" y="552" width="720" height="34" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="36" y="574" font-size="10.5" fill="#475569" text-anchor="start">读法：证据强度从上到下递增（自述 → 官方技术报告 + 商业流片 → 官方研究页 + 实物原型），但三条都不是“量产”。</text>
+</svg>

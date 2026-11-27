@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="606" viewBox="0 0 760 606" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">Strassen七乘积恒等式与递归指数计算图</title>
+<desc id="desc">左栏展示二乘二分块矩阵的朴素算法四个输出块共八次块乘法并得到Tn等于八T括号n除以二括号即n三次方，右栏列出Strassen的七个乘积式说明用十八次块加减换一次块乘法得到指数log二下七约二点八零七四，底栏用递归树说明第七层叶子数等于n的log二七次方。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="605" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">Strassen 1969：2×2 分块，8 次乘法 → 7 次</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">省下的那一次乘法递归下去，就省掉一个 n 的幂：T(n)=7T(n/2) ⇒ n^(log₂7) ≈ n^2.8074。</text>
+<rect x="20" y="66" width="352" height="420" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="89" r="10.5" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.2"/>
+<text x="38" y="93" font-size="11.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="93" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">朴素分块：8 次块乘法</text>
+<rect x="40" y="122" width="60" height="36" rx="6" fill="#eaf4fb" stroke="#1d6fa5"/>
+<text x="70" y="146" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">A₁₁</text>
+<rect x="106" y="122" width="60" height="36" rx="6" fill="#eaf4fb" stroke="#1d6fa5"/>
+<text x="136" y="146" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">A₁₂</text>
+<rect x="40" y="166" width="60" height="36" rx="6" fill="#eaf4fb" stroke="#1d6fa5"/>
+<text x="70" y="190" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">A₂₁</text>
+<rect x="106" y="166" width="60" height="36" rx="6" fill="#eaf4fb" stroke="#1d6fa5"/>
+<text x="136" y="190" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">A₂₂</text>
+<rect x="224" y="122" width="60" height="36" rx="6" fill="#e7f6ee" stroke="#18794e"/>
+<text x="254" y="146" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="700">B₁₁</text>
+<rect x="290" y="122" width="60" height="36" rx="6" fill="#e7f6ee" stroke="#18794e"/>
+<text x="320" y="146" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="700">B₁₂</text>
+<rect x="224" y="166" width="60" height="36" rx="6" fill="#e7f6ee" stroke="#18794e"/>
+<text x="254" y="190" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="700">B₂₁</text>
+<rect x="290" y="166" width="60" height="36" rx="6" fill="#e7f6ee" stroke="#18794e"/>
+<text x="320" y="190" font-size="10.5" fill="#18794e" text-anchor="middle" font-weight="700">B₂₂</text>
+<text x="192" y="158" font-size="15" fill="#64748b" text-anchor="middle">×</text>
+<text x="40" y="246" font-size="10.5" fill="#1e293b" text-anchor="start">C₁₁ = A₁₁B₁₁ + A₁₂B₂₁</text>
+<text x="40" y="272" font-size="10.5" fill="#1e293b" text-anchor="start">C₁₂ = A₁₁B₁₂ + A₁₂B₂₂</text>
+<text x="40" y="298" font-size="10.5" fill="#1e293b" text-anchor="start">C₂₁ = A₂₁B₁₁ + A₂₂B₂₁</text>
+<text x="40" y="324" font-size="10.5" fill="#1e293b" text-anchor="start">C₂₂ = A₂₁B₁₂ + A₂₂B₂₂</text>
+<line x1="40.0" y1="344.0" x2="352.0" y2="344.0" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
+<text x="40" y="372" font-size="11.2" fill="#1d6fa5" text-anchor="start" font-weight="700">8 次块乘法 + 4 次块加法</text>
+<text x="40" y="402" font-size="10.5" fill="#1e293b" text-anchor="start">T(n) = 8T(n/2) + O(n²)</text>
+<text x="40" y="432" font-size="12" fill="#1d6fa5" text-anchor="start" font-weight="700">⇒ T(n) = O(n³)</text>
+<text x="40" y="462" font-size="10.5" fill="#64748b" text-anchor="start">指数 3，和逐个点积一样。</text>
+<rect x="388" y="66" width="352" height="420" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="89" r="10.5" fill="#fee9e7" stroke="#b42318" stroke-width="1.2"/>
+<text x="406" y="93" font-size="11.5" fill="#b42318" text-anchor="middle" font-weight="700">2</text>
+<text x="424" y="93" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">Strassen：7 次块乘法</text>
+<rect x="406" y="124" width="158" height="44" rx="6" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="416" y="151" font-size="10.5" fill="#1e293b" text-anchor="start">M₁  (A₁₁+A₂₂)(B₁₁+B₂₂)</text>
+<rect x="572" y="124" width="158" height="44" rx="6" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="582" y="151" font-size="10.5" fill="#1e293b" text-anchor="start">M₂  (A₂₁+A₂₂)B₁₁</text>
+<rect x="406" y="176" width="158" height="44" rx="6" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="416" y="203" font-size="10.5" fill="#1e293b" text-anchor="start">M₃  A₁₁(B₁₂−B₂₂)</text>
+<rect x="572" y="176" width="158" height="44" rx="6" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="582" y="203" font-size="10.5" fill="#1e293b" text-anchor="start">M₄  A₂₂(B₂₁−B₁₁)</text>
+<rect x="406" y="228" width="158" height="44" rx="6" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="416" y="255" font-size="10.5" fill="#1e293b" text-anchor="start">M₅  (A₁₁+A₁₂)B₂₂</text>
+<rect x="572" y="228" width="158" height="44" rx="6" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="582" y="255" font-size="10.5" fill="#1e293b" text-anchor="start">M₆  (A₂₁−A₁₁)(B₁₁+B₁₂)</text>
+<rect x="406" y="280" width="158" height="44" rx="6" fill="#fee9e7" stroke="#e2e8f0"/>
+<text x="416" y="307" font-size="10.5" fill="#b42318" text-anchor="start">M₇  (A₁₂−A₂₂)(B₂₁+B₂₂)</text>
+<line x1="406.0" y1="342.0" x2="724.0" y2="342.0" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round"/>
+<text x="406" y="370" font-size="10.5" fill="#1e293b" text-anchor="start">18 次块加减换 1 次块乘法</text>
+<text x="406" y="398" font-size="10.5" fill="#1e293b" text-anchor="start">T(n) = 7T(n/2) + O(n²)</text>
+<text x="406" y="430" font-size="12" fill="#b42318" text-anchor="start" font-weight="700">⇒ T(n) = O(n^2.8074)</text>
+<text x="406" y="460" font-size="10.5" fill="#64748b" text-anchor="start">57 年的“挤牙膏”，从这里起步。</text>
+<rect x="20" y="500" width="720" height="92" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="38" y="526" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">递归树：为什么只少一次乘法，指数就变了</text>
+<text x="38" y="554" font-size="10.5" fill="#1e293b" text-anchor="start">第 0 层：1 个 n 阶问题   →   第 1 层：7 个 n/2   →   第 2 层：49 个 n/4   →   …   →   第 k 层：7ᵏ 个 n/2ᵏ</text>
+<text x="38" y="580" font-size="10.5" fill="#475569" text-anchor="start">k = log₂n 时叶子数 = 7^(log₂n) = n^(log₂7) ≈ n^2.8074；朴素算法同样位置是 8^k = n³。</text>
+</svg>

@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="586" viewBox="0 0 760 586" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">AI安全辩论协议与可扩展监督复杂性类比图</title>
+<desc id="desc">左栏画两个AI向人类裁判辩论的流程并给出直接判断约等于NP与最优辩论约等于PSPACE的复杂性类比，右栏说明2023年双重高效辩论把诚实方从指数步模拟降到多项式步并可验证随机AI系统，底栏强调协议可用不等于人类能当好裁判。</desc>
+<defs>
+  <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#1d6fa5"/>
+  </marker>
+  <marker id="arr-orange" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#c25014"/>
+  </marker>
+  <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#18794e"/>
+  </marker>
+  <marker id="arr-muted" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+    <path d="M0,0.6 L6.5,3.5 L0,6.4 Z" fill="#64748b"/>
+  </marker>
+</defs>
+<style>
+  text {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .mono {
+    font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  }
+  .halo {
+    paint-order: stroke;
+    stroke: #ffffff;
+    stroke-width: 3.5px;
+    stroke-linejoin: round;
+  }
+</style>
+<rect x="0.5" y="0.5" width="759" height="585" rx="12" fill="#fbfcfd" stroke="#e2e8f0" stroke-width="1"/>
+<text x="24" y="28" font-size="16" fill="#0f172a" text-anchor="start" font-weight="700">可扩展监督：把“判断难题”换成“比较争论”</text>
+<text x="24" y="48" font-size="12.5" fill="#64748b" text-anchor="start">当 AI 输出复杂到人类无法直接核验，辩论协议试图让人类只当裁判，而不是当专家。</text>
+<rect x="20" y="66" width="352" height="420" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="38" cy="89" r="10.5" fill="#f3e8ff" stroke="#6d28d9" stroke-width="1.2"/>
+<text x="38" y="93" font-size="11.5" fill="#6d28d9" text-anchor="middle" font-weight="700">1</text>
+<text x="56" y="93" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">2018：AI Safety via Debate</text>
+<circle cx="196.0" cy="152.0" r="20" fill="#eaf4fb" stroke="#1d6fa5" stroke-width="1.5"/>
+<text x="196" y="157" font-size="10.5" fill="#1d6fa5" text-anchor="middle" font-weight="700">AI 甲</text>
+<circle cx="112.0" cy="232.0" r="20" fill="#fee9e7" stroke="#b42318" stroke-width="1.5"/>
+<text x="112" y="237" font-size="10.5" fill="#b42318" text-anchor="middle" font-weight="700">AI 乙</text>
+<circle cx="280.0" cy="232.0" r="20" fill="#e6f5f2" stroke="#0f766e" stroke-width="1.5"/>
+<text x="280" y="237" font-size="10.5" fill="#0f766e" text-anchor="middle" font-weight="700">人类裁判</text>
+<line x1="186.0" y1="170.0" x2="126.0" y2="214.0" stroke="#475569" stroke-width="1.6" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<line x1="206.0" y1="170.0" x2="266.0" y2="214.0" stroke="#475569" stroke-width="1.6" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<line x1="132.0" y1="232.0" x2="260.0" y2="232.0" stroke="#cbd5e1" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="4 3"/>
+<text x="40" y="286" font-size="10.5" fill="#1e293b" text-anchor="start">两个 agent 轮流陈述，零和对抗；</text>
+<text x="40" y="312" font-size="10.5" fill="#1e293b" text-anchor="start">人类只选“谁给了更多真实有用信息”。</text>
+<rect x="40" y="336" width="312" height="122" rx="7" fill="#f3e8ff" stroke="#6d28d9"/>
+<text x="54" y="364" font-size="11" fill="#6d28d9" text-anchor="start" font-weight="700">复杂性类比</text>
+<text x="54" y="392" font-size="10.5" fill="#1e293b" text-anchor="start">直接判断 ≈ NP：多项式时间验证答案</text>
+<text x="54" y="418" font-size="10.5" fill="#1e293b" text-anchor="start">最优辩论 ≈ PSPACE：多项式时间裁判</text>
+<text x="54" y="444" font-size="10.5" fill="#1e293b" text-anchor="start">可回答比 NP 更难的一大类问题。</text>
+<rect x="388" y="66" width="352" height="420" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="406" cy="89" r="10.5" fill="#e6f5f2" stroke="#0f766e" stroke-width="1.2"/>
+<text x="406" y="93" font-size="11.5" fill="#0f766e" text-anchor="middle" font-weight="700">2</text>
+<text x="424" y="93" font-size="11.8" fill="#0f172a" text-anchor="start" font-weight="700">2023：Doubly-Efficient Debate</text>
+<rect x="406" y="124" width="316" height="88" rx="7" fill="#fee9e7" stroke="#b42318"/>
+<text x="420" y="152" font-size="11" fill="#b42318" text-anchor="start" font-weight="700">原协议的软肋</text>
+<text x="420" y="180" font-size="10.5" fill="#1e293b" text-anchor="start">诚实方要模拟确定性 AI 系统</text>
+<text x="420" y="204" font-size="10.5" fill="#1e293b" text-anchor="start">指数步——实践中撑不住。</text>
+<rect x="406" y="228" width="316" height="100" rx="7" fill="#e6f5f2" stroke="#0f766e"/>
+<text x="420" y="256" font-size="11" fill="#0f766e" text-anchor="start" font-weight="700">新协议</text>
+<text x="420" y="284" font-size="10.5" fill="#1e293b" text-anchor="start">诚实方只需多项式步模拟就能赢；</text>
+<text x="420" y="308" font-size="10.5" fill="#1e293b" text-anchor="start">甚至能验证随机 AI 系统，即便</text>
+<text x="420" y="326" font-size="10.5" fill="#1e293b" text-anchor="start">欺骗方被允许用指数步模拟。</text>
+<text x="406" y="358" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">这为什么算“理论贡献”</text>
+<text x="406" y="388" font-size="10.5" fill="#1e293b" text-anchor="start">它把“人类能不能监督更强 AI”从经验问题</text>
+<text x="406" y="414" font-size="10.5" fill="#1e293b" text-anchor="start">变成了有复杂度保证的协议设计问题。</text>
+<text x="406" y="450" font-size="10.5" fill="#b42318" text-anchor="start">但协议可用 ≠ 人类真能当好裁判。</text>
+<rect x="20" y="500" width="720" height="72" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+<text x="38" y="526" font-size="11.2" fill="#0f172a" text-anchor="start" font-weight="700">阿伦森式的问题：不是“这招聪不聪明”，而是“它在什么假设下可证明，在什么假设下会失效”。</text>
+<text x="38" y="554" font-size="10.5" fill="#475569" text-anchor="start">课程里把辩论、社会选择、后门可学习性摆在一起，正是在练这种分辨力。</text>
+</svg>
